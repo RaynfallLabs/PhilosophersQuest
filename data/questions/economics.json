@@ -19,7 +19,7 @@
     "choices": [
       "The government has to tax everyone else a lot to pay them all",
       "The jobless people refuse to accept any work",
-      "Foreign countries buy fewer of the country goods",
+      "Foreign countries buy fewer of the country's goods",
       "Interest rates automatically drop to zero"
     ],
     "context": "Louis Blanc (1811-1882) had published L'Organisation du travail (The Organization of Labor) serially in 1839, arguing that only the state could remedy unemployment through 'social workshops' organized craft by craft. In February 1848 he joined the Provisional Government and pushed the decree that created the National Workshops. Source: https://www.britannica.com/biography/Louis-Blanc.",
@@ -105,7 +105,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1848 two German thinkers, Karl Marx and Friedrich Engels, were living as exiles in London. Europe was boiling with worker uprisings that year, and a small group called the Communist League asked them to write a manifesto. In just twenty-three pages, Marx and Engels called on workers everywhere to unite and overthrow the owners of factories and land. It became the founding text of communism -- a movement that would later kill roughly 65 to 100 million people in the twentieth century. What is that pamphlet called?",
+    "question": "In 1848 two German thinkers, Karl Marx and Friedrich Engels, were living in exile outside Germany. Europe was boiling with worker uprisings that year, and a small group called the Communist League asked them to write a manifesto. In just twenty-three pages, Marx and Engels called on workers everywhere to unite and overthrow the owners of factories and land. It became the founding text of communism -- a movement that would later kill roughly 65 to 100 million people in the twentieth century. What is that pamphlet called?",
     "answer": "The Communist Manifesto",
     "choices": [
       "The Communist Manifesto",
@@ -222,23 +222,23 @@
   },
   {
     "tier": 4,
-    "question": "In 1971 President Richard Nixon set a legal ceiling on the price of American oil, and his successors Gerald Ford and Jimmy Carter kept the caps in place. Long gas lines formed at pumps across the country and stayed for years, even after the 1973 Arab embargo ended. Then in January 1981, on his first day in office, President Ronald Reagan signed an executive order that scrapped the oil price caps entirely. What happened to the gas lines after that?",
-    "answer": "They disappeared quickly as producers could sell at real market prices",
+    "question": "In 1971 President Richard Nixon set a legal ceiling on the price of American oil, and his successors Gerald Ford and Jimmy Carter kept the caps in place. Long gas lines formed at pumps across the country, first in 1973 and again in 1979. Then in late January 1981, days after taking office, President Ronald Reagan signed an executive order that scrapped the oil price caps entirely. What happened at the pumps after that?",
+    "answer": "The lines never came back, as producers could sell at real market prices",
     "choices": [
-      "They disappeared quickly as producers could sell at real market prices",
-      "They stayed the same because rules do not change real behavior",
-      "They got much worse because prices spiked forever",
-      "They only ended when the government built more oil wells"
+      "The lines never came back, as producers could sell at real market prices",
+      "Lines returned because rules do not change real behavior",
+      "Lines grew much worse because prices spiked forever",
+      "Lines returned until the government built more oil wells"
     ],
     "context": "Reagan's January 28, 1981 executive order lifted the remaining federal price controls on domestic crude oil. Within months, gasoline lines disappeared even though world prices remained elevated. Source: reaganlibrary.gov executive orders.",
     "topic": "1973-oil-shock-and-us-gasoline-price-controls"
   },
   {
     "tier": 5,
-    "question": "In 1979 the Iranian Revolution overthrew the Shah and cut off Iran's oil exports, sending world oil prices spiking for the second time in a decade. Gasoline lines came back to America -- but only to one state. California drivers waited hours at the pump; other states had no lines at all. Federal gasoline-price rules from 1973 had just been dropped, but California had done something different. Why was California the outlier?",
-    "answer": "Its state price controls remained in force",
+    "question": "In 1979 the Iranian Revolution overthrew the Shah and cut off Iran's oil exports, sending world oil prices spiking for the second time in a decade. Gasoline lines came back to America, and California's were the worst: drivers there waited hours at the pump. Federal price caps were still in force, along with federal rules for sharing gasoline out among the states. Why was California hit so hard?",
+    "answer": "Its federal allotment was based on its smaller past use",
     "choices": [
-      "Its state price controls remained in force",
+      "Its federal allotment was based on its smaller past use",
       "Its refineries were destroyed by an earthquake",
       "Its truck-driver strike blocked deliveries",
       "Its harbor unions refused to unload tankers"
@@ -405,11 +405,11 @@
   {
     "tier": 1,
     "question": "Sending an email costs your computer almost nothing, which is why spammers can blast out millions of emails a day for free. But imagine each email required your computer to solve a tiny math puzzle that takes half a second before it could send. For a normal person sending a few emails, that's nothing you'd even notice. What would happen to a spammer who sends millions a day?",
-    "answer": "They could not afford to keep spamming -- the puzzles would take hours",
+    "answer": "He could not afford to keep spamming -- the puzzles would take hours",
     "choices": [
-      "They could not afford to keep spamming -- the puzzles would take hours",
+      "He could not afford to keep spamming -- the puzzles would take hours",
       "Nothing would change -- spammers have faster computers",
-      "They would send twice as much spam",
+      "He would send twice as much spam",
       "Regular users would stop being able to send email"
     ],
     "context": "Adam Back proposed Hashcash in 1997. SpamAssassin is a 2001 Bayesian filter; SPF is a 2003 email-authentication record; DomainKeys is a 2004 Yahoo predecessor of DKIM. None used proof-of-work. Source: https://en.wikipedia.org/wiki/Hashcash.",
@@ -456,7 +456,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1997 the British cypherpunk Adam Back released Hashcash, which forced computers to burn a bit of real energy to send a message. His idea spread fast on cypherpunk mailing lists -- a scattered group of programmers dreaming up digital cash without banks. Around 1998, two of those builders each designed a digital-money system that leaned directly on Hashcash-style proof-of-work. A decade later, Bitcoin's 2008 white paper would build on both of their designs. Which two builders were they?",
+    "question": "In 1997 the British cypherpunk Adam Back released Hashcash, which forced computers to burn a bit of real energy to send a message. His idea spread fast on cypherpunk mailing lists -- a scattered group of programmers dreaming up digital cash without banks. Over the next few years, two of those builders each designed a digital-money system that leaned directly on Hashcash-style proof-of-work, one in 1998 and one in 2004. Both men would later play a part in Bitcoin's story. Which two builders were they?",
     "answer": "Wei Dai (b-money) and Hal Finney (RPOW)",
     "choices": [
       "Wei Dai (b-money) and Hal Finney (RPOW)",
@@ -482,7 +482,7 @@
   },
   {
     "tier": 4,
-    "question": "On October 31, 2008, an unknown figure named Satoshi Nakamoto quietly published a nine-page white paper titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' on a small cryptography mailing list. At the very end is a short references section listing eight earlier papers Satoshi drew on. One of them is Adam Back's 1997 Hashcash paper, which introduced the proof-of-work idea Bitcoin uses to secure blocks. Which numbered reference in Satoshi's paper is Hashcash?",
+    "question": "On October 31, 2008, an unknown figure named Satoshi Nakamoto quietly published a nine-page white paper titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' on a small cryptography mailing list. At the very end is a short references section listing eight earlier papers Satoshi drew on. One of them is Adam Back's Hashcash paper, which introduced the proof-of-work idea Bitcoin uses to secure blocks. Which numbered reference in Satoshi's paper is Hashcash?",
     "answer": "Reference 6",
     "choices": [
       "Reference 6",
@@ -664,7 +664,7 @@
   },
   {
     "tier": 5,
-    "question": "The American economist William Niskanen warned in 1971 that government offices tend to grow past what their real work requires. In December 2024, President-elect Donald Trump announced a new federal effort, led by Elon Musk and Vivek Ramaswamy, to hunt for exactly that pattern -- bureaus that had bloated without doing more real work. Its short name was a joke on a popular internet meme about a Shiba Inu dog. What was the effort's full proposed name?",
+    "question": "The American economist William Niskanen warned in 1971 that government offices tend to grow past what their real work requires. In November 2024, President-elect Donald Trump announced a new federal effort, led by Elon Musk and Vivek Ramaswamy, to hunt for exactly that pattern -- bureaus that had bloated without doing more real work. Its short name was a joke on a popular internet meme about a Shiba Inu dog. What was the effort's full proposed name?",
     "answer": "The Department of Government Efficiency",
     "choices": [
       "The Department of Government Efficiency",
@@ -976,7 +976,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1930, deep in the worst downturn the United States had ever seen, Congress passed the Smoot-Hawley Tariff Act. It slapped a huge extra tax on nearly every product coming into the country from abroad, promising to protect American workers. The same shape shows up every time a country tries this move during a recession. What do the other countries usually do next?",
+    "question": "In 1930, deep in the worst downturn the United States had ever seen, Congress passed the Smoot-Hawley Tariff Act. It slapped a huge extra tax on nearly every product coming into the country from abroad, promising to protect American workers. The same shape has shown up again and again when countries try this move in a recession. What do the other countries usually do next?",
     "answer": "They pass their own big tariffs on that country's exports, and world trade collapses further",
     "choices": [
       "They pass their own big tariffs on that country's exports, and world trade collapses further",
@@ -1171,7 +1171,7 @@
   },
   {
     "tier": 5,
-    "question": "US President Andrew Jackson killed the Second Bank of the United States by 1836 through his veto pen and by pulling out federal deposits. No new central bank existed in America for another seventy-seven years, until Congress created the Federal Reserve in 1913. The whole Jackson-versus-Bank episode presses one specific recognition move about central banks. Which move does the ladder teach?",
+    "question": "US President Andrew Jackson killed the Second Bank of the United States by 1836 through his veto pen and by pulling out federal deposits. No new central bank existed in America for another seventy-seven years, until Congress created the Federal Reserve in 1913. What does the whole Jackson-versus-Bank episode show about central banks?",
     "answer": "A central bank's existence is always a political choice, not a technical necessity; it can be killed by a determined executive and revived only by a later political consensus",
     "choices": [
       "A central bank's existence is always a political choice, not a technical necessity; it can be killed by a determined executive and revived only by a later political consensus",
@@ -1210,7 +1210,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1964, the American economist Anne Krueger studied India's system of government import licenses. She saw people spending huge effort chasing these permits -- hiring lobbyists, cultivating officials, waiting in long queues -- instead of making goods. Ten years later, in a famous 1974 paper on Turkey, she gave that wasted effort a name that stuck in economics. What did she call it?",
+    "question": "The American economist Anne Krueger studied India's system of government import licenses. She saw people spending huge effort chasing these permits -- hiring lobbyists, cultivating officials, waiting in long queues -- instead of making goods. In a famous 1974 paper on India and Turkey, she gave that wasted effort a name that stuck in economics. What did she call it?",
     "answer": "Rent-seeking",
     "choices": [
       "Rent-seeking",
@@ -1353,7 +1353,7 @@
   },
   {
     "tier": 4,
-    "question": "The Nobel-winning economist James Buchanan and his student Gordon Tullock argued that many things people assume only a state can do -- roads, courts, even money -- could be handled by private deals and contracts instead. They founded a whole branch of economics that studies whether politicians, judges, and bureaucrats really act for the public good, or for their own gain. What is that branch called?",
+    "question": "The Nobel-winning economist James Buchanan and his colleague Gordon Tullock argued that people in government follow their own incentives, just as people in markets do. They founded a whole branch of economics that studies whether politicians, judges, and bureaucrats really act for the public good, or for their own gain. What is that branch called?",
     "answer": "Public choice economics",
     "choices": [
       "Public choice economics",
@@ -1418,7 +1418,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1957 the American economist Anthony Downs proved his median-voter theorem: when two parties compete on a single issue, both drift toward the voter sitting at the exact middle of opinion, because winning that voter tips the majority. Chasing the median means the two campaigns end up sounding suspiciously alike. Political scientists point to one very common complaint about US elections that the theorem explains. Which real-world pattern does it explain?",
+    "question": "In 1957 the American economist Anthony Downs applied the median-voter theorem to elections: when two parties compete on a single issue, both drift toward the voter sitting at the exact middle of opinion, because winning that voter tips the majority. Chasing the median means the two campaigns end up sounding suspiciously alike. Political scientists point to one very common complaint about US elections that the theorem explains. Which real-world pattern does it explain?",
     "answer": "Two major American parties on many issues look similar at election time",
     "choices": [
       "Two major American parties on many issues look similar at election time",
@@ -1509,7 +1509,7 @@
   },
   {
     "tier": 1,
-    "question": "In September 2004 Hurricane Ivan smashed into Florida and cut electricity to thousands of homes. A Kentucky man named John Shepperson bought 19 portable generators, rented a U-Haul, and drove them south to sell to families sitting in the dark. Florida had a price-gouging law making it illegal to sell essentials for far above their normal price. What did Florida police do to Shepperson when he arrived with his truckload?",
+    "question": "In August 2005 Hurricane Katrina smashed into Mississippi and cut electricity to thousands of homes. A Kentucky man named John Shepperson bought 19 portable generators, rented a U-Haul, and drove them south to sell to families sitting in the dark. Mississippi had a price-gouging law making it illegal to sell essentials for far above their normal price. What did Mississippi police do to Shepperson when he arrived with his truckload?",
     "answer": "They arrested him, confiscated the generators, and jailed him for four days",
     "choices": [
       "They arrested him, confiscated the generators, and jailed him for four days",
@@ -1535,7 +1535,7 @@
   },
   {
     "tier": 2,
-    "question": "After Hurricane Frances hit Florida in 2004, a Kentuckian named John Shepperson bought 19 generators, drove them 600 miles south, and was arrested for 'price gouging' when he tried to sell them. Duke University economist Michael Munger later retold Shepperson's story using the language of one famous 1945 journal article by the Austrian economist Friedrich Hayek about how prices carry information. What is that article's title?",
+    "question": "After Hurricane Katrina hit Mississippi in 2005, a Kentuckian named John Shepperson bought 19 generators, drove them 600 miles south, and was arrested for 'price gouging' when he tried to sell them. Duke University economist Michael Munger later retold Shepperson's story using the language of one famous 1945 journal article by the Austrian economist Friedrich Hayek about how prices carry information. What is that article's title?",
     "answer": "The Use of Knowledge in Society",
     "choices": [
       "The Use of Knowledge in Society",
@@ -1548,7 +1548,7 @@
   },
   {
     "tier": 3,
-    "question": "After Hurricane Frances battered Florida in 2004, John Shepperson drove 19 generators from Kentucky to Florida hoping to sell them at a big markup to people without power -- until Florida's anti-price-gouging law had him arrested and his generators seized. In the way the Austrian economist Friedrich Hayek would look at it, what had Shepperson's trip really done, and what did Florida's law block?",
+    "question": "After Hurricane Katrina battered Mississippi in 2005, John Shepperson drove 19 generators from Kentucky to Mississippi hoping to sell them at a big markup to people without power -- until Mississippi's anti-price-gouging law had him arrested and his generators seized. In the way the Austrian economist Friedrich Hayek would look at it, what had Shepperson's trip really done, and what did Mississippi's law block?",
     "answer": "He moved scarce capital from a low-value use to a high-value use using the price signal",
     "choices": [
       "He moved scarce capital from a low-value use to a high-value use using the price signal",
@@ -1821,7 +1821,7 @@
   },
   {
     "tier": 3,
-    "question": "On December 29, 2023, Argentina's new libertarian president Javier Milei — a chainsaw-waving economist elected weeks earlier on a promise to slash the state — signed a sweeping emergency order during his first month in office. In one stroke it struck down the 2020 rent-control law Ley 27,551 along with hundreds of other regulations. What is that particular kind of Argentine presidential order called?",
+    "question": "In late December 2023, Argentina's new libertarian president Javier Milei — a chainsaw-waving economist elected weeks earlier on a promise to slash the state — signed a sweeping emergency order during his first month in office. In one stroke it struck down the 2020 rent-control law Ley 27,551 along with hundreds of other regulations. What is that particular kind of Argentine presidential order called?",
     "answer": "A Decreto de Necesidad y Urgencia (DNU)",
     "choices": [
       "A Decreto de Necesidad y Urgencia (DNU)",
@@ -1925,7 +1925,7 @@
   },
   {
     "tier": 2,
-    "question": "The Federal Reserve chair whom President Richard Nixon pressured for low interest rates from 1970 to 1978 kept a private diary about Nixon's demands throughout those years. The diary stayed sealed for decades and only came out in print in 2010, long after that chair had died in 1987. What is that published diary called?",
+    "question": "The Federal Reserve chair whom President Richard Nixon pressured for low interest rates in the early 1970s kept a private diary about Nixon's demands. The diary stayed sealed for decades and only came out in print in 2010, long after that chair had died in 1987. What is that published diary called?",
     "answer": "Inside the Nixon Administration: The Secret Diary of Arthur Burns 1969-1974",
     "choices": [
       "Inside the Nixon Administration: The Secret Diary of Arthur Burns 1969-1974",
@@ -1977,7 +1977,7 @@
   },
   {
     "tier": 4,
-    "question": "Arthur Burns chaired the US Federal Reserve from 1970 to 1978. Under pressure from Presidents Nixon and Ford, he kept money cheap and let inflation run wild — grocery bills doubled and the dollar cratered. Austrian-school economists like Ludwig von Mises and Murray Rothbard argued Burns's failure was not just bad luck under one weak chairman but proof of a built-in flaw in the very institution of a central bank. What flaw did they say the institution had?",
+    "question": "Arthur Burns chaired the US Federal Reserve from 1970 to 1978. Under pressure from Presidents Nixon and Ford, he kept money cheap and let inflation run wild — grocery bills nearly doubled. Austrian-school economists like Murray Rothbard argued Burns's failure was not just bad luck under one weak chairman but proof of a built-in flaw in the very institution of a central bank. What flaw did they say the institution had?",
     "answer": "Any institution empowered to expand credit will be captured by politicians who benefit from short-term stimulus regardless of long-term cost",
     "choices": [
       "Any institution empowered to expand credit will be captured by politicians who benefit from short-term stimulus regardless of long-term cost",
@@ -2003,7 +2003,7 @@
   },
   {
     "tier": 5,
-    "question": "Arthur Burns chaired the US Federal Reserve from 1970 to 1978. When the first wave of 1970s inflation eased, Burns cut interest rates too early, and a second, worse surge of inflation hit later that decade -- eventually forcing his successor Paul Volcker to jack rates above 20 percent to break it. Austrian analysts point to Burns as a warning for the 2020s Fed. If the modern Fed cuts rates too early today, what specific 1980s outcome do they warn will recur?",
+    "question": "Arthur Burns chaired the US Federal Reserve from 1970 to 1978. When the first wave of 1970s inflation eased, Burns cut interest rates too early, and a second, worse surge of inflation hit later that decade -- eventually forcing Paul Volcker, chair from 1979, to jack rates above 20 percent to break it. Austrian analysts point to Burns as a warning for the 2020s Fed. If the modern Fed cuts rates too early today, what specific 1980s outcome do they warn will recur?",
     "answer": "A second inflation wave requiring extraordinary rate hikes like Volcker's 20 percent",
     "choices": [
       "A second inflation wave requiring extraordinary rate hikes like Volcker's 20 percent",
@@ -2055,7 +2055,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin mining evolved in four steps. First, hobbyists used the ordinary Central Processing Unit (CPU) inside a home computer. Then in 2010 miners switched to GPUs -- the fast parallel chips inside gaming graphics cards. Around 2011 they moved to FPGAs, chips that can be reshaped in the factory for one specific job. Finally by 2013 came ASICs, chips baked to run only Bitcoin's hashing math and nothing else. Why did each new step outcompete the last one?",
+    "question": "Bitcoin mining evolved in four steps. First, hobbyists used the ordinary Central Processing Unit (CPU) inside a home computer. Then in 2010 miners switched to GPUs -- the fast parallel chips inside gaming graphics cards. Around 2011 they moved to FPGAs, chips a buyer can reprogram for one specific job. Finally by 2013 came ASICs, chips baked to run only Bitcoin's hashing math and nothing else. Why did each new step outcompete the last one?",
     "answer": "Each step used less energy per calculation, so older miners could not cover their power bill",
     "choices": [
       "Each step used less energy per calculation, so older miners could not cover their power bill",
@@ -2133,7 +2133,7 @@
   },
   {
     "tier": 1,
-    "question": "Ludwig von Mises first laid out what became the Austrian idea of booms and busts in a 1912 book. Friedrich Hayek then wrote two books that built on it, all while he was still in his twenties. In which two decades did the young Hayek publish those two books?",
+    "question": "Ludwig von Mises first laid out what became the Austrian idea of booms and busts in a 1912 book. Friedrich Hayek then wrote two books that built on it, both by the time he was thirty-two. In which two decades did the young Hayek publish those two books?",
     "answer": "The 1920s and 1930s",
     "choices": [
       "The 1920s and 1930s",
@@ -2406,7 +2406,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1846 the French economist Frederic Bastiat, inspired by the British movement that had just repealed the Corn Laws, started his own free-trade league in the French port city of Bordeaux. He and his allies believed a tariff protects a few favored producers by making every buyer in the country pay more. What was the main argument these free-trade leagues made?",
+    "question": "In 1846 the French economist Frederic Bastiat, inspired by the British campaign against the Corn Laws, started his own free-trade league in the French port city of Bordeaux. He and his allies believed a tariff protects a few favored producers by making every buyer in the country pay more. What was the main argument these free-trade leagues made?",
     "answer": "Tariffs help a few producers a lot but raise prices for everyone else, so most people are worse off",
     "choices": [
       "Tariffs help a few producers a lot but raise prices for everyone else, so most people are worse off",
@@ -2523,7 +2523,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1850, dying of tuberculosis in Rome, the French economist Frederic Bastiat wrote a short pamphlet called The Law. In it he described how governments could take from some people to give to others while dressing the act in legal language. He walked through slavery, protectionism, and welfare with one running concept holding it all together. For Bastiat, slavery was the maximal case of that concept. Which concept did he use?",
+    "question": "In 1850, already dying of tuberculosis, the French economist Frederic Bastiat wrote a short pamphlet called The Law. In it he described how governments could take from some people to give to others while dressing the act in legal language. He walked through slavery, protectionism, and welfare with one running concept holding it all together. For Bastiat, slavery was the maximal case of that concept. Which concept did he use?",
     "answer": "Legal plunder",
     "choices": [
       "Legal plunder",
@@ -2536,7 +2536,7 @@
   },
   {
     "tier": 5,
-    "question": "Frederic Bastiat was a French economist and, in the last years of his short life, a member of the new French National Assembly created in 1848. Here is an accuracy note about him. The decree that abolished slavery in French colonies was signed on April 27, 1848, but the new National Assembly did not first meet until May 4, 1848. So Bastiat's actual voting record on slavery had a particular shape. Which characterization is correct?",
+    "question": "Frederic Bastiat was a French economist and, in the last years of his short life, a member of the new French National Assembly created in 1848. The decree that abolished slavery in French colonies was signed on April 27, 1848, but the new National Assembly did not first meet until May 4, 1848. So Bastiat's actual voting record on slavery had a particular shape. Which characterization is correct?",
     "answer": "He did not vote on the initial decree; he supported the abolition publicly and voted for its implementation",
     "choices": [
       "He did not vote on the initial decree; he supported the abolition publicly and voted for its implementation",
@@ -2900,7 +2900,7 @@
   },
   {
     "tier": 5,
-    "question": "The 2008 Bear Stearns rescue — when the US Federal Reserve backed JPMorgan Chase's fire-sale purchase of the collapsing investment bank — is now a textbook case in the Austrian School of economics. Austrians like Ludwig von Mises, Friedrich Hayek, and Murray Rothbard argue that every bailout teaches the market to expect the next one. Which recognition move does this ladder press?",
+    "question": "The 2008 Bear Stearns rescue — when the US Federal Reserve backed JPMorgan Chase's fire-sale purchase of the collapsing investment bank — is now a textbook case in the Austrian School of economics. Austrians like Ludwig von Mises, Friedrich Hayek, and Murray Rothbard argue that every bailout teaches the market to expect the next one. What lesson do they draw from the rescue?",
     "answer": "Each rescue changes the expectations for the next crisis; the sudden removal of an expected rescue can cause the panic the earlier rescue was meant to prevent",
     "choices": [
       "Each rescue changes the expectations for the next crisis; the sudden removal of an expected rescue can cause the panic the earlier rescue was meant to prevent",
@@ -2979,9 +2979,9 @@
   {
     "tier": 3,
     "question": "In July 1927 Benjamin Strong, head of the Federal Reserve Bank of New York, hosted a secret meeting on Long Island with three foreign central bankers. Days later the Fed cut its discount rate — the rate it charges when banks borrow from it — from 4% to 3.5%. The cut was meant to help Europe defend the gold standard. Which three foreign central bankers attended?",
-    "answer": "Montagu Norman of Britain, Emile Moreau of France, and Hjalmar Schacht of Germany",
+    "answer": "Montagu Norman of Britain, Charles Rist of France, and Hjalmar Schacht of Germany",
     "choices": [
-      "Montagu Norman of Britain, Emile Moreau of France, and Hjalmar Schacht of Germany",
+      "Montagu Norman of Britain, Charles Rist of France, and Hjalmar Schacht of Germany",
       "John Maynard Keynes of Britain, Rene Coty of France, and Konrad Adenauer of Germany",
       "Winston Churchill of Britain, Georges Clemenceau of France, and Otto von Bismarck of Germany",
       "Nicholas Biddle of Britain, Charles de Gaulle of France, and Otto von Habsburg of Germany"
@@ -3004,7 +3004,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1963 the American economists Milton Friedman and Anna Schwartz published 'A Monetary History of the United States, 1867-1960.' In it they argued that the Federal Reserve's 1927 interest-rate cut helped inflate the stock-market bubble that popped in the 1929 crash. In Austrian economics, what does a fake-low interest rate — one held below where savings and borrowing would naturally meet — wrongly signal to a business owner deciding whether to build a factory?",
+    "question": "In 1963 the American economist Murray Rothbard published 'America's Great Depression.' In it he argued that the Federal Reserve's 1927 interest-rate cut helped inflate the stock-market bubble that popped in the 1929 crash. In Austrian economics, what does a fake-low interest rate — one held below where savings and borrowing would naturally meet — wrongly signal to a business owner deciding whether to build a factory?",
     "answer": "That people want to save more, so long-term projects look profitable",
     "choices": [
       "That people want to save more, so long-term projects look profitable",
@@ -3043,7 +3043,7 @@
   },
   {
     "tier": 5,
-    "question": "The Strong-Norman coordination story of 1927 teaches one clear recognition move about central banks working together across borders. Which move does this ladder press?",
+    "question": "What does the Strong-Norman coordination story of 1927 show about central banks working together across borders?",
     "answer": "Coordinated easing among central banks to defend a fixed exchange rate can produce asset-price inflation in the country doing the easing, even when its own economy does not need easing",
     "choices": [
       "Coordinated easing among central banks to defend a fixed exchange rate can produce asset-price inflation in the country doing the easing, even when its own economy does not need easing",
@@ -3589,7 +3589,7 @@
   },
   {
     "tier": 4,
-    "question": "America's most famous ban of all -- the 1919-1933 Prohibition of alcohol, written into the Constitution as the 18th Amendment -- is treated by economists as the biggest real-world example of Bruce Yandle's Bootleggers-and-Baptists pattern. Two very different groups pushed together to make Prohibition happen, then benefited together while it lasted. Which two groups actually formed the Prohibition alliance?",
+    "question": "America's most famous ban of all -- the 1919-1933 Prohibition of alcohol, written into the Constitution as the 18th Amendment -- is treated by economists as the biggest real-world example of Bruce Yandle's Bootleggers-and-Baptists pattern. Two very different groups ended up on the same side: one fought for the ban, and the other grew rich from it while it lasted. Which two groups were they?",
     "answer": "Moralists and organized-crime beneficiaries",
     "choices": [
       "Moralists and organized-crime beneficiaries",
@@ -3719,7 +3719,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1983, the American economist Bruce Yandle noticed something strange: two totally different groups often lobby for the same regulation for opposite reasons. On Sunday liquor bans, churchgoing teetotalers pushed for the ban on moral grounds, while illegal liquor sellers quietly supported the same law because it killed their legal competition. In 2014, Yandle teamed up with his grandson Adam Smith to expand this insight into a book for the Cato Institute, gathering modern cases from banking, green rules, and tobacco settlement deals. What did they title it?",
+    "question": "In 1983, the American economist Bruce Yandle noticed something strange: two totally different groups often lobby for the same regulation for opposite reasons. On Sunday liquor bans, churchgoing teetotalers pushed for the ban on moral grounds, while illegal liquor sellers quietly supported the same law because it killed their legal competition. In 2014, Yandle teamed up with the economist Adam Smith to expand this insight into a book for the Cato Institute, gathering modern cases from banking, green rules, and tobacco settlement deals. What did they title it?",
     "answer": "Bootleggers and Baptists",
     "choices": [
       "Bootleggers and Baptists",
@@ -3863,9 +3863,9 @@
   {
     "tier": 5,
     "question": "The Bretton Woods system, agreed at a New Hampshire resort in 1944, pegged the US dollar to gold at 35 dollars per ounce and every other major currency to the dollar. It ran for 27 years until President Richard Nixon closed the gold window in August 1971, because the US no longer had enough gold to cover the dollars it had issued. A historian summarizing that collapse presses one specific reasoning move about what the peg's design revealed from the very start. Which move does the argument make?",
-    "answer": "That any peg that required the peg-setter to run fiscal deficits in its own currency was arithmetically doomed the moment those deficits exceeded gold reserves",
+    "answer": "That any peg that required the peg-setter to run payments deficits in its own currency was arithmetically doomed the moment those deficits exceeded gold reserves",
     "choices": [
-      "That any peg that required the peg-setter to run fiscal deficits in its own currency was arithmetically doomed the moment those deficits exceeded gold reserves",
+      "That any peg that required the peg-setter to run payments deficits in its own currency was arithmetically doomed the moment those deficits exceeded gold reserves",
       "That the peg would have held indefinitely if postwar political leaders had shown more discipline about deficit spending and had chosen to defend the peg with fiscal restraint",
       "That the peg was purely a matter of international communication and could have been sustained by careful rhetoric and coordinated central-bank statements to hold public confidence",
       "That the peg was an accidental byproduct of postwar chaos rather than a deliberately designed monetary system and had no coherent architecture to defend once challenged"
@@ -4044,7 +4044,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 2009, during the depths of the Great Recession, the US government offered to pay car dealers 3,500 or 4,500 dollars for each old, gas-guzzling car that a customer traded in for a newer, more fuel-efficient one. The dealers killed the old engine on the spot by pouring a sodium-silicate goo into it while it ran, seizing it forever. Then the whole car was crushed. What was the program called?",
+    "question": "In the summer of 2009, during the depths of the Great Recession, the US government offered to pay car dealers 3,500 or 4,500 dollars for each old, gas-guzzling car that a customer traded in for a newer, more fuel-efficient one. The dealers killed the old engine on the spot by pouring a sodium-silicate goo into it while it ran, seizing it forever. Then the whole car was crushed. What was the program called?",
     "answer": "Cash for Clunkers",
     "choices": [
       "Cash for Clunkers",
@@ -4278,7 +4278,7 @@
   },
   {
     "tier": 5,
-    "question": "Bryan Caplan is a tenured economics professor at George Mason University. Unusually for a working academic, he writes nonfiction graphic novels — full comic books drawn by illustrator Zach Weinersmith — to teach economics topics like open borders and housing policy. Scholarly writing reaches other academics and mostly stops there. What problem does the graphic-novel form solve that plain academic writing cannot?",
+    "question": "Bryan Caplan is a tenured economics professor at George Mason University. Unusually for a working academic, he writes nonfiction graphic novels — full comic books drawn by illustrators such as Zach Weinersmith — to teach economics topics like open borders and housing policy. Scholarly writing reaches other academics and mostly stops there. What problem does the graphic-novel form solve that plain academic writing cannot?",
     "answer": "Reaching general readers who do not read academic prose",
     "choices": [
       "Reaching general readers who do not read academic prose",
@@ -4538,7 +4538,7 @@
   },
   {
     "tier": 1,
-    "question": "The Nobel-winning American economist James Buchanan liked to say: 'Don't argue over who gets the ball at recess today -- sit down and write the rules for who gets the ball every day.' Buchanan built a whole field of study around choosing the rules themselves, not each single decision. What did he call the study of the rules themselves?",
+    "question": "Kids at recess can argue over who gets the ball today, or sit down and write the rules for who gets the ball every day. The Nobel-winning American economist James Buchanan built a whole field of study around choosing the rules themselves, not each single decision. What did he call the study of the rules themselves?",
     "answer": "Constitutional political economy",
     "choices": [
       "Constitutional political economy",
@@ -4694,7 +4694,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1889 the Austrian economist Eugen von Boehm-Bawerk asked why people value a loaf of bread today more than the same loaf next year. He listed three reasons: you might die before next year; your needs and tastes might change by then; and a good on hand right now can be put to work to create even more goods. He said these three reasons together explain what?",
+    "question": "In 1889 the Austrian economist Eugen von Boehm-Bawerk asked why people value a loaf of bread today more than the same loaf next year. He listed three reasons: you may be better off next year than you are now; people tend to underrate the future, since life is short and uncertain; and a good on hand right now can be put to work to create even more goods. He said these three reasons together explain what?",
     "answer": "Interest",
     "choices": [
       "Interest",
@@ -4876,7 +4876,7 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman, the American economist and later 1976 Nobel laureate, is best known for the school-voucher proposal that appears in his 1962 book 'Capitalism and Freedom.' But the voucher idea actually first appeared five years earlier, in a stand-alone essay Friedman published in 1955 inside an academic volume edited by Robert A. Solo. Which 1955 essay was that?",
+    "question": "Milton Friedman, the American economist and later 1976 Nobel laureate, made the school-voucher proposal famous in his 1962 book 'Capitalism and Freedom.' But the voucher idea actually first appeared seven years earlier, in a stand-alone essay Friedman published in 1955 inside an academic volume edited by Robert A. Solo. Which 1955 essay was that?",
     "answer": "The Role of Government in Education",
     "choices": [
       "The Role of Government in Education",
@@ -5072,9 +5072,9 @@
   {
     "tier": 3,
     "question": "In 1990 the Congressional Research Service, the nonpartisan agency that studies policy questions for the US Congress, released a report on Jimmy Carter's 1980 Crude Oil Windfall Profit Tax. The economists wanted to know one thing. What had the tax actually done to US oil production during the 1980s? Their finding surprised almost no Austrian or free-market economist. What did the report find?",
-    "answer": "Domestic production fell by roughly 3 to 6 percent and imports rose by similar amounts",
+    "answer": "Domestic production fell by roughly 3 to 6 percent and imports rose to fill the gap",
     "choices": [
-      "Domestic production fell by roughly 3 to 6 percent and imports rose by similar amounts",
+      "Domestic production fell by roughly 3 to 6 percent and imports rose to fill the gap",
       "Domestic production rose by roughly 30 percent",
       "Domestic production was unaffected either way",
       "Domestic production fell by roughly 50 percent"
@@ -6189,7 +6189,7 @@
   },
   {
     "tier": 3,
-    "question": "In September 1984, US Comptroller of the Currency Todd Conover spoke to a House banking committee about why Washington had bailed out Continental Illinois. To explain why the rescue had been necessary, he described a group of huge banks with four short words. That phrase became famous and is still used today for giant banks the government refuses to let collapse. What was the phrase?",
+    "question": "In September 1984, US Comptroller of the Currency Todd Conover told a House banking committee that regulators would not let the biggest US banks fail. Congressman Stewart McKinney answered him with four short words for that new kind of bank. That phrase became famous and is still used today for giant banks the government refuses to let collapse. What was the phrase?",
     "answer": "Too big to fail",
     "choices": [
       "Too big to fail",
@@ -6488,7 +6488,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 2004, Hurricane Frances slammed into Florida, knocking out electric power for whole counties. A Kentucky man named John Shepperson watched the news and decided to help — and to make some money. He rented a big truck, loaded it up back home in Kentucky, and drove 600 miles south to a Florida county where nothing had power. What did he load into the truck to sell?",
+    "question": "In August 2005, Hurricane Katrina slammed into Mississippi, knocking out electric power for whole counties. A Kentucky man named John Shepperson watched the news and decided to help — and to make some money. He rented a big truck, loaded it up back home in Kentucky, and drove 600 miles south to a Mississippi county where nothing had power. What did he load into the truck to sell?",
     "answer": "19 generators",
     "choices": [
       "19 generators",
@@ -6501,7 +6501,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1996 Hurricane Fran knocked out power across the American South. John Shepperson, a Kentucky man, saw the news, bought 19 electric generators, rented a truck, and drove them into the disaster zone. He offered them for sale at about double what he had paid — enough to cover his costs, his time, and his risk in making the trip. But local 'anti-price-gouging' laws forbid selling at unfairly high prices during an emergency. What happened to Shepperson?",
+    "question": "In 2005 Hurricane Katrina cut power across the American South. John Shepperson, a Kentucky man, saw the news, bought 19 electric generators, rented a truck, and drove them into the disaster zone. He offered them for sale at about double what he had paid — enough to cover his costs, his time, and his risk in making the trip. But local 'anti-price-gouging' laws forbid selling at unfairly high prices during an emergency. What happened to Shepperson?",
     "answer": "He was arrested and the generators were confiscated",
     "choices": [
       "He was arrested and the generators were confiscated",
@@ -6553,7 +6553,7 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Sowell is an American economist, born in 1930, whose textbook Basic Economics is read in classrooms around the world. In that book, Sowell tells the story of John Shepperson — the Kentucky man arrested for selling hurricane-relief generators at about double his cost. Sowell uses the case to point at a deeper mistake he says every anti-price-gouging law commits. In his framing, what is the reasoning error at the heart of those laws?",
+    "question": "Thomas Sowell is an American economist, born in 1930, whose textbook Basic Economics is read in classrooms around the world. Sowell has long written against the anti-price-gouging laws that jailed sellers like John Shepperson, the Kentucky man arrested for selling hurricane-relief generators at about double his cost. He points at a deeper mistake he says every such law commits. In his framing, what is the reasoning error at the heart of those laws?",
     "answer": "They mistake a price signal for a moral offense",
     "choices": [
       "They mistake a price signal for a moral offense",
@@ -6775,10 +6775,10 @@
   {
     "tier": 4,
     "question": "A high-school student asks a Mises-influenced economist why Cuba's caloric collapse of 1990 to 1993 is such a useful case for judging central planning. When the Soviet Union fell in 1991, its billion-dollar-a-year food and oil subsidy to Cuba disappeared almost overnight, and Cuban calorie intake crashed from about 3,000 down to 1,900 a day. The analyst points to one specific feature that makes this a rare natural experiment. Which feature?",
-    "answer": "The Soviet subsidy simply vanished while everything else (planning apparatus, US embargo, weather) stayed constant",
+    "answer": "The Soviet subsidy simply vanished while the planning apparatus, the old US embargo and the weather stayed the same",
     "choices": [
-      "The Soviet subsidy simply vanished while everything else (planning apparatus, US embargo, weather) stayed constant",
-      "The US Congress passed a new embargo law timed to the Soviet collapse",
+      "The Soviet subsidy simply vanished while the planning apparatus, the old US embargo and the weather stayed the same",
+      "Cuba abolished central planning in the same year",
       "A drought and locust plague coincided with the Soviet withdrawal",
       "Cuba's rainfall changed dramatically during the period"
     ],
@@ -6839,7 +6839,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1990s, a Dutch cryptographer named David Chaum built the first electronic cash system for the internet, called DigiCash. The math behind it was brilliant — payments were private and very hard to forge. But by 1998, DigiCash the company went bankrupt. The cypherpunk movement saw one deep design flaw in Chaum's system that they would spend the next decade trying to fix. What was that flaw?",
+    "question": "In the 1990s, an American cryptographer named David Chaum built the first electronic cash system for the internet, called DigiCash. The math behind it was brilliant — payments were private and very hard to forge. But by 1998, DigiCash the company went bankrupt. The cypherpunk movement saw one deep design flaw in Chaum's system that they would spend the next decade trying to fix. What was that flaw?",
     "answer": "the system required a trusted bank to issue and back the coins",
     "choices": [
       "the system required a trusted bank to issue and back the coins",
@@ -6904,7 +6904,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1990 the American cryptographer David Chaum founded DigiCash, one of the earliest digital-money companies. His system used clever math to let people spend digital coins privately, but every coin was issued by Chaum's own company. When DigiCash went bankrupt in 1998, every user's money froze. In 2008 an anonymous author called Satoshi Nakamoto published the Bitcoin paper. One close reader argues Satoshi did not merely improve DigiCash -- he removed the one piece that had killed it. What did Bitcoin design out that DigiCash could not survive without?",
+    "question": "In 1989 the American cryptographer David Chaum founded DigiCash, one of the earliest digital-money companies. His system used clever math to let people spend digital coins privately, but every coin had to be issued by a trusted company and its partner bank. When DigiCash went bankrupt in 1998, its coins died with it. In 2008 an anonymous author called Satoshi Nakamoto published the Bitcoin paper. One close reader argues Satoshi did not merely improve DigiCash -- he removed the one piece that had killed it. What did Bitcoin design out that DigiCash could not survive without?",
     "answer": "the trusted issuer whose bankruptcy could freeze the currency",
     "choices": [
       "the trusted issuer whose bankruptcy could freeze the currency",
@@ -7073,13 +7073,13 @@
   },
   {
     "tier": 3,
-    "question": "During the 1931 House of Representatives debate on the Davis-Bacon Act -- the federal law requiring union-scale wages on government construction -- Congressman Robert Bacon of New York, the bill's co-sponsor, spelled out his explicit motive for excluding lower-wage migrant workers from federal building sites. His words later became infamous in histories of the law. Which line did Bacon speak on the House floor?",
-    "answer": "Colored labor is being brought in to demoralize wage rates",
+    "question": "During the 1931 House of Representatives debate on the Davis-Bacon Act -- the federal law requiring union-scale wages on government construction -- Congressman Miles Allgood of Alabama rose to support the bill. He told the House about a contractor from his own state who had won a federal building job in New York. His words later became infamous in histories of the law. What did Allgood say the contractor had brought north with him?",
+    "answer": "Cheap colored labor, in competition with white labor",
     "choices": [
-      "Colored labor is being brought in to demoralize wage rates",
-      "The southern states must build their own hospitals",
-      "Union labor is the only safe federal contractor",
-      "Immigration must be halted for national security"
+      "Cheap colored labor, in competition with white labor",
+      "Steel girders shipped in from Germany",
+      "Machines that put carpenters out of work",
+      "Union crews hired away from Chicago"
     ],
     "context": "Bacon's 1931 House-floor statement is on the Congressional Record; the racial-exclusion motive was overt, and the Act retains that exclusionary effect even after the framing was dropped. Source: grokipedia.com/page/Davis%E2%80%93Bacon_Act_of_1931.",
     "topic": "davis-bacon-and-prevailing-wages-paid-to-stand-idle"
@@ -7723,7 +7723,7 @@
   },
   {
     "tier": 5,
-    "question": "Bitcoin, the digital currency launched in 2009 by the anonymous programmer Satoshi Nakamoto, was built to run without any government or bank. Its defenders, like the Lebanese economist Saifedean Ammous, point to Friedrich Hayek's 1976 book The Denationalisation of Money as the grandfather of the project — competing currencies keeping each other honest. But Bitcoin uses one engineering trick Hayek could not have used in 1976. Which trick?",
+    "question": "Bitcoin, the digital currency launched in 2009 by the anonymous programmer Satoshi Nakamoto, was built to run without any government or bank. Its defenders, like the Palestinian economist Saifedean Ammous, point to Friedrich Hayek's 1976 book The Denationalisation of Money as the grandfather of the project — competing currencies keeping each other honest. But Bitcoin uses one engineering trick Hayek could not have used in 1976. Which trick?",
     "answer": "A cryptographically fixed supply schedule that no issuer can debase",
     "choices": [
       "A cryptographically fixed supply schedule that no issuer can debase",
@@ -8048,7 +8048,7 @@
   },
   {
     "tier": 4,
-    "question": "The American economists Murray Rothbard and Thomas Sowell, both writing in the Austrian tradition of Ludwig von Mises and Friedrich Hayek, treat the Roman emperor Diocletian's 301 AD price edict as the founding case of one specific reasoning error that governments keep repeating across the centuries. What is that error?",
+    "question": "The American economists Murray Rothbard and Thomas Sowell, both free-market writers, treat the Roman emperor Diocletian's 301 AD price edict as the founding case of one specific reasoning error that governments keep repeating across the centuries. What is that error?",
     "answer": "Blame merchants for the price rises the government's own currency debasement caused",
     "choices": [
       "Blame merchants for the price rises the government's own currency debasement caused",
@@ -8269,7 +8269,7 @@
   },
   {
     "tier": 4,
-    "question": "After the American housing crash of 2007-08, economists asked whether the Federal Reserve's low interest rates from 2001 to 2004 had helped fuel the subprime mortgage boom. At the Boston branch of the Fed, two staff economists dug into the loan data and wrote an internal paper documenting that link. Which two Boston Fed researchers produced it?",
+    "question": "After the American housing crash of 2007-08, economists asked what had fueled the subprime mortgage boom. At the Boston branch of the Fed, two staff economists dug into the loan data and argued that it grew mainly out of a widespread belief that house prices would keep rising. Which two Boston Fed researchers made that case?",
     "answer": "Paul Willen and Kristopher Gerardi",
     "choices": [
       "Paul Willen and Kristopher Gerardi",
@@ -8282,7 +8282,7 @@
   },
   {
     "tier": 5,
-    "question": "Between 2000 and 2008 the American Federal Reserve, led first by Alan Greenspan and then by Ben Bernanke, ran through two full boom-bust cycles. When the dot-com stock bubble burst in 2000, the Fed slashed interest rates to fight the downturn — and the cheap money helped inflate a housing bubble that collapsed spectacularly in 2008, taking Lehman Brothers and much of Wall Street with it. Austrian-school economists press one specific recognition move about what this whole sequence teaches about Fed reaction functions and future crises. Which move does the ladder press?",
+    "question": "Between 2000 and 2008 the American Federal Reserve, led first by Alan Greenspan and then by Ben Bernanke, ran through two full boom-bust cycles. When the dot-com stock bubble burst in 2000, the Fed slashed interest rates to fight the downturn — and the cheap money helped inflate a housing bubble that collapsed spectacularly in 2008, taking Lehman Brothers and much of Wall Street with it. Austrian-school economists draw one lesson from this whole sequence about how the Fed reacts to crises. What is it?",
     "answer": "The Fed's monetary response to a bust plants the seeds of the next bust; there is no exit from the cycle without accepting the liquidation the theory requires",
     "choices": [
       "The Fed's monetary response to a bust plants the seeds of the next bust; there is no exit from the cycle without accepting the liquidation the theory requires",
@@ -8360,7 +8360,7 @@
   },
   {
     "tier": 3,
-    "question": "In communist East Germany, one state-owned company built every car — the little Trabant, made at the Zwickau plant. No private rival was allowed to enter the market. The same basic two-stroke engine kept rolling off the line for 34 years, from 1957 into 1991. Why did the maker never bother to improve the design?",
+    "question": "In communist East Germany, one state-owned company built every car — the little Trabant, made at the Zwickau plant. No private rival was allowed to enter the market. The same basic two-stroke design kept rolling off the line for more than thirty years, from 1957 until 1990. Why did the maker never bother to improve the design?",
     "answer": "No competitive pressure to redesign since no rival could enter the market",
     "choices": [
       "No competitive pressure to redesign since no rival could enter the market",
@@ -8399,7 +8399,7 @@
   },
   {
     "tier": 4,
-    "question": "In communist East Germany, the only car most families could buy was the Trabant, made by a single state-run factory. Buying one meant putting your name on a waiting list — and then waiting ten years, sometimes fifteen. The car itself barely changed in design from 1957 to 1990: the same tiny cardboard-plastic body, the same smoky two-stroke engine, decade after decade. What causes this pattern in a state-run economy?",
+    "question": "In communist East Germany, the only car most families could buy was the Trabant, made by a single state-run factory. Buying one meant putting your name on a waiting list — and then waiting ten years, sometimes fifteen. The car itself barely changed in design from 1957 to 1990: the same tiny plastic-and-cotton body, the same smoky two-stroke engine, decade after decade. What causes this pattern in a state-run economy?",
     "answer": "No competing makers, so no reason to build more or improve",
     "choices": [
       "No competing makers, so no reason to build more or improve",
@@ -8776,7 +8776,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 2021, El Salvador's president Nayib Bukele flew to Miami, Florida to speak at a huge gathering of Bitcoin fans and developers. On stage, he shocked the crowd by announcing that El Salvador would make Bitcoin legal money in his country. What was the Miami conference called?",
+    "question": "In June 2021, El Salvador's president Nayib Bukele sent a video message to a huge gathering of Bitcoin fans and developers in Miami, Florida. On the big screen, he shocked the crowd by announcing that El Salvador would make Bitcoin legal money in his country. What was the Miami conference called?",
     "answer": "Bitcoin 2021",
     "choices": [
       "Bitcoin 2021",
@@ -14457,7 +14457,7 @@
   },
   {
     "tier": 5,
-    "question": "Jeff Booth, the Canadian author of The Price of Tomorrow, is one of three thinkers regularly interviewed together as the leading voices of modern Bitcoin monetary theory. One co-voice is a Virginia-born software executive who converted his public company's treasury reserves entirely into Bitcoin. The other is a Lebanese economist who wrote The Bitcoin Standard, teaching sound-money history through the lens of the twenty-one-million cap. Who are the other two figures in that trio?",
+    "question": "Jeff Booth, the Canadian author of The Price of Tomorrow, is one of three thinkers regularly interviewed together as the leading voices of modern Bitcoin monetary theory. One co-voice is a Virginia-born software executive who converted his public company's treasury reserves entirely into Bitcoin. The other is a Palestinian economist who wrote The Bitcoin Standard, teaching sound-money history through the lens of the twenty-one-million cap. Who are the other two figures in that trio?",
     "answer": "Michael Saylor and Saifedean Ammous",
     "choices": [
       "Michael Saylor and Saifedean Ammous",
