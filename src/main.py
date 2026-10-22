@@ -256,11 +256,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # di Ser Piero da Vinci"), however it was typed; every lookup
         # lowercases it again. Small words and name particles stay lower case.
         if secret_build:
-            from naming import proper_name
-            _words = proper_name(' '.join(player_name.lower().split())).split(' ')
-            player_name = ' '.join(
-                w.lower() if i > 0 and w.lower() in ('di', 'da', 'de', 'von', 'van', 'der') else w
-                for i, w in enumerate(_words))
+            from naming import hero_name
+            player_name = hero_name(player_name, secret_build)
         self.player_name   = player_name
         self.secret_build  = secret_build   # dict of stat overrides, or None
         self._resize_grace = 0
@@ -9156,6 +9153,12 @@ def main():
         # and an explicit "exit without saving" deletes it too. Deleting on load —
         # before load_state was known to have succeeded — is what silently
         # destroyed progress when a restore only partially took.
+        # Look the save up by the name the hero is stored under: a secret
+        # build typed in lower case ("fianna") is saved as "Fianna", and save
+        # files are named case-sensitively. Looking up the raw text missed
+        # the save, started a new hero and autosaved over it (v3.2.0).
+        from naming import hero_name
+        player_name = hero_name(player_name, secret_build)
         state = None
         if save_exists(player_name):
             state = load_game(player_name)

@@ -87,3 +87,26 @@ class ProperNameAttr:
 
     def __set__(self, obj, value):
         obj.__dict__[self.key] = proper_name(value)
+
+
+_NAME_PARTICLES = ('di', 'da', 'de', 'von', 'van', 'der')
+
+
+def hero_name(name: str, secret_build: dict | None = None) -> str:
+    """The name a hero is stored and saved under.
+
+    A secret build's name is shown as a name ("Achilles Son of Peleus",
+    "Leonardo di Ser Piero da Vinci") however it was typed; small words and
+    name particles stay lower case. Any other name is kept exactly as typed.
+
+    Save files are named case-sensitively ("Bob" and "bob" are two heroes),
+    so the title screen MUST look a save up by this name, not by the raw
+    typed text: typing "fianna" once looked for save_fianna.pkl, missed the
+    real save_+fianna.pkl, started a new Fianna and autosaved over the old
+    one (v3.2.0)."""
+    name = (name or '').strip()
+    if not secret_build:
+        return name
+    words = proper_name(' '.join(name.lower().split())).split(' ')
+    return ' '.join(w.lower() if i > 0 and w.lower() in _NAME_PARTICLES else w
+                    for i, w in enumerate(words))

@@ -460,6 +460,18 @@ class WelcomeScreen:
         surf.blit(rune_surf, (0, 0))
         return surf
 
+    def _save_name(self) -> str:
+        """The name the typed hero's save is stored under (a secret build's
+        name is saved in proper case however it is typed)."""
+        from naming import hero_name
+        import os
+        typed = self.name_buf.strip()
+        build = SECRET_BUILDS.get(typed.lower())
+        if build and build.get('_qa_tools') and not (
+                os.environ.get('PQ_QA_MODE') == '1' or '--qa' in sys.argv):
+            build = None          # a QA build is a plain name outside QA mode
+        return hero_name(typed, build)
+
     def run(self, clock: pygame.time.Clock) -> tuple[str, dict | None]:
         """Returns (name, build). If a save exists for name, main() will load it."""
         from save_system import save_exists
@@ -475,7 +487,7 @@ class WelcomeScreen:
                 self._delete_flash = max(0.0, self._delete_flash - dt)
 
             # Update save-exists hint for whatever name is currently typed
-            self._has_save = save_exists(self.name_buf.strip()) if self.name_buf.strip() else False
+            self._has_save = save_exists(self._save_name()) if self.name_buf.strip() else False
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -545,7 +557,7 @@ class WelcomeScreen:
                             build = None
                         return name, build
                     elif event.key == pygame.K_DELETE and self._has_save:
-                        self._confirm_delete = self.name_buf.strip()
+                        self._confirm_delete = self._save_name()
                     elif event.key == pygame.K_BACKSPACE:
                         self.name_buf = self.name_buf[:-1]
                     elif event.key == pygame.K_ESCAPE:
@@ -561,7 +573,7 @@ class WelcomeScreen:
 
             # The saved-journey cue follows the name typed THIS frame (it was
             # computed before the frame's key events, one frame behind).
-            self._has_save = save_exists(self.name_buf.strip()) if self.name_buf.strip() else False
+            self._has_save = save_exists(self._save_name()) if self.name_buf.strip() else False
             self._draw()
             pygame.display.flip()
 
