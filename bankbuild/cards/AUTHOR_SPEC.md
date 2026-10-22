@@ -103,3 +103,11 @@ Every question hash in the ladder must appear in `teaches`.
 - Retold anecdotes keep their story framing (Loewi's dream, Dalton's stockings, "eppur si muove").
 - Stance topics (vaccine injury law, eugenics, the WEF) attribute claims to the people who made them.
 - The gate splits sentences at every ". ", so a name with initials ("H. O. Albrecht") can cut a teaches sentence in half: check that every teaches entry is a whole sentence.
+
+## Notes from the economics writers
+- Titles and names of six or more words that the stems repeat can't be written in full: use the original-language title or a short form ("the New York Fed", "the Second Bank").
+- A long title that is a distractor (often a sister rung's key) can't be named at all: describe the work instead.
+- A capitalised one-word number choice ("Two", "Fifty") counts if the word appears anywhere, and "35%" matches "35 percent".
+- Abbreviations and initials ("v.", "A.W. Phillips") split teaching sentences: keep them out of teaches entries.
+- Credit a school's verdict to the school ("in the Austrian reading"); on lean topics follow the config; on contested empirical claims outside the lean list, attribute and mark disputed.
+- Many economics contexts were written for a different question: teach from the stem plus the key and check figures against sister ladders.
