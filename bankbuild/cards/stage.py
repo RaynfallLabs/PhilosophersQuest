@@ -162,6 +162,8 @@ def check(subject: str, changes: list[dict]) -> int:
     leaked = _test_helper('test_answer_leak.py', '_leaked_bigrams')
     prints_answer = _test_helper('test_answer_leak.py', '_answer_in_stem')
     parity = _test_helper('test_choice_length_parity.py', 'RATIO_THRESHOLD')
+    ratio_answer = _test_helper('test_magpick_wonder_pattern.py', 'is_ratio_answer')
+    magnitude_stem = _test_helper('test_magpick_wonder_pattern.py', 'is_magnitude_stem')
     dup_index = build_duplicate_index(bank)
     ans_index = build_answer_collision_index(bank)
 
@@ -198,6 +200,9 @@ def check(subject: str, changes: list[dict]) -> int:
             problems.append(f'{tag}: the stem leaks the answer: {leaked(q)}')
         if prints_answer(q):
             problems.append(f'{tag}: the stem prints its own answer')
+        if ratio_answer(str(q.get('answer', ''))) and magnitude_stem(q['question']):
+            problems.append(f'{tag}: a bare number answers a "how much / what percentage" stem '
+                            '(Wonder Pattern 4: key a named thing, or let the stem build the number)')
         lens = [len(c) for c in q.get('choices') or []]
         if lens and min(lens) and max(lens) / min(lens) > parity:
             problems.append(f'{tag}: choice lengths {lens} are too uneven (longest over '
