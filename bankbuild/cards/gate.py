@@ -27,7 +27,10 @@ AUTHOR_VOICE = (
     'this ladder', 'ladder passes', 'the ladder you', 'sub-strand', 'geek-dad',
     'spoiler-ok', 'stance doc', 'no verdict crowned', 'the kid should', 'this topic',
     'the topic walks', 'the questions below', 'the project treats', "the bank's rule",
-    'this entry', 'this card', 'the card ',
+    'this entry', 'this card',
+    # "the card " alone was too broad: it fired on a grammar card's own sentence
+    # "leave the card table" (2026-10-22). Match the author's voice, not the noun.
+    'the card says', 'the card teaches', 'the card above', 'the card below',
 )
 JARGON = re.compile(
     r"\b(distractors?|keyed answer|this rung|each rung|this ladder|the stem|"

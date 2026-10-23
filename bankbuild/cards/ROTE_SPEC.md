@@ -78,3 +78,24 @@ py -m bankbuild.cards.rote merge <subject> <batch> [<batch> ...]
 Write `_cards/<subject>/bNNN_cards.json` and run the gate until the batch is
 clean. Log any error you find in the **questions** themselves; do not edit
 question data.
+
+## Notes from the grammar writers (b001-b003)
+
+- The keyed-answer rule bites hardest on **mnemonic and list** answers, not on
+  example sentences. Keys like "Remember Affect Verb Effect Noun" or "for, and,
+  nor, but, or, yet, so" are exactly what a card has to teach. Keep the content
+  and break the sequence: reorder the list, or slip a word in ("for, and, nor,
+  but, or, yet AND so"). Only the word ORDER protects you, since the comparison
+  folds dashes and punctuation to spaces.
+- A grammar key is often a short word plus a parenthetical gloss ("is
+  (collective noun treated as singular)"), which clears four words even though
+  the word itself is unavoidable. Printing the answer WORD is fine; it is the
+  gloss, verbatim and in order, that trips the gate. Say it in your own words.
+- The misuse goes IN the card, and that is what makes it stick: "bare with me",
+  "The cat's are everywhere", "While eating the cat watched television". Writing
+  only the correct version produces a flat card.
+- 150-180 words with one three-sentence worked example at the end sits
+  comfortably inside the window every time.
+- Some grammar topics are near-duplicates of each other. Write each from a
+  genuinely different angle (rule-first for one, usage-drift or a count/mass
+  test for the other) or they read as copies in the C-key panel.
