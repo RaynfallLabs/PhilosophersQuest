@@ -6,7 +6,8 @@
 A card FAILS when it:
   * is shorter than its minimum or longer than 750 words;
   * shares a run of 6 or more words with any stem in its ladder;
-  * contains a whole choice string of more than 4 words (keyed or not);
+  * contains a whole choice string of more than 4 words that is NOT the
+    keyed answer (a keyed answer may stand whole: the card teaches it);
   * names 2 or more of one question's pure distractors (choices that are
     not the keyed answer of any question in the ladder);
   * carries "Source:", a URL, author notes, or quiz jargon;
@@ -59,12 +60,6 @@ def _sentence_ngrams(text: str, n: int) -> set[tuple]:
     for part in re.split(r'(?<=[.!?])\s+|\n+', text):
         out |= _ngrams(words(part), n)
     return out
-
-
-def _is_name(choice: str) -> bool:
-    """Mostly capitalised words: a proper name or a title."""
-    ws = [w for w in re.findall(r"[^\W\d_][\w'’-]*", choice) if len(w) > 3]
-    return bool(ws) and sum(w[0].isupper() for w in ws) * 2 >= len(ws)
 
 
 def _everyday_word(choice: str) -> bool:
@@ -122,9 +117,13 @@ def check_card(pkt: dict, card: dict) -> list[str]:
         toured = []
         for ch in q['choices']:
             if (len(ch.split()) > 4 and _contains(hay, ch)
-                    and not (norm(ch) in keyed and _is_name(ch))):
-                # A keyed proper name or title ("the Great Pyramid of Giza")
-                # is the fact itself and may stand whole.
+                    and norm(ch) not in keyed):
+                # A KEYED answer may stand whole, whatever its length: it is the
+                # fact the card exists to teach. (Until 2026-10-22 this exemption
+                # reached only keyed proper names, a leftover from the pre-reversal
+                # rule when a card had to HIDE its answers. A long keyed phrase
+                # like "There are no solutions, only trade-offs" was failing for
+                # doing exactly what the teaching card is for.)
                 errs.append(f'{h}: contains a whole choice (>4 words): "{ch}"')
             elif len(words(ch)) > 6 and norm(ch) not in keyed:
                 # A distractor's phrasing must not leak into the card (a
