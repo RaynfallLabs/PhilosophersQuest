@@ -126,3 +126,19 @@ What you are seeing is the Windows console re-decoding your own dump. Set
 `PYTHONIOENCODING=utf-8` before printing, or write the dump to a file and read
 that. Never rewrite a question file to "fix" characters: a sweep based on a bad
 dump would corrupt text that was correct.
+
+## Self-check your teaches mapping points at the RIGHT sentence
+The gate checks that a `teaches` sentence appears in the card word for word. It
+cannot check that the sentence is the one carrying that question's key, and an
+economics writer found 15 of its own entries pointing at the sentence *before*
+the one with the answer (worst case: the 1998 lobbying total instead of the 2023
+one). Run your own overlap check before you finish: for each entry, does the
+sentence share real content with the keyed answer? Fix the ones that do not.
+
+This is an authoring check, not a gate rule. Measured across all 23,758 merged
+entries it flags 1.77%, and most of those are inflection or paraphrase ("An
+electrocyte" against "electrocytes", "A cobra" against "cobra's", a key fully
+reworded in the card's own voice), so as a hard rule it would block good cards.
+Coverage still holds in those cases because the card as a whole teaches the
+fact; what suffers is the one-line "Remember" prompt the player sees after a
+wrong answer, which is why it is worth getting right.
