@@ -158,3 +158,44 @@ So: when a stem or context puts words in a real person's mouth, treat it as
 suspect until the input itself quotes them. If you cannot source it, teach the
 substance without the quotation and log the stem as MUST-FIX. Never carry an
 unsourced quotation into a card, and never invent one to make a card read well.
+
+## Notes from the AI writers (b001-b003)
+
+- AI ladders are the most duplicated of any subject so far. b002's chatbot-verification
+  has 33 questions and maybe 18 distinct facts; llms-how-they-work (b003) has 43
+  questions and about 24. Plan the card as a list of DISTINCT facts first, then point
+  several hashes at one sentence. Four and even eight hashes on a single teaching
+  sentence is normal here and the gate accepts it. Without that merging the big ladders
+  cannot fit the 750-word cap.
+
+- The 750-word cap is the binding constraint, not the minimum. For any ladder over
+  about 20 questions, write terse: one fact per sentence, ~30 words, and keep the
+  opening to 35-45 words rather than the usual 60-70. ai-regulation (27 q) and
+  llms-how-they-work (43 q) both needed two rounds of trimming.
+
+- The keyed answers themselves often copy their own stem's wording, and the gate's
+  stem-copy check has NO keyed-answer exemption. Several keys cannot be written out
+  whole: "The platform tracks your behavior and sells access...", "employees have a
+  right to know when AI is being used to evaluate or monitor them", "Geoffrey Hinton,
+  with students Alex Krizhevsky and Ilya Sutskever". Paraphrase the key, keep its
+  distinctive nouns, and check the self-check overlap afterwards.
+
+- Company and product name lists are the single biggest source of stem copies: "DALL-E
+  from OpenAI, Midjourney from...", "OpenAI, Anthropic, Google, Meta, and Microsoft",
+  "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton", "Elon Musk, Steve Wozniak,
+  Yoshua Bengio". Reorder every list (possessive form helps: "OpenAI's DALL-E") and
+  never reuse a stem's order.
+
+- Dates and recurring set phrases cause the rest: "released in late 2024", "in front of
+  his wife and daughters", "a data scientist in New Zealand", "100 million users in two
+  months", "medical schools should stop training radiologists", "Sam Altman flew to
+  Saudi Arabia and the United Arab Emirates". Move the date, change the subject, or
+  spell the number in words.
+
+- Stance: the subject doc's line held up well. State measured findings plainly and
+  attribute them (Rozado's political-orientation studies, the Gemini tuning, the
+  regulatory-capture reading of licensing proposals, the Haugen documents), name the
+  critics on the other side (Odgers on teen mental health, the open-weights defenders
+  on misuse), and keep "doomer" and "techno-utopian" out of the card's own voice. The
+  cards for ai-doomerism, e-acc, gemini-image-generator and fine-tuning-and-rlhf are
+  the models to copy.
