@@ -79,7 +79,7 @@ PERSON / SCENE / DETAIL → STORY → WONDER. Lead with a named thing — a movi
 
 ### Story beats OK, spoilers banned
 
-- OK: *"In the opening scene of the 1987 film *The Princess Bride*, a young Fred Savage is seen playing a baseball video game on a Commodore Amiga personal computer. What game?"* (Hardball II — production trivia, scene reference, no spoiler)
+- OK: *"In the opening scene of the 1987 film *The Princess Bride*, a young Fred Savage is seen playing a baseball video game on a Commodore Amiga personal computer. What game?"* (Hardball! -- production trivia, scene reference, no spoiler; NOT Hardball II, which is a 1989 sequel and postdates the 1986 shoot)
 - BANNED: *"At the end of *The Princess Bride*, what happens to Westley?"* (spoils the ending)
 
 ### "Make them want to seek it out"
@@ -137,5 +137,5 @@ Every question should leave the player intrigued enough to GO watch/read/play th
 - A T2 makes them hear "Akira" and learn it came out in 1988
 - A T3 makes them hear "Conan" and learn Robert E. Howard wrote him from a Texas farmhouse in 1932
 - A T4 makes them hear "Donkey Kong kill screen" and learn it's level 22 (256)
-- A T5 makes them hear "the Princess Bride opening shot" and learn the boy is playing Hardball II on an Amiga
+- A T5 makes them hear "the Princess Bride opening shot" and learn the boy is playing Hardball! on an Amiga
 - **Kids leave wanting to watch *Akira*, watch *King of Kong*, read Howard's Conan stories, find the original *Princess Bride*, dig up *Captain N* episodes on YouTube, and explore the deep cuts their dad loves.**

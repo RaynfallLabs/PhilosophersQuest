@@ -1132,11 +1132,11 @@
   },
   {
     "tier": 3,
-    "question": "The 2001 Mariners won 116 games but lost the American League Championship Series (ALCS) to the New York Yankees 4 games to 1. The previous Mariners postseason loss had also come at the hands of the Yankees, in the 1995 ALCS — wait, no, the 1995 ALCS was vs Cleveland. Which team eliminated the Mariners from the 2000 ALCS?",
-    "answer": "The Yankees, who beat Seattle 4-2",
+    "question": "The 2001 Mariners won 116 games but lost the American League Championship Series (ALCS) to the New York Yankees 4 games to 1. The Mariners had reached the ALCS once before, in 1995. Which team eliminated the Mariners from the 2000 ALCS?",
+    "answer": "The Indians, who beat Seattle 4-2",
     "choices": [
-      "The Yankees, who beat Seattle 4-2",
-      "The Indians, in a 4-2 series",
+      "The Indians, who beat Seattle 4-2",
+      "The Orioles, in a 4-2 series",
       "The Athletics, in a 4-3 series",
       "The Red Sox, in a 4-1 series"
     ],
@@ -2992,9 +2992,9 @@
   {
     "tier": 4,
     "question": "Yoshiyuki Sadamoto is the Japanese artist who designed the characters for Neon Genesis Evangelion — the famous giant-robot anime series directed by Hideaki Anno at Studio Gainax, which first aired on Japanese television in 1995. Sadamoto had helped found Gainax back in 1981. When the anime series ended in 1996, he began drawing his own manga version of the same story. He worked on the manga slowly, in between other projects, over many years. How long did the manga take him to finish?",
-    "answer": "Roughly fourteen years, finishing in June 2013",
+    "answer": "Roughly seventeen years, finishing in June 2013",
     "choices": [
-      "Roughly fourteen years, finishing in June 2013",
+      "Roughly seventeen years, finishing in June 2013",
       "Roughly seven years, finishing in late 2003",
       "Roughly twenty-one years, finishing in 2017",
       "Roughly three years, finishing in 1999"
@@ -3382,10 +3382,10 @@
   {
     "tier": 5,
     "question": "Naoko Takeuchi's 1990s manga and anime Sailor Moon follows Tokyo teen girls who transform into planet-named magical warriors. When the American company DIC Entertainment dubbed the show for English TV starting in 1995, it cut about six episodes and renamed most of the cast. It also rewrote one of the Japanese show's queer storylines to hide the romance from young viewers. Which change did DIC make?",
-    "answer": "Two of the Sailor Starlights were rewritten as cisgender female cousins",
+    "answer": "Sailor Uranus and Sailor Neptune were rewritten as cousins",
     "choices": [
-      "Two of the Sailor Starlights were rewritten as cisgender female cousins",
-      "Sailor Uranus and Sailor Neptune were rewritten as platonic cousins",
+      "Sailor Uranus and Sailor Neptune were rewritten as cousins",
+      "Sailor Mars and Sailor Jupiter were rewritten as platonic cousins",
       "Zoisite was rewritten from a male villain into a female villain",
       "Sailor Saturn was rewritten as an unrelated cosmic entity rather than reborn Setsuna"
     ],
@@ -3810,7 +3810,7 @@
   },
   {
     "tier": 2,
-    "question": "My Hero Academia is set in a Japan where almost everyone has a superpower called a Quirk. It follows Class 1-A at a school for young heroes. One student can freeze things with his right side and burn things with his left. He has a large burn scar over his left eye given to him by his cruel father, the Number Two Hero Endeavor, who forced him to train nonstop as a small child. Name him.",
+    "question": "My Hero Academia is set in a Japan where almost everyone has a superpower called a Quirk. It follows Class 1-A at a school for young heroes. One student can freeze things with his right side and burn things with his left. He has a large burn scar over his left eye, and his father, the Number Two Hero Endeavor, forced him to train nonstop as a small child. Name him.",
     "answer": "Shoto Todoroki",
     "choices": [
       "Shoto Todoroki",
@@ -4552,9 +4552,9 @@
   {
     "tier": 4,
     "question": "In Kohei Horikoshi's manga My Hero Academia, the underground hero Eraserhead can cancel other people's Quirks — the superpowers people are born with — just by staring at them. He is the strict homeroom teacher of Class 1-A, where the hero Izuku Midoriya trains. Eraserhead's civilian name is a hidden Japanese-word pun that points directly to what he does in a fight. What everyday object does the pun in his name point to?",
-    "answer": "His name Shota Aizawa contains 'aizawa' (a play on 'eraser' (keshigomu) and his quirk's nature)",
+    "answer": "His given name Shota is written with the kanji for 'erase'",
     "choices": [
-      "His name Shota Aizawa contains 'aizawa' (a play on 'eraser' (keshigomu) and his quirk's nature)",
+      "His given name Shota is written with the kanji for 'erase'",
       "His name Shoto Aizawa intentionally rhymes with his Boku no Hero predecessor",
       "His name Shota Aizawa was a pre-existing villain from My Hero Academia: Vigilantes",
       "His name Shota Aizawa shares kanji with 'eraser-headed Buddhist saint'"
@@ -4694,7 +4694,7 @@
   },
   {
     "tier": 4,
-    "question": "Shuichi Shigeno's Initial D ended in July 2013 after about 18 years of serial runs. Takumi's final race is against a rival driver named Shinji Inui, who drives a white-jerseyed mid-engine turbo car. The finish is famously bittersweet, not a clean win. Where is the final race held?",
+    "question": "Shuichi Shigeno's Initial D ended in July 2013 after about 18 years of serial runs. Takumi's final race is against a rival driver named Shinji Inui, who drives an AE86 of his own. The finish is famously bittersweet, not a clean win. Where is the final race held?",
     "answer": "Mt. Akagi, in Project D's hometown-circuit conclusion",
     "choices": [
       "Mt. Akagi, in Project D's hometown-circuit conclusion",
@@ -4811,10 +4811,10 @@
   },
   {
     "tier": 4,
-    "question": "In Hirohiko Araki's manga JoJo's Bizarre Adventure, characters fight with 'Stands' — invisible spirit fighters that only other Stand users can see. Araki, a lifelong rock fan, named nearly every Stand after a song, band, or album. That's a nightmare for the anime studio David Production, which has to rename or blur them for streaming rights. In Part 3, the vampire villain Dio Brando wields a Stand called 'The World' that can stop time itself. What kind of musical thing is 'The World' named after?",
-    "answer": "The 1987 album 'The World' by The Tygers of Pan Tang (later changed to 'Za Warudo' in some translations)",
+    "question": "In Hirohiko Araki's manga JoJo's Bizarre Adventure, characters fight with 'Stands' — invisible spirit fighters that only other Stand users can see. Araki, a lifelong rock fan, named nearly every Stand after a song, band, or album. That's a nightmare for the anime studio David Production, which has to rename or blur them for streaming rights. Part 3 is the exception, and it includes the vampire Dio Brando's time-stopping Stand, 'The World'. What are the Part 3 Stands named after?",
+    "answer": "The tarot Major Arcana, one card to each Stand",
     "choices": [
-      "The 1987 album 'The World' by The Tygers of Pan Tang (later changed to 'Za Warudo' in some translations)",
+      "The tarot Major Arcana, one card to each Stand",
       "The 1976 Frankie Valli single 'My Eyes Adored You' (renamed for licensing)",
       "The 1981 song 'In the Air Tonight' by Phil Collins (similar musical motif)",
       "The 1969 Beatles album cut 'Across the Universe' (extended track name)"
@@ -4889,7 +4889,7 @@
   },
   {
     "tier": 4,
-    "question": "In Naruto Shippuden, one master's death during the war arc traumatized the fanbase most: a sage-cloaked, toad-summoning ninja killed by Pain during his investigative encounter. In his last moments he inscribed his final findings on his opponent's back in coded text. What is the master's name?",
+    "question": "In Naruto Shippuden, one master's death during the war arc traumatized the fanbase most: a sage-cloaked, toad-summoning ninja killed by Pain during his investigative encounter. In his last moments he inscribed his final findings on his toad companion's back in coded text. What is the master's name?",
     "answer": "Jiraiya, the Toad Sage of Mt. Myoboku",
     "choices": [
       "Jiraiya, the Toad Sage of Mt. Myoboku",
@@ -4915,10 +4915,10 @@
   },
   {
     "tier": 4,
-    "question": "Eiichiro Oda's Marineford War arc kills the World's Strongest Man, Edward Newgate, better known as Whitebeard, during his attempt to rescue Luffy's brother Ace from public execution. He died standing upright with both arms folded. His final words named his successor and directly addressed Blackbeard. What did Whitebeard announce about the prophesied hero and the One Piece?",
-    "answer": "He confirmed One Piece exists, that Joy Boy is the prophesied figure, and that one day his successor would inherit his ambitions",
+    "question": "Eiichiro Oda's Marineford War arc kills the World's Strongest Man, Edward Newgate, better known as Whitebeard, during his attempt to rescue Luffy's brother Ace from public execution. He died standing upright with both arms folded. His final words addressed Blackbeard and the whole world. What did Whitebeard announce about the prophesied hero and the One Piece?",
+    "answer": "He confirmed One Piece exists, that Joy Boy is the prophesied figure, and that someone would one day inherit his ambitions",
     "choices": [
-      "He confirmed One Piece exists, that Joy Boy is the prophesied figure, and that one day his successor would inherit his ambitions",
+      "He confirmed One Piece exists, that Joy Boy is the prophesied figure, and that someone would one day inherit his ambitions",
       "He warned Blackbeard's crew that the Devil Fruit transfer would cost them their lives within five years",
       "He apologized to his fallen division-commander sons and named Marco as the next Whitebeard captain",
       "He confessed that the Ancient Weapons were all held by Eldian descendants of an erased kingdom"
@@ -4980,10 +4980,10 @@
   },
   {
     "tier": 5,
-    "question": "In Masashi Kishimoto's manga Naruto, the toad-summoning sage Jiraiya performs the Dragon Sealing Method — a forbidden jutsu that binds the demonic Nine-Tailed Fox spirit inside the newborn Naruto Uzumaki. The seal's ink patterns, dragon imagery, and chanted mantras weren't invented from scratch — Kishimoto based them on a real esoteric Japanese talisman tradition that blends Shinto rites with mountain-Buddhist warding. Which Japanese religious complex is that tradition tied to?",
-    "answer": "Mount Koya's esoteric Buddhist-Shinto syncretic tradition, with mountain-ascetic Tendai influences",
+    "question": "In Masashi Kishimoto's manga Naruto, the Fourth Hokage performs the Dragon Sealing Method — a forbidden jutsu that binds the demonic Nine-Tailed Fox spirit inside the newborn Naruto Uzumaki. The seal's ink patterns, dragon imagery, and chanted mantras weren't invented from scratch — Kishimoto based them on a real esoteric Japanese talisman tradition that blends Shinto rites with mountain-Buddhist warding. Which Japanese religious complex is that tradition tied to?",
+    "answer": "Mount Koya's esoteric Buddhist-Shinto syncretic tradition, with mountain-ascetic Shugendo influences",
     "choices": [
-      "Mount Koya's esoteric Buddhist-Shinto syncretic tradition, with mountain-ascetic Tendai influences",
+      "Mount Koya's esoteric Buddhist-Shinto syncretic tradition, with mountain-ascetic Shugendo influences",
       "Ise Grand Shrine's purely Shinto purification-rite documentation",
       "Nikko Toshogu's elaborate Tokugawa-era warding talisman archive",
       "Itsukushima's tidal-island sea-spirit propitiation rituals"
@@ -5163,9 +5163,9 @@
   {
     "tier": 5,
     "question": "In Eiichiro Oda's One Piece, the Wano arc confirmed the 'Joy Boy' legend from the Void Century. The Void Century is a 100-year gap in history, about 800 years ago, when a lost civilization was wiped out by 19 other kingdoms — the ancestors of today's World Government. What is the erased kingdom called?",
-    "answer": "The Great Kingdom (the Ancient Kingdom of D., never given a public name in-canon)",
+    "answer": "The Great Kingdom, the only name the story has given it",
     "choices": [
-      "The Great Kingdom (the Ancient Kingdom of D., never given a public name in-canon)",
+      "The Great Kingdom, the only name the story has given it",
       "The Kingdom of Lulusia, the central island-nation of the One Piece world",
       "The Holy Kingdom of God Valley, where the original Celestial Dragons originated",
       "The Atlantean Crown, the underwater nation Joy Boy's people ruled"
@@ -5214,10 +5214,10 @@
   },
   {
     "tier": 5,
-    "question": "In Hirohiko Araki's manga JoJo's Bizarre Adventure Part 5 — Vento Aureo, or Golden Wind — the story moves to Italy in 2001 and follows a fifteen-year-old mafia recruit named Giorno Giovanna. Giorno's father is the vampire Dio Brando from Part 1, who fathered him in the late 1980s while wearing the stolen, stitched-on headless body of his old rival, the English gentleman Jonathan Joestar. Who is Giorno's living human mother?",
-    "answer": "Yuhko, a Japanese woman impregnated by the vampire while he wore Jonathan Joestar's stolen body in 1989",
+    "question": "In Hirohiko Araki's manga JoJo's Bizarre Adventure Part 5 — Vento Aureo, or Golden Wind — the story moves to Italy in 2001 and follows a fifteen-year-old mafia recruit named Giorno Giovanna. Giorno's father is the vampire Dio Brando from Part 1, who fathered him in the mid-1980s while wearing the stolen, stitched-on headless body of his old rival, the English gentleman Jonathan Joestar. Who is Giorno's living human mother?",
+    "answer": "Yuhko, a Japanese woman impregnated by the vampire while he wore Jonathan Joestar's stolen body in the mid-1980s",
     "choices": [
-      "Yuhko, a Japanese woman impregnated by the vampire while he wore Jonathan Joestar's stolen body in 1989",
+      "Yuhko, a Japanese woman impregnated by the vampire while he wore Jonathan Joestar's stolen body in the mid-1980s",
       "Erina Pendleton, Jonathan's widow returned for a brief Italian vacation",
       "Tonpetty's daughter, a Wamuu-Pillar-Man bloodline character",
       "Caesar Zeppeli's mother, returned mysteriously after Part 2's events"
@@ -6207,7 +6207,7 @@
     "choices": [
       "Maverick was originally supposed to die at the end (instead of just losing Goose)",
       "The Russian MiGs were originally identified as specifically being Soviet aircraft",
-      "Maverick's romantic interest was originally a Naval officer instead of a contractor",
+      "The carrier scenes were originally to be shot aboard a Soviet vessel",
       "The Top Gun school was originally based at Miramar but moved to fictional Coronado"
     ],
     "context": "The Navy was thrilled with the recruitment boost the film provided — applications jumped 500% in some markets. Charlie (Kelly McGillis) was originally a Naval flight officer; the Navy insisted she be a civilian to avoid fraternization optics. Top Gun school actually existed at NAS Miramar (now relocated to NAS Fallon).",
@@ -6254,7 +6254,7 @@
   },
   {
     "tier": 3,
-    "question": "Released in 1982, John Milius's Conan the Barbarian opens with Conan's father teaching him the riddle of steel before being killed by Thulsa Doom. The opening text-on-screen quote is famously attributed to Nietzsche but actually from a different source. What's the quote and source?",
+    "question": "Released in 1982, John Milius's Conan the Barbarian opens with Conan's father teaching him the riddle of steel before being killed by Thulsa Doom. The opening text-on-screen quote is genuine Nietzsche rather than a line from Robert E. Howard. What's the quote and source?",
     "answer": "'That which does not kill us makes us stronger' — Nietzsche, Twilight of the Idols 1888",
     "choices": [
       "'That which does not kill us makes us stronger' — Nietzsche, Twilight of the Idols 1888",
@@ -6358,7 +6358,7 @@
   },
   {
     "tier": 3,
-    "question": "In Edgar Wright's Scott Pilgrim vs. the World, the band Sex Bob-omb performs throughout the film. The film's music was overseen by Nigel Godrich (Radiohead's producer), with original songs written by which musician known for his 1990s solo career and his work in the band Beck?",
+    "question": "In Edgar Wright's Scott Pilgrim vs. the World, the band Sex Bob-omb performs throughout the film. The film's music was overseen by Nigel Godrich (Radiohead's producer), with original songs written by which musician known for his 1990s solo career?",
     "answer": "Beck (Beck Hansen)",
     "choices": [
       "Beck (Beck Hansen)",
@@ -7217,9 +7217,9 @@
   {
     "tier": 5,
     "question": "Released in 1991, T2 (Terminator sequel) shot the 'I'll be back' moment as a callback to the original 1984 film. James Cameron also wrote the screenplay with William Wisher Jr. The film's $94M budget was the largest in film history at the time, surpassing Total Recall (1990) which had held the record briefly. T2 grossed $520M worldwide — a remarkable success. Where was the iconic 'thumbs-up' final scene filmed?",
-    "answer": "At the Cyberdyne Systems set in El Segundo, California, after the climactic steel-mill battle",
+    "answer": "At the Kaiser Steel mill in Fontana, California, where the climactic battle was shot",
     "choices": [
-      "At the Cyberdyne Systems set in El Segundo, California, after the climactic steel-mill battle",
+      "At the Kaiser Steel mill in Fontana, California, where the climactic battle was shot",
       "On the Gainax soundstage in Tokyo as a homage to the Eva production's collapse",
       "At a Pinewood Studios soundstage in England near Cameron's residence",
       "At the Skywalker Ranch sound stage in Marin County, California"
@@ -7970,7 +7970,7 @@
   },
   {
     "tier": 3,
-    "question": "The 1993 Warner Bros. cartoon Animaniacs starred three cartoon Warner siblings — Yakko, Wakko, and Dot — locked in the studio's water tower. One of Yakko's most famous songs had him rattling off every U.S. state and its capital city. Another song, called 'Yakko's World,' had him singing the name of every country on Earth as fast as he could get his mouth around them. He set that country song to an old French army march from the 1880s. What tune was it?",
+    "question": "The 1993 Warner Bros. cartoon Animaniacs starred three cartoon Warner siblings — Yakko, Wakko, and Dot — locked in the studio's water tower. One of Yakko's most famous songs had him rattling off every U.S. state and its capital city. Another song, called 'Yakko's World,' had him singing the name of every country on Earth as fast as he could get his mouth around them. He set that country song to a much older folk tune. What tune was it?",
     "answer": "The Mexican Hat Dance (Jarabe Tapatío)",
     "choices": [
       "The Mexican Hat Dance (Jarabe Tapatío)",
@@ -8620,11 +8620,11 @@
   },
   {
     "tier": 5,
-    "question": "The 1995 Pinky and the Brain show's catchphrase 'Are you pondering what I'm pondering?' is delivered by Brain to Pinky 87 times across the show's 65 episodes. Pinky's response is always a non-sequitur joke. Out of those 87 deliveries, fan researchers have catalogued one specific Pinky response as the most quoted of all — a response involving a fictional fast-food franchise. What did Pinky reply?",
-    "answer": "I think so, Brain, but we'll never get a monkey to use dental floss",
+    "question": "The 1995 Pinky and the Brain show's catchphrase 'Are you pondering what I'm pondering?' is delivered by Brain to Pinky 87 times across the show's 65 episodes. Pinky's response is always a non-sequitur joke. Out of those 87 deliveries, fan researchers have catalogued one specific Pinky response as the most quoted of all. What did Pinky reply?",
+    "answer": "I think so, Brain, but where will we get a duck and a hose at this hour?",
     "choices": [
-      "I think so, Brain, but we'll never get a monkey to use dental floss",
       "I think so, Brain, but where will we get a duck and a hose at this hour?",
+      "I think so, Brain, but how will we get the Spice Girls into the Smithsonian?",
       "I think so, Brain, but if Jimmy cracks corn and no one cares, why is there a song?",
       "I think so, Brain, but Pete Rose can't read"
     ],
@@ -10779,9 +10779,9 @@
   {
     "tier": 5,
     "question": "The opening scene of Rob Reiner's 1987 The Princess Bride shows a young Fred Savage in bed playing a baseball video game on a Commodore Amiga personal computer while his grandfather (Peter Falk) arrives to read him a story. Production designer Norman Reynolds picked a baseball release from Accolade software. Name the game shown.",
-    "answer": "Hardball II by Accolade",
+    "answer": "Hardball! by Accolade",
     "choices": [
-      "Hardball II by Accolade",
+      "Hardball! by Accolade",
       "Baseball Stars by SNK",
       "RBI Baseball by Tengen",
       "World Series Baseball by Sega"
@@ -12624,7 +12624,7 @@
   },
   {
     "tier": 4,
-    "question": "In Order of the Phoenix (book 5), Dolores Umbridge takes over Hogwarts as 'High Inquisitor' on Cornelius Fudge's orders. Her cruel disciplinary methods include a magical detention quill that uses the writer's blood as ink, carving the words 'I must not tell lies' into the back of Harry's hand. The scar remains permanent on Harry's hand for the rest of the series. What 1996 author and political position is Umbridge consciously modeled on, per J.K. Rowling?",
+    "question": "In Order of the Phoenix (book 5), Dolores Umbridge takes over Hogwarts as 'High Inquisitor' on Cornelius Fudge's orders. Her cruel disciplinary methods include a magical detention quill that uses the writer's blood as ink, carving the words 'I must not tell lies' into the back of Harry's hand. The scar remains permanent on Harry's hand for the rest of the series. What has Rowling said Umbridge is modelled on?",
     "answer": "A composite of authoritarian schoolteachers and middle-management bureaucrats Rowling had encountered",
     "choices": [
       "A composite of authoritarian schoolteachers and middle-management bureaucrats Rowling had encountered",
@@ -12637,7 +12637,7 @@
   },
   {
     "tier": 4,
-    "question": "Hogwarts has a poltergeist named Peeves who plagues students and even staff. Peeves answers to one and only one authority at the school besides Dumbledore — a particular old caretaker's predecessor. Filch hates Peeves. But the only one who can actually keep Peeves in line short of Dumbledore is who?",
+    "question": "Hogwarts has a poltergeist named Peeves who plagues students and even staff. Peeves answers to one authority at the school besides Dumbledore. Filch hates Peeves. But the only one who can actually keep Peeves in line short of Dumbledore is who?",
     "answer": "The Bloody Baron (the Slytherin House ghost)",
     "choices": [
       "The Bloody Baron (the Slytherin House ghost)",
@@ -12962,7 +12962,7 @@
   },
   {
     "tier": 5,
-    "question": "In J.K. Rowling's Harry Potter, the dark wizard Lord Voldemort split his soul into seven magical objects called Horcruxes so that he could not truly die. One Horcrux was Helga Hufflepuff's golden cup, hidden in a wizarding bank vault. In Deathly Hallows, Ron Weasley and Hermione Granger sneak down into the flooded ancient hall deep beneath Hogwarts — the very place Harry had entered in his second year — to finish the cup off. Ron does the deed. What weapon does he use?",
+    "question": "In J.K. Rowling's Harry Potter, the dark wizard Lord Voldemort split his soul into seven magical objects called Horcruxes so that he could not truly die. One Horcrux was Helga Hufflepuff's golden cup, hidden in a wizarding bank vault. In Deathly Hallows, Ron Weasley and Hermione Granger sneak down into the flooded ancient hall deep beneath Hogwarts — the very place Harry had entered in his second year — to finish the cup off. Hermione does the deed. What weapon does she use?",
     "answer": "A basilisk fang from the Chamber of Secrets",
     "choices": [
       "A basilisk fang from the Chamber of Secrets",
@@ -13014,7 +13014,7 @@
   },
   {
     "tier": 5,
-    "question": "Harry Potter's wand contains a phoenix tail feather from Dumbledore's bird Fawkes — the same source feather that's in Voldemort's wand. This 'brother wand' connection causes the Priori Incantatem (golden cage of light) effect when Harry and Voldemort directly attack each other in the Goblet of Fire graveyard scene. The Priori Incantatem wand-effect was created by Olivander, the legendary wandmaker. What's Mr. Olivander's first name?",
+    "question": "Harry Potter's wand contains a phoenix tail feather from Dumbledore's bird Fawkes — the same source feather that's in Voldemort's wand. This 'brother wand' connection causes the Priori Incantatem (golden cage of light) effect when Harry and Voldemort directly attack each other in the Goblet of Fire graveyard scene. Both wands were made by Ollivander, the legendary wandmaker. What is his first name?",
     "answer": "Garrick Ollivander",
     "choices": [
       "Garrick Ollivander",
@@ -17304,7 +17304,7 @@
   },
   {
     "tier": 3,
-    "question": "Richard Garfield, a Caltech math PhD, designed Magic: the Gathering and pitched it to a small Renton, Washington garage outfit called Wizards of the Coast in the early 1990s. The first set, Alpha, shipped in August 1993 with a print run of 2.6 million cards. Who was the WotC co-founder who agreed to the pitch?",
+    "question": "Richard Garfield, a mathematics PhD, designed Magic: the Gathering and pitched it to a small Renton, Washington garage outfit called Wizards of the Coast in the early 1990s. The first set, Alpha, shipped in August 1993 with a print run of 2.6 million cards. Who was the WotC co-founder who agreed to the pitch?",
     "answer": "Peter Adkison",
     "choices": [
       "Peter Adkison",
@@ -17526,9 +17526,9 @@
   {
     "tier": 4,
     "question": "Richard Garfield designed Magic the Gathering's five-color system as a deliberately rock-paper-scissors structure with five mana types. Each color has distinct commitments: white for order, blue for knowledge, black for ambition, red for emotion, and green for nature. This system is called the \"color pie.\" Which two colors sit diametrically opposed on the wheel?",
-    "answer": "White and black; blue and red; green and red (each color has two enemies)",
+    "answer": "White and black, white and red, blue and red, blue and green, black and green",
     "choices": [
-      "White and black; blue and red; green and red (each color has two enemies)",
+      "White and black, white and red, blue and red, blue and green, black and green",
       "Red and blue only; white and green only; black is allied with all four",
       "Each color is enemy of the two next to it on the wheel; allies with the two opposite",
       "All colors are equally allied with the others except colorless (gray)"
@@ -17538,10 +17538,10 @@
   },
   {
     "tier": 4,
-    "question": "Magic: the Gathering held its first formal professional tournament in February 1996 in New York City, with prize pools of around $30,000 — substantial for the time. It marked MtG's transition from a 'gateway' card-game to a serious competitive game with paid professionals. Who won the first Pro Tour?",
-    "answer": "Michael Loconto, a Massachusetts-based player using a Necropotence deck",
+    "question": "Magic: the Gathering held its first formal professional tournament in February 1996 in New York City, with a prize pool of around $100,000 — substantial for the time. It marked MtG's transition from a 'gateway' card-game to a serious competitive game with paid professionals. Who won the first Pro Tour?",
+    "answer": "Michael Loconto, a Massachusetts-based player using a White Weenie deck",
     "choices": [
-      "Michael Loconto, a Massachusetts-based player using a Necropotence deck",
+      "Michael Loconto, a Massachusetts-based player using a White Weenie deck",
       "Mark Justice, the 1995 World Champion using Black Lotus combos",
       "Zak Dolan, the 1994 World Champion playing power-mana ramp",
       "Bertrand Lestree, the 1994 World Championship finalist"
