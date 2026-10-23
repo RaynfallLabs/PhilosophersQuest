@@ -925,9 +925,9 @@
   {
     "tier": 4,
     "question": "What does Chicago recommend as a BLOCK QUOTE (indented, no surrounding quote marks)?",
-    "answer": "quotations of 100+ words, or 5+ lines of poetry, or a dialogue exchange",
+    "answer": "quotations of 100+ words, or 2+ lines of poetry, or a dialogue exchange",
     "choices": [
-      "quotations of 100+ words, or 5+ lines of poetry, or a dialogue exchange",
+      "quotations of 100+ words, or 2+ lines of poetry, or a dialogue exchange",
       "any quotation longer than 20 words",
       "only poetry, never prose",
       "only dialogue, never other quotations"
@@ -1158,7 +1158,7 @@
   },
   {
     "tier": 5,
-    "question": "Another famous same-word-repeated puzzle from a 1972 paper: 'James while John had had had had had had had had had had had a better effect on the teacher.' What kind of trick does this share with the Buffalo sentence?",
+    "question": "Another famous same-word-repeated puzzle: 'James while John had had had had had had had had had had had a better effect on the teacher.' What kind of trick does this share with the Buffalo sentence?",
     "answer": "One repeated spelling used in more than one grammatical role",
     "choices": [
       "One repeated spelling used in more than one grammatical role",
@@ -2068,7 +2068,7 @@
   },
   {
     "tier": 3,
-    "question": "OCCUR is spelled with a single C and a single R at the end. But its past-tense form is spelled differently. Which is correct?",
+    "question": "OCCUR is spelled with a double C and a single R at the end. But its past-tense form is spelled differently. Which is correct?",
     "answer": "OCCURRED -- DOUBLE C AND DOUBLE R",
     "choices": [
       "OCCURRED -- DOUBLE C AND DOUBLE R",
@@ -3225,7 +3225,7 @@
   },
   {
     "tier": 5,
-    "question": "Which sentence uses ALL the Latin plurals correctly by modern style?",
+    "question": "Which sentence uses ALL the Latin plurals correctly in formal scientific style?",
     "answer": "The data are clear, the criteria are met, and the phenomena are documented.",
     "choices": [
       "The data are clear, the criteria are met, and the phenomena are documented.",
@@ -3407,12 +3407,12 @@
   },
   {
     "tier": 1,
-    "question": "A memo says: 'The company keeps their customer information discrete.' Which word is wrong?",
+    "question": "A memo says: 'The company keeps its customer information discrete.' Which word is wrong?",
     "answer": "\"discrete\" (should be \"discreet\")",
     "choices": [
       "\"discrete\" (should be \"discreet\")",
       "\"company\" (should be \"companies\")",
-      "\"their\" (should be \"its\")",
+      "\"keeps\" (should be \"keep\")",
       "\"customer\" (should be \"customers\")"
     ],
     "context": "DISCREET means careful/tactful; DISCRETE means separate/distinct. A company keeping information CAREFUL wants \"discreet.\"",
@@ -5032,7 +5032,7 @@
   },
   {
     "tier": 2,
-    "question": "'Only mammals (___ animals that nurse their young) build hives.' Which short form fits before this definition marker?",
+    "question": "'Whales are mammals (___ animals that nurse their young), not fish.' Which short form fits before this definition marker?",
     "answer": "i.e.",
     "choices": [
       "i.e.",
@@ -5890,13 +5890,13 @@
   },
   {
     "tier": 3,
-    "question": "Which words also stack two extra parts, like 'irregardless' does?",
-    "answer": "both",
+    "question": "Which word stacks an extra negating part, the same way 'irregardless' does?",
+    "answer": "'unloosen' -- un- added to loosen, which already means to loosen",
     "choices": [
-      "'unravel' vs 'ravel' (both meaning to untangle -- one of the rare cases where both forms coexist)",
-      "'unloosen' -- another double-negative like irregardless",
-      "both",
-      "neither"
+      "'unravel' -- which ends up meaning the same as 'ravel'",
+      "'irrelevant' -- one negative prefix, nothing doubled",
+      "'unloosen' -- un- added to loosen, which already means to loosen",
+      "'disregard' -- one negative prefix, nothing doubled"
     ],
     "context": "'Unloosen' = to loosen (the UN- adds nothing; loosen already implies undoing). 'Ravel/unravel' is trickier -- 'ravel' means both to tangle AND to untangle. English is inconsistent; irregardless is still marked out.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
@@ -5916,7 +5916,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2020 Merriam-Webster added 'irregardless' and the internet got upset. What did the editors say their job actually is?",
+    "question": "In 2020 Merriam-Webster's note on 'irregardless' went viral and the internet got upset. What did the editors say their job actually is?",
     "answer": "dictionaries RECORD usage; the entry marks it nonstandard, not endorses it",
     "choices": [
       "dictionaries RECORD usage; the entry marks it nonstandard, not endorses it",
@@ -6826,7 +6826,7 @@
   },
   {
     "tier": 3,
-    "question": "Robert Burns's 1794 poem opens 'O my Luve is like a red, red rose that's newly sprung in June.' Many people call this famous line a metaphor. Why is that wrong?",
+    "question": "Robert Burns's 1794 poem opens 'O my Luve's like a red, red rose that's newly sprung in June.' Many people call this famous line a metaphor. Why is that wrong?",
     "answer": "The word LIKE makes it a simile, not a metaphor",
     "choices": [
       "The word LIKE makes it a simile, not a metaphor",

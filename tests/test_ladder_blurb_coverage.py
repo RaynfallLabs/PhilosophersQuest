@@ -58,7 +58,7 @@ UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0,
 ROTE_SUBJECTS = ('math', 'grammar')
 
 # Rote topics still waiting for a card (rollout in progress; may only go down).
-ROTE_UNCARDED_BASELINE = {'math': 0, 'grammar': 157}
+ROTE_UNCARDED_BASELINE = {'math': 0, 'grammar': 76}
 
 
 def _load(subject):
