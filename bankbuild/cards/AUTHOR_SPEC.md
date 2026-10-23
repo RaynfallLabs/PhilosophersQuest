@@ -118,3 +118,11 @@ Every question hash in the ladder must appear in `teaches`.
 - Check any source a stem or context names before repeating it (several are wrong: Deucalion's nine days are Apollodorus, not Ovid; on Skyros the trumpet is Apollodorus, the shield and spear Statius). When unsure, teach the fact without naming a source.
 - Stem copies come from retelling the stem's scene in its word order: start from a different subject and move the date or place. Hyphens split words ("a tent-peg and a hammer" is five words).
 - Capitalised one-word distractors ("Once", "Seven", "Forty", "Easter", "Iona") count wherever the word appears. A build script that cuts each teaches sentence out of the card at an inline marker removes copy mistakes in teaches.
+
+## If a dump looks like it has encoding damage, it is your console
+Writers have twice reported that a question file needs an "encoding sweep",
+seeing `â€"` for em dashes or `?` for arrows. **The data files are clean UTF-8.**
+What you are seeing is the Windows console re-decoding your own dump. Set
+`PYTHONIOENCODING=utf-8` before printing, or write the dump to a file and read
+that. Never rewrite a question file to "fix" characters: a sweep based on a bad
+dump would corrupt text that was correct.
