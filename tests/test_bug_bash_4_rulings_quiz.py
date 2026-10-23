@@ -194,12 +194,15 @@ def test_nixon_shock_ladder_keys_no_web_address():
     assert 'wtf' not in blurbs[_NIXON]['context_blurb'].lower()
 
 
-def test_nixon_shock_blurb_does_not_give_the_chart_answer_away():
+def test_nixon_shock_card_teaches_the_chart_rung_and_sends_nobody_to_the_site():
+    """Bug bash 4 asserted the opposite of this: that the Nixon-shock blurb must
+    NOT contain the chart rung's answer. Brandon's ruling of 2026-10-18 reversed
+    the no-leak rule, so an economics card now TEACHES every rung of its ladder,
+    this one included, and the old assertion is retired. What still holds is that
+    the bank does not point a kid at wtfhappenedin1971.com."""
     qs, blurbs = _econ()
     blurb = blurbs[_NIXON]['context_blurb'].lower()
     chart = next(q for q in qs if q.get('topic') == _NIXON
                  and 'paid for that hour' in q['question'])
-    assert chart['answer'].lower() not in blurb
-    for word in ('productivity', 'output per hour', 'stalled', ' pay '):
-        assert word not in blurb, word
+    assert chart['answer'].lower() in blurb, 'the card should teach the chart rung'
     assert 'wtfhappenedin1971.com' not in __import__('fantasy_ui')._CONTENT_DOMAINS
