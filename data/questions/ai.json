@@ -742,7 +742,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 2023, the OpenAI board suddenly fired the company's CEO, Sam Altman. Almost every employee threatened to quit in a mass walkout, Microsoft offered Altman a new job on the spot, and everyone braced for a long shakeup. Instead, the board flipped its own decision and quietly brought him back almost right away. About how many days later was Sam Altman back as CEO?",
+    "question": "In November 2023, the OpenAI board suddenly fired the company's CEO, Sam Altman. Almost every employee threatened to quit in a mass walkout, Microsoft offered Altman a new job on the spot, and everyone braced for a long shakeup. Instead, after a very public fight, he came back almost right away under a new board. About how many days later was Sam Altman back as CEO?",
     "answer": "About five",
     "choices": [
       "About five",
@@ -1028,7 +1028,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 2023, the OpenAI board suddenly fired CEO Sam Altman with almost no warning. Hundreds of employees threatened to quit, and after five wild days of drama, the board reversed itself and brought him back. One very large investor — the tech company behind Windows and Bing — pushed hard behind the scenes for his return, since it had already put more than ten billion dollars into OpenAI. Which company was it?",
+    "question": "In November 2023, the OpenAI board suddenly fired CEO Sam Altman with almost no warning. Hundreds of employees threatened to quit, and after five wild days of drama, the board reversed itself and brought him back. One very large investor — the tech company behind Windows and Bing — pushed hard, in public, for his return, since it had already put more than ten billion dollars into OpenAI. Which company was it?",
     "answer": "Microsoft (its largest investor)",
     "choices": [
       "Microsoft (its largest investor)",
@@ -2653,7 +2653,7 @@
   },
   {
     "tier": 1,
-    "question": "Dating apps like Tinder and Hinge promise to help lonely people find love. But every dating company also makes money — and it earns that money while users are still swiping through profiles inside the app. Critics point out this shapes what the AI is really tuned to do. What are dating apps usually optimized for?",
+    "question": "Dating apps like Tinder promise to help lonely people find love. But every dating company also makes money — and it earns that money while users are still swiping through profiles inside the app. Critics point out this shapes what the AI is really tuned to do. What are dating apps usually optimized for?",
     "answer": "Keeping users on the app",
     "choices": [
       "Keeping users on the app",
@@ -3693,15 +3693,15 @@
   },
   {
     "tier": 2,
-    "question": "OpenAI is the San Francisco AI lab that built ChatGPT. On November 17, 2023, its board of directors suddenly fired the CEO, Sam Altman, saying he had not been fully straight with them. The next morning Microsoft offered Altman a job. Inside OpenAI, the staff of around 770 people had to choose sides fast. What did most of them do within days?",
-    "answer": "About 700 of them signed an open letter threatening to quit and follow Altman to Microsoft",
+    "question": "On November 17, 2023, OpenAI's board fired its CEO, Sam Altman, saying he had not been fully candid with it. Microsoft soon offered him a job. What did most of OpenAI's roughly 770 staff do within days?",
+    "answer": "About 700 signed a letter threatening to quit and follow him",
     "choices": [
-      "About 700 of them signed an open letter threatening to quit and follow Altman to Microsoft",
-      "They voted to rename the company to OpenSourceAI in protest of the firing decision",
-      "They held a company picnic to celebrate the leadership change with the board",
-      "They asked the United Nations to take over running the lab from the existing board"
+      "About 700 signed a letter threatening to quit and follow him",
+      "They voted to rename the company in protest",
+      "They held a picnic to celebrate the change",
+      "They asked the United Nations to run the lab"
     ],
-    "context": "Within hours of the firing, Microsoft offered to hire Altman and his team. Nearly all OpenAI employees (about 700 out of 770) signed an open letter saying they would quit and follow him if the board did not resign. Altman was reinstated five days later and most of the board that fired him was gone.",
+    "context": "Within days of the firing, Microsoft offered to hire Altman and his team. Nearly all OpenAI employees (about 700 out of 770) signed an open letter saying they would quit and follow him if the board did not resign. Altman was reinstated five days later and most of the board that fired him was gone.",
     "topic": "openai-board-crisis"
   },
   {
@@ -10701,14 +10701,14 @@
   {
     "tier": 4,
     "question": "In March 2023, eight days after OpenAI released GPT-4, the Future of Life Institute (a nonprofit focused on existential risk, co-founded by MIT physicist Max Tegmark) published an open letter titled 'Pause Giant AI Experiments.' It called for a six-month moratorium on training any AI system more powerful than GPT-4. Thousands signed it. Which of the well-known signers do people still remember most?",
-    "answer": "Elon Musk, Steve Wozniak, Yoshua Bengio, and Eliezer Yudkowsky among many others.",
+    "answer": "Elon Musk, Steve Wozniak, Yoshua Bengio, and Yuval Noah Harari among many others.",
     "choices": [
-      "Elon Musk, Steve Wozniak, Yoshua Bengio, and Eliezer Yudkowsky among many others.",
+      "Elon Musk, Steve Wozniak, Yoshua Bengio, and Yuval Noah Harari among many others.",
       "Sam Altman, Dario Amodei, Demis Hassabis, and Sundar Pichai signing together as a CEO group.",
       "Mark Zuckerberg, Tim Cook, Satya Nadella, and Jensen Huang signed it as Big Tech CEOs.",
       "Joe Biden, Xi Jinping, Emmanuel Macron, and Volodymyr Zelensky signing as world leaders."
     ],
-    "context": "The March 2023 'Pause Letter' from the Future of Life Institute called for a six-month moratorium on training AI more powerful than GPT-4. Signers included Elon Musk, Apple co-founder Steve Wozniak, AI pioneer Yoshua Bengio (who later co-signed; he was a more cautious voice than the headline 'shut it down' framing), Eliezer Yudkowsky, historian Yuval Noah Harari, and thousands of others. Yudkowsky also published his Time magazine 'Shut It Down' piece around the same time. The labs being asked to pause (OpenAI, Anthropic, DeepMind) did not pause. The letter is now studied as a snapshot of where the AI debate stood when mainstream attention crashed in.",
+    "context": "The March 2023 'Pause Letter' from the Future of Life Institute called for a six-month moratorium on training AI more powerful than GPT-4. Signers included Elon Musk, Apple co-founder Steve Wozniak, AI pioneer Yoshua Bengio, historian Yuval Noah Harari and the AI scientist Stuart Russell, among thousands of others. Eliezer Yudkowsky did not sign: in Time magazine he wrote that the letter asked for too little, and called for a complete shutdown instead. The labs being asked to pause (OpenAI, Anthropic, DeepMind) did not pause. The letter is now studied as a snapshot of where the AI debate stood when mainstream attention crashed in.",
     "topic": "ai-doomerism-and-pause-letter"
   },
   {
