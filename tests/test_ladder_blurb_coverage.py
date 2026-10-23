@@ -45,10 +45,10 @@ LEAK_BASELINE = {
 # For these subjects the leak ratchet above no longer applies; instead every
 # card that carries a `teaches` map must pass the card gate, and the count of
 # cards still waiting for their rewrite may only go down.
-TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography', 'cooking', 'history', 'science', 'economics', 'theology'}
+TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography', 'cooking', 'history', 'science', 'economics', 'theology', 'ai'}
 
 # Cards in a teaching subject that still lack `teaches` (rollout in progress).
-UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 2, 'economics': 45, 'theology': 120}
+UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 2, 'economics': 45, 'theology': 120, 'ai': 31}
 
 
 # The snappy-rote subjects (Brandon, 2026-10-22). Their cards teach the rule or

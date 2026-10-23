@@ -2953,14 +2953,14 @@
   {
     "tier": 2,
     "question": "Frontier large language models — like OpenAI's GPT-3 — are described in 'billions of parameters.' Each parameter is one tuned number the model learned during training. GPT-3 famously had 175 billion of them. To make that count feel real, imagine each parameter is a single glass marble. If you actually poured 175 billion marbles into one place, roughly how big a container would you need to hold them?",
-    "answer": "Roughly a small swimming pool's worth — enough to make the count hard to picture",
+    "answer": "Roughly dozens of Olympic swimming pools' worth — enough to make the count hard to picture",
     "choices": [
-      "Roughly a small swimming pool's worth — enough to make the count hard to picture",
+      "Roughly dozens of Olympic swimming pools' worth — enough to make the count hard to picture",
       "Roughly a tea cup's worth — about right for a small modern student's school bag",
       "Roughly a thimble's worth — these counts sound bigger than they really are in practice",
       "Roughly the volume of an entire small country — the units are simply that astronomical"
     ],
-    "context": "175 billion marbles at 1 cm each would be roughly 175 million liters — about a small swimming pool worth. The point isn't the exact volume; it is that 'billions of parameters' is an inhumanly large number, and that scale is part of why modern AI works and part of why it is expensive.",
+    "context": "175 billion marbles at 1 cm each would be roughly 175 million litres, or dozens of Olympic pools. The point isn't the exact volume; it is that 'billions of parameters' is an inhumanly large number, and that scale is part of why modern AI works and part of why it is expensive.",
     "topic": "llms-how-they-work"
   },
   {
@@ -3108,7 +3108,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Alan Turing wrote his famous 1950 paper on machine intelligence, he had already served his country in wartime. The British government pulled him into a top-secret operation at a country estate north of London, where a team of mathematicians and codebreakers raced to decipher enemy military messages. Turing's work there is thought to have shortened the fight against Nazi Germany by about two years. What was he working on?",
+    "question": "Before Alan Turing wrote his famous 1950 paper on machine intelligence, he had already served his country in wartime. The British government pulled him into a top-secret operation at a country estate north of London, where a team of mathematicians and codebreakers raced to decipher enemy military messages. Turing's work there is thought to have shortened the fight against Nazi Germany by months or even years. What was he working on?",
     "answer": "Breaking the German Enigma cipher at Bletchley Park during World War II",
     "choices": [
       "Breaking the German Enigma cipher at Bletchley Park during World War II",
@@ -7281,7 +7281,7 @@
   },
   {
     "tier": 3,
-    "question": "Fei-Fei Li, a Stanford computer-science professor, believed vision AI would never advance until researchers had a truly enormous, hand-labeled dataset to train on. So starting in 2007 she and her team took on a massive undertaking: paying workers to hand-label millions of internet images by category — dog, cat, chair, violin. The project she launched turned out to be foundational for the modern deep-learning revolution. What was it?",
+    "question": "Fei-Fei Li, then a computer-science professor at Princeton, believed vision AI would never advance until researchers had a truly enormous, hand-labeled dataset to train on. So starting in 2007 she and her team took on a massive undertaking: paying workers to hand-label millions of internet images by category — dog, cat, chair, violin. The project she launched turned out to be foundational for the modern deep-learning revolution. What was it?",
     "answer": "ImageNet, a massive labeled dataset of millions of images organized by category that made deep-learning vision possible.",
     "choices": [
       "ImageNet, a massive labeled dataset of millions of images organized by category that made deep-learning vision possible.",
@@ -7333,7 +7333,7 @@
   },
   {
     "tier": 3,
-    "question": "Fei-Fei Li, a Stanford computer scientist, believed AI could only learn to see if it first had millions of labeled example images to study. In the mid-2000s she started building ImageNet — a dataset of over 14 million photos, each tagged by hand with what it contained. Labeling that many pictures one by one would have taken any single university team decades. Her big trick got the job done in a few years and helped spark the 2012 deep-learning revolution. How did her team pull it off?",
+    "question": "Fei-Fei Li, then a computer scientist at Princeton, believed AI could only learn to see if it first had millions of labeled example images to study. In the mid-2000s she started building ImageNet — a dataset of over 14 million photos, each tagged by hand with what it contained. Labeling that many pictures one by one would have taken any single university team decades. Her big trick got the job done in a few years and helped spark the 2012 deep-learning revolution. How did her team pull it off?",
     "answer": "They used Amazon Mechanical Turk, paying many low-cost human workers small amounts per image to label categories.",
     "choices": [
       "They used Amazon Mechanical Turk, paying many low-cost human workers small amounts per image to label categories.",
@@ -7372,7 +7372,7 @@
   },
   {
     "tier": 3,
-    "question": "For sixty years, biologists had struggled to map the exact 3D shape a protein twists itself into. Shape matters because it decides how the molecule works — which molecules can dock with it, which reactions it can catalyze. In 2021 DeepMind, a London AI lab owned by Google, released AlphaFold: an AI that predicted the shapes of about 200 million proteins, essentially every known protein in nature. Before AlphaFold, one PhD student might spend years cracking a single structure. Why is this such a leap for medicine?",
+    "question": "For about fifty years, biologists had struggled to map the exact 3D shape a protein twists itself into. Shape matters because it decides how the molecule works — which molecules can dock with it, which reactions it can catalyze. Then DeepMind, a London AI lab owned by Google, built AlphaFold, which went on to predict the shapes of about 200 million proteins, essentially every known protein in nature. Before AlphaFold, one PhD student might spend years cracking a single structure. Why is this such a leap for medicine?",
     "answer": "A drug works by binding to a protein's shape, knowing the shape lets researchers design drugs that fit",
     "choices": [
       "A drug works by binding to a protein's shape, knowing the shape lets researchers design drugs that fit",
@@ -7645,7 +7645,7 @@
   },
   {
     "tier": 3,
-    "question": "John Deere now sells tractors with AI-powered cameras that distinguish crop plants from weeds — and spray weedkiller only on the weeds. The 'See & Spray' system reportedly reduces herbicide use by up to two-thirds. What single thing changes about the doctor's leverage in the appointment?",
+    "question": "John Deere now sells tractors with AI-powered cameras that distinguish crop plants from weeds — and spray weedkiller only on the weeds. The 'See & Spray' system reportedly reduces herbicide use by up to two-thirds. What does spraying only the weeds change for the field?",
     "answer": "Less herbicide on the field means less runoff, less soil load, less environmental impact",
     "choices": [
       "Less herbicide on the field means less runoff, less soil load, less environmental impact",
@@ -7905,7 +7905,7 @@
   },
   {
     "tier": 3,
-    "question": "ImageNet is a dataset of roughly 14 million photographs, each hand-labeled by a human worker into one of about 20,000 categories — sheep, cathedral, saxophone, and so on. Fei-Fei Li and her Stanford team spent years assembling it in the late 2000s using online crowdworkers. When AlexNet, a neural network from the University of Toronto, trained on ImageNet and won the 2012 image-recognition contest by a huge margin, it kicked off the modern deep-learning boom. Why do huge labeled datasets like ImageNet matter so much in AI history?",
+    "question": "ImageNet is a dataset of roughly 14 million photographs, each hand-labeled by a human worker into one of about 20,000 categories — sheep, cathedral, saxophone, and so on. Fei-Fei Li and her team spent years assembling it in the late 2000s using online crowdworkers. When AlexNet, a neural network from the University of Toronto, trained on ImageNet and won the 2012 image-recognition contest by a huge margin, it kicked off the modern deep-learning boom. Why do huge labeled datasets like ImageNet matter so much in AI history?",
     "answer": "Deep learning needed lots of labeled data, without ImageNet, the 2012 leap would not have happened",
     "choices": [
       "Deep learning needed lots of labeled data, without ImageNet, the 2012 leap would not have happened",
@@ -9049,7 +9049,7 @@
   },
   {
     "tier": 3,
-    "question": "In China, a man named Liu Hu was added to a court 'discredited persons' list after a defamation conviction. He found he could no longer buy plane tickets, take fast trains, or get certain jobs. What's the single corporate-incentive pattern this case shows?",
+    "question": "In China, a man named Liu Hu was added to a court 'discredited persons' list after a defamation conviction. He found he could no longer buy plane tickets, take fast trains, or get certain jobs. What pattern does this case show?",
     "answer": "AI-linked databases can lock people out of normal life — quietly, without a new trial, by attaching their ID to a list.",
     "choices": [
       "AI-linked databases can lock people out of normal life — quietly, without a new trial, by attaching their ID to a list.",
@@ -9140,7 +9140,7 @@
   },
   {
     "tier": 3,
-    "question": "In April 2022, the US Department of Homeland Security, under the Biden administration, announced a new office called the Disinformation Governance Board. It was meant to coordinate how the federal government fought false information online. Within roughly three weeks, the office was paused, then dissolved entirely. Why the fast collapse?",
+    "question": "In April 2022, the US Department of Homeland Security, under the Biden administration, announced a new office called the Disinformation Governance Board. It was meant to coordinate how the federal government fought false information online. The office was paused within about three weeks, and dissolved that August. Why the fast collapse?",
     "answer": "Comparisons to a 'Ministry of Truth' from Orwell's 1984 generated bipartisan opposition; DHS paused and then dissolved it.",
     "choices": [
       "Comparisons to a 'Ministry of Truth' from Orwell's 1984 generated bipartisan opposition; DHS paused and then dissolved it.",
@@ -9530,7 +9530,7 @@
   },
   {
     "tier": 3,
-    "question": "Political scientist David Rozado spent 2023 and 2024 giving standard left-right political quizzes to ChatGPT, Google Bard, Anthropic's Claude, and other major chatbots — the same tests used to place a real voter on the political spectrum. He ran each quiz many times, averaged the answers, and published his findings in peer-reviewed papers. What did the studies mostly find?",
+    "question": "The data scientist David Rozado spent 2023 and 2024 giving standard left-right political quizzes to ChatGPT, Google Bard, Anthropic's Claude, and other major chatbots — the same tests used to place a real voter on the political spectrum. He ran each quiz many times, averaged the answers, and published his findings. What did the studies mostly find?",
     "answer": "Most leading chatbots placed left of center on standard political tests, sometimes well left, with the pattern surviving across versions.",
     "choices": [
       "Most leading chatbots placed left of center on standard political tests, sometimes well left, with the pattern surviving across versions.",
@@ -10219,7 +10219,7 @@
   },
   {
     "tier": 4,
-    "question": "A chess engine can defeat the world chess champion. An LLM (large language model) can write competent essays on millions of topics. AlphaFold can predict protein structures better than human experts. None of these systems are claimed to be conscious. What's the distinction the distinction critics emphasize between between capability and consciousness?",
+    "question": "A chess engine can defeat the world chess champion. An LLM (large language model) can write competent essays on millions of topics. AlphaFold can predict protein structures better than human experts. None of these systems are claimed to be conscious. What distinction do critics emphasize between capability and consciousness?",
     "answer": "Capability is what a system can do, while consciousness is the inner experience of being something, and the two are different questions.",
     "choices": [
       "Capability is what a system can do, while consciousness is the inner experience of being something, and the two are different questions.",
@@ -10575,7 +10575,7 @@
     "choices": [
       "The Future of Humanity Institute, which was wound down in April 2024.",
       "The Future of Life Institute, founded by Max Tegmark and Jaan Tallinn in the United States in 2014.",
-      "The Effective Altruism Centre, headquartered in San Francisco and overseen by the late Sam Bankman-Fried.",
+      "The Effective Altruism Centre, headquartered in San Francisco and overseen by Sam Bankman-Fried.",
       "The Singularity University, founded by Ray Kurzweil with funding from NASA and Google several decades ago."
     ],
     "context": "The Future of Humanity Institute (FHI) at Oxford operated from 2005 to 2024, directed by Nick Bostrom. It produced influential research on existential risk, AI alignment, and longtermist philosophy. The institute had close ties to the Effective Altruism movement and shaped a generation of policy thinkers and AI safety researchers. It was wound down in April 2024 after disputes with the University of Oxford over its operational structure and direction. The academic AI-safety scene was distinct from but overlapping with the LessWrong/MIRI strand. Bostrom's 2014 'Superintelligence' was its most public output, and Toby Ord's 'The Precipice' (2020) continued the institute's intellectual influence.",
@@ -10765,7 +10765,7 @@
   },
   {
     "tier": 4,
-    "question": "In October 2024, the Nobel Prize in Chemistry went to Demis Hassabis and John Jumper of Google DeepMind for their AI system AlphaFold. Proteins are long chains of amino acids that fold into complex 3D shapes, and knowing that shape reveals how the protein does its job in the body. Before AlphaFold, working out a single fold demanded painstaking laboratory measurements — often a decade of effort per molecule. Why did the Nobel committee single AlphaFold out — what could researchers suddenly do?",
+    "question": "In October 2024, the Nobel Prize in Chemistry went to Demis Hassabis and John Jumper of Google DeepMind for their AI system AlphaFold. Proteins are long chains of amino acids that fold into complex 3D shapes, and knowing that shape reveals how the protein does its job in the body. Before AlphaFold, working out a single fold demanded painstaking laboratory measurements — often years of effort per molecule. Why did the Nobel committee single AlphaFold out — what could researchers suddenly do?",
     "answer": "Map a protein's 3D shape in hours — work that used to take years of X-ray crystallography per protein",
     "choices": [
       "Map a protein's 3D shape in hours — work that used to take years of X-ray crystallography per protein",
@@ -10791,7 +10791,7 @@
   },
   {
     "tier": 4,
-    "question": "Insilico Medicine used AI to identify a new drug candidate for a lung disease called idiopathic pulmonary fibrosis. The candidate reached human trials in about 30 months. Traditional drug discovery from target to trials averages about 4 to 5 years. Where does AI most help — and where does it still NOT help?",
+    "question": "Insilico Medicine used AI to identify a new drug candidate for a lung disease called idiopathic pulmonary fibrosis. The candidate reached human trials in about 30 months. Traditional drug discovery from target to trials averages five years or more. Where does AI most help — and where does it still NOT help?",
     "answer": "AI accelerates early discovery and candidate screening — but clinical trials in humans still take years and cost most of the money",
     "choices": [
       "AI accelerates early discovery and candidate screening — but clinical trials in humans still take years and cost most of the money",
@@ -10869,7 +10869,7 @@
   },
   {
     "tier": 4,
-    "question": "Satellite-imagery startups like Planet Labs and Indigo Ag train neural networks on weekly photographs of farmland. They sell forecasts of yield, drought stress, or pest outbreaks weeks before the human eye sees a problem. What kind of decision does this most directly let a farmer or a buyer make sooner?",
+    "question": "Satellite-imagery startups like Planet Labs and Indigo Ag train neural networks on daily photographs of farmland. They sell forecasts of yield, drought stress, or pest outbreaks weeks before the human eye sees a problem. What kind of decision does this most directly let a farmer or a buyer make sooner?",
     "answer": "Adjust irrigation, fertilizer, or harvest timing in time to limit losses — instead of finding out at harvest that yields collapsed",
     "choices": [
       "Adjust irrigation, fertilizer, or harvest timing in time to limit losses — instead of finding out at harvest that yields collapsed",
@@ -11605,7 +11605,7 @@
       "An outside attacker — all three cases were traced to a common prompt-injection actor",
       "Nobody, in the end — each of the three cases was quietly settled with no real consequences"
     ],
-    "context": "Three separate documented disasters: (1) Steven Schwartz, NY, fake court citations, fined $5K June 2023. (2) Air Canada chatbot promised bereavement-fare refunds; small claims tribunal held the airline liable in February 2024. (3) Stanford professor Jeff Hancock filed a December 2023 affidavit citing fake AI-related studies — apparently generated by his AI tool. The common thread: each user trusted plausible-sounding LLM output. Each suffered real consequences when verification was skipped. Cases like these are now used in professional-development training across law, journalism, academia, and customer service. The defensive principle is identical across them: verify any factual claim from an LLM before acting on it.",
+    "context": "Three separate documented disasters: (1) Steven Schwartz, NY, fake court citations, fined $5K June 2023. (2) Air Canada chatbot promised bereavement-fare refunds; small claims tribunal held the airline liable in February 2024. (3) Stanford professor Jeff Hancock filed a late-2024 affidavit citing fake AI-related studies — apparently generated by his AI tool. The common thread: each user trusted plausible-sounding LLM output. Each suffered real consequences when verification was skipped. Cases like these are now used in professional-development training across law, journalism, academia, and customer service. The defensive principle is identical across them: verify any factual claim from an LLM before acting on it.",
     "topic": "ai-fabricated-citations"
   },
   {
@@ -12026,7 +12026,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 and 2024, reporters at STAT News and ProPublica found that AI tools at big health insurers were denying coverage at high rates with little human review. One example was UnitedHealth's NaviHealth. Why does letting AI make these calls change what patients face when they appeal?",
+    "question": "In 2023 and 2024, reporters at STAT News and ProPublica found that AI tools at big health insurers were denying coverage at high rates with little human review. One example was UnitedHealth's nH Predict tool. Why does letting AI make these calls change what patients face when they appeal?",
     "answer": "One model decides for thousands while each patient appeals alone — the asymmetry favors the insurer",
     "choices": [
       "One model decides for thousands while each patient appeals alone — the asymmetry favors the insurer",
@@ -12312,7 +12312,7 @@
   },
   {
     "tier": 4,
-    "question": "A documented family scenario: a young teen uses an AI chatbot late at night to share feelings they haven't told anyone else. The bot is friendly, agrees with everything, and is always available. What recurring risk persists even when nothing obvious goes wrong?",
+    "question": "A documented family scenario: a young teen uses an AI chatbot late at night to share feelings never told to anyone else. The bot is friendly, agrees with everything, and is always available. What recurring risk persists even when nothing obvious goes wrong?",
     "answer": "The chatbot displaces real conversation — the teen builds the habit of processing feelings with a product, not a person",
     "choices": [
       "The chatbot displaces real conversation — the teen builds the habit of processing feelings with a product, not a person",
@@ -13053,7 +13053,7 @@
   },
   {
     "tier": 4,
-    "question": "Several news organizations have sued AI companies, arguing the LLMs were trained on their copyrighted journalism without permission. The New York Times sued OpenAI and Microsoft in December 2023. What single specific harm do the lawsuits name beyond mood?",
+    "question": "Several news organizations have sued AI companies, arguing the LLMs were trained on their copyrighted journalism without permission. The New York Times sued OpenAI and Microsoft in December 2023. What does the run of these cases show about the law itself?",
     "answer": "Training-data law is unsettled — the rules for what can legally be used to train AI are still being written, retroactively, in court",
     "choices": [
       "Training-data law is unsettled — the rules for what can legally be used to train AI are still being written, retroactively, in court",
@@ -13248,7 +13248,7 @@
   },
   {
     "tier": 4,
-    "question": "Nearly every advanced AI chip in the world today — including Nvidia's H100 and its later successors — is manufactured by a single company on a single island a few dozen miles off the Chinese coast. The chip designs come from many countries, but the actual silicon wafers all pour out of one place. Which firm, on which island, and why does that fact keep Pentagon planners in Washington awake at night?",
+    "question": "Nearly every advanced AI chip in the world today — including Nvidia's H100 and its later successors — is manufactured by a single company on a single island about a hundred miles off the Chinese coast. The chip designs come from many countries, but the actual silicon wafers all pour out of one place. Which firm, on which island, and why does that fact keep Pentagon planners in Washington awake at night?",
     "answer": "TSMC, based in Taiwan, fabricates the bulk of frontier AI silicon — a Chinese blockade or invasion of Taiwan would freeze the global supply of leading-edge chips overnight.",
     "choices": [
       "TSMC, based in Taiwan, fabricates the bulk of frontier AI silicon — a Chinese blockade or invasion of Taiwan would freeze the global supply of leading-edge chips overnight.",
@@ -14626,7 +14626,7 @@
   },
   {
     "tier": 5,
-    "question": "In October 2023, 23andMe revealed that personal genetic data of millions of users had been accessed in a credential-stuffing attack. Some breached profiles were posted online by ancestry group. What made the 23andMe incident different in kind from a typical password breach?",
+    "question": "In October 2023, 23andMe revealed that personal genetic data of millions of users had been accessed in a credential-stuffing attack. Some breached profiles were posted online in lists sorted by ancestry group. What made the 23andMe incident different in kind from a typical password breach?",
     "answer": "DNA data is unique, permanent, partly shared with relatives, and cannot be changed the way a leaked password can — exposure is lifelong.",
     "choices": [
       "DNA data is unique, permanent, partly shared with relatives, and cannot be changed the way a leaked password can — exposure is lifelong.",
@@ -14705,9 +14705,9 @@
   {
     "tier": 5,
     "question": "A deepfake is an AI-generated image or video that looks real but isn't. Starting in 2023, students began using cheap online tools to make deepfake nude images of real classmates — usually girls — from ordinary yearbook photos. The images spread through group chats. Ex-partners and stalkers used the same tools on adults. Celebrities like Taylor Swift were targeted in 2024. By 2025, states, schools, and Congress had responded. What pattern of laws and school policy had emerged?",
-    "answer": "Multiple states criminalized non-consensual deepfake intimate imagery; some schools expelled students who created or shared them; federal legislation was pending.",
+    "answer": "Multiple states criminalized non-consensual deepfake intimate imagery; some schools expelled students who created or shared them; and in 2025 Congress passed a federal law of its own.",
     "choices": [
-      "Multiple states criminalized non-consensual deepfake intimate imagery; some schools expelled students who created or shared them; federal legislation was pending.",
+      "Multiple states criminalized non-consensual deepfake intimate imagery; some schools expelled students who created or shared them; and in 2025 Congress passed a federal law of its own.",
       "All deepfake nude images were ruled constitutionally protected speech, so no state could legally prosecute anyone for creating them.",
       "Schools were forbidden by federal law from disciplining students who created deepfake images of classmates or teachers.",
       "Image-generation AI was banned entirely in 2024 to prevent the creation of any deepfakes, ending the technology category outright."
@@ -15081,7 +15081,7 @@
   },
   {
     "tier": 5,
-    "question": "In January 2020, Detroit police arrested Robert Williams in front of his wife and two daughters. A facial-recognition system had matched him to surveillance footage of a shoplifter. He spent 30 hours in jail before being released as the wrong man. Where did Clearview AI get the photos used to train its identification model, and did those people ever consent?",
+    "question": "By 2020 the American company Clearview AI was selling police forces a tool that could match a photograph of a stranger's face against a database of billions. Where did Clearview AI get the photos used to train its identification model, and did those people ever consent?",
     "answer": "It scraped billions of photos from Facebook, Instagram, LinkedIn, and elsewhere — none of the people in the photos consented to being in a police lineup",
     "choices": [
       "It scraped billions of photos from Facebook, Instagram, LinkedIn, and elsewhere — none of the people in the photos consented to being in a police lineup",
@@ -15622,7 +15622,7 @@
       "It ruled all AI training universally permitted in every jurisdiction worldwide and barred every copyright holder from filing any future lawsuit anywhere",
       "It dismissed the case in full as moot before any party had filed a single brief, with no ruling on fair use or pirated material in any direction"
     ],
-    "context": "Early rulings have gone different ways. The Anthropic books case partially upheld fair use for pirated training data (Bartz v. Anthropic, 2025) but allowed claims over the pirated copies to proceed. The Getty/Stability case in the UK had mixed outcomes. The NYT v. OpenAI case has not produced a final judgment as of late 2025. The economic stakes are high: a ruling against training-as-fair-use would force renegotiation of how models are built and might consolidate the industry around companies that can afford licensing. Copyright law and AI capability are genuinely in tension, and the resolution will partly be technical and partly political.",
+    "context": "Early rulings have gone different ways. The Anthropic books case partially upheld fair use for training on lawfully acquired books (Bartz v. Anthropic, 2025) but allowed claims over the pirated copies to proceed. The Getty/Stability case in the UK had mixed outcomes. The NYT v. OpenAI case has not produced a final judgment as of late 2025. The economic stakes are high: a ruling against training-as-fair-use would force renegotiation of how models are built and might consolidate the industry around companies that can afford licensing. Copyright law and AI capability are genuinely in tension, and the resolution will partly be technical and partly political.",
     "topic": "ai-copyright-nyt"
   },
   {
