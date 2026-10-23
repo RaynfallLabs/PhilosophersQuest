@@ -273,6 +273,10 @@ width), then `Floor N   Turn N` in faded text.
 
 **VITALS** (`_vitals`): HP / MP / SP bars via `_bar`. SP color
 transitions `SP_GREEN > SP_AMBER > SP_RED` at 50% / 25% ratios.
+Under the bars, the Meals line (`hud_context.cooking_hp_line`): this floor's
+cooked max HP against `Player.PER_FLOOR_HP_CAP` ("Meals: +2/5 Max HP"), gold
+while open, green when full, "go deeper for HP" at the lifetime softcap.
+Max HP grows only by cooking, and nothing on screen said so (2026-10-23).
 
 **ATTRIBUTES** (`_attributes`): STR / CON / DEX / INT / WIS / PER in a
 2-column × 3-row grid (col 1 = STR / CON / DEX, col 2 = INT / WIS /
@@ -431,7 +435,8 @@ state; column 4 is the `_draw_<state>` method.
 |---|---|---|---|
 | `STATE_PLAYER` | default | `game_input._player_input` | main render |
 | `STATE_QUIZ` | quiz starts | `_quiz_input` | `game_render._draw_quiz` |
-| `STATE_QUIZ_CONTEXT` | `C` during a quiz whose question has a context card | `_quiz_context_input` | `_draw_quiz` then `_draw_quiz_context_modal` |
+| `STATE_QUIZ_CONTEXT` | `C` during a quiz whose question has a context card | `_quiz_context_input` | `_draw_quiz_context_modal` (both readers paint through `_draw_card_reader`) |
+| `STATE_TOPIC_CARD` | `C` on a missed question (`STATE_STUDY`, `STATE_REVIEW_MISSED`); returns to the state that opened it | `_topic_card_input` | `_draw_topic_card_modal` (card text and title from `src/topic_cards.py`) |
 | `STATE_EQUIP_MENU` | `E` | `_equip_menu_input` | `_draw_equip_menu` |
 | `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser`; tabs Weapons / Armor / Shields / Accessories / Consumables / Valuables (treasure: kind, count, weight as the shop gives it, worth exact once a trader has valued the kind, else its order of magnitude; `treasure.worth_short`, `_kit_detail_lines_for_treasure`) / Spells |
 | `STATE_DISCOVERIES` | `J` | `_discoveries_input` | `_draw_discoveries_panel` |
@@ -447,11 +452,11 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_DROP_MENU` | `D` | `_drop_menu_input` | `_draw_drop_menu` |
 | `STATE_DROP_GOLD_INPUT` | drop gold | `_drop_gold_input` | `_draw_drop_gold_input` |
 | `STATE_DROP_QTY_INPUT` | drop stack | `_drop_qty_input` | `_draw_drop_qty_input` |
-| `STATE_HELP` | `?` | `_help_input` | `_draw_help_screen` |
+| `STATE_HELP` | `?` | `_help_input` (Tab / Left / Right flips the page) | `_draw_help_screen`: page 1 the command reference, page 2 How Quizzes Work (`_draw_help_quizzes`, text in `data/ui/how_quizzes_work.json`) |
 | `STATE_LORE` | lore trigger | `_lore_input` | `_draw_lore_dossier_screen` |
 | `STATE_HINT` | Recall Lore | any-key dismiss | `_draw_hint_screen` |
 | `STATE_EXAMINE` | `X` | `_examine_menu_input` | `_draw_examine_menu` |
-| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser`; in the Bestiary, Tab switches Kinds / Families (`Game._bestiary_view`; family pages from `_family_page_lines`, a kind not yet identified shows a short page: `_bestiary_short_lines`); categories a-l (Bestiary ... Treasure, and **Wonders**: the six Soul Spheres once their kind is known and the Draught of Mimir's Well once held, with art and lore, `Game._wonder_entries` / `_encyclopedia_wonder_lines`). Esc steps back: article, list, categories, play (an O-opened Bestiary page goes straight back to play) |
+| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser`; in the Bestiary, Tab switches Kinds / Families (`Game._bestiary_view`; family pages from `_family_page_lines`, a kind not yet identified shows a short page: `_bestiary_short_lines`); categories a-m (Bestiary ... Treasure, **Wonders**: the six Soul Spheres once their kind is known and the Draught of Mimir's Well once held, with art and lore, `Game._wonder_entries` / `_encyclopedia_wonder_lines`; and the **Lore Codex** (m): every topic a quiz has asked from, its card as the article, read or not, from `Player.topics_met` / `topics_read` via `topic_cards.codex_entries`; Enter marks a card read). Esc steps back: article, list, categories, play (an O-opened Bestiary page goes straight back to play) |
 | `STATE_HACK_REALITY` | hack unlock | any-key | `_draw_hack_reality_screen` |
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |
@@ -475,7 +480,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_CHICKEN` | McFly | `_chicken_input` | `_draw_chicken` |
 | `STATE_VICTORY` | has Stone + L0 | hard exit | `_draw_victory_screen` |
 | `STATE_DEAD` | HP ≤ 0 | `R` → review | `_draw_death_screen` |
-| `STATE_REVIEW_MISSED` | post-death `R` | arrow nav | `_draw_review_missed` |
+| `STATE_REVIEW_MISSED` | post-death `R` | arrow nav; `C` opens the question's whole card | `_draw_review_missed` |
 
 **Global keys that override state dispatch:**
 

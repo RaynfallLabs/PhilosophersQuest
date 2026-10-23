@@ -106,6 +106,24 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
     return base
 
 
+def cooking_hp_line(player) -> tuple[str, str]:
+    """The sidebar's "Meals" line: how much of this floor's max HP growth the
+    hero has cooked (Player.try_apply_cook_hp_gain). Max HP grows only by
+    cooking, and nothing on screen said so (NEXT_STEPS_REVIEW item 6).
+    Returns (text, state): 'open' while a meal can still add max HP on this
+    floor, 'full' once the floor's share is cooked, 'capped' when the
+    lifetime cap for the depth reached is met (going deeper raises it)."""
+    cap = int(getattr(player, 'PER_FLOOR_HP_CAP', 5) or 5)
+    got = int(getattr(player, '_cook_hp_gain_this_floor', 0) or 0)
+    try:
+        lifetime_full = int(getattr(player, 'cooking_hp_gained', 0)) >= int(player.cooking_softcap())
+    except (AttributeError, TypeError, ValueError):
+        lifetime_full = False
+    if lifetime_full and got < cap:
+        return "Meals: go deeper for HP", 'capped'
+    return f"Meals: +{min(got, cap)}/{cap} Max HP", ('full' if got >= cap else 'open')
+
+
 def load_number(weight: float, limit: float, share: float = 0.75) -> str:
     """The carried weight as the readout shows it ("43" in "Carrying 43 /
     100"), never disagreeing with the state beside it. A whole number

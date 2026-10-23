@@ -41,7 +41,7 @@ from game_states import (
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG,
+    STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG, STATE_TOPIC_CARD,
 )
 
 
@@ -173,6 +173,11 @@ class InputMixin:
                 self.quiz_engine.resume_timer()
                 self.state = STATE_QUIZ
                 return True
+            if self.state == STATE_TOPIC_CARD:
+                # Back to the screen that opened the card (the missed
+                # questions, the Lore Codex), not to play.
+                self._topic_card_input(key)
+                return True
             if self.state == STATE_ENCYCLOPEDIA:
                 # Its own screen steps back, as its footer says: article ->
                 # list -> categories -> play. (The generic close below shut the
@@ -302,6 +307,7 @@ class InputMixin:
                 self._ascend_stairs()
                 return True
             if event.unicode == '?':
+                self._help_page = 0
                 self.state = STATE_HELP
                 return True
             if event.unicode == '@':
@@ -444,8 +450,13 @@ class InputMixin:
                     and self.missed_questions):
                 self._review_idx = 0
                 self.state = STATE_REVIEW_MISSED
+        elif self.state == STATE_TOPIC_CARD:
+            self._topic_card_input(key)
         elif self.state == STATE_REVIEW_MISSED:
-            if key == pygame.K_PAGEUP:
+            if key == pygame.K_c and self.missed_questions:
+                idx = max(0, min(getattr(self, '_review_idx', 0), len(self.missed_questions) - 1))
+                self._open_missed_card(self.missed_questions[idx], STATE_REVIEW_MISSED)
+            elif key == pygame.K_PAGEUP:
                 self._review_scroll = max(0, getattr(self, '_review_scroll', 0) - 8)
             elif key == pygame.K_PAGEDOWN:
                 self._review_scroll = getattr(self, '_review_scroll', 0) + 8
@@ -598,6 +609,7 @@ class InputMixin:
             self._start_recall_lore()
             return
         if key == pygame.K_SLASH or key == pygame.K_QUESTION:
+            self._help_page = 0
             self.state = STATE_HELP
             return
         if key == pygame.K_x:
@@ -1386,6 +1398,7 @@ class InputMixin:
         # any other key moves on (after a 1 s minimum).
         if self.quiz_engine.state == QuizState.RESULT and self.quiz_engine._result_hold:
             if key == pygame.K_c and self.quiz_engine.current_context_blurb():
+                self._note_card_read()
                 self._quiz_context_scroll = 0
                 self.state = STATE_QUIZ_CONTEXT
             else:
@@ -1430,6 +1443,7 @@ class InputMixin:
                 # the same question lets it run (call 1, bug bash 4). The
                 # card says which (see _draw_quiz_context_modal).
                 self.quiz_engine.pause_timer()
+                self._note_card_read()
                 self._quiz_context_scroll = 0
                 self.state = STATE_QUIZ_CONTEXT
             else:
@@ -1488,6 +1502,49 @@ class InputMixin:
                     0, getattr(self, '_quiz_context_scroll', 0) + delta)
             return
 
+    def _note_card_read(self):
+        """The quiz's card was opened: the Lore Codex marks its topic read."""
+        import topic_cards
+        qe = self.quiz_engine
+        topic_cards.note_read(self.player, getattr(qe, 'subject', ''),
+                              (qe.current_question or {}).get('topic'))
+
+    # ------------------------------------------------------------------
+    # A topic card with no quiz running (2026-10-23): C on a missed
+    # question, Enter in the Lore Codex. Esc, C or Enter goes back.
+    # ------------------------------------------------------------------
+
+    def _open_topic_card(self, subject: str, topic: str | None, return_state: str) -> bool:
+        import topic_cards
+        if not topic_cards.card(subject, topic):
+            return False
+        topic_cards.note_read(self.player, subject, topic)
+        self._topic_card = {'subject': subject, 'topic': topic, 'return': return_state}
+        self._topic_card_scroll = 0
+        self.state = STATE_TOPIC_CARD
+        return True
+
+    def _topic_card_input(self, key: int):
+        if key in (pygame.K_c, pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
+            self.state = (getattr(self, '_topic_card', None) or {}).get('return', STATE_PLAYER)
+            return
+        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_KP8: -1, pygame.K_KP2: 1,
+                 pygame.K_PAGEUP: -8, pygame.K_PAGEDOWN: 8}
+        if key == pygame.K_HOME:
+            self._topic_card_scroll = 0
+        elif key == pygame.K_END:
+            self._topic_card_scroll = 9999          # clamped on draw
+        elif key in moves:
+            self._topic_card_scroll = max(0, getattr(self, '_topic_card_scroll', 0) + moves[key])
+
+    def _open_missed_card(self, entry: dict | None, return_state: str):
+        """C on a missed question. Entries recorded before the cards
+        shipped carry no topic; topic_cards finds it by the stem."""
+        import topic_cards
+        subject, topic = topic_cards.missed_topic(entry)
+        if not self._open_topic_card(subject, topic, return_state):
+            self.add_message("No card for this question.", 'info')
+
     # ------------------------------------------------------------------
     # Missed Questions (; key)
     # ------------------------------------------------------------------
@@ -1495,7 +1552,14 @@ class InputMixin:
     def _study_input(self, key):
         """Handle input on the Missed Questions screen.
         Left/Right: cycle subject tabs.
-        Up/Down: scroll through questions in current category."""
+        Up/Down: scroll through questions in current category.
+        C: the missed question's whole card."""
+        if key == pygame.K_c:
+            missed = getattr(self, '_study_filtered', []) or []
+            if missed:
+                idx = max(0, min(getattr(self, '_study_question_idx', 0), len(missed) - 1))
+                self._open_missed_card(missed[idx], STATE_STUDY)
+            return
         # Left/Right: cycle subject category
         if key == pygame.K_LEFT:
             self._study_subject_idx = (self._study_subject_idx - 1) % len(self._STUDY_SUBJECTS)
@@ -1552,6 +1616,15 @@ class InputMixin:
     def _help_input(self, key: int):
         if key in (pygame.K_ESCAPE, pygame.K_SLASH, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
+            return
+        # Two pages: the command reference and How Quizzes Work.
+        if key in (pygame.K_TAB, pygame.K_LEFT, pygame.K_RIGHT):
+            self._help_page = 1 - getattr(self, '_help_page', 0)
+            self._help_scroll = 0
+            return
+        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -8, pygame.K_PAGEDOWN: 8}
+        if key in moves and getattr(self, '_help_page', 0) == 1:
+            self._help_scroll = max(0, getattr(self, '_help_scroll', 0) + moves[key])
 
     def _lore_input(self, key: int):
         if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE, pygame.K_x):
@@ -1862,4 +1935,9 @@ class InputMixin:
             if 0 <= self.encyclopedia_selection < len(self.encyclopedia_entries):
                 self._encyclopedia_entry = self.encyclopedia_entries[self.encyclopedia_selection]
                 self._encyclopedia_article_scroll = 0
+                if self.encyclopedia_category == 'lore_codex':
+                    import topic_cards
+                    e = self._encyclopedia_entry
+                    topic_cards.note_read(self.player, e.get('_subject', ''), e.get('_topic'))
+                    e['_read'] = True
             return

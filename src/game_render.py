@@ -55,7 +55,7 @@ from game_states import (
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG,
+    STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG, STATE_TOPIC_CARD,
 )
 
 
@@ -2318,6 +2318,8 @@ class RenderMixin:
             self._draw_death_screen()
         elif self.state == STATE_REVIEW_MISSED:
             self._draw_review_missed()
+        elif self.state == STATE_TOPIC_CARD:
+            self._draw_topic_card_modal()
         elif self.state == STATE_STUDY:
             self._draw_study_journal()
         elif self.state == STATE_HELP:
@@ -3484,27 +3486,35 @@ class RenderMixin:
             # a neutral message rather than drawing an empty panel.
             blurb = "No context available for this question."
 
-        blurb = display_text(blurb, sources=True)
-        body_font = get_font('body', 20)
         # Call 1 (bug bash 4): a timed clock stops once per question. Say
         # plainly on the card whether it is stopped or running.
-        clock_note = self._quiz_context_clock_note()
+        self._draw_card_reader("CONTEXT", "Orientation", blurb, getattr(qe, 'subject', None),
+                               note=self._quiz_context_clock_note(),
+                               scroll_attr='_quiz_context_scroll',
+                               footer="Up/Down: scroll   PgUp/PgDn: jump   C / ESC: close")
+
+    def _draw_card_reader(self, title: str, pane_label: str, blurb: str, subject,
+                          *, note: str = '', scroll_attr: str, footer: str) -> None:
+        """One topic card in a reading pane: the quiz's C card, and the same
+        card opened with no quiz running (missed questions, Lore Codex)."""
+        blurb = display_text(blurb, sources=True)
+        body_font = get_font('body', 20)
         # Sized to the blurb (it left a large empty area under the text).
         max_w = 1000
         bw = min(S(max_w), _modal_budget_w() - S(48))
         probe = self._ui_modal_body(pygame.Rect(0, 0, bw, 1000), side=24, top=72, bottom=56)
         reader_w = probe.w - 2 * S(12)
         n = len(self._ui_text_lines(blurb, body_font, reader_w - S(12)))
-        if clock_note:
-            n += len(self._ui_text_lines(clock_note, body_font, reader_w - S(12))) + 1
+        if note:
+            n += len(self._ui_text_lines(note, body_font, reader_w - S(12))) + 1
         chrome = probe.y + (1000 - probe.bottom) + S(42) + S(12)
         fit_h = chrome + n * (body_font.get_height() + S(5)) + S(6)
-        # The quiz's subject colour on the accent layer (it was lore blue on
-        # every subject), so the context reads as part of THIS quiz.
-        accent = (self._SUBJECT_COLOR.get(getattr(qe, 'subject', None), FP.LORE_BLUE_BORDER)
+        # The subject's colour on the accent layer (it was lore blue on
+        # every subject), so the card reads as part of THIS subject.
+        accent = (self._SUBJECT_COLOR.get(subject, FP.LORE_BLUE_BORDER)
                   if kit_on() else FP.LORE_BLUE_BORDER)
         panel = self._ui_modal_panel(
-            "CONTEXT",
+            title,
             border_color=accent,
             max_w=max_w,
             max_h=600,
@@ -3513,21 +3523,32 @@ class RenderMixin:
         body = self._ui_modal_body(panel, side=24, top=72, bottom=56)
 
         # Single-pane body — grimoire reading surface for the blurb.
-        reader = self._ui_subpanel(body, "Orientation", border_color=accent)
+        reader = self._ui_subpanel(body, pane_label, border_color=accent)
 
         lines = []
-        if clock_note:
+        if note:
             lines += [(line, FP.GOLD_PALE, body_font)
-                      for line in self._ui_text_lines(clock_note, body_font, reader.w - S(12))]
+                      for line in self._ui_text_lines(note, body_font, reader.w - S(12))]
             lines.append(("", FP.LORE_BLUE_BODY, body_font))
         lines += [(line, FP.LORE_BLUE_BODY, body_font)
                   for line in self._ui_text_lines(blurb, body_font, reader.w - S(12))]
         scroll = self._ui_draw_scroll_lines(
             lines, body_font, FP.LORE_BLUE_BODY, reader,
-            getattr(self, '_quiz_context_scroll', 0), line_gap=5)
-        self._quiz_context_scroll = scroll
+            getattr(self, scroll_attr, 0), line_gap=5)
+        setattr(self, scroll_attr, scroll)
 
-        self._ui_footer(panel, "Up/Down: scroll   PgUp/PgDn: jump   C / ESC: close")
+        self._ui_footer(panel, footer)
+
+    def _draw_topic_card_modal(self):
+        """A topic's card with no quiz running (STATE_TOPIC_CARD)."""
+        import topic_cards
+        view = getattr(self, '_topic_card', None) or {}
+        subject, topic = view.get('subject', ''), view.get('topic')
+        blurb = topic_cards.card(subject, topic) or "No card for this topic."
+        self._draw_card_reader(f"{topic_cards.subject_label(subject).upper()} CARD",
+                               topic_cards.title(subject, topic), blurb, subject,
+                               scroll_attr='_topic_card_scroll',
+                               footer="Up/Down: scroll   PgUp/PgDn: jump   C / ESC: back")
 
     def _draw_death_chase_atmosphere(self):
         """Faint red vignette + edge glow when Death is in pursuit.
@@ -8777,6 +8798,12 @@ class RenderMixin:
         # entry was recorded after teaching cards shipped and differs from
         # the context below.
         lesson = str(q.get('lesson', '') or '').strip()
+        if not lesson:
+            # Missed before the cards shipped: look the sentence up now.
+            import topic_cards
+            _subj, _topic = topic_cards.missed_topic(q)
+            lesson = topic_cards.lesson(_subj, {'question': q.get('question', ''),
+                                                'topic': _topic}) or ''
         context = q.get('context', '')
         if lesson and lesson not in context:
             lines += [
@@ -8806,10 +8833,13 @@ class RenderMixin:
             getattr(self, scroll_attr, 0), line_gap=5)
         setattr(self, scroll_attr, scroll)
 
+        import topic_cards
+        subj, topic = topic_cards.missed_topic(q)
+        card_key = "C: read the card   " if topic_cards.card(subj, topic) else ""
         if death:
-            footer = "Left/Right: previous/next   PgUp/PgDn: scroll card   ESC: back to score"
+            footer = f"Left/Right: previous/next   {card_key}PgUp/PgDn: scroll   ESC: back to score"
         else:
-            footer = "Left/Right: subject   Up/Down: question   PgUp/PgDn: scroll card   ESC: close"
+            footer = f"Left/Right: subject   Up/Down: question   {card_key}PgUp/PgDn: scroll   ESC: close"
         self._ui_footer(panel, footer)
 
     def _draw_study_journal(self):
@@ -8989,6 +9019,10 @@ class RenderMixin:
             return entry.get('lore', '')
         if category == 'treasure':
             return self._encyclopedia_treasure_value(entry)
+        if category == 'lore_codex':
+            import topic_cards
+            return (f"{topic_cards.subject_label(entry.get('_subject', ''))}  •  "
+                    + ("Read" if entry.get('_read') else "Not read yet"))
         if category == 'wonders':
             if entry.get('_kind') == 'sphere':
                 lvl = int((entry.get('sphere') or {}).get('hatch_level', 1) or 1)
@@ -9041,6 +9075,15 @@ class RenderMixin:
             return [("No entry selected.", FP.FADED_TEXT, self.font_sm)]
         name = entry.get('name', entry.get('_id', entry.get('id', '?')))
         lines = [(self._fix_name_case(name), FP.GOLD_PALE, get_font('heading', 24))]
+        if category == 'lore_codex':
+            import topic_cards
+            subject = entry.get('_subject', '')
+            lines.append((topic_cards.subject_label(subject), FP.FADED_TEXT, self.font_sm))
+            for para in (topic_cards.card(subject, entry.get('_topic')) or '').split(chr(10) * 2):
+                if para.strip():
+                    lines += [("", FP.BODY_TEXT, self.font_sm),
+                              (display_text(para.strip()), FP.BODY_TEXT, self.font_sm)]
+            return lines
         if category == 'bestiary' and entry.get('_family'):
             return lines + self._family_page_lines(entry['_family'])
         if category == 'bestiary' and not entry.get('_known', True):
@@ -9306,7 +9349,7 @@ class RenderMixin:
             self._draw_journal(pygame.Rect(list_rect.x, body.y,
                                            body.right - list_rect.x, body.h))
             self._ui_footer(panel, "Tab or 1-4: page   Up/Down/PgUp/PgDn: scroll   "
-                                   "Left/Right or a-l: category   ESC: categories")
+                                   "Left/Right or a-m: category   ESC: categories")
             return
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
@@ -9316,7 +9359,7 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-l: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-m: open   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),
@@ -9334,7 +9377,10 @@ class RenderMixin:
 
         if not entries:
             self._ui_wrap_text("No monster family met yet. Every creature you see joins one."
-                               if _families_view else "No entries discovered in this category yet.",
+                               if _families_view else
+                               "Every quiz you meet adds its topic's card here."
+                               if category == 'lore_codex' else
+                               "No entries discovered in this category yet.",
                                self.font_sm, FP.FADED_TEXT, list_body)
         else:
             y = list_body.y
@@ -9398,7 +9444,7 @@ class RenderMixin:
                     else "list")
             footer = f"Up/Down/PgUp/PgDn: scroll article   ESC: {back}"
         else:
-            footer = "Left/Right or a-l: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
+            footer = "Left/Right or a-m: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
             if category == 'bestiary':
                 footer = ("Tab: " + ("kinds" if _families_view else "families") + "   Up/Down: entry   "
                           "Enter: detail   PgUp/PgDn: article   Left/Right: category   ESC: categories")
@@ -9855,8 +9901,11 @@ class RenderMixin:
                                "Home/End: oldest/newest   L / ESC: close")
 
     def _draw_help_screen(self):
-        # Pure keybind reference. Every listing maps to a real action in
-        # game_input.py — do not add prose cards or parenthetical commentary.
+        # Page 1 (this one) is a pure keybind reference: every listing maps
+        # to a real action in game_input.py, so no prose here. The prose
+        # lives on page 2, How Quizzes Work (Tab).
+        if getattr(self, '_help_page', 0) == 1:
+            return self._draw_help_quizzes()
         groups = [
             ("Movement", [
                 ("Arrows", "Move / attack", FP.BODY_TEXT),
@@ -9905,7 +9954,7 @@ class RenderMixin:
             ("System", [
                 ("1-4", "Answer quiz", FP.BODY_TEXT),
                 ("SPACE", "Strike now", FP.BODY_TEXT),
-                ("C", "Quiz context", FP.BODY_TEXT),
+                ("C", "Read the card", FP.BODY_TEXT),
                 ("PgUp/PgDn", "Scroll long quiz", FP.BODY_TEXT),
                 ("?", "Command help", FP.BODY_TEXT),
                 ("F10", "Sound on / off", FP.BODY_TEXT),
@@ -10001,7 +10050,50 @@ class RenderMixin:
                                    line_gap=0, max_lines=1)
                 y += row_h
 
-        self._ui_footer(panel, "? / ESC: close")
+        self._ui_footer(panel, "Tab: How Quizzes Work   ? / ESC: close")
+
+    _how_quizzes_cache = None
+
+    def _how_quizzes_page(self) -> dict:
+        """data/ui/how_quizzes_work.json, read once."""
+        if RenderMixin._how_quizzes_cache is None:
+            import json
+            from paths import data_path
+            try:
+                with open(data_path('data', 'ui', 'how_quizzes_work.json'), encoding='utf-8') as f:
+                    RenderMixin._how_quizzes_cache = json.load(f)
+            except (OSError, ValueError):
+                RenderMixin._how_quizzes_cache = {}
+        return RenderMixin._how_quizzes_cache
+
+    def _draw_help_quizzes(self):
+        """Help page 2: how quizzes work (NEXT_STEPS_REVIEW item 6). Three
+        rules were printed nowhere: one wrong answer ends an equip, identify
+        or cook; a fight is a chain and SPACE strikes; only fights are timed."""
+        page = self._how_quizzes_page()
+        panel = self._ui_modal_panel(str(page.get('title', 'How Quizzes Work')).upper(),
+                                     border_color=FP.GOLD, max_w=1100, max_h=760)
+        body = self._ui_modal_body(panel, side=24, top=72, bottom=52)
+        text_f = get_font('body', 18)
+        head_f = get_font('body', 18, bold=True)
+        w = body.w - S(14)
+        lines = []
+        for sec in page.get('sections', []) or []:
+            if lines:
+                lines.append(("", FP.BODY_TEXT, text_f))
+            for line in self._ui_text_lines(str(sec.get('heading', '')), head_f, w):
+                lines.append((line, FP.GOLD_PALE, head_f))
+            for n, para in enumerate(sec.get('paragraphs', []) or []):
+                if n:
+                    lines.append(("", FP.BODY_TEXT, text_f))
+                for line in self._ui_text_lines(str(para), text_f, w):
+                    lines.append((line, FP.BODY_TEXT, text_f))
+            for row in sec.get('rows', []) or []:
+                for line in self._ui_text_lines(f"{row[0]}: {row[1]}", text_f, w):
+                    lines.append((line, FP.BODY_TEXT, text_f))
+        self._help_scroll = self._ui_draw_scroll_lines(
+            lines, text_f, FP.BODY_TEXT, body, getattr(self, '_help_scroll', 0), line_gap=5)
+        self._ui_footer(panel, "Tab: Commands   Up/Down/PgUp/PgDn: scroll   ? / ESC: close")
 
 
 # ------------------------------------------------------------------

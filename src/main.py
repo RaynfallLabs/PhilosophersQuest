@@ -6517,6 +6517,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _on_quiz_answer(self, is_correct: bool):
         """Fired after every individual quiz answer to tally global stats."""
         qe = self.quiz_engine
+        # The Lore Codex lists every topic a quiz has asked from.
+        import topic_cards
+        topic_cards.note_met(self.player, getattr(qe, 'subject', ''),
+                             (qe.current_question or {}).get('topic'))
         if is_correct:
             self.correct_answers += 1
             # In a fight each right answer is a link, and the links climb.
@@ -8795,6 +8799,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('j', 'recipes', 'Recipes'),
         ('k', 'treasure', 'Treasure'),
         ('l', 'wonders', 'Wonders'),     # the Soul Spheres and the Draught
+        ('m', 'lore_codex', 'Lore Codex'),   # every topic card met (topic_cards.py)
     ]
 
     def _open_encyclopedia(self):
@@ -8894,6 +8899,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         if category == 'wonders':
             self.encyclopedia_entries = self._wonder_entries()
+            return
+        if category == 'lore_codex':
+            # Every topic a quiz has asked from, its card readable here.
+            import topic_cards
+            self.encyclopedia_entries = topic_cards.codex_entries(self.player)
             return
         if category == 'journal':
             # The Journal draws from the register and the entries directly

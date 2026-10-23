@@ -983,22 +983,41 @@ def _(screen):
     return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN])
 
 
-@scene('study_tiers', 'Study mode', 'Study mode: pick History, Enter -> tier picker.', kind='study')
+@scene('study_how', 'Study mode', 'Study mode: pick History -> By Difficulty or By Topic.', kind='study')
 def _(screen):
     return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_DOWN])
+
+
+@scene('study_tiers', 'Study mode', 'Study mode: History, By Difficulty -> tier picker.', kind='study')
+def _(screen):
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_RETURN,
+                                    pygame.K_DOWN])
 
 
 @scene('study_question', 'Study mode', 'Study mode: History, Tier 2, Enter -> a question.',
        kind='study', key=True)
 def _(screen):
-    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN,
-                             pygame.K_DOWN, pygame.K_RETURN])
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_RETURN,
+                                    pygame.K_DOWN, pygame.K_RETURN])
+
+
+@scene('study_topics', 'Study mode', 'Study mode: History, By Topic -> the topic list.', kind='study')
+def _(screen):
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_DOWN,
+                                    pygame.K_RETURN, pygame.K_PAGEDOWN])
+
+
+@scene('study_card', 'Study mode', 'Study mode: By Topic, Enter -> the topic card.', kind='study')
+def _(screen):
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_DOWN,
+                                    pygame.K_RETURN, pygame.K_PAGEDOWN, pygame.K_RETURN])
 
 
 def _study_answer_frame(screen, correct):
     from study_mode import StudyMode
     s = StudyMode(screen)
-    _post_keys([pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_DOWN, pygame.K_RETURN])
+    _post_keys([pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_RETURN,
+                pygame.K_DOWN, pygame.K_RETURN])
     _run_one_frame(lambda: s.run(FakeClock()))
     q = s._questions[s._idx]
     choices = q.get('choices', [])

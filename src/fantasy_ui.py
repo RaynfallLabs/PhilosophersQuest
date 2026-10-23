@@ -307,6 +307,10 @@ def display_title(text: str) -> str:
         else:
             out.append(word.lower())
     titled = proper_name(' '.join(out))
+    # A subtitle after a colon starts with a capital ("Welfare Cliffs: The
+    # Effective...", a topic card's title).
+    import re
+    titled = re.sub(r'(:\s+)([a-z])', lambda m: m.group(1) + m.group(2).upper(), titled)
     # proper_name leaves words that hold capitals alone; capitalise a word
     # that starts with punctuation ("(unnamed)" stays as typed).
     return titled[:1].upper() + titled[1:]

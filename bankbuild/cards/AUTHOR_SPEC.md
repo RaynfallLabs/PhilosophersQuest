@@ -213,3 +213,30 @@ files by index.
 So the order is always: **gate -> judge -> merge -> fix_questions**. If a fix
 cannot wait (because it changes a key the judge must see), cut the affected
 topics a fresh batch from the corrected live data and judge that instead.
+
+## Changing a ladder's KEYS: the staged path (2026-10-23)
+Re-keying rungs, replacing false facts, splitting or merging ladders: the card
+has to be written and judged against the NEW questions, so `fix_questions` is
+the wrong tool. Use `bankbuild/cards/stage.py`; the writer never edits `data/`:
+1. The writer lists the changes (`replace`, `retopic`, `delete`, `add`) in
+   `_cards/<subject>/bNNN_changes.json`, and runs `stage check` until it reports 0 failures.
+   The check runs the subject's quizgen gates plus the suite's bank ratchets
+   (acronyms, answer leaks, choice-length parity, singular they, context jargon).
+2. `stage packet <subject> NNN <changes> --topics ...` cuts `bNNN_in.json` from the
+   bank as it will be; the writer writes the cards and passes `gate`.
+3. Judge as usual (`judge packet`, judge agent, `judge score`).
+4. The lead applies the changes, then merges straight away:
+   `stage apply <subject> <changes> --write`, then `merge <subject> NNN`.
+   `apply` drops the card of any topic left with no questions and keeps every
+   entry's other keys (its `title`).
+5. A new topic needs a title in `bankbuild/cards/topic_titles.json`; then run
+   `python -m bankbuild.cards.titles`.
+6. Deleting questions shifts the index-keyed baselines in `tests/data/`. Remap
+   them by position; regenerating them would wave new problems through.
+
+Writers on the 2026-10-23 batches found that a ladder which looks clean per
+question is often not: re-keying 29 spoiler or false-premise trivia rungs
+turned up 15 MORE spoilers in sibling stems and contexts, and splitting the
+two mega-ladders turned up 12 more errors, among them a key offered as its own
+wrong answer. Ask every writer for the "Question errors" list, and fold its
+fixes into the same batch before judging. That costs one judge pass, not two.

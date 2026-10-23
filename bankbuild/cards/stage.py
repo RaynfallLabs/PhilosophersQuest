@@ -155,6 +155,13 @@ def check(subject: str, changes: list[dict]) -> int:
     soft = getattr(gates, 'SOFT_WARN_GATES', frozenset())
     find_they = _test_helper('test_no_singular_they.py', 'find_singular_they')
     jargon = _test_helper('test_ladder_blurb_coverage.py', '_context_jargon')
+    # The bank ratchets the suite runs, so a writer sees them before apply
+    # (they are keyed by question index there, so a new failure shows up
+    # only after the change lands).
+    acronyms = _test_helper('test_acronym_teach_before_test.py', '_find_unexplained_acronyms')
+    leaked = _test_helper('test_answer_leak.py', '_leaked_bigrams')
+    prints_answer = _test_helper('test_answer_leak.py', '_answer_in_stem')
+    parity = _test_helper('test_choice_length_parity.py', 'RATIO_THRESHOLD')
     dup_index = build_duplicate_index(bank)
     ans_index = build_answer_collision_index(bank)
 
@@ -184,6 +191,17 @@ def check(subject: str, changes: list[dict]) -> int:
                 problems.append(f'{tag}: singular they in {f}')
         if jargon(q.get('context', '')):
             problems.append(f'{tag}: quiz jargon in context: {jargon(q["context"])}')
+        if acronyms(q['question']):
+            problems.append(f'{tag}: unexplained acronym in the stem {acronyms(q["question"])} '
+                            '(spell it out, or put it in brackets after the words)')
+        if leaked(q):
+            problems.append(f'{tag}: the stem leaks the answer: {leaked(q)}')
+        if prints_answer(q):
+            problems.append(f'{tag}: the stem prints its own answer')
+        lens = [len(c) for c in q.get('choices') or []]
+        if lens and min(lens) and max(lens) / min(lens) > parity:
+            problems.append(f'{tag}: choice lengths {lens} are too uneven (longest over '
+                            f'{parity}x the shortest)')
 
     for p in problems:
         print('  FAIL', p)

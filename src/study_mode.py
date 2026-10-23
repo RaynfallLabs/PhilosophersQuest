@@ -1,8 +1,12 @@
 """Standalone Study Mode quiz.
 
-Launched from the welcome screen (F3). Lets the player pick a subject and
-difficulty tier, then runs an untimed quiz that shows the correct answer plus
-any educational context after each question. Independent of the main game loop.
+Launched from the welcome screen (F3). Lets the player pick a subject, then
+study it one of two ways:
+  * By Difficulty: a tier, then an untimed quiz of that tier's questions;
+  * By Topic (2026-10-23): a topic's card first, then that topic's questions
+    easiest first, the card a key away (C) the whole time.
+Each answer shows the right one, the card's line for it, and the question's
+context. Independent of the main game loop.
 """
 
 import sys
@@ -45,13 +49,20 @@ class StudyMode:
         self.screen = screen
         self._questions = []
         self._idx = 0
-        self._phase = 'subject'  # subject -> tier -> quiz -> result
+        self._phase = 'subject'  # subject -> mode -> (tier | topics -> card) -> quiz -> result (-> done)
         self._subject = None
         self._tier = 1
         self._selected = 0
         self._last_correct = None
         self._correct_count = 0
         self._asked_count = 0
+        # By Topic: the subject's (topic, title) list, the topic chosen, and
+        # where Esc or Enter returns from a card opened mid-quiz.
+        self._by_topic = False
+        self._topics = []
+        self._topic = None
+        self._card_scroll = 0
+        self._card_return = None
 
     def run(self, clock):
         """Main study mode loop. Returns when user presses ESC."""
@@ -95,6 +106,11 @@ class StudyMode:
                 self._draw_quiz(W, H)
             elif self._phase == 'result':
                 self._draw_result(W, H)
+            else:
+                # By Topic's pages draw the same content as the kit page.
+                self._kit_content(pygame.Rect(S(60), S(84), W - S(120), H - S(150)), draw=True)
+                hint = self.font_tiny.render(self._hint(), True, FP.HINT_TEXT)
+                self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - S(30)))
             pygame.display.flip()
 
     # Keypad keys do what their main-keyboard twins do (Enter, 1-4).
@@ -123,7 +139,7 @@ class StudyMode:
                 layout.update(*surf.get_size())
             return False
         # Keypad 2 is "down" in the pickers but "answer 2" in the quiz.
-        if key == pygame.K_KP2 and self._phase in ('subject', 'tier'):
+        if key == pygame.K_KP2 and self._phase in ('subject', 'mode', 'tier', 'topics', 'card'):
             key = pygame.K_DOWN
         key = self._KEY_ALIASES.get(key, key)
 
@@ -137,11 +153,38 @@ class StudyMode:
             elif key == pygame.K_RETURN:
                 self._subject = self._SUBJECTS[self._selected][0]
                 self._selected = 0
-                self._phase = 'tier'
+                self._phase = 'mode'
+
+        elif self._phase == 'mode':
+            if key == pygame.K_ESCAPE:
+                self._selected = 0
+                self._phase = 'subject'
+            elif key in (pygame.K_UP, pygame.K_DOWN):
+                self._selected = 1 - self._selected
+            elif key == pygame.K_RETURN:
+                self._by_topic = self._selected == 1
+                self._selected = 0
+                if self._by_topic:
+                    import topic_cards
+                    self._topics = topic_cards.topics(self._subject)
+                    self._phase = 'topics'
+                else:
+                    self._phase = 'tier'
+
+        elif self._phase == 'topics':
+            self._topics_key(key)
+
+        elif self._phase == 'card':
+            self._card_key(key)
+
+        elif self._phase == 'done':
+            if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+                self._phase = 'topics'
 
         elif self._phase == 'tier':
             if key == pygame.K_ESCAPE:
-                self._phase = 'subject'
+                self._selected = 0
+                self._phase = 'mode'
             elif key == pygame.K_UP:
                 self._selected = (self._selected - 1) % 5
             elif key == pygame.K_DOWN:
@@ -173,7 +216,9 @@ class StudyMode:
 
         elif self._phase == 'quiz':
             if key == pygame.K_ESCAPE:
-                self._phase = 'subject'
+                self._phase = 'topics' if self._by_topic else 'subject'
+            elif key == pygame.K_c and self._questions:
+                self._open_card(self._questions[self._idx % len(self._questions)].get('topic'), 'quiz')
             elif self._questions:
                 q = self._questions[self._idx % len(self._questions)]
                 choice_map = {pygame.K_1: 0, pygame.K_2: 1, pygame.K_3: 2, pygame.K_4: 3}
@@ -193,7 +238,18 @@ class StudyMode:
                     self._phase = 'result'
 
         elif self._phase == 'result':
-            if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+            if key == pygame.K_c:
+                self._open_card((getattr(self, '_last_q', None) or {}).get('topic'), 'result')
+            elif self._by_topic and key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+                # A topic's questions run once, easiest first, then a summary.
+                self._idx += 1
+                if key == pygame.K_ESCAPE:
+                    self._phase = 'topics'
+                elif self._idx >= len(self._questions):
+                    self._phase = 'done'
+                else:
+                    self._phase = 'quiz'
+            elif key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
                 self._idx += 1
                 if self._idx >= len(self._questions):
                     random.shuffle(self._questions)
@@ -202,6 +258,76 @@ class StudyMode:
                 # to the next question like Enter).
                 self._phase = 'subject' if key == pygame.K_ESCAPE else 'quiz'
         return False
+
+    # -- By Topic ----------------------------------------------------------
+
+    _TOPIC_PAGE = 12          # rows a Page Up / Page Down moves in the list
+
+    def _topics_key(self, key):
+        n = len(self._topics)
+        if key == pygame.K_ESCAPE:
+            self._selected = 1
+            self._phase = 'mode'
+            return
+        if not n:
+            return
+        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1,
+                 pygame.K_PAGEUP: -self._TOPIC_PAGE, pygame.K_PAGEDOWN: self._TOPIC_PAGE}
+        if key in moves:
+            self._selected = max(0, min(n - 1, self._selected + moves[key]))
+        elif key == pygame.K_HOME:
+            self._selected = 0
+        elif key == pygame.K_END:
+            self._selected = n - 1
+        elif key == pygame.K_RETURN:
+            self._topic = self._topics[self._selected][0]
+            self._card_return = None
+            self._card_scroll = 0
+            self._phase = 'card'
+        elif pygame.K_a <= key <= pygame.K_z:
+            # A letter jumps to the next title that starts with it ("The"
+            # aside, so T is not every other title).
+            letter = chr(key)
+            for step in range(1, n + 1):
+                i = (self._selected + step) % n
+                t = self._topics[i][1].lower()
+                if t.removeprefix('the ').startswith(letter):
+                    self._selected = i
+                    break
+
+    def _open_card(self, topic, return_phase):
+        """C mid-quiz: the question's card; Esc, C or Enter comes back."""
+        import topic_cards
+        if not topic_cards.card(self._subject, topic):
+            return
+        self._topic = topic
+        self._card_return = return_phase
+        self._card_scroll = 0
+        self._phase = 'card'
+
+    def _card_key(self, key):
+        import random
+        import topic_cards
+        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -8, pygame.K_PAGEDOWN: 8}
+        if key in moves:
+            self._card_scroll = max(0, self._card_scroll + moves[key])
+            return
+        if self._card_return:
+            if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE, pygame.K_c):
+                self._phase, self._card_return = self._card_return, None
+            return
+        if key == pygame.K_ESCAPE:
+            self._phase = 'topics'
+        elif key in (pygame.K_RETURN, pygame.K_SPACE):
+            # Answer the topic's questions, easiest first.
+            qs = topic_cards.ladder(self._subject, self._topic)
+            self._questions = [dict(q, choices=random.sample(list(q['choices']), len(q['choices'])))
+                               for q in qs]
+            self._idx = 0
+            self._correct_count = 0
+            self._asked_count = 0
+            self._last_correct = None
+            self._phase = 'quiz' if self._questions else 'topics'
 
     def _draw_frame(self, W, H):
         """Paint the full-viewport grimoire panel that frames every phase."""
@@ -335,8 +461,17 @@ class StudyMode:
             self.screen.blit(surf, (S(60), y))
             y += S(24)
 
-        # Show context (educational explanation) if available
+        # The card's line for this question, after a wrong answer
         from fantasy_ui import display_text as _dt
+        lesson = self._lesson_for_result()
+        if lesson:
+            y += S(16)
+            for line in self._wrap("Remember: " + _dt(lesson), self.font_sm, W - 2 * S(60)):
+                surf = self.font_sm.render(line, True, FP.GOLD_BRIGHT)
+                self.screen.blit(surf, (S(60), y))
+                y += S(24)
+
+        # Show context (educational explanation) if available
         context = _dt(q.get('context', ''), sources=True)
         if context:
             y += S(20)
@@ -362,20 +497,36 @@ class StudyMode:
 
     _KIT_TITLES = {
         'subject': 'Study Mode',
+        'mode':    'Study: How to Study',
         'tier':    'Study: Choose Difficulty',
+        'topics':  'Study: Choose a Topic',
+        'card':    'Study: The Card',
         'quiz':    'Study: Quiz',
         'result':  'Study: Result',
+        'done':    'Study: Topic Done',
     }
     _KIT_HINTS = {
         'subject': "Up/Down: select   Enter: choose   Esc: back",
+        'mode':    "Up/Down: select   Enter: choose   Esc: back",
         'tier':    "Up/Down: select   Enter: choose   Esc: back",
-        'quiz':    "1-4: answer   Esc: quit",
-        'result':  "Enter / Space: next question   Esc: quit",
+        'topics':  "Up/Down/PgUp/PgDn: select   A-Z: jump   Enter: read the card   Esc: back",
+        'card':    "Up/Down: scroll   Enter: answer its questions   Esc: back",
+        'quiz':    "1-4: answer   C: read the card   Esc: quit",
+        'result':  "Enter / Space: next question   C: read the card   Esc: quit",
+        'done':    "Enter: back to the topics",
     }
+    # A card opened from a question goes back to it.
+    _CARD_BACK_HINT = "Up/Down: scroll   C / Enter / Esc: back to the question"
+
+    def _hint(self) -> str:
+        if self._phase == 'card' and self._card_return:
+            return self._CARD_BACK_HINT
+        return self._KIT_HINTS.get(self._phase, '')
 
     # Page widths per phase (UI px): the pickers are a short list, the quiz
     # and its result are reading text (long lines are hard to read).
-    _KIT_PAGE_W = {'subject': 640, 'tier': 640, 'quiz': 1240, 'result': 1240}
+    _KIT_PAGE_W = {'subject': 640, 'mode': 640, 'tier': 640, 'topics': 900,
+                   'card': 1100, 'quiz': 1240, 'result': 1240, 'done': 640}
     _KIT_ROW_H = 34
 
     def _draw_kit(self, W, H):
@@ -417,7 +568,7 @@ class StudyMode:
                            panel.w - 2 * (b + S(20)), kh)
         draw_divider(self.screen, panel.x + b + S(28), keys.y - S(16),
                      panel.w - 2 * (b + S(28)))
-        draw_key_hints(self.screen, keys, self._KIT_HINTS.get(self._phase, ''))
+        draw_key_hints(self.screen, keys, self._hint())
         body = pygame.Rect(panel.x + b + S(28), hr.bottom + S(14),
                            panel.w - 2 * (b + S(28)), keys.y - S(32) - hr.bottom - S(14))
         self._kit_content(body, draw=True)
@@ -429,6 +580,14 @@ class StudyMode:
             return self._kit_subjects(body, draw)
         if self._phase == 'tier':
             return self._kit_tiers(body, draw)
+        if self._phase == 'mode':
+            return self._kit_mode(body, draw)
+        if self._phase == 'topics':
+            return self._kit_topics(body, draw)
+        if self._phase == 'card':
+            return self._kit_card(body, draw)
+        if self._phase == 'done':
+            return self._kit_done(body, draw)
         if self._phase == 'quiz':
             return self._kit_quiz(body, result=False, draw=draw)
         if self._phase == 'result':
@@ -453,7 +612,7 @@ class StudyMode:
             if draw:
                 sel = i == self._selected
                 rect = pygame.Rect(x, y, w, row_h)
-                ui_theme.draw_piece(self.screen, 'row_selected' if sel else 'row', rect)
+                self._row_bg(rect, sel)
                 tx = rect.x + S(14)
                 if icon:
                     isz = min(S(24), row_h - S(8))
@@ -469,6 +628,136 @@ class StudyMode:
                 self.screen.blit(ts, (tx, rect.centery - font.get_ascent() + cap // 2))
             y += row_h + gap
         return y
+
+    def _row_bg(self, rect, sel):
+        """A list row: the kit's row piece, or a plain one without the kit."""
+        import ui_theme
+        if not ui_theme.draw_piece(self.screen, 'row_selected' if sel else 'row', rect):
+            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if sel else FP.MIDNIGHT, rect,
+                             border_radius=4)
+            if sel:
+                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
+
+    def _subject_heading(self, body, draw) -> int:
+        """The chosen subject's icon and name, centred; returns its height."""
+        import ui_theme
+        from fantasy_ui import KT, get_font
+        subj_name = next(n for s_, n, _ in self._SUBJECTS if s_ == self._subject)
+        hf = get_font('heading', 26, bold=True)
+        isz = S(32)
+        if draw:
+            hs = hf.render(subj_name, True, KT.TEXT_HEAD)
+            total = isz + S(10) + hs.get_width()
+            x = body.centerx - total // 2
+            ui_theme.draw_icon(self.screen, f"subject_{self._subject}", (x, body.y, isz, isz))
+            self.screen.blit(hs, (x + isz + S(10), body.y + (isz - hs.get_height()) // 2))
+        return isz + S(10)
+
+    def _kit_mode(self, body, draw=True) -> int:
+        from fantasy_ui import KT
+        y = body.y + self._subject_heading(body, draw)
+        if draw:
+            sub = self.font_sm.render("How would you like to study?", True, KT.TEXT_DIM)
+            self.screen.blit(sub, (body.centerx - sub.get_width() // 2, y))
+        end = self._kit_rows(body, [(None, "By Difficulty"), (None, "By Topic: Read, Then Answer")],
+                             y + self.font_sm.get_height() + S(14), draw)
+        return end - body.y
+
+    _TOPIC_ROWS = 14          # rows the topic list shows at once
+
+    def _kit_topics(self, body, draw=True) -> int:
+        from fantasy_ui import KT, readable
+        y = body.y + self._subject_heading(body, draw)
+        n = len(self._topics)
+        line = f"{n} topics" if n else "No topics with cards in this subject."
+        if n:
+            line = f"Topic {self._selected + 1} of {n}"
+        if draw:
+            sub = self.font_sm.render(line, True, KT.TEXT_DIM)
+            self.screen.blit(sub, (body.centerx - sub.get_width() // 2, y))
+        y += self.font_sm.get_height() + S(10)
+        row_h, gap = S(30), S(3)
+        rows = self._TOPIC_ROWS
+        if draw:
+            rows = max(1, min(rows, (body.bottom - y) // (row_h + gap)))
+        top = max(0, min(self._selected - rows // 2, max(0, n - rows)))
+        font = self.font_sm
+        for i in range(top, min(n, top + rows)):
+            if draw:
+                sel = i == self._selected
+                rect = pygame.Rect(body.x, y, body.w, row_h)
+                self._row_bg(rect, sel)
+                col = readable(KT.TEXT_HEAD if sel else KT.TEXT_BODY,
+                               KT.SELECTED if sel else KT.RAISED)
+                label = self._fit(self._topics[i][1], font, rect.w - S(28))
+                ts = font.render(label, True, col)
+                self.screen.blit(ts, (rect.x + S(14), rect.centery - ts.get_height() // 2))
+            y += row_h + gap
+        if not draw:
+            y += (rows - min(n, rows)) * (row_h + gap)
+        return y - body.y
+
+    def _card_lines(self, width):
+        """The open card as wrapped lines: [(text, is_heading)]."""
+        import topic_cards
+        from fantasy_ui import display_text
+        out = [(line, True) for line in self._wrap(topic_cards.title(self._subject, self._topic),
+                                                    self.font_md, width)]
+        for para in (topic_cards.card(self._subject, self._topic) or '').split('\n\n'):
+            if para.strip():
+                out.append(('', False))
+                out += [(line, False) for line in self._wrap(display_text(para.strip()),
+                                                             self.font_sm, width)]
+        return out
+
+    def _kit_card(self, body, draw=True) -> int:
+        from fantasy_ui import KT
+        lines = self._card_lines(body.w)
+        lh = self.font_sm.get_height() + S(6)
+        if not draw:
+            return len(lines) * lh
+        visible = max(1, body.h // lh)
+        self._card_scroll = max(0, min(self._card_scroll, max(0, len(lines) - visible)))
+        y = body.y
+        for text, heading in lines[self._card_scroll:self._card_scroll + visible]:
+            if text:
+                fnt = self.font_md if heading else self.font_sm
+                self.screen.blit(fnt.render(text, True, KT.TEXT_HEAD if heading else KT.TEXT_BODY),
+                                 (body.x, y))
+            y += lh
+        return y - body.y
+
+    def _kit_done(self, body, draw=True) -> int:
+        import topic_cards
+        from fantasy_ui import KT, get_font
+        hf = get_font('heading', 26, bold=True)
+        rows = [("Topic Finished", hf, KT.TEXT_HEAD),
+                (topic_cards.title(self._subject, self._topic), self.font_md, KT.TEXT_QUIZ),
+                (f"You answered {self._correct_count} of {self._asked_count} right.",
+                 self.font_md, KT.TEXT_BODY)]
+        y = body.y
+        for text, fnt, col in rows:
+            for line in self._wrap(text, fnt, body.w):
+                if draw:
+                    ts = fnt.render(line, True, col)
+                    self.screen.blit(ts, (body.centerx - ts.get_width() // 2, y))
+                y += fnt.get_height() + S(8)
+        return y - body.y
+
+    @staticmethod
+    def _fit(text, font, max_w):
+        if font.size(text)[0] <= max_w:
+            return text
+        while len(text) > 1 and font.size(text + '\u2026')[0] > max_w:
+            text = text[:-1]
+        return text + '\u2026'
+
+    def _lesson_for_result(self) -> str:
+        """After a wrong answer: the card's one line for this question."""
+        import topic_cards
+        if self._last_correct or not getattr(self, '_last_q', None):
+            return ''
+        return topic_cards.lesson(self._subject, self._last_q) or ''
 
     def _kit_subjects(self, body, draw=True) -> int:
         from fantasy_ui import KT
@@ -558,6 +847,13 @@ class StudyMode:
         if not result:
             return y - body.y
         y += S(14)
+        lesson = self._lesson_for_result()
+        if lesson:
+            lf = get_font('body', 22, bold=True)
+            for line in self._wrap("Remember: " + display_text(lesson), lf, body.w):
+                if draw and y + lf.get_height() <= body.bottom:
+                    self.screen.blit(lf.render(line, True, KT.TEXT_HEAD), (body.x, y))
+                y += lf.get_height() + S(6)
         context = display_text(q.get('context', ''), sources=True)
         # The explanation reads at the question's size, and sits under the
         # cards with space, not a second divider: with a one-line

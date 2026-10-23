@@ -141,6 +141,10 @@ class Player:
         # Treasure kinds a trader has valued (treasure.py): their exact
         # worth is known, as an identified type's name is.
         self.appraised_treasure: set[str] = set()
+        # The Lore Codex (src/topic_cards.py): "subject|topic" keys of every
+        # topic a quiz has asked from, and of every topic card opened.
+        self.topics_met: set[str] = set()
+        self.topics_read: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)
         self.known_monster_ids: set[str] = set()   # monsters seen (encyclopedia)
         # Monster types whose corpse has been identified. One success knows
@@ -858,6 +862,9 @@ class Player:
             self.seen_item_ids = set(getattr(self, 'known_item_ids', ()) or ())
         if not hasattr(self, 'appraised_treasure'):
             self.appraised_treasure = set()
+        # Saves from before the Lore Codex (2026-10-23): nothing met or read.
+        self.__dict__.setdefault('topics_met', set())
+        self.__dict__.setdefault('topics_read', set())
         # Saves from before monster families (2026-10-18): every kind whose
         # corpse was studied counts as studied, and every tier that gives is
         # marked told, so loading brings no flood of popups.

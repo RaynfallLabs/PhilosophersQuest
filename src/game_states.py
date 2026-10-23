@@ -61,3 +61,4 @@ STATE_PET_HEAL         = 'pet_heal'          # Sub-menu: pick a healing potion t
 STATE_PET_SPECIALS     = 'pet_specials'      # Sub-menu: pick an unlocked special to use
 STATE_MESSAGE_LOG      = 'message_log'       # L: scroll back through the message history
 STATE_QA_WARP_INPUT    = 'qa_warp_input'     # Titivillus build only: type a floor number to warp to
+STATE_TOPIC_CARD       = 'topic_card'        # A topic's card with no quiz running: C on a missed question, the Lore Codex

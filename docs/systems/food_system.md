@@ -31,6 +31,7 @@ Three memory rules govern every decision in this system — rebalance against th
 | `src/items.py::Ingredient` (L1001) | The `~` inventory item. Carries `source_monster`, `tier_role`, `family`, plus the raw-eating fields `edible_safe` + `raw_sp`. |
 | `src/items.py::Food` (L1115) | Ready-to-eat ration. Carries `sp_restore`, `hp_restore`, `bonus_type`, `bonus_stat`, `bonus_effect`, `bonus_amount`. |
 | `src/player.py::try_apply_cook_hp_gain` (L549) | Per-floor max-HP cap + lifetime softcap for cooked HP gains. |
+| `src/hud_context.py::cooking_hp_line` | The sidebar's Meals line: this floor's cooked max HP of its cap. |
 | `src/player.py::try_apply_cook_stat_gain` (L527) | Per-floor stat cap + per-stat lifetime softcap for cooked stat gains. |
 | `src/player.py::apply_cooking_stat_bonus` (L585) | Diminishing-return + hard-cap stat delivery. |
 | `src/player.py::increase_max_hp` (L610) | Diminishing-return max-HP delivery, floored at +1. |

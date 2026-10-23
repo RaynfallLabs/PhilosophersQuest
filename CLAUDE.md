@@ -96,7 +96,8 @@ src/
 
   # Quiz
   quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)
-  study_mode.py       - Standalone untimed Study Mode (title screen F3)
+  study_mode.py       - Standalone untimed Study Mode (title screen F3): by difficulty or by topic
+  topic_cards.py      - Topic cards with no quiz running: titles, the Lore Codex, topics met/read
 
   # Story, deeds and karma
   deeds.py            - The deeds register: what the hero has done this run

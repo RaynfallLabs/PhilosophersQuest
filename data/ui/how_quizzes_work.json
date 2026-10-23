@@ -1,0 +1,64 @@
+{
+ "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), player.py (cook caps).",
+ "title": "How Quizzes Work",
+ "sections": [
+  {
+   "heading": "Every action is a quiz",
+   "paragraphs": [
+    "Nothing in the dungeon is left to luck. Each action asks questions from one subject, and your answers decide what happens."
+   ],
+   "rows": [
+    ["Fight", "Math"],
+    ["Wear armour or a shield", "Geography"],
+    ["Put on a ring, amulet or other accessory", "History"],
+    ["Harvest a corpse", "Animals"],
+    ["Cook", "Cooking"],
+    ["Cast a spell or zap a wand", "Science"],
+    ["Identify an item", "Philosophy"],
+    ["Read a scroll or a spellbook", "Grammar"],
+    ["Pick a lock", "Economics"],
+    ["Pray", "Theology"],
+    ["Recall lore", "Trivia"],
+    ["Disarm a trap, and some hero powers", "AI"]
+   ]
+  },
+  {
+   "heading": "Fighting builds a chain",
+   "paragraphs": [
+    "Every sum you get right adds a link to your chain, and a longer chain hits harder. A wrong answer, or the clock running out, ends the chain and you strike with what you built. Miss the very first sum and the blow misses.",
+    "Press SPACE to strike at once and keep the chain you have."
+   ]
+  },
+  {
+   "heading": "Only fights are timed",
+   "paragraphs": [
+    "The combat clock is the only clock in the game. Every other quiz waits for you, so take the time to read it. Wisdom lengthens the combat clock, and the sidebar's Clock shows how long your next fight will give you."
+   ]
+  },
+  {
+   "heading": "One wrong answer ends the rest",
+   "paragraphs": [
+    "Wearing armour, identifying, harvesting and cooking stop at the first wrong answer. Armour asks a few questions and you need every one. A wrong identify stuns you for ten turns. A failed harvest or cook uses up what you were working on."
+   ]
+  },
+  {
+   "heading": "Press C to read the card",
+   "paragraphs": [
+    "Every question belongs to a topic, and C opens that topic's card: the whole story behind its questions, so a careful reader can answer every one. In a fight the clock stops while you read, once per question.",
+    "After a wrong answer the Remember box shows the line you needed. Press C there to read the whole card."
+   ]
+  },
+  {
+   "heading": "Learn from your misses",
+   "paragraphs": [
+    "; opens your missed questions, each with the right answer and the card's line, and C opens the full card from there too. Every card you have met waits in the Encyclopedia's Lore Codex (B, then m). On the title screen, F3 opens Study Mode, where you can read a topic's card and practise its questions with no clock and no risk."
+   ]
+  },
+  {
+   "heading": "Cooking is how you grow",
+   "paragraphs": [
+    "Your maximum HP grows only from meals you cook yourself: up to 5 more on each floor. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Going deeper raises the most that cooking can ever give."
+   ]
+  }
+ ]
+}
