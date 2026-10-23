@@ -33,8 +33,8 @@ UNTOPICED_BASELINE = {}
 # Rungs whose keyed answer appears verbatim in their own blurb. Audit state,
 # rounded up slightly so harmless reformatting does not trip the test.
 LEAK_BASELINE = {
-    'history': 95, 'philosophy': 5, 'economics': 674, 'ai': 10,
-    'theology': 263, 'geography': 174, 'science': 52, 'trivia': 91,
+    'history': 95, 'philosophy': 5, 'economics': 674, 'ai': 0,
+    'theology': 75, 'geography': 174, 'science': 52, 'trivia': 91,
     'animal': 110, 'cooking': 52,
 }
 
@@ -48,7 +48,7 @@ LEAK_BASELINE = {
 TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography', 'cooking', 'history', 'science', 'economics', 'theology', 'ai'}
 
 # Cards in a teaching subject that still lack `teaches` (rollout in progress).
-UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 2, 'economics': 45, 'theology': 120, 'ai': 31}
+UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 2, 'economics': 45, 'theology': 75, 'ai': 0}
 
 
 # The snappy-rote subjects (Brandon, 2026-10-22). Their cards teach the rule or

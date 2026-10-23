@@ -1249,7 +1249,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1990s, computer voices sounded flat and robotic, like the automated voices on old telephone menus. Today's AI speech tools, trained on hours of recorded audio, can copy the tone, accent, and pitch of a real speaker after just a few minutes of listening to them. Modern AI voice synthesis can produce speech that sounds like:",
+    "question": "In the 1990s, computer voices sounded flat and robotic, like the automated voices on old telephone menus. Today's AI speech tools, trained on hours of recorded audio, can copy the tone, accent, and pitch of a real speaker after only a short sample of their speech. Modern AI voice synthesis can produce speech that sounds like:",
     "answer": "A specific real person",
     "choices": [
       "A specific real person",
@@ -7269,9 +7269,9 @@
   {
     "tier": 3,
     "question": "In modern AI, a neural network is a stack of math layers that learns from examples. Before the transformer arrived in 2017, the top design for handling sequences like sentences or stock prices was the Long Short-Term Memory (LSTM) network. LSTMs could remember important information from far back in a sequence while forgetting noise in between. When was the LSTM invented, and by whom?",
-    "answer": "1997 — by Sepp Hochreiter and Jürgen Schmidhuber, then at the Technical University of Munich.",
+    "answer": "1997 — by Sepp Hochreiter and Jürgen Schmidhuber, then working in Munich and Switzerland.",
     "choices": [
-      "1997 — by Sepp Hochreiter and Jürgen Schmidhuber, then at the Technical University of Munich.",
+      "1997 — by Sepp Hochreiter and Jürgen Schmidhuber, then working in Munich and Switzerland.",
       "2012 — by the same Toronto team that built AlexNet, as a follow-up to their image-recognition work.",
       "2017 — by the same Google team that introduced the transformer in 'Attention Is All You Need.'",
       "1956 — by Marvin Minsky during the Dartmouth conference that named the AI field."
@@ -8509,7 +8509,7 @@
       "Most cameras, social platforms, and AI tools still don't preserve or display the credentials",
       "Cameras that support C2PA cost ten thousand dollars and are only sold in Japan",
       "C2PA only works on images, not on text or video or any other type of content",
-      "C2PA credentials can be removed by anyone in two clicks within any image editor"
+      "C2PA is a government standard that every camera sold since 2022 must implement"
     ],
     "context": "C2PA is well-designed but partially deployed. Most consumer cameras don't sign. Most social platforms strip metadata on upload (Facebook, Twitter, Instagram). Most browser viewers don't display the credentials even when present. As of 2024-2025, the standard works mainly within professional newsrooms and a few AI tools that sign generated content. The recognition skill: 'C2PA exists' is true; 'you can rely on it everywhere' is not. The defensive gap remains — and other recognition skills (reverse image search, examining context, source verification) still matter most.",
     "topic": "watermarks-and-provenance"
@@ -10032,7 +10032,7 @@
       "The marketing requirement that every press release contain a bigger number than the previous quarter.",
       "A geological process that grows the model's storage automatically as new training runs are started."
     ],
-    "context": "The scaling hypothesis, articulated most clearly by OpenAI's Kaplan et al. 2020 and Anthropic's later Hoffmann et al. (Chinchilla) 2022, holds that the loss of large language models follows predictable power laws in three quantities: parameters, training data, and compute. As all three scale up together, loss decreases smoothly, and new capabilities often emerge. The hypothesis explains why labs have pursued ever-larger models. Recent debate is about whether scaling continues to deliver returns or whether other innovations (reasoning, agents) now matter more.",
+    "context": "The scaling hypothesis, articulated most clearly by OpenAI's Kaplan et al. 2020 and DeepMind's later Hoffmann et al. (Chinchilla) 2022, holds that the loss of large language models follows predictable power laws in three quantities: parameters, training data, and compute. As all three scale up together, loss decreases smoothly, and new capabilities often emerge. The hypothesis explains why labs have pursued ever-larger models. Recent debate is about whether scaling continues to deliver returns or whether other innovations (reasoning, agents) now matter more.",
     "topic": "scaling-laws-and-model-size"
   },
   {
@@ -12143,7 +12143,7 @@
   },
   {
     "tier": 4,
-    "question": "Microsoft 365's 'Productivity Score' tracks worker activity data. It logs emails sent, meetings attended, and documents edited. Tools like Hubstaff and Time Doctor snap screenshots and log mouse movement. What common thing do these systems all collect that the worker never sees?",
+    "question": "Microsoft 365's 'Productivity Score' tracks worker activity data. It logs emails sent, meetings attended, and documents edited. Tools like Hubstaff and Time Doctor snap screenshots and log mouse movement. What do these tools have in common?",
     "answer": "Workplace AI surveillance has expanded sharply since 2020 — and most employees don't fully know what's tracked",
     "choices": [
       "Workplace AI surveillance has expanded sharply since 2020 — and most employees don't fully know what's tracked",
@@ -12429,7 +12429,7 @@
   },
   {
     "tier": 4,
-    "question": "Smart-home cameras (Ring, Nest, Arlo, Wyze) increasingly use AI for person and package detection, behavior analysis, and 'familiar face' recognition. They store video in the cloud by default. What single neighborhood-scale data flow do home AI devices create?",
+    "question": "Smart-home cameras (Ring, Nest, Arlo, Wyze) increasingly use AI for person and package detection, behavior analysis, and 'familiar face' recognition. They store video in the cloud by default. What data flow do these devices create that an owner may not expect?",
     "answer": "The footage may be accessible to the manufacturer, to law enforcement via subpoena, and sometimes shared via partnership programs — multiple potential paths",
     "choices": [
       "The footage may be accessible to the manufacturer, to law enforcement via subpoena, and sometimes shared via partnership programs — multiple potential paths",
