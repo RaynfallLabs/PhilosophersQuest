@@ -7502,7 +7502,7 @@
   },
   {
     "tier": 3,
-    "question": "British puzzler Leigh Mercer wrote a famous nine-word palindrome about the Panama Canal. Which palindrome is it?",
+    "question": "British puzzler Leigh Mercer wrote a famous seven-word palindrome about the Panama Canal. Which palindrome is it?",
     "answer": "'A man, a plan, a canal -- Panama'",
     "choices": [
       "'A man, a plan, a canal -- Panama'",
@@ -8360,7 +8360,7 @@
   },
   {
     "tier": 4,
-    "question": "The Associated Press Stylebook has one rule exception for some classical and biblical names ending in s. When does the exception apply?",
+    "question": "The Chicago Manual of Style has one rule exception for some classical and biblical names ending in s. When does the exception apply?",
     "answer": "classical and biblical singular names take just the apostrophe (Jesus', Moses', Achilles')",
     "choices": [
       "classical and biblical singular names take just the apostrophe (Jesus', Moses', Achilles')",
@@ -9296,11 +9296,11 @@
   },
   {
     "tier": 5,
-    "question": "'A pile of books that ___ falling over sat in the corner.' Which verb?",
-    "answer": "were (THAT refers to 'books', plural)",
+    "question": "'A box of chocolates that ___ melting in the sun sat on the dashboard.' Which verb?",
+    "answer": "were (THAT refers to 'chocolates', plural)",
     "choices": [
-      "were (THAT refers to 'books', plural)",
-      "was (agrees with 'pile')",
+      "were (THAT refers to 'chocolates', plural)",
+      "was (agrees with 'box')",
       "is",
       "are"
     ],
@@ -9712,10 +9712,10 @@
   },
   {
     "tier": 5,
-    "question": "'She invited her sister Anna her brother Ben and her mother Carla' -- a light-comma list where each item has a single appositive. What does Chicago recommend for clarity?",
-    "answer": "Use semicolons between items even here: 'her sister, Anna; her brother, Ben; and her mother, Carla' -- prefer super-commas whenever items carry internal commas",
+    "question": "'She invited her sister, Anna, her brother, Ben, and her mother, Carla.' Every item carries its own comma, so the breaks between items are lost. What does Chicago recommend?",
+    "answer": "Use semicolons between the items: 'her sister, Anna; her brother, Ben; and her mother, Carla'",
     "choices": [
-      "Use semicolons between items even here: 'her sister, Anna; her brother, Ben; and her mother, Carla' -- prefer super-commas whenever items carry internal commas",
+      "Use semicolons between the items: 'her sister, Anna; her brother, Ben; and her mother, Carla'",
       "Never use semicolons in personal-relationship lists",
       "Use only commas -- semicolons are pretentious",
       "Rewrite the sentence to avoid the problem entirely"
@@ -10271,7 +10271,7 @@
   },
   {
     "tier": 1,
-    "question": "Writer Gary Provost demonstrated the sentence rhythm problem by writing: 'I write with short sentences. And I write with medium sentences. And sometimes long sentences.' What is the problem?",
+    "question": "Writer Gary Provost taught sentence rhythm with a passage that runs several short sentences together, then several of the same medium length, one after another. What problem was he showing?",
     "answer": "strings of same-length sentences read MONOTONOUSLY -- variety creates rhythm",
     "choices": [
       "strings of same-length sentences read MONOTONOUSLY -- variety creates rhythm",
@@ -10297,7 +10297,7 @@
   },
   {
     "tier": 2,
-    "question": "What does Strunk and White's rule 14 (1918) say about sentence BEGINNINGS?",
+    "question": "What do style guides advise about sentence BEGINNINGS?",
     "answer": "vary the beginnings; if every sentence starts with THE or I, the paragraph reads flat",
     "choices": [
       "vary the beginnings; if every sentence starts with THE or I, the paragraph reads flat",
@@ -10830,7 +10830,7 @@
   },
   {
     "tier": 5,
-    "question": "W.C. Fields's line \"I'd rather have a bottle in front of me than a frontal lobotomy\" -- what makes it a spoonerism-style joke?",
+    "question": "The old line often wrongly pinned on W.C. Fields, \"I'd rather have a bottle in front of me than a frontal lobotomy\" -- what makes it a spoonerism-style joke?",
     "answer": "\"bottle in front\" and \"frontal lobotomy\" swap sound groups; the effect is a deliberate spoonerism-pun",
     "choices": [
       "\"bottle in front\" and \"frontal lobotomy\" swap sound groups; the effect is a deliberate spoonerism-pun",
@@ -11572,9 +11572,9 @@
   {
     "tier": 5,
     "question": "'The book was long, though, it was worth reading.' Which comma-splice fix is cleanest here?",
-    "answer": "move 'though' inside one clause: 'The book was long; though it was worth reading.' -- but even better: 'The book was long, but it was worth reading.'",
+    "answer": "swap in a conjunction: 'The book was long, but it was worth reading.'",
     "choices": [
-      "move 'though' inside one clause: 'The book was long; though it was worth reading.' -- but even better: 'The book was long, but it was worth reading.'",
+      "swap in a conjunction: 'The book was long, but it was worth reading.'",
       "add a semicolon before 'though'",
       "the sentence has no splice",
       "keep it as-is"
@@ -11870,10 +11870,10 @@
   },
   {
     "tier": 2,
-    "question": "'I already told you Marcus to feed the dog.' Without commas, what does the sentence appear to name Marcus as?",
-    "answer": "a pet named Marcus",
+    "question": "'Thanks for cooking Dad.' Without the comma, what does the sentence appear to name Dad as?",
+    "answer": "the thing that was cooked",
     "choices": [
-      "a pet named Marcus",
+      "the thing that was cooked",
       "the person being addressed",
       "the speaker",
       "an unrelated bystander"
@@ -12390,11 +12390,11 @@
   },
   {
     "tier": 3,
-    "question": "\"The Beatles ___ a band from Liverpool.\" What is the American English convention?",
-    "answer": "is (band is singular as a unit)",
+    "question": "\"The Beatles ___ a band from Liverpool.\" Which verb is correct?",
+    "answer": "are (the name itself is plural)",
     "choices": [
-      "is (band is singular as a unit)",
-      "are (a band is a group of individuals)",
+      "are (the name itself is plural)",
+      "is (the group counts as one unit)",
       "have been (perfect required)",
       "was (past required)"
     ],
@@ -12408,7 +12408,7 @@
     "choices": [
       "mathematics (\"mathematics IS my favorite subject\")",
       "politics (\"politics ARE always about people\")",
-      "physics (\"physics ARE the hardest science\")",
+      "acoustics (\"the acoustics ARE good in here\")",
       "ethics (\"ethics ARE relative\")"
     ],
     "context": "-ICS subject names look plural but are singular: MATHEMATICS IS, PHYSICS IS, POLITICS IS. Also THE NEWS IS ON at six.",
@@ -12534,9 +12534,9 @@
   {
     "tier": 4,
     "question": "The 2018 Skidmore College study by Rebecca Johnson et al. found what about reading speed with one vs two spaces?",
-    "answer": "slight advantage with two spaces for MONOSPACED fonts; NO significant difference for proportional fonts",
+    "answer": "a slight advantage for two spaces in the one MONOSPACED font it tested",
     "choices": [
-      "slight advantage with two spaces for MONOSPACED fonts; NO significant difference for proportional fonts",
+      "a slight advantage for two spaces in the one MONOSPACED font it tested",
       "two spaces are always significantly faster",
       "one space is always significantly faster",
       "the study found no data"
@@ -13430,13 +13430,13 @@
   },
   {
     "tier": 5,
-    "question": "Which sentence is BOTH grammatical AND natural?",
-    "answer": "Both are grammatical; choose based on register.",
+    "question": "The 'never end a sentence with a preposition' rule is a zombie rule. Which version does ordinary English speech actually prefer?",
+    "answer": "Where are you from?",
     "choices": [
-      "Whom did you speak to?",
-      "To whom did you speak?",
-      "Both are grammatical; choose based on register.",
-      "Neither is correct."
+      "From where are you?",
+      "From whence do you come?",
+      "Where are you from?",
+      "Whence are you from?"
     ],
     "context": "'Whom did you speak to?' -- natural, ends with preposition, whom is object. 'To whom did you speak?' -- formal, follows the fake rule. Both are grammatically correct. Context decides.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
@@ -13482,7 +13482,7 @@
   },
   {
     "tier": 3,
-    "question": "'To boldly go where no one has gone before.' From which show is this line?",
+    "question": "'To boldly go where no man has gone before.' From which show is this line?",
     "answer": "Star Trek (original series opening, 1966)",
     "choices": [
       "Star Trek (original series opening, 1966)",
