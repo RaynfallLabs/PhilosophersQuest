@@ -48,7 +48,7 @@ LEAK_BASELINE = {
 TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography', 'cooking', 'history', 'science', 'economics', 'theology'}
 
 # Cards in a teaching subject that still lack `teaches` (rollout in progress).
-UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 7, 'economics': 120, 'theology': 195}
+UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 2, 'economics': 120, 'theology': 195}
 
 
 # The snappy-rote subjects (Brandon, 2026-10-22). Their cards teach the rule or
