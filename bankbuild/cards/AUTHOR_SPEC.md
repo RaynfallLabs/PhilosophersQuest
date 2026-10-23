@@ -199,3 +199,17 @@ unsourced quotation into a card, and never invent one to make a card read well.
   on misuse), and keep "doomer" and "techno-utopian" out of the card's own voice. The
   cards for ai-doomerism, e-acc, gemini-image-generator and fine-tuning-and-rlhf are
   the models to copy.
+
+## Order of operations: NEVER fix questions before the merge
+`fix_questions` re-keys a topic's `teaches` entries when a stem hash changes, but
+it can only do that for topics already present in
+`data/question_contexts/<subject>.json`. Fix a stem BEFORE its card is merged and
+there is nothing to re-key; the later merge then writes the card back with its
+pre-fix hashes, and every changed rung silently loses its teaching sentence. That
+happened to 30 entries across 18 trivia topics and had to be repaired by
+remapping old hashes to new ones, matching the pre-fix and post-fix question
+files by index.
+
+So the order is always: **gate -> judge -> merge -> fix_questions**. If a fix
+cannot wait (because it changes a key the judge must see), cut the affected
+topics a fresh batch from the corrected live data and judge that instead.
