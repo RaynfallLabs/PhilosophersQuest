@@ -142,3 +142,19 @@ reworded in the card's own voice), so as a hard rule it would block good cards.
 Coverage still holds in those cases because the card as a whole teaches the
 fact; what suffers is the one-line "Remember" prompt the player sees after a
 wrong answer, which is why it is worth getting right.
+
+## Invented and misattributed quotations are the worst error class in these banks
+Running tally of what the card rollout has caught in the QUESTIONS, across
+subjects: a fabricated Hayek quotation (neither sentence is in the 1945 paper);
+an invented Buchanan line about who gets the ball at recess; "Strunk and White's
+rule 14 (1918)", a citation to a rule that does not exist in a book that did not
+yet exist; a Gary Provost paraphrase printed inside quotation marks; the
+bottle-and-lobotomy line pinned on W.C. Fields, which is apocryphal; "the
+invisible government by the money power" credited to a congressman when it is
+Woodrow Wilson's; a Munger slogan with no source; and a racist Davis-Bacon line
+credited to the wrong representative.
+
+So: when a stem or context puts words in a real person's mouth, treat it as
+suspect until the input itself quotes them. If you cannot source it, teach the
+substance without the quotation and log the stem as MUST-FIX. Never carry an
+unsourced quotation into a card, and never invent one to make a card read well.
