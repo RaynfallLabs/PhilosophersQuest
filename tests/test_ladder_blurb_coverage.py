@@ -51,6 +51,16 @@ TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography', 'cooking', 'history', 
 UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 0, 'geography': 0, 'cooking': 0, 'history': 0, 'science': 7, 'economics': 120, 'theology': 195}
 
 
+# The snappy-rote subjects (Brandon, 2026-10-22). Their cards teach the rule or
+# the method with one worked example, and deliberately do NOT hand over each
+# rung's answer: the kid applies it. So they get the rote gate, not the teaching
+# gate, and no cold-reader judge. See bankbuild/cards/rote.py.
+ROTE_SUBJECTS = ('math', 'grammar')
+
+# Rote topics still waiting for a card (rollout in progress; may only go down).
+ROTE_UNCARDED_BASELINE = {'math': 0, 'grammar': 157}
+
+
 def _load(subject):
     questions = json.loads((_Q / f'{subject}.json').read_text(encoding='utf-8'))
     if isinstance(questions, dict):
@@ -217,6 +227,42 @@ def test_teaching_cards_pass_the_card_gate(subject):
             if errs:
                 bad[topic] = errs[:3]
     assert not bad, f"{subject}: {len(bad)} teaching cards fail the gate: {list(bad.items())[:5]}"
+
+
+@pytest.mark.parametrize('subject', ROTE_SUBJECTS)
+def test_rote_cards_pass_the_rote_gate(subject):
+    """A rote card is short, works an example, and does not give a long keyed
+    answer away. It must also carry no `teaches` map: a rote card that handed
+    over every answer would defeat the point of the subject."""
+    import sys
+    if str(_ROOT) not in sys.path:
+        sys.path.insert(0, str(_ROOT))
+    from bankbuild.cards.common import ladders
+    from bankbuild.cards.rote import check_card, packet
+    live = json.loads((_C / f'{subject}.json').read_text(encoding='utf-8'))
+    bad = {}
+    for topic, qs in ladders(subject).items():
+        entry = live.get(topic)
+        if not _blurb_text(entry or '').strip():
+            continue                      # not written yet; the ratchet below covers it
+        errs = check_card(packet(subject, topic, qs, entry), entry)
+        if errs:
+            bad[topic] = errs[:3]
+    assert not bad, f"{subject}: {len(bad)} rote cards fail the gate: {list(bad.items())[:5]}"
+
+
+@pytest.mark.parametrize('subject', ROTE_SUBJECTS)
+def test_rote_cards_do_not_grow_uncarded(subject):
+    import sys
+    if str(_ROOT) not in sys.path:
+        sys.path.insert(0, str(_ROOT))
+    from bankbuild.cards.common import ladders
+    live = json.loads((_C / f'{subject}.json').read_text(encoding='utf-8'))
+    uncarded = sum(1 for t in ladders(subject)
+                   if not _blurb_text(live.get(t) or '').strip())
+    allowed = ROTE_UNCARDED_BASELINE[subject]
+    assert uncarded <= allowed, (
+        f"{subject}: {uncarded} skill classes have no card yet (baseline {allowed})")
 
 
 @pytest.mark.parametrize('subject', sorted(TEACHING_SUBJECTS) or ['none'])

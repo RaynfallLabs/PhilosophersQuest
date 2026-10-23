@@ -42,9 +42,10 @@ _CONTEXTS_DIR  = data_path('data', 'question_contexts')
 _CONTEXT_SUBJECTS = (
     'philosophy', 'history', 'economics', 'ai', 'theology',
     'geography', 'science', 'trivia', 'animal', 'cooking',
-    # math: class-level method cards keyed by skill class, not ladder
-    # blurbs (see tools/balance/math_topics.py).
-    'math',
+    # math and grammar are the snappy-rote subjects: their cards teach the
+    # method or the rule with one worked example, keyed by skill class rather
+    # than being ladder blurbs (Brandon, 2026-10-22; bankbuild/cards/rote.py).
+    'math', 'grammar',
 )
 
 # The shortest a timed quiz clock can be, applied after status penalties
