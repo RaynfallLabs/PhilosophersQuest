@@ -114,7 +114,12 @@ def check_card(pkt: dict, card: dict) -> list[str]:
         keyed_6 |= _ngrams(words(q['answer']), 6)
     for q in pkt['questions']:
         h = q['hash']
-        shared = sorted(card_6 & _sentence_ngrams(q['stem'], 6))
+        # A run the card shares with a stem is forgiven when that same run is a
+        # KEYED answer's own wording: the card has to teach the key, and it must
+        # not be punished because a sibling stem happens to state it too. One
+        # economics ladder keys a book's title while another rung names the book
+        # in its setup, so the card could not teach the answer (2026-10-23).
+        shared = sorted((card_6 & _sentence_ngrams(q['stem'], 6)) - keyed_6)
         if shared:
             runs = '; '.join('"' + ' '.join(g) + '"' for g in shared[:6])
             errs.append(f'{h}: copies 6+ words of the stem ({len(shared)} runs): {runs}')
