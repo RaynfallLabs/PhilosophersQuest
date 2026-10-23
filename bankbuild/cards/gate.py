@@ -108,6 +108,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
                     '(use he, she or it; if the referent really is plural, reword so the lint sees it)')
     keyed = {norm(q['answer']) for q in pkt['questions']}
     stems = ' '.join(norm(q['stem']) for q in pkt['questions'])
+    keyed_text = ' | '.join(keyed)   # for a choice that sits INSIDE another rung's key
     keyed_6: set[tuple] = set()
     for q in pkt['questions']:
         keyed_6 |= _ngrams(words(q['answer']), 6)
@@ -137,7 +138,13 @@ def check_card(pkt: dict, card: dict) -> list[str]:
                     errs.append(f'{h}: copies 6+ words of a choice: "{" ".join(sorted(near)[0])}"')
             if (norm(ch) not in keyed and _contains(hay, ch)
                     and not _contains(stems, ch)          # a place another rung is about
+                    and not _contains(keyed_text, ch)     # part of another rung's key
                     and not _everyday_word(ch)):          # "paper", "war", "twelve"
+                # A name that sits inside another rung's keyed answer is a fact
+                # this ladder teaches as true somewhere, so the card has to be
+                # free to say it. One Boyne ladder keys "Knowth and Dowth" on one
+                # rung while using each name alone as a wrong answer on another:
+                # the card cannot teach the pair without naming both (2026-10-22).
                 toured.append(ch)
         if len(toured) >= 2:
             errs.append(f'{h}: names {len(toured)} of its distractors: {toured}')
