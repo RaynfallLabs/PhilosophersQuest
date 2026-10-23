@@ -4407,19 +4407,6 @@
     "topic": "farther-vs-further-distance-vs-metaphor"
   },
   {
-    "tier": 3,
-    "question": "'We need to investigate this ___.' Which word fits an additional or figurative meaning?",
-    "answer": "further",
-    "choices": [
-      "further",
-      "farther",
-      "fartherer",
-      "farthermore"
-    ],
-    "context": "FURTHER = additional or figurative. INVESTIGATE deeper does not measure miles.",
-    "topic": "farther-vs-further-distance-vs-metaphor"
-  },
-  {
     "tier": 4,
     "question": "Which fixed phrases always use FURTHER (never FARTHER)?",
     "answer": "furthermore, further education, without further ado, no further comment",
@@ -4456,33 +4443,7 @@
       "no -- FARTHER is not a real word"
     ],
     "context": "FARTHER handles measurable physical distance. Miles to the beach = physical distance = FARTHER.",
-    "topic": "farther-vs-further-physical-distance-vs-figurative"
-  },
-  {
-    "tier": 1,
-    "question": "'Let's discuss this ___.' Which word fits the meaning of additional discussion?",
-    "answer": "further",
-    "choices": [
-      "further",
-      "farther",
-      "fartherer",
-      "furtherer"
-    ],
-    "context": "FURTHER handles figurative or additional amounts. Additional discussion is not physical distance.",
-    "topic": "farther-vs-further-physical-distance-vs-figurative"
-  },
-  {
-    "tier": 2,
-    "question": "What is the memory trick for FARTHER vs FURTHER?",
-    "answer": "FARther has FAR inside -- distance you can walk",
-    "choices": [
-      "FARther has FAR inside -- distance you can walk",
-      "FARther has FAR because it means far away emotionally",
-      "FURther comes from FURniture -- a physical object",
-      "both are pronounced identically and interchangeable"
-    ],
-    "context": "FAR is a measurable distance; FARther keeps it. FURther has no distance clue -- use it for figurative/additional.",
-    "topic": "farther-vs-further-physical-distance-vs-figurative"
+    "topic": "farther-vs-further-distance-vs-metaphor"
   },
   {
     "tier": 2,
@@ -4495,11 +4456,11 @@
       "further / further"
     ],
     "context": "FARTHER for measurable miles; FURTHER for additional (non-physical) items to add.",
-    "topic": "farther-vs-further-physical-distance-vs-figurative"
+    "topic": "farther-vs-further-distance-vs-metaphor"
   },
   {
     "tier": 3,
-    "question": "Which word is ALWAYS correct in \"___ more, we should also consider...\"?",
+    "question": "'___, we should also consider the cost.' Which word is ALWAYS correct at the start of that sentence?",
     "answer": "furthermore (always figurative)",
     "choices": [
       "furthermore (always figurative)",
@@ -4508,7 +4469,7 @@
       "either works equally well"
     ],
     "context": "FURTHERMORE is a fixed word meaning \"in addition.\" There is no FARTHERMORE. The FUR- root won this compound.",
-    "topic": "farther-vs-further-physical-distance-vs-figurative"
+    "topic": "farther-vs-further-distance-vs-metaphor"
   },
   {
     "tier": 4,
@@ -4521,7 +4482,7 @@
       "the two words differ only in tone"
     ],
     "context": "The prescriptive rule: FARTHER = miles you can measure, FURTHER = additional or figurative. Formal writing preserves it.",
-    "topic": "farther-vs-further-physical-distance-vs-figurative"
+    "topic": "farther-vs-further-distance-vs-metaphor"
   },
   {
     "tier": 1,
@@ -6019,19 +5980,6 @@
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
-    "tier": 1,
-    "question": "'The dog wagged it's tail.' What is wrong with this sentence?",
-    "answer": "extra apostrophe: possessive 'its' takes no apostrophe",
-    "choices": [
-      "extra apostrophe: possessive 'its' takes no apostrophe",
-      "wrong verb tense",
-      "missing comma",
-      "nothing wrong"
-    ],
-    "context": "The possessive 'its' (the dog's tail) does NOT take an apostrophe -- like 'his' and 'hers', it is already possessive. Only 'it's' = 'it is' gets the apostrophe.",
-    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
-  },
-  {
     "tier": 2,
     "question": "Which sentence uses 'its' and 'it's' correctly?",
     "answer": "It's a shame the cat lost its collar.",
@@ -6055,19 +6003,6 @@
       "check the following word"
     ],
     "context": "The apostrophe-substitution test: try 'it is' (or 'it has'). If the sentence still makes sense, use 'it's' with apostrophe. If not, use possessive 'its' (like 'his' or 'hers').",
-    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
-  },
-  {
-    "tier": 3,
-    "question": "'The country is proud of its history.' Why is this 'its' without an apostrophe?",
-    "answer": "possessive pronoun (like 'his' or 'her'); pronouns take no apostrophe",
-    "choices": [
-      "possessive pronoun (like 'his' or 'her'); pronouns take no apostrophe",
-      "the sentence is in past tense",
-      "countries never take apostrophes",
-      "the noun is inanimate"
-    ],
-    "context": "Possessive pronouns (his, hers, its, ours, yours, theirs) never take an apostrophe. Only contractions (it's = it is, they're = they are) take one.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
@@ -6107,7 +6042,7 @@
       "IT'S is correct as written"
     ],
     "context": "IT'S with an apostrophe ALWAYS means 'it is' or 'it has.' Possessive pronouns (his, hers, its, ours, theirs) never take apostrophes. Source: Merriam-Webster 'its' + 'it's' entries.",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 2,
@@ -6120,7 +6055,7 @@
       "Because the letter T never accepts an apostrophe"
     ],
     "context": "Possessive pronouns are a closed set; they carry possession in their form. No 'her's,' no 'his',' no 'their's.' The apostrophe on IT'S is reserved for the contraction. Source: Chicago Manual of Style 17e section 5.50.",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 3,
@@ -6133,7 +6068,7 @@
       "'The company celebrated its tenth anniversary.'"
     ],
     "context": "'It is raining outside' works. The other three fail: 'The book lost it is cover' is broken -- the possessive ITS has no apostrophe. Source: Merriam-Webster usage note.",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 3,
@@ -6146,7 +6081,7 @@
       "it is -- always spelled out in formal writing"
     ],
     "context": "The anniversary BELONGS to the company -- possessive. 'The company celebrated it is tenth' fails the swap test, so use ITS. Source: Chicago Manual of Style 17e section 5.50.",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 4,
@@ -6159,7 +6094,7 @@
       "'It's raining hard now.'"
     ],
     "context": "'The dog wagged HIS tail' works fine. The other three are contractions ('it is' / 'it has') -- you cannot swap in HIS. Source: Merriam-Webster usage note.",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 5,
@@ -6172,7 +6107,7 @@
       "'It's a small world, but the world has it's charms.'"
     ],
     "context": "IT'S = it is (contraction, apostrophe). ITS = possessive of it (no apostrophe). Both correct in one sentence when each does its own job. Source: Merriam-Webster 'its' + 'it's.'",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 5,
@@ -6185,7 +6120,7 @@
       "it's ... it's"
     ],
     "context": "Blank 1 is possessive (the age BELONGING to the car) -> ITS. Blank 2 means 'it is starting' -> IT'S. Swap test: 'showing it is age' fails; 'it is starting to rattle' works. Source: Merriam-Webster usage note.",
-    "topic": "its-vs-its-the-one-apostrophe-that-flips-the-meaning"
+    "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 1,
@@ -6292,45 +6227,6 @@
     "topic": "less-vs-fewer-mass-vs-count"
   },
   {
-    "tier": 1,
-    "question": "'The recipe needs ___ sugar.' Which word?",
-    "answer": "less (sugar is uncountable/mass noun)",
-    "choices": [
-      "less (sugar is uncountable/mass noun)",
-      "fewer",
-      "least",
-      "few"
-    ],
-    "context": "LESS + mass/uncountable nouns (sugar, water, time, money). FEWER + count nouns (cookies, cars, people). The count/mass split is the traditional rule. Chicago 5.250.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
-    "tier": 1,
-    "question": "'The recipe needs ___ eggs.' Which word?",
-    "answer": "fewer (eggs are countable)",
-    "choices": [
-      "fewer (eggs are countable)",
-      "less",
-      "least",
-      "few"
-    ],
-    "context": "FEWER + count nouns. You count eggs one by one, so use FEWER. Compare 'less sugar' (mass noun, measured in cups). Same recipe, both rules apply.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
-    "tier": 2,
-    "question": "The express-lane sign says '10 items or less.' The traditional grammar fix is ___.",
-    "answer": "'10 items or fewer' (items are countable)",
-    "choices": [
-      "'10 items or fewer' (items are countable)",
-      "'10 or less items'",
-      "'less than 10 items'",
-      "no fix needed"
-    ],
-    "context": "The most famous supermarket-grammar debate. ITEMS are count nouns → FEWER. Some stores have quietly changed their signs; many have not. Traditional grammar and Chicago 5.250 side with 'fewer'.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
     "tier": 2,
     "question": "COUNT nouns are things you can ___.",
     "answer": "count one by one (three books, five cars, ten people)",
@@ -6341,59 +6237,7 @@
       "all nouns are count nouns"
     ],
     "context": "COUNT NOUNS: individual, discrete items. Take plural forms (book/books, car/cars, person/people). Use FEWER for less. MASS NOUNS (water, sugar, sand) don't have a plural -- measured, not counted.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
-    "tier": 3,
-    "question": "'She finished the race in less than five minutes.' Why LESS with a count unit like minutes?",
-    "answer": "measurements of time are treated as a single mass, not individually counted",
-    "choices": [
-      "measurements of time are treated as a single mass, not individually counted",
-      "minutes are not countable",
-      "should be 'fewer than'",
-      "no rule applies"
-    ],
-    "context": "MEASUREMENT EXCEPTION: TIME, DISTANCE, MONEY, WEIGHT are treated as mass even when the unit is countable. 'Less than five minutes', 'less than ten dollars', 'less than a mile'. Chicago 5.250.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
-    "tier": 3,
-    "question": "'She weighs less than 150 pounds.' Why LESS?",
-    "answer": "weight is a single measured quantity; the mass exception applies",
-    "choices": [
-      "weight is a single measured quantity; the mass exception applies",
-      "pounds are never countable",
-      "should be fewer",
-      "no rule"
-    ],
-    "context": "The measurement exception again. Weight is one continuous quantity, so LESS. Compare 'fewer than 150 bricks' (bricks are discrete count nouns you actually count individually).",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
-    "tier": 4,
-    "question": "'Fewer than 5 percent of respondents agreed.' Traditional rule says which?",
-    "answer": "'less' -- percent is a proportion, treated as mass",
-    "choices": [
-      "'less' -- percent is a proportion, treated as mass",
-      "'fewer' -- 5 is a count",
-      "either works",
-      "neither"
-    ],
-    "context": "PROPORTIONS (percent, fractions, ratios) are treated as mass -- 'less than 5 percent', 'less than half'. Chicago 5.250 and Merriam-Webster both prefer LESS here. FEWER sounds hypercorrected.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
-  },
-  {
-    "tier": 5,
-    "question": "Which sentence follows the traditional less/fewer rule for ALL cases?",
-    "answer": "Fewer people, less traffic, and less than an hour to arrive.",
-    "choices": [
-      "Fewer people, less traffic, and less than an hour to arrive.",
-      "Less people, fewer traffic, and fewer than an hour.",
-      "Fewer people, fewer traffic, and fewer than an hour.",
-      "Less people, less traffic, and less than an hour."
-    ],
-    "context": "FEWER people (count). LESS traffic (mass). LESS than an hour (measurement of time, mass exception). All three rules stacked. The traditional rule intact.",
-    "topic": "less-vs-fewer-uncountable-vs-countable"
+    "topic": "less-vs-fewer-mass-vs-count"
   },
   {
     "tier": 1,
