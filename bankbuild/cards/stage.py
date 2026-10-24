@@ -167,46 +167,87 @@ def check(subject: str, changes: list[dict]) -> int:
     dup_index = build_duplicate_index(bank)
     ans_index = build_answer_collision_index(bank)
 
+    from bankbuild.voice.lint import lint_stem
+
+    def failures(q: dict, i: int | None) -> list[tuple[str, str, bool]]:
+        """(kind, message, is_failure) for one question. ``i`` is its index
+        in the staged bank (None for a live original, checked only to see
+        which failures it already had)."""
+        out: list[tuple[str, str, bool]] = []
+        out += [('shape:' + e, e, True) for e in _shape_problems(q)]
+        checks = [('length_parity', validate_length_parity(q, subject=subject)),
+                  ('length_budget', validate_length_budget(q, subject=subject)),
+                  ('anti_rote', validate_anti_rote(q, subject=subject)),
+                  ('trailing_tokens', validate_trailing_tokens(q, subject=subject))]
+        if i is not None:
+            checks.append(('duplicate', validate_duplicate(q, dup_index, self_idx=i)))
+        for name, res in checks:
+            if res.status == GateStatus.FAIL:
+                out.append((name, f'{name}: {res.detail}', True))
+        if i is not None:
+            res = validate_answer_collision(q, ans_index, self_idx=i, subject=subject)
+            if res.status == GateStatus.FAIL:
+                out.append(('answer_collision', f'answer_collision: {res.detail}', False))
+        if gates is not None:
+            for name, msg in gates.run_gates(q).items():
+                if msg:
+                    out.append((name, f'{name}: {msg}', name not in soft))
+        for f in FIELDS:
+            text = ' | '.join(q[f]) if f == 'choices' else str(q.get(f, ''))
+            if find_they(text):
+                out.append((f'they:{f}', f'singular they in {f}', True))
+        if jargon(q.get('context', '')):
+            out.append(('jargon', f'quiz jargon in context: {jargon(q["context"])}', True))
+        for a in acronyms(q['question']):
+            out.append((f'acronym:{a}', f'unexplained acronym in the stem {a} '
+                        '(spell it out, or put it in brackets after the words)', True))
+        for b in leaked(q):
+            out.append((f'leak:{b}', f'the stem leaks the answer: {b}', True))
+        if prints_answer(q):
+            out.append(('prints_answer', 'the stem prints its own answer', True))
+        if ratio_answer(str(q.get('answer', ''))) and magnitude_stem(q['question']):
+            out.append(('magpick', 'a bare number answers a "how much / what percentage" stem '
+                        '(Wonder Pattern 4: key a named thing, or let the stem build the number)', True))
+        lens = [len(c) for c in q.get('choices') or []]
+        if lens and min(lens) and max(lens) / min(lens) > parity:
+            out.append(('parity', f'choice lengths {lens} are too uneven (longest over '
+                        f'{parity}x the shortest)', True))
+        # The house voice (docs/quiz/HOUSE_VOICE.md): every new or changed
+        # stem is in it. Never excused by an original that broke it too.
+        vf, vw = lint_stem(q['question'], subject, int(q.get('tier', 1) or 1))
+        out += [('voice:' + r, f'voice: {r}', True) for r in vf]
+        out += [('voice_warn:' + r, f'voice: {r}', False) for r in vw]
+        return out
+
+    # A replaced question is held only to failures it did not already have:
+    # a stem rewritten for the voice must not be blocked by its unchanged
+    # choices' old parity, and an acronym it always carried stays a warning
+    # (the index-keyed ratchets in tests/ hold those).
+    live_by_hash = {stem_hash(q['question']): q
+                    for q in json.loads((QDIR / f'{subject}.json').read_text(encoding='utf-8'))}
+    original: dict[str, dict] = {}
+    for ch in changes:
+        for r in ch.get('replace') or []:
+            old = live_by_hash.get(r.get('hash', ''))
+            if old is not None:
+                new_stem = (r.get('new') or {}).get('question', old['question'])
+                original[stem_hash(new_stem)] = old
+
     warnings: list[str] = []
     for i, q in enumerate(bank):
         if id(q) not in changed_ids:
             continue
         tag = f'{stem_hash(q["question"])} ({q.get("topic")}, T{q.get("tier")})'
-        problems += [f'{tag}: {e}' for e in _shape_problems(q)]
-        for name, res in (('length_parity', validate_length_parity(q, subject=subject)),
-                          ('length_budget', validate_length_budget(q, subject=subject)),
-                          ('anti_rote', validate_anti_rote(q, subject=subject)),
-                          ('trailing_tokens', validate_trailing_tokens(q, subject=subject)),
-                          ('duplicate', validate_duplicate(q, dup_index, self_idx=i))):
-            if res.status == GateStatus.FAIL:
-                problems.append(f'{tag}: {name}: {res.detail}')
-        res = validate_answer_collision(q, ans_index, self_idx=i, subject=subject)
-        if res.status == GateStatus.FAIL:
-            warnings.append(f'{tag}: answer_collision: {res.detail}')
-        if gates is not None:
-            for name, msg in gates.run_gates(q).items():
-                if msg:
-                    (warnings if name in soft else problems).append(f'{tag}: {name}: {msg}')
-        for f in FIELDS:
-            text = ' | '.join(q[f]) if f == 'choices' else str(q.get(f, ''))
-            if find_they(text):
-                problems.append(f'{tag}: singular they in {f}')
-        if jargon(q.get('context', '')):
-            problems.append(f'{tag}: quiz jargon in context: {jargon(q["context"])}')
-        if acronyms(q['question']):
-            problems.append(f'{tag}: unexplained acronym in the stem {acronyms(q["question"])} '
-                            '(spell it out, or put it in brackets after the words)')
-        if leaked(q):
-            problems.append(f'{tag}: the stem leaks the answer: {leaked(q)}')
-        if prints_answer(q):
-            problems.append(f'{tag}: the stem prints its own answer')
-        if ratio_answer(str(q.get('answer', ''))) and magnitude_stem(q['question']):
-            problems.append(f'{tag}: a bare number answers a "how much / what percentage" stem '
-                            '(Wonder Pattern 4: key a named thing, or let the stem build the number)')
-        lens = [len(c) for c in q.get('choices') or []]
-        if lens and min(lens) and max(lens) / min(lens) > parity:
-            problems.append(f'{tag}: choice lengths {lens} are too uneven (longest over '
-                            f'{parity}x the shortest)')
+        old = original.get(stem_hash(q['question']))
+        had = ({k for k, _m, _f in failures(old, None) if not k.startswith('voice')}
+               if old is not None else set())
+        for kind, msg, is_failure in failures(q, i):
+            if is_failure and kind in had:
+                warnings.append(f'{tag}: {msg} (it had this before the change)')
+            elif is_failure:
+                problems.append(f'{tag}: {msg}')
+            else:
+                warnings.append(f'{tag}: {msg}')
 
     for p in problems:
         print('  FAIL', p)
