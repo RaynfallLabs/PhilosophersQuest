@@ -3645,6 +3645,8 @@ class CombatMixin:
                     # lurker (bug bash 5 MON-04, PET-03, INT-05).
                     _foe = the_name(target, lower=True)
                     actual = target.take_damage(dmg)
+                    # Bitten, it turns on the pet for a while (_monster_swipes).
+                    target._pet_aggro = (id(pet), getattr(self, 'turn_count', 0))
                     if getattr(pet, 'is_dad', False):
                         self.add_message(
                             f"Dad punched {_foe} in the face for {actual} damage!",
@@ -3732,9 +3734,21 @@ class CombatMixin:
                         to_hit = int(getattr(m, 'thac0', 20)) - int(getattr(pet, 'ac', 0) or 0)
                         if random.randint(1, 20) < to_hit:
                             break         # a miss is still this monster's swipe
-                    # Monster swipes at pet — use a fraction of its normal damage
+                    # A monster beside the hero has struck him this turn, and
+                    # only swipes at the pet for half its first attack. One
+                    # that cannot reach him, or that the pet has just bitten,
+                    # gives the pet a real blow: a whole attack of its own
+                    # (playtest 2026-10-24: "do monsters target pets at all?").
                     from dice import roll as _dice_roll
-                    pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
+                    _aggro = getattr(m, '_pet_aggro', None)
+                    full = (not escorts and (
+                        not m._adjacent_to(self.player)
+                        or (_aggro and _aggro[0] == id(pet) and _turn - _aggro[1] <= 2)))
+                    if full:
+                        _atk = random.choice(m.attacks)
+                        pet_dmg = max(1, _dice_roll(_atk['damage']))
+                    else:
+                        pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
                     # Leggings of Enkidu (wild_friend): pets take less damage
                     # — "the wild man stands beside his friend." Mathematically
                     # equivalent to a max-HP buff without touching the curve.
@@ -3746,8 +3760,13 @@ class CombatMixin:
                     except ImportError:
                         pass
                     pet.take_damage(pet_dmg)
-                    if escorts and pet.alive and (pet.x, pet.y) in getattr(self, 'visible', ()):
+                    _seen = (pet.x, pet.y) in getattr(self, 'visible', ())
+                    if escorts and pet.alive and _seen:
                         self.add_message(f"{the_name(m)} strikes {pet.name}. ({pet_dmg} damage)", 'danger')
+                    elif pet.alive and _seen:
+                        # A pet's wounds were silent, so pets looked untouchable.
+                        self.add_message(f"{the_name(m)} {'hits' if full else 'clips'} "
+                                         f"{pet.name}. ({pet_dmg} damage)", 'warning')
                     if not pet.alive:
                         slain.append((pet, m))
                         if escorts:

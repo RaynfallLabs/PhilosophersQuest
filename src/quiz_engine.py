@@ -52,7 +52,15 @@ _CONTEXT_SUBJECTS = (
 # (bug bash 4, call 3). Matches Player.get_quiz_timer's own 5 s floor.
 MIN_TIMED_SECONDS = 5
 
-_CROSS_GAME_RECENT_CAP = 30          # questions remembered per (subject, tier)
+# Cross-game memory (2026-10-24): every question a (subject, tier) has shown,
+# by stem hash, until the whole tier has been asked once; then a new cycle
+# starts, holding back only the last few. It used to keep the last 30 texts per
+# tier, and philosophy's tier 1 has 147 questions: a game of identifying forgot
+# the previous game and the same questions came round ("I see the same ones
+# almost every game"). The shuffle itself was always random.
+_HISTORY_VERSION = 2
+_CYCLE_HOLD_BACK = 30                # a new cycle still puts these at the back
+_TWINS_PATH = data_path('data', 'question_twins.json')
 _HISTORY_DIR_OVERRIDE = None         # tests point this at a temp dir
 _CONTEXTS_DIR_OVERRIDE = None        # tests point this at a temp dir to override _CONTEXTS_DIR
 
@@ -71,6 +79,31 @@ def load_answer_times() -> dict:
         return data if isinstance(data, dict) else {}
     except (OSError, ValueError):
         return {}
+
+
+def qhash(stem: str) -> str:
+    """A question's id: the first 10 hex chars of the SHA-1 of its stem, the
+    same id the teaching cards key their `teaches` map by."""
+    return hashlib.sha1(str(stem).strip().encode('utf-8')).hexdigest()[:10]
+
+
+def _load_twins() -> dict:
+    """data/question_twins.json: questions that test the same fact as another
+    question (a sister ladder's twin, or a rung that re-asks its neighbour).
+    {subject: [[[hash, tier], [hash, tier], ...], ...]} -> {hash: [(subject,
+    tier, twin hash), ...]}. Missing or bad file: no twins."""
+    try:
+        with open(_TWINS_PATH, encoding='utf-8') as f:
+            raw = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    out: dict = {}
+    for subject, groups in (raw.get('groups', {}) if isinstance(raw, dict) else {}).items():
+        for group in groups if isinstance(groups, list) else []:
+            members = [(str(h), int(t)) for h, t in group if isinstance(h, str)]
+            for h, _t in members:
+                out.setdefault(h, []).extend((subject, t2, h2) for h2, t2 in members if h2 != h)
+    return out
 
 
 def _quiz_history_path() -> str:
@@ -115,12 +148,18 @@ class QuizEngine:
         self._deck_idx: dict[tuple, int]  = {}   # (subject, tier) -> next position in deck
         self._last_q:   dict[tuple, dict | None] = {}  # (subject, tier) -> last question shown
         self._seen:     dict[tuple, set]  = {}   # (subject, tier) -> set of seen question texts
-        # Cross-GAME anti-repeat memory: the last N question texts shown per
-        # (subject, tier), persisted to disk so a NEW game deliberately avoids
-        # what recent games already asked. The deck above only prevents repeats
-        # WITHIN one game; without this a fresh game re-rolls from scratch and by
-        # pure chance re-shows recent openers — which reads as "not random".
-        self._recent:   dict[tuple, list] = {}   # (subject, tier) -> recent question texts
+        # Cross-GAME memory: the ids (qhash) of every question each (subject,
+        # tier) has shown this cycle, in the order shown, persisted to
+        # quiz_history.json. A deck puts questions this cycle has not shown
+        # first, so a tier is asked through once, across games, before any
+        # question repeats. See _HISTORY_VERSION.
+        self._cycle:     dict[tuple, list] = {}  # (subject, tier) -> ids, oldest first
+        self._cycle_set: dict[tuple, set]  = {}  # the same ids, for lookups
+        self._cycle_dirty = False
+        # Same-fact twins (data/question_twins.json): once one is asked, the
+        # others are held back for the rest of the run and count as shown.
+        self._twins = _load_twins()
+        self._twin_block: set = set()
 
         # Per-RUN subject mastery (NOT cross-game). A (subject, tier) is mastered
         # once EVERY distinct question at that tier has been answered correctly
@@ -513,6 +552,7 @@ class QuizEngine:
                 self.just_mastered = deck_key
             retired = set()
         chosen = None
+        held_back = None                   # a same-fact twin, if nothing else is left
         for _ in range(len(self._pool) * 2 + 1):
             if self._pool_idx >= len(self._pool):
                 # Deck exhausted -- reshuffle with unseen questions first.
@@ -524,9 +564,15 @@ class QuizEngine:
                 self._pool_idx = 0
             cand = self._pool[self._pool_idx]
             self._pool_idx += 1
-            if cand.get('question') not in retired:
-                chosen = cand
-                break
+            if cand.get('question') in retired:
+                continue
+            if self._twin_block and qhash(cand.get('question', '')) in self._twin_block:
+                held_back = held_back or cand
+                continue
+            chosen = cand
+            break
+        if chosen is None:
+            chosen = held_back
         if chosen is None:
             # Every question retired this run -> the tier is mastered.
             if deck_key not in self._mastered:
@@ -547,11 +593,14 @@ class QuizEngine:
         if deck_key not in self._seen:
             self._seen[deck_key] = set()
         self._seen[deck_key].add(self.current_question['question'])
-        # ...and in the bounded cross-game recency list (persisted on quiz end).
-        _rec = self._recent.setdefault(deck_key, [])
-        _rec.append(self.current_question['question'])
-        if len(_rec) > _CROSS_GAME_RECENT_CAP * 2:
-            del _rec[:-_CROSS_GAME_RECENT_CAP]
+        # ...and in this cycle's cross-game memory (persisted on quiz end),
+        # with its same-fact twins held back and counted as shown.
+        h = qhash(self.current_question['question'])
+        self._note_shown(deck_key, h)
+        for twin_subject, twin_tier, twin in self._twins.get(h, ()):
+            if twin_subject == self.subject:
+                self._twin_block.add(twin)
+                self._note_shown((twin_subject, twin_tier), twin)
 
         # Persist deck position immediately so _end() doesn't need to duplicate it.
         if deck_key in self._decks:
@@ -681,17 +730,40 @@ class QuizEngine:
         self._pool     = self._decks[deck_key]
         self._pool_idx = self._deck_idx[deck_key]
 
+    def _note_shown(self, deck_key: tuple, h: str) -> None:
+        """Record question id `h` as shown in this cycle of `deck_key`."""
+        ids = self._cycle_set.setdefault(deck_key, set())
+        if h in ids:
+            return
+        ids.add(h)
+        self._cycle.setdefault(deck_key, []).append(h)
+        self._cycle_dirty = True
+
     def _shuffle_unseen_first(self, deck_key: tuple, pool: list) -> list:
-        """Shuffle pool with unseen questions placed before seen ones."""
-        seen = self._seen.get(deck_key, set())
-        if not seen:
-            random.shuffle(pool)
-            return pool
-        unseen = [q for q in pool if q['question'] not in seen]
-        rest   = [q for q in pool if q['question'] in seen]
-        random.shuffle(unseen)
-        random.shuffle(rest)
-        return unseen + rest
+        """A random order with the questions this cycle has not shown first
+        (across games), then the ones earlier games showed, then the ones
+        this run has shown. When every question in the pool has been shown,
+        the tier starts a new cycle, holding back the last few shown."""
+        seen_run = self._seen.get(deck_key, set())
+        ids = [qhash(q.get('question', '')) for q in pool]
+        cyc = self._cycle_set.get(deck_key, set())
+        if cyc and all(h in cyc for h in ids):
+            keep = self._cycle.get(deck_key, [])[-_CYCLE_HOLD_BACK:]
+            self._cycle[deck_key] = list(keep)
+            self._cycle_set[deck_key] = set(keep)
+            self._cycle_dirty = True
+            cyc = self._cycle_set[deck_key]
+        fresh, earlier, this_run = [], [], []
+        for q, h in zip(pool, ids):
+            if q.get('question') in seen_run:
+                this_run.append(q)
+            elif h in cyc or h in self._twin_block:
+                earlier.append(q)
+            else:
+                fresh.append(q)
+        for part in (fresh, earlier, this_run):
+            random.shuffle(part)
+        return fresh + earlier + this_run
 
     # --- Subject mastery (per-run) ---
 
@@ -804,6 +876,10 @@ class QuizEngine:
         if not state:
             return
         self._seen     = state.get('seen', {})
+        # The run's held-back twins follow from what it has shown.
+        self._twin_block = {twin for (subject, _t), texts in self._seen.items() for text in texts
+                            for twin_subject, _tt, twin in self._twins.get(qhash(text), ())
+                            if twin_subject == subject}
         self._retired  = state.get('retired', {}) or {}
         # tolerant of set-of-tuples (pickle) or list-of-lists (any JSON path)
         self._mastered = {tuple(k) for k in (state.get('mastered') or [])}
@@ -814,9 +890,11 @@ class QuizEngine:
         self._last_q   = {}
 
     def _load_cross_game_history(self):
-        """Load the persisted cross-game recency file and seed `_seen` so the
-        first deck built for each (subject, tier) avoids recently-shown
-        questions. Non-fatal on any error (missing file / bad JSON)."""
+        """Load the cross-game memory (quiz_history.json) so the first deck
+        built for each (subject, tier) puts what earlier games showed at the
+        back. Reads both formats: version 2 ({"version": 2, "cycle":
+        {"subject|tier": [ids]}}) and the old one ({"subject|tier": [last 30
+        stems]}), whose stems become ids. Non-fatal on any error."""
         try:
             path = _quiz_history_path()
             if not os.path.exists(path):
@@ -827,18 +905,19 @@ class QuizEngine:
             return
         if not isinstance(raw, dict):
             return
-        for skey, texts in raw.items():
-            if not isinstance(texts, list):
+        v2 = raw.get('version') == _HISTORY_VERSION and isinstance(raw.get('cycle'), dict)
+        for skey, items in (raw['cycle'] if v2 else raw).items():
+            if not isinstance(items, list) or not isinstance(skey, str):
                 continue
             subject, _, tier_s = skey.rpartition('|')
             if not subject or not (tier_s.isascii() and tier_s.isdecimal()):
                 continue
-            recent = [t for t in texts if isinstance(t, str)][-_CROSS_GAME_RECENT_CAP:]
-            if not recent:
+            ids = [x if v2 else qhash(x) for x in items if isinstance(x, str)]
+            if not ids:
                 continue
             key = (subject, int(tier_s))
-            self._recent[key] = recent
-            self._seen.setdefault(key, set()).update(recent)
+            self._cycle[key] = list(dict.fromkeys(ids))
+            self._cycle_set[key] = set(self._cycle[key])
 
     # --- Context blurbs (opt-in orientation modal) ---
 
@@ -1035,30 +1114,22 @@ class QuizEngine:
             return
 
     def _persist_cross_game_history(self):
-        """Atomically write the last N shown questions per (subject, tier) so a
-        future NEW game can avoid them. Non-fatal on any error — this is a UX
-        nicety, never gameplay-critical."""
-        if not self._recent:
+        """Atomically write this cycle's shown-question ids per (subject, tier)
+        (version 2), so a future NEW game puts them at the back. Written only
+        when something changed. Non-fatal on any error: a UX nicety, never
+        gameplay-critical."""
+        if not self._cycle_dirty:
             return
         try:
-            out = {}
-            for (subject, tier), texts in self._recent.items():
-                # de-dupe keeping the most-recent occurrence, then cap
-                seen_local = set()
-                trimmed = []
-                for t in reversed(texts):
-                    if t in seen_local:
-                        continue
-                    seen_local.add(t)
-                    trimmed.append(t)
-                    if len(trimmed) >= _CROSS_GAME_RECENT_CAP:
-                        break
-                out[f'{subject}|{tier}'] = list(reversed(trimmed))
+            out = {'version': _HISTORY_VERSION,
+                   'cycle': {f'{subject}|{tier}': ids
+                             for (subject, tier), ids in self._cycle.items() if ids}}
             path = _quiz_history_path()
             tmp = path + '.tmp'
             with open(tmp, 'w', encoding='utf-8') as f:
-                json.dump(out, f)
+                json.dump(out, f, separators=(',', ':'))
             os.replace(tmp, path)
+            self._cycle_dirty = False
         except OSError:
             return
 

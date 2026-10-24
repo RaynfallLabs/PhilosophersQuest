@@ -134,8 +134,8 @@ def test_a_bad_tier_key_in_quiz_history_does_not_stop_the_game(tmp_path, monkeyp
         json.dumps({'math|²': ['x'], 'math|1': ['1 + 1 = ?']}), encoding='utf-8')
     monkeypatch.setattr(quiz_engine, '_HISTORY_DIR_OVERRIDE', str(tmp_path))
     qe = quiz_engine.QuizEngine()
-    assert ('math', 1) in qe._recent
-    assert all(isinstance(k[1], int) for k in qe._recent)
+    assert ('math', 1) in qe._cycle
+    assert all(isinstance(k[1], int) for k in qe._cycle)
 
 
 # ---------------------------------------------------------------- Q11

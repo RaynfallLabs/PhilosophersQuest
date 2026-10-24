@@ -116,6 +116,8 @@ _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
                  'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
                  'song', 'wail', 'charm', 'psionic', 'disintegrat',
                  'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
+# Attacks that work on the mind or the eye: they do not fly, they fail to take.
+_MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye')
 
 
 def _family_of_kind(kind):
@@ -969,10 +971,10 @@ class Monster:
             to_hit = self.thac0 - player_ac
             min_hit = self._min_hit()
             if d20 == 1:
-                return 0, gaze_msg + f" {the_name(self)} swings but misses!"
+                return 0, gaze_msg + " " + self._miss_text(atk)
             if d20 != 20 and d20 < to_hit:
                 if random.random() >= min_hit:
-                    return 0, gaze_msg + f" {the_name(self)} swings but misses!"
+                    return 0, gaze_msg + " " + self._miss_text(atk)
             if self._slipped(player, atk):
                 return 0, gaze_msg + f" You slip {the_name(self, lower=True)}'s blow."
             dmg = roll(atk['damage'])
@@ -1063,6 +1065,23 @@ class Monster:
             atk = random.choice(self.attacks)
         return self._resolve_blow(atk, player)
 
+    def _miss_text(self, atk: dict, *, confused: bool = False, note: str = '') -> str:
+        """The line for a blow that misses. Only a blow that swings swings: an
+        archer's arrow or a dragon's breath misses by name (playtest
+        2026-10-24, "monsters that fire ranged attacks say they swing")."""
+        name = str(atk.get('name', 'attack')).replace('_', ' ').lower()
+        who = the_name(self)
+        tail = f" {note}" if note else ''
+        if any(w in name for w in _MIND_WORDS):
+            return f"{who}'s {name} fails to take hold of you!"
+        if atk.get('ranged') or any(w in name for w in _RANGED_WORDS):
+            if confused:
+                return f"{who}'s {name} goes wild in its confusion and misses!"
+            return f"{who}'s {name} misses you!{tail}"
+        if confused:
+            return f"{who} swings wildly in confusion and misses!"
+        return f"{who} swings at you and misses!{tail}"
+
     def _resolve_blow(self, atk: dict, player, in_flurry: bool = False) -> tuple[int, str]:
         """One blow with one attack, start to finish: the rules that can stop
         it, the roll to hit, the damage and everything that changes it, and
@@ -1116,17 +1135,17 @@ class Monster:
 
         # Natural 1 always misses; natural 20 always hits
         if d20 == 1:
-            return 0, f"{the_name(self)} swings at you and misses!"
+            return 0, self._miss_text(atk)
         if d20 != 20 and d20 < to_hit:
             # Depth minimum hit: even if THAC0 says miss, deep monsters can still connect
             if random.random() < min_hit:
                 pass  # hit anyway — fall through to damage
             else:
-                return 0, f"{the_name(self)} swings at you and misses! (AC {player_ac} deflects)"
+                return 0, self._miss_text(atk, note=f"(AC {player_ac} deflects)")
 
         # Confused: 30% chance to swing at nothing
         if self.has_effect('confused') and random.random() < 0.30:
-            return 0, f"{the_name(self)} swings wildly in confusion and misses!"
+            return 0, self._miss_text(atk, confused=True)
 
         # Blinded: 40% chance to miss (can't see target)
         if self.has_effect('blinded') and random.random() < 0.40:

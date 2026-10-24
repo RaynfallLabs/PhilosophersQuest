@@ -2,7 +2,7 @@
 
 **Status:** v2.23.0 (shipped 2026-10-04)
 **Code:** `src/quiz_engine.py` (890 lines)
-**Data:** `data/questions/<subject>.json` (12 subjects); `<save_dir>/quiz_history.json` (cross-game recency)
+**Data:** `data/questions/<subject>.json` (12 subjects); `<save_dir>/quiz_history.json` (cross-game cycle memory); `data/question_twins.json` (same-fact twins held back)
 **Related docs:** [status_effects](status_effects.md), [combat](combat.md), [save_bonus](save_bonus.md), [identify_v3](identify_v3.md), [food_system](food_system.md), [magic](magic.md), [karma_prayer](karma_prayer.md), [containers_lockpick](containers_lockpick.md)
 
 ## Purpose
@@ -91,7 +91,8 @@ Each file in `data/questions/<subject>.json` is a flat list of:
 - `_deck_idx: dict[key -> int]` — next position to draw.
 - `_last_q: dict[key -> question]` — avoid showing the exact-same question twice back-to-back on reshuffle.
 - `_seen: dict[key -> set[str]]` — question texts already shown this run.
-- `_recent: dict[key -> list[str]]` — bounded last-N questions, persisted to `<save_dir>/quiz_history.json` (`_CROSS_GAME_RECENT_CAP = 30`).
+- `_cycle` / `_cycle_set: dict[key -> ids]` — every question id (`qhash`, the stem's SHA-1, 10 hex chars) this (subject, tier) has shown in its current cycle, across games, persisted to `<save_dir>/quiz_history.json` as `{"version": 2, "cycle": {"subject|tier": [ids]}}`. A cycle ends when every question in the tier has been shown; the new one holds back the last `_CYCLE_HOLD_BACK` (30). The old format (last 30 stems) still loads.
+- `_twins` / `_twin_block` — `data/question_twins.json` groups; once one twin is asked, the others are skipped for the run (asked only if nothing else is left) and count as shown in their own cycle.
 
 ### Per-run mastery state
 - `_retired: dict[(subject, tier) -> set[str]]` — questions correctly answered this run (retired from the deck).
@@ -103,7 +104,7 @@ Mastery is persisted in the per-save pickle via `get_deck_state() / restore_deck
 ## Flow — public API
 
 ### `QuizEngine.__init__()`
-Builds an empty engine. Immediately calls `_load_cross_game_history()` which reads `<save_dir>/quiz_history.json` (if present) and seeds `_seen` so the first deck built per `(subject, tier)` pushes recently-shown questions to the back. Missing / corrupt file is non-fatal.
+Builds an empty engine. Immediately calls `_load_cross_game_history()`, which reads `<save_dir>/quiz_history.json` (if present) into `_cycle`, so the first deck built per `(subject, tier)` puts what earlier games showed at the back: `_shuffle_unseen_first` orders a deck as fresh (not shown this cycle), then shown in earlier games, then shown this run, each part shuffled. Missing / corrupt file is non-fatal.
 
 ### `load_questions(subject) -> list`
 Caches the subject's JSON (`data/questions/<subject>.json`) in `_cache`. Missing / malformed file: warns to stderr and caches `[]` (quiz will fail gracefully via the empty-pool guard).
@@ -164,7 +165,7 @@ Public reads for UI (bestiary, character sheet, Journal).
 2. Draw up to `len(_pool) * 2 + 1` candidates from the deck, skipping any question text already in `_retired[(subject, tier)]`.
 3. On deck exhaustion mid-draw: `_shuffle_unseen_first()` and keep going (with a swap-first guard against the same question re-opening the pool).
 4. If every candidate is retired → mark `_mastered` and auto-pass.
-5. Record the chosen question in `_seen` + `_recent` (cross-game recency; capped at 2× `_CROSS_GAME_RECENT_CAP`, trimmed to the last 30).
+5. Record the chosen question in `_seen` and the cycle (`_note_shown`), and hold back its same-fact twins (`_twin_block`). The draw loop skips retired questions and held-back twins, falling back to a twin only when nothing else is left.
 6. Persist `_deck_idx` + `_last_q` immediately (so `_end` doesn't need to duplicate).
 7. Shuffle `confused_order` (choice display order).
 8. Transition to `ASKING`.
@@ -200,7 +201,7 @@ When a `(subject, tier)` is mastered, the engine burns no question:
    - Plain threshold, mastered → `_end(success=True)`.
 
 ### `_end(success)`
-Transitions to `COMPLETE`, calls `_persist_cross_game_history()` (atomic write of the last-N shown questions per subject/tier to `<save_dir>/quiz_history.json`; non-fatal on OSError), fires `on_complete` + `callback` with the final `QuizResult`.
+Transitions to `COMPLETE`, calls `_persist_cross_game_history()` (atomic write of the cycle ids when something changed; non-fatal on OSError), fires `on_complete` + `callback` with the final `QuizResult`.
 
 ## Scoring summary (what the caller gets)
 
@@ -310,6 +311,7 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - **2026-10-04 (v2.23.0)** — Playtest pass on the quiz modal. The `(any wrong = fail)` subtitle is gone (the warning is now printed nowhere; the rule is unchanged). The `CORRECT!` / `WRONG!` banner is gone — the green / red choice cards carry the result. One-question quizzes hide the `0 / 1` counter. The chain header shows `x{N}` in a fixed slot plus a rank badge, and the timer seconds sit in their own slot beside the bar. The context modal scrolls (Up/Down, PgUp/PgDn, Home/End). `'math'` joined `_CONTEXT_SUBJECTS`: every math question now carries a skill-class `topic` (27 classes, stamped by `tools/balance/math_topics.py`) keyed to a method card in `data/question_contexts/math.json`. See [ui §11](ui.md) and [`docs/design/context_blurb_system.md`](../design/context_blurb_system.md).
 - **2026-10-23** — Cards outside the quiz. `src/topic_cards.py` serves a topic's title and card with no quiz running. C on a missed question opens its whole card (`STATE_TOPIC_CARD`), and an entry recorded before the cards finds its topic by its stem. The Encyclopedia's Lore Codex (m) lists every topic met (`Player.topics_met`, stamped in `_on_quiz_answer`) and marks cards read (`topics_read`, stamped whenever a card opens). Study Mode adds By Topic: the card first, then the topic's questions easiest first, with C for the card mid-quiz and the card's line after a wrong answer. Every card carries a `title` (`bankbuild/cards/titles.py`). Help page 2, How Quizzes Work, finally prints the three rules v2.23.0 left printed nowhere: one wrong answer ends an equip, identify, harvest or cook; a fight is a chain and SPACE strikes; only fights are timed.
 
+- **2026-10-24** — Playtest: "I see the same questions almost every game." The shuffle was random (no module-level seed anywhere; simulated). The memory was the fault: it kept the last 30 questions per tier, and philosophy tier 1 has 147, so a game of identifying forgot the one before and the pool came round every few games (simulated: games 2-5 repeated 5, 15, 23 and 31 of 40). Now the memory is a full cycle per tier by stem id (repeats: 0, 0, 0 until the 147 are used up), and `data/question_twins.json` holds back same-fact twins (972 questions in 443 groups) for the rest of a run.
 ## Testing
 - `tests/test_quiz_engine.py` (570 lines, ~30 tests) — covers QuizResult shape, threshold success/zero-tolerance, chain scoring, max_chain celebration + end, escalator tier climb + T5 cap, escalator chain tier climb, timer base_seconds + extras + legacy fallback + modifier, timer expiry failure flow, empty bank graceful fail, malformed JSON handling, deck tier isolation + persistence across sessions, answer no-op outside ASKING, case-exact whitespace-insensitive compare, `start_quiz` accepting QuizMode or str, invalid-mode raise, active-property lifecycle, `timed` default true/false for math/non-math + explicit overrides, untimed-quiz tick-no-op, untimed-chain ends via wrong-answer not timer.
 - `tests/test_quiz_cross_game_memory.py` (77 lines) — pins `quiz_history.json` seed into `_seen` and the bounded recency cap.

@@ -135,7 +135,7 @@ def class_share(item) -> float:
     return frac
 
 
-def merchant_price(item, level: int = 1, markup: float = 1.0) -> int:
+def merchant_price(item, level: int = 1, markup: float = 1.0, *, worth: float | None = None) -> int:
     """Gold cost of one trader's item on floor `level`: its class share of
     the floor's income, by tier, times what it is worth (data/item_worth.json),
     times the trader's own markup (an abyssal dealer's 1.5)."""
@@ -145,8 +145,20 @@ def merchant_price(item, level: int = 1, markup: float = 1.0) -> int:
         # (treasure.shop_price), whatever his markup.
         import treasure
         return treasure.shop_price(item)
-    frac = class_share(item) * (0.6 + 0.2 * _item_tier(item)) * item_worth(item)
+    w = item_worth(item) if worth is None else worth
+    frac = class_share(item) * (0.6 + 0.2 * _item_tier(item)) * w
     return max(5, nice(floor_income(level) * frac * float(markup or 1.0)))
+
+
+def stock_price(item, level: int = 1, markup: float = 1.0) -> int:
+    """What a trader asks for a thing on his table. As merchant_price, except
+    that an unknown potion, scroll or wand is never marked below its class's
+    common band (data/item_worth.json "shop_worth_floor"): a price no longer
+    flags the junk, though the great things still cost more."""
+    floor_w = (worth_table().get('shop_worth_floor') or {}).get(getattr(item, 'item_class', ''))
+    if isinstance(floor_w, (int, float)):
+        return merchant_price(item, level, markup, worth=max(item_worth(item), float(floor_w)))
+    return merchant_price(item, level, markup)
 
 
 def unknown_price(item, level: int = 1, markup: float = 1.0) -> int:

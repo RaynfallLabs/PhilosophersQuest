@@ -897,6 +897,42 @@ class Pet:
             self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
         return None
 
+    _ROUTE_LIMIT = 2500          # tiles a route search may look at
+
+    def _route_step(self, tx, ty, dungeon, monsters, pets, player, cursed, avoid_traps):
+        """The first step of the shortest walk to a tile beside (tx, ty), or
+        None when there is none (or the pet is already beside it). The same
+        rules as a single step: no walls, pits, cursed items, the hero, a
+        monster or another pet; known traps only when ``avoid_traps`` is off."""
+        from collections import deque
+        if max(abs(self.x - tx), abs(self.y - ty)) <= 1:
+            return None
+        pits = getattr(dungeon, 'pits', None) or set()
+        traps = getattr(dungeon, 'traps', None) or {}
+        from geom import occupied_tiles
+        taken = {(p.x, p.y) for p in pets if p is not self and getattr(p, 'alive', False)}
+        for m in monsters:
+            if getattr(m, 'alive', True):
+                taken.update(occupied_tiles(m))
+        start = (self.x, self.y)
+        first = {start: None}
+        queue = deque([start])
+        while queue and len(first) < self._ROUTE_LIMIT:
+            x, y = queue.popleft()
+            for mx in (-1, 0, 1):
+                for my in (-1, 0, 1):
+                    n = (x + mx, y + my)
+                    if (mx == 0 and my == 0) or n in first:
+                        continue
+                    if (not dungeon.is_walkable(*n) or n == (player.x, player.y) or n in taken
+                            or n in cursed or n in pits or (avoid_traps and n in traps)):
+                        continue
+                    first[n] = first[(x, y)] or n
+                    if max(abs(n[0] - tx), abs(n[1] - ty)) <= 1:
+                        return first[n]
+                    queue.append(n)
+        return None
+
     def _move_toward(self, tx, ty, dungeon, monsters, pets, player, ground_items=None):
         """Move one step toward (tx, ty) if possible. Avoids cursed ground items,
         player-dug pits (hard block), and known floor traps (soft avoid — pets
@@ -911,6 +947,16 @@ class Pet:
             for gi in ground_items:
                 if getattr(gi, 'buc', 'uncursed') == 'cursed':
                     _cursed_tiles.add((gi.x, gi.y))
+        # Find a way round first: a pet that only tried the three steps
+        # pointing at its goal stood in a room's corner when the straight line
+        # ran into a wall (playtest 2026-10-24). Known traps are avoided if
+        # any route lacks them.
+        for avoid_traps in (True, False):
+            step = self._route_step(tx, ty, dungeon, monsters, pets, player,
+                                    _cursed_tiles, avoid_traps)
+            if step:
+                self.x, self.y = step
+                return
         # Pits are a hard refuse; floor traps are a soft avoid (fall through
         # to a second pass that ignores them if all preferred steps are trapped).
         _pits = getattr(dungeon, 'pits', None) or set()

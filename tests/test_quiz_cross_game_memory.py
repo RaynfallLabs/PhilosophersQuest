@@ -61,10 +61,11 @@ def test_history_file_seeds_seen_set(monkeypatch, tmp_path):
     with open(quiz_engine._quiz_history_path(), 'w', encoding='utf-8') as f:
         json.dump({'history|1': [target]}, f)
 
-    # A fresh engine loads it and treats `target` as already seen.
+    # A fresh engine loads the old format (stems) as ids of shown questions.
     e = QuizEngine()
-    assert e._recent.get(('history', 1)) == [target]
-    assert target in e._seen.get(('history', 1), set())
+    assert e._cycle.get(('history', 1)) == [quiz_engine.qhash(target)]
+    e.start_quiz('threshold', 'history', 1, callback=lambda r: None)
+    assert e.current_question['question'] != target
 
 
 def test_corrupt_history_file_is_non_fatal(monkeypatch, tmp_path):

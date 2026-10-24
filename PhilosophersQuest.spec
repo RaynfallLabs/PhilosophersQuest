@@ -30,6 +30,7 @@ added_files = [
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
     ('data/hints.json',             'data'),
+    ('data/question_twins.json',    'data'),   # same-fact twins the quiz holds back (quiz_engine)
     ('data/boss_boons.json',        'data'),
     ('data/pet_growth.json',        'data'),
     ('data/chest_templates.json',   'data'),

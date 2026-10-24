@@ -173,7 +173,8 @@ class TraderMixin:
                 treasure.appraise(p, it)
         if new:
             names = ', '.join(self._bare_name(i) for i in new[:3]) + (', ...' if len(new) > 3 else '')
-            self.add_message(f"{merchant.person} weighs your treasure in his palm and names a price "
+            self.add_message(f"{merchant.person} weighs your treasure in {merchant.pronouns()[2]} palm "
+                             f"and names a price "
                              f"for each: {names}.", 'info')
 
     def _trader_open_adjacent(self):
@@ -205,7 +206,8 @@ class TraderMixin:
         m = self._shop_merchant
         if ch:
             give = min(ch, int(getattr(m, 'purse', 0) or 0))
-            bits += f"; {give:,} gold back" + ("" if give >= ch else f" (his purse is short {ch - give:,})")
+            bits += f"; {give:,} gold back" + ("" if give >= ch else
+                                               f" ({m.pronouns()[2]} purse is short {ch - give:,})")
         return f"Pays with {bits}."
 
     def _trader_credit_value(self) -> int:
@@ -222,7 +224,8 @@ class TraderMixin:
         known = self._item_is_known(item)
         cursed_known = (getattr(item, 'buc', '') == 'cursed'
                         and _buc_known_to_player(item, self.player))
-        why = traders.refusal({'buys': m.buys, 'buys_cursed': m.buys_cursed}, item,
+        why = traders.refusal({'buys': m.buys, 'buys_cursed': m.buys_cursed,
+                               'pronoun': m.pronouns()[0]}, item,
                               known=known, cursed_known=cursed_known,
                               quest_ids=self._QUEST_PIECE_IDS)
         if why:
@@ -233,7 +236,9 @@ class TraderMixin:
         offer = economy.sell_offer(item, self.dungeon_level, known=known, identified=ident,
                                    markup=m.markup, purse=m.purse)
         if offer <= 0:
-            return 0, "His purse is empty" if m.purse <= 0 else "Worthless to him"
+            _subj, obj, poss = m.pronouns()
+            return 0, (f"{poss.capitalize()} purse is empty" if m.purse <= 0
+                       else f"Worthless to {obj}")
         return offer, None
 
     # ---------------------------------------------------------------- keys
@@ -381,7 +386,7 @@ class TraderMixin:
         m = self._shop_merchant
         offer, why = self._trader_offer(item)
         if why:
-            key = 'purse_empty' if why == "His purse is empty" else 'refuse'
+            key = 'purse_empty' if why.endswith("purse is empty") else 'refuse'
             self.add_message(f'{m.person}: "{m.line(key, "No.")}" ({why}.)', 'warning')
             return
         from items import Ammo
@@ -685,18 +690,20 @@ class TraderMixin:
                     ((f"{m.person} offers {offer:,} gold{each}." if not why
                       else f"{m.person} won't buy it: {why.lower()}."),
                      FP.GOLD_PALE if not why else FP.FADED_TEXT, self.font_sm),
-                    (f"His purse: {int(m.purse):,} gold.", FP.FADED_TEXT, self.font_sm),
+                    (f"{m.pronouns()[2].capitalize()} purse: {int(m.purse):,} gold.",
+                     FP.FADED_TEXT, self.font_sm),
                     ''] + item_lines[1:]
                 if not why and getattr(item, 'item_class', '') == 'treasure':
                     import treasure as _tr
                     full = _tr.credit(item)
                     if offer < full:
-                        details.insert(3, (f"Worth {full:,} to him, but his purse is short. "
+                        details.insert(3, (f"Worth {full:,} to {m.pronouns()[1]}, but "
+                                           f"{m.pronouns()[2]} purse is short. "
                                            f"Paying with it instead loses nothing.",
                                            FP.WARNING_TEXT, self.font_sm))
                     elif _tr.coin_weight(offer) >= 1:
                         details.insert(3, (f"{offer:,} gold weighs {_tr.weight_text(offer)}. "
-                                           f"Coin you cannot carry he pays in gems.",
+                                           f"Coin you cannot carry {m.pronouns()[0]} pays in gems.",
                                            FP.FADED_TEXT, self.font_sm))
                 entries.append({'name': self._display_name(item), 'detail': detail, 'icon': item,
                                 'name_color': FP.BODY_TEXT if not why else FP.FADED_TEXT,
@@ -739,7 +746,7 @@ class TraderMixin:
         ]
         if tre:
             ctx.append((f"Your treasure: {tre:,}", FP.GOLD_PALE, self.font_sm))
-        ctx.append((f"His purse: {int(m.purse):,}", FP.BODY_TEXT, self.font_sm))
+        ctx.append((f"{m.pronouns()[2].capitalize()} purse: {int(m.purse):,}", FP.BODY_TEXT, self.font_sm))
         context = self._menu_base_context(ctx)
         self._menu_more_cue = "The full lore is yours to read once you buy it."
         title = (f"{m.person}, {m.title}" if getattr(m, 'person', '') else m.name).upper()

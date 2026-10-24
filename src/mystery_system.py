@@ -623,7 +623,8 @@ MYSTERY_GOLD_CAP_SHARE = 0.6
 from economy import (MERCHANT_SHARE as _PRICE_SHARE,            # noqa: E402,F401
                      UNIQUE_GEAR_SHARE as _UNIQUE_GEAR_SHARE,   # noqa: F401
                      floor_income as _floor_income,             # noqa: F401
-                     merchant_price as _merchant_price,
+                     merchant_price as _merchant_price,         # noqa: F401
+                     stock_price as _stock_price,
                      written_gold as _written_gold)
 
 
@@ -695,8 +696,20 @@ class MerchantNPC:
         self.services = tuple(d.get('services') or ())
         self.lines = dict(d.get('lines') or {})
         self.friend = friend.get('person') if friend else None
+        self.pronoun = (friend or d).get('pronoun', d.get('pronoun', 'he'))
         if friend and friend.get('line'):
             self.lines['greet'] = [friend['line']]
+
+    def pronouns(self) -> tuple:
+        """(he, him, his), (she, her, her) or (it, it, its) for this trader.
+        A merchant from a save before 2026-10-24 has none stored: look it up."""
+        import traders
+        word = self.__dict__.get('pronoun')
+        if word is None:
+            d = traders.kind_def(self.kind) or {}
+            fr = d.get('friend') or {}
+            word = (fr if self.friend and fr.get('person') == self.friend else d).get('pronoun', 'he')
+        return traders.pronouns(word)
 
     def line(self, key: str, default: str = '') -> str:
         v = (getattr(self, 'lines', None) or {}).get(key, default)
@@ -715,7 +728,7 @@ def build_trader(kind: str, level: int, rng: random.Random, x: int = 0, y: int =
     defn = {**traders.kind_def(kind), 'kind': kind}
     stock = traders.build_stock(defn, level, rng, seen=seen)
     mk = float(defn.get('markup', 1.0))
-    prices = [_merchant_price(it, level, mk) for it in stock]
+    prices = [_stock_price(it, level, mk) for it in stock]
     return MerchantNPC(x, y, stock, prices, kind=kind, level=level, defn=defn)
 
 

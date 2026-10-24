@@ -181,7 +181,22 @@ Command cycle (Shift+P → Command): `return → stay → wander → return`.
 
 Nearest enemy is picked by Chebyshev distance. Adjacent enemies are melee-attacked regardless of command. Beyond adjacency, movement runs through `_move_toward(tx, ty, dungeon, monsters, pets, player, ground_items)`.
 
-### 3.5 `_move_toward` (v2.18 — pit + trap awareness)
+### 3.5 `_move_toward` (v2.18 — pit + trap awareness; 2026-10-24 — routes round walls)
+
+First `_route_step` looks for the shortest walk (breadth-first, at most
+`_ROUTE_LIMIT` tiles, eight directions) to a tile beside the goal, under the
+same rules as one step below (traps avoided on the first search, allowed on a
+second). A pet that only tried the three steps pointing at its goal stood in a
+room's corner when the straight line met a wall. The two passes below are the
+fallback when no route exists.
+
+**Being hit.** A monster beside a pet swipes at it once a turn
+(`_monster_swipes`): half its first attack's dice when it is also beside the
+hero (it has struck him this turn), but a whole blow of one of its attacks when
+it cannot reach him, or when the pet bit it in the last two turns
+(`_pet_aggro`). Every hit the hero can see is in the log ("The goblin hits
+Ember."); before 2026-10-24 a pet's wounds were silent, so pets looked
+untouchable. The unicorn is never targeted.
 
 Pets now consult `dungeon.pits` and `dungeon.traps` so they don't walk into a player-dug pit or repeatedly trigger an alarm trap. The logic is **two-pass**:
 

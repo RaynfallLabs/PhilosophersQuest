@@ -420,9 +420,22 @@ def is_quest_piece(item, quest_ids=()) -> bool:
     return False
 
 
+# A trader's pronouns (data/traders.json "pronoun"; playtest 2026-10-24:
+# Mother Wort's shop said "he doesn't deal in that"). Every individual is he,
+# she or it; Vesper, whom nobody can name the nature of, is "it".
+PRONOUNS = {'he': ('he', 'him', 'his'), 'she': ('she', 'her', 'her'), 'it': ('it', 'it', 'its')}
+
+
+def pronouns(word: str | None) -> tuple:
+    """(subject, object, possessive) for a trader's ``pronoun``."""
+    return PRONOUNS.get(str(word or 'he').lower(), PRONOUNS['he'])
+
+
 def refusal(defn: dict, item, *, known: bool, cursed_known: bool, quest_ids=()) -> str | None:
-    """Why this trader will not buy ``item`` (None: he will). ``known``:
-    the hero knows its type; ``cursed_known``: the hero knows it is cursed."""
+    """Why this trader will not buy ``item`` (None: the trader will).
+    ``known``: the hero knows its type; ``cursed_known``: the hero knows it is
+    cursed. ``defn['pronoun']`` words the refusal."""
+    subj = pronouns(defn.get('pronoun'))[0]
     if is_quest_piece(item, quest_ids):
         return "Not for sale"
     ic = getattr(item, 'item_class', '')
@@ -431,7 +444,7 @@ def refusal(defn: dict, item, *, known: bool, cursed_known: bool, quest_ids=()) 
     buys = defn.get('buys', 'all')
     # Treasure is as good as coin to anyone: every trader takes it.
     if buys != 'all' and ic not in set(buys) and ic != 'treasure':
-        return "He doesn't deal in that"
+        return f"{subj.capitalize()} doesn't deal in that"
     if cursed_known and not defn.get('buys_cursed'):
-        return "Cursed: he won't touch it"
+        return f"Cursed: {subj} won't touch it"
     return None

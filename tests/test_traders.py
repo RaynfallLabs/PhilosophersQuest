@@ -326,7 +326,8 @@ def test_a_specialist_buys_only_his_kind_and_only_the_dealer_takes_curses():
     g = _game()
     m = _trader(g, kind='apothecary', stock=[])
     ring = copy.copy(next(a for a in load_items('accessory') if not a.is_unique and items.is_random_loot(a)))
-    assert g._trader_offer(ring)[1] == "He doesn't deal in that"
+    # Mother Wort is "she" (data/traders.json "pronoun", playtest 2026-10-24).
+    assert g._trader_offer(ring)[1] == "She doesn't deal in that"
     cursed = _potion('potion_of_healing')
     cursed.buc, cursed.buc_known, cursed.id_level = 'cursed', True, 5
     assert g._trader_offer(cursed)[1].startswith("Cursed")
