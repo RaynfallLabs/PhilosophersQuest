@@ -414,6 +414,42 @@ Quick-BUC peeks (altar drop-reveals, inspection stations) do **not**
 count. Only full identifies through the one-question quiz, the Scroll
 of Identify bypass, or corpse study.
 
+### Philosophy tier mastery (2026-10-24)
+
+Brandon: identifying "happens constantly, it gets old." So answer
+**every** philosophy question of a tier correctly in **one run** and the
+tier's trait unlocks (`data/philosophy_mastery.json`, read by
+`src/philosophy_mastery.py`):
+
+| Tier | Trait |
+|---|---|
+| 1 | Gadfly of the Agora |
+| 2 | Disciple of the Stoa |
+| 3 | The Peripatetic |
+| 4 | The Dialectician |
+| 5 | Philosopher-King |
+
+Each gives **+1 WIS at once**, outside the trait-stat allowance
+(`QuirkSystem.on_philosophy_tier_mastered`; a reward that waited for a
+deeper floor would feel broken), and from then on **every item whose
+identify question is of that tier is fully identified the moment it
+reaches the pack** (`Game._mastery_identify_carried`): on pickup, when
+bought, and by a per-turn sweep for every other road in (a chest, a gift,
+a theft returned). What the hero already carries is named when the trait
+unlocks. "That tier" is the tier the identify quiz would ask
+(`philosophy_mastery.identify_tier`: `item_id_tier` lowered by a Ring of
+Pythia or Torque of Lugh), so uniques (never below tier 4) come with
+tiers 4 and 5. A unique named on pickup shows its lore screen, as the
+quiz would.
+
+The quiz engine's per-run mastery does the counting: right answers retire
+(`_retired`), wrong ones come round again, and `tier_progress(subject,
+tier)` counts only questions still in the bank. The traits list (W) shows
+these five first, as "112/147" rather than a percentage, and the detail
+pane says how many are left. Pattern Recognition (75 identifies) stays as
+it was. QA: Shift+M (Titivillus build) leaves the lowest unmastered tier
+one question short.
+
 ---
 
 ## 9. Cross-references

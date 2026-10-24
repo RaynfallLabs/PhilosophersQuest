@@ -4274,6 +4274,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._family_drain()               # the hero's family techniques his action used
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
+        # Philosophy tier mastery: the tier traits this run has earned, and
+        # anything of a mastered tier that reached the pack by another road
+        # (bought, looted, given) is named.
+        self._philosophy_mastery_check()
+        self._mastery_identify_carried()
         # A kind learnt by use (drunk, read, zapped, thrown) fully identifies
         # every copy: same-blessing stacks of it in the pack join up.
         self._merge_newly_known_stacks()
@@ -5803,6 +5808,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                  f"{_tr.value_text(self.player, item)}.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
+            # Philosophy tier mastery: a thing of a tier the hero has mastered
+            # this run names itself as it is picked up. A legendary one shows
+            # its story, as the identify quiz would.
+            if (self._mastery_identify_carried(only=item) and getattr(item, 'is_unique', False)
+                    and getattr(item, 'lore', None)):
+                self._lore_subject = item
+                self.state = STATE_LORE
             # Leather scraps: keep count for the player. Nothing else in the
             # game says how many there are or how many are held.
             if getattr(item, 'id', '') == 'leather_scrap':
@@ -6542,6 +6554,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         f"TIER {mtier} MATH CLEARED -- every sum at this tier "
                         f"answered. They come round again.", 'success')
+                elif msubj == 'philosophy':
+                    # The tier's trait: +1 WIS, and its items name
+                    # themselves from now on (philosophy_mastery.py).
+                    self.add_message(
+                        f"TIER {mtier} PHILOSOPHY CLEARED -- every question at this "
+                        f"tier answered this run.", 'success')
+                    self._philosophy_mastery_check()
                 else:
                     self.add_message(
                         f"TIER {mtier} {name.upper()} CLEARED -- auto-passes for the "

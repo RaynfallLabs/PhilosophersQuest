@@ -96,6 +96,7 @@ src/
 
   # Quiz
   quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)
+  philosophy_mastery.py - Philosophy tier traits: master a tier in one run, its items name themselves
   study_mode.py       - Standalone untimed Study Mode (title screen F3): by difficulty or by topic
   topic_cards.py      - Topic cards with no quiz running: titles, the Lore Codex, topics met/read
 

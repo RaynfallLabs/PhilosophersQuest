@@ -491,6 +491,7 @@ state; column 4 is the `_draw_<state>` method.
 | `ESC` | state-dependent dismiss (see table in `handle_event` L88-174) | `handle_event` |
 | `Shift+I` | immortal toggle (QA only, `qa_tools` build) | `handle_event` |
 | `Shift+W` | floor warp (QA only, `qa_tools` build) | `handle_event` |
+| `Shift+M` | the lowest unmastered philosophy tier one question short (QA only) | `handle_event` |
 | `TAB` | cycle zoom `full → medium → close → full` | `_player_input` |
 
 ESC behavior is critical: it dismisses almost every modal cleanly,

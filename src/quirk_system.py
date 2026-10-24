@@ -1,10 +1,16 @@
 """
-quirk_system.py -- 112 Bofuri-style traits earned through counterintuitive play.
+quirk_system.py -- 117 Bofuri-style traits earned through counterintuitive play.
 Progress stored in player.quirk_progress (dict).
 Unlocked quirks in player.unlocked_quirks (set).
+
+The five philosophy tier traits (answer every question of a tier in one run;
+data/philosophy_mastery.json, src/philosophy_mastery.py) head the list. Their
+progress is the quiz engine's, shown as "N of M" (progress_count).
 """
 from __future__ import annotations
 from typing import TYPE_CHECKING
+
+import philosophy_mastery as _pm
 if TYPE_CHECKING:
     from main import Game
 
@@ -81,10 +87,29 @@ class QuirkSystem:
     def is_unlocked(self, qid: str) -> bool:
         return qid in getattr(self._pl, 'unlocked_quirks', set())
 
+    def progress_count(self, qid: str) -> tuple[int, int] | None:
+        """(done, needed) for a trait whose progress is a count worth showing
+        as "N of M": the philosophy tier traits, read from the run's quiz
+        engine. None for every other trait (they show a percentage)."""
+        t = _pm.entry(qid)
+        if t is None:
+            return None
+        qe = getattr(self.game, 'quiz_engine', None)
+        if qe is None or not hasattr(qe, 'tier_progress'):
+            return None
+        try:
+            return qe.tier_progress(_pm.SUBJECT, int(t['tier']))
+        except Exception:
+            return None
+
     def get_quirk_progress(self, qid: str) -> float:
         """Return 0.0–1.0 progress toward unlocking a quirk."""
         if self.is_unlocked(qid):
             return 1.0
+        count = self.progress_count(qid)
+        if count is not None:
+            done, need = count
+            return min(1.0, done / need) if need else 0.0
         info = _QUIRK_PROGRESS.get(qid)
         if not info:
             return 0.0
@@ -186,7 +211,7 @@ class QuirkSystem:
                 "Part of this trait's gift is held for you: it comes in as you go deeper.",
                 'info')
 
-    def _award(self, qid: str, name: str, apply_fn):
+    def _award(self, qid: str, name: str, apply_fn, journal: str | None = None):
         if self.is_unlocked(qid):
             return
         u = getattr(self._pl, 'unlocked_quirks', None)
@@ -201,14 +226,33 @@ class QuirkSystem:
         self.game.add_message(f"TRAIT UNLOCKED: {name}", 'loot')
         self.game.add_message(f"  Reward: {effect}", 'success')
         if hasattr(self.game, '_chron'):
-            self.game._chron('milestone', f"Something in me changed today. I think the word for it is {name}.",
-                             once=f'quirk:{qid}')
+            self.game._chron('milestone', journal or f"Something in me changed today. "
+                             f"I think the word for it is {name}.", once=f'quirk:{qid}')
         # Ceremonial unlock popup — pauses the game until dismissed so the
         # moment lands rather than scrolling past in combat.
         if hasattr(self.game, '_show_quirk_unlock_popup'):
             from quirk_text import quirk_description
             self.game._show_quirk_unlock_popup(
                 name, quirk_description(qid) or effect, trigger, flavor)
+
+    def on_philosophy_tier_mastered(self, tier: int) -> bool:
+        """Every philosophy question of ``tier`` answered right this run: the
+        tier's trait (data/philosophy_mastery.json). Its Wisdom lands at once,
+        outside the trait allowance (Brandon 2026-10-24: a reward that waited
+        for a deeper floor would feel broken). True when it was awarded now."""
+        t = _pm.trait_for_tier(tier)
+        if t is None or self.is_unlocked(t['id']):
+            return False
+        wis = _pm.wisdom()
+
+        def _apply(pl):
+            flag, pl._quirk_grant = getattr(pl, '_quirk_grant', False), False
+            try:
+                pl.apply_stat_bonus('WIS', wis)
+            finally:
+                pl._quirk_grant = flag
+        self._award(t['id'], t['name'], _apply, journal=t.get('journal'))
+        return True
 
     def _timer_bonus(self, subject: str, amount: int):
         """Original design (pre-2026-05-29): +N seconds on the given subject's
@@ -1847,3 +1891,14 @@ _QUIRK_EFFECTS = {
     'achilles':      "DEX +1",
     'daedalus':      "DEX +1",
 }
+
+
+# The philosophy tier traits (data/philosophy_mastery.json) head the list:
+# they are the run's long goal, and their "N of M" says how far off it is.
+for _t in _pm.tiers():
+    _QUIRK_PROGRESS[_t['id']] = ('_special', -1, False)   # progress_count reads the quiz engine
+    _QUIRK_TRIGGER[_t['id']] = _t['trigger']
+    _QUIRK_FLAVOR[_t['id']] = _t['flavor']
+    _QUIRK_EFFECTS[_t['id']] = _t['effect']
+_QUIRK_NAMES = {**{_t['id']: _t['name'] for _t in _pm.tiers()}, **_QUIRK_NAMES}
+_QUIRK_ORDER = list(_QUIRK_NAMES.keys())

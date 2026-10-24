@@ -171,7 +171,7 @@ class QuizEngine:
         # them) -- i.e. per-run, reset each run.
         self._retired:   dict[tuple, set] = {}   # (subject, tier) -> question texts answered correctly
         self._mastered:  set = set()             # {(subject, tier), ...} fully cleared this run
-        self._tier_size: dict[tuple, int] = {}   # cached count of distinct questions per (subject, tier)
+        self._tier_size: dict[tuple, set] = {}   # cached distinct question texts per (subject, tier)
         self.just_mastered: tuple | None = None  # one-shot UI flag: the (subject,tier) just mastered
         self.auto_passed: int = 0                # mastered tier-rounds auto-passed in the current quiz
 
@@ -767,15 +767,31 @@ class QuizEngine:
 
     # --- Subject mastery (per-run) ---
 
+    def _tier_stems(self, subject: str, tier: int) -> set:
+        """The DISTINCT question texts at exactly this (subject, tier), from
+        the bank as it is now (cached)."""
+        key = (subject, tier)
+        stems = self._tier_size.get(key)
+        if not isinstance(stems, set):
+            qs = self.load_questions(subject)
+            stems = {q['question'] for q in qs
+                     if q.get('tier', 1) == tier and q.get('question')}
+            self._tier_size[key] = stems
+        return stems
+
     def _full_tier_size(self, subject: str, tier: int) -> int:
         """Count of DISTINCT questions at exactly this (subject, tier) -- the
         number that must each be answered correctly to master the tier."""
-        key = (subject, tier)
-        if key not in self._tier_size:
-            qs = self.load_questions(subject)
-            self._tier_size[key] = len({q['question'] for q in qs
-                                        if q.get('tier', 1) == tier and q.get('question')})
-        return self._tier_size[key]
+        return len(self._tier_stems(subject, tier))
+
+    def tier_progress(self, subject: str, tier: int) -> tuple[int, int]:
+        """(answered right this run, questions in the tier) for one (subject,
+        tier). Only questions still in the bank count, so a save made before
+        a bank update cannot run ahead of the tier. The traits list shows it
+        as "N of M" for the philosophy tier traits."""
+        stems = self._tier_stems(subject, tier)
+        done = len(self._retired.get((subject, tier), set()) & stems)
+        return done, len(stems)
 
     def is_mastered(self, subject: str, tier: int) -> bool:
         return (subject, tier) in self._mastered
@@ -798,8 +814,8 @@ class QuizEngine:
         if qtext in retired:
             return
         retired.add(qtext)
-        size = self._full_tier_size(self.subject, self.tier)
-        if size > 0 and len(retired) >= size and key not in self._mastered:
+        done, size = self.tier_progress(self.subject, self.tier)
+        if size > 0 and done >= size and key not in self._mastered:
             self._mastered.add(key)
             self.just_mastered = key
 

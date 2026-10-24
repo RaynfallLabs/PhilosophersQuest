@@ -28,7 +28,7 @@ def test_every_quirk_has_every_piece_of_text():
                          (qs._QUIRK_EFFECTS, 'effect'),
                          (QUIRK_HINT, 'hint'), (QUIRK_DESC, 'description')):
         assert set(table) == ids, (label, sorted(ids ^ set(table)))
-    assert len(ids) == 112
+    assert len(ids) == 117
 
 
 def test_hints_do_not_give_the_condition_away():

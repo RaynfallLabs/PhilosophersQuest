@@ -3369,13 +3369,11 @@ class MagicMixin:
         except ImportError:
             pass
 
-        from items import item_id_tier
-        tier = item_id_tier(item)
-        # Ring of Pythia / Torque of Lugh: identify_tier_reduction lowers the
-        # philosophy id_tier by N (min tier 1). See Player.get_identify_tier_reduction.
-        _reduce = getattr(self.player, 'get_identify_tier_reduction', lambda: 0)()
-        if _reduce > 0:
-            tier = max(1, tier - int(_reduce))
+        # The item's id tier, lowered by a Ring of Pythia or Torque of Lugh
+        # (identify_tier_reduction, min tier 1). Philosophy tier mastery
+        # reads the same number (philosophy_mastery.identify_tier).
+        import philosophy_mastery
+        tier = philosophy_mastery.identify_tier(item, self.player)
         self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
         self.state = STATE_QUIZ
 
@@ -3432,6 +3430,73 @@ class MagicMixin:
             extra_seconds=self.player.get_int_quiz_bonus(),
             base_seconds=self.player.get_quiz_timer('philosophy'),
         )
+
+    # ------------------------------------------------------------------
+    # Philosophy tier mastery (Brandon 2026-10-24; data/philosophy_mastery.json)
+    # ------------------------------------------------------------------
+
+    def _philosophy_mastery_check(self) -> None:
+        """Award the tier trait for every philosophy tier this run has
+        mastered (every question answered right) and not yet rewarded, then
+        name what the hero carries of that tier. Called on the answer that
+        masters a tier, and every turn as a safety net (a tier can also be
+        found mastered when a deck is drawn)."""
+        qe = getattr(self, 'quiz_engine', None)
+        qs = getattr(self, 'quirk_system', None)
+        if qe is None or qs is None:
+            return
+        import philosophy_mastery as pm
+        for t in pm.tiers():
+            tier = int(t['tier'])
+            if (not qs.is_unlocked(t['id']) and qe.is_mastered(pm.SUBJECT, tier)
+                    and qs.on_philosophy_tier_mastered(tier)):
+                named = self._mastery_identify_carried()
+                if not named:
+                    self.add_message(f"From now on, things of tier {tier} will name "
+                                     "themselves as you pick them up.", 'info')
+
+    def _qa_philosophy_tier(self) -> None:
+        """Shift+M with the QA build: every question of the lowest philosophy
+        tier not yet mastered is answered right but one, so the next
+        identify at that tier earns the tier's trait."""
+        import philosophy_mastery as pm
+        qe = self.quiz_engine
+        for t in pm.tiers():
+            tier = int(t['tier'])
+            if qe.is_mastered(pm.SUBJECT, tier):
+                continue
+            stems = sorted(qe._tier_stems(pm.SUBJECT, tier))
+            qe._retired[(pm.SUBJECT, tier)] = set(stems[:-1])
+            self.add_message(f"[QA] Philosophy tier {tier} ({t['name']}): one question "
+                             f"left. Identify a tier-{tier} item to finish it.", 'info')
+            return
+        self.add_message("[QA] Every philosophy tier is mastered.", 'info')
+
+    def _mastery_identify_carried(self, only=None) -> list:
+        """Fully identify each carried item (or just ``only``) whose identify
+        question is of a philosophy tier the hero has mastered this run, and
+        say so. Returns the items named. Identifying one copy names its kind,
+        so a second copy is not named twice."""
+        import philosophy_mastery as pm
+        p = self.player
+        if not pm.mastered_tiers(p):
+            return []
+        pool = [only] if only is not None else pm.carried(p)
+        named = []
+        for item in pool:
+            if self._needs_identify(item) and pm.covers(item, p):
+                self._full_identify(item)
+                named.append(item)
+        if len(named) == 1:
+            self.add_message(f"Your study names it at a glance: it is the "
+                             f"{_the_less(named[0].name)}.", 'success')
+        elif named:
+            names = [f"the {_the_less(i.name)}" for i in named]
+            if len(names) > 4:
+                names = names[:4] + [f"{len(named) - 4} more"]
+            listed = ", ".join(names[:-1]) + " and " + names[-1]
+            self.add_message(f"Your study names what you carry: {listed}.", 'success')
+        return named
 
     def _needs_identify(self, item) -> bool:
         """Is there anything left to learn about this copy? False for a corpse

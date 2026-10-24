@@ -1600,7 +1600,7 @@ class Player:
 
     # --- Stat bonuses ---
 
-    # Stat points from traits (quirks). There are 112 traits and most give a
+    # Stat points from traits (quirks). There are 117 traits and most give a
     # point or two with no limit: the one source of power that grows with
     # hours played rather than with depth (decision D6). They are paid from
     # an allowance that grows as the player descends (4 at the top, 16 at the

@@ -337,6 +337,12 @@ class InputMixin:
                 # nearest creature's family, or every family), with its news.
                 self._qa_family_tier()
                 return True
+            if event.unicode == 'M' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the lowest philosophy tier not yet
+                # mastered is one question short, so the next identify at
+                # that tier earns its trait (philosophy_mastery.py).
+                self._qa_philosophy_tier()
+                return True
             if event.unicode == '$' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: a heap of gold, one of every treasure
                 # and a trader with gems and the draught, to test coin weight.

@@ -260,6 +260,18 @@ QUIRK_DESC = {
 }
 
 
+def _add_philosophy_mastery_text() -> None:
+    """The philosophy tier traits' hint and description, from
+    data/philosophy_mastery.json (the Wisdom line is put in front here)."""
+    import philosophy_mastery as pm
+    for t in pm.tiers():
+        QUIRK_HINT[t['id']] = t['hint']
+        QUIRK_DESC[t['id']] = f"Wisdom +{pm.wisdom()}. {_WIS} {t['description']}"
+
+
+_add_philosophy_mastery_text()
+
+
 def quirk_hint(qid: str) -> str:
     """Hint shown while the quirk is locked ('' if none)."""
     return QUIRK_HINT.get(qid, '')

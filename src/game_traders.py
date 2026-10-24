@@ -341,6 +341,7 @@ class TraderMixin:
                              f"sets it down at your feet.", 'warning')
         elif getattr(item, 'item_class', '') != 'treasure':
             self._trader_mark_bought(item, before, price)
+            self._mastery_identify_carried(only=item)      # philosophy tier mastery
         if getattr(item, 'item_class', '') == 'treasure':
             import treasure
             treasure.appraise(self.player, item)

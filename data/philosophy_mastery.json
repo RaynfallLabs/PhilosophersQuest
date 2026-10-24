@@ -1,0 +1,62 @@
+{
+  "_note": "Philosophy tier mastery (Brandon 2026-10-24). Answer every philosophy question of a tier correctly in ONE run and the tier's trait unlocks: +1 WIS (granted at once, outside the trait-stat allowance) and every item whose identify question is of that tier is fully identified the moment it reaches the hero's pack, for the rest of the run. Wrong answers come round again; right ones retire. Read by src/philosophy_mastery.py, src/quirk_system.py and src/quirk_text.py. 'description' follows the Wisdom line the code puts in front of it. A hint may not contain a digit (tests/test_quirk_text.py).",
+  "subject": "philosophy",
+  "wis": 1,
+  "tiers": [
+    {
+      "tier": 1,
+      "id": "philosophy_tier_1",
+      "name": "Gadfly of the Agora",
+      "trigger": "You answered every tier-1 philosophy question correctly in a single run.",
+      "effect": "WIS +1; tier-1 items are identified the moment you carry them.",
+      "hint": "Socrates questioned everyone in the marketplace of Athens and let no easy answer pass unexamined. Leave none of the first questions unanswered.",
+      "description": "For the rest of this run, every item whose identify question is tier 1 is named the moment it reaches your pack, and what you carry now is named at once. You asked every simple question there is, and the simple things stopped hiding from you.",
+      "flavor": "The unexamined life is not worth living. -- Socrates",
+      "journal": "Answered every simple question philosophy had for me. The ordinary things in my pack just tell me what they are now."
+    },
+    {
+      "tier": 2,
+      "id": "philosophy_tier_2",
+      "name": "Disciple of the Stoa",
+      "trigger": "You answered every tier-2 philosophy question correctly in a single run.",
+      "effect": "WIS +1; tier-2 items are identified the moment you carry them.",
+      "hint": "Zeno taught under the Painted Porch, and his pupils worked through every lesson until none was left. Master the second rank of questions as they did.",
+      "description": "For the rest of this run, every item whose identify question is tier 2 is named the moment it reaches your pack, and what you carry now is named at once. Like the Stoics on their porch, you worked through every lesson until none was left.",
+      "flavor": "Men are disturbed not by things, but by the views which they take of things. -- Epictetus",
+      "journal": "Every question of the second rank answered, every one. Things that used to puzzle me in the pack have stopped puzzling me."
+    },
+    {
+      "tier": 3,
+      "id": "philosophy_tier_3",
+      "name": "The Peripatetic",
+      "trigger": "You answered every tier-3 philosophy question correctly in a single run.",
+      "effect": "WIS +1; tier-3 items are identified the moment you carry them.",
+      "hint": "Aristotle taught as he walked the paths of the Lyceum, and he left no corner of the world unsorted. Walk every path of the middle questions.",
+      "description": "For the rest of this run, every item whose identify question is tier 3 is named the moment it reaches your pack, and what you carry now is named at once. Like Aristotle on his walks, you sorted the world until it had nothing left to hide.",
+      "flavor": "All men by nature desire to know. -- Aristotle",
+      "journal": "Walked every path of the middle questions. Half of what I pick up names itself before I have looked at it properly."
+    },
+    {
+      "tier": 4,
+      "id": "philosophy_tier_4",
+      "name": "The Dialectician",
+      "trigger": "You answered every tier-4 philosophy question correctly in a single run.",
+      "effect": "WIS +1; tier-4 items, uniques included, are identified the moment you carry them.",
+      "hint": "In Plato's dialogues an argument meets every objection, one by one, until only the truth still stands. Meet every one of the hard questions.",
+      "description": "For the rest of this run, every item whose identify question is tier 4 is named the moment it reaches your pack, legendary uniques included, and what you carry now is named at once. You met every hard objection until only the truth was left standing.",
+      "flavor": "The owl of Minerva spreads its wings only with the falling of the dusk. -- Hegel",
+      "journal": "Every hard question answered. Even the old legendary things give up their names to me now."
+    },
+    {
+      "tier": 5,
+      "id": "philosophy_tier_5",
+      "name": "Philosopher-King",
+      "trigger": "You answered every tier-5 philosophy question correctly in a single run.",
+      "effect": "WIS +1; tier-5 items, uniques included, are identified the moment you carry them.",
+      "hint": "Plato wrote that cities would know no rest until philosophers became kings. Master even the deepest questions, and rule over all you carry.",
+      "description": "For the rest of this run, every item whose identify question is tier 5 is named the moment it reaches your pack, legendary uniques included, and what you carry now is named at once. Plato's ruler knew the Good itself; nothing you find can hide its nature from you now.",
+      "flavor": "Until philosophers rule as kings, cities will have no rest from evils. -- Plato, the Republic",
+      "journal": "I have answered every question philosophy can ask. Nothing in this dungeon can hide what it is from me."
+    }
+  ]
+}

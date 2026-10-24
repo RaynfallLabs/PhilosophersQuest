@@ -599,8 +599,15 @@ class RenderMixin:
         scroll = max(0, min(scroll, max(0, len(data) - visible)))
         self._quirks_scroll = scroll
 
+        # The philosophy tier traits count questions: "112/147", not a
+        # percentage, so the player sees how many are left.
+        qsys = getattr(self, 'quirk_system', None)
+
+        def _count(qid):
+            return qsys.progress_count(qid) if qsys is not None else None
+
         y = list_body.y
-        for idx, (_, name, pct, unlocked, effect, _) in enumerate(
+        for idx, (row_qid, name, pct, unlocked, effect, _) in enumerate(
                 data[scroll:scroll + visible], start=scroll):
             rect = pygame.Rect(list_body.x, y, list_body.w - S(12), row_h - S(7))
             selected = idx == sel
@@ -616,7 +623,9 @@ class RenderMixin:
                                        rect.centery - tag.get_height() // 2))
                 room = rect.w - S(36) - tag.get_width()
             else:
-                pct_s = tag_f.render(f"{int(pct * 100)}%", True, readable(FP.FADED_TEXT, bg))
+                count = _count(row_qid)
+                label = f"{count[0]}/{count[1]}" if count else f"{int(pct * 100)}%"
+                pct_s = tag_f.render(label, True, readable(FP.FADED_TEXT, bg))
                 self.screen.blit(pct_s, (rect.right - S(12) - pct_s.get_width(),
                                          rect.centery - pct_s.get_height() // 2))
                 bar = pygame.Rect(rect.right - S(24) - pct_s.get_width() - S(100),
@@ -637,9 +646,17 @@ class RenderMixin:
                                color=FP.ARCANE_BRIGHT)
 
         qid, name, pct, unlocked, effect, trigger = data[sel]
+        count = _count(qid)
+        if count and not unlocked:
+            done, need = count
+            progress = f"Progress: {done} of {need} ({need - done} to go)"
+        elif count:
+            progress = f"Progress: {count[1]} of {count[1]} answered"
+        else:
+            progress = f"Progress: {int(pct * 100)}%"
         detail_lines = [
             (name, FP.GOLD_PALE, get_font('heading', 23)),
-            (f"Progress: {int(pct * 100)}%", FP.CYAN_ACCENT, self.font_sm),
+            (progress, FP.CYAN_ACCENT, self.font_sm),
         ]
         from quirk_text import quirk_description, quirk_hint
         if unlocked:
