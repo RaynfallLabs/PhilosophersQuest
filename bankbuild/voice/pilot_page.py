@@ -79,6 +79,8 @@ article.ladder { background: var(--panel); border: 1px solid var(--line); border
 .chip.merge { color: var(--accent); border-color: var(--accent); }
 .same { color: var(--muted); font-style: italic; font-size: 15px; }
 .notes { font-size: 15px; color: var(--muted); }
+.errors ul { margin: 6px 0 10px; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; }
+.errors li { max-width: 90ch; }
 @media (max-width: 760px) { .q { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """
@@ -169,6 +171,12 @@ def build(pairs: list[tuple[str, int]]) -> str:
             for k in c:
                 total[k] += c[k]
             total['ladders'] += 1
+        errs = [e for e in notes['question_errors'] if isinstance(e, dict)]
+        if errs:
+            items = ''.join(f'<li><span class="meta">{_e(e.get("hash", ""))}</span> '
+                            f'{_e(e.get("problem", ""))}</li>' for e in errs)
+            arts.append(f'<article class="ladder errors"><h3>Errors found in the old questions</h3>'
+                        f'<ul>{items}</ul></article>')
         sections.append(f'<section class="subject" id="{subject}"><h2>{_e(name)}</h2>{"".join(arts)}</section>')
         nav.append(f'<a href="#{subject}">{_e(name)}</a>')
     tally = (f'<div class="tally"><span><b>{total["ladders"]}</b> ladders</span>'
