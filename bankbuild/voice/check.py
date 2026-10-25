@@ -96,6 +96,8 @@ def problems(subject: str, batch: int) -> list[str]:
     # writer drops it and names the live twin (notes "cross_twins").
     live_h = set(_live(subject))
     for d in notes['cross_twins']:
+        if d.get('drop') in applied:
+            continue                      # an applied ladder's drop
         if d.get('drop') not in deleted:
             errs.append(f'cross_twins: {d.get("drop")} is not deleted')
         if d.get('twin') not in live_h:
