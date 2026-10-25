@@ -26,8 +26,8 @@ import sys
 
 from bankbuild.cards import stage
 from bankbuild.cards.gate import _sentence_ngrams
-from bankbuild.voice.common import (load_notes, pending_changes, pending_packet,
-                                    stem_hash)
+from bankbuild.voice.common import (bpath, load_notes, pending_changes, pending_packet,
+                                    read_json, stem_hash)
 from bankbuild.voice.lint import _QUOTED, lint_stem
 
 
@@ -58,7 +58,13 @@ def problems(subject: str, batch: int) -> list[str]:
         errs.append('the voice pass neither adds nor re-topics questions')
     replaced = {r['hash']: r for r in ch.get('replace') or []}
     deleted = set(ch.get('delete') or [])
-    unchanged = set(notes['unchanged'])
+    # Entries for ladders already applied are history, not this round's work.
+    full = read_json(bpath(subject, batch, 'in'))
+    open_topics = {x['topic'] for x in pkt['topics']}
+    applied = {q['hash'] for t in full['topics'] if t['topic'] not in open_topics
+               for q in t['questions']}
+    unchanged = set(notes['unchanged']) - applied
+    notes['merges'] = [m for m in notes['merges'] if m.get('keep') not in applied]
     for h in sorted(set(replaced) | deleted | unchanged):
         if h not in qmap:
             errs.append(f'{h}: not a question of this batch')
