@@ -26027,7 +26027,7 @@
   },
   {
     "tier": 1,
-    "question": "Most people picture the bagpipe as a Scottish invention, yet it is far older than that fame. Even Ancient Rome had one. Suetonius, the Roman historian who wrote The Twelve Caesars nearly two thousand years ago, recorded that one emperor vowed to appear in public playing the bag-fed pipe as musical showmanship. Which Roman emperor made that strange vow?",
+    "question": "Suetonius wrote of a Roman emperor who loved to perform in public and swore he would appear on a reed pipe fed by a bag squeezed under his arm. Rome knew the bagpipe long before Scotland made it famous. Which emperor made that vow?",
     "answer": "Nero",
     "choices": [
       "Nero",
@@ -26040,7 +26040,7 @@
   },
   {
     "tier": 2,
-    "question": "Long before Scotland's pipers, ancient Greek writers already tell of the same music maker. A pipe fits into a puffed-up animal-skin bag, and the player squeezes the bag with the arm to sound one steady droning note. What did the Greeks call this instrument?",
+    "question": "Writers in ancient Greece, long before Scotland had its pipers, described a pipe fitted into a puffed-up bag of animal skin, squeezed under the player's arm to sound one steady droning note. What did the Greeks call this instrument?",
     "answer": "the askaulos",
     "choices": [
       "the askaulos",
@@ -26053,7 +26053,7 @@
   },
   {
     "tier": 2,
-    "question": "The bagpipe is not only a Scottish or Irish thing. In the green, rainy northwest of Spain — Galicia and Asturias, Celtic-flavored lands of stone villages — the bagpipe is a proud badge of the region. It is loved there as the Highland pipes are in Scotland. What is this Spanish bagpipe called?",
+    "question": "In the green, rainy northwest of Spain, among the stone villages of Galicia and Asturias, people prize their own bagpipe as a badge of the region, loved as the Highland pipes are loved in Scotland. What is this Spanish bagpipe called?",
     "answer": "the gaita",
     "choices": [
       "the gaita",
@@ -26079,7 +26079,7 @@
   },
   {
     "tier": 1,
-    "question": "Twice a day, in one great coastal bay on Earth, the sea climbs and falls by about 16 metres — the height of a four-story building. It is the biggest tide swing measured anywhere on our whole planet. The record was set at a rocky spot called Burntcoat Head, where boats sit stranded on mud one hour and float again the next. Which bay is this?",
+    "question": "Boats at Burntcoat Head, in eastern Canada, lie on bare mud one hour and float the next. Twice a day the sea there rises and falls about 16 metres, as high as a four-storey house: the greatest tides on Earth. Where do these tides rise?",
     "answer": "Bay of Fundy",
     "choices": [
       "Bay of Fundy",
@@ -26092,7 +26092,7 @@
   },
   {
     "tier": 2,
-    "question": "On the New Brunswick shore of the Bay of Fundy, the falling tide bares a cluster of towering sandstone pillars 12 to 21 metres tall. Many are wider at the top than the base, with shrubs and small trees growing on top. At low tide you can walk the bare seabed around them; hours later a kayak floats over the very same spot. What are these famous 'flowerpot' pillars called?",
+    "question": "On the Bay of Fundy's New Brunswick shore, the falling tide bares sandstone pillars 12 to 21 metres tall, many wider at the top than the base and crowned with shrubs. Visitors walk the seabed around them at low tide; hours later a kayak floats over the same spot. What are these 'flowerpots' called?",
     "answer": "Hopewell Rocks",
     "choices": [
       "Hopewell Rocks",
@@ -26105,7 +26105,7 @@
   },
   {
     "tier": 2,
-    "question": "Canada's Bay of Fundy, on the Atlantic coast of North America, has the biggest tides on Earth. Twice a day the sea pushes an almost unimaginable amount of seawater into the bay and then drags it all back out again. That is roughly 100 billion tonnes of water with every single tide. Just how much water is that?",
+    "question": "Twice a day the tide pours into Canada's Bay of Fundy, between Nova Scotia and New Brunswick, carrying some 100 billion tonnes of salt water, and a few hours later it drags the whole load back out. How does one tide's flow measure up?",
     "answer": "More than every river on Earth combined",
     "choices": [
       "More than every river on Earth combined",
@@ -26118,7 +26118,7 @@
   },
   {
     "tier": 3,
-    "question": "The huge Bay of Fundy tides can turn around and rush back inland, sending a single wall of water up a river against its normal downstream flow. In 2013, surfers rode one such wave 29 kilometres up New Brunswick's Petitcodiac River to Moncton, a North American record. What is this upstream wave called?",
+    "question": "Surfers rode one wave 29 kilometres up New Brunswick's Petitcodiac River to Moncton in July 2013. The wave came not from the open sea but from the Bay of Fundy's returning tide, which can overpower the river and send a single wall of water racing up it against the flow. What is such an upstream wave called?",
     "answer": "A tidal bore",
     "choices": [
       "A tidal bore",
@@ -26143,8 +26143,8 @@
     "topic": "the-bay-of-fundy-highest-tides-on-earth"
   },
   {
-    "tier": 4,
-    "question": "The Saint John River flows over a set of hidden rock ledges just before it empties into the Bay of Fundy. Twice each day, as the giant tide comes surging in, it overpowers the river completely, and something startling happens to the rapids there. What actually takes place at that spot?",
+    "tier": 3,
+    "question": "The Saint John River, at the city of Saint John in New Brunswick, pours over a set of hidden rock ledges as a churning rapid just before it empties into the Bay of Fundy. Twice a day the giant Fundy tide comes surging in and overpowers the river completely. What happens to the rapids then?",
     "answer": "The rapids reverse and churn upstream, uphill",
     "choices": [
       "The rapids reverse and churn upstream, uphill",
@@ -26157,20 +26157,7 @@
   },
   {
     "tier": 5,
-    "question": "The Bay of Fundy's record tides come down to timing. Water sloshing from the bay's mouth to its head and back takes about 13 hours — almost exactly the rhythm of the incoming Atlantic tide, close to 12.5 hours. So each new pulse of tide arrives just in time to shove the sloshing water even higher, like a child kicking a swing higher at the top of every arc. What is this amplifying effect called?",
-    "answer": "Resonance",
-    "choices": [
-      "Resonance",
-      "Refraction",
-      "The Coriolis effect",
-      "The venturi effect"
-    ],
-    "context": "This is tidal resonance. The bay's natural sloshing period (Garrett's 1972 study put it near 13.3 hours) nearly matches the ocean's main tide, the M2, which has a period of about 12.42 hours. Because the two are close, each incoming pulse arrives roughly in step and adds to the last, building the world's highest tides — not the funnel shape alone. (Garrett 1972, 'The resonant period of the Bay of Fundy')",
-    "topic": "the-bay-of-fundy-highest-tides-on-earth"
-  },
-  {
-    "tier": 5,
-    "question": "The Bay of Fundy's ordinary record tide reaches about 16 metres. But the highest water ever measured there — roughly 21.6 metres at Burntcoat Head — came on a single night in October 1869, when a hurricane's storm surge piled on top of an already-extreme tide, bursting the dykes of the Minas Basin and drowning the marshes. By what name is that 1869 disaster remembered?",
+    "question": "The sea at Burntcoat Head, on the Bay of Fundy, rose to roughly 21.6 metres, the highest water ever measured there, on one October night in 1869, bursting the Minas Basin dykes. Almost a year before, a Royal Navy instructor had warned that extreme tides would strike that very day, and was laughed at until that night proved him right. By what name is that night remembered?",
     "answer": "The Saxby Gale",
     "choices": [
       "The Saxby Gale",
@@ -26261,7 +26248,7 @@
   },
   {
     "tier": 1,
-    "question": "Delta blues music was born about a hundred years ago in the Mississippi Delta, a hot, flat farming country in the American South where enslaved and then sharecropping black families worked the cotton fields. Delta blues guitars have one unmistakable sound — the strings seem to wail and cry out like a grieving human voice, a tone unlike any other guitar music. What is the classic Delta trick that makes them cry that way?",
+    "question": "In the Mississippi Delta, the flat cotton country where the blues was born about a century ago, bluesmen made their guitar strings wail and cry like a grieving human voice. What classic Delta trick made them cry that way?",
     "answer": "the bottleneck slide",
     "choices": [
       "the bottleneck slide",
@@ -26287,7 +26274,7 @@
   },
   {
     "tier": 2,
-    "question": "Near the town of Cleveland, Mississippi sprawls a giant cotton plantation where, around 1900, Charley Patton and a cluster of the first blues musicians lived, worked, and played. Standing on its grounds, B.B. King once declared, 'If you had to pick one single spot as the birthplace of the blues, you might say it all started right here.' What is this plantation, often called the cradle of the blues?",
+    "question": "B.B. King once stood on a giant cotton plantation near Cleveland, Mississippi, and said that the blues all started right there. Around 1900 Charley Patton and a cluster of the first blues musicians lived, worked and played on its land. What is this plantation, often called the cradle of the blues?",
     "answer": "Dockery Farms",
     "choices": [
       "Dockery Farms",
@@ -26300,7 +26287,7 @@
   },
   {
     "tier": 2,
-    "question": "Charley Patton, called the Father of the Delta Blues, was as much a wild showman as a musician. His rough voice was said to carry 500 yards across the Delta cotton fields with no microphone. Long before rock stars made the same trick famous, what did Patton do with his guitar to please the crowd?",
+    "question": "Charley Patton, called the Father of the Delta Blues, worked the crowds of the Mississippi Delta as a wild showman, and his rough voice was said to carry 500 yards with no microphone. Long before rock stars made the same trick famous, what did Patton do with his guitar to please a crowd?",
     "answer": "played it behind his back",
     "choices": [
       "played it behind his back",
@@ -26313,7 +26300,7 @@
   },
   {
     "tier": 3,
-    "question": "Nearly every blues song from the Mississippi Delta is built on the same simple skeleton. A short verse of a fixed handful of measures rides on just three chords, then repeats over and over so any player can jump in and join. What is this standard blues form called?",
+    "question": "Guitar players across the Mississippi Delta built nearly every blues song on the same simple skeleton: a short verse of a fixed handful of measures riding on just three chords, then repeating so that any player could jump in. What is this standard blues form called?",
     "answer": "the twelve-bar blues",
     "choices": [
       "the twelve-bar blues",
@@ -26339,7 +26326,7 @@
   },
   {
     "tier": 4,
-    "question": "The real story behind Robert Johnson's deal with the devil is less spooky but just as telling. The older bluesman Son House recalled that Johnson left the Delta as a fumbling beginner and came back astonishingly good. Researchers later found that his mentor, Ike Zimmerman, knew a quiet local spot to drill him after dark, where no one would disturb them. Where did the two actually practice at night?",
+    "question": "Son House, an older bluesman, remembered Robert Johnson leaving the Mississippi Delta a fumbling beginner and coming back a master. Researchers later traced the change to long nights of practice with Ike Zimmerman, his mentor, who knew a quiet local spot where no one would bother them after dark. Where did the two practise at night?",
     "answer": "among the graveyard tombstones",
     "choices": [
       "among the graveyard tombstones",
@@ -26352,7 +26339,7 @@
   },
   {
     "tier": 3,
-    "question": "One two-lane U.S. highway runs like a spine up the entire story of the blues - starting in New Orleans, threading straight through the heart of the Mississippi Delta, and climbing north to Memphis and on toward Chicago, carrying bluesmen out of the cotton country as they moved north. Bob Dylan even borrowed its name for a landmark 1965 album. Which road is nicknamed 'The Blues Highway'?",
+    "question": "Bluesmen heading north out of the Mississippi cotton country followed one U.S. highway, which starts in New Orleans, threads through the heart of the Delta and climbs on to Memphis. Bob Dylan later borrowed its name for a landmark 1965 album. Which road is nicknamed 'The Blues Highway'?",
     "answer": "Highway 61",
     "choices": [
       "Highway 61",
@@ -26365,7 +26352,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1903, the bandleader W.C. Handy sat stranded for nine hours waiting on a late train at the tiny depot in Tutwiler, Mississippi. A lean, ragged man settled beside him with a guitar and, to make it moan, pressed something hard against the strings and slid it as he sang a strange refrain - 'Goin' where the Southern cross the Dog.' Handy called it 'the weirdest music I ever heard,' the first blues he ever encountered. What was the man pressing against his strings to bend the notes?",
+    "question": "W.C. Handy, a bandleader, sat stranded for nine hours at the tiny depot in Tutwiler, Mississippi, in 1903, his train running late. A lean, ragged man beside him made his guitar moan, pressing something hard against the strings and sliding it as he sang a strange refrain about two railroads crossing. Handy called it 'the weirdest music I ever heard.' What was the man pressing against his strings?",
     "answer": "a knife blade",
     "choices": [
       "a knife blade",
@@ -26378,7 +26365,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Mississippi Delta, bandleader W.C. Handy chased down a haunting line he had heard sung - about the spot near Moorhead, Mississippi where two railroads cross. There the Southern Railroad met a smaller line, the Yazoo & Mississippi Valley Railroad, which local folks had given a colorful nickname - one Handy wove into his 1914 song. What was that little railroad nicknamed?",
+    "question": "Near Moorhead, in the Mississippi Delta, two railroads cross: the Southern and a smaller line, the Yazoo and Mississippi Valley, which local people knew by a colourful nickname. W.C. Handy, who had chased down a haunting line sung about that crossing, wove the nickname into a song of 1914. What was the little railroad nicknamed?",
     "answer": "the Yellow Dog",
     "choices": [
       "the Yellow Dog",
@@ -26391,7 +26378,7 @@
   },
   {
     "tier": 5,
-    "question": "In the cotton country of the Mississippi Delta, the very first instrument of many a future bluesman was never bought in a store - it was a homemade thing a dirt-poor child could throw together for free from a scrap of wood and wire. Elmore James and plenty of others first taught themselves the blues on one, years before they could hold a real guitar. What was this homemade first instrument called?",
+    "question": "Elmore James, like many a future bluesman in the cotton country of the Mississippi Delta, first taught himself the blues on a homemade instrument that any poor child could throw together from a scrap of wood and wire, years before he could hold a real guitar. What was this homemade instrument called?",
     "answer": "the diddley bow",
     "choices": [
       "the diddley bow",
@@ -26404,7 +26391,7 @@
   },
   {
     "tier": 1,
-    "question": "The Camino Frances, the classic pilgrim road to Santiago, starts in a French village called Saint-Jean-Pied-de-Port. On the very first day, walkers climb a tall mountain wall to cross out of France into Spain. Which mountain range must they climb over?",
+    "question": "Pilgrims setting out on the Camino Francés from Saint-Jean-Pied-de-Port, a village in France, face a hard first day: a climb over the high wall of mountains that divides France from Spain, then down to Roncesvalles. Which mountain range do they cross?",
     "answer": "the Pyrenees",
     "choices": [
       "the Pyrenees",
@@ -26417,7 +26404,7 @@
   },
   {
     "tier": 1,
-    "question": "For a thousand years the Camino has needed no signposts. Pilgrims find the way by two simple marks along the road: a painted yellow arrow, and one kind of seashell that almost every walker wears clipped to a pack. Which shell is the old badge of the Camino?",
+    "question": "Almost every walker on the Camino de Santiago, the pilgrim road across northern Spain walked since the Middle Ages, still wears the road's ancient emblem clipped to a pack: one kind of seashell. Which shell is the old badge of the Camino?",
     "answer": "a scallop shell",
     "choices": [
       "a scallop shell",
@@ -26443,7 +26430,7 @@
   },
   {
     "tier": 2,
-    "question": "The Camino's goal is the cathedral of Santiago de Compostela, one of the few churches on earth built right over the tomb of an apostle, St James the Great. Legend says the lost tomb was found in the 800s when a hermit was pulled to the spot in the woods night after night by the same wonder. What led him to it?",
+    "question": "A hermit in the 800s, the legend says, was drawn night after night to one spot in the woods of Galicia, where he uncovered the lost tomb of St James the Great, the apostle. The cathedral of Santiago de Compostela, the goal of the Camino, rises over it today. What drew him there?",
     "answer": "a light in the night sky",
     "choices": [
       "a light in the night sky",
@@ -26456,7 +26443,7 @@
   },
   {
     "tier": 3,
-    "question": "The whole 800 km Camino Frances is marked so simply that pilgrims say it needs no signposts, and nearly all the marks are the work of one man. Don Elias Valina, the parish priest of the mountain village of O Cebreiro, set out in 1984 to mark the whole route from Roncesvalles to Santiago himself. With what unlikely kit did he do it?",
+    "question": "Elías Valiña, the parish priest of the mountain village of O Cebreiro, set out in 1984 to mark the whole Camino Francés from Roncesvalles to Santiago himself. Most of the marks that guide pilgrims along its 800 kilometres are his work. With what unlikely kit did he do it?",
     "answer": "a bucket of leftover yellow road paint and his old Citroen 2CV",
     "choices": [
       "a bucket of leftover yellow road paint and his old Citroen 2CV",
@@ -26482,7 +26469,7 @@
   },
   {
     "tier": 4,
-    "question": "Reaching the cathedral is not the end for everyone. Many pilgrims keep walking for three more days, about 90 km on to the Atlantic coast, to a wild rocky headland the Romans believed was the very edge of the world -- the place where the land of Europe runs out and the sun drops straight into the ocean. What is this cape, the true finish of the walk for so many?",
+    "question": "Beyond the cathedral of Santiago, many pilgrims keep walking, about 90 kilometres more, to a wild headland on the Atlantic that the Romans named the end of the earth. There they watch the last sun of the day drop into the sea. What is this cape, the true finish of the walk for so many?",
     "answer": "Cape Finisterre",
     "choices": [
       "Cape Finisterre",
@@ -26495,7 +26482,7 @@
   },
   {
     "tier": 2,
-    "question": "The Caspian Sea covers about 371,000 km2, wider than the whole of Germany, and no channel links it to any ocean, so it sits landlocked between Europe and Asia. People call it a Sea because of its size, but geographers give it a different title. What is the Caspian, really?",
+    "question": "A ship sailing the Caspian Sea, between Europe and Asia, crosses some 371,000 square kilometres of water, more than Germany's whole area, yet finds no channel out to any ocean. People call it a sea because of its size, but geographers give it a different title. What is the Caspian, really?",
     "answer": "the world's largest lake",
     "choices": [
       "the world's largest lake",
@@ -26521,7 +26508,7 @@
   },
   {
     "tier": 2,
-    "question": "The Caspian Sea, sitting between Russia, Iran, and Central Asia, is the biggest inland body of water on Earth. Its level rises and falls with the rivers that feed it. One single river supplies about 80% of that inflow — so that one river's flow largely decides whether the whole enormous sea rises or falls year by year. Which river holds this power?",
+    "question": "The Caspian Sea has climbed and dropped by whole metres within a single lifetime, its level riding on the rivers that feed it. One river alone brings some 80 per cent of all the water flowing in, so its flow largely decides whether the sea rises or falls. Which river holds this power?",
     "answer": "the Volga",
     "choices": [
       "the Volga",
@@ -26547,7 +26534,7 @@
   },
   {
     "tier": 4,
-    "question": "Scoop up Caspian water and it tastes faintly of the sea -- not fresh like a mountain lake, yet only about a third as salty as the open ocean. This landlocked lake carries salt because it is the shrunken remnant of a real ancient ocean, sealed off from the world's seas millions of years ago as the land slowly rose around it. What was that vanished ancient sea called?",
+    "question": "A swimmer off the Caspian shore who swallows a mouthful tastes the sea in it: not fresh like a mountain lake, yet only about a third as salty as the open ocean. The lake carries salt because it is the shrunken remnant of a real ancient sea, walled off from the world ocean millions of years ago as the land slowly rose. What was that vanished sea called?",
     "answer": "the Paratethys",
     "choices": [
       "the Paratethys",
@@ -26573,7 +26560,7 @@
   },
   {
     "tier": 5,
-    "question": "Near Baku on the Caspian shore stands the Ateshgah, a five-sided stone temple built over natural gas vents so that its central altar-flame burned on its own for centuries, needing no fuel and no keeper, and drew pilgrims from across Asia. Then in 1969, after years of gas being drawn from the ground nearby, the flame went out for the first time in memory. How is the Ateshgah's altar kept burning for visitors today?",
+    "question": "Near Baku on the Caspian shore stands the Ateshgah, a five-sided stone temple built over natural gas vents, where the altar flame burned on its own for centuries and drew Zoroastrian, Hindu and Sikh pilgrims. Then, after years of gas being drawn from the ground nearby, the flame went out in 1969. How is the altar kept burning for visitors today?",
     "answer": "gas piped in from outside keeps it lit",
     "choices": [
       "gas piped in from outside keeps it lit",
@@ -26586,7 +26573,7 @@
   },
   {
     "tier": 1,
-    "question": "A packed Colosseum could hold about 50,000 people, but the Romans could clear it in just a few minutes. Fans streamed out down wide arched passages in the stands. Each one fed into one of the 80 numbered arches at the base. What were these fast exit tunnels called?",
+    "question": "A crowd of some 50,000 Romans could empty out of the packed Colosseum in a few minutes, streaming down wide passages in the stands and out through the 80 arches of its outer wall. What were these fast exit passages called?",
     "answer": "the vomitoria",
     "choices": [
       "the vomitoria",
@@ -26599,7 +26586,7 @@
   },
   {
     "tier": 1,
-    "question": "The Romans who built the great arena never actually called it the Colosseum. The famous nickname came from a tall bronze giant, about 30 metres high, that stood right next to it. Around the year 1000, medieval Romans began to name the arena after the giant. Whose enormous bronze statue was this giant?",
+    "question": "Medieval Romans, around the year 1000, began calling their great arena after the bronze giant that stood beside it, a statue some 30 metres tall. That is where the name Colosseum comes from. Whose giant bronze statue was it?",
     "answer": "the emperor Nero's",
     "choices": [
       "the emperor Nero's",
@@ -26612,7 +26599,7 @@
   },
   {
     "tier": 2,
-    "question": "Almost nobody today knows the Colosseum's real name. The famous arena in Rome, where gladiators once fought before roaring crowds of 50,000 spectators, was built by the emperor Vespasian and his son Titus. They opened it around AD 80 and named it after their own family dynasty, not after its huge size. What was the arena's proper name?",
+    "question": "The emperor Vespasian began a great arena in the heart of Rome, and Titus, his son, opened it around AD 80 for gladiator fights before crowds of some 50,000. They named it not for its huge size but for their own family dynasty. What was the arena's proper name?",
     "answer": "the Flavian Amphitheatre",
     "choices": [
       "the Flavian Amphitheatre",
@@ -26625,7 +26612,7 @@
   },
   {
     "tier": 2,
-    "question": "On hot afternoons, the Colosseum's velarium was raised high over the seats to shade thousands of fans below. Hauling that much heavy canvas up on ropes and masts took a crew with rare skill, so the emperor kept a special team of them on staff at the arena. What was their normal day job?",
+    "question": "When the afternoon sun beat down on the Colosseum, a huge canvas awning called the velarium was hauled out over the seats to shade the crowd. Rigging that much heavy canvas on ropes and masts took a rare skill, and only one kind of crew had it. What was their usual trade?",
     "answer": "sailors",
     "choices": [
       "sailors",
@@ -26638,7 +26625,7 @@
   },
   {
     "tier": 3,
-    "question": "The Colosseum stands on land that once belonged to the hated emperor Nero. It was the center of the huge private estate around his Golden House. When Vespasian took power, he gave the land back to the people as a public arena, but first he had to tear out the showy feature Nero had built at its heart. What did Vespasian clear away?",
+    "question": "The ground under the Colosseum was once the heart of Nero's private estate around his Golden House. When Vespasian took power, he turned it into a public arena for the people, but first he had to tear out the showy feature Nero had built there. What did Vespasian clear away?",
     "answer": "a private artificial lake",
     "choices": [
       "a private artificial lake",
@@ -26651,7 +26638,7 @@
   },
   {
     "tier": 3,
-    "question": "Beneath the Colosseum's sand-covered wooden floor ran the hypogeum, a two-level maze of tunnels the emperor Domitian dug out. He fitted it with lifts, pulleys, and trap doors. To the thrilled crowd above, all this hidden gear produced one big effect during the games. What did the hypogeum make suddenly appear in the arena?",
+    "question": "Beneath the Colosseum's sand-covered wooden floor, the emperor Domitian fitted out the hypogeum with lifts, pulleys and trap doors. To the thrilled crowd above, all that hidden gear worked one big effect during the games. What did the hypogeum make suddenly appear in the arena?",
     "answer": "snarling wild animals",
     "choices": [
       "snarling wild animals",
@@ -26664,7 +26651,7 @@
   },
   {
     "tier": 4,
-    "question": "Down in the hypogeum the caged animals rose to the arena floor with no engine at all -- the Romans had none. Each cage was cranked about 7 metres up its shaft by hand, hauled by a simple winch called a capstan. It sounds like plain muscle work for a few strong men, yet keeping every lift in the maze running at once, show after show, took a small army laboring unseen below the sand. About how many men did it take to run all the lifts together?",
+    "question": "Caged animals rose from the hypogeum under the Colosseum to the arena floor with no engine at all, each cage wound some 7 metres up its shaft by a capstan, a simple winch pushed round by hand. It sounds like work for a few strong men, yet running every lift at once took a small army hidden below the sand. About how many men did it take?",
     "answer": "about two hundred",
     "choices": [
       "about two hundred",
@@ -26677,7 +26664,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2014 a team of engineers rebuilt one of the Colosseum's long-vanished animal lifts, using only the materials and hand tools the ancient Romans had, then tested it in the arena itself. For the first time in more than 1,500 years, a live wild animal rode a Roman lift up onto the Colosseum floor. What animal did they raise?",
+    "question": "A team of engineers rebuilt one of the Colosseum's long-vanished animal lifts in 2014, using only the materials and hand tools the Romans had, and tested it in the arena itself. For the first time in more than 1,500 years, a live wild animal rode a Roman lift up onto the Colosseum floor. What animal was it?",
     "answer": "a wolf",
     "choices": [
       "a wolf",
@@ -26716,7 +26703,7 @@
   },
   {
     "tier": 1,
-    "question": "Where the mighty Congo River, deep in central Africa, nears the Atlantic Ocean, the riverbed suddenly plunges. It drops about 220 metres straight down — deep enough to swallow a 70-story tower. The water below is lost in blackness, so dark that fish living there have evolved without eyes. What title does the Congo hold among all rivers on Earth?",
+    "question": "The bed of central Africa's Congo River, near its mouth on the Atlantic, plunges about 220 metres down into blackness, where some of its fish have no eyes at all. What title does the Congo hold among the rivers of Earth?",
     "answer": "the world's deepest river",
     "choices": [
       "the world's deepest river",
@@ -26729,7 +26716,7 @@
   },
   {
     "tier": 2,
-    "question": "Most great rivers on Earth swell during the rainy months and shrink to a trickle in the dry season. Yet the mighty Congo, which drains the huge rainforests of central Africa, pours out about the same enormous flood every single month of the year. It never runs low. What keeps the Congo's flow so steady, month after month, season after season?",
+    "question": "The Congo sends nearly the same huge flood to the sea every month of the year as it drains the huge rainforests of central Africa, while most of the world's rivers run high in the rainy months and low in the dry ones. What keeps the Congo's flow so steady?",
     "answer": "it crosses the equator twice, so rain always falls somewhere in its basin",
     "choices": [
       "it crosses the equator twice, so rain always falls somewhere in its basin",
@@ -26742,7 +26729,7 @@
   },
   {
     "tier": 2,
-    "question": "The Congo River's name runs deep in the region's history — one whole country on its southern bank was even renamed 'Zaire' after the river itself. That word came from the old Kikongo name nzadi, which people living along the banks were said to understand as an awe-struck phrase. What did that name for the river mean?",
+    "question": "People living along the Congo called their river nzadi in the old Kikongo tongue, and the country on its southern bank borrowed the word as Zaire from 1971 to 1997. Some linguists think nzadi simply meant river, but it is popularly translated as a grand phrase. What is that popular translation?",
     "answer": "the river that swallows all rivers",
     "choices": [
       "the river that swallows all rivers",
@@ -26755,7 +26742,7 @@
   },
   {
     "tier": 3,
-    "question": "On facing banks of the Lower Congo stand two capitals. Brazzaville is the capital of the Republic of the Congo. Across the water sits Kinshasa, capital of the far bigger Democratic Republic of the Congo. What is special about this pair of river cities?",
+    "question": "Brazzaville, capital of the Republic of the Congo, looks out across the lower Congo River at Kinshasa, capital of the far bigger Democratic Republic of the Congo, on the opposite bank. What is special about this pair of river cities?",
     "answer": "they are the closest two capitals of any two countries on Earth",
     "choices": [
       "they are the closest two capitals of any two countries on Earth",
@@ -26781,7 +26768,7 @@
   },
   {
     "tier": 4,
-    "question": "The Congo River, which drains the great rainforests of central Africa, hurls about 41,000 cubic metres of water into the Atlantic Ocean every single second — enough to fill roughly sixteen Olympic swimming pools each second. That is a staggering flood. Only one river on Earth empties even more water into the sea than the mighty Congo does. Which river is it?",
+    "question": "Every second, the Congo River pours about 41,000 cubic metres of water into the Atlantic, the runoff of central Africa's great rainforest, enough to fill roughly sixteen Olympic swimming pools. Only one river on Earth delivers more water to the sea. Which river is it?",
     "answer": "the Amazon",
     "choices": [
       "the Amazon",
@@ -26794,7 +26781,7 @@
   },
   {
     "tier": 5,
-    "question": "Most rivers finish their work at the coast, but the Congo does not stop there. Far out beneath the Atlantic, avalanche-like flows of sediment — the most violent underwater currents ever measured — race hundreds of kilometres across the seabed, still charged with the river's power. What do these tremendous currents do to the ocean floor?",
+    "question": "Far out beneath the Atlantic, off the mouth of the Congo, surges of the river's sediment roar down the seabed like avalanches. They are the most violent underwater currents ever measured, and they race hundreds of kilometres across the ocean floor. What do they do to the seabed?",
     "answer": "they carve a deep canyon across the seabed",
     "choices": [
       "they carve a deep canyon across the seabed",
@@ -26833,7 +26820,7 @@
   },
   {
     "tier": 3,
-    "question": "Warm tropical seas breed typhoons that batter Southeast Asia. Yet a city sitting right on the equator, like Pontianak in Indonesia, has almost never taken a direct hit from one. Storms whirl to life all around it, but never on the equator itself. What keeps a spinning storm from ever forming right at the equator?",
+    "question": "Pontianak, a city in Indonesia that sits right on the equator, has almost never taken a direct hit from a typhoon, though warm tropical seas breed them all around Southeast Asia. Spinning storms almost never whirl to life on the equator itself. What keeps them from forming there?",
     "answer": "the Coriolis effect drops to zero there",
     "choices": [
       "the Coriolis effect drops to zero there",
@@ -26846,7 +26833,7 @@
   },
   {
     "tier": 3,
-    "question": "At the painted equator line outside Quito, Ecuador, guides love to show tourists a basin that seems to drain one way just north of the line and the other way just south. They call it proof of the Coriolis effect that spins hurricanes. Careful experiments show it is really a myth: the same basin can swirl either way on different days. Why can't the Coriolis effect really steer a draining basin?",
+    "question": "Guides at the painted equator line outside Quito, Ecuador, show tourists a basin that seems to drain one way just north of the line and the other way just south, calling it proof of the Coriolis effect. Careful experiments show it is really a myth: the same basin can swirl either way on different days. Why can't the Coriolis effect steer a draining basin?",
     "answer": "it is far too weak at that tiny scale",
     "choices": [
       "it is far too weak at that tiny scale",
@@ -26859,7 +26846,7 @@
   },
   {
     "tier": 3,
-    "question": "During World War I, Germany's massive Paris Gun hurled shells roughly 75 miles to strike Paris. Each shell climbed so high and flew so far that it stayed airborne for nearly three minutes. Gunners already knew Earth's rotation would nudge each shell sideways. But over that record distance the turning planet did one additional thing to the shot they had to build into the aim. What else did Earth's rotation do to the flight?",
+    "question": "German gunners firing the Paris Gun in World War I hurled shells about 75 miles into Paris, each one aloft for nearly three minutes. They knew the spinning Earth would push every shell sideways, but over that distance the turning planet did one more thing they had to build into the aim. What else did the spin do to the shot?",
     "answer": "stretched its range",
     "choices": [
       "stretched its range",
@@ -26963,7 +26950,7 @@
   },
   {
     "tier": 1,
-    "question": "The Dead Sea lies in the hot, dry desert on the border between the modern Middle Eastern countries of Israel and Jordan. Its shore is crusted white with drying salt because so little rain ever falls there, and so much water evaporates in the sun. One geographic record has made the Dead Sea famous the world over. Which record does it hold?",
+    "question": "Between Israel and Jordan, the Dead Sea lies in a sun-baked desert trough, its heavy water edged with white crusts of salt below bare cliffs. One geographic record has made it famous around the world. Which record does the Dead Sea hold?",
     "answer": "the lowest dry land anywhere on Earth",
     "choices": [
       "the saltiest lake anywhere on Earth",
@@ -26976,7 +26963,7 @@
   },
   {
     "tier": 1,
-    "question": "You can wade into most lakes and easily duck your head under. A first-time visitor to the Dead Sea tries the same and gets a shock -- this water behaves like no other. What does the Dead Sea do to a swimmer who tries to duck below the surface?",
+    "question": "A bather wading into the Dead Sea, between Israel and Jordan, tries to duck his head under as he would in any lake, and gets a shock. What does this water do to a swimmer who tries to go below the surface?",
     "answer": "it shoves him straight back up to the top",
     "choices": [
       "it drags him down with a strong current",
@@ -26989,7 +26976,7 @@
   },
   {
     "tier": 2,
-    "question": "The Dead Sea earns its grim name honestly: no fish swim in it, no weeds grow in it, nothing lives in its water at all. The reason is that it is astonishingly salty. Compared with ordinary seawater, how salty is the Dead Sea?",
+    "question": "No fish swim in the Dead Sea, on the border of Israel and Jordan, and no water plants grow in its heavy water. It earns its grim name honestly: the lake is far too salty for them. Compared with ordinary seawater, how salty is the Dead Sea?",
     "answer": "almost ten times as salty as seawater",
     "choices": [
       "roughly three times as salty as seawater",
@@ -27002,7 +26989,7 @@
   },
   {
     "tier": 3,
-    "question": "The Dead Sea is disappearing. Israel and Jordan divert the Jordan River that once fed it, and the shoreline retreats about a metre every year. The drying ground has turned deadly: more than 6,000 sinkholes now pit the old seabed, and one swallowed enough of Ein Gedi's beach to close it for good in 2015. Why does the retreating shore keep collapsing into sinkholes?",
+    "question": "Ein Gedi lost so much of its beach to a single sinkhole in 2015, on the shore of the Dead Sea, that the beach had to close. More than 6,000 such holes now pit the old seabed as the water line drops by about a metre every year, with Israel and Jordan drawing off the Jordan River's water upstream. Why does the retreating shore keep collapsing?",
     "answer": "fresh groundwater dissolves the buried salt and the ground caves in",
     "choices": [
       "earthquakes shake the rift valley and the dry ground splits open",
@@ -27028,7 +27015,7 @@
   },
   {
     "tier": 4,
-    "question": "On the Dead Sea's southwestern shore rises Mount Sodom, a bare ridge about 210 metres high. Astonishingly, that visible hill is only the tip -- the very same material plunges another 2.3 kilometres straight down beneath it. So what is Mount Sodom, from peak to buried root?",
+    "question": "Mount Sodom, a bare ridge about 210 metres high, rises over the southwestern shore of the Dead Sea. That hill is only the tip: the stuff it is made of runs another 2.3 kilometres straight down beneath it. What is Mount Sodom, from peak to buried root?",
     "answer": "one solid mass of salt",
     "choices": [
       "one solid mass of gypsum",
@@ -27041,7 +27028,7 @@
   },
   {
     "tier": 5,
-    "question": "The Dead Sea's shore is studded with weird pillars and towers of white salt. One lone salt column on Mount Sodom has been pointed out for centuries as a person frozen in place. In the biblical legend set right here, this pillar is said to be Lot's wife, turned to salt as she and her family fled the doomed city of Sodom. According to the legend, what single act sealed her fate?",
+    "question": "Among the pillars of white salt along the shore of the Dead Sea, one lone column has been pointed out for centuries as Lot's wife. In the biblical story, Lot's family was escaping from Sodom before its destruction when she did one thing and was turned to salt. The name is a legend attached to the place, not a proven fact. In the story, what did she do?",
     "answer": "she looked back at the burning city behind her",
     "choices": [
       "she drank from a spring the angels had forbidden",
@@ -27067,7 +27054,7 @@
   },
   {
     "tier": 2,
-    "question": "In Arnhem Land, a real didgeridoo isn't drilled or carved hollow by hand. Makers roam the eucalyptus bush hunting branches that are ALREADY hollow inside — the dead core gone, leaving a ready-made tube. What made the branch hollow?",
+    "question": "Didgeridoo makers in Arnhem Land roam the eucalyptus bush hunting for branches that are already hollow inside, the dead core gone and a ready-made tube left behind, so they never need to drill or carve the bore. What made the branch hollow?",
     "answer": "termites ate it hollow",
     "choices": [
       "termites ate it hollow",
@@ -27080,7 +27067,7 @@
   },
   {
     "tier": 2,
-    "question": "In Arnhem Land, a finished didgeridoo's raw blowing end could scrape a player's lips, so the maker presses a smooth, molded rim around the mouthpiece for a soft, airtight seal. What is that rim made of?",
+    "question": "The raw blowing end of a new didgeridoo in Arnhem Land would scrape a player's lips, so its maker presses a smooth, moulded rim around the mouthpiece for a soft, airtight seal. What is that rim made of?",
     "answer": "beeswax",
     "choices": [
       "beeswax",
@@ -27093,7 +27080,7 @@
   },
   {
     "tier": 3,
-    "question": "In Arnhem Land, a didgeridoo drone can run past 40 minutes without a single gap. The trick is 'circular breathing': the player breathes in through the nose without letting the note die. What keeps air flowing into the pipe during that quick nose-breath?",
+    "question": "One unbroken drone can roll out of a didgeridoo in Arnhem Land for more than 40 minutes without a single gap. The player keeps it going by circular breathing, drawing air in through the nose without letting the note die. What keeps air flowing into the pipe during that quick breath?",
     "answer": "air from the cheeks",
     "choices": [
       "air from the cheeks",
@@ -27106,7 +27093,7 @@
   },
   {
     "tier": 4,
-    "question": "To the Yolngu people of northeast Arnhem Land, the instrument is the 'yidaki,' one of dozens of local names across northern Australia. But the word most of the world uses — 'didgeridoo' — has a very different origin. Where does 'didgeridoo' come from?",
+    "question": "To the Yolngu people of northeast Arnhem Land, the instrument is the yidaki, one of at least 45 names it carries across northern Australia. The word most of the world uses, didgeridoo, has a very different origin. Where does the word didgeridoo come from?",
     "answer": "an English word echoing its droning sound",
     "choices": [
       "an English word echoing its droning sound",
@@ -27119,7 +27106,7 @@
   },
   {
     "tier": 4,
-    "question": "The didgeridoo is often called the world's oldest wind instrument — some say Aboriginal people have blown it for 40,000 years. But the hard proof is a dated rock painting at Ginga Wardelirrhmeng, high on the Arnhem Land plateau, showing a player among song men in a ceremony. How far back does that proof actually reach?",
+    "question": "High on the Arnhem Land plateau, at Ginga Wardelirrhmeng, a dated rock painting shows a didgeridoo player among song men in a ceremony. Some say the instrument has been blown for 40,000 years, but the painting is the hard proof. How far back does that proof reach?",
     "answer": "about 1,500 years",
     "choices": [
       "about 1,500 years",
@@ -27132,7 +27119,7 @@
   },
   {
     "tier": 1,
-    "question": "Travelers cross Turkmenistan's Karakum Desert to camp beside a 70-metre pit of flame that locals nicknamed the 'Door to Hell.' Its glow is visible for miles across the night sand. Which of these is true of this fire?",
+    "question": "Travellers cross Turkmenistan's Karakum Desert to camp in yurts beside a 70-metre pit of flame that locals call the Door to Hell. Its glow can be seen for miles across the night sand. How does this fire behave?",
     "answer": "It has burned nonstop for more than 50 years.",
     "choices": [
       "It has burned nonstop for more than 50 years.",
@@ -27145,7 +27132,7 @@
   },
   {
     "tier": 2,
-    "question": "The 'Door to Hell' looks like a natural volcano, but it isn't. In the Karakum Desert a Soviet drilling rig punched into a hidden underground cavern. The ground caved in, and poison methane gas began venting into the air. What did the engineers do next?",
+    "question": "A Soviet drilling rig in Turkmenistan's Karakum Desert punched into a hidden underground cavern, the standard account says, and the ground caved in, letting poisonous methane pour out. The old Soviet files are lost or kept secret, so the details are disputed. In that standard account, what did the engineers do next?",
     "answer": "They set the escaping gas on fire to burn it off safely.",
     "choices": [
       "They set the escaping gas on fire to burn it off safely.",
@@ -27158,7 +27145,7 @@
   },
   {
     "tier": 3,
-    "question": "For decades the 'Door to Hell' was Turkmenistan's top tourist attraction, drawing thousands who camp in yurts beside the burning pit. Yet the government keeps ordering the flames put out. Why do the country's leaders want to snuff out their most famous landmark?",
+    "question": "Thousands of visitors have camped in yurts beside the burning crater called the Door to Hell, in Turkmenistan's Karakum Desert. Yet the country's leaders want the flames put out. Why do they want to snuff out their most famous landmark?",
     "answer": "The fire is burning off valuable natural gas the country could sell.",
     "choices": [
       "The fire is burning off valuable natural gas the country could sell.",
@@ -27171,7 +27158,7 @@
   },
   {
     "tier": 1,
-    "question": "The East African Rift is a giant crack, roughly 6,000 km long, where a whole continent is slowly splitting in two on dry land. Geologists have already named its two new plates. The larger western slab is the Nubian plate. The smaller eastern slab is the ___ plate.",
+    "question": "Along the East African Rift, a crack some 6,000 kilometres long running from Ethiopia to Mozambique, Africa is splitting in two on dry land. Geologists call the larger western half the Nubian plate. What plate do they name the smaller eastern half?",
     "answer": "Somali",
     "choices": [
       "Somali",
@@ -27197,7 +27184,7 @@
   },
   {
     "tier": 2,
-    "question": "The East African Rift doesn't run as a single line -- it branches into two great arms, and more than 50 volcanoes rise along them. The mightiest stands alone on the Tanzanian plains, an ice-capped giant and the highest mountain anywhere in Africa. Which volcano is it?",
+    "question": "Towering by itself over the grasslands of Tanzania, an ice-capped volcano rises higher than any other mountain in Africa, the mightiest of the more than 50 volcanoes along the two branches of the East African Rift. Which volcano is it?",
     "answer": "Mount Kilimanjaro",
     "choices": [
       "Mount Kilimanjaro",
@@ -27210,7 +27197,7 @@
   },
   {
     "tier": 3,
-    "question": "One January night in 1977, the lava lake inside Nyiragongo drained away through fissures low on the mountain's flanks, and molten rock reached the villages below. At least fifty people were killed. That 1977 flow entered the record books -- for what?",
+    "question": "Nyiragongo, the volcano above Goma in Congo, cracked open low on its slopes one January night in 1977, and lava poured down to the villages below, killing at least 50 people. That flow went into the record books. For what?",
     "answer": "being the fastest lava flow ever recorded",
     "choices": [
       "being the fastest lava flow ever recorded",
@@ -27223,7 +27210,7 @@
   },
   {
     "tier": 3,
-    "question": "At night, most lava glows a furious orange-red because it erupts at around 1,000 C or hotter. But the lava creeping down Tanzania's Ol Doinyo Lengai, near Lake Natron, erupts at only 540 to 590 C. That is far too cool to glow orange like ordinary lava. Freshly erupted, what startling colour does its lava appear?",
+    "question": "Near Lake Natron in northern Tanzania, Ol Doinyo Lengai erupts its lava at only some 540 to 590 C, while most lava pours out at around 1,000 C or hotter and glows a furious orange-red at night. Lengai's is far too cool to glow orange. Freshly erupted, what colour is it?",
     "answer": "jet black",
     "choices": [
       "jet black",
@@ -27236,7 +27223,7 @@
   },
   {
     "tier": 3,
-    "question": "In Ethiopia's blistering Danakil Depression sits Erta Ale, a low shield volcano whose name means 'smoking mountain.' In a pit at its summit churns a lake of lava that has never gone cold. It has bubbled continuously since at least 1906, the longest-lived lava lake on Earth. What ominous nickname have people given its restless southern pit?",
+    "question": "Erta Ale, a low shield volcano whose name means 'smoking mountain,' rises from Ethiopia's blistering Danakil Depression. Molten rock has churned in a pit at its summit and never once gone cold since at least 1906, longer than at any other volcano on Earth. What ominous nickname have people given that restless southern pit?",
     "answer": "the gateway to hell",
     "choices": [
       "the gateway to hell",
@@ -27245,32 +27232,6 @@
       "the throat of the world"
     ],
     "context": "Erta Ale ('smoking mountain') in the Danakil Depression holds the world's longest-lived lava lake, churning since at least 1906; its southern pit is nicknamed 'the gateway to hell.' https://en.wikipedia.org/wiki/Erta_Ale  (Legend.)",
-    "topic": "the-east-african-rift-a-continent-tearing-itself-apart"
-  },
-  {
-    "tier": 4,
-    "question": "Ol Doinyo Lengai's freshly erupted lava is a strange black. But it doesn't stay black for long: within hours to days, rain and volcanic gases chemically attack the fresh rock, weathering it into new minerals like trona and calcite that spread across the whole cone. What startling transformation does the black lava undergo?",
-    "answer": "it turns white, like snow",
-    "choices": [
-      "it turns white, like snow",
-      "it turns rust-red, like iron",
-      "it turns deep green, like moss",
-      "it turns glassy, like obsidian"
-    ],
-    "context": "Rain and volcanic gases weather Ol Doinyo Lengai's fresh black lava into pale sodium-carbonate minerals like trona and calcite within hours to days, coating the mountain white as snow. https://en.wikipedia.org/wiki/Ol_Doinyo_Lengai",
-    "topic": "the-east-african-rift-a-continent-tearing-itself-apart"
-  },
-  {
-    "tier": 4,
-    "question": "Where the Western Rift's floor cracked and dropped away, it opened a basin so deep it now cradles a sliver of water that plunges about 1,470 meters -- nearly a mile straight down. Only Siberia's Lake Baikal runs deeper. Which African lake is this, the second-deepest on Earth?",
-    "answer": "Lake Tanganyika",
-    "choices": [
-      "Lake Tanganyika",
-      "Lake Malawi",
-      "Lake Turkana",
-      "Lake Victoria"
-    ],
-    "context": "Lake Tanganyika reaches 1,470 m deep -- second only to Lake Baikal -- where the Western Rift floor dropped away. It is also the world's longest freshwater lake, holding about 16% of Earth's available fresh water. https://en.wikipedia.org/wiki/Lake_Tanganyika",
     "topic": "the-east-african-rift-a-continent-tearing-itself-apart"
   },
   {
@@ -27301,7 +27262,7 @@
   },
   {
     "tier": 2,
-    "question": "For three hundred years, sea captains felt their way toward the Venezuelan port of Maracaibo through pitch-black Caribbean nights. They had one guide they could always trust — the Catatumbo storm. Where the Catatumbo River meets Lake Maracaibo, lightning flares over the same stretch of sky almost every night. What did old sailors treat this ever-burning storm as?",
+    "question": "Sea captains feeling their way toward the Venezuelan port of Maracaibo on pitch-black nights trusted one guide for three hundred years: the lightning that flares almost every night over the same stretch of sky where the Catatumbo River meets Lake Maracaibo. What did they treat this ever-burning storm as?",
     "answer": "a natural lighthouse",
     "choices": [
       "a natural lighthouse",
@@ -27327,7 +27288,7 @@
   },
   {
     "tier": 3,
-    "question": "Ordinary thunderstorms drift across the land and burn out within hours. But the Catatumbo storm rebuilds over the very same corner of Lake Maracaibo almost every single night, as if bolted to that one spot. What keeps forcing it back there?",
+    "question": "Over one corner of Lake Maracaibo, in Venezuela, at the mouth of the Catatumbo River, a thunderstorm rebuilds almost every night, as if bolted to the spot, though ordinary storms drift across the land and burn out within hours. What keeps forcing it back there?",
     "answer": "warm lake air colliding with cool air off the Andes",
     "choices": [
       "warm lake air colliding with cool air off the Andes",
@@ -27340,7 +27301,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2014, Guinness World Records crowned Lake Maracaibo the lightning capital of the world — about 250 flashes strike each square kilometre there every year, the densest anywhere on Earth. Maracaibo seized that crown from another place that had long held it. Which place did it dethrone?",
+    "question": "Lightning strikes about 250 times on every square kilometre of Lake Maracaibo, in Venezuela, each year, more densely than anywhere else on Earth, and Guinness World Records named it the planet's lightning capital in 2014. The lake took that title from another place. Which place did it dethrone?",
     "answer": "Kifuka, in the Democratic Republic of the Congo",
     "choices": [
       "Kifuka, in the Democratic Republic of the Congo",
@@ -27353,7 +27314,7 @@
   },
   {
     "tier": 4,
-    "question": "For years, tour guides explained the Catatumbo lightning by claiming that methane gas, seeping up from the oil-rich marshes below the lake, fed the endless storms. Scientists now doubt that tidy story. Which observation casts the most doubt on the methane explanation?",
+    "question": "Tour guides around Lake Maracaibo, in Venezuela, once told visitors that methane gas seeping up from the oily marshes below the lake fed the endless Catatumbo storms. Scientists now doubt that tidy story. Which observation casts the most doubt on the methane idea?",
     "answer": "the storms peak in the rainy season, when gas should matter least",
     "choices": [
       "the storms peak in the rainy season, when gas should matter least",
@@ -27366,7 +27327,7 @@
   },
   {
     "tier": 5,
-    "question": "Lake Maracaibo has a legendary storm that flashes lightning almost every night of the year. But in early 2010 something extraordinary happened. For roughly six weeks the everlasting storm went completely dark, night after night with not a single flash, and frightened locals feared their lightning was gone for good. What had switched the storm off?",
+    "question": "The people of Lake Maracaibo's shores, in Venezuela, watched their everlasting storm go dark in early 2010. For about six weeks not one flash lit the night, and they feared the lightning was gone for good. What had switched the storm off?",
     "answer": "a severe drought had dried out the whole region",
     "choices": [
       "a severe drought had dried out the whole region",
@@ -27379,7 +27340,7 @@
   },
   {
     "tier": 4,
-    "question": "For nearly a thousand years the world's oldest dated printed book, the Diamond Sutra of 868 AD, lay hidden — sealed inside a walled-up chamber among hundreds of Buddhist cave-shrines cut into a cliff near the Silk Road oasis of Dunhuang, in China's far northwest. A caretaker monk broke the seal in 1900. What is this vast cliff of grottoes called?",
+    "question": "Wang Yuanlu, caretaker of hundreds of Buddhist cave shrines cut into a cliff near the Silk Road oasis of Dunhuang, in China's far northwest, broke open a walled-up chamber there in 1900. Inside lay the Diamond Sutra of 868 AD, the world's oldest dated printed book, hidden for nearly a thousand years. What is this cliff of grottoes called?",
     "answer": "The Mogao Caves",
     "choices": [
       "The Mogao Caves",
@@ -27405,7 +27366,7 @@
   },
   {
     "tier": 2,
-    "question": "A Javanese gamelan is tuned only to itself. No two sets in the land match, so a player cannot join another village's orchestra. Still, every gamelan builds its notes on one of two old scales, a five-note one and a seven-note one. What are the two scales called?",
+    "question": "Every village on Java once owned its own gamelan, and no two sets share a tuning, since each is tuned only to itself. Still, every set builds its notes on the same two old scales, a five-note one and a seven-note one. What are the two scales called?",
     "answer": "sléndro and pélog",
     "choices": [
       "sléndro and pélog",
@@ -27418,7 +27379,7 @@
   },
   {
     "tier": 3,
-    "question": "In a gamelan, dozens of instruments weave through long cycles of music, but one enormous gong — historically up to 135 cm across — rules them all. Its single deep boom sounds only at the very end of each great musical cycle. What is this master gong called?",
+    "question": "Players in a Javanese gamelan set offerings of flowers, food and incense before one enormous gong, in the old sets as much as 135 centimetres across, and they say the spirit of the whole orchestra dwells within it. Its single deep boom sounds only at the very end of each great musical cycle. What is this master gong called?",
     "answer": "the gong ageng",
     "choices": [
       "the gong ageng",
@@ -27453,19 +27414,6 @@
       "khon"
     ],
     "context": "This is wayang kulit, the shadow-puppet theatre of Java and Bali. The lone puppeteer is the dalang; the puppets are cut from water-buffalo hide — the finest from parchment cured up to ten years — and pierced with fine holes so their shadows show detail, lit by an oil lamp called the bléncong. UNESCO named wayang kulit a Masterpiece of Oral and Intangible Heritage in 2003. Source: https://en.wikipedia.org/wiki/Wayang_kulit",
-    "topic": "the-gamelan-java-and-bali"
-  },
-  {
-    "tier": 5,
-    "question": "On the island of Bali, fifty to a hundred bare-chested men pack into tight concentric circles, swaying as they chant a fast, dry, interlocking chatter of syllables — and there is not a single instrument among them. Their layered voices alone drive a fierce retelling of the Ramayana's monkey army. What is this voices-only Balinese performance called?",
-    "answer": "kecak",
-    "choices": [
-      "kecak",
-      "legong",
-      "barong",
-      "sanghyang"
-    ],
-    "context": "This is the kecak, or 'monkey chant.' Despite its ancient feel it is not old: the German painter Walter Spies and the Balinese dancer Wayan Limbak shaped it in the 1930s, drawing on an older sacred trance ritual, the sanghyang. The chorus chants 'cak-cak-cak,' which gives the form its name, standing in for the army of monkeys who help Rama. Source: https://en.wikipedia.org/wiki/Kecak",
     "topic": "the-gamelan-java-and-bali"
   },
   {
@@ -27652,7 +27600,7 @@
   },
   {
     "tier": 1,
-    "question": "The great ocean loop that begins in the North Atlantic has a science name: 'thermohaline' circulation. The word bolts together the two things that decide whether a patch of seawater is heavy or light. 'Thermo' is the water's temperature. What does the other half, 'haline,' measure?",
+    "question": "Oceanographers studying the great loop of water that sinks in the North Atlantic call it thermohaline circulation, after the two things that decide whether a patch of seawater is heavy or light. Thermo is its temperature. What does haline measure?",
     "answer": "how salty the water is",
     "choices": [
       "how salty the water is",
@@ -27665,7 +27613,7 @@
   },
   {
     "tier": 2,
-    "question": "The global conveyor belt is a loop the size of the planet, yet it has no pump. Its hidden engine sits in the far North Atlantic near Greenland and Iceland. Each winter, the surface water there turns bitterly cold and unusually salty. What actually keeps the whole loop turning?",
+    "question": "Each winter, in the far North Atlantic between Greenland and Iceland, the sea's surface water turns bitterly cold and unusually salty. That patch of sea is the hidden engine of the global conveyor belt, a loop the size of the planet with no pump at all. What keeps the whole loop turning?",
     "answer": "cold water sinking into the deep sea",
     "choices": [
       "cold water sinking into the deep sea",
@@ -27678,7 +27626,7 @@
   },
   {
     "tier": 2,
-    "question": "Down in the Atlantic depths, the deeper branch of the conveyor belt is the slowest current in the entire ocean. It drifts along slower than you can walk. And yet, because it is a river as wide as the planet, its total flow is huge. Next to the Amazon, the mightiest river on land, how much water does the loop carry?",
+    "question": "The conveyor belt's deep branch moves through the Atlantic depths at only a few centimetres each second, slower than a person walks, the slowest current in the ocean. Yet it is a river as wide as the planet. Next to the Amazon, the mightiest river on land, how much water does the loop carry?",
     "answer": "more than 100 times as much",
     "choices": [
       "more than 100 times as much",
@@ -27691,7 +27639,7 @@
   },
   {
     "tier": 3,
-    "question": "The Denmark Strait is the channel of sea between Greenland and Iceland. It hides the tallest waterfall on Earth: a curtain of cold, dense water tipping over a giant cliff on the ocean floor, far below the waves where no eye can see it. How does its drop compare with Angel Falls, the tallest waterfall on dry land?",
+    "question": "Far below the waves of the Denmark Strait, between Greenland and Iceland, a curtain of cold, dense water tips over the edge of an undersea cliff, a hidden waterfall that no eye can see. How does its drop compare with Angel Falls, the tallest waterfall on dry land?",
     "answer": "about three times taller",
     "choices": [
       "about three times taller",
@@ -27743,7 +27691,7 @@
   },
   {
     "tier": 5,
-    "question": "The North Atlantic's sinking engine has faltered before. About 12,900 years ago, a vast glacial lake in North America — Lake Agassiz, holding more water than all the Great Lakes combined — suddenly burst its ice dam and flooded the North Atlantic with fresh water. With the salty surface water diluted, scientists think the sinking stalled. What happened to the Northern Hemisphere next?",
+    "question": "Lake Agassiz, a huge glacial lake in North America holding more water than all the Great Lakes combined, burst its ice dam about 12,900 years ago and flooded the North Atlantic with fresh water. Scientists think the diluted water stopped sinking and stalled the conveyor, though not all agree this was the trigger. What did the Northern Hemisphere slide into next?",
     "answer": "into near-glacial cold that lasted a thousand years",
     "choices": [
       "into near-glacial cold that lasted a thousand years",
@@ -27769,7 +27717,7 @@
   },
   {
     "tier": 1,
-    "question": "Picture a desert and you picture heat. The Gobi, spread across southern Mongolia and northern China, does bake past +45°C in summer. But the same desert saves a brutal shock for winter, when the bare ground bleeds its warmth into the night sky. About how cold can a Gobi winter night get?",
+    "question": "Summer in the Gobi, across southern Mongolia and northern China, bakes past 45°C, but when winter comes the bare ground bleeds its warmth into the night sky, and the desert turns brutally cold. About how cold can a Gobi winter night get?",
     "answer": "about -40°C",
     "choices": [
       "about -40°C",
@@ -27782,7 +27730,7 @@
   },
   {
     "tier": 1,
-    "question": "The Gobi is enormous, about 1.3 million square km across southern Mongolia and northern China. Yet it shatters the postcard image of a desert. Only a small fraction of it is sand dunes at all. So what covers most of the Gobi's surface instead?",
+    "question": "Spread over about 1.3 million square kilometres, in Mongolia's south and China's north, the Gobi breaks the postcard image of a desert: only a small fraction of it is sand dunes. What covers most of its surface instead?",
     "answer": "bare rock and gravel",
     "choices": [
       "bare rock and gravel",
@@ -27795,7 +27743,7 @@
   },
   {
     "tier": 2,
-    "question": "The Gobi sits behind the Himalayas and the Tibetan Plateau, a wall of rock about 5,000 m high. Each summer the monsoon sweeps up from the Indian Ocean and dumps torrential rain on the south side of the mountains, soaking India. But the Gobi, tucked behind that same wall, stays bone-dry. Which desert-forming effect is the Gobi a classic case of?",
+    "question": "Each summer the monsoon sweeps north from the Indian Ocean and drops its rain on the southern side of the Himalayas and the Tibetan Plateau, a wall some 5,000 metres high, soaking India. The Gobi, tucked behind that same wall, stays bone-dry. Which desert-making effect is it a classic case of?",
     "answer": "a rain shadow",
     "choices": [
       "a rain shadow",
@@ -27808,7 +27756,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1923, the American fossil hunter Roy Chapman Andrews led a caravan of cars and camels deep into the Gobi. They stopped at a wall of glowing red sandstone cliffs. There his team pried from the rock a fossil find so huge that it made headlines around the world, and it became the crowning discovery of his five Gobi trips. What did the team uncover at those cliffs?",
+    "question": "Roy Chapman Andrews, the American fossil hunter, led a caravan of cars and camels deep into the Gobi in 1923, to a wall of glowing red sandstone he named the Flaming Cliffs. There his team made a find that made headlines around the world, the crowning discovery of his five Gobi trips. What did the team uncover at those cliffs?",
     "answer": "the first dinosaur eggs",
     "choices": [
       "the first dinosaur eggs",
@@ -27821,7 +27769,7 @@
   },
   {
     "tier": 4,
-    "question": "Among the Gobi's rare sand seas rise the Khongoryn Els, a wall of dunes up to 300 m tall and 100 km long. Set a whole slope of this sand sliding down the steep face — with a footstep or a gust of wind — and the dunes react in a way so memorable that locals named the entire range for it. How do the Khongoryn Els respond when their sand avalanches?",
+    "question": "Among the Gobi's rare sand seas rise the Khongoryn Els, a wall of dunes up to 300 metres tall that runs for 100 kilometres. When a footstep or a gust of wind sets a slope of their sand sliding down the steep face, the dunes respond in a way so memorable that locals named the whole range for it. What do the dunes do?",
     "answer": "they boom a deep droning hum",
     "choices": [
       "they boom a deep droning hum",
@@ -27834,7 +27782,7 @@
   },
   {
     "tier": 4,
-    "question": "The Gobi's Djadochta rock beds hold one of Earth's most astonishing fossils. A Velociraptor and a Protoceratops lie buried together, killed by a caving dune about 75 million years ago, and their skeletons are still locked together. Scientists read the scene as a hunt frozen mid-strike, the 'Fighting Dinosaurs.' In this Mongolian treasure, where did the Velociraptor's deadly sickle claw end up?",
+    "question": "Fossil hunters digging the Djadochta rock beds of the Gobi in 1971 found a Velociraptor and a Protoceratops lying together, killed by a caving dune about 75 million years ago, their skeletons still locked together. Scientists read the scene as a hunt frozen mid-strike, the 'Fighting Dinosaurs.' Where did the Velociraptor's deadly sickle claw end up?",
     "answer": "hooked into the Protoceratops's throat",
     "choices": [
       "hooked into the Protoceratops's throat",
@@ -27847,7 +27795,7 @@
   },
   {
     "tier": 5,
-    "question": "The Gobi is not sitting still: along its southern edge, grassland is disappearing at roughly 3,600 sq km a year, and the dust storms it throws off keep reaching Beijing itself. Beginning in 1978, China answered by launching one of the largest ecological engineering projects on Earth to hold the desert back from the capital. By what name is that decades-long campaign best known?",
+    "question": "Grassland along the southern edge of the Gobi is disappearing at roughly 3,600 square kilometres every year as the desert spreads, and its dust storms reach as far as Beijing. China launched a vast campaign in 1978 to hold the desert back. By what name is that campaign best known?",
     "answer": "the Great Green Wall",
     "choices": [
       "the Great Green Wall",
@@ -27860,7 +27808,7 @@
   },
   {
     "tier": 1,
-    "question": "The Grand Canyon in the state of Arizona, in the American Southwest, runs 277 miles across dry rocky country and plunges more than a mile down from its rim to the water below. Astonishingly, a single river cut this whole enormous gorge over millions of years, one grain of sand at a time. Which river did the carving?",
+    "question": "Visitors on the rim of the Grand Canyon, in northern Arizona, look more than a mile down to the river that cut the whole 277-mile gorge, grain by grain, over millions of years. Which river did the carving?",
     "answer": "the Colorado River",
     "choices": [
       "the Colorado River",
@@ -27873,7 +27821,7 @@
   },
   {
     "tier": 1,
-    "question": "Stacked in the Grand Canyon's walls are dozens of colored rock layers. The oldest is at the very bottom, and each younger one is piled on top. It is a full, in-order record of hundreds of millions of years. What everyday object do geologists most often compare these layers to?",
+    "question": "Geologists looking up at the walls of the Grand Canyon see dozens of coloured rock bands stacked in perfect order, the oldest at the very bottom and each younger one piled on top. What everyday object do they most often compare the layers to?",
     "answer": "the pages of a book",
     "choices": [
       "the pages of a book",
@@ -27899,7 +27847,7 @@
   },
   {
     "tier": 2,
-    "question": "Right at the top of the Grand Canyon, the flat rock you stand on at the rim -- the Kaibab Limestone -- is packed with fossils of clams, corals, sea lilies, and even shark teeth. Yet you stand more than a mile ABOVE the river far below. How did seashells and shark teeth get to the very top?",
+    "question": "The flat rock underfoot at the rim of the Grand Canyon, the Kaibab Limestone, is packed with fossils of clams, corals, sea lilies and even shark teeth, more than a mile above the river below. How did seashells and shark teeth get to the very top?",
     "answer": "the rim rock was itself an ancient shallow sea floor",
     "choices": [
       "the rim rock was itself an ancient shallow sea floor",
@@ -27912,7 +27860,7 @@
   },
   {
     "tier": 3,
-    "question": "The rock layers stacked in the Grand Canyon's walls formed hundreds of millions of years ago. So most people assume the gorge itself must be nearly that ancient. But geologists were astonished by the truth about the cut, meaning when the Colorado River carved the gorge down to roughly the canyon we see today. When did that carving happen?",
+    "question": "The rocks stacked in the Grand Canyon's walls date back hundreds of millions of years, and most people assume the gorge must be nearly as old. The truth about the cut itself surprised geologists. By the leading view, when did the river cut the gorge down to about the shape it has today?",
     "answer": "about 5 to 6 million years ago",
     "choices": [
       "about 5 to 6 million years ago",
@@ -27925,7 +27873,7 @@
   },
   {
     "tier": 3,
-    "question": "A mile beneath the rim, at the very floor of the Grand Canyon, the colored layers end and the rock changes completely -- dark, hard, twisted and glittering, its bands folded and swirled like taffy. This is the Vishnu Schist, the ancient 'basement' the whole canyon rests upon. It sits at the lowest point you can reach in the gorge, yet it did not form anywhere near here. Where was this rock forged?",
+    "question": "At the very floor of the Grand Canyon, a mile below the rim, the coloured bands give way to the Vishnu Schist: dark and hard, twisted and glittering, its layers swirled like taffy. It is the ancient basement the whole canyon rests on, yet it did not form anywhere near where it lies now. Where was this rock forged?",
     "answer": "miles down inside the Earth's crust",
     "choices": [
       "miles down inside the Earth's crust",
@@ -27938,7 +27886,7 @@
   },
   {
     "tier": 3,
-    "question": "Rising from the floor of the Grand Canyon are lone rock towers over a thousand feet tall, standing apart from the walls like carved monuments. The 19th-century explorer Clarence Dutton was awed by them. He named these giant towers after gods and goddesses: Vishnu, Shiva, Isis, Zoroaster. On canyon maps today, each such tower is labeled a what?",
+    "question": "Lone towers of rock over a thousand feet tall rise from the floor of the Grand Canyon, standing apart from the walls like carved monuments. Clarence Dutton, exploring the canyon in the 1800s, named them after gods and goddesses: Vishnu, Shiva, Isis, Zoroaster. What word follows each god's name on canyon maps today?",
     "answer": "Temple",
     "choices": [
       "Temple",
@@ -27951,7 +27899,7 @@
   },
   {
     "tier": 4,
-    "question": "Deep in the Grand Canyon, geologists point to one spot where you can lay your hand flat across two rock layers that touch -- the lower one part of the canyon's oldest basement, the upper a much younger sandstone. There is nothing unusual to SEE at the seam, yet scientists call it one of the most astonishing surfaces in all of geology. Why?",
+    "question": "Deep in the Grand Canyon, geologists point to a spot where a hand can rest flat across two rock layers that touch, the lower one part of the canyon's oldest basement, the upper a much younger sandstone. Nothing unusual shows at the seam, yet scientists call it one of the most astonishing surfaces in all of geology. Why?",
     "answer": "more than a billion years of rock is missing at the seam",
     "choices": [
       "more than a billion years of rock is missing at the seam",
@@ -27990,7 +27938,7 @@
   },
   {
     "tier": 5,
-    "question": "Here's a strange thing about the Grand Canyon: it isn't finished. The Colorado River is still cutting downward today, but that alone doesn't explain why the canyon keeps growing deeper over the ages. The other half of the story is that the entire Colorado Plateau -- the vast tableland the canyon sits in -- is slowly doing something too. What is the land itself doing?",
+    "question": "The river at the bottom of the Grand Canyon is still cutting downward today, and the canyon is still deepening. But the river is only half of the story. The whole Colorado Plateau, the vast tableland the canyon sits in, has been slowly doing something too, for millions of years. What has the land itself been doing?",
     "answer": "rising upward, lifting into the river's blade",
     "choices": [
       "rising upward, lifting into the river's blade",
@@ -28003,7 +27951,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1869, a one-armed Civil War veteran named John Wesley Powell led ten men in four small wooden boats on the first expedition ever to run the uncharted Colorado through the mile-deep chasm we now call the Grand Canyon. Powell himself coined that name, 'Grand Canyon,' in 1871. By what name had mapmakers labeled this Arizona gorge before he renamed it?",
+    "question": "John Wesley Powell, a one-armed Civil War veteran, led ten men down the uncharted river in four small wooden boats through the mile-deep gorge in Arizona in 1869, the first expedition ever to run it. In 1871 he named the gorge the Grand Canyon. What had mapmakers called it before?",
     "answer": "the Big Canyon",
     "choices": [
       "the Big Canyon",
@@ -28016,7 +27964,7 @@
   },
   {
     "tier": 1,
-    "question": "High in the Swiss Alps of Switzerland, you can step off a train and look out across the huge Great Aletsch glacier from a mountain station that was cut right into the rocks. It sits at 3,450 metres above sea level -- the highest railway station anywhere in Europe. What is this famous station called?",
+    "question": "Sightseers step off a train high in the Swiss Alps at a station cut right into the rock, about 3,450 metres up, and look out over the Great Aletsch Glacier. No railway station in Europe stands higher. What is this station called?",
     "answer": "Jungfraujoch",
     "choices": [
       "Jungfraujoch",
@@ -28029,7 +27977,7 @@
   },
   {
     "tier": 2,
-    "question": "At Konkordiaplatz, high on the Great Aletsch, four separate rivers of ice sweep together into one giant stream. Standing there, you would never guess how much frozen depth lies beneath your boots -- the ice reaches almost down to the buried valley floor. Roughly how deep is the ice at this meeting point?",
+    "question": "At Konkordiaplatz, high on the Great Aletsch Glacier, four separate rivers of ice sweep together into one giant stream. A climber standing there would never guess how much ice lies underfoot, reaching almost down to the buried valley floor. Roughly how deep is the ice at this meeting point?",
     "answer": "about 900 m",
     "choices": [
       "about 900 m",
@@ -28041,21 +27989,8 @@
     "topic": "the-great-aletsch-glacier-swiss-alps"
   },
   {
-    "tier": 3,
-    "question": "Long after a great glacier has melted away, geographers can still tell that thick moving ice once filled a whole valley. Places like Yosemite in California or Lauterbrunnen in Switzerland show it clearly: the heavy, slow-moving ice scours and grinds the sides and floor of the valley, leaving behind one very particular shape. What shape does a glacier grind a valley into?",
-    "answer": "a broad U-shaped valley",
-    "choices": [
-      "a broad U-shaped valley",
-      "a narrow V-shaped valley",
-      "a steep-walled slot canyon",
-      "a winding meandering channel"
-    ],
-    "context": "A river saws a narrow, V-shaped notch, but a glacier's enormous weight and grinding motion carve a broad, steep-sided U-shaped valley -- one of the surest signs that Ice Age ice, like the Great Aletsch, once filled a valley. As it grinds along, a glacier also bulldozes ridges of loose rock and rubble, called moraines, along its sides and snout. The Jungfrau-Aletsch region became a UNESCO World Heritage Site in 2001 as a living record of how such glaciers shaped Europe's mountains. (Sources: en.wikipedia.org/wiki/U-shaped_valley; en.wikipedia.org/wiki/Moraine; whc.unesco.org/en/list/1037)",
-    "topic": "the-great-aletsch-glacier-swiss-alps"
-  },
-  {
     "tier": 4,
-    "question": "Since the 1870s the Great Aletsch has drawn back more than 3 km up its valley, uncovering rock that lay buried beneath the ice for centuries. A visitor can gauge how far the glacier has withdrawn by looking at what has taken hold on the freshly bared ground near its snout. What springs up there?",
+    "question": "The Great Aletsch Glacier has drawn back more than 3 kilometres up its valley since the 1870s, baring rock that lay under the ice for centuries. A visitor can gauge how far it has withdrawn by what has taken hold on the freshly uncovered ground near its snout. What springs up there?",
     "answer": "hardy pioneer plants",
     "choices": [
       "hardy pioneer plants",
@@ -28068,7 +28003,7 @@
   },
   {
     "tier": 5,
-    "question": "High Alpine glaciers act as Europe's 'water towers': they lock up winter snowfall as ice, then release it as meltwater through the parched heat of summer, feeding rivers that millions of people downstream depend on. Meltwater pouring off the Great Aletsch runs first into the little Massa and then into one of the continent's great rivers. Which river does it ultimately swell?",
+    "question": "Meltwater pours off the snout of the Great Aletsch Glacier all through the dry Alpine summer, into the little Massa and then on into one of the continent's great rivers. Like Europe's other high glaciers, the Aletsch is a water tower: it locks up winter snowfall as ice and lets it go as the heat comes. Which river does its water ultimately swell?",
     "answer": "the Rhone",
     "choices": [
       "the Rhone",
@@ -34763,7 +34698,7 @@
   },
   {
     "tier": 1,
-    "question": "Stand on a beach in California and watch the sea for a whole day. Twice each day the Pacific Ocean slowly climbs high up the sand, then quietly slides all the way back out again — like the sea taking two long breaths. These daily rises and falls of the ocean are called tides. What in the sky does most of the pulling that lifts these tides?",
+    "question": "A lifeguard on a California beach watches the Pacific climb slowly up the sand and slide back out twice a day, like the sea taking two long breaths. What does most of the pulling that lifts the tides?",
     "answer": "the Moon",
     "choices": [
       "the Moon",
@@ -34775,34 +34710,8 @@
     "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
   },
   {
-    "tier": 1,
-    "question": "Along one funnel-shaped coast, the sea climbs the height of a five-story building, about 16 metres, then falls again, twice each single day. These are officially the highest tides found anywhere on Earth. Which coast is it?",
-    "answer": "the Bay of Fundy",
-    "choices": [
-      "the Bay of Fundy",
-      "Ungava Bay",
-      "the Severn estuary",
-      "the Bay of Biscay"
-    ],
-    "context": "This is the Bay of Fundy, between Nova Scotia and New Brunswick in eastern Canada — a world-record tidal range near 16 m. Ungava Bay in northern Quebec runs so close that some call the record a tie. Source: en.wikipedia.org/wiki/Bay_of_Fundy.",
-    "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
-  },
-  {
     "tier": 2,
-    "question": "The Bay of Fundy is a long funnel-shaped inlet between Nova Scotia and New Brunswick on the east coast of Canada. It has the highest tides on Earth. Every time the tide floods in, about 100 billion tonnes of seawater pour up into the bay — then pour out again hours later. That single half-day surge outmatches one astonishing benchmark. Which?",
-    "answer": "more water than every river on Earth combined",
-    "choices": [
-      "more water than every river on Earth combined",
-      "more water than a whole year of rain on Canada",
-      "more water than all five Great Lakes hold",
-      "more water than the Amazon moves in a month"
-    ],
-    "context": "Each half-tide moves roughly 100 billion tonnes of water in or out of the Bay of Fundy — about twice the combined flow of every river on Earth over the same time. Source: en.wikipedia.org/wiki/Bay_of_Fundy.",
-    "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
-  },
-  {
-    "tier": 2,
-    "question": "Far out in the open ocean the Moon lifts the sea only about half a metre — a swell so gentle a passing ship never feels it. Yet the same tide rears up 16 metres, the height of a five-story building, twice each day inside the Bay of Fundy on Canada's east coast. What turns that gentle ocean swell into such a coastal giant?",
+    "question": "Far out in the open ocean the tide lifts the sea only about half a metre, a swell so gentle that a passing ship never feels it. Yet twice a day the same tide rears up about 16 metres inside Canada's Bay of Fundy. What turns that gentle swell into such a giant?",
     "answer": "the funnel shape of the bay, stacking the water higher",
     "choices": [
       "the funnel shape of the bay, stacking the water higher",
@@ -34828,7 +34737,7 @@
   },
   {
     "tier": 3,
-    "question": "On the Bay of Fundy in eastern Canada, as on most coasts around the world, the sea rises to a high tide not once but twice each day, about twelve hours apart. The Moon's pull on our oceans creates that rhythm — but it does so in a way that raises the water in two places at once, not one. What does the Moon actually raise on Earth to give two daily highs instead of one?",
+    "question": "The sea comes up to high tide twice a day on the Bay of Fundy, as on most coasts of the world, about twelve hours apart, and the Moon's pull makes that rhythm. What does the Moon raise on Earth to give two high tides each day instead of one?",
     "answer": "a bulge of water on both the near and far sides at once",
     "choices": [
       "a bulge of water on both the near and far sides at once",
@@ -34841,7 +34750,7 @@
   },
   {
     "tier": 3,
-    "question": "Twice each month, at the new Moon and again at the full Moon, the Sun and Moon line up directly in a row and together heave the seas together, lifting the tides to their very highest. Tide-watchers on the Bay of Fundy know these enormous tides especially well. What are these highest twice-monthly tides called?",
+    "question": "Tide-watchers on the Bay of Fundy know two days each month well: the new Moon and the full Moon, when the Sun and the Moon line up and their pulls add together, lifting the tides to their very highest. What are these highest tides called?",
     "answer": "spring tides",
     "choices": [
       "spring tides",
@@ -34854,7 +34763,7 @@
   },
   {
     "tier": 3,
-    "question": "The Bay of Fundy's everyday tides already top out near 16 metres. Yet in October 1869 the water at Burntcoat Head, Nova Scotia, surged to a staggering 21.6 metres — a world record never beaten since. What extra force heaped those final metres onto an already-towering tide?",
+    "question": "Burntcoat Head, in Nova Scotia on the Bay of Fundy, saw the sea surge to 21.6 metres in October 1869, far above the bay's everyday tides of about 16 metres, and no tide there has topped it since. What extra force heaped those final metres onto an already-towering tide?",
     "answer": "a violent windstorm driving a surge ashore",
     "choices": [
       "a violent windstorm driving a surge ashore",
@@ -34880,7 +34789,7 @@
   },
   {
     "tier": 4,
-    "question": "The Sun and Moon are not always allies. About a week after the spring tides, at the quarter (half) Moon, they pull crossways to one another and partly cancel — so even the mighty Bay of Fundy runs slack, the sea barely rising and falling. What are these weakest tides called?",
+    "question": "Even the mighty Bay of Fundy runs slack about a week after its highest tides, at the quarter Moon, when the Sun and the Moon pull crossways to each other and partly cancel out. The sea there barely rises and falls. What are these weakest tides called?",
     "answer": "neap tides",
     "choices": [
       "neap tides",
@@ -34893,7 +34802,7 @@
   },
   {
     "tier": 4,
-    "question": "Between the Canadian provinces of Nova Scotia and New Brunswick, the Bay of Fundy is shaped like a long narrow funnel. Many bays around the world have a funnel shape too, and yet the Bay of Fundy alone grows the highest tides on the planet — up to 16 metres, taller than a house. What lucky coincidence makes the Bay of Fundy the champion, and not just another funnel-shaped bay?",
+    "question": "The Bay of Fundy, between Nova Scotia and New Brunswick, narrows like a long funnel, and its tides climb up to 16 metres, the highest on the planet. Many other bays are funnels too. What lucky coincidence makes Fundy the champion rather than one more funnel?",
     "answer": "its natural sloshing rhythm matches the tide's own beat",
     "choices": [
       "its natural sloshing rhythm matches the tide's own beat",
@@ -34906,20 +34815,7 @@
   },
   {
     "tier": 5,
-    "question": "At Saint John, New Brunswick, the Saint John River tumbles over a hidden rock ledge as a churning rapid on its way to the sea. Twice a day, when the giant Bay of Fundy tide floods in, something almost unbelievable happens to that rapid. What?",
-    "answer": "the whole rapid flips and the river runs backward, uphill",
-    "choices": [
-      "the whole rapid flips and the river runs backward, uphill",
-      "the rapid swells and doubles into a roaring waterfall",
-      "the rapid drowns beneath the flood into a deep whirlpool",
-      "the rapid falls calm, smoothing into a glassy stillwater"
-    ],
-    "context": "This is the Reversing Falls (Reversing Rapids) at Saint John: at high tide the Fundy flood overpowers the Saint John River and forces the rapid to run upstream, against its own current, over an underwater rock ledge. Source: en.wikipedia.org/wiki/Reversing_Falls.",
-    "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
-  },
-  {
-    "tier": 5,
-    "question": "As the Bay of Fundy tide charges up the Petitcodiac River near Moncton, it rears into a tidal bore — a moving wall of water rolling upstream against the current. In July 2013 two California surfers caught that wall and set a North American record. For what feat?",
+    "question": "Mark Whitbread and Colin Wessels, two surfers, caught the Bay of Fundy tide in July 2013 as it charged up the Petitcodiac River near Moncton, a bore rolling upstream as a single moving wall of water. Their ride set a North American record. For what feat?",
     "answer": "the longest wave ever surfed",
     "choices": [
       "the longest wave ever surfed",
