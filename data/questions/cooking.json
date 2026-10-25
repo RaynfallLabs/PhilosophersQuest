@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "When a butcher breaks down a whole steer, two of the most prized tender steaks — the ribeye and the New York strip — come from one and the same lightly-worked region of the animal. It's a long stretch of muscle that runs along the body without ever doing hard, jarring work, which is exactly why the meat there stays soft. Where on the animal is that prized region?",
+    "question": "A butcher breaking down a whole steer takes two prized steaks, the ribeye and the New York strip, from one long stretch of muscle. It barely works while the steer walks, so its meat stays soft. Where on the animal does that muscle run?",
     "answer": "Along the middle of the back, over the spine",
     "choices": [
       "Along the middle of the back, over the spine",
@@ -14,7 +14,7 @@
   },
   {
     "tier": 1,
-    "question": "When a butcher breaks down a whole steer, the biggest single cut — a heavily-worked, well-marbled slab — is called the chuck. It's the source of most American pot roasts, brisket-style slow-cooked meats, and much of the ground beef that ends up in burgers. Which part of the animal's body is the chuck?",
+    "question": "A cook braising an American pot roast is most often working with chuck, the biggest single cut on a steer and a heavily worked one, and much of the ground beef in burgers comes from it too. Which part of the steer is the chuck?",
     "answer": "The front shoulder and neck",
     "choices": [
       "The front shoulder and neck",
@@ -27,20 +27,7 @@
   },
   {
     "tier": 2,
-    "question": "On a cow, some muscles labor all day long — the shoulder swinging with every step, the neck holding up the heavy head. Other muscles barely move — the long strip running under the spine down the back does almost nothing but ride along for the walk. The hardworking shoulder cooks up tough and chewy, while the lazy back muscle cooks up butter-soft. Hardworking muscles pile up one substance that a barely-used muscle never builds much of. What is that substance?",
-    "answer": "Connective tissue",
-    "choices": [
-      "Connective tissue",
-      "Marbled fat",
-      "Lean protein",
-      "Body water"
-    ],
-    "context": "Muscles that work hard build up connective tissue — the tough, chewy stuff. The back muscle behind the ribeye only arches or twists the spine (something a cow does mainly when bucking), so it stays lean of connective tissue and turns out tender. Source: https://en.wikipedia.org/wiki/Rib_eye_steak",
-    "topic": "a-map-of-the-steer-the-beef-primals"
-  },
-  {
-    "tier": 2,
-    "question": "When a butcher breaks a whole steer down into big sections called primal cuts, the round is the second-biggest of them all. It comes from a heavily-worked part of the cow, so the meat is very lean, with almost no marbling of fat running through it. Butchers sell round as budget-friendly roasts that turn dry and chewy if you cook them fast at high heat. Which part of the animal is the round?",
+    "question": "Sold as a cheap roast, the round turns dry and chewy if a cook rushes it over high heat. It is the second-biggest of the primals, the big sections a steer is broken into, and its hard-worked meat is lean, with almost no marbling. Which part of the steer is the round?",
     "answer": "The rear leg and rump",
     "choices": [
       "The rear leg and rump",
@@ -53,7 +40,7 @@
   },
   {
     "tier": 3,
-    "question": "Butchers in New York and Kansas City each named their favorite steak after their own city, but a New York strip and a Kansas City strip are the exact same cut of beef — one steak with two proud hometown nicknames. Both come off the longissimus dorsi, the long muscle running down the spine — the very same muscle that gives us the ribeye. Along that long muscle, where does the strip lie compared with the ribeye?",
+    "question": "Butchers in New York and Kansas City named a favorite steak after their home cities, yet the New York strip and the Kansas City strip are one and the same cut. It comes off the longissimus dorsi, the same long muscle that gives the ribeye. Along that muscle, where does the strip lie compared with the ribeye?",
     "answer": "Farther back, toward the rear of the loin",
     "choices": [
       "Farther back, toward the rear of the loin",
@@ -66,7 +53,7 @@
   },
   {
     "tier": 3,
-    "question": "Brisket, the king of Texas barbecue, is one of the toughest, most muscular cuts on a whole steer — a big slab of hard-working meat streaked with fat and connective tissue. Cooked fast, it comes out chewy as a boot. But slow-smoked over oak or mesquite for twelve or fourteen hours at low heat, that same tough meat turns tender enough to fall apart under your fork. Which part of the steer's body does brisket come from?",
+    "question": "A Texas pitmaster smokes a brisket over oak or mesquite for twelve or fourteen hours at low heat, until it is tender enough to fall apart under a fork. Cooked fast, the same slab of hard-working meat, streaked with fat and connective tissue, comes out as chewy as a boot. Which part of the steer does brisket come from?",
     "answer": "The lower chest",
     "choices": [
       "The lower chest",
@@ -78,21 +65,8 @@
     "topic": "a-map-of-the-steer-the-beef-primals"
   },
   {
-    "tier": 3,
-    "question": "Brisket starts out crammed with collagen, the tough protein that makes hardworking cuts chewy. Hours of low, slow barbecue heat slowly break that collagen down into something else — the very thing that makes the meat turn silky, moist, and rich. What does the collagen become?",
-    "answer": "Gelatin",
-    "choices": [
-      "Gelatin",
-      "Tallow",
-      "Steam",
-      "Smoke"
-    ],
-    "context": "Long, gentle heat gelatinizes brisket's collagen — it starts melting around 160°F — turning it into silky gelatin. That's the whole point of low-and-slow: it transforms the toughest chest muscle into the tender, juicy Texas-barbecue cut. Source: https://en.wikipedia.org/wiki/Brisket",
-    "topic": "a-map-of-the-steer-the-beef-primals"
-  },
-  {
     "tier": 4,
-    "question": "Filet mignon is famous as the most tender steak in the world — so soft the edge of a butter knife slides right through it. It's cut from the tenderloin, a slim, pencil-thin muscle you'd never spot from the outside of the steer because it doesn't bulge or show on the body. On a live steer this muscle does almost no work; it barely moves at all, which is why the meat stays baby-soft. Where inside the animal does the tenderloin hide?",
+    "question": "A diner slides the edge of a butter knife straight through a steak famous as the most tender in the world. It was cut from the tenderloin, a slim muscle that never bulges or shows on the outside of a steer. In the living animal it does almost no work, which is why the meat stays so soft. Where inside the steer does the tenderloin hide?",
     "answer": "Under the lower spine, near the kidneys",
     "choices": [
       "Under the lower spine, near the kidneys",
@@ -105,20 +79,7 @@
   },
   {
     "tier": 4,
-    "question": "A steer's brisket is the huge chest muscle at the very front of the animal. Because cattle have no bone propping up the top of their shoulders the way people do, the brisket has to bear most of the steer's front-end weight just so the animal can stand — every minute of every day, from birth on. That constant load packs the muscle with tough collagen, which is why brisket needs long, slow cooking. Which bone that braces a human's shoulders is completely missing in cattle?",
-    "answer": "The collarbone",
-    "choices": [
-      "The collarbone",
-      "The shoulder blade",
-      "The breastbone",
-      "The first rib"
-    ],
-    "context": "With no collarbone, a steer's chest (pectoral) muscles carry about 60% of its standing body weight. Holding that load all day is why brisket is crammed with collagen and starts out so tough. Source: https://en.wikipedia.org/wiki/Brisket",
-    "topic": "a-map-of-the-steer-the-beef-primals"
-  },
-  {
-    "tier": 4,
-    "question": "Around the rim of every ribeye steak, hugging the outer curve of the cut, runs a thin ribbon of muscle called the spinalis dorsi. It's heavily marbled with buttery fat and comes off the grill so tender, so flavorful, that many cooks call it the single tastiest bite of the whole steak. Old-school butchers were so fond of this ribbon that they'd trim it off the ribeyes bound for customers and keep it for their own dinner. What nickname did butchers give this prized outer cap?",
+    "question": "Old-school butchers used to trim a thin ribbon of muscle, the spinalis dorsi, off the ribeyes bound for their customers and keep it for their own dinners. The ribbon hugs the outer curve of every ribeye, it is heavily marbled, and many cooks call it the tastiest bite of the whole steak. What nickname did the butchers give it?",
     "answer": "The butcher's butter",
     "choices": [
       "The butcher's butter",
@@ -131,7 +92,7 @@
   },
   {
     "tier": 5,
-    "question": "A porterhouse steak is cut from a beef primal called the short loin, near the middle of the back. Slice down through a porterhouse and you'll find a T-shaped bone with a completely different muscle on each side — one broad, dark, and beefy, the other narrow, pale, and almost butter-soft. That's why butchers call the porterhouse 'two steaks in one': you literally get two different premium cuts sharing the same bone. What are those two muscles?",
+    "question": "A porterhouse steak, sliced from the short loin near the middle of a steer's back, has a T-shaped bone with a different muscle on each side: one broad, dark and beefy, the other narrow, pale and almost butter-soft. That is why butchers call it two steaks in one. Which two muscles share the bone?",
     "answer": "The strip loin and the tenderloin",
     "choices": [
       "The strip loin and the tenderloin",
@@ -144,7 +105,7 @@
   },
   {
     "tier": 5,
-    "question": "A T-bone and a porterhouse are cut from the same short loin and look like near-twins on the plate. The porterhouse, though, is sliced from farther back, where one of its two muscles grows noticeably bigger. Order a porterhouse instead of a T-bone and the main thing you get more of is which cut?",
+    "question": "A T-bone and a porterhouse look like near-twins on the plate, and a butcher cuts both from the same short loin. The porterhouse, though, comes from farther back, where one of its two muscles grows noticeably bigger. A diner who orders the porterhouse gets more of which cut?",
     "answer": "The filet",
     "choices": [
       "The filet",
@@ -157,7 +118,7 @@
   },
   {
     "tier": 1,
-    "question": "A pineapple is not really one fruit but dozens of tiny fruits fused around a central stalk. Its rough skin is covered in little diamond-shaped 'eyes' that spiral around the pineapple. Each eye marks the spot where the plant once grew a single ___?",
+    "question": "A girl turning a pineapple in her hands counts the little diamond-shaped 'eyes' spiraling over its rough skin. The fruit is really dozens of tiny fruits fused around a central stalk. Each eye marks the spot where the plant once grew a single what?",
     "answer": "flower",
     "choices": [
       "flower",
@@ -170,7 +131,7 @@
   },
   {
     "tier": 2,
-    "question": "Most people picture a pineapple hanging from some tropical tree, but the plant is nothing like that. A pineapple plant lives for several years, and slowly, right at its center, it grows just one fruit at a time. On a farm in Hawaii or Costa Rica, when a worker walks out with a knife to cut a ripe pineapple, where does he find that fruit growing?",
+    "question": "A worker on a pineapple farm in Hawaii or Costa Rica walks out with a knife to cut a ripe fruit. The plant he visits lives for several years and slowly raises just one pineapple at a time, right at its center. Where does he find that fruit growing?",
     "answer": "on a low, spiky plant near the ground",
     "choices": [
       "on a low, spiky plant near the ground",
@@ -183,7 +144,7 @@
   },
   {
     "tier": 2,
-    "question": "You don't even need to buy a seed to grow your own pineapple at home — the pineapple plant is a bromeliad, and it can grow a whole new plant from one of its own parts. After eating a pineapple, you can start a fresh plant by twisting off one specific piece of the fruit, letting it dry for a day, rooting it in a glass of water, and finally replanting it. Which part of the fruit do you twist off, root, and replant?",
+    "question": "A boy finishing a fresh pineapple can grow a whole new plant without buying a single seed, because the pineapple is a bromeliad. He twists off one part of the fruit, lets it dry for a day, roots it in a glass of water and plants it. Which part does he twist off?",
     "answer": "the spiky, leafy crown on top",
     "choices": [
       "the spiky, leafy crown on top",
@@ -196,7 +157,7 @@
   },
   {
     "tier": 3,
-    "question": "Eat a big bowl of fresh, raw pineapple and after a while your tongue starts to sting, prickle, and feel oddly raw and sore. Canned pineapple never does this, only fresh — heating the fruit even briefly shuts the effect down completely. There's something specific living in the raw juice that goes to work on the soft tissue inside your mouth. What is fresh pineapple actually doing to the inside of your mouth?",
+    "question": "Suppose you eat a big bowl of fresh, raw pineapple. After a while your tongue starts to sting and prickle and feels oddly raw and sore, yet canned pineapple never does this. Something in the raw juice goes to work on the soft tissue of your mouth. What is the fresh fruit doing to it?",
     "answer": "digesting the protein in your mouth, like a stomach would",
     "choices": [
       "digesting the protein in your mouth, like a stomach would",
@@ -209,7 +170,7 @@
   },
   {
     "tier": 4,
-    "question": "Fresh pineapple carries an enzyme that digests protein -- which is exactly why dropping fresh pineapple into Jell-O is a disaster: the enzyme eats the gelatin's protein and the dessert never firms up, staying a runny liquid. Yet pineapple straight from a can sets the same Jell-O perfectly. What's different about the canned fruit?",
+    "question": "A cook stirs chunks of fresh pineapple into a bowl of Jell-O, and the dessert never sets: an enzyme in the raw fruit eats the gelatin's protein and leaves a runny liquid. Pineapple straight from a can, stirred into the same Jell-O, lets it set perfectly. What is different about the canned fruit?",
     "answer": "it was cooked with heat, which wrecked the enzyme",
     "choices": [
       "it was cooked with heat, which wrecked the enzyme",
@@ -222,7 +183,7 @@
   },
   {
     "tier": 4,
-    "question": "Leave a rock-hard banana on the counter and within days it turns soft and sweet. Try the same with a slightly tart pineapple -- set it right beside those ripening bananas and wait -- and nothing happens: the pineapple tastes exactly as tart as the day you bought it. Why does a banana keep sweetening after it's picked while a pineapple never does?",
+    "question": "A shopper leaves a rock-hard banana on the kitchen counter, and within days it turns soft and sweet. She sets a slightly tart pineapple right beside the ripening bananas and waits, but the pineapple stays exactly as tart as the day she bought it. Why does a banana keep sweetening after it is picked while a pineapple never does?",
     "answer": "a banana stores starch it slowly turns to sugar; a pineapple has none to convert",
     "choices": [
       "a banana stores starch it slowly turns to sugar; a pineapple has none to convert",
@@ -313,7 +274,7 @@
   },
   {
     "tier": 1,
-    "question": "Around 1840, Anna Russell, the Duchess of Bedford in England, complained she got faint and hungry every afternoon between her light noon lunch and the fashionable late dinner at eight o'clock. She invited friends over for a private four o'clock snack — tea, thin sandwiches, little iced cakes, and a warm baked round eaten with clotted cream and jam. The habit caught on across England. What is that baked round called?",
+    "question": "Anna Russell, Duchess of Bedford, grew faint with hunger each afternoon around 1840, since fashionable dinner waited until eight. She began inviting friends to tea at four, with thin sandwiches, little cakes and a warm baked round eaten with clotted cream and jam. What is that baked round called?",
     "answer": "Scones",
     "choices": [
       "Scones",
@@ -326,7 +287,7 @@
   },
   {
     "tier": 2,
-    "question": "In modern posh hotels you can book something called 'high tea' — a fancy spread of dainty finger sandwiches, scones with cream and jam, and little cakes. It sounds like the grandest, most upper-crust meal of all, and the hotels happily play along with the name. But it's a fooled name. In 1800s Britain, the real 'high tea' was something very different. What was a real high tea?",
+    "question": "A posh hotel sells 'high tea': dainty finger sandwiches and little cakes. The name sounds like the grandest meal of all, and the hotel happily plays along, but the name is borrowed. What was a real high tea in 1800s Britain?",
     "answer": "A hearty hot evening meal for working families",
     "choices": [
       "A hearty hot evening meal for working families",
@@ -339,7 +300,7 @@
   },
   {
     "tier": 3,
-    "question": "Here is the twist. In 1800s Britain there were actually two different tea meals: 'high tea' — a hearty hot supper for working families back from the factory — and 'low tea' — a dainty afternoon spread of little cakes for wealthy ladies in a parlour. But the words 'high' and 'low' had nothing to do with social class or how fancy the meal was. So what did 'high' and 'low' actually describe?",
+    "question": "Wealthy ladies in a Victorian parlour nibbled little cakes at a dainty afternoon spread that Britons called 'low tea', and another meal of the day was 'high tea'. The words had nothing to do with social class or how fancy the meal was. What did 'high' and 'low' describe?",
     "answer": "The kind of table it was eaten at",
     "choices": [
       "The kind of table it was eaten at",
@@ -352,7 +313,7 @@
   },
   {
     "tier": 3,
-    "question": "In the county of Cornwall in southwest England, a cream tea is built in one strict order that locals refuse to break: first the jam, spread straight onto the split warm scone, and only then a heavy spoonful of thick clotted cream sat on top. Cornish traditionalists get quite serious about this — reverse the order, they say, and you have ruined the whole plate. They insist the jam must go on first for a very practical kitchen reason. What is it?",
+    "question": "A Cornish cook builds a cream tea in a strict order: first the jam, spread straight onto the split warm scone, and only then a heavy spoonful of thick clotted cream on top. Cornish traditionalists say that reversing the order ruins the plate, for a very practical kitchen reason. What reason do they give?",
     "answer": "Cream underneath would melt into a soggy scone",
     "choices": [
       "Cream underneath would melt into a soggy scone",
@@ -365,7 +326,7 @@
   },
   {
     "tier": 1,
-    "question": "Nothing could be fresher than a steak sliced off a steer the very moment it is slaughtered. But if a butcher leaves the meat entirely alone and comes back 10 to 24 hours later — nobody having touched or cooked it, nothing done to it at all — the muscle has changed itself without help. Where it was floppy and soft when just cut, it is now firm and hard to bend. What did the meat do all on its own?",
+    "question": "A butcher cuts soft, floppy meat from a steer the moment it is slaughtered and leaves it alone. Back 10 to 24 hours later, he finds that, untouched and uncooked, the meat no longer bends the way it did. What does the meat do on its own?",
     "answer": "Stiffens into a rigid block",
     "choices": [
       "Stiffens into a rigid block",
@@ -378,7 +339,7 @@
   },
   {
     "tier": 2,
-    "question": "Turning tough beef tender is one of a butcher's oldest tricks, and his very best method looks like doing absolutely nothing at all. He hangs a whole side of beef in a cold, dark room and just waits — sometimes for days, sometimes for full weeks. No pounding with a mallet, no cooking, no salt or brine. When he finally takes the beef down and cuts steaks off it, meat that started chewy has turned buttery on its own. What is quietly doing all that work inside the muscle?",
+    "question": "A whole side of beef hangs in a cold, dark room while its butcher waits, sometimes for days, sometimes for weeks. He never pounds it, cooks it or salts it, yet when he finally cuts steaks from it, meat that started out chewy has turned buttery. What is doing all that work inside the muscle?",
     "answer": "Natural enzymes inside the muscle",
     "choices": [
       "Natural enzymes inside the muscle",
@@ -391,7 +352,7 @@
   },
   {
     "tier": 2,
-    "question": "Aged beef sounds like a fancy steakhouse thing. The dry-aged kind hangs in special humidity-controlled rooms for weeks so its flavor deepens. But most regular beef in a supermarket has already been aged for a couple of weeks by the time it reaches the shelf — and no one ever hung it up in a room. So how did that supermarket beef quietly age along the way?",
+    "question": "Steakhouse dry-aged beef hangs for weeks in special humidity-controlled rooms. Ordinary supermarket beef has also aged for a couple of weeks by the time it reaches the shelf, yet no one ever hung it up in a room. How did the supermarket beef age along the way?",
     "answer": "Sealed in vacuum plastic during shipping",
     "choices": [
       "Sealed in vacuum plastic during shipping",
@@ -417,7 +378,7 @@
   },
   {
     "tier": 4,
-    "question": "A pricey Manhattan steakhouse proudly lists a '45-day dry-aged' ribeye on its menu for a hundred dollars a plate. The longer beef dry-ages hanging in a cold cellar, the more its flavor deepens, sharpens, and shifts — it stops tasting simply like fresh beef and starts tasting like something else entirely. Pushed all the way to 45 days, chefs say the meat comes to taste uncannily like one particular sharp, funky, aged food. Which food?",
+    "question": "A pricey Manhattan steakhouse lists a '45-day dry-aged' ribeye on its menu for a hundred dollars a plate. The longer beef dry-ages in a cold cellar, the further its flavor shifts away from fresh beef. By 45 days, chefs say, it tastes uncannily like one sharp, funky, aged food. Which food?",
     "answer": "Blue cheese",
     "choices": [
       "Blue cheese",
@@ -430,7 +391,7 @@
   },
   {
     "tier": 4,
-    "question": "A dry-aging beef roast spends four to six full weeks uncovered in a chilled room while fans blow cold, dry air over it night and day. Moisture steadily evaporates from every surface. By the end, the entire outer layer has changed so completely that the butcher scrapes his knife along it and shaves the whole outside off — throwing that layer into the bin — before any steak can be cut and sold to a customer. What has that discarded surface become?",
+    "question": "Fans blow cold, dry air night and day over a beef roast left uncovered in a chilled room for four to six weeks, pulling moisture from every surface. At the end, the butcher shaves the whole outer layer off with his knife and throws it in the bin before he cuts a single steak to sell. What has that layer become?",
     "answer": "A hard, dark, jerky-like crust",
     "choices": [
       "A hard, dark, jerky-like crust",
@@ -534,7 +495,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1971 the chef Alice Waters opened Chez Panisse in Berkeley. It became a landmark of American 'farm-to-table' cooking. Diners expected fancy French food. But Waters had a surprising rule about a perfect, ripe, in-season vegetable or fruit. What was it?",
+    "question": "Diners who came to Chez Panisse in Berkeley, California, after Alice Waters opened it in 1971 expected fancy French food. Instead, the restaurant that became a landmark of American farm-to-table cooking ran on a surprising rule about a perfect, ripe, in-season fruit or vegetable. What was her rule?",
     "answer": "It should be treated as the star of the plate and cooked simply, or barely at all",
     "choices": [
       "It should be treated as the star of the plate and cooked simply, or barely at all",
@@ -547,7 +508,7 @@
   },
   {
     "tier": 3,
-    "question": "The American chef Alice Waters opened her restaurant Chez Panisse in Berkeley, California in 1971. Walk into most restaurants and you pick from a long menu, choosing dishes cooked to order. Walk into Chez Panisse and instead you get one fixed menu, no choices at all — and that menu is completely different every single night. Waters built the whole restaurant around one rule that decides each evening's menu. What is it?",
+    "question": "A diner sits down at Alice Waters's Chez Panisse in Berkeley and finds no long menu to choose from: one fixed meal, no choices, and it is completely different every single night. Waters built the restaurant around one rule that decides each evening's menu. What is the rule?",
     "answer": "Whatever local produce is perfectly ripe that week",
     "choices": [
       "Whatever local produce is perfectly ripe that week",
@@ -560,7 +521,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1995 Alice Waters, the American chef behind Chez Panisse, carried her food ideas out of her restaurant kitchen and into Martin Luther King Junior Middle School in Berkeley, California. She and the students took a neglected one-acre lot behind the school — cracked pavement, weeds, trash — and slowly turned it into what she called the 'Edible Schoolyard.' What did the middle-schoolers there actually do with it?",
+    "question": "Alice Waters carried her food ideas out of the Chez Panisse kitchen in 1995 and into Martin Luther King Junior Middle School in Berkeley. She and the students took a neglected one-acre lot behind the school, all cracked pavement, weeds and trash, and slowly turned it into the Edible Schoolyard. What did the students do there?",
     "answer": "Grew, harvested, and cooked their own food in a garden and kitchen classroom",
     "choices": [
       "Grew, harvested, and cooked their own food in a garden and kitchen classroom",
@@ -573,7 +534,7 @@
   },
   {
     "tier": 2,
-    "question": "When English cooks in the 1600s first pried open a jar of a strange new spice shipped in from Jamaica, its smell hit them all at once: warm cinnamon, sweet nutmeg, and sharp clove braided together in one small brown bead. Certain the seller must be blending three familiar spices in one bottle, the English cooks named it 'allspice.' They were wrong about the blend part. What is allspice really?",
+    "question": "English cooks of the 1600s pried open a jar of a new spice from the Caribbean, and its smell hit them at once: warm cinnamon, sweet nutmeg and sharp clove braided together in one small brown bead. Sure the seller was blending three familiar spices, they named it 'allspice'. They were wrong about the blend. What is allspice really?",
     "answer": "A single dried berry from one tree",
     "choices": [
       "A single dried berry from one tree",
@@ -599,7 +560,7 @@
   },
   {
     "tier": 4,
-    "question": "For centuries, allspice would grow only in its Caribbean home. Growers shipped the seeds to other tropical countries and watched them fail to sprout year after year. Then they found the seeds only wake up after passing through the body of a certain animal. Which animal?",
+    "question": "Growers shipped allspice seeds from the Caribbean to other tropical countries and watched them fail to sprout year after year; for centuries the tree would grow only at home. Then they found that the seeds wake up only after passing through the body of a certain animal. Which animal?",
     "answer": "A bird",
     "choices": [
       "A bird",
@@ -612,7 +573,7 @@
   },
   {
     "tier": 1,
-    "question": "You need to score thin crisscross lines onto the fatty skin of a pork roast so seasoning and heat can sink in, and then peel a strip of tough silvery membrane called silverskin off a beef tenderloin. Both jobs need small, careful, precise cuts — no brute chopping. Which part of a chef's knife, narrow and pointed, is made for that kind of fine detail work?",
+    "question": "Before a pork roast goes into the oven, a cook scores thin crisscross lines into its fatty skin, then peels a strip of tough, silvery membrane off a beef tenderloin. Both jobs need small, precise cuts, not brute chopping. Which part of her chef's knife does that work?",
     "answer": "the tip",
     "choices": [
       "the tip",
@@ -625,7 +586,7 @@
   },
   {
     "tier": 1,
-    "question": "To crush a garlic clove for a pan sauce, cooks do not slice it thin. They peel the clove, lay one broad flat side of the knife blade down on top of it, and thump the heel of their palm onto the blade to burst the clove open in one snap. Then they use that same broad side to scoop the smashed bits off the wooden cutting board and slide them into a hot pan. Which part of the knife is doing both the smashing and the scooping?",
+    "question": "To smash garlic for a pan sauce, a cook lays the broad side of her blade on a peeled clove and thumps it with her palm, bursting it in one snap. With the same broad side she scoops the bits into the hot pan. Which part of the knife does both jobs?",
     "answer": "the flat",
     "choices": [
       "the flat",
@@ -638,7 +599,7 @@
   },
   {
     "tier": 2,
-    "question": "You are breaking down a rock-hard butternut squash for a hearty autumn soup. The tan skin is like leather, and the dense round neck of the squash is nearly as tough as solid wood. You need to drive the knife blade straight down through that neck with real muscle behind the cut — a dainty slice from the pointed end of the knife will not get through. Which part of the chef's knife is built to power through a tough, heavy chop like that?",
+    "question": "A rock-hard butternut squash waits on the cutting board, its skin like leather and its dense neck nearly as tough as wood. The cook must drive the blade straight down through that neck with real muscle; a dainty slice from the pointed end will not do. Which part of the chef's knife is built for that chop?",
     "answer": "the heel",
     "choices": [
       "the heel",
@@ -651,7 +612,7 @@
   },
   {
     "tier": 2,
-    "question": "In a busy kitchen, a chef reaches for her most trusted tool: the chef's knife. One long side of the blade is honed to a razor edge for slicing. The opposite side is left thick and blunt on purpose. When she faces a tough cut — a hard winter squash, a knob of ginger — she rests a finger on that blunt side and press straight down for extra control and power. What is that blunt side of the blade called?",
+    "question": "A chef facing a knob of ginger rests a finger on the back of her blade and presses straight down for extra power and control. One long side of the blade is honed razor-sharp; the other is left thick and blunt on purpose. What is that blunt side called?",
     "answer": "the spine",
     "choices": [
       "the spine",
@@ -664,7 +625,7 @@
   },
   {
     "tier": 3,
-    "question": "In a busy kitchen, watch cooks mince a pile of parsley into bright green confetti. They anchor the point of the chef's knife against the cutting board, then rock the blade up and down through the herbs in a smooth, sweeping arc. A dead-flat edge would just slap the board and go nowhere — the arc needs a gently curved section along the length of the edge. Which part of the knife makes that rocking motion possible?",
+    "question": "A line cook minces a pile of parsley into bright green confetti, the point of her chef's knife anchored to the board while she rocks the blade up and down in a smooth arc. A dead-flat edge would only slap the board; the rocking needs a gentle curve along the edge. Which part of the knife makes that rocking motion possible?",
     "answer": "the belly",
     "choices": [
       "the belly",
@@ -677,7 +638,7 @@
   },
   {
     "tier": 3,
-    "question": "Pro cooks don't hold a chef's knife by the handle alone — they pinch the base of the blade itself between thumb and forefinger for far more control. A small scooped-out curve sits right where the blade leaves the handle, made to cradle those pinching fingers. What is that little notch called?",
+    "question": "Instead of gripping the handle alone, a pro cook pinches the base of her chef's knife blade between thumb and forefinger for far more control. Right where the blade leaves the handle, a small scooped-out curve cradles those pinching fingers. What is that little notch called?",
     "answer": "the choil",
     "choices": [
       "the choil",
@@ -690,7 +651,7 @@
   },
   {
     "tier": 4,
-    "question": "On many good chef's knives, right where the sharp steel blade meets the wooden handle, sits a thick collar of forged steel called the bolster. Cooks love it because it adds heft and balance — the knife feels heavier in the hand and rocks evenly through a cut. But that fat metal collar also quietly earns its keep with a second, cleverer job that helps keep a working cook safe. What is that second job?",
+    "question": "Suppose you pick up a good chef's knife. Right where the steel blade meets the wooden handle sits a thick collar of forged steel, the bolster, which adds heft and balance so the knife rocks evenly through a cut. It also does a second, cleverer job that keeps a working cook safe. What is that job?",
     "answer": "it stops your hand sliding forward onto the sharp edge",
     "choices": [
       "it stops your hand sliding forward onto the sharp edge",
@@ -703,7 +664,7 @@
   },
   {
     "tier": 5,
-    "question": "The tang is the strip of steel that reaches back from the blade into the handle. On a good Western chef's knife that steel runs the ENTIRE length of the handle in one solid piece — a 'full tang.' Beyond making the knife strong, what does all that steel do to the way it handles?",
+    "question": "A knifemaker builds a good Western chef's knife so that its steel runs the entire length of the handle in one solid piece. Cooks call that a full tang, and it makes the knife strong. Suppose you pick it up: what else does all that steel do to the way it handles?",
     "answer": "pulls the balance point back toward your hand",
     "choices": [
       "pulls the balance point back toward your hand",
@@ -716,7 +677,7 @@
   },
   {
     "tier": 5,
-    "question": "Pick up a traditional Japanese chef's knife and it feels surprisingly light, its balance tipped forward toward the point — made for slicing with a smooth forward push rather than a rocking chop. Inside its wooden handle, how is the blade's steel actually built?",
+    "question": "A cook lifts a traditional Japanese chef's knife and finds it light in the hand, its balance tipped forward toward the point, made for slicing with a smooth forward push rather than a rocking chop. Inside its wooden handle, how is the blade's steel built?",
     "answer": "it narrows to a thin spike hidden up inside the handle",
     "choices": [
       "it narrows to a thin spike hidden up inside the handle",
@@ -729,7 +690,7 @@
   },
   {
     "tier": 1,
-    "question": "A dad decides to try the keto diet, which is meant to force the body to burn fat for fuel instead of carbohydrates. Off the table go his usual dinner staples — bread rolls, pasta, and a sugary soda. But just cutting carbs alone isn't enough to make a meal actually 'keto.' To really be eating keto, what is the one swap he still needs to make?",
+    "question": "A dad starts the keto diet, meant to make the body burn fat for fuel instead of carbohydrates. Bread rolls, pasta and sugary soda leave his dinner table, but cutting carbs alone does not make a meal keto. What swap does he still need to make?",
     "answer": "Replace them with plenty of fat",
     "choices": [
       "Replace them with plenty of fat",
@@ -742,7 +703,7 @@
   },
   {
     "tier": 2,
-    "question": "On a keto diet, a person eats almost no carbohydrates — so little bread, rice, or sugar that the body simply can't lean on its usual blood-sugar fuel any more. One organ steps in and becomes a kind of fuel factory: it grabs stored body fat, breaks it apart, and turns it into a new fat-based fuel called ketones that the body can burn instead. Which organ does this job?",
+    "question": "On the keto diet, a person eats so little bread, rice or sugar that the body can no longer lean on its usual blood-sugar fuel. One organ turns into a kind of fuel factory: it breaks stored body fat apart and turns it into ketones, which the body can burn instead. Which organ does this job?",
     "answer": "The liver",
     "choices": [
       "The liver",
@@ -755,7 +716,7 @@
   },
   {
     "tier": 2,
-    "question": "On a keto diet a person eats almost no carbohydrates, so the liver takes over and turns stored body fat into a new fuel called ketones. Doctors used to teach that one organ above all others ran on almost nothing but blood sugar — glucose — and could not survive without it. Yet on keto that organ readily learns to burn ketones instead. Which organ makes that surprising switch?",
+    "question": "Doctors long taught that one organ lived on almost nothing but glucose, the sugar in the blood, and could not survive without it. Yet in a person on the keto diet, who eats almost no carbohydrates, that organ readily learns to burn a fat-made fuel called ketones instead. Which organ makes that switch?",
     "answer": "The brain",
     "choices": [
       "The brain",
@@ -768,7 +729,7 @@
   },
   {
     "tier": 3,
-    "question": "Most people assume the keto diet was dreamed up for weight loss. In truth, Dr. Russell Wilder built it at the Mayo Clinic in 1921 — he even coined the name 'ketogenic diet' — to control a serious condition that struck children, one doctors still treat with keto today. What was that condition?",
+    "question": "Russell Wilder built the keto diet at the Mayo Clinic in 1921 and even coined its name, but weight loss was not his goal. He designed it to control a serious condition that struck children, and doctors still treat that condition with keto today. What was the condition?",
     "answer": "Epileptic seizures",
     "choices": [
       "Epileptic seizures",
@@ -781,7 +742,7 @@
   },
   {
     "tier": 4,
-    "question": "Around 1912, before the keto diet existed, Dr. Hugh Conklin fought harsh childhood epilepsy with a treatment that calmed seizures. But it was miserable and could only be kept up for short stretches. Ten years later, Russell Wilder invented keto to trigger the same body chemistry in a way patients could safely keep up for months. What was Conklin's first treatment?",
+    "question": "Hugh Conklin treated sick children around 1912 with something so harsh it was miserable and could only be kept up for short stretches. Later, Russell Wilder built the keto diet to trigger the same body chemistry in a way patients could safely keep up for months. What was Conklin's treatment?",
     "answer": "Making patients go hungry for weeks",
     "choices": [
       "Making patients go hungry for weeks",
@@ -794,7 +755,7 @@
   },
   {
     "tier": 4,
-    "question": "Loren Cordain's paleo diet lets you eat meat, fish, eggs, vegetables, and fruit, yet it bans bread, beans, dairy, and refined sugar. All of the banned foods turn out to share one thing — and that shared trait is exactly why paleo rejects them. What is it?",
+    "question": "Loren Cordain built his paleo diet to allow meat, fish, eggs, vegetables and fruit while banning bread, beans, dairy and refined sugar. Every banned food shares one trait, and that trait is exactly why paleo rejects them. What is it?",
     "answer": "They all arrived only with farming and industry",
     "choices": [
       "They all arrived only with farming and industry",
@@ -807,7 +768,7 @@
   },
   {
     "tier": 4,
-    "question": "The carnivore diet cuts out every plant and eats only animal foods. Its most extreme form, followed by psychologist Jordan Peterson and his daughter Mikhaila, is nicknamed the 'lion diet,' and it strips the entire menu down to a single meat plus salt and water. Which meat?",
+    "question": "Jordan Peterson and his daughter Mikhaila have eaten the strictest form of the carnivore diet, nicknamed the 'lion diet'. Ordinary carnivore eaters drop every plant and eat only animal foods, but the lion diet strips the whole menu down to a single meat plus salt and water. Which meat?",
     "answer": "Beef",
     "choices": [
       "Beef",
@@ -820,7 +781,7 @@
   },
   {
     "tier": 5,
-    "question": "Arctic explorer Vilhjalmur Stefansson proved a person can live on meat alone — he ate nothing else for a full year under doctors' watch and never got scurvy. Yet he also warned of a deadly trap he called 'rabbit starvation': survive only on rabbit meat and you sicken within days, no matter how much of it you eat. Adding one thing back to his meals fixed it fast. What had his body been missing?",
+    "question": "Vilhjalmur Stefansson, an Arctic explorer, lived on meat alone for a full year under doctors' watch and never got scurvy. Yet he also warned of a trap he called 'rabbit starvation': living only on rabbit meat, he sickened within days, however much of it he ate. Adding one thing back to his meals fixed it fast. What had his body been missing?",
     "answer": "Fat",
     "choices": [
       "Fat",
@@ -833,7 +794,7 @@
   },
   {
     "tier": 5,
-    "question": "For over a century, anthropologists have studied hunter-gatherer peoples — the last human groups still living without farms or grocery stores. They watched Inuit hunters on Arctic sea ice, Hadza foragers on the East African savanna, Ache hunters in South American rainforests, and dozens more, writing down every root, fish, insect, and animal that went into the pot. Across all those groups, what did the evidence show about their diets?",
+    "question": "Anthropologists have spent more than a century writing down every root, fish, insect and animal that went into the cooking pots of hunter-gatherers, from Inuit hunters on Arctic sea ice to Hadza foragers on the East African savanna. Across dozens of groups, what did the evidence show about their diets?",
     "answer": "They ranged from mostly meat to mostly plants",
     "choices": [
       "They ranged from mostly meat to mostly plants",
@@ -846,7 +807,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 2020s a diet called the carnivore diet became famous online: animal foods only — meat, fish, eggs, dairy — and no plants at all. Its fans posted before-and-after stories claiming it cured autoimmune problems, joint pain, and depression. Critics warned that eating zero fruits, vegetables, or grains simply cannot be healthy for long. Mainstream medical reviewers went and looked at the actual studies. What do they say about carnivore today?",
+    "question": "Fans of the carnivore diet, animal foods only and no plants at all, post before-and-after stories online claiming it cured their autoimmune trouble, joint pain and depression. Critics warn that a diet with no fruit, vegetables or grains cannot be healthy for long. When mainstream medical reviewers read the actual studies, what did they conclude?",
     "answer": "The evidence so far is too thin to prove any benefit",
     "choices": [
       "The evidence so far is too thin to prove any benefit",
@@ -859,7 +820,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook doubts a strange kitchen trick, but she tries it anyway. She drops one small oil-packed anchovy fillet — a smelly, salty little fish from the jar — into a pan of hot tomato sauce simmering for pasta. Within about a minute the little fillet dissolves and disappears completely. She tastes the sauce. How does it come out?",
+    "question": "A doubtful cook drops one oil-packed anchovy fillet, a smelly, salty little fish from a jar, into a pan of hot tomato sauce simmering for pasta. Within about a minute the fillet dissolves and disappears completely. She tastes the sauce. How does it taste now?",
     "answer": "Rich and savory, with no fishy taste",
     "choices": [
       "Rich and savory, with no fishy taste",
@@ -872,20 +833,7 @@
   },
   {
     "tier": 2,
-    "question": "Umami science began not with meat, but with a bowl of Japanese soup stock. In 1908 a Tokyo chemist named Kikunae Ikeda kept tasting a simple broth and wondering why it was so satisfying. He pinned umami down as a basic taste. That broth got its savory depth from simmering what?",
-    "answer": "Sheets of kelp seaweed",
-    "choices": [
-      "Dried shiitake mushrooms",
-      "Sheets of kelp seaweed",
-      "Fermented soy beans",
-      "Salted cabbage leaves"
-    ],
-    "context": "The broth was dashi, made from kombu — a kind of kelp seaweed. Ikeda named the savory taste umami, Japanese for roughly 'pleasant savory taste,' and set it beside sweet, sour, salty and bitter as the fifth basic taste. Source: Wikipedia, 'Umami.'",
-    "topic": "anchovy-and-fish-sauce-the-umami-bomb"
-  },
-  {
-    "tier": 2,
-    "question": "The first Caesar salad was tossed up by Caesar Cardini in Tijuana, Mexico, in 1924. It held no anchovy fillets at all. Cardini thought whole anchovies were too strong. Yet the dressing still had a deep savory tang of the sea. Which bottled pantry sauce secretly gave it that?",
+    "question": "Caesar Cardini tossed the first Caesar salad in Tijuana, Mexico, in 1924, and he put no anchovy fillets in it, because he found whole anchovies too strong. Yet the dressing still had a deep savory tang of the sea. Which bottled pantry sauce gave it that?",
     "answer": "Worcestershire sauce",
     "choices": [
       "Worcestershire sauce",
@@ -897,34 +845,8 @@
     "topic": "anchovy-and-fish-sauce-the-umami-bomb"
   },
   {
-    "tier": 3,
-    "question": "A fresh raw fish fillet and a fresh curd of cheese both taste mild, almost bland. But cure that fish into a salty anchovy, or age that curd for months into parmesan, and each turns intensely savory — a 'meaty' taste with no meat. What does the curing and aging actually do to build that flavor?",
-    "answer": "It breaks the protein down into glutamate",
-    "choices": [
-      "It breaks the protein down into glutamate",
-      "It coats the surface with sea salt",
-      "It dries out most of the water",
-      "It grows a coat of blue mould"
-    ],
-    "context": "Raw protein is nearly tasteless; fermenting, curing, aging or heating breaks it down and frees glutamate, the amino acid behind that savory 'meaty' punch. It's the very same compound that makes aged parmesan, soy sauce and ripe tomatoes taste rich — so an anchovy, a wedge of parmesan and a sun-ripened tomato all press the same flavor button. Source: Wikipedia, 'Umami.'",
-    "topic": "anchovy-and-fish-sauce-the-umami-bomb"
-  },
-  {
     "tier": 5,
-    "question": "Roman garum never truly died out. In the tiny Italian fishing village of Cetara, cooks still salt anchovies and ferment them in small chestnut-wood barrels, then collect the amber liquid that slowly drips out — essentially garum by another name. What is this living Italian descendant of garum called?",
-    "answer": "Colatura",
-    "choices": [
-      "Colatura",
-      "Bottarga",
-      "Agrodolce",
-      "Mostarda"
-    ],
-    "context": "It's colatura di alici, made in Cetara — colatura means 'a dripping.' Salted anchovies ferment in chestnut-wood barrels and the amber liquid that drips out is essentially garum by another name. It was granted protected-origin (PDO) status in 2020. Source: Wikipedia, 'Colatura di alici'; Great Italian Chefs, 'Colatura: Campania's Famous Fish Sauce.'",
-    "topic": "anchovy-and-fish-sauce-the-umami-bomb"
-  },
-  {
-    "tier": 5,
-    "question": "Half a world from Rome, cooks in Thailand and Vietnam make nam pla and nuoc mam — anchovies and salt, fermented for months into an amber liquid almost identical to Roman garum. People often assume one tradition must have copied the other. What does the historical evidence actually show?",
+    "question": "Thai and Vietnamese cooks make nam pla and nuoc mam from anchovies and salt left to ferment for months, and the amber liquid is almost identical to Roman garum, made half a world away. Historians have looked for a link between the two traditions. What did they find?",
     "answer": "Each was most likely invented on its own",
     "choices": [
       "Each was most likely invented on its own",
@@ -937,7 +859,7 @@
   },
   {
     "tier": 1,
-    "question": "Napoleon-era France offered a cash prize for army food that wouldn't rot on the march. The Paris cook Nicolas Appert won it: he packed cooked food into containers, corked and waxed them shut, boiled them for hours — and it kept for months. What did he seal the food in?",
+    "question": "France's marching armies needed food that would not rot, and Nicolas Appert, a Paris cook, won the prize offered for it. He packed cooked food into containers, corked and waxed them shut and boiled them for hours, and it kept for months. What did he seal the food in?",
     "answer": "Glass jars",
     "choices": [
       "Glass jars",
@@ -950,7 +872,7 @@
   },
   {
     "tier": 1,
-    "question": "In early 1800s France, a man named Nicolas Appert invented canning — a way to seal cooked food inside a jar so it wouldn't spoil for months. Appert had no formal science training at all. Before he ever preserved a single meal in a jar, he had already made his name in one everyday food trade. What was Appert's trade?",
+    "question": "Before he ever preserved a meal, Nicolas Appert had already made his name in Paris in one everyday food trade, with no formal science training at all. Then, in the early 1800s, he invented canning, sealing cooked food so it would not spoil for months. What was his trade?",
     "answer": "A pastry chef",
     "choices": [
       "A pastry chef",
@@ -963,7 +885,7 @@
   },
   {
     "tier": 2,
-    "question": "Nicolas Appert's boiled, sealed jars kept food fresh for months — but he had the wrong idea about WHY. Microbes hadn't been discovered yet, so he never guessed that tiny living spoilers were the real problem. He believed his sealing simply locked out one ordinary thing. What did he think he was keeping out?",
+    "question": "Nicolas Appert's boiled, sealed food kept fresh for months, but he had the wrong idea about why. Microbes had not been discovered yet, so he never guessed that tiny living spoilers were the real problem; he believed his seal simply locked out one ordinary thing. What did he think he was keeping out?",
     "answer": "Air",
     "choices": [
       "Air",
@@ -976,7 +898,7 @@
   },
   {
     "tier": 2,
-    "question": "Appert sealed food in glass jars, but they shattered easily on rough army wagons. In 1810 the Englishman Peter Durand patented a much tougher sealed container. By 1813 it was feeding the British Army and Navy from a London factory. What was this new container?",
+    "question": "Rough army wagons easily broke Appert's sealed containers. Peter Durand, an Englishman, patented a much tougher one in 1810, and by 1813 it was feeding the British Army and Navy from a London factory. What was the new container?",
     "answer": "The tin can",
     "choices": [
       "The tin can",
@@ -989,7 +911,7 @@
   },
   {
     "tier": 3,
-    "question": "The sealed tin can was invented in 1810 as a way to feed soldiers on long marches without their food rotting. But here's the strange part: nobody invented a can opener for about fifty more years. So when early soldiers were handed sealed tin cans of stew and meat, how did they actually get them open?",
+    "question": "A soldier of the early 1800s, handed a sealed can of stew or meat to keep him fed on a long march, faced a problem: nobody would invent a can opener for about fifty more years. How did soldiers get their cans open?",
     "answer": "They pried and stabbed them open with bayonets and knives",
     "choices": [
       "They pried and stabbed them open with bayonets and knives",
@@ -1002,7 +924,7 @@
   },
   {
     "tier": 3,
-    "question": "Early tin cans, sold in 1800s shops before the can opener existed, came with their own opening directions printed right on the paper label. The instructions matter-of-factly named the two heavy household tools the buyer was supposed to use on the lid. What did the label tell people to use?",
+    "question": "Shoppers in the 1800s who bought canned food before anyone had invented a can opener found opening directions printed right on the paper label. The directions matter-of-factly named two heavy household tools to use on the lid. Which tools did the label name?",
     "answer": "A hammer and chisel",
     "choices": [
       "A hammer and chisel",
@@ -1015,7 +937,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1858 an American tinsmith named John Landis Mason, working in New York, patented a glass jar with a threaded rim and a screw-on metal lid. His invention meant families no longer needed a professional canner; they could seal a jar airtight at their own kitchen stove and reuse it every harvest to preserve fruits, jams, and vegetables. The Mason jar still bears his name. What did his screw-on lid squeeze down onto the jar's rim to make that airtight seal?",
+    "question": "John Landis Mason, a tinsmith, patented a glass jar in 1858 with a threaded rim and a screw-on metal lid. Families no longer needed a professional canner: they could seal a jar airtight at their own kitchen stove and reuse it every harvest. What did his lid squeeze down onto the rim to make that seal?",
     "answer": "A rubber ring",
     "choices": [
       "A rubber ring",
@@ -1028,20 +950,7 @@
   },
   {
     "tier": 4,
-    "question": "The deadly poison that can grow inside an under-boiled sealed jar is called botulism — and its name is a gruesome clue to its history. 'Botulism' comes straight from the Latin word for the very food that first caused it, when early-1800s doctors traced fatal poisonings to spoiled batches of it. Which food does the name come from?",
-    "answer": "Sausage",
-    "choices": [
-      "Sausage",
-      "Ham",
-      "Cheese",
-      "Fish"
-    ],
-    "context": "'Botulism' comes from the Latin botulus, meaning SAUSAGE — physician-poet Justinus Kerner traced the 'sausage poison' to bad German sausages in the early 1800s; the bacterium (Clostridium botulinum) was finally pinned down in 1895 after a funeral-ham dinner in Belgium. It grows in under-heated, low-oxygen sealed jars and makes one of the most potent nerve toxins known — which is why you boil canning jars hard. Source: hekint.org, 'Botulism: from pork sausages to Botox'",
-    "topic": "apperts-sealed-jars-canning-before-anyone-knew-why"
-  },
-  {
-    "tier": 4,
-    "question": "In 1824, a four-pound tin of roast veal was packed for William Parry's expedition to the frozen Arctic. The can sailed north and came home unopened, then sat in a museum for over a century. When scientists finally cut it open in 1938 — 114 years after it was sealed — what did they find inside?",
+    "question": "A four-pound tin of roast veal went north with William Parry's Arctic expedition in 1824 and came home unopened. It sat in a museum for more than a century, until scientists finally cut it open in 1938, 114 years after it was sealed. What did they find inside?",
     "answer": "Pink veal still perfectly good",
     "choices": [
       "Pink veal still perfectly good",
@@ -1050,19 +959,6 @@
       "A crumbling lump of rust"
     ],
     "context": "A 4-pound tin of roast veal packed for William Parry's 1824 Arctic expedition sailed to the Arctic and back, then sat unopened in a museum until scientists opened it in 1938 — 114 years later — and the pink veal was reportedly still in perfect condition: proof a properly sealed can preserves food almost indefinitely. (Often-told account; medium confidence.) Source: inventionandtech.com, 'Form Follows Failure'  (Legend.)",
-    "topic": "apperts-sealed-jars-canning-before-anyone-knew-why"
-  },
-  {
-    "tier": 5,
-    "question": "A home cook can water-bath can tomatoes and pickles — their natural acid stops Clostridium botulinum, the germ behind the deadly food poisoning called botulism, from ever turning into poison. But green beans, corn, and meat have no such acid, so they go into a heavier tool called a pressure canner instead. What does a pressure canner do that a pot of open boiling water cannot?",
-    "answer": "It drives the jars hotter than boiling",
-    "choices": [
-      "It drives the jars hotter than boiling",
-      "It scrubs the air out of the jars",
-      "It clamps the lids down much tighter",
-      "It sours the jars with acidic steam"
-    ],
-    "context": "Acid stops botulism spores from turning into toxin, so acidic foods (tomatoes, fruit, pickles) can be safely water-bath canned. But low-acid foods (beans, meat, most vegetables) must go in a pressure canner: the spores survive boiling water (212°F) and only die at the roughly 240°F a pressure canner reaches. Source: nchfp.uga.edu, 'For Safety's Sake'",
     "topic": "apperts-sealed-jars-canning-before-anyone-knew-why"
   },
   {
@@ -1197,7 +1093,7 @@
   },
   {
     "tier": 1,
-    "question": "On a hot griddle in Caracas, Venezuela, a cook flips a thick, round corn cake called an arepa. Arepas are the everyday bread of Venezuela, cooked on a flat pan until the outside is crisp and the inside stays soft and steamy. In the classic Venezuelan style, the cook serves the finished arepa as a handheld meal built around a filling of shredded chicken, black beans, or crumbly white cheese. How does the filling get into the cake?",
+    "question": "A cook in Caracas, Venezuela, flips an arepa, a thick, round corn cake, on a hot griddle until its outside is crisp and its inside soft and steamy. She serves it the Venezuelan way, as a handheld meal with shredded chicken, black beans or white cheese. How does the filling get into the cake?",
     "answer": "The cake is split open like a bun and filled",
     "choices": [
       "The cake is split open like a bun and filled",
@@ -1210,7 +1106,7 @@
   },
   {
     "tier": 2,
-    "question": "Mexican tortillas and Venezuelan arepas are both corn cakes. But they start from two different methods. For tortilla masa, the corn is first soaked in a lime bath. Arepa flour, called masarepa, skips the lime step. So how is the corn for masarepa handled instead?",
+    "question": "A Mexican cook making tortilla dough first soaks the corn in a bath of limewater. A Venezuelan cook's arepa flour, called masarepa, skips the lime step entirely. How is the corn for masarepa handled instead?",
     "answer": "It's cooked in water and dried into flour",
     "choices": [
       "It's cooked in water and dried into flour",
@@ -1223,7 +1119,7 @@
   },
   {
     "tier": 3,
-    "question": "The arepa belongs to both Venezuela and Colombia. But the two countries take it in different directions. Venezuelans split the thick cake and stuff it like a pocket. The famous reina pepiada holds chicken and avocado. Colombian cooks often skip the splitting, yet their arepas can still be loaded with cheese. How do they manage that?",
+    "question": "At a market stall in Colombia, the cooks pat out arepas thinner than most and seldom open them up once they come off the griddle. Yet their arepas can still come loaded with cheese. How do they manage that?",
     "answer": "They knead the cheese right into the dough",
     "choices": [
       "They knead the cheese right into the dough",
@@ -1236,7 +1132,7 @@
   },
   {
     "tier": 4,
-    "question": "Before bagged instant corn flour existed, a Venezuelan family that wanted arepas for breakfast faced a hard daily chore they called 'la piladera.' When instant flour arrived in the 1950s, its slogan promised to end that chore forever — '¡Se acabó la piladera!', meaning 'the piladera is over.' What backbreaking daily task did that slogan celebrate the end of?",
+    "question": "A Venezuelan family that wanted arepas for breakfast, before bagged precooked corn flour existed, faced a hard daily chore called 'la piladera'. When the flour reached the shops, its slogan cheered the chore's end: 'Se acabó la piladera', 'the piladera is over'. What backbreaking task did the slogan celebrate the end of?",
     "answer": "Pounding maize by hand in a tall wooden mortar",
     "choices": [
       "Pounding maize by hand in a tall wooden mortar",
@@ -1262,7 +1158,7 @@
   },
   {
     "tier": 1,
-    "question": "At an Argentine asado — the beloved weekend cookout of the Argentine cowboys called gauchos — beef and sausages cook slowly on a low wood-fired grill they call the parrilla. But the roaring flames themselves are not what the meat cooks over. What is the meat actually sitting above as it slowly turns brown?",
+    "question": "At an Argentine asado, the weekend cookout that comes down from the gaucho cowboys, beef and sausages cook slowly on a low wood-fired grill called the parrilla. The meat does not cook over the roaring flames. What is it sitting above as it slowly browns?",
     "answer": "a bed of glowing embers",
     "choices": [
       "a bed of glowing embers",
@@ -1275,7 +1171,7 @@
   },
   {
     "tier": 2,
-    "question": "A visitor sits down at an Argentine parrilla — the traditional wood-fired beef grill at the heart of Argentine cooking — expecting the famous steaks to be soaking in some secret marinade of wine and spices. Not so: the beef gets no marinade at all. It's simply thick cuts of good grass-fed Argentine beef, cooked slowly over hardwood coals, and given a single seasoning applied before or during grilling. What is that one seasoning?",
+    "question": "A visitor at an Argentine parrilla expects the famous steaks to be soaking in a secret marinade of wine and spices, but the beef gets no marinade at all. Thick cuts of good grass-fed beef go on the grill with a single seasoning, rubbed on before or during grilling. What is that seasoning?",
     "answer": "salt",
     "choices": [
       "salt",
@@ -1288,7 +1184,7 @@
   },
   {
     "tier": 2,
-    "question": "At an Argentine backyard barbecue — called an asado — a dozen guests mill around the yard with glasses of Malbec wine, but not one of them dares reach for the grill. Every decision belongs to one person: when the fire is ready, when the meat goes on, how long it stays, when it comes off, and which cut is served first. That person is the ceremonial grill-master of Argentine cooking. What is he called?",
+    "question": "A dozen guests mill around an Argentine backyard asado with glasses of Malbec, and not one of them reaches for the grill. Every call belongs to one man: when the fire is ready, when the meat goes on, how long it stays and which cut is served first. What is the grill-master called?",
     "answer": "the asador",
     "choices": [
       "the asador",
@@ -1301,7 +1197,7 @@
   },
   {
     "tier": 3,
-    "question": "Chimichurri is the bright green sauce Argentines spoon over their grilled beef at an asado. A cook makes it by chopping fresh parsley very fine, mincing garlic, and stirring in dried oregano, olive oil, red wine vinegar, and red chili flakes, then letting the bowl rest for a few hours so the flavors blend. Unlike a French sauce or an Italian ragù, chimichurri never touches heat before it reaches the meat. How is this classic Argentine sauce prepared?",
+    "question": "An Argentine cook chops fresh parsley very fine, minces garlic and stirs in dried oregano, olive oil, red wine vinegar and red chili flakes, then lets the bowl rest a few hours so the flavors blend. The bright green chimichurri goes over the grilled beef at the asado. How is this sauce prepared?",
     "answer": "stirred together raw, never heated",
     "choices": [
       "stirred together raw, never heated",
@@ -1327,7 +1223,7 @@
   },
   {
     "tier": 4,
-    "question": "An asado — the Argentine grill feast — follows a strict traditional order that a first-timer usually gets wrong. Eager for the famous grass-fed beef, a newcomer reaches straight for a big juicy steak. The asador, the grill-master, waves him off with a laugh: in Argentina the prime steak cuts always come near the end of the meal. First comes a lighter opener, cooked quickly and served while everyone is still gathering. What comes off the grill first, as the opening course of an asado?",
+    "question": "A newcomer at an Argentine asado reaches straight for a big, juicy steak, and the grill-master waves him off with a laugh: the prime steaks wait until near the end. The feast opens with something lighter, cooked quickly and served while everyone is still gathering. What comes off the grill first?",
     "answer": "sausages such as chorizo",
     "choices": [
       "sausages such as chorizo",
@@ -1340,7 +1236,7 @@
   },
   {
     "tier": 5,
-    "question": "The finest asado charcoal comes from quebracho, one of the densest, hardest woods in all of South America — it burns hot and steady for hours and leaves almost no ash. The tree's very name is a grim warning about that hardness. What does 'quebracho' mean?",
+    "question": "A grill-master building his fire for an asado reaches for charcoal made from quebracho, one of the densest, hardest woods in all of South America, because it burns hot and steady for hours and leaves almost no ash. The tree's very name is a warning about that hardness. What does 'quebracho' mean?",
     "answer": "axe-breaker",
     "choices": [
       "axe-breaker",
@@ -1444,7 +1340,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin B12 is a nutrient your body needs only a tiny speck of every single day, yet without it you would get very sick. B12 has two jobs it absolutely has to do inside you. One is helping build the red blood cells that carry oxygen around your body. What is B12's other essential job?",
+    "question": "Suppose you went without vitamin B12. Your body needs just a tiny speck of it daily, yet without it you would fall very sick, because it does two jobs you cannot skip. One is helping build red blood cells. What is the other?",
     "answer": "Keeping your nerve cells healthy",
     "choices": [
       "Keeping your nerve cells healthy",
@@ -1457,7 +1353,7 @@
   },
   {
     "tier": 2,
-    "question": "Vitamin B12 is a nutrient the body needs to build red blood cells and keep nerves healthy, and it is found naturally almost only in animal foods. Some of the richest B12 sources on Earth come from the sea, and they leave popular fish in the dust. Forget salmon and tuna: a single small three-ounce serving of a certain shellfish delivers several times a full day's supply of B12 all by itself. Which shellfish?",
+    "question": "A fishmonger's counter holds salmon and tuna, but some of the richest sources of vitamin B12 on Earth sit in the shellfish case beside them. A single three-ounce serving of one shellfish delivers several times a full day's B12 by itself, leaving the popular fish far behind. Which shellfish?",
     "answer": "Clams",
     "choices": [
       "Clams",
@@ -1470,7 +1366,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1920s, pernicious anemia was a death sentence. A patient's blood slowly wasted away and doctors could not help. Then in 1926, two American doctors cured it. They fed each patient a half-pound of one raw food every day until the blood came back. What was that food?",
+    "question": "George Minot and William Murphy, two American doctors, cured pernicious anemia in 1926, a disease that had been a death sentence: a patient's blood slowly wasted away. They fed each patient about half a pound of one raw food every day until the blood came back. What was that food?",
     "answer": "Raw beef liver",
     "choices": [
       "Raw beef liver",
@@ -1483,7 +1379,7 @@
   },
   {
     "tier": 3,
-    "question": "Here's the twist that stumps almost everyone: B12 is packed into meat, fish, and eggs — but the cow, the fish, and the hen don't actually make the vitamin themselves; they only store it. The real B12 factory is a much tinier kind of living thing. What builds every bit of the world's B12?",
+    "question": "A cow grazing in a field, a fish in the sea and a hen in the yard all carry vitamin B12 in their meat and eggs, yet none of them makes it; they only store it. The real B12 factory is a much tinier living thing. What builds every bit of the world's B12?",
     "answer": "Bacteria",
     "choices": [
       "Bacteria",
@@ -1496,7 +1392,7 @@
   },
   {
     "tier": 3,
-    "question": "Most B-vitamins wash out of your body within a day, so you must replace them constantly. B12 breaks that rule: a person who cuts out all animal foods and takes no supplement can feel perfectly fine for about three years before any deficiency shows up. Why the long delay?",
+    "question": "A woman who cuts out every animal food and takes no supplement can feel fine for about three years before any vitamin B12 deficiency shows up. Most of the other B vitamins wash out of the body within days. Why does B12 take so long to run short?",
     "answer": "The body has stored a multi-year reserve of it.",
     "choices": [
       "The body has stored a multi-year reserve of it.",
@@ -1509,7 +1405,7 @@
   },
   {
     "tier": 4,
-    "question": "Here's the cruel catch with B12: you can eat a plateful of it and still go deficient. To actually absorb the vitamin, your gut needs a special helper substance to escort it across the intestine — and if your own body destroys that helper by mistake, absorption stops cold, no matter how much B12 you eat. What is that essential helper called?",
+    "question": "A patient can eat a plateful of vitamin B12 and still go short of it. His gut needs a special helper to escort the vitamin across the intestine, and if his own body destroys that helper by mistake, absorption stops, however much B12 he eats. What is that helper called?",
     "answer": "Intrinsic factor",
     "choices": [
       "Intrinsic factor",
@@ -1522,7 +1418,7 @@
   },
   {
     "tier": 4,
-    "question": "Vitamin B12 is a nutrient the body uses to build red blood cells and keep nerves working properly, and it is found naturally almost only in animal foods — meat, fish, eggs, and dairy. Your cousin decides to go fully vegan — no meat, fish, eggs, or dairy at all — and asks you whether that can truly be healthy or whether she'll run short on some nutrient. Judging by the actual nutrition science, which statement about a vegan diet and vitamin B12 is correct?",
+    "question": "A girl decides to go fully vegan, with no meat, fish, eggs or dairy at all, and asks her older cousin whether that can truly be healthy or whether she will run short of some nutrient. Vitamin B12 comes naturally almost only from animal foods. What does the nutrition science say about a vegan diet and B12?",
     "answer": "A vegan diet is fine, but B12 has to come from a supplement or fortified food.",
     "choices": [
       "A vegan diet is fine, but B12 has to come from a supplement or fortified food.",
@@ -1613,7 +1509,7 @@
   },
   {
     "tier": 1,
-    "question": "On a warm evening in Manila, the capital of the Philippines, a Filipino street vendor rolls his cart down the sidewalk, calling out 'Balut! Balut!' -- one of the country's most famous late-night snacks. He lifts a warm boiled egg out of a bucket of hot water and hands it over, ready to eat right from the shell. From the outside, it looks like any ordinary hard-boiled egg. What is actually inside it?",
+    "question": "On a warm Manila evening, a street vendor rolls his cart down the sidewalk calling 'Balut! Balut!' He lifts a warm boiled egg from a bucket of hot water, ready to eat from the shell; from the outside it looks like any ordinary hard-boiled egg. What is inside it?",
     "answer": "A curled, half-formed duckling",
     "choices": [
       "A curled, half-formed duckling",
@@ -1626,7 +1522,7 @@
   },
   {
     "tier": 2,
-    "question": "Balut is a Filipino street-food snack -- a warm boiled egg sold hot out of a vendor's bucket at night stalls in Manila. There is a right way to open one, and every regular customer knows it. You stand the little egg upright in your palm, tap a small hole in the pointed top with your spoon, and only then peel away the rest of the shell. What does that little hole at the top let you do first?",
+    "question": "Suppose you buy a warm balut from a vendor's bucket in Manila. Every regular knows the right way to open it: stand the egg upright in your palm, tap a small hole in the pointed top with a spoon, and only then peel away the rest of the shell. What does that little hole let you do first?",
     "answer": "Sip the warm broth straight from the shell",
     "choices": [
       "Sip the warm broth straight from the shell",
@@ -1639,7 +1535,7 @@
   },
   {
     "tier": 3,
-    "question": "Balut sa puti is the young Filipino version of the snack. Making it is more like a clock than a recipe. The duck eggs must stay warm for 17 days before anyone boils them. The old makers do this with no machine at all. Where do the eggs spend those 17 warm days?",
+    "question": "An old-style Filipino balut maker keeps his duck eggs warm for 17 days before anyone boils them, for the young version called balut sa puti, and he uses no machine at all. Making it is more like keeping a clock than following a recipe. Where do the eggs spend those 17 warm days?",
     "answer": "Buried in warm sand or rice husks",
     "choices": [
       "Buried in warm sand or rice husks",
@@ -1652,7 +1548,7 @@
   },
   {
     "tier": 1,
-    "question": "Banh mi is Vietnam's most famous sandwich, sold at street stalls all over the country. At a busy corner stall in Ho Chi Minh City, a Vietnamese cook picks up a fresh loaf of bread, slashes it open lengthwise with a knife, and fills it with roast pork, pâté (a soft meat spread), and tangy pickled carrots and daikon. The bread she picks up is the whole reason a banh mi holds together. What kind of bread is a classic banh mi made in?",
+    "question": "At a busy street stall in Vietnam, a cook picks up a fresh loaf, slashes it open lengthwise and fills it with roast pork, pâté and tangy pickled carrot for a banh mi, the country's most famous sandwich. What kind of bread is a classic banh mi made in?",
     "answer": "a baguette",
     "choices": [
       "a baguette",
@@ -1665,7 +1561,7 @@
   },
   {
     "tier": 2,
-    "question": "A Vietnamese banh mi baguette looks just like a French one, but it's far lighter and crispier than the dense, chewy loaf back in France. The secret is a cheap local staple that Vietnamese bakers blended right into the wheat dough. What did they mix in?",
+    "question": "Side by side, a Vietnamese banh mi loaf and a French one look alike, yet the Vietnamese loaf is far lighter and crispier than the dense, chewy original. The secret is a cheap local staple that Vietnamese bakers blended right into the wheat dough. What did they mix in?",
     "answer": "rice flour",
     "choices": [
       "rice flour",
@@ -1678,7 +1574,7 @@
   },
   {
     "tier": 2,
-    "question": "Banh mi -- Vietnam's beloved sandwich of roast pork, pâté, and pickled carrot in a crackly little baguette -- is not as ancient as it looks. Food historians say the loaded, meaty version we know today is quite modern. It only appeared once the French had left Vietnam, when family stalls started piling extra fillings into the old French-style bread. That happened in one particular Vietnamese city in the 1950s. Which city was the modern banh mi born in?",
+    "question": "Family stalls in one Vietnamese city started piling extra fillings into the old French-style bread in the 1950s, once the French had left Vietnam. Food historians say the loaded, meaty sandwich the world knows began there. Which city was it?",
     "answer": "Saigon",
     "choices": [
       "Saigon",
@@ -1691,7 +1587,7 @@
   },
   {
     "tier": 3,
-    "question": "A banh mi keeps some French touches — a smear of pâté and mayonnaise — but piles in Vietnamese cold cuts too. One favorite is 'cha lua,' a smooth pork sausage that cooks pack into a leaf wrapper, steam until firm, then slice into pale rounds. Which leaf is cha lua traditionally wrapped and steamed in?",
+    "question": "A Vietnamese cook packs smooth pork paste into a leaf wrapper, steams it until firm and slices it into pale rounds of cha lua, a favorite cold cut that goes into a banh mi beside French pâté and mayonnaise. Which leaf is cha lua traditionally wrapped in?",
     "answer": "a banana leaf",
     "choices": [
       "a banana leaf",
@@ -1704,7 +1600,7 @@
   },
   {
     "tier": 4,
-    "question": "All that rich pâté, buttery mayo, and fatty pork would taste heavy on its own, so a banh mi is balanced with 'do chua' — a bright, tangy pickle that snaps with fresh crunch. Do chua is made by pickling shredded carrot together with one other crunchy vegetable. Which one?",
+    "question": "A banh mi maker balances all that rich pâté, mayonnaise and fatty pork with do chua, a bright, tangy pickle that snaps with fresh crunch. She makes it by pickling shredded carrot together with one other crunchy vegetable. Which one?",
     "answer": "daikon",
     "choices": [
       "daikon",
@@ -1717,7 +1613,7 @@
   },
   {
     "tier": 5,
-    "question": "A banh mi -- Vietnam's famous sandwich -- is only as good as its bread: a small Vietnamese baguette with a paper-thin crackly crust and a wonderfully airy, poofy inside. French bakers, who first brought baguettes to Vietnam during colonial times, shape their dough gently, folding it with a light hand to keep the crumb tender. Vietnamese banh mi bakers get their signature poofy crumb by treating the very same kind of dough in a rougher, very different way. What do they do to it?",
+    "question": "French bakers, who brought their bread to Vietnam in colonial times, fold their dough gently with a light hand to keep the crumb tender. Vietnamese banh mi bakers get a paper-thin, crackly crust and an airy, poofy inside by treating the same kind of dough in a much rougher way. What do they do to it?",
     "answer": "whip it hard with a mixer",
     "choices": [
       "whip it hard with a mixer",
@@ -1730,7 +1626,7 @@
   },
   {
     "tier": 1,
-    "question": "Beef Wellington is the grandest 'meat in a blanket.' Instead of grilling or stewing it, a cook coats a whole beef fillet in mushrooms, then seals and bakes the entire roast so it can be sliced into neat rounds at the table. What is the beef sealed inside?",
+    "question": "A cook making Beef Wellington coats a whole beef fillet in mushrooms, then seals and bakes the entire roast to slice into neat rounds at the table: the grandest meat-in-a-blanket of all. What is the beef sealed inside?",
     "answer": "a sheet of puff pastry",
     "choices": [
       "a sheet of puff pastry",
@@ -1743,7 +1639,7 @@
   },
   {
     "tier": 2,
-    "question": "Beef Wellington is a famous British roast: a beef tenderloin wrapped up and baked inside a golden puff-pastry shell. The trick of the dish is that the beef never actually touches the pastry — a dark, savory layer of finely chopped mushrooms cooked down with shallots sits in between, keeping the pastry from going soggy. Every recipe calls that mushroom layer by a single French word. Which word is it?",
+    "question": "Between the beef tenderloin of a Beef Wellington and its golden crust lies a dark, savory layer: mushrooms chopped very fine and cooked down with shallots. The beef never touches the crust, and the layer helps keep it crisp. Every recipe calls it by one French word. Which word?",
     "answer": "duxelles",
     "choices": [
       "duxelles",
@@ -1756,7 +1652,7 @@
   },
   {
     "tier": 2,
-    "question": "Beef Wellington is a British showpiece dish: a whole tenderloin of beef spread with savory mushroom paste, wrapped in salty prosciutto, and rolled up inside golden puff pastry, then baked. On British TV shows like The Great British Bake Off, Wellington sinks more contestants than almost any other dish. Even when the beef inside is a perfect pink, the pastry can still earn the judges' worst two-word ruling -- the same flaw that wrecks most home tries. What is that dreaded ruling?",
+    "question": "Contestants on The Great British Bake Off have watched a Beef Wellington sink them more often than almost any other dish. Even when the beef inside is a perfect pink, the pastry can earn the judges' worst two-word verdict, the same flaw that wrecks most home attempts. What is that verdict?",
     "answer": "a soggy bottom",
     "choices": [
       "a soggy bottom",
@@ -1769,7 +1665,7 @@
   },
   {
     "tier": 3,
-    "question": "To stop beef juices from turning the pastry base pale and mushy, chefs don't rely on the dry mushroom paste alone. Before wrapping the fillet in pastry, they roll the seared beef in a thin, salty cured meat that acts like a sponge, soaking up escaping juice. Which cured meat is the classic choice?",
+    "question": "A chef wrapping a seared beef fillet for Beef Wellington does not trust the dry mushroom paste alone to guard the pastry. First she rolls the beef in a thin, salty cured meat that acts like a sponge, soaking up escaping juice. Which cured meat is the classic choice?",
     "answer": "prosciutto",
     "choices": [
       "prosciutto",
@@ -1782,7 +1678,7 @@
   },
   {
     "tier": 4,
-    "question": "Beef Wellington carries the name of Arthur Wellesley, the Duke who beat Napoleon at Waterloo in 1815. The Duke threw a grand banquet in 1839 to celebrate that victory, and food historians tracked down the menu from it. What does that menu say about the dish?",
+    "question": "Arthur Wellesley, the Duke of Wellington, beat Napoleon at Waterloo in 1815 and threw a grand banquet in 1839 to celebrate that victory. Beef Wellington is said to carry his name, and food historians tracked down that banquet's menu. What does it show about the dish?",
     "answer": "the dish appears nowhere on the menu",
     "choices": [
       "the dish appears nowhere on the menu",
@@ -12078,7 +11974,7 @@
   },
   {
     "tier": 1,
-    "question": "In ancient Rome, cooks kept one savory brown sauce on hand for almost every dish. They splashed it into stews, drizzled it over roast pig, and even stirred it into sweet honey desserts. The sauce, called garum, was made by packing one main ingredient into open clay vats along with plenty of salt, then leaving the vats out in the hot Mediterranean sun to ferment for months. What was that main ingredient?",
+    "question": "Cooks in ancient Rome kept one savory brown sauce, garum, on hand for almost every dish: stews, roast pig, even sweet honey desserts. Its makers packed one main ingredient into open clay vats, set out in the hot Mediterranean sun to ferment for months. What was that main ingredient?",
     "answer": "Small fish",
     "choices": [
       "Small fish",
@@ -12091,7 +11987,7 @@
   },
   {
     "tier": 2,
-    "question": "To make garum, you never lit a fire. You packed whole small anchovies and sardines — guts and all — into big vats, layered them with plenty of one cheap ingredient, and left them in the warm Mediterranean sun for two to three months until they broke down into a clear amber sauce. What did you layer the fish with?",
+    "question": "A Roman sauce-maker never lit a fire to make garum. He packed small anchovies and sardines, guts and all, into big vats in layers with plenty of one cheap ingredient, then left them in the warm Mediterranean sun for two to three months until they broke down into a clear amber sauce. What did he layer the fish with?",
     "answer": "Coarse salt",
     "choices": [
       "Coarse salt",
@@ -12104,7 +12000,7 @@
   },
   {
     "tier": 2,
-    "question": "Inside the garum vat, two products formed. Romans carefully drew the prized, clear liquid off the top — that was the true garum. But a thick, cheaper fish paste always settled at the bottom, and poorer families scooped it onto their everyday food. What was this bottom-of-the-vat paste called?",
+    "question": "Workers at a garum vat drew the prized clear liquid off the top, and that was the true garum. A thick, cheaper fish paste always settled at the bottom, and poorer families scooped it onto their porridge and everyday meals. What was that bottom-of-the-vat paste called?",
     "answer": "Allec",
     "choices": [
       "Allec",
@@ -12117,7 +12013,7 @@
   },
   {
     "tier": 3,
-    "question": "Romans splashed garum on almost everything — stews, eggs, even sweet dishes. Much of Asia reaches for one savory bottle today for the same reason. Fermenting garum's fish frees the same savory taste that makes aged parmesan so rich. Playing that all-purpose role, garum was Rome's version of which bottle?",
+    "question": "Romans splashed garum on almost everything, from stews and eggs to sweet dishes, for the same reason much of Asia reaches for one savory bottle today. Fermenting the fish in garum frees the same savory taste that makes aged parmesan rich. Which bottle was garum Rome's version of?",
     "answer": "Soy sauce",
     "choices": [
       "Soy sauce",
@@ -12130,7 +12026,7 @@
   },
   {
     "tier": 3,
-    "question": "Pompeii had a celebrity garum tycoon: a freedman named Aulus Umbricius Scaurus, so proud of his sauce that he tiled his own floor with mosaics of garum jars bragging about the product. One boasted his finest 'flower of garum' was made from a single kind of oily fish. Which fish did Scaurus brag his best garum came from?",
+    "question": "Aulus Umbricius Scaurus, a freedman of Pompeii, was so proud of his garum that he tiled his own floor with mosaics of garum jars bragging about the product. One boasts that his finest 'flower of garum' was made from a single kind of oily fish. Which fish does it name?",
     "answer": "Mackerel",
     "choices": [
       "Mackerel",
@@ -12143,7 +12039,7 @@
   },
   {
     "tier": 4,
-    "question": "After Rome fell, its fish-sauce craze faded almost everywhere, but the ancient method never fully died. In the Italian fishing village of Cetara on the Amalfi Coast, people still layer anchovies in small wood barrels. They collect the amber liquid that slowly drips out the bottom, exactly the way Romans made garum. What is this living cousin of garum called?",
+    "question": "Garum never quite died after Rome fell. Cooks in Cetara, a little fishing village on the Amalfi Coast, still pack anchovies in salt in small chestnut barrels and catch the amber liquid that slowly seeps out of the bottom. What do they call this living cousin of garum?",
     "answer": "Colatura",
     "choices": [
       "Colatura",
@@ -12156,7 +12052,7 @@
   },
   {
     "tier": 4,
-    "question": "You would expect Rome's costliest treat to come from Italy, the heart of Rome itself. But the most prized garum of all — 'garum sociorum,' the 'garum of the allies' — came from Roman colonies far out in the provinces. Pliny the Elder marveled that hardly any liquid on earth cost more, and a single small jar could swallow about a year of a Roman soldier's pay. In what land did those famous garum colonies lie?",
+    "question": "Pliny the Elder marveled that hardly any liquid on earth cost more than garum sociorum, 'the garum of the allies', the most prized garum of all. It came not from Italy, the heart of Rome, but from Roman colonies far out in the provinces. In what land did those colonies lie?",
     "answer": "Spain",
     "choices": [
       "Spain",
