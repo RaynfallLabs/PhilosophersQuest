@@ -2,6 +2,7 @@
 
     py -m bankbuild.voice.apply <subject> <batch>            # dry run
     py -m bankbuild.voice.apply <subject> <batch> --write    # change the bank
+    py -m bankbuild.voice.apply <subject> <batch> --write --hold a,b   # keep passing ladders back
 
 Only ladders that PASSED the judge are applied (bNNN_score.json); the rest
 stay for another round. With --write:
@@ -144,6 +145,8 @@ def main() -> None:
     waiting = [t['topic'] for t in pkt['topics'] if t['topic'] not in passed]
     st = status(subject)
     passed -= set(st['done'])
+    if '--hold' in sys.argv:              # passing ladders the lead keeps back for a fix
+        passed -= set(sys.argv[sys.argv.index('--hold') + 1].split(','))
     # A merge that crosses ladders lands whole or not at all: hold every
     # ladder tied by a merge to one that has not passed yet.
     topic_of = {q['hash']: t['topic'] for t in pkt['topics'] for q in t['questions']}

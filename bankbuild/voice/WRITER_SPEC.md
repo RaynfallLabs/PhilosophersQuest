@@ -83,6 +83,7 @@ Then read every rewritten ladder once more as a cold reader: is each question st
 - **A merge must lose nothing the card teaches on its own.** Before merging, check the card: if it teaches the two keys as two separate facts, they are not twins (list them in `not_twins`). Two Feuerbach rungs the earlier judges paired turned out to be two facts.
 - **Tier of a merged question:** rate it as if the reader had NOT read the card (the card teaches every answer, so "the card makes it easy" says nothing). How much must a 15-year-old know, or how far must he reason?
 - **Giveaways between rungs:** `check` warns when a stem prints another rung's answer ("the stem prints X, the answer of <hash>"). Cut the giveaway wherever nothing the question needs is lost. The ladder's own subject (Medea in Medea's ladder) may stay.
+- **Kept stems are judged as hard as rewritten ones.** In philosophy b004, 9 of 22 ladders failed on voice because stems kept word for word still opened as an encyclopedia entry ("Confucius, who lived from about 551 to 479 BC..."), a commentator's aside ("It is easy to read Berlin as..."), a textbook definition ("Logicians call this slip..."), a passive study summary, or narrator "we/us". Passing the lint is not enough: keep a stem only if it already sounds like the Chronicler telling the story. When in doubt, rewrite.
 - **Don't open two stems of a ladder the same way.** Vary the scene; a ladder whose stems all begin "Friedrich Hayek..." reads like a list.
 
 ## Your final message

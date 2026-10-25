@@ -26,7 +26,8 @@ import sys
 
 from bankbuild.cards import stage
 from bankbuild.cards.gate import _sentence_ngrams
-from bankbuild.voice.common import bpath, load_changes, load_notes, read_json, stem_hash
+from bankbuild.voice.common import (load_notes, pending_changes, pending_packet,
+                                    stem_hash)
 from bankbuild.voice.lint import _QUOTED, lint_stem
 
 
@@ -43,8 +44,8 @@ def _live(subject: str) -> dict[str, dict]:
 
 
 def problems(subject: str, batch: int) -> list[str]:
-    pkt = read_json(bpath(subject, batch, 'in'))
-    ch = load_changes(subject, batch)
+    pkt = pending_packet(subject, batch)
+    ch = pending_changes(subject, batch)
     notes = load_notes(subject, batch)
     errs: list[str] = []
     qmap: dict[str, tuple[str, dict]] = {}
@@ -134,6 +135,8 @@ def problems(subject: str, batch: int) -> list[str]:
     named_off = {n.get('group') if isinstance(n, dict) else n for n in notes['not_twins']}
     for g, members in (pkt.get('twin_groups') or {}).items():
         hs = [mm['hash'] for mm in members]
+        if not all(h in qmap for h in hs):
+            continue                  # some of it is already applied
         if not any(h in deleted for h in hs) and g not in named_off:
             errs.append(f'twin group {g} ({", ".join(hs)}): merge it, or list it in '
                         'notes "not_twins" with the reason')
@@ -145,8 +148,8 @@ def giveaways(subject: str, batch: int) -> list[str]:
     meets both gets one free). A name most of the ladder's stems carry (its
     own subject, Medea in Medea's ladder) is not counted."""
     import re
-    pkt = read_json(bpath(subject, batch, 'in'))
-    ch = load_changes(subject, batch)
+    pkt = pending_packet(subject, batch)
+    ch = pending_changes(subject, batch)
     rep = {r['hash']: r.get('new') or {} for r in ch.get('replace') or []}
     deleted = set(ch.get('delete') or [])
     out = []
@@ -178,7 +181,7 @@ def main() -> None:
         print('  FAIL', e)
     for w in giveaways(subject, batch):
         print('  warn', w, '(cut it if nothing else is lost)')
-    ch = load_changes(subject, batch)
+    ch = pending_changes(subject, batch)
     n_stage = stage.check(subject, [ch]) if ch else 0
     total = len(errs) + n_stage
     print(f'{subject} b{batch:03d}: {len(errs)} batch failures, {n_stage} stage failures')

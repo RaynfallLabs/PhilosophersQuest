@@ -76,6 +76,32 @@ def load_changes(subject: str, batch: int) -> dict:
     return read_json(p) if p.exists() else {}
 
 
+def pending_changes(subject: str, batch: int) -> dict:
+    """The batch's changes for the ladders not yet applied. After a partial
+    apply the applied ladders' old hashes are gone from the bank, so check
+    and judge look only at what is still waiting."""
+    ch = load_changes(subject, batch)
+    done = set(status(subject)['done'])
+    if not done:
+        return ch
+    pkt = read_json(bpath(subject, batch, 'in'))
+    topic_of = {q['hash']: t['topic'] for t in pkt['topics'] for q in t['questions']}
+    out = dict(ch)
+    out['replace'] = [r for r in ch.get('replace') or [] if topic_of.get(r['hash']) not in done]
+    out['delete'] = [h for h in ch.get('delete') or [] if topic_of.get(h) not in done]
+    return out
+
+
+def pending_packet(subject: str, batch: int) -> dict:
+    """The batch's writer packet without the ladders already applied."""
+    pkt = read_json(bpath(subject, batch, 'in'))
+    done = set(status(subject)['done'])
+    if done:
+        pkt = dict(pkt)
+        pkt['topics'] = [t for t in pkt['topics'] if t['topic'] not in done]
+    return pkt
+
+
 def load_notes(subject: str, batch: int) -> dict:
     p = bpath(subject, batch, 'notes')
     n = read_json(p) if p.exists() else {}
@@ -85,4 +111,4 @@ def load_notes(subject: str, batch: int) -> dict:
 
 
 __all__ = ['WORK', 'TWINS', 'ORDER', 'bpath', 'twin_groups', 'gid', 'status', 'save_status',
-           'subject_config', 'load_changes', 'load_notes', 'read_json', 'write_json', 'stem_hash']
+           'subject_config', 'load_changes', 'pending_changes', 'pending_packet', 'load_notes', 'read_json', 'write_json', 'stem_hash']

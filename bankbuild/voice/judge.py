@@ -26,13 +26,14 @@ import sys
 
 from bankbuild.cards import stage
 from bankbuild.cards.common import norm, shuffled_choices, words
-from bankbuild.voice.common import bpath, load_changes, load_notes, read_json, stem_hash, write_json
+from bankbuild.voice.common import (bpath, load_notes, pending_changes, pending_packet,
+                                    read_json, stem_hash, write_json)
 
 
 def _survivors(subject: str, batch: int) -> tuple[dict, dict, dict]:
     """({topic: [staged question]}, {new hash: [old stems]}, {new hash: merge})."""
-    pkt = read_json(bpath(subject, batch, 'in'))
-    ch = load_changes(subject, batch)
+    pkt = pending_packet(subject, batch)
+    ch = pending_changes(subject, batch)
     notes = load_notes(subject, batch)
     bank, probs, _changed = stage.staged_bank(subject, [ch])
     if probs:
@@ -60,7 +61,7 @@ def _survivors(subject: str, batch: int) -> tuple[dict, dict, dict]:
 
 
 def make_packet(subject: str, batch: int, only: set[str] | None = None) -> int:
-    pkt = read_json(bpath(subject, batch, 'in'))
+    pkt = pending_packet(subject, batch)
     lad, before, merge_of = _survivors(subject, batch)
     out = []
     for t in pkt['topics']:
@@ -82,7 +83,7 @@ def make_packet(subject: str, batch: int, only: set[str] | None = None) -> int:
 
 
 def score(subject: str, batch: int) -> dict:
-    pkt = read_json(bpath(subject, batch, 'in'))
+    pkt = pending_packet(subject, batch)
     lad, _before, merge_of = _survivors(subject, batch)
     judged = read_json(bpath(subject, batch, 'judge'))
     sp = bpath(subject, batch, 'score')
