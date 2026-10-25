@@ -30,7 +30,8 @@ lines = [f'# {SUBJECT} b{N:03d}: pairs earlier batches recorded against your que
          "  hash may be pre-rewrite). If YOURS is the fact's own ladder, keep it (not_twins).",
          '  If the two really ask different facts, keep both (not_twins).',
          '- **pending_pairs**: the earlier writer named which ladder should own the fact; if it says',
-         "  yours should drop, drop yours as a cross twin (unless it is your ladder's only tier-1 rung).", '']
+         "  yours should drop, drop yours as a cross twin (unless it is your ladder's only tier-1 rung).",
+         '  A LEAD RULING line under an entry overrides the writer: follow it.', '']
 n = 0
 for p in sorted(W.glob('b0*_notes.json')):
     b = int(p.name[1:4])
@@ -44,6 +45,11 @@ for p in sorted(W.glob('b0*_notes.json')):
                 topic, q = mine[h]
                 n += 1
                 lines += [f'- **{topic}** {h} (T{q["tier"]}) key: "{q["answer"]}"',
-                          f'  - b{b:03d} {kind}: {e.get("why", "")}', '']
+                          f'  - b{b:03d} {kind}: {e.get("why", "")}']
+                # The lead's ruling on a pending pair overrides the writer's guess.
+                ruling = e.get('lead') or e.get('RESOLVED')
+                if ruling:
+                    lines.append(f'  - LEAD RULING (follow this): {ruling}')
+                lines.append('')
 (W / f'b{N:03d}_earlier_pairs.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 print(f'b{N:03d}: {n} pairs')
