@@ -24519,7 +24519,7 @@
   },
   {
     "tier": 2,
-    "question": "A die with 4 green faces and 2 red is rolled many times for a cash prize. You bet on one sequence to show up: RGRRR, or GRGRRR (that same RGRRR with one extra green on the front). Most paying players grab GRGRRR because it 'looks' more like the mostly-green die. Which bet wins at least as often, and why?",
+    "question": "Suppose you have a prize riding on a die, two faces red and four green, rolled many times. You bet on RGRRR (red, green, red, red, red) or GRGRRR (the same with a green in front). Most players pick GRGRRR: it looks more like the mostly green die. Which bet wins at least as often?",
     "answer": "RGRRR, because it shows up inside every roll that gives GRGRRR, and on its own besides, so it can only win more often",
     "choices": [
       "RGRRR, because it shows up inside every roll that gives GRGRRR, and on its own besides, so it can only win more often",
@@ -24532,7 +24532,7 @@
   },
   {
     "tier": 2,
-    "question": "Bill is 34, sharp at math but unimaginative and lifeless, weak in the humanities. Which is more probable: that Bill enjoys jazz as a hobby, or that Bill is an accountant who plays jazz? The 'accountant' fits Bill so well the pair feels likelier. Which is at least as probable, and why?",
+    "question": "Ruth sizes up Bill over dinner: 34, sharp at math, weak in the humanities, unimaginative and lifeless. Later she wonders which is more probable, that he plays jazz as a hobby or that he is an accountant who plays jazz. 'Accountant' fits Bill so well the pair feels likelier. Which is at least as probable?",
     "answer": "That Bill plays jazz, because an accountant who plays jazz is already a jazz player, so that group can never be larger",
     "choices": [
       "That Bill plays jazz, because an accountant who plays jazz is already a jazz player, so that group can never be larger",
@@ -24545,7 +24545,7 @@
   },
   {
     "tier": 2,
-    "question": "Two friends guess tomorrow's weather. Mia says 'it rains.' Sam says 'it rains, there is thunder, AND it clears by lunch.' Sam's fuller forecast paints a sharper picture, so it sounds likelier. Whose guess actually has the better chance of coming true, and why?",
+    "question": "Two friends guess tomorrow's weather. Mia's forecast is 'it rains.' Sam's is 'it rains, there is thunder, and it clears by lunch.' Sam's fuller forecast paints a sharper picture, so it sounds likelier. Whose guess has the better chance of coming true?",
     "answer": "Mia's, because every day that fits all three of Sam's demands is already a rainy day, so 'it rains' can come true on more days",
     "choices": [
       "Mia's, because every day that fits all three of Sam's demands is already a rainy day, so 'it rains' can come true on more days",
@@ -24558,7 +24558,7 @@
   },
   {
     "tier": 3,
-    "question": "Linda is 31, outspoken and bright. She majored in philosophy, cared about social justice, and joined anti-nuclear marches. Students were asked which is more likely: that Linda is a bank teller, or that Linda is a bank teller and active in the feminist movement. 85 percent chose the second -- a plain break of a basic rule of probability. Which is at least as likely, and why?",
+    "question": "Amos Tversky and Daniel Kahneman told a group of students about Linda. She was 31, outspoken and bright; she had majored in philosophy, worried about social justice and joined anti-nuclear marches. They asked which was likelier for her: bank teller, or bank teller and active in the feminist movement. Eighty-five percent of the students chose the second. Which is at least as likely?",
     "answer": "Bank teller, because a feminist bank teller is already a bank teller, so adding 'feminist' can only shrink the group, never grow it",
     "choices": [
       "Bank teller, because a feminist bank teller is already a bank teller, so adding 'feminist' can only shrink the group, never grow it",
@@ -24571,7 +24571,7 @@
   },
   {
     "tier": 3,
-    "question": "After the Linda test, defenders offered an escape. Maybe people read the plain teller label as 'a teller who is not a feminist,' which really could lose to 'teller and feminist.' So Tversky and Kahneman re-ran it on a likelihood scale, rating each claim alone instead of ranking the two. Yet 82 percent still gave the combo the higher number. Why does that kill the not-a-feminist defense?",
+    "question": "Defenders of the students who failed the Linda test offered an escape. Perhaps they read the plain teller label as 'a teller who is not a feminist,' which really could lose to 'teller and feminist.' Tversky and Kahneman answered by having people score each claim alone on a likelihood scale. Eighty-two percent still gave the combination the higher number. Why does that sink the not-a-feminist defense?",
     "answer": "Rated alone, with no rival in view, 'bank teller' can only mean every bank teller -- yet that bigger group still scored lower",
     "choices": [
       "Rated alone, with no rival in view, 'bank teller' can only mean every bank teller -- yet that bigger group still scored lower",
@@ -24584,7 +24584,7 @@
   },
   {
     "tier": 4,
-    "question": "When Linda has her full sketch -- philosophy major, activist, anti-nuclear marcher -- most people wrongly rank 'bank teller and feminist' above 'bank teller.' Tversky and Kahneman then stripped out Linda's personality and ran the same comparison. Now almost everyone ranked plain 'bank teller' correctly above the combo. What does that swing prove about where the error really comes from?",
+    "question": "With Linda's full sketch in front of them, the philosophy major and anti-nuclear marcher, most people wrongly ranked 'bank teller and feminist' above 'bank teller.' Then Tversky and Kahneman stripped out her personality and described her only as a 31-year-old woman. Now almost everyone ranked plain 'bank teller' above the combination. What does that swing show about where the error comes from?",
     "answer": "The error needs the tempting profile; the vivid detail is what creates the illusion that a richer description is likelier, and stripping it ends the pull",
     "choices": [
       "The error needs the tempting profile; the vivid detail is what creates the illusion that a richer description is likelier, and stripping it ends the pull",
@@ -24597,7 +24597,7 @@
   },
   {
     "tier": 4,
-    "question": "Practicing internists were asked to rank a patient's likely symptoms. One option was hemiparesis -- weakness on one side of the body, a fairly unusual sign here. Another was hemiparesis TOGETHER WITH dyspnea -- that same rare weakness plus shortness of breath, which is common. Across five such problems the doctors rated the pair more likely than the rare symptom alone between 73% and 100% of the time. Why is ranking the pair higher impossible?",
+    "question": "Practicing internists were asked to rank a patient's likely symptoms. One option was hemiparesis, a weakness on one side of the body and a fairly unusual sign here. Another was hemiparesis together with dyspnea, or shortness of breath, which is common. Across five such problems the doctors rated the pair likelier than the rare symptom alone between 73 and 100 percent of the time. Why is that ranking impossible?",
     "answer": "Every patient who has both symptoms already has the rare one, so the pair can never show up in any more patients than the rare symptom alone",
     "choices": [
       "Every patient who has both symptoms already has the rare one, so the pair can never show up in any more patients than the rare symptom alone",
@@ -24610,7 +24610,7 @@
   },
   {
     "tier": 5,
-    "question": "Decades after Linda, Ralph Hertwig and Gerd Gigerenzer argued the trap leans partly on the slippery word 'probable.' They reran it as a head-count: 'Of 100 women who fit Linda's description, how many are bank tellers? How many are bank tellers AND feminists?' Framed that way, the fallacy fell from 50-90% down to 0-25%. Why does counting heads cure what asking 'how probable' did not?",
+    "question": "Ralph Hertwig and Gerd Gigerenzer, decades after Linda, blamed part of the trap on the slippery word 'probable.' So they asked it as a head count: 'Of 100 women who fit Linda's description, how many are bank tellers? How many are bank tellers and feminists?' Asked that way, the error rate fell from 50-90% to 0-25%. Why does counting heads cure what 'how probable' did not?",
     "answer": "Once you are counting people, nobody claims a smaller group holds more members than the larger group it sits inside, so the subset rule turns obvious",
     "choices": [
       "Once you are counting people, nobody claims a smaller group holds more members than the larger group it sits inside, so the subset rule turns obvious",
@@ -24623,7 +24623,7 @@
   },
   {
     "tier": 5,
-    "question": "A smuggler, Mr. P., is under investigation, and people rank how likely various suspicions are. One suspicion read 'Mr. P. killed one of his employees.' Swapping it for 'Mr. P. killed one of his employees TO STOP HIM TALKING TO THE POLICE' made the killing feel MORE likely -- the motive fit the smuggling so well. But Mr. P. could have killed for revenge, in a panic, in self-defense, or for no clear reason. So what does naming that one motive do to the odds?",
+    "question": "Mr. P., a smuggler, was under investigation, and people ranked suspicions about him. Killing an employee to stop the man talking to the police struck them as likelier than a plain killing, because that motive fit the smuggling so well. Yet he could have killed for revenge, in a panic, in self-defense, or for no clear reason. What did naming that one motive do to the odds?",
     "answer": "It can only lower them, because a killing for that one motive is just a slice of all the killings he might have done for any reason at all",
     "choices": [
       "It can only lower them, because a killing for that one motive is just a slice of all the killings he might have done for any reason at all",
@@ -24636,7 +24636,7 @@
   },
   {
     "tier": 2,
-    "question": "No one can name the exact instant when day becomes night - dusk slides from light to dark with no sharp dividing line. A clever debater says: 'Since you can't point to the precise second it happens, day and night must really be the same thing.' What's wrong with his reasoning?",
+    "question": "A clever debater points out that no one can name the instant day becomes night: dusk slides from light to dark with no sharp dividing line. Since nobody can point to the precise second it happens, he concludes, day and night must really be the same thing. What has the debater missed?",
     "answer": "A missing sharp cutoff does nothing to erase the obvious gap between noon and midnight",
     "choices": [
       "A missing sharp cutoff does nothing to erase the obvious gap between noon and midnight",
@@ -24649,7 +24649,7 @@
   },
   {
     "tier": 2,
-    "question": "There is no single hair whose loss tips a man from hairy to bald - pull them out one at a time and you can never name THE hair that did it. From this, someone concludes that 'bald' is a meaningless label. Yet Patrick Stewart is plainly bald and a young Conan O'Brien plainly is not. What does that pair of clear cases show?",
+    "question": "Dev's uncle is losing his hair strand by strand, and Dev notes that no single lost hair will ever tip him from hairy to bald. So, Dev concludes, 'bald' is a meaningless label. Yet Patrick Stewart is plainly bald, and a young Conan O'Brien plainly is not. What do those two clear cases show?",
     "answer": "A word can mark a real difference at its extremes even when its middle has fuzzy borderline cases",
     "choices": [
       "A word can mark a real difference at its extremes even when its middle has fuzzy borderline cases",
@@ -24662,7 +24662,7 @@
   },
   {
     "tier": 3,
-    "question": "A puzzle runs like this: a single grain of sand isn't a heap; and adding just one more grain can never turn a non-heap into a heap; therefore - step by harmless step - there are no heaps of sand at all. Each step looks true, but the conclusion is plainly absurd. Where does the trick go wrong?",
+    "question": "Leo, on a beach, tries out an old Greek puzzle. One grain of sand, he says, is not a heap, and adding a single grain can never turn a non-heap into a heap. So, grain by harmless grain, there are no heaps of sand at all. Each step looks true, yet the conclusion is plainly absurd. Where does his reasoning go wrong?",
     "answer": "Piling up tiny differences that each seem to change nothing can still add up to a genuine change",
     "choices": [
       "Piling up tiny differences that each seem to change nothing can still add up to a genuine change",
@@ -24675,7 +24675,7 @@
   },
   {
     "tier": 3,
-    "question": "Across all its forms - the heap, the beard, the bald man - the same bad argument keeps surfacing: because there's no exact point where a little becomes a lot, the two ends supposedly can't really differ. Philosophers have a one-line answer to the whole family. Which line is it?",
+    "question": "Ana's philosophy teacher hands her three puzzles: a heap, a beard and a bald man. All three run the same bad argument: because there is no exact point where a little becomes a lot, the two ends supposedly cannot really differ. Philosophers have one line that answers all three. What is it?",
     "answer": "A difference in degree is still a difference, and a big enough one becomes a difference in kind",
     "choices": [
       "A difference in degree is still a difference, and a big enough one becomes a difference in kind",
@@ -24688,7 +24688,7 @@
   },
   {
     "tier": 4,
-    "question": "The Stoic Chrysippus had a plan for surviving the heap riddle. As the questioner counted upward - is three many? is four? is five? - Chrysippus meant to escape the trap, just before the borderline, by doing one particular thing the Greeks called 'hesuchazein'. What was his actual tactic?",
+    "question": "Chrysippus, the great Stoic, had a plan for surviving the heap riddle. As a questioner counted upward, asking whether three was many, whether four was, whether five was, Chrysippus meant to slip out of the trap just before the borderline by doing one thing, which the Greeks called hesuchazein. What was his tactic?",
     "answer": "Falling silent and refusing to answer once the questions neared the fuzzy boundary",
     "choices": [
       "Falling silent and refusing to answer once the questions neared the fuzzy boundary",
@@ -24701,7 +24701,7 @@
   },
   {
     "tier": 5,
-    "question": "When the Stoic Chrysippus tried to escape the heap riddle by simply falling silent near the borderline, the skeptic Carneades mocked the dodge with a joke Cicero wrote down: 'Rest and welcome; you may even snore, for all I care. But what good does it do?' Why, in Carneades' jab, does staying silent solve nothing?",
+    "question": "Carneades, a skeptic, laughed at Chrysippus's plan to escape the heap riddle by simply falling silent near the borderline. Cicero wrote the joke down: 'Rest and welcome; you may even snore, for all I care. But what good does it do?' Why, in Carneades' jab, does staying silent solve nothing?",
     "answer": "The next questioner just asks the very next number, and the same problem is right back",
     "choices": [
       "The next questioner just asks the very next number, and the same problem is right back",
@@ -24714,7 +24714,7 @@
   },
   {
     "tier": 5,
-    "question": "A debater argues: 'You can't point to the single day a child becomes an adult, so setting any drinking age or voting age is purely arbitrary - the lines are meaningless.' A functioning society draws exactly such lines: ages for driving, prison terms scaled to crimes, speed limits. What does the debater get wrong about those cutoffs?",
+    "question": "A speaker at a town meeting argues: 'You can't point to the single day a child becomes an adult, so any drinking age or voting age is purely arbitrary, and the lines are meaningless.' Yet working societies draw exactly such lines: ages for driving, prison terms scaled to crimes, speed limits. What does the speaker get wrong about those cutoffs?",
     "answer": "The exact line is partly a choice, yet the gap it tracks between a child and an adult is entirely real",
     "choices": [
       "The exact line is partly a choice, yet the gap it tracks between a child and an adult is entirely real",
@@ -24727,7 +24727,7 @@
   },
   {
     "tier": 5,
-    "question": "Doctors call blood pressure 'high' above roughly 140 over 90 - a number that was chosen, not handed down by nature, and a reading a hair below it is barely different from one a hair above. A skeptic seizes on this: 'Since the cutoff is admittedly arbitrary, high blood pressure isn't a real thing.' What's the flaw in that leap?",
+    "question": "Grant's doctor tells him his blood pressure is high: above roughly 140 over 90, the line medicine draws. Grant scoffs that the number was chosen rather than handed down by nature, and that a reading a hair below it is barely different from one a hair above. 'Since the cutoff is admittedly arbitrary,' he says, 'high blood pressure isn't a real thing.' What is the flaw in his leap?",
     "answer": "An arbitrary line can still flag a real danger, since a very high reading harms you whatever number we picked",
     "choices": [
       "An arbitrary line can still flag a real danger, since a very high reading harms you whatever number we picked",
@@ -24740,7 +24740,7 @@
   },
   {
     "tier": 2,
-    "question": "Watch Mars night after night, and it usually drifts one way across the sky. Then for a few weeks it slows, stops, and crawls backward, before moving forward again. Copernicus said Mars never truly reverses at all. If Mars really keeps moving forward the whole time, why does it seem to back up?",
+    "question": "Mars, night after night, drifts one way across the sky. Then for a few weeks it slows, stops and crawls backward, before moving forward again. Copernicus said Mars never truly reverses at all. If it keeps moving forward the whole time, why does it seem to back up?",
     "answer": "The faster Earth, on its inside track, overtakes the slower Mars, so it then seems to slip backward as we pass by.",
     "choices": [
       "The faster Earth, on its inside track, overtakes the slower Mars, so it then seems to slip backward as we pass by.",
@@ -24753,7 +24753,7 @@
   },
   {
     "tier": 2,
-    "question": "Aristotle offered what felt like proof the Earth stands still: if it spun eastward at huge speed, a stone dropped from a tower should land far to the WEST, since the ground would slide east as the stone fell. Yet it lands at the tower's base. Galileo answered with a ship: drop a ball from the mast of a smoothly sailing ship, and where does the ball land?",
+    "question": "Aristotle reasoned that if the Earth spun eastward, a stone dropped from a tower would land well to the west, since the ground would slide east beneath it as it fell. Yet stones land at the tower's base. Galileo answered with a ship. Where does a ball dropped from a smoothly sailing ship's mast land?",
     "answer": "At the foot of the mast, because the ball already shares in the ship's motion and keeps it as it falls.",
     "choices": [
       "At the foot of the mast, because the ball already shares in the ship's motion and keeps it as it falls.",
@@ -24766,7 +24766,7 @@
   },
   {
     "tier": 3,
-    "question": "Before Copernicus, Earth was the fixed hub of everything. The whole cosmos wheeled around it, and Earth alone never moved. Copernicus's real leap was not a small fix to the star charts. It was a jolt to where humans imagine they sit. What did he ask people to believe about the ground beneath their feet?",
+    "question": "Nicolaus Copernicus, a canon of the Catholic Church in Poland, worked for decades on a manuscript about the heavens, and it went to print only as he lay dying. Scholars had followed Ptolemy and Aristotle for over a thousand years in setting the Earth still at the center of everything. What did Copernicus ask people to believe about the ground beneath their feet?",
     "answer": "That it is just one ordinary planet among many, itself adrift in motion around the Sun.",
     "choices": [
       "That it is just one ordinary planet among many, itself adrift in motion around the Sun.",
@@ -24779,7 +24779,7 @@
   },
   {
     "tier": 3,
-    "question": "Smart astronomers fought the sun-centered idea with real evidence, not mere stubbornness. Their reasoning went like this: if Earth truly circles the Sun, then over a year a nearby star should shift back and forth as we view it from changing places. Yet no such shift could be seen. From that one missing observation, what could a careful skeptic conclude?",
+    "question": "Astronomers who doubted Copernicus kept watch on the nearby stars. If Earth circled the Sun, such a star ought to slide to and fro over a year, seen from changing places along the way. No one could see any such shift. From that one missing observation, what could a careful skeptic conclude?",
     "answer": "Either Earth does not move at all, or the stars must lie at unimaginably vast distances from us.",
     "choices": [
       "Either Earth does not move at all, or the stars must lie at unimaginably vast distances from us.",
@@ -24792,7 +24792,7 @@
   },
   {
     "tier": 4,
-    "question": "The famous lesson is that Copernicus humbled us by knocking humans out of the place of honor at the center. But the historian Dennis Danielson points to what medieval thinkers actually believed about that center. Pico della Mirandola called Earth's core the 'filthy' bottom of the world. And Dante put Hell at the dead center of it. Given that, how should the move be read?",
+    "question": "Dante put Hell at the dead center of the Earth, and Pico della Mirandola called Earth's core the 'filthy' bottom of the world. Dennis Danielson, a historian, set them both against the old moral that Copernicus humbled humanity when he knocked it from the place of honor at the center. How did Danielson read the Copernican move?",
     "answer": "As a promotion: it lifted Earth up out of the cosmic basement to join the circling heavens.",
     "choices": [
       "As a promotion: it lifted Earth up out of the cosmic basement to join the circling heavens.",
@@ -24805,7 +24805,7 @@
   },
   {
     "tier": 4,
-    "question": "For nearly 300 years after Copernicus, no one could directly PROVE the Earth moves — the back-and-forth star shift his theory demanded was simply never seen. In 1838 Friedrich Bessel finally trained his instruments on the star 61 Cygni and caught the long-sought wobble at last. How big was the shift that settled the centuries-old question?",
+    "question": "Friedrich Bessel trained his instruments on the star 61 Cygni in 1838 and at last caught the yearly back-and-forth shift that Copernicus's theory demanded. For nearly 300 years no one had seen it, so no one could directly prove that the Earth moves. How big was the shift that settled the question?",
     "answer": "About a third of an arcsecond, the width of a coin seen from miles off, placing the star ten light-years away.",
     "choices": [
       "About a third of an arcsecond, the width of a coin seen from miles off, placing the star ten light-years away.",
@@ -24818,7 +24818,7 @@
   },
   {
     "tier": 3,
-    "question": "Two students stare at the same starry sky. The first says the order she sees -- each star at its distance, one event before another in time, the first causing the next -- is simply OUT THERE, and her mind just takes a faithful picture of it. Immanuel Kant tells her she has it backwards. On Kant's view, that order is not something her mind FINDS. What is it instead?",
+    "question": "A girl looked up at the starry sky and decided that the order she saw there, each star at its distance, one event before another, the first causing the next, was simply out there, and that her mind only took a faithful picture of it. Immanuel Kant would have told her she had it backwards. What, on his view, was that order?",
     "answer": "Something her own mind supplies, the very structure it brings to whatever it meets",
     "choices": [
       "Something her own mind supplies, the very structure it brings to whatever it meets",
@@ -24831,7 +24831,7 @@
   },
   {
     "tier": 3,
-    "question": "Immanuel Kant offers a small test about space and time. Try to picture a single object -- a coin, a stone -- with no space around it and no moment it sits in. You cannot. Now try the reverse: picture empty space, or empty time, with nothing in it at all. That, Kant says, you CAN do. From this asymmetry, what does Kant conclude about space and time?",
+    "question": "Immanuel Kant ran a small test about space and time. He could not conceive of a coin or a stone with no space around it and no moment for it to sit in, yet empty space, or time with nothing happening in it, he could conceive at once. What did he conclude about space and time from that lopsided result?",
     "answer": "They are the frame the mind brings first, into which every object must be poured",
     "choices": [
       "They are the frame the mind brings first, into which every object must be poured",
@@ -24844,7 +24844,7 @@
   },
   {
     "tier": 4,
-    "question": "Immanuel Kant named his great reversal after Copernicus, and meant it exactly. Copernicus had been stuck: he could make no sense of the heavens while assuming the sun and stars wheeled around the watcher. So he tried the opposite -- he let the heavens hold still and set the WATCHER moving instead, on a spinning Earth. Kant says he ran the identical trick on human knowledge. What did Kant set in motion that everyone before had assumed held still?",
+    "question": "Copernicus could make no sense of the heavens while he assumed the sun and stars wheeled around the watcher. So he let the heavens hold still and set the watcher moving instead, on a spinning Earth. Immanuel Kant borrowed the name for his own reversal, and meant it exactly: he ran the same trick on knowledge. What did Kant set in motion that everyone before had assumed held still?",
     "answer": "The knower, whose own structure shapes the order we seem to find in things",
     "choices": [
       "The knower, whose own structure shapes the order we seem to find in things",
@@ -24857,7 +24857,7 @@
   },
   {
     "tier": 4,
-    "question": "David Hume pressed a hard point: watch one billiard ball strike another and you never actually SEE the first MAKE the second move. You see one ball, then the other moving -- and habit quietly adds the word 'must.' Hume concluded the necessary connection is nowhere in the world. Immanuel Kant agreed you will never find it in the world, yet insisted the necessity is real. Where did Kant locate the source of that 'must'?",
+    "question": "David Hume asked his readers to watch one billiard ball strike another. They would see one ball move and then the other, never the first making the second go, and habit would quietly add the word 'must.' The necessary connection, Hume concluded, lay nowhere in the world. Immanuel Kant granted as much, yet insisted the necessity was real. Where did Kant place its source?",
     "answer": "In the understanding, which orders every experience by cause and effect",
     "choices": [
       "In the understanding, which orders every experience by cause and effect",
@@ -24870,7 +24870,7 @@
   },
   {
     "tier": 5,
-    "question": "Immanuel Kant's reversal comes with a bill. If your own mind dresses everything you meet in its space, its time, its causes BEFORE you ever experience it, then a strange consequence follows about the naked thing underneath -- reality as it is in itself, with no human costume on it. According to Kant, what is our standing toward that thing-in-itself?",
+    "question": "Felix wanted to see a rose as it really was, the naked thing with no human costume on. Immanuel Kant held that the mind dresses everything it meets in its own space, time and causes before it ever experiences them. By Kant's account, what could Felix, or anyone, know of that thing in itself?",
     "answer": "We can never know it, meeting the world only after our own forms have shaped it",
     "choices": [
       "We can never know it, meeting the world only after our own forms have shaped it",
@@ -24883,7 +24883,7 @@
   },
   {
     "tier": 5,
-    "question": "Teachers often picture Immanuel Kant's view with tinted glasses you can never remove: everything you see is colored by them, and you cannot step outside to check the world un-tinted. It is a handy image -- yet Kant scholars such as Sebastian Gardner reject it as a misreading. Their objection rests on one real difference between Kant's mental forms and a pair of glasses. What is that difference?",
+    "question": "A teacher held up a pair of tinted glasses to explain Immanuel Kant's view, a common classroom image: glasses a person could never take off, coloring everything he saw, with no way to check the world untinted. Sebastian Gardner and other Kant scholars called the image a misreading, pointing to one real difference between Kant's mental forms and a pair of glasses. What was that difference?",
     "answer": "Glasses only distort a world you could see without them, while the forms make any experience possible at all",
     "choices": [
       "Glasses only distort a world you could see without them, while the forms make any experience possible at all",
@@ -24896,7 +24896,7 @@
   },
   {
     "tier": 2,
-    "question": "A magician seems to pull a rabbit out of an empty hat. A child asks her grandfather how the creature could have gotten there. He laughs that every trick hides a real rabbit somewhere, and says the whole cosmological argument leans on one stubborn old rule the magician only seems to defy. Which rule is he describing?",
+    "question": "A magician seemed to pull a rabbit out of an empty hat, and a girl asked her grandfather how it got there. Every such trick hides a real rabbit somewhere, he laughed, and the whole cosmological argument leans on one stubborn old rule that the magician only seems to defy. Which rule did he mean?",
     "answer": "Out of nothing, nothing can come to be.",
     "choices": [
       "Out of nothing, nothing can come to be.",
@@ -24909,20 +24909,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Aquinas argued that whatever is moving was set moving by something else, and that this chain of movers cannot run backward forever. There must be a first mover that nothing else set going. To make the idea vivid, he reached for one homely everyday object. What was his image?",
-    "answer": "A staff, which moves only because a hand pushes it.",
-    "choices": [
-      "A staff, which moves only because a hand pushes it.",
-      "A river, which flows only because the rain feeds it.",
-      "A candle, which burns only because a flame lights it.",
-      "A clock, which ticks only because a spring drives it."
-    ],
-    "context": "From Aquinas' First Way: 'Whatever is in motion must be put in motion by another... as the staff moves only because it is put in motion by the hand.' Trace the movers back; it cannot go to infinity 'because then there would be no first mover.' Each of the Five Ways ends by naming the stopping point, the First Way closing 'this everyone understands to be God.' Source: Aquinas, Summa Theologica I, Q.2, A.3 (newadvent.org/summa/1002.htm).",
-    "topic": "the-cosmological-argument"
-  },
-  {
-    "tier": 2,
-    "question": "Leibniz thought the cosmological argument was really chasing one huge question, the deepest anyone could ask. He believed nothing is ever just an accident. Everything real must have a good reason behind it. Boiled down to a single line, what was that great question?",
+    "question": "Gottfried Leibniz would let nothing off as a mere accident: everything real, he insisted, must have a good reason behind it. Following that rule to the bottom of the cosmological argument, he found one huge question waiting, the deepest anyone could ask. What was it?",
     "answer": "Why is there something rather than nothing at all?",
     "choices": [
       "Why is there something rather than nothing at all?",
@@ -24935,20 +24922,7 @@
   },
   {
     "tier": 3,
-    "question": "In a 1948 radio debate, the Jesuit priest Frederick Copleston pressed Bertrand Russell to admit that the universe must have a cause beyond itself. Russell would not grant it. Pushed on where the universe ultimately comes from, what was his famously blunt reply?",
-    "answer": "The universe is just there, and that is all.",
-    "choices": [
-      "The universe is just there, and that is all.",
-      "The universe will reveal its cause to science one day.",
-      "The universe is too vast for human minds to judge.",
-      "The universe rests on laws that need no maker."
-    ],
-    "context": "Copleston had defined the target as a being 'that must and cannot not exist,' one 'which contains within itself the reason for its own existence.' Russell's full line was 'I should say that the universe is just there, and that's all,' and he rejected the demand outright: 'I see no reason whatsoever to suppose that the total has any cause whatsoever.' Source: Copleston-Russell BBC debate transcript, 28 Jan 1948 (en.wikipedia.org/wiki/Copleston-Russell_debate).",
-    "topic": "the-cosmological-argument"
-  },
-  {
-    "tier": 3,
-    "question": "Almost everyone who first hears the cosmological argument fires back the same question: if everything needs a cause, then what caused God? Defenders say this misreads the very first step, because the argument never claimed that simply everything has a cause. What did the first step actually say needs a cause?",
+    "question": "Tom heard the cosmological argument for the first time and fired back the question nearly everyone asks: if everything needs a cause, what caused God? A defender replied that Tom had misread the first step, which never claimed that everything has a cause. In the argument's kalam version, what did the defender say needs a cause?",
     "answer": "Only what begins to exist at some moment needs a cause.",
     "choices": [
       "Only what begins to exist at some moment needs a cause.",
@@ -24961,7 +24935,7 @@
   },
   {
     "tier": 3,
-    "question": "Georges Lemaitre was a Belgian Catholic priest and physicist. In the late 1920s, he proposed that the whole universe expanded outward from a single tiny starting point he called the primeval atom -- the seed of what we now call the Big Bang. Many were eager to say his physics had proven the religious idea of creation. What did Lemaitre himself insist about that link?",
+    "question": "Georges Lemaitre's mathematics carried the universe back, in the late 1920s, to one tiny starting point he called the primeval atom: the seed of what became the Big Bang. Lemaitre was a Catholic priest as well as a physicist, and many were eager to say his physics had proven the religious idea of creation. What did he himself insist about that link?",
     "answer": "That a beginning in the equations does not by itself prove a creator.",
     "choices": [
       "That a beginning in the equations does not by itself prove a creator.",
@@ -24974,7 +24948,7 @@
   },
   {
     "tier": 4,
-    "question": "Bertrand Russell granted that every single thing inside the universe has a cause, yet denied that the universe taken all together needs one. To probe that leap, he noted that every human being has a mother, while the human race itself does not have one. Russell said his opponent's argument committed a specific reasoning error. Which error was it?",
+    "question": "Bertrand Russell debated the Jesuit Frederick Copleston on the radio in 1948. He granted that every single thing inside the universe has a cause, yet denied that the universe taken all together needs one. Every human being has a mother, he pointed out, but the human race itself does not. What reasoning error did Russell find in Copleston's argument?",
     "answer": "Assuming a whole must share a trait just because each of its parts has it.",
     "choices": [
       "Assuming a whole must share a trait just because each of its parts has it.",
@@ -24987,7 +24961,7 @@
   },
   {
     "tier": 4,
-    "question": "Defenders of the kalam argument argue the past cannot stretch back infinitely, because an actual infinity would produce absurd results. Their favorite illustration is a hotel with infinitely many rooms, every single one already full. A new guest then walks up to the desk. What surprising thing does the puzzle say the manager can do?",
+    "question": "A hotel had infinitely many rooms, every one of them full, when a new guest walked up to the desk. William Lane Craig, defending the kalam argument, made this puzzle his favorite example of the absurd results an actual infinity would produce, and so of why the past could not run back without end. What could the manager do, according to the puzzle?",
     "answer": "Free up a room by moving each guest up one, leaving room 1 open.",
     "choices": [
       "Free up a room by moving each guest up one, leaving room 1 open.",
@@ -25000,7 +24974,7 @@
   },
   {
     "tier": 2,
-    "question": "Immanuel Kant, the German philosopher, spent his whole quiet life in the small city of Konigsberg in the 1700s. He was so faithful to one daily habit that his neighbors built a running saying around it. What did the townspeople claim they could do, thanks to how regular Kant was?",
+    "question": "The townspeople of Konigsberg watched their neighbor Immanuel Kant keep one daily habit, year after year, so faithfully that they built a saying around it. What did they claim they could do, thanks to how regular he was?",
     "answer": "Set their clocks by his afternoon walk",
     "choices": [
       "Set their clocks by his afternoon walk",
@@ -25013,7 +24987,7 @@
   },
   {
     "tier": 3,
-    "question": "Immanuel Kant gave the whole Enlightenment its motto in two Latin words, 'Sapere aude.' He insisted that most grown people stay childishly dependent on others to think for them not because they are stupid, but because they lack one thing. By Kant's account, what do they lack?",
+    "question": "'Sapere aude,' Immanuel Kant wrote in 1784, answering the question 'What is Enlightenment?', and those two Latin words became the motto of the whole movement. Most grown people, he said, stayed as dependent as children on others to think for them, not for want of brains but because they lacked one thing. What did they lack, by his account?",
     "answer": "The courage to use their own minds",
     "choices": [
       "The courage to use their own minds",
@@ -25026,7 +25000,7 @@
   },
   {
     "tier": 4,
-    "question": "Immanuel Kant, the great German philosopher of the 1700s, closed his major book on ethics, the Critique of Practical Reason, with one famous sentence. In it he named two things that filled his mind with ever-increasing awe the more steadily and deeply he reflected on them. What two things did he pair as the sources of that awe?",
+    "question": "Immanuel Kant, finishing the Critique of Practical Reason, his great book on ethics, wrote a closing sentence that would one day be carved on his tomb. It named two things that filled his mind with ever-increasing awe, the more steadily and deeply he reflected on them. What two things did he pair as the sources of that awe?",
     "answer": "The starry heavens above and the moral law within",
     "choices": [
       "The starry heavens above and the moral law within",
@@ -25039,7 +25013,7 @@
   },
   {
     "tier": 2,
-    "question": "Diogenes the Cynic owned almost nothing, but he still carried one wooden cup to drink from. One day he watched a boy kneel at a stream and scoop water with his bare cupped hands. Diogenes threw his cup away on the spot. Why was he glad to lose his last possession?",
+    "question": "Diogenes the Cynic owned almost nothing except one wooden cup. One day he watched a boy kneel at a stream and drink from his bare cupped hands, and Diogenes flung the cup aside on the spot. Why was he glad to lose his last possession?",
     "answer": "Every want he gave up was one less thing luck could ever take from him",
     "choices": [
       "Every want he gave up was one less thing luck could ever take from him",
@@ -25051,34 +25025,8 @@
     "topic": "the-cynic-idea-live-according-to-nature"
   },
   {
-    "tier": 2,
-    "question": "Diogenes the Cynic was lying in the sun one morning when Alexander the Great, the most powerful man alive, stood over him. Alexander offered to grant him anything he wished. Diogenes looked up at the king and made a single odd request. What did he ask for?",
-    "answer": "\"Stand a little out of my sunshine.\"",
-    "choices": [
-      "\"Stand a little out of my sunshine.\"",
-      "\"Give me a hundred talents of gold.\"",
-      "\"Make me the governor of this city.\"",
-      "\"Set free every slave in your army.\""
-    ],
-    "context": "The man who owned the world had nothing Diogenes needed. Walking off, Alexander told his laughing courtiers, 'If I were not Alexander, I would wish to be Diogenes' -- the conqueror envying the beggar. Source: Diogenes Laertius VI.38; Plutarch, Life of Alexander 14.  (Legend.)",
-    "topic": "the-cynic-idea-live-according-to-nature"
-  },
-  {
-    "tier": 2,
-    "question": "Diogenes the Cynic was an ancient Greek philosopher who lived in Athens in a large clay jar and made a life of mocking everyone's pretensions. One bright sunny morning he lit a small lamp and carried it through the crowded marketplace, peering into face after face as if hunting for something he could not find. When people asked what he was doing, what did he say he was looking for?",
-    "answer": "A single honest human being",
-    "choices": [
-      "A single honest human being",
-      "An exit out of the noisy city",
-      "A master worthy of his service",
-      "A coin some thief had dropped"
-    ],
-    "context": "'I am looking for a human being,' he said -- his theatrical complaint that, surrounded by people chasing money and status, he could find almost no one actually living a rational, natural life. Source: Diogenes Laertius VI.41.  (Legend.)",
-    "topic": "the-cynic-idea-live-according-to-nature"
-  },
-  {
     "tier": 3,
-    "question": "Plato's famous school in Athens defined a human being as 'a featherless two-legged animal,' and the scholars were proud of the clever phrase. Diogenes the Cynic thought such bookish definitions were empty, so he answered the school not with an argument but with a single mocking stunt. What did he do?",
+    "question": "Plato's students in Athens were proud of their clever definition of a human being: 'a featherless two-legged animal.' Diogenes the Cynic thought such bookish definitions empty, and he answered the scholars not with an argument but with one mocking stunt. What did he do?",
     "answer": "He plucked a chicken bare and set it loose among the scholars",
     "choices": [
       "He plucked a chicken bare and set it loose among the scholars",
@@ -25091,20 +25039,7 @@
   },
   {
     "tier": 3,
-    "question": "In ancient Greece a man was expected to put loyalty to his home city first, with its own laws, gods, and feuds. Asked plainly which city he came from, Diogenes the Cynic refused to name any single one and instead claimed a belonging that bound him only to nature and to reason. What did he call himself?",
-    "answer": "A citizen of the whole world",
-    "choices": [
-      "A citizen of the whole world",
-      "A free man who serves no city",
-      "An exile with no home at all",
-      "A subject of the gods alone"
-    ],
-    "context": "The Greek was kosmopolites -- the moment the word 'cosmopolitan' was coined. The move: refuse the parochial loyalty everyone assumes you must have, and owe allegiance to humanity at large instead. Source: Diogenes Laertius VI.63; Stanford Encyclopedia of Philosophy, 'Cosmopolitanism.'",
-    "topic": "the-cynic-idea-live-according-to-nature"
-  },
-  {
-    "tier": 3,
-    "question": "Diogenes the Cynic, the ancient Greek philosopher who lived in a barrel in Athens and trained himself to want nothing, did odd things on purpose to toughen his soul. One day people watched him walk up to a cold stone statue in the marketplace and beg it for coins, again and again, though of course a statue can give nothing. When they asked, why did he say he did it?",
+    "question": "People in the marketplace watched Diogenes the Cynic beg a cold stone statue for coins, again and again, though a statue could never give him one. Odd acts like this, done on purpose, were how he trained himself to want nothing and toughened his soul. When they asked him why he begged from stone, what reason did he give?",
     "answer": "To practice being refused, so real rejection could never wound him",
     "choices": [
       "To practice being refused, so real rejection could never wound him",
@@ -25113,32 +25048,6 @@
       "To beg from one thing that would never judge him for his poverty"
     ],
     "context": "The Cynics called this askesis, training. He also rolled in scorching sand in summer and hugged snow-covered bronze in winter -- courting discomfort on purpose so that a real blow of fortune could not move him. Source: Diogenes Laertius VI.49; IEP, 'Cynics.'  (Legend.)",
-    "topic": "the-cynic-idea-live-according-to-nature"
-  },
-  {
-    "tier": 4,
-    "question": "The word 'Cynic' comes from a Greek word meaning 'dog-like,' and people first used it to insult Diogenes. Rather than take offense, he embraced the name, arguing that a stray dog actually lives more honestly than most so-called civilized people. What did he say a dog does better than humans?",
-    "answer": "It eats anything, sleeps anywhere, and feels no shame about its body",
-    "choices": [
-      "It eats anything, sleeps anywhere, and feels no shame about its body",
-      "It guards the house, obeys its master, and asks for nothing in return",
-      "It hunts in a pack, defends its young, and mourns a fallen companion",
-      "It greets every stranger, forgives each beating, and never holds a grudge"
-    ],
-    "context": "To the Cynic, the dog's shamelessness (anaideia) is honesty: if a thing isn't wrong to do at home, the public square doesn't make it wrong -- the blush is mere convention, not nature. So 'Cynic' meant living like a dog on purpose. Source: IEP, 'Cynics'; Diogenes Laertius VI.60-61.",
-    "topic": "the-cynic-idea-live-according-to-nature"
-  },
-  {
-    "tier": 5,
-    "question": "Diogenes the Cynic had literally been exiled from his home city after a scandal over tampered coins, and he took that very crime as his lifelong motto: deface the currency. But he meant it as a philosophy, not a confession. Read as his whole program for how to live, what was the slogan telling him to do?",
-    "answer": "Expose the customs everyone treats as solid gold as counterfeit",
-    "choices": [
-      "Expose the customs everyone treats as solid gold as counterfeit",
-      "Mint a set of honest new values and impose them on a corrupt world",
-      "Abandon money altogether, since coins breed greed and endless quarrels",
-      "Obey his city's laws in public while privately despising them as fake"
-    ],
-    "context": "The Greek was parakharattein to nomisma, and nomisma meant both 'coin' and 'custom' or 'accepted convention' -- so 'deface the currency' became his philosophy: show society's settled customs to be counterfeit, the way a forger's coin is exposed as fake. His program in one line: 'to fortune oppose courage, to convention nature, to passion reason.' His pupil Crates taught Zeno, who carried 'live according to nature' forward into Stoicism. Source: IEP, 'Diogenes of Sinope'; Diogenes Laertius VI.20-21, VI.38.",
     "topic": "the-cynic-idea-live-according-to-nature"
   },
   {
@@ -25234,7 +25143,7 @@
   },
   {
     "tier": 2,
-    "question": "Socrates, the Athenian philosopher, had been condemned to death by an Athens court for questioning too many powerful people and, they said, corrupting the young. The jailer walked into his cell, handed him the cup of hemlock poison, and the moment everyone dreaded had come. His friends expected him to tremble or beg for a little more time. Instead, Plato tells us in his dialogue the Phaedo, how did Socrates take the poison?",
+    "question": "The jailer walked into the cell where Socrates, sentenced to die by the court of Athens, was waiting, and handed him the cup of hemlock. His friends expected him to tremble or beg for a little more time. How, as Plato tells it in the Phaedo, did Socrates take the poison?",
     "answer": "Quite readily and cheerfully, draining it without flinching",
     "choices": [
       "Quite readily and cheerfully, draining it without flinching",
@@ -25247,7 +25156,7 @@
   },
   {
     "tier": 2,
-    "question": "Socrates, the old Athenian philosopher, was drinking a cup of hemlock poison ordered by an Athens court that had found him guilty of impiety. His friends crowded into the cell and could not hold back their grief, the excitable Apollodorus loudest of all. Socrates rebuked them, reminding them why he had earlier sent the women out of the room. What did he say he wanted?",
+    "question": "Socrates's friends crowded into the cell as he drank the hemlock, and they could not hold back their grief, the excitable Apollodorus loudest of all. Socrates rebuked them, reminding them why he had sent the women out of the room earlier. What did he say he wanted?",
     "answer": "To die in peace, which their outburst was spoiling",
     "choices": [
       "To die in peace, which their outburst was spoiling",
@@ -25260,7 +25169,7 @@
   },
   {
     "tier": 2,
-    "question": "On the morning of his execution in ancient Athens, the philosopher Socrates sat in his prison cell with his wife Xanthippe beside him. She was weeping and holding their baby son. Before the long final conversation with his philosopher friends could begin, Socrates made one quiet request meant to spare his wife and child the whole scene. What did he ask?",
+    "question": "Xanthippe sat beside Socrates in his cell on the morning of his execution, weeping, with their baby son in her arms. Before the long last conversation with his friends could begin, Socrates made one quiet request meant to spare his wife and child the whole scene. What did he ask?",
     "answer": "That someone take Xanthippe and the child home",
     "choices": [
       "That someone take Xanthippe and the child home",
@@ -25273,7 +25182,7 @@
   },
   {
     "tier": 3,
-    "question": "Socrates, the Athenian philosopher, had been sentenced to die by drinking hemlock for corrupting the young of the city with his endless questions. The man whose job it was to bring him the poison came into the cell weeping, said his goodbye, and turned away. Even this hardened executioner could not hold back his tears. As he left, what did the jailer call Socrates?",
+    "question": "Weeping, the jailer whose task was to bring Socrates the hemlock came into the cell, said his goodbye and turned away. Athens had sentenced the old questioner to die for corrupting its young, yet even this hardened man could not hold back his tears. As he left, what did he call Socrates?",
     "answer": "The noblest and gentlest and best ever to come there",
     "choices": [
       "The noblest and gentlest and best ever to come there",
@@ -25299,7 +25208,7 @@
   },
   {
     "tier": 3,
-    "question": "Socrates, the Athenian philosopher condemned by an Athens court to drink hemlock, spent his final hours calmly in his cell talking with friends. Before taking the poison, he asked to be led to a bath and washed himself carefully. It was not about feeling clean for his last hours. He gave a practical, considerate reason for bathing first. What was it?",
+    "question": "Before taking the poison, Socrates asked to be led to a bath, and he washed himself carefully. He was not thinking of feeling clean for his last hours; he had a practical, considerate reason for bathing first. What was it?",
     "answer": "So the women would not have to wash his corpse",
     "choices": [
       "So the women would not have to wash his corpse",
@@ -25325,7 +25234,7 @@
   },
   {
     "tier": 3,
-    "question": "Socrates was condemned to die, yet about a month passed before the sentence was carried out. The delay had nothing to do with appeals or mercy. Athens forbade any execution while one of its holy ships was away on a yearly voyage, and contrary winds kept it out thirty days. Where had the ship been sent?",
+    "question": "Contrary winds held a sacred ship of Athens at sea for thirty days on its yearly voyage, and while it was away the city allowed no executions. So about a month went by between Socrates's sentence and his death, a delay that had nothing to do with appeals or mercy. Where had the ship been sent?",
     "answer": "To the island of Delos, on the voyage honoring Apollo",
     "choices": [
       "To the island of Delos, on the voyage honoring Apollo",
@@ -25338,7 +25247,7 @@
   },
   {
     "tier": 5,
-    "question": "On the morning before his execution, the philosopher Socrates sat inside his Athens prison cell talking with his loyal friend Crito. Socrates freely admitted that Athens had wronged him with an unjust guilty verdict. Crito argued that this very wrong now freed Socrates to break the law and escape while he still could. Socrates disagreed. His refusal rested on a principle that had nothing to do with whether escape was even possible. What principle did he stand on?",
+    "question": "In his prison cell, Socrates freely admitted to his friend Crito that Athens had wronged him with an unjust guilty verdict. Crito argued that this very wrong now freed Socrates to break the law and escape while he still could. Socrates disagreed, on a principle that had nothing to do with whether escape was even possible. What principle did he stand on?",
     "answer": "One must never repay a wrong with a wrong, whatever was done to him",
     "choices": [
       "One must never repay a wrong with a wrong, whatever was done to him",
@@ -25351,7 +25260,7 @@
   },
   {
     "tier": 4,
-    "question": "Socrates' dying words asked Crito to pay a debt of one rooster to Asclepius. Here is the haunting part: Asclepius was the god of healing, and people who recovered from an illness sacrificed a rooster to thank him for the cure. Read that way, what was Socrates quietly saying about his own death?",
+    "question": "Socrates, dying of the hemlock, left Crito one last errand: a debt to the god of healing that had to be paid. Greeks who recovered from an illness made that god an offering to thank him for the cure. Read that way, what was Socrates quietly saying about his own death?",
     "answer": "That death was the cure, freeing his soul from the body at last",
     "choices": [
       "That death was the cure, freeing his soul from the body at last",
@@ -25364,7 +25273,7 @@
   },
   {
     "tier": 5,
-    "question": "In the Crito, Socrates imagines the Laws of Athens themselves arguing with him. They point out that for seventy years he was free to pack up and leave the city if he disliked how it was run, yet he chose to stay his whole life. Crito insists an unjust verdict cancels any duty to obey. The Laws draw a conclusion from those seventy years. What do they argue Socrates' lifelong staying amounts to?",
+    "question": "Crito insisted that an unjust verdict cancels any duty to obey. Socrates answered him by giving the Laws of Athens a voice. For seventy years, the Laws pointed out, he had been free to pack up and leave if he disliked how the city was run, yet he stayed his whole life. What, they argued, did that lifelong staying amount to?",
     "answer": "A standing agreement to live by the city's laws, binding even now",
     "choices": [
       "A standing agreement to live by the city's laws, binding even now",
@@ -25377,7 +25286,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Crito, Socrates has the Laws of Athens come to life and scold him like a stern family member. To prove he owes them everything, they make a startling claim about his very birth: they insist he would not exist at all without them. On what grounds do the Laws claim credit for his existence?",
+    "question": "The Laws of Athens, as Socrates imagined them while he talked with Crito, came to life and scolded him like a stern family. To prove he owed them everything, they made a startling claim about his birth: without them, he would not exist at all. On what grounds did the Laws claim credit for his existence?",
     "answer": "His father married his mother under their authority",
     "choices": [
       "His father married his mother under their authority",
@@ -25389,21 +25298,8 @@
     "topic": "the-death-of-socrates"
   },
   {
-    "tier": 1,
-    "question": "William Paley said this. Kick a stone on a hill and someone asks how it got there. You could say it had always lain there. That sounds a bit silly but not crazy. Now find a watch in the grass. That same answer will not work. What is it about the watch that blocks the easy answer?",
-    "answer": "Its many parts are shaped and fitted together to do a job",
-    "choices": [
-      "Its many parts are shaped and fitted together to do a job",
-      "It is a far smaller and much heavier object than the stone",
-      "It is made of worked metal rather than of ordinary rough rock",
-      "It is a rare and valuable thing to find lying there in the grass"
-    ],
-    "context": "Paley opens Natural Theology with the heath: a stone you might dismiss, but the watch's fitted parts demand a maker. The difference is contrivance, not mere existence. Source: William Paley, Natural Theology (1802), Ch. I (Lumen Learning transcription).",
-    "topic": "the-design-argument-paleys-watch"
-  },
-  {
     "tier": 2,
-    "question": "Looking closer at the watch he found, William Paley sees it is packed with springs, wheels, and a coiled chain. A friend says the watch must have a maker simply because it is such a complicated object. Paley thinks the friend has named the wrong feature. What does Paley say is the true mark of a made thing?",
+    "question": "William Paley imagined kicking a stone on a heath: asked how it got there, a walker could say it had always lain there. A watch in the grass ruled that answer out, yet complexity alone, Paley insisted, did not show it was made. What did he say was the real mark of a made thing?",
     "answer": "That its several parts cooperate to bring about one result",
     "choices": [
       "That its several parts cooperate to bring about one result",
@@ -25416,7 +25312,7 @@
   },
   {
     "tier": 2,
-    "question": "Granting that the watch was plainly built for some purpose, William Paley says one conclusion is now unavoidable. He does not claim to know the craftsman's name, where the workshop stood, or when the work was done. What is the move Paley says we are forced to make?",
+    "question": "A walker who found a watch on a heath knew nothing of its craftsman's name, where his workshop stood, or when the work was done. Once the watch was plainly built for a purpose, William Paley said, one conclusion was unavoidable all the same. What move did Paley say the finder was forced to make?",
     "answer": "From what we plainly see in the thing, to a maker we never saw",
     "choices": [
       "From what we plainly see in the thing, to a maker we never saw",
@@ -25429,7 +25325,7 @@
   },
   {
     "tier": 2,
-    "question": "William Paley carries his watch reasoning over to the human eye. He says there is precisely the same proof that the eye was made for seeing as there is that a telescope was made to help us see. A telescope is plainly a made instrument. What does Paley point to in the eye that, he argues, licenses the identical conclusion?",
+    "question": "William Paley carried his watch reasoning over to the human eye. There is precisely the same proof, he said, that the eye was made for seeing as that a telescope was made to aid sight. A telescope is plainly a made instrument. What did Paley point to in the eye that licenses the same conclusion?",
     "answer": "That it is built on the very same laws of light a telescope uses",
     "choices": [
       "That it is built on the very same laws of light a telescope uses",
@@ -25442,7 +25338,7 @@
   },
   {
     "tier": 2,
-    "question": "As a young student, Charles Darwin read William Paley's Natural Theology. He said he had rarely liked a book more. He said its reasoning gave him as much joy as Euclid's geometry. Years later, the same man would find the idea that broke Paley's main point. How did the young Darwin feel about the design argument?",
+    "question": "As a young student, Charles Darwin read William Paley's Natural Theology and said he had rarely liked a book more: its reasoning gave him as much joy as Euclid's geometry. Years later Darwin would decide that Paley's argument had failed. How did the young Darwin feel about the design argument?",
     "answer": "He took its starting points on trust and was charmed and convinced",
     "choices": [
       "He took its starting points on trust and was charmed and convinced",
@@ -25455,7 +25351,7 @@
   },
   {
     "tier": 3,
-    "question": "Someone hands William Paley a watch that runs badly: it gains time, the hands stick, and a few of its parts seem to do nothing he can make out. Surely, he is told, a thing this faulty and puzzling cannot be the work of any maker. Paley is unmoved. What does Paley say a flawed, partly mysterious watch still shows?",
+    "question": "Critics could point to a watch that ran badly: it gained time, its hands stuck, and a few of its parts seemed to do nothing anyone could make out. Surely, they might say, so faulty and puzzling a thing was no maker's work. William Paley answered them before they spoke. What did he say such a watch still showed?",
     "answer": "That it was plainly still built for a purpose, despite its flaws",
     "choices": [
       "That it was plainly still built for a purpose, despite its flaws",
@@ -25468,7 +25364,7 @@
   },
   {
     "tier": 3,
-    "question": "William Paley raises a strange new case: suppose the watch you found could make another watch just like itself, carrying inside it the moulds and tools to do the job. A bystander says this at last removes any need for a maker, since the watch now turns out watches on its own. What does Paley conclude about the self-copying watch?",
+    "question": "Inside a watch that William Paley dreamed up sat the moulds and tools to make another watch just like itself. A bystander might have said this at last removed any need for a maker, since the watch turned out watches on its own. What did Paley conclude about the self-copying watch?",
     "answer": "That it still leaves the design of the first watch wholly unexplained",
     "choices": [
       "That it still leaves the design of the first watch wholly unexplained",
@@ -25481,7 +25377,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1986 Richard Dawkins answered Paley with a book whose title turned Paley's own image against him. Living things really do look built for their jobs, Dawkins grants, so what does the building when no mind is at work? He points to the slow process Darwin had uncovered. On Dawkins's account, how does that process end up producing parts that look designed?",
+    "question": "Richard Dawkins gave his 1986 reply to Paley a title that turned Paley's own image against him. Living things really do look built for their jobs, Dawkins granted, but what builds them, he argued, is the slow process Darwin uncovered, with no mind at work. How, on his account, does that process produce parts that look designed?",
     "answer": "By keeping whatever happens to work and scrapping the rest, with no aim",
     "choices": [
       "By keeping whatever happens to work and scrapping the rest, with no aim",
@@ -25494,7 +25390,7 @@
   },
   {
     "tier": 4,
-    "question": "A critic tells William Paley that the watch needs no maker: it is merely one of the many shapes that matter can fall into, thrown up by the laws of metallic nature and a built-in principle of order in things. Paley answers that this is no real explanation at all. Why does Paley say naming such a law settles nothing?",
+    "question": "Faced with the watch on the heath, a skeptic might reach for a clever dodge, and William Paley saw it coming: the watch needs no maker, being only one shape among the many that matter can tumble into, thrown up by the laws of metallic nature or a built-in principle of order. Why did Paley say that naming such a law settles nothing?",
     "answer": "Because it merely relabels the very ordered thing we set out to explain",
     "choices": [
       "Because it merely relabels the very ordered thing we set out to explain",
@@ -25507,7 +25403,7 @@
   },
   {
     "tier": 4,
-    "question": "In later life Charles Darwin wrote that Paley's old argument, once so convincing to him, now failed. We can no longer insist, he said, that the beautiful hinge of a clam shell must have been made by an intelligent being, the way the hinge of a door was made by a man. What had Darwin found that, in his view, knocked the support out from under Paley's argument?",
+    "question": "Charles Darwin wrote in later life that Paley's old argument, once so convincing to him, now failed. No one could still argue, he said, that the beautiful hinge of a clam shell must have been made by an intelligent being, the way a man made the hinge of a door. What had Darwin found that, in his view, knocked the support out from under Paley's argument?",
     "answer": "Natural selection, which can build fitted parts with no designer at all",
     "choices": [
       "Natural selection, which can build fitted parts with no designer at all",
@@ -25516,19 +25412,6 @@
       "Blind chance alone, which throws fitted parts together over the long ages"
     ],
     "context": "Darwin's Autobiography: 'The old argument of design in nature, as given by Paley... fails, now that the law of natural selection has been discovered.' The clam-shell hinge no longer needs a maker the way a door-hinge does. Source: Charles Darwin, Autobiography (monadnock.net); also plato.stanford.edu/entries/teleological-arguments/.",
-    "topic": "the-design-argument-paleys-watch"
-  },
-  {
-    "tier": 4,
-    "question": "Writing before Paley, David Hume grants that finding a watch we never saw made still lets us infer a watchmaker. Cleanthes then wants to run the same move from the orderly universe to a world-maker. Hume presses on one difference between the two cases that makes the second leap shakier. What is that difference?",
-    "answer": "We have seen watches built many times, but never a whole world made",
-    "choices": [
-      "We have seen watches built many times, but never a whole world made",
-      "The universe is surely too large for any single maker to have built it",
-      "A watch and a world are made of completely different sorts of stuff",
-      "A world might have grown from a seed, while a watch is plainly built"
-    ],
-    "context": "Hume, Dialogues Concerning Natural Religion (1779), written 23 years before Paley: the watch inference rests on repeated experience of watches being made ('a thousand and a thousand times'); the cosmos is 'single, individual, without parallel,' so there is no track record of world-making to generalize from. The 'grown from a seed' choice is Hume's own rival analogy from Part VII, a live wrong pick rather than a contradiction of the granted premise. This sets up Hume's reply. Source: David Hume, Dialogues Concerning Natural Religion (1779), Part II (and Part VII for the seed/vegetation analogy).",
     "topic": "the-design-argument-paleys-watch"
   },
   {
