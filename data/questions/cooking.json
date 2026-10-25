@@ -3329,19 +3329,6 @@
   },
   {
     "tier": 2,
-    "question": "A cook bites carefully into the outer wall of a fresh red chili and finds it mild, much like a bell pepper. Most cooks think the real fire lives in the seeds, but they are mistaken: the burn is packed into one other spot inside the pod. Which part of a chili carries most of the heat?",
-    "answer": "The pale ribs deep inside the pepper.",
-    "choices": [
-      "The pale ribs deep inside the pepper.",
-      "The seeds packed in the center.",
-      "The tough green stem on top.",
-      "The shiny outer skin."
-    ],
-    "context": "Capsaicin is concentrated in the pale placental pith and inner ribs where the seeds attach — the seeds themselves make none, only picking it up by contact. The ribs hold roughly 65-95% of a pepper's heat, the walls just 2-25%, and the seeds a mere 2-12%, so cutting out the ribs, not the seeds, truly tames a dish. (ScienceInsights; PMC4331322)",
-    "topic": "capsaicin-and-trpv1-the-burn-that-isnt-heat"
-  },
-  {
-    "tier": 2,
     "question": "Capsaicin, the fiery chemical in hot chilies, does a mouth no real damage; it hijacks a tiny nerve sensor called TRPV1 in the tongue and lips. Suppose you had never tasted a chili: your body would still carry TRPV1 for a different, useful job. What does the sensor do when no chili is around?",
     "answer": "It warns you when something is dangerously hot.",
     "choices": [
@@ -3368,19 +3355,6 @@
   },
   {
     "tier": 3,
-    "question": "Plain water barely helps a mouth set ablaze by a fiery chili, but a glass of cold milk douses the fire fast. A certain protein floating in the milk grabs capsaicin, the chili's fiery molecule, and lifts it right off the heat sensors on the tongue. What is that protein called?",
-    "answer": "Casein",
-    "choices": [
-      "Casein",
-      "Gluten",
-      "Collagen",
-      "Keratin"
-    ],
-    "context": "The protein is casein, about 80% of the protein in cow's milk; it surrounds and lifts the oily capsaicin off your receptors. In a 72-person test of skim milk, whole milk, seltzer, Kool-Aid, beer, cola and water, milk quelled the burn best — and whole milk did not beat skim, a clue it's the protein, not the fat, doing the work. (PMC6620146, 'Putting out the fire')",
-    "topic": "capsaicin-and-trpv1-the-burn-that-isnt-heat"
-  },
-  {
-    "tier": 3,
     "question": "A bowl of steaming soup makes the same hot sauce taste far fiercer than it does cold, straight from the fridge. Capsaicin, the molecule behind the bite, is not truly hot the way a stove is; it only tricks a sensor on the tongue into signaling 'burn.' Why would real warmth make its fake burn feel stronger?",
     "answer": "Real heat and capsaicin both trip the very same sensor.",
     "choices": [
@@ -3403,19 +3377,6 @@
       "Birds enrich the soil around the plant's roots."
     ],
     "context": "The avian version of TRPV1 simply isn't activated by capsaicin (insensitive even up to 100 µmol/L), as Jordt & Julius showed by cloning a chicken receptor (Cell, 2002). Birds swallow the fruit and scatter the seeds intact, while seed-crushing chewing mammals are warned off — a strategy scientists call 'directed deterrence.' (Jordt & Julius, Cell 2002)  (Legend.)",
-    "topic": "capsaicin-and-trpv1-the-burn-that-isnt-heat"
-  },
-  {
-    "tier": 4,
-    "question": "Wilbur Scoville, a pharmacist, built a famous scale in 1912 to rank how fiery a chili is. To score a pepper, tasters kept diluting its extract with one common kitchen ingredient until the burn finally vanished, and the amount needed became the rating. What did they dilute the pepper with?",
-    "answer": "Sugar water",
-    "choices": [
-      "Sugar water",
-      "Salt water",
-      "Lemon juice",
-      "Plain vinegar"
-    ],
-    "context": "Scoville devised the test in 1912: dissolve a dried pepper in alcohol, then dilute with sugar water until a panel of tasters can no longer detect any burn — the dilution multiple is its Scoville Heat Units. A bell pepper scores 0, a jalapeño 2,500-10,000, a habanero 100,000-350,000, a Carolina Reaper up to ~2.2 million, and pure capsaicin 16,000,000 SHU. (Wikipedia, 'Scoville scale')  (Legend.)",
     "topic": "capsaicin-and-trpv1-the-burn-that-isnt-heat"
   },
   {
