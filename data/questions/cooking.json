@@ -5825,7 +5825,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook rubs duck legs with salt. He cooks them low and slow for hours in a big covered pot. The legs sit below the surface. They never sizzle or brown. What liquid are they in?",
+    "question": "A farm cook in Gascony rubs duck legs with salt and lays them in a pot. For hours they cook low and slow, sunk below the surface, and they never sizzle or brown. What liquid covers them?",
     "answer": "melted fat",
     "choices": [
       "melted fat",
@@ -5838,7 +5838,7 @@
   },
   {
     "tier": 2,
-    "question": "Duck confit was made to keep meat, not just flavor it. Long before fridges, a family kept cooked duck legs for months. They packed the legs in a pot under a hard cap of duck fat in a cool cellar. How does that fat cap stop the meat below from rotting?",
+    "question": "A farm family with no fridge packs cooked duck legs into a crock and pours fat over them until it sets into a hard cap. In a cool cellar the legs keep for months. How does that cap stop the meat below from rotting?",
     "answer": "It seals the meat off from all air.",
     "choices": [
       "It seals the meat off from all air.",
@@ -5851,7 +5851,7 @@
   },
   {
     "tier": 2,
-    "question": "In Gascony, cooks are fussy about what counts as real confit: it can only be made from one particular part of a duck or goose. Cook another cut - or another bird - slow in fat and it's merely 'en confit,' a nice imitation but not the true dish. Which part of the bird makes true confit?",
+    "question": "A Gascon cook is strict about what counts as real confit: only one part of a duck or goose will do. Give another cut, or another bird, the same slow bath in fat, and he will call the result only 'en confit,' a copy. Which part makes true confit?",
     "answer": "the legs",
     "choices": [
       "the legs",
@@ -5864,7 +5864,7 @@
   },
   {
     "tier": 3,
-    "question": "Duck confit keeps for months thanks to two tricks working together. Everyone remembers the cap of hardened fat that seals out the air - but a whole day before the meat ever touches that fat, the cook buries it in salt. What does the salt do to help the meat keep?",
+    "question": "A whole day before the duck legs go anywhere near the fat, the cook buries them in salt and herbs. Confit keeps for months because two tricks work together, and this is the first. What does the salt do to help the meat keep?",
     "answer": "pulls the water out of the meat",
     "choices": [
       "pulls the water out of the meat",
@@ -5877,7 +5877,7 @@
   },
   {
     "tier": 3,
-    "question": "Down in the Languedoc of southern France, cooks pile duck confit, sausage, and chunks of pork into a deep pot and bake it slowly for hours - but the humble ingredient that soaks up all that rich fat and gives the dish its body is far cheaper than the meat. This famous slow-baked feast is cassoulet. What is it built around?",
+    "question": "Duck confit, sausage and chunks of pork all go into cassoulet, the slow-baked feast of the Languedoc. Yet the humble ingredient at its heart is far cheaper than the meat, and over hours of baking it soaks up the fat and gives the dish its body. What is cassoulet built around?",
     "answer": "white beans",
     "choices": [
       "white beans",
@@ -5890,7 +5890,7 @@
   },
   {
     "tier": 4,
-    "question": "Cassoulet is the great slow-baked bean-and-meat feast of Languedoc, a sunny farm region in the south of France. Cooks layer white beans with pork, sausage, and often duck confit and bake the whole thing low and slow in the oven for many hours, until a golden crust forms across the top. French food lore traces the dish's name back centuries. What is this famous dish named after?",
+    "question": "A cook in the Languedoc, a sunny farm region of southern France, layers beans with pork, sausage and duck confit, then bakes the dish low and slow for hours until a golden crust forms. French food lore traces the name cassoulet back centuries. What is the dish named after?",
     "answer": "the clay pot it bakes in",
     "choices": [
       "the clay pot it bakes in",
@@ -5903,7 +5903,7 @@
   },
   {
     "tier": 1,
-    "question": "A tomato is red because of lycopene. Your body can use it to fight disease. Cornell scientists tested raw tomatoes and tomatoes cooked near boiling for half an hour. What happened to the lycopene once the tomatoes were cooked?",
+    "question": "Rui Hai Liu, a food scientist at Cornell, heated tomatoes near boiling for half an hour and compared their lycopene, the red pigment the body uses to fight disease, with raw ones. What happened to it?",
     "answer": "It jumped far higher than in raw tomatoes",
     "choices": [
       "It jumped far higher than in raw tomatoes",
@@ -5916,7 +5916,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooks have a rule for broccoli: 'steam it, don't drown it.' Boil broccoli in a big pot of water and it comes out with far fewer vitamins than steamed broccoli. During a hard boil, what happens to most of those missing vitamins?",
+    "question": "A cook tips broccoli into a big pot at a hard boil, and it comes out with far fewer vitamins than broccoli steamed above the water. What happens to most of the missing vitamins?",
     "answer": "They dissolve into the cooking water and get drained away",
     "choices": [
       "They dissolve into the cooking water and get drained away",
@@ -5929,20 +5929,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2002, scientists at Cornell University in New York cooked tomatoes and measured what happened to their nutrients. Heating actually boosted lycopene, the red antioxidant famous for fighting disease. But heat cut both ways — as the lycopene went up, one other nutrient in the tomato dropped by nearly a third. Which nutrient did cooking wreck?",
-    "answer": "Vitamin C",
-    "choices": [
-      "Vitamin C",
-      "Potassium",
-      "Vitamin K",
-      "Iron"
-    ],
-    "context": "The very same heating that raised lycopene 164% cut the tomato's vitamin C by 29% after 30 minutes (it fell about 10% and 15% at the earlier check-points). One nutrient made, another lost, in the same pot. Vitamin C is both heat-fragile and water-soluble, the first thing to go when produce is cooked. Source: Cornell Chronicle, 2002; PubMed 11982434.",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 2,
-    "question": "Crunch a RAW carrot and your body absorbs only about a tenth of its beta-carotene, the orange pigment it turns into vitamin A. Cook that same carrot and you can take in roughly three-quarters. What does cooking do to free so much more of the pigment?",
+    "question": "Crunched raw, a carrot lets the body absorb only about a tenth of its beta-carotene, the orange pigment that becomes vitamin A. Cooked, the same carrot yields roughly three-quarters. What does the heat do to free so much more of the pigment?",
     "answer": "It bursts the tough cell walls that trap the pigment inside",
     "choices": [
       "It bursts the tough cell walls that trap the pigment inside",
@@ -5954,99 +5941,8 @@
     "topic": "cooking-changes-nutrition-both-directions-honestly"
   },
   {
-    "tier": 3,
-    "question": "Boxer Rocky Balboa famously gulps down raw eggs for protein, but he is wasting a lot of it. Your body can use over 90% of the protein in a cooked egg, yet only about half of it from a raw one. Why does cooking free up so much more of the protein?",
-    "answer": "Heat unravels the protein so gut enzymes can break it down",
-    "choices": [
-      "Heat unravels the protein so gut enzymes can break it down",
-      "Cooking adds extra protein straight from the hot pan",
-      "A raw egg's protein is a different, useless kind",
-      "Cooking kills germs that had been eating the protein"
-    ],
-    "context": "Raw egg protein is only about 50-60% digestible; a cooked egg is over 90%. Heat denatures the protein, unfolding its tangled shape, so your digestive enzymes can reach and break it apart. It is a vivid example of cooking's biggest gift: not more nutrients, but far better access to them. Source: Wrangham, 'Catching Fire'; cooking-hypothesis review PMC10426865.",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 3,
-    "question": "Try to live on nothing but raw potato and you would slowly starve, because your gut can pull out barely half the energy locked in raw potato starch. Cooking changes everything by doing something physical to the tiny starch granules packed inside every potato cell. What does the heat do to those granules?",
-    "answer": "Makes them swell up and burst open",
-    "choices": [
-      "Makes them swell up and burst open",
-      "Makes them dry out and shrink to pellets",
-      "Makes them fuse and harden into one lump",
-      "Makes them soften and flatten into flakes"
-    ],
-    "context": "Your body extracts only about 51% of the energy from raw potato starch (and about 48% from raw plantain). Heat gelatinizes the starch: the granules absorb water, swell, and burst, exposing them to digestive enzymes. This is a big reason humans thrive on cooked staples that no other ape could live on raw. Source: Wrangham, 'Catching Fire'; PMC10426865.",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 3,
-    "question": "Harvard scientists fed mice the very same sweet potato either raw or cooked, then weighed them. The mice on raw sweet potato lost weight, while the ones on cooked sweet potato gained. Since it was the identical food, what was the heat itself doing?",
-    "answer": "Releasing extra usable calories locked in the raw food",
-    "choices": [
-      "Releasing extra usable calories locked in the raw food",
-      "Adding fat to the food straight from the oven",
-      "Making the food tastier so the mice simply ate more",
-      "Killing bacteria that had been stealing the calories"
-    ],
-    "context": "In this 2011 experiment (Carmody and Wrangham), mice gained more body weight on cooked meat or cooked sweet potato than on the same food raw, and actually lost weight on raw sweet potato. Heat, not just chewing or eating more, unlocked the energy. Source: Carmody and Wrangham, PNAS 2011, 'Energetic consequences of thermal and nonthermal food processing.'",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 4,
-    "question": "You have probably heard that cooking spinach 'unlocks its iron.' That popular line is mostly wrong: spinach's iron is the hard-to-absorb kind however you cook it. Spinach's oxalic acid, so often blamed for blocking iron, actually clamps down far harder on a different mineral. Which one?",
-    "answer": "Calcium",
-    "choices": [
-      "Calcium",
-      "Potassium",
-      "Magnesium",
-      "Zinc"
-    ],
-    "context": "Spinach's oxalic acid binds mostly to calcium, which is why spinach is a poor calcium source despite its green, healthy look. Its iron is non-heme (plant) iron, poorly absorbed no matter the cooking method. Wilting a huge raw pile down to a few forkfuls does help a little (you simply eat more spinach in one sitting), but that is volume, not a magic iron unlock. Source: fruitsandveggies.org, 'Do foods high in oxalates interfere with calcium absorption?'",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 4,
-    "question": "So how do you actually absorb the iron in a plate of spinach, given it is the poorly-absorbed, non-heme kind? One simple thing added at the very same meal can roughly double or triple how much iron your body takes in. What is the trick?",
-    "answer": "A squeeze of lemon over the spinach",
-    "choices": [
-      "A squeeze of lemon over the spinach",
-      "A pinch of salt over the spinach",
-      "A sprinkle of sugar over the spinach",
-      "A splash of vinegar over the spinach"
-    ],
-    "context": "About 50 mg of vitamin C in the same meal (a good squeeze of lemon, or some bell pepper) boosts absorption of non-heme iron roughly two to three times. It is the vitamin C pairing, not the cooking, that gets spinach's iron into you. Vinegar's acidity does not do the same job. Source: fruitsandveggies.org and vitamin-C non-heme-iron absorption research.",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
     "tier": 5,
-    "question": "Raw red kidney beans are not just hard to chew, they are genuinely poisonous. The U.S. Food and Drug Administration (FDA) warns that swallowing as few as four or five raw kidney beans can bring on violent vomiting within hours. Where does this poison actually come from?",
-    "answer": "The bean makes it itself, as a natural defense",
-    "choices": [
-      "The bean makes it itself, as a natural defense",
-      "Bacteria that grow on the dried beans",
-      "Pesticide sprayed on the bean crop",
-      "Mold that forms when the beans get damp"
-    ],
-    "context": "The toxin is a natural lectin the plant produces, called phytohaemagglutinin: chemistry-dangerous, not a germ. Raw beans hold 20,000 to 70,000 toxin units; properly boiled beans only 200 to 400. This is why some foods are unsafe raw for reasons that have nothing to do with bacteria. Source: FDA 'Bad Bug Book' / FDA Natural Toxins in Food.",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 5,
-    "question": "Raw kidney beans hide a natural poison. Here is the mean twist: cooking them slow and low in a slow cooker can leave them worse than raw. The pot never gets hot enough to kill the toxin. So what does it take to make dried kidney beans safe to eat?",
-    "answer": "Boiling them hard in fresh water for a good half hour",
-    "choices": [
-      "Boiling them hard in fresh water for a good half hour",
-      "Roasting them dry in a hot oven for an hour",
-      "Soaking them in cold water overnight, and nothing more",
-      "Rinsing them well under cold running water"
-    ],
-    "context": "The lectin phytohaemagglutinin is destroyed only by fierce, wet heat: soak the dried beans first, then boil them in fresh water at a full 100 C (212 F) for at least 30 minutes. A low-temperature slow cooker may never climb high enough, and at around 80 C it can leave the beans several times more toxic than raw ones. Soaking, rinsing, or gentle warming alone will not do it. Source: FDA 'Bad Bug Book'; K-State 'Cooking Dry Beans Safely.'",
-    "topic": "cooking-changes-nutrition-both-directions-honestly"
-  },
-  {
-    "tier": 5,
-    "question": "Raw egg white plays dirty. It carries a protein called avidin whose grip on a certain B-vitamin is the strongest bond of its kind found anywhere in nature, so eat raw whites and that vitamin sails straight through you, unused. What simple step breaks avidin's grip and rescues the vitamin?",
+    "question": "Raw egg white plays a trick on anyone who swallows it. A protein in it, avidin, grabs a B vitamin called biotin with the strongest bond of its kind found anywhere in nature, and the vitamin slips out of the body unused. What simple step breaks avidin's grip and rescues the vitamin?",
     "answer": "Cooking the egg until it sets",
     "choices": [
       "Cooking the egg until it sets",
@@ -6059,7 +5955,7 @@
   },
   {
     "tier": 1,
-    "question": "You tip a bag of rock-hard dried beans into a bowl and cover them with plenty of cold water. Left alone to sit for hours, what do the beans slowly do?",
+    "question": "A cook tips a bag of rock-hard dried beans into a bowl, covers them with plenty of cold water and leaves them for hours. What do the beans slowly do?",
     "answer": "Swell up to about double their size",
     "choices": [
       "Swell up to about double their size",
@@ -6084,8 +5980,8 @@
     "topic": "cooking-dried-beans-soak-and-the-hard-boil"
   },
   {
-    "tier": 3,
-    "question": "A pot of chili gets its body from red kidney beans — but eaten raw, this same bean bites back. As few as four or five raw red kidney beans can leave a grown adult sick within hours. What is the raw bean actually carrying that does it?",
+    "tier": 2,
+    "question": "A pot of chili gets its body from red kidney beans, yet the same beans eaten raw can make a grown adult violently sick within hours, and as few as four or five will do it. What is the raw bean carrying that does it?",
     "answer": "A natural toxin in the bean",
     "choices": [
       "A natural toxin in the bean",
@@ -6098,7 +5994,7 @@
   },
   {
     "tier": 4,
-    "question": "Red kidney beans hide a natural toxin, and you'd guess something dangerous enough to make you sick would be stubborn to remove. Yet once the pot reaches a hard, rolling boil, that toxin is completely destroyed in only about how long?",
+    "question": "Soaked overnight, dried red kidney beans go into a fresh pot of water and up to a hard, rolling boil. A poison strong enough to sicken a grown adult sounds as if it should take hours to destroy. At a full boil, how long does the toxin take to break down completely?",
     "answer": "About 10 minutes",
     "choices": [
       "About 10 minutes",
@@ -6111,7 +6007,7 @@
   },
   {
     "tier": 4,
-    "question": "A slow cooker set to Low warms raw red kidney beans to around 80 C — hot enough for a stew, but never a true boil. You'd hope that gentle heat makes them at least a bit safer than raw. Instead, what does it do to their toxin?",
+    "question": "A slow cooker set to Low warms raw red kidney beans to around 80 C: hot enough for a stew, but never a true boil. That gentle heat sounds safer than no heat at all. What does it actually do to the beans' toxin?",
     "answer": "Makes them several times more toxic",
     "choices": [
       "Makes them several times more toxic",
@@ -6124,7 +6020,7 @@
   },
   {
     "tier": 3,
-    "question": "You can spoon red kidney beans straight from a can onto a cold salad, yet the very same kind of bean, bought dried, can make someone sick if it's prepared carelessly at home. Why are the canned ones already safe, with no work on your part?",
+    "question": "Straight from a tin, red kidney beans go onto a cold salad with no cooking at all. Yet the same kind of bean, bought dried and cooked carelessly at home, can make someone sick. Why are the canned beans already safe to eat?",
     "answer": "A cannery boils them under pressure before sealing",
     "choices": [
       "A cannery boils them under pressure before sealing",
@@ -6137,20 +6033,7 @@
   },
   {
     "tier": 1,
-    "question": "Gym folklore says raw egg is the purest protein there is — nothing cooked out of it. Researchers fed volunteers 25 g of egg protein tagged with tracer atoms and measured how much crossed the gut wall. Cooked egg scored 91% digestible; raw egg only about half. What single change during cooking unlocks the protein?",
-    "answer": "Denaturation — heat unfolds the tight protein coils",
-    "choices": [
-      "Denaturation — heat unfolds the tight protein coils",
-      "Emulsification — fat droplets scatter into water",
-      "Fermentation — microbes chew through the sugars",
-      "Caramelization — sugars brown and turn sweet"
-    ],
-    "context": "51.3% (± 9.8), against 90.9% (± 0.8) for cooked. The raw egg is not purer — half of it walks straight through you. Evenepoel et al., 'Digestibility of Cooked and Raw Egg Protein in Humans as Assessed by Stable Isotope Techniques', Journal of Nutrition 128(10):1716-1722 (1998) — https://pubmed.ncbi.nlm.nih.gov/9772141/",
-    "topic": "cooking-made-us-human-the-fire-hypothesis"
-  },
-  {
-    "tier": 1,
-    "question": "A wild chimp spends about half its day chewing — six hours of raw fruit, tough leaves and raw meat. A human spends under an hour. Harvard's Richard Wrangham argues that cooking, by shrinking chewing and digestion time so dramatically, paid for one huge evolutionary upgrade in our ancestors. Which?",
+    "question": "A wild chimp chews raw fruit, tough leaves and raw meat for about half its day; a human chews for under an hour. Richard Wrangham argues that cooking, by cutting that time so sharply, paid for one huge change in the ancestors of humans. Which?",
     "answer": "Bigger brains — the extra calories fed them",
     "choices": [
       "Bigger brains — the extra calories fed them",
@@ -6162,8 +6045,8 @@
     "topic": "cooking-made-us-human-the-fire-hypothesis"
   },
   {
-    "tier": 2,
-    "question": "You crack an egg into a hot pan. In seconds, the clear, wobbly slime turns solid white right in front of you. No knife touched it, and nothing was added — the only thing at work is heat, reaching about 60-70°C. Each protein in that egg white is a long chain of amino acids curled up into a tight, complex shape. When the heat hits it, something happens to that shape. What is the heat actually doing to each protein molecule?",
+    "tier": 3,
+    "question": "Rocky Balboa, the film boxer, gulps raw eggs for protein, yet volunteers in a 1998 tracer study absorbed about 91 percent of cooked egg's protein and only about half of raw egg's. As an egg white sets in a hot pan, what is the heat doing to each protein molecule?",
     "answer": "It unfolds, and the amino-acid chain stays completely intact",
     "choices": [
       "It unfolds, and the amino-acid chain stays completely intact",
@@ -6176,7 +6059,7 @@
   },
   {
     "tier": 2,
-    "question": "Victoria Wobber and Richard Wrangham ran a taste test on captive chimpanzees — animals that have never owned a fire and have never cooked anything in their lives. Raw carrot or cooked carrot? Raw sweet potato or cooked? Raw beef or cooked? Nobody knew which way an ape with no fire in its history would vote. What did the chimps pick?",
+    "question": "Victoria Wobber and Richard Wrangham offered captive chimpanzees carrot, sweet potato and beef, each raw or cooked. These apes have never used fire, and nobody knew which way an animal with no cooking in its past would choose. What did the chimps pick?",
     "answer": "Cooked, on all three foods",
     "choices": [
       "Cooked, on all three foods",
@@ -6189,7 +6072,7 @@
   },
   {
     "tier": 3,
-    "question": "Volunteers ate oat, wheat, plantain, green banana and potato — each one raw, then cooked — while researchers measured exactly what their small intestine absorbed. Cooking raised the starch they got out of those foods by anywhere from 28% to 109%, depending on the plant. Raw, a lot of that starch slipped past the small intestine unabsorbed. What is the heat doing to the starch itself?",
+    "question": "Volunteers ate oats, wheat, plantain, green banana and potato, first raw and then cooked, while researchers measured what their small intestines took up. Cooking raised the starch their bodies absorbed by anywhere from 28 to 109 percent. What is the heat doing to the starch itself?",
     "answer": "Bursting the starch's tight crystal packing into loose mush",
     "choices": [
       "Bursting the starch's tight crystal packing into loose mush",
@@ -6202,7 +6085,7 @@
   },
   {
     "tier": 3,
-    "question": "Rachel Carmody and Richard Wrangham gave mice the same three foods — meat, sweet potato, peanuts — some raw, some cooked, then weighed both the animals and the leftovers. Over four days the raw-meat mice got through 64.5 g of food. The cooked-meat mice ate noticeably less, 53.7 g. Then Carmody put both groups on the scales. What did the weights show?",
+    "question": "Rachel Carmody gave her mice the same three foods, meat, sweet potato and peanuts, raw to some and cooked to others. Over four days the cooked-meat mice ate less than the raw-meat mice, about 54 grams against 65. Then she put both groups on the scales. What did the weights show?",
     "answer": "The cooked-food mice held their weight; the raw-food mice lost it",
     "choices": [
       "The cooked-food mice held their weight; the raw-food mice lost it",
@@ -6215,7 +6098,7 @@
   },
   {
     "tier": 3,
-    "question": "Two scientists taped sensors to jaw muscles and fed people raw goat. The meat was tough, standing in for wild game our ancestors hunted. Whole, it was like chewing gum: you could never break it down. So they rebuilt the meal the Stone Age way, with a sharp stone flake and no fire. They sliced the meat and pounded the plants. What happened to the chewing?",
+    "question": "Katherine Zink and Daniel Lieberman taped sensors to volunteers' jaws and fed them tough raw goat, which chewed like gum. Then they prepared the meal the Stone Age way, slicing the meat with a stone flake and pounding the plants, with no fire at all. What happened to the chewing?",
     "answer": "Both the force of each chew and the daily count fell by nearly a fifth",
     "choices": [
       "Both the force of each chew and the daily count fell by nearly a fifth",
@@ -6228,7 +6111,7 @@
   },
   {
     "tier": 3,
-    "question": "Leslie Aiello and Peter Wheeler weighed digestive tracts right across the primates and found that body size predicts gut size tightly: a wild diet of leaves and tough raw fruit needs a big fermenting tank to break it down, and the bigger the ape, the bigger the tank. By that rule a 65 kg primate should be hauling about 1.88 kg of gut. Then the pair put a human of exactly that weight on the scales. What came up?",
+    "question": "Leslie Aiello and Peter Wheeler weighed guts across the primates and found that the bigger the animal, the bigger its gut, since leaves and tough raw fruit need a large fermenting tank. By that rule a 65 kg primate should carry about 1.88 kg of gut. What does a human of that weight carry?",
     "answer": "About 1.1 kg — around 60% of the prediction",
     "choices": [
       "About 1.1 kg — around 60% of the prediction",
@@ -6254,7 +6137,7 @@
   },
   {
     "tier": 4,
-    "question": "The human brain is a scandal on the metabolic books: it overshoots what a primate our size should have by about 0.85 kg, and running that extra costs roughly 9.5 watts, every second of your life. Leslie Aiello and Peter Wheeler added up every expensive organ a human carries — brain, gut, heart, liver, kidneys — and set the total against what a 65 kg primate should be carrying. What did the total come to?",
+    "question": "A 65 kg human carries a brain about 0.85 kg heavier than a primate that size should have, and running it costs some 9.5 extra watts. Leslie Aiello and Peter Wheeler added up the body's costly organs, brain, gut, heart, liver and kidneys, and set the total against what a 65 kg primate carries. What did it come to?",
     "answer": "About 4.3 kg — exactly what a primate our size carries",
     "choices": [
       "About 4.3 kg — exactly what a primate our size carries",
@@ -6267,7 +6150,7 @@
   },
   {
     "tier": 5,
-    "question": "Richard Wrangham's hypothesis needs fire in human hands by about 1.8 million years ago — that is when the small teeth and the big brain arrive. Fire leaves traces a digger can find: wood ash, burnt bone, sediment cooked past 300°C. The oldest firm, in-place fire anyone has excavated is at Wonderwerk Cave in South Africa. How old is it?",
+    "question": "Richard Wrangham argues that people were cooking by about 1.8 million years ago, the time the small teeth and the big brain arrive. At Wonderwerk Cave in South Africa, diggers have found the oldest firm, in-place fire yet: wood ash, burnt bone and earth cooked past 300°C. How old is it?",
     "answer": "About 1.0 million years old — 800,000 years after Wrangham's date",
     "choices": [
       "About 1.0 million years old — 800,000 years after Wrangham's date",
@@ -6280,7 +6163,7 @@
   },
   {
     "tier": 5,
-    "question": "The claim that cooking made us human has an obvious rival: pounding. Hammer a strip of meat or mash a root and it breaks down too — no hearth, no flame, nothing but a rock. Rachel Carmody put the two head to head in a mouse trial: pounded food against cooked food, and both together. Which way did it come out?",
+    "question": "In a mouse trial, Rachel Carmody pitted a rock against a fire. Hammering a strip of meat or mashing a root breaks food down too, with no hearth and no flame, so she fed mice pounded food, cooked food, and food both pounded and cooked. Which way did it come out?",
     "answer": "Cooking improved a pounded diet; pounding did not improve a cooked one",
     "choices": [
       "Cooking improved a pounded diet; pounding did not improve a cooked one",
@@ -6293,7 +6176,7 @@
   },
   {
     "tier": 5,
-    "question": "Richard Wrangham's case needs fire in human hands by 1.8 million years ago — that is when the small teeth and the big brain arrive. Daniel Lieberman is not persuaded. He points to Olduvai Gorge in Tanzania, where stone tools and the bones they scored go back 2.6 million years, long before Wrangham's date and far longer before any ash anyone has excavated. Lieberman ran the chewing experiments himself. In his framing, what did fire do?",
+    "question": "Daniel Lieberman reads the story differently from Richard Wrangham. At Olduvai Gorge in Tanzania, stone tools and the bones they cut go back 2.6 million years, long before any ash yet found, and Lieberman ran the chewing tests himself. In his account, what did fire do?",
     "answer": "Fire came second, and made an already-chewable meal easier still",
     "choices": [
       "Fire came second, and made an already-chewable meal easier still",
@@ -6397,7 +6280,7 @@
   },
   {
     "tier": 1,
-    "question": "On a plate of couscous, the food looks so much like a tiny round grain that people naturally assume it was a seed grown that way in a field. It wasn't. Each little pellet is actually shaped by hand from the ground flour of one single crop, and then dried hard. What crop does couscous actually come from?",
+    "question": "A heap of couscous on a Moroccan plate looks like tiny round seeds picked straight from a field. They are not. Each bead was rolled by hand from the flour of one crop and then dried hard. Which crop?",
     "answer": "wheat",
     "choices": [
       "wheat",
@@ -6410,7 +6293,7 @@
   },
   {
     "tier": 2,
-    "question": "At a Tunisian flour mill in North Africa, one wheat gets ground up gritty and gold — not soft and white like ordinary bread flour. That coarse gold flour is called semolina. Every couscous pellet across Morocco, Algeria, and Tunisia is rolled from it. Which wheat is semolina milled from?",
+    "question": "At a flour mill in Tunisia, one grain comes out gritty and gold, not soft and white like bread flour. That coarse flour is semolina, and every bead of couscous from Morocco to Tunisia is rolled from it. Which grain is semolina milled from?",
     "answer": "durum wheat",
     "choices": [
       "durum wheat",
@@ -6423,7 +6306,7 @@
   },
   {
     "tier": 3,
-    "question": "An Algerian grandmother sits with a wide wooden bowl of semolina — the coarse gold flour ground from durum wheat. She sprinkles a little water over it. Then she does one steady motion, over and over, for a long time. Soon the damp flour has turned into thousands of tiny, even beads: fresh couscous. What is she doing with her hands to shape those beads?",
+    "question": "An Algerian grandmother sits with a wide wooden bowl of semolina and sprinkles a little water over it. Then she repeats one steady motion with the damp flour, over and over, until it has become thousands of tiny, even beads of couscous. What is she doing with her hands?",
     "answer": "rubs it between her palms",
     "choices": [
       "rubs it between her palms",
@@ -6436,7 +6319,7 @@
   },
   {
     "tier": 4,
-    "question": "Couscous is so old that by the time anyone wrote it down, it was already an everyday dish. The oldest known couscous recipes sit in 13th-century Arabic cookbooks. They come from one shining medieval land of scholars, poets, and gardens. Where were these early recipes written?",
+    "question": "Cookbook writers working in Arabic in the 13th century set down some of the oldest couscous recipes known, and they already wrote of it as an everyday dish. They lived in a shining medieval land of scholars, poets and gardens. Where were those cookbooks written?",
     "answer": "Muslim Spain",
     "choices": [
       "Muslim Spain",
@@ -6449,7 +6332,7 @@
   },
   {
     "tier": 1,
-    "question": "Whisk a bowl of heavy cream and it climbs into stiff, glossy peaks. Whisk a bowl of skim milk exactly the same way, and it froths for a second, then flops back into a flat puddle. What does cream have plenty of, and skim milk almost none of, that lets it hold those peaks?",
+    "question": "A pastry cook whisks heavy cream into stiff, glossy peaks, then whisks skim milk the same way; it froths for a second, then flops back flat. What does the cream have plenty of that skim milk lacks?",
     "answer": "fat",
     "choices": [
       "fat",
@@ -6462,7 +6345,7 @@
   },
   {
     "tier": 2,
-    "question": "You're whipping heavy cream for a dessert. You hit soft peaks, then stiff peaks — but you keep the whisk running, hoping the foam will get even fluffier. Instead the smooth white cream turns gritty. It breaks into pale yellow lumps floating in thin, watery liquid. You've overshot cream and started making something else by accident. What?",
+    "question": "Halfway through whipping cream for a dessert, a cook reaches stiff peaks and keeps going, hoping for something fluffier. Instead the smooth white foam turns gritty and breaks into pale yellow lumps in a thin, watery liquid. What has she started making by accident?",
     "answer": "butter",
     "choices": [
       "butter",
@@ -6475,7 +6358,7 @@
   },
   {
     "tier": 3,
-    "question": "Pour sweetened cream into the freezer and just leave it, and you'll get a hard, icy block you have to chip at with a spoon. An ice cream maker turns that very same mix into something smooth and scoopable. What is the machine doing to the mix the whole time it freezes?",
+    "question": "Sweetened cream left alone in the freezer sets into a hard, icy block that has to be chipped with a spoon. In an ice cream maker, the very same mix turns smooth and scoopable. What is the machine doing to it the whole time it freezes?",
     "answer": "constantly churning it",
     "choices": [
       "constantly churning it",
@@ -6488,7 +6371,7 @@
   },
   {
     "tier": 4,
-    "question": "Water in the freezer turns into a rock-hard block of ice, yet a tub of ice cream in that same freezer never freezes fully solid — there's always a soft part you can push a scoop through. Ice cream is mostly water too, so why doesn't it freeze all the way? The dissolved sugar is the reason. What does the sugar do?",
+    "question": "A tray of water in the freezer turns into rock-hard ice, yet a tub of ice cream in the same freezer never sets fully solid, and a scoop still slides through it. Ice cream is mostly water too, and the dissolved sugar is the reason. What does the sugar do to that water?",
     "answer": "lowers the temperature at which it freezes",
     "choices": [
       "lowers the temperature at which it freezes",
@@ -6514,7 +6397,7 @@
   },
   {
     "tier": 1,
-    "question": "A creme brulee sits in front of a first-time diner. She asks how you are supposed to start eating it. The classic answer, the ritual that makes this dessert fun, is to do what first?",
+    "question": "A crème brûlée sits in front of a first-time diner, and she asks how to start. In the classic ritual, the part that makes this dessert fun, what does she do first?",
     "answer": "Crack through the hard, glassy top",
     "choices": [
       "Crack through the hard, glassy top",
@@ -6527,7 +6410,7 @@
   },
   {
     "tier": 1,
-    "question": "In a French bistro the waiter sets down a crème brûlée. The name is French for 'burnt cream,' but only one part of the dessert is actually burnt. Right before serving, the cook sprinkles one ingredient on top and hits it with a small torch until it turns brown and glassy. Which part of the dessert carries the 'burnt' name?",
+    "question": "Moments before serving a crème brûlée, or 'burnt cream,' a bistro cook scatters one ingredient over the custard and torches it brown and glassy. Only that part is truly burnt. Which ingredient?",
     "answer": "the sugar",
     "choices": [
       "the sugar",
@@ -6540,7 +6423,7 @@
   },
   {
     "tier": 2,
-    "question": "Under creme brulee's crackly top is a custard so silky and loose it jiggles when you tap the dish. A cook builds it by slowly heating cream with sugar, vanilla, and one key ingredient that quietly sets the whole thing into that soft, trembling texture. Which ingredient sets it?",
+    "question": "A pastry cook gently heats cream, sugar and vanilla with one more ingredient, and it sets into the custard under a crème brûlée's crackly top, so silky it trembles when the dish is tapped. Which ingredient sets it?",
     "answer": "egg yolks",
     "choices": [
       "egg yolks",
@@ -6566,7 +6449,7 @@
   },
   {
     "tier": 3,
-    "question": "A custard is mostly cream and egg, and eggs are touchy: nudge them a few degrees too hot in the oven and they seize into grainy, scrambled curds instead of a smooth, glossy gel. Pastry cooks have one classic trick for baking creme brulee that shields the delicate eggs from the oven's fierce heat. What is the trick?",
+    "question": "Crème brûlée custards go into an oven that can ruin them: a few degrees too hot, and the eggs seize into grainy, scrambled curds instead of a smooth, glossy gel. Pastry cooks have one classic trick to shield the custards from the oven's fierce heat. What is the trick?",
     "answer": "set the ramekins in a pan of hot water",
     "choices": [
       "set the ramekins in a pan of hot water",
@@ -6579,7 +6462,7 @@
   },
   {
     "tier": 3,
-    "question": "Creme brulee and its cousin creme caramel -- better known as flan -- start out as the very same silky egg custard. Creme brulee gets its sugar scorched into a hard crust you crack with a spoon. A flan instead reaches the table under a soft caramel sauce running down its sides. How does a flan get its caramel?",
+    "question": "A cook makes crème brûlée and its cousin crème caramel, or flan, from the very same silky egg custard. The brûlée is capped with a hard, scorched crust, while the flan reaches the table under a soft caramel sauce running down its sides. How does the flan get its caramel?",
     "answer": "Caramel is poured under the custard, then the flan is turned upside down.",
     "choices": [
       "Caramel is poured under the custard, then the flan is turned upside down.",
@@ -6592,7 +6475,7 @@
   },
   {
     "tier": 1,
-    "question": "Bite into a fresh croissant and it breaks into lots of thin, crackly flakes. Those flakes are not from any fancy flour. So what does the baker do to the dough, over and over, to make them?",
+    "question": "A fresh croissant shatters into thin, crackly flakes at the first bite, and no special flour made them. What does the baker do to the dough, over and over, to build those flakes?",
     "answer": "folds cold butter into it",
     "choices": [
       "folds cold butter into it",
@@ -6605,7 +6488,7 @@
   },
   {
     "tier": 1,
-    "question": "A 'mille-feuille' is a classic French pastry-shop dessert. Bakers stack thin sheets of crisp, flaky puff pastry with layers of sweet vanilla pastry cream between them, then top it with a swirled white-and-brown glaze. Its fancy French name is a direct description of the many layers themselves. What does 'mille-feuille' mean, in plain English?",
+    "question": "A French pastry cook stacks crisp sheets of puff pastry with vanilla cream between them and glazes the top. The dessert's name, mille-feuille, describes all those layers. What does it mean in English?",
     "answer": "a thousand leaves",
     "choices": [
       "a thousand leaves",
@@ -6618,7 +6501,7 @@
   },
   {
     "tier": 2,
-    "question": "To build up a croissant's layers, the baker repeats one exact fold over and over -- and bakers say it's just like folding one common everyday object. What is that fold like?",
+    "question": "A baker building a croissant's layers rolls out the dough and makes the same fold again and again, one that bakers compare to folding a common everyday object. What is that fold like?",
     "answer": "folded in thirds, like a business letter",
     "choices": [
       "folded in thirds, like a business letter",
@@ -6631,7 +6514,7 @@
   },
   {
     "tier": 2,
-    "question": "A finished croissant has dozens of separate, paper-thin sheets of butter running through it — that's what gives it those flaky layers. To build all those layers, French bakers start with one very first butter step. They call it the 'lock-in.' In that first step, how does the butter go into the dough?",
+    "question": "A French baker starts a batch of croissants with the step she calls the lock-in, the first move toward dozens of paper-thin sheets of butter in every pastry. How does the butter go into the dough at that first step?",
     "answer": "as one big cold slab, wrapped up in the dough",
     "choices": [
       "as one big cold slab, wrapped up in the dough",
@@ -6644,7 +6527,7 @@
   },
   {
     "tier": 3,
-    "question": "Here's a surprise most cooks don't know: butter isn't pure fat. About one-sixth of every stick is actually water. In a hot oven, a croissant's dough is layered with thin sheets of butter, and that hidden water inside each buttery layer does the one thing that gives the finished pastry its whole flaky character. What does that water do the moment the oven's heat hits it?",
+    "question": "A tray of croissants goes into a hot oven, each one layered with thin sheets of butter. Butter is not pure fat: about a sixth of every stick is water, and that hidden water gives the pastry its whole flaky character. What does the water do when the heat hits it?",
     "answer": "flashes to steam and forces the layers apart",
     "choices": [
       "flashes to steam and forces the layers apart",
@@ -6657,7 +6540,7 @@
   },
   {
     "tier": 3,
-    "question": "French bakers roll and fold croissant dough over and over, layering thin sheets of butter through it. Between folds they keep stopping to slide it back into the fridge, so the butter stays firm and clay-like — never soft. If a beginner rushes and lets the butter warm up and go soft while working, what happens when the croissant finally bakes?",
+    "question": "Between folds, a croissant baker keeps sliding her dough back into the fridge so the butter stays cool and clay-like, never soft. A rushed beginner lets his butter warm up and go soft as he works. What happens when his croissants bake?",
     "answer": "the butter melts in, the layers merge, and it bakes dense and greasy",
     "choices": [
       "the butter melts in, the layers merge, and it bakes dense and greasy",
@@ -6670,7 +6553,7 @@
   },
   {
     "tier": 4,
-    "question": "In a French bakery, a croissant and a pain au chocolat don't fit under plain 'bread' or plain 'pastry.' Their dough is enriched with butter and eggs and raised with yeast like bread, but it bakes up flaky and rich like pastry — so it sits in its own in-between family, named for the Austrian city of Vienna, where the technique arrived from. What is that family of rich, yeasted pastries called?",
+    "question": "Neither plain bread nor plain pastry, the croissant and the pain au chocolat belong to a family of their own in a French bakery. Their dough rises with yeast like bread and is rich with butter and eggs like pastry, and the family is named for the city of Vienna. What is it called?",
     "answer": "viennoiserie",
     "choices": [
       "viennoiserie",
@@ -6683,7 +6566,7 @@
   },
   {
     "tier": 4,
-    "question": "The croissant is a proud symbol of France -- yet it isn't originally French at all. It grew out of a crescent-shaped roll called the kipferl, carried to a Paris bakery in the 1830s from another European country. Which country did the croissant's ancestor come from?",
+    "question": "A Paris bakery of the late 1830s sold a crescent-shaped roll called the kipferl, and French bakers copied it; the croissant grew out of that roll. The kipferl had come to Paris from another European country. Which country was it?",
     "answer": "Austria",
     "choices": [
       "Austria",
@@ -6696,7 +6579,7 @@
   },
   {
     "tier": 5,
-    "question": "A favorite story claims the croissant was invented in Vienna in 1683, shaped like the crescent on the Turkish flag to celebrate the city's victory over the invading Ottoman army. Historians call it a charming legend. What is the hard evidence that sinks the tale?",
+    "question": "Alfred Gottschalk, a twentieth-century writer, spread a favorite tale: that Viennese bakers invented the croissant in 1683, shaped like the crescent on the Turkish flag, to celebrate the city's victory over the invading Ottoman army. Historians call it a legend. What hard evidence sinks it?",
     "answer": "crescent rolls were already eaten in Vienna centuries before 1683",
     "choices": [
       "crescent rolls were already eaten in Vienna centuries before 1683",
@@ -6709,7 +6592,7 @@
   },
   {
     "tier": 1,
-    "question": "You're making dinner. You slice raw chicken on a wooden cutting board — the chicken is bound for a hot pan, so it'll be cooked all the way through. Then, without washing the board, you chop lettuce for a salad on that same surface. Both foods now carry the raw chicken's bacteria. But the salad is the truly dangerous one. Why?",
+    "question": "A cook slices raw chicken on a wooden board and, without washing it, chops lettuce for a salad there. Both now carry the bacteria, but the chicken is bound for a hot pan. Why is the salad the dangerous one?",
     "answer": "The salad is never cooked, so no heat step kills its germs.",
     "choices": [
       "The salad is never cooked, so no heat step kills its germs.",
@@ -6722,7 +6605,7 @@
   },
   {
     "tier": 1,
-    "question": "Raw-meat bacteria can start spreading before you even leave the grocery store — right in your shopping cart. A careful shopper at the checkout is loading up raw chicken, ground beef, apples, and lettuce, and reaches for reusable bags. What's the smart way to divide those groceries into bags?",
+    "question": "A shopper at the checkout reaches for her reusable bags, with raw chicken, ground beef, apples and lettuce to pack. Germs from raw meat can spread even here. How should she split the groceries?",
     "answer": "Bag the raw meats on their own, away from the fruit and lettuce.",
     "choices": [
       "Bag the raw meats on their own, away from the fruit and lettuce.",
@@ -6735,7 +6618,7 @@
   },
   {
     "tier": 2,
-    "question": "A home cook gets in trouble by chopping salad on the same board that just held raw chicken. Busy professional kitchens make that exact slip nearly impossible with one simple system. What is it?",
+    "question": "A line cook in a busy restaurant reaches for a board to chop salad, and the kitchen's one simple system makes it nearly impossible for her to grab the board that just held raw chicken. What is that system?",
     "answer": "A set of boards color-coded so each food type gets its own.",
     "choices": [
       "A set of boards color-coded so each food type gets its own.",
@@ -6747,21 +6630,8 @@
     "topic": "cross-contamination-how-outbreaks-actually-start"
   },
   {
-    "tier": 2,
-    "question": "You own only one cutting board in your kitchen, and you've just used it to cut raw chicken. Now you want to slice tomatoes for a salad on that same board. Scrubbing it with hot soapy water gets it visibly clean and rinses the meat scraps away — but food-safety pros say that's only half the job. What's the crucial second step to make it safe for raw vegetables?",
-    "answer": "Sanitize it with a diluted bleach solution, then rinse.",
-    "choices": [
-      "Sanitize it with a diluted bleach solution, then rinse.",
-      "Dry it with paper towels to pull off all the moisture.",
-      "Rub it with lemon and coarse salt to scour the surface.",
-      "Flip it over and chop on the clean underside instead."
-    ],
-    "context": "Washing removes visible food and grease; sanitizing kills the germs left behind. The USDA recipe: after hot soapy water, sanitize with about 1 tablespoon of unscented liquid chlorine bleach per gallon of water, let it stand a few minutes, then rinse. Source: USDA FSIS, 'Cutting Boards' (fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/cutting-boards).",
-    "topic": "cross-contamination-how-outbreaks-actually-start"
-  },
-  {
     "tier": 3,
-    "question": "You're loading the fridge, holding a plate of raw pork chops and a bowl of cut melon you'll eat as-is. To be sure the raw pork can never contaminate the melon, which shelf should the pork go on?",
+    "question": "Loading the fridge, a cook holds a plate of raw pork chops and a bowl of cut melon that will be eaten just as it is. To be sure the pork can never contaminate the melon, where should the pork go?",
     "answer": "The shelf below the melon, in a sealed dish.",
     "choices": [
       "The shelf below the melon, in a sealed dish.",
@@ -6774,7 +6644,7 @@
   },
   {
     "tier": 3,
-    "question": "In a restaurant walk-in fridge, professional cooks don't just push all the raw meat to a low shelf. They stack their raw meats in a strict order, top to bottom, based on the temperature each meat must reach in cooking to be safe to eat. The meat that must be cooked to the highest internal temperature goes on the very bottom shelf — so any drips fall onto meats that will still be cooked hotter than it. Which raw meat lands lowest of all?",
+    "question": "In a restaurant's walk-in fridge, cooks stack raw meats top to bottom by the temperature each must reach to be safe. The one needing the highest goes on the very bottom shelf, so any drips fall on meats that will be cooked hotter still. Which meat goes lowest?",
     "answer": "Raw chicken and turkey",
     "choices": [
       "Raw chicken and turkey",
@@ -6787,7 +6657,7 @@
   },
   {
     "tier": 4,
-    "question": "In a 2017 study, German scientists at Furtwangen University swabbed one everyday kitchen item to see what was living on it. The result was shocking: up to 54 billion bacteria packed into a single cubic centimeter — a density as thick as human waste. Spread across 362 different species of microbe. Which one kitchen item did the study find teeming with germs?",
+    "question": "Researchers at Furtwangen University in Germany swabbed one everyday kitchen item in 2017 and turned up 362 different species of bacteria, up to 54 billion cells packed into a single cubic centimeter, as dense as human waste. Which kitchen item was it?",
     "answer": "The dish sponge",
     "choices": [
       "The dish sponge",
@@ -6800,7 +6670,7 @@
   },
   {
     "tier": 4,
-    "question": "You're grilling burgers out in the backyard. You carry the raw hamburger patties out to the grill on a big platter, cook them through, and then reach to pile the finished patties right back onto that same platter to bring inside. A careful cook stops your hand — that's a classic cross-contamination mistake. What's the fix?",
+    "question": "Out in the backyard, a cook carries raw burger patties to the grill on a big platter, cooks them through, then reaches to pile the finished burgers back onto that same platter. Another, more careful cook stops his hand: it is a classic cross-contamination mistake. What is the fix?",
     "answer": "Grab a fresh, clean platter for the cooked burgers.",
     "choices": [
       "Grab a fresh, clean platter for the cooked burgers.",
@@ -6813,7 +6683,7 @@
   },
   {
     "tier": 5,
-    "question": "Plenty of people rinse and microwave their kitchen sponge every day, sure they're keeping it germ-free. In 2017, German scientists at Furtwangen University compared those 'well-cleaned' sponges to sponges nobody had ever cleaned at all. The result was the opposite of what most cooks expected. What did the study find about the cleaned sponges?",
+    "question": "Every day a cook rinses and microwaves her kitchen sponge, sure she is keeping it free of germs. In 2017, researchers at Furtwangen University in Germany compared sponges their owners cleaned regularly with sponges nobody had ever cleaned. What did they find in the cleaned ones?",
     "answer": "Just as many bacteria, and the survivors were even tougher.",
     "choices": [
       "Just as many bacteria, and the survivors were even tougher.",
@@ -6826,7 +6696,7 @@
   },
   {
     "tier": 5,
-    "question": "You marinated raw chicken in a garlicky sauce for hours, and now you'd love to brush that same sauce over the meat as it finishes grilling. Straight from the bowl, though, it could make everyone sick. How do you make the used marinade safe to baste with?",
+    "question": "Raw chicken has soaked for hours in a garlicky marinade, and the cook would love to brush the same sauce over the meat as it finishes on the grill. Straight from the bowl, it could make everyone sick. How can the used marinade be made safe to baste with?",
     "answer": "Bring it to a rolling boil for a few minutes first.",
     "choices": [
       "Bring it to a rolling boil for a few minutes first.",
@@ -6839,7 +6709,7 @@
   },
   {
     "tier": 1,
-    "question": "We keep our skeleton hidden deep inside us, wrapped in muscle and skin. On a shrimp, crab or lobster, the hard frame that holds the whole body up is which part?",
+    "question": "A diner pulls meat from a lobster's tail. Her own skeleton sits deep inside her, under muscle and skin. On a lobster, crab or shrimp, what is the hard frame that holds the whole body up?",
     "answer": "Its shell — the hard outside you crack is the skeleton.",
     "choices": [
       "Its shell — the hard outside you crack is the skeleton.",
@@ -6852,7 +6722,7 @@
   },
   {
     "tier": 2,
-    "question": "A recipe tells you to 'devein' a shrimp — to pull out the dark line running down its back. Despite the name, that line is not a vein or any blood vessel at all. What is it really?",
+    "question": "A cook following a shrimp recipe is told to 'devein' each one, pulling out the dark line that runs down its back. Despite the name, the line is no vein or blood vessel at all. What is that dark line really?",
     "answer": "The shrimp's gut — the intestine that carries waste.",
     "choices": [
       "The shrimp's gut — the intestine that carries waste.",
@@ -6865,7 +6735,7 @@
   },
   {
     "tier": 2,
-    "question": "Shrimp, prawns, lobsters, crayfish, and crabs together make up a group called the 'decapods' — Greek for 'ten-legs' — with almost 15,000 species living in oceans, rivers, and lakes. But just one of those five familiar types alone accounts for nearly half of all decapod species. Which of the five is it?",
+    "question": "Every shrimp, prawn, lobster, crayfish and crab walks on ten legs, so biologists call them decapods, Greek for 'ten feet.' Of their nearly 15,000 species, one of those five kinds makes up almost half. Which one?",
     "answer": "Crabs.",
     "choices": [
       "Crabs.",
@@ -6878,7 +6748,7 @@
   },
   {
     "tier": 3,
-    "question": "In the cold Atlantic waters off New England lives the lobster, a hard-shelled cousin of the crab and shrimp. Its long, muscular tail is the piece diners pay top dollar for at seafood restaurants — the firmest, sweetest meat on the animal. But that same tail is also the lobster's escape organ, its way to flee a hungry seal or octopus. What does a lobster in danger do with it?",
+    "question": "A lobster crawling over the cold Atlantic floor off New England spots a hungry seal. Its long, muscular tail, the sweet meat diners pay top dollar for, is also its way to escape. What does the lobster do with it?",
     "answer": "Snaps it under and shoots backward through the water.",
     "choices": [
       "Snaps it under and shoots backward through the water.",
@@ -6891,7 +6761,7 @@
   },
   {
     "tier": 4,
-    "question": "In colonial New England, lobster was so easy to catch that after every storm it piled up knee-deep on the beaches. Nobody wanted it. Servants and apprentices complained about being fed too much of it. It was cheap 'poor man's food,' scorned by anyone who could afford beef. Besides eating it and using it as bait to catch better fish, what did New England farmers do with all those extra lobsters?",
+    "question": "After storms in colonial New England, lobsters piled up knee-deep on the beaches, by early accounts, and nobody wanted them. Lobster was cheap 'poor man's food,' fed to servants and apprentices and used as bait. What did farmers do with all that extra lobster?",
     "answer": "Spread it on their fields as crop fertilizer.",
     "choices": [
       "Spread it on their fields as crop fertilizer.",
@@ -6903,21 +6773,8 @@
     "topic": "crustaceans-on-the-plate-shrimp-crab-lobster"
   },
   {
-    "tier": 4,
-    "question": "For two centuries American lobster stayed cheap, because it spoiled fast and could not travel far from the coast. In the mid-1800s one new thing let dealers ship it deep inland, and within decades lobster became a fashionable delicacy. What made the difference?",
-    "answer": "The spread of railroads across the country.",
-    "choices": [
-      "The spread of railroads across the country.",
-      "Steam riverboats carrying it up the rivers.",
-      "New canals dug between inland towns.",
-      "Cheap ice cut from frozen lakes."
-    ],
-    "context": "Lobster's flip from cheap to luxury rode on transport: 1700s 'smack' boats with seawater tanks carried it live, then mid-1800s railroads and canning spread it far inland, and by the 1880s it was a fashionable dish among wealthy diners in Boston and New York — and prices jumped. Source: history.com, 'A Taste of Lobster History'  (Legend.)",
-    "topic": "crustaceans-on-the-plate-shrimp-crab-lobster"
-  },
-  {
     "tier": 5,
-    "question": "You may have heard that colonial prisoners were fed lobster so often they rebelled and demanded limits. Food historian Sandy Oliver searched the records, found the prison tale is later folklore, and traced the earliest 1800s version of the complaint to a completely different cheap food. Which food?",
+    "question": "Sandy Oliver, a food historian, went looking for the colonial prisoners said to have revolted over too many lobster dinners. She found no such prisoners in the records, only a tale from the 1900s, and the earliest 1800s version of the complaint was about a different cheap food. Which food?",
     "answer": "Salmon.",
     "choices": [
       "Salmon.",
@@ -6930,7 +6787,7 @@
   },
   {
     "tier": 5,
-    "question": "Walk through a good fish market and you'll notice something odd. Fish fillets sit on ice, but the lobsters are kept swimming in tanks, and the shrimp still have their heads on until you take them home to cook. A crustacean's meat spoils far, far faster than a fish fillet the moment the animal dies. What is it about a shrimp or lobster's body that wrecks the meat so quickly?",
+    "question": "In a good fish market, the fillets sit on ice, but the lobsters swim in tanks and the shrimp keep their heads on, packed in ice. The moment a crustacean dies, its meat spoils far faster than a fish fillet. What is it about a shrimp's or lobster's body that ruins the meat so quickly?",
     "answer": "Its own gut enzymes leak out and digest its muscle.",
     "choices": [
       "Its own gut enzymes leak out and digest its muscle.",
@@ -6943,7 +6800,7 @@
   },
   {
     "tier": 1,
-    "question": "For most of human history — thousands of years before anyone had electricity — there were no refrigerators, no freezers, no way to keep raw meat cold. Yet fresh meat from a slaughtered pig or cow still had to last a family through a long winter on the farm, or a whole crew through a long voyage at sea. What was the main way people kept that meat from rotting?",
+    "question": "A farm family slaughters a pig in late autumn, long before refrigerators, and the meat must last through winter and spring. For most of history, what was the main way people kept meat from rotting?",
     "answer": "Packing it in salt",
     "choices": [
       "Packing it in salt",
@@ -6956,7 +6813,7 @@
   },
   {
     "tier": 2,
-    "question": "For hundreds of years, sailing crews faced the same problem: months at sea with no fridge and no way to catch enough fresh food, so the whole trip's meat had to be packed in the hold before leaving port. As late as 1938, the Finnish tall ship Moshulu still fed her crew this old way on grain runs of over 100 days from Australia back to Europe. Along with rock-hard biscuit, what preserved meat packed those wooden barrels?",
+    "question": "Sailors aboard Moshulu, a Finnish tall ship, were still eating the old seafarers' ration in 1938, on grain runs of over 100 days from Australia to Europe. Besides rock-hard biscuit, what preserved meat filled their wooden barrels?",
     "answer": "Salted beef and pork",
     "choices": [
       "Salted beef and pork",
@@ -6969,7 +6826,7 @@
   },
   {
     "tier": 2,
-    "question": "In Ireland and later America, a salty pink beef dish called corned beef became a St. Patrick's Day favorite. But corned beef contains no corn at all — there is no maize anywhere in it. The name goes back to an old English use of the word 'corn' to mean any small grain or hard pellet, like a 'corn' of gunpowder. So what were the 'corns' packed onto the beef that gave the dish its name?",
+    "question": "A cook slices salty pink corned beef for a Saint Patrick's Day dinner, yet there is no corn in it. In older English a 'corn' was any small grain or hard pellet, like a 'corn' of gunpowder. What were the corns packed onto the beef?",
     "answer": "Coarse grains of salt",
     "choices": [
       "Coarse grains of salt",
@@ -6982,7 +6839,7 @@
   },
   {
     "tier": 3,
-    "question": "For thousands of years, sailors and farmers packed hams, sides of bacon, and whole fish in heavy salt to keep them from spoiling on long trips and through long winters. Salt-curing has a puzzle at its heart: salt itself is not a poison, yet no rotting bacteria can grow inside a heavily salted ham. So how does plain table salt actually stop the tiny microbes from ruining the meat?",
+    "question": "Sailors and farmers once packed hams, bacon and whole fish in heavy salt to last through long voyages and winters. Salt is no poison, yet no rotting bacteria grow inside a heavily salted ham. How does plain salt stop the microbes from ruining the meat?",
     "answer": "It draws the water out of them until they dry up",
     "choices": [
       "It draws the water out of them until they dry up",
@@ -6995,7 +6852,7 @@
   },
   {
     "tier": 3,
-    "question": "Ordinary table salt kills almost every spoilage microbe on cured meat. But there is one tiny killer, called Clostridium botulinum, that ordinary salt cannot stop. It grows deep inside sealed sausages and hams, and its toxin causes the deadly poisoning known as botulism. To block that one microbe, curers mix a tiny amount of a second, different salt into the cure. What is that second salt?",
+    "question": "A curer's salt stops almost every spoilage microbe, but one tiny killer, Clostridium botulinum, shrugs it off; it grows deep inside sealed sausages and hams, and its toxin causes botulism. What second salt does the curer add to block it?",
     "answer": "Nitrite",
     "choices": [
       "Nitrite",
@@ -7008,20 +6865,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1800s, doctors across Europe kept tracing a mysterious, often deadly poisoning back to one specific culprit on the table. Victims went numb, then couldn't swallow, then couldn't breathe — and every case traced back to a batch of spoiled preserved meat. A German doctor named Justinus Kerner studied the outbreaks and gave the illness a Latin name, 'botulism,' from the word botulus — the very food he kept finding at the source. What everyday food does botulus mean?",
-    "answer": "Sausage",
-    "choices": [
-      "Sausage",
-      "Bacon",
-      "Cheese",
-      "Bread"
-    ],
-    "context": "Botulus is Latin for 'sausage.' In 1800s Europe the poisoning was first pinned on badly preserved sausages and hams; the cause turned out to be a toxin from the microbe now called Clostridium botulinum. Source: https://en.wikipedia.org/wiki/Botulism",
-    "topic": "curing-salt-as-a-preservation-machine"
-  },
-  {
-    "tier": 4,
-    "question": "A butcher curing bacon or ham only uses a tiny pinch of nitrite — the special second salt that blocks botulism. Too much nitrite would actually poison the eater, so it comes pre-mixed with a much larger amount of regular table salt, sold as a bright-pink powder called 'pink curing salt.' The pink color is not natural — the makers add a food dye on purpose before it ever reaches the shelf. Why do they dye it?",
+    "question": "A butcher curing bacon adds only a pinch of the second salt that blocks botulism, because too much of it would poison the eater. He buys it ready-mixed with plain salt as 'pink curing salt,' which its makers color a bright pink on purpose. Why do they dye it?",
     "answer": "So cooks never confuse it with ordinary salt",
     "choices": [
       "So cooks never confuse it with ordinary salt",
@@ -7034,7 +6878,7 @@
   },
   {
     "tier": 4,
-    "question": "Roast a joint of beef and it turns gray-brown all the way through, from crust to core. Yet a slice of ham, a hot dog straight off the grill, or a crisp rasher of bacon stays bright pink even after it is fully cooked — the same color it was going in. Every cured pork product shares this trick, and it comes from the same tiny bit of nitrite the curer added to block botulism. What keeps cured meat pink when ordinary cooked meat goes gray?",
+    "question": "A beef roast turns gray-brown all the way through in the oven, yet a slice of ham, a grilled hot dog or a crisp rasher of bacon stays bright pink even when fully cooked. The trick comes from the same small addition the curer made to block botulism. What keeps cured meat pink?",
     "answer": "The nitrite locks the meat's own pigment as pink",
     "choices": [
       "The nitrite locks the meat's own pigment as pink",
@@ -7047,7 +6891,7 @@
   },
   {
     "tier": 5,
-    "question": "In the hills around the town of Parma in northern Italy, craftsmen have made prosciutto di Parma the same way for centuries — a whole raw pork leg turned into silky, ruby-pink slices that a diner eats without ever cooking it. There is no smoke, no vinegar, no fire. Just two simple things, given more than a year of patience, do the whole job of making that raw ham safe. What are they?",
+    "question": "In the hills around Parma in northern Italy, a whole raw pork leg becomes prosciutto, silky ruby-pink slices that a diner eats without ever cooking them. There is no smoke, no vinegar and no fire. What two simple things, given more than a year, make the raw ham safe?",
     "answer": "Salt and months of cool air",
     "choices": [
       "Salt and months of cool air",
@@ -7060,7 +6904,7 @@
   },
   {
     "tier": 5,
-    "question": "In the town of Langhirano near Parma in Italy, each aged ham must pass one last test before it can be branded with the five-point Ducal Crown of Parma. An inspector called the maestro salatore walks down rows of hanging hams and pierces each one in several spots with a slender needle. He pulls the needle out and sniffs it — checking that the ham has cured cleanly, with no rot hidden deep inside. What is that traditional testing needle made of?",
+    "question": "An inspector in the town of Langhirano, near Parma, walks the rows of hanging hams before any may wear the five-pointed Ducal Crown. He pierces each ham in several places with a slender needle, then sniffs the needle to check that the ham has cured cleanly. What is that needle made of?",
     "answer": "Horse bone",
     "choices": [
       "Horse bone",
@@ -7073,7 +6917,7 @@
   },
   {
     "tier": 2,
-    "question": "Walk into any Indian home and ask the cook for 'curry' and she'll look confused — there is no single Indian dish by that name. English speakers, arriving in India in the 1600s, heard one word from Tamil (a language of southern India) and stretched it to cover hundreds of very different dishes across the whole country. In Tamil, the original word 'kari' had a much simpler, plainer meaning. What did kari originally mean?",
+    "question": "An Indian home cook asked for 'curry' would look puzzled: India has no single dish of that name. English speakers in the 1600s borrowed the word from Tamil, a language of southern India, where kari had a simpler, plainer meaning. What did kari mean?",
     "answer": "A spiced sauce eaten over rice",
     "choices": [
       "A spiced sauce eaten over rice",
@@ -7086,7 +6930,7 @@
   },
   {
     "tier": 2,
-    "question": "Walk into a Western pantry and you will usually spot a small tin of bright yellow 'curry powder' — one all-purpose blend meant to flavor anything from chicken to rice. But step into a real Indian kitchen and you will find no such tin anywhere. The blend was actually a British invention, sold in London by the late 1700s to officers and merchants home from India. What job was curry powder invented to do?",
+    "question": "A small tin of bright yellow curry powder, one blend for everything from chicken to rice, sits in many Western pantries but in no traditional Indian kitchen. The British invented it and sold it in London by the late 1700s. What job was it made to do?",
     "answer": "Let cooks fake Indian flavor without fresh spices",
     "choices": [
       "Let cooks fake Indian flavor without fresh spices",
@@ -7112,7 +6956,7 @@
   },
   {
     "tier": 4,
-    "question": "'Curry powder' sounds like it came straight from an Indian bazaar. In truth, the first tins of it ever sold were advertised in London in 1784 — and the shop that sold them had nothing to do with groceries. What kind of London shop first sold commercial curry powder?",
+    "question": "The first tins of curry powder ever sold went on offer in London in 1784, a long way from any Indian bazaar, and the shop that advertised them had nothing to do with groceries. What kind of London shop first sold the powder?",
     "answer": "A perfumer's warehouse",
     "choices": [
       "A perfumer's warehouse",
@@ -7125,7 +6969,7 @@
   },
   {
     "tier": 4,
-    "question": "On the spice shelf of an Indian kitchen sits a small tin of 'garam masala' — a fragrant blend of cinnamon, cloves, cardamom, black pepper, and bay leaf. In Hindi, the name translates as 'warm spice mix.' Yet a proper garam masala carries no chili fire at all — nothing that burns the tongue or makes you sweat. So what does the 'warm' in the name actually point to?",
+    "question": "On the spice shelf of an Indian kitchen sits a tin of garam masala, a fragrant blend of cinnamon, cloves, cardamom, black pepper and bay leaf. Its Hindi name means 'warm spice mix,' yet a proper garam masala carries no chili fire at all. What does the 'warm' in its name point to?",
     "answer": "Spices believed to warm the body from within",
     "choices": [
       "Spices believed to warm the body from within",
@@ -7138,7 +6982,7 @@
   },
   {
     "tier": 1,
-    "question": "High in the Himalayan mountains of Nepal, porters carry huge loads of gear up steep trails for foreign hikers and climbers. They swear one cheap plate of food keeps them strong all day long: soft yellow lentils poured over a mound of steaming white rice. Passing tired hikers on the trail, the porters chant its name to cheer them on: '____ Power, 24 Hour!'",
+    "question": "Porters hauling heavy loads up Nepal's Himalayan trails swear by one cheap plate: soft lentils over steaming rice. To cheer tired hikers they chant its name, '____ Power, 24 Hour!' Which dish is it?",
     "answer": "Dal Bhat",
     "choices": [
       "Dal Bhat",
@@ -7151,7 +6995,7 @@
   },
   {
     "tier": 2,
-    "question": "Dried beans are so tough that most recipes tell the cook to soak them in cold water overnight, then simmer them for another two hours. But an Indian home cook can toss a cup of red lentils straight into a pot of water and have a bubbling bowl of dal — a spiced lentil stew — on the table in under an hour. No overnight soak needed. What is different about the little red lentils used for dal that lets them skip the soak?",
+    "question": "An Indian home cook tips a cup of red lentils straight into a pot of water and has a bubbling bowl of dal on the table in under an hour, with none of the overnight soaking dried beans need. What is different about these lentils?",
     "answer": "Each one has been halved, so its soft insides already sit open to the water.",
     "choices": [
       "Each one has been halved, so its soft insides already sit open to the water.",
@@ -7164,7 +7008,7 @@
   },
   {
     "tier": 2,
-    "question": "Across India, hundreds of millions of people eat little or no meat. Yet most stay well fed. The secret sits in the cheap pot of dal on the stove. Among plants, pulses are India's best cheap source of ___?",
+    "question": "A pot of dal bubbles on a stove in India, where hundreds of millions of people eat little or no meat, yet most stay well fed. Pulses like these lentils are the country's cheapest plant source of one key nutrient. Which one?",
     "answer": "protein",
     "choices": [
       "protein",
@@ -7177,7 +7021,7 @@
   },
   {
     "tier": 3,
-    "question": "The human body needs about twenty tiny building blocks called amino acids to piece together its own protein. A food that carries all of them is called a 'complete' protein. Rice on its own falls short on one of those blocks, and a bowl of lentil dal falls short on a different one — so each, eaten alone, is 'incomplete.' Yet a plate of dal spooned over rice has fed India well for thousands of years. Why does that simple pairing work so well?",
+    "question": "A cook in India spoons dal over a mound of rice, a pairing that has fed the country well for thousands of years. Rice alone falls short on one of the amino acids the body needs, and lentils fall short on a different one. Why does the pair work so well?",
     "answer": "Each supplies the building block the other lacks, so together they make one complete protein.",
     "choices": [
       "Each supplies the building block the other lacks, so together they make one complete protein.",
@@ -7189,21 +7033,8 @@
     "topic": "dal-why-lentils-rice-is-a-nutritional-power-couple"
   },
   {
-    "tier": 4,
-    "question": "A pot of dal — simmered lentils with a little turmeric and salt — tastes flat and one-note on its own, so an Indian cook almost never serves it plain. In the last minute before the pot hits the table comes a dramatic finishing flourish called tadka (or tarka in the north), and suddenly the whole kitchen fills with a loud sizzle and a wave of fragrance. What is that final move that transforms the whole bowl?",
-    "answer": "Frying whole spices in hot ghee, then pouring the sizzling fat over the top of the dal.",
-    "choices": [
-      "Frying whole spices in hot ghee, then pouring the sizzling fat over the top of the dal.",
-      "Whisking a spoonful of cold yogurt into the pot to cool and thicken the dal.",
-      "Stirring a handful of raw ground spices straight into the dal to steep as it sits.",
-      "Folding fresh chopped herbs and a squeeze of lime through the dal at the last second."
-    ],
-    "context": "That finishing move is the tadka (also called chaunk or baghar): whole spices — cumin seeds, mustard seeds, a pinch of asafoetida, dried red chilies — are fried in hot ghee or oil until fragrant, then the sizzling fat is poured over the finished dal. The 'shhhh' you hear is the aromatic fat sealing its flavor onto the top. Why pour it in fat instead of stirring the spices into the pot? Most of a spice's aroma compounds are fat-soluble, so blooming them in hot ghee pulls out far more flavor than the watery dal ever could. Sources: en.wikipedia.org/wiki/Dal; vegrecipesofindia.com/restaurant-style-dal-tadka; everydaynourishingfoods.com/tadka-indian-tempering",
-    "topic": "dal-why-lentils-rice-is-a-nutritional-power-couple"
-  },
-  {
     "tier": 5,
-    "question": "Lentils and other seeds hide a natural compound called phytic acid — a chemical they use to lock up minerals they will need if they ever get to grow into a new plant. Inside a bowl of dal, that same phytic acid grabs onto the iron and zinc in the meal and blocks the human gut from soaking those minerals up. There is a cheap, patient kitchen step that wakes the seed up and breaks down most of the phytic acid. Which step frees the most iron and zinc for the body?",
+    "question": "Lentils and other seeds hide phytic acid, which locks up minerals they will need if they ever grow into a new plant. In a bowl of dal, it grabs the meal's iron and zinc so the gut cannot soak them up. One cheap, patient step wakes the seed and breaks down most of the acid. Which step frees the most iron and zinc?",
     "answer": "Let the lentils sprout - begin to germinate - for a day or two before cooking them.",
     "choices": [
       "Let the lentils sprout - begin to germinate - for a day or two before cooking them.",
@@ -7216,7 +7047,7 @@
   },
   {
     "tier": 1,
-    "question": "Dashi is the golden broth at the heart of Japanese cooking — the base of miso soup, hot noodle bowls, and simmered dishes. It is made from just two ingredients: dried, shaved flakes of the bonito fish, and a strip of one dried sea plant harvested off Japan's cold northern coasts. Which dried sea plant is the second ingredient?",
+    "question": "A Japanese cook makes dashi, the golden broth beneath miso soup, from just two things: shavings of dried bonito and one dried sea plant from Japan's cold northern coasts. Which plant?",
     "answer": "kombu",
     "choices": [
       "kombu",
@@ -7228,21 +7059,8 @@
     "topic": "dashi-and-the-discovery-of-umami"
   },
   {
-    "tier": 1,
-    "question": "Sip a spoonful of dashi — the light, clear Japanese broth made from dried kelp and dried fish flakes — and your tongue reports a deep, mouth-filling savoriness. Yet it plainly isn't salty, sweet, sour, or bitter. Scientists now count this savory sensation as a fifth basic taste, sitting right alongside those other four. What is it called?",
-    "answer": "umami",
-    "choices": [
-      "umami",
-      "kokumi",
-      "wasabi",
-      "mirin"
-    ],
-    "context": "That was the whole puzzle: a broth that clearly tastes of SOMETHING, but of none of the four tastes everyone already knew. That savory quality is umami -- now recognized as the fifth basic taste alongside sweet, sour, salty, and bitter. Source: umamiinfo.com 'What is Umami'; PMC 'Umami the Fifth Basic Taste'.",
-    "topic": "dashi-and-the-discovery-of-umami"
-  },
-  {
     "tier": 2,
-    "question": "In a Japanese home kitchen, a cook starts nearly every meal by making a light stock called dashi. She simmers a strip of dried kombu — a broad brown kelp harvested from Japan's cold coast — in a pot of water. As the kelp warms, it releases a single compound that scientists say is the real carrier of the deep savory taste the Japanese call umami. What is that savory compound?",
+    "question": "In a Japanese home kitchen, a cook starts nearly every meal with dashi, warming a strip of dried kelp in a pot of water. As it warms, the kelp releases one compound that scientists call the real carrier of the broth's deep savory taste. What is that compound?",
     "answer": "glutamate",
     "choices": [
       "glutamate",
@@ -7254,8 +7072,8 @@
     "topic": "dashi-and-the-discovery-of-umami"
   },
   {
-    "tier": 3,
-    "question": "In 1908 in Tokyo, the Japanese chemist Kikunae Ikeda tasted his wife's kombu kelp soup and realized it carried a savory flavor unlike sweet, salty, sour, or bitter. He named this fifth taste umami. He built the word from 'mi,' meaning taste, and the everyday Japanese word 'umai.' A diner at the table blurts out 'umai!' over a truly ___ meal?",
+    "tier": 2,
+    "question": "Kikunae Ikeda, a chemist in Tokyo, tasted his wife's kelp soup in 1908 and named its savory depth umami. He built the word from mi, 'taste,' and umai, an everyday Japanese word a diner might exclaim at the table. What does umai mean?",
     "answer": "delicious",
     "choices": [
       "delicious",
@@ -7268,7 +7086,7 @@
   },
   {
     "tier": 3,
-    "question": "We slice it into pasta sauce, chili, and salads as if it were a vegetable, but botanists insist it is really a fruit — a soft berry that grows on a vine. It gets its rich, savory pull from the very same glutamate compound scientists first found in Japanese kombu kelp. And it grows more savory, not less, as it ripens from green to deep red on the vine. Which everyday food is it?",
+    "question": "A cook slices it into pasta sauce, chili and salads as if it were a vegetable, yet botanists call it a fruit, a berry that grows on a vine. It carries the same savory compound Kikunae Ikeda found in kelp, and it grows more savory as it ripens from green to red. Which food is it?",
     "answer": "tomato",
     "choices": [
       "tomato",
@@ -7281,7 +7099,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1908 a Tokyo chemistry professor named Kikunae Ikeda tasted a bowl of his wife's kelp broth and set out to find what gave it its rich savory kick. He isolated the chemical responsible, called glutamate, and gave the new taste a name: umami. But Ikeda didn't stop at naming it. He argued that humans evolved to enjoy glutamate because that taste reliably points to one key nutrient in food. Which nutrient does umami help us hunt down?",
+    "question": "His wife's kelp broth set Kikunae Ikeda hunting, in 1908, for the source of its rich savory kick. He pulled out the compound, named the taste umami, and then argued that humans evolved to enjoy it because it reliably points to one key nutrient in food. Which nutrient?",
     "answer": "protein",
     "choices": [
       "protein",
@@ -7293,21 +7111,8 @@
     "topic": "dashi-and-the-discovery-of-umami"
   },
   {
-    "tier": 4,
-    "question": "Kombu (a large dried Japanese sea kelp) simmered alone in water makes a faintly savory broth — gentle and clean. Dried bonito flakes (thin shavings taken from a smoked, dried tuna-like fish) steeped alone are also mild, meaty, and quiet. Yet dashi, the Japanese soup base made by combining both, tastes powerfully of umami — far more savory than either ingredient can explain on its own. What is the trick behind the leap in flavor?",
-    "answer": "The kelp's savory molecule and the fish's multiply each other's power.",
-    "choices": [
-      "The kelp's savory molecule and the fish's multiply each other's power.",
-      "Long simmering boils off water and concentrates the broth.",
-      "Sea salt carried in the kelp sharpens the fish's flavor.",
-      "Fat from the fish coats the tongue and makes it linger."
-    ],
-    "context": "The kelp gives glutamate; the bonito brings a SECOND savory molecule, inosinate (found in dried bonito by Ikeda's student Shintaro Kodama in 1913; a third, guanylate, was later found in dried shiitake). Together they don't just add -- the umami MULTIPLIES, so the combined broth tastes many times more savory than either ingredient alone. That multiplication is exactly why the kombu-plus-bonito pairing became the timeless classic. Source: PMC 'Umami the Fifth Basic Taste'; ramenchemistry.com 'Umami Synergy'.  (Legend.)",
-    "topic": "dashi-and-the-discovery-of-umami"
-  },
-  {
     "tier": 5,
-    "question": "For decades in America, three letters on a food label filled shoppers with dread: monosodium glutamate (MSG). Many diners believed it was some strange industrial lab chemical secretly slipped into Chinese-restaurant cooking, blamed for headaches and racing hearts. But when scientists strip away the rumor and look at the actual molecule in that white powder, what is the monosodium glutamate on the label, really?",
+    "question": "A cook turns over a jar and finds the name that for decades filled American shoppers with dread: monosodium glutamate (MSG). Many believed it was a strange lab chemical slipped into Chinese restaurant food and blamed it for headaches and racing hearts. Stripped of the rumor, what is the white powder, really?",
     "answer": "The same savory glutamate found naturally in kelp, parmesan, and cured ham.",
     "choices": [
       "The same savory glutamate found naturally in kelp, parmesan, and cured ham.",
@@ -7320,7 +7125,7 @@
   },
   {
     "tier": 5,
-    "question": "The dried bonito at the heart of dashi is called katsuobushi. It is smoked for weeks, then aged with mold in the sun for months. It hardens into a block so tough it holds a Guinness record: hardest food on Earth. How does a cook get any of it into the soup pot?",
+    "question": "Bonito fish spends weeks in smoke and months curing with mold in the sun before it becomes katsuobushi, the heart of dashi. By then it is so tough that it holds a Guinness record: hardest food on Earth. How does a cook get any of it into the soup pot?",
     "answer": "Shaves off paper-thin curls with a blade, as if planing wood.",
     "choices": [
       "Shaves off paper-thin curls with a blade, as if planing wood.",
@@ -7333,7 +7138,7 @@
   },
   {
     "tier": 1,
-    "question": "In a hot restaurant kitchen, a young cook keeps pulling batch after batch of limp, sad, oil-logged french fries out of his fryer. They droop in his hand and taste greasy on the tongue. He can't work out why. An old chef walks over, watches him drop one batch of raw potato sticks into the oil, and says the fries would come out crisp and barely greasy if he changed just one thing about the oil. What should he do?",
+    "question": "A young cook keeps pulling limp, oil-logged fries from his fryer. An old chef watching him says one change to the oil would make them come out crisp and barely greasy. What should he do?",
     "answer": "Get the oil hotter before frying",
     "choices": [
       "Get the oil hotter before frying",
@@ -7346,7 +7151,7 @@
   },
   {
     "tier": 2,
-    "question": "Drop a handful of fresh-cut potato sticks into a pot of oil heated to about 350 degrees and the pan erupts. The whole surface roars with a furious storm of bubbles — thousands of tiny explosions too fast for the eye to follow. Those bubbles are not bubbles of oil; they are something rushing out of the potato itself, forced from deep inside by the sudden hit of heat. What is racing out?",
+    "question": "Fresh-cut potato sticks hit a pot of oil at about 350 degrees, and the pot erupts in a roaring storm of bubbles. The bubbles are not boiling oil; something is rushing out of the potato itself. What is racing out?",
     "answer": "Water, flashing to steam",
     "choices": [
       "Water, flashing to steam",
@@ -7359,7 +7164,7 @@
   },
   {
     "tier": 2,
-    "question": "A seasoned cook frying fritters — small dollops of batter dropped into hot oil — never sets a timer. She just watches the oil. At first the pan roars with a furious storm of tiny bubbles as water races out of the wet batter. Little by little the bubbles slow and shrink, until only a few big, lazy ones plop up to the surface. To her, that quieting is a clear signal. What does it tell her?",
+    "question": "A seasoned cook frying fritters never sets a timer; she watches the oil. It roars at first with a furious storm of tiny bubbles, then slowly calms until only a few big, lazy ones plop to the surface. What does that quieting tell her?",
     "answer": "The fritters are nearly done",
     "choices": [
       "The fritters are nearly done",
@@ -7372,7 +7177,7 @@
   },
   {
     "tier": 3,
-    "question": "Here's the paradox of frying: the food sits fully submerged in oil the entire time, yet properly fried food comes out barely greasy. Something at the surface physically holds the oil out while it cooks - and it isn't the crust. What keeps the oil from soaking in?",
+    "question": "A basket of fries sits fully under hot oil the whole time it cooks, yet properly fried potatoes come out barely greasy. Something at their surface holds the oil back as they fry, and it is not the crust. What keeps the oil out?",
     "answer": "The outward blast of escaping steam",
     "choices": [
       "The outward blast of escaping steam",
@@ -7385,7 +7190,7 @@
   },
   {
     "tier": 4,
-    "question": "A fried potato's surface starts out soaking wet, and a wet surface can't climb past the boiling point of water - about 212F - no matter how hot the oil around it. Only once the outer layer dries out does the surface temperature suddenly rocket upward toward the oil's heat. What does that sudden jump finally let happen?",
+    "question": "A potato stick enters the fryer with a soaking-wet surface, and while it stays wet it cannot climb past water's boiling point, about 212F, however hot the oil around it. Once the outer layer dries, its temperature shoots up toward the oil's. What does that jump finally let happen?",
     "answer": "The crust browns and turns golden",
     "choices": [
       "The crust browns and turns golden",
@@ -7411,7 +7216,7 @@
   },
   {
     "tier": 1,
-    "question": "You are cooking dinner and you want a plate of golden brown, crispy sautéed mushrooms. To save time, you skip the trick of working in small batches. You just dump the whole basket of button mushrooms into a single hot pan at once and let them cook. Twenty minutes later, when you look in the pan, how do the mushrooms come out?",
+    "question": "A cook wants golden, crispy mushrooms but is in a hurry, so she tips a whole basket into one hot pan at once instead of working in small batches. Twenty minutes later, how do the mushrooms come out?",
     "answer": "Pale, gray and soft, never crisping up",
     "choices": [
       "Pale, gray and soft, never crisping up",
@@ -7424,7 +7229,7 @@
   },
   {
     "tier": 2,
-    "question": "You dump a whole basket of fresh button mushrooms into a hot, oiled pan on the stove and turn up the burner. Twenty minutes later, the mushrooms sit pale and gray in a wide gray puddle of liquid — nowhere near the golden brown you wanted. But the cook never poured any broth or water into the pan; she only added mushrooms and a splash of oil. So where did that puddle actually come from?",
+    "question": "Only button mushrooms and a splash of oil go into the hot pan, never a drop of broth or water. Twenty minutes later the mushrooms sit in a wide puddle of liquid, nowhere near golden brown. Where did the puddle come from?",
     "answer": "Water driven out of the mushrooms by the heat",
     "choices": [
       "Water driven out of the mushrooms by the heat",
@@ -7437,7 +7242,7 @@
   },
   {
     "tier": 3,
-    "question": "Browning only fires once a food's surface gets seriously hot — up around 150 C (300 F). So here's the puzzle: crank the burner as high as you like, yet a wet, crowded pan stays too cool to brown — its cooking surface simply won't rise past one hard ceiling. What sets that temperature ceiling?",
+    "question": "Flames roar under a crowded pan of wet mushrooms, but browning only takes off near 150 C (300 F), and however high the burner goes, the food's surface will not climb past one hard ceiling. A braise in a covered pot stays pale for the same reason. What sets that ceiling?",
     "answer": "The boiling point of water",
     "choices": [
       "The boiling point of water",
@@ -7463,7 +7268,7 @@
   },
   {
     "tier": 4,
-    "question": "A cook building a big beef stew starts with a pound of raw cubes and a scorching-hot, dry pan. Instead of dumping the whole pile in at once, she works in three or four small rounds — a few cubes at a time, letting each batch hiss and turn deep brown before she scrapes it out and adds the next. Only when every cube has that crusty brown edge does any broth go into the pot. What does patient batch-searing give the finished stew that tossing all the cubes in at once cannot?",
+    "question": "Building a big beef stew, a cook works in small rounds, searing a few raw cubes at a time in a scorching, dry pan until each batch hisses and turns deep brown, and adds the broth only after every cube is crusty. What does that patient searing give the stew that crowding the cubes in at once cannot?",
     "answer": "A deep, browned, savory flavor cooked into the meat",
     "choices": [
       "A deep, browned, savory flavor cooked into the meat",
@@ -7476,7 +7281,7 @@
   },
   {
     "tier": 1,
-    "question": "A home cook is about to fry a batch of raw chicken thighs for dinner. She stands at the kitchen sink and wonders how she should handle the pink poultry before it goes into the hot pan. Which move actually matches the food-safety advice of the U.S. Department of Agriculture (USDA), the American agency that watches over meat?",
+    "question": "A home cook stands at the sink with a batch of raw chicken, unsure how to handle the pink poultry before it goes into the hot pan. Which move matches the food-safety advice of the U.S. Department of Agriculture?",
     "answer": "Skip washing and cook it as it is",
     "choices": [
       "Skip washing and cook it as it is",
@@ -7489,7 +7294,7 @@
   },
   {
     "tier": 2,
-    "question": "Rinsing raw chicken under the faucet before cooking feels like the clean, careful thing to do. But the U.S. Department of Agriculture (USDA) — the federal agency that studies kitchen safety — calls it the riskiest step a home cook can take at the sink, and tells home cooks to skip it entirely. When the tap water strikes the raw bird, something happens in a fine invisible spray that most cooks never notice. What is it?",
+    "question": "Raw chicken under a running faucet looks like the cleanest, most careful start to dinner, yet the U.S. Department of Agriculture tells home cooks to skip the rinse entirely. When the tap water strikes the bird, what happens that most cooks never notice?",
     "answer": "A fine spray carries the bacteria onto nearby counters and food",
     "choices": [
       "A fine spray carries the bacteria onto nearby counters and food",
@@ -7502,7 +7307,7 @@
   },
   {
     "tier": 3,
-    "question": "At the kitchen sink, a cook rinses raw chicken parts under the cold tap for a long time. She is sure the running water is washing dangerous salmonella bacteria — the germs that cause food poisoning — out of the folds of the meat and down the drain. When the stream running off the chicken finally looks clear, how much of the salmonella has actually come off the bird?",
+    "question": "At the kitchen sink, a cook rinses raw chicken parts under the cold tap, sure the water is washing salmonella, the germ behind food poisoning, out of the folds of the meat and down the drain. When the water running off finally looks clear, how much of the salmonella has come off?",
     "answer": "Almost none — the bacteria cling fast to the meat",
     "choices": [
       "Almost none — the bacteria cling fast to the meat",
@@ -7593,20 +7398,7 @@
   },
   {
     "tier": 1,
-    "question": "In a butcher's case sit two very different cuts of beef, both cut from the same cow. One is the shoulder, taken from a big muscle the cow uses all day long to walk and hold up its head. The other, cut from lower down along the back, is called the tenderloin — the piece so soft that diners can slice through it with just a fork. Why is the tenderloin so much softer than the shoulder or the leg?",
-    "answer": "It barely moves during the animal's life",
-    "choices": [
-      "It barely moves during the animal's life",
-      "It sits closest to the bone",
-      "It is soaked in natural fat",
-      "It is the animal's youngest muscle"
-    ],
-    "context": "The tenderloin runs along the spine, a muscle that barely works while the animal is alive, so its fibers stay thin and soft. Hard-working muscles like the shoulder and legs grow thick and tough by comparison. Source: Meathead / AmazingRibs - Basic Meat Science For Cooks (https://amazingribs.com/technique-and-science/cooking-science/basic-meat-science/).",
-    "topic": "dry-heat-vs-wet-heat-matching-the-method-to-the-cut"
-  },
-  {
-    "tier": 1,
-    "question": "The shank is a cut of beef from the cow's lower leg — a muscle that walked and worked all day. The tenderloin is a soft strip along the cow's back that barely moved. Cook the shank fast and hot, like a steak, and it chews like rubber. A tenderloin cooked the same way falls apart under a fork. What is the tough shank packed with that the soft tenderloin has almost none of?",
+    "question": "At the butcher's counter, beef shank from a hard-working lower leg sits beside tenderloin from a strip along the back that barely moved. Cooked fast like a steak, the shank chews like rubber. What is it packed with that the tenderloin has almost none of?",
     "answer": "Collagen",
     "choices": [
       "Collagen",
@@ -7619,7 +7411,7 @@
   },
   {
     "tier": 2,
-    "question": "A chuck roast is a thick slab of beef cut from the steer's shoulder — a muscle that hauls the animal's whole weight around all day, every day. Because it works so hard, the meat is packed with tough connective tissue and cooks up chewy and rubbery if you rush it. But cooked the right way, this same cheap, ugly cut turns fall-apart tender and rich. How should you cook a chuck roast to turn it tender?",
+    "question": "A cook brings home a chuck roast, a cheap slab from the steer's hard-working shoulder, full of tough connective tissue that turns chewy and rubbery if rushed. Cooked the right way, it becomes fall-apart tender. How should she cook it?",
     "answer": "Simmer it low and slow in liquid for hours",
     "choices": [
       "Simmer it low and slow in liquid for hours",
@@ -7632,7 +7424,7 @@
   },
   {
     "tier": 2,
-    "question": "You've bought a beef brisket — a big, flat slab cut from the steer's chest, packed with tough, chewy connective tissue that needs slow, gentle heat to melt into softness. Feeling impatient one evening, you skip the long slow smoker and toss the raw brisket straight onto a blazing-hot backyard grill for just a few minutes a side, treating it exactly like a rib-eye steak. How does the brisket come out?",
+    "question": "An impatient cook skips the long, slow smoker and throws a raw beef brisket, a slab from the steer's chest full of tough connective tissue, onto a blazing grill, searing each side for just a few minutes like a rib-eye. How does the brisket come out?",
     "answer": "Even tougher, drier, and chewier",
     "choices": [
       "Even tougher, drier, and chewier",
@@ -7645,7 +7437,7 @@
   },
   {
     "tier": 4,
-    "question": "A slow beef stew calls for a tough, cheap cut called chuck roast — meat from the cow's hard-working shoulder that softens beautifully after three hours in wine and broth. But the cook has run out of chuck. So she grabs a filet mignon, the priciest, most tender little steak in the butcher's case, and tosses it into the same wine and stock to braise for hours the way you would a chuck. How does that filet come out of the pot?",
+    "question": "Setting out to make a slow beef stew, a cook finds she is out of chuck, the cheap shoulder cut that softens after hours in wine and broth. She grabs a filet mignon, the priciest and most tender steak in the case, and braises it for hours instead. How does the filet come out of the pot?",
     "answer": "A dried-out steak, dull and gray",
     "choices": [
       "A dried-out steak, dull and gray",
@@ -7658,7 +7450,7 @@
   },
   {
     "tier": 4,
-    "question": "A braise and a stew are cooking cousins — both are slow, gentle simmers that turn tough, cheap cuts of meat fall-apart tender over a couple of hours. Chefs tell them apart by just two details: the size of the meat pieces and the amount of liquid in the pot. A braise uses one big single piece of meat, like a whole pot roast, with just enough liquid to come partway up its side. A stew, by contrast, uses small bite-size chunks. So how much liquid does a stew use?",
+    "question": "A chef tells a braise from a stew by two details: the size of the meat and the depth of the liquid. A braise uses one big piece of meat, a whole pot roast for instance, with liquid only partway up its side; a stew uses small, even chunks. How much liquid does the stew use?",
     "answer": "Enough to cover the meat completely",
     "choices": [
       "Enough to cover the meat completely",
@@ -7671,20 +7463,7 @@
   },
   {
     "tier": 5,
-    "question": "A cook simmers a big cut of beef cheek in a covered pot with wine and stock. After six hours the meat is meltingly tender — but pale and greyish, not the deep chestnut color a steak gets when it hits a hot grill. That crusty flavor comes from the Maillard browning reaction, which fires up only at very high heat. No matter how long the beef braises in the sealed pot, its surface refuses to brown. Why not?",
-    "answer": "The liquid can't get hot enough - water stalls out near boiling",
-    "choices": [
-      "The liquid can't get hot enough - water stalls out near boiling",
-      "The tight lid traps steam that rinses the color away",
-      "The gentle heat isn't strong enough to cook the surface",
-      "The meat moves around too much in the bubbling liquid"
-    ],
-    "context": "Browning (the Maillard reaction) only really takes off around 280-300F, but water boils at about 212F (100C) and can't climb past it - so a wet pot never reaches browning heat. Boil, poach, or braise all you like: no crust forms in the liquid. Source: Modernist Cuisine - Using the Maillard Reaction (https://modernistcuisine.com/mc/using-the-maillard-reaction-in-cooking/); Food Science Toolbox - Understanding the Maillard Reaction (https://foodsciencetoolbox.com/understanding-the-maillard-reaction-in-cooking/).",
-    "topic": "dry-heat-vs-wet-heat-matching-the-method-to-the-cut"
-  },
-  {
-    "tier": 5,
-    "question": "A classic French pot roast comes to the table with both a deep-brown, savory crust and fall-apart tender meat — even though it spent hours shut in a covered pot bubbling with wine and stock. The tenderness is easy: slow braising breaks the beef down. But the browned crust needs dry, blistering heat that the sealed pot never reaches. So when in the process, and how, does the cook actually build that crust?",
+    "question": "A classic French pot roast comes to the table with a deep-brown, savory crust and fall-apart meat, though it spent hours in a covered pot of wine and stock. Slow braising gives the tenderness, but the crust needs dry, blistering heat the sealed pot never reaches. When and how does the cook build that crust?",
     "answer": "Sear it in a screaming-hot dry pan before any liquid goes in",
     "choices": [
       "Sear it in a screaming-hot dry pan before any liquid goes in",
@@ -7697,7 +7476,7 @@
   },
   {
     "tier": 1,
-    "question": "In the tiny city-state of Singapore, underground trains called the MRT carry riders all across the island. On the doors of every train car, no-entry signs ban certain items from coming aboard. Since 1988, one tropical fruit — the spiky, football-sized durian from Southeast Asia — has had its own picture right there on the sign. What is it about the durian that gets this fruit barred from the trains?",
+    "question": "Riders on Singapore's underground trains pass no-entry signs on every car, and since 1988 one spiky, football-sized fruit, the durian, has had its own picture there. Why is it barred?",
     "answer": "its overpowering smell, which lingers in the closed cars",
     "choices": [
       "its overpowering smell, which lingers in the closed cars",
@@ -7710,7 +7489,7 @@
   },
   {
     "tier": 2,
-    "question": "Deep in the steamy rainforests of Borneo, Sumatra, and the Malay Peninsula in Southeast Asia grows a strange fruit called the durian — a spiky, football-sized ball with a soft yellow custard hidden inside. Fans across Malaysia, Thailand, and Indonesia love it so fiercely, in spite of its notorious smell, that they crown it with a royal-sounding title. What do they call it?",
+    "question": "In the rainforests of Borneo, Sumatra and the Malay Peninsula grows the durian, a spiky ball with soft yellow custard inside. Fans across Malaysia, Thailand and Indonesia love it, smell and all, and crown it with a royal title. What do they call it?",
     "answer": "the king of fruits",
     "choices": [
       "the king of fruits",
@@ -7723,7 +7502,7 @@
   },
   {
     "tier": 2,
-    "question": "Durian is Southeast Asia's famously spiky, powerfully-smelling tropical fruit, often called the 'king of fruits.' It's often mixed up with a milder green cousin that grows on the same kind of hot tropical tree — the biggest tree-borne fruit on Earth, up to a metre long and heavy as a small child, covered in blunt pebbly bumps instead of sharp thorns, giving off a sweet mango-like smell. Name that look-alike.",
+    "question": "Often mistaken for the spiky durian, a milder green cousin is the biggest tree-borne fruit on Earth, heavy as a small child, with blunt, pebbly bumps instead of thorns and a sweet smell of mango. Which fruit is it?",
     "answer": "jackfruit",
     "choices": [
       "jackfruit",
@@ -7736,7 +7515,7 @@
   },
   {
     "tier": 3,
-    "question": "A durian is a big spiky tropical fruit from Southeast Asia, famous for its overpowering smell. People assume it stinks because it's rotting — but the ripe fruit actually makes the odor on purpose, to draw in big animals like tigers and elephants that spread its seeds. The stink belongs to the same chemical family as onion, garlic, and rotten eggs. Which element gives that whole family its sharp, distinctive smell?",
+    "question": "A ripe durian smells so strong that people assume it is rotting, but the fruit makes the odor on purpose. The stink belongs to the same chemical family as onion, garlic and rotten eggs. Which element gives that whole family its sharp smell?",
     "answer": "sulfur",
     "choices": [
       "sulfur",
@@ -7749,7 +7528,7 @@
   },
   {
     "tier": 3,
-    "question": "In April 2018, about 500 students and staff were rushed out of a college library in Melbourne, Australia. Someone had reported a gas leak. Firefighters swept the building in hazmat suits. They found no toxic chemical, just one food rotting in a cupboard. The air conditioning carried the smell all over. What was it?",
+    "question": "About 500 students and staff were rushed out of a university library in Melbourne one April day in 2018 after a reported gas leak. Firefighters in hazmat suits found no toxic chemical, only one food rotting in a cupboard, its smell spread by the air conditioning. What was it?",
     "answer": "durian",
     "choices": [
       "durian",
@@ -7762,7 +7541,7 @@
   },
   {
     "tier": 4,
-    "question": "The durian is a football-sized, spiky tropical fruit grown across Southeast Asia, famous for a wild paradox. Brave eaters say the smell hits like onions, gym socks, or a blocked drain — yet the moment a spoonful of the pale, creamy flesh gets past the nose, the taste stuns them. What does that durian flesh actually taste like?",
+    "question": "Alfred Russel Wallace, the naturalist, writing in 1856, said eating it was worth sailing all the way to the East, though its smell has been compared to onions, gym socks and a blocked drain. Past the nose, what does the pale, creamy flesh taste like?",
     "answer": "sweet and rich, like almond custard",
     "choices": [
       "sweet and rich, like almond custard",
@@ -7775,7 +7554,7 @@
   },
   {
     "tier": 4,
-    "question": "The powerful reek of a ripe durian, the spiky Southeast Asian fruit, carries a long way through the jungle canopy — over a kilometer on a still night. Biologists who study how plants and animals evolved together over millions of years think that huge, far-reaching smell is no accident of nature. Why would a wild fruit evolve to advertise itself with such an overpowering odor?",
+    "question": "On a still night, the reek of a ripe durian carries more than a kilometer through the jungle canopy. Biologists who study how plants and animals evolved together think the smell is no accident. Why would a wild fruit evolve to advertise itself with such an overpowering odor?",
     "answer": "to lure animals that eat it and carry its seeds away",
     "choices": [
       "to lure animals that eat it and carry its seeds away",
@@ -7788,7 +7567,7 @@
   },
   {
     "tier": 5,
-    "question": "The durian, a spiky Southeast Asian fruit the size of a football, has such a famously powerful smell that airlines like Singapore-based Scoot ban it from every flight. You can wrap one in plastic, seal it in a cooler, and zip that cooler inside a duffel bag — and still a whole airplane cabin fills with the odor. How does the smell manage to escape a sealed, chilled package?",
+    "question": "A traveler who wraps a durian in plastic, seals it in a cooler and zips the cooler into a duffel bag would still fill a whole airplane cabin with its smell, which is why airlines such as Scoot ban it from every flight. How does the smell escape a sealed, chilled package?",
     "answer": "its smell is tiny airborne molecules that evaporate and drift through any gap",
     "choices": [
       "its smell is tiny airborne molecules that evaporate and drift through any gap",
@@ -7801,7 +7580,7 @@
   },
   {
     "tier": 5,
-    "question": "Across Southeast Asia — in Thailand, Malaysia, Indonesia, and Singapore — village elders warn young people never to eat durian, the spiky yellow-custard fruit, and then wash it down with beer or whiskey. Do that, they say, and you could drop dead within the hour. What do actual food scientists find when they carefully test this deadly-sounding folk warning?",
+    "question": "Village elders across Thailand, Malaysia, Indonesia and Singapore warn the young never to eat durian and then wash it down with beer or whiskey, or they could drop dead within the hour. When food scientists look for proof of this deadly-sounding warning, what do they find?",
     "answer": "no such death has ever been confirmed -- it stays a folk belief",
     "choices": [
       "no such death has ever been confirmed -- it stays a folk belief",
@@ -7814,7 +7593,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook is about to serve a hamburger, but its center is still raw and red. Dangerous E. coli can hide inside ground beef, and its toxin can cause sudden kidney failure in young children. Which of these actually makes that patty safe to eat?",
+    "question": "A cook is about to serve a hamburger whose center is still raw and red. Dangerous E. coli can hide inside ground beef, and its toxin can cause sudden kidney failure in young children. What actually makes the patty safe to eat?",
     "answer": "Cooking it through until the center is piping hot",
     "choices": [
       "Cooking it through until the center is piping hot",
@@ -7827,7 +7606,7 @@
   },
   {
     "tier": 2,
-    "question": "Most people blame raw or pink hamburger for E. coli. But food-safety scientists say one other everyday food rivals ground beef as a top source of the dangerous O157 strain -- and because people eat it raw, with no cooking step to kill the germ, it can be the riskier choice. Which food is it?",
+    "question": "Food-safety scientists point to one everyday food that rivals ground beef as a top source of the dangerous O157 strain of E. coli. It is eaten raw, with no cooking step to kill the germ, so it can be the riskier choice. Which food is it?",
     "answer": "A bowl of salad greens",
     "choices": [
       "A bowl of salad greens",
@@ -7853,7 +7632,7 @@
   },
   {
     "tier": 3,
-    "question": "Everyone knows raw egg makes cookie dough risky, but food-safety experts warn there is a different ingredient in the dough that can carry E. coli all by itself, so even egg-free dough is not safe to eat unbaked. Which ingredient is it?",
+    "question": "A bowl of raw cookie dough has no egg in it at all, and still food-safety experts warn against eating a spoonful before it is baked. One ordinary ingredient in the dough can carry E. coli all by itself. Which ingredient is it?",
     "answer": "The flour",
     "choices": [
       "The flour",
@@ -7866,7 +7645,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1993, hundreds of people in four western states got very sick. Four young children died. All had eaten undercooked burgers from one fast-food chain. The scare pushed the country to cook burgers hotter. Which chain served those burgers?",
+    "question": "A fast-food chain's undercooked burgers made hundreds of people across four western states very sick in 1993, and four young children died. The tragedy pushed the whole country to cook its burgers hotter. Which fast-food chain had served those burgers?",
     "answer": "Jack in the Box",
     "choices": [
       "Jack in the Box",
@@ -7878,21 +7657,8 @@
     "topic": "e-coli-burgers-greens-and-the-outbreak-that-changed-the-rule"
   },
   {
-    "tier": 4,
-    "question": "After the 1993 burger deaths, kitchens got a strange split rule. A chef will still serve a steak rare and red. But every burger must be cooked all the way through, even from the same cow. What does the grinder do to beef that turns a safe rare steak into a deadly rare burger?",
-    "answer": "Grinding folds the outside germs all through the meat",
-    "choices": [
-      "Grinding folds the outside germs all through the meat",
-      "Grinding warms the beef and wakes up dormant germs",
-      "Grinding whips in air the germs need to multiply",
-      "Grinding frees beef juices that the germs feed on"
-    ],
-    "context": "A whole steak carries its germs only on the outside, where a hot pan or grill sears them off in seconds -- which is why a rare steak's red center is safe to eat. The grinder wrecks that arrangement. It chops those contaminated outer surfaces up and folds them all through the meat, so E. coli that was once skin-deep now rides in the middle of every patty. That is why the 160F rule aims at ground beef and not steak, and why the government's 1994 response to the outbreak -- declaring O157:H7 an adulterant, making it illegal to sell hamburger that contains it -- targeted ground beef alone. Source: USDA FSIS, 'Ground Beef and Food Safety.'",
-    "topic": "e-coli-burgers-greens-and-the-outbreak-that-changed-the-rule"
-  },
-  {
     "tier": 1,
-    "question": "The American journalist Michael Pollan spent years traveling the United States and writing about where our food really comes from — the cornfields, the cattle feedlots, the factory kitchens where snacks are built. When his reporting was done, he boiled his whole answer to the question 'What should a person eat?' down to a rule only seven words long. What is his famous rule?",
+    "question": "Michael Pollan spent years tracing American food back to the cornfields, the cattle feedlots and the factory kitchens where snacks are built. Then he boiled his answer down to a rule just seven words long. What is the rule?",
     "answer": "Eat food. Not too much. Mostly plants.",
     "choices": [
       "Eat food. Not too much. Mostly plants.",
@@ -7905,7 +7671,7 @@
   },
   {
     "tier": 2,
-    "question": "The American food writer Michael Pollan has a simple test for spotting real food when you push a cart through the supermarket. Picture one specific old woman walking the aisles beside you, peering into your cart. Pollan's rule: do not put anything into that cart she would not even recognize as food. Who is she?",
+    "question": "Suppose you push a cart through a supermarket with Michael Pollan's test in mind. You picture one particular old woman walking the aisles beside you, and you buy nothing she would not recognize as food. Who is she?",
     "answer": "Your great-grandmother.",
     "choices": [
       "Your great-grandmother.",
@@ -7918,7 +7684,7 @@
   },
   {
     "tier": 2,
-    "question": "Michael Pollan says whole aisles of the supermarket are stocked with things engineered in food-science labs to pass as yogurt or cereal — but that are not really food at all. He has a wry, deadpan name for this stuff. What does he call it?",
+    "question": "Whole aisles of the supermarket, Michael Pollan says, hold things engineered in food-science labs to pass as yogurt or cereal, and none of it is really food at all. He has a wry, deadpan name for this stuff. What does he call it?",
     "answer": "Edible foodlike substances.",
     "choices": [
       "Edible foodlike substances.",
@@ -7931,7 +7697,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 2008 book In Defense of Food, American food writer Michael Pollan gave readers a short set of kitchen rules — 'eat food, not too much, mostly plants' — and told them to skip anything their great-grandmother wouldn't recognize as food. One of his most surprising store rules says a packaged product on the shelf should make you more suspicious, not less, when its box does what?",
+    "question": "A shopper following the supermarket rules in Michael Pollan's book In Defense of Food picks up a packaged product from the shelf and trusts it less, not more, because of one thing its box does. What does the box do?",
     "answer": "Boasts that it's good for your health.",
     "choices": [
       "Boasts that it's good for your health.",
@@ -7944,7 +7710,7 @@
   },
   {
     "tier": 3,
-    "question": "A box of sugary cereal shouts 'Fat-free!', 'now with added vitamins!', 'extra fiber!' — and shoppers buy it, sure that a food's health is just the sum of the good and bad things listed on its label. Michael Pollan, borrowing a term from sociologist Gyorgy Scrinis, named this whole way of thinking. What did he call it?",
+    "question": "A box of sugary cereal shouts 'Fat-free!', 'now with added vitamins!', 'extra fiber!', and shoppers buy it, sure that a food's health is just the sum of the good and bad things on its label. Michael Pollan, borrowing a term from Gyorgy Scrinis, a sociologist, named this way of thinking. What did he call it?",
     "answer": "Nutritionism.",
     "choices": [
       "Nutritionism.",
@@ -7969,34 +7735,8 @@
     "topic": "eat-food-mostly-plants-the-whole-food-idea"
   },
   {
-    "tier": 4,
-    "question": "Michael Pollan's whole-food idea lands with an orange. You'd never sit down and eat three or four whole oranges one after another — but you can gulp the juice of four in seconds and still want more. What does the whole orange still have that its juice threw away — the thing that makes you stop at just one?",
-    "answer": "Fiber.",
-    "choices": [
-      "Fiber.",
-      "Protein.",
-      "Fat.",
-      "Water."
-    ],
-    "context": "The food-matrix proof behind 'eat food': a whole orange and a glass of its juice carry about the same sugar (~12 g), but the orange also holds ~3 g of fiber — pectin locked in its cell walls — that slows the sugar down and fills you up. Juice strips that fiber out, so the same sugar floods in fast: a whole orange's glycemic index is about 40, the juice about 66 — nearly a cola's spike. Same nutrients, different food. (Figures are estimates from nutrition research.) Source: whole-fruit vs. juice glycemic/food-matrix research (glycemicsnap.com; news-medical.net; PMC).",
-    "topic": "eat-food-mostly-plants-the-whole-food-idea"
-  },
-  {
     "tier": 2,
-    "question": "A marathon runner cruising steadily suddenly slows to a shuffle around mile 20 — legs like concrete, the pace falling apart. Runners call this brutal moment 'hitting the wall.' His body has just emptied one stored fuel tank. Which fuel has run out?",
-    "answer": "Stored carbohydrate",
-    "choices": [
-      "Stored carbohydrate",
-      "Body fat",
-      "Muscle protein",
-      "Body water"
-    ],
-    "context": "That fuel is glycogen — carbohydrate stored in the muscles and liver. An untrained runner holds under two hours' worth of it; drained near mile 20, the body is forced to slow way down. The 'wall' is simply the fast-fuel tank hitting empty. Source: https://en.wikipedia.org/wiki/Hitting_the_wall",
-    "topic": "eating-for-energy-vs-growth-vs-recovery"
-  },
-  {
-    "tier": 2,
-    "question": "Your body runs on two main fuels and switches between them by how hard you're working. One of them is your steady, all-day fuel — the one you burn most while resting or strolling slowly, and the reason even a very lean runner still carries many hours of fuel in reserve. Which fuel is it?",
+    "question": "A runner's body burns two main fuels and switches between them by how hard it is working. One is the slow, all-day fuel, used most while resting or strolling, and even a very lean runner keeps hours and hours of it stored. Which fuel is it?",
     "answer": "Body fat",
     "choices": [
       "Body fat",
@@ -8009,20 +7749,7 @@
   },
   {
     "tier": 3,
-    "question": "A kid in a growth spurt is laying down new bone fast, and building it takes the mineral calcium — roughly four big glasses of milk a day. But the body can't absorb or lock that calcium into bone without a certain partner nutrient working alongside it. Which nutrient?",
-    "answer": "Vitamin D",
-    "choices": [
-      "Vitamin D",
-      "Vitamin C",
-      "Vitamin A",
-      "Vitamin B12"
-    ],
-    "context": "You need vitamin D to actually absorb and use calcium — without it the calcium can't lock into bone. During peak growth teens need roughly 1,300 mg of calcium daily (about four cups of milk), and the teen years are the single biggest window for banking bone mineral, so under-eating it then is a lifelong loss. Source: https://www.osteoporosis.foundation/health-professionals/prevention/nutrition-children-and-adolescents",
-    "topic": "eating-for-energy-vs-growth-vs-recovery"
-  },
-  {
-    "tier": 3,
-    "question": "Marathon runners follow a trick called 'carb-loading' — for three days before race day, they eat extra pasta, rice, and bread to stuff their muscles with as much sugar-fuel as possible. Muscles store that fuel as a starch called glycogen, and every gram of glycogen drags several grams of water in with it. On race morning the scale reads a kilogram or two heavier than the day before. What is almost all of that extra weight?",
+    "question": "For three days before a marathon, a runner loads up on pasta, rice and bread to pack her muscles with glycogen, the stored form of carbohydrate, and every gram of it drags several grams of water in with it. On race morning the scale reads a kilogram or two heavier. What is almost all of that extra weight?",
     "answer": "Water weight",
     "choices": [
       "Water weight",
@@ -8048,7 +7775,7 @@
   },
   {
     "tier": 5,
-    "question": "A marathoner about to run 26 miles, a teenager in the middle of a growth spurt, and an office worker who sits at a desk all day each have a different reason to eat well. A nutritionist plans meals for all three. How does she mainly tailor each plate to the person's goal?",
+    "question": "A nutritionist sits down to plan meals for three people: a marathoner about to run 26 miles, a teenager in the middle of a growth spurt, and an office worker who sits at a desk all day. Each has a different reason to eat well. How does she mainly tailor each plate to the person's goal?",
     "answer": "By shifting the ratio of carbs to protein",
     "choices": [
       "By shifting the ratio of carbs to protein",
@@ -19579,7 +19306,7 @@
   },
   {
     "tier": 1,
-    "question": "When a doctor sees a patient who feels weak and pale because his blood is running low, one classic recommendation is to eat more red meat. Red meat delivers a key mineral that the body needs to build healthy red blood cells. Which mineral does red meat give you?",
+    "question": "A doctor sees a pale, weak patient whose blood is running low and gives him classic advice: eat more red meat. It carries a mineral the body needs to build red blood cells. Which one?",
     "answer": "Iron",
     "choices": [
       "Iron",
@@ -19592,20 +19319,7 @@
   },
   {
     "tier": 2,
-    "question": "Both a bowl of cooked spinach and a good steak contain iron on paper. But doctors say the steak does far more to fix a person's low blood iron than any pile of spinach. The catch isn't how much iron each food holds — that part is close. Something else about that iron is what really sets the two foods apart. What is it?",
-    "answer": "How much of that iron your gut can absorb",
-    "choices": [
-      "How much of that iron your gut can absorb",
-      "How much iron cooks out into the pan",
-      "How much protein sits alongside the iron",
-      "How red the meat looks"
-    ],
-    "context": "Both spinach and steak really do contain iron — the difference is bioavailability, how much your gut can actually pull out. Meat carries mostly 'heme' iron, the highly absorbable form tucked inside the same blood-red molecule that grabs oxygen, and the body takes up several times more of it than the 'non-heme' iron in plants. Ranges vary by study; the concept — heme is grabbed far more readily — is the point, not the exact numbers. Sources: NIH Iron Fact Sheet — https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/ ; heme-vs-non-heme guide — https://superpower.com/guides/heme-vs-non-heme-iron",
-    "topic": "red-meats-hidden-payload-heme-iron-and-b12"
-  },
-  {
-    "tier": 2,
-    "question": "Everyone 'knows' Popeye downed cans of spinach to load up on iron for those bulging muscles. But cartoonist E.C. Segar actually wrote spinach into the strip for a different nutrient it's rich in — not iron at all. Which nutrient did Segar have in mind?",
+    "question": "E.C. Segar, the cartoonist behind Popeye, had his sailor gulp down cans of spinach for bulging muscles. Fans have long assumed Segar chose it for iron, but he wrote spinach into the strip for a different nutrient it is rich in. Which one?",
     "answer": "Vitamin A",
     "choices": [
       "Vitamin A",
@@ -19617,34 +19331,8 @@
     "topic": "red-meats-hidden-payload-heme-iron-and-b12"
   },
   {
-    "tier": 3,
-    "question": "You're plating a bowl of lentils, which are loaded with the plant form of iron — the kind your gut normally grabs only a little of. One simple addition to the bowl can double, even quadruple, how much of that iron you actually absorb. What do you add?",
-    "answer": "A squeeze of lemon",
-    "choices": [
-      "A squeeze of lemon",
-      "A splash of milk",
-      "A cup of black tea",
-      "A pinch of salt"
-    ],
-    "context": "Vitamin C in lemon, tomato, or peppers can raise absorption of plant (non-heme) iron roughly two- to four-fold. It works by reducing ferric iron (Fe3+) to the more soluble ferrous form (Fe2+) and keeping it from binding to blockers in the meal. Bonus trick: a little meat, fish, or poultry on the plate lifts plant-iron uptake too — but egg and dairy protein don't. Source: NIH Iron Fact Sheet — https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
-    "topic": "red-meats-hidden-payload-heme-iron-and-b12"
-  },
-  {
     "tier": 4,
-    "question": "One vitamin pulls a rare double shift in your body — it helps build red blood cells AND keeps your nervous system running — yet it turns up naturally almost only in meat, fish, eggs, and dairy. That's exactly why strict vegans are told to take it as a supplement. Which vitamin?",
-    "answer": "Vitamin B12",
-    "choices": [
-      "Vitamin B12",
-      "Vitamin C",
-      "Vitamin D",
-      "Vitamin K"
-    ],
-    "context": "Vitamin B12 (cobalamin) builds red blood cells, helps develop and insulate the nervous system, and aids DNA synthesis — 'blood and nerves.' Plants don't naturally make it, so strict vegans rely on fortified foods (cereals, nutritional yeast) or a supplement. Your stomach even makes a special escort protein, 'intrinsic factor,' to carry B12 through the gut; shellfish like clams and oysters are among the richest natural sources. Source: NIH Vitamin B12 Fact Sheet — https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
-    "topic": "red-meats-hidden-payload-heme-iron-and-b12"
-  },
-  {
-    "tier": 4,
-    "question": "In 2015 the World Health Organization's cancer group — the International Agency for Research on Cancer (IARC) — reviewed hundreds of studies on red meat like beef and pork, and on processed meats like bacon, ham, and sausage. Their advice: these meats deliver real iron and vitamin B12, but people should keep intake moderate. Their main worry: heavy intake is tied to a raised risk of one particular disease. Which one?",
+    "question": "Bacon, ham, sausage and steak deliver real iron and vitamin B12, and the World Health Organization's cancer agency did not deny it when it reviewed hundreds of studies in 2015. It still urged moderation, tying heavy eating of these meats to a raised risk of one disease. Which one?",
     "answer": "Bowel cancer",
     "choices": [
       "Bowel cancer",
@@ -19653,19 +19341,6 @@
       "Kidney stones"
     ],
     "context": "This is the honest counter-case. Advisory boards don't deny red meat's iron and B12, but they link heavy intake of red and especially processed meats to a higher risk of bowel (colorectal) cancer, so they recommend moderation. Supporters of traditional diets counter that the well-absorbed iron and B12 are hard to match from plants alone. Here are both sides — you decide. Source: The Conversation, 'Is black pudding really a superfood?' — https://theconversation.com/is-black-pudding-really-a-superfood-err-no-53087",
-    "topic": "red-meats-hidden-payload-heme-iron-and-b12"
-  },
-  {
-    "tier": 5,
-    "question": "Long before vitamin pills existed, traditional cultures prized one cheap cut over prime steak, calling it 'nature's multivitamin.' A single small serving covers weeks of vitamins and minerals: copper, folate, riboflavin, and well-absorbed iron among them. And it costs only about 175 calories. Which cut earns that nickname?",
-    "answer": "Liver",
-    "choices": [
-      "Liver",
-      "Bacon",
-      "Ground beef",
-      "Pork sausage"
-    ],
-    "context": "Liver is often nicknamed 'nature's multivitamin': roughly 3 oz of beef liver covers your B12 needs for weeks and a month's worth of vitamin A, plus copper, folate, riboflavin, choline, and well-absorbed heme iron — all for about 175 calories. That density is why traditional cultures prized the organs as the most nutrient-packed bites of the animal. Source: Healthline, 'Liver: A Nutrient-Dense Superfood?' — https://www.healthline.com/nutrition/why-liver-is-a-superfood  (Legend.)",
     "topic": "red-meats-hidden-payload-heme-iron-and-b12"
   },
   {
@@ -32618,7 +32293,7 @@
   },
   {
     "tier": 1,
-    "question": "Sweet, sour, salty, bitter — those are the four basic tastes everyone learns as a kid. But aged parmesan, soy sauce, ripe tomatoes, and cured ham all share a deep, mouth-filling savoriness that is none of those four. Cooks now count it as a fifth basic taste. What is it called?",
+    "question": "A diner sips dashi and tastes a deep, mouth-filling savoriness that is neither sweet, sour, salty nor bitter. Aged parmesan and cured ham share it, and cooks count it a fifth basic taste. What is it called?",
     "answer": "Umami",
     "choices": [
       "Umami",
@@ -32630,21 +32305,8 @@
     "topic": "umami-the-fifth-taste-you-can-build"
   },
   {
-    "tier": 2,
-    "question": "In 1908 a Japanese chemist named Kikunae Ikeda sat at his family table sipping his wife's kombu-seaweed broth and realized it had a deep savory richness that didn't fit any of the four known tastes -- not sweet, sour, salty, or bitter. He decided this must be a fifth basic taste, and he coined a fresh Japanese word for it -- 'umami' -- built straight out of the everyday word 'umai.' Umai already meant food that is what?",
-    "answer": "Delicious",
-    "choices": [
-      "Delicious",
-      "Filling",
-      "Hearty",
-      "Fresh"
-    ],
-    "context": "Umami comes from umai, 'delicious.' Kikunae Ikeda coined it as the name for the savory taste he was certain deserved its own place beside sweet, sour, salty, and bitter. Source: en.wikipedia.org/wiki/Umami",
-    "topic": "umami-the-fifth-taste-you-can-build"
-  },
-  {
     "tier": 3,
-    "question": "A fresh ripe tomato has only a little umami. It holds a few hundred milligrams of free glutamate, next to the thousands packed into aged parmesan. But one old way of preparing tomatoes drives that glutamate several times higher. How are those tomatoes prepared?",
+    "question": "A cook tastes a ripe tomato beside a crumb of aged parmesan. The tomato holds only a few hundred milligrams of glutamate, the savory molecule, against the cheese's thousands, yet one old method drives a tomato's several times higher. How are those tomatoes prepared?",
     "answer": "Dried in the sun",
     "choices": [
       "Dried in the sun",
@@ -32657,20 +32319,20 @@
   },
   {
     "tier": 4,
-    "question": "Japanese cooks build their basic broth, dashi, by simmering kombu kelp together with flakes of dried bonito fish. Ikeda's student and later chemists measured how savory the two taste combined, next to each one on its own. How did the combined savoriness compare?",
-    "answer": "Several times the two added together",
+    "question": "A Japanese cook simmers kelp in water and gets a faintly savory broth; she steeps dried bonito flakes alone and gets something mild. Together the two make dashi, which tastes far more savory than either can explain on its own. What is behind the leap?",
+    "answer": "The kelp's savory molecule and the fish's multiply each other's power.",
     "choices": [
-      "Several times the two added together",
-      "About the two added together",
-      "No stronger than the bolder one alone",
-      "Weaker than either flavor alone"
+      "The kelp's savory molecule and the fish's multiply each other's power.",
+      "Long simmering boils off water and concentrates the broth.",
+      "Sea salt carried in the kelp sharpens the fish's flavor.",
+      "Fat from the fish coats the tongue and makes it linger."
     ],
-    "context": "Glutamate from the kelp plus a second savory molecule from the dried fish — a ribonucleotide — taste far more savory combined than the two would added together, roughly seven to eight times stronger, and strongest at a 1:1 mix. It's true synergy, not simple addition. Ikeda's student Shintaro Kodama found the dried-bonito molecule (inosinate) in 1913; decades later Akira Kuninaka found the same trick in shiitake mushrooms and pinned down the synergy. Source: en.wikipedia.org/wiki/Umami",
+    "context": "The kelp gives glutamate; the bonito brings a SECOND savory molecule, inosinate (found in dried bonito by Ikeda's student Shintaro Kodama in 1913; a third, guanylate, was later found in dried shiitake). Together they don't just add -- the umami MULTIPLIES, so the combined broth tastes many times more savory than either ingredient alone. That multiplication is exactly why the kombu-plus-bonito pairing became the timeless classic. Source: PMC 'Umami the Fifth Basic Taste'; ramenchemistry.com 'Umami Synergy'.  (Legend.)",
     "topic": "umami-the-fifth-taste-you-can-build"
   },
   {
     "tier": 4,
-    "question": "Long before anyone knew the chemistry, cooks worldwide stumbled by taste onto a savory trick: marry a glutamate-rich food with one carrying that second savory molecule. Japanese dashi does it with kelp and dried fish. Which everyday Western plate is that same savory pairing?",
+    "question": "Glutamate-rich kelp and dried bonito, which brings a second savory molecule, inosinate, make the classic pair of Japanese dashi. Long before anyone knew the chemistry, cooks far from Japan hit on the same kind of pairing by taste. Which everyday Western plate marries the two?",
     "answer": "Cheese on a beef burger",
     "choices": [
       "Cheese on a beef burger",
@@ -32683,7 +32345,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades, people blamed MSG (monosodium glutamate) for headaches after Chinese food — a fear traced to a single 1968 letter in a medical journal that even coined the phrase 'Chinese Restaurant Syndrome.' The strangest twist is what the letter's own author later confessed about his famous claim. What did he admit?",
+    "question": "The man who started the scare over monosodium glutamate (MSG) wrote one letter in 1968, to a medical journal, blaming it for headaches after Chinese meals and coining the phrase 'Chinese Restaurant Syndrome.' Decades of fear followed. What did he later admit about his famous claim?",
     "answer": "He had no scientific evidence for it",
     "choices": [
       "He had no scientific evidence for it",
