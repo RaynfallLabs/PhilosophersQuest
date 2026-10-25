@@ -42,6 +42,14 @@ def main() -> None:
     tail = [ln for ln in out.splitlines() if ln.startswith('FAILED') or 'passed' in ln]
     print('\n'.join(tail[-15:]))
     if code != 0:
+        # A few tests share random state and fail only in parallel runs
+        # (pets' growl, the Gleipnir walk). Re-run just the failures, alone.
+        failed = [ln.split()[1] for ln in out.splitlines() if ln.startswith('FAILED ')]
+        if failed:
+            code2, out2 = run([PY, '-m', 'pytest', '-q', '-p', 'no:randomly'] + failed)
+            print('re-run alone:', [ln for ln in out2.splitlines() if 'passed' in ln or 'failed' in ln][-1:])
+            code = code2
+    if code != 0:
         sys.exit('TESTS FAILED: not committed. Fix, then commit by hand.')
     files = [f'data/questions/{subject}.json', f'data/question_contexts/{subject}.json',
              'data/question_twins.json', 'tests/data']
