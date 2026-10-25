@@ -25,6 +25,7 @@ import sys
 from bankbuild.cards import stage
 from bankbuild.cards.common import QDIR, ROOT
 from bankbuild.voice.common import (TWINS, bpath, load_changes, load_notes, read_json, save_status,
+                                    write_json,
                                     stem_hash, status)
 
 BASE = ROOT / 'tests' / 'data'
@@ -146,7 +147,14 @@ def main() -> None:
     st = status(subject)
     passed -= set(st['done'])
     if '--hold' in sys.argv:              # passing ladders the lead keeps back for a fix
-        passed -= set(sys.argv[sys.argv.index('--hold') + 1].split(','))
+        hold = set(sys.argv[sys.argv.index('--hold') + 1].split(','))
+        passed -= hold
+        # Held means failing until the judge sees the fix: a later apply must
+        # not land an unjudged change.
+        for t in hold & set(score):
+            score[t]['pass'] = False
+            score[t].setdefault('ladder', []).append('held by the lead for a fix; re-judge it')
+        write_json(bpath(subject, batch, 'score'), score)
     # A merge that crosses ladders lands whole or not at all: hold every
     # ladder tied by a merge to one that has not passed yet.
     topic_of = {q['hash']: t['topic'] for t in pkt['topics'] for q in t['questions']}
