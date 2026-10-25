@@ -1,7 +1,7 @@
 [
   {
     "tier": 2,
-    "question": "Every 13 or 17 years, a summer insect erupts out of the ground and swarms the forests of the eastern United States by the billions. It has a shiny black body about the size of your thumb, two brilliant red compound eyes on the sides of its head, and clear wings with bright orange veins. It clings to tree trunks by day and fills the woods with a deafening buzz. Which insect wears this eerie red-eyed look?",
+    "question": "A summer insect pours out of the ground by the billions every 13 or 17 years and swarms the forests of the eastern United States. It has a shiny black body about the size of a thumb, two brilliant red compound eyes and clear wings with bright orange veins. Which insect wears this eerie red-eyed look?",
     "answer": "The periodical cicada",
     "choices": [
       "The periodical cicada",
@@ -13,21 +13,8 @@
     "topic": "17-year-cicada"
   },
   {
-    "tier": 2,
-    "question": "A 17-year cicada is a large red-eyed insect that spends its entire youth — the full seventeen years — buried deep underground, quietly sipping sap from tree roots in the dark. Then, in one single summer, millions of adults tunnel up to the surface all at once, packing the trees so thick that no bird or fox could possibly eat them all. Biologists have a name for this all-at-once, safety-in-huge-numbers survival trick. What is it called?",
-    "answer": "Predator satiation",
-    "choices": [
-      "Predator satiation",
-      "Camouflage",
-      "Warning coloration",
-      "Mimicry"
-    ],
-    "context": "Periodical cicadas spend about 99.5% of their entire lives underground as nymphs, sucking sap from tree roots in the dark for 13 or 17 years before ever seeing daylight. Source: https://en.wikipedia.org/wiki/Periodical_cicadas",
-    "topic": "17-year-cicada"
-  },
-  {
     "tier": 3,
-    "question": "Periodical cicadas spend either 13 or 17 years as pale nymphs living underground, sucking sap from tree roots. Then in a single spring, an entire brood of billions of cicadas crawls out of the ground on nearly the same day, all across a huge stretch of the eastern United States. For decades biologists wondered how these insects, buried so far below the surface, all know when to emerge together. What environmental signal tells them the moment has come?",
+    "question": "A brood of billions of periodical cicadas crawls out of the ground on nearly the same day, all across a huge stretch of the eastern United States, after 13 or 17 years as pale nymphs sucking sap from tree roots. For decades biologists wondered how insects buried so far down all know when to come out. What environmental signal tells them the moment has come?",
     "answer": "The soil 8 inches down warming to about 64 degrees F",
     "choices": [
       "The soil 8 inches down warming to about 64 degrees F",
@@ -40,7 +27,7 @@
   },
   {
     "tier": 3,
-    "question": "In an American forest, after seventeen years underground drinking tree-root sap, a male periodical cicada crawls up out of the dirt and starts to sing. He is barely the size of a thumb, yet his song carries across a whole forest — one of the loudest calls any insect makes. His tymbals, ribbed membranes on his sides, buckle hundreds of times a second to make the clicks. What lets so tiny a body throw that sound so far?",
+    "question": "A male cicada crawls out of the dirt of an American forest after 17 years underground and starts to sing. He is barely the size of a thumb, yet his song carries across the whole forest, one of the loudest calls any insect makes. His tymbals, ribbed membranes on his sides, buckle hundreds of times a second to make the clicks. What lets so small a body throw that sound so far?",
     "answer": "His hollow abdomen works as a resonating chamber that amplifies the clicks into a roar",
     "choices": [
       "His hollow abdomen works as a resonating chamber that amplifies the clicks into a roar",
@@ -52,8 +39,8 @@
     "topic": "17-year-cicada"
   },
   {
-    "tier": 4,
-    "question": "Periodical cicadas do not sting, hide, or run from a hungry bird. Their entire survival plan is timing — a whole 17-year brood tunnels out of the ground on the same summer, all at once, sometimes packing over 1.5 million cicadas into a single acre of forest. Scientists call this strategy 'predator satiation.' How does simply arriving in such staggering numbers keep the whole species going year after year?",
+    "tier": 2,
+    "question": "After 17 years in the dark sipping sap from tree roots, a whole brood of periodical cicadas tunnels out in the same summer, sometimes more than 1.5 million to a single acre of forest. They do not sting, hide or run from a hungry bird. How does arriving in such staggering numbers keep the species going?",
     "answer": "Predators fill up long before the swarm runs out, so most cicadas survive to mate",
     "choices": [
       "Predators fill up long before the swarm runs out, so most cicadas survive to mate",
@@ -66,7 +53,7 @@
   },
   {
     "tier": 4,
-    "question": "Of all the intervals a cicada could wait, the periodical broods land on 13 and 17 years, never 12, 15, or 18. Biologists like Stephen Jay Gould find it striking that both are prime. What survival edge is that oddly chosen interval thought to give the cicadas?",
+    "question": "Broods of periodical cicadas wait 13 or 17 years underground before they surface, never 12, 15 or 18. Stephen Jay Gould found it striking that both numbers are prime. What survival edge is that oddly chosen wait thought to give the cicadas?",
     "answer": "A predator on its own 2-, 3-, or 4-year cycle can almost never peak in the same year the cicadas emerge",
     "choices": [
       "A predator on its own 2-, 3-, or 4-year cycle can almost never peak in the same year the cicadas emerge",
@@ -78,21 +65,21 @@
     "topic": "17-year-cicada"
   },
   {
-    "tier": 3,
-    "question": "A periodical cicada waits an almost unbelievable seventeen years underground, sucking sap from tree roots in total darkness. Then in one summer it finally tunnels up, splits out of its brown shell on the side of a tree, and climbs into the sunlight as a winged adult ready to sing and mate. After all that patience below ground, how long does the adult cicada actually get to live above ground before it dies?",
-    "answer": "Only four to six weeks",
+    "tier": 2,
+    "question": "A cicada sucks sap from tree roots in total darkness for 13 or 17 years. Then one summer it tunnels up, splits out of its brown shell on the side of a tree, unfolds its wings and climbs into the sunlight, ready to sing and mate. How long does the winged adult live above ground?",
+    "answer": "About four to six weeks",
     "choices": [
-      "Only four to six weeks",
-      "A full summer, then winter below",
-      "About one year",
-      "A single day and night"
+      "About four to six weeks",
+      "About a single day",
+      "About two years",
+      "About three months"
     ],
     "context": "After 13 or 17 years underground, the emerged adults live only four to six weeks — just long enough to sing, mate, and lay eggs — and then die, and the cycle begins again. Source: https://en.wikipedia.org/wiki/Periodical_cicadas",
     "topic": "17-year-cicada"
   },
   {
     "tier": 1,
-    "question": "In the moonlit grasslands of Africa, a strange burrowing mammal shuffles out of its den at dusk to feed. It has a long pig-like snout, tall rabbit-like ears, a hunched back, and a thick heavy tail like a kangaroo's. All night long it goes from termite mound to termite mound, ripping them open and slurping up ants and termites by the tens of thousands. What is it?",
+    "question": "On the moonlit grasslands of Africa, a burrowing mammal shuffles out of its den at dusk. It has a pig-like snout, tall rabbit-like ears and a heavy tail like a kangaroo's. All night it rips open termite mounds and slurps up ants and termites. What is it?",
     "answer": "The aardvark",
     "choices": [
       "The aardvark",
@@ -105,7 +92,7 @@
   },
   {
     "tier": 2,
-    "question": "The aardvark is a nocturnal African mammal with a pig-like snout, tall rabbit-ears, and a sticky ropy tongue for lapping up ants and termites. It looks like an anteater wearing a pig's face, but genetics tell a very different story. It belongs to an ancient African animal group called Afrotheria, which evolved long ago when Africa was an isolated continent. Which surprising modern animals turn out to be its closest cousins?",
+    "question": "An aardvark noses through the African night with a pig-like snout, tall rabbit ears and a sticky, ropy tongue for lapping up ants and termites. It looks like an anteater wearing a pig's face, but its genes tell a different story: it belongs to Afrotheria, an ancient group of African animals. Which modern animals turn out to be its closest cousins?",
     "answer": "Elephants and manatees",
     "choices": [
       "Elephants and manatees",
@@ -118,7 +105,7 @@
   },
   {
     "tier": 3,
-    "question": "The aardvark is a burrowing African mammal that eats ants and termites, and its teeth are so unusual that scientists gave the whole order of mammals it belongs to the name Tubulidentata, which means 'tube-toothed.' Every one of its teeth is a bundle of thousands of thin, hexagonal tubes cemented together into a rootless column with no crown at the top. What do these strange tube-teeth completely lack?",
+    "question": "An aardvark feeding on ants and termites carries teeth so strange that biologists named its whole order of mammals after them: Tubulidentata, 'tube-toothed.' Each tooth is a bundle of thousands of thin, hexagonal tubes cemented together into a rootless column with no crown at the top. What do these tube-teeth completely lack?",
     "answer": "Enamel",
     "choices": [
       "Enamel",
@@ -131,7 +118,7 @@
   },
   {
     "tier": 2,
-    "question": "The aardvark is a nocturnal African mammal that eats almost nothing but ants and termites. A single aardvark can hoover up as many as 50,000 of them in one night — first ripping open a rock-hard termite mound with its powerful shovel-like front claws, and then reaching deep into the tunnels to pull the panicked insects out. What body part does it use to reach inside and gather the insects up?",
+    "question": "An aardvark rips open a rock-hard termite mound with its shovel-like front claws, and the panicked insects flee deep into their tunnels. In a single night it can gather as many as 50,000 of them. What body part does it use to reach inside the tunnels and gather them up?",
     "answer": "A sticky snakelike tongue up to 30 cm long",
     "choices": [
       "A sticky snakelike tongue up to 30 cm long",
@@ -144,7 +131,7 @@
   },
   {
     "tier": 3,
-    "question": "The aardvark is a large, pig-nosed nocturnal digger of the African savanna, using its shovel-like claws to tear open termite mounds each night. But every night it also digs deep new burrows — many of which it never returns to. Biologists call the aardvark a keystone species of the savanna, meaning the whole animal community would collapse without it. Which effect of the aardvark's life earns that title?",
+    "question": "Night after night an aardvark digs fresh burrows across the African savanna, and many of them it never returns to. Biologists rank the aardvark a keystone species of the savanna. Which effect of the aardvark's life earns it that title?",
     "answer": "Its abandoned burrows shelter warthogs, hyenas, owls, and pythons",
     "choices": [
       "Its abandoned burrows shelter warthogs, hyenas, owls, and pythons",
@@ -157,7 +144,7 @@
   },
   {
     "tier": 4,
-    "question": "The aardvark cucumber (Cucumis humifructus) is the only cucumber in the world that pushes its melon-like fruit about a foot underground to ripen out of sight in the African soil. In a 2025 field study, camera traps watched seven different mammal species pass by patches of the buried melons. Only the aardvark — the ant-eating night burrower — reliably came away with the fruit. What did the aardvark manage that no other mammal could?",
+    "question": "Camera traps set beside patches of buried melons watched seven kinds of mammal pass by in a 2025 study. The melons belong to the aardvark cucumber, the only cucumber in the world that pushes its fruit about a foot underground to ripen out of sight. Only the aardvark, the ant-eating night burrower, reliably came away with the fruit. What did it manage that no other mammal could?",
     "answer": "Locate and dig up the buried fruit, then spread its seeds in its dung",
     "choices": [
       "Locate and dig up the buried fruit, then spread its seeds in its dung",
@@ -352,7 +339,7 @@
   },
   {
     "tier": 2,
-    "question": "Out over the stormy Southern Ocean glides the wandering albatross, a huge white seabird that can ride the winds around the globe for weeks without ever flapping. Stretch its wings tip to tip and you get the longest wingspan of any bird alive today. Roughly how wide is that span?",
+    "question": "Out over the stormy Southern Ocean glides the wandering albatross, a huge white seabird that can ride the winds around the globe for weeks without ever flapping. From tip to tip its wingspan beats that of every other bird alive today. Roughly how wide is that span?",
     "answer": "About 11 to 12 feet",
     "choices": [
       "About 11 to 12 feet",
@@ -365,7 +352,7 @@
   },
   {
     "tier": 2,
-    "question": "The wandering albatross is a huge seabird of the Southern Ocean, with a wingspan wider than an adult person is tall — the largest wingspan of any bird alive. It can hang in the wind for hours over the open sea without a single flap, gliding just above the waves. Ordinary flying birds get tired because their muscles have to keep the wings held out, but a special tendon in the albatross's shoulder does that job automatically. What does the tendon do?",
+    "question": "Gliding just above the waves, a wandering albatross hangs in the wind for hours over the open Southern Ocean without a single flap. An ordinary flying bird tires because its muscles must keep its wings held out, but a special tendon in the albatross's shoulder does that job for it. What does the tendon do?",
     "answer": "Locking the wing open with no muscle effort",
     "choices": [
       "Locking the wing open with no muscle effort",
@@ -378,7 +365,7 @@
   },
   {
     "tier": 3,
-    "question": "The wandering albatross of the Southern Ocean is a master glider. It almost never flaps its enormous wings, yet it crosses whole oceans without tiring, using the wind alone as its fuel. Right down at the surface of the sea, the wind is slowed by friction with the waves, but a few dozen meters higher up the wind is racing much faster. Albatrosses cleverly exploit that difference in wind speed. What does an albatross physically do to steal energy from the wind?",
+    "question": "The wind alone fuels a wandering albatross as it crosses whole oceans almost without flapping its enormous wings. Right at the surface, friction with the waves slows the wind, while a few dozen meters higher it races much faster, and the bird exploits that difference. What does an albatross physically do to steal energy from the wind?",
     "answer": "Climbs into the fast upper air, then dives into the slow surface air",
     "choices": [
       "Climbs into the fast upper air, then dives into the slow surface air",
@@ -391,7 +378,7 @@
   },
   {
     "tier": 3,
-    "question": "As a wandering albatross feeds on squid and small fish in the open ocean, it can't help swallowing a lot of seawater along with every bite. Most animals that drank that much salt would die of salt poisoning within a day. But the albatross has a special salt-processing gland tucked just above each of its eyes, and that gland deals with the huge overload for it. What does that gland do with all the extra salt?",
+    "question": "Every bite of squid or small fish that a wandering albatross snatches from the open ocean comes with a gulp of seawater. Most animals that drank that much salt would die of salt poisoning within a day, but the albatross has a special gland tucked just above each eye that deals with the overload. What does that gland do with all the extra salt?",
     "answer": "Dripping concentrated brine out its nostrils",
     "choices": [
       "Dripping concentrated brine out its nostrils",
@@ -404,7 +391,7 @@
   },
   {
     "tier": 3,
-    "question": "A wandering albatross searching for food is one of the most efficient long-distance travelers in the whole animal kingdom. Using dynamic soaring and its locking shoulder tendon, a single bird can cross the open sea for day after day, barely flapping at all and burning almost no energy. In a single day of foraging, roughly how far can one wandering albatross cover?",
+    "question": "Out hunting for food, a wandering albatross can cross the open sea day after day, barely flapping its wings and burning almost no energy as it rides the wind. In a single day of foraging, roughly how far can one bird travel?",
     "answer": "About 950 km",
     "choices": [
       "About 950 km",
@@ -417,7 +404,7 @@
   },
   {
     "tier": 4,
-    "question": "The wandering albatross is a huge seabird that spends almost its entire life riding the winds over the Southern Ocean. Researchers fitted a few of them with GPS trackers to see just how far they roamed. One tracked albatross made a complete loop right around the continent of Antarctica without ever touching land. How long did the whole circuit take?",
+    "question": "Researchers fitted wandering albatrosses with GPS trackers to see just how far they roam over the Southern Ocean. One tracked bird made a complete loop right around the continent of Antarctica without ever touching land. How long did the whole circuit take?",
     "answer": "Just 46 days",
     "choices": [
       "Just 46 days",
@@ -430,7 +417,7 @@
   },
   {
     "tier": 4,
-    "question": "The Laysan albatross is a smaller cousin of the wandering albatross that nests on remote Pacific islands. Biologists banded one female Laysan albatross back in 1956 on Midway Atoll — a coral island west of Hawaii — with metal ankle band number Z333. They nicknamed her Wisdom. Decades later she is still alive and still returning to that same atoll year after year to raise a chick. What record does Wisdom now hold?",
+    "question": "Biologists banded a female Laysan albatross, a smaller Pacific cousin of the wandering albatross, on Midway Atoll west of Hawaii in 1956, and they nicknamed her Wisdom. Decades later she is still alive, still returning to the same atoll to raise chicks. What record does Wisdom now hold?",
     "answer": "Oldest known wild bird in the world",
     "choices": [
       "Oldest known wild bird in the world",
@@ -443,7 +430,7 @@
   },
   {
     "tier": 4,
-    "question": "Wandering albatrosses mate for life. After a breeding pair's chick is old enough to fend for itself, the two adults split up and go their separate ways, each roaming thousands of miles of empty Southern Ocean alone, hunting squid over the open sea for many months at a time. When at last they meet again at the exact same nest site on a windswept subantarctic island, they have to re-recognize each other after all that time apart. What do the two birds do when they reunite at the nest?",
+    "question": "A pair of wandering albatrosses mates for life, yet once their chick can fend for itself the two split up and roam the empty Southern Ocean alone for many months, hunting squid far apart. When at last both birds are back at the same nest site on a windswept island, they must recognize each other after all that time. What do the two birds do when they reunite?",
     "answer": "Perform an elaborate greeting dance",
     "choices": [
       "Perform an elaborate greeting dance",
@@ -456,7 +443,7 @@
   },
   {
     "tier": 4,
-    "question": "On windswept islands scattered across the freezing Southern Ocean nests the wandering albatross, a huge white seabird with the longest wingspan of any bird alive -- over eleven feet from tip to tip. A pair raises just a single chick, laying one egg on a mound of grass. The chick then sits in that nest waiting to grow its enormous flight feathers far longer than the young of nearly any other bird. About how long does the chick wait before its first flight?",
+    "question": "On a windswept island in the freezing Southern Ocean, a pair of wandering albatrosses lays a single egg on a mound of grass. The chick that hatches then sits in that nest, growing its enormous flight feathers, far longer than the young of nearly any other bird. About how long does it wait before its first flight?",
     "answer": "Around 278 days",
     "choices": [
       "Around 278 days",
@@ -469,7 +456,7 @@
   },
   {
     "tier": 3,
-    "question": "Wandering albatrosses are among the longest-lived of all birds. If a young albatross survives to adulthood, it can cruise the Southern Ocean decade after decade, returning to the same windswept nesting island every other year to raise a single chick with its lifelong mate. Out in the wild, about how long can a wandering albatross live?",
+    "question": "A young wandering albatross that survives to adulthood can cruise the Southern Ocean decade after decade, returning to the same windswept nesting island every other year to raise a single chick with its lifelong mate. Out in the wild, about how long can a wandering albatross live?",
     "answer": "50 to 60 years or more",
     "choices": [
       "50 to 60 years or more",
@@ -482,7 +469,7 @@
   },
   {
     "tier": 4,
-    "question": "A wandering albatross -- a huge white seabird of the Southern Ocean with an eleven-foot wingspan -- must find scattered patches of squid and krill spread across hundreds of miles of empty ocean where nothing is visible from the air above. A 2008 GPS-tracking study finally cracked the mystery: the bird zig-zags upwind toward its meal, tacking back and forth like a sailboat. What is it actually following?",
+    "question": "Patches of squid and krill lie scattered across hundreds of miles of empty ocean, where nothing shows from the air above, and a wandering albatross must find them. When Gabrielle Nevitt's team tracked the birds by GPS in 2008, they caught them zig-zagging upwind toward their prey, tacking back and forth like a sailboat. What are the birds following?",
     "answer": "A chemical scent the sea releases where plankton are being grazed",
     "choices": [
       "A chemical scent the sea releases where plankton are being grazed",
@@ -495,7 +482,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades, 21-foot-wingspan fossil seabirds from Antarctica were filed as the largest albatrosses that ever lived, because their leg and foot bones matched an albatross so closely. A closer look at their jaws overturned that. What were the fossils really?",
+    "question": "Giant seabirds with 21-foot wingspans left their bones in the rocks of Antarctica, and their leg and foot bones matched an albatross's so closely that for decades they were filed as the largest albatrosses that ever lived. A closer look at their jaws overturned that. What were they really?",
     "answer": "A separate seabird lineage whose beaks bristled with tooth-like bony spikes",
     "choices": [
       "A separate seabird lineage whose beaks bristled with tooth-like bony spikes",
@@ -664,7 +651,7 @@
   },
   {
     "tier": 2,
-    "question": "The electric eel lives in the muddy rivers of the Amazon in South America. It grows longer than a person and can jolt a wading horse right off its feet with a shock from its long body. But its name is a lie: an electric eel is not a true eel at all. It is really a fish called a knifefish. Which two familiar fish are the electric eel's closest cousins?",
+    "question": "An electric eel longer than a person glides through a muddy Amazon river, carrying a jolt that can knock a wading horse off its feet. For all its name, which two familiar fish are its closest cousins?",
     "answer": "Catfish and carp",
     "choices": [
       "Catfish and carp",
@@ -677,7 +664,7 @@
   },
   {
     "tier": 2,
-    "question": "Inside an electric eel, its shock organs look like living batteries: thousands of flat cells stacked and wired end to end down each side. The eel builds this power from the same cell type that, in most animals, only makes muscles twitch. What is one of these stacked cells called?",
+    "question": "Thousands of flat cells sit stacked and wired end to end down each side of an electric eel's body as it hunts the murky Amazon. The eel builds them from the same kind of cell that, in most animals, only makes a muscle twitch. What is one of these stacked cells called?",
     "answer": "An electrocyte",
     "choices": [
       "An electrocyte",
@@ -689,47 +676,8 @@
     "topic": "animals-that-generate-electricity"
   },
   {
-    "tier": 3,
-    "question": "For two hundred years scientists thought there was just one electric eel. In 2019 a team studied 107 specimens and split it into three species. One of them, Volta's electric eel, fired the strongest shock ever measured from a living animal. How high did that one jolt go?",
-    "answer": "860 volts",
-    "choices": [
-      "860 volts",
-      "700 volts",
-      "1,100 volts",
-      "2,400 volts"
-    ],
-    "context": "E. voltai was measured at 860 volts, beating the old 650-volt record — the strongest bioelectric shock ever recorded from any animal. One measurement from one fish: the strongest ever recorded, not a routine output. Source: de Santana et al. 2019, Nature Communications; Mongabay 2019.  (Legend.)",
-    "topic": "animals-that-generate-electricity"
-  },
-  {
-    "tier": 3,
-    "question": "The electric eel of the Amazon is a long knifefish that can pour hundreds of volts down its body, enough to stun any fish it hunts. At Vanderbilt University the biologist Kenneth Catania set up high-speed cameras on tanks of electric eels to see how they attack. He filmed one move that at least doubled the strength of the shock going into a struggling fish. What was the eel doing when its shock hit hardest?",
-    "answer": "Curling head to tail around the prey",
-    "choices": [
-      "Curling head to tail around the prey",
-      "Beating its tail against the prey",
-      "Swallowing the prey whole first",
-      "Rubbing its belly on the riverbed"
-    ],
-    "context": "By curling to bring its positive head and negative tail together around the prey, the eel concentrates the field and at least doubles the shock — an 'electric embrace' that runs the prey's muscles to exhaustion. Source: Catania 2015, Smithsonian.",
-    "topic": "animals-that-generate-electricity"
-  },
-  {
     "tier": 4,
-    "question": "In 1800, Alexander von Humboldt claimed he watched electric eels leap up out of an Amazon pool to shock a herd of horses — a tale mocked as tall for two hundred years. In 2016 Kenneth Catania filmed eels doing exactly this. Why does leaving the water and pressing against the target make the eel's attack far worse?",
-    "answer": "The full jolt drives straight into the target instead of spreading through the water",
-    "choices": [
-      "The full jolt drives straight into the target instead of spreading through the water",
-      "The air lets the eel build a bigger charge before firing",
-      "Wet skin insulates the eel so it feels nothing",
-      "Leaping lets the eel bite and shock at the same time"
-    ],
-    "context": "Underwater the current disperses and weakens; by leaping to press its chin against a threat, the eel drives the full jolt straight in. Catania's video confirmed Humboldt's long-doubted 1800 account of eels battling horses. Source: Catania 2016, PNAS; Science News.  (Legend.)",
-    "topic": "animals-that-generate-electricity"
-  },
-  {
-    "tier": 4,
-    "question": "The electric eel is a knifefish, but it isn't the only fish that fights with electricity. The torpedo ray also stuns prey with a jolt, yet it stores its charge in a completely different place from the eel's long body. Where does the torpedo ray keep its two electric organs?",
+    "question": "Like the electric eel, a torpedo ray fights with an electric jolt of its own, and the great torpedo can reach about 220 volts, enough to floor a person. Yet the ray stores its charge in a completely different place from the eel's long body. Where does the torpedo ray keep its two electric organs?",
     "answer": "Inside its broad pectoral 'wings'",
     "choices": [
       "Inside its broad pectoral 'wings'",
@@ -742,7 +690,7 @@
   },
   {
     "tier": 4,
-    "question": "A shock from Volta's electric eel can top 500 volts — far above a household wall socket. So you'd expect it to push a monstrous current through anything it touches. Yet measure the current in a full eel discharge and it peaks near just 1 amp, a tenth of a wall outlet's. So what actually makes the eel's blast so dangerous?",
+    "question": "Volta's electric eel can fire a shock of more than 500 volts, far above a household wall socket. Yet the current in a full discharge peaks near just 1 amp, a tenth of what a wall outlet carries. What makes the eel's blast so dangerous?",
     "answer": "The high voltage drives current across a body in a rapid volley of pulses",
     "choices": [
       "The high voltage drives current across a body in a rapid volley of pulses",
@@ -755,7 +703,7 @@
   },
   {
     "tier": 5,
-    "question": "An electric eel, a torpedo ray, and an elephantnose fish all build power organs from ordinary muscle cells — yet their lineages split long before any of them could shock. A 2014 genome study found this organ was reinvented at least six separate times in fishes. What astonished the team about how those unrelated fish each built it?",
+    "question": "An elephantnose fish builds its power organ from ordinary muscle cells, just as an electric eel and a torpedo ray do, though their lineages split long before any of them could shock. A 2014 genome study found this organ was reinvented at least six separate times in fishes. What astonished the team about how those unrelated fish each built it?",
     "answer": "They all recruited the very same set of genes and developmental pathways",
     "choices": [
       "They all recruited the very same set of genes and developmental pathways",
@@ -781,7 +729,7 @@
   },
   {
     "tier": 1,
-    "question": "About 70 million years ago, in what is now western North America, walked Ankylosaurus — one of the very last of the armored dinosaurs. Its whole back and tail were plated in bony armor, and it swung a huge bony club at the end of its tail. Nose to tail-tip, this squat plant-eater stretched 6 to 8 meters, roughly the length of a school bus, on short stumpy legs. How much did this armored dinosaur weigh?",
+    "question": "On short, stumpy legs, Ankylosaurus plodded across western North America, its back plated in bony armor and its tail ending in a huge bony club. Nose to tail-tip, this squat plant-eater stretched 6 to 8 meters, roughly a school bus. How much did it weigh?",
     "answer": "As much as an elephant, 5 to 8 tonnes",
     "choices": [
       "As much as an elephant, 5 to 8 tonnes",
@@ -794,7 +742,7 @@
   },
   {
     "tier": 2,
-    "question": "Ankylosaurus, a bulky plant-eating dinosaur of the Late Cretaceous plains of North America, lumbered across the landscape like a walking tank. Bony plates were set right into its skin, from tiny pebble-sized knobs to armored tiles more than a foot long, and its tail ended in a huge bone club. It also had one guard almost no other dinosaur is known to have shared. Which surprising body part was also armored?",
+    "question": "Bony plates sat right in the skin of Ankylosaurus as it lumbered across the Late Cretaceous plains of North America, from tiny pebble-sized knobs to armored tiles more than a foot long. It also carried one guard that almost no other dinosaur is known to have shared. Which surprising body part was armored too?",
     "answer": "Its eyes, shielded by bony eyelids",
     "choices": [
       "Its eyes, shielded by bony eyelids",
@@ -807,7 +755,7 @@
   },
   {
     "tier": 2,
-    "question": "Ankylosaurus was a plant-eating dinosaur of ancient North America, a walking fortress covered in bony plates from head to tail. Even its eyelids grew tiny bone shields. Yet one region of the animal's body carried no armor at all, and any predator that could reach that spot had a real chance of killing it. Which part of Ankylosaurus went bare?",
+    "question": "Ankylosaurus grazed its way across ancient North America, a walking fortress covered in bony plates from head to tail. Yet one region of its body carried no armor at all, and any predator that could reach that spot had a real chance of killing it. Which part of Ankylosaurus went bare?",
     "answer": "Its belly",
     "choices": [
       "Its belly",
@@ -820,7 +768,7 @@
   },
   {
     "tier": 3,
-    "question": "Ankylosaurus was a massive, low-slung armored dinosaur that lived in ancient North America. At the end of its long, heavy tail it carried a knob of bone the size of a beach ball, heavy enough to shatter a predator's leg bone when swung. When paleontologists studied its skeleton, they noticed something unusual about the last seven bones of that tail. What did they find?",
+    "question": "At the end of its long, heavy tail, Ankylosaurus carried a knob of bone the size of a beach ball. When paleontologists studied its skeleton, they noticed something unusual about the last seven bones of that tail. What did they find?",
     "answer": "Fused into a single stiff handle",
     "choices": [
       "Fused into a single stiff handle",
@@ -833,7 +781,7 @@
   },
   {
     "tier": 3,
-    "question": "Ankylosaurus was a low, four-legged plant-eating dinosaur that walked across ancient North America. Instead of a narrow pointed snout like a modern deer, it had a very wide skull ending in a broad, flat beak, roughly the shape of a shovel. From that beak, paleontologists work out how the dinosaur most likely fed. How did Ankylosaurus eat?",
+    "question": "Ankylosaurus carried a very wide skull tipped with a broad, flat beak, roughly the shape of a shovel rather than a deer's narrow, pointed snout. From that beak, paleontologists work out how the dinosaur most likely fed. How did Ankylosaurus eat?",
     "answer": "By cropping low plants without picking favorites",
     "choices": [
       "By cropping low plants without picking favorites",
@@ -846,7 +794,7 @@
   },
   {
     "tier": 4,
-    "question": "Inside an ankylosaur's snout, the nasal passage wasn't a straight tube but a crazy-straw of loops and twists, running about 2.5 feet folded inside the skull. Researchers modeling airflow found this coiled airway served a specific physiological job. What did all that looping accomplish?",
+    "question": "In Euoplocephalus, a relative of Ankylosaurus, the airway inside the snout was no straight tube but a crazy-straw of loops and twists, running about 80 centimeters folded inside the skull. Researchers modeling its airflow found that the coiled passage did a specific job. What did all that looping accomplish?",
     "answer": "Recovering breath heat and cooling blood to the brain",
     "choices": [
       "Recovering breath heat and cooling blood to the brain",
@@ -859,7 +807,7 @@
   },
   {
     "tier": 5,
-    "question": "A famous claim says an ankylosaur could shatter a T. rex leg with its tail club. When Arbour and Snively modeled the actual impacts, they found the bone-breaking blow was not something every ankylosaur could deliver. Which animals actually had the force to break a predator bone?",
+    "question": "Arbour and Snively modeled the blows of ankylosaur tail clubs to test a famous claim: that one swing could shatter the leg of a T. rex. The bone-breaking blow turned out to be real, but not something every ankylosaur could deliver. Which animals actually had the force to break a predator's bone?",
     "answer": "Only the biggest-clubbed adults, whose knobs cleared bone strength tenfold",
     "choices": [
       "Only the biggest-clubbed adults, whose knobs cleared bone strength tenfold",
@@ -1002,20 +950,7 @@
   },
   {
     "tier": 2,
-    "question": "In a Canadian forest in midwinter, brush aside the fallen leaves under a snowdrift and you can find a small brown frog no bigger than an egg. It is frozen so solid it clinks like an ice cube when you tap it -- no heartbeat, no breathing, its whole body a lump of ice for months on end. Yet when spring warmth finally reaches the leaf litter, the frog thaws out and hops away as if nothing happened. Which frog pulls this off?",
-    "answer": "The wood frog",
-    "choices": [
-      "The wood frog",
-      "The bullfrog",
-      "The tree frog",
-      "The leopard frog"
-    ],
-    "context": "The wood frog (Lithobates sylvaticus, formerly Rana sylvatica) lets up to about two-thirds of the water in its body turn to ice each winter, then thaws out in spring and simply hops away. Source: NSF, 'Frozen Frogs Don't Croak'; Audubon, 'Frogs Freeze to Survive the Alaskan Winter'.  (Legend.)",
-    "topic": "antifreeze-blood-and-freezing-solid"
-  },
-  {
-    "tier": 2,
-    "question": "The crocodile icefish lives in the freezing waters around Antarctica, seas so cold most fish would die of frostbite in the blood. Yet this fish is the only animal with a backbone that carries no red blood cells at all, not one. What does the crocodile icefish's blood look like when scientists draw a sample?",
+    "question": "Around Antarctica, a crocodile icefish glides through water so cold that most fish would die there. It is the only animal with a backbone that carries no red blood cells at all, not one. What does its blood look like when a scientist draws a sample?",
     "answer": "Clear and white",
     "choices": [
       "Clear and white",
@@ -1028,7 +963,7 @@
   },
   {
     "tier": 3,
-    "question": "Around Antarctica the sea sits at about minus 1.9 C -- colder than the point where an ordinary fish's blood would freeze into slush. The notothenioids, a family of fish that make up almost every fish in those icy waters, cruise through it without turning solid. Special antifreeze proteins in their blood find every tiny ice crystal that manages to sneak in and do what to it?",
+    "question": "A notothenioid fish cruises the Antarctic sea at about minus 1.9°C, colder than the point where an ordinary fish's blood would freeze into slush. Its family makes up almost every fish in those icy waters, and none of them turns solid. When a tiny ice crystal sneaks into its blood, what do its antifreeze proteins do to it?",
     "answer": "Grip it so it can't grow",
     "choices": [
       "Grip it so it can't grow",
@@ -1040,21 +975,8 @@
     "topic": "antifreeze-blood-and-freezing-solid"
   },
   {
-    "tier": 3,
-    "question": "When winter hits a Canadian forest, the little brown wood frog lets its body freeze solid -- no heartbeat, no breathing -- and comes back to life in spring. But freezing is dangerous: sharp ice crystals inside a living cell will burst the cell open like a water balloon. Before the frog freezes, its liver pumps huge amounts of one special substance into its cells so ice can only form in the gaps around them, never inside. What does its liver flood the cells with?",
-    "answer": "Glucose",
-    "choices": [
-      "Glucose",
-      "Salt",
-      "Ethanol",
-      "Vinegar"
-    ],
-    "context": "The liver dumps huge amounts of glucose (blood sugar) into the cells; the sugar keeps the cells themselves from freezing while ice forms only in the safe spaces between them. Source: PubMed 8409827, 'Glucose concentration regulates freeze tolerance in the wood frog'; Audubon.",
-    "topic": "antifreeze-blood-and-freezing-solid"
-  },
-  {
     "tier": 4,
-    "question": "By January, the little brown wood frog under the Canadian leaf litter is not merely sluggish -- everything has stopped. No heartbeat, no breath, no brain activity at all, its whole body frozen into a lump of ice for months. Then, in April, the warming soil finally thaws its blood and the frog stirs back to life. Roughly how long does it take, once thawed, for a wood frog to be hopping around and behaving normally again?",
+    "question": "A little brown wood frog lies under the Canadian leaf litter through January with everything stopped: no heartbeat, no breath, no brain activity, its whole body frozen into a lump of ice for months. In April the warming soil finally thaws its blood, and the frog stirs back to life. Once thawed, roughly how long does it take to be hopping around and behaving normally again?",
     "answer": "About 10 hours",
     "choices": [
       "About 10 hours",
@@ -1067,7 +989,7 @@
   },
   {
     "tier": 4,
-    "question": "A round swelling on a goldenrod stem hides a fly larva that freezes on purpose all winter. In autumn it floods itself with glycerol; then, as the cold deepens, it brews a SECOND protectant to push its survival down to about minus 40 C. What is that second substance?",
+    "question": "A fly larva hides inside a round swelling on a goldenrod stem and freezes on purpose all winter. In autumn it floods itself with glycerol; then, as the cold deepens, it brews a second protectant that pushes its survival down to about minus 40°C. What is that second substance?",
     "answer": "Sorbitol",
     "choices": [
       "Sorbitol",
@@ -1079,21 +1001,8 @@
     "topic": "antifreeze-blood-and-freezing-solid"
   },
   {
-    "tier": 4,
-    "question": "High in the Alaskan tundra, the Arctic ground squirrel hibernates through an eight-month winter in a burrow buried deep under the snow. During hibernation its body temperature falls to about minus 2.9 C -- below the freezing point of pure water -- yet its blood never turns to ice. Ice normally needs a tiny speck of dust or grit to start forming around; smooth pure water can be chilled far below zero without freezing. How does the Arctic ground squirrel actually keep from icing up?",
-    "answer": "It clears out the specks ice would form around",
-    "choices": [
-      "It clears out the specks ice would form around",
-      "It packs its blood with antifreeze proteins",
-      "It lowers its blood's freezing point with glycerol",
-      "It keeps its blood moving too fast to freeze"
-    ],
-    "context": "The squirrel 'supercools': it cleans out the tiny particles that ice would normally form around, so its blood stays liquid at minus 2.9 C -- the lowest body temperature ever measured in a mammal. Source: Scientific American, 'What the Supercool Arctic Ground Squirrel Teaches Us'; UAF Centennial (Brian Barnes research).  (Legend.)",
-    "topic": "antifreeze-blood-and-freezing-solid"
-  },
-  {
     "tier": 5,
-    "question": "In the freezing seas around Antarctica, fish called notothenioids survive because their blood carries special antifreeze proteins. These proteins latch onto tiny ice crystals in the fish's blood and hold them tight so the ice cannot grow big enough to slice the fish's cells. But evolution built the grip and never built a release. What strange lifelong price does the notothenioid pay for carrying that antifreeze?",
+    "question": "Antifreeze proteins keep a notothenioid fish from freezing all its life in the icy seas around Antarctica. Evolution built that defense and never built it an off switch. What strange lifelong price does the fish pay for carrying that antifreeze?",
     "answer": "The trapped ice never melts, even in summer-warm water",
     "choices": [
       "The trapped ice never melts, even in summer-warm water",
@@ -1106,7 +1015,7 @@
   },
   {
     "tier": 5,
-    "question": "The icefish of the Antarctic seas has no hemoglobin, the red protein that lets most animals' blood carry oxygen. Each drop of icefish blood carries very little oxygen, and yet the fish still swims and hunts. Evolution compensated by supersizing one organ in the icefish's body far beyond a normal fish's. Which organ did the icefish enlarge?",
+    "question": "An icefish swims and hunts through the Antarctic seas with no hemoglobin, the red protein that lets most animals' blood carry oxygen, so each drop of its blood carries very little. Evolution made up for it by supersizing one organ far beyond a normal fish's. Which organ did the icefish enlarge?",
     "answer": "Its heart",
     "choices": [
       "Its heart",
@@ -1119,7 +1028,7 @@
   },
   {
     "tier": 5,
-    "question": "The Antarctic notothenioid builds its ice-gripping antifreeze from a long, dull-repetitive protein backbone. Tracing the gene back, biologists found it was not invented from scratch but rebuilt from a gene the fish already carried for a completely different job. What was that borrowed gene originally for?",
+    "question": "Biologists tracing the gene behind the antifreeze of Antarctic notothenioid fish in 1997 found that it was not invented from scratch. It had been rebuilt from a gene the fish already carried for a completely different job. What was that borrowed gene originally for?",
     "answer": "A digestive enzyme that breaks down food in the gut",
     "choices": [
       "A digestive enzyme that breaks down food in the gut",
@@ -1132,7 +1041,7 @@
   },
   {
     "tier": 5,
-    "question": "The crocodile icefish is the only vertebrate with no hemoglobin: its blood runs clear and carries barely a tenth of the oxygen a red-blooded fish carries, yet it lives right alongside red-blooded cousins in the same water. Biologists still argue over why it lost its red blood cells at all. Which explanation does the leading review defend?",
+    "question": "A crocodile icefish swims right beside its red-blooded cousins in the same Antarctic water, though its own blood carries barely a tenth of the oxygen theirs does. Biologists still argue over why it lost its red blood cells at all. Which explanation does Sidell and O'Brien's leading 2006 review defend?",
     "answer": "No measured benefit -- a mutation that stuck only because cold, predator-poor water relaxed selection",
     "choices": [
       "No measured benefit -- a mutation that stuck only because cold, predator-poor water relaxed selection",
@@ -1145,7 +1054,7 @@
   },
   {
     "tier": 1,
-    "question": "On a sunny day in loose dry sand -- under a porch, along a path, at the edge of a desert -- you might spot a smooth cone-shaped pit about the size of a walnut. At the bottom, buried out of sight, a small insect larva waits with only its huge curved jaws sticking up. An ant that wanders too close to the rim slides down the crumbling wall straight into those jaws. Which insect makes this trap?",
+    "question": "A smooth, cone-shaped pit the size of a walnut sits in the loose, dry sand under a porch. Buried at its bottom, a small insect larva waits with only its huge curved jaws sticking up. An ant that strays over the crumbling rim tumbles straight into them. Which insect makes this trap?",
     "answer": "The antlion",
     "choices": [
       "The antlion",
@@ -1158,7 +1067,7 @@
   },
   {
     "tier": 2,
-    "question": "An antlion larva is a small buried insect that digs a smooth cone-shaped pit in loose dry sand and waits at the bottom with only its wide jaws poking up. When an ant wanders too close and slides down, sometimes it scrambles halfway back up the crumbling wall and looks like it might escape. To make sure that never happens, the buried larva at the bottom does something clever to drag the ant back down. What does the antlion do?",
+    "question": "An ant slides down the crumbling wall of an antlion's sand pit, then scrambles halfway back up and looks as if it might escape. The larva buried at the bottom, with only its wide jaws poking up, has a way to drag it back down. What does the antlion do?",
     "answer": "Flicks sand up at the ant to trigger tiny landslides",
     "choices": [
       "Flicks sand up at the ant to trigger tiny landslides",
@@ -1171,7 +1080,7 @@
   },
   {
     "tier": 2,
-    "question": "The antlion larva is a tiny sand-dwelling insect of dry, sandy places, best known for digging cone-shaped pits to trap ants. Its whole body is built to travel in only one direction; its legs and jaws point the wrong way for the other. As a young antlion crawls around hunting for a good spot to dig, it leaves squiggly winding doodle-trails in the sand behind it. Which way can the antlion larva move?",
+    "question": "A young antlion crawls across dry sand hunting for a good spot to dig its pit, leaving squiggly, winding doodle-trails behind it. Its whole body is built to travel in only one direction; its legs and jaws point the wrong way for the other. Which way can the antlion larva move?",
     "answer": "Only backward",
     "choices": [
       "Only backward",
@@ -1184,7 +1093,7 @@
   },
   {
     "tier": 3,
-    "question": "After years spent as a fierce sand-throwing pit-digger buried in the ground, the antlion larva finally spins a silken cocoon down in the sand and pupates. Out crawls a winged adult that looks nothing like the small sand-monster it came from. What does the grown-up antlion look like?",
+    "question": "After years as a pit-digger buried in the sand, an antlion larva at last spins a silken cocoon below the surface and pupates. Out crawls a winged adult that looks nothing like the small sand-monster it came from. What does the grown-up antlion look like?",
     "answer": "A delicate, long-winged flier often mistaken for a damselfly",
     "choices": [
       "A delicate, long-winged flier often mistaken for a damselfly",
@@ -1197,7 +1106,7 @@
   },
   {
     "tier": 3,
-    "question": "An antlion larva is the fat, wide-jawed baby of a dragonfly-like insect. It digs a smooth funnel-shaped pit in dry sand and buries itself at the very bottom, huge curved jaws waiting just under the surface. Any ant that slips over the edge tumbles down into those pincers and is drained dry. A single larva may sit in one pit for years, feeding on ant after ant. Yet in all that time it never once leaves a single dropping in the sand. What is the strange reason it never poops?",
+    "question": "An antlion larva may sit at the bottom of one sand pit for years, draining ant after ant that tumbles into its jaws. In all that time it never once leaves a single dropping in the sand. What is the strange reason it never poops?",
     "answer": "It has no anus at all",
     "choices": [
       "It has no anus at all",
@@ -1210,20 +1119,20 @@
   },
   {
     "tier": 2,
-    "question": "About the size of a raven, Archaeopteryx lived 150 million years ago. It had traits no modern animal shares. It had small teeth, clawed fingers, and a long bony tail, but also true feathers and a wishbone. What is a fossil like this best understood as?",
-    "answer": "A signpost of one group turning into another over deep time",
+    "question": "A raven-sized Archaeopteryx lived 150 million years ago in what is now southern Germany, and it looked like two creatures glued together. It had true feathers and a wishbone like a bird, but also small pointed teeth, clawed fingers and a long bony tail. Which two great animal groups does this one fossil famously bridge?",
+    "answer": "Meat-eating dinosaurs and birds",
     "choices": [
-      "A signpost of one group turning into another over deep time",
-      "A hoax assembled from two different fossils",
-      "A giant insect that only looked like a bird",
-      "A creature with no living relatives at all"
+      "Meat-eating dinosaurs and birds",
+      "Fish and amphibians",
+      "Reptiles and mammals",
+      "Insects and spiders"
     ],
     "context": "Birds ARE living dinosaurs, and Archaeopteryx sits on that road as a creature part dinosaur, part bird, preserved in the fine Solnhofen limestone of southern Germany. Source: UCMP Berkeley 'Archaeopteryx: An Early Bird'; National Geographic (2014); Britannica 'Archaeopteryx'.",
     "topic": "archaeopteryx-dinosaur-becomes-bird"
   },
   {
     "tier": 2,
-    "question": "Archaeopteryx, from Late Jurassic Germany 150 million years ago, is the famous 'first bird' -- a crow-sized creature with clear feathers preserved in fine limestone, and one of the most important fossils ever found. But when one particular Archaeopteryx skeleton came out of the quarry with its feathers only faintly preserved, the first scientists to see it missed the feather impressions altogether. They filed the fossil under the wrong animal entirely. What did they first catalog it as?",
+    "question": "An Archaeopteryx skeleton came out of the quarry with its feathers only faintly preserved, and the first scientists to see it missed the feather marks altogether. They filed the fossil under the wrong animal entirely. What did they first catalog it as?",
     "answer": "A small bipedal dinosaur (a Compsognathus)",
     "choices": [
       "A small bipedal dinosaur (a Compsognathus)",
@@ -1236,7 +1145,7 @@
   },
   {
     "tier": 3,
-    "question": "Archaeopteryx already had feathers and a wishbone, yet it still kept its teeth, its clawed hands, and its long bony tail all at the same time. What does this patchwork of old and new parts tell scientists about the pace of the change from dinosaur to bird?",
+    "question": "Archaeopteryx already had feathers and a wishbone, yet it still kept its teeth, its clawed hands and its long bony tail, all at the same time. What does this patchwork tell scientists about the pace of the change from dinosaur to bird?",
     "answer": "Evolution swapped one system at a time, not all at once",
     "choices": [
       "Evolution swapped one system at a time, not all at once",
@@ -1249,7 +1158,7 @@
   },
   {
     "tier": 3,
-    "question": "Archaeopteryx was a crow-sized creature that lived 150 million years ago in what is now Germany. Its fossils show a mix of dinosaur bones and true feathers. One especially well-preserved specimen had long feathers running from head all the way to foot, even covering the legs like a pair of trousers. Since Archaeopteryx was a poor flier at best, what were the feathers most likely used for before flight?",
+    "question": "A beautifully preserved Archaeopteryx had long feathers running from head all the way to foot, even covering its legs like a pair of trousers. Yet the animal was a poor flier at best. What were the feathers most likely used for before flight?",
     "answer": "Warmth or showing off",
     "choices": [
       "Warmth or showing off",
@@ -1262,7 +1171,7 @@
   },
   {
     "tier": 4,
-    "question": "Modern birds anchor their big flight muscles to a deep keeled breastbone that juts out like the keel of a boat. Archaeopteryx, the 150-million-year-old feathered fossil animal from Germany often called the first bird, had only a flat sternum with no keel at all. Paleontologist Mark Norell of the American Museum of Natural History was asked how well Archaeopteryx could really fly. How did Norell describe its actual flying?",
+    "question": "Mark Norell of the American Museum of Natural History was asked how well Archaeopteryx could really fly. Modern birds anchor their big flight muscles to a deep keeled breastbone that juts out like the keel of a boat, but Archaeopteryx had only a flat sternum with no keel at all. How did Norell describe its actual flying?",
     "answer": "Maybe like a turkey if it really tried",
     "choices": [
       "Maybe like a turkey if it really tried",
@@ -1274,34 +1183,8 @@
     "topic": "archaeopteryx-dinosaur-becomes-bird"
   },
   {
-    "tier": 4,
-    "question": "On the forearm of a Velociraptor, a fast ground predator that never left the ground, scientists found six evenly spaced bumps along the bone. In living birds, that exact row of bumps marks where one specific structure is anchored to the arm. What do those bumps hold in place?",
-    "answer": "The shafts of long wing feathers",
-    "choices": [
-      "The shafts of long wing feathers",
-      "The tendons of a grasping claw",
-      "A row of protective bony scales",
-      "The muscles that fold the wing"
-    ],
-    "context": "Quill knobs on a ground-bound raptor show it wore feathers even though it never flew, so feathers came long before flight and weren't a bird-only trait. Source: Turner et al., 'Feather Quill Knobs in the Dinosaur Velociraptor,' Science 317:1721 (2007); EurekAlert 'Velociraptor had feathers'. LEGENDARY find.",
-    "topic": "archaeopteryx-dinosaur-becomes-bird"
-  },
-  {
-    "tier": 4,
-    "question": "Feathered, wishboned, and outwardly bird-like, Archaeopteryx should have rocketed to adult size in weeks the way hatchling birds do. But when scientists cut thin sections of its bone, they found dense, nearly blood-vessel-free tissue that lays down maddeningly slowly. What did that bone reveal about how this creature actually grew up?",
-    "answer": "It took years, growing at the plodding pace of a cold-blooded dinosaur",
-    "choices": [
-      "It took years, growing at the plodding pace of a cold-blooded dinosaur",
-      "It reached full size in weeks, exactly like a modern songbird chick",
-      "It stopped growing early and stayed a permanent juvenile its whole life",
-      "It grew in yearly spurts timed to the wet and dry seasons"
-    ],
-    "context": "Gregory Erickson and colleagues (2009, PLOS ONE) found Archaeopteryx bone is nearly avascular, parallel-fibered tissue, one of the slowest-growing bone types, the kind seen in cold-blooded reptiles and non-bird dinosaurs rather than the explosively fast bone of modern birds. By one estimate it took on the order of years, roughly 970 days, to reach adult size, growing about three times slower than living precocial birds. So even with feathers and a wishbone, its growth engine and metabolism were still that of a dinosaur, another way the transition was a mosaic: the appearance changed before the physiology did. Source: Erickson et al. 2009, PLOS ONE, 'Was Dinosaurian Physiology Inherited by Birds? Reconciling Slow Growth in Archaeopteryx' (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007390, PMC2756958); AMNH 'Archaeopteryx Lacked Rapid Bone Growth' (https://www.amnh.org/explore/news-blogs/archaeopteryx-slow-bone-growth).",
-    "topic": "archaeopteryx-dinosaur-becomes-bird"
-  },
-  {
     "tier": 5,
-    "question": "To settle whether Archaeopteryx truly flapped or merely glided, Dennis Voeten fired synchrotron X-rays through its wing bones and read the internal architecture, thin walls threaded with dense blood-vessel channels, and matched it against living birds. Its bones plotted right on top of one particular kind of flier. Which one?",
+    "question": "Dennis Voeten fired synchrotron X-rays through the wing bones of Archaeopteryx to settle whether it truly flapped or merely glided. He read their inner architecture, thin walls threaded with dense blood-vessel channels, and matched it against living birds. Its bones plotted right on top of one particular kind of flier. Which one?",
     "answer": "Pheasants, which burst into short powered flights to clear obstacles",
     "choices": [
       "Pheasants, which burst into short powered flights to clear obstacles",
@@ -1314,7 +1197,7 @@
   },
   {
     "tier": 2,
-    "question": "In the fine pale limestone quarries of Solnhofen in southern Germany, workers have been pulling out fossils for over 150 years. In 1861 they lifted out a crow-sized creature from 150 million years ago that stunned the scientific world. Named Archaeopteryx, meaning 'ancient wing,' it became the most famous halfway fossil ever found -- a bridge between reptiles and something new. What did this animal wear that no reptile before it had grown?",
+    "question": "Quarry workers at Solnhofen in southern Germany lifted a crow-sized creature out of the fine, pale limestone in 1861, an animal from 150 million years ago. Named Archaeopteryx, 'ancient wing,' it stunned the scientific world. What did this animal wear that no reptile before it had grown?",
     "answer": "A full coat of true feathers",
     "choices": [
       "A full coat of true feathers",
@@ -1327,7 +1210,7 @@
   },
   {
     "tier": 2,
-    "question": "Archaeopteryx of Late Jurassic Germany, 150 million years ago, was a crow-sized creature with true feathers along its arms and long tail. It looked so bird-like that scientists crowned it the 'Urvogel,' German for 'primeval bird.' But hidden inside that bird-like face was a clear holdover from its reptile ancestors -- something you would not find in the mouth of any bird alive today. What lined its jaws?",
+    "question": "Archaeopteryx carried true feathers along its arms and long tail in what is now Germany, 150 million years ago, and it looked so bird-like that scientists crowned it the Urvogel, German for 'primeval bird.' Yet its jaws held a clear holdover from its reptile ancestors, something no bird alive today has in its mouth. What lined its jaws?",
     "answer": "Rows of small sharp teeth",
     "choices": [
       "Rows of small sharp teeth",
@@ -1352,34 +1235,8 @@
     "topic": "archaeopteryx"
   },
   {
-    "tier": 3,
-    "question": "Archaeopteryx was a 150-million-year-old fossil animal found in Germany, and it looked like two creatures glued together: it had proper feathers like a bird, but also small pointed teeth, three clawed fingers on each wing, and a long bony tail. That mix made it a textbook example of a creature caught mid-change. Which two great animal groups did this one fossil famously bridge?",
-    "answer": "Meat-eating dinosaurs and birds",
-    "choices": [
-      "Meat-eating dinosaurs and birds",
-      "Fish and amphibians",
-      "Reptiles and mammals",
-      "Insects and spiders"
-    ],
-    "context": "The mix made Archaeopteryx one of the most famous 'transitional fossils' ever found - evidence that birds descended from dinosaurs, sharing traits with meat-eating dromaeosaurs like the raptors. Source: Wikipedia - Archaeopteryx; UCMP Berkeley.",
-    "topic": "archaeopteryx"
-  },
-  {
     "tier": 4,
-    "question": "In southern Germany a soft mud settled on an ancient seafloor 150 million years ago and hardened into the Solnhofen limestone, a rock famous for preserving fossils in perfect detail. When paleontologists uncovered Archaeopteryx there, they could see every barb of a feather down to the fine vane running along its shaft. Looking at that fossil vane, scientists were startled by how much it already resembled what?",
-    "answer": "The flight feather of a modern bird",
-    "choices": [
-      "The flight feather of a modern bird",
-      "A soft tuft of down",
-      "A reptile's overlapping scale",
-      "A simple hairlike bristle"
-    ],
-    "context": "The limestone preserved the vane of a flight feather so clearly that it showed the shape of a modern flight feather already present 150 million years ago. Source: Wikipedia - Archaeopteryx (feathers); Natural History Museum dino-directory.",
-    "topic": "archaeopteryx"
-  },
-  {
-    "tier": 4,
-    "question": "Look closely at any feather and you will see a central shaft with the vane -- the flat colored part -- running along each side. In a bird that takes to the sky, one side of the vane is wider than the other, a lopsided shape that helps the feather grip the air. In flightless birds like ostriches the two sides are equal, a symmetric shape that could never lift a body into the air. When scientists checked a real Archaeopteryx flight feather from a 150-million-year-old fossil, which pattern did it match?",
+    "question": "The fine Solnhofen mud of southern Germany kept an Archaeopteryx feather so sharply that scientists could study its vane, the flat part running along each side of the shaft. In a bird that takes to the sky, one side of the vane is wider than the other, a lopsided shape that helps the feather grip the air; an ostrich, which never flies, grows feathers with even sides. Which pattern did the 150-million-year-old feather match?",
     "answer": "Lopsided vanes, like a flying bird",
     "choices": [
       "Lopsided vanes, like a flying bird",
@@ -1392,7 +1249,7 @@
   },
   {
     "tier": 4,
-    "question": "Archaeopteryx, the 150-million-year-old fossil animal from Germany, has feathered wings but also teeth, claws on its fingers, and a long bony tail. Scientists still honestly argue whether Archaeopteryx truly flew or mostly glided from tree to tree, because its skeleton is missing a key part of a strong flier's engine room. What did the chest of Archaeopteryx lack?",
+    "question": "Archaeopteryx spread feathered wings 150 million years ago, yet scientists still argue whether it truly flew or mostly glided from tree to tree. The doubt comes from its skeleton, which is missing a key part of a strong flier's engine room. What did the chest of Archaeopteryx lack?",
     "answer": "A deep keeled breastbone",
     "choices": [
       "A deep keeled breastbone",
@@ -1405,7 +1262,7 @@
   },
   {
     "tier": 5,
-    "question": "Archaeopteryx has an oddly long upper-arm bone, which opens a gap between its wing feathers and its body where air would leak through and spoil lift. The 2025 Chicago specimen finally showed how the animal sealed that gap. What did paleontologists find running along its upper arm?",
+    "question": "Archaeopteryx had an oddly long upper-arm bone, which opened a gap between its wing feathers and its body where air would leak through and spoil lift. The 2025 Chicago specimen finally showed how the animal sealed that gap. What did paleontologists find running along its upper arm?",
     "answer": "A row of long tertial feathers",
     "choices": [
       "A row of long tertial feathers",
@@ -1417,8 +1274,8 @@
     "topic": "archaeopteryx"
   },
   {
-    "tier": 5,
-    "question": "With its feathers and wings, Archaeopteryx looks built for the fast, richly vascularized growth of a modern bird, which fledges within weeks. So scientists thin-sectioned its bone and counted the microscopic growth rings to clock how fast it actually grew. Compared with a living bird its size, how did it grow?",
+    "tier": 4,
+    "question": "Archaeopteryx had feathers, wings and a wishbone, so it should have reached adult size in weeks like a modern bird. Scientists cut thin slices of its bone, found dense tissue with few blood vessels, and counted the growth rings. Compared with a living bird its size, how did it grow?",
     "answer": "About three times slower",
     "choices": [
       "About three times slower",
@@ -1431,7 +1288,7 @@
   },
   {
     "tier": 1,
-    "question": "In the shallow mangrove creeks of Southeast Asia and northern Australia lives a slim silvery fish with a few bold black stripes down its side. It eats insects -- but not the water bugs most fish catch. It eats crickets, ants, and spiders perched on leaves and twigs hanging above the water, insects it can never reach with its own body. How does this little hunter bring down a bug on a branch above the pond?",
+    "question": "A slim, silver fish striped in black patrols a shallow mangrove creek in Southeast Asia. It eats crickets, ants and spiders perched on leaves above the water, insects it can never reach. How does it bring down a bug on a branch above the water?",
     "answer": "It spits a jet of water to knock the bug into the pond",
     "choices": [
       "It spits a jet of water to knock the bug into the pond",
@@ -1444,7 +1301,7 @@
   },
   {
     "tier": 2,
-    "question": "The archerfish lives in the mangrove swamps of Southeast Asia. It hunts by knocking bugs into the water from overhanging leaves. Aiming from below the surface, it presses its tongue against a hard groove in the roof of its mouth to form a narrow barrel, then spits a fast jet of water — a real water-bullet fired up through the surface. From the shallows it fixes its eyes on a beetle two feet up on a leaf and fires. What does the very first shot usually do?",
+    "question": "From the shallows of a Southeast Asian mangrove swamp, an archerfish fixes its eyes on a beetle sitting on a leaf two feet above the water. It spits a fast jet of water, a real water-bullet, up at the leaf. What does the very first shot usually do?",
     "answer": "Hits the beetle dead-on and knocks it into the water",
     "choices": [
       "Hits the beetle dead-on and knocks it into the water",
@@ -1457,7 +1314,7 @@
   },
   {
     "tier": 3,
-    "question": "An archerfish is a small striped hunter of the mangrove creeks of Southeast Asia. It knocks down insects perched on leaves above the water by spitting a tight jet of water straight up at them. It has no hands and no tool, yet the jet fires as if it came from a squeezed nozzle. Where does the archerfish build the barrel that shapes and launches its watery bullet?",
+    "question": "Insects perched on the leaves above a mangrove creek get knocked down by a tight jet of water an archerfish spits straight up at them. The fish has no hands and no tool, yet the jet fires as if it came from a squeezed nozzle. Where does it build the barrel that shapes and launches its watery bullet?",
     "answer": "Inside its own mouth, pressing its tongue into a grooved roof",
     "choices": [
       "Inside its own mouth, pressing its tongue into a grooved roof",
@@ -1470,7 +1327,7 @@
   },
   {
     "tier": 4,
-    "question": "The archerfish is a small striped hunter of Southeast Asian mangroves that knocks insects off overhanging leaves by spitting a jet of water up at them. But it aims from below the surface, and light bends where air meets water -- so when the archerfish looks up at a bug on a leaf, its eyes see the bug shifted from where it really is, off by as much as 25 degrees. Faced with a target its own eyes place in the wrong spot, what does the archerfish do?",
+    "question": "An archerfish aims at a bug on a leaf from below the surface, and light bends where air meets water. To its eyes the bug sits in the wrong place, shifted by as much as 25 degrees from where it really is. Faced with a target its own eyes misplace, what does the archerfish do?",
     "answer": "Corrects for the bend and aims at the bug's true position",
     "choices": [
       "Corrects for the bend and aims at the bug's true position",
@@ -1483,7 +1340,7 @@
   },
   {
     "tier": 4,
-    "question": "An archerfish's mouth muscles are far too weak to fire the hard-hitting blast it lands on distant bugs; the punch is actually built in mid-air, after the water leaves its mouth. What clever trick makes the flying jet stronger than the fish that fired it?",
+    "question": "A distant bug takes a hard-hitting blast from an archerfish, though the fish's mouth muscles are far too weak to fire a shot that strong. The punch is built in mid-air, after the water leaves its mouth. What makes the flying jet stronger than the fish that fired it?",
     "answer": "Water shot later races ahead and bunches the jet into one slug",
     "choices": [
       "Water shot later races ahead and bunches the jet into one slug",
@@ -1509,7 +1366,7 @@
   },
   {
     "tier": 2,
-    "question": "The Arctic tern is a slender, graceful seabird that patrols cold northern coasts and flies farther each year than any other animal on Earth. It has a black cap pulled down over its head, clean white cheeks, and a deeply forked 'swallow' tail. Only two parts of the bird are painted a striking bright color that jumps out against all that white and gray. What color are the Arctic tern's bill and feet?",
+    "question": "Along a cold northern coast patrols the Arctic tern, a slender seabird with a black cap pulled down over its head, white cheeks and a deeply forked swallow's tail. Only two parts of the bird are painted a striking color that jumps out against all that white and gray. What color are the Arctic tern's bill and feet?",
     "answer": "Blood-red",
     "choices": [
       "Blood-red",
@@ -1535,7 +1392,7 @@
   },
   {
     "tier": 3,
-    "question": "The Arctic tern spends the northern part of its year breeding near the North Pole, then crosses the entire globe to spend the rest of the year near the South Pole. What does chasing the sun this way give it that likely no other creature gets?",
+    "question": "An Arctic tern raises its chicks near the North Pole, then crosses the entire globe to spend the rest of the year near the South Pole. What does chasing the sun this way give it that likely no other creature gets?",
     "answer": "Two summers and more daylight than any animal alive",
     "choices": [
       "Two summers and more daylight than any animal alive",
@@ -1548,7 +1405,7 @@
   },
   {
     "tier": 3,
-    "question": "When scientists tracked the Arctic tern, they found it does not fly straight south at all — its route curves down the Atlantic in a great zigzagging S-shaped loop. So how far does one bird actually travel in a single year?",
+    "question": "Egevang and colleagues tracked Arctic terns in 2010 and found that the birds do not fly straight south at all: their route curves down the Atlantic in a great zigzagging S-shaped loop. How far does one bird actually travel in a single year?",
     "answer": "About 70,900 km (~44,000 miles)",
     "choices": [
       "About 70,900 km (~44,000 miles)",
@@ -1561,7 +1418,7 @@
   },
   {
     "tier": 3,
-    "question": "Arctic terns often live 30 years or more, and every year of that long life the bird flies its full pole-to-pole loop. Add up one bird's whole lifetime of flying — about 2.4 million km — and what famous distance does it match?",
+    "question": "A long life for an Arctic tern runs 30 years or more, and in every year of it the bird flies its full loop from the Arctic to Antarctica and back. Over a lifetime, one bird flies about 2.4 million km in all. What famous distance does that match?",
     "answer": "Roughly three round trips to the Moon and back",
     "choices": [
       "Roughly three round trips to the Moon and back",
@@ -1574,7 +1431,7 @@
   },
   {
     "tier": 4,
-    "question": "The Arctic tern does not beat straight across the ocean; it rides the prevailing winds in a huge S-shaped loop that spirals down through the South Atlantic and back up through the North Atlantic. Which way does its loop actually turn at each end?",
+    "question": "Riding the prevailing winds, an Arctic tern swings through a huge S-shaped loop that spirals down through the South Atlantic and back up through the North Atlantic, instead of beating straight across the ocean. Which way does its loop actually turn at each end?",
     "answer": "Counterclockwise around the South Atlantic, clockwise around the North Atlantic",
     "choices": [
       "Counterclockwise around the South Atlantic, clockwise around the North Atlantic",
@@ -1587,7 +1444,7 @@
   },
   {
     "tier": 4,
-    "question": "The Arctic tern is a slender white seabird that flies from the Arctic to Antarctica and back every single year, the longest migration of any animal alive. To measure that pole-to-pole journey, scientists needed a tracking tag light enough for a 100-gram bird to carry without being weighed down. In a landmark study, researchers glued a tiny device called a geolocator to each tern's leg band. How heavy was each geolocator?",
+    "question": "Before following Arctic terns from pole to pole, a team of researchers needed a tracking tag light enough for a bird of about 100 grams to carry without being weighed down. The team glued a tiny geolocator to each bird's leg band. How heavy was each geolocator?",
     "answer": "Just 1.4 grams",
     "choices": [
       "Just 1.4 grams",
@@ -1691,7 +1548,7 @@
   },
   {
     "tier": 1,
-    "question": "A small, spiky lizard on a South African rock is cornered by a hungry mongoose. It cannot run. So the armadillo girdled lizard turns its own body into a spiny ball no teeth can bite. What does it do?",
+    "question": "A mongoose corners an armadillo girdled lizard on a rock in South Africa, far from any crack. The lizard cannot outrun it, so it turns its body into a spiny ball no teeth can bite. What does it do?",
     "answer": "It grabs its own tail in its mouth and curls into a ring",
     "choices": [
       "It grabs its own tail in its mouth and curls into a ring",
@@ -1704,7 +1561,7 @@
   },
   {
     "tier": 2,
-    "question": "When the armadillo girdled lizard bites its own tail and curls into a ring, its armored back and spined tail bristle outward on every side. The point is to hide one body part where a predator's teeth cannot reach. Which part does the ring lock away in its center?",
+    "question": "A cornered armadillo girdled lizard bends its body into a loop, so its armored back and spined tail bristle outward on every side. The point is to hide one body part in the middle, where a predator's teeth cannot reach. Which part does the ring lock away in its center?",
     "answer": "Its soft, unarmored belly",
     "choices": [
       "Its soft, unarmored belly",
@@ -1717,7 +1574,7 @@
   },
   {
     "tier": 2,
-    "question": "Pick up an armadillo girdled lizard and it feels less like a soft little reptile and more like something rigid and hard-cased. Its back and tail are so stiffly protected that a predator's teeth simply slide off. What is this natural covering most like?",
+    "question": "In the hand, an armadillo girdled lizard feels less like a soft little reptile than something rigid and hard-cased. Its back and tail are so stiffly protected that a predator's teeth simply slide off. What is this natural covering most like?",
     "answer": "The riveted plate armor of a knight",
     "choices": [
       "The riveted plate armor of a knight",
@@ -1743,7 +1600,7 @@
   },
   {
     "tier": 3,
-    "question": "Picture a lizard, and you probably picture a loner basking on a rock. The armadillo girdled lizard flips that idea with a social habit almost no other lizard shares. What does its living arrangement look like?",
+    "question": "An armadillo girdled lizard hunts insects by day among the rocks of South Africa's western coast and shelters in the cracks between the stones. Most lizards live alone, but this one has a social habit almost no other lizard shares. What does its living arrangement look like?",
     "answer": "Colonies of 30 to 60 packed into one crevice",
     "choices": [
       "Colonies of 30 to 60 packed into one crevice",
@@ -1756,19 +1613,6 @@
   },
   {
     "tier": 1,
-    "question": "A slow, tank-like African mammal is covered head-to-tail in hard overlapping plates. The plates are made of keratin, the same substance as your fingernails. Which animal is it?",
-    "answer": "the pangolin",
-    "choices": [
-      "the pangolin",
-      "the porcupine",
-      "the badger",
-      "the wombat"
-    ],
-    "context": "The pangolin is the only mammal covered head-to-tail in scales, and the scales are keratin -- the same protein as your fingernails and hair. Source: ZSL Pangolins (zsl.org); National Geographic Kids pangolin facts.",
-    "topic": "armor"
-  },
-  {
-    "tier": 1,
     "question": "A jackal charges a tortoise on open ground. The tortoise doesn't run for cover -- it just pulls its head, legs and tail out of sight and waits. How can it defend itself with no cover anywhere near?",
     "answer": "it carries its fortress on its back",
     "choices": [
@@ -1778,19 +1622,6 @@
       "it squirts a foul warning spray"
     ],
     "context": "A tortoise defends itself by drawing its head, legs and tail inside the shell -- a fortress it carries everywhere, so it never needs a burrow or rock. Source: Mesker Park Zoo Turtle Facts (PDF); allturtles.com Turtle Anatomy 101.",
-    "topic": "armor"
-  },
-  {
-    "tier": 2,
-    "question": "A lion bats and paws at a scaly African mammal but can't get one claw under a single scale to pry it open. That behavior is exactly what the Malay word 'pengguling' -- the root of 'pangolin' -- describes. What does 'pengguling' mean?",
-    "answer": "one who rolls up",
-    "choices": [
-      "one who rolls up",
-      "one who digs deep",
-      "one who climbs high",
-      "one who walks by night"
-    ],
-    "context": "'Pengguling' means 'one who rolls up' -- the pangolin folds into an armored keratin ball a predator can't pry open. Source: Harvard Museum of Natural History, 'Pangolins: What's in a Name?'; Pangolin -- Wikipedia.",
     "topic": "armor"
   },
   {
@@ -1808,7 +1639,7 @@
   },
   {
     "tier": 3,
-    "question": "Across the grasslands of South America, most armadillos meet danger by sprinting into a burrow or digging one on the spot with powerful claws. But one small species has a very different trick — it can snap its whole armored body shut into a perfectly sealed ball, its head-plate and tail-plate meeting to lock the seam like a lid on a pot. Which armadillo does that?",
+    "question": "An armadillo on the grasslands of South America usually meets danger by sprinting into a burrow, or digging one on the spot with its powerful claws. One small species has a very different trick: it snaps its whole armored body shut into a perfectly sealed ball, its head-plate and tail-plate meeting to lock the seam like a lid on a pot. Which armadillo does that?",
     "answer": "the three-banded armadillo",
     "choices": [
       "the three-banded armadillo",
@@ -1821,7 +1652,7 @@
   },
   {
     "tier": 3,
-    "question": "The pangolin is a shy, ant-eating mammal that lives in Africa and Asia. Its back and long tail are covered in hard overlapping scales made of keratin — the same stuff as your fingernails — and its scientific order Pholidota is Greek for 'clad in scales.' When a leopard grabs one, the pangolin curls into a tight ball. As it flexes and jerks its body, those sharp scales do one more thing. What?",
+    "question": "A leopard grabs a pangolin, and the shy, ant-eating mammal curls into a tight ball of hard, overlapping scales. Its scientific order, Pholidota, is Greek for 'clad in scales.' As the pangolin flexes and jerks its body, those sharp scales do one more thing. What do they do?",
     "answer": "they work as slashing blades",
     "choices": [
       "they work as slashing blades",
@@ -1833,34 +1664,8 @@
     "topic": "armor"
   },
   {
-    "tier": 3,
-    "question": "On a bare, sun-baked rock in South Africa, an armadillo girdled lizard is cornered by a hungry mongoose. It cannot outrun the mongoose and there is no crack to hide in. So the little lizard grabs its own tail firmly in its jaws and curls its stubby, spike-covered body into a tight ring. What does the mongoose now face instead of a soft belly to bite?",
-    "answer": "a spiny ring of sharp scales",
-    "choices": [
-      "a spiny ring of sharp scales",
-      "a cloud of foul spray",
-      "a lashing whip of a tail",
-      "a mouthful of loose skin"
-    ],
-    "context": "The armadillo girdled lizard bites its own tail and curls into a spiny ring -- an 'ouroboros' -- so a predator meets a wall of sharp scales instead of its soft belly. Source: IFLScience, 'Armadillo Girdled Lizards Turn Themselves Into An Ouroboros'; Armadillo girdled lizard -- Wikipedia; SANBI.  (Legend.)",
-    "topic": "armor"
-  },
-  {
     "tier": 4,
-    "question": "About ten thousand years ago, glyptodons lumbered across the grasslands of South America alongside the first humans to reach the continent. A glyptodon was an extinct armadillo relative as big as a Volkswagen Beetle, weighing up to two tons, its back plated in hundreds of bony bumps called osteoderms all locked tightly together. What overall shape did that back armor take on the living glyptodon?",
-    "answer": "a single solid dome",
-    "choices": [
-      "a single solid dome",
-      "a row of bristling spikes",
-      "a set of sliding bands",
-      "a coat of thick fur"
-    ],
-    "context": "Glyptodon was a car-sized armadillo relative whose back carried a domed shell of hundreds of fused bony plates (osteoderms) -- unlike the sliding bands of living armadillos or the spiked tail-club of its relative Doedicurus. Source: Britannica, 'Glyptodon'; Live Science, 'Volkswagen-Size Armored Mammal Is Armadillo Ancestor'; Glyptodont -- Wikipedia.",
-    "topic": "armor"
-  },
-  {
-    "tier": 4,
-    "question": "In every other backboned animal on Earth — from a mouse to a whale to you — the bones that anchor the front limbs and the hips stack up outside the ribcage. A turtle's shell, though, is not a suitcase the turtle wears on top of its body; the shell itself is the turtle's fused ribs and backbone. That reshuffling shoved one bone that everyone else keeps outside the ribs into a strange new spot inside them. Which bone is it?",
+    "question": "A turtle builds its shell out of its own body, and the job shoves one bone into a spot that no other backboned animal uses. In a mouse or a whale, the bones that anchor the front limbs and the hips sit outside the ribcage. Which one ends up inside the ribs in a turtle?",
     "answer": "its shoulder blades",
     "choices": [
       "its shoulder blades",
@@ -1899,7 +1704,7 @@
   },
   {
     "tier": 3,
-    "question": "Steering a raid of Eciton burchellii is done by workers that are blind or nearly so. With no useful eyes to guide two hundred thousand ants across the forest floor, what does the swarm rely on to hold its shape and direction?",
+    "question": "Blind or nearly blind workers steer each raid of the army ant Eciton burchellii, some two hundred thousand ants pouring across the forest floor. With no useful eyes to guide them, what does the swarm rely on to hold its shape and direction?",
     "answer": "Touch and chemical scent trails",
     "choices": [
       "Touch and chemical scent trails",
@@ -1912,7 +1717,7 @@
   },
   {
     "tier": 3,
-    "question": "In the rainforests of Central and South America, the army ant Eciton burchellii marches out each morning in raiding columns hundreds of thousands strong. When one of those columns reaches a gap it cannot detour around — a broken twig, a hollow in the trail, a split between two leaves — the raid does not stop or even slow. Within seconds a structure appears across the gap, and the column pours straight over it. What have these ants made?",
+    "question": "A raiding column of the army ant Eciton burchellii, hundreds of thousands strong, marches through the rainforest and comes to a gap it cannot go around: a broken twig, a hollow in the trail, a split between two leaves. The raid does not stop or even slow. Within seconds something appears across the gap, and the column pours straight over it. What have the ants made?",
     "answer": "A living bridge of their own bodies",
     "choices": [
       "A living bridge of their own bodies",
@@ -1938,7 +1743,7 @@
   },
   {
     "tier": 4,
-    "question": "The bivouac of an army ant colony is nothing but living bodies clinging together, yet the ants do not just huddle passively. As the outside air heats and cools through the day, they keep the core steady near 28.5 degrees Celsius. How do the workers manage this in a nest made only of themselves?",
+    "question": "A colony of army ants spends the night in a nest made of nothing but its own living bodies, clinging together around the queen. As the outside air heats and cools, the workers hold the core of that cluster steady near 28.5 degrees Celsius. How do they manage this in a nest made only of themselves?",
     "answer": "Opening and closing air passages through the mass",
     "choices": [
       "Opening and closing air passages through the mass",
@@ -2042,7 +1847,7 @@
   },
   {
     "tier": 3,
-    "question": "Scientists wondered whether the Acanthaspis petax nymph's backpack of dead ants really protects it, or whether its movement was what saved it. So they offered jumping spiders both stripped-down nymphs and corpse-wearing ones - even dead, preserved bugs. What did the test reveal?",
+    "question": "Jackson and Pollard tested whether the Acanthaspis petax nymph's backpack of dead ants really protects it, or whether its movement saves it. They offered jumping spiders both stripped-down nymphs and corpse-wearing ones, even dead, preserved bugs. What did the test reveal?",
     "answer": "Spiders attacked bare nymphs about ten times more often",
     "choices": [
       "Spiders attacked bare nymphs about ten times more often",
@@ -2068,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "The atlas moth of Asia is one of the biggest moths alive, its wings so broad that people who spot one often mistake it for a bird. Held open, how wide can an atlas moth's wings span?",
+    "question": "An atlas moth flutters through a Southeast Asian forest on wings so broad that people who glimpse it often mistake it for a bird. Held open, how wide can its wings span?",
     "answer": "Nearly a foot across",
     "choices": [
       "Nearly a foot across",
@@ -2094,7 +1899,7 @@
   },
   {
     "tier": 2,
-    "question": "The atlas moth of Southeast Asia is one of the largest moths on Earth, with velvety wings almost a foot across. As soon as an adult crawls out of its cocoon, its whole life becomes a race — an adult atlas moth lives only about one or two weeks and spends every hour of that time searching for a mate. Why does the moth die so fast, no matter how safely it hides from bats and birds?",
+    "question": "From the moment an atlas moth crawls out of its cocoon in a Southeast Asian forest, its whole life is a race. The adult lives only about one or two weeks and spends every hour of that time searching for a mate. Why does it die so fast, however safely it hides from bats and birds?",
     "answer": "It has no working mouth and can never eat",
     "choices": [
       "It has no working mouth and can never eat",
@@ -17629,7 +17434,7 @@
   },
   {
     "tier": 1,
-    "question": "A caterpillar is basically a set of chewing jaws with tiny legs. For weeks it does almost nothing but munch leaves and get bigger and bigger. Then it stops eating, glues itself to a twig, and seals itself away inside a hard case. Inside that case, its body melts into a soup and remakes itself into something entirely new. What winged adult crawls out?",
+    "question": "A caterpillar munches leaves for weeks and does almost nothing else but grow. Then it stops eating, glues itself to a twig and seals itself inside a hard case, where the body comes apart and remakes itself into something entirely new. What winged adult crawls out?",
     "answer": "A butterfly",
     "choices": [
       "A butterfly",
@@ -17642,7 +17447,7 @@
   },
   {
     "tier": 1,
-    "question": "In a spring pond, a small black swimmer wriggles among the weeds. It has a wide finned tail, breathes through gills like a fish, and grazes on algae. Over the next weeks, it sprouts four legs and slowly absorbs its own tail back into its body until the tail is gone. What has this pond tadpole turned into?",
+    "question": "A small black tadpole wriggles among the weeds of a spring pond, with a wide finned tail and gills like a fish's. Over the next weeks it sprouts four legs and absorbs its own tail until the tail is gone. What has it turned into?",
     "answer": "A frog",
     "choices": [
       "A frog",
@@ -17655,7 +17460,7 @@
   },
   {
     "tier": 2,
-    "question": "When a caterpillar is ready to turn into a butterfly, it does not spin a soft silky cocoon the way a moth does. Instead, its own final skin hardens into a smooth, tough case that hangs from a twig by a silk pad. Many of these cases are dotted with shiny metallic flecks of gold or silver. That glinting gave the case its name, borrowed from an Ancient Greek word for gold. What is this butterfly case called?",
+    "question": "When a butterfly caterpillar is ready to change, its own last skin hardens into a smooth, tough case that hangs from a twig by a silk pad. Many of these cases are dotted with shiny metallic flecks of gold or silver, and that glint gave the case its name, borrowed from an Ancient Greek word for gold. What is the case called?",
     "answer": "A chrysalis",
     "choices": [
       "A chrysalis",
@@ -17668,7 +17473,7 @@
   },
   {
     "tier": 2,
-    "question": "People often mix up the words cocoon and chrysalis, but there is a clean rule. A butterfly caterpillar sheds its skin and hardens straight into a bare, smooth pupa — that hard case is called a chrysalis. Moths do it a little differently before their own pupa. What extra step does a moth caterpillar do that a butterfly caterpillar never does?",
+    "question": "A butterfly caterpillar sheds its skin one last time and hardens straight into a bare, smooth pupa. A moth caterpillar goes about it a little differently and takes one extra step first. What does a moth caterpillar do that a butterfly caterpillar never does?",
     "answer": "Spins a silk cocoon around itself",
     "choices": [
       "Spins a silk cocoon around itself",
@@ -17681,7 +17486,7 @@
   },
   {
     "tier": 3,
-    "question": "Inside a butterfly's chrysalis, a caterpillar does not simply grow wings and stretch out its legs. If you sliced open a chrysalis at the right moment, you would NOT find a tiny half-butterfly with folded wings tucked inside. The caterpillar has flooded itself with digestive enzymes that break down most of its own body from the inside out. What would ooze out of the case instead?",
+    "question": "Inside its hard case, a caterpillar floods itself with digestive enzymes that break down most of its own body from the inside out. It does not simply grow wings and stretch out its legs, and a case sliced open at just the right moment holds no tiny half-butterfly with folded wings. What oozes out instead?",
     "answer": "A thick yellowish soup",
     "choices": [
       "A thick yellowish soup",
@@ -17694,7 +17499,7 @@
   },
   {
     "tier": 4,
-    "question": "If a caterpillar melts most of itself into soup, how does a whole butterfly get built back? A few clusters of cells survive the dissolving, one cluster pre-grown for each adult part while the animal was still an egg. What are these survivor clusters called?",
+    "question": "A caterpillar digests most of its own body inside its case, yet a whole winged adult is built back from what is left. A few clusters of cells survive the dissolving, one pre-grown for every adult part while the animal was still an egg. What are these survivor clusters called?",
     "answer": "Imaginal discs",
     "choices": [
       "Imaginal discs",
@@ -17707,7 +17512,7 @@
   },
   {
     "tier": 4,
-    "question": "To grasp how much building goes on inside a fly's pupa, scientists tracked one small cluster of cells that grows into just a single wing. When the maggot-like larva seals itself up in the pupal case, that wing cluster starts as roughly 50 cells. By the time the adult fly emerges days later, that same wing cluster has multiplied enormously. About how many cells is a fly's wing made of by then?",
+    "question": "Inside a fruit fly's pupal case, one small cluster of cells builds a single wing. When the maggot-like larva seals itself in, the cluster holds roughly 50 cells; by the time the adult fly emerges days later, it has multiplied enormously. About how many cells does the wing cluster hold by then?",
     "answer": "About 50,000",
     "choices": [
       "About 50,000",
@@ -17720,7 +17525,7 @@
   },
   {
     "tier": 3,
-    "question": "A young grasshopper hatches out of its egg and already looks like a tiny, wingless copy of its parents. It just feeds, grows, and molts to a bigger body over and over, gradually sprouting wings — never sealing itself up in a chrysalis or cocoon along the way. Biologists give this kind of young insect, one that skips the pupa stage entirely, its own special name. What is it called?",
+    "question": "A young grasshopper hatches from its egg already looking like a tiny, wingless copy of its parents. It feeds, grows and molts into a bigger body again and again, gradually sprouting wings, and never seals itself inside a case along the way. What is a young insect like this, one that skips the pupa, called?",
     "answer": "A nymph",
     "choices": [
       "A nymph",
@@ -17732,21 +17537,8 @@
     "topic": "metamorphosis"
   },
   {
-    "tier": 3,
-    "question": "A dragonfly nymph spends months to years underwater as a patient killer. Folded under its face is a hinged lower jaw it fires outward on hydraulic pressure to snatch tadpoles and even small fish. When it's finally ready, how does it become a winged adult?",
-    "answer": "It crawls out of the water and splits its skin",
-    "choices": [
-      "It crawls out of the water and splits its skin",
-      "It spins a silken cocoon on a reed",
-      "It hardens into a bare chrysalis",
-      "It floats to the surface and sheds its gills only"
-    ],
-    "context": "Dragonflies do incomplete metamorphosis with no pupa: the underwater nymph, armed with its shooting labium, climbs out and splits its skin to emerge winged. Legendary hunter, real biology. Source: British Dragonfly Society, Life Cycle (https://british-dragonflies.org.uk/odonata/life-cycle-and-biology/); Wikipedia, Dragonfly (https://en.wikipedia.org/wiki/Dragonfly).",
-    "topic": "metamorphosis"
-  },
-  {
     "tier": 4,
-    "question": "A tadpole's tail is over twice as long as its trunk, yet within just a few days it vanishes. The frog isn't cutting it off; a hormone triggers programmed cell death that dismantles the tail and recycles it. Which hormone drives the whole frog transformation?",
+    "question": "A tadpole's tail is over twice as long as its trunk, yet within just a few days it vanishes. The tadpole is not cutting it off: a hormone triggers programmed cell death that dismantles the tail and recycles it. Which hormone drives the whole change from tadpole to adult?",
     "answer": "Thyroid hormone",
     "choices": [
       "Thyroid hormone",
@@ -17759,7 +17551,7 @@
   },
   {
     "tier": 4,
-    "question": "Martha Weiss and Doug Blackiston taught tobacco hornworm caterpillars to fear a certain smell by pairing it with a mild shock. The caterpillars then dissolved into soup and rebuilt as adult moths. When they tested the moths with that smell, what happened?",
+    "question": "Martha Weiss and Doug Blackiston taught tobacco hornworm caterpillars to fear a certain smell by pairing it with a mild shock. The caterpillars then broke down inside their cases and rebuilt themselves as adult moths. When the two tested the moths with that smell, what happened?",
     "answer": "The moths still avoided the smell",
     "choices": [
       "The moths still avoided the smell",
@@ -17771,34 +17563,8 @@
     "topic": "metamorphosis"
   },
   {
-    "tier": 4,
-    "question": "The axolotl is a salamander that never grows up. It breeds while still in its baby body — feathery gills, tail fin, and all. It stays in the water forever, and never turns into a land salamander like its kin. What do we call an animal that keeps its young form for life?",
-    "answer": "Neoteny",
-    "choices": [
-      "Neoteny",
-      "Metamorphosis",
-      "Molting",
-      "Diapause"
-    ],
-    "context": "The axolotl keeps its larval gills and tail fin for life because its thyroid signal never fires, a state called neoteny; inject thyroxine and it will finally transform. Legendary creature, real biology. Source: Wikipedia, Axolotl (https://en.wikipedia.org/wiki/Axolotl); Frontiers in Endocrinology (https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2019.00237/full).",
-    "topic": "metamorphosis"
-  },
-  {
     "tier": 2,
-    "question": "A periodical cicada, found in the forests of the eastern United States, takes incomplete metamorphosis to a wild extreme. As an underground nymph it sucks sap from tree roots for either 13 or 17 whole years, then climbs to the surface, molts one last time, and unfolds its wings. After that huge underground wait, about how long does the winged adult cicada actually live above ground?",
-    "answer": "About four to six weeks",
-    "choices": [
-      "About four to six weeks",
-      "About a single day",
-      "About two years",
-      "About three months"
-    ],
-    "context": "After 13 or 17 years underground, the periodical cicada lives only about four to six weeks as a winged adult. Legendary life cycle, real timing. Source: Smithsonian NMNH, Periodical Cicadas (https://naturalhistory.si.edu/education/teaching-resources/life-science/periodical-cicadas); Library of Congress (https://guides.loc.gov/periodical-cicadas).",
-    "topic": "metamorphosis"
-  },
-  {
-    "tier": 2,
-    "question": "A butterfly cracks open its chrysalis and crawls out, but it cannot fly yet. Its wings are small, damp, and floppy, crumpled against its back like wet paper. Over the next hour or two, the new butterfly clings still to a twig and slowly forces those wings to inflate to full size and stiffen into flight shape. How does it puff the wings up?",
+    "question": "A butterfly crawls out of its pupal case, but it cannot fly yet: its wings are small, damp and floppy, crumpled against its back like wet paper. For an hour or two it clings still to a twig while the wings swell to full size and stiffen into flight shape. How does it puff them up?",
     "answer": "It pumps its blood into the wing veins",
     "choices": [
       "It pumps its blood into the wing veins",
@@ -17811,7 +17577,7 @@
   },
   {
     "tier": 4,
-    "question": "Most people picture the caterpillar-to-butterfly switch as the body building wings. But at every molt, one chemical floods the blood and blocks the change. The switch to a pupa fires only once that chemical drops away in the last larval stage. Which chemical is the brake?",
+    "question": "A caterpillar molts again and again, and each molt builds nothing but a bigger caterpillar. At every molt one chemical in its blood blocks the change; the switch to a pupa fires only once that chemical drops away in the last caterpillar stage. Which chemical is the brake?",
     "answer": "Juvenile hormone",
     "choices": [
       "Juvenile hormone",
@@ -20489,7 +20255,7 @@
   },
   {
     "tier": 1,
-    "question": "Almost every mammal alive is covered in fur or bare skin. But one shy insect-eater from the forests of Africa and Asia is different — it is armored head to tail in hard, overlapping plates that look like a walking pine cone. Those plates are made of keratin, the same stuff as your fingernails. Which animal is it?",
+    "question": "A shy insect-eater shuffles through the forests of Africa and Asia, armored head to tail in hard, overlapping plates like a walking pine cone. The plates are keratin, the same stuff as a person's fingernails, though almost every other mammal wears fur or bare skin. Which animal is it?",
     "answer": "The pangolin",
     "choices": [
       "The pangolin",
@@ -20502,7 +20268,7 @@
   },
   {
     "tier": 1,
-    "question": "The pangolin is a shy, scale-armored mammal of Africa and Asia that eats ants and termites. When a hungry leopard closes in on one in the forest, the little animal doesn't run and it doesn't fight back. Instead it does the single thing that earned it the Malay name 'penggulung,' meaning 'the roller.' What does the pangolin do?",
+    "question": "A hungry leopard closes in on a pangolin in the forest. The shy, scale-armored ant-eater does not run, and it does not fight back; instead it does the one thing its Malay name describes. What does the pangolin do?",
     "answer": "Curls into a tight armored ball, tucking its soft belly inside",
     "choices": [
       "Curls into a tight armored ball, tucking its soft belly inside",
@@ -20515,7 +20281,7 @@
   },
   {
     "tier": 2,
-    "question": "A whole pride of African lions surrounds a pangolin — a shy, scale-covered mammal about the size of a house cat that has curled up into a tight armored ball. The lions paw at it, bat it back and forth in the dust, and try again and again to sink their teeth in through the overlapping scales. How does the standoff end?",
+    "question": "A whole pride of African lions surrounds a pangolin, a shy, scale-covered mammal about the size of a house cat. The lions paw at it, bat it back and forth in the dust, and try again and again to sink their teeth through its overlapping scales. How does the standoff end?",
     "answer": "The lions give up and walk away, leaving the pangolin unharmed",
     "choices": [
       "The lions give up and walk away, leaving the pangolin unharmed",
@@ -20528,7 +20294,7 @@
   },
   {
     "tier": 2,
-    "question": "The pangolin is an ant-eating mammal of Africa and Asia whose front claws are so long and curved they're wonderful for ripping open termite mounds — but they are clumsy on the ground. Walking flat-footed would drag those precious digging claws through the dirt and wear them down. To keep them safe, how does the pangolin often get around?",
+    "question": "A pangolin rips open termite mounds with front claws so long and curved that they are wonderful for digging but clumsy on the ground. Walking flat-footed would drag those precious claws through the dirt and wear them down. To keep them safe, how does the pangolin often get around?",
     "answer": "It walks upright on its two hind legs, holding its arms and tail up for balance",
     "choices": [
       "It walks upright on its two hind legs, holding its arms and tail up for balance",
@@ -20541,7 +20307,7 @@
   },
   {
     "tier": 3,
-    "question": "The pangolin — the scaly, ant-eating mammal of Africa and Asia — has no teeth at all and cannot chew a single insect. Yet ants and termites are its whole diet. To reach the bugs deep inside a nest tunnel, it uncoils an extraordinarily long tongue coated in thick sticky saliva. In a big pangolin, how far can that tongue stretch out?",
+    "question": "Ants and termites are a pangolin's whole diet, yet it has no teeth at all and cannot chew a single insect. To reach the bugs deep inside a nest's tunnels, it uncoils an extraordinarily long tongue coated in thick, sticky saliva. In a big pangolin, how far can that tongue stretch?",
     "answer": "Up to about 40 cm (16 in), longer than its own head and body",
     "choices": [
       "Up to about 40 cm (16 in), longer than its own head and body",
@@ -20554,7 +20320,7 @@
   },
   {
     "tier": 3,
-    "question": "To rip open a termite nest is to invite thousands of biting, stinging insects to swarm right at your face. Yet the pangolin — a scaly, ant-eating mammal of Africa and Asia — makes its living tearing exactly those nests apart with its long claws. Before it strikes, it protects itself in a way most other mammals simply can't. What does the pangolin do?",
+    "question": "Thousands of biting, stinging insects swarm at a pangolin's face each time it tears a termite nest apart with its long claws. Before it strikes, it protects itself in a way most other mammals cannot. What does the pangolin do?",
     "answer": "It clamps its ears and nostrils shut with strong muscles",
     "choices": [
       "It clamps its ears and nostrils shut with strong muscles",
@@ -20567,7 +20333,7 @@
   },
   {
     "tier": 4,
-    "question": "A pangolin is a scaly, ant-eating mammal that walks the forests and savannas of Africa and Asia. It has no teeth at all. It swallows its ants whole and toothless, yet somehow grinds up their crunchy shells inside its body. It manages this with a trick a chicken would recognize. How does a pangolin's stomach break down its food?",
+    "question": "A pangolin walking the forests and savannas of Africa and Asia swallows its ants whole, for it has no teeth at all, yet somehow it grinds up their crunchy shells inside its body. It manages this with a trick a chicken would recognize. How does a pangolin's stomach break down its food?",
     "answer": "Swallowed stones churn in a muscular gizzard-like stomach lined with keratin spines",
     "choices": [
       "Swallowed stones churn in a muscular gizzard-like stomach lined with keratin spines",
