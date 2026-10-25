@@ -134,9 +134,12 @@ def problems(subject: str, batch: int) -> list[str]:
                 errs.append(f'merge {h}: the new question\'s tier must be the merge\'s tier')
         # A sentence both quote (a grammar example under test, a title, a
         # famous line) is the thing being asked about, not a copy.
+        # (grammar only: its cards carry no teaches map, so the card gate
+        # test skips them; elsewhere the card gate forgives no quotation.)
         quoted = set()
-        for seg in _QUOTED.findall(stem):
-            quoted |= _sentence_ngrams(seg, 6)
+        if subject == 'grammar':
+            for seg in _QUOTED.findall(stem):
+                quoted |= _sentence_ngrams(seg, 6)
         shared = (_sentence_ngrams(stem, 6) & _sentence_ngrams(card_of.get(t, ''), 6)) - quoted
         if shared:
             errs.append(f'{h} ({t}): the stem copies 6 words of its card: '
