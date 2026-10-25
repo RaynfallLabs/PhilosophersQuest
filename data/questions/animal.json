@@ -22634,7 +22634,7 @@
   },
   {
     "tier": 1,
-    "question": "It is famously called the 'saber-toothed tiger,' but this stocky Ice-age cat was not a tiger at all. It was not even a close cousin of living lions or tigers. Its own family had split from modern cats roughly 20 million years earlier. What is this fanged Ice-age hunter properly called?",
+    "question": "A lion-sized cat with two long, curved fangs stalked the ice-age Americas. Its popular name is the saber-toothed tiger, yet it was no tiger, nor even a close cousin of today's lions and tigers: its family split from modern cats some 20 million years earlier. What is it properly called?",
     "answer": "Smilodon",
     "choices": [
       "Smilodon",
@@ -22647,7 +22647,7 @@
   },
   {
     "tier": 1,
-    "question": "In Los Angeles, natural pools of sticky black asphalt seeped up to the surface for thousands of years. Plant-eating animals wandered in and got stuck fast, and predators that came to feed on them got stuck too. This layered up into the world's richest saber-tooth fossil bed. What is the name of this famous fossil trap?",
+    "question": "A plant-eater blundered into a pool of sticky black asphalt where Los Angeles stands today and stuck fast, and predators that came to feed on it were trapped too. Over thousands of years the seeping asphalt built the world's richest saber-tooth fossil bed. What is this famous trap called?",
     "answer": "the La Brea Tar Pits",
     "choices": [
       "the La Brea Tar Pits",
@@ -22660,7 +22660,7 @@
   },
   {
     "tier": 2,
-    "question": "The biggest saber-toothed cat of all, Smilodon populator, could top 470 kg (over 1,000 lb), making it one of the largest cats that ever lived. It hunted the heaviest Ice-age plant-eaters in its range. Which enormous beast did this giant saber-tooth bring down?",
+    "question": "Smilodon populator, the biggest saber-toothed cat of all, hunted the heaviest ice-age plant-eaters in its range. It could top 470 kilograms (over 1,000 pounds), one of the largest cats that ever lived. Which enormous beast did it bring down?",
     "answer": "giant Megatherium ground sloths",
     "choices": [
       "giant Megatherium ground sloths",
@@ -22673,7 +22673,7 @@
   },
   {
     "tier": 3,
-    "question": "Smilodon, the saber-toothed cat that stalked Ice Age North and South America, carried two curved fangs about seven inches long — as long as a kitchen knife. They look like fearsome daggers, but paleontologists studying the fossil teeth call them surprisingly fragile. When Smilodon attacked, it had to sink its fangs into soft flesh and hold the prey still, because those long teeth had a specific mechanical weakness. What was that weakness?",
+    "question": "A Smilodon pinned its prey still before it sank its two curved fangs, each about seven inches long, into soft flesh. The fangs looked like fearsome daggers, but they were not built for crunching, and paleontologists call them fragile. What weakness made the cat hold its prey still first?",
     "answer": "they snapped easily under sideways twisting",
     "choices": [
       "they snapped easily under sideways twisting",
@@ -22681,12 +22681,12 @@
       "they were hollow and filled with venom",
       "they wore down to stubs within a year"
     ],
-    "context": "The long sabers were slender and could break under sideways force, so they were adapted for precise killing rather than bashing bone. Smilodon had to immobilize prey before biting to avoid snapping the fragile teeth. Source: https://en.wikipedia.org/wiki/Smilodon",
+    "context": "Smilodon's long sabers were slender and could break under sideways force, so they were built not for crunching bone but for one precise stab into the soft flesh of prey already pinned still. The cat had to immobilize its prey before biting to avoid snapping the fragile teeth.",
     "topic": "smilodon-saber-toothed-cat"
   },
   {
     "tier": 4,
-    "question": "Many Smilodon skeletons from La Brea carry serious injuries that had fully healed over, meaning the cat lived on long after being badly hurt. One pelvis even showed crippling hip damage from a young age. What still-debated feature of Smilodon life does that survival point to?",
+    "question": "Paleontologists have pulled up many Smilodon skeletons with serious injuries that had healed over, so the cats lived on long after being badly hurt. One pelvis showed hip damage that had crippled its owner from a young age. What still-debated feature of Smilodon life does that survival point to?",
     "answer": "it may have lived in groups that fed the injured",
     "choices": [
       "it may have lived in groups that fed the injured",
@@ -22699,7 +22699,7 @@
   },
   {
     "tier": 4,
-    "question": "Finite-element modeling revealed a paradox: despite its dagger-like canines, Smilodon's jaw-muscle bite force was only about a third that of a same-sized lion, feeble for a big cat. Anatomists point to one striking skull feature this weak-jawed hunter had that no living cat comes close to matching. What was it?",
+    "question": "McHenry's team rebuilt the skull of Smilodon in a computer model in 2007 and found a paradox: for all its dagger-like fangs, its jaw muscles bit with only about a third of a lion's force, feeble for a big cat. Yet the weak-jawed hunter had one skull feature that no living cat comes close to matching. What was it?",
     "answer": "a jaw that could swing open past a right angle",
     "choices": [
       "a jaw that could swing open past a right angle",
@@ -23375,20 +23375,7 @@
   },
   {
     "tier": 2,
-    "question": "The star-nosed mole spends its whole life underground in pitch darkness, digging tunnels through wet soil. Its eyes are tiny, its optic nerve barely there — it can hardly see anything at all. And yet it snatches worms and insects at some of the fastest speeds ever measured in a mammal. How does it find its prey?",
-    "answer": "It feels for them with its tentacled snout",
-    "choices": [
-      "It feels for them with its tentacled snout",
-      "It listens for them with huge outer ears",
-      "It tracks their body heat like a pit viper",
-      "It waits for them to fall into pit traps"
-    ],
-    "context": "The mole is nearly blind and lives entirely underground, so it relies almost completely on its star to locate prey by touch in the dark. Source: https://en.wikipedia.org/wiki/Star-nosed_mole",
-    "topic": "star-nosed-mole"
-  },
-  {
-    "tier": 3,
-    "question": "Everyone who first meets the star-nosed mole assumes the fleshy 22-rayed star on its face must be a super-nose for smelling prey through soil. The neuroscientist Kenneth Catania spent years studying that star with high-speed cameras and found it is nothing of the kind. What is the star actually built to do?",
+    "question": "A nearly blind star-nosed mole snatches worms and insects in the dark faster than almost any other mammal can forage. Most people take the fleshy star on its face for a super-nose, but Kenneth Catania, who filmed it with high-speed cameras, found it is nothing of the kind. What is the star built to do?",
     "answer": "To feel by touch, more sensitively than any other mammal's skin",
     "choices": [
       "To feel by touch, more sensitively than any other mammal's skin",
@@ -23396,12 +23383,12 @@
       "To sense electric fields given off by buried prey",
       "To glow faintly and lure insects toward the mouth"
     ],
-    "context": "Catania described the star as probably the most sensitive and acute touch organ found on any mammal. It is a touch organ, not a nose. Source: https://www.pbs.org/wnet/nature/the-beauty-of-ugly-star-nosed-moles/428/  (Legend.)",
+    "context": "The star-nosed mole is nearly blind and hunts in dark tunnels, so it relies almost completely on its star to locate prey by touch. Kenneth Catania described the star as probably the most sensitive and acute touch organ found on any mammal. It is a touch organ, not a nose.",
     "topic": "star-nosed-mole"
   },
   {
     "tier": 3,
-    "question": "The star-nosed mole's 22-tentacled star is barely wider than a centimeter — smaller across than a coin. Yet biologists have counted more than 100,000 nerve fibers packed into that tiny disc. A human hand, with all its skin and fingertips, has plenty of touch nerves of its own. Compared with a whole human hand, how many touch nerves does the mole's little star carry?",
+    "question": "Biologists counted more than 100,000 nerve fibers packed into the star on a star-nosed mole's snout, a disc barely a centimeter across and smaller than a coin. A whole human hand, fingertips and all, has plenty of nerves of its own. Compared with the hand, how many nerve fibers does the little star carry?",
     "answer": "About five to six times as many",
     "choices": [
       "About five to six times as many",
@@ -23414,7 +23401,7 @@
   },
   {
     "tier": 3,
-    "question": "In the marshy ponds of eastern North America lives the star-nosed mole, a small mammal named for the ring of pink, finger-like feelers around its snout. It dives to the muddy pond floor and hunts in total darkness, fully submerged. Scientists once thought no mammal could smell underwater — until they filmed this mole doing it. The trick uses tiny air bubbles. What does the mole do with them?",
+    "question": "Kenneth Catania filmed a star-nosed mole hunting fully under water on a muddy pond floor, where no mammal was thought able to smell, and saw it working with tiny air bubbles. Once a fine grid sat between its nose and a scent trail, its success fell to a coin-flip 50 percent. What does the mole do with the bubbles?",
     "answer": "It blows bubbles onto an object, then re-inhales them to smell it",
     "choices": [
       "It blows bubbles onto an object, then re-inhales them to smell it",
@@ -23422,20 +23409,7 @@
       "It uses rising bubbles to steer back toward the surface",
       "It stores bubbles in its cheeks as an oxygen supply"
     ],
-    "context": "Catania showed the mole exhales tiny bubbles onto an object underwater and re-inhales them, letting the air pick up scent molecules, sniffing about 5 to 10 times a second. It is one of only two mammals known to smell underwater. Source: https://news.vanderbilt.edu/2006/12/20/scientist-discovers-some-mammals-can-smell-objects-under-water-58788/  (Legend.)",
-    "topic": "star-nosed-mole"
-  },
-  {
-    "tier": 4,
-    "question": "Kenneth Catania tested whether the star-nosed mole truly smells underwater by having moles follow a scent trail to food; they chose the right path 75 to 100 percent of the time. Then he laid a fine grid between nose and scent. Why did that grid send their success crashing down to a coin-flip 50 percent?",
-    "answer": "It blocked the exhaled bubbles from ever touching the scent",
-    "choices": [
-      "It blocked the exhaled bubbles from ever touching the scent",
-      "It muffled the vibrations the prey gave off",
-      "It masked the food's faint body heat",
-      "It reflected the mole's own scent back at it"
-    ],
-    "context": "With the bubbles kept from reaching the scent, the mole's underwater smelling was disabled and its choices dropped to pure chance, proving the bubble-sniffing mechanism was doing the work. Source: https://www.nationalgeographic.com/science/article/learn-to-smell-underwater-with-the-star-nosed-mole",
+    "context": "Catania showed the mole exhales tiny bubbles onto an object underwater and re-inhales them, letting the air pick up scent molecules, sniffing about 5 to 10 times a second. It is one of only two mammals known to smell underwater. With the bubbles kept from reaching the scent, the mole's underwater smelling was disabled and its choices dropped to pure chance, proving the bubble-sniffing mechanism was doing the work.",
     "topic": "star-nosed-mole"
   },
   {
@@ -23739,7 +23713,7 @@
   },
   {
     "tier": 2,
-    "question": "A gecko lizard dashes straight up a pane of smooth window glass and hangs there upside-down by its dry toes, leaving behind no glue, no wet mark, no scratch. There are no suction cups and no claws helping it. Something invisible, working at a scale far smaller than we can see, grips the lizard to the glass. What actually holds a gecko to smooth glass?",
+    "question": "A gecko dashes straight up a pane of smooth window glass and hangs there upside down by its dry toes, leaving no glue, no wet mark and no scratch. No suction cups or claws are helping it. Something working at a scale far too small to see holds it there. What grips a gecko to smooth glass?",
     "answer": "the faint pull between molecules that touch",
     "choices": [
       "the faint pull between molecules that touch",
@@ -23752,7 +23726,7 @@
   },
   {
     "tier": 2,
-    "question": "In a Costa Rican rainforest at night, a red-eyed tree frog crouches on a wet, slick leaf while a downpour hammers down around it. Its round toe pads press flat against the leaf, and even as water sheets across the surface, the frog never slips. A gecko, by comparison, grips best on a bone-dry wall. This tree frog uses the opposite trick — the water is not its enemy but its ally. What lets the tree frog hold fast to the slippery leaf?",
+    "question": "A red-eyed tree frog crouches on a slick leaf in a Costa Rican rainforest at night while a downpour hammers around it. Its round toe pads press flat against the leaf, and even as water sheets across the surface the frog never slips. A gecko grips best on a bone-dry wall, but this frog uses the opposite trick. What holds it fast?",
     "answer": "a thin film of water pulling by surface tension",
     "choices": [
       "a thin film of water pulling by surface tension",
@@ -23765,7 +23739,7 @@
   },
   {
     "tier": 2,
-    "question": "An octopus reaches out one arm in a pounding tidal current and presses its row of round suckers against a bare, slippery rock. It clings so firmly that even a strong wave cannot tear it loose. Each sucker on that arm is a small muscular cup that the octopus can squeeze and release on its own. How does one of those cup-shaped suckers grip smooth stone?",
+    "question": "An octopus reaches one arm into a pounding tidal current and presses its round suckers against a bare, slippery rock, clinging so firmly that a strong wave cannot tear it loose. Each sucker is a small muscular cup it can squeeze and release on its own. How does a sucker grip the smooth stone?",
     "answer": "it lowers the water pressure trapped inside the cup",
     "choices": [
       "it lowers the water pressure trapped inside the cup",
@@ -23778,7 +23752,7 @@
   },
   {
     "tier": 3,
-    "question": "The Tokay gecko is a big lizard of Southeast Asia, famous for climbing walls. On the underside of each of its five toes it carries about 500,000 microscopic gripping hairs, called setae, each far too small to see with the naked eye. There are so many of these tiny hairs, all pulling at once, that the Tokay can pull off a startling feat on a vertical pane of glass. What can it do?",
+    "question": "On a vertical pane of glass, a Tokay gecko from Southeast Asia grips with about 500,000 microscopic hairs, called setae, under each of its toes. With so many tiny hairs gripping at once, it can pull off a startling feat on the glass. What can it do?",
     "answer": "hang from the glass by a single toe",
     "choices": [
       "hang from the glass by a single toe",
@@ -23791,7 +23765,7 @@
   },
   {
     "tier": 3,
-    "question": "The common housefly (Musca domestica) walks calmly across a kitchen ceiling upside down without falling. On the last segment of each of its six legs it carries two soft pads called pulvilli, each pad covered in thousands of fine hairs. Those foot-hairs do something specific to keep the fly stuck to the plaster overhead. What do they do?",
+    "question": "A housefly walks calmly upside down across a kitchen ceiling without falling. At the end of each of its six legs it carries two soft pads called pulvilli, each covered in thousands of fine hairs, and those hairs do something specific to keep it stuck to the plaster overhead. What do they do?",
     "answer": "each oozes a droplet of gluey fluid",
     "choices": [
       "each oozes a droplet of gluey fluid",
@@ -23804,7 +23778,7 @@
   },
   {
     "tier": 3,
-    "question": "Under a microscope, the toe pad of a rainforest tree frog looks tiled like a tiny honeycomb: flat six-sided cells packed side by side, split by deep, straight grooves between them. The pad grips wet leaves using a paper-thin film of water squeezed between skin and leaf. Since too much water would break that thin film, what job do the deep grooves between the cells do?",
+    "question": "A rainforest tree frog clings to a rain-soaked leaf. Under a microscope its toe pad looks tiled like a tiny honeycomb, flat six-sided cells packed side by side and split by deep, straight grooves, and too much water under the pad would spoil its grip. What job do the grooves do?",
     "answer": "drain excess water out to the edges",
     "choices": [
       "drain excess water out to the edges",
@@ -23817,7 +23791,7 @@
   },
   {
     "tier": 4,
-    "question": "A gecko sticks to glass because of a faint pull between molecules that touch — a grip so weak per hair that it works only because the toe carries hundreds of thousands of hairs. But that molecular pull cannot be switched off like a hand releasing a rope, and yet the gecko sprints up the pane without ever getting stuck fast. To peel each foot free instantly, the lizard changes one thing about its gripping hairs. What does it change?",
+    "question": "A gecko sprints up a pane of glass, its toes gripping with hundreds of thousands of tiny hairs, yet it never gets stuck fast. The pull that holds each hair cannot be switched off the way a hand lets go of a rope. To peel each foot free in an instant, what does the lizard change about its gripping hairs?",
     "answer": "the angle it tilts the hairs to the surface",
     "choices": [
       "the angle it tilts the hairs to the surface",
@@ -23830,7 +23804,7 @@
   },
   {
     "tier": 4,
-    "question": "A limpet is a small sea snail with a low cone-shaped shell that clamps to a wave-swept rock so hard that even crashing surf cannot tear it off. To scrape a meal of algae from the stone, it grinds with a row of tiny teeth reinforced by fibers of an iron mineral called goethite. When scientists at the University of Portsmouth measured just how strong those little teeth are, what record did they set?",
+    "question": "A limpet, a small sea snail under a low cone of shell, clamps to a wave-swept rock so hard that crashing surf cannot tear it off. To scrape algae from the stone it grinds with tiny teeth reinforced by fibers of an iron mineral called goethite. When scientists at the University of Portsmouth measured those teeth, what record did the teeth set?",
     "answer": "the strongest natural material ever measured",
     "choices": [
       "the strongest natural material ever measured",
@@ -23843,7 +23817,7 @@
   },
   {
     "tier": 4,
-    "question": "Inspired by the gecko's toe, engineers led by Al Crosby at the University of Massachusetts Amherst built a dry sticky pad they called Geckskin, made from cheap woven nylon and everyday bathroom caulk — no glue at all. When they pinned a piece of Geckskin only the size of an index card onto a smooth pane of glass, it could hold a shocking weight without peeling loose. How much?",
+    "question": "Inspired by the gecko's toe, engineers led by Al Crosby at the University of Massachusetts Amherst built a dry sticky pad they called Geckskin, made of cheap woven nylon and ordinary bathroom caulk, with no glue at all. They pinned a piece the size of an index card to a smooth pane of glass, and it held a shocking weight without peeling loose. How much?",
     "answer": "up to 700 pounds",
     "choices": [
       "up to 700 pounds",
@@ -24688,20 +24662,7 @@
   },
   {
     "tier": 1,
-    "question": "A shark bites down on a seal, and a front tooth snaps off and sinks into the deep. In most animals that gap would be permanent, but the shark simply keeps hunting. Where does its next tooth come from?",
-    "answer": "A fresh row waiting stacked behind it rotates forward into place",
-    "choices": [
-      "A fresh row waiting stacked behind it rotates forward into place",
-      "The broken piece slowly regrows from the same empty socket",
-      "A neighboring tooth drifts sideways to fill the open gap",
-      "The jaw stays gap-toothed until the whole set is replaced at once"
-    ],
-    "context": "A shark's teeth sit in rows stacked like a conveyor belt; when a front tooth breaks off, the one behind rotates forward to replace it, sometimes within a day or two. Source: Scientific American, Sharks Never Run Out of Teeth; sharkcagediving.net.",
-    "topic": "teeth-built-for-the-job"
-  },
-  {
-    "tier": 1,
-    "question": "Pull back the lips of a wolf and a cow at the same time and look at their cheek teeth, the big teeth well back inside the jaw. The wolf's cheek teeth are thin, blade-shaped edges that meet like a pair of scissors. The cow's cheek teeth are broad, flat slabs with hard ridges running across the top. From just those cheek teeth, what can you tell about what each animal eats?",
+    "question": "A zoologist pulls back the lips of a wolf and a cow to compare the big cheek teeth well back in their jaws. The wolf's are thin, blade-shaped edges; the cow's are broad, flat slabs with hard ridges across the top. What do those teeth tell about what each animal eats?",
     "answer": "The wolf slices meat; the cow grinds tough plants",
     "choices": [
       "The wolf slices meat; the cow grinds tough plants",
@@ -24714,33 +24675,7 @@
   },
   {
     "tier": 2,
-    "question": "A pet rat is given a small block of wood, and day after day it gnaws the block down to a pile of splinters. This is not just play or boredom. For a rat, chewing on something hard every day is a matter of survival. If a rat stops gnawing, its own mouth eventually becomes a danger to itself. Why must a rat keep gnawing constantly?",
-    "answer": "Its front incisors never stop growing and must be worn down",
-    "choices": [
-      "Its front incisors never stop growing and must be worn down",
-      "Its molars fall out and gnawing helps new ones erupt",
-      "Chewing wood is the only way it can digest hard seeds",
-      "Wood shavings are the main source of its drinking water"
-    ],
-    "context": "A rodent's front incisors never stop growing; a squirrel's grow about half an inch a month. The animal must gnaw constantly just to keep them in check. Source: Naturally Curious with Mary Holland, Rodent Incisors; ScienceDirect.",
-    "topic": "teeth-built-for-the-job"
-  },
-  {
-    "tier": 2,
-    "question": "A great white shark cruises the coast for decades, and every broken or lost tooth is instantly replaced. Add up all the teeth one great white sheds and regrows across its whole life. The total is closer to:",
-    "answer": "More than twenty thousand",
-    "choices": [
-      "More than twenty thousand",
-      "About five hundred",
-      "About three thousand",
-      "About one million"
-    ],
-    "context": "A great white keeps about 300 teeth in five-plus rows and can shed and regrow more than 20,000 (some say up to 30,000) across its lifetime. Source: sharkcagediving.net; A-Z Animals, Great White Shark Teeth.",
-    "topic": "teeth-built-for-the-job"
-  },
-  {
-    "tier": 2,
-    "question": "A horse crops grass with its wide biting front teeth and then grinds it up with big flat cheek teeth farther back in the jaw. Between those two sets, along the side of the jaw, is a long bare stretch of gum with no teeth at all. Scientists call it the diastema, and the horse's tongue uses it to shuffle grass sideways to the grinders. In a meat-eating animal like a wolf or lion, what fills that same spot in the jaw instead?",
+    "question": "A horse crops grass with its wide front teeth and grinds it with big flat cheek teeth farther back. Between the two sets runs a long, bare stretch of gum, the diastema, and the horse's tongue shoves grass along it toward the grinders. What fills that same spot in the jaw of a wolf or a lion?",
     "answer": "Long stabbing canines for seizing prey",
     "choices": [
       "Long stabbing canines for seizing prey",
@@ -24753,7 +24688,7 @@
   },
   {
     "tier": 3,
-    "question": "A cat's back cheek teeth have no flat grinding surface, and the uppers and lowers never quite meet. Even so, a cat works clean through hide, tendon, and bone. What everyday tool do these teeth work like?",
+    "question": "A cat works clean through hide, tendon and bone with back cheek teeth that have no flat grinding surface at all, their uppers and lowers never quite meeting. What everyday tool do these teeth work like?",
     "answer": "A pair of scissors",
     "choices": [
       "A pair of scissors",
@@ -24779,7 +24714,7 @@
   },
   {
     "tier": 3,
-    "question": "A rodent's incisor grows without stop, so what happens if it can never grind against an opposing tooth? One documented woodchuck showed the grim answer. Its unchecked upper incisor kept curving until it:",
+    "question": "Biologists documented one woodchuck whose upper incisor had no opposing tooth to grind against. Like any rodent's incisor it grew without stop, and with nothing to wear it down it kept curving. What did the tooth finally do?",
     "answer": "Grew up through the roof of its mouth into its own brain",
     "choices": [
       "Grew up through the roof of its mouth into its own brain",
@@ -24791,21 +24726,8 @@
     "topic": "teeth-built-for-the-job"
   },
   {
-    "tier": 3,
-    "question": "During the last Ice Age, the saber-toothed cat Smilodon prowled the grasslands and tar pits of the Americas, ambushing bison, camels, and giant ground sloths. Its upper canines were curved blades that grew up to about eight inches long, longer than a kitchen knife. But those famous fangs were surprisingly fragile and would snap if they hit bone the wrong way. They were not built for crunching. What were Smilodon's saber fangs actually built to do?",
-    "answer": "Deliver one precise stab to the throat of pinned prey",
-    "choices": [
-      "Deliver one precise stab to the throat of pinned prey",
-      "Rake and slash at fleeing prey on the run",
-      "Dig burrowing animals out of packed earth",
-      "Lock with a rival male's fangs in mating duels"
-    ],
-    "context": "Smilodon's upper canines grew up to about 8 inches (roughly 11 in the biggest), used not for crunching but for a single precise stab to a pinned prey's throat, like an assassin's stiletto rather than a chewing tool. Source: Britannica, Sabre-toothed cat; Smithsonian Magazine.  (Legend.)",
-    "topic": "teeth-built-for-the-job"
-  },
-  {
     "tier": 4,
-    "question": "An elephant gets a fixed number of molar sets, and when the last one wears smooth around its forties, it can no longer grind plants and slowly starves. Because of this, how many sets does one elephant get in its whole life?",
+    "question": "An old elephant cuts its last set of molars in its early forties, and once that set wears smooth it can no longer grind plants and slowly starves. It gets only a fixed number of molar sets in its life. How many sets does one elephant get?",
     "answer": "Six sets, and no more",
     "choices": [
       "Six sets, and no more",
@@ -24818,7 +24740,7 @@
   },
   {
     "tier": 4,
-    "question": "Along the rivers and streams of North America, a beaver spends its whole life gnawing down hardwood trees, felling trunks as thick as a person's leg to build its dams and lodges. Its four orange chisel-shaped front teeth, called incisors, take a beating every single day for years, yet they stay razor-sharp and never need a whetstone. The secret is not new growth alone but the way the tooth itself is built. How does the simple act of gnawing keep the beaver's front teeth sharp?",
+    "question": "A beaver spends its life gnawing down hardwood trees along North American streams, felling trunks as thick as a person's leg for its dams and lodges. Its chisel-shaped front teeth take a beating every day for years, yet they stay razor-sharp without a whetstone, thanks less to new growth than to how each tooth is built. How does gnawing keep them sharp?",
     "answer": "Hard enamel coats the front and softer dentine the back, so wear leaves a chisel edge",
     "choices": [
       "Hard enamel coats the front and softer dentine the back, so wear leaves a chisel edge",
@@ -24831,7 +24753,7 @@
   },
   {
     "tier": 4,
-    "question": "The front of a beaver's or rat's incisor is a striking rusty orange, not white like ours. Recent chemistry credits that face's hardness and acid resistance to one added ingredient locked inside the enamel. What is it?",
+    "question": "The incisors a beaver bares at a tree trunk are faced in a striking rusty orange, not white like a person's. Recent chemistry credits the hardness and acid resistance of that orange face to one ingredient locked inside the enamel. What is it?",
     "answer": "Iron, worked into the enamel",
     "choices": [
       "Iron, worked into the enamel",
@@ -24844,7 +24766,7 @@
   },
   {
     "tier": 4,
-    "question": "The saber-tooth cat Smilodon carried eight-inch upper canines, so you would expect a crushing bite behind them. Instead, biomechanical models put its jaw force at only about a third of a lion's, feeble for a cat its size. With such a weak jaw, how did it force those long blades deep into pinned prey?",
+    "question": "The saber-toothed cat Smilodon carried eight-inch upper canines, the kind of weapon that seems to call for a crushing bite. Yet biomechanical models put its jaw force at only about a third of a lion's, feeble for a cat its size. With so weak a jaw, how did it force those long blades deep into pinned prey?",
     "answer": "Powerful neck muscles hauled its skull down to sink them in",
     "choices": [
       "Powerful neck muscles hauled its skull down to sink them in",
@@ -24857,7 +24779,7 @@
   },
   {
     "tier": 5,
-    "question": "Cow molars grind hard, and elephants' do too. But the best grinding teeth ever belonged to a duck-billed dinosaur like Edmontosaurus. Hundreds of its teeth were cemented into one slab called a dental battery. Each tooth wove six kinds of tissue, where a horse molar uses four. As it chewed gritty plants year after year, what did the wear keep doing to the grinding surface?",
+    "question": "An Edmontosaurus, a duck-billed dinosaur, chewed gritty plants year after year with the best grinding teeth ever, hundreds of them cemented together into one slab called a dental battery. Each tooth wove six kinds of tissue, where a horse molar uses four. What did the wear keep doing to its grinding surface?",
     "answer": "It kept re-cutting fresh, self-sharpening ridges",
     "choices": [
       "It kept re-cutting fresh, self-sharpening ridges",
@@ -24870,7 +24792,7 @@
   },
   {
     "tier": 2,
-    "question": "Long before saber-toothed cats and dire wolves arrived, ice-age South America had almost no large mammal hunters at all. The top predator of big prey on foot was not a mammal. It was a huge flightless bird nearly 10 feet tall, with powerful running legs, a massive hooked beak, and tiny useless wings. Fossils of it have been dug up all across the pampas of Argentina. What are these vanished giant hunter-birds called?",
+    "question": "A flightless bird nearly 10 feet tall ran down its prey over the pampas of South America on long, powerful legs, armed with a massive hooked beak. Back then the land held almost no large mammal hunters, and this bird ruled it. Its fossils turn up across Argentina. What are these vanished hunters called?",
     "answer": "a terror bird",
     "choices": [
       "a terror bird",
@@ -24883,7 +24805,7 @@
   },
   {
     "tier": 2,
-    "question": "In ice-age South America the top hunter on foot was the terror bird, a 10-foot flightless predator with a huge hooked beak and long powerful running legs. When a terror bird caught up with a smaller mammal, it did not clamp on and thrash the prey back and forth the way a lion or a wolf does. It killed with the beak in a very different way. Instead of biting and shaking, how did the terror bird actually use that massive hooked beak?",
+    "question": "Running down a smaller mammal on the pampas of South America, a terror bird closed in with its huge beak, shaped like a hatchet and hooked at the tip. It did not kill the way a lion's or a wolf's jaws do. How did the terror bird use that beak?",
     "answer": "it struck straight down like a swinging pickaxe",
     "choices": [
       "it struck straight down like a swinging pickaxe",
@@ -24896,7 +24818,7 @@
   },
   {
     "tier": 2,
-    "question": "The terror bird was a towering predator of ice-age South America, standing nearly 10 feet tall on long, muscular running legs and armed with an enormous hooked beak. Its whole body was built for chasing prey across open pampas on foot, not for taking to the air the way an eagle or a hawk does. So what were the wings of a terror bird actually like?",
+    "question": "A terror bird stood nearly 10 feet tall on long, muscular legs and chased its prey on foot across the open pampas of South America, never taking to the air as an eagle or a hawk does. What were its wings like?",
     "answer": "tiny and nearly useless",
     "choices": [
       "tiny and nearly useless",
@@ -24909,7 +24831,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2006, in the fossil-rich cliffs of Patagonia in southern Argentina, someone unearthed the biggest bird skull ever found — a 28-inch skull of Kelenken, an extinct 'terror bird' that stood about 10 feet tall and hunted mammals across ancient South America. The finder was no seasoned professor. Who was Guillermo Aguirre-Zabala?",
+    "question": "Guillermo Aguirre-Zabala dug the biggest bird skull ever found out of the fossil-rich cliffs of Patagonia in 2006. The 28-inch skull belonged to Kelenken, a terror bird about 10 feet tall that hunted mammals across ancient South America. The finder was no seasoned professor. Who was Guillermo Aguirre-Zabala?",
     "answer": "a high-school student",
     "choices": [
       "a high-school student",
@@ -24922,7 +24844,7 @@
   },
   {
     "tier": 4,
-    "question": "Terror birds were huge extinct flightless predators of South America — some stood 10 feet tall with hooked beaks the size of a horse's head. Scientists put a fossil terror bird's fused, rigid skull through a computer stress test to see how it handled the forces of hunting. The skull held up beautifully under some attacks, but one kind of head motion would have risked snapping it in two. Which motion was the skull's weak point?",
+    "question": "Scientists loaded a fossil terror bird's skull into a computer and ran stress tests on it, to see how it stood up to the forces of a hunt. Its bones were fused rigid. The skull held up well under some blows, but one motion of the head could have snapped it. Which motion was its weak point?",
     "answer": "twisting prey side to side",
     "choices": [
       "twisting prey side to side",
@@ -24935,7 +24857,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2024, a single fossil shin bone from Colombia revealed a terror bird that may be the largest ever found -- an apex hunter from twelve million years ago. Yet that same bone is scarred with deep bite marks, showing that even this ultimate land predator became prey itself. Whose bite left the marks?",
+    "question": "Paleontologists in 2024 described one shin bone, twelve million years old, from the Tatacoa Desert of Colombia. It came from what may be the biggest terror bird ever found, a top land hunter of its day. Yet the bone is scarred with deep bite marks, so even this giant became prey. Whose bite left them?",
     "answer": "a giant caiman as long as a bus",
     "choices": [
       "a giant caiman as long as a bus",
@@ -24948,7 +24870,7 @@
   },
   {
     "tier": 4,
-    "question": "The most complete terror bird skeleton ever found preserved even the fragile, coiled bones deep inside its ear. When researchers ran CT scans through that ear, its shape revealed the kind of sound this hunter was tuned to catch. What was its hearing built for?",
+    "question": "Researchers ran CT scans through the ear of Llallawavis, a terror bird whose skeleton, found in Argentina, is the most complete of its kind, down to the fragile coiled bones deep inside the ear. The ear's shape showed what kind of sound this hunter was tuned to catch. What was its hearing built for?",
     "answer": "deep, low sounds that carry for miles, like an elephant",
     "choices": [
       "deep, low sounds that carry for miles, like an elephant",
@@ -24961,7 +24883,7 @@
   },
   {
     "tier": 1,
-    "question": "A tide pool is full of no-backbone animals. A little crab scuttles across the rocks on legs that each bend at a joint like a knee, its whole body wrapped in a hard shell on the OUTSIDE. Which big invertebrate group does the crab belong to?",
+    "question": "A little crab scuttles over the rocks of a tide pool on legs that each bend at a joint like a knee. A hard shell, worn on the outside, covers its whole body. Which big invertebrate group does it belong to?",
     "answer": "Arthropods",
     "choices": [
       "Arthropods",
@@ -24974,7 +24896,7 @@
   },
   {
     "tier": 1,
-    "question": "A see-through bell drifts through the sea trailing tentacles. Any small fish that brushes them gets zapped and paralyzed. Jellyfish, corals, and sea anemones all fight with these stinging cells. Which big invertebrate group is this?",
+    "question": "A see-through jellyfish drifts through the sea trailing its tentacles, and any small fish that brushes them is stung and paralyzed. Jellyfish, corals and sea anemones all fight with stinging cells like these. Which big invertebrate group do they belong to?",
     "answer": "Cnidarians",
     "choices": [
       "Cnidarians",
@@ -24987,20 +24909,7 @@
   },
   {
     "tier": 1,
-    "question": "You flip over a starfish on the rocks and see its body is built like a wheel — five identical arms spoking out from the center, no left or right, no front or back. Sea urchins and sea cucumbers are built the same way. Which big group is this?",
-    "answer": "Echinoderms",
-    "choices": [
-      "Echinoderms",
-      "Cnidarians",
-      "Arthropods",
-      "Sponges"
-    ],
-    "context": "Echinoderms are built on five-fold (pentaradial) symmetry and move on hundreds of tiny tube feet powered by a water-vascular system. Starfish, sea urchins, and sea cucumbers are echinoderms. Source: https://www.britannica.com/animal/echinoderm",
-    "topic": "the-big-invertebrate-groups"
-  },
-  {
-    "tier": 1,
-    "question": "Take every animal on Earth, every insect and worm and jellyfish and snail and fish and bird and mammal, and sort them all by body plan into a handful of big groups called phyla. One of those groups turns out to be so enormous that it holds more species than all the other animal groups on the planet put together. About four out of every five known animal species belong to it. Which group is that big?",
+    "question": "A biologist sorts every animal on Earth, from worms to birds, into a handful of big groups by body plan. One group outnumbers all the others together: about four in five known animal species belong to it. Which group is it?",
     "answer": "Arthropods",
     "choices": [
       "Arthropods",
@@ -25013,7 +24922,7 @@
   },
   {
     "tier": 2,
-    "question": "An earthworm's body is one long tube divided into a row of little repeating rings, each ring a segment stacked on the next. Leeches share this ringed, segmented plan. Which big invertebrate group does the earthworm belong to?",
+    "question": "An earthworm pushes through the garden soil, its body one long tube made of rings, each ring a segment stacked behind the next. Leeches are built on the same ringed plan. Which big invertebrate group does the earthworm belong to?",
     "answer": "Annelids",
     "choices": [
       "Annelids",
@@ -25026,7 +24935,7 @@
   },
   {
     "tier": 2,
-    "question": "A garden snail creeping across a wet leaf has no bones at all inside its soft body, not even a tiny one, yet it hauls around a hard spiral shell that it grew itself. Snails belong to a group of animals called mollusks, which also includes clams, oysters, and octopuses. Without any inner skeleton to build from, how does a snail actually manufacture that hard shell on its back?",
+    "question": "A garden snail creeps across a wet leaf carrying a hard spiral shell it grew itself, though there is not a single bone anywhere in its soft body. With no inner skeleton to build from, how does a snail make that shell?",
     "answer": "A sheet of tissue over its body lays down shell material layer by layer",
     "choices": [
       "A sheet of tissue over its body lays down shell material layer by layer",
@@ -25039,7 +24948,7 @@
   },
   {
     "tier": 2,
-    "question": "On a coral reef, you brush against a bright, blob-like sponge and find a strange kind of animal. A sponge has no head, no gut, no nerves, and no muscles. Of all the big animal groups, it alone never forms true tissues or organs. It is really just a loose colony of cells strung together, filtering seawater that flows through its holes. Which big invertebrate group does this simple reef dweller belong to?",
+    "question": "A bright, blob-like animal clings to a coral reef, with seawater flowing in through the holes all over its body. It has no head, no gut, no nerves and no muscles, and it never forms true tissues or organs. Which big invertebrate group does it belong to?",
     "answer": "Sponges",
     "choices": [
       "Sponges",
@@ -25052,7 +24961,7 @@
   },
   {
     "tier": 2,
-    "question": "Hold two long, damp worms in your hand — an earthworm from the garden and a leech from a pond. Both have ringed, segmented bodies, so you can tell them apart just by counting rings. A common earthworm has well over a hundred body segments, sometimes 150 or more. A leech, no matter how big or small, always stops at the exact same tidy number. How many segments does every leech have?",
+    "question": "A biologist lays an earthworm from the garden beside a leech from a pond and counts the rings on each. The earthworm has well over a hundred segments, sometimes 150 or more. Every leech, big or small, stops at the same tidy number. How many segments does a leech have?",
     "answer": "34 segments",
     "choices": [
       "34 segments",
@@ -25065,7 +24974,7 @@
   },
   {
     "tier": 3,
-    "question": "An octopus is a genius hunter — big-brained, jet-propelled, with eight grabbing arms tipped in suction cups. A garden snail is nothing like that: it creeps along on a slimy foot, hauling a coiled shell on its back. They look nothing alike, yet biologists file them in the very same enormous invertebrate group, together with clams, oysters, and slugs. Which group's soft body plan do all these creatures secretly share?",
+    "question": "A big-brained octopus jets across the reef and seizes a crab in eight sucker-tipped arms. A garden snail creeps along on one slimy foot under a coiled shell. Yet biologists file the two in the same enormous invertebrate group, along with clams, oysters and slugs. Which group's soft body plan do they share?",
     "answer": "Mollusks",
     "choices": [
       "Mollusks",
@@ -25077,60 +24986,8 @@
     "topic": "the-big-invertebrate-groups"
   },
   {
-    "tier": 3,
-    "question": "An arthropod's shell is like a suit of armor: hard as bone and unable to stretch as the animal grows. So a crab that wants to get bigger must literally haul itself out of the very armor protecting it and leave the empty old shell behind — a risky maneuver biologists call molting. In the hours right after a crab wriggles free of its old shell, what state is the crab in?",
-    "answer": "Its new shell is soft and pale, leaving it briefly defenseless",
-    "choices": [
-      "Its new shell is soft and pale, leaving it briefly defenseless",
-      "Its new shell is already rock-hard and battle-ready",
-      "It has no shell for weeks until a new one grows",
-      "It borrows an empty shell from another animal"
-    ],
-    "context": "Because the hard shell can't stretch, the animal climbs out of its old exoskeleton to grow — shedding called molting (ecdysis). Right after, the new shell is soft and pale, leaving the animal briefly defenseless until it hardens. Source: https://www.britannica.com/science/ecdysis",
-    "topic": "the-big-invertebrate-groups"
-  },
-  {
-    "tier": 3,
-    "question": "A grown starfish sitting on the seafloor is a five-armed wheel with no front and no back — you can turn it any way and it still looks the same. But its tiny drifting larva, floating in the plankton before it settles down, is built on a completely different kind of symmetry, one it will abandon and reorganize away from as it becomes the adult wheel. What kind of symmetry does an echinoderm larva start life with?",
-    "answer": "Bilateral",
-    "choices": [
-      "Bilateral",
-      "Five-fold (pentaradial)",
-      "No symmetry at all",
-      "Radial"
-    ],
-    "context": "Echinoderm larvae start out with bilateral (mirror-image) symmetry — a distinct left, right, front and back — and only become five-fold as adults. Source: https://en.wikipedia.org/wiki/Echinoderm",
-    "topic": "the-big-invertebrate-groups"
-  },
-  {
     "tier": 4,
-    "question": "An octopus is a mollusk, the same broad group of soft-bodied animals as snails and clams, but its inner plumbing is far stranger than either of its cousins. It does not have one heart pumping its blood but three. Two of those hearts push blood through the gills, and a third pushes the returning blood around the rest of the body. Its blood does not carry oxygen on iron the way human blood does, but on a metal called copper. Because of that copper, when an octopus bleeds, what color is its blood?",
-    "answer": "Blue",
-    "choices": [
-      "Blue",
-      "Red",
-      "Green",
-      "Clear"
-    ],
-    "context": "An octopus has three hearts and blue blood: its blood uses copper-based hemocyanin, not iron-based hemoglobin, so it runs blue. The central heart even stops when it swims, which is why octopuses prefer to crawl. Source: https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses  (Legend.)",
-    "topic": "the-big-invertebrate-groups"
-  },
-  {
-    "tier": 4,
-    "question": "A hungry starfish humps over a clam sitting on the tide-pool floor. The clam has slammed its two heavy shells shut so tightly that no jaw, no beak, and no claw could ever pry it open. The starfish just clings to the top and pulls, very slowly, for hours. Then, all at once, the clam is an empty shell — and the starfish never cracked the shells apart. How did the starfish eat the meat sealed inside?",
-    "answer": "It pushed its stomach out through the gap and digested the clam outside its body",
-    "choices": [
-      "It pushed its stomach out through the gap and digested the clam outside its body",
-      "It injected a venom that dissolved the clam from within",
-      "It swallowed the clam whole and crushed the shell in its gut",
-      "It drilled a hidden hole and sucked the meat out"
-    ],
-    "context": "A starfish pushes its cardiac stomach out through its own mouth, slips it into the gap between a clam's shells, digests the animal outside its body, then slurps the liquefied meal back in. Source: https://ocean.si.edu/ocean-life/invertebrates/sea-stars-urchins-and-relatives  (Legend.)",
-    "topic": "the-big-invertebrate-groups"
-  },
-  {
-    "tier": 4,
-    "question": "In 1907 the biologist H.V. Wilson pushed a whole living sponge through a fine mesh, mashing it into a soup of separate loose cells — a fate that would kill almost any animal. Because a sponge has no true tissues binding its cells, what did those scattered cells then do?",
+    "question": "H. V. Wilson pushed a whole living sponge through a fine mesh in 1907 and mashed it into a soup of loose, separate cells, a fate that would kill almost any animal. A sponge has no true tissues binding its cells together. What did the scattered cells do next?",
     "answer": "Crawled back together and rebuilt the sponge",
     "choices": [
       "Crawled back together and rebuilt the sponge",
@@ -25142,21 +24999,8 @@
     "topic": "the-big-invertebrate-groups"
   },
   {
-    "tier": 4,
-    "question": "Around 1950, scientists worked out how a nerve fires — sodium ions rushing in, then potassium flowing back out. They did it by threading fine wires down a single giant nerve fiber up to a thousand times thicker than one of ours. Which animal held that giant fiber?",
-    "answer": "A squid",
-    "choices": [
-      "A squid",
-      "A frog",
-      "A cat",
-      "An octopus"
-    ],
-    "context": "That fat fiber is the squid's 'giant axon' — a single nerve up to about a millimeter across, roughly a thousand times wider than a human nerve fiber, which fires the squid's escape jet. Because it was big enough to poke electrodes into, Alan Hodgkin and Andrew Huxley used it in the late 1940s and early 1950s to show exactly how a nerve impulse works: a fast inward rush of sodium ions followed by an outward flow of potassium. That squid work won the 1963 Nobel Prize in Physiology or Medicine and underpins essentially all of modern neuroscience — how your own brain sends its signals was first cracked open in a mollusk. Source: NobelPrize.org, 1963 Physiology or Medicine, 'Speed read: Signal to charge' (https://www.nobelprize.org/prizes/medicine/1963/speedread/); The Physiological Society, 'Hodgkin and Huxley's modelling of the action potential' (https://www.physoc.org/about-us/history-archives/historicalhighlights/hodgkin-and-huxleys-modelling-of-the-action-potential/).  (Legend.)",
-    "topic": "the-big-invertebrate-groups"
-  },
-  {
     "tier": 5,
-    "question": "In a developing embryo, the very first opening usually becomes the mouth. In one small camp of animals it becomes the OTHER end — the anus — and the mouth forms only later, the same back-to-front way your own body was built. Which of these tide-pool animals develops that way too, making it a closer developmental cousin to you than the rest?",
+    "question": "A biologist watching animal embryos grow sees the first opening of most of them become the mouth. In one camp of animals, fish, frogs and people among them, that first opening becomes the anus instead, and the mouth forms afterward. Which of these tide-pool animals grows the same back-to-front way?",
     "answer": "A sea urchin",
     "choices": [
       "A sea urchin",
@@ -25585,7 +25429,7 @@
   },
   {
     "tier": 2,
-    "question": "Look closely at a goldfish drifting in a tank and you will spot a faint dotted line running along each flank, from behind its gills all the way to its tail. It is easy to mistake for a color stripe, but the dots are tiny pores opening in the skin. Together they form a working sense organ, called the lateral line, that no land animal has. What does that line of pores let the fish do?",
+    "question": "A goldfish drifts in its tank with a faint dotted line along each flank, from behind the gills to the tail. It could pass for a painted stripe, but the dots are tiny pores in the skin, opening onto a sense organ called the lateral line. What does that line let the fish do?",
     "answer": "Feel the water moving against its body",
     "choices": [
       "Feel the water moving against its body",
@@ -25598,7 +25442,7 @@
   },
   {
     "tier": 2,
-    "question": "A fish swimming in muddy pond water can somehow sense a wall, a hidden hunter, or a passing neighbor even when its eyes can't see them. It reads the world by feeling how they push the water around. This job is done by its lateral line — the row of tiny pores running along each side of its body. What kind of water movement is the lateral line especially tuned to feel?",
+    "question": "A fish noses through muddy pond water where its eyes are no use, yet it still senses a wall, a hidden hunter or a passing neighbor. Its lateral line, the row of tiny pores along each side, answers to some movements far better than others. Which kind is it tuned to feel?",
     "answer": "Slow, large ripples in the water",
     "choices": [
       "Slow, large ripples in the water",
@@ -25611,7 +25455,7 @@
   },
   {
     "tier": 3,
-    "question": "A fish's lateral line — the dotted stripe of pores running along each side of its body — holds thousands of tiny sensors called neuromasts. Each neuromast is a little cluster of hair-like bristles buried inside a soft blob of clear jelly. When a passing current pushes on the jelly and bends the hairs sideways, what happens next to turn that moving water into a feeling the fish's brain can read?",
+    "question": "A current slides past a fish and pushes on thousands of tiny sensors along its lateral line. Each one, a neuromast, holds a tuft of hair-like bristles in a soft blob of clear jelly, and the push bends the hairs sideways. What happens next, turning that moving water into a feeling the brain can read?",
     "answer": "The bent hairs fire a nerve signal",
     "choices": [
       "The bent hairs fire a nerve signal",
@@ -25637,7 +25481,7 @@
   },
   {
     "tier": 3,
-    "question": "In a classic experiment, Tony Pitcher and Brian Partridge blindfolded saithe and the fish still slotted perfectly into their school, turning as one. Only when the researchers also cut the lateral line nerve did the school fall apart. How does a leaderless school stay in formation in the dark?",
+    "question": "Tony Pitcher and Brian Partridge blindfolded a school of saithe, and the fish still held their places, turning as one. Only when the researchers also cut the lateral line nerve did the school fall apart. How does the school hold together in the dark?",
     "answer": "Each fish feels its neighbors' pressure waves",
     "choices": [
       "Each fish feels its neighbors' pressure waves",
@@ -25663,7 +25507,7 @@
   },
   {
     "tier": 4,
-    "question": "A fish's lateral line and your own ears run on the very same kind of sensor: hair cells that fire when they are bent. Evolution took that sensor, sealed it inside the head, and built what out of it in every backboned animal — fish, frog, bird, and you?",
+    "question": "A goldfish feels a ripple along its lateral line, and a girl hears a bell, with the same kind of sensor: a tiny hair cell. Evolution sealed that sensor inside the head and built from it one organ in every backboned animal, from fish and frogs to birds and people. What did it build?",
     "answer": "The inner ear",
     "choices": [
       "The inner ear",
@@ -25676,7 +25520,7 @@
   },
   {
     "tier": 5,
-    "question": "Sharks and rays hunt by feeling the faint electric crackle of prey buried in sand, using pit-sensors called the ampullae of Lorenzini -- which grow from the very same embryonic tissue as the mechanical lateral line, its electric twin. Follow that electric sense back through fish history, though, and you hit a real puzzle. What does the fossil-and-gene trail actually show?",
+    "question": "A ray glides over the sand and feels the faint electric field of prey buried beneath it, using pits called the ampullae of Lorenzini. They grow from the very tissue in the embryo that forms the lateral line, its electric twin. Biologists tracing that electric sense through fish history found a puzzle. What does the fossil-and-gene trail show?",
     "answer": "It was lost in the bony-fish line, then re-evolved more than once",
     "choices": [
       "It was lost in the bony-fish line, then re-evolved more than once",
@@ -25686,19 +25530,6 @@
     ],
     "context": "Both senses belong to one embryonic system, the octavolateralis system, and both grow from the same lateral-line placodes (thickenings of embryonic skin). Ancestral jawed vertebrates had both the mechanical line and the electric one. The electric sense was then lost in the lineage leading to the neopterygian bony fish -- gars, bowfin, and the teleosts -- and in frogs, and then independently re-evolved at least twice within teleosts, most likely by re-tuning ordinary neuromast hair cells into electroreceptors. So electroreception is an old lateral-line trick that has been dropped and reinvented across fish history -- a genuine, still-debated pattern of repeated loss and convergent regain. Source: Wikipedia 'Lateral line' and 'Ampullae of Lorenzini'; Baker, Modrell & Gillis, 'The evolution and development of vertebrate lateral line electroreceptors', J. Exp. Biol. (PMC4988487); eLife 2016, 'Insights into electrosensory organ development... from a lateral line-enriched transcriptome' (elifesciences.org/articles/24197).",
     "topic": "the-lateral-line-feeling-the-water-move"
-  },
-  {
-    "tier": 2,
-    "question": "A human eye sees color using just three kinds of receptor — one for red, one green, one blue. The mantis shrimp's eye is famous for packing many more. That gap alone started an internet legend that it must see a wild rainbow. How many kinds of color receptor does its eye have?",
-    "answer": "Twelve",
-    "choices": [
-      "Five",
-      "Seven",
-      "Twelve",
-      "Three"
-    ],
-    "context": "Twelve of the mantis shrimp's roughly 16 photoreceptor types are tuned for color, spanning deep ultraviolet to far red (about 300 to 720 nanometers), against a human's three. That 12-versus-3 gap is exactly what launched the internet legend of super color vision — a legend the actual experiments would later puncture. Source: Thoen, How, Chiou & Marshall 2014, Science 343:411 ('A Different Form of Color Vision in Mantis Shrimp'); Mapping Ignorance (mappingignorance.org, 2014-03-24).",
-    "topic": "the-mantis-shrimp-color-myth"
   },
   {
     "tier": 3,
@@ -25714,34 +25545,8 @@
     "topic": "the-mantis-shrimp-color-myth"
   },
   {
-    "tier": 4,
-    "question": "The 2014 result left a deep puzzle: a mantis shrimp with twelve color channels told similar colors apart far more coarsely than the math said twelve channels should allow. The study's answer was that the eye reads color in a way no textbook had described. How did it propose the mantis shrimp eye pins down a color?",
-    "answer": "It sweeps its eye stripe across the object and reads the spectral signature like a barcode",
-    "choices": [
-      "It sweeps its eye stripe across the object and reads the spectral signature like a barcode",
-      "It bends each color onto its own sharp point in a central pit and compares them",
-      "It runs each pair of channels against each other and averages the result",
-      "It pipes all twelve signals into one nerve that blends them into a master hue"
-    ],
-    "context": "Eye muscles sweep the color-sensing 'mid-band' stripe across an object in one fast pass, and the brain recognizes the object's spectral signature like a barcode rather than finely discriminating it — trading precision for near-instant, low-brain-cost speed. Lead author Hanne Thoen called it 'another way of color processing,' the first genuinely new category of seeing described since the 1800s; it is treated as an active reinterpretation, not a closed case. Source: Thoen et al. 2014, Science 343:411; sci-news.com; Mapping Ignorance (mappingignorance.org, 2014-03-24).  (Legend.)",
-    "topic": "the-mantis-shrimp-color-myth"
-  },
-  {
-    "tier": 4,
-    "question": "A light wave can spiral as it travels, twisting like a corkscrew — physicists call this circular polarization — and almost no eye on Earth reacts to it. The mantis shrimp is the only animal known to detect the spiraling light, and the whole trick happens inside a single cell in each unit of its eye. What does that one cell do to the incoming spiral?",
-    "answer": "It untwists the spiral into flat light, handing an easy signal to the cells below it",
-    "choices": [
-      "It untwists the spiral into flat light, handing an easy signal to the cells below it",
-      "It absorbs the left-hand spiral and passes only the right-hand spiral to the cells below it",
-      "It spins to match the spiral's rotation, then relays a steady beam to the cells below it",
-      "It scatters the spiral into a soft blur that the broad cells below it can average out"
-    ],
-    "context": "This is real, and it made headlines: the mantis shrimp is the only animal known to detect circularly polarized light — light whose wave spirals like a corkscrew. In rows 5 and 6 of the eye's midband, one photoreceptor, the R8 cell, acts as a 'quarter-wave plate': an optical part that converts spiraling (circular) light into flat (linear) light. The deeper receptors can only read flat light, so R8 performs the conversion first. Chiou, Kleinlogel, Cronin, Caldwell, Loeffler, Siddiqi, Goldizen & Marshall, 'Circular Polarization Vision in a Stomatopod Crustacean,' Current Biology 18 (2008).",
-    "topic": "the-mantis-shrimp-color-myth"
-  },
-  {
     "tier": 5,
-    "question": "Ultraviolet light is invisible to us, yet the mantis shrimp eye splits it into six separate channels — which ought to demand six different UV-catching pigments. The eye carries only two. It conjures the other four channels by stacking colored filters ahead of the pigments, each one shaving a slice off the band before the light arrives. The strange part is what those filters are built from. What does the eye repurpose to make them?",
+    "question": "A mantis shrimp peering from its reef burrow sorts ultraviolet light, invisible to people, with six kinds of UV receptor built from only two UV pigments. Its eye makes up the difference by stacking colored filters ahead of the pigments, each trimming a slice off the band. What are those filters made of?",
     "answer": "The same sunscreen molecules that other reef animals grow to guard their bodies from the sun",
     "choices": [
       "The same sunscreen molecules that other reef animals grow to guard their bodies from the sun",
@@ -25923,7 +25728,7 @@
   },
   {
     "tier": 2,
-    "question": "Nearly every mammal on Earth — from mice to elephants to humans — is born live from its mother's body, warm and wriggling. But one tiny group of furry, milk-feeding animals in Australia and New Guinea breaks that rule outright. Instead of giving birth, they lay leathery eggs and hatch tiny, jelly-bean-sized babies that lap up milk oozing through the mother's skin. What are these strange egg-laying mammals called as a group?",
+    "question": "A furry, milk-making mammal of Australia lays a leathery egg instead of giving birth, breaking a rule nearly every other mammal keeps, from mice to elephants. It belongs to a tiny group of mammals found only in Australia and New Guinea. What is that group called?",
     "answer": "Monotremes",
     "choices": [
       "Monotremes",
@@ -25935,112 +25740,8 @@
     "topic": "the-rule-breakers-monotremes-and-marsupials"
   },
   {
-    "tier": 2,
-    "question": "The entire family of egg-laying mammals — the monotremes — is astonishingly tiny. Count them and there is one lone duck-billed platypus, plus four kinds of spiny, ant-eating cousins called echidnas, all living in Australia and New Guinea. How many kinds of egg-laying mammal live in the world today?",
-    "answer": "Exactly five",
-    "choices": [
-      "Exactly five",
-      "Around forty",
-      "Just one",
-      "Over two hundred"
-    ],
-    "context": "The five living monotremes are the platypus plus four echidnas: the short-beaked echidna and three long-beaked echidnas. Source: npj Biodiversity (nature.com/articles/s44185-025-00086-6), 'one of only five modern egg-laying mammals'; Wikipedia 'Echidna'.",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 2,
-    "question": "When a kangaroo mother in the Australian outback has a baby, the joey that eventually pokes its head out of her pouch is not what she actually gives birth to. The creature that is actually born, right at the moment of birth, is blind, hairless, and shockingly tiny — it has to crawl up through her fur on its own to reach the safety of the pouch. About how big is a newborn kangaroo the moment it is born?",
-    "answer": "About the size of a jellybean",
-    "choices": [
-      "About the size of a jellybean",
-      "About the size of a house cat",
-      "About the size of a rabbit",
-      "About the size of a loaf of bread"
-    ],
-    "context": "A newborn joey is born blind, hairless, and about 2 cm long, weighing under a gram. It must then crawl unaided up its mother's fur to the pouch using surprisingly strong, clawed forelimbs. Source: A-Z Animals; Ask A Biologist (askabiologist.asu.edu/kangaroo-joey).  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 3,
-    "question": "An egg-laying mammal mother still feeds her babies milk, but she has a strange problem: her body has no nipples at all. How do her babies get their milk?",
-    "answer": "The milk oozes out through pores in her skin and they lap it from her fur",
-    "choices": [
-      "The milk oozes out through pores in her skin and they lap it from her fur",
-      "She regurgitates a milky paste into their open mouths",
-      "They chew special milk-filled sacs that grow on her belly",
-      "She soaks leaves in milk for them to suck"
-    ],
-    "context": "With no teats, a monotreme's milk is released through pores and patches in the skin, and the young lap it up from her fur. Source: Wikipedia 'Platypus', 'with no teats, the milk is released through pores in the skin from which the young lap it up in her fur'.  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 3,
-    "question": "A platypus is a strange, duck-billed, egg-laying mammal that lives in the rivers and creeks of Australia. When it dives to hunt, it seals its eyes, ears, and nostrils shut against the muddy water, yet it still finds shrimp, insects, and worms hidden in the river gloom. Its rubbery, flat bill is packed with about 40,000 special sensors that let it 'see' in the dark. What do those bill sensors actually detect?",
-    "answer": "The faint electricity of prey's moving muscles",
-    "choices": [
-      "The faint electricity of prey's moving muscles",
-      "The warmth given off by hidden prey",
-      "Ripples in the water made by prey",
-      "The scent trails prey leave in mud"
-    ],
-    "context": "The platypus bill holds about 40,000 electroreceptors arranged in rows, detecting the tiny electric fields made when prey muscles move. Source: Wikipedia 'Platypus', '40,000 electroreceptors arranged in rows in the skin of the bill'.  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 3,
-    "question": "In Australia lives the wombat, a stocky burrowing marsupial that spends its life digging long underground tunnels. It scoops out earth with its front paws and kicks the loose dirt and sticks out behind it as it works. Like other marsupials, a mother wombat carries her tiny baby, called a joey, in a body pouch on her belly. That pouch has one odd feature that keeps her joey clean and safe while all that debris flies. What is unusual about a wombat's pouch?",
-    "answer": "Its opening points toward the mother's rear, away from the flying dirt",
-    "choices": [
-      "Its opening points toward the mother's rear, away from the flying dirt",
-      "Its opening can be sealed shut like a zip-lock bag",
-      "Its opening is lined with waterproof waxy skin",
-      "Its opening splits into two separate mouths"
-    ],
-    "context": "A wombat's pouch opens toward its rear so that when the mother digs, dirt and sticks don't fall in on the joey. Source: Cool Green Science (blog.nature.org) / National Geographic, 'a wombat's pouch faces backwards... to protect their joeys from dirt'.  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 3,
-    "question": "North America has just one native pouched mammal — a marsupial whose babies grow up inside a body pouch on the mother's belly. It is called the Virginia opossum. Its newborns are each about the size of a honeybee, and the pouch holds only 13 teats for them to nurse from. When a mother has more than 13 babies in a litter, what decides which of them survive?",
-    "answer": "Only the babies that reach and latch onto a teat survive",
-    "choices": [
-      "Only the babies that reach and latch onto a teat survive",
-      "The mother nudges the weakest ones out first",
-      "The largest babies push the others off the teats",
-      "The mother splits them between two litters"
-    ],
-    "context": "The Virginia opossum is the only marsupial native to North America. With exactly 13 teats, only the newborns that reach a teat survive. Source: Alabama Cooperative Extension; Opossum Society US.",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 3,
-    "question": "The platypus is a strange furry mammal from the rivers of Australia. It lays eggs, has a duck-like bill, and hunts underwater. Only the male platypus carries a weapon: a sharp spur on the heel of each hind leg that delivers venom when he stabs. The venom will not kill a grown person, but anyone jabbed learns to respect it fast. What does a male platypus's venom do to a human?",
-    "answer": "Causes excruciating pain that can last for months",
-    "choices": [
-      "Causes excruciating pain that can last for months",
-      "Makes the wound glow faintly for hours",
-      "Paralyzes the arm for a full day",
-      "Triggers uncontrollable sleepiness"
-    ],
-    "context": "The male platypus's spur venom is not lethal to humans but causes excruciating pain, a hyperalgesia that can last as long as months. Source: Wikipedia 'Platypus'.  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
     "tier": 4,
-    "question": "The platypus (Ornithorhynchus anatinus) piles oddity on oddity. Along with laying eggs and a venomous spur, it has one more secret revealed only in the dark: shine an ultraviolet light on its fur and something surprising happens. What does its fur do under UV light?",
-    "answer": "It glows cyan and green",
-    "choices": [
-      "It glows cyan and green",
-      "It turns jet black",
-      "It becomes completely transparent",
-      "It sheds a fine glowing powder"
-    ],
-    "context": "The platypus's fur biofluoresces, glowing cyan and green under ultraviolet light. The animal also lacks a functional stomach entirely, having lost the genes to make one. Source: Wikipedia 'Platypus', 'glows cyan and green when under ultraviolet light'.  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 4,
-    "question": "Both the platypus and the echidna are odd egg-laying mammals from Australia and New Guinea. Both can sense the faint electricity given off by their prey — the platypus in muddy river bottoms, the echidna nosing through leaf litter — through the tip of their snouts. But the two are not equipped to the same degree. The platypus bill carries about 40,000 electric sensors. Roughly how many does the echidna's beak carry?",
+    "question": "A platypus finds hidden prey on muddy river bottoms with about 40,000 tiny sensors packed into its bill. Its egg-laying cousin the echidna, nosing through leaf litter, carries the same kind of sensor in the tip of its beak, but the two are not equipped alike. Roughly how many does the echidna have?",
     "answer": "Only about 400 to 2,000",
     "choices": [
       "Only about 400 to 2,000",
@@ -26053,7 +25754,7 @@
   },
   {
     "tier": 4,
-    "question": "The echidna is a spiny Australian mammal that lays a single leathery egg and rolls it directly into a temporary pouch on her belly. When the egg hatches, out comes a tiny hairless baby called a puggle, which rides in the pouch and suckles milk from patches on her skin. But the puggle soon grows something that forces her to evict it and dig it a burrow instead. What makes her move the puggle out?",
+    "question": "An echidna mother keeps her one leathery egg in a temporary pouch on her belly. The tiny, hairless baby that hatches rides there until it grows something that forces her to move it out and dig it a burrow instead. What makes her evict it?",
     "answer": "It grows spines and becomes too prickly to carry",
     "choices": [
       "It grows spines and becomes too prickly to carry",
@@ -26066,7 +25767,7 @@
   },
   {
     "tier": 4,
-    "question": "Attenborough's long-beaked echidna is one of the five egg-laying mammals. Science had no record of it for 62 years. In 2023 a team set camera traps deep in the Cyclops Mountains of New Guinea. When they finally checked the footage, what had the cameras caught?",
+    "question": "Attenborough's long-beaked echidna, an egg-laying mammal, had gone 62 years without a single record by science when a team set camera traps deep in the Cyclops Mountains in 2023. When they checked the footage, what had the cameras caught?",
     "answer": "The living animal itself, snuffling past on camera",
     "choices": [
       "The living animal itself, snuffling past on camera",
@@ -26075,19 +25776,6 @@
       "A single blurry shape too dark to identify"
     ],
     "context": "Attenborough's long-beaked echidna (Zaglossus attenboroughi) was rediscovered alive in 2023 after 62 years unrecorded by science, filmed on camera traps in the Cyclops Mountains. Source: npj Biodiversity (nature.com/articles/s44185-025-00086-6); Sci.News.  (Legend.)",
-    "topic": "the-rule-breakers-monotremes-and-marsupials"
-  },
-  {
-    "tier": 4,
-    "question": "In 1799 a preserved specimen of a strange furry animal from Australia — with a broad duck-like bill, webbed feet, thick brown fur, and a flat beaver-like tail — reached naturalists at the British Museum in London. They stared at the platypus, poked at the seams between the bill and the skull, and refused outright to believe it was one real animal at all. What did they suspect had happened?",
-    "answer": "That a duck's bill had been sewn onto a beaver-like body as a hoax",
-    "choices": [
-      "That a duck's bill had been sewn onto a beaver-like body as a hoax",
-      "That it was a diseased, deformed otter",
-      "That two shipped animals had been mixed up in one crate",
-      "That it was a clever wax model, not a real creature"
-    ],
-    "context": "The platypus so baffled European scientists that some suspected the duck bill had been stitched onto a beaver-like body as a taxidermy hoax. Source: Natural History Museum, 'The platypus puzzle' (nhm.ac.uk/discover/the-platypus-puzzle.html).  (Legend.)",
     "topic": "the-rule-breakers-monotremes-and-marsupials"
   },
   {
@@ -26105,7 +25793,7 @@
   },
   {
     "tier": 5,
-    "question": "Egg-laying mammals barely hang on today — worldwide, only the platypus and a few echidna species are left. But at one opal field near Lightning Ridge in New South Wales, fossils about 100 million years old, some preserved as solid opal, capture a very different Cretaceous world. What did that single site hold?",
+    "question": "Paleontologists at an opal field near Lightning Ridge, in New South Wales, dig out fossils about 100 million years old, some of the bones turned to solid opal. Only the platypus and a few echidnas survive among the egg-laying mammals today. What did that one site hold?",
     "answer": "At least six egg-laying mammal species living there side by side.",
     "choices": [
       "At least six egg-laying mammal species living there side by side.",
@@ -26118,7 +25806,7 @@
   },
   {
     "tier": 2,
-    "question": "A scallop is a hinged shellfish, cousin to clams and oysters, that rests on the seabed with its two fan-ridged shells cracked open to filter water. Peer between the halves of one as it sits open on the sand and, staring back at you along the frilly edge of its mantle, you find a row of tiny, glinting blue dots. What are they?",
+    "question": "A scallop, a shellfish kin to clams and oysters, rests on the sandy seabed with its fan-ridged shells cracked open to filter the water. Along the frilly edge between the two halves glints a row of tiny blue dots. What are they?",
     "answer": "Up to 200 tiny eyes",
     "choices": [
       "Up to 200 tiny eyes",
@@ -26131,7 +25819,7 @@
   },
   {
     "tier": 2,
-    "question": "A human eye and a camera work the same way: a curved lens at the front bends incoming light and focuses it to a sharp point at the back. A scallop, a hinged shellfish sitting on the seabed, has around 200 tiny blue eyes strung along the frilly edge of its shell. Each of those little eyes throws away the lens trick entirely and focuses light a different way. How?",
+    "question": "A scallop sits on the seabed with its shell agape, watching the water through tiny blue eyes along its rim. A human eye focuses with a curved lens at the front, but a scallop's eye has no such lens. How does it focus the light?",
     "answer": "It bounces light off a curved mirror",
     "choices": [
       "It bounces light off a curved mirror",
@@ -26144,7 +25832,7 @@
   },
   {
     "tier": 3,
-    "question": "Behind each scallop eye sits a curved mirror built from thousands of tiny guanine crystals in 20-30 stacked layers. For the reflected image to stay sharp rather than blurred, the crystals themselves must have one particular shape. What shape are they?",
+    "question": "Behind the retina of each tiny scallop eye lie thousands of guanine crystals, stacked 20 to 30 layers deep. For the eye's picture to stay sharp rather than blurred, every one of those crystals must have one particular shape. What shape are they?",
     "answer": "Perfectly square, flat plates",
     "choices": [
       "Perfectly square, flat plates",
@@ -26157,7 +25845,7 @@
   },
   {
     "tier": 2,
-    "question": "Anableps, nicknamed the 'four-eyed fish', is a small fish that lives in the rivers and shallow lagoons of Central America. Despite the name, it actually has only two eyes — but they are built in a very odd way. It hangs at the water's surface all day with the waterline resting exactly across the middle of each eye, cutting each one into an upper half and a lower half. Why does that eye-line matter?",
+    "question": "Anableps, the four-eyed fish, swims the rivers and shallow lagoons of Central America, yet it has only two eyes. It hangs at the surface, the top of the water slicing across the middle of each eye and cutting it into an upper half and a lower half. Why does that matter to the fish?",
     "answer": "Each eye's top half sees in air while its bottom half sees underwater",
     "choices": [
       "Each eye's top half sees in air while its bottom half sees underwater",
@@ -26170,7 +25858,7 @@
   },
   {
     "tier": 4,
-    "question": "Each eye of the four-eyed fish Anableps must send a sharp image to two retinas at once, catching light coming through air above the waterline and light coming through water below. Light bends by different amounts in air and water, yet the eye holds just ONE lens. How does that single lens cope?",
+    "question": "Inside each eye of the four-eyed fish Anableps sit two pupils and two retinas, yet only one lens. That one lens must form sharp pictures from the air and from the water at once, and the two call for very different focusing. How does the single lens cope?",
     "answer": "The lens is egg-shaped, so its two directions bend light differently",
     "choices": [
       "The lens is egg-shaped, so its two directions bend light differently",
@@ -26183,20 +25871,7 @@
   },
   {
     "tier": 3,
-    "question": "Deep beneath the Pacific Ocean, in cold black water where sunlight barely reaches, drifts a strange fish called the barreleye. The strangest thing about a barreleye is its forehead: a see-through, fluid-filled dome you can look right into, like a soft glass window on the top of its head. What are you actually looking at inside that clear head?",
-    "answer": "Its two glowing green eyes, tucked inside the skull",
-    "choices": [
-      "Its two glowing green eyes, tucked inside the skull",
-      "Its brain, lit up as it thinks",
-      "A pocket of swallowed jellyfish",
-      "A gas bladder that keeps it afloat"
-    ],
-    "context": "The barreleye fish has a see-through, fluid-filled dome for a forehead, and you can look straight through its transparent head at its two glowing green eyes inside. This one is a legend of the deep. Source: MBARI (mbari.org/barreleye-fish-with-tubular-eyes-and-transparent-head).",
-    "topic": "the-strangest-eyes-in-the-animal-kingdom"
-  },
-  {
-    "tier": 3,
-    "question": "For 70 years scientists thought the barreleye fish's tube-shaped eyes were locked staring straight up. In 2008 the team at the Monterey Bay Aquarium Research Institute (MBARI) kept a live one at the surface. They filmed something inside its clear dome that overturned decades of belief. What did the eyes do?",
+    "question": "A team from the Monterey Bay Aquarium Research Institute filmed the tube-shaped eyes of a live barreleye in 2008, inside the clear dome on the deep-sea fish's head. For 70 years scientists had thought those eyes were fixed in place. What did the film show them doing?",
     "answer": "They swivelled forward to aim at food",
     "choices": [
       "They swivelled forward to aim at food",
@@ -26209,7 +25884,7 @@
   },
   {
     "tier": 4,
-    "question": "The brownsnout spookfish is a small deep-sea fish that hunts in near-total darkness thousands of feet below the ocean surface, where sunlight has almost run out. It builds an image inside its eyes in a way no other backboned animal on Earth does. Each of its eyes is split into two halves. One half still uses a normal curved lens like ours to focus the light. How does the other half focus its image?",
+    "question": "The brownsnout spookfish hunts thousands of feet down in the deep sea, where sunlight has almost run out. Each of its eyes is split into two halves. One half focuses light with an ordinary curved lens, like ours. How does the other half focus its image?",
     "answer": "With a curved mirror of stacked crystals",
     "choices": [
       "With a curved mirror of stacked crystals",
@@ -26222,7 +25897,7 @@
   },
   {
     "tier": 4,
-    "question": "The ogre-faced spider — also known as the net-casting spider — is a nocturnal hunter of warm forests that stalks its prey in almost total darkness. It has two huge staring lenses, about 2000 times more light-sensitive than a human's eyes. To squeeze every last photon out of the night, it does something drastic to those enormous eyes on a strict daily cycle. What?",
+    "question": "The ogre-faced spider hunts by night in warm forests, staring out of two enormous eyes, some 2,000 times as sensitive to light as a human's. To squeeze every last photon from the dark, it does something drastic to those eyes on a strict daily cycle. What does it do?",
     "answer": "It grows a fresh light-catching membrane each night and destroys it by dawn",
     "choices": [
       "It grows a fresh light-catching membrane each night and destroys it by dawn",
@@ -26235,7 +25910,7 @@
   },
   {
     "tier": 2,
-    "question": "A bluefin tuna, a mako shark, and a bottlenose dolphin are three totally unrelated animals — a bony fish, a cartilage fish, and an air-breathing mammal — that all cruise fast through the open ocean chasing prey. Even though evolution built them separately from different ancestors, all three ended up with almost exactly the same overall body shape. What is that shape?",
+    "question": "A bluefin tuna, a mako shark and a bottlenose dolphin all chase prey fast through the open ocean, yet one is a bony fish, one a cartilage fish and one an air-breathing mammal. Evolution built them separately, from different ancestors, and still they ended up with almost the same body shape. What shape is it?",
     "answer": "A stiff, torpedo-shaped body that knifes through the water",
     "choices": [
       "A stiff, torpedo-shaped body that knifes through the water",
@@ -26248,7 +25923,7 @@
   },
   {
     "tier": 2,
-    "question": "A tuna is a huge fish that hunts in the open ocean. A dolphin is an ocean mammal that must come up to breathe air. Watch a tuna and a dolphin swim past and both look like sleek grey torpedoes shaped by the same water. But look at how each one is actually moving through the water — one clue instantly tells you the dolphin is a mammal, not a fish. What is that clue?",
+    "question": "A tuna and a dolphin flash past a diver in the open ocean, two sleek swimmers built alike for speed, though the tuna is a fish and the dolphin a mammal. One clue in the way each one swims marks the dolphin as a mammal. What is the clue?",
     "answer": "Its tail beats up and down, not side to side",
     "choices": [
       "Its tail beats up and down, not side to side",
@@ -26261,7 +25936,7 @@
   },
   {
     "tier": 2,
-    "question": "A tuna is a big open-ocean fish that can cruise for days without stopping. Watch one glide by and its whole silvery body seems almost stiff — barely a wiggle from head to shoulder. Yet almost every bit of the power that shoves it forward is happening in just one small place along its body. Where on the tuna is nearly all the swimming motion coming from?",
+    "question": "A bluefin tuna cruises the open ocean for days without stopping, its silvery body held almost stiff, with barely a wiggle from head to shoulder. Yet nearly all the power that drives it forward comes from one small part of its body. Where does nearly all of its swimming motion happen?",
     "answer": "At the narrow tail-base and the crescent tail",
     "choices": [
       "At the narrow tail-base and the crescent tail",
@@ -26274,7 +25949,7 @@
   },
   {
     "tier": 2,
-    "question": "A bluefin tuna is a big ocean fish that hunts by chasing prey at incredible speed — over 40 miles per hour through open sea. As it accelerates, its body shape suddenly changes. The tall dorsal fin on its back and the wide pectoral fins on its sides seem to disappear, leaving a smooth torpedo with nothing sticking out to slow it down. Where did those fins go?",
+    "question": "A bluefin tuna sprints after its prey at faster than 40 miles an hour. As it speeds up, the tall fin on its back and the wide fins on its sides seem to vanish, leaving a smooth body with nothing sticking out to slow it down. Where did those fins go?",
     "answer": "They folded flat into grooves and slots in its body",
     "choices": [
       "They folded flat into grooves and slots in its body",
@@ -26287,7 +25962,7 @@
   },
   {
     "tier": 3,
-    "question": "A tuna's tail isn't the flat rowing paddle you see on a goldfish. It is a stiff, thin, crescent-moon curve, held out like a scythe blade behind a narrow ankle of muscle. If you sliced straight across that crescent and looked at the cut end, the shape of the slice would explain why so little of the tuna's swimming effort is wasted in useless swirl and drag. What shape is that cross-section?",
+    "question": "A tuna sweeps a stiff, thin crescent of a tail, held out like a scythe blade behind a narrow ankle of muscle, nothing like a goldfish's flat paddle. Seen in cross-section, that crescent has a shape that explains why so little of the tuna's effort is wasted in swirl and drag. What shape is it?",
     "answer": "A curved airplane wing, an airfoil",
     "choices": [
       "A curved airplane wing, an airfoil",
@@ -26300,7 +25975,7 @@
   },
   {
     "tier": 3,
-    "question": "Most fish are as cold as the sea water around them, but the bluefin tuna is different. This huge torpedo-shaped ocean predator races across the open Atlantic and Pacific chasing schools of smaller fish. Grip a freshly caught bluefin near the spine and the deep red swimming muscle there is startlingly warm to the touch — much hotter than the surrounding water. What does keeping that muscle warm do for the tuna?",
+    "question": "A bluefin tuna races across the open ocean after schools of smaller fish, its deep red swimming muscle running far warmer than the sea around it, though most fish are as cold as the water they swim in. What does that warm muscle do for the tuna?",
     "answer": "It fires faster and harder, driving the tuna's blazing speed",
     "choices": [
       "It fires faster and harder, driving the tuna's blazing speed",
@@ -26312,60 +25987,8 @@
     "topic": "the-tuna-body-plan-thunniform-swimming"
   },
   {
-    "tier": 3,
-    "question": "Bluefin tuna are among the fastest fish in the sea, built like a smooth torpedo with a curved crescent tail for pure speed. Millions of years later, the mako shark and the great white shark — both part of a family called lamnid sharks — independently evolved the exact same torpedo body and crescent tail shape, even though they are not closely related to tuna. A few of these lamnid sharks even copied one more of the tuna's tricks. What was it?",
-    "answer": "They keep their muscles warmer than the sea",
-    "choices": [
-      "They keep their muscles warmer than the sea",
-      "They lay eggs in neat rows on the seafloor",
-      "They glow in the dark to lure in prey",
-      "They breathe air at the surface like whales"
-    ],
-    "context": "Like tuna, a few lamnid (mackerel) sharks are warm-bodied, holding their muscles about 7-10 F above the surrounding ocean. The shortfin mako is the fastest shark, with burst speeds around 46 mph (74 km/h). Source: Smithsonian Ocean, 'Shortfin Mako Shark', https://ocean.si.edu/ocean-life/sharks-rays/shortfin-mako-shark; Wikipedia (sourced), 'Shortfin mako shark'",
-    "topic": "the-tuna-body-plan-thunniform-swimming"
-  },
-  {
     "tier": 4,
-    "question": "A bluefin tuna's red swimming muscle runs hot, giving this huge ocean predator its explosive speed. But here is the danger for any fish: all its warm blood eventually flows out to the gills, where fish breathe by pushing water across thin membranes. In cold sea water the heat should pour right out through those gills. Yet the tuna hangs on to its warmth. What lets it keep the heat inside its body?",
-    "answer": "A tangle of arteries and veins called the rete mirabile",
-    "choices": [
-      "A tangle of arteries and veins called the rete mirabile",
-      "A layer of insulating blubber wrapped around its gills",
-      "A swim bladder that stores the warmth like a hot pack",
-      "A dark groove along its back that soaks up the heat"
-    ],
-    "context": "The rete mirabile means 'wonderful net': bundles of intertwined arteries and veins that trap the muscle's heat before it can leak out the gills. It is a countercurrent heat exchanger. Source: ScienceDirect, 'Heat and oxygen exchange in the rete mirabile of the bluefin tuna', https://www.sciencedirect.com/science/article/abs/pii/0300962983906126",
-    "topic": "the-tuna-body-plan-thunniform-swimming"
-  },
-  {
-    "tier": 4,
-    "question": "The bluefin tuna's body is a masterpiece of speed — a smooth torpedo shape ending in a crescent-shaped tail. Dolphins later evolved the same body plan, even though they are mammals. But long before dolphins existed, back in the age of the dinosaurs, an extinct sea reptile had already worked out the same design. It swam the ancient Jurassic oceans looking uncannily like a modern tuna, with the same torpedo body and crescent tail. What was this reptile called?",
-    "answer": "The ichthyosaur",
-    "choices": [
-      "The ichthyosaur",
-      "The pterosaur",
-      "The plesiosaur",
-      "The mosasaur"
-    ],
-    "context": "Ichthyosaurs already had the tuna body plan, first appearing about 248 million years ago at the start of the Triassic. One superbly preserved Jurassic Stenopterygius even shows a crescent tail fin, porpoise-like blubber, and dark-on-top, pale-below countershading. Being a reptile, it beat that crescent tail side to side like a fish, not up and down like a dolphin. Source: Capeia, 'The Evolutionary History of Ichthyosaurs'; Lindgren et al., Nature (2018), via Earth Archives, https://eartharchives.org/articles/dolphin-like-marine-reptiles-were-more-dolphin-like-than-previously-thought/index.html  (Legend.)",
-    "topic": "the-tuna-body-plan-thunniform-swimming"
-  },
-  {
-    "tier": 4,
-    "question": "Tuna are fish, sharks split from fish long ago, ichthyosaurs were reptiles, and dolphins are mammals. These four groups are barely related — their last common ancestor lived hundreds of millions of years ago. Yet each one, on its own, evolved into a torpedo-shaped swimmer with a crescent-shaped tail. Something about the ocean itself keeps forcing every fast swimmer toward the exact same design. What is it about seawater that does this?",
-    "answer": "Seawater is dense and sticky, so speed demands one best shape",
-    "choices": [
-      "Seawater is dense and sticky, so speed demands one best shape",
-      "The ocean is too dark for any other body to survive",
-      "Salt in the water slowly reshapes any animal that enters",
-      "Ocean currents physically bend every swimmer the same way"
-    ],
-    "context": "Seawater is dense and sticky, so pushing through it fast is hard. Those strong physical demands force fast open-ocean cruisers toward one high-performance design, no matter what ancestors they started from. This is why so many lineages converge on the tuna shape. Source: Nature/PMC, 'Skeletal convergence in thunniform sharks, ichthyosaurs, whales, and tunas', https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10550938/",
-    "topic": "the-tuna-body-plan-thunniform-swimming"
-  },
-  {
-    "tier": 4,
-    "question": "Bluefin tuna (a fast bony fish), mako sharks (cartilaginous fish), ichthyosaurs (extinct sea-going reptiles from the dinosaur age), and dolphins and whales (ocean mammals) all look strikingly alike on the outside — sleek, torpedo-shaped bodies with pointed snouts and crescent tails. Their skeletons show the copying runs even deeper: all four groups evolved the same hidden internal engineering. What did they build inside their bodies?",
+    "question": "Biologists comparing the skeletons of bluefin tuna, mako sharks, ichthyosaurs and dolphins, four groups with the same sleek outline and crescent tail, find that the likeness goes deeper than skin: all four groups evolved the same hidden engineering inside their bodies. What did they build?",
     "answer": "A thick, reinforced backbone and a stiffened tail-stem",
     "choices": [
       "A thick, reinforced backbone and a stiffened tail-stem",
@@ -26378,7 +26001,7 @@
   },
   {
     "tier": 4,
-    "question": "In most fish, swimming muscle bends whatever flank it lies against. But a tuna's deep red muscle sits buried near the backbone at mid-body, while nearly all the visible motion is back at the tail. How does that muscle move a tail it doesn't even touch?",
+    "question": "A tuna's deep red swimming muscle lies buried beside its backbone in the middle of its body, and unlike the swimming muscle of most fish, it leaves the flank beside it unbent. Yet it powers the tail. How does that muscle move a tail it does not even touch?",
     "answer": "It hauls on long tendons that reach all the way back to the tail",
     "choices": [
       "It hauls on long tendons that reach all the way back to the tail",
@@ -26391,7 +26014,7 @@
   },
   {
     "tier": 5,
-    "question": "An ichthyosaur was a dolphin-shaped reptile that hunted the Jurassic seas around 180 million years ago. One Early Jurassic ichthyosaur fossil is so beautifully preserved that its very skin survived across the ages — and just beneath that skin, scientists found something that proved this ancient sea reptile ran warm-bodied, not cold like a modern lizard. What did they find under its skin?",
+    "question": "Lindgren and colleagues examined an ichthyosaur fossil from the Early Jurassic in 2018, a Stenopterygius so finely preserved that its skin was still in place. Under that skin they found what they took as direct evidence that this sea reptile ran warm, not cold like a lizard. What did they find?",
     "answer": "A thick, smooth layer of blubber packed under the skin",
     "choices": [
       "A thick, smooth layer of blubber packed under the skin",
@@ -26404,7 +26027,7 @@
   },
   {
     "tier": 1,
-    "question": "On a cold morning a small lizard climbs up onto a big sunny rock and flattens its body against the warm stone. It sits like that for a long time, soaking in the heat. When the sun finally makes it too hot, it slips off into the shade. A little later it moves right back into the sun. Where does a lizard get the warmth that its body runs on?",
+    "question": "On a cold morning a small lizard climbs onto a sunny rock and flattens itself against the warm stone. When it grows too hot it slips into the shade, then creeps back into the sun. Where does the warmth its body runs on come from?",
     "answer": "From the sun and hot rock outside its body",
     "choices": [
       "From the sun and hot rock outside its body",
@@ -26416,21 +26039,8 @@
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
   },
   {
-    "tier": 1,
-    "question": "At dawn a snake lies stretched out across the cool ground while a mouse the same size scurries past it in the same chilly air. The mouse must keep eating almost nonstop just to stay alive, but the snake can lie perfectly still for days on end without a meal. What is the deep difference in how these two little animals run their bodies?",
-    "answer": "The snake takes its warmth from outside; the mouse burns food to make its own",
-    "choices": [
-      "The snake takes its warmth from outside; the mouse burns food to make its own",
-      "The snake burns twice the food to stay hotter than the mouse",
-      "The mouse takes its warmth from the sun the way the snake does",
-      "Both make their own heat, but the mouse makes far less of it"
-    ],
-    "context": "This is the fundamental split. Warm-blooded animals (mammals and birds) make their own heat by burning food; cold-blooded animals (reptiles, amphibians, fish, insects) take theirs from the world around them. The whole rest of the story is the trade-off that follows: the mouse can move in the cold but must eat constantly, while the snake is cheap to run but at the mercy of the weather. Source: comparative physiology (Hill, Wyse & Anderson framing).",
-    "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
-  },
-  {
     "tier": 2,
-    "question": "A pet mouse and a pet lizard sit in the same cool room, both doing nothing at all. Within a couple of hours the mouse is frantic to find food, squeaking and scrabbling in its cage. The lizard, meanwhile, can sit still and eat nothing for weeks and be perfectly fine. What is the mouse constantly paying an energy price for that the lizard is not?",
+    "question": "A pet mouse and a pet lizard sit in the same cool room, both doing nothing at all. The mouse must keep finding food, squeaking and scrabbling in its cage, while the lizard can sit still and eat nothing for weeks. What is the mouse paying for that the lizard is not?",
     "answer": "Keeping its inner furnace lit at a steady temperature",
     "choices": [
       "Keeping its inner furnace lit at a steady temperature",
@@ -26443,7 +26053,7 @@
   },
   {
     "tier": 2,
-    "question": "The ball python is a chunky West African snake that hunts small rodents in the grasslands at night. Because it is cold-blooded — its body just matches the temperature of the air around it — it does not have to burn food to stay warm. That means it can go a shockingly long time between meals without wasting away. For a healthy adult ball python, how long can that fast stretch?",
+    "question": "A ball python hunts small rodents by night in the grasslands of West Africa, and as a cold-blooded snake it never spends food on keeping itself warm. That lets it go a remarkably long time between meals without wasting away. For a healthy adult ball python, how long can a fast last?",
     "answer": "At least six months without a single meal",
     "choices": [
       "At least six months without a single meal",
@@ -26456,7 +26066,7 @@
   },
   {
     "tier": 3,
-    "question": "The Etruscan shrew is the world's smallest mammal — a tiny mouse-like creature of Europe and North Africa that weighs less than a paperclip. Because it is warm-blooded and so small, its little body leaks heat into the air at an alarming speed. To keep from freezing it must hunt insects and worms almost nonstop, all day and all night. If a shrew stops finding food, how fast can it starve to death?",
+    "question": "An Etruscan shrew, the smallest mammal on Earth by weight and lighter than a paperclip, hunts insects and worms almost nonstop, day and night. Warm-blooded and tiny, it leaks body heat into the air at an alarming rate. If it stops finding food, how fast can it starve?",
     "answer": "In as little as two to three hours",
     "choices": [
       "In as little as two to three hours",
@@ -26469,20 +26079,7 @@
   },
   {
     "tier": 3,
-    "question": "A hummingbird burns fuel so furiously that it eats about 80 percent of its body weight in nectar every day. On a cold night it perches alone in the dark, hours from its next sip of nectar. How does a hummingbird keep from burning through its whole body overnight?",
-    "answer": "It drops into torpor, cooling its body and slowing its engine tenfold",
-    "choices": [
-      "It drops into torpor, cooling its body and slowing its engine tenfold",
-      "It fattens up at dusk so it has fuel to burn all night",
-      "It lets its heart slow only slightly and simply rides the night out",
-      "It roosts deep in a warm tree cavity to slow its heat loss"
-    ],
-    "context": "A hummingbird has one of the highest metabolic rates known of any animal. To survive the nightly stretch when it cannot feed, it drops into torpor, cutting its resting metabolism about tenfold and letting its own body cool, then rewarms at dawn. Source: https://www.smithsonianmag.com/science-nature/uncovering-the-secrets-behind-hummingbirds-extreme-lifestyle-180985186/",
-    "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
-  },
-  {
-    "tier": 3,
-    "question": "Honeybees are insects, and insects are usually cold-blooded — they cannot heat themselves the way a mammal can. Yet inside a beehive full of honeybees, the center of the colony stays close to 85°F all winter long, even while snow piles up and freezing wind blows outside. Thousands of bees pack into a tight ball called a winter cluster and somehow generate real body heat. How do the bees produce that warmth?",
+    "question": "Snow piles up outside a beehive, but inside, thousands of honeybees pack into a tight ball, a winter cluster, and hold its center near 85 degrees Fahrenheit all winter. Insects usually cannot heat themselves the way a mammal can. How do the bees make that warmth?",
     "answer": "They contract their flight muscles hard without flapping their wings",
     "choices": [
       "They contract their flight muscles hard without flapping their wings",
@@ -26495,7 +26092,7 @@
   },
   {
     "tier": 4,
-    "question": "A bluefin tuna is a fish, so its blood should chill to sea temperature at the gills. Instead a mesh of vessels called the rete mirabile, the 'wonderful net,' captures its own muscle heat, running warm outgoing blood right beside the cold incoming blood. Just how much warmer than the sea can this hold the tuna's swimming muscles?",
+    "question": "A bluefin tuna swims through cold seawater that should chill its blood at the gills, as it does in other fish. Instead a mesh of vessels, the rete mirabile, runs warm outgoing blood right beside cold incoming blood and hangs on to the muscle's heat. How much warmer than the sea can that keep its swimming muscles?",
     "answer": "As much as around 20°C warmer",
     "choices": [
       "As much as around 20°C warmer",
@@ -26508,20 +26105,7 @@
   },
   {
     "tier": 4,
-    "question": "Most sharks are cold-blooded — their body temperature just matches the sea water around them. But one big ocean-hunting shark uses a special network called a countercurrent 'wonderful net' of blood vessels to trap the heat its swimming muscles make. Because of that net, it can hold its body as much as 25°F above the surrounding water, giving it the warmest body of any shark alive. Which shark is this?",
-    "answer": "The great white shark",
-    "choices": [
-      "The great white shark",
-      "The whale shark",
-      "The hammerhead shark",
-      "The nurse shark"
-    ],
-    "context": "The great white is a fish that runs warm. Keeping its body up to about 14°C above the sea gives its muscles more speed and power for the hunt, which is a big part of why it is such a formidable ambush predator. Source: http://www.elasmo-research.org/education/white_shark/p_body_temp.htm  (Legend.)",
-    "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
-  },
-  {
-    "tier": 4,
-    "question": "The leatherback is the largest sea turtle on Earth — a huge black-shelled reptile that can grow over 6 feet long. Even though it is a cold-blooded reptile, it swims all the way from the warm tropics up to near the Arctic Circle. Even in polar seas as cold as 7.5°C (about 46°F), it holds its body around 18°C warmer than the water. It has no furnace and it does not shiver. What keeps a leatherback that warm?",
+    "question": "A leatherback, the largest sea turtle alive, swims from the warm tropics to near the Arctic Circle, into seas as cold as 7.5 degrees Celsius, and still stays far warmer than the water around it. It has no inner furnace and it never shivers. What keeps a leatherback that warm?",
     "answer": "Its sheer enormous size holding heat in",
     "choices": [
       "Its sheer enormous size holding heat in",
@@ -26534,7 +26118,7 @@
   },
   {
     "tier": 5,
-    "question": "Whether the giant dinosaurs ran warm like a bird or cold like a lizard is a genuinely open scientific question. In 2014 a team led by John Grady reasoned from how fast the giant dinosaurs grew as they matured and reached a startling verdict about their inner engine. What did that study conclude the giants actually were?",
+    "question": "John Grady's team studied how fast giant dinosaurs grew as they matured, and in 2014 argued from those growth rates for a startling verdict about the animals' inner engine. Other researchers quickly disputed the statistics, and the question is still open. What did Grady's team say the giants were?",
     "answer": "An in-between engine that could raise its heat but not hold it steady, like a tuna",
     "choices": [
       "An in-between engine that could raise its heat but not hold it steady, like a tuna",
@@ -26547,7 +26131,7 @@
   },
   {
     "tier": 5,
-    "question": "For a Burmese python, fasting for months is cheap but digesting is violent. Within days of swallowing large prey its heart, liver, and intestines swell by 40 percent to double their size before shrinking back. How much does its metabolism speed up to power that meal?",
+    "question": "A Burmese python goes months without eating, then swallows one large meal, and its body bursts into a violent stretch of work that lasts until about the tenth day. How much faster than at rest does its metabolism run to power that meal?",
     "answer": "Ten to forty-four times its resting rate",
     "choices": [
       "Ten to forty-four times its resting rate",
@@ -26560,7 +26144,7 @@
   },
   {
     "tier": 5,
-    "question": "A fossil skeleton keeps no soft tissue, so it cannot record the body heat that warm-bloodedness makes. Yet a 2022 team led by Ricardo Araújo read the inner temperature of long-dead mammal ancestors from bone alone, and pinned the birth of mammalian warm blood to the Late Triassic. Which fossil clue let them take a dead animal's temperature?",
+    "question": "Ricardo Araújo's team set out in 2022 to take the temperature of long-dead mammal ancestors, though a fossil skeleton keeps no soft tissue to show its body heat. Working from bone alone, they traced the start of mammal warm blood to the Late Triassic. Which fossil clue let them do it?",
     "answer": "The shape of the fluid-filled canals of the inner ear",
     "choices": [
       "The shape of the fluid-filled canals of the inner ear",
@@ -26585,60 +26169,8 @@
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
   },
   {
-    "tier": 2,
-    "question": "A honeybee scout is a worker bee whose job is to fly out and search for food. One scout finds a rich patch of clover flowers full of nectar and pollen, then flies straight home into the pitch-dark inside of her hive. Alone in the dark, standing on the vertical wall of the honeycomb, what does she do next to tell her hivemates where she found the flowers?",
-    "answer": "Dances across the comb in a coded pattern",
-    "choices": [
-      "Dances across the comb in a coded pattern",
-      "Leaves a trail of scent leading to the flowers",
-      "Buzzes a rising and falling musical tone",
-      "Nudges each bee toward the hive entrance"
-    ],
-    "context": "The waggle dance: a scout who has found good flowers returns to the dark hive and dances on the vertical comb to tell the others where to fly. Source: https://en.wikipedia.org/wiki/Waggle_dance",
-    "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
-  },
-  {
-    "tier": 2,
-    "question": "When a honeybee finds a rich patch of flowers, she flies home and performs a special dance on the dark honeycomb inside the hive to tell her sisters where the food is. This is called the waggle dance, and it traces a figure-eight path she runs over and over. But the coded message about the flowers is packed into just one part of that path. Which part of the figure-eight carries the message?",
-    "answer": "The straight, waggling middle run",
-    "choices": [
-      "The straight, waggling middle run",
-      "The wide curving sweep of each loop",
-      "The moment she circles back to the top",
-      "The pause where she meets a follower bee"
-    ],
-    "context": "The figure-eight has two curved return loops, but only the straight 'waggle run' down the middle carries the coded information; the loops just bring her back to start it again. Source: https://en.wikipedia.org/wiki/Waggle_dance",
-    "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
-  },
-  {
     "tier": 3,
-    "question": "A honeybee that has found a good flower patch flies home and dances on the vertical honeycomb inside the dark hive to send other bees to the food. This is her waggle dance — a figure-eight with a straight middle stretch called the waggle run. The angle at which she runs that stretch on the vertical comb is a code for direction. If a bee waggles her run straight up the comb, what direction outside is she telling her hivemates to fly?",
-    "answer": "Straight toward the sun",
-    "choices": [
-      "Straight toward the sun",
-      "Straight into the wind",
-      "Toward the nearest tall landmark",
-      "Back the way the last forager came"
-    ],
-    "context": "The angle of the waggle run relative to straight-up encodes direction relative to the sun. Straight up means 'fly toward the sun'; a run tilted left or right of vertical means that same angle left or right of the sun. Source: https://en.wikipedia.org/wiki/Waggle_dance",
-    "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
-  },
-  {
-    "tier": 3,
-    "question": "A honeybee returning to the hive with news of flowers dances a figure-eight on the honeycomb. The straight middle stretch — the waggle run — carries the coded message for the other bees. The angle of that run tells them which direction to fly, but the length of the run codes another piece of information. As a foraging bee waggles her middle run longer and longer, what is she telling her hivemates?",
-    "answer": "That the food lies farther away",
-    "choices": [
-      "That the food lies farther away",
-      "That it is a poorer patch",
-      "That the wind is against the trip",
-      "That more bees should stay behind"
-    ],
-    "context": "Duration encodes distance: the longer the waggle run, the farther the food. Roughly one second of waggling means the flowers are about one kilometre off. Source: https://en.wikipedia.org/wiki/Waggle_dance",
-    "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
-  },
-  {
-    "tier": 3,
-    "question": "Honeybees have two different dances for reporting where food is. When flowers are far from the hive, a scout does a long 'waggle dance' on the comb that codes both the direction and the distance. But when the flowers are very close — under about 50 meters, roughly a school hallway away — she skips that fancy waggle dance and does a much simpler little routine instead. What does that near-food dance look like?",
+    "question": "A honeybee scout comes home from a patch of flowers under about 50 meters from the hive, roughly a school hallway away. For far-off flowers she would run her long figure-eight dance on the comb, but for food this close she skips it and does a much simpler routine. What does that near-food dance look like?",
     "answer": "Just circling one way, then the other",
     "choices": [
       "Just circling one way, then the other",
@@ -26651,20 +26183,7 @@
   },
   {
     "tier": 4,
-    "question": "When a honeybee finds flowers, she flies home and dances on the vertical honeycomb to tell her hivemates where to fly. The angle of her dance codes the direction to the food relative to the sun outside. But the inside of a hive is completely dark — she cannot see the sun she is supposedly pointing to, and neither can any of the watching bees. Yet the direction code still works. How does the dancer encode a sun-direction she cannot see?",
-    "answer": "She uses straight-up, felt through gravity, to stand in for the sun",
-    "choices": [
-      "She uses straight-up, felt through gravity, to stand in for the sun",
-      "She remembers the sun's glare on the comb",
-      "She points using the warmth of the hive entrance",
-      "She copies the angle from the bee who danced before her"
-    ],
-    "context": "Inside the pitch-dark hive the bee can't see the sun, so she substitutes 'up' on the vertical comb - sensed through gravity - for the sun's direction. Up on the wall means toward the sun. Source: https://en.wikipedia.org/wiki/Waggle_dance",
-    "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
-  },
-  {
-    "tier": 4,
-    "question": "When a honeybee scout returns to her dark hive after finding flowers, she does a 'waggle dance' on the comb. The angle at which she waggles tells her hivemates the direction to the food, measured against where the sun is in the sky. But the sun creeps across the sky all afternoon, so a bee dancing for a long stretch has a real problem: the same patch of flowers now sits at a different angle from the sun than it did an hour ago. How does she keep her dance pointing true?",
+    "question": "A honeybee scout dances on the dark comb for a long stretch, and the angle of her run points her sisters toward the flowers by where they lie from the sun. But the sun creeps across the sky as she dances, so the flowers keep shifting against it. How does she keep her dance pointing true?",
     "answer": "An internal clock slowly shifts her dance angle",
     "choices": [
       "An internal clock slowly shifts her dance angle",
@@ -26677,7 +26196,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1940s the Austrian scientist Karl von Frisch was trying to crack the mystery of how honeybees tell each other where flowers are. To follow the movements of one single bee through a crowd of thousands of near-identical workers, he built a special 'observation hive' with glass walls and watched them work. But every bee looked exactly like every other bee. What clever trick let von Frisch pick out one marked forager from all the rest?",
+    "question": "Karl von Frisch, working in the 1940s to crack how honeybees tell each other where flowers are, wanted to follow one single bee through a crowd of thousands that all looked alike. He built a hive with glass walls to watch them work, but he still needed a way to pick out one forager. What simple trick marked her?",
     "answer": "Tiny dots of red paint on the thorax",
     "choices": [
       "Tiny dots of red paint on the thorax",
@@ -26690,20 +26209,7 @@
   },
   {
     "tier": 5,
-    "question": "The Austrian scientist Karl von Frisch had watched honeybees do a strange little 'waggle dance' on the honeycomb after coming home from a flower patch, and he suspected the dance was actually a coded map to the food — not just excited wiggling. To prove it, he set out a small dish of sugar water at a known spot in the meadow, let a marked bee find it and fly home to dance, then watched what the audience of watching bees did next. What settled that the dance really was a set of instructions?",
-    "answer": "The watchers flew straight out to the exact dish",
-    "choices": [
-      "The watchers flew straight out to the exact dish",
-      "The watchers copied her dance in turn",
-      "The dish emptied faster than any control",
-      "The dancer led them there in a swarm"
-    ],
-    "context": "After a marked bee danced, the bees that had watched left the hive and flew straight to the exact feeding dish von Frisch had placed - proof they had read the coded run as directions, not merely caught excitement. Source: https://www.ebsco.com/research-starters/history/frisch-discovers-bees-communicate-through-body-movements",
-    "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
-  },
-  {
-    "tier": 5,
-    "question": "Inside a honeybee hive it is pitch dark — no light gets in through the wax walls. A scout bee still dances her coded 'waggle dance' on the vertical honeycomb after finding flowers, and afterward the follower bees who attended fly straight out to the exact right patch of flowers. But the dancer's whole run is invisible in the darkness — the followers cannot possibly see it. So what does each follower rely on to pick up the message?",
+    "question": "A scout bee dances her coded run on the upright comb inside a hive so dark that no light gets through the wax. Her sisters still read her directions, though none of them can see her move. How does each follower pick up the message?",
     "answer": "She reaches out with her antennae and keeps touching the dancer",
     "choices": [
       "She reaches out with her antennae and keeps touching the dancer",
@@ -26716,7 +26222,7 @@
   },
   {
     "tier": 1,
-    "question": "In the hot dry deserts of central Australia lives a small spiky lizard called the thorny devil, covered head to tail in sharp cone-shaped spikes. Water is scarce out on the sand, and the thorny devil never bends its head down to drink from a puddle. Instead it just stands still on damp sand, and water somehow climbs up its legs and body all the way to its mouth. What part of the thorny devil actually pulls in the water?",
+    "question": "A thorny devil, a small spiky lizard of the Australian desert, never bends its head down to drink. It just stands still on damp sand, and the water climbs up its legs and body to its mouth. Which part of it pulls the water in?",
     "answer": "Its skin",
     "choices": [
       "Its skin",
@@ -26729,7 +26235,7 @@
   },
   {
     "tier": 2,
-    "question": "A hungry predator — maybe a hawk or a goanna — closes in on a thorny devil, the spiky little Australian desert lizard also known by its scientific name Moloch horridus. Instead of running, the lizard tucks its real head down low between its front legs and holds perfectly still. Something on top of its body fools the attacker into striking the wrong target. What defensive trick foils the predator?",
+    "question": "A hawk swoops toward a thorny devil, the spiky little lizard of the Australian desert. Instead of running, the lizard tucks its real head down low between its front legs and holds still, and something on its body fools the hunter into striking the wrong target. What is it?",
     "answer": "A knobby fake head",
     "choices": [
       "A knobby fake head",
@@ -26742,7 +26248,7 @@
   },
   {
     "tier": 2,
-    "question": "The thorny devil is a small Australian desert lizard covered in hard cone-shaped spikes that make it look like a walking pincushion. Even with such a fierce appearance, it eats just one kind of tiny creature — and only that kind — all day long. It sits beside a busy trail and flicks its dinner up one at a time with a sticky tongue, as fast as 45 a minute. What does this lizard eat?",
+    "question": "A thorny devil, an Australian desert lizard covered in hard spikes like a walking pincushion, sits beside a busy trail and flicks its dinner up with a sticky tongue, as fast as 45 a minute. It eats only one kind of tiny creature. What is it?",
     "answer": "Ants",
     "choices": [
       "Ants",
@@ -26755,7 +26261,7 @@
   },
   {
     "tier": 3,
-    "question": "A thorny devil (Moloch horridus) crosses open desert in broad daylight with hawks circling overhead. Instead of bolting for cover, it does something odd with the way it walks that keeps a bird of prey from locking onto it. How does the thorny devil move across the open?",
+    "question": "A thorny devil crosses open desert in broad daylight while hawks circle overhead. Instead of bolting for cover, it walks in an odd way that probably keeps a bird of prey from locking onto it. How does the thorny devil move across the open?",
     "answer": "Rocks and freezes like a wind-blown leaf",
     "choices": [
       "Rocks and freezes like a wind-blown leaf",
@@ -26768,7 +26274,7 @@
   },
   {
     "tier": 3,
-    "question": "Water in the deep desert is often locked away as damp grains rather than open pools. A thorny devil (Moloch horridus) has a way to squeeze even that hidden moisture out to a drink. What does it do with its legs to pull water from damp ground into its skin grooves?",
+    "question": "A thorny devil wanders the deep desert, where water often lies hidden in barely damp sand rather than in open pools. With no puddle to stand in, it still finds a way to draw that hidden moisture up to its mouth. What does it do?",
     "answer": "Shovels moist sand onto its own back",
     "choices": [
       "Shovels moist sand onto its own back",
@@ -26781,7 +26287,7 @@
   },
   {
     "tier": 4,
-    "question": "Deep in Australia's dry outback lives a small, spiky lizard called the thorny devil. When rare drops of dew land anywhere on its body, water climbs up its legs and moves across its skin toward its mouth -- even flowing uphill against gravity. Tiny grooves running all over its skin do the pulling. About how wide is each of those water-carrying channels?",
+    "question": "Dew settles on a thorny devil in Australia's dry outback, and the water creeps across its body toward its mouth, even flowing uphill against gravity. Tiny grooves running between its spines do the pulling. About how wide is each of those channels?",
     "answer": "About 200 micrometres -- thinner than a hair",
     "choices": [
       "About 200 micrometres -- thinner than a hair",
@@ -26794,7 +26300,7 @@
   },
   {
     "tier": 1,
-    "question": "The thresher shark is a slim ocean shark that cuts through the sea trailing a huge curved upper tail behind it like a whip. No other shark on Earth is built quite like this — the thresher swings that long tail to slap and stun fish before eating them. Compared to the rest of the thresher's body, how long is that whip-like upper tail?",
+    "question": "A thresher shark cuts through the open sea trailing a huge, curved upper tail behind it like a scythe. No other shark has a tail quite like it. Next to the rest of the thresher's body, how long is that upper tail?",
     "answer": "As long as its entire body",
     "choices": [
       "As long as its entire body",
@@ -26807,7 +26313,7 @@
   },
   {
     "tier": 1,
-    "question": "Most sharks hunt the same way -- chase a fish down and bite it. But the thresher shark, a long-tailed hunter of the open ocean, does something almost no other predator on Earth does. It kills its prey with a body part almost nothing else hunts with. Which part does the thresher use to strike?",
+    "question": "Out in the open ocean, a thresher shark goes after a school of sardines, but unlike most sharks it does not chase down a fish and bite it first. It strikes with a body part that almost no other predator hunts with. Which part?",
     "answer": "Its tail",
     "choices": [
       "Its tail",
@@ -26820,7 +26326,7 @@
   },
   {
     "tier": 2,
-    "question": "A thresher shark -- a long-tailed hunter of the open ocean -- charges straight into a swirling ball of sardines. Just before impact it suddenly snaps its wide pectoral fins inward to slam on the brakes. Hitting the brakes tips its back end upward. What does that sudden lift let the thresher do next with its enormous whip-like tail?",
+    "question": "A thresher shark charges straight into a swirling ball of sardines and, just before it reaches them, snaps its wide side fins inward to brake hard. The sudden stop tips its back end upward. What does that lift let it do with its enormous tail?",
     "answer": "Fling it overhead like a trebuchet",
     "choices": [
       "Fling it overhead like a trebuchet",
@@ -26833,7 +26339,7 @@
   },
   {
     "tier": 2,
-    "question": "A thresher shark is an ocean shark with a tail longer than the rest of its whole body — a whip of muscle it snaps in the water like a bullwhip when it feeds. Marine biologists off the Philippines filmed thresher sharks hunting a packed shoal of sardines, and slowed the video down to see what one single overhead tail-slap actually did to the fish. What did one slap accomplish?",
+    "question": "Marine biologists off the Philippines filmed thresher sharks hunting a packed shoal of sardines, cracking their whip-like tails overhead. They slowed the film down to see what one overhead tail-slap did to the fish. What did a single slap do?",
     "answer": "Killed several fish at once",
     "choices": [
       "Killed several fish at once",
@@ -26846,7 +26352,7 @@
   },
   {
     "tier": 3,
-    "question": "The thresher shark, a long-tailed hunter of the open ocean, whips its huge tail through the sea at astonishing speed. High-speed underwater film caught tiny plumes fizzing off the tail-tip -- the very same shockwave trick a mantis shrimp uses to stun prey with a punch. What actually makes those tiny plumes appear along the thresher's tail?",
+    "question": "Filming a thresher shark as it whipped its huge tail through the sea, researchers caught tiny plumes of bubbles fizzing off the tip on high-speed film, a burst they suspect could even stun small fish. What makes those plumes appear?",
     "answer": "The tail-tip moving fast enough to boil the water",
     "choices": [
       "The tail-tip moving fast enough to boil the water",
@@ -26859,7 +26365,7 @@
   },
   {
     "tier": 2,
-    "question": "A scuba diver drifts along a reef off the Philippines and meets a big thresher shark -- the same long-tailed open-ocean hunter whose whip-crack tail can kill several sardines in a single blow. Given a tail that powerful, how does the thresher actually treat a human diver it encounters underwater?",
+    "question": "A scuba diver drifting along a reef off the Philippines comes face to face with a big thresher shark, its long tail sweeping behind it. How does the thresher behave toward a person it meets underwater?",
     "answer": "It stays shy, with no recorded attack on a person",
     "choices": [
       "It stays shy, with no recorded attack on a person",
@@ -26872,7 +26378,7 @@
   },
   {
     "tier": 4,
-    "question": "Three thresher shark species swim the world's oceans, and from the outside they look almost identical -- huge scythe-like tail, big eyes, streamlined body. But only the common thresher's swimming muscle runs warm, many degrees above the seawater around it. Its two cousins stay at sea temperature. What sets the warm-muscled common thresher apart on the inside?",
+    "question": "A common thresher shark swims the same seas as its two cousins, the bigeye and the pelagic thresher, and all three trail the same scythe-like tail. Yet only the common thresher's swimming muscle runs a few degrees warmer than the sea, while the other two stay at water temperature. What sets it apart inside?",
     "answer": "Its red muscle sits deep by the spine, wrapped in heat-trapping vessel nets",
     "choices": [
       "Its red muscle sits deep by the spine, wrapped in heat-trapping vessel nets",
@@ -26885,7 +26391,7 @@
   },
   {
     "tier": 5,
-    "question": "Threshers are slender fish-flingers today, but roughly 15 million years ago cousins the size of a great white shark prowled the sea, known only from teeth that wash out of Maryland's Calvert Cliffs. When scientists formally named one such giant, Alopias palatasi, in 2023, a single feature of its big teeth stunned them. What was it?",
+    "question": "Thresher sharks the size of a great white prowled the sea off what is now Maryland about 15 million years ago, known today only from teeth that wash out of the Calvert Cliffs. When scientists named one of these giants Alopias palatasi in 2023, one feature of its teeth stunned them. What was it?",
     "answer": "They were serrated - steak-knife edges, unheard of in a thresher",
     "choices": [
       "They were serrated - steak-knife edges, unheard of in a thresher",
@@ -26898,7 +26404,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2004, on Ellesmere Island in Canada's frozen Arctic, the American paleontologist Neil Shubin and his team chipped a strange 375-million-year-old creature out of the rock. It was half fish and half four-legged animal -- scales and fins at one end, the start of a land body at the other. Shubin nicknamed the fossil the:",
+    "question": "Neil Shubin and his team chipped a strange 375-million-year-old creature out of the rock in 2004. It was half fish and half four-legged animal, with scales and fins at one end and the start of a land body at the other. What did Shubin call it?",
     "answer": "fishapod",
     "choices": [
       "fishapod",
@@ -26911,7 +26417,7 @@
   },
   {
     "tier": 2,
-    "question": "When Neil Shubin's team pulled the half-fish, half-four-legged fossil out of the Nunavut Arctic in 2004, they asked the local Inuit elders to help name it. The elders chose an Inuktitut word from their own daily world -- not from science -- and that is why paleontologists today call the animal Tiktaalik. What does that Inuktitut word actually mean?",
+    "question": "When Neil Shubin's team pulled the half-fish, half-four-legged fossil from the rock in 2004, they asked local Inuit elders to help name it. The elders chose a word from their own language, Inuktitut, and so the animal is called Tiktaalik. What does that word mean?",
     "answer": "large freshwater fish",
     "choices": [
       "large freshwater fish",
@@ -26924,7 +26430,7 @@
   },
   {
     "tier": 2,
-    "question": "Tiktaalik was an ancient creature that lived about 375 million years ago in warm swampy shallows. It already had a flat crocodile-shaped head, a neck, wrist bones, and lungs — a fish that was halfway to becoming the first four-legged land animals. Its fossils, dug from the frozen rocks of Arctic Canada, run 4 to 9 feet long. But its back still carried one very fishy holdover from its water-only ancestors. Covering that body were:",
+    "question": "Tiktaalik, a fish well on its way to life on land, swam warm swampy shallows about 375 million years ago and grew 4 to 9 feet long. Yet its body still carried a very fishy holdover from its water-only ancestors. What covered it?",
     "answer": "diamond-shaped scales",
     "choices": [
       "diamond-shaped scales",
@@ -26937,7 +26443,7 @@
   },
   {
     "tier": 3,
-    "question": "Tiktaalik was a strange extinct animal from about 375 million years ago — a fish that was starting to become a land animal, and one of the earliest known ancestors of everything with four legs, including us. It had a low, flat head unlike any modern fish's rounded snout, and it hunted in shallow Devonian swamps thick with plants and prey. Its two eyes sat in a spot strange for a fish. Where were they placed on its head?",
+    "question": "Prowling a plant-choked Devonian swamp about 375 million years ago, Tiktaalik, a fish partway to life on land, carried a low, flat head unlike any modern fish's rounded snout. Its two eyes sat in a spot strange for a fish. Where were they?",
     "answer": "on top of its head",
     "choices": [
       "on top of its head",
@@ -26950,7 +26456,7 @@
   },
   {
     "tier": 3,
-    "question": "Tiktaalik was a 375-million-year-old creature, half fish and half four-legged animal, dug from the Canadian Arctic by Neil Shubin's team. In a normal fish, bony gill plates bolt the skull straight onto the shoulders, so the head and body move as one stiff block. Tiktaalik shed those plates, gaining something no fish before it had ever had. What was it?",
+    "question": "Snapping at prey in a Devonian swamp 375 million years ago, Tiktaalik had none of the bony gill plates that bolt an ordinary fish's skull to its shoulders and lock head and body into one stiff block. In their place it gained something no fish before it had. What was it?",
     "answer": "a neck",
     "choices": [
       "a neck",
@@ -26963,7 +26469,7 @@
   },
   {
     "tier": 3,
-    "question": "Tiktaalik was a strange fish-with-legs from about 375 million years ago, one of the earliest ancestors of every four-legged animal alive today. It lived at the surface of shallow Devonian swamps where the warm water often ran low in oxygen. To survive, Tiktaalik could take in oxygen two different ways — one that no purely water-bound fish could rely on. Besides its ordinary gills, what else did Tiktaalik have?",
+    "question": "Tiktaalik lived at the surface of warm, shallow swamps where the water often held little oxygen. It could take in oxygen in two different ways, one of them closed to any fish that lives only in water. Besides its ordinary gills, what else did it have?",
     "answer": "lungs to gulp air",
     "choices": [
       "lungs to gulp air",
@@ -26976,7 +26482,7 @@
   },
   {
     "tier": 4,
-    "question": "Tiktaalik -- the 375-million-year-old half-fish, half-four-legged creature Neil Shubin's team dug from the Canadian Arctic -- still had thin fish fin-rays for paddling on the outside of its front fins. But cut one of those fins open and, past a shoulder and an elbow, you'd find bones we humans still use today to bend our own hand. What were they?",
+    "question": "Tiktaalik paddled through its swamp on front fins with thin fish fin-rays along the outside. Inside each fin, past a shoulder and an elbow, lay bones that people still use today to bend a hand. What were they?",
     "answer": "a wrist",
     "choices": [
       "a wrist",
@@ -26989,7 +26495,7 @@
   },
   {
     "tier": 4,
-    "question": "Tiktaalik is famous partly because Neil Shubin's team went looking for it BEFORE anyone had seen it. Reasoning from when fish first walked, they targeted rocks of the right age — and after five expeditions struck the fossil in 2004. Where did they dig?",
+    "question": "Before anyone had ever seen a Tiktaalik, Neil Shubin's team went looking for one. Working out when fish must have first crawled ashore, they picked out rock of just the right age to search, and on their fifth expedition, in 2004, they found the fossil. Where did they dig?",
     "answer": "the Canadian High Arctic",
     "choices": [
       "the Canadian High Arctic",
@@ -27002,7 +26508,7 @@
   },
   {
     "tier": 5,
-    "question": "Tiktaalik is famous for the shoulder-elbow-wrist bones in its front fins. But in 2014 Shubin's team finally described its back half, and got a shock: in most fish the pelvis is a tiny, simple bone, yet Tiktaalik's was huge — nearly the size of its shoulder girdle — with a hind fin as long and complex as the famous front one. In that powerful back end sat one joint you'd expect only in a four-legged walker. Which joint?",
+    "question": "Shubin's team finally described Tiktaalik's back half in 2014, long after its famous front fins, and got a shock. In most fish the pelvis is a small, simple bone, but Tiktaalik's was huge, nearly the size of its shoulder girdle, and its hind fin was as long and complex as the front one. In that powerful back end sat a joint expected only in a four-legged walker. Which one?",
     "answer": "a ball-and-socket hip",
     "choices": [
       "a ball-and-socket hip",
@@ -27015,7 +26521,7 @@
   },
   {
     "tier": 4,
-    "question": "Two enlarged holes sat on top of Tiktaalik's flat skull — spiracles, leftover slits from its gill-breathing past. In its warm, oxygen-poor swamp, they likely let it gulp air at the surface. In its land-living descendants, that very passage was never abandoned; it was rebuilt into a different organ entirely. Which one?",
+    "question": "On top of Tiktaalik's flat skull sat a pair of large openings, spiracles left from an old gill slit. In its land-living descendants, the passage was never abandoned but remade into a different organ entirely. Which one?",
     "answer": "the middle ear",
     "choices": [
       "the middle ear",
@@ -27249,7 +26755,7 @@
   },
   {
     "tier": 1,
-    "question": "Deep in the South American rainforest, a big black-and-white bird perches on a mossy branch. Its body would just about fit under your arm — but the beak alone stretches on and on in front of it, bright orange or yellow, and about a third of the bird's whole length from tip to tail. Which rainforest bird is famous for that ridiculous, over-sized, brightly colored beak?",
+    "question": "A big black-and-white bird perches on a mossy branch deep in a South American rainforest. Its bright orange-and-yellow beak, up to four times as big as its head, stretches nearly as long as the rest of its body. Which bird is it?",
     "answer": "Toucan",
     "choices": [
       "Toucan",
@@ -27262,7 +26768,7 @@
   },
   {
     "tier": 2,
-    "question": "The toucan is a big tropical rainforest bird of Central and South America with a huge colorful bill nearly as long as its whole body. When a toucan feeds on rainforest berries, it can only pinch a berry at the very tip of that long bill — far out past its real mouth — and there is no way to just swallow the fruit from way out there. How does a toucan get a berry from the tip of its bill down into its throat?",
+    "question": "A toucan in a Central American rainforest plucks a berry with the very tip of its huge bill, far out past its mouth, with no way to swallow the fruit from there. How does it get the berry down its throat?",
     "answer": "It jerks its head back and tosses the berry up, then catches it dropping straight down its throat",
     "choices": [
       "It jerks its head back and tosses the berry up, then catches it dropping straight down its throat",
@@ -27275,7 +26781,7 @@
   },
   {
     "tier": 3,
-    "question": "The toucan is a colorful rainforest bird of Central and South America whose beak is nearly as long as the rest of its body — a huge orange banana shape jutting out of a small black bird. You would expect such a beak to weigh the toucan down and tire it out in flight, but the bird flies with ease and barely seems to feel it. What keeps that enormous bill so astonishingly light?",
+    "question": "A toucan flaps through the rainforest of Central and South America carrying a bill nearly as long as the rest of its body, a huge orange banana jutting from a small black bird. Such a beak ought to weigh the bird down and tire it in flight, yet it flies with ease. What keeps that enormous bill so light?",
     "answer": "A crisscross scaffold of thin bony struts wrapped in keratin, mostly hollow inside",
     "choices": [
       "A crisscross scaffold of thin bony struts wrapped in keratin, mostly hollow inside",
@@ -27288,7 +26794,7 @@
   },
   {
     "tier": 3,
-    "question": "A toucan of the South American rainforest -- a black bird with an enormous, brightly colored bill nearly as long as its body -- roasts through a sweltering afternoon, then shivers through a chilly tropical night with that same giant bill still attached. Scientists using thermal cameras found the bird uses its bill to manage its body temperature in both directions. What's the trick?",
+    "question": "A toucan roasts through a sweltering afternoon in the South American rainforest, then sits out a chilly tropical night, its enormous bill still attached. Scientists filming it with thermal cameras found that the bird uses that bill to manage its body heat both ways. How does it do it?",
     "answer": "It ramps blood flow into the bill to dump warmth on hot days, then throttles the flow back to trap it on cold nights",
     "choices": [
       "It ramps blood flow into the bill to dump warmth on hot days, then throttles the flow back to trap it on cold nights",
@@ -27301,7 +26807,7 @@
   },
   {
     "tier": 1,
-    "question": "A tiny hunter of the tropical leaf litter walks the forest floor holding its two long jaws locked wide open, like a spring-loaded trap. When its trigger hairs feel prey, it snaps those jaws shut faster than almost any other move in the animal world — over 60 meters per second, faster than a bullet leaves a pellet gun. Which creature is this?",
+    "question": "A tiny hunter stalks the leaf litter of a tropical forest, its two long, straight jaws held open like a cocked mousetrap. When prey brushes them, they snap shut faster than almost any other move an animal makes. Which creature is it?",
     "answer": "The trap-jaw ant",
     "choices": [
       "The trap-jaw ant",
@@ -27314,7 +26820,7 @@
   },
   {
     "tier": 2,
-    "question": "Trap-jaw ants (Odontomachus) live in tropical forests and hunt with jaws that snap shut faster than almost anything else in the animal world. When one is cornered on the forest floor by a bigger predator, it does something startling with those very same jaws: it aims them straight down at the ground and fires them shut. What does this do for the ant?",
+    "question": "A bigger predator corners a trap-jaw ant on the forest floor, and the ant turns its lightning-fast hunting jaws to a second use. It points them straight down at the ground and fires them shut. What does that do for the ant?",
     "answer": "The recoil catapults its whole body backflipping into the air",
     "choices": [
       "The recoil catapults its whole body backflipping into the air",
@@ -27327,7 +26833,7 @@
   },
   {
     "tier": 3,
-    "question": "A trap-jaw ant -- a tropical hunter whose jaws snap shut faster than almost any other animal movement on Earth -- creeps forward with its jaws locked open at 180 degrees. The instant a prey insect wanders between them, the latch fires on its own and the ant never has to aim. What on the inside of each open jaw tells the ant that prey has arrived?",
+    "question": "A trap-jaw ant creeps forward with its jaws locked open at 180 degrees. The instant a prey insect wanders between them, the jaws fire on their own, and the ant never has to aim. What lines the inside of each open jaw to tell the ant that prey has arrived?",
     "answer": "Rows of sensitive trigger hairs",
     "choices": [
       "Rows of sensitive trigger hairs",
@@ -27340,7 +26846,7 @@
   },
   {
     "tier": 3,
-    "question": "A trap-jaw ant, a tropical hunter named for its snapping jaws, closes those jaws in about a tenth of a millisecond -- one of the fastest movements ever measured in an animal. That is far faster than any muscle inside the ant could ever pull them shut on its own. Muscle alone is simply too slow. How does the ant move those jaws at such impossible speed?",
+    "question": "A trap-jaw ant slams its jaws shut in about a tenth of a millisecond, one of the fastest movements ever measured in an animal and far quicker than any muscle in its body could pull them. How does the ant move its jaws so fast?",
     "answer": "It pre-loads spring energy behind a latch, then releases it all at once",
     "choices": [
       "It pre-loads spring energy behind a latch, then releases it all at once",
@@ -27353,7 +26859,7 @@
   },
   {
     "tier": 1,
-    "question": "A treehopper is a tiny plant-sap-sucking insect that clings to stems in fields and forests. One part of its body -- the plate that would be an ordinary bug's neck shield -- swells up huge and grows into thorns, antlers, spikes, or a horned helmet arching over its back. What is that overgrown part called?",
+    "question": "A treehopper, a tiny sap-sucking insect, clings to a plant stem under a strange helmet sculpted into thorns, antlers or spikes. The helmet grows from a plate that in most insects is a small shield on top of the thorax. What is that plate called?",
     "answer": "the pronotum",
     "choices": [
       "the pronotum",
@@ -27379,7 +26885,7 @@
   },
   {
     "tier": 2,
-    "question": "A treehopper is a tiny sap-sucking insect the size of a raisin, clinging in groups to plant stems. Ants swarm around a colony of treehoppers like paid bodyguards, biting and chasing off ladybird beetles and other predators that would happily eat them. The ants are not there for nothing, though. The treehoppers hand something over in return for the protection. What do the treehoppers give the ants?",
+    "question": "Ants swarm over a colony of treehoppers clinging to a plant stem, biting and chasing off ladybird beetles and other hunters like hired bodyguards. The ants are not doing it for nothing. What do the treehoppers give them in return?",
     "answer": "honeydew, a sweet liquid waste they dribble out",
     "choices": [
       "honeydew, a sweet liquid waste they dribble out",
@@ -27392,7 +26898,7 @@
   },
   {
     "tier": 3,
-    "question": "A treehopper's spiky helmet is part of its thorax, so biologist Cera Fisher expected thorax-building genes to switch on as it grows. Instead hundreds of genes lit up that build a structure found nowhere near the helmet. Which structure's genes turned out to grow it?",
+    "question": "Cera Fisher studied how a treehopper grows its spiky helmet, which is part of the thorax, and expected thorax-building genes to switch on. Instead hundreds of genes lit up, matching the set that builds a quite different body part. Which one?",
     "answer": "the wings",
     "choices": [
       "the wings",
