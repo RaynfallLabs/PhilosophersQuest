@@ -29290,7 +29290,7 @@
   },
   {
     "tier": 2,
-    "question": "Marcus Aurelius, the Roman emperor, kept a private journal where he wrote: 'The impediment to action advances action. What stands in the way becomes the way.' NFL teams later took the line up as a slogan. He is not promising the wall in your path is secretly nice. What is the move he describes?",
+    "question": "'The impediment to action advances action. What stands in the way becomes the way,' Marcus Aurelius wrote in his private notebook, and sports teams later took the line up as a slogan. He was not promising that every obstacle is secretly a blessing. Suppose you find your path blocked. What move is he describing?",
     "answer": "The thing blocking you is itself the material you now act on — patience, ingenuity, or courage worked on the hard case",
     "choices": [
       "The thing blocking you is itself the material you now act on — patience, ingenuity, or courage worked on the hard case",
@@ -29303,7 +29303,7 @@
   },
   {
     "tier": 3,
-    "question": "Epictetus, once a slave and later a teacher, gave his students an image: a dog is leashed to a moving cart. It can fight the rope and be dragged along scraped and furious, or it can trot beside the cart and take in the view. The cart goes where it goes either way. According to Epictetus, where is the obstacle actually located?",
+    "question": "Epictetus, once a slave and later a teacher, liked to compare people to a dog leashed to a moving cart. The dog could fight the rope and be dragged along, scraped and furious, or trot beside the cart and take in the view; the cart went where it went either way. Suppose you are that dog. Where, for Epictetus, did the obstacle lie?",
     "answer": "In your own resistance — the rope and the cart you cannot change, but how you meet them is yours",
     "choices": [
       "In your own resistance — the rope and the cart you cannot change, but how you meet them is yours",
@@ -29312,19 +29312,6 @@
       "In the dog's weakness, because a stronger animal could simply drag the cart the other way"
     ],
     "context": "The dog-and-cart is Epictetus' image for the Stoic 'discipline of desire' — to desire what the universe allows and not pursue what it does not. The cart's path (the external event) is fixed; the suffering comes from fighting it rather than from the rope. This keeps the obstacle reframe from being mere denial: you don't pretend the cart isn't moving — you keep your agency by choosing how to go along. Source: Internet Encyclopedia of Philosophy, Stoicism (discipline of desire; Epictetus' dog-and-cart) — https://iep.utm.edu/stoicism/",
-    "topic": "the-obstacle-is-the-way"
-  },
-  {
-    "tier": 4,
-    "question": "A coach tells two injured players the same thing: 'It isn't the injury that's wrecking you — it's your story that the season is over.' The line echoes Epictetus, born a slave and later a famed teacher in Rome, who built a whole philosophy out of meeting hardship. Both players face the identical injury. What does the Stoic say turns it from a plain defeat into a discipline?",
-    "answer": "You meet it as the very rep you were preparing for, working patience and nerve on the one hard case now in front of you",
-    "choices": [
-      "You meet it as the very rep you were preparing for, working patience and nerve on the one hard case now in front of you",
-      "You school yourself to feel calm about it, since reaching a settled, untroubled mind is the whole of what the philosophy asks",
-      "You stop wanting anything from it at all and simply wait it out, since a setback is fate's business and none of yours to work",
-      "You out-muscle it by sheer effort of will, since a hard enough push can drive almost any setback back the way it came"
-    ],
-    "context": "Epictetus, Enchiridion 5: 'Men are disturbed, not by things, but by the principles and notions which they form concerning things.' The Stoic guardrail against toxic positivity: the obstacle isn't reframed by pretending it's good (that's the 'good news in disguise' trap) — it's reframed by changing your judgment about what it's for. The wall stays real; what you control is your verdict on it. Epictetus elsewhere casts hardship as the rep you trained for: a philosopher meeting trouble should think, 'It was for this that I've been training myself, it was for this that I was practising' (Discourses III.10.7); 'It is difficulties that show what men are' (Discourses I.24.1). Source: Wikiquote, Epictetus (Enchiridion 5; Discourses III.10.7; I.24.1) — https://en.wikiquote.org/wiki/Epictetus",
     "topic": "the-obstacle-is-the-way"
   },
   {
@@ -29888,7 +29875,7 @@
   },
   {
     "tier": 2,
-    "question": "A chicken on a farm is fed by the same man at the same hour every single morning of its life. Day after day its confidence grows that this man, appearing at the gate, means breakfast — until the morning he arrives and wrings its neck instead. Bertrand Russell told this scene to make one point about all those happy past mornings. What is the point?",
+    "question": "Bertrand Russell told of a chicken fed by the same man every morning of its life. With each meal the bird grew surer that the man at the gate meant breakfast, until the morning he came and wrung its neck instead. What point did Russell draw from all those happy past mornings?",
     "answer": "Every past feeding was real, yet not one of them made the next morning safe — the pattern could still break",
     "choices": [
       "Every past feeding was real, yet not one of them made the next morning safe — the pattern could still break",
@@ -29901,7 +29888,7 @@
   },
   {
     "tier": 2,
-    "question": "Nassim Taleb tells Russell's story as a turkey fed by the butcher every day for a thousand days. With each meal the turkey trusts the butcher more, until his trust hits its peak on the Wednesday before Thanksgiving, the day the butcher comes to kill it. What is Taleb's sharpened twist?",
+    "question": "In Nassim Taleb's retelling of Russell's story, a butcher feeds a turkey every day for a thousand days. With each meal the turkey trusts him more, and its trust peaks on the Wednesday before Thanksgiving, the very day the butcher comes to kill it. What does Taleb add to Russell's lesson?",
     "answer": "The turkey felt safest at the exact moment it was in the most danger, because the long streak hid the risk",
     "choices": [
       "The turkey felt safest at the exact moment it was in the most danger, because the long streak hid the risk",
@@ -29913,34 +29900,8 @@
     "topic": "the-problem-of-induction-russells-chicken"
   },
   {
-    "tier": 2,
-    "question": "Ask people why they know the sun will rise tomorrow, and most will give the same answer: because it always has before. The British philosopher Bertrand Russell, writing in the early 1900s about how we know what we know, agreed the feeling is powerful. Yet he insisted that answer, however strong, is not really a proof. Why not?",
-    "answer": "It only describes what the past did, and the past cannot reach forward and force tomorrow to match it",
-    "choices": [
-      "It only describes what the past did, and the past cannot reach forward and force tomorrow to match it",
-      "The sun has not in fact risen on every single day in recorded human history",
-      "No one has personally watched enough sunrises to make the count truly reliable",
-      "Sunrise depends on the weather, so a cloudy morning already breaks the rule"
-    ],
-    "context": "Russell's own example in Ch. VI: 'We are all convinced that the sun will rise to-morrow... we shall naturally answer \"Because it always has risen every day.\"' He grants the conviction is total but denies it is proof: describing the past, however thoroughly, never logically forces the next case. This problem — that induction (reasoning from observed cases to unobserved ones) has no logical lock — is the whole subject. Source: Bertrand Russell, The Problems of Philosophy (1912), Ch. VI.",
-    "topic": "the-problem-of-induction-russells-chicken"
-  },
-  {
     "tier": 3,
-    "question": "David Hume noticed that every loaf of bread you have ever eaten has fed you, so it seems obvious the next loaf will too. But he pushed back on that hunch. Whatever it is in bread that feeds you is something you never actually see or taste, and past meals are evidence only about loaves already gone. So what is our confidence in tomorrow's loaf really resting on?",
-    "answer": "A bet that a loaf you have not met yet will behave just like the ones you have",
-    "choices": [
-      "A bet that a loaf you have not met yet will behave just like the ones you have",
-      "A guarantee that the loaves already eaten quietly passed their power down to later ones",
-      "A tally of past meals so long that a single fresh loaf can no longer tip the scales",
-      "A truth built into the very meaning of the word bread, the way two and two make four"
-    ],
-    "context": "Hume's bread example, from An Enquiry Concerning Human Understanding (1748), Section IV: 'The bread, which I formerly eat, nourished me... but does it follow, that other bread must also nourish me at another time, and that like sensible qualities must always be attended with like secret powers?' We observe colour and weight; the 'secret power' that nourishes is invisible — so trusting the next loaf is an assumption, not an observation. Source: David Hume, Enquiry (1748), Section IV (davidhume.org/texts/e/4).",
-    "topic": "the-problem-of-induction-russells-chicken"
-  },
-  {
-    "tier": 3,
-    "question": "Bertrand Russell pushed the puzzle of induction to a jarring edge. By strict logic alone, he argued, the man who expects his bread to feed him and the man who expects it to poison him are reasoning no differently. Neither expectation can be proved from meals already eaten. So what really tells the sane expectation apart from the mad one?",
+    "question": "One diner expects his bread to feed him; another expects his to poison him. By strict logic alone, Bertrand Russell argued, the two reason no differently, since neither expectation can be proved from meals already eaten. What, then, tells the sane expectation apart from the mad one?",
     "answer": "Plain habit and past experience, which guide us even though they never rise to a proof",
     "choices": [
       "Plain habit and past experience, which guide us even though they never rise to a proof",
@@ -29952,34 +29913,8 @@
     "topic": "the-problem-of-induction-russells-chicken"
   },
   {
-    "tier": 4,
-    "question": "Everyone leans on one quiet assumption — that the future will resemble the past. David Hume asked how you would PROVE it. Try pure logic and it fails, since a world where nature suddenly changes its course involves no contradiction at all. So you fall back on experience: the rule has never failed us so far. Hume said that second move fails too. What is fatally wrong with it?",
-    "answer": "“It has always held before” is itself just another past pattern, so it assumes the very thing it set out to prove",
-    "choices": [
-      "“It has always held before” is itself just another past pattern, so it assumes the very thing it set out to prove",
-      "Experience is unreliable because human memory of past events is so often mistaken",
-      "A single past exception has already been found, which quietly destroys the whole rule",
-      "Experience covers only the distant past, never the recent events that matter most"
-    ],
-    "context": "This is Hume's clean fork, the heart of the problem of induction. Route one — pure demonstration — fails because 'it implies no contradiction that the course of nature may change.' Route two — argument from experience — fails because it is circular: 'the future has always resembled the past before' is itself only another past pattern, so it presupposes exactly the principle it is meant to establish. The belief works; it just cannot be proved without leaning on itself. Source: Stanford Encyclopedia of Philosophy, 'The Problem of Induction', quoting Hume, Enquiry 4.2.",
-    "topic": "the-problem-of-induction-russells-chicken"
-  },
-  {
-    "tier": 4,
-    "question": "For centuries Europeans were certain every swan was white, on the strength of every swan anyone had ever seen. Then explorers in Australia turned up a black one. Karl Popper built a whole method on this asymmetry: piling up confirming cases can never make a universal rule certain, yet a single counter-example does something no pile of confirmations can. What does that one black swan actually do?",
-    "answer": "It settles the matter for good, proving the rule “all swans are white” false in a single stroke",
-    "choices": [
-      "It settles the matter for good, proving the rule “all swans are white” false in a single stroke",
-      "It lowers how likely the rule is, leaving “all swans are white” merely doubtful",
-      "It shows the rule held only in Europe and must be re-tested separately on each continent",
-      "It proves nothing yet, since one stray bird could always turn out to be a fluke"
-    ],
-    "context": "Karl Popper's escape hatch from the problem of induction: 'no matter how many instances of white swans we may have observed, this does not justify the conclusion that all swans are white,' but one black swan refutes it outright. The asymmetry — confirmation never finishes, refutation finishes instantly — led Popper to argue that science should stop trying to confirm rules and instead try hard to break them (falsifiability). A real first black swan really was found in Australia. Source: Karl Popper, Conjectures and Refutations / The Logic of Scientific Discovery.",
-    "topic": "the-problem-of-induction-russells-chicken"
-  },
-  {
     "tier": 2,
-    "question": "You feel your own headache straight off. But your friend's mind reaches you only through the outside -- the words, the face, the slumping shoulders. A robot could be built to slump and groan in exactly that way with nothing felt inside. That thought opens the 'problem of other minds.' What worry does it raise?",
+    "question": "Engineers could build a robot that slumps and groans just like a friend in pain, with nothing felt inside. Suppose you have a headache: you feel it straight off, from the inside, but your friend's mind reaches you only through the outside, the words, the face, the slumping shoulders. What worry does that raise?",
     "answer": "You cannot strictly prove anyone else truly feels anything rather than perfectly mimicking someone who does",
     "choices": [
       "You cannot strictly prove anyone else truly feels anything rather than perfectly mimicking someone who does",
@@ -29992,7 +29927,7 @@
   },
   {
     "tier": 2,
-    "question": "Alan Turing proposed judging a machine 'intelligent' if it could chat well enough to pass for human. A critic shot back: typed answers prove nothing, since you can never really know a machine has any inner experience at all. Turing did not deny the gap. Instead he turned the objection around. What did he point out?",
+    "question": "Alan Turing proposed that a machine should count as intelligent if it could chat well enough to pass for human. A critic shot back, 'Typed answers prove nothing; you can never know a machine has any inner experience.' Turing did not deny the gap. He turned the objection around. What did he point out?",
     "answer": "By that same reasoning you cannot know other people have inner lives either, yet nobody seriously doubts them",
     "choices": [
       "By that same reasoning you cannot know other people have inner lives either, yet nobody seriously doubts them",
@@ -30005,7 +29940,7 @@
   },
   {
     "tier": 3,
-    "question": "John Stuart Mill faced the puzzle head-on in 1865: if you can only ever see the outside of other people, what entitles you to believe they feel anything at all? His answer reasoned from the one case he knew from the inside -- himself. How did Mill bridge the gap to everyone else?",
+    "question": "John Stuart Mill faced the puzzle head-on in 1865: a man can only ever see the outside of other people, so what entitles him to believe they feel anything at all? Mill reasoned from the one case he knew from the inside, his own. How did he bridge the gap to everyone else?",
     "answer": "A body produces feelings that produce behavior; a like body acting alike likely hides like feelings too",
     "choices": [
       "A body produces feelings that produce behavior; a like body acting alike likely hides like feelings too",
@@ -30018,7 +29953,7 @@
   },
   {
     "tier": 3,
-    "question": "You can never watch anyone else's thoughts directly — only your own. The classic 'argument from analogy' tries to bridge that gap: my body cries out when hurt and I feel pain; your body cries out when hurt, so you must feel pain too. Critics agree the argument never fully proves other minds feel anything, but they split over where its logic is weakest. Which flaw do philosophers most often call the deepest?",
+    "question": "Suppose you reason the way the argument from analogy does: your own cries of pain come with felt pain, so other people's cries must too. Its critics agree this never fully proves that other minds feel anything, but they split over where the logic is weakest. Which flaw do they most often call the deepest?",
     "answer": "You have only ever watched one mind from the inside -- your own -- yet leap to a claim about every other mind there is",
     "choices": [
       "You have only ever watched one mind from the inside -- your own -- yet leap to a claim about every other mind there is",
@@ -30031,7 +29966,7 @@
   },
   {
     "tier": 3,
-    "question": "A little girl sees her friend burst into tears and instantly knows the friend is sad. The old 'argument from analogy' says she must be reasoning it out — 'tears, like mine, so sadness, like mine.' Two philosophers of mind — the German Max Scheler in the 1910s and the Englishman John McDowell in the 1970s — flatly rejected that whole picture of what is going on. What did they insist she is actually doing?",
+    "question": "A little girl sees her friend burst into tears and knows at once that the friend is sad. The argument from analogy says she must be reasoning it out: tears like mine, so sadness like mine. Max Scheler, around 1913, and John McDowell, in 1978, rejected that whole picture. What did they say she is actually doing?",
     "answer": "Seeing the sadness directly in the tears, not inferring it -- the feeling shows in the face, it is not a guess",
     "choices": [
       "Seeing the sadness directly in the tears, not inferring it -- the feeling shows in the face, it is not a guess",
@@ -30044,7 +29979,7 @@
   },
   {
     "tier": 4,
-    "question": "Suppose the barrier between minds could be smashed by telepathy — you simply read a thought straight out of your friend's head. In a 1953 paper, the British empiricist philosopher A.J. Ayer argued that even real telepathy would leave you exactly as shut out as before. Why, on Ayer's account, would mind-reading still fail to hand you your friend's experience itself?",
+    "question": "Suppose you could read a thought straight out of your friend's head by telepathy. A.J. Ayer argued in 1953 that even real telepathy would leave you just as shut out of your friend's mind as before. Why, on his account, would mind-reading still fail to hand you your friend's experience itself?",
     "answer": "The thought arriving in your head would be your experience of it, not your friend's -- you stay inside your own mind",
     "choices": [
       "The thought arriving in your head would be your experience of it, not your friend's -- you stay inside your own mind",
@@ -30590,7 +30525,7 @@
   },
   {
     "tier": 1,
-    "question": "The Athenians kept the real ship Theseus had sailed home from Crete. It sat in the harbor for hundreds of years. Each time a plank rotted, workers pulled it out and nailed in a fresh one. After the very first rotted plank is swapped for new wood, what is the most natural thing to say about the ship?",
+    "question": "The Athenians kept the ship Theseus had sailed home from Crete in their harbor for centuries. Whenever a plank rotted, workers nailed in a fresh one. After the first swap, what is the most natural thing to say about the ship?",
     "answer": "It is still the very same ship as before the swap",
     "choices": [
       "It is still the very same ship as before the swap",
@@ -30603,7 +30538,7 @@
   },
   {
     "tier": 1,
-    "question": "The USS Constitution, a wooden warship launched in 1797, still floats in Boston Harbor today. But the Navy has rebuilt it so many times that almost none of its wood is original. Two friends argue about it. One says it stopped being the Constitution once the original wood was gone. The other says it stayed the same ship the whole time. What does the second friend treat as the mark of a same ship?",
+    "question": "The warship Constitution, launched in 1797, still floats in Boston Harbor, rebuilt so often that almost none of its wood is original. One friend says it stopped being the Constitution once the old wood went; another says it stayed the same ship. What does the second friend treat as the mark of a same ship?",
     "answer": "Its unbroken career as one continuous ship over time",
     "choices": [
       "Its unbroken career as one continuous ship over time",
@@ -30616,7 +30551,7 @@
   },
   {
     "tier": 1,
-    "question": "On the British show Only Fools and Horses, a road-sweeper named Trigger wins a prize for using the same broom for twenty years. Then he cheerfully says the broom has had seventeen new heads and fourteen new handles. A mate fires back the obvious point. What is the obvious point against Trigger calling it the same broom?",
+    "question": "Trigger, who sweeps roads in the sitcom Only Fools and Horses, wins a prize for keeping one broom for twenty years. He admits it has had seventeen new heads and fourteen new handles. What is the obvious retort to his calling it the same broom?",
     "answer": "Nothing of the first broom is left, so it can't be that broom",
     "choices": [
       "Nothing of the first broom is left, so it can't be that broom",
@@ -30629,7 +30564,7 @@
   },
   {
     "tier": 2,
-    "question": "In Japan, the Ise Grand Shrine is deliberately torn down and rebuilt from all new timber every twenty years. This ritual has continued faithfully for over 1,300 years. No old wood is carried over; each rebuild uses entirely fresh material. Yet the Japanese regard it as the same shrine the whole time. By treating Ise as one unbroken shrine, what have they decided counts more?",
+    "question": "Japan pulls down the Ise Grand Shrine every twenty years and rebuilds it from all-new timber, a ritual kept up for over 1,300 years. No old wood carries over, yet Japan regards it as the same shrine the whole time. What has Japan decided matters more than the wood?",
     "answer": "The continuing form the shrine has kept rebuild after rebuild",
     "choices": [
       "The continuing form the shrine has kept rebuild after rebuild",
@@ -30641,21 +30576,8 @@
     "topic": "the-ship-of-theseus"
   },
   {
-    "tier": 2,
-    "question": "Long before the ship puzzle, the Greek thinker Heraclitus pointed at a flowing river. His surviving words say that on those who step into the same rivers, different and different waters flow. The water you touch is never the same water twice. What is Heraclitus using the river to dramatize?",
-    "answer": "A thing can stay one and the same while all its stuff is swapped out",
-    "choices": [
-      "A thing can stay one and the same while all its stuff is swapped out",
-      "There is really no river at all, only a process we loosely name",
-      "The river of yesterday and the river of today are literally two rivers",
-      "A river exists only while you are actually standing in its current"
-    ],
-    "context": "The river is the ship puzzle's ancestor: same problem, a thing whose stuff is constantly replaced that we still treat as one. The famous line 'you cannot step in the same river twice' is actually a later Platonic gloss; Heraclitus' own surviving fragment is the 'different and different waters' wording (DK B12). The other readings are real rival interpretations philosophers have debated, but the river image is doing the work of showing one thing persisting through total turnover of its matter. Antigone Journal, 'Everything Flows': https://antigonejournal.com/2021/11/heraclitus-everything-flows/",
-    "topic": "the-ship-of-theseus"
-  },
-  {
     "tier": 3,
-    "question": "The Athenians did not merely display Theseus' ship for a generation. Plutarch records that they kept it afloat, swapping each rotted plank for fresh wood, from Theseus' famous voyage down to about 300 BCE. That is close to a thousand years of repairs. Given that span of plank-swapping, what was almost certainly true of the ship the Athenians still called Theseus' ship?",
+    "question": "Plutarch records that the Athenians kept Theseus' ship afloat from his famous voyage down to about 300 BCE, swapping each rotted plank for fresh wood. That makes close to a thousand years of repairs. What was almost certainly true of the ship they still called his by the end?",
     "answer": "Not a single board Theseus actually sailed with was left in it",
     "choices": [
       "Not a single board Theseus actually sailed with was left in it",
@@ -30668,20 +30590,7 @@
   },
   {
     "tier": 3,
-    "question": "Here is the unsettling part: your own body is a Ship of Theseus. Over years, your cells die and are replaced, until almost none of the matter you were born with remains, yet you still call yourself the same person. The English philosopher John Locke argued the self cannot ride on keeping the same matter, since the matter keeps changing. So where did Locke say your sameness as a person actually rides?",
-    "answer": "On a continuous thread of memory and consciousness",
-    "choices": [
-      "On a continuous thread of memory and consciousness",
-      "On the single soul that was placed in you at birth",
-      "On the steady character and personality you carry",
-      "On your name and place in the family staying fixed"
-    ],
-    "context": "This is the move that turns the ship onto the kid. Locke's answer was psychological continuity: the self is carried by memory and consciousness, not by keeping the same matter, his version of 'continuity of form' over 'original matter.' A philosopher who instead grounds the self in the soul or in bodily life is disagreeing with Locke, not making a mistake; the question is specifically what Locke held. Wikipedia, 'Personal identity' (Locke, psychological continuity): https://en.wikipedia.org/wiki/Personal_identity",
-    "topic": "the-ship-of-theseus"
-  },
-  {
-    "tier": 4,
-    "question": "Two thousand years after Plutarch, the English philosopher Thomas Hobbes added the twist that makes the ship puzzle truly bite. Suppose, Hobbes said, that as each rotted plank was pried off Theseus' ship, someone secretly carted it away and kept it. Years later this hoarder takes all those original planks and reassembles them, in their old arrangement, into a complete ship. Now there are two. What is the maddening result Hobbes points to?",
+    "question": "Thomas Hobbes, centuries after Plutarch, gave the ship puzzle its sharpest form. Suppose, he said, that each rotted plank pried off Theseus' ship had been secretly carted away and kept, and that years later the hoarder reassembled them, in their old arrangement, into a complete ship. Now there are two. What maddening result did Hobbes point to?",
     "answer": "Two different ships each have a real claim to be the original",
     "choices": [
       "Two different ships each have a real claim to be the original",
@@ -30694,7 +30603,7 @@
   },
   {
     "tier": 5,
-    "question": "Line the three ships up. A is Theseus' original ship; B is the ship repaired plank by plank and sailed without a break; C is the ship reassembled from A's original boards. The continuity rule says A is B. The original-matter rule says A is C. But basic logic says if two things both equal a third, they equal each other. So logic forces a conclusion the docks flatly contradict. What does logic force, and why is it impossible?",
+    "question": "Two ships sit at the docks in Hobbes's version of the puzzle. Call Theseus' original ship A, the one repaired plank by plank B, and the one rebuilt from A's old boards C. The continuity rule says A is B; the original-matter rule says A is C. Logic says two things equal to a third equal each other. What does logic force, and why is it impossible?",
     "answer": "That B and C are the same ship, yet they plainly dock as two",
     "choices": [
       "That B and C are the same ship, yet they plainly dock as two",
@@ -30707,20 +30616,7 @@
   },
   {
     "tier": 5,
-    "question": "A sister puzzle sharpens same-matter versus same-thing. A sculptor presses two pieces of clay together, and at that single instant, with the same clay, the same moment, and the same spot, both a statue we will call Goliath and a mere lump of clay we will call Lumpl come into being. They share every atom and their whole history. Now squash the clay flat: the lump survives as a flatter lump, but the statue is gone. What does that squash reveal about Goliath and Lumpl?",
-    "answer": "They were two different things all along, despite sharing every atom",
-    "choices": [
-      "They were two different things all along, despite sharing every atom",
-      "They were the same thing, since they shared every single atom",
-      "The statue was always the more real of the two objects",
-      "Neither one truly existed at all before the clay was squashed"
-    ],
-    "context": "This is Allan Gibbard's Lumpl and Goliath (1975). Because Lumpl can survive being squashed and Goliath cannot, two things with identical matter and identical history still differ in what they can survive, so they cannot be one and the same thing. It runs along the same fault line as the ship: the clay constitutes the statue without being identical to it. SEP, 'Material Constitution': https://plato.stanford.edu/entries/material-constitution/",
-    "topic": "the-ship-of-theseus"
-  },
-  {
-    "tier": 5,
-    "question": "Here is the eeriest escape from the two-ship deadlock, offered by the philosopher Robert Nozick. He says the title Theseus ship belongs to whichever later ship is the best continuer of the original. While only the repaired harbor ship exists, it clearly holds the title. Then someone finishes rebuilding the original planks into a rival ship. On Nozick rule, what can now happen to the repaired ship?",
+    "question": "Robert Nozick offered an eerie way out of the two-ship deadlock. The title of Theseus' ship, he said, belongs to whichever later ship is the best continuer of the original. While only the repaired harbor ship exists, it plainly holds the title. Then someone finishes rebuilding the original planks into a rival. On Nozick's rule, what can now happen to the repaired ship?",
     "answer": "It can lose the title even though nothing about it has altered",
     "choices": [
       "It can lose the title even though nothing about it has altered",
@@ -30733,7 +30629,7 @@
   },
   {
     "tier": 4,
-    "question": "Vaisheshika was one of the six main schools of classical India, founded long ago by the sage Kanada. Like the other schools it studied the whole of nature, but its answer to one simple question set it apart. What is every physical object — a pot, a tree, a mountain — made of, when you go all the way down to the bottom? What did Vaisheshika say everything reduces to?",
+    "question": "Kanada, a sage of classical India, founded the Vaisheshika school, which asked what any physical thing, a pot, a tree, a mountain, is built from at the very bottom. Its answer set it apart from the other orthodox schools. What did Vaisheshika say everything reduces to?",
     "answer": "Indivisible, indestructible particles, differing only in their number and arrangement",
     "choices": [
       "Indivisible, indestructible particles, differing only in their number and arrangement",
@@ -30746,7 +30642,7 @@
   },
   {
     "tier": 5,
-    "question": "Nyaya was the school of the logicians of classical India -- its very name means 'rule or method of reasoning' -- and it trained students to prove the unseen from the seen. You stand on a plain and watch grey haze rising from a distant mountain peak. A Nyaya logician declares he already knows something is happening up there, though he cannot see it. A companion scoffs that no one can know what he cannot see. What is the logician's ground for his claim?",
+    "question": "A Nyaya logician stands on a plain in classical India, watching grey haze rise from a distant mountain peak. His school, whose very name means 'method of reasoning,' teaches him to prove the unseen from the seen. He declares that something is happening up there, though he cannot see it; a companion scoffs that no one can know what he cannot see. What is the logician's ground?",
     "answer": "Smoke never rises without fire -- seen paired in every kitchen, never above a lake -- so this haze means fire",
     "choices": [
       "Smoke never rises without fire -- seen paired in every kitchen, never above a lake -- so this haze means fire",
@@ -30759,7 +30655,7 @@
   },
   {
     "tier": 5,
-    "question": "The Samkhya thinkers of classical India honored the ancient Vedas, yet startled everyone by arguing that you need no creator God at all. One of their reasons cut especially deep, turning on the very nature of God set against the very nature of a world that never stops churning. What was that argument?",
+    "question": "The Samkhya thinkers of classical India honored the ancient Vedas, yet argued that the world needs no creator God at all. One of their reasons cut especially deep: it set the very nature of God against the very nature of a world that never stops churning. What was that argument?",
     "answer": "An unchanging, perfect God could never be the source of a world that changes without end",
     "choices": [
       "An unchanging, perfect God could never be the source of a world that changes without end",
@@ -30785,7 +30681,7 @@
   },
   {
     "tier": 2,
-    "question": "Someone argues: 'If we let gay couples marry, then next people will demand to marry their pets, and then their furniture.' The ending is lurid and the speaker leaps straight to it. What has the speaker skipped that must be supplied for the argument to work?",
+    "question": "A speaker warns: 'If we let gay couples marry, then next people will demand to marry their pets, and then their furniture.' The ending is lurid, and he leaps straight to it. What has he skipped that must be supplied for the argument to work?",
     "answer": "The middle steps that would force each outcome to the next, which the speaker leapt over in silence.",
     "choices": [
       "The middle steps that would force each outcome to the next, which the speaker leapt over in silence.",
@@ -30798,7 +30694,7 @@
   },
   {
     "tier": 2,
-    "question": "People love the 'boiling frog' image. Drop a frog into slowly heated water and it won't notice until it is cooked. This is a warning that we won't feel a slow slide into disaster. When Friedrich Goltz and later Victor Hutchison actually heated the water, what did a normal frog do?",
+    "question": "Friedrich Goltz, and later Victor Hutchison, tested the old tale of the boiling frog. The tale says a frog in slowly heated water never notices until it is cooked, a warning that people will not feel a slow slide into disaster. When they actually heated the water, what did a normal frog do?",
     "answer": "It climbed out, struggling to escape as soon as the water grew uncomfortably warm.",
     "choices": [
       "It climbed out, struggling to escape as soon as the water grew uncomfortably warm.",
@@ -30811,7 +30707,7 @@
   },
   {
     "tier": 2,
-    "question": "Not every 'if we allow this, things get worse' warning is a trick. Here is one: 'If we let people start dumping trash on the sidewalk, over time it piles up into a health hazard.' Why does this count as a fair argument and not a slippery-slope trick?",
+    "question": "'If we let people start dumping trash on the sidewalk, over time it piles up into a health hazard,' a neighbor warns. Not every warning that one step leads to worse is a trick. Why does this one count as a fair argument and not a slippery-slope trick?",
     "answer": "Because each step is backed by everyday observation, so the bad outcome really is likely to follow.",
     "choices": [
       "Because each step is backed by everyday observation, so the bad outcome really is likely to follow.",
@@ -30824,7 +30720,7 @@
   },
   {
     "tier": 3,
-    "question": "An old fable tells of a miller who lets a camel poke just its nose into his warm tent on a cold night. Then the camel eases in a leg, then its shoulders, until the whole beast is inside and shoves the man out into the cold. The fable urges: refuse the first small thing or lose everything. Why is the fable, on its own, not actually proof that small starts must end in disaster?",
+    "question": "A miller in an old fable lets a camel poke just its nose into his warm tent on a cold night. Then the camel eases in a leg, then its shoulders, until the whole beast is inside and shoves him out into the cold. Refuse the first small thing, the fable urges, or lose everything. Why is the fable alone no proof that small starts must end in disaster?",
     "answer": "It is a vivid story that dramatizes the worry without showing any real chain forces the next step.",
     "choices": [
       "It is a vivid story that dramatizes the worry without showing any real chain forces the next step.",
@@ -30850,7 +30746,7 @@
   },
   {
     "tier": 3,
-    "question": "Philosopher T. Edward Damer renamed the slippery slope 'the domino fallacy.' His point: a row of dominoes really can fall in sequence, but only when a certain condition holds, and the fallacious arguer quietly assumes that the same condition holds for a chain of events when it often doesn't. What is that condition the arguer takes for granted?",
+    "question": "T. Edward Damer renamed the slippery slope 'the domino fallacy.' A row of dominoes really can topple in sequence, he pointed out, but only when one condition holds, and the bad arguer quietly assumes the same condition holds for a chain of events when it often does not. What does the arguer take for granted?",
     "answer": "That the events stand so tightly packed that each one really bumps the next, never spread apart.",
     "choices": [
       "That the events stand so tightly packed that each one really bumps the next, never spread apart.",
@@ -30863,7 +30759,7 @@
   },
   {
     "tier": 4,
-    "question": "The slippery-slope diagnostic gives a precise rule for how strong any 'A leads to disaster' chain is. It ties the argument's strength to two things: the number of steps between the start and the dreaded end, and how firmly each step causes the one after it. How does the strength actually depend on those two things?",
+    "question": "A logic teacher chalks up a careful rule for weighing any 'A leads to disaster' chain. It ties the chain's strength to two things: the number of steps between the start and the dreaded end, and how firmly each step causes the next. How does the strength depend on those two things?",
     "answer": "Weaker the more steps there are, and stronger the more firmly each step causes the next.",
     "choices": [
       "Weaker the more steps there are, and stronger the more firmly each step causes the next.",
@@ -30876,7 +30772,7 @@
   },
   {
     "tier": 4,
-    "question": "Legal scholar Eugene Volokh asked a sharp question. If a first small step really is reasonable on its own, how can taking it ever be dangerous? He answered by naming real mechanisms by which one step changes the situation for the next, turning a slope from bluff into something with teeth. What was one such mechanism Volokh identified?",
+    "question": "Eugene Volokh, a legal scholar, asked a sharp question: if a first small step really is reasonable on its own, how can taking it ever be dangerous? He answered by naming real ways one step changes the situation for the next, giving a slope real teeth. What was one such mechanism?",
     "answer": "The first step lowers the cost of the next, so the following step becomes easier to take.",
     "choices": [
       "The first step lowers the cost of the next, so the following step becomes easier to take.",
@@ -30889,7 +30785,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1895, a political cartoon mocked the idea of letting women vote. It drew what 'weddings' would look like in the far-off year 2001, a scene of chaos meant to show the ruin the vote would unleash. Looking back from today, what happened to the cascade of disaster the cartoon so confidently predicted?",
+    "question": "A cartoonist in 1895 mocked the idea of letting women vote, drawing what weddings would look like in the far-off year 2001: a scene of chaos meant to show the ruin the vote would unleash. Looking back from today, what became of the cascade of disaster the cartoon so confidently predicted?",
     "answer": "It never arrived; the feared cascade of social chaos simply never came to pass at all.",
     "choices": [
       "It never arrived; the feared cascade of social chaos simply never came to pass at all.",
@@ -30914,21 +30810,8 @@
     "topic": "the-slippery-slope-and-when-its-legitimate"
   },
   {
-    "tier": 5,
-    "question": "Around the 4th century BC, the Greek thinker Eubulides of Miletus posed a puzzle: one grain of wheat is not a heap, and dropping just one more onto a non-heap can't make it a heap, so by repetition you could never build a heap at all, yet heaps obviously exist. The puzzle reveals a real vagueness in the word 'heap.' But it tempts people into a deeper mistake about that vagueness. What is the deeper wrong lesson people draw?",
-    "answer": "That if no single grain makes the difference, then a few grains and a full heap aren't really different.",
-    "choices": [
-      "That if no single grain makes the difference, then a few grains and a full heap aren't really different.",
-      "That a heap can never truly be built at all, since the grain-by-grain steps never amount to one.",
-      "That numbers like grain-counts are basically useless, since they fail to describe real physical things.",
-      "That a heap is better defined by its total weight instead, since its count will always stay vague."
-    ],
-    "context": "This is the SORITES PARADOX (Greek 'soros' = heap), the conceptual slope, and Trudy Govier calls the deeper error 'slippery assimilation': because two ends are joined by tiny indistinguishable steps, one wrongly concludes the ends are the SAME. That confuses 'I can't draw a sharp line' with 'there is no real difference.' A toddler and an adult are joined by a continuous series of days yet are plainly different; a fuzzy boundary does not erase the contrast at the extremes. Source: Wikipedia, 'Sorites paradox'; Stanford Encyclopedia of Philosophy, 'Sorites Paradox'; Trudy Govier.",
-    "topic": "the-slippery-slope-and-when-its-legitimate"
-  },
-  {
     "tier": 1,
-    "question": "In ancient Athens, the philosopher Socrates would help people find the holes in their own beliefs by asking gentle question after gentle question until the belief tripped over itself. That style of quiet questioning is still called the Socratic method today. Now imagine your older cousin is dead certain he knows what 'fairness' really means, and he dares anyone to prove him wrong. You suspect his idea will fall apart if pushed hard enough. What do you do?",
+    "question": "Nia's older cousin is dead certain he knows what 'fairness' really means, and he dares anyone to prove him wrong. Nia suspects the idea will fall apart if pushed. She wants to test it the way Socrates did, without lecturing him. What should she do?",
     "answer": "Keep asking questions until his own answers start to clash",
     "choices": [
       "Keep asking questions until his own answers start to clash",
@@ -30941,7 +30824,7 @@
   },
   {
     "tier": 1,
-    "question": "In ancient Athens, Socrates loved to press people on the meanings of the biggest words — justice, piety, courage. A teacher in the same spirit asks a confident student, 'What is courage?' The student answers, 'Like when a firefighter runs into a burning building.' Socrates would say the student still has not answered the question. Why not?",
+    "question": "A teacher asks a confident student, 'What is courage?' The student answers, 'Like when a firefighter runs into a burning building.' Socrates, who pressed people on the meaning of words like justice, piety and courage, would say the student has not yet answered. Why not?",
     "answer": "He gave a single example, not what makes every act brave",
     "choices": [
       "He gave a single example, not what makes every act brave",
@@ -30954,7 +30837,7 @@
   },
   {
     "tier": 2,
-    "question": "After a long back-and-forth with Socrates, a confident man named Meno groans that 'both my mind and my tongue have gone numb' — he walked in certain and now admits he no longer knows what virtue is. To Socrates, this dead-end isn't a failure at all. Why does he count it as the whole point?",
+    "question": "After a long back-and-forth with Socrates, Meno, a confident young man, groaned that 'both my mind and my tongue have gone numb.' He had walked in certain; now he no longer knew what virtue was. To Socrates this dead end was no failure at all. Why did he count it as the whole point?",
     "answer": "You cannot look for an answer while you still believe you already have it",
     "choices": [
       "You cannot look for an answer while you still believe you already have it",
@@ -30967,7 +30850,7 @@
   },
   {
     "tier": 2,
-    "question": "At his trial in Athens in 399 BC, Socrates compared himself to a gadfly — a biting fly that lands on a big, lazy horse and will not leave it alone. He used the picture to explain to the jury why so many powerful Athenians had come to hate him enough to bring him up on capital charges. What about Socrates' daily life fit the gadfly so exactly?",
+    "question": "The jury that tried Socrates in 399 BC heard him call himself a gadfly, a biting fly that lands on a big, lazy horse and will not leave it alone. The picture explained why so many powerful Athenians hated him. What about his daily life fit the gadfly so exactly?",
     "answer": "He kept pestering important people with questions they could not answer",
     "choices": [
       "He kept pestering important people with questions they could not answer",
@@ -30993,7 +30876,7 @@
   },
   {
     "tier": 3,
-    "question": "The Athenian general Laches, a veteran soldier, defines courage as 'holding one's ground in the battle line and never running from the enemy.' Socrates does not argue back. He simply brings up the Scythian horsemen and the Spartans, who won famous fights by fleeing on purpose to lure the enemy in. What has Socrates just shown?",
+    "question": "Laches, an Athenian general and veteran soldier, defined courage as 'holding one's ground in the battle line and never running from the enemy.' Socrates did not argue back. He simply brought up the Scythian horsemen and the Spartans, who won famous fights by fleeing on purpose to lure the enemy in. What had Socrates shown?",
     "answer": "Standing firm can't be all of courage — brave fighters sometimes flee",
     "choices": [
       "Standing firm can't be all of courage — brave fighters sometimes flee",
@@ -31005,34 +30888,8 @@
     "topic": "the-socratic-method-elenchus"
   },
   {
-    "tier": 3,
-    "question": "Socrates' mother, Phaenarete, worked as a midwife — she helped other women give birth. Socrates said he practiced the very same craft, but on men's minds instead of women's bodies. What did he claim his own questioning did for the people he spoke with?",
-    "answer": "It drew out the ideas already inside them, while he himself added nothing new",
-    "choices": [
-      "It drew out the ideas already inside them, while he himself added nothing new",
-      "It poured his own hard-won wisdom into minds that were empty before",
-      "It tested whether they had memorized the right answers from a teacher",
-      "It planted fresh doubts in them so they would keep coming back"
-    ],
-    "context": "His words: 'my patients are men, not women, and I attend to their souls in labour, not their bodies.' He delivers the ideas already inside the other person and claims to put nothing in — the vivid handle for why he insists he teaches no doctrine of his own. Source: Plato, Theaetetus 149a (Perseus Digital Library); IEP, 'Plato: Theaetetus'; SEP, 'Socrates'.",
-    "topic": "the-socratic-method-elenchus"
-  },
-  {
-    "tier": 3,
-    "question": "Socrates' friend Chaerephon asked the holy oracle at Delphi whether any man was wiser than Socrates, and the priestess answered that none was. This baffled Socrates, who was certain he knew nothing at all. What was his first reaction to being called the wisest man in Greece?",
-    "answer": "He set out to prove the oracle wrong by finding someone wiser than himself",
-    "choices": [
-      "He set out to prove the oracle wrong by finding someone wiser than himself",
-      "He proudly accepted the honor and started charging students for his wisdom",
-      "He marched to Delphi to demand the priestess take back her words",
-      "He hid the oracle's words, afraid of what other people would think"
-    ],
-    "context": "Convinced he knew nothing, Socrates went around cross-examining men famous for wisdom, trying to disprove the priestess — and that very hunt became his life's method. Source: Plato, Apology 20e-21a (Perseus Digital Library); TheCollector, 'Why Did the Oracle of Delphi Call Socrates the Wisest Man?'.",
-    "topic": "the-socratic-method-elenchus"
-  },
-  {
     "tier": 4,
-    "question": "Cornered for a real definition, a confident Athenian named Euthyphro says, 'Piety is whatever the gods love.' But Euthyphro also fully believes the old myths in which the gods quarrel with each other. Socrates lets that second belief do the work. How does Euthyphro's own definition fall apart?",
+    "question": "Cornered for a real definition, Euthyphro, a confident Athenian, said, 'Piety is whatever the gods love.' But he also fully believed the old myths in which the gods quarrel with each other. Socrates let that second belief do the work. How did Euthyphro's own definition fall apart?",
     "answer": "The same act gets loved by some gods and hated by others — pious and impious at once",
     "choices": [
       "The same act gets loved by some gods and hated by others — pious and impious at once",
@@ -31045,20 +30902,7 @@
   },
   {
     "tier": 4,
-    "question": "Socrates spent years cross-examining Athens' most famous minds. Slowly the oracle's riddle -- that no one was wiser than he -- began to make sense. After questioning a politician famous for wisdom, Socrates decided he really was the wiser of the two. What was his one edge over the politician?",
-    "answer": "He knew that he knew nothing, while the other man only thought he knew something",
-    "choices": [
-      "He knew that he knew nothing, while the other man only thought he knew something",
-      "He had simply memorized more facts about the city than the politician knew",
-      "He was the better speaker, able to out-argue the politician in public",
-      "He had the gods on his side, so his every judgment came out correct"
-    ],
-    "context": "His own conclusion: 'neither of us really knows anything fine and good, but this man thinks he knows something when he does not, whereas I, as I do not know anything, do not think I do either.' His sole edge was knowing he didn't know. Source: Plato, Apology 21d (Perseus Digital Library, Fowler translation).",
-    "topic": "the-socratic-method-elenchus"
-  },
-  {
-    "tier": 4,
-    "question": "In Plato's dialogue the Meno, a young Thessalian named Meno is worn out by Socrates' questions. He complains that Socrates is like a torpedo fish — the electric ray that numbs whatever it touches — because Socrates leaves everyone he speaks with stuck and numb. Socrates agrees with the picture, but adds one fix to it. What does Socrates add?",
+    "question": "Meno, a young Thessalian worn out by Socrates' questions, complained that Socrates was like a torpedo fish, the electric ray that numbs whatever it touches, since he left everyone he spoke with stuck and numb. Socrates accepted the picture but added one correction. What did he add?",
     "answer": "The torpedo fish is numb itself before it ever numbs another",
     "choices": [
       "The torpedo fish is numb itself before it ever numbs another",
@@ -31071,7 +30915,7 @@
   },
   {
     "tier": 5,
-    "question": "Socrates' method is powerful: corner a confident man and his own answers end up contradicting each other, so at least one of them has to be false. But scholars point out a real limit to what this actually proves. When two of a man's beliefs clash, what can the contradiction by itself NOT tell you?",
+    "question": "Confident men cornered by Socrates watched their own answers contradict each other, which proved that at least one of those answers had to be false. Scholars point out a real limit to what that proves. When two of a man's beliefs clash, what can the clash by itself never reveal?",
     "answer": "Which of the two clashing beliefs is actually the false one",
     "choices": [
       "Which of the two clashing beliefs is actually the false one",
@@ -31084,7 +30928,7 @@
   },
   {
     "tier": 2,
-    "question": "In the law courts and assembly of 400s-BCE Athens, the Sophists charged ambitious young men a hefty fee, promising to make them unbeatable when they stood up to speak. One boast became the slogan of the whole movement, the very thing a Sophist sold. Which skill did the Sophist promise to teach?",
+    "question": "The Sophists charged ambitious young men of Athens a hefty fee, promising to make them unbeatable when they stood up to speak in the law courts and the assembly. One boast became the slogan of the whole movement, the very thing a Sophist sold. Which skill did the Sophist promise to teach?",
     "answer": "How to make the weaker argument sound like the stronger one",
     "choices": [
       "How to make the weaker argument sound like the stronger one",
@@ -31097,20 +30941,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 400s BC, Socrates walked around the city of Athens asking hard questions. He kept at generals, poets, and workers until they tripped on their own words. The Sophists — professional teachers of rhetoric who traveled from city to city selling their lessons — taught in a very different way. What did Socrates refuse to do that every Sophist did?",
-    "answer": "Charge a fee to teach the skill of winning arguments",
-    "choices": [
-      "Charge a fee to teach the skill of winning arguments",
-      "Hand his pupils set speeches to repeat in the courts",
-      "Promise that his lessons would make a young man rich",
-      "Claim to possess the very wisdom he set out to teach"
-    ],
-    "context": "Socrates took no money for his questioning — in Plato's Apology 19d-20c he flatly denies charging a fee, drawing the sharpest line between himself and the Sophists. Selling instruction was the heart of the Sophist trade, and it is the one thing Socrates would not do. The wrong choices name real Sophist habits Socrates lacked: they handed pupils ready-made speeches, sold worldly success, and claimed to already possess the wisdom they taught — while Socrates insisted he only asked questions and knew nothing. Source: Internet Encyclopedia of Philosophy, The Sophists; Plato, Apology 19d-20c.",
-    "topic": "the-sophists"
-  },
-  {
-    "tier": 2,
-    "question": "The Sophist Prodicus told a story kids still hear: young Heracles, not yet a hero, comes to a fork in the road where two women are waiting, each urging him down her own path for the rest of his life. The whole tale is a contest between what those two women stand for. What does each of the two women offer Heracles?",
+    "question": "Prodicus the Sophist told a story kids still hear. Young Heracles, not yet a hero, comes to a fork in the road where two women wait, each urging him down her own path for the rest of his life. What does each woman offer him?",
     "answer": "One offers an easy life of pleasure, the other a hard life of honor",
     "choices": [
       "One offers an easy life of pleasure, the other a hard life of honor",
@@ -31149,7 +30980,7 @@
   },
   {
     "tier": 4,
-    "question": "In Plato's Republic, the Sophist Thrasymachus loses patience and makes a hard claim. Justice, he says, is just the good of the stronger. The powerful make the laws to help themselves, so calling a thing 'just' only means it is useful to whoever is on top. A young listener wants to push back. Which reply actually meets what Thrasymachus said?",
+    "question": "Thrasymachus the Sophist lost patience in Plato's Republic and made a hard claim. Justice, he said, is only the good of the stronger: the powerful make laws to help themselves, so 'just' only means useful to whoever is on top. Which reply actually meets what Thrasymachus said?",
     "answer": "A ruler can blunder and pass a law that hurts his own side",
     "choices": [
       "A ruler can blunder and pass a law that hurts his own side",
@@ -31162,7 +30993,7 @@
   },
   {
     "tier": 4,
-    "question": "Legend says Protagoras taught a poor student, Euathlus, on a deal: pay me once you win your first court case. Euathlus never took a case, so Protagoras sued for the fee, arguing — if I win, the court orders you to pay; if YOU win, you have won your first case, so our deal makes you pay; either way, you pay. How did Euathlus turn the very same trick back on his teacher?",
+    "question": "Euathlus, the legend goes, was a poor student who studied with Protagoras on a deal: the fee would fall due once he won his first case. He never took a case, so Protagoras sued, arguing, 'If I win, the court orders you to pay; if you win, you have won your first case, so our deal makes you pay.' How did Euathlus turn the same trick back on his teacher?",
     "answer": "If I win, the court frees me; if I lose, I have still not won a case, so I owe nothing",
     "choices": [
       "If I win, the court frees me; if I lose, I have still not won a case, so I owe nothing",
@@ -31175,7 +31006,7 @@
   },
   {
     "tier": 2,
-    "question": "A clever Greek teacher plays a game with you. 'Is a single grain of wheat a heap?' Of course not, you say. 'Two grains?' No. He keeps adding one grain at a time, and each time you have to agree that adding just ONE grain can't turn a non-heap into a heap. Where does this game leave you if you never break the pattern?",
+    "question": "Suppose you play a game with a Greek teacher. 'Is one grain of wheat a heap?' Of course not. 'Two grains?' No. He adds a grain at a time, and each time you agree one more grain cannot turn a non-heap into a heap. Where does the game leave you if the pattern never breaks?",
     "answer": "Forced to deny that even a million grains could ever be a heap",
     "choices": [
       "Forced to deny that even a million grains could ever be a heap",
@@ -31188,7 +31019,7 @@
   },
   {
     "tier": 2,
-    "question": "The heap puzzle has a secret. The same step-by-step trap can be run against plenty of other words, marching them to silly conclusions too. But the trick only works on certain kinds of words. Aimed at the wrong sort, it has nothing to grab. Which everyday question can the same trick attack?",
+    "question": "A teacher shows her class that the step-by-step heap trap can be run against plenty of other words, marching each to a silly conclusion. But it works only on certain kinds of words; aimed at the wrong sort, it has nothing to grab. Which everyday question can the same trick attack?",
     "answer": "Whether a grown man should count as tall",
     "choices": [
       "Whether a grown man should count as tall",
@@ -31200,21 +31031,8 @@
     "topic": "the-sorites-paradox-the-heap"
   },
   {
-    "tier": 2,
-    "question": "Theo argues that no one can name the exact grain that turns a pile into a heap. No one can name the exact day a boy becomes a man, or the exact dollar that makes someone rich. So, Theo says, there is no real difference between a heap and one lonely grain. A friend says Theo has gone wrong. What is the flaw in Theo's reasoning?",
-    "answer": "A blurry borderline still leaves the two far ends plainly different",
-    "choices": [
-      "A blurry borderline still leaves the two far ends plainly different",
-      "There really is an exact grain, and Theo simply failed to find it",
-      "Heaps and grains are the same, so Theo is right and the friend is wrong",
-      "Counting is impossible, so no question about heaps can be answered"
-    ],
-    "context": "This is the everyday 'line-drawing fallacy': because you can't mark the EXACT cutoff, it's tempting to conclude there's no real difference between the extremes -- but a heap and a single grain are obviously different even though the border between them is fuzzy. A vague boundary blurs the middle; it does not erase the ends. Source: Stanford Encyclopedia of Philosophy, 'Sorites Paradox' (line-drawing problem).",
-    "topic": "the-sorites-paradox-the-heap"
-  },
-  {
     "tier": 3,
-    "question": "The ancient Greek philosopher Eubulides invented a tiny puzzle called the sorites, or 'heap' paradox. It is built from two claims that each look perfectly innocent on their own. The first: a million grains of sand piled together is a heap. Yet it is the second claim, spoken in a single innocent line, that quietly smuggles in all the trouble and traps you. Which of these is that dangerous second claim?",
+    "question": "Eubulides of Miletus passed down a tiny puzzle called the sorites, or heap. It rests on two claims that each look perfectly innocent. The first: a million grains of sand piled together is a heap. Yet the second, a single innocent line, smuggles in all the trouble. What is that dangerous second claim?",
     "answer": "A heap with one grain taken away is still a heap",
     "choices": [
       "A heap with one grain taken away is still a heap",
@@ -31226,21 +31044,8 @@
     "topic": "the-sorites-paradox-the-heap"
   },
   {
-    "tier": 3,
-    "question": "Eubulides of Miletus, a 4th-century-BC philosopher, spent his days hurling logic puzzles at Aristotle, his great rival. The heap was only one of four traps he is famous for. Another runs: 'What I am now saying is false.' Why did this little sentence drive logicians to despair?",
-    "answer": "If it is true then it is false, and if false then it is true",
-    "choices": [
-      "If it is true then it is false, and if false then it is true",
-      "It can never be spoken aloud without instantly becoming true",
-      "It quietly proves that Aristotle himself must have been lying",
-      "It is far too short a line to count as a real argument at all"
-    ],
-    "context": "This is the Liar paradox, the most famous of Eubulides' four (the others being the heap, the Horned Man, and the Masked Man). Eubulides belonged to the Megarian school and, per Diogenes Laertius, was 'constantly attacking' Aristotle; he reputedly taught the great orator Demosthenes. The Liar still spawns research today because no simple true-or-false answer survives it. Source: Wikipedia, 'Eubulides'; OUP Blog, 'Eubulides and his paradoxes.'",
-    "topic": "the-sorites-paradox-the-heap"
-  },
-  {
     "tier": 4,
-    "question": "Four friends sort grains and argue about what 'heap' really means. Rhea says: 'There is one exact grain that turns the pile into a heap -- but no one alive could ever find out which.' Cleon says: 'No single grain is the one that turns it; you could fairly draw the line in lots of different spots.' Ada says: 'Right at the border I'd call a pile two-thirds of the way to being a heap.' Bran says: 'Take a vote -- a pile counts as a heap once more than half the room would call it one.' On whose view alone is a pile right at the border still, as a plain matter of fact, either a heap or not?",
+    "question": "Four friends sorting grain argue over what 'heap' means. Rhea says one exact grain makes the pile a heap, but no one could ever learn which; Cleon, that no single grain does it and the line could fairly fall in many spots; Ada, that a border pile is two-thirds of the way to a heap; Bran, that a pile is a heap once more than half the room calls it one. On whose view alone is a border pile plainly either a heap or not?",
     "answer": "Rhea's view, that one hidden grain turns the pile",
     "choices": [
       "Rhea's view, that one hidden grain turns the pile",
@@ -31253,7 +31058,7 @@
   },
   {
     "tier": 4,
-    "question": "Most thinkers try to save the word 'heap' from the paradox. The philosopher Peter Unger took the wildest road instead: he agreed that 'heap' has no real boundary, and then refused to flinch from where that leads. What jaw-dropping conclusion did Unger draw and defend?",
+    "question": "Peter Unger took the wildest road out of the heap paradox. While most thinkers try to save the word 'heap,' he agreed that it has no real boundary and refused to flinch from where that leads. What conclusion did Unger draw and defend?",
     "answer": "That there are, strictly, no heaps -- nor clouds, tables, or rocks",
     "choices": [
       "That there are, strictly, no heaps -- nor clouds, tables, or rocks",
@@ -31266,20 +31071,7 @@
   },
   {
     "tier": 1,
-    "question": "Picture a man living in a peaceful city with police and courts. Each night he still bolts his door and locks his money in a chest inside his own house. In his 1651 book Leviathan, written after the horrors of the English civil wars, the philosopher Thomas Hobbes pointed at this everyday habit. He said people already half-believe his dark view of human nature. What does locking your door quietly admit?",
-    "answer": "That you expect neighbors to rob you the instant it was safe",
-    "choices": [
-      "That you trust the law to guard you while you sleep peacefully",
-      "That you expect neighbors to rob you the instant it was safe",
-      "That property is theft and that ownership breeds crime",
-      "That fear of God alone is what restrains wicked men"
-    ],
-    "context": "Hobbes' rebuttal to 'when did this war ever happen?' He noted that even under law a man 'armes himselfe' for a journey, 'locks his dores,' and 'locks his chests' inside his own house: everyday distrust proves his point. Source: Hobbes, Leviathan (1651), Ch.13 (Wikisource).",
-    "topic": "the-state-of-nature"
-  },
-  {
-    "tier": 1,
-    "question": "Rousseau imagined the very first humans, long before towns or farms or kings. They wandered the forest alone. They ate what grew nearby. They never compared their lives to anyone else. He said this first human was neither a brute nor a hero. How did Rousseau say the forest-dweller actually felt?",
+    "question": "The first humans, as Rousseau imagined them, wandered the forest alone, long before towns or farms or kings, eating what grew nearby and never comparing their lives with others. Such a human, he said, was neither brute nor hero. How did Rousseau say the forest-dweller felt?",
     "answer": "Healthy and free, his few wants easily met by the woods",
     "choices": [
       "Terrified, sleeping with one eye open against night attackers",
@@ -31291,60 +31083,8 @@
     "topic": "the-state-of-nature"
   },
   {
-    "tier": 2,
-    "question": "Thomas Hobbes traced his anxious temperament to the very day he was born. In 1588 his pregnant mother heard that the Spanish Armada was sailing to invade England, and the shock brought him into the world too early. Looking back, Hobbes joked about the curious pair his mother delivered that day. What did Hobbes say his mother gave birth to?",
-    "answer": "Himself and Fear, born together as twins",
-    "choices": [
-      "Himself and Fear, born together as twins",
-      "Himself and Sorrow, weeping from his first breath",
-      "Himself and Genius, marked out for greatness",
-      "Himself and Sickness, never to know a healthy day"
-    ],
-    "context": "Hobbes told the story as a joke: his mother 'gave birth to twins, Me and Fear' (also remembered as 'fear and I were born twins together'). The man who made fear of violent death the base of all politics claimed he was literally born of fear. Source: Britannica & Wikipedia 'Thomas Hobbes'; History Today, 'Birth of Thomas Hobbes'.  (Legend.)",
-    "topic": "the-state-of-nature"
-  },
-  {
-    "tier": 2,
-    "question": "Thomas Hobbes ran a thought-experiment. Take away every government, law, and police force. What is left of human life? His answer became the most quoted line in political philosophy. Without laws, Hobbes wrote, the life of man is solitary, poor, nasty, brutish, and ___.",
-    "answer": "short",
-    "choices": [
-      "cruel",
-      "short",
-      "savage",
-      "doomed"
-    ],
-    "context": "The full line from Leviathan describes the 'warre of every man against every man,' where life is 'solitary, poore, nasty, brutish, and short.' It is the gateway picture of the whole debate: no rules at all means terror. Source: Hobbes, Leviathan (1651), Ch.13 (Wikisource).",
-    "topic": "the-state-of-nature"
-  },
-  {
-    "tier": 2,
-    "question": "John Locke pictured people with no government very differently from Hobbes. Everyone is free and equal, Locke said, with no one ruling anyone. But he denied that this freedom lets a person do whatever he pleases. In Locke's picture, what holds people back even with no king or police?",
-    "answer": "A moral law, knowable by reason, that forbids harming another",
-    "choices": [
-      "A moral law, knowable by reason, that forbids harming another",
-      "The fear of revenge from the victim's family and friends",
-      "The will of whoever happens to be strongest at the moment",
-      "An inborn pity that makes deliberate cruelty feel unbearable"
-    ],
-    "context": "Locke: 'though this be a state of liberty, yet it is not a state of licence.' A law of nature, read off reason itself, already obliges everyone that 'no one ought to harm another in his life, health, liberty, or possessions' (the pity answer is Rousseau's; might-makes-right and feud-fear are rival accounts of restraint). Source: Locke, Second Treatise (1689), Sec.4-6; Bill of Rights Institute.",
-    "topic": "the-state-of-nature"
-  },
-  {
-    "tier": 2,
-    "question": "Almost everyone credits Rousseau with the phrase 'noble savage,' picturing him praising primitive humanity as a pure-hearted hero. But scholars who checked his writings found he never used those words. The phrase was coined a century earlier by the poet John Dryden. Why do experts say Rousseau was, in effect, framed for it?",
-    "answer": "He called early man content and pre-moral, not a noble hero",
-    "choices": [
-      "He called early man content and pre-moral, not a noble hero",
-      "He had quietly stolen the whole idea from Dryden",
-      "He used the phrase once, in a letter later burned",
-      "He praised savages in public while mocking them in private"
-    ],
-    "context": "Rousseau never wrote 'noble savage'; Dryden coined it in his 1672 play The Conquest of Granada. Anthropologist Ter Ellingson argued Rousseau was 'framed': he described natural man as content and pre-moral, not as a noble hero. A famous thinker remembered for words he never wrote. Source: Britannica 'Noble savage'; Ter Ellingson, The Myth of the Noble Savage (2001).  (Legend.)",
-    "topic": "the-state-of-nature"
-  },
-  {
     "tier": 3,
-    "question": "Hobbes said life without a government is dangerous not because some men are stronger, but because everyone is roughly equal. Even the weakest, he noted, can kill the strongest by a hidden trap or by ganging up with others. From this rough equality, what did Hobbes say about how each person should treat the rest?",
+    "question": "Thomas Hobbes, writing Leviathan after England's civil wars, said life without government is dangerous not because some men are stronger but because all are roughly equal. Even the weakest, he noted, can kill the strongest by a hidden trap or by ganging up with others. What did he conclude about how each person should treat the rest?",
     "answer": "That no one is ever safe, so each has reason to strike first",
     "choices": [
       "That no one is ever safe, so each has reason to strike first",
@@ -31357,20 +31097,7 @@
   },
   {
     "tier": 3,
-    "question": "John Locke did not think people without government live in terror; he thought they live in a workable peace spoiled by one flaw. The trouble, he said, is that when someone wrongs you, you decide your own case and carry out the punishment yourself, and self-love makes people partial to themselves and their friends. What one thing did Locke say government exists to supply?",
-    "answer": "An impartial judge to settle disputes between equals",
-    "choices": [
-      "An impartial judge to settle disputes between equals",
-      "An all-powerful king whose every word becomes law",
-      "An army strong enough to frighten men into obedience",
-      "A shared religion to bind the people in conscience"
-    ],
-    "context": "For Locke the state of nature fails not from war but from bias: people are each judge and executioner of the law of nature, and 'passion and revenge' carry them too far. Government supplies the missing thing, an impartial judge. Source: Locke, Second Treatise (1689), Sec.13, 124-126; Founders' Constitution (U. Chicago).",
-    "topic": "the-state-of-nature"
-  },
-  {
-    "tier": 3,
-    "question": "Rousseau imagined the exact moment civilization went wrong. The first man fenced off a patch of ground, called it his own, and found people gullible enough to believe him. Rousseau then pictured a second man who could have spared the human race so many crimes, wars, and murders. What should that second man have done?",
+    "question": "Jean-Jacques Rousseau imagined the exact moment civilization went wrong: a man fenced off a patch of ground, called it his own, and found people gullible enough to believe him. Rousseau then pictured a second man who could have spared the human race so many crimes, wars and murders. What should that second man have done?",
     "answer": "Pulled up the stakes and cried that the earth belongs to all",
     "choices": [
       "Pulled up the stakes and cried that the earth belongs to all",
@@ -31396,7 +31123,7 @@
   },
   {
     "tier": 4,
-    "question": "Hobbes, Locke, and Rousseau all started from the same point: a human with no government over him. Yet they reached three opposite answers. Hobbes said it was a war of all against all. Locke said it was a rough but workable order. Rousseau said it was a lost peaceful paradise. What did this three-way split suggest each man's answer was secretly driven by?",
+    "question": "Three men began from the same blank slate, a human being with no government over him. Hobbes found a war of all against all, Locke a rough but workable order, and Rousseau a lost, peaceful paradise. What did the three-way split suggest was secretly driving each man's answer?",
     "answer": "His own politics, read back into pre-political man",
     "choices": [
       "His own politics, read back into pre-political man",
@@ -31421,21 +31148,8 @@
     "topic": "the-statue-and-the-lump-of-clay"
   },
   {
-    "tier": 3,
-    "question": "Plutarch tells how the Athenians kept Theseus's ship for centuries by replacing each rotting plank, one at a time, until not a splinter of the original wood was left. Then Thomas Hobbes sharpened the riddle: gather every discarded old plank and build a second ship out of them. After Hobbes's twist, what is the trouble?",
-    "answer": "Both ships have a real claim to be Theseus's, yet they cannot both be it",
-    "choices": [
-      "The repaired ship is now younger than the wood that it is built from",
-      "Both ships have a real claim to be Theseus's, yet they cannot both be it",
-      "The newer planks come from a different forest than the first ones did",
-      "The Athenians own two ships but can afford to keep only one of them"
-    ],
-    "context": "Legend: Plutarch recorded the plank-swapping puzzle in his 'Life of Theseus'; Hobbes added the rebuilt second ship. The continuously-repaired ship and the original-material ship each have a genuine claim to the name. Sources: Plutarch via Britannica; Hobbes addition via Live Science.",
-    "topic": "the-statue-and-the-lump-of-clay"
-  },
-  {
     "tier": 4,
-    "question": "A philosopher lays down a 300-year-old rule from Leibniz: if a thing A truly IS one and the same as B, then absolutely everything true of one must be true of the other — not a single difference allowed. He then notes that the lump of clay can survive being squashed flat, while the statue cannot. What does that one difference force him to conclude?",
+    "question": "A philosopher takes up Leibniz's rule: if A truly is B, everything true of one must be true of the other, with no exception. He sets it beside a statue and its lump of clay, which share the same spot, every atom and their whole history. Yet one can survive being squashed flat and the other cannot. What must he conclude?",
     "answer": "The statue is not the same thing as the lump, though they share all their matter",
     "choices": [
       "The lump and the statue must both be illusions, since the two of them disagree",
@@ -31448,7 +31162,7 @@
   },
   {
     "tier": 4,
-    "question": "Long before any clay statue, the Stoic Chrysippus posed a grislier version. Dion is a whole man; 'Theon' is the name for just Dion-minus-his-left-foot. Yesterday they were plainly two. Now Dion's left foot is amputated, and the man left over is made of the very same matter as Theon, in the same spot. Chrysippus gives a startling verdict about who survives. Which one does he say perishes?",
+    "question": "The Stoic Chrysippus posed a grislier cousin of the statue-and-clay puzzle. Dion is a whole man; 'Theon' is the name for Dion minus his left foot. Then Dion's left foot is cut off, and the man left over is made of the very same matter as Theon, in the same spot. Chrysippus gave a startling verdict. Which of the two did he say perishes?",
     "answer": "Theon, the foot-less part, even though Theon itself lost nothing at all",
     "choices": [
       "Dion, the whole man, because he is the one who actually lost a body part",
@@ -31461,7 +31175,7 @@
   },
   {
     "tier": 5,
-    "question": "Once you allow that a statue and a lump are two objects sharing one spot, why stop at two? Philosophers conjure a whole zoo of extra objects there, each defined by some passing condition: one that exists only while the statue stands indoors, one only while it sits in the light, one only while the sculptor happens to be eating dinner. Ernest Sosa warned that this opens an “explosion of reality.” On his warning, what would even the barest flutter of the smallest leaf then do?",
+    "question": "Ernest Sosa warned that counting a statue and its lump as two objects in one spot sets off an 'explosion of reality.' Why stop at two? Philosophers conjure objects that last only while the statue stands indoors, or sits in the light, or while the sculptor happens to be eating dinner. On Sosa's warning, what would the barest flutter of the smallest leaf then do?",
     "answer": "Create and destroy a fresh swarm of objects in that same instant",
     "choices": [
       "Create and destroy a fresh swarm of objects in that same instant",
@@ -31474,7 +31188,7 @@
   },
   {
     "tier": 5,
-    "question": "Suppose you settle on the answer that the statue and the lump are two different objects sharing one spot. They are built from the very same particles, arranged in the very same way. Critics call the trouble that follows the deepest unhealed wound in the whole puzzle. Why is it so damaging?",
+    "question": "A student decides that a statue and its lump of clay are two different objects sharing one spot. Yet the two are built from the very same particles, arranged in the very same way. Critics call the trouble that follows the deepest unhealed wound in the whole puzzle. Why does it cut so deep?",
     "answer": "Their matter is identical, so nothing is left over to explain their split fates",
     "choices": [
       "Same particles must mean a single object, so the honest count is really one",
@@ -31487,7 +31201,7 @@
   },
   {
     "tier": 1,
-    "question": "A knight is angry at a rival knight he is too afraid to challenge. So he stuffs a scarecrow with straw, props it up in the yard, shouts his rival's name at it, and beats it to pieces with his sword while a crowd cheers. He struts off claiming he won. What is the obvious problem with his \"victory\"?",
+    "question": "A knight too afraid to challenge his rival stuffs a scarecrow with straw, props it up, shouts the rival's name at it and hacks it to pieces while a crowd cheers. Then he struts off claiming victory. What is the obvious problem with his 'victory'?",
     "answer": "He beat up a fake stand-in, so the real rival is untouched and never fought",
     "choices": [
       "He beat up a fake stand-in, so the real rival is untouched and never fought",
@@ -31500,7 +31214,7 @@
   },
   {
     "tier": 1,
-    "question": "Will and Warren are arguing across a table about the national budget. Will says the country should spend more on schools and hospitals. Warren shoots back, 'I can't believe Will hates his own country so much that he wants to leave us defenceless by gutting the army!' Will just blinks — he never said one word about the army. What did Warren actually argue against?",
+    "question": "Will wants the country to spend more on schools and hospitals. Warren fires back that Will must hate his own country, since he wants to leave it defenceless by gutting the army. Will never mentioned the army. What did Warren actually argue against?",
     "answer": "A position Will never put forward, swapped in because it is easier to knock down",
     "choices": [
       "A position Will never put forward, swapped in because it is easier to knock down",
@@ -31539,7 +31253,7 @@
   },
   {
     "tier": 2,
-    "question": "The first speaker says a small town should fix its one cracked bridge before it builds anything new. The second speaker fires back with a crushing case: the town could never afford to rebuild all of its bridges at once. The crowd roars. What has the second speaker actually done to the first?",
+    "question": "One speaker urges a small town to fix its one cracked bridge before it builds anything new. A second speaker fires back with a crushing case that the town could never afford to rebuild all its bridges at once, and the crowd roars. What has the second speaker actually achieved?",
     "answer": "An empty win, since he toppled a target his rival never set up in the first place",
     "choices": [
       "An empty win, since he toppled a target his rival never set up in the first place",
@@ -31552,7 +31266,7 @@
   },
   {
     "tier": 3,
-    "question": "Spell out the exact trick. Person One asserts a claim, call it X. Person Two does not argue against X. Instead Person Two argues against a different claim, Y, that only LOOKS similar to X, and beats Y soundly. Even if Person Two demolishes Y perfectly, why has Person One's real claim survived?",
+    "question": "Person One asserts a claim; call it X. Person Two never argues against X. He attacks a different claim, Y, that only looks like X, and beats Y soundly. Even if Person Two demolishes Y perfectly, why has Person One's real claim survived?",
     "answer": "Because Person Two aimed at the look-alike claim and never landed a blow on the real one",
     "choices": [
       "Because Person Two aimed at the look-alike claim and never landed a blow on the real one",
@@ -31564,21 +31278,8 @@
     "topic": "the-straw-man-and-steelmanning"
   },
   {
-    "tier": 3,
-    "question": "The straw man builds a flimsy fake of your opponent's case and topples that. Suppose you want the honest opposite, a win you can actually trust. You face an opponent whose argument has real weak spots in it. What is the fair-play opposite of building a straw man?",
-    "answer": "Rebuild the case in its strongest possible form, then beat that version",
-    "choices": [
-      "Rebuild the case in its strongest possible form, then beat that version",
-      "Patch the weak spots quietly and let the repairs pass as original work",
-      "Allow only the version of the case that you decide is fair to debate",
-      "Hold back any clear verdict on whether the case is any good at all"
-    ],
-    "context": "The virtue opposite of the straw man is STEELMANNING: build a STEEL man, the strongest, most armored form of the other side, then reply to THAT. Straw is weak and burns; steel is strong and holds. You only get to claim victory if you beat the best version, not the worst. Source: en.wikipedia.org/wiki/Straw_man (steel man section: 'addressing the strongest form of the other person's argument') + lesswrong.com 'The case for using the term steelmanning'.",
-    "topic": "the-straw-man-and-steelmanning"
-  },
-  {
     "tier": 4,
-    "question": "In 1520 the monk Martin Luther fired back at the critics attacking his writings. He complained that they would not fight his real arguments: \"They assert the very things they assail, or they set up a man of straw whom they may attack.\" When Luther accused them of setting up a \"man of straw,\" what was he saying they did?",
+    "question": "Martin Luther fired back in 1520 at the critics attacking his writings. They would not fight his real arguments, he complained: 'They assert the very things they assail, or they set up a man of straw whom they may attack.' What was Luther saying his critics did?",
     "answer": "Invented a fake, weaker version of his view and fought that instead",
     "choices": [
       "Invented a fake, weaker version of his view and fought that instead",
@@ -31591,7 +31292,7 @@
   },
   {
     "tier": 4,
-    "question": "Aristotle listed this dodge in his book Sophistical Refutations. He grouped it with sham tricks that only look like real replies. He warned that the move beats a twisted, weaker version of the other person's claim, not the real one. According to Aristotle, what makes such a refutation worthless?",
+    "question": "Aristotle, some 2,300 years ago, listed a dodge among the sham replies in his Sophistical Refutations, tricks that only look like real answers. The move beats a twisted, weaker version of the other person's claim instead of the real one. What did Aristotle say makes such a refutation worthless?",
     "answer": "It answers a claim the opponent never made, so it settles nothing about the real one",
     "choices": [
       "It answers a claim the opponent never made, so it settles nothing about the real one",
@@ -31604,7 +31305,7 @@
   },
   {
     "tier": 4,
-    "question": "A blogger known as Black Belt Bayesian gave steelmanning its sharpest motto: if you only care about WINNING a dispute, you will refute the other side's case. But if you care about producing truth, you will do something stranger first. According to the motto, what does the honest truth-seeker do before answering the other side?",
+    "question": "A blogger who wrote as Black Belt Bayesian gave steelmanning its sharpest motto. Someone who cares only about winning a dispute, the blogger said, will refute the other side's case, but someone who cares about producing truth will do something stranger first. What does the truth-seeker do before answering?",
     "answer": "Fixes the opponents' arguments for them, repairing the case before replying",
     "choices": [
       "Fixes the opponents' arguments for them, repairing the case before replying",
@@ -31617,7 +31318,7 @@
   },
   {
     "tier": 5,
-    "question": "The hardest straw man to catch is not a crude lie. The clever version takes an argument and stretches it just slightly past what the person meant, slipping in an \"all\" or a \"never\" or a worst case, then crushes that swollen shape so the audience believes the original fell too. Why does this stretch-then-crush move slip past listeners who would have caught a plain lie?",
+    "question": "A debater takes the argument a person really made and stretches it just slightly past what she meant, slipping in an 'all' or a 'never' or a worst case. Then he crushes that swollen version, and the audience believes the original fell too. Why does this stretch-then-crush move slip past listeners who would have caught a plain lie?",
     "answer": "The stretched version began from something the person truly said, so it looks honest",
     "choices": [
       "The stretched version began from something the person truly said, so it looks honest",
@@ -31626,32 +31327,6 @@
       "The audience never learns whose argument was being stretched in the first place"
     ],
     "context": "The subtle, advanced STRAW MAN is exaggerate-then-refute: take a real position, stretch it slightly past what the person meant (add an 'all', a 'never', a worst case), demolish the stretched version, and let the audience think the real one fell too. It is hardest to catch precisely because it starts from something true, so the small stretch slips past unnoticed. Source: yourlogicalfallacyis.com/strawman ('By exaggerating, misrepresenting, or just completely fabricating someone's argument...') + en.wikipedia.org/wiki/Straw_man (exaggeration as a primary method).",
-    "topic": "the-straw-man-and-steelmanning"
-  },
-  {
-    "tier": 5,
-    "question": "Steelmanning has a serious philosophical ancestor. In 1959 the philosopher Neil Wilson named a rule for honest interpretation, later built into a full method by Quine and Davidson, that tells you how to read a confusing or clumsy speaker before you judge what was said. What does Wilson's rule tell the listener to do?",
-    "answer": "Read the words in the most reasonable and consistent way they can bear",
-    "choices": [
-      "Read the words in the most reasonable and consistent way they can bear",
-      "Read the words at face value, fixing nothing and forgiving no slip of phrasing",
-      "Read the words with suspicion, hunting first for the trap hidden inside them",
-      "Read the words as they were most likely heard by the crowd first addressed"
-    ],
-    "context": "Steelmanning's serious philosophical ancestor is the PRINCIPLE OF CHARITY, named by philosopher Neil L. Wilson in 1959: interpret a speaker's words in the most rational, coherent way possible before judging them. W.V.O. Quine (Word and Object, 1960) and Donald Davidson built it into a rule of interpretation; Davidson: 'We make maximum sense of the words and thoughts of others when we interpret in a way that optimises agreement.' Source: en.wikipedia.org/wiki/Principle_of_charity (Neil L. Wilson 1959 'Substances without Substrata'; Quine 1960; Davidson).",
-    "topic": "the-straw-man-and-steelmanning"
-  },
-  {
-    "tier": 5,
-    "question": "Two debaters each beat their opponent's argument. Mara quietly trims her opponent's case down to its shakiest claim and refutes that. Jonah instead patches every hole in his opponent's case, adds the strongest point left unmade, and refutes THAT improved version. A judge says only one of them has truly proven the opponent wrong. Which one, and why?",
-    "answer": "Jonah, because he beat the strongest possible version, leaving no better form to fall back on",
-    "choices": [
-      "Jonah, because he beat the strongest possible version, leaving no better form to fall back on",
-      "Mara, because she won faster, and the quicker refutation is always the cleaner one",
-      "Neither, because beating an argument can never prove its conclusion actually false",
-      "Both equally, since they each refuted the case in front of them, which is all debate asks"
-    ],
-    "context": "This is how to tell the two apart: a STRAW MAN makes the other side dumber so you can win cheap; a STEEL MAN makes the other side smarter so that if you still win, the win is real. Mara refuted a shrunken version, so a stronger form of her opponent's case is still standing; Jonah refuted the strongest possible version, so there is no better form left to rescue it. Same battlefield, opposite ethics: one builds a scarecrow to torch, the other forges armor for the enemy first. Source: synthesis of en.wikipedia.org/wiki/Straw_man (steel man = strongest form) + lesswrong.com 'The case for using the term steelmanning' (steelman improves beyond the original to test whether the position is TRUE).",
     "topic": "the-straw-man-and-steelmanning"
   },
   {
@@ -31668,21 +31343,8 @@
     "topic": "the-sublime"
   },
   {
-    "tier": 2,
-    "question": "A monstrous wave rears over the bay. To the sailor it swallows, it is pure horror; to the painter who stands watching it from the headland, it is one of the grandest sights of her life. The wave is exactly the same wave for both. What makes the difference between their two reactions?",
-    "answer": "The painter is in no real danger, so a power that would kill the sailor can only thrill her",
-    "choices": [
-      "The painter is in no real danger, so a power that would kill the sailor can only thrill her",
-      "The painter is simply braver than the sailor, and courage turns any horror into a pleasure",
-      "The painter has trained her eye on art, and skill turns a frightful scene into a fine one",
-      "The painter cares little for the sailor, and that coldness lets her enjoy a dreadful sight"
-    ],
-    "context": "Edmund Burke (1757) made distance the key: 'When danger or pain press too nearly, they are... simply terrible; but at certain distances... they are delightful.' Drowning in the sea is terror; watching the raging sea from shore is the sublime. Kant agreed — the same hurricane is terror to the man in it and a glory to the man in shelter, because his position changed, not the storm. Source: Burke, A Philosophical Enquiry (1757); Kant, Critique of the Power of Judgment (1790).",
-    "topic": "the-sublime"
-  },
-  {
     "tier": 3,
-    "question": "Edmund Burke argued that a pretty thing and a fearsome thing are simply not the same kind of thing, and drew up two opposed lists to prove it. On one side he set the small, the smooth, the delicate, the bright. What did he pile onto the OTHER side — the side of the sublime?",
+    "question": "Edmund Burke argued that a pretty thing and a fearsome thing are simply not the same kind of thing, and he drew up two opposed lists to prove it. On one side he set the small, the smooth, the delicate, the bright. What did he pile onto the other side, the side of the sublime?",
     "answer": "The vast, the rugged, the powerful, the dark",
     "choices": [
       "The vast, the rugged, the powerful, the dark",
@@ -31695,7 +31357,7 @@
   },
   {
     "tier": 3,
-    "question": "Before the 1700s, painters mostly chased pretty, orderly scenes: tidy gardens, calm harbors, gentle hills. Then the sublime gave a new wave of Romantic painters and poets permission to chase something else. They ran toward it. What did the sublime send them chasing?",
+    "question": "The Romantic painters and poets, freed by the idea of the sublime, turned away from the pretty, orderly scenes painters before the 1700s had mostly chased: tidy gardens, calm harbors, gentle hills. They ran toward something else. What did the sublime send them chasing?",
     "answer": "Storms, towering cliffs, and crumbling ruins — the vast and the overwhelming",
     "choices": [
       "Storms, towering cliffs, and crumbling ruins — the vast and the overwhelming",
@@ -31708,7 +31370,7 @@
   },
   {
     "tier": 4,
-    "question": "The philosopher Immanuel Kant asked why a violent mountain storm, watched from safety, should thrill us rather than merely frighten us. His answer pointed not at the storm at all, but back at the watcher. Kant said the storm makes us discover something in ourselves. What did Kant say we discover?",
+    "question": "Immanuel Kant asked why a violent mountain storm, watched from safety, should thrill human beings rather than merely frighten them. His answer pointed not at the storm but back at the watchers: the storm, he said, lets them discover something within themselves. What did Kant say they discover?",
     "answer": "A greatness within us — a courage and strength of mind that no storm could ever crush",
     "choices": [
       "A greatness within us — a courage and strength of mind that no storm could ever crush",
@@ -31721,20 +31383,7 @@
   },
   {
     "tier": 4,
-    "question": "Try to truly picture the whole night sky — every star, the full size of the universe — and your imagination stalls: you simply cannot hold it all as one image, and it feels like defeat. Immanuel Kant said that at this exact moment of failure, something in the mind rescues us and turns the defeat into a strange triumph. What did Kant say performs that rescue?",
-    "answer": "Reason, which can still think the infinite as a single whole even when the eye cannot",
-    "choices": [
-      "Reason, which can still think the infinite as a single whole even when the eye cannot",
-      "Memory, which stores the stars one by one until at last the whole of the sky is held",
-      "Faith, which trusts that some far greater being holds the whole that we never could",
-      "Habit, which slowly dulls the shock until the vastness no longer troubles us at all"
-    ],
-    "context": "Immanuel Kant (1790) called this the 'mathematically sublime' — not might but sheer SIZE, 'that in comparison with which everything else is small.' The imagination buckles trying to hold the infinite as one picture; that failure is the displeasure. But then our REASON can still think the whole of it as a single idea — so the defeat flips into a triumph, revealing a power in our own minds 'superior to nature.' That flip from crushed to exalted IS the feeling of the sublime. Kant said giant human-made things do it too — the pyramids, St. Peter's in Rome — too big for the eye to take in at one look. Source: Kant, Critique of the Power of Judgment (1790); 1000-Word Philosophy, Kant's Theory of the Sublime.",
-    "topic": "the-sublime"
-  },
-  {
-    "tier": 4,
-    "question": "Abraham Lincoln told a fellow stagecoach passenger that every good deed is really done out of selfishness. Just then they passed an old sow shrieking as her piglets drowned in a muddy slough. Lincoln leapt out, ran back, and lifted the little pigs onto the bank. When his companion asked where the selfishness was in that, Lincoln said he would have had no peace of mind all day if he had left the sow suffering. A philosopher reading the story spots the flaw in Lincoln's reasoning. What is it?",
+    "question": "Abraham Lincoln told a fellow stagecoach passenger that every good deed is selfish. Just then they passed a sow shrieking as her piglets drowned in a muddy slough, and Lincoln leapt out and lifted them onto the bank. Asked where the selfishness was, he said he would have had no peace of mind all day had he left the sow suffering. What flaw did Joel Feinberg find in his reasoning?",
     "answer": "Lincoln felt that relief only because he already wanted the pigs to be safe, so his real aim was something beyond his own good feeling",
     "choices": [
       "Lincoln felt that relief only because he already wanted the pigs to be safe, so his real aim was something beyond his own good feeling",
@@ -31747,7 +31396,7 @@
   },
   {
     "tier": 4,
-    "question": "A friend insists that absolutely everything is mysterious. You point out that how blood moves through the body is well understood and no mystery at all. He replies that even blood flow still holds things left to learn, so it counts as mysterious too. By the time he is done, nothing in the world could ever be called non-mysterious. Why does that very success ruin his point?",
+    "question": "Omar's friend insists that absolutely everything is mysterious. Omar points out that how blood moves through the body is well understood and no mystery at all. The friend replies that even blood flow still holds things left to learn, so it counts as mysterious too. By the time he is done, nothing in the world could be called non-mysterious. Why does that very success ruin his point?",
     "answer": "Once the word stretches to cover everything, it no longer divides anything, so calling a thing mysterious tells you nothing at all",
     "choices": [
       "Once the word stretches to cover everything, it no longer divides anything, so calling a thing mysterious tells you nothing at all",
@@ -31773,7 +31422,7 @@
   },
   {
     "tier": 2,
-    "question": "A teacher writes two sentences on the board: 'Every human being is mortal' and 'Socrates is a human being.' She asks what, if anything, the class is now stuck with. Once you accept both of those sentences, what happens to the claim that Socrates is mortal?",
+    "question": "Two sentences go up on the board: 'Every human being is mortal' and 'Socrates is a human being.' The teacher asks what, if anything, the class is now stuck with. Suppose you accept both of them. What then happens to the claim that Socrates is mortal?",
     "answer": "You are forced into it — you cannot grant both and still deny it",
     "choices": [
       "You are forced into it — you cannot grant both and still deny it",
@@ -31786,7 +31435,7 @@
   },
   {
     "tier": 2,
-    "question": "Elizabeth tells you one true thing about her garage: she owns either a Honda or a Saturn, and nothing else. A moment later she adds, also truthfully, that she does not own a Honda. From just those two facts, what do you now know for certain about her car?",
+    "question": "Elizabeth says one true thing about her garage: she owns either a Honda or a Saturn, and nothing else. A moment later she adds, also truthfully, that she does not own a Honda. From those two facts alone, what is now certain about her car?",
     "answer": "It is a Saturn — ruling the one option out leaves the other forced",
     "choices": [
       "It could still be either — she never actually said which one she owns",
@@ -31799,7 +31448,7 @@
   },
   {
     "tier": 2,
-    "question": "Look at how this argument hangs together: 'All Greeks are men; all men are mortal; therefore all Greeks are mortal.' One word does the secret work — it appears in both of the first two sentences, joins the two ends of the argument, then vanishes from the conclusion. Which word is that connecting hinge?",
+    "question": "A student copies an argument into his notebook: 'All Greeks are men; all men are mortal; therefore all Greeks are mortal.' One word does the secret work: it appears in both of the first two sentences, joins the two ends of the argument, then vanishes from the conclusion. Which word is that connecting hinge?",
     "answer": "men",
     "choices": [
       "men",
@@ -31812,7 +31461,7 @@
   },
   {
     "tier": 2,
-    "question": "A kid argues: 'All basketballs are round; the Earth is round; therefore the Earth is a basketball.' Notice all three sentences are actually true. Yet the conclusion is plainly silly. Even with every sentence true, did the conclusion really have to follow from the first two?",
+    "question": "A kid argues: 'All basketballs are round; the Earth is round; therefore the Earth is a basketball.' His two starting sentences are true, yet the conclusion is plainly silly. When an argument of this shape does land on a true conclusion, did that conclusion have to follow?",
     "answer": "No — its truth is a lucky coincidence, the sentences never forced it",
     "choices": [
       "Yes — once the sentences are true, the conclusion is locked in tight",
@@ -31825,33 +31474,7 @@
   },
   {
     "tier": 3,
-    "question": "A logic teacher writes on the chalkboard: 'All M are P; all S are M; therefore all S are P.' She has used bare capital letters where real words would go, and she challenges the class to break this argument shape. Not one student can break it. One sharp student then raises a puzzled hand: with not a single real subject named anywhere in the argument, what is it that we are even judging when we call an argument like this a good one? The teacher explains that Aristotle first studied argument-shapes this way over two thousand years ago in ancient Greece.",
-    "answer": "The arrangement of its terms — judged without knowing whether one sentence is true",
-    "choices": [
-      "The arrangement of its terms — judged without knowing whether one sentence is true",
-      "The truth of its premises — a good argument needs true starting sentences",
-      "The fame of the example — Aristotle's own cases are the reliable ones",
-      "The order you read it in — premises first, then the conclusion last"
-    ],
-    "context": "Validity lives in the SHAPE, not the topic. The form 'All M are P; all S are M; therefore all S are P' is judged by the arrangement of its terms alone — which is why you can check whether an argument is valid without knowing whether a single one of its sentences is true. Source: Stanford Encyclopedia of Philosophy, 'Aristotle's Logic' (plato.stanford.edu/entries/aristotle-logic) and IEP, 'Validity and Soundness.'",
-    "topic": "the-syllogism-and-valid-form"
-  },
-  {
-    "tier": 3,
-    "question": "Logicians say an argument is 'valid' when its form makes one situation flat-out impossible. You can have a valid argument with false premises, or with a conclusion you doubt. But there is exactly one combination its form forbids. Which situation can a valid form never allow?",
-    "answer": "Every premise true while the conclusion is false",
-    "choices": [
-      "Every premise false while the conclusion is true",
-      "A conclusion that states something the premises did not",
-      "Premises about a topic the conclusion never mentions",
-      "Every premise true while the conclusion is false"
-    ],
-    "context": "A valid argument is one whose form 'makes it impossible for the premises to be true and the conclusion nevertheless to be false.' Validity is a guarantee — IF the premises are true, the conclusion is locked in. It does not promise the premises actually are true. Source: Internet Encyclopedia of Philosophy, 'Validity and Soundness' (iep.utm.edu/val-snd).",
-    "topic": "the-syllogism-and-valid-form"
-  },
-  {
-    "tier": 3,
-    "question": "A debater shows you an argument with a flawless valid shape. Then he grins: 'Valid only means the shape is good — it never promised the argument proves anything true.' Logicians keep a stronger word for an argument that does not just reason well but truly settles its conclusion. Beyond a valid shape, what must such an argument have?",
+    "question": "A debater lays out an argument with a flawless valid shape, then grins: 'Valid only means the shape is good — it never promised the argument proves anything true.' Logicians keep a stronger word for an argument that truly settles its conclusion. Beyond a valid shape, what must such an argument have?",
     "answer": "Its premises must all actually be true, not merely well-arranged",
     "choices": [
       "Its conclusion must be something nobody has ever doubted before",
@@ -31864,7 +31487,7 @@
   },
   {
     "tier": 4,
-    "question": "Aristotle replaced names like 'Socrates' and 'Greeks' with bare letters — A, B, C — so an argument's shape could be studied on its own. Historians call this single stroke the birth of a tool we still use everywhere — in algebra, in code, in logic. What did Aristotle invent here?",
+    "question": "In place of names like 'Socrates' and 'Greeks,' Aristotle wrote bare letters, A, B, C, so that an argument's shape could be studied on its own. Historians call this stroke the birth of a tool still used everywhere: in algebra, in computer code, in logic. What did Aristotle invent?",
     "answer": "The variable — a placeholder letter that stands for any term at all",
     "choices": [
       "The alphabet, repurposed from speech into a system of writing",
@@ -31903,20 +31526,7 @@
   },
   {
     "tier": 5,
-    "question": "Consider this argument: 'All toasters are made of gold. Everything made of gold is a time-travel device. So all toasters are time-travel devices.' Every line is plainly false, and the conclusion is silly. Yet logicians insist the reasoning is perfectly valid. How can an argument be called valid when not one of its sentences is true?",
-    "answer": "Validity guards only the link from premises to conclusion, not the facts",
-    "choices": [
-      "It cannot — an argument with all-false sentences is never truly valid",
-      "Validity guards only the link from premises to conclusion, not the facts",
-      "It is valid only because all three of its sentences are false together",
-      "Validity here just means the sentences are short and easy to follow"
-    ],
-    "context": "A perfectly VALID argument can have false premises AND a false conclusion — the SHAPE is valid even when every line is absurd. Validity protects the inference, not the facts. (This is the mirror image of the basketball case, where true sentences gave an invalid argument.) Source: Internet Encyclopedia of Philosophy, 'Validity and Soundness' (iep.utm.edu/val-snd).",
-    "topic": "the-syllogism-and-valid-form"
-  },
-  {
-    "tier": 5,
-    "question": "Here is an argument that feels just like the Socrates one: 'All cats are mammals; all dogs are mammals; therefore all cats are dogs.' Both starting sentences are true, and the three-line shape looks right — but the conclusion is false. The word 'mammals' shows up in both premises, yet the argument still fails. Why does it collapse?",
+    "question": "Mia offers an argument that feels just like a classic syllogism: 'All cats are mammals; all dogs are mammals; therefore all cats are dogs.' Both starting sentences are true and the three-line shape looks right, but the conclusion is false. The word 'mammals' shows up in both premises, yet the argument fails. Why does it collapse?",
     "answer": "The shared word 'mammals' sits above both cats and dogs but never joins them to each other",
     "choices": [
       "The shared word 'mammals' sits above both cats and dogs but never joins them to each other",
@@ -31929,7 +31539,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1879 a slim book — Gottlob Frege's 'Begriffsschrift' — finally pushed past Aristotle's view of valid form and started modern logic. Before that, Kant had calmly said the whole subject was finished and perfect. What amazing fact about Aristotle's logic did Frege's book bring to an end?",
+    "question": "Gottlob Frege published a slim book in 1879, the Begriffsschrift, that finally pushed past Aristotle's account of valid form and started modern logic. Before then, Immanuel Kant had calmly called the whole subject finished. What long-standing fact about Aristotle's logic did Frege's book bring to an end?",
     "answer": "It had stood essentially unchanged AS logic itself for two thousand years",
     "choices": [
       "It had stood essentially unchanged AS logic itself for two thousand years",
@@ -31942,7 +31552,7 @@
   },
   {
     "tier": 2,
-    "question": "Roman followers of Epicurus took a Greek word and made it into four short sentences. You keep them in your head to calm a worried mind. But 'tetrapharmakos' already meant something else in daily life, long before those philosophers borrowed it. What did it first name?",
+    "question": "Roman followers of Epicurus gave a Greek name to four short sentences they kept in their heads to calm a worried mind: the tetrapharmakos. But the word already meant something in daily life long before the philosophers borrowed it. What did it first name?",
     "answer": "A salve of beeswax, pine resin, pitch and animal fat, rubbed onto open cuts",
     "choices": [
       "A salve of beeswax, pine resin, pitch and animal fat, rubbed onto open cuts",
@@ -31954,21 +31564,8 @@
     "topic": "the-tetrapharmakos-the-four-part-cure"
   },
   {
-    "tier": 3,
-    "question": "In ancient Greece, the philosopher Epicurus taught that fearing death is wasted worry. While you are alive, he said, death is nowhere near you. And when death finally arrives, you are gone — no thoughts, no feelings, nothing left to hurt. So there is never a moment when 'you' and 'suffering from death' exist together at all. Epicurus squeezed the whole argument into one famous line. What was it?",
-    "answer": "While I am still here death is not, and once death comes I am no longer here",
-    "choices": [
-      "While I am still here death is not, and once death comes I am no longer here",
-      "Death is owed to nature like a debt, and a debt once paid can trouble no one",
-      "Death takes only the body, and what it cannot touch is the part worth keeping",
-      "Death ends a long journey, and no traveller fears the inn where the road stops"
-    ],
-    "context": "This is the second of Epicurus's four cures. His own words: 'So long as we exist death is not present, whereas when death is present we do not exist.' Principal Doctrine 2 adds: 'Death is nothing to us; for that which is dissolved is devoid of sensation, and that which is devoid of sensation is nothing to us.' The self and its death never overlap, so death can never be experienced as harm. Source: Epicurus, Letter to Menoeceus (trans. Saint-Andre); Principal Doctrine 2 in Diogenes Laertius Book X.",
-    "topic": "the-tetrapharmakos-the-four-part-cure"
-  },
-  {
     "tier": 4,
-    "question": "The first of Epicurus's four cures is 'don't fear the gods.' But he was no atheist — he insisted the gods are real. A student presses him: if the gods exist, why shouldn't I dread their punishment? What reasoning does Epicurus give to dissolve the fear?",
+    "question": "A student presses Epicurus on the first of his four cures, 'don't fear the gods.' Epicurus is no atheist; he insists the gods are real. The student wants to know why, then, he should not dread their punishment. What reasoning does Epicurus give to dissolve the fear?",
     "answer": "A god so perfect is troubled by nothing, so it feels no anger and never punishes",
     "choices": [
       "A god so perfect is troubled by nothing, so it feels no anger and never punishes",
@@ -31981,7 +31578,7 @@
   },
   {
     "tier": 4,
-    "question": "The ancient Greek philosopher Epicurus boiled his whole teaching down to four short 'cures' for anxiety — a kind of medicine for the soul. The last of those four cures promises that 'the terrible is easy to endure.' To back the boast, Epicurus claimed pain comes with a built-in limit that makes any suffering survivable. What is the limit he claims?",
+    "question": "Pain, Epicurus claimed, comes with a built-in limit that makes any suffering survivable. That claim stands behind the last line of the four-line cure his followers memorized: 'the terrible is easy to endure.' What limit did Epicurus claim pain has?",
     "answer": "If pain is intense it burns out fast, and if it drags on for long it stays mild",
     "choices": [
       "If pain is intense it burns out fast, and if it drags on for long it stays mild",
@@ -32098,7 +31695,7 @@
   },
   {
     "tier": 2,
-    "question": "A carpenter in ancient Greece builds a wooden chair. It wobbles a bit, one leg is slightly uneven, and one day it will simply rot away. Yet the moment you look at it you know it is a chair — you match it in your mind against an idea of a perfect chair no carpenter ever built and you have never seen with your own eyes. The Greek philosopher Plato made a startling claim about which of the two chairs is more real: the wobbly wooden one you sit in, or the perfect one that no one ever built. What does Plato claim?",
+    "question": "Suppose you sit on a wobbly wooden chair that a Greek carpenter built and that will one day rot. You know at a glance it is a chair, because your mind matches it against a perfect chair no carpenter ever built. Which of the two did Plato call more real?",
     "answer": "The perfect chair you never see is more real than the wooden one you touch",
     "choices": [
       "The perfect chair you never see is more real than the wooden one you touch",
@@ -32111,7 +31708,7 @@
   },
   {
     "tier": 2,
-    "question": "A bowling ball, a basketball, and a circle chalked on a blackboard are three completely different things — different weights, different jobs, different places. Yet all three of them are round. The ancient Greek philosopher Plato says this one shared feature — roundness — points to a single unchanging thing standing behind every round object in the world. Every round ball, every round plate, and every round wheel takes part in the very same thing, he claims. What does Plato say all round things take part in?",
+    "question": "A bowling ball, a basketball and a circle chalked on a blackboard differ in weight, in use and in place, yet all three are round. Plato said this one shared feature points to a single unchanging thing behind every round object in the world. What did he say all round things take part in?",
     "answer": "One single Roundness itself, which every round thing copies",
     "choices": [
       "One single Roundness itself, which every round thing copies",
@@ -32124,7 +31721,7 @@
   },
   {
     "tier": 2,
-    "question": "Socrates asks a young friend whether justice itself, and beauty itself, are real things, and then asks, Have you ever seen any of these with your eyes? The friend admits he never has. Socrates says you grasp them another way entirely. By what does he say you grasp justice and beauty themselves?",
+    "question": "Socrates asked a young friend whether justice itself and beauty itself are real, and then whether he had ever seen either one with his eyes. The friend admitted he never had. They are grasped another way entirely, Socrates said. By what did he say justice and beauty themselves are grasped?",
     "answer": "By the mind alone, since they are real but never met by the eyes",
     "choices": [
       "By the mind alone, since they are real but never met by the eyes",
@@ -32136,21 +31733,8 @@
     "topic": "the-theory-of-forms"
   },
   {
-    "tier": 2,
-    "question": "Plato pictures three makers. God makes one true Bed in nature. A carpenter looks toward that Bed and builds a wooden bed you can lie on. Then a painter sets up an easel and paints the carpenter's bed. Plato ranks all three by how far each maker's bed stands from the truth. Where does the carpenter's wooden bed fall?",
-    "answer": "One step below the true Bed, a copy that the painter in turn copies all over again",
-    "choices": [
-      "One step below the true Bed, a copy that the painter in turn copies all over again",
-      "Furthest from the truth, since wood rots while a painted bed can outlast it for ages",
-      "Level with the true Bed, since both God and the carpenter make real beds you can use",
-      "Truest of the three, since a solid bed beats both a bare idea and a flat picture of one"
-    ],
-    "context": "In Republic Book 10 Plato ranks three beds: God's true Bed, the carpenter's copy of it, and the painter's copy of the copy. The painter's work is 'thrice removed from the king and from the truth,' which places the carpenter's wooden bed one step down from the original. Source: Plato, Republic Book 10 (Jowett trans.), Wikisource; Perseus 597.",
-    "topic": "the-theory-of-forms"
-  },
-  {
     "tier": 3,
-    "question": "Two sticks look exactly equal in length. But tilt your head, and one looks longer; hand them to a different man, and he calls them unequal. Socrates notes the sticks can seem both equal AND unequal, yet Equality itself can never seem unequal. Why does he say this gap proves that Equality is something separate from any pair of sticks?",
+    "question": "Two sticks look exactly equal in length, yet from another angle one looks longer, and a different man calls them unequal. Socrates noted that the sticks can seem both equal and unequal, while Equality itself can never seem unequal. Why did he say this gap proves Equality is something separate from any pair of sticks?",
     "answer": "Because the sticks can fail to be equal but the perfect Equal never can, so they cannot be the same thing",
     "choices": [
       "Because the sticks can fail to be equal but the perfect Equal never can, so they cannot be the same thing",
@@ -32163,20 +31747,7 @@
   },
   {
     "tier": 3,
-    "question": "No two sticks in the world are ever perfectly equal. Yet every child has the idea of perfect equality. Socrates argues you could not have gotten this idea from the flawed things around you. So where, he says, must your soul have met perfect Equality — leaving the sticks only to remind you of it?",
-    "answer": "Before birth, so that learning is really remembering what the soul once saw",
-    "choices": [
-      "Before birth, so that learning is really remembering what the soul once saw",
-      "In early childhood, by being patiently taught the word equal by elders",
-      "In a flash of pure invention, since the mind can dream up what it lacks",
-      "Nowhere at all, since the idea is just a blur of every pair you have seen"
-    ],
-    "context": "This is Plato's doctrine of recollection (anamnesis, Phaedo 72e-77a): since deficient copies could never give us the idea of the perfect Equal, the soul must have seen the Forms directly before birth, and the copies merely remind us of them, so 'learning is no other than recollection.' Source: Phaedo 72e-77a, via SEP and IEP 'Plato: Phaedo.'",
-    "topic": "the-theory-of-forms"
-  },
-  {
-    "tier": 3,
-    "question": "A beautiful face is also plain from a bad angle; a just act in one city is called unjust in another. Such things, Plato says, can be both a thing and its opposite, so the most we can have about them is shifting opinion. Real knowledge, he argues, needs a different sort of object. WHY can a thing that is both F and not-F never be an object of real knowledge?",
+    "question": "A beautiful face looks plain from a bad angle; a just act in one city is called unjust in another. Such things, Plato said, can be both a thing and its opposite, so the most anyone can have about them is shifting opinion; real knowledge needs a different sort of object. Why can such a thing never be an object of real knowledge?",
     "answer": "Because a thing that turns into its own opposite gives the mind nothing fixed to lock onto and know",
     "choices": [
       "Because a thing that turns into its own opposite gives the mind nothing fixed to lock onto and know",
@@ -32188,34 +31759,8 @@
     "topic": "the-theory-of-forms"
   },
   {
-    "tier": 3,
-    "question": "Plato draws a comparison. In the visible world the sun does two jobs at once: its light lets your eye see things, and its warmth lets those things grow and live. He says one single Form does both jobs in the realm of the mind. Which Form does he crown as this sun of the mind?",
-    "answer": "The Good, which Plato sets above every other Form",
-    "choices": [
-      "The Good, which Plato sets above every other Form",
-      "Beauty, which a lover may chase from face to face",
-      "Equality, which two leaning sticks can only fall short of",
-      "Justice, which no single city has ever fully reached"
-    ],
-    "context": "The Sun analogy (Republic VI, ~508-509): just as the sun lets the eye see things and gives them life, the Form of the Good lets the mind know the Forms and is the source of their very being. 'What gives truth to the things known and the power to know to the knower is the Form of the Good.' Source: Republic 508c-509b; Wikipedia 'Analogy of the Sun'; SEP.",
-    "topic": "the-theory-of-forms"
-  },
-  {
-    "tier": 3,
-    "question": "Plato pictures prisoners chained in a cave since birth, facing a blank wall where shadows are thrown. One prisoner is freed, stumbles past the fire that cast the shadows, and is dragged up into the blinding daylight outside. For his whole life he had taken the shadows on the wall for one thing. What had the shadows been to him?",
-    "answer": "The whole of reality, when they were only flickering copies of real things",
-    "choices": [
-      "The whole of reality, when they were only flickering copies of real things",
-      "A message from the gods, when the moving shapes carried no meaning at all",
-      "Cruel theater staged by jailers, when no one had chained him there to fool him",
-      "His own reflection cast back, when the bare wall in truth showed him nothing"
-    ],
-    "context": "In the Allegory of the Cave (Republic 514a-520a), the freed prisoner's climb from shadows to firelight to the sun pictures the soul's ascent from copies to the Forms. The prisoners' error is taking the shadows, mere copies, for the whole of reality, the same mistake Plato says we make when we treat sensible things as the only real ones. Source: Republic 514a-520a; Wikipedia 'Allegory of the cave'; SEP.",
-    "topic": "the-theory-of-forms"
-  },
-  {
     "tier": 4,
-    "question": "Plato keeps raising the Form of the Good above the other Forms. The Good, he writes, is the source that gives every other Form both its truth and its very being. Yet in the same breath he refuses to call the Good just one more being among the rest. So is the Good the highest being there is, or something that is not a being at all?",
+    "question": "Plato kept raising the Form of the Good above the other Forms. The Good, he wrote, is the source that gives every other Form both its truth and its very being. Yet in the same breath he refused to call the Good just one more being among the rest. What, then, did Plato take the Good to be?",
     "answer": "Not a being at all, but the source that stands above being and lets everything else be",
     "choices": [
       "Not a being at all, but the source that stands above being and lets everything else be",
@@ -32228,7 +31773,7 @@
   },
   {
     "tier": 4,
-    "question": "Young Socrates says large things are large because they share in one Form, called Largeness. The aged Parmenides springs a trap: if Largeness explains large things, and Largeness is itself large, then the large things plus Largeness now share something, so you need a second Largeness to explain that group, then a third. What has Socrates built by accident?",
+    "question": "Large things are large, young Socrates said, because they share in one Form, Largeness. The aged Parmenides sprang a trap: if Largeness is itself large, the large things plus Largeness now share something, which calls for a second Largeness to explain the group, then a third. What had Socrates built by accident?",
     "answer": "An endless tower of ever-higher Forms, when the Form was meant to STOP such a chain",
     "choices": [
       "An endless tower of ever-higher Forms, when the Form was meant to STOP such a chain",
@@ -32241,7 +31786,7 @@
   },
   {
     "tier": 5,
-    "question": "Parmenides presses his hardest objection on young Socrates. Suppose the Forms are truly SEPARATE from our world, perfect and apart, touching only one another. Parmenides draws a chilling conclusion from this clean separation. What does perfect separateness cost us?",
+    "question": "Parmenides pressed his hardest objection on young Socrates. Suppose the Forms are truly separate from this world, perfect and apart, touching only one another. Parmenides drew a chilling conclusion from that clean split. What did he say such perfect separateness would cost human beings?",
     "answer": "We could never know the Forms, since our minds reach only things here and never cross over to where the Forms sit",
     "choices": [
       "We could never know the Forms, since our minds reach only things here and never cross over to where the Forms sit",
@@ -32254,7 +31799,7 @@
   },
   {
     "tier": 5,
-    "question": "Parmenides has just battered the theory of Forms with objection after objection. Young Socrates looks ready to give the whole thing up. But Parmenides stops him with a warning: deny that for each thing there is a character that is always the same, he says, and you will destroy something precious altogether. What does he warn that dropping the Forms would wreck?",
+    "question": "Young Socrates looked ready to give up the theory of Forms after Parmenides battered it with objection after objection. Parmenides stopped him with a warning: deny that each thing has a character that stays always the same, and something precious is destroyed altogether. What did he warn that dropping the Forms would wreck?",
     "answer": "The power of disciplined argument itself, leaving the mind nothing steady to reason about",
     "choices": [
       "The power of disciplined argument itself, leaving the mind nothing steady to reason about",
@@ -32267,7 +31812,7 @@
   },
   {
     "tier": 1,
-    "question": "The ancient Greek philosopher Aristotle said one thin kind of friendship exists only because each person is useful to the other. Look at Tomas. He sits with his classmate Dmitri every day, but only on the days the homework is hard. On easy days, and after the final exam is over, he never seeks Dmitri out at all. What holds the two of them together?",
+    "question": "Tomas sits with his classmate Dmitri, but only on the days the homework is hard. On easy days, and after the final exam, he never seeks Dmitri out. What holds Tomas to Dmitri?",
     "answer": "The use Dmitri is to him, which is all the bond rests on",
     "choices": [
       "The use Dmitri is to him, which is all the bond rests on",
@@ -32293,7 +31838,7 @@
   },
   {
     "tier": 2,
-    "question": "In his book the Nicomachean Ethics, the ancient Greek philosopher Aristotle argued that people find exactly three things lovable — and so, he said, there turn out to be exactly three kinds of friendship, one built on each. Two of the three rest on something the friend provides. What are the three things Aristotle names?",
+    "question": "Three kinds of friendship, Aristotle argued, grow from the three things people find lovable, one kind built on each. Two of the three rest on something the friend provides. What are the three lovable things he names?",
     "answer": "The useful, the pleasant, and the good person himself",
     "choices": [
       "The useful, the pleasant, and the good person himself",
@@ -32306,7 +31851,7 @@
   },
   {
     "tier": 2,
-    "question": "The ancient Greek philosopher Aristotle held that most friendships rest on something that can change — a useful favor, a shared good time — so they last only as long as that thing does. But in the Nicomachean Ethics he singled out one kind of friendship that holds steady for a whole life. What does that lasting kind of friendship rest on?",
+    "question": "In the Nicomachean Ethics, Aristotle singled out one kind of friendship that holds steady for a whole life. Most friendships, he held, rest on something that can change, a useful favor or a shared good time, and last only as long as that thing does. What does the lasting kind rest on?",
     "answer": "The good character of the two friends themselves",
     "choices": [
       "The good character of the two friends themselves",
@@ -32319,7 +31864,7 @@
   },
   {
     "tier": 2,
-    "question": "In ancient Athens, the philosopher Aristotle sorted friendships into three kinds: bonds of use, bonds of pleasure, and true bonds of virtue. Only the last, he said, is real friendship. He offered an easy test for spotting a fake friend. Stop being useful or fun and just watch. What does Aristotle say the friend who came only for the perks will do?",
+    "question": "Suppose you stop being useful or fun to a friend, and just watch: Aristotle called it an easy test for friendships of use or pleasure. What does he say a friend who came only for the perks will do?",
     "answer": "Falls away, since the bond was never about you at all",
     "choices": [
       "Falls away, since the bond was never about you at all",
@@ -32332,7 +31877,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristotle reaches for a single short phrase to capture how completely two true friends are bound together, so closely that what touches one touches the other. It is a line that has echoed for over two thousand years. How does Aristotle describe a true friend?",
+    "question": "Aristotle reached for a single short phrase to capture how completely two true friends are bound together, so closely that what touches one touches the other. The line has echoed for over two thousand years. How did Aristotle describe a true friend?",
     "answer": "A second self",
     "choices": [
       "A second self",
@@ -32345,7 +31890,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristotle watches a man admire a famous stranger from afar and genuinely hope that stranger does well in life, though the stranger has no idea the man exists. Aristotle calls this real goodwill, but insists it is not yet friendship. Why does Aristotle say it falls short of friendship?",
+    "question": "Aristotle described a man who admires a famous stranger from afar and genuinely hopes that stranger does well, though the stranger has no idea the man exists. He called this real goodwill, but insisted it was not yet friendship. Why did he say it falls short of friendship?",
     "answer": "Goodwill is only the seed; friendship is the grown thing, needing time and a bond returned",
     "choices": [
       "Goodwill is only the seed; friendship is the grown thing, needing time and a bond returned",
@@ -32358,7 +31903,7 @@
   },
   {
     "tier": 2,
-    "question": "In 399 BC the city of Athens dragged the 70-year-old philosopher Socrates before a citizen court on two charges. What did Athens accuse him of doing?",
+    "question": "Three citizens of Athens took Socrates to court in 399 BC, when he was about seventy, before a huge citizen jury. What two charges did they bring against the old philosopher?",
     "answer": "Corrupting the young men and refusing to honor the city's gods",
     "choices": [
       "Corrupting the young men and refusing to honor the city's gods",
@@ -32367,32 +31912,6 @@
       "Selling Athenian battle plans to merchants from rival Greek cities"
     ],
     "context": "The indictment charged corrupting the youth and impiety -- not believing in the gods the city believed in, and introducing new divinities. Source: Stanford Encyclopedia of Philosophy: Socrates; Plato, Apology.",
-    "topic": "the-trial-of-socrates"
-  },
-  {
-    "tier": 2,
-    "question": "In 399 BC, an Athenian jury put the philosopher Socrates on trial for his life, charging him with corrupting the young men of the city with his endless questions. Rather than beg or promise to be quiet, Socrates told the jury he would sooner be put to death than stop asking hard questions about how a human being ought to live well. A life that is never questioned about goodness, he told them, is what?",
-    "answer": "Not worth living for a human being",
-    "choices": [
-      "Not worth living for a human being",
-      "The safest and happiest kind of life",
-      "The proper life for an obedient citizen",
-      "A life the gods reward after death"
-    ],
-    "context": "\"The unexamined life is not worth living\" (Apology 38a) -- a life never questioned about virtue is not worth a human being's living. Source: Plato, Apology 38a; classics.mit.edu.",
-    "topic": "the-trial-of-socrates"
-  },
-  {
-    "tier": 2,
-    "question": "In 399 BC, after weeks of trial in Athens, the jury of citizens found the seventy-year-old philosopher Socrates guilty of impiety and of corrupting the city's youth. Under Athens's law, the convicted man now had to name his own punishment. Instead of begging for mercy, the old philosopher answered with something bold. What did Socrates say he deserved?",
-    "answer": "Free meals for life at the city's table, the honor reserved for its heroes",
-    "choices": [
-      "Free meals for life at the city's table, the honor reserved for its heroes",
-      "A quiet life of exile, banished to the countryside far from Athens",
-      "A heavy fine in silver, paid out steadily over the coming years",
-      "A public whipping in the marketplace to satisfy his three accusers"
-    ],
-    "context": "Asked to name his penalty, Socrates said his true reward was free meals for life in the Prytaneum -- the honor given to Olympic champions and city heroes -- not a punishment at all. Source: Plato, Apology 36d-37a; Diogenes Laertius II.42.",
     "topic": "the-trial-of-socrates"
   },
   {
@@ -32410,7 +31929,7 @@
   },
   {
     "tier": 3,
-    "question": "In ancient Athens, the philosopher Socrates said his whole strange life began with a single trip. His friend Chaerephon travelled to the temple at Delphi and asked the priestess there — the famous oracle — a question about Socrates. Her answer stunned him, and he spent the rest of his days testing whether she was right. What did the oracle say about Socrates?",
+    "question": "Chaerephon, a friend of Socrates, travelled to the temple at Delphi and put a question about him to the priestess, the famous oracle. Her answer stunned Socrates, who spent the rest of his days testing whether she was right. What did the oracle say?",
     "answer": "That no man alive was wiser than he",
     "choices": [
       "That no man alive was wiser than he",
@@ -32423,7 +31942,7 @@
   },
   {
     "tier": 3,
-    "question": "In ancient Athens, the 70-year-old philosopher Socrates stood on trial for corrupting the city's young by teaching them to question everything. The court hinted it would spare him if he simply promised to give up philosophy and live out his old age in silence. Socrates threw the bargain back in their faces. What did he tell the jury he would do instead?",
+    "question": "The court hinted it would spare Socrates, about seventy and on trial for his life, if he promised to give up philosophy and live out his old age in silence. He threw the bargain back. What did he tell the jury he would do instead?",
     "answer": "Keep teaching and questioning people, as long as he had breath",
     "choices": [
       "Keep teaching and questioning people, as long as he had breath",
@@ -32436,7 +31955,7 @@
   },
   {
     "tier": 3,
-    "question": "Condemned to death, Socrates did not rage or weep. He told the jurors the hour had come for them to part ways -- he to his death, they back to their lives -- and as for which path was the better one, he gave a calm answer. What did Socrates say about who was better off?",
+    "question": "Condemned to death, Socrates did not rage or weep. The hour had come to part ways, he told the jurors: he was off to his death, and they back to their lives. As for which path was the better one, he gave a calm answer. What did Socrates say about who was better off?",
     "answer": "Only god knows which of them is better off",
     "choices": [
       "Only god knows which of them is better off",
@@ -32445,19 +31964,6 @@
       "No one is ever truly better off after a trial"
     ],
     "context": "\"The hour of departure has arrived... I to die, and you to live. Which of these two is better only God knows.\" Source: Plato, Apology 42a; classics.mit.edu.",
-    "topic": "the-trial-of-socrates"
-  },
-  {
-    "tier": 4,
-    "question": "The oracle had called Socrates the wisest man, which puzzled him, since he felt he knew nothing worth knowing. After questioning Athens' proudest experts, he decided he was a little wiser -- but only in one strange way. What made Socrates wiser than the men who were sure of themselves?",
-    "answer": "He alone admitted he did not know what he did not know",
-    "choices": [
-      "He alone admitted he did not know what he did not know",
-      "He had read far more books than any of them",
-      "He had won more public debates than any of them",
-      "He had been singled out and blessed by the oracle"
-    ],
-    "context": "\"I am better off than he is -- for he knows nothing, and thinks that he knows; I neither know nor think that I know.\" Source: Plato, Apology 21d; classics.mit.edu.",
     "topic": "the-trial-of-socrates"
   },
   {
@@ -32471,19 +31977,6 @@
       "The oath bound Meletus to the first charge, so the second one no longer counted against him"
     ],
     "context": "Socrates trapped Meletus in a contradiction: a man charged with introducing NEW divinities must believe in divine things, which flatly contradicts the sworn charge that he believes in no gods at all. Source: Plato, Apology 26c-27a; Stanford Encyclopedia: Socrates.",
-    "topic": "the-trial-of-socrates"
-  },
-  {
-    "tier": 4,
-    "question": "Socrates told the jurors he had no fear of death at all, which startled them. Everyone around him treated dying as the worst thing that could ever happen to a person. But Socrates asked how any of them could be so certain of that. So when a man dreads death, Socrates argued, what is he really doing?",
-    "answer": "Claiming to know death is bad, when no living person can know that",
-    "choices": [
-      "Claiming to know death is bad, when no living person can know that",
-      "Simply valuing his own life, which is only right and natural",
-      "Fearing the pain of dying, rather than death itself",
-      "Trusting that the gods will step in to protect the innocent"
-    ],
-    "context": "\"The fear of death is indeed the pretense of wisdom, and not real wisdom, being a pretense of knowing the unknown.\" Source: Plato, Apology 29a; classics.mit.edu.",
     "topic": "the-trial-of-socrates"
   },
   {
@@ -32501,7 +31994,7 @@
   },
   {
     "tier": 5,
-    "question": "Many Athenians blamed Socrates for the city's wounds. Two of his old students had betrayed Athens: Critias led the murderous Thirty Tyrants, and Alcibiades turned traitor as a general. Yet the trial skipped those crimes and went after his religion instead. Why not just prosecute him for the real gripe?",
+    "question": "Critias, once a student of Socrates, had led the murderous Thirty Tyrants, and Alcibiades, another, had turned traitor as a general. Many Athenians blamed the old questioner for the city's wounds. Yet his accusers never charged him over those old ties. Why not prosecute him for the real grievance?",
     "answer": "A recent amnesty made it illegal to charge him for those old political ties",
     "choices": [
       "A recent amnesty made it illegal to charge him for those old political ties",
@@ -32514,20 +32007,7 @@
   },
   {
     "tier": 2,
-    "question": "You swore to yourself you would not check your phone during study time, yet your hand keeps creeping toward it. You want to grab it AND you want to keep your word, both at the same instant. Plato argued this ordinary tug-of-war could not happen unless the human mind had a certain structure. What structure?",
-    "answer": "It is not one simple thing, but several drives that can pull against each other at once",
-    "choices": [
-      "It is not one simple thing, but several drives that can pull against each other at once",
-      "It secretly never wanted to study, and the honest move is to admit that to yourself",
-      "It is ruled by whichever urge feels strongest, and that urge is always the real you",
-      "It can only want one thing at a time, so the felt struggle must be a kind of illusion"
-    ],
-    "context": "This is Plato's Principle of Opposites (Republic 439): the same thing cannot do opposite things at once in the same respect, so if part of you reaches while part of you holds back, you must be made of distinct parts pulling against each other. His own example is a thirsty man who refuses to drink — appetite says 'drink,' reason says 'no.' Source: Stanford Encyclopedia of Philosophy, 'Plato's Ethics and Politics' (Rep. 436b, 439).",
-    "topic": "the-tripartite-soul-and-the-chariot"
-  },
-  {
-    "tier": 2,
-    "question": "To picture the human mind, Plato has Socrates describe a chariot: a driver gripping the reins behind a team of two winged horses. The driver stands for the reasoning, steering part of you. In Plato's image, what do the two winged horses themselves stand for?",
+    "question": "Socrates, in Plato's Phaedrus, describes the human soul as a chariot: a driver gripping the reins behind two winged horses. The driver stands for the reasoning, steering part of a person. In the image, what do the two winged horses stand for?",
     "answer": "The two pulling urges the driver must steer: a calm obedient drive and a wild stubborn one",
     "choices": [
       "The two pulling urges the driver must steer: a calm obedient drive and a wild stubborn one",
@@ -32540,7 +32020,7 @@
   },
   {
     "tier": 3,
-    "question": "In his Republic, the Athenian philosopher Plato argues that the human soul has three parts, and each part hungers for a different kind of thing. The first part, reason, loves truth and wisdom. The second part, appetite, craves food, drink, sex, and money. Plato said the third part is different from both — a fiery middle piece that pushes soldiers forward in battle and makes an insulted person burn. What does that third part love most?",
+    "question": "A soldier surges forward in battle, and an insulted man burns. Plato traced both to one part of the soul, the third of the three he named in his Republic. Reason, he said, loves truth and wisdom; appetite craves food, drink, sex and money. What does that fiery third part love most?",
     "answer": "Honor and victory; it swells with pride and burns with anger whenever it is slighted",
     "choices": [
       "Honor and victory; it swells with pride and burns with anger whenever it is slighted",
@@ -32553,7 +32033,7 @@
   },
   {
     "tier": 3,
-    "question": "The ancient Greek philosopher Plato said the human soul has three parts. Reason thinks and plans. Appetite craves food, drink, and pleasure. A fiery third part he called the 'spirited' drive — the part that loves honor and blazes up at insults. He said a person is just, or rightly ordered, when each part does its own proper work: reason should rule and appetite should obey. What, then, is the proper work of that spirited third part?",
+    "question": "Plato called a person just, or rightly ordered, when each of the soul's three parts does its own proper work: reason should rule and appetite should obey. The third is the spirited part. What is the proper work of that spirited part?",
     "answer": "To serve as reason's ally, enforcing reason's decisions against the pull of appetite",
     "choices": [
       "To serve as reason's ally, enforcing reason's decisions against the pull of appetite",
@@ -32761,7 +32241,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1950, the British mathematician Alan Turing wondered whether machines could think. But he decided the question 'Can machines think?' led nowhere, because nobody could even agree on what the word 'think' really means. So he refused to argue it. Instead of trying to settle that word-puzzle, what did Turing propose doing?",
+    "question": "Alan Turing wondered in 1950 whether machines could think, then decided the question led nowhere, since nobody could even agree on what 'think' means. So he refused to argue it. What did he propose doing instead of settling the word-puzzle?",
     "answer": "Run a test where a judge swaps typed notes with a hidden machine and a hidden person, and tries to tell them apart",
     "choices": [
       "Run a test where a judge swaps typed notes with a hidden machine and a hidden person, and tries to tell them apart",
@@ -32774,7 +32254,7 @@
   },
   {
     "tier": 1,
-    "question": "The British mathematician Alan Turing proposed a famous test in 1950 to check whether a machine could think like a person. In his test, a judge and a hidden contestant trade only typed messages — the way you would chat with a stranger online. Of all the ways the two could have talked, Turing chose plain typing on purpose. What was his reason for that choice?",
+    "question": "A judge and a hidden contestant trade only typed messages in the test Alan Turing proposed in 1950 to see whether a machine could think like a person. Turing chose plain typing on purpose. What was his reason?",
     "answer": "A clumsy voice or a metal face could give the machine away, but on the page the words alone are judged",
     "choices": [
       "A clumsy voice or a metal face could give the machine away, but on the page the words alone are judged",
@@ -32787,7 +32267,7 @@
   },
   {
     "tier": 2,
-    "question": "The British mathematician Alan Turing based his famous test for machine thinking on an old Victorian party game — one with no machines in it at all. In the party game, a man and a woman hide in a room. A judge outside passes them notes and tries to guess which one is the man, while the man lies to throw the judge off. What was Turing's twist on the game?",
+    "question": "A man and a woman hide in a room in an old Victorian party game. A judge outside passes them notes and tries to guess which one is the man, while the man lies to throw the judge off. Alan Turing built his test for machine thinking on this game. What was his twist?",
     "answer": "Slip a machine into the place of one hidden player, then ask whether the questioner is fooled just as often",
     "choices": [
       "Slip a machine into the place of one hidden player, then ask whether the questioner is fooled just as often",
@@ -32813,7 +32293,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1966 Joseph Weizenbaum built a program called Eliza. It just bounced your words back as fake therapist questions like 'Tell me more about your mother.' It knew nothing at all. But his own secretary, who knew it was only code, did something that shocked him. What did she do?",
+    "question": "Joseph Weizenbaum built a program called Eliza in 1966. It only bounced a user's words back as fake therapist questions, like 'Tell me more about your mother,' and understood nothing at all. Yet his own secretary, who knew it was only code, did something that shocked him. What did she do?",
     "answer": "Asked him to step out of the room so that she could carry on talking with the program in private",
     "choices": [
       "Asked him to step out of the room so that she could carry on talking with the program in private",
@@ -32826,20 +32306,7 @@
   },
   {
     "tier": 3,
-    "question": "John Searle imagined himself locked in a room, knowing not one single word of Chinese. Chinese notes slide under the door; he looks up each symbol by its shape in a giant rulebook and copies out whatever reply it tells him to. His answers come out flawless, so the people outside are sure a fluent Chinese speaker sits within. What did Searle conclude this shows about the typed-conversation test?",
-    "answer": "Following a rulebook can produce the right output while the meaning never reaches him, so passing shows only behavior, never a mind",
-    "choices": [
-      "Following a rulebook can produce the right output while the meaning never reaches him, so passing shows only behavior, never a mind",
-      "He clearly does understand after all -- nobody could reply that fluently by mere rote, so passing must prove a real mind at work behind it",
-      "The one who truly understands the Chinese is whoever wrote that rulebook, never the man inside following its printed instructions",
-      "Given enough years shut inside that room, the man would slowly start to pick up real Chinese from the symbols he keeps handling"
-    ],
-    "context": "John Searle's 1980 Chinese Room: the man matches symbols by their SHAPE and sends back perfect Chinese while understanding none of it -- his slogan, 'syntax is not sufficient for semantics.' So passing a behavioral conversation test (what Searle calls Weak AI, mere simulation) need not be real thinking (Strong AI). A functionalist who holds the opposite -- that flawless behavior just IS understanding -- rejects Searle here; the question keys his reasoning, not a verdict on who is right. Source: John Searle 1980, 'Minds, Brains, and Programs', Behavioral and Brain Sciences; plato.stanford.edu/entries/chinese-room/.",
-    "topic": "the-turing-test-imitation-game"
-  },
-  {
-    "tier": 3,
-    "question": "In 2014, a chatbot fooled a third of its judges into thinking it was a human. Its makers said it had passed Turing's test at last. But critics called the win a cheat. The bot posed as 'Eugene Goostman,' a 13-year-old boy from Ukraine. Why did that costume make the win look fake?",
+    "question": "A chatbot fooled a third of its judges into thinking it was human in 2014, and its makers said it had passed Turing's test at last. It had posed as 'Eugene Goostman,' a 13-year-old boy from Ukraine, and critics called the win a cheat. Why did that costume make the win look fake?",
     "answer": "A foreign kid's clumsy English and dodged questions get forgiven as a child's, masking how limited the bot is",
     "choices": [
       "A foreign kid's clumsy English and dodged questions get forgiven as a child's, masking how limited the bot is",
