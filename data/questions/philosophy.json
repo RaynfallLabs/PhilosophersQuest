@@ -274,7 +274,7 @@
   },
   {
     "tier": 1,
-    "question": "A wooden bridge over the river has collapsed. A knight rides up to a peasant who is warning travelers to turn back, sneers that the peasant is 'too ugly and lowborn to know anything,' and rides on. The knight never looked at the bridge. Why is the knight's reply a bad way to settle whether the bridge is really out?",
+    "question": "A peasant is warning travelers to turn back: the bridge has collapsed. A knight sneers that the peasant is 'too ugly and lowborn to know anything' and rides on, never looking at the bridge. Why can the sneer not settle whether the bridge is out?",
     "answer": "What a person looks like has nothing to do with whether the bridge actually collapsed",
     "choices": [
       "What a person looks like has nothing to do with whether the bridge actually collapsed",
@@ -287,7 +287,7 @@
   },
   {
     "tier": 1,
-    "question": "A doctor who is herself a heavy smoker tells a patient in her clinic, 'Smoking is bad for your health and you should quit.' The patient laughs and says her advice must be wrong — after all, she smokes too, so how can she be right? Has the patient really shown that the doctor's advice about smoking is false?",
+    "question": "A doctor, a heavy smoker herself, tells a patient in her clinic, 'Smoking is bad for your health, and you should quit.' The patient laughs and says her advice must be wrong, since she smokes too. Has the patient proved her advice false?",
     "answer": "No — her smoking makes her a hypocrite, but it does not change whether smoking harms health",
     "choices": [
       "No — her smoking makes her a hypocrite, but it does not change whether smoking harms health",
@@ -300,7 +300,7 @@
   },
   {
     "tier": 2,
-    "question": "A basketball coach tells his players, 'Never skip practice if you want to win.' One player shoots back, 'But you skipped practice all the time when you played!' The player thinks this settles the argument for good. Philosophers call this move the 'tu quoque' or 'you too' fallacy. What has the player actually proven about whether skipping practice hurts the team?",
+    "question": "A basketball coach tells his players, 'Never skip practice if you want to win.' One player shoots back, 'But you skipped practice all the time when you played!' The player thinks that settles the argument for good. What has he actually proven about whether skipping practice hurts the team?",
     "answer": "That nothing changes, since his coach once skipping does not make skipping less harmful",
     "choices": [
       "That nothing changes, since his coach once skipping does not make skipping less harmful",
@@ -313,7 +313,7 @@
   },
   {
     "tier": 2,
-    "question": "In a small-town debate over a plan to clean up the local river, one speaker dismisses the group pushing the plan by announcing, 'Their plan is worthless because they're all lazy, smelly tree-huggers.' He says nothing about the plan's costs, its science, or its likely results — only attacks the people. Philosophers have a name for this move: the ad hominem fallacy. What is wrong with using that line to defeat the plan?",
+    "question": "A small town is debating a plan to clean up its river. One speaker dismisses the group behind it: 'Their plan is worthless because they're all lazy, smelly tree-huggers.' He says nothing about the plan's costs, its science or its likely results. What is wrong with using that line to defeat the plan?",
     "answer": "It throws insults at the people instead of giving any reason the plan would fail",
     "choices": [
       "It throws insults at the people instead of giving any reason the plan would fail",
@@ -339,7 +339,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 2008 U.S. election, Sarah Palin kept attacking Barack Obama on one point. She said he had once known Bill Ayers, a 1960s radical from the Weather Underground. Suppose every word about that old link were true. Why would his actual policy arguments still stand?",
+    "question": "Sarah Palin kept attacking Barack Obama on one point during the 2008 U.S. election: he had once known Bill Ayers, a 1960s radical from the Weather Underground. Suppose every word about that old link were true. Why would Obama's policy arguments still stand?",
     "answer": "Who a person once knew does not show that the arguments he makes are wrong",
     "choices": [
       "Who a person once knew does not show that the arguments he makes are wrong",
@@ -352,7 +352,7 @@
   },
   {
     "tier": 4,
-    "question": "The French writer Voltaire wanted to wound his rival Jean-Jacques Rousseau, who had argued in his famous book on education that parents ought to raise their own children rather than farm them out. In a stinging 1764 pamphlet, Voltaire anonymously exposed the truth about where Rousseau had sent his own children. Where had they gone?",
+    "question": "Voltaire wanted to wound his rival Jean-Jacques Rousseau, whose famous book on education argued that parents ought to raise their own children rather than farm them out. In a stinging pamphlet of 1764, Voltaire anonymously revealed where Rousseau had sent his own children. Where had they gone?",
     "answer": "He had handed every one of his children to a Paris foundling hospital",
     "choices": [
       "He had handed every one of his children to a Paris foundling hospital",
@@ -365,7 +365,7 @@
   },
   {
     "tier": 4,
-    "question": "Two debate fouls look alike. A scientist presents an idea. In the first, a critic snaps, 'You can't trust her — she's a known liar,' aiming squarely at the scientist herself. In the second, the critic ignores the scientist and sneers, 'That idea is rubbish — a crackpot cult cooked it up two centuries ago.' The first foul is the ad hominem, an attack on the person. The second is a different fallacy, an attack on where the idea was born. Why does that second attack fail to show the idea is false?",
+    "question": "A scientist presents an idea, and a critic attacks it twice. First he snaps, 'You can't trust her — she's a known liar.' Then he ignores her and sneers, 'That idea is rubbish — a crackpot cult cooked it up two centuries ago.' The first attacks the person, the second the idea's birthplace. Why does the second attack fail to show the idea is false?",
     "answer": "Where an idea first came from has no bearing on whether it is true today",
     "choices": [
       "Where an idea first came from has no bearing on whether it is true today",
@@ -378,7 +378,7 @@
   },
   {
     "tier": 5,
-    "question": "The English philosopher John Locke put the phrase 'argumentum ad hominem' into wide use in his 1690 'Essay Concerning Human Understanding' — but he did NOT mean a cheap insult. Locke described a legitimate debate move. Which move did he have in mind?",
+    "question": "When a debater sneers at his rival instead of answering him, people today call it an ad hominem. The fuller phrase, 'argumentum ad hominem,' came into wide use through John Locke in 1690, and he meant something quite different by it: a legitimate move in debate. Which move did Locke have in mind?",
     "answer": "Pressing an opponent with consequences drawn from his own stated principles",
     "choices": [
       "Pressing an opponent with consequences drawn from his own stated principles",
@@ -391,7 +391,7 @@
   },
   {
     "tier": 5,
-    "question": "A lawyer questions a witness whose story could decide the case. She shows that the witness has a long, written record of lying under oath. The philosopher Douglas Walton said this kind of attack on credibility is not always a fallacy. Using only that record, what can the lawyer soundly conclude?",
+    "question": "A lawyer questions a witness whose story could decide the case, and she shows that he has a long, written record of lying under oath. Douglas Walton, a philosopher, said such an attack on credibility is not always a fallacy. Using only that record, what can the lawyer soundly conclude?",
     "answer": "That this witness should not be trusted, though not that his story is automatically false",
     "choices": [
       "That this witness should not be trusted, though not that his story is automatically false",
@@ -417,7 +417,7 @@
   },
   {
     "tier": 5,
-    "question": "In philosophy, attacking the person instead of the argument is called an ad hominem — a personal attack. The Internet Encyclopedia of Philosophy points out something surprising: whether such a charge is fair depends entirely on the topic being argued. Picture the same accusation — a man's immoral private conduct — brought up in two different debates. In which debate does that charge actually count as relevant evidence?",
+    "question": "Word gets out about a man's immoral private conduct, and his rivals start bringing it up wherever he speaks, whatever the subject. Whether a personal charge like that is fair depends entirely on the question being argued. In which debate does his conduct count as relevant evidence?",
     "answer": "When deciding whether he should hold a leadership post on the city council",
     "choices": [
       "When deciding whether he should hold a leadership post on the city council",
@@ -430,7 +430,7 @@
   },
   {
     "tier": 1,
-    "question": "You eat dinner tonight because the butcher, the brewer, and the baker each sold you what they made. The 18th-century Scottish thinker Adam Smith, in his 1776 book The Wealth of Nations, said the real reason they feed you is not that they pity you or wish you well. So why, in Smith's view, do they put food on your table every day?",
+    "question": "The butcher, the brewer and the baker each sold their share of tonight's dinner. Suppose you are the one eating it. They do not feed you out of pity or goodwill, Adam Smith wrote in The Wealth of Nations. Why, then, do they feed you?",
     "answer": "Because feeding you serves their own interest",
     "choices": [
       "Because feeding you serves their own interest",
@@ -443,7 +443,7 @@
   },
   {
     "tier": 1,
-    "question": "Adam Smith watched workers in a small pin factory. One man working alone could barely make a single pin in a whole day. But ten men working together made about forty-eight thousand pins in a day. Smith pointed to one change in how they worked. What did the ten men do differently?",
+    "question": "Adam Smith watched workers in a small pin factory. One man alone could barely make a single pin in a day, yet ten men together made about forty-eight thousand. Smith pointed to one change in how they worked. What did the ten men do differently?",
     "answer": "They each did one small step instead of making whole pins",
     "choices": [
       "They each did one small step instead of making whole pins",
@@ -456,7 +456,7 @@
   },
   {
     "tier": 1,
-    "question": "The Scottish economist Adam Smith, writing in the 1770s, said one habit sets humans apart from every other creature: only humans trade one thing for another. No other animal does it, he insisted. To prove the point, he pictured a swap between two animals that has never once happened in nature. Which exchange did Smith say no one has ever seen?",
+    "question": "Only humans trade one thing for another, Adam Smith said; no other creature has the habit. To prove it, he named a swap between two animals that has never happened in nature. Which exchange did Smith say no one has ever seen?",
     "answer": "Two dogs swapping one bone fairly for another",
     "choices": [
       "Two dogs swapping one bone fairly for another",
@@ -469,7 +469,7 @@
   },
   {
     "tier": 2,
-    "question": "Adam Smith, the 18th-century Scottish economist who wrote The Wealth of Nations, was famously absent-minded. His life is full of stories like this one. One morning, he was so lost in thought that he tried to prepare his hot drink by dropping bread and butter straight into the pot. He sipped it and complained it tasted awful. What drink had he been trying to make?",
+    "question": "The man who wrote The Wealth of Nations was famously absent-minded. One morning Adam Smith was so lost in thought that he tried to make his hot drink by dropping bread and butter straight into the pot. He sipped the brew and complained of its awful taste. What drink had he been trying to make?",
     "answer": "Tea",
     "choices": [
       "Tea",
@@ -482,7 +482,7 @@
   },
   {
     "tier": 2,
-    "question": "Adam Smith said that when you want a shopkeeper to sell you something, begging him with how badly YOU need it is exactly the wrong approach. Smith said there is one thing you should point out to him instead that actually moves him to deal. What is that one thing?",
+    "question": "Suppose you want a shopkeeper to sell you something. Begging him with how badly you need it, Adam Smith said, is exactly the wrong approach. He named one thing that actually moves the shopkeeper to deal. What should you point out to him instead?",
     "answer": "What he himself stands to gain from the deal",
     "choices": [
       "What he himself stands to gain from the deal",
@@ -495,7 +495,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1776, the Scottish economist Adam Smith visited a small pin factory. The job of making a single pin, he saw, was split among many workers, each doing just one small part — one man drew the wire, another straightened it, another cut it, another sharpened the point. Smith was struck by how finely the work was divided. Roughly how many separate steps did he count in making one pin?",
+    "question": "In the pin factory Adam Smith visited, one man drew out the wire, another straightened it, a third cut it and a fourth sharpened the point. Smith was struck by how finely the work of making one pin was divided. Roughly how many separate steps did he count?",
     "answer": "About eighteen",
     "choices": [
       "About eighteen",
@@ -508,7 +508,7 @@
   },
   {
     "tier": 2,
-    "question": "Adam Smith said that once everyone picks one craft, no one can live on his own work alone. The baker cannot live on bread. The weaver cannot wear only cloth. Each person now leans on everyone else. Smith had a one-word name for what each person really becomes. What was that word?",
+    "question": "Once everyone picks one craft, Adam Smith said, no one can live on his own work alone. The baker cannot live on bread, and the weaver cannot wear only cloth; each leans on everyone else. Smith had a one-word name for what each person really becomes. What was it?",
     "answer": "A merchant",
     "choices": [
       "A merchant",
@@ -534,7 +534,7 @@
   },
   {
     "tier": 3,
-    "question": "Adam Smith described a merchant who cares only about his own profit and never once aims at helping the public. Yet by chasing his private gain, the merchant ends up serving everyone around him without meaning to. Smith said such a man is led by WHAT to promote a good he never intended?",
+    "question": "A man in Adam Smith's account cares only about his own profit and never once aims at helping the public. Yet by chasing private gain he ends up serving everyone around him without meaning to. What did Smith say leads such a man to promote a good he never intended?",
     "answer": "An invisible hand",
     "choices": [
       "An invisible hand",
@@ -547,7 +547,7 @@
   },
   {
     "tier": 3,
-    "question": "Adam Smith asked how we can honestly judge whether our own conduct is fair, given that we all naturally take our own side. He answered with a test you could run in your own mind. To check whether your own behavior is fair, Smith said, what should you do?",
+    "question": "Everyone naturally takes his own side, Adam Smith observed, so judging one's own conduct fairly is hard. Suppose you want to check whether your own behavior is fair, with a test you can run in your own mind. What, said Smith, should you do?",
     "answer": "Picture how a fair, well-informed stranger would judge it",
     "choices": [
       "Picture how a fair, well-informed stranger would judge it",
@@ -560,7 +560,7 @@
   },
   {
     "tier": 4,
-    "question": "Adam Smith pictured a proud, unfeeling landlord gazing across his vast fields, imagining that he alone will consume the whole harvest they produce. Smith then deflates the fantasy with a single plain observation. What did Smith point out that forces the landlord to share the harvest after all?",
+    "question": "In Adam Smith's first book, a proud, unfeeling landlord gazes across his vast fields, imagining that he alone will consume the whole harvest they produce. Smith deflates the fantasy with a single plain observation. What does he point out that forces the landlord to share the harvest after all?",
     "answer": "His stomach holds no more than a poor peasant's",
     "choices": [
       "His stomach holds no more than a poor peasant's",
@@ -573,7 +573,7 @@
   },
   {
     "tier": 4,
-    "question": "Adam Smith wrote the founding book making the case for free trade and against governments taxing the flow of goods. Yet in his final years the great free-trader accepted a senior Scottish post in the Crown's own tax service, a bitter irony for the man whose book had armed merchants against the taxman. Which revenue post did Smith, of all people, take?",
+    "question": "Adam Smith wrote the founding book making the case for free trade and against governments taxing the flow of goods; it armed merchants against the taxman. Yet in his final years the great free-trader accepted a senior Scottish post in the Crown's own tax service. Which revenue post did he take?",
     "answer": "Commissioner of customs",
     "choices": [
       "Commissioner of customs",
@@ -690,7 +690,7 @@
   },
   {
     "tier": 3,
-    "question": "Touch a flame to a tuft of cotton and it blackens and crumbles to ash. Everyone says the fire burned it. But the 11th-century Persian thinker Al-Ghazali, writing from the great Islamic center of learning at Baghdad, flatly denied that the fire was the cause of the burning at all. On Al-Ghazali's view, what actually does the burning when cotton meets flame?",
+    "question": "A flame touches a tuft of cotton, and the cotton blackens and crumbles to ash. Everyone says the fire burned it. Al-Ghazali, writing in Baghdad in the eleventh century, flatly denied that the fire was the cause of the burning at all. On his view, what actually does the burning when cotton meets flame?",
     "answer": "God creates the blackness and the ash directly; the fire merely sits there",
     "choices": [
       "God creates the blackness and the ash directly; the fire merely sits there",
@@ -703,7 +703,7 @@
   },
   {
     "tier": 3,
-    "question": "Al-Ghazali argued that the bond between fire and burning 'is not necessary.' His reason was about what we can and cannot witness. No matter how closely you watch the flame meet the cotton, he said, one crucial thing is never actually given to your eyes. Which thing do we never really see?",
+    "question": "The philosophers insisted that fire is the true agent of burning, and Al-Ghazali dared them to prove it. The bond between fire and burning, he argued, 'is not necessary,' and his reason was about what a watcher can witness. However closely someone watches the flame meet the cotton, one crucial thing never reaches the eyes. What does the watcher never see?",
     "answer": "The fire forcing the cotton to burn; we see only the two arrive together",
     "choices": [
       "The fire forcing the cotton to burn; we see only the two arrive together",
@@ -711,25 +711,12 @@
       "The instant of contact, which slips past too fast to fix in the eye",
       "The hand of God behind the flame, the true cause hidden from every sense"
     ],
-    "context": "Al-Ghazali: 'The connection between what is habitually believed to be a cause and what is habitually believed to be an effect is not necessary, according to us.' Burning following fire is a HABIT God keeps, not an iron law fire carries inside itself. Roughly 650 years later the Scottish philosopher David Hume made the same move, calling causation mere 'constant conjunction.' Source: IEP 'Al-Ghazali', quoting Incoherence p.166; SEP 'Occasionalism'.",
+    "context": "Al-Ghazali: 'The connection between what is habitually believed to be a cause and what is habitually believed to be an effect is not necessary, according to us.' He challenged the philosophers who called fire the agent: 'For what proof is there that it is the agent? They have no proof other than observing the occurrence of the burning at the [juncture of] contact with the fire.' Seeing one thing follow another is not seeing one thing PRODUCE another. Burning following fire is a HABIT God keeps, not an iron law fire carries inside itself. Roughly 650 years later the Scottish philosopher David Hume made the same move, calling causation mere 'constant conjunction.' Source: IEP 'Al-Ghazali', quoting Incoherence p.166; SEP 'Occasionalism'; SEP 'Causation in Arabic and Islamic Thought', quoting al-Ghazali IP p.167.",
     "topic": "al-ghazali-on-causation-the-fire-and-the-cotton"
   },
   {
     "tier": 4,
-    "question": "Al-Ghazali pressed the philosophers who insisted that fire is the true agent of burning with a single hard demand: prove it. Show me, he said, that the fire is what produces the burning. According to him, what is the ONLY evidence they could ever actually point to?",
-    "answer": "Watching the burning happen right when the cotton touches the fire -- nothing more",
-    "choices": [
-      "Watching the burning happen right when the cotton touches the fire -- nothing more",
-      "The ancient and unbroken agreement of every philosopher before them",
-      "The measured heat the fire gives off, which no other thing can match",
-      "The way fire spreads to anything dry, proving the power is its own"
-    ],
-    "context": "Al-Ghazali: 'For what proof is there that it is the agent? They have no proof other than observing the occurrence of the burning at the [juncture of] contact with the fire.' Seeing one thing follow another is not seeing one thing PRODUCE another. Source: SEP 'Causation in Arabic and Islamic Thought', quoting al-Ghazali IP p.167.",
-    "topic": "al-ghazali-on-causation-the-fire-and-the-cotton"
-  },
-  {
-    "tier": 4,
-    "question": "Al-Ghazali had a reason for denying that fire burns by its own nature: he wanted to leave room for miracles. If fire MUST burn whatever it touches, then the holy stories become impossible. The Quran tells of Abraham thrown into a roaring fire that does not harm him. On Al-Ghazali's reading, why was Abraham unburned?",
+    "question": "Al-Ghazali denied that fire burns by its own nature for a reason: he wanted to leave room for miracles. If fire has to burn whatever it touches, the holy stories become impossible. The Quran tells of Abraham thrown into a roaring fire that does not harm him. On Al-Ghazali's reading, why was Abraham unburned?",
     "answer": "God, for that once, simply did not create the burning He usually creates",
     "choices": [
       "God, for that once, simply did not create the burning He usually creates",
@@ -742,7 +729,7 @@
   },
   {
     "tier": 5,
-    "question": "Decades after Al-Ghazali argued that fire does not truly burn, the philosopher Averroes fired back with a reply titled, point for point, The Incoherence of the Incoherence. Strip the fire of its power to burn, he insisted, and you have not saved it -- you have wrecked it. What was his argument?",
+    "question": "Averroes answered Al-Ghazali decades later in a reply whose very title jabbed straight back: The Incoherence of the Incoherence. Al-Ghazali had argued that fire does not truly burn. Strip fire of its power to burn, Averroes insisted, and the fire is not saved but wrecked. What was his argument?",
     "answer": "A fire that cannot burn is simply no longer a fire at all",
     "choices": [
       "A fire that cannot burn is simply no longer a fire at all",
@@ -755,7 +742,7 @@
   },
   {
     "tier": 5,
-    "question": "Modern scholars cannot agree on how far Al-Ghazali really meant to push his fire-and-cotton argument, and they split into two camps. One camp reads him as denying that creatures have ANY real power at all -- only God acts. What does the rival camp argue he actually meant?",
+    "question": "Al-Ghazali left his readers a puzzle about the fire and the cotton: how far did he mean the argument to go? One camp of modern scholars hears him deny that creatures have any real power at all, so that only God ever acts. What does the rival camp say he actually meant?",
     "answer": "He aimed only to defend miracles, and may let fire keep a God-given power",
     "choices": [
       "He aimed only to defend miracles, and may let fire keep a God-given power",
@@ -846,7 +833,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1800s, the German thinker Karl Marx walked through England's new industrial cities. He watched factory workers produce fine goods they could never afford to buy, then trudge home to cramped rented rooms. He argued this was not just bad luck or low pay — it revealed something deeper. What did Marx say this scene revealed about the worker's very labour?",
+    "question": "Karl Marx walked through England's new industrial cities in the 1800s. He watched factory workers make fine goods they could never afford, then trudge home to cramped rented rooms. This was no mere bad luck or low pay, he argued. What did Marx say the scene revealed about the worker's labour?",
     "answer": "The same labour that builds the rich man's world of beauty builds the worker's own ruin and poverty",
     "choices": [
       "The same labour that builds the rich man's world of beauty builds the worker's own ruin and poverty",
@@ -859,7 +846,7 @@
   },
   {
     "tier": 2,
-    "question": "The nineteenth-century German thinker Karl Marx watched the great industrial factories of his day and saw a sharp math running through them. He put it as an exact pair. The value of the goods the worker turns out at his machine keeps climbing higher and higher. What, said Marx, happens to the worker himself as this pile of wealth grows?",
+    "question": "Goods pour off a worker's machine, and their value keeps climbing higher and higher. Karl Marx watched the great factories of his day and found an exact rule at work in them. What, said Marx, happens to the worker himself as the pile of wealth grows?",
     "answer": "He grows ever cheaper, the more wealth he piles up, the less he is worth",
     "choices": [
       "He grows ever cheaper, the more wealth he piles up, the less he is worth",
@@ -872,7 +859,7 @@
   },
   {
     "tier": 2,
-    "question": "Karl Marx asked a simple question about factory work: when does the worker actually feel like himself? He answered that the man feels at home only when he is NOT working, and the moment he clocks in that feeling vanishes. What did Marx say this told us about the work itself?",
+    "question": "A factory worker feels like himself only away from work, Karl Marx said; the moment he clocks in, that feeling vanishes. What did Marx say this reveals about the work itself?",
     "answer": "It is not freely chosen but forced, work a man does only because he must, not because it is his",
     "choices": [
       "It is not freely chosen but forced, work a man does only because he must, not because it is his",
@@ -885,7 +872,7 @@
   },
   {
     "tier": 2,
-    "question": "Karl Marx gave a test for whether a job is truly your own. Watch the worker the moment nothing is forcing him on: no boss, no threat, no need. If the work is really his, he keeps going. In the factory, Marx said, the moment the pressure lifts, what does the worker do?",
+    "question": "Karl Marx proposed a test for whether a man's work is truly his own: watch him the moment nothing is forcing him on, with no boss, no threat and no need. If the work is really his, he keeps going. In the factory, Marx said, what does the worker do the moment the pressure lifts?",
     "answer": "Flees the work at once, shunning it like the plague the second nothing forces him on",
     "choices": [
       "Flees the work at once, shunning it like the plague the second nothing forces him on",
@@ -898,7 +885,7 @@
   },
   {
     "tier": 3,
-    "question": "Karl Marx described the first and strangest break between a worker and his job, the break from the very thing he makes. The worker pours his hours, his strength, his life into an object. Then, once it is finished and carried off to be sold, something flips in the bond between the man and his own creation. How did Marx say the finished product now confronts the worker?",
+    "question": "A worker pours his hours, his strength and his life into an object. Then it is finished and carried off to be sold, and something flips between the man and his own creation. Karl Marx called this the first and strangest break between a worker and his job. How did he say the finished product now confronts the worker?",
     "answer": "As an alien, hostile power, a thing of his own making that now stands over him, no longer his",
     "choices": [
       "As an alien, hostile power, a thing of his own making that now stands over him, no longer his",
@@ -911,7 +898,7 @@
   },
   {
     "tier": 3,
-    "question": "Karl Marx drew a haunting reversal in the alienated worker. A human being, he thought, should feel most alive and most himself when creating something, for that is the human act. Yet Marx said the factory turns this upside down. WHEN, across the worker's whole day, did Marx say the man finally feels free?",
+    "question": "A human being, Karl Marx thought, should feel most alive and most himself when he creates something, for that is the human act. Yet the factory, he said, turns this upside down. When, across the worker's whole day, does the man finally feel free?",
     "answer": "Only in his animal moments of eating, drinking, and resting",
     "choices": [
       "Only in his animal moments of eating, drinking, and resting",
@@ -924,7 +911,7 @@
   },
   {
     "tier": 3,
-    "question": "Karl Marx traced alienation outward to a fourth break, not from the product or the work, but from other people. If the thing I make is not mine, Marx reasoned, then it must belong to some other man who did not make it. Follow that logic, Marx said, and you reach a startling conclusion about the worker's tie to the man who owns what he makes. What did Marx claim the worker's very labour does to that bond?",
+    "question": "The fourth break Karl Marx traced runs outward, not from the product or the work but from other people. If the worker's product is not his, Marx reasoned, it must belong to some other man who did not make it. That logic led him to a startling conclusion about the worker and the owner of what he makes. What did Marx say the worker's labour does to that bond?",
     "answer": "It forges the master, the worker's own toil creating the owner's very power over him",
     "choices": [
       "It forges the master, the worker's own toil creating the owner's very power over him",
@@ -937,7 +924,7 @@
   },
   {
     "tier": 4,
-    "question": "Karl Marx asked what truly separates a human worker from a spider spinning its web or a bee building its comb. The animal, he said, is fused with its task; it does not separate itself from what it does, it simply IS that activity. A human is different. According to Marx, what can a person do with his own life's activity that an animal cannot?",
+    "question": "A spider spins its web and a bee builds its comb, and each, Karl Marx said, is fused with its task: it does not stand apart from what it does but simply is that activity. A human is different. According to Marx, what can a person do with his own life's activity that an animal cannot?",
     "answer": "Hold it up before his mind and choose it, stepping back to plan and freely decide how to work",
     "choices": [
       "Hold it up before his mind and choose it, stepping back to plan and freely decide how to work",
@@ -950,7 +937,7 @@
   },
   {
     "tier": 4,
-    "question": "Karl Marx pointed to a second mark of truly human work, the kind the assembly line strips away. An animal, he noted, builds only when hunger or instinct drives it, and always to the one fixed pattern of its kind, a bird's nest is a bird's nest. A free human, Marx said, creates even when no need pushes him at all, and shapes his work by a standard no animal knows. By what standard did Marx say a free human shapes what he makes?",
+    "question": "An animal builds only when hunger or instinct drives it, Karl Marx noted, and always to the one fixed pattern of its kind: a bird's nest is a bird's nest. A free human creates even when no need pushes him at all, and shapes his work by a standard no animal knows. By what standard, said Marx, does a free human shape what he makes?",
     "answer": "By the laws of beauty, shaping things finer than mere need requires, for their own sake",
     "choices": [
       "By the laws of beauty, shaping things finer than mere need requires, for their own sake",
@@ -963,7 +950,7 @@
   },
   {
     "tier": 4,
-    "question": "Karl Marx made his most surprising move on where alienation comes from. Most people think the worker is unhappy because a boss owns the factory. On that view, ownership is the root, and alienated labour is what grows from it. Marx looked hard at this and reached the opposite answer, which startled even friendly readers. In Marx's view, what is the real link between private ownership and alienated labour?",
+    "question": "Most people think a factory worker is unhappy because a boss owns the factory. On that view ownership is the root, and alienated labour grows from it. Karl Marx looked hard at this and reached the opposite answer, which startled even friendly readers. In his view, what is the real link between private ownership and alienated labour?",
     "answer": "Alienated labour comes first, and private ownership is its result, the consequence not the cause",
     "choices": [
       "Alienated labour comes first, and private ownership is its result, the consequence not the cause",
@@ -976,7 +963,7 @@
   },
   {
     "tier": 4,
-    "question": "Henry Ford's assembly line came decades after Karl Marx wrote. Many readers saw it as Marx's nightmare come true. Writers still argue whether today's warehouse and gig jobs fit as well. Marx's deepest complaint about such work was not mainly about low pay or hard hours. Setting aside whether the work is good or bad, what did Marx say makes a job like this alienating?",
+    "question": "Henry Ford's assembly line came decades after Karl Marx wrote, yet many readers saw in it Marx's nightmare come true, and writers still argue whether today's warehouse and gig jobs fit as well. Marx's deepest complaint about such work was never mainly low pay or hard hours. What did he say makes a job like this alienating?",
     "answer": "He does one tiny fragment of the task forever, with no hand in the whole or its design",
     "choices": [
       "He does one tiny fragment of the task forever, with no hand in the whole or its design",
@@ -989,20 +976,7 @@
   },
   {
     "tier": 2,
-    "question": "The early Greek thinkers Zeno and Chrysippus pictured a dog leashed to a moving cart. The cart is going to roll forward, and the dog is going with it. Faced with that, a dog could react in several ways. Which response would these Stoics call the wise one?",
-    "answer": "Trot alongside willingly and enjoy the trip",
-    "choices": [
-      "Trot alongside willingly and enjoy the trip",
-      "Dig in its heels and resist every step",
-      "Go limp and let itself be hauled along",
-      "Bark for the driver to turn around"
-    ],
-    "context": "From the early Stoics Zeno and Chrysippus (the image is often credited to Cleanthes), preserved in Hippolytus' 'Refutation of All Heresies.' It is the vivid handle for the Stoic point: the cart of events goes its way regardless, so the only thing the dog truly governs is whether its own trip is pleasant or miserable. It can trot willingly and enjoy the view, or be dragged. Source: Internet Encyclopedia of Philosophy, 'Stoicism' (iep.utm.edu/stoicism/).",
-    "topic": "amor-fati-loving-your-fate"
-  },
-  {
-    "tier": 2,
-    "question": "Epictetus, a Greek teacher who had himself been born a slave, told his students to think of life as a play. You are an actor, he said, and the author hands you your part. He might cast you as a poor man, a cripple, a ruler, or a nobody. Epictetus said only ONE thing was truly up to you. What was it?",
+    "question": "Epictetus, who had been born a slave, told his students to think of life as a play. Suppose you are an actor, and the author hands you your part: a poor man, a cripple, a ruler or a nobody. Only one thing, Epictetus said, is truly up to you. What is it?",
     "answer": "How well you play the part you are handed",
     "choices": [
       "How well you play the part you are handed",
@@ -1015,7 +989,7 @@
   },
   {
     "tier": 3,
-    "question": "Epictetus, the Greek teacher who had been born a slave, watched people make themselves miserable the same way over and over. They demanded that the world rearrange itself to match their wishes, and then suffered every time it refused. He boiled his cure down to a single instruction about wanting. What did Epictetus tell them to do instead?",
+    "question": "Over and over, Epictetus watched people make themselves miserable in the same way. They demanded that the world rearrange itself to match their wishes, then suffered every time it refused. He boiled his cure down to one instruction about wanting. What did he tell them to do instead?",
     "answer": "Wish for events to happen the way they actually do",
     "choices": [
       "Wish for events to happen the way they actually do",
@@ -1028,7 +1002,7 @@
   },
   {
     "tier": 3,
-    "question": "Marcus Aurelius, a Roman emperor who scribbled private notes to steady himself, kept returning to one image for fate: a loom weaving cloth. Your life and everything that befalls you, he wrote, are spun together on the same single thread. Given that picture, Marcus told himself a particular way to greet each experience the loom sends. Which response did he choose?",
+    "question": "Marcus Aurelius, the Roman emperor, scribbled private notes to steady himself, and one image for fate kept returning in them: a loom weaving cloth. A man's life and everything that befalls him, he wrote, are spun on the same single thread. How did Marcus tell himself to greet each thing the loom sent?",
     "answer": "Love it, welcoming it with his whole heart",
     "choices": [
       "Love it, welcoming it with his whole heart",
@@ -1041,7 +1015,7 @@
   },
   {
     "tier": 4,
-    "question": "In ancient Rome, a Stoic teacher tests two students who have each lost their whole fortune. Neither one fights the loss. The first shrugs: 'There is nothing I can do, so I will quit complaining and bear it.' The second is calm in a different way the teacher cannot quite name at first. The teacher says the first has merely given up, but the second has actually learned the Stoic lesson called amor fati — loving one's fate. What must be true of the second student that is NOT true of the first?",
+    "question": "A Stoic teacher tests two pupils who have each lost a whole fortune. Neither fights the loss. The first shrugs: 'There is nothing I can do, so I will quit complaining and bear it.' The teacher says this pupil has merely given up, while the second has learned to love his fate. What must be true of the second that is not true of the first?",
     "answer": "He wills this outcome as if he had chosen it",
     "choices": [
       "He wills this outcome as if he had chosen it",
@@ -1053,8 +1027,8 @@
     "topic": "amor-fati-loving-your-fate"
   },
   {
-    "tier": 4,
-    "question": "The Roman writer Seneca ended one of his letters by translating an old Stoic prayer, then capped it with a single line that has outlived everything around it. Fate, the line says, treats two kinds of people very differently: those who go along with it, and those who refuse. According to Seneca's line, how does fate handle each kind?",
+    "tier": 2,
+    "question": "Zeno and Chrysippus pictured a dog leashed to a moving cart that would roll forward and take the dog with it. Seneca set that picture down as a maxim about two kinds of people, those who go along with fate and those who refuse. How, by Seneca's line, does fate handle each?",
     "answer": "It leads the willing and drags the unwilling",
     "choices": [
       "It leads the willing and drags the unwilling",
@@ -1062,12 +1036,12 @@
       "It tests the willing and breaks the unwilling",
       "It frees the willing and chains the unwilling"
     ],
-    "context": "Seneca, Moral Letters 107, translating the Stoic Cleanthes: 'Ducunt volentem fata, nolentem trahunt' -- 'Fate leads the willing and drags the unwilling.' The same picture as the dog and cart, stated as a maxim. The two-word Latin name for this whole stance, 'amor fati' (love of fate), was not coined until Friedrich Nietzsche used it in the 1880s. Source: Seneca, Moral Letters to Lucilius 107, quoting Cleanthes.",
+    "context": "The image comes from the early Stoics Zeno and Chrysippus (it is often credited to Cleanthes), preserved in Hippolytus' 'Refutation of All Heresies.' The cart of events goes its way regardless, so the only thing the dog truly governs is whether its own trip is pleasant or miserable: it can trot willingly and enjoy the view, or be dragged. Seneca, Moral Letters 107, translating the Stoic Cleanthes: 'Ducunt volentem fata, nolentem trahunt' -- 'Fate leads the willing and drags the unwilling.' The same picture as the dog and cart, stated as a maxim. The two-word Latin name for this whole stance, 'amor fati' (love of fate), was not coined until Friedrich Nietzsche used it in the 1880s. Source: Internet Encyclopedia of Philosophy, 'Stoicism' (iep.utm.edu/stoicism/). Seneca, Moral Letters to Lucilius 107, quoting Cleanthes.",
     "topic": "amor-fati-loving-your-fate"
   },
   {
     "tier": 2,
-    "question": "Long after Alexander the Great, a Greek-speaking king named Menander ruled lands from Afghanistan into northwest India. Indian writers loved him so much that they gave him an Indian name, 'Milinda.' They remembered him for a famous battle of wits. Who was his opponent in that story?",
+    "question": "Menander, a Greek-speaking king, ruled lands from Afghanistan into northwest India long after Alexander the Great. Indian writers gave him an Indian name, 'Milinda,' and remembered him for a famous battle of wits. Who was his opponent in that story?",
     "answer": "A Buddhist monk, who answers his every challenge",
     "choices": [
       "A Buddhist monk, who answers his every challenge",
@@ -1080,7 +1054,7 @@
   },
   {
     "tier": 2,
-    "question": "King Milinda rode in a chariot. Nagasena makes him check it part by part -- pole, axle, wheels, frame, yoke -- and the king grants that none of them, alone, is the chariot. Nagasena then presses him for what the chariot then IS. What startling conclusion does he corner the king into?",
+    "question": "King Milinda had ridden to the debate in a chariot. Nagasena made him check it part by part: pole, axle, wheels, frame, yoke. The king granted that none of them alone was the chariot, and Nagasena pressed him to say what the chariot was. What startling conclusion did he corner the king into?",
     "answer": "'Then there is no chariot' -- it was only ever a name for the parts",
     "choices": [
       "'Then there is no chariot' -- it was only ever a name for the parts",
@@ -1093,7 +1067,7 @@
   },
   {
     "tier": 2,
-    "question": "In ancient India, the Greek king Milinda has traveled far to test a famous Buddhist monk named Nagasena with hard questions about the self and the soul. He begins courteously, simply asking the monk what he is called. The monk gives a startling reply about that very name. What does Nagasena tell the king?",
+    "question": "Milinda, a king who had traveled far to test Nagasena with hard questions about the self and the soul, began courteously: he simply asked Nagasena his name. The reply about that very name was startling. What did Nagasena tell the king?",
     "answer": "That 'Nagasena' is just a word, with no real person behind it",
     "choices": [
       "That 'Nagasena' is just a word, with no real person behind it",
@@ -1106,7 +1080,7 @@
   },
   {
     "tier": 2,
-    "question": "The monk Nagasena claims no permanent person named 'Nagasena' can really be found. King Milinda fires back: then who receives the robes and food that monks are given? Who keeps the precepts -- and if someone killed you, who was murdered? The king even calls the monk a liar. What is the king's objection driving at?",
+    "question": "When Nagasena claimed that no permanent person named 'Nagasena' could really be found, King Milinda fired back. Then who receives the robes and food the monks are given? Who keeps the precepts? If someone killed Nagasena, who would be murdered? The king even called him a liar. What was the king's objection driving at?",
     "answer": "If no real person exists, the whole moral order would collapse",
     "choices": [
       "If no real person exists, the whole moral order would collapse",
@@ -1119,7 +1093,7 @@
   },
   {
     "tier": 3,
-    "question": "Nagasena has just gotten King Milinda to agree on one thing. 'Chariot' is only a word for the pole, axle, wheels, and frame put together. There is no extra chariot hiding behind the parts. Having won that point about the cart, what does Nagasena cleverly do next?",
+    "question": "Pole, axle, wheels, frame: King Milinda agreed with Nagasena that 'chariot' was only a word for these parts put together, with no extra chariot hiding behind them. Having won that point about the king's cart, what did Nagasena do next?",
     "answer": "He turns the same reasoning on himself, to explain his own name",
     "choices": [
       "He turns the same reasoning on himself, to explain his own name",
@@ -1132,7 +1106,7 @@
   },
   {
     "tier": 3,
-    "question": "A Hindu teacher of the Buddha's day taught that deep inside each person sits the atman -- an eternal, unchanging soul that is the real you. The Buddhist idea of 'anatta' was built as the sharp denial of exactly this soul. So what does anatta say a person actually is, in place of that soul?",
+    "question": "A Hindu teaching of the Buddha's day held that deep inside each person lies the atman, an eternal, unchanging soul that is his true identity. The Buddhist idea of anatta was built as a sharp denial of exactly that soul. What does anatta say a person actually is, in its place?",
     "answer": "A bundle of five changing parts, with nothing fixed underneath them",
     "choices": [
       "A bundle of five changing parts, with nothing fixed underneath them",
@@ -1145,7 +1119,7 @@
   },
   {
     "tier": 4,
-    "question": "Around 500 BC in northern India, the Buddha preached his second sermon to five disciples in a deer park near the city of Varanasi. He gave them a test for whether the body is your true 'self.' If the body really were your self, he said, you could command it — 'Let my body be thus; let it not be thus' — and it would obey. But it sickens and ages against your wishes. What does the Buddha conclude from this?",
+    "question": "The Buddha preached his second sermon to five disciples in a deer park near Varanasi, around 500 BC, and gave them a test. Suppose you are your body. Then you could command it, 'Let my body be thus; let it not be thus,' and it would obey. Yet it sickens and ages against your wishes. What did the Buddha conclude?",
     "answer": "Since you cannot rule the body at will, it is not a self you own",
     "choices": [
       "Since you cannot rule the body at will, it is not a self you own",
@@ -1158,7 +1132,7 @@
   },
   {
     "tier": 4,
-    "question": "Across the world and many centuries later, the Scottish thinker David Hume went looking inside himself for a self. Whenever he looked, he wrote, he caught only some perception -- a feeling, a sight, a thought -- never a bare 'I' holding them. He called the self 'nothing but a bundle of different perceptions.' Which earlier idea does Hume's conclusion echo almost exactly?",
+    "question": "David Hume, many centuries later and half a world away, went looking inside himself for a self. Whenever he looked, he wrote, he caught only some perception, a feeling, a sight or a thought, and never a bare 'I' holding them. He called the self 'nothing but a bundle of different perceptions.' Which earlier idea does his conclusion echo almost exactly?",
     "answer": "Nagasena's chariot -- an assembly of parts with nothing extra beneath",
     "choices": [
       "Nagasena's chariot -- an assembly of parts with nothing extra beneath",
@@ -1171,7 +1145,7 @@
   },
   {
     "tier": 4,
-    "question": "By legend, long before King Milinda, a Buddhist nun named Vajira sat meditating when Mara -- the tempter-demon -- tried to rattle her: 'Who made this being? Where does it come from?' Calmly she answered with an image: just as 'chariot' is a word used once the parts are assembled, so 'a being' is only a word for the bundle of parts. What happened to Mara next?",
+    "question": "Vajira, a Buddhist nun, sat meditating long before King Milinda's day, the legend says. Mara, the tempter-demon, tried to rattle her: 'Who made this being? Where does it come from?' She calmly answered with an image: just as 'chariot' is a word used once the parts are assembled, so 'a being' is only a word for a bundle of parts. What happened to Mara next?",
     "answer": "He saw that she had seen through him, and vanished sad and beaten",
     "choices": [
       "He saw that she had seen through him, and vanished sad and beaten",
@@ -1184,7 +1158,7 @@
   },
   {
     "tier": 5,
-    "question": "In ancient India, the Buddhist monk Nagasena met King Milinda to explain a puzzle. Nagasena said, 'I rode here in a chariot' — and clearly meant it — yet he added that if you go looking for the chariot itself, you will only ever find parts (pole, axle, wheels) and never a further thing that is the chariot. He said exactly the same of a person. A young listener objected that Nagasena was plainly contradicting himself. How is Nagasena not contradicting himself?",
+    "question": "Nagasena happily said, 'I rode here in a chariot,' and clearly meant it. Yet he added that anyone who goes looking for the chariot itself will only ever find parts (pole, axle, wheels) and never a further thing that is the chariot. He said exactly the same of a person. A young listener objected that Nagasena was plainly contradicting himself. Why was he not?",
     "answer": "He is talking on two levels: handy to name in daily life, yet no separate thing beneath the parts",
     "choices": [
       "He is talking on two levels: handy to name in daily life, yet no separate thing beneath the parts",
@@ -1197,7 +1171,7 @@
   },
   {
     "tier": 5,
-    "question": "Scholars notice how carefully the Buddha argues in his second sermon. One by one he takes up body, feeling, perception, habit and awareness, and shows of each that it is NOT the permanent self -- and then he stops. Some read him as proving there is no self at all; others, only that none of these five is it. Which gap in his argument lets that second reading survive?",
+    "question": "Scholars notice how carefully the Buddha argued in his second sermon. One by one he took up body, feeling, perception, habit and awareness, showed of each that it is not the permanent self, and then stopped. Some read him as proving there is no self at all; others, only that none of these five is it. What gap in his argument lets the second reading survive?",
     "answer": "He tested only those five and never ruled out a self beyond them",
     "choices": [
       "He tested only those five and never ruled out a self beyond them",
@@ -1210,7 +1184,7 @@
   },
   {
     "tier": 5,
-    "question": "Nagasena lifted away every part of the chariot and found no chariot hiding underneath. David Hume searched himself and caught only passing perceptions, never a bare 'I' holding them. The modern philosopher Derek Parfit, tracing a person to a stream of linked mental and bodily events, came to the very same place. What does each of the three say is simply NOT there?",
+    "question": "Nagasena lifted away every part of the chariot and found no chariot hiding underneath. David Hume searched himself and caught only passing perceptions, never a bare 'I' holding them. Derek Parfit, in the twentieth century, traced a person to a stream of linked mental and bodily events and came to the very same place. What does each of the three say is simply not there?",
     "answer": "Any extra self standing over and above the connected parts",
     "choices": [
       "Any extra self standing over and above the connected parts",
@@ -1223,7 +1197,7 @@
   },
   {
     "tier": 2,
-    "question": "Anaxagoras, an ancient Greek philosopher of the 400s BC who taught in Athens, was once asked a great question: why is it better to be born and live at all than never to have existed in the first place? He answered with the one pursuit that, to him, made a whole human life worth living. What did Anaxagoras name?",
+    "question": "Someone once put a great question to Anaxagoras, who taught in Athens in the 400s BC: what makes being born and living better than never having existed at all? He answered with the one pursuit that, to him, made a whole life worth living. What did he name?",
     "answer": "To study the sun, the moon, and the heavens",
     "choices": [
       "To study the sun, the moon, and the heavens",
@@ -1236,7 +1210,7 @@
   },
   {
     "tier": 2,
-    "question": "Around 450 BC, most Athenians worshipped the sun as the god Helios — a living being who drove a fiery chariot across the sky each day. Then the philosopher Anaxagoras looked up and told the city what the sun actually is. His answer shocked Athens so badly he was charged with impiety and driven out. What did he claim the sun really was?",
+    "question": "Most Athenians around 450 BC worshipped the sun as the god Helios, a living being who drove a fiery chariot across the sky each day. Then Anaxagoras looked up and told the city what the sun actually is, and his answer shocked Athens. What did he claim the sun really was?",
     "answer": "A glowing mass of red-hot metal, bigger than the Peloponnese",
     "choices": [
       "A glowing mass of red-hot metal, bigger than the Peloponnese",
@@ -1249,7 +1223,7 @@
   },
   {
     "tier": 3,
-    "question": "Anaxagoras, an ancient Greek philosopher of the 400s BC, dared to say the moon is no goddess. It makes no light of its own, he taught in Athens — it shines only by catching and reflecting the sun's light. He then made a startling claim about what the moon's surface would look like up close. What did Anaxagoras say it has?",
+    "question": "Anaxagoras dared to tell Athens that the moon is no goddess. It makes no light of its own, he taught, but shines only by catching and reflecting the sun's. He then made a startling claim about what the moon's surface would look like up close. What did he say it has?",
     "answer": "Plains and mountains, like the solid ground of the earth",
     "choices": [
       "Plains and mountains, like the solid ground of the earth",
@@ -1262,7 +1236,7 @@
   },
   {
     "tier": 3,
-    "question": "Anaxagoras, the ancient Greek philosopher of the 400s BC, was the teacher and close friend of Athens's greatest statesman, Pericles. The politician Cleon, hoping to strike at Pericles through his friend, hauled the old philosopher into an Athenian court. Anaxagoras was fined five silver talents and banished from the city. What crime did the accusers charge him with?",
+    "question": "Pericles, the greatest statesman of Athens, counted Anaxagoras as his teacher and close friend. The politician Cleon, hoping to strike at Pericles through his friend, hauled the old philosopher into an Athenian court, where Anaxagoras was fined five silver talents and banished from the city. What crime had the accusers charged him with?",
     "answer": "Impiety against the gods of the city",
     "choices": [
       "Impiety against the gods of the city",
@@ -1275,7 +1249,7 @@
   },
   {
     "tier": 3,
-    "question": "Anaxagoras, the ancient Greek philosopher of the 400s BC, pictured how the whole world began. At first, he said, everything was one blended mass — nothing was yet sorted out. Then something set that mass turning, and the turning slowly sifted the blend into the ordered world of stars, earth, sea, and living things that we know. What did Anaxagoras say that ordering force was?",
+    "question": "At the beginning of the world, Anaxagoras said, everything lay in one blended mass, with nothing yet sorted out. Then something set the mass turning, and the turning slowly sifted the blend into stars, earth, sea and living things. What did Anaxagoras say that ordering force was?",
     "answer": "Mind, pure and all-knowing, which governs everything",
     "choices": [
       "Mind, pure and all-knowing, which governs everything",
@@ -1288,7 +1262,7 @@
   },
   {
     "tier": 4,
-    "question": "Anaxagoras, the ancient Greek philosopher of the 400s BC, held that every ordinary thing is a blend — a stone or a tree or a bone carries a small portion of everything else inside it. Yet he argued that the ordering Mind that steers the whole cosmos had to be the one exception: utterly pure, mixed with nothing at all. Why did Anaxagoras say Mind alone had to stay unmixed?",
+    "question": "Anaxagoras held that every ordinary thing is blended: a stone, a tree or a bone carries a small portion of everything else inside it. Yet the ordering power that steers the whole cosmos, he argued, had to be the one exception, utterly pure and mixed with nothing at all. Why did he say it alone had to stay unmixed?",
     "answer": "Anything blended into it would thwart its control",
     "choices": [
       "Anything blended into it would thwart its control",
@@ -1301,7 +1275,7 @@
   },
   {
     "tier": 2,
-    "question": "After being banished from Athens, the old Greek philosopher Anaxagoras lived his last years honored in the town of Lampsacus, on the coast of what is now Turkey. The people of the town asked how he wished the city to remember him after his death. He made one request, meant for the town's schoolchildren. What did Anaxagoras ask them to give the children?",
+    "question": "Banished from Athens, Anaxagoras spent his last years in Lampsacus, on the coast of what is now Turkey, where the townspeople honored him. They asked how he wished to be remembered, and he made one request, for the town's schoolchildren. What did he ask the town to give them?",
     "answer": "A yearly school holiday in the month he died",
     "choices": [
       "A yearly school holiday in the month he died",
@@ -1392,7 +1366,7 @@
   },
   {
     "tier": 2,
-    "question": "A jacket hangs on the rack at a clothing store with a bright red tag that reads: 'Was $200, now $90.' It feels like a real steal. But a clerk quietly admits the store has never actually sold that jacket for $200 — it printed the higher number purely to cross it out on the tag. So why does the $90 price still feel like such a great deal to almost every shopper who walks by?",
+    "question": "A jacket on a store rack wears a bright red tag: 'Was $200, now $90.' It feels like a steal. But a clerk admits the store never sold that jacket for $200; it printed the higher number purely to cross it out. Why does $90 still feel like a great deal to almost every shopper?",
     "answer": "The crossed-out $200 set the bar, so $90 is judged against a made-up number, not the jacket's real worth",
     "choices": [
       "The jacket is genuinely worth far more than $90, and the store is simply taking a loss to draw shoppers in",
@@ -1405,7 +1379,7 @@
   },
   {
     "tier": 2,
-    "question": "A grocery store stacked cans of soup at 79 cents each by the aisle's end. With no sign, shoppers grabbed about 3 cans apiece. Then a sign went up: 'Limit 12 per person.' Sales more than doubled to about 7 cans. The price never changed. What did the number 12 do?",
+    "question": "A grocery store stacked 79-cent cans of soup at the end of an aisle, and with no sign, shoppers took about three cans apiece. Then a sign went up reading 'Limit 12 per person,' and sales more than doubled, to about seven cans, though the price never changed. What did the number 12 do?",
     "answer": "It became a figure shoppers adjusted DOWN from, so they bought far more than if they'd started from zero",
     "choices": [
       "It warned shoppers of a coming shortage, so they stockpiled cans before the store ran out entirely",
@@ -1431,7 +1405,7 @@
   },
   {
     "tier": 3,
-    "question": "In bargaining studies, sellers who open high usually close high, and buyers who open low usually close low. The side that names the opening figure tends to win ground, unless that figure is so extreme the other side simply walks away. Why does that opening offer carry such weight?",
+    "question": "A merchant and a customer haggle over a rug at a market stall, and one of them names a figure first. In bargaining studies, sellers who open high usually close high and buyers who open low usually close low, unless that figure is so extreme the other side simply walks away. Why does the first offer carry such weight?",
     "answer": "The first number becomes the reference point both sides adjust around, so it sets the range the deal lands in",
     "choices": [
       "Whoever speaks first shows more confidence, and the more confident negotiator simply intimidates the other",
@@ -1444,7 +1418,7 @@
   },
   {
     "tier": 4,
-    "question": "Experienced criminal judges read the same shoplifting case, then rolled dice secretly loaded to come up high or low. The roll was labeled a 'sentence demand.' Judges who rolled high handed down about 7.8 months; those who rolled low, about 5.3 -- a ~50% swing from a dice throw, and afterward ~79% insisted the dice had not swayed them. What best explains how the roll moved a careful judge?",
+    "question": "Experienced criminal judges read the same shoplifting case, then rolled dice secretly loaded to come up high or low, the roll counting as a 'sentence demand.' Judges who rolled high handed down about 7.8 months, those who rolled low about 5.3, and afterward about 79 percent insisted the dice had not swayed them. What best explains how the roll moved a careful judge?",
     "answer": "The random number quietly set the scale the judge measured from, and he stopped adjusting once the sentence felt fair to him",
     "choices": [
       "The random number quietly set the scale the judge measured from, and he stopped adjusting once the sentence felt fair to him",
@@ -1457,7 +1431,7 @@
   },
   {
     "tier": 4,
-    "question": "Researchers toured real estate agents through the exact same house, but each got a packet with a different listing price, from $119,900 up to $149,900. The agents shown the high listing appraised the house in real dollars far above those shown the low one. Yet asked what shaped their figure, only about 19% even mentioned the listing. What does that 19% reveal?",
+    "question": "Researchers toured real estate agents through the very same house, but each agent got a packet with a different listing price, from $119,900 up to $149,900. Agents shown the high listing valued the house far above those shown the low one. Yet asked what shaped their figure, only about 19% even mentioned the listing. What does that 19% reveal?",
     "answer": "Most agents were swayed by the listing yet could not feel it working, so they credited their figure to their own judgment",
     "choices": [
       "The agents who skipped the listing were the sloppy ones; the careful 19% who used it gave the most accurate appraisals",
@@ -1470,7 +1444,7 @@
   },
   {
     "tier": 4,
-    "question": "In psychology, an 'anchor' is a first number that quietly warps your judgment — a seller says $500 and your later offer creeps toward it, even when you know the $500 was made up on the spot. Warnings and willpower barely dent this pull, so researchers hunted for a mental move that actually protects you from a lowball offer before you commit. One technique reliably neutralized the anchor's pull. Which move worked in their studies?",
+    "question": "Suppose you are haggling and a seller names $500. Your later offer creeps toward that number, even though you know it was made up on the spot. Warnings and willpower barely dent the pull, so researchers hunted for a mental move that protects you before you commit. Which move reliably neutralized the anchor in their studies?",
     "answer": "Before committing, deliberately list concrete reasons the number could be badly wrong, so your estimate pulls away from it",
     "choices": [
       "Before committing, deliberately list concrete reasons the number could be badly wrong, so your estimate pulls away from it",
@@ -1483,7 +1457,7 @@
   },
   {
     "tier": 1,
-    "question": "In the late 1000s, the Christian monk Anselm was searching for one single argument that would prove God exists on its own, from pure reason alone. The search kept him from food and sleep. It tortured him so badly that he began to fear where the whole obsession was coming from. What did Anselm think was behind his sleepless hunt?",
+    "question": "Anselm, a Christian monk, was searching for one argument that could prove God exists from pure reason alone. The hunt kept him from food and sleep until he began to fear where the obsession came from. What did he think was behind it?",
     "answer": "A temptation sent by the Devil",
     "choices": [
       "A temptation sent by the Devil",
@@ -1496,7 +1470,7 @@
   },
   {
     "tier": 1,
-    "question": "One night the answer came to Anselm, and he scratched the argument onto wax tablets. He handed them to another monk to guard, but the tablets vanished. He wrote everything again on new tablets, and those were later found smashed on the ground. How did Anselm's book finally survive?",
+    "question": "One night the answer came to Anselm, and he scratched the argument onto wax tablets. He gave them to another monk to guard, but they vanished. He wrote it again on new tablets, later found smashed on the ground. How did his book finally survive?",
     "answer": "He wrote it a third time, on parchment",
     "choices": [
       "He wrote it a third time, on parchment",
@@ -1509,7 +1483,7 @@
   },
   {
     "tier": 2,
-    "question": "Anselm was a firm believer in God long before he wrote a word of his proof. He insisted he was not trying to reason his way into faith; as he put it, 'I believe in order to understand,' and he gave his book a title meaning 'faith seeking understanding.' So what was Anselm trying to do with his argument?",
+    "question": "Long before he wrote a word of his proof, Anselm believed firmly in God. He was not trying to reason his way into faith, he insisted: 'I believe in order to understand.' He even gave his book a title meaning 'faith seeking understanding.' What was Anselm trying to do with his argument?",
     "answer": "See why what he already believed is true",
     "choices": [
       "See why what he already believed is true",
@@ -1522,7 +1496,7 @@
   },
   {
     "tier": 2,
-    "question": "Anselm aimed his proof at a character from the Psalms he called 'the fool' — the one who says in his heart, 'There is no God.' Anselm's clever move was to notice that even to DENY the greatest being that can be thought of, the fool must first do one thing. What must the fool do before he can deny it?",
+    "question": "A character from the Psalms, the fool, says in his heart, 'There is no God.' Anselm aimed his proof at him. Even to deny the greatest being that can be thought of, Anselm noticed, the fool must first do one thing. What must he do before he can deny it?",
     "answer": "Hold the idea in his own mind",
     "choices": [
       "Hold the idea in his own mind",
@@ -1535,7 +1509,7 @@
   },
   {
     "tier": 3,
-    "question": "Anselm begins with one definition of God: the greatest being anyone could possibly imagine. From that definition alone, with no other evidence, Anselm claims he can prove a single thing about God. Philosophers have argued ever since that you cannot pull this from a definition. What did Anselm say the definition forces to be true?",
+    "question": "Anselm begins with one definition of God: the greatest being anyone could possibly conceive. From that definition alone, with no other evidence, he claims he can prove a single thing about God. Philosophers have argued ever since that no one can pull this from a definition. What does Anselm say the definition forces to be true?",
     "answer": "That this being must really exist",
     "choices": [
       "That this being must really exist",
@@ -1561,7 +1535,7 @@
   },
   {
     "tier": 4,
-    "question": "A monk named Gaunilo wrote a reply to Anselm titled 'On Behalf of the Fool,' taking the atheist's side. To prove Anselm's logic broken, Gaunilo ran the very same reasoning on a different object: imagine the single most excellent one of these that could possibly be, so excellent that nothing of its kind could be better. By Anselm's rule it would then have to exist for real, which is plainly absurd. What object did Gaunilo pick to wreck the argument?",
+    "question": "Gaunilo, a fellow monk, answered Anselm in a reply titled 'On Behalf of the Fool.' He ran the very same reasoning on a different object: the single most excellent one of its kind that could possibly be, so fine that nothing of its kind could be better. By Anselm's rule it would have to exist for real, which is plainly absurd. What object did Gaunilo pick to wreck the argument?",
     "answer": "A lost island richer than all other lands",
     "choices": [
       "A lost island richer than all other lands",
@@ -1574,7 +1548,7 @@
   },
   {
     "tier": 5,
-    "question": "Anselm's defenders have a sharp answer to Gaunilo's island. They argue the island parody fails for one reason: an island and the greatest possible BEING are simply not the same kind of thing, so the trick that works on one cannot work on the other. What makes the greatest possible being safe from the island move?",
+    "question": "Anselm's defenders have a sharp answer to Gaunilo's parody. It fails, they argue, because the perfect island Gaunilo imagined and the greatest possible being are not the same kind of thing, so a trick that works on one cannot work on the other. What makes the greatest possible being safe from the island move?",
     "answer": "Its great qualities have a top limit; an island's never do",
     "choices": [
       "Its great qualities have a top limit; an island's never do",
@@ -1704,7 +1678,7 @@
   },
   {
     "tier": 2,
-    "question": "Seneca writes that even the bravest soldier turns pale as he puts on his armor, and his knees shake when the trumpet sounds. A great general's heart leaps into his mouth before the battle. Yet Seneca insists none of this is real fear or cowardice. What does he say a racing heart and a sudden shudder actually are?",
+    "question": "Seneca writes that even the bravest soldier turns pale as he puts on his armor, and his knees shake when the trumpet sounds; a great general's heart leaps into his mouth before battle. Yet none of this, Seneca insists, is real fear. What does he say a racing heart and a sudden shudder actually are?",
     "answer": "The body's involuntary jolts, before the mind has agreed to be afraid",
     "choices": [
       "The body's involuntary jolts, before the mind has agreed to be afraid",
@@ -1717,7 +1691,7 @@
   },
   {
     "tier": 3,
-    "question": "Epictetus points out that the same blow, being sent into exile say, can destroy one person and leave another completely calm. If exile itself did the wounding, it would have to wound both men equally. So where does Epictetus find the real source of a person's suffering?",
+    "question": "Epictetus points out that the same blow, being sent into exile, say, can destroy one man and leave another completely calm. If exile itself did the wounding, it would have to wound both men equally. Where, then, does Epictetus find the real source of a person's suffering?",
     "answer": "In the view the person chooses to take of what happened to him",
     "choices": [
       "In the view the person chooses to take of what happened to him",
@@ -1730,7 +1704,7 @@
   },
   {
     "tier": 4,
-    "question": "The Stoics, founded by Zeno of Citium on an Athenian porch around 300 BC, taught that the wise person should uproot the wild passions. Critics fired back that the Stoic sage was a cold, dead-hearted man who had killed off every feeling. The Stoics answered that their wise person still feels three feelings, finely and well. According to the Stoics, which trio does the sage genuinely feel?",
+    "question": "Critics fired back at the Stoic teaching that the wise should uproot the wild passions: such a sage, they said, must be cold and dead-hearted, a man who had killed off every feeling. The Stoics answered that their sage still feels three feelings, finely and well. Which trio does he genuinely feel?",
     "answer": "A rational joy, a careful wariness, and a warm goodwill toward others",
     "choices": [
       "A rational joy, a careful wariness, and a warm goodwill toward others",
@@ -1743,7 +1717,7 @@
   },
   {
     "tier": 4,
-    "question": "In first-century Rome, the Stoic philosopher Seneca wrote a whole book called On Anger. In it he says the angry man is wrong to plead that rage seized him like a wave he could not help. Other thinkers, though, offer rival accounts of what anger really is and where it comes from. Which account does Seneca, and the Stoics, hold?",
+    "question": "An angry man pleads that rage seized him like a wave he could not help. Seneca, writing his whole book On Anger in first-century Rome, says the man is wrong to plead it. What do Seneca and the Stoics say anger really is?",
     "answer": "An assent the mind gave just now, which a man can take back this instant",
     "choices": [
       "An assent the mind gave just now, which a man can take back this instant",
@@ -1756,7 +1730,7 @@
   },
   {
     "tier": 2,
-    "question": "You feel sick. A doctor examines you and prescribes a medicine. You have never studied medicine and cannot judge the chemistry yourself, so you take the pill she suggests. Is trusting her here a thinking error, or a reasonable thing to do?",
+    "question": "Suppose you feel sick, and a doctor examines you and prescribes a medicine. You have never studied medicine and cannot judge the chemistry yourself, so you take the pill she suggests. Is trusting her here a thinking error, or a reasonable thing to do?",
     "answer": "Reasonable: she is a real expert in this exact field, and most of what we know we learn from the right experts",
     "choices": [
       "Reasonable: she is a real expert in this exact field, and most of what we know we learn from the right experts",
@@ -1795,7 +1769,7 @@
   },
   {
     "tier": 2,
-    "question": "For hundreds of years, students settled arguments by saying, in effect, the great Aristotle said so -- and that ended the matter, even for things they could have checked with their own eyes. A teacher tells his class this habit was a mistake. Why was treating one mans word as the final answer a thinking error?",
+    "question": "Students settled arguments for hundreds of years by saying, in effect, that the great Aristotle said so, and that ended the matter, even on things they could have checked with their own eyes. A teacher calls the habit a mistake. Why was treating one man's word as the final answer a thinking error?",
     "answer": "Even a great thinker can be wrong, so his say-so settles nothing; the way to know is to check the world yourself",
     "choices": [
       "Even a great thinker can be wrong, so his say-so settles nothing; the way to know is to check the world yourself",
@@ -1834,7 +1808,7 @@
   },
   {
     "tier": 3,
-    "question": "A debater quotes Dr. Reyes, who says eating salt raises your risk of heart disease. His opponent quotes Dr. Okafor, just as well qualified, who says salt does no such thing -- and nutrition has never reached a lasting agreement on it. The debater insists Dr. Reyes settles the question. Why does naming one expert fail to settle it here?",
+    "question": "A debater quotes Dr. Reyes, who says eating salt raises the risk of heart disease. His opponent quotes Dr. Okafor, just as well qualified, who says salt does no such thing, and nutrition has never reached a lasting agreement on it. The debater insists Dr. Reyes settles the question. Why does naming one expert fail to settle it here?",
     "answer": "With qualified experts this divided, naming one cannot decide it; Dr. Okafor cancels out Dr. Reyes",
     "choices": [
       "With qualified experts this divided, naming one cannot decide it; Dr. Okafor cancels out Dr. Reyes",
@@ -1847,7 +1821,7 @@
   },
   {
     "tier": 3,
-    "question": "A well-qualified climate scientist lays out her argument with all her evidence. Instead of answering that evidence, her opponent simply sneers that she once got a minor detail wrong years ago, and treats her whole argument as beaten. He thinks he has cleverly avoided bowing to authority. But philosophers call his move the ad hominem fallacy — attacking the person instead of engaging the reasoning. What mistake is he actually making?",
+    "question": "A well-qualified climate scientist lays out her argument with all her evidence. Instead of answering it, her opponent sneers that she got a minor detail wrong years ago and treats her whole argument as beaten. He thinks he has cleverly avoided bowing to authority. What mistake is he actually making?",
     "answer": "He attacks the source instead of the reasoning, the mirror-image of the error of blindly obeying authority",
     "choices": [
       "He attacks the source instead of the reasoning, the mirror-image of the error of blindly obeying authority",
@@ -1860,7 +1834,7 @@
   },
   {
     "tier": 4,
-    "question": "Linus Pauling won two unshared Nobel Prizes -- Chemistry, then Peace -- a feat almost no one in history matches. Late in life he insisted that huge doses of vitamin C could prevent the common cold and even cancer, and pointed to his prizes as if they backed him. Why did his two Nobels give that medical claim no real authority?",
+    "question": "Linus Pauling won two unshared Nobel Prizes, for chemistry and then for peace. Late in life he insisted that huge doses of vitamin C could prevent the common cold and even cancer, and he pointed to his prizes as if they backed him. Why did his two Nobels give that medical claim no real authority?",
     "answer": "His prizes were for molecular chemistry and for peace, not clinical nutrition; brilliance in one field is no expertise in another",
     "choices": [
       "His prizes were for molecular chemistry and for peace, not clinical nutrition; brilliance in one field is no expertise in another",
@@ -1873,7 +1847,7 @@
   },
   {
     "tier": 4,
-    "question": "Linus Pauling swallowed about 18 grams of vitamin C every single day. He claimed such megadoses could fight off colds, cancer, even schizophrenia, under a theory he named orthomolecular medicine. Eating an orange gives you only a small fraction of a single gram. How many oranges a day would you have to eat to match his 18 grams?",
+    "question": "Every day Linus Pauling swallowed about 18 grams of vitamin C. Such megadoses, he claimed under a theory he named orthomolecular medicine, could fight off colds, cancer, even schizophrenia. An orange holds only a small fraction of a single gram. How many oranges a day would a person have to eat to match his 18 grams?",
     "answer": "About 360 oranges, eaten every single day",
     "choices": [
       "About 360 oranges, eaten every single day",
@@ -1886,7 +1860,7 @@
   },
   {
     "tier": 4,
-    "question": "John Locke, in 1690, gave a name to a sly debating trick: heap up the weight of great and celebrated names on your side of an argument. He named the trick not after the names themselves but after a private feeling it stirs in the opponent who would push back. Which feeling did Locke point to?",
+    "question": "John Locke, in 1690, named a sly debating trick: heaping the weight of great and celebrated names onto one side of an argument. He named it not after the names themselves but after a private feeling the trick stirs in the opponent who would push back. Which feeling did Locke point to?",
     "answer": "Shame at seeming arrogant for daring to question a famous thinker",
     "choices": [
       "Shame at seeming arrogant for daring to question a famous thinker",
@@ -1899,7 +1873,7 @@
   },
   {
     "tier": 5,
-    "question": "A famous story says Galileo climbed the Leaning Tower of Pisa and dropped two balls of different weight to disprove Aristotle's rule that heavier things fall faster. Historians call the tower story a legend, dreamed up by his student Viviani — Galileo left no record of it. So how did the real Galileo actually measure how things fall?",
+    "question": "A famous story says Galileo climbed the Leaning Tower of Pisa and dropped two balls of different weight to disprove Aristotle's rule that heavier things fall faster. Historians call the tower a legend, dreamed up by his student Viviani; Galileo left no record of it. How did the real Galileo measure how things fall?",
     "answer": "He rolled balls down gently sloping ramps, which slowed the motion enough to time it precisely",
     "choices": [
       "He rolled balls down gently sloping ramps, which slowed the motion enough to time it precisely",
@@ -2029,7 +2003,7 @@
   },
   {
     "tier": 2,
-    "question": "A baron summons a villager who has complained that the new harvest tax is unjust. The baron booms, 'My tax is just. Question it again and you'll rot in my dungeon.' The terrified villager nods and agrees. Has the baron shown that the harvest tax truly IS just?",
+    "question": "A baron summons a villager who has complained that the new harvest tax is unjust. 'My tax is just,' the baron booms. 'Question it again and you'll rot in my dungeon.' The terrified villager nods and agrees. Has the baron shown that the harvest tax truly is just?",
     "answer": "No — the threat forces the villager to agree, but offers no reason the tax is fair",
     "choices": [
       "No — the threat forces the villager to agree, but offers no reason the tax is fair",
@@ -2042,7 +2016,7 @@
   },
   {
     "tier": 2,
-    "question": "Two grown-ups each say something to a child that mentions getting hurt. A blacksmith says, 'Touch that forge and you'll burn your hand.' A bully says, 'Say my drawing is the best, or I'll burn you with this poker.' Which speaker is dodging a real argument by wielding fear, and what gives it away?",
+    "question": "A blacksmith tells a child, 'Touch that forge and you'll burn your hand.' Later a bully waves a poker at the same child: 'Say my drawing is the best, or I'll burn you with this poker.' Both speak of getting hurt. Which speaker gives himself away as wielding fear instead of an argument?",
     "answer": "The bully — he himself promises to inflict the harm to force agreement, not to advise",
     "choices": [
       "The bully — he himself promises to inflict the harm to force agreement, not to advise",
@@ -2055,7 +2029,7 @@
   },
   {
     "tier": 2,
-    "question": "An employee politely asks his manager why he has to work this weekend, when he was promised the days off. The manager narrows his eyes and says, 'Am I sensing insubordination? I can find a new employee very quickly.' The employee falls silent. Philosophers call this the 'appeal to force' — swapping a real answer for a threat. Judging only by what the manager actually said, how has he answered the honest question?",
+    "question": "An employee politely asks his manager why he must work this weekend, when he was promised the days off. The manager narrows his eyes: 'Am I sensing insubordination? I can find a new employee very quickly.' The employee falls silent. Judging only by what the manager said, how has he answered the man's honest question?",
     "answer": "He swapped a reason for a threat to the man's job, so the 'why' went unanswered",
     "choices": [
       "He swapped a reason for a threat to the man's job, so the 'why' went unanswered",
@@ -2068,7 +2042,7 @@
   },
   {
     "tier": 3,
-    "question": "On 22 May 1856, Senator Charles Sumner had just given a long speech in the U.S. Senate attacking slavery. Congressman Preston Brooks walked up to Sumner at his desk and beat him over the head more than thirty times with a heavy walking cane, injuring him so badly he could not return to his seat for years. Brooks answered not one of Sumner's arguments. As a way of settling whether Sumner was RIGHT about slavery, what did the beating prove?",
+    "question": "Senator Charles Sumner had just given a long speech in the Senate attacking slavery when, on 22 May 1856, Congressman Preston Brooks walked up to his desk and beat him over the head more than thirty times with a heavy cane. Sumner could not return to his seat for years. Brooks answered not one of his arguments. What did the beating prove about whether Sumner was right about slavery?",
     "answer": "Nothing — force can silence a man, but it cannot show his argument was mistaken",
     "choices": [
       "Nothing — force can silence a man, but it cannot show his argument was mistaken",
@@ -2081,7 +2055,7 @@
   },
   {
     "tier": 3,
-    "question": "On 9 February 1950, Senator Joseph McCarthy held up a sheet of paper in Wheeling and announced he had 'a list of 205 communists' secretly working inside the State Department. He never produced the list, and a later congressional inquiry found no substance to the charge. Yet his audience was swept along. What was doing the persuading, if not any evidence?",
+    "question": "Senator Joseph McCarthy held up a sheet of paper in Wheeling on 9 February 1950 and announced he had 'a list of 205 communists' secretly working inside the State Department. He never produced the list, and a later congressional inquiry found no substance to the charge. Yet his audience was swept along. What was doing the persuading, if not any evidence?",
     "answer": "The dread of hidden traitors, which scared people into believing before any proof was shown",
     "choices": [
       "The dread of hidden traitors, which scared people into believing before any proof was shown",
@@ -2094,7 +2068,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 1633, the elderly Galileo stood before the Roman Inquisition. The court showed him the instruments of torture and threatened to use them unless he took back his claim that the Earth moves around the Sun. Galileo gave in and recanted. So what exactly did the threat of the rack succeed in changing?",
+    "question": "The elderly Galileo stood before the Roman Inquisition in June 1633. The court showed him the instruments of torture and threatened to use them unless he took back his claim that the Earth moves around the Sun. Galileo gave in and recanted. What exactly did the threat of the rack succeed in changing?",
     "answer": "What Galileo would SAY in public, but nothing about how the Earth and Sun truly move",
     "choices": [
       "What Galileo would SAY in public, but nothing about how the Earth and Sun truly move",
@@ -2107,7 +2081,7 @@
   },
   {
     "tier": 4,
-    "question": "A robber jumps out and snarls, 'Your money or your life!' It is a frightening threat — yet logicians say the robber has not committed the appeal-to-force FALLACY at all. The logician Charles Hamblin pointed out that 'a fallacy is a fallacious ARGUMENT.' Using that clue, why does the mugger's threat fall outside the fallacy?",
+    "question": "A robber jumps out and snarls, 'Your money or your life!' The threat is frightening, yet logicians say the robber has not committed the appeal-to-force fallacy at all. Charles Hamblin, a logician, pointed out that 'a fallacy is a fallacious argument.' Why, then, does the robber's threat fall outside the fallacy?",
     "answer": "He gives no argument, only a demand; with no reasoning offered, there is no reasoning to be bad",
     "choices": [
       "He gives no argument, only a demand; with no reasoning offered, there is no reasoning to be bad",
@@ -2133,7 +2107,7 @@
   },
   {
     "tier": 2,
-    "question": "A villager in a country town points at the old stone well in the square and declares it cursed. When his neighbors ask him for proof, he just shrugs: 'Nobody has ever proven the well isn't cursed, so it must be.' A traveling teacher listening nearby says the villager's reasoning has a plain fault in it. What is the flaw?",
+    "question": "A villager points at the old stone well in the town square and declares it cursed. Asked for proof, he just shrugs: 'Nobody has ever proven the well isn't cursed, so it must be.' A traveling teacher listening nearby says his reasoning has a plain fault. What is the flaw?",
     "answer": "Failing to disprove a claim is not the same as proving it; a blank where evidence should sit tells nothing",
     "choices": [
       "Failing to disprove a claim is not the same as proving it; a blank where evidence should sit tells nothing",
@@ -2159,7 +2133,7 @@
   },
   {
     "tier": 2,
-    "question": "At dinner one night a small child insists there is a monster hiding under her bed. When her father says he doubts it, she folds her arms and dares him: 'Prove there isn't one!' Her father smiles and gently tells her she has the whole job backwards. Between the father and the child, whose task is it to bring the proof, and why?",
+    "question": "A small girl insists at dinner that a monster is hiding under her bed. When her father says he doubts it, she folds her arms and dares him: 'Prove there isn't one!' He smiles and tells her she has the job backwards. Whose task is it to bring the proof, and why?",
     "answer": "Hers, because the one who claims an unusual thing exists is the one who must show that it does",
     "choices": [
       "Hers, because the one who claims an unusual thing exists is the one who must show that it does",
@@ -2185,7 +2159,7 @@
   },
   {
     "tier": 4,
-    "question": "Bertrand Russell wanted to show who really owes the proof. He imagined a china teapot orbiting the sun between Earth and Mars, too small for any telescope to catch. Nobody could ever disprove it. What did Russell say about anyone who insisted it was arrogant to doubt the teapot, just because it cannot be refuted?",
+    "question": "Bertrand Russell wanted to show who really owes the proof. He imagined a china teapot orbiting the sun between Earth and Mars, too small for any telescope to catch, so that nobody could ever disprove it. Some might call it arrogant to doubt the teapot, just because it cannot be refuted. What did Russell say about anyone who insisted on that?",
     "answer": "That such a person would rightly be thought to be talking nonsense, since the claimant, not the doubter, owes the evidence",
     "choices": [
       "That such a person would rightly be thought to be talking nonsense, since the claimant, not the doubter, owes the evidence",
@@ -2211,7 +2185,7 @@
   },
   {
     "tier": 4,
-    "question": "Senator Joseph McCarthy, pressing a Cold War loyalty case, said of the accused man: 'there is nothing in the files to disprove his Communist connections.' Logicians cite this exact sentence as a textbook specimen of bad reasoning. Pin down precisely what makes the sentence collapse.",
+    "question": "Senator Joseph McCarthy, pressing a Cold War loyalty case, said of the accused man: 'there is nothing in the files to disprove his Communist connections.' Logicians cite this exact sentence as a textbook specimen of bad reasoning. What precisely makes the sentence collapse?",
     "answer": "A gap where evidence would sit is not itself evidence; the accuser, not the silent file, must furnish proof of the charge",
     "choices": [
       "A gap where evidence would sit is not itself evidence; the accuser, not the silent file, must furnish proof of the charge",
@@ -2224,7 +2198,7 @@
   },
   {
     "tier": 5,
-    "question": "A sharp student presses the rule: 'If absence of evidence is never evidence of absence, can a failed search EVER count against a claim?' The Internet Encyclopedia of Philosophy answers that a failed hunt does carry some weight, but only when one strict condition holds. What is that condition?",
+    "question": "A sharp student presses the rule: 'If absence of evidence is never evidence of absence, can a failed search ever count against a claim?' A failed hunt can carry some weight, but only when one strict condition holds. What is that condition?",
     "answer": "The hunt was thorough, and the thing, if real, would surely have left a discoverable trace right where the searchers looked",
     "choices": [
       "The hunt was thorough, and the thing, if real, would surely have left a discoverable trace right where the searchers looked",
@@ -2237,7 +2211,7 @@
   },
   {
     "tier": 5,
-    "question": "Carl Sagan's heatless invisible dragon can dodge every test forever, so doubting it stays fair. For one of these four cryptids, though, a long hunt that turned up nothing DOES genuinely (if not absolutely) count as a reason to doubt, while for the other three the empty-handed search settles far less. Which creature is the legitimate case, and what makes its empty search differ from the others?",
+    "question": "Carl Sagan's heatless, invisible dragon dodges every test forever, so no failed search can ever count against it. Some famous cryptids are another matter: for one of them, a long hunt that turned up nothing is a genuine, if not absolute, reason to doubt. Which creature is it?",
     "answer": "The Loch Ness monster, since a thirty-foot animal in a finite, decades-searched lake should have turned up on sonar by now",
     "choices": [
       "The Loch Ness monster, since a thirty-foot animal in a finite, decades-searched lake should have turned up on sonar by now",
@@ -2250,7 +2224,7 @@
   },
   {
     "tier": 1,
-    "question": "In a busy village market, a merchant pushes a copper charm at every passer-by. 'Everybody in town wears one,' he calls out, 'so it must keep fevers away.' A traveler stops and wonders whether 'lots of people wear it' is really a strong reason to believe the charm truly works. What is the soundest reply?",
+    "question": "A merchant in a village market pushes a copper charm at every passer-by. 'Everybody in town wears one,' he calls, 'so it must keep fevers away.' A traveler wonders whether so many wearers are good reason to think it works. What is the soundest reply?",
     "answer": "How many people wear the charm tells you nothing about whether it works, so the claim still has to be checked",
     "choices": [
       "How many people wear the charm tells you nothing about whether it works, so the claim still has to be checked",
@@ -2263,7 +2237,7 @@
   },
   {
     "tier": 1,
-    "question": "A television advertisement urges you to switch tonight to Channel 6, and it gives you just one reason: Channel 6 is the single most-watched channel in the country this year. A friend beside you on the couch says 'most-watched' has quietly been swapped in for a stronger claim the ad never actually proved. Which claim got smuggled in?",
+    "question": "Two friends are watching television when an ad urges viewers to switch to Channel 6 for one reason: it is the country's most-watched channel. One friend says 'most-watched' has been swapped in for a stronger claim the ad never proved. Which claim got smuggled in?",
     "answer": "That the channel is the best or most worth watching, when all that was shown is that it is the most popular",
     "choices": [
       "That the channel is the best or most worth watching, when all that was shown is that it is the most popular",
@@ -2276,7 +2250,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1951 the psychologist Solomon Asch sat a student among seven actors and asked an easy question: which of three lines matches a sample line? The seven actors answered out loud first, all naming the same clearly mistaken option. About 37% of the time the real student then did one telling thing. What did the student do?",
+    "question": "Solomon Asch sat one real student among seven actors in 1951 and asked an easy question: which of three lines matches a sample? The actors answered aloud first, all naming the same clearly mistaken option. About 37% of the time, the student then did one telling thing. What was it?",
     "answer": "Named the same wrong line the actors had named",
     "choices": [
       "Named the same wrong line the actors had named",
@@ -2289,7 +2263,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Dutch Republic in the 1630s, a strange buying frenzy swept the wealthy cities of Amsterdam and Haarlem. Ordinary Dutch families sold their houses, their tools, and their life savings to buy the very same thing everyone else was scrambling to buy. The rarest single specimen briefly cost as much as six years of a skilled craftsman's wages. What were these Dutch families actually buying?",
+    "question": "A strange buying frenzy swept the Dutch cities of Amsterdam and Haarlem in the 1630s. Ordinary families sold their houses, their tools and their life savings to buy the thing everyone else was scrambling for. The rarest specimen briefly cost as much as six years of a skilled craftsman's wages. What were the families buying?",
     "answer": "Flower bulbs",
     "choices": [
       "Flower bulbs",
@@ -2302,7 +2276,7 @@
   },
   {
     "tier": 3,
-    "question": "For over 1,500 years nearly every thinker on Earth agreed the Sun and stars circled a motionless Earth. Even by 1600, after Copernicus argued the opposite, only about a dozen serious astronomers had let go of the old view. A student asks what this agreement proves about whether the Earth really stands still. What is the honest answer?",
+    "question": "Nearly every thinker on Earth agreed that the Sun and stars circled a motionless Earth, and the agreement held for over 1,500 years. Even by 1600, after Copernicus argued the opposite, only about a dozen serious astronomers had let go of the old view. A student asks what all that agreement proves about whether the Earth really stands still. What is the honest answer?",
     "answer": "It proves nothing -- the size of a crowd has no bearing on a fact, and the unmoving Earth was simply false",
     "choices": [
       "It proves nothing -- the size of a crowd has no bearing on a fact, and the unmoving Earth was simply false",
@@ -2315,7 +2289,7 @@
   },
   {
     "tier": 3,
-    "question": "Around 240 BC, Eratosthenes set out to measure the size of the whole Earth with nothing but a stick, a shadow, and geometry. At noon on the solstice, the Sun cast no shadow down a well in Syene, while a stick in Alexandria threw a real shadow. How close did this stick-and-shadow answer land, compared to what we know today?",
+    "question": "Eratosthenes set out around 240 BC to measure the size of the whole Earth with nothing but a stick, a shadow and geometry. At noon on the solstice the Sun cast no shadow down a well in Syene, while a stick in Alexandria threw a real one. How close did his stick-and-shadow answer come to the Earth's real size?",
     "answer": "Within a couple percent of the true figure",
     "choices": [
       "Within a couple percent of the true figure",
@@ -2328,7 +2302,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1847 the doctor Ignaz Semmelweis ordered the physicians at Vienna General Hospital to scrub their hands in chlorinated lime before delivering babies, and deaths from childbed fever on his ward fell from 18.3% in April to 2.2% by June. Yet the medical majority rejected him and the hospital dropped his rule. What was the most uncomfortable reason the doctors dug in against him?",
+    "question": "Ignaz Semmelweis ordered the physicians at Vienna General Hospital in 1847 to scrub their hands in chlorinated lime before delivering babies. Deaths from childbed fever on his ward fell from 18.3% in April to 2.2% by June. Yet the medical majority rejected him, and the hospital dropped his rule. What was the most uncomfortable reason the doctors dug in?",
     "answer": "Accepting it meant admitting their own unwashed hands had been killing patients",
     "choices": [
       "Accepting it meant admitting their own unwashed hands had been killing patients",
@@ -2341,7 +2315,7 @@
   },
   {
     "tier": 4,
-    "question": "A teacher warns that 'lots of people believe it' is a weak reason to be confident in a claim -- yet she insists some appeals to numbers are perfectly legitimate. Four reasons for trusting a claim are offered. Which one is genuine evidence rather than the bandwagon trap?",
+    "question": "A teacher warns her class that 'lots of people believe it' is a weak reason to be confident in a claim. Yet she insists that some appeals to numbers are perfectly legitimate. Which kind of agreement is genuine evidence rather than the bandwagon trap?",
     "answer": "Many people each studied the claim on their own and reached the same conclusion from the same evidence",
     "choices": [
       "Many people each studied the claim on their own and reached the same conclusion from the same evidence",
@@ -2354,7 +2328,7 @@
   },
   {
     "tier": 4,
-    "question": "Calling a belief true just because it is popular is the bandwagon trap -- but for some questions, how people collectively answer simply IS the answer, with no hidden fact sitting underneath the count. A student lists four things. Which one is genuinely settled by counting how people answer, so an 'appeal to the people' fits it honestly?",
+    "question": "A student has learned that a belief is not made true by being popular. Then she spots an exception: for some questions, how people collectively answer simply is the answer, with no hidden fact sitting underneath the count. Which question is genuinely settled by counting how people answer?",
     "answer": "Who won an election",
     "choices": [
       "Who won an election",
@@ -2367,7 +2341,7 @@
   },
   {
     "tier": 4,
-    "question": "One luxury-watch ad insists 'only discerning, elite people wear this' instead of the usual 'everybody wears this.' A student notices the flawed logic is really the same trick as the ordinary bandwagon, just aimed the other way. What makes it the same underlying mistake?",
+    "question": "One luxury-watch ad insists 'only discerning, elite people wear this' instead of the usual 'everybody wears this.' A student notices that its flawed logic is the ordinary bandwagon trick, just aimed the other way. What makes it the same underlying mistake?",
     "answer": "It again treats the standing of a group of people as a stand-in for the product's real merit",
     "choices": [
       "It again treats the standing of a group of people as a stand-in for the product's real merit",
@@ -3225,7 +3199,7 @@
   },
   {
     "tier": 2,
-    "question": "Saint Augustine, a Christian bishop writing in North Africa around the year 400, sets out in his book the Confessions to answer a question he uses every single day and feels he understands perfectly: what is time? Then he stops short and admits something strange about how well he really grasps it. What was Augustine's odd confession?",
+    "question": "Augustine, a bishop writing in North Africa around the year 400, sets out in his Confessions to answer a question about something he uses every day and feels he understands perfectly: what is time? Then he stops short and admits something strange about how well he grasps it. What is his odd confession?",
     "answer": "He knows what time is until someone asks him to explain it, and then he doesn't",
     "choices": [
       "He knows exactly what time is and can define it in a single clear sentence",
@@ -3238,7 +3212,7 @@
   },
   {
     "tier": 2,
-    "question": "In Book 11 of his Confessions, written around 397 AD, Augustine of Hippo turns a simple question into a real puzzle about time. We all talk about the past, the present, and the future as if all three are equally real. But Augustine wants to know which of these three can honestly be said to exist right now, at this very moment. What does Augustine himself answer?",
+    "question": "People talk about the past, the present and the future as if all three were equally real. In Book 11 of his Confessions, Augustine asks which of the three can honestly be said to exist right now, at this very moment. What is his answer?",
     "answer": "Only the present, since the past is already over and the future has not yet come",
     "choices": [
       "All three equally, since past, present, and future are simply three rooms of one house",
@@ -3251,7 +3225,7 @@
   },
   {
     "tier": 2,
-    "question": "People kept asking Augustine a needling question: what was God doing in all the ages before he made the world? One clever person had a ready zinger -- God was busy 'preparing hell for those who pry into mysteries.' Augustine tells us how he treats that joke.",
+    "question": "Augustine's questioners liked to needle him: what was God doing in all the ages before he made the world? One clever person had a ready zinger: God was busy 'preparing hell for those who pry into mysteries.' How does Augustine treat the joke?",
     "answer": "He refuses to hide behind the joke and takes the question seriously instead",
     "choices": [
       "He repeats the joke approvingly and uses it to silence everyone who asks",
@@ -3264,7 +3238,7 @@
   },
   {
     "tier": 2,
-    "question": "Right in the middle of his hardest thinking about time, Augustine does something you would not expect inside a tight piece of philosophy. He stops arguing and speaks straight to God about the problem. What he says shows how he really feels about the riddle.",
+    "question": "Right in the middle of his hardest thinking about time, Augustine does something unexpected in a tight piece of philosophy: he stops arguing and speaks straight to God about the problem. What does he say to God about the riddle?",
     "answer": "He prays that his soul yearns to know this most entangled enigma, and begs for light",
     "choices": [
       "He prays that his soul yearns to know this most entangled enigma, and begs for light",
@@ -3277,7 +3251,7 @@
   },
   {
     "tier": 3,
-    "question": "Still in Book 11 of his Confessions, Augustine of Hippo has just argued that only the present truly exists, because the past is already gone and the future has not yet come. So now he tries to grab hold of that present moment and really look at it. After chasing the present down, what does Augustine say the genuine present actually turns out to be?",
+    "question": "Hunting the present moment in Book 11 of his Confessions, Augustine tries to grab hold of it and really look at it. Suppose you chase it down with him as far as it will go. What does he say the genuine present actually turns out to be?",
     "answer": "A vanishing knife-edge with no width, gone the instant you try to hold it",
     "choices": [
       "A comfortable stretch of about a minute that you can sit and rest inside of",
@@ -3290,7 +3264,7 @@
   },
   {
     "tier": 3,
-    "question": "Late in his Confessions, written around 397 AD, Augustine of Hippo says people kept pressing him with one needling question: what was God actually doing in all the long ages before he ever made heaven and earth? God had existed for eternity without the world, so what filled that endless wait? Augustine's reply, once he found it, stopped the question cold. What was Augustine's answer?",
+    "question": "If God existed for all eternity without the world, what was he doing in the long ages before he made heaven and earth? People kept pressing Augustine with that question, and the reply he found, late in his Confessions, stopped it cold. What was his reply?",
     "answer": "God made time itself with the world, so there was no 'then' to ask about",
     "choices": [
       "God was resting quietly, gathering his strength for the great work ahead",
@@ -3303,7 +3277,7 @@
   },
   {
     "tier": 3,
-    "question": "Augustine rebuilds the three times inside the soul itself, as three kinds of present, each one a different power of the mind. He has already settled the present: it is sight, or attention. Now he tells us which power of the soul the past goes on living in.",
+    "question": "Augustine rebuilds the three times inside the soul itself, as three kinds of present, each one a different power of the mind. He has already settled the present: it lives in sight, or attention. In which power of the soul does the past go on living?",
     "answer": "In memory, the power that keeps a firm hold on what has already happened",
     "choices": [
       "In imagination, the power that pictures scenes never set before the eyes",
@@ -3316,20 +3290,7 @@
   },
   {
     "tier": 4,
-    "question": "Augustine asks a sharp question about time: when we say an event lasted a long while, what thing are we really measuring? Since the Greeks, thinkers had answered with motion -- you count how far the heavens turn or how often a pendulum swings. Augustine agrees we mark time by watching things move, yet he puts the measuring itself in an unexpected place.",
-    "answer": "In the soul, where the trace of the passing thing is held and weighed, not out in the moving thing",
-    "choices": [
-      "In the motion of the heavens, whose steady turn is the master clock that all other motion keeps to",
-      "In nothing at all, since one passing motion can never be laid beside another long enough to count it",
-      "In the soul, where the trace of the passing thing is held and weighed, not out in the moving thing",
-      "In the moving thing itself, which carries its own length along inside it as the true measure of time"
-    ],
-    "context": "The rival view (Aristotle's): time is the number of motion, real and external. Augustine grants we mark time by motion but insists the measuring happens in the soul -- which is why he can ask whether time is 'an extension of the mind itself.' A live dispute, not settled here. Source: SEP, 'Saint Augustine'; Confessions XI.",
-    "topic": "augustine-on-the-puzzle-of-time"
-  },
-  {
-    "tier": 4,
-    "question": "To show that time lives in the mind, Augustine reaches for an example he can perform from memory: reciting a psalm he knows by heart. He walks through what happens to it as he speaks -- and asks where the whole psalm sits in the very moment BEFORE he has said a single word of it.",
+    "question": "To show that time lives in the mind, Augustine reaches for an example he can perform: reciting a psalm he knows by heart. He walks through what happens to it as he speaks. Before he has said a single word of it, where does the whole psalm sit?",
     "answer": "The whole psalm waits in his expectation, then crosses through attention into memory",
     "choices": [
       "The whole psalm waits in his expectation, then crosses through attention into memory",
@@ -3341,8 +3302,8 @@
     "topic": "augustine-on-the-puzzle-of-time"
   },
   {
-    "tier": 5,
-    "question": "Augustine reaches his boldest claim about where time lives. You can say a past event 'lasted a long while' -- but by the time you say it, the event is over and gone. So Augustine asks what thing you are really putting your ruler against when you judge how long it lasted.",
+    "tier": 4,
+    "question": "Since the Greeks, thinkers had tied time to motion, counting how far the heavens turn or how often a pendulum swings. Augustine agrees that watching things move helps mark time, but he presses further. Suppose you say a past event 'lasted a long while': by the time you say it, the event is over and gone. What, then, does Augustine say you are really measuring?",
     "answer": "The impression the event leaves on your mind, a trace you can hold and weigh",
     "choices": [
       "The beats or words of the event itself, counted out one by one as you go",
@@ -3350,12 +3311,12 @@
       "The motion of the turning heavens, which carries the true length of every event along",
       "The impression the event leaves on your mind, a trace you can hold and weigh"
     ],
-    "context": "Augustine: 'In thee, O my mind, I measure times... the impression which things make on thee as they pass by, and which remains, that I measure.' We measure the trace, not the gone events. His contested core position -- a competing view (time as a real outer thing) is not thereby refuted. Source: Confessions XI.27.36.",
+    "context": "Augustine: 'In thee, O my mind, I measure times... the impression which things make on thee as they pass by, and which remains, that I measure.' We measure the trace, not the gone events. The rival view (Aristotle's): time is the number of motion, real and external. Augustine grants we mark time by motion but insists the measuring happens in the soul -- which is why he can ask whether time is 'an extension of the mind itself.' His contested core position -- a competing view (time as a real outer thing) is not thereby refuted; a live dispute, not settled here. Source: Confessions XI.27.36; SEP, 'Saint Augustine'; Confessions XI.",
     "topic": "augustine-on-the-puzzle-of-time"
   },
   {
     "tier": 5,
-    "question": "Augustine keeps asking what time could be an extension of. He floats his deepest guess: perhaps time is a stretching of the mind itself, pulled apart between memory of the past and hope for what is coming. Scholars say he borrowed this image from an earlier thinker, Plotinus, but read it his own way. He sets this stretched, scattered mind against God, who lives all at once with no past and no future.",
+    "question": "Augustine floats his deepest guess about time: perhaps it is a stretching of the mind itself, pulled apart between what is past and what is coming. Scholars say he borrowed the image from Plotinus, an earlier thinker, but read it his own way. He sets this stretched, scattered mind against God, who lives all at once, with no past and no future. How does he regard the stretching?",
     "answer": "He treats the stretching as a painful fall away from God's timeless eternity",
     "choices": [
       "He treats the stretching as a joyful climb upward toward God's own eternity",
@@ -3368,7 +3329,7 @@
   },
   {
     "tier": 5,
-    "question": "In the late 300s AD, the North African bishop Augustine of Hippo devoted a whole book of his Confessions to the puzzle of time. He worked through brilliant ideas -- the three presents (past, present, future all held in the mind), time measured only by the soul, the mind stretching to hold moments together. After all that hard thinking, Augustine tells us plainly where the long inquiry has left him.",
+    "question": "One whole book of the Confessions goes to the puzzle of time, and Augustine works through one brilliant idea after another about time and the mind. After all that hard thinking, he says plainly where he has ended up. Where has the long inquiry left him?",
     "answer": "He confesses he still does not know what time is, even as he lives inside it",
     "choices": [
       "He declares the puzzle finally solved and his definition firmly secured at last",
@@ -3459,20 +3420,7 @@
   },
   {
     "tier": 3,
-    "question": "Avicenna asked you to imagine a person created full-grown in an instant, but blindfolded and floating in midair — touching nothing, feeling no limbs, no body at all. Could such a person doubt one single thing? Avicenna's answer drove his whole philosophy. What did he insist this floating person still could NOT doubt?",
-    "answer": "That his own self exists, even with no sense of any body",
-    "choices": [
-      "That his own self exists, even with no sense of any body",
-      "That the air around his floating body is real and warm",
-      "That his memories from before that moment are accurate",
-      "That another mind somewhere thinks the very same thought"
-    ],
-    "context": "This is Avicenna's 'Flying Man' (or 'Floating Man'): with every bodily sensation stripped away, you still cannot doubt that YOU exist — so the self is grasped independently of the body. He wrote it about 600 years before Descartes' 'I think, therefore I am.' It's a vivid handle on his deeper theme that WHAT a thing is can be grasped apart from the body or matter that carries it. Source: Internet Encyclopedia of Philosophy, 'Avicenna (Ibn Sina)' — a person 'created in a perfect state, but blind and suspended in the air... cannot doubt that his self exists'; Philosophy Bites, Peter Adamson on Avicenna's Flying Man.",
-    "topic": "avicenna-on-necessary-vs-contingent-being"
-  },
-  {
-    "tier": 3,
-    "question": "A child can describe a unicorn perfectly: a horse with a single spiral horn. Yet no unicorn has ever lived anywhere. Avicenna pointed to gaps just like this to argue something about how existence relates to what a thing is. What did Avicenna conclude from the fact that you can fully know a unicorn without any unicorn being real?",
+    "question": "A child can describe a unicorn perfectly: a horse with a single spiral horn. Yet no unicorn has ever lived anywhere. Avicenna pointed to gaps just like this one, between knowing what a thing is and any such thing being real. What did he conclude about how existence relates to what a thing is?",
     "answer": "Existence is something added on top of what a thing is, not part of the idea",
     "choices": [
       "Existence is something added on top of what a thing is, not part of the idea",
@@ -3485,7 +3433,7 @@
   },
   {
     "tier": 4,
-    "question": "Avicenna said to look at any tree, person, or star and notice the same thing: it could just as easily NOT have existed. He called such a thing 'possible in itself' — possible as regards existence. About a thing that is merely possible in this way, what did Avicenna conclude?",
+    "question": "Avicenna asked his readers to look at any tree, person or star and notice the same thing: each could just as easily never have existed. He called such a thing 'possible in itself,' possible as regards existence. What did he conclude about a thing that is merely possible in this way?",
     "answer": "It can exist only if a cause outside it pushes it into being",
     "choices": [
       "It can exist only if a cause outside it pushes it into being",
@@ -3498,7 +3446,7 @@
   },
   {
     "tier": 4,
-    "question": "Avicenna argued that every tree and star had its existence handed to it from outside itself. But the argument points, he said, toward a single being of another kind entirely — one that needs no cause and cannot not-exist. Avicenna said the very way this being relates to its own existence is unlike anything else. How so?",
+    "question": "Avicenna's reasoning about trees and stars led him toward a single being of another kind entirely, one that needs no cause and cannot not-exist. He said the way this being relates to its own existence is unlike anything else's. How does it relate to its existence?",
     "answer": "This being does not have existence; it simply is existence",
     "choices": [
       "This being does not have existence; it simply is existence",
@@ -3511,7 +3459,7 @@
   },
   {
     "tier": 5,
-    "question": "Suppose every existing thing got its existence from an earlier thing, which got it from an earlier one, with no first member at all — an endless line of borrowers. Avicenna allowed that the line could run back forever, yet argued it STILL leaves something unexplained. What did Avicenna say is true of this whole endless collection?",
+    "question": "Suppose every existing thing got its existence from an earlier thing, which got it from an earlier one, with no first member at all — an endless line of borrowers. Avicenna allowed that the line could run back forever, yet argued it still leaves something unexplained. What did Avicenna say is true of this whole endless collection?",
     "answer": "It is only possible in itself, so the whole line still needs a cause from outside it",
     "choices": [
       "It is only possible in itself, so the whole line still needs a cause from outside it",
@@ -3537,7 +3485,7 @@
   },
   {
     "tier": 2,
-    "question": "Avicenna (Ibn Sina) was a Persian doctor whose medical handbook was taught in Europe for centuries. When his protector, the ruler Shams al-Dawla, died, he lost his shield. A vizier accused him of secretly backing a rival. The vizier raided the house where Avicenna was staying and locked him in a fortress for about four months. Inside that cell, he dreamed up his most famous thought experiment. What did he imagine?",
+    "question": "When Avicenna's protector, the ruler Shams al-Dawla, died, a vizier accused the Persian doctor of secretly backing a rival and locked him in a fortress for about four months. In that cell Avicenna dreamed up his most famous thought experiment. What scene did it describe?",
     "answer": "A man created in an instant, floating in empty air, feeling nothing at all",
     "choices": [
       "A man created in an instant, floating in empty air, feeling nothing at all",
@@ -3550,7 +3498,7 @@
   },
   {
     "tier": 2,
-    "question": "Avicenna (Ibn Sina) poured his whole science into one huge encyclopedia, the Book of Healing, and the floating-man passage was only a single page inside it. Old accounts marvel at the sheer speed at which he supposedly wrote the whole work. According to those reports, how fast did Avicenna pour it out?",
+    "question": "The Book of Healing, Avicenna's huge encyclopedia, held his whole science, and the floating-man passage was only a single page of it. Old accounts marvel at the speed at which he supposedly wrote the work. According to those reports, how fast did he pour it out?",
     "answer": "About fifty pages a day",
     "choices": [
       "About fifty pages a day",
@@ -3563,7 +3511,7 @@
   },
   {
     "tier": 3,
-    "question": "Avicenna (Ibn Sina) asks you to picture a grown man created out of nothing in one instant, fully formed but hanging in empty air. The air is neither warm nor cold and there is no wind, so he feels it not at all. He hears nothing and smells nothing, his eyes are covered, and nothing touches him. Even his arms and legs are held apart, so they brush neither each other nor his own body. Stripped of every sense, with no memory and no world around him, what does Avicenna say this man could still be sure of?",
+    "question": "A grown man is created out of nothing in one instant and left hanging in empty air, in Avicenna's thought experiment. The air is neither warm nor cold. His eyes are covered, he hears and smells nothing, and his arms and legs are held apart so they touch nothing, not even each other. With every sense gone and no memory at all, what can he still not doubt?",
     "answer": "That he himself exists",
     "choices": [
       "That he himself exists",
@@ -3571,12 +3519,12 @@
       "That he is breathing air",
       "That he knows nothing at all"
     ],
-    "context": "This is the heart of the whole thought experiment. With no body felt and no world sensed, the man still cannot doubt his own self; in Avicenna's words, 'he has no doubts about asserting his self as something that exists.' This insight reaches the same place as Rene Descartes' famous 'I think, therefore I am' (Cogito, ergo sum) about 600 years before Descartes wrote it in the 1600s. Source: wmit-pages handout 'Avicenna, The Floating Man,' quoting al-Shifa (De Anima); en.wikipedia.org/wiki/Floating_man.",
+    "context": "This is the heart of the whole thought experiment, Avicenna's 'Flying Man' (or 'Floating Man'). With no body felt and no world sensed, the man still cannot doubt his own self; in Avicenna's words, 'he has no doubts about asserting his self as something that exists.' So the self is grasped independently of the body. This insight reaches the same place as Rene Descartes' famous 'I think, therefore I am' (Cogito, ergo sum) about 600 years before Descartes wrote it in the 1600s. Source: wmit-pages handout 'Avicenna, The Floating Man,' quoting al-Shifa (De Anima); en.wikipedia.org/wiki/Floating_man; Internet Encyclopedia of Philosophy, 'Avicenna (Ibn Sina)' — a person 'created in a perfect state, but blind and suspended in the air... cannot doubt that his self exists'; Philosophy Bites, Peter Adamson on Avicenna's Flying Man.",
     "topic": "avicennas-floating-man"
   },
   {
     "tier": 3,
-    "question": "In Avicenna's (Ibn Sina) thought experiment, the man floating in the void with no senses is completely sure of one thing: that he himself exists. Yet Avicenna stresses something surprising that this floating man does not know at all. He is sure of his own self, but he is unsure of what?",
+    "question": "The floating man in Avicenna's thought experiment hangs in the void with no senses, yet he is certain of his own self. Avicenna stresses something surprising that he does not know at all. What is the floating man unsure of?",
     "answer": "Whether he has a body of any kind at all",
     "choices": [
       "Whether he has a body of any kind at all",
@@ -3589,7 +3537,7 @@
   },
   {
     "tier": 3,
-    "question": "Avicenna (Ibn Sina) presses a further point about the floating man's certainty. You were sure that you existed your whole life, long before anyone taught you what sits inside your chest or skull. To make this vivid, he points to the strange way most people first learn they even have some inner organs. How does Avicenna say people usually discover they have a heart and a brain?",
+    "question": "Avicenna presses a further point about the floating man's certainty. A person is sure he exists long before anyone teaches him what sits inside his chest or skull. To make this vivid, Avicenna points to the strange way most people first learn they have such organs at all. How does he say people usually discover they have a heart and a brain?",
     "answer": "Only through the dissection of bodies",
     "choices": [
       "Only through the dissection of bodies",
@@ -3602,20 +3550,7 @@
   },
   {
     "tier": 4,
-    "question": "Avicenna (Ibn Sina) builds an argument out of his floating man. The man can be totally CERTAIN that his own self exists, yet he is NOT certain that his body exists at all. From this single gap, Avicenna draws a conclusion about the self and the body. Following his reasoning, what does the floating man's certainty show?",
-    "answer": "The self cannot be the very same thing as the body",
-    "choices": [
-      "The self cannot be the very same thing as the body",
-      "The body must be more real than the doubtful self",
-      "The self and the body are proven to be one thing",
-      "Neither the self nor the body can ever be known"
-    ],
-    "context": "Avicenna's move: if the self and the body were one and the same thing, then being sure of the one would just be being sure of the other. Because the floating man is sure of his self but unsure of his body, Avicenna concludes the self (soul) must be distinct from the body, 'nor in fact any body.' This is one philosopher's argued position, not a settled fact: a thinker who holds that you simply ARE your brain and body would dispute the inference, and the question asks only what Avicenna concluded. Source: wmit-pages handout reconstructing the argument; quote from al-Shifa (De Anima) and the Isharat.",
-    "topic": "avicennas-floating-man"
-  },
-  {
-    "tier": 4,
-    "question": "In the year 1027, the Persian philosopher Avicenna (Ibn Sina) imagined a thought experiment. Suppose a fully grown man is created suddenly, floating in empty air, blindfolded, his limbs held apart so he touches nothing — no sight, no sound, no touch, no taste, no smell. A teacher tells her class the tidy rule that many thinkers have held: 'Nothing reaches the mind that did not first come in through the five senses.' A student answers that Avicenna's floating man seems to break the rule. Which point would the student make to press that challenge against the teacher?",
+    "question": "A teacher tells her class the tidy rule that many thinkers have held: 'Nothing reaches the mind that did not first come in through the five senses.' A student answers that Avicenna's floating man seems to break it. That man, created fully grown and hanging blindfolded in empty air with his limbs held apart, has no sight, sound, touch, taste or smell. What point would the student press?",
     "answer": "He had no sense-data at all, yet still knew his own self",
     "choices": [
       "He had no sense-data at all, yet still knew his own self",
@@ -3628,7 +3563,7 @@
   },
   {
     "tier": 4,
-    "question": "Avicenna (Ibn Sina) admits that to ordinary people it really FEELS as though you simply ARE your body, your hands and heart and all. If the floating man shows the self is not the body, why are we so sure the body is 'us'? Avicenna answers with a striking comparison drawn from everyday life. To what does he compare our arms and legs to explain the illusion?",
+    "question": "To ordinary people it really feels as though a person simply is his body, hands and heart and all, and Avicenna admits as much. He explains the feeling away with a striking comparison from everyday life. To what does he compare a man's arms and legs?",
     "answer": "To clothes we have worn so long we forgot we could remove them",
     "choices": [
       "To clothes we have worn so long we forgot we could remove them",
@@ -3641,7 +3576,7 @@
   },
   {
     "tier": 4,
-    "question": "Avicenna (Ibn Sina) singles out the floating man's knowledge of himself as a special KIND of knowing. Sealed off from everything, with no senses and no memory, the man still cannot doubt that he himself exists. Later thinkers gave this kind of self-knowing its own name. What does Avicenna say is distinctive about the way the self knows itself?",
+    "question": "Avicenna singles out one thing about the floating man, sealed off from everything with no senses and no memory: his knowledge of himself is a special kind of knowing. Later thinkers gave it its own name. What does Avicenna say is distinctive about the way the self knows itself?",
     "answer": "It reaches the self without anything passing in between",
     "choices": [
       "It reaches the self without anything passing in between",
@@ -3654,7 +3589,7 @@
   },
   {
     "tier": 5,
-    "question": "Modern scholars (Jon McGinnis, Jari Kaukua, Peter Adamson) argue over what Avicenna (Ibn Sina) MEANT the floating man to be. They doubt he intended it as a watertight deduction at all. On their reading, the floating man works less like a strict logical proof and more like which of these?",
+    "question": "Three modern scholars, Peter Adamson, Jon McGinnis and Jari Kaukua, argue over what Avicenna meant the floating man to be, and they doubt he intended a watertight deduction at all. On their reading, it works less like a strict logical proof than like what?",
     "answer": "A reminder that makes you notice a self-awareness you already have",
     "choices": [
       "A reminder that makes you notice a self-awareness you already have",
@@ -3666,8 +3601,8 @@
     "topic": "avicennas-floating-man"
   },
   {
-    "tier": 5,
-    "question": "After meeting the floating man, four friends argue over what a PERSON most truly is. Quincy says: 'You ARE just your living brain and body; there is nothing more to you.' Rosa says: 'You are a mind or soul, something real that is not your body.' Theo says: 'There is no real self at all, only a stream of passing feelings.' Mabel says: 'Self and body are simply two words for one single thing.' Whose view matches the conclusion Avicenna himself drew from his floating man?",
+    "tier": 4,
+    "question": "Avicenna's floating man hangs in empty air with every sense cut off. Four friends argue over what a person truly is. Quincy: 'You are just your brain and body.' Rosa: 'You are a mind or soul, something real that is not your body.' Theo: 'There is no real self, only a stream of passing feelings.' Mabel: 'Self and body are two words for one thing.' Whose view matches Avicenna's conclusion?",
     "answer": "Rosa's view, that the self is real and is not the body",
     "choices": [
       "Rosa's view, that the self is real and is not the body",
@@ -3675,7 +3610,7 @@
       "Theo's view, that there is no real self behind the feelings",
       "Mabel's view, that self and body are one single thing"
     ],
-    "context": "The view that the mind or soul is a real thing distinct from the body is later called 'dualism'; the view that you ARE just your body or brain is called 'physicalism' or 'materialism.' Avicenna's floating man argues for the first: the self is something real that is 'not the body, nor in fact any body.' The question is not whether dualism is TRUE, which thinkers still dispute, but only which friend's position lines up with what Avicenna concluded. Source: wmit-pages handout; gloss terms from Kaukua, 'Self-Awareness in Islamic Philosophy,' and IEP 'Avicenna (Ibn Sina).'",
+    "context": "Avicenna's move: if the self and the body were one and the same thing, then being sure of the one would just be being sure of the other. Because the floating man is sure of his self but unsure of his body, Avicenna concludes the self (soul) must be distinct from the body, 'not the body, nor in fact any body.' The view that the mind or soul is a real thing distinct from the body is later called 'dualism'; the view that you ARE just your body or brain is called 'physicalism' or 'materialism.' This is one philosopher's argued position, not a settled fact: the question is not whether dualism is TRUE, which thinkers still dispute, but only which friend's position lines up with what Avicenna concluded. Source: wmit-pages handout reconstructing the argument; quote from al-Shifa (De Anima) and the Isharat; gloss terms from Kaukua, 'Self-Awareness in Islamic Philosophy,' and IEP 'Avicenna (Ibn Sina).'",
     "topic": "avicennas-floating-man"
   },
   {
@@ -4161,7 +4096,7 @@
   },
   {
     "tier": 2,
-    "question": "David Hume retells a tale from Don Quixote: two kinsmen, famed in their family for judging wine, taste a cask of fine old vintage. One swears it is good but for a faint hint of leather; the other agrees, yet tastes iron. The neighbors at the table laugh them off, sure the two have spoiled good wine by inventing faults nobody else can find. Whose side does Hume take, and on what grounds?",
+    "question": "Two kinsmen famed for judging wine taste a cask of fine old vintage, in a tale David Hume borrows from Don Quixote. One finds a faint hint of leather; the other tastes iron. The neighbors laugh, sure the pair have invented faults nobody else can find. Whose side does Hume take, and on what grounds?",
     "answer": "A keen palate catches real qualities in the thing that careless tasters miss.",
     "choices": [
       "A keen palate catches real qualities in the thing that careless tasters miss.",
@@ -4174,7 +4109,7 @@
   },
   {
     "tier": 2,
-    "question": "Immanuel Kant half-agreed with the old saying 'there's no accounting for taste.' If you love Canary-wine and your friend can't stand it, Kant said, arguing would be foolish: each just has his own taste, and that is the end of it. Yet when people declare something beautiful, Kant noticed, they argue about it constantly and fully expect to win. Why did Kant think the beauty case is unlike the wine case?",
+    "question": "Immanuel Kant half-agreed with the saying 'there's no accounting for taste.' If one man loves Canary-wine and his friend can't stand it, Kant said, arguing would be foolish: each has his own taste. Yet people who call something beautiful argue about it and expect to win. Why did Kant think beauty is unlike the wine?",
     "answer": "Calling a thing beautiful claims that everyone ought to agree, not just you.",
     "choices": [
       "Calling a thing beautiful claims that everyone ought to agree, not just you.",
@@ -4187,7 +4122,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1700s the Scottish philosopher David Hume admitted that people's tastes really do differ. Still, he wrote that ranking the forgotten hack John Ogilby beside John Milton -- the poet of Paradise Lost -- would be as silly as calling a mole-hill as tall as a mountain, or a pond as wide as the ocean. What was Hume insisting with that comparison?",
+    "question": "David Hume admitted that people's tastes really do differ. Still, he wrote, ranking the forgotten hack John Ogilby beside John Milton, the poet of Paradise Lost, would be as silly as calling a mole-hill as tall as a mountain, or a pond as wide as the ocean. What was Hume insisting with that comparison?",
     "answer": "Some judgments of taste are simply wrong, not merely unpopular.",
     "choices": [
       "Some judgments of taste are simply wrong, not merely unpopular.",
@@ -4200,7 +4135,7 @@
   },
   {
     "tier": 2,
-    "question": "Hume opened his famous essay on taste with a gift to the skeptic. One person, he admitted, may see ugly where another sees beauty, and each should stick to his own view without trying to rule the other. Then Hume spends the rest of the essay quietly taking it back. Which view of beauty was Hume giving up in that opening?",
+    "question": "Hume's famous essay on taste opens with a gift to the skeptic. One person, Hume admits, may see ugliness where another sees beauty, and each should keep his own view without trying to rule the other's. He spends the rest of the essay taking it back. What view of beauty is he conceding?",
     "answer": "Beauty is only a feeling in the viewer, never a feature of the thing itself.",
     "choices": [
       "Beauty is only a feeling in the viewer, never a feature of the thing itself.",
@@ -4226,7 +4161,7 @@
   },
   {
     "tier": 3,
-    "question": "Immanuel Kant offered a striking test for beauty. A rose you will never pick, own, or so much as smell, he said, can delight you exactly as much as one held in your own hand. The flower pleases you the same whether it is yours or forever out of reach. What did Kant conclude that pleasure must be?",
+    "question": "Suppose you see a rose you will never pick, own or so much as smell. Immanuel Kant said it can delight you exactly as much as one held in your own hand; it pleases the same whether it is yours or forever out of reach. What did Kant conclude that pleasure must be?",
     "answer": "A delight in simply beholding the thing, with no wish to own, use, or possess it.",
     "choices": [
       "A delight in simply beholding the thing, with no wish to own, use, or possess it.",
@@ -4239,7 +4174,7 @@
   },
   {
     "tier": 4,
-    "question": "In his 1757 essay 'Of the Standard of Taste,' the Scottish philosopher David Hume set out to settle what good taste really is. People quarrel endlessly over which paintings, plays, and poems are fine and which are junk. Hume wanted a standard behind those quarrels. On Hume's view, what fixes the standard of taste?",
+    "question": "People quarrel endlessly over which paintings, plays and poems are fine and which are junk. David Hume wanted a standard behind those quarrels, and in his 1757 essay 'Of the Standard of Taste' he set out to settle what good taste really is. On his view, what fixes the standard?",
     "answer": "The shared verdict of a handful of trained, unprejudiced judges, taken together.",
     "choices": [
       "The shared verdict of a handful of trained, unprejudiced judges, taken together.",
@@ -4278,7 +4213,7 @@
   },
   {
     "tier": 5,
-    "question": "Two camps face off over beauty. The realist holds that beauty is a real feature out there — the symmetry and proportion sit in the rose itself. The sentimentalist holds it is only a feeling in us. David Hume and Immanuel Kant both deny that beauty is a bare property of objects, yet both refuse to collapse into 'anything goes.' Where, precisely, do their rescues differ?",
+    "question": "David Hume and Immanuel Kant both denied that beauty sits in a rose the way its symmetry and proportion do, as a bare property of the thing. Yet neither would give in to 'anything goes,' and each found his own way to save a standard of taste. Where, precisely, do the two rescues differ?",
     "answer": "Hume grounds the standard in the trained expert's verdict; Kant in faculties every mind shares.",
     "choices": [
       "Hume grounds the standard in the trained expert's verdict; Kant in faculties every mind shares.",
@@ -4291,7 +4226,7 @@
   },
   {
     "tier": 5,
-    "question": "Immanuel Kant framed the dispute over beauty as a clash of two proverbs. One says there is no disputing about taste — you cannot prove a flower beautiful with arguments. The other is shown by what we actually do: we dispute about taste endlessly and expect to win, which we would never bother with over mere private liking. How did Kant reconcile the pair?",
+    "question": "Kant framed the dispute over beauty as a clash of two proverbs. One says there is no disputing about taste, since no one can prove a flower beautiful with arguments. The other shows in what people actually do: they dispute about taste endlessly and expect to win, which they would never bother with over mere private liking. How did Kant reconcile the pair?",
     "answer": "Both hold: the verdict rests on no provable rule, so taste is argued yet never settled.",
     "choices": [
       "Both hold: the verdict rests on no provable rule, so taste is argued yet never settled.",
@@ -4330,7 +4265,7 @@
   },
   {
     "tier": 1,
-    "question": "In a mayoral race, a campaign flyer lands in mailboxes across town. It says: 'You can trust Senator Hale, because she is an honest person who always tells the truth.' A voter who already doubts the senator's honesty reads it and notices a problem with the reason itself. What is wrong with it?",
+    "question": "A campaign flyer lands in mailboxes across town: 'You can trust Senator Hale, because she is an honest person who always tells the truth.' A voter who already doubts the senator's honesty spots a flaw in the reason itself. Where does the reason fail?",
     "answer": "The reason just restates the claim, so it adds no new evidence a doubter could weigh",
     "choices": [
       "The reason just restates the claim, so it adds no new evidence a doubter could weigh",
@@ -4343,7 +4278,7 @@
   },
   {
     "tier": 1,
-    "question": "At a corner deli, the owner brags to every customer, \"My sandwiches are the best in town, because no other deli tops mine.\" A curious customer asks what actually makes them so good -- better bread? fresher meat? -- and the owner just repeats the boast in different words. Why does the boast prove nothing?",
+    "question": "A deli owner brags to every customer: \"My sandwiches are the best in town, because no other deli tops mine.\" Asked what makes them so good, better bread or fresher meat, he just repeats the boast in other words. Why does the boast prove nothing?",
     "answer": "\"Best\" and \"nobody makes better\" are the same claim twice, with no actual reason given",
     "choices": [
       "\"Best\" and \"nobody makes better\" are the same claim twice, with no actual reason given",
@@ -4356,7 +4291,7 @@
   },
   {
     "tier": 2,
-    "question": "The 1800s French writer Guy de Maupassant wrote short stories full of blunt village voices. In one story, a character is asked why a certain man has died. He answers with a single flat sentence: \"He died because he died, that's all.\" It sounds at first like a cause is being given. What has actually been offered?",
+    "question": "Guy de Maupassant's short stories are full of blunt village voices. In one, a villager is asked why a certain man has died, and answers with a single flat sentence: \"He died because he died, that's all.\" It sounds at first like a cause. What has actually been offered?",
     "answer": "The bare fact repeated as if it were its own explanation, which explains nothing",
     "choices": [
       "The bare fact repeated as if it were its own explanation, which explains nothing",
@@ -4395,7 +4330,7 @@
   },
   {
     "tier": 3,
-    "question": "In a town-hall debate over a controversial law, one speaker argues: \"This act is illegal because it's immoral -- and it wouldn't be illegal in the first place if it weren't immoral.\" The sentence sounds firm, but it chases its own tail: each half is leaned on to hold the other half up. What has gone wrong with the reasoning?",
+    "question": "In a town-hall debate over a controversial law, one speaker argues: \"This act is illegal because it's immoral -- and it wouldn't be illegal in the first place if it weren't immoral.\" The sentence sounds firm, but it chases its own tail. What has gone wrong with the reasoning?",
     "answer": "Each claim is leaned on to prove the other, so no outside ground supports either one",
     "choices": [
       "Each claim is leaned on to prove the other, so no outside ground supports either one",
@@ -4408,7 +4343,7 @@
   },
   {
     "tier": 3,
-    "question": "Philosophers have a name for a certain slippery move: 'circular reasoning,' where a claim is propped up by itself. Consider this defense of a sacred text: 'The holy book is true because it is the word of a god, and we know it is the word of a god because the book itself says so.' The same shape can be built around any tradition's scripture. Why does the argument persuade no one who doubts it?",
+    "question": "One defense of a sacred text runs: 'The holy book is true because it is the word of a god, and we know it is the word of a god because the book itself says so.' The same shape can be built around any tradition's scripture. Why does the argument persuade no one who doubts it?",
     "answer": "Neither half can be accepted by anyone who doesn't already accept the other",
     "choices": [
       "Neither half can be accepted by anyone who doesn't already accept the other",
@@ -4434,20 +4369,7 @@
   },
   {
     "tier": 4,
-    "question": "A logic teacher points out a strange trap. A question-begging argument can be perfectly valid — grant its premise and the conclusion really does follow — and yet the argument proves absolutely nothing. How can an argument be completely airtight in form and still worthless?",
-    "answer": "The only way to grant the premise is to already believe the conclusion",
-    "choices": [
-      "The only way to grant the premise is to already believe the conclusion",
-      "Valid arguments can still rest on premises that turn out to be false",
-      "Validity governs the form of an argument but never its tone",
-      "An argument can be valid for one audience and invalid for another"
-    ],
-    "context": "Validity is no defense: the circle hides so well precisely because the form is sound. The argument can carry no one from doubt to belief, because a claim cannot serve as its own evidence. Source: The Fallacy Files, fallacyfiles.org/begquest.html; Scribbr, scribbr.com/fallacies/begging-the-question-fallacy/.",
-    "topic": "begging-the-question-circular-reasoning"
-  },
-  {
-    "tier": 4,
-    "question": "In a philosophy class studying loaded language in ethics debates, a student offers this two-line argument: \"Murder is morally wrong; therefore abortion is morally wrong.\" The proof looks tidy, but the whole thing it owed a real argument for has been slipped in by a single word in the premise. Which word, and how does it cheat?",
+    "question": "A student in a philosophy class on loaded language offers a two-line argument: \"Murder is morally wrong; therefore abortion is morally wrong.\" The proof looks tidy, but the whole point it owed a real argument for has been slipped in by a single word in the premise. Which word, and how does it cheat?",
     "answer": "Calling abortion \"murder\" already assumes the wrongful killing it set out to prove",
     "choices": [
       "Calling abortion \"murder\" already assumes the wrongful killing it set out to prove",
@@ -4473,7 +4395,7 @@
   },
   {
     "tier": 5,
-    "question": "An obvious circle says A because A. But the hardest circles to catch don't look like that: claim one backs claim two, which backs claim three, which — several steps later — loops back to support claim one again. Each link looks fine on its own. Why is this long version the same fallacy as the short one?",
+    "question": "A debater builds a long argument: claim one backs claim two, claim two backs claim three, and several steps on, the chain loops back to support claim one. Each link looks fine on its own, and nowhere does he say anything as plain as A because A. Why is his long chain the same fallacy as that short circle?",
     "answer": "Somewhere down the chain a premise is propped up by the conclusion it was meant to support",
     "choices": [
       "Somewhere down the chain a premise is propped up by the conclusion it was meant to support",
@@ -4486,7 +4408,7 @@
   },
   {
     "tier": 5,
-    "question": "Two arguments share the exact same words yet one is honest and the other begs the question. A philosopher offers a single test that tells them apart — not about the wording, but about where the premise gets its support. What is that test?",
+    "question": "A logic teacher shows her class a trap. A question-begging argument can be perfectly valid, its conclusion truly following from its premise, and still prove nothing. Two arguments in the very same words can even differ: one is honest, the other circular. What test, about where the premise gets its support, tells them apart?",
     "answer": "Whether a fair doubter could accept the premise without first accepting the conclusion",
     "choices": [
       "Whether a fair doubter could accept the premise without first accepting the conclusion",
@@ -4494,7 +4416,7 @@
       "Whether the conclusion follows by a valid step from the premises given",
       "Whether the argument changes the mind of at least one listener who hears it"
     ],
-    "context": "A sound argument's premises stand on their own feet — established independently, before and apart from the conclusion. A circular one offers a premise whose only support is the conclusion itself. The test isn't the words; it's whether the premise was justified without first swallowing the conclusion. Source: Internet Encyclopedia of Philosophy, 'Fallacies', iep.utm.edu/fallacy/.",
+    "context": "Validity is no defense: the circle hides so well precisely because the form is sound. A sound argument's premises stand on their own feet — established independently, before and apart from the conclusion. A circular one offers a premise whose only support is the conclusion itself, so it can carry no one from doubt to belief, because a claim cannot serve as its own evidence. The test isn't the words; it's whether the premise was justified without first swallowing the conclusion. Source: Internet Encyclopedia of Philosophy, 'Fallacies', iep.utm.edu/fallacy/; The Fallacy Files, fallacyfiles.org/begquest.html; Scribbr, scribbr.com/fallacies/begging-the-question-fallacy/.",
     "topic": "begging-the-question-circular-reasoning"
   },
   {
@@ -5513,7 +5435,7 @@
   },
   {
     "tier": 2,
-    "question": "A fortune-teller points to three predictions she got exactly right and calls them proof of her gift. She has been making predictions for years. Before you believe her, what do you most need from her?",
+    "question": "Suppose you meet a fortune-teller who points to three predictions she got exactly right and calls them proof of her gift. She has been making predictions for years. Before you believe her, what do you most need from her?",
     "answer": "Every prediction she has ever made, so you can count the ones that flopped against the ones that landed",
     "choices": [
       "Every prediction she has ever made, so you can count the ones that flopped against the ones that landed",
@@ -5539,7 +5461,7 @@
   },
   {
     "tier": 2,
-    "question": "A boy keeps no record of his weekly horoscopes. He just remembers, at year's end, that they seemed to nail his mood again and again. A skeptic bets that if the boy had logged every single week, the tally would look like a coin flip. Psychologists have a name for the memory trap at work here — 'confirmation bias.' What flaw in relying on memory could make a worthless horoscope feel like a winner?",
+    "question": "A boy keeps no record of his weekly horoscopes. He remembers, at year's end, that they seemed to nail his mood again and again. A skeptic bets that if the boy had logged every week, the tally would look like a coin flip. What memory flaw could make a worthless horoscope feel like a winner?",
     "answer": "Memory holds on to the weeks it seemed to hit and quietly drops the many weeks it plainly missed",
     "choices": [
       "Memory holds on to the weeks it seemed to hit and quietly drops the many weeks it plainly missed",
@@ -5552,7 +5474,7 @@
   },
   {
     "tier": 3,
-    "question": "Diagoras of Melos, an ancient Greek freethinker, was shown a temple wall covered with painted tablets from sailors who had prayed to the gods and then survived shipwreck. Here, his hosts said, was proof the gods answer prayers. Diagoras gave a one-line reply that gutted the whole display. What did he point out?",
+    "question": "Diagoras of Melos, an ancient Greek freethinker, was shown a temple wall covered with painted tablets. Each had been hung up by a sailor who prayed to the gods in a storm and survived the shipwreck. Here, a priest said, was proof the gods answer prayers. Diagoras gave a one-line reply that gutted the whole display. What did he point out?",
     "answer": "The sailors who prayed and drowned are painted nowhere, so the wall shows only the ones who lived",
     "choices": [
       "The sailors who prayed and drowned are painted nowhere, so the wall shows only the ones who lived",
@@ -5560,7 +5482,7 @@
       "The sailors would have survived the very same storms whether or not they had stopped to pray at all",
       "The sailors painted those tablets themselves, so the wall proves only that grateful men like to boast"
     ],
-    "context": "This story, told around the 5th century BC, is the textbook ancestor of suppressed evidence and of survivorship bias: the drowned left no tablets, so the wall was a wall of hits with every miss erased. Cicero preserves the line in De Natura Deorum, Book III, that the men who prayed and drowned are not painted anywhere. Recorded as ancient testimony about Diagoras. Source: Cicero, De Natura Deorum, Book III, via Wikipedia, Diagoras of Melos.  (Legend.)",
+    "context": "This story, told around the 5th century BC, is the textbook ancestor of suppressed evidence and of survivorship bias: the drowned left no tablets, so the wall was a wall of hits with every miss erased. Cicero preserves the line in De Natura Deorum, Book III, that the men who prayed and drowned are not painted anywhere, and Francis Bacon retold the anecdote in Novum Organum (1620). Recorded as ancient testimony about Diagoras.",
     "topic": "cherry-picking-and-suppressed-evidence"
   },
   {
@@ -5578,7 +5500,7 @@
   },
   {
     "tier": 4,
-    "question": "During the Second World War, officers studied bombers that came home with bullet holes across the wings and body. They wanted to bolt extra armor onto those spots. Statistician Abraham Wald told them they had it backwards: armor the engines, where returning planes showed almost no holes. Why the engines?",
+    "question": "Officers in the Second World War studied the bombers that came home with bullet holes across the wings and body. They wanted to bolt extra armor onto those spots. Abraham Wald, a statistician, told them they had it backwards: armor the engines, where returning planes showed almost no holes. Why the engines?",
     "answer": "Planes hit in the engine never made it home, so the spared spots on the survivors mark the deadly hits",
     "choices": [
       "Planes hit in the engine never made it home, so the spared spots on the survivors mark the deadly hits",
@@ -5591,7 +5513,7 @@
   },
   {
     "tier": 4,
-    "question": "A swindler mails a stock tip to 1,000 strangers: half the letters predict the stock will rise, half predict it will fall. He keeps only the 500 he got right, splits them in two, and mails opposite tips again, round after round. A few marks end up having seen six correct calls in a row and now trust him completely. How is the streak fake even though every call they saw was true?",
+    "question": "A swindler mails a stock tip to 1,000 strangers: half the letters say the stock will rise, half say it will fall. He keeps only the 500 he got right, splits them in two, and mails opposite tips again, round after round. A few marks end up seeing six correct calls in a row and trust him completely. How is the streak fake, when every call they saw was true?",
     "answer": "Pruning the pool after each round leaves a lucky few who, by chance alone, were fed nothing but hits all along",
     "choices": [
       "Pruning the pool after each round leaves a lucky few who, by chance alone, were fed nothing but hits all along",
@@ -5604,7 +5526,7 @@
   },
   {
     "tier": 4,
-    "question": "A speaker shows a chart proving a long-rising measurement has gone flat for a decade. Every number on it is accurate. A statistician studies it and warns that an accurate chart can still be framed to tell a lie, and that this flat stretch smells like one. To catch a trick of this kind yourself, what is the first question to ask about the chart?",
+    "question": "A speaker shows a chart proving that a long-rising measurement has gone flat for a decade. Every number on it is accurate. A statistician studies it and warns that an accurate chart can still be framed to tell a lie, and that this flat stretch smells like one. What is the first question to ask about the chart?",
     "answer": "Why does the line start in that particular year, rather than a few years before or after?",
     "choices": [
       "Why does the line start in that particular year, rather than a few years before or after?",
@@ -5877,7 +5799,7 @@
   },
   {
     "tier": 2,
-    "question": "An alchemist is certain his luck-potion works. He drinks it every single morning and his days go well -- but he has never once gone a morning WITHOUT it to see what would happen. Why does the potion feel proven beyond doubt to him?",
+    "question": "An alchemist is certain his luck potion works. He drinks it every single morning and his days go well, but he has never once gone a morning without it to see what would happen. Why does the potion feel proven beyond doubt to him?",
     "answer": "He tallies every time it seemed to work and forgets every time it didn't, so it can only ever look proven",
     "choices": [
       "He tallies every time it seemed to work and forgets every time it didn't, so it can only ever look proven",
@@ -5890,7 +5812,7 @@
   },
   {
     "tier": 2,
-    "question": "A man decides early that a new neighbor is dishonest. After that, every friendly thing the neighbor does gets waved off as an act, while every small slip gets stored up as proof. No pile of kind deeds ever shakes his first impression. Which best describes the trap he's fallen into?",
+    "question": "A man decides early that a new neighbor is dishonest. After that, every friendly thing the neighbor does gets waved off as an act, and every small slip gets stored up as proof. No pile of kind deeds ever shakes his first impression. What trap has he fallen into?",
     "answer": "Once he settled on his first verdict, his mind bends each new fact to defend it instead of testing it",
     "choices": [
       "Once he settled on his first verdict, his mind bends each new fact to defend it instead of testing it",
@@ -5903,7 +5825,7 @@
   },
   {
     "tier": 2,
-    "question": "Many people with achy joints are certain their pain flares up when rain is coming. In the 1990s, two researchers — the Canadian physician Donald Redelmeier and the famous psychologist Amos Tversky — tracked arthritis patients for over a year, checking pain reports against actual weather. They found no real link between the two. So why are the patients still so sure the link is real?",
+    "question": "Many people with achy joints are certain their pain flares when rain is coming. Donald Redelmeier, a physician, and Amos Tversky, a psychologist, tracked arthritis patients for over a year in the 1990s, checking their pain against the actual weather, and found no real link. Why are the patients so sure the link is real?",
     "answer": "They remember the rainy days their joints ached and skip right past the rainy days they felt fine",
     "choices": [
       "They remember the rainy days their joints ached and skip right past the rainy days they felt fine",
@@ -5915,21 +5837,8 @@
     "topic": "confirmation-bias"
   },
   {
-    "tier": 2,
-    "question": "In an ancient temple, painted tablets covered a wall, each one hung up by a sailor who had prayed in a storm and survived the shipwreck. A priest pointed to them as proof the gods answer prayers. The skeptic Diagoras looked at the wall and asked one question that undid the whole display. What did he ask?",
-    "answer": "Where are the tablets of the men who prayed just as hard and drowned anyway?",
-    "choices": [
-      "Where are the tablets of the men who prayed just as hard and drowned anyway?",
-      "How can you prove these sailors prayed at all, rather than simply being lucky?",
-      "Were these tablets painted by the sailors, or by priests hoping to draw a crowd?",
-      "Why should surviving one storm mean the gods will spare a man from the next?"
-    ],
-    "context": "The drowned men left no paintings, so the survivors' wall looks like overwhelming proof. It is confirmation bias in a single image: you only ever see the hits because the misses don't get hung up. Francis Bacon retold this anecdote about the ancient skeptic Diagoras in Novum Organum (1620). Recounted here as ancient testimony. Source: Francis Bacon, Novum Organum, Book One, Aphorism XLVI.  (Legend.)",
-    "topic": "confirmation-bias"
-  },
-  {
     "tier": 3,
-    "question": "A researcher shows you the numbers 2, 4, 6 and says they follow a secret rule. To crack it, you may make up your own triples and he'll tell you whether each one fits. You guess the rule is 'goes up by two' and test 8-10-12, then 20-22-24 -- both fit, so you feel sure. But every triple you've tried already obeys your own hypothesis. What is the one kind of triple that could actually put that hypothesis to the test?",
+    "question": "Suppose you are shown the numbers 2, 4, 6 and told they follow a secret rule. To crack it, you may make up triples of your own, and the researcher will say whether each one fits. You guess 'goes up by two' and test 8-10-12, then 20-22-24. Both fit, so you feel sure, yet every triple obeyed your guess already. What would really have tested it?",
     "answer": "Offered a triple you expected him to reject, like 1-2-3, to try to break your own guess",
     "choices": [
       "Offered a triple you expected him to reject, like 1-2-3, to try to break your own guess",
@@ -5942,7 +5851,7 @@
   },
   {
     "tier": 4,
-    "question": "A detective is sure a suspect is guilty. Two clues land on his desk: one fits his theory, one flatly denies it. Bacon warned that our minds treat these two clues very unequally, and for finding truth this is backwards. Which clue is really the stronger one?",
+    "question": "A detective is sure his suspect is guilty. Two clues land on his desk: one fits his theory, one flatly denies it. Francis Bacon warned that the human mind weighs two such clues very unequally, and that for finding the truth it weighs them backwards. Which clue is really the stronger one?",
     "answer": "The single contradicting fact, since one true exception can topple what a hundred agreements cannot",
     "choices": [
       "The single contradicting fact, since one true exception can topple what a hundred agreements cannot",
@@ -5955,7 +5864,7 @@
   },
   {
     "tier": 4,
-    "question": "Two groups read the very same profile of a person -- a mix of shy, bookish moments and outgoing, talkative ones. One group was asked whether she'd suit a quiet library job; the other, whether she'd suit a high-energy sales job. Later, each group was asked to recall what they'd read. How did the two groups' memories differ?",
+    "question": "Snyder and Swann handed two groups an identical profile of a woman, a mix of shy, bookish moments and outgoing, talkative ones. They asked one group whether she would suit a quiet library job, and the other whether she would suit a high-energy sales job. Later they asked each group to recall what it had read. How did the two groups' memories differ?",
     "answer": "Each group mostly remembered the moments that fit the job it had in mind, and let the rest slip away",
     "choices": [
       "Each group mostly remembered the moments that fit the job it had in mind, and let the rest slip away",
@@ -5968,7 +5877,7 @@
   },
   {
     "tier": 4,
-    "question": "In a Stanford study, supporters and opponents of the death penalty were each handed the identical pair of made-up studies -- one finding it deters crime, one finding it doesn't. Both camps then read the very same mixed evidence, start to finish. When researchers measured their views afterward, what had become of the two camps?",
+    "question": "At Stanford in 1979, Lord, Ross and Lepper gave supporters and opponents of the death penalty the same pair of made-up studies: one found that it deters crime, the other that it does not. Both camps read the very same mixed evidence from start to finish. When the researchers measured their views afterward, what had become of the two camps?",
     "answer": "Both camps left even more convinced of their original view than before they read anything",
     "choices": [
       "Both camps left even more convinced of their original view than before they read anything",
@@ -5981,7 +5890,7 @@
   },
   {
     "tier": 5,
-    "question": "A man says his big theory of human nature fits every news story and every fight he sees. In the 1930s the Austrian-British philosopher Karl Popper looked at sweeping theories like Marxism and Freud's psychology and said this kind of confirmation is too easy to be worth much — such theories could 'explain' anything after the fact. Popper drew a sharp line between confirmations that count and ones that don't. On his view, what makes a confirmation really count?",
+    "question": "His big theory of human nature, a man says, fits every news story and every fight he sees. Karl Popper, looking at sweeping theories like Marxism and Freud's psychology in the 1930s, said this kind of confirmation is too easy to be worth much, since such theories could 'explain' anything after the fact. What, on Popper's view, makes a confirmation really count?",
     "answer": "It came from a risky prediction -- one the theory could easily have gotten wrong, but didn't",
     "choices": [
       "It came from a risky prediction -- one the theory could easily have gotten wrong, but didn't",
@@ -6007,7 +5916,7 @@
   },
   {
     "tier": 5,
-    "question": "It would be comforting to think that the smartest people, being so good at reasoning, mostly escape the pull to favor evidence for their own side. But the American psychologist Keith Stanovich and other researchers who measured this 'myside bias' in careful experiments found that raw intelligence barely predicts who resists it. Some clever people are just as one-sided as anyone else. So what trait actually does the work of resisting the bias?",
+    "question": "Keith Stanovich and other researchers measured 'myside bias,' the pull to favor evidence for one's own side, in careful experiments. Raw intelligence, they found, barely predicts who resists it; some clever people are just as one-sided as anyone else. What trait actually does the work of resisting the bias?",
     "answer": "Deliberately spending effort to hunt for reasons your own first idea might be wrong",
     "choices": [
       "Deliberately spending effort to hunt for reasons your own first idea might be wrong",
@@ -6020,7 +5929,7 @@
   },
   {
     "tier": 5,
-    "question": "In a witch-hunt 'swimming test,' a bound suspect was thrown into water. If she sank, she was judged innocent -- the pure water had accepted her. If she floated, she was judged a witch -- the water had rejected her. A clever villager objected that this test could never clear anyone of witchcraft. Why was he right?",
+    "question": "In a witch-hunt 'swimming test,' a bound suspect was thrown into the water. If she sank, she was judged innocent, because the pure water had accepted her; if she floated, she was judged a witch whom the water had rejected. A clever villager objected that the test could never clear anyone of witchcraft. Why was he right?",
     "answer": "The one outcome that proved her innocent was drowning, so no living woman was ever cleared",
     "choices": [
       "The one outcome that proved her innocent was drowning, so no living woman was ever cleared",
