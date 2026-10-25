@@ -11038,19 +11038,6 @@
   },
   {
     "tier": 2,
-    "question": "A boy biting into a peanut butter sandwich is eating no nut at all. Almonds and walnuts ripen high on trees, but a peanut's pods ripen down in the soil. What is a peanut, then?",
-    "answer": "a legume, like a lentil",
-    "choices": [
-      "a legume, like a lentil",
-      "a grain, like wheat",
-      "a tuber, like a potato",
-      "a berry, like a grape"
-    ],
-    "context": "A peanut is a legume - a cousin of peas, beans, and lentils - and it ripens in a pod underground, a quirk called geocarpy. So a plain peanut butter sandwich is secretly the same grain-plus-legume combo as rice and beans: a legume (the peanut) spread on grain (the bread). Source: thehealthy.com, 'complete protein'; peanut-as-legume is standard botany.",
-    "topic": "grain-legume-a-complete-protein"
-  },
-  {
-    "tier": 2,
     "question": "A cook in Costa Rica makes gallo pinto, and kitchens from Cuba to New Orleans to West Africa make cousins of the same cheap plate. Which two foods does it pair?",
     "answer": "rice and beans",
     "choices": [
@@ -15302,19 +15289,6 @@
   },
   {
     "tier": 2,
-    "question": "A peanut plant blooms with cheerful yellow flowers up in the open air, but each flower does something strange after it wilts. A small stalk called a peg grows out of the wilted flower, and the peg pushes the young peanut in one steady direction until it can ripen. Which way does the peg drive that pod?",
-    "answer": "Downward, burying it in the soil",
-    "choices": [
-      "Downward, burying it in the soil",
-      "Upward, toward the sunlight",
-      "Outward, along the branch tips",
-      "Inward, into the flower's core"
-    ],
-    "context": "After a peanut flower wilts, a short stalk called a 'peg' grows down from the base of its ovary and buries the developing pod in the soil, so peanuts ripen underground - a rare habit called geocarpy. Linnaeus named the species hypogaea, Greek for 'under the earth,' which is why the peanut is also called the groundnut. Source: https://en.wikipedia.org/wiki/Peanut",
-    "topic": "nuts-that-arent-nuts"
-  },
-  {
-    "tier": 2,
     "question": "In an almond orchard each spring, the trees erupt in pink blossoms and later hang with small, dry, leathery fruits whose tough flesh nobody eats. The prize is the hard seed locked in the stone inside. That whole dry, leathery fruit is really just a shrunken, inedible version of which familiar juicy fruit?",
     "answer": "A peach",
     "choices": [
@@ -15363,19 +15337,6 @@
       "A layer of protective bark"
     ],
     "context": "Walnuts and pecans aren't true nuts - they're the seeds of drupes. The green outer husk is the fleshy fruit part; the wrinkled brown 'shell' we crack sits inside that husk, and the edible kernel lies within the shell in two halves. Botanists call the walnut a 'drupe-like nut,' since its husk is technically an involucre - but the plain point holds: not a true nut. Source: https://en.wikipedia.org/wiki/Walnut",
-    "topic": "nuts-that-arent-nuts"
-  },
-  {
-    "tier": 4,
-    "question": "A grocer stocks peanuts and walnuts still in their shells, but never a raw cashew in its shell. That shell holds an oil so caustic it blisters bare fingers, so workers steam or roast it off before the seed is safe. A chemical cousin of the oil gives one North American plant, with three shiny leaves, its famous itchy rash. Which plant is it?",
-    "answer": "Poison ivy",
-    "choices": [
-      "Poison ivy",
-      "Poison hemlock",
-      "Stinging nettle",
-      "Giant hogweed"
-    ],
-    "context": "The cashew belongs to the poison-ivy family (Anacardiaceae), and its shell holds a caustic oil (anacardic acid) chemically related to urushiol - poison ivy's irritant. Cashews are roasted or steamed to destroy it before they're safe to handle and eat, which is why they're never sold in the shell. Source: https://en.wikipedia.org/wiki/Cashew",
     "topic": "nuts-that-arent-nuts"
   },
   {
@@ -26816,32 +26777,6 @@
       "Louis the Great of Hungary"
     ],
     "context": "Frederick the Great of Prussia issued his 'potato order' in 1756 to guard against famine, earning the nickname 'Kartoffelkönig' - the potato king. Admirers still leave potatoes on his grave, a custom that lives on today. Source: en.wikipedia.org/wiki/History_of_the_potato  (Legend.)",
-    "topic": "the-potato-a-stem-that-grew-underground-tubers"
-  },
-  {
-    "tier": 5,
-    "question": "Ships carried the potato across the Atlantic after Columbus, and within two centuries it was a staple that helped Europe's population surge. Farmers took it up over the wheat and barley they had always grown for one blunt, practical reason. What advantage did a field of potatoes have over a field of grain?",
-    "answer": "it grew far more food per acre",
-    "choices": [
-      "it grew far more food per acre",
-      "it survived the hardest frosts",
-      "it needed almost no rain",
-      "it could be eaten uncooked"
-    ],
-    "context": "An acre of potatoes yields enormous calories - about 95 gigajoules per hectare, beating maize (78) and rice (77). Economists credit the potato with a large share of the population growth and city-building across Europe and Asia between 1700 and 1900. Source: en.wikipedia.org/wiki/Potato",
-    "topic": "the-potato-a-stem-that-grew-underground-tubers"
-  },
-  {
-    "tier": 5,
-    "question": "Ireland's poor lived on a single kind of potato, the Lumper, grown everywhere as identical clones, when a potato disease swept the country from 1845. It destroyed much of the crop year after year, and roughly a million people died. Why did relying on one cloned variety turn a disease into a catastrophe?",
-    "answer": "every plant was equally defenceless, so all rotted together",
-    "choices": [
-      "every plant was equally defenceless, so all rotted together",
-      "the clones grew too slowly to harvest in time",
-      "the single variety drained the soil of its nutrients",
-      "the identical plants drew swarms of hungry insects"
-    ],
-    "context": "The blight was Phytophthora infestans, a water mould (not a true fungus), which struck from 1845 to 1852; 1847 is remembered as 'Black '47.' With no genetic variety among the cloned Lumpers, the whole crop failed at once. About 1 million people died and 1-2 million emigrated. Source: en.wikipedia.org/wiki/Great_Famine_(Ireland)",
     "topic": "the-potato-a-stem-that-grew-underground-tubers"
   },
   {
