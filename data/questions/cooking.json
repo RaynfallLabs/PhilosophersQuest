@@ -5681,19 +5681,6 @@
     "topic": "cold-is-a-brake-not-a-kill-fridge-and-freezer"
   },
   {
-    "tier": 4,
-    "question": "A frozen turkey left on the kitchen counter to thaw still feels icy and hard to the touch for a long while. Yet the U.S. Department of Agriculture warns never to thaw a big bird out in the open like this. What is the real danger as it slowly thaws?",
-    "answer": "Its surface warms into the range where germs multiply fastest",
-    "choices": [
-      "Its surface warms into the range where germs multiply fastest",
-      "Warm air carries new germs that settle on the wet skin",
-      "Pooling melt-water lets loose germs soak into the meat",
-      "Slow thawing gives mold time to spread over the surface"
-    ],
-    "context": "On the counter, the turkey's outer layers soon warm above 40 degrees F -- into the 'Danger Zone' of 40 to 140 degrees F, where the USDA says bacteria multiply fastest, doubling in as little as 20 minutes -- even while the middle of the bird is still frozen solid. That's why the USDA says never to thaw perishable food out on the counter. Thawing in the fridge is the safe way instead: it keeps the food at or below 40 degrees F, so the dormant germs never fully wake. It's just slow -- a big turkey can take a few days. Sources: USDA FSIS, 'The Big Thaw -- Safe Defrosting Methods' -- https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/big-thaw-safe-defrosting-methods; USDA FSIS, '\"Danger Zone\" (40 F-140 F)' -- https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f",
-    "topic": "cold-is-a-brake-not-a-kill-fridge-and-freezer"
-  },
-  {
     "tier": 1,
     "question": "Suppose you eat a steak. Collagen, the protein that makes up roughly a third of all the protein in your own body, is in there too, because animals are built from it as well. Which part of a steak is the collagen?",
     "answer": "The chewy gristle running through it",
@@ -16290,7 +16277,7 @@
   },
   {
     "tier": 1,
-    "question": "At a Bangkok street stall in Thailand, a cook heats up his big steel wok, tosses in flat glossy noodles with egg, tofu, and shrimp, then piles the finished plate high with fresh bean sprouts and crushed peanuts. The dish is pad thai — the country's most famous noodle plate. Those chewy flat noodles are milled from which grain?",
+    "question": "At a Bangkok street stall, a cook tosses flat, glossy noodles in his steel wok with egg, tofu and shrimp, then heaps the plate with bean sprouts and crushed peanuts. It is pad thai, Thailand's most famous noodle dish. Which grain are its chewy noodles made from?",
     "answer": "rice",
     "choices": [
       "rice",
@@ -16303,7 +16290,7 @@
   },
   {
     "tier": 2,
-    "question": "Order pad thai at a real Thai restaurant and the sauce coating the noodles should hit sweet, salty, and sour all at exactly the same time. The sweet comes from palm sugar; the salty from fish sauce. But it is the deep, tangy sour note that separates a genuine Thai pad thai from a plain sweet stir-fry served back home. Which classic Thai ingredient brings that sour?",
+    "question": "A cook in a Thai kitchen tastes his pad thai sauce for three notes at once: sweet, salty and sour. Palm sugar gives the sweet and fish sauce the salt. Without the deep, tangy sour, the plate is only a sweet stir-fry. Which classic Thai ingredient brings the sour?",
     "answer": "tamarind pulp",
     "choices": [
       "tamarind pulp",
@@ -16316,7 +16303,7 @@
   },
   {
     "tier": 3,
-    "question": "Most national dishes grow up slowly in home kitchens across many generations. Pad thai — Thailand's famous stir-fried rice-noodle dish — did not. In the late 1930s, Thailand was reinventing itself as a modern nation, and the country's leader decided every Thai family needed a shared signature dish. He picked pad thai and promoted recipes across the whole country. Who pushed it into that role?",
+    "question": "Thailand was remaking itself as a modern nation in the late 1930s, and its leader decided that every Thai family needed one shared signature dish. Most national dishes take generations to grow up in home kitchens; this one was chosen. He picked pad thai and spread its recipes across the whole country. Who pushed it into that role?",
     "answer": "the nation's prime minister",
     "choices": [
       "the nation's prime minister",
@@ -16329,7 +16316,7 @@
   },
   {
     "tier": 4,
-    "question": "By 1942, wartime disruption and flooding had wrecked Thailand's rice paddies and rice ran short. The government of prime minister Phibun urged people to eat rice NOODLES instead of bowls of plain rice. How did switching to noodles stretch the country's dwindling food supply?",
+    "question": "Months of flooding, on top of wartime disruption, wrecked Thailand's rice paddies in 1942, and rice ran short. Phibun's government urged families to eat rice noodles instead of bowls of plain rice. How did switching to noodles stretch the country's dwindling food supply?",
     "answer": "milling the same rice into noodles fed about twice as many people",
     "choices": [
       "milling the same rice into noodles fed about twice as many people",
@@ -16342,7 +16329,7 @@
   },
   {
     "tier": 4,
-    "question": "Thailand's prime minister Phibun didn't just suggest people eat pad thai — he ran a hard campaign under the slogan 'noodle is your lunch,' framing a bowl as helping the war effort. To spread the dish fast, what did his government literally give away?",
+    "question": "Phibun's government did more than suggest that Thais eat pad thai. It ran a hard campaign under the slogan 'noodle is your lunch,' casting every plate as a patriotic duty in wartime. To spread the dish fast, what did the government give away?",
     "answer": "free noodle carts for would-be vendors",
     "choices": [
       "free noodle carts for would-be vendors",
@@ -16355,7 +16342,7 @@
   },
   {
     "tier": 5,
-    "question": "Prime minister Phibun promoted pad thai to build a proud, purely Thai identity, yet its stir-frying, its wok, its rice noodles, and even the old noodle word 'kuai tiao' all came from immigrants long settled in Thailand. Which homeland did that cooking come from?",
+    "question": "Pad thai, as Phibun promoted it, stood for a proud, purely Thai identity. Yet its wok, its stir-frying, its noodles and even the old noodle word 'kuai tiao' all came from immigrants long settled in Thailand. Which homeland did that cooking come from?",
     "answer": "China",
     "choices": [
       "China",
@@ -16368,7 +16355,7 @@
   },
   {
     "tier": 1,
-    "question": "In supermarkets everywhere you can find cheap tubs of green-topped grated 'parmesan.' But by European law, none of those tubs may legally print the real name — 'Parmigiano-Reggiano' — on the label. That protected name belongs only to cheese wheels made in one specific corner of one country. Where must a real Parmigiano-Reggiano wheel be made?",
+    "question": "A shopper picks up a cheap, green-topped tub of grated 'parmesan' at the supermarket. By European law the tub may not carry the name Parmigiano-Reggiano, which is kept for wheels from one small patch of one country. Where must a real wheel be made?",
     "answer": "A small corner of northern Italy",
     "choices": [
       "A small corner of northern Italy",
@@ -16380,21 +16367,8 @@
     "topic": "parmigiano-reggiano-king-of-cheeses"
   },
   {
-    "tier": 2,
-    "question": "In a cheesemaker's dairy, a big vat of warm milk sits still and liquid. She stirs in a small dose of rennet — a natural enzyme — and within minutes the whole vat sets into a soft white jelly, ready to cut into cheese curds. Rennet has a surprising old source: for thousands of years it was scraped from the stomach lining of one young farm animal. Which young animal?",
-    "answer": "A calf (a young cow)",
-    "choices": [
-      "A calf (a young cow)",
-      "A lamb (a young sheep)",
-      "A kid (a young goat)",
-      "A piglet (a young pig)"
-    ],
-    "context": "By law Parmigiano-Reggiano contains just three things — milk, salt, and rennet — with no additives or preservatives. The rennet is calf rennet, the only coagulant the rules permit: an enzyme first taken from a young calf's stomach that sets liquid milk into solid curds. (Source: parmigianoreggiano.com/faq; Wikipedia, 'Parmesan.')",
-    "topic": "parmigiano-reggiano-king-of-cheeses"
-  },
-  {
     "tier": 3,
-    "question": "A single wheel of Parmigiano-Reggiano weighs about forty kilograms and drinks up an entire day's milk from a small Italian dairy herd. Yet on the day it is first made, that fresh wheel tastes flat, dull, and rubbery — nothing like the sharp, nutty cheese Italians call the 'king of cheeses.' What transforms it is patient aging in a stone warehouse. Roughly how long is a typical wheel aged?",
+    "question": "A cheesemaker lifts a brand-new wheel of Parmigiano-Reggiano, about forty kilograms pressed from a whole day's milk of a small dairy herd. That fresh wheel tastes flat, dull and rubbery, nothing like the sharp, nutty 'king of cheeses' it will become. Patient aging in a stone warehouse makes the change. Roughly how long is a typical wheel aged?",
     "answer": "About two years",
     "choices": [
       "About two years",
@@ -16407,7 +16381,7 @@
   },
   {
     "tier": 4,
-    "question": "Bite into a well-aged wedge of Parmigiano-Reggiano and tiny white specks crunch between your teeth. Nobody adds them — they form on their own as the wheel slowly matures, and the older the wheel, the more of them appear. What are these crunchy crystals actually made of?",
+    "question": "A diner bites into a wedge of well-aged Parmigiano-Reggiano, and tiny white specks crunch between her teeth. Nobody added them: they form on their own as the wheel slowly matures, and the older the wheel, the more of them it holds. What are these crunchy crystals made of?",
     "answer": "An amino acid",
     "choices": [
       "An amino acid",
@@ -16420,20 +16394,7 @@
   },
   {
     "tier": 5,
-    "question": "Italian cooks have a thrifty trick: drop a hard leftover Parmigiano rind into a pot of simmering soup, and even with no meat in the pot, the broth turns noticeably deeper and richer. The reason is that aged Parmigiano is packed with free glutamate — the same compound used to make MSG (monosodium glutamate). Which of the five basic tastes does glutamate give food?",
-    "answer": "The umami taste",
-    "choices": [
-      "The umami taste",
-      "The sweet taste",
-      "The salty taste",
-      "The sour taste"
-    ],
-    "context": "As Parmigiano ages, its proteins break down and release free glutamate — the molecule behind umami, the savory 'fifth taste.' A 24-month wheel holds roughly 1,680 mg per 100 g, rising to about 2,220 mg at 48 months, making it one of the most umami-rich foods on Earth. Fresh mozzarella, by contrast, has almost none — its flavor is built entirely by aging. Glutamate is the same compound used to make MSG. (Source: umamiinfo.com; Grokipedia, 'Parmesan.')",
-    "topic": "parmigiano-reggiano-king-of-cheeses"
-  },
-  {
-    "tier": 5,
-    "question": "In Parmigiano's home region, the prized prosciutto di Parma ham comes from pigs that were traditionally fattened on a leftover from the cheese dairy next door — on these farms nothing went to waste. Which cheesemaking leftover was slopped into the pigs' trough?",
+    "question": "In Parmigiano's home region, the pigs that became prized prosciutto di Parma were traditionally fattened on a leftover from the cheese dairy next door, so on these farms nothing went to waste. Which cheesemaking leftover went into the pigs' trough?",
     "answer": "The watery whey",
     "choices": [
       "The watery whey",
@@ -16524,7 +16485,7 @@
   },
   {
     "tier": 1,
-    "question": "In Beijing, China, cooks have made Peking duck for centuries. The whole duck is roasted until the outside turns glossy and crackling, then wheeled out and carved into thin slices right at your table. Diners prize one part of the bird far above all the rest — it is the whole point of the dish. Which part is the celebrated delicacy?",
+    "question": "Cooks in Beijing have roasted Peking duck for centuries. The glossy, crackling bird is wheeled out and carved into thin slices beside the table while the diners watch, and they prize one part of it far above the rest. Which part is the celebrated delicacy?",
     "answer": "The skin",
     "choices": [
       "The skin",
@@ -16537,7 +16498,7 @@
   },
   {
     "tier": 2,
-    "question": "Peking duck, the famous roast duck of Beijing, China, isn't just eaten off the plate with a fork. At the table, each diner picks up a slice of the shattering crisp duck skin, adds slivers of green scallion, matchsticks of cool cucumber, and a smear of sweet dark bean sauce, then rolls the whole bundle up inside one soft wrapper and eats it in a bite. What is the wrapper?",
+    "question": "A diner at a Peking duck dinner never eats the crisp skin with a fork. She lays a slice in a soft wrapper with a few slivers of green scallion, a matchstick of cucumber and a smear of sweet bean sauce, then rolls it up and eats it in one bite. What is the wrapper?",
     "answer": "A thin flour pancake",
     "choices": [
       "A thin flour pancake",
@@ -16550,7 +16511,7 @@
   },
   {
     "tier": 2,
-    "question": "Peking duck, the famous roast duck of Beijing, China, is loved for skin that shatters like glass when you bite it — not the chewy rubber of ordinary roast chicken skin. Peking duck cooks pull that off with one strange step done to the whole raw duck long before the bird ever meets the oven. It sounds silly, but it separates the skin from the flesh so the skin can dry out and crackle. What does the cook do to the raw bird?",
+    "question": "Peking duck skin shatters like glass in the mouth, nothing like the chewy skin of an ordinary roast chicken. Long before the bird meets the oven, the cook does one strange thing to the raw duck, a step that parts the skin from the flesh so the skin can dry and crackle. What does the cook do?",
     "answer": "Pumps air under the skin",
     "choices": [
       "Pumps air under the skin",
@@ -16563,7 +16524,7 @@
   },
   {
     "tier": 3,
-    "question": "Peking duck is a famous Beijing dish — a whole duck glazed with a sweet syrup and roasted over fire until the skin turns shatteringly crisp, so thin it snaps like glass on the tongue. But before that duck ever meets the oven, the glazed bird is hung on a hook in a cool, drafty room for a full day or two. What does this long hang do that can make or break the finished duck?",
+    "question": "A Peking duck cook brushes the bird with a sweet syrup, then hangs it on a hook in a cool, drafty room for a full day or two before it ever meets the oven. Later it will roast until its skin snaps like glass. What does that long hang do that can make or break the finished duck?",
     "answer": "Dries the skin so it crisps, not steams",
     "choices": [
       "Dries the skin so it crisps, not steams",
@@ -16589,7 +16550,7 @@
   },
   {
     "tier": 5,
-    "question": "Two legendary Beijing duck houses split over method. The older Bianyifang seals its ducks in a closed brick oven, lets the fire burn out, and roasts them gently on the leftover heat for tender, juicy meat. Its rival Quanjude chases the crispest possible skin instead — so it cooks its ducks a bolder way. How does Quanjude roast its ducks?",
+    "question": "Beijing's Bianyifang, roasting ducks since 1416, seals them in a closed brick oven, lets the fire die and cooks them gently on the heat left behind, for tender, juicy meat. Its younger rival, Quanjude, goes after the crispest possible skin instead. How does Quanjude roast its ducks?",
     "answer": "Hung over an open fruitwood fire",
     "choices": [
       "Hung over an open fruitwood fire",
@@ -16615,7 +16576,7 @@
   },
   {
     "tier": 2,
-    "question": "Pemmican is a travel food invented by the Cree, a First Nations people of the Canadian plains. For hundreds of years it kept hunters, trappers, and soldiers fed for months on the trail — dried meat pounded together with berries and hot rendered animal fat into a dense, keepable cake. The word 'pemmican' itself comes straight from Cree, from the root 'pimi', and that root names one of the three ingredients pounded into every batch. Which ingredient is pimi?",
+    "question": "Native peoples of the plains pounded dried meat, berries and hot rendered fat into pemmican, a dense cake that fed hunters and trappers for months on the trail. The word comes from the Cree language, from the root 'pimi,' which names one of the three ingredients in every batch. Which ingredient is pimi?",
     "answer": "The fat",
     "choices": [
       "The fat",
@@ -16628,7 +16589,7 @@
   },
   {
     "tier": 3,
-    "question": "In pemmican, dried meat and melted fat are mixed in roughly equal amounts. As it cools, the fat turns solid and coats every shred of meat - and British pemmican from the Boer War reportedly stayed 'in perfect condition for decades.' What is that hardened fat doing to protect the meat?",
+    "question": "A pemmican maker mixes dried meat with melted fat in roughly equal amounts, and as the cake cools, the fat sets hard around every shred. The British army's Boer War pemmican reportedly stayed 'in perfect condition for decades.' What is that hardened fat doing to protect the meat?",
     "answer": "Sealing it off from air and moisture",
     "choices": [
       "Sealing it off from air and moisture",
@@ -16641,7 +16602,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1814 the governor of the Red River Colony ordered that no one could carry pemmican out of the district. The fur companies were so enraged that the fight that followed is still called the Pemmican War. Why would grown men go to war over dried meat?",
+    "question": "The governor of the Red River Colony ordered in 1814 that no one could carry pemmican out of the district. The fur companies were so enraged that the fight that followed is still called the Pemmican War. Why would grown men go to war over dried meat?",
     "answer": "It was the only food that could fuel their long canoe brigades",
     "choices": [
       "It was the only food that could fuel their long canoe brigades",
@@ -16654,7 +16615,7 @@
   },
   {
     "tier": 3,
-    "question": "On the wooden warships and long marches of the 1700s and 1800s, sailors and soldiers lived for weeks on hardtack — a plain, cheap biscuit of just flour and water, baked hard as a plank so it would keep for months without spoiling. The men grimly nicknamed it 'tooth dullers' and 'sheet iron crackers,' because it could chip a real tooth if you tried to bite it dry. To turn a piece into something a man could actually chew, what did sailors and soldiers usually do first?",
+    "question": "Soldiers on long marches and sailors on wooden warships lived for weeks on hardtack, a cheap biscuit of flour and water baked hard as a plank so it would keep for months. The men called it 'tooth dullers' and 'sheet iron crackers,' since a dry bite could chip a tooth. What did they usually do to a piece before eating it?",
     "answer": "Soak it in coffee, water, or soup",
     "choices": [
       "Soak it in coffee, water, or soup",
@@ -16667,7 +16628,7 @@
   },
   {
     "tier": 4,
-    "question": "After weeks at sea on a wooden warship in the 1700s or 1800s, a sailor's hardtack — the flour-and-water biscuit that fed the crew every day — often crawled with tiny weevil grubs that hatched right inside it. The men grimly nicknamed the infested biscuits 'worm castles.' Food was too precious to throw overboard, so sailors had a standard little trick to get a wormy biscuit ready to eat. What was the trick?",
+    "question": "A sailor breaks open his hardtack weeks out at sea and finds it crawling with weevil grubs that hatched inside it. The crews called such biscuits 'worm castles.' Food was too precious to throw overboard, so sailors had a standard trick to make a wormy biscuit fit to eat. What was the trick?",
     "answer": "Tap it on the table edge to knock the weevils out",
     "choices": [
       "Tap it on the table edge to knock the weevils out",
@@ -16680,7 +16641,7 @@
   },
   {
     "tier": 5,
-    "question": "Some Union soldiers in the Civil War were handed hardtack baked fifteen years earlier, for a completely different war - and it was still edible. Pemmican keeps the same way: the meat is dried until it's nearly bone-dry, and the fat coating seals out any new moisture. Why does taking the water out stop food from rotting for years?",
+    "question": "Some Union troops in the Civil War were eating hardtack baked fifteen years earlier, for the Mexican-American War, and it was still fit to eat. Pemmican keeps the same way: its meat is dried nearly bone-dry, and the fat around it seals out new moisture. Why does taking the water out stop food from rotting for years?",
     "answer": "The germs that spoil food need liquid water to grow",
     "choices": [
       "The germs that spoil food need liquid water to grow",
@@ -16693,7 +16654,7 @@
   },
   {
     "tier": 1,
-    "question": "In an Italian kitchen, a cook grinds fresh basil, pine nuts, garlic, salt, and olive oil together in a heavy stone mortar. The bright green paste that comes out is called pesto. The name isn't a town and isn't a plant — it comes straight from the old Italian verb pestare. What does pestare mean?",
+    "question": "Basil, pine nuts, garlic, salt and olive oil go into a marble mortar in a Genoa kitchen, and the cook works them into a bright green paste: pesto. Its name comes from no town and no plant but from the old Italian verb pestare. What does pestare mean?",
     "answer": "To pound or crush",
     "choices": [
       "To pound or crush",
@@ -16706,7 +16667,7 @@
   },
   {
     "tier": 2,
-    "question": "Pesto is the bright green basil-and-cheese sauce of Genoa, in northern Italy — you spoon it over pasta and it stains the noodles green. A modern cook could blitz pesto in an electric food processor in seconds, but Genoese purists still insist on pounding it slowly by hand in a heavy stone mortar. What actually goes wrong when a fast, spinning steel blade is used instead of that slow hand-crush?",
+    "question": "A modern cook could whizz up pesto, Genoa's bright green basil-and-cheese sauce, in a food processor in seconds. Genoese purists still make it slowly by hand in a heavy marble mortar instead. What goes wrong when a fast, spinning steel blade does the job?",
     "answer": "The blade heats and bruises the leaves, turning the sauce brown",
     "choices": [
       "The blade heats and bruises the leaves, turning the sauce brown",
@@ -16719,7 +16680,7 @@
   },
   {
     "tier": 4,
-    "question": "A cook in Genoa is making pesto — the bright-green Italian sauce of fresh basil leaves pounded with olive oil, garlic, pine nuts, and cheese, born in that port city on Italy's northwest coast. She's already grating Parmigiano Reggiano into her marble mortar when she checks the old Genoese recipe and sees it wants a second cheese pounded in alongside, not just Parmigiano. Which cheese joins the Parmigiano?",
+    "question": "A Genoese cook grates Parmigiano Reggiano into her marble mortar for pesto, the city's bright green basil sauce. Then she checks the old recipe, which insists on two cheeses rather than one, with a second worked in alongside the first. Which cheese joins the Parmigiano?",
     "answer": "Fiore Sardo, a sheep's-milk pecorino from Sardinia",
     "choices": [
       "Fiore Sardo, a sheep's-milk pecorino from Sardinia",
@@ -16732,7 +16693,7 @@
   },
   {
     "tier": 1,
-    "question": "Pho is Vietnam's most famous soup — a big bowl of steaming beef broth, slow-simmered with ginger and star anise, ladled over a nest of soft flat white noodles. The Vietnamese call those noodles 'banh pho.' What are these flat white noodles made from?",
+    "question": "In a Hanoi noodle shop, a cook ladles steaming beef broth over a nest of soft, flat white noodles and tops the bowl with herbs: pho, Vietnam's most famous soup. The noodles are called banh pho. What are they made from?",
     "answer": "Rice",
     "choices": [
       "Rice",
@@ -16745,7 +16706,7 @@
   },
   {
     "tier": 2,
-    "question": "Pho is Vietnam's famous beef-and-noodle soup, and in Hanoi in the north the cooks are strict about the broth. A traditional Hanoi cook drops just a single dried pod of one spice into a huge simmering pot of stock. Any more than one, and its bold, licorice-sweet perfume would swallow the entire soup. Which spice gives pho its signature fragrance?",
+    "question": "One dried pod of a single spice goes into about four litres of simmering pho stock in a traditional Hanoi kitchen, and the cook stops there. Its licorice-sweet scent perfumes the whole broth; any more and the soup turns medicinal. Which spice is it?",
     "answer": "Star anise",
     "choices": [
       "Star anise",
@@ -16758,7 +16719,7 @@
   },
   {
     "tier": 2,
-    "question": "Pho is Vietnam's famous beef-and-noodle soup, cooked in huge pots that simmer for hours. Before starting the long simmer, a Vietnamese cook picks up two everyday kitchen aromatics and holds them right over an open flame, cut side down, until their faces turn black and blistered. The charred halves then drop into the broth, and that smoky char deepens the whole pot. Which two of these get blackened over the fire?",
+    "question": "Over an open flame, a pho cook holds two halved aromatics, cut side down, until their faces blacken and blister, before the pot even starts its long simmer. The charred pieces go into the stock, and their smoky-sweet char deepens the whole broth. Which two are blackened over the fire?",
     "answer": "Onion and ginger",
     "choices": [
       "Onion and ginger",
@@ -16771,7 +16732,7 @@
   },
   {
     "tier": 3,
-    "question": "During French rule, beef grew fashionable in Vietnam — yet French butchers reserved the prime steaks and roasts for colonial tables. Local cooks made do with the cheap parts the French passed over, simmering them for hours into the deep, meaty broth that became the soul of pho. Which cheap parts did they turn into that broth?",
+    "question": "French butchers in colonial Vietnam kept the prime steaks and roasts for French tables, though French rule had made beef fashionable across the country. Local cooks took the cheap parts the French passed over and simmered them for hours into the deep, meaty broth at the heart of pho. Which cheap parts went into it?",
     "answer": "Bones and scraps",
     "choices": [
       "Bones and scraps",
@@ -16784,7 +16745,7 @@
   },
   {
     "tier": 3,
-    "question": "A cheap Vietnamese street dish called 'xao trau' came before pho — stir-fried strips of one animal's meat, tossed into broth over thin rice vermicelli. Cooks later traded that meat for a richer one, and modern pho was born. Which animal's meat filled the original 'xao trau'?",
+    "question": "Street cooks in Vietnam once sold xao trau, cheap stir-fried strips of one animal's meat in broth over thin vermicelli. Cooks later traded that meat for beef and the thin noodles for wide, flat ones, and modern pho was born. Which animal's meat went into xao trau?",
     "answer": "Water buffalo",
     "choices": [
       "Water buffalo",
@@ -16797,7 +16758,7 @@
   },
   {
     "tier": 4,
-    "question": "France gets the credit for pho's beef — but its flat rice noodle points to a different neighbor. Around 1900s Hanoi, immigrant vendors sold a soup they called 'ngưu nhục phấn,' meaning 'beef with rice noodles' in their own language, and their rice-noodle craft helped shape the dish. Where did these noodle vendors come from?",
+    "question": "Immigrant vendors in Hanoi, around the early 1900s, sold a beef-and-noodle soup they called ngưu nhục phấn in their own language. Their noodle craft, joined to the beef the French had made popular, helped shape pho. Where did these noodle vendors come from?",
     "answer": "China",
     "choices": [
       "China",
@@ -16810,7 +16771,7 @@
   },
   {
     "tier": 5,
-    "question": "A charming story claims 'pho' comes from the French word 'feu' — fire, as in the stew pot-au-feu. But scholars call it only an unproven theory: pot-au-feu is a stew of root vegetables like carrots and turnips, nothing like pho. The better-documented origin traces 'pho' to a Chinese word for which everyday part of the dish?",
+    "question": "Andrea Nguyen, a pho expert, and a dictionary from 1931 both trace the word pho to one part of the bowl itself. A charming rival story ties it to the French word feu, 'fire,' the feu of pot-au-feu. Scholars call that unproven, pot-au-feu being a stew of root vegetables like carrots and turnips. Which part of the bowl do Nguyen and the dictionary point to?",
     "answer": "The flat rice noodle",
     "choices": [
       "The flat rice noodle",
@@ -16823,7 +16784,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1889 in the Italian city of Naples, a pizzamaker named Raffaele Esposito was asked to bake a pizza for the visiting Queen Margherita of Italy. He topped it with red tomato, white cheese, and one green herb — the three colors of the Italian flag — and named the pizza after her. Neapolitan Margherita pizza is still made the same way today. Which herb gives it the green?",
+    "question": "A Margherita pizza in Naples comes out of the oven topped with red tomato, white mozzarella and the torn leaves of one green herb. By popular legend, the three colors copy the Italian flag. Which herb gives it the green?",
     "answer": "Basil",
     "choices": [
       "Basil",
@@ -16836,7 +16797,7 @@
   },
   {
     "tier": 2,
-    "question": "By legend, the Margherita pizza got its name in June 1889, when a Naples pizza maker baked a red, white, and green pie for a special visitor touring the city. She loved it so much that the pizza was named in her honor. What rank did the celebrated visitor hold?",
+    "question": "Raffaele Esposito, a Naples pizzaiolo, baked three pizzas in June 1889 for a special visitor, the legend goes, and she liked the red, white and green one best. It took her name: Margherita. What rank did she hold?",
     "answer": "A queen",
     "choices": [
       "A queen",
@@ -16849,7 +16810,7 @@
   },
   {
     "tier": 3,
-    "question": "The Margherita legend ties pizza to royalty. But that fame arrived late in the story. Centuries earlier, pizza was already an everyday meal in Naples. Historians agree on which Neapolitans first made it a staple. Who were pizza's earliest devoted eaters?",
+    "question": "Pizza had been an everyday meal in Naples for centuries by the time the Margherita legend gave it a royal story. Historians agree on which Neapolitans first made it a staple of their tables. Who were pizza's earliest devoted eaters?",
     "answer": "The working poor",
     "choices": [
       "The working poor",
@@ -16862,7 +16823,7 @@
   },
   {
     "tier": 3,
-    "question": "A true Neapolitan pizza bakes in a wood-fired oven so ferociously hot — roughly 900°F — that the whole pie is done in just 60 to 90 seconds. That blast of heat puffs the outer edge into an airy, blistered, leopard-spotted rim that pizza fans prize above all. What do Italians call that puffed rim?",
+    "question": "A Neapolitan pizzaiolo slides a pie into a wood-fired oven so hot, about 900°F, that it bakes in a minute or so. The fierce heat swells the outer edge into a puffy, blistered rim with leopard spots of char, the part pizza lovers prize. What do Italians call that puffed rim?",
     "answer": "Cornicione",
     "choices": [
       "Cornicione",
@@ -16875,7 +16836,7 @@
   },
   {
     "tier": 4,
-    "question": "The entire royal-pizza legend rests on one piece of evidence: a thank-you note supposedly sent from the queen's household in 1889. Historian Zachary Nowak examined it and declared it a forgery. The real royal court always used official printed letterhead — but this note's seal had been faked. How was the phony seal made?",
+    "question": "Zachary Nowak, a historian, examined the one piece of evidence behind the royal-pizza legend: a note of thanks said to have come from the royal household in 1889. He declared it a forgery. The genuine royal court always used official printed letterhead, but this note's seal was faked. How was the phony seal made?",
     "answer": "A rubber stamp",
     "choices": [
       "A rubber stamp",
@@ -16887,21 +16848,8 @@
     "topic": "pizza-margherita-and-naples"
   },
   {
-    "tier": 5,
-    "question": "Tomato sauce feels like the soul of Italian pizza — but the tomato is a relative newcomer to Italy. For most of pizza's history, Neapolitan pizza went without it: just dough, oil, garlic, and herbs. The tomato was carried to Italy long ago from a distant homeland far across the sea. Where did the tomato originally come from?",
-    "answer": "The Americas",
-    "choices": [
-      "The Americas",
-      "Central Africa",
-      "South Asia",
-      "East Asia"
-    ],
-    "context": "The tomato is a New World crop that reached Europe only after Columbus, arriving in the Kingdom of Naples during the era of the Spanish Empire. That is why no authentic pizza before about 1500 could have carried tomato. Source: Wikipedia, 'History of pizza.'",
-    "topic": "pizza-margherita-and-naples"
-  },
-  {
     "tier": 1,
-    "question": "Polenta feels like a dish Italians must have eaten forever, but its cornmeal comes from maize. Europe knew nothing about maize until Columbus's ships brought it back in the 1490s. Corn was first farmed thousands of years earlier. Where was corn first grown?",
+    "question": "A cook in northern Italy stirs polenta, a cornmeal porridge that feels as if Italians have eaten it forever. Yet corn reached Europe only on Columbus's ships in the 1490s, thousands of years after its first farmers planted it. Where was corn first grown?",
     "answer": "The Americas",
     "choices": [
       "The Americas",
@@ -16914,7 +16862,7 @@
   },
   {
     "tier": 2,
-    "question": "The word 'polenta' is far older than corn in Europe. For centuries before maize arrived, a Northern peasant's 'polenta' was just a mush boiled from whatever grain was cheapest — spelt, millet, or buckwheat. In the leanest years, when even cheap grain ran short, cooks ground flour from the nuts of one common tree instead. Which tree?",
+    "question": "A northern Italian peasant boiled his polenta from the cheapest local grain, buckwheat, spelt or millet, for centuries before corn reached Europe. In the hungriest years, when even cheap grain ran short, cooks ground flour from the nuts of one common tree instead. Which tree?",
     "answer": "The chestnut",
     "choices": [
       "The chestnut",
@@ -16927,7 +16875,7 @@
   },
   {
     "tier": 3,
-    "question": "By the 1800s corn was so cheap that Northern Italy's poorest peasants ate almost nothing but polenta, meal after meal — because that was all their bosses would pay them. Then a cruel disease crept through those villages: crusted skin sores, endless diarrhea, and creeping madness, striking only the hungry poor. Furious, the peasants named the sickness after the very men they blamed for their corn-only diet. What did they call it?",
+    "question": "Northern Italy's poorest peasants were living on almost nothing but polenta by the 1800s, meal after meal, because that was all their bosses would pay them. Then a cruel disease crept through their villages: crusted skin sores, endless diarrhea and creeping madness. The furious peasants named the sickness for the men they blamed. What did they call it?",
     "answer": "The landlord's disease",
     "choices": [
       "The landlord's disease",
@@ -16939,34 +16887,8 @@
     "topic": "polenta-corn-and-pellagra"
   },
   {
-    "tier": 4,
-    "question": "For over a century, pellagra baffled doctors, who blamed spoiled corn, a hidden poison, or a germ passing from person to person. In 1915, the American doctor Joseph Goldberger proved them all wrong. The illness came not from something in the polenta, but from something missing. A diet of almost nothing but corn leaves the body starved of one vitamin. Which one?",
-    "answer": "Vitamin B3",
-    "choices": [
-      "Vitamin B3",
-      "Vitamin C",
-      "Vitamin D",
-      "Vitamin B12"
-    ],
-    "context": "The missing vitamin is niacin (vitamin B3). Corn falls short two ways at once: most of its niacin is chemically locked so the body can't absorb it, and corn protein is low in tryptophan, which the body converts into niacin. To prove pellagra wasn't contagious, Goldberger held 'filth parties' — he and volunteers, including his own wife, swallowed capsules made from sick patients' skin scales and waste, and nobody caught it. Conrad Elvehjem isolated niacin from liver in 1937. Source: Hektoen International, 'Our Daily Bread: The Scourge of Pellagra.'",
-    "topic": "polenta-corn-and-pellagra"
-  },
-  {
-    "tier": 5,
-    "question": "Here's the twist that makes the whole tragedy sting: the Aztec and Maya of Mexico and Central America had grown and eaten corn for thousands of years — and never suffered pellagra. Europe copied their crop but not their kitchen. Before cooking, the American peoples treated their corn kernels one extra way, a step that unlocked the very nourishment the corn was hiding. What was that ancient step?",
-    "answer": "Soaking the kernels in lime or wood ash",
-    "choices": [
-      "Soaking the kernels in lime or wood ash",
-      "Roasting the kernels over an open fire",
-      "Grinding the kernels between hot stones",
-      "Fermenting the kernels in clay jars"
-    ],
-    "context": "The step is called nixtamalization — from the Aztec Nahuatl 'nextli' (ashes) and 'tamalli' (corn dough). Soaking kernels in lime (calcium hydroxide) or wood ash unlocks the bound niacin so the body can absorb it. It is ancient: grinding tools from Guatemala's coast date to roughly 1200-1500 BCE. The very same corn is safe eaten as lime-treated tortillas but starves you as plain cornmeal polenta — Europe imported the crop but not the lime. Source: Wikipedia, 'Nixtamalization.'",
-    "topic": "polenta-corn-and-pellagra"
-  },
-  {
     "tier": 1,
-    "question": "A popcorn kernel is a hard little seed, and something is sealed tight inside it. Heating that hidden something is what makes the kernel burst open into a fluffy piece of popcorn. What is trapped inside the kernel?",
+    "question": "A popcorn kernel sits in a hot pan, a hard little seed with something sealed tight inside it. When that hidden something heats up, the kernel bursts open into a fluffy white puff. What is trapped inside?",
     "answer": "A drop of water",
     "choices": [
       "A drop of water",
@@ -16979,7 +16901,7 @@
   },
   {
     "tier": 2,
-    "question": "A popcorn kernel is a tiny seed with a hard, starchy white heart packed under a tough tan shell. When you heat that kernel in a hot pan, the heart explodes and puffs into the white foam you know as popcorn. Now look at a finished popcorn flake and its old broken shell: where did the seed's inside — the starchy stuff that used to sit under the shell — end up on the puffed flake?",
+    "question": "Inside its tough tan shell, a popcorn kernel keeps a hard, starchy heart. In a hot pan that heart bursts and puffs into white foam. A cook looks at a finished popcorn flake and its old broken shell. Where did the seed's starchy inside end up on the puffed flake?",
     "answer": "Outside - it turns inside-out as it pops",
     "choices": [
       "Outside - it turns inside-out as it pops",
@@ -16992,7 +16914,7 @@
   },
   {
     "tier": 3,
-    "question": "Popcorn is a kind of corn — but so is the sweet corn on the cob you eat with butter in the summer, and the field corn ground into cornbread. Toss a handful of sweet corn kernels or field corn kernels into a hot dry pan, though, and they just scorch and burn on the bottom — they never pop into fluffy white flakes. What does a popcorn kernel have that its close corn cousins are missing?",
+    "question": "A cook tosses sweet corn kernels into one hot, dry pan and field corn, the kind ground for cornbread, into another. Both just scorch on the bottom, while the popcorn in a third pan bursts into fluffy white flakes. What does popcorn have that its close cousins lack?",
     "answer": "A tough, watertight hull that seals the steam in",
     "choices": [
       "A tough, watertight hull that seals the steam in",
@@ -17005,7 +16927,7 @@
   },
   {
     "tier": 1,
-    "question": "You carve open a roast chicken at Sunday dinner and see two clearly different colors of meat on the same bird — some pieces pale white, others noticeably dark red-brown. Cooks call the darker pieces the 'dark meat' and the paler ones the 'white meat.' On a chicken, which piece is the dark meat?",
+    "question": "A dad carves the roast chicken at Sunday dinner, and the bird shows two clearly different colors of meat: some pieces pale white, others a darker red-brown. Cooks call the darker pieces dark meat. On a chicken, which piece is dark meat?",
     "answer": "the thigh",
     "choices": [
       "the thigh",
@@ -17018,7 +16940,7 @@
   },
   {
     "tier": 2,
-    "question": "On a single roasted chicken, one muscle cooks up dark red-brown while the muscle right next to it stays pale white — two very different colors of meat on the exact same bird. The color comes from how much of a red oxygen-storing protein called myoglobin has built up inside that muscle. So what actually decides whether a given chicken muscle ends up dark meat or white meat?",
+    "question": "On one roast chicken, a muscle cooks up dark red-brown while the muscle beside it stays pale white. The color comes from how much myoglobin, a red protein that stores oxygen, has built up in each muscle. What decides whether a chicken muscle ends up dark or white?",
     "answer": "how much the bird uses that muscle",
     "choices": [
       "how much the bird uses that muscle",
@@ -17031,7 +16953,7 @@
   },
   {
     "tier": 2,
-    "question": "Look at a plucked chicken and you'll see the breast — the huge pale slab of meat across its chest — is the single biggest muscle on the whole bird. Yet chickens spend most of their day walking, scratching in the dirt, roosting on a perch, and pecking, none of which uses that breast much at all. Only one thing a chicken actually does relies on that big breast muscle to power it. Which move is it?",
+    "question": "A farmyard chicken spends its day walking, scratching in the dirt, roosting and pecking, and none of it calls much on its breast, the biggest cut of meat on the bird. Only one thing the chicken does relies on that big breast to power it. Which move is it?",
     "answer": "a burst of flapping to escape a fox",
     "choices": [
       "a burst of flapping to escape a fox",
@@ -17044,7 +16966,7 @@
   },
   {
     "tier": 3,
-    "question": "Roast a plain chicken breast a minute too long in the oven and it turns dry, stringy, and sad on the plate. But a chicken thigh — the darker meat from the bird's leg — can sit in that same hot oven for extra minutes and still come out juicy, tender, and forgiving. What does the darker thigh meat carry plenty of that the lean white breast simply doesn't have?",
+    "question": "A plain chicken breast roasted a minute too long comes out dry and stringy. The meat of a chicken leg can sit in the same hot oven for extra minutes and still come out juicy and tender. What does the leg carry plenty of that the lean breast lacks?",
     "answer": "fat and collagen",
     "choices": [
       "fat and collagen",
@@ -17057,7 +16979,7 @@
   },
   {
     "tier": 4,
-    "question": "Roast a chicken breast, or the turkey breast at Thanksgiving dinner, and you cook the meat all the way through — pale, white, and firm to the fork. But one common eating bird has a breast so red and dark that fancy restaurants sear it like a beef steak and serve it pink in the middle, medium-rare, right on the plate. Which bird's breast is that dark red meat?",
+    "question": "A cook roasting a chicken breast, or the turkey breast at Thanksgiving, cooks it all the way through, pale and firm. Yet one common table bird has a breast so dark red that fancy restaurants sear it like a beef steak and serve it pink in the middle. Which bird's breast is that dark meat?",
     "answer": "the duck",
     "choices": [
       "the duck",
@@ -17070,7 +16992,7 @@
   },
   {
     "tier": 4,
-    "question": "A wild turkey in the American woods can burst up off the ground and flap into a tree branch to roost for the night — the flights are only a hundred yards long, but they are real flights. Yet the modern farm turkey raised for Thanksgiving dinner cannot get off the ground at all — it can barely even run. What did farmers do to the bird over generations that grounded it?",
+    "question": "A wild turkey in the American woods can burst up off the ground and flap into a tree to roost for the night, and its short flights are real flights. The farm turkey raised for Thanksgiving dinner cannot get off the ground at all. What did farmers do to the bird over generations that grounded it?",
     "answer": "gave it a breast so heavy it can't fly",
     "choices": [
       "gave it a breast so heavy it can't fly",
@@ -17083,20 +17005,7 @@
   },
   {
     "tier": 1,
-    "question": "You stir together a bowl of bread dough — just flour, water, salt, and a spoonful of yeast — cover it with a clean kitchen towel, and set it on the counter. Two hours later you walk back in and find the dough has puffed up to double its size, doming above the bowl. Nothing was added and nobody touched it. What did the puffing?",
-    "answer": "Living microbes eating the sugar and burping out gas",
-    "choices": [
-      "Living microbes eating the sugar and burping out gas",
-      "The flour soaking up water and swelling up",
-      "Warm kitchen air seeping in and puffing it out",
-      "Trapped steam expanding and lifting the dough up"
-    ],
-    "context": "Nothing dried or rested — the rise IS living yeast at work. The single-celled yeast eats the flour's sugars and burps out carbon dioxide gas, which gets trapped in the stretchy dough and slowly inflates it until it roughly doubles. That's all 'proofing' really is: giving the yeast time to eat and breathe. Source: https://modernistcuisine.com/mbah/the-science-behind-each-stage-of-the-bread-making-process/",
-    "topic": "proofing-fermentation-and-the-poke-test"
-  },
-  {
-    "tier": 1,
-    "question": "Long before you could buy dry yeast in a little paper packet at the store, a home baker had to test whether her yeast was still alive before starting a loaf. She would stir a spoonful of yeast into a bowl of warm water and flour and watch the surface closely for a few minutes. If it foamed up thick and bubbly, she smiled and got out her flour. What did that foam actually tell her?",
+    "question": "A home baker in the days before packaged dry yeast tested her yeast before every loaf. She stirred a spoonful into a bowl of warm water and flour and watched. When it foamed up thick and bubbly, she reached for her flour. What did that foam tell her?",
     "answer": "The yeast was alive and ready to work",
     "choices": [
       "The yeast was alive and ready to work",
@@ -17108,21 +17017,8 @@
     "topic": "proofing-fermentation-and-the-poke-test"
   },
   {
-    "tier": 2,
-    "question": "You tear open a little paper packet of baker's yeast in the kitchen and out pours what looks like a dry beige powder, coarse and lifeless in your palm. But a single teaspoon of that powder actually holds billions of them, each one far too small to see with your eyes. Every one of those tiny specks is actually what?",
-    "answer": "A living single-celled fungus",
-    "choices": [
-      "A living single-celled fungus",
-      "A dried, ground-up plant seed",
-      "A man-made chemical granule",
-      "A tiny crystal of mineral salt"
-    ],
-    "context": "Baker's yeast is a living single-celled fungus — Saccharomyces cerevisiae — with cells only about 5 to 10 micrometers across (a fungus, so a distant cousin of mushrooms). A single spoonful really does hold billions of these hungry living creatures, not a speck of chemistry. Source: https://en.wikipedia.org/wiki/Saccharomyces_cerevisiae",
-    "topic": "proofing-fermentation-and-the-poke-test"
-  },
-  {
     "tier": 3,
-    "question": "Give the yeast just one hour to work and the dough bakes up bland — but let the very same dough ferment slowly overnight and it comes out with deep, complex flavor. Beyond the gas that makes it rise, what has the yeast been quietly making all those extra hours?",
+    "question": "One batch of dough gets a single hour to rise, and its loaf tastes bland. The same dough left to ferment slowly overnight comes out deep and complex. Beyond the gas that makes it rise, what has the yeast been making in all those extra hours?",
     "answer": "Alcohol and tangy, aromatic compounds",
     "choices": [
       "Alcohol and tangy, aromatic compounds",
@@ -17135,7 +17031,7 @@
   },
   {
     "tier": 3,
-    "question": "After a batch of bread dough has sat for an hour or two rising in a warm kitchen, a baker has to pick the exact moment to slide it into the hot oven. She dips her finger in flour and gently presses a fingertip into the soft top of the risen dough, then watches how the little dent behaves for a second or two. Which behavior tells the baker the dough is perfectly proofed and ready to bake?",
+    "question": "A batch of dough has risen for an hour or two in a warm kitchen, and the baker must pick the moment to slide it into the oven. She dips a fingertip in flour, presses it gently into the risen dough and watches the little dent. Which behavior tells her the dough is perfectly proofed?",
     "answer": "The dent springs back slowly and stays slightly sunken",
     "choices": [
       "The dent springs back slowly and stays slightly sunken",
@@ -17148,7 +17044,7 @@
   },
   {
     "tier": 4,
-    "question": "Bread bakers warn beginners of a strange rule: letting the dough rise for too long can actually turn out worse than not letting it rise long enough. The dough fills up with gas, its stretched bubble walls grow paper-thin, and then it goes slack in the pan. Push that dough way past ready, slide it into a hot oven anyway, and what happens to the over-proofed loaf as it bakes?",
+    "question": "A beginner baker forgets his dough on the counter, and it rises far past ready: its gas bubbles swell until their skins are paper-thin, and the dough goes slack in the pan. He slides it into the hot oven anyway. What happens to the over-proofed loaf as it bakes?",
     "answer": "Its stretched walls burst and it collapses flat and dense",
     "choices": [
       "Its stretched walls burst and it collapses flat and dense",
@@ -17161,7 +17057,7 @@
   },
   {
     "tier": 4,
-    "question": "You pull dough straight from the fridge after an overnight proof and press it with a floured finger — the dent springs right back, which usually means 'give it more time.' Yet experienced bakers say don't trust your finger here. Why does the poke test fool you on cold dough?",
+    "question": "Dough comes straight out of the fridge after an overnight proof, and the baker presses it with a floured finger. The dent springs right back, which usually means the dough needs more time. Experienced bakers say not to trust the finger here. Why does the poke test fail on cold dough?",
     "answer": "The cold stiffens the dough, so it springs back fast even when done",
     "choices": [
       "The cold stiffens the dough, so it springs back fast even when done",
@@ -17173,60 +17069,21 @@
     "topic": "proofing-fermentation-and-the-poke-test"
   },
   {
-    "tier": 5,
-    "question": "Sourdough is the ancient style of bread that human bakers made for thousands of years before dry packet yeast even existed. Its mouth-puckering, cheek-tightening tang is the whole point of the loaf — yet the baker never pours a single drop of lemon juice or vinegar into the dough, and nothing sour is ever added. The dough is just flour, water, salt, and a bubbling 'starter' kept alive in a jar on the counter. So where does that unmistakable sour flavor really come from?",
-    "answer": "Living bacteria in the starter grow sour acids as they ferment",
+    "tier": 2,
+    "question": "A girl bites into a chicken drumstick, but her body never bolts its protein straight onto her muscles. Stomach acid and enzymes cut it into about twenty kinds of small building blocks, and her cells restring them in a new order into proteins of her own. What are those blocks called?",
+    "answer": "Amino acids",
     "choices": [
-      "Living bacteria in the starter grow sour acids as they ferment",
-      "The long, slow bake caramelizes the crust into a sour tang",
-      "A special sour-tasting variety of wheat in the flour",
-      "The wild yeast alone turns boozy and then sour over time"
-    ],
-    "context": "No lemon, no vinegar — the sour is grown right in the dough. A sourdough 'starter' is just flour and water kept alive on the counter, home to wild yeast plus lactic-acid bacteria. Those bacteria turn the flour's sugars into lactic acid (a soft, milky sourness) and acetic acid (a sharp, vinegary bite — the very same acid that makes vinegar sour). The bread doesn't contain vinegar; it grows the acid itself. Source: https://knowablemagazine.org/content/article/living-world/2020/microbial-secrets-sourdough ; https://asm.org/articles/2020/june/the-sourdough-microbiome ; https://bakerpedia.com/ingredients/acetic-acid/",
-    "topic": "proofing-fermentation-and-the-poke-test"
-  },
-  {
-    "tier": 1,
-    "question": "You bite into a chicken drumstick — a chunk of protein. But your body doesn't bolt that chicken protein straight onto your muscles. First it takes the protein apart into small, reusable building blocks, then reassembles those blocks into proteins of its own. What are those protein building blocks called?",
-    "answer": "amino acids",
-    "choices": [
-      "amino acids",
-      "fatty acids",
-      "simple sugars",
-      "glucose units"
+      "Amino acids",
+      "Fatty acids",
+      "Simple sugars",
+      "Nucleotides"
     ],
     "context": "The units are amino acids — the letters that spell out every protein. Your body pulls apart the protein in your food and stitches the freed amino acids into brand-new proteins of its own: muscle, skin, hair, and the enzymes that keep you running. (Source: https://en.wikipedia.org/wiki/Essential_amino_acid)",
     "topic": "protein-the-bodys-building-blocks"
   },
   {
-    "tier": 1,
-    "question": "Your body builds itself out of tiny building blocks called amino acids, and there are twenty different kinds it needs. Nine of them your body cannot make for itself, and a 'complete' protein is any single food that hands you all nine in the same bite. Other foods bring only some, leaving a piece missing. Of these four everyday breakfast items, which one is a complete protein?",
-    "answer": "a glass of milk",
-    "choices": [
-      "a glass of milk",
-      "a bowl of white rice",
-      "a slice of bread",
-      "a spoon of peanut butter"
-    ],
-    "context": "Milk — like eggs, meat, and fish — is a complete protein: it carries all nine of the amino acids your body can't make for itself, in good amounts. Most single plant foods come up short on one of those nine, which is why rice, bread, and peanut butter each miss a piece on their own. (Source: https://en.wikipedia.org/wiki/Complete_protein)",
-    "topic": "protein-the-bodys-building-blocks"
-  },
-  {
     "tier": 2,
-    "question": "Your body is a busy chemist: it can build most of its roughly 20 amino acids from scratch, using bits and pieces it already has on hand. But nine of them it simply cannot make — so those nine have to arrive in your food, or your body runs short. What do nutritionists call this group of nine?",
-    "answer": "essential amino acids",
-    "choices": [
-      "essential amino acids",
-      "complete amino acids",
-      "branched-chain amino acids",
-      "reserve amino acids"
-    ],
-    "context": "They're the essential amino acids — and 'essential' is a famous nutrition false-friend. It doesn't mean 'the most important'; it means your body can't build it, so eating it is essential. The nine are histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, and valine. (Source: https://en.wikipedia.org/wiki/Essential_amino_acid)",
-    "topic": "protein-the-bodys-building-blocks"
-  },
-  {
-    "tier": 2,
-    "question": "Your body plays it smart with leftovers. Extra fat gets tucked into fat tissue, and extra carbohydrate is stashed as glycogen in your muscles and liver, saved for later. Now say you eat a huge steak, more protein than your body needs this minute. What happens to the amino acids it cannot use right now?",
+    "question": "Suppose you eat a huge steak, far more protein than your body needs right now. Spare fat gets tucked into fat tissue, and spare carbohydrate is stashed as glycogen in the muscles and liver for later. What happens to the protein's spare building blocks that your body cannot use yet?",
     "answer": "They're broken down, and the leftover nitrogen leaves in your urine.",
     "choices": [
       "They're broken down, and the leftover nitrogen leaves in your urine.",
@@ -17238,34 +17095,8 @@
     "topic": "protein-the-bodys-building-blocks"
   },
   {
-    "tier": 3,
-    "question": "In kitchens from Brazil to New Orleans to West Africa, two cheap plant foods get simmered together on plate after plate. Nutrition scientists found the pairing is no accident. One food is low in the amino acid lysine, and the other is low in methionine. So together they add up to a complete protein, no meat required. Which pairing is it?",
-    "answer": "rice and beans",
-    "choices": [
-      "rice and beans",
-      "corn and squash",
-      "bread and jam",
-      "potatoes and onions"
-    ],
-    "context": "The beans supply the lysine rice lacks; the rice supplies the methionine beans lack — each covers the other's gap. You don't even have to eat them in the same meal: the old 1970s rule to 'combine proteins at every sitting' was overturned, because a varied plant diet across the whole day covers all nine essentials. A few plant foods, like quinoa and soy, are even complete all on their own. (Sources: https://en.wikipedia.org/wiki/Protein_combining ; https://en.wikipedia.org/wiki/Complete_protein)",
-    "topic": "protein-the-bodys-building-blocks"
-  },
-  {
-    "tier": 3,
-    "question": "Not all protein is equal — an ounce of one food can give your body more useable protein than an ounce of another. When nutrition scientists in the 20th century needed a yardstick to grade the quality of every food's protein, they crowned one everyday food the perfect score. It got a flawless 100 out of 100, and for decades every other food's protein was measured against it. Which food is that gold-standard reference?",
-    "answer": "a whole egg",
-    "choices": [
-      "a whole egg",
-      "a beef steak",
-      "cow's milk",
-      "grilled salmon"
-    ],
-    "context": "The egg scores a perfect 100 on 'biological value,' the highest possible — a measure of how much of its protein your body can actually turn into its own. Nutrition scientists historically graded every other food against it. (Source: https://nutri.it.com/why-does-egg-protein-have-a-high-biological-value)",
-    "topic": "protein-the-bodys-building-blocks"
-  },
-  {
     "tier": 4,
-    "question": "You may have heard the standard rule that a person needs about 0.8 grams of protein per kilogram of body weight each day — the number you see quoted on health websites and school nutrition posters. Harvard's nutrition scientists warn that this famous 0.8-gram figure is constantly misread and repeated wrong. It is not the target most people should actually aim for. What does that 0.8-gram figure really represent?",
+    "question": "A student reads a nutrition poster on the school wall: a person needs about 0.8 grams of protein per kilogram of body weight each day. Harvard's nutrition scientists warn that this famous figure is constantly misread, and that it is not the amount most people should aim for. What does it really represent?",
     "answer": "The floor that just prevents a deficiency.",
     "choices": [
       "The floor that just prevents a deficiency.",
@@ -17278,7 +17109,7 @@
   },
   {
     "tier": 4,
-    "question": "A teenager chugs three protein shakes a day, certain that loading up on protein is what packs on muscle. The American Academy of Pediatrics offers a reality check: protein is only the raw material — one other thing is what actually adds muscle to your frame. By its account, what builds muscle?",
+    "question": "A teenager gulps three protein shakes a day, sure that loading up on protein is what packs on muscle. The American Academy of Pediatrics disagrees: protein is only the raw material, and something else is what actually adds muscle. By the academy's account, what builds muscle?",
     "answer": "exercising the muscles",
     "choices": [
       "exercising the muscles",
@@ -17291,7 +17122,7 @@
   },
   {
     "tier": 5,
-    "question": "Muscle-building isn't switched on by protein in general — it's set off by one specific amino acid. When your muscles sense enough of THIS one in the bloodstream after a meal, they flip on and start assembling new muscle, like a foreman shouting 'go.' Which amino acid is the trigger?",
+    "question": "A swimmer finishes her breakfast, and her body starts building new muscle. The go signal comes not from protein in general but from one particular amino acid: once enough of it builds up in the blood, the muscles flip on a control system and set to work, like a foreman shouting 'go.' Which amino acid is the trigger?",
     "answer": "leucine",
     "choices": [
       "leucine",
@@ -17304,7 +17135,7 @@
   },
   {
     "tier": 1,
-    "question": "A skinned knee scabs over and heals in a week, and after a summer of push-ups a kid's arms are visibly thicker. Your body built that fresh skin and new muscle out of one part of dinner — the part a plate groups as its 'building' food, alongside meat, eggs, and fish. Which nutrient is it?",
+    "question": "A skinned knee heals in a week, and a summer of push-ups leaves a kid's arms visibly thicker. The body built both from one part of dinner, the one a plate groups with meat, eggs and fish as its building food. Which nutrient is it?",
     "answer": "Protein",
     "choices": [
       "Protein",
@@ -17317,7 +17148,7 @@
   },
   {
     "tier": 2,
-    "question": "Pull a plain roasted chicken breast apart with a fork and it doesn't stay in a solid block — it separates into long, stringy white threads that come away in your fingers. Those threads are tight bundles of one kind of body tissue, the same living tissue that let the chicken flap its wings when it was alive. So when you eat this white meat, you are really eating the bird's ___?",
+    "question": "A cook tears a roasted chicken breast apart with a fork, and instead of staying a solid block it comes away in long, stringy white threads. Each thread is a tight bundle of one kind of tissue, the same tissue that once moved the living bird. What is the white meat really made of?",
     "answer": "Muscle",
     "choices": [
       "Muscle",
@@ -17330,20 +17161,7 @@
   },
   {
     "tier": 2,
-    "question": "Four kids sit down to breakfast before school, and by coincidence each plate carries the exact same number of calories. They eat, they walk to class, and by mid-morning three of them are starving — bellies rumbling so loud the teacher hears. Only one kid still feels full and focused all the way to lunch. Which breakfast held hunger off the longest?",
-    "answer": "A bowl of scrambled eggs",
-    "choices": [
-      "A bowl of scrambled eggs",
-      "A bowl of sugary cereal",
-      "A glass of orange juice",
-      "A slice of jam toast"
-    ],
-    "context": "Protein is the most satiating (hunger-quieting) of the three macronutrients: study after study finds a high-protein snack curbs later hunger more than the same calories of carbohydrate or fat. The eggs win on fullness, not on calorie count. Source: PubMed 17988696; AJCN review.",
-    "topic": "protein-the-bodys-repair-and-build-crew"
-  },
-  {
-    "tier": 2,
-    "question": "Protein does far more than build the muscles in your arms and legs. Your body uses long chains of it to grow a surprising number of everyday parts you can see and touch on yourself every day, without ever thinking about what they are really made of. Which of these body parts is made mostly of protein?",
+    "question": "Suppose you look over your own body for parts built mostly of protein. Protein does far more than build arm and leg muscles; long chains of it make everyday parts you see and touch without a thought for what they are made of. Which of these is made mostly of protein?",
     "answer": "Your fingernails",
     "choices": [
       "Your fingernails",
@@ -17356,7 +17174,7 @@
   },
   {
     "tier": 3,
-    "question": "When you slice a finger, it doesn't stay open — repair cells rush in and weave a fresh mesh of the body's single most abundant protein, which then hardens into the scar you can still see months later. That same protein is also the main material in your skin, tendons, and bones. Name it.",
+    "question": "A cut on a cook's finger does not stay open: repair cells rush in and weave a fresh mesh of the body's most abundant protein, which hardens into a scar she can still see months later. The same protein is the main stuff of skin, tendons and bone. Which protein is it?",
     "answer": "Collagen",
     "choices": [
       "Collagen",
@@ -17369,7 +17187,7 @@
   },
   {
     "tier": 5,
-    "question": "A kid home sick with a cold usually doesn't feel like eating, but a parent still pushes broth and eggs — and there's a real reason. When a virus invades, your immune system fights back by building millions of tiny defender molecules that latch onto the invader and mark it to be destroyed. Because these defenders are themselves made of protein, a body low on food struggles to make enough of them. What are these protein defenders called?",
+    "question": "A kid home sick with a cold has no appetite, but a parent still pushes broth and eggs, and with reason. When a virus invades, the body's defenses answer by building millions of Y-shaped defenders that latch onto the invader and mark it for destruction. They are made of protein, so a poorly fed body struggles to make enough. What are they called?",
     "answer": "Antibodies",
     "choices": [
       "Antibodies",
@@ -17381,47 +17199,8 @@
     "topic": "protein-the-bodys-repair-and-build-crew"
   },
   {
-    "tier": 4,
-    "question": "When you eat a steak, your body does NOT plug the cow's protein straight into your muscles. Down in your stomach, acid and enzymes chop that steak protein into about twenty kinds of tiny building blocks — and then your cells restring those same little pieces, in a brand-new order, into proteins that are yours. What are those building blocks called?",
-    "answer": "Amino acids",
-    "choices": [
-      "Amino acids",
-      "Fatty acids",
-      "Simple sugars",
-      "Nucleotides"
-    ],
-    "context": "Proteins are chains of about 20 different amino acids. Digestion snips dietary protein back into individual amino acids, and your cells reassemble them into the thousands of proteins your body needs — like taking a LEGO cow apart and rebuilding it as a LEGO you. Source: Wikipedia, 'Protein (nutrient).'",
-    "topic": "protein-the-bodys-repair-and-build-crew"
-  },
-  {
-    "tier": 5,
-    "question": "Flip a can of beans over and you find a nutrition label listing its protein. Behind the scenes, every protein is really a string of small building blocks called amino acids, and there are twenty different kinds. Food scientists split those twenty into two groups, and they tag nine of them 'essential.' When a food scientist calls an amino acid essential, what does that word actually mean?",
-    "answer": "Your body can't make it, so it must come from food",
-    "choices": [
-      "Your body can't make it, so it must come from food",
-      "Your body needs more of it than of the others",
-      "Your body can't store it, so you need it daily",
-      "Your body can only absorb it from meat, not plants"
-    ],
-    "context": "Of the roughly 20 amino acids, your body can build most itself — but nine (including lysine, tryptophan, and leucine) it cannot make at all, so those must arrive in food. That's what 'essential' means on a label: essential to EAT, not merely important. Source: Wikipedia, 'Essential amino acid.'",
-    "topic": "protein-the-bodys-repair-and-build-crew"
-  },
-  {
-    "tier": 5,
-    "question": "Blood runs bright red and ferries oxygen from your lungs out to every cell, and one protein pulls off both jobs — coiled around an atom of iron that does the actual grabbing. It's why a doctor may tell pale, tired kids to eat red meat: the iron and protein in a steak help build the very stuff flowing in their veins. Name it.",
-    "answer": "Hemoglobin",
-    "choices": [
-      "Hemoglobin",
-      "Myoglobin",
-      "Albumin",
-      "Ferritin"
-    ],
-    "context": "Hemoglobin is the protein that makes blood red and carries oxygen. Each molecule is four protein (globin) subunits, each cradling a heme group with one iron atom — so it can carry up to four oxygen molecules at once. (Fun twist: the red color comes not from the iron itself but from the ring-shaped heme that holds it.) Source: Wikipedia, 'Hemoglobin.'",
-    "topic": "protein-the-bodys-repair-and-build-crew"
-  },
-  {
     "tier": 2,
-    "question": "Quinoa simmers in the pot and fluffs up like rice, so everyone cooks and eats it as a familiar grain. But it is really the seed of a broad-leaf flowering plant, not a grass at all. On the family tree, this so-called grain turns out to be a close cousin of which leafy vegetable?",
+    "question": "A pot of quinoa simmers and fluffs up like rice, and the cook serves it as a grain. But it is the seed of a broad-leaf flowering plant, not a grass at all. On the family tree, this so-called grain is a close cousin of which leafy vegetable?",
     "answer": "Spinach",
     "choices": [
       "Spinach",
@@ -17434,7 +17213,7 @@
   },
   {
     "tier": 2,
-    "question": "High in the Andes mountains of South America, the Inca people ate a tiny round grain called quinoa as a daily staple for centuries before any European ever set foot in their empire. Quinoa grew on tough plants that thrived at cold, thin-air altitudes where wheat and rice could not survive. The Inca honored the little seed with a grand title in their Quechua tongue. What did the Inca call quinoa?",
+    "question": "The Inca ate quinoa as a daily staple for centuries, high in the Andes, where the cold, thin air was too harsh for wheat and rice. They honored the little seed with a grand title in their Quechua tongue. What did they call quinoa?",
     "answer": "the mother of all grains",
     "choices": [
       "the mother of all grains",
@@ -17447,7 +17226,7 @@
   },
   {
     "tier": 3,
-    "question": "Buckwheat is a pseudocereal like quinoa — and despite the name, it's no kin to wheat and not even a grass. Its small seeds each have three sharp corners, the very shape that reminded early growers of one forest tree's little nut and gave buckwheat its name. Which tree?",
+    "question": "A cook pours buckwheat seeds into her palm, small and three-cornered. Despite its name, buckwheat is no kin to wheat and not even a grass. That three-cornered shape reminded early growers of one forest tree's little nut and gave the plant its name. Which tree?",
     "answer": "Beech",
     "choices": [
       "Beech",
@@ -17460,7 +17239,7 @@
   },
   {
     "tier": 3,
-    "question": "Scoop raw quinoa from the bag and every seed wears a thin coat of natural compounds called saponins, which cooks rinse away under running water before boiling. Out in the Andean field, on the living plant, that coating isn't wasted — it does one real job for the quinoa. What job?",
+    "question": "Raw quinoa from the bag goes under running water first, rinsing off the thin, soapy coat of saponins that every seed wears. Out in an Andean field, on the living plant, that coating does one real job for the quinoa. What job?",
     "answer": "It keeps birds and insects from eating the seed",
     "choices": [
       "It keeps birds and insects from eating the seed",
@@ -17473,7 +17252,7 @@
   },
   {
     "tier": 4,
-    "question": "Wheat, rice, corn and oats are all 'incomplete' proteins — each runs low on the very same essential amino acid, the weak link that keeps a bowl of grain from fully nourishing you on its own. Quinoa stands out because it's rich in exactly that amino acid. Which amino acid is it?",
+    "question": "Bowls of wheat, rice, oats and corn all fall short in the same place: each runs low on one amino acid, the weak link that keeps a grain from being a complete protein on its own. Quinoa holds roughly double the grains' share of it. Which amino acid is it?",
     "answer": "Lysine",
     "choices": [
       "Lysine",
@@ -17486,7 +17265,7 @@
   },
   {
     "tier": 4,
-    "question": "Amaranth, a pseudocereal cousin of quinoa, was sacred to the Aztecs, who bound its flour with honey to sculpt edible figures of their gods. After Spanish conquerors toppled the Aztec capital in 1521, they tried to stamp the crop out, yet it survived. Today Mexicans still pop its tiny seeds and press them with honey into a beloved traditional candy. What is that sweet called?",
+    "question": "The Aztecs held amaranth, quinoa's cousin, holy, and they mixed its flour with honey to shape edible statues of their gods. After Spanish conquerors toppled the Aztec capital in 1521, they tried to stamp the crop out, yet it survived. Mexicans still pop its tiny seeds and press them with honey into a beloved candy. What is that sweet called?",
     "answer": "Alegria",
     "choices": [
       "Alegria",
@@ -17499,7 +17278,7 @@
   },
   {
     "tier": 1,
-    "question": "Ramen is Japan's famous noodle soup, served in a steaming bowl of rich broth with a slice of pork on top. Any ramen master will tell you the real soul of the dish is not the fancy pork broth on top, but the springy, faintly golden noodle underneath. That noodle begins its life as a plain dough milled from one everyday grain. Which grain is a ramen noodle made from?",
+    "question": "A ramen master lifts springy, faintly golden noodles out of a steaming bowl. To him the noodle is the soul of the dish, and it begins as a plain dough of one everyday grain. Which grain is it?",
     "answer": "Wheat",
     "choices": [
       "Wheat",
@@ -17512,7 +17291,7 @@
   },
   {
     "tier": 2,
-    "question": "Mix wheat flour with plain water and you get pale, soft, floppy noodles. But real ramen noodles are springy, chewy, and glow a faint gold — because the dough is kneaded with a special water instead. What special water gives ramen its bouncy, golden noodles?",
+    "question": "Noodle dough kneaded with plain water cooks up pale, soft and floppy. Real ramen noodles come out springy and chewy, with a faint golden glow, because their dough is kneaded with a special water instead. What special water gives ramen its bouncy, golden noodles?",
     "answer": "An alkaline water",
     "choices": [
       "An alkaline water",
@@ -17525,7 +17304,7 @@
   },
   {
     "tier": 2,
-    "question": "In a ramen shop the menu is a row of words — shio, shoyu, miso, and more — and choosing one is the biggest decision you'll make about your bowl. Each of these words names the very same element of the ramen. Which element do shio, shoyu, and miso all name?",
+    "question": "A diner in a ramen shop reads down the menu: shio, shoyu, miso and more. Picking one is the biggest decision she will make about her bowl, because each word names the very same part of the ramen. Which part do shio, shoyu and miso all name?",
     "answer": "The broth",
     "choices": [
       "The broth",
@@ -17538,7 +17317,7 @@
   },
   {
     "tier": 3,
-    "question": "To much of the world, ramen tastes like the soul of Japan, yet it is no ancient Japanese dish. It arrived from a neighboring country a bit more than a hundred years ago, and early Japanese cooks openly named it after that foreign homeland. Which country did ramen come from?",
+    "question": "Japanese diners of the early 1900s ate ramen under a name that openly pointed to the neighboring country it came from. For all that it now seems the very soul of Japan, it is no ancient Japanese dish. Which country did ramen come from?",
     "answer": "China",
     "choices": [
       "China",
@@ -17551,7 +17330,7 @@
   },
   {
     "tier": 3,
-    "question": "The word 'ramen' traces back to 'lamian,' which literally means 'pulled noodles' — dough a cook stretches and swings by hand into long strands. But here's the twist: that hand-pulling art never actually made it into Japanese ramen. So how are the noodles in a real bowl of Japanese ramen shaped?",
+    "question": "A noodle maker stretches and swings dough by hand into long strands called lamian, 'pulled noodles,' the word that gave ramen its name. Yet the hand-pulling art never made the trip to Japan with the name. How are the noodles in a bowl of Japanese ramen shaped?",
     "answer": "Sliced by a cutting blade",
     "choices": [
       "Sliced by a cutting blade",
@@ -17564,7 +17343,7 @@
   },
   {
     "tier": 4,
-    "question": "Tonkotsu ramen arrives in a broth as thick, creamy, and cloudy-white as milk — yet it's totally dairy-free. Simmer the pork bones gently and the soup stays thin and clear; boil them hard for many hours and it turns rich and milky-white. What has that long, violent boil forced out of the bones to cloud the broth?",
+    "question": "A bowl of tonkotsu ramen arrives with soup as thick, creamy and white as milk, yet it holds no dairy at all. A cook who simmers pork bones gently gets a thin, clear soup; one who boils them hard for many hours gets this milky white one. What has that long, violent boil forced out of the bones?",
     "answer": "Fat and collagen",
     "choices": [
       "Fat and collagen",
@@ -17577,7 +17356,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1958, after a year of failures in a backyard shed, Momofuku Ando invented instant ramen — dried noodles that spring back to life in hot water. Ando said the idea struck him watching his wife fry a familiar Japanese dish: the bubbling oil drove the moisture out of the food, and he realized flash-frying could dry a noodle the same way. Which dish gave Ando his breakthrough?",
+    "question": "Momofuku Ando spent a year of failures in a backyard shed before he invented instant ramen in 1958: dried noodles that spring back to life in hot water. Ando said the idea struck him as he watched his wife fry a familiar Japanese dish. The bubbling oil drove the moisture out of the food, and he saw that flash-frying could dry a noodle the same way. Which dish was it?",
     "answer": "Tempura",
     "choices": [
       "Tempura",
@@ -17590,7 +17369,7 @@
   },
   {
     "tier": 1,
-    "question": "Ratatouille is the summer vegetable stew of Provence, in southern France. Its pot brings together onion, zucchini, bell peppers, tomato, and garlic. One more vegetable is the star of the dish. Which one completes a classic ratatouille?",
+    "question": "A country cook near Nice turns a glut of summer garden vegetables into ratatouille, the great stew of Provence. Into her pot go onion, zucchini, bell peppers, tomato and garlic, around one star vegetable. Which one completes a classic ratatouille?",
     "answer": "Eggplant",
     "choices": [
       "Eggplant",
@@ -17603,7 +17382,7 @@
   },
   {
     "tier": 2,
-    "question": "A ratatouille purist will not just tip every vegetable into one pot. The classic French cookbook Larousse Gastronomique adds a fussy extra step. It keeps the eggplant tasting like eggplant and the zucchini like zucchini, never one uniform mush. What is that step?",
+    "question": "A ratatouille purist will not just tip every vegetable into one pot. Larousse Gastronomique, the great French cookbook, records the fussy extra step purists take, so that every vegetable holds on to its own bite and flavor instead of melting into one mush. What is that step?",
     "answer": "Cook each vegetable separately first, then combine them",
     "choices": [
       "Cook each vegetable separately first, then combine them",
@@ -17616,7 +17395,7 @@
   },
   {
     "tier": 2,
-    "question": "The word 'ratatouille' comes from the Occitan verb touiller, 'to stir or toss together.' When the word first appeared in French in the early 1800s, it named something quite different from the dish we know today. What did 'ratatouille' mean back then?",
+    "question": "French writers who first used the word ratatouille, from the Occitan for stirring, early in the nineteenth century meant something quite different from the stew of today. What did the word mean to them?",
     "answer": "A cheap, coarse stew, close to slop",
     "choices": [
       "A cheap, coarse stew, close to slop",
@@ -17629,20 +17408,7 @@
   },
   {
     "tier": 3,
-    "question": "Ratatouille is a rustic vegetable stew from the Provence region of southern France. It tastes so old-country that it feels like farmers have been making it forever. But two of its star ingredients only reached Europe after Christopher Columbus crossed the Atlantic in 1492 and brought foods back from the Americas. That means the modern dish can't be much more than 500 years old. Which pair are the New World newcomers?",
-    "answer": "Tomatoes and bell peppers",
-    "choices": [
-      "Tomatoes and bell peppers",
-      "Eggplant and onion",
-      "Onion and garlic",
-      "Eggplant and garlic"
-    ],
-    "context": "Tomatoes and bell peppers are both New World crops that reached Europe only after 1500, so no medieval Provencal cook could have made ratatouille - the dish is far younger than it looks. Tomatoes were even feared as poisonous 'love apples' and shunned for eating for generations. (Eggplant, by contrast, is an Old World crop that arrived earlier through Arab and Mediterranean trade.) Source: Wikipedia, 'Ratatouille'; Smithsonian Magazine on tomato history.",
-    "topic": "ratatouille-and-provence"
-  },
-  {
-    "tier": 3,
-    "question": "In Pixar's film 'Ratatouille,' the dish that finally wins over the fearsome food critic isn't the rough country stew you'd expect - it's a refined, restaurant-style version that the film's food consultant, chef Thomas Keller, chose for the big moment. This elegant dish has its own name. What is it called?",
+    "question": "Thomas Keller, the chef who advised Pixar on its film Ratatouille, chose the dish that finally wins over the film's fearsome food critic. It is no rough country stew but a restaurant-style version: a neat spiral of wafer-thin vegetable slices. What is that dish called?",
     "answer": "Confit byaldi",
     "choices": [
       "Confit byaldi",
@@ -17655,20 +17421,7 @@
   },
   {
     "tier": 1,
-    "question": "The safety step that makes store milk safe to drink is named pasteurization, after the French scientist Louis Pasteur. Yet in 1864 he first proved the trick on a very different product he was trying to save from spoiling. What did Pasteur rescue first?",
-    "answer": "Wine",
-    "choices": [
-      "Wine",
-      "Milk",
-      "Beer",
-      "Cider"
-    ],
-    "context": "Pasteur gently heated young wine to about 50-60C (122-140F) - just enough to kill the microbes spoiling it. Applying the idea to MILK came later: the German chemist Franz von Soxhlet proposed it in 1886, and since 1973 the U.S. FDA has required pasteurization for all milk sold across state lines. Source: Wikipedia 'Pasteurization'; MasterClass history of pasteurization.",
-    "topic": "raw-milk-vs-pasteurized"
-  },
-  {
-    "tier": 1,
-    "question": "Every carton of milk on a grocery-store shelf has been through a step called pasteurizing — the label right on the side promises so. 'Raw milk,' sold straight from the farm, is simply milk that skipped that step and went from the cow to the bottle untreated. Between the cow and the sealed carton, what does the pasteurizing step actually do to the milk?",
+    "question": "A shopper picks up a carton of milk whose label promises it has been pasteurized. Raw milk, sold straight from the farm, is milk that skipped that step and went from cow to bottle untreated. What does pasteurizing do to the milk?",
     "answer": "Gently heats it to kill germs",
     "choices": [
       "Gently heats it to kill germs",
@@ -17681,7 +17434,7 @@
   },
   {
     "tier": 2,
-    "question": "In the United States, health investigators at the CDC tallied twenty years of illness outbreaks caused by drinking raw, unpasteurized milk straight from a cow or goat. When they lined up every sick person by age, one striking pattern jumped out: a single age group made up nearly half of everyone who got sick. Which group took the brunt of raw milk's germs?",
+    "question": "Health investigators at the CDC went back over twenty years of American outbreaks traced to raw, unpasteurized milk, about 200 of them, and sorted every sick person by age. One age group made up nearly half of everyone who fell ill. Which group took the brunt of raw milk's germs?",
     "answer": "Kids and teens under 20",
     "choices": [
       "Kids and teens under 20",
@@ -17693,21 +17446,8 @@
     "topic": "raw-milk-vs-pasteurized"
   },
   {
-    "tier": 2,
-    "question": "You buy a sealed carton of pasteurized milk, tuck it in the back of the fridge, and forget about it for two weeks. Pop the lid and the milk is sour, clumpy, and undrinkable — even though pasteurizing was supposed to kill the germs before the carton was ever sealed. So why does store milk still go bad at all?",
-    "answer": "Pasteurizing's gentle heat spares tough surviving spores",
-    "choices": [
-      "Pasteurizing's gentle heat spares tough surviving spores",
-      "Cold fridge air seeps in carrying new germs",
-      "Light through the carton slowly sours the milk",
-      "Cream separating from the milk is what sours it"
-    ],
-    "context": "Pasteurizing kills the disease-causing bacteria, but it does not fully STERILIZE the milk - most bacterial spores are hardy enough to survive the brief, gentle heat. Those survivors slowly multiply even in the fridge, which is why every carton still carries a use-by date. Source: Wikipedia 'Pasteurization'.",
-    "topic": "raw-milk-vs-pasteurized"
-  },
-  {
     "tier": 3,
-    "question": "The FDA (Food and Drug Administration) warns that raw-milk germs cause more than a stomach upset. In the worst cases, they can trigger a serious, life-threatening syndrome that suddenly makes one vital organ shut down and completely fail. Which organ do raw-milk germs endanger this way?",
+    "question": "A child who drinks raw milk carrying the wrong germs can suffer far worse than a stomach upset, the Food and Drug Administration warns. In the worst cases the germs trigger a life-threatening syndrome that makes one vital organ shut down and fail. Which organ is it?",
     "answer": "The kidneys",
     "choices": [
       "The kidneys",
@@ -17720,7 +17460,7 @@
   },
   {
     "tier": 3,
-    "question": "Raw-milk drinkers grant that heating kills germs, but they argue it also changes the milk's most delicate proteins. Keeping those proteins intact is the whole point of drinking it raw. What does pasteurizing heat physically do to those fragile proteins?",
+    "question": "A raw-milk drinker pours herself a glass straight from the farm. She grants that heat kills germs but argues it also changes milk's most delicate proteins, and keeping them whole is the point of raw milk. What does pasteurizing heat physically do to those proteins?",
     "answer": "Unfolds them into a tangle",
     "choices": [
       "Unfolds them into a tangle",
@@ -17733,7 +17473,7 @@
   },
   {
     "tier": 4,
-    "question": "Here is the evidence that keeps the raw-milk debate alive. A huge study called GABRIELA followed about 8,000 farm-country children across Germany, Austria, and Switzerland, comparing those who drank raw farm milk with those who didn't. What did the raw-milk kids have strikingly LESS of?",
+    "question": "Researchers on the GABRIELA study followed about 8,000 farm-country children across Germany, Austria and Switzerland, comparing those who drank raw milk from the farm with those who did not. Their finding still keeps the raw-milk debate alive. What did the raw-milk children have markedly less of?",
     "answer": "Asthma, hay fever, and allergies",
     "choices": [
       "Asthma, hay fever, and allergies",
@@ -17746,7 +17486,7 @@
   },
   {
     "tier": 5,
-    "question": "In the early 2000s a large European allergy study compared thousands of farm kids to city kids. It found that farm children who drank raw, unpasteurized milk straight from the barn had much lower rates of asthma and hay-fever — a real protective effect. But raw milk can also carry deadly bacteria such as listeria and E. coli. Weighing both those findings, what did the same researchers conclude people should do about drinking raw milk?",
+    "question": "A scientist named Loss led the team that found a real protective effect in farm children who drank raw milk straight from the barn. Loss's team also knew that raw milk can carry deadly bacteria such as listeria and E. coli. Weighing both findings, what did they conclude people should do about drinking raw milk?",
     "answer": "Keep avoiding raw milk since its risk is real",
     "choices": [
       "Keep avoiding raw milk since its risk is real",
@@ -17759,20 +17499,7 @@
   },
   {
     "tier": 1,
-    "question": "Beans run low on one amino acid, and rice runs low on another. So eaten together, each plant patches the gap the other leaves. Beef needs no such partner: on its own it supplies the nine amino acids your body cannot build for itself. A single food that does that is called a ___?",
-    "answer": "complete protein",
-    "choices": [
-      "complete protein",
-      "whole protein",
-      "lean protein",
-      "whey protein"
-    ],
-    "context": "Red meat is a 'complete protein' — it packs all nine essential amino acids the human body cannot make for itself, so one food supplies the full set your muscles need to grow and repair. Most single plant foods are missing one or more, which is why plant eaters combine foods (like beans with rice) to cover them all. (Source: beef nutrition data, BeefResearch.ca 'Nutritional Qualities of Beef'.)",
-    "topic": "red-meat-and-the-cancer-scare"
-  },
-  {
-    "tier": 1,
-    "question": "Doctors point out that one vitamin is not made by any plant on Earth — not spinach, not kale, not a single vegetable in the garden. Yet a small serving of beef hands you a full day's supply. Which vitamin comes only from foods of animal origin?",
+    "question": "A vegetable garden grows spinach, kale and every other green, yet not one plant in it makes a certain vitamin. A small serving of lean beef, three ounces, covers roughly a day's need. Which vitamin comes only from foods of animal origin?",
     "answer": "vitamin B12",
     "choices": [
       "vitamin B12",
@@ -17784,21 +17511,8 @@
     "topic": "red-meat-and-the-cancer-scare"
   },
   {
-    "tier": 2,
-    "question": "The cartoon Popeye chugs a can of spinach and instantly bulges with muscle — the show made spinach famous as the iron food. But scientists have measured it since, and bite for bite your bloodstream picks up far more iron from a piece of beef than from a plate of spinach. What gives the beef the edge?",
-    "answer": "Meat's iron comes in a form, called heme, that the gut grabs far more easily",
-    "choices": [
-      "Meat's iron comes in a form, called heme, that the gut grabs far more easily",
-      "Meat simply holds several times more total iron than a plate of spinach",
-      "Meat's iron is bonded to vitamin C, which drives it into the blood",
-      "Meat's iron is much finer, so it slips through the gut wall faster"
-    ],
-    "context": "The iron in meat is 'heme' iron, which the gut absorbs at about 15-35%; the 'non-heme' iron in spinach and other plants absorbs at only about 2-20%. So 'eat your spinach for iron' is only half the story — the same milligram on the label doesn't mean the same amount reaches your blood. (Source: StatPearls 'Dietary Iron', NCBI Bookshelf.)",
-    "topic": "red-meat-and-the-cancer-scare"
-  },
-  {
     "tier": 3,
-    "question": "In 2015 the World Health Organization's cancer agency stunned the world. It placed one everyday food in the top cancer category. That is the same group as tobacco and asbestos, labeled 'carcinogenic to humans.' Which food earned that alarming Group 1 label?",
+    "question": "Scientists at the World Health Organization's cancer agency placed one everyday food in their top cancer group in 2015, alongside tobacco and asbestos, under the label 'carcinogenic to humans.' The news stunned the world. Which food earned that Group 1 label?",
     "answer": "processed meats, like bacon and hot dogs",
     "choices": [
       "processed meats, like bacon and hot dogs",
@@ -17811,7 +17525,7 @@
   },
   {
     "tier": 4,
-    "question": "When the WHO's 2015 report placed processed meats in its highest cancer group, headlines made bacon sound as deadly as cigarettes. Scientists called that a misreading: two things in the same group can differ wildly in real-world risk. So what does that group ranking actually measure?",
+    "question": "Newspapers made an everyday food sound as deadly as cigarettes in 2015, once the World Health Organization's cancer agency put it in the same top group as tobacco. Scientists called that a misreading: two things in one group can differ wildly in real-world risk. What does the group ranking actually measure?",
     "answer": "how strong the evidence is that it can cause cancer",
     "choices": [
       "how strong the evidence is that it can cause cancer",
@@ -17824,7 +17538,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2019, a panel of experts called NutriRECS looked back at the very same studies behind the meat-cancer scare. They published a conclusion so surprising that the nutrition scientist Christopher Gardner said he was 'completely flabbergasted.' What did the panel tell ordinary adults?",
+    "question": "Christopher Gardner, a Stanford nutrition scientist, said he was 'completely flabbergasted' by the advice an expert panel called NutriRECS gave in 2019. It had gone back over the studies behind the meat-cancer scare and issued only a weak recommendation, on evidence it called low-certainty. What did it tell adults?",
     "answer": "Adults need not cut back on red or processed meat",
     "choices": [
       "Adults need not cut back on red or processed meat",
@@ -17837,7 +17551,7 @@
   },
   {
     "tier": 5,
-    "question": "When you grill a steak right over open flames, two different families of cancer-linked compounds can form on it. One family, called HCAs, cooks up inside the meat when the muscle gets very hot. A second family, called PAHs (polycyclic aromatic hydrocarbons), forms entirely outside the meat and only ends up on the surface. Where do the PAHs come from?",
+    "question": "A backyard cook grills a steak right over open flames, and two different families of compounds linked to cancer can form on it. One family, HCAs, forms inside the meat when the muscle gets very hot. The other, PAHs (polycyclic aromatic hydrocarbons), forms entirely outside the meat and only ends up on the surface. Where do the PAHs come from?",
     "answer": "Flare-ups from dripping fat send smoke onto the meat",
     "choices": [
       "Flare-ups from dripping fat send smoke onto the meat",
@@ -17889,7 +17603,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook lets a big pot of beef stock bubble away in an open, uncovered pan for a full hour. The level in the pot slowly drops, the sauce turns thick and glossy on a spoon, and it tastes far stronger than before — yet she never stirred in a single new ingredient. What made the flavor grow so much stronger?",
+    "question": "A pot of beef stock bubbles away uncovered for a full hour while the level slowly drops. It turns thick and glossy on a spoon and tastes far stronger than before, though the cook never stirred in a single new ingredient. What made the flavor grow so much stronger?",
     "answer": "The water left as steam, and the flavor stayed behind",
     "choices": [
       "The water left as steam, and the flavor stayed behind",
@@ -17902,7 +17616,7 @@
   },
   {
     "tier": 2,
-    "question": "You're trying to reduce a pan of tomato sauce down until it's thick enough to cling to a spoon, so you set it on the stove to simmer with the lid on. An hour later the sauce is as thin and watery as when you started — it barely lost a drop. Why does keeping the lid on stop a reduction cold?",
+    "question": "Hoping to reduce a pan of tomato sauce until it clings to a spoon, a cook sets it to simmer with the lid on. An hour later the sauce is as thin and watery as when he started; it has barely lost a drop. Why does the lid stop a reduction cold?",
     "answer": "Steam hits the cool lid, turns back to water, and drips straight back in",
     "choices": [
       "Steam hits the cool lid, turns back to water, and drips straight back in",
@@ -17915,7 +17629,7 @@
   },
   {
     "tier": 3,
-    "question": "A cook simmers a big pot of beef bones and vegetables for hours until she has a rich brown stock, then boils that stock down hard in a pan until only a small pool is left — thick enough to coat the back of a spoon and shiny as glass. She never stirred in a speck of flour or cornstarch. So what is doing the thickening?",
+    "question": "Hours of simmering turn beef bones and vegetables into a rich brown stock. The cook then boils it down hard until only a small pool is left, thick enough to coat a spoon and shiny as glass, without a speck of flour or cornstarch. What is doing the thickening?",
     "answer": "Gelatin and sugars from the stock, left concentrated as the water boiled off",
     "choices": [
       "Gelatin and sugars from the stock, left concentrated as the water boiled off",
@@ -17928,7 +17642,7 @@
   },
   {
     "tier": 3,
-    "question": "Simmer a rich brown stock down for hours, until quarts of it become a dark, glossy syrup that clings to the back of a spoon. The foundational sauce was set down by the French chef Auguste Escoffier around 1900, and it is the base for classics like bordelaise. What do French cooks call this deeply reduced sauce?",
+    "question": "Auguste Escoffier wrote down how to make it in Le Guide Culinaire: take a big pot of rich brown veal stock and boil it gently down for hours on a low fire. Quarts shrink to a small pool of dark, glossy syrup that coats a spoon, the base of classics such as bordelaise. What is this deeply reduced sauce called?",
     "answer": "Demi-glace",
     "choices": [
       "Demi-glace",
@@ -17954,7 +17668,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook has a bowl of hard, waxy white fat that a butcher trimmed off a pig — pork lard's raw form. Her recipe wants a jar of soft, pourable cooking fat for frying and baking. Cooks call the step in between 'rendering.' What does rendering do to that hard raw fat?",
+    "question": "A cook has a bowl of hard, waxy white fat that a butcher trimmed off a pig, and her recipe wants soft cooking fat for frying and baking. The step in between is called rendering. What does rendering do to the hard raw fat?",
     "answer": "Warms it until it melts, then strains the bits out.",
     "choices": [
       "Warms it until it melts, then strains the bits out.",
@@ -17966,21 +17680,8 @@
     "topic": "rendering-fat-into-cooking-gold"
   },
   {
-    "tier": 2,
-    "question": "A pastry baker sets a fresh pie down and taps the crust with a fork — the crust shatters into paper-thin flakes so light they float onto the plate. Her secret is the fat she cut into the flour: lard, rendered from pig, not butter. What is that lard doing inside the dough that gives the crust such extreme flakes?",
-    "answer": "Its fat crystals are large, and they break the gluten up.",
-    "choices": [
-      "Its fat crystals are large, and they break the gluten up.",
-      "Its water content is high, and it steams the layers apart.",
-      "Its melting point is low, and it slips between the layers.",
-      "Its salt content is high, and it dries the layers crisp."
-    ],
-    "context": "Lard is rendered pork fat, and its relatively large fat crystals give it real shortening power -- they interrupt the flour's gluten differently than butter does, which is why lard crusts and biscuits bake up flakier. Bakers' prized grade is leaf lard, the soft 'flare' fat from around the pig's kidneys; it carries almost no pork flavor, which is exactly why they reach for it in pastry. Lard and beef tallow ruled kitchens until hydrogenated vegetable shortening (Crisco) arrived in the early 1900s and cheap vegetable oils spread, pushing the old animal fats aside. Source: Wikipedia, 'Lard'.",
-    "topic": "rendering-fat-into-cooking-gold"
-  },
-  {
     "tier": 3,
-    "question": "In the Ashkenazi Jewish kitchens of eastern Europe, kosher law kept butter off any meat meal, and olive oil was nowhere to be had. So cooks rendered chicken and goose fat into a jar of schmaltz for their latkes and matzo ball soup. The bird's skin goes into the pot right along with the fat, simmering slowly as it renders. As the pot simmers low, what eventually becomes of that skin?",
+    "question": "In the Ashkenazi Jewish kitchens of eastern Europe, kosher law kept butter away from any meat meal, so cooks rendered chicken and goose fat into schmaltz for their latkes and matzo ball soup. The bird's skin goes into the pot along with the fat and simmers slowly as it renders. What becomes of that skin?",
     "answer": "It browns into crisp, salty cracklings the cook snacks on.",
     "choices": [
       "It browns into crisp, salty cracklings the cook snacks on.",
@@ -17993,7 +17694,7 @@
   },
   {
     "tier": 1,
-    "question": "You lift a hot steak straight off the searing pan onto a cutting board. The instant your knife slices in, a puddle of red-brown juice floods the board — juice that should have stayed inside the meat. What simple move, done before you cut, keeps that juice locked in?",
+    "question": "A cook lifts a hot steak straight off the searing pan onto a cutting board. The instant the knife slices in, a puddle of red-brown juice floods the board, juice that should have stayed in the meat. What simple move, made before cutting, keeps that juice in?",
     "answer": "Let it rest a few minutes before slicing",
     "choices": [
       "Let it rest a few minutes before slicing",
@@ -18006,7 +17707,7 @@
   },
   {
     "tier": 2,
-    "question": "A TV chef says resting lets a steak's juices 'soak back into the center.' Food scientists who measured it call that a myth -- water is not a sponge, and as food scientist Dr. Antonio Mata put it, 'fibers are not balloons.' So what really happens in those few minutes to keep the juice in?",
+    "question": "A TV chef says resting lets a steak's juices 'soak back into the center.' Scientists who measured it call that a myth: water is not a sponge, and in Antonio Mata's phrase, 'fibers are not balloons.' What really happens in those few minutes to keep the juice in?",
     "answer": "As it cools, the fibers relax and stop squeezing the juice out",
     "choices": [
       "As it cools, the fibers relax and stop squeezing the juice out",
@@ -18019,7 +17720,7 @@
   },
   {
     "tier": 3,
-    "question": "Pull a thick roast from a hot 350F oven at 130F and rest it on the counter, and the center keeps climbing -- up to 145F -- with the oven off. Because of this, smart cooks pull meat several degrees below their target. Why does the inside keep heating after the oven is off?",
+    "question": "A thick roast comes out of a hot oven at 130°F in the center and sits on the counter, yet the center keeps climbing, up to 145°F, with no oven at all. Careful cooks pull meat several degrees below their target for this reason. Why does the inside keep heating?",
     "answer": "The blazing outer layers keep pushing their heat toward the center",
     "choices": [
       "The blazing outer layers keep pushing their heat toward the center",
@@ -18045,7 +17746,7 @@
   },
   {
     "tier": 4,
-    "question": "One flank steak, sliced two different ways, can eat up to four times as chewy or as tender -- same meat, same doneness. The difference is how your knife meets the 'grain,' the direction the long muscle fibers run. To get the tender half your teeth barely have to work, which way should the blade go?",
+    "question": "One flank steak, sliced two different ways, can turn out as much as four times chewier in one half than in the other, though the meat and the doneness are the same. The difference lies in how the knife meets the grain, the direction the long muscle fibers run. Which way should the blade go for the tender half?",
     "answer": "Across the grain of the fibers",
     "choices": [
       "Across the grain of the fibers",
@@ -18058,7 +17759,7 @@
   },
   {
     "tier": 1,
-    "question": "You are cooking a big pot of curry for supper, and the rice must land on the plate in loose, separate, fluffy grains that catch the sauce — never a sticky, clumped-together mush. Four bags of rice on the shelf differ only in the shape of their grains. Which grains cook up the fluffiest and most separate?",
+    "question": "Curry is on the stove, and the cook wants rice that lands on the plate in loose, fluffy grains that catch the sauce, never a sticky clump. The four bags on her shelf differ only in the shape of their grains. Which grains cook up fluffiest and most separate?",
     "answer": "long, slender grains",
     "choices": [
       "long, slender grains",
@@ -18071,7 +17772,7 @@
   },
   {
     "tier": 1,
-    "question": "Before setting rice on the stove, many cooks tip the raw grains into a bowl, pour cold water over them, and swish gently with a hand. The water turns milky and cloudy at once. They drain and refill, drain and refill, until the water finally runs completely clear. That cloudy, milky runoff is mostly what?",
+    "question": "A cook tips raw rice into a bowl, pours cold water over it and swishes it gently with her hand, and at once the water turns milky and cloudy. She drains and refills, again and again, until it runs clear. What is that cloudy runoff mostly made of?",
     "answer": "loose surface starch",
     "choices": [
       "loose surface starch",
@@ -18084,7 +17785,7 @@
   },
   {
     "tier": 2,
-    "question": "Long-grain rice — the slender kind used in pilaf and fried rice — normally cooks up dry and separate, while short round rices come out soft and sticky. But one popular long-grain rice quietly breaks that rule: it cooks up unusually soft and a little clingy for its slim shape. Which long-grain rice is the odd one out?",
+    "question": "One popular long, slim rice comes out of a cook's pot unusually soft and a little clingy for its shape, the odd one out among the long grains. Which rice is it?",
     "answer": "jasmine",
     "choices": [
       "jasmine",
@@ -18097,7 +17798,7 @@
   },
   {
     "tier": 2,
-    "question": "In one small Southeast Asian country, sticky glutinous rice isn't a special treat — it's the everyday meal. People roll it into little balls by hand at breakfast, lunch, and dinner, dipping the balls into curries and grilled meats. This country eats more rice per person than any other on Earth. Which country lives on sticky rice?",
+    "question": "A family in one small Southeast Asian country rolls sticky rice into balls by hand at breakfast, lunch and dinner, dunking them in curry and grilled meat. There, sticky rice is no special treat but the everyday meal, and people eat more rice per head than anywhere else on Earth. Which country is it?",
     "answer": "Laos",
     "choices": [
       "Laos",
@@ -18110,7 +17811,7 @@
   },
   {
     "tier": 3,
-    "question": "Japanese sushi rice squeezes together into a tidy little lump you can pick up with chopsticks, while Middle Eastern pilaf falls apart into loose, separate grains. Every kind of rice carries two starches that pull opposite ways — one firms the grains and keeps them apart, the other makes them cling. Which one of those two starches is the one that makes rice sticky?",
+    "question": "Japanese sushi rice squeezes into a tidy lump that chopsticks can lift, while Middle Eastern pilaf falls apart into loose grains. Every rice carries two starches that pull opposite ways: one firms the grains and keeps them apart, the other makes them cling. Which substance makes rice sticky?",
     "answer": "amylopectin",
     "choices": [
       "amylopectin",
@@ -18123,7 +17824,7 @@
   },
   {
     "tier": 3,
-    "question": "A cook in Laos scoops up a fistful of 'glutinous' sticky rice with her fingers — the bite clings together in a scoopable lump, far stickier than regular everyday rice. Every rice carries two starches: amylose, which firms the grains up and keeps them apart, and amylopectin, which makes them cling. So what is it that makes glutinous rice cling so much harder than everyday rice?",
+    "question": "A fistful of glutinous sticky rice clings in one lump in a diner's fingers, far stickier than everyday rice. Every rice carries two starches, one that firms the grains and keeps them apart and one that makes them cling. What makes glutinous rice cling so much harder?",
     "answer": "it has almost none of the firming starch",
     "choices": [
       "it has almost none of the firming starch",
@@ -18136,7 +17837,7 @@
   },
   {
     "tier": 4,
-    "question": "Walk into an Asian grocery and you see bags labeled 'glutinous rice' — the extra-sticky kind used for mochi and sticky-rice dumplings. Shoppers avoiding gluten flinch and put the bag back. Yet a lab test would show no rice on Earth contains a single speck of gluten. So why on earth is that sticky rice called 'glutinous' in the first place?",
+    "question": "A shopper in an Asian grocery picks up a bag labeled 'glutinous rice,' the extra-sticky kind used for mochi and sticky-rice dumplings, and puts it back, afraid of gluten. Yet no rice on Earth holds a speck of gluten. Why is the sticky rice called glutinous?",
     "answer": "it's Latin for 'glue-like,' describing the texture",
     "choices": [
       "it's Latin for 'glue-like,' describing the texture",
@@ -18149,7 +17850,7 @@
   },
   {
     "tier": 4,
-    "question": "At the dinner table sit two bowls of cooked white rice — a fluffy long-grain like basmati and a sticky short-grain like the kind used for sushi. A doctor eating with the family points out that the long-grain barely nudges her blood sugar, while a spoonful of the sticky one sends it spiking within minutes. Both are just white rice, yet they behave completely differently in the body. What about the long-grain keeps blood sugar so steady?",
+    "question": "A doctor at a family dinner eats from two bowls of white rice, one of basmati and one of sticky sushi rice. She points out that the basmati barely nudges her blood sugar, while the sticky rice sends it climbing within minutes. What about the basmati keeps her blood sugar so steady?",
     "answer": "it has more firming starch, which digests more slowly",
     "choices": [
       "it has more firming starch, which digests more slowly",
@@ -18162,7 +17863,7 @@
   },
   {
     "tier": 5,
-    "question": "Glutinous sticky rice — the staple grain of Laos and northern Thailand — clings so hard because the rice plant makes almost no amylose, the starch that normally firms grains up and keeps them apart. Regular long-grain rice plants make plenty of amylose. So why can't a sticky-rice plant make amylose in the first place?",
+    "question": "A long-grain rice plant packs its grains with amylose, the starch that firms them and keeps them apart, while a glutinous sticky-rice plant makes almost none, which is why its rice clings so hard. Why can't the sticky-rice plant make amylose?",
     "answer": "a broken gene can't make the amylose-building enzyme",
     "choices": [
       "a broken gene can't make the amylose-building enzyme",
@@ -18175,20 +17876,7 @@
   },
   {
     "tier": 5,
-    "question": "An Italian cook making risotto uses plump, short-grain arborio rice from northern Italy. She stirs it constantly — and, unlike almost every other rice dish in the world, she never rinses the grains before cooking. The finished dish comes out thick and creamy, more like porridge than like fluffy separate grains. Why does the unrinsed, well-stirred arborio turn so creamy?",
-    "answer": "it releases its sticky starch into the liquid",
-    "choices": [
-      "it releases its sticky starch into the liquid",
-      "the cream is stirred in at the start",
-      "the grains dissolve away completely",
-      "it soaks up all the pan's fat"
-    ],
-    "context": "Arborio is a plump medium-grain that's high in amylopectin and quite sticky. Stirred almost constantly and never rinsed, its surface starch releases into the liquid to build risotto's creamy texture — rinsing would wash away the very starch you want. Source: en.wikipedia.org/wiki/Rice",
-    "topic": "rice-why-some-stays-separate-and-some-sticks"
-  },
-  {
-    "tier": 5,
-    "question": "Every good fried-rice chef swears by the same rule: never start with a fresh, warm pot of rice from today. The rice must be yesterday's rice — cooked the day before, spread on a tray, and parked uncovered in the fridge overnight. Only then will it fry up into distinct golden grains instead of a sticky wet mush. Chemically speaking, what did that cold night in the fridge do to the cooked rice?",
+    "question": "A fried-rice chef refuses to start with a fresh, warm pot of rice. Her rice was cooked the day before, spread on a tray and left uncovered in the fridge overnight; only then will it fry into separate golden grains instead of a sticky, wet mush. Chemically, what did that cold night do to the cooked rice?",
     "answer": "its starch recrystallized and dried the grains out",
     "choices": [
       "its starch recrystallized and dried the grains out",
@@ -18266,7 +17954,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook holds a large curved chef's knife by the handle, presses one point down onto the cutting board, and rocks the blade up and down to shower-chop a pile of parsley and garlic — fast, blurred, precise. The blade swings like a door on a hinge. Which point of the knife stays pinned against the board as that hinge?",
+    "question": "Parsley and garlic fly under a big, curved chef's knife as a cook rocks it up and down, mincing fast without lifting the blade from the board. One point of the knife stays pinned to the board, like the hinge of a door. Which point is it?",
     "answer": "the tip",
     "choices": [
       "the tip",
@@ -18279,20 +17967,7 @@
   },
   {
     "tier": 2,
-    "question": "The Japanese santoku is a flat-edged, all-purpose kitchen knife, easy to spot in Western kitchens today with its shorter blade and blunter tip than a chef's knife. Its Japanese name literally means 'three virtues.' The name is a promise: the santoku handles three different types of food equally well. Which three foods does the santoku's name promise?",
-    "answer": "meat, fish, and vegetables",
-    "choices": [
-      "meat, fish, and vegetables",
-      "bread, cheese, and fruit",
-      "rice, noodles, and tofu",
-      "poultry, eggs, and herbs"
-    ],
-    "context": "'Santoku' (三徳) means 'three virtues,' or three uses — meat, fish, and vegetables. Its flat edge and downward-curving 'sheepsfoot' tip are built to push-cut straight down rather than rock. Source: japaneseknifelab.com, santoku guide.",
-    "topic": "rocking-vs-push-cutting-the-blade-shape-decides-the-motion"
-  },
-  {
-    "tier": 2,
-    "question": "The wide Chinese cai dao (pronounced 'tsai dow') looks a lot like a heavy Western butcher's cleaver at first glance, but its blade is actually thin and razor-sharp — meant for fine slicing, not chopping through bone. Its Chinese name literally means 'knife for' one particular kind of food. Which food is the cai dao named for?",
+    "question": "A Chinese cook's cai dao looks at first like a heavy Western butcher's cleaver, but its blade is thin and razor-sharp, meant for fine slicing, not for chopping through bone. Its Chinese name spells out its job: it means 'knife for' one kind of food. Which food is the cai dao named for?",
     "answer": "fresh vegetables",
     "choices": [
       "fresh vegetables",
@@ -18305,7 +17980,7 @@
   },
   {
     "tier": 3,
-    "question": "The Japanese nakiri is a little rectangular vegetable knife with a dead-flat edge for chopping straight up and down. Oddly, its blade is built unusually tall — much deeper from edge to spine than a small veg knife seems to need. Why make the blade so tall?",
+    "question": "Suppose you chop vegetables straight up and down with a nakiri, Japan's little rectangular vegetable knife with a dead-flat edge. Its blade stands unusually tall, much deeper from edge to spine than a small knife seems to need. Why build it so tall?",
     "answer": "to keep your knuckles clear of the board",
     "choices": [
       "to keep your knuckles clear of the board",
@@ -18317,21 +17992,8 @@
     "topic": "rocking-vs-push-cutting-the-blade-shape-decides-the-motion"
   },
   {
-    "tier": 3,
-    "question": "Rock-chop a handful of basil and the cut edges blacken within minutes; push-cut the same basil with a light forward glide and the leaves stay bright green. The gentle push-cut is reported to use only about a tenth of the downward force. What does the heavy rock-chop do to the basil that the gentle cut avoids?",
-    "answer": "it crushes and ruptures the leaf cells",
-    "choices": [
-      "it crushes and ruptures the leaf cells",
-      "it heats the leaf against the warm steel",
-      "it drags bitter sap out of the stems",
-      "it dries out the freshly torn edges"
-    ],
-    "context": "Chopping crushes and ruptures the leaf cells; the leaked juice then oxidizes and browns — which is why hard-chopped basil blackens while gently push-cut basil stays green. Push-cutting is reported to use only about a tenth of the downward force, so it ruptures far fewer cells. (The one-tenth figure is a widely reported estimate.) Source: honeyhone.com, 'Push Cut vs. Rock Chop.'  (Legend.)",
-    "topic": "rocking-vs-push-cutting-the-blade-shape-decides-the-motion"
-  },
-  {
     "tier": 4,
-    "question": "A cook is mincing a pile of fresh ginger and scallions on her big broad Chinese cai dao — the wide, thin-bladed Chinese vegetable knife. She finishes chopping. Without setting the knife down or reaching for any other tool, she does one more thing with the blade to move the whole pile straight into the wok. What does the cai dao's wide flat blade let her do next?",
+    "question": "Ginger and scallions lie minced in a pile under a cook's cai dao, the broad, thin-bladed Chinese kitchen knife. Without setting it down or reaching for another tool, she does one more thing with the blade to move the whole pile straight to the wok. What does the wide, flat blade let her do?",
     "answer": "scoop the pile onto the flat side to carry it off",
     "choices": [
       "scoop the pile onto the flat side to carry it off",
@@ -18344,7 +18006,7 @@
   },
   {
     "tier": 4,
-    "question": "Some cooks grab a flat-edged Japanese santoku and try to rock-chop a bunch of scallions the way they would with a curved chef's knife, rocking the blade up and down through the pile. It doesn't work cleanly. When they lift the santoku, what tells them the rocking motion was wrong for this flat blade?",
+    "question": "Rocking a flat-edged santoku up and down through some scallions, the way she would a curved chef's knife, a cook finds the blade does not cut cleanly. When she lifts it, what tells her the rocking motion was wrong for this flat blade?",
     "answer": "rows of slices still joined in uncut bridges",
     "choices": [
       "rows of slices still joined in uncut bridges",
@@ -18357,7 +18019,7 @@
   },
   {
     "tier": 5,
-    "question": "Push-cut straight down through a potato and the slice clings flat to the side of the smooth steel blade instead of falling away. Some knives fight this stickiness with a row of shallow oval dimples ground into the blade just above the edge. How do those dimples make the slices drop off cleanly?",
+    "question": "A potato slice clings flat to the side of a smooth steel blade after a straight push-cut, instead of falling away. Some knives fight the stickiness with a row of shallow, scalloped hollows ground into the steel just above the edge. How do those hollows make the slices drop off cleanly?",
     "answer": "they trap air pockets that break the suction",
     "choices": [
       "they trap air pockets that break the suction",
@@ -19172,19 +18834,6 @@
       "the turnip"
     ],
     "context": "For most of Korean history the main kimchi vegetable was the radish; the big napa (Chinese) cabbage only arrived in the late 1800s. Sources: Wikipedia, 'Kimchi'; ScienceDirect.",
-    "topic": "salt-and-sour-cabbage-into-sauerkraut-and-kimchi"
-  },
-  {
-    "tier": 4,
-    "question": "James Cook needed his sailors eating sauerkraut to stay healthy on a voyage that would last years, but the crew turned up their noses at the sour cabbage and refused to touch it. Rather than order or flog them into it, Cook tried a clever trick, and the men were soon demanding their ration. What did he do?",
-    "answer": "served it only at the officers' private table",
-    "choices": [
-      "served it only at the officers' private table",
-      "mixed it in secret into the men's daily biscuit",
-      "offered an extra tot of rum to the biggest eater",
-      "let the men gamble their rations away at dice"
-    ],
-    "context": "Cook wrote in his journal (April 1769) that the men at first would not eat it, so he had it dressed daily for the 'Cabbin' (officers') table: 'The moment they see their superiors set a value upon it, it becomes the finest stuff in the world.' Once the officers seemed to prize it, the crew clamored for their share. Source: University of Minnesota, Cook's journal.  (Legend.)",
     "topic": "salt-and-sour-cabbage-into-sauerkraut-and-kimchi"
   },
   {
@@ -21750,7 +21399,7 @@
   },
   {
     "tier": 1,
-    "question": "Before a French sauce cook makes a single sauce, he fills a tall pot with bones, vegetables and water and let it cook slowly for hours. This liquid becomes the base flavour under the day's soups and sauces. In an English kitchen, what do we call it?",
+    "question": "A French sauce cook fills a tall pot with bones, vegetables and water and leaves it bubbling gently for hours at the back of the stove. The liquid becomes the base of the day's soups and sauces. What is it called in English?",
     "answer": "stock",
     "choices": [
       "stock",
@@ -21763,7 +21412,7 @@
   },
   {
     "tier": 2,
-    "question": "In a classic French kitchen, a giant pot of chicken bones, vegetables, and herbs simmers for hours at the back of the stove, its steam curling into a savory broth. In English we would call this a stock. But French chefs refuse the plain English word. To them, this pot is a 'fond,' short for 'fonds de cuisine' — a name chosen to announce that a long-cooked pot of bones is no minor prep, but the kitchen's very ___.",
+    "question": "A giant pot of chicken bones, vegetables and herbs simmers for hours at the back of a classic French kitchen. Its chefs call it a fond, from fonds de cuisine, a name that makes the pot no minor job. By that name, what is the pot to the kitchen?",
     "answer": "foundation",
     "choices": [
       "foundation",
@@ -21776,7 +21425,7 @@
   },
   {
     "tier": 2,
-    "question": "Nearly every French stock, soup, and braise begins the same way. Before the meat or the broth ever hits the pot, the cook dices up three ordinary vegetables and softens them slowly in butter, letting the kitchen fill with a sweet, savory smell. French cooks call this classic trio the 'mirepoix.' The first vegetable in is always onion. Which two partners does the cook reach for next?",
+    "question": "Three ordinary vegetables go into a French pot first, diced and softened slowly in butter until the kitchen smells sweet and savory, before any meat or broth. The trio, called the mirepoix, starts nearly every French soup and braise, and the first vegetable in is always onion. Which two partners does the cook reach for next?",
     "answer": "carrot and celery",
     "choices": [
       "carrot and celery",
@@ -21789,20 +21438,7 @@
   },
   {
     "tier": 3,
-    "question": "A great meat stock has a secret trick: chill a cupful overnight and it sets into a wobbly, sliceable jelly. The setting agent never came from a shop packet, and it dissolved out of the bones and connective tissue as they simmered for hours. What is this natural jelly-forming substance called?",
-    "answer": "gelatin",
-    "choices": [
-      "gelatin",
-      "pectin",
-      "cornstarch",
-      "agar"
-    ],
-    "context": "Bones and connective tissue are packed with collagen; hours of gentle cooking convert that collagen into gelatin, which dissolves into the liquid and gives stock its body — the lip-coating richness that sets to a firm jelly when chilled. Source: Wikipedia, 'Stock (food)' (en.wikipedia.org/wiki/Stock_(food)).",
-    "topic": "stock-fond-and-mirepoix"
-  },
-  {
-    "tier": 3,
-    "question": "Two French stocks begin with the very same bones yet look nothing alike. A fond blanc stays pale and clean-tasting, while a fond brun comes out deep, dark amber with a far richer flavour. That whole difference in colour and depth comes from one thing the cook does to the bones and vegetables before the water ever touches them. What is it?",
+    "question": "Two stocks simmer side by side in a French kitchen from the very same bones, yet they look nothing alike. The fond blanc stays pale and clean-tasting; the fond brun turns a deep, dark amber with a far richer flavor. The whole difference comes from one thing the cook does to the bones and vegetables before any water touches them. What is it?",
     "answer": "roasts them in a hot oven",
     "choices": [
       "roasts them in a hot oven",
@@ -21815,7 +21451,7 @@
   },
   {
     "tier": 3,
-    "question": "A cook is after a crystal-clear, clean-tasting stock, but the pot is at a hard, rolling boil and the broth is turning cloudy and greasy. Those violent bubbles are smashing the fat and the floating protein 'scum' back into the liquid instead of letting them rise to be skimmed away. What is the fix that saves the batch?",
+    "question": "A cook is after a crystal-clear, clean-tasting broth, but the pot is at a hard, rolling boil and the liquid is turning cloudy and greasy. Those violent bubbles are smashing the fat and the floating protein 'scum' back into it instead of letting them rise to be skimmed away. What is the fix that saves the batch?",
     "answer": "turn it down to a bare simmer",
     "choices": [
       "turn it down to a bare simmer",
@@ -21828,20 +21464,7 @@
   },
   {
     "tier": 4,
-    "question": "In his famous 1903 cookbook 'Le Guide Culinaire,' the French chef Auguste Escoffier — the man who codified professional cooking — instructs his cooks to take a large pot of rich brown veal stock and gently boil it down for hours on a low fire. The huge volume slowly shrinks into a small pool of dark, glossy, spoon-coating syrup, so intense that a single teaspoon can lift an entire plate. What is this treasured concentrated sauce base called?",
-    "answer": "demi-glace",
-    "choices": [
-      "demi-glace",
-      "béchamel",
-      "hollandaise",
-      "vinaigrette"
-    ],
-    "context": "Reduced brown stock becomes demi-glace — 'demi' means half and 'glace' means glaze or icing, so the name is 'half-glaze.' Classically it is one part espagnole sauce plus one part brown stock, reduced by half; Escoffier codified it in his 1907 'Guide to Modern Cookery.' Source: Wikipedia, 'Demi-glace' (en.wikipedia.org/wiki/Demi-glace).",
-    "topic": "stock-fond-and-mirepoix"
-  },
-  {
-    "tier": 4,
-    "question": "The humble vegetable base of French cooking has a grand name, 'mirepoix,' borrowed from an 18th-century French noble, the duc de Lévis-Mirepoix. Writer Pierre Larousse scoffed that the duke was 'an incompetent and mediocre individual' who only lent his name to the mix. So who, the story goes, actually invented the vegetable base?",
+    "question": "Pierre Larousse, a French writer, scoffed at the duc de Lévis-Mirepoix, the 18th-century nobleman whose name the humble vegetable base of French cooking still carries. The duke, Larousse said, was 'an incompetent and mediocre individual' who only lent his name to the mix. Who, as the story goes, actually created it?",
     "answer": "his cook",
     "choices": [
       "his cook",
@@ -24285,7 +23908,7 @@
   },
   {
     "tier": 1,
-    "question": "Nutritionists call a food a 'complete' protein when a single serving carries all nine essential amino acids — the protein 'building blocks' your body cannot manufacture for itself and must get from food. Some foods carry all nine at once; most carry only a few. One whole group of everyday foods reliably supplies the complete set in each serving. Which group is it?",
+    "question": "A nutritionist unpacks her groceries, looking for foods that carry, in one serving, all nine amino acids the body cannot make for itself. Such a food is a complete protein, and most foods carry only some of the nine. Which group of everyday foods reliably has the full set?",
     "answer": "Meat, fish, and eggs",
     "choices": [
       "Meat, fish, and eggs",
@@ -24298,20 +23921,7 @@
   },
   {
     "tier": 2,
-    "question": "For centuries one cheap and simple plate has fed families across Latin America, the Caribbean, and West Africa. Its two plant foods, eaten together in the same meal, supply all nine essential amino acids your body cannot make for itself. Yet neither of the two foods manages that feat alone — each is missing something the other supplies. Nutritionists call the trick 'protein complementing.' Which classic pairing is it?",
-    "answer": "Rice and beans",
-    "choices": [
-      "Rice and beans",
-      "Corn and squash",
-      "Bread and jam",
-      "Apples and oats"
-    ],
-    "context": "Rice is a grain, low in the amino acid lysine but well supplied with methionine; beans are a legume, low in methionine but rich in lysine -- so served together each patches the other's gap and the plate becomes a complete protein. Source: American Society for Nutrition, 'Protein complementation'; LibreTexts Nutrition, 'Evaluating Dietary Protein.'",
-    "topic": "the-complete-protein-all-nine-blocks-in-one-bite"
-  },
-  {
-    "tier": 2,
-    "question": "Casein is the main protein in a glass of cow's milk — the sticky white stuff that curdles into soft lumps when milk goes sour. The word 'casein' comes straight from the Latin word 'caseus.' Which everyday dairy food does that ancient Latin root actually name?",
+    "question": "A glass of cow's milk left to go sour curdles into soft white lumps, and those lumps are casein, milk's main protein. The protein takes its name from an old Latin word, caseus. Which everyday dairy food does caseus name?",
     "answer": "Cheese",
     "choices": [
       "Cheese",
@@ -24324,7 +23934,7 @@
   },
   {
     "tier": 3,
-    "question": "When food scientists want to rate how well a protein matches what the human body needs, they don't grade it against some abstract ideal. They score every food against one ordinary food, whose value was long ago fixed at a perfect 100. The World Health Organization still treats it as the reference protein. Which food is the protein world's gold standard?",
+    "question": "H. H. Mitchell worked out a scale in 1923 for grading protein, since an ounce of one food can give the body more usable protein than an ounce of another. Scientists still score every food on it against one ordinary food whose value is fixed at a perfect 100. Which food is that gold standard?",
     "answer": "A whole egg",
     "choices": [
       "A whole egg",
@@ -24337,7 +23947,7 @@
   },
   {
     "tier": 5,
-    "question": "In her 1971 bestseller 'Diet for a Small Planet,' activist Frances Moore Lappe told a generation of vegetarians to carefully combine different plant proteins at every single meal, or fall short on amino acids. Ten years later she revisited that rule in a new edition of the very same book. What did she say about it there?",
+    "question": "Frances Moore Lappé told a generation of vegetarians, in her bestseller of 1971, Diet for a Small Planet, to combine plant proteins carefully at every single meal or fall short on amino acids. Ten years later she revisited that rule in a new edition of the same book. What did she say about it there?",
     "answer": "She reversed it -- no need to combine at every meal",
     "choices": [
       "She reversed it -- no need to combine at every meal",
