@@ -43,6 +43,24 @@ def _live(subject: str) -> dict[str, dict]:
     return _LIVE[subject]
 
 
+def _now_live(subject: str, h: str) -> bool:
+    """A cross twin named before its own batch was applied keeps its old
+    hash: follow that question's rewrite (any batch's changes) to its stem now."""
+    live = _live(subject)
+    seen = set()
+    while h not in live and h not in seen:
+        seen.add(h)
+        for p in sorted((bpath(subject, 1, 'in').parent).glob('b*_changes.json')):
+            r = next((r for r in read_json(p).get('replace') or []
+                      if r['hash'] == h and r['new'].get('question')), None)
+            if r:
+                h = stem_hash(r['new']['question'])
+                break
+        else:
+            return False
+    return h in live
+
+
 def problems(subject: str, batch: int) -> list[str]:
     pkt = pending_packet(subject, batch)
     ch = pending_changes(subject, batch)
@@ -100,7 +118,7 @@ def problems(subject: str, batch: int) -> list[str]:
             continue                      # an applied ladder's drop
         if d.get('drop') not in deleted:
             errs.append(f'cross_twins: {d.get("drop")} is not deleted')
-        if d.get('twin') not in live_h:
+        if d.get('twin') not in live_h and not _now_live(subject, d.get('twin')):
             errs.append(f'cross_twins: twin {d.get("twin")} is not a live question')
         if not str(d.get('why', '')).strip():
             errs.append(f'cross_twins: {d.get("drop")} needs a why')

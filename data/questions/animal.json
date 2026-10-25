@@ -7931,20 +7931,7 @@
   },
   {
     "tier": 2,
-    "question": "An octopus is a soft, boneless sea creature with eight long arms lined with rows of suckers, clever enough to unscrew the lid off a jar in an aquarium tank. Inside its baggy body, a whole ocean of pumping keeps its blue blood moving through gills, arms, and brain. How many hearts does an octopus have beating in its body?",
-    "answer": "Three",
-    "choices": [
-      "Three",
-      "One",
-      "Six",
-      "Two"
-    ],
-    "context": "Two branchial hearts pump blood through the gills to pick up oxygen; a third systemic heart then drives that oxygen-rich blood around the rest of the body. Source: Smithsonian Magazine, 'Ten Wild Facts About Octopuses'.",
-    "topic": "extraordinary-hearts-and-blood"
-  },
-  {
-    "tier": 2,
-    "question": "An octopus is a soft-bodied sea creature with eight sucker-lined arms and no bones at all. This one settles onto a coral reef in a warm shallow sea and folds its arms over a rock, hiding all but one watchful eye. If you could peel back its skin and see the blood moving through its body right now, what color would it be?",
+    "question": "On a coral reef in a warm, shallow sea, an octopus settles down and folds its eight sucker-lined arms over a rock, hiding all but one watchful eye. Under its soft skin, its blood keeps moving through gills, arms and brain. What color is that blood?",
     "answer": "Blue",
     "choices": [
       "Blue",
@@ -7956,34 +7943,8 @@
     "topic": "extraordinary-hearts-and-blood"
   },
   {
-    "tier": 2,
-    "question": "Out on the African savanna stands the tallest living animal on Earth, munching leaves from the crowns of acacia trees that no other grazer can reach. Its neck alone is around two metres long. Its heart has to fight gravity harder than almost any creature's, pumping blood all the way up that neck to reach the brain perched at the top. Which animal is it?",
-    "answer": "The giraffe",
-    "choices": [
-      "The giraffe",
-      "The elephant",
-      "The camel",
-      "The ostrich"
-    ],
-    "context": "A giraffe's heart pumps blood at roughly double a human's pressure to drive it up the two-metre neck against gravity. Source: Novartis, 'Giraffes have high blood pressure. Why don't they drop dead?'; Giraffe Conservation Foundation.",
-    "topic": "extraordinary-hearts-and-blood"
-  },
-  {
-    "tier": 2,
-    "question": "On the sandy Atlantic shore, a strange creature crawls out of the surf each spring to breed — a living fossil older than the dinosaurs. It has a hard domed shell shaped like a helmet, ten legs hidden underneath, and a long spiked tail. Its pale blue blood is harvested by medical laboratories because it clots the instant it touches bacteria, and it keeps vaccines free of contamination. What creature is this?",
-    "answer": "The horseshoe crab",
-    "choices": [
-      "The horseshoe crab",
-      "The hermit crab",
-      "The sea scorpion",
-      "The trilobite"
-    ],
-    "context": "A substance in horseshoe-crab blood clots instantly around bacterial contamination, catching it in vaccines and drugs. Source: AssayGenie, 'Horseshoe Crab Blood and Endotoxin Testing'; Natural History Museum, 'Horseshoe crab blood: the miracle vaccine ingredient'.",
-    "topic": "extraordinary-hearts-and-blood"
-  },
-  {
     "tier": 3,
-    "question": "An octopus is a boneless sea animal with eight arms and blue, copper-based blood. Inside its body sit three hearts. Two of them, called branchial hearts, sit right beside the gills and handle just one job — loading fresh oxygen onto the blood as it flows through the gill tissue. Why does that loading job need its own dedicated pair of hearts?",
+    "question": "Three hearts pump the blood of an octopus. Two of them, the branchial hearts, sit right beside the gills and do just one job: they push blood through the gill tissue, where it loads up on fresh oxygen. The third sends it on to every other part of the body. Why does the gill job get a pair of hearts all its own?",
     "answer": "It takes a high pressure of its own",
     "choices": [
       "It takes a high pressure of its own",
@@ -7996,7 +7957,7 @@
   },
   {
     "tier": 3,
-    "question": "The octopus is a boneless sea animal with eight sucker-lined arms and blood that runs pale blue instead of red. Blood carries oxygen with the help of a metal — human blood turns red from iron, packed into a molecule called hemoglobin. Octopus blood uses a different metal, in a molecule called hemocyanin. Which metal ferries oxygen in an octopus and turns its blood blue?",
+    "question": "As an octopus slips across the reef, its blood carries oxygen out to every arm. Human blood carries oxygen on iron, packed into hemoglobin, and the iron turns it red. Octopus blood uses a different metal, held in a protein called hemocyanin, which gives it a color of its own. Which metal does an octopus use?",
     "answer": "Copper",
     "choices": [
       "Copper",
@@ -8009,7 +7970,7 @@
   },
   {
     "tier": 3,
-    "question": "An octopus is a boneless sea creature with three hearts and blue, copper-based blood that carries oxygen more weakly than our red blood. It can squirt water out of a funnel called a siphon and jet through open sea in a fast burst — but it almost always crawls slowly across the sea floor instead. What happens inside the octopus that makes a single burst of jetting so exhausting?",
+    "question": "Squirting water out of its siphon, an octopus can shoot through open sea in a fast burst, yet it almost always crawls slowly across the sea floor instead. Its blood is a weaker oxygen carrier than human blood. What happens inside the octopus that makes a single burst of jetting so exhausting?",
     "answer": "Its main heart stops beating",
     "choices": [
       "Its main heart stops beating",
@@ -8022,7 +7983,7 @@
   },
   {
     "tier": 3,
-    "question": "The giraffe is the tallest animal alive, standing up to 5.5 metres, and it browses leaves at the top of African acacia trees. Its heart must drive blood straight up a two-metre neck to reach a brain perched high above the shoulders, fighting gravity the whole way. Compared with a human's blood pressure, how strong is the giraffe's?",
+    "question": "A giraffe, standing up to 5.5 metres tall, browses leaves at the top of an African acacia tree. Its heart must drive blood straight up a neck about two metres long to reach the brain, fighting gravity the whole way. How does the giraffe's blood pressure compare with a human's?",
     "answer": "About double a human's",
     "choices": [
       "About double a human's",
@@ -8035,7 +7996,7 @@
   },
   {
     "tier": 3,
-    "question": "A giraffe is the tallest animal alive — its head can stand nearly six meters above the ground. To drink at an African waterhole, it must splay its long front legs and lower that head far below its own heart. All that blood should then rush downhill and knock the giraffe out cold. But something in its neck stops the flood from ever hitting its brain. What does the trick?",
+    "question": "At an African waterhole, a giraffe splays its long front legs and lowers its head far below its own heart to drink. All that blood should rush downhill into its skull and knock it out cold. Something stops the flood from ever reaching its brain. What does the job?",
     "answer": "One-way valves in its neck veins",
     "choices": [
       "One-way valves in its neck veins",
@@ -8047,34 +8008,8 @@
     "topic": "extraordinary-hearts-and-blood"
   },
   {
-    "tier": 3,
-    "question": "The horseshoe crab is a helmet-shaped Atlantic sea creature older than the dinosaurs, with pale blue blood unlike any other animal's. Its blood is one of the most valuable liquids on Earth because of what happens the instant bacteria contaminate a vaccine or drug it is testing. How does horseshoe-crab blood catch that contamination?",
-    "answer": "It clots into a gel around it",
-    "choices": [
-      "It clots into a gel around it",
-      "It changes color to flag the batch",
-      "It binds the toxin so it can be filtered out",
-      "It triggers immune cells to swarm it"
-    ],
-    "context": "A substance in horseshoe-crab blood clots instantly around bacterial contamination, catching it in vaccines and drugs; the blood is worth roughly $60,000 a gallon. Source: AssayGenie; Natural History Museum, 'Horseshoe crab blood: the miracle vaccine ingredient'.",
-    "topic": "extraordinary-hearts-and-blood"
-  },
-  {
     "tier": 4,
-    "question": "The Antarctic icefish is the only backboned animal on Earth with no red blood cells and no oxygen-carrying pigment. Its blood runs clear as water, so it must pump huge volumes with an oversized heart just to stay alive. What is the pigment that its blood is missing?",
-    "answer": "Hemoglobin",
-    "choices": [
-      "Hemoglobin",
-      "Melanin",
-      "Chlorophyll",
-      "Keratin"
-    ],
-    "context": "The icefish's enormous heart pumps about five times more blood than a normal fish and burns roughly 22% of the fish's energy budget (versus about 5% in ordinary fish) just to move that thin, pigment-free blood, helped by cold, oxygen-rich Antarctic water. Source: Wikipedia, 'Channichthyidae'; Scientific American icefish article.",
-    "topic": "extraordinary-hearts-and-blood"
-  },
-  {
-    "tier": 4,
-    "question": "Cut open an earthworm and you find no single chambered heart at all. The worm has no chest and no ribs — just a soft tube of a body slithering through wet garden soil. Instead of one big pump, a set of muscular tubes wraps around the front of its gut and squeezes rhythmically, one after another, to push its dark red blood along. How many of these pumping 'hearts' does an earthworm actually carry?",
+    "question": "An earthworm slithers through wet garden soil with no chest, no ribs and no single chambered heart at all. Instead, a set of muscular tubes wraps around the front of its gut and squeezes rhythmically, one after another, to push its dark red blood along. How many of these pumping hearts does an earthworm have?",
     "answer": "Five pairs",
     "choices": [
       "Five pairs",
@@ -8087,7 +8022,7 @@
   },
   {
     "tier": 5,
-    "question": "The Antarctic icefish is the only backboned animal whose blood carries no hemoglobin. Biologists once assumed it had simply switched off making the protein in the cold. Reading its genome overturned that view: the explanation was more final than a switched-off gene. What had actually happened to the icefish's hemoglobin?",
+    "question": "An icefish swims through the cold Antarctic sea with blood as clear as water, carrying no hemoglobin at all. Biologists once assumed it had simply switched off making the protein in the cold. Reading its genome overturned that view, with an answer more final than a switched-off gene. What had happened to the hemoglobin gene?",
     "answer": "The gene itself is physically deleted",
     "choices": [
       "The gene itself is physically deleted",
@@ -8100,7 +8035,7 @@
   },
   {
     "tier": 4,
-    "question": "Horseshoe-crab blood is drawn by medicine because a single kind of blood cell, the amebocyte, jams the sample into a gel the instant it meets bacterial contamination. Granules inside that cell hold one named protein that the alarm cascade converts into the clot. Which protein is it?",
+    "question": "A horseshoe crab carries in its blood one kind of cell, the amebocyte, that sets a sample into a gel the instant it meets bacterial toxins; that is why medical labs draw it. Granules packed inside the cell hold a single protein, and a chain reaction turns it into the clot. Which protein is it?",
     "answer": "Coagulogen",
     "choices": [
       "Coagulogen",
@@ -8113,7 +8048,7 @@
   },
   {
     "tier": 1,
-    "question": "You are driving a country road at night when two coins of greenish-gold light flare in your headlights at the edge of the woods, then vanish as a deer turns its head. That glow comes from a layer built into the deer's eye that your own eyes lack. What is that layer?",
+    "question": "Two coins of greenish-gold light flare in a car's headlights at the edge of a dark country road, then vanish as a deer turns its head. The glow comes from a layer built into the deer's eye that human eyes lack. What is that layer?",
     "answer": "A mirror-like sheet behind the retina that bounces light back through it",
     "choices": [
       "A mirror-like sheet behind the retina that bounces light back through it",
@@ -8126,7 +8061,7 @@
   },
   {
     "tier": 2,
-    "question": "A cat's eyes blaze back at you from a dark room, but yours photograph as ordinary red 'red-eye' in a flash. The cat has a mirror behind its retina that throws light back out; you do not. So where does the plain red glow in a human flash photo actually come from?",
+    "question": "A cat's eyes blaze back from a dark room, while a person's eyes in a flash photo glow plain red. The cat's eyes carry the layer that makes eyeshine; human eyes have none. Where does the red glow in a human flash photo come from?",
     "answer": "Blood in the retina at the back of the eye lighting up in the flash",
     "choices": [
       "Blood in the retina at the back of the eye lighting up in the flash",
@@ -8139,7 +8074,7 @@
   },
   {
     "tier": 2,
-    "question": "A house cat can pick out a moving mouse in near-total darkness — light so dim it would leave you completely blind. But that same cat cannot tell your red toy mouse from a green one the way you can. Deep in the eye, the retina is the sheet of cells that actually catches light. To be so good in the dark, a cat's retina made a trade with color. What is a cat's retina packed with?",
+    "question": "A house cat spots a mouse moving in near-total darkness, where a person would see nothing. Yet it cannot tell a red toy mouse from a green one as a person can. Its retina, the light-catching sheet at the back of the eye, traded color for night sight. What is it packed with?",
     "answer": "Rod cells, six to eight times as many as a human eye holds",
     "choices": [
       "Rod cells, six to eight times as many as a human eye holds",
@@ -8152,7 +8087,7 @@
   },
   {
     "tier": 2,
-    "question": "Not every glowing eye caught in headlights shines the same color. A cat's eyes flash green, a raccoon's yellow, a rabbit's red, and many dogs' eyes flash bright blue. That difference is not the color of the headlight or the angle of the beam. Deep behind the retina of a night-active animal sits a reflective sheet called the tapetum that bounces stray light back onto the eye. Something about that reflector decides what color you see. What actually sets it?",
+    "question": "Caught in a car's headlights, a cat's eyes flash green, a raccoon's yellow and many dogs' bright blue. The difference is not the color of the headlights or the angle of the beam. What decides the color each animal's eyes shine back?",
     "answer": "What the mirror layer is built from, such as zinc, riboflavin, or collagen",
     "choices": [
       "What the mirror layer is built from, such as zinc, riboflavin, or collagen",
@@ -8164,21 +8099,8 @@
     "topic": "eyeshine-and-seeing-in-the-dark"
   },
   {
-    "tier": 3,
-    "question": "The tarsier is a mouse-sized primate that clings to trees in the forests of Southeast Asia and hunts insects by moonlight. Most nocturnal mammals have a tapetum — a mirror layer behind the retina that bounces stray light back and roughly doubles what the eye catches. But the tarsier's daytime ancestors lost that mirror long ago, and its kind never grew it back. With no tapetum at all to help, how does the tarsier still gather enough moonlight to hunt?",
-    "answer": "Each eyeball grew to the size of its own brain, the largest eyes for its body of any mammal",
-    "choices": [
-      "Each eyeball grew to the size of its own brain, the largest eyes for its body of any mammal",
-      "It grew a second pair of smaller eyes above the first to double its light",
-      "Its eyes glow from within, casting their own faint light onto prey",
-      "It hunts by touch and hearing alone, its eyes nearly useless in the dark"
-    ],
-    "context": "A tarsier eyeball is about 16 mm across, as large as or larger than its whole brain and equal to it by volume, the biggest eyes relative to body size of any mammal. Because tarsiers lost the tapetum and never got it back, that enormous light-gathering eye is their entire compensation. Source: Wikipedia, 'Tarsier'; Collins et al. 2005, 'Overview of the visual system of Tarsius.'  (Legend.)",
-    "topic": "eyeshine-and-seeing-in-the-dark"
-  },
-  {
     "tier": 4,
-    "question": "Arctic reindeer see through months of dim polar twilight, and researchers in 2013 discovered their eye-mirror does something no mammal had shown before: it changes color with the seasons, gold in summer. For the dark months it scatters more light sideways through the retina instead of reflecting it directly back. What color does it turn by winter?",
+    "question": "A reindeer forages through the long, dim twilight of an Arctic winter. Stokkan and colleagues found in 2013 that its eyeshine layer changes color with the seasons, something never seen before in a mammal. In summer it is gold. In winter it scatters more light sideways through the retina instead of throwing it straight back. What color is it by winter?",
     "answer": "Deep blue",
     "choices": [
       "Deep blue",
@@ -8191,7 +8113,7 @@
   },
   {
     "tier": 4,
-    "question": "In the near-black mesopelagic zone, the barreleye fish hangs motionless and stares straight up through a transparent forehead, watching for faint silhouettes drifting overhead. Its eyes are not the usual round balls. What unusual shape do they take, and why?",
+    "question": "In the near-black midwater of the deep ocean, a barreleye fish hangs motionless, watching through a see-through forehead for faint silhouettes. Its eyes are built unlike those of most fish. What shape are they, and why?",
     "answer": "Tube-shaped, because a tube gathers far more light than a round eye of the same width",
     "choices": [
       "Tube-shaped, because a tube gathers far more light than a round eye of the same width",
@@ -8203,21 +8125,8 @@
     "topic": "eyeshine-and-seeing-in-the-dark"
   },
   {
-    "tier": 5,
-    "question": "Vision scientists studied the eye of the colossal squid, a dinner-plate orb about 27 cm across with a lens the size of an orange, and asked what payoff could be worth building the largest eye in the animal kingdom's history. Dan-Eric Nilsson and Eric Warrant argued it is tuned to catch one particular signal in the black deep. What?",
-    "answer": "The faint glow a hunting sperm whale stirs up in the plankton around it",
-    "choices": [
-      "The faint glow a hunting sperm whale stirs up in the plankton around it",
-      "The blue-green flashes of the bioluminescent prey it hunts",
-      "The lantern lures of anglerfish hanging in the dark below it",
-      "The glow of a passing shoal of lanternfish drifting overhead"
-    ],
-    "context": "Nilsson and Warrant argued the colossal and giant squid's dinner-plate eye is tuned to spot the faint bioluminescent glow a diving sperm whale, its main predator, stirs up in the plankton, an early-warning system in the black deep. At about 27 cm, it is likely the biggest eye ever to exist. Source: NCBI/PMC, 'The giant eyes of giant squid...'; Te Papa Museum, 'The eyes of the colossal squid.'  (Legend.)",
-    "topic": "eyeshine-and-seeing-in-the-dark"
-  },
-  {
     "tier": 2,
-    "question": "In the pine woods and swamps of the southern United States lives the harmless scarlet kingsnake, brightly banded in red, yellow, and black. Its little jaws cannot bite hard enough to hurt a person. Yet predators still leave it alone — because it looks almost exactly like a truly deadly banded snake that lives in the same region, one whose neurotoxic bite can kill a grown man. Which venomous snake is the scarlet kingsnake imitating?",
+    "question": "A harmless scarlet kingsnake, banded red, yellow and black, slides through the pine woods and swamps of the southern United States. Its little jaws could never hurt a person, yet predators leave it alone, because it looks almost exactly like a deadly banded snake of the same region. Which venomous snake is it imitating?",
     "answer": "The coral snake",
     "choices": [
       "The coral snake",
@@ -8230,7 +8139,7 @@
   },
   {
     "tier": 3,
-    "question": "A harmless scarlet kingsnake in coral-snake colors is perfectly safe in one Florida county but gets eaten by birds in the next county over. Both counties have the same birds and the same kingsnakes. What is different about the safe county that makes the borrowed warning look actually work?",
+    "question": "In one Florida county a harmless scarlet kingsnake, wearing the red, yellow and black bands of a deadly snake, is perfectly safe; in the next county over, birds eat it. Both counties have the same birds and the same kingsnakes. What makes the borrowed warning work in the safe county?",
     "answer": "Real coral snakes live there and taught predators to fear the pattern",
     "choices": [
       "Real coral snakes live there and taught predators to fear the pattern",
@@ -8243,7 +8152,7 @@
   },
   {
     "tier": 3,
-    "question": "Look at a swarm of stinging wasps and bees and you'll notice something odd. Dozens of dangerous species all wear nearly the same black-and-yellow uniform, and none of them is a harmless faker. Why would many truly dangerous species evolve to look alike?",
+    "question": "A wasp and a bee of two different stinging species wear almost the same yellow-and-black stripes. Dozens of other stinging species wear them too, and none of them is a harmless faker: every one can really sting. Why would so many truly dangerous species evolve to look alike?",
     "answer": "So a predator only has to learn the one warning look once",
     "choices": [
       "So a predator only has to learn the one warning look once",
@@ -8269,7 +8178,7 @@
   },
   {
     "tier": 4,
-    "question": "Off the sandy Indo-Pacific seafloor, the mimic octopus does something almost no other animal can. It does not just hide; it impersonates other animals on demand. In one of its best-known disguises, which venomous, spiny-finned fish does it pretend to be?",
+    "question": "A mimic octopus crawls over a sandy Indo-Pacific seafloor, and it does more than hide: it imitates other animals at will. In one of its best-known disguises it poses as a venomous, spiny-finned fish. Which fish?",
     "answer": "A lionfish",
     "choices": [
       "A lionfish",
@@ -8282,7 +8191,7 @@
   },
   {
     "tier": 4,
-    "question": "The mimic octopus (Thaumoctopus mimicus) can imitate a lionfish, a sea snake, or a flatfish — and researchers suspect it doesn't pick at random. Evidence suggests it changes its choice of disguise based on one thing in particular. Based on what does it seem to choose which animal to become?",
+    "question": "Researchers have watched the mimic octopus, Thaumoctopus mimicus, turn itself into copies of several different sea animals, and they suspect it does not pick at random. There is evidence that its choice of disguise depends on one thing in particular. What seems to decide which animal it becomes?",
     "answer": "The specific predator it is currently facing",
     "choices": [
       "The specific predator it is currently facing",
@@ -8294,47 +8203,8 @@
     "topic": "faking-it-mimicry"
   },
   {
-    "tier": 4,
-    "question": "On a warm summer night in North America, male fireflies drift over a meadow blinking a yellow-green light in a coded pattern that says, 'I am a male of my species — are there any females of my kind out there?' A female of his species flashes back the matching code and he lands to mate. But sometimes a male flies toward what he reads as a willing female of his own kind, she flashes back in just the right way to pull him closer — and he is grabbed and eaten. The predator is a female Photuris firefly, a different genus of firefly entirely. How did she draw him in?",
-    "answer": "She fakes another firefly species' mating flash-code",
-    "choices": [
-      "She fakes another firefly species' mating flash-code",
-      "She glows far brighter to blind approaching males",
-      "She releases a scent that paralyzes males mid-flight",
-      "She spins a web of light between two reeds"
-    ],
-    "context": "The 'femme fatale' Photuris firefly mimics the exact flash-code answer of Photinus females, luring the wrong-species males in to eat them — a form of aggressive mimicry. One female can mimic up to three different species' codes. Source: Lloyd, Science 210:669; Cornell Chronicle (1997).  (Legend.)",
-    "topic": "faking-it-mimicry"
-  },
-  {
     "tier": 5,
-    "question": "The Photuris firefly is a large firefly that lights up American summer nights. Instead of just glowing to attract her own mate, a female Photuris flashes the exact love-signal of a smaller firefly species and lures its males in — then eats them. Those males' bodies carry a bitter steroid called lucibufagin that Photuris herself cannot manufacture on her own. Once she has swallowed a male and taken his chemistry into her own body, what does that theft buy her?",
-    "answer": "She becomes foul-tasting, so jumping spiders spit her out",
-    "choices": [
-      "She becomes foul-tasting, so jumping spiders spit her out",
-      "Her own mating flash grows twice as bright",
-      "Her eggs hatch several days faster",
-      "She gains the ability to fly in broad daylight"
-    ],
-    "context": "Photinus males carry lucibufagins that Photuris can't synthesize; after eating them the female becomes distasteful, and jumping spiders spit her out. She steals her victims' chemistry as well as their bodies. Source: Eisner et al., PNAS 94:9723 (1997).  (Legend.)",
-    "topic": "faking-it-mimicry"
-  },
-  {
-    "tier": 5,
-    "question": "For nearly a century, textbooks called the viceroy butterfly a cheat — a tasty look-alike copying the toxic monarch to dodge birds. In 1991, Ritland and Brower fed red-winged blackbirds just the butterflies' abdomens (no wings, so birds judged purely by taste). What did that experiment reveal about the viceroy?",
-    "answer": "The viceroy is just as foul-tasting as the monarch",
-    "choices": [
-      "The viceroy is just as foul-tasting as the monarch",
-      "The viceroy is even tastier than birds had thought",
-      "Birds ignore both butterflies entirely",
-      "The viceroy's toxins come from eating monarchs"
-    ],
-    "context": "By testing taste alone, Ritland & Brower showed the viceroy is genuinely distasteful — so the pair is really Mullerian mimicry (both defended), not the old Batesian story of a tasty viceroy cheating off the monarch. A genuine 'what we used to think' correction. Source: Ritland & Brower 1991, Nature 350:497-498.  (Legend.)",
-    "topic": "faking-it-mimicry"
-  },
-  {
-    "tier": 5,
-    "question": "By 1960 the venomous coral snake had died out of the North Carolina Sandhills, so the harmless scarlet kingsnake that copied it no longer had a live model for birds to fear. Comparing museum kingsnakes across the next 50 years, biologists expected the borrowed warning-look to blur and fade. Instead the red and black bands did what?",
+    "question": "Akcali and Pfennig measured museum scarlet kingsnakes from the North Carolina Sandhills, collected in the decades after the venomous snake they copy had died out there by about 1960. With no live model left for birds to fear, biologists expected the borrowed warning to blur and fade. What did the red and black bands do instead?",
     "answer": "Grew ever closer to the vanished coral snake’s exact proportions",
     "choices": [
       "Grew ever closer to the vanished coral snake’s exact proportions",
@@ -8347,7 +8217,7 @@
   },
   {
     "tier": 5,
-    "question": "The butterfly Heliconius numata wears up to seven different warning patterns, each copying a different toxic species. Every form is passed down clean, never a muddled half-and-half wing. What locks all seven disguises together and passes them on as one unit?",
+    "question": "A Heliconius numata butterfly can wear any of up to seven warning patterns, each copying a different toxic species. Every form passes to the next generation clean, never as a muddled half-and-half wing. What locks each disguise together and passes it on as one unit?",
     "answer": "A supergene—one chromosome block, held intact by an inversion",
     "choices": [
       "A supergene—one chromosome block, held intact by an inversion",
@@ -8359,21 +8229,8 @@
     "topic": "faking-it-mimicry"
   },
   {
-    "tier": 2,
-    "question": "A small burrowing mammal digs through cold, wet, dark soil in the wetlands of eastern North America. It cannot see a thing underground. Ringing its two nostrils is a pink crown of 22 fleshy, finger-like tentacles that it presses against the earth to feel its way, checking every crumb of dirt in a fraction of a second. Nothing else on Earth wears a face like it. Which animal is it?",
-    "answer": "The star-nosed mole",
-    "choices": [
-      "The star-nosed mole",
-      "The naked mole-rat",
-      "The harbor seal",
-      "The manatee"
-    ],
-    "context": "The star-nosed mole's 22-ray 'star' looks like a fancy nose, but it is not for smelling at all - it is a pure touch organ, the most sensitive touch organ known in any mammal. The mole hunts underground in the dark and reads the world by pressing this crown of tentacles against the soil. Source: Wikipedia, Star-nosed mole (en.wikipedia.org/wiki/Star-nosed_mole); Kenneth Catania research.",
-    "topic": "feeling-in-the-dark-the-touch-specialists"
-  },
-  {
     "tier": 3,
-    "question": "Harbor seals live along cold coasts of the North Atlantic and North Pacific, hunting fish in water often too murky to see through. In one experiment, scientists blindfolded a harbor seal in a dark tank. A live fish swam once through the water and was then lifted out. Seconds later, the blindfolded seal darted after it along the exact winding path the fish had taken, never straying a body-length off it. The water looked perfectly still. What was the seal following?",
+    "question": "A harbor seal hunts fish along a cold coast, in water often too murky to see through. Georg Dehnhardt blindfolded one for an experiment in 2001, and a live fish swam once through its tank and was lifted out. Seconds later the seal set off along the fish's exact winding path, though the water looked perfectly still. What was it following?",
     "answer": "The invisible wake the fish stirred up",
     "choices": [
       "The invisible wake the fish stirred up",
@@ -8386,7 +8243,7 @@
   },
   {
     "tier": 3,
-    "question": "Hunting completely blind through wet North American soil, a star-nosed mole tunnels along in the dark using the 22 pink feelers ringing its snout. When one feeler brushes something, the mole has to check whether it is food — usually a worm — decide, and swallow it before the worm can wriggle free. This little mole holds the world record as the fastest-eating mammal on Earth. From first touch to swallowed, how long does the whole meal take?",
+    "question": "A star-nosed mole tunnels blind through wet North American soil, feeling its way with the 22 pink feelers ringing its snout. When one feeler brushes something, the mole must decide whether it is food, usually a worm, and swallow it before it can wriggle free. It holds the record as the fastest-eating mammal on Earth. From first touch to swallow, how long does a meal take?",
     "answer": "About a quarter of a second",
     "choices": [
       "About a quarter of a second",
@@ -8412,7 +8269,7 @@
   },
   {
     "tier": 4,
-    "question": "The naked mole-rat is a wrinkled, pink, buck-toothed rodent that lives in vast underground colonies beneath the deserts of East Africa. It is almost completely bald — but stiff sensory hairs run in neat rows along its flanks and tail like trip-wires. Inside its narrow, branching tunnels, those whiskers give the mole-rat one strange ability that most animals simply lack. What can a naked mole-rat do?",
+    "question": "A wrinkled, pink, buck-toothed naked mole-rat scurries through its narrow, branching tunnels beneath the deserts of East Africa. It is almost completely bald, but stiff sensory hairs run in neat rows along its flanks and tail like trip-wires. Those hairs give it one strange ability most animals lack. What can a naked mole-rat do?",
     "answer": "Reverse through a tunnel as fast as it runs forward",
     "choices": [
       "Reverse through a tunnel as fast as it runs forward",
@@ -8425,7 +8282,7 @@
   },
   {
     "tier": 4,
-    "question": "Neuroscientist Kenneth Catania filmed a hunting star-nosed mole and found its star does not sweep steadily over the ground. Instead it dabs 10 to 15 separate spots every second, jumping between individual points in quick, rapid darts. What did Catania say this rapid darting was just like?",
+    "question": "Kenneth Catania filmed a hunting star-nosed mole with high-speed cameras and saw that its star never sweeps smoothly over the soil. It dabs 10 to 15 separate spots a second, hopping between them in quick darts. What did Catania say this darting was like?",
     "answer": "The quick flicks our eyes make scanning a scene",
     "choices": [
       "The quick flicks our eyes make scanning a scene",
@@ -8438,7 +8295,7 @@
   },
   {
     "tier": 1,
-    "question": "A blue whale — the biggest animal that has ever lived on Earth — has no teeth in its mouth at all. Instead, stiff fringed plates called baleen hang down from the roof of its mouth. The whale uses them to strain tiny shrimp-like krill out of a huge gulp of seawater. That baleen turns out to be made of the exact same material as which part of your own body?",
+    "question": "Suppose you ran your hand along the inside of a blue whale's mouth. You would find no teeth, only hundreds of stiff, fringed baleen plates hanging from the upper jaw to strain krill from each gulp. Which part of your own body is made of the same material?",
     "answer": "Your fingernails",
     "choices": [
       "Your fingernails",
@@ -8450,34 +8307,8 @@
     "topic": "filter-feeding-the-ocean"
   },
   {
-    "tier": 1,
-    "question": "The blue whale swims in every ocean and is the biggest animal that has ever lived on Earth — around 30 metres long and 150 tons, heavier than any dinosaur that ever walked. Its tongue alone weighs as much as an elephant. What does this huge creature live on almost entirely?",
-    "answer": "Krill barely the size of your finger",
-    "choices": [
-      "Krill barely the size of your finger",
-      "Giant squid from the deep",
-      "Schools of tuna and mackerel",
-      "Sharks and smaller whales"
-    ],
-    "context": "The biggest animal ever built runs almost entirely on krill -- tiny shrimp-like crustaceans -- strained from the water through baleen. The largest body eats some of the smallest food. Source: American Museum of Natural History / Smithsonian Ocean, 'The Tons that Whales Eat'; Natural History Museum, 'What do blue whales eat?'  (Legend.)",
-    "topic": "filter-feeding-the-ocean"
-  },
-  {
-    "tier": 1,
-    "question": "The whale shark cruises the warm open oceans of the world with a gentle, gaping mouth several feet across. It is the biggest fish in any sea — up to about 40 feet long and 20 tons, spotted with pale dots across a dark blue-gray back. With a mouth that enormous, what does this giant actually eat?",
-    "answer": "Clouds of plankton it strains from the water",
-    "choices": [
-      "Clouds of plankton it strains from the water",
-      "Seals and sea turtles",
-      "Whole dolphins in one bite",
-      "Coral snapped off the reef"
-    ],
-    "context": "The biggest fish alive gulps in bursts, expanding its jaws to inhale an entire cloud of plankton, then strains the tiny food through comb-like gill rakers. Source: Smithsonian Ocean, 'The Massive Filter Feeding Shark You Ought to Know'; American Oceans, '3 Species of Filter Feeding Sharks'.",
-    "topic": "filter-feeding-the-ocean"
-  },
-  {
     "tier": 2,
-    "question": "A flamingo is a tall wading bird that stands on one thin leg in shallow salt lakes, filtering food out of the water with a curved beak held upside-down. Its chicks hatch a dull gray and stay that way for months — yet fully grown adults blaze bright pink. The color is not something the bird is born with, and it does not grow in on its own. Where does a flamingo's pink actually come from?",
+    "question": "A flamingo stands on one leg in a shallow salt lake, sieving its food from the water with its curved beak. Its chicks hatch a dull gray and stay that way for months, yet the grown adults blaze bright pink. The bird is not born with that color. Where does a flamingo's pink come from?",
     "answer": "Pigments in the shrimp and algae it eats",
     "choices": [
       "Pigments in the shrimp and algae it eats",
@@ -8490,7 +8321,7 @@
   },
   {
     "tier": 2,
-    "question": "A flamingo wades into the shallow water of a salty African or South American lake, then plunges its whole head upside-down under the surface to feed on tiny brine shrimp. Its bent, hook-shaped bill acts as a strainer. But the water does not just drift lazily through — something inside the flamingo's mouth actively pumps water in and out, over and over, driving it hard against the sieve. What does that pumping?",
+    "question": "Wading into a shallow, salty lake, a flamingo plunges its whole head upside down to feed on tiny brine shrimp. Its bent bill works as a strainer, and something drives the water in and out against that sieve, over and over. What does the pumping?",
     "answer": "Its thick tongue, moving like a piston",
     "choices": [
       "Its thick tongue, moving like a piston",
@@ -8503,7 +8334,7 @@
   },
   {
     "tier": 2,
-    "question": "A blue whale lunges at a school of shrimp-like krill and takes one enormous gulp — hundreds of gallons of seawater with just a scatter of krill floating in it. Hanging from the roof of its huge mouth are stiff hairy plates called baleen, the whale's food strainer. But baleen only traps the krill when water moves the right way past it. So how does the whale get rid of all that seawater and keep the food behind?",
+    "question": "A blue whale lunges at a swarm of krill and takes one enormous gulp of seawater with the krill scattered through it. Stiff, hairy baleen plates hang from the roof of its mouth as a strainer, but they trap krill only when the water moves the right way past them. How does the whale shed the seawater and keep the food?",
     "answer": "It squeezes the water back out through the plates",
     "choices": [
       "It squeezes the water back out through the plates",
@@ -8516,7 +8347,7 @@
   },
   {
     "tier": 3,
-    "question": "The blue whale is the biggest animal that has ever lived, up to 30 metres long. To feed, it drives itself sideways into a swirling swarm of thumb-sized shrimp called krill, and unfolds long pleats along its throat like a giant expanding bag. In a single lunge it takes an enormous gulp of seawater to strain krill out through the baleen plates in its mouth. How much water does one lunge engulf?",
+    "question": "Up to 30 metres long and the biggest animal that has ever lived, a blue whale drives sideways into a swirling swarm of thumb-sized krill. As it lunges, it unfolds the long pleats along its throat like a giant expanding bag, taking in one huge gulp of seawater to strain through its baleen. How much water does a single lunge engulf?",
     "answer": "More than the whale's entire body weight",
     "choices": [
       "More than the whale's entire body weight",
@@ -8529,20 +8360,7 @@
   },
   {
     "tier": 3,
-    "question": "Off the coast of Alaska, a pod of humpback whales works together to hunt herring. Swimming in a tightening circle beneath a school of fish, the whales blow steadily out through their blowholes as they spiral upward. A shimmering barrier rises around the herring and fences them into a tight ball. Then all the whales lunge up through the middle of the trap with mouths wide open. What is that rising barrier made of?",
-    "answer": "A rising net of bubbles",
-    "choices": [
-      "A rising net of bubbles",
-      "A cloud of ink",
-      "A curtain of stinging mucus",
-      "A swirl of stirred-up sand"
-    ],
-    "context": "In bubble-net feeding, humpbacks blow a spiral curtain of bubbles that fences a fish school in, then all surge up through the center together. Source: National Marine Sanctuary Foundation, 'What's Bubble Net Feeding'; National Geographic, 'How humpback whales use bubbles as a tool'.  (Legend.)",
-    "topic": "filter-feeding-the-ocean"
-  },
-  {
-    "tier": 3,
-    "question": "A giant manta ray — a huge diamond-shaped fish with a wingspan of over five meters — glides through a warm-water swarm of drifting plankton off a tropical coral reef. Sticking out from either side of its mouth are two paddle-shaped fins called cephalic lobes. Rather than just letting the plankton drift into its mouth on its own, the manta puts those two head fins to a specific job. What does it do with them?",
+    "question": "A giant manta ray, its diamond-shaped wings spanning over five meters, glides through a swarm of drifting plankton off a tropical reef. Two paddle-shaped fins called cephalic lobes stick out on either side of its mouth. Rather than letting the plankton drift in on its own, the manta puts those fins to a particular job. What does it do with them?",
     "answer": "Curls them into an O to funnel water into its mouth",
     "choices": [
       "Curls them into an O to funnel water into its mouth",
@@ -8555,7 +8373,7 @@
   },
   {
     "tier": 4,
-    "question": "Despite the name, the Antarctic crabeater seal eats almost nothing but krill -- and it may be the most abundant large wild mammal on Earth, numbering in the many millions. It strains krill using an unusual body part shaped into a built-in sieve, much like a whale's baleen in miniature. What does its sieve?",
+    "question": "An Antarctic crabeater seal, despite its name, hunts almost nothing but krill, and its kind may be the most plentiful large wild mammal on Earth, numbering in the many millions. It strains the krill from the water with one body part shaped into a sieve, like a whale's baleen in miniature. Which body part?",
     "answer": "Its bizarre interlocking lobed teeth",
     "choices": [
       "Its bizarre interlocking lobed teeth",
@@ -8568,7 +8386,7 @@
   },
   {
     "tier": 4,
-    "question": "The right whale is a slow, stocky baleen whale of the cold northern and southern oceans — once so easy for whalers to catch and float that they called it the 'right' whale to kill. It carries the longest baleen of any whale, single plates over two meters tall hanging from its upper jaw like a huge curtain. That extraordinary length matches the particular way it feeds, nothing like the fast lunging blue whale. How does a right whale gather its food?",
+    "question": "A right whale, a slow, stocky baleen whale of the cold northern and southern seas, carries the longest baleen of any whale: single plates over two meters tall hang from its upper jaw like a vast curtain. That length suits the particular way it feeds, nothing like a lunging blue whale. How does a right whale gather its food?",
     "answer": "It cruises slowly with its mouth held open",
     "choices": [
       "It cruises slowly with its mouth held open",
@@ -8580,21 +8398,8 @@
     "topic": "filter-feeding-the-ocean"
   },
   {
-    "tier": 4,
-    "question": "Necropsied right and bowhead whales are found with their baleen almost bare -- hardly any trapped krill jammed in the fringes, even after a lifetime of straining. Flume experiments overturned the old dead-end-strainer picture and showed why the rack never clogs. How does the water actually move through it?",
-    "answer": "It runs lengthwise along the inside of the rack, sweeping prey to the back",
-    "choices": [
-      "It runs lengthwise along the inside of the rack, sweeping prey to the back",
-      "It rushes straight out through the plates and cements krill into the fringes",
-      "It swirls in a slow whirlpool that spins the krill down into the throat",
-      "It is warmed and thinned so the plates can shed their catch between gulps"
-    ],
-    "context": "Bowhead and right whales use cross-flow filtration: water travels front-to-back ALONG the inside of the baleen rack rather than jamming straight through it, so prey is swept toward the back of the mouth to be swallowed and the filter self-cleans instead of clogging. That is why necropsied balaenid whales are found with their baleen nearly free of trapped prey. The finding upgrades the simpler squeeze-the-water-back-out picture by one mechanistic step -- the water flows parallel to the filter, not perpendicular through it. Source: Werth & Potvin, 'Baleen Hydrodynamics and Morphology of Cross-Flow Filtration in Balaenid Whale Suspension Feeding,' PLOS ONE, 2016 (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0150106; https://pmc.ncbi.nlm.nih.gov/articles/PMC4769178/).",
-    "topic": "filter-feeding-the-ocean"
-  },
-  {
     "tier": 5,
-    "question": "A blue whale never grows a single tooth -- it strains krill through baleen instead. Yet when biologists read its DNA, they found the whole set of instructions for building tooth enamel still sitting in the genome. What has become of those enamel-making genes?",
+    "question": "Not a single tooth ever grows in a blue whale's mouth; it strains its krill through baleen instead. Yet when biologists read its DNA, they found the instructions for building tooth enamel still sitting in its genome. What has become of those enamel-making genes?",
     "answer": "They have decayed into broken pseudogenes, silent leftovers of a toothed past",
     "choices": [
       "They have decayed into broken pseudogenes, silent leftovers of a toothed past",
@@ -8607,7 +8412,7 @@
   },
   {
     "tier": 1,
-    "question": "On a warm summer night in the American countryside, a glimmer of green-gold light drifts and blinks across the yard. The kids call the little creature a 'lightning bug' or a 'firefly.' But despite those two nicknames, this glowing insect is not actually a fly at all, and it is not a true bug either. What kind of insect is it really?",
+    "question": "A glimmer of green-gold light drifts and blinks across a country yard on a warm summer night. Children call the little creature a lightning bug or a firefly, but it is not a fly, and not a true bug either. What kind of insect is it?",
     "answer": "A beetle",
     "choices": [
       "A beetle",
@@ -8620,7 +8425,7 @@
   },
   {
     "tier": 2,
-    "question": "An old incandescent bulb burns your fingers because it throws away about 90% of its energy as wasted heat. A firefly glowing on your palm does the opposite -- its light is a 'cold light'. Almost all of the firefly's energy comes out as which of these?",
+    "question": "A firefly glowing on a person's palm makes what is called a cold light. An old incandescent bulb, by contrast, burns the fingers, because it loses about nine-tenths of its energy as heat. Almost all of the firefly's energy comes out as what?",
     "answer": "Light, with almost no heat",
     "choices": [
       "Light, with almost no heat",
@@ -8633,7 +8438,7 @@
   },
   {
     "tier": 3,
-    "question": "A firefly's glow is not a battery or a spark but a chemical reaction in its lower belly. A glowing molecule combines with oxygen and ATP (adenosine triphosphate) energy, sped along by a special enzyme. That enzyme even lent its name to the reaction. What is it called?",
+    "question": "A firefly makes its light in its lower belly, through a chemical reaction rather than a battery or a spark. There a glowing molecule combines with oxygen and ATP (adenosine triphosphate), the body's energy molecule, sped along by a special enzyme. What is that enzyme called?",
     "answer": "Luciferase",
     "choices": [
       "Luciferase",
@@ -8646,7 +8451,7 @@
   },
   {
     "tier": 2,
-    "question": "Two fireflies of the same kind are lost in a pitch-dark field, an arm's length of black grass between them, each needing to signal 'I'm your species -- come find me' across the yard. They pull it off with a back-and-forth 'conversation' that can last more than an hour. What are they using to talk?",
+    "question": "Somewhere in a pitch-dark field, a male firefly searches for a female of his own species hidden in the black grass. The two find each other through a back-and-forth conversation that can last more than an hour. What are they using to talk?",
     "answer": "Their flash patterns",
     "choices": [
       "Their flash patterns",
@@ -8658,21 +8463,21 @@
     "topic": "firefly"
   },
   {
-    "tier": 4,
-    "question": "A male Photinus firefly sees what looks like a female of his own species flashing an answer from the grass, and flies straight toward her. But the code was faked by a female of the predatory genus Photuris, a 'femme fatale'. When he lands beside her, what does she do?",
-    "answer": "She catches and eats him",
+    "tier": 3,
+    "question": "A male Photinus firefly drifts over a summer meadow at night, blinking his code; when a female of his species flashes back the answer, he lands beside her. Some nights a female of another genus, Photuris, seizes and eats the male who lands. How does she draw him in?",
+    "answer": "She fakes another firefly species' mating flash-code",
     "choices": [
-      "She catches and eats him",
-      "She lays eggs on his wings",
-      "She steals his stored light",
-      "She mates and lets him go"
+      "She fakes another firefly species' mating flash-code",
+      "She glows far brighter to blind approaching males",
+      "She releases a scent that paralyzes males mid-flight",
+      "She spins a web of light between two reeds"
     ],
     "context": "A Photuris female mimics the answering flash of a Photinus female to lure the male in, then catches and eats him. A single Photuris female can imitate the answering signals of up to three different Photinus species. Source: Lloyd, 'Aggressive Mimicry in Photuris' (PubMed 17747574); phys.org 2018. LEGEND.",
     "topic": "firefly"
   },
   {
     "tier": 4,
-    "question": "Fireflies flash coded love-signals to each other in the summer dark. A male Photinus firefly flashes his own pattern, hoping to attract a Photinus female. But a hunter — the female Photuris firefly, nicknamed the 'femme fatale' — mimics the Photinus female's answering flash, and when the male lands beside her, she eats him. She isn't just after a meal. She robs him of something she cannot make in her own body. What does devouring him give her?",
+    "question": "A female Photuris firefly catches and eats males of another firefly genus, Photinus. She gets more than a meal from them: Photinus males carry steroids called lucibufagins that her own body cannot make. What does eating them give her?",
     "answer": "Toxic chemicals that guard her from predators",
     "choices": [
       "Toxic chemicals that guard her from predators",
@@ -8685,7 +8490,7 @@
   },
   {
     "tier": 3,
-    "question": "On specific June nights, crowds hike into the Great Smoky Mountains and sit in the dark to watch Photinus carolinus do something no other firefly in North America does. Rangers run a lottery for the parking spots. What is the wonder they come to see?",
+    "question": "Crowds hike into the Great Smoky Mountains on certain June nights and sit in the dark to watch one firefly, Photinus carolinus, do something no other firefly in North America does. Rangers even run a lottery for the parking spots. What do the crowds come to see?",
     "answer": "The males all flash in perfect unison",
     "choices": [
       "The males all flash in perfect unison",
@@ -8698,7 +8503,7 @@
   },
   {
     "tier": 1,
-    "question": "A diver watches a thumb-sized cuttlefish on a sandy reef in the warm tropical waters off northern Australia. Its skin flashes bright bands of purple, yellow, and white. Every other kind of cuttlefish jets above the sand and swims through open water. This little flamboyant one never rises up into the water at all. So how does it actually get around the seabed instead?",
+    "question": "A diver watches a cuttlefish on a sandy reef in the warm waters off northern Australia, its skin flashing bands of purple, yellow and white. Most cuttlefish jet and swim through open water, but this flamboyant one does not. How does it get around?",
     "answer": "It ambles along the bottom on two arms and two fin-flaps, like legs",
     "choices": [
       "It ambles along the bottom on two arms and two fin-flaps, like legs",
@@ -8711,7 +8516,7 @@
   },
   {
     "tier": 2,
-    "question": "A cuttlefish is a soft, boneless sea creature related to the octopus and squid, with eight arms, two extra tentacles, and a body that flickers with color. Most cuttlefish are about a forearm long. The flamboyant cuttlefish, which walks the sandy sea floor off Indonesia flashing bands of purple, yellow, and white, surprises divers the moment they see one in the wild. How big does this fully grown adult get?",
+    "question": "Divers off Indonesia are surprised the moment they meet a flamboyant cuttlefish in the wild, rolling bands of purple, yellow and white across its skin. A soft-bodied cousin of the octopus and squid, it has eight arms and two extra tentacles. How big does a full-grown adult get?",
     "answer": "About 2.5 to 3 inches long, roughly half a typical cuttlefish",
     "choices": [
       "About 2.5 to 3 inches long, roughly half a typical cuttlefish",
@@ -8724,7 +8529,7 @@
   },
   {
     "tier": 3,
-    "question": "The flamboyant cuttlefish is a small tropical Indo-Pacific cuttlefish that walks along the seabed pulsing waves of bright purple, yellow and red across its skin. Those flashy colors are not camouflage — they are a warning. When researchers analyzed its muscle tissue in the lab, they found something no other cuttlefish is known to have. What was it?",
+    "question": "Purple, yellow and white flash across a flamboyant cuttlefish's skin on a tropical Indo-Pacific seabed. Those flashy colors are not camouflage; they are a warning. A report by Mark Norman of Museum Victoria found something in its muscle tissue that no other cuttlefish is known to have. What was it?",
     "answer": "A poison reportedly as lethal as a blue-ringed octopus's venom",
     "choices": [
       "A poison reportedly as lethal as a blue-ringed octopus's venom",
@@ -8737,7 +8542,7 @@
   },
   {
     "tier": 4,
-    "question": "Most kinds of cuttlefish carry a large gas-filled internal shell called a cuttlebone that keeps them hovering weightless in open water, so they swim easily. But the flamboyant cuttlefish of the tropical Pacific is stuck plodding along the seabed on the tips of its arms and fin-flaps instead of swimming. Its cuttlebone is different from every other cuttlefish's, and that difference is what ties it to the bottom. What is different about it?",
+    "question": "A flamboyant cuttlefish stays tied to the seabed while other cuttlefish hover weightless in open water, buoyed by a large internal shell called a cuttlebone that works like a float. The flamboyant one has a cuttlebone too, but it is built differently, and that difference keeps the animal on the bottom. What is different about it?",
     "answer": "It is shrunken and lacks the outer cone the others use, so it provides too little lift",
     "choices": [
       "It is shrunken and lacks the outer cone the others use, so it provides too little lift",
@@ -8750,7 +8555,7 @@
   },
   {
     "tier": 5,
-    "question": "The flamboyant cuttlefish's fame rests on one claim: that its flesh carries the same nerve poison as the blue-ringed octopus. When a second team went looking for that exact toxin in the tissue, what did they actually find, leaving the whole reputation unsettled?",
+    "question": "Mark Norman reported that the flamboyant cuttlefish's muscle held tetrodotoxin, a deadly nerve poison, and it became known as the only toxic cuttlefish. Researchers from Georgia Southern and Utah State universities later went looking for that toxin in its tissue. What did they find?",
     "answer": "Only trace tetrodotoxin, far too little to harm a vertebrate, contradicting the original report",
     "choices": [
       "Only trace tetrodotoxin, far too little to harm a vertebrate, contradicting the original report",
@@ -8763,7 +8568,7 @@
   },
   {
     "tier": 1,
-    "question": "Deep down where coral reefs slope into black water, a small fish called the flashlight fish glides through the dark. It shines a bright bluish light so strong that divers can spot the beam from over a hundred feet away — brighter than any other bony fish in the sea. Where does the flashlight fish carry that light?",
+    "question": "A flashlight fish glides through the black water where a coral reef slopes into the deep. It shines a bluish light so bright that divers can spot it from more than a hundred feet away, the brightest of any bony fish. Where does it carry that light?",
     "answer": "In a pouch under each eye",
     "choices": [
       "In a pouch under each eye",
@@ -8776,7 +8581,7 @@
   },
   {
     "tier": 2,
-    "question": "The flashlight fish is a small reef fish that carries a bright bluish glow in a pouch below each eye, strong enough to spot from over a hundred feet away in dark water. But the fish itself doesn't make that light. Something living inside the pouch produces the glow, and the fish shelters and feeds it in return. What is it?",
+    "question": "Two bluish lights blink on a dark reef at night, carried by a flashlight fish. Yet the fish does not make that light itself. Something living inside each light organ makes the glow, and the fish shelters and feeds it in return. What is it?",
     "answer": "Billions of glowing bacteria",
     "choices": [
       "Billions of glowing bacteria",
@@ -8789,7 +8594,7 @@
   },
   {
     "tier": 3,
-    "question": "A predator is hunting a lone flashlight fish in the black water. The fish blinks its light off, and in that instant the hunter loses it. Every flashlight fish goes dark to break the chase, but Morin's team saw one move that makes the hunter strike empty water. What does the fish do the moment its light vanishes?",
+    "question": "A predator closes in on a lone flashlight fish in the black water. The fish flashes, switches its light off, and in that instant the hunter loses it. Morin's team saw the fish make one move in the dark that leaves the hunter lunging at empty water. What does it do the moment its light goes out?",
     "answer": "It darts off at an angle in the dark",
     "choices": [
       "It darts off at an angle in the dark",
@@ -8802,7 +8607,7 @@
   },
   {
     "tier": 3,
-    "question": "The flashlight fish is a small reef fish that carries a pouch of glowing bacteria under each eye. Those bacteria pump out light every single second and cannot be switched off — they glow non-stop for as long as they are alive. Yet all night long the fish blinks its light on and off, flashing coded signals into the dark. How does the fish manage to go dark when its bacteria can't stop shining?",
+    "question": "All night long, a flashlight fish blinks its light on and off, flashing signals into the dark. Yet the glow inside its light organs never stops and can never be turned down. How does the fish go dark when its light cannot stop shining?",
     "answer": "It rotates the organ down into a black-lined pocket",
     "choices": [
       "It rotates the organ down into a black-lined pocket",
@@ -8815,7 +8620,7 @@
   },
   {
     "tier": 4,
-    "question": "The flashlight fish is a small nocturnal fish that swims the deep drop-offs of Pacific coral reefs at night. Under each eye it carries a large pouch stuffed with glowing bacteria that give off a steady bluish light. The fish can raise a black skin shutter over the pouch to hide the beam or drop it to shine. But the light that shines out is far brighter than those bacteria alone could ever manage — bright enough for a diver to spot from a hundred feet away. The back wall of the pouch does something to boost it. What lines that wall?",
+    "question": "On the deep drop-offs of a Pacific coral reef at night, a flashlight fish shines a steady bluish light from each of its light organs. That beam is far brighter than the glowing contents alone could manage. The back wall of each organ boosts it. What lines that wall?",
     "answer": "Mirror-like crystals that reflect the light forward",
     "choices": [
       "Mirror-like crystals that reflect the light forward",
@@ -8828,7 +8633,7 @@
   },
   {
     "tier": 4,
-    "question": "A flashlight fish patrols a Pacific coral reef at night, the twin pouches under its eyes full of glowing bacteria that give off a steady blue light. Most of the night the fish blinks its lights on and off in a pattern by dropping and raising a black skin shutter. But the moment it spots a cloud of tiny drifting plankton to eat, it stops the blinking and changes what the light does entirely. What does the fish do with its light to hunt the plankton down?",
+    "question": "Blinking its lights on and off about 90 times a minute, a flashlight fish patrols a Pacific coral reef at night. The moment it spots a cloud of tiny drifting plankton to eat, it changes what it does with the light. What does it do with its light to hunt the plankton down?",
     "answer": "Holds it steadily ON as a headlight",
     "choices": [
       "Holds it steadily ON as a headlight",
@@ -8841,7 +8646,7 @@
   },
   {
     "tier": 1,
-    "question": "A colugo is a cat-sized furry mammal of Southeast Asian rainforests. It leaps from a high branch, spreads a wide flap of skin between its legs, and coasts a long way downhill before gravity puts it back on the forest floor. That is gliding — really just falling in style. Among all the mammals on Earth, only one kind actually beats its wings to climb into the air and truly fly. Which mammals are the real flyers?",
+    "question": "A colugo, a cat-sized furry mammal of Southeast Asian rainforests, leaps from a high branch and coasts a long way down on a wide flap of skin, gliding. Only one kind of mammal beats its wings to climb into the air and truly fly. Which mammals are the true fliers?",
     "answer": "Bats",
     "choices": [
       "Bats",
@@ -8867,7 +8672,7 @@
   },
   {
     "tier": 2,
-    "question": "True flapping flight — beating wings hard enough to take off from the ground and stay up on your own power — did not appear on Earth just once. Across 350 million years, completely unrelated groups of animals each invented it from scratch, with no ancestor to show them how. Every other 'flying' animal — the flying squirrels, colugos, gliding lizards, flying fish — is really just falling in style. So how many separate times did true powered flight actually evolve?",
+    "question": "Beating its wings, a bird lifts itself off the ground under its own power: true flapping flight. Gliding lizards, flying fish, colugos and flying squirrels cannot do that; they only glide, falling in style. Over the whole history of life on Earth, how many separate times did true powered flight evolve?",
     "answer": "Four times",
     "choices": [
       "Four times",
@@ -8880,7 +8685,7 @@
   },
   {
     "tier": 2,
-    "question": "Roll the clock back about 400 million years, deep into the Carboniferous swamps. No bird has ever taken wing. No pterosaur has hatched. No bat has been born. And yet the humid air above the giant ferns already hums with wings — one group of small animals has been flying for tens of millions of years before any backboned creature will even try. Which group was the first ever to launch true powered flight?",
+    "question": "Wings already hummed through the humid air over the giant ferns of the Carboniferous swamps, about 325 million years ago. Which group of animals was the first ever to fly under its own power?",
     "answer": "Insects",
     "choices": [
       "Insects",
@@ -8892,21 +8697,8 @@
     "topic": "flight-evolved-four-separate-times"
   },
   {
-    "tier": 2,
-    "question": "Insects had been ruling the air for tens of millions of years when, in the Late Triassic — over 220 million years ago — one group of backboned animals finally broke free of the ground for the very first time. They were long-jawed, leathery-winged reptiles, and they were neither birds nor bats. They were the first of any vertebrates ever to truly fly. Which group of animals was it?",
-    "answer": "Pterosaurs",
-    "choices": [
-      "Pterosaurs",
-      "Bats",
-      "Songbirds",
-      "Owls"
-    ],
-    "context": "Pterosaurs were the first vertebrates ever to truly fly, taking to the air in the Late Triassic over 220 million years ago — beating the earliest birds into the sky by more than 60 million years. Source: Natural History Museum (UK) 'The truth about pterosaurs'; UCMP Berkeley 'Pterosaurian Flight'.",
-    "topic": "flight-evolved-four-separate-times"
-  },
-  {
     "tier": 3,
-    "question": "A bat's wing is not built like a bird's wing at all. Where a bird stretches feathers over a stiff arm, a bat stretches a thin sheet of skin between long, spread-out fingers — every wing is basically its own hand. Scientists gave bats the order-name Chiroptera, built straight from two ancient Greek words that describe what that wing really is. What does Chiroptera mean?",
+    "question": "A bat spreads its wings, and they look nothing like a bird's: no feathers laid over a stiff arm, only a thin sheet of skin stretched between long, spread fingers. Scientists named the order it belongs to Chiroptera, from two ancient Greek words that describe what that wing really is. What does Chiroptera mean?",
     "answer": "Hand-wing",
     "choices": [
       "Hand-wing",
@@ -8919,33 +8711,7 @@
   },
   {
     "tier": 3,
-    "question": "A pterosaur did not spread its wing across a whole hand the way a bat does. Its skin wing hung from a bony support running longer than its entire forearm, stretching from the body all the way down to the legs. Which part of its body held up the whole wing?",
-    "answer": "One enormously elongated fourth finger",
-    "choices": [
-      "One enormously elongated fourth finger",
-      "The full set of five fingers",
-      "The upper arm bone alone",
-      "A long spur off the ankle"
-    ],
-    "context": "A pterosaur flew on ONE gigantic finger: its fourth finger, stretched longer than its whole forearm, with the main skin wing (brachiopatagium) hanging off that single 'wing-finger' down to the legs. The other three fingers stayed small and clawed for walking. Source: Wikipedia 'Anatomy of pterosaurs'; Tokita 2015 'How the pterosaur got its wings'.  (Legend.)",
-    "topic": "flight-evolved-four-separate-times"
-  },
-  {
-    "tier": 3,
-    "question": "In the Late Cretaceous skies over what is now North America, roughly 70 million years ago, cruised the largest flying animal that has ever lived. It stood as tall at the head as a giraffe, spread its wings wider than a small airplane — 33 to 36 feet across — and flew on a single enormously elongated wing-finger of bone and skin. Name this giant pterosaur.",
-    "answer": "Quetzalcoatlus",
-    "choices": [
-      "Quetzalcoatlus",
-      "Meganeuropsis",
-      "Archaeopteryx",
-      "Delitzschala"
-    ],
-    "context": "Quetzalcoatlus was the single biggest flying animal ever — about 12 feet tall at the head, with a wingspan of roughly 33–36 feet — yet it flew on one elongated fourth finger. Source: Britannica 'Quetzalcoatlus'; UC Berkeley News 2021.  (Legend.)",
-    "topic": "flight-evolved-four-separate-times"
-  },
-  {
-    "tier": 3,
-    "question": "Down the middle of a bird's chest runs a special breastbone with a deep blade of bone sticking straight out of it, called the keel — shaped a bit like the keel that runs down the bottom of a sailboat. A strong flyer like a pigeon has a huge one. A flightless ostrich, which spends its life running on the ground, has almost none. Why does powered flight demand a big keel?",
+    "question": "A pigeon carries a deep ridge of bone sticking straight out from the middle of its breastbone, the keel, shaped a little like the keel along the bottom of a sailboat. Strong fliers like the pigeon have a big one; a flightless ostrich, which spends its life running, has almost none. Why does powered flight demand a big keel?",
     "answer": "It anchors the powerful flight muscles",
     "choices": [
       "It anchors the powerful flight muscles",
@@ -8958,7 +8724,7 @@
   },
   {
     "tier": 4,
-    "question": "A bird's keel anchors two big flight muscles, and oddly BOTH of them sit low on the chest, below the wing. One is the pectoralis; the other is the supracoracoideus. What job does the supracoracoideus do, and how can a muscle down on the chest manage it?",
+    "question": "A bird flaps with two big flight muscles, and oddly both of them sit down low on its chest, below the wing. One is the pectoralis; the other is the supracoracoideus. What job does the supracoracoideus do, and how can a muscle down on the chest manage it?",
     "answer": "Raises the wing for the recovery stroke, using a bony pulley over the shoulder",
     "choices": [
       "Raises the wing for the recovery stroke, using a bony pulley over the shoulder",
@@ -8971,7 +8737,7 @@
   },
   {
     "tier": 4,
-    "question": "Pterosaurs, bats, and birds are not close cousins, yet all three built a wing out of the very same body part, inherited unchanged from a shared four-legged ancestor. Each lineage then stretched a different piece of it, ending up with three wings that look nothing alike. Which starting part did all three rebuild into a wing?",
+    "question": "Pterosaurs built their wings from the same body part that birds and bats use for theirs, though the three lines are only distant relatives and the wings look nothing alike. Each line inherited that part from a shared four-legged ancestor and stretched a different piece of it. Which part did all three rebuild into a wing?",
     "answer": "The forelimb",
     "choices": [
       "The forelimb",
@@ -8984,7 +8750,7 @@
   },
   {
     "tier": 4,
-    "question": "A bat's wing is a webbed hand: hold it up to the light and thin bones fan out through the skin like the spokes of an umbrella. Those spokes are the bat's own finger bones, stretched out enormously. How many of the bat's finger bones does the wing skin spread between?",
+    "question": "Against the light, a bat's open wing shows thin bones fanning out through the skin like the ribs of an umbrella. Those ribs are the bat's own finger bones, stretched out enormously. How many of its finger bones does the wing skin spread between?",
     "answer": "Four finger bones",
     "choices": [
       "Four finger bones",
@@ -8997,20 +8763,7 @@
   },
   {
     "tier": 5,
-    "question": "Bird flyers run and jump into the air, so for years nobody could explain how a giraffe-tall azhdarchid pterosaur left the ground at all -- some argued a beast that heavy barely flew. Then Michael Habib noticed its arm bone was far stronger than its leg bone, the reverse of any bird, and proposed the launch that fits that skeleton. How did the giant get airborne?",
-    "answer": "It pole-vaulted off all four limbs, hurling itself up on its folded arms",
-    "choices": [
-      "It pole-vaulted off all four limbs, hurling itself up on its folded arms",
-      "It sprinted across open ground until its wings caught enough lift",
-      "It climbed a cliff and dropped into a glide until the wings bit air",
-      "It hung from branches and fell free until the downstroke took hold"
-    ],
-    "context": "This is Habib's 'quadrupedal launch' hypothesis (Habib 2008, Zitteliana B28). A giant like Quetzalcoatlus crouched on all fours and vaulted, using its folded, super-strong forelimbs to throw its whole ~250 kg body into the air in one explosive push -- roughly 5 kilonewtons of force over about 0.6 second -- before the wings snapped open on the first downstroke. The clinching evidence: in pterosaurs the forelimb (humerus) is stronger in bending than the hindlimb (femur), the exact reverse of birds, which are bipedal hindlimb launchers. It stays a live debate -- David Unwin and others argue the very largest pterosaurs could barely fly, so the quad-launch is the mechanism that keeps them in the sky at all. Source: Scientific American 'How Pterosaurs First Took Flight'; Smithsonian Magazine; Habib 2008 'Comparative evidence for quadrupedal launch in pterosaurs', Zitteliana B28.",
-    "topic": "flight-evolved-four-separate-times"
-  },
-  {
-    "tier": 5,
-    "question": "A housefly beats its wings about 200 times a second, and a mosquito faster still — quicker than any nerve can fire even one signal per wingbeat. So the fly's brain cannot possibly command each stroke by a nerve pulse, the way your brain fires a signal to move your hand. Something else must be driving the blur of a fly's wings. What actually powers each rapid wingbeat?",
+    "question": "A housefly beats its wings about 200 times a second, and a mosquito faster still, quicker than any nerve can fire one signal per stroke. So the fly's brain cannot drive each wingbeat with its own nerve pulse, the way a person's brain moves a hand. Something else keeps the blur of its wings going. What powers each rapid wingbeat?",
     "answer": "Two muscle sheets stretch and re-fire each other, ringing the thorax like a bell",
     "choices": [
       "Two muscle sheets stretch and re-fire each other, ringing the thorax like a bell",
@@ -9023,7 +8776,7 @@
   },
   {
     "tier": 1,
-    "question": "High in the rainforest canopy of Southeast Asia lives a small green-and-black tree snake called the flying snake, or Chrysopelea. Instead of climbing all the way down one tree and back up the next, it travels straight from treetop to treetop through open air — with no wings, no flaps, and no limbs of any kind. How does the flying snake cross the gap?",
+    "question": "A small green-and-black tree snake, Chrysopelea, travels from treetop to treetop in the rainforest canopy of Southeast Asia without climbing down one trunk and up the next. It crosses open air with no wings, no flaps and no limbs. How does it cross the gap?",
     "answer": "It flattens its whole body into a ribbon and glides",
     "choices": [
       "It flattens its whole body into a ribbon and glides",
@@ -9036,7 +8789,7 @@
   },
   {
     "tier": 2,
-    "question": "The flying snake, Chrysopelea, is a small tree snake of Southeast Asia that glides through the air from one treetop to another with no wings at all. Scientists set up high-speed cameras and filmed one snake launching into a glide 239 separate times. In almost every single launch it began the exact same way. What did the snake do just before it left the branch?",
+    "question": "Biologists at Virginia Tech trained high-speed cameras on a flying snake, Chrysopelea, and filmed it launching itself from a branch into the air 239 times. In 177 of the 239, nearly three in four, it started the exact same way. What did the snake do just before it left the branch?",
     "answer": "Hung down and lifted its head into a 'J,' then sprang up and out",
     "choices": [
       "Hung down and lifted its head into a 'J,' then sprang up and out",
@@ -9049,7 +8802,7 @@
   },
   {
     "tier": 2,
-    "question": "In the tropical rainforests of Southeast Asia lives the paradise tree snake, one of a small group of serpents known as flying snakes. Along a branch it looks like an ordinary rope — round in cross-section. But the instant it leaps from a high treetop and goes airborne, it changes that shape so the body itself can catch air and generate lift. What does it turn its cross-section into?",
+    "question": "A paradise tree snake, one of the flying snakes of Southeast Asia's rainforests, looks like an ordinary rope lying along a branch, round in cross-section. The instant it leaps from a high treetop and goes airborne, it changes that shape so its body can catch the air and make lift. What does it turn its cross-section into?",
     "answer": "A flattened, semicircular shape, slightly hollow underneath",
     "choices": [
       "A flattened, semicircular shape, slightly hollow underneath",
@@ -9062,7 +8815,7 @@
   },
   {
     "tier": 3,
-    "question": "A flying snake is a slender tree snake from the rainforests of Southeast Asia. To travel between trees, it launches from a high branch and glides through the air. You'd expect a gliding animal to hold itself rigid and still. But this snake bends into a wide 'S' shape and keeps sweeping side to side, like a swimmer, for the entire glide. Why does it never stop moving in the air?",
+    "question": "A flying snake launches from a high branch in a Southeast Asian rainforest and sails toward another tree. A gliding animal might be expected to hold itself rigid and still, but this snake bends into a wide S and keeps sweeping from side to side, like a swimmer, the whole way down. Why does it never stop moving in the air?",
     "answer": "The constant motion keeps it from tumbling and spinning out",
     "choices": [
       "The constant motion keeps it from tumbling and spinning out",
@@ -9075,7 +8828,7 @@
   },
   {
     "tier": 1,
-    "question": "On land, your eye focuses mostly at the cornea, the clear dome at the front, where light bends sharply crossing from air into the eye. A fish underwater has a strange problem: this cornea has stopped working. Why did water switch off the fish cornea?",
+    "question": "A fish swims with eyes whose clear front dome, the cornea, does almost no focusing at all. On land the cornea does most of an eye's focusing, bending light hard as it crosses from air into the eye. Why does water switch the fish's cornea off?",
     "answer": "Water bends light almost as much as the cornea does, leaving it little to do",
     "choices": [
       "Water bends light almost as much as the cornea does, leaving it little to do",
@@ -9088,7 +8841,7 @@
   },
   {
     "tier": 1,
-    "question": "With its cornea switched off underwater, a fish must bend incoming light with its lens alone. To bend light that strongly, a fish lens takes a shape you would never find in a land animal eye. If you plucked out a fish lens and set it on the table, what would it look like?",
+    "question": "Underwater, a fish must bend incoming light with its lens alone, and bend it far more strongly than any land animal's lens has to. To do that, the fish's lens takes a shape never found in a land animal's eye. What does a fish's lens look like?",
     "answer": "A hard, near-perfect glass-clear ball",
     "choices": [
       "A hard, near-perfect glass-clear ball",
@@ -9101,7 +8854,7 @@
   },
   {
     "tier": 2,
-    "question": "A human focuses by squeezing the soft lens in the eye fatter for near things, thinner for far. A fish lens cannot do that: it is a hard, rigid ball. So when a fish switches its gaze from a distant shape to a shrimp right in front of its nose, how does it pull the new target into focus?",
+    "question": "Shifting its gaze from a distant shape to a shrimp right in front of its nose, a fish must bring the shrimp into focus. A person would squeeze the soft lens in the eye fatter to focus up close, but a fish's lens is rigid and cannot change shape. How does the fish do it?",
     "answer": "It slides the whole lens back and forth, like a slide-projector lens",
     "choices": [
       "It slides the whole lens back and forth, like a slide-projector lens",
@@ -9114,7 +8867,7 @@
   },
   {
     "tier": 3,
-    "question": "A fish focuses by sliding its whole rigid lens back and forth with a tiny muscle anchored to the iris. Here is the counterintuitive part: with that muscle relaxed, the fish eye is already set to see things up close. To snap a far-off shape into sharp focus, which way must the muscle drag the lens?",
+    "question": "A tiny muscle anchored to the iris focuses a fish's eye by pulling on its rigid lens. With that muscle relaxed, the fish's eye is already set to see things up close. To bring a far-off shape into sharp focus, which way must the muscle drag the lens?",
     "answer": "Backward, toward the retina at the rear of the eye",
     "choices": [
       "Backward, toward the retina at the rear of the eye",
@@ -9127,7 +8880,7 @@
   },
   {
     "tier": 3,
-    "question": "An octopus is a boneless mollusk -- closer kin to a snail or a clam than to any fish. Yet its eye is a full picture-forming eye: a clear round lens that the octopus focuses by sliding it forward and back inside the eyeball. That is almost exactly how a fish eye works. How did an animal so unrelated to fish end up with what looks essentially like a fish eye?",
+    "question": "An octopus, a boneless mollusk closer kin to a snail or a clam than to any fish, looks out on the world through a full picture-forming eye. Its clear round lens focuses much the way a fish's does, and the whole eye is almost a copy of a fish's. How did an animal so unrelated to fish end up with what looks like a fish's eye?",
     "answer": "The two lineages each invented the same camera eye entirely on their own",
     "choices": [
       "The two lineages each invented the same camera eye entirely on their own",
@@ -9140,7 +8893,7 @@
   },
   {
     "tier": 4,
-    "question": "Take a perfect clear glass ball and try to focus an image through it and you get a blurry mess: rays skimming the edge bend to a different point than rays through the middle, so they never meet. A fish lens is exactly that shape, a perfect ball, yet it throws a razor-sharp image onto the retina. What trick lets the fish ball-lens do what a plain glass ball cannot?",
+    "question": "A fish's ball-shaped lens throws a razor-sharp image onto its retina, though a plain glass ball of the same shape makes a blurry mess: rays skimming the edge bend to a different point than rays through the middle. What lets the fish's lens do what the glass ball cannot?",
     "answer": "Its center is far denser than its rim, so every ray bends to a single point",
     "choices": [
       "Its center is far denser than its rim, so every ray bends to a single point",
@@ -9153,7 +8906,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1880s, Ludwig Matthiessen measured eyes in goldfish, tuna, and sharks, expecting each species to have its own design. But the same tidy number turned up in every one, and it is now called Matthiessen's ratio. So a biologist today can measure only the width of a dead fish's ball-lens and instantly predict what feature of its eye?",
+    "question": "Ludwig Matthiessen studied fish eyes in the 1880s, from goldfish to tuna and sharks, expecting each species to have its own design. Instead the same tidy number turned up in every one, now called Matthiessen's ratio. By measuring only the size of a fish's lens, what can a biologist predict about its eye?",
     "answer": "How far behind the lens its retina must sit",
     "choices": [
       "How far behind the lens its retina must sit",
@@ -9166,7 +8919,7 @@
   },
   {
     "tier": 5,
-    "question": "Nearly every eye focuses with a lens, whether a sliding fish ball or a squeezed land disc. Deep in the ocean the barreleye Rhynchohyalus grows a side-pocket off its tubular eye and forms a bright, sharp image of the water below onto a second retina. What is doing the focusing in that pocket?",
+    "question": "Deep in the ocean, a barreleye called Rhynchohyalus grows a side pocket off each of its tube-shaped eyes, and the pocket casts a bright, sharp picture of the dark water below onto a second retina. Nearly every other eye focuses with a lens. What does the focusing in that pocket?",
     "answer": "A curved mirror of crystal, reflecting the image instead of bending it",
     "choices": [
       "A curved mirror of crystal, reflecting the image instead of bending it",
@@ -9179,7 +8932,7 @@
   },
   {
     "tier": 1,
-    "question": "The island of Madagascar sits off the east coast of Africa, and its rainforests have no lions, tigers, or leopards — no big cats at all. Yet a sleek, reddish-brown hunter with a long tail and a cat-like face leaps between branches high in the treetops, chasing lemurs for prey. It sits at the very top of Madagascar's food chain. Which animal is Madagascar's apex predator?",
+    "question": "A sleek, reddish-brown hunter with a long tail and a cat-like face leaps between branches high in a Madagascar rainforest, chasing lemurs. The island has no big cats at all, and this animal sits at the top of its food chain. Which animal is it?",
     "answer": "The fossa",
     "choices": [
       "The fossa",
@@ -9192,7 +8945,7 @@
   },
   {
     "tier": 2,
-    "question": "A lemur bolts up a tree from a hunting fossa, banking on the head start it gets whenever a cat-like predator loses ground scrambling around the trunk. This time it doesn't work — the fossa stays glued to the chase. What can this predator's body do that a cat's cannot?",
+    "question": "A lemur fleeing through the trees usually gains time whenever a predator chasing it loses ground coming down a trunk. A fossa on its trail gives it no such break. What can the fossa's body do that a cat's cannot?",
     "answer": "Run straight down the trunk head-first",
     "choices": [
       "Run straight down the trunk head-first",
@@ -9205,7 +8958,7 @@
   },
   {
     "tier": 3,
-    "question": "On the island of Madagascar, off the east coast of Africa, prowls a slender cougar-shaped predator called the fossa. It hunts lemurs high in the trees, climbs like a cat, and looks like a small mountain lion — yet it is not a cat at all. It descends from a single meat-eating ancestor that drifted across the sea to Madagascar millions of years ago. Which living animals are its closest relatives?",
+    "question": "A slender, cougar-shaped fossa hunts lemurs high in the trees of Madagascar, climbing like a cat and looking like a small mountain lion, yet it is not a cat at all. Its family traces back to one meat-eating ancestor that reached the island about 21 million years ago. Which living animals are its closest relatives?",
     "answer": "Mongooses",
     "choices": [
       "Mongooses",
@@ -9322,7 +9075,7 @@
   },
   {
     "tier": 1,
-    "question": "Most fish glide through open water by rippling their bodies and beating their tails. But the frogfish, a lumpy ambush predator that lives on the seabed, hardly swims at all. Instead, it gets around the reef floor by:",
+    "question": "A frogfish, a lumpy ambush hunter of the reef, sits on the seabed while other fish glide past through open water, rippling their bodies and beating their tails. The frogfish hardly swims at all. How does it get around the reef floor?",
     "answer": "Walking across the bottom on its arm-like fins, one after another",
     "choices": [
       "Walking across the bottom on its arm-like fins, one after another",
@@ -9335,7 +9088,7 @@
   },
   {
     "tier": 1,
-    "question": "On a coral reef, a lumpy fish about the size of your fist sits pressed against the corals, painted in the very same colours as the reef around it. This is a frogfish, one of the sea's finest ambush hunters. It never chases anything. And yet small fish keep swimming right up to its huge mouth, as if drawn in on a string. What trick does the frogfish use to pull curious prey into striking range?",
+    "question": "A fist-sized frogfish sits pressed against a coral reef, painted in the reef's own colors. It never chases anything, yet small fish keep swimming right up to its huge mouth. What trick draws them into striking range?",
     "answer": "It waves a built-in fishing rod tipped with a wriggling, worm-like lure",
     "choices": [
       "It waves a built-in fishing rod tipped with a wriggling, worm-like lure",
@@ -9348,7 +9101,7 @@
   },
   {
     "tier": 2,
-    "question": "A frogfish is a lumpy, ambush-hunting fish that squats disguised on the coral reef floor. On top of its head grows a little fleshy rod — a built-in fishing lure it wiggles to draw curious prey close before engulfing the victim in a lightning-fast gulp. But sometimes a prey fish is too quick and bites the bait clean off. Left without its lure, what happens to the frogfish over the following months?",
+    "question": "Squatting disguised on the coral reef floor, a frogfish fishes for prey with the fleshy bait it grows on its own head. Sometimes a prey fish is too quick and bites the bait clean off. Left without its lure, what happens to the frogfish over the months that follow?",
     "answer": "It slowly regrows a brand-new lure over about four to six months",
     "choices": [
       "It slowly regrows a brand-new lure over about four to six months",
@@ -9361,7 +9114,7 @@
   },
   {
     "tier": 2,
-    "question": "A human eye-blink lasts about three hundred milliseconds, gone before you notice. When prey drifts close, the frogfish's mouth flies open and swallows it in one suck, and biologists clocked the fastest feeding strike ever measured in a fish. How long did that strike take?",
+    "question": "Suppose you blinked just as a frogfish struck at a passing fish. Your blink would last about three hundred milliseconds. The frogfish's mouth flies open and sucks in its prey in the fastest feeding strike ever measured in a fish. How long does that strike take?",
     "answer": "About six milliseconds — fifty times quicker than your blink",
     "choices": [
       "About six milliseconds — fifty times quicker than your blink",
@@ -9374,7 +9127,7 @@
   },
   {
     "tier": 3,
-    "question": "A frogfish strike isn't a bite — it's a vacuum. In a fraction of a second the floor of its mouth drops and the whole cavity balloons outward, and the sudden empty space sucks in the prey along with a torrent of water. To generate suction that violent, how far must that cavity swell from its resting size?",
+    "question": "A small fish drifts within reach of a frogfish. In a fraction of a second the floor of the frogfish's mouth drops and the whole cavity swells outward, and the sudden empty space sucks in the prey along with a torrent of water. To make suction that violent, how far must the cavity swell from its resting size?",
     "answer": "It balloons to about twelve times its resting size",
     "choices": [
       "It balloons to about twelve times its resting size",
@@ -9387,7 +9140,7 @@
   },
   {
     "tier": 3,
-    "question": "A frogfish is a lumpy, camouflaged reef fish about the size of your fist that sits perfectly still and waits for prey to swim right up to its mouth. Look inside that mouth and you'll find something surprising: no teeth at all. Because of this, every meal must go down whole in one gulp. Thanks to that toothless swallow, the frogfish can pull off a feat that would be impossible for most predators. What can a frogfish do when it catches a large victim?",
+    "question": "Perfectly still on the reef, a frogfish waits for prey to swim right up to its mouth. It has no teeth at all, so every meal goes down whole in a single gulp. That toothless swallow lets it pull off a feat most predators cannot. What can a frogfish do when it catches a large victim?",
     "answer": "Swallow a fish as big as or bigger than itself by stretching its stomach",
     "choices": [
       "Swallow a fish as big as or bigger than itself by stretching its stomach",
@@ -9400,7 +9153,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2008 divers off Indonesia found a frogfish so strange it was named a new species: the psychedelic frogfish. Beyond its swirling colors, it moves in a way no other frogfish does — it doesn't swim, and it doesn't even walk normally. How does the psychedelic frogfish get around?",
+    "question": "Divers off Indonesia found a frogfish in 2008 so strange that it was named a new species, the psychedelic frogfish. Beyond its swirling colors, it moves in a way no other frogfish does. How does the psychedelic frogfish get around?",
     "answer": "It bounces along the bottom like an inflated rubber ball",
     "choices": [
       "It bounces along the bottom like an inflated rubber ball",
@@ -9413,7 +9166,7 @@
   },
   {
     "tier": 1,
-    "question": "The tawny frogmouth is a stocky night bird from the forests of Australia — brown, mottled, and about the size of a small owl. By day it hides in plain sight on a tree limb. It perches lengthwise along the branch, stiffens its whole body, points its short beak straight upward, and narrows its yellow eyes to thin slits. What does the frozen bird end up looking like?",
+    "question": "A tawny frogmouth, a stocky, mottled night bird the size of a small owl, hides in plain sight in an Australian forest by day. It lies lengthwise along a limb, stiffens, points its short beak straight up and squeezes its eyes to thin slits. What does the frozen bird look like?",
     "answer": "A broken-off branch stub",
     "choices": [
       "A broken-off branch stub",
@@ -9426,7 +9179,7 @@
   },
   {
     "tier": 2,
-    "question": "The tawny frogmouth hunts at night and has soft, streaky plumage much like an owl's, so people constantly mistake it for one. Its round eyes and hooked bill sell the disguise, but its true family lies elsewhere. Which group of night birds does it actually belong with?",
+    "question": "People constantly mistake the tawny frogmouth for an owl: it hunts at night in soft, streaky plumage much like an owl's, and its round eyes complete the look. Its true family lies elsewhere. Which group of night birds does it belong with?",
     "answer": "Nightjars and their relatives",
     "choices": [
       "Nightjars and their relatives",
@@ -9439,7 +9192,7 @@
   },
   {
     "tier": 2,
-    "question": "The tawny frogmouth is a stocky Australian night bird that hunts insects and small prey after dark. An owl seizes its prey with powerful gripping talons — but the frogmouth has weak little feet that could never do that job. So it must catch every meal with its bill instead. Which bill shape does the frogmouth use to snap up a large insect or spider?",
+    "question": "After dark in an Australian forest, a tawny frogmouth hunts insects and small prey. An owl seizes its prey with powerful gripping talons, but the frogmouth's weak little feet could never do that job, so its bill must do all the catching. What shape of bill does it use to snap up a big insect or a spider?",
     "answer": "A wide, forward-facing scooping gape",
     "choices": [
       "A wide, forward-facing scooping gape",
@@ -9452,7 +9205,7 @@
   },
   {
     "tier": 3,
-    "question": "By day, the tawny frogmouth — a stocky Australian night bird — disguises itself as a broken branch stub, freezing stiff along a tree limb with its beak pointed skyward. But now the trick has failed. A hawk has spotted the bird, and the frogmouth is cornered with nowhere to run. It abandons the still, stiff act entirely and does the exact opposite. What is its last-ditch move?",
+    "question": "By day a tawny frogmouth freezes stiff along a tree limb, its beak pointed at the sky, hiding in plain sight. Now the trick has failed: a hawk has spotted the bird, and the frogmouth is cornered with nowhere to go. It drops the still act and does the exact opposite. What is its last-ditch move?",
     "answer": "It throws its mouth wide open, hisses, and puffs up big",
     "choices": [
       "It throws its mouth wide open, hisses, and puffs up big",
@@ -9465,7 +9218,7 @@
   },
   {
     "tier": 1,
-    "question": "The Gaboon viper of central Africa's rainforest floor is one of the heaviest snakes in the world, thick as a man's arm — and its fangs are the longest of any snake, up to two inches long, longer than the height of its own closed mouth. If the fangs stayed rigid they would jut out and pierce the lower jaw. So how does this thick, slow snake pack them away between strikes?",
+    "question": "A Gaboon viper lies on the leaf-littered floor of a central African rainforest. Its fangs are the longest of any snake, about 5 centimeters (2 inches), and if they stood upright they would pierce its own lower jaw. How does it pack them away between strikes?",
     "answer": "The fangs are hinged, folding flat against the roof of the mouth",
     "choices": [
       "The fangs are hinged, folding flat against the roof of the mouth",
@@ -9478,7 +9231,7 @@
   },
   {
     "tier": 2,
-    "question": "The Gaboon viper — a huge, heavy African rainforest snake with the longest fangs of any snake — can lie fully out in the open on the forest floor and stay almost impossible to spot. Its broad, flat, triangular head is the key to the trick. Predators and prey walk past it every day without noticing it is there. What does the head look like?",
+    "question": "Lying fully exposed on the African rainforest floor, a huge, heavy Gaboon viper can still be almost impossible to spot. Its broad, flat, triangular head is the key to the trick, and predators and prey walk past it every day without noticing. What does the head look like?",
     "answer": "A fallen leaf, complete with a vein-like line down the middle",
     "choices": [
       "A fallen leaf, complete with a vein-like line down the middle",
@@ -9491,7 +9244,7 @@
   },
   {
     "tier": 3,
-    "question": "A single bite from an inland taipan, the world's most toxic snake drop for drop, delivers only about 44 to 110 mg of venom. The Gaboon viper (Bitis gabonica) wins a different way, on sheer volume. How much dried venom has a single Gaboon milking drained?",
+    "question": "An inland taipan carries the most toxic venom of any snake, drop for drop, yet one bite delivers only about 44 to 110 mg of it. The Gaboon viper of central Africa wins a different way, on sheer volume. How much dried venom has one milking of a Gaboon viper yielded?",
     "answer": "About 2,400 mg from one milking — dozens of taipan bites' worth",
     "choices": [
       "About 2,400 mg from one milking — dozens of taipan bites' worth",
@@ -9504,7 +9257,7 @@
   },
   {
     "tier": 3,
-    "question": "Deep in the leaf litter of the African rainforest lies the Gaboon viper (Bitis gabonica) — a heavy-bodied snake with the longest fangs of any venomous serpent on Earth. It has waited buried under the leaves for hours, still as stone, until at last a rat steps over it and the viper strikes. In the seconds right after the fangs go in, it does the very thing that sets it apart from most other vipers. What happens next?",
+    "question": "Buried under the leaves of an African rainforest, a Gaboon viper has lain still as stone for hours when at last a rat steps over it and the viper strikes. In the seconds after its fangs go in, it does the very thing that sets it apart from most other vipers. What happens next?",
     "answer": "It clamps down and holds the rat fast until the venom finishes it",
     "choices": [
       "It clamps down and holds the rat fast until the venom finishes it",
@@ -9517,7 +9270,7 @@
   },
   {
     "tier": 1,
-    "question": "Somewhere in the pitch-black deep sea near Antarctica drifts the colossal squid, an enormous many-armed hunter that lives thousands of feet beneath the waves. This creature has the largest eye of any animal ever known — bigger than any dinosaur's eye, bigger than any whale's or fish's. About how big is a colossal squid eye?",
+    "question": "Thousands of feet down in the pitch-black sea near Antarctica drifts the colossal squid, an enormous many-armed hunter. It has the largest eye of any animal ever known, bigger than any whale's, fish's or dinosaur's. About how big is a colossal squid's eye?",
     "answer": "The size of a basketball",
     "choices": [
       "The size of a basketball",
@@ -9530,7 +9283,7 @@
   },
   {
     "tier": 2,
-    "question": "Fishermen and sailors have told stories of a monster in the deep sea for centuries. When a female giant squid is finally laid out on a dock, she measures about 13 metres (43 ft) from the tip of her tail-fin to the tip of her longest tentacle — longer than a school bus. But that headline length turns out to be a bit of a cheat. Where does most of that measured length actually come from?",
+    "question": "Stretched out on a dock, a female giant squid measures about 13 metres (43 ft) from the tip of her tail fin to the tip of her longest tentacle, longer than a school bus. That headline length is a bit of a cheat. Where does most of it come from?",
     "answer": "Two long feeding tentacles, around 10 metres by themselves",
     "choices": [
       "Two long feeding tentacles, around 10 metres by themselves",
@@ -9543,7 +9296,7 @@
   },
   {
     "tier": 2,
-    "question": "The colossal squid — a huge deep-sea hunter with eight arms and two long tentacle clubs — is the only member of its whole squid family with a special weapon its cousins lack. This weapon lines both its arms and the tentacle clubs it fires out to grab prey, letting it hold onto slippery deep-sea fish that would otherwise slide free. What arms it?",
+    "question": "Hunting in the deep with eight arms and two long tentacle clubs, a colossal squid carries a weapon that no other member of its squid family has. It lets the squid keep its grip on slippery deep-sea fish that would otherwise slide free. What is the weapon?",
     "answer": "Rows of sharp hooks, mixed among its suckers",
     "choices": [
       "Rows of sharp hooks, mixed among its suckers",
@@ -9556,7 +9309,7 @@
   },
   {
     "tier": 2,
-    "question": "Sperm whales are the largest toothed animals on Earth, and they dive more than a mile straight down into the pitch-dark deep sea to hunt. Old sperm whales that biologists examine come to the surface scarred like old veterans — their giant heads and flanks ringed with pale circular marks the size of dinner plates. Those rings are direct evidence of a battle fought thousands of metres down in the dark. What made them?",
+    "question": "A sperm whale comes up from a hunting dive more than a mile down in the dark, its head and flanks ringed with pale circles the size of dinner plates. The oldest whales carry so many that they look like scarred old veterans. What made the rings?",
     "answer": "The sucker rings of giant squid gripping the whale",
     "choices": [
       "The sucker rings of giant squid gripping the whale",
@@ -9569,7 +9322,7 @@
   },
   {
     "tier": 3,
-    "question": "In February 2007, a New Zealand toothfish boat called the San Aspiring was fishing in the icy waters of the Ross Sea, off Antarctica. As the crew hauled their longline up from 1,500 metres down, they landed the heaviest colossal squid ever measured — a monster of 495 kg. Yet the giant squid itself had never actually been hooked. What let the crew accidentally bring the whole animal all the way up to the surface?",
+    "question": "The crew of the San Aspiring, a New Zealand toothfish boat, was hauling a longline up from 1,500 metres down in the icy Ross Sea, off Antarctica, in February 2007 when they landed a 495 kg colossal squid, the heaviest ever measured. Yet the squid itself had never taken a hook. What let the crew bring the whole animal up to the surface?",
     "answer": "It had seized a hooked toothfish and would not let go",
     "choices": [
       "It had seized a hooked toothfish and would not let go",
@@ -9582,13 +9335,13 @@
   },
   {
     "tier": 4,
-    "question": "An eye the size of a basketball seems like overkill — for spotting prey up close in seawater, an eye bigger than an orange is wasted effort. So a 2012 study by Dan-Eric Nilsson asked what such a giant eye is actually FOR. The answer: it is tuned to catch one specific, faint thing in the dark.",
+    "question": "A colossal squid stares into the black deep through the largest eye ever measured, its lens alone as big as an orange. For spotting prey close by, an eye that big would seem like overkill. Dan-Eric Nilsson and Eric Warrant argued in 2012 that the eye is built to catch one faint signal in the dark. What is it?",
     "answer": "The glow of plankton stirred up by an approaching sperm whale",
     "choices": [
       "The glow of plankton stirred up by an approaching sperm whale",
-      "The body heat radiating off warm-blooded prey",
-      "The magnetic field lines it uses to navigate",
-      "The last sunlight filtering down from the surface"
+      "The blue-green flashes of the bioluminescent prey it hunts",
+      "The lantern lures of anglerfish hanging in the dark below it",
+      "The glow of a passing shoal of lanternfish drifting overhead"
     ],
     "context": "When a sperm whale swims, it disturbs tiny bioluminescent plankton that glow in its wake. Nilsson's team (Current Biology, 2012) showed the squid's enormous eyes are built to detect that faint glow — spotting an oncoming whale from about 120 metres, a football-field away, in time to flee. Source: https://www.nationalgeographic.com/animals/article/120315-giant-squid-eyes-basketball-whales-nilsson-science  (Legend.)",
     "topic": "giant-and-colossal-squid"
@@ -9608,7 +9361,7 @@
   },
   {
     "tier": 5,
-    "question": "To flee a sperm whale a squid fires its whole mantle in one convulsive jet, so the escape signal must reach the muscles almost instantly. Evolution built a nerve so freakishly enlarged that in 1952 two scientists could thread electrodes right inside it and record from within. How is that pathway built?",
+    "question": "A squid fleeing a sperm whale fires its whole mantle in one convulsive jet, so the escape signal must reach the muscles almost instantly. The nerve that carries it is so enlarged that Alan Hodgkin and Andrew Huxley threaded electrodes right inside one in 1952 and recorded from within. How is that nerve pathway built?",
     "answer": "One giant unmyelinated axon up to a millimetre thick",
     "choices": [
       "One giant unmyelinated axon up to a millimetre thick",
@@ -9621,7 +9374,7 @@
   },
   {
     "tier": 2,
-    "question": "Today's tree sloths are cat-sized creatures that dangle quietly upside-down in the South American rainforests. But during the last Ice Age, one of their long-vanished relatives — a giant ground sloth called Megatherium — walked the ground on all fours across the plains of South America. Standing next to a modern animal for scale, how big did this giant ground sloth actually get?",
+    "question": "Megatherium, a giant ground sloth, walked the plains of South America on all fours during the last ice age, a long-vanished relative of the little cat-sized sloths dangling upside down in the rainforest today. Set beside a living animal, how big was it?",
     "answer": "As big as a bull elephant",
     "choices": [
       "As big as a bull elephant",
@@ -9633,21 +9386,8 @@
     "topic": "giant-ground-sloth"
   },
   {
-    "tier": 2,
-    "question": "The tree sloths that share a family branch with the giant Megatherium are the slowest mammals alive, creeping through the rainforest canopy. They move so little that their coats turn a strange colour, giving them living camouflage. What grows in a tree sloth's fur?",
-    "answer": "Green algae",
-    "choices": [
-      "Green algae",
-      "Grey lichen",
-      "Soft moss",
-      "Tiny ferns"
-    ],
-    "context": "Tree sloths (Bradypus), the closest living relatives of the giant ground sloths, move so slowly that green algae grows in their grooved hair, tinting them green and camouflaging them among the leaves. Source: https://en.wikipedia.org/wiki/Sloth",
-    "topic": "giant-ground-sloth"
-  },
-  {
     "tier": 3,
-    "question": "The best leaves grew high in the trees, out of reach for a four-legged animal the weight of an elephant. Megatherium solved this by turning its own body into a tower: it braced against a tree trunk and lifted its huge frame off the ground. What did it stand on to reach the branches?",
+    "question": "To feed on leaves high in the trees, far above the reach of an animal on four legs, Megatherium, the giant ground sloth, braced against a trunk and lifted its huge frame off the ground, turning its body into a tower. What did it stand on to reach the branches?",
     "answer": "Its hind legs and tail, like a tripod",
     "choices": [
       "Its hind legs and tail, like a tripod",
@@ -9660,7 +9400,7 @@
   },
   {
     "tier": 3,
-    "question": "Megatherium was a giant ground sloth of the Ice Age — an elephant-sized cousin of today's tree sloths that lumbered across South America until roughly 12,000 years ago. Its front claws curved out about 30 cm — a full foot long. They were so extreme that the giant sloth simply could not set its feet flat on the ground at all. Like a modern anteater, how did Megatherium get around on its huge claws?",
+    "question": "On front claws that curved out about 30 cm, a full foot long, the giant ground sloth Megatherium lumbered across South America as recently as about 12,000 years ago. Claws that long kept it from setting its front feet flat on the ground. Like a modern anteater, how did it walk on them?",
     "answer": "It walked on the outer sides of its feet, claws curled in",
     "choices": [
       "It walked on the outer sides of its feet, claws curled in",
@@ -9673,7 +9413,7 @@
   },
   {
     "tier": 4,
-    "question": "Megatherium, the giant ground sloth of Ice Age South America, was as tall as a bull elephant when it reared up on its hind legs. It ate nothing but leaves. And yet, even a full-grown adult was one of the very few Ice Age plant-eaters that the top predators of its world — sabre-toothed cats, dire wolves, and giant short-faced bears — rarely dared to challenge. What made this gentle giant so risky for a predator to attack?",
+    "question": "A full-grown Megatherium, the giant ground sloth, browsed leaves across the plains of ice-age South America. Dire wolves and sabre-toothed cats, the top predators of its world, rarely dared to challenge an adult. What made this giant so risky to attack?",
     "answer": "A swipe of its foot-long claws could kill an attacker outright",
     "choices": [
       "A swipe of its foot-long claws could kill an attacker outright",
@@ -9686,7 +9426,7 @@
   },
   {
     "tier": 4,
-    "question": "Giant ground sloths — the elephant-sized cousins of today's tree sloths — walked Ice Age South America until roughly 12,000 years ago, browsing leaves with claws a foot long. But claws were not their only defense. Push a hand deep through a giant ground sloth's shaggy fur and you would feel a hard, pebbly layer of little bony bumps hidden underneath the hair, all along the skin. What did this hidden layer do for the sloth?",
+    "question": "Under the shaggy fur of a giant ground sloth such as Megatherium lay a hard, pebbly layer of little bony bumps, studding the skin all over. These sloths walked ice-age South America up to about 12,000 years ago. What did that hidden layer do for them?",
     "answer": "It armored the skin against a predator's bite",
     "choices": [
       "It armored the skin against a predator's bite",
@@ -9712,7 +9452,7 @@
   },
   {
     "tier": 5,
-    "question": "Two very different sloths hang upside down from rainforest branches across Central and South America today — the two-toed sloth and the three-toed sloth. For a hundred years, scientists sorted sloths by their skeletons and decided these two living tree sloths were close cousins, both very far removed from the giant extinct ground sloths like Megatherium. Then ancient DNA and fossil-protein sequencing were read from the old bones themselves, and the family tree collapsed. What did the molecules reveal about the two tree sloths alive today?",
+    "question": "A two-toed sloth and a three-toed sloth hang upside down from branches across the rainforests of Central and South America. For a hundred years, scientists who sorted sloths by their bones took the two for close cousins. Then ancient DNA and fossil proteins from old bones, read in 2019, tore that family tree apart. What did they reveal about the two living tree sloths?",
     "answer": "Each evolved its slow tree-hanging life on its own, from different giant ground-sloth ancestors",
     "choices": [
       "Each evolved its slow tree-hanging life on its own, from different giant ground-sloth ancestors",
@@ -9725,7 +9465,7 @@
   },
   {
     "tier": 5,
-    "question": "Megatherium is textbook-labeled a peaceful leaf-eater, but two biomechanists noticed its elbow was built wrong for that job. The bony lever where the triceps attaches is unusually short, an arrangement that trades pushing force away to gain speed. From that measurement, what startling role might the giant sloth have played?",
+    "question": "Richard Fariña and Ernesto Blanco measured the elbow of Megatherium, the giant ground sloth long pictured as a peaceful leaf-eater, and found it built wrong for that job. The bony lever where the triceps attaches is short, trading pushing force for speed, as in meat-eaters. What role did they propose the giant might have played?",
     "answer": "A part-time predator or scavenger, driving its foot-long claws like daggers",
     "choices": [
       "A part-time predator or scavenger, driving its foot-long claws like daggers",
@@ -9829,7 +9569,7 @@
   },
   {
     "tier": 1,
-    "question": "High in the misty bamboo forests of central China, a stocky bear sits back on its haunches for hour after hour, munching stalks of bamboo. Its round coat is boldly patched in black and white, with dark eye-patches like a bandit's mask and small round black ears. It is one of the most beloved and recognizable animals on Earth. Name this famous animal.",
+    "question": "A stocky bear sits back on its haunches hour after hour in the misty bamboo forests of central China, munching stalks of bamboo. Its coat is boldly patched in black and white, with dark eye-patches like a bandit's mask and small round black ears. Which famous animal is it?",
     "answer": "Giant panda",
     "choices": [
       "Giant panda",
@@ -9855,7 +9595,7 @@
   },
   {
     "tier": 3,
-    "question": "The giant panda is a true bear, with a bear's meat-eating gut and teeth. Yet about 99% of what it eats is bamboo — one of the toughest, least nourishing foods any bear could pick, mostly water and hard fiber. Somehow this huge black-and-white animal has to squeeze enough energy from it to survive. How does it get enough to survive?",
+    "question": "Stalk after stalk, a giant panda chews through bamboo, which makes up about 99 percent of everything it eats. Bamboo is tough, watery and poor in energy, yet the panda still has a meat-eating bear's gut and teeth. How does it get enough energy from bamboo to survive?",
     "answer": "It eats up to 14 hours a day, packing in 12-38 kg of bamboo",
     "choices": [
       "It eats up to 14 hours a day, packing in 12-38 kg of bamboo",
@@ -9868,7 +9608,7 @@
   },
   {
     "tier": 4,
-    "question": "The giant panda descends from meat-eating bears. Around 4.2 million years ago, right as it turned almost entirely to bamboo, one of its genes quietly broke and never recovered -- a gene its meat-eating cousins still use at every meal. Which ability did the panda lose?",
+    "question": "Where its ancestors once ate meat, a giant panda crunches bamboo. Some 4.2 million years ago, just as its line turned almost entirely to bamboo, one of its genes broke and never worked again, a gene its meat-eating cousins still use at every meal. Which ability did the panda lose?",
     "answer": "The umami taste that senses the savoriness of meat",
     "choices": [
       "The umami taste that senses the savoriness of meat",
@@ -9881,7 +9621,7 @@
   },
   {
     "tier": 2,
-    "question": "A grown giant panda mother in the bamboo forests of central China can weigh 90 kg — about as much as an adult man. Yet her newborn cub is pink, blind, and completely helpless when it is first born. One researcher famously likened its birth to 'a jelly bean popping out of a vending machine.' About how big is the tiny newborn?",
+    "question": "A giant panda mother can weigh 90 kg, about as much as a grown man. Her newborn cub arrives pink, blind and completely helpless; one researcher likened the birth to 'a jelly bean popping out of a vending machine.' About how big is the newborn?",
     "answer": "Around 100 grams, the size of a stick of butter",
     "choices": [
       "Around 100 grams, the size of a stick of butter",
@@ -26911,20 +26651,7 @@
   },
   {
     "tier": 1,
-    "question": "One small white seabird breeds during the endless daylight of the Arctic summer. When autumn comes, it does not stop at a warm coast. It flies all the way south to Antarctica for a second summer there, then turns around and flies back. Every year. That round trip is the longest journey any animal on Earth makes. Which bird is it?",
-    "answer": "The Arctic tern",
-    "choices": [
-      "The Arctic tern",
-      "The bald eagle",
-      "The snowy owl",
-      "The wandering albatross"
-    ],
-    "context": "Geolocator-tracked Arctic terns averaged about 70,900 km (44,000 miles) a year, with some individuals topping 81,600 km - no animal migrates farther. Source: Audubon, 'How a Tern Broke the Record for the Longest Known Migration'; PMC6745660 (tern tracking study).",
-    "topic": "the-great-migrations"
-  },
-  {
-    "tier": 1,
-    "question": "Across the vast, treeless Arctic tundra of Alaska and northern Canada, one shaggy brown deer walks farther in a single year than any other land animal on the planet. The herds cross frozen rivers, mountains, and endless plains in loops of about 3,000 miles, chasing lichen and fresh grass. Which hoofed animal makes the longest land trip on Earth?",
+    "question": "A shaggy brown animal plods with its herd across the tundra of Alaska and northern Canada, crossing frozen rivers and mountains to find lichen and fresh grass. Its yearly loop of about 3,000 miles is the longest land migration on Earth. Which animal is it?",
     "answer": "The caribou",
     "choices": [
       "The caribou",
@@ -26937,7 +26664,7 @@
   },
   {
     "tier": 2,
-    "question": "Every year on the African Serengeti grasslands, up to 1.5 million of these tough hoofed grazers, joined by nearly a million zebras, sweep in one vast Great Migration. Each animal covers 800 to 1,000 kilometers as the huge herd chases the seasonal rains that push fresh grass up out of the dry plains. Which African animal forms this million-strong migrating herd?",
+    "question": "Up to 1.5 million tough hoofed grazers sweep across the Serengeti grasslands each year in one vast herd, joined by nearly a million zebras. Each animal walks 800 to 1,000 kilometers as the herd follows the fresh grass. Which African animal makes up this herd?",
     "answer": "The wildebeest",
     "choices": [
       "The wildebeest",
@@ -26950,7 +26677,7 @@
   },
   {
     "tier": 2,
-    "question": "On the Serengeti plains of Tanzania and Kenya, more than a million wildebeest — hoofed grazers that look like scruffy short-horned cattle — travel together in one enormous herd, chasing fresh grass in a giant loop around East Africa. They aren't just wandering. Somehow, they know which faraway plains will turn green next. How do they find fresh grass hundreds of miles away?",
+    "question": "A herd of scruffy, short-horned grazers more than a million strong travels in a giant loop around the Serengeti plains of Tanzania and Kenya. They do not wander at random: somehow they head for whichever faraway plains will turn green next. How does the herd find fresh grass hundreds of miles away?",
     "answer": "They watch for distant rain clouds and move toward them",
     "choices": [
       "They watch for distant rain clouds and move toward them",
@@ -26963,7 +26690,7 @@
   },
   {
     "tier": 2,
-    "question": "The scariest part of the great wildebeest migration is one river crossing in East Africa. To reach fresh grass on the far bank of the Mara River between Kenya and Tanzania, over a million wildebeest have to plunge into deep, muddy water — where more than 3,000 huge reptiles wait. The herd panics, splashes, and hundreds are seized. What lurks below the Mara River's surface?",
+    "question": "At the Mara River, where Kenya meets Tanzania, over a million hoofed grazers crowd the bank, with fresh grass waiting on the far side. They plunge into the deep, muddy water, the herd panics and splashes, and hundreds are seized. More than 3,000 hunters lie in wait below the surface. What are they?",
     "answer": "Crocodiles",
     "choices": [
       "Crocodiles",
@@ -26976,7 +26703,7 @@
   },
   {
     "tier": 2,
-    "question": "A salmon is born in one small freshwater stream high in the mountains. As a young fish it swims down the rivers to the sea, spends years hunting in the open Pacific, and then, years later, turns around and swims all the way back — returning to spawn in the very same little stream where it first hatched. How does a returning salmon find that one exact stream again out of thousands?",
+    "question": "A young salmon hatches in a small mountain stream, swims down the rivers to the sea and spends years hunting in the open Pacific. Then it turns for home and swims all the way back to spawn in the same small stream it hatched in. How does it pick out that one stream from thousands?",
     "answer": "By smelling the unique odor of its home water",
     "choices": [
       "By smelling the unique odor of its home water",
@@ -26989,7 +26716,7 @@
   },
   {
     "tier": 3,
-    "question": "Pacific salmon — sockeye, chinook, coho — spend most of their lives fattening in the open ocean. Then they turn homeward and swim thousands of miles back into the very stream where they were born. They fight their way upstream against the current, leaping waterfalls and dodging bears, to reach the exact spawning gravel of their birth. Within days of finally breeding there, what happens to them?",
+    "question": "Sockeye salmon fatten for years in the open Pacific, then swim thousands of miles back to the stream they hatched in. They fight upstream against the current, leaping waterfalls and dodging bears, to reach the gravel where their lives began. Within days of spawning there, what happens to them?",
     "answer": "They all die, spent by that one single breeding effort",
     "choices": [
       "They all die, spent by that one single breeding effort",
@@ -27002,20 +26729,7 @@
   },
   {
     "tier": 3,
-    "question": "The Arctic tern is a small, gull-like seabird that lives an almost impossible life. Every year it nests near the North Pole from May to August, when the Arctic sun barely sets. Then it flies all the way to the other end of the planet, arriving near the South Pole just in time for the polar summer down there. By always chasing the sunny season, the tern gets more of what than any other creature on Earth?",
-    "answer": "Daylight",
-    "choices": [
-      "Daylight",
-      "Meals",
-      "Sleep",
-      "Rainfall"
-    ],
-    "context": "By chasing summer at both ends of the planet, the Arctic tern lives almost year-round in the endless daylight of the polar summer - so it sees more daylight in a year than any other animal alive. Source: Smithsonian Ocean, 'Arctic Tern'; carstenegevang.com.  (Legend.)",
-    "topic": "the-great-migrations"
-  },
-  {
-    "tier": 3,
-    "question": "In 2022, biologists in Alaska fitted a young bar-tailed godwit — a long-legged shorebird — with a tiny satellite tag labeled 'B6.' In autumn B6 lifted off, flew south across the open Pacific Ocean, and did not touch down until it reached Tasmania, off Australia. No landing. No eating. No drinking. Just wing-beating over empty sea, day and night. How long was that nonstop flight?",
+    "question": "Biologists in Alaska fitted a young bar-tailed godwit, a long-legged shorebird, with a tiny satellite tag labeled B6 in 2022. That autumn B6 lifted off, flew south across the open Pacific and did not touch down until it reached land on the far side of the ocean. It never stopped to eat or drink on the way. How long was that nonstop flight?",
     "answer": "11 days straight",
     "choices": [
       "11 days straight",
@@ -27028,7 +26742,7 @@
   },
   {
     "tier": 3,
-    "question": "Every year one kind of whale swims a round trip of some 10,000 to 12,000 miles along the Pacific coast — between its cold Arctic feeding grounds off Alaska and the warm, shallow lagoons of Baja California in Mexico, where it gives birth to its calves. That is the longest migration of any mammal on Earth. Which mottled, barnacle-crusted whale?",
+    "question": "A mottled, barnacle-crusted whale feeds in icy waters off Alaska, then swims down the Pacific coast to the warm, shallow lagoons of Baja California in Mexico, where its calves are born. There and back, the trip covers about 16,000 to 20,000 km, the longest migration of any mammal. Which whale is it?",
     "answer": "The gray whale",
     "choices": [
       "The gray whale",
@@ -27040,34 +26754,8 @@
     "topic": "the-great-migrations"
   },
   {
-    "tier": 3,
-    "question": "You might picture one bright orange monarch butterfly flying all the way from Canada down to Mexico and back again for the winter — but no single monarch ever does the whole round trip. The journey gets passed along like a relay baton: each butterfly flies part of the way, lays eggs, dies, and its children hatch and continue the migration. About how many generations of butterflies does the full round trip take?",
-    "answer": "Three to five generations",
-    "choices": [
-      "Three to five generations",
-      "Two generations",
-      "A single generation",
-      "Dozens of generations"
-    ],
-    "context": "The monarch's annual round trip takes three to five generations - the butterflies that reach Mexico are the great-great-grandchildren of the ones that set out the previous spring. Source: Nat Hab, 'The Migration' (Mexico's Monarchs Guide); Monarch butterfly migration - Wikipedia.  (Legend.)",
-    "topic": "the-great-migrations"
-  },
-  {
     "tier": 4,
-    "question": "Every autumn, orange-and-black monarch butterflies born in Canada and the northern United States fly south — up to 3,000 miles — until they reach central Mexico. Amazingly, they settle in the very same groves of oyamel fir trees on the very same mountains where their great-great-grandparents overwintered generations ago. What makes this so hard to explain?",
-    "answer": "Not one of them has ever seen the place before",
-    "choices": [
-      "Not one of them has ever seen the place before",
-      "They must be led there by the older butterflies",
-      "They leave a scent trail across the whole continent",
-      "They can spot the mountains from thousands of miles off"
-    ],
-    "context": "The monarchs return to the exact same oyamel fir groves in Mexico's Trans-Mexican Volcanic Belt that their ancestors left generations earlier - even though not one of them has ever been there. Source: Nature.org, 'Monarch Butterflies Bring Together Conservation and Culture'; A Closer Look Tours.  (Legend.)",
-    "topic": "the-great-migrations"
-  },
-  {
-    "tier": 4,
-    "question": "Most monarch butterflies live only about a month. But the single autumn generation that must fly all the way to Mexico and survive the whole winter before starting back lives about eight times longer than its own parents. It manages this by holding off on one thing. What does this 'super generation' delay?",
+    "question": "An autumn monarch butterfly sets off south for the high fir forests of central Mexico, where it must live through the whole winter before starting back north. Its parents lived only about a month. It manages its long life by holding off on one thing. What does it delay?",
     "answer": "Making the hormone that ages its body",
     "choices": [
       "Making the hormone that ages its body",
@@ -27080,20 +26768,7 @@
   },
   {
     "tier": 4,
-    "question": "Migrating monarchs steer by a sun compass, which only works if the butterfly also keeps an accurate internal clock to allow for the sun sliding across the sky. Scientists were surprised to find the master clock keeping this compass on course is not in the monarch's brain at all. Where is it?",
-    "answer": "In its antennae",
-    "choices": [
-      "In its antennae",
-      "On its wingtips",
-      "Behind its eyes",
-      "In its legs"
-    ],
-    "context": "Steven Reppert's lab found the clock that keeps a monarch's sun compass accurate sits in its antennae, not just its brain; painting the antennae black disrupts the butterfly's ability to hold a course. Source: Merlin et al., Science 325:1700 (2009); pubmed.ncbi.nlm.nih.gov/19779201.",
-    "topic": "the-great-migrations"
-  },
-  {
-    "tier": 4,
-    "question": "A bar-tailed godwit flies eleven days over open ocean without a single bite of food, carrying all its fuel as fat piled on until fat is more than half its whole body weight. To avoid being too heavy to ever leave the ground, in the days before takeoff its body destroys part of itself. Which part?",
+    "question": "A bar-tailed godwit about to fly nonstop across the Pacific piles on fat until fat is more than half its body weight, since it will not eat a bite on the way. In the days before takeoff, so that it is not too heavy to leave the ground, its body destroys part of itself. Which part?",
     "answer": "Its digestive organs, shrunk down and absorbed into the body",
     "choices": [
       "Its digestive organs, shrunk down and absorbed into the body",
@@ -27106,7 +26781,7 @@
   },
   {
     "tier": 5,
-    "question": "A salmon can smell out its home stream, but only within a few km of the coast. Yet for two years it roams thousands of km across the open Gulf of Alaska, far from any scent of home, then still returns to the right river. The leading, and still debated, explanation is that as a young smolt it memorized one feature of its home river. Which one?",
+    "question": "A salmon roams for two years across thousands of kilometers of the open Gulf of Alaska, far from any trace of its home river, and still returns to the right river. The leading explanation, still debated, is that as a young smolt it memorized one feature of the spot where its river reaches the sea. Which feature?",
     "answer": "The magnetic field's strength and tilt at its river mouth",
     "choices": [
       "The magnetic field's strength and tilt at its river mouth",
