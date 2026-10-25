@@ -22361,7 +22361,7 @@
   },
   {
     "tier": 2,
-    "question": "Maria's brother makes a quick, hasty argument for a later curfew. Maria wants to win the disagreement for good. Instead of pouncing on his awkward phrasing, she first rebuilds his case into the strongest, most reasonable version she can — better than he actually said — and answers THAT. What is the point of beating the strongest version rather than the weak one?",
+    "question": "Maria's brother makes a quick, hasty argument for a later curfew. Maria wants to settle it for good, so rather than pounce on his awkward phrasing she rebuilds his case into the strongest version she can, better than he put it, and answers that. Why beat the strong version rather than the weak one?",
     "answer": "Defeating his clumsy wording proves nothing, since he can just say he meant something better",
     "choices": [
       "Defeating his clumsy wording proves nothing, since he can just say he meant something better",
@@ -22374,20 +22374,7 @@
   },
   {
     "tier": 2,
-    "question": "In a school debate club, a boy named Theo faces a classmate arguing for a school-uniform rule. Instead of tackling her strongest points about fairness and focus, Theo attacks the weakest, silliest version of her view — 'so you want uniforms because you hate self-expression?' He beats that silly version easily and declares victory. His classmate just shrugs and says he knocked down something nobody actually believes. Why has Theo settled nothing, even though he 'won'?",
-    "answer": "He beat a version his opponent never held, so his opponent simply says 'that's not what I meant'",
-    "choices": [
-      "He beat a version his opponent never held, so his opponent simply says 'that's not what I meant'",
-      "He was rude while winning, and rudeness always cancels out a real victory",
-      "He forgot to list the points he agreed with before he started attacking",
-      "He argued too long, so the audience stopped paying attention to his case"
-    ],
-    "context": "Beating a straw man proves nothing — the opponent just disowns it. Only by demolishing the strongest, most charitable version do you earn a victory that actually settles the question. Source: synthesis of 'Your Logical Fallacy Is' (steelman as anti-straw-man) and Chana Messinger, 'The Merely Real' (2012).",
-    "topic": "steelmanning-and-the-principle-of-charity"
-  },
-  {
-    "tier": 2,
-    "question": "Aisha disagrees with a classmate, but before she argues back she restates his view aloud. He lights up and says, 'Thanks — I wish I'd thought of putting it that way.' Many things could lie behind that 'thanks.' What did his reaction actually prove Aisha had done?",
+    "question": "Aisha disagrees with a classmate, but before she argues back she restates his view aloud. He lights up and says, 'Thanks — I wish I'd thought of putting it that way.' Many things could lie behind a thanks like that. What did his reaction prove Aisha had done?",
     "answer": "She put his own view into words so good that he himself would gladly use them",
     "choices": [
       "She put his own view into words so good that he himself would gladly use them",
@@ -22413,7 +22400,7 @@
   },
   {
     "tier": 3,
-    "question": "The game theorist Anatol Rapoport laid out four steps for criticizing others well, and he put the criticism itself deliberately last. First, restate their view so well they thank you; then list every point you agree with; then say what you learned from them. Only after all three are you permitted a word of rebuttal. Why does this recipe hold criticism until the end?",
+    "question": "Nadia has a sharp reply ready for her uncle's argument, but she follows the four steps of Anatol Rapoport, a game theorist who put criticism last on purpose. She restates her uncle's view so well that he thanks her, names every point where they agree and tells him what she has learned from him. Only then does she rebut. Why does the recipe hold criticism until the end?",
     "answer": "Because doing the first three steps turns your opponent into a receptive audience for your criticism",
     "choices": [
       "Because doing the first three steps turns your opponent into a receptive audience for your criticism",
@@ -22426,7 +22413,7 @@
   },
   {
     "tier": 3,
-    "question": "John Stuart Mill argued in 'On Liberty' (1859) that it is not enough to hear your opponents' views filtered through your own teachers' refutations. You must hear those views 'from persons who actually believe them,' in their strongest and most persuasive form. Mill drove the warning home with a single famous line about the person who never bothers to do this. Which line was it?",
+    "question": "A student has heard the other side's views only as his own teachers refute them. John Stuart Mill, writing On Liberty in 1859, said that was not enough: the student must hear those views 'from persons who actually believe them,' in their strongest and most persuasive form. Mill drove the warning home with one famous line about anyone who stops there. Which line was it?",
     "answer": "'He who knows only his own side of the case knows little of that'",
     "choices": [
       "'He who knows only his own side of the case knows little of that'",
@@ -22439,7 +22426,7 @@
   },
   {
     "tier": 3,
-    "question": "On August 8, 2003, in an online discussion, Paul C. Anagnostopoulos tossed off a joke about an opponent's overblown argument: 'this straw man is so big and so strong that he'll soon morph into a steel man.' It is the earliest known use of the term — and the thinkers who picked it up did something unexpected with the insult. What became of Anagnostopoulos's throwaway jab?",
+    "question": "Paul C. Anagnostopoulos tossed off a joke about an opponent's overblown argument in an online discussion on August 8, 2003: 'this straw man is so big and so strong that he'll soon morph into a steel man.' It is the earliest known use of the term, and the thinkers who picked it up did something unexpected with the insult. What became of his throwaway jab?",
     "answer": "The insult flipped into a virtue — a name for building your opponent's argument at its strongest",
     "choices": [
       "The insult flipped into a virtue — a name for building your opponent's argument at its strongest",
@@ -22452,7 +22439,7 @@
   },
   {
     "tier": 4,
-    "question": "John Stuart Mill pressed a harder point in 'On Liberty' (1859). Suppose your opinion is actually true, and no one has ever refuted it — yet you yourself cannot answer the strongest objections the opposing side could raise. Mill says that in this situation you have 'no ground for preferring either opinion.' On Mill's reasoning, what is wrong with holding a true belief you cannot defend against its strongest challenge?",
+    "question": "Suppose you hold a true opinion that no one has ever refuted, though you cannot answer the strongest objections the other side could raise. John Stuart Mill pressed this harder case in On Liberty: in that position, he said, you have 'no ground for preferring either opinion.' On Mill's reasoning, what is the trouble with a true belief held like that?",
     "answer": "It is luck, not knowledge — you happen to be right without being able to show why",
     "choices": [
       "It is luck, not knowledge — you happen to be right without being able to show why",
@@ -22465,7 +22452,7 @@
   },
   {
     "tier": 4,
-    "question": "Neil L. Wilson, in a 1959 paper, named the rule philosophers now call the 'principle of charity' — the very rule that steelmanning puts into practice. Imagine a new student blurts out, 'Nobody passed the test,' even though three of her classmates clearly did pass. Wilson's rule tells you how to read a clumsy, ambiguous claim like hers. Which reading does it tell you to choose?",
+    "question": "Suppose you hear a new student blurt out, 'Nobody passed the test,' though three of her classmates plainly passed. Neil L. Wilson named a rule for reading clumsy claims like hers in a 1959 paper: the principle of charity, which steelmanning puts into practice. Which reading of her words does his rule tell you to choose?",
     "answer": "That she meant only her own study group, the reading that keeps most of her words true",
     "choices": [
       "That she meant only her own study group, the reading that keeps most of her words true",
@@ -22478,7 +22465,7 @@
   },
   {
     "tier": 4,
-    "question": "W.V.O. Quine, working out how anyone could translate a foreign language from scratch in 'Word and Object' (1960), reached a rule for what to do when a translation makes a speaker sound absurd: 'assertions startlingly false on the face of them are likely to turn on hidden differences of language.' When your reading makes people sound ridiculous, what does Quine say is the more likely explanation?",
+    "question": "W. V. O. Quine took up a hard puzzle in 1960: translating a foreign language from scratch. Suppose you take on that job, and your reading makes the speakers sound absurd. Quine's rule holds that 'assertions startlingly false on the face of them are likely to turn on hidden differences of language.' By that rule, what is the likelier explanation?",
     "answer": "You have mistranslated them, since deep silliness is less likely than a bad translation",
     "choices": [
       "You have mistranslated them, since deep silliness is less likely than a bad translation",
@@ -22491,7 +22478,7 @@
   },
   {
     "tier": 5,
-    "question": "Donald Davidson pushed the principle of charity further than anyone before him. He argued that charity is not a favor you can decide to give or refuse. In his words, it is a presupposition of any interpretation, something built into the very act of understanding other people. If Davidson is right about that, what follows for someone who tries to abandon the principle?",
+    "question": "Viktor resolves to stop giving anyone the benefit of the doubt: from now on he will hear other people's words with no charity at all. Donald Davidson, who pushed the principle of charity further than anyone before him, held that it is no favor to grant or withhold. In his words, it is a presupposition of any interpretation. If Davidson is right, how does Viktor fare when other people speak?",
     "answer": "He can no longer make sense of them as speakers at all",
     "choices": [
       "He can no longer make sense of them as speakers at all",
@@ -22504,7 +22491,7 @@
   },
   {
     "tier": 3,
-    "question": "Long before philosophers named the principle of charity, a Jewish sage named Rabbi Meir had a saying that captures its spirit: 'A person does not say things for naught.' The saying tells you how to treat others' words before you decide whether you agree. How does Rabbi Meir tell you to treat their words?",
+    "question": "Rabbi Meir, as Jewish tradition tells it, taught a saying that caught the spirit of the principle of charity long before philosophers named it: 'A person does not say things for naught.' The saying told a listener how to treat other people's words before he decided whether he agreed with them. How did it tell him to treat them?",
     "answer": "Assume their words carry rational intent worth taking seriously, not nonsense to dismiss",
     "choices": [
       "Assume their words carry rational intent worth taking seriously, not nonsense to dismiss",
@@ -22517,7 +22504,7 @@
   },
   {
     "tier": 2,
-    "question": "A museum case is full of gorgeous medieval swords, centuries old, still bright and gleaming under the glass. A visitor looks in and concludes, 'They don't make blades like they used to — every medieval smith must have been a true master.' But he is only looking at the swords that made it into the case, not the thousands of poorly forged blades that broke in battle or rusted to nothing on some forgotten field. What is the flaw in his conclusion?",
+    "question": "A museum case holds medieval swords, centuries old and still gleaming. A visitor peers in and declares, 'They don't make blades like they used to — every medieval smith must have been a true master.' He sees only the swords that survived long enough to reach the case. What is the flaw in his conclusion?",
     "answer": "The weak and badly-forged blades broke or rusted away long ago, so only the finest ones survived to be displayed",
     "choices": [
       "The weak and badly-forged blades broke or rusted away long ago, so only the finest ones survived to be displayed",
@@ -22530,7 +22517,7 @@
   },
   {
     "tier": 2,
-    "question": "Bill Gates left Harvard early to start Microsoft. Steve Jobs left Reed College to start Apple. Both became billionaires. Your friend, hunting for a shortcut around homework, tells you, 'Gates and Jobs both walked away from college and became billionaires — so ditching school is a smart bet.' The line sounds good, but something important is missing from his data. What is wrong with the reasoning?",
+    "question": "Marcus wants out of homework, so he tells his sister that Bill Gates left Harvard to start Microsoft and Steve Jobs left Reed College to start Apple. 'They walked away from college and became billionaires,' he says, 'so ditching school is a smart bet.' His data is missing something. Where does his reasoning go wrong?",
     "answer": "You only hear about the few dropouts who struck it rich; the many who dropped out and struggled left no trace",
     "choices": [
       "You only hear about the few dropouts who struck it rich; the many who dropped out and struggled left no trace",
@@ -22556,7 +22543,7 @@
   },
   {
     "tier": 2,
-    "question": "Abraham Wald, the Hungarian-Jewish mathematician who would grow up to teach the U.S. military how to read the bullet damage on its returning World War II bombers, was born in 1902 in a devout Jewish family in the city of Kolozsvar (now Cluj, in Romania). As a boy he could not attend the local public schools at all. What kept him out?",
+    "question": "As a boy in Kolozsvar, today's Cluj in Romania, Abraham Wald could not attend the city's public schools. His family was devoutly Jewish. Years later he would teach the American military to read the bullet holes on its returning bombers. What kept the boy out of the schools?",
     "answer": "The schools held classes on Saturday, the day his family kept for rest",
     "choices": [
       "The schools held classes on Saturday, the day his family kept for rest",
@@ -22569,7 +22556,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1943, Allied officers looked at bombers that came back from Germany covered in bullet holes. They planned to add heavy armor to the most-damaged sections. A statistician named Abraham Wald stopped them. He said the armor belonged on a different part. Which part did Wald say to protect?",
+    "question": "Allied officers in 1943 studied bombers that had come back from Germany covered in bullet holes, and they planned to add heavy armor to the most damaged sections. Abraham Wald, a statistician, stopped them. He said the armor belonged on a different part of the plane. Which part did Wald say to protect?",
     "answer": "The engines, buried deep in the wings and nose",
     "choices": [
       "The engines, buried deep in the wings and nose",
@@ -22582,7 +22569,7 @@
   },
   {
     "tier": 3,
-    "question": "People admire centuries-old medieval ironwork — armor, blades, the fittings of grand old buildings — as proof that medieval smiths built things to last. But when modern experts examined these surviving pieces up close, the \"built to last\" story took a hit. What did they find?",
+    "question": "Modern experts examined surviving medieval ironwork up close, from armor and blades to the 13th-century iron rods of Bourges Cathedral. These were the centuries-old pieces people admired as proof that medieval smiths built things to last. What did the experts find?",
     "answer": "The surviving ironwork was quietly rotting from within — corroding away even where it sat sheltered indoors",
     "choices": [
       "The surviving ironwork was quietly rotting from within — corroding away even where it sat sheltered indoors",
@@ -22595,7 +22582,7 @@
   },
   {
     "tier": 3,
-    "question": "Abraham Wald, the statistician who had taught the Allies how to study damage on their bombers, was killed in 1950, aged 48. He and his wife were crossing southern India on a mathematics lecture tour, there at the personal invitation of the Indian government. How did Wald die?",
+    "question": "A mathematics lecture tour took Abraham Wald and his wife across southern India in 1950, at the personal invitation of the Indian government. Wald, who had taught the Allies to read the damage on their bombers, was 48 when he was killed on that trip. How did he die?",
     "answer": "His plane crashed into a mountain range, killing him and his wife",
     "choices": [
       "His plane crashed into a mountain range, killing him and his wife",
@@ -22621,7 +22608,7 @@
   },
   {
     "tier": 4,
-    "question": "Abraham Wald faced a problem that looked impossible: he needed to know which parts of a bomber were most fatal to lose, yet the planes that would prove it — the ones shot down — lay at the bottom of the sea or scattered over Germany, beyond any inspection. All he had were the bombers that limped home. How did Wald crack it?",
+    "question": "The bombers that could tell Abraham Wald which parts of a plane were most fatal to lose lay at the bottom of the sea or scattered over Germany, beyond any inspection. They were the ones shot down. All he had were the bombers that limped home. How did Wald crack a problem that looked impossible?",
     "answer": "He treated the holes on returning planes as a sample and back-calculated, square foot by square foot, how often a hit in each spot was fatal",
     "choices": [
       "He treated the holes on returning planes as a sample and back-calculated, square foot by square foot, how often a hit in each spot was fatal",
@@ -22634,7 +22621,7 @@
   },
   {
     "tier": 4,
-    "question": "A 1987 veterinary study found something baffling: cats that fell from more than six stories reached the vet with FEWER injuries, on average, than cats that fell from just a few floors up — as though falling farther were safer. In 1996 a statistician offered a cleaner reason for the strange pattern. What did he propose?",
+    "question": "Vets studying cats that had fallen from buildings found something baffling in 1987. Cats that fell more than six stories reached them with fewer injuries, on average, than cats that fell just a few floors, as though falling farther were safer. A statistician, writing in 1996, offered a cleaner reason. What did he propose?",
     "answer": "Cats killed outright by the longest falls never reached the vet, so only the high-fall survivors were recorded",
     "choices": [
       "Cats killed outright by the longest falls never reached the vet, so only the high-fall survivors were recorded",
@@ -22647,7 +22634,7 @@
   },
   {
     "tier": 5,
-    "question": "Abraham Wald escaped Europe for the United States in 1938 and went on to teach the Allies how to account for the bombers that never came back. He had left family behind in Europe. Of the nine relatives he could not bring out, what became of them under the Nazis?",
+    "question": "Nine members of Abraham Wald's family were left behind in Europe when he escaped to the United States in 1938. Wald went on to teach the Allies how to account for the bombers that never came back. What became of those relatives under the Nazis?",
     "answer": "The Nazis murdered all but one of them in the gas chambers at Auschwitz",
     "choices": [
       "The Nazis murdered all but one of them in the gas chambers at Auschwitz",
@@ -22660,7 +22647,7 @@
   },
   {
     "tier": 5,
-    "question": "The famous Abraham Wald bomber-damage story — a Hungarian-Jewish statistician working in New York for the U.S. military during World War II, telling it to armor the parts of the plane where the returning bombers were NOT hit — has grown in the retelling over the decades. Historians warn that some of its most dramatic details cannot actually be checked against surviving papers. Of the following claims, which one is solidly documented and not simply part of the legend?",
+    "question": "Abraham Wald, a statistician working in New York in World War II, told the American military to armor its bombers where the returning planes had not been hit, or so the famous story goes. The tale has grown over decades of retelling, and historians warn that some of its most dramatic details cannot be checked against surviving papers. Which part of it is solidly documented, not legend?",
     "answer": "His 1943 report laying out a method to judge a plane's weak spots from the damage on the survivors",
     "choices": [
       "His 1943 report laying out a method to judge a plane's weak spots from the damage on the survivors",
@@ -22673,7 +22660,7 @@
   },
   {
     "tier": 5,
-    "question": "An investment company boasts that its family of mutual funds grew about 10.8% a year over the past decade. But that figure counts only the funds still open today; funds the company shut down during those years were quietly dropped from the list before the average was taken. What does that practice tell us about which funds get shut down?",
+    "question": "An investment company boasts that its family of mutual funds grew by about 10.8 percent each year over the past decade. The figure counts only the funds still open today; the funds it shut down along the way were quietly dropped from the list before the average was taken. What does that practice reveal about which funds get shut down?",
     "answer": "The funds that did worst are the ones companies close, so dropping them lifts the average that remains",
     "choices": [
       "The funds that did worst are the ones companies close, so dropping them lifts the average that remains",
@@ -23076,7 +23063,7 @@
   },
   {
     "tier": 2,
-    "question": "A king proclaims that God himself gave him his crown, so he answers to no one below him on earth. In 1776 the American Declaration of Independence, drafted mainly by Thomas Jefferson, flatly rejected that whole idea. It gave a very different answer for where a government's power comes from. What did the Declaration say is the real source of a government's just power?",
+    "question": "A king proclaimed that God himself had given him his crown, so he answered to no one below him on earth. The Declaration of Independence flatly rejected that whole idea in 1776 and gave a very different answer. Where did it say a government's just power comes from?",
     "answer": "The people themselves, who agree to be governed",
     "choices": [
       "The people themselves, who agree to be governed",
@@ -23089,7 +23076,7 @@
   },
   {
     "tier": 2,
-    "question": "The Declaration calls some rights 'unalienable' and 'endowed by their Creator.' A student says this means the government hands the rights to citizens as a gift, and can take them back later. But that reads the Declaration backwards. Why is the student wrong about where the rights come from?",
+    "question": "A student reads that the Declaration of Independence calls some rights 'unalienable' and 'endowed by their Creator.' She decides the government must hand those rights to citizens as a gift, one it can take back later. She has the Declaration backwards. Why is she wrong about where the rights come from?",
     "answer": "They exist before any government and can't be signed away",
     "choices": [
       "They exist before any government and can't be signed away",
@@ -23102,7 +23089,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 1776, as the American colonies moved toward open break from Britain, the Second Continental Congress meeting in Philadelphia picked a committee of five men to draft the Declaration of Independence: Thomas Jefferson of Virginia, John Adams of Massachusetts, Benjamin Franklin of Pennsylvania, Roger Sherman of Connecticut, and Robert Livingston of New York. Rather than write the document together line by line, the group made one simple choice. What did they do?",
+    "question": "Five men got the job of drafting the Declaration of Independence in June 1776, as the colonies neared an open break with Britain. The Second Continental Congress had chosen them: John Adams, Benjamin Franklin, Thomas Jefferson, Robert Livingston and Roger Sherman. Rather than write it together, the five made one choice. What did they do?",
     "answer": "Handed the pen to Jefferson alone to write the draft",
     "choices": [
       "Handed the pen to Jefferson alone to write the draft",
@@ -23115,7 +23102,7 @@
   },
   {
     "tier": 3,
-    "question": "James Madison, one of the American founders and a chief architect of the U.S. Constitution, wrote in Federalist No. 51 (1788) that a government run by ordinary people must be built to restrain itself, instead of simply being handed the power to rule and trusted to use it well. Madison thought that trust would be foolish. What is the plain reason his whole design of checks and balances rests on?",
+    "question": "James Madison took up his pen in 1788 to explain the Constitution he had helped to design. In Federalist No. 51 he wrote that a government run by ordinary people must be built to restrain itself, not simply handed the power to rule and trusted to use it well. Such trust, he thought, would be foolish. What plain reason did his whole design of checks and balances rest on?",
     "answer": "The very people who govern are flawed men, not angels",
     "choices": [
       "The very people who govern are flawed men, not angels",
@@ -23128,7 +23115,7 @@
   },
   {
     "tier": 3,
-    "question": "The American Declaration of Independence, written by Thomas Jefferson in 1776, holds that governments are set up to secure the people's rights — life, liberty, and the pursuit of happiness. When a government turns destructive of those very ends, the Declaration says, the people have the right to alter or abolish it and build a new one in its place. On what grounds can the people lawfully tear down a government they once accepted?",
+    "question": "Citizens who once accepted their government watch it turn destructive of the rights it was set up to secure: life, liberty and the pursuit of happiness. The Declaration of Independence says that when this happens, the people have the right to alter or abolish such a government and build a new one in its place. On what grounds can they lawfully tear it down?",
     "answer": "The people withdraw the consent that first gave the broken government its power",
     "choices": [
       "The people withdraw the consent that first gave the broken government its power",
@@ -23141,7 +23128,7 @@
   },
   {
     "tier": 4,
-    "question": "In designing the separation of powers, James Madison wrote in Federalist No. 51 that ambition must be made to counteract ambition. He deliberately tied each officeholder's personal interest to the rights of his office. Madison refused to depend on one thing a hopeful designer might trust to keep a government honest. What does his design refuse to count on?",
+    "question": "To keep a government honest, James Madison refused to count on one thing a hopeful designer might trust. Laying out the separation of powers in Federalist No. 51, he wrote that ambition must be made to counteract ambition, and he deliberately tied each officeholder's personal interest to the rights of his office. What was the one thing he would not count on?",
     "answer": "The personal virtue of the particular men who hold office",
     "choices": [
       "The personal virtue of the particular men who hold office",
@@ -23154,7 +23141,7 @@
   },
   {
     "tier": 4,
-    "question": "Sixty percent of a town vote to seize the farms of the other forty percent and split the land among themselves. The vote is perfectly legal and the majority wins fair and square. James Madison would still call that winning majority a 'faction.' In his reasoning, why does carrying the vote NOT make this a legitimate act?",
+    "question": "Sixty percent of a town vote to seize the farms of the other forty percent and split the land among themselves. The vote is perfectly legal, and the majority wins fair and square. James Madison would still call that winning majority a 'faction.' In his reasoning, why does carrying the vote not make the seizure legitimate?",
     "answer": "A bloc trampling its neighbors' rights stays wrong no matter how many vote for it",
     "choices": [
       "A bloc trampling its neighbors' rights stays wrong no matter how many vote for it",
@@ -23167,7 +23154,7 @@
   },
   {
     "tier": 5,
-    "question": "Most thinkers of the founding era took it for granted that a republic had to stay small to stay free — a sprawling one would surely fall to tyranny. In Federalist No. 10, James Madison flips this, arguing a LARGER republic actually guards liberty BETTER than a small one. What is his reasoning?",
+    "question": "James Madison turned the common wisdom of his day on its head in Federalist No. 10. Most thinkers of the founding era took it for granted that a republic had to stay small to stay free, since a sprawling one would surely fall to tyranny. Madison argued that a larger republic would guard liberty better than a small one. What was his reasoning?",
     "answer": "Its many rival groups make it hard for any one of them to form a ruling majority",
     "choices": [
       "Its many rival groups make it hard for any one of them to form a ruling majority",
@@ -23401,7 +23388,7 @@
   },
   {
     "tier": 3,
-    "question": "A field surgeon tests a healthy-looking knight with a plague test that is right 99 times out of 100. It comes back positive, and the knight panics. But this plague strikes only about 1 person in every 10,000. Why is the surgeon NOT alarmed by the positive result?",
+    "question": "A field surgeon tests a healthy-looking knight with a plague test that is right 99 times out of 100. It comes back positive, and the knight panics. But this plague strikes only about 1 person in every 10,000. Why is the surgeon not alarmed by the positive result?",
     "answer": "There are so many healthy people that the test's rare mistakes still outnumber its few true hits.",
     "choices": [
       "There are so many healthy people that the test's rare mistakes still outnumber its few true hits.",
@@ -23414,7 +23401,7 @@
   },
   {
     "tier": 3,
-    "question": "At a highway checkpoint, a breathalyzer catches every drunk driver who breathes into it, and it wrongly beeps for just 5% of the sober ones. The officer running the checkpoint calls the device '95% accurate' and trusts every single beep as a caught drunk. A philosopher standing nearby stops him and warns: that 95% figure by itself cannot tell you what one beep really means. To know what a beep actually implies about a particular driver, one more fact about the drivers on this road is needed first. Which extra fact must the officer know?",
+    "question": "A breathalyzer at a highway checkpoint catches every drunk driver who breathes into it and wrongly beeps for just 5 percent of the sober ones. The officer calls it '95% accurate' and treats every beep as a caught drunk. A philosopher nearby warns him that the 95 percent figure alone cannot say what one beep means. Which extra fact about the drivers on this road must the officer know first?",
     "answer": "How rare drunk driving actually is among the drivers passing through.",
     "choices": [
       "How rare drunk driving actually is among the drivers passing through.",
@@ -23427,7 +23414,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1978, three researchers led by Ward Casscells put a question to 60 doctors and students at Harvard Medical School: a disease strikes 1 person in 1,000, and a test for it falsely flags 5% of healthy people, so what is the chance a person who tests positive truly has the disease? The correct answer is about 2%. How did these elite medical minds answer?",
+    "question": "Ward Casscells and two fellow researchers put a question to 60 doctors and students at Harvard Medical School in 1978: if a disease strikes 1 person in 1,000, and a test for it falsely flags 5 percent of healthy people, what is the chance that someone who tests positive truly has it? The correct answer is about 2 percent. How did these elite medical minds answer?",
     "answer": "Nearly half of them answered 95%.",
     "choices": [
       "Nearly half of them answered 95%.",
@@ -23440,7 +23427,7 @@
   },
   {
     "tier": 4,
-    "question": "Daniel Kahneman and Amos Tversky posed this puzzle: a cab causes a hit-and-run at night. In that city, 85% of the cabs are Green and only 15% are Blue. A witness swears the cab was Blue, and tests show she names cab colors correctly 80% of the time. Most people guess there is about an 80% chance the cab was Blue. What is the real chance it was Blue?",
+    "question": "A juror listens as a witness swears that the cab in a hit-and-run one night was Blue. Tests show the witness names cab colors correctly 80 percent of the time, and 85 percent of the city's cabs are Green, only 15 percent Blue. Given this case by Daniel Kahneman and Amos Tversky, most people put the chance it was Blue at about 80 percent. What is the real chance?",
     "answer": "About 41 percent - less likely than not, because Green cabs so outnumber Blue.",
     "choices": [
       "About 41 percent - less likely than not, because Green cabs so outnumber Blue.",
@@ -23453,7 +23440,7 @@
   },
   {
     "tier": 4,
-    "question": "Gerd Gigerenzer studied breast-cancer screening, where about 0.8% of women tested actually have cancer, the scan catches 90% of real cases, and it falsely alarms 7% of healthy women. A woman gets a positive scan. He found that 95 of 100 U.S. doctors guessed her chance of cancer was around 75%. What is her real chance of having cancer?",
+    "question": "A woman's breast-cancer scan has come back positive, and her doctor must tell her what it means. He knows the numbers: only about 0.8 percent of the women screened have cancer, the scan catches 90 percent of real cases, and it falsely alarms 7 percent of healthy women. Gerd Gigerenzer found that 95 of 100 American doctors put her chance at around 75 percent. What is her real chance?",
     "answer": "About 9 percent - only around 1 positive scan in 11 is a true case.",
     "choices": [
       "About 9 percent - only around 1 positive scan in 11 is a true case.",
@@ -23466,7 +23453,7 @@
   },
   {
     "tier": 4,
-    "question": "During an outbreak's peak, a rapid COVID test gives mostly true positives. Months later, when almost no one in a town is still infected, the very same test - same brand, same accuracy - starts giving mostly FALSE positives, even though nothing about the test itself changed. Which fact explains the flip?",
+    "question": "A rapid COVID test turns up mostly true positives at an outbreak's peak. Months later, when almost no one in town is still infected, the very same test, same brand and same accuracy, starts giving mostly false positives, though nothing about the test itself has changed. What explains the flip?",
     "answer": "With the disease now rare, true cases nearly vanish and the test's steady false-alarm rate takes over.",
     "choices": [
       "With the disease now rare, true cases nearly vanish and the test's steady false-alarm rate takes over.",
@@ -23479,7 +23466,7 @@
   },
   {
     "tier": 5,
-    "question": "Daniel Kahneman and Amos Tversky asked WHY even well-informed people keep dropping how rare something is. Their explanation: faced with a vivid case, people quietly switch the question - instead of answering the question they were given, they answer a different, easier one. Which swap did they say people make?",
+    "question": "Daniel Kahneman and Amos Tversky had a puzzle on their hands: even well-informed people kept dropping how rare something is. Their answer was that, faced with a vivid case, people quietly switch questions, answering an easier one instead of the one they were given. Which swap did the two say people make?",
     "answer": "They ask how much the case resembles a typical example, ignoring how common that type is.",
     "choices": [
       "They ask how much the case resembles a typical example, ignoring how common that type is.",
@@ -23492,7 +23479,7 @@
   },
   {
     "tier": 5,
-    "question": "Daniel Kahneman and Amos Tversky gave students a sketch of a young man - neat, tidy, orderly, and rather dull - and asked which subject he most likely studied. They first told the students a plain fact: about 80% of graduate students were in the humanities, only a thin slice in the sciences. So which field did the students overwhelmingly pick for him?",
+    "question": "Students in a study by Daniel Kahneman and Amos Tversky were first told a plain fact: the humanities held about 80 percent of all graduate students, the sciences only a thin slice. Then the students were handed a sketch of a young man, neat, tidy, orderly and rather dull, and asked what he most likely studied. Which field did they overwhelmingly pick?",
     "answer": "Computer science - the nerd stereotype won out, even over the 80% they were just handed.",
     "choices": [
       "Computer science - the nerd stereotype won out, even over the 80% they were just handed.",
@@ -23505,7 +23492,7 @@
   },
   {
     "tier": 5,
-    "question": "Gerd Gigerenzer found a cure for base-rate blunders that needed no new math. He took the SAME cancer-screening problem that had fooled most doctors and changed nothing but its WORDING - yet suddenly far more doctors got the answer right. What change to the wording did the trick?",
+    "question": "Gerd Gigerenzer found a cure for base-rate blunders that needed no new math. He took the same cancer-screening problem that had fooled most doctors and changed nothing but its wording, and suddenly far more doctors got the answer right. What change to the wording did the trick?",
     "answer": "Recast every percentage as a head-count within one fixed group of people.",
     "choices": [
       "Recast every percentage as a head-count within one fixed group of people.",
@@ -23518,7 +23505,7 @@
   },
   {
     "tier": 5,
-    "question": "The Harvard experiment that stumped doctors on the plague-test question happened in 1978. You might expect that by now, with the trap so famous, trained doctors would have learned to dodge it. But when researchers ran a Harvard-style version again in 2014 - 36 years later - what did they find?",
+    "question": "Researchers went back in 2014 to a question first put to doctors and students at Harvard Medical School in 1978, about a rare disease and a positive test. Thirty-six years on, the trap in it was famous, and trained doctors might have been expected to dodge it. What did the researchers find when they put a Harvard-style version to medical people again?",
     "answer": "About three-quarters of the medical respondents still got it wrong.",
     "choices": [
       "About three-quarters of the medical respondents still got it wrong.",
@@ -23661,7 +23648,7 @@
   },
   {
     "tier": 1,
-    "question": "A mad scientist secretly takes out your brain and keeps it alive in a jar of goo. He wires your nerves to a big computer. It feeds you fake sights, fake sounds, a whole life that never really happened. Living inside that fake life, what would you actually notice?",
+    "question": "Suppose you fall into the hands of a mad scientist. He takes out your brain, keeps it alive in a jar of goo and wires it to a big computer, which pumps in a whole fake life of sights and sounds. What would you notice?",
     "answer": "Nothing — it would all seem perfectly normal",
     "choices": [
       "Nothing — it would all seem perfectly normal",
@@ -23674,7 +23661,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1999 science-fiction movie The Matrix, a hacker named Neo is offered a choice between two pills: a blue one to forget everything, or a red one to see the truth. Neo swallows the red pill and wakes up to a shocking truth about the world he had been living in up to that day. What does he discover?",
+    "question": "Neo, a hacker in The Matrix, is offered two pills: a blue one to forget everything, a red one to see the truth. He swallows the red pill and wakes to the truth about the world he has been living in. What does he discover?",
     "answer": "His entire life had been a computer-fed dream, his real body asleep in a pod",
     "choices": [
       "His entire life had been a computer-fed dream, his real body asleep in a pod",
@@ -23687,7 +23674,7 @@
   },
   {
     "tier": 2,
-    "question": "In The Matrix, the traitor Cypher knows the steak he is eating is not actually real. It is only the machine feeding signals into his brain. Even so, he decides to betray his friends in exchange for being plugged back into the fake world forever, saying 'Ignorance is bliss.' What position is Cypher taking?",
+    "question": "Cypher, the traitor in The Matrix, knows the steak he is eating is not real; it is only the machine feeding signals into his brain. Even so, he decides to betray his friends in exchange for being plugged back into the fake world forever, saying 'Ignorance is bliss.' What position is Cypher taking?",
     "answer": "If a fake life feels exactly like a real one, nothing about how to live changes",
     "choices": [
       "If a fake life feels exactly like a real one, nothing about how to live changes",
@@ -23700,7 +23687,7 @@
   },
   {
     "tier": 2,
-    "question": "Long before computers, René Descartes pictured the scariest doubt he could imagine. It was a strong evil demon working to trick him about everything. This demon was worse than a normal liar because of the kind of certain truth it could still fake. Which such truth did Descartes say the demon might turn into a lie?",
+    "question": "René Descartes, long before computers, raised the scariest doubt he could think of: a strong evil demon working to trick him about everything. The demon was worse than any ordinary liar because of the kind of certain truth it could still fake. Which truth did Descartes say it might turn into a lie?",
     "answer": "That two and two make four",
     "choices": [
       "That two and two make four",
@@ -23713,7 +23700,7 @@
   },
   {
     "tier": 3,
-    "question": "The French philosopher René Descartes, sitting alone in his study in the 1600s, pushed his doubt as far as it would go. Maybe an all-powerful evil demon fakes the whole outside world for him — the room, his own hands, even his reasoning about numbers. Yet Descartes found one single thing that demon could never fake away, no matter how total the deception. What was it?",
+    "question": "Sitting alone in his study in the 1600s, René Descartes pushed his doubt as far as it would go. Maybe, he thought, an all-powerful evil demon was faking the whole outside world for him, down to the room and his own hands. Yet Descartes found one single thing that demon could never fake away, however total the deception. What was it?",
     "answer": "That he himself existed — something had to be there doing the doubting",
     "choices": [
       "That he himself existed — something had to be there doing the doubting",
@@ -23726,7 +23713,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern philosophers ask you to imagine a wild scenario. Your brain has been removed and now floats in a jar of nutrient fluid — a 'vat' — while a supercomputer feeds it electric signals so that you 'see', 'hear', and remember exactly what you would if you were sitting at a desk reading this. Every experience the vat-brain has is identical, moment by moment, to yours. Why can't you simply run a test to prove you are not that brain?",
+    "question": "Suppose you start to wonder whether you are really sitting at a desk. A brain floating in a jar of nutrient fluid, a vat, could be fed electric signals by a supercomputer so that it sees, hears and remembers exactly what you do, moment by moment. Why can't you simply run a test to prove you are not that brain?",
     "answer": "Any test you ran would just be more machine-fed experience, identical either way",
     "choices": [
       "Any test you ran would just be more machine-fed experience, identical either way",
@@ -23739,7 +23726,7 @@
   },
   {
     "tier": 3,
-    "question": "During a lecture in the early twentieth century, the English philosopher G.E. Moore lifted up his hands in front of the audience and declared, 'Here is one hand, and here is another.' He meant it as a serious reply to philosophers who use clever arguments to doubt whether the outside world is even real. It looked like a joke, but Moore was in earnest. What was Moore's actual argument?",
+    "question": "G. E. Moore lifted up his hands before an audience in the early twentieth century and declared, 'Here is one hand, and here is another.' He meant it as a serious reply to philosophers who use clever arguments to doubt whether the outside world is even real. It looked like a joke, but Moore was in earnest. What was his actual argument?",
     "answer": "He's surer of his two hands than of any clever premise about demons, so the argument must be wrong",
     "choices": [
       "He's surer of his two hands than of any clever premise about demons, so the argument must be wrong",
@@ -23752,7 +23739,7 @@
   },
   {
     "tier": 3,
-    "question": "Hilary Putnam opens his book with an ant crawling on sand, its winding trail ending up looking exactly like a cartoon of Winston Churchill. Did the ant draw a picture of Churchill? Putnam says no — and the reason is the key to his whole argument. Why isn't the ant's trail really ABOUT Churchill?",
+    "question": "Hilary Putnam opens his book with an ant crawling on sand, its winding trail ending up looking exactly like a cartoon of Winston Churchill. Putnam says the ant has not drawn a picture of Churchill, and his reason is the key to his whole argument. Why isn't the trail really about Churchill?",
     "answer": "A perfect resemblance is never enough — meaning needs a real link to the thing",
     "choices": [
       "A perfect resemblance is never enough — meaning needs a real link to the thing",
@@ -23765,7 +23752,7 @@
   },
   {
     "tier": 4,
-    "question": "A philosophical skeptic builds a trap around a wild scenario — that you might really be a handless brain floating in a vat of fluid, fed fake experiences by a computer. Step one of the trap: you cannot prove you are not that vat-brain. Step two follows automatically, and out pops the wild conclusion that you don't even know whether you actually have hands. How does step one lead all the way to that conclusion?",
+    "question": "A skeptic builds a trap around one wild scenario. Suppose you hear him out: you might really be a handless brain floating in a vat of fluid, fed fake experiences by a computer. You cannot prove you are not, he says, so you do not even know whether you have hands. How does he get from the first claim to the second?",
     "answer": "Knowing you have hands would settle the vat question, but that question has no answer",
     "choices": [
       "Knowing you have hands would settle the vat question, but that question has no answer",
@@ -23778,7 +23765,7 @@
   },
   {
     "tier": 4,
-    "question": "Hilary Putnam imagined a brain that has been in the vat its whole existence — it has never once touched, or even seen, a real brain or a real steel vat. When that brain thinks the word 'vat,' Putnam asks what it could possibly be referring to. What is his answer?",
+    "question": "Hilary Putnam imagined a brain that had been in a vat its whole existence and had never once touched, or even seen, a real brain or a real steel vat. When such a brain thought the word 'vat,' Putnam asked, what could it possibly be referring to? What was his answer?",
     "answer": "Only the vat-picture the computer paints for it — never the real tank holding it",
     "choices": [
       "Only the vat-picture the computer paints for it — never the real tank holding it",
@@ -23791,7 +23778,7 @@
   },
   {
     "tier": 4,
-    "question": "Putnam's famous escape needs one strict rule: a word can only mean something you've actually had real contact with. So an always-trapped brain can't mean real brains or real vats, and its sentence 'I am a brain in a vat' comes out false. But critics spotted a leak. Which version of the nightmare slips right past Putnam's trick?",
+    "question": "A brain that has floated in a vat for its whole existence says 'I am a brain in a vat' to itself. By Hilary Putnam's strict rule, a word can mean only something its speaker has had real contact with, so in this brain's mouth the sentence comes out false. Critics have found a leak in Putnam's escape. Which version of the nightmare slips past his trick?",
     "answer": "Being a normal person who was envatted only last night, after a lifetime among real things",
     "choices": [
       "Being a normal person who was envatted only last night, after a lifetime among real things",
@@ -23960,7 +23947,7 @@
   },
   {
     "tier": 1,
-    "question": "Immanuel Kant wrote the strictest rule in all of ethics, and he lived a life to match. He spent his whole life inside one city, never traveling past its edge. He took the same afternoon walk at the same minute every single day. What could his neighbors do using his walk?",
+    "question": "Every afternoon, the legend goes, Immanuel Kant set out on his walk at the same minute, and he never once traveled past the edge of his home city. What could his neighbors do using his walk?",
     "answer": "Set their watches by it",
     "choices": [
       "Set their watches by it",
@@ -23973,7 +23960,7 @@
   },
   {
     "tier": 1,
-    "question": "A man is short on cash and thinks about borrowing money by promising to pay it back, though he has no intention of ever repaying. Before deciding, he asks himself one question that Immanuel Kant put at the heart of right and wrong. Which question is it?",
+    "question": "A man short on cash thinks about borrowing money on a promise to pay it back, though he has no intention of ever repaying. Before deciding, he asks himself the question Immanuel Kant put at the heart of right and wrong. Which question is it?",
     "answer": "What if ALL desperate people made promises they meant to break?",
     "choices": [
       "What if ALL desperate people made promises they meant to break?",
@@ -23986,7 +23973,7 @@
   },
   {
     "tier": 2,
-    "question": "The German philosopher Immanuel Kant imagined a world in which all people in a jam made promises they secretly meant to break — 'I'll pay you back next week,' with no real intention behind it. Kant argued the rule wrecks itself the moment you try to picture it as universal. If broken promises were the norm everywhere, something happens that makes the lying promise pointless. What collapses?",
+    "question": "'I'll pay you back next week,' says a man in a jam who secretly means to break his word. Immanuel Kant pictured a world where everyone in a jam makes such promises, and argued that the rule wrecks itself the moment it goes universal. If broken promises were the norm everywhere, what would collapse?",
     "answer": "Nobody would believe a promise, so promising itself becomes worthless",
     "choices": [
       "Nobody would believe a promise, so promising itself becomes worthless",
@@ -23999,7 +23986,7 @@
   },
   {
     "tier": 2,
-    "question": "Immanuel Kant gave a second version of his great rule. He said you ARE allowed to use people in a sense -- you use a bus driver to get to school, and that is fine. But there is one thing you must never do to people, no matter how useful they are to you. What does Kant forbid?",
+    "question": "Suppose you ride the bus to school, relying on the driver to get you there. That use of a person is fine, Immanuel Kant said in the second version of his great rule. But there is one thing you must never do to people, however useful they are. What did Kant forbid?",
     "answer": "Treating people as MERELY tools, when they are persons with their own goals",
     "choices": [
       "Treating people as MERELY tools, when they are persons with their own goals",
@@ -24012,7 +23999,7 @@
   },
   {
     "tier": 2,
-    "question": "The German philosopher Immanuel Kant imagined a talented man who chose lazy pleasures over the hard work of building his skills. Kant granted that a world of wasted talent could easily exist — it does not break any rule of logic, and society would not fall apart because of it. So why did Kant still call it flatly wrong to let your own gifts rot away?",
+    "question": "A talented man chooses lazy pleasures over the hard work of building his skills. Immanuel Kant, who imagined this man, granted that a world of wasted talent could easily exist, breaking no rule of logic and leaving society standing. Why did he still call it wrong for the man to let his gifts rot?",
     "answer": "No rational person can truly WILL a world where everyone's talents go to waste",
     "choices": [
       "No rational person can truly WILL a world where everyone's talents go to waste",
@@ -24025,7 +24012,7 @@
   },
   {
     "tier": 2,
-    "question": "Most rules we are told come with an if attached: 'if you want to pass the test, then study.' Drop the goal -- stop caring about passing -- and the command simply vanishes. Immanuel Kant said real moral rules are not like that at all. How does a true moral command differ from 'if you want to pass, study'?",
+    "question": "A teacher warns the class, 'If you want to pass the test, study.' Suppose you stop caring about passing: then that command simply vanishes. Immanuel Kant said real moral commands are unlike everyday ones of that kind. How does a true moral command differ from the teacher's?",
     "answer": "It binds you no matter what you happen to want",
     "choices": [
       "It binds you no matter what you happen to want",
@@ -24038,7 +24025,7 @@
   },
   {
     "tier": 2,
-    "question": "Kant was so punctual that, by legend, nothing ever cut short his daily walk. Yet in 1762, one book gripped him so hard he skipped the walk for days. He kept the author's portrait as the only picture in his study. What book had hold of the clockwork philosopher?",
+    "question": "Immanuel Kant skipped his daily walk for days in 1762, the story goes, though by legend nothing else ever cut it short. Something he was reading had gripped him that hard, and he kept its author's portrait as the only picture in his study. What had hold of the clockwork philosopher?",
     "answer": "A new book by Jean-Jacques Rousseau",
     "choices": [
       "A new book by Jean-Jacques Rousseau",
@@ -24051,7 +24038,7 @@
   },
   {
     "tier": 3,
-    "question": "Kant used one biting phrase for what happens to a promise in a world where everyone breaks them. He wrote that no one would trust a promise anymore, and people would just laugh off every such statement as empty. What memorable two-word phrase did Kant use for promises that have rotted into noise nobody trusts?",
+    "question": "In the world Immanuel Kant pictured, everyone made promises he secretly meant to break. A man there could swear to repay a loan, and his listeners would only laugh. People would mock every such statement, Kant wrote, and he had a biting two-word phrase for them. What was the phrase?",
     "answer": "'Vain pretences'",
     "choices": [
       "'Vain pretences'",
@@ -24064,7 +24051,7 @@
   },
   {
     "tier": 3,
-    "question": "Immanuel Kant described a shrewd shopkeeper who never overcharges anyone -- not even a small child, who gets the same fair price as everyone else. The man is scrupulously honest. Yet Kant insisted his fair dealing has NO real moral worth. What was Kant's reason for denying him credit?",
+    "question": "A shrewd shopkeeper never overcharges anyone, not even a small child, who gets the same fair price as everyone else. The man is scrupulously honest, yet Immanuel Kant insisted that his fair dealing has no real moral worth. Why did Kant deny him the credit?",
     "answer": "He stays honest because it is good for business, not because it is right",
     "choices": [
       "He stays honest because it is good for business, not because it is right",
@@ -24077,7 +24064,7 @@
   },
   {
     "tier": 3,
-    "question": "A would-be murderer pounds on your door and asks where your friend is hiding inside. In 1796 the writer Benjamin Constant said the answer was obvious -- of course you may lie, since 'no one has a right to a truth that harms others.' Immanuel Kant stunned everyone with his reply. What did Kant say you must do?",
+    "question": "Suppose you hear a would-be murderer pounding on your door, demanding to know where your friend is hiding inside. Benjamin Constant, a writer, called the answer obvious in 1796: you may lie, since 'no one has a right to a truth that harms others.' Immanuel Kant's reply stunned everyone. What did Kant say you must do?",
     "answer": "Not lie, even to the murderer at your door",
     "choices": [
       "Not lie, even to the murderer at your door",
@@ -24090,7 +24077,7 @@
   },
   {
     "tier": 4,
-    "question": "Immanuel Kant said a rule can fail his universal-law test in two different ways. Some rules cannot even be IMAGINED working for everyone -- the lying promise erases the whole practice of promising the moment it goes universal. Others CAN be imagined running the world, yet no sane person could choose to LIVE under them. How did Kant treat that first kind of failure?",
+    "question": "Immanuel Kant ran two rules through his universal-law test, and each failed differently. A lying promise could not be imagined working for everyone: it would erase the practice of promising the moment it went universal. A rule never to help anyone in need could be imagined running the world, yet no sane person could choose to live under it. How did Kant treat the first kind of failure?",
     "answer": "As a strict duty that holds with no exceptions at all",
     "choices": [
       "As a strict duty that holds with no exceptions at all",
@@ -24103,7 +24090,7 @@
   },
   {
     "tier": 4,
-    "question": "Immanuel Kant pointed to a world where nobody ever helps anyone in need. He admitted such a cold world could perfectly well exist -- it breaks no logic. So why did Kant still say you cannot honestly choose it as a rule for everyone, the way you can clearly rule out lying promises?",
+    "question": "Suppose you are asked to choose, as a rule for everyone, a cold world where nobody ever helps anyone in need. Immanuel Kant admitted that such a world could perfectly well exist, breaking no logic. Why did he say you still cannot honestly will it?",
     "answer": "You will need others' help someday, so willing that rule turns against you",
     "choices": [
       "You will need others' help someday, so willing that rule turns against you",
@@ -24116,7 +24103,7 @@
   },
   {
     "tier": 4,
-    "question": "Critics thought Immanuel Kant's no-lying rule was just blind and rigid. But Kant gave a surprising twist: suppose you lie that your friend has left, when secretly he has slipped out the back. The murderer leaves, meets your friend in the street, and kills him. Kant argued the lie changed something about YOUR position. What did Kant claim the lie did to you?",
+    "question": "Critics thought Immanuel Kant's no-lying rule was blind and rigid, and Kant answered them with a case of his own. Suppose you tell a killer at your door that your friend has left, when in secret the friend has slipped out the back. The killer leaves, meets your friend in the street and kills him. What did Kant claim the lie did to you?",
     "answer": "It made YOU accountable for the death you tried to prevent",
     "choices": [
       "It made YOU accountable for the death you tried to prevent",
@@ -25415,34 +25402,8 @@
     "topic": "the-design-argument-paleys-watch"
   },
   {
-    "tier": 1,
-    "question": "A farmer wakes at dawn to find a downpour has flattened his ripe wheat the very night before the harvest. He is wretched about it all day. His neighbor's field was hit just as hard, yet the neighbor only shrugs and starts working. The ancient Roman Stoic teacher Epictetus, a former slave who taught how to keep your peace in life, would point out that both farmers met exactly the same weather. What made only the first one miserable?",
-    "answer": "His own verdict that this was a catastrophe",
-    "choices": [
-      "His own verdict that this was a catastrophe",
-      "The rain, a plainly real and ruinous misfortune",
-      "His failure to bring the harvest in a day sooner",
-      "The gods, who flood the fields of careless farmers"
-    ],
-    "context": "Epictetus, Enchiridion 5: 'Men are disturbed not by things, but by the views they take of them.' The rain is just rain; the misery is the judgment laid on top. The neighbor met the same weather and added no such verdict. Source: Epictetus, Enchiridion 5 (classics.mit.edu/Epictetus/epicench.html).",
-    "topic": "the-dichotomy-of-control"
-  },
-  {
     "tier": 2,
-    "question": "A girl spends the morning before a long-planned picnic furious that it is raining, certain the day is ruined. Epictetus, the Stoic teacher, taught that you cannot order the weather to obey you. What did he say is the path to a steady, contented life instead?",
-    "answer": "Wish for things to happen the way they actually do",
-    "choices": [
-      "Wish for things to happen the way they actually do",
-      "Demand loudly until events bend to the way you wish",
-      "Feel nothing at all, so no event can ever touch you",
-      "Plan so carefully that nothing is left to go wrong"
-    ],
-    "context": "Epictetus, Enchiridion 8: 'Don't demand that things happen as you wish, but wish that they happen as they do happen, and you will go on well.' It is not numb resignation -- it is aiming your wanting at reality instead of fighting it. Source: Epictetus, Enchiridion 8 (classics.mit.edu/Epictetus/epicench.html).",
-    "topic": "the-dichotomy-of-control"
-  },
-  {
-    "tier": 2,
-    "question": "Epictetus grew up to be one of the ancient world's great teachers of inner freedom. He taught that no one can take your mind from you. Yet his early life was the very opposite of free. He served Epaphroditus, a rich official in the household of the emperor Nero. What was Epictetus in those early years?",
+    "question": "Epictetus spent his early years serving Epaphroditus, a rich official in the household of the emperor Nero. He would grow up to teach inner freedom, saying that no one can take a person's mind from him, yet those years were the very opposite of free. What was Epictetus then?",
     "answer": "He was a slave in another man's household",
     "choices": [
       "He was a slave in another man's household",
@@ -25454,34 +25415,8 @@
     "topic": "the-dichotomy-of-control"
   },
   {
-    "tier": 2,
-    "question": "Epictetus was a Roman-era Stoic philosopher, born a slave and later freed, who taught his students to keep their calm when life took things away. He told them to swap one word whenever they lost something. He said the thing was never really theirs to keep, so when an object or even a loved one was gone, they should not say 'I have lost it.' What did he tell them to say instead?",
-    "answer": "I have given it back",
-    "choices": [
-      "I have given it back",
-      "I have been robbed",
-      "I will earn it again",
-      "I never wanted it"
-    ],
-    "context": "Epictetus, Enchiridion 11: 'Never say of anything, I have lost it; but, I have given it back. Is your child dead? It is given back.' Externals -- property, even loved ones -- are on loan, not owned; death is the lender calling them home. Source: Epictetus, Enchiridion 11 (classics.mit.edu/Epictetus/epicench.html).",
-    "topic": "the-dichotomy-of-control"
-  },
-  {
     "tier": 3,
-    "question": "Ancient sources tell that when Epictetus was still a slave, his master began twisting his leg for cruel sport. Quietly the enslaved man warned, 'You will break it.' The master kept on until the bone snapped -- and Epictetus, who would limp for the rest of his life, spoke a single line that became the emblem of his whole teaching. According to the story, what did he say?",
-    "answer": "There, did I not tell you that it would break?",
-    "choices": [
-      "There, did I not tell you that it would break?",
-      "Strike again, for a slave feels nothing at all.",
-      "Now I am free of you; a cripple has no master.",
-      "The leg is yours to break; the rest is not."
-    ],
-    "context": "Reported by Origen citing Celsus. Whether or not it happened exactly so, the story became the emblem of his teaching: the master could break the leg -- a thing 'not up to' Epictetus -- but not his composure, which was. He was lame the rest of his life. (Told as legend.) Source: Internet Encyclopedia of Philosophy, 'Epictetus' (iep.utm.edu/epictetu).",
-    "topic": "the-dichotomy-of-control"
-  },
-  {
-    "tier": 3,
-    "question": "Epictetus opens his little handbook by sorting everything in life into two bins: things that are 'up to us' and things that are not. On the 'NOT up to us' side he names your body and your property -- and then a third thing, one most people are sure they own and would fight hardest to keep. What is that third item on Epictetus's list?",
+    "question": "A student of Epictetus learned first of all to sort everything in life into two bins: things that are 'up to us' and things that are not. On the 'not up to us' side his teacher put the body and property, and then a third thing, one most people would swear they own and would fight hardest to keep. What was that third item?",
     "answer": "Your reputation",
     "choices": [
       "Your reputation",
@@ -25494,7 +25429,7 @@
   },
   {
     "tier": 3,
-    "question": "Epictetus never wrote a single line himself. Yet his teaching lives on today. There is a set of lectures and a famous pocket handbook, meant to be carried and used. One loyal follower wrote it all down from his words and gave it to the world. Whose pen preserved the teaching of Epictetus?",
+    "question": "A loyal follower took down the lectures of Epictetus as the teacher spoke, since Epictetus never wrote a line himself. The follower then condensed them into a pocket handbook, meant to be carried and used, and through his work the teaching lives on. Who was the follower whose pen preserved the teaching of Epictetus?",
     "answer": "Arrian, who also wrote a history of Alexander's campaigns",
     "choices": [
       "Arrian, who also wrote a history of Alexander's campaigns",
@@ -25507,7 +25442,7 @@
   },
   {
     "tier": 3,
-    "question": "Epictetus gave a startling piece of advice about loving the people closest to you. When you kiss your children and your spouse goodnight, he said, quietly remind yourself of one plain fact about them -- a fact that keeps the love steady and unafraid. What did he tell you to remember in that tender moment?",
+    "question": "Suppose you are about to kiss your spouse or your child goodnight. Epictetus would offer startling advice for that tender moment: quietly remind yourself of one plain fact about the one you kiss, and your love will stay steady and unafraid. What would he tell you to remember?",
     "answer": "That you are kissing a mortal human being",
     "choices": [
       "That you are kissing a mortal human being",
@@ -25533,7 +25468,7 @@
   },
   {
     "tier": 4,
-    "question": "Epictetus admitted that some things in life truly cannot be escaped: 'I must die. I must be imprisoned. I must go into exile.' Yet he insisted that even when the event is fixed and forced upon you, one thing about it is still entirely yours to decide. According to him, what remains in your hands?",
+    "question": "'I must die. I must be imprisoned. I must go into exile,' Epictetus admitted, for some things truly cannot be escaped. Suppose you face one of them, fixed and forced on you. One thing about it, he insisted, is still entirely yours to decide. What is it?",
     "answer": "The manner in which you meet it -- groaning, or serene",
     "choices": [
       "The manner in which you meet it -- groaning, or serene",
@@ -25546,7 +25481,7 @@
   },
   {
     "tier": 5,
-    "question": "A young athlete trains for years and wants, more than anything, for the crowd to love him. Epictetus would warn that he has staked his peace on the one thing he can never control. He can master his own training and his own conduct -- but the cheering itself, Epictetus argued, can never be 'up to him.' Why not?",
+    "question": "A young athlete trains for years and wants, more than anything, for the crowd to love him. Epictetus would warn that he has staked his peace on the one thing he can never control: he can master his own training and his own conduct, but never the cheering. Why, in Epictetus's view, can the crowd's love never be up to him?",
     "answer": "What others think of him is decided inside their minds, not his",
     "choices": [
       "What others think of him is decided inside their minds, not his",
@@ -25559,7 +25494,7 @@
   },
   {
     "tier": 5,
-    "question": "Here is a hard case in Epictetus's teaching. We assume nothing is more 'ours' than our own body -- yet he put even the body on the 'NOT up to us' side, calling it borrowed clay, a 'little donkey' we are merely lent. On what grounds did he deny that your body is fully within your power?",
+    "question": "Lucius insists that nothing is more his own than his body. Epictetus put even the body on the 'not up to us' side, calling it borrowed clay, a 'little donkey' lent for a while. On what grounds did he deny that the body is fully within a person's power?",
     "answer": "It can be chained, sickened, or broken by forces outside your will",
     "choices": [
       "It can be chained, sickened, or broken by forces outside your will",
@@ -25572,7 +25507,7 @@
   },
   {
     "tier": 5,
-    "question": "A cruel tyrant drags a man before him in chains and gloats that he now holds the man's fate entirely in his hands, free to ruin the prisoner however he pleases. The ancient Roman Stoic teacher Epictetus, once a slave himself, would answer that the tyrant, for all his power, has overreached. There is one thing about this chained man that no chain and no executioner can ever reach. What is it?",
+    "question": "A cruel tyrant drags a man before him in chains and gloats that the prisoner's fate is now entirely in his hands, to ruin however he pleases. Epictetus, once a slave himself, would answer that the tyrant has overreached: there is one thing about the chained man that no chain and no executioner can ever reach. What is it?",
     "answer": "Whether he turns into a worse man -- that descent is his alone to make, not the tyrant's",
     "choices": [
       "Whether he turns into a worse man -- that descent is his alone to make, not the tyrant's",
@@ -25585,7 +25520,7 @@
   },
   {
     "tier": 3,
-    "question": "A soldier sees a live grenade land among his sleeping comrades. With no time to throw it clear, he flings his own body on top of it and smothers the blast. He dies; his friends live. A man who shoots himself in despair also brings about his own death on purpose -- yet we call the soldier a hero and the other a suicide. Which feature of the soldier's act, if it were missing, would make us call him a suicide too?",
+    "question": "A soldier sees a live grenade land among his sleeping comrades and, with no time to throw it clear, smothers the blast with his own body. He dies; his friends live. Like a man who shoots himself in despair, he knowingly causes his own death, yet people call him a hero, not a suicide. What feature of his act, if it were missing, would make him a suicide too?",
     "answer": "His death is something he would gladly have avoided had any way to save the others let him live.",
     "choices": [
       "His death is something he would gladly have avoided had any way to save the others let him live.",
@@ -25598,7 +25533,7 @@
   },
   {
     "tier": 3,
-    "question": "Two wartime pilots each fly a mission that ends the same number of civilian lives. The first is ordered to break the enemy's will to fight, and aims his bombs squarely at the crowded tenement quarter to do it. The second is ordered to wreck a munitions plant; his bombs flatten it, and the same number die in the houses pressed up against its wall. Lawyers of war call the first a murderer and the second perhaps blameless. What makes the killing different?",
+    "question": "Two wartime pilots fly missions that end the same number of civilian lives. The first, ordered to break the enemy's will, aims his bombs at a crowded tenement quarter. The second, ordered to wreck a munitions plant, flattens it, and the same number die in the houses pressed against its wall. Lawyers of war call the first a murderer and the second perhaps blameless. What makes the killings different?",
     "answer": "For the first, the dead are the thing his plan runs on; for the second, they are rubble his plan steps over.",
     "choices": [
       "For the first, the dead are the thing his plan runs on; for the second, they are rubble his plan steps over.",
@@ -25611,7 +25546,7 @@
   },
   {
     "tier": 4,
-    "question": "A man walking home at night is set upon by a killer bent on murdering him for his purse. He fights back to save his own life, and in the struggle his attacker is killed. The medieval Christian thinker Thomas Aquinas used exactly this scene to argue the defender does no wrong. A single act, Aquinas said, can produce two effects — one the man reaches for on purpose, and one that falls outside of what he reaches for. Two effects flow from the defender's struggle: he keeps his own life, and his attacker dies. Which one does Aquinas place outside the man's intention?",
+    "question": "A killer sets upon a man walking home at night, meaning to murder him for his purse. The man fights back to save his life, and in the struggle the attacker dies. Thomas Aquinas used a case like this to argue that the defender does no wrong, since a single act can bring about two effects and intend just one. Which effect did Aquinas place outside the man's intention?",
     "answer": "The attacker's death, which he accepts as the cost but would just as soon have spared if he safely could.",
     "choices": [
       "The attacker's death, which he accepts as the cost but would just as soon have spared if he safely could.",
@@ -25624,7 +25559,7 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Aquinas argued that a man fighting off a murderer may lawfully kill the attacker to save his own life. But he refused to leave that permission open-ended. In the very same passage he added a sharp brake: the defense is lawful only up to a point, beyond which it becomes wrong even though the original threat was real. What was the limit Aquinas set?",
+    "question": "Thomas Aquinas took the side of a man fighting off a murderer: the man might lawfully kill his attacker, Aquinas wrote, to save his own life. But Aquinas would not leave that permission open-ended. In the same passage he added a sharp brake: the defense was lawful only up to a point, beyond which it became wrong even though the threat was real. What was the limit he set?",
     "answer": "He may use no more force than the danger requires; excess violence makes it unlawful.",
     "choices": [
       "He may use no more force than the danger requires; excess violence makes it unlawful.",
@@ -25637,7 +25572,7 @@
   },
   {
     "tier": 4,
-    "question": "A doctor tends a dying patient in unbearable pain. She keeps raising the dose of morphine until the agony loosens its grip, knowing full well that a dose this high may also bring the end sooner. In a second room another doctor, facing the same suffering, gives a single dose he knows is past any patient's power to survive. Both patients die the same evening. Many people call the first doctor's act morally right and the second's morally wrong — even though the drug is the same, and the death looks the same. Thomas Aquinas's doctrine of double effect, from the medieval church, points to where that difference lies. Where is it?",
+    "question": "A doctor keeps raising a dying patient's morphine until the unbearable pain eases, knowing so high a dose may bring the end sooner. Another doctor gives a patient in the same pain a dose he knows no one could survive. Both patients die the same evening, yet many call the first act right and the second wrong. Where does the doctrine of double effect put the difference?",
     "answer": "The first wants the suffering gone and will live with the death; the second wants the patient gone.",
     "choices": [
       "The first wants the suffering gone and will live with the death; the second wants the patient gone.",
@@ -25650,7 +25585,7 @@
   },
   {
     "tier": 5,
-    "question": "Doctors once drew a fine line in two grim cases. To save a mother whose unborn child cannot be delivered, crushing the child's skull to free it was called forbidden; removing a cancer-ridden womb to save her, with the child dying as a result, was called permitted. The defenders' reason was that the first death is aimed at and the second merely foreseen. Critics like Jonathan Bennett pressed back hard. What was their objection?",
+    "question": "One surgeon, to save a mother whose unborn child cannot be delivered, crushes the child's skull; another removes a mother's cancer-ridden womb, which her unborn child cannot survive. Doctors once called the first forbidden and the second permitted: the first death, defenders said, is aimed at and the second merely foreseen. Jonathan Bennett and other critics pressed back hard. What was their objection?",
     "answer": "The surgeon could claim to intend only the crushing and not the death, so the line is too fine to be real.",
     "choices": [
       "The surgeon could claim to intend only the crushing and not the death, so the line is too fine to be real.",
@@ -25663,7 +25598,7 @@
   },
   {
     "tier": 1,
-    "question": "Caleb is sure he is wide awake right now. To prove it he pinches his own arm — it hurts, so this must be real life, not a dream. His sister points out that the pinch proves nothing. Philosophers call this old puzzle the dream argument. Why does a painful pinch fail to prove you are awake?",
+    "question": "Caleb is sure he is wide awake. To prove it he pinches his arm: it hurts, so this must be real life, not a dream. His sister says the pinch proves nothing. Why does a painful pinch fail to show that Caleb is awake?",
     "answer": "A dream can make a pinch hurt just as much, so the pain settles nothing",
     "choices": [
       "A dream can make a pinch hurt just as much, so the pain settles nothing",
@@ -25676,7 +25611,7 @@
   },
   {
     "tier": 1,
-    "question": "Every kid has woken from a dream that felt totally real while it was going on. Inside the dream, you were absolutely sure you were awake. Philosophers call this old puzzle the dream argument. So when a friend now says, 'But I just know I am awake right now,' why does that sure feeling fail to prove it?",
+    "question": "Nora's friend insists, 'I just know I am awake right now.' But Nora has woken from plenty of dreams that felt completely real while they lasted, dreams in which she was just as sure she was awake. How does Nora answer her friend?",
     "answer": "A dreaming you would feel that very same certainty, so the feeling cannot tell the two apart",
     "choices": [
       "A dreaming you would feel that very same certainty, so the feeling cannot tell the two apart",
@@ -25689,20 +25624,7 @@
   },
   {
     "tier": 2,
-    "question": "Rene Descartes sat by his fire in his winter robe. He held a sheet of paper. He was hunting for one thing he could not doubt. Then a memory stopped him. On many past nights he had been just as sure he was by the fire, when really he was in bed, fast asleep. Why could he no longer be sure he was awake right now?",
-    "answer": "This very moment by the fire might itself be one of those dreams, with no way to tell",
-    "choices": [
-      "This very moment by the fire might itself be one of those dreams, with no way to tell",
-      "He must have dozed off in his chair, so the paper he was holding had to be imaginary",
-      "He could not recall sitting down, and a missing memory is a clear sign you are dreaming",
-      "The firelight looked too vivid to be real, and dreams are always the most vivid scenes"
-    ],
-    "context": "Descartes' own words: he recalls being 'convinced of just such familiar events — that I am sitting by the fire in my dressing-gown — when in fact I am lying undressed in bed.' Because a past dream had copied the waking scene perfectly, the very scene in front of him could be a dream too. He even shakes his head and feels his hand to check, then notes he has been 'tricked by exactly similar thoughts while asleep.' Source: Descartes, Meditations on First Philosophy I (Cottingham translation).",
-    "topic": "the-dream-argument"
-  },
-  {
-    "tier": 2,
-    "question": "An old Chinese story, told of the sage Zhuangzi around 300 BC, says he dreamed he was a butterfly — drifting happily from flower to flower, completely sure he was a butterfly. Then he woke as a man. The tale ends on a jolt that matches a famous doubt about dreams. What unsettling thought did it leave him with?",
+    "question": "Zhuangzi, the Chinese sage, dreamed he was a butterfly drifting happily from flower to flower, sure he was nothing else, or so an old story goes. Then he woke as a man, and the waking left him with an unsettling thought, one that matches a famous doubt about dreams. What was it?",
     "answer": "Maybe he was not a man who dreamed he was a butterfly, but a butterfly now dreaming it was a man",
     "choices": [
       "Maybe he was not a man who dreamed he was a butterfly, but a butterfly now dreaming it was a man",
@@ -25715,7 +25637,7 @@
   },
   {
     "tier": 3,
-    "question": "Rene Descartes pushed his dream doubt to a sharp point: there are, he wrote, no sure signs by which being awake can be told apart from being asleep. But the dream was only a tool — he was aiming at something bigger. If no test can prove you are awake rather than dreaming, what did he decide you can no longer fully trust?",
+    "question": "Writing his Meditations, Rene Descartes sharpened the dream doubt to a point: there are, he argued, no sure signs by which being awake can be told apart from being asleep. But the dream was only his tool, aimed at something bigger. Suppose you can find no such sign. What, on his reasoning, can you then no longer fully trust?",
     "answer": "Anything your senses report, since any sight, sound, or touch could be a dream instead",
     "choices": [
       "Anything your senses report, since any sight, sound, or touch could be a dream instead",
@@ -25741,7 +25663,7 @@
   },
   {
     "tier": 3,
-    "question": "The dream doubt has a modern descendant. Picture a living brain kept alive in a vat of fluid, wired to a computer that feeds it electrical signals — signals that produce the full experience of an ordinary life: a job, friends, lunch. The 1999 film The Matrix put this picture on screen for everyone. Why is this brain-in-a-vat exactly the puzzle Descartes raised?",
+    "question": "Suppose you were a living brain kept in a vat of fluid, wired to a computer that feeds you the full experience of an ordinary life: a job, friends, lunch. The film The Matrix put this modern heir of the dream doubt on screen for everyone. Why is a brain in a vat exactly the puzzle Descartes raised?",
     "answer": "From the inside the fed-in life would feel just like the real thing, so you could never tell",
     "choices": [
       "From the inside the fed-in life would feel just like the real thing, so you could never tell",
@@ -25793,20 +25715,7 @@
   },
   {
     "tier": 2,
-    "question": "Socrates, the old Athenian philosopher, stands in the King-Archon's court in ancient Athens, on trial as the accused. He has been charged with impiety and with corrupting the young. Waiting in the same court that day is a young man named Euthyphro, who has come as the prosecutor in a murder case. The shocking part is who Euthyphro is prosecuting for murder. Who is it?",
-    "answer": "His own father",
-    "choices": [
-      "His own father",
-      "A rival priest",
-      "The man who accused Socrates",
-      "A foreign general"
-    ],
-    "context": "The whole dialogue on holiness happens between two religious court cases. A hired laborer on Naxos had killed a household slave in a drunken brawl; Euthyphro's father bound the laborer hand and foot, threw him in a ditch, and sent to Athens to ask a priest what to do — and the bound man died of hunger and cold before the answer came back. Euthyphro is so certain of his own piety that he is taking his father to court over it. Source: Plato, Euthyphro (Jowett trans.), standardebooks.org/ebooks/plato/dialogues/benjamin-jowett/text/euthyphro.",
-    "topic": "the-euthyphro-dilemma-applied"
-  },
-  {
-    "tier": 2,
-    "question": "Every time Socrates and Euthyphro nail down a meaning of holiness, it slips loose. The argument circles back on itself. Socrates jokes that his words act like the statues his mythical ancestor Daedalus was said to carve. What was special about those statues?",
+    "question": "Every time Socrates and Euthyphro nailed down a meaning of holiness, it slipped loose, and the argument circled back on itself. Socrates joked that their words behaved like the statues his mythical ancestor Daedalus was said to carve. What was special about those statues?",
     "answer": "They came alive and ran off",
     "choices": [
       "They came alive and ran off",
@@ -25819,20 +25728,20 @@
   },
   {
     "tier": 2,
-    "question": "Outside an Athenian courthouse, the philosopher Socrates has spent the whole morning quizzing a young priest named Euthyphro. Their question is simple to ask and hard to answer: what exactly is holiness? Socrates has picked apart every answer Euthyphro has offered, and at last he presses him one final time to teach him. How does Euthyphro end the conversation?",
+    "question": "Socrates spent a whole morning outside the Athenian court quizzing Euthyphro on a question simple to ask and hard to answer: what exactly is holiness? He picked apart every answer Euthyphro offered, then pressed him one final time to teach him. How, in Plato's telling, did Euthyphro end the conversation?",
     "answer": "He suddenly remembers an appointment and hurries off",
     "choices": [
       "He suddenly remembers an appointment and hurries off",
-      "He admits at last that he was wrong all along",
-      "He angrily storms out of the court shouting",
-      "He finally gives a clear definition of holiness"
+      "He admits that holiness cannot be defined",
+      "He offers yet another definition to try",
+      "He accuses Socrates of twisting his words"
     ],
     "context": "Cornered, Euthyphro says, 'Another time, Socrates; for I am in a hurry, and must go now,' and walks off. Socrates is left lamenting, 'will you leave me in despair? I was hoping that you would instruct me in the nature of piety.' The man prosecuting his own father over holiness cannot say what holiness is — and the dialogue ends with no answer. Source: Plato, Euthyphro (Jowett trans.), standardebooks.org/ebooks/plato/dialogues/benjamin-jowett/text/euthyphro.",
     "topic": "the-euthyphro-dilemma-applied"
   },
   {
     "tier": 3,
-    "question": "Leibniz attacked the idea that a thing is good ONLY because God wills it, with no standard of goodness lying behind the choice. He pressed a sharp question: why praise God for what he has done, if he would have been just as praiseworthy had he done the very opposite? What did Leibniz conclude this shows?",
+    "question": "A believer praises God for his works. Suppose a thing is good only because God wills it, with no standard of goodness behind the choice: then, Gottfried Leibniz asked, why praise God, if he would have been just as praiseworthy for doing the very opposite? What did Leibniz conclude this shows?",
     "answer": "The word 'good' would tell us nothing, since it would fit whatever God willed",
     "choices": [
       "The word 'good' would tell us nothing, since it would fit whatever God willed",
@@ -25845,20 +25754,7 @@
   },
   {
     "tier": 3,
-    "question": "In Plato's dialogue the Euthyphro, Socrates hands a young Athenian a fork in the road: is a thing good because God commands it, or does God command it because it is already good? Take the first branch — a thing is good only because God commands it, with no deeper reason standing behind the command. A philosopher presses the believer on this branch. What ugly thing follows if goodness is just whatever God happens to will?",
-    "answer": "Cruelty could have been good, had God chosen to command it",
-    "choices": [
-      "Cruelty could have been good, had God chosen to command it",
-      "Goodness would turn out to be something humans simply invented",
-      "Praise and blame would have to be decided by a vote of priests",
-      "Right and wrong would depend on the strongest human ruler"
-    ],
-    "context": "This is the arbitrariness horn — the one that makes the believer flinch. If a thing is good only because it was commanded, goodness becomes a coin-flip of divine will rather than anything real, and God could just as easily have made cruelty good. Source: Christian Miller (Wake Forest), 'The Euthyphro Dilemma', users.wfu.edu/millerc/Euthyphro.pdf; Stanford Encyclopedia of Philosophy, 'Religion and Morality', plato.stanford.edu/entries/religion-morality/.",
-    "topic": "the-euthyphro-dilemma-applied"
-  },
-  {
-    "tier": 3,
-    "question": "In Plato's dialogue the Euthyphro, Socrates presses a young Athenian with a fork in the road: is a thing good because God commands it, or does God command it because it is already good? Take the second branch — God commands a thing because it is already good, with the goodness sitting there in the deed itself. A philosopher warns the believer that this branch costs something too. What does it seem to do to God's standing?",
+    "question": "A philosopher puts Plato's old fork to a believer: is a thing good because God commands it, or does God command it because it is already good? When the believer chooses the second branch, with the goodness sitting in the deed itself, the philosopher warns that it has a cost of its own. What does it seem to do to God's standing?",
     "answer": "It puts goodness above God, as a standard he must consult",
     "choices": [
       "It puts goodness above God, as a standard he must consult",
@@ -25871,7 +25767,7 @@
   },
   {
     "tier": 4,
-    "question": "Faced with the two horns, some philosophers refuse the fork entirely and say goodness is NEITHER an arbitrary command nor a rule sitting above God. Robert Adams offered the best-known version of this third move. Where did he locate goodness so it could be neither?",
+    "question": "Robert Adams, faced with the two horns of the Euthyphro fork, refused to take either. Goodness, he held, is neither an arbitrary command nor a rule sitting above God, and his is the best-known version of this third move. Where did he locate goodness so that it could be neither?",
     "answer": "In God's own loving nature, so cruelty contradicts who God is",
     "choices": [
       "In God's own loving nature, so cruelty contradicts who God is",
@@ -25884,7 +25780,7 @@
   },
   {
     "tier": 4,
-    "question": "Most defenders of the first branch soften it, but William of Ockham bit down hard. He insisted the ONLY limit on God's will is that it cannot be self-contradictory. Which startling thing did Ockham say WOULD be good, even obligatory, if God commanded it?",
+    "question": "William of Ockham bit down hard on the first branch of the Euthyphro fork, that a thing is good because God commands it, while most defenders softened it. God's will is bound only by the rule against contradiction, he held, so if God commanded theft or adultery, those acts could be done with merit. What even more startling thing did he say would be good, indeed required, at God's command?",
     "answer": "Hatred of God himself",
     "choices": [
       "Hatred of God himself",
@@ -25897,7 +25793,7 @@
   },
   {
     "tier": 4,
-    "question": "The very same fork split Islamic thinkers long before Europe debated it. Two great schools, the Mu'tazila and the Ash'aris, fought over a single question: where do good and evil actually come from? The Ash'aris, whose answer eventually won out across much of Sunni theology, took one definite side. What did the Ash'aris hold makes an act good?",
+    "question": "Theologians of two great Muslim schools, the Mu'tazila and the Ash'aris, fought over where good and evil actually come from, long before Europe's thinkers took up the same question. The Ash'aris, whose answer eventually won out across much of Sunni theology, took one definite side. What did they hold makes an act good?",
     "answer": "That God commanded it, and nothing in the act counts as good before that",
     "choices": [
       "That God commanded it, and nothing in the act counts as good before that",
@@ -25909,21 +25805,8 @@
     "topic": "the-euthyphro-dilemma-applied"
   },
   {
-    "tier": 3,
-    "question": "Socrates climbs the steps of the Athenian court, summoned to stand trial for impiety — failing to honor the gods. There he meets Euthyphro, who boasts that he is an expert on holiness and knows exactly what counts as pious. What does Socrates do with this self-styled expert?",
-    "answer": "He asks the expert to define holiness",
-    "choices": [
-      "He asks the expert to define holiness",
-      "He asks the expert to defend him at his trial",
-      "He charges the expert with impiety in return",
-      "He asks the expert to pray for him"
-    ],
-    "context": "The dramatic irony of the whole dialogue: a man accused of impiety meets a man who claims to be an expert in piety, and proceeds to prove the expert cannot even define the word. Socrates was executed for impiety in 399 BC. Source: Plato, Euthyphro (Project Gutenberg #1642); Internet Encyclopedia of Philosophy: Socrates.",
-    "topic": "the-euthyphro-dilemma"
-  },
-  {
-    "tier": 3,
-    "question": "In ancient Athens, the philosopher Socrates runs into a young priest named Euthyphro on the courthouse steps. Euthyphro looks proud and certain that he is doing exactly the holy thing. Socrates asks what brings him there today, and Euthyphro says he has come to bring a charge of murder against a member of his own household. Whom is Euthyphro prosecuting?",
+    "tier": 2,
+    "question": "Socrates, charged with impiety and with corrupting the young, came to the Athenian court to stand trial. On its steps he met a young man named Euthyphro, sure he was doing the holy thing. Euthyphro had come to bring a murder charge against a member of his own household. Whom was he prosecuting?",
     "answer": "His own father",
     "choices": [
       "His own father",
@@ -25948,21 +25831,8 @@
     "topic": "the-euthyphro-dilemma"
   },
   {
-    "tier": 3,
-    "question": "On the steps of the Athenian courthouse, the philosopher Socrates and a young priest named Euthyphro try to say exactly what holiness is. Every definition Euthyphro offers, Socrates carefully picks apart. Then Socrates presses him to try just one more time. Cornered and out of things to say, what does Euthyphro finally do?",
-    "answer": "He says he is in a hurry and leaves",
-    "choices": [
-      "He says he is in a hurry and leaves",
-      "He admits that holiness cannot be defined",
-      "He offers yet another definition to try",
-      "He accuses Socrates of twisting his words"
-    ],
-    "context": "The dialogue's famous non-ending: Euthyphro blurts 'Another time, Socrates; for I am in a hurry, and must go now,' and bolts. Socrates: 'Alas! my companion, and will you leave me in despair?' Plato's early dialogues end this way on purpose — with no answer reached (aporia). Source: Plato, Euthyphro, closing lines (Project Gutenberg #1642); IEP: Socrates.",
-    "topic": "the-euthyphro-dilemma"
-  },
-  {
     "tier": 4,
-    "question": "In Plato's dialogue Euthyphro, Socrates meets a young priest named Euthyphro at the Athens courthouse and asks him what holiness really is. Pressed again and again, Euthyphro offers his last definition: holiness is knowing how to pray and sacrifice rightly — knowing how to please the gods. Socrates immediately recasts this as something that sounds far less holy. As what?",
+    "question": "Pressed again and again by Socrates to say what holiness really is, Euthyphro offered his last definition: holiness is knowing how to pray and sacrifice rightly, how to please the gods. Socrates at once recast it as something that sounded far less holy. What did he recast it as?",
     "answer": "A kind of trade or bargaining with the gods",
     "choices": [
       "A kind of trade or bargaining with the gods",
@@ -25975,7 +25845,7 @@
   },
   {
     "tier": 4,
-    "question": "Euthyphro defends dragging his own father to court by pointing to the gods: Zeus, he says, the best and most righteous of the gods, once bound his OWN father for a monstrous crime — so why may a mortal not punish his father too? What had Zeus's father done to deserve being bound?",
+    "question": "Euthyphro defended the case he had brought before the Athenian court with a myth: Zeus, the best and most righteous of the gods, had once put Cronos, his father, in chains for a monstrous crime. What had Cronos done to deserve the chains?",
     "answer": "He had devoured his own children as they were born",
     "choices": [
       "He had devoured his own children as they were born",
@@ -25988,7 +25858,7 @@
   },
   {
     "tier": 4,
-    "question": "In Plato's dialogue Euthyphro, Socrates presses a young Athenian priest named Euthyphro to define what holiness really is. Euthyphro finally settles on a definition: holiness is simply 'what the gods love.' Socrates accepts the words, then asks the one question philosophers have argued over ever since — a puzzle now called the Euthyphro dilemma. Which question does he ask?",
+    "question": "Pressed by Socrates, Euthyphro at last defined holiness as simply 'what the gods love.' Socrates accepted the words, then asked the question philosophers have argued over ever since, the one now called the Euthyphro dilemma. Which question did he ask?",
     "answer": "Do the gods love holy things because they are holy, or are things holy only because the gods love them?",
     "choices": [
       "Do the gods love holy things because they are holy, or are things holy only because the gods love them?",
@@ -26001,20 +25871,7 @@
   },
   {
     "tier": 5,
-    "question": "In Plato's Euthyphro, Socrates asks the young priest Euthyphro a splitting question: is a thing holy only because the gods love it, or do the gods love it because it is already holy in itself? Take the first answer: a thing is holy only because the gods love it, with no reason lying behind their choice. Socrates then asks what would follow if the gods had instead loved cruelty. On this view, what follows about cruelty?",
-    "answer": "Cruelty would then be holy, and goodness merely a matter of divine whim",
-    "choices": [
-      "Cruelty would then be holy, and goodness merely a matter of divine whim",
-      "The gods would become evil, and so no longer worthy of worship",
-      "Cruelty would be allowed but never holy, since the gods only permit it",
-      "Holiness would shift from god to god, since the gods rarely agree"
-    ],
-    "context": "This is the cost of the first horn: if goodness is whatever the gods happen to command, then had they commanded cruelty, cruelty would be holy — goodness becomes arbitrary, a coin-flip of divine will. A defender of divine command accepts this; a critic calls it the horn's fatal flaw. No side is taken here. Source: IEP: Divine Command Theory.",
-    "topic": "the-euthyphro-dilemma"
-  },
-  {
-    "tier": 5,
-    "question": "In Plato's Euthyphro, Socrates asks the young priest Euthyphro a splitting question: is a thing holy only because the gods love it, or do the gods love it because it is already holy in itself? Take the second answer: the gods love a holy thing because it is already good, not the other way around. Socrates then asks what that leaves for the gods to add. On this view, what do the gods do about goodness?",
+    "question": "Socrates gave Euthyphro two ways to link holiness and the gods' love, and one of them ran like this: the gods love a holy thing because it is already good, not the other way round. Suppose that answer holds. What part do the gods then play in the thing's goodness?",
     "answer": "They register a goodness already there, contributing nothing to its being good",
     "choices": [
       "They register a goodness already there, contributing nothing to its being good",
@@ -26027,7 +25884,7 @@
   },
   {
     "tier": 5,
-    "question": "Socrates offers a proof that 'holy' and 'loved by the gods' cannot mean the same thing. Take a plainer pair, he says: a thing gets carried because someone carries it, and gets seen because someone looks at it. Now apply the same test to holiness and being loved by the gods — which way does the explanation run?",
+    "question": "Socrates set out to prove that 'holy' and 'loved by the gods' cannot mean the same thing. He began with a plainer pair: a thing gets carried because someone carries it, and gets seen because someone looks at it. Applied the same way to holiness and the gods' love, which way did he say the explanation runs?",
     "answer": "A thing is loved by the gods because it is holy; being loved follows from holiness",
     "choices": [
       "A thing is loved by the gods because it is holy; being loved follows from holiness",
@@ -26040,20 +25897,7 @@
   },
   {
     "tier": 5,
-    "question": "Centuries after Socrates, the Franciscan friar William of Ockham embraced the dilemma's first horn — that an act is good because God commands it. He pressed it harder than anyone, asking what would hold if God commanded theft, adultery, even hatred of God himself. How far did Ockham go?",
-    "answer": "He said that on God's command, even those acts could be done meritoriously",
-    "choices": [
-      "He said that on God's command, even those acts could be done meritoriously",
-      "He said God would never command such acts, so the question is idle",
-      "He said such acts stay evil, marking the one limit on God's commands",
-      "He said the faithful must refuse them, even if God himself commands"
-    ],
-    "context": "William of Ockham (c.1287-1347) held that if God commanded theft, adultery, even hatred of God, those acts 'can even be performed meritoriously' — they would become good simply because God commanded them. The purest form of 'the good is whatever is commanded.' Source: IEP: William of Ockham, quoting Opera Theologica V, p. 352.",
-    "topic": "the-euthyphro-dilemma"
-  },
-  {
-    "tier": 5,
-    "question": "Gottfried Leibniz attacked the view that calls a thing good simply because the strongest being wills it. If that were so, he argued, then praising God for his goodness would be empty — he 'would be equally praiseworthy in doing the contrary.' On such a view, Leibniz asked, what does justice come down to?",
+    "question": "A believer insists that a thing is good simply because the strongest being wills it, with no standard of goodness behind the choice. Gottfried Leibniz warned that praising God's goodness would then be empty, since God 'would be equally praiseworthy in doing the contrary.' On such a view, Leibniz asked, what does justice come down to?",
     "answer": "A tyrant's whim — justice as whatever the ruler pleases to call just",
     "choices": [
       "A tyrant's whim — justice as whatever the ruler pleases to call just",
@@ -26065,34 +25909,8 @@
     "topic": "the-euthyphro-dilemma"
   },
   {
-    "tier": 2,
-    "question": "Socrates told the jury that Athens was like a great, noble horse that had grown fat and slow. He said the god had set him upon the city to stir it all day long. He never let it settle. Kill him, he warned, and the city would just doze off again. What creature did Socrates say he was?",
-    "answer": "A gadfly that keeps stinging the horse",
-    "choices": [
-      "A gadfly that keeps stinging the horse",
-      "A bridle that holds the horse in check",
-      "A hound that runs beside the horse",
-      "A sparrow that nests above the horse"
-    ],
-    "context": "Socrates calls himself a 'gadfly' the god has fastened onto Athens: the city is 'a great and noble steed who is tardy in his motions... and requires to be stirred into life,' and he is the biting fly that all day long keeps 'arousing and persuading and reproaching' the citizens out of their complacency. The image explains WHY he questioned everyone — and why he warned that killing him would just leave the horse asleep. Source: Plato, Apology 30e-31a, trans. Benjamin Jowett (MIT Internet Classics Archive, classics.mit.edu/Plato/apology.html).",
-    "topic": "the-examined-life"
-  },
-  {
-    "tier": 2,
-    "question": "Socrates traced his lifelong habit of questioning people to a riddle from the oracle at Delphi. Asked if any man was wiser than Socrates, the priestess said no one was. Socrates was sure he had no special wisdom. He puzzled over it for years. He finally decided the god meant he was wisest in one strange way. What was it?",
-    "answer": "He alone did not imagine he knew what he did not",
-    "choices": [
-      "He alone did not imagine he knew what he did not",
-      "He alone had been picked to lead the city",
-      "He alone had studied under the finest teachers",
-      "He alone could defeat any man in argument"
-    ],
-    "context": "Socrates' friend Chaerephon asked the Delphic oracle if anyone was wiser than Socrates, and the priestess said no one was. Baffled — since he felt he knew nothing — Socrates cross-examined Athens' reputed wise men and concluded the oracle meant only this: he was wisest because, unlike them, 'I neither know nor think that I know.' The questioning was his way of testing the god's word. Source: Plato, Apology 21a-23b, trans. Jowett (MIT Internet Classics Archive); iep.utm.edu/socrates.",
-    "topic": "the-examined-life"
-  },
-  {
     "tier": 3,
-    "question": "On trial for his life before an ancient Athens court, the philosopher Socrates was invited to name a punishment mild enough to spare him from death. Instead he told the court exactly what he believed was the single best thing a human being could ever do — the very activity he prized above staying alive, and the very thing the court wanted him to stop doing. What did Socrates say that best thing was?",
+    "question": "On trial for his life in Athens, Socrates was invited to name a punishment mild enough to spare him death. Instead he told the court what he believed was the single best thing a human being could do: the activity he prized above staying alive, and the very thing the court wanted him to stop. What did he say that best thing was?",
     "answer": "To talk through what makes a person good, every day",
     "choices": [
       "To talk through what makes a person good, every day",
@@ -26105,7 +25923,7 @@
   },
   {
     "tier": 3,
-    "question": "Athenian law let a doomed man suggest his own punishment. The usual move was to ask for exile or a fine and hope the jury chose mercy. Socrates claimed a poor man who spent his days trying to make the city good had earned an honor, not a penalty. So he suggested something wild instead. What did he demand for himself?",
+    "question": "Socrates came to the moment in his trial when Athenian law let a doomed man suggest his own punishment. The usual move was to ask for exile or a fine and hope the jury chose mercy. But Socrates claimed that a poor man who spent his days trying to make the city good had earned an honor, not a penalty. What wild thing did he demand for himself?",
     "answer": "To be fed free meals for life in the city dining hall",
     "choices": [
       "To be fed free meals for life in the city dining hall",
@@ -26118,7 +25936,7 @@
   },
   {
     "tier": 4,
-    "question": "Condemned to death, Socrates could have proposed prison or exile instead and very likely lived. He refused even to ask. Other men in his place might have reasoned in any number of ways. Which reasoning is the one Socrates actually gave for refusing to bargain his sentence down?",
+    "question": "Already convicted, Socrates was supposed to suggest a milder sentence than death, and prison or exile would very likely have saved his life. He would not even ask for them. What reasoning did he give for refusing to bargain his sentence down?",
     "answer": "I will not take a sure evil on to dodge one no one can prove",
     "choices": [
       "I will not take a sure evil on to dodge one no one can prove",
@@ -26131,7 +25949,7 @@
   },
   {
     "tier": 4,
-    "question": "Socrates told the court he did not actually fear death. He said the common attitude toward death is really a false confidence dressed up as wisdom — a claim to know something no living person can know, the very pretence he had spent his life puncturing in others. Below are four confident beliefs people hold about death. Which one is the false confidence Socrates singled out?",
+    "question": "Socrates told the court he did not fear death. The common attitude toward it, he said, is a false confidence dressed up as wisdom: a claim to know what no living person can know, the very pretence he had spent his life puncturing in others. What belief about death did he single out as that false confidence?",
     "answer": "Being certain that death is an evil to be escaped",
     "choices": [
       "Being certain that death is an evil to be escaped",
@@ -26261,7 +26079,7 @@
   },
   {
     "tier": 1,
-    "question": "At a summer cookout, your uncle stands over the sizzling grill holding up two squeeze bottles. He asks you, 'Do you want ketchup or mustard on your hot dog?' Something about picking from just those two feels forced — maybe you like them equally, or want none, or you'd rather have relish instead. What did the question quietly leave out?",
+    "question": "At a cookout, an uncle holds up two squeeze bottles and asks his nephew, 'Ketchup or mustard on your hot dog?' Picking from those two feels forced: the boy might like them equally, want none, or rather have relish. What did the question leave out?",
     "answer": "That 'or' need not mean only those two — both, neither, or something else all count.",
     "choices": [
       "That 'or' need not mean only those two — both, neither, or something else all count.",
@@ -26274,7 +26092,7 @@
   },
   {
     "tier": 2,
-    "question": "A high-school basketball coach pulls one of his teenage players aside and tells him flatly, 'Listen — you can either go to college, or be a failure in life. Those are your only two roads.' A logic teacher passing in the hallway overhears the warning and shakes her head. She says the coach has crammed a wide reality into just two boxes. What is the flaw buried in that warning?",
+    "question": "A high-school basketball coach pulls a player aside and tells him flatly, 'You can either go to college or be a failure in life. Those are your only two roads.' A logic teacher overhears and shakes her head: the coach has crammed a wide world into two boxes. What is the flaw in his warning?",
     "answer": "It crushes a wide range of real paths — a trade, the army, a business — into two extremes.",
     "choices": [
       "It crushes a wide range of real paths — a trade, the army, a business — into two extremes.",
@@ -26287,7 +26105,7 @@
   },
   {
     "tier": 2,
-    "question": "'You're either with us, or against us.' That line is the most famous form of the false either/or fallacy, and leaders have hurled it at anyone who wouldn't take a side. Imagine your friend refuses to join in a schoolyard fight and hears the same slogan tossed at her like a threat. What real option does the slogan erase?",
+    "question": "A girl stays out of a fight in the schoolyard, and the gang tosses a slogan at her like a threat: 'You're either with us, or against us.' Leaders have hurled the same line at anyone who would not take a side. What real option does the slogan erase?",
     "answer": "That you might stay neutral, back the goal but not the method, or just not have picked yet.",
     "choices": [
       "That you might stay neutral, back the goal but not the method, or just not have picked yet.",
@@ -26300,7 +26118,7 @@
   },
   {
     "tier": 2,
-    "question": "A workplace survey lands in every worker's inbox one morning. It asks, 'Is your boss drunk on the job (a) once a week, (b) twice a week, or (c) more often?' You notice that every possible answer already admits the boss drinks at work — there is no honest way to disagree with what the question quietly assumes. What did the pollster sneak past you?",
+    "question": "A survey lands in every worker's inbox one morning: 'Is your boss drunk on the job (a) once a week, (b) twice a week, or (c) more often?' Every answer on offer already admits the boss drinks at work, so there is no honest way to disagree. What did the pollster sneak past the workers?",
     "answer": "The honest option 'never' was deliberately left off the list.",
     "choices": [
       "The honest option 'never' was deliberately left off the list.",
@@ -26313,7 +26131,7 @@
   },
   {
     "tier": 3,
-    "question": "In March of 1775, in a church in Richmond, Virginia, the American patriot Patrick Henry stood up to urge his fellow colonists to take up arms against the British crown. He roared to end his speech, 'Give me liberty, or give me death!' Historians note the line works as a thrilling false either/or — a real revolution still offered other roads. What gives the famous cry its bravery and force?",
+    "question": "Patrick Henry stood up in a church in Richmond, Virginia, in March 1775 to urge his fellow colonists to take up arms against the British crown. He ended his speech with a roar: 'Give me liberty, or give me death!' Historians note that the line is a thrilling false either/or, since a real revolution still left other roads open. What gives the famous cry its bravery and force?",
     "answer": "It slams every middle road shut — no waiting, no bargain — leaving only freedom or the grave.",
     "choices": [
       "It slams every middle road shut — no waiting, no bargain — leaving only freedom or the grave.",
@@ -26326,7 +26144,7 @@
   },
   {
     "tier": 3,
-    "question": "Nine days after the September 11 attacks in 2001, the U.S. president George W. Bush stood before a joint session of Congress and declared, 'Either you are with us, or you are with the terrorists.' The philosopher Paul Keeling later said a truly airtight either/or would have read differently. What was Bush's slip?",
+    "question": "George W. Bush stood before a joint session of Congress nine days after the September 11 attacks of 2001 and declared, 'Either you are with us, or you are with the terrorists.' Paul Keeling, a philosopher, later said that a truly airtight either/or would have read differently. What was Bush's slip?",
     "answer": "He traded 'not with us' for 'with the terrorists' — but not joining someone hides whose side you take.",
     "choices": [
       "He traded 'not with us' for 'with the terrorists' — but not joining someone hides whose side you take.",
@@ -26339,7 +26157,7 @@
   },
   {
     "tier": 3,
-    "question": "In Joseph Heller's 1961 novel Catch-22, a squadron of American bomber pilots in World War II is stuck flying more and more missions each week. One of them, an exhausted airman named Yossarian, tries to get out. Colonel Korn barks at him: 'You're either for us or against your country. It's as simple as that.' A trick hides inside the sentence. What swap does Korn pull off?",
+    "question": "Yossarian, an exhausted bomber airman in Joseph Heller's war novel Catch-22, is stuck flying more and more missions each week, and he tries to get out. Colonel Korn barks at him: 'You're either for us or against your country. It's as simple as that.' What swap does Korn pull off inside that sentence?",
     "answer": "He lets 'us' — only the colonels — slide into 'your country,' so crossing two officers looks like treason.",
     "choices": [
       "He lets 'us' — only the colonels — slide into 'your country,' so crossing two officers looks like treason.",
@@ -26352,7 +26170,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 2005 Star Wars film Revenge of the Sith, the young Jedi knight Anakin Skywalker has just started falling to the dark side. He warns his old teacher Obi-Wan Kenobi, 'If you're not with me, then you're my enemy.' Obi-Wan fires back, 'Only a Sith deals in absolutes!' Anakin offers just two boxes — ally or enemy. Where else could Obi-Wan stand?",
+    "question": "Anakin Skywalker, the young Jedi knight just starting to fall to the dark side in Revenge of the Sith, warns his old teacher Obi-Wan Kenobi: 'If you're not with me, then you're my enemy.' Obi-Wan fires back, 'Only a Sith deals in absolutes!' Anakin offers just two boxes, ally or enemy. Where else could Obi-Wan stand?",
     "answer": "Loyal to the Republic itself, rather than to Anakin the man.",
     "choices": [
       "Loyal to the Republic itself, rather than to Anakin the man.",
@@ -26365,7 +26183,7 @@
   },
   {
     "tier": 4,
-    "question": "Here are two requests. First: 'Will you give $20, or won't you?' Second: 'Will you give $20 to our environmental fund, or are you on the side of wrecking the planet?' One is a fair either/or; the other is a false dilemma. What makes the second one the trick?",
+    "question": "A fundraiser at a crowded meeting asks one guest, 'Will you give $20, or won't you?' and the next, 'Will you give $20 to our environmental fund, or are you on the side of wrecking the planet?' One question is a fair either/or; the other is a false dilemma. What makes the second one the trick?",
     "answer": "It reads a plain 'no' as proof you want the planet wrecked, ignoring honest reasons to decline.",
     "choices": [
       "It reads a plain 'no' as proof you want the planet wrecked, ignoring honest reasons to decline.",
@@ -26378,7 +26196,7 @@
   },
   {
     "tier": 4,
-    "question": "A teacher writes two claims on the board about a jar of marbles. Claim A says: 'This jar holds either 10 marbles or not 10.' Claim B says: 'This jar holds either 10 marbles or 11.' A false dilemma is a trick that squeezes many real possibilities into just two choices. Only one of these claims is a false dilemma. Which claim is the trick, and why?",
+    "question": "A teacher writes two claims about a jar of marbles on the board. Claim A: 'This jar holds either 10 marbles or not 10.' Claim B: 'This jar holds either 10 marbles or 11.' One of the two squeezes many real possibilities into just two choices. Which claim is the false dilemma?",
     "answer": "Claim B — '10 or 11' silently drops 2, 17, even a hundred, squashing a whole range into two.",
     "choices": [
       "Claim B — '10 or 11' silently drops 2, 17, even a hundred, squashing a whole range into two.",
@@ -26391,7 +26209,7 @@
   },
   {
     "tier": 5,
-    "question": "Logicians warn that a false dilemma often dresses up a pair of 'contraries' as a pair of 'contradictories.' Contradictories — 'it's hot' versus 'it's NOT hot' — can't both be false; exactly one is true. Contraries — 'it's hot' versus 'it's cold' — CAN fail together. Why does that gap matter?",
+    "question": "'It's either hot today or cold,' a hiker insists at the trailhead. Logicians call that pair contraries, which can fail together, unlike contradictories such as 'it's hot' and 'it's not hot,' where exactly one must be true. A false dilemma often passes off contraries as contradictories. Why does that gap matter?",
     "answer": "Because two contraries can both be false — it might just be warm — so they never exhaust it.",
     "choices": [
       "Because two contraries can both be false — it might just be warm — so they never exhaust it.",
@@ -26404,7 +26222,7 @@
   },
   {
     "tier": 5,
-    "question": "A recruiter tells a graduate, 'Either you take this job, or you'll never amount to anything.' Three classic ways fight a dilemma like this. The graduate wants the one that beats a FALSE dilemma — the move old logicians called 'going between the horns.' Which reply is it?",
+    "question": "A recruiter tells a graduate, 'Either you take this job, or you'll never amount to anything.' There are three classic ways to fight a dilemma, and the graduate wants the one that beats a false dilemma, the move old logicians called going between the horns. Which reply makes that move?",
     "answer": "'There are other good roads — a trade, a startup, grad school — that you just left out.'",
     "choices": [
       "'There are other good roads — a trade, a startup, grad school — that you just left out.'",
@@ -26417,7 +26235,7 @@
   },
   {
     "tier": 5,
-    "question": "The word 'dilemma' comes straight from Greek and literally means 'double proposition' — di- for 'two' plus lemma, 'something taken.' It reached English in the 1520s as a term in rhetoric. Medieval logicians had their own vivid Latin nickname for this two-option trap, picturing its choices as something that could wound you whichever side you grabbed. What did they call it?",
+    "question": "A man given two choices, both bad, feels caught whichever one he takes. Medieval logicians pictured such a trap as something that wounds whoever grabs either side of it, and they gave it a vivid Latin nickname. What did the medieval logicians call the trap?",
     "answer": "A 'horned argument'",
     "choices": [
       "A 'horned argument'",
@@ -26430,7 +26248,7 @@
   },
   {
     "tier": 2,
-    "question": "The Confucian way of ancient China made a bold claim. A good society could be built from just five basic human bonds. Harmony would follow if each side of each bond did its part. Four of the five were ruler and subject, parent and child, husband and wife, and elder and younger sibling. What was the fifth?",
+    "question": "Confucius's followers in ancient China built their picture of a good society from just five human bonds. Harmony would follow, they claimed, once each side of each bond did its part. Four of the five were ruler and subject, parent and child, husband and wife, and elder and younger sibling. What was the fifth?",
     "answer": "Friend and friend",
     "choices": [
       "Friend and friend",
@@ -26443,7 +26261,7 @@
   },
   {
     "tier": 2,
-    "question": "A student of Confucius named Youzi said you can spot a peaceful person early. Someone kind to his parents and older siblings, he said, is rarely the type to defy his rulers or stir up rebellion. So family feeling, he said, is the very thing humaneness grows out of. He named it with one word from the garden. What did Youzi call it?",
+    "question": "Youzi, a student of Confucius, said a peaceful person can be spotted early: someone gentle toward his parents and older siblings rarely defies his rulers or stirs up rebellion. Family feeling, Youzi said, is what humaneness grows out of, and he named it with one word from the garden. What did he call it?",
     "answer": "The root",
     "choices": [
       "The root",
@@ -26456,7 +26274,7 @@
   },
   {
     "tier": 3,
-    "question": "People often hear the Confucian bonds as pure top-down obedience: the son obeys the father, the subject obeys the ruler, full stop. But the old Book of Rites lays out ten matched duties that overturn that reading. The son owes his father devotion, yes, but the father is bound to owe the son something back in return. What does the father owe the son?",
+    "question": "A reader new to Confucius hears the five bonds as pure top-down obedience: the son obeys the father, the subject obeys the ruler, full stop. But the old Book of Rites lays out ten matched duties that overturn that reading. The son owes his father devotion, yes, but what does the father owe the son in return?",
     "answer": "Kindness and care",
     "choices": [
       "Kindness and care",
@@ -26469,7 +26287,7 @@
   },
   {
     "tier": 3,
-    "question": "In ancient China around 500 BC, Duke Jing of the state of Qi asked the great Chinese philosopher Confucius what makes for good government. Confucius answered: 'Let the ruler be a ruler, the subject a subject, the father a father, the son a son.' What was Confucius saying actually produces good order?",
+    "question": "Duke Jing of the state of Qi asked Confucius what makes for good government, and Confucius answered: 'Let the ruler be a ruler, the subject a subject, the father a father, the son a son.' What, in his view, actually produces good order?",
     "answer": "Each person truly fulfilling the duties of his role",
     "choices": [
       "Each person truly fulfilling the duties of his role",
@@ -26482,7 +26300,7 @@
   },
   {
     "tier": 4,
-    "question": "The philosopher Mencius taught King Xuan of Qi that a minister mirrors back exactly the regard his ruler shows him. Treat your ministers as dogs and horses, Mencius warned, and they will regard you as a mere stranger; treat them as dirt and grass, and they will regard you as a robber and an enemy. But suppose a prince treats his ministers as his own hands and feet. How then will they regard him?",
+    "question": "Mencius told King Xuan of Qi that a minister mirrors back exactly the regard his ruler shows him. A ruler who treats his ministers as dogs and horses, Mencius warned, will be regarded as a mere stranger; one who treats them as dirt and grass, as a robber and an enemy. Suppose instead a prince treats his ministers as his own hands and feet. How will they regard him?",
     "answer": "As their belly and heart",
     "choices": [
       "As their belly and heart",
@@ -26495,7 +26313,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 300s BC in China, the Confucian philosopher Mencius named the Five Relationships that hold a society together — ruler and subject, father and son, elder and younger brother, husband and wife, and friend and friend. To each pairing he tied one guiding virtue. For the bond of husband and wife, by Mencius's own word, what should the two above all attend to?",
+    "question": "A bride and groom marry in ancient China, entering one of the five Confucian bonds. Mencius tied one guiding virtue to each bond: affection between father and son, for instance, and righteousness between ruler and minister. For husband and wife, by his own word, what should the two above all attend to?",
     "answer": "Their separate functions",
     "choices": [
       "Their separate functions",
@@ -26508,7 +26326,7 @@
   },
   {
     "tier": 2,
-    "question": "Aristotle taught that one thing can be explained four different ways. Stand at a wooden table and ask, 'why does this table exist?' One answer points to whatever first set it changing -- the thing that actually MADE it. For a table, which detail is that answer?",
+    "question": "A student stands at a wooden table and asks, 'Why does this table exist?' Aristotle taught that a thing can be explained in four different ways, and one answer points to whatever first set it changing, the thing that actually made it. For a table, which detail is that answer?",
     "answer": "the carpenter who built it",
     "choices": [
       "the carpenter who built it",
@@ -26521,7 +26339,7 @@
   },
   {
     "tier": 2,
-    "question": "Aristotle said one kind of 'why' just names the raw stuff a thing is built from -- 'the bronze of the statue, the silver of the bowl,' as he put it. Look at a marble bust of a war hero and ask why it exists. Which detail gives that same kind of answer?",
+    "question": "A marble bust of a war hero looks out from its pedestal. One kind of 'why' for it, Aristotle said, simply names the raw stuff a thing is built from, as in his own examples: 'the bronze of the statue, the silver of the bowl.' Which detail of the bust gives that kind of answer?",
     "answer": "the marble it was carved from",
     "choices": [
       "the marble it was carved from",
@@ -26534,7 +26352,7 @@
   },
   {
     "tier": 2,
-    "question": "The ancient Greek philosopher Aristotle taught that to really know a thing you must give four 'whys' for it: what stuff it is made of, who made it, its pattern or shape, and what it is for. The third why is the slippery one: not the stuff and not the maker, but the pattern that makes a pile of wood count as a table instead of a heap of sticks. Aristotle's own example of a table's pattern was simple. Which of these is it?",
+    "question": "Loose boards lie stacked in a workshop, waiting to become a table. Of Aristotle's four 'whys,' the slippery one is neither the stuff nor the maker nor the purpose, but the pattern that makes the wood count as a table instead of a heap of sticks. What was Aristotle's own example of a table's pattern?",
     "answer": "having four legs and a flat top",
     "choices": [
       "having four legs and a flat top",
@@ -26547,7 +26365,7 @@
   },
   {
     "tier": 2,
-    "question": "In ancient Greece, the philosopher Aristotle asked why anything exists the way it does. He said there are four different 'whys': what a thing is made from, what shape it has, who made it, and what it is for. To teach these four causes, he used the example of a plain house. Of the four, one is the simplest — the answer a small child would give for why anyone bothers to build a house. What is that answer?",
+    "question": "A small child is asked why anyone bothers to build a house, and the answer comes at once. Aristotle used a plain house to teach his four kinds of 'why,' and the simplest of them is the one the child gives. What is that answer?",
     "answer": "the shelter it provides",
     "choices": [
       "the shelter it provides",
@@ -26560,7 +26378,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristotle reached for music to pin down what a thing's true nature really is. Pluck a string for one note, then halve its length and pluck again: the new note sits exactly one octave higher, every single time, on any string. So where does an octave's true nature live? Aristotle's answer was the surprising one.",
+    "question": "A musician plucks a string for one note, then halves its length and plucks again: the new note sits exactly one octave higher, every time, on any string. Aristotle reached for this to pin down a thing's true nature. Where, by his surprising answer, does an octave's true nature live?",
     "answer": "in the proportion between its two notes",
     "choices": [
       "in the proportion between its two notes",
@@ -26573,7 +26391,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristotle's example of the purpose kind of cause sounds backwards. He said a man's health is the cause of his walking after dinner -- yet the health comes after the walk, not before. How can a later thing cause an earlier one? What did Aristotle mean?",
+    "question": "After dinner, a man goes out for a walk. Aristotle named the man's health as the cause of that walk, though the health comes after the walk, not before it. How did Aristotle think a later thing could explain an earlier one?",
     "answer": "He walks for the sake of health, so the goal he aims at explains the walk.",
     "choices": [
       "He walks for the sake of health, so the goal he aims at explains the walk.",
@@ -26585,21 +26403,8 @@
     "topic": "the-four-causes"
   },
   {
-    "tier": 3,
-    "question": "In ancient Greece, the philosopher Aristotle taught that 'nature does nothing in vain' — every living thing is reaching toward some end, some point it is aimed at from the start. Aristotle then picked something ordinary to test his rule: an acorn lying on the ground. He asked what an acorn is truly for, and named the end it is aimed at from the moment it drops. What is an acorn for?",
-    "answer": "the full-grown oak it will become",
-    "choices": [
-      "the full-grown oak it will become",
-      "the deep soil that feeds it",
-      "the squirrel that buried it",
-      "the autumn it dropped in"
-    ],
-    "context": "For Aristotle a seed's purpose -- its 'that for the sake of which' -- is the mature plant it grows into. Because nature does nothing in vain, he read every natural process as aimed at an end, the way a built thing is aimed at a use. The soil, the squirrel, and the season are all real, but none is what the acorn is FOR. Source: SEP, 'Aristotle on Causality'; Internet Encyclopedia of Philosophy, 'Aristotle'; Aristotle, Physics II.",
-    "topic": "the-four-causes"
-  },
-  {
     "tier": 4,
-    "question": "The Greek word translated as 'cause' in Aristotle's four causes is aition -- but it did not start life meaning cause at all. It came straight out of the Greek lawcourt, where it singled out one particular person in a trial. In that courtroom, who was the aition?",
+    "question": "A trial was under way in an ancient Greek lawcourt. One word used there, aition, singled out one particular person in the case. It did not start life meaning 'cause' at all, though Aristotle later made it his word for causes. Who, in that courtroom, was the aition?",
     "answer": "the one held to blame",
     "choices": [
       "the one held to blame",
@@ -26612,7 +26417,7 @@
   },
   {
     "tier": 4,
-    "question": "Aristotle pointed to a ship with a skilled pilot. While the pilot stands at the helm, Aristotle says, he is the cause of the ship's safety. Then the pilot leaves the helm, and the ship smashes on the rocks. Aristotle says the very same pilot is now the cause of the wreck -- but how, when he is no longer aboard?",
+    "question": "While a skilled pilot stood at the helm of a ship, Aristotle said, the pilot was the cause of its safety. Then the pilot left the helm and the ship smashed on the rocks, and Aristotle called the same pilot the cause of the wreck. How could the pilot cause the wreck once he had left the helm?",
     "answer": "His being absent is itself the cause -- an absence can be a cause too.",
     "choices": [
       "His being absent is itself the cause -- an absence can be a cause too.",
@@ -26625,7 +26430,7 @@
   },
   {
     "tier": 4,
-    "question": "The Greek philosopher Aristotle said every thing has four causes — the stuff it is made from, the shape it takes, the maker who fashions it, and the goal it exists for. Aristotle then crowned one of these the 'queen of causes,' ranking it above the other three. Plenty of later thinkers would have crowned a different one. What was Aristotle's reason for putting his choice at the very top?",
+    "question": "Aristotle crowned one of his four causes the 'queen of causes,' above the other three. The four were the stuff a thing is made from, the shape it takes, the maker who fashions it and the goal it exists for, and plenty of later thinkers would have crowned a different one. What was Aristotle's reason for putting his choice at the top?",
     "answer": "The goal comes first, because everything else is done only in order to reach it.",
     "choices": [
       "The goal comes first, because everything else is done only in order to reach it.",
@@ -26963,7 +26768,7 @@
   },
   {
     "tier": 2,
-    "question": "Marcus is flipping a coin he knows for certain is a fair coin, and it has just come up heads five times in a row. He grins and says tails is now 'due' — it simply has to balance out on the very next toss to keep things even. This mistake is the classic gambler's fallacy in action. What is wrong with Marcus's thinking?",
+    "question": "Marcus is flipping a coin he knows for certain is fair, and it has just come up heads five times in a row. He grins and says tails is now 'due': it simply has to balance things out on the very next toss. Where does Marcus's thinking go wrong?",
     "answer": "The next flip is still an even bet; the five past heads owe it nothing",
     "choices": [
       "The next flip is still an even bet; the five past heads owe it nothing",
@@ -26976,7 +26781,7 @@
   },
   {
     "tier": 2,
-    "question": "Nadia plays her state's weekly lottery, where a machine tumbles a fresh set of numbered balls every Saturday night. This week she flatly refuses to write down the previous drawing's winning combination on her ticket. She tells her sister, 'Those numbers just came up seven days ago — they surely can't come up again so soon.' Why is her reasoning wrong?",
+    "question": "Nadia plays the weekly lottery, where a machine tumbles a fresh set of numbered balls every Saturday. She won't put the previous drawing's winning combination on her ticket. She tells her sister, 'Those numbers just came up seven days ago — they surely can't come up again so soon.' Why is her reasoning wrong?",
     "answer": "Each draw stands alone; last week's number is exactly as likely as any other",
     "choices": [
       "Each draw stands alone; last week's number is exactly as likely as any other",
@@ -26989,7 +26794,7 @@
   },
   {
     "tier": 3,
-    "question": "You and a friend are flipping a fair, evenly minted coin. It has landed heads five straight times, an eye-catching streak. Your friend now swears the run itself makes tails far likelier on the very next flip, because five heads in a row is such a rare thing to see. He is about to bet real money on it. Where does his reasoning break?",
+    "question": "Hana and her friend Omar are flipping a fair, evenly minted coin, and it has landed heads five straight times, an eye-catching streak. Omar swears the run itself makes tails far likelier on the next flip, because five heads in a row is such a rare thing to see. He is about to bet real money on it. Where does his reasoning break?",
     "answer": "The unlikely run already happened; the next flip by itself is still a plain even bet",
     "choices": [
       "The unlikely run already happened; the next flip by itself is still a plain even bet",
@@ -27002,7 +26807,7 @@
   },
   {
     "tier": 3,
-    "question": "On 18 August 1913 at the Monte Carlo Casino, a roulette wheel went on such a run that gamblers crowded in betting fortunes it had to break — and lost millions of francs as the run rolled on. What had the wheel been doing?",
+    "question": "Gamblers crowded around one roulette wheel at the Monte Carlo Casino on 18 August 1913. The wheel was on such a run that they bet fortunes it had to break, and they lost millions of francs as the run rolled on. What had the wheel been doing?",
     "answer": "Landing on black twenty-six times in a row",
     "choices": [
       "Landing on black twenty-six times in a row",
@@ -27015,7 +26820,7 @@
   },
   {
     "tier": 4,
-    "question": "A roulette wheel has landed on black many spins running, and players pile onto red, sure it is now 'due' to fix the imbalance. The wheel carries eighteen red pockets, eighteen black, and a green zero. Why does the black run NOT make red likelier next?",
+    "question": "A roulette wheel has landed on black many spins running, and players pile onto red, sure it is now 'due' to fix the imbalance. The wheel carries eighteen red pockets, eighteen black and a green zero. Why does the long run of black not make red any likelier on the next spin?",
     "answer": "The wheel works the same on every spin and has no way to balance itself",
     "choices": [
       "The wheel works the same on every spin and has no way to balance itself",
@@ -27028,7 +26833,7 @@
   },
   {
     "tier": 4,
-    "question": "Theo walks into a dice hall and watches a stranger toss the dice for the very first time. She rolls double-sixes on that first throw. Theo grins and concludes she must have been rolling for ages beforehand to finally land such a rare result. This mistake is called the inverse gambler's fallacy. What is the flaw in Theo's inference?",
+    "question": "Theo walks into a dice hall and watches a stranger toss the dice for the very first time. She rolls double sixes on that first throw. Theo grins and decides she must have been rolling for ages beforehand to land such a rare result at last. What is the flaw in Theo's inference?",
     "answer": "That single throw had the same long odds whether it was her first or her hundredth",
     "choices": [
       "That single throw had the same long odds whether it was her first or her hundredth",
@@ -27041,7 +26846,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1796 the mathematician Pierre-Simon Laplace wrote about expecting fathers who grew anxious. In a month when many boys had just been born, they were sure a girl was now more likely for them, as if the run of boys had to be paid back. What did Laplace call their mistake?",
+    "question": "Pierre-Simon Laplace wrote in 1796 of fathers-to-be who grew anxious in a month when many boys had just been born. They were sure a girl was now more likely for them, as if the run of boys had to be paid back. What, in Laplace's account, was their mistake?",
     "answer": "They imagined nature kept a quota of births it owed them to balance",
     "choices": [
       "They imagined nature kept a quota of births it owed them to balance",
@@ -27054,7 +26859,7 @@
   },
   {
     "tier": 5,
-    "question": "A 2016 study of U.S. asylum judges found that whether a refugee won protection swung partly on a streak illusion in the judge, not the case. After granting the two previous claims, a judge became about 5.5 points LESS likely to grant the third. What drove that drop?",
+    "question": "An American asylum judge had just granted two refugees' claims in a row when a third case came before him. Researchers studying such judges in 2016 found that after two grants, a judge became about 5.5 points less likely to grant the third, a swing that came partly from the judge and not the case. What drove that drop?",
     "answer": "After two yes rulings, a third felt like too many in a row to grant",
     "choices": [
       "After two yes rulings, a third felt like too many in a row to grant",
@@ -27067,7 +26872,7 @@
   },
   {
     "tier": 5,
-    "question": "The hot-hand belief says a basketball player on a hot streak simply cannot miss the next shot. A famous 1985 study of pro players declared it a myth — makes and misses looked like coin flips. Then Miller and Sanjurjo exposed a hidden trap: flip a fair coin four times, pick a flip that came up heads, and the NEXT flip is heads only about 40 percent of the time, not fifty. What did correcting that bias do to the 1985 verdict?",
+    "question": "A basketball player on a hot streak feels he cannot miss. A 1985 study of pro players called the hot hand a myth, since makes and misses looked like coin flips. Then Miller and Sanjurjo exposed a trap: when a fair coin is flipped four times and a heads is picked out, the flip after it is heads only about 40 percent of the time. What did correcting that bias do to the 1985 verdict?",
     "answer": "It overturned it — the streak edge was real and large after all",
     "choices": [
       "It overturned it — the streak edge was real and large after all",
