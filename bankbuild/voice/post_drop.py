@@ -19,7 +19,7 @@ from bankbuild.cards import stage
 from bankbuild.cards.common import QDIR
 from bankbuild.voice.apply import BASE, remap_baselines
 from bankbuild.voice.check import _live, card_gate_after
-from bankbuild.voice.common import WORK, read_json, write_json
+from bankbuild.voice.common import WORK, read_json, status, write_json
 
 
 def main() -> None:
@@ -31,6 +31,17 @@ def main() -> None:
     missing = [h for h in hashes + [twin] if h not in live]
     if missing:
         sys.exit(f'not live questions: {missing}')
+    # A question still in an unapplied batch belongs to that batch's writer:
+    # drop it there (notes cross_twins), not here.
+    done = set(status(subject)['done'])
+    for pkt_path in sorted((WORK / subject).glob('b*_in.json')):
+        for t in read_json(pkt_path)['topics']:
+            if t['topic'] in done:
+                continue
+            clash = [q['hash'] for q in t['questions'] if q['hash'] in hashes]
+            if clash:
+                sys.exit(f'{clash} sit in {pkt_path.name} ({t["topic"]}), not yet applied: '
+                         'drop them in that batch instead')
     changes = {'delete': hashes}
     errs = card_gate_after(subject, changes)
     if errs:
