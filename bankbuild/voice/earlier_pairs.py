@@ -28,7 +28,9 @@ lines = [f'# {SUBJECT} b{N:03d}: pairs earlier batches recorded against your que
          '  copy) and yours is a broad ladder, drop yours as a cross twin of the earlier',
          f"  question's live hash (search data/questions/{SUBJECT}.json by its answer: the earlier",
          "  hash may be pre-rewrite). If YOURS is the fact's own ladder, keep it (not_twins).",
-         '  If the two really ask different facts, keep both (not_twins).', '']
+         '  If the two really ask different facts, keep both (not_twins).',
+         '- **pending_pairs**: the earlier writer named which ladder should own the fact; if it says',
+         "  yours should drop, drop yours as a cross twin (unless it is your ladder's only tier-1 rung).", '']
 n = 0
 for p in sorted(W.glob('b0*_notes.json')):
     b = int(p.name[1:4])
