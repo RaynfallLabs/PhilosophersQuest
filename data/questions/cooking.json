@@ -7762,7 +7762,7 @@
   },
   {
     "tier": 1,
-    "question": "You shake a jar of oil and vinegar into a smooth-looking salad dressing, but a minute later it has split back into two separate layers. This keeps happening no matter how hard you shake. What is the basic reason?",
+    "question": "A jar of oil and vinegar, shaken hard, looks like a smooth salad dressing for a moment. Set down on the counter, it splits back into two separate layers within a minute, however hard it was shaken. What is the basic reason?",
     "answer": "Oil and water don't naturally mix",
     "choices": [
       "Oil and water don't naturally mix",
@@ -7775,33 +7775,20 @@
   },
   {
     "tier": 2,
-    "question": "On the brunch menu of a fancy café, one classic American dish stands out. A perfectly poached egg with a runny yolk and a round slice of Canadian bacon — a lean, ham-like meat — are stacked on half of a toasted English muffin. Over the top, the cook spoons a warm, silky, buttery yellow sauce made from egg yolks and lemon. The whole plate is called eggs Benedict. What is the name of that golden sauce on top?",
+    "question": "A brunch cook stacks a poached egg with a runny yolk and a round of Canadian bacon on half a toasted English muffin. Over it she spoons a warm, silky yellow sauce of egg yolks, melted butter and lemon, finishing a plate of eggs Benedict. Which French sauce crowns it?",
     "answer": "Hollandaise",
     "choices": [
       "Hollandaise",
       "Béchamel",
       "Velouté",
-      "Marinara"
+      "Espagnole"
     ],
-    "context": "Hollandaise is the golden sauce that defines eggs Benedict. It is a warm emulsion of egg yolk, melted butter, and lemon juice. Source: Wikipedia, 'Hollandaise sauce.'",
-    "topic": "emulsion-and-hollandaise"
-  },
-  {
-    "tier": 2,
-    "question": "In a French kitchen, a chef whisks hot butter and lemon juice into a warm, silky yellow sauce called hollandaise, poured over eggs Benedict. The cold cousin of hollandaise is mayonnaise, the thick, pale spread made by whisking oil into vinegar. Oil and water hate each other and should split apart in seconds. Yet in both sauces, one ordinary kitchen item is the peace-maker that locks oil and watery acid together. What is it?",
-    "answer": "Egg yolk",
-    "choices": [
-      "Egg yolk",
-      "Egg white",
-      "Wheat flour",
-      "Heavy cream"
-    ],
-    "context": "The egg yolk is the emulsifier: a 'split-personality' molecule parks itself around each fat droplet and stops the droplets from merging back together. The specific compound is lecithin, a phospholipid with a water-grabbing end and an oil-grabbing end - but the ingredient a cook reaches for is simply the yolk. Source: Wikipedia, 'Hollandaise sauce'; scifood.blog on mayonnaise.",
+    "context": "Hollandaise is the golden sauce that crowns eggs Benedict: a warm emulsion of egg yolk holding melted butter together with a squeeze of lemon, and one of the five French mother sauces. Source: Wikipedia, 'Hollandaise sauce.'",
     "topic": "emulsion-and-hollandaise"
   },
   {
     "tier": 3,
-    "question": "Hollandaise means 'Dutch sauce,' yet it is thoroughly French. An older name for it, 'sauce Isigny,' honors a small town in Normandy that is famous all across France for making the finest of one dairy product. What is Isigny famous for?",
+    "question": "A cook whisks egg yolks for a hollandaise, a sauce whose name means 'Dutch sauce' though it is French. It once went by an older name, 'sauce Isigny', after a small Normandy town famous all across France for making the finest of one dairy product. Which one?",
     "answer": "Butter",
     "choices": [
       "Butter",
@@ -7814,7 +7801,7 @@
   },
   {
     "tier": 3,
-    "question": "Hollandaise is a warm French sauce made by whisking egg yolks with melted butter until they form a smooth, glossy emulsion — the golden sauce most famous for topping poached eggs in eggs Benedict. It seems like fancy restaurant food, but it has a plain cold cousin sitting in almost every home fridge. That cold sauce uses the very same egg-yolk-and-oil emulsion trick, and most people never guess the two are related. Which cold sauce is it?",
+    "question": "Hollandaise, egg yolks whisked with melted butter into a glossy, golden sauce, seems like fancy restaurant food. Yet it has a plain cold cousin sitting in almost every home fridge, built on the same egg-yolk trick with oil in place of the butter. Which cold sauce is it?",
     "answer": "Mayonnaise",
     "choices": [
       "Mayonnaise",
@@ -7827,7 +7814,7 @@
   },
   {
     "tier": 4,
-    "question": "Hollandaise is a warm French sauce built by whisking egg yolks with melted butter into a smooth golden emulsion — the sauce spooned over eggs Benedict. A cook is whisking one over gentle heat when it suddenly turns from glossy and thick into a greasy, grainy, split-looking puddle. Cooks say the sauce has 'broken.' What is the single most common reason a hollandaise breaks?",
+    "question": "A cook is whisking a hollandaise of egg yolks and melted butter over gentle heat when it suddenly turns from glossy and thick into a greasy, grainy puddle. Cooks say the sauce has 'broken'. What is the most common reason a hollandaise breaks?",
     "answer": "The sauce got too hot",
     "choices": [
       "The sauce got too hot",
@@ -7840,7 +7827,7 @@
   },
   {
     "tier": 4,
-    "question": "Hollandaise is a warm French sauce made by whisking melted butter into egg yolks with lemon juice, giving a silky yellow ribbon poured over eggs Benedict. If the pan gets too hot or the butter goes in too fast, the sauce 'breaks' — the smooth cream splits into a greasy, curdled mess with yellow lumps floating in oil. A good cook doesn't throw the ruined pan out. Classic French kitchens have a rescue trick that pulls a broken hollandaise back into a silky sauce. What is the trick?",
+    "question": "Just before dinner, a cook pours the butter into her hollandaise too fast, and the silky sauce splits into a greasy, curdled mess with yellow lumps floating in oil. She does not throw it out, because classic French kitchens know a rescue. What should she do?",
     "answer": "Slowly whisk it into a fresh egg yolk",
     "choices": [
       "Slowly whisk it into a fresh egg yolk",
@@ -7853,7 +7840,7 @@
   },
   {
     "tier": 5,
-    "question": "Hollandaise is the classic French warm sauce of egg yolks whisked into melted butter with a squeeze of lemon, spooned over poached eggs. Take that same egg-and-butter base, but instead of lemon flavor it with a sharp reduction of tarragon, shallots, and wine vinegar — you've built a different classic French sauce, the one traditionally poured over a grilled steak. What is this hollandaise cousin called?",
+    "question": "A chef makes the yolk-and-butter emulsion of hollandaise but leaves out the lemon, flavoring it instead with a sharp reduction of tarragon, shallots and wine vinegar. The result is a different classic French sauce, the one traditionally spooned over a grilled steak. What is this hollandaise cousin called?",
     "answer": "Béarnaise",
     "choices": [
       "Béarnaise",
@@ -7866,7 +7853,7 @@
   },
   {
     "tier": 5,
-    "question": "Hollandaise depends on egg yolk to bind its butter and lemon into a smooth, stable sauce. But the French sauce beurre blanc pulls off a creamy butter emulsion with no egg at all - proving the yolk was never the only way. What holds beurre blanc together instead?",
+    "question": "Clémence Lefeuvre, a cook near Nantes, set out around 1900 to make a yolk-and-butter sauce and forgot the egg yolks, or so the legend says. Her beurre blanc, butter beaten into a white-wine-and-shallot reduction, still held together as a creamy emulsion without a single egg. What held it together instead?",
     "answer": "A trace of the butter's milk solids",
     "choices": [
       "A trace of the butter's milk solids",
@@ -7879,7 +7866,7 @@
   },
   {
     "tier": 1,
-    "question": "Try a simple kitchen experiment: pour a glass of tap water, then float a spoonful of olive oil onto the surface. Grab a spoon and stir the water as hard as you can, until the oil breaks into little droplets and the whole glass looks cloudy. Now set the spoon down and watch. A few seconds after you stop stirring, what do you see?",
+    "question": "A cook floats a spoonful of olive oil on a glass of tap water and stirs hard until the oil breaks into droplets and the whole glass turns cloudy. Then she sets the spoon down. A few seconds later, what has become of the oil?",
     "answer": "The oil has gathered into a layer floating on top.",
     "choices": [
       "The oil has gathered into a layer floating on top.",
@@ -7891,47 +7878,8 @@
     "topic": "emulsions-fat-and-water-made-to-hold-hands"
   },
   {
-    "tier": 2,
-    "question": "Mayonnaise is the thick, pale spread you find on sandwiches — the one made by whisking together oil and vinegar until they lock into a smooth paste that keeps for weeks in the jar. Oil and vinegar hate each other and should split apart in seconds when you pour them in a glass. Yet one everyday kitchen ingredient, whisked in first, does the real work of holding oil and vinegar together for weeks. Which ingredient is it?",
-    "answer": "Egg yolk",
-    "choices": [
-      "Egg yolk",
-      "Wheat flour",
-      "Lemon juice",
-      "Cold water"
-    ],
-    "context": "Egg yolk works because it's rich in lecithin, a natural emulsifier — its job is to hold oil and water together so they don't separate. It isn't merely thickening the sauce; plain flour would only thicken. Source: Wikipedia, 'Emulsion' (lecithin).",
-    "topic": "emulsions-fat-and-water-made-to-hold-hands"
-  },
-  {
-    "tier": 2,
-    "question": "To make mayonnaise at home, a cook cracks one fresh egg yolk into a bowl and whisks it bright yellow. Beside it waits a cup of vegetable oil. That yolk will hold the oil in a thick, creamy spread — but only if the oil goes in the right way. Add it wrong and the yolk splits, leaving a thin, oily mess that puddles at the bottom of the bowl. How should you add the oil to the yolk?",
-    "answer": "Drizzle it in a thin, slow stream while whisking.",
-    "choices": [
-      "Drizzle it in a thin, slow stream while whisking.",
-      "Pour it all in at once and whisk as hard as you can.",
-      "Add it in three big splashes, stirring between each.",
-      "Chill the oil to a slush first, then fold it in."
-    ],
-    "context": "A single yolk can only coat so much oil at a time. Drizzle it in slowly and the yolk keeps up with every drop; dump it in all at once and it can't, so the oil just floats free and the sauce never comes together. Source: guanyumixer.com, 'Science of Mayonnaise'; chefsnotes.com, 'Emulsification Principles.'",
-    "topic": "emulsions-fat-and-water-made-to-hold-hands"
-  },
-  {
-    "tier": 2,
-    "question": "You shake up a jar of salad dressing made of three parts olive oil to one part vinegar until it looks cloudy and blended. You set it down to toss the greens, then glance back a minute later. What has become of it?",
-    "answer": "It has split back into oil floating over vinegar.",
-    "choices": [
-      "It has split back into oil floating over vinegar.",
-      "It has set into a firm, jelly-like block.",
-      "It has thickened into a stable, creamy dressing.",
-      "It has stayed perfectly cloudy and blended."
-    ],
-    "context": "A vinaigrette is a temporary emulsion — the classic mix is 3 parts oil to 1 part vinegar, but with no strong emulsifier it holds only a short time before splitting back into layers. That's why you shake it again right before pouring. Source: Wikipedia, 'Vinaigrette' (unstable emulsions which last only a short time).",
-    "topic": "emulsions-fat-and-water-made-to-hold-hands"
-  },
-  {
     "tier": 3,
-    "question": "Oil and water refuse to mix — pour them in a glass and they split into two layers. Yet in mayonnaise or salad dressing, an ingredient called an emulsifier (the egg yolk in mayo is a famous one) locks oil and water into a single smooth, blended sauce that won't split apart. The trick is a strange, two-faced shape of the emulsifier's own tiny molecules. What is odd about a single emulsifier molecule that lets it do this?",
+    "question": "With one extra ingredient whisked in, oil and vinegar lock into a smooth sauce that will not split, though the two liquids refuse to mix on their own. That ingredient is called an emulsifier, and its secret lies in an odd shape of its own tiny molecules. What is odd about a single emulsifier molecule?",
     "answer": "It grips water at one end and oil at the other.",
     "choices": [
       "It grips water at one end and oil at the other.",
@@ -7943,8 +7891,8 @@
     "topic": "emulsions-fat-and-water-made-to-hold-hands"
   },
   {
-    "tier": 3,
-    "question": "A plain oil-and-vinegar vinaigrette separates within a minute of being shaken. A cook wants a dressing that stays blended and clings to the leaves all through dinner, so she whisks in a spoonful of one common jarred condiment. Which one holds it together?",
+    "tier": 2,
+    "question": "A plain oil-and-vinegar dressing parts again within a minute of shaking. To keep it blended and clinging to the leaves all through dinner, a cook whisks in a spoonful of one jarred condiment that works as an emulsifier. Which one?",
     "answer": "Mustard",
     "choices": [
       "Mustard",
@@ -7957,7 +7905,7 @@
   },
   {
     "tier": 4,
-    "question": "Whipping up mayonnaise starts with an egg yolk and a splash of vinegar or lemon juice — mostly water — and then oil is dribbled in while you whisk hard, drop by drop, until the whole bowl thickens into a pale, spoonable cream. By the time it's done, mayonnaise is about 80% oil by weight, and yet it holds together as one smooth mixture instead of splitting apart. Given that the water part is much smaller than the oil part, how are the two actually arranged inside a jar of mayo?",
+    "question": "A cook whisks egg yolk with a splash of vinegar, mostly water, then dribbles in oil drop by drop until the bowl thickens into pale, spoonable mayonnaise. The finished sauce is about 80 percent oil by weight, yet it holds together as one smooth mixture. With so little water and so much oil, how are the two arranged?",
     "answer": "Water is the background, with the oil broken into droplets.",
     "choices": [
       "Water is the background, with the oil broken into droplets.",
@@ -7970,20 +7918,7 @@
   },
   {
     "tier": 4,
-    "question": "One of the five great French 'mother sauces' is a warm emulsion made by whisking egg yolks with melted butter and a squeeze of lemon. It's the golden sauce famously spooned over poached eggs in eggs Benedict. What is it called?",
-    "answer": "Hollandaise",
-    "choices": [
-      "Hollandaise",
-      "Béchamel",
-      "Velouté",
-      "Espagnole"
-    ],
-    "context": "Hollandaise is a warm emulsion — egg yolk holding melted butter together with a squeeze of lemon (or a wine-and-vinegar reduction) — and one of the five French mother sauces. It's the sauce that crowns eggs Benedict. Source: Wikipedia, 'Hollandaise sauce.'",
-    "topic": "emulsions-fat-and-water-made-to-hold-hands"
-  },
-  {
-    "tier": 4,
-    "question": "You're whisking a thick, creamy mayonnaise when it suddenly turns thin and greasy, with oil weeping out and the smooth texture gone. Cooks say the emulsion has 'broken.' Down at the microscopic level of the sauce, what has gone wrong?",
+    "question": "A bowl of thick, creamy mayonnaise goes thin and greasy under the whisk all at once, oil weeping out and the smooth texture gone. Cooks say the emulsion has 'broken'. Down at the microscopic level of the sauce, what has gone wrong?",
     "answer": "The tiny droplets bumped together and merged into big blobs.",
     "choices": [
       "The tiny droplets bumped together and merged into big blobs.",
@@ -7995,21 +7930,8 @@
     "topic": "emulsions-fat-and-water-made-to-hold-hands"
   },
   {
-    "tier": 5,
-    "question": "Hollandaise is a warm French sauce built by whisking yolks together with melted butter and a squeeze of lemon. Yours has curdled into a greasy, split mess just minutes before dinner is served — but the pan never overheated, so the yolks themselves are still perfectly fine. What is the classic chef's rescue move to bring this ruined emulsion back together?",
-    "answer": "Whisk the broken sauce drop by drop into a fresh egg yolk.",
-    "choices": [
-      "Whisk the broken sauce drop by drop into a fresh egg yolk.",
-      "Crank up the heat and whisk hard until it re-thickens.",
-      "Beat in a spoonful of flour to soak up the loose butter.",
-      "Tip it into a blender with more butter and blend on high."
-    ],
-    "context": "You're giving the oil a fresh coat of emulsifier and rebuilding the sauce slowly: a new yolk (or even just half a teaspoon of water) in a clean bowl, then the broken sauce whisked back in a few drops at a time. But if a sauce broke because the eggs curdled from heat, it can't be re-emulsified — you have to start over. Source: thewineloverskitchen.com, 'How to Fix a Broken Sauce.'",
-    "topic": "emulsions-fat-and-water-made-to-hold-hands"
-  },
-  {
     "tier": 1,
-    "question": "You want to dress a salad, so you make the simplest kind of vinaigrette: pour three spoonfuls of olive oil and one spoonful of vinegar into a bowl and whisk hard for ten seconds. For a moment the dressing looks cloudy and blended. Then you set the bowl down and walk over to fetch the greens. When you come back a few minutes later, what has happened to the dressing?",
+    "question": "A cook whisks three spoonfuls of olive oil with one of vinegar for the simplest salad dressing, and for a moment it looks cloudy and blended. She sets the bowl down to fetch the greens. A few minutes later, what has happened to the dressing?",
     "answer": "It has split back into two separate layers",
     "choices": [
       "It has split back into two separate layers",
@@ -8022,20 +7944,20 @@
   },
   {
     "tier": 2,
-    "question": "Mayonnaise is a thick, creamy sandwich spread made by whisking oil into a watery mix of vinegar and lemon juice. That pair — oil and water — hate each other and should split apart into two flat layers in seconds. Yet mayo holds as one smooth, creamy sauce that keeps for weeks in the jar. In classic mayonnaise, what one ingredient does the real work of keeping the oil and water from splitting?",
-    "answer": "An egg yolk",
+    "question": "In a mixing bowl, oil is whisked into a watery mix of vinegar and lemon juice for mayonnaise, a pair that should split into two flat layers in seconds. Yet the thick, pale spread holds smooth and keeps for weeks in the jar. Which ingredient, whisked in first, does the real work of keeping it together?",
+    "answer": "Egg yolk",
     "choices": [
-      "An egg yolk",
-      "A dab of mustard",
-      "Extra whisking",
-      "A splash of water"
+      "Egg yolk",
+      "Egg white",
+      "Wheat flour",
+      "Heavy cream"
     ],
-    "context": "The yolk is packed with lecithin — molecules with a water-loving end and an oil-loving end, so each one grabs an oil droplet on one side and water on the other and wraps it so the droplets can't rejoin. No yolk, no mayo — and the same yolk trick powers hollandaise sauce and Caesar dressing. Source: en.wikipedia.org/wiki/Emulsion; foodcrumbles.com/how-mayonnaise-works-jamming-fat-droplets-in-water/.",
+    "context": "The yolk is packed with lecithin, a natural emulsifier: molecules with a water-loving end and an oil-loving end, so each one grabs an oil droplet on one side and water on the other and wraps it so the droplets can't rejoin. It isn't merely thickening the sauce; plain flour would only thicken. No yolk, no mayo, and the same yolk trick powers hollandaise sauce and Caesar dressing. Source: en.wikipedia.org/wiki/Emulsion; foodcrumbles.com/how-mayonnaise-works-jamming-fat-droplets-in-water/.",
     "topic": "emulsions-making-oil-and-water-get-along-mayonnaise"
   },
   {
     "tier": 2,
-    "question": "Mayonnaise is a pale, thick, rich spread — the one people scoop onto sandwiches by the spoonful. Looking at the creamy white jar, you'd guess it is mostly egg, or maybe half egg and half something else. In fact one single ingredient makes up about 80% of a jar of mayonnaise by weight, far more than most people would ever guess. Which ingredient is it?",
+    "question": "A jar of mayonnaise sits open beside a stack of sandwiches, pale, thick and rich. The creamy white spread looks as if it must be mostly egg, yet one single ingredient makes up about 80 percent of the jar by weight, far more than most people would guess. Which ingredient is it?",
     "answer": "Oil",
     "choices": [
       "Oil",
@@ -8047,47 +7969,21 @@
     "topic": "emulsions-making-oil-and-water-get-along-mayonnaise"
   },
   {
-    "tier": 3,
-    "question": "The most common way to ruin homemade mayonnaise is to pour the oil in too fast. Do that and the sauce 'breaks' — it splits into a slick, oily, curdled mess instead of staying smooth. Why does a too-fast pour wreck it?",
-    "answer": "The yolk can't wrap each oil droplet fast enough, so the oil clumps together",
+    "tier": 2,
+    "question": "A cook is making mayonnaise by hand, a cup of oil waiting beside the bowl. The sauce will thicken into a creamy spread only if the oil goes in the right way; add it wrong and it splits into a thin, oily slick. How should she add the oil?",
+    "answer": "Drizzle it in a thin, slow stream while whisking.",
     "choices": [
-      "The yolk can't wrap each oil droplet fast enough, so the oil clumps together",
-      "The rushing oil chills the sauce and makes the yolk turn hard and grainy",
-      "The fast pour beats in air bubbles that force the oil and water apart",
-      "The flood of oil overwhelms the vinegar and turns the sauce sour"
+      "Drizzle it in a thin, slow stream while whisking.",
+      "Pour it all in at once and whisk as hard as you can.",
+      "Add it in three big splashes, stirring between each.",
+      "Chill the oil to a slush first, then fold it in."
     ],
-    "context": "Pour too fast and the yolk simply can't coat every new droplet in time, so the oil clumps back together and the emulsion breaks. The fix: don't toss it — slowly whisk the broken sauce into a FRESH egg yolk in a clean bowl until it re-thickens (a little mustard or a splash of boiling water can also rescue it). Source: foodcrumbles.com/how-mayonnaise-works-jamming-fat-droplets-in-water/; foodrepublic.com/1470843/how-to-fix-broken-homemade-mayonnaise/.",
-    "topic": "emulsions-making-oil-and-water-get-along-mayonnaise"
-  },
-  {
-    "tier": 3,
-    "question": "A plain oil-and-vinegar dressing separates on the plate within minutes. But whisk in one common condiment and it holds together far longer, because that condiment works as an emulsifier — a go-between that keeps oil and water bound. Which one?",
-    "answer": "Mustard",
-    "choices": [
-      "Mustard",
-      "Ketchup",
-      "Honey",
-      "Relish"
-    ],
-    "context": "Mustard is an everyday emulsifier — it helps bind oil and vinegar so a dressing separates far more slowly. Emulsions hide all over the kitchen: milk and cream are natural oil-in-water emulsions, while butter is the reverse — tiny water droplets trapped inside fat. Source: en.wikipedia.org/wiki/Vinaigrette; en.wikipedia.org/wiki/Emulsion.",
-    "topic": "emulsions-making-oil-and-water-get-along-mayonnaise"
-  },
-  {
-    "tier": 4,
-    "question": "Italian cooks warn: never pour all your pasta water down the drain. Splash a little of that cloudy cooking water into a pan of oil or melted cheese, and it pulls the fat into a smooth, glossy sauce instead of a greasy puddle. What in the pasta water makes that happen?",
-    "answer": "The dissolved starch",
-    "choices": [
-      "The dissolved starch",
-      "The dissolved salt",
-      "The leftover heat",
-      "The whipped-in air"
-    ],
-    "context": "The dissolved starch keeps the fat droplets suspended instead of splitting off, giving a glossy sauce. In cacio e pepe, physicists found the sauce is most stable at about a 1:1 ratio of grated Pecorino to hot pasta water, with starch around a few percent. Source: discovermagazine.com/physicists-crack-the-creamy-code-of-perfect-pasta-sauce-47029; Physics of Fluids (2025).",
+    "context": "A single yolk can only coat so much oil at a time. Drizzle it in slowly and the yolk keeps up with every drop; pour too fast and it can't coat each new droplet in time, so the oil clumps back together and the sauce breaks. The fix: don't toss it, but slowly whisk the broken sauce into a fresh egg yolk in a clean bowl until it re-thickens. Source: guanyumixer.com, 'Science of Mayonnaise'; chefsnotes.com, 'Emulsification Principles'; foodcrumbles.com/how-mayonnaise-works-jamming-fat-droplets-in-water/; foodrepublic.com/1470843/how-to-fix-broken-homemade-mayonnaise/.",
     "topic": "emulsions-making-oil-and-water-get-along-mayonnaise"
   },
   {
     "tier": 1,
-    "question": "You slice an apple at breakfast, leave it on the counter, and by lunch the cut face has gone brown — no stove, no oven, never once heated. The moment the knife exposed the fresh flesh, the fruit's own enzyme met something and began building the brown. What did the enzyme react with?",
+    "question": "A boy slices an apple at breakfast and leaves it on the counter. By lunch the cut face is brown, with no stove anywhere near it. The instant the knife bared the flesh, the fruit's own enzyme started building the brown. What did it react with?",
     "answer": "oxygen from the air",
     "choices": [
       "oxygen from the air",
@@ -8100,7 +7996,7 @@
   },
   {
     "tier": 2,
-    "question": "Pack apple slices in a lunchbox and they've gone brown by noon — unless you first dunk them in water with a squeeze of lemon, a trick cooks swear by. The lemon shuts the browning enzyme right off. What is it about lemon juice that stops the browning?",
+    "question": "A cook packs apple slices into a lunchbox, knowing they will have gone brown by noon. A quick dunk in water with a squeeze of lemon, a trick cooks swear by, shuts the browning enzyme right off. What is it about lemon juice that stops the browning?",
     "answer": "its acid",
     "choices": [
       "its acid",
@@ -8113,7 +8009,7 @@
   },
   {
     "tier": 2,
-    "question": "Drop an apple on the floor, pick it up, and a few days later a single brown patch shows up right where it landed — while the rest of the apple stays pale. The fall left no mark on the skin, yet that one spot went brown. What did the impact do inside the fruit to start it?",
+    "question": "An apple falls to the floor and lands without a mark on its skin. A few days later a single brown patch shows up right where it hit, while the rest of the fruit stays pale. What did the impact do inside the apple to start it?",
     "answer": "burst the cells open there",
     "choices": [
       "burst the cells open there",
@@ -8126,7 +8022,7 @@
   },
   {
     "tier": 3,
-    "question": "Peel a pile of potatoes to freeze for later and the cut faces start browning within minutes. Chilling them in cold water only pauses it — thaw them out and the brown returns. Cooks knock the browning out for good with one quick step before freezing. Which step actually destroys the browning enzyme?",
+    "question": "A pile of peeled potatoes waiting for the freezer starts browning on the cut faces within minutes. Chilling them in cold water only slows it, and the brown comes back once they thaw. One quick step before freezing knocks it out for good. Which step destroys the browning enzyme?",
     "answer": "a quick dip in boiling water",
     "choices": [
       "a quick dip in boiling water",
@@ -8139,7 +8035,7 @@
   },
   {
     "tier": 3,
-    "question": "Slice most fruit and it browns within minutes — but a few kinds barely brown at all. In fact, one fruit's juice guards other fruit so well that people dip cut apple rings in it to keep them from darkening. Which fruit's juice pulls that off?",
+    "question": "Freshly cut apple rings dipped in the juice of another fruit stay pale instead of darkening the way plain cut apple does. That fruit is one of the few kinds that barely brown at all once sliced. Which fruit's juice does the job?",
     "answer": "pineapple",
     "choices": [
       "pineapple",
@@ -8152,7 +8048,7 @@
   },
   {
     "tier": 4,
-    "question": "The brown on a cut apple isn't rot or mold — the fruit is actually building a brown pigment out of its own colorless compounds, the way skin builds a suntan. Stranger still, that fruit-brown belongs to the very same pigment family that colors human skin. What is that shared pigment called?",
+    "question": "A cut apple sits browning on a plate, but it is not rotting or growing mold. It is building a brown pigment out of its own colorless compounds, much the way skin builds a suntan, and that pigment belongs to the same family that colors human skin and hair. What is the shared pigment called?",
     "answer": "melanin",
     "choices": [
       "melanin",
@@ -8165,7 +8061,7 @@
   },
   {
     "tier": 5,
-    "question": "The enzyme that browns a cut apple can be useful too - one popular drink is made by crushing fresh green leaves and deliberately letting that same enzyme darken them from bright green into a rich brown-black liquid. Which everyday drink is made this way on purpose?",
+    "question": "Crushed fresh green leaves lie spread out to darken, while the same enzyme that browns a cut apple turns them from bright green to brown-black. The browning is done on purpose, to make one popular everyday drink. Which drink is made this way?",
     "answer": "black tea",
     "choices": [
       "black tea",
@@ -8178,7 +8074,7 @@
   },
   {
     "tier": 5,
-    "question": "For over a century, the only way to keep sliced apples white was to fuss with them the moment they were cut. Then biotech scientists unveiled a new apple that stays snow-white for days on its own after slicing, sold as the 'Arctic apple.' What did they change to make it browning-proof?",
+    "question": "Biotech scientists unveiled an apple whose slices stay snow-white for days on their own, sold as the Arctic apple. For over a century, keeping cut apples white had meant fussing over them the moment the knife went in. What did the scientists change to make this apple browning-proof?",
     "answer": "switched off its browning enzyme",
     "choices": [
       "switched off its browning enzyme",
@@ -8191,7 +8087,7 @@
   },
   {
     "tier": 2,
-    "question": "In the late 1800s, the French chef Auguste Escoffier ran the kitchens at the Savoy in London and the Ritz in Paris. He split cooking into stations: one cook handled only fish, another only roasts, another only desserts. Each plate was built up as it passed down the line from station to station. Escoffier gave this military-style setup a name. What did he call it?",
+    "question": "Auguste Escoffier ran some of the grandest kitchens in London and Paris in the late 1800s, and he split the cooking into stations. One cook handled only fish, another only roasts, another only desserts, and each plate was built up as it passed down the line. What did Escoffier call this system?",
     "answer": "The brigade de cuisine",
     "choices": [
       "The brigade de cuisine",
@@ -8204,7 +8100,7 @@
   },
   {
     "tier": 2,
-    "question": "Escoffier reorganized his cooks into ranks with a strict chain of command, each holding one assigned post and taking orders down the line. He'd learned this whole way of running men during the seven years he spent inside one institution. Which was it?",
+    "question": "A strict chain of command ran through Escoffier's kitchen, each cook holding one assigned post and taking orders down the line. He had learned this way of running men in the nearly seven years he spent cooking inside one institution. Which institution was it?",
     "answer": "The army",
     "choices": [
       "The army",
@@ -8217,7 +8113,7 @@
   },
   {
     "tier": 2,
-    "question": "In late 1800s Paris, the French chef Auguste Escoffier remade the noisy, chaotic restaurant kitchen into a quiet, disciplined line. Before him, cooks shouted, jostled, and drifted through service as they pleased. Escoffier laid down strict rules his cooks had never had, and one firm ban stopped a habit that had long been common during dinner service. What did he forbid?",
+    "question": "Paris restaurant kitchens were noisy, chaotic places, full of cooks who shouted, jostled and drifted through dinner service as they pleased, until Escoffier remade them into a quiet, disciplined line. Among his strict new rules, one firm ban ended a habit long common at the cooks' stations. What did he forbid?",
     "answer": "Drinking wine during service",
     "choices": [
       "Drinking wine during service",
@@ -8230,7 +8126,7 @@
   },
   {
     "tier": 2,
-    "question": "Today a formal dinner arrives one course at a time — soup, then fish, then the main, then dessert — a sequence Escoffier helped make the standard. The older French style of serving that he pushed aside did something a modern diner would find strange. What did that old style do?",
+    "question": "In the dining room, Escoffier helped make dinner arrive one course after another, served hot and plated: soup, then fish, then the main, then dessert. The old French way of serving that he pushed aside did something a modern diner would find strange. What did it do?",
     "answer": "Set every dish on the table all at once",
     "choices": [
       "Set every dish on the table all at once",
@@ -8243,7 +8139,7 @@
   },
   {
     "tier": 3,
-    "question": "In late 1800s Paris, the French chef Auguste Escoffier organized his kitchen into stations, each with its own head cook — a station chef, called a chef de partie. Every chef de partie ran one corner of the menu, from fish to roasts to vegetables to desserts. But one of them outranked all the rest and sat at the top of the line, just below the sous-chef. Which station's chef held that most powerful position?",
+    "question": "A head cook called a chef de partie ran each station in Escoffier's kitchen, from fish to roasts to vegetables to desserts. One of these station chefs outranked all the rest, standing just below the sous-chef. Which station's chef held that most powerful post?",
     "answer": "The saucier",
     "choices": [
       "The saucier",
@@ -8256,7 +8152,7 @@
   },
   {
     "tier": 3,
-    "question": "Auguste Escoffier was a French chef who, around 1900, reorganized the chaos of a restaurant kitchen into a strict 'brigade' — a team of cooks where every station had one clear job and its own French title. One station was called the 'garde-manger,' literally 'keeper of the pantry.' Of all the food that streamed out of Escoffier's kitchen every night, which part was the garde-manger responsible for?",
+    "question": "Escoffier gave every station in his kitchen one clear job and its own French title. One of them was the garde-manger, the 'keeper of the food'. Of all the food that streamed out of his kitchen every night, which part was the garde-manger responsible for?",
     "answer": "The cold dishes — salads, pâtés, charcuterie",
     "choices": [
       "The cold dishes — salads, pâtés, charcuterie",
@@ -8269,7 +8165,7 @@
   },
   {
     "tier": 4,
-    "question": "A generation before Escoffier, the chef Marie-Antoine Carême had built French 'grande cuisine' into towering, ornate showpieces, plates buried under carved garnish. Escoffier's great reform changed the direction of French cooking. What did he do to Carême's elaborate style?",
+    "question": "Marie-Antoine Carême, cooking a generation before Escoffier, had shaped French grande cuisine into ornate, towering showpieces, the plates buried under carved garnish. Escoffier's great reform sent French cooking in a new direction. What did he do to Carême's elaborate style?",
     "answer": "Stripped away the decoration for a leaner, faster style",
     "choices": [
       "Stripped away the decoration for a leaner, faster style",
@@ -8282,7 +8178,7 @@
   },
   {
     "tier": 4,
-    "question": "Escoffier's cooking needed a stage grand enough to match it. He joined forces with César Ritz, and together the two men turned one kind of establishment into the dazzling new temple of fine dining, the place the wealthy went to eat well and be seen. Which kind of place did they crown as the home of haute cuisine?",
+    "question": "César Ritz and Escoffier joined forces, and together the two men turned one kind of place into the dazzling new temple of fine dining, where the wealthy went to eat well and be seen. Which kind of place did they crown as the home of haute cuisine?",
     "answer": "The grand hotel restaurant",
     "choices": [
       "The grand hotel restaurant",
@@ -8295,7 +8191,7 @@
   },
   {
     "tier": 5,
-    "question": "The famous dessert Escoffier created for the opera singer Nellie Melba didn't start as a simple bowl. At a lavish Savoy banquet in 1893, he presented poached peaches and ice cream perched on a carved ice sculpture — shaped as the creature that carries the hero of the Wagner opera Melba was starring in. What was the ice carving?",
+    "question": "At a lavish Savoy banquet in 1893, Escoffier set a dessert before the soprano Nellie Melba: ice cream and poached peaches perched on a sculpture carved from ice. The carving took the shape of the creature that carries the hero of the Wagner opera Melba was starring in. What was the ice carving?",
     "answer": "A swan",
     "choices": [
       "A swan",
@@ -8386,7 +8282,7 @@
   },
   {
     "tier": 1,
-    "question": "Falafel is one of the world's most popular street foods, sold from carts and stalls all across the Middle East. Each falafel is a crisp, deep-fried brown ball with a soft, herby green inside, tucked into a warm pita bread with pickles and sauce. What is a falafel ball mostly made of?",
+    "question": "At a street stall in Cairo, a cook fries balls of falafel crisp and brown in hot oil and tucks them into warm pita with pickles and sauce, as carts and stalls do all across the Middle East. What is a falafel ball mostly made of?",
     "answer": "ground beans",
     "choices": [
       "ground beans",
@@ -8399,7 +8295,7 @@
   },
   {
     "tier": 2,
-    "question": "Falafel are little fried chickpea fritters, the classic street food of the Middle East — Egypt, Lebanon, Israel, Palestine. A real batch begins the night before: you tip dried chickpeas into a bowl of water and leave them to soak until they swell up to double their size. The next step is the secret that makes the whole dish work — get it wrong and your fritters fall apart in the fryer. What do you do to those soaked beans before shaping them and dropping them in hot oil?",
+    "question": "A cook starts a batch of falafel the night before, tipping dried chickpeas into a bowl of water to soak until they swell to double their size. The next step is the secret that makes the whole dish work. What does she do to the soaked beans before shaping them for the hot oil?",
     "answer": "grind them raw",
     "choices": [
       "grind them raw",
@@ -8412,7 +8308,7 @@
   },
   {
     "tier": 3,
-    "question": "Traditional falafel from the Middle East starts with dried chickpeas that are soaked overnight in water but never cooked before being ground raw into the paste. That raw-soaked starch is what holds the fried balls together. Now imagine a cook in a hurry who skips the overnight soak and instead dumps a can of pre-cooked chickpeas straight into the blender. She shapes the balls and lowers them into the hot oil. What happens to them?",
+    "question": "Short on time, a cook skips the overnight soak of dried chickpeas that traditional falafel calls for and tips a can of pre-cooked chickpeas into the blender instead. She shapes the paste into balls and lowers them into the hot oil. What happens to them?",
     "answer": "they fall apart into mush",
     "choices": [
       "they fall apart into mush",
@@ -8425,7 +8321,7 @@
   },
   {
     "tier": 3,
-    "question": "Falafel — the crisp, fried chickpea balls sold in pita on street corners from Cairo to Beirut to Tel Aviv — hides a surprise inside. Slice a freshly-fried one in half and the inside glows a bright, mossy green. It's tempting to assume the chickpeas themselves must be green — but that's not where the color comes from at all. What actually turns the inside of a falafel green?",
+    "question": "A diner in Beirut bites a fresh falafel in half, and inside the crisp brown shell the paste glows a bright, mossy green. Chickpeas are pale gold, so the color is not coming from the beans themselves. What turns the inside of a falafel green?",
     "answer": "a big handful of fresh herbs",
     "choices": [
       "a big handful of fresh herbs",
@@ -8438,7 +8334,7 @@
   },
   {
     "tier": 4,
-    "question": "Most falafel eaten in Lebanon, Syria and Israel is ground from soaked chickpeas. But Egypt — where the dish may have first appeared, some say invented by Coptic Christians as food for meatless fast days — uses a completely different bean in its own version, called ta'ameya. Ta'ameya balls are a little greener and softer inside than chickpea falafel. Which bean gives ta'ameya its flavor?",
+    "question": "In Egypt, a cook making ta'ameya, the country's own falafel, reaches for a different bean from the soaked chickpeas behind most falafel in Lebanon, Syria and Israel. Many food historians think Egypt's version is the original, and by some accounts Coptic Christians made it first, to eat on meatless fast days. Its balls come out a little greener and softer inside. Which bean gives ta'ameya its flavor?",
     "answer": "fava beans",
     "choices": [
       "fava beans",
@@ -8451,7 +8347,7 @@
   },
   {
     "tier": 4,
-    "question": "You might imagine ancient pharaohs snacking on falafel, but historians say it's a surprisingly modern dish — it shows up in Egyptian records only in the 1800s, with nothing like it in pharaonic texts. One reason falafel couldn't have existed in ancient Egypt was the sky-high price of a kitchen staple it needs in large amounts. Which staple was it?",
+    "question": "Historians say the pharaohs never ate falafel: nothing like it appears in their texts, and the dish turns up in Egyptian records only in the 1800s. One reason is the sky-high ancient price of a kitchen staple it needs in large amounts. Which staple?",
     "answer": "cooking oil",
     "choices": [
       "cooking oil",
@@ -8464,7 +8360,7 @@
   },
   {
     "tier": 1,
-    "question": "An 1890s recipe says 'a lump of butter' and 'a teacup of flour,' and the cake comes out different every time — it all depends on whose lump and whose cup. To fix it, Fannie Farmer told cooks to fill the measuring cup, then do one thing every single time. What?",
+    "question": "A cook follows an 1890s recipe calling for 'a lump of butter' and 'a teacup of flour', and the cake comes out different every time, depending on whose lump and whose cup. Fannie Farmer's fix began with filling the measuring cup. What did she tell cooks to do next?",
     "answer": "Scrape the top flat and level with a knife's edge",
     "choices": [
       "Scrape the top flat and level with a knife's edge",
@@ -8477,7 +8373,7 @@
   },
   {
     "tier": 2,
-    "question": "Little, Brown & Co. was so sure Fannie Farmer's cookbook would flop that, as the story goes, they printed only 3,000 copies and made her pay for that first run herself. It went on to sell over four million. That runaway hit earned Farmer a lasting nickname — what was it?",
+    "question": "When Fannie Farmer's cookbook first went to press, she paid for the printing herself, as the story goes, because her publisher, Little, Brown, was so sure it would flop that it ran only 3,000 copies. It went on to sell more than four million in her lifetime. What nickname did the hit earn her?",
     "answer": "the mother of level measurements",
     "choices": [
       "the mother of level measurements",
@@ -8490,7 +8386,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1896, an American cooking teacher named Fannie Farmer published a Boston cookbook that changed how ordinary families cooked. Before her book, recipes said vague things like 'a lump of butter the size of an egg' or 'flour enough to make a stiff dough.' Farmer insisted every single ingredient be measured with a leveled cup or leveled spoon. With those exact amounts, a recipe could finally promise something no cookbook ever had before. What could it promise?",
+    "question": "Fannie Farmer measured every ingredient in her 1896 Boston cookbook exactly, in standard cups and spoons, where older recipes had said vague things like 'flour enough to make a stiff dough'. With exact amounts, a recipe could finally promise something no cookbook ever had before. What could it promise?",
     "answer": "that a beginner and an expert would end up with the same dish",
     "choices": [
       "that a beginner and an expert would end up with the same dish",
@@ -8503,7 +8399,7 @@
   },
   {
     "tier": 4,
-    "question": "Here's a difference that surprises many cooks: most of the world weighs flour on a kitchen scale in grams, but Americans scoop it into cups. That habit was locked in by Fannie Farmer, a Boston cooking teacher whose 1896 cookbook demanded exact, leveled measurements for every ingredient. In her day, at the end of the 1800s, why was measuring by the cup the more practical choice than weighing on a scale?",
+    "question": "An American baker scoops flour into a measuring cup, though bakers across most of the world weigh theirs in grams on a kitchen scale. Fannie Farmer locked that habit in with her 1896 cookbook and its exact measurements for every ingredient. Why was the cup the more practical choice in the late 1800s?",
     "answer": "Scales then were costly and unreliable, but a cheap leveled cup was consistent",
     "choices": [
       "Scales then were costly and unreliable, but a cheap leveled cup was consistent",
@@ -8516,7 +8412,7 @@
   },
   {
     "tier": 1,
-    "question": "Salmon shows up on dinner plates all over the world — grilled, smoked, in sushi, canned. Wild salmon are hunted from cold rivers and oceans, but about 7 out of every 10 salmon eaten today never came from either place. They were raised in one specific setup, floating side by side by the thousand, penned close to a shoreline. Where was that fish most likely raised or caught?",
+    "question": "A salmon fillet glistens on ice at the fish counter. About 7 in every 10 salmon eaten today never swam wild in a river or ocean, but grew up by the thousand, side by side, near a shoreline. Where was this fillet most likely raised or caught?",
     "answer": "A netted pen in a coastal bay",
     "choices": [
       "A netted pen in a coastal bay",
@@ -8529,7 +8425,7 @@
   },
   {
     "tier": 1,
-    "question": "A home cook reads that ocean-caught shrimp tastes sweeter than the pond-raised kind, so he goes to his neighborhood grocery store hunting for a bag labeled 'wild-caught.' He picks through the seafood freezer — bag after bag says 'farm-raised.' Even the fresh case behind the glass shows no wild shrimp at all. What is the main reason wild shrimp are so hard to find at an ordinary store?",
+    "question": "A home cook reads that ocean-caught shrimp tastes sweeter than pond-raised and hunts his grocery store for a bag marked 'wild-caught'. Bag after bag in the freezer says 'farm-raised', and the fresh case holds no wild shrimp at all. What is the main reason?",
     "answer": "Nearly all shrimp sold is raised on farms",
     "choices": [
       "Nearly all shrimp sold is raised on farms",
@@ -8542,7 +8438,7 @@
   },
   {
     "tier": 2,
-    "question": "For all of human history — going back to the earliest fishermen with nets and spears — people got their seafood by catching it wild out of rivers, lakes and seas. Then, right around the year 2022, the global numbers flipped for the first time ever. What changed?",
+    "question": "The earliest fishermen worked with nets and spears, and for all of human history since, people have taken their seafood wild from rivers, lakes and seas. Then, around 2022, the global numbers flipped for the first time. What changed?",
     "answer": "Farms now grow more seafood than is caught wild",
     "choices": [
       "Farms now grow more seafood than is caught wild",
@@ -8555,7 +8451,7 @@
   },
   {
     "tier": 2,
-    "question": "A farmed Atlantic salmon's life runs on a strict two-year schedule, from a fertilized egg on the farm to a harvested fillet on your plate. Wild salmon are born in freshwater rivers, then swim out to salty ocean water as adults — and farmed salmon follow the very same freshwater-first, saltwater-later pattern. Where does a farmed Atlantic salmon spend its very first year of life?",
+    "question": "On a salmon farm, an Atlantic salmon's life runs on a strict two-year schedule, from a fertilized egg to a fillet at harvest. Its wild cousins hatch in freshwater rivers and only later swim out to the salty ocean. Where does a farmed Atlantic salmon spend its very first year of life?",
     "answer": "In freshwater tanks on land",
     "choices": [
       "In freshwater tanks on land",
@@ -8568,7 +8464,7 @@
   },
   {
     "tier": 3,
-    "question": "When people are asked to guess the most-farmed animal on Earth by sheer number of individuals, most say chickens. In fact, hundreds of billions of one small sea creature are farmed each year — raised in shallow coastal ponds across Vietnam, Thailand, India and Ecuador — far outnumbering any farmed land animal on the planet. Which small sea creature is it?",
+    "question": "Along the coasts of Vietnam, Thailand, India and Ecuador, shallow ponds teem with one small sea creature, farmed there by an estimated hundreds of billions every year. Asked for the most-farmed animal on Earth by sheer numbers, most people would guess the chicken, but this creature is probably the true champion. Which creature is it?",
     "answer": "The whiteleg shrimp",
     "choices": [
       "The whiteleg shrimp",
@@ -8581,7 +8477,7 @@
   },
   {
     "tier": 3,
-    "question": "A salmon is a predator — in the wild it hunts and eats other fish for food. So a salmon farm can't raise its fish on grain the way a chicken farm feeds its birds; salmon need the protein and oily fats that only ocean animals give them. On the big Atlantic salmon farms, the main ingredient historically ground up and pressed into the feed pellets tossed into the pens was what?",
+    "question": "Workers on a big Atlantic salmon farm toss feed pellets to the fish, but they cannot fatten them on grain the way a chicken farm feeds its birds. Salmon are hunters that eat other fish, and need the protein and oily fats only ocean animals give. What was long ground up and pressed into those pellets?",
     "answer": "Small wild fish like anchovies and sardines",
     "choices": [
       "Small wild fish like anchovies and sardines",
@@ -8593,21 +8489,8 @@
     "topic": "farmed-vs-wild-where-your-fish-comes-from"
   },
   {
-    "tier": 3,
-    "question": "On a salmon farm, workers dump tons of feed pellets into the pens every single day. But mussel and oyster farms — long ropes hung down into cold coastal water, thick with clinging shellfish — are completely different. These shellfish need no feeding at all, which makes them some of the most sustainable seafood you can farm anywhere in the world. So how do the mussels and oysters actually get their food?",
-    "answer": "They filter tiny food out of the seawater",
-    "choices": [
-      "They filter tiny food out of the seawater",
-      "They graze on seaweed along the ropes",
-      "They absorb nutrients through their shells",
-      "They snatch drifting baby fish to eat"
-    ],
-    "context": "Mussels and oysters are filter feeders: they pump seawater through their bodies and strain out tiny drifting food, so they need zero added feed. That makes farmed mussels and oysters among the most sustainable seafood you can buy — no wild fish are caught to feed them. Source: SeaChoice, 'Wild Fish in Feed'.",
-    "topic": "farmed-vs-wild-where-your-fish-comes-from"
-  },
-  {
     "tier": 4,
-    "question": "Wild Atlantic salmon roam thousands of miles of open ocean, spread thin. But farmed salmon live packed together by the tens of thousands in a single netted pen off the coast of Norway, Scotland, or Chile. That crowding is ideal conditions for a tiny parasite to spread from fish to fish. What small creature is the single biggest health headache in salmon farming?",
+    "question": "Wild Atlantic salmon roam thousands of miles of open ocean, spread thin. Farmed salmon live packed together by the tens of thousands, and that crowding lets a tiny parasite spread from fish to fish. What small creature is the biggest health headache in salmon farming?",
     "answer": "The sea louse",
     "choices": [
       "The sea louse",
@@ -8620,7 +8503,7 @@
   },
   {
     "tier": 4,
-    "question": "Wild salmon get their bright pink-orange flesh from eating shrimp and other tiny sea creatures packed with a natural pigment. A farmed salmon eats none of that — its meals are dry feed pellets in a pen. Left to what it naturally grows on that farm diet, a farmed salmon's flesh would come out plain grey, a color no supermarket shopper will buy. So how do salmon farmers give the farmed fillet its familiar pink-orange color?",
+    "question": "A wild salmon turns its flesh bright pink-orange by eating shrimp and other tiny sea creatures packed with a natural pigment. A farmed salmon eats none of that, only dry feed pellets, and on that diet its flesh would come out plain grey, a color no supermarket shopper will buy. How do farmers give the fillet its familiar pink?",
     "answer": "They add a pigment to the fish's feed",
     "choices": [
       "They add a pigment to the fish's feed",
@@ -8633,7 +8516,7 @@
   },
   {
     "tier": 5,
-    "question": "A common worry about fish farming — the industry called aquaculture — is that it drains the ocean, because farmers must catch several pounds of small wild fish and grind them into pellets to feed each pound of farmed salmon or shrimp they grow. It sounds like a bad trade. But when researchers add up all aquaculture today — fish, shellfish, seaweed together — what does the honest math actually show?",
+    "question": "Critics of fish farming long complained that it drains the ocean: by their count, several pounds of small wild fish must be caught and ground into pellets to grow each pound of farmed salmon or shrimp. It sounds like a bad trade. When researchers add up all of fish farming today, fish, shellfish and seaweed together, what does the honest math show?",
     "answer": "Farming now grows more seafood than the wild fish it uses",
     "choices": [
       "Farming now grows more seafood than the wild fish it uses",
@@ -8646,7 +8529,7 @@
   },
   {
     "tier": 5,
-    "question": "Farmed salmon are naturally grey — their pink-orange color comes from a pigment added to their feed pellets, and the more pigment in the pellets, the deeper the color the fillet turns out. Salmon farmers can decide, in advance, roughly what shade of pink-orange their fish will end up. Feed companies even sell them a small hand-held tool to pick the exact shade a supermarket buyer has ordered. What is this tool like?",
+    "question": "A salmon farmer picks in advance roughly what shade of pink-orange his fish will turn out, from pale to deep. Feed companies even sell farmers a small hand-held tool for picking the exact shade a supermarket buyer has ordered. What is this tool like?",
     "answer": "A fan of paint-chip color swatches",
     "choices": [
       "A fan of paint-chip color swatches",
@@ -8659,7 +8542,7 @@
   },
   {
     "tier": 5,
-    "question": "Swap a wild Alaskan salmon steak for a farmed Atlantic one and you're eating a much richer piece of fish — a farmed fillet carries roughly twice as much fat. Fish farmers don't inject it; the fat builds up because the penned fish never has to swim hard against ocean currents the way a wild salmon does its whole life. Where can you actually see that extra fat in a raw fillet, before it is ever cooked?",
+    "question": "Laid side by side on a fish counter, a farmed Atlantic salmon fillet carries roughly twice as much fat as a wild Alaskan one. Nobody injects it; the fat builds up because a farmed fish never has to swim hard against ocean currents the way a wild salmon does all its life. Where does that extra fat show in the raw fillet?",
     "answer": "In wide white stripes marbling the flesh",
     "choices": [
       "In wide white stripes marbling the flesh",
@@ -8671,8 +8554,8 @@
     "topic": "farmed-vs-wild-where-your-fish-comes-from"
   },
   {
-    "tier": 1,
-    "question": "Most of the vitamins your body needs dissolve in water — that's how vitamin C in a glass of orange juice gets into your blood. But four vitamins are the oddballs of the group: they refuse to dissolve in water and dissolve only in fat, which means you have to eat them together with butter, oil, or egg yolk for your body to soak them up. Which four vitamins make up this fat-soluble quartet?",
+    "tier": 2,
+    "question": "A nutrition teacher writes all thirteen vitamins on the board, then circles the four that will not dissolve in water at all, only in fat. Those four can be soaked up only from a meal with some butter, oil or egg yolk in it. Which four has she circled?",
     "answer": "Vitamins A, D, E and K",
     "choices": [
       "Vitamins A, D, E and K",
@@ -8685,7 +8568,7 @@
   },
   {
     "tier": 2,
-    "question": "Nibble a carrot raw and your body grabs only about a tenth of the vitamins locked inside it. But prepare that same carrot one simple way and what you absorb leaps to nearly three-quarters - over six times as much. What simple kitchen step unlocks the difference?",
+    "question": "A boy who nibbles a carrot raw absorbs only about a tenth of the vitamins locked inside it. Prepared one simple way, the same carrot gives up nearly three-quarters, over six times as much. What kitchen step unlocks the difference?",
     "answer": "Sauteing it in a little oil or butter",
     "choices": [
       "Sauteing it in a little oil or butter",
@@ -8698,7 +8581,7 @@
   },
   {
     "tier": 2,
-    "question": "Vitamin C — the nutrient in oranges, peppers, and broccoli that keeps your gums, skin, and blood vessels healthy — is sometimes called the needy vitamin. You can go weeks without vitamin A and stay perfectly fine. But skip vitamin C for just a few days and your body starts running low. You truly must eat some every day. Why is vitamin C impossible to stockpile in your body?",
+    "question": "Suppose you skip vitamin A for a few weeks: you stay perfectly fine. Skip vitamin C, the nutrient in oranges, peppers and broccoli, for just a few days, though, and your body starts running low, so you need some every single day. Why can your body not stockpile vitamin C?",
     "answer": "It dissolves in water, so your body flushes the extra out",
     "choices": [
       "It dissolves in water, so your body flushes the extra out",
@@ -8710,8 +8593,8 @@
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
-    "tier": 3,
-    "question": "Carrots, sweet potatoes, and pumpkins all glow the same bright orange, because all three carry the exact same natural pigment in their flesh. When you eat them, your body takes that orange pigment apart and rebuilds it into vitamin A — the vitamin that keeps your eyes sharp in dim light. What is this orange pigment called?",
+    "tier": 2,
+    "question": "A carrot, a baked sweet potato and a wedge of ripe cantaloupe sit sliced open on a board, the same vivid orange in all three. One natural pigment does the work, and the body takes it apart to build vitamin A, which keeps eyes sharp in dim light. What is the pigment called?",
     "answer": "Beta-carotene",
     "choices": [
       "Beta-carotene",
@@ -8724,7 +8607,7 @@
   },
   {
     "tier": 4,
-    "question": "You might think raw vegetables always beat cooked ones for nutrition, but a tomato flips that rule on its head. Simmer tomatoes low and slow in a little olive oil - the way a good pasta sauce is made - and one of their prized nutrients becomes several times MORE absorbable than in a raw slice. Why does the cooked, oily sauce beat the raw tomato?",
+    "question": "A cook simmers tomatoes low and slow in a little olive oil for a pasta sauce, and one of their prized nutrients ends up several times more absorbable than in a raw slice. The tomato breaks the rule that raw vegetables always beat cooked ones. Why does the oily, cooked sauce win?",
     "answer": "The heat ruptures the cells, freeing the pigment for fat to carry",
     "choices": [
       "The heat ruptures the cells, freeing the pigment for fat to carry",
@@ -8737,7 +8620,7 @@
   },
   {
     "tier": 5,
-    "question": "The fat-soluble vitamins have a superpower the water-soluble ones lack: instead of washing out, your body stashes them away for a rainy day. In fact, you carry roughly a whole year's supply of vitamin A banked inside one organ, ready to draw on when your diet runs short. Which organ is your body's vitamin A vault?",
+    "question": "Suppose you ran short of vitamin A in your food: your body would draw on a reserve it banks, instead of washing the vitamin out the way it does water-soluble ones. More than 90 percent of that reserve, often nearly a year's worth, sits inside one organ. Which organ is the body's vitamin A vault?",
     "answer": "The liver",
     "choices": [
       "The liver",
@@ -8750,7 +8633,7 @@
   },
   {
     "tier": 1,
-    "question": "Try a kitchen thought-experiment. Line up four spoonfuls, each one exactly the same size: one of white sugar, one of cooked white rice, one of raw egg white, and one of the golden liquid pressed from olives. Every food carries chemical energy your body can burn, measured in calories. Gram for gram, which one of these four packs by far the most energy?",
+    "question": "A cook sets out four spoonfuls of exactly the same size, each holding a different food. Every food carries chemical energy the body can burn, measured in calories. Gram for gram, which spoon packs by far the most?",
     "answer": "The spoon of olive oil",
     "choices": [
       "The spoon of olive oil",
@@ -8763,7 +8646,7 @@
   },
   {
     "tier": 1,
-    "question": "The layer of fat that sits just beneath your skin is called subcutaneous fat — a soft blanket wrapped around your whole body. Most people think of it only as a store of spare fuel, extra calories saved for a hungry day. But doctors point to two other quiet jobs that layer of fat does for your body every single day, jobs you'd notice fast if the fat were gone. Which pair is right?",
+    "question": "Suppose you pinch the soft layer just under your skin: that is subcutaneous fat. Most people think of it only as spare fuel saved for a hungry day, but doctors point to two other jobs it does for you every day. Which pair?",
     "answer": "Keeping you warm and cushioning your organs",
     "choices": [
       "Keeping you warm and cushioning your organs",
@@ -8776,7 +8659,7 @@
   },
   {
     "tier": 2,
-    "question": "A pan sauce is what a chef makes right in the hot skillet after searing a piece of meat: pour in wine or stock, scrape up the brown bits, let it reduce. At the very end, a professional will often swirl in a small knob of cold butter — a trick called mounting the sauce, or monter au beurre in French. That little bit of fat changes how the sauce tastes in a way that plain water never could. What is the fat actually doing to the flavor?",
+    "question": "A chef sears a steak, splashes wine into the hot pan and scrapes up the brown bits. At the very end she swirls in a little cold butter, a finish French chefs call monter au beurre, and the sauce tastes richer than water could ever make it. What is the fat doing to the flavor?",
     "answer": "Dissolving and carrying the sauce's flavor and aroma",
     "choices": [
       "Dissolving and carrying the sauce's flavor and aroma",
@@ -8789,7 +8672,7 @@
   },
   {
     "tier": 2,
-    "question": "Your body keeps two fuel tanks. The fast one — a sugar store called glycogen — is nearly empty after only 90 to 120 minutes of hard exercise. The other holds enough to keep you going for days, or even weeks. What is that big, long-lasting fuel tank made of?",
+    "question": "A runner deep into a hard workout draws on two fuel tanks. The fast one, a quick-burning store, runs nearly empty after only 90 to 120 minutes of hard exercise, while the other holds enough to keep a person going for days or even weeks. What is that big, long-lasting tank made of?",
     "answer": "Body fat",
     "choices": [
       "Body fat",
@@ -8802,7 +8685,7 @@
   },
   {
     "tier": 2,
-    "question": "Your body is built from about thirty trillion tiny living units called cells — muscle cells, brain cells, skin cells, blood cells, and dozens more. Every single one of them is wrapped inside a thin, flexible outer wall called the cell membrane. This membrane holds the cell together and controls what enters and what leaves. What is that living wall mostly built from?",
+    "question": "Under a microscope, a single cell sits wrapped in a thin, flexible skin, the cell membrane, which holds it together and decides what passes in and out. The human body is built from some thirty trillion such cells, every one wrapped the same way. What is that living wall mostly built from?",
     "answer": "A double layer of fat",
     "choices": [
       "A double layer of fat",
@@ -8815,7 +8698,7 @@
   },
   {
     "tier": 3,
-    "question": "People treat fat as something to burn off at the gym, or a number to shrink on a nutrition label. Yet one organ in your body is built more from fat than from anything else — roughly 60% fat by dry weight. In this organ, fat isn't fuel waiting to be burned; it is the very material the organ's cells are shaped from. Which organ is it?",
+    "question": "A man on a gym treadmill sweats to burn off fat as if it were the enemy. Yet one organ of the human body is built from fat more than anything else, about 60 percent by dry weight, and there the fat is no fuel at all, but the stuff its cells are shaped from. Which organ is it?",
     "answer": "The brain",
     "choices": [
       "The brain",
@@ -8828,7 +8711,7 @@
   },
   {
     "tier": 3,
-    "question": "Your body's nerves carry electrical signals from your brain out to every muscle and back again. Each long nerve fiber is wrapped in a fatty sheath called myelin, much like the plastic coating on an electrical wire. But that fatty insulation does more than protect the nerve — it changes the way the signal actually moves along it. What does the fatty myelin wrapping let the signal do?",
+    "question": "A nerve signal travels out to a muscle along a long, thin fiber wrapped in a fatty sheath called myelin, much like the plastic coating on an electrical wire. That insulation does more than protect the nerve: it changes the way the signal moves. What does the fatty wrapping let the signal do?",
     "answer": "Leap along in jumps instead of crawling",
     "choices": [
       "Leap along in jumps instead of crawling",
@@ -8841,20 +8724,7 @@
   },
   {
     "tier": 4,
-    "question": "Cholesterol is a word on nutrition labels that people are commonly taught to be afraid of, but honestly you would actually die without it. Your body uses it as the essential raw material to build a whole important family of hormones. Which family of hormones does your body build straight from cholesterol?",
-    "answer": "The sex hormones that drive puberty",
-    "choices": [
-      "The sex hormones that drive puberty",
-      "The insulin that stores blood sugar",
-      "The adrenaline of a sudden fright",
-      "The histamine of an itchy allergy"
-    ],
-    "context": "Cholesterol is the raw material your body turns into its steroid hormones — cortisol, aldosterone, and the sex hormones (testosterone, estrogen, progesterone) that drive growth and puberty. Without cholesterol, there is no puberty: the word people fear is one the body cannot live without. Source: Wikipedia, 'Cholesterol.'",
-    "topic": "fat-is-not-the-enemy-what-fat-actually-does"
-  },
-  {
-    "tier": 4,
-    "question": "Step outside into the sunshine and your skin quietly performs some remarkable chemistry: invisible ultraviolet rays strike a cholesterol-like molecule sitting in your skin and turn it into something your body absolutely requires. What does sunlight help your skin make from that cholesterol relative?",
+    "question": "A girl steps out into the sunshine, and her skin quietly performs some remarkable chemistry. Invisible ultraviolet rays strike a cholesterol-like molecule sitting in her skin and turn it into something her body must have. What does sunlight help her skin make from that cholesterol relative?",
     "answer": "Vitamin D",
     "choices": [
       "Vitamin D",
@@ -8866,21 +8736,8 @@
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
-    "tier": 4,
-    "question": "Your liver and your intestines quietly produce about a gram of cholesterol every single day, which is far more than most people will ever actually eat in their food. So what does your body probably do on a day when you eat a big cholesterol-rich breakfast of several fried eggs?",
-    "answer": "It makes less of its own to balance out",
-    "choices": [
-      "It makes less of its own to balance out",
-      "It flushes the extra straight out as sweat",
-      "It packs the extra away as body fat",
-      "It stops making hormones for the day"
-    ],
-    "context": "Your body makes about 1 gram (1,000 mg) of cholesterol every day — roughly 80% of it in the liver and intestines — far more than the ~300 mg a typical person eats. When you eat more cholesterol, your body simply makes less of its own to compensate. You could not survive without it. Source: Wikipedia, 'Cholesterol.'",
-    "topic": "fat-is-not-the-enemy-what-fat-actually-does"
-  },
-  {
     "tier": 5,
-    "question": "A fat-free rice cake leaves you hungry within an hour, but the same snack with a smear of peanut butter keeps hunger away for far longer — even for the same number of calories. Nutritionists say the fat in the peanut butter does two different jobs down in your gut, and together those two jobs stretch that feeling of fullness out. Which pair of jobs is it doing?",
+    "question": "A fat-free rice cake leaves its eater hungry within an hour, while the same snack with a smear of peanut butter keeps hunger off far longer, even at the same calories. Nutritionists say the fat does two jobs down in the gut that together stretch out the feeling of fullness. Which pair of jobs?",
     "answer": "Slows stomach emptying and quiets appetite with gut hormones",
     "choices": [
       "Slows stomach emptying and quiets appetite with gut hormones",
@@ -8893,7 +8750,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 1950s the physiologist Ancel Keys championed the idea that dietary fat causes heart disease, and in 1977 the U.S. government's first official diet advice urged Americans to eat less fat. Later critics argued that Keys focused so hard on fat that he overlooked another common ingredient that may itself drive heart disease. Which ingredient did those critics point to?",
+    "question": "Ancel Keys, a physiologist, championed the idea in the 1950s that dietary fat causes heart disease, and in 1977 the American government's first official diet advice urged everyone to eat less of it. Critics later said Keys had been so fixed on fat that he overlooked another common ingredient that may, in their view, drive heart disease itself. Which ingredient did they point to?",
     "answer": "Sugar",
     "choices": [
       "Sugar",
@@ -8906,7 +8763,7 @@
   },
   {
     "tier": 1,
-    "question": "A lean bread dough bakes up chewy and stretchy, but if you work plenty of butter or oil into a dough, the crumb turns soft, crumbly and tender instead. The fat coats every tiny bit of flour in a greasy protective film. What does that greasy film block from reaching the flour?",
+    "question": "Two doughs come out of the same oven: a lean bread dough, chewy and stretchy, and a rich one worked with plenty of butter, soft and crumbly. In the rich one the fat coats every grain of flour in a greasy film. What does that film keep away from the flour?",
     "answer": "water",
     "choices": [
       "water",
@@ -8919,7 +8776,7 @@
   },
   {
     "tier": 2,
-    "question": "Recipes call any solid baking fat 'shortening,' and old cooks chose that word as a plain description of its one job in a dough — long before food science could explain it. Cream shortening into flour and it keeps one thing from growing into the long, linked strands that make bread chewy. What is the fat cutting short?",
+    "question": "A baker creams solid shortening into flour, and the fat stops one thing in the dough from growing into the long, linked strands that make bread chewy. Old cooks named the fat for that job long before food science could explain it, the same 'short' as in shortbread. What is the fat cutting short?",
     "answer": "the gluten",
     "choices": [
       "the gluten",
@@ -8932,7 +8789,7 @@
   },
   {
     "tier": 3,
-    "question": "A pie crust and a batch of shortbread can start from the very same butter and flour — the baker just handles the fat differently. For a flaky pie crust she cuts cold butter in only until it sits in pea-sized lumps; for sandy shortbread she rubs the butter in completely until the mix looks like damp sand. Those pea-sized lumps are what make the pie flaky. In the oven, what does each butter lump do to leave a flake?",
+    "question": "Two bowls of the same butter and flour sit on a baker's counter, one for pie crust and one for shortbread, and only her handling of the fat tells them apart. For shortbread she rubs the butter in until the mix looks like damp sand; for pie crust she stops while the cold butter sits in pea-sized lumps. In the oven, what does each lump do to leave a flake?",
     "answer": "It melts away and leaves a flat gap that lifts into a thin layer.",
     "choices": [
       "It melts away and leaves a flat gap that lifts into a thin layer.",
@@ -8944,21 +8801,8 @@
     "topic": "fat-shortening-and-flakiness"
   },
   {
-    "tier": 3,
-    "question": "Before 1911, American cooks who needed a solid fat mostly reached for lard, which tasted of pork and had to be kept cold. Then Procter & Gamble launched Crisco — the first mass-market vegetable shortening, a white, shelf-stable fat that swept the country's kitchens. Crisco was made by hardening a cheap oil pressed from the seeds of a common American crop. Which crop?",
-    "answer": "cotton",
-    "choices": [
-      "cotton",
-      "corn",
-      "soybean",
-      "peanut"
-    ],
-    "context": "Procter & Gamble launched Crisco in June 1911 as 'crystallized cottonseed oil' — the first mass-market vegetable shortening. Cheaper than lard, shelf-stable without refrigeration, and neutral in flavor, it swept American kitchens and basically created the solid-vegetable-shortening category. Source: Wikipedia, 'Shortening'.",
-    "topic": "fat-shortening-and-flakiness"
-  },
-  {
     "tier": 4,
-    "question": "Your pie crust baked up greasy, hard, and dead flat — not a single flake — because the kitchen was warm and the butter softened and soaked into the flour before the pan ever reached the oven. A flaky crust needs the butter still cold and solid when it goes in. Beyond keeping the little gaps propped open, what does that cold, solid butter do in the oven's heat that soaked-in butter cannot?",
+    "question": "A pie crust comes out of the oven greasy, hard and flat, without a single flake, because the kitchen was warm and the butter softened and soaked into the flour before the pan went in. Butter kept cold and solid would have propped the layers open. What else does cold, solid butter do in the oven's heat?",
     "answer": "Its trapped water flashes to steam and forces the layers apart.",
     "choices": [
       "Its trapped water flashes to steam and forces the layers apart.",
@@ -8971,7 +8815,7 @@
   },
   {
     "tier": 5,
-    "question": "Bake the same cookie dough twice — once with butter, once with white vegetable shortening — and the shortening batch comes out tall and puffy while the butter batch spreads into thin, flat disks. Shortening is nearly pure fat and melts at a higher temperature than butter. Why does that higher melting point give a taller cookie?",
+    "question": "A baker makes the same cookie dough twice, once with butter and once with white vegetable shortening. The shortening batch bakes up tall and puffy while the butter batch spreads into thin, flat disks. Shortening is nearly pure fat and melts at a higher temperature than butter. Why does that give a taller cookie?",
     "answer": "The fat stays solid longer, so the cookie sets before it can spread.",
     "choices": [
       "The fat stays solid longer, so the cookie sets before it can spread.",
@@ -8984,7 +8828,7 @@
   },
   {
     "tier": 2,
-    "question": "In an Iowa State University study, participants ate hearty salads of spinach, romaine, carrots and tomatoes but poured on fat-free dressing. Careful blood testing afterward produced a genuinely startling result about the fat-soluble vitamins from the vegetables. What had happened to them?",
+    "question": "Volunteers at Iowa State University ate hearty salads of spinach, romaine, carrots and tomatoes, but poured on fat-free dressing. Careful blood tests afterward gave a startling result about the vegetables' fat-soluble vitamins. What had happened to them?",
     "answer": "almost none of them reached their blood",
     "choices": [
       "almost none of them reached their blood",
@@ -8997,7 +8841,7 @@
   },
   {
     "tier": 3,
-    "question": "Bile is a yellow-green juice made by the liver and stored in the gallbladder. When fatty food arrives in the small intestine, the gallbladder squirts bile in to meet it. Some people eat plenty of vitamin A, D, E and K — the four fat-soluble vitamins — and yet still turn up deficient in all of them. The cause is a blocked bile duct: no bile is reaching the gut. What is bile actually doing for those fat-soluble vitamins?",
+    "question": "A patient eats food full of the four fat-soluble vitamins, yet tests show him short of every one, because a blocked bile duct keeps his bile from the gut. Bile, made by the liver and stored in the gallbladder, is squirted into the small intestine whenever fatty food arrives. What is bile doing for those vitamins?",
     "answer": "bundling them into droplets the gut can absorb",
     "choices": [
       "bundling them into droplets the gut can absorb",
@@ -9010,7 +8854,7 @@
   },
   {
     "tier": 4,
-    "question": "Purdue food scientist Mario Ferruzzi fed volunteers the exact same salad with different fatty dressings, and the specific type of fat mattered greatly: with one particular kind, the vegetables' vitamins came through on just a few grams of fat, while others needed considerably more to accomplish the same job. Which dressing worked with the least fat?",
+    "question": "Mario Ferruzzi, a food scientist at Purdue, fed volunteers the exact same salad with different fatty dressings, and the kind of fat mattered greatly. With one kind, the vegetables' vitamins came through on just a few grams of fat, while the others needed considerably more to accomplish the same job. Which dressing worked with the least fat?",
     "answer": "olive oil",
     "choices": [
       "coconut oil",
@@ -9023,7 +8867,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1913, stranded and starving on the Antarctic ice, explorers Douglas Mawson and Xavier Mertz ate the only food they had left -- the livers of their own sled dogs. Within days their skin was peeling off in sheets and Mertz was dead. What is the classic explanation for what poisoned them?",
+    "question": "Douglas Mawson and Xavier Mertz, stranded and starving on the Antarctic ice in 1913, ate the only food they had left: the livers of their own sled dogs. Within days their skin was peeling off in sheets, and Mertz was dead. What is the classic explanation for what poisoned them?",
     "answer": "an overdose of vitamin A",
     "choices": [
       "an overdose of vitamin A",
@@ -9036,7 +8880,7 @@
   },
   {
     "tier": 1,
-    "question": "We describe butter, cream, and marbled steak as 'rich' and 'creamy,' and assume that richness is all about texture — how silky they feel in the mouth. But in 2015, food scientists at Purdue University made a bolder claim about fat. What did they argue fat really is?",
+    "question": "A diner calls butter, cream and a marbled steak 'rich', and takes that richness to be pure texture, how silky they feel on the tongue. Food scientists at Purdue, led by Richard Mattes, made a bolder claim about fat in 2015. What did they argue fat really is?",
     "answer": "a real sixth basic taste of its own",
     "choices": [
       "a real sixth basic taste of its own",
@@ -9049,7 +8893,7 @@
   },
   {
     "tier": 1,
-    "question": "For a long time, scientists said the human tongue could taste only five things: sweet, sour, salty, bitter, and umami. Then in 2015 a team of food scientists at Purdue University in Indiana argued that fat is a taste in its own right — the tongue has receptors just for fat, they said. Discoverers get to name their discoveries. What did the Purdue team call the taste of fat?",
+    "question": "Richard Mattes and his food scientists at Purdue made a bold claim about fat in 2015, and like any discoverers they gave their find a name of its own. What did they call the taste of fat?",
     "answer": "Oleogustus",
     "choices": [
       "Oleogustus",
@@ -9062,7 +8906,7 @@
   },
   {
     "tier": 2,
-    "question": "For ages we've adored fat in butter, bacon, and cream. So when scientists finally isolated fat's pure taste — stripped of its smell and its silky texture — and had volunteers try it straight, everyone expected something delicious. Instead it was startlingly bad. What did that pure fat-taste taste like?",
+    "question": "Scientists had volunteers sample pure fat with its smell and its silky feel both taken away, and everyone expected something as good as butter, bacon or cream. Instead it was startlingly bad. What did the pure taste of fat taste like?",
     "answer": "like something rancid and spoiled",
     "choices": [
       "like something rancid and spoiled",
@@ -9075,7 +8919,7 @@
   },
   {
     "tier": 3,
-    "question": "A strong dose of pure fat-taste is so off-putting you'd spit it out — yet a faint trace of that very same taste makes food MORE appealing. Fat, scientists realized, copies one of the five classic tastes exactly: one we're built to reject in strength, but have learned to love in a whisper. Which taste?",
+    "question": "A taster handed a strong dose of pure fat wants to spit it out, yet a faint trace of the same taste makes food more appealing. Scientists found fat behaves like one of the five classic tastes, one people are built to reject in strength but learn to love in a whisper. Which taste?",
     "answer": "bitter",
     "choices": [
       "bitter",
@@ -9088,7 +8932,7 @@
   },
   {
     "tier": 4,
-    "question": "Some ingredients — roasted garlic, slow-cooked onions, aged Parmesan, a broth simmered for hours — give a dish a deep, round, mouth-filling richness that lingers. Food scientists named this quality 'kokumi,' or 'mouthfulness.' Yet kokumi works differently from sweet, sour, or salty. How does it create that fullness?",
+    "question": "A cook simmers a broth for hours with garlic and onions and finishes it with aged Parmesan, and the dish takes on a deep, round, lingering fullness. Japanese food science calls this quality kokumi, 'mouthfulness', and it works differently from sweet, sour or salty. How does kokumi create that fullness?",
     "answer": "it boosts the salty and savory tastes already in the food",
     "choices": [
       "it boosts the salty and savory tastes already in the food",
@@ -9101,33 +8945,7 @@
   },
   {
     "tier": 2,
-    "question": "People treat fat like the enemy of a healthy body, something to burn off or starve away. Here's the twist you'd never guess: one of your organs is made almost entirely of fat, roughly 60% fat by dry weight — more than any other organ in you. You need it to think, feel, and move. Which organ tops that fatty-organ list?",
-    "answer": "the brain",
-    "choices": [
-      "the brain",
-      "the liver",
-      "the heart",
-      "the skin"
-    ],
-    "context": "The brain is the body's fattiest organ — about 60% fat once you subtract its water (the living brain is roughly 75-80% water). One omega-3 fat, DHA, is the single most abundant fatty acid in it, keeping neuron membranes fluid enough to fire — a big reason the 'fat is the enemy' idea is a myth. Source: Chang et al., 'Essential fatty acids and human brain' (researchgate.net/publication/42438067).",
-    "topic": "fats-what-they-do-and-the-seed-oil-debate"
-  },
-  {
-    "tier": 2,
-    "question": "Fat isn't just fuel for your body — it's the delivery truck for a whole set of vitamins. Eat a plain salad with no dressing and your body actually absorbs very little of four particular vitamins hidden in those greens. Drizzle on a spoonful of olive oil, though, and suddenly those same vitamins can ride the fat into your bloodstream. Nutritionists call this special group the fat-soluble vitamins. Which four are they?",
-    "answer": "A, D, E, and K",
-    "choices": [
-      "A, D, E, and K",
-      "C, B6, B12, and folate",
-      "B1, B2, B3, and B6",
-      "C, B12, biotin, and folate"
-    ],
-    "context": "A, D, E and K are the fat-soluble vitamins: they pack into fat droplets (micelles and chylomicrons) and ride through the gut wall with dietary fat and bile. Eat carrots or a salad totally fat-free and you absorb far less of their vitamin A and K. Vitamin C and the B group dissolve in water and don't need fat. Source: Colorado State University Extension, 'Fat-soluble vitamins A, D, E and K (9.315).'",
-    "topic": "fats-what-they-do-and-the-seed-oil-debate"
-  },
-  {
-    "tier": 2,
-    "question": "Your body is a champion fat-maker. Give it plenty of carbs and protein, and it can build almost every fat you need on its own. But there are two special fats your body cannot make — you have to eat them in your food. Nutritionists call these two the essential fatty acids, and each one is the parent of a whole family of fats named for the position of a chemical bond inside the molecule. Which two families are they?",
+    "question": "Suppose you ate plenty of carbohydrate and protein but no fat: your body could build nearly every fat it needs from scratch, all but two, which must come from food. Each of these essential fatty acids heads a whole family of fats, named for where a chemical bond sits in the molecule. Which two families?",
     "answer": "the omega-3 and omega-6 families",
     "choices": [
       "the omega-3 and omega-6 families",
@@ -9140,7 +8958,7 @@
   },
   {
     "tier": 2,
-    "question": "Set a stick of butter, a spoonful of coconut oil, and a chunk of beef tallow out on the kitchen counter. Leave them at ordinary room temperature — no heat, no fridge — and all three sit firm and solid. Cooks and food scientists group fats that stay solid like this under one family name, because their molecules pack together tightly. Which family is it?",
+    "question": "A stick of butter, a spoonful of coconut oil and a chunk of beef tallow sit side by side on a kitchen counter, all three firm and solid at ordinary room temperature. Food scientists group fats like these under one family name, because their molecules pack together tightly. Which family is it?",
     "answer": "saturated",
     "choices": [
       "saturated",
@@ -9153,7 +8971,7 @@
   },
   {
     "tier": 3,
-    "question": "Pour olive oil onto a spoon at room temperature and it flows in a smooth, glossy stream. But leave the bottle in the fridge overnight and the same oil turns cloudy and half-solid, thick like slush. That 'liquid when warm, thickens when cold' behavior is the fingerprint of one particular family of fats, named for the number of bendable chemical bonds inside their molecules. Which family?",
+    "question": "Olive oil pours from the bottle onto a spoon in a smooth, glossy stream at room temperature. Left in the fridge overnight, the same oil turns cloudy and half-solid, thick like slush. That behavior is the fingerprint of one family of fats, named for how many bendable chemical bonds sit inside their molecules. Which family?",
     "answer": "monounsaturated",
     "choices": [
       "monounsaturated",
@@ -9166,7 +8984,7 @@
   },
   {
     "tier": 3,
-    "question": "Consider a stubborn fat family: the omega-3 oil in fish and the omega-6 oil in corn both belong to it, and even chilled inside the refrigerator these oils refuse to firm up, staying pourable and liquid despite the cold. Name that particular fat family.",
+    "question": "A cook takes a bottle of fish oil and a bottle of corn oil from the refrigerator, and both still pour freely despite the cold. Fish oil carries omega-3 fats and corn oil omega-6, yet both belong to one stubborn family of fats. Which family is it?",
     "answer": "polyunsaturated",
     "choices": [
       "polyunsaturated",
@@ -9179,7 +8997,7 @@
   },
   {
     "tier": 4,
-    "question": "A veteran Italian chef keeps two olive oils on his bench. The cheap, refined one is nearly flavorless — filtered, purified, and stable up to a high smoke point — so that's what he fries in. The other is a peppery, green, expensive extra-virgin bottle, and he only ever pours it raw over a finished plate: a bowl of pasta, a slice of tomato, a piece of grilled fish. He never once puts it into a hot pan. Why won't he fry with the extra-virgin oil?",
+    "question": "A veteran Italian chef keeps two olive oils on his bench. He fries in the cheap, refined one, nearly flavorless and stable up to a high smoke point, and pours the peppery green extra-virgin bottle only raw, over a finished plate of pasta or grilled fish, never into a hot pan. Why won't he fry with the extra-virgin oil?",
     "answer": "the very compounds that give it flavor scorch at a low temperature",
     "choices": [
       "the very compounds that give it flavor scorch at a low temperature",
@@ -9192,7 +9010,7 @@
   },
   {
     "tier": 4,
-    "question": "Nutrition researchers observe that the modern Western diet has gradually drifted to eating roughly fifteen times more omega-6 fat than omega-3 fat, when people long ago ate them closer to one-to-one. Their careful advice for rebalancing is not to fear fat itself, but to eat more of what?",
+    "question": "Researchers find that people in the modern West eat roughly fifteen times more omega-6 fat than omega-3, though they propose that people long ago ate the two in about equal measure. Their advice for rebalancing is not to fear fat itself, but to eat more of one food. Which food is it?",
     "answer": "oily fish like salmon",
     "choices": [
       "oily fish like salmon",
@@ -9201,19 +9019,6 @@
       "whole grains like oats"
     ],
     "context": "Omega-6 and omega-3 compete in the body, so the lopsided modern ratio — roughly 15:1 to 17:1, versus a proposed ancestral 1:1 — matters, not just the total amount of fat. The fix nutritionists point to is more oily fish (salmon, sardines, mackerel) to bring omega-3 back up, NOT going fat-phobic; just 2-3 servings a week clears the recommended 250-500 mg/day of EPA+DHA. Source: Simopoulos 2002, 'The importance of the ratio of omega-6/omega-3 essential fatty acids' (pubmed.ncbi.nlm.nih.gov/12442909); Healthline, '12 omega-3-rich foods.'",
-    "topic": "fats-what-they-do-and-the-seed-oil-debate"
-  },
-  {
-    "tier": 4,
-    "question": "In September 1955, President Dwight Eisenhower suffered a serious heart attack while vacationing in Colorado. The whole country worried about its leader. His personal physician, Dr. Paul Dudley White, decided the public deserved a straight explanation of what causes heart disease. What Dr. White did next shaped how Americans ate for decades. What did he do?",
-    "answer": "went on live TV and urged the nation to cut back on saturated fat",
-    "choices": [
-      "went on live TV and urged the nation to cut back on saturated fat",
-      "went on live TV and urged the nation to cut back on table salt",
-      "went on live TV and urged the nation to cut back on white sugar",
-      "went on live TV and urged the nation to cut back on strong coffee"
-    ],
-    "context": "Eisenhower's own physician publicly urged Americans to cut saturated fat and cholesterol on live TV — riding researcher Ancel Keys' 1950s diet-heart hypothesis and his Seven Countries Study, which blamed saturated fat for heart disease. That launched the decades-long low-fat era (and, critics argue, the sugar-heavy diet that filled the gap). Source: Wikipedia, 'Ancel Keys'; BCMJ, 'Ancel Keys and the lipid hypothesis.'",
     "topic": "fats-what-they-do-and-the-seed-oil-debate"
   },
   {
@@ -9231,7 +9036,7 @@
   },
   {
     "tier": 5,
-    "question": "Online you'll hear 'seed oils are toxic!' shouted down by 'seed oils are perfectly safe!' — but nutrition scientists say BOTH slogans miss the real disagreement. Some human trials found that swapping butter for these oils cut heart disease; other trials found no benefit at all. Stripped of the shouting, the honest fight is NOT about whether fat is bad. It's really about what?",
+    "question": "'Seed oils are toxic,' one online slogan shouts, and 'seed oils are perfectly safe,' answers another, yet nutrition scientists say both miss the real disagreement. Some trials found that swapping butter for these oils cut heart disease, while others found no benefit at all. Stripped of the shouting, they say, the honest fight is not about whether fat is bad. What is it really about?",
     "answer": "the processing and the repeated heating, not fat itself",
     "choices": [
       "the processing and the repeated heating, not fat itself",
@@ -9244,7 +9049,7 @@
   },
   {
     "tier": 1,
-    "question": "In Brazil, families gather on Saturdays around a big black pot bubbling low on the stove. The stew inside — Brazil's national dish, called feijoada — has been simmering slowly for hours, filling the whole house with a rich, smoky smell. Which two ingredients form the flavorful heart of feijoada?",
+    "question": "A Brazilian family gathers on a Saturday around a big black pot bubbling low on the stove. Inside, feijoada, Brazil's national dish, has been simmering for hours and fills the house with a rich, smoky smell. Which two ingredients form its heart?",
     "answer": "Black beans and pork",
     "choices": [
       "Black beans and pork",
@@ -9270,7 +9075,7 @@
   },
   {
     "tier": 3,
-    "question": "One romantic tale says enslaved Africans invented feijoada from the pork scraps their masters threw out. Historians reject it: cuts like pig's feet and ears were prized food in Europe, never garbage. The stew clearly comes from an older European bean-and-pork dish. From which country's northern kitchens?",
+    "question": "Carlos Augusto Ditadi, a Brazilian historian, calls it modern folklore that enslaved Africans invented feijoada from the pork scraps their masters threw away. Cuts like pig's feet and ears were prized food in Europe, never garbage, and the stew comes from an older European bean-and-pork dish. From which country's northern kitchens?",
     "answer": "Portugal",
     "choices": [
       "Portugal",
@@ -9283,7 +9088,7 @@
   },
   {
     "tier": 4,
-    "question": "Brazil's feijoada, France's cassoulet, and Spain's fabada look like three separate national dishes. But food historians call them one family: beans slow-cooked with cured pork, carried across the Old World. Whose old meat-and-bean stews are the shared ancestor?",
+    "question": "Three pots simmer in three countries: feijoada in Brazil, cassoulet in France and fabada in Spain, each holding beans slow-cooked with salted, smoked pork. Food historians count all three as one family. Whose old meat-and-bean stews are the shared ancestor?",
     "answer": "The Romans",
     "choices": [
       "The Romans",
@@ -9296,7 +9101,7 @@
   },
   {
     "tier": 4,
-    "question": "Feijoada looks purely Brazilian, but its ingredients crossed oceans to meet on the plate. The black beans are a New World crop, native to the Americas — yet the pig was a total newcomer, unknown in the Americas until European ships carried the first ones over. Which voyage brought pigs to the New World?",
+    "question": "Feijoada's ingredients crossed oceans to meet in the pot. Its black beans are a New World crop, but its pork was a newcomer, since pigs were unknown in the Americas until European ships carried the first ones over. Which voyage brought them?",
     "answer": "Columbus's second voyage, 1493",
     "choices": [
       "Columbus's second voyage, 1493",
@@ -9308,21 +9113,8 @@
     "topic": "feijoada-brazils-black-bean-and-pork-stew-and-its-origin-myt"
   },
   {
-    "tier": 5,
-    "question": "The toasted farofa sprinkled over feijoada is made from cassava, a starchy South American root — but you can't just dig it up and eat it. Bitter cassava must be grated, soaked, and dried first, because raw it releases a fast-acting poison the moment its cells are crushed. Which poison?",
-    "answer": "Cyanide",
-    "choices": [
-      "Cyanide",
-      "Arsenic",
-      "Strychnine",
-      "Ricin"
-    ],
-    "context": "Bitter cassava contains linamarin, a cyanogenic compound; when the root is grated or crushed, the enzyme linamarase breaks it down and releases hydrogen cyanide. Grating, soaking, fermenting, and drying the root can strip away up to 99% of the cyanide, which is why cassava must be processed before it is safe to eat — and why properly made farofa is harmless. Sources: FAO 't0207e' (fao.org); SciELO, 'Linamarin: the toxic compound of cassava.'",
-    "topic": "feijoada-brazils-black-bean-and-pork-stew-and-its-origin-myt"
-  },
-  {
     "tier": 1,
-    "question": "Sauerkraut is a traditional German pickle. To make a crock of it, a cook packs the crock full of one plain vegetable and one simple pantry ingredient, presses down on the lid, and lets it sit in a cool cellar for weeks. When the crock is opened, out comes a sharp, tangy, sour pile that will pucker your mouth — and it will keep all winter long. What did the cook pack into that crock?",
+    "question": "A cook making sauerkraut, the traditional German pickle, packs a crock with one plain vegetable and one simple pantry ingredient, then leaves it in a cool cellar for weeks. Out comes a sharp, tangy, sour pile that keeps all winter. What went into the crock?",
     "answer": "Shredded cabbage and salt",
     "choices": [
       "Shredded cabbage and salt",
@@ -9334,47 +9126,8 @@
     "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
-    "tier": 2,
-    "question": "Fresh milk sours in your fridge within days. If a farmer has more milk than his family can drink, though, he can turn the extra into cheese and it will last for months instead. Not all cheeses keep the same length of time — some go bad in a week, while others get better and better for a year or more. Which kind of cheese keeps the very longest before it spoils?",
-    "answer": "The hard ones, like cheddar and parmesan",
-    "choices": [
-      "The hard ones, like cheddar and parmesan",
-      "The soft ones, like brie and camembert",
-      "The fresh ones, like mozzarella and ricotta",
-      "The blue ones, like stilton and gorgonzola"
-    ],
-    "context": "Cheese is preserved milk — milk concentrated and salted so it keeps. Fresh milk sours within days, but turned into cheese it lasts for months, and the hardest cheeses like cheddar and parmesan keep the longest. Source: en.wikipedia.org/wiki/Cheese",
-    "topic": "fermentation-rot-you-can-eat-on-purpose"
-  },
-  {
-    "tier": 3,
-    "question": "Here's the strange part of making sauerkraut: you never buy a packet of culture or add any bacteria at all. You just pack plain shredded cabbage in salt, seal it, and wait — yet the souring begins on its own. Where do the good sour-making bacteria come from?",
-    "answer": "They already live on the raw cabbage leaves",
-    "choices": [
-      "They already live on the raw cabbage leaves",
-      "They drift down from the cellar's air",
-      "They grow out of the salt that was added",
-      "They rise on their own from the cabbage juice"
-    ],
-    "context": "The lactic-acid bacteria that sour cabbage live naturally on the raw leaves. The salt and the airless brine simply let the right, salt-tolerant ones take over while the spoilage microbes are held back — you don't add the culture, you select it. Source: UF/IFAS 'Fermented Foods: Sauerkraut.'",
-    "topic": "fermentation-rot-you-can-eat-on-purpose"
-  },
-  {
-    "tier": 3,
-    "question": "To make a wheel of cheese, a cheesemaker warms a big vat of fresh milk and adds a special ingredient called rennet, which makes the milk clump into soft white curds. It takes about ten pounds of that fresh milk to end up with a single pound of finished cheese — a huge shrink. Nine pounds of the starting milk have to go somewhere. Where did that other roughly nine pounds actually go?",
-    "answer": "It was drained off as watery whey",
-    "choices": [
-      "It was drained off as watery whey",
-      "It cooked off as steam over the fire",
-      "It stayed behind as the cheese's fat",
-      "It was eaten up by the bacteria"
-    ],
-    "context": "Cheese is concentrated milk. Curdling separates the solids from the watery whey; draining that whey away removes most of the milk's water, leaving a compact food that survives — which is exactly why it takes roughly ten pounds of milk to make one pound of cheese. Source: thekitchn.com; FoodHero dairy infographic.",
-    "topic": "fermentation-rot-you-can-eat-on-purpose"
-  },
-  {
     "tier": 4,
-    "question": "Kimchi is Korea's famous fermented cabbage, produced in enormous batches every autumn to last through the entire winter, but this was long before anyone had refrigerators. How did traditional Korean families keep a whole winter's worth of kimchi cold and slowly fermenting for many months?",
+    "question": "Korean families gathered every autumn for gimjang, the great communal effort of making a whole winter's worth of kimchi in one go, long before anyone owned a refrigerator. How did they keep all that kimchi cool and slowly fermenting for months?",
     "answer": "They sealed the pots and buried them in the ground",
     "choices": [
       "They sealed the pots and buried them in the ground",
@@ -9386,34 +9139,8 @@
     "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
-    "tier": 4,
-    "question": "Kimchi generally looks fiery, spicy and red today. But chili peppers originally came from the Americas and only reached Korea after Portuguese traders brought them east around 1600, so red-pepper kimchi is only about 400 years old. What did kimchi look like for most of its much longer history?",
-    "answer": "A pale, plainly salted white cabbage",
-    "choices": [
-      "A pale, plainly salted white cabbage",
-      "A bright cabbage dyed yellow with turmeric",
-      "A dark cabbage stained with soy sauce",
-      "A green cabbage tossed with fresh herbs"
-    ],
-    "context": "The first Korean mention of chili is in a 1614 encyclopedia (Jibong yuseol), and red-pepper kimchi only became widespread in the 1800s. The earliest kimchi records don't mention chili — or even garlic — so the 'traditional' red kimchi everyone pictures is a fairly recent, post-Columbian version. Source: en.wikipedia.org/wiki/Kimchi.",
-    "topic": "fermentation-rot-you-can-eat-on-purpose"
-  },
-  {
-    "tier": 4,
-    "question": "Ancient Romans splashed a pungent, salty sauce called garum over almost everything they ate and shipped it in sealed jars to every corner of the empire. To make garum, they packed something in salt and let it break down for weeks. What did the Romans ferment into garum?",
-    "answer": "Small fish and their guts",
-    "choices": [
-      "Small fish and their guts",
-      "Crushed grapes and their skins",
-      "Ripe olives and green herbs",
-      "Cracked wheat and barley"
-    ],
-    "context": "Garum was fermented fish sauce — small fish and fish innards left to break down in salt, then strained and bottled. Prized for its deep savory (umami) punch, it was the ancestor of today's Asian fish sauces and survives in Italy as colatura di alici. Source: en.wikipedia.org/wiki/Garum.",
-    "topic": "fermentation-rot-you-can-eat-on-purpose"
-  },
-  {
     "tier": 5,
-    "question": "In ancient Rome, garum was a salty fish sauce made by fermenting the guts and small bones of fish in the sun for weeks. Roman cooks splashed it on nearly every dish, much the way we use soy sauce today. The very finest grade — made from mackerel guts near Cartagena on the Spanish coast — was sealed into clay jars and shipped across the whole empire under a luxury brand name. For just a couple of gallons of that top-grade garum, roughly what might a wealthy Roman have paid?",
+    "question": "Garum, a salty sauce of fermented fish, went onto nearly every dish in a Roman kitchen. The very finest grade was sealed into clay jars and shipped across the whole empire under a luxury brand name. Roughly what might a wealthy Roman have paid for just a couple of gallons of it?",
     "answer": "About a legionary's whole year of pay",
     "choices": [
       "About a legionary's whole year of pay",
@@ -9426,7 +9153,7 @@
   },
   {
     "tier": 5,
-    "question": "Long before anyone knew that living microbes existed, people watched a vat of crushed grapes or shredded cabbage go to work all by itself for days, with no hand touching it — a vat behaving, unnervingly, as though something inside it were alive. The Romans named the process for what the sight reminded them of, and the word 'fermentation' still carries that Latin verb. What does the verb mean?",
+    "question": "A Roman winemaker watched a vat of crushed grapes go to work all by itself for days, no hand touching it, as though something inside were alive, long before anyone knew microbes existed. The Romans named the process for what the sight reminded them of, and the word 'fermentation' still carries their Latin verb. What does that verb mean?",
     "answer": "To boil",
     "choices": [
       "To boil",
@@ -9439,7 +9166,7 @@
   },
   {
     "tier": 2,
-    "question": "In the late 1990s at his Spanish restaurant elBulli, the chef Ferran Adria set down in front of a diner what looked exactly like a shiny green olive resting in a spoonful of oil. The diner picked it up on the spoon expecting a familiar snack. But the instant the 'olive' touched the tongue and the mouth closed on it, the little sphere did something no real olive could do. What happened?",
+    "question": "Ferran Adrià set down before a diner at elBulli what looked exactly like a shiny green olive resting in a spoonful of oil. The diner lifted it expecting a familiar snack, but the moment the 'olive' touched the tongue and the mouth closed on it, it did something no real olive could. What happened?",
     "answer": "Its thin skin burst, flooding the tongue with olive juice.",
     "choices": [
       "Its thin skin burst, flooding the tongue with olive juice.",
@@ -9452,7 +9179,7 @@
   },
   {
     "tier": 2,
-    "question": "One of Ferran Adria's earliest inventions at elBulli, his famous Spanish restaurant, arrived as a spoonful of tiny, glistening orange beads that looked exactly like the fish eggs called caviar. The first diner scooped up a bite expecting a briny, salty ocean flavor. Instead the beads gave a total surprise. What did they actually taste of?",
+    "question": "A diner at elBulli in 2003 scooped up a spoonful of tiny, glistening orange beads, Ferran Adrià's first spherified dish, which looked exactly like fish eggs. Expecting the briny, salty taste of caviar, the diner bit down and got a total surprise. What did the beads taste of?",
     "answer": "sweet ripe melon",
     "choices": [
       "sweet ripe melon",
@@ -9460,12 +9187,12 @@
       "bitter dark chocolate",
       "sharp fresh lemon"
     ],
-    "context": "This was 'melon caviar' (2003), Ferran Adria's first spherified dish -- beads of sweet melon juice made to look exactly like fish caviar. Spherification turns a plain liquid into a soft little sphere with a skin that holds until it pops in your mouth. Source: theworlds50best.com '12 iconic dishes of elBulli'.",
+    "context": "This was 'melon caviar' (2003), Ferran Adria's first spherified dish at elBulli on Spain's Catalan coast: dozens of tiny orange beads of sweet cantaloupe-melon juice made to look exactly like fish caviar. Spherification turns a plain liquid into a soft little sphere with a skin that holds until it pops in your mouth; Adria didn't invent it, he made it world-famous. Source: theworlds50best.com '12 iconic dishes of elBulli'; molecularrecipes.com el-bulli-spherification-history.",
     "topic": "ferran-adria-reinvents-the-dish"
   },
   {
     "tier": 3,
-    "question": "Ferran Adria was famous for more than his bursting spheres. He also served the foam: he took the pure flavor of a single food and whipped it into a weightless, airy cloud. One of his strangest came as a small glass holding nothing but a trembling cloud -- no solid food in it at all. When a diner tasted it, one clear flavor filled the mouth. What was it?",
+    "question": "A small glass arrived at an elBulli table holding nothing but a trembling cloud, with no solid food in it at all. It was one of Ferran Adrià's foams: he took the pure flavor of a single food and whipped it into a weightless, airy cloud. What flavor filled the diner's mouth?",
     "answer": "smoke",
     "choices": [
       "smoke",
@@ -9478,7 +9205,7 @@
   },
   {
     "tier": 4,
-    "question": "Ferran Adria's boldest idea was deconstruction: take a dish everyone knows, keep its exact flavors, but rebuild its texture so you only recognize it once you taste it. His famous take on the Spanish potato-and-egg omelette came as three warm layers in a tall glass - onion, then liquid egg, then potato foam on top - eaten with a spoon. Adria said serving it that way did something special. What did he claim happened?",
+    "question": "Suppose you order the Spanish potato omelette at elBulli: it arrives as three warm layers in a tall glass, onion, then liquid egg, then potato foam, to be eaten with a spoon. Ferran Adrià kept every flavor of the familiar dish and rebuilt only its form, an idea known as deconstruction. What did he say happens to the omelette?",
     "answer": "The omelette finishes being made in your mouth.",
     "choices": [
       "The omelette finishes being made in your mouth.",
@@ -9491,7 +9218,7 @@
   },
   {
     "tier": 5,
-    "question": "Ferran Adria's elBulli was no ordinary restaurant -- a single dinner could run past 40 tiny courses, served one small bite at a time for hours on end. Odder still, elBulli opened to diners for only about half of each year, its dining room sitting dark the rest of the time. What were Adria and his team doing during those long closed months?",
+    "question": "A single dinner at elBulli could run past 40 tiny courses, served one small bite at a time for hours on end. Yet Ferran Adrià opened the restaurant to diners for only about half of each year, leaving the dining room dark the rest of the time. What were he and his team doing in those closed months?",
     "answer": "Experimenting on brand-new dishes in a workshop in Barcelona.",
     "choices": [
       "Experimenting on brand-new dishes in a workshop in Barcelona.",
@@ -9504,7 +9231,7 @@
   },
   {
     "tier": 5,
-    "question": "Ferran Adria did something in 2011 that stunned the food world. At the very peak of its fame -- elBulli was rated the world's best restaurant and turned away over two million booking requests a year -- he shut its doors for good. He wasn't quitting cooking, and it hadn't failed. He closed the world's most sought-after restaurant to turn it into something else entirely. What?",
+    "question": "At the very peak of elBulli's fame in 2011, with around two million booking requests a year chasing its roughly 8,000 seats a season, Ferran Adrià shut its doors for good. He was not quitting cooking, and the restaurant had not failed. What did he turn it into?",
     "answer": "a food-research laboratory",
     "choices": [
       "a food-research laboratory",
@@ -9517,7 +9244,7 @@
   },
   {
     "tier": 1,
-    "question": "Beans, oats, and the crunchy skins of apples are packed with fiber — the tough, stringy part of a plant that gives leaves and stems their structure. Unlike the sugar and protein in the very same foods, which your gut breaks down and pulls into your blood, fiber does something unusual as it travels through you. What actually happens to it?",
+    "question": "Beans, oats and an apple with its crunchy skin sit on a lunch tray, all packed with fiber, the tough, stringy part of a plant. Suppose you eat them: your gut pulls their sugar and protein into your blood, but the fiber does something different. What happens to it?",
     "answer": "It passes through you largely undigested.",
     "choices": [
       "It passes through you largely undigested.",
@@ -9530,7 +9257,7 @@
   },
   {
     "tier": 2,
-    "question": "A bowl of oatmeal at breakfast keeps you feeling full until lunch, while a bowl of sugary cereal leaves you hungry again by mid-morning — even for the same calories. The secret is a special kind of fiber inside oats called soluble fiber. Down in your stomach, what exactly does soluble fiber do that keeps hunger away for so many hours?",
+    "question": "Suppose you swap a bowl of sugary cereal for oatmeal at breakfast: instead of going hungry by mid-morning, you stay full until lunch, even for the same calories. The secret is the soluble fiber in the oats. What does it do down in your stomach?",
     "answer": "It swells into a thick gel that slows your stomach from emptying.",
     "choices": [
       "It swells into a thick gel that slows your stomach from emptying.",
@@ -9543,7 +9270,7 @@
   },
   {
     "tier": 2,
-    "question": "There are two kinds of fiber in your food. Wheat bran and the gritty skins of whole grains carry the kind called insoluble fiber — the word 'insoluble' means it soaks up water like a sponge but never actually dissolves. Rather than being broken down for fuel, this fiber travels almost all the way through your gut unchanged. As it moves along, what is its main job in your body?",
+    "question": "A spoonful of wheat bran soaks up water like a sponge without ever dissolving: it is insoluble fiber, the kind carried in the gritty skins of whole grains. Rather than being broken down for fuel, it travels almost all the way through the gut unchanged. What is its main job on the way?",
     "answer": "It adds bulk that keeps everything moving along.",
     "choices": [
       "It adds bulk that keeps everything moving along.",
@@ -9556,7 +9283,7 @@
   },
   {
     "tier": 2,
-    "question": "When a mill grinds a grain into flour, the thin papery jacket around each kernel gets sifted off — that outer coat is called bran. Gram for gram, one grain's bran is the fiber king of the whole pantry: nearly 80% pure fiber, more than any bean or leafy green. Which grain's bran wins the crown?",
+    "question": "A mill grinding grain into flour sifts off the thin, papery jacket around each kernel, its bran. Gram for gram, one grain's bran is the fiber king of the whole pantry, nearly 80 percent fiber and ahead of any bean or leafy green. Which grain's bran wins the crown?",
     "answer": "Corn bran",
     "choices": [
       "Corn bran",
@@ -9569,20 +9296,7 @@
   },
   {
     "tier": 3,
-    "question": "Doctors who care for people with diabetes tell them to reach for oatmeal or beans instead of white bread, even though all three foods are packed with carbohydrates. The trick is that oats and beans are also loaded with fiber, and that fiber changes what happens when your body digests the carbs inside them. What does the fiber do to those carbs?",
-    "answer": "It slows how fast the carbs turn to sugar in your blood.",
-    "choices": [
-      "It slows how fast the carbs turn to sugar in your blood.",
-      "It cancels the carbs so they add no sugar at all.",
-      "It rushes the carbs through before they're absorbed.",
-      "It converts the carbs into protein for your muscles."
-    ],
-    "context": "Soluble fiber raises a meal's viscosity, which reduces the rate of gastric emptying and the absorption rate of glucose from the small intestine — so a fiber-rich meal gives a gentler, slower blood-sugar rise. Sources: Wikipedia, 'Dietary fiber'; StatPearls (NCBI NBK559033).",
-    "topic": "fiber-the-food-you-cant-digest"
-  },
-  {
-    "tier": 3,
-    "question": "You chew a bowl of oatmeal or bite into an apple and swallow the fiber inside. But your body doesn't make the enzymes to break fiber apart, so it slides all the way down your gut still whole and lands in the large intestine untouched. Even so, it isn't wasted there — something is waiting to feast on it. What actually feeds on the fiber you eat?",
+    "question": "Suppose you could follow the fiber from a bowl of oatmeal all the way down: your body makes no enzymes to break it apart, so it reaches your large intestine still whole. It is not wasted there, because something is waiting to feast on it. What feeds on the fiber you eat?",
     "answer": "Your gut bacteria",
     "choices": [
       "Your gut bacteria",
@@ -9595,7 +9309,7 @@
   },
   {
     "tier": 4,
-    "question": "Some kinds of fiber pass right through your small intestine untouched, because human enzymes cannot break them down. When that fiber arrives farther along in the colon, though, the trillions of bacteria living there ferment it, and in return they pump out a special short-chain fat as their waste. Astonishingly, that bacteria-made fuel becomes the main energy source for one particular part of your own body. Which part?",
+    "question": "Trillions of bacteria live in the colon, fermenting the fiber that human enzymes cannot break down and pumping out a short-chain fat as their waste. Suppose you eat a bowl of beans: which part of your body then runs mainly on that fuel?",
     "answer": "The cells lining your colon wall",
     "choices": [
       "The cells lining your colon wall",
@@ -9608,7 +9322,7 @@
   },
   {
     "tier": 4,
-    "question": "A firm, green banana is packed with 'resistant starch' — a starch that slips past your digestion and feeds your gut bacteria like fiber does. But let that banana ripen soft and sweet, or bake it into bread, and that gut-feeding starch changes. What does it turn into?",
+    "question": "A firm, green banana sits on the counter, packed with resistant starch, a starch that slips past digestion and feeds gut bacteria the way fiber does. Suppose you let it ripen soft and sweet, or bake it into bread: that gut-feeding starch changes. What does it turn into?",
     "answer": "Ordinary starch your body digests into sugar.",
     "choices": [
       "Ordinary starch your body digests into sugar.",
@@ -9621,7 +9335,7 @@
   },
   {
     "tier": 5,
-    "question": "Eating oatmeal every morning genuinely lowers the cholesterol in your blood, and the reason is sneaky. The oats' soluble fiber grabs onto bile acids — the digestive juice your liver builds out of cholesterol — and drags them out of your body in your stool. Why does losing those bile acids pull your blood cholesterol down?",
+    "question": "Suppose you start every morning with a bowl of oatmeal: it genuinely lowers the cholesterol in your blood, by a sneaky route. The oats' soluble fiber grabs bile acids, the digestive juice your liver builds out of cholesterol, and drags them out of your body. Why does losing those bile acids pull your blood cholesterol down?",
     "answer": "Your liver pulls cholesterol from your blood to make replacement bile.",
     "choices": [
       "Your liver pulls cholesterol from your blood to make replacement bile.",
@@ -9634,7 +9348,7 @@
   },
   {
     "tier": 5,
-    "question": "Bake a potato and eat it piping hot, and your body digests its starch into sugar. Take an identical potato, and after one extra step its starch turns into a form your enzymes can't break down — so it feeds your gut bacteria instead. What was that one extra step?",
+    "question": "Two potatoes come out of the same oven. One is eaten piping hot, and the body digests its starch into sugar; after one extra step, the other's starch turns into a form human enzymes cannot break down, so it feeds gut bacteria instead. What was that extra step?",
     "answer": "Letting it cool in the fridge",
     "choices": [
       "Letting it cool in the fridge",
@@ -9647,7 +9361,7 @@
   },
   {
     "tier": 1,
-    "question": "At an English chip shop, the cook takes a slab of raw white fish, dips it into a thick coating of flour-and-water batter, and lowers it into a deep fryer full of bubbling oil. Within minutes the outside turns into a crunchy golden jacket, while the fish sealed inside comes out moist and flaky. The hot oil never actually touches the fish itself. So what is really cooking the meat inside that jacket?",
+    "question": "At an English chip shop, a cook dips raw white fish in batter and lowers it into hot oil. Minutes later the outside is a crunchy golden jacket, while the fish inside comes out moist and flaky, barely touched by the oil. What cooked the fish inside?",
     "answer": "Steam from its own trapped moisture",
     "choices": [
       "Steam from its own trapped moisture",
@@ -9660,7 +9374,7 @@
   },
   {
     "tier": 2,
-    "question": "Fish and chips feels British to the bone, but the battered-and-fried-fish half of it isn't a native English idea. Sephardic Jewish immigrants from Spain and Portugal brought it over, frying white fish in a crisp coating so it could be eaten cold the next day. Why did they want fish that still tasted good cold?",
+    "question": "Sephardic Jewish immigrants from Spain and Portugal brought battered fried fish to England, cooking white fish in a crisp coating so it could be eaten cold the next day. Fish and chips feels British to the bone, but this half of it began with them. Why did they want fish that still tasted good cold?",
     "answer": "So they could eat it on the Sabbath, when cooking is forbidden",
     "choices": [
       "So they could eat it on the Sabbath, when cooking is forbidden",
@@ -9686,7 +9400,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1490s, Jewish families were expelled from Spain and Portugal, and many of these Sephardic Jews settled in England. They brought a Friday-night tradition with them: cold flour-coated fried fish. Back in Iberia they had fried nearly everything in one everyday fat — far more often than butter or lard or beef drippings. Which fat was their go-to?",
+    "question": "Spain and Portugal expelled their Jewish families in the 1490s, and many of these Sephardic Jews settled in England with a Friday tradition of fried fish. Back home they had fried nearly everything in one everyday fat, far more often than in butter, lard or beef drippings. Which fat was it?",
     "answer": "Olive oil",
     "choices": [
       "Olive oil",
@@ -9699,7 +9413,7 @@
   },
   {
     "tier": 4,
-    "question": "Fried fish had long been a treat for the well-off, but in 1800s Britain it turned cheap enough to feed whole factory neighbourhoods, and fish and chips was born. Two new things suddenly made fish cheap and plentiful in the cities: one was the railway, racing the catch inland. What was the OTHER?",
+    "question": "Fried fish, long a treat for the well-off, turned cheap enough in 1800s Britain to feed whole factory neighbourhoods, and fish and chips was born. Two new things made fish cheap and plentiful in the cities, and one was the railway, racing each haul inland. What was the other?",
     "answer": "Steam-powered trawlers",
     "choices": [
       "Steam-powered trawlers",
@@ -9712,7 +9426,7 @@
   },
   {
     "tier": 5,
-    "question": "In World War II, Britain rationed nearly everything at the table - meat, butter, sugar, eggs - and each family got only a fixed weekly share. Fish and chips mattered so much to the nation's morale, though, that the government made a special decision about it when rationing came in. What did wartime rationing do with fish and chips?",
+    "question": "A British family in the Second World War got only a fixed weekly share of meat, butter, sugar and eggs, as rationing reached nearly everything on the table. Fish and chips mattered so much to the nation's morale that the government made a special decision about it. What did rationing do with fish and chips?",
     "answer": "It was never put on the ration books at all",
     "choices": [
       "It was never put on the ration books at all",
@@ -9738,7 +9452,7 @@
   },
   {
     "tier": 2,
-    "question": "For thousands of years — from Roman garum to Southeast Asian nam pla — cooks have made pungent fish sauce by packing wooden barrels tight with tiny whole fish, bones and all, layering on salt, and letting the mash ferment for months. The little silvery fish crammed into those barrels are almost always one particular kind — small, oily, and salted down whole. Which fish is it?",
+    "question": "A fish-sauce maker in Southeast Asia packs a wooden barrel tight with tiny whole fish, bones and all, layers on coarse salt and leaves the mash to ferment for months. The little silvery fish crammed into the barrel are almost always one kind, small and oily. Which fish is it?",
     "answer": "anchovies",
     "choices": [
       "anchovies",
@@ -9751,7 +9465,7 @@
   },
   {
     "tier": 3,
-    "question": "Fish sauce, the salty brown liquid used all across Southeast Asia — called nam pla in Thailand and nuoc mam in Vietnam — is made from nothing but small anchovy-like fish and a lot of salt. No broth, no spices, no cooking. Yet over many months packed in wooden barrels, those fish slowly dissolve into a rich, savory brown liquid all on their own. What actually breaks the fish down?",
+    "question": "Wooden barrels packed with nothing but small fish and a lot of salt sit for many months in Southeast Asia, with no broth, no spices and no cooking. Slowly, all on their own, the fish dissolve into a rich, savory brown liquid. What actually breaks them down?",
     "answer": "the fish's own enzymes",
     "choices": [
       "the fish's own enzymes",
@@ -9764,7 +9478,7 @@
   },
   {
     "tier": 4,
-    "question": "Straight from the bottle, fish sauce smells so sharp and pungent it can make you wrinkle your nose. Yet cooks across Southeast Asia stir it by the spoonful into simmering curries and stir-fries. What happens to that shocking smell once it cooks into the dish?",
+    "question": "A cook uncaps a bottle of fish sauce, and the smell is sharp enough to wrinkle her nose. She stirs it by the spoonful into a simmering curry all the same, as cooks do across Southeast Asia. What happens to that shocking smell once it cooks into the dish?",
     "answer": "It mellows into a round, savory depth.",
     "choices": [
       "It mellows into a round, savory depth.",
@@ -9773,32 +9487,6 @@
       "It fades away, adding nothing at all."
     ],
     "context": "Fish sauce smells shockingly pungent straight from the bottle, but cooked into a dish it turns to gentle, round savoriness — a few drops add a depth plain salt never could, without tasting 'fishy' at all. Source: en.wikipedia.org/wiki/Fish_sauce",
-    "topic": "fish-sauce-the-fermented-bottle-that-makes-food-taste-comple"
-  },
-  {
-    "tier": 4,
-    "question": "Fish sauce isn't just an Asian thing. In 1837, two chemists in Worcester, England — John Wheeley Lea and William Perrins — invented a tangy brown sauce that today gets shaken onto steaks, splashed into Bloody Marys, and drizzled over Caesar salads. Its deep, savory kick comes from fermented anchovies hidden right in the recipe. Which everyday bottle is this?",
-    "answer": "Worcestershire sauce",
-    "choices": [
-      "Worcestershire sauce",
-      "barbecue sauce",
-      "soy sauce",
-      "teriyaki sauce"
-    ],
-    "context": "Fermented-fish sauces never vanished from the West. Worcestershire sauce gets its savory punch from fermented anchovies, and Italy still makes colatura di alici, an anchovy sauce with deep roots in antiquity — fish sauce hiding on tables all over the world. Source: en.wikipedia.org/wiki/Garum",
-    "topic": "fish-sauce-the-fermented-bottle-that-makes-food-taste-comple"
-  },
-  {
-    "tier": 5,
-    "question": "Fish sauce feels totally Southeast Asian. Yet on the far side of the old world, another great civilization was crazy about a nearly identical sauce made from small fish fermented in salt and sun until they turned into a savory liquid. Which people invented their own fish sauce on their own?",
-    "answer": "the Romans",
-    "choices": [
-      "the Romans",
-      "the Egyptians",
-      "the Aztecs",
-      "the Vikings"
-    ],
-    "context": "The Romans called their version garum — salted fish fermented in the sun. Two cultures on opposite sides of the world, with no known contact, both discovered fermenting salted fish as the shortcut to deep savory taste: a striking parallel, not a proven hand-me-down. Romans prized garum, yet it reeked so badly while fermenting that the factories were pushed to the edges of town. Source: en.wikipedia.org/wiki/Garum",
     "topic": "fish-sauce-the-fermented-bottle-that-makes-food-taste-comple"
   },
   {
@@ -9894,7 +9582,7 @@
   },
   {
     "tier": 1,
-    "question": "A high-end restaurant chef mixes fruit juice with a seaweed extract called sodium alginate and drops the mixture into a calcium bath. In the calcium, the juice sets into tiny 'caviar' spheres that burst on your tongue. The exact same technique is sold cheap at the mall's bubble-tea counter as one popular tea topping. Which topping is it?",
+    "question": "A fine-dining chef stirs a seaweed extract into fruit juice and lets it fall drop by drop into a calcium bath, where it sets into tiny 'caviar' spheres that burst in the mouth. A mall bubble-tea counter sells the same trick cheap as a topping. Which one?",
     "answer": "Popping boba",
     "choices": [
       "Popping boba",
@@ -9920,7 +9608,7 @@
   },
   {
     "tier": 3,
-    "question": "Diners assume the bursting-sphere 'caviar' trick was dreamed up by genius chefs. Really, it was patented as a food-FACTORY process back in the 1940s. One of its very first industrial jobs was squirting a soft filling into a familiar grocery-store food. Which one?",
+    "question": "William Peschardt, an inventor working for the food company Unilever, patented the bursting-sphere trick in the 1940s, so that factories could wrap a liquid in a thin skin. One of its first industrial jobs was a soft filling tucked into a familiar grocery-store food. Which one?",
     "answer": "The red pimento inside a green olive",
     "choices": [
       "The red pimento inside a green olive",
@@ -9932,21 +9620,8 @@
     "topic": "foams-and-spherification-edible-illusions-of-modernist-cuisi"
   },
   {
-    "tier": 3,
-    "question": "In 2003, at his famous Spanish restaurant elBulli, the chef Ferran Adria reinvented an old chemistry trick as high art — dropping fruit juice into a calcium bath so it forms into burst-in-your-mouth spheres. He called this technique spherification. His very first spherification dish looked exactly like a spoonful of shiny orange fish caviar. But each little sphere burst with the juice of what fruit?",
-    "answer": "Cantaloupe",
-    "choices": [
-      "Cantaloupe",
-      "Persimmon",
-      "Nectarine",
-      "Apricot"
-    ],
-    "context": "At Ferran Adria's restaurant elBulli on Spain's Catalan coast, spherification was reborn as haute cuisine around 2003. Its very first hit was cantaloupe-melon 'caviar' — dozens of tiny orange spheres of melon juice that looked exactly like fish roe but burst with sweet melon. Adria didn't invent spherification; he made it world-famous. elBulli closed in 2011 so he could run a creativity lab instead. Sources: molecularrecipes.com el-bulli-spherification-history; philipball.blogspot.com the-science-of-artificial-olives",
-    "topic": "foams-and-spherification-edible-illusions-of-modernist-cuisi"
-  },
-  {
     "tier": 4,
-    "question": "A modernist chef can serve the flavor of a whole broth as a weightless foam you scoop with a spoon — intense taste, almost no substance. To force air into the liquid, Ferran Adria skipped fancy lab gear and reached for an ordinary kitchen gadget most cooks already own. Which one?",
+    "question": "A modernist kitchen sends out the flavor of a whole broth as a weightless foam, scooped up with a spoon, all intense taste and almost no substance. To force air into the liquid, Ferran Adrià skipped fancy lab gear and reached for an ordinary kitchen gadget most cooks already own. Which one?",
     "answer": "A whipped-cream siphon",
     "choices": [
       "A whipped-cream siphon",
@@ -9959,7 +9634,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin B9 hides a clue right inside its everyday nickname: folate. The scientists who first isolated the vitamin in the 1940s reached for a single Latin word — folium — and built the vitamin's whole name straight on top of it. They chose that word because that particular plant part is where the vitamin is packed most densely. Which plant part does the Latin word folium name?",
+    "question": "Scientists who first isolated vitamin B9 in the 1940s named it folate after the Latin word folium, which names one part of a plant. Which part?",
     "answer": "The leaf",
     "choices": [
       "The leaf",
@@ -9972,7 +9647,7 @@
   },
   {
     "tier": 2,
-    "question": "Nutritionists love telling kids to eat dark-green vegetables like spinach and kale, because those leaves are packed with folate — vitamin B9, essential for building new cells. But one everyday organ meat, if you cook it right, packs several times more folate than a whole giant plate of those greens does. Which folate champion beats the vegetables?",
+    "question": "A nutritionist tells a boy to eat his spinach and kale, dark-green leaves packed with folate, the B vitamin the body needs to build new cells. Yet gram for gram one everyday meat carries roughly four times the folate of spinach. Which meat beats the greens?",
     "answer": "Liver",
     "choices": [
       "Liver",
@@ -9985,7 +9660,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1931, Dr. Lucy Wills was baffled by a deadly anemia striking poor pregnant textile-mill workers in Bombay, India. On a hunch she fed them a cheap grocery spread — and it worked, years before anyone knew the real cure was folate. Which everyday spread saved them?",
+    "question": "Lucy Wills, a doctor in Bombay in 1931, was baffled by a deadly anemia striking poor pregnant women in the city's textile mills. On a hunch she fed them a cheap grocery spread, and it cured them, years before anyone knew the missing nutrient was folate. Which spread was it?",
     "answer": "Marmite",
     "choices": [
       "Marmite",
@@ -9998,7 +9673,7 @@
   },
   {
     "tier": 3,
-    "question": "A baby's spine forms in the first few weeks of pregnancy, often before the mother even knows, so starting folate later can be too late. To protect every future baby, many countries added folic acid to one common staple by law. Which food gets the boost?",
+    "question": "A mother is often a few weeks pregnant before she even knows it, and by then her baby's spine is already forming, so folate started later can come too late. To protect every future baby, many countries add folic acid to one common staple by law. Which staple gets the boost?",
     "answer": "Bread and flour",
     "choices": [
       "Bread and flour",
@@ -10011,7 +9686,7 @@
   },
   {
     "tier": 4,
-    "question": "Boil a pot of spinach for twenty minutes and up to nine-tenths of its folate leaches out into the water, which then gets tipped down the sink. Cooks who want to keep the vitamin skip the boiling pot entirely. Which cooking method keeps nearly all the folate locked in the leaves?",
+    "question": "A cook boils a pot of spinach for twenty minutes and tips the water down the sink, and with it goes up to nine-tenths of the leaves' folate. Cooks who want to keep the vitamin skip the boiling pot entirely. Which method keeps nearly all the folate in the leaves?",
     "answer": "Steaming",
     "choices": [
       "Steaming",
@@ -20645,7 +20320,7 @@
   },
   {
     "tier": 1,
-    "question": "Sauerkraut is a traditional German dish of shredded cabbage that turns fiercely sour on its own — no vinegar or lemon juice is ever added. The sourness develops as the cabbage sits in a jar and ferments for weeks. Besides the shredded cabbage, a real jar of sauerkraut needs just one other thing. What is it?",
+    "question": "In a German kitchen, shredded cabbage sits in a jar for weeks and turns fiercely sour on its own, though no vinegar or lemon juice ever goes in. Besides the shredded cabbage, a real jar of sauerkraut needs just one other thing. What is it?",
     "answer": "salt",
     "choices": [
       "salt",
@@ -20658,7 +20333,7 @@
   },
   {
     "tier": 2,
-    "question": "Sauerkraut is a German dish of shredded cabbage packed into a jar, where over weeks it turns fiercely sour on its own. To start a batch, you might expect to buy a special starter culture of bacteria to kick off the souring. But no bacteria is ever added to the jar. So where do the microbes that ferment the cabbage actually come from?",
+    "question": "A crock of shredded cabbage turns fiercely sour within weeks, though nobody ever buys a starter culture or adds a single bacterium. The souring starts all on its own. Where do the microbes that ferment the cabbage come from?",
     "answer": "they already live on the raw cabbage leaves",
     "choices": [
       "they already live on the raw cabbage leaves",
@@ -20666,12 +20341,12 @@
       "they drift in from the surrounding air",
       "they multiply out of the salty brine"
     ],
-    "context": "No starter culture is needed; the fermentation is spontaneous, because the lactic-acid bacteria are already present on the raw cabbage leaves. Source: Wikipedia, 'Kimchi'.",
+    "context": "No starter culture is needed; the fermentation is spontaneous, because the lactic-acid bacteria are already present on the raw cabbage leaves. The salt and the airless brine simply let the right, salt-tolerant ones take over while the spoilage microbes are held back, so the cook does not add the culture but selects it. Source: Wikipedia, 'Kimchi'; UF/IFAS 'Fermented Foods: Sauerkraut.'",
     "topic": "salt-and-sour-cabbage-into-sauerkraut-and-kimchi"
   },
   {
     "tier": 2,
-    "question": "You rub two big spoonfuls of salt through shredded cabbage and press it down to ferment in a warm jar. Fermenting raw vegetables like that sounds like a perfect recipe for rot — so why doesn't the cabbage just turn to slime? The salt is the reason. What does it do among the microbes?",
+    "question": "A cook rubs two big spoonfuls of salt through shredded cabbage and presses it into a warm jar to ferment. Raw vegetables left to ferment sound like a perfect recipe for rot, yet the cabbage never turns to slime, and the salt is the reason. What does the salt do among the microbes?",
     "answer": "it stops the rot-microbes but spares the sour-making ones",
     "choices": [
       "it stops the rot-microbes but spares the sour-making ones",
@@ -20684,7 +20359,7 @@
   },
   {
     "tier": 3,
-    "question": "Experienced kraut-makers weight the cabbage down so every shred stays under the brine. Leave a bit poking up above the surface and it grows fuzzy mold; keep it all submerged and it sours cleanly for months. Why does staying under the brine keep the mold away?",
+    "question": "A kraut-maker weights the cabbage down so that every shred stays under the brine. A bit left poking above the surface grows fuzzy mold, while everything kept below sours cleanly for months. Why does staying under the brine keep the mold away?",
     "answer": "under the brine there's no air, and mold can't grow without it",
     "choices": [
       "under the brine there's no air, and mold can't grow without it",
@@ -20697,7 +20372,7 @@
   },
   {
     "tier": 3,
-    "question": "Kimchi is Korea's beloved national dish — a spicy, fermented pile of pickled vegetables that Koreans eat with almost every meal. When you picture kimchi today, you probably picture napa cabbage, that big crinkly Chinese cabbage. But napa only reached Korea in the late 1800s. For most of Korea's long history, kimchi was built around a different, humbler vegetable. Which one?",
+    "question": "A Korean family eats kimchi at nearly every meal, and these days it is usually made from big, crinkly napa cabbage. Napa reached Korea only in the late 1800s, though. For most of Korea's long history, kimchi was built around a different, humbler vegetable. Which one?",
     "answer": "the radish",
     "choices": [
       "the radish",
@@ -20710,20 +20385,7 @@
   },
   {
     "tier": 4,
-    "question": "Kimchi's fiery red color and heat come from chili pepper, and the dish feels ancient and Korean. Yet the chili is a latecomer that seafaring traders brought to Korea only about four centuries ago. A 1614 Korean encyclopedia even called the strange new pepper foreign and possibly poisonous. Where did the chili plant first come from?",
-    "answer": "the Americas",
-    "choices": [
-      "the Americas",
-      "the East Indies",
-      "China",
-      "Persia"
-    ],
-    "context": "Chili is an American plant, carried to East Asia by Portuguese traders; its first Korean mention is the 1614 encyclopedia 'Jibong yuseol', which eyed it as a foreign, possibly poisonous pepper. Older Korean kimchi had no chili at all — the spice only became widespread there in the 1800s. Sources: Wikipedia, 'Kimchi' and 'Korean chili pepper'.",
-    "topic": "salt-and-sour-cabbage-into-sauerkraut-and-kimchi"
-  },
-  {
-    "tier": 4,
-    "question": "Captain James Cook needed his sailors eating sauerkraut to stay healthy on a voyage that would last years, but the crew turned up their noses at the sour cabbage and refused to touch it. Rather than order or flog them into it, Cook pulled a clever trick — and within a week the men were demanding their ration. What did he do?",
+    "question": "James Cook needed his sailors eating sauerkraut to stay healthy on a voyage that would last years, but the crew turned up their noses at the sour cabbage and refused to touch it. Rather than order or flog them into it, Cook tried a clever trick, and the men were soon demanding their ration. What did he do?",
     "answer": "served it only at the officers' private table",
     "choices": [
       "served it only at the officers' private table",
@@ -20736,7 +20398,7 @@
   },
   {
     "tier": 5,
-    "question": "Across three years at sea, Captain James Cook lost not a single crewman to scurvy — the disease that killed sailors by the thousands — and his secret was barrels of sauerkraut. Here's the strange part: in Cook's day nobody knew vitamins even existed. We now know fermenting cabbage preserves, and can even raise, the very nutrient whose lack causes scurvy. Which nutrient is it?",
+    "question": "Barrels of sauerkraut went to sea with James Cook, who across three years lost not a single crewman to scurvy, a disease that killed sailors by the thousands. Nobody in his day knew that vitamins existed, yet fermenting cabbage preserves, and can even raise, the very nutrient whose lack causes scurvy. Which nutrient is it?",
     "answer": "vitamin C",
     "choices": [
       "vitamin C",
@@ -34061,20 +33723,7 @@
   },
   {
     "tier": 2,
-    "question": "Slice open a fresh carrot, split a baked sweet potato, and cut a wedge from a ripe orange cantaloupe. The same vivid orange color looks back at you from all three foods. Nutritionists explain that a single plant pigment is doing the work — one your body can split apart to manufacture the vitamin A that keeps your eyes sharp in dim light. Name that orange pigment.",
-    "answer": "beta-carotene",
-    "choices": [
-      "beta-carotene",
-      "lycopene",
-      "lutein",
-      "anthocyanin"
-    ],
-    "context": "Beta-carotene is the red-orange pigment behind carrots, sweet potatoes, and cantaloupe. An enzyme in your body cleaves one beta-carotene molecule into two molecules of vitamin A — which is why it is nicknamed 'provitamin A.' Source: Cleveland Clinic (health.clevelandclinic.org/beta-carotene); Wikipedia, beta-Carotene.",
-    "topic": "whole-food-vs-the-pill"
-  },
-  {
-    "tier": 2,
-    "question": "You can eat carrots and sweet potatoes every day for years and never suffer vitamin A poisoning — the vitamin builds up in your liver, but food alone never pushes it too high. Yet that same vitamin A, swallowed as a megadose pill from a supplement bottle, actually can poison you. Nutritionists say a clever built-in switch keeps carrots safe. What is it?",
+    "question": "Suppose you eat carrots and sweet potatoes every day for years: you will never be poisoned by vitamin A, yet a megadose vitamin A pill from a supplement bottle can poison you. Nutritionists say a clever built-in switch keeps the carrots safe. What is that switch?",
     "answer": "Your body slows its conversion of beta-carotene once vitamin A stores are full.",
     "choices": [
       "Your body slows its conversion of beta-carotene once vitamin A stores are full.",
@@ -34087,7 +33736,7 @@
   },
   {
     "tier": 3,
-    "question": "For decades, doctors were sure the orange plant nutrient beta-carotene — the substance that gives carrots and sweet potatoes their color — would protect people against cancer. In the 1990s an American study called CARET (the Beta-Carotene and Retinol Efficacy Trial) signed up tens of thousands of smokers and had them take a daily high-dose beta-carotene pill for years. The results turned out so alarming that the researchers had to stop the trial early and pull the pills. What had the pills done to the smokers?",
+    "question": "Researchers running a big American trial in the 1990s gave tens of thousands of smokers a daily high-dose pill of beta-carotene, the orange pigment of carrots and sweet potatoes, hoping it would guard them against cancer. The results grew so alarming that the trial was stopped early. What had the pills done to the smokers?",
     "answer": "Given them more lung cancer, not less.",
     "choices": [
       "Given them more lung cancer, not less.",
@@ -34100,7 +33749,7 @@
   },
   {
     "tier": 3,
-    "question": "Scurvy — rotting gums, old wounds splitting open, sailors dying by the thousands — once killed more of Britain's seamen than enemy cannon fire ever did. In 1747, naval surgeon James Lind ran one of history's first controlled experiments and found the cure sitting in the ship's own stores. What brought the dying men back?",
+    "question": "James Lind, a naval surgeon, ran one of history's first controlled experiments in 1747 on sailors dying of scurvy, the disease of rotting gums and old wounds splitting open. Scurvy once killed more of Britain's seamen than enemy cannon fire ever did, and Lind found the cure sitting in the ship's own stores. What brought the dying men back?",
     "answer": "A ration of fresh lemons.",
     "choices": [
       "A ration of fresh lemons.",
@@ -34113,7 +33762,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1990s, doctors ran a famous trial: they gave heavy smokers beta-carotene pills, expecting the orange pigment from carrots to protect their lungs. Instead, the pill group ended up with MORE lung cancer, not less. Whole carrots had never caused that harm. Press beta-carotene extracted from a carrot into a pill and it behaves very differently from the same nutrient eaten inside the food. What is the leading reason?",
+    "question": "A carrot and a pill of the beta-carotene pulled from it read the same on a label, yet they behave very differently in the body. Smokers given beta-carotene pills at high doses every day in trials of the 1990s were harmed, though eating carrots had never shown such harm. What do scientists see as the leading reason?",
     "answer": "In the whole carrot it arrives bundled with fiber and hundreds of interacting compounds.",
     "choices": [
       "In the whole carrot it arrives bundled with fiber and hundreds of interacting compounds.",
@@ -34126,7 +33775,7 @@
   },
   {
     "tier": 5,
-    "question": "The 'eat the food, not the pill' rule has honest exceptions — supplements that plainly work because they fill a genuine gap. The clearest: taken by women around the time they conceive, one ordinary vitamin cuts the risk of neural-tube birth defects like spina bifida by up to 70 percent. Which vitamin?",
+    "question": "A woman who takes one ordinary vitamin around the time she conceives cuts her baby's risk of neural-tube birth defects like spina bifida by up to 70 percent. It is the clearest case of a supplement that fills a genuine gap, an honest exception to eating the food rather than the pill. Which vitamin is it?",
     "answer": "folic acid",
     "choices": [
       "folic acid",
