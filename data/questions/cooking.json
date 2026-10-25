@@ -20086,7 +20086,7 @@
   },
   {
     "tier": 1,
-    "question": "On the kitchen counter, a stick of butter sits firm and cool. It holds its shape as a solid brick, and you can slice it clean with a knife. Right beside it, a bottle of cooking oil pours out into a pan like water. Both butter and oil are pure fats, and both sit in the same warm room. Yet one is a solid block and the other is a runny liquid. What makes the butter solid while the oil stays liquid?",
+    "question": "A stick of butter sits firm on a warm kitchen counter, firm enough to slice clean, while the cooking oil beside it pours into a pan like water. Both are fats, and both sit in the same room. What keeps the butter solid?",
     "answer": "The butter's fat molecules are straight, so they stack together tightly.",
     "choices": [
       "The butter's fat molecules are straight, so they stack together tightly.",
@@ -20099,7 +20099,7 @@
   },
   {
     "tier": 1,
-    "question": "Most cooking oils you keep in the pantry — olive, canola, vegetable, peanut — pour out of the bottle as pale liquids at room temperature. But roughly 90% of the fat in one popular cooking oil is saturated fat, far more than butter or lard, so in a cool kitchen the whole jar sits on the shelf as a solid white block. Which oil is it?",
+    "question": "A cook in a chilly kitchen finds every bottle of oil on her shelf pouring freely except one, whose jar holds a solid white block. About 90 percent of that oil's fat is saturated, more than butter or lard carry. Which oil is it?",
     "answer": "Coconut oil",
     "choices": [
       "Coconut oil",
@@ -20112,7 +20112,7 @@
   },
   {
     "tier": 2,
-    "question": "Before vegetable oil bottles took over American kitchens in the twentieth century, cooks deep-fried their chicken, doughnuts, and french fries in rendered lard from pigs or beef tallow from cattle. Those solid animal fats gave a screaming-hot fryer one big advantage that delicate liquid oils like corn or soybean oil simply couldn't match. What was that advantage?",
+    "question": "Chicken, doughnuts and french fries bubbled in lard rendered from pigs or tallow from cattle in American kitchens until bottled vegetable oil took over in the twentieth century. Those solid animal fats gave a blazing-hot fryer one advantage that corn or soybean oil could not match. What was it?",
     "answer": "They stay stable under high heat instead of breaking down.",
     "choices": [
       "They stay stable under high heat instead of breaking down.",
@@ -20125,7 +20125,7 @@
   },
   {
     "tier": 3,
-    "question": "A chef sears steak in butter or tallow but keeps the unrefined sunflower and flaxseed oils only for cold salad dressings. Heat those fragile seed oils hard and their molecules fall apart — going rancid and throwing off harsh, unpleasant flavors. What about a seed oil's chains makes them break down so easily under heat?",
+    "question": "A chef sears steak in butter or tallow but keeps unrefined sunflower and flaxseed oils for cold salad dressings only. Heated hard, those fragile seed oils fall apart, going rancid and throwing off harsh, unpleasant flavors. What about a seed oil's chains makes them break down so easily under heat?",
     "answer": "Its chains have many double-bond kinks — each kink a weak spot oxygen attacks.",
     "choices": [
       "Its chains have many double-bond kinks — each kink a weak spot oxygen attacks.",
@@ -20138,7 +20138,7 @@
   },
   {
     "tier": 3,
-    "question": "Cooks reach for butter or tallow to sear hot, and keep their most delicate pourable oils for cold dressings only. But one everyday liquid oil is sturdy enough to also handle a medium-hot pan — the tough middle ground between a solid searing fat and a fragile finishing oil. Which oil is that heat-tolerant all-rounder?",
+    "question": "In a busy kitchen, butter and tallow go into the pan for a hot sear while the most delicate pouring oils wait for cold dressings. One everyday liquid oil sits in the middle, still pourable but sturdy enough to handle a medium-hot pan. Which oil is that all-rounder?",
     "answer": "Olive oil",
     "choices": [
       "Olive oil",
@@ -20150,21 +20150,8 @@
     "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
   },
   {
-    "tier": 4,
-    "question": "In the early 1900s, food companies had a problem: cheap liquid vegetable oil went rancid fast, while solid fats like lard kept for months. So they invented a way to force liquid oil's kinked chains straight, hardening it into a cheap, shelf-stable solid. What is this fat-hardening process called?",
-    "answer": "Hydrogenation",
-    "choices": [
-      "Hydrogenation",
-      "Fermentation",
-      "Pasteurization",
-      "Emulsification"
-    ],
-    "context": "Forcing hydrogen gas into liquid oil saturates its double bonds, straightening the kinks so the fat packs solid and resists spoiling; German chemist Wilhelm Normann patented the process in 1901. It gave us shortening — Crisco launched in 1911 as the first shortening made entirely of hydrogenated vegetable oil (cottonseed), its name squeezed from 'CRYStallized Cottonseed Oil.' Sources: PMC8452362, 'The Demise of Artificial Trans Fat'; Wikipedia 'Crisco'.",
-    "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
-  },
-  {
     "tier": 5,
-    "question": "To keep margarine soft and spreadable instead of rock-hard, factories only partially hydrogenated the oil — and a side reaction flipped many of its chains into a new 'trans' shape. Strangely, that trans shape made the fat pack tight and turn solid and shelf-stable, exactly the result they wanted. What does flipping a chain into the 'trans' shape do to its kink?",
+    "question": "Margarine makers hardened their oil only partway, to keep the spread soft instead of rock-hard, and a side reaction flipped many of its chains into a new 'trans' shape. That shape made the fat pack tight and stay solid on the shelf, just what the makers wanted. What does the trans flip do to a chain's kink?",
     "answer": "It straightens the kink back out, so the chains stack like a solid fat.",
     "choices": [
       "It straightens the kink back out, so the chains stack like a solid fat.",
@@ -20176,21 +20163,8 @@
     "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
   },
   {
-    "tier": 5,
-    "question": "Butter's saturated fat raises low-density lipoprotein (LDL) — the 'bad' cholesterol — which is why its health effects are argued about. But trans fat, the man-made solid built to replace butter, is the one fat nutrition scientists broadly agree is truly harmful, and the US banned it from food in the 2010s. Beyond raising LDL just like butter does, what second harm to your heart does trans fat cause that saturated fat does not?",
-    "answer": "It also lowers HDL — the body's 'good' cholesterol.",
-    "choices": [
-      "It also lowers HDL — the body's 'good' cholesterol.",
-      "It also spikes triglycerides — another heart-risk fat.",
-      "It also inflames artery walls — a step toward clogging.",
-      "It also drives up blood pressure — straining the heart."
-    ],
-    "context": "Mayo Clinic calls trans fat 'double trouble': it raises LDL like saturated fat AND lowers protective HDL (which saturated fat does not), roughly doubling the harm to the LDL/HDL ratio. Harvard's Nurses' Health Study reported in 1993 that women eating the most trans fat had a 35% higher risk of coronary heart disease. The FDA revoked partially hydrogenated oils' 'Generally Recognized As Safe' status in June 2015 (no new use after 18 June 2018); the FDA/CDC estimated removal would prevent about 7,000 deaths and up to 20,000 heart attacks a year, and the WHO has pushed to eliminate industrial trans fat worldwide. The fat engineered to replace 'unhealthy' butter turned out worse than what it replaced. Sources: Mayo Clinic; NEJM 1990; FDA 'Trans Fat'; PMC8452362; Wikipedia 'Trans fat'.",
-    "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
-  },
-  {
     "tier": 1,
-    "question": "On the plantation, enslavers kept the hams and roasts from every hog. They gave the cooks the parts they threw out — the feet, the ears, and the intestines. The cooks scrubbed those intestines clean and slow-cooked them for hours into a dish that grew famous. What is it called?",
+    "question": "On the plantation, enslavers kept the hams and roasts of every hog and gave the cooks the parts they threw out: the feet, the ears and the intestines. The cooks scrubbed the intestines clean and slow-cooked them for hours into a dish that grew famous. What is it called?",
     "answer": "Chitterlings",
     "choices": [
       "Chitterlings",
@@ -20203,7 +20177,7 @@
   },
   {
     "tier": 2,
-    "question": "Watermelon covers picnic tables all across the American South — it feels as homegrown as the Fourth of July. It isn't. People first tamed the watermelon more than 4,000 years ago, on the far side of the world, and its closest wild relative — a hard, bitter melon — still grows in that homeland's deserts today. Which country is it?",
+    "question": "Slices of watermelon crowd a picnic table in the American South, a fruit that feels as homegrown as the Fourth of July. People first tamed it more than 4,000 years ago, though, on the far side of the world, and its closest wild relative, a hard, bitter melon, still grows in that homeland's deserts. Which country is it?",
     "answer": "Sudan",
     "choices": [
       "Sudan",
@@ -20216,7 +20190,7 @@
   },
   {
     "tier": 3,
-    "question": "Across the Lowcountry, families ring in every New Year with a pot of black-eyed peas cooked together with rice — a dish for luck and money in the year ahead. The Gullah people of the coast created it, and it likely grew from the rice-and-bean meals that kept enslaved West Africans alive on the ocean voyage. What is this good-luck dish called?",
+    "question": "Along the Lowcountry coast, families ring in every New Year with a pot of black-eyed peas cooked together with rice, a dish for luck and money in the year ahead. The Gullah people created it, and it likely grew from the rice-and-bean meals that kept enslaved West Africans alive on the ocean voyage. What is this good-luck dish called?",
     "answer": "Hoppin' John",
     "choices": [
       "Hoppin' John",
@@ -20229,7 +20203,7 @@
   },
   {
     "tier": 3,
-    "question": "Southern Black cooks would simmer tough collard greens together with a smoked ham hock for hours, and when the greens were finally done, they refused to pour out the dark liquid left in the pot. They called that leftover broth 'pot liquor' and sopped it up with cornbread. Why was that dark liquid worth saving?",
+    "question": "In a Southern Black kitchen, collard greens simmered for hours with a smoked ham hock, and when they were done the cook never poured away the dark broth left in the pot. Cooks called it pot liquor and sopped it up with cornbread. Why was that broth worth saving?",
     "answer": "The greens' vitamins had leached into it",
     "choices": [
       "The greens' vitamins had leached into it",
@@ -20242,7 +20216,7 @@
   },
   {
     "tier": 3,
-    "question": "On a Southern soul-food table, a golden cornbread sits crumbling in a black cast-iron skillet, right beside the collard greens and the smoky ham hocks. Cornbread is one of the oldest American foods, and every crumb of it starts with kernels of corn. Corn didn't grow itself into a farm crop — one ancient people, thousands of years ago, tamed the tough wild grass it came from and bred it into the sweet, plump ears we eat today. Which people first farmed corn?",
+    "question": "A golden cornbread crumbles in a black cast-iron skillet on a soul-food table, beside the collard greens and the smoky ham hocks. Every crumb starts with corn, and one ancient people, thousands of years ago, tamed the tough wild grass it came from into a farm crop. Which people first farmed corn?",
     "answer": "Native Americans",
     "choices": [
       "Native Americans",
@@ -20255,7 +20229,7 @@
   },
   {
     "tier": 2,
-    "question": "When the Gold Rush drew fortune-hunters to San Francisco in 1849, a French baker named Isidore Boudin opened his little bakery near the city's waterfront. Sourdough bread rises without a single packet of store-bought yeast — the yeast has to come from somewhere else. Boudin's very first 1849 loaves puffed up beautifully, and the sourdough he started that year is still baked in San Francisco today. So where did the yeast that raised those first Boudin loaves come from?",
+    "question": "Isidore Boudin, a French baker, opened a little bakery on San Francisco's waterfront in the Gold Rush of 1849. His sourdough rose without a grain of store-bought yeast, and the starter from that first year still raises bread in the city today. Where did the yeast in those first loaves come from?",
     "answer": "From wild yeast that drifted in on its own",
     "choices": [
       "From wild yeast that drifted in on its own",
@@ -20268,7 +20242,7 @@
   },
   {
     "tier": 2,
-    "question": "A sourdough starter is genuinely alive. It's a jar of gluey batter teeming with wild yeast and friendly bacteria, and a baker uses it instead of packaged yeast to leaven her bread. Bakers even nickname their kept-alive blob the 'mother dough.' Leave one alone on a shelf for a few weeks and it dies. Yet some bakeries pass their starter down for decades — even a century or two. What keeps a starter alive for years?",
+    "question": "A baker keeps a living jar of gluey flour-and-water batter on her counter and raises her bread with it instead of packaged yeast. Bakers call it the mother dough. Left alone on a shelf for a few weeks, it dies, yet some bakeries keep theirs going for decades, even a century or two. What keeps a starter alive for years?",
     "answer": "Regular feedings of fresh flour and water",
     "choices": [
       "Regular feedings of fresh flour and water",
@@ -20281,7 +20255,7 @@
   },
   {
     "tier": 3,
-    "question": "Bread made from a fresh yellow packet of dried yeast rises tall and light — but it always tastes plain, never sour. Sourdough bread rises and also turns pleasantly tangy at the same time. Both breads use yeast to puff them up with gas, so what does the sourdough starter carry inside it that the packet of dried yeast does not?",
+    "question": "A loaf raised with a yellow packet of dried yeast rises tall and light but always tastes plain, never sour. A sourdough loaf rises and also turns pleasantly tangy, though yeast puffs up both. What does the sourdough starter carry that the packet does not?",
     "answer": "A partner colony of bacteria that make acid",
     "choices": [
       "A partner colony of bacteria that make acid",
@@ -20294,7 +20268,7 @@
   },
   {
     "tier": 3,
-    "question": "Two friends split a jar of the exact same sourdough starter and each take half home. A week later they meet up to compare loaves. One friend has baked a mild, gentle bread. The other has pulled out a fiercely mouth-puckering sour loaf — same starter, wildly different flavor. The trick is how each friend kept the starter alive on the counter between bakes. A baker who wants the sourest possible loaf should keep the starter how?",
+    "question": "Two friends split one jar of sourdough starter and each take half home. A week later one bakes a mild, gentle loaf and the other a fiercely sour one, and the only difference is how each kept the starter between bakes. To get the sourest loaf, how should a baker keep the starter?",
     "answer": "Cooler and drier",
     "choices": [
       "Cooler and drier",
@@ -20307,7 +20281,7 @@
   },
   {
     "tier": 4,
-    "question": "The 1906 San Francisco earthquake struck at dawn on April 18, and within hours fires from broken gas lines were sweeping through the city toward Boudin Bakery on Grant Avenue. As the Boudin family tells the story, Louise Boudin grabbed exactly one thing from the bakery and ran out into the street before the whole building burned to the ground. What did she save?",
+    "question": "Fires from broken gas lines swept through San Francisco within hours of the earthquake at dawn on April 18, 1906, racing toward Boudin Bakery on Grant Avenue. As the Boudin family tells the story, Louise Boudin grabbed exactly one thing from the bakery and ran into the street before the building burned to the ground. What did she save?",
     "answer": "The bucket of the bakery's living mother dough",
     "choices": [
       "The bucket of the bakery's living mother dough",
@@ -20320,7 +20294,7 @@
   },
   {
     "tier": 5,
-    "question": "San Francisco's sourdough is so famously tangy that scientists named a bacterium after the city, and locals swore the flavor could only come from the city's own air and water. Researchers later tested 500 starters from four continents. What did they find about where a starter's microbes come from?",
+    "question": "Researchers tested 500 sourdough starters from four continents. In San Francisco, bakers had sworn that their famously tangy loaves could only come from the city's own air and water. What did the researchers find about where a starter's microbes come from?",
     "answer": "The same microbes turn up worldwide — location barely matters",
     "choices": [
       "The same microbes turn up worldwide — location barely matters",
@@ -20450,7 +20424,7 @@
   },
   {
     "tier": 1,
-    "question": "In a Levantine kitchen (Lebanon, Syria, Palestine, and Jordan), a cook reaches for a small jar labelled 'za'atar' and sprinkles it on warm flatbread with olive oil. But 'za'atar' pulls a clever double-duty in Arabic — the single word names two different things at once. Which two?",
+    "question": "A cook in a Levantine kitchen sprinkles za'atar from a small jar over warm flatbread and olive oil. In Arabic, that one word does double duty, naming two different things at once. Which two?",
     "answer": "A wild aromatic herb, and the spice blend built from it",
     "choices": [
       "A wild aromatic herb, and the spice blend built from it",
@@ -20463,7 +20437,7 @@
   },
   {
     "tier": 1,
-    "question": "Walk into a spice shop in a Moroccan souk and you'll see rows of glass jars, each labeled in careful Arabic script. Moroccan cooks reach again and again for one special blend called 'ras el hanout,' spooned into slow-cooked tagines of lamb and heaped over couscous. The Arabic name is a proud boast about the blend itself. Spelled out plainly in English, what does 'ras el hanout' actually mean?",
+    "question": "Glass jars labeled in careful Arabic script line a spice shop in a Moroccan souk. Cooks there reach again and again for one blend, ras el hanout, spooned into lamb tagines and heaped over couscous. Its name is a proud boast. What does it mean?",
     "answer": "Head of the shop",
     "choices": [
       "Head of the shop",
@@ -20476,7 +20450,7 @@
   },
   {
     "tier": 2,
-    "question": "Za'atar is a bright green Middle Eastern spice blend, sprinkled over warm flatbread and drizzled with olive oil across Lebanon, Syria, Palestine, and Jordan. Beyond the dried wild herb and the toasted sesame seeds that form its base, one more ingredient completes classic za'atar — a tangy, dried, ground berry that gives the whole blend its signature rust-red flecks. Which spice is that traditional third element?",
+    "question": "Over a round of warm flatbread drizzled with olive oil, a baker in the Levant scatters za'atar. Beyond the dried herb and the toasted sesame seeds at its base, classic za'atar holds one more ingredient, a dried and ground berry that flecks the blend rust-red. Which spice is it?",
     "answer": "Sumac",
     "choices": [
       "Sumac",
@@ -20489,7 +20463,7 @@
   },
   {
     "tier": 3,
-    "question": "Ask two different Moroccan spice merchants for a scoop of ras el hanout — the great house blend of Moroccan cooking, sold from open barrels in every souk — and you'll come away with two little jars that taste nothing alike. One might smell strongly of rose petals; another might taste peppery and warm with cardamom and dried ginger. Yet both are labeled 'ras el hanout.' Why do no two shops' ras el hanout match?",
+    "question": "Two Moroccan spice merchants each scoop ras el hanout, the great house blend of Moroccan cooking, from open barrels, and their two little jars taste nothing alike. One smells strongly of rose petals; the other is peppery and warm with cardamom and dried ginger. Both carry the same label. Why do no two shops' blends match?",
     "answer": "Each shop guards its own secret mix of a dozen-plus spices",
     "choices": [
       "Each shop guards its own secret mix of a dozen-plus spices",
@@ -20502,7 +20476,7 @@
   },
   {
     "tier": 3,
-    "question": "Sumac, the tart red powder ground from dried berries of the Rhus tree, gave cooks across the Middle East and ancient Rome their sharp, sour edge on grilled meats and salads. For centuries sumac was the region's main souring spice — until a newcomer fruit arrived in their kitchens and gradually took the job away. Which fruit took it?",
+    "question": "Pliny the Elder, the Roman naturalist, noted a tart red powder ground from the dried berries of a shrub, used to sour food and help preserve it. Middle Eastern and Roman cooks relied on it as their main souring spice until a newcomer fruit became common and took over the job. Which fruit was it?",
     "answer": "Lemons",
     "choices": [
       "Lemons",
@@ -20515,7 +20489,7 @@
   },
   {
     "tier": 4,
-    "question": "Ethiopia's berbere is a dry, brick-red powder that home cooks stir into stews. Tunisia's harissa is a wet, pounded paste of roasted peppers and garlic that cooks smear on grilled meat. Different textures, different countries, opposite ends of Africa — yet food writers pair them as the continent's two great blends of fire. Which single ingredient brings the burn to both?",
+    "question": "An Ethiopian cook stirs a dry, brick-red powder called berbere into a pot of stew, while a Tunisian cook smears harissa, a wet paste pounded with garlic, onto grilled meat. Food writers pair the two, from opposite ends of Africa, as the continent's great blends of fire. Which single ingredient brings the burn to both?",
     "answer": "Chili peppers",
     "choices": [
       "Chili peppers",
@@ -20528,7 +20502,7 @@
   },
   {
     "tier": 4,
-    "question": "To impress rich buyers, some old Moroccan spice merchants slipped strange, non-food items into their ras el hanout, including dried rosebuds, grains of paradise, and even a dried, ground beetle that added no flavor at all. That beetle is better known by what name?",
+    "question": "To impress rich buyers, some old Moroccan spice merchants slipped exotic extras into their ras el hanout: dried rosebuds, grains of paradise and even a dried, ground beetle that added no flavor at all. By what name is that beetle better known?",
     "answer": "Spanish fly",
     "choices": [
       "Spanish fly",
@@ -20537,32 +20511,6 @@
       "Dung beetle"
     ],
     "context": "Some old Moroccan ras el hanout blends included wildly exotic add-ins purely to show off — dried rosebuds, grains of paradise, orris root, even cantharides ('Spanish fly' beetles) — though these added nothing to the flavor. Source: Wikipedia, 'Ras el hanout'.",
-    "topic": "spice-blends-the-merchants-secret-mixes"
-  },
-  {
-    "tier": 3,
-    "question": "A spice-blend maker never grinds her cold seeds straight from the sack. First she tips whole cumin seeds and coriander seeds into a dry, hot pan on the stove and shakes them briskly over the flame for about a minute, until she can smell them changing in the air. What does that quick toasting actually do to the seeds that changes their smell so much?",
-    "answer": "Ruptures their cells and releases their aromatic oils",
-    "choices": [
-      "Ruptures their cells and releases their aromatic oils",
-      "Kills the seeds so they can't sprout in storage",
-      "Draws out water so the blend won't clump",
-      "Stains them darker to make the blend look richer"
-    ],
-    "context": "Dry-toasting whole spices before grinding ruptures their cells and releases their essential oils — 'waking up' the flavor, so a toasted blend smells far stronger than one ground from raw spice. Source: thespicehouse.com, 'How to toast and grind spices'.",
-    "topic": "spice-blends-the-merchants-secret-mixes"
-  },
-  {
-    "tier": 5,
-    "question": "Berbere from Ethiopia and harissa from Tunisia taste so deeply traditional that they feel utterly ancient — as if African cooks had always eaten this way. Yet food historians insist that in their modern fiery form, both blends are no more than about four hundred years old. What makes these seemingly 'timeless' African blends surprisingly recent?",
-    "answer": "Their chili peppers came from the Americas, unknown in Africa before Columbus",
-    "choices": [
-      "Their chili peppers came from the Americas, unknown in Africa before Columbus",
-      "Their fenugreek reached the Horn of Africa only with Ottoman traders",
-      "Their cumin and caraway arrived on Portuguese ships out of India",
-      "Their garlic crossed the Sahara only with the Arab caravan trade"
-    ],
-    "context": "Chili peppers are native to the Americas and only reached Africa after Columbus's 1492 voyage, so berbere and harissa in their hot, chili-based form are only a few centuries old — not ancient. Source: thecollector.com, 'History of chili peppers'.",
     "topic": "spice-blends-the-merchants-secret-mixes"
   },
   {
@@ -20606,7 +20554,7 @@
   },
   {
     "tier": 1,
-    "question": "You sit down at a seaside Italian restaurant and order 'calamari.' A basket of golden, crispy fried rings arrives, dusted with salt and lemon. Those rings were sliced crosswise from the tube-shaped body of a specific sea animal. Which one?",
+    "question": "A diner at a seaside Italian restaurant orders calamari, and a basket of golden, crispy fried rings arrives, dusted with salt and lemon. Those rings were sliced crosswise from the tube-shaped body of one sea animal. Which one?",
     "answer": "Squid",
     "choices": [
       "Squid",
@@ -20619,7 +20567,7 @@
   },
   {
     "tier": 2,
-    "question": "Squid and octopus are tender and mild when they're raw, but drop them into a pan and cook them just a minute too long and they turn tough as a pencil eraser — the muscles seize up and go rubbery. Oddly, two very different cooking methods will both leave them tender: one very fast, and one very slow. In between, they're ruined. Which pair actually works?",
+    "question": "A cook slides tender, mild raw octopus into a hot pan, leaves it a minute too long and pulls out meat as tough as a pencil eraser. Octopus stays tender under just two kinds of cooking, one very fast and one very slow, and anything in between ruins it. Which pair works?",
     "answer": "A fast flash in the pan, or a long, slow braise",
     "choices": [
       "A fast flash in the pan, or a long, slow braise",
@@ -20632,7 +20580,7 @@
   },
   {
     "tier": 2,
-    "question": "For centuries, Greek and Italian fishermen have used a hands-on trick to make a freshly caught octopus tender enough to eat. The moment a boat pulls into a stone harbor, the fisherman grabs an octopus by its head and gets to work right there on the rocks of the pier. Tradition says he must do it about forty times, and some fishermen do it a hundred. What does he do to the octopus?",
+    "question": "The moment his boat reaches the harbor, a Greek fisherman grabs a freshly caught octopus by the head and gets to work right there on the pier, an old trick for making the octopus tender enough to eat. Tradition says he must do it about forty times, and some fishermen do it a hundred. What does he do?",
     "answer": "Slam it again and again against the rocks",
     "choices": [
       "Slam it again and again against the rocks",
@@ -20644,34 +20592,8 @@
     "topic": "squid-and-octopus-rubbery-or-tender-never-in-between"
   },
   {
-    "tier": 3,
-    "question": "A cook slices a fresh squid into thin white rings and slides them into a screaming-hot pan slick with oil. The whole trick to a tender squid ring is speed: you yank it off the heat after just a minute or two. Wait even one minute too long and the sweet, soft ring turns into a rubbery little band you can hardly chew. What is happening inside the squid in that extra minute that turns it to rubber?",
-    "answer": "Its muscle fibers clench and wring the water out",
-    "choices": [
-      "Its muscle fibers clench and wring the water out",
-      "Its natural sugars burn and turn bitter and hard",
-      "Its skin toughens into a shell around the soft inside",
-      "Its fat melts away and leaves the meat dry"
-    ],
-    "context": "Cephalopod muscle contracts fast when heated. Sear it quickly and you pull it off before the proteins (actin and myosin) tighten; linger a minute too long and those fibers clamp down and wring out the moisture, leaving it dry and springy-tough. Source: Tasting Table, 'The Chewy Calamari Cooking Tip' (tastingtable.com).",
-    "topic": "squid-and-octopus-rubbery-or-tender-never-in-between"
-  },
-  {
-    "tier": 4,
-    "question": "An hour of low, gentle simmering in a covered pot can turn a rubbery octopus fork-tender. It is the same patient treatment a cook uses to rescue a cheap, chewy cut of beef like a shank or an ox tail — long, slow, and just below a full boil. A quick sear in a screaming-hot pan will never get any of them there; only long, low heat works. What is that long, gentle heat doing inside the octopus?",
-    "answer": "Its stiff connective tissue melts into soft, silky gelatin",
-    "choices": [
-      "Its stiff connective tissue melts into soft, silky gelatin",
-      "Its clenched muscle fibers relax and soak the water back up",
-      "Its salt leaches out and the water it lost rushes back in",
-      "Its outer skin dissolves and frees the tender meat inside"
-    ],
-    "context": "A hardworking cut like beef shank can be up to about 18% collagen — the connective tissue that makes it tough. Only hours of low, moist heat cross the 'collagen window,' dissolving that collagen into soft gelatin that lubricates the meat. Octopus is the seafood version of a braising cut. Source: The Meat Stick, 'The Science of Collagen' (themeatstick.com).",
-    "topic": "squid-and-octopus-rubbery-or-tender-never-in-between"
-  },
-  {
     "tier": 1,
-    "question": "Asparagus spears are young shoots that a gardener snaps off in spring while they are still short, thick, and tender enough to eat. Leave one spear uncut in the bed, though, and over the next few weeks it keeps growing taller and taller and changes completely, until you would never guess it started as an asparagus. Into what?",
+    "question": "A gardener snaps asparagus spears off in spring while they are still short, thick and tender. A spear left uncut in the bed keeps growing taller for weeks and changes completely, until no one would guess it began as asparagus. What does it turn into?",
     "answer": "A tall, feathery fern-like plant",
     "choices": [
       "A tall, feathery fern-like plant",
@@ -20684,7 +20606,7 @@
   },
   {
     "tier": 2,
-    "question": "A stick of celery snaps and crunches so satisfyingly that nearly everyone calls it a stem. But look up the celery plant in a botany book: those long green ribs you eat aren't the plant's stem at all. They're a different part of the plant entirely — the part that reaches up to hold the leaves out into the sunlight. Which plant part is a celery stick really?",
+    "question": "A cook crunches into a stick of celery and, like nearly everyone, calls it a stem. A botanist would say those long green ribs are not the plant's stem at all, but a different part entirely. Which part of the plant is a celery stick?",
     "answer": "A leaf-stalk — the part that holds a leaf up to the sun",
     "choices": [
       "A leaf-stalk — the part that holds a leaf up to the sun",
@@ -20697,7 +20619,7 @@
   },
   {
     "tier": 2,
-    "question": "When you steam a bundle of green asparagus spears for dinner, chefs prize the tight, scaly tip of each spear as its most tender part. The overlapping little scales look a bit like a tiny green pinecone stacked on the end of the stalk. Under those scales, the plant is protecting something — the very part it would unfurl if you left the spear in the ground and let it grow tall into a feathery fern. Botanically, what part of the future plant are those scales?",
+    "question": "A bundle of green asparagus steams on the stove, each spear capped with a tight, scaly tip, the part chefs prize as most tender. The overlapping scales look like a tiny green pinecone, and under them the spear guards the part it would unfurl if it were left to grow. Botanically, what are the scales?",
     "answer": "Its folded, undeveloped leaves",
     "choices": [
       "Its folded, undeveloped leaves",
@@ -20710,7 +20632,7 @@
   },
   {
     "tier": 3,
-    "question": "Rhubarb grows as a clump of thick reddish stalks topped by big flat green leaves, and cooks stew the tart stalks into pies and sauces like a fruit. Yet a careful cook always slices those big leaves off and throws them straight in the bin. Why do the leaves get thrown away?",
+    "question": "A careful cook trims a bunch of rhubarb, keeping the thick, tart reddish stalks to stew with sugar like a fruit for pies and sauces, and slicing every big, flat green leaf off and straight into the bin. Why do the leaves get thrown away?",
     "answer": "The leaves are toxic — they're packed with oxalic acid",
     "choices": [
       "The leaves are toxic — they're packed with oxalic acid",
@@ -20723,7 +20645,7 @@
   },
   {
     "tier": 3,
-    "question": "Walk through a German or French springtime market and you will spot piles of fat ivory-white asparagus spears, sold at double the price of the ordinary green ones. Shoppers snap them up for a special seasonal soup. But the white spears are not a different variety — they come from the very same asparagus plant that gives green spears. So what makes them white?",
+    "question": "Piles of fat, ivory-white asparagus spears fill a German market stall in spring, priced at double the green ones, and shoppers snap them up for a seasonal soup. The white spears are no separate variety: they come from the very same plant that gives green ones. What makes a spear white?",
     "answer": "It's grown buried in soil, where no sunlight reaches it",
     "choices": [
       "It's grown buried in soil, where no sunlight reaches it",
@@ -20735,21 +20657,8 @@
     "topic": "stalks-and-shoots-the-stems-and-leaf-stalks-we-eat"
   },
   {
-    "tier": 4,
-    "question": "Kohlrabi looks like a pale green alien spaceship — a fist-sized knobby bulb sprouting leafy stalks, sold next to the turnips and beets. It's actually a close cousin of cabbage and broccoli. When you slice into that bulb, which part of the plant are you eating?",
-    "answer": "A stem, grown swollen and round",
-    "choices": [
-      "A stem, grown swollen and round",
-      "A root, grown swollen and round",
-      "A flower bud, grown fat and tight",
-      "A leaf ball, grown dense and round"
-    ],
-    "context": "Kohlrabi is a swollen STEM that grows ABOVE the soil — living proof a 'root vegetable' can really be a stem. Its German name means 'cabbage-turnip' (Kohl = cabbage, Rube = turnip), and it tastes like a mild, sweet broccoli stem. Kohlrabi, cabbage, broccoli, cauliflower, kale, and Brussels sprouts are all ONE species — Brassica oleracea, wild cabbage — that humans bred into wildly different shapes; kohlrabi is the one bred for a fat stem. Source: en.wikipedia.org/wiki/Kohlrabi",
-    "topic": "stalks-and-shoots-the-stems-and-leaf-stalks-we-eat"
-  },
-  {
     "tier": 2,
-    "question": "In a Chinese kitchen, a stir-fry cook heats a heavy iron wok until it is smoking hot, adds a splash of oil, and then works fast. Ingredients go into the wok in a careful order so nothing ends up raw and nothing turns to mush. The meat waits, the crunchy vegetables wait, the finishing sauce waits until the very last second. What does the cook typically toss into the hot oil at the very start of a stir-fry?",
+    "question": "In a Chinese kitchen, a cook heats a heavy iron wok until it smokes, adds a splash of oil and works fast. Each ingredient goes in by a strict order, so nothing ends up raw and nothing turns to mush, and the sauce waits until the very end. What does the cook toss into the hot oil first?",
     "answer": "Garlic and ginger",
     "choices": [
       "Garlic and ginger",
@@ -20761,21 +20670,8 @@
     "topic": "stir-fry-logic-and-velveting"
   },
   {
-    "tier": 2,
-    "question": "Watch stir-fry cooks and you'll notice they're obsessive about prep. Before the wok even starts smoking, every vegetable is chopped, the meat is marinating, and little bowls of sauce sit ready at their elbows. Why are they in such a hurry to have it all done in advance?",
-    "answer": "The whole dish cooks in just two or three minutes",
-    "choices": [
-      "The whole dish cooks in just two or three minutes",
-      "The oil needs a good ten minutes to get hot",
-      "A full wok can weigh close to ten pounds",
-      "Chopping beside a roaring flame is dangerous"
-    ],
-    "context": "A stir-fry cooks in only two or three minutes over ferocious heat — there's simply no time to chop or measure once the pan is roaring. Everything is cut, marinated, and lined up within arm's reach before the wok gets hot; start hunting for the sauce mid-cook and the dish falls apart. Source: asianfoodshop.eu, 'Mise en place, Asian style' (corroborated by thewoksoflife.com).",
-    "topic": "stir-fry-logic-and-velveting"
-  },
-  {
     "tier": 3,
-    "question": "The finest stir-fries carry a smoky, charred, savoury aroma that a home stove can barely reproduce — it forms only when food sears against blistering-hot metal. Cantonese cooks prize this quality as the very soul of the dish and call it 'wok hei.' What does that famous name literally mean?",
+    "question": "A Cantonese chef tosses a stir-fry in a wok over a roaring flame, and a smoky, charred, savory aroma rises that a home stove can barely make, since it forms only when food sears on blistering-hot metal. Cantonese cooks prize it as the very soul of the dish and call it wok hei. What does the name mean?",
     "answer": "The breath of the wok",
     "choices": [
       "The breath of the wok",
@@ -20788,7 +20684,7 @@
   },
   {
     "tier": 3,
-    "question": "A Chinese cook heats a heavy black iron wok over a roaring flame until it's smoking hot, then flicks in oil ready for a stir-fry. If she piles too much cold, wet food into the wok all at once — chicken, peppers, onions, mushrooms — the food turns grey and limp instead of searing to a browned, sizzling crisp. She has to cook in small batches. Why does overcrowding the pan ruin a stir-fry like that?",
+    "question": "Too much cold, wet food piled into a smoking-hot wok at once, chicken, peppers, onions and mushrooms, turns grey and limp instead of searing brown, so a Chinese cook works in small batches. Why does overcrowding ruin a stir-fry?",
     "answer": "The crowded food cools the pan, so its heat just boils off water",
     "choices": [
       "The crowded food cools the pan, so its heat just boils off water",
@@ -20801,7 +20697,7 @@
   },
   {
     "tier": 4,
-    "question": "Chinese cooks achieve impossibly silky, tender stir-fry meat with a technique called 'velveting.' The raw slices get a slick, protective shell and are briefly pre-cooked, so the final scorching toss barely has to touch them. What common white pantry powder forms that juice-sealing coat?",
+    "question": "A Chinese restaurant cook coats thin raw slices of meat with a slick, protective shell and pre-cooks them briefly, so the final scorching toss in the wok barely has to touch them. The trick is called velveting, and it leaves the meat silky and tender. What white pantry powder forms that juice-sealing coat?",
     "answer": "Cornstarch",
     "choices": [
       "Cornstarch",
@@ -20814,7 +20710,7 @@
   },
   {
     "tier": 5,
-    "question": "The deepest velveting secret is a tiny pinch of baking soda worked into beef before it cooks — it turns even a two-minute stir-fry meltingly tender. Beef is naturally a little acidic, and baking soda is an alkali that pushes it the other way. At the level of the meat's proteins, why does making beef more alkaline stop it from drying out under fierce heat?",
+    "question": "In a restaurant kitchen, a tiny pinch of baking soda worked into sliced beef before it hits the wok turns even a two-minute stir-fry meltingly tender. Beef is naturally a little acidic, and baking soda, an alkali, pushes it the other way. Why does more alkaline beef stay juicy under fierce heat?",
     "answer": "Its heated proteins can't clench tight and wring out the juice",
     "choices": [
       "Its heated proteins can't clench tight and wring out the juice",
@@ -20905,7 +20801,7 @@
   },
   {
     "tier": 1,
-    "question": "At a great medieval feast in a European lord's stone banquet hall, servants marched a gleaming model of a whole castle through the room between two of the courses. Little towers, tiny battlements, and even miniature soldiers were sculpted in perfect detail. These edible showpieces had a special name — 'subtleties' — meant to amaze the guests. Once the guests had finished marveling at the castle, what were they invited to do with it?",
+    "question": "Between two courses of a great medieval feast, servants marched a model of a whole castle through a lord's stone hall, its little towers, battlements and tiny soldiers sculpted in perfect detail. Such showpieces were called subtleties. Once the guests had finished marveling, what did they do with the castle?",
     "answer": "Eat it, as it was made of food",
     "choices": [
       "Eat it, as it was made of food",
@@ -20918,7 +20814,7 @@
   },
   {
     "tier": 2,
-    "question": "In medieval Europe, kings held great feasts where the final course was not a plate of food at all but a sculpture. Candy makers built miniature edible castles from one favorite paste made of ground almonds and sugar. It was stiff enough to mold like clay and soft enough to shape by hand into little towers, knights, and beasts. Bakers still sell this old modeling candy today. What is it called?",
+    "question": "Candy makers in medieval Europe built miniature castles for kings' feasts out of one favorite paste of ground almonds and sugar, stiff enough to mold like clay and soft enough to shape by hand into towers, knights and beasts. Bakers still sell the old modeling candy today. What is it called?",
     "answer": "marzipan",
     "choices": [
       "marzipan",
@@ -20931,7 +20827,7 @@
   },
   {
     "tier": 2,
-    "question": "Not every feast subtlety was sculpted from sugar — some were pure living spectacle. One startling 'pie,' often said to lie behind the nursery rhyme 'Sing a Song of Sixpence,' held a surprise inside. When a servant cut it open at the table, what burst out?",
+    "question": "Renaissance cooks baked one pie purely as table theater, and tradition ties it to 'Sing a Song of Sixpence,' the old nursery rhyme. When a servant cut the crust open at the feast, what burst out?",
     "answer": "a flock of live blackbirds",
     "choices": [
       "a flock of live blackbirds",
@@ -20944,7 +20840,7 @@
   },
   {
     "tier": 3,
-    "question": "In medieval Europe, sugar was no everyday sweetener you scooped from a jar in the pantry. It arrived in tiny, precious lumps from far-off Arab lands and cost more per ounce than many spices — which is exactly why a marzipan sugar sculpture at a feast could flaunt real wealth. If a shopper in London or Paris wanted even a spoonful of sugar for a medicine or a fancy dish, he had to visit one particular kind of shop. Which one sold it?",
+    "question": "A shopper in medieval London or Paris who wanted even a spoonful of sugar for a fancy dish could not scoop it from a pantry jar. It arrived in tiny, precious lumps from far-off Arab lands and cost more by weight than many spices, which is why a sugar sculpture at a feast flaunted real wealth. Who sold it?",
     "answer": "the apothecary, who dealt in medicines",
     "choices": [
       "the apothecary, who dealt in medicines",
@@ -20957,7 +20853,7 @@
   },
   {
     "tier": 3,
-    "question": "In the great English country houses of the 1500s, wealthy Tudor families never served the final sweet course in the noisy main dining hall. When the meat was cleared, the host would rise and lead only his favored guests to a small, exclusive room built just for sweet plates and spiced wine. Some of these rooms seated only three or four people. In grand Tudor houses, where was this little sweet-room often built?",
+    "question": "Only his favored guests followed a wealthy Tudor host when he rose from the meal in his great English country house of the 1500s, once the meat was cleared, and left the noisy main hall for a small room built just for sweets and spiced wine. Some of these rooms were tiny. Where was such a room often built?",
     "answer": "on the roof of the house",
     "choices": [
       "on the roof of the house",
@@ -20970,7 +20866,7 @@
   },
   {
     "tier": 4,
-    "question": "Today the word 'banquet' means a huge, lavish, sit-down feast with many courses. But in the late 1500s, when Queen Elizabeth I ruled England, the very same word named just one particular course of a meal — a small, elegant one served on its own after the rest of the food was cleared. Which course did 'banquet' originally mean?",
+    "question": "A Tudor host of the late 1500s, in the reign of Elizabeth I, who invited friends to a 'banquet' was not promising the huge, lavish feast of many courses that the word means today. He meant just one small, elegant course, served on its own. Which course was it?",
     "answer": "the sweet course, eaten last",
     "choices": [
       "the sweet course, eaten last",
@@ -20983,7 +20879,7 @@
   },
   {
     "tier": 4,
-    "question": "At the 1429 London coronation feast of the boy king Henry VI, the sugar sculptures served as political propaganda. Each course brought an edible statue pressing his royal claims. Besides the English crown he received that day, which other kingdom's crown did these sculptures claim for him?",
+    "question": "Cooks at the 1429 coronation feast of the boy king Henry VI sent out a sugar sculpture with every course in Westminster Hall, each one pressing his royal claims. Besides the English crown he received that day, which other kingdom's crown did the sculptures claim for him?",
     "answer": "France",
     "choices": [
       "France",
@@ -20996,7 +20892,7 @@
   },
   {
     "tier": 5,
-    "question": "For centuries a sugar sculpture wowed a feast because sugar was rare and dear. Then, in the 1600s and 1700s, great plantations in Brazil and the Caribbean shipped so much sugar to Europe that even ordinary families could afford it. What did this do to the grand sugar showpiece?",
+    "question": "A grand host could wow a European feast with a sugar castle because sugar was rare and dear. Then plantations in Brazil and the Caribbean shipped so much of it across the sea during the 1600s and 1700s that even ordinary families could buy sugar. What did that do to the grand sugar showpiece?",
     "answer": "it lost its power to impress",
     "choices": [
       "it lost its power to impress",
@@ -21178,7 +21074,7 @@
   },
   {
     "tier": 1,
-    "question": "In the mid-1900s, an American scientist named Ancel Keys convinced the public and later the U.S. government that one food was the main cause of heart attacks. For decades afterward, 'reduced' and 'lite' versions of it filled grocery shelves. Which food did Keys blame?",
+    "question": "Ancel Keys, an American scientist, convinced the public in the mid-1900s, and later the U.S. government, that one food was the main cause of heart attacks. For decades afterward, 'reduced' and 'lite' versions of it filled grocery shelves. Which food did Keys blame?",
     "answer": "Saturated fat",
     "choices": [
       "Saturated fat",
@@ -21191,7 +21087,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1950s and 1960s, an American nutrition scientist named Ancel Keys convinced governments and doctors that dietary fat — butter, red meat, eggs — was the main cause of heart disease. But one British scientist, John Yudkin, broke ranks with Keys and pointed the finger at sugar instead. In 1972 Yudkin made his case in a book whose title turned plain white sugar into the villain. What did Yudkin call his book?",
+    "question": "John Yudkin, a British scientist, broke ranks with the leading heart researchers of the 1950s and 1960s and pointed the finger at sugar. In 1972 he made his case in a book whose title turned plain white sugar into the villain. What did Yudkin call his book?",
     "answer": "Pure, White and Deadly",
     "choices": [
       "Pure, White and Deadly",
@@ -21204,7 +21100,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1980s and 1990s, American shoppers were told fat was the enemy — so grocery aisles filled up with 'low-fat' and 'fat-free' cookies, yogurts, and salad dressings. But that low-fat craze carried a sneaky backfire. When food companies stripped the fat out of these foods, the results tasted dull, dry, and cardboard-like. To make these 'low-fat' foods tasty again, what did the food makers pump back in?",
+    "question": "Grocery aisles across America filled with low-fat and fat-free cookies, yogurts and salad dressings in the 1980s and 1990s, as shoppers were told fat was the enemy. Stripped of their fat, those foods tasted dull, dry and like cardboard. What did the food makers pump back in to make them tasty again?",
     "answer": "Sugar and starch",
     "choices": [
       "Sugar and starch",
@@ -21217,7 +21113,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1990s, American supermarkets went wild for 'fat-free' cookies, and one brand became the face of the whole low-fat craze. Its bright green box shouted 'Fat Free!' in huge letters, and shoppers felt so licensed by the label that they polished off a whole package in one sitting — often taking in as many calories as regular cookies would have delivered. Which cookie brand was this?",
+    "question": "One brand of fat-free cookies sat on American supermarket shelves in the 1990s in a bright green box shouting 'Fat Free!' in huge letters. Shoppers felt so licensed by the label that they polished off a whole package at a sitting, often swallowing as many calories as regular cookies held. Which brand was it?",
     "answer": "SnackWell's",
     "choices": [
       "SnackWell's",
@@ -21230,7 +21126,7 @@
   },
   {
     "tier": 3,
-    "question": "For decades, the American scientist Ancel Keys — who had blamed dietary fat for heart disease — looked right, while the British scientist John Yudkin, who had blamed sugar, looked like a crank. Then in 2016, University of California researchers dug through old documents in a Harvard archive and found the real reason nutrition science in the 1960s had gone so lopsided against fat. What had happened back then?",
+    "question": "University of California researchers dug up old documents in 2016 that showed why nutrition science in the 1960s had tilted so hard against fat. For decades before, John Yudkin, who blamed sugar, had looked like a crank. What had happened back then?",
     "answer": "The sugar industry secretly paid Harvard scientists to blame fat",
     "choices": [
       "The sugar industry secretly paid Harvard scientists to blame fat",
@@ -21243,7 +21139,7 @@
   },
   {
     "tier": 3,
-    "question": "By the early 2000s, the 1980s low-fat craze finally collapsed as American shoppers wised up to all the hidden sugar in their 'fat-free' cookies and yogurts. A rival diet fad quickly swept the country, invented by a New York cardiologist named Robert Atkins. It let people feast on bacon, butter, cheese, and steak while cutting out bread, pasta, and sweets. What was this new craze called?",
+    "question": "A New York cardiologist invented a rival diet that swept America in the early 2000s, as the low-fat craze collapsed and shoppers wised up to the hidden sugar in their fat-free cookies and yogurts. It let people feast on bacon, butter, cheese and steak while cutting out bread, pasta and sweets. What was it called?",
     "answer": "The Atkins diet",
     "choices": [
       "The Atkins diet",
@@ -21256,7 +21152,7 @@
   },
   {
     "tier": 4,
-    "question": "The 2016 investigators found a smoking gun. Before the fat-blaming Harvard review went to press, a sugar-industry executive named John Hickson read the scientists' draft and wrote back to them. His reply, uncovered fifty years later, became the most quoted line in the scandal. What did Hickson write?",
+    "question": "John Hickson, a sugar-industry executive, read the draft of a scientific review before it went to press and wrote back to its authors. His reply, uncovered fifty years later, became the most quoted line of the whole scandal. What did Hickson write?",
     "answer": "Let me assure you this is quite what we had in mind",
     "choices": [
       "Let me assure you this is quite what we had in mind",
@@ -21269,7 +21165,7 @@
   },
   {
     "tier": 3,
-    "question": "Yudkin died in 1995, largely forgotten. Then in 2009 a California doctor, Robert Lustig, gave a lecture branding sugar a 'poison' — and it exploded online to tens of millions of views, dragging Yudkin's warning back into the spotlight. What did Lustig title that viral talk?",
+    "question": "Robert Lustig, a California doctor, gave a lecture in 2009 branding sugar a 'poison,' and it spread online to tens of millions of viewers, reviving the warning of John Yudkin, the British sugar critic who had died largely forgotten in 1995. What did Lustig title the talk?",
     "answer": "Sugar: The Bitter Truth",
     "choices": [
       "Sugar: The Bitter Truth",
@@ -21282,7 +21178,7 @@
   },
   {
     "tier": 4,
-    "question": "So who was right? Today, nutrition scientists take sugar seriously as a driver of obesity, type 2 diabetes, and heart disease — a partial vindication for Yudkin. And they point most sharply at ONE everyday source that delivers a big sugar hit. Which is it?",
+    "question": "Almost no one believed John Yudkin when he warned in 1972 that sugar lay behind heart disease, diabetes and rotting teeth. Nutrition scientists now take sugar seriously as a driver of obesity, type 2 diabetes and heart disease, and they point most sharply at one everyday source of it. Which is it?",
     "answer": "Sugary sodas and drinks",
     "choices": [
       "Sugary sodas and drinks",
@@ -21295,7 +21191,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades, American nutritionists had argued whether dietary fat or sugar was the real cause of rising heart-attack deaths. The American food-policy scientist Marion Nestle finally went back and re-examined the original 14-country survey data that had started the whole sugar-versus-fat fight in the 1950s. She wanted to see, in the actual numbers, how sugar and saturated fat compared as suspects. What did she find?",
+    "question": "Marion Nestle, a food-policy scientist, went back to the original 14-country survey that had started the sugar-versus-fat fight in the 1950s, wanting to see in the actual numbers how fat and sugar compared as suspects in rising heart-attack deaths. What did she find?",
     "answer": "Sugar and fat were tangled together, impossible to separate",
     "choices": [
       "Sugar and fat were tangled together, impossible to separate",
@@ -21308,7 +21204,7 @@
   },
   {
     "tier": 1,
-    "question": "A plain baguette turns hard and stale by the morning after baking, but a sugary pound cake made the same day stays soft and moist for days. That's one of sugar's hidden talents. How is the sugar keeping the cake's crumb moist for so long?",
+    "question": "A plain baguette and a sugary pound cake come out of the same oven on the same day. By the next morning the baguette is hard and stale, but the cake stays soft and moist for days. How is its sugar keeping the crumb moist?",
     "answer": "It grabs water molecules and holds them so they can't evaporate away",
     "choices": [
       "It grabs water molecules and holds them so they can't evaporate away",
@@ -21321,7 +21217,7 @@
   },
   {
     "tier": 2,
-    "question": "Two batches of shortbread bake from the same flour and butter; the only difference is one has plenty of sugar and the other barely any. The sugary batch comes out meltingly tender, but the low-sugar batch turns tough and chewy. Sugar swings the texture this way by quietly interfering with one thing that happens while the dough is mixed. What is sugar holding back?",
+    "question": "A baker makes two batches of shortbread that differ only in the sugar: one has plenty and the other barely any. The sugary batch comes out meltingly tender and the low-sugar batch tough and chewy, because sugar quietly holds back something that happens while the dough is mixed. What is it holding back?",
     "answer": "Gluten forming as the wet flour is worked",
     "choices": [
       "Gluten forming as the wet flour is worked",
@@ -21333,34 +21229,8 @@
     "topic": "sugars-hidden-jobs-beyond-sweetness"
   },
   {
-    "tier": 2,
-    "question": "When a baker mixes bread dough, she often tosses in a spoonful of sugar even though the loaf won't taste sweet. The yeast pounces on that sugar first, before it touches the flour's starch, and the dough starts puffing up sooner. What is the yeast giving off from the sugar that puffs the dough up?",
-    "answer": "Bubbles of carbon dioxide gas",
-    "choices": [
-      "Bubbles of carbon dioxide gas",
-      "Pockets of hot steam",
-      "Bubbles of trapped air",
-      "Puffs of alcohol vapor"
-    ],
-    "context": "Sugar is the yeast's fast first food: yeast digests it and gives off carbon dioxide (the bubbles that raise the dough) plus a little alcohol, kick-starting fermentation faster than if the yeast first had to break down the flour's starch. Source: pmc.ncbi.nlm.nih.gov/articles/PMC9140867/",
-    "topic": "sugars-hidden-jobs-beyond-sweetness"
-  },
-  {
-    "tier": 3,
-    "question": "Sugar browns a bake in two different ways. One way is caramelizing, sugar alone, melting and darkening under heat. The other, richer browning happens only when the sugar links up with a partner ingredient to build that deep golden, toasty crust on cookies, bread, and cake tops. What does the sugar need to team up with for that second kind of browning?",
-    "answer": "The protein in the eggs",
-    "choices": [
-      "The protein in the eggs",
-      "The water in the batter",
-      "The soda in the baking mix",
-      "The fat in the butter"
-    ],
-    "context": "The two routes are caramelization (sugar alone, heated) and the Maillard reaction (sugar reacting with amino acids from proteins in eggs, milk, and flour). Both burn sugar as their fuel, so cut the sugar and cookies and cake tops bake up pale instead of golden. Source: en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "sugars-hidden-jobs-beyond-sweetness"
-  },
-  {
     "tier": 4,
-    "question": "Melt nothing but plain white sugar in a hot pan until it turns to golden caramel. As it darkens it gives off the rich, unmistakable aroma of one other everyday food, because the heat builds the very same signature flavor molecule that food is famous for. Which food does pure sugar caramel end up smelling like?",
+    "question": "A cook melts nothing but plain white sugar in a hot pan until it turns to golden caramel. As it darkens, it gives off the rich aroma of another everyday food, because the heat builds the very same signature flavor molecule that food is famous for. Which food does pure sugar caramel end up smelling like?",
     "answer": "Butter",
     "choices": [
       "Butter",
@@ -21373,7 +21243,7 @@
   },
   {
     "tier": 4,
-    "question": "You'd expect a rich, super-sweet brioche dough to rise fast, the yeast has a feast of sugar to gorge on. Instead it rises sluggishly, slower than a plain, lean dough with barely any sugar. Strangely, having too much sugar around holds the yeast back. What is all that sugar doing to the tiny yeast cells?",
+    "question": "Brioche dough, rich and super-sweet, gives its yeast a feast of sugar to gorge on, yet it rises sluggishly, slower than a plain, lean dough with barely any sugar. Too much sugar holds the yeast back. What is all that sugar doing to the tiny yeast cells?",
     "answer": "Drawing the water out of them until they shrivel",
     "choices": [
       "Drawing the water out of them until they shrivel",
@@ -21385,21 +21255,8 @@
     "topic": "sugars-hidden-jobs-beyond-sweetness"
   },
   {
-    "tier": 5,
-    "question": "Pull an ice cube and a tub of ice cream out of the very same freezer, both chilled to exactly the same temperature. The ice cube is a rock-hard solid, but a scoop still digs into the ice cream. The difference comes down to all the sugar dissolved in the ice cream. What is that sugar doing to keep the ice cream soft enough to scoop?",
-    "answer": "Lowering the temperature at which the water can freeze",
-    "choices": [
-      "Lowering the temperature at which the water can freeze",
-      "Giving off a little warmth as it dissolves",
-      "Wrapping each ice crystal in a slippery syrup coat",
-      "Making the water too heavy to lock into ice"
-    ],
-    "context": "Sugar lowers water's freezing point, so at freezer temperature much of the water in ice cream never freezes solid: it stays liquid as a super-concentrated syrup, and that unfrozen syrup is what keeps the ice cream scoopable. The more sugar you add, the softer the freeze; sorbet works the same way. Source: foodcrumbles.com/secret-of-ice-cream-freezing-point-depression/",
-    "topic": "sugars-hidden-jobs-beyond-sweetness"
-  },
-  {
     "tier": 2,
-    "question": "Supertasters, the 1 in 4 people who feel bitterness way too strongly, often push away broccoli, kale, cabbage, and Brussels sprouts. One common fruit has the same bitter chemicals those veggies do. Which fruit?",
+    "question": "A supertaster at the dinner table pushes away the broccoli, kale and Brussels sprouts, whose bitterness hits a supertaster's tongue far harder than most people's. One common fruit carries the same bitter chemicals. Which fruit is it?",
     "answer": "grapefruit",
     "choices": [
       "grapefruit",
@@ -21412,7 +21269,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1931 chemist Arthur Fox spilled a puff of bitter powder into the air of his lab. A colleague across the room instantly complained about the horrible bitter taste. Fox himself was standing at the bench where the powder escaped. As the often-told story goes, Fox ___?",
+    "question": "As the often-told story goes, Arthur Fox, a chemist, let a puff of bitter powder escape into the air of his lab in 1931, and a colleague across the room complained of the horrible bitter taste. Fox was standing at the very bench where the powder escaped. What did Fox himself do?",
     "answer": "tasted nothing at all",
     "choices": [
       "tasted nothing at all",
@@ -21425,20 +21282,7 @@
   },
   {
     "tier": 4,
-    "question": "Young children are even more sensitive to bitterness than the adults around them, and this sharpness only fades away during the teenage years. Scientists think this childhood bitter-alarm evolved for one protective reason. What?",
-    "answer": "to make toddlers spit out poisonous plants",
-    "choices": [
-      "to make toddlers spit out poisonous plants",
-      "to help babies enjoy their mother's milk",
-      "to push children toward eating more meat",
-      "to warn kids that their food has spoiled"
-    ],
-    "context": "In studies, children who carry the bitter-sensitive gene rate the compound PROP as even more intense than adults with the same gene, and this heightened sensitivity does not settle to adult levels until middle-to-late adolescence — a built-in guard from an age when a wandering toddler might grab and swallow a toxic plant. Source: PMC, Mennella, 'The Sweetness and Bitterness of Childhood.'  (Legend.)",
-    "topic": "supertasters-and-the-bitter-gene"
-  },
-  {
-    "tier": 4,
-    "question": "The bitter receptor that makes supertasters wince at broccoli is not only on the tongue; researchers have found the same receptor lining the nose and airways. When it catches bitter chemicals given off by invading bacteria, it strikes back. How?",
+    "question": "Researchers have found the bitter receptor that makes supertasters wince at broccoli lining the nose, sinuses and airways, not only the tongue. When it catches bitter chemicals given off by invading bacteria, it strikes back. How does it strike back?",
     "answer": "it fires off a burst of germ-killing gas",
     "choices": [
       "it fires off a burst of germ-killing gas",
@@ -21464,7 +21308,7 @@
   },
   {
     "tier": 2,
-    "question": "A tin of surstromming is packed under real pressure from months of trapped gas, and a Swede who knows the fish would never open one at the table. How does tradition say to crack it so the brine doesn't hit your face?",
+    "question": "A Swede who knows surstromming would never open a tin of the sour herring at the dinner table, because months of trapped gas have packed it under real pressure. How does tradition say to crack it open?",
     "answer": "Outdoors, punctured underwater in a bucket that catches the spray",
     "choices": [
       "Outdoors, punctured underwater in a bucket that catches the spray",
@@ -21477,7 +21321,7 @@
   },
   {
     "tier": 3,
-    "question": "People love to call surstromming 'rotten fish,' but its makers insist it isn't spoiled at all - it's controlled on purpose. The whole trick is the exact amount of salt rubbed onto the raw herring. What does that carefully judged dose of salt actually do?",
+    "question": "A Swedish fish-packer rubs a carefully judged dose of salt onto raw herring bound for surstromming. People call the result 'rotten fish,' but its makers insist it is controlled on purpose, and the salt is what controls it. What does that dose of salt do?",
     "answer": "Blocks the dangerous bacteria but lets the fermenting microbes keep working",
     "choices": [
       "Blocks the dangerous bacteria but lets the fermenting microbes keep working",
@@ -21490,7 +21334,7 @@
   },
   {
     "tier": 1,
-    "question": "People often assume the word 'sushi' just means raw fish. But sushi is defined by one ingredient it must always contain — take that ingredient away and the dish stops being sushi. Which ingredient is it?",
+    "question": "A diner new to sushi bars takes the word 'sushi' to mean raw fish. But every piece of sushi must contain one ingredient, and without it the dish stops being sushi at all. Which ingredient is it?",
     "answer": "The seasoned rice base",
     "choices": [
       "The seasoned rice base",
@@ -21503,7 +21347,7 @@
   },
   {
     "tier": 1,
-    "question": "Sit down at the counter of a Japanese sushi restaurant and watch the chef work. He scoops up a small pinch of vinegared white rice with his fingertips, presses it into a neat little oval shape in his palm, and then lays a single glossy slice of raw fish carefully over the top. Two bites at most. What is this hand-pressed piece of sushi called?",
+    "question": "At the counter of a Japanese sushi restaurant, the chef scoops a small pinch of white rice with his fingertips, presses it in his palm into a neat little oval, then lays a single glossy slice of raw fish across the top. What is this hand-pressed piece of sushi called?",
     "answer": "Nigiri",
     "choices": [
       "Nigiri",
@@ -21516,7 +21360,7 @@
   },
   {
     "tier": 2,
-    "question": "Over a thousand years ago, the very first sushi was not a fresh treat at all. It was invented to solve one hard, practical problem that every fisherman of the time faced. What was sushi originally used for?",
+    "question": "A fisherman over a thousand years ago faced a hard, practical problem with every catch, and the very first sushi was invented to solve it; it was no fresh treat. What was sushi originally used for?",
     "answer": "Keeping fish from spoiling",
     "choices": [
       "Keeping fish from spoiling",
@@ -21529,7 +21373,7 @@
   },
   {
     "tier": 3,
-    "question": "Here is the twist that surprises almost everyone. In the oldest sushi, salted fish and cooked rice were packed into a barrel, weighted under a heavy stone, and left to ferment for months. When the barrel was finally opened, something inside was thrown away rather than eaten. What was it?",
+    "question": "Cooks making the oldest kind of sushi packed salted fish and cooked rice into a barrel, weighted it under a heavy stone and left it to ferment for months. When they finally opened the barrel, they threw something inside away instead of eating it. What was it?",
     "answer": "The soured, fermented rice",
     "choices": [
       "The soured, fermented rice",
@@ -21542,7 +21386,7 @@
   },
   {
     "tier": 4,
-    "question": "Long ago, sushi began as a way to store fish: the fish was packed in rice and left to ferment, then eaten while the sour, mushy rice was thrown away. That old throw-the-rice-away style never actually died out. Near Lake Biwa in central Japan, cooks still make funazushi — crucian carp salted, packed in rice, and left to ferment for months. When a batch is finally cracked open, what does this ancient sushi famously smell like?",
+    "question": "Near Lake Biwa in central Japan, cooks still make funazushi, the oldest sushi still made in Japan: crucian carp salted, packed in rice and left to ferment for months, sometimes for up to three years. When a batch is finally opened, what does it famously smell like?",
     "answer": "Strong cheese",
     "choices": [
       "Strong cheese",
@@ -21555,7 +21399,7 @@
   },
   {
     "tier": 3,
-    "question": "For centuries, making sushi meant packing fish in rice and waiting months while the barrel slowly did its work. Then Edo-period cooks, impatient with the wait, found a shortcut that let the fish be eaten the very same day. What did they mix into the rice?",
+    "question": "Cooks in Japan's Edo period grew impatient with sushi's old months-long wait, when fish sat packed in rice in a barrel, and found a shortcut that let the fish be eaten the very same day. What did they mix into the rice?",
     "answer": "Rice vinegar",
     "choices": [
       "Rice vinegar",
@@ -21568,7 +21412,7 @@
   },
   {
     "tier": 5,
-    "question": "That dab of fiery green wasabi tucked between the rice and the fish isn't only there for its sinus-clearing heat. Chefs have hidden it in that exact spot for centuries, and it quietly does a second job. Besides adding heat, what does wasabi do?",
+    "question": "A sushi chef tucks a dab of fiery green wasabi between the rice and the fish, a spot chefs have used for centuries, and it does more there than clear the sinuses. Besides adding heat, what does the wasabi do?",
     "answer": "Kills spoilage-causing microbes",
     "choices": [
       "Kills spoilage-causing microbes",
@@ -21711,7 +21555,7 @@
   },
   {
     "tier": 1,
-    "question": "About 10,500 years ago, in the Fertile Crescent — the arc of green land curving from present-day Iraq through Syria to the eastern Mediterranean — people stopped simply hunting wild animals for meat. Instead, they began building pens and keeping small herds of their own. Two shaggy, sure-footed animals were the very first livestock ever kept by humans on Earth. Which two?",
+    "question": "People in the Fertile Crescent, the arc of green land from present-day Iraq through Syria to the eastern Mediterranean, began building pens about 10,500 years ago and keeping small herds instead of only hunting. Which two shaggy, sure-footed animals were the very first livestock?",
     "answer": "goats and sheep",
     "choices": [
       "goats and sheep",
@@ -21724,7 +21568,7 @@
   },
   {
     "tier": 1,
-    "question": "Every cow, ox, and dairy heifer alive today — every Angus steer, every Holstein, every longhorn — descends from one wild ancestor. It was a huge, powerful, black-coated beast with long forward-curving horns; people hunted it for tens of thousands of years, painted it on cave walls at Lascaux in France, and in 1627 the very last one on Earth died in a Polish forest. Name the extinct animal every cow came from.",
+    "question": "Stone Age hunters chased a huge, black-coated beast with long horns and painted it on the walls of the Lascaux caves in France, and the very last of its kind died in 1627, in a forest in Poland. Every cow alive today descends from it. What was this extinct animal?",
     "answer": "the aurochs",
     "choices": [
       "the aurochs",
@@ -21737,7 +21581,7 @@
   },
   {
     "tier": 2,
-    "question": "Sheep were among the first livestock, kept in Mesopotamia thousands of years ago. Their wild ancestor never went extinct: it still walks the mountains today, lean and hard-hooved. Name the wild animal every sheep descends from.",
+    "question": "Farmers in Mesopotamia tamed the first sheep more than 10,000 years ago from a wild animal that never went extinct: it still walks the mountains, lean and hard-hooved, with curling horns. What is the wild animal every sheep descends from?",
     "answer": "the mouflon",
     "choices": [
       "the mouflon",
@@ -21750,7 +21594,7 @@
   },
   {
     "tier": 3,
-    "question": "The aurochs was the giant wild ox that once roamed Europe and Asia, and every cow and bull alive today descends from it. An aurochs bull weighed around 700 kg — as much as a small car — and carried 80 cm of horn on its skull, 20 cm thick where the horn met the bone. That is nearly a metre of horn on one animal. Which way did those enormous horns point?",
+    "question": "Julius Caesar met the giant wild oxen of the Hercynian forest and wrote that they spared no man or beast they spotted. A bull weighed around 700 kg, as much as a small car, and carried 80 cm of horn on its skull, 20 cm thick where the horn met the bone. Which way did those horns point?",
     "answer": "forward, curving inward in a lyre shape",
     "choices": [
       "forward, curving inward in a lyre shape",
@@ -21763,7 +21607,7 @@
   },
   {
     "tier": 3,
-    "question": "The farm pig was tamed from the wild boar in the Near East about 10,000 years ago. Thousands of miles east in China, about 8,000 years ago, people who had never met a Near Eastern herder left a mark in the bones that archaeologists can still read today. What had those Chinese people done?",
+    "question": "Near Eastern farmers tamed the wild boar into the farm pig about 10,000 years ago. Thousands of miles east, about 8,000 years ago, people in China who had never met a Near Eastern herder left a mark in pig bones that archaeologists can still read. What had they done?",
     "answer": "tamed the same wild boar all over again, from scratch",
     "choices": [
       "tamed the same wild boar all over again, from scratch",
@@ -21776,7 +21620,7 @@
   },
   {
     "tier": 4,
-    "question": "Sheep were among the first livestock ever kept, in Mesopotamia, for meat, milk and skins. Walk into one of those first flocks, though, and you would find nothing to shear — not a scrap of fleece on any animal in it. The oldest woven wool clothes date to around 4000 BC, many long ages after the first sheep were penned. So where did wool come from?",
+    "question": "A shearer walking into one of the earliest flocks of sheep, kept in Mesopotamia for meat, milk and skins, would have found nothing to cut: not a scrap of fleece on any animal. The oldest woven wool clothes date to around 4000 BC, long ages after the first sheep were penned. Where did wool come from?",
     "answer": "herders bred it into their flocks over thousands of years",
     "choices": [
       "herders bred it into their flocks over thousands of years",
@@ -21789,7 +21633,7 @@
   },
   {
     "tier": 4,
-    "question": "Only 14 of the world's 148 big wild plant-eating land mammals were ever turned into livestock, and the zebra is the most famous failure — Africa's own horse, which people tried for centuries to break to harness. Set aside its bite and its refusal to take a human as its herd boss. What does a captured zebra do that no herder can work around?",
+    "question": "Would-be herders tried for centuries to break the zebra, Africa's own horse, to harness, and failed; only 14 of the 148 big wild plant-eating land mammals on Earth ever became livestock. Set aside the zebra's bite and its refusal to take a human as herd boss. What does a captured zebra do that no herder can work around?",
     "answer": "it can panic itself to death in a pen",
     "choices": [
       "it can panic itself to death in a pen",
@@ -21802,7 +21646,7 @@
   },
   {
     "tier": 5,
-    "question": "At Ganj Dareh in the Zagros Mountains, the goat bones from about 10,000 years ago are the wrong shape to be domestic: they look exactly like wild goat bones, and the animals' bodies would not change for another thousand years. Yet archaeologists say these people were already herding, not hunting. What in the bone pile proved it?",
+    "question": "Melinda Zeder and Brian Hesse studied goat bones about 10,000 years old from Ganj Dareh in the Zagros Mountains, bones that look exactly like a wild goat's; the animals' bodies would not change for another thousand years. Yet the two say these people were already herding, not hunting. What in the bone pile showed it?",
     "answer": "the young males were killed and the females left to grow old",
     "choices": [
       "the young males were killed and the females left to grow old",
@@ -21815,7 +21659,7 @@
   },
   {
     "tier": 1,
-    "question": "Chew one small red berry from a West-African bush and, for about the next hour, something strange happens to your tongue. A raw lemon tastes like sweet lemonade. Plain vinegar tastes like apple juice. Even a sharp grapefruit tastes candy-sweet. Every sour food you put in your mouth flips over and tastes sweet. What is this fruit called?",
+    "question": "A traveler in West Africa chews one small red berry from a bush, and for about the next hour something strange happens: a raw lemon tastes like sweet lemonade, plain vinegar like apple juice and a sharp grapefruit candy-sweet. What is this fruit called?",
     "answer": "the miracle fruit",
     "choices": [
       "the miracle fruit",
@@ -21828,7 +21672,7 @@
   },
   {
     "tier": 2,
-    "question": "In the early 1970s an American researcher named Robert Harvey started a company called Miralin, selling tablets made from a West African berry called the miracle fruit. Chew a tablet for a minute, then bite a raw lemon — and the lemon suddenly tastes like sweet lemonade. How does that little tablet pull off the trick?",
+    "question": "Robert Harvey, an American researcher, began selling tablets in the early 1970s made from a little red berry from West Africa. Suppose you chew one for a minute and then bite a raw lemon: it tastes like sweet lemonade. How does the tablet pull off the trick?",
     "answer": "It briefly retunes your tongue's sweet sensors, so the same lemon now reads as sweet",
     "choices": [
       "It briefly retunes your tongue's sweet sensors, so the same lemon now reads as sweet",
@@ -21841,7 +21685,7 @@
   },
   {
     "tier": 2,
-    "question": "The West African miracle fruit is a small red berry with a strange trick: chew one, then bite a lemon, and the sour lemon tastes weirdly sweet. Half a world away, in India, grows its mirror image — a climbing vine whose leaf farmers nicknamed 'gurmar,' which means 'sugar-destroyer.' Chew a little of the gurmar leaf, then eat a spoonful of sugar. How does the sugar taste now?",
+    "question": "Farmers in India nicknamed the leaf of one climbing vine 'gurmar,' meaning 'sugar-destroyer.' Suppose you chew a little of that leaf and then eat a spoonful of sugar. How does the sugar taste now?",
     "answer": "It tastes like flavorless grit, as if you'd spooned up sand",
     "choices": [
       "It tastes like flavorless grit, as if you'd spooned up sand",
@@ -21854,7 +21698,7 @@
   },
   {
     "tier": 4,
-    "question": "Brush your teeth, then drink a glass of orange juice, and it tastes revoltingly bitter and sour instead of sweet — a collision millions of people have suffered at breakfast. The juice is innocent; one ingredient in the toothpaste is the culprit. Which one?",
+    "question": "Suppose you brush your teeth and then drink a glass of orange juice: it tastes revoltingly bitter and sour instead of sweet, a collision millions of people have suffered at breakfast. The juice is innocent, and one ingredient in the toothpaste is to blame. Which one?",
     "answer": "the sudsy foaming agent that makes it lather",
     "choices": [
       "the sudsy foaming agent that makes it lather",
@@ -21867,7 +21711,7 @@
   },
   {
     "tier": 1,
-    "question": "A tub of ice cream left on the counter goes sickly and syrupy — you would push the bowl away — yet the frozen scoop from that same tub tasted just right. Why does the melted bowl taste so much sweeter?",
+    "question": "Suppose you leave a tub of ice cream on the counter and taste the melted bowl: it is sickly and syrupy, though a frozen scoop from the same tub tasted just right. Why does the melted bowl taste so much sweeter?",
     "answer": "Warmth unmasks the extra sugar the maker packs in for the freezer",
     "choices": [
       "Warmth unmasks the extra sugar the maker packs in for the freezer",
@@ -21880,7 +21724,7 @@
   },
   {
     "tier": 2,
-    "question": "Iced tea and warm tea from the same pot, same sugar — yet the cold glass tastes barely sweet. Biologists found the answer in fruit flies, whose sweet sense is wired much like ours. What does cold do to the sweet taste?",
+    "question": "Biologists studying fruit flies, whose sweet sense is wired much like a person's, worked out why iced tea tastes barely sweet beside warm tea from the same pot with the same sugar. Suppose you sip both. What does cold do to the sweet taste?",
     "answer": "Cold wakes other taste neurons that quiet the sweet ones on the way to the brain",
     "choices": [
       "Cold wakes other taste neurons that quiet the sweet ones on the way to the brain",
@@ -21893,7 +21737,7 @@
   },
   {
     "tier": 3,
-    "question": "Mountaineers on the altitude pill acetazolamide hit a side effect they call the champagne blues: bubbly wine and soda go dead as dishwater in the mouth, though the glass still fizzes away. Charles Zuker's team tracked the pill to one enzyme it blocks on the tongue. What was that enzyme doing for the drinker?",
+    "question": "Mountaineers on the altitude pill acetazolamide complained of a side effect they called the champagne blues: bubbly wine and soda went dead as dishwater in the mouth, though the glass still fizzed. Charles Zuker's team tracked it to one enzyme the pill blocked on the tongue. What had that enzyme been doing for the drinker?",
     "answer": "It turns the drink's CO2 into acid, so sour cells taste the fizz",
     "choices": [
       "It turns the drink's CO2 into acid, so sour cells taste the fizz",
@@ -21906,7 +21750,7 @@
   },
   {
     "tier": 2,
-    "question": "Tempura — Japan's featherlight fried shrimp and vegetables in a lacy, crackling batter — feels as Japanese as sushi. But it isn't native to Japan at all. Who first carried the trick of batter-dipping and deep-frying to the port of Nagasaki back in the 1500s?",
+    "question": "A cook in Japan dips shrimp and vegetables in a thin batter and fries them into featherlight, crackling tempura, a dish that feels as Japanese as sushi. Yet it is not native to Japan. Who first carried the trick of batter-dipping and deep-frying to the port of Nagasaki, back in the 1500s?",
     "answer": "Portuguese missionaries",
     "choices": [
       "Portuguese missionaries",
@@ -21919,7 +21763,7 @@
   },
   {
     "tier": 3,
-    "question": "'Tempura' sounds Japanese, yet the word itself was borrowed from European missionaries. The best theory traces it to the Latin word 'tempora,' meaning 'times' — days on the Catholic calendar. Which 'times' did that word point to?",
+    "question": "Batter-fried fish and vegetables come out of the oil in a Japanese kitchen under a name that sounds thoroughly Japanese, tempura. The leading theory traces it instead to the Latin 'tempora,' meaning 'times,' certain days on the church calendar. Which days did the word point to?",
     "answer": "the fasting days, when meat was forbidden",
     "choices": [
       "the fasting days, when meat was forbidden",
@@ -21932,7 +21776,7 @@
   },
   {
     "tier": 4,
-    "question": "A tempura master's coating fries into shatter-crisp, airy lace; a clumsy cook's turns into a thick, doughy jacket — same shrimp, same hot oil. What does the master do to his batter that the clumsy cook doesn't?",
+    "question": "In a Japanese kitchen, a tempura master's coating fries into shatter-crisp, airy lace, while a clumsy cook's turns into a thick, doughy jacket, though both use the same shrimp in the same hot oil. What does the master do to his batter that the clumsy cook does not?",
     "answer": "use ice-cold water and barely stir it",
     "choices": [
       "use ice-cold water and barely stir it",
@@ -21958,7 +21802,7 @@
   },
   {
     "tier": 1,
-    "question": "In Thai cooking, a curry starts with a spicy paste — shallots, garlic, herbs, and hot chilies crushed together in a heavy stone mortar. A green curry paste comes out vivid grass-green, and a red curry paste glows deep red, with no food coloring added at all. Which ingredient in the paste dyes the whole pot its color?",
+    "question": "In a heavy stone mortar, a cook pounds shallots, garlic and fresh herbs to make Thai curry paste, which comes out vivid grass-green for one curry and deep red for another, with no food coloring added. Which ingredient dyes the whole pot its color?",
     "answer": "The chilies pounded into the paste",
     "choices": [
       "The chilies pounded into the paste",
@@ -21971,7 +21815,7 @@
   },
   {
     "tier": 2,
-    "question": "To build red Thai curry paste, a cook can't just grab chilies off the plant — the big, flavorful red chilies called for come only dried. Before pounding them in, what must the cook do to those chilies first?",
+    "question": "A cook building red Thai curry paste cannot simply pick the chilies off the plant, because the big, flavorful ones it calls for come only dried. What must the cook do to them before pounding them in?",
     "answer": "Soak them in warm water until soft and pliable",
     "choices": [
       "Soak them in warm water until soft and pliable",
@@ -21984,7 +21828,7 @@
   },
   {
     "tier": 3,
-    "question": "Thailand's classic curries come in colors — red, green, yellow, and massaman. Diners see a red curry glowing deep, angry crimson and brace for the fiercest burn on the table. But looks can lie about heat: among these four classic Thai curries, which one actually delivers the sharpest, biggest bite in the mouth?",
+    "question": "A diner at a Thai table sees a red curry glowing a deep, angry crimson and braces for the fiercest burn of the four classics: red, green, yellow and massaman. Looks can lie about heat. Which of the four usually bites hardest?",
     "answer": "Green curry",
     "choices": [
       "Green curry",
@@ -21997,7 +21841,7 @@
   },
   {
     "tier": 4,
-    "question": "Thailand's kitchens turn out plate after plate of bright, fresh, fiery curries — green, red and yellow, all sparking with lime, basil and chili. But one Thai curry, called Massaman, tastes strange next to its cousins: mild, sweet, deep and slow. Food historians say Muslim traders carried the recipe into southern Thailand centuries ago, bringing flavors from Indian and Middle-Eastern kitchens with them. What ingredient in massaman gives it that un-Thai warmth?",
+    "question": "On a Thai table beside bright, fiery green, red and yellow curries, all sparking with lime, basil and chili, a bowl of massaman tastes strange: mild, sweet, deep and slow. Food historians say traders carried its flavors in from Indian and Middle Eastern kitchens. What ingredient gives massaman its un-Thai flavor?",
     "answer": "A scatter of warm spices like cinnamon and clove",
     "choices": [
       "A scatter of warm spices like cinnamon and clove",
@@ -22010,7 +21854,7 @@
   },
   {
     "tier": 4,
-    "question": "Massaman is the one Thai curry that tastes like it wandered in from far away — and it did: Persian traders carried it up the trade routes into the royal court of Ayutthaya in the 1600s. The curry even took its NAME from those newcomers — 'massaman' is a Thai reshaping of an old Persian word that named them by their faith. Which faith did that word name?",
+    "question": "Persian traders carried massaman up the trade routes into the royal court of Ayutthaya in the 1600s, and the curry took its name from those newcomers: 'massaman' is a Thai reshaping of an old Persian word that named them by their faith. What did that word call them?",
     "answer": "Muslims",
     "choices": [
       "Muslims",
@@ -22022,21 +21866,8 @@
     "topic": "thai-curry-pastes-why-green-out-burns-red"
   },
   {
-    "tier": 5,
-    "question": "The final secret of a great Thai curry: you fry the paste in hot coconut oil until the whole kitchen smells incredible — the same move as an Indian cook sizzling whole spices in hot ghee before anything else goes in the pot. Stirred cold into liquid the paste stays harsh; sizzled in hot oil it turns deep and mellow. What is the hot oil actually doing to the spices?",
-    "answer": "Dissolving their oil-based aromas and spreading them through the dish",
-    "choices": [
-      "Dissolving their oil-based aromas and spreading them through the dish",
-      "Steaming their harsh raw edge off and leaving them sweeter",
-      "Toasting their outsides into a crisp, nutty crust",
-      "Melting their sugars into a glaze that coats the meat"
-    ],
-    "context": "Frying the paste in hot fat is 'fat-blooming' — the same trick as an Indian tadka, where spices hit hot ghee so the heat pulls their oil-soluble aromas out and spreads them through the dish; raw paste stirred straight into liquid stays harsh. You get that hot coconut oil by 'cracking' the coconut cream first: simmer thick coconut cream until the water boils off and its oil splits out into a puddle, then fry the paste in it until intensely aromatic. Source: messyvegancook.com/art-of-curry-boiled-versus-fried-cracked-coconut-cream; americastestkitchen.com.",
-    "topic": "thai-curry-pastes-why-green-out-burns-red"
-  },
-  {
     "tier": 1,
-    "question": "Western cooks usually list four basic tastes — sweet, sour, salty, and bitter. Thai cooking keeps three of them but trades bitter for a fourth taste of its own, and treats holding all four in balance as the very heart of a good dish. Which taste does Thai cooking put in bitter's place?",
+    "question": "A Thai cook tastes each dish for a balance of four tastes, with none allowed to bully the others. She keeps sweet, sour and salty from the four that Western cooks list, but trades bitter for another. Which taste takes bitter's place?",
     "answer": "chili heat",
     "choices": [
       "chili heat",
@@ -22049,7 +21880,7 @@
   },
   {
     "tier": 2,
-    "question": "Step into a Thai kitchen and watch a cook build a stir-fry. The salt shaker never comes off the shelf. Instead she splashes in a thin, brown, intensely savory sauce — made by fermenting small anchovy-like fish with salt for months in big clay pots. That one splash seasons the whole pan with far more depth than plain salt could ever give. What is this classic Thai source of saltiness called?",
+    "question": "In a Thai kitchen, the salt shaker never comes off the shelf while a cook builds a stir-fry. Instead she splashes in a thin, brown, savory sauce that seasons the whole pan with far more depth than plain salt could give. What is this classic Thai source of saltiness?",
     "answer": "fish sauce",
     "choices": [
       "fish sauce",
@@ -22062,7 +21893,7 @@
   },
   {
     "tier": 2,
-    "question": "For the sweet note that balances a Thai curry, a Bangkok cook skips the bag of white sugar on the shelf. Instead she reaches for a soft, tan block of traditional sweetener, tapped from the sap of coconut and sugar-palm trees and boiled down until it caramelizes. Her spoonful rounds off the dish's heat and sourness rather than just sweetening it. What is this Thai sweetener called?",
+    "question": "For the sweet note that balances a Thai curry, a Bangkok cook skips the bag of white sugar and reaches for a traditional sweetener, boiled down from tree sap until it caramelizes. Her spoonful rounds off the dish's sharp edges rather than only sweetening it. What is this sweetener called?",
     "answer": "palm sugar",
     "choices": [
       "palm sugar",
@@ -22075,20 +21906,7 @@
   },
   {
     "tier": 3,
-    "question": "Nam pla — the salty, savory sauce at the heart of Thai cooking — begins in big vats left out under the tropical sun for six months to a year. Whatever is packed inside with a heavy dose of salt slowly breaks down, and the fragrant brown liquid drawn off the top becomes the sauce. What is packed into those vats?",
-    "answer": "tiny ocean fish",
-    "choices": [
-      "tiny ocean fish",
-      "whole soybeans",
-      "dried shrimp shells",
-      "fresh sea kelp"
-    ],
-    "context": "They're small fish — often anchovies — packed in salt and left to ferment 6 to 12 months under the tropical sun; the savory brown liquid that seeps out is the sauce, nam pla. That long ferment is where fish sauce builds its deep umami. Source: grokipedia.com/page/Fish_sauce",
-    "topic": "thai-flavor-balance-four-tastes-in-one-bite"
-  },
-  {
-    "tier": 3,
-    "question": "Sit down to a full Thai dinner and the table fills up fast: a coconut curry, a crunchy salad, a hot bowl of soup, and something crispy and fried. Four or more dishes crowd in at once instead of one after another. Why put so many different dishes out together?",
+    "question": "A family sits down to a full Thai dinner, and the table fills fast: a coconut curry, a crunchy salad, a hot bowl of soup and something crispy and fried, four or more dishes at once instead of one after another. Why put so many different dishes out together?",
     "answer": "so the four tastes balance across the whole meal",
     "choices": [
       "so the four tastes balance across the whole meal",
@@ -22101,7 +21919,7 @@
   },
   {
     "tier": 4,
-    "question": "A bowl of Thai noodle soup arrives with the cook's seasoning already in it — yet on the table sits a caddy of small pots, and diners reach for it before their first bite. As they spoon a little of this and a pinch of that from the pots, what are they actually doing to the soup?",
+    "question": "A bowl of Thai noodle soup arrives with the cook's seasoning already in it, yet a caddy of small pots sits on the table, and the diner reaches for it before the first bite, spooning in a little of this and a pinch of that. What is the diner doing to the soup?",
     "answer": "finishing the flavor balance the cook started",
     "choices": [
       "finishing the flavor balance the cook started",
@@ -22114,7 +21932,7 @@
   },
   {
     "tier": 5,
-    "question": "Ladle up a bowl of tom yum soup and you'll fish out stiff stalks of lemongrass, thick coins of galangal, and torn kaffir lime leaves — and you're meant to push them to the side of the bowl, not eat them. If they're not food, what is their whole job in the soup?",
+    "question": "A cook ladles tom yum soup into a bowl, and in it float stiff lemongrass stalks, thick coins of galangal and torn leaves of makrut lime, all meant to be pushed to the side of the bowl, not eaten. If they are not food, what is their whole job in the soup?",
     "answer": "to perfume the broth with fragrance",
     "choices": [
       "to perfume the broth with fragrance",
@@ -22127,7 +21945,7 @@
   },
   {
     "tier": 1,
-    "question": "Two apples on your plate hold about as much sugar as a can of soda. Yet a nutritionist smiles at the apples and frowns at the soda. The soda's sugar rushes into your blood in minutes because it is loose and unwrapped. The apple's sugar comes in slowly, because it is packed up inside the fruit's flesh. What is the apple's sugar wrapped in?",
+    "question": "A nutritionist smiles at two apples on a plate and frowns at a can of soda, though the pair of apples holds about as much sugar as the can. The soda's sugar rushes into the blood in minutes; the apple's arrives slowly, packed inside the fruit's flesh. What is the apple's sugar wrapped in?",
     "answer": "fiber and water",
     "choices": [
       "fiber and water",
@@ -22140,7 +21958,7 @@
   },
   {
     "tier": 2,
-    "question": "The World Health Organization wanted a single label for the sugars worth cutting back on. Into that group it put the sugar factories add, plus honey, syrup, and squeezed-out fruit juice, while leaving out the sugar in whole fruit and milk. What did the WHO name this cut-back category?",
+    "question": "Nutrition experts at the World Health Organization sorted the sugars worth cutting back on into one group: the sugar factories add, plus honey, syrup and squeezed-out fruit juice, while they left out the sugar in whole fruit and milk. What name did they give that group?",
     "answer": "free sugars",
     "choices": [
       "free sugars",
@@ -22153,7 +21971,7 @@
   },
   {
     "tier": 2,
-    "question": "Check the back of a cereal box and you may not spot the word 'sugar' at all, yet the box can be loaded with it, because sugar hides under other names. Healthline counts 56 of these aliases. The University of California puts the tally at 'at least 61.' Which of these label words is really just sugar in disguise?",
+    "question": "A girl scans the back of a cereal box for the word 'sugar' and never finds it, yet the box can be loaded with sugar hiding under other names. Healthline counts 56 of these aliases; the University of California puts the tally at 'at least 61.' Which label word is really sugar in disguise?",
     "answer": "molasses",
     "choices": [
       "molasses",
@@ -22166,7 +21984,7 @@
   },
   {
     "tier": 2,
-    "question": "A food scientist stands with you in the cereal aisle, hunting for hidden sugars on the ingredient labels. She teaches you a shortcut: scan every ingredient name and check the last three letters. Whenever a certain three-letter word-ending sits at the tail — as in fructose, glucose or sucrose — it almost always flags a sugar. Which ending is the sugar giveaway?",
+    "question": "A food scientist hunting for hidden sugars in a grocery aisle teaches a shortcut: check the last three letters of every ingredient name on the label. Whenever one particular ending sits at the tail, it almost always flags a sugar. Which ending is the giveaway?",
     "answer": "-ose",
     "choices": [
       "-ose",
@@ -22179,7 +21997,7 @@
   },
   {
     "tier": 3,
-    "question": "Corn syrup on its own is mostly glucose — only mildly sweet. To make the punchy sweetener that fills soda cans, factories run corn syrup through one extra processing step that boosts it up to the sweetness of table sugar. What does that step actually do to the syrup?",
+    "question": "A factory making the punchy sweetener that fills soda cans starts with plain corn syrup, which is mostly glucose, a sugar only mildly sweet, and runs it through one extra step that lifts it to the sweetness of table sugar. What does that step do to the syrup?",
     "answer": "rearranges some of its glucose into fructose",
     "choices": [
       "rearranges some of its glucose into fructose",
@@ -22192,7 +22010,7 @@
   },
   {
     "tier": 3,
-    "question": "American soda makers switched from granulated cane sugar to high-fructose corn syrup for two reasons. One was price. The second had nothing to do with taste or health — it was about how easily the sweetener moved through the bottling plant. What gave corn syrup the edge on the factory floor?",
+    "question": "American soda makers switched from granulated cane sugar to a sweetener made from corn syrup for two reasons. One was price. The other had nothing to do with taste or health but with how easily the sweetener moved through the bottling plant. What gave corn syrup the edge on the factory floor?",
     "answer": "it poured in as a liquid, needing no shoveling",
     "choices": [
       "it poured in as a liquid, needing no shoveling",
@@ -22205,7 +22023,7 @@
   },
   {
     "tier": 3,
-    "question": "The World Health Organization says that, ideally, ALL the added sugar you eat in a whole day should stay under about six teaspoons. Now picture cracking open a single 12-ounce can of Coca-Cola. What does that one can do to the day's entire sugar budget?",
+    "question": "A boy cracks open a single 12-ounce can of Coca-Cola. The World Health Organization's ideal limit for all the added sugar a person eats in a whole day is about six teaspoons. What does that one can do to the day's sugar budget?",
     "answer": "blows past the whole day's budget in one drink",
     "choices": [
       "blows past the whole day's budget in one drink",
@@ -22218,7 +22036,7 @@
   },
   {
     "tier": 4,
-    "question": "Ingredient lists follow one rule: whatever there's the most of goes first, and the least goes last. So clever manufacturers whose products are mostly sugar can still keep the word 'sugar' from showing up near the top of the list. How do they pull it off?",
+    "question": "A food maker selling a product that is mostly sugar has to list its ingredients from most to least, yet can still keep the word 'sugar' from showing up anywhere near the top of the list. How does the maker pull it off?",
     "answer": "split the sugar across several different names",
     "choices": [
       "split the sugar across several different names",
@@ -22231,7 +22049,7 @@
   },
   {
     "tier": 4,
-    "question": "Scientists argue about sugar all the time. Some, like the American doctor Robert Lustig, call it a special metabolic poison that damages the liver. Others say it is just 'empty calories' — no worse than any other treat eaten in excess. But behind all the shouting, there is one harm both sides agree on completely, and dentists have watched it happen for over a century. What is the one thing everyone agrees sugar does?",
+    "question": "Suppose you ask Robert Lustig, an American doctor, about sugar: he calls it a special metabolic poison that damages the liver. Other scientists doubt that sugar is any special poison at all. Behind all the arguing, what does neither side dispute that sugar does?",
     "answer": "rots teeth into cavities",
     "choices": [
       "rots teeth into cavities",
@@ -22244,7 +22062,7 @@
   },
   {
     "tier": 5,
-    "question": "Not everyone buys the 'sugar is a toxin' story. Skeptical scientists point out that no one has pinned down a dose where sugar flips from harmless treat to poison — and they offer a plainer explanation for why sugar seems to cause harm. What do the skeptics say is really doing most of the damage?",
+    "question": "Robert Lustig calls sugar a toxin, but skeptical scientists point out that no one has pinned down a dose at which sugar flips from harmless treat to poison. They offer a plainer explanation for the harm sugar seems to cause. What do they say is really doing most of the damage?",
     "answer": "the easy extra calories sugar piles on",
     "choices": [
       "the easy extra calories sugar piles on",
@@ -22374,7 +22192,7 @@
   },
   {
     "tier": 1,
-    "question": "High in the mountains of South America, thousands of years ago, the ancestors of the Inca first dug up and farmed the potato. They still grow it today on steep slopes above 10,000 feet, in a dozen colors — purple, red, blue and yellow. In which of the world's great mountain ranges did the potato begin?",
+    "question": "The ancestors of the Inca first farmed the potato thousands of years ago, high in a great mountain range, and farmers there still grow it on steep slopes above 10,000 feet in a dozen colors: purple, red, blue and yellow. Which mountain range gave the world the potato?",
     "answer": "The Andes",
     "choices": [
       "The Andes",
@@ -22387,7 +22205,7 @@
   },
   {
     "tier": 2,
-    "question": "High in the Andes, farmers make a preserved potato called chuño. A chunk of chuño can sit in a village storehouse for years — sometimes a whole decade — without ever rotting, even though mold, yeast and bacteria are floating in the mountain air. The trick is the way it is processed. Andean nights freeze hard, then the strong daytime sun beats down. What is it about that freeze-then-sun cycle that beats the microbes?",
+    "question": "Andean farmers make a preserved potato called chuño that can sit in a village storehouse for years, by some accounts a whole decade, without rotting, though mold, yeast and bacteria float in the mountain air. How does chuño hold off the microbes?",
     "answer": "The freezing night bursts the potato's cells so the sun dries it out",
     "choices": [
       "The freezing night bursts the potato's cells so the sun dries it out",
@@ -22413,7 +22231,7 @@
   },
   {
     "tier": 3,
-    "question": "Andean cooks make two kinds of chuño, the freeze-dried potato of the high mountains. Dark 'black' chuño is simply frozen each night, thawed each day, and stomped underfoot to squeeze out the water. The paler 'white' chuño — called tunta or moraya in the Quechua and Aymara languages — gets one extra step before it dries. What is that step?",
+    "question": "In a high Andean village, two kinds of chuño dry side by side: dark black chuño, frozen each night and thawed each day, and paler white chuño, called tunta or moraya in Quechua and Aymara, which gets one extra step before drying in the sun. What is that step?",
     "answer": "Soaking them in running water",
     "choices": [
       "Soaking them in running water",
@@ -22426,7 +22244,7 @@
   },
   {
     "tier": 5,
-    "question": "Ireland's 1840s potato famine was also a disaster of the plant, because almost everyone grew one variety, the Lumper, and every single plant was a genetic clone of the next. When blight struck, not one could resist, and about one in eight Irish people died in three years. Why were the plants all identical clones in the first place?",
+    "question": "Irish farmers of the 1840s nearly all grew one potato variety, the Lumper, and every plant was a genetic clone of the next. When blight struck, not one could resist, and about one in eight Irish people died within three years. Why were the plants all identical clones in the first place?",
     "answer": "Potatoes are grown from cut-up tubers, not seeds",
     "choices": [
       "Potatoes are grown from cut-up tubers, not seeds",
@@ -22439,7 +22257,7 @@
   },
   {
     "tier": 1,
-    "question": "Dinner is a piece of chicken hot off the grill, a scoop of white rice, some buttered broccoli, and a drizzle of olive oil. After you eat, your body pulls ONE of these four apart into building blocks to repair your muscles, skin, and hair. Which food does the rebuilding?",
+    "question": "Dinner is a piece of chicken hot off the grill, a scoop of white rice, some buttered broccoli and a drizzle of olive oil. After the meal, the body takes one of the four apart into building blocks to repair muscle, skin and hair. Which food does the rebuilding?",
     "answer": "The grilled chicken",
     "choices": [
       "The grilled chicken",
@@ -22451,21 +22269,8 @@
     "topic": "the-balanced-plate-what-each-part-is-doing"
   },
   {
-    "tier": 2,
-    "question": "You toss a huge salad — spinach, carrots, sweet peppers — and eat it plain, nothing on top. A nutritionist watching you sighs. Most of the salad's best vitamins, especially vitamin A and vitamin K, are 'fat-soluble' — they only dissolve into your body when a little fat rides along with them. Without that fat they slide right through you. What one simple addition would let your body actually absorb them?",
-    "answer": "A drizzle of olive oil",
-    "choices": [
-      "A drizzle of olive oil",
-      "A squeeze of lemon",
-      "A shake of black pepper",
-      "A splash of vinegar"
-    ],
-    "context": "Vitamins A, D, E and K are the 'fat-soluble' vitamins -- the body absorbs and carries them like fats and stores them in the liver, fatty tissue and muscle, so they need dietary fat to get in. The drizzle of oil (or the fat in a dressing) is the truck that ferries them into you; a naked salad leaves much of them on the plate. Source: NIH MedlinePlus, 'Vitamins'; NCBI Bookshelf NBK218749, 'Fat-Soluble Vitamins'.",
-    "topic": "the-balanced-plate-what-each-part-is-doing"
-  },
-  {
     "tier": 3,
-    "question": "Bite into a cucumber and it is more than 90% water. Celery, lettuce and zucchini are nearly as watery. On Harvard's plate model of healthy eating, that fact is the quiet reason a dietician wants to see a whole heap of vegetables piled up — mounds of them, even. What does all that water inside the vegetables do for you?",
+    "question": "Suppose you heap your dinner plate with vegetables, as Harvard's Healthy Eating Plate encourages. A cucumber is more than 90 percent water, and celery, lettuce and zucchini are nearly as watery, which is the quiet reason the model wants so many. What does all that water do for you?",
     "answer": "It means a big heap of veggies carries almost no calories",
     "choices": [
       "It means a big heap of veggies carries almost no calories",
@@ -22477,21 +22282,8 @@
     "topic": "the-balanced-plate-what-each-part-is-doing"
   },
   {
-    "tier": 3,
-    "question": "A bowl of oats and a slice of white bread pack about the same amount of carbs, yet the oats hand you slow, steady energy while the white bread spikes your blood sugar and drops you an hour later. The oats are loaded with fiber. How does fiber keep that energy so steady?",
-    "answer": "It soaks up water into a thick gel that slows digestion down",
-    "choices": [
-      "It soaks up water into a thick gel that slows digestion down",
-      "It burns off first, before any of the sugars get their turn",
-      "It blocks the sugars from ever crossing into your blood",
-      "It turns the extra sugars into muscle-building protein"
-    ],
-    "context": "The difference between a 'smart' carb (oats, beans, a whole potato) and an 'empty' one (candy, white bread) is fiber. Soluble fiber attracts water and forms a gel that slows digestion, which blunts the blood-sugar surge after eating -- so the energy releases slowly instead of all at once. Source: Harvard T.H. Chan Nutrition Source, 'Fiber'.",
-    "topic": "the-balanced-plate-what-each-part-is-doing"
-  },
-  {
     "tier": 4,
-    "question": "In a 2005 study, scientists first fed volunteers a plain, fat-free salad. Then they served the same salad again with a single fruit sliced on top, and this time they measured over fifteen times as much beta-carotene absorbed from the salad's vegetables. Which fruit did they slice on top?",
+    "question": "Scientists at Ohio State fed volunteers a plain, fat-free salad in 2005, then served the same salad again with a single fruit sliced on top. This time they measured over fifteen times as much beta-carotene absorbed from the salad's vegetables. Which fruit had they sliced on top?",
     "answer": "Avocado",
     "choices": [
       "Avocado",
@@ -22504,7 +22296,7 @@
   },
   {
     "tier": 4,
-    "question": "When Harvard's nutrition scientists drew up their Healthy Eating Plate, they made one call that surprised everyone: they flatly refused to let the humble potato count as a vegetable. Meanwhile the American government's own picture, called MyPlate, still counts it as a veg. Harvard's reason is about what actually happens inside your body after you eat a plain baked or mashed potato. What is that reason?",
+    "question": "Harvard's nutrition scientists drew up their Healthy Eating Plate and made one surprising call: they flatly refused to count the humble potato as a vegetable, though the American government's own MyPlate still counts it. Harvard's reason is about what happens in the body after someone eats a plain baked or mashed potato. What is that reason?",
     "answer": "A plain potato is fast starch that spikes blood sugar like white bread",
     "choices": [
       "A plain potato is fast starch that spikes blood sugar like white bread",
@@ -22517,7 +22309,7 @@
   },
   {
     "tier": 1,
-    "question": "A hearty stew recipe tells you to cut the carrots into rough, bite-sized chunks. They do not need to match. Neatness truly does not matter — the pieces will bob around in the broth for an hour. Cooks name four everyday knife cuts, and one is this loose, anything-goes kind. Which of the four is it called?",
+    "question": "A stew pot bubbles with carrots cut in rough, bite-sized chunks that need not match, since they will bob around in the broth for an hour. Of the four everyday knife cuts, which is this loose, anything-goes one called?",
     "answer": "Chop",
     "choices": [
       "Chop",
@@ -22530,7 +22322,7 @@
   },
   {
     "tier": 1,
-    "question": "You're reading through a recipe and it tells you, 'Dice the potatoes.' In a professional kitchen, a dice is fussy about one thing: all the pieces must come out the same size, so they all cook at the exact same rate in the pan. What shape are you actually cutting when you dice?",
+    "question": "A trainee in a professional kitchen is told to dice the potatoes, and a dice is fussy about one thing: every piece must come out the same size, so all of them cook at the same rate in the pan. What shape is the trainee cutting?",
     "answer": "Neat little cubes",
     "choices": [
       "Neat little cubes",
@@ -22556,7 +22348,7 @@
   },
   {
     "tier": 3,
-    "question": "Watch trained cooks at the cutting board slicing a ripe tomato. You'll notice they never saw the knife back and forth the way a beginner does. Instead, for each flat, even round of tomato, they use just one long, smooth motion of the blade. What is that single motion?",
+    "question": "At the cutting board, a trained cook slices a ripe tomato into flat, even rounds and never saws the knife back and forth the way a beginner does. Each round takes a single stroke of the blade. What is that stroke?",
     "answer": "A smooth glide drawn from tip to heel",
     "choices": [
       "A smooth glide drawn from tip to heel",
@@ -22569,7 +22361,7 @@
   },
   {
     "tier": 4,
-    "question": "You're a beginner cook in a hurry chopping an onion. Some pieces come out as fat chunks, others as tiny paper-thin slivers. You toss the whole uneven pile into one hot, sizzling pan of oil over high heat. When the dish is done and you finally taste it, something has clearly gone wrong. What happened in the pan?",
+    "question": "A beginner cook in a hurry cuts an onion into fat chunks and paper-thin slivers and tosses the whole uneven pile into one hot, sizzling pan of oil over high heat. When the dish is done and tasted, something has clearly gone wrong. What happened in the pan?",
     "answer": "The tiny slivers scorched while the big chunks stayed raw",
     "choices": [
       "The tiny slivers scorched while the big chunks stayed raw",
@@ -22582,7 +22374,7 @@
   },
   {
     "tier": 4,
-    "question": "You're in a hurry cooking dinner and chop the vegetables fast and uneven — some fat chunks sit right next to paper-thin slivers. For most dishes that ruins the cook, because pieces of different sizes finish cooking at different times. But for one of these dishes, that mismatched chop doesn't matter one bit. Which one?",
+    "question": "Fat chunks beside paper-thin slivers: vegetables cut fast and uneven pile up on a hurried cook's board. For most dishes that ruins the cooking, because pieces of different sizes finish at different times, but for one dish the mismatch does not matter at all. Which dish is it?",
     "answer": "A pot of vegetable stock",
     "choices": [
       "A pot of vegetable stock",
@@ -22595,7 +22387,7 @@
   },
   {
     "tier": 5,
-    "question": "Here's the professional cook's secret for dicing an onion into perfect little cubes: you never try to carve cubes straight off the whole onion. You start by cutting the onion into flat slabs. But that's only step one — the slabs still need two more moves before you have cubes on the board. What are the next two steps, in order?",
+    "question": "A professional cook dicing an onion never tries to carve its pieces straight off the whole onion. The first move is to slice the onion into flat slabs, and the slabs still need two more moves before they are ready for the pan. What are the next two steps, in order?",
     "answer": "Cut the slabs into sticks, then crosscut the sticks into cubes",
     "choices": [
       "Cut the slabs into sticks, then crosscut the sticks into cubes",
@@ -22608,7 +22400,7 @@
   },
   {
     "tier": 1,
-    "question": "Line up four familiar fruits on a plate — a banana, a strawberry, a raspberry, and a cherry. To a botanist, a true berry is a fleshy fruit that grows from a single flower and holds its seeds inside its own soft flesh. By that strict botanical rule, only one of these four familiar fruits counts as a true 'berry.' Which fruit is it?",
+    "question": "A fruit bowl holds a banana, a strawberry, a raspberry and a cherry. To a botanist, a true berry is a fleshy fruit grown from a single flower that holds its seeds inside its own soft flesh, and only one of the four passes that strict test. Which fruit is it?",
     "answer": "The banana",
     "choices": [
       "The banana",
@@ -22621,7 +22413,7 @@
   },
   {
     "tier": 1,
-    "question": "Four fruits at the market have the word 'berry' built right into their names — strawberry, blackberry, raspberry and blueberry. But to botanists, the plant scientists, a true berry has to grow from a single flower's ovary with its seeds spread inside the flesh. By that rule, only one of these four passes the test. Which of them is the true botanical berry?",
+    "question": "Four fruits at a market stall carry the word 'berry' right in their names: strawberry, blackberry, raspberry and blueberry. To a botanist, a true berry grows from a single flower's ovary with its seeds spread through the flesh, and only one of the four passes. Which one?",
     "answer": "The blueberry",
     "choices": [
       "The blueberry",
@@ -22634,7 +22426,7 @@
   },
   {
     "tier": 2,
-    "question": "The banana in your lunchbox has no real seeds — just faint black specks down its middle you can eat right through. But its wild ancestor, still growing in the jungles of Southeast Asia, is crammed with big, hard, tooth-cracking seeds. Farmers didn't breed those seeds out. Something odder happens: the fruit swells and ripens on the tree without any pollination at all. Why does the sweet supermarket banana come out seedless?",
+    "question": "A child peels a lunchbox banana and eats right through the faint black specks down its middle, all that is left of its seeds. Its wild ancestor in the jungles of Southeast Asia is crammed with big, hard, tooth-cracking seeds, and farmers did not breed those seeds out. Why does the supermarket banana come out seedless?",
     "answer": "It swells and ripens without ever being fertilized.",
     "choices": [
       "It swells and ripens without ever being fertilized.",
@@ -22647,7 +22439,7 @@
   },
   {
     "tier": 2,
-    "question": "Here is the twist that stuns everyone in a botany class: the strawberry — the most 'berry'-sounding fruit of all — is not really a botanical berry. Bite into one and the sweet red part you are chewing isn't the fruit's ovary at all. It grew from a totally different piece of the flower, which puffed up huge, turned red and became the thing we eat. Which piece of the flower was it?",
+    "question": "A diner bites into a ripe strawberry, the most berry-sounding fruit of all, though a botanist will not call it a true berry. Its sweet red part is not the fruit's ovary; it grew from another piece of the flower, which puffed up huge and turned red. Which piece of the flower was it?",
     "answer": "The base the flower was sitting on.",
     "choices": [
       "The base the flower was sitting on.",
@@ -22660,7 +22452,7 @@
   },
   {
     "tier": 2,
-    "question": "Botanists count a grape, a kiwi, a chili pepper and an eggplant all as true berries — even though none of them looks like a supermarket berry. Two of these four are also close plant cousins of the tomato, all members of the 'nightshade' family (called Solanaceae by scientists), which shares a shape of flower and a family of chemicals. Which two of the four are the tomato's nightshade cousins?",
+    "question": "On a botanist's bench lie a grape, a kiwi, a chili pepper and an eggplant, all true berries, though none looks like a supermarket berry. Two of the four are also close cousins of the tomato in the nightshade family, Solanaceae, which shares one shape of flower and one family of chemicals. Which two?",
     "answer": "The chili pepper and the eggplant.",
     "choices": [
       "The chili pepper and the eggplant.",
@@ -22673,7 +22465,7 @@
   },
   {
     "tier": 3,
-    "question": "Rub your thumb across the outside of a strawberry and you can feel about 200 tiny dots freckling its red skin. Most people, if you asked them, would confidently say each little dot is a seed of the strawberry. But botanists — the scientists who study plants — see the strawberry very differently. Botanically, what is each of those tiny dots actually?",
+    "question": "A cook runs a thumb across a strawberry and feels about 200 tiny dots freckling its red skin, and most people would confidently call each one a seed. Botanists see those little dots very differently. What is each dot, botanically?",
     "answer": "A whole tiny fruit with one seed inside it.",
     "choices": [
       "A whole tiny fruit with one seed inside it.",
@@ -22686,7 +22478,7 @@
   },
   {
     "tier": 3,
-    "question": "Squeeze a ripe raspberry between your fingers and it crumbles into a dozen tiny, juicy beads. That's a giveaway sign that a raspberry isn't actually a true berry — a true berry, like a grape, would be one solid piece of flesh you'd bite through. So if the raspberry isn't a true berry, where did all those separate little juicy beads come from on the raspberry plant?",
+    "question": "A girl squeezes a ripe raspberry between her fingers, and it crumbles into a dozen tiny, juicy beads, a sign it is no true berry: a true berry, such as a grape, is one solid piece of flesh. Where did all those separate beads come from?",
     "answer": "One flower with many ovaries, one bead from each.",
     "choices": [
       "One flower with many ovaries, one bead from each.",
@@ -22699,7 +22491,7 @@
   },
   {
     "tier": 3,
-    "question": "An orange has a tough, oil-dotted peel you can dig your thumbnail into, and sweet, juice-filled segments packed tightly inside. It doesn't look anything like a blueberry or a grape — and yet, to a botanist, the orange belongs to the same broad class of fruit as those two. Which botanical class of fruit does the orange actually belong to?",
+    "question": "A boy digs a thumbnail into the tough, oil-dotted peel of an orange and pulls apart the sweet, juice-filled segments packed tightly inside. It looks nothing like a grape, yet a botanist files the orange in the same broad class of fruit as the grape. Which class is it?",
     "answer": "A berry — the citrus kind.",
     "choices": [
       "A berry — the citrus kind.",
@@ -22712,7 +22504,7 @@
   },
   {
     "tier": 4,
-    "question": "An avocado, surprisingly, is a true botanical berry — though a very strange one, wrapped around one enormous pit instead of many tiny seeds. When you slice one open and scoop out the soft, buttery green flesh with a spoon, what exactly is that green part in botanical terms?",
+    "question": "A cook slices an avocado open and scoops out its soft, buttery green flesh with a spoon. The avocado is a true botanical berry, though a strange one, wrapped around one enormous pit instead of many tiny seeds. In botanical terms, what is the green flesh?",
     "answer": "The ripened fruit wall around a single seed.",
     "choices": [
       "The ripened fruit wall around a single seed.",
@@ -22725,7 +22517,7 @@
   },
   {
     "tier": 4,
-    "question": "A watermelon can outweigh a bowling ball, and yet botanists file it into the very same fruit class as a tiny grape: the berry. Watermelons, cucumbers and pumpkins are a special hard-rind kind of berry called a pepo. That tough, striped rind is the whole reason a watermelon can grow so big without splitting open. Where does that rind actually come from as the fruit forms?",
+    "question": "A watermelon heavier than a bowling ball sits on a market table, yet botanists file it in the same class of fruit as a tiny grape: the berry. It is a hard-rinded berry called a pepo, like the cucumber and the pumpkin, and its tough, striped rind lets it grow huge without splitting. Where does that rind come from as the fruit forms?",
     "answer": "Flower tissue that fused and hardened over the ovary.",
     "choices": [
       "Flower tissue that fused and hardened over the ovary.",
@@ -22734,32 +22526,6 @@
       "The plant's stem, swollen into a stiff shell."
     ],
     "context": "That hard-shelled berry has its own name — a pepo, the gourd-family type. The rind forms from flower tissue fused over the ovary, and inside it's fleshy right through with no dividing walls, seeds scattered in the pulp. Cucumbers and pumpkins are pepos too. Source: Wikipedia, 'Pepo (botany)'.",
-    "topic": "the-berry-paradox-a-banana-is-a-berry-a-strawberry-isnt"
-  },
-  {
-    "tier": 4,
-    "question": "A pineapple looks like one single big fruit growing at the top of a spiky tropical plant. But check its rough skin closely: it's a spiral of dozens of hexagon-shaped patches, each with a little pointy tuft. Every hexagon is a clue to what a pineapple really is. What does that pattern of hexagons reveal about the pineapple?",
-    "answer": "Dozens of separate flowers fused into one fruit.",
-    "choices": [
-      "Dozens of separate flowers fused into one fruit.",
-      "One flower whose ovary split into many cells.",
-      "A single berry that cracked into scaly plates.",
-      "Rows of seeds pushing out through the skin."
-    ],
-    "context": "A pineapple is a 'multiple fruit': 50 to 200 separate flowers grew in a spiral and fused as they ripened, each hexagon-shaped patch marking one former flower. A mulberry forms the same way — which is why, despite its name, it isn't a true berry either. Source: Wikipedia, 'Accessory fruit'.",
-    "topic": "the-berry-paradox-a-banana-is-a-berry-a-strawberry-isnt"
-  },
-  {
-    "tier": 5,
-    "question": "In 1893 the US Supreme Court had to settle an argument: is a tomato a fruit or a vegetable? Botanically it's a fruit — even a berry — but importers paid a tax on vegetables and not on fruit. The justices ruled it a vegetable. What everyday reasoning did they use to decide?",
-    "answer": "It's eaten with dinner, not served as dessert.",
-    "choices": [
-      "It's eaten with dinner, not served as dessert.",
-      "It grows on a vine, the way vegetables do.",
-      "It has far too many seeds to be one fruit.",
-      "Its skin is too tough for a true fruit."
-    ],
-    "context": "Justice Horace Gray wrote the unanimous opinion in Nix v. Hedden (1893). Both sides had read dictionary definitions aloud in court, but the ruling turned on the kitchen: tomatoes 'are usually served at dinner in, with, or after the soup, fish, or meats... and not, like fruits generally, as dessert.' For the tariff, then, the tomato was legally a vegetable — kitchen sense beating botany. Sources: Wikipedia, 'Nix v. Hedden'; caselaw.findlaw.com, 149 U.S. 304.",
     "topic": "the-berry-paradox-a-banana-is-a-berry-a-strawberry-isnt"
   },
   {
@@ -26871,21 +26637,8 @@
     "topic": "the-saturated-fat-reversal"
   },
   {
-    "tier": 1,
-    "question": "Most cooking oils pour freely and are mostly unsaturated fat. But one common oil breaks the pattern: in a cool kitchen it turns solid and waxy. About 87% of its fat is saturated, higher even than butter or lard. Which oil is the odd one out?",
-    "answer": "coconut oil",
-    "choices": [
-      "coconut oil",
-      "soybean oil",
-      "sunflower oil",
-      "olive oil"
-    ],
-    "context": "Coconut oil is the odd one out: it's a PLANT fat, yet about 87% of its fat is saturated — higher than butter or lard — which is why it turns solid or semi-solid at room temperature like animal fat instead of pouring like other vegetable oils. Source: Wikipedia, 'Saturated fat.'",
-    "topic": "the-saturated-fat-reversal"
-  },
-  {
     "tier": 2,
-    "question": "A food lab measured the saturated-fat content of four everyday cooking fats — butter from a dairy cow, lard rendered from a pig, beef tallow from a steer, and olive oil pressed from Mediterranean olives. Traditional cooks have used all four for centuries. When the numbers came back, one of the four turned out to be the most saturated of the group. Which one was it?",
+    "question": "Four fats sit side by side in a cook's pantry: butter from a dairy cow, lard rendered from a pig, tallow from a steer and olive oil pressed from Mediterranean olives. Traditional cooks have used all four for centuries. Which of them holds the biggest share of saturated fat?",
     "answer": "butter",
     "choices": [
       "butter",
@@ -26898,20 +26651,7 @@
   },
   {
     "tier": 3,
-    "question": "For decades, doctors warned Americans that eating butter, cheese, and red meat caused heart attacks. That old fear of saturated fat has since been softened -- even scientists who study nutrition today say it was overblown. But they still agree the earlier view got one thing right: eating a lot of saturated fat reliably pushes up one of the measurements your doctor takes at a routine checkup. Which one climbs?",
-    "answer": "LDL cholesterol",
-    "choices": [
-      "LDL cholesterol",
-      "blood sugar",
-      "blood pressure",
-      "triglycerides"
-    ],
-    "context": "The mechanism behind the old advice is real and still holds: saturated fat raises LDL cholesterol (the 'bad' kind). The AHA states its rationale rests on the 'well-established effects of saturated fat to raise low-density lipoprotein (LDL) cholesterol, a leading cause of atherosclerosis.' Source: Wikipedia, 'Saturated fat and cardiovascular disease,' quoting the AHA.",
-    "topic": "the-saturated-fat-reversal"
-  },
-  {
-    "tier": 3,
-    "question": "In 1958, American researcher Ancel Keys set out to prove that saturated fat was clogging people's arteries. He launched a huge, long-running project. It tracked the diets and heart health of thousands of middle-aged men, and became the scientific backbone of the anti-fat era. What is that landmark study remembered as today?",
+    "question": "Ancel Keys, an American researcher, set out in 1958 to prove that saturated fat was clogging people's arteries. He launched a huge, long-running project that tracked the diets and heart health of thousands of middle-aged men, and it became the scientific backbone of the anti-fat era. What is that study remembered as today?",
     "answer": "the Seven Countries Study",
     "choices": [
       "the Seven Countries Study",
@@ -26924,7 +26664,7 @@
   },
   {
     "tier": 4,
-    "question": "'Bad' LDL (low-density lipoprotein) cholesterol isn't a single thing. It travels through the blood as particles of different sizes and densities. Researchers who sorted those particles found that a diet high in saturated fat nudges a person's LDL toward one particular kind. Which kind does saturated fat tend to produce?",
+    "question": "Researchers sorting the low-density lipoprotein (LDL) cholesterol in people's blood, the kind called 'bad,' saw that it travels as particles of different sizes and densities. A diet high in saturated fat, they found, nudges a person's LDL toward one particular kind. Which kind does saturated fat tend to produce?",
     "answer": "large, fluffy particles",
     "choices": [
       "large, fluffy particles",
@@ -26936,21 +26676,8 @@
     "topic": "the-saturated-fat-reversal"
   },
   {
-    "tier": 4,
-    "question": "Here's the bitter irony of the anti-butter decades. To protect their hearts, people switched to margarine and shortening, which were made by forcing hydrogen through liquid vegetable oil until it stiffened into a solid block. That process reworked the oil's fat molecules. What kind of fat was hiding in the old margarine?",
-    "answer": "trans fat",
-    "choices": [
-      "trans fat",
-      "saturated fat",
-      "monounsaturated fat",
-      "polyunsaturated fat"
-    ],
-    "context": "People told to ditch butter for margarine were often getting something worse. Early margarine and shortening were made with partially hydrogenated oils loaded with TRANS fat — the one fat later research pinned clearly to heart disease. Chowdhury's 2014 meta-analysis found trans fat carried about 16% higher coronary risk while saturated fat showed essentially no clear link — the fat everyone feared and the fat that replaced it had swapped roles. Source: diet-history sources on hydrogenated-oil margarine; Chowdhury R et al. 2014, Annals of Internal Medicine.",
-    "topic": "the-saturated-fat-reversal"
-  },
-  {
     "tier": 5,
-    "question": "In 2010, nutrition researcher Patty Siri-Tarino and her team pooled 21 separate studies covering nearly 348,000 people -- the biggest test yet of whether saturated fat drives heart disease. Decades of official U.S. dietary advice, warning people off butter and red meat, all hung on what the numbers said. What did the analysis actually report?",
+    "question": "Patty Siri-Tarino, a nutrition researcher, and her team pooled 21 separate studies covering nearly 348,000 people in 2010, the biggest test yet of whether saturated fat drives heart disease. Decades of official U.S. dietary advice, warning people off butter and red meat, all hung on what the numbers said. What did the analysis report?",
     "answer": "no clear link between saturated fat and heart disease",
     "choices": [
       "no clear link between saturated fat and heart disease",
@@ -26963,7 +26690,7 @@
   },
   {
     "tier": 5,
-    "question": "The reversal didn't go unchallenged. In 2017 the American Heart Association (AHA) fired back with a major report, pointing to careful trials where people who replaced butter and lard with a certain oil cut their heart-disease risk by about a third — a drop the AHA compared to taking a cholesterol-lowering statin. Which oil earned that praise?",
+    "question": "The American Heart Association fired back at the critics of the old advice in 2017, pointing to careful trials in which volunteers who replaced the butter and lard in their diets with one kind of oil cut their heart-disease risk by about a third. The association likened that drop to taking a cholesterol-lowering statin. Which oil earned that praise?",
     "answer": "polyunsaturated vegetable oil",
     "choices": [
       "polyunsaturated vegetable oil",
