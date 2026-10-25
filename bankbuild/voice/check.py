@@ -13,7 +13,8 @@ Reads bNNN_in.json, bNNN_changes.json and bNNN_notes.json and FAILS when:
   * a question is deleted without being absorbed in a merge;
   * a twin group of the packet is neither merged nor listed in "not_twins";
   * a new stem shares a run of 6 or more words with its topic's card (the
-    card would then fail its own gate: it must never copy a stem);
+    card would then fail its own gate: it must never copy a stem), outside
+    a sentence both of them quote;
   * the change file adds or re-topics questions (not part of this pass);
   * `stage check` fails (the subject's quizgen gates, the bank ratchets and
     the house-voice lint, on every changed question).
@@ -26,7 +27,7 @@ import sys
 from bankbuild.cards import stage
 from bankbuild.cards.gate import _sentence_ngrams
 from bankbuild.voice.common import bpath, load_changes, load_notes, read_json, stem_hash
-from bankbuild.voice.lint import lint_stem
+from bankbuild.voice.lint import _QUOTED, lint_stem
 
 
 _LIVE: dict[str, dict] = {}
@@ -113,7 +114,12 @@ def problems(subject: str, batch: int) -> list[str]:
                     errs.append(f'merge {h}: choice "{c[:50]}" is not from the group')
             if new.get('tier', q['tier']) != m.get('tier'):
                 errs.append(f'merge {h}: the new question\'s tier must be the merge\'s tier')
-        shared = _sentence_ngrams(stem, 6) & _sentence_ngrams(card_of.get(t, ''), 6)
+        # A sentence both quote (a grammar example under test, a title, a
+        # famous line) is the thing being asked about, not a copy.
+        quoted = set()
+        for seg in _QUOTED.findall(stem):
+            quoted |= _sentence_ngrams(seg, 6)
+        shared = (_sentence_ngrams(stem, 6) & _sentence_ngrams(card_of.get(t, ''), 6)) - quoted
         if shared:
             errs.append(f'{h} ({t}): the stem copies 6 words of its card: '
                         f'"{" ".join(sorted(shared)[0])}"')
@@ -134,11 +140,44 @@ def problems(subject: str, batch: int) -> list[str]:
     return errs
 
 
+def giveaways(subject: str, batch: int) -> list[str]:
+    """Warnings: a stem that prints ANOTHER rung's keyed answer (a reader who
+    meets both gets one free). A name most of the ladder's stems carry (its
+    own subject, Medea in Medea's ladder) is not counted."""
+    import re
+    pkt = read_json(bpath(subject, batch, 'in'))
+    ch = load_changes(subject, batch)
+    rep = {r['hash']: r.get('new') or {} for r in ch.get('replace') or []}
+    deleted = set(ch.get('delete') or [])
+    out = []
+    for t in pkt['topics']:
+        rungs = []
+        for q in t['questions']:
+            if q['hash'] in deleted:
+                continue
+            new = rep.get(q['hash'], {})
+            rungs.append((q['hash'], new.get('question', q['stem']), new.get('answer', q['answer']),
+                          new.get('choices', q['choices'])))
+        for h, _stem, ans, _ch in rungs:
+            core = re.sub(r'^(the|a|an)\s+', '', str(ans).strip(), flags=re.I).lower()
+            if len(core) < 4:
+                continue
+            rx = re.compile(r'(?<![\w-])' + re.escape(core) + r'(?![\w-])')
+            hits = [(h2, s2) for h2, s2, _a, c2 in rungs
+                    if h2 != h and rx.search(s2.lower()) and ans not in c2]
+            if hits and len(hits) < max(2, len(rungs) // 2):
+                for h2, _s2 in hits:
+                    out.append(f'{h2} ({t["topic"]}): the stem prints "{ans}", the answer of {h}')
+    return out
+
+
 def main() -> None:
     subject, batch = sys.argv[1], int(sys.argv[2])
     errs = problems(subject, batch)
     for e in errs:
         print('  FAIL', e)
+    for w in giveaways(subject, batch):
+        print('  warn', w, '(cut it if nothing else is lost)')
     ch = load_changes(subject, batch)
     n_stage = stage.check(subject, [ch]) if ch else 0
     total = len(errs) + n_stage

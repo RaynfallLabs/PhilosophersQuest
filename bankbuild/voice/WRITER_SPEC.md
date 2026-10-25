@@ -51,7 +51,7 @@ For every question that survives (merged or not):
 - Follow `docs/quiz/HOUSE_VOICE.md`: the Chronicler, third person; scene, then the facts the question needs, then one short question; the person or the scene first, never the date; no "you" except in a "Suppose you..." thought experiment; the length band for the tier; no banned tics.
 - **Keep:** the fact asked, everything a reader needs to pick the key over its three wrong answers, and the vivid detail that makes the fact memorable.
 - **Cut:** encyclopedia labels ("the American economist"), throat-clearing, repetition, hype, and anything the question doesn't need.
-- **No new facts.** Every claim must come from the old stem, its context, or the card. If you are not sure a detail is true, leave it out.
+- **No new facts.** Every claim must come from the old stem or the card (see the pilot lessons below on contexts). If you are not sure a detail is true, leave it out.
 - **Don't give the answer away:** no word of the key that isn't in a wrong answer too, no printed answer, acronyms spelled out ("the Royal Mail Ship Norham Castle", not "(RMS)").
 - **Don't copy the card.** A new stem may not share a run of 6 or more words with its ladder's card (the card would then fail its own gate). Retell; don't lift.
 - **One ladder, one voice and one tense:** read your rewritten ladder top to bottom. It should sound like one storyteller telling one story.
@@ -74,6 +74,16 @@ Then read every rewritten ladder once more as a cold reader: is each question st
 - Do not start any sub-agents. Work alone.
 - If the console shows `â€"` or `?` for dashes, that is the console: set `PYTHONIOENCODING=utf-8`. The data files are clean UTF-8.
 - A question that looks wrong (a false key, a stem that contradicts its context, a wrong answer that is also right): don't fix the fact; list it in `question_errors`.
+
+## Lessons from the pilot (2026-10-24)
+- **Facts come from the old stem or the card.** The `context` is a checked explanation the player reads only after answering, and the judge cannot see it, so a stem detail taken from it alone cannot be verified: leave it out.
+- **Hedges are facts too.** "Is thought to have", "historians reckon", "may", "has been documented" stay in the rewrite. Turning a hedge into a flat claim ("his work shortened the war") changes the fact.
+- **Quantifiers are facts.** "Others" is not "the rest"; "some" is not "all"; "about 6,000" is not "6,000". A rewrite that tightens a quantifier changes the fact (a science stem turned "others" into "the rest" and became false).
+- **No comparisons the sources don't make.** Don't reach for a parallel from another story to add colour (a theology stem added Noah's forty days of rain; it was in neither the old stem nor the card, and "Forty" was a wrong answer).
+- **A merge must lose nothing the card teaches on its own.** Before merging, check the card: if it teaches the two keys as two separate facts, they are not twins (list them in `not_twins`). Two Feuerbach rungs the earlier judges paired turned out to be two facts.
+- **Tier of a merged question:** rate it as if the reader had NOT read the card (the card teaches every answer, so "the card makes it easy" says nothing). How much must a 15-year-old know, or how far must he reason?
+- **Giveaways between rungs:** `check` warns when a stem prints another rung's answer ("the stem prints X, the answer of <hash>"). Cut the giveaway wherever nothing the question needs is lost. The ladder's own subject (Medea in Medea's ladder) may stay.
+- **Don't open two stems of a ladder the same way.** Vary the scene; a ladder whose stems all begin "Friedrich Hayek..." reads like a list.
 
 ## Your final message
 One line per ladder: `<topic>: N rewritten, N unchanged, N merged away` (plus anything you could not fix), then the check's summary line, then the question errors.

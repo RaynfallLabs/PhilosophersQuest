@@ -79,8 +79,12 @@ def strip_quoted(text: str) -> str:
     return _QUOTED.sub('""', text)
 
 
+_SENTENCE_END = re.compile(r"""(?:(?<=[.!?])|(?<=[.!?]['"’”]))\s+""")
+
+
 def last_sentence(text: str) -> str:
-    parts = [p for p in re.split(r'(?<=[.!?])\s+', text.strip()) if p]
+    # A sentence can end inside a quotation: "...supply money?' An economist..."
+    parts = [p for p in _SENTENCE_END.split(text.strip()) if p]
     return parts[-1] if parts else text
 
 

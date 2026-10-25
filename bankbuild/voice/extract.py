@@ -1,9 +1,10 @@
 """Cut a subject's ladders into voice-pass writer batches.
 
-    py -m bankbuild.voice.extract <subject> [--size 25] [--topics a,b,c] [--limit N]
+    py -m bankbuild.voice.extract <subject> [--size 25] [--max-q 180] [--topics a,b,c] [--limit N]
 
 Ladders joined by a same-fact twin group (data/question_twins.json) always
-land in the same batch, so one writer decides each merge. Topics already
+land in the same batch, so one writer decides each merge. A batch holds at
+most --size ladders and --max-q questions (a twin component may exceed them). Topics already
 done, or already in an extracted batch, are skipped, so re-running is safe.
 Each batch gets the next free number. Writes _voice/<subject>/bNNN_in.json.
 """
@@ -71,6 +72,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('subject')
     ap.add_argument('--size', type=int, default=25)
+    ap.add_argument('--max-q', type=int, default=180)
     ap.add_argument('--topics', default='')
     ap.add_argument('--limit', type=int, default=0, help='at most this many batches')
     a = ap.parse_args()
@@ -106,7 +108,9 @@ def main() -> None:
     for c in comps:
         if a.limit and len(made) >= a.limit:
             break
-        if cur and len(cur) + len(c) > a.size:
+        nq_cur = sum(len(lad[t]) for t in cur)
+        nq_c = sum(len(lad[t]) for t in c)
+        if cur and (len(cur) + len(c) > a.size or nq_cur + nq_c > a.max_q):
             flush()
             if a.limit and len(made) >= a.limit:
                 break
