@@ -2419,7 +2419,7 @@
   },
   {
     "tier": 1,
-    "question": "When a baker mixes flour, water, and yeast, the tiny living yeast cells feed on sugars in the dough and burp out carbon dioxide gas. That gas puffs the dough up as it rises, and the oven's heat sets the puffy shape in place. Tear open a fresh slice of bread and it's full of little holes. What actually made each of those holes?",
+    "question": "A covered bowl of yeasted dough sits in a warm corner, and within an hour, before it ever sees the oven, it has swelled to twice its size. Sliced after baking, the loaf is full of little holes. What made each hole?",
     "answer": "Bubbles of gas trapped as the dough baked",
     "choices": [
       "Bubbles of gas trapped as the dough baked",
@@ -2427,38 +2427,25 @@
       "Drops of oil that soaked into the crust",
       "Grains of flour that never mixed in"
     ],
-    "context": "The holes you see in a slice of bread ARE those gas bubbles — as the dough bakes and sets, thousands of tiny pockets of gas get trapped inside. Source: https://askdruniverse.wsu.edu/2026/04/30/bread-expand-oven/",
+    "context": "The holes in a slice of bread ARE gas bubbles. Left in a warm bowl, dough roughly doubles before it ever reaches the oven as countless tiny bubbles of gas form and inflate it like a balloon; as the dough bakes and sets, those thousands of tiny pockets of gas get trapped inside. Source: https://askdruniverse.wsu.edu/2026/04/30/bread-expand-oven/; https://en.wikipedia.org/wiki/Baker%27s_yeast",
     "topic": "bread-rises-the-gas-trapped-in-the-loaf"
   },
   {
     "tier": 1,
-    "question": "Cut open a fresh loaf of bread and you'll see the inside dotted with hundreds of tiny bubbles — the crumb is more hole than dough. Those little pockets of air are trapped there because a gas was blowing bubbles inside the dough as it rose and baked. It happens to be the exact same gas that fizzes up out of a soda can when you first crack it open, and the same gas that you push out of your lungs with every single breath. What gas is it?",
+    "question": "Yeast feeding in a bowl of bread dough gives off a gas as it eats. The very same gas fizzes out of a soda can the moment it is cracked open, and every person breathes it out with each breath. What gas is it?",
     "answer": "Carbon dioxide",
     "choices": [
       "Carbon dioxide",
       "Water vapor",
-      "Pure oxygen",
-      "Natural gas"
+      "Oxygen",
+      "Hydrogen"
     ],
     "context": "It's carbon dioxide (CO2) — the very same gas that fizzes in soda and the gas people breathe out. Source: https://en.wikipedia.org/wiki/Leavening_agent",
     "topic": "bread-rises-the-gas-trapped-in-the-loaf"
   },
   {
     "tier": 2,
-    "question": "A baker stirs a spoonful of dry, sandy-looking yeast granules into a bowl of warm, sugary flour-and-water dough and covers it with a clean towel. She comes back an hour later and the lump has swollen up to nearly twice its size — no heat added, no mixing, nothing done to it. Yeast can pull off that little miracle inside the bowl because those grains are not really dead powder at all. Yeast is actually ___.",
-    "answer": "a tiny living fungus",
-    "choices": [
-      "a tiny living fungus",
-      "a ground-up mineral",
-      "a dried plant powder",
-      "a man-made chemical"
-    ],
-    "context": "Yeast is a living, single-celled fungus (Saccharomyces cerevisiae). It eats the sugars in the dough and 'burps out' carbon dioxide — a process scientists call fermentation. Source: https://askdruniverse.wsu.edu/2026/04/30/bread-expand-oven/",
-    "topic": "bread-rises-the-gas-trapped-in-the-loaf"
-  },
-  {
-    "tier": 2,
-    "question": "Saccharomyces cerevisiae is the scientific name of the single-celled fungus a baker just calls yeast — the tiny living thing that lifts a loaf of bread in the oven and gives your morning toast its airy crumb. That very same species, in a slightly different strain, has been used by humans for at least six thousand years to power one other ancient craft that turns grain into a beloved drink. Which craft is it?",
+    "question": "Baker's yeast, stirred by the spoonful into bread dough, is alive: its tiny cells lift the loaf and give the toast its airy crumb. People have put the same species, in a slightly different strain, to work for at least six thousand years in one other ancient craft. Which craft is it?",
     "answer": "Brewing beer",
     "choices": [
       "Brewing beer",
@@ -2471,20 +2458,20 @@
   },
   {
     "tier": 3,
-    "question": "A baker takes a lump of wheat flour and water and kneads it on the counter for ten minutes. As she works, something remarkable happens: the shaggy paste turns springy and elastic. Now the dough can trap tiny bubbles of carbon dioxide gas that the yeast makes, instead of letting the gas leak away — and that's what makes bread rise. Kneading has stitched together a stretchy protein network inside the dough. What is that network called?",
-    "answer": "Gluten",
+    "question": "Ten minutes of kneading on the counter turn a shaggy lump of wheat flour and water springy and stretchy. Yeast will fill it with gas, and gas on its own slips away like the fizz from an open soda. Yet the loaf puffs up and holds its shape. What in the dough catches every bubble?",
+    "answer": "Gluten, an elastic web of protein",
     "choices": [
-      "Gluten",
-      "Gelatin",
-      "Keratin",
-      "Collagen"
+      "Gluten, an elastic web of protein",
+      "Starch, a chain of stored sugar",
+      "Bran, the grain's rough outer coat",
+      "Salt, a scatter of fine crystals"
     ],
-    "context": "It's gluten — the stretchy protein net that forms when you knead wheat dough. It wraps around every gas bubble like balloon skin, holding the gas in so the dough rises instead of leaking. Source: https://en.wikipedia.org/wiki/Gluten",
+    "context": "Kneading wheat dough links the flour's proteins into gluten, an elastic web of protein that wraps around every gas bubble like balloon skin. On its own the gas would just escape like soda bubbles; with nowhere else to go, the trapped gas pushes the dough upward. Yeast makes the gas; gluten holds it in. Source: https://en.wikipedia.org/wiki/Gluten; https://www.thekitchn.com/the-science-behind-yeast-and-how-it-makes-bread-rise-226483",
     "topic": "bread-rises-the-gas-trapped-in-the-loaf"
   },
   {
     "tier": 3,
-    "question": "Walk down the baking aisle and flour comes in two grades. Flour meant for bread is sold as 'strong' flour, and flour for delicate cakes and pastries is sold as 'weak' flour. The difference between the two is how much of one particular ingredient each type contains. The stronger the flour, the more of that ingredient — and the taller and chewier the finished loaf turns out. More of what?",
+    "question": "A baker reaches for a bag marked 'strong' flour when she makes bread, and for a bag marked 'weak' flour when she makes delicate cakes and pastries. The two differ in how much of one ingredient each holds: the stronger the flour, the more of it, and the taller and chewier the finished loaf. More of what?",
     "answer": "Protein",
     "choices": [
       "Protein",
@@ -2496,21 +2483,21 @@
     "topic": "bread-rises-the-gas-trapped-in-the-loaf"
   },
   {
-    "tier": 4,
-    "question": "Baker's yeast is a tiny living fungus. When it eats sugar in bread dough, it burps out bubbles of carbon dioxide gas — and those bubbles are what make a loaf rise. Here's a surprise, though: yeast also makes a second product at the same time. It's the very same stuff that gives beer and wine their kick. And yet a warm fresh loaf of bread won't make anyone the least bit tipsy. Why doesn't that alcohol ever reach you?",
+    "tier": 2,
+    "question": "Bread dough gives off two things at once as its yeast feasts on the sugars: bubbles of gas that puff the loaf up, and a little ethanol, the very alcohol that gives wine and beer their kick. Yet a warm slice of fresh-baked bread never leaves anyone the least bit tipsy. Why not?",
     "answer": "The alcohol bakes off in the oven's heat",
     "choices": [
       "The alcohol bakes off in the oven's heat",
+      "The crust seals the alcohol deep inside the loaf",
       "The flour soaks up all of the alcohol",
-      "The yeast dies before making any",
-      "The salt cancels the alcohol out"
+      "The salt in the dough neutralizes the alcohol"
     ],
     "context": "As yeast ferments it makes a little ethanol (alcohol) alongside the CO2, but the oven's heat evaporates it, leaving only the fresh-bread smell — so a finished loaf isn't alcoholic. Source: https://en.wikipedia.org/wiki/Baker%27s_yeast",
     "topic": "bread-rises-the-gas-trapped-in-the-loaf"
   },
   {
     "tier": 4,
-    "question": "Slide a loaf of shaped bread dough into a hot oven and it will do something dramatic in the first few minutes: it lurches upward, sometimes rising half again as tall before the crust finally sets. Bakers call that final surge 'oven spring,' and here is the surprise — the yeast is not working extra hard right then. The yeast is actually being killed off by the heat within the first minute or two. So what really drives oven spring?",
+    "question": "A shaped loaf slides into a hot oven, and in the first few minutes it lurches upward, sometimes half again as tall, before the crust finally sets. Bakers call that last surge 'oven spring.' The yeast is not working extra hard just then: the heat is killing it off within a minute or two. What drives the surge?",
     "answer": "The trapped gas expands as it heats up",
     "choices": [
       "The trapped gas expands as it heats up",
@@ -2523,7 +2510,7 @@
   },
   {
     "tier": 4,
-    "question": "Around 3000 BCE, in the fertile valley of the Nile, ancient Egyptian bakers turned out the first bread in history that truly rose — puffed-up airy loaves, not the flat, crackery bread their neighbors baked. They had no packet of dried yeast to sprinkle in, no printed recipe passed down from a cookbook, and no chemistry to teach them. So how did their flat dough first learn to puff up all on its own?",
+    "question": "Egyptian bakers in the valley of the Nile, around 3000 BCE, turned out the first bread in history that truly rose: airy, puffed-up loaves, not the flat, crackery bread their neighbors baked. They had no packet of dried yeast, no recipe and no chemistry to guide them. How did their flat dough first come to puff up on its own?",
     "answer": "They left it out and wild yeast drifted in to raise it",
     "choices": [
       "They left it out and wild yeast drifted in to raise it",
@@ -2535,34 +2522,8 @@
     "topic": "bread-rises-the-gas-trapped-in-the-loaf"
   },
   {
-    "tier": 5,
-    "question": "Bread made with yeast has to sit for hours to rise. But a batch of pancakes or a tray of muffins can puff up in the few minutes it takes a hot pan or oven to warm through — no waiting required. That's because pancake and muffin recipes use baking soda or baking powder in place of yeast, and those two ingredients make their carbon dioxide gas a completely different way than a living yeast does. How does baking soda produce its gas in the batter?",
-    "answer": "A chemical reaction the instant they get wet",
-    "choices": [
-      "A chemical reaction the instant they get wet",
-      "A faster living microbe than yeast",
-      "Air bubbles beaten in with a fork",
-      "Steam squeezed out by the pan"
-    ],
-    "context": "Baking soda and baking powder are chemical leaveners: an acid-base reaction fizzes out carbon dioxide the instant the batter gets wet (and hot). It's the same gas yeast makes — but with no living microbe and no waiting. Source: https://en.wikipedia.org/wiki/Baking_powder",
-    "topic": "bread-rises-the-gas-trapped-in-the-loaf"
-  },
-  {
-    "tier": 5,
-    "question": "Not every bread is meant to rise. Matzah is the flat, dry, cracker-like bread that Jewish families eat during Passover every spring, and it's made deliberately without any rising time at all. According to the Book of Exodus in the Hebrew Bible, matzah first came out flat because of an emergency: the Israelites had to leave in a huge hurry, and their dough never got the chance to puff up. What was that emergency?",
-    "answer": "The Israelites fled Egypt before the dough could rise",
-    "choices": [
-      "The Israelites fled Egypt before the dough could rise",
-      "The desert air was too dry to leaven any dough",
-      "An angry pharaoh had outlawed all risen bread",
-      "The grain was ground too coarse to trap gas"
-    ],
-    "context": "Matzah is unleavened — the 'bread of affliction' (lechem oni). The Bible recounts that the Israelites fled Egypt in such haste their dough had no time to rise, so it baked flat; Jews eat it at Passover to remember the Exodus. Source: https://en.wikipedia.org/wiki/Matzah  (Legend.)",
-    "topic": "bread-rises-the-gas-trapped-in-the-loaf"
-  },
-  {
     "tier": 2,
-    "question": "Jean Anthelme Brillat-Savarin lived in France from 1755 to 1826. He was never a cook by trade — he worked as a lawyer and a judge. What Brillat-Savarin truly loved was fine food, and he wrote a famous book about eating called The Physiology of Taste. About a century after he died, a group of French dairy makers honored him by naming one of their richest, most prized foods after him. What food carries the Brillat-Savarin name today?",
+    "question": "Jean Anthelme Brillat-Savarin earned his living as a French lawyer and judge, never as a cook, yet he loved fine food and wrote a famous book about eating. About a century after his death, a Paris family of shopkeepers renamed one of the richest, most prized foods they sold after him. What food carries his name today?",
     "answer": "a triple-cream cheese",
     "choices": [
       "a triple-cream cheese",
@@ -2575,7 +2536,7 @@
   },
   {
     "tier": 2,
-    "question": "When the Reign of Terror forced Brillat-Savarin to flee France in 1793, he spent nearly three years exiled in America. In the Connecticut woods he shot a wild bird and praised it warmly. He even asked Thomas Jefferson how to cook one. Which bird had he fallen for?",
+    "question": "Brillat-Savarin fled France in 1793, escaping the Reign of Terror, and spent nearly three years in exile in America. In the woods of Connecticut he shot a wild bird and praised it warmly, and by one account he even asked Thomas Jefferson how to cook one. Which bird had he fallen for?",
     "answer": "a wild turkey",
     "choices": [
       "a wild turkey",
@@ -2588,7 +2549,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1844, Parisian pastry chefs baked a ring-shaped yeast cake, soaked it in sweet syrup until every crumb was moist, and named it the savarin -- a tribute to the great gourmand. That syrup is what gives the cake its signature flavor. What is a classic savarin steeped in?",
+    "question": "Two Paris pastry chefs, the Julien brothers, baked a ring-shaped yeast cake in 1844, soaked it in sweet syrup until every crumb was moist, and named it the savarin after the great gourmand. That syrup gives the cake its signature flavor. What is a classic savarin steeped in?",
     "answer": "a rum syrup",
     "choices": [
       "a rum syrup",
@@ -2601,7 +2562,7 @@
   },
   {
     "tier": 3,
-    "question": "A savarin is baked in its own special ring-shaped mould, so it comes out of the oven with a neat hollow well right in the middle. That empty center isn't a mistake -- it's there to be filled at the table. What do pastry chefs traditionally spoon into a savarin's hollow?",
+    "question": "A pastry chef turns a savarin out of its special ring-shaped mould, and the cake comes away with a neat, hollow well right in the middle. That empty center is no mistake: it is there to be filled at the table. What do pastry chefs traditionally spoon into the hollow?",
     "answer": "a mound of whipped cream",
     "choices": [
       "a mound of whipped cream",
@@ -2614,7 +2575,7 @@
   },
   {
     "tier": 4,
-    "question": "One line is still quoted at dinner tables to this day: 'Tell me what you eat, and I will tell you what you are.' It comes from an 1825 book by Jean Anthelme Brillat-Savarin, often called the most famous food book ever written -- because it was the first to do something no author had dared. What was that?",
+    "question": "'Tell me what you eat, and I will tell you what you are,' Brillat-Savarin wrote in his 1825 book, and dinner tables still quote the line today. The book is often called the most famous food book ever written, because it was the first to do something no author had dared. What was that?",
     "answer": "treat eating as a serious art worth studying",
     "choices": [
       "treat eating as a serious art worth studying",
@@ -2640,7 +2601,7 @@
   },
   {
     "tier": 1,
-    "question": "Walk down the produce aisle at the grocery store and you'll see head cabbage, kale, broccoli, cauliflower, and Brussels sprouts, each vegetable sitting in its own bin under its own name and its own price tag. They look completely different from one another. A plant scientist, though, would drop a real bombshell on the shopper: every last one of these five very different-looking vegetables is really ___?",
+    "question": "Head cabbage, kale, broccoli, cauliflower and Brussels sprouts each sit in their own bin at the grocery store, under their own name and price tag, and they look nothing alike. A plant scientist sees all five very differently. What are they really?",
     "answer": "one and the same species of plant",
     "choices": [
       "one and the same species of plant",
@@ -2653,7 +2614,7 @@
   },
   {
     "tier": 2,
-    "question": "The wild ancestor of all the brassica vegetables — the head cabbage, the broccoli, the kale, the cauliflower, and the Brussels sprout — still grows on its own along the chalky sea cliffs of northern Europe, especially the coasts of Britain and France. Botanists just call it 'wild cabbage.' Before European farmers spent thousands of years slowly reshaping it into all of those different modern vegetables, what did the wild plant actually look like out on the cliffs?",
+    "question": "Wild cabbage, the ancestor of head cabbage, broccoli, kale, cauliflower and the Brussels sprout, still grows on its own on the chalky sea cliffs of northern Europe. Before farmers reshaped it into all those vegetables, what did the wild plant look like out on the cliffs?",
     "answer": "a leggy, sprawling weed, like an overgrown kale plant",
     "choices": [
       "a leggy, sprawling weed, like an overgrown kale plant",
@@ -2666,7 +2627,7 @@
   },
   {
     "tier": 2,
-    "question": "Wild cabbage is the tough ancestor of every head of cabbage, broccoli, and kale you see in a grocery store. It's a picky survivor: it shrugs off salty sea spray and chalky white lime that would kill most other plants, but it cannot stand being crowded out by grasses or shrubs. So it grows in one very specific habitat: the bright white chalk cliffs on both sides of a single famous body of water in northern Europe. Which sea does wild cabbage cling to?",
+    "question": "Salt spray and chalky lime would kill most plants, but wild cabbage, the tough ancestor of every cabbage, broccoli and kale, shrugs them off. It cannot bear being crowded out by grasses or shrubs, so it clings to bright white chalk cliffs on both sides of one famous stretch of water in northern Europe. Which one?",
     "answer": "the English Channel",
     "choices": [
       "the English Channel",
@@ -2679,7 +2640,7 @@
   },
   {
     "tier": 2,
-    "question": "Most shoppers only ever see Brussels sprouts loose in a mesh bag at the grocery store, and it's easy to assume each little cabbage-shaped sprout must grow all by itself on its own little plant. Visit the farm, though, and it's a real surprise: on the living plant, dozens of Brussels sprouts grow packed tightly together in one very unusual arrangement. Which one describes how Brussels sprouts actually grow?",
+    "question": "A shopper picking up a mesh bag of loose Brussels sprouts might guess that each little cabbage-shaped sprout grew all by itself on its own small plant. Out on the farm, dozens of them grow packed tightly together in one unusual arrangement. How do Brussels sprouts actually grow?",
     "answer": "in rows up one tall, thick stalk",
     "choices": [
       "in rows up one tall, thick stalk",
@@ -2692,7 +2653,7 @@
   },
   {
     "tier": 3,
-    "question": "Look closely at a head of broccoli or cauliflower: it's built from hundreds of tiny, tightly-packed green (or white) beads on little branching stems. Each of those tiny beads is a part of the plant, caught and eaten before it ever opens up. What part?",
+    "question": "A cook breaking a head of broccoli into florets finds it built from hundreds of tiny, tightly packed beads on little branching stems, and a cauliflower is made the same way in white. Each bead is one part of the plant, picked and eaten before it ever opens. What part?",
     "answer": "an unopened flower",
     "choices": [
       "an unopened flower",
@@ -2705,7 +2666,7 @@
   },
   {
     "tier": 3,
-    "question": "Kohlrabi looks like a pale, knobby, turnip-like bulb with leaves shooting off the top, and its German name even means 'cabbage-turnip.' Cut it open, though, and it's really a kind of cabbage. The round bulb you peel and eat is actually the plant's swollen ___?",
+    "question": "Kohlrabi sits in the produce bin as a pale, knobby bulb with leaves shooting off the top, and its German name even means 'cabbage-turnip.' Sliced open, though, it turns out to be a kind of cabbage. Which part of the plant is the round bulb a cook peels and eats?",
     "answer": "stem",
     "choices": [
       "stem",
@@ -2718,7 +2679,7 @@
   },
   {
     "tier": 4,
-    "question": "A backyard gardener lets a broccoli plant and a kale plant both flower right next to each other, planning to save seed from each. But broccoli and kale are secretly one species, and the bees carry pollen freely from one to the other. What will the seeds she saves actually grow into?",
+    "question": "A backyard gardener lets a broccoli plant and a kale plant flower side by side, planning to save seed from each. The two cross freely, and the bees carry pollen back and forth from one to the other. What will the seeds she saves grow into?",
     "answer": "a mongrel mix that resembles neither parent",
     "choices": [
       "a mongrel mix that resembles neither parent",
@@ -2731,7 +2692,7 @@
   },
   {
     "tier": 4,
-    "question": "Cabbage, broccoli, kale and Brussels sprouts all belong to a single plant family that scientists call the brassicas. Every one of them shares the same sharp, sulfur-smelling, slightly bitter bite that shows up when you cook them. That flavor is no accident. Every plant in the brassica family makes those pungent sulfur compounds on purpose, and biologists have worked out the reason. What job do those bitter sulfur compounds do for the living plant out in the field?",
+    "question": "A pot of cabbage simmering on the stove fills the kitchen with a sharp, sulfur-smelling, slightly bitter bite, and broccoli, kale and Brussels sprouts carry the very same one. Every plant in the family makes those pungent compounds on purpose, and biologists have worked out why. What job do they do for the living plant out in the field?",
     "answer": "fend off animals by tasting nasty to them",
     "choices": [
       "fend off animals by tasting nasty to them",
@@ -2744,7 +2705,7 @@
   },
   {
     "tier": 5,
-    "question": "Cabbage, kale, broccoli and cauliflower look like completely different vegetables, but they are all a single plant species: Brassica oleracea, bred by farmers into different shapes over centuries. The vegetable aisle is also full of look-alike vegetables that are only distant cousins from other Brassica species entirely. Which of these choices is actually a different species from broccoli, not the same plant at all?",
+    "question": "Farmers bred cabbage, kale and broccoli over centuries from one wild plant. Other vegetables in the same aisle only look like family: they are cousins from other Brassica species entirely. Which one is a different species from broccoli, not the same plant at all?",
     "answer": "the turnip",
     "choices": [
       "the turnip",
@@ -2757,7 +2718,7 @@
   },
   {
     "tier": 5,
-    "question": "Around 1860, researchers at an English farm college bred broccoli and other cabbages straight from scruffy wild seaside cabbage - proving on a dinner plate that one wild plant really could be pushed into many vegetables. The feat thrilled a famous naturalist who had published a world-shaking book just the year before. Who was he?",
+    "question": "Breeders at an English farm college, around 1860, bred broccoli and other cabbages straight from scruffy wild seaside cabbage, proving on a dinner plate that one wild plant really could be pushed into many vegetables. The feat thrilled a famous naturalist who had published a world-shaking book just the year before. Who was he?",
     "answer": "Charles Darwin",
     "choices": [
       "Charles Darwin",
@@ -2770,7 +2731,7 @@
   },
   {
     "tier": 5,
-    "question": "Those sharp cabbage-family compounds are also the healthy ones, but heat can wreck them. In one study, cabbage cooked one way kept almost all of them, while another way washed most of them away. Which everyday cooking method holds onto the most of them?",
+    "question": "Researchers in one study cooked cabbage in different ways to see what heat does to the sharp compounds that give it its bite, which are also its healthy ones. One method kept almost all of them, while another washed most of them away. Which everyday cooking method held on to the most?",
     "answer": "steaming",
     "choices": [
       "steaming",
@@ -2783,7 +2744,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1869 the French Emperor Napoleon III offered a prize to any inventor who could come up with a cheap substitute for butter, something to feed both his army and the poor of France. A French chemist named Hippolyte Mège-Mouriès won the prize by inventing margarine. Here's the surprise: the very first margarine wasn't made from vegetable oil at all. What kind of fat did Mège-Mouriès churn with milk to make it?",
+    "question": "Napoleon III offered a prize in 1869 for something cheap enough to replace costly butter for his army and the poor of France. Hippolyte Mège-Mouriès, a chemist, claimed it with the first margarine, which held no vegetable oil at all. What fat did he churn with milk to make it?",
     "answer": "beef fat",
     "choices": [
       "beef fat",
@@ -2796,7 +2757,7 @@
   },
   {
     "tier": 1,
-    "question": "As margarine spread across America, dairy farmers fought to protect butter. Some US states passed laws forcing the cheap spread to be dyed an ugly color before it could be sold. That way no shopper would mistake it for butter. What color did they demand?",
+    "question": "As margarine spread across America, dairy farmers fought to protect butter. Some states passed laws forcing the cheap spread to be dyed an unmistakable color before it could be sold, so that no shopper would ever take it for butter. What color did they demand?",
     "answer": "pink",
     "choices": [
       "pink",
@@ -2808,21 +2769,8 @@
     "topic": "butter-margarine-and-the-fat-wars"
   },
   {
-    "tier": 2,
-    "question": "Vegetable oils like soybean and corn oil are liquid at room temperature — pourable, like water. Margarine is a firm yellow stick you can slice with a knife. To turn one into the other, food factories force molecules of a single common element into the oil, using heat, pressure and a metal catalyst. That reaction raises the oil's melting point until it sets like a solid at room temperature. Which element do the factories pump into the oil?",
-    "answer": "hydrogen",
-    "choices": [
-      "hydrogen",
-      "oxygen",
-      "nitrogen",
-      "carbon"
-    ],
-    "context": "This process is called hydrogenation: hydrogen atoms are added to the fat molecules, raising the melting point so a pourable oil behaves like a spreadable solid — the trick that made vegetable-oil margarine possible. By about 1950, makers had switched from beef fat almost entirely to hydrogenated vegetable oils. Source: https://en.wikipedia.org/wiki/Hydrogenation",
-    "topic": "butter-margarine-and-the-fat-wars"
-  },
-  {
     "tier": 3,
-    "question": "Turning liquid oil into solid margarine is done by adding hydrogen atoms to the oil molecules — a process called hydrogenation. When margarine makers only partly hydrogenate the oil, some of the fat molecules end up bent into a strange shape that almost never appears in nature. Human bodies handle those bent molecules poorly, and by the 1990s researchers had firmly tied the shape to heart disease. What are these unnaturally bent fats called?",
+    "question": "Margarine makers who only partly harden a liquid vegetable oil bend some of its fat molecules into a strange shape that almost never appears in nature. Human bodies handle those bent molecules poorly, and by the 1990s researchers had firmly tied them to heart disease. What are these unnaturally bent fats called?",
     "answer": "trans fats",
     "choices": [
       "trans fats",
@@ -2848,7 +2796,7 @@
   },
   {
     "tier": 5,
-    "question": "The newest fat fight is over seed oils. Critics in the 'Make America Healthy Again' movement, including Robert F. Kennedy Jr., brand the most heavily processed of them the 'hateful eight' and blame their omega-6 for inflammation; defenders answer that these unsaturated oils looked harmless, even helpful, in recent clinical trials. For a careful eater today, what is the honest status of this dispute?",
+    "question": "Critics in the 'Make America Healthy Again' movement, Robert F. Kennedy Jr. among them, take the fight to the newest front in the fat wars, seed oils: they single out the most heavily processed seed oils and blame their omega-6 for inflammation. Defenders answer that these unsaturated oils looked harmless, even helpful, in recent clinical trials. For a careful eater today, what is the honest status of the dispute?",
     "answer": "genuinely unsettled",
     "choices": [
       "genuinely unsettled",
@@ -2861,7 +2809,7 @@
   },
   {
     "tier": 1,
-    "question": "Somewhere in a rainforest in West Africa or South America, a cacao tree grows fat, football-shaped pods hanging right off its trunk. Crack open a ripe cacao pod hoping to find real chocolate inside, and you don't. What you find is soft, sweet white pulp — and packed inside that pulp, a few dozen almond-sized lumps. Which particular part of the cacao pod is the part that gets turned into chocolate?",
+    "question": "A cacao tree in a West African or South American rainforest grows fat, football-shaped pods. A farmer who cracks a ripe one open finds no chocolate inside, only soft, sweet white pulp around a few dozen almond-sized lumps. Which part of the pod becomes chocolate?",
     "answer": "the small inner seeds",
     "choices": [
       "the small inner seeds",
@@ -2874,7 +2822,7 @@
   },
   {
     "tier": 1,
-    "question": "Chocolate is made from the seeds of the cacao tree — beans that grow inside big rainforest pods. You might expect a raw fresh cacao seed to already taste like the chocolate bar you know. Bite one straight from the pod, though, and you're in for a real shock: there's no chocolate flavor there at all. That familiar chocolate flavor only develops later, after the beans are roasted. What does the raw cacao bean actually taste like?",
+    "question": "A farmer splits a ripe cacao pod and bites straight into one of the fresh beans inside. Anyone expecting a chocolate bar is in for a shock: there is no chocolate flavor at all. What does the raw bean actually taste like?",
     "answer": "bitter and mouth-puckering",
     "choices": [
       "bitter and mouth-puckering",
@@ -2887,7 +2835,7 @@
   },
   {
     "tier": 2,
-    "question": "In the warm tropical forests of West Africa and Central America, the cacao tree — the tree whose seeds we grind into chocolate — grows heavy football-shaped pods that startle first-time visitors. The pods sprout from a place fruit almost never appears on a plant. Botanists have a special name for this rare pattern: cauliflory. Where on the cacao tree do those big chocolate pods actually grow?",
+    "question": "In the warm forests of West Africa and Central America, the cacao tree grows heavy, football-shaped pods that startle first-time visitors, because they sprout from a place where fruit almost never appears on a plant. Botanists call this rare habit cauliflory. Where on the tree do the pods grow?",
     "answer": "straight from the trunk and old branches",
     "choices": [
       "straight from the trunk and old branches",
@@ -2899,21 +2847,8 @@
     "topic": "cacao-must-ferment-the-buried-step-that-makes-chocolate-exis"
   },
   {
-    "tier": 2,
-    "question": "In 1753, the Swedish naturalist Carl Linnaeus began giving every kind of living thing on Earth a two-word Latin name — a system biologists still use today for every plant and animal. When Linnaeus finally got around to the cacao tree, whose beans are dried and roasted to make chocolate, he reached for two ancient Greek words to name it. He called it Theobroma cacao. What does the word 'Theobroma' actually mean?",
-    "answer": "food of the gods",
-    "choices": [
-      "food of the gods",
-      "bitter black water",
-      "gift of the deep forest",
-      "blood of the sacred earth"
-    ],
-    "context": "Theobroma comes from Greek theos (god) and broma (food) — 'food of the gods,' the name Linnaeus gave cacao in the 1700s. 'Cacao' itself comes from the Aztec (Nahuatl) word cacahuatl. Source: Wikipedia, 'Theobroma cacao.'",
-    "topic": "cacao-must-ferment-the-buried-step-that-makes-chocolate-exis"
-  },
-  {
     "tier": 3,
-    "question": "On a cacao farm in West Africa or South America, freshly harvested beans get scooped straight out of their pods, piled into big heaps under banana leaves, and left alone for about five days. Inside each bean the chemistry quietly transforms — this is the step that will let the seed become chocolate later. Yet the farmer mixes in no starter, no yeast packet, no culture from a store. What actually powers this change?",
+    "question": "On a cacao farm in West Africa or South America, freshly harvested beans are scooped out of their pods, piled into big heaps under banana leaves and left alone for about five days, and inside each one the chemistry quietly changes. Yet the farmer mixes in no starter and no culture from a store. What powers the change?",
     "answer": "wild yeasts and bacteria already in the pulp",
     "choices": [
       "wild yeasts and bacteria already in the pulp",
@@ -2926,7 +2861,7 @@
   },
   {
     "tier": 3,
-    "question": "Slice a fresh, unfermented cacao bean in half and its insides are a color that catches everyone off guard — we picture chocolate as brown, but this raw bean is anything but. Over the days it ferments, it slowly darkens toward brown. What color is the raw bean inside?",
+    "question": "Sliced in half, a fresh, unfermented cacao bean shows insides of a color that catches visitors off guard, since most people picture chocolate as brown. Over the days the bean ferments, it slowly darkens toward brown. What color is the raw bean inside?",
     "answer": "deep purple",
     "choices": [
       "deep purple",
@@ -2952,7 +2887,7 @@
   },
   {
     "tier": 4,
-    "question": "Turning a freshly harvested cacao pod into a finished chocolate bar takes three key kitchen-science steps. Here they are jumbled: roasting the beans in an oven, drying them in the sun, and fermenting them in warm heaps under banana leaves. Done in the wrong order they'd never make chocolate — the flavor, the color, and the smell all depend on doing the three steps in one specific sequence. In which order must they happen?",
+    "question": "A freshly harvested cacao pod has three steps to pass through before its beans can become a chocolate bar: roasting in an oven, drying in the sun, and fermenting in warm heaps under banana leaves. Done in the wrong order they would never make chocolate, for the flavor, the color and the smell all depend on one sequence. In which order must they happen?",
     "answer": "ferment, then dry, then roast",
     "choices": [
       "ferment, then dry, then roast",
@@ -2965,7 +2900,7 @@
   },
   {
     "tier": 5,
-    "question": "Deep inside a heap of fermenting cacao beans on a tropical farm, the yeasts and bacteria feeding on the sugary pulp let off so much heat that the temperature climbs past 50°C — over 120°F — hotter than a hot bath. That heat isn't a mild side effect. Every cacao seed comes out of the pile changed for good, and there is no going back. What does the fermentation heat actually do to a cacao seed?",
+    "question": "Deep inside a heap of fermenting cacao beans on a tropical farm, the yeasts and bacteria feeding on the sugary pulp give off so much heat that the core climbs past 50°C (over 120°F), hotter than a hot bath. Every seed comes out of the pile changed for good. What does that heat do to a cacao seed?",
     "answer": "kills the embryo so it can never sprout",
     "choices": [
       "kills the embryo so it can never sprout",
@@ -2978,7 +2913,7 @@
   },
   {
     "tier": 1,
-    "question": "Long before Europeans turned it into a candy bar, the Aztec people of central Mexico drank chocolate cold, thick, and foamy — and not sweet. It was bitter enough to make a modern kid wince. Instead of sugar, Aztec cooks stirred in a dried spice that gave the drink a real fiery kick. Which spice went into their chocolate?",
+    "question": "The Aztecs of central Mexico drank their chocolate cold, thick and foamy, and bitter enough to make a modern kid wince. Instead of sugar, Aztec cooks often stirred in a spice that gave the drink a fiery kick. Which spice went into their chocolate?",
     "answer": "dried chili peppers",
     "choices": [
       "dried chili peppers",
@@ -2991,7 +2926,7 @@
   },
   {
     "tier": 1,
-    "question": "In an Aztec market in central Mexico about five hundred years ago, you could not pay with coins — the Aztec empire had never minted any. A Spanish price list from 1545 shows one fresh avocado cost about three of a certain little thing, while a whole turkey cost around a hundred of them. What did Aztec shoppers actually pay with?",
+    "question": "Shoppers in an Aztec market could not pay with coins, because the empire never minted any. A price list from 1545 shows a fresh avocado cost about three of a certain little thing, and a whole turkey around a hundred. What did they pay with?",
     "answer": "cacao beans",
     "choices": [
       "cacao beans",
@@ -3004,7 +2939,7 @@
   },
   {
     "tier": 2,
-    "question": "Once cacao beans became money, the Aztecs faced a very modern problem: fakes. The Spanish friar Bernardino de Sahagun wrote down the scam. Forgers would take a real cacao bean, scoop out the inside, and repack the empty shell so it still looked and felt real. What did they pack it with?",
+    "question": "Bernardino de Sahagún, a friar from Spain, recorded the scam Aztec forgers ran. They took a real cacao bean, scooped out the inside and repacked the empty shell, which turned it into a fake that still looked and felt real. What did they pack it with?",
     "answer": "mud",
     "choices": [
       "mud",
@@ -3017,7 +2952,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Aztec capital Tenochtitlan, cooks whipped up a dark, unsweetened chocolate drink called xocolatl for nobles, priests, and warriors. The most prized part of the whole cup was not the bitter brown liquid at the bottom — it was the thick, bubbly, chocolatey foam heaped on top, which any respectable server had to raise fresh in front of the drinker. Working up that head of froth took real skill, and Aztec cooks did not do it with anything a modern kitchen would recognize. How did they raise that foam?",
+    "question": "In Tenochtitlan, the Aztec capital, cooks made a dark, bitter chocolate drink called xocolatl for nobles, priests and warriors. Its prized part was the thick foam heaped on top, which a respectable server had to raise fresh in front of the drinker, with no tool a modern kitchen would recognize. How did the server raise it?",
     "answer": "poured it back and forth from a height",
     "choices": [
       "poured it back and forth from a height",
@@ -3030,33 +2965,20 @@
   },
   {
     "tier": 3,
-    "question": "In 1753 the Swedish botanist Carl Linnaeus — the man who invented the two-word Latin naming system used for every plant and animal — gave the cacao tree its official scientific name: Theobroma cacao. He chose the first word to honor how the Maya and the Aztecs had treasured this plant above almost every other, calling it fit for royalty and priests. What does Theobroma mean?",
+    "question": "Carl Linnaeus, the Swedish naturalist who devised the two-word Latin naming system now used for every plant and animal, named the cacao tree in 1753. He chose its first word to honor how the Maya and the Aztecs had treasured the plant, building 'Theobroma' from two ancient Greek words. What does Theobroma mean?",
     "answer": "food of the gods",
     "choices": [
       "food of the gods",
       "wine of the gods",
-      "tree of the gods",
-      "blood of the gods"
+      "blood of the gods",
+      "bitter black water"
     ],
-    "context": "Theobroma comes from the Greek theos ('god') + broma ('food') - 'food of the gods' - echoing the sacred status cacao held for the Maya and Aztec. Source: Theobroma cacao (Wikipedia); Cornell exhibit 'Chocolate: Food of the Gods.'",
-    "topic": "cacao-to-chocolate-the-bitter-money-drink-of-the-aztecs"
-  },
-  {
-    "tier": 4,
-    "question": "In the Mexican city of Puebla, cooks simmer a deep, dark sauce from dried chilies, nuts, spices - and a chunk of bitter chocolate - then pour it hot over turkey or chicken. It's rich and savory, nothing like dessert. What is this famous sauce called?",
-    "answer": "mole",
-    "choices": [
-      "mole",
-      "adobo",
-      "chimichurri",
-      "romesco"
-    ],
-    "context": "Chocolate's savory side survives in mole, famously mole poblano from Puebla - bitter chocolate with chilies and spices over turkey or chicken, not a sweet. Note: pre-Hispanic sauces did NOT use chocolate (the Mexica saved cacao for drinks); chocolate-in-mole is a post-conquest fusion. Source: Mole (sauce) (Wikipedia); tenochtitlan.omeka.net.",
+    "context": "Theobroma comes from the Greek theos ('god') + broma ('food'): 'food of the gods', the name Linnaeus gave cacao in 1753, echoing the sacred status cacao held for the Maya and Aztec. 'Cacao' itself comes from the Aztec (Nahuatl) word cacahuatl. Source: https://en.wikipedia.org/wiki/Theobroma_cacao",
     "topic": "cacao-to-chocolate-the-bitter-money-drink-of-the-aztecs"
   },
   {
     "tier": 5,
-    "question": "Chocolate is so tied to the Aztecs that most people assume cacao came from Mexico. But in 2018 scientists testing 5,300-year-old pottery - carrying cacao DNA, starch grains, and theobromine residue - pinned the tree's true homeland far from the Aztec capital. Where was cacao first domesticated?",
+    "question": "Scientists in 2018 tested pottery some 5,300 years old and found cacao DNA, starch grains and theobromine residue inside. The find pinned the tree's true homeland far from the Aztec capital, though most people assume cacao came from Mexico. Where was cacao first domesticated?",
     "answer": "the upper Amazon",
     "choices": [
       "the upper Amazon",
@@ -3068,8 +2990,8 @@
     "topic": "cacao-to-chocolate-the-bitter-money-drink-of-the-aztecs"
   },
   {
-    "tier": 1,
-    "question": "The Roman pasta dish cacio e pepe is built on one starring ingredient: pecorino romano, a hard, salty, sharp-tasting aged Italian cheese from the countryside around Rome. Its very name comes straight from the Latin word 'pecora,' which specifically means one particular kind of farm animal — the animal whose milk the cheese is made from. Which animal is 'pecora'?",
+    "tier": 2,
+    "question": "Rome's cacio e pepe and its carbonara both get their salty punch from pecorino romano, a hard, aged cheese Romans insist on even though most tourists dust their pasta with Parmesan. The cheese takes its name from 'pecora,' the word for the one farm animal whose milk it is made from. Which animal is that?",
     "answer": "Sheep",
     "choices": [
       "Sheep",
@@ -3077,12 +2999,12 @@
       "Goat",
       "Buffalo"
     ],
-    "context": "Pecorino romano is a sheep's-milk cheese — its name comes from the Latin 'pecora,' meaning sheep. It's hard, salty, and aged, which is why a little grated over pasta packs so much punch. Most Italian pasta cheeses (like parmesan) come from cow's milk, but cacio e pepe is built on sheep. Source: Wikipedia 'Cacio e pepe'; foodscienceinstitute.com.",
+    "context": "Pecorino romano is a hard, salty, aged sheep's-milk cheese: its name comes from 'pecora,' meaning sheep. Most Italian pasta cheeses (like Parmigiano-Reggiano) come from cow's milk, but cacio e pepe and carbonara are both built on sheep, and that saltiness is a big part of their punch. Source: https://en.wikipedia.org/wiki/Pecorino_romano",
     "topic": "cacio-e-pepe-a-three-thing-emulsion"
   },
   {
     "tier": 2,
-    "question": "An American food blogger sits down at a small trattoria in Rome and orders cacio e pepe, the city's most famous pasta. The plate arrives thick and glossy, every strand of tonnarelli coated in a rich, creamy sauce almost like fettuccine Alfredo. The blogger assumes the kitchen must have sneaked in butter or heavy cream. In a truly authentic Roman cacio e pepe — a dish that by tradition contains only three ingredients — where does that silky creaminess actually come from?",
+    "question": "An American food blogger orders cacio e pepe at a small trattoria in Rome. It arrives thick and glossy, the tonnarelli coated in a sauce as rich as fettuccine Alfredo, and the blogger assumes the kitchen sneaked in butter or cream. By tradition the dish has only three ingredients. Where does the creaminess come from?",
     "answer": "Cheese and starchy pasta water, beaten smooth",
     "choices": [
       "Cheese and starchy pasta water, beaten smooth",
@@ -3095,7 +3017,7 @@
   },
   {
     "tier": 3,
-    "question": "Most cooks treat black pepper as a finishing sprinkle, but in cacio e pepe it's a main ingredient. The first step is to toast the ground pepper in a dry, empty pan for a couple of minutes, shaking it, before any liquid goes in. Why toast the pepper first?",
+    "question": "In a Roman kitchen, the black pepper for cacio e pepe is no finishing sprinkle but a main ingredient, and the cook's first step is to toast it, ground, in a dry, empty pan for a couple of minutes, shaking it, before any liquid goes in. Why toast the pepper first?",
     "answer": "To wake up the fragrant oils locked inside the peppercorns",
     "choices": [
       "To wake up the fragrant oils locked inside the peppercorns",
@@ -3108,7 +3030,7 @@
   },
   {
     "tier": 5,
-    "question": "You tip grated pecorino into a pan of freshly drained pasta expecting a glossy sauce, but it seizes into a stringy, rubbery lump welded to the pan — the most common cacio e pepe disaster. In 2025 Italian physicists studied this exact failure and pinned down the main cause. What most likely turned the cheese rubbery?",
+    "question": "A cook tips grated pecorino into a pan of freshly drained pasta, expecting a glossy sauce, and it seizes into a stringy, rubbery lump welded to the pan: the most common cacio e pepe disaster. Italian physicists studied this very failure in 2025 and pinned down the main cause. What most likely turned the cheese rubbery?",
     "answer": "The liquid hitting the cheese was too hot",
     "choices": [
       "The liquid hitting the cheese was too hot",
@@ -3121,7 +3043,7 @@
   },
   {
     "tier": 1,
-    "question": "Calcium is the most abundant mineral in your entire body — a healthy grown-up walks around with a couple of pounds of the stuff. Here's the surprising part: more than 99% of all that calcium sits stored in just one place, with barely a trace anywhere else. Where is almost all of your calcium kept?",
+    "question": "A healthy grown-up carries around a couple of pounds of calcium, the most plentiful mineral in the body. Suppose you could find all of yours: more than 99 percent would sit in one place. Where is almost all of your calcium kept?",
     "answer": "your bones",
     "choices": [
       "your bones",
@@ -3134,7 +3056,7 @@
   },
   {
     "tier": 1,
-    "question": "Growing kids need lots of calcium to build strong bones and teeth. When an American doctor tells a kid to load up on it, one food group has been the go-to answer for generations. In the United States, this single group supplies roughly 72% of all the calcium people eat. Which group of foods is it?",
+    "question": "A doctor in the United States tells a growing kid to load up on calcium for strong bones, and one food group has been the go-to answer for generations: it supplies roughly 72 percent of the calcium Americans eat. Which group of foods is it?",
     "answer": "dairy — milk, cheese, and yogurt",
     "choices": [
       "dairy — milk, cheese, and yogurt",
@@ -3160,7 +3082,7 @@
   },
   {
     "tier": 3,
-    "question": "On paper, spinach looks like a calcium superstar — cup for cup it lists as much as many dairy foods. But your body actually absorbs only a tiny sliver of it, far less than the calcium in milk. What is spinach doing that keeps nearly all its calcium out of your body?",
+    "question": "Suppose you eat a big bowl of spinach. On paper it looks like a calcium superstar, cup for cup as rich as many dairy foods, yet your body absorbs only a tiny sliver of it, far less than from milk. What is spinach doing that keeps its calcium out of your body?",
     "answer": "a plant acid locks its calcium into crystals you can't absorb",
     "choices": [
       "a plant acid locks its calcium into crystals you can't absorb",
@@ -3173,7 +3095,7 @@
   },
   {
     "tier": 3,
-    "question": "Canned sardines are secretly one of the richest calcium foods around — a single can rivals a glass of milk. The secret is a part of the little fish you'd normally spit out or pick off a fresh one, but that the canning process softens so well you eat it without even noticing. Which part of the sardine delivers all that calcium?",
+    "question": "A single tin of canned sardines rivals a glass of milk for calcium. The secret is a part of the little fish that most eaters would pick off a fresh one, but that canning softens so well it goes down without anyone noticing. Which part of the sardine delivers all that calcium?",
     "answer": "its tiny bones",
     "choices": [
       "its tiny bones",
@@ -3186,7 +3108,7 @@
   },
   {
     "tier": 4,
-    "question": "Here's the catch that trips people up: you can eat all the calcium in the world, but your gut can't actually pull much of it into your blood without a certain partner nutrient present to escort it across. Which nutrient must be there for your body to absorb calcium at all?",
+    "question": "A person can eat all the calcium in the world, yet the gut cannot pull much of it into the blood without a certain partner nutrient there to escort it across. Which nutrient must be present for the body to absorb calcium at all?",
     "answer": "vitamin D",
     "choices": [
       "vitamin D",
@@ -3199,7 +3121,7 @@
   },
   {
     "tier": 4,
-    "question": "Milk is famous not just for having calcium but for how well your body absorbs it — it's long been the gold standard. So it stunned researchers when they measured two ordinary green vegetables and found your body pulls calcium out of them even better than out of milk. Which two greens beat milk at handing over their calcium?",
+    "question": "Researchers measuring calcium absorption in 1993 set milk, long the gold standard, against two ordinary green vegetables, and were stunned to find that the body pulls calcium out of the greens even better. Which two greens beat milk at handing over their calcium?",
     "answer": "bok choy and broccoli",
     "choices": [
       "bok choy and broccoli",
@@ -3212,7 +3134,7 @@
   },
   {
     "tier": 1,
-    "question": "Around the year 1800, Napoleon's French army needed food that would not rot on long marches across Europe. The French government offered a huge cash prize — 12,000 francs — to anyone who could invent a way to keep food fresh for months. A Paris confectioner named Nicolas Appert spent fourteen years testing before he claimed the reward in 1810. What was Appert's winning method?",
+    "question": "Napoleon's army needed food that would not rot on long marches, so around 1800 the French government offered 12,000 francs to anyone who could keep food fresh for months. Nicolas Appert, a Paris confectioner, tested for some fourteen years before claiming it in 1810. What was his winning method?",
     "answer": "Sealing food in glass jars and boiling them",
     "choices": [
       "Sealing food in glass jars and boiling them",
@@ -3225,20 +3147,7 @@
   },
   {
     "tier": 2,
-    "question": "Nicolas Appert, a French confectioner in the early 1800s, had shown that food sealed in a glass jar and boiled would stay fresh for years. Armies and sailors adopted his jars, but nobody understood why they worked. Half a century later the French chemist Louis Pasteur ran the careful experiments that finally cracked the puzzle. What did Pasteur show the boiling water was actually doing?",
-    "answer": "Killing the tiny living microbes that spoil food",
-    "choices": [
-      "Killing the tiny living microbes that spoil food",
-      "Driving the last of the air out of the jar",
-      "Sealing the lid down tighter as it cooled",
-      "Softening the food so it would keep longer"
-    ],
-    "context": "Appert worked purely by trial and error — bacteriology didn't exist yet, so he never knew WHY his sealed, boiled jars kept food fresh. Decades later Louis Pasteur showed that heat kills the tiny microbes that make food spoil. That's why the BOIL, not the jar itself, is the real safety step: the seal keeps new germs out, but the heat is what does the killing. Source: Wikipedia, 'Nicolas Appert.'",
-    "topic": "canning-and-botulism-the-food-that-can-hide-a-deadly-germ"
-  },
-  {
-    "tier": 2,
-    "question": "The word 'botulism' was coined by doctors in the 1800s, long before the germ behind the illness was ever discovered. They built the name from a Latin word for the very food that kept killing people at the time. The deadliest food poisoning is named after which food?",
+    "question": "Doctors in the 1800s kept seeing people die after eating one spoiled food, and they named the illness after it, well before the germ behind it was ever discovered. They built the word 'botulism' from the Latin name of that food. The deadliest food poisoning is named after which food?",
     "answer": "Sausage",
     "choices": [
       "Sausage",
@@ -3264,7 +3173,7 @@
   },
   {
     "tier": 4,
-    "question": "The botulism spore is armored so well that an ordinary pot of boiling water, at 212°F, cannot kill it. Acidic foods like pickles and jam are safe to preserve that way, because their acid keeps the spore from growing — but green beans, corn, and meat have no acid to protect them and must reach about 240°F to be safe. Which kitchen device is built to heat sealed jars of those foods that hot?",
+    "question": "A pot of boiling water, at 212°F, cannot kill the botulism spore, so well is it armored. Pickles and jam are safe to preserve that way, because their acid keeps the spore from growing, but green beans, corn and meat have no acid to protect them and must reach about 240°F. Which kitchen device is built to heat sealed jars of those foods that hot?",
     "answer": "A pressure canner",
     "choices": [
       "A pressure canner",
@@ -3277,7 +3186,7 @@
   },
   {
     "tier": 3,
-    "question": "Honey can carry dormant botulism spores. Most people's acidic stomachs and gut bacteria crowd those spores out harmlessly, so honey is a safe food for the vast majority of us. Doctors nonetheless give one firm rule: never feed honey to one particular group of people. Who are they?",
+    "question": "A spoonful of honey can carry dormant botulism spores. Most people's stomach acid and gut bacteria crowd those spores out harmlessly, so honey is safe for nearly everyone. Doctors still give one firm rule: never feed honey to one particular group of people. Who are they?",
     "answer": "Babies under one year old",
     "choices": [
       "Babies under one year old",
@@ -3290,7 +3199,7 @@
   },
   {
     "tier": 5,
-    "question": "A jar of home-canned food full of botulism toxin can look, smell, and taste completely normal — the poison gives your eyes, nose, and tongue no warning at all. But as the germ grows inside, it leaves one telltale mark on the jar. What is the visible warning sign that means throw it out?",
+    "question": "A jar of home-canned food full of botulism toxin can look, smell and taste completely normal: the poison gives the eyes, nose and tongue no warning at all. But as the germ grows inside, it leaves one telltale mark on the jar. What visible sign means the jar must be thrown out?",
     "answer": "A swollen, bulging lid",
     "choices": [
       "A swollen, bulging lid",
@@ -3303,7 +3212,7 @@
   },
   {
     "tier": 1,
-    "question": "A Cantonese family in Hong Kong won't say 'let's grab lunch' when they head out for a leisurely late-morning meal of dumplings, buns, and small hot dishes rolled around on carts. They will instead say 'let's go yum cha,' naming the whole outing after the ritual it is built around. In Cantonese, the two syllables 'yum cha' literally translate as:",
+    "question": "A Cantonese family in Hong Kong heads out for a leisurely late-morning meal of dumplings and buns rolled around on carts. Nobody says 'let's grab lunch'; they say 'let's go yum cha,' naming the outing after the ritual at its heart. What does 'yum cha' mean?",
     "answer": "drink tea",
     "choices": [
       "drink tea",
@@ -3316,7 +3225,7 @@
   },
   {
     "tier": 2,
-    "question": "At a Cantonese yum cha, servers push little wheeled carts up and down between the tables, each cart loaded with bamboo steamer baskets full of shrimp dumplings, pork buns, spare ribs, and delicate little egg-custard tarts. Diners point at what they want and stack the table high with dozens of tiny dishes. That whole rolling spread of little dishes has its own name — dim sum — and the phrase itself literally translates from Cantonese as:",
+    "question": "At a Cantonese yum cha, servers push little wheeled carts between the tables, each loaded with baskets of shrimp dumplings, pork buns and spare ribs, and diners point at what they want until the table is stacked high with tiny dishes. The whole rolling spread is called dim sum. What does the name mean?",
     "answer": "touch the heart",
     "choices": [
       "touch the heart",
@@ -3329,7 +3238,7 @@
   },
   {
     "tier": 2,
-    "question": "At a busy yum cha in Hong Kong, when a friend reaches across the table and pours you a fresh cup of hot jasmine tea from the pot, you give thanks right away — but you don't say a word. The tearoom is far too loud, and your mouth is likely full of dumpling. So Cantonese tea-drinkers use a wordless 'thank you' they perform silently on the tablecloth. What is that quick, quiet gesture?",
+    "question": "Suppose you are at a busy yum cha in Hong Kong when a friend pours you a fresh cup of jasmine tea. The tearoom is far too loud and your mouth is likely full of dumpling, so you give thanks without saying a word, right on the tablecloth. What is that quick, quiet gesture?",
     "answer": "tap two fingers on the table",
     "choices": [
       "tap two fingers on the table",
@@ -3342,7 +3251,7 @@
   },
   {
     "tier": 3,
-    "question": "Har gow, the little pink shrimp dumpling on every dim sum cart in the teahouses of Hong Kong and southern China, earns the nickname 'crystal dumpling.' Once steamed, its wrapper turns glassy and see-through — you can spot the curled pink shrimp inside — while an ordinary dumpling ends up with a soft opaque white skin. That clear, chewy, see-through wrapper is made from what?",
+    "question": "Har gow, the little pink shrimp dumpling on every dim sum cart in Hong Kong and southern China, earns the nickname 'crystal dumpling.' Once cooked, its wrapper turns glassy and see-through, showing the curled pink shrimp inside, while an ordinary dumpling ends up with a soft, opaque white skin. What is that clear, chewy wrapper made from?",
     "answer": "wheat starch",
     "choices": [
       "wheat starch",
@@ -3355,7 +3264,7 @@
   },
   {
     "tier": 3,
-    "question": "Dim sum — the parade of small steamed and fried dishes served at Cantonese teahouses in Hong Kong and Guangzhou — runs to hundreds of items, but four are crowned its 'Four Heavenly Kings.' The famous three are the crystal shrimp dumpling har gow, the pork-and-prawn dumpling siu mai, and the barbecued-pork bun char siu bao. Which dish completes the four?",
+    "question": "Cantonese teahouses in Hong Kong and Guangzhou serve hundreds of small steamed and fried dim sum dishes, but four are crowned the 'Four Heavenly Kings.' Three are famous: the crystal shrimp dumpling har gow, the pork-and-prawn dumpling siu mai, and the barbecued-pork bun char siu bao. Which dish completes the four?",
     "answer": "egg tart",
     "choices": [
       "egg tart",
@@ -3368,7 +3277,7 @@
   },
   {
     "tier": 4,
-    "question": "A Cantonese cook trusts a fresh fish so completely that the whole fish is steamed just until it flakes, and then dressed with almost no seasoning. It is never smothered in a thick, heavy sauce. The classic finish is a splash of soy, a pour of sizzling hot oil, and a scatter of two aromatics:",
+    "question": "A Cantonese cook trusts a fresh fish so completely that the whole fish is steamed just until it flakes, then dressed with almost no seasoning and never smothered in a thick, heavy sauce. The classic finish is a splash of soy, a pour of sizzling hot oil and a scatter of two aromatics. Which two?",
     "answer": "ginger and scallion",
     "choices": [
       "ginger and scallion",
@@ -3381,7 +3290,7 @@
   },
   {
     "tier": 5,
-    "question": "Chinese legend tells of Han Xin, a brilliant general of the Han dynasty in China around 200 BCE, whose army was crammed inside a walled barracks with no proper kitchen. Thousands of soldiers needed feeding, but there was no room for long stew pots or open fires with roasting spits. The story says his cooks solved the whole problem by inventing a fast, stackable cooking method — a way of piling meals up on top of each other — that Chinese kitchens still use every single day. What three simple things did they cook with?",
+    "question": "Han Xin, a general of the Han dynasty around 200 BCE, had to feed thousands of soldiers crammed inside a walled barracks, legend says, with no room for long stew pots or open fires. His cooks solved it with a fast, stackable way of cooking, piling meals one on top of another, that Chinese kitchens still use every day. What three simple things did they cook with?",
     "answer": "bamboo, wood, and rising steam",
     "choices": [
       "bamboo, wood, and rising steam",
@@ -3394,7 +3303,7 @@
   },
   {
     "tier": 1,
-    "question": "A raw chili pepper sitting on a kitchen counter is exactly as cool to the touch as everything around it — no warmer than an apple or a spoon. Yet the moment you bite it, your whole mouth blazes as if you'd just sipped scalding tea. No blister forms, no burn appears, and there is no real damage to the tissue at all. How does a room-temperature pepper pull this off?",
+    "question": "A raw chili pepper sitting on the kitchen counter feels no warmer than an apple. Suppose you bite it: your mouth blazes as if you had sipped scalding tea, yet no blister forms and the tissue takes no real damage. How does a room-temperature pepper pull this off?",
     "answer": "It fools your mouth's nerves into sensing heat.",
     "choices": [
       "It fools your mouth's nerves into sensing heat.",
@@ -3407,7 +3316,7 @@
   },
   {
     "tier": 1,
-    "question": "Chili peppers came from the Americas — Mexican and Andean farmers were breeding them thousands of years ago and only spread them worldwide after Columbus. One single fiery chemical inside the pepper is behind the burn in every hot chili on Earth today, from a mild green jalapeño to a blistering red ghost pepper. Name this fiery molecule.",
+    "question": "A mild green jalapeño and a blistering red ghost pepper burn on wildly different scales, yet one single chemical inside the pepper is behind the burn of both, and of every other hot chili on Earth. What is that fiery molecule?",
     "answer": "Capsaicin",
     "choices": [
       "Capsaicin",
@@ -3420,7 +3329,7 @@
   },
   {
     "tier": 2,
-    "question": "Bite carefully into the outer fleshy wall of a fresh red chili pepper and it tastes surprisingly mild — mostly like the wall of a green bell pepper, with only a touch of warmth. Most cooks think the real fire lives in the little seeds, but they are wrong. The intense burn is concentrated in one specific spot hidden within the pod, produced by an oily chemical the plant makes on purpose, called capsaicin. Which part of a chili actually carries most of the heat?",
+    "question": "A cook bites carefully into the outer wall of a fresh red chili and finds it mild, much like a bell pepper. Most cooks think the real fire lives in the seeds, but they are mistaken: the burn is packed into one other spot inside the pod. Which part of a chili carries most of the heat?",
     "answer": "The pale ribs deep inside the pepper.",
     "choices": [
       "The pale ribs deep inside the pepper.",
@@ -3433,7 +3342,7 @@
   },
   {
     "tier": 2,
-    "question": "Capsaicin is the fiery chemical inside every hot chili pepper. It does not really damage your mouth — instead it hijacks a tiny nerve sensor called TRPV1 that lives in the skin of your tongue and lips. Your body already carries these sensors for a completely different, useful purpose, long before any chili showed up. What do TRPV1 sensors normally do when there is no chili around?",
+    "question": "Capsaicin, the fiery chemical in hot chilies, does a mouth no real damage; it hijacks a tiny nerve sensor called TRPV1 in the tongue and lips. Suppose you had never tasted a chili: your body would still carry TRPV1 for a different, useful job. What does the sensor do when no chili is around?",
     "answer": "It warns you when something is dangerously hot.",
     "choices": [
       "It warns you when something is dangerously hot.",
@@ -3446,7 +3355,7 @@
   },
   {
     "tier": 3,
-    "question": "Your mouth is blazing after one too many bites of a fiery Indian vindaloo curry, so you gulp glass after glass of ice-cold water — and it barely helps at all. The burn just keeps sitting there on your tongue, no matter how much you drink. The molecule responsible for that whole fire is called capsaicin, produced by the chili pepper. There is a very simple physical reason capsaicin can shrug off any amount of water you throw at it. What is that reason?",
+    "question": "One too many bites of a fiery Indian vindaloo curry can leave a mouth blazing. Suppose you gulp glass after glass of ice-cold water to put it out: the burn barely budges, sitting on your tongue no matter how much you drink. What simple physical reason lets capsaicin, the molecule behind the fire, shrug off the water?",
     "answer": "Capsaicin is oily and doesn't mix with water.",
     "choices": [
       "Capsaicin is oily and doesn't mix with water.",
@@ -3459,7 +3368,7 @@
   },
   {
     "tier": 3,
-    "question": "Plain water flops against a chili burn — it barely helps at all — but a glass of cold milk douses the fire fast. The reason is a certain protein floating in the milk that grabs onto capsaicin, the fiery molecule in the chili, and lifts it right off the pain-and-heat sensors on your tongue. Name that protein.",
+    "question": "Plain water barely helps a mouth set ablaze by a fiery chili, but a glass of cold milk douses the fire fast. A certain protein floating in the milk grabs capsaicin, the chili's fiery molecule, and lifts it right off the heat sensors on the tongue. What is that protein called?",
     "answer": "Casein",
     "choices": [
       "Casein",
@@ -3472,7 +3381,7 @@
   },
   {
     "tier": 3,
-    "question": "Chili peppers get their bite from a molecule called capsaicin. Capsaicin isn't truly hot the way a stove is hot — it just tricks a special sensor on the tongue into signaling 'burn.' Yet a cook notices something curious: the same hot sauce tastes far fiercer stirred into a bowl of steaming soup than eaten cold straight from the fridge. Real warmth cranks the chili burn up. Why would genuine heat make capsaicin's fake burn feel stronger?",
+    "question": "A bowl of steaming soup makes the same hot sauce taste far fiercer than it does cold, straight from the fridge. Capsaicin, the molecule behind the bite, is not truly hot the way a stove is; it only tricks a sensor on the tongue into signaling 'burn.' Why would real warmth make its fake burn feel stronger?",
     "answer": "Real heat and capsaicin both trip the very same sensor.",
     "choices": [
       "Real heat and capsaicin both trip the very same sensor.",
@@ -3485,7 +3394,7 @@
   },
   {
     "tier": 4,
-    "question": "Chew a hot chili and the burn drives you off in tears. But a cardinal or a finch can gulp down the fieriest pepper and feel absolutely nothing, because a bird's heat sensor completely ignores capsaicin. Biologists insist this immunity is no accident. What does the pepper plant gain by burning mammals yet sparing birds?",
+    "question": "A person who chews a hot chili is driven off in tears, but a cardinal or a finch can gulp down the fieriest pepper and feel nothing at all, because a bird's heat sensor ignores capsaicin. Biologists insist this is no accident. What does the pepper plant gain by burning mammals yet sparing birds?",
     "answer": "Birds swallow the seeds whole and scatter them unharmed.",
     "choices": [
       "Birds swallow the seeds whole and scatter them unharmed.",
@@ -3498,7 +3407,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1912, pharmacist Wilbur Scoville built the famous scale that ranks how fiery a chili is. To score a pepper, tasters kept diluting its extract with one common kitchen ingredient until the burn finally vanished — and the amount needed became the rating. What did they dilute the pepper with?",
+    "question": "Wilbur Scoville, a pharmacist, built a famous scale in 1912 to rank how fiery a chili is. To score a pepper, tasters kept diluting its extract with one common kitchen ingredient until the burn finally vanished, and the amount needed became the rating. What did they dilute the pepper with?",
     "answer": "Sugar water",
     "choices": [
       "Sugar water",
@@ -3511,7 +3420,7 @@
   },
   {
     "tier": 5,
-    "question": "Some people are true chili addicts, chasing ever-hotter sauces for the genuine rush a fiery meal delivers. Since capsaicin causes real pain but zero real injury, the brain answers by flooding the body with a natural chemical that turns the ache into a pleasant high — the same molecule behind a runner's second wind. What is it?",
+    "question": "A chili addict chases ever-hotter sauces for the rush a fiery meal delivers. Because capsaicin causes real pain but no real injury, the brain answers by flooding the body with something of its own that turns the ache into a pleasant high, the same thing behind a runner's second wind. What does the brain release?",
     "answer": "Endorphins",
     "choices": [
       "Endorphins",
@@ -3524,7 +3433,7 @@
   },
   {
     "tier": 5,
-    "question": "Here's a real paradox: capsaicin causes a fierce burning pain, yet doctors blend it into creams that relieve aching joints and long-term nerve pain. The secret is what happens when a nerve sensor meets capsaicin over and over. How does repeated exposure end up dulling pain instead of causing it?",
+    "question": "Doctors blend capsaicin, the molecule that makes chilies burn, into creams that relieve aching joints and long-term nerve pain. The secret lies in what happens when a nerve sensor meets capsaicin over and over. How does repeated exposure end up dulling pain instead of causing it?",
     "answer": "The pain sensors wear out and stop firing.",
     "choices": [
       "The pain sensors wear out and stop firing.",
@@ -3537,20 +3446,7 @@
   },
   {
     "tier": 1,
-    "question": "In early-1800s Paris, at a grand French banquet table, silver candles and wax fruit ran the length of the cloth — and rising above them stood a towering sculpture built by Marie-Antoine Careme, the most famous chef in Europe. Careme's centerpieces were the toast of every royal court. But one thing set his sculpture apart from every other prop on the table. What?",
-    "answer": "It was entirely edible, down to the last crumb",
-    "choices": [
-      "It was entirely edible, down to the last crumb",
-      "It spun slowly on a hidden clockwork base",
-      "It stood taller than the seated guests",
-      "It glowed from candles hidden inside"
-    ],
-    "context": "Careme's centerpieces were called pieces montees -- towering table sculptures built entirely from edible material rather than flowers, wax or metal. It was the one sculpture you were allowed to make out of food. Source: https://en.wikipedia.org/wiki/Pi%C3%A8ce_mont%C3%A9e",
-    "topic": "car-me-and-edible-architecture"
-  },
-  {
-    "tier": 1,
-    "question": "A croquembouche is a cone-shaped French pastry tower — dozens of little cream-filled pastry balls glued together with hot spun sugar, stacked into a peak. French families bring it out for weddings, baptisms and Christmas, and it is never left plain. Before it hits the table the whole cone gets dressed up like a little monument. What is a croquembouche usually decked out with?",
+    "question": "French families bring out a croquembouche, a cone-shaped pastry tower, for weddings, baptisms and Christmas, and it is never left plain: before it reaches the table, the whole cone is dressed up like a little monument. What is it usually decked out with?",
     "answer": "Sugared almonds, chocolate and edible flowers",
     "choices": [
       "Sugared almonds, chocolate and edible flowers",
@@ -3563,7 +3459,7 @@
   },
   {
     "tier": 2,
-    "question": "In the early 1800s, the French pastry chef Marie-Antoine Careme built table centerpieces several feet tall — sculpted entirely from sugar and pastry — for the grandest royal banquets in Europe. A dinner guest could recognize each one as a copy of a real, famous building from history. Which buildings did Careme most love to copy for these tall table showpieces?",
+    "question": "Dinner guests at the grandest banquets in Europe in the early 1800s could recognize each of Marie-Antoine Carême's centerpieces, several feet tall, as a copy of a real, famous building. Which buildings did Carême most love to copy for these tall showpieces?",
     "answer": "Greek temples, Egyptian pyramids and Chinese pagodas",
     "choices": [
       "Greek temples, Egyptian pyramids and Chinese pagodas",
@@ -3576,7 +3472,7 @@
   },
   {
     "tier": 2,
-    "question": "A stone-mason building a wall reaches for stone, mortar and glass. In early-1800s Paris, to raise his famous several-feet-tall centerpieces above a banquet table, the celebrity French chef Marie-Antoine Careme reached for a pastry cook's set of building materials instead — treating the pastry kitchen exactly like an architect's workshop. Which three did Careme build with?",
+    "question": "A stonemason building a wall reaches for stone, mortar and glass. Marie-Antoine Carême, raising his famous centerpieces several feet above a Paris banquet table in the early 1800s, reached for a pastry cook's set of materials instead, and treated his kitchen like an architect's workshop. Which three did he build with?",
     "answer": "Nougat, marzipan and spun sugar",
     "choices": [
       "Nougat, marzipan and spun sugar",
@@ -3589,7 +3485,7 @@
   },
   {
     "tier": 2,
-    "question": "Every restaurant chef today wears a tall, stiff, pleated white hat called a toque. The chef who made it standard was the early-1800s French superstar Marie-Antoine Careme, who cooked for Napoleon and King George IV. Careme raised and starched the older, floppy cook's cap for one specific reason. What was Careme's complaint about the old floppy cap?",
+    "question": "Carême, who cooked for Napoleon and the future King George IV, made the tall, stiff white toque standard for chefs. He reportedly raised and starched the older, floppy cook's cap for one specific reason. What was his complaint about the old cap?",
     "answer": "It made the cooks look pale and ill",
     "choices": [
       "It made the cooks look pale and ill",
@@ -3602,7 +3498,7 @@
   },
   {
     "tier": 3,
-    "question": "In early 1800s Paris, the pastry chef Marie-Antoine Careme built sugar-and-pastry banquet centerpieces shaped like real buildings — Greek temples, Egyptian pyramids, Chinese pagodas. To make them look like the real thing, his wealthy patron gave him two whole afternoons off each week just to study architecture. Where did Careme spend those free afternoons?",
+    "question": "Marie-Antoine Carême copied real, famous buildings for his banquet centerpieces in early-1800s Paris, and to get them right he had two free afternoons a week from his employer to study architecture. Where did Carême spend those afternoons?",
     "answer": "In the Paris library's print rooms, studying engravings of buildings",
     "choices": [
       "In the Paris library's print rooms, studying engravings of buildings",
@@ -3615,7 +3511,7 @@
   },
   {
     "tier": 3,
-    "question": "In early-1800s Paris, the French chef Marie-Antoine Careme — who cooked for Napoleon and for King George IV of England — is credited with perfecting the vol-au-vent: a tall, hollow, feather-light pastry case with a scooped-out center that a diner spoons full of creamy meat or seafood ragout. Which type of pastry is this airy, delicate shell built from?",
+    "question": "A diner spoons creamy meat or seafood ragout into the scooped-out center of a vol-au-vent, the tall, hollow, feather-light pastry case Marie-Antoine Carême is credited with perfecting. Which kind of pastry is that airy shell built from?",
     "answer": "Puff pastry",
     "choices": [
       "Puff pastry",
@@ -3628,7 +3524,7 @@
   },
   {
     "tier": 3,
-    "question": "Legend tells that one of Careme's pastry cases ballooned up dramatically in the hot oven. An amazed assistant blurted out a phrase describing what the pastry seemed to be doing, and the phrase stuck as the pastry's official name. What did the assistant cry?",
+    "question": "Legend tells that one of Carême's hollow pastry cases ballooned up so dramatically in the hot oven that an amazed assistant blurted out what it seemed to be doing. The phrase stuck as the dish's name, though it already appears in a cookbook of 1739. What did the assistant cry?",
     "answer": "Flying on the wind",
     "choices": [
       "Flying on the wind",
@@ -3636,25 +3532,12 @@
       "Leaping off the tray",
       "Singing in the oven"
     ],
-    "context": "As legend has it, an assistant cried the pastry 'flew in the wind' -- vol-au-vent -- and Careme kept the name. It's a romantic story, not documented: the phrase 'petits gateaux vole au vent' appears in a 1739 cookbook, before Careme was born. Source: https://en.wikipedia.org/wiki/Vol-au-vent",
+    "context": "As legend has it, an assistant cried that the pastry was 'flying on the wind', vol-au-vent, and Carême kept the name. It is a romantic story, not documented: the phrase already appears in François Marin's 1739 cookbook Les Dons de Comus, before Carême was born, so he popularized the dish rather than inventing it. Source: https://en.wikipedia.org/wiki/Vol-au-vent",
     "topic": "car-me-and-edible-architecture"
   },
   {
     "tier": 4,
-    "question": "Marie-Antoine Careme, the early-1800s French chef who cooked for Napoleon and for the King of England, ranked the fine arts in one of his cookbooks and counted five of them: music, painting, sculpture, poetry and architecture. Then Careme made a startling boast — that one particular branch of architecture towered above the other four arts entirely. Which branch did Careme crown?",
-    "answer": "Confectionery, the making of pastry",
-    "choices": [
-      "Confectionery, the making of pastry",
-      "Masonry, the building of cathedrals",
-      "Engineering, the raising of bridges",
-      "Carpentry, the framing of houses"
-    ],
-    "context": "Careme declared: 'The fine arts are five in number: music, painting, sculpture, poetry and architecture -- whereof the principal branch is confectionery.' He crowned his own pastry the peak of the arts. Source: https://en.wikipedia.org/wiki/Marie-Antoine_Car%C3%AAme",
-    "topic": "car-me-and-edible-architecture"
-  },
-  {
-    "tier": 4,
-    "question": "At a French wedding or First Communion, the celebration cake is often a tall cone of small cream-filled pastry puffs, all glued together with hard caramel that snaps under the fork. The French call this dessert croquembouche, a name taken from the old phrase 'croque en bouche.' What does that phrase literally mean?",
+    "question": "At a French wedding or First Communion, the celebration cake is often a tall pastry cone held together with hard caramel that snaps under the fork. The French call it croquembouche, a name taken from the old phrase 'croque en bouche.' What does that phrase literally mean?",
     "answer": "It crunches in the mouth",
     "choices": [
       "It crunches in the mouth",
@@ -3666,21 +3549,8 @@
     "topic": "car-me-and-edible-architecture"
   },
   {
-    "tier": 5,
-    "question": "At a French wedding or baptism the showstopping centerpiece is a croquembouche -- a tall, golden, glossy cone that stands taller than the cake. Look closely and the whole tower is built from many identical small pieces stacked into shape. What are those pieces?",
-    "answer": "Cream-filled choux puffs, glued with spun caramel",
-    "choices": [
-      "Cream-filled choux puffs, glued with spun caramel",
-      "Thin almond macarons, stacked in neat rings",
-      "Small squares of sponge, layered with jam",
-      "Rolled sugar wafers, coiled into a spiral"
-    ],
-    "context": "A croquembouche is a cone-shaped tower of cream-filled choux puffs (profiteroles) glued together with threads of spun caramel -- edible architecture in its purest form, and still the French centerpiece at weddings, baptisms and First Communions. Source: https://en.wikipedia.org/wiki/Croquembouche",
-    "topic": "car-me-and-edible-architecture"
-  },
-  {
     "tier": 1,
-    "question": "French onion soup gets its deep brown color and sweet flavor not from the broth, but from how the onions are cooked first. What does the cook do to plain, sharp onions?",
+    "question": "A cook making French onion soup gives it a deep brown color and sweet flavor that come not from the broth but from how the plain, sharp onions are cooked first. What does the cook do to the onions?",
     "answer": "Cooks them slowly over gentle, low heat",
     "choices": [
       "Cooks them slowly over gentle, low heat",
@@ -3693,7 +3563,7 @@
   },
   {
     "tier": 2,
-    "question": "Home recipes constantly tell you to 'caramelize the onions for 5 to 10 minutes.' The modern American food writer Tom Scocca calls that instruction a flat-out lie. In ten minutes you get soft, sweaty, slightly sweet onions — but not the deep-brown, jammy, mahogany-colored ones a real bistro serves on a bowl of French onion soup. How long does true caramelizing actually take?",
+    "question": "Tom Scocca, an American food writer, calls one common recipe instruction a flat-out lie: 'caramelize the onions for 5 to 10 minutes.' Ten minutes gives soft, sweaty, slightly sweet onions, not the deep-brown, jammy ones a real bistro piles into French onion soup. How long does true caramelizing actually take?",
     "answer": "About 45 minutes to an hour",
     "choices": [
       "About 45 minutes to an hour",
@@ -3706,7 +3576,7 @@
   },
   {
     "tier": 2,
-    "question": "Real French onion soup, served in a little brown crock at a Paris bistro, floats a slice of stale baguette on top of the beefy broth, buries the bread under a snowdrift of a certain grated melting cheese, and slides the whole crock under the broiler until the top browns and bubbles into a molten lid. Which cheese is the traditional crown for that bubbling top?",
+    "question": "A Paris bistro serves French onion soup in a little brown crock: a slice of stale baguette floats on the beefy broth under a snowdrift of one grated melting cheese, and the crock slides under the broiler until the top bubbles into a molten lid. Which cheese is the traditional crown for that top?",
     "answer": "Gruyère",
     "choices": [
       "Gruyère",
@@ -3719,7 +3589,7 @@
   },
   {
     "tier": 3,
-    "question": "The deep-brown onions in French onion soup, the crackly amber sugar top of a crème brûlée, and the tender golden apples of a tarte Tatin all owe their color and their sweet, nutty flavor to one and the same kitchen reaction — the same thing that happens whenever a cook turns up the heat on a sugary food until it darkens and richens. What is that reaction called?",
+    "question": "Onions browning slowly for French onion soup owe their color to the very reaction behind the amber, crackly crust of a crème brûlée and the golden apples of a tarte Tatin: the one that darkens and richens a sugary food as the heat goes up. What is that reaction called?",
     "answer": "Caramelization",
     "choices": [
       "Caramelization",
@@ -3732,20 +3602,7 @@
   },
   {
     "tier": 4,
-    "question": "Caramelizing onions works on their sugar. But sear a steak and it browns into a savory crust too, even though a steak is not sweet at all: this is a different reaction called the Maillard reaction, which also crusts bread and darkens roasting coffee. What does Maillard browning need that plain caramelization does not?",
-    "answer": "Protein — the amino acids in the food",
-    "choices": [
-      "Protein — the amino acids in the food",
-      "Fat — the oil or butter in the pan",
-      "Salt — a heavy seasoning on top",
-      "Acid — a splash of lemon or vinegar"
-    ],
-    "context": "Caramelization is sugar alone; the Maillard reaction needs protein (amino acids) plus reducing sugars, which is why it browns a seared steak, bread crust, toast, and roasting coffee. It's named for French chemist Louis-Camille Maillard, who first described it in 1912 while studying proteins; Nobel laureate Jean-Marie Lehn called it 'by far the most widely practiced chemical reaction in the world.' Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "caramelized-onions-and-french-onion-soup"
-  },
-  {
-    "tier": 4,
-    "question": "Tarte Tatin, the upside-down apple tart, comes from the Hôtel Tatin, where sisters Stéphanie and Caroline Tatin cooked in the 1880s. The famous story says Stéphanie, overworked, left her apples cooking too long, smelled them burning, and saved them by flopping pastry on top and baking it upside down. What do food historians say about that origin story?",
+    "question": "Stéphanie and Caroline Tatin cooked at the Hôtel Tatin in the 1880s, and the famous story of their upside-down apple tart says Stéphanie, overworked, left her apples cooking too long, smelled them burning, and saved them by flopping pastry on top and baking it upside down. What do food historians say about that origin story?",
     "answer": "It's mostly legend, pinned on the sisters years later",
     "choices": [
       "It's mostly legend, pinned on the sisters years later",
@@ -3758,7 +3615,7 @@
   },
   {
     "tier": 1,
-    "question": "You bite into a whole apple, then compare it with a glass of apple juice pressed from the same fruit. Both carry about the same sugar — yet the juice sends your blood sugar spiking while the whole apple barely moves it. The apple holds about 4 grams of one thing the juice has almost none of. What is it?",
+    "question": "A glass of apple juice and the whole apple it was pressed from carry about the same sugar, yet the juice sends blood sugar spiking while the apple barely moves it. The apple holds about 4 grams of one thing the juice almost lacks. What is it?",
     "answer": "fiber",
     "choices": [
       "fiber",
@@ -3770,34 +3627,8 @@
     "topic": "carbohydrates-smart-vs-empty-fiber-and-blood-sugar"
   },
   {
-    "tier": 2,
-    "question": "The wheat germ is the tiny living seed core that gets thrown away when wheat is milled into white flour. Besides its healthy oils, the germ is the grain's richest store of one vitamin, the same one that all but vanishes from refined flour. Which vitamin is packed into the discarded germ?",
-    "answer": "vitamin E",
-    "choices": [
-      "vitamin E",
-      "vitamin A",
-      "vitamin D",
-      "vitamin K"
-    ],
-    "context": "Refining wheat doesn't just cost fiber — it strips away more than half the grain's B vitamins and about 90% of its vitamin E, since those nutrients ride in the bran and germ that get discarded. Choosing whole-grain bread, brown rice or oats keeps them. Source: Harvard Nutrition Source (Whole Grains).",
-    "topic": "carbohydrates-smart-vs-empty-fiber-and-blood-sugar"
-  },
-  {
-    "tier": 4,
-    "question": "The trillions of microbes living inside your large intestine ferment the plant fibers you can't digest into a short-chain fat called butyrate. Butyrate turns out to be the number-one fuel — the preferred food, not just a snack — for one specific set of your own body's cells, not for the microbes themselves. Which of your own cells actually live on butyrate?",
-    "answer": "the cells lining your colon",
-    "choices": [
-      "the cells lining your colon",
-      "the cells lining your stomach",
-      "the cells lining your small intestine",
-      "the cells inside your liver"
-    ],
-    "context": "Gut bacteria ferment fiber into short-chain fatty acids — acetate, propionate and butyrate — and butyrate is the preferred fuel of the cells lining your colon. In one experiment, mice on a high-fiber diet WITH the butyrate-making bacteria developed 75% fewer colon tumors than controls, while high fiber WITHOUT those bacteria gave no protection — the fiber only helps once the microbes turn it into butyrate. Source: Healthline (short-chain fatty acids).",
-    "topic": "carbohydrates-smart-vs-empty-fiber-and-blood-sugar"
-  },
-  {
     "tier": 1,
-    "question": "A real carbonara looks so rich that people swear some dairy must be stirred in. Really, the sauce is just beaten raw egg and grated cheese. It turns silky from the heat of the just-drained hot pasta. Which ingredient does a real carbonara never contain?",
+    "question": "A plate of real Roman carbonara looks so silky that diners take it for granted one dairy ingredient went in. In fact the sauce is only beaten raw egg and grated cheese, turned silky by the heat of the just-drained pasta. Which ingredient, so often blamed for that richness, does it never contain?",
     "answer": "cream",
     "choices": [
       "cream",
@@ -3810,20 +3641,7 @@
   },
   {
     "tier": 2,
-    "question": "Carbonara is a famous pasta dish from the city of Rome. A real Roman carbonara gets its salty punch from a grated cheese called Pecorino Romano. Romans insist on it, even though most tourists dust their pasta with Parmesan instead. Pecorino is a prized cheese from central Italy, made from the milk of just one animal. Which animal makes the milk?",
-    "answer": "sheep",
-    "choices": [
-      "sheep",
-      "goat",
-      "cow",
-      "buffalo"
-    ],
-    "context": "Pecorino Romano is a sharp, salty cheese made from sheep's milk — 'pecora' is Italian for sheep — not the cow's-milk Parmigiano-Reggiano tourists expect. Its saltiness is a big part of carbonara's punch. Source: Wikipedia 'Carbonara' (en.wikipedia.org/wiki/Carbonara) and Grokipedia 'Carbonara' (grokipedia.com/page/Carbonara).",
-    "topic": "carbonara-egg-not-cream"
-  },
-  {
-    "tier": 2,
-    "question": "Pasta carbonara is a classic Roman dish that comes down to just a few things: hot cooked pasta, whole egg, and salty grated cheese, all tossed together in one pan. But one more seasoning gives every forkful its warm bite, and no Italian cook leaves it out. Which seasoning completes the classic Roman recipe?",
+    "question": "A Roman cook tosses hot pasta, whole egg and salty grated cheese together in one pan for carbonara. One more seasoning gives every forkful its warm bite, and no Italian cook leaves it out. Which seasoning completes the classic Roman recipe?",
     "answer": "black pepper",
     "choices": [
       "black pepper",
@@ -3836,7 +3654,7 @@
   },
   {
     "tier": 3,
-    "question": "Carbonara is a creamy pasta dish invented in Rome. Outside Italy, cooks fake it with bacon or pancetta, both cut from the pig's belly. A real Roman version instead uses a cured pork called guanciale, taken from a completely different part of the pig. Which part of the pig is guanciale?",
+    "question": "Bacon and pancetta, the meats cooks outside Italy reach for when they fake a carbonara, are both cut from the pig's belly. A real Roman carbonara uses a cured pork called guanciale, taken from a completely different part of the pig. Which part of the pig is guanciale?",
     "answer": "the cheek",
     "choices": [
       "the cheek",
@@ -3849,7 +3667,7 @@
   },
   {
     "tier": 4,
-    "question": "The name 'carbonara' has nothing to do with its eggs, cheese, or pork — it comes from 'carbone,' the Italian word for coal. The dish is literally described as being cooked 'in the manner of' a certain soot-stained trade. Which workers does the name point to?",
+    "question": "Spaghetti tossed with egg, cheese and crisp pork goes by a name that has nothing to do with any of them. 'Carbonara' comes from 'carbone,' the Italian word for coal, and describes food cooked 'in the manner of' a certain soot-stained trade. Which workers does the name point to?",
     "answer": "charcoal burners",
     "choices": [
       "charcoal burners",
@@ -3862,7 +3680,7 @@
   },
   {
     "tier": 4,
-    "question": "Carbonara belongs to a family of four Roman pasta dishes. They are all built from nearly the same short list: guanciale, pecorino, and black pepper. One cousin dish is really carbonara with a single ingredient dropped, so alike that Romans nickname it 'white amatriciana.' Which dish is carbonara minus the egg?",
+    "question": "A Roman trattoria cooks four cousin pastas from nearly the same short pantry list, guanciale and pecorino among it, and carbonara is one of them. Another cousin is carbonara with a single ingredient dropped, so alike that Romans nickname it 'white amatriciana.' Which dish is carbonara minus the egg?",
     "answer": "gricia",
     "choices": [
       "gricia",
@@ -3888,7 +3706,7 @@
   },
   {
     "tier": 5,
-    "question": "Carbonara feels like a timeless Roman classic. Yet historians cannot find it in any Italian cookbook printed before World War 2, and the dish surfaces in Rome only after the 1944 liberation. The most-cited theory says local cooks improvised around two foods brought in by the American army. Which two ration foods sparked carbonara?",
+    "question": "Historians hunting for carbonara in Italian cookbooks printed before World War II come up empty, though it feels like a timeless Roman classic: the dish surfaces in Rome only after the 1944 liberation. The most-cited theory says local cooks improvised around two foods brought in by the American army. Which two ration foods sparked carbonara?",
     "answer": "eggs and bacon",
     "choices": [
       "eggs and bacon",
@@ -3901,7 +3719,7 @@
   },
   {
     "tier": 1,
-    "question": "Bread, rice, a boiled potato, and an apple all give us carbs. Every one of them began as a plant, quietly storing energy inside. Where did the energy in those carbs first come from?",
+    "question": "A lunch plate holds bread, rice, a boiled potato and an apple, and every carb on it began in a plant that quietly stored energy inside. Where did that energy first come from?",
     "answer": "sunlight the plant captured",
     "choices": [
       "sunlight the plant captured",
@@ -3914,7 +3732,7 @@
   },
   {
     "tier": 1,
-    "question": "From a tiny germ in a puddle to the cells in your own brain, almost every living thing runs on the same small sugar for energy. Which sugar is life's main fuel?",
+    "question": "A tiny germ in a puddle runs on the same small sugar for energy as almost every other living thing on Earth, people included. Which sugar is life's main fuel?",
     "answer": "glucose",
     "choices": [
       "glucose",
@@ -3927,7 +3745,7 @@
   },
   {
     "tier": 2,
-    "question": "Bite a candy bar and its sugar hits your blood almost instantly. Eat a baked potato and the energy trickles in slowly instead. Dietitians sort carbs into two families by this speed. Candy's fast kind is a 'simple' carb, so what do they call the potato's slow kind?",
+    "question": "A kid who bites into a candy bar gets its sugar into the blood almost instantly, while a baked potato's energy trickles in slowly. Dietitians sort carbs into two families by this speed, and candy's fast kind is a 'simple' carb. What do they call the potato's slow kind?",
     "answer": "a 'complex' carb",
     "choices": [
       "a 'complex' carb",
@@ -3940,7 +3758,7 @@
   },
   {
     "tier": 2,
-    "question": "Not all sugars in food taste equally sweet — some pack a much stronger punch on the tongue than others. The sweetest sugar in all of nature is not the plain white stuff in your sugar bowl. It's a different sugar — the one that gives ripe mangoes, honey, and summer berries their intense, almost perfumey sweetness, taste-tested at nearly twice as sweet as ordinary table sugar. Which sugar is it?",
+    "question": "Ripe mangoes, honey and summer berries get their intense, almost perfumed sweetness from a sugar that is not the plain white kind in a sugar bowl. Weight for weight it tastes about half again as sweet as table sugar, the sweetest sugar in nature. Which sugar is it?",
     "answer": "fructose",
     "choices": [
       "fructose",
@@ -3953,7 +3771,7 @@
   },
   {
     "tier": 3,
-    "question": "One organ is only about 2% of your body weight, yet it burns roughly a fifth of the energy you use, and it runs almost entirely on glucose, using around 120 grams a day just to keep going. Which greedy organ is it?",
+    "question": "About a fifth of all the energy a person burns goes to one greedy organ that makes up only about 2 percent of the body's weight. It runs almost entirely on blood sugar, some 120 grams a day just to keep going. Which organ is it?",
     "answer": "the brain",
     "choices": [
       "the brain",
@@ -3966,7 +3784,7 @@
   },
   {
     "tier": 3,
-    "question": "Nutritionists rank foods on a 'glycemic index': the higher a food scores, the more sharply it sends your blood sugar spiking up and then crashing back down. Of these four snacks, which would score HIGHEST — the steepest spike-and-crash?",
+    "question": "Four snacks sit on a kitchen counter, and nutritionists would rank each one on a 'glycemic index' by how sharply it sends blood sugar spiking up and then crashing back down. Which of the four would score highest, with the steepest spike and crash?",
     "answer": "a handful of jelly beans",
     "choices": [
       "a handful of jelly beans",
@@ -3979,7 +3797,7 @@
   },
   {
     "tier": 3,
-    "question": "The night before a big race, marathon runners sit down to a giant plate of pasta — what runners call the 'carb-loading' dinner. The whole point is to stock their muscles with slow-burning fuel for the next day. Nearly all of pasta's calories come from a single carbohydrate: starch. If you zoom in on a grain of starch under a chemist's microscope, it turns out to really just be what?",
+    "question": "A giant plate of pasta is the classic 'carb-loading' dinner that marathon runners eat the night before a big race, meant to stock their muscles with slow-burning fuel. Nearly all of pasta's calories come from one carbohydrate, starch. Seen up close by a chemist, what is starch really?",
     "answer": "a long chain of glucose molecules",
     "choices": [
       "a long chain of glucose molecules",
@@ -3992,7 +3810,7 @@
   },
   {
     "tier": 4,
-    "question": "Eat more carbs than you need right now, and your body doesn't waste the extra. It packs the spare glucose into a dense, heavily branched storage molecule, essentially an animal version of plant starch. This storage molecule releases quickly whenever your body needs energy. What is this stored carb battery called?",
+    "question": "Extra carbs eaten at dinner do not go to waste. The body packs the spare sugar into a dense, heavily branched storage molecule, an animal version of plant starch, built to release its fuel quickly whenever energy is needed. What is this stored carb battery called?",
     "answer": "glycogen",
     "choices": [
       "glycogen",
@@ -4005,7 +3823,7 @@
   },
   {
     "tier": 4,
-    "question": "You burn through glucose all day long — so you'd guess your blood is swimming in sugar. In fact, at any one instant the total glucose dissolved in your whole bloodstream is startlingly tiny. About how much is it?",
+    "question": "A person burns through blood sugar all day long, so it would be easy to guess the blood is swimming in it. In fact, at any one instant, the total sugar dissolved in the whole bloodstream is startlingly tiny. About how much is it?",
     "answer": "about a teaspoon's worth",
     "choices": [
       "about a teaspoon's worth",
@@ -4018,7 +3836,7 @@
   },
   {
     "tier": 5,
-    "question": "Around mile 20 of a marathon, a runner can be slammed by sudden, crushing exhaustion — legs like lead, heart pounding, spirit sinking — as the glycogen in his muscles and liver hits empty all at once. Runners have a grim nickname for this dreaded moment. What is it?",
+    "question": "A marathon runner some 20 miles into the race is slammed by sudden, crushing exhaustion, legs like lead, heart pounding and spirit sinking, as the stored fuel in his muscles and liver hits empty all at once. Runners have a grim nickname for that dreaded moment. What is it?",
     "answer": "hitting the wall",
     "choices": [
       "hitting the wall",
@@ -4031,7 +3849,7 @@
   },
   {
     "tier": 5,
-    "question": "Cut carbs down to almost nothing — or go without food for a few days — and your body doesn't simply shut down. The liver starts breaking body fat into a backup fuel that even your glucose-hungry brain learns to run on. What are these fat-derived backup fuel molecules called?",
+    "question": "On a diet with almost no carbs, or after a few days without food, the body does not simply shut down. It starts breaking its own fat into a backup fuel it can run on instead. What are these fat-made fuel molecules called?",
     "answer": "ketones",
     "choices": [
       "ketones",
@@ -4044,7 +3862,7 @@
   },
   {
     "tier": 1,
-    "question": "Cardamom turns up in the spice aisle as little papery green pods about as long as your thumbnail. But a cook who drops a whole pod in the pan soon learns the pod is just the wrapper — you split it open to reach the real spice tucked inside. What is that spice?",
+    "question": "Cardamom comes as little papery green pods about as long as a thumbnail. A cook who drops a whole pod into the pan soon learns it is only the wrapper, to be split open for the real spice inside. What is that spice?",
     "answer": "a cluster of sticky black seeds",
     "choices": [
       "a cluster of sticky black seeds",
@@ -4057,7 +3875,7 @@
   },
   {
     "tier": 2,
-    "question": "Crush a cardamom seed and you catch a warm, faintly peppery scent — a hint of its family tree. Cardamom belongs to the very same plant family as a pungent, underground kitchen staple famous for its fiery bite. Which of these is cardamom's close cousin?",
+    "question": "A cook who crushes a little cardamom catches a warm, faintly peppery scent, a hint of its family tree. Cardamom belongs to the very same plant family as a pungent, underground kitchen staple famous for its fiery bite. Which of these is cardamom's close cousin?",
     "answer": "ginger",
     "choices": [
       "ginger",
@@ -4070,7 +3888,7 @@
   },
   {
     "tier": 3,
-    "question": "Cardamom grows wild in the rainforests of southern India, its ancient home. But Indians love the spice so much that they eat roughly nine-tenths of their own harvest, leaving little to sell abroad. So today the world's biggest cardamom exporter is a tropical country half a world from India, one that took up the crop only about a century ago. Which country now leads the trade?",
+    "question": "Cardamom grows wild in southern India's rainforests, its ancient home, but Indians eat roughly nine-tenths of their own harvest, leaving little to sell abroad. A German coffee planter, the story goes, carried seeds from India to a tropical country half a world away in 1914, and that country now leads the cardamom trade. Which country is it?",
     "answer": "Guatemala",
     "choices": [
       "Guatemala",
@@ -4083,7 +3901,7 @@
   },
   {
     "tier": 4,
-    "question": "Only saffron and vanilla outrank cardamom as the priciest spice by weight in the world's kitchens. Yet cardamom isn't especially rare, and plenty of it is farmed across the tropics. So what pushes the cost of every pound so high?",
+    "question": "A cardamom farmer in the tropics grows a spice that only saffron and vanilla outprice by weight, though cardamom is not especially rare and plenty of it is farmed. What pushes the price of every pound so high?",
     "answer": "every pod is picked by hand, one at a time",
     "choices": [
       "every pod is picked by hand, one at a time",
@@ -4096,7 +3914,7 @@
   },
   {
     "tier": 5,
-    "question": "One little cardamom pod bridges kitchens on three continents. It perfumes Middle Eastern coffee. It anchors India's garam masala. And most surprising of all, it flavors the everyday sweet buns of one corner of Europe, where people eat far more cardamom than Americans ever do. Which region is wild about cardamom baking?",
+    "question": "Bakers in one corner of Europe fold cardamom into everyday sweet buns, and the people there eat far more of it than Americans ever do. The same little pod perfumes Middle Eastern coffee and anchors India's garam masala. Which region is wild about cardamom baking?",
     "answer": "Scandinavia",
     "choices": [
       "Scandinavia",
@@ -4109,7 +3927,7 @@
   },
   {
     "tier": 1,
-    "question": "In the early 1800s, the French pastry chef Marie-Antoine Careme topped the grandest royal banquets of his day with a centerpiece several feet tall. Some were shaped like a Greek temple, others like an Egyptian pyramid. What did Careme actually build these tall showpieces from?",
+    "question": "Silver candles and wax fruit ran the length of a grand Paris banquet table in the early 1800s, and above them rose a centerpiece several feet tall by Marie-Antoine Carême, Europe's most famous chef. One thing set it apart from every other ornament there. What was it built from?",
     "answer": "sugar and pastry",
     "choices": [
       "sugar and pastry",
@@ -4117,51 +3935,25 @@
       "glass and polished wood",
       "wax and painted plaster"
     ],
-    "context": "These edible buildings were called pieces montees ('mounted pieces'). Careme built them entirely from sugar, marzipan, nougat and pastry — grand enough to gaze at, and technically edible, though guests admired them far more than they ate them. Source: Wikipedia, 'Piece montee.'",
-    "topic": "careme-food-as-architecture"
-  },
-  {
-    "tier": 2,
-    "question": "In early 1800s France, the chef Marie-Antoine Careme built astonishingly tall pastry centerpieces meant to dazzle royal banquets. One edible child of Careme's towers still crowns French weddings and baptisms today. It is a tall cone built from dozens of little cream-puff balls, glued together with crunchy caramel. What is this celebration tower called?",
-    "answer": "a croquembouche",
-    "choices": [
-      "a croquembouche",
-      "a profiterole",
-      "an eclair",
-      "a macaron"
-    ],
-    "context": "A croquembouche (roughly 'crunch-in-the-mouth') is a cone of choux-pastry puffs stuck together with caramel and draped in spun sugar — the surviving edible heir of Careme's pieces montees, and still the traditional French wedding and christening centerpiece. Source: Wikipedia, 'Piece montee.'",
+    "context": "Carême's centerpieces were called pièces montées ('mounted pieces'): towering table sculptures built from sugar, marzipan, nougat and pastry rather than flowers, wax or metal, the one sculpture on the table made out of food. They were technically edible, though guests admired them far more than they ate them. Source: https://en.wikipedia.org/wiki/Marie-Antoine_Car%C3%AAme",
     "topic": "careme-food-as-architecture"
   },
   {
     "tier": 3,
-    "question": "Marie-Antoine Careme was the celebrated French chef of the early 1800s who cooked for kings and emperors. Among the savoury dishes Careme made famous is a tall, hollow case of golden puff pastry, filled with a rich chicken-and-mushroom ragout — and so airy that its French name means 'flying in the wind.' What is this dish called?",
-    "answer": "a vol-au-vent",
+    "question": "The showstopping centerpiece at a French wedding or baptism is often a croquembouche, a tall, golden, glossy cone and an edible heir of Carême's towering centerpieces. Up close, the whole tower turns out to be built from many identical small pieces stacked into shape. What are those pieces?",
+    "answer": "Cream-filled choux puffs, glued with spun caramel",
     "choices": [
-      "a vol-au-vent",
-      "a souffle",
-      "a croissant",
-      "a mille-feuille"
+      "Cream-filled choux puffs, glued with spun caramel",
+      "Thin almond macarons, stacked in neat rings",
+      "Small squares of sponge, layered with jam",
+      "Rolled sugar wafers, coiled into a spiral"
     ],
-    "context": "Vol-au-vent means 'flight in the wind' — the baked case is so light it seems it could float off the plate. Careme is credited with popularizing it rather than inventing it: the name already appears in Francois Marin's 1739 cookbook Les Dons de Comus, before Careme was born. Source: Wikipedia, 'Vol-au-vent.'",
+    "context": "A croquembouche is a cone-shaped tower of cream-filled choux puffs (profiteroles) glued together with caramel and draped in spun sugar: edible architecture in its purest form, the surviving heir of Carême's pièces montées, and still the French centerpiece at weddings, baptisms and First Communions. Source: https://en.wikipedia.org/wiki/Croquembouche",
     "topic": "careme-food-as-architecture"
   },
   {
     "tier": 4,
-    "question": "Careme made the tall white hat, the toque, the mark of a real chef — he mocked the droopy old caps that made cooks 'look ill,' and wanted a hat that 'announced the man in good health.' In his kitchens, the height of a cook's toque signalled one thing above all. What did a taller toque mean?",
-    "answer": "a higher rank in the kitchen",
-    "choices": [
-      "a higher rank in the kitchen",
-      "more years of training",
-      "a specialty in pastry",
-      "a role at the roasting fire"
-    ],
-    "context": "Careme's own toque stood about 18 inches tall — so tall it was stiffened with cardboard inside — and in his kitchen the loftiest hat belonged to the chef of highest rank. A charming but unverified tradition says the roughly 100 folds in a toque stand for 100 ways a master can cook an egg. Sources: Alimentarium, 'The chef's hat through the ages'; Mental Floss.",
-    "topic": "careme-food-as-architecture"
-  },
-  {
-    "tier": 4,
-    "question": "Careme cooked for the most powerful people of his age — the statesman Talleyrand, the future King George IV of Britain, Tsar Alexander of Russia, and the fabulously rich Rothschild bankers. This unmatched roster of masters earned Careme a famous double-title. What double-title did Careme earn?",
+    "question": "Marie-Antoine Carême cooked for the most powerful people of his age, from Tsar Alexander of Russia and the future King George IV of Britain to the statesman Talleyrand and the fabulously rich Rothschild bankers. That unmatched roster of masters earned him a famous double title. What was it?",
     "answer": "the king of chefs and the chef of kings",
     "choices": [
       "the king of chefs and the chef of kings",
@@ -4173,8 +3965,8 @@
     "topic": "careme-food-as-architecture"
   },
   {
-    "tier": 5,
-    "question": "Marie-Antoine Careme was the famous French chef of the early 1800s who cooked for Napoleon and Europe's royalty. Careme was so proud of his craft that he ranked it among the five fine arts — declaring one of them the noblest of all, and calling his pastry that art's very highest branch. Which art did Careme say his pastry belonged to?",
+    "tier": 4,
+    "question": "Proud of his craft, Marie-Antoine Carême counted five fine arts in one of his cookbooks: music, painting, sculpture, poetry and architecture. Then he named one of them the noblest of all and crowned his own pastry its highest branch. Which art did Carême say his pastry belonged to?",
     "answer": "architecture",
     "choices": [
       "architecture",
@@ -4187,7 +3979,7 @@
   },
   {
     "tier": 1,
-    "question": "The chewy dark pearls that sit at the bottom of a cup of bubble tea, and the glossy wobble in certain puddings, both come from the same ingredient. It is a pure starch drawn from the root of the tropical cassava plant, which is grown across South America and West Africa. What do we call that starch?",
+    "question": "The chewy dark pearls at the bottom of a cup of bubble tea and the glossy wobble in certain puddings come from the same ingredient: a pure starch drawn from the root of the tropical cassava plant. What is that starch called?",
     "answer": "Tapioca",
     "choices": [
       "Tapioca",
@@ -4200,7 +3992,7 @@
   },
   {
     "tier": 2,
-    "question": "Cassava root feeds hundreds of millions of people. But the bitter kind eaten raw is dangerous, and chewing the raw root sets loose one of the world's most notorious poisons. Which poison hides in raw cassava?",
+    "question": "Cassava root feeds hundreds of millions of people, but raw bitter cassava is dangerous. Unlike a carrot, it cannot just be washed and bitten: chewing it sets loose one of the world's most notorious poisons. Which poison hides in it?",
     "answer": "Cyanide",
     "choices": [
       "Cyanide",
@@ -4213,7 +4005,7 @@
   },
   {
     "tier": 3,
-    "question": "Cassava is a top food for many Africans today, but the plant is not really African. Portuguese traders brought it to Africa in the 1500s from another tropical land, where farmers had grown it for ages. Where does cassava originally come from?",
+    "question": "Portuguese traders carried cassava to Africa in the 1500s, and today it is a top food for many Africans, though the plant is not African at all. The traders brought it from another tropical land, where farmers had grown it for ages. Where does cassava originally come from?",
     "answer": "South America",
     "choices": [
       "South America",
@@ -4226,7 +4018,7 @@
   },
   {
     "tier": 4,
-    "question": "When drought or famine forces families to rush cassava through its detox — soaking the roots too briefly — the leftover poison can strike. It leaves children and young women with a sudden, permanent paralysis of the legs. What is this cassava-poisoning disease called?",
+    "question": "When drought or famine forces families to rush cassava through its detox, soaking the roots too briefly, the leftover poison can strike, leaving children and young women with a sudden, permanent paralysis of the legs. What is this cassava-poisoning disease called?",
     "answer": "Konzo",
     "choices": [
       "Konzo",
@@ -4239,7 +4031,7 @@
   },
   {
     "tier": 4,
-    "question": "Cassava comes in a mild 'sweet' kind and a 'bitter' kind that can carry up to fifty times more of the poison. You'd expect farmers to avoid the toxic one — yet many plant the bitter, more-dangerous cassava on purpose. Why choose the riskier crop?",
+    "question": "A cassava farmer can plant a mild 'sweet' kind or a 'bitter' kind that may carry up to fifty times more of the poison, and many farmers choose the bitter, more dangerous one on purpose. Why choose the riskier crop?",
     "answer": "Its poison scares off pests, grazing animals, and hungry thieves",
     "choices": [
       "Its poison scares off pests, grazing animals, and hungry thieves",
@@ -4252,7 +4044,7 @@
   },
   {
     "tier": 5,
-    "question": "Here's the strange part: a whole raw cassava root sitting on the counter is fairly harmless, but grate it to a pulp — or even just chew it — and it turns poisonous. The grating itself is the trigger. What does crushing the root actually do to unleash the poison?",
+    "question": "A whole raw cassava root sitting on a kitchen counter is fairly harmless, but grated to a pulp, or even just chewed, it turns poisonous. The grating itself is the trigger. What does crushing the root actually do to unleash the poison?",
     "answer": "It ruptures the cells so an enzyme meets the toxin and frees the poison",
     "choices": [
       "It ruptures the cells so an enzyme meets the toxin and frees the poison",
@@ -5032,7 +4824,7 @@
   },
   {
     "tier": 1,
-    "question": "Today the word 'chocolate' means a solid bar. You unwrap it and bite into it. But for most of its history, back in the old kingdoms of Mexico and Central America, chocolate came in a very different form. What was it?",
+    "question": "A child today who hears the word 'chocolate' pictures a solid bar to unwrap and bite into. For most of its history, though, in the old kingdoms of Mexico and Central America, chocolate came in a very different form. What was it?",
     "answer": "A frothy drink",
     "choices": [
       "A frothy drink",
@@ -5044,34 +4836,8 @@
     "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
   },
   {
-    "tier": 1,
-    "question": "The chocolate the Aztecs actually drank had no sugar and it tasted quite bitter. Even stranger, the Aztecs often stirred in one thing we would never add to chocolate today. What was it?",
-    "answer": "Chili peppers",
-    "choices": [
-      "Chili peppers",
-      "Mint leaves",
-      "Ground almonds",
-      "Rose petals"
-    ],
-    "context": "The Aztec drink xocolatl was bitter and unsweetened, frequently spiced with ground chili — nothing like modern sweet chocolate. Sugar was a much later European addition. Source: worldhistory.org/Chocolate_in_Mesoamerica",
-    "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
-  },
-  {
     "tier": 2,
-    "question": "In 1753 the botanist Carl Linnaeus gave the cacao tree its official scientific name: Theobroma. He built it from two Greek words, and the meaning shows just how highly people prized chocolate. What does Theobroma mean?",
-    "answer": "Food of the gods",
-    "choices": [
-      "Food of the gods",
-      "Gift of the earth",
-      "Blood of kings",
-      "Fruit of heaven"
-    ],
-    "context": "Theobroma cacao — from Greek theos (god) and broma (food), literally 'food of the gods.' Linnaeus, who named thousands of plants and animals, judged chocolate worthy of a divine title. Source: en.wikipedia.org/wiki/History_of_chocolate",
-    "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
-  },
-  {
-    "tier": 2,
-    "question": "Cacao beans were so valuable in the Aztec world that people spent them as real money — cash that literally grew on trees. Going by a surviving market price list from 1545, what could you buy with just a single cacao bean?",
+    "question": "Aztec shoppers spent cacao beans as real money, cash that grew on trees. A market price list that survives from 1545 shows what each purchase cost in beans. What could a shopper buy with just a single bean?",
     "answer": "A ripe avocado",
     "choices": [
       "A ripe avocado",
@@ -5084,20 +4850,7 @@
   },
   {
     "tier": 3,
-    "question": "The Aztecs prized the thick foam on top of their chocolate as the very best part of the whole drink — and they had a clever way to raise a good head of froth. With no blender and no whisk, how did they make their chocolate foam up?",
-    "answer": "Poured it from one tall cup into another",
-    "choices": [
-      "Poured it from one tall cup into another",
-      "Whisked it with a bundle of dried reeds",
-      "Blew into it through a hollow cane",
-      "Shook it hard inside a sealed gourd"
-    ],
-    "context": "Aztec servers poured the chocolate from a height, cup to cup, again and again, to raise the foam they treasured above the rest of the drink. Source: worldhistory.org/Chocolate_in_Mesoamerica",
-    "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
-  },
-  {
-    "tier": 3,
-    "question": "For decades after the Spanish first tasted Aztec chocolate, many of them disliked the bitter foamy drink. Europeans reworked it with several new additions. One addition above all remade chocolate for European tastes. Which addition mattered most?",
+    "question": "Many of the Spaniards who first tasted Aztec chocolate disliked it, bitter and foamy as it was, and went on disliking it for decades. Europeans reworked it with several new additions to suit their own tastes, and one mattered more than all the rest. Which one?",
     "answer": "Sugar",
     "choices": [
       "Sugar",
@@ -5110,7 +4863,7 @@
   },
   {
     "tier": 4,
-    "question": "Cacao beans were money in the Aztec world — and wherever there's money to be made, counterfeiters appear. The Florentine Codex, a Spanish record of Aztec life, describes the sneaky trick cheats used to fake cacao beans and swindle honest traders. What did the counterfeiters do?",
+    "question": "Bernardino de Sahagún, a friar, compiled the Florentine Codex, his chronicle of Aztec life, and in it he described cheats who faked the cacao beans that served as money, to swindle honest traders. What trick did the counterfeiters use?",
     "answer": "Hollowed out the shells and stuffed in filler",
     "choices": [
       "Hollowed out the shells and stuffed in filler",
@@ -5123,7 +4876,7 @@
   },
   {
     "tier": 4,
-    "question": "In the early 1500s, the Aztec emperor Montezuma II ruled a vast empire from his palace in what is now Mexico City. The Spanish soldier Bernal Diaz del Castillo, who saw the royal court in person, later wrote that servants brought Montezuma more than fifty pitchers of foamy chocolate at a single sitting. What did Montezuma do with the golden cups he drank from?",
+    "question": "Montezuma II ruled the vast Aztec empire in the early 1500s from his palace in what is now Mexico City. Bernal Díaz del Castillo, a Spanish soldier who saw the royal court in person, later wrote that servants brought the emperor more than fifty pitchers of foamy chocolate at a single sitting. What did Montezuma do with the golden cups he drank from?",
     "answer": "Used each cup only once, then never again",
     "choices": [
       "Used each cup only once, then never again",
@@ -5136,7 +4889,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1502, the Columbus expedition seized a Maya trading canoe loaded with strange beans no European had ever seen. When some beans spilled out on the deck, the Maya lunged frantically to grab up every last one. A Spanish account marveled that they snatched each fallen bean as carefully as if they had dropped what?",
+    "question": "Columbus's crew seized a Maya trading canoe in 1502, loaded with strange beans no European had ever seen. When some spilled out on the deck, the Maya lunged to grab up every last one. A Spanish account says they snatched each fallen bean as carefully as if they had dropped what?",
     "answer": "An eye",
     "choices": [
       "An eye",
@@ -5149,7 +4902,7 @@
   },
   {
     "tier": 5,
-    "question": "The earliest chocolate bars were coarse and gritty on the tongue, nothing like the silky bars we know today. In 1879 the Swiss maker Rodolphe Lindt discovered how to give chocolate its famous melt-in-your-mouth smoothness — and remarkably, his method added no new ingredient at all. What did Lindt do to the chocolate?",
+    "question": "Rodolphe Lindt, a Swiss chocolatier, faced a problem in 1879: the chocolate bars of his day were coarse and gritty on the tongue. He found a way to give them their famous smooth melt without adding a single new ingredient. What did he do to the chocolate?",
     "answer": "Stirred it for hours on end",
     "choices": [
       "Stirred it for hours on end",
@@ -5162,7 +4915,7 @@
   },
   {
     "tier": 5,
-    "question": "Chocolate stayed only a drink for centuries because of a real technical problem: raw ground cacao simply won't set into a firm, smooth solid on its own. The breakthrough behind the first eating bar was a press that split the beans into two parts. What did that press squeeze out of the cacao?",
+    "question": "Coenraad van Houten built a press in 1828 that split cacao into two parts, and it opened the way to the first chocolate bar to eat. The problem it solved was old: raw ground cacao simply will not set firm and smooth on its own. What did his press squeeze out of the cacao?",
     "answer": "The fatty cocoa butter",
     "choices": [
       "The fatty cocoa butter",
@@ -14795,19 +14548,6 @@
   },
   {
     "tier": 1,
-    "question": "A baker mixes up a batch of bread dough, covers the bowl, and leaves it in a warm corner of the kitchen. An hour later - long before it goes near the oven - the lump has swelled to twice its size. What is quietly happening inside the dough?",
-    "answer": "Tiny bubbles of gas are forming and puffing it up",
-    "choices": [
-      "Tiny bubbles of gas are forming and puffing it up",
-      "The flour is soaking up water and swelling like a sponge",
-      "The warmth is making the dough expand as it heats",
-      "The water inside is slowly turning into steam"
-    ],
-    "context": "Bread dough left to rest in a warm bowl roughly doubles in size before it ever reaches the oven - something inside is quietly inflating it like a balloon. That something is gas, forming as countless tiny bubbles. Source: https://en.wikipedia.org/wiki/Baker%27s_yeast",
-    "topic": "leavening-what-actually-makes-bread-rise"
-  },
-  {
-    "tier": 1,
     "question": "A fluffy sandwich loaf comes out soft and full of little holes. But a corn tortilla, an Indian roti, and a sheet of matzo come out flat and dense. What makes these breads so different from the airy loaf?",
     "answer": "Their dough was baked before it had a chance to rise",
     "choices": [
@@ -14821,20 +14561,7 @@
   },
   {
     "tier": 2,
-    "question": "Cut open a slice of soft, fluffy sandwich bread and look at all the little holes running through it. Each hole is a pocket where a gas got trapped inside the dough while it rose in the bowl. Here's the surprise: that same gas is the one that fizzes and hisses out of a can of soda the second you crack it open. Which gas is hiding in both bread and soda pop?",
-    "answer": "Carbon dioxide",
-    "choices": [
-      "Carbon dioxide",
-      "Oxygen",
-      "Hydrogen",
-      "Helium"
-    ],
-    "context": "The gas that blows those bubbles is carbon dioxide (CO2) - the exact same gas that fizzes out of a soda can. Source: https://en.wikipedia.org/wiki/Leavening_agent",
-    "topic": "leavening-what-actually-makes-bread-rise"
-  },
-  {
-    "tier": 2,
-    "question": "Some bakers keep a jar of bubbly, living goo on the kitchen counter and feed it fresh flour and water every single day. A few of these have been kept alive without a break for decades, even passed down for generations. What is this thing bakers guard so carefully?",
+    "question": "A jar of bubbly, living goo sits on a baker's kitchen counter, fed fresh flour and water every single day. Jars like hers have been kept alive without a break for decades, some even passed down for generations. What is the thing she guards so carefully?",
     "answer": "A crock of sourdough starter",
     "choices": [
       "A crock of sourdough starter",
@@ -14846,8 +14573,8 @@
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
-    "tier": 3,
-    "question": "The gas that lifts a bread loaf is not pumped in from a tank. A tiny living creature that bakers stir into the dough makes it, feeding on the flour's sugars and giving off gas as it eats. This microscopic riser is called yeast, and yeast belongs to which family of living things?",
+    "tier": 2,
+    "question": "Dry, sandy yeast granules stirred into warm, sugary dough look like dead powder, yet an hour later the lump has nearly doubled. The grains are alive, feeding on sugar and giving off gas. To which family of living things does yeast belong?",
     "answer": "Fungi - a cousin of the mushroom",
     "choices": [
       "Fungi - a cousin of the mushroom",
@@ -14855,12 +14582,12 @@
       "Plants - a cousin of green algae",
       "Insects - a cousin of the dust mite"
     ],
-    "context": "The CO2 is made by yeast - a living, single-celled fungus called Saccharomyces cerevisiae. It eats the sugars in the flour and gives off carbon dioxide (plus a little alcohol) in a process called fermentation. The bread rises because a microbe is feeding inside the dough. Source: https://en.wikipedia.org/wiki/Baker%27s_yeast",
+    "context": "Yeast is a living, single-celled fungus, Saccharomyces cerevisiae, and so a cousin of the mushroom. It eats the sugars in the flour and gives off carbon dioxide (plus a little alcohol) in a process called fermentation: the bread rises because a microbe is feeding inside the dough. Source: https://en.wikipedia.org/wiki/Baker%27s_yeast; https://askdruniverse.wsu.edu/2026/04/30/bread-expand-oven/",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
     "tier": 3,
-    "question": "In 2019, an American scientist named Seamus Blackley — one of the people who helped create the Xbox video game console — turned his attention to something 4,500 years old. He scraped tiny flecks of dormant yeast out of the walls of ancient Egyptian pottery, the kind old Egyptian bakers had once mixed and stored dough in. Slowly, in his kitchen, he coaxed the sleeping microbes back to life. What did Blackley then do with this revived ancient yeast?",
+    "question": "Seamus Blackley, who helped create the Xbox video game console, turned his attention in 2019 to something about 4,500 years old. He scraped tiny flecks of dormant yeast from the walls of ancient Egyptian pottery, the kind Egyptian bakers once mixed and stored dough in, and slowly coaxed the sleeping microbes back to life in his kitchen. What did he then do with the revived yeast?",
     "answer": "Baked a real, edible loaf of bread with it",
     "choices": [
       "Baked a real, edible loaf of bread with it",
@@ -14873,7 +14600,7 @@
   },
   {
     "tier": 3,
-    "question": "For Passover, Jewish bakers race the clock: from the moment flour meets water, the matzo must be fully baked in under 18 minutes. The sages judged that is the span when dough begins to rise, so the bread stays perfectly flat. Which story is this deliberately flat bread meant to echo?",
+    "question": "Jewish bakers race the clock before Passover: from the moment flour meets water, the matzo must be fully baked in under 18 minutes. The sages judged that is the span when dough begins to rise, so the dry, cracker-like bread comes out perfectly flat. Which story is it meant to echo?",
     "answer": "The Exodus - the Israelites' flight out of Egypt",
     "choices": [
       "The Exodus - the Israelites' flight out of Egypt",
@@ -14881,25 +14608,12 @@
       "The Creation - God's rest on the seventh day",
       "The Flood - Noah's long wait for the rain to stop"
     ],
-    "context": "Matzo is a race against the rise: for Passover, the dough must go from flour meeting water to fully baked in under 18 minutes - the time the sages judged it takes dough to start rising on its own - so it stays flat and unleavened. It echoes the Exodus, when the Israelites fled Egypt with no time to let their bread rise. Source: https://www.chabad.org/holidays/passover/pesach_cdo/aid/5075941/jewish/Why-18-Minutes-for-Matzah.htm  (Legend.)",
+    "context": "Matzo is a race against the rise: for Passover, the dough must go from flour meeting water to fully baked in under 18 minutes, the time the sages judged it takes dough to start rising on its own, so it stays flat and unleavened. It echoes the Exodus: the Bible recounts that the Israelites fled Egypt in such haste that their dough had no time to rise, so it baked flat. Source: https://www.chabad.org/holidays/passover/pesach_cdo/aid/5075941/jewish/Why-18-Minutes-for-Matzah.htm; https://en.wikipedia.org/wiki/Matzah  (Legend.)",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
     "tier": 4,
-    "question": "Yeast is a tiny living fungus, and a baker stirs it into bread dough to make the loaf rise. As the yeast feasts on the flour's sugars, it burps out two things at once — carbon dioxide bubbles that puff the loaf up, and a small amount of ethanol, the very same alcohol found in wine and beer. And yet a warm slice of fresh-baked bread never leaves you the least bit tipsy. Why not?",
-    "answer": "The oven's heat boils the alcohol away as it bakes",
-    "choices": [
-      "The oven's heat boils the alcohol away as it bakes",
-      "The crust seals the alcohol deep inside the loaf",
-      "The flour's sugars soak the alcohol back up",
-      "The salt in the dough neutralizes the alcohol"
-    ],
-    "context": "The alcohol (ethanol) the yeast makes doesn't stay in the bread - it evaporates away in the heat of the oven. That's why fresh-baked bread smells amazing but doesn't get you tipsy. Source: https://en.wikipedia.org/wiki/Baker%27s_yeast",
-    "topic": "leavening-what-actually-makes-bread-rise"
-  },
-  {
-    "tier": 4,
-    "question": "Sourdough is the oldest way to raise bread - no packet of store-bought yeast at all, just flour, water, and patience. As the wet mix sits out, invisible microbes move in and begin making the gas that lifts it. Where do these rising microbes come from?",
+    "question": "A baker making sourdough, the oldest way to raise bread, uses no packet of store-bought yeast at all: just flour, water and patience. As the wet mix sits out, invisible microbes move in and begin making the gas that lifts it. Where do they come from?",
     "answer": "They drift in from the flour and the air itself",
     "choices": [
       "They drift in from the flour and the air itself",
@@ -14911,34 +14625,21 @@
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
-    "tier": 4,
-    "question": "A yeast loaf takes hours: mix, wait, punch down, wait again, shape, wait, then bake. But muffins, pancakes, cornbread, and banana bread all rise beautifully in minutes — you stir the batter, pour it into the pan, and pop it straight into the oven. With no time for a slow living microbe like yeast to do its work, what puffs these 'quick breads' up?",
+    "tier": 3,
+    "question": "A yeast loaf takes hours of mixing, waiting, punching down and shaping before it ever bakes. Muffins, pancakes, cornbread and banana bread rise beautifully in the few minutes a hot pan or oven takes to cook them, with no time for a slow living microbe like yeast. What makes these quick breads rise?",
     "answer": "Fast chemical fizzing that puffs out gas",
     "choices": [
       "Fast chemical fizzing that puffs out gas",
+      "A faster living microbe than yeast",
       "Whipped egg whites folded into the batter",
-      "Steam bursting out of the piping-hot oven",
-      "Air beaten in by hard, vigorous mixing"
+      "Steam bursting out of the piping-hot oven"
     ],
-    "context": "Quick breads - muffins, pancakes, cornbread, banana bread, biscuits - skip yeast entirely. They rise with a fast chemical reaction instead, so there's no hours-long wait; you just mix and bake. Source: https://en.wikipedia.org/wiki/Quick_bread",
+    "context": "Quick breads (muffins, pancakes, cornbread, banana bread, biscuits) skip yeast entirely. Baking soda and baking powder are chemical leaveners: an acid-base reaction fizzes out carbon dioxide the instant the batter gets wet (and hot). It is the same gas yeast makes, but with no living microbe and no hours-long wait. Source: https://en.wikipedia.org/wiki/Quick_bread; https://en.wikipedia.org/wiki/Baking_powder",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
     "tier": 5,
-    "question": "Here's the puzzle: yeast pumps out carbon dioxide throughout a wad of bread dough, but gas is slippery - on its own it would simply bubble out and escape, the way fizz leaves an open soda. Yet the loaf puffs up and holds its shape, so something in the dough must be catching and holding every bubble. What is it?",
-    "answer": "Gluten, an elastic web of protein",
-    "choices": [
-      "Gluten, an elastic web of protein",
-      "Starch, a chain of stored sugar",
-      "Bran, the grain's rough outer coat",
-      "Salt, a scatter of fine crystals"
-    ],
-    "context": "The CO2 would just escape like soda bubbles, except the dough is laced with gluten - an elastic web of protein that traps each bubble. With nowhere else to go, the trapped gas pushes the dough upward. Yeast makes the gas; gluten holds it in. Source: https://www.thekitchn.com/the-science-behind-yeast-and-how-it-makes-bread-rise-226483",
-    "topic": "leavening-what-actually-makes-bread-rise"
-  },
-  {
-    "tier": 5,
-    "question": "Baking soda is a base, and stirred into a plain batter all by itself it mostly just sits there, doing very little. To make it erupt into the fizz of gas bubbles that lifts a cake or a batch of biscuits, a recipe has to pair the soda with what other kind of ingredient?",
+    "question": "A cook stirs baking soda into a plain batter, and on its own the white powder, a base, mostly just sits there doing very little. To make it erupt into the fizz of bubbles that lifts a cake or a batch of biscuits, the recipe pairs it with one other kind of ingredient. Which kind?",
     "answer": "An acid, like buttermilk or lemon juice",
     "choices": [
       "An acid, like buttermilk or lemon juice",
@@ -18695,7 +18396,7 @@
   },
   {
     "tier": 2,
-    "question": "In the early 1860s French winemakers watched whole barrels of wine mysteriously turn sour, losing fortunes, and no one knew why. The French emperor asked the chemist Louis Pasteur to find the cause. Peering through his microscope, what did Pasteur see was souring the wine?",
+    "question": "French winemakers in the early 1860s watched whole barrels of wine mysteriously turn sour, losing fortunes, and no one knew why. The emperor asked Louis Pasteur, a chemist, to find the cause. Peering through his microscope, what did Pasteur see souring the wine?",
     "answer": "tiny living microbes feeding on it",
     "choices": [
       "tiny living microbes feeding on it",
@@ -18708,7 +18409,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1860s France, the chemist Louis Pasteur was called on by the country's winemakers to save their industry — barrels of wine kept turning sour on the journey to market, ruined by invisible microbes eating the alcohol. Pasteur knew boiling the wine would kill nearly every microbe inside. But he flat refused to boil it, warming the wine only gently instead. Why did Pasteur avoid boiling the wine?",
+    "question": "Louis Pasteur, called on in the 1860s to save France's wine, faced barrels that kept turning sour on the way to market. Boiling the wine would have killed whatever was spoiling it, but Pasteur flatly refused, and warmed it only gently instead. Why did he avoid boiling it?",
     "answer": "boiling would ruin the wine's taste and color",
     "choices": [
       "boiling would ruin the wine's taste and color",
@@ -18721,7 +18422,7 @@
   },
   {
     "tier": 3,
-    "question": "Pasteur's gentle-heat trick saved even more lives when it was turned on the dairy shelf. Before this treatment became routine, one everyday dairy food spread deadly tuberculosis to children. In England and Wales alone, it killed about 65,000 people between 1912 and 1937. Which dairy food was the deadly carrier before heating made it safe?",
+    "question": "Before the gentle heating named after Louis Pasteur became routine, one everyday dairy food spread deadly tuberculosis to children. In England and Wales alone, it killed about 65,000 people between 1912 and 1937. Which dairy food was the deadly carrier before heating made it safe?",
     "answer": "fresh milk",
     "choices": [
       "fresh milk",
@@ -18746,21 +18447,21 @@
     "topic": "pasteur-why-heat-finally-made-food-safe"
   },
   {
-    "tier": 4,
-    "question": "Fifty years before Pasteur, a French cook named Nicolas Appert had learned to preserve food by sealing it in glass jars and boiling them — and it worked, keeping food edible for months. Yet Appert had no idea WHY it worked. Pasteur's discoveries finally cracked that mystery. What had Appert's boiling secretly been doing all along to make the food keep?",
-    "answer": "killing the tiny living germs inside the food",
+    "tier": 2,
+    "question": "Nicolas Appert, a French cook, learned around 1810 to preserve food by sealing it in glass jars and boiling them, and the food kept for months. Yet he had no idea why it worked, and he died without knowing. Half a century later, Louis Pasteur's discoveries cracked the mystery. What had the boiling been doing all along?",
+    "answer": "Killing the tiny living microbes that spoil food",
     "choices": [
-      "killing the tiny living germs inside the food",
-      "boiling away all of the food's natural water",
-      "sealing the lids shut with steam pressure",
-      "caramelizing the sugars into a preservative"
+      "Killing the tiny living microbes that spoil food",
+      "Driving the last of the air out of the jar",
+      "Sealing the lid down tighter as it cooled",
+      "Softening the food so it would keep longer"
     ],
-    "context": "Around 1810 Nicolas Appert won a French prize for preserving food in sealed, boiled jars — the birth of canning — but he died never knowing the reason it worked. Pasteur's germs were the answer: the heat had been silently killing them the whole time. As one headline put it, the father of canning 'knew his process worked, but not why it worked.' Source: smithsonianmag.com; en.wikipedia.org/wiki/Nicolas_Appert.",
+    "context": "Around 1810 Nicolas Appert won a French prize for preserving food in sealed, boiled jars, the birth of canning, but he worked purely by trial and error and died never knowing the reason it worked. Decades later Louis Pasteur showed that heat kills the tiny microbes that make food spoil. That is why the boil, not the jar itself, is the real safety step: the seal keeps new germs out, but the heat does the killing. As one headline put it, the father of canning 'knew his process worked, but not why it worked.' Source: https://en.wikipedia.org/wiki/Nicolas_Appert; https://en.wikipedia.org/wiki/Louis_Pasteur",
     "topic": "pasteur-why-heat-finally-made-food-safe"
   },
   {
     "tier": 5,
-    "question": "Pasteurization is the process Louis Pasteur invented in the 1860s — heating a liquid like milk to a temperature that kills the bacteria inside without cooking the milk itself. And yet: a sealed carton of pasteurized milk, kept cold in the fridge, still turns sour after a couple of weeks. If the heat already killed the germs, why does the milk eventually spoil anyway?",
+    "question": "A sealed carton of pasteurized milk sits cold in the fridge, and after a couple of weeks it turns sour anyway. The gentle heating named for Louis Pasteur was meant to kill the bacteria inside without cooking the milk itself. If the heat already killed the germs, why does the milk eventually spoil?",
     "answer": "pasteurizing kills the harmful germs but not every last one",
     "choices": [
       "pasteurizing kills the harmful germs but not every last one",
@@ -20762,7 +20463,7 @@
   },
   {
     "tier": 1,
-    "question": "In the garden you grip the leafy green tuft of a carrot plant and pull. Up out of the soil comes a long orange finger, thick and pointed — the plant's entire underground food store, packed with the sugar it saved up all summer to survive the winter. When you crunch that carrot for lunch, which part of the plant are you actually eating?",
+    "question": "A gardener grips the leafy green tuft of a carrot plant and pulls up a long, thick orange finger: the plant's whole underground food store, packed with the sugar it saved all summer. Which part of the plant is that crunchy carrot?",
     "answer": "a root",
     "choices": [
       "a root",
@@ -20775,7 +20476,7 @@
   },
   {
     "tier": 2,
-    "question": "A carrot is a biennial plant: it lives across two summers, not one. In its first summer, the young plant crams its fat orange root full of sugar -- but not as a gift to us. It is saving up food to bankroll one big project the next year. What does the carrot plant spend that hoarded sugar on in its second year?",
+    "question": "A carrot plant lives across two summers, not one. In its first, the young plant crams its fat orange root full of sugar, not as a gift to the gardener but to bankroll one big project the next year. What does the plant spend that hoarded sugar on in its second summer?",
     "answer": "shooting up a flower stalk to set seed",
     "choices": [
       "shooting up a flower stalk to set seed",
@@ -20788,7 +20489,7 @@
   },
   {
     "tier": 2,
-    "question": "A thousand years ago in West Asia and eastern Europe, farmers had already been growing carrots for hundreds of years -- but the carrots on their plates would have looked completely wrong to modern eyes. The bright orange carrot everyone knows today had not been bred yet. It didn't appear until Dutch growers in the Netherlands created it centuries later. What color were those first cultivated carrots?",
+    "question": "Farmers in West Asia and eastern Europe were already growing carrots a thousand years ago, but the roots they pulled would look all wrong to modern eyes. The bright orange carrot did not exist yet; Dutch growers created it centuries later. What color were those first farmed carrots?",
     "answer": "purple",
     "choices": [
       "purple",
@@ -20801,7 +20502,7 @@
   },
   {
     "tier": 3,
-    "question": "A charming Dutch story says growers bred the carrot orange in the 1500s to honor their royal House of Orange -- but historians call that a legend with no real evidence. A more practical reason orange won the kitchen: drop a purple carrot into a simmering pot and it does something an orange one does not. What?",
+    "question": "Dutch growers, a charming story says, bred the carrot orange in the 1500s to honor their royal House of Orange, though the World Carrot Museum's curator, John Stolarczyk, finds the tale unlikely. A likelier reason orange won the kitchen lies in the soup pot: a purple carrot does something there that an orange one does not. What?",
     "answer": "bleeds out and muddies the broth brown",
     "choices": [
       "bleeds out and muddies the broth brown",
@@ -20814,7 +20515,7 @@
   },
   {
     "tier": 3,
-    "question": "In cold northern countries where tropical sugarcane simply will not grow, the white sugar in the bowl is not from a tropical grass at all -- it is refined from a swollen, pale root that stores nearly a fifth of its weight as pure sugar. That pale root is just a bred-for-sweetness cousin of a common garden vegetable. Which one?",
+    "question": "In cold northern countries where tropical sugarcane will not grow, the white sugar in the bowl comes not from a grass but from a swollen root that stores nearly a fifth of its weight as pure sugar. That root is a bred-for-sweetness cousin of a common garden vegetable. Which one?",
     "answer": "the beetroot from a salad",
     "choices": [
       "the beetroot from a salad",
@@ -20827,7 +20528,7 @@
   },
   {
     "tier": 4,
-    "question": "Bite into a raw radish and it bites back -- a sharp, peppery burn that floods your mouth the moment you crush the root open. That heat is not there to please cooks; the radish makes the fiery chemical for a reason of its own. What job does that mouth-burning compound do for the plant?",
+    "question": "A raw radish bites back, flooding the mouth with a sharp, peppery burn the moment teeth crush the root open. That heat is not there to please cooks; the radish makes the fiery chemical for a reason of its own. What job does that burning compound do for the plant?",
     "answer": "fends off animals and insects that eat it",
     "choices": [
       "fends off animals and insects that eat it",
@@ -20836,32 +20537,6 @@
       "helps the root pull water from dry soil"
     ],
     "context": "A radish's sharp bite is a chemical defense: crush or grate the root and stored glucosinolates meet an enzyme (myrosinase) to make allyl isothiocyanate, a 'mustard oil.' The same family of compounds makes mustard, horseradish and wasabi sharp -- radish, horseradish, wasabi and mustard are all cousins in the mustard family (Brassicaceae). (Source: en.wikipedia.org/wiki/Radish)",
-    "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
-  },
-  {
-    "tier": 4,
-    "question": "A carrot's orange color is beta-carotene, which your body turns into vitamin A. But munch that carrot raw and you absorb only a tiny fraction of it -- most stays locked inside the root's tough cells. Which way of eating a carrot frees far more of it for your body?",
-    "answer": "cooking it in a little oil",
-    "choices": [
-      "cooking it in a little oil",
-      "soaking it overnight in water",
-      "eating it with a squeeze of lemon",
-      "chewing it slowly and well"
-    ],
-    "context": "The orange pigment beta-carotene is trapped inside a raw carrot's cell walls -- eat it raw and you absorb only about 3% of it. Pulping or grating, cooking, and adding a little oil or fat break those cells open and let the beta-carotene out, pushing absorption up toward 39%. Beta-carotene is fat-soluble, so a little oil or fat helps carry it into your body -- an acidic squeeze of lemon does not. (Source: en.wikipedia.org/wiki/Carrot)",
-    "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
-  },
-  {
-    "tier": 5,
-    "question": "Cassava -- the tropical storage root behind chewy tapioca pearls -- feeds hundreds of millions of people across Africa, South America and Asia. But unlike a carrot, you cannot just wash this root and bite it: eaten raw, cassava can poison you, and it must first be grated, soaked, or cooked. Which natural poison is it holding?",
-    "answer": "cyanide",
-    "choices": [
-      "cyanide",
-      "arsenic",
-      "strychnine",
-      "nicotine"
-    ],
-    "context": "Cassava is safe only after processing: the raw root holds cyanogenic compounds (chiefly linamarin) that release hydrogen cyanide, so it must be grated, soaked, and/or cooked before eating. 'Sweet' cassava carries relatively little cyanide; 'bitter' cassava holds far more, and traditional West African soaking of the grated pulp for a couple of days cuts the cyanogenic content by 85-99%. Cassava is native to South America (Brazil/Paraguay) and is a staple for over 500 million people. (Source: en.wikipedia.org/wiki/Cassava)",
     "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
   },
   {
