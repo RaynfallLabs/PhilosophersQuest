@@ -47,6 +47,8 @@ def _survivors(subject: str, batch: int) -> tuple[dict, dict, dict]:
         before.setdefault(new_of.get(h, h), []).append(stem)
     merge_of: dict[str, dict] = {}
     for m in notes['merges']:
+        if m['keep'] not in old_stem:
+            continue                      # an applied ladder's merge
         nh = new_of.get(m['keep'], m['keep'])
         merge_of[nh] = m
         before[nh] = [old_stem[m['keep']]] + [old_stem[a] for a in m.get('absorbed') or []
