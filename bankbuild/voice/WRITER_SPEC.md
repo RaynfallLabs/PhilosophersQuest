@@ -35,6 +35,7 @@ Twins are two or more questions whose keys rest on **the same fact**: someone wh
 - Read the whole ladder before writing anything. List its distinct facts; any fact asked twice is a twin pair.
 - Every group in `twin_groups` that touches your batch must be merged, or listed in `not_twins` with the two different facts it actually asks (the earlier judges were 99% right, so this is rare).
 - Twins across ladders: the question stays in the ladder whose story the fact belongs to (Leo Africanus's books stay in Timbuktu's ladder, not Mansa Musa's).
+- **A twin of a question already in the bank** (its ladder was applied in an earlier batch): delete yours and record it in notes `"cross_twins": [{"drop": "<your hash>", "twin": "<the live hash>", "why": "<the shared fact>"}]`. Find the live twin with a quick search of `data/questions/<subject>.json` (read only).
 
 ## Step 2: merge
 For each twin group, ONE question survives:
@@ -85,6 +86,9 @@ Then read every rewritten ladder once more as a cold reader: is each question st
 - **Giveaways between rungs:** `check` warns when a stem prints another rung's answer ("the stem prints X, the answer of <hash>"). Cut the giveaway wherever nothing the question needs is lost. The ladder's own subject (Medea in Medea's ladder) may stay.
 - **Kept stems are judged as hard as rewritten ones.** In philosophy b004, 9 of 22 ladders failed on voice because stems kept word for word still opened as an encyclopedia entry ("Confucius, who lived from about 551 to 479 BC..."), a commentator's aside ("It is easy to read Berlin as..."), a textbook definition ("Logicians call this slip..."), a passive study summary, or narrator "we/us". Passing the lint is not enough: keep a stem only if it already sounds like the Chronicler telling the story. When in doubt, rewrite.
 - **The stem and its choices speak the same way.** Choices never change in a plain rewrite, so if they say "you" ("You should return the wallet"), keep the stem in a "Suppose you..." frame; don't move the stem to third person and leave the choices talking to the reader. Same for pronouns: if the key says "she", the stem must still make clear who "she" is.
+- **The closing question must fit all four choices.** Turning "What did he argue?" into "Where did he say the clash lies?" when three choices are positions, not places, leaves only the key answering the question. Read each choice as an answer to the new closer.
+- **A contested verdict is never the narrator's.** Open with whose verdict it is ("Nietzsche gives a name to the verdict that..."), not with the verdict stated flat and attributed afterwards.
+- **Prefer a named character to "you".** When the choices speak to "you", keep or restore the old stem's named scene (a boy and his father) rather than turning it into second person; "Suppose you..." is for a real thought experiment, not a patch.
 - **Every stem stands alone.** A player meets one rung at a time, in any order: no "Next,", "Again,", "this time" or "the same philosopher" pointing back at another question, and the stem itself sets up every name and image its key and choices lean on (a stem that drops "the king agreed 'chariot' is only a word for the parts" orphans a key about names).
 - **Don't open two stems of a ladder the same way.** Vary the scene; a ladder whose stems all begin "Friedrich Hayek..." reads like a list.
 

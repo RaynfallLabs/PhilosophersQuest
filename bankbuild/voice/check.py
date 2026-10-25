@@ -92,6 +92,17 @@ def problems(subject: str, batch: int) -> list[str]:
             errs.append(f'merge {k}: needs a tier (1-5), rated for the merged question')
         absorbed_all |= set(ab)
         keep_of[k] = m
+    # A twin of a question already applied in another batch's ladder: the
+    # writer drops it and names the live twin (notes "cross_twins").
+    live_h = set(_live(subject))
+    for d in notes['cross_twins']:
+        if d.get('drop') not in deleted:
+            errs.append(f'cross_twins: {d.get("drop")} is not deleted')
+        if d.get('twin') not in live_h:
+            errs.append(f'cross_twins: twin {d.get("twin")} is not a live question')
+        if not str(d.get('why', '')).strip():
+            errs.append(f'cross_twins: {d.get("drop")} needs a why')
+        absorbed_all.add(d.get('drop'))
     for h in sorted(deleted - absorbed_all):
         errs.append(f'{h}: deleted but not absorbed in any merge')
 

@@ -105,7 +105,7 @@ def pending_packet(subject: str, batch: int) -> dict:
 def load_notes(subject: str, batch: int) -> dict:
     p = bpath(subject, batch, 'notes')
     n = read_json(p) if p.exists() else {}
-    for k in ('merges', 'unchanged', 'not_twins', 'question_errors'):
+    for k in ('merges', 'unchanged', 'not_twins', 'question_errors', 'cross_twins'):
         n.setdefault(k, [])
     return n
 
