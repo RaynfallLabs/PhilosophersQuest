@@ -3342,7 +3342,7 @@
   },
   {
     "tier": 2,
-    "question": "The bombardier beetle is a small ground beetle only about half an inch long, common in fields and forests. Pick one up, and it fights back in a way that startles the attacker into instantly dropping it. From the tip of its abdomen, the beetle launches a defense with a loud popping bang that sounds almost like a tiny gun going off. What is that defense?",
+    "question": "Under a rotting log scurries a bombardier beetle, a dark beetle barely half an inch long. When an ant grabs it, the beetle aims the tip of its abdomen at the attacker and answers with a loud pop, like a tiny gun, and the ant lets go at once. What does it fire?",
     "answer": "A jet of boiling-hot chemical spray",
     "choices": [
       "A jet of boiling-hot chemical spray",
@@ -3350,25 +3350,12 @@
       "A blinding flash of green light",
       "A blast of foul-smelling gas only"
     ],
-    "context": "When seized, the bombardier beetle fires a caustic spray from the rear of its abdomen with an audible pop. The spray is genuinely scalding, not just smelly. Source: Natural History Museum, London -- 'Bombardier beetles and their caustic chemical cannon' (nhm.ac.uk).",
-    "topic": "bombardier-beetle"
-  },
-  {
-    "tier": 2,
-    "question": "The bombardier beetle is a small ground beetle with a startling defense. When something grabs it, it mixes two chemicals in a special chamber inside its abdomen and shoots the boiling mixture out its rear end in a sharp popping spray. The jet isn't just an unpleasant smell -- it comes out hot enough to scald whatever it touches. About how hot is the spray as it leaves the beetle?",
-    "answer": "Close to 100 C, the boiling point of water",
-    "choices": [
-      "Close to 100 C, the boiling point of water",
-      "Around body temperature, about 37 C",
-      "A little above freezing, near 5 C",
-      "Hot enough to melt metal, over 1,000 C"
-    ],
-    "context": "The jet shoots out at close to 100 C (212 F) -- the boiling point of water -- so it scalds the mouth or feet of an attacker. Source: Wikipedia 'Bombardier beetle' citing Aneshansley & Eisner, 'Biochemistry at 100 C'; Natural History Museum, London.",
+    "context": "When seized, the bombardier beetle fires a caustic spray from the rear of its abdomen with an audible pop. The spray is genuinely scalding, not just smelly: the jet shoots out at close to 100 C (212 F) -- the boiling point of water -- so it scalds the mouth or feet of an attacker. The beetle (subfamily Brachininae) is named for this artillery-like blast: it keeps two harmless chemicals stored apart inside its body and mixes them with enzymes in a hardened reaction chamber only when attacked, where the violently exothermic reaction flash-heats the fluid to near boiling. Source: Natural History Museum, London -- 'Bombardier beetles and their caustic chemical cannon' (nhm.ac.uk); Wikipedia 'Bombardier beetle' citing Aneshansley & Eisner, 'Biochemistry at 100 C'; https://www.chemistrysteps.com/the-chemistry-behind-bombardier-beetles-spray/",
     "topic": "bombardier-beetle"
   },
   {
     "tier": 3,
-    "question": "The bombardier beetle is a small ground beetle that fires boiling-hot chemical spray from the tip of its abdomen at attackers. It carries the parts of that scalding weapon inside its own body — yet it never cooks itself. To pull that off, the beetle keeps two different chemicals in a special setup, and only combines them at the very moment it needs to fire. What setup keeps the beetle safe from its own weapon?",
+    "question": "A bombardier beetle carries the makings of a scalding chemical spray inside its own body, yet it never burns itself. The secret lies in how it keeps the two chemicals behind the spray. What setup keeps the beetle safe from its own weapon?",
     "answer": "The two chemicals are stored in separate sacs, apart",
     "choices": [
       "The two chemicals are stored in separate sacs, apart",
@@ -3381,7 +3368,7 @@
   },
   {
     "tier": 4,
-    "question": "When cornered, a bombardier beetle combines its two chemicals within a reinforced chamber at the back of its abdomen. Powerful enzymes there make the reaction hot enough to reach boiling temperature and explode outward. Which enzymes trigger that explosion?",
+    "question": "When cornered, a bombardier beetle sets off a reaction inside a reinforced chamber at the back of its abdomen. Powerful enzymes lining the chamber speed the reaction until, in an instant, it explodes outward at the attacker. Which enzymes trigger that explosion?",
     "answer": "Catalase and peroxidase",
     "choices": [
       "Catalase and peroxidase",
@@ -3394,20 +3381,20 @@
   },
   {
     "tier": 4,
-    "question": "When a bombardier beetle sprays boiling chemicals at an attacker, the jet does not come out as one long, steady stream. High-speed photography of the small ground beetle revealed something unexpected: the scalding spray fires in a rapid machine-gun burst of many separate blasts, about 70 of them per firing, far too fast for the human eye to separate. Roughly how fast is that pulsing?",
+    "question": "Thomas Eisner's team at Cornell aimed a high-speed camera at firing bombardier beetles in the 1990s. Scientists had long assumed the scalding spray came out in one steady stream, but the film showed a rapid machine-gun burst of separate blasts, about 70 of them per firing. Roughly how fast is that pulsing?",
     "answer": "About 500 pulses per second",
     "choices": [
       "About 500 pulses per second",
       "About 5 pulses per second",
-      "About 20 pulses per minute",
-      "One long pulse lasting five seconds"
+      "About 50 pulses per second",
+      "About 5,000 pulses per second"
     ],
-    "context": "The spray fires as a biological pulse jet -- roughly 70 pulses at about 500 per second. The rapid pulsing also protects the beetle: each tiny explosion is released before the next, so the reinforced chamber never overloads. Source: Wikipedia 'Bombardier beetle' citing Dean, Aneshansley, Edgerton & Eisner, 'Defensive spray of the bombardier beetle: a biological pulse jet,' Science (1990).",
+    "context": "The spray fires as a biological pulse jet -- roughly 70 pulses at about 500 per second -- as high-speed film by Thomas Eisner's team showed. The rapid pulsing also protects the beetle: each tiny explosion is released before the next, so the reinforced chamber never overloads. Source: Wikipedia 'Bombardier beetle' citing Dean, Aneshansley, Edgerton & Eisner, 'Defensive spray of the bombardier beetle: a biological pulse jet,' Science (1990); https://www.science.org/doi/10.1126/science.2349480",
     "topic": "bombardier-beetle"
   },
   {
     "tier": 3,
-    "question": "The bombardier beetle is a small ground beetle that carries boiling chemical spray inside its body. A toad flicks out its long sticky tongue and swallows one whole. Deep in the toad's dark stomach the trapped beetle fires its scalding jet — and in one lab experiment, 43% of the toads then did something surprising more than an hour later that saved the beetle's life. What did those toads do?",
+    "question": "Toads in a lab experiment flicked out their sticky tongues and swallowed bombardier beetles whole. Deep in the toads' stomachs the trapped beetles fired their scalding spray, and faint pops sounded from inside. Then 43 percent of the toads did something that saved the beetles' lives. What did those toads do?",
     "answer": "Vomited the beetle back up alive",
     "choices": [
       "Vomited the beetle back up alive",
@@ -4447,20 +4434,7 @@
   },
   {
     "tier": 2,
-    "question": "Turn over a rotting log in the woods and you might find a little dark beetle scurrying underneath. It looks perfectly harmless. But if a hungry ant or mouse grabs it, this beetle has a horrifying defense — it aims the tip of its abdomen straight at the attacker and fires a scalding, near-boiling chemical spray out of its tail. Which beetle does this?",
-    "answer": "The bombardier beetle",
-    "choices": [
-      "The bombardier beetle",
-      "The stag beetle",
-      "The dung beetle",
-      "The click beetle"
-    ],
-    "context": "The bombardier beetle (subfamily Brachininae) is named for its artillery-like blast: it keeps two harmless chemicals stored apart inside its body and mixes them with enzymes in a hardened reaction chamber only when attacked. Source: https://en.wikipedia.org/wiki/Bombardier_beetle  (Legend.)",
-    "topic": "chemical-weapons"
-  },
-  {
-    "tier": 2,
-    "question": "A skunk is a small black-and-white striped mammal common in backyards across North America. Ambling past a dog one summer evening, a skunk suddenly freezes. It lifts its bushy tail straight up over its back, stamps its front feet hard on the ground, and hisses. Every one of these moves is a warning — the last polite step before the skunk does what makes it famous. What is it warning the dog it will do next?",
+    "question": "A skunk ambling past a dog suddenly freezes. It lifts its bushy tail straight up over its back, stamps its front feet hard on the ground and hisses. Each move is a warning, the last polite step before the skunk does what makes it famous. What is it warning the dog it will do next?",
     "answer": "Fire a reeking musk that sears the eyes and nose",
     "choices": [
       "Fire a reeking musk that sears the eyes and nose",
@@ -4473,7 +4447,7 @@
   },
   {
     "tier": 3,
-    "question": "The bombardier beetle is a small dark beetle that defends itself by firing near-boiling chemical spray out of its tail at attackers. To keep from cooking itself, the beetle stores two separate liquids in two separate tanks inside its body. On their own each liquid is harmless, and they stay safely apart until the moment the beetle is bitten. What are the two chemicals it then mixes together?",
+    "question": "A bombardier beetle fires a scalding chemical spray from its tail when something bites it. The spray is brewed on the spot from two liquids that are each harmless on their own. Which two chemicals does the beetle mix?",
     "answer": "Hydroquinones and hydrogen peroxide",
     "choices": [
       "Hydroquinones and hydrogen peroxide",
@@ -4486,20 +4460,7 @@
   },
   {
     "tier": 3,
-    "question": "The bombardier beetle keeps two harmless liquids stored in separate tanks inside its body. When an ant or mouse bites the beetle, it dumps those two chemicals together with a squirt of powerful enzymes into a small hardened chamber near its tail. The mixture reacts instantly. What violent thing happens to the fluid inside that chamber in the instant it comes together?",
-    "answer": "It flash-heats to near boiling and blasts out",
-    "choices": [
-      "It flash-heats to near boiling and blasts out",
-      "It freezes solid into a plug",
-      "It glows and blinds the attacker",
-      "It turns to a harmless foam"
-    ],
-    "context": "The mixing reaction is violently exothermic: it flash-heats the fluid to near 100C (boiling water) and fires the scalding spray out the tail at whatever bit it. Source: https://www.chemistrysteps.com/the-chemistry-behind-bombardier-beetles-spray/  (Legend.)",
-    "topic": "chemical-weapons"
-  },
-  {
-    "tier": 3,
-    "question": "The striped skunk is a black-and-white American mammal famous for the reeking stink of the musk it sprays when threatened. What surprises people who watch skunks closely is not the smell but the accuracy — a skunk can land its spray squarely on a dog's face from several feet away. How does the skunk aim its shot with such precision?",
+    "question": "A cornered striped skunk turns and lands its reeking musk squarely on a dog's face from several feet away. People who watch skunks closely are surprised less by the smell than by the accuracy. How does the skunk aim its shot so precisely?",
     "answer": "Each musk gland ends in its own nozzle it can point",
     "choices": [
       "Each musk gland ends in its own nozzle it can point",
@@ -4512,7 +4473,7 @@
   },
   {
     "tier": 4,
-    "question": "A hagfish is an eel-shaped, jawless deep-sea creature whose body plan has hardly changed since long before the dinosaurs. When a shark clamps down on one, in a fraction of a second the water around the shark's mouth becomes nearly a liter of choking slime that clogs its gills, and the startled shark releases its prey. What did the hagfish release to make that slime explode into being?",
+    "question": "A shark clamps its jaws on a hagfish, a jawless, eel-shaped creature that lives in the deep sea, and in a fraction of a second the water around the shark's mouth turns into nearly a liter of choking slime. The slime clogs the shark's gills, and it lets go. What did the hagfish release to make that slime?",
     "answer": "Tiny packets of coiled protein threads and mucus",
     "choices": [
       "Tiny packets of coiled protein threads and mucus",
@@ -4525,7 +4486,7 @@
   },
   {
     "tier": 4,
-    "question": "The bombardier beetle fires near-boiling chemical spray out its tail at attackers, using a small reaction chamber inside its own abdomen. This should be suicidal — cooking a beetle from the inside every time it defends itself. Yet the beetle survives shot after shot without harm. As the pressure spikes inside that reaction chamber, what keeps the beetle's own internal organs safe from the boiling fluid?",
+    "question": "Every time a bombardier beetle defends itself, it brews a scalding chemical spray in a small reaction chamber inside its own abdomen and fires it out of its tail. That ought to cook the beetle from the inside, yet it survives shot after shot. As the pressure spikes in that chamber, what keeps its own organs safe?",
     "answer": "The pressure slams shut the valves to its storage tanks",
     "choices": [
       "The pressure slams shut the valves to its storage tanks",
@@ -4538,20 +4499,7 @@
   },
   {
     "tier": 4,
-    "question": "A sea cucumber is a soft, sausage-shaped animal — a slow-moving relative of sea stars — that creeps along the seafloor eating specks of food from the sand. It has no shell, no teeth, and no way to run from a predator. Yet cornered by a hungry fish, some sea cucumbers can escape by doing something almost unbelievable. What does the desperate animal do?",
-    "answer": "Rips open its own rear and flings its guts at the attacker",
-    "choices": [
-      "Rips open its own rear and flings its guts at the attacker",
-      "Splits in two and both halves crawl away",
-      "Inflates until the predator cannot swallow it",
-      "Sheds its skin and leaves it behind as a decoy"
-    ],
-    "context": "A cornered sea cucumber can eviscerate: it contracts so hard its cloaca tears open and it ejects its own toxic, holothurin-coated guts at the predator, then regrows the lost organs over days to weeks. Source: https://www.iflscience.com/sea-cucumbers-kill-predators-by-firing-sticky-organs-out-their-butts-68395  (Legend.)",
-    "topic": "chemical-weapons"
-  },
-  {
-    "tier": 4,
-    "question": "The ladybug is a small round beetle whose bright red shell dotted with black spots is not just pretty decoration — it is a warning billboard telling birds and lizards, 'I taste terrible, don't eat me.' Poke a ladybug on your fingertip and a bitter yellow droplet oozes out at the joints of its legs, tasting so awful any bird would spit it right out. What is that yellow fluid?",
+    "question": "A boy pokes a ladybug crawling on his fingertip, and a bitter yellow droplet oozes out at the joints of its legs. The beetle's bright red shell dotted with black spots warns birds and lizards that it tastes terrible, and any bird would spit that droplet right out. What is the yellow fluid?",
     "answer": "Its own blood, bled on purpose when poked",
     "choices": [
       "Its own blood, bled on purpose when poked",
@@ -4564,33 +4512,7 @@
   },
   {
     "tier": 5,
-    "question": "For a long time scientists assumed the bombardier beetle's boiling defensive spray came out in one steady stream. Then in the 1990s Cornell biologist Thomas Eisner and his team filmed firing beetles with a super-fast camera and saw something surprising. The spray was not steady at all — it came out in rapid machine-gun bursts. Roughly how fast are those pulses?",
-    "answer": "About 500 pulses per second",
-    "choices": [
-      "About 500 pulses per second",
-      "About 5 pulses per second",
-      "About 50 pulses per second",
-      "About 5,000 pulses per second"
-    ],
-    "context": "High-speed film by Thomas Eisner's team showed the spray comes out in machine-gun pulses at roughly 500 pulses per second (Aneshansley & Eisner, Science, 1990). Source: https://www.science.org/doi/10.1126/science.2349480  (Legend.)",
-    "topic": "chemical-weapons"
-  },
-  {
-    "tier": 5,
-    "question": "The whip scorpion is a spider-like animal of desert and tropical rainforest that carries a long whip-thin tail. When threatened, it curls the tail forward and sprays the most concentrated acid of any animal in nature from a gland at the tail's base. The shock is what that acid turns out to be: the very same acid you can find in a bottle in a common kitchen cupboard. Which acid is it?",
-    "answer": "The acid that makes vinegar sour",
-    "choices": [
-      "The acid that makes vinegar sour",
-      "The acid that makes lemons sour",
-      "The acid that curdles sour milk",
-      "The acid that makes apples tart"
-    ],
-    "context": "The whip scorpion, or vinegaroon (genus Mastigoproctus), sprays acetic acid, the acid in vinegar, from a pore at the base of its whip-like tail; the concentration reaches about 84%, the highest concentration of acetic acid known in nature. The long tail is a sensory feeler, not a stinger. Sources: https://ask.ifas.ufl.edu/publication/IN890 ; https://a-z-animals.com/animals/vinegaroon/  (Legend.)",
-    "topic": "chemical-weapons"
-  },
-  {
-    "tier": 5,
-    "question": "Skeptics long argued the bombardier beetle's scalding, aimed spray was too intricate to have evolved by degrees. Biologists answered with Metrius contractus, the most primitive bombardier beetle alive -- its glands hold the same hot quinone chemistry, yet it cannot shoot a jet. What does this living halfway-beetle do with its chemicals instead?",
+    "question": "Skeptics long argued the bombardier beetle's aimed, scalding spray was too intricate to have evolved by degrees. Biologists answered with Metrius contractus, the most primitive bombardier beetle alive: its two-chambered glands hold the same hot quinone chemistry, yet it cannot shoot a jet. What does it do with its chemicals instead?",
     "answer": "Oozes a bubbling froth that clings over its own body",
     "choices": [
       "Oozes a bubbling froth that clings over its own body",
@@ -4603,7 +4525,7 @@
   },
   {
     "tier": 4,
-    "question": "A sea cucumber attacked on the seafloor by a hungry fish fires sticky white threads — called Cuvierian tubules — out through its rear at the attacker. Milky and floppy inside the animal, the threads shoot into the seawater and stretch to about twenty times their length in a single heartbeat, then snare the predator in cords it cannot pull free. The odd part is how something soft and rubbery becomes unbreakable in an instant. How do the threads suddenly turn tough and inescapable?",
+    "question": "A hungry fish attacks a sea cucumber on the seafloor, and the sea cucumber fires sticky white threads, called Cuvierian tubules, out through its rear at the attacker. Milky and floppy inside the animal, the threads shoot into the seawater, stretch to about twenty times their length, then snare the predator in cords it cannot pull free. How do the soft threads turn tough and inescapable?",
     "answer": "A trigger protein locks their collagen rigid on contact",
     "choices": [
       "A trigger protein locks their collagen rigid on contact",
@@ -6007,7 +5929,7 @@
   },
   {
     "tier": 2,
-    "question": "A green anole is a small bright-green lizard that lives on porches and tree trunks across the southern United States. One morning a hunting bird swoops down and snatches the anole by the tail. In a heartbeat the tail comes free in the bird's beak and the anole sprints away to safety — not even bleeding. How is the anole able to part with its own tail this fast without a bloody injury?",
+    "question": "A hunting bird swoops onto a porch post in the southern United States and snatches a green anole by the tail. In a heartbeat the anole sprints off, leaving the bird holding only its tail, and it is not even bleeding. How can it part with its tail so fast and so cleanly?",
     "answer": "The tail is built to snap off at a weak seam",
     "choices": [
       "The tail is built to snap off at a weak seam",
@@ -6019,21 +5941,8 @@
     "topic": "ditching-a-body-part-autotomy"
   },
   {
-    "tier": 2,
-    "question": "On a tropical coral reef, a hungry fish darts down and seizes a sea cucumber — a soft, sluggish, sausage-shaped animal in the class Holothuroidea that spends its life vacuuming the sand. The cucumber cannot swim away, cannot bite, cannot even close a shell. So it fights back with one of the strangest defenses in the ocean. What does the sea cucumber do to its attacker?",
-    "answer": "It shoots its own internal organs out its rear at the attacker",
-    "choices": [
-      "It shoots its own internal organs out its rear at the attacker",
-      "It clamps down and bites with a hidden beak",
-      "It inflates with water and floats out of reach",
-      "It sprays a cloud of black ink"
-    ],
-    "context": "This is called evisceration. The sea cucumber violently squeezes its body and fires its guts out the back end; the organs are sticky and distracting, and it regrows them later. A legendary bit of natural history. Source: https://en.wikipedia.org/wiki/Evisceration_(autotomy)",
-    "topic": "ditching-a-body-part-autotomy"
-  },
-  {
     "tier": 3,
-    "question": "A leopard gecko is a small spotted lizard of the dry rocky lands from Pakistan to Iran. When a hungry fox catches one, the gecko's tail snaps clean off in the fox's mouth and the gecko itself scurries away to safety. Back in the fox's jaws, though, the severed tail keeps its attacker distracted for up to half an hour. What is the dropped tail doing all that time?",
+    "question": "A fox pounces on a leopard gecko among dry rocks, and the gecko's tail snaps off in its jaws while the little spotted lizard scurries away. For as long as half an hour afterward, the tail left behind keeps the fox busy. What is the tail doing all that time?",
     "answer": "Thrashing and flipping on its own after it detaches",
     "choices": [
       "Thrashing and flipping on its own after it detaches",
@@ -6046,7 +5955,7 @@
   },
   {
     "tier": 3,
-    "question": "A shore crab is grabbed by one of its claws in the beak of a hungry gull. Rather than be held there and eaten, the crab breaks free by shedding that whole claw at a special weak joint called the basi-ischium, and scuttles off short one weapon. A crab's body is full of watery fluid instead of tidy blood vessels, so an open stump ought to bleed it dry. How does it keep from losing all its body fluid through the gap?",
+    "question": "A gull seizes a shore crab by one claw, and the crab breaks free by shedding the whole claw at a special weak joint, the basi-ischium. Its body is full of watery fluid instead of tidy blood vessels, so an open stump ought to bleed it dry. What stops the leak?",
     "answer": "A membrane at the break plane instantly seals the wound",
     "choices": [
       "A membrane at the break plane instantly seals the wound",
@@ -6059,7 +5968,7 @@
   },
   {
     "tier": 3,
-    "question": "A blue crab has just shed one of its claws to escape a gull and now scuttles the sea floor for weeks, short one weapon and unable to fight or feed as well. The lost claw does grow back eventually, but not right away and not on any random day. Crabs grow by climbing out of their old rigid shell whenever their body outgrows it, a process called molting. When does the new claw finally appear?",
+    "question": "A blue crab scuttles across the sea floor one claw short, weeks after shedding the claw to escape a gull. A soft, folded bud of new claw already waits at the stump, but it will not unfold just yet. When does it finally become a working claw?",
     "answer": "When the crab molts and sheds its shell",
     "choices": [
       "When the crab molts and sheds its shell",
@@ -6072,20 +5981,7 @@
   },
   {
     "tier": 4,
-    "question": "A skink is a small smooth-scaled lizard common in gardens and forests. If a bird grabs it by the tail, the skink can drop that tail on the spot — the loose tail keeps wriggling as a decoy while the skink escapes. Over weeks, it grows a replacement tail, but the new one is a cheap fake, not a true copy. Instead of the original chain of small bony vertebrae, what does the regrown tail contain down its length?",
-    "answer": "A single stiff rod of cartilage",
-    "choices": [
-      "A single stiff rod of cartilage",
-      "A hollow tube filled with fat",
-      "A string of brand-new little bones",
-      "Nothing solid at all, just skin and muscle"
-    ],
-    "context": "The regrown tail has no fracture planes because it is one stiff cartilage rod, not a chain of vertebrae. So if grabbed again, the tail can only break off closer to the body, above the rod. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC9054770/",
-    "topic": "ditching-a-body-part-autotomy"
-  },
-  {
-    "tier": 4,
-    "question": "For many lizards — skinks and geckos especially — dropping the tail to escape a predator is a last resort, never a free trick. That's because the tail is doing an important job for the whole animal, holding a store the lizard would badly miss. A leopard gecko's plump, ringed tail is the classic example: a lizard with a fat tail is a lizard in good times, and a scrawny tail means hard days ahead. Besides balance, what is a lizard's tail often used to store?",
+    "question": "A leopard gecko carries a plump, ringed tail in good times and a scrawny one when days are hard. Skinks and geckos drop their tails only when they must, since the tail holds a store the lizard would badly miss. What does the tail store?",
     "answer": "Fat, the animal's main energy reserve",
     "choices": [
       "Fat, the animal's main energy reserve",
@@ -6098,7 +5994,7 @@
   },
   {
     "tier": 4,
-    "question": "A lizard's tail snaps off in a predator's mouth and keeps wriggling. A sea cucumber vomits its own guts. A crab drops a claw. A worm splits and both halves grow back. All four are the same escape trick — biologists call it autotomy, meaning 'self-cutting' — dropping a body part to survive, then regrowing it later. Scientists have traced the deep evolutionary history of autotomy across the whole animal kingdom. What did they find about its origin?",
+    "question": "A skink caught by the tail in a bird's beak lets the tail go and runs, the same let-go escape a crab makes with a claw. Lizards, crabs, sea cucumbers and worms sit on wildly different branches of the animal kingdom, yet all of them have the trick. How did they all come by it?",
     "answer": "Evolution arrived at it independently many separate times",
     "choices": [
       "Evolution arrived at it independently many separate times",
@@ -6124,7 +6020,7 @@
   },
   {
     "tier": 2,
-    "question": "The diving bell spider lives inside a silk air-dome anchored below the pond's surface. Its breathing gradually uses up the trapped air. Silk cannot manufacture more, so the bell must be replenished repeatedly. How does the spider actually keep its dome supplied with fresh air?",
+    "question": "Below the surface of a still pond, a diving bell spider rests inside a silk dome full of air. Every breath uses up a little of that air, and the silk has no way to make more. How does the spider keep its dome topped up?",
     "answer": "Swims all the way up to the surface and ferries a bubble back down",
     "choices": [
       "Swims all the way up to the surface and ferries a bubble back down",
@@ -6137,7 +6033,7 @@
   },
   {
     "tier": 2,
-    "question": "In almost every one of the world's forty-thousand-odd spider species, the female is the bigger sex, sometimes many times the male's size. The diving bell spider, a European spider that spends its whole life underwater in ponds and breathes from a bubble it carries down, breaks that rule. Here the male is the larger one, growing to about 15 mm against the female's 12 mm. What does the male do that the extra size likely helps with?",
+    "question": "A male diving bell spider grows to about 15 millimeters, bigger than the 12-millimeter female sharing his pond. Among the world's forty-thousand-odd spider species it is nearly always the other way round, with the female the bigger sex, sometimes many times over. What does the male do that the extra size likely helps with?",
     "answer": "Swims around actively hunting through the water",
     "choices": [
       "Swims around actively hunting through the water",
@@ -6150,7 +6046,7 @@
   },
   {
     "tier": 3,
-    "question": "A resting diving bell spider can stay sealed in its underwater air-dome for more than a day without surfacing — far longer than the trapped air should last. Seymour and Hetz found the bell isn't just an air tank. What lets it keep supplying the spider with oxygen?",
+    "question": "A diving bell spider resting in its silk dome under the water needs to swim up for fresh air only about once a day, far longer than the trapped air alone should last. Seymour and Hetz showed that the dome is no mere tank. How does it keep supplying the spider with oxygen?",
     "answer": "It works like a gill, pulling oxygen out of the surrounding water",
     "choices": [
       "It works like a gill, pulling oxygen out of the surrounding water",
@@ -6163,7 +6059,7 @@
   },
   {
     "tier": 5,
-    "question": "A resting diving bell spider's silk dome pulls oxygen straight out of the pond, so you'd think a spider could seal itself in for the whole winter. Seymour and Hetz showed it can't: no matter how much oxygen keeps flowing in, the bell steadily shrinks and collapses within a day or two, forcing the spider back to the surface. What quietly bleeds the dome away even as fresh oxygen arrives?",
+    "question": "Fresh oxygen keeps arriving in a diving bell spider's silk dome, so the spider might seem able to seal itself in for the whole winter. Seymour and Hetz showed it cannot: the dome keeps shrinking all the while, and a small one drops to half its size in about 37 hours. What makes the dome shrink?",
     "answer": "Nitrogen slowly diffusing out of the bubble into the water",
     "choices": [
       "Nitrogen slowly diffusing out of the bubble into the water",
@@ -6319,7 +6215,7 @@
   },
   {
     "tier": 1,
-    "question": "The Draco, a small lizard nicknamed the flying dragon, lives in the rainforests of Southeast Asia — places like Indonesia and the Philippines. At rest on a tree trunk it looks like an ordinary little lizard, brown and unremarkable. Then it leaps out into the air and two wide wings snap open from its sides for a long glide between trees. Those wings are thin skin stretched over what part of its body?",
+    "question": "A Draco, the flying dragon of Southeast Asia's rainforests, clings to a tree trunk like any brown lizard. Then it leaps, and two wide wings snap open from its sides. Those wings are thin skin stretched over what part of its body?",
     "answer": "Hugely elongated ribs that fan outward",
     "choices": [
       "Hugely elongated ribs that fan outward",
@@ -6345,7 +6241,7 @@
   },
   {
     "tier": 2,
-    "question": "Draco lizards live almost their whole lives up in the forest canopy, gliding tree to tree and eating ants and termites, and are almost never found on the forest floor. Yet one part of the population must climb all the way down to the ground. Who, and why?",
+    "question": "High in the rainforest canopy, Draco lizards glide from tree to tree eating ants and termites, and they almost never touch the forest floor. Yet some of them must climb all the way down to the ground. Which ones, and why?",
     "answer": "Females, to bury a clutch of eggs",
     "choices": [
       "Females, to bury a clutch of eggs",
@@ -6358,7 +6254,7 @@
   },
   {
     "tier": 3,
-    "question": "The Draco, a small lizard of Southeast Asian rainforests nicknamed the flying dragon, glides between trees on two wide skin-wings that fold out from its ribs. Mid-glide it does something no other gliding animal on Earth is known to do. Instead of leaving its wings to hold themselves out with air pressure alone, the Draco reaches forward with its two front hands while it is airborne. What is it doing with those hands?",
+    "question": "Halfway through a glide between rainforest trees, a Draco does something no other gliding animal is known to do. Instead of leaving its two skin wings to hold themselves out with air pressure alone, it reaches forward with both front hands. What is it doing with them?",
     "answer": "Gripping the front edge of each wing to hold it taut",
     "choices": [
       "Gripping the front edge of each wing to hold it taut",
@@ -6540,7 +6436,7 @@
   },
   {
     "tier": 1,
-    "question": "Two miles down in the pitch-black Pacific Ocean, a pale, ghost-white octopus called the dumbo octopus moves through the water without jetting like its shallow-water cousins do. Instead it slowly beats a pair of broad, floppy paddles that stick straight out from the top of its body, one on each side. What are those two paddles?",
+    "question": "Two miles down in the pitch-black Pacific, a pale dumbo octopus does not jet like its shallow-water cousins. It slowly beats a pair of broad, floppy paddles that stick out from the top of its body, one on each side. What are those paddles?",
     "answer": "Ear-like fins",
     "choices": [
       "Ear-like fins",
@@ -6553,7 +6449,7 @@
   },
   {
     "tier": 2,
-    "question": "Deep on the pitch-dark seafloor, the dumbo octopus flaps its little ear-like fins and drifts down through cold water. Most octopuses grab prey and tear it apart with a hard beak. But the dumbo octopus meets a worm or tiny crab in a gentler way. It spreads its webbed arms around the little animal to trap it, then does something no other octopus ever does. What does it do next?",
+    "question": "On the pitch-dark seafloor, a dumbo octopus meets a small worm. Most octopuses grab their prey and tear it apart with a hard beak, but this one spreads the web between its arms around the worm to trap it. What does it do next?",
     "answer": "Swallows it whole",
     "choices": [
       "Swallows it whole",
@@ -6566,7 +6462,7 @@
   },
   {
     "tier": 3,
-    "question": "The dumbo octopus is a small deep-sea octopus that lives thousands of metres down on the pitch-black ocean floor. It got its Disney nickname from the pair of ear-shaped fins on the top of its head that it flaps like little wings. Most shallow-water octopus mothers lay one big clutch of eggs and then die guarding it. Down where the dumbo octopus lives, the female handles her eggs in a way that surprised the scientists who studied her. How does she manage them?",
+    "question": "A female dumbo octopus drifts over the pitch-black ocean floor thousands of meters down. Most shallow-water octopus mothers lay one big clutch of eggs and then die guarding it, but she handles her eggs in a way that surprised the scientists who studied her. How does she manage them?",
     "answer": "She carries eggs at every stage of ripeness at once",
     "choices": [
       "She carries eggs at every stage of ripeness at once",
@@ -6579,7 +6475,7 @@
   },
   {
     "tier": 4,
-    "question": "An octopus is boneless jelly, yet the dumbo octopus beats its two big ear-fins with real muscular power to fly through the water. Muscles that strong need a firm base to pull against. Inside its mantle, the dumbo octopus keeps one small piece of hard tissue for exactly that job, a part almost every other octopus has thrown away. What do its fins anchor to?",
+    "question": "A dumbo octopus beats its two big fins with real muscular power, flying through the deep water, though like any octopus it has no bones. Muscles that strong need something firm to pull against, and inside its mantle it keeps one small hard part that almost every other octopus has lost. What do its fins anchor to?",
     "answer": "A tiny saddle-shaped internal shell",
     "choices": [
       "A tiny saddle-shaped internal shell",
@@ -6592,7 +6488,7 @@
   },
   {
     "tier": 1,
-    "question": "On the African savanna, you come across a fresh heap of animal droppings — and a stout, glossy black beetle already hard at work on it. The beetle carefully packs a wad of the dung into a neat round ball, then rolls the ball off across the ground to bury underground as food for its young. Which insect gathers manure this way?",
+    "question": "On the African savanna, a stout, glossy black beetle finds a fresh heap of animal droppings. It packs a wad of the dung into a neat round ball, then rolls the ball away to bury underground as food for its young. Which insect is this?",
     "answer": "The dung beetle",
     "choices": [
       "The dung beetle",
@@ -6618,7 +6514,7 @@
   },
   {
     "tier": 2,
-    "question": "Along the Nile long ago, the ancient Egyptians watched a small black beetle push its round ball of dung across the ground, day after day. To them, the little beetle's daily labor looked like an echo of something enormous crossing the whole sky. They worshipped the beetle as the sacred scarab, and carved it onto tombs and jewels. What did they picture the beetle's rolling ball to be?",
+    "question": "Along the Nile, the ancient Egyptians watched a small black beetle push its ball of dung across the ground day after day. They worshipped it as the sacred scarab, because its daily labor looked like an echo of something enormous crossing the sky. What did they see in the rolling ball?",
     "answer": "The sun, pushed across the heavens each day",
     "choices": [
       "The sun, pushed across the heavens each day",
@@ -6631,7 +6527,7 @@
   },
   {
     "tier": 3,
-    "question": "Out on the sunlit African plains, a dung beetle rolls a ball of fresh dung faster than any rival can steal it. Before it begins the long haul home, it stops and climbs to the top of its ball, then turns a slow full circle up there -- a strange little dance in place. Scientists filmed this odd spin and found it does one crucial job for the beetle's journey. What is the beetle doing up there?",
+    "question": "A dung beetle on the sunlit African plains must roll its ball of fresh dung away fast, before a rival can steal it. Before setting off, it climbs on top of the ball and turns a slow full circle there, a strange little dance in place. Scientists who filmed the spin found it does one crucial job. What is the beetle doing up there?",
     "answer": "Storing a snapshot of the sky to hold a straight bearing",
     "choices": [
       "Storing a snapshot of the sky to hold a straight bearing",
@@ -6670,7 +6566,7 @@
   },
   {
     "tier": 2,
-    "question": "About 380 million years ago, in the Late Devonian seas -- a time called the 'Age of Fishes' -- the top hunter was Dunkleosteus, a fish as long as a bus. Instead of soft skin or fine scales, its whole head and shoulders were sheathed in thick, joined plates fitted like tank armor. What was this natural armor actually made of?",
+    "question": "Dunkleosteus, a fish as long as a bus, ruled the Late Devonian seas about 380 million years ago, in the stretch of time known as the Age of Fishes. Its head and shoulders were sheathed in thick, joined plates fitted like tank armor. What were the plates made of?",
     "answer": "Bone",
     "choices": [
       "Bone",
@@ -6683,7 +6579,7 @@
   },
   {
     "tier": 2,
-    "question": "Dunkleosteus was an armored monster fish that ruled the seas about 380 million years ago. It could shear apart even heavily armored prey with a bite twice as strong as a great white shark's. Yet when you look inside its huge open mouth, one thing every shark has today is completely missing. What did Dunkleosteus completely lack?",
+    "question": "With a bite harder than a great white shark's, Dunkleosteus sheared through even heavily armored prey. Yet a look inside its huge open mouth shows that one thing every shark has today is missing entirely. What did Dunkleosteus lack?",
     "answer": "Teeth",
     "choices": [
       "Teeth",
@@ -6696,7 +6592,7 @@
   },
   {
     "tier": 4,
-    "question": "A great white shark bites at roughly 4,000 newtons — bone-cracking force. When researchers Anderson and Westneat modelled Dunkleosteus in 2007, they found it concentrated an even fiercer force at the very tip of its bony blade. How hard did that blade tip bite?",
+    "question": "A great white shark bites with roughly 4,000 newtons of bone-cracking force. When Anderson and Westneat modeled Dunkleosteus in 2007, they found it concentrated an even fiercer force at the very tip of its bony blade. How hard did that blade tip bite?",
     "answer": "About 5,300 newtons",
     "choices": [
       "About 5,300 newtons",
@@ -6709,7 +6605,7 @@
   },
   {
     "tier": 4,
-    "question": "When paleontologists dug up the fossilized head-plates of the giant armored fish Dunkleosteus, they found some marked with deep punctures -- and those punctures fit the bladed jaw-edges of another Dunkleosteus exactly. When a top predator leaves such matching marks on the armor of its own species, what does the evidence reveal about it?",
+    "question": "Hall and colleagues examined the fossil head plates of the armored fish Dunkleosteus and found some marked with deep punctures and scrapes. Those wounds fit the blade-edged jaws of another Dunkleosteus exactly. What does the evidence reveal about this top predator?",
     "answer": "It ate its own kind",
     "choices": [
       "It ate its own kind",
@@ -6722,7 +6618,7 @@
   },
   {
     "tier": 5,
-    "question": "For years Dunkleosteus was drawn as a suction feeder: a four-bar linkage of skull bones that flung its jaws open in a fiftieth of a second, whipping a vacuum in front of its mouth to inhale prey. A 2025 restudy found its skull held far more cartilage than that model assumed, and reread its cleaver-like blade jaws. What feeding style did the new work argue for instead?",
+    "question": "For years, artists drew Dunkleosteus as a suction feeder, flinging its jaws open in a fiftieth of a second to whip a vacuum in front of its mouth and inhale prey. Then Engelman and colleagues restudied the skull in 2025, found far more cartilage than that model assumed, and took a fresh look at its cleaver-like blades. What feeding style did they argue for?",
     "answer": "Biting with a wide gape and tearing prey into pieces",
     "choices": [
       "Biting with a wide gape and tearing prey into pieces",
@@ -6735,7 +6631,7 @@
   },
   {
     "tier": 4,
-    "question": "Dunkleosteus fossils keep turning up beside compact clumps of fish bones and half-broken prey remains — some even studded with the teeth of the shark-relative Orodus. Paleontologists read these clumps as something the fish produced, not something it swallowed. What do the clumps show Dunkleosteus did?",
+    "question": "Paleontologists digging out the giant armored fish Dunkleosteus keep finding compact clumps of fish bones and half-broken prey remains lying beside it. They read the clumps as something the fish produced, not something it swallowed. What do the clumps show Dunkleosteus did?",
     "answer": "It spat back up the bones it could not digest",
     "choices": [
       "It spat back up the bones it could not digest",
@@ -6747,34 +6643,8 @@
     "topic": "dunkleosteus"
   },
   {
-    "tier": 2,
-    "question": "Deep inside a pitch-black barn where no moonlight or lamplight reaches, a barn owl swoops silently down from the rafters. It cannot see a thing, and it has never even glimpsed the mouse below — yet it drops straight onto the mouse and pins it on the first try. What is the one sense guiding that killing strike in total darkness?",
-    "answer": "Its hearing, tracking the mouse's tiny rustle",
-    "choices": [
-      "Its hearing, tracking the mouse's tiny rustle",
-      "Its sense of smell, following the mouse's scent",
-      "Its whiskers, feeling shifts in the air",
-      "Heat pits, sensing the warm mouse's body"
-    ],
-    "context": "In total darkness the barn owl (Tyto alba) hunts by sound alone -- the faint scratch of a mouse in leaves is enough. Owls have no heat-sensing pits (those belong to pit vipers), and their sense of smell is weak. Source: Payne 1971, J. Exp. Biol. 54:535; Wikipedia, 'Sound localization in owls'.",
-    "topic": "ears-at-the-extremes"
-  },
-  {
-    "tier": 3,
-    "question": "The barn owl's flat, saucer-shaped face is not just a look -- it is a working instrument. A ring of stiff feathers, the 'facial ruff,' lets the owl pinpoint a rustle so faint no other bird would even notice it. What does the ruff do for the owl's ears?",
-    "answer": "Reflects faint sound toward the ear openings",
-    "choices": [
-      "Reflects faint sound toward the ear openings",
-      "Blocks noise from the owl's own beating wings",
-      "Damps loud sounds so the ears are not deafened",
-      "Sweeps sideways to scan the ground like radar"
-    ],
-    "context": "The facial ruff works like a parabolic dish, funneling the faintest rustle to the offset ears. When Knudsen and Konishi trimmed the ruff feathers off, the owls lost the ability to tell how HIGH a sound came from. Source: MIT Press Reader, 'The Genius of the Barn Owl's Feathers'; Wikipedia, 'Sound localization in owls'.",
-    "topic": "ears-at-the-extremes"
-  },
-  {
     "tier": 4,
-    "question": "The great gray owl of the northern forests carries the biggest facial disc of any owl -- a giant round dish of feathers that gathers faint sound to its ears. On a winter hunt, it does something no barn owl ever attempts: from a perch or hover, it suddenly plunges up to a foot and a half straight down through deep snow, onto prey it never sees. What is it catching under the snow?",
+    "question": "A great gray owl, the owl with the largest facial disc of all, waits on a perch above the winter snow of a northern forest. Suddenly it plunges straight down, punching through as much as a foot and a half of snow onto prey it never sees. What is it catching?",
     "answer": "Voles it hears tunneling below the snow",
     "choices": [
       "Voles it hears tunneling below the snow",
@@ -6787,7 +6657,7 @@
   },
   {
     "tier": 5,
-    "question": "Snow bends sound like a lens, so a hunting great gray owl doesn't hear a vole quite where the vole actually is -- the little creature seems up to 5 degrees off from its true spot beneath the snow. Biologists call this an 'acoustic mirage.' Just before it dives, the great gray owl does one specific thing to defeat the illusion and line up its plunge. What is it?",
+    "question": "Listening for prey beneath the snow, a great gray owl hears it in the wrong place: snow bends sound the way a lens bends light, so the prey can sound as if it is up to 5 degrees off its true position. Before diving, the owl does one thing that probably helps it beat this acoustic mirage. What is it?",
     "answer": "It hovers in place, beating its wings",
     "choices": [
       "It hovers in place, beating its wings",
@@ -6800,7 +6670,7 @@
   },
   {
     "tier": 4,
-    "question": "Many moths take wing at dusk and fly through the darkness, and over millions of years they evolved the simplest ear in all of nature -- just one to four nerve cells wired to a thin patch of skin. Yet this tiny ear is tuned to one deadly sound. The instant that sound arrives, the moth veers or tumbles wildly out of the sky. What is the moth listening for?",
+    "question": "A moth flutters through the night carrying one of the simplest ears in nature, just one to four nerve cells wired to a thin patch of skin. That tiny ear is tuned to a single deadly sound, and the instant the sound arrives the moth veers away or tumbles wildly out of the sky. What is the moth listening for?",
     "answer": "The ultrasonic sonar of a hunting bat",
     "choices": [
       "The ultrasonic sonar of a hunting bat",
@@ -6812,21 +6682,8 @@
     "topic": "ears-at-the-extremes"
   },
   {
-    "tier": 4,
-    "question": "The tiger moth Bertholdia trigona does not flee a hunting bat -- it fights back, firing ultrasonic clicks at about 4,500 per second. This was the first proven case of one natural trick in the wild. What does the moth's click storm actually DO to the bat?",
-    "answer": "It jams the bat's sonar into useless noise",
-    "choices": [
-      "It jams the bat's sonar into useless noise",
-      "It mimics a mate to lure the bat closer",
-      "It signals the moth is poisonous to eat",
-      "It bursts the bat's sensitive eardrums"
-    ],
-    "context": "Bertholdia trigona blankets the air with clicks so the bat's returning echoes turn to static -- the first proven case of sonar jamming in nature. Attacking big brown bats often reversed or aborted their approach. Source: Corcoran, Barber & Conner 2009, Science 325:325, 'Tiger Moth Jams Bat Sonar.'  (Legend.)",
-    "topic": "ears-at-the-extremes"
-  },
-  {
     "tier": 5,
-    "question": "Bats hunt moths in the dark by firing bursts of ultrasound and listening for the tiny echo that bounces back off a moth's wings. Some moths have evolved a fuzzy coat of microscopic wing scales that quietly wins this duel almost every night -- the bat sweeps past without ever hearing them. How do the moth's scales beat the bat's sonar?",
+    "question": "A bat hunting in the dark fires bursts of ultrasound and listens for the faint echo that bounces back off a moth's wings. Some moths answer with a fuzzy coat of microscopic wing scales, and the bat sweeps right past without ever hearing them. How do the scales beat the bat's sonar?",
     "answer": "They swallow the ultrasound so almost no echo returns",
     "choices": [
       "They swallow the ultrasound so almost no echo returns",
@@ -6839,7 +6696,7 @@
   },
   {
     "tier": 5,
-    "question": "A bat's shrillest hunting call tops out near 212 kHz -- already so high no human ear could ever hear it, but it is the sound most night-flying moths dread. Researchers wired up the tiny greater wax moth to test just how high a pitch its ear could still detect -- hoping to find where the moth finally goes deaf. How high did the moth's ear still respond?",
+    "question": "Researchers in one study wired up the ear of the tiny greater wax moth to find the highest pitch it could still pick up. A hunting bat's shrillest call reaches about 212 kilohertz, already far above anything a human ear can catch. How high did the moth's ear still respond?",
     "answer": "Up to about 300 kHz",
     "choices": [
       "Up to about 300 kHz",
@@ -6852,7 +6709,7 @@
   },
   {
     "tier": 5,
-    "question": "A parasitic fly, Ormia ochracea, hunts down a cricket by its chirp to lay eggs on it -- but its two eardrums almost touch, half a millimeter apart. Sound hits one barely a millionth of a second before the other, a gap no nerve can measure. How does the fly still pin the chirp's direction?",
+    "question": "The parasitic fly Ormia ochracea tracks down a chirping cricket to lay its eggs on it, yet its eardrums almost touch, about half a millimeter apart. A chirp hits the closer eardrum just about one or two microseconds before the other, a gap too small for its nerves to read. How does the fly still pin down where the chirp came from?",
     "answer": "A stiff bridge links the eardrums so they rock like a see-saw",
     "choices": [
       "A stiff bridge links the eardrums so they rock like a see-saw",
@@ -6878,7 +6735,7 @@
   },
   {
     "tier": 1,
-    "question": "Nearly every mammal on Earth grows its babies inside the body and gives birth to them live. Only five living species break that rule and lay eggs instead, like a bird or a reptile. One of them is the platypus. Which of these is the OTHER egg-laying mammal?",
+    "question": "A mother mammal lays an egg, just as a bird or a reptile would. Only five living kinds of mammal do this; nearly every other mammal bears live young. Which of these four is one of the five?",
     "answer": "The echidna",
     "choices": [
       "The echidna",
@@ -6891,7 +6748,7 @@
   },
   {
     "tier": 2,
-    "question": "An echidna is a small, egg-laying Australian mammal that shuffles through the leaf litter hunting ants and termites. Its back bristles with sharp spines that look just like a porcupine's quills -- but they are not quills at all. Each spine is really a stiffened, overgrown hair. What substance are those spines actually made of?",
+    "question": "Sharp spines bristle all over an echidna's back as it shuffles through the leaf litter in search of food, and they look just like a porcupine's quills. They are not quills at all: each spine is a stiff, overgrown hair. What are the spines made of?",
     "answer": "Keratin",
     "choices": [
       "Keratin",
@@ -6904,7 +6761,7 @@
   },
   {
     "tier": 2,
-    "question": "Most people picture the echidna as the spiny little ant-eater of the Australian bush. But three larger, rarer, long-beaked cousins survive nowhere else on Earth but a single island to Australia's north. On which island do those long-beaked echidnas live?",
+    "question": "The short-beaked echidna roams the whole of Australia, digging through the bush. Three larger, rarer cousins, the long-beaked echidnas, survive nowhere else on Earth but a single island. Which island is it?",
     "answer": "New Guinea",
     "choices": [
       "New Guinea",
@@ -6917,7 +6774,7 @@
   },
   {
     "tier": 2,
-    "question": "A mother echidna lays a single leathery egg about the size of a grape and rolls it into a fold on her own belly. Roughly ten days later a tiny, pink, jellybean-shaped hatchling breaks out. What do keepers call this baby echidna?",
+    "question": "A tiny, pink hatchling shaped like a jellybean breaks out of a grape-sized leathery egg, about ten days after its mother rolled the egg into a fold on her belly. What do keepers call a baby echidna?",
     "answer": "A puggle",
     "choices": [
       "A puggle",
@@ -6930,7 +6787,7 @@
   },
   {
     "tier": 3,
-    "question": "An echidna is a small spiny egg-laying mammal from Australia and New Guinea, covered in stiff quills like a hedgehog. With its strong front claws it rips open the wall of an ant or termite nest, and instantly hundreds of insects come pouring out to defend the colony. The echidna has to gather them up fast — but it has no teeth in its mouth at all. How does it snatch up its swarming meal?",
+    "question": "An echidna rips into the wall of a nest with its claws, and hundreds of insects come pouring out to defend the colony. It must gather them up fast, yet it has no teeth at all. How does it snatch up its swarming meal?",
     "answer": "It shoots out a long, gluey tongue",
     "choices": [
       "It shoots out a long, gluey tongue",
@@ -6943,7 +6800,7 @@
   },
   {
     "tier": 3,
-    "question": "An echidna — the spiny egg-laying mammal of Australia — is caught out in the open on soft ground by a hungry dingo. A slow shuffle is the echidna's top speed, so trying to run away is hopeless. Instead of fleeing, it plants itself in the exact same spot and does something else to survive the next few seconds. What does it do?",
+    "question": "A hungry dingo catches an echidna out in the open on soft ground. A slow shuffle is the echidna's top speed, so running is hopeless. Instead it stays in the very same spot and does something else to survive the next few seconds. What does it do?",
     "answer": "It digs straight down, leaving only its spines exposed",
     "choices": [
       "It digs straight down, leaving only its spines exposed",
@@ -6956,7 +6813,7 @@
   },
   {
     "tier": 4,
-    "question": "A shark hunts hidden prey by feeling the faint electric buzz that leaks from living muscle — a sixth sense almost no land animal shares. Astonishingly, the echidna’s snout does the very same thing on dry land, sensing the tiny electrical signals of prey it cannot see or smell. What does it home in on with this power?",
+    "question": "A shark finds hidden prey by feeling the faint electric signals that leak from living muscle, a sense almost no land animal shares. An echidna shuffling through the bush does the same with its snout, homing in on prey it cannot see or smell. What is it hunting?",
     "answer": "Ants and termites buried in a nest",
     "choices": [
       "Ants and termites buried in a nest",
@@ -6969,7 +6826,7 @@
   },
   {
     "tier": 1,
-    "question": "On a moonless summer night, a hunting bat swoops through the pitch-black air over a meadow. There is no starlight and no glow of any kind to help it — the bat truly cannot see the moth flying in front of it. Yet a moment later it snatches the moth right out of mid-air. How does a hunting bat find flying prey it cannot see?",
+    "question": "A bat hunts over a meadow on a moonless night, in air so black that it cannot see the moth just ahead. A moment later it snatches the moth out of the air. How does a hunting bat find prey it cannot see?",
     "answer": "It screams sounds and reads the returning echoes",
     "choices": [
       "It screams sounds and reads the returning echoes",
@@ -6981,34 +6838,8 @@
     "topic": "echolocation-built-twice"
   },
   {
-    "tier": 2,
-    "question": "A bottlenose dolphin is cruising through dark, murky water where sunlight cannot reach and its eyes are almost useless. Even so, it pinpoints a single fish swimming somewhere up ahead. It rapidly clicks with its jaws, sending out bursts of sound — but a special part of the dolphin's body focuses those clicks into a tight forward beam like a flashlight. Which body part focuses the sound?",
-    "answer": "A fatty forehead organ called the melon",
-    "choices": [
-      "A fatty forehead organ called the melon",
-      "A pair of clicking sacs in its throat",
-      "The blowhole flaps on top of its head",
-      "Its long snout, pointed like an antenna"
-    ],
-    "context": "Dolphins and toothed whales echolocate like bats. The melon, a lens of fatty tissue in the forehead, shapes their clicks into a tight forward beam. Source: Dolphins-World 'Dolphin Echolocation'; Dolphin Communication Project 'How does echolocation work?'.",
-    "topic": "echolocation-built-twice"
-  },
-  {
-    "tier": 2,
-    "question": "A dolphin hunts fish in murky water by sending fast clicks out through the fatty melon on its forehead, then catching the faint echoes racing back. But the place those returning echoes actually enter its head is a surprising one -- not through its ears the way ours work. Where does the returning sound come in on a dolphin?",
-    "answer": "Through its lower jawbone, filled with acoustic fat",
-    "choices": [
-      "Through its lower jawbone, filled with acoustic fat",
-      "Through a soft spot in the skin near its eye",
-      "Back in through the same fatty forehead melon",
-      "Down through the open flaps of its blowhole"
-    ],
-    "context": "Fat inside the lower jaw carries the echo through a thin 'pan bone' up to the inner ear. Emit from the forehead, receive through the jaw. Source: SeaWorld 'All About Bottlenose Dolphins'; ResearchGate 'Behavioral evidence for hearing through the lower jaw' (Tursiops truncatus).",
-    "topic": "echolocation-built-twice"
-  },
-  {
     "tier": 1,
-    "question": "The oilbird lives deep inside pitch-black caves in northern South America. Like a bat, it navigates by clicking its tongue and listening for the echoes bouncing off the cave walls. But its clicks are much lower-pitched than a bat's ultrasound. How does that lower pitch change the picture the oilbird gets of its surroundings?",
+    "question": "An oilbird flies through a pitch-black cave in northern South America, clicking its tongue and listening for echoes, like a bat. But its clicks are far lower in pitch than a bat's ultrasound. How does the lower pitch change the oilbird's picture of the cave?",
     "answer": "It is blurrier than a bat's, missing fine detail",
     "choices": [
       "It is blurrier than a bat's, missing fine detail",
@@ -7033,21 +6864,8 @@
     "topic": "echolocation-built-twice"
   },
   {
-    "tier": 3,
-    "question": "Bats and toothed whales sit on totally separate branches of the mammal family tree -- one lineage climbed into the air, the other slid into the sea. Yet both evolved echolocation, hunting by sound. When biologists compared their Prestin gene -- a gene that helps mammal ears pick up sound -- the result surprised everyone. What did they find?",
-    "answer": "The gene had changed the same way in both",
-    "choices": [
-      "The gene had changed the same way in both",
-      "It had changed differently in each of them",
-      "Only the bats' version had changed at all",
-      "The change sat in a vision gene, not hearing"
-    ],
-    "context": "Prestin, the protein that powers the inner ear's outer hair cells, shifted in the SAME direction in echolocating bats and in toothed whales — the same molecular answer arriving twice, independently. Source: Liu et al. 2010 Current Biology; Science 'Bats and Dolphins Evolved Echolocation in Same Way'.  (Legend.)",
-    "topic": "echolocation-built-twice"
-  },
-  {
     "tier": 4,
-    "question": "After scientists learned that echolocating bats and echolocating toothed whales share the same hearing gene, they wanted to know just how deep the resemblance really went. So they zoomed all the way in on one exact position in the Prestin protein -- the tiny hearing molecule inside their ears. What did they see at that single spot in both animals?",
+    "question": "Bats took to the air and toothed whales to the sea, on far-apart branches of the mammal family tree, yet both evolved echolocation. Biologists comparing their Prestin, a protein that helps mammal ears pick up sound, found it had changed the same way in both. Then they zoomed in on one single position in it. What did they find there?",
     "answer": "The identical building-block swap in both",
     "choices": [
       "The identical building-block swap in both",
@@ -7055,25 +6873,12 @@
       "A swap in the bat but none in the whale",
       "A missing letter deleted from both"
     ],
-    "context": "At one position an asparagine became a threonine in BOTH echolocating bats and toothed whales — the identical swap, tied to sharper high-frequency hearing. Source: Academic OUP MBE 'Parallel Sites Implicate Functional Convergence of the Hearing Gene Prestin among Echolocating Mammals' (2014).",
-    "topic": "echolocation-built-twice"
-  },
-  {
-    "tier": 4,
-    "question": "A kilometre below the ocean surface, in the crushing black of the deep, a sperm whale hunts giant squid by scanning the darkness with clicks. The clicks are so powerful that scientists rank the sperm whale the loudest animal on Earth — louder than a jet engine at takeoff. Where inside the whale's blocky body is that record-breaking blast of sound actually generated?",
-    "answer": "A huge spermaceti organ filling its blocky head",
-    "choices": [
-      "A huge spermaceti organ filling its blocky head",
-      "A pair of oversized lungs deep in its chest",
-      "Twin sound sacs riding along its spine",
-      "A resonating chamber inside its tail flukes"
-    ],
-    "context": "Sperm-whale clicks reach near 230 decibels underwater, made by the enormous spermaceti organ that fills the head, used to hunt squid in total darkness a kilometre down. Source: Wikipedia 'Sperm whale'; Grokipedia 'Spermaceti organ'.  (Legend.)",
+    "context": "Prestin, the protein that powers the inner ear's outer hair cells, shifted in the same direction in echolocating bats and in toothed whales. At one position an asparagine became a threonine in both: the identical swap, tied to sharper high-frequency hearing, the same molecular answer arriving twice, independently. Source: Liu et al. 2010 Current Biology; Science 'Bats and Dolphins Evolved Echolocation in Same Way'; Academic OUP MBE 'Parallel Sites Implicate Functional Convergence of the Hearing Gene Prestin among Echolocating Mammals' (2014).  (Legend.)",
     "topic": "echolocation-built-twice"
   },
   {
     "tier": 5,
-    "question": "A sperm whale hunts squid a mile below the surface using the loudest click in the animal kingdom, but it has no voice box. Instead it shoves air through a pair of lip-like flaps at the very front of its huge skull -- the flaps whalers nicknamed the 'monkey lips.' After that first pulse of sound leaves the flaps, what happens inside the whale's head before a full click finally shoots forward?",
+    "question": "A sperm whale hunting squid far below the surface makes the loudest clicks of any animal, yet it has no voice box. It pushes air past a pair of lip-shaped flaps at the front of its huge skull, the flaps whalers nicknamed the monkey lips. What happens to that first pulse inside the whale's head before a full click shoots forward?",
     "answer": "It bounces between two air sacs in the head",
     "choices": [
       "It bounces between two air sacs in the head",
@@ -7086,7 +6891,7 @@
   },
   {
     "tier": 5,
-    "question": "A horseshoe bat is named for the horseshoe-shaped skin flap around its nose, and it hunts by holding its call at one exact note. But as it speeds toward its target, its own motion should raise the pitch of the returning echo -- a Doppler rise that would throw off ears tuned to that single note. The bat cancels the shift out mid-chase. How does it do it?",
+    "question": "A horseshoe bat speeds toward its target, holding its call on one exact note, with its hearing tuned to that very note. Its own motion should raise the pitch of the returning echo, a Doppler rise that would throw those ears off. How does the bat cancel the shift mid-chase?",
     "answer": "It lowers the pitch of its own outgoing call",
     "choices": [
       "It lowers the pitch of its own outgoing call",
@@ -7099,7 +6904,7 @@
   },
   {
     "tier": 5,
-    "question": "The horseshoe bat is unusual among bats: instead of sweeping through different pitches, it locks its echolocation call to a single steady tone and listens for that exact tone to come back. A moth trying to hide silently among the leaves of a bush still gives itself away — the returning echo carries a tiny, rapid, rhythmic flicker riding on top of the steady note. What is making that flicker in the echo?",
+    "question": "Among the leaves of a bush, a moth hides in silence, yet a horseshoe bat whose call stays locked on a single steady tone still finds it. Riding on top of the steady note of the returning echo is a quick, rhythmic flicker. What makes the flicker?",
     "answer": "The beating of the moth's wings",
     "choices": [
       "The beating of the moth's wings",
@@ -7111,8 +6916,8 @@
     "topic": "echolocation-built-twice"
   },
   {
-    "tier": 5,
-    "question": "Not all moths take a bat's hunting cries lying down. The tiger moth Bertholdia trigona of the American deserts fights back with its own ultrasound -- firing clicks from little drum-like plates on its body thousands of times a second, the moment a bat's calls lock onto it. What does that barrage of moth-clicks do to the attacking bat?",
+    "tier": 4,
+    "question": "Bertholdia trigona, a tiger moth of the American deserts, does not flee when a hunting bat's calls lock onto it. It fights back, firing ultrasonic clicks of its own up to 4,500 times a second, the first proven case of one natural trick in the wild. What does the barrage do to the bat?",
     "answer": "It jams the bat's sonar and spoils the strike",
     "choices": [
       "It jams the bat's sonar and spoils the strike",
@@ -7120,12 +6925,12 @@
       "It signals the bat that the moth is poisonous",
       "It deafens the bat for the rest of the night"
     ],
-    "context": "Bertholdia trigona fires clicks up to 4,500 times a second to jam a bat's sonar — the most effective anti-bat defense documented, cutting the bat's capture success roughly tenfold. Source: Corcoran et al. 2009 Science 'Tiger Moth Jams Bat Sonar'; Scientific American 'Moths Use Sonar-Jamming Defense'.  (Legend.)",
+    "context": "Bertholdia trigona fires clicks up to 4,500 times a second, blanketing the air so the bat's returning echoes turn to static: the first proven case of sonar jamming in nature, and the most effective anti-bat defense documented, cutting the bat's capture success roughly tenfold. Attacking big brown bats often reversed or aborted their approach. Source: Corcoran, Barber & Conner 2009, Science 325:325, 'Tiger Moth Jams Bat Sonar'; Scientific American 'Moths Use Sonar-Jamming Defense'.  (Legend.)",
     "topic": "echolocation-built-twice"
   },
   {
     "tier": 4,
-    "question": "A big brown bat reads echoes so finely that researchers tested the smallest gap it could still resolve between two surfaces lined up front-to-back. The winning figure was finer than the length of its own sound waves. How close can the two surfaces sit and still register as two?",
+    "question": "A big brown bat reads echoes so finely that Simmons, Ferragamo and Moss set out in 1998 to find the smallest gap it could detect between two surfaces, one behind the other. The answer was finer than one wavelength of its own call. How close can the two surfaces sit and still register as two?",
     "answer": "About 0.3 millimetres apart",
     "choices": [
       "About 0.3 millimetres apart",
@@ -7138,7 +6943,7 @@
   },
   {
     "tier": 5,
-    "question": "The oldest well-preserved fossil bat, Onychonycteris finneyi from 52 million years ago, already had fully formed wings. But its inner ear was small like a fruit bat's, not the enlarged one echolocators carry. What did the team who described it argue this mix of features showed?",
+    "question": "Nancy Simmons and her colleagues described Onychonycteris finneyi, the oldest well-preserved fossil bat. The animal, from 52 million years ago, already had fully formed wings, but the coiled hearing organ in its ear, the cochlea, was small like a fruit bat's rather than enlarged like an echolocator's. What did the team argue this mix showed?",
     "answer": "Bats flew before they evolved echolocation",
     "choices": [
       "Bats flew before they evolved echolocation",
@@ -7151,20 +6956,7 @@
   },
   {
     "tier": 1,
-    "question": "Nearly every mammal on Earth -- from mice to whales to humans -- grows its babies inside the mother's body, then gives birth to live young. But two odd Australian mammals still do something their long-ago reptile ancestors did. What do the platypus and the echidna do that no other mammals do?",
-    "answer": "Lay eggs",
-    "choices": [
-      "Lay eggs",
-      "Fly at night",
-      "Live entirely underwater",
-      "Change from male to female"
-    ],
-    "context": "The platypus and the four echidna species are the only egg-laying mammals alive, called monotremes. They kept this trait from their reptile-like ancestors. Source: Open University OpenLearn 'Introducing mammals: The monotremes'; Wikipedia 'Monotreme'.",
-    "topic": "eggs-vs-live-birth"
-  },
-  {
-    "tier": 1,
-    "question": "Robins in a garden, bald eagles on a cliff, emperor penguins on the Antarctic ice, ostriches sprinting across the savanna, tiny hummingbirds hovering at flowers — every single kind of bird, big or small, brings its young into the world in exactly the same way. There is not one exception in the entire class of birds. How does every bird do it?",
+    "question": "A tiny hummingbird hovers at a garden flower, and an ostrich sprints across the savanna. From the smallest bird to the largest, every species brings its young into the world the same way, without a single exception. How does every bird do it?",
     "answer": "By laying eggs",
     "choices": [
       "By laying eggs",
@@ -7177,7 +6969,7 @@
   },
   {
     "tier": 2,
-    "question": "A leathery-shelled egg the size of a marble, only about 16 to 18 millimeters across, is curled inside a burrow. Its mother wraps her whole body around it to keep it warm, and after about ten days a tiny 'puggle' hatches out. Which animal made this egg?",
+    "question": "A soft, leathery egg the size of a marble, only 16 to 18 millimeters across, lies in a burrow with its mother curled around it to keep it warm. About ten days later a tiny baby hatches out. Which animal laid it?",
     "answer": "A platypus",
     "choices": [
       "A platypus",
@@ -7190,7 +6982,7 @@
   },
   {
     "tier": 2,
-    "question": "The platypus and the echidna both lay eggs, which almost sounds like they belong with the reptiles. Yet scientists are certain these Australian creatures are true mammals. Once her egg hatches, a monotreme mother does one very mammal thing that settles the matter for good. What does she do for her hatched young?",
+    "question": "A monotreme mother lays eggs the way a reptile does, yet scientists are certain she is a true mammal. Once her eggs hatch, she does one very mammal thing that settles the matter. What does she do for her young?",
     "answer": "Feeds her young on milk",
     "choices": [
       "Feeds her young on milk",
@@ -7199,19 +6991,6 @@
       "Carries the hatchling on her back"
     ],
     "context": "Making milk is the defining mammal trait. Monotremes have no nipples, so the milk oozes out through patches of skin and the hatchling laps it up. Source: Australian Museum 'What is a monotreme?'; Australian Platypus Conservancy.",
-    "topic": "eggs-vs-live-birth"
-  },
-  {
-    "tier": 2,
-    "question": "A female seahorse swims up to a male, but instead of him giving her anything, SHE deposits her eggs into a special pouch on HIS belly. From there the male does something that no male of almost any other animal can do. What happens next?",
-    "answer": "The male gives birth to the babies",
-    "choices": [
-      "The male gives birth to the babies",
-      "The male eats the eggs to hide them",
-      "The female returns to guard the pouch",
-      "Both parents abandon the eggs at once"
-    ],
-    "context": "In seahorses (genus Hippocampus) the female deposits her eggs into a pouch on the male's belly, and he carries them, feeds them through a network of blood vessels, and gives live birth himself. This is real male pregnancy, not a metaphor. Source: University of Sydney 'Pregnant male seahorses support growing babies by forming placenta'; Project Seahorse.  (Legend.)",
     "topic": "eggs-vs-live-birth"
   },
   {
@@ -7229,7 +7008,7 @@
   },
   {
     "tier": 2,
-    "question": "Pythons and boa constrictors are big muscular snakes that squeeze the breath out of their prey, and people often mix them up because they look alike. But they bring their young into the world in different ways. A python lays a clutch of eggs and coils tightly around them until they hatch. When a female boa constrictor's young are ready, what does she do?",
+    "question": "A female python lays a clutch of eggs and coils tightly around them until they hatch. A boa constrictor looks so much like her that people often mix the two snakes up, yet the boa brings her young into the world another way. When a female boa's young are ready, what does she do?",
     "answer": "Gives birth to live snakelets",
     "choices": [
       "Gives birth to live snakelets",
@@ -7242,7 +7021,7 @@
   },
   {
     "tier": 4,
-    "question": "The common European adder, Vipera berus, is a small venomous snake found across northern Europe and Asia, its back marked with a dark zigzag stripe. Unlike most snakes, the adder does not lay eggs -- it carries its young inside its body and gives birth to them alive, already wriggling. That one unusual ability lets the adder hold a record no relative on Earth can match. What is that record?",
+    "question": "A European adder, Vipera berus, basks on a sunny patch of ground, the dark zigzag down her back soaking up the warmth. Unlike most snakes, she lays no eggs; she carries her young inside her and gives birth to them alive. That habit lets the adder hold a record no relative on Earth can match. What is it?",
     "answer": "It lives farther north than any other snake",
     "choices": [
       "It lives farther north than any other snake",
@@ -7268,7 +7047,7 @@
   },
   {
     "tier": 4,
-    "question": "Inside a pregnant sand tiger shark, up to 50 tiny embryos begin developing at the same time, split between her two long wombs. The pregnancy lasts about a year. When the biggest embryo in each womb is the first to grow a set of real teeth, still months before birth, what does it then do to the tinier embryos sharing the womb?",
+    "question": "Inside a pregnant sand tiger shark, up to 50 tiny embryos begin to grow at once, split between her two wombs, through a pregnancy of about a year. In each womb, the biggest embryo grows a set of real teeth first, months before birth. What does it do to the smaller embryos around it?",
     "answer": "Devours all its smaller siblings",
     "choices": [
       "Devours all its smaller siblings",
@@ -7293,21 +7072,8 @@
     "topic": "eggs-vs-live-birth"
   },
   {
-    "tier": 5,
-    "question": "A 248-million-year-old Chaohusaurus, one of the first fish-shaped ocean reptiles, was found fossilized mid-birth: one pup still sealed in the body cavity, a second half-out through the pelvis, a third already lying beneath the mother. Modern fully-marine reptiles deliver tail-first so the newborn's head stays inside until the last second and cannot drown. But every skull in this fossil pointed the same way, and that single detail told scientists live birth in this line began on land, not at sea. Which way were the pups emerging?",
-    "answer": "Head-first",
-    "choices": [
-      "Head-first",
-      "Tail-first",
-      "Belly-up",
-      "Curled nose-to-tail"
-    ],
-    "context": "Head-first delivery is the land-vertebrate pattern; the tail-first trick evolved later, in fully aquatic ichthyosaurs, to keep a newborn from drowning during a long birth. Because this early Chaohusaurus (specimen AGM I-1) still birthed head-first, Motani and colleagues argued these sea reptiles inherited live birth from land-dwelling ancestors rather than evolving it in the ocean. The fossil captured three offspring at once: one still enclosed in the body cavity, one exiting the pelvic girdle, and one already born and lying beneath the mother; all skulls pointed caudally, toward the tail, the head-first signature. Source: Motani et al. 2014, 'Terrestrial Origin of Viviparity in Mesozoic Marine Reptiles Indicated by Early Triassic Embryonic Fossils,' PLOS ONE 9(2):e88640. https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0088640",
-    "topic": "eggs-vs-live-birth"
-  },
-  {
     "tier": 4,
-    "question": "An American alligator's egg carries no sex chromosomes. Whether it hatches male or female is set weeks later by the nest's temperature alone. Biologists warmed clutches across a wide range and mapped which eggs became which sex. What did the temperatures actually produce?",
+    "question": "Biologists warmed clutches of American alligator eggs across a wide range of temperatures and mapped which became male and which female. The eggs carry no sex chromosomes, so the warmth of the nest alone decides. What did the temperatures produce?",
     "answer": "Cool and hot nests both gave females; males came only from the middle",
     "choices": [
       "Cool and hot nests both gave females; males came only from the middle",
@@ -7398,7 +7164,7 @@
   },
   {
     "tier": 1,
-    "question": "A long, snake-shaped fish glides through the muddy rivers of South America. It is famous for the jolt it delivers, and its very name calls it a kind of sea creature it isn't even related to. So what IS the electric eel, really?",
+    "question": "A long, snake-shaped fish glides through a muddy South American river, carrying the jolt that made it famous, and its body looks much like a marine eel's. What kind of fish is the electric eel?",
     "answer": "A knifefish",
     "choices": [
       "A knifefish",
@@ -7424,7 +7190,7 @@
   },
   {
     "tier": 2,
-    "question": "An electric eel crams its heart, stomach, and other vital organs into the front fifth of its body, sealed away from whatever lies behind them. What fills the entire long tail-end, about 80% of the eel?",
+    "question": "Squeezed into the front fifth of an electric eel's body are its heart, stomach and other vital organs, sealed away from whatever lies behind them. What fills the long tail-end, about 80 percent of the eel?",
     "answer": "Its electric organs",
     "choices": [
       "Its electric organs",
@@ -7437,7 +7203,7 @@
   },
   {
     "tier": 2,
-    "question": "An electric eel's shock doesn't come from one big generator. Inside its body sit about 6,000 tiny cells called electrocytes running down its length, and the eel can fire them all at once for one huge jolt. Which everyday power source works on the very same trick the eel uses to build its voltage?",
+    "question": "Down the length of an electric eel's body run about 6,000 tiny cells called electrocytes, and the eel fires them all at once. Their small voltages add up to one huge jolt. Which everyday power source builds its voltage the same way?",
     "answer": "Batteries stacked in a flashlight",
     "choices": [
       "Batteries stacked in a flashlight",
@@ -7489,7 +7255,7 @@
   },
   {
     "tier": 4,
-    "question": "An electric eel cannot see the fish frozen in the mud in front of it. So it fires a rapid doublet of two high-voltage pulses, and instantly the hidden prey twitches and gives itself away. Kenneth Catania showed the pulses do this by remotely triggering something inside the prey. What do they trigger?",
+    "question": "A fish lies frozen in the mud in front of an electric eel, where the eel cannot see it. The eel fires a rapid doublet of two high-voltage pulses, and the hidden prey instantly twitches and gives itself away. Kenneth Catania showed the pulses remotely trigger something inside the prey. What do they trigger?",
     "answer": "The prey's own muscles",
     "choices": [
       "The prey's own muscles",
@@ -7502,7 +7268,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1800 Alexander von Humboldt described electric eels leaping to attack a herd of about 30 horses driven into a pool, with two horses stunned and drowned. For roughly 200 years scientists dismissed the story. What finally happened to Humboldt's tale?",
+    "question": "Alexander von Humboldt wrote of electric eels leaping from a pool at about 30 horses driven into it, two of which were stunned and drowned. That was in 1800, and for roughly 200 years scientists dismissed the tale. What finally became of Humboldt's story?",
     "answer": "Catania's leaping study proved it true",
     "choices": [
       "Catania's leaping study proved it true",
@@ -7515,7 +7281,7 @@
   },
   {
     "tier": 5,
-    "question": "For 250 years the electric eel was thought to be a single species. In 2019 C. David de Santana's team split it into three, and one newcomer, Electrophorus voltai, set a record for every living thing on Earth. What did it register?",
+    "question": "C. David de Santana's team split the electric eel, long counted as one species, into three in 2019. One of the newcomers, Electrophorus voltai, which lives in clear highland rivers, set a record against every other animal on Earth. What did it register?",
     "answer": "The highest voltage of any animal",
     "choices": [
       "The highest voltage of any animal",
@@ -7540,34 +7306,8 @@
     "topic": "electric-eel"
   },
   {
-    "tier": 5,
-    "question": "Building an electric organ is a complex feat, yet electric fishes have built one from ordinary muscle at least six separate times. Darwin puzzled over how unrelated animals could each independently build the same organ. When scientists finally read the electric eel's genome, what did they find the six lineages had done?",
-    "answer": "Reused nearly the same set of genes each separate time",
-    "choices": [
-      "Reused nearly the same set of genes each separate time",
-      "Each invented a completely different genetic toolkit",
-      "Copied the working genes from the fish they hunted",
-      "Inherited the organ from one shared ancient ancestor"
-    ],
-    "context": "The myogenic electric organ has evolved independently at least six times across unrelated fish lineages, a puzzle of the kind Darwin flagged: how could nature build the same complex organ over and over in animals that never shared it? A 2014 study that sequenced the electric eel genome (Gallant, Zakon, Sussman et al.) found the answer written in the genes - every lineage reached for essentially the SAME 'genetic toolbox,' recruiting the same genes and developmental pathways to convert plain muscle into an electric organ each time. It is convergent evolution captured at the level of the DNA. Source: science.org/doi/10.1126/science.1254432 (Gallant et al. 2014, Science); phys.org/news/2014-06-truth-electric-fish.html.  (Legend.)",
-    "topic": "electric-eel"
-  },
-  {
-    "tier": 2,
-    "question": "A shark glides over a flat sandy seabed where a flounder lies completely buried — invisible, motionless, giving off no smell the shark can follow. Yet the shark suddenly wheels and digs the fish straight out. What did it home in on?",
-    "answer": "The faint electricity leaking from the flounder's beating heart and twitching muscles",
-    "choices": [
-      "The faint electricity leaking from the flounder's beating heart and twitching muscles",
-      "The warmth of the flounder's body radiating up through the sand",
-      "A trail of scent molecules drifting from the buried fish",
-      "The tiny grains of sand shifting as the fish breathed"
-    ],
-    "context": "Every heartbeat and muscle twitch of a living animal leaks a faint electric field into the seawater around it. Sharks and rays read that field directly, so a fish that hides from eyes, nose, and ears still 'glows' electrically. Adrianus Kalmijn proved this by burying battery-powered electrodes in sand: sharks dug up the wires and ignored a dead fish nearby, homing on the electric field, not sight or smell. LEGEND. Source: Kalmijn, 'The Discovery of the Shark's Electric Sense', American Scientist.",
-    "topic": "electroreception-reading-the-body-electric"
-  },
-  {
     "tier": 3,
-    "question": "Marine biologists mounted high-speed cameras on great white sharks and reviewed the footage frame by frame, watching the very last split-second before the shark's jaws close on a thrashing seal. In that final instant every recorded shark does the same odd thing — a move that looks reckless, because it seems to throw away part of its senses right when it needs them most. What does the shark do just before the bite?",
+    "question": "A great white shark closes on a thrashing seal, a camera fixed to its body recording every frame of the strike. In the last instant before its jaws close, it does something that looks reckless, giving up one of its senses just when it seems to need it most. What does the shark do just before the bite?",
     "answer": "It snaps its eyes shut and finishes the strike blind",
     "choices": [
       "It snaps its eyes shut and finishes the strike blind",
@@ -7579,47 +7319,8 @@
     "topic": "electroreception-reading-the-body-electric"
   },
   {
-    "tier": 3,
-    "question": "A platypus dives to hunt on a dark riverbed and does something startling: it seals its eyes, its ears, AND its nostrils tightly shut for the whole dive. With every one of those senses switched off, what does it hunt with instead?",
-    "answer": "Roughly 40,000 electroreceptors spread across its rubbery bill",
-    "choices": [
-      "Roughly 40,000 electroreceptors spread across its rubbery bill",
-      "A long sticky tongue that tastes prey in the water",
-      "Whiskers that feel currents stirred by moving prey",
-      "Echoing clicks it bounces off the riverbed"
-    ],
-    "context": "The platypus hunts underwater completely 'blind' — eyes, ears, and nostrils all sealed shut — steering entirely by about 40,000 electroreceptors scattered over its rubbery bill that pick up the electric muscle-signals of hidden prey. Source: Pettigrew, 'Electroreception in monotremes', Journal of Experimental Biology 202:1447 (1999); Australian Platypus Conservancy.  (Legend.)",
-    "topic": "electroreception-reading-the-body-electric"
-  },
-  {
     "tier": 4,
-    "question": "A hunting platypus carries two separate senses on its bill: one for electric fields, one — the 'push-rod' sensors — for pressure. A single shrimp tail-flick trips both, and from that one flick, in total darkness, the platypus pins down exactly how far off the shrimp is. How do two senses give it a distance?",
-    "answer": "The electric signal outruns the slower pressure wave, and the platypus times the gap between them",
-    "choices": [
-      "The electric signal outruns the slower pressure wave, and the platypus times the gap between them",
-      "A close shrimp trips both senses, while a distant one trips only the electric sensors",
-      "The electric signal comes in stronger for close prey and weaker for far prey",
-      "The push-rod sensors near the tip fire for close prey, those near the base for far prey"
-    ],
-    "context": "Electricity races through water faster than a pressure wave travels. So a shrimp's tail-flick reaches the platypus's electric sensors a split-second before its pressure sensors. The platypus reads that tiny time gap to judge distance — triangulating a shrimp in total darkness. LEGEND. Source: Pettigrew et al. 1998; Pettigrew 1999, Journal of Experimental Biology.",
-    "topic": "electroreception-reading-the-body-electric"
-  },
-  {
-    "tier": 4,
-    "question": "The elephantnose and the knifefish hunt in muddy, pitch-dark river water where a shark's trick of feeling for the electricity that prey leak would turn up almost nothing worth eating. What do these fish do instead to find a meal they cannot see?",
-    "answer": "They make their own weak electric field and feel how nearby objects distort it",
-    "choices": [
-      "They make their own weak electric field and feel how nearby objects distort it",
-      "They store up a charge and stun small prey with a jolt",
-      "They light up glowing patches to lure prey close in the dark",
-      "They stir up the mud and snap at whatever swims out"
-    ],
-    "context": "'Weakly electric' fish generate their own weak electric field with an electric organ in the tail, then feel how nearby objects bend that field — a living electric-field radar — to navigate and hunt where there is nothing to see. Source: Wikipedia, Peters's elephantnose fish; Electric organ (anatomy); New England Aquarium.",
-    "topic": "electroreception-reading-the-body-electric"
-  },
-  {
-    "tier": 4,
-    "question": "Two knifefish swim close and their self-made electric fields happen to land at nearly the same frequency, so neither fish can read its own signal cleanly anymore. Within milliseconds, both are sensing sharply again. What did they do?",
+    "question": "Two knifefish meet in a dark, muddy river, each wrapped in the weak electric field it makes for itself, and the two fields happen to pulse at nearly the same frequency. Neither fish can read its own signal cleanly any more, yet within milliseconds both are sensing sharply again. What did they do?",
     "answer": "Each nudged its own discharge frequency away from the other's",
     "choices": [
       "Each nudged its own discharge frequency away from the other's",
@@ -7632,7 +7333,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2013 Clarke and colleagues found the first electric sense ever shown in an insect: a bumblebee, they reported, can pick up the faint static charge a flower carries. Through what part of its body does the bee detect that charge?",
+    "question": "A bumblebee lands on a flower that carries a faint static charge, and the bee can tell. Clarke's team showed in 2013 that bumblebees sense that weak charge, the first electric sense ever found in an insect. Through what part of its body does the bee detect it?",
     "answer": "Its body hairs, which bend in the presence of the charge",
     "choices": [
       "Its body hairs, which bend in the presence of the charge",
@@ -7645,7 +7346,7 @@
   },
   {
     "tier": 5,
-    "question": "A shark's ampullae are plumbed with a clear jelly that carries the electric signal inward. When physicists finally measured how well that jelly moves electric charge, they got a result no one expected from ordinary animal goo. What was so startling about it?",
+    "question": "Josberger and colleagues tested the clear jelly that fills the ampullae of Lorenzini, the pores that carry a shark's electric sense inward. The jelly is about 97 percent water, yet their 2016 measurement of how well it moves electric charge gave a result nobody expected from ordinary animal goo. What did they find?",
     "answer": "It conducts protons better than almost any material on Earth, rivaling engineered fuel-cell polymer",
     "choices": [
       "It conducts protons better than almost any material on Earth, rivaling engineered fuel-cell polymer",
@@ -7658,7 +7359,7 @@
   },
   {
     "tier": 5,
-    "question": "Sharks and skates (skates are the flat kite-shaped cousins of rays) are close relatives — both are cartilage fish that share a sixth sense, an electric sense, letting them feel the faint fields given off by any living body nearby. Both build that sense from the very same starter cell, which fires using one shared calcium channel. Yet a shark tunes its electric sense to hunt hidden prey, while a skate tunes its to pick up the weak flutter of another skate calling for a mate. What single difference splits one shared cell into two very different senses?",
+    "question": "A shark and a skate, the flat, kite-shaped cousin of the rays, both feel the faint electric fields of living bodies, using the same kind of cell, whose signal begins at one shared calcium channel. Yet the shark tunes its sense to a hidden prey's twitch, while the skate's is tuned to the weak signals of a mate. What splits one shared cell into two senses?",
     "answer": "A different second channel in each: one drives sharp repeated spikes, the other soft graded ripples",
     "choices": [
       "A different second channel in each: one drives sharp repeated spikes, the other soft graded ripples",
@@ -7853,7 +7554,7 @@
   },
   {
     "tier": 1,
-    "question": "In dark muddy African rivers, eyes are almost useless. The elephantnose fish still finds buried prey and dodges obstacles. It generates a weak field around its body, and 'sees' by feeling how nearby objects bend the field. What kind of field is it?",
+    "question": "An elephantnose fish hunts at night in African rivers too muddy for eyes to help, yet it finds buried prey. An organ near its tail puts out a weak field, and the fish feels how nearby objects bend it. What kind of field is it?",
     "answer": "An electric field",
     "choices": [
       "An electric field",
@@ -7861,12 +7562,12 @@
       "A sound field",
       "A heat field"
     ],
-    "context": "This sense is called active electrolocation: an organ near the fish's tail puts out a weak electric field, and receptors all over the skin feel how objects distort it, letting the fish 'see' shape and distance in total darkness. Source: ScienceDaily / University of Bonn, von der Emde group (2016), https://www.sciencedaily.com/releases/2016/06/160624100245.htm",
+    "context": "This sense is called active electrolocation: an organ near the fish's tail puts out a weak electric field, and receptors all over the skin feel how objects distort it, letting the fish 'see' shape and distance in total darkness. The brain that runs it burns roughly 60% of the fish's oxygen, about three times the share of any other vertebrate measured. Source: ScienceDaily / University of Bonn, von der Emde group (2016), https://www.sciencedaily.com/releases/2016/06/160624100245.htm; Nilsson, 'Brain and body oxygen requirements of Gnathonemus petersii,' J. Experimental Biology 199:603 (1996), https://pubmed.ncbi.nlm.nih.gov/9318319/",
     "topic": "elephantnose-fish-gnathonemus-petersii"
   },
   {
     "tier": 2,
-    "question": "The elephantnose fish is a small African river fish that lives in murky water and has a long, flexible flap of flesh drooping from the front of its face. That drooping part looks so much like an elephant's trunk that it gave the fish its name. But this 'trunk' is not actually a nose at all — the real nose is a pair of tiny nostrils farther up. What is the trunk really?",
+    "question": "A long, bendy flap droops from the face of the elephantnose fish, so like an elephant's trunk that it gave the fish its name. But it is not a nose at all: the fish's true nostrils are a pair of tiny holes farther up. What is the 'trunk' really?",
     "answer": "A mobile chin that sweeps the riverbed",
     "choices": [
       "A mobile chin that sweeps the riverbed",
@@ -7892,19 +7593,6 @@
   },
   {
     "tier": 4,
-    "question": "The elephantnose fish grows one of the largest brains for its body of any fish — burning oxygen at a rate that beats even the human brain. Almost all of that brain is wired to process signals from an organ in its chin that reads the faint electric field of nearby prey. What is this sensing ability called?",
-    "answer": "Electroreception",
-    "choices": [
-      "Electroreception",
-      "Echolocation",
-      "Bioluminescence",
-      "Magnetoreception"
-    ],
-    "context": "Its brain burns roughly 60% of the fish's oxygen — about three times the share of any other vertebrate measured, needed to process the flood of electrical information from its whole-body electric sense. Source: Nilsson, 'Brain and body oxygen requirements of Gnathonemus petersii,' J. Experimental Biology 199:603 (1996), https://pubmed.ncbi.nlm.nih.gov/9318319/  (Legend.)",
-    "topic": "elephantnose-fish-gnathonemus-petersii"
-  },
-  {
-    "tier": 4,
     "question": "When several elephantnose fish gather, each one can suddenly sense objects far beyond its own short sensing range — as if its reach tripled. How does simply being in a group extend one fish's range this way?",
     "answer": "It reads its neighbors' pulses too",
     "choices": [
@@ -7918,7 +7606,7 @@
   },
   {
     "tier": 1,
-    "question": "Waddling in single-file lines across the frozen sea ice of Antarctica, huddled against blizzards, stands the biggest and tallest kind of penguin alive today — about four feet tall (as high as a grown human's shoulder) and up to about a hundred pounds. Which penguin is it?",
+    "question": "Huddled against a blizzard on the frozen sea ice stands the biggest and tallest penguin alive, about four feet tall and up to about a hundred pounds. Which penguin is it?",
     "answer": "The emperor penguin",
     "choices": [
       "The emperor penguin",
@@ -7931,7 +7619,7 @@
   },
   {
     "tier": 1,
-    "question": "The emperor penguin is a bird, and a big one — up to a hundred pounds — but its wings are stiff flat flippers built for swimming and it will never fly a single inch in the air. Where on planet Earth does this flightless bird actually live?",
+    "question": "An emperor penguin beats its stiff, flat flippers to swim, not to fly; this bird of up to about a hundred pounds will never rise an inch into the air. Where on Earth does it live?",
     "answer": "Only in Antarctica",
     "choices": [
       "Only in Antarctica",
@@ -7944,7 +7632,7 @@
   },
   {
     "tier": 2,
-    "question": "In the black winter of Antarctica, on the coldest continent on Earth, a mother emperor penguin lays a single precious egg on the sea ice — and then she leaves. She has to walk for weeks back to the ocean to feed. She hands the egg to the father, who must never let it touch the killing ice for even one second. Where does the father hold the egg?",
+    "question": "A mother emperor penguin lays a single egg on the sea ice in the black of the Antarctic winter, hands it to the father, and sets off on a weeks-long walk to the sea to feed. If the egg touches the ice, it can freeze in seconds. Where does the father hold it?",
     "answer": "Balanced on the tops of his feet",
     "choices": [
       "Balanced on the tops of his feet",
@@ -7957,7 +7645,7 @@
   },
   {
     "tier": 2,
-    "question": "In the endless Antarctic winter, a father emperor penguin stands on the sea ice hour after hour, month after month, balancing his mate's single precious egg on top of his feet. The mother has walked away toward the sea to feed. Over the roughly 65 to 75 days he waits for that egg to hatch, how much does the father eat?",
+    "question": "On the sea ice, a father emperor penguin stands hour after hour through the endless Antarctic winter, keeping his mate's single egg warm while she feeds far away at sea. In the 65 to 75 days before the egg hatches, how much does he eat?",
     "answer": "Nothing at all",
     "choices": [
       "Nothing at all",
@@ -7970,7 +7658,7 @@
   },
   {
     "tier": 3,
-    "question": "In the pitch-black Antarctic winter, the father emperor penguin balances a single egg on top of his feet, tucked under a warm belly flap, and stands still for about two months of freezing storms. During all that time he does not eat a single fish. He begins the winter at around 38 kg. By the time the mother finally returns from the sea, roughly what has happened to his body?",
+    "question": "A father emperor penguin weighs around 38 kilograms when the breeding season begins. He then guards a single egg through the pitch-black Antarctic winter, standing still through months of freezing storms. By the time the mother finally comes back from the sea, what has happened to his body?",
     "answer": "He has lost about 20 kg, dropping to around 18 kg",
     "choices": [
       "He has lost about 20 kg, dropping to around 18 kg",
@@ -7983,7 +7671,7 @@
   },
   {
     "tier": 3,
-    "question": "During the Antarctic winter, when the temperature drops to -40°C in howling wind, thousands of father emperor penguins survive by pressing shoulder to shoulder in one enormous huddle, each one balancing his egg on his feet. The birds standing on the outer edge of the huddle freeze in the wind, while the birds packed in the middle stay warm. So the penguins don't just stand still — what do they constantly do?",
+    "question": "When the Antarctic air falls to minus 40 degrees Celsius in a howling wind, thousands of father emperor penguins press together into one enormous huddle. A bird stuck on the outer edge would freeze, while the birds packed in the middle stay warm. The huddle does not stand still. What do the penguins keep doing?",
     "answer": "Shuffle in slow waves so everyone rotates through the middle",
     "choices": [
       "Shuffle in slow waves so everyone rotates through the middle",
@@ -7996,7 +7684,7 @@
   },
   {
     "tier": 3,
-    "question": "Outside the emperor penguin huddle the Antarctic air sits near -40 degrees C. Deep inside the packed mass of bodies, researchers recorded temperatures climbing much higher. What top temperature did they measure inside the huddle?",
+    "question": "Outside an emperor penguin huddle, the Antarctic air sits near minus 40 degrees Celsius, and a howling wind blows. Deep inside the packed mass of thousands of fathers, researchers recorded temperatures climbing much higher. What top temperature did they measure inside the huddle?",
     "answer": "About 37.5 degrees C, near human body heat",
     "choices": [
       "About 37.5 degrees C, near human body heat",
@@ -8009,7 +7697,7 @@
   },
   {
     "tier": 3,
-    "question": "An emperor penguin egg is deadly fragile in the Antarctic cold — touch the ice and it can freeze in seconds. Sometimes a chick hatches before the mother is back with food, yet the starving father still manages to feed it for a few days. How?",
+    "question": "Out on the Antarctic sea ice, an emperor penguin chick sometimes hatches before its mother is back from the sea with food. Its father can still feed it, though only for about three to seven days. How does he do it?",
     "answer": "With 'crop milk' produced in his throat",
     "choices": [
       "With 'crop milk' produced in his throat",
@@ -8022,7 +7710,7 @@
   },
   {
     "tier": 4,
-    "question": "Emperor penguins dive deeper than any other bird on Earth. Out of more than 137,000 recorded dives, only 12 ever passed 500 m deep — and researchers found something startling about those 12. What was it?",
+    "question": "An emperor penguin can dive deeper than any other bird, and the deepest of its dives ever reliably measured hit 564 meters. Researchers logged more than 137,000 emperor dives, and only 12 of them went past 500 meters. What was strange about those 12?",
     "answer": "Every one was made by the same single penguin",
     "choices": [
       "Every one was made by the same single penguin",
@@ -8035,7 +7723,7 @@
   },
   {
     "tier": 4,
-    "question": "On its deepest dives an emperor penguin stays under so long that it must ration every scrap of oxygen. To do it, the bird throttles the one organ that spends the most. During an 18-minute dive, researchers clocked its heart slowing to a low of what?",
+    "question": "On a long dive, an emperor penguin must ration every scrap of oxygen, and it does so by throttling its own heart. At rest the heart runs at about 73 beats a minute. During one 18-minute dive, how low did it fall?",
     "answer": "Just 3 beats per minute, one beat every 15 seconds",
     "choices": [
       "Just 3 beats per minute, one beat every 15 seconds",
@@ -8048,7 +7736,7 @@
   },
   {
     "tier": 5,
-    "question": "A modern emperor penguin stands about 1.2 m and is the biggest penguin alive today. But dig into the 34-million-year-old rock of Seymour Island off Antarctica and you meet Palaeeudyptes klekowskii, whose bones tell you it was what?",
+    "question": "Carolina Acosta Hospitaleche examined bones of Palaeeudyptes klekowskii, dug from 34-million-year-old rock on Antarctica's Seymour Island. In 2014 she used those fossil bones to estimate how tall and how heavy the animal had been in life. What did she conclude it was?",
     "answer": "A giant penguin near 2 m tall and about 115 kg",
     "choices": [
       "A giant penguin near 2 m tall and about 115 kg",
@@ -20255,7 +19943,7 @@
   },
   {
     "tier": 1,
-    "question": "When British scientists in London first opened a crate from Australia in 1799, they thought it was a hoax. Inside was a stuffed animal that made no sense. It had thick brown fur and a flat beaver-like tail like a mammal, but also a rubbery duck-like bill, webbed feet, and reports said it laid eggs. The males even carried venom in their back legs. What Australian river creature was inside the crate?",
+    "question": "Scientists in London opened a crate from Australia in 1799 and suspected a hoax. The stuffed animal inside had fur, a beaver's flat tail, a soft, rubbery bill like a duck's and webbed feet, and its males were said to carry venom. What was it?",
     "answer": "Platypus",
     "choices": [
       "Platypus",
@@ -20267,21 +19955,21 @@
     "topic": "platypus"
   },
   {
-    "tier": 2,
-    "question": "On Earth today, the duck-billed platypus of eastern Australia and four kinds of spiny echidna belong to a very small mammal club — just five species in the whole world. Every other mammal — mice, cats, whales, humans — does one thing the same way. In her riverbank burrow, a mother platypus does something no other mammal on Earth does. What sets these five apart?",
+    "tier": 1,
+    "question": "Along a river in eastern Australia, a mother platypus does something that only five living kinds of mammal do. Mice, cats and humans never do it. What sets the five apart?",
     "answer": "Lay eggs",
     "choices": [
       "Lay eggs",
       "Change sex",
-      "Have no bones",
-      "Breathe through skin"
+      "Breathe through skin",
+      "Live entirely underwater"
     ],
     "context": "These five are the monotremes. The platypus curls around one or two leathery eggs and incubates them for about ten days before they hatch. Source: Australian Museum, australian.museum/learn/animals/mammals/platypus/",
     "topic": "platypus"
   },
   {
     "tier": 3,
-    "question": "The platypus is Australia's egg-laying mammal, with a duck-like bill and thick brown fur. A newly hatched platypus is no bigger than a jellybean, and like all mammal babies it needs milk from its mother. But here's the strange part: a platypus mother has no nipples at all — nothing for the baby to latch onto. So how does the jellybean-sized baby actually get its meal?",
+    "question": "A newly hatched platypus, no bigger than a jellybean, needs its mother's milk like any baby mammal. Yet its mother has no nipples at all, nothing for the tiny baby to latch onto. How does the baby get its milk?",
     "answer": "Milk seeps through skin pores onto furry belly patches",
     "choices": [
       "Milk seeps through skin pores onto furry belly patches",
@@ -20293,8 +19981,8 @@
     "topic": "platypus"
   },
   {
-    "tier": 2,
-    "question": "A platypus glides along a muddy riverbed where a shrimp is buried out of sight, giving off no smell it can catch. Yet the platypus swims straight to it. Its rubbery bill is picking up something the shrimp cannot hide. What is the bill actually detecting?",
+    "tier": 3,
+    "question": "A platypus noses along a muddy riverbed and goes straight for a shrimp, though the shrimp gives off no smell it could follow. In 1986 Henning Scheich fooled one with a lifeless plastic shrimp full of wires, which it struck as if alive. What does a platypus bill pick up from its prey?",
     "answer": "The faint electric currents from the prey's twitching muscles",
     "choices": [
       "The faint electric currents from the prey's twitching muscles",
@@ -20302,38 +19990,12 @@
       "The vibration of the prey's heartbeat",
       "The color of the prey against the mud"
     ],
-    "context": "About 40,000 electroreceptors pack the platypus's bill, sensing the tiny electric fields thrown off by a hidden animal's moving muscles. Source: American Museum of Natural History, amnh.org/explore/news-blogs/platypus-electroreception-hunting",
+    "context": "About 40,000 electroreceptors pack the platypus's bill, sensing the tiny electric fields thrown off by a hidden animal's moving muscles. Hunting underwater with its eyes, ears and nose sealed, it relies on that electric sense plus touch-sensitive 'push rods' in the bill. Henning Scheich's platypus struck at a lure carrying only a faint electric signal, proving electroreception; the receptors respond to signals as weak as ~20 microvolts per square centimeter. Source: American Museum of Natural History, amnh.org/explore/news-blogs/platypus-electroreception-hunting; Australian Platypus Conservancy, platypus.asn.au/the-platypus-bill-push-rods-and-electroreception/",
     "topic": "platypus"
   },
   {
-    "tier": 3,
-    "question": "A platypus plunges into a murky, silt-clouded creek in eastern Australia. Down on the muddy bottom a small shrimp lies buried, and the platypus keeps its eyes, ears, and nostrils shut underwater — it cannot see, hear, or smell a thing. Yet its rubbery bill still locks straight onto the hidden prey and pins it. What is doing the finding down there in the dark?",
-    "answer": "An electric sense and touch-sensitive push rods in its bill",
-    "choices": [
-      "An electric sense and touch-sensitive push rods in its bill",
-      "A heat sense reading the prey's body warmth",
-      "A magnetic sense pointing toward the prey",
-      "Sensing the silt the prey stirs up as it moves"
-    ],
-    "context": "Hunting effectively blind, the platypus seals its eyes, ears, and nose and relies entirely on electroreception plus touch-sensitive 'push rods' in the bill. Source: American Museum of Natural History; Australian Platypus Conservancy, platypus.asn.au/the-platypus-bill-push-rods-and-electroreception/  (Legend.)",
-    "topic": "platypus"
-  },
-  {
-    "tier": 5,
-    "question": "In 1986 the German biologist Henning Scheich set out to test how a platypus finds prey it cannot see or smell. He built a lifeless little 'shrimp' out of a plastic shell and wires, sank it in a tank with a platypus, and switched it on. The platypus struck the lure anyway, as if it were a living, wriggling meal. What was Scheich secretly feeding into that fake shrimp to make it strike?",
-    "answer": "A tiny electric current",
-    "choices": [
-      "A tiny electric current",
-      "A faint trace of warmth",
-      "A hidden wriggling motor",
-      "A low buzzing vibration"
-    ],
-    "context": "Scheich's platypus struck at a lure carrying only a faint electric signal, proving electroreception. The receptors respond to signals as weak as ~20 microvolts per square centimeter. Source: American Museum of Natural History  (Legend.)",
-    "topic": "platypus"
-  },
-  {
-    "tier": 5,
-    "question": "A platypus's bill senses prey two ways at once: an electric sense and a touch sense. Underwater, electricity races ahead while the physical pressure wave lags a hair behind. Jack Pettigrew argued in 1998 the platypus uses that tiny gap between the two signals. What does timing the gap let it work out?",
+    "tier": 4,
+    "question": "A shrimp flicks its tail on a dark riverbed, and two signals race to a platypus's bill: a fast one, and a slower pressure wave felt by touch-sensitive push rods. Jack Pettigrew, in 1998, argued that the platypus times the gap between them. What does the gap tell it?",
     "answer": "How far away the prey is",
     "choices": [
       "How far away the prey is",
@@ -20341,12 +20003,12 @@
       "Which direction the current flows",
       "How fast the water moves"
     ],
-    "context": "Because electricity travels through water faster than the mechanical wave, the delay between the two senses encodes distance, letting the platypus range its target like a stopwatch. Source: Pettigrew et al. 1998, via Australian Platypus Conservancy",
+    "context": "Electricity races through water faster than a pressure wave travels, so a shrimp's tail-flick reaches the platypus's electric sensors a split-second before its touch-sensitive push rods. The delay between the two senses encodes distance, letting the platypus range its target like a stopwatch in total darkness. Source: Pettigrew et al. 1998; Pettigrew 1999, Journal of Experimental Biology; Australian Platypus Conservancy.",
     "topic": "platypus"
   },
   {
     "tier": 3,
-    "question": "The platypus is one of very few venomous mammals in the world. Handle one the wrong way and only one sex can hurt you — the males alone carry the weapon. Female platypuses are harmless. A male's venom is sharpest during mating season, when rival males wrestle each other over females. Where on a male platypus's body is this venomous weapon mounted?",
+    "question": "Two male platypuses wrestle in a river in the mating season, when their venom is at its strongest. Only the males carry this weapon; a female platypus is quite harmless. Where on a male's body is the venom weapon mounted?",
     "answer": "A hollow venom spur on each hind ankle",
     "choices": [
       "A hollow venom spur on each hind ankle",
@@ -20359,7 +20021,7 @@
   },
   {
     "tier": 4,
-    "question": "A male platypus carries hollow venom spurs on each hind ankle, and once in a while an Australian fisherman or bushwalker grabs one the wrong way and gets jabbed. The victim is rushed to hospital in agony. Among the small number of people this venom has actually struck, it has earned a grim reputation with doctors — worse than most snakebites in one specific way. What makes platypus venom so notorious?",
+    "question": "Now and then an Australian bushwalker handles a male platypus the wrong way and gets a dose of its venom. It is not deadly to people, but the venom has earned a grim name among doctors, worse in one way than most snakebites. What makes it so notorious?",
     "answer": "The pain shrugs off morphine and can last weeks or months",
     "choices": [
       "The pain shrugs off morphine and can last weeks or months",
@@ -20372,7 +20034,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2020 American scientists were curious about the platypus — Australia's duck-billed, egg-laying mammal. They dug up old museum pelts and shone ultraviolet light on them in a dark room, expecting nothing unusual, just brown fur under a purple lamp. Instead they saw something no one had ever noticed on a platypus before. What did the fur do under UV light?",
+    "question": "Anich and colleagues carried old museum platypus pelts into a dark room in 2020 and shone ultraviolet light on them, expecting only brown fur under a purple lamp. Instead they saw something nobody had noticed on a platypus before. What did the fur do under the lamp?",
     "answer": "Glows an eerie blue-green",
     "choices": [
       "Glows an eerie blue-green",
@@ -20385,7 +20047,7 @@
   },
   {
     "tier": 3,
-    "question": "An adult platypus dives to the bottom of Australian rivers to hunt crayfish, worms, and freshwater shellfish. It has no teeth in its jaws at all, yet it happily crushes hard shells to get at the meat inside. Along with each mouthful of food it also scoops up little pieces of gravel into stretchy cheek pouches. Then it paddles up to the surface to chew. Why does the platypus gather grit along with its food?",
+    "question": "Down on the bottom of an Australian river, a platypus scoops crayfish, worms and freshwater shellfish into stretchy cheek pouches, along with little pieces of gravel. It has no teeth, yet it cracks the hard shells once it paddles back up to the surface to chew. Why does it gather grit with its food?",
     "answer": "It grinds food against horny pads, using the swallowed grit like millstones",
     "choices": [
       "It grinds food against horny pads, using the swallowed grit like millstones",
@@ -20398,7 +20060,7 @@
   },
   {
     "tier": 5,
-    "question": "When the platypus genome was sequenced in 2008, its sex chromosomes stunned biologists. Most mammals settle sex with a single pair, but the platypus uses a whole chain of them, and part of that chain looks bird-like, resembling a chicken's. How many sex chromosomes does a platypus carry?",
+    "question": "Biologists reading the platypus genome in 2008 found a surprise in its sex chromosomes. Most mammals settle sex with a single pair, but the platypus has a whole chain of them, some resembling a chicken's. How many sex chromosomes does a platypus carry?",
     "answer": "Ten",
     "choices": [
       "Ten",
@@ -20411,7 +20073,7 @@
   },
   {
     "tier": 5,
-    "question": "The 2008 platypus genome caught the animal red-handed straddling two worlds. When placental and marsupial mammals adopted the placenta and switched to nursing, they junked one ancient gene their egg-laying ancestors had all carried. The platypus, alone among mammals, never threw its copy away — and it still switches the gene on. What does that surviving gene let the platypus do?",
+    "question": "An ancient gene that the platypus's egg-laying ancestors all carried still works in the platypus today, though placental and marsupial mammals threw their copies away long ago. The 2008 platypus genome showed it kept a working one. What does that surviving gene let the platypus do?",
     "answer": "Make egg yolk, even as it also makes milk",
     "choices": [
       "Make egg yolk, even as it also makes milk",
@@ -27119,33 +26781,7 @@
   },
   {
     "tier": 1,
-    "question": "Run your hand over this animal and you feel a covering no other class of vertebrate on Earth grows. Light, branching vanes zip together into a smooth, insulating sheet — soft to the touch, and strong enough to hold up in flight. In the classic five-class lineup of vertebrates (fish, amphibians, reptiles, birds, mammals), that one trait settles which class you are touching. Which class of animal is it?",
-    "answer": "A bird",
-    "choices": [
-      "A bird",
-      "A reptile",
-      "A mammal",
-      "A fish"
-    ],
-    "context": "Feathers are the one trait no other living animal grows - a just-skinned creature wearing them is a bird, full stop. Birds are characterized by feathers, toothless beaked jaws, and hard-shelled eggs. Source: https://en.wikipedia.org/wiki/Bird",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
-    "tier": 1,
-    "question": "This animal is covered in a coat of fine hair, and its young press close against its underside to feed on their mother's milk. That combination points to one class - which?",
-    "answer": "A mammal",
-    "choices": [
-      "A mammal",
-      "A bird",
-      "A reptile",
-      "An amphibian"
-    ],
-    "context": "Fur or hair plus milk-making mammary glands is a double tell no other class shares. Those young pressed to the body are nursing on milk - the milk gland, the mamma, is literally what the word 'mammal' is named after. Source: https://en.wikipedia.org/wiki/Mammal",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
-    "tier": 1,
-    "question": "A snake wriggles slowly out of its old, dry outer skin, sliding forward like a foot pulling out of a sock. When the snake is finished, its whole old skin is left behind on the ground as one long, turned-inside-out tube. That trick of shedding the entire hide at once, along with having dry scales all over the body and laying eggs on land, belongs to which class of animals?",
+    "question": "A snake wriggles out of its old skin like a foot pulling out of a sock, leaving the whole hide behind in one inside-out tube. It has dry scales all over and lays its eggs on land. Which class of animals does it belong to?",
     "answer": "A reptile",
     "choices": [
       "A reptile",
@@ -27158,7 +26794,7 @@
   },
   {
     "tier": 1,
-    "question": "A brook trout hovers in a clear, cold mountain stream, opening and closing its mouth as water flows past. It is pulling the oxygen it needs straight out of the water through feathery organs tucked behind its head called gills. If the trout is lifted into the open air, it cannot breathe at all and will suffocate. Which class of animals does the brook trout belong to?",
+    "question": "A brook trout hovers in a cold mountain stream, opening and closing its mouth as water flows past. Feathery gills behind its head draw its oxygen from that water, and lifted into the air it would suffocate. Which class of animals is the trout?",
     "answer": "A fish",
     "choices": [
       "A fish",
@@ -27171,20 +26807,7 @@
   },
   {
     "tier": 2,
-    "question": "Under a rotten log in a damp Appalachian forest lives a small, slippery salamander called a lungless salamander. As its name says, this salamander has no lungs at all, not even a tiny sac, yet it lives its whole life breathing perfectly well. Since a lungless salamander cannot use lungs, what does it take in oxygen through instead?",
-    "answer": "Its skin",
-    "choices": [
-      "Its skin",
-      "Its gills",
-      "Its bloodstream directly",
-      "The lining of its mouth"
-    ],
-    "context": "An amphibian's tell is wet, permeable skin it actually breathes through - some small salamanders and frogs lack lungs and rely entirely on their skin to take in oxygen. Source: https://en.wikipedia.org/wiki/Amphibian",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
-    "tier": 2,
-    "question": "A hunter standing at the edge of a woodland pond sees something wriggling in the weeds and swears it is a small lizard. But this creature has damp, permeable skin instead of dry scales, and it spent its youth as a gilled tadpole swimming underwater before growing legs and crawling out onto land. This animal is a newt. Since it starts life in water and later breathes on land, what class of animals does a newt actually belong to?",
+    "question": "A hunter at a woodland pond sees something wriggle in the weeds and swears it is a small lizard. It is a newt, with damp skin rather than dry scales, and it began life underwater as a gilled larva before growing legs and crawling onto land. What class of animals is it?",
     "answer": "An amphibian",
     "choices": [
       "An amphibian",
@@ -27197,7 +26820,7 @@
   },
   {
     "tier": 1,
-    "question": "A blue whale glides through the open ocean the way a fish does and is often called one, but the whale must rise to the surface every so often to breathe air through a blowhole on top of its head. Its body grows a scattering of hair, its blood is warm, and a mother whale nurses her baby calf on rich, fatty milk. Given all of that, which class of animals does a whale actually belong to?",
+    "question": "A blue whale glides like a fish, yet it keeps rising to breathe air through its blowhole. A few scattered hairs grow on its skin, its blood runs warm, and a mother feeds her calf rich milk. Which class of animals is it?",
     "answer": "A mammal",
     "choices": [
       "A mammal",
@@ -27209,21 +26832,8 @@
     "topic": "the-five-vertebrate-classes-the-recognition-base"
   },
   {
-    "tier": 2,
-    "question": "On the Antarctic ice, a colony of emperor penguins waddles and dives, but not one of them can fly a single inch. A kid watching a nature show guesses they must not really be birds at all. Scientists say penguins are true birds anyway, and one body feature settles it. Not flight, not the beak — one trait shared by every bird alive proves it. What makes a penguin a genuine bird?",
-    "answer": "Its feathers",
-    "choices": [
-      "Its feathers",
-      "Its flight",
-      "Its beak",
-      "Its scales"
-    ],
-    "context": "Feathers, not flight, define the class - penguins and ostriches remain genuine birds because both possess feathers. A flightless bird is still every bit a bird. Source: https://en.wikipedia.org/wiki/Bird",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
     "tier": 3,
-    "question": "A frog must hop back to a pond every spring, because its soft jelly eggs would dry out on land. But a desert lizard can lay its eggs on baking sand and walk away, and the young still develop fully inside the shell. Reptile eggs, unlike amphibian eggs, seal the embryo inside a private water world. What structure inside the reptile's shell lets the embryo grow up out of any pond?",
+    "question": "A frog must hop back to a pond every spring, because its soft eggs would dry out on land. A desert lizard can lay its eggs on baking sand and walk away, and the young still grow fully inside their shells. What structure inside the lizard's eggshell lets its embryo develop so far from any pond?",
     "answer": "A sealed amniotic sac around the embryo",
     "choices": [
       "A sealed amniotic sac around the embryo",
@@ -27235,34 +26845,8 @@
     "topic": "the-five-vertebrate-classes-the-recognition-base"
   },
   {
-    "tier": 2,
-    "question": "Almost every mammal on Earth — dogs, whales, mice, humans — grows its young inside the mother and gives birth to live babies. Fur and milk feed and warm this whole class of animals. But in Australia and New Guinea, five odd species break the pattern outright: the duck-billed platypus and four kinds of spiny echidna. What do those five do instead?",
-    "answer": "Lay eggs",
-    "choices": [
-      "Lay eggs",
-      "Carry their young in a pouch from birth",
-      "Give birth to swimming larvae",
-      "Split off buds of themselves"
-    ],
-    "context": "Almost all mammals give birth to live young - the lone exceptions are the five monotreme species, like the platypus and echidnas, the only mammals that lay eggs. Source: https://en.wikipedia.org/wiki/Mammal  (Legend.)",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
-    "tier": 2,
-    "question": "Four furry, milk-fed animals are all famous for taking to the air: the bat, the flying squirrel, the sugar glider, and the colugo. But three of them are cheating. They leap from a high branch and coast on stretched flaps of skin like living kites, only gliding downward. Just one flaps real wings and truly flies with its own muscle power. Which is the only mammal that really flies?",
-    "answer": "The bat",
-    "choices": [
-      "The bat",
-      "The flying squirrel",
-      "The sugar glider",
-      "The colugo"
-    ],
-    "context": "Bats are the only mammal that truly flies - a fur-and-milk creature powering itself on the wing. The flying squirrel, sugar glider, and colugo only glide, coasting on flaps of skin. The earliest known bat is about 50 million years old. Source: https://en.wikipedia.org/wiki/Mammal",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
     "tier": 3,
-    "question": "Line a bird feather up beside a lizard's dry, overlapping body covering. They look nothing alike, but under a microscope both are built from the very same tough protein — beta-keratin — just folded into different shapes. Birds evolved from feathered dinosaurs, and their showy feathers started as a made-over reptile body part. Which reptile body part is a feather a reshaped form of?",
+    "question": "Under a microscope, a biologist sets a bird's feather beside a scrap of a lizard's dry, overlapping body covering. They look nothing alike, yet both are built from the same tough protein, beta-keratin, just folded into different shapes. Which part of the lizard's body is a feather a reshaped form of?",
     "answer": "A scale",
     "choices": [
       "A scale",
@@ -27275,7 +26859,7 @@
   },
   {
     "tier": 3,
-    "question": "Here is the twist hidden in the neat five-class portrait of vertebrates. Scientists tracing the fossil record have shown that one whole class alive today is directly descended from small, feathered theropod dinosaurs — the same fossil family as Tyrannosaurus rex and Velociraptor. That class is the only branch of Dinosauria still walking the Earth. Which 'class' of vertebrate animal is really a living dinosaur?",
+    "question": "Small, feathered theropods, the dinosaur group that includes Tyrannosaurus rex and Velociraptor, left descendants that live on today as one whole class of animals. That class is the last surviving branch of the dinosaurs. Which class is really a living dinosaur?",
     "answer": "The birds",
     "choices": [
       "The birds",
@@ -27288,7 +26872,7 @@
   },
   {
     "tier": 3,
-    "question": "For a long time, kids learned that reptiles (crocodiles, snakes, lizards) and birds were separate groups. But when scientists trace the animal family tree by shared traits and DNA, a crocodile turns out to be closer kin to a sparrow than to a lizard. Crocodiles and birds share the clade Archosauria — the 'ruling reptiles.' Where does that place the birds on the tree of life?",
+    "question": "A crocodile basking on a riverbank is closer kin to a sparrow than to any lizard, by the evidence of shared traits and DNA. The crocodile and the sparrow sit together on one branch of the family tree, the archosaurs, or 'ruling reptiles.' Where does that place the sparrow and its feathered kin on the tree of life?",
     "answer": "Deep inside the reptile branch, as one twig of it",
     "choices": [
       "Deep inside the reptile branch, as one twig of it",
@@ -27301,7 +26885,7 @@
   },
   {
     "tier": 4,
-    "question": "A bird's lung works like no mammal's: fresh air sweeps one way across it in a continuous loop, so oxygen keeps flowing even as the bird breathes out. Scientists long chalked this up to flight machinery unique to birds - until 2010, when the very same one-way airflow turned up in the lungs of a living animal with no air sacs at all. Which animal?",
+    "question": "Fresh air sweeps one way through a bird's lungs in a continuous loop, so oxygen keeps flowing even as the bird breathes out. Biologists long thought this was special equipment for flight, until Colleen Farmer and Kent Sanders turned up the same one-way flow in 2010 in a living animal with no air sacs at all. Which animal was it?",
     "answer": "The American alligator",
     "choices": [
       "The American alligator",
@@ -27314,7 +26898,7 @@
   },
   {
     "tier": 5,
-    "question": "Four sail-backed beasts loom out of the deep past, and those sails invite one easy guess: dinosaur. But one of the four is no reptile at all. Behind each eye socket it carries a single opening - the synapsid mark - that lands it on the branch leading to mammals. Which sail-back is really a stem-mammal, a closer cousin to a cow than to a lizard?",
+    "question": "Four sail-backed beasts loom out of the deep past, and their sails invite one easy guess: dinosaur. One of them is no dinosaur at all. Behind each eye socket it carries a single opening, the synapsid mark, which puts it on the branch that led to mammals. Which sail-back is a stem-mammal, nearer kin to cows than to lizards?",
     "answer": "Dimetrodon",
     "choices": [
       "Dimetrodon",
