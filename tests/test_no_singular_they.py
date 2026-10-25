@@ -110,7 +110,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'economics.json', 'every drug on their'): 'their = markets',
     (_Q + 'economics.json', 'every large US company through their'): 'their = the three investment firms',
     (_Q + 'economics.json', 'whoever was handy to fill their'): 'their = the local police',
-    (_Q + 'geography.json', 'each island, because one calling card of theirs'): 'theirs = the Lapita',
     (_Q + 'geography.json', 'every note, yet together their'): 'their = the two players (polos and sangsih)',
     (_Q + 'history.json', 'anyone outside hear their'): 'their = the delegates',
     (_Q + 'history.json', 'each crew planted an American flag beside their'): 'their = the crew, a plural group of astronauts',
