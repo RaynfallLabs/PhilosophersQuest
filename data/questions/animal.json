@@ -12377,20 +12377,7 @@
   },
   {
     "tier": 2,
-    "question": "A hummingbird is a tiny bird of the Americas, no bigger than a person's thumb, with wings that blur into a hum as it hovers at flowers to sip nectar. Watch one at a garden feeder and you see it doing things in the air that no other bird can. What flight trick sets the hummingbird apart from every other bird on Earth?",
-    "answer": "Truly hover in place and fly backward",
-    "choices": [
-      "Truly hover in place and fly backward",
-      "Glide for hours without a single wingbeat",
-      "Dive faster than any other bird",
-      "Sleep in the air while still flying"
-    ],
-    "context": "The hummingbird is the only bird family that can truly hover and even fly backward (and briefly upside down) — no other bird can. Source: Audubon, 'Hummingbird Flight Is Like Nothing Else in the Bird World.'  (Legend.)",
-    "topic": "hovering-in-place"
-  },
-  {
-    "tier": 2,
-    "question": "A ruby-throated hummingbird hangs motionless in front of a red trumpet-flower, its long needle beak dipping in for a sip of nectar. Its wings are a smoky gray blur — you can hear them hum in the air but you can barely see them move. That humming blur is what the whole bird is named for. About how fast are those wings actually beating in ordinary hovering flight?",
+    "question": "A ruby-throated hummingbird hangs still in front of a red trumpet-flower, dipping its needle beak in for nectar. Its wings are a smoky gray blur that hums in the air, the sound the bird is named for. About how many times a second do they beat?",
     "answer": "About 50 times every second",
     "choices": [
       "About 50 times every second",
@@ -12403,20 +12390,7 @@
   },
   {
     "tier": 3,
-    "question": "Every other bird gets its lift only on the DOWNstroke; the upbeat is dead, wasted time. A hovering hummingbird cheats this — its wing pushes air down on the way FORWARD and again on the way back, tracing a shape in the air. What figure does the wingtip trace to make lift on both halves of the beat?",
-    "answer": "A flat figure-8",
-    "choices": [
-      "A flat figure-8",
-      "A tight vertical circle",
-      "A straight up-and-down line",
-      "A wide sideways oval"
-    ],
-    "context": "The hummingbird's wingtip traces a flat figure-8, and the wing rotates at the shoulder so both the forward and the backward stroke tilt to push air down — unlike the down-only stroke of every other bird. Source: BBC Science Focus; AskNature hummingbird hover strategy.",
-    "topic": "hovering-in-place"
-  },
-  {
-    "tier": 3,
-    "question": "Holding yourself perfectly frozen in mid-air takes tremendous power. So a hummingbird — the smallest bird on earth — is built around its flight muscles, the big slabs of breast meat that drive its wings. Most birds carry only a small share of breast muscle for their size, maybe a tenth or so of body weight. In a hummingbird, that muscle takes up a jaw-dropping chunk of the whole bird. How much of its total weight is breast muscle?",
+    "question": "A hummingbird hangs perfectly still at a flower, a feat that takes enormous power from the breast muscle driving its wings. That muscle's share of a hummingbird's body is about twice its share in an ordinary bird. How much of the hummingbird's weight is breast muscle?",
     "answer": "Almost a third of its body weight",
     "choices": [
       "Almost a third of its body weight",
@@ -12429,7 +12403,7 @@
   },
   {
     "tier": 4,
-    "question": "Most birds barely bother with the upstroke — it makes almost no lift. A hummingbird is different: it drives a big upstroke muscle, the supracoracoideus, so the lifting UPbeat pulls real weight. About how much of a hovering hummingbird's total lift comes from that upstroke?",
+    "question": "A hovering hummingbird, a tiny bird of the Americas, powers its upstroke with a big muscle, the supracoracoideus, so the upbeat pulls real weight, while most birds get almost no lift from theirs. About how much of the hummingbird's lift comes from that upstroke?",
     "answer": "About a quarter of its lift",
     "choices": [
       "About a quarter of its lift",
@@ -12441,21 +12415,8 @@
     "topic": "hovering-in-place"
   },
   {
-    "tier": 2,
-    "question": "To hold itself perfectly frozen in the air at a red flower, a hovering hummingbird runs its tiny engine at a rate that would kill almost any other creature. Its heart pounds so fast it becomes one nonstop hum inside the chest. A resting human heart beats about 80 times a minute, and a racing marathon runner tops out near 200. How fast does the hummingbird's heart hammer while it hovers?",
-    "answer": "Around 1,200 beats a minute",
-    "choices": [
-      "Around 1,200 beats a minute",
-      "Around 200 beats a minute",
-      "Around 500 beats a minute",
-      "Around 90 beats a minute"
-    ],
-    "context": "A hovering hummingbird's heart beats around 1,200 times a minute — versus about 80 in a human. Source: BBC Science Focus; AnimalCorner hummingbird anatomy.  (Legend.)",
-    "topic": "hovering-in-place"
-  },
-  {
     "tier": 4,
-    "question": "Hovering burns so much fuel that a hummingbird can't store enough to last the night, so each night, to keep from freezing before dawn, it lets its whole body go cold and lets its racing heart slow far down. That daytime heart pounds around 1,200 beats a minute. About how far down does it drop during this nightly shutdown?",
+    "question": "A hummingbird burns so much fuel hovering by day that it cannot store enough to last the night. So as darkness falls it lets its whole body go cold and its racing heart slow right down. How low does the beat fall before dawn?",
     "answer": "To as few as ~50 beats a minute",
     "choices": [
       "To as few as ~50 beats a minute",
@@ -12468,7 +12429,7 @@
   },
   {
     "tier": 3,
-    "question": "A small creature hovers at a flowerbed on a summer afternoon, wings beating so fast — about 85 times a second — that they blur into a hum, and its long tongue probes each bloom for nectar. Passersby swear a tiny hummingbird has strayed into the garden. But it is no bird at all. What kind of animal is it?",
+    "question": "On a summer afternoon a small creature hovers at a flowerbed, its wings a humming blur at about 85 beats a second, its long tongue dipping into one bloom after another. Passersby swear a tiny hummingbird has strayed into the garden, but it is no bird at all. What is it?",
     "answer": "A moth",
     "choices": [
       "A moth",
@@ -12481,7 +12442,7 @@
   },
   {
     "tier": 4,
-    "question": "A hummingbird is a tiny bird of the Americas. A hawkmoth is a fat-bodied moth found around the world. Yet both can hang perfectly still at a flower with an almost identical figure-8 wing stroke. They are only distant relatives — a bird and an insect — and each lineage worked out this trick alone. Biologists call this kind of separate solution convergent evolution. Across all the animal kingdom, how many times has true hovering flight been invented this way?",
+    "question": "A hummingbird and a nectar-sipping insect both hang still at flowers, making every bit of their own lift as they stay in one place, and both beat out almost the same figure-8 wing stroke. Among the animals that feed on nectar, how often has true hovering evolved?",
     "answer": "Only about four times",
     "choices": [
       "Only about four times",
@@ -12494,7 +12455,7 @@
   },
   {
     "tier": 3,
-    "question": "On a summer afternoon a small insect called a hoverfly hangs dead-still in the sunlight above a garden, its body striped bold black-and-yellow just like a wasp's. But look closer and you see only two wings, not four — this is a true fly, not a wasp at all. It has no stinger, no venom, no bite. Nothing but those borrowed colors protects it. Why do the wasp-like stripes keep the harmless hoverfly alive?",
+    "question": "A hoverfly hangs dead still in the sunlight over a summer garden, its body striped black and yellow like a wasp's. A close look shows only two wings, not four: this is a true fly, armed with no sting, no venom and no bite. Why do those borrowed stripes keep it alive?",
     "answer": "Predators burned once by wasps avoid anything striped like one",
     "choices": [
       "Predators burned once by wasps avoid anything striped like one",
@@ -12507,7 +12468,7 @@
   },
   {
     "tier": 4,
-    "question": "A dragonfly can hang and dart with rare precision because, unlike a hummingbird's two wings, it has four — and it can steer each one on its own. It saves flapping power with a specific timing trick between its front and back pairs. What does the dragonfly do with them to cut the energy cost of hovering?",
+    "question": "A dragonfly hangs over a pond on four wings that it can steer one by one, then darts away with rare precision. It saves flapping power with one timing trick between its front and back pairs. What does it do with them to cut the cost of hovering?",
     "answer": "Beats the front and back wings out of phase",
     "choices": [
       "Beats the front and back wings out of phase",
@@ -12520,7 +12481,7 @@
   },
   {
     "tier": 3,
-    "question": "A kestrel — a small hunting falcon with a russet back and dark-spotted breast — appears to hover over an English hayfield. Its body hangs pinned in one spot as its head stays perfectly still, scanning the grass below for the flicker of a vole. Unlike a hummingbird, though, it isn't truly beating its wings in still air to stay put. So how does the kestrel actually hold itself in place?",
+    "question": "A kestrel, a small falcon with a russet back, hangs pinned in one spot above an English hayfield, its head perfectly still as it scans the grass for the flicker of a vole. Unlike a hummingbird, it is not truly beating its wings in still air. How does it hold its place?",
     "answer": "It faces into a headwind and flaps just enough to cancel it",
     "choices": [
       "It faces into a headwind and flaps just enough to cancel it",
@@ -12533,7 +12494,7 @@
   },
   {
     "tier": 4,
-    "question": "For 180 years textbooks said a hummingbird pumps nectar up its grooved tongue by capillary action, the way a paper towel wicks water. High-speed film of the tongue actually hitting nectar killed that idea. What is the tongue really doing when its tips touch the nectar?",
+    "question": "Alejandro Rico-Guevara's team filmed the tongues of 18 hummingbird species at high speed, catching the instant each tongue met nectar. Books had long said the grooved tongue wicks nectar up like a paper towel. What does the tongue do when its tips touch the nectar?",
     "answer": "Its flattened grooves spring open and suck up a column of nectar",
     "choices": [
       "Its flattened grooves spring open and suck up a column of nectar",
@@ -12545,21 +12506,8 @@
     "topic": "hovering-in-place"
   },
   {
-    "tier": 5,
-    "question": "All 360 living hummingbird species live only in the Americas, so the family looks purely New World. Then Gerald Mayr described 32-million-year-old hovering, nectar-feeding hummingbird fossils far outside that range. Which region turned up those oldest known hummingbird fossils?",
-    "answer": "Southern Germany",
-    "choices": [
-      "Southern Germany",
-      "Southern Ecuador",
-      "Southern Mexico",
-      "Southern Brazil"
-    ],
-    "context": "In 2004 Gerald Mayr described Eurotrochilus, a stem-group hummingbird already built for hovering and nectar-feeding, from ~32-million-year-old (early Oligocene, Rupelian) specimens at the Wiesloch-Frauenweiler clay pit in southern Germany, with more later found in France and Poland. So hummingbirds hovered over Old World flowers 30+ million years ago, then vanished from that hemisphere entirely, leaving every living species in the Americas. The family that seems quintessentially American left its oldest fossils in Europe. Source: en.wikipedia.org/wiki/Eurotrochilus (Mayr, 2004); corroborated en.wikipedia.org/wiki/Hummingbird.",
-    "topic": "hovering-in-place"
-  },
-  {
     "tier": 1,
-    "question": "On the island of Cuba, deep in the forest, there darts a hummingbird so small the locals call it the zunzuncito — the little buzzer. A male weighs less than an American penny, about 1.6 grams. Nowhere on Earth does a smaller bird live. What is it?",
+    "question": "Deep in a Cuban forest darts a hummingbird so small that Cubans call it the zunzuncito, the little buzzer. A male tips the scales at about 1.6 grams, lighter than an American penny, and no smaller bird lives anywhere on Earth. What is it?",
     "answer": "The bee hummingbird",
     "choices": [
       "The bee hummingbird",
@@ -12572,7 +12520,7 @@
   },
   {
     "tier": 1,
-    "question": "Other birds can hang in the air only by facing into a stiff wind, and every one of them can travel in just one direction: forward. A hummingbird needs no wind to hold its spot -- and it can do something no other bird on Earth can. What can it do that they cannot?",
+    "question": "A hummingbird hangs at a garden flower in still air, needing no headwind to hold its spot, its wings a humming blur. Then it does something no other bird on Earth can manage. What can it do?",
     "answer": "Fly backward",
     "choices": [
       "Fly backward",
@@ -12585,7 +12533,7 @@
   },
   {
     "tier": 2,
-    "question": "Most birds only make lift on the downstroke, pushing air down as they flap and losing lift when the wing comes back up. But a tiny hummingbird can hover motionless in mid-air because it sweeps its wings in a very special path — one that makes lift on both the forward stroke and the return stroke, like a swimmer's arms sculling water. What shape does the wingtip trace in the air as it does this?",
+    "question": "A hummingbird hovers at a flower, its wings pushing air down as they sweep forward and again as they sweep back, like a swimmer's hands sculling water. Most birds get lift only on the downstroke. What shape does each wingtip trace through the air?",
     "answer": "A figure-eight",
     "choices": [
       "A figure-eight",
@@ -12598,7 +12546,7 @@
   },
   {
     "tier": 2,
-    "question": "A hummingbird's tiny body burns fuel about as fast as it can take it in. It must sip flower nectar every 10 to 15 minutes just to keep from starving before dark. Imagine a person weighing 100 pounds having to eat 50 pounds of sugar in one day. About how much of its own body weight in pure sugar does a hummingbird eat in a single day of flitting from blossom to blossom?",
+    "question": "A hummingbird flits from blossom to blossom all day, sipping nectar every 10 to 15 minutes to keep from starving before dark. Its tiny body burns fuel almost as fast as it can take it in. About how much of its own weight in sugar does it eat in a day?",
     "answer": "About half",
     "choices": [
       "About half",
@@ -12611,7 +12559,7 @@
   },
   {
     "tier": 2,
-    "question": "A hummingbird is a tiny American bird that hovers at flowers and burns sugar as fast as any animal on Earth. To pump so much blood to its whirring wing muscles, its heart has to race far beyond anything a human could survive — a fit person's heart tops out near 200 beats per minute. Roughly how many times can a hummingbird's heart beat in one single minute?",
+    "question": "A hummingbird hovering at a red flower burns sugar as fast as any animal on Earth, and its heart races to feed its whirring wing muscles. A resting person's heart beats about 80 times a minute, a fit person's tops out near 200. Roughly how many times can the hummingbird's beat in a minute?",
     "answer": "Over 1,200",
     "choices": [
       "Over 1,200",
@@ -12624,7 +12572,7 @@
   },
   {
     "tier": 2,
-    "question": "The bee hummingbird lives only on the island of Cuba, and it is the smallest bird on Earth — about the length of a person's thumb, and weighing less than a paperclip. The tiny female weaves a cup nest only about an inch across and lays two eggs, the smallest eggs of any bird alive. What everyday object is each bee hummingbird egg about the size of?",
+    "question": "In a Cuban forest, the female of the smallest bird on Earth, a hummingbird, weaves a cup nest barely an inch across. She lays two eggs in it, the tiniest eggs of any bird alive. What everyday object is each egg about the size of?",
     "answer": "A coffee bean",
     "choices": [
       "A coffee bean",
@@ -12637,7 +12585,7 @@
   },
   {
     "tier": 3,
-    "question": "A hummingbird holds so little fuel that just sleeping through a cold night would starve it. Instead it enters a nightly near-shutdown, dropping its heart rate from over a thousand beats a minute to as few as forty. What is this survival state called?",
+    "question": "A hummingbird stops feeding at dusk with too little fuel in its tiny body to last a cold night of ordinary sleep. So its body cools, its racing heart slows to a crawl, and its energy use falls to about a twentieth until dawn. What is this nightly shutdown called?",
     "answer": "Torpor",
     "choices": [
       "Torpor",
@@ -12645,12 +12593,12 @@
       "Molting",
       "Migration"
     ],
-    "context": "In torpor a hummingbird's heart rate can fall from over 1,000 to as few as ~40-50 beats a minute, cutting energy use by about 95 percent -- letting it survive cold nights on its tiny fuel reserves. Source: https://www.science.org/content/article/survive-frigid-nights-hummingbirds-cool-themselves-record-low-temperatures",
+    "context": "In torpor a hummingbird's body temperature can fall from about 104 degrees F toward 50 degrees F and its heart rate from over 1,000 to as few as ~40-50 beats a minute, cutting energy use by about 95 percent -- letting it survive cold nights on its tiny fuel reserves.",
     "topic": "hummingbird"
   },
   {
     "tier": 3,
-    "question": "The ruby-throated hummingbird is a tiny green-and-red bird that nests in the forests of the eastern United States and southern Canada, but winters in Central America. Twice a year it faces a crossing that seems impossible for a bird weighing only 3 grams: about 500 miles of open water over the Gulf of Mexico, in a single 18-hour flight with no place to land. For weeks before takeoff, it eats and eats. What does the ruby-throated hummingbird do to fuel the trip?",
+    "question": "A 3-gram ruby-throated hummingbird that nests in the eastern United States and winters in Central America crosses the Gulf of Mexico twice a year: up to 500 miles of open sea, flown alone and nonstop for 18 to 22 hours. For weeks before it leaves, it eats and eats. How does it prepare for the trip?",
     "answer": "Nearly doubles its body weight in fat",
     "choices": [
       "Nearly doubles its body weight in fat",
@@ -12663,7 +12611,7 @@
   },
   {
     "tier": 4,
-    "question": "For the backstroke to make lift, a hummingbird has to flip its whole wing completely upside down between strokes — leading edge one way, then leading edge the other. It manages this by twisting one joint of its arm through nearly 180 degrees, the arm bone itself rotating in its socket. No other bird's flight works like this. Which joint of the hummingbird's wing does the twisting?",
+    "question": "For its backstroke to make lift, a hovering hummingbird must flip each wing upside down between strokes, leading edge one way and then the other. It does this by twisting one joint so far that the arm bone itself turns nearly 180 degrees. Which joint does the twisting?",
     "answer": "The shoulder",
     "choices": [
       "The shoulder",
@@ -12676,7 +12624,7 @@
   },
   {
     "tier": 4,
-    "question": "A diving peregrine falcon is often called the fastest animal on Earth. For its size, it covers about 200 body lengths a second. In his mating dive, a male Anna's hummingbird beats even that. How many of his own body lengths does he cover each second?",
+    "question": "A male Anna's hummingbird hurtles earthward in his courtship dive, and measured against his size he outpaces a diving peregrine falcon, which covers about 200 of its own body lengths a second. How many of his own body lengths does he cover each second?",
     "answer": "385",
     "choices": [
       "385",
@@ -12689,7 +12637,7 @@
   },
   {
     "tier": 4,
-    "question": "A fighter pilot in a hard turn blacks out somewhere around 9 g -- nine times the pull of gravity. A male Anna's hummingbird yanks out of its steep courtship dive so violently that its tiny body takes a sudden jolt of g-force too. Roughly how many g's does the bird pull in that pull-up?",
+    "question": "At the bottom of his steep courtship dive, a male Anna's hummingbird yanks out so hard that his tiny body absorbs a jolt of g-force. A fighter pilot in a hard turn blacks out at around 9 g, nine times the pull of gravity. Roughly how many g does the bird pull?",
     "answer": "Nearly 10 g",
     "choices": [
       "Nearly 10 g",
@@ -12702,7 +12650,7 @@
   },
   {
     "tier": 5,
-    "question": "Every other flying vertebrate that lives on nectar still stores fuel the ordinary way. But hummingbirds burn the sugar they just drank almost directly, and researchers traced this to a single change deep in their ancestry, dated to when hovering first evolved. What was that change?",
+    "question": "Osipova and colleagues traced the special way hummingbirds burn sugar back to a single change in the ancestor of every living hummingbird, made some 48 to 30 million years ago, just as hovering and nectar feeding evolved. What was that change?",
     "answer": "Their ancestor lost a muscle enzyme gene",
     "choices": [
       "Their ancestor lost a muscle enzyme gene",
@@ -12714,8 +12662,8 @@
     "topic": "hummingbird"
   },
   {
-    "tier": 5,
-    "question": "All 360 hummingbird species today live only in the Americas. Scientists long thought the family began there. Then Gerald Mayr took a fresh look at tiny long-billed skeletons in a museum drawer. Dated to 30 million years ago, the bird he named Eurotrochilus flipped that story. How?",
+    "tier": 3,
+    "question": "Gerald Mayr took a fresh look at tiny long-billed skeletons from a museum drawer, and in 2004 he named the bird they came from, a hummingbird some 30 million years old. All 360 living hummingbird species live in the Americas. What made his fossil bird a surprise?",
     "answer": "It lived in Europe, far from the Americas",
     "choices": [
       "It lived in Europe, far from the Americas",
@@ -12723,7 +12671,7 @@
       "It could not hover despite a slender bill",
       "It outweighed a present-day carrion crow"
     ],
-    "context": "Mayr described Eurotrochilus in 2004 from Early Oligocene deposits (~28-34 million years ago); more fossils later turned up in Germany, France, and Poland. It already had the diagnostic long nectar bill (~15.5-20 mm, about 2.5x its skull length) and hovering wing structure -- so the nectar-hovering lineage evolved in the Old World and only later vanished there, leaving today's hummingbirds solely in the Americas. The genus name means \"unexpected European version of a hummingbird.\" Source: Mayr 2004; Wikipedia \"Eurotrochilus\"; Science, \"Ancient Hummingbirds Were European.\"",
+    "context": "Mayr described Eurotrochilus in 2004 from Early Oligocene deposits (~28-34 million years ago) at the Wiesloch-Frauenweiler clay pit in southern Germany; more fossils later turned up in Germany, France, and Poland. It already had the diagnostic long nectar bill (~15.5-20 mm, about 2.5x its skull length) and hovering wing structure -- so the nectar-hovering lineage evolved in the Old World and only later vanished there, leaving today's hummingbirds solely in the Americas. The genus name means \"unexpected European version of a hummingbird.\"",
     "topic": "hummingbird"
   },
   {
@@ -13599,7 +13547,7 @@
   },
   {
     "tier": 1,
-    "question": "In the blistering Mojave and Sonoran deserts of the American southwest, a tiny hopping rodent no bigger than a mouse bounds across the sand at night on two long back legs. Its kidneys are so efficient that it squeezes almost every drop of water back out of the dry seeds it eats. Here is the amazing part: it can live its whole life and never once drink a sip of water. What is this desert rodent?",
+    "question": "At night in the Mojave Desert, a tiny rodent no bigger than a mouse bounds across the sand on two long back legs. It can live its whole life without ever taking a drink of water. What is this desert rodent?",
     "answer": "The kangaroo rat",
     "choices": [
       "The kangaroo rat",
@@ -13612,7 +13560,7 @@
   },
   {
     "tier": 2,
-    "question": "The kangaroo rat is a tiny hopping rodent of the American desert Southwest — places like Death Valley where months pass with no rain and no puddle to drink from. Yet the kangaroo rat never dies of thirst. It never sips anything liquid at all; its whole diet is bone-dry grain. Where does nearly all of the water inside its body actually come from?",
+    "question": "A kangaroo rat hops through Death Valley, where months can pass without rain and there is no pool or stream to drink from. Yet it never dies of thirst. Where does nearly all the water in its body come from?",
     "answer": "Water its body makes while burning dry seeds for energy",
     "choices": [
       "Water its body makes while burning dry seeds for energy",
@@ -13625,7 +13573,7 @@
   },
   {
     "tier": 2,
-    "question": "The kangaroo rat is a tiny desert rodent of the American southwest. Its scientific name Dipodomys means 'two-foot mouse,' because it bounds on two long back legs like a miniature kangaroo. Trailing behind it is a tail longer than its whole body. When a kangaroo rat sprints across open sand at night, what does that extra-long tail do for it?",
+    "question": "A kangaroo rat sprints across open desert sand at night, bounding on its two long back legs like a tiny kangaroo. Behind it trails a tail longer than its whole body. What does that tail serve as?",
     "answer": "A counterbalance for sharp mid-air turns",
     "choices": [
       "A counterbalance for sharp mid-air turns",
@@ -13638,7 +13586,7 @@
   },
   {
     "tier": 3,
-    "question": "In the moonlit Mojave desert, a sidewinder rattlesnake buries itself in the sand and waits, still as a stone. When a kangaroo rat — a tiny hopping rodent the size of a mouse — bounds within inches, the snake strikes faster than the human eye can see. The rat cannot leap fully clear in time. High-speed cameras first caught what happens next. Twisting in mid-air, what does the rat do to the snake before the fangs land?",
+    "question": "A sidewinder rattlesnake lies buried in the moonlit sand of the Mojave, still as a stone. When a kangaroo rat bounds within inches, the snake strikes faster than the human eye can see, and the rat cannot leap fully clear in time. What does the rat do to the snake before the fangs land?",
     "answer": "Drop-kicks it away with both hind feet",
     "choices": [
       "Drop-kicks it away with both hind feet",
@@ -14691,33 +14639,7 @@
   },
   {
     "tier": 2,
-    "question": "A camel is a big, humped desert animal that can walk for days across the Sahara or the Arabian sands without ever taking a drink. Storybooks often claim that a camel's tall back-hump is a built-in canteen — a giant water tank sloshing under the skin for the long dry crossing. Real biologists cut open a hump and found something completely different inside. What actually fills a camel's hump?",
-    "answer": "Fat",
-    "choices": [
-      "Fat",
-      "Water",
-      "Blood",
-      "Muscle"
-    ],
-    "context": "A dromedary (Camelus dromedarius) hump can hold up to about 80 pounds of fat, an energy reserve the animal burns when food is scarce. The 'water tank' idea is a myth. Source: Britannica 'Do Camels Store Water in Their Humps?'; todayifoundout.com camel humps article.  (Legend.)",
-    "topic": "living-without-water"
-  },
-  {
-    "tier": 2,
-    "question": "The kangaroo rat (Dipodomys) is a small hopping rodent of the American southwestern deserts, out where puddles and streams can vanish for whole seasons. In the wild the kangaroo rat never actually drinks a drop of water, yet its body stays healthily full of moisture. It doesn't sip dew off leaves, doesn't lick damp stones, and doesn't find a hidden spring. So where does all the water in a kangaroo rat's body actually come from?",
-    "answer": "It squeezes water out of the dry seeds it eats",
-    "choices": [
-      "It squeezes water out of the dry seeds it eats",
-      "It absorbs moisture through its feet",
-      "It licks fog off desert plants",
-      "It swallows damp sand and filters it"
-    ],
-    "context": "By burning the food itself, the kangaroo rat produces 'metabolic water' from the hydrogen in the seeds it eats, making nearly all the water its body needs. Source: Schmidt-Nielsen & Schmidt-Nielsen 1951 (PubMed 14897858); OpenLearn 'Animals at the extremes'.",
-    "topic": "living-without-water"
-  },
-  {
-    "tier": 2,
-    "question": "By day the North American desert bakes under the sun, and the dry air steals moisture from any small creature caught out in the open. The kangaroo rat (Dipodomys), a tiny hopping rodent barely bigger than a mouse and named for its long back legs, sidesteps the worst of the heat before the sun has even risen. What does it do all day long, from dawn until dusk?",
+    "question": "The North American desert bakes under the sun, and the dry air steals moisture from any small creature caught in the open. The kangaroo rat, a tiny hopping rodent named for its long back legs, dodges the worst of it before the sun has risen. What does it do all day, from dawn until dusk?",
     "answer": "Stays underground in a cool, humid burrow",
     "choices": [
       "Stays underground in a cool, humid burrow",
@@ -14730,33 +14652,7 @@
   },
   {
     "tier": 3,
-    "question": "Most mammals sweat to shed the day's heat, but sweating costs precious water — every drop lost to evaporation is a drop that has to be drunk back later. To avoid wasting that water, the Arabian camel (Camelus dromedarius) simply endures a daily internal shift that would leave a human shaking, feverish, and bedridden. What does the camel calmly allow to happen inside its body?",
-    "answer": "Its body temperature to swing widely through the day",
-    "choices": [
-      "Its body temperature to swing widely through the day",
-      "Its heart rate to drop until it faints",
-      "Its skin to blister and peel",
-      "Its blood to stop moving for hours"
-    ],
-    "context": "A camel lets its body temperature drift from about 34 C at dawn up to about 40 C by late afternoon, so it doesn't have to sweat away precious water to stay cool. Source: Britannica 'Camel'; sanjaymohindroo camel hump article.",
-    "topic": "living-without-water"
-  },
-  {
-    "tier": 3,
-    "question": "A dromedary camel (Camelus dromedarius) — the tall one-humped desert camel of North Africa and the Middle East — staggers in from days out on the open sand. Its sides are visibly shrunken and it is so badly dehydrated that most large mammals in the same state would be dying. But a camel's body handles dryness in a way ours cannot. What can a parched camel safely do that would kill a horse or a cow?",
-    "answer": "Gulp about 30 gallons of water in roughly ten minutes",
-    "choices": [
-      "Gulp about 30 gallons of water in roughly ten minutes",
-      "Go a full month more without drinking",
-      "Sweat out half its body weight at once",
-      "Sleep for three days straight"
-    ],
-    "context": "A thirsty camel can drink up to about 30 gallons (100+ litres) in around ten minutes, and its cells don't burst thanks to special adaptations to sudden rehydration. Source: ScienceInsights 'Where Does a Camel Store Water?'; mannvetcorner camel humps/water article.",
-    "topic": "living-without-water"
-  },
-  {
-    "tier": 3,
-    "question": "The desert tortoise (Gopherus) is a slow, dome-shelled reptile of the American Mojave and Sonoran deserts, where rain can skip a whole year. Its huge bladder normally stores months of drinking water inside its shell. When a coyote corners a desert tortoise out on the open flats, the tortoise has one panic reflex it cannot undo. Out in the dry, that reflex can end up deadlier than the coyote itself. What does the frightened tortoise do?",
+    "question": "A coyote corners a desert tortoise on the open flats of the Mojave, where rain can skip a whole year. The frightened tortoise has one panic reflex it cannot undo, and out in the dry country it can prove deadlier than the coyote. What does the tortoise do?",
     "answer": "It voids the huge water store in its oversized bladder",
     "choices": [
       "It voids the huge water store in its oversized bladder",
@@ -14769,20 +14665,7 @@
   },
   {
     "tier": 4,
-    "question": "The thorny devil (Moloch horridus), a small spiky lizard of the Australian desert, is covered head to tail in sharp horn-like scales that give it its dragon nickname. Even in dry country it can stand in the faintest morning dew and take a full drink of water without ever lowering its head to a pool. How does its body pull that off?",
-    "answer": "Water travels up grooves in its skin to its mouth",
-    "choices": [
-      "Water travels up grooves in its skin to its mouth",
-      "It swallows dew-soaked sand and strains it",
-      "It absorbs vapour through wide-open nostrils",
-      "It presses its belly flat to soak up puddles"
-    ],
-    "context": "Tiny grooves between the thorny devil's scales wick up dew and puddle-water by capillary action and carry it, even uphill against gravity, all the way to the corners of its mouth. Source: Comanns et al. 2017, Royal Society Open Science (PMC5627102); AskNature 'Grooves Gather Water'.  (Legend.)",
-    "topic": "living-without-water"
-  },
-  {
-    "tier": 4,
-    "question": "When a long Australian drought sets in and the outback dries hard, the water-holding frog (Ranoidea platycephala) vanishes underground for years at a time, perfectly sealed against the dry heat above. Desperate desert travellers and Aboriginal peoples have even dug them up and squeezed water from them to drink. How does the frog seal itself away underground?",
+    "question": "When a long drought dries the Australian outback hard, the water-holding frog, Ranoidea platycephala, vanishes underground, sealed away from the hot, dry air above. It can stay down there as long as five years. How does the frog seal itself in?",
     "answer": "It wraps itself in a cocoon of its own shed skin",
     "choices": [
       "It wraps itself in a cocoon of its own shed skin",
@@ -14795,7 +14678,7 @@
   },
   {
     "tier": 5,
-    "question": "When an Arabian camel (Camelus dromedarius) goes days without water in the desert, its blood thickens and grows sludgy from losing so much fluid. That syrupy blood would jam the tiny blood vessels — the capillaries — of nearly any other animal, and the animal would die. One quiet feature of the camel's red blood cells lets the flow keep moving through even the narrowest vessels. What is unusual about them?",
+    "question": "An Arabian camel goes days without water in the desert, and its blood grows thick and sludgy as it loses fluid. Blood that syrupy would jam the narrowest vessels, the capillaries, of almost any other animal. Something about the camel's red blood cells keeps the flow moving. What is unusual about them?",
     "answer": "They are oval rather than round",
     "choices": [
       "They are oval rather than round",
@@ -14808,7 +14691,7 @@
   },
   {
     "tier": 5,
-    "question": "Every breath a warm-blooded animal exhales carries away warm, moist air — a quiet, constant water leak that a desert kangaroo rat (Dipodomys) simply cannot afford in a landscape without pools or streams. Its narrow, tightly coiled nasal passages act like a heat-and-water trap, cooling the outgoing breath and pulling moisture back inside. How much of each breath's water can the kangaroo rat recover?",
+    "question": "Every breath a kangaroo rat lets out carries warm, moist air away from its body, a steady water leak it can hardly afford in a desert with no pools or streams. Its narrow, tightly coiled nose cools each outgoing breath and pulls the moisture back in. How much of each breath's water can it recover?",
     "answer": "As much as 83%",
     "choices": [
       "As much as 83%",
@@ -14821,7 +14704,7 @@
   },
   {
     "tier": 4,
-    "question": "The water-holding frog (Ranoidea platycephala) waits out years of Australian outback drought sealed underground in a cocoon of its own shed skin. Desperate desert travellers have dug one up, held it gently, squeezed, and drunk clean-tasting water straight from the frog's body — a trick Aboriginal peoples have known for a very long time. What that water actually is might surprise them. What is it?",
+    "question": "A water-holding frog waits out years of Australian drought buried underground. Thirsty travellers have dug one up, squeezed it gently and drunk clean-tasting water straight from its body, a trick Aboriginal peoples have known for a very long time. What is that water?",
     "answer": "Dilute urine stored in a huge bladder",
     "choices": [
       "Dilute urine stored in a huge bladder",
@@ -14830,19 +14713,6 @@
       "Fluid wrung from the fat in its thighs"
     ],
     "context": "The frog's bladder holds very dilute urine averaging about 57% of its body mass, a reserve calculated to offset water loss for two to three years underground. It doesn't just hoard the urine passively: it recycles urea (the nitrogen waste that would normally be flushed out) so it never has to spend water excreting it, and it drops its oxygen use by roughly 70% during aestivation. Sources: Wikipedia, 'Ranoidea platycephala'; Cartledge et al., 'Water balance and arginine vasotocin in the cocooning frog Cyclorana platycephala,' 2007 (pubmed.ncbi.nlm.nih.gov/18040971/).",
-    "topic": "living-without-water"
-  },
-  {
-    "tier": 5,
-    "question": "For years, scientists watching the Australian thorny devil (Moloch horridus) assumed the little spiky lizard drank by wicking up morning dew through the microscopic grooves running between the scales of its skin. But careful experiments showed that dew, and even standing on wet ground, never wets those grooves enough to actually trigger the lizard to swallow a drop. What does the thorny devil actually do to fill its grooves and drink?",
-    "answer": "It shovels damp sand onto its own back",
-    "choices": [
-      "It shovels damp sand onto its own back",
-      "It licks dew straight off nearby spinifex grass",
-      "It presses its belly flat against cool wet clay",
-      "It gulps mouthfuls of moist air at first light"
-    ],
-    "context": "Philip Withers and colleagues found that condensation filled the skin's capillary channels to only about 0.22% of body weight, below the threshold to swallow; standing on wet sand reached just 59% and still no drink. The real trick: the lizard flicks moist sand onto its back with its legs, and gravity drives water up the grooves to its mouth (about 0.7 microliters per jaw movement). So rain and damp sand, not dew, are its water sources. Sources: Comanns et al. (with Withers), J. Exp. Biol. 219:3473, 2016 (pubmed.ncbi.nlm.nih.gov/27807218/); Royal Soc. Open Sci. 4:170591, 2017.",
     "topic": "living-without-water"
   },
   {
@@ -22387,7 +22257,7 @@
   },
   {
     "tier": 1,
-    "question": "When winter comes and food runs out, some animals sink into a deep energy-saving sleep. Their heartbeat, breathing, and body heat all drop far below normal, so a store of body fat can carry them for months. What is this survival sleep called?",
+    "question": "Snow settles over the frozen ground above a burrow, where an animal lies curled in the dark with its heartbeat, breathing and body heat sunk far below normal. A store of body fat will carry it for months. What is this survival sleep called?",
     "answer": "Hibernation",
     "choices": [
       "Hibernation",
@@ -22400,7 +22270,7 @@
   },
   {
     "tier": 1,
-    "question": "This plump, burrow-digging North American rodent, also called a woodchuck, is a true deep hibernator. Through winter its heartbeat drops from about 80 beats a minute to only 4 or 5. Which animal is it?",
+    "question": "A plump North American burrower curls up deep underground for the winter. Its heart slows from about 80 beats a minute to just 4 or 5 while its body chills almost to freezing. Which animal is it?",
     "answer": "Groundhog",
     "choices": [
       "Groundhog",
@@ -22413,7 +22283,7 @@
   },
   {
     "tier": 2,
-    "question": "People often say bears 'hibernate' all winter long, but a denning black bear or grizzly is not a true deep hibernator like a groundhog. A groundhog's body temperature drops close to freezing and its heart barely beats — you could pick one up like a log and it would not stir. A denning bear stays much warmer inside its cave. That warmer state lets a denning bear do one thing a deep hibernator cannot. What is it?",
+    "question": "A black bear sleeps out the winter curled in its den, but it is no deep hibernator: its body stays within a few degrees of normal, while a deep hibernator's cools nearly to freezing and its heart barely beats. What can the denning bear do that a deep hibernator cannot?",
     "answer": "Wake up and defend itself if disturbed",
     "choices": [
       "Wake up and defend itself if disturbed",
@@ -22426,7 +22296,7 @@
   },
   {
     "tier": 3,
-    "question": "A denning black bear or grizzly bear crawls into its cave in late autumn, curls up, and lies almost perfectly still. For as long as eight months the bear will not stand up. Snow buries the den entrance and the outside world freezes solid. Over that whole stretch, without ever getting up once, what does the denning bear manage to avoid doing the entire winter?",
+    "question": "A grizzly crawls into its den in late autumn, curls up and lies almost still while snow buries the entrance and the world outside freezes hard. For as long as eight months it will not get up. What does the bear go without in all that time?",
     "answer": "Eating, drinking, or passing any waste",
     "choices": [
       "Eating, drinking, or passing any waste",
@@ -22439,7 +22309,7 @@
   },
   {
     "tier": 3,
-    "question": "In a dark winter den under the snow, a black bear mother lies mostly dormant for four or five months on end — her heart slowed, her breathing shallow, her body cooled a few degrees. But a bear is NOT a true deep hibernator like a groundhog. A groundhog's body drops nearly to freezing and shuts down so completely it could never manage what the mother bear pulls off in her den. What does the mother bear do?",
+    "question": "Under the snow, a black bear mother lies dormant for four or five months, her heart slowed, her breathing shallow, her body cooled by only a few degrees. A deep hibernator chilled nearly to freezing could never manage what she does in the dark den. What does she do there?",
     "answer": "Gives birth and nurses her cubs",
     "choices": [
       "Gives birth and nurses her cubs",
@@ -22452,7 +22322,7 @@
   },
   {
     "tier": 4,
-    "question": "A denning bear lies motionless in its cave for months and never once gets up to relieve itself, yet the den stays remarkably clean. Its gut never clogs and no waste piles up beside it. Biologists studying wild dens have found the trick: near the start of hibernation the bear's rectum forms a specific object that stays there all winter and passes only when the bear emerges. How does a denning bear keep from making any mess through the whole winter?",
+    "question": "When a black bear finally lumbers out of its winter den in spring after months curled inside, the den is clean, with no droppings anywhere. Biologists studying wild dens found the trick: early in the winter something forms in the bear's rectum, stays there for months and passes only when the bear comes out. How has the bear kept its den clean?",
     "answer": "It seals its gut with a hardened plug until spring",
     "choices": [
       "It seals its gut with a hardened plug until spring",
@@ -22465,7 +22335,7 @@
   },
   {
     "tier": 4,
-    "question": "A grizzly or black bear can lie nearly motionless inside its winter den for four or five months without eating, drinking, walking, or even peeing. A human held bedridden that long would emerge with wasted, useless muscles that could barely hold up his own weight. Yet the bear lumbers out into spring with its muscles almost intact and starts fishing and foraging within days. What trick lets a denning bear keep its muscle instead of letting it waste away?",
+    "question": "Deep in its winter den, a grizzly lies nearly motionless for four or five months. A person kept in bed that long would come out with muscles too wasted to hold him up, yet the bear lumbers into spring with its muscles almost whole and is foraging within days. How does it keep its muscle?",
     "answer": "It recycles its waste nitrogen into new muscle protein",
     "choices": [
       "It recycles its waste nitrogen into new muscle protein",
@@ -22477,21 +22347,8 @@
     "topic": "sleeping-through-winter-hibernation-and-torpor"
   },
   {
-    "tier": 3,
-    "question": "A hummingbird burns fuel so furiously that a single cold night would starve it to death before dawn. Each night it drops into a mini-hibernation, plunging its temperature and slowing its racing heart to survive until morning. What is this nightly shutdown called?",
-    "answer": "Torpor",
-    "choices": [
-      "Torpor",
-      "Estivation",
-      "Molting",
-      "Roosting"
-    ],
-    "context": "In nightly torpor a hummingbird's body temperature can fall from about 104 degrees F toward 50 degrees F, its metabolism drops about 95 percent, and its heart slows to as little as 5 percent of normal. Source: https://www.utoronto.ca/news/hummingbirds-enter-overnight-hibernation-state-save-energy-long-trip-south-u-t-research",
-    "topic": "sleeping-through-winter-hibernation-and-torpor"
-  },
-  {
     "tier": 2,
-    "question": "One small primate in the dry forests of western Madagascar spends about seven months a year fast asleep inside a tree hollow, its body temperature dropping to match the surrounding air. Out of the whole primate order — the group that includes all monkeys, apes, and humans — it is the only species known to be a true deep hibernator. Which one is it?",
+    "question": "A small primate spends about seven months a year fast asleep inside a tree hollow, its body temperature sinking to match the air around it. No other primate is known to hibernate so deeply. Which animal is it?",
     "answer": "The fat-tailed dwarf lemur",
     "choices": [
       "The fat-tailed dwarf lemur",
@@ -22503,21 +22360,8 @@
     "topic": "sleeping-through-winter-hibernation-and-torpor"
   },
   {
-    "tier": 4,
-    "question": "Hibernation has a hot-and-dry twin. When its water hole bakes away, the African lungfish burrows into the drying mud and seals itself in a hardened cocoon of its own mucus to wait for rain. Sealed in that cocoon, how long can a wild lungfish outlast the drought?",
-    "answer": "Up to four years",
-    "choices": [
-      "Up to four years",
-      "About two weeks",
-      "A single dry season",
-      "Around fifty years"
-    ],
-    "context": "This drought-survival dormancy is called estivation. Sealed in its mud cocoon, an African lungfish can wait out drought for up to four years in the wild, and lab lungfish have lasted as long as six years before rain woke them. Source: https://www.the-scientist.com/lungfish-cocoons-are-alive-sort-of-69437  (Legend.)",
-    "topic": "sleeping-through-winter-hibernation-and-torpor"
-  },
-  {
     "tier": 5,
-    "question": "The arctic ground squirrel is the most extreme mammal hibernator known: for months its heart beats only a few times a minute and it breathes about once a minute. But one thing it does with its body core has never been seen in any other warm-blooded animal. What does it do?",
+    "question": "An arctic ground squirrel, the most extreme hibernator known among mammals, curls up in its burrow and sleeps through months of the Alaskan winter. One thing it does with its body core has never been seen in any other warm-blooded animal. What does it do?",
     "answer": "Lets its core drop below freezing without freezing solid",
     "choices": [
       "Lets its core drop below freezing without freezing solid",
@@ -22530,7 +22374,7 @@
   },
   {
     "tier": 5,
-    "question": "The arctic ground squirrel of Alaska and Siberia does something no other mammal on Earth can pull off: while hibernating, it lets its own body core drop below the freezing point of water without actually turning to ice. That should be impossible — a single seed of ice starting to grow inside a cell would tear that cell apart and kill the animal. To stay liquid at that impossible temperature, what must its body do to its own blood before winter?",
+    "question": "Deeper and deeper into its winter sleep, an arctic ground squirrel chills, yet a single crystal of ice growing inside it would tear its cells apart and kill it. To stay liquid, what does its body do to its own blood before winter?",
     "answer": "Scrub out anything an ice crystal could grip onto",
     "choices": [
       "Scrub out anything an ice crystal could grip onto",
@@ -22543,7 +22387,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades, biologists suspected some Arctic mammals let their body core fall below freezing during hibernation, but nobody could prove it — lab animals in cages never got quite that cold. In the 1980s the American zoologist Brian Barnes finally settled the question. He implanted tiny radio transmitters inside the bellies of arctic ground squirrels, then did the one thing with the animals that made the experiment work. What did he do?",
+    "question": "Brian Barnes, a zoologist at the University of Alaska Fairbanks, wanted to learn in the 1980s how cold a hibernating arctic ground squirrel's body core really gets; squirrels in lab cages never got cold enough to settle it. He implanted tiny radio transmitters in the animals, then did one thing that made the test work. What was that one thing?",
     "answer": "Letting them hibernate outdoors in the wild",
     "choices": [
       "Letting them hibernate outdoors in the wild",
@@ -22556,7 +22400,7 @@
   },
   {
     "tier": 5,
-    "question": "The arctic ground squirrel hibernates through the Alaskan winter, letting its body temperature plunge below freezing for months. Over that long sleep, its brain cells shrink and lose their branching connections, as if the brain were slowly wasting away. Then something surprising happens within just two hours of the squirrel waking up in spring. What?",
+    "question": "All through the Alaskan winter, while an arctic ground squirrel hibernates, its brain cells shrink and lose their branching connections, as if the brain were slowly wasting away. What happens in the first two hours or so after the squirrel wakes?",
     "answer": "It rebuilds the connections and ends up with even more",
     "choices": [
       "It rebuilds the connections and ends up with even more",
@@ -22568,34 +22412,8 @@
     "topic": "sleeping-through-winter-hibernation-and-torpor"
   },
   {
-    "tier": 4,
-    "question": "The North American wood frog goes further than any other cold-blooded hibernator on Earth. When autumn frost hits the forest floor, up to two-thirds of the water inside the little frog's body freezes solid into hard crystals of ice. Its heart stops beating. Its lungs stop breathing. It lies as a stiff, frozen little block in the leaf litter for months on end. What happens to the wood frog in spring?",
-    "answer": "It thaws back to life",
-    "choices": [
-      "It thaws back to life",
-      "It sheds its frozen skin and grows new",
-      "It stays dormant until the next winter",
-      "It leaves behind only eggs"
-    ],
-    "context": "The wood frog spends winter frozen solid, with no heartbeat and no breathing, then thaws and revives in spring. Source: https://www.forbes.com/sites/scotttravers/2025/12/05/meet-the-frog-that-freezes-solid-every-winter---and-thaws-back-to-life-every-spring/  (Legend.)",
-    "topic": "sleeping-through-winter-hibernation-and-torpor"
-  },
-  {
-    "tier": 5,
-    "question": "The North American wood frog can lie completely frozen for months in the leaf litter and then thaw back to life in spring. But ice growing inside a living cell would shred the cell apart, so the frog cannot let its cells freeze. Its trick is to flood the inside of each cell with a natural antifreeze so thick that the water there simply cannot crystallize — only the water outside the cells actually turns to ice. What does the wood frog flood its cells with?",
-    "answer": "Sugar and urea",
-    "choices": [
-      "Sugar and urea",
-      "Salt and alcohol",
-      "Fat and oil",
-      "Air and mucus"
-    ],
-    "context": "The wood frog packs its cells with glucose (sugar) and urea, which keep the fluid inside from freezing so that ice forms only in the spaces outside the cells. Source: https://www.discoverwildlife.com/animal-facts/amphibians/wood-frog",
-    "topic": "sleeping-through-winter-hibernation-and-torpor"
-  },
-  {
     "tier": 3,
-    "question": "A cave full of hibernating little brown bats should sleep undisturbed all winter and wake only a few times, saving the fat they need to survive until spring. But since 2006, a cold-loving fungus called white-nose syndrome has killed millions of North American bats. The fungus does not eat the bats alive or poison their blood — it kills a different way. How does it actually kill a hibernating bat?",
+    "question": "Little brown bats hang in a cold cave through the winter, waking only a few times and saving the fat they need to last until spring. Since 2006 a cold-loving fungus that causes white-nose syndrome has killed millions of North American bats. How does it kill the hibernating bats?",
     "answer": "It keeps waking them so they burn their fat too fast",
     "choices": [
       "It keeps waking them so they burn their fat too fast",
@@ -22608,7 +22426,7 @@
   },
   {
     "tier": 2,
-    "question": "Nearly every bird handles winter by staying active in the cold or by flying south for warmer weather. But one bird of the western North American deserts — a small ground-roosting relative of the nightjars — truly hibernates, going stiff and cold in a rock crevice for weeks or even months at a stretch. The Hopi people of the American Southwest named it 'holchoko,' meaning 'the sleeping one.' Which bird is it?",
+    "question": "A small nightjar of the western North American deserts tucks itself into a rock crevice for winter and goes stiff and cold there for weeks or even months, truly hibernating. The Hopi gave it the name holchoko, the sleeping one. Which bird is it?",
     "answer": "The common poorwill",
     "choices": [
       "The common poorwill",
@@ -22621,7 +22439,7 @@
   },
   {
     "tier": 5,
-    "question": "A hibernating ground squirrel doesn't stay cold all winter. Every week or so it spontaneously rewarms its whole body back to about 37 C for roughly 16 hours, then chills down again. Across the season, where does the surprising majority of its saved winter fuel actually go?",
+    "question": "A hibernating ground squirrel warms its whole body back up to about 37 degrees Celsius every week or so, holds that for roughly 16 hours, then chills down again. Across the season, where does most of the winter fuel it saves actually go?",
     "answer": "Into these repeated warm-ups, not the deep cold sleep",
     "choices": [
       "Into these repeated warm-ups, not the deep cold sleep",
