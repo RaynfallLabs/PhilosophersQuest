@@ -31590,8 +31590,8 @@
     "topic": "the-tetrapharmakos-the-four-part-cure"
   },
   {
-    "tier": 3,
-    "question": "A Texan with terrible aim empties his rifle into the broad side of a barn, then struts into town and swears he never misses a shot, pointing back at a tight bullseye ringing a cluster of holes on the wall. A real marksman with no skill at all could fire into a blank wall and brag the very same way. What lets the Texan pull off the trick?",
+    "tier": 2,
+    "question": "A Texan with terrible aim empties his rifle into the broad side of a barn, then struts into town swearing he never misses, and points back at a tight bullseye ringing a cluster of holes on the wall. A man with no skill at all could brag the very same way. What lets the Texan pull off the trick?",
     "answer": "He drew the bullseye around the holes only after the shots landed, so it fits whatever spray a wild rifle leaves",
     "choices": [
       "He drew the bullseye around the holes only after the shots landed, so it fits whatever spray a wild rifle leaves",
@@ -31604,46 +31604,7 @@
   },
   {
     "tier": 4,
-    "question": "Thinkers use a country tale to warn against fake science. A man fires his rifle wildly at the side of a barn, walks up to the wall, and paints a bullseye around wherever the bullets happened to cluster. Then he crows to the town that he is a crack shot. A real shooting coach watches the painter brag and says the man broke the one rule that tells a true marksman from a fraud. Three onlookers each guess which rule he means. Which one names the rule the painter actually broke?",
-    "answer": "You must fix the target before you fire, so a hit only counts if you called it in advance",
-    "choices": [
-      "You must fix the target before you fire, so a hit only counts if you called it in advance",
-      "You must report your aim point to a witness aloud before each shot leaves the barrel",
-      "You must gather a fresh round of shots before drawing any conclusion from the first batch",
-      "You must count every shot that misses, not only the ones that land near each other"
-    ],
-    "context": "A prediction is only evidence if it is locked in BEFORE the data; the same rule that separates a real marksman from a fraud separates real science from fooling yourself. A target drawn after the shots land can always be made to fit, so it carries zero weight. Source: Fallacy Files (fallacyfiles.org/texsharp.html); Wikipedia: Texas sharpshooter fallacy.",
-    "topic": "the-texas-sharpshooter-drawing-the-target-after-you-shoot"
-  },
-  {
-    "tier": 3,
-    "question": "A con artist sends out free stock predictions month after month. A small group of strangers watches him call the market right every single time, becomes certain he has a rare gift, and gladly hands him their life savings. To that lucky group his record looks utterly flawless. What is really going on?",
-    "answer": "Each of them got only the calls that came true; thousands of others got the wrong calls and were quietly dropped",
-    "choices": [
-      "Each of them got only the calls that came true; thousands of others got the wrong calls and were quietly dropped",
-      "Each of them paid a small monthly fee, so the swindler made his money whether the picks won or lost in the end",
-      "Each of them saw glowing testimonials that he had cherry-picked from a few real clients who had once gotten lucky",
-      "Each of them received the picks a little late, so there was never any time to check them before the market moved"
-    ],
-    "context": "This is the Texas sharpshooter built on hidden losers: the 'bullseye' is painted around the few survivors while every miss is discarded out of sight, invisible to the winners. Source: ClearerThinking, 'What is survivorship bias' (clearerthinking.org); Wikipedia: Texas sharpshooter fallacy.",
-    "topic": "the-texas-sharpshooter-drawing-the-target-after-you-shoot"
-  },
-  {
-    "tier": 3,
-    "question": "For centuries, fans of the writer Nostradamus have called him a great prophet, pointing to verse after verse that seems to foretell a famous disaster. His hundreds of verses are on purpose vague and gloomy, and most of them never matched anything at all. A skeptic says the fans have it exactly backwards. What is the trick that lets almost any event look 'predicted' by a Nostradamus verse?",
-    "answer": "The fans wait for the event, then go find a verse to fit it, ignoring the hundreds that foretold nothing",
-    "choices": [
-      "The fans wait for the event, then go find a verse to fit it, ignoring the hundreds that foretold nothing",
-      "The fans mistranslate the old French, so a clever reader can bend any line to mean almost anything at all",
-      "The fans count a near-miss as a hit, so a verse only roughly close to the event still gets called correct",
-      "The fans pass the verses around so fast that a 'prediction' spreads and convinces people before any check"
-    ],
-    "context": "Nostradamus is a centuries-old sharpshooter machine: the 'prophecy' is the bullseye chalked around an event that already happened, with every failed verse quietly ignored. (Often-repeated skeptic claim; treat as legend.) Source: Skeptic's Dictionary; Britannica, 'Nostradamus and His Prophecies.'",
-    "topic": "the-texas-sharpshooter-drawing-the-target-after-you-shoot"
-  },
-  {
-    "tier": 4,
-    "question": "During World War II, Londoners were certain the German V-1 flying bombs were being aimed on purpose, pounding some districts hard while sparing others where spies were rumored to live. In 1946 the actuary R.D. Clarke gridded the whole city into small squares and counted exactly how many bombs fell in each. When his count came back, what did it reveal about the 'targeting' Londoners felt so sure of?",
+    "question": "Londoners in the Second World War were certain the German V-1 flying bombs were being aimed on purpose, pounding some districts while sparing others where spies were rumored to live. In 1946 the actuary R.D. Clarke gridded the city into small squares and counted how many bombs fell in each. What did his count reveal about the 'targeting' Londoners felt so sure of?",
     "answer": "The bunched-up districts were just what blind chance produces, with no sign of any deliberate aim",
     "choices": [
       "The bunched-up districts were just what blind chance produces, with no sign of any deliberate aim",
@@ -31656,7 +31617,7 @@
   },
   {
     "tier": 4,
-    "question": "The surgeon and writer Atul Gawande told of a scared neighborhood. They counted several cancer cases among nearby homes and became sure something local must be poisoning them. Gawande warned that their case is built the same way the barn-painter builds his. Where does the neighborhood's reasoning go wrong?",
+    "question": "Atul Gawande, the surgeon and writer, told of frightened neighbors who counted several cancer cases among their nearby homes and grew sure that something local was poisoning them. Their case, Gawande warned, is built the way the barn-painter builds his. Where does the neighbors' reasoning go wrong?",
     "answer": "They mark the boundary around the sick homes only after spotting them, so a cluster is guaranteed either way",
     "choices": [
       "They mark the boundary around the sick homes only after spotting them, so a cluster is guaranteed either way",
@@ -31669,7 +31630,7 @@
   },
   {
     "tier": 5,
-    "question": "The 'Texas sharpshooter fallacy' is named after a man who first blasts random holes in the side of a barn and only then paints a bullseye around the tightest cluster, calling himself a marksman — a cluster spotted after the fact is not evidence of aim. In 1854 the London physician John Snow spotted a real cluster: cholera deaths bunched around one water pump on Broad Street. He did not stop there and call the pump guilty. What did Snow do next that a Texas sharpshooter never would?",
+    "question": "John Snow, a London doctor, spotted a cluster in 1854: cholera deaths bunched around one water pump on Broad Street. A cluster noticed after the fact is no evidence by itself, and Snow did not stop there and call the pump guilty. What did he do next?",
     "answer": "He went and gathered fresh evidence the cluster alone could not give, tracing which homes drank from a tainted supplier",
     "choices": [
       "He went and gathered fresh evidence the cluster alone could not give, tracing which homes drank from a tainted supplier",
@@ -31682,7 +31643,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1993 a Swedish team studied people living near power lines and checked them against more than 800 different medical conditions at once. One result jumped out: childhood leukemia looked about four times higher, and it made headlines. A statistician warned the headline was a sharpshooter's trick. Why does checking 800 conditions all at once turn a scary 'hit' into noise?",
+    "question": "A Swedish research team in 1993 checked more than 800 medical conditions at once among people living near power lines. One result jumped out and made headlines: childhood leukemia looked about four times higher. A statistician warned that the headline was a sharpshooter's trick. Why does checking 800 conditions at once turn a scary 'hit' into noise?",
     "answer": "With 800 chances, a few will look striking by luck alone, and the alarm was raised around whichever one jumped",
     "choices": [
       "With 800 chances, a few will look striking by luck alone, and the alarm was raised around whichever one jumped",
@@ -32072,7 +32033,7 @@
   },
   {
     "tier": 2,
-    "question": "A runaway tram is hurtling down the track toward five workmen who cannot get clear in time. You stand at the switch. You can do nothing and let the five die, or throw the switch to send the tram onto a side track where one workman is working -- and he will be killed instead. Asked what to do, almost everyone gives the same answer. Which is it?",
+    "question": "A runaway tram hurtles toward five workmen who cannot get clear. Suppose you stand at the switch: do nothing and the five die, or throw it and send the tram onto a side track, where one workman will be killed instead. Asked what to do, almost everyone gives the same answer. Which is it?",
     "answer": "Throw the switch, because one death is a smaller loss than five.",
     "choices": [
       "Throw the switch, because one death is a smaller loss than five.",
@@ -32085,7 +32046,7 @@
   },
   {
     "tier": 2,
-    "question": "A runaway trolley races toward five people on the track below. You stand on a footbridge above, beside a very large stranger whose body could stop the trolley. You can save the five only by shoving him off the bridge to his death. A friend says this must be fine, since it is the exact same trade as a switch -- one dies, five live. Yet almost everyone recoils from the push. Why does that recoil bite against his argument?",
+    "question": "Suppose you are on a footbridge next to a large stranger, above a runaway trolley bound for five people. Only shoving him off, to his death, would stop it. A friend calls it the same trade as a switch, one dies and five live, yet a clear majority recoil from the push. Why does that recoil bite against his argument?",
     "answer": "Two acts with the very same outcome can still differ in whether they are allowed.",
     "choices": [
       "Two acts with the very same outcome can still differ in whether they are allowed.",
@@ -32097,21 +32058,8 @@
     "topic": "the-trolley-problem"
   },
   {
-    "tier": 2,
-    "question": "A surgeon has five patients who will die today: two need a lung, two a kidney, one a heart. A healthy young man strolls in for a check-up and matches all five. The surgeon could quietly cut him up and parcel out his organs -- one death, five saved, the same gain as turning the trolley. Most people say the surgeon may NOT do it, though they would turn the trolley. What does that flat 'no' show?",
-    "answer": "Saving five at the cost of one is not always allowed; the body count alone cannot decide it.",
-    "choices": [
-      "Saving five at the cost of one is not always allowed; the body count alone cannot decide it.",
-      "The surgeon cannot really be sure the young man would match every one of the five patients.",
-      "Doctors are bound by professional oaths that an ordinary passing bystander never had to swear.",
-      "Five strangers' lives can never outweigh the single person standing right in front of you."
-    ],
-    "context": "Foot raised a transplant case in 1967; Thomson sharpened it into this surgeon in 1985. Her report: 'Everybody to whom this hypothetical case has been put says, No, it would not be' permissible. Same arithmetic as the trolley, opposite verdict -- which is exactly why 'five over one' cannot be the whole story.",
-    "topic": "the-trolley-problem"
-  },
-  {
-    "tier": 2,
-    "question": "Philippa Foot paired her runaway tram with a second case. A mob threatens to slaughter a town district unless a culprit hangs for a crime. The criminal is unknown, but a judge could frame and execute one innocent man to appease the mob -- the same grim one-for-five trade as turning the tram. The driver may turn; almost everyone says the judge may NOT. What distinction did Foot build the pair to draw out?",
+    "tier": 3,
+    "question": "Philippa Foot set other cases beside her runaway tram. A judge could frame and hang an innocent man to appease a mob that would otherwise slaughter a town district. The pilot of a doomed airliner, sure to crash, could steer it away from a crowded district toward an emptier one. Most people say the driver and the pilot may steer and the judge may not. What distinction did Foot draw?",
     "answer": "The driver redirects a harm already loose, while the judge works up a death from nothing.",
     "choices": [
       "The driver redirects a harm already loose, while the judge works up a death from nothing.",
@@ -32124,7 +32072,7 @@
   },
   {
     "tier": 3,
-    "question": "In Philippa Foot's original tram case the hero is the driver -- already at the controls of a deadly machine bearing down on five men. Judith Jarvis Thomson rewrote it so that you are just a passer-by who happens to stand next to a track-side lever, with no connection to the runaway trolley. People still feel it is fine for the passer-by to throw the lever, killing one to save five. What did Thomson's change prove about the puzzle?",
+    "question": "A driver is the hero of Philippa Foot's original tram case, already at the controls of a deadly machine bearing down on five men. Judith Jarvis Thomson moved the hero: in her version a mere passer-by stands beside a track-side lever, with no tie to the runaway trolley. People still feel he may throw it, killing one to save five. What did her change show?",
     "answer": "Turning is not made all right by the driver's special job; the act of redirecting itself is what people accept.",
     "choices": [
       "Turning is not made all right by the driver's special job; the act of redirecting itself is what people accept.",
@@ -32137,7 +32085,7 @@
   },
   {
     "tier": 3,
-    "question": "Survey researchers put the two trolley scenes to ordinary people. In the first, you flip a switch to divert the trolley, killing one workman to save five. In the second, you shove a large man off a footbridge to stop it, killing him to save five. The result is identical either way -- one dead, five alive, four lives saved. What did the surveys find when the only thing that changed was switch versus shove?",
+    "question": "Survey researchers put two trolley scenes to ordinary people. In one, a person flips a switch to divert the trolley, killing one workman to save five; in the other, he shoves a large man off a footbridge to stop it, killing him to save five. The result is identical: one dead, five alive. What did the surveys find?",
     "answer": "About nine in ten would flip the switch, but a clear majority refuse to push the man.",
     "choices": [
       "About nine in ten would flip the switch, but a clear majority refuse to push the man.",
@@ -32149,21 +32097,8 @@
     "topic": "the-trolley-problem"
   },
   {
-    "tier": 3,
-    "question": "Alongside the tram driver and the framing judge, Philippa Foot's 1967 discussion adds a third figure: the pilot of a doomed airliner that is going to crash no matter what. The pilot can aim the wreck away from a crowded district toward an emptier one, so that fewer people die. Most people find this, like turning the tram, permissible. What do the driver and the pilot share that the surgeon and the bridge-pusher do not?",
-    "answer": "Each one redirects a harm already on its way, instead of using a person's body as the thing that absorbs it.",
-    "choices": [
-      "Each one redirects a harm already on its way, instead of using a person's body as the thing that absorbs it.",
-      "Each one merely lets the deaths happen, while the surgeon and the pusher are the only ones who truly cause them.",
-      "Each one harms only strangers, while the surgeon and the pusher both harm a person they have actually met.",
-      "Each one acts on a fast-moving machine, while the surgeon and the pusher act calmly with their own hands."
-    ],
-    "context": "Foot's pilot is the third of her paired cases. The driver and pilot DEFLECT a threat that is already coming; the surgeon and the pusher INTRODUCE a person to absorb the harm. That deflect-versus-use line is the heart of her answer. (Foot 1967, summarized at the Internet Encyclopedia of Philosophy and Britannica.)",
-    "topic": "the-trolley-problem"
-  },
-  {
     "tier": 4,
-    "question": "Why may a bystander turn the trolley to kill one and save five, but a surgeon may not cut up one healthy patient to save five? Philippa Foot said the split is not about the count but the act. At the lever, you steer away a danger already on the way. The surgeon takes a healthy body and uses it to soak up the harm. Which rule of hers splits the two cases?",
+    "question": "A surgeon has five dying patients and one healthy visitor whose organs would save them all, yet nearly everyone says he may not cut the visitor up, though a trolley may be turned to kill one and save five. Philippa Foot said the split lies not in the count but in the act. Which rule of hers splits the two cases?",
     "answer": "Doing a harm is generally worse than merely allowing one, so the duty not to kill outranks the duty to save.",
     "choices": [
       "Doing a harm is generally worse than merely allowing one, so the duty not to kill outranks the duty to save.",
@@ -32176,20 +32111,7 @@
   },
   {
     "tier": 4,
-    "question": "Judith Jarvis Thomson offered a sharper test for why the footbridge feels different from the switch. Imagine the victim simply vanishes an instant before you act. On the bridge, if the large man disappears, your plan collapses -- the trolley rolls on and the five die. At the switch, if the lone workman disappears, the five are still saved and you are glad. Thomson said this 'vanish' test marks the real moral line. What line does it draw?",
-    "answer": "On the bridge his death is your MEANS of saving them; at the switch it is only a foreseen side-effect of it.",
-    "choices": [
-      "On the bridge his death is your MEANS of saving them; at the switch it is only a foreseen side-effect of it.",
-      "On the bridge you act with your own bare hands, while at the switch a machine carries out the actual killing.",
-      "On the bridge you are made wholly certain of the death, while at the switch it always remains only a risk.",
-      "On the bridge an innocent stranger dies, while at the switch a workman who knew his job's dangers dies."
-    ],
-    "context": "Thomson's exact wording: someone 'uses the one to save the five only if, had the one gone out of existence just before the agent started, the agent would have been unable to save the five.' If you NEED the death, it is your means; if you would be glad it didn't happen, it is a side-effect. This is the doctrine of double effect, made into a clean test. (Thomson 1985; Stanford Encyclopedia of Philosophy.)",
-    "topic": "the-trolley-problem"
-  },
-  {
-    "tier": 4,
-    "question": "Take the footbridge case and change one detail: the large man on the bridge is the very person who tied the five victims to the tracks and set the danger in motion. The physics is unchanged -- his body still stops the trolley, still one death for five saved. Now many people who refused to push an innocent stranger say go ahead and push him. What does this shift reveal about the original recoil from pushing?",
+    "question": "The large man on the footbridge, in one version of the trolley case, is the very villain who tied the five victims to the tracks. The physics is unchanged: his body still stops the trolley, one death for five saved. Yet many who balked at pushing an innocent stranger now say go ahead and push him. What does the shift reveal about the original recoil?",
     "answer": "The reluctance was never pure arithmetic; who deserves the harm was quietly doing part of the work.",
     "choices": [
       "The reluctance was never pure arithmetic; who deserves the harm was quietly doing part of the work.",
@@ -32202,7 +32124,7 @@
   },
   {
     "tier": 5,
-    "question": "Judith Jarvis Thomson built a case to trap the easy answer. It is the ordinary switch case, but the side track curves around and loops back to rejoin the main track ahead of the five. The lone workman on the loop is large enough that his body alone stops the trolley before it comes back around. Pull the lever and you still kill one to save five. People who happily flip the plain switch find this one queasier -- and Thomson argued it now does the very thing the footbridge push does. What has the lever-pull become here?",
+    "question": "The side track curves back in Judith Jarvis Thomson's loop case, rejoining the main line ahead of the five, and the lone workman on it is large enough that his body alone stops the trolley before it can circle round. Pulling the lever still kills one to save five. What has the lever-pull become?",
     "answer": "His being struck is now the thing that saves the five, so the lever-pull works through his death, not past it.",
     "choices": [
       "His being struck is now the thing that saves the five, so the lever-pull works through his death, not past it.",
@@ -32215,7 +32137,7 @@
   },
   {
     "tier": 5,
-    "question": "Judith Jarvis Thomson said you may steer a threat toward fewer people, but only when the act breaks no one's rights. Steering a trolley breaks no right. Shoving a man off a bridge breaks a strict one. Then she asked her own hard question. What if the main track were empty and steering it onto a lone worker was the choice? Wouldn't that break his right too? Why does her question hurt her own fix?",
+    "question": "Judith Jarvis Thomson held that a threat may be steered toward fewer people only when the act breaks no one's rights. Steering a trolley breaks no right, she said; shoving a man off a bridge breaks a strict one. Then she turned the question on herself: might steering even a plain trolley onto a lone worker break his right too? Why does that question hurt her own fix?",
     "answer": "If turning onto one man already violates his right, then 'five need saving' cannot strip the surgeon's victim of his.",
     "choices": [
       "If turning onto one man already violates his right, then 'five need saving' cannot strip the surgeon's victim of his.",
@@ -32696,20 +32618,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine a being so good at turning food into joy that one apple gives it 100 units of pleasure, while the same apple gives an ordinary person only 1 unit. A rule says: hand out resources however produces the biggest total-happiness number. A person at the table asks who should get the apples, the bread, everything. What does that rule's arithmetic demand?",
-    "answer": "Give every apple and every resource to the one being, and let everyone else go without",
-    "choices": [
-      "Give every apple and every resource to the one being, and let everyone else go without",
-      "Split the apples evenly so each person and the being receive an equal, fair share",
-      "Give the food to whoever is hungriest right now, no matter how much joy results",
-      "Give a little to the being and divide the large remainder among the ordinary people"
-    ],
-    "context": "This is the standard illustration of Robert Nozick's 'utility monster.' Pure total-happiness math has no built-in floor protecting individuals: if one being converts resources into pleasure far more efficiently, the biggest sum always points its way. Source: en.wikipedia.org/wiki/Utility_monster.",
-    "topic": "the-utility-monster-and-the-repugnant-conclusion"
-  },
-  {
-    "tier": 3,
-    "question": "Robert Nozick, testing the rule 'always act to maximize overall happiness,' imagined a being that squeezes far more pleasure out of every resource than anyone else can. He warned that the rule would then keep diverting everything toward that one being. In his 1974 book he named the unsettling endpoint the rule seems to demand of everyone else. What did Nozick say the theory requires of the rest of us?",
+    "question": "Robert Nozick tested the rule 'always act to maximize overall happiness' with a creature that wrings 100 units of pleasure out of an apple that gives anyone else just 1. The rule, he warned, would keep pouring every resource toward that one being. What did Nozick warn the theory seems to require?",
     "answer": "That we all be sacrificed in the monster's maw, to push total happiness higher",
     "choices": [
       "That we all be sacrificed in the monster's maw, to push total happiness higher",
@@ -32722,7 +32631,7 @@
   },
   {
     "tier": 4,
-    "question": "Utility rules say each person's happiness counts, and each counts for one. Robert Nozick said his 'utility monster' unmasks that promise. Since one being's joy can beat the pain of thousands, the proud slogan quietly turns cold. What did Nozick say 'everyone counts for one' really turns into?",
+    "question": "Robert Nozick took aim at a proud utilitarian promise: each person's happiness counts, and counts for one. His utility monster, a being whose joy can outweigh the pain of thousands, unmasks that promise, he said. What did he say 'everyone counts for one' really turns into?",
     "answer": "Whoever converts resources into happiness best wins, and the rest count for nothing",
     "choices": [
       "Whoever converts resources into happiness best wins, and the rest count for nothing",
@@ -32735,7 +32644,7 @@
   },
   {
     "tier": 4,
-    "question": "Derek Parfit pictured a slow slide from a thriving world down to a vast, crowded one, adding ever more people at ever-lower quality. As the population swells and quality drops, he said the finest things vanish one by one: first Mozart's music is gone, then Haydn's, then Venice is destroyed. He gave a single grim two-word phrase for the last things left in that final, barely-living world. What survives there?",
+    "question": "Derek Parfit pictured a slow slide from a thriving world to a vast, crowded one, with ever more people living ever poorer lives. One by one the finest things vanish: first Mozart's music, then Haydn's, then Venice. What did Parfit say is all that is left in the final, barely-living world?",
     "answer": "Muzak and potatoes",
     "choices": [
       "Muzak and potatoes",
@@ -32748,7 +32657,7 @@
   },
   {
     "tier": 5,
-    "question": "Derek Parfit built his Repugnant Conclusion as a chain of whole worlds. From a flourishing world A, add a separate group of new people, each with a life worth living, to reach a world A+. Then redistribute into a larger world B. Run those same two moves over and over, and you slide down to world Z: billions of lives each only barely worth living. Critics have hunted for the false step ever since. Which choice correctly locates where the chain can be cleanly broken?",
+    "question": "Derek Parfit built his Repugnant Conclusion as a chain of worlds. In each round a separate group of newcomers, their lives worth living, is added to the world, and then everything is shared out evenly in the bigger world. The chain ends at Z: billions of lives each only barely worth living. Where can the chain be cleanly broken?",
     "answer": "The whole chain is the culprit; no single link breaks because each one is separately defensible",
     "choices": [
       "The whole chain is the culprit; no single link breaks because each one is separately defensible",
@@ -32761,7 +32670,7 @@
   },
   {
     "tier": 5,
-    "question": "Faced with the Repugnant Conclusion, some philosophers switch the goal from 'maximize total happiness' to 'maximize AVERAGE happiness,' hoping to block the swarm of barely-living billions. But this fix breeds a fresh monster of its own. A defender of the total view points out what the average rule would 'prefer' over ten billion people who are all extremely happy. What does maximizing the average end up favoring?",
+    "question": "A philosopher faced with the Repugnant Conclusion switches his goal from total happiness to average happiness, hoping to block the swarm of barely-living billions. A defender of the total view answers that the fix breeds a monster of its own. Over ten billion people who are all extremely happy, what would the average rule prefer?",
     "answer": "A single blissful individual whose happiness is just a hair higher than each of the ten billion's",
     "choices": [
       "A single blissful individual whose happiness is just a hair higher than each of the ten billion's",
@@ -33307,7 +33216,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1897 essay What Is Art?, the Russian novelist Leo Tolstoy told a small story about a boy who meets a wolf in the woods, is terrified, and later tells his family and neighbors what he had felt. Some listeners felt his fear as if it were their own. Tolstoy used that little tale to answer one big question: what actually makes a thing a work of art?",
+    "question": "A boy meets a wolf in the woods, is terrified, and later tells his family and neighbors what he felt; some listeners feel his fear as if it were their own. Leo Tolstoy told this small story in his 1897 book on art. What, for him, makes a thing a work of art?",
     "answer": "Passing a feeling you have truly lived through on to others",
     "choices": [
       "Skilled imitation of how things truly look in nature",
@@ -33320,7 +33229,7 @@
   },
   {
     "tier": 3,
-    "question": "Leo Tolstoy tested art with one question. Does it truly pass a feeling from its maker to those who receive it? He used that test on Beethoven's Ninth Symphony, one of the most revered works in music. His verdict stunned the cultured world: he called it 'bad art.' What was Tolstoy's complaint against the Ninth?",
+    "question": "Leo Tolstoy tested art with one question: does it truly pass a feeling from its maker to those who receive it? He turned that test on Beethoven's Ninth Symphony, one of the most revered works in music, and called it 'bad art,' a verdict that stunned the cultured world. What was his complaint against the Ninth?",
     "answer": "It was long, confused, and artificial, past any ordinary listener's grasp",
     "choices": [
       "It merely imitated older symphonies instead of breaking new ground",
@@ -33333,7 +33242,7 @@
   },
   {
     "tier": 4,
-    "question": "Leo Tolstoy taught that sincere feeling, not polish or fame, is what makes real art. The man the world ranks among its greatest novelists then aimed that same test at the very books that made his name, War and Peace and Anna Karenina. By his own theory, what verdict did Tolstoy reach about his masterpieces?",
+    "question": "Leo Tolstoy taught that sincere feeling, not polish or fame, is what makes real art, and he aimed that test even at his own masterpieces, War and Peace and Anna Karenina, the novels that made the world rank him among its greatest writers. By his own theory, what verdict did he reach about them?",
     "answer": "Branded them bad art — upper-class vanity that united no one in feeling",
     "choices": [
       "Branded them bad art — upper-class vanity that united no one in feeling",
@@ -33775,7 +33684,7 @@
   },
   {
     "tier": 1,
-    "question": "A New York art show in 1917 made a bold promise. No jury and no rejections. Just pay the fee and your work is shown. Marcel Duchamp sat on the show's board. He tested that promise. He bought a plain factory urinal, laid it on its back, signed it 'R. Mutt 1917,' and titled it 'Fountain.' How did the board respond to a piece their own no-rejection rule said they had to hang?",
+    "question": "Marcel Duchamp sat on the board of a New York art show in 1917 that promised no jury and no rejections. He tested the promise with a urinal laid on its side, signed 'R. Mutt 1917' and titled 'Fountain.' How did the board treat it?",
     "answer": "They hid it from view and refused to display it",
     "choices": [
       "They hid it from view and refused to display it",
@@ -33788,7 +33697,7 @@
   },
   {
     "tier": 1,
-    "question": "Marcel Duchamp once bolted a bike wheel onto a kitchen stool. Another time he bought a snow shovel and hung it up with a title. He called each one his own art, though he had shaped none of it with his hands. He made up one word for these everyday things he lifted into the world of art. What did he call them?",
+    "question": "A bike wheel bolted onto a stool, a snow shovel hung up with a title: Marcel Duchamp called each one his own art, though he had shaped none of it with his hands. What word did he coin for these everyday things?",
     "answer": "Readymades",
     "choices": [
       "Readymades",
@@ -33801,7 +33710,7 @@
   },
   {
     "tier": 1,
-    "question": "Two years after the urinal, Marcel Duchamp pulled the same stunt on the most loved painting in France. He took a cheap postcard of the Mona Lisa. With a few pencil strokes, he changed her famous face and gave the result a rude title. What did he add to her?",
+    "question": "Marcel Duchamp took a cheap print of the Mona Lisa, the most loved painting in France, two years after his urinal. With a few pencil strokes he changed her famous face and gave the result a rude title. What did he add to her?",
     "answer": "A moustache and a goatee",
     "choices": [
       "A moustache and a goatee",
@@ -33814,7 +33723,7 @@
   },
   {
     "tier": 2,
-    "question": "The original 1917 'Fountain' does not exist anymore. After the board hid the urinal away, it was soon lost or thrown out as trash, and every 'Fountain' standing in a museum today is a later replica. Only one record of the real object survives, made by Alfred Stieglitz at his New York gallery. What is it?",
+    "question": "Alfred Stieglitz made the only record that survives of the real 1917 Fountain, at his New York gallery. The original urinal was soon lost or thrown out, and every Fountain in a museum today is a later replica. What did Stieglitz make?",
     "answer": "A single black-and-white photograph",
     "choices": [
       "A single black-and-white photograph",
@@ -33827,7 +33736,7 @@
   },
   {
     "tier": 2,
-    "question": "In a 2004 poll, five hundred British art experts voted 'Fountain' — Marcel Duchamp's factory urinal — the most influential artwork of the whole twentieth century. It even beat Andy Warhol's 'Marilyn.' But the painting it pushed into second place was far more famous. Which masterpiece did it edge out?",
+    "question": "Five hundred British art experts voted Marcel Duchamp's factory urinal, Fountain, the most influential artwork of the whole twentieth century in a 2004 poll. It even beat Andy Warhol's Marilyn, but the painting it pushed into second place was far more famous. Which masterpiece did it edge out?",
     "answer": "Pablo Picasso's 'Les Demoiselles d'Avignon'",
     "choices": [
       "Pablo Picasso's 'Les Demoiselles d'Avignon'",
@@ -33840,7 +33749,7 @@
   },
   {
     "tier": 2,
-    "question": "A 'Fountain' copy in a Paris museum has been attacked twice by the same man, the artist Pierre Pinoncelli. Once he urinated into it, and in 2006 he chipped it with a hammer. A Paris court fined him 214,000 euros. He insisted his hammer blow had a real artistic meaning. How did he explain it to the judge?",
+    "question": "Pierre Pinoncelli, an artist, attacked the same Fountain replica twice: once he urinated into it, and in 2006 he chipped it with a hammer. A Paris court fined him 214,000 euros, but he insisted the hammer blow had a real artistic meaning. How did he explain it to the court?",
     "answer": "A wink at Dadaism Duchamp would have loved",
     "choices": [
       "A wink at Dadaism Duchamp would have loved",
@@ -33853,7 +33762,7 @@
   },
   {
     "tier": 3,
-    "question": "When the board rejected the urinal, Marcel Duchamp and his friends fought back in their magazine with an unsigned editorial. It brushed aside the main complaint that Duchamp had not built the urinal with his own hands. Building it, they said, was never the point. According to that editorial, what was the real creative act?",
+    "question": "Marcel Duchamp and his friends struck back at the urinal's critics in the little magazine they ran, in an editorial nobody signed. It brushed aside the main complaint, that Duchamp had not made the urinal with his own hands; making it, they said, was never the point. What, by the editorial, was the real creative act?",
     "answer": "That he chose it",
     "choices": [
       "That he chose it",
@@ -33866,7 +33775,7 @@
   },
   {
     "tier": 3,
-    "question": "At the 1917 show the directors argued bitterly over whether the urinal could really be let in. One director pressed the hard case: by their own no-jury rule, would they then be forced to hang a pile of horse manure if an artist submitted it? Walter Arensberg gave a blunt answer. What did he say?",
+    "question": "The directors of the 1917 show argued bitterly over whether the urinal could really be let in. One director pressed the hard case: by their own no-jury rule, would they then be forced to hang a pile of horse manure if an artist submitted it? Walter Arensberg gave a blunt answer. What did he say?",
     "answer": "Yes — by their own rules, they would",
     "choices": [
       "Yes — by their own rules, they would",
@@ -33879,7 +33788,7 @@
   },
   {
     "tier": 3,
-    "question": "The magazine editorial defending 'Fountain' ended with a jab at America's idea of itself. It granted that America had produced real works of art after all. Then it named two plain, everyday things as that art. Which two things did it crown as America's only art?",
+    "question": "Duchamp's defenders ended their magazine editorial on Fountain with a jab at America's idea of itself. They granted that America had produced real works of art after all, then named two plain, everyday things as that art. Which two did they crown as America's only art?",
     "answer": "Her plumbing and her bridges",
     "choices": [
       "Her plumbing and her bridges",
@@ -33892,7 +33801,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1917 the French artist Marcel Duchamp signed a factory-made urinal 'R. Mutt' and submitted it to a gallery as a sculpture titled Fountain, sparking outrage. Decades later the American philosopher Arthur Danto took the outrage seriously and asked a sharp question: a urinal in a gallery is art, but the very same urinal in a hardware store is not. So what makes the difference, when the two objects are identical? Danto decided that whatever makes one of them art is not a property you could ever point to in the object itself. Where did he say it lives instead?",
+    "question": "Arthur Danto took the outrage over Marcel Duchamp's urinal seriously. A urinal in a gallery is art, he noted, but the very same urinal in a hardware store is not. Whatever makes the difference, Danto decided, is not a property anyone could find by looking at the object itself. Where did he say it lives instead?",
     "answer": "In the surrounding theory and history of art",
     "choices": [
       "In the surrounding theory and history of art",
@@ -33905,7 +33814,7 @@
   },
   {
     "tier": 4,
-    "question": "After Marcel Duchamp's urinal Fountain forced the question 'what is art?', the Austrian philosopher Ludwig Wittgenstein reached for an analogy. Think of the word 'game,' he said: board games, ball games, and solitaire need not share any one feature — just a web of overlapping likenesses he called family resemblance. Art, he claimed, is a word like that. So when a shocking new case like the urinal turns up, what does Wittgenstein conclude we are really doing when we call it art?",
+    "question": "Morris Weitz, following Ludwig Wittgenstein, compared the word 'art' to the word 'game.' Board games, ball games and solitaire need not share any one feature, only a web of overlapping likenesses Wittgenstein called family resemblance. On Weitz's view, what are people really doing when they call a shocking new case like Duchamp's urinal art?",
     "answer": "Deciding whether to stretch the word to cover it",
     "choices": [
       "Deciding whether to stretch the word to cover it",
@@ -33918,7 +33827,7 @@
   },
   {
     "tier": 4,
-    "question": "A painter hunts for a beautiful subject. Marcel Duchamp said he picked his readymade objects in the exact opposite spirit. He even warned that you must not let yourself look too long: give the object two weeks, he said, and its look would start to work on you — and that would ruin everything. So how did Duchamp say a readymade had to be chosen?",
+    "question": "A painter hunts for a beautiful subject. Marcel Duchamp said he picked the ordinary objects he made into art in the exact opposite spirit, and warned against looking too long: give an object two weeks, he said, and its look would start to work on the chooser and spoil everything. How did Duchamp say such an object had to be chosen?",
     "answer": "With no taste reaction at all",
     "choices": [
       "With no taste reaction at all",
