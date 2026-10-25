@@ -170,7 +170,7 @@
   },
   {
     "tier": 2,
-    "question": "A blue whale, longer than three school buses parked end to end, rolls slowly up to the surface of the ocean. Warm spray suddenly erupts from a single round hole on the very top of its head — the blowhole, where the whale breathes out and in. Whales evolved from four-legged land mammals that lived tens of millions of years ago, so this blowhole is really just an ordinary body part that has slowly moved to a new spot. Which body part is the blowhole?",
+    "question": "A blue whale, longer than three school buses end to end, rolls up to the surface, and warm spray bursts from the blowhole on top of its head. Whales evolved from four-legged land mammals, and the blowhole is an ordinary body part that slowly moved there. Which body part is it?",
     "answer": "Its nostrils",
     "choices": [
       "Its nostrils",
@@ -183,7 +183,7 @@
   },
   {
     "tier": 2,
-    "question": "You can tell a great baleen whale — like the enormous blue whale that strains krill through comb-like plates in its mouth — from a toothed whale like a dolphin just by looking at the spray it shoots into the air when it surfaces to breathe. The two kinds of whale don't have the same number of blowholes on top of the head. A dolphin's spout comes from a single hole. How many blowholes does a baleen whale have?",
+    "question": "A blue whale strains krill through comb-like plates in its mouth, so it is a baleen whale; a dolphin is a toothed whale. A whale-watcher can tell one kind from the other by its spout. A dolphin's spout comes from a single hole. How many blowholes does a baleen whale have?",
     "answer": "Two",
     "choices": [
       "Two",
@@ -196,7 +196,7 @@
   },
   {
     "tier": 2,
-    "question": "The African lungfish is a long, brown, eel-shaped fish that lives in muddy rivers and swamps south of the Sahara. On the outside it looks like an ordinary fish. But drop one into a sealed tank of perfectly clean water with no way to reach the surface, and after a while it will die — the fish actually drowns. What is strange about how this lungfish gets its oxygen?",
+    "question": "A long, brown, eel-shaped fish of the muddy swamps south of the Sahara looks like any other fish from the outside. Yet sealed in a tank of clean water, with no way to reach the surface, it will in time drown. What is strange about how it gets its oxygen?",
     "answer": "It has a true lung and gulps air",
     "choices": [
       "It has a true lung and gulps air",
@@ -209,7 +209,7 @@
   },
   {
     "tier": 2,
-    "question": "The betta, also called the Siamese fighting fish, lives in warm, stagnant puddles and rice paddies in Southeast Asia. In such still, muddy water almost no oxygen dissolves, and other fish would quickly suffocate. But every few minutes a betta swims up to the surface and takes a real gulp of air from above the water — and it thrives. What organ inside the betta's head lets it breathe air like that?",
+    "question": "A betta, the Siamese fighting fish, lives in warm, stagnant puddles and rice paddies in Southeast Asia, where almost no oxygen dissolves in the still water. Other fish would soon suffocate there, but every few minutes the betta swims up, gulps air, and thrives. What organ in its head lets it breathe that way?",
     "answer": "A labyrinth organ that works like a lung",
     "choices": [
       "A labyrinth organ that works like a lung",
@@ -222,20 +222,7 @@
   },
   {
     "tier": 3,
-    "question": "A dolphin or a great whale can never fall fully asleep the way you do at night. If it did, its body would go limp, sink beneath the waves, and drown. Unlike a land mammal — whose breathing runs on automatic even in deep sleep — a whale must actively decide to open its blowhole for every single breath at the surface. What clever trick does the whale's brain use to still get the rest it needs?",
-    "answer": "It keeps half the brain awake at a time",
-    "choices": [
-      "It keeps half the brain awake at a time",
-      "It shuts down and floats on reflex",
-      "It stores enough oxygen to sleep for hours",
-      "It breathes automatically like we do"
-    ],
-    "context": "A whale is a 'conscious breather' - it actively contracts muscles to open its blowhole for every breath. Because breathing is not automatic, it can never sleep fully; it keeps half its brain awake to remember to surface, or it would drown. Source: baleinesendirect.org (respiratory system); Scientific American 'How do whales and dolphins sleep without drowning?'",
-    "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
-  },
-  {
-    "tier": 3,
-    "question": "The electric eel of the Amazon rainforest is a long, dark fish famous for stunning prey with jolts of its own electricity. It lives underwater, yet its gills are barely developed and useless. About 80% of the oxygen it needs comes not from the murky water but from the air above the surface, gulped down into a spongy lining inside its mouth. Trap the eel too deep to reach the surface and it will drown. About how often does the electric eel need to come up for a breath?",
+    "question": "The electric eel of the Amazon stuns its prey with jolts of its own electricity, and it lives underwater on gills so feeble they are almost useless. It gets about 80 percent of the oxygen it needs from air gulped into a spongy lining in its mouth, and an eel kept from the surface drowns. About how often must it rise for a breath?",
     "answer": "Every ten minutes or so",
     "choices": [
       "Every ten minutes or so",
@@ -248,7 +235,7 @@
   },
   {
     "tier": 3,
-    "question": "A great diving beetle is a fingernail-sized black beetle that hunts underwater in ponds and slow streams, snatching tadpoles and small fish. As it slips beneath the surface, a bead of pure liquid silver seems to cling to its shiny underside, glinting as it paddles along. That silver shimmer isn't really metal, and it isn't decoration — it is the piece of survival gear that lets the beetle stay under so long. What is the silver bead?",
+    "question": "The great diving beetle, black and about the size of a fingernail, hunts tadpoles and small fish in ponds and slow streams. As it slips under, a bead of what looks like liquid silver clings to it and glints as it paddles along. The silver is not metal, and it is not decoration: it is what lets the beetle stay under so long. What is the silver bead?",
     "answer": "A trapped bubble of air held under its wing covers",
     "choices": [
       "A trapped bubble of air held under its wing covers",
@@ -261,7 +248,7 @@
   },
   {
     "tier": 3,
-    "question": "The marine iguana of the Galapagos Islands is the only lizard on Earth that feeds in the sea. It dives from black volcanic shorelines on a single lungful of air to graze on green algae growing on the rocks under the waves. But like every lizard, it is cold-blooded, and the cold Pacific water drains its body heat fast. What must the marine iguana do the moment it climbs back out onto land?",
+    "question": "The marine iguana of the Galapagos is the only lizard on Earth that feeds in the sea. It dives from black volcanic shores on a single breath to graze on algae growing on the rocks underwater. Like every lizard it is cold-blooded, and the cold Pacific drains its body heat fast. What must it do when it climbs back onto land?",
     "answer": "Bake on the black rocks in the sun",
     "choices": [
       "Bake on the black rocks in the sun",
@@ -274,7 +261,7 @@
   },
   {
     "tier": 3,
-    "question": "In the still ponds and slow streams of Europe swims a small brown spider that has done what no other spider on Earth has managed. The diving-bell spider spends almost its entire life underwater -- resting, hunting insects, mating, and laying its eggs, all beneath the surface. Yet like every spider it must breathe air, not water. How does it keep a supply of air down there to breathe?",
+    "question": "Europe's still ponds and slow streams are home to a small brown spider that spends almost its entire life underwater: resting, hunting insects, mating and laying its eggs, all beneath the surface. Yet like every spider, the diving-bell spider must breathe air, not water. How does it keep a supply of air down there?",
     "answer": "It builds a silk dome and fills it with air from the surface",
     "choices": [
       "It builds a silk dome and fills it with air from the surface",
@@ -287,7 +274,7 @@
   },
   {
     "tier": 4,
-    "question": "In the swamps of Africa lives a strange scaly fish with long snake-like fins and a pair of primitive lungs beside its gills. When the dry season comes and its pool shrinks to cracked mud, the African lungfish burrows down into the muck, curls back on itself, and oozes so much slippery mucus that a hardened cocoon sets around its body. Trapped in the baked earth, it slows almost to a halt and waits for rain. Some have been dug up alive after how long in this buried, dried-out sleep?",
+    "question": "When drought dries its swamp pool to cracked mud, a scaly African fish with long, snake-like fins burrows into the muck, curls back on itself and oozes so much mucus that a hard cocoon sets around its body. Sealed in the baked earth, it slows almost to a halt and waits for rain. Some have been dug up alive after how long in this buried, dried-out sleep?",
     "answer": "Up to four years",
     "choices": [
       "Up to four years",
@@ -300,7 +287,7 @@
   },
   {
     "tier": 4,
-    "question": "The diving beetle's silver bubble is more than a stored tank - scientists call it a 'physical gill.' As the beetle burns through the oxygen inside, the bubble keeps partly refilling on its own, letting the beetle stay down far longer than the tank alone should allow. Where does that fresh oxygen come from?",
+    "question": "Scientists call the diving beetle's silver bubble a physical gill, because it is more than a stored tank. As the beetle burns through the oxygen inside, the bubble partly refills on its own, so the beetle stays down far longer than the tank alone should allow. Where does that fresh oxygen come from?",
     "answer": "It diffuses IN from the surrounding water",
     "choices": [
       "It diffuses IN from the surrounding water",
@@ -326,7 +313,7 @@
   },
   {
     "tier": 4,
-    "question": "No mammal on Earth holds its breath deeper or longer than Cuvier's beaked whale. On a single lungful of air, one recorded dive lasted an astonishing 3 hours and 42 minutes - beating even the sperm whale and the elephant seal. Roughly how deep did another of its record dives reach?",
+    "question": "Cuvier's beaked whale dives deeper and longer on one breath than any other mammal. One recorded dive lasted 3 hours and 42 minutes, all on a single lungful of air, beating even the sperm whale and the elephant seal. Roughly how deep did another of its record dives reach?",
     "answer": "Nearly 3 kilometers down",
     "choices": [
       "Nearly 3 kilometers down",
@@ -352,7 +339,7 @@
   },
   {
     "tier": 5,
-    "question": "For a hundred years, scientists argued over which living fish is our closest fishy cousin, the nearest relative of every land animal with a backbone. Two air-breathers led the field: one survives droughts sealed in a mucus cocoon in the mud, the other a 'living fossil' rediscovered alive in 1938. Which fish is the closest living relative of all land vertebrates?",
+    "question": "Scientists argued for a century over which living fish is the closest relative of every land animal with a backbone. Two rivals led the field: one survives droughts sealed in a mucus cocoon in the mud, and the other is a living fossil rediscovered in 1938. Which fish turned out to be the closer cousin?",
     "answer": "The lungfish",
     "choices": [
       "The lungfish",
@@ -6865,7 +6852,7 @@
   },
   {
     "tier": 1,
-    "question": "A dolphin off the coast rises up out of the sea, opens a single small hole on the top of its head called a blowhole, and takes a long breath before diving back under. Its body is smooth and streamlined like a fish's, but that breath through the blowhole gives away that it is not a fish at all. Even though a dolphin lives its whole life in the ocean, what kind of creature is it really?",
+    "question": "A dolphin rises from the sea, opens the blowhole atop its head and takes a long breath before diving again. Its sleek body looks like a fish's, but that breath gives it away. What kind of creature is it really?",
     "answer": "A warm-blooded mammal that must breathe air",
     "choices": [
       "A warm-blooded mammal that must breathe air",
@@ -6878,7 +6865,7 @@
   },
   {
     "tier": 2,
-    "question": "A bottlenose dolphin is the big grey dolphin most people picture from aquariums and tropical beaches. In its first months of life, a young bottlenose makes up a special whistle all its own and keeps it for the rest of its life. Every other dolphin in the sea has a different one. When a dolphin calls out its whistle, other dolphins that know it recognize who is speaking. What does this personal whistle work like?",
+    "question": "A young bottlenose dolphin, the big grey dolphin seen in aquariums and off tropical beaches, makes up a whistle all its own in its first months and keeps it for life. No other dolphin has the same one, and dolphins that know it recognize who is calling. What does this personal whistle work like?",
     "answer": "Its own name, unique to just that dolphin",
     "choices": [
       "Its own name, unique to just that dolphin",
@@ -6891,7 +6878,7 @@
   },
   {
     "tier": 2,
-    "question": "Off Shark Bay on the western coast of Australia, some wild bottlenose dolphins hunt for fish that hide down in beds of sharp, rocky rubble on the seafloor. Poking a soft, sensitive nose through those rocks would scrape it raw. So before diving down to dig, each of these dolphins tears something off the sea bottom and wears it as a protective cap. What do they wear?",
+    "question": "A few bottlenose dolphins off Shark Bay, on Australia's west coast, hunt fish hiding in sharp, rocky rubble on the seafloor. A soft nose poked through that rubble would be scraped raw, so before each dig these dolphins tear something off the bottom and wear it as a protective cap. What do they wear?",
     "answer": "A cone-shaped sea sponge over the beak",
     "choices": [
       "A cone-shaped sea sponge over the beak",
@@ -6904,7 +6891,7 @@
   },
   {
     "tier": 3,
-    "question": "A bottlenose dolphin cannot see a fish hiding in dark, muddy water, so it fires a stream of clicks out of its head and reads the returning echoes to map the world around it — a trick called echolocation. But raw clicks would spread uselessly in every direction like sound from a shouting mouth. The fatty, dome-shaped bulge in a dolphin's forehead, called the melon, fixes that problem. What does the melon do to the clicks?",
+    "question": "A bottlenose dolphin hunting in dark, muddy water cannot see the fish hiding there, so it fires clicks from its head and reads the returning echoes, a trick called echolocation. Raw clicks would spread uselessly in every direction, like a shout. The fatty bulge in its forehead, called the melon, solves that. What does the melon do to each click?",
     "answer": "Bends it into a tight, aimed beam",
     "choices": [
       "Bends it into a tight, aimed beam",
@@ -6917,15 +6904,15 @@
   },
   {
     "tier": 3,
-    "question": "A dolphin lives its whole life in the ocean and must keep swimming back up to the surface to breathe air. It can never sink into a full, whole-body sleep the way you do in your bed — if it did, it would stop swimming, stop breathing, and drown. Yet dolphins clearly do rest, day after day. So how does a dolphin sleep without drowning?",
+    "question": "A dolphin spends its whole life at sea. A land mammal's breathing runs on automatic even in deep sleep, but a dolphin must decide to open its blowhole for every breath. If it ever fell fully asleep, it would stop swimming, stop breathing and drown. How does a dolphin sleep without drowning?",
     "answer": "It sleeps with only half its brain at a time",
     "choices": [
       "It sleeps with only half its brain at a time",
       "It floats belly-up and holds its breath for hours",
-      "It wedges into a cave and stops swimming",
+      "It stores enough oxygen to sleep for hours",
       "It naps only during the safe daylight hours"
     ],
-    "context": "A dolphin uses 'unihemispheric sleep': only half its brain sleeps at a time while the other half stays awake so it never forgets to surface and breathe. It closes just one eye, the eye opposite the sleeping half. Source: Smithsonian Magazine, Dolphins Sleep With Only Half Their Brain; WDC.  (Legend.)",
+    "context": "A dolphin, like a whale, is a 'conscious breather': it actively contracts muscles to open its blowhole for every breath. Because breathing is not automatic, it can never sleep fully. Instead it uses 'unihemispheric sleep': only half its brain sleeps at a time while the other half stays awake so it never forgets to surface and breathe. It closes just one eye, the eye opposite the sleeping half. Source: Smithsonian Magazine, Dolphins Sleep With Only Half Their Brain; WDC; Scientific American 'How do whales and dolphins sleep without drowning?'; baleinesendirect.org (respiratory system).  (Legend.)",
     "topic": "dolphin"
   },
   {
@@ -6943,7 +6930,7 @@
   },
   {
     "tier": 4,
-    "question": "A dolphin has no ear-flaps sticking out of its smooth head, and only pinhole openings where you would expect ears. Yet a bottlenose dolphin hunting by echolocation — firing clicks and reading the returning echoes — catches those faint echoes with amazing precision. The returning sound doesn't come in through those tiny holes at all. It travels through a completely different, fat-filled part of the dolphin's face. Through which part of its body do those echoes travel to reach its inner ear?",
+    "question": "A dolphin has no ear flaps on its smooth head, only pinhole openings where ears would be. Yet a bottlenose hunting by echolocation catches faint returning echoes with great precision. The sound does not come in through those tiny holes; it travels through a different part of the dolphin's face. Through which part of its body do the echoes reach its inner ear?",
     "answer": "Its fat-filled lower jawbone",
     "choices": [
       "Its fat-filled lower jawbone",
@@ -6956,7 +6943,7 @@
   },
   {
     "tier": 4,
-    "question": "Wild bottlenose dolphins each carry a personal signature whistle, essentially a name. Researcher Vincent Janik found that a dolphin will learn a close friend's whistle and repeat it back, usually after the two are apart. He called this the first known example of what, in animals other than humans?",
+    "question": "Every wild bottlenose dolphin has a signature whistle that works as its name. Vincent Janik, a dolphin researcher, found that a dolphin will learn a close friend's whistle and repeat it back, usually after the two are apart. He called it the first known example, in animals other than humans, of what?",
     "answer": "Calling each other by name",
     "choices": [
       "Calling each other by name",
@@ -6969,7 +6956,7 @@
   },
   {
     "tier": 4,
-    "question": "Off Shark Bay in western Australia, some female bottlenose dolphins tear a cone-shaped sea sponge off the seafloor and wear it over their beak to protect their nose while they poke through rocks for hidden fish. Most dolphins in the world never do this — only a small group of Shark Bay females do. Scientists wanted to know: is a sponging dolphin simply born knowing the trick, or does she pick it up somehow? Where does a young sponger get the skill?",
+    "question": "A few female bottlenose dolphins in Shark Bay, Western Australia, tear a cone-shaped sponge off the seafloor and wear it on the beak while they poke through rocks for hidden fish. Almost no other dolphins in the world do it. Scientists wanted to know whether a sponger is born knowing the trick or picks it up somehow. Where does a young sponger get the skill?",
     "answer": "It learns it from its own mother",
     "choices": [
       "It learns it from its own mother",
@@ -6995,7 +6982,7 @@
   },
   {
     "tier": 4,
-    "question": "A bottlenose dolphin plunges hundreds of meters down, far past where a human diver would be crushed or crippled by the bends. As it descends, its heart deliberately slows to a crawl and one compartment of its lungs is allowed to squeeze shut. Why would a diving dolphin let part of its own lungs collapse on purpose?",
+    "question": "A bottlenose dolphin plunges hundreds of meters down, far past where a human diver would be crushed or crippled by the bends. As it descends, its heart slows to a crawl, and the pressure of the deep water squeezes one compartment of its lungs shut. Why is that collapse good for the dolphin?",
     "answer": "To keep deadly nitrogen from dissolving into its blood",
     "choices": [
       "To keep deadly nitrogen from dissolving into its blood",
@@ -10739,7 +10726,7 @@
   },
   {
     "tier": 1,
-    "question": "More than a kilometre down, in the cold and total dark of the deep ocean, a scavenger about the size of a small dog is walking the sea floor on seven pairs of legs. Its back is a fan of tough armored plates that overlap like tiles. This is the giant isopod — really just a huge deep-sea version of a tiny bug you may have flipped up from under a rock in your own backyard. Which everyday bug is it?",
+    "question": "A scavenger the size of a small dog walks the seafloor a kilometer down, its back armored in plates that overlap like tiles. The giant isopod is a deep-sea cousin of a bug found under garden rocks. Which bug is it?",
     "answer": "The pillbug (roly-poly)",
     "choices": [
       "The pillbug (roly-poly)",
@@ -10752,7 +10739,7 @@
   },
   {
     "tier": 1,
-    "question": "A giant isopod is a deep-sea crustacean — imagine a foot-long pill bug plated in tough purple-grey armor — that scavenges dead animals on the pitch-black ocean floor. Caught out in the open on flat mud as a hungry predator closes in on its softer underside, what does this armored scavenger do?",
+    "question": "A giant isopod, built like the little armored bugs under garden rocks but grown to a foot long, scavenges dead animals on the pitch-black ocean floor. Caught out on open mud as a hungry predator closes in on its softer underside, what does it do?",
     "answer": "Curls up into a tight ball",
     "choices": [
       "Curls up into a tight ball",
@@ -10765,7 +10752,7 @@
   },
   {
     "tier": 2,
-    "question": "The giant isopod is a deep-sea scavenger about the size of a small dog, walking the ocean floor a kilometre or more below the surface on seven pairs of legs. Down there, food almost never arrives — until a dead whale or big fish finally sinks out of the dark and thuds down into the mud. When such a rare feast finally lands, how does the giant isopod handle a meal that might have to last it for months, or even years?",
+    "question": "A giant isopod walks the ocean floor a kilometer or more down, where food almost never arrives. Then a dead whale or a big fish sinks out of the dark and thuds into the mud. How does the isopod handle a feast that may have to last it months, or even years?",
     "answer": "It gorges until it can barely move",
     "choices": [
       "It gorges until it can barely move",
@@ -10778,7 +10765,7 @@
   },
   {
     "tier": 3,
-    "question": "At Japan's Toba Aquarium, a famous giant isopod called 'No. 1' ate a chunk of horse mackerel on January 2, 2009 — and then, though it stayed plump and healthy the whole time, keepers watched it do something astonishing until it died in 2014. What did No. 1 do?",
+    "question": "A giant isopod called No. 1 lived at Japan's Toba Aquarium. It ate a chunk of horse mackerel on January 2, 2009, and stayed plump and healthy until it died in 2014. What did No. 1 do in all that time?",
     "answer": "Refused all food for over five years",
     "choices": [
       "Refused all food for over five years",
@@ -10791,7 +10778,7 @@
   },
   {
     "tier": 3,
-    "question": "The giant isopod scours a seafloor so deep it receives only about one-millionth of the sunlight that reaches the surface — near-total blackness, where it must still find carrion scattered across the mud. Look closely at this scavenger's head and you find one feature scaled up to a startling degree. What is it?",
+    "question": "The giant isopod scours a seafloor so deep it gets only about a millionth of the sunlight that reaches the surface. In that near-total blackness it must still find carrion scattered across the mud. One feature of its head is scaled up to a startling degree. What is it?",
     "answer": "Huge compound eyes with nearly 4,000 facets",
     "choices": [
       "Huge compound eyes with nearly 4,000 facets",
@@ -10804,7 +10791,7 @@
   },
   {
     "tier": 5,
-    "question": "The giant isopod is a garden pillbug scaled up to the size of a small dog, and scientists still argue over WHY the cold deep breeds such giants. The front-running explanation ties the animal's huge body to a single physical property of that frigid water. Which explanation leads?",
+    "question": "The giant isopod is a garden pillbug grown to the size of a small dog, and scientists still argue over why the cold deep breeds such giants. The leading explanation ties its huge body to one physical property of that frigid water. Which explanation leads?",
     "answer": "Frigid deep water holds far more dissolved oxygen, so a larger body can still take in enough to breathe",
     "choices": [
       "Frigid deep water holds far more dissolved oxygen, so a larger body can still take in enough to breathe",
@@ -10817,7 +10804,7 @@
   },
   {
     "tier": 4,
-    "question": "A giant isopod can go years between meals without wasting away, and a 2022 genome study found the reason built into its body. Its genes for burning fat are unusually reduced, so it can barely spend the energy it stores. Where does all that unused fat go?",
+    "question": "A giant isopod can go years between meals without wasting away. When scientists read the genome of a close relative in 2022, they found why: its genes for burning fat are unusually reduced, so it can barely spend the energy it stores. Where does all that unused fat go?",
     "answer": "Into a stomach that swells until it fills about two-thirds of the body cavity",
     "choices": [
       "Into a stomach that swells until it fills about two-thirds of the body cavity",
@@ -20879,7 +20866,7 @@
   },
   {
     "tier": 1,
-    "question": "On a warm tropical reef, a small pistol shrimp hunts a passing fish without ever chasing it down. The shrimp has one oversized claw, almost half its body length. That claw slams shut with a violent snap — and the fish is stunned before the shrimp has moved an inch. So what actually reached across the water and hit the fish?",
+    "question": "A pistol shrimp on a warm reef hunts without chasing anything. Its oversized claw, almost half its body length, slams shut with a violent snap, and a passing fish is stunned before the shrimp moves an inch. What crossed the water and hit the fish?",
     "answer": "A jet of water fired by the snap",
     "choices": [
       "A jet of water fired by the snap",
@@ -20892,7 +20879,7 @@
   },
   {
     "tier": 1,
-    "question": "The pistol shrimp lives on coral reefs and carries one huge oversized claw on the front of its body. When it snaps that claw shut in a lightning-fast strike, it fires a bubble that pops with a shock wave loud enough to stun a passing fish stone dead. A weapon like that surely belongs to a giant, right? So how long is a pistol shrimp, from tip to tail?",
+    "question": "A pistol shrimp snaps its one huge claw shut with a blast loud enough to stun a passing fish. A weapon like that sounds as if it belongs to a giant. How long is a pistol shrimp, tip to tail?",
     "answer": "3 to 5 cm (an adult's thumb)",
     "choices": [
       "3 to 5 cm (an adult's thumb)",
@@ -20905,7 +20892,7 @@
   },
   {
     "tier": 2,
-    "question": "During World War II, American submarine crews listened at their sonar sets for the sound of enemy ships. Instead, they kept hearing a loud, popping crackle across the sea floor — like a giant bowl of frying bacon. It was so noisy their sonar couldn't pick anything else out. Clever sub captains learned to park their boats right inside the loudest patches, where the racket hid the whir of their own engines. What tiny sea creatures were making all that undersea noise?",
+    "question": "American submarine crews in World War II listened at their sonar sets for enemy ships and kept hearing a popping crackle across the seafloor, like a giant pan of frying bacon. Clever captains learned to hide their boats inside the loudest patches, where the racket covered their own engines. What was making all that noise?",
     "answer": "Colonies of snapping shrimp",
     "choices": [
       "Colonies of snapping shrimp",
@@ -20918,7 +20905,7 @@
   },
   {
     "tier": 2,
-    "question": "A pistol shrimp is nearly blind and lives in a burrow it digs and cleans in the sandy sea floor. It shares that burrow with a small, sharp-eyed goby fish that hovers at the entrance and stands guard. Out on the open sand, the shrimp can't see the goby's face. So how does the shrimp know the instant the goby spots danger and bolts back inside?",
+    "question": "A nearly blind pistol shrimp digs and cleans a burrow in the sandy seafloor and shares it with a small, sharp-eyed goby that hovers at the entrance on guard. Out on the open sand, the shrimp cannot see the goby's face. How does it know the instant the goby spots danger and bolts inside?",
     "answer": "It keeps one long antenna touching the goby",
     "choices": [
       "It keeps one long antenna touching the goby",
@@ -20931,7 +20918,7 @@
   },
   {
     "tier": 3,
-    "question": "Scientists found the pistol shrimp's fired water jet alone doesn't quite explain the killing blow. The jet moves so fast it drops the water pressure and creates something behind it — and THAT is the real weapon. What forms and then destroys the prey?",
+    "question": "The pistol shrimp's water jet alone does not quite explain its killing blow, scientists found. The jet moves so fast that it drops the water pressure behind it and creates something there, and that is the real weapon. What forms and then destroys the prey?",
     "answer": "A collapsing bubble that unleashes a shockwave",
     "choices": [
       "A collapsing bubble that unleashes a shockwave",
@@ -20944,7 +20931,7 @@
   },
   {
     "tier": 3,
-    "question": "A pistol shrimp is a small ocean shrimp with one giant snapping claw and one tiny regular claw. It snaps that big claw shut so fast it fires a bullet of hot water that can stun a small fish. Now imagine a fight goes badly and the pistol shrimp loses that big snapping claw to an attacker. Rather than simply regrowing the same weapon on the same side, what does its body do over the following molts?",
+    "question": "A pistol shrimp has one giant snapping claw and one small ordinary claw, and its snap shoots a jet of water hard enough to stun a small fish. In a fight, an attacker tears off the big claw. Rather than simply regrowing the same weapon on the same side, what does its body do over the next molts?",
     "answer": "Its small claw becomes the new weapon; the stump regrows small",
     "choices": [
       "Its small claw becomes the new weapon; the stump regrows small",
@@ -20957,7 +20944,7 @@
   },
   {
     "tier": 4,
-    "question": "When a pistol shrimp's claw slams shut, it fires a jet of water so fast that a tiny bubble collapses inside it — a moment scientists call cavitation. That collapse doesn't just make a shockwave that stuns fish. For a sliver of a second, it also emits a faint flash of light, too dim for the naked eye to catch. Researchers named this glow with a playful term. What is it called?",
+    "question": "A pistol shrimp's claw snaps shut, and the jet of water it shoots is so fast that a tiny bubble forms and collapses inside it, which scientists call cavitation. The collapse makes a shockwave that stuns fish, and for a sliver of a second it also gives off a flash of light too faint for the naked eye. Researchers gave the glow a playful name. What is it?",
     "answer": "Shrimpoluminescence",
     "choices": [
       "Shrimpoluminescence",
@@ -20970,7 +20957,7 @@
   },
   {
     "tier": 4,
-    "question": "When a pistol shrimp's claw snaps shut, the jet it fires creates a tiny cavitation bubble — a void in the water — that collapses almost instantly. Inside that collapsing bubble, for a sliver of a second, the temperature spikes to at least about 5,000 kelvin, hotter than a blast furnace. To grasp how extreme that is, what everyday hot thing does that pinprick of heat very nearly match?",
+    "question": "A pistol shrimp's snap creates a tiny cavitation bubble, a void in the water that collapses almost at once. In that instant the heat inside spikes to at least about 5,000 kelvin. What does that pinprick of heat very nearly match?",
     "answer": "The surface of the Sun",
     "choices": [
       "The surface of the Sun",

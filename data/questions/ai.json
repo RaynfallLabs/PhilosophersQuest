@@ -638,20 +638,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1950, a British mathematician published a famous paper that asked, 'Can machines think?' He suggested a simple test: if you type back and forth with a hidden machine and cannot tell it apart from a real person, the machine should count as smart. During World War II he had helped crack Nazi codes at Bletchley Park, and after the war he helped invent early computers. Who was he?",
-    "answer": "Alan Turing",
-    "choices": [
-      "Alan Turing",
-      "Albert Einstein",
-      "Henry Ford",
-      "James Watt"
-    ],
-    "context": "Alan Turing's 1950 paper 'Computing Machinery and Intelligence' proposed what's now called the Turing test. Turing had broken the Enigma code at Bletchley Park during WWII. He's considered a founder of computer science. He died in 1954, two years after being chemically castrated by the British government for being homosexual.",
-    "topic": "alan-turing"
-  },
-  {
-    "tier": 1,
-    "question": "In 1950, the British mathematician Alan Turing proposed a fair way to check whether a machine is smart. Sit at a keyboard, type messages back and forth, and try to guess if a human or a machine is on the other end. If you can't tell them apart, the machine passes. People still argue today about which chatbots have passed. What is this famous test called?",
+    "question": "A British mathematician asked in 1950 whether machines can think. He proposed a test in which a judge types to a hidden person and a hidden machine and tries to tell which is which. What is the test called?",
     "answer": "The Turing test",
     "choices": [
       "The Turing test",
@@ -659,7 +646,7 @@
       "The Hilbert test",
       "The von Neumann test"
     ],
-    "context": "The Turing test was Alan Turing's 1950 thought experiment for machine intelligence. He didn't claim to have built such a machine — he argued for a way to settle the question if one ever appeared. Modern chatbots can sometimes pass simple versions; whether that counts as 'intelligence' is still debated.",
+    "context": "Alan Turing's 1950 paper 'Computing Machinery and Intelligence' opened with 'I propose to consider the question, can machines think?' He answered by proposing the imitation game, now called the Turing test. He didn't claim to have built such a machine; he argued for a way to settle the question if one ever appeared. Turing had broken the German Enigma cipher at Bletchley Park during WWII and is considered a founder of computer science. Modern chatbots can sometimes pass simple versions of the test; whether that counts as 'intelligence' is still debated.",
     "topic": "alan-turing"
   },
   {
@@ -3082,20 +3069,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1950, a British mathematician working at the University of Manchester published a paper called 'Computing Machinery and Intelligence.' Its opening question was 'Can machines think?' Instead of trying to define 'think,' he proposed a game in which a human judge chats with a hidden human and a hidden machine, then guesses which is which. His name is on almost every history-of-AI reading list. Who was he?",
-    "answer": "Alan Turing, who proposed an imitation game between a human and a machine",
-    "choices": [
-      "Alan Turing, who proposed an imitation game between a human and a machine",
-      "John von Neumann, the Hungarian-American architect of early stored-program computers",
-      "Norbert Wiener, the MIT mathematician who coined the term 'cybernetics' in 1948",
-      "Claude Shannon, the Bell Labs founder of modern information theory"
-    ],
-    "context": "Alan Turing's 1950 paper 'Computing Machinery and Intelligence' opened with 'I propose to consider the question, can machines think?' He answered by proposing the imitation game — what is now called the Turing test. Turing had also broken the German Enigma cipher at Bletchley Park during WWII and is widely considered a founder of computer science.",
-    "topic": "alan-turing"
-  },
-  {
-    "tier": 2,
-    "question": "In 1950, the British mathematician Alan Turing published a short essay asking whether machines could ever think. He proposed a game — later called the Turing Test — in which a human judge would try to tell a machine's typed replies apart from a real person's. The essay itself appeared not in a science or engineering journal but in a publication devoted to the study of mind and meaning, and it is still cited today as a founding document of artificial intelligence. What was the exact title of that 1950 paper?",
+    "question": "Alan Turing wrote a paper in 1950 on whether machines can think, and sent it not to a science journal but to one devoted to the study of mind. What was the paper's title?",
     "answer": "'Computing Machinery and Intelligence' — published in the philosophy journal Mind",
     "choices": [
       "'Computing Machinery and Intelligence' — published in the philosophy journal Mind",
@@ -3108,7 +3082,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Alan Turing wrote his famous 1950 paper on machine intelligence, he had already served his country in wartime. The British government pulled him into a top-secret operation at a country estate north of London, where a team of mathematicians and codebreakers raced to decipher enemy military messages. Turing's work there is thought to have shortened the fight against Nazi Germany by months or even years. What was he working on?",
+    "question": "Alan Turing served his country before his paper on thinking machines. The government sent him to a top-secret operation at a country estate north of London, where mathematicians raced to decipher enemy messages. His work there is thought to have shortened the fight against Nazi Germany by months or years. What was he working on?",
     "answer": "Breaking the German Enigma cipher at Bletchley Park during World War II",
     "choices": [
       "Breaking the German Enigma cipher at Bletchley Park during World War II",
@@ -3121,7 +3095,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1950, Alan Turing proposed a simple contest: a human judge types back and forth with two hidden partners, one a machine and one a real person, then tries to guess which is which. If the judge cannot dependably tell them apart, the machine has passed what came to be called the Turing Test. Today, headlines sometimes claim a chatbot like ChatGPT has passed it. What kind of evidence do they usually mean by that claim?",
+    "question": "A news story says a chatbot has passed the imitation game, in which a judge types to a hidden person and a hidden machine. What evidence does that rest on?",
     "answer": "Human judges could not reliably tell the chatbot's writing from a real person's in conversation",
     "choices": [
       "Human judges could not reliably tell the chatbot's writing from a real person's in conversation",
@@ -3134,7 +3108,7 @@
   },
   {
     "tier": 2,
-    "question": "Alan Turing is famous as a founder of artificial intelligence because of his 1950 paper on thinking machines. But historians also call him a founder of computer science itself — a title based on something he did fourteen years earlier, before AI was even a phrase. In that prior project, Turing described an imaginary device made of a paper tape and simple rules, capable in principle of running any computation ever conceived. Why is Turing considered a founder of computer science too?",
+    "question": "Alan Turing imagined a device of paper tape and simple rules before AI was even a phrase. Why is he called a founder of computer science?",
     "answer": "His earlier 1936 work on the 'Turing machine' is one of the foundations of modern computing",
     "choices": [
       "His earlier 1936 work on the 'Turing machine' is one of the foundations of modern computing",
@@ -4265,7 +4239,7 @@
   },
   {
     "tier": 2,
-    "question": "At the eye doctor, a nurse takes a close-up photograph of the back inside of your eye — a picture of your retina, the layer that senses light. Modern AI tools trained on tens of thousands of these retinal photos can now scan a single image and flag one common disease before a human doctor might even see the signs. Which disease is this?",
+    "question": "At an eye clinic, a nurse photographs the back of a patient's eye: the retina, the layer that senses light. AI tools trained on tens of thousands of these photos can now scan a single image and flag one common disease, sometimes before a doctor would even see the signs. Which disease is it?",
     "answer": "Diabetic retinopathy, which can lead to blindness if untreated",
     "choices": [
       "Diabetic retinopathy, which can lead to blindness if untreated",
@@ -7567,7 +7541,7 @@
   },
   {
     "tier": 3,
-    "question": "Diabetic retinopathy is one of the leading causes of blindness worldwide. Catching it early usually requires a specialist to peer at photographs of the back of a patient's eye. Google Health trained an AI to spot the disease in those retinal images with expert-level accuracy. The tool is now deployed in clinics across India and Thailand, where trained eye specialists are rare and waiting lists run for months. What does the AI specifically do inside that workflow?",
+    "question": "At a clinic in Thailand, a Google Health model reads a photograph of a patient's retina, a job that once needed an eye specialist. Such specialists are scarce in Thailand and India, and the wait to see one can run for months. What does the model do in the clinic's routine?",
     "answer": "Filters who needs to see a specialist next, most retinas are normal and the AI catches the high-risk ones",
     "choices": [
       "Filters who needs to see a specialist next, most retinas are normal and the AI catches the high-risk ones",
@@ -7580,7 +7554,7 @@
   },
   {
     "tier": 3,
-    "question": "AI systems that detect skin cancer from dermatology photos have been studied heavily. Some perform comparably to or better than dermatologists on benchmark tests. But the systems do not always generalize. What failure has been documented when they are used in the real world?",
+    "question": "AI systems that spot skin cancer in dermatology photos have been studied heavily, and on benchmark tests some do as well as dermatologists, or better. Used in the real world, though, the systems do not always generalize. What failure has been documented?",
     "answer": "Worse performance on skin tones underrepresented in the training data",
     "choices": [
       "Worse performance on skin tones underrepresented in the training data",
@@ -10830,7 +10804,7 @@
   },
   {
     "tier": 4,
-    "question": "A Food and Drug Administration (FDA)-cleared AI tool can spot diabetic retinopathy from an eye photo about as well as a trained eye doctor. The tool is called IDx-DR (short for diabetic retinopathy). It was the first such AI diagnostic the FDA approved, back in 2018. Why is it useful even though eye doctors already exist?",
+    "question": "A camera takes a picture of a patient's retina, and an AI tool reads it about as well as a trained eye doctor would. The Food and Drug Administration cleared the first tool of this kind in 2018. Why is it useful when eye doctors already exist?",
     "answer": "It lets primary-care offices screen patients on the spot — many diabetics never make it to an ophthalmologist before damage is done",
     "choices": [
       "It lets primary-care offices screen patients on the spot — many diabetics never make it to an ophthalmologist before damage is done",
@@ -10843,7 +10817,7 @@
   },
   {
     "tier": 4,
-    "question": "A 2020 study in Nature reported a Google Health AI matched or exceeded expert radiologists at spotting breast cancer in mammograms across a US and a UK dataset. Headlines proclaimed AI radiologists. Yet in 2025, human breast radiologists still read most mammograms. What kept the lab result from sweeping the field?",
+    "question": "Google Health's team reported in Nature in 2020 that its AI matched or exceeded expert radiologists at spotting breast cancer in mammograms, on one American and one British dataset. Headlines announced the arrival of the AI radiologist. Five years later, human radiologists still read most mammograms. What kept the lab result from sweeping the field?",
     "answer": "Real hospital deployment is a different bar — workflow, legal liability, and FDA clearance for the specific clinical use kept the human in the loop",
     "choices": [
       "Real hospital deployment is a different bar — workflow, legal liability, and FDA clearance for the specific clinical use kept the human in the loop",
@@ -11155,7 +11129,7 @@
   },
   {
     "tier": 4,
-    "question": "A team of medical researchers trained an AI to spot skin cancer from photographs, and on the hospital's own test images it did brilliantly — beating trained doctors on some measures. Then they carried the same model to a different hospital: different camera, different lighting, a different mix of patients. The accuracy dropped hard. This kind of failure has a specific name AI engineers use for it. What is it called?",
+    "question": "A team of medical researchers trained an AI to spot skin cancer in photographs, and on test images from the researchers' own hospital it beat trained doctors on some measures. The researchers then carried the same model to a different hospital, with a different camera, different lighting and a different mix of patients, and the accuracy dropped hard. What do engineers call this failure?",
     "answer": "Distribution shift — the model learned the test data's specific quirks, not the general task of spotting cancer",
     "choices": [
       "Distribution shift — the model learned the test data's specific quirks, not the general task of spotting cancer",
@@ -11986,8 +11960,8 @@
     "topic": "ai-detectors"
   },
   {
-    "tier": 4,
-    "question": "An attack called 'data poisoning' happens during the training phase of an AI, long before the model ever ships to users. The attacker slips poisoned content — carefully crafted webpages, subtly wrong Wikipedia edits, tainted forum posts — into places where automated scrapers will find it. Once that content ends up in the training data, the finished model behaves incorrectly on specific inputs the attacker chose. Why is this attack unusually hard to defend against?",
+    "tier": 3,
+    "question": "An attacker out to corrupt an AI model never touches the finished product. He plants crafted webpages and subtly wrong Wikipedia edits for scrapers to find, and the damage is baked in during training. Why is data poisoning so hard to stop?",
     "answer": "Modern training datasets pull from huge swaths of the internet — attackers can plant content years before any specific model trains on it",
     "choices": [
       "Modern training datasets pull from huge swaths of the internet — attackers can plant content years before any specific model trains on it",
@@ -11995,12 +11969,12 @@
       "Modern training datasets are reviewed by humans — and poisoning attacks fail any time a human spot-checks the data",
       "Modern training datasets exist only in private labs — and outside attackers have no way to access them"
     ],
-    "context": "Data poisoning is a research-active threat. Frontier models train on Common Crawl scrapes, public code repositories, Reddit posts, Wikipedia, and many other internet sources. An attacker who plants targeted content on the open web can hope future training pipelines ingest it. Researchers have demonstrated 'sleeper' poisoning where a model behaves normally except when triggered by a specific phrase. Defenses are imperfect: data filtering catches some attempts; provenance-tracking helps; but at internet scale, complete elimination is unrealistic. The defensive principle: don't assume training data was clean; expect models to have some weird behaviors driven by content the trainers didn't curate.",
+    "context": "Data poisoning is a research-active threat. Frontier models train on Common Crawl scrapes, public code repositories, Reddit posts, Wikipedia, and many other internet sources. Anyone can publish a webpage, and an attacker who plants targeted content on the open web can hope future training pipelines ingest it; studies show that even a small percentage of malicious examples can leave a detectable trace in a model's behavior. Researchers have demonstrated 'sleeper' poisoning where a model behaves normally except when triggered by a specific phrase. Defenses are imperfect: data filtering catches some attempts; provenance-tracking helps; but at internet scale, complete elimination is unrealistic. The recognition skill: 'trained on the internet' means the model has seen things the trainers didn't choose.",
     "topic": "data-poisoning-artist-defense"
   },
   {
-    "tier": 4,
-    "question": "In late 2023, researchers at the University of Chicago led by professor Ben Zhao released a tool called Nightshade, aimed at digital artists. It lets an artist add tiny hidden tweaks to their images — changes invisible to a human eye. If an AI image-generation company then scrapes those altered images and trains on them without permission, the trained model gets confused about what things look like — a picture of a cat might start being labeled as a dog. What real-world problem was Nightshade designed to fight?",
+    "tier": 3,
+    "question": "Ben Zhao's lab at the University of Chicago made Glaze, then Nightshade, for digital artists. Nightshade hides tweaks in an image that no human eye can see. If an image-generation company scrapes the altered pictures and trains on them, the model gets confused about what things look like: a cat might be labeled a dog. What problem was Nightshade built to fight?",
     "answer": "AI companies were training image generators on artists' work without consent — Nightshade was a defensive tool, not an attack",
     "choices": [
       "AI companies were training image generators on artists' work without consent — Nightshade was a defensive tool, not an attack",
@@ -12008,12 +11982,12 @@
       "AI companies were releasing models too slowly — Nightshade automated the next stage of model development",
       "AI companies were planning to retire — Nightshade was the official handoff tool for retiring legacy models"
     ],
-    "context": "Nightshade and its predecessor Glaze (Ben Zhao's group at U Chicago) were responses to the broad practice of AI image labs training on scraped art without artist consent. Artists upload Nightshaded versions of their work; if a model trains on those images, its outputs degrade — a face prompt might produce a vehicle, for example. The tool sparked debate: is it a defensive measure (analogous to copyright protection) or an attack (analogous to malware)? The legal status is unsettled. The broader pattern matters more than the specific tool: as scraping for training proceeds, artists, writers, and other content creators are developing defensive techniques. Some are technical (Nightshade); some legal (lawsuits, opt-outs); some structural (paywalls, robots.txt).",
+    "context": "Nightshade and its predecessor Glaze, both from Ben Zhao's team at the University of Chicago, were a response to AI image labs training on scraped art without artists' consent. They add adversarial perturbations to an image (tiny changes invisible to humans) that confuse a training model. Glaze cloaks an artist's style so a model can't replicate it; Nightshade poisons the training pipeline so a model trained on enough Nightshaded images of, say, 'dogs' may start producing cats instead. The tools sparked a debate: is poisoning one's own work a defensive measure, like copyright protection, or an attack, like malware? The legal status is unsettled. The broader pattern: as scraping for training proceeds, artists, writers and other content creators are developing defensive techniques. Some are technical (Nightshade), some legal (lawsuits, opt-outs), some structural (paywalls, robots.txt).",
     "topic": "data-poisoning-artist-defense"
   },
   {
     "tier": 4,
-    "question": "An attack called 'model stealing' targets a live commercial AI. The attacker signs up for the paid service like a normal customer, then sends the model an enormous number of queries — sometimes millions — and uses the answers as training data to teach a copycat model. The stolen copy can end up almost as capable as the original, without ever paying the original company's massive training bill. Why is this a serious worry for companies that only rent access to their AI models through a paid programming interface?",
+    "question": "An attacker signs up for a commercial AI model's paid service like any other customer, then sends it millions of queries and uses the answers to train a copycat. The copy can end up nearly as capable as the original. Why does this 'model stealing' worry companies that rent out their models through a paid programming interface?",
     "answer": "It can let competitors copy a model's capabilities without paying the training cost — undermining the API business",
     "choices": [
       "It can let competitors copy a model's capabilities without paying the training cost — undermining the API business",
@@ -14223,19 +14197,6 @@
   },
   {
     "tier": 5,
-    "question": "Image models like Midjourney and Stable Diffusion were trained on huge sets of web images. Many were copyrighted artist portfolios. By 2024, lawsuits piled up (Getty Images vs. Stability AI; an artists' class-action suit). Tools called Glaze and Nightshade came out. What problem do those last two tools try to solve?",
-    "answer": "They alter an artwork so AI training on it produces degraded or distorted models — letting artists 'poison' or 'cloak' their own work.",
-    "choices": [
-      "They alter an artwork so AI training on it produces degraded or distorted models — letting artists 'poison' or 'cloak' their own work.",
-      "They embed cryptographic watermarks in any AI image — tracing it back to the model that produced it, even if the file is later edited.",
-      "They scan AI-generated images and tag them with metadata — letting search engines demote them in image results automatically by default.",
-      "They convert AI-generated artwork into NFTs on a public blockchain — creating a permanent ownership record at the time of creation."
-    ],
-    "context": "Glaze and Nightshade, both developed at the University of Chicago by Ben Zhao's team, take a different approach from watermarking or legal action. They add adversarial perturbations to an image — tiny changes invisible to humans — that confuse a training model. Glaze cloaks an artist's style so a model can't replicate it; Nightshade poisons the training pipeline so a model trained on enough Nightshaded images of, say, 'dogs' may start producing cats instead. The legal landscape continued to develop in parallel — Getty's UK case, NYT vs OpenAI/Microsoft. The recognition skill is that the artists' fight wasn't only legal; technical countermeasures appeared too. Whether they scale against future models is open.",
-    "topic": "data-poisoning-artist-defense"
-  },
-  {
-    "tier": 5,
     "question": "In December 2023, the New York Times sued OpenAI and Microsoft. The paper said ChatGPT was trained on millions of Times articles without permission and could spit them back on demand. What was the most damaging specific claim, apart from the general copyright issue?",
     "answer": "That ChatGPT could be prompted to reproduce long passages of Times articles nearly verbatim — undercutting OpenAI's 'transformative use' defense.",
     "choices": [
@@ -14249,7 +14210,7 @@
   },
   {
     "tier": 5,
-    "question": "AI in medicine in 2025 looked very different from what was predicted in 2017. The forecast: AI replaces radiologists, pathologists, and dermatologists. The reality: those specialties are still in demand and AI shows up in different roles. What's the actual pattern of medical AI deployment?",
+    "question": "Geoffrey Hinton warned in 2016 that AI would make radiologists obsolete within five years, and many expected pathologists and dermatologists to follow. Nearly a decade later America was short of radiologists, and hospitals were using AI in a different way. What role did it play there?",
     "answer": "AI runs as a workflow assistant — triaging cases, second-reading scans, drafting reports — leaving the doctor as the actual decision-maker.",
     "choices": [
       "AI runs as a workflow assistant — triaging cases, second-reading scans, drafting reports — leaving the doctor as the actual decision-maker.",
@@ -14587,19 +14548,6 @@
   },
   {
     "tier": 5,
-    "question": "Data poisoning is an attack on the training pipeline. Instead of trying to break a finished AI model, the attacker slips bad examples into the raw text or images the model learns from — so the corruption is baked in before anyone tests the model. In 2024 and 2025, the largest models were trained on huge scrapes of the open internet: Common Crawl web pages, Reddit archives, GitHub code repositories, random forums, uploaded PDFs. What made poisoning a real worry rather than just a theoretical concern?",
-    "answer": "Anyone can publish a webpage — if it ends up in training data, the content shapes the model, and even a small fraction leaves a trace.",
-    "choices": [
-      "Anyone can publish a webpage — if it ends up in training data, the content shapes the model, and even a small fraction leaves a trace.",
-      "Data poisoning required physical access to data centers — it was always impossible unless the attacker worked inside the AI company itself.",
-      "Data poisoning was made impossible by federal law in 2023 — no attacker could legally attempt it in any US jurisdiction anymore.",
-      "Data poisoning required quantum computers — and since none were commercially available, the attack remained purely hypothetical through 2025."
-    ],
-    "context": "Researchers including Nicholas Carlini and others demonstrated practical poisoning attacks: 'Nightshade' for image models (UChicago, Ben Zhao team); 'Sleeper Agents' work showing backdoors can persist through safety training (Anthropic 2024); studies showing small percentages of malicious examples can leave behavior signatures detectable later. Most training corpora include large fractions of web-scraped content; an attacker who publishes enough material can plausibly influence what ends up in next year's training run. Defensively, providers use data filtering, deduplication, and quality scoring — but the arms race continues. The recognition skill: 'trained on the internet' means the model has seen things the trainers didn't choose. Outputs reflect, in subtle ways, who was loudest on the web during the training period.",
-    "topic": "data-poisoning-artist-defense"
-  },
-  {
-    "tier": 5,
     "question": "In January 2024 the prompt engineer Riley Goodside showed a new hiding place for prompt injection. Unicode, the standard that lists every character computers can display, includes a block of 'tag' characters that mirror ordinary letters but that most apps never draw on screen. Text written in them can be pasted into a message, a webpage or a file, and a chatbot will still take it in. Why is this such an effective trick against chatbots?",
     "answer": "The model reads the hidden letters while a person sees only blank space",
     "choices": [
@@ -14834,7 +14782,7 @@
   },
   {
     "tier": 5,
-    "question": "'Sleeper agent' AI models are trained to behave normally, then switch behavior when they see a specific trigger signal. Academic labs proved this was possible by 2024. Why is that finding concerning even though no product model is known to contain one?",
+    "question": "Researchers had shown by 2024 that a 'sleeper agent' model can be trained to behave normally, then switch its behavior when it sees a particular trigger. No product model is known to contain one. Why is the finding still concerning?",
     "answer": "Standard safety training did not remove the hidden behavior — once embedded during training, it survived later alignment work in lab tests.",
     "choices": [
       "Standard safety training did not remove the hidden behavior — once embedded during training, it survived later alignment work in lab tests.",

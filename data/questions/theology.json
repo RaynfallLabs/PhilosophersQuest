@@ -3784,7 +3784,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Irish legends, a young girl of the fifth century kept giving her father's food, cloaks, and cattle to the poor. At last he let her take the veil. She grew up to found a great abbey and became one of the three patron saints of Ireland. What is her name?",
+    "question": "Irish legend tells of a fifth-century chieftain's daughter who gave her father's food, cloaks and cattle to the poor. At last he let her take the veil. She founded a great abbey and became one of Ireland's three patron saints. What was her name?",
     "answer": "Brigid of Kildare",
     "choices": [
       "Brigid of Kildare",
@@ -3797,20 +3797,20 @@
   },
   {
     "tier": 1,
-    "question": "Saint Brigid was one of the great fifth-century missionaries of Ireland, said to have been trained by Saint Patrick himself. She founded her famous abbey around 480 AD in a town whose old Irish name, Cill Dara, means 'church of the oak.' She took her byname from that town. What is the modern English form of the name?",
+    "question": "Saint Brigid founded her abbey around 480 on a spot where a great oak already stood. The place's old Irish name, Cill Dara, means 'church of the oak,' and her byname comes from it. What is the town called in English?",
     "answer": "Kildare",
     "choices": [
       "Kildare",
       "Killarney",
       "Kilkenny",
-      "Kilbeggan"
+      "Kilcullen"
     ],
-    "context": "All four are real Irish towns whose names begin with Cill, meaning 'church'. Kildare (Cill Dara) is the church of the oak; Killarney (Cill Airne) the church of the sloes; Kilkenny (Cill Chainnigh) the church of Cainneach; Kilbeggan (Cill Bheagain) the church of Beagan. Source: Wikipedia, 'Brigid of Kildare'.",
+    "context": "Cill Dara, the church of the oak, is Kildare, county town of County Kildare in Leinster. All four choices are real Irish places whose names begin with Cill, meaning 'church'. Killarney (Cill Airne, the church of the sloes) is a lake town in Kerry; Kilkenny (Cill Chainnigh, the church of Cainneach) is a different Leinster town; Kilcullen is a village in County Kildare but not Brigid's shrine. Sources: Wikipedia, 'Kildare'; Wikipedia, 'Brigid of Kildare'.",
     "topic": "brigid-of-kildare-the-flame-the-butter-and-the-cloak"
   },
   {
     "tier": 2,
-    "question": "Saint Brigid of Kildare, who lived in Ireland around the year 500, is one of the three patron saints of Ireland alongside Patrick and Columba. She takes her name from an older Irish figure, a pre-Christian goddess of poetry, healing, smithcraft, and above all fire. That older Brigid was said to be the daughter of a great chieftain-god of the Tuatha De Danann. Who was her father?",
+    "question": "Saint Brigid of Kildare lived in Ireland around the year 500, but her name is far older. She shares it with a goddess of poetry, healing, smithcraft and above all fire, said to be the daughter of a great chieftain-god of the Tuatha De Danann. Who was the goddess's father?",
     "answer": "The Dagda",
     "choices": [
       "The Dagda",
@@ -3822,21 +3822,8 @@
     "topic": "brigid-of-kildare-the-flame-the-butter-and-the-cloak"
   },
   {
-    "tier": 2,
-    "question": "Saint Brigid of Kildare is one of Ireland's three patron saints, and her feast is celebrated on 1 February. That date was not chosen at random. On the older Gaelic calendar the same day was already a great festival, the traditional first day of spring and the day the lambing began. What was that older festival called?",
-    "answer": "Imbolc",
-    "choices": [
-      "Imbolc",
-      "Beltane",
-      "Lughnasadh",
-      "Samhain"
-    ],
-    "context": "The four great fire-festivals of the Gaelic year are Imbolc (1 February, ewes coming into milk), Beltane (1 May, cattle driven between fires), Lughnasadh (1 August, the first harvest), and Samhain (1 November, the year's end when the dead walk). Brigid's feast overlays Imbolc exactly. Source: Wikipedia, 'Brigid of Kildare'.",
-    "topic": "brigid-of-kildare-the-flame-the-butter-and-the-cloak"
-  },
-  {
     "tier": 3,
-    "question": "The Irish saint Brigid grew up in the 400s as the daughter of a chieftain. Even as a girl she gave things away to any beggar who came to the door. In the famous kitchen miracle of young Brigid, she gave the whole family food-crock away to a poor man. Her mother came home in a rage. But when they opened the crock, it was full again, more full than before. What food had Brigid given away?",
+    "question": "Brigid, the chieftain's daughter who grew up to be Ireland's great saint, gave things away to any beggar at the door. In the most famous kitchen miracle of her girlhood, she handed the family's whole food-crock to a poor man. Her mother came home in a rage, but when they opened the crock it was brimming again, fuller than before. What food had Brigid given away?",
     "answer": "butter",
     "choices": [
       "butter",
@@ -3849,7 +3836,7 @@
   },
   {
     "tier": 3,
-    "question": "The cloak legend is set on the flat green plains of one of Ireland's five old provinces. The king would not give Brigid the ground for her convent. Then her cloak stretched to cover acres of his land. Kildare still stands there today. Which province?",
+    "question": "A king refused Saint Brigid the ground for her convent, so she asked for only as much as her cloak would cover. She laid it on the ground, and it spread over acres of his flat green plain. Kildare still stands there, in one of Ireland's five old provinces. Which province?",
     "answer": "Leinster",
     "choices": [
       "Leinster",
@@ -3861,8 +3848,8 @@
     "topic": "brigid-of-kildare-the-flame-the-butter-and-the-cloak"
   },
   {
-    "tier": 4,
-    "question": "When Gerald of Wales traveled through Ireland during the twelfth century, he described a perpetual fire kept burning day and night at Kildare in honor of Brigid. Nuns of the community tended the flame in a strict rotation, each taking a single night. How many nuns made up that rotation?",
+    "tier": 3,
+    "question": "Gerald of Wales traveled through Ireland in the twelfth century and described a fire kept burning day and night at Kildare in honor of Brigid, a flame that was never allowed to go out. The nuns tended it in strict rotation, each keeping it for one full night in turn. How many nuns made up the rotation?",
     "answer": "nineteen",
     "choices": [
       "nineteen",
@@ -3870,12 +3857,12 @@
       "twelve",
       "twenty-four"
     ],
-    "context": "Gerald of Wales wrote in Topographia Hibernica (c. 1188) that nineteen nuns took turns keeping the fire, one per night; on the twentieth night, the tradition ran, Brigid herself came and tended it, and the flame never went out. He said the fire had been burning since Brigid's own lifetime. Source: Wikipedia, 'Brigid of Kildare'.  (Legend.)",
+    "context": "Gerald of Wales wrote in Topographia Hibernica (c. 1188) that nineteen nuns took turns keeping the fire, one per night; on the twentieth night, the tradition ran, Brigid herself came and tended it, and the flame never went out. He said the fire had been burning since Brigid's own lifetime, and some traditions make its first keepers priestesses of the older goddess before they were nuns. Source: Wikipedia, 'Brigid of Kildare'.  (Legend.)",
     "topic": "brigid-of-kildare-the-flame-the-butter-and-the-cloak"
   },
   {
     "tier": 5,
-    "question": "In the late 400s the Irish saint Brigid founded a monastery at Kildare in Leinster. Kildare was rare in all of Christendom. It was a double monastery, with separate communities of nuns and monks under one abbess. Brigid herself was that abbess, ruling alongside a hermit she had invited down out of the hills to be Kildare's first bishop. What was that first bishop's name?",
+    "question": "Saint Brigid founded her monastery at Kildare in the late 400s, and it was a rare thing in Christendom: a double monastery, with separate houses of nuns and monks under one abbess. Brigid was that abbess. She ruled alongside a hermit and metalworker she had invited down out of the hills to be Kildare's first bishop. What was his name?",
     "answer": "Conleth",
     "choices": [
       "Conleth",
@@ -3901,7 +3888,7 @@
   },
   {
     "tier": 1,
-    "question": "One of the greatest goddesses of the Tuatha De Danann is a daughter of the Dagda. She is the patron of THREE crafts at once -- poetry, healing, and the making of weapons at the forge -- so the Irish call her by three matching titles: 'of the Poets', 'of the Healers', 'of the Smiths'. What is her name?",
+    "question": "Irish myth tells of a daughter of the Dagda, a great goddess of the Tuatha De Danann. She watched over poetry, healing and the forge, and had a title for each: of the Poets, of the Healers, of the Smiths. What was her name?",
     "answer": "Brigid",
     "choices": [
       "Brigid",
@@ -3910,19 +3897,6 @@
       "the Morrigan"
     ],
     "context": "Brigid is uniquely the goddess who owns all three crafts, and her name is thought to mean 'the Exalted One'. Danu is the mother-figure of the Tuatha De; Boann is the goddess of the River Boyne; the Morrigan is the war-and-crow goddess. Wikipedia: Brigid.  (Legend.)",
-    "topic": "brigid-of-the-tuatha-poetry-healing-smithcraft-the-sacred-fi"
-  },
-  {
-    "tier": 1,
-    "question": "In the late 400s the Irish saint Brigid founded her great monastery in the province of Leinster on a spot where a huge oak already stood. The old Irish name for that place, Cill Dara, means 'church of the oak.' The town still stands today, and still bears the same name in an anglicised form. What is it called?",
-    "answer": "Kildare",
-    "choices": [
-      "Kildare",
-      "Killarney",
-      "Kilkenny",
-      "Kilcullen"
-    ],
-    "context": "Cill Dara = Kildare, county town of County Kildare in Leinster. Killarney is in Kerry (a lake town); Kilkenny is a different Leinster town; Kilcullen is a village in Kildare county but not Brigid's shrine. Wikipedia: Kildare; Brigid of Kildare.",
     "topic": "brigid-of-the-tuatha-poetry-healing-smithcraft-the-sacred-fi"
   },
   {
@@ -3940,33 +3914,20 @@
   },
   {
     "tier": 2,
-    "question": "Saint Brigid of Kildare has her feast day on the first of February, and it lines up exactly with one of the four great Celtic quarter-days that mark the turn of the Irish year. It celebrates the beginning of spring, when the ewes first start giving milk again after winter. What is the festival called?",
+    "question": "Saint Brigid's feast falls on 1 February, and the date was not chosen at random. On the older Gaelic calendar the day was already a great festival, one of the four quarter-days of the turning year: the first day of spring, when the lambing began and the ewes came into milk. What was it called?",
     "answer": "Imbolc",
     "choices": [
       "Imbolc",
-      "Samhain",
       "Beltane",
-      "Lughnasa"
+      "Lughnasadh",
+      "Samhain"
     ],
-    "context": "Imbolc (February 1) is the first of the four great Irish quarter-days. Samhain (November 1), Beltane (May 1), and Lughnasa (August 1) are the other three. Wikipedia: Imbolc.  (Legend.)",
+    "context": "Imbolc (1 February) is the first of the four great quarter-days of the Gaelic year, when the ewes come into milk. The other three fire-festivals are Beltane (1 May, cattle driven between fires), Lughnasadh (1 August, the first harvest), and Samhain (1 November, the year's end when the dead walk). Brigid's feast overlays Imbolc exactly. Sources: Wikipedia, 'Imbolc'; Wikipedia, 'Brigid of Kildare'.  (Legend.)",
     "topic": "brigid-of-the-tuatha-poetry-healing-smithcraft-the-sacred-fi"
   },
   {
     "tier": 3,
-    "question": "The Irish saint Brigid is so tightly bound up with fire in older tradition that at her shrine in Cill Dara (Kildare) a fire was kept burning day and night, a perpetual flame that never went out. It was tended in strict rotation by a fixed number of women, each keeping the flame for one full night in turn. How many women were on the rotation?",
-    "answer": "nineteen",
-    "choices": [
-      "nineteen",
-      "twelve",
-      "seven",
-      "three"
-    ],
-    "context": "The nineteen priestesses (and later nuns) each guarded the flame for one night; on the twentieth night Brigid herself was said to tend it. Gerald of Wales records the practice in the late 12th century. Wikipedia: Brigid of Kildare.  (Legend.)",
-    "topic": "brigid-of-the-tuatha-poetry-healing-smithcraft-the-sacred-fi"
-  },
-  {
-    "tier": 3,
-    "question": "Imbolc is the old Gaelic first day of spring, February 1, and now the feast day of Ireland's saint Brigid. Each year on Imbolc, Irish families weave a small four-armed shape from freshly cut rushes, with a woven square at the middle. They hang it over the front door to protect the house through the coming year. What is this woven rush charm called?",
+    "question": "Irish families weave a small four-armed charm from freshly cut rushes every year on 1 February, the feast of Saint Brigid and the old Gaelic first day of spring. With a woven square at its middle, it hangs over the front door to guard the house through the coming year. What is the charm called?",
     "answer": "a Brigid's cross",
     "choices": [
       "a Brigid's cross",
@@ -3979,7 +3940,7 @@
   },
   {
     "tier": 5,
-    "question": "The 9th-century Old Irish life of St. Brigid, Bethu Brigte, tells of a startling moment at her consecration. When Mel reads over her, he uses the wrong ordinal by accident and refuses to withdraw it, saying the honour has come from God. Into what office did the Bethu Brigte say he had ordained her -- an office no woman was supposed to hold?",
+    "question": "The Bethu Brigte, the ninth-century Old Irish Life of Saint Brigid, tells of a startling moment at her consecration. Mel read the wrong rite over her by mistake and would not withdraw it, saying the honor had come from God. No woman was supposed to hold the office he gave her. What was it?",
     "answer": "a bishop",
     "choices": [
       "a bishop",
@@ -3992,7 +3953,7 @@
   },
   {
     "tier": 5,
-    "question": "The Lebor Gabala Erenn ('Book of Invasions') credits the goddess Brigid with a set of sacred animals -- specifically two named oxen, a 'king of boars' named Torc Triath, and a 'king of wethers' named Cirb. The story says all of these animals share ONE strange ability. What can they do?",
+    "question": "The Lebor Gabala Erenn, the Book of Invasions, credits the goddess Brigid with a set of sacred animals: two named oxen, a 'king of boars' called Torc Triath and a 'king of wethers' called Cirb. All of them shared one strange power. What could they do?",
     "answer": "cry out whenever plundering happens in Ireland",
     "choices": [
       "cry out whenever plundering happens in Ireland",
@@ -6046,7 +6007,7 @@
   },
   {
     "tier": 1,
-    "question": "In Greek myth, when Zeus decided to drown the wicked human race in a great flood, one mortal couple was warned in time. They were the king of the region of Phthia in Thessaly and his wife. The husband was named Deucalion, son of the titan Prometheus. After the waters fell, the two of them would refill the earth by throwing stones over their shoulders that turned into new people. What was the name of Deucalion's wife?",
+    "question": "In the Greek flood story, Zeus drowned the wicked human race, but one couple was warned in time: Deucalion, king of Phthia, and his wife. After the waters fell, they filled the world again with stones that turned into people. What was her name?",
     "answer": "Pyrrha",
     "choices": [
       "Pyrrha",
@@ -6059,7 +6020,7 @@
   },
   {
     "tier": 2,
-    "question": "The Greeks told their own version of a great flood story. Zeus sent a deluge to destroy a wicked human race, but a good man named Deucalion and his wife Pyrrha survived by floating in a wooden chest, or ark. Deucalion's father was a wise Titan famous for foreseeing the future, and it was he who warned Deucalion in time to build the chest -- the same Titan the Greeks credited with stealing fire from the gods and giving it to humankind. Which Titan was Deucalion's father?",
+    "question": "Zeus sent a deluge to destroy a wicked human race, but Deucalion and his wife Pyrrha survived by floating in a wooden chest. Deucalion's father, a Titan who could see the future, had warned him to build it, and this same Titan once took fire from the gods for people. Who was he?",
     "answer": "Prometheus",
     "choices": [
       "Prometheus",
@@ -6072,7 +6033,7 @@
   },
   {
     "tier": 3,
-    "question": "In Greek myth, Zeus grew disgusted with the wickedness of humankind and sent a great flood to drown the whole earth. The titan Prometheus warned his son Deucalion in time. Deucalion built a wooden chest and rode out the storm inside it with his wife Pyrrha, drifting across the drowned world until the waters at last began to fall. In the Greek mythographer Apollodorus's telling of this story, how many days and nights did they float?",
+    "question": "Zeus grew disgusted with humankind and sent a great flood to wipe it out. Warned in time, Deucalion built a wooden chest and rode out the storm inside it with his wife Pyrrha, drifting over the drowned world until the waters fell. In Apollodorus's telling, how many days and nights did the couple float?",
     "answer": "Nine",
     "choices": [
       "Nine",
@@ -6085,7 +6046,7 @@
   },
   {
     "tier": 3,
-    "question": "In Greek myth, Zeus flooded the whole earth to drown wicked humankind. Warned in time by his titan father Prometheus, Deucalion built a wooden chest and rode out the flood inside it with his wife Pyrrha. For nine days and nights they drifted across the drowned world, until their chest at last grounded on the peak of a great twin-topped mountain -- the one that rises above the oracle at Delphi and is sacred to Apollo and the nine Muses. Which mountain does the standard version name?",
+    "question": "Deucalion and his wife Pyrrha rode out Zeus's flood in a wooden chest, drifting over a drowned world. At last the chest grounded on the peak of a great twin-topped mountain, the one that rises above the oracle at Delphi and is sacred to Apollo and the Muses. Which mountain does the standard version name?",
     "answer": "Parnassus",
     "choices": [
       "Parnassus",
@@ -6098,7 +6059,7 @@
   },
   {
     "tier": 4,
-    "question": "The oracle answered them in a chilling riddle: cover your heads, unloose your girdles, and throw behind you 'the bones of your great mother'. Deucalion thought a while and then told Pyrrha what the words really meant. What did he say the 'great mother' was?",
+    "question": "Alone in an empty world after the flood, Deucalion and Pyrrha asked the oracle of Themis how the human race could begin again. The answer was a chilling riddle: they must throw behind them 'the bones of your great mother.' Pyrrha was horrified. Deucalion thought a while and then told her what the words really meant. What did he say the great mother was?",
     "answer": "The Earth",
     "choices": [
       "The Earth",
@@ -6111,7 +6072,7 @@
   },
   {
     "tier": 5,
-    "question": "In Greek myth, after the great flood, Deucalion and his wife Pyrrha survived alone on Mount Parnassus above Delphi. They begged the oracle of the goddess Themis to tell them how to refill the empty earth. The oracle answered in a riddle: 'Cast the bones of your mother behind you.' Deucalion solved it -- their mother was the Earth herself, and her bones were the stones. But before they could hurl the stones, the oracle had ordered them to do a particular ritual to their bodies first. What did they do to themselves before throwing?",
+    "question": "Deucalion and Pyrrha, alone after the flood, begged the oracle of the goddess Themis to tell them how to refill the empty world. The oracle answered with a riddle about the bones of their mother, and Deucalion solved it. But before they threw anything, the oracle had ordered them to do something to their own bodies. What did they do?",
     "answer": "Veiled their heads and unloosed their girdles",
     "choices": [
       "Veiled their heads and unloosed their girdles",
@@ -6124,7 +6085,7 @@
   },
   {
     "tier": 5,
-    "question": "In Greek myth, after Deucalion and Pyrrha survived the great flood and refilled the earth by throwing stones over their shoulders, they also had a son of their own in the ordinary way. That son grew up and had three sons himself -- Aeolus, Dorus, and Xuthus -- whose names became the great tribal names of Greece: the Aeolians, the Dorians, and (through Xuthus's own sons) the Ionians and Achaeans. The whole Greek people took their name from this one father. What was his name?",
+    "question": "Deucalion and Pyrrha refilled the world by throwing stones over their shoulders, but they also had a son of their own in the ordinary way. His three sons, Aeolus, Dorus and Xuthus, gave their names to the great tribes of Greece: the Aeolians, the Dorians, and through Xuthus's sons the Ionians and Achaeans. The whole Greek people took their name from this one father. Who was he?",
     "answer": "Hellen",
     "choices": [
       "Hellen",
@@ -17681,7 +17642,7 @@
   },
   {
     "tier": 1,
-    "question": "In Greek myth, the hero Jason gathered a crew of the greatest warriors of Greece, called the Argonauts, and sailed his ship the Argo east to the far land of Colchis on the Black Sea. His goal was the Golden Fleece, a magical ram-skin guarded by King Aeetes. When Jason arrived at Aeetes's court, the king's own daughter, a young sorceress, took one look at him and fell in love. She helped Jason survive every deadly test her father set. What was her name?",
+    "question": "Jason sailed the Argo to Colchis on the Black Sea to win the Golden Fleece from its king. The king's daughter, a sorceress, fell in love with Jason at first sight and helped him survive every deadly test her father set. What was her name?",
     "answer": "Medea",
     "choices": [
       "Medea",
@@ -17694,7 +17655,7 @@
   },
   {
     "tier": 1,
-    "question": "In Greek myth Medea was a princess of the far eastern land of Colchis, on the Black Sea, and a powerful sorceress. She fell in love with the visiting Greek hero Jason and helped him steal the Golden Fleece from her own father's sacred grove — betraying her father and her country for love of him. Which king of Colchis was Medea's father?",
+    "question": "Medea, a sorceress and princess of Colchis on the Black Sea, fell in love with the Greek hero Jason. She helped him steal the Golden Fleece from her father's sacred grove, betraying father and country for love. Which king of Colchis was her father?",
     "answer": "Aeetes",
     "choices": [
       "Aeetes",
@@ -17707,7 +17668,7 @@
   },
   {
     "tier": 2,
-    "question": "In Greek myth, the hero Jason sailed to the land of Colchis to win the Golden Fleece. King Aeetes gave him a deadly first challenge: yoke a pair of fire-breathing bulls and plough a field with them. The king's daughter Medea had already fallen in love with Jason and secretly brought him a magic ointment made from a mountain herb. He smeared it on his skin, his shield, and his sword. For a single day it made him invulnerable to two things. What did the ointment protect him against?",
+    "question": "Medea, daughter of King Aeetes of Colchis, slipped Jason an ointment made from a mountain herb before his first trial: yoking her father's fire-breathing bulls and ploughing a field with them. He smeared it on his skin, shield and sword. For one day it made him proof against two things. What were they?",
     "answer": "Fire and iron",
     "choices": [
       "Fire and iron",
@@ -17720,7 +17681,7 @@
   },
   {
     "tier": 2,
-    "question": "In Greek myth, King Aeetes of Colchis set a deadly first challenge before Jason could even try for the Golden Fleece. Jason had to yoke a monstrous pair of fire-breathing bulls and plough a full field with them. These bulls were the Khalkotauroi, forged in the workshop of the smith-god Hephaestus and given to Aeetes as a divine gift. Their hooves were made of one specific metal. What was it?",
+    "question": "The Khalkotauroi were a pair of fire-breathing bulls, forged by the smith-god Hephaestus and given to King Aeetes of Colchis as a gift. Before Jason could try for the Golden Fleece, Aeetes ordered him to yoke them and plough a field. Their hooves were made of one metal. Which metal?",
     "answer": "Bronze",
     "choices": [
       "Bronze",
@@ -17733,7 +17694,7 @@
   },
   {
     "tier": 3,
-    "question": "When the Greek hero Jason and his Argonauts reached the far kingdom of Colchis to fetch the Golden Fleece, King Aeetes set Jason three impossible tasks before he would even consider handing over the fleece. The second task was to plough a great field with a pair of fire-breathing bronze oxen and then to sow the furrows with a bag of serpent's teeth. As Jason walked scattering the teeth, something rose up out of the ground behind him. What sprang up out of the furrows as Jason worked?",
+    "question": "Jason faced three impossible tasks in Colchis before King Aeetes would hand over the Golden Fleece. The second was to plough a great field behind a pair of fire-breathing bulls, then seed the furrows with a bag of serpent's teeth. As Jason walked along scattering the teeth, something rose out of the ground behind him. What sprang up?",
     "answer": "Fully armed warriors",
     "choices": [
       "Fully armed warriors",
@@ -17746,7 +17707,7 @@
   },
   {
     "tier": 3,
-    "question": "In Colchis, King Aeetes had ordered the Greek hero Jason to sow a ploughed field with a serpent's teeth. As Jason scattered them, fully armed warriors sprang up out of the furrows behind him with drawn spears, ready to cut him down. But Jason followed a trick that his secret lover Medea — King Aeetes's own daughter, and a sorceress — had whispered to him the night before. What did Jason do?",
+    "question": "Jason was sowing a ploughed field with a serpent's teeth at King Aeetes's command. As he scattered them, men with drawn spears sprang out of the furrows behind him, ready to cut him down. But Medea, the king's own daughter and a sorceress, had whispered a trick to Jason the night before. What did he do?",
     "answer": "Threw a rock into their middle so they killed each other",
     "choices": [
       "Threw a rock into their middle so they killed each other",
@@ -17759,7 +17720,7 @@
   },
   {
     "tier": 3,
-    "question": "In Greek myth the Golden Fleece was the shining hide of a magical ram, and it hung on an oak tree in the sacred grove of the war-god Ares, far away in the eastern land of Colchis. King Aeetes of Colchis had set an enormous serpent coiled around the tree to keep any thief from ever taking the Fleece. The hero Jason and his crew of Argonauts had sailed the ship Argo across the sea to steal it. What was uncanny about this particular serpent that made it such a perfect guard?",
+    "question": "The Golden Fleece, the shining hide of a magical ram, hung on an oak tree in the sacred grove of the war-god Ares, far away in Colchis. King Aeetes had set an enormous serpent coiled around the tree to keep any thief from taking it. What was uncanny about this serpent that made it such a perfect guard?",
     "answer": "It never slept",
     "choices": [
       "It never slept",
@@ -17772,7 +17733,7 @@
   },
   {
     "tier": 4,
-    "question": "In Greek myth, after Jason yoked the bronze bulls and defeated the earth-born warriors of Colchis, King Aeetes still refused to hand over the Golden Fleece. So the king's daughter Medea, who was secretly in love with Jason, led him at night into the sacred grove of the war-god Ares. There an enormous never-sleeping serpent was coiled around the oak tree that held the Fleece. Medea did one thing to the beast so Jason could climb the tree and take the prize. What did she do?",
+    "question": "Jason had yoked the bulls and beaten the earth-born warriors of Colchis, but King Aeetes still refused to hand over the Golden Fleece. So Medea led Jason by night into the sacred grove of Ares, where an enormous serpent lay coiled around the oak that held the Fleece. She did one thing to the beast so that Jason could climb the tree and take the prize. What did she do?",
     "answer": "Sang a charm and sprinkled its eyes with the juice of magic herbs",
     "choices": [
       "Sang a charm and sprinkled its eyes with the juice of magic herbs",
@@ -17785,7 +17746,7 @@
   },
   {
     "tier": 5,
-    "question": "In Greek myth, after Jason brought home the Golden Fleece, his uncle King Pelias still refused to give up Jason's rightful throne. So Medea plotted revenge. She showed Pelias's grown daughters a magic stunt: she chopped up an old ram, dropped it into her cauldron with her secret herbs, and out sprang a young lamb. Convinced they could do the same for their aging father, most of the daughters chopped up King Pelias and dropped the pieces into Medea's cauldron. What went wrong for Pelias?",
+    "question": "King Pelias of Iolcus refused to give up his nephew Jason's rightful throne. So Medea gave the king's grown daughters a demonstration: she chopped up an old ram, dropped it into her cauldron with her secret herbs, and out sprang a young lamb. Most of the daughters then cut their aging father to pieces and dropped him into the cauldron. What went wrong?",
     "answer": "Medea did not add the herbs, and Pelias stayed dead",
     "choices": [
       "Medea did not add the herbs, and Pelias stayed dead",
@@ -17798,7 +17759,7 @@
   },
   {
     "tier": 5,
-    "question": "In Greek myth the princess Medea had used her sorcery to help the hero Jason win the Golden Fleece from her father, and had fled her homeland to marry him. Years later, in the Greek city of Corinth, Jason turned cold and abandoned Medea to marry Glauce, the young daughter of King Creon. Medea's revenge became one of the darkest stories in Greek tragedy: she sent Glauce a wedding gift wrapped as a peace-offering but soaked in a poison Medea had brewed herself. What did Medea send Glauce as a wedding gift?",
+    "question": "Medea used her sorcery to help Jason win the Golden Fleece from her father, then fled her homeland to marry him. Years later in Corinth, Jason abandoned her to marry Glauce, the young daughter of King Creon. Medea sent the bride a wedding gift wrapped as a peace-offering but soaked in a poison she had brewed herself. What was the gift?",
     "answer": "A poisoned wedding dress that burned her alive",
     "choices": [
       "A poisoned wedding dress that burned her alive",

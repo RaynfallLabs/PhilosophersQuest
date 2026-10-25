@@ -144,6 +144,18 @@ def main() -> None:
     waiting = [t['topic'] for t in pkt['topics'] if t['topic'] not in passed]
     st = status(subject)
     passed -= set(st['done'])
+    # A merge that crosses ladders lands whole or not at all: hold every
+    # ladder tied by a merge to one that has not passed yet.
+    topic_of = {q['hash']: t['topic'] for t in pkt['topics'] for q in t['questions']}
+    held = True
+    while held:
+        held = False
+        for m in load_notes(subject, batch)['merges']:
+            ts = {topic_of.get(m.get('keep'))} | {topic_of.get(a) for a in m.get('absorbed') or []}
+            ts.discard(None)
+            if ts & passed and not ts <= (passed | set(st['done'])):
+                passed -= ts
+                held = True
     if not passed:
         sys.exit(f'{subject} b{batch:03d}: no passing ladders left to apply '
                  f'(waiting: {waiting or "none"})')

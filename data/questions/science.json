@@ -3732,7 +3732,7 @@
   },
   {
     "tier": 1,
-    "question": "On May 2, 1927, the U.S. Supreme Court ruled 8-1 that Virginia could sterilize Carrie Buck against her will. Justice Oliver Wendell Holmes Jr. wrote the majority opinion, and he ended it with a single sentence that has followed the ruling ever since. What was that sentence?",
+    "question": "The Supreme Court ruled 8-1 on May 2, 1927, that Virginia could sterilize Carrie Buck against her will. Justice Oliver Wendell Holmes Jr. wrote for the majority and ended with a single sentence that has followed the ruling ever since. What was it?",
     "answer": "Three generations of imbeciles are enough.",
     "choices": [
       "Three generations of imbeciles are enough.",
@@ -3745,7 +3745,7 @@
   },
   {
     "tier": 2,
-    "question": "Buck v. Bell was the 1927 United States Supreme Court case that upheld Virginia's law forcing sterilization on people the state judged 'unfit,' and it opened the door to tens of thousands of operations across the country. The ruling came down 8-1, with a single Justice voting no — Pierce Butler. His 'no' vote is unusual in the Supreme Court record for one specific reason. What did Butler do with his dissent?",
+    "question": "Pierce Butler was the only justice to vote no when the Supreme Court upheld Virginia's forced sterilization law in Buck v. Bell in 1927, a ruling that opened the door to tens of thousands of operations. His dissent stands out in the Court's record for one specific reason. What did Butler do with it?",
     "answer": "He filed no opinion at all -- the record is blank.",
     "choices": [
       "He filed no opinion at all -- the record is blank.",
@@ -3758,7 +3758,7 @@
   },
   {
     "tier": 3,
-    "question": "Carrie Buck's school record before the Colony was ordinary -- she was a normal student in a foster home. What actually put her in the Virginia Colony for Epileptics and Feeble Minded, at 17, was a specific event the state used against her. What was the event?",
+    "question": "Carrie Buck was a normal student with an ordinary school record, living in a foster home. At 17 she was committed to the Virginia Colony for Epileptics and Feeble Minded, and the cause was a specific event the state used against her. What was the event?",
     "answer": "a pregnancy after she said she was raped",
     "choices": [
       "a pregnancy after she said she was raped",
@@ -3771,7 +3771,7 @@
   },
   {
     "tier": 3,
-    "question": "Carrie Buck was not the first woman Colony superintendent Albert Priddy had sterilized. He had been performing the operation for years. What Priddy did with Buck's case that he had not done with the others was a deliberate legal move. What did he do?",
+    "question": "Albert Priddy, superintendent of the Virginia colony where Carrie Buck was held, had sterilized other women for years before her. With Carrie's case he tried something he had never done with the others: a deliberate legal move. What was it?",
     "answer": "he pushed the case up to test Virginia's new 1924 law",
     "choices": [
       "he pushed the case up to test Virginia's new 1924 law",
@@ -3784,7 +3784,7 @@
   },
   {
     "tier": 3,
-    "question": "Eugenics Record Office field worker Arthur Estabrook testified at trial that Carrie's baby daughter Vivian was feebleminded. He had examined her once, when she was about seven months old. What did the test he gave a seven-month-old actually consist of?",
+    "question": "Arthur Estabrook, a field worker for the Eugenics Record Office, told the court that Carrie's baby daughter, Vivian, was feebleminded. He had examined her once, when she was about seven months old. What did his test of a seven-month-old consist of?",
     "answer": "he held a shiny coin in front of her eyes",
     "choices": [
       "he held a shiny coin in front of her eyes",
@@ -3796,34 +3796,21 @@
     "topic": "carrie-buck-and-the-rigged-test-case"
   },
   {
+    "tier": 3,
+    "question": "Virginia sterilized Carrie Buck against her will under a new eugenics law that let the state operate on people it judged 'unfit.' Her court-appointed lawyer was Irving Whitehead. Decades later the historian Paul Lombardo dug through the records and found something disqualifying about Whitehead that had never come up at trial. What was it?",
+    "answer": "He had once sat on the colony's own board",
+    "choices": [
+      "He had once sat on the colony's own board",
+      "He had helped write Virginia's 1924 law",
+      "He had been paid by a national eugenics group",
+      "He had never argued a case in a Virginia court"
+    ],
+    "context": "Irving P. Whitehead was a former member of the board of the Virginia Colony for Epileptics and Feeble-Minded, the institution holding Carrie Buck, and a personal supporter of the sterilization program. Paul Lombardo's work on the record documented what that meant in the courtroom: Whitehead called not a single witness for her, did not cross-examine aggressively, conceded key facts, never told the court that her pregnancy was the result of a rape by her foster mother's nephew, and filed a five-page brief against the state's forty. The defense was run by a man on the other side. Aubrey Strode, who had drafted Virginia's 1924 Eugenical Sterilization Act, argued the colony's side. Harry Laughlin, whose 1922 model law Virginia had copied, sent in a deposition endorsing her sterilization without ever meeting her. Asked at trial whether he had traced the hereditary causes, Dr. Joseph DeJarnette answered: 'No, sir. Adam, I think, was a little off himself on some things.' Sources: encyclopediavirginia.org/entries/buck-v-bell-1927/; en.wikipedia.org/wiki/Buck_v._Bell; en.wikipedia.org/wiki/Harry_H._Laughlin.",
+    "topic": "carrie-buck-and-the-rigged-test-case"
+  },
+  {
     "tier": 4,
-    "question": "In the 1927 Buck v. Bell case, Virginia forcibly sterilized a young woman named Carrie Buck under a new eugenics law that let the state cut people it judged 'unfit.' The court-appointed lawyer meant to defend Carrie was Irving Whitehead. Decades later, when the University of Virginia historian Paul Lombardo dug through the records, he found something disqualifying about Whitehead that had never been raised at trial. What was it?",
-    "answer": "he had sat on the Colony's board and backed sterilization",
-    "choices": [
-      "he had sat on the Colony's board and backed sterilization",
-      "he had never argued before the Supreme Court in his life",
-      "he was superintendent Priddy's own brother-in-law",
-      "he had been paid secretly by Virginia, not by the family"
-    ],
-    "context": "Whitehead was a former Colony board member and a personal supporter of the sterilization program. Lombardo documented that at trial he failed to cross-examine aggressively, conceded key facts, and called no witnesses for Buck. The defense was run by a man on the other side. Source: https://encyclopediavirginia.org/entries/buck-v-bell-1927/",
-    "topic": "carrie-buck-and-the-rigged-test-case"
-  },
-  {
-    "tier": 5,
-    "question": "The legal engine of Holmes's Buck v. Bell opinion was an analogy. He argued that the power the state was using to sterilize Carrie Buck rested on a broader power the Court had already blessed in an earlier case. Which power did he stretch to reach forced sterilization?",
-    "answer": "compulsory vaccination, upheld in Jacobson v. Massachusetts",
-    "choices": [
-      "compulsory vaccination, upheld in Jacobson v. Massachusetts",
-      "the wartime military draft, in the Selective Draft Law Cases",
-      "state quarantine power, in Compagnie Francaise v. Louisiana",
-      "state limits on women's work hours, in Muller v. Oregon"
-    ],
-    "context": "Holmes leaned on Jacobson v. Massachusetts (1905), the compulsory-vaccination case, writing: 'The principle that sustains compulsory vaccination is broad enough to cover cutting the Fallopian tubes.' A public-health precedent about smallpox shots was stretched into a surgical one. Source: https://www.law.cornell.edu/supremecourt/text/274/200",
-    "topic": "carrie-buck-and-the-rigged-test-case"
-  },
-  {
-    "tier": 5,
-    "question": "In 1942, in Skinner v. Oklahoma, the Supreme Court struck down an Oklahoma statute that mandated a forced vasectomy after three felony convictions. The ruling used a narrow constitutional ground -- narrow enough to leave the deeper eugenic precedent alone. Which ground did the Court use?",
+    "question": "Buck v. Bell has never been overruled. The nearest the Court came was Skinner v. Oklahoma in 1942, when Justice William O. Douglas struck down a law ordering a forced vasectomy after three felony convictions. He chose a ground narrow enough to leave the eugenic precedent standing. Which ground did the Court use?",
     "answer": "equal protection -- larcenists sterilized, embezzlers not",
     "choices": [
       "equal protection -- larcenists sterilized, embezzlers not",
@@ -3831,12 +3818,12 @@
       "due process -- the surgery was ordered without a hearing",
       "double jeopardy -- the sentence had already been served"
     ],
-    "context": "Justice Douglas wrote the majority. Oklahoma sterilized three-time thieves but exempted embezzlers -- an inconsistency Douglas called irrational. The equal-protection framing let the Court avoid ruling on eugenic sterilization itself, so Buck v. Bell was untouched. Source: https://en.wikipedia.org/wiki/Skinner_v._Oklahoma",
+    "context": "Skinner v. Oklahoma, decided unanimously on 1 June 1942 with Justice Douglas writing, struck down the 1935 Habitual Criminal Sterilization Act on equal-protection grounds. Oklahoma sterilized three-time thieves but exempted embezzlers, an inconsistency Douglas called irrational: 'Oklahoma makes no attempt to say that he who commits larceny by trespass or trick or fraud has biologically inheritable traits which he who commits embezzlement lacks.' Steal from the till and the state could sterilize a man; take the same money by cooking the books and it could not. The equal-protection framing let the Court avoid ruling on eugenic sterilization itself, so Buck v. Bell was weakened but never overruled. The legal scholar G. Edward White's verdict is that the Court has 'distinguished the case out of existence.' Sources: en.wikipedia.org/wiki/Skinner_v._Oklahoma; en.wikipedia.org/wiki/Buck_v._Bell.",
     "topic": "carrie-buck-and-the-rigged-test-case"
   },
   {
     "tier": 5,
-    "question": "In the 1920s the state of Virginia was locking up Southern women in institutions for 'feeblemindedness,' a diagnosis the American eugenics movement used to justify forced sterilization. In the same decade, other American doctors were finding real medical causes for the very symptoms that looked like feeblemindedness. Charles Stiles was tracking one cause across the rural South by hunting a parasite; Joseph Goldberger was tracking another by running careful diet experiments on prisoners. Which pair of diseases were they finding?",
+    "question": "Virginia was locking up Southern women in the 1920s for 'feeblemindedness,' a diagnosis the eugenics movement used to justify forced sterilization. In the same decade other doctors were finding real medical causes for the very same symptoms. Charles Stiles hunted a parasite across the rural South; Joseph Goldberger ran careful diet experiments on prisoners. Which pair of diseases were they tracking?",
     "answer": "hookworm and pellagra",
     "choices": [
       "hookworm and pellagra",
@@ -17876,7 +17863,7 @@
   },
   {
     "tier": 1,
-    "question": "In the winter of 1611 the German astronomer Johannes Kepler — the man who had already worked out that the planets travel on ellipses — was crossing the Charles Bridge in Prague. Snow was settling on his coat. When he got home he wrote a short pamphlet as a New Year's gift for his patron. What one question was the whole pamphlet built around?",
+    "question": "Johannes Kepler was crossing the Charles Bridge in Prague in the winter of 1611, with snow settling on his coat. At home the astronomer wrote a short pamphlet as a New Year's gift for his patron. What one question was the whole pamphlet built around?",
     "answer": "Why does every snowflake always seem to have six corners?",
     "choices": [
       "Why does every snowflake always seem to have six corners?",
@@ -17889,7 +17876,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1611 the German astronomer Johannes Kepler wrote a little New Year gift for his patron, the courtier Johannes Wackher — a slim pamphlet called On the Six-Cornered Snowflake. In it he asked why snowflakes always fall as six-pointed stars. To hunt an answer he compared them to how seeds pack tight inside a pomegranate and how bees build hexagonal cells in a honeycomb. How did the great astronomer end his essay?",
+    "question": "Johannes Kepler wrote a slim pamphlet in 1611, On the Six-Cornered Snowflake, as a New Year's gift for his patron. In it he asked why snowflakes fall as six-pointed stars, comparing them with how seeds pack tight inside a pomegranate and how bees build a honeycomb's cells. How did he end the essay?",
     "answer": "By openly admitting that he could not answer his own question",
     "choices": [
       "By openly admitting that he could not answer his own question",
@@ -17902,7 +17889,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1611 the German astronomer Johannes Kepler -- the same man who worked out how planets orbit the Sun -- wrote a tiny book asking a strange question. Why does every snowflake always have exactly six arms? Kepler turned the puzzle over and over and could not solve it. It took three more centuries of chemistry and X-ray work before scientists finally found the answer. What is really making every snowflake grow six arms?",
+    "question": "Johannes Kepler wrote a tiny book in 1611 asking why every snowflake has exactly six arms, and he could not solve the puzzle. It took three more centuries of chemistry and X-ray work before anyone found the answer. What makes every snowflake grow six arms?",
     "answer": "The molecules link into a puckered hexagonal cage, so the crystal grows fastest in six equal directions",
     "choices": [
       "The molecules link into a puckered hexagonal cage, so the crystal grows fastest in six equal directions",
@@ -17915,7 +17902,7 @@
   },
   {
     "tier": 3,
-    "question": "On 15 January 1885, on his family farm in Jericho, Vermont, a nineteen-year-old named Wilson Bentley stood in the freezing cold with a homemade rig he had built himself -- a microscope bolted to a bulky bellows camera. When a snowflake landed on a dark board he would slide it under the lens and snap the shutter before it melted. That day, alone in the winter air, he pulled off something no one on Earth had ever managed. What did Wilson Bentley do?",
+    "question": "Wilson Bentley, nineteen years old, stood in the freezing cold on his family's farm in Jericho, Vermont, on 15 January 1885 with a rig he had built himself: a microscope bolted to a bulky bellows camera. He caught flakes on a dark board and slid them under the lens before they melted. That day he managed something no one had ever done. What was it?",
     "answer": "He took the first photograph ever made of a single snow crystal",
     "choices": [
       "He took the first photograph ever made of a single snow crystal",
@@ -17928,7 +17915,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1930s the Japanese physicist Ukichiro Nakaya worked in a freezing cold laboratory at Hokkaido University in northern Japan. He became the first person ever to grow snowflakes in a lab, coaxing them from water vapor onto a fine rabbit hair, and he showed that the shape of a flake depends on the temperature and moisture it grew in. In one famous line, he said what a single snowflake on your sleeve really is. What did he say it was?",
+    "question": "Ukichiro Nakaya spent the 1930s in a freezing laboratory at Hokkaido University. He was the first to grow snowflakes artificially, coaxing them from water vapor onto a fine rabbit hair, and he showed that a flake's shape depends on the temperature and moisture it grew in. In one famous line he said what a single snowflake really is. What did he call it?",
     "answer": "A letter from the sky, recording the air the flake fell through",
     "choices": [
       "A letter from the sky, recording the air the flake fell through",
@@ -17941,7 +17928,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1988 Nancy Knight flew a research plane through a Wisconsin cloud. She published photos in a weather journal of two snow crystals that looked identical. Everyone quoted her paper as proof the old slogan was wrong. What honest detail did the slogan-doubters usually leave out?",
+    "question": "Nancy Knight flew a research plane through a Wisconsin cloud in 1988 and published photographs of two snow crystals that looked identical. Doubters of the old saying that no two snowflakes are alike quoted her paper everywhere. What honest detail did they usually leave out?",
     "answer": "The two crystals were plain hollow columns, not elaborate six-armed stars",
     "choices": [
       "The two crystals were plain hollow columns, not elaborate six-armed stars",
@@ -17954,7 +17941,7 @@
   },
   {
     "tier": 5,
-    "question": "Kenneth Libbrecht is a physicist at Caltech (the California Institute of Technology) who has spent decades studying snow crystals -- he grows them in the lab and photographs thousands of the real ones caught falling from the sky. Kids' picture books always show snowflakes as perfect six-armed stars, all six arms matching. Libbrecht says the picture books are hiding something big about actual snow. When you look at the natural flakes he has photographed, what do you find?",
+    "question": "Kenneth Libbrecht, a physicist at the California Institute of Technology, has spent decades studying snow crystals: he grows them in the lab and photographs thousands of real ones caught as they fall. Picture books always show snowflakes as perfect six-armed stars, all six arms matching. Libbrecht says the books hide something about real snow. What do his photographs of natural flakes show?",
     "answer": "Fewer than one flake in a thousand is a clean, symmetric six-armed star",
     "choices": [
       "Fewer than one flake in a thousand is a clean, symmetric six-armed star",
@@ -19878,7 +19865,7 @@
   },
   {
     "tier": 2,
-    "question": "An American court at Nuremberg tried German doctors in United States v. Karl Brandt, for the experiments those doctors performed on human beings. The trial opened on 9 December 1946 and ended on 20 August 1947. Ten numbered rules for any experiment on a person, the Nuremberg Code, took their final form that year. Who wrote them?",
+    "question": "An American court at Nuremberg tried German doctors in United States v. Karl Brandt for the experiments they had performed on human beings. The trial ran from 9 December 1946 to 20 August 1947, and that year ten rules for any experiment on a person, the Nuremberg Code, took their final form. Who wrote them?",
     "answer": "The three judges, in the verdict itself",
     "choices": [
       "The three judges, in the verdict itself",
@@ -19929,8 +19916,8 @@
     "topic": "mandates-consent-and-the-line-from-jacobson-to-buck-v-bell"
   },
   {
-    "tier": 4,
-    "question": "On 2 May 1927 the Supreme Court upheld, 8-1, Virginia's power to operate on a young woman named Carrie Buck, held at a state colony, so that she could never have children. Justice Oliver Wendell Holmes Jr. needed a precedent for a state compelling a citizen against her will, and he named one in the middle of his sentence. Which power did Holmes call 'broad enough to cover cutting the Fallopian tubes'?",
+    "tier": 3,
+    "question": "Justice Oliver Wendell Holmes Jr. wrote for the Court in 1927 when it upheld Virginia's power to operate on Carrie Buck, a young woman in a state colony, so that she could never have children. He needed a precedent for a state compelling a citizen against her will, and he found one the Court had already blessed. Which power did he call 'broad enough to cover cutting the Fallopian tubes'?",
     "answer": "The power to require a smallpox vaccination",
     "choices": [
       "The power to require a smallpox vaccination",
@@ -19938,7 +19925,7 @@
       "The power to draft a man into the army",
       "The power to commit the insane to an asylum"
     ],
-    "context": "Holmes in Buck v. Bell (1927), verbatim and in order: 'It is better for all the world, if instead of waiting to execute degenerate offspring for crime, or to let them starve for their imbecility, society can prevent those who are manifestly unfit from continuing their kind. The principle that sustains compulsory vaccination is broad enough to cover cutting the Fallopian tubes. Jacobson v. Massachusetts, 197 U.S. 11... Three generations of imbeciles are enough.' The citation to the smallpox case sits between the two famous sentences: Holmes reached for Jacobson by name. Justice Pierce Butler dissented alone, and the whole of his dissent is printed as one line, with no opinion at all: 'Mr. Justice BUTLER dissents.' Sources: en.wikisource.org/wiki/Buck_v._Bell/Opinion_of_the_Court; law.cornell.edu/supremecourt/text/274/200; caselaw.findlaw.com/court/us-supreme-court/274/200.html.",
+    "context": "Holmes in Buck v. Bell (1927), verbatim and in order: 'It is better for all the world, if instead of waiting to execute degenerate offspring for crime, or to let them starve for their imbecility, society can prevent those who are manifestly unfit from continuing their kind. The principle that sustains compulsory vaccination is broad enough to cover cutting the Fallopian tubes. Jacobson v. Massachusetts, 197 U.S. 11... Three generations of imbeciles are enough.' The citation to the smallpox case sits between the two famous sentences: Holmes reached for Jacobson (1905) by name, and a public-health precedent about smallpox shots was stretched into a surgical one. Justice Pierce Butler dissented alone, and the whole of his dissent is printed as one line, with no opinion at all: 'Mr. Justice BUTLER dissents.' Sources: en.wikisource.org/wiki/Buck_v._Bell/Opinion_of_the_Court; law.cornell.edu/supremecourt/text/274/200; caselaw.findlaw.com/court/us-supreme-court/274/200.html.",
     "topic": "mandates-consent-and-the-line-from-jacobson-to-buck-v-bell"
   },
   {
@@ -19952,32 +19939,6 @@
       "The presence of a physician at all times"
     ],
     "context": "Article one, verbatim: 'The voluntary consent of the human subject is absolutely essential. This means that the person involved should have legal capacity to give consent; should be so situated as to be able to exercise free power of choice, without the intervention of any element of force, fraud, deceit, duress, overreaching, or other ulterior form of constraint or coercion; and should have sufficient knowledge and comprehension of the elements of the subject matter involved as to enable him to make an understanding and enlightened decision.' Notice what that does to an argument. Whether a treatment works and is safe is a question for evidence. Whether a person may be compelled to take it is a different question, and a person can accept every fact about the treatment and still answer the second one no. Source: en.wikipedia.org/wiki/Nuremberg_Code.",
-    "topic": "mandates-consent-and-the-line-from-jacobson-to-buck-v-bell"
-  },
-  {
-    "tier": 5,
-    "question": "Buck v. Bell has never been overruled; it is still, formally, good law. The nearest the Court came was 1942, when Justice William O. Douglas struck down Oklahoma's law sterilising anyone convicted three times of a crime of 'moral turpitude,' and did it without disturbing Buck at all. What was wrong with Oklahoma's law?",
-    "answer": "It sterilised a man for larceny but exempted an embezzler",
-    "choices": [
-      "It sterilised a man for larceny but exempted an embezzler",
-      "It reached men convicted of felonies but never reached women",
-      "It allowed the operation with no hearing before a judge at all",
-      "It counted convictions from other states toward the three"
-    ],
-    "context": "Skinner v. Oklahoma, decided unanimously on 1 June 1942, struck down the 1935 Habitual Criminal Sterilization Act on equal-protection grounds. Douglas: 'Oklahoma makes no attempt to say that he who commits larceny by trespass or trick or fraud has biologically inheritable traits which he who commits embezzlement lacks.' Steal from the till and the state could sterilise you; take the same money by cooking the books and it could not. Skinner weakened Buck v. Bell without overruling it. The legal scholar G. Edward White's verdict is that the Court has 'distinguished the case out of existence.' Sources: en.wikipedia.org/wiki/Skinner_v._Oklahoma; en.wikipedia.org/wiki/Buck_v._Bell.",
-    "topic": "mandates-consent-and-the-line-from-jacobson-to-buck-v-bell"
-  },
-  {
-    "tier": 5,
-    "question": "Virginia picked Carrie Buck, a young woman held in one of its state colonies, for a test case: the state wanted the Supreme Court to bless its 1924 law letting it sterilise people it judged unfit. Her defence fell to a lawyer named Irving P. Whitehead. The legal historian Paul Lombardo went back to the trial record. What did he find about the man defending her?",
-    "answer": "He had once sat on the colony's own board",
-    "choices": [
-      "He had once sat on the colony's own board",
-      "He had helped write Virginia's 1924 law",
-      "He had been paid by a national eugenics group",
-      "He had never argued a case in a Virginia court"
-    ],
-    "context": "Irving P. Whitehead was a former member of the board of the Virginia Colony for Epileptics and Feeble-Minded, the institution holding Carrie Buck, and he favoured sterilisation. Paul Lombardo's work on the record documented what that meant in the courtroom: Whitehead called not a single witness for her, did not cross-examine aggressively, never told the court that Carrie Buck's pregnancy was the result of a rape by her foster mother's nephew, and filed a five-page brief against the state's forty. Aubrey Strode, who had drafted Virginia's 1924 Eugenical Sterilization Act, argued the colony's side. Harry Laughlin, whose 1922 model law Virginia had copied, sent in a deposition endorsing her sterilisation without ever meeting her. Asked at trial whether he had traced the hereditary causes, Dr. Joseph DeJarnette answered: 'No, sir. Adam, I think, was a little off himself on some things.' Sources: encyclopediavirginia.org/entries/buck-v-bell-1927/; en.wikipedia.org/wiki/Buck_v._Bell; en.wikipedia.org/wiki/Harry_H._Laughlin.",
     "topic": "mandates-consent-and-the-line-from-jacobson-to-buck-v-bell"
   },
   {
@@ -31708,7 +31669,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1943 the U.S. Army Air Forces brought Abraham Wald's Statistical Research Group at Columbia a heap of bomber inspection reports from Europe -- fuselage and wings pocked with bullet holes -- and asked where to add more armour. What did Wald tell them?",
+    "question": "The Army Air Forces brought Abraham Wald's Statistical Research Group at Columbia a heap of inspection reports in 1943. Bombers returning from Europe had wings and fuselages pocked with bullet holes, and the Air Forces wanted to know where to add armor. What did Wald tell them?",
     "answer": "Reinforce the parts that came back unmarked",
     "choices": [
       "Reinforce the parts that came back unmarked",
@@ -31721,7 +31682,7 @@
   },
   {
     "tier": 3,
-    "question": "During World War II, the Hungarian-American mathematician Abraham Wald worked in New York for the US military at the Statistical Research Group. His job was to help the Army Air Forces decide where to add armor on bombers coming back from missions over Europe. Later writers loved to picture Wald in a briefing room, jabbing at a photograph of a plane full of red dots. That scene is a modern retelling. What did Wald actually turn in during 1943?",
+    "question": "Abraham Wald spent World War II in New York at the Statistical Research Group, helping the Army Air Forces decide where to armor bombers returning from Europe. Later writers loved to show him in a briefing room, pointing at a drawn bomber covered in red dots, but that scene is a modern retelling. What did Wald actually turn in during 1943?",
     "answer": "A series of eight technical statistical memoranda",
     "choices": [
       "A series of eight technical statistical memoranda",
@@ -31733,21 +31694,8 @@
     "topic": "survivorship-bias-walds-bombers-and-the-missing-data"
   },
   {
-    "tier": 3,
-    "question": "A psychology journal happily prints a study that finds a striking effect but rejects one that finds nothing. Repeat that across thousands of studies and the published literature looks stronger than the real evidence. In 1979 Robert Rosenthal gave this leak a name -- what did he call it?",
-    "answer": "The file drawer problem",
-    "choices": [
-      "The file drawer problem",
-      "The publication paradox",
-      "The peer-review gap",
-      "The null-effect blackout"
-    ],
-    "context": "Rosenthal named it in Psychological Bulletin (1979) and proposed a 'fail-safe N' -- a rough count of how many unpublished null studies would be needed to erase a meta-analysis's apparent effect. Source: https://en.wikipedia.org/wiki/Publication_bias",
-    "topic": "survivorship-bias-walds-bombers-and-the-missing-data"
-  },
-  {
     "tier": 4,
-    "question": "J. B. Rhine's Duke University laboratory in North Carolina ran extrasensory perception (ESP) card-guessing trials through the 1930s and reported some subjects with astonishing streaks of correct guesses. The American magician and skeptic Martin Gardner argued Rhine had discovered nothing real about ESP. What was Gardner's central charge?",
+    "question": "J. B. Rhine's laboratory at Duke University ran card-guessing trials for extrasensory perception (ESP) through the 1930s and reported some subjects with astonishing streaks of correct guesses. Martin Gardner, a magician and skeptic, argued that Rhine had discovered nothing real. What was Gardner's central charge?",
     "answer": "Rhine repeated the tests but did not report the failures",
     "choices": [
       "Rhine repeated the tests but did not report the failures",
@@ -31760,7 +31708,7 @@
   },
   {
     "tier": 4,
-    "question": "'Steve Jobs, Bill Gates and Mark Zuckerberg all dropped out of college and got rich -- so dropping out helps you get rich.' This is a classic broken argument taught to statistics students on day one. It sounds right until you notice what it does with the people who dropped out and stayed poor. Which of these four adjacent statistical leaks is doing the damage here?",
+    "question": "'Steve Jobs, Bill Gates and Mark Zuckerberg all dropped out of college and got rich -- so dropping out helps you get rich.' Statistics students meet this broken argument on their first day. It sounds right until someone asks about the people who dropped out and stayed poor. Which statistical leak is doing the damage?",
     "answer": "The losing cases are missing from the sample entirely",
     "choices": [
       "The losing cases are missing from the sample entirely",
@@ -35399,21 +35347,21 @@
     "topic": "the-ether-dome-16-october-1846"
   },
   {
-    "tier": 1,
-    "question": "In 1979 an American psychologist named Robert Rosenthal named a real problem in science. Some studies find nothing at all -- no interesting effect, no publishable result -- and nobody bothers to write them up. They just vanish from view. What did Rosenthal call this problem?",
+    "tier": 2,
+    "question": "A psychology journal gladly prints a study that finds a striking effect and turns away one that finds nothing; many such studies are never even written up. Across thousands of studies, the published record ends up looking stronger than the evidence. Robert Rosenthal named this leak in 1979. What did he call it?",
     "answer": "The file drawer problem",
     "choices": [
       "The file drawer problem",
-      "The dark matter problem",
-      "The hidden bench problem",
-      "The lost letter problem"
+      "The publication paradox",
+      "The peer-review gap",
+      "The null-effect blackout"
     ],
-    "context": "Rosenthal worried that journals were filling with the 5% of studies that showed effects, while the other 95% sat unread. The name stuck. Source: Rosenthal, Psychological Bulletin 86(3), 1979.",
+    "context": "Rosenthal named it in Psychological Bulletin (1979). He worried that journals were filling with the 5% of studies that showed effects, while the other 95% sat unread, and he proposed a 'fail-safe N': a rough count of how many unpublished null studies would be needed to erase a meta-analysis's apparent effect. The name stuck. Erick Turner's 2008 comparison of FDA files with the journals caught the same filter at work, selective publication bias: an entire profession can be sincerely misled by a filtered shelf without one fabricated number. Sources: Rosenthal, Psychological Bulletin 86(3), 1979; https://en.wikipedia.org/wiki/Publication_bias; Turner et al., NEJM 2008.",
     "topic": "the-file-drawer"
   },
   {
     "tier": 3,
-    "question": "In 2008 Erick Turner and his team looked at 74 antidepressant trials on 12,564 patients. All the trials had been logged with the Food and Drug Administration (FDA) before anyone saw the results. Turner then compared what got published to what was in that registry. What split did he find?",
+    "question": "Erick Turner and his team looked at 74 antidepressant trials, covering 12,564 patients, in 2008. Every trial had been logged with the Food and Drug Administration (FDA) before anyone saw the results. Turner compared what was published with what was in that registry. What split did he find?",
     "answer": "51% positive in the registry, 94% positive on the shelf",
     "choices": [
       "51% positive in the registry, 94% positive on the shelf",
@@ -35426,7 +35374,7 @@
   },
   {
     "tier": 4,
-    "question": "Turner's 2008 study looked at what happened to the 36 antidepressant trials the Food and Drug Administration (FDA) had judged negative or questionable. Some vanished from the literature entirely. Others were published in a curious way. What did those OTHER trials do?",
+    "question": "Erick Turner's 2008 study followed the 36 antidepressant trials that the Food and Drug Administration (FDA) had judged negative or questionable. Some of them vanished from the journals entirely. Others were published in a curious way. What happened to those others?",
     "answer": "Written up as though they had come out positive",
     "choices": [
       "Written up as though they had come out positive",
@@ -35439,20 +35387,7 @@
   },
   {
     "tier": 4,
-    "question": "Doctors writing prescriptions read the printed journals, not the Food and Drug Administration (FDA) files. Erick Turner's 2008 New England Journal of Medicine (NEJM) study compared the two and found the journals had quietly dropped most of the trials where the antidepressants had failed. What is this phenomenon called?",
-    "answer": "Selective publication bias",
-    "choices": [
-      "Selective publication bias",
-      "Regression to the mean",
-      "Placebo response drift",
-      "The Hawthorne effect"
-    ],
-    "context": "And by as much as 69% for individual drugs. This is how an entire profession can be sincerely misled by a filtered shelf without one fabricated number. Source: Turner et al., NEJM 2008.",
-    "topic": "the-file-drawer"
-  },
-  {
-    "tier": 4,
-    "question": "In 1998, Andrew Vickers reviewed medical trials from several different countries and asked one simple diagnostic question of each one — how often did the tested treatment come out useless? In two of the countries, the answer was never: not a single published trial reported the treatment as a failure. Which two countries were they?",
+    "question": "Andrew Vickers reviewed medical trials from several countries in 1998 and asked one simple question of each: how often did the tested treatment come out useless? For two of the countries the answer was never: not one published trial reported a treatment as a failure. Which two countries were they?",
     "answer": "China and Russia",
     "choices": [
       "China and Russia",
@@ -35465,7 +35400,7 @@
   },
   {
     "tier": 4,
-    "question": "It is tempting to blame journal editors and peer reviewers for hiding studies that found nothing. But in 2014, Annie Franco and her team tracked 221 government-funded studies from grant to final fate, and they found the real source of the hiding somewhere else entirely. Where does most of the null-result vanishing actually happen?",
+    "question": "Annie Franco and her team tracked 221 government-funded studies in 2014, following each one from its grant to its final fate. The obvious suspects for hiding studies that found nothing were journal editors and peer reviewers. Franco's team found the real source of the hiding somewhere else entirely. Where did most of the null-result vanishing happen?",
     "answer": "The authors themselves never write up their null results",
     "choices": [
       "The authors themselves never write up their null results",
@@ -35478,7 +35413,7 @@
   },
   {
     "tier": 5,
-    "question": "During the swine-flu scare, governments spent billions of dollars stockpiling the antiviral Tamiflu, and they did it on the strength of short published trial summaries alone. Cochrane reviewers led by Tom Jefferson spent years pushing the maker Roche for the full clinical trial data. When it finally arrived in 2014, what had the drug's real benefit shrunk down to?",
+    "question": "Tom Jefferson's Cochrane reviewers spent years pushing the drugmaker Roche for the full clinical trial data on its antiviral, Tamiflu. During the swine-flu scare, governments had spent billions of dollars stockpiling the drug on the strength of short published trial summaries alone. When the full data finally arrived in 2014, what had the drug's real benefit shrunk to?",
     "answer": "Roughly a day less of symptoms, with no drop in hospitalisation",
     "choices": [
       "Roughly a day less of symptoms, with no drop in hospitalisation",
@@ -35491,7 +35426,7 @@
   },
   {
     "tier": 5,
-    "question": "In September 2004 the world's major medical journals announced a repair for the file-drawer problem that has actually worked. From then on, a clinical trial had to do ONE specific thing beforehand, or the journals would refuse to publish its results. What was that thing?",
+    "question": "The world's major medical journals announced a repair for the file-drawer problem in September 2004, and it has actually worked. From then on a clinical trial had to do one specific thing before it began, or the journals would refuse to publish its results. What was it?",
     "answer": "Register publicly in a trial registry in advance",
     "choices": [
       "Register publicly in a trial registry in advance",
@@ -35504,7 +35439,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1979 the psychologist Robert Rosenthal warned that studies which find nothing tend to get shelved and never published, while studies with a striking result do get printed. This story teaches a careful reader one short question to ask the next time a news report claims 'study after study shows X.' What is the real question that actually matters here?",
+    "question": "Robert Rosenthal warned in 1979 that studies which find nothing tend to be shelved, while studies with a striking result get printed. When a news report claims 'study after study shows X,' a careful reader has one question to ask. What is the question that matters?",
     "answer": "Not how many showed X, but how many were run",
     "choices": [
       "Not how many showed X, but how many were run",
@@ -35517,7 +35452,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1979 the psychologist Robert Rosenthal first named the file-drawer problem -- the worry that studies finding nothing get shelved unpublished while striking ones make it into print. Since then statisticians have built several tools for spotting missing studies inside a meta-analysis. Which of these is Rosenthal's original 1979 idea, just as he first put it, and not a later related tool?",
+    "question": "Robert Rosenthal named the file-drawer problem in 1979: studies that find nothing get shelved, while striking ones reach print. Since then statisticians have built several tools for spotting missing studies inside a meta-analysis. Which was Rosenthal's own original idea, rather than a later tool?",
     "answer": "Estimating how many hidden nulls would erase an effect",
     "choices": [
       "Estimating how many hidden nulls would erase an effect",
