@@ -25897,7 +25897,7 @@
   },
   {
     "tier": 1,
-    "question": "A boy tells his older sister he is sure the back of his own head has hair on it, though he has never once seen it with his own eyes. His sister keeps pressing him — not why the belief is likely, but how he could really know it for a fact. Which reply gives him a true ground to know the thing, rather than just a reason his belief is a safe bet?",
+    "question": "A boy is sure the back of his head has hair, though he has never seen it with his own eyes. His sister presses him: not why the belief is likely, but how he really knows it. Which reply gives a true ground for knowing?",
     "answer": "\"I have felt it with my hands and seen it in a mirror, so it comes from what I touched and saw\"",
     "choices": [
       "\"I have felt it with my hands and seen it in a mirror, so it comes from what I touched and saw\"",
@@ -25909,21 +25909,8 @@
     "topic": "the-empiricist-wager-all-knowledge-from-experience"
   },
   {
-    "tier": 1,
-    "question": "John Locke asked his readers to picture a just-born baby's mind as a sheet of white paper, not one word or mark on it yet. Then came the real question: where does that empty mind get ALL its later stock of reasoning and knowledge? Locke answered in a single word. What was his one-word answer?",
-    "answer": "Experience -- every last bit flows in from what the person later senses and notices",
-    "choices": [
-      "Experience -- every last bit flows in from what the person later senses and notices",
-      "Reason -- the mind spins out its knowledge by pure thought, with no help from the world",
-      "Instinct -- the useful truths are bred into the body and surface on their own in time",
-      "Teaching -- the knowledge is poured in by parents and tutors who already hold it"
-    ],
-    "context": "From Locke's Essay Concerning Human Understanding (1690): 'Let us then suppose the mind to be, as we say, white paper void of all characters, without any ideas... Whence has it all the materials of reason and knowledge? To this I answer, in one word, from EXPERIENCE.' The white-paper image was later Latinized as the 'tabula rasa,' the blank slate, and it is the opening shot of empiricism: nothing is written on the mind until the world writes it there. Source: John Locke, Essay Concerning Human Understanding, Book II, Ch. 1 (via age-of-the-sage.org/philosophy/john_locke_tabula_rasa.html).",
-    "topic": "the-empiricist-wager-all-knowledge-from-experience"
-  },
-  {
     "tier": 2,
-    "question": "A girl says she has a clear idea of a brand-new color. No one has ever seen it and no light on Earth could make it. She is sure it counts as real knowledge. An empiricist — a philosopher who follows the Englishman John Locke and thinks every idea has to start in the senses — has one blunt test for whether her idea is real. What is that test?",
+    "question": "A girl claims a clear idea of a brand-new color that no one has ever seen. David Hume sorted the mind's contents into the lively feeling of seeing or hearing and the fainter copy that drifts back in memory, and he had a test for any hazy idea. What would it ask of hers?",
     "answer": "Whether the idea can be traced back to some particular thing she once sensed; if not, it is empty",
     "choices": [
       "Whether the idea can be traced back to some particular thing she once sensed; if not, it is empty",
@@ -25931,12 +25918,12 @@
       "Whether the idea stays steady and vivid in her mind over time instead of fading or shifting on her",
       "Whether she can reason the idea out step by step without ever once contradicting herself along the way"
     ],
-    "context": "The Internet Encyclopedia calls this the 'Lockean Axiom': 'There is no idea in the mind that cannot be traced back to some particular experience.' The empiricist demand is concrete -- point to the sight, sound, or touch the idea came from. An idea that floats free, tied to no experience at all, fails the test no matter how clear or steady it feels. Source: Internet Encyclopedia of Philosophy, 'British Empiricism' (iep.utm.edu/british-empiricism/).",
+    "context": "Hume named the two kinds 'impressions' (the forceful, first-hand perceptions) and 'ideas' (their fainter copies in memory and imagination). His 'Copy Principle' holds that every simple idea is just a faded copy of an earlier impression: 'all our simple ideas in their first appearance are derived from simple impressions, which are correspondent to them.' The Internet Encyclopedia calls the empiricists' shared rule the 'Lockean Axiom': 'There is no idea in the mind that cannot be traced back to some particular experience.' The demand is concrete -- point to the sight, sound, or touch the idea came from. An idea that floats free, tied to no experience at all, fails the test no matter how clear or steady it feels. Source: David Hume, A Treatise of Human Nature, Book I (via philosophyalevel.com; hume.ucdavis.edu); Internet Encyclopedia of Philosophy, 'British Empiricism' (iep.utm.edu/british-empiricism/).",
     "topic": "the-empiricist-wager-all-knowledge-from-experience"
   },
   {
     "tier": 2,
-    "question": "Rene Descartes pointed to your idea of a perfect triangle. Its three sides are perfectly straight and meet perfectly. Every triangle you have ever drawn or seen is a bit crooked, never truly perfect. Yet you grasp the perfect one just fine. From this gap, Descartes drew a big conclusion. What did he decide?",
+    "question": "Suppose you think of a perfect triangle, its three sides perfectly straight and meeting perfectly. Every triangle you have ever drawn or seen is a bit crooked, never truly perfect, yet you grasp the perfect one just fine. Rene Descartes drew a big conclusion from that gap. What did he decide?",
     "answer": "The idea of the perfect triangle was in the mind already, not copied from any triangle you saw",
     "choices": [
       "The idea of the perfect triangle was in the mind already, not copied from any triangle you saw",
@@ -25945,32 +25932,6 @@
       "The idea of the perfect triangle is learned from teachers who hand the perfect version down to us"
     ],
     "context": "This is the rationalist counter-move, and Descartes is its sharpest voice: some ideas are 'innate,' stamped in the mind at birth rather than learned. He sorted all ideas into three kinds -- arriving through the senses, made up by the imagination, and innate (placed in the mind, he said, by God) -- and his examples of the innate ones were the idea of God and the idea of a perfect triangle. A competent empiricist would answer differently; no side is taken here on who is right. Source: Stanford Encyclopedia of Philosophy, 'Rationalism vs. Empiricism' (plato.stanford.edu/entries/rationalism-empiricism/); philosophy.institute, 'Descartes' Classification of Ideas.'",
-    "topic": "the-empiricist-wager-all-knowledge-from-experience"
-  },
-  {
-    "tier": 3,
-    "question": "Some thinkers claimed a few truths are branded on every human mind from birth -- truths like 'whatever exists, exists' and 'nothing can both be and not be at the same time.' John Locke fired back with one plain observation about young children to argue these truths were never branded in at all. What did Locke point out about children?",
-    "answer": "They show not the least grasp of those truths, so no truth that everyone supposedly shares is in them",
-    "choices": [
-      "They show not the least grasp of those truths, so no truth that everyone supposedly shares is in them",
-      "They believe whatever a grown-up tells them, proving the mind starts out trusting rather than knowing",
-      "They learn to speak long before they can reason, so words must come into the mind before ideas do",
-      "They forget almost everything from their earliest years, so any truths born in them are simply lost"
-    ],
-    "context": "Locke's argument from the lack of universal assent: if such truths were stamped on the mind at birth, everyone would recognize them instantly -- yet, in his words, 'all children and idiots have not the least apprehension or thought of them' ('idiots' being his period's word for the severely cognitively disabled). Since the supposed universal truths get no universal recognition, Locke concludes they were never branded in; they have to be learned. Source: John Locke, Essay Concerning Human Understanding, Book I, Ch. 2 (earlymoderntexts.com); Internet Encyclopedia of Philosophy, 'British Empiricism.'",
-    "topic": "the-empiricist-wager-all-knowledge-from-experience"
-  },
-  {
-    "tier": 3,
-    "question": "David Hume split everything in the mind into two kinds. First is the strong, lively feeling you get when you actually see or hear a thing. Second is the fainter version that drifts back later in memory. He then gave a way to test any hazy idea for whether it is real or empty. What did Hume say to do with a hazy idea?",
-    "answer": "Hunt for the earlier first-hand perception it sprang from; if there is none, the idea is empty",
-    "choices": [
-      "Hunt for the earlier first-hand perception it sprang from; if there is none, the idea is empty",
-      "Hold it firmly in mind and see whether it grows sharper the longer you keep your attention on it",
-      "Break it down into smaller ideas, since a true idea can always be split while a false one cannot",
-      "Compare it against what other careful people report, trusting the version most of them agree upon"
-    ],
-    "context": "Hume named the two kinds 'impressions' (the forceful, first-hand perceptions) and 'ideas' (their fainter copies in memory and imagination). His 'Copy Principle' holds that every simple idea is just a faded copy of an earlier impression: 'all our simple ideas in their first appearance are derived from simple impressions, which are correspondent to them.' So to test a fuzzy idea, hunt for the impression it came from -- and if there is none, the idea is empty. Source: David Hume, A Treatise of Human Nature, Book I (via philosophyalevel.com; hume.ucdavis.edu).",
     "topic": "the-empiricist-wager-all-knowledge-from-experience"
   },
   {
@@ -26326,7 +26287,7 @@
   },
   {
     "tier": 3,
-    "question": "Alex argues: all foxes have tails; this animal has a tail; so it must be a fox. That reasoning is broken — having a tail proves nothing, since dogs and cats have tails too. Bob pounces: 'Your logic is garbage, so this animal is definitely NOT a fox.' Why is Bob now the one reasoning badly?",
+    "question": "Alex argues that all foxes have tails, this animal has a tail, and so it must be a fox. His reasoning is broken, since dogs and cats have tails too. Bob pounces: 'Your logic is garbage, so this animal is definitely not a fox.' Why is Bob now the one reasoning badly?",
     "answer": "Alex only failed to prove it is a fox; the animal could still perfectly well be one",
     "choices": [
       "Alex only failed to prove it is a fox; the animal could still perfectly well be one",
@@ -26352,7 +26313,7 @@
   },
   {
     "tier": 3,
-    "question": "A cheap wall clock stopped dead at 3:48 several days ago. Its hands never move, and its 'reasoning' about the time comes from nothing at all — no gears turning, no signal, no thought. And yet twice each day — at 3:48 in the morning and again at 3:48 in the afternoon — the frozen clock displays exactly the correct time. A thinker offers this stopped clock as a picture of one tempting mistake people make whenever a claim happens to be right. Which mistake does the dead-but-occasionally-right clock warn against?",
+    "question": "A cheap wall clock stopped dead at 3:48 several days ago, and its hands never move. Yet twice each day, at 3:48 in the morning and again in the afternoon, it shows exactly the right time. A thinker offers the stopped clock as a picture of one tempting mistake people make whenever a claim turns out right. Which mistake does it warn against?",
     "answer": "Assuming a true result must mean the method was good — a broken process can still land on the truth",
     "choices": [
       "Assuming a true result must mean the method was good — a broken process can still land on the truth",
@@ -26365,7 +26326,7 @@
   },
   {
     "tier": 4,
-    "question": "Two friends mix up two different things. One insists 'her argument commits a fallacy, so her claim must be false.' A logic teacher stops them: a fallacy and a falsehood are not the same kind of failure at all. Where does each of those two failures actually live?",
+    "question": "Two friends are discussing a classmate's argument, and one insists, 'Her argument commits a fallacy, so her claim must be false.' A logic teacher stops them: a fallacy and a falsehood are not the same kind of failure at all. Where does each of those two failures actually live?",
     "answer": "A fallacy is a defect in the reasoning linking premises to a claim; truth or falsity belongs to the claim",
     "choices": [
       "A fallacy is a defect in the reasoning linking premises to a claim; truth or falsity belongs to the claim",
@@ -26378,7 +26339,7 @@
   },
   {
     "tier": 4,
-    "question": "You catch a real flaw in someone's argument for a claim, and you are tempted to announce that you have therefore disproved the claim. A careful reasoner tells you to be precise about what that flaw actually buys you. What have you actually won by exposing the flaw?",
+    "question": "Jonah catches a real flaw in someone's argument for a claim, and he is tempted to announce that he has therefore disproved the claim. A careful reasoner tells him to be precise about what the flaw actually buys him. What has Jonah won by exposing it?",
     "answer": "The right to throw out that argument and demand a better one — not a proof that the claim is false",
     "choices": [
       "The right to throw out that argument and demand a better one — not a proof that the claim is false",
@@ -26391,7 +26352,7 @@
   },
   {
     "tier": 4,
-    "question": "A debater spots a weak, fallacious argument that someone gave for a position, and treats catching it as a serious blow against the position itself. A logician shrugs and says the catch barely counts against the position at all. Why is one bad defense such weak evidence against a position?",
+    "question": "A debater spots a weak, fallacious argument someone gave for a position, and treats it as a heavy blow against the position itself. A logician shrugs: finding it, she says, barely counts against the position at all. Why is one bad defense such weak evidence against a position?",
     "answer": "Fallacious arguments are easy to make for almost any position, true or false, so finding one tells you only that this defender argued poorly",
     "choices": [
       "Fallacious arguments are easy to make for almost any position, true or false, so finding one tells you only that this defender argued poorly",
@@ -26404,7 +26365,7 @@
   },
   {
     "tier": 5,
-    "question": "For over 350 years, the greatest mathematicians tried to prove Fermat's Last Theorem and kept failing. Gabriel Lame announced a triumphant proof; Joseph Liouville quietly wrecked it by showing Lame had assumed a property of numbers that fails in some systems. Wreck after wreck piled up. A bystander watching the centuries of collapsing proofs concluded 'so the theorem must be FALSE.' What was wrong with that conclusion?",
+    "question": "Fermat's Last Theorem beat the greatest mathematicians for more than 350 years. Gabriel Lame announced a triumphant proof, and Joseph Liouville quietly wrecked it by showing Lame had assumed a property of numbers that fails in some systems. Wreck after wreck piled up, and a bystander concluded, 'So the theorem must be false.' What was wrong with that conclusion?",
     "answer": "Each broken proof showed only that one argument failed; the theorem could still be true and simply await a sound proof",
     "choices": [
       "Each broken proof showed only that one argument failed; the theorem could still be true and simply await a sound proof",
@@ -26417,7 +26378,7 @@
   },
   {
     "tier": 5,
-    "question": "In a heated debate, one side stops engaging with the other's points and instead just shouts the names of fallacies — 'Strawman!' 'Ad hominem!' — as if naming a move automatically wins the exchange and proves the shouter right. A philosopher warns that this trick is itself a dodge. Why does merely shouting a fallacy's name fail to settle anything?",
+    "question": "In a heated debate, one side stops engaging with the other's points and just shouts the names of fallacies, 'Strawman!' and 'Ad hominem!', as if naming a move wins the exchange and proves the shouter right. A philosopher warns that this trick is itself a dodge. Why does merely shouting a fallacy's name settle nothing?",
     "answer": "Imputing a fallacy without showing the actual reasoning error proves nothing, and a pile of labels can derail thinking instead of doing it",
     "choices": [
       "Imputing a fallacy without showing the actual reasoning error proves nothing, and a pile of labels can derail thinking instead of doing it",
