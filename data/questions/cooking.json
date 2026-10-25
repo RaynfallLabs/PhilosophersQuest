@@ -11155,7 +11155,7 @@
   },
   {
     "tier": 1,
-    "question": "Wheat, rice, corn, and oats look nothing alike in the field, yet a botanist will tell you all four belong to the very same family of plants. What kind of plant are they all?",
+    "question": "A botanist lays a wheat stalk, a rice plant, a cornstalk and an oat stem on her bench. They look nothing alike, yet she files all four in one family of plants. What kind of plant are they?",
     "answer": "grasses",
     "choices": [
       "grasses",
@@ -11168,7 +11168,7 @@
   },
   {
     "tier": 1,
-    "question": "A single grain of rice or wheat is crammed with starch — but that starchy store did not grow there to feed people. The mother grass packed it as a first meal for something else. For what?",
+    "question": "A miller tips a sack of wheat into his hopper, every grain in it crammed with starch. That store never grew to feed people: the parent plant packed it as a first meal for something else. For what?",
     "answer": "the baby plant that sprouts from it",
     "choices": [
       "the baby plant that sprouts from it",
@@ -11181,7 +11181,7 @@
   },
   {
     "tier": 2,
-    "question": "Farmers around the world sow more land with cereal grains than with any other kind of crop, but one single grain sits at the very top of the pile. Each year humans harvest well over a billion tonnes of it — more than wheat, more than rice, more than any grain rival on Earth — feeding not just people but livestock by the billions on nearly every continent. Which grain tops them all in raw weight?",
+    "question": "A combine rolls through a field at harvest, filling its hopper with the grain people grow more of, by weight, than any other. Each year the world harvests well over a billion tonnes of it, more than wheat and more than rice, to feed people and livestock by the billions. Which grain tops them all?",
     "answer": "corn",
     "choices": [
       "corn",
@@ -11193,60 +11193,8 @@
     "topic": "grains-the-seed-that-built-civilization"
   },
   {
-    "tier": 2,
-    "question": "White flour is made from just one part of the wheat grain: the big, starchy middle that makes up most of the seed. The grain's other layers — the parts that carry most of its fiber and vitamins — are milled away. What is that starchy middle called?",
-    "answer": "endosperm",
-    "choices": [
-      "endosperm",
-      "bran",
-      "germ",
-      "husk"
-    ],
-    "context": "The starchy core is the endosperm — food the seed packed for its sprout. White flour is nearly pure endosperm; the bran (fiber) and germ (vitamins and healthy fats) are milled off, which is why whole-wheat flour is more nutritious. Source: en.wikipedia.org/wiki/Cereal_germ",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
-    "tier": 3,
-    "question": "Corn on the cob, with its neat rows of plump kernels, is not a wild plant at all — farmers in southern Mexico bred it over thousands of years from a scraggly wild grass. Name that wild grass, corn's true ancestor.",
-    "answer": "teosinte",
-    "choices": [
-      "teosinte",
-      "sorghum",
-      "bamboo",
-      "millet"
-    ],
-    "context": "Indigenous farmers in Mexico's Balsas River valley domesticated maize from teosinte about 9,000 years ago. A corn cob — hundreds of kernels on one ear — is entirely a human creation. Source: en.wikipedia.org/wiki/Maize",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
-    "tier": 3,
-    "question": "A wild grass reseeds itself every year with no help at all. Corn is different: leave a field of it unplanted and within a few seasons the crop would vanish from the earth, for maize now survives only because farmers plant its kernels for it. What is it about a ripe corn cob that makes the plant so helpless on its own?",
-    "answer": "the kernels stay locked onto the cob and never drop free",
-    "choices": [
-      "the kernels stay locked onto the cob and never drop free",
-      "the kernels are far too heavy for the wind to scatter",
-      "the kernels sink in water instead of drifting to new ground",
-      "the kernels are too smooth for animals to carry off"
-    ],
-    "context": "A ripe corn cob grips its kernels instead of shattering to scatter seed the way wild grasses do. Strip and sow those kernels and corn thrives, but left alone maize would die out in a few seasons — it depends completely on people. Source: en.wikipedia.org/wiki/Maize",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
     "tier": 4,
-    "question": "Modern corn's kernels are soft and sit naked on the cob, easy to bite off and eat. Teosinte, the wild grass it came from, guarded its handful of tiny kernels very differently — each single kernel was sealed inside something you would never want to bite. What encased each teosinte kernel?",
-    "answer": "a stony shell hard enough to crack a tooth",
-    "choices": [
-      "a stony shell hard enough to crack a tooth",
-      "a bitter husk that numbed the tongue",
-      "a sticky resin that glued the jaws shut",
-      "a papery pod that crumbled to dust"
-    ],
-    "context": "A wild teosinte ear held only 5 to 10 kernels, each locked in a rock-hard 'fruitcase.' Modern corn's hundreds of soft, exposed kernels are the result of thousands of years of human selection. Source: en.wikipedia.org/wiki/Teosinte",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
-    "tier": 4,
-    "question": "The geneticist George Beadle wanted to prove that scraggly teosinte, not some lost plant, was the true ancestor of corn. Doubters scoffed that its rock-hard little kernels could never have fed anyone. As the story goes, Beadle answered them with a simple kitchen trick. What did he do to teosinte's kernels?",
+    "question": "George Beadle set out to prove that scraggly teosinte, not some lost plant, was the true ancestor of maize. Doubters scoffed that its rock-hard little kernels could never have fed anyone. As the story goes, Beadle answered them with a simple kitchen trick. What did he do to the kernels?",
     "answer": "popped them like popcorn",
     "choices": [
       "popped them like popcorn",
@@ -11258,21 +11206,8 @@
     "topic": "grains-the-seed-that-built-civilization"
   },
   {
-    "tier": 4,
-    "question": "When rice is milled 'white,' the same thing happens as with white flour: the machines scour off the grain's bran and germ, and with them a vitamin the body needs. In 1700s Japan whole cities lived on polished white rice and were struck by a crippling nerve-and-heart disease. Name that deficiency disease.",
-    "answer": "beriberi",
-    "choices": [
-      "beriberi",
-      "scurvy",
-      "rickets",
-      "anemia"
-    ],
-    "context": "Milling rice white scours off the bran and germ, and with them thiamine (vitamin B1). Living almost entirely on polished rice, people developed beriberi, which attacks the nerves and the heart. Source: en.wikipedia.org/wiki/White_rice",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
     "tier": 5,
-    "question": "In 1897 the Dutch doctor Christiaan Eijkman fed his lab chickens nothing but polished white rice. They grew too weak to stand, just like sailors struck with beriberi. When he fed the sick birds the rice bran that milling had thrown away, they got better. In an age when doctors hunted for a germ behind every illness, what did Eijkman's test suggest was the real cause?",
+    "question": "Christiaan Eijkman, a Dutch doctor, fed his lab chickens nothing but polished white rice in 1897. The birds grew too weak to stand, like sailors struck with beriberi, and they recovered once he fed them the bran that milling had thrown away. Doctors of his day hunted a germ behind every illness. What did his test suggest was the real cause?",
     "answer": "the sickness sprang from something missing in their food",
     "choices": [
       "the sickness sprang from something missing in their food",
@@ -11284,34 +11219,8 @@
     "topic": "grains-the-seed-that-built-civilization"
   },
   {
-    "tier": 5,
-    "question": "For thousands of years, cooks in Mexico and Central America have soaked dried corn in water mixed with lime or wood ash before grinding it into dough for tortillas — a step called nixtamalization. Long before anyone understood nutrition, this ancient lime-and-ash soak changed the corn itself and kept daily corn-eaters healthy. What did the soak do to the corn?",
-    "answer": "unlocked a vitamin the corn otherwise kept hidden",
-    "choices": [
-      "unlocked a vitamin the corn otherwise kept hidden",
-      "killed the germs living on the raw kernels",
-      "added protein the corn did not have before",
-      "kept the corn from spoiling for years"
-    ],
-    "context": "Nixtamalization frees the corn's niacin (vitamin B3), which raw corn locks away, and softens the kernels into masa. The name is Nahuatl — nextli (ashes) + tamalli (dough). Source: en.wikipedia.org/wiki/Nixtamalization",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
-    "tier": 5,
-    "question": "When corn spread from the Americas to Europe and the American South, the new corn-eaters skipped an ancient Mesoamerican step: they never soaked their corn in lime or ash before eating it. Corn became their main food, and a deficiency disease swept through them — one that the Native Americans who treated their corn had never suffered. Name that disease.",
-    "answer": "pellagra",
-    "choices": [
-      "pellagra",
-      "scurvy",
-      "rickets",
-      "goiter"
-    ],
-    "context": "Pellagra is a niacin (vitamin B3) deficiency. Nixtamalization — the lime-or-ash soak invented in Mesoamerica — releases corn's niacin, so peoples who treated their corn stayed well while those who skipped it fell ill. Source: en.wikipedia.org/wiki/Pellagra",
-    "topic": "grains-the-seed-that-built-civilization"
-  },
-  {
     "tier": 1,
-    "question": "Leave a jar of sweet grape juice sitting out and tiny yeast get to work, eating up the grape sugar. As they feed, they turn that sugar into bubbles of gas and one other substance — the thing that actually makes the juice into wine. What is that other thing the yeast make?",
+    "question": "Tiny yeasts get to work on a jar of sweet grape juice left sitting out, eating the grape sugar. They turn it into bubbles of gas and one other substance, the one that makes the juice into wine. What else do the yeasts make?",
     "answer": "Alcohol",
     "choices": [
       "Alcohol",
@@ -11324,7 +11233,7 @@
   },
   {
     "tier": 2,
-    "question": "To make wine, you crush grapes and wait. You never stir in any yeast, yet the juice still ferments. Where is the wild yeast already hiding, ready to work the moment the sugary juice runs out?",
+    "question": "A winemaker crushes a vat of grapes and simply waits. She never stirs in a pinch of yeast, yet the juice soon begins to ferment. Where is the wild yeast hiding, ready to work the moment the sugary juice runs out?",
     "answer": "In the dusty bloom on the grape's skin",
     "choices": [
       "In the dusty bloom on the grape's skin",
@@ -11337,7 +11246,7 @@
   },
   {
     "tier": 2,
-    "question": "When grapes are crushed, some wild yeasts start the work but many die out. The microbe that always finishes the job, turning the juice all the way into wine, is a familiar kitchen worker. That same species does what other everyday job?",
+    "question": "In a vat of crushed grapes, many wild yeasts start the ferment and die out. The yeast that usually completes the job, turning the juice all the way into wine, also works in kitchens. What other everyday job does it do?",
     "answer": "Makes bread dough rise",
     "choices": [
       "Makes bread dough rise",
@@ -11350,7 +11259,7 @@
   },
   {
     "tier": 3,
-    "question": "Crush almost any wine grape — even an inky-dark purple one — and the juice that runs out is a pale grayish color, not red at all. So where does a deep-red wine actually get its rich red color?",
+    "question": "Inky-dark purple grapes go into the press, and the juice that runs out is a pale grayish color, not red at all. Yet the same grapes end up as a deep-red wine. Where does the wine get its color?",
     "answer": "From soaking the dark grape skins",
     "choices": [
       "From soaking the dark grape skins",
@@ -11363,7 +11272,7 @@
   },
   {
     "tier": 3,
-    "question": "Legend credits the French monk Dom Pérignon with inventing Champagne's bubbles — but the real story runs the other way. In his chilly abbey cellar, the trapped fizz built up so much pressure that finished bottles kept exploding on the racks. Knowing that, what job did his abbey actually give him?",
+    "question": "Dom Pérignon, a French monk, worked in a chilly abbey cellar where trapped fizz built up such pressure that finished bottles kept bursting on the racks. Legend makes him the inventor of Champagne's bubbles, though the real story is the reverse. What job did the abbey actually give him?",
     "answer": "Chase the bubbles out of the wine",
     "choices": [
       "Chase the bubbles out of the wine",
@@ -11389,7 +11298,7 @@
   },
   {
     "tier": 5,
-    "question": "A can of soda gets its fizz from carbon-dioxide gas pumped in at the factory. A bottle of Champagne, the famous sparkling wine from northern France, makes its bubbles a completely different way — no gas is ever pumped in from outside, and the winemakers cork the bottles quiet and still. So how does all that gas end up trapped inside a sealed Champagne bottle?",
+    "question": "A soda factory pumps carbon-dioxide gas into each can to give it fizz. Champagne makers in northern France never pump any gas into their famous sparkling wine, and they seal the bottles quiet and still. How does the gas end up trapped inside a sealed bottle of Champagne?",
     "answer": "The wine is sealed up so it ferments a second time",
     "choices": [
       "The wine is sealed up so it ferments a second time",
@@ -11402,7 +11311,7 @@
   },
   {
     "tier": 5,
-    "question": "The gas trapped inside a Champagne bottle pushes on the glass with about 90 pounds per square inch — more than twice the pressure inside a car tire. To keep all that force from firing the cork across the room on its own, what special part pins a Champagne cork down?",
+    "question": "Inside a sealed bottle of Champagne, the trapped gas pushes on the glass at about 90 pounds per square inch, more than twice the pressure in a car tire. Something has to stop that force from firing the fat cork across the room. What pins the cork down?",
     "answer": "A little twisted-wire cage over the cork",
     "choices": [
       "A little twisted-wire cage over the cork",
@@ -11428,7 +11337,7 @@
   },
   {
     "tier": 2,
-    "question": "The old Aztec name for guacamole was ahuacamolli. It mixed ahuacatl, meaning 'avocado,' with a second word: molli. That same molli hides in another famous Mexican dish, mole. What did molli mean?",
+    "question": "Aztec cooks called guacamole ahuacamolli, joining ahuacatl, their word for the avocado, to a second word, molli. Mole, another famous Mexican dish, carries the same molli in its name. What did molli mean?",
     "answer": "Sauce",
     "choices": [
       "Sauce",
@@ -11441,7 +11350,7 @@
   },
   {
     "tier": 2,
-    "question": "Bite an apple, a grape, or a banana and you're mostly tasting sugar and water - what nearly every fruit is built from. The avocado is the rebel: roughly three-quarters of its calories come from one thing almost no other fruit carries. What is it?",
+    "question": "A fruit seller's crate of apples, grapes and bananas is mostly sugar and water, like nearly every fruit. The avocado beside them is the rebel: about three-quarters of its calories come from one thing hardly any other fruit carries. What is it?",
     "answer": "Fat",
     "choices": [
       "Fat",
@@ -11453,21 +11362,8 @@
     "topic": "guacamole-and-the-strange-avocado"
   },
   {
-    "tier": 3,
-    "question": "You mash a bowl of guacamole so bright green it almost glows, set it on the counter, and come back an hour later to an ugly grey-brown surface. What turned the guacamole brown?",
-    "answer": "Oxygen in the air reacting with the cut flesh",
-    "choices": [
-      "Oxygen in the air reacting with the cut flesh",
-      "Mold and bacteria starting to rot the flesh",
-      "Light in the kitchen breaking down the green pigment",
-      "Water leaving the surface and dulling the color"
-    ],
-    "context": "Most people are sure grey-brown guacamole has spoiled, and throw it out. Cutting and mashing avocado exposes it to oxygen, and an enzyme (polyphenol oxidase) drives an oxidation reaction that builds brown pigments - the exact same reaction that browns a cut apple, potato, or banana. It is a chemical change, not spoilage or rot. Source: https://en.wikipedia.org/wiki/Enzymatic_browning",
-    "topic": "guacamole-and-the-strange-avocado"
-  },
-  {
     "tier": 4,
-    "question": "Long before food processors, cooks in Mexico mashed avocados into guacamole by hand. The same tool still sits in Mexican kitchens today. Which of these Mexican kitchen tools makes guacamole?",
+    "question": "Cooks in Mexico mashed avocados into guacamole by hand, centuries before anyone owned a food processor, and their tool still sits in Mexican kitchens today. What is that tool called?",
     "answer": "Molcajete",
     "choices": [
       "Molcajete",
@@ -11480,7 +11376,7 @@
   },
   {
     "tier": 1,
-    "question": "In every Cajun and Creole kitchen, the gumbo pot starts with the same three chopped veggies. Louisiana cooks call this base the 'holy trinity.' Which three go into it?",
+    "question": "A Cajun cook starts her gumbo the way nearly every Louisiana cook does, by chopping the same three vegetables into the pot. Cooks there call this base the 'holy trinity'. Which three are they?",
     "answer": "Onion, celery, and bell pepper",
     "choices": [
       "Onion, celery, and bell pepper",
@@ -11493,7 +11389,7 @@
   },
   {
     "tier": 1,
-    "question": "In a Louisiana kitchen, a bowl of gumbo — the famous thick Creole and Cajun stew of the American South — is built in two neat layers. The cook first drops a scoop of something starchy into the empty bowl, then ladles the spicy stew on top so it soaks up the broth. The starch is never stirred in. What goes in first?",
+    "question": "A bowl of gumbo, the thick Creole and Cajun stew of Louisiana, goes together in two layers. First a scoop of something starchy drops into the empty bowl, then the spicy stew is ladled on top to soak into it, never stirred through. What goes in first?",
     "answer": "A scoop of white rice",
     "choices": [
       "A scoop of white rice",
@@ -11506,7 +11402,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1700s, enslaved West Africans were shipped in chains to the plantations of Louisiana, and they carried seeds and a language with them. One green, ridged pod they had grown for centuries went straight into their stew pots and gave the whole dish its name — in the Bantu tongue they called that pod 'ki ngombo,' and Louisiana cooks softened it to 'gumbo.' Which vegetable came with them?",
+    "question": "Enslaved West Africans, shipped in chains to Louisiana's plantations in the 1700s, carried seeds and words with them. One green, ridged pod they had grown for centuries went straight into their stew pots, and its name, ki ngombo, softened in Louisiana cooks' mouths into 'gumbo'. Which vegetable was it?",
     "answer": "Okra",
     "choices": [
       "Okra",
@@ -11519,7 +11415,7 @@
   },
   {
     "tier": 2,
-    "question": "Gumbo is the great slow-cooked stew of Louisiana, where French, West African, and Native American cooks all borrowed from each other. From the French side of the family, gumbo inherits a base called a roux — the cook stirs two simple ingredients together in a pan over heat, patiently, until the mixture turns from pale gold to peanut-butter brown to dark chocolate. That roux both thickens the pot and gives gumbo its deep nutty flavor. Which two ingredients make a roux?",
+    "question": "A cook stirs two simple ingredients together over the heat for the base of a gumbo, the roux that came from the French side of the dish's family. It darkens from pale gold to peanut-butter brown to dark chocolate, then thickens the pot and gives it a deep, nutty flavor. Which two ingredients make it?",
     "answer": "Flour and fat",
     "choices": [
       "Flour and fat",
@@ -11532,7 +11428,7 @@
   },
   {
     "tier": 3,
-    "question": "A Louisiana gumbo is a thick, spicy stew, and Cajun cooks have three ways to give it that body — okra pods, a dark roux of flour and fat, or a green powder called file, which the Choctaw people of the Gulf Coast invented long before the French arrived. File is nothing fancy: it's the dried, ground leaves of one single North American tree, pounded to a fine powder. Which tree?",
+    "question": "A jar of filé sits beside the stove in a Cajun kitchen: a green powder for giving gumbo body, first made by a Native people of the Gulf Coast long before the French arrived. It is nothing fancy, just the dried leaves of one North American tree, ground fine. Which tree?",
     "answer": "The sassafras tree",
     "choices": [
       "The sassafras tree",
@@ -11545,7 +11441,7 @@
   },
   {
     "tier": 3,
-    "question": "Cajun cooks in southern Louisiana build their gumbos on smoke. The deep, smoky backbone of the pot almost always comes from one coarse pork sausage, packed with black pepper and slow-cured over pecan or sugarcane wood. The little town of LaPlace, just west of New Orleans, brags about the sausage so loudly it calls itself the sausage's world capital. Name the sausage.",
+    "question": "LaPlace, a little town just west of New Orleans, bills itself as the world capital of one coarse pork sausage, packed with black pepper and slow-cured over pecan or sugarcane wood. Cajun cooks lean on it for the smoky backbone of their gumbo. What is the sausage called?",
     "answer": "Andouille",
     "choices": [
       "Andouille",
@@ -11558,7 +11454,7 @@
   },
   {
     "tier": 3,
-    "question": "New Orleans 'city' Creole gumbo and bayou 'country' Cajun gumbo split over one red ingredient. The Creole pot turns red with it and leans toward seafood. A true Cajun gumbo never uses it and goes darker. What is it?",
+    "question": "A New Orleans cook making city-style Creole gumbo adds one red ingredient that a country Cajun cook on the bayou would never touch. The Creole pot turns red with it and leans toward seafood; the Cajun pot goes without and runs darker. What is the ingredient?",
     "answer": "Tomatoes",
     "choices": [
       "Tomatoes",
@@ -11571,7 +11467,7 @@
   },
   {
     "tier": 4,
-    "question": "A Cajun cook stirs a roux low and slow until it darkens all the way to a deep chocolate brown. Next to a pale, barely-cooked roux, what has all that dark cooking done to its power to THICKEN the gumbo?",
+    "question": "A roux stirred low and slow in oil darkens to a deep chocolate brown and a rich, nutty flavor. Next to a pale, barely cooked roux, what has all that cooking done to its power to thicken the gumbo?",
     "answer": "Weakened it — a dark roux thickens far less",
     "choices": [
       "Weakened it — a dark roux thickens far less",
@@ -11584,7 +11480,7 @@
   },
   {
     "tier": 4,
-    "question": "In a Louisiana kitchen, a Cajun cook is finishing her gumbo — the pot has been simmering all afternoon. She lifts it off the burner, waits for the boil to die down, and only then whisks in a spoonful of file, the ground sassafras-leaf powder Cajuns use to season and thicken the stew. Every cook down the bayou knows the rule: file must never boil. What goes wrong if the pot keeps cooking after the file goes in?",
+    "question": "The gumbo has simmered all afternoon when the cook lifts it off the burner, waits for the boil to die down, and only then whisks in a spoonful of filé, the green leaf powder Cajuns use to season and thicken the stew. Every cook down the bayou knows filé must never boil. What goes wrong if the pot keeps cooking after it goes in?",
     "answer": "The gumbo turns stringy and ropey",
     "choices": [
       "The gumbo turns stringy and ropey",
@@ -11597,7 +11493,7 @@
   },
   {
     "tier": 5,
-    "question": "Gumbo is famously three cultures in one bowl: West Africans brought the okra (and the word 'gumbo'), and the French brought the roux. The third thickener, filé, was a gift from a people native to the Gulf South — the first to grind a local tree's leaves into a seasoning. Which people?",
+    "question": "West Africans gave gumbo its name and the French gave it the roux. Its third thickener, filé, came from a people native to the Gulf South, who had ground a local tree's leaves into seasoning before any Frenchman came. Which people gave it?",
     "answer": "The Choctaw",
     "choices": [
       "The Choctaw",
@@ -11610,7 +11506,7 @@
   },
   {
     "tier": 1,
-    "question": "In Iceland there is a strange traditional food called hakarl — chunks of pale meat, buried underground for months, then hung in wooden sheds in the wind until they smell sharply of ammonia. It starts with one huge Arctic fish. The raw flesh is truly poisonous straight from the sea, so Icelanders learned centuries ago that they had to bury and ferment it first before they could eat it. Which fish becomes hakarl?",
+    "question": "An Icelander sets out a plate of hakarl, small pale cubes of meat whose cure began with weeks buried in a gravel pit. The meat comes from one huge, slow fish of the freezing Arctic deep, and its fresh flesh is truly poisonous. Which fish becomes hakarl?",
     "answer": "The Greenland shark",
     "choices": [
       "The Greenland shark",
@@ -11623,7 +11519,7 @@
   },
   {
     "tier": 2,
-    "question": "Fresh, untreated Greenland-shark meat is so toxic that sled dogs which gulp it down get too sick to stand. People are hit hard as well, and Icelanders have a blunt two-word nickname for the state the raw meat puts a person in. What is that nickname?",
+    "question": "A sled dog that gulps raw meat from the hakarl shark gets too sick to stand. People are hit hard as well, and Icelanders have a blunt two-word nickname for the state the raw meat puts a person in. What is that nickname?",
     "answer": "Shark drunk",
     "choices": [
       "Shark drunk",
@@ -11636,7 +11532,7 @@
   },
   {
     "tier": 2,
-    "question": "The first stage of curing hakarl looks brutally simple. The gutted, headless shark is laid in a shallow gravel pit, and then heavy stones are piled on top of it for weeks. What is all that weight actually doing to the meat?",
+    "question": "In a shallow gravel pit, a curer lays a gutted, headless shark and piles heavy stones on top of it, and there it stays for weeks. What is all that weight doing to the meat?",
     "answer": "Squeezing the poisonous fluids out of it",
     "choices": [
       "Squeezing the poisonous fluids out of it",
@@ -11649,7 +11545,7 @@
   },
   {
     "tier": 3,
-    "question": "The Greenland shark spends its whole life in the freezing, deep waters of the Arctic, and its raw flesh is loaded with a single chemical that makes the fresh meat poisonous to eat. Which chemical is it?",
+    "question": "The shark behind hakarl spends its whole life in the freezing deep waters of the Arctic, and its raw flesh is loaded with a single chemical that makes the fresh meat poisonous to eat. Which chemical is it?",
     "answer": "Urea, the waste chemical in urine",
     "choices": [
       "Urea, the waste chemical in urine",
@@ -11662,7 +11558,7 @@
   },
   {
     "tier": 4,
-    "question": "Properly cured hakarl actually tastes milder than newcomers fear - but the smell arrives first and hits hard, so first-timers are told to pinch their nose before the tiny cube reaches their mouth. What does that eye-watering reek smell like?",
+    "question": "A newcomer in Iceland raises a small cube of properly cured hakarl. It tastes milder than he fears, but the smell arrives first and hits hard, so he pinches his nose before the cube reaches his mouth. What does the eye-watering reek smell like?",
     "answer": "Ammonia, like cleaning fluid",
     "choices": [
       "Ammonia, like cleaning fluid",
@@ -11675,7 +11571,7 @@
   },
   {
     "tier": 5,
-    "question": "Icelanders have cured hakarl the same way since Norse times, and the gravel pit is only the beginning. After its weeks under the piled stones the shark comes out drained and no longer poisonous - yet it is still not ready to eat. What is the second half of the cure?",
+    "question": "Icelanders have cured hakarl the same way since Norse times, and the gravel pit is only the start. When the shark comes out from its weeks under the stones, it is still not ready to eat. What is the second half of the cure?",
     "answer": "It is cut into strips and hung to dry for months",
     "choices": [
       "It is cut into strips and hung to dry for months",
@@ -11688,7 +11584,7 @@
   },
   {
     "tier": 1,
-    "question": "You drop a thick steak into a screaming-hot cast-iron pan on the stove burner. It sizzles and crackles right where the meat touches the metal, cooking from the outside in and leaving a dark crust. Heat can travel from a stove to food in a few different ways in a kitchen. In this bare pan on the burner, how is the heat actually getting into that steak?",
+    "question": "A thick steak hits a screaming-hot cast-iron pan on a bare burner and sizzles at once. A dark crust forms first on the side pressed to the metal as the steak cooks from the outside in. How is the heat getting into the steak?",
     "answer": "By touching it directly",
     "choices": [
       "By touching it directly",
@@ -11701,7 +11597,7 @@
   },
   {
     "tier": 2,
-    "question": "A bubbling pot of pasta water, a basket of steaming dumplings, and a vat of deep-frying oil look like three completely different ways to cook. Yet a food scientist says all three carry heat into the food in the exact same way. What do they secretly share?",
+    "question": "Three pots work side by side in a busy kitchen: pasta boiling, dumplings steaming in a basket, oil deep-frying. They look like three different ways to cook, yet all of them carry heat into the food the same way. What do they share?",
     "answer": "A swirling hot fluid",
     "choices": [
       "A swirling hot fluid",
@@ -11714,7 +11610,7 @@
   },
   {
     "tier": 3,
-    "question": "Hold a marshmallow a few inches above glowing campfire embers — up in the air, not down in any flames — and it still browns and blisters. A red-hot broiler browns the top of a casserole set below it the same way, without anyone flipping the dish. Both cook by the same one of the three ways heat travels. Which is it?",
+    "question": "A camper holds a marshmallow a few inches above glowing embers, up in the air and touching no flame, and it still browns and blisters. A red-hot overhead grill browns the top of a casserole below it the same way, with no one flipping the dish. Which of the three ways heat travels are both using?",
     "answer": "Heat rays crossing open air",
     "choices": [
       "Heat rays crossing open air",
@@ -11740,7 +11636,7 @@
   },
   {
     "tier": 4,
-    "question": "Nobody builds a frying pan out of wood, glass, or plastic — a good pan is metal, almost always aluminum or copper. Metal beats water by hundreds of times, and air by thousands, at one particular job, and that's exactly why pans are made of it. What is that job?",
+    "question": "A cookware maker shapes frying pans from aluminum or copper, never from wood, glass or plastic. Those metals beat water hundreds of times over, and air thousands of times over, at one particular job, and that job is why pans are metal. What is that job?",
     "answer": "Moving heat quickly into food",
     "choices": [
       "Moving heat quickly into food",
@@ -11753,7 +11649,7 @@
   },
   {
     "tier": 4,
-    "question": "Reach your bare hand into a 100°C oven for a second and it barely stings — yet a splash of 100°C boiling water, at the very same temperature, would scald you badly. Both are exactly 100°C. Why does the water burn so much worse than the air?",
+    "question": "A baker reaches a bare hand into a 100°C oven for a second and barely feels a sting, while a splash of boiling water at the very same 100°C would scald her badly. Why does the water burn so much worse than the air?",
     "answer": "Water carries far more heat than air",
     "choices": [
       "Water carries far more heat than air",
@@ -11792,7 +11688,7 @@
   },
   {
     "tier": 1,
-    "question": "To make one pound of honey, bees fly about 55,000 miles and visit two million flowers. They gather one sweet flower juice and slowly thicken it into honey at home. What is that raw flower juice called?",
+    "question": "Bees fly some 55,000 miles and visit about two million flowers, by common estimates, to make one pound of honey. From each flower they gather a sweet juice to carry home and thicken. What is that juice called?",
     "answer": "nectar",
     "choices": [
       "nectar",
@@ -11805,7 +11701,7 @@
   },
   {
     "tier": 2,
-    "question": "Fresh flower nectar is about three-quarters water — too thin and runny to be honey. Inside the warm hive, an army of worker bees goes to work turning that thin nectar into thick, gooey honey. What do the bees do to the nectar to thicken it?",
+    "question": "Inside the warm hive, an army of worker bees sets about turning a thin, sweet flower juice, about three-quarters water, into thick, gooey honey. What do the bees do to the juice to thicken it?",
     "answer": "fan it hard with their wings",
     "choices": [
       "fan it hard with their wings",
@@ -11818,7 +11714,7 @@
   },
   {
     "tier": 4,
-    "question": "Honey has more than one germ-fighting trick. As bees ripen the nectar, a second enzyme turns some of honey's sugar into acid plus tiny traces of a common antiseptic — the very same germ-killer found in a bottle in the medicine cabinet. What antiseptic does honey make a little of?",
+    "question": "Worker bees ripening honey in the hive add an enzyme that turns some of its sugar into acid, plus tiny traces of a common antiseptic, the same germ-killer found in a bottle in the medicine cabinet. Which antiseptic does honey make a little of?",
     "answer": "hydrogen peroxide",
     "choices": [
       "hydrogen peroxide",
@@ -11830,21 +11726,8 @@
     "topic": "honey-how-bees-make-it-and-why-it-never-spoils"
   },
   {
-    "tier": 3,
-    "question": "Honey is one of the safest, longest-lasting foods on Earth — archaeologists have opened Egyptian tombs three thousand years old and found sealed pots of honey still perfectly edible. Yet every doctor warns parents there is one person who should never be fed even a taste of it, because raw honey can carry tiny sleeping bacterial spores an unfinished body cannot yet fight off. Who is that person?",
-    "answer": "a baby under one year old",
-    "choices": [
-      "a baby under one year old",
-      "an adult over sixty-five",
-      "a pregnant woman",
-      "a person with a nut allergy"
-    ],
-    "context": "Honey can carry rare Clostridium botulinum spores. An older child's or adult's gut handles them with no trouble, but a baby's immature gut can't — risking infant botulism. So: no honey before the first birthday. Source: Wikipedia, 'Honey'.",
-    "topic": "honey-how-bees-make-it-and-why-it-never-spoils"
-  },
-  {
     "tier": 5,
-    "question": "Bakers prize honey for a strange power: a cake sweetened with honey stays soft and moist for days after a plain sugar cake has gone dry and stale. That very same power is exactly why an open jar of honey can slowly turn watery and even ferment. What unusual thing does honey do?",
+    "question": "A baker sweetens one cake with honey and another with sugar, and the honey cake stays soft and moist for days after the sugar cake has gone dry and stale. The same power lets an open jar of honey slowly turn watery and even ferment. What unusual thing does honey do?",
     "answer": "It soaks up moisture straight from the surrounding air.",
     "choices": [
       "It soaks up moisture straight from the surrounding air.",
@@ -11870,7 +11753,7 @@
   },
   {
     "tier": 2,
-    "question": "Over 3,000 years ago in Egypt, workers sealed pots of honey inside the pharaohs' tombs as gifts for the afterlife. Thousands of years later, modern archaeologists cracked open those pots -- and found the honey still perfectly unspoiled, with no mold and no rot. What does honey do to a mold spore or germ that lands in it?",
+    "question": "Egyptian workers sealed pots of honey inside the pharaohs' tombs more than three thousand years ago, as gifts for the afterlife. Archaeologists who opened such pots reported the honey unspoiled, with no mold and no rot. What does honey do to a mold spore or germ that lands in it?",
     "answer": "Pulls the water out of it until it dries up and dies",
     "choices": [
       "Pulls the water out of it until it dries up and dies",
@@ -11883,7 +11766,7 @@
   },
   {
     "tier": 3,
-    "question": "Ancient Egyptian beekeepers went beyond raiding wild nests: they kept their bees in long tubes of clay and mud, stacked up into walls of hives. But the flowers bloom at different seasons in different stretches of the country. By accounts of the craft, how did the beekeepers keep their colonies in fresh blossom all year?",
+    "question": "Ancient Egyptian beekeepers kept their bees in long tubes of clay and mud, stacked into walls of hives. The flowers bloomed at different seasons along different stretches of the country. By traditional accounts, how did the keepers keep their colonies in fresh blossom all year?",
     "answer": "Floated the hives along the river on rafts",
     "choices": [
       "Floated the hives along the river on rafts",
@@ -11896,7 +11779,7 @@
   },
   {
     "tier": 2,
-    "question": "Every great chef dreams of the Michelin star, and top restaurants proudly show it off in the window. But the two French brothers who launched the Michelin Guide in 1900, Andre and Edouard Michelin, weren't chefs or food critics at all. Their company made what?",
+    "question": "André and Édouard Michelin launched the Michelin Guide in 1900, and today one of its stars can make a chef famous overnight. Yet the brothers were neither chefs nor food critics, and their little red book was meant to help drivers find good stops on long trips. What did their company make?",
     "answer": "car tires",
     "choices": [
       "car tires",
@@ -11909,7 +11792,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1900, the French tire-makers Andre and Edouard Michelin printed 35,000 copies of a slim red book and gave every single one away for free. Their scheme was simple: if drivers took more road trips, they'd wear through more Michelin tires. A driver flipping through this first-ever Michelin Guide would find pages filled mostly with what?",
+    "question": "A motorist in 1900 could pick up a slim red book for nothing, one of 35,000 copies the Michelin brothers printed and gave away. Flipping through that very first Michelin Guide, what would he have found filling most of its pages?",
     "answer": "road maps and petrol stations",
     "choices": [
       "road maps and petrol stations",
@@ -11922,7 +11805,7 @@
   },
   {
     "tier": 3,
-    "question": "Why would a tire company print thousands of guidebooks and hand them out for nothing? In 1900 there were fewer than 3,000 cars in all of France, and the Michelin brothers had a plan to change that. How did giving the guide away help them sell more tires?",
+    "question": "The Michelin brothers began handing out thousands of guidebooks for nothing in 1900, when the cars on all of France's roads numbered under 3,000. The brothers had a plan for those few drivers. How did giving the guide away help them sell more tires?",
     "answer": "it got people driving more, wearing their tires out",
     "choices": [
       "it got people driving more, wearing their tires out",
@@ -11935,7 +11818,7 @@
   },
   {
     "tier": 3,
-    "question": "A Michelin inspector — an anonymous critic sent out by the famous French tire company that publishes the Michelin Guide — settles quietly into a Paris restaurant for dinner. Nobody in the kitchen knows who she is. In a small leather notebook she rates the whole meal, deciding whether this restaurant has earned a coveted Michelin star. The guide is strict that its stars are awarded for only one thing. What is it?",
+    "question": "A Michelin inspector settles quietly into a Paris restaurant for dinner, and nobody in the kitchen knows who she is. In a small leather notebook she weighs whether the place has earned a star. The guide insists its stars are awarded for one thing only. What is it?",
     "answer": "the food on the plate",
     "choices": [
       "the food on the plate",
@@ -11948,7 +11831,7 @@
   },
   {
     "tier": 4,
-    "question": "Since 1926 the Michelin Guide -- the little red book published by the French tire company -- has awarded stars to the world's best restaurants. Each of its three levels carries a famous phrase. One star means 'worth a stop' if you're passing that way. Two stars mean 'worth a detour,' so go out of your way. What does the very top honour, three stars, promise a diner?",
+    "question": "A diner planning a trip around Michelin's stars reads the guide's famous ladder of phrases. One star means a restaurant is 'worth a stop' if she is passing by; two mean it is 'worth a detour', out of her way. What do three stars promise her?",
     "answer": "worth a special journey -- cross the whole country to eat there",
     "choices": [
       "worth a special journey -- cross the whole country to eat there",
@@ -11961,7 +11844,7 @@
   },
   {
     "tier": 4,
-    "question": "A restaurant's plush chairs, sparkling chandeliers, and elegant table settings can never win it a single Michelin star. Yet Michelin does rate that comfort and luxury -- with a completely separate mark it says has 'absolutely nothing to do with food.' What are those comfort marks?",
+    "question": "Plush chairs and sparkling chandeliers fill a grand dining room. Michelin rates that comfort and luxury with a separate mark of its own, running from one for 'quite comfortable' up to five. What symbols make up that mark?",
     "answer": "forks and spoons",
     "choices": [
       "forks and spoons",
@@ -11974,7 +11857,7 @@
   },
   {
     "tier": 5,
-    "question": "The Michelin Guide's undercover food inspectors face a tricky problem: if chefs spotted a Michelin star-maker sitting in the dining room, they would cook the meal of their lives for that one lucky table -- and every other diner would leave thinking the restaurant was much better than it really is. Michelin's famous fix, in place since the 1920s, is that its inspectors do what?",
+    "question": "A chef who spotted a Michelin inspector in the dining room would cook the meal of his life for that one table, and every other diner would leave thinking the restaurant better than it really is. Michelin's famous fix has been in place since the 1920s. What do its inspectors do?",
     "answer": "book under fake names and pay the bill like ordinary diners",
     "choices": [
       "book under fake names and pay the bill like ordinary diners",
@@ -11984,19 +11867,6 @@
     ],
     "context": "Michelin inspectors reserve under fake names, eat, and pay the full bill exactly like any other guest, so no kitchen can spot them and put on a special show. The secrecy runs deep -- inspectors are advised not to reveal their job even to close friends, and one may eat around 250 restaurant meals a year. Source: Elite Traveler and Forbes, on anonymous Michelin inspectors.",
     "topic": "how-a-kitchen-earns-michelin-stars"
-  },
-  {
-    "tier": 1,
-    "question": "Cheddar, mozzarella, brie, paneer: thousands of cheeses exist and no two taste alike. Yet every single one of them, without exception, begins with the same first move on a pot of milk. What is that move?",
-    "answer": "splitting it into curds and whey",
-    "choices": [
-      "splitting it into curds and whey",
-      "skimming the cream off the top",
-      "churning it until butter forms",
-      "boiling it down until it thickens"
-    ],
-    "context": "Splitting milk into solids and liquid is the one non-negotiable step in cheesemaking. You see the very same split when milk sours and separates into pale lumps (the curds) and a thin liquid (the whey). Source: Wikipedia, 'Cheese'.",
-    "topic": "how-cheese-is-made-curds-whey-and-aging"
   },
   {
     "tier": 1,
@@ -12013,7 +11883,7 @@
   },
   {
     "tier": 2,
-    "question": "A cheesemaker keeps a small bottle of rennet on the shelf and stirs just a few drops into a whole vat of milk. Lemon juice would curdle that same milk for free, yet no cheesemaker would swap it in. What does rennet do to milk that lemon juice cannot?",
+    "question": "A small bottle of rennet sits on a cheesemaker's shelf, and she stirs just a few drops into a whole vat of milk. Plain acid would curdle the same milk almost for free, yet she would never swap it in. What does rennet do to milk that acid cannot?",
     "answer": "sets it into a firm, springy gel",
     "choices": [
       "sets it into a firm, springy gel",
@@ -12038,32 +11908,6 @@
     "topic": "how-cheese-is-made-curds-whey-and-aging"
   },
   {
-    "tier": 2,
-    "question": "To make fresh mozzarella, the cheesemaker takes the finished curd and pulls, folds, and kneads it by hand until it turns smooth, shiny, and springy, giving it that famous pizza-cheese pull. But the curd will only stretch like taffy if it is first softened the right way. How is it softened?",
-    "answer": "bathed in very hot water",
-    "choices": [
-      "bathed in very hot water",
-      "roasted in a very hot oven",
-      "simmered in very hot milk",
-      "steamed over boiling water"
-    ],
-    "context": "This stretch-and-fold technique is called 'pasta filata,' Italian for 'spun paste.' Once the curd reaches the right acidity, plunging it into hot water lets the proteins slide past one another, so kneading lines them up into long elastic strands: the stringy pull. Source: Wikipedia, 'Mozzarella'.",
-    "topic": "how-cheese-is-made-curds-whey-and-aging"
-  },
-  {
-    "tier": 3,
-    "question": "Rennet is the enzyme that curdles fresh milk into solid cheese curds — without it, most cheeses simply cannot be made. For thousands of years, cheesemakers got their rennet from a surprising, slightly gross place: from deep inside the body of a young, still-nursing calf. The enzyme lives in the very organ where the calf's mother's milk gets broken down. Which of the calf's organs holds the rennet?",
-    "answer": "its stomach",
-    "choices": [
-      "its stomach",
-      "its liver",
-      "its pancreas",
-      "its kidney"
-    ],
-    "context": "Rennet's active enzyme, chymosin, comes from the fourth stomach (the abomasum) of an unweaned, milk-fed calf, a byproduct of veal. An old legend even claims cheese was first found by accident: a nomad carried milk in a pouch made of stomach lining, and the rennet in it curdled the milk by nightfall (told as legend). Source: Wikipedia, 'Rennet'.",
-    "topic": "how-cheese-is-made-curds-whey-and-aging"
-  },
-  {
     "tier": 3,
     "question": "A cheesemaker in the Swiss Alps slices open a fresh wheel of Emmental cheese and reveals its famous secret — big round holes, called 'eyes,' scattered through the pale yellow paste. No one drills them and no one presses them in; the wheel forms them all on its own during the months it ages down in the cellar. What actually creates each of those perfectly round holes?",
     "answer": "a bubble of gas given off by bacteria",
@@ -12078,7 +11922,7 @@
   },
   {
     "tier": 3,
-    "question": "A freshly made block of cheese tastes mild and a bit bland, yet the very same cheese left to rest in a cool cellar for a year or more turns sharp, nutty, and deeply complex. Nothing new is added the whole time -- no salt, no herbs, no fresh milk, no spices. So where does all that new flavor come from?",
+    "question": "A freshly made block of cheese tastes mild and a bit bland. A year or more in a cool cellar turns the same cheese sharp, nutty and deeply complex, though nothing new is added the whole time: no salt, no herbs, no fresh milk, no spices. Where does all that new flavor come from?",
     "answer": "microbes and enzymes break its proteins and fat apart",
     "choices": [
       "microbes and enzymes break its proteins and fat apart",
@@ -12091,7 +11935,7 @@
   },
   {
     "tier": 4,
-    "question": "Rennet is the ancient enzyme that curdles milk into cheese -- for thousands of years cheesemakers got it only from the stomachs of young calves. Since the 1990s, though, that animal source has nearly vanished from the industry, and most cheese on supermarket shelves today is set with rennet that never came near a calf. Where does this modern rennet come from?",
+    "question": "A supermarket cheese counter is stacked with wheels and blocks, and most of them were set with rennet that never came near a calf. For thousands of years cheesemakers took that enzyme only from young calves' stomachs, but since the 1990s the animal source has nearly vanished. Where does the modern rennet come from?",
     "answer": "grown by microbes in big tanks",
     "choices": [
       "grown by microbes in big tanks",
@@ -12103,21 +11947,8 @@
     "topic": "how-cheese-is-made-curds-whey-and-aging"
   },
   {
-    "tier": 4,
-    "question": "The blue-green veins in blue cheese are a mold, grown there on purpose because it is safe to eat and full of sharp flavor. Strangely, cheesemakers take long steel needles and stab them clear through each finished wheel, dozens of times. Why pierce the cheese?",
-    "answer": "to open air channels so the mold can grow inside",
-    "choices": [
-      "to open air channels so the mold can grow inside",
-      "to drain extra moisture out of the wheel's center",
-      "to inject the mold spores deep into the paste",
-      "to check whether the inside has ripened enough"
-    ],
-    "context": "The mold is Penicillium roqueforti, added deliberately. Because mold needs oxygen, the needle holes let air reach the interior, so the blue grows in streaks along the channels, which is why the veins look like veins. Source: Wikipedia, 'Blue cheese'.",
-    "topic": "how-cheese-is-made-curds-whey-and-aging"
-  },
-  {
     "tier": 5,
-    "question": "Cheese-making starts with a big pot of fresh milk. Inside that milk drift tiny protein bundles called casein — and they never clump together on their own, because each bundle wears a fuzzy negatively-charged coating that repels its neighbors like magnets pointing the same way. To turn the milk into cheese, the cheese-maker stirs in rennet, an enzyme originally taken from calf stomachs. Within minutes the whole pot sets into a soft solid gel. What has rennet's enzyme done to those casein bundles?",
+    "question": "A pot of fresh milk gets a dose of rennet, the enzyme first taken from calf stomachs. In the milk drift tiny bundles of casein protein that never clump on their own, because each wears a fuzzy, negatively charged coat that pushes its neighbors away like magnets turned the same way. Within minutes the milk has turned to curd. What does the enzyme do to the bundles?",
     "answer": "snips off their fuzzy coating so they stop repelling and clump",
     "choices": [
       "snips off their fuzzy coating so they stop repelling and clump",
@@ -12130,20 +11961,7 @@
   },
   {
     "tier": 5,
-    "question": "Bite into a chunk of Parmigiano-Reggiano -- the hard Italian cheese aged in giant wheels for two years or more -- and you crunch tiny white crystals that pop and crackle between your teeth. A young wheel of the same cheese has none of them at all. What are these little crystals actually made of?",
-    "answer": "an amino acid, set loose as the cheese ages",
-    "choices": [
-      "an amino acid, set loose as the cheese ages",
-      "a milk sugar, recrystallized as the cheese ages",
-      "a grain of salt, drawn inward as the cheese ages",
-      "a milk mineral, hardened as the cheese ages"
-    ],
-    "context": "The crystals are tyrosine, an amino acid released as the cheese's proteins slowly break down during long aging; once concentrated, it hardens into crunchy grains. They start around two years and grow abundant past three. A softer, different crystal, calcium lactate, forms as white crumbs on younger cheeses like cheddar. Source: Wikipedia, 'Cheese crystals'.",
-    "topic": "how-cheese-is-made-curds-whey-and-aging"
-  },
-  {
-    "tier": 5,
-    "question": "For years, Swiss cheesemakers were baffled: the famous round holes in their cheese were shrinking and even vanishing. In 2015, researchers cracked the case. It turned out each hole needs a tiny 'seed' to start forming around, and ultra-clean modern milking had accidentally stripped that seed out of the milk. What tiny thing does each hole grow around?",
+    "question": "Swiss cheesemakers watched the famous round holes in their Emmental shrink and even vanish, and for years nobody could say why. Researchers found the answer in 2015: each hole needs a tiny seed to start forming around, and spotless modern milking had stripped that seed out of the milk. What does each hole grow around?",
     "answer": "a speck of hay dust",
     "choices": [
       "a speck of hay dust",
@@ -12156,7 +11974,7 @@
   },
   {
     "tier": 1,
-    "question": "Open a jar of tahini and you'll find a smooth, oily, tan paste that spreads and even tastes a bit like peanut butter — yet there's not a single peanut in it. Tahini is nothing but one kind of seed, toasted and ground. Which seed?",
+    "question": "A spoonful of tahini spreads on toast like peanut butter and even tastes a bit like it, a smooth, oily, tan paste, yet not a single peanut goes into the jar. It is nothing but one kind of seed, toasted and ground. Which seed?",
     "answer": "Sesame seeds",
     "choices": [
       "Sesame seeds",
@@ -12169,7 +11987,7 @@
   },
   {
     "tier": 1,
-    "question": "In a Middle Eastern kitchen, you blend a can of cooked chickpeas with a spoonful of tahini — a smooth paste of ground sesame seeds — and taste what you've made. It's a bland, pasty mush, nothing like a real dip. Hummus only tastes like hummus after you stir in two classic Mediterranean flavors that give it a bright, tangy kick. Which pair do you add?",
+    "question": "A cook in a Middle Eastern kitchen blends cooked chickpeas with a spoonful of tahini, the pale seed paste, and tastes a bland, pasty mush. It only becomes hummus once she stirs in two classic Mediterranean flavors for a bright, tangy kick. Which pair does she add?",
     "answer": "Lemon juice and garlic",
     "choices": [
       "Lemon juice and garlic",
@@ -12182,7 +12000,7 @@
   },
   {
     "tier": 2,
-    "question": "In Arabic, 'hummus' is not a fancy name for the dip at all. It is the plain, everyday grocery word for one ingredient -- the kind of word a shopper puts on a market list. Which ingredient does it name?",
+    "question": "A shopper in a Beirut market writes 'hummus' on her list. In Arabic the word is no fancy name for a dip, just the everyday grocery word for one ingredient. Which ingredient does it name?",
     "answer": "Chickpea",
     "choices": [
       "Chickpea",
@@ -12195,7 +12013,7 @@
   },
   {
     "tier": 2,
-    "question": "You open a fresh jar of tahini — a Middle Eastern paste made from finely ground sesame seeds. Right away it looks split and spoiled: a layer of clear oil is floating on top and a stiff, pale paste is packed underneath. Beginners take one glance and toss the whole jar into the trash, sure it has gone bad. In fact the tahini is perfectly fine. What do you do with the jar?",
+    "question": "A beginner unscrews a fresh jar of tahini, the Middle Eastern seed paste, and it looks split and spoiled: clear oil floats over a stiff, pale paste. He is ready to toss it in the trash, but the tahini is perfectly fine. What should he do with the jar?",
     "answer": "Stir the oil back in",
     "choices": [
       "Stir the oil back in",
@@ -12208,20 +12026,7 @@
   },
   {
     "tier": 3,
-    "question": "The chickpea is one of the oldest crops that humans ever farmed, with people growing it roughly 10,000 years ago, right alongside humanity's first farmed grains, peas, and lentils. In which region did that first farming take root?",
-    "answer": "The Fertile Crescent",
-    "choices": [
-      "The Fertile Crescent",
-      "The Andes mountains",
-      "The Yangtze valley",
-      "The Mexican highlands"
-    ],
-    "context": "The chickpea was domesticated in the Fertile Crescent of the Middle East roughly 10,000 years ago, among the world's first farmed foods. The oldest chickpea remains ever dug up come from Syria, dating back more than 9,000 years. Source: Wikipedia 'Chickpea'.",
-    "topic": "hummus-and-tahini-chickpeas-meet-sesame"
-  },
-  {
-    "tier": 3,
-    "question": "Look closely at a dried chickpea and you'll notice a small pointed bump on one side, almost like a tiny horned head. Early botanists thought it looked so much like one animal that the chickpea's scientific name, Cicer arietinum, literally means '___-like.' Which animal?",
+    "question": "A botanist looks closely at dried chickpeas and notices a small pointed beak on each, almost like a tiny horned head. Early botanists thought each seed looked so much like one animal's head that the plant's scientific name, Cicer arietinum, means '___-like'. Which animal?",
     "answer": "A ram",
     "choices": [
       "A ram",
@@ -12234,7 +12039,7 @@
   },
   {
     "tier": 3,
-    "question": "You order hummus at a Lebanese restaurant and it arrives silky as pudding, spreading in soft ribbons across the plate. But when you blend the same cooked chickpeas at home, with the same brand of tahini and the same blender, your batch comes out gritty and grainy on the tongue. The pros in that kitchen do one extra, tedious step every home cook skips. What is it?",
+    "question": "A diner at a Lebanese restaurant gets hummus as silky as pudding, spreading in soft ribbons across the plate. At home he blends the same cooked chickpeas with the same tahini in the same blender, and his batch comes out gritty and grainy. The restaurant's cooks take one extra, tedious step that he skips. What is it?",
     "answer": "They peel the skin off every bean",
     "choices": [
       "They peel the skin off every bean",
@@ -12247,7 +12052,7 @@
   },
   {
     "tier": 4,
-    "question": "Hummus is made by boiling chickpeas until soft, then blending them with tahini, lemon juice, and garlic into a smooth beige paste. To get that silkiness faster, many cooks toss one pinch of a common white kitchen powder into the simmering pot of chickpeas -- the beans turn tender in half the time and blend up perfectly smooth. Which powder?",
+    "question": "A pot of chickpeas simmers on the stove for hummus, and the cook tosses in one pinch of a common white kitchen powder. The beans turn tender in half the time and blend up perfectly smooth. Which powder does the cook add?",
     "answer": "Baking soda",
     "choices": [
       "Baking soda",
@@ -12260,7 +12065,7 @@
   },
   {
     "tier": 5,
-    "question": "The oldest known written recipe for a chickpea-and-sesame purée survives in a cookbook from 13th-century Aleppo, Syria. Its author didn't call the dish 'hummus' at all — he named it after an everyday piece of clothing. Which garment?",
+    "question": "Ibn al-Adim, a historian of 13th-century Aleppo in Syria, is credited with the oldest recipe that survives for chickpeas mashed with a seed paste. The recipe does not call the dish 'hummus' at all; it names it after an everyday piece of clothing. Which garment?",
     "answer": "A cloak",
     "choices": [
       "A cloak",
@@ -12273,7 +12078,7 @@
   },
   {
     "tier": 5,
-    "question": "Several neighboring countries each claim hummus as their own national dish, and the rivalry once boiled over into a record-breaking cook-off. In 2010, about 300 cooks near Beirut, Lebanon built a single bowl of hummus weighing over 10,000 kilograms — more than double the world record a rival had set just weeks before. Whose record did they smash?",
+    "question": "About 300 cooks gathered near Beirut in 2010 and filled one bowl with more than 10,000 kilograms of hummus, more than double the world record a rival nation had set only weeks before. Lebanon took the title, one more round in the feud nicknamed the Hummus Wars. Whose record did the cooks smash?",
     "answer": "Israel's",
     "choices": [
       "Israel's",
@@ -12286,7 +12091,7 @@
   },
   {
     "tier": 2,
-    "question": "Most vegetables are mostly water, but one common vegetable takes it to an extreme: about 95% of its weight is just water. It's a familiar sight in salads, on sandwiches, and pickled by the jar-full. It's crisp and cool, and biting into a fresh slice on a hot summer day is almost like taking a drink — a splash of liquid held inside a thin, edible skin. Which vegetable is it?",
+    "question": "A gardener picks a vegetable on a hot summer day and bites into a cool, crisp slice, and it is almost like taking a drink: about 95 percent of its weight is water, held inside a thin, edible skin. It turns up in salads and gets pickled by the jarful. Which vegetable is it?",
     "answer": "A cucumber",
     "choices": [
       "A cucumber",
@@ -12299,7 +12104,7 @@
   },
   {
     "tier": 2,
-    "question": "You unwrap a thick raw steak on the kitchen counter — dense, deep red, and cool to the touch. It feels in your hand like a solid block of pure protein. But set it on a kitchen scale and check what's really inside gram for gram, and well over half of the meat's whole weight turns out to be something most people never guess. What makes up most of a raw steak?",
+    "question": "A cook unwraps a thick raw steak on the counter, dense, deep red and cool to the touch. It feels like a solid block of protein, yet weighed gram for gram, well over half of it turns out to be something most people never guess. What makes up most of a raw steak?",
     "answer": "Water",
     "choices": [
       "Water",
@@ -12312,7 +12117,7 @@
   },
   {
     "tier": 3,
-    "question": "Everyone 'knows' you should drink eight glasses of water a day — yet a Dartmouth kidney scientist searched the evidence and found nothing behind it. The rule traces to a 1945 report that advised roughly that much water in total, but readers skipped its very next line. What did that skipped line say?",
+    "question": "Heinz Valtin, who studied kidneys at Dartmouth, looked in 2002 for the science behind the well-known rule of eight glasses of water a day, and found none. The rule apparently began with a 1945 report advising about that much water in total, but readers forgot its next line. What did that line say?",
     "answer": "That most of that water is already in your food",
     "choices": [
       "That most of that water is already in your food",
@@ -12325,7 +12130,7 @@
   },
   {
     "tier": 4,
-    "question": "When marathon runners or basketball players push their bodies hard, they can lose more than a liter of sweat every hour. Sports scientists who collect and test that sweat find it packed with electrolytes -- but one mineral makes up the bulk of the loss, and it's the one athletes scramble to replace with sports drinks and salty snacks. Which electrolyte do you lose the most of when you sweat?",
+    "question": "A basketball player pushing hard through a game can lose more than a liter of sweat an hour. Sports scientists who collect and test that sweat find it full of electrolytes, but one mineral makes up the bulk of the loss, the one athletes scramble to replace with sports drinks and salty snacks. Which electrolyte does sweat carry away the most of?",
     "answer": "Sodium",
     "choices": [
       "Sodium",
@@ -12338,7 +12143,7 @@
   },
   {
     "tier": 4,
-    "question": "Most warnings are about drinking too little — but sports doctors have documented the opposite danger. After hours of heavy sweating, runners who gulp down nothing but plain water, glass after glass, can end up seriously ill. What goes wrong inside the body?",
+    "question": "A runner sweats for hours through an endurance race and refills on nothing but plain water, glass after glass. Sports doctors have documented that such runners can end up seriously ill, the opposite of the usual warning about drinking too little. What goes wrong inside the body?",
     "answer": "Their blood's salt gets diluted dangerously low",
     "choices": [
       "Their blood's salt gets diluted dangerously low",
@@ -12351,7 +12156,7 @@
   },
   {
     "tier": 1,
-    "question": "You sit down for dinner in an Ethiopian home. On the low round table there is no fork, no spoon, and no separate plate. In their place a huge, spongy, sour flatbread called injera has been spread out flat like a tablecloth, and rich, spicy stews are ladled in colorful mounds directly on top of it. So how do you actually eat the meal?",
+    "question": "Suppose you sit down to dinner in an Ethiopian home. On the table there is no fork, no spoon and no plate; a huge, spongy, sour flatbread called injera lies spread out like a tablecloth, with spicy stews ladled in mounds on top. How do you eat the meal?",
     "answer": "Tear off pieces of the injera and use them to scoop up the stew",
     "choices": [
       "Tear off pieces of the injera and use them to scoop up the stew",
@@ -12377,7 +12182,7 @@
   },
   {
     "tier": 2,
-    "question": "Injera begins as a runny batter of water, salt, and one flour milled from a grain so tiny it takes about 100 of its seeds to weigh as much as a single grain of wheat. This 'world's smallest grain' is called what?",
+    "question": "Injera starts as a runny batter of water, salt and one flour, milled from a grain so tiny that about 100 of its seeds weigh as much as a single grain of wheat. What is this smallest grain in the world called?",
     "answer": "teff",
     "choices": [
       "teff",
@@ -12390,7 +12195,7 @@
   },
   {
     "tier": 2,
-    "question": "An Ethiopian dinner usually isn't dished onto separate plates at all. Instead, one enormous round of injera is spread out and different stews are spooned over it in colorful mounds. How is this single bread meant to be eaten?",
+    "question": "An Ethiopian cook spreads one enormous round of injera on the tray and spoons different stews over it in colorful mounds, with no separate plates at all. How is that single bread meant to be eaten?",
     "answer": "Two or three people share it, all reaching into the same bread",
     "choices": [
       "Two or three people share it, all reaching into the same bread",
@@ -12403,7 +12208,7 @@
   },
   {
     "tier": 3,
-    "question": "In an Ethiopian kitchen, a sheet of spongy sourdough flatbread called injera is spread out flat, and the fiery, spicy stews mounded on top of it are called wat. The most famous wat of them all is doro wat — a rich chicken stew slow-simmered for hours in clarified spiced butter, sweet onions, and berbere chili. When a cook builds a proper doro wat, she tucks one surprising extra whole into the pot. What is it?",
+    "question": "Doro wat, chicken slow-simmered for hours in spiced clarified butter with sweet onions and chili, is the most famous of the stews served on injera. A cook making a proper doro wat tucks one surprising extra into the pot whole. What is it?",
     "answer": "A whole hard-boiled egg",
     "choices": [
       "A whole hard-boiled egg",
@@ -12416,7 +12221,7 @@
   },
   {
     "tier": 3,
-    "question": "Wheat, barley, and rye breads are all off-limits to people with celiac disease, whose bodies react badly to one substance in those grains. Injera, an everyday bread in Ethiopia, is completely safe for them — because teff doesn't contain it. What is that troublesome substance?",
+    "question": "A girl with celiac disease can't eat bread made from wheat, barley or rye, because her body reacts badly to one substance in those grains. In Ethiopia she could eat injera every day, since the grain it is made from contains none of it. What is that substance?",
     "answer": "gluten",
     "choices": [
       "gluten",
@@ -12442,7 +12247,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Ethiopian highlands, cooks have ground teff into flour for the sourdough flatbread injera for thousands of years. Teff may be the tiniest grain on Earth, but it's a nutrition heavyweight -- a single plate of injera delivers a big share of the day's need for one mineral, and teff has more of it than almost any other grain. Which mineral is teff famous for?",
+    "question": "A cook in the Ethiopian highlands grinds injera's tiny grain into flour, as cooks there have for thousands of years. The grain may be the smallest on Earth, but it is a nutritional heavyweight: a plate of injera delivers a big share of the day's need for one mineral, which the grain carries more of than almost any other. Which mineral is it famous for?",
     "answer": "iron",
     "choices": [
       "iron",
@@ -12455,7 +12260,7 @@
   },
   {
     "tier": 4,
-    "question": "Making injera takes days, not minutes. After stirring teff flour into water, cooks don't cook it right away — they leave the wet batter to sit out at room temperature for two or three days first. What is happening inside the batter during that long wait?",
+    "question": "A bowl of injera batter, just flour stirred into water, sits out at room temperature for two or three days before its cook goes near the griddle. What is happening inside the batter during that long wait?",
     "answer": "It's fermenting as wild yeasts and bacteria feed on it, giving off gas and acid",
     "choices": [
       "It's fermenting as wild yeasts and bacteria feed on it, giving off gas and acid",
@@ -12468,7 +12273,7 @@
   },
   {
     "tier": 4,
-    "question": "As the thin injera batter cooks on the hot griddle, steam pushes up through it and pops open hundreds of little holes across the top of the bread, leaving a soft, lacy surface. Ethiopians have a name for these holes — the very ones that let a torn piece grab and soak up stew. They're called the injera's what?",
+    "question": "Thin injera batter hits a hot griddle, and steam pushes up through it, popping open hundreds of little holes across the top and leaving a soft, lacy surface. A torn piece uses those holes to grab the stew and soak it up, and Ethiopians have a name for them. What are they called?",
     "answer": "eyes",
     "choices": [
       "eyes",
@@ -12481,7 +12286,7 @@
   },
   {
     "tier": 5,
-    "question": "At an Ethiopian table, sharing food can become a sign of love in the most direct way. You tear off a piece of injera, scoop up a big bite of stew, and place it by hand right into another person's mouth. Feeding someone this way, as a gesture of respect and affection, is called a what?",
+    "question": "At an Ethiopian table, a diner tears off a piece of injera, scoops up a big bite of stew and pops it into a friend's mouth with his own hand, and a bigger bite shows deeper affection. What is this way of feeding someone called?",
     "answer": "gursha",
     "choices": [
       "gursha",
@@ -12494,7 +12299,7 @@
   },
   {
     "tier": 2,
-    "question": "In alpine Swiss valleys a century ago, doctors puzzled over villagers whose necks bulged with huge, soft lumps called goiters. The problem sat in the thyroid — a small gland at the front of the neck that helps run the whole body's energy. Starved of one particular mineral, the thyroid can't build its hormones, and it swells into that goiter. Which mineral does the thyroid need?",
+    "question": "Villagers in the alpine valleys of Switzerland a century ago had necks that bulged with huge, soft lumps called goiters. The trouble sat in the thyroid, a small gland at the front of the neck that helps run the body's energy; starved of one mineral, it cannot build its hormones and swells. Which mineral does it need?",
     "answer": "Iodine",
     "choices": [
       "Iodine",
@@ -12507,7 +12312,7 @@
   },
   {
     "tier": 2,
-    "question": "Watch a Japanese sushi chef at work in his shop: he lays a small bamboo mat down on the counter, sets a thin, flat, dark-green sheet on top of it, spreads sticky sushi rice across the sheet, and rolls the whole thing into a tight tube. Those wrapper sheets happen to be one of the very richest natural sources of iodine on the whole planet — a mineral your thyroid gland needs to work properly. What are the wrappers made from?",
+    "question": "A sushi chef lays a bamboo mat on his counter, sets a thin, dark-green sheet on top, spreads sticky rice across it and rolls the whole thing into a tight tube. Those wrapper sheets are one of the richest natural sources of iodine, the mineral the thyroid gland needs. What are they made from?",
     "answer": "Nori seaweed",
     "choices": [
       "Nori seaweed",
@@ -12520,7 +12325,7 @@
   },
   {
     "tier": 3,
-    "question": "By the early 1920s, doctors knew a trace of iodine could prevent goiter. But how do you get a whole country to swallow a tiny dose every day? A Michigan doctor named David Cowie pushed a cheap answer: blend the iodine into one thing nearly everyone already eats a little of daily. What did he add it to?",
+    "question": "David Cowie, a Michigan doctor, faced a puzzle in the early 1920s: doctors knew a trace of iodine could prevent goiter, but how could a whole country take a tiny dose every day? He pushed a cheap answer, putting the iodine into one thing nearly everyone eats a little of daily. What did he add it to?",
     "answer": "Table salt",
     "choices": [
       "Table salt",
@@ -12533,7 +12338,7 @@
   },
   {
     "tier": 3,
-    "question": "Doctors mapped whole inland regions they called 'goiter belts' -- the Great Lakes states, the Appalachians, the Swiss Alps -- where 1920s health surveys found swollen necks in classroom after classroom. Places hundreds of miles apart were all struck the same way. What did these scattered regions share that bred so many goiters?",
+    "question": "Doctors mapped whole inland 'goiter belts', in the Great Lakes states, the Appalachians and the Swiss Alps, where 1920s health surveys found swollen necks in classroom after classroom. Places hundreds of miles apart were struck the same way. What did those scattered regions share that bred so many goiters?",
     "answer": "The poor soil that fed their crops",
     "choices": [
       "The poor soil that fed their crops",
@@ -12546,7 +12351,7 @@
   },
   {
     "tier": 4,
-    "question": "Iodized salt did far more than shrink swollen necks. In the regions that had been the most iodine-starved, that cheap pinch of iodine in the salt shaker quietly lifted something in the whole next generation, a change so large that economists could still measure it decades later, worth about a decade of the nation's progress. What did the iodine raise in those children?",
+    "question": "Feyrer, Politi and Weil, three economists, measured decades later what iodized salt had done beyond shrinking swollen necks. In the most iodine-starved quarter of the country, that cheap pinch in the salt shaker had lifted something in the whole next generation. What did it raise in those children?",
     "answer": "Their intelligence",
     "choices": [
       "Their intelligence",
@@ -12559,7 +12364,7 @@
   },
   {
     "tier": 5,
-    "question": "A mild iodine shortage only swelled the neck, but the severe kind, striking a baby before birth, was far crueler: it stunted the child's growth and permanently damaged the developing brain. Iodine starvation is still called the world's leading PREVENTABLE cause of intellectual disability. Doctors gave this severe congenital condition an old, now-outdated name. What was it?",
+    "question": "A baby starved of iodine before birth was stunted for life, its developing brain permanently damaged, a harm far crueler than a swollen neck. Even today no preventable cause of intellectual disability harms as many children worldwide. Doctors once gave the condition a name they no longer use. What was it?",
     "answer": "Cretinism",
     "choices": [
       "Cretinism",
@@ -14132,7 +13937,7 @@
   },
   {
     "tier": 1,
-    "question": "Long before Europeans reached the Americas, Native farmers grew corn, beans, and squash together in one small mound of dirt. They called the trio the Three Sisters because each plant did a job for the other two. The corn shot up tall and straight, the bean vines twisted upward around the corn, and the wide squash leaves spread across the ground below. What did the tall corn stalk provide for the bean vines?",
+    "question": "Native farmers planted corn, beans and squash together in one small mound. They named the trio the Three Sisters, because each plant did a job for the others. The corn shot up tall and straight, and the bean vines twisted up around it. What did the stalk give the beans?",
     "answer": "a living pole to climb up",
     "choices": [
       "cool shade at midday",
@@ -14145,7 +13950,7 @@
   },
   {
     "tier": 2,
-    "question": "Teosinte, corn's wild ancestor, sealed every single seed inside its own tiny capsule. Botanists call it a fruitcase. A change in one gene finally stripped those capsules off, giving us the naked kernels we bite off a cob today. What made a mouthful of teosinte fruitcases so miserable?",
+    "question": "Teosinte, corn's wild ancestor, sealed each of its few tiny seeds in its own capsule, which botanists call a fruitcase. One gene's change, it is thought, stripped the cases off and left the bare kernels on a modern cob. What made a mouthful of fruitcases so miserable?",
     "answer": "They were stone-hard, and could crack a tooth",
     "choices": [
       "They were stone-hard, and could crack a tooth",
@@ -14158,7 +13963,7 @@
   },
   {
     "tier": 3,
-    "question": "Corn comes in thousands of varieties today — popcorn, sweetcorn, and the field corn ground into tortillas and cornflakes — and it is grown on farms from Canada all the way down to Chile. To figure out how all this incredible variety began, geneticists collected corn samples from around the world and compared their DNA piece by piece. When they read the pattern in the DNA, what story did it tell about the birth of corn?",
+    "question": "Geneticists gathered corn samples from around the world, wanting to know how a crop now grown from Canada to Chile, as popcorn, sweetcorn and the field corn ground into tortillas, came to vary so much. They compared the samples' DNA piece by piece. What story did the pattern tell about the birth of corn?",
     "answer": "one taming, of one grass, in one place, at one time",
     "choices": [
       "one taming, of one grass, in one place, at one time",
@@ -14171,20 +13976,7 @@
   },
   {
     "tier": 4,
-    "question": "Native American farmers planted a legendary garden they called the Three Sisters, with corn, beans, and squash growing all together in the same mound. The tall corn is a heavy feeder that steadily drains the soil of nutrients. The squash sprawls low along the ground and shades out any weeds. But the beans quietly pull off a hidden trick underground that puzzled European farmers for centuries. What are the bean roots secretly doing down there in the dirt?",
-    "answer": "pull nitrogen from the air and lock it into the soil",
-    "choices": [
-      "drink up floodwater to protect the corn",
-      "leak sugar that sweetens the corn ears",
-      "pull nitrogen from the air and lock it into the soil",
-      "grow deep to crack the hard clay"
-    ],
-    "context": "Bacteria living on the bean roots pull nitrogen straight out of the air and fix it into the soil that the hungry corn drains, so the patch keeps feeding itself. Corn is also low in protein while beans are rich in it, so eaten together they form a complete protein. Source: en.wikipedia.org — Three Sisters (agriculture).",
-    "topic": "maize-from-a-wild-grass-to-corn"
-  },
-  {
-    "tier": 4,
-    "question": "Teosinte and corn look so wildly different — a scraggly weed versus a fat golden cob — that you'd expect a huge genetic gulf between them. To measure it, geneticist George Beadle raised some 50,000 corn-teosinte hybrid plants and did the Mendelian math. How many genes did he find separate the weed from the crop?",
+    "question": "George Beadle raised some 50,000 hybrids of corn and teosinte to measure the gap between a scraggly weed and a fat golden cob. The two looked so unlike each other that a huge genetic gulf seemed certain. When he did the Mendelian math, how many genes did he find separating them?",
     "answer": "only a handful — four or five genes",
     "choices": [
       "hundreds of genes, spread all over",
@@ -14196,21 +13988,8 @@
     "topic": "maize-from-a-wild-grass-to-corn"
   },
   {
-    "tier": 5,
-    "question": "For tortillas and tamales, cooks soak dried corn in water mixed with wood ash or lime before grinding it into dough — a Mesoamerican trick called nixtamalization. It does more than soften the kernels: it also frees up a vitamin that the human body simply cannot absorb from plain, untreated corn. Which vitamin does the ash-water set loose?",
-    "answer": "niacin",
-    "choices": [
-      "thiamine",
-      "niacin",
-      "riboflavin",
-      "folate"
-    ],
-    "context": "The nutrient is niacin (vitamin B3). In raw corn it's chemically locked so the body can't use it; the alkaline ash-or-lime soak sets it free, turning corn from a nutritional trap into a safe staple. Mesoamericans invented nixtamalization around 1200-1500 BC — the Nahuatl name joins nextli (ashes) and tamalli (dough). Source: en.wikipedia.org — Nixtamalization.",
-    "topic": "maize-from-a-wild-grass-to-corn"
-  },
-  {
-    "tier": 5,
-    "question": "When corn spread from the Americas to Europe, Africa, and the American South after 1492, many people seized on it as a cheap staple — but skipped the Mesoamerican ash-water soak the original growers had always used. In the U.S. South in the early 1900s, that shortcut helped unleash a crippling illness that struck millions and killed over a hundred thousand. What was the disease?",
+    "tier": 4,
+    "question": "Poor families from Europe to the American South took up corn as a cheap staple after 1492, but they skipped the ash-water soak its first growers had always used. In the early-1900s South, a disease of scaly skin, diarrhea and dementia struck some three million Southerners and killed over a hundred thousand. What was the disease?",
     "answer": "pellagra",
     "choices": [
       "scurvy",
@@ -14223,7 +14002,7 @@
   },
   {
     "tier": 2,
-    "question": "Corn grows on farms across six continents today, but the whole world got it from one homeland. Farmers there bred it from a wild grass thousands of years ago, long before Columbus's sailors carried it back across the ocean after 1492. Where did corn first come from?",
+    "question": "Columbus's sailors carried corn back across the Atlantic after 1492, and today it grows on farms across six continents. But the crop had a single homeland, where farmers had bred it from a wild grass thousands of years earlier. Where did corn first come from?",
     "answer": "the valleys of southern Mexico",
     "choices": [
       "the valleys of southern Mexico",
@@ -14235,34 +14014,21 @@
     "topic": "maize-goes-global-and-the-pellagra-trap"
   },
   {
-    "tier": 2,
-    "question": "Corn has been so completely reshaped by thousands of years of human breeding that it can no longer survive on its own in the wild — no other major crop is quite this helpless without people. Drop a ripe corn cob into an empty field and walk away, and it will never grow into a new cornfield the following year. What is the strange reason corn simply cannot reproduce without a human hand to help it?",
-    "answer": "Its kernels stay stuck to the cob instead of scattering.",
+    "tier": 3,
+    "question": "A ripe ear of corn drops into an empty field and lies where it fell, and no new cornfield ever comes up there. A wild grass reseeds itself every year with no help, yet corn left unplanted would vanish within a few seasons. What is it about a ripe cob that leaves the plant so helpless?",
+    "answer": "the kernels stay locked onto the cob and never drop free",
     "choices": [
-      "Its kernels stay stuck to the cob instead of scattering.",
-      "Its seeds are all born sterile and cannot sprout.",
-      "It flowers just once in a hundred years.",
-      "Its roots poison the soil where it grows."
+      "the kernels stay locked onto the cob and never drop free",
+      "the kernels are far too heavy for the wind to scatter",
+      "the kernels sink in water instead of drifting to new ground",
+      "the kernels are too smooth for animals to carry off"
     ],
     "context": "Unlike its wild ancestor, whose seeds scatter to replant themselves, domesticated corn's kernels stay locked onto the cob, so the plant depends entirely on people to strip and replant it. Corn literally cannot reproduce in the wild. Source: en.wikipedia.org/wiki/Maize",
     "topic": "maize-goes-global-and-the-pellagra-trap"
   },
   {
     "tier": 3,
-    "question": "Mesoamerican cooks kept hitting a wall making tortilla dough. No matter how fine they ground dried corn, the plain meal simply would not bind into a smooth, stretchy dough. Their ancient fix, the same step used for real tortillas today, was to first simmer and steep the kernels in what?",
-    "answer": "a bath of mineral lime or wood ash",
-    "choices": [
-      "a bath of mineral lime or wood ash",
-      "a pot of heavily salted water",
-      "a jug of fresh cow's milk",
-      "a barrel of sour vinegar"
-    ],
-    "context": "This soak is called nixtamalization; the alkali loosens the hulls and turns the kernels into masa, the soft dough for tortillas and tamales. The word comes from the Aztec (Nahuatl) nextli ('ashes') + tamalli ('corn dough') = 'ash-dough,' and the earliest grinding equipment dates to roughly 1200-1500 BCE on Guatemala's coast. Source: en.wikipedia.org/wiki/Nixtamalization",
-    "topic": "maize-goes-global-and-the-pellagra-trap"
-  },
-  {
-    "tier": 3,
-    "question": "You would never guess corn descended from this plant. Its wild ancestor is a scrawny, many-branched grass whose few seeds are so small and stone-hard they rattle like gravel, nothing like a plump corn cob. Over thousands of years, farmers bred it into corn. What is this wild grass called?",
+    "question": "Farmers bred corn, over thousands of years, from a scrawny, many-branched wild grass whose few seeds were small and stone-hard enough to rattle like gravel. Nothing about it looked like a plump corn cob. What is that wild ancestor called?",
     "answer": "teosinte",
     "choices": [
       "teosinte",
@@ -14275,7 +14041,7 @@
   },
   {
     "tier": 5,
-    "question": "Pellagra, a scaly rash followed by diarrhea, dementia, and often death, killed over 100,000 people in the American South, striking sharecropper families who lived on the 'three Ms': cornmeal, fatback meat, and molasses. Nobody ever talked the South into Mexico's ancient lime-and-ash soak, and cornbread stayed on the table. Yet by the mid-1940s pellagra had all but vanished from the region. What had changed on those tables?",
+    "question": "Sharecropper families in the American South lived on the 'three Ms', cornmeal, fatback and molasses, and pellagra, a scaly rash followed by diarrhea, dementia and often death, killed over a hundred thousand people across the region. Nobody talked the South into the old lime-and-ash soak, and cornbread stayed on the table, yet by the mid-1940s pellagra had all but vanished. What had changed on those tables?",
     "answer": "Millers were adding niacin back into white flour.",
     "choices": [
       "Millers were adding niacin back into white flour.",
@@ -15107,7 +14873,7 @@
   },
   {
     "tier": 1,
-    "question": "Pellagra was a disease common in the American South a century ago. Doctors called it a poor person's sickness — it struck families whose diet was almost nothing but cornbread. It caused a scaly red rash on the skin and long bouts of diarrhea. But what really frightened doctors was pellagra's final stage before death: it attacked something no ordinary skin disease should ever reach — the victim's ___.",
+    "question": "Doctors in the American South a century ago called pellagra a poor family's sickness: it struck homes that lived on little but cornbread. First came a scaly red rash and long bouts of diarrhea. In its last stage, what did the disease destroy?",
     "answer": "sanity",
     "choices": [
       "sanity",
@@ -15120,7 +14886,7 @@
   },
   {
     "tier": 1,
-    "question": "In the early 1900s, doctors fighting pellagra in Southern orphanages saw sickly children come back to health after one small change. They added one common drink to the plain meals. It held the very nutrient a corn-heavy diet lacked. Which drink was it?",
+    "question": "Sickly children in Southern orphanages came back to health in the early 1900s after one small change to their plain meals: the doctors fighting pellagra added a common drink. It carried the nutrient a corn-heavy diet lacked. Which drink was it?",
     "answer": "milk",
     "choices": [
       "milk",
@@ -15132,8 +14898,8 @@
     "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
   },
   {
-    "tier": 2,
-    "question": "Here is the cruel puzzle at the heart of pellagra: the corn people ate all day actually contained the very vitamin they were sickening without. In corn, though, that vitamin is locked in a form the human gut cannot unlock. So you eat plenty of it and still fall deficient. Which trapped vitamin is it?",
+    "tier": 3,
+    "question": "Poor Southern families sickened with pellagra while eating corn all day, and that corn held plenty of the very vitamin they lacked. Corn kept it locked away where the gut could not reach it, and an alkaline soak set it loose. Which vitamin was it?",
     "answer": "niacin (B3)",
     "choices": [
       "niacin (B3)",
@@ -15145,47 +14911,8 @@
     "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
   },
   {
-    "tier": 2,
-    "question": "A hot corn tortilla off a Mexican griddle, or a good tortilla chip, carries a deep, toasty, almost earthy corn flavor unlike any other food. Yet plain American cornbread and Italian polenta are made from the very same yellow corn kernels — and they don't taste anything like that. There's one old prep step Mexican cooks use that changes everything. What step gives real tortillas that unmistakable taste?",
-    "answer": "an alkaline mineral-lime soak",
-    "choices": [
-      "an alkaline mineral-lime soak",
-      "a slow sourdough rising",
-      "a smoky wood-fire roast",
-      "a double corn-milling"
-    ],
-    "context": "That soak is nixtamalization; beyond building flavor, it unlocks the vitamin trapped in the corn and softens the kernels for grinding. Plain cornmeal skips it entirely. Source: casamanchas.com; vttortillaco.com",
-    "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
-  },
-  {
     "tier": 3,
-    "question": "Nixtamalization, the ancient trick of soaking dried corn in alkaline water before grinding it, needs something to turn plain water alkaline in the first place. Long before shops sold bagged 'cal,' the earliest cooks made their soak from a free material found in any home. What did they use?",
-    "answer": "wood ashes",
-    "choices": [
-      "wood ashes",
-      "crushed charcoal",
-      "river sand",
-      "powdered chalk"
-    ],
-    "context": "Wood-ash lye and slaked lime — a caustic white mineral, not the green citrus fruit! — both turn water strongly alkaline. Source: en.wikipedia.org/wiki/Nixtamalization",
-    "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
-  },
-  {
-    "tier": 3,
-    "question": "To make Mexican tortillas and tamales, cooks start with dry corn kernels. They soak and simmer the corn in mineral limewater — real calcium lime, not the citrus — for hours, then rinse it and grind the softened kernels wet on a stone into a smooth, fresh dough. Cooks pat that dough flat into tortillas or wrap it around fillings inside corn husks to steam as tamales. What do cooks call this smooth, fresh corn dough?",
-    "answer": "masa",
-    "choices": [
-      "masa",
-      "polenta",
-      "roux",
-      "semolina"
-    ],
-    "context": "Masa is the ground dough; whole nixtamalized kernels instead become hominy for pozole and menudo. The word 'tamale' comes from the same ancient Nahuatl root as 'nixtamal.' Source: en.wikipedia.org/wiki/Nixtamalization",
-    "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
-  },
-  {
-    "tier": 3,
-    "question": "Unlocking corn's hidden vitamin sounds like a modern food chemistry problem. Yet the alkaline corn soak was already thousands of years old before Columbus crossed the Atlantic, with the oldest evidence going back over three thousand years. Which people first worked it out?",
+    "question": "Columbus crossed the Atlantic in 1492. By then the corn soak that frees corn's hidden vitamin, steeping the dried kernels in alkaline water, was already thousands of years old in the Americas. Which people first worked it out?",
     "answer": "the ancient Mesoamericans",
     "choices": [
       "the ancient Mesoamericans",
@@ -15198,20 +14925,7 @@
   },
   {
     "tier": 4,
-    "question": "Plain cornmeal is low in one key mineral. But corn soaked in limewater and pressed into tortillas turns out surprisingly rich in that mineral. The lime itself leaches straight into the kernels. Which mineral does nixtamalized corn deliver that untreated corn barely provides?",
-    "answer": "calcium",
-    "choices": [
-      "calcium",
-      "iron",
-      "zinc",
-      "iodine"
-    ],
-    "context": "The 'lime' is slaked lime, a calcium mineral, so nixtamalized corn becomes a genuine calcium source — part of why tortilla-based diets could build strong bones. Source: en.wikipedia.org/wiki/Nixtamalization",
-    "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
-  },
-  {
-    "tier": 4,
-    "question": "The Southern sharecroppers hit hardest by pellagra scraped by on a grimly monotonous diet that people nicknamed the 'three M's.' Two of them were cornmeal and fatty meat — cheap fatback pork. What was the sweet, sticky third 'M' that filled out this poverty diet?",
+    "question": "The Southern sharecroppers hit hardest by pellagra scraped by on a diet nicknamed the 'three Ms'. Two of them were cornmeal and fatty meat, the cheap fatback pork. What was the sweet, sticky third M that rounded out the poverty diet?",
     "answer": "molasses",
     "choices": [
       "molasses",
@@ -15224,7 +14938,7 @@
   },
   {
     "tier": 5,
-    "question": "By 1916 many doctors were convinced pellagra was a contagious germ passed among the poor. To test that head-on, Dr. Joseph Goldberger and a group of volunteers — including his own wife, Mary — did something stomach-churning at a series of 'filth parties': they swallowed capsules made from the scabs and skin flakes of pellagra patients. What was the result?",
+    "question": "Joseph Goldberger, with his wife Mary and a group of volunteers, set out to test a belief many doctors held by 1916: that pellagra was a contagious germ passed among the poor. At a series of 'filth parties' they swallowed capsules made from the scabs and skin flakes of pellagra patients. What happened to them?",
     "answer": "None of them caught pellagra",
     "choices": [
       "None of them caught pellagra",
@@ -15237,7 +14951,7 @@
   },
   {
     "tier": 5,
-    "question": "Corn fails the body twice over when it comes to niacin. First, the niacin it contains is chemically locked away. Second, the body has a backup — it can build its own niacin from a certain amino acid in protein — but corn protein is unusually low in exactly that amino acid. Which amino acid can the body turn into niacin?",
+    "question": "A man who eats almost nothing but corn is short-changed on niacin twice over. The niacin in his corn is locked away, and his body's backup, building its own niacin from one amino acid in protein, finds corn protein short of exactly that amino acid. Which amino acid is it?",
     "answer": "tryptophan",
     "choices": [
       "tryptophan",
@@ -15250,7 +14964,7 @@
   },
   {
     "tier": 1,
-    "question": "Cornbread and corn tortillas come from the very same grain, yet a warm tortilla smells and tastes nothing like cornbread. The difference is a step cornbread skips: before grinding, the corn soaks in cloudy water with one thing stirred in. What is it?",
+    "question": "A cook pats out warm corn tortillas that smell and taste nothing like cornbread, though both start from the same grain. The difference is a step cornbread skips: before grinding, her corn soaks in cloudy water with one thing stirred in. What is it?",
     "answer": "Powdered slaked lime, a mineral",
     "choices": [
       "Juice squeezed from green limes",
@@ -15263,7 +14977,7 @@
   },
   {
     "tier": 2,
-    "question": "Mexican cooks soak dried corn in mineral limewater for hours to soften it — a treatment called nixtamalization. Once soaked, the plump wet corn is ground into a soft, stretchy dough. That single dough is the starting point for a whole family of Mexican foods: tortillas, tamales, sopes, and more, all coming out of one bowl. What is this mother dough called?",
+    "question": "A Mexican cook grinds her lime-soaked corn wet on a heavy stone into a soft, stretchy dough. Tortillas, tamales and sopes all come from that one bowl of it, the mother dough of the whole region. What is the dough called?",
     "answer": "Masa",
     "choices": [
       "Polenta",
@@ -15276,7 +14990,7 @@
   },
   {
     "tier": 2,
-    "question": "Every Mexican Christmas, families gather to make tamales together. They spread soft corn dough onto dried corn husks, tuck in a spoon of shredded pork or chile, fold each husk into a little green packet, and stack the packets upright in a tall covered pot on the stove. When they're done, you peel the husk away and eat the hot, soft inside. How are those packets cooked in the tall pot?",
+    "question": "Mexican families gather every Christmas to make tamales together. They spread soft corn dough on dried husks, tuck in a little pork or chile, fold each into a packet and stand the packets upright in a tall covered pot on the stove. How do the packets cook?",
     "answer": "Steamed over hot water",
     "choices": [
       "Deep-fried in oil",
@@ -15288,34 +15002,8 @@
     "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
   },
   {
-    "tier": 3,
-    "question": "The lime bath does something invisible but life-saving: corn is rich in a vitamin, yet 50 to 80 percent of it is chemically bound up so the body can't absorb any at all. The alkaline soak snaps that bond and sets it free. Which vitamin does nixtamalized corn finally deliver?",
-    "answer": "Vitamin B3",
-    "choices": [
-      "Vitamin C",
-      "Vitamin D",
-      "Vitamin B3",
-      "Vitamin K"
-    ],
-    "context": "The vitamin is niacin - vitamin B3. In raw corn, 50 to 80 percent of it is bound as 'niacytin,' which the gut can't absorb; the alkaline cal bath breaks the bond and releases it. Ancient cooks had no idea vitamins existed, yet their lime bath solved a deadly nutrition problem thousands of years before it was understood. Source: ScienceDirect, 'Nixtamalization' overview.",
-    "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
-  },
-  {
-    "tier": 3,
-    "question": "When corn spread from the Americas to the Old World in the 1500s, and in the American South of the early 1900s, poor people often lived on almost nothing else. They skipped the ancient lime bath, so a vitamin locked inside the corn stayed useless to their bodies. A deadly deficiency disease swept in: scaly skin, diarrhea, dementia, and death. What was it?",
-    "answer": "Pellagra",
-    "choices": [
-      "Scurvy",
-      "Pellagra",
-      "Rickets",
-      "Cholera"
-    ],
-    "context": "Pellagra - the '4-D disease': dermatitis, diarrhea, dementia, death - is niacin deficiency. It ravaged corn-dependent regions that never adopted nixtamalization, from 1500s Europe to the American South (over 3 million cases and 100,000-plus deaths, 1906-1940), yet stayed almost unknown in tortilla-eating countries. Dr. Joseph Goldberger proved at a Georgia asylum that it was a diet problem, not an infection. Source: Wikipedia, 'Pellagra'; NBER working paper on Southern pellagra.",
-    "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
-  },
-  {
     "tier": 4,
-    "question": "A gordita — Spanish for 'little fat one' — is a thick, plump masa cake cooked on a Mexican griddle. Picture a hockey puck of corn dough, browned outside, then packed with cheese, refried beans, or shredded pork. It's the near-twin of El Salvador's national dish, the pupusa. The two look almost identical on the plate, but they differ in how the filling gets in. How does the filling get inside a gordita?",
+    "question": "On a hot Mexican griddle, a thick, plump cake of corn dough browns: a gordita, whose name means 'little fat one'. El Salvador's pupusa, its near-twin, looks almost the same on the plate, but the two differ in how the cheese, beans or pork get inside. How does the filling get into a gordita?",
     "answer": "The cook splits the cooked cake open and stuffs it in",
     "choices": [
       "The cook seals it inside the raw dough before griddling",
@@ -15327,34 +15015,8 @@
     "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
   },
   {
-    "tier": 4,
-    "question": "Beyond softening corn and freeing its vitamins, the alkaline lime bath does one more protective thing. People only understood it in modern times. The soak removes an invisible danger from the corn, cutting it by about 90 percent. Which hidden hazard does nixtamalization wash away?",
-    "answer": "Poisons left behind by mold",
-    "choices": [
-      "Germs that cause food poisoning",
-      "Poisons left behind by mold",
-      "Pesticide sprayed on the crop",
-      "Heavy metals from the soil"
-    ],
-    "context": "Molds on damp corn make heat-stable poisons - aflatoxins and fumonisins (aflatoxins are the same toxins that plague peanuts). The alkaline bath cuts aflatoxins by 90 to 94 percent and fumonisins by about 82 percent, so the ancient step that fed people also guarded them from toxic corn. Source: Wikipedia, 'Nixtamalization'.",
-    "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
-  },
-  {
-    "tier": 5,
-    "question": "The word 'nixtamal' comes straight from Nahuatl, the Aztec language, and fuses two words: tamalli, meaning 'unformed corn dough,' and nextli. The whole name remembers how the very first cooks made their water alkaline, long before store-bought cal. What does nextli mean?",
-    "answer": "Ashes",
-    "choices": [
-      "Water",
-      "Ashes",
-      "Stone",
-      "Corn"
-    ],
-    "context": "'Nixtamal' literally means 'ash-dough' - nextli (ashes) + tamalli (unformed corn dough). The name remembers the wood ash the earliest cooks used to make their water alkaline, before anyone sold slaked lime; the whole process, nixtamalization, is named after that ash. Source: Wikipedia, 'Nixtamalization'.",
-    "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
-  },
-  {
     "tier": 1,
-    "question": "A soft, warm Mexican tortilla doesn't really begin in the kitchen — it begins out in a farmer's field. The corn used to make tortillas isn't picked young and juicy off the cob like the sweet corn we eat at a summer barbecue. It's left standing on the stalk until the kernels grow rock-hard as pebbles, too dry and starchy to eat raw. Which kind of corn is that?",
+    "question": "A Mexican farmer never picks his tortilla corn young and juicy, the way sweet corn is picked for a summer barbecue. He leaves it on the stalk until the kernels are hard as pebbles, too dry and starchy to eat raw. Which kind of corn is it?",
     "answer": "Field corn",
     "choices": [
       "Field corn",
@@ -15367,7 +15029,7 @@
   },
   {
     "tier": 1,
-    "question": "A traditional Mexican tamale arrives at the table tied up like a little parcel with string. A newcomer, not knowing better, bites straight in — wrapper and all — then grimaces and tries to hide the shreds. The wrapper is only there to hold and steam the soft corn dough inside; it's never meant to be eaten. What is that outer wrapper traditionally made from?",
+    "question": "A traditional Mexican tamale arrives at the table tied up like a little parcel with string. A newcomer bites straight in, wrapper and all, then grimaces and hides the shreds; the wrapper only holds and steams the soft corn dough inside. What is it traditionally made from?",
     "answer": "A dried corn husk",
     "choices": [
       "A dried corn husk",
@@ -15380,7 +15042,7 @@
   },
   {
     "tier": 2,
-    "question": "To turn rock-hard field corn tender, Mesoamerican cooks stir one white mineral into the soaking water and let the corn sit for hours. Over that time, the treated water softens the stony kernels enough to grind. What white mineral do they add to the corn pot?",
+    "question": "Rock-hard dried corn sits soaking for hours in a Mexican kitchen, in water with one white mineral stirred in. By the end the stony kernels are soft enough to grind into a dough that holds together, where plain cornmeal would crumble. What is the mineral?",
     "answer": "Slaked lime",
     "choices": [
       "Slaked lime",
@@ -15393,7 +15055,7 @@
   },
   {
     "tier": 2,
-    "question": "For thousands of years, Mexican cooks have prepared corn for tortillas by soaking the whole dry kernels overnight in a pot of water mixed with slaked lime — a chalky mineral that makes the water strongly alkaline. By morning the kernels have swollen up plump and tender. The cook then scoops handfuls of the softened corn out of the pot and rubs the kernels briskly together between her palms. What happens to those tough outer skins under all that rubbing?",
+    "question": "A Mexican cook scoops handfuls of corn out of a pot where whole dry kernels have soaked overnight in an alkaline bath, and by now they are swollen and tender. She rubs them briskly together in her hands. What happens to the kernels' tough outer skins?",
     "answer": "They slip off and rinse away",
     "choices": [
       "They slip off and rinse away",
@@ -15405,21 +15067,8 @@
     "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
   },
   {
-    "tier": 2,
-    "question": "Ancient Mexican cooks soaked and simmered dried corn kernels in mineral limewater for hours to soften them. Once soaked, the tough skins slip right off, and the plump wet corn is crushed on a heavy black basalt grinding stone — called a metate — into a moist, workable dough. Cooks pat that same dough flat for tortillas and wrap it around fillings for tamales. What is this fresh corn dough called?",
-    "answer": "Masa",
-    "choices": [
-      "Masa",
-      "Roux",
-      "Polenta",
-      "Grits"
-    ],
-    "context": "The wet, hull-free corn is called nixtamal; ground on a stone metate it becomes masa, the fresh dough behind both tortillas and tamales. Source: masienda.com/blogs/learn/masa-guide; en.wikipedia.org/wiki/Nixtamalization.",
-    "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
-  },
-  {
     "tier": 3,
-    "question": "Food scientists reach for the impressive-sounding word 'nixtamalization,' but it isn't Latin or Greek at all — it comes straight from Nahuatl, the language of the Aztecs. Its actual meaning is startlingly plain. What does this fancy-sounding word really translate to?",
+    "question": "The first cooks to soak corn in alkaline water had no shop selling bags of cal; they used a free material found in every home. The scientific-sounding Nahuatl word for their method still remembers it. What does nixtamalization plainly translate to?",
     "answer": "Ash-corn-dough",
     "choices": [
       "Ash-corn-dough",
@@ -15432,7 +15081,7 @@
   },
   {
     "tier": 3,
-    "question": "Cooks add only a tiny pinch of cal to the pot - about one part lime for every hundred parts corn - yet that whisper of alkali changes the corn dramatically. Deep red corn kernels come out of the bath a completely different, startling color. What color do they turn?",
+    "question": "Only a little lime goes into the corn pot, about a hundredth as much as the corn, yet that much alkali changes the kernels' color. Yellow corn comes out deeper, and deep red corn comes out startlingly different. What color does the red corn turn?",
     "answer": "Nearly black",
     "choices": [
       "Nearly black",
@@ -15445,7 +15094,7 @@
   },
   {
     "tier": 3,
-    "question": "Grind the lime-soaked corn and you get masa for tortillas, but leave those plump, softened kernels whole and you get a different food entirely. The fat white kernels float in Mexican pozole soup, and dried and ground coarse they become the breakfast grits of the American South. What are these whole treated kernels called?",
+    "question": "A bowl of Mexican pozole comes to the table with fat white kernels of lime-soaked corn bobbing in the soup, left whole instead of ground. Dried and ground coarse, the same kernels become the breakfast grits of the American South. What are the whole treated kernels called?",
     "answer": "Hominy",
     "choices": [
       "Hominy",
@@ -15458,20 +15107,7 @@
   },
   {
     "tier": 4,
-    "question": "Raw corn carries a certain B vitamin, but locks it away so tightly that the body can't absorb any of it - peoples who lived on untreated corn could grow sick for lack of it. The alkaline soak springs that vitamin loose so the body can finally use it. Which vitamin does the lime bath unlock?",
-    "answer": "Niacin (B3)",
-    "choices": [
-      "Niacin (B3)",
-      "Thiamine (B1)",
-      "Riboflavin (B2)",
-      "Folate (B9)"
-    ],
-    "context": "The alkali frees bound niacin (vitamin B3) and also releases tryptophan, which the body converts into still more niacin. Cultures that nixtamalized their corn avoided the niacin-deficiency disease pellagra. Source: en.wikipedia.org/wiki/Nixtamalization; sciencedirect.com.",
-    "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
-  },
-  {
-    "tier": 4,
-    "question": "Plain raw corn has almost none of one important mineral. But soaking it in limewater changes that dramatically, because the treated masa ends up with roughly 750% more of the mineral than untreated corn. A humble tortilla becomes a real source of it. Which mineral does the limewater load into the corn?",
+    "question": "A plain tortilla, patted out from lime-soaked masa, carries a real share of one mineral that raw corn barely has. Some of the lime soaks right into the kernels and raises that mineral by roughly 750 percent. Which mineral is it?",
     "answer": "Calcium",
     "choices": [
       "Calcium",
@@ -15484,7 +15120,7 @@
   },
   {
     "tier": 4,
-    "question": "Boil field corn in plain water for hours and it stays stubbornly hard. Add alkali, though, and the whole kernel goes soft - because the alkali breaks down one specific substance inside the corn. What does the alkali dissolve to make the tough kernel give way?",
+    "question": "A pot of dried corn boils in plain water for hours, and each kernel stays stubbornly hard. In alkaline water the same kernel goes soft all the way through, because the alkali breaks down one substance inside it. What does the alkali dissolve to make the kernel give way?",
     "answer": "The glue between its cell walls",
     "choices": [
       "The glue between its cell walls",
@@ -15496,8 +15132,8 @@
     "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
   },
   {
-    "tier": 5,
-    "question": "The alkaline soak has one last hidden benefit. Beyond softening the corn and improving its nutrition, the lime bath destroys a class of dangerous poisons that can lurk in a corn crop, wiping out over 90% of some of them. Which kind of poison does the soak break down?",
+    "tier": 4,
+    "question": "Scientists found, only in modern times, one more thing the lime bath does for corn. Besides softening the kernels and boosting their nutrition, it destroys a class of dangerous poisons that can lurk in the crop, cutting some by 90 percent or more. Which kind of poison does the soak break down?",
     "answer": "Mold toxins",
     "choices": [
       "Mold toxins",
@@ -15510,7 +15146,7 @@
   },
   {
     "tier": 5,
-    "question": "Across Central America, cooks use the same corn dough — called masa — to make many different foods. They pat it flat into thin rounds to make tortillas, or wrap it around a filling and steam it inside a corn husk to make tamales. In El Salvador, cooks take that same masa and press it around a savory filling like cheese, beans or pork, then cook it on a hot griddle into a thick, plump, stuffed flatbread. El Salvador loves this dish so much that it claims it as the national food. What is this stuffed masa flatbread called?",
+    "question": "A cook in El Salvador folds cheese, beans or pork inside a ball of masa and cooks it on a hot griddle into a thick, plump, stuffed flatbread. El Salvador claims it as its national dish. What is it called?",
     "answer": "Pupusa",
     "choices": [
       "Pupusa",
@@ -15523,7 +15159,7 @@
   },
   {
     "tier": 5,
-    "question": "You might assume that lime-soaking corn is a clever modern food-science trick. In fact, archaeologists digging in Mesoamerica have found corn-cooking equipment that pushes its origin astonishingly far back - making it one of the oldest food technologies still used every single day. How long ago were people already doing it?",
+    "question": "Archaeologists digging on Guatemala's Pacific coast have found ancient corn-cooking gear left by people who treated their kernels in lime. The trick sounds like modern food science, yet it is one of the oldest food techniques still used every day. How long ago were those cooks at work?",
     "answer": "About 3,000 years ago",
     "choices": [
       "About 3,000 years ago",
@@ -24220,7 +23856,7 @@
   },
   {
     "tier": 1,
-    "question": "About 11,000 years ago, in the ancient Middle East — in what is today Iraq, Syria and Jordan — people first planted wild grasses on purpose, instead of just gathering them from the hills. That moment was the birth of farming. Because the region curves like a moon between two great rivers, historians gave the cradle of farming a poetic name. What do they call it?",
+    "question": "People in what is now Iraq, Syria and Jordan began sowing wild grasses on purpose some eleven thousand years ago, with chickpeas and lentils beside them. Their homeland curves like a moon between two great rivers. What do historians call this cradle of farming?",
     "answer": "The Fertile Crescent",
     "choices": [
       "The Fertile Crescent",
@@ -24233,7 +23869,7 @@
   },
   {
     "tier": 1,
-    "question": "In the ancient Fertile Crescent, farmers tamed eight crops that changed the world, and three of them were cereal grasses. Two of those first cereals were named einkorn and emmer. They are still grown today, ground into flour and baked into bread — because they are ancient forms of one very familiar grain. Which grain are einkorn and emmer early kinds of?",
+    "question": "A baker today can buy flour milled from two of the very first cereals farmers ever tamed in the ancient Middle East, and bake it into loaves. Both are ancient forms of one very familiar grain. Which grain are they early kinds of?",
     "answer": "Wheat",
     "choices": [
       "Wheat",
@@ -24246,7 +23882,7 @@
   },
   {
     "tier": 2,
-    "question": "Alongside the two founding wheats grew a third cereal — the toughest of the three. It shrugged off drought and even salty soil, so it spread far out of the Fertile Crescent into harsh lands where the wheats would wither. Which hardy grain was this third founding cereal?",
+    "question": "Beside their two founding wheats, the first farmers of the Middle East sowed a third cereal, the toughest of the three. It shrugged off drought and salty soil, so it spread far beyond the wheat fields into harsh lands. Which hardy grain was it?",
     "answer": "Barley",
     "choices": [
       "Barley",
@@ -24259,7 +23895,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1991, hikers in the Alps found Ötzi the Iceman, a man who died more than 5,300 years ago and froze into a glacier — his stomach still held his last meal. Part of it was bread made from the oldest, most primitive wheat ever farmed. Which ancient wheat had Ötzi eaten?",
+    "question": "Hikers in the Alps found Ötzi the Iceman in 1991, frozen into a glacier more than 5,300 years after he died, with his last meal still in his stomach. Part of it was bread made from the oldest, most primitive wheat ever farmed. Which ancient wheat had he eaten?",
     "answer": "Einkorn",
     "choices": [
       "Einkorn",
@@ -24272,7 +23908,7 @@
   },
   {
     "tier": 3,
-    "question": "Emmer wheat was the everyday bread grain of ancient Egypt, feeding pharaohs and pyramid builders alike. It never died out. Over thousands of years, farmers bred emmer into a tough, glassy 'hard wheat' called durum. Today durum is grown mainly to be milled into one very Italian food. What food is durum, the descendant of Egyptian emmer, made into?",
+    "question": "Bakers in ancient Egypt made their daily bread from emmer wheat, the grain that fed pharaohs and pyramid builders alike. Over thousands of years farmers bred it into durum, a tough, glassy 'hard wheat'. Today durum is grown mainly for one very Italian food. Which food is it made into?",
     "answer": "Pasta",
     "choices": [
       "Pasta",
@@ -24285,7 +23921,7 @@
   },
   {
     "tier": 3,
-    "question": "The Fertile Crescent's eight founder crops were nearly all food — wheat, barley, peas, lentils, chickpeas. But one founder was different. Farmers grew it not for the plate but for two other gifts: an oil pressed from its shining brown seeds, and long fibers pulled from its stalks and spun into strong linen thread for clothing and sails. Which plant was this non-food founder crop?",
+    "question": "The first farmers of the Middle East grew eight founder crops, and nearly all of them fed people: grains, peas, lentils, chickpeas. The odd one was raised for two other gifts, an oil pressed from its shining brown seeds and long fibers pulled from its stalks and spun into strong linen thread for clothing and sails. Which plant was it?",
     "answer": "Flax",
     "choices": [
       "Flax",
@@ -24298,7 +23934,7 @@
   },
   {
     "tier": 4,
-    "question": "Wild grasses like the ancestors of wheat and barley scatter their seeds the moment they ripen — a clever trick that helps the plant reseed itself across the meadow. Ancient farmers 10,000 years ago never set out to redesign that. But one lucky mutation, picked up over generations of harvesting, is what separates every domesticated grain from its wild parent. It is the change that finally let people cut a whole field of grain at once. What was that defining switch?",
+    "question": "A stand of wild wheat drops its grain the moment it ripens, scattering seed to sow itself across the meadow. Farmers ten thousand years ago never set out to change that, yet one rare mutation, picked up over generations of harvests, let them cut a whole field at once. It still separates every domesticated grain from its wild parent. What was the switch?",
     "answer": "The seed head held onto its grain instead of scattering it",
     "choices": [
       "The seed head held onto its grain instead of scattering it",
@@ -24311,20 +23947,7 @@
   },
   {
     "tier": 4,
-    "question": "Bread with beans, rice with beans, pita with hummus, dal with rice — nearly every old food culture pairs a grain with a bean at the same meal. This isn't just habit: nutritionally, teaming a cereal with a pulse does something neither can manage alone. What does the grain-and-bean pairing give you?",
-    "answer": "A complete protein, with all the building blocks your body needs",
-    "choices": [
-      "A complete protein, with all the building blocks your body needs",
-      "A full day's worth of vitamin C from a single bowl",
-      "Twice the fiber you would get from either one alone",
-      "All the calcium a growing body needs for strong bones"
-    ],
-    "context": "Cereals are low in the amino acid lysine but rich in methionine, and pulses are the reverse — so together they supply all nine essential amino acids, a near-complete protein. That is why grain-and-pulse pairings like hummus-and-pita, rice-and-beans, and dal-and-rice endure everywhere. Source: https://wholegrainscouncil.org/blog/2019/02/whole-grains-and-pulses",
-    "topic": "the-agricultural-revolution-and-the-eight-founder-crops"
-  },
-  {
-    "tier": 4,
-    "question": "Bitter vetch was the strangest of the four founding pulses — the beans and lentils sown beside the grain. Its seeds carry a natural toxin, and a person must rinse them again and again before they are safe to eat — far too much fuss for a daily dinner. So what did farmers mainly grow bitter vetch for instead?",
+    "question": "Bitter vetch grew beside the first farmers' grain as one of four founding pulses, and its seeds carried a natural toxin. A cook had to rinse them again and again before they were safe to eat, far too much fuss for a daily dinner. What did farmers mainly grow bitter vetch for instead?",
     "answer": "As feed for their livestock",
     "choices": [
       "As feed for their livestock",
@@ -24337,7 +23960,7 @@
   },
   {
     "tier": 5,
-    "question": "The Fertile Crescent was farming's first cradle — but not its only one. Thousands of years later, with no contact at all between them, farmers in China's Yangtze valley domesticated a great cereal all their own, unrelated to any Fertile-Crescent grain. Which crop did they tame?",
+    "question": "Farmers in China's Yangtze valley worked out agriculture for themselves some nine thousand years ago, with no contact at all with the first farmers of the Middle East. They domesticated a great cereal of their own, unrelated to any grain sown there. Which crop did they tame?",
     "answer": "Rice",
     "choices": [
       "Rice",
@@ -24346,19 +23969,6 @@
       "Rye"
     ],
     "context": "Farming was invented independently more than once, not spread from a single cradle: rice was domesticated in China's Yangtze valley (and maize in Mexico) around 9,000 years ago. The Fertile Crescent was simply first. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC2664049/",
-    "topic": "the-agricultural-revolution-and-the-eight-founder-crops"
-  },
-  {
-    "tier": 5,
-    "question": "Farmers in Mexico's Balsas River valley invented agriculture on their own and created maize — corn. But maize's wild ancestor looks nothing like a corn cob: it is a scraggly grass whose 'ears' hold only a handful of hard, stony kernels. What is this unlikely wild grandparent of corn called?",
-    "answer": "Teosinte",
-    "choices": [
-      "Teosinte",
-      "Sorghum",
-      "Amaranth",
-      "Millet"
-    ],
-    "context": "Maize's wild ancestor, teosinte, looks nothing like corn — a scraggly grass bearing a handful of hard-cased kernels — yet Mexican farmers slowly transformed it into the corn cob, a separate domestication story from the Fertile Crescent's grains. Source: https://evolution.earthathome.org/grasses/andropogoneae/maize-domestication/",
     "topic": "the-agricultural-revolution-and-the-eight-founder-crops"
   },
   {
@@ -24792,7 +24402,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1700s Paris, a Frenchman named Boulanger opened a little shop selling one product to tired, weak, or sick customers who needed to feel restored. He called his product a 'restaurant' — a word meaning 'something restorative.' Only later did the word transfer from the food to the shop itself. What was Boulanger's original 'restaurant' that gave the word its meaning?",
+    "question": "A Paris shopkeeper named Boulanger, as French legend tells it, sold one product to tired, weak or sick customers in the 1700s and called it a 'restaurant', something restorative. The name only later passed from the food to the shop that sold it. What was the original 'restaurant'?",
     "answer": "a rich, hot meat broth",
     "choices": [
       "a rich, hot meat broth",
@@ -24805,20 +24415,7 @@
   },
   {
     "tier": 2,
-    "question": "The Michelin Guide is the most powerful restaurant rating in the world — a chef given even a single Michelin star becomes famous overnight. But the two French brothers who launched the guide in 1900, Andre and Edouard Michelin, did not run a kitchen or sell food at all. They only printed the little red book to help drivers find good roadside stops on long trips. What did the Michelin brothers actually make and sell?",
-    "answer": "car tires",
-    "choices": [
-      "car tires",
-      "fine china plates",
-      "kitchen knives",
-      "railway engines"
-    ],
-    "context": "The brothers André and Édouard Michelin made car tires. Their guide pointed drivers toward good restaurants far out in the countryside on purpose — more driving meant more worn-out tires, and more tire sales. A restaurant guide was really a clever tire advertisement. Source: Wikipedia, 'Michelin Guide.'",
-    "topic": "the-birth-of-the-restaurant"
-  },
-  {
-    "tier": 2,
-    "question": "Before restaurants existed in France, a hungry traveler pulling into a coaching inn had no menu and no choices. The innkeeper decided what to cook. Everyone in the dining room was served the same single meal at the same fixed hour, seated together on benches at one long shared table. What was this take-it-or-leave-it communal French inn meal called?",
+    "question": "A hungry traveler pulled into a French coaching inn, in the days before restaurants, and found no menu and no choice. The innkeeper decided what to cook, and everyone ate the same meal at his fixed hour, elbow to elbow at one long table. What was this take-it-or-leave-it inn meal called?",
     "answer": "the table d'hôte",
     "choices": [
       "the table d'hôte",
@@ -24831,7 +24428,7 @@
   },
   {
     "tier": 3,
-    "question": "When the first Paris restaurants opened in the late 1700s, they invented something brand new: the menu. It listed each dish separately with its own price, so a customer could order one plate and pay only for that — instead of eating whatever was cooked that day. Paper was expensive and the dishes changed daily. In those very first restaurants, where was the menu actually written for diners to read?",
+    "question": "A diner in one of the first Paris restaurants of the late 1700s could do something new: order a single dish from a list of separate dishes, each with its own price, and pay only for that. Paper was dear, and the dishes changed every day. Where was that list written for him to read?",
     "answer": "on a small chalkboard",
     "choices": [
       "on a small chalkboard",
@@ -24844,7 +24441,7 @@
   },
   {
     "tier": 3,
-    "question": "The French Revolution began in 1789, and the noble families that ran France were killed or forced to flee. Each great household had employed a private cook trained in palace-quality cooking. Suddenly thrown out of work, what did many of these skilled cooks do?",
+    "question": "A palace-trained cook in a noble household lost his post in the French Revolution of 1789, when his masters were killed or fled the country. Many skilled private cooks were thrown out of work the same way. What did many of them do next?",
     "answer": "opened public restaurants of their own",
     "choices": [
       "opened public restaurants of their own",
@@ -24857,7 +24454,7 @@
   },
   {
     "tier": 3,
-    "question": "French legend names the world's first restaurateur 'Boulanger.' Parisians caught the joke: that surname is really the French word for an everyday food-trade, though the man supposedly sold a restorative broth, not the goods of that trade. What trade does 'boulanger' mean?",
+    "question": "Parisians who told the legend of the first restaurateur, a man named Boulanger, enjoyed a joke hidden in his name. The surname is the French word for an everyday food trade, yet the man supposedly sold none of that trade's goods. What trade does 'boulanger' name?",
     "answer": "a baker",
     "choices": [
       "a baker",
@@ -24870,7 +24467,7 @@
   },
   {
     "tier": 4,
-    "question": "For two centuries, French cookbooks credited the birth of the restaurant to a single legendary founder said to have opened the first one in the 1760s. Then historian Rebecca Spang spent years combing the Paris archives for any real trace of him. What did her search turn up?",
+    "question": "In the Paris archives, Rebecca Spang spent years hunting for any real trace of the founder whom French cookbooks had credited, for two centuries, with opening the first restaurant in the 1760s. What did her search turn up?",
     "answer": "no record that he ever existed",
     "choices": [
       "no record that he ever existed",
@@ -24883,7 +24480,7 @@
   },
   {
     "tier": 4,
-    "question": "French legend says the man who opened the first Paris restaurant in the 1760s hung a Latin motto over his door. It read: 'Come to me, all who suffer from stomach pain, and I will restore you.' Clever Parisians recognized it as a cheeky twist on a famous line originally spoken by whom?",
+    "question": "Over the door of the first Paris restaurant in the 1760s, French legend says, hung a Latin motto: 'Come to me, all who suffer from stomach pain, and I will restore you.' Parisians recognized it as a cheeky twist on a famous line. Who first spoke that line?",
     "answer": "Jesus, in the Gospels",
     "choices": [
       "Jesus, in the Gospels",
@@ -24896,7 +24493,7 @@
   },
   {
     "tier": 5,
-    "question": "The legend of the first restaurant's 1760s founder was retold for generations — but historian Rebecca Spang showed the whole tale actually sprang from just one written source, and a surprisingly late one, first appearing in 1782. Where did the story first show up?",
+    "question": "Rebecca Spang traced the much-retold legend of the restaurant's founder to a single written source, set down in 1782, seventeen years after the man supposedly opened his doors. The tale had been repeated for generations. Where did the story first appear?",
     "answer": "a printed history of French food",
     "choices": [
       "a printed history of French food",
@@ -24909,7 +24506,7 @@
   },
   {
     "tier": 5,
-    "question": "For its first twenty years the Michelin Guide was given away free — nearly 35,000 copies in 1900 alone, back when all of France had barely 3,000 cars. Then in 1920 the company abruptly began charging seven francs for it. What was Michelin's stated reasoning?",
+    "question": "The Michelin brothers gave their red guide away free for twenty years, about 35,000 copies in 1900 alone, when all of France had barely 3,000 cars. In 1920 the company began charging seven francs for it. What reason did André Michelin reportedly give?",
     "answer": "that people only value what they pay for",
     "choices": [
       "that people only value what they pay for",
@@ -33580,7 +33177,7 @@
   },
   {
     "tier": 1,
-    "question": "Inside every grain of wheat hides a tiny speck that is actually alive: the seed's little embryo. It is the one part of the kernel that — planted in warm, wet soil — would sprout into a whole new wheat plant. The rest of the grain is just stored food for that embryo. Millers have a special name for this baby-plant speck. What is it called?",
+    "question": "A miller splits a wheat kernel and points to a tiny speck inside it, the only living part of it. In warm, wet soil that speck would sprout into a whole new plant, and the rest of the kernel is its stored food. What is the speck called?",
     "answer": "the germ",
     "choices": [
       "the germ",
@@ -33592,8 +33189,8 @@
     "topic": "whole-vs-refined-grain-whats-hidden-in-the-bran"
   },
   {
-    "tier": 2,
-    "question": "When a mill makes white rice or white flour, it strips away the grain's nutritious outer layers and keeps only the pale, starchy core in the middle — the food the seed had packed for its future sprout. White flour is almost nothing but this one part. What is that big starchy core called?",
+    "tier": 3,
+    "question": "White flour leaves the mill as nearly one part of the wheat grain and nothing else. The mill strips away the grain's nutritious outer layers and keeps only the big, pale, starchy core, the food the seed packed away for the plant it would become. What is that core called?",
     "answer": "the endosperm",
     "choices": [
       "the endosperm",
@@ -33606,7 +33203,7 @@
   },
   {
     "tier": 3,
-    "question": "In the late 1800s, a crippling nerve-and-heart disease called beriberi swept across Asia. It struck hardest among people whose daily meals were built around rice — numbed legs, racing hearts, and sometimes sudden death. In 1870s Japan it killed more people than anything but smallpox. The cure turned out to be a simple change to the rice on people's plates. What change finally cured beriberi?",
+    "question": "Families across Asia who lived on rice fell ill with beriberi in the late 1800s, a crippling disease of the nerves and heart that brought numb legs, racing hearts and sometimes sudden death. What simple change to the rice cured it?",
     "answer": "switching to plain brown rice",
     "choices": [
       "switching to plain brown rice",
@@ -33619,7 +33216,7 @@
   },
   {
     "tier": 4,
-    "question": "A sealed bag of white flour can sit in a warehouse for a year and still bake up fine. Bakers know a big reason it lasts so long: the mill has removed the grain's tiny germ, the very part that would otherwise turn the flour bad. What is it about the germ that would spoil the flour?",
+    "question": "A sealed bag of white flour sits in a warehouse for a year and still bakes up fine. It keeps so long largely because the mill took out each grain's tiny living sprout-to-be, the very part that would otherwise turn the flour bad. What is it about that part that would spoil the flour?",
     "answer": "it is packed with delicate oils that go rancid",
     "choices": [
       "it is packed with delicate oils that go rancid",
@@ -33632,7 +33229,7 @@
   },
   {
     "tier": 4,
-    "question": "After entire regions of people fell ill from living on stripped-white rice and flour, governments required mills to spray a handful of nutrients back into the refined grain. That is why the bag now reads 'enriched.' But enrichment is only a partial refund: it returns several nutrients, yet one thing milling strips out has never been successfully sprayed back. What can 'enriched' white flour never give back?",
+    "question": "A baker reads the word 'enriched' on a bag of white flour: the mill has sprayed a handful of nutrients back into the refined grain, after whole regions fell ill living on stripped white rice and flour. But one thing milling strips out has never been put back. What can enriched flour never return?",
     "answer": "the fiber",
     "choices": [
       "the fiber",
@@ -33645,7 +33242,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1883, a Japanese Navy training ship limped home from a nine-month voyage in disaster. Fed on nothing but polished white rice, 169 of its 376 sailors had come down with beriberi, a disease of the nerves and heart, and 25 were dead. Navy doctor Takaki Kanehiro suspected the monotonous diet, so the next year he sent a ship along the identical route with the sailors' meals overhauled. This time not a single man died of it. Beyond their rice, what had Takaki added to the sailors' plates?",
+    "question": "A Japanese Navy training ship limped home in 1883 from a nine-month voyage. Fed on nothing but polished white rice, 169 of its 376 sailors had come down with beriberi and 25 were dead. Takaki Kanehiro, the navy's doctor, suspected the diet, and the following year he sent another ship on the identical route with the meals overhauled. Not one man died of beriberi. Besides rice, what had he added?",
     "answer": "barley, meat, and milk",
     "choices": [
       "barley, meat, and milk",
