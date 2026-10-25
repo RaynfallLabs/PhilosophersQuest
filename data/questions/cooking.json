@@ -25442,7 +25442,7 @@
   },
   {
     "tier": 2,
-    "question": "By the 1840s a poor Irish farm laborer lived on almost nothing but potatoes. A grown man might work a full day in the field, then sit down and eat over a dozen pounds of boiled potatoes in a day. He washed them down with just one cheap country drink, and little else — no beer, no wine, no tea. What was that drink?",
+    "question": "A poor Irish farm laborer of the 1840s lived on almost nothing but potatoes. After a full day in the fields he could eat more than a dozen pounds of them, boiled, with one cheap country drink to wash them down. What was it?",
     "answer": "Buttermilk",
     "choices": [
       "Buttermilk",
@@ -25455,7 +25455,7 @@
   },
   {
     "tier": 2,
-    "question": "Before the Great Famine, Ireland leaned on the potato more than almost any country ever has. But about a third of the whole potato crop never fed the Irish poor. What was that share of the crop raised for?",
+    "question": "Ireland's poor lived on potatoes before the Great Famine, and the whole country leaned on the crop as few others ever have. Yet about a third of the potato harvest never fed the Irish poor at all. What was that share grown for?",
     "answer": "To feed farm animals",
     "choices": [
       "To feed farm animals",
@@ -25468,7 +25468,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1845 Irish farmers walked out to their fields and found the potato crop — the food of nearly the whole country — ruined, and nobody could agree what had done it. What was actually destroying the crop?",
+    "question": "Irish farmers walked out to their fields in 1845 and found their potatoes ruined, between a third and half of the harvest lost in a single season. The crop fed nearly the whole country, and nobody could agree on what had struck it. What was destroying the potatoes?",
     "answer": "A microscopic plant mold",
     "choices": [
       "A microscopic plant mold",
@@ -25481,7 +25481,7 @@
   },
   {
     "tier": 3,
-    "question": "By the early 1800s, the potato had almost taken over the fields of Ireland. Farmers noticed that one particular potato variety could give huge harvests even on the poor, boggy ground they had to farm on. It was a large, watery potato, not the tastiest, but it fed a whole family cheaply — so most Irish farmers grew mainly this one kind. What was this one variety called?",
+    "question": "One potato gave Irish farmers of the early 1800s huge harvests even on the poor, boggy ground they had to work. It was big and watery and not much prized for its taste, but it fed a whole family cheaply, so most of them grew little else. What was that variety called?",
     "answer": "The Lumper",
     "choices": [
       "The Lumper",
@@ -25494,7 +25494,7 @@
   },
   {
     "tier": 4,
-    "question": "When the potato blight reached Ireland in 1845, it did more than damage the crop. Field after field failed across the country in a single growing season, and barely a healthy plant remained standing anywhere. Why did the potatoes fail so completely, everywhere at once?",
+    "question": "The blight that reached Ireland in 1845 did more than damage a crop. Field after field failed across the country, and barely a healthy plant was left standing anywhere. Why did the potatoes fail so completely, everywhere at once?",
     "answer": "The plants were grown from cuttings, so all were clones.",
     "choices": [
       "The plants were grown from cuttings, so all were clones.",
@@ -25533,20 +25533,7 @@
   },
   {
     "tier": 1,
-    "question": "Drop a raw steak into a ripping-hot cast-iron pan and it sizzles hard. In a minute or two, the surface turns a deep mahogany brown, tastes far richer and more savory than the rosy pink inside, and smells like a whole roast dinner. You added no seasoning, no sauce, nothing but the pan and heat. So where did all that new roasty, savory flavor come from?",
-    "answer": "Surface sugars and proteins reacted in the heat, building new flavor compounds",
-    "choices": [
-      "Surface sugars and proteins reacted in the heat, building new flavor compounds",
-      "The meat's melting fat soaked back in, carrying flavor to the surface",
-      "The meat's juices rose up and dried into a concentrated savory layer",
-      "The high heat killed bacteria that had been dulling the meat's taste"
-    ],
-    "context": "That browning is the Maillard reaction: when amino acids (from protein) and sugars meet high heat, they build hundreds of brand-new brown-and-flavor compounds that were never in the raw meat. Brown isn't flavor being burned away — it's flavor being created. (It's named for French chemist Louis-Camille Maillard, who first described it in 1912.) Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
-    "tier": 1,
-    "question": "Fresh green coffee beans are pale, hard, and smell grassy — nothing like coffee. One step turns them dark, brittle, and richly aromatic, using the same browning chemistry that crusts a seared steak. What is that step?",
+    "question": "A sack of green coffee beans smells of grass, and the beans inside are pale and hard, nothing like coffee. One step turns them dark, brittle and richly fragrant, through the same browning that crusts a seared steak. What is that step?",
     "answer": "Roasting them in a hot rotating drum",
     "choices": [
       "Roasting them in a hot rotating drum",
@@ -25558,34 +25545,8 @@
     "topic": "the-maillard-reaction-the-brown-delicious-crust"
   },
   {
-    "tier": 2,
-    "question": "Cut open a fresh loaf of bread straight from the oven and you find two different worlds pressed together. The outside is a hard, deep mahogany crust. Inside is a pale, soft, springy crumb — barely darker than the flour it started as. Both sat in the same hot oven for the same amount of time at the same temperature. So why did only the outside turn brown?",
-    "answer": "The moist inside stays near boiling, too cool to brown; the dry surface gets far hotter",
-    "choices": [
-      "The moist inside stays near boiling, too cool to brown; the dry surface gets far hotter",
-      "The oven's heat never truly reaches the cold center of a thick loaf",
-      "The crust and the soft crumb are simply baked from different flours",
-      "The brown color forms on top first and hasn't had time to spread inward"
-    ],
-    "context": "As long as the crumb holds water, evaporating steam keeps it pinned near boiling (about 100°C / 212°F) — well below the roughly 140°C the browning reaction needs. Only the drying surface climbs hot enough to brown, so the crust darkens while the crumb stays pale and soft. Source: https://jayarrbread.com/blog/maillard-reaction-bread/",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
-    "tier": 2,
-    "question": "You want a deep brown sear, but you tip wet, just-washed mushrooms into a jam-packed pan and they come out gray, soggy, and limp. A good cook pats the food dry and leaves space between the pieces. Why does that give better browning?",
-    "answer": "Surface water must boil off before browning starts, and a wet, crowded pan just simmers",
-    "choices": [
-      "Surface water must boil off before browning starts, and a wet, crowded pan just simmers",
-      "Washing the mushrooms rinses away the natural sugars that browning needs",
-      "Spacing the pieces lets hot air circulate and cook them all the way through",
-      "A crowded pan makes the pieces stick together and tear when you flip them"
-    ],
-    "context": "Browning needs a hot, dryish surface and barely runs while water is around. Energy spent boiling off surface moisture is energy not spent browning — and a crowded pan cools down and traps steam, so the food simmers in its own water instead of searing. Pat it dry, give it room. Source: https://www.splendidtable.org/story/2015/09/25/the-rules-for-pan-seared-steak",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
     "tier": 3,
-    "question": "Before sliding a challah or a shiny pastry into the oven, bakers brush the raw dough with beaten egg, and it bakes up with a glossy, deep-golden top instead of a dull pale one. Why does a coat of egg boost the browning like that?",
+    "question": "A baker brushes a raw challah with beaten egg before sliding it into the oven, and it bakes up with a glossy, deep-golden top instead of a dull, pale one. Why does a coat of egg boost the browning like that?",
     "answer": "It paints extra protein and sugar onto the surface for browning to work on",
     "choices": [
       "It paints extra protein and sugar onto the surface for browning to work on",
@@ -25598,7 +25559,7 @@
   },
   {
     "tier": 3,
-    "question": "A famous chemist who had won the Nobel Prize once wrote that one particular chemical reaction was 'by far the most widely practiced in the world.' He didn't mean anything done inside a factory or a laboratory. He meant something ordinary people run in their own kitchens every single day, over the stove and inside the oven, whenever they cook a meal. Which everyday act was he talking about?",
+    "question": "Jean-Marie Lehn, a chemist who won the Nobel Prize, once named one chemical reaction 'by far the most widely practiced in the world.' He did not mean anything done in a factory or a laboratory, but something people carry out in their own kitchens every day. Which everyday act did he mean?",
     "answer": "Browning food in the oven or a hot pan",
     "choices": [
       "Browning food in the oven or a hot pan",
@@ -25606,38 +25567,12 @@
       "Curdling fresh milk into cheese",
       "Souring cream into tangy yogurt"
     ],
-    "context": "Lehn was pointing at the Maillard reaction. Every time you toast bread, sear a steak, roast coffee, or bake, you run this chemistry — which is why he called it 'by far the most widely practiced chemical reaction in the world.' Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
-    "tier": 3,
-    "question": "The deep brown of a coffee bean, a toasted crust, and a dark beer is not a dye and not a spice — those brown pigment molecules were not in the raw green beans or pale dough at all. Browning builds them from scratch. What are these new brown pigments called?",
-    "answer": "Melanoidins",
-    "choices": [
-      "Melanoidins",
-      "Melanin",
-      "Carotenoids",
-      "Tannins"
-    ],
-    "context": "They're melanoidins — the brown pigment molecules the reaction actually creates. They color a bread crust, a cup of coffee, and darker beers, and they weren't present in the raw dough or green beans at all; the browning builds them. Source: https://en.wikipedia.org/wiki/Maillard_reaction",
+    "context": "Lehn was pointing at the Maillard reaction, the browning that runs every time a cook toasts bread, sears a steak, roasts coffee, bakes or fries, which is why the Nobel laureate called it 'by far the most widely practiced chemical reaction in the world.'",
     "topic": "the-maillard-reaction-the-brown-delicious-crust"
   },
   {
     "tier": 4,
-    "question": "Two kinds of browning happen in the kitchen. Melting plain white sugar in a dry pan until it turns amber and nutty is caramelization — sugar breaking down all by itself. But the browning of a bread crust or a steak's sear is a different reaction that needs an ingredient caramelization does not. What must be there for that crust to brown?",
-    "answer": "Protein — amino acids that react with the sugar",
-    "choices": [
-      "Protein — amino acids that react with the sugar",
-      "Fat — a thin film of oil on the surface",
-      "Acid — a splash of something tart",
-      "Salt — a generous pinch for seasoning"
-    ],
-    "context": "That crust is the Maillard reaction, which needs protein: its amino acids react with sugars under heat. Caramelization is different — it's pure sugar breaking down by itself (pyrolysis), no protein required. A bread crust is mostly Maillard; melting sugar into caramel is pure caramelization. Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
-    "tier": 4,
-    "question": "Bakers learn that not all sugars brown the same. A few simple sugars leap straight into the browning reaction. But plain white table sugar is stubborn: heat it and, chemically, it must first undergo a change before it can help food brown at all. What happens to the table sugar first?",
+    "question": "Sweetened with plain white table sugar, a bread dough goes into a hot oven to brown. Some sugars leap straight into that browning, but table sugar is stubborn: it must first change before it can take part at all. What happens to the table sugar first?",
     "answer": "It splits into two simpler sugars",
     "choices": [
       "It splits into two simpler sugars",
@@ -25649,34 +25584,21 @@
     "topic": "the-maillard-reaction-the-brown-delicious-crust"
   },
   {
-    "tier": 5,
-    "question": "A real German-style pretzel wears a shiny, dark-mahogany skin and carries a flavor no ordinary bread crust has. The secret is a quick bath the raw pretzel takes just before baking — a dip in a solution that turbo-charges its browning. What kind of solution is that bath?",
-    "answer": "A caustic lye solution",
+    "tier": 4,
+    "question": "Soft pretzels come out of a German baker's oven with a shiny, dark-mahogany skin and a flavor no plain bread roll on the same rack ever gets. The secret is one quick dip the raw pretzel takes just before baking, which drives its browning hard and fast. What does the baker do to the raw pretzel first?",
+    "answer": "Dip it in a lye bath",
     "choices": [
-      "A caustic lye solution",
-      "A sweet sugar syrup",
-      "A salty brine",
-      "A sour vinegar wash"
+      "Dip it in a lye bath",
+      "Dip it in a vinegar bath",
+      "Dip it in a sugar syrup",
+      "Dip it in a salt brine"
     ],
-    "context": "It's a food-grade LYE (sodium hydroxide) bath — strongly alkaline. Alkaline conditions make the surface proteins far more reactive, so the pretzel browns fast and deep into its glossy mahogany skin with that signature pretzel flavor. (Bakers handle food-grade lye carefully.) Source: https://bakeryinsider.com/lye-application-pretzel-crust/",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
-    "tier": 5,
-    "question": "Caramelizing onions the slow way can take the better part of an hour. Food writer J. Kenji López-Alt showed you can speed it up dramatically by stirring in one tiny pinch of a common pantry staple right at the start. What do you add?",
-    "answer": "A pinch of baking soda",
-    "choices": [
-      "A pinch of baking soda",
-      "A splash of vinegar",
-      "A pinch of salt",
-      "A spoonful of sugar"
-    ],
-    "context": "J. Kenji López-Alt found that roughly a quarter-teaspoon of baking soda per pound of onions can speed the browning by more than 50%. Baking soda is alkaline, and alkaline conditions accelerate the Maillard reaction — the same trick behind a pretzel's lye bath. (Too much turns the onions mushy, so it's just a pinch.) Source: https://www.onions-usa.org/onionista/faster-caramelized-onions-with-baking-soda/",
+    "context": "Pretzels get their glossy dark-brown skin from an alkaline dip before baking, traditionally a food-grade lye (sodium hydroxide) bath, which bakers handle with care, or baking soda at home. Alkaline conditions make the surface proteins far more reactive, so the Maillard reaction runs hard and fast in the oven, the same pH trick that speeds caramelized onions.",
     "topic": "the-maillard-reaction-the-brown-delicious-crust"
   },
   {
     "tier": 1,
-    "question": "In a great stone hall of a medieval castle, a hungry guest took his seat at a long feast table. Servants brought out roast venison, pigeon pies, and gravy-drenched stews. But when he looked in front of him, there was no plate at all — no silver, no pewter, no wooden dish, nothing but the bare tabletop. So what did he pile his roast meat and dripping sauce onto?",
+    "question": "A hungry guest took his seat at the long feast table in a medieval lord's great hall, and servants brought out roast venison, pigeon pies and gravy-drenched stews. In front of him lay no plate or dish at all. What did he pile his meat and dripping sauce onto?",
     "answer": "A thick slab of days-old bread",
     "choices": [
       "A thick slab of days-old bread",
@@ -25689,7 +25611,7 @@
   },
   {
     "tier": 1,
-    "question": "At a great medieval feast, a single prized seasoning ranked every guest in the hall. It sat in a fancy dish beside the host's right hand: sit near it and you were honored, sit far down the table and you were nobody. Which seasoning marked your status?",
+    "question": "At a great medieval feast, one prized seasoning sat in a costly dish beside the host's right hand, and every guest's place was measured from it. Honored guests sat close beside it; lesser folk sat far down the table. Which seasoning marked a guest's rank?",
     "answer": "Salt",
     "choices": [
       "Salt",
@@ -25702,7 +25624,7 @@
   },
   {
     "tier": 2,
-    "question": "At a medieval feast your 'plate' was a trencher — a thick slab of stale bread — and by the meal's end it was soaked through with meat juices and sauce. The diners themselves never ate these soggy trenchers. So what became of them once the feast was over?",
+    "question": "Each diner at a medieval feast ate his meat off a trencher, and by the last course it was soaked through with juices and sauce. No diner ever ate his own soggy trencher. When the feast was over, what became of them?",
     "answer": "They were collected and given to the poor at the gates",
     "choices": [
       "They were collected and given to the poor at the gates",
@@ -25727,19 +25649,6 @@
     "topic": "the-medieval-banquet-as-spectacle"
   },
   {
-    "tier": 2,
-    "question": "Sit down at a medieval European feast and one everyday piece of tableware is completely missing from the whole table. In England it wouldn't enter common use until around 1600. Which item would you look for in vain?",
-    "answer": "A fork",
-    "choices": [
-      "A fork",
-      "A spoon",
-      "A knife",
-      "A cup"
-    ],
-    "context": "The fork. A medieval diner brought his own belt-knife, ate with his fingers, and used a spoon the host supplied — forks weren't in common use at English tables until about 1600. Source: https://historyfacts.com/world-history/article/when-did-people-stop-eating-with-their-hands/",
-    "topic": "the-medieval-banquet-as-spectacle"
-  },
-  {
     "tier": 3,
     "question": "A medieval cook roasted a peacock for the high table. But first he did something painstaking, so the cooked bird could be carried in looking magnificently alive, with beak and feet gilded. What clever trick made the roasted bird look alive?",
     "answer": "He re-dressed it in its own feathered skin",
@@ -25754,7 +25663,7 @@
   },
   {
     "tier": 3,
-    "question": "Medieval cooks loved to astonish their guests. One trick was to stitch the front half of one animal onto the back half of another, roast the whole hybrid 'monster,' and serve it looking like a beast from a nightmare. Which two creatures were most famously sewn together to make this dish?",
+    "question": "Bent on astonishing a feast's guests, a medieval cook stitched the front half of one animal onto the back half of another, roasted the whole hybrid and sent it out looking like a beast from a nightmare. Which two creatures were most famously sewn together for this dish?",
     "answer": "A piglet and a capon",
     "choices": [
       "A piglet and a capon",
@@ -25767,7 +25676,7 @@
   },
   {
     "tier": 3,
-    "question": "Swan was the priciest showpiece bird a medieval lord could serve, brought to the table crowned and garlanded. Alongside it came a special sauce called 'chaudron' — thick, dark, and almost black. What was that black sauce actually made from?",
+    "question": "Servants carried a swan to a medieval lord's table crowned and garlanded, the costliest showpiece bird he could serve. Beside it came a thick sauce called chaudron, dark and almost black. What was that sauce made from?",
     "answer": "Blood and innards from the bird itself, spiced",
     "choices": [
       "Blood and innards from the bird itself, spiced",
@@ -25780,7 +25689,7 @@
   },
   {
     "tier": 4,
-    "question": "At the grandest feasts a cook could make a roasted peacock appear to breathe real fire as it was carried in — a trick set down in Martino da Como's cookbook of about 1465. What did he tuck into the bird's beak and set alight to produce the flames?",
+    "question": "Martino da Como, an Italian cook, set down a trick in his cookbook of around 1465 for making a roasted peacock seem to breathe real fire as it was carried in. What did he tuck into the bird's beak and set alight?",
     "answer": "Cotton wool soaked in camphor and wine",
     "choices": [
       "Cotton wool soaked in camphor and wine",
@@ -25793,7 +25702,7 @@
   },
   {
     "tier": 4,
-    "question": "Between the courses of a lavish feast, cooks brought out a 'subtlety' — a showpiece for guests to marvel at. At a 1343 banquet for Pope Clement VI, they built one giant edible showpiece entirely from roasted birds and re-dressed deer, boar, goat and hare, all arranged into a single huge model. What grand structure was the whole scene modelled as?",
+    "question": "Cooks preparing a banquet in 1343 for Pope Clement VI sent out a subtlety between the courses, a showpiece for the guests to marvel at. They built it from roasted birds and re-dressed deer, boar, goats and hares, all arranged into one huge model. What was the scene modelled as?",
     "answer": "A castle",
     "choices": [
       "A castle",
@@ -25806,7 +25715,7 @@
   },
   {
     "tier": 5,
-    "question": "In a great medieval household, carving the roast birds at the table was a gentleman's art. A young nobleman served as a 'carving esquire' before he earned his knight's spurs, and doing it wrong was a public embarrassment. What surprisingly fussy rule did a skilled carver need to master?",
+    "question": "A young nobleman in a great medieval household served as carving esquire before he earned his knight's spurs, and he carved the roast birds at the table as a gentleman's art. One slip was a public embarrassment. What fussy rule did a skilled carver have to master?",
     "answer": "A different bird called for a different carving verb",
     "choices": [
       "A different bird called for a different carving verb",
@@ -25819,7 +25728,7 @@
   },
   {
     "tier": 5,
-    "question": "At a medieval feast the gilded peacock was the glittering showpiece of the whole hall, and guests often applauded it rather than carving in for a slice. As it turned out, barely eating the peacock was no great loss. Why not?",
+    "question": "Guests at a medieval feast often applauded the gilded peacock, the glittering showpiece of the whole hall, instead of carving into it for a slice. As it turned out, leaving the bird barely eaten was no great loss to the diners. Why not?",
     "answer": "The meat underneath was tough, dry and tasteless",
     "choices": [
       "The meat underneath was tough, dry and tasteless",
@@ -25858,7 +25767,7 @@
   },
   {
     "tier": 2,
-    "question": "The 'Mediterranean diet' doctors praise isn't new. It was the daily food of poor 1950s villagers in southern Italy and Greece: bread, vegetables, a little fish, and one fat they used with almost every meal. Which fat was it?",
+    "question": "Poor villagers in southern Italy and Greece lived in the 1950s on the food that doctors now praise as the Mediterranean diet: bread, vegetables, a little fish, and one fat they used with almost every meal. Which fat was it?",
     "answer": "Olive oil",
     "choices": [
       "Sunflower oil",
@@ -25871,7 +25780,7 @@
   },
   {
     "tier": 2,
-    "question": "People praise the Mediterranean diet for its fish and its famous oil. But they forget the plainest part of the villagers' plates: heaps of vegetables and one cheap, filling food eaten at almost every meal. Which humble food did the villagers rely on?",
+    "question": "Heaps of vegetables filled the plates of villagers in 1950s Greece and southern Italy, along with one cheap, filling food eaten at almost every meal. It is the plainest part of the Mediterranean diet and the one its modern fans forget. Which food was it?",
     "answer": "Beans",
     "choices": [
       "Potatoes",
@@ -25884,7 +25793,7 @@
   },
   {
     "tier": 3,
-    "question": "Ancel Keys was an American scientist. He compared poor Mediterranean villagers, who ate simple food with little red meat, to well-fed Americans, who ate far more meat. His surprising result launched a whole new field of nutrition. What did he find?",
+    "question": "Comparing poor Mediterranean villagers, who ate simple food with little red meat, with well-fed Americans who ate far more meat, Ancel Keys, an American scientist, reached a surprising result that launched a whole new field of nutrition. What did he find?",
     "answer": "The poor villagers had far less heart disease",
     "choices": [
       "The rich Americans had far less heart disease",
@@ -25897,7 +25806,7 @@
   },
   {
     "tier": 3,
-    "question": "Ancel Keys tested his hunch with the huge Seven Countries Study, tracking thousands of middle-aged men from America to Japan. The healthiest hearts of every group belonged to men on one Greek island, who ate peasant food and touched meat only on rare feast days. Which island?",
+    "question": "The men of one Greek island ate peasant food and touched meat only on rare feast days. In Ancel Keys's huge Seven Countries Study, which tracked thousands of middle-aged men from America to Japan, they had the healthiest hearts of any group. Which island was it?",
     "answer": "Crete",
     "choices": [
       "Corfu",
@@ -25910,7 +25819,7 @@
   },
   {
     "tier": 4,
-    "question": "At the far extreme of Ancel Keys' study sat the men of North Karelia in eastern Finland -- the unhealthiest of all, reported to die of heart attacks up to about 30 times as often as the men of the Mediterranean. These northern farmers cooked with and ate huge amounts of one fat. Which one?",
+    "question": "North Karelia's farmers, in eastern Finland, stood at the far end of Ancel Keys's study, with a heart-attack death rate among the worst ever measured. They cooked with, and ate, huge amounts of one fat. Which one?",
     "answer": "Butter",
     "choices": [
       "Lard",
@@ -25923,7 +25832,7 @@
   },
   {
     "tier": 5,
-    "question": "Ancel Keys' work did more than praise the Mediterranean diet -- it helped launch the sweeping idea that saturated fat itself brings on heart disease, which drove 50 years of low-fat advice. His study, though, showed a link, not proof. How do many researchers judge that specific claim today?",
+    "question": "Ancel Keys's findings led him and others to a sweeping claim, that saturated fat itself brings on heart disease, and the idea steered half a century of low-fat advice. His study, though, showed a link, not proof. How do many researchers judge that claim today?",
     "answer": "The pattern still looks healthy, but the blanket 'saturated fat causes heart disease' verdict is now disputed",
     "choices": [
       "It is settled beyond doubt -- saturated fat is proven to be the single cause of heart disease",
@@ -25936,7 +25845,7 @@
   },
   {
     "tier": 1,
-    "question": "In the store, tabbouleh looks like a wheat salad, a tub of pale grain with a few green flecks. But real Levantine tabbouleh flips that: it is mostly one finely chopped green herb, with only a spoonful of bulgur wheat mixed in. Which herb makes up most of a real tabbouleh?",
+    "question": "Tabbouleh from a supermarket tub looks like a wheat salad, pale grain with a few green flecks. Real Levantine tabbouleh flips that: it is mostly one finely chopped green herb, with only a spoonful of bulgur wheat for texture. Which herb makes up most of it?",
     "answer": "Parsley",
     "choices": [
       "Parsley",
@@ -25949,7 +25858,7 @@
   },
   {
     "tier": 2,
-    "question": "Baba ganoush is a Levantine eggplant dip famous for a deep, smoky flavor — and that smokiness isn't from any added spice. Cooks build it by doing one dramatic thing to the whole eggplant before scooping out its soft insides. What do they do to it?",
+    "question": "A Levantine cook sets out to make baba ganoush, the eggplant dip prized for its deep, smoky flavor, and adds no smoky spice at all. The smoke comes from one dramatic thing the cook does to the whole eggplant before scooping out its soft insides. What does the cook do to it?",
     "answer": "Blacken its skin whole over an open flame",
     "choices": [
       "Blacken its skin whole over an open flame",
@@ -25962,7 +25871,7 @@
   },
   {
     "tier": 2,
-    "question": "Labneh is a soft white cheese, spread across plates with olive oil and dried mint all over the Levant — but it's one of the few cheeses made with no rennet and no aging at all. It's really just one everyday dairy food with its liquid strained out. Which dairy food is strained to make labneh?",
+    "question": "Across the Levant, cooks spread labneh, a soft white cheese, over a plate and top it with olive oil and dried mint. It takes no rennet and no aging, because it is only one everyday dairy food with its liquid strained out. Which food is it made from?",
     "answer": "Yogurt",
     "choices": [
       "Yogurt",
@@ -25975,7 +25884,7 @@
   },
   {
     "tier": 3,
-    "question": "Dolma are little parcels of seasoned rice and herbs, and here's the twist — the leaf wrapped around each one isn't peeled off and thrown away. You eat the wrapper right along with the filling. Which leaf does a classic dolma use?",
+    "question": "Little dolma parcels of seasoned rice and herbs come to the table each wrapped in a leaf that has been simmered soft. Nobody peels the wrapper off: it is eaten right along with the filling. Which leaf wraps a classic dolma?",
     "answer": "A grape leaf",
     "choices": [
       "A grape leaf",
@@ -25988,7 +25897,7 @@
   },
   {
     "tier": 3,
-    "question": "In the ancient city of Aleppo, in northern Syria, cooks make a brick-red dip called muhammara. They fire-roast sweet red peppers until the skins blacken, then blend them with pomegranate molasses for a sweet-tart tang and a pinch of chili for warmth. But the dip's rich, thick body and its gentle crunch come from one ground-up nut stirred right into the mix. Which nut is it?",
+    "question": "Cooks in Aleppo, in northern Syria, roast sweet red peppers over a fire until the skins blacken, then blend them into a brick-red dip called muhammara. Its rich, thick body and its gentle crunch come from one ground nut stirred into the mix. Which nut is it?",
     "answer": "Walnuts",
     "choices": [
       "Walnuts",
@@ -26001,7 +25910,7 @@
   },
   {
     "tier": 4,
-    "question": "The eggplant behind baba ganoush feels ancient and Mediterranean — but the Greeks and Romans never even had a word for it, because they'd never laid eyes on one. It's really a native of South Asia. Who carried the eggplant west across the Mediterranean, reaching Spain by the 8th century?",
+    "question": "Baba ganoush tastes as old as the Mediterranean, yet the ancient Greeks and Romans never had a word for its eggplant, because they had never laid eyes on one. The plant came from South Asia and had reached Spain by the 8th century. Who carried it west across the Mediterranean?",
     "answer": "Arab traders",
     "choices": [
       "Arab traders",
@@ -26014,7 +25923,7 @@
   },
   {
     "tier": 4,
-    "question": "One thick, dark, tangy syrup runs all through Levantine cooking — cooks drizzle it into salad dressings and stir it into dips for a sweet-sour kick. It's made by simmering a single fruit's juice down and down until a whole potful cooks away to a small syrupy pool. Which fruit's juice becomes this syrup?",
+    "question": "Levantine cooks drizzle one thick, dark, tangy syrup into salad dressings and stir it into dips for a sweet-sour kick. They make it by simmering a single fruit's juice down until a whole potful cooks away to a small syrupy pool. Which fruit's juice becomes this syrup?",
     "answer": "Pomegranate",
     "choices": [
       "Pomegranate",
@@ -26027,7 +25936,7 @@
   },
   {
     "tier": 1,
-    "question": "A steaming bowl of spicy food gets its burn from chili peppers. Surprise: every chili pepper on Earth traces back to wild plants that grew in just one part of the world before sailors carried them everywhere else. Where did chili peppers first come from?",
+    "question": "A steaming bowl of spicy stew gets its burn from chili peppers. Every chili pepper on Earth traces back to wild plants that grew in just one part of the world, until sailors carried them everywhere else. Where did chili peppers first come from?",
     "answer": "The Americas",
     "choices": [
       "The Americas",
@@ -26039,47 +25948,8 @@
     "topic": "the-new-world-crossed-the-ocean-and-remade-africas-table"
   },
   {
-    "tier": 2,
-    "question": "Coffee is grown all around the world today — from Brazil to Vietnam to Colombia. But every single coffee bush on every plantation, no matter how far away it grows now, traces back to wild coffee plants that first sprang up on the cool, misty highlands of one African country. A legend, first written down in 1671, says local herders noticed goats bouncing with energy after eating the red berries. Which country is coffee's original home?",
-    "answer": "Ethiopia",
-    "choices": [
-      "Ethiopia",
-      "Brazil",
-      "Colombia",
-      "Yemen"
-    ],
-    "context": "Wild Coffea arabica first grew in Ethiopia, and the word 'coffee' traces back to Ethiopia's Kaffa province — so this bean actually traveled OUT of Africa to the rest of the world. A famous legend, not written down before 1671, credits a goatherd who supposedly saw his goats prance with energy after eating the red coffee berries; even the goatherd's usual name, 'Kaldi,' is a 20th-century invention. Source: Wikipedia, 'History of coffee.'",
-    "topic": "the-new-world-crossed-the-ocean-and-remade-africas-table"
-  },
-  {
-    "tier": 3,
-    "question": "Some African foods sailed the other way, to the Americas. The famous Louisiana stew called gumbo takes its name from ki ngombo, a word carried across the Atlantic by enslaved Africans along with the plant it names. Which vegetable does the word — and the dish — really name?",
-    "answer": "Okra",
-    "choices": [
-      "Okra",
-      "Onion",
-      "Celery",
-      "Bell pepper"
-    ],
-    "context": "Okra is native to East Africa (Ethiopia, Eritrea and Sudan) and reached the Americas by 1658, when it was recorded in Brazil. The Louisiana dish name 'gumbo' comes from the Bantu word ki ngombo, meaning okra. Onion, celery and bell pepper — the 'holy trinity' — go into gumbo too, but the word itself means okra. Source: Wikipedia, 'Okra.'",
-    "topic": "the-new-world-crossed-the-ocean-and-remade-africas-table"
-  },
-  {
     "tier": 4,
-    "question": "Africa's most important staple crop today is maize — the corn ground into ugali, nshima and pap across the continent. But a fat corn cob does not exist in nature; farmers in southern Mexico spent thousands of years breeding it from a scrawny wild grass. What is that wild ancestor grass called?",
-    "answer": "Teosinte",
-    "choices": [
-      "Teosinte",
-      "Sorghum",
-      "Millet",
-      "Wild barley"
-    ],
-    "context": "Maize was domesticated about 9,000 years ago from wild teosinte in the Balsas River valley of southern Mexico. Portuguese ships introduced it to Africa in the 16th century, where it became the continent's most important staple — eaten as ugali, nshima, sadza and mieliepap. Source: Wikipedia, 'Maize.'",
-    "topic": "the-new-world-crossed-the-ocean-and-remade-africas-table"
-  },
-  {
-    "tier": 4,
-    "question": "Fufu and garri are everyday staples across West Africa, both made from the starchy cassava root — a plant that came from Brazil. There is a catch: raw cassava is naturally poisonous. Before it is safe to eat, West African cooks must first do what to the root?",
+    "question": "West African cooks turn cassava, a starchy root from Brazil, into fufu and garri, two everyday staples. Raw cassava is naturally poisonous, though. Before it is safe to eat, what must the cooks first do to the roots?",
     "answer": "Soak the roots in water to ferment",
     "choices": [
       "Soak the roots in water to ferment",
@@ -26092,7 +25962,7 @@
   },
   {
     "tier": 5,
-    "question": "Jollof rice is the pride of West African cooking — a one-pot rice dish stained deep red with tomatoes and tomato paste, and cooks in Ghana and Nigeria argue endlessly over whose pot is best. Portuguese ships landed the tomato in Africa about 500 years ago. Roughly how old is the tomato-based jollof that West Africans cook today?",
+    "question": "Jollof rice, a one-pot dish stained deep red with tomatoes and tomato paste, sets cooks in Ghana and Nigeria arguing endlessly over whose pot is best. Portuguese ships landed the tomato in Africa about 500 years ago. Roughly how old is the tomato-rich jollof that West Africans cook today?",
     "answer": "About 200 years",
     "choices": [
       "About 200 years",
@@ -26105,7 +25975,7 @@
   },
   {
     "tier": 1,
-    "question": "Italy's kitchens split in two by the fat they use. In the sunny south — Naples, Sicily, and Puglia — cooks reach for olive oil almost every time. But in the cool north, up near the Alps around Milan and Turin, dairy cows graze the green meadows and the cooks fry, finish, and enrich their dishes with a completely different fat. Which fat leads the northern kitchen?",
+    "question": "Cooks in Italy's sunny south, in Naples, Sicily and Puglia, reach for olive oil almost every time. In the cool north near the Alps, around Milan and Turin, dairy cows graze green meadows, and cooks fry and finish their dishes with a different fat. Which fat leads the northern kitchen?",
     "answer": "Butter",
     "choices": [
       "Butter",
@@ -26117,21 +25987,8 @@
     "topic": "the-north-butter-south-oil-divide"
   },
   {
-    "tier": 2,
-    "question": "Bologna, up in northern Italy, is famous for a fresh egg-yellow pasta called tagliatelle. Way down in the south of Italy, dried spaghetti is pale and firm instead. Northern and southern cooks build their pasta from doughs that differ in one big way — one key ingredient in the northern dough is left out of the southern version entirely. What is it?",
-    "answer": "Egg",
-    "choices": [
-      "Egg",
-      "Butter",
-      "Saffron",
-      "Olive oil"
-    ],
-    "context": "Northern Italy specializes in fresh egg pasta — pasta all'uovo — like tagliatelle and filled tortellini, classic to Emilia-Romagna and Bologna. Southern dried pasta (pasta secca) is just durum-wheat semolina and water, no egg. Source: Wikipedia, 'Italian cuisine' (en.wikipedia.org/wiki/Italian_cuisine).",
-    "topic": "the-north-butter-south-oil-divide"
-  },
-  {
     "tier": 3,
-    "question": "Dried pasta keeps for months on the kitchen shelf without spoiling — a huge advantage for a poor household with no fridge. In Italy it became the south's everyday staple, eaten daily by families in Sicily, Puglia, and Naples, while the wetter north stuck to fresh egg pasta they had to eat right away. What let the southern towns turn out shelf-stable dried pasta when the north could not?",
+    "question": "Southern Italian families in Sicily, Puglia and Naples ate dried pasta every day, and it kept for months on a shelf without spoiling, a huge help in a poor home with no fridge. The north stuck to fresh pasta that had to be eaten the same day. What let the south make pasta that kept when the north could not?",
     "answer": "Hot, dry winds that air-dried the pasta while the humid north stayed too damp",
     "choices": [
       "Hot, dry winds that air-dried the pasta while the humid north stayed too damp",
@@ -26144,7 +26001,7 @@
   },
   {
     "tier": 4,
-    "question": "In the northern Italian mountains of Piemonte and Veneto, poor farming families lived for generations on almost one dish: polenta. Every day the iron pot went on the fire, and for hours a wife or grandmother stirred a thick, hot yellow porridge, made from the ground meal of just one crop grown on their steep hillside plots. Which crop fed them?",
+    "question": "Poor farming families in the mountains of Piemonte and Veneto, in northern Italy, lived for generations on almost one dish, polenta. Every day the iron pot went on the fire, and a wife or grandmother stirred the thick, hot porridge for hours, made from the ground meal of one crop from their steep hillside plots. Which crop fed them?",
     "answer": "Corn",
     "choices": [
       "Corn",
@@ -26157,7 +26014,7 @@
   },
   {
     "tier": 4,
-    "question": "In the sunny hills of southern Italy, olive oil had cooked meals since the days of ancient Rome. But one turn of medieval history deepened its hold for good. As the Catholic Church spread its rules across Europe, it set many days each year when the faithful had to fast — days when the kitchen itself had to change. What gave olive oil an extra boost across the south during the Middle Ages?",
+    "question": "Olive oil had cooked meals in the sunny hills of southern Italy since the days of ancient Rome, but one turn of medieval history tightened its grip on the southern kitchen for good. What gave olive oil that extra boost across the south in the Middle Ages?",
     "answer": "Lenten fasting rules banned animal fats like butter, and oil broke no rule",
     "choices": [
       "Lenten fasting rules banned animal fats like butter, and oil broke no rule",
@@ -26169,21 +26026,8 @@
     "topic": "the-north-butter-south-oil-divide"
   },
   {
-    "tier": 5,
-    "question": "Up in northern Italy, the flat plains of Lombardy and Emilia hold rich dairy pastures with more cow's milk than farmers can ever drink fresh. All that surplus milk is turned into two of the world's great hard cheeses — Parmigiano-Reggiano and Grana Padano. How do the cheesemakers of the north turn that extra milk into these famous wheels?",
-    "answer": "By aging the wheels for years until hard and grateable",
-    "choices": [
-      "By aging the wheels for years until hard and grateable",
-      "By stretching the warm curd into soft ropes by hand",
-      "By curdling it and eating it fresh within a day",
-      "By smoking the young cheese over smouldering wood"
-    ],
-    "context": "The north ages hard cow's-milk cheeses — Parmigiano Reggiano and Grana Padano, whose name 'Padano' points to the Po Valley (Pianura Padana). The south instead makes fresh stretched-curd (pasta filata) cheeses — mozzarella, burrata, provolone; true Mozzarella di Bufala Campana is at its best within 24 hours of being made. Sources: Wikipedia, 'Parmesan'; Nonna Box, 'Italian cheeses'.",
-    "topic": "the-north-butter-south-oil-divide"
-  },
-  {
     "tier": 1,
-    "question": "Take a fresh yellow onion and slice it cleanly in half from top to bottom. Look at the cut face and you see neat, concentric rings, one nested inside the next, all joined at the flat root plate on the bottom. Onions are really a special short underground stem, and each of those rings you see is really one of the onion's fattened ___?",
+    "question": "Sliced in half from top to bottom, a yellow onion shows neat rings on its cut face, one nested inside the next, all joined at the flat root plate at the bottom. The onion is really a short underground stem. What are those rings made of?",
     "answer": "storage leaves",
     "choices": [
       "storage leaves",
@@ -26196,7 +26040,7 @@
   },
   {
     "tier": 2,
-    "question": "You pick up an onion from the counter and the papery brown outer skin peels away in crackly, whispering sheets. It looks nothing at all like the moist, springy flesh underneath. To the onion plant itself, that brown skin isn't a shell or a rind — it's something more familiar than it looks. What is that brown skin, really?",
+    "question": "The papery brown skin of an onion peels away in crackly, whispering sheets, nothing like the moist, springy flesh underneath. To the onion plant itself, what is that brown skin?",
     "answer": "a set of outer layers, dried brittle with age",
     "choices": [
       "a set of outer layers, dried brittle with age",
@@ -26205,19 +26049,6 @@
       "a crust of soil baked hard onto the bulb"
     ],
     "context": "The dry, papery skin on an onion is just its outermost leaves — the same storage leaves as the juicy rings, but the outer ones dried out and went brittle as the bulb matured, forming a protective wrapper. (Source: en.wikipedia.org/wiki/Onion)",
-    "topic": "the-onion-family-bulbs-and-tears-alliums"
-  },
-  {
-    "tier": 2,
-    "question": "Take a knife and chop hard into a raw onion on the cutting board. Within seconds your eyes fill up with water and start to sting so much you have to look away. The slicing has torn open thousands of tiny onion cells at once and mixed together two chemicals stored inside them. That reaction lets loose something invisible that drifts up to your eyes and irritates them. What is it?",
-    "answer": "a tiny cloud of sulfur gas",
-    "choices": [
-      "a tiny cloud of sulfur gas",
-      "a fine mist of onion acid",
-      "a spray of sugary juice",
-      "a burst of trapped pollen"
-    ],
-    "context": "Cutting an onion ruptures its cells, releasing an enzyme (alliinase) that turns the onion's stored sulfur compounds into a tiny, volatile sulfur gas — the chemical syn-propanethial-S-oxide. It drifts up to your eyes, irritates them, and your eyes make tears to wash it away. The food-level answer is 'a sulfur gas'; the tongue-twister chemical name is only trivia. (Sources: en.wikipedia.org/wiki/Onion; en.wikipedia.org/wiki/Syn-Propanethial-S-oxide)",
     "topic": "the-onion-family-bulbs-and-tears-alliums"
   },
   {
@@ -26235,7 +26066,7 @@
   },
   {
     "tier": 3,
-    "question": "Pick up a whole, unbroken clove of garlic and hold it right under your nose. You'll smell almost nothing — just a faint papery scent. Now put that same clove on a cutting board and crush it flat with the side of a knife. The instant the clove breaks open, a fierce, unmistakable garlicky punch fills the whole kitchen. Where did that sudden powerful smell come from?",
+    "question": "A whole, unbroken clove of garlic held under the nose smells of almost nothing but faint paper. Crushed flat under the side of a knife, the same clove fills the whole kitchen with a fierce garlic punch the instant it breaks open. Where does that sudden smell come from?",
     "answer": "from a chemical reaction that builds it on the spot",
     "choices": [
       "from a chemical reaction that builds it on the spot",
@@ -26248,7 +26079,7 @@
   },
   {
     "tier": 4,
-    "question": "Raw garlic is fierce: bite a raw clove and it burns and stings the tongue. But leave a whole head of garlic to roast slowly in the oven, and something happens to that fierce bite. What becomes of it once the garlic is roasted soft?",
+    "question": "Bitten raw, a clove of garlic is fierce: it burns and stings the tongue. Then a cook roasts a whole head slowly in the oven until it turns soft, and something happens to that fierce bite. What becomes of it?",
     "answer": "it mellows into something mild and sweet",
     "choices": [
       "it mellows into something mild and sweet",
@@ -26260,21 +26091,8 @@
     "topic": "the-onion-family-bulbs-and-tears-alliums"
   },
   {
-    "tier": 4,
-    "question": "It feels personal when an onion makes you sob over the cutting board, but the onion never aimed its eye-watering chemistry at you. Biologists say a wild onion or garlic bulb, sitting buried underground, evolved that harsh, pungent chemistry to do one real job. What job?",
-    "answer": "to poison and repel pests that gnaw at the bulb",
-    "choices": [
-      "to poison and repel pests that gnaw at the bulb",
-      "to help the bulb store water through a drought",
-      "to lure in insects that spread its pollen",
-      "to stop the buried bulb freezing in winter"
-    ],
-    "context": "The tears aren't an accident — they're the plant fighting back. Onions and garlic evolved their pungent sulfur chemistry as a defense: those compounds repel and even poison insects, herbivores, slugs, snails, nematodes, and fungi that would eat the bulb. Your crying is a byproduct of a chemical weapon meant for pests. (Sources: Frontiers in Plant Science, 2024; en.wikipedia.org/wiki/Allicin)",
-    "topic": "the-onion-family-bulbs-and-tears-alliums"
-  },
-  {
     "tier": 1,
-    "question": "Long before ships sailed around Africa, pepper, cinnamon, and cloves reached Europe. They came overland across Asia in slow trains loaded with sacks of spice. Which animals made up those spice caravans?",
+    "question": "Sacks of cloves, pepper and cinnamon traveled overland across Asia toward Europe long before any ship sailed around Africa, carried in slow trains of pack animals. Which animals made up those spice caravans?",
     "answer": "camels",
     "choices": [
       "camels",
@@ -26287,7 +26105,7 @@
   },
   {
     "tier": 1,
-    "question": "For about 700 years in the Middle Ages, almost every peppercorn, cinnamon stick, and clove that reached Europe traveled by ship halfway across the world and unloaded on the stone docks of one Italian port. That city grew astonishingly rich as Europe's spice gateway to the East. Which city was it?",
+    "question": "One Italian port took in almost every peppercorn, cinnamon stick and clove that reached Europe for some 700 years of the Middle Ages, landing them on its stone docks, and the city grew rich as Europe's spice gateway to the East. Which city was it?",
     "answer": "Venice",
     "choices": [
       "Venice",
@@ -26300,7 +26118,7 @@
   },
   {
     "tier": 2,
-    "question": "In the medieval spice trade, cinnamon bark came all the way from Sri Lanka to European ports, and by the time a merchant unlocked his shop chest to sell it, it was one of the most valuable powders on the shelf. A trader could set true cinnamon on one side of a balance scale and one metal on the other, and call it a fair swap — pound for pound they were worth about the same. Which metal was cinnamon worth as much as?",
+    "question": "A medieval merchant who unlocked a chest of cinnamon bark, carried all the way from Sri Lanka, could set it on one side of a balance scale and one metal on the other and call it a fair swap: pound for pound, the two were worth about the same. Which metal?",
     "answer": "silver",
     "choices": [
       "silver",
@@ -26313,7 +26131,7 @@
   },
   {
     "tier": 2,
-    "question": "A sack of black pepper bought for a handful of coins on India's coast was worth about thirty times as much by the time it reached Europe's markets. The price climbed at every stop as the cargo passed from one set of merchant hands to the next. Which two groups of middlemen guarded most of that spice fortune?",
+    "question": "A sack of black pepper bought for a handful of coins on India's coast was worth about thirty times as much by the time it reached Europe, its price climbing at every stop as it passed from one set of merchant hands to the next. Which two groups of middlemen guarded most of that fortune?",
     "answer": "the Arab and Venetian merchants",
     "choices": [
       "the Arab and Venetian merchants",
@@ -26326,7 +26144,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1453 the Ottoman Turks captured Constantinople, the crossroads city on the overland spice road, and cooks across Europe braced for pepper to price itself out of their kitchens. It never happened. For the next forty-five years, pepper prices barely moved, because Venice quietly kept its own supply open. Who was Venice buying its pepper from?",
+    "question": "The Ottoman Turks captured Constantinople, a crossroads on the overland spice road, in 1453, and cooks across Europe braced for pepper to price itself out of their kitchens. It never did: for the next forty-five years pepper prices barely moved, because the merchants of Europe's great spice port quietly kept their own supply open. Who were they buying from?",
     "answer": "the Mamluk rulers in Alexandria",
     "choices": [
       "the Mamluk rulers in Alexandria",
@@ -26339,7 +26157,7 @@
   },
   {
     "tier": 2,
-    "question": "Passion flowers and passion fruit sound like they're named for romance, but the Spanish and Portuguese missionaries who met the vine in South America in the 1500s meant something far darker. To them, 'the Passion' named one particular ordeal from their faith. Which was it?",
+    "question": "Spanish and Portuguese missionaries who met a flowering vine in South America in the 1500s named its flower and fruit for the Passion. They meant something far darker than romance: to them the Passion was one particular ordeal from their faith. Which was it?",
     "answer": "The Crucifixion of Jesus",
     "choices": [
       "The martyrdom of Stephen",
@@ -26352,7 +26170,7 @@
   },
   {
     "tier": 2,
-    "question": "The passion flower isn't the only gift of its vine — the same plant produces the passion fruit, a South American favorite. In Brazil the tart, musky pulp is whipped into a fluffy mousse and spooned over cakes. What do Brazilians call this fruit?",
+    "question": "Brazilian cooks whip the tart, musky pulp of the passion fruit, which grows on the same vine as the passion flower, into a fluffy mousse and spoon it over cakes. What do Brazilians call this fruit?",
     "answer": "Maracujá",
     "choices": [
       "Guaraná",
@@ -26365,7 +26183,7 @@
   },
   {
     "tier": 3,
-    "question": "The missionaries who met the passion flower in South America read Christ's suffering into it part by part. The feature at the very heart of the bloom — the one that first grabs your eye — took one specific role from the Crucifixion story. What did they say it stood for?",
+    "question": "Missionaries who met the passion flower in South America read Christ's suffering into it part by part. To them the feature at the very heart of the bloom, the first thing to catch the eye, took one role from the story of the Crucifixion. What did they say it stood for?",
     "answer": "The crown of thorns",
     "choices": [
       "The three nails",
@@ -26378,7 +26196,7 @@
   },
   {
     "tier": 1,
-    "question": "Cashews, almonds, and pecans all get called nuts, and the peanut borrows that word too. But it isn't really a nut — it's a cousin of some very familiar garden plants. Which family does the peanut really belong to?",
+    "question": "A bowl of mixed nuts holds cashews, almonds, pecans and peanuts, but botanists say the peanut is no nut at all: it is a cousin of some very familiar garden plants. Which family does it belong to?",
     "answer": "the bean and pea family",
     "choices": [
       "the bean and pea family",
@@ -26391,7 +26209,7 @@
   },
   {
     "tier": 2,
-    "question": "Peanuts feel deeply Southern — boiled at county fairs, roasted at ballgames. Yet the plant isn't native to North America at all; Spanish and Portuguese ships first carried it out of its true homeland, half a world away. Where did the peanut originally grow wild?",
+    "question": "Boiled peanuts at a county fair and roasted peanuts at a ballgame feel deeply Southern, yet the plant is not native to North America at all. Spanish and Portuguese ships first carried it out of its true homeland. Where did the peanut grow wild?",
     "answer": "east of the Andes, in South America",
     "choices": [
       "east of the Andes, in South America",
@@ -26404,7 +26222,7 @@
   },
   {
     "tier": 2,
-    "question": "A peanut plant blooms with small yellow flowers up in the open air. Yet you will never find a peanut hanging on the plant above the ground. After one of those yellow flowers is pollinated, what does the plant do to turn it into a peanut?",
+    "question": "A peanut plant blooms with small yellow flowers up in the open air, yet no peanut ever hangs from its stems above the ground. Once one of those flowers has been pollinated, what does the plant do to turn it into a peanut?",
     "answer": "A stalk grows from the flower and pushes the young pod down into the soil.",
     "choices": [
       "A stalk grows from the flower and pushes the young pod down into the soil.",
@@ -26417,7 +26235,7 @@
   },
   {
     "tier": 3,
-    "question": "A peanut plant's small yellow flower opens for one single day, then wilts and closes forever. That one short day is the flower's entire window to be pollinated — and if pollination fails, no peanut will ever form underneath. Yet peanut farmers plant huge fields every year and reliably get a crop. In that one short day, how does the peanut flower manage to get pollinated at all?",
+    "question": "Each small yellow flower on a peanut plant opens for a single day, then wilts and closes for good, and if it is not pollinated in that time no peanut will ever form. Yet farmers plant huge fields of peanuts and reliably get a crop. How does each flower get pollinated in its one short day?",
     "answer": "It pollinates itself, needing no other flower.",
     "choices": [
       "It pollinates itself, needing no other flower.",
@@ -26430,7 +26248,7 @@
   },
   {
     "tier": 3,
-    "question": "Plant cotton in the same field year after year and the soil goes dead — the crop keeps stripping something vital from the dirt. Plant peanuts there one season, and next spring's corn comes up thick and tall with no fertilizer at all. What are the peanut's roots quietly doing down in the soil?",
+    "question": "A field planted with cotton year after year goes dead, the crop stripping something vital from the dirt. A farmer sows peanuts there for one season, and next spring's corn comes up thick and tall with no fertilizer at all. What are the peanut's roots doing down in the soil?",
     "answer": "Pulling nitrogen out of the air and locking it into the soil.",
     "choices": [
       "Pulling nitrogen out of the air and locking it into the soil.",
@@ -26443,7 +26261,7 @@
   },
   {
     "tier": 4,
-    "question": "George Washington Carver — born into slavery, later a scientist at Tuskegee — urged Southern farmers to plant soil-rebuilding peanuts where cotton had worn the land out. It worked too well: farmers were soon buried in peanuts nobody would buy. Carver's answer, the work that made his name, was to do what?",
+    "question": "George Washington Carver, born into slavery and later a scientist at Tuskegee, urged Southern farmers to plant peanuts where cotton had worn the land out. It worked too well, and farmers were soon buried in peanuts nobody would buy. What did Carver do about it, in the work that made his name?",
     "answer": "Invent hundreds of new peanut products, from flour to glue to shaving cream.",
     "choices": [
       "Invent hundreds of new peanut products, from flour to glue to shaving cream.",
@@ -26456,7 +26274,7 @@
   },
   {
     "tier": 1,
-    "question": "The very first pies weren't sweet at all. A hunk of meat was sealed inside a thick, rock-hard shell of flour and water that held the filling together in the oven. What did medieval English bakers call this stiff crust?",
+    "question": "A medieval English baker sealed a hunk of meat inside a thick, rock-hard shell of flour and water to hold it together in the oven, for the first pies were not sweet at all. What did such bakers call that stiff crust?",
     "answer": "a coffin",
     "choices": [
       "a coffin",
@@ -26469,7 +26287,7 @@
   },
   {
     "tier": 2,
-    "question": "Medieval English cooks baked meat pies inside a stiff, rock-hard shell of flour and water that they actually called a 'coffin.' Long before refrigerators existed, one of these pies could ride in a saddlebag for weeks and still be safe to eat — the crust was the reason. How did that thick, dense shell keep the meat inside from spoiling?",
+    "question": "Baked inside a stiff shell of flour and water, a medieval English meat pie could ride in a saddlebag for weeks and still be safe to eat, long before anyone had a fridge. The crust was the reason. How did that thick shell keep the meat from spoiling?",
     "answer": "it locked the air away from the meat",
     "choices": [
       "it locked the air away from the meat",
@@ -26482,7 +26300,7 @@
   },
   {
     "tier": 3,
-    "question": "A traditional English pork pie stands up on its own — no tin, no dish, just thick pastry walls holding a heavy, juicy filling. The secret is how the dough is mixed: unlike ordinary pastry, this one is made with ___?",
+    "question": "A traditional English pork pie stands up on its own, with no tin and no dish, its thick pastry walls holding a heavy, juicy filling. The secret is the dough, which is made unlike any ordinary pastry. What is it made with?",
     "answer": "fat melted into boiling water",
     "choices": [
       "fat melted into boiling water",
@@ -26494,21 +26312,8 @@
     "topic": "the-pie-from-meat-coffin-to-apple-pie"
   },
   {
-    "tier": 3,
-    "question": "Open any pie-crust recipe and the first rules bark at you the same way: keep the butter cold, cut it into the flour while it is still stiff, work fast, and never let it soften in your warm hands. All that fuss is because those little cold chunks of butter, still solid when the pie goes into the oven, do something almost magical the second the crust hits the heat. What does that cold fat do inside the hot oven?",
-    "answer": "the fat melts and its water flashes to steam, prying layers apart",
-    "choices": [
-      "the fat melts and its water flashes to steam, prying layers apart",
-      "the fat melts and fries the dough crisp from the inside out",
-      "the fat melts and coats the flour, keeping the crumb tender",
-      "the fat melts and soaks in, baking the dough rich and dense"
-    ],
-    "context": "Kept cold, the fat stays in solid flakes between sheets of dough instead of blending in. In the oven those flakes melt, and the water trapped inside the butter — along with the moisture in the dough — flashes to steam and pries the layers apart into hundreds of thin, crisp pockets. The fat itself never turns to steam; it just melts, leaving the gaps the steam puffs open. One warning: shortcrust uses about twice as much flour as fat, and if you overwork the dough you build up gluten and it turns tough and chewy instead of tender. Source: Wikipedia, 'Shortcrust pastry.'",
-    "topic": "the-pie-from-meat-coffin-to-apple-pie"
-  },
-  {
     "tier": 4,
-    "question": "You're pre-baking an empty pie crust so a wet filling won't leave it soggy, but an empty crust puffs up and slumps in the heat. The old cook's fix is to line it with paper and fill it with something heavy that you tip back out afterward. What do bakers traditionally weigh an empty crust down with?",
+    "question": "A baker pre-bakes an empty pie crust so a wet filling won't leave it soggy, but an empty crust puffs up and slumps in the heat. The old fix is to line it with paper and fill it with something heavy, removed again before the filling is added. What do bakers traditionally weigh an empty crust down with?",
     "answer": "dried beans",
     "choices": [
       "dried beans",
@@ -26521,7 +26326,7 @@
   },
   {
     "tier": 5,
-    "question": "'As American as apple pie' — except the apple isn't American at all. It's an Old World fruit that settlers carried across the Atlantic. Only sour little crab apples grew wild in North America before they came. So which classic pie is filled with a crop that really is native to the Americas, grown by Indigenous farmers for thousands of years?",
+    "question": "'As American as apple pie,' the saying goes, yet the apple came from the Old World, carried across the Atlantic by settlers; only sour little crab apples grew wild in North America before they came. One classic pie is filled with a crop truly native to the Americas, grown by Indigenous farmers for thousands of years. Which pie is it?",
     "answer": "pumpkin pie",
     "choices": [
       "pumpkin pie",
@@ -26534,7 +26339,7 @@
   },
   {
     "tier": 2,
-    "question": "Walk down the nut aisle of any grocery store and you'll see almonds, walnuts, and peanuts sold right in their shells for you to crack open yourself at home. But cashews are always sold already loose and pre-shelled, never inside a shell you can crack. Something about the raw, untreated cashew shell makes it far too dangerous to hand a shopper. What's the problem with a raw cashew shell?",
+    "question": "A shopper in the nut aisle finds almonds, walnuts and peanuts sold in their shells to crack open at home, but every cashew comes loose and already shelled, never in a shell to crack. What is the trouble with a raw cashew shell?",
     "answer": "It's coated in a caustic oil that blisters skin.",
     "choices": [
       "It's coated in a caustic oil that blisters skin.",
@@ -26547,7 +26352,7 @@
   },
   {
     "tier": 2,
-    "question": "Mango trees belong to the cashew family, a group of plants that all carry an oily irritant called urushiol. Some people who bite into a raw mango without peeling it get an itchy rash around their mouth — a milder version of what a certain three-leafed woodland plant does to hikers who brush against it. The mango is a close cousin of which North American plant?",
+    "question": "Some people who bite into an unpeeled mango break out in an itchy rash around the mouth, from an oily irritant, urushiol, in the fruit's skin and sap. It is a milder version of what a certain woodland plant does to hikers who brush against it. The mango is a close cousin of which North American plant?",
     "answer": "poison ivy",
     "choices": [
       "poison ivy",
@@ -26560,7 +26365,7 @@
   },
   {
     "tier": 4,
-    "question": "Those bags labeled 'raw cashews' at the health-food store aren't quite what they claim: every commercial cashew has already been treated to destroy the caustic oil in its shell. What is done to each and every one?",
+    "question": "A health-food store sells bags labeled 'raw cashews,' but they are not quite what they claim. Every commercial cashew has already been treated to destroy the oil in its shell. What is done to each and every one?",
     "answer": "It's roasted at high heat to burn off the shell oil.",
     "choices": [
       "It's roasted at high heat to burn off the shell oil.",
@@ -26573,7 +26378,7 @@
   },
   {
     "tier": 4,
-    "question": "Sumac — the tangy, sour, lemony spice sprinkled over Middle Eastern dishes and stirred into za'atar — grows on a shrub in the same family as cashews and poison ivy. There's also a poison sumac cousin you must never eat. Out in the wild, how do you tell the edible shrub from the poisonous one?",
+    "question": "Middle Eastern cooks sprinkle sumac, a sour, lemony spice, over their dishes and stir it into za'atar. It grows on a shrub of the cashew family, and a toxic cousin of that shrub, poison sumac, must never be eaten. How does a forager tell the edible shrub from the poisonous one in the wild?",
     "answer": "The edible one has red berries; poison sumac has white.",
     "choices": [
       "The edible one has red berries; poison sumac has white.",
@@ -26586,7 +26391,7 @@
   },
   {
     "tier": 5,
-    "question": "The shell around every raw cashew is filled with a caustic oil so nasty it can blister skin — the same oil that has to be roasted off before we can eat the nuts. Factories don't throw that oil away. They press it out of the shells by the ton and sell it as an industrial raw material. One of these everyday products is really built partly from cashew-shell oil. Which one?",
+    "question": "Cashew factories do not throw away the oil they squeeze from the empty shells. They press it out by the ton and sell it as an industrial raw material, and one everyday product is built partly from it. Which one?",
     "answer": "brake linings for cars",
     "choices": [
       "brake linings for cars",
@@ -26742,7 +26547,7 @@
   },
   {
     "tier": 1,
-    "question": "The potato was first grown high in the Andes mountains of South America, thousands of years ago. A modern supermarket sells maybe five kinds. But up in those Andean villages, farmers still grow over four thousand native kinds. One thing about them shocks first-time visitors. What surprises them most?",
+    "question": "Farmers in the Andean highlands still grow more than four thousand native kinds of potato, while a modern supermarket sells maybe five. First-time visitors to those villages are startled by one thing about them. What surprises them most?",
     "answer": "They come in bright reds, purples, and blues",
     "choices": [
       "They come in bright reds, purples, and blues",
@@ -26755,7 +26560,7 @@
   },
   {
     "tier": 2,
-    "question": "After 1750, farmers all across Europe's poor countryside — in Ireland, Germany, Poland, and northern France — began plowing under their fields of grain and planting them with a strange new tuber from the Americas instead. Field after field, the switch to the potato spread astonishingly fast in about one lifetime. What did the potato do for a hungry family that wheat and rye could not?",
+    "question": "From Ireland to Poland, farmers across Europe's poor countryside began plowing up their grain after 1750 and planting a strange new tuber from the Americas instead, and the switch spread field by field within about one lifetime. What could the potato do for a hungry family that wheat and rye could not?",
     "answer": "Feed far more people from the same ground",
     "choices": [
       "Feed far more people from the same ground",
@@ -26768,7 +26573,7 @@
   },
   {
     "tier": 2,
-    "question": "Plants are grouped into families by botanists, and the potato belongs to a family called the nightshades. One relative of the potato in that family is deadly nightshade, a famous woodland poison that has killed unlucky travelers for centuries. But two vegetables you eat at ordinary dinners are also close cousins of the potato in the same nightshade family. Which pair are they?",
+    "question": "Europeans eyed the newly arrived potato warily, and they had a reason: it belongs to the nightshade family, along with deadly nightshade, a famous woodland poison that has killed unlucky travelers for centuries. Two vegetables from ordinary dinner tables are close cousins in the same family. Which pair?",
     "answer": "The tomato and the eggplant",
     "choices": [
       "The tomato and the eggplant",
@@ -26780,21 +26585,8 @@
     "topic": "the-potato-remade-the-old-world"
   },
   {
-    "tier": 3,
-    "question": "To turn fresh potatoes into a food that keeps for years, Andean families spread them across the high, flat ground and spend more than a week pressing all the water out of the piles. How do they crush the potatoes to squeeze the water out?",
-    "answer": "They stomp them with bare feet",
-    "choices": [
-      "They stomp them with bare feet",
-      "They roll heavy stones across them",
-      "They pound them with wooden clubs",
-      "They wring them in leather sacks"
-    ],
-    "context": "To make chuno, families gather on flat ground and stomp the potatoes with their bare feet - almost dancing on the piles - to crush out the water and rub off the skins, repeated over more than a week. Source: en.wikipedia.org/wiki/Chuno.",
-    "topic": "the-potato-remade-the-old-world"
-  },
-  {
     "tier": 4,
-    "question": "France was the potato's stubbornest foe, sneering that it was food fit only for pigs. In 1748 the French government went further and outright banned the crop, convinced it caused a dreaded disease. Which disease were potatoes wrongly blamed for spreading?",
+    "question": "The French sneered at the potato as food fit only for pigs, and in 1748 their government went further and banned the crop outright, sure it spread a dreaded disease. Which disease were potatoes wrongly blamed for?",
     "answer": "Leprosy",
     "choices": [
       "Leprosy",
@@ -26807,7 +26599,7 @@
   },
   {
     "tier": 5,
-    "question": "The potato's cheap calories didn't just fill hungry stomachs. Economists Nathan Nunn and Nancy Qian added up the numbers and found the humble spud drove roughly a quarter of ALL the Old World's growth between 1700 and 1900 - and that growth showed up in two things at once. Which pair did the potato help swell?",
+    "question": "Nathan Nunn and Nancy Qian, two economists, added up the numbers on the potato's cheap calories and found that the humble spud drove roughly a quarter of the Old World's growth between 1700 and 1900. That growth showed up in two things at once. Which pair did the potato help swell?",
     "answer": "Its people and its cities",
     "choices": [
       "Its people and its cities",
@@ -26820,7 +26612,7 @@
   },
   {
     "tier": 5,
-    "question": "Even after the ban lifted, the French still would not eat potatoes. On a field granted by King Louis XVI, the army pharmacist Antoine-Augustin Parmentier planted a crop of them and set out to make his countrymen want it. How did Parmentier get villagers planting potatoes in their own gardens?",
+    "question": "Antoine-Augustin Parmentier, who served the French army as a pharmacist, planted potatoes on a field granted by King Louis XVI, set on making his countrymen want a crop they still refused to eat. As the story goes, how did he get villagers planting potatoes in their own gardens?",
     "answer": "He posted armed guards by day, then let thieves take the crop at night",
     "choices": [
       "He posted armed guards by day, then let thieves take the crop at night",
@@ -26833,7 +26625,7 @@
   },
   {
     "tier": 1,
-    "question": "In ancient Rome, a wealthy host welcomed his guests into the dining room, which the Romans called the triclinium. Servants brought out roast meats, bowls of olives, and jugs of watered wine, but the strangest thing to modern eyes wasn't the food — it was the way every guest ate. What posture did a Roman hold all through the meal?",
+    "question": "Servants in a wealthy Roman's house brought out roast meats, bowls of olives and jugs of watered wine for the guests. The strangest thing to modern eyes was not the food but the way every guest ate. What posture did a Roman hold all through the meal?",
     "answer": "Lying down on one side",
     "choices": [
       "Lying down on one side",
@@ -26846,7 +26638,7 @@
   },
   {
     "tier": 1,
-    "question": "The Romans named their formal dining room after the wide couches that lined it. Three couches sat in a U around a central table, with the open side left for servants to bring the food. What was this couch-lined dining room called?",
+    "question": "A Roman family's formal dining room held wide couches set in a U around a central table, with the open side kept free for servants to bring the food. Those couches gave the room its name. What was it called?",
     "answer": "the triclinium",
     "choices": [
       "the triclinium",
@@ -26859,7 +26651,7 @@
   },
   {
     "tier": 2,
-    "question": "A popular story claims that wealthy Romans, stuffed from a feast, would stagger off to a special room called a 'vomitorium' to throw up before eating more. The truth is far less disgusting. A vomitorium was actually what?",
+    "question": "Wealthy Romans stuffed from a feast, the popular story goes, would stagger off to a special room called a vomitorium to throw up and then eat more. The truth is far less disgusting. What was a vomitorium really?",
     "answer": "A passageway that funnels crowds out of an arena",
     "choices": [
       "A passageway that funnels crowds out of an arena",
@@ -26872,7 +26664,7 @@
   },
   {
     "tier": 2,
-    "question": "In ancient Rome, formal banquets were eaten lying down on padded couches called triclinia, three guests to a couch. Each diner leaned onto his left elbow and kept that arm pinned beneath his body for the whole meal — through course after course of roast meat, bread, and fruit. Why did every Roman diner tie up his left arm like that?",
+    "question": "Every diner at a formal Roman banquet leaned onto his left elbow on a padded couch, three guests to a couch, and kept that arm pinned beneath him through course after course of roast meat, bread and fruit. Why did every diner tie up his left arm like that?",
     "answer": "It freed the right hand to reach for food",
     "choices": [
       "It freed the right hand to reach for food",
@@ -26885,20 +26677,7 @@
   },
   {
     "tier": 3,
-    "question": "In ancient Rome, the favorite condiment on every table was a smelly brown sauce called garum. Rich and poor alike splashed it onto nearly everything they ate — vegetables, roast meat, boiled eggs, even fruit. It was the ketchup of the Roman world, and merchants shipped great clay jars of it all across the empire. What was garum actually made from?",
-    "answer": "Fish and salt, cured in the sun",
-    "choices": [
-      "Fish and salt, cured in the sun",
-      "Grapes boiled down to a syrup",
-      "Honey whisked into sour wine",
-      "Olives crushed and pressed with herbs"
-    ],
-    "context": "Garum's deep savory kick came from glutamates released as the fish broke down — what we now call umami. The pungent sauce was so prized it was blended into named varieties: with pepper, with wine, even cut with water. Source: Wikipedia, 'Garum'; National Geographic, 'What Is Garum?'",
-    "topic": "the-roman-convivium"
-  },
-  {
-    "tier": 3,
-    "question": "In ancient Rome, a formal banquet ran in three acts, like a play. First came the gustatio, an opening course famous for its eggs and salty tidbits. Then came the primae mensae, the main tables of roast meats and stews. Last came the secunda mensa, the 'second table' — the sweet closing course. What did the Romans bring out for that final course?",
+    "question": "Guests at a formal Roman dinner ate it in three acts, like a play: eggs and salty little bites to begin, then the main tables of roast meat and stew, and last the secunda mensa, the 'second table', a sweet closing course. What did the Romans serve at that last table?",
     "answer": "Fruit and honey",
     "choices": [
       "Fruit and honey",
@@ -26911,7 +26690,7 @@
   },
   {
     "tier": 4,
-    "question": "The custom of eating dinner lying down on couches came to Rome from ancient Greece, where philosophers like Plato held drinking parties called symposia. In Greece, though, only men reclined on the couches — wives and daughters were kept out of the dining room entirely. When the Romans borrowed the practice, they changed one rule about who lay on the couches. What was the Roman custom that Greeks would have found scandalous?",
+    "question": "Greek philosophers such as Plato held drinking parties called symposia, where only men reclined on the couches and wives and daughters were kept out of the room entirely. The Romans borrowed the custom of dining on couches but changed one rule about who lay on them. What did Romans do that Greeks would have found scandalous?",
     "answer": "Respectable women reclined right beside the men",
     "choices": [
       "Respectable women reclined right beside the men",
@@ -26924,7 +26703,7 @@
   },
   {
     "tier": 4,
-    "question": "In Petronius's satirical novel the Satyricon, a vulgar rich host named Trimalchio loves dishes that startle his guests. A whole roast hog is carried in, and Trimalchio erupts in fake fury that the cook forgot to gut it — so the cook carves it open right there at the table. What tumbles out?",
+    "question": "Trimalchio, the vulgar rich host of Petronius's satirical novel the Satyricon, loved dishes that startled his guests. A whole roast hog was carried in, and he flew into a fake fury that the cook had forgotten to gut it, so the cook slit it open right at the table. What tumbled out?",
     "answer": "Cooked sausages and blood puddings, like its own innards",
     "choices": [
       "Cooked sausages and blood puddings, like its own innards",
@@ -26937,7 +26716,7 @@
   },
   {
     "tier": 5,
-    "question": "At a rich Roman's banquet in the age of the Caesars, one prized appetizer wasn't a piece of meat at all but a whole roasted dormouse — a fat little rodent about the size of a hamster, fattened in a special clay pot called a glirarium until it was plump and tender. It was served as a luxury treat to show off the host's wealth. How was this dormouse dressed up on the plate to impress the guests?",
+    "question": "One prized appetizer at a rich Roman's banquet in the age of the Caesars was no ordinary cut of meat but a whole roasted dormouse, a fat little rodent about the size of a hamster, fattened until it was plump and tender. It was a luxury meant to show off the host's wealth. How was the dormouse dressed up on the plate?",
     "answer": "Glazed in honey and rolled in poppy seeds",
     "choices": [
       "Glazed in honey and rolled in poppy seeds",
@@ -26950,7 +26729,7 @@
   },
   {
     "tier": 5,
-    "question": "Romans didn't just catch dormice for the table — they fattened them first. A farmer kept the dormice in the dark inside a special pierced earthenware pot, ribbed inside with little ramps and a food hollow and stuffed with acorns and chestnuts, until the sleepy rodents grew plump. What was this dormouse-fattening pot called?",
+    "question": "A Roman farmer fattened dormice for the table in the dark, inside a special pierced earthenware pot ribbed inside with little ramps and stuffed with acorns and chestnuts, until the sleepy rodents grew plump. What was that pot called?",
     "answer": "a glirarium",
     "choices": [
       "a glirarium",
@@ -26962,34 +26741,8 @@
     "topic": "the-roman-convivium"
   },
   {
-    "tier": 1,
-    "question": "Modern doctors warn about eating too much salt, and people treat it like a guilty pleasure that raises blood pressure. But strip every trace of salt from your body and you would fail within minutes. Salt is sodium chloride, and the sodium half of it has one life-or-death job inside you. What is that job?",
-    "answer": "It carries the electrical signal behind every nerve and muscle.",
-    "choices": [
-      "It carries the electrical signal behind every nerve and muscle.",
-      "It builds the hard mineral structure of bones and teeth.",
-      "It ferries oxygen from your lungs out to your tissues.",
-      "It clots the blood to seal and close a wound."
-    ],
-    "context": "Sodium is an essential electrolyte. Every time a nerve fires, sodium ions rush into the cell to create the electrical signal, and that same signal tells muscle cells to contract, so without sodium you could not think a thought or twitch a finger. Salt is a genuine need, not just a vice. Source: med.libretexts.org, Nutrition Science and Everyday Application (Callahan, Leonard & Powell), 8.05.",
-    "topic": "the-salt-wars"
-  },
-  {
-    "tier": 1,
-    "question": "Salt was once so precious that, by traditional accounts, caravans of as many as 40,000 camels hauled it 400 miles across the Sahara Desert. In the markets on the desert's far side, merchants would swap salt for an equal weight of one other treasure. Pound for pound, what did they trade their salt for?",
-    "answer": "Gold",
-    "choices": [
-      "Gold",
-      "Silver",
-      "Ivory",
-      "Pearls"
-    ],
-    "context": "In the medieval Sahel south of the Sahara, salt was so scarce it could be worth its weight in gold, while the region overflowed with gold but had little salt, making the trade fabulously lucrative. Rome had earlier guarded its own 150-mile Via Salaria, the 'Salt Road,' just to move the stuff. This is romanticized history: the camel numbers and the exact weight-for-weight gold swap are traditional accounts. Source: time.com, 'A Brief History of Salt.'  (Legend.)",
-    "topic": "the-salt-wars"
-  },
-  {
     "tier": 2,
-    "question": "Table salt looks like a single simple ingredient, but it's really two different elements bonded together into every tiny crystal. Nutrition labels only track one of the two. Which two elements make up table salt?",
+    "question": "A cook shaking salt over a pot is adding what looks like one simple ingredient, yet every tiny crystal is two different elements bonded together, and a food label tracks only one of them. Which two make up table salt?",
     "answer": "Sodium and chloride",
     "choices": [
       "Sodium and chloride",
@@ -27002,7 +26755,7 @@
   },
   {
     "tier": 3,
-    "question": "For decades, U.S. dietary guidelines urged nearly every adult to cut back on salt, warning that too much sodium raises blood pressure, a real danger for salt-sensitive people. The warning rests on simple physics. Once extra sodium is in your blood, what does it physically do to push the pressure up?",
+    "question": "A doctor tells a salt-sensitive patient to cut back on salt, because too much sodium raises blood pressure, and the warning rests on simple physics. Once extra sodium is in the blood, what does it physically do to push the pressure up?",
     "answer": "It pulls water into the bloodstream, swelling the blood's volume.",
     "choices": [
       "It pulls water into the bloodstream, swelling the blood's volume.",
@@ -27015,7 +26768,7 @@
   },
   {
     "tier": 4,
-    "question": "Health advice long assumed one simple rule: the less sodium, the better. Then the PURE (Prospective Urban Rural Epidemiology) study tracked about 94,000 people across 18 countries for years, weighing their sodium against their heart risk. Its authors reported what actually happened at the LOW end of intake. What did the data suggest about people who kept their sodium extremely low?",
+    "question": "Andrew Mente led the PURE (Prospective Urban Rural Epidemiology) study, which tracked about 94,000 people across 18 countries for years and weighed their sodium against their heart risk. Health advice had long held that the less sodium, the better. What did the data suggest about people who kept their sodium extremely low?",
     "answer": "Their risk crept back up, as if too little salt were harmful too.",
     "choices": [
       "Their risk crept back up, as if too little salt were harmful too.",
@@ -27028,7 +26781,7 @@
   },
   {
     "tier": 5,
-    "question": "You decide to eat less sodium, so you put down the salt shaker. A dietitian says that barely moves the needle: for the average American, only a small slice of daily sodium is the salt you add yourself, and around 70% is already in the food before it reaches the kitchen. Which foods hide most of that built-in sodium?",
+    "question": "Set on eating less sodium, a home cook puts the salt shaker away. A dietitian says that barely moves the needle: for the average American, only a small slice of the day's sodium comes from the shaker, and around 70 percent is already in the food before it reaches the kitchen. Which foods hide most of it?",
     "answer": "Packaged and restaurant food — breads, cheeses, cold cuts, canned soup.",
     "choices": [
       "Packaged and restaurant food — breads, cheeses, cold cuts, canned soup.",
@@ -27041,7 +26794,7 @@
   },
   {
     "tier": 1,
-    "question": "At first glance the sandwich looks well-named — two slices of bread 'sandwich' a filling between them, so of course the food is called a sandwich. In truth the naming ran the other way around: 'Sandwich' was already someone's title, long before it was ever a lunch. Who was the sandwich actually named after?",
+    "question": "Two slices of bread close over a filling, and the word sandwich seems to describe just that, yet the naming ran the other way: Sandwich belonged to a person long before it was ever a lunch. Who was the sandwich named after?",
     "answer": "an English nobleman",
     "choices": [
       "an English nobleman",
@@ -27054,7 +26807,7 @@
   },
   {
     "tier": 2,
-    "question": "John Montagu, the 4th Earl of Sandwich in 18th-century England, didn't invent his title's odd name. He inherited it from a long line of ancestors. Long before 'Sandwich' ever labelled a lunch between two slices of bread, the word 'Sandwich' was something else entirely in England. What was it?",
+    "question": "John Montagu, the 4th Earl of Sandwich in 18th-century England, did not invent the odd name of his title; it came down to him from his ancestors. Long before Sandwich ever named a lunch between two slices of bread, it was something else in England. What was it?",
     "answer": "an old seaport town in Kent",
     "choices": [
       "an old seaport town in Kent",
@@ -27067,7 +26820,7 @@
   },
   {
     "tier": 2,
-    "question": "The English nobleman John Montagu, the 4th Earl of Sandwich, was famous for his marathon card games. As the legend goes, around 1762 he was so absorbed at the gaming table that he refused to leave even to eat. He ordered a servant to bring him cooked meat tucked between two slices of bread, for one simple reason -- so that ___?",
+    "question": "As the legend goes, John Montagu, the 4th Earl of Sandwich, grew so absorbed at the gaming table around 1762 that he refused to leave it even to eat. He had a servant bring him meat tucked between two slices of bread. What did he gain by eating it that way?",
     "answer": "he could eat one-handed and keep the cards free of grease",
     "choices": [
       "he could eat one-handed and keep the cards free of grease",
@@ -27080,7 +26833,7 @@
   },
   {
     "tier": 3,
-    "question": "The colorful tale of the Earl gambling for a whole day may be too good to be true. His own biographer notes that John Montagu spent three terms as First Lord of the Admiralty, running Britain's navy, and was buried in duties day and night. So historians now suspect the first 'sandwich' was really eaten ___?",
+    "question": "Rodger, who wrote the life of John Montagu, notes that the earl spent three terms as First Lord of the Admiralty, running Britain's navy, buried in duties day and night. Historians now suspect the first sandwich was eaten not over cards but somewhere else. Where?",
     "answer": "at his cluttered work desk",
     "choices": [
       "at his cluttered work desk",
@@ -27093,7 +26846,7 @@
   },
   {
     "tier": 4,
-    "question": "The Earl gave the food its English NAME, but people had eaten meat between bread for ages before him. About 1,800 years earlier, a Jewish sage was already wrapping Passover lamb and bitter herbs inside flatbread -- a mouthful still eaten at the Seder today. Who was he?",
+    "question": "A Jewish sage folded Passover lamb and bitter herbs inside flatbread some 1,800 years ahead of the Earl of Sandwich, who lent the food his name, and Jews still eat that mouthful at the Seder today. Who was the sage?",
     "answer": "Hillel the Elder",
     "choices": [
       "Hillel the Elder",
@@ -27223,7 +26976,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook drops a raw steak into a room-temperature skillet on medium heat and waits for it to brown. Instead of the loud sizzle and dark crust she was hoping for, the meat sits in a puddle of its own leaking juices, steams a sad pale gray, and sticks fast to the metal. She has skipped one crucial step before the steak ever touched the pan. What should the cook have done first?",
+    "question": "A cook drops a raw steak into a skillet still at room temperature. Instead of a loud sizzle and a dark crust, the meat sits in a puddle of its own juices, steams a sad pale gray and sticks fast. What should the cook have done first?",
     "answer": "Heated the empty pan screaming hot first.",
     "choices": [
       "Heated the empty pan screaming hot first.",
@@ -27249,7 +27002,7 @@
   },
   {
     "tier": 3,
-    "question": "Set a pan right at water's boiling point, 212F, and flick a few drops on: they just spread thin and sizzle away, with no skittering dance at all. The pan has to climb hotter than boiling before the drops will bead up and dance. Roughly how much hotter does it need to get?",
+    "question": "Drops of water flicked onto a pan sitting at exactly water's boiling point, 212F, just spread thin and sizzle away. The pan has to climb hotter than boiling before the drops will do anything else. Roughly how much hotter must it get?",
     "answer": "Roughly double the boiling temperature.",
     "choices": [
       "Just a little hotter than boiling.",
@@ -27275,7 +27028,7 @@
   },
   {
     "tier": 1,
-    "question": "Drop a raw steak onto a screaming-hot pan and its surface soon turns a deep, glossy brown — a crust so rich it smells nothing like raw beef. A kitchen scientist will tell you that dark crust isn't just the same meat 'cooked darker,' the way a piece of toast is only bread cooked longer. It is something new that wasn't there before. What is that brown crust, really?",
+    "question": "A cook lays a raw steak in a screaming-hot pan, and its surface soon turns a deep, glossy brown that smells nothing like raw beef. Food scientists insist the dark crust is more than the same meat cooked darker. What is that brown crust, really?",
     "answer": "Brand-new flavor compounds, created right at the surface",
     "choices": [
       "Brand-new flavor compounds, created right at the surface",
@@ -27287,60 +27040,8 @@
     "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
   },
   {
-    "tier": 2,
-    "question": "For generations, cooks passed down one iron rule at the stove: sear a steak hard the second it hits the pan, 'to seal in the juices' like closing a door. The American television cook Alton Brown, host of the food-science show Good Eats, decided to put that old rule on trial with a kitchen scale. He weighed two identical steaks before cooking and again after — one seared hard, one not. What did his test actually show?",
-    "answer": "The seared steak lost slightly MORE moisture, not less",
-    "choices": [
-      "The seared steak lost slightly MORE moisture, not less",
-      "The seared steak held on to nearly all of its juice",
-      "Searing made no measurable difference to the weight",
-      "The unseared steak dried out almost twice as fast"
-    ],
-    "context": "It's a myth. In Alton Brown's side-by-side test the UNSEARED steak lost 13% of its weight while the SEARED steak lost 19% — searing squeezed out a little MORE moisture. You sear for the crust and flavor, not to trap juice. (The myth is over 175 years old, tracing to German chemist Justus von Liebig in 1847.) Source: https://amazingribs.com/more-technique-and-science/more-cooking-science/myth-searing-steaks-seals-juices/",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
-    "tier": 2,
-    "question": "In a busy restaurant kitchen, one cook pats a thick steak bone-dry with paper towels before it hits the smoking-hot pan; another lays a steak in straight from the package, still wet from its own juices. Same pan, same heat -- but the wet steak turns pale grey while the dry one browns beautifully. Why won't the wet steak brown?",
-    "answer": "Its wet surface stays stuck at boiling temperature, far below browning heat",
-    "choices": [
-      "Its wet surface stays stuck at boiling temperature, far below browning heat",
-      "The water washes the meat's sugars away before they can brown",
-      "Cold surface water chills the whole pan too much to cook it",
-      "Water on the surface chemically blocks the browning from starting"
-    ],
-    "context": "Water boils off at 212F/100C and holds the wet surface right at that temperature — far below the ~300F browning needs — so a wet steak just steams itself grey until every drop has evaporated. Dry surface = browning; wet surface = steaming. Source: https://www.blusteakhouse.com/blog/science-of-maillard-reaction-steak",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
-    "tier": 2,
-    "question": "A steak sizzles loudly from the second it touches the pan until the moment you lift it out — a hiss that never quits. The American food-science writer Harold McGee, whose book On Food and Cooking explains kitchen chemistry to cooks around the world, says that never-ending sizzle isn't the sound of many different things at once. It is really the sound of one single thing happening over and over. What?",
-    "answer": "Moisture escaping the meat and flashing into steam",
-    "choices": [
-      "Moisture escaping the meat and flashing into steam",
-      "Fat melting and spattering against the hot metal",
-      "The brown crust crackling as it forms and hardens",
-      "Tiny air pockets inside the meat bursting open"
-    ],
-    "context": "McGee's point is that a seared crust can't 'seal' anything because it isn't waterproof. As he puts it: the crust 'is not waterproof... the continuing sizzle of meat in the pan or oven or on the grill is the sound of moisture continually escaping and vaporizing.' The sizzle you hear IS water leaving. Source: https://amazingribs.com/more-technique-and-science/more-cooking-science/myth-searing-steaks-seals-juices/",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
     "tier": 3,
-    "question": "A cook heats a heavy pan until it is really hot, then dumps in a big pile of sliced button mushrooms and stirs. She wants the golden-brown, savory sear that mushrooms get in a good restaurant. Instead they come out soft, wet, and grey — no color, no crust, and swimming in liquid. Mushrooms are mostly water, and if the pan is crowded that water pools and turns to steam instead of evaporating away. What should the cook change?",
-    "answer": "Cook them in smaller batches",
-    "choices": [
-      "Cook them in smaller batches",
-      "Cover the pan while they cook",
-      "Stir them without stopping",
-      "Start them in a cold pan"
-    ],
-    "context": "Piling in cold food drops the surface below the ~160C/330F browning threshold, and the moisture it releases turns to steam — so everything goes soft and pale-grey instead of brown. Cook in batches so the pan recovers its heat between loads. Source: https://www.tastingtable.com/1307243/how-overcrowding-pan-ruining-cuts-meat/",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
-    "tier": 3,
-    "question": "When a seared steak crackles brown in the pan and a slice of toast turns golden in the toaster, they're both showing off the same trick: the Maillard reaction, named after French chemist Louis-Camille Maillard. It's the sugars in the food reacting with one other ingredient as they heat, unlocking hundreds of new flavor compounds. Which ingredient partners with those sugars to build all that browned flavor?",
+    "question": "A steak browns in one pan while plain sugar melts to amber caramel in the next, and the two browns come from different reactions. Caramel needs nothing but sugar. The steak's crust needs the meat's sugars to react with one other ingredient that caramel never uses. Which ingredient partners with the sugars?",
     "answer": "The food's own protein",
     "choices": [
       "The food's own protein",
@@ -27348,12 +27049,12 @@
       "Salt drawn to the surface",
       "Water released from inside"
     ],
-    "context": "This is the Maillard reaction — amino acids from protein rearranging with sugars into hundreds of new savory flavor compounds, running fast around 140-165C (280-330F). French chemist Louis-Camille Maillard first described it in 1912, while trying to reproduce protein synthesis. Source: https://en.wikipedia.org/wiki/Maillard_reaction",
+    "context": "This is the Maillard reaction, named for the French chemist Louis-Camille Maillard, who described it in 1912: amino acids from the food's protein react with its sugars under heat, building hundreds of new savory flavor compounds, and it runs fast around 140-165C (280-330F). Caramelization is different: it is pure sugar breaking down by itself, with no protein required. A bread crust or a sear is mostly Maillard; melting sugar into caramel is pure caramelization.",
     "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
   },
   {
     "tier": 4,
-    "question": "Heat plain white sugar in a dry pan -- no water, no butter, nothing else added -- and it slowly turns amber and takes on deep, bittersweet, almost-nutty flavors. Cooks call this caramelization, and those flavors are so distinctive they're the whole point of caramel candy and the crackly top of a creme brulee. Where do all those brand-new flavors actually come from?",
+    "question": "A pastry cook heats plain white sugar in a dry pan, with no water, no butter and nothing else added, and slowly it turns amber and takes on deep, bittersweet, almost nutty flavors. That change, caramelization, is the whole point of caramel candy and the crackly top of a crème brûlée. Where do those flavors come from?",
     "answer": "The sugar molecules themselves breaking apart into new compounds",
     "choices": [
       "The sugar molecules themselves breaking apart into new compounds",
@@ -27366,7 +27067,7 @@
   },
   {
     "tier": 4,
-    "question": "Slow-cook a pan of sliced onions over gentle heat for the better part of an hour and they collapse into a sweet, deep-brown, jammy tangle. Cooks call the result 'caramelized,' as if the onion's own sugar had simply turned to caramel like a piece of hard candy melting. Food scientists say that sugar-to-caramel change is only half of what really browns those onions. What is the other half?",
+    "question": "Sliced onions stirred over gentle heat for the better part of an hour collapse into a sweet, deep-brown, jammy tangle. Cooks call them caramelized, as if the onion's own sugar had simply turned to caramel. Food scientists say that is only half of what browns them. What is the other half?",
     "answer": "The Maillard reaction, sugar meeting protein",
     "choices": [
       "The Maillard reaction, sugar meeting protein",
@@ -27378,47 +27079,8 @@
     "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
   },
   {
-    "tier": 5,
-    "question": "The browning reaction discovered in 1912 by French chemist Louis-Camille Maillard is the same reaction that darkens toast, roasted coffee beans, and the crust of a seared steak — everyday kitchen magic. Jean-Marie Lehn, the French chemist who later won the Nobel Prize for his work on molecular structure, once made a bold claim about how important that everyday browning reaction really is. What did Lehn say makes it so remarkable?",
-    "answer": "It's by far the most widely practiced chemical reaction on Earth",
-    "choices": [
-      "It's by far the most widely practiced chemical reaction on Earth",
-      "It's the only reaction that makes brand-new flavors from nothing",
-      "It's the fastest chemical reaction that happens in any kitchen",
-      "It's the oldest chemical reaction that humans ever discovered"
-    ],
-    "context": "Every time you toast, roast, sear, bake, or fry, you're running the Maillard reaction — which is why Nobel laureate Jean-Marie Lehn called browning 'by far, the most widely practiced chemical reaction in the world.' Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
-    "tier": 4,
-    "question": "Slowly caramelizing a pan of sliced onions the proper way can take a patient 45 minutes of stirring over gentle heat, coaxing the sugars to brown without letting them burn. A modern kitchen cook stirs in one tiny pinch of a common white powder from the baking cupboard and gets the same deep-brown, jammy result in about 15 minutes flat. What's the powder?",
-    "answer": "A pinch of baking soda",
-    "choices": [
-      "A pinch of baking soda",
-      "A pinch of white sugar",
-      "A pinch of cornstarch",
-      "A pinch of cream of tartar"
-    ],
-    "context": "Baking soda raises the pH, making the surface alkaline — that deprotonates the amino groups and speeds the Maillard reaction, cutting the time dramatically. Use only about 1/4 teaspoon per pound of onions; too much turns them mushy and soapy. Source: https://www.onions-usa.org/onionista/faster-caramelized-onions-with-baking-soda/",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
-    "tier": 5,
-    "question": "In a German bakery, soft pretzels come out of the oven with a deep mahogany, glossy skin that a plain bread roll never gets, even sitting on the very same rack. Traditional bakers give the pretzel that skin with one dramatic step before it bakes -- a step so caustic that they wear thick rubber gloves for it. What do they do to the raw pretzel first?",
-    "answer": "Dip it in a lye bath",
-    "choices": [
-      "Dip it in a lye bath",
-      "Dip it in a vinegar bath",
-      "Dip it in a sugar syrup",
-      "Dip it in a salt brine"
-    ],
-    "context": "Pretzels get their glossy dark-brown skin from an alkaline dip — traditionally a lye bath, or baking soda at home — before baking. The alkaline surface makes the Maillard reaction run hard and fast in the oven, the same pH trick that speeds caramelized onions. Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
     "tier": 1,
-    "question": "You pull a crusty, freshly baked loaf of bread out of the paper bag and reach for a smooth, straight-edged kitchen knife — the same style of blade a cook uses to chop an onion, with no teeth along the edge. You press the blade straight down onto the top of the loaf, trying to saw off a slice by force. Before the sharp edge ever gets through that hard crust, what happens to the loaf?",
+    "question": "A cook pulls a crusty, fresh-baked loaf from its paper bag and presses a smooth, straight-edged knife, the kind used to chop an onion, straight down on top. Before the edge gets through the hard crust, what happens to the loaf?",
     "answer": "The soft inside crushes flat under the downward push",
     "choices": [
       "The soft inside crushes flat under the downward push",
@@ -27431,7 +27093,7 @@
   },
   {
     "tier": 2,
-    "question": "Press a dull, smooth-edged kitchen knife onto the shiny red skin of a ripe tomato and the blade skids across without biting in. Push harder to force the cut and the tomato bursts into juicy mush under your hand. Switch to a serrated bread knife — the kind with a row of pointed teeth along the edge — and the same tomato slices cleanly with almost no effort. How do those teeth handle the tomato's stretched surface differently?",
+    "question": "A dull, smooth-edged knife skids across the shiny skin of a ripe tomato without biting in, and when the cook pushes harder the tomato bursts into mush. A serrated bread knife, with a row of pointed teeth along its edge, slices the same tomato cleanly. How do the teeth handle the tomato's stretched skin differently?",
     "answer": "They grip and pierce the taut skin at once, with almost no downward push",
     "choices": [
       "They grip and pierce the taut skin at once, with almost no downward push",
@@ -27444,7 +27106,7 @@
   },
   {
     "tier": 3,
-    "question": "A serrated knife is the toothed kind of blade cooks use for slicing bread — a long line of sharp points running down one edge. Watch cooks cut a crusty loaf with one and they never just press the blade straight down like a paper cutter. They draw it back and forth in long, sawing strokes until a full slice comes free. What is each of those sawing strokes actually doing to the loaf?",
+    "question": "A baker cuts a crusty loaf with a serrated knife, its edge a long line of sharp points, and never just presses it straight down like a paper cutter: he draws it back and forth in long, sawing strokes until a slice comes free. What is each stroke doing to the loaf?",
     "answer": "Adding a row of tiny splits that build up along the whole cut line",
     "choices": [
       "Adding a row of tiny splits that build up along the whole cut line",
@@ -27457,7 +27119,7 @@
   },
   {
     "tier": 4,
-    "question": "A bread knife or a steak knife has a wavy row of little teeth along its edge -- that's what makes it a serrated blade. When you press the knife against a crusty loaf, the sharp pointed tips punch the first holes through the food's skin or crust. But as you draw the blade back and forth along the cut, a different part of the tooth pattern does the real slicing. Which part actually does the cutting?",
+    "question": "The pointed tips of a serrated bread knife punch the first holes through a crusty loaf as the blade touches it. Then, as the cook draws it back and forth along the cut, a different part of the wavy edge does the real slicing. Which part does the cutting?",
     "answer": "The curved scalloped hollows dipping between the points",
     "choices": [
       "The curved scalloped hollows dipping between the points",
@@ -27470,7 +27132,7 @@
   },
   {
     "tier": 4,
-    "question": "A smooth-edged chef's knife — the wide, straight blade cooks use for chopping vegetables — dulls quickly and needs sharpening on a whetstone every few weeks of regular use. A serrated bread knife, the kind with pointed teeth cut into the edge, can slice loaves and tomatoes for years with no sharpening at all and still feel just as sharp on the crust. What about that toothy edge keeps it from wearing down?",
+    "question": "In a cook's knife drawer, the smooth-edged chef's knife, the wide blade for chopping vegetables, dulls quickly and needs a whetstone every few weeks of regular use. The serrated bread knife beside it slices loaves and tomatoes for years with no sharpening at all and still feels just as sharp on the crust. What about that toothy edge keeps it from wearing down?",
     "answer": "Only the pointed tips ride on the cutting board, so most of the edge never rubs it",
     "choices": [
       "Only the pointed tips ride on the cutting board, so most of the edge never rubs it",
@@ -27482,21 +27144,8 @@
     "topic": "the-serrated-knife-teeth-that-saw-bread-and-bite-a-tomato"
   },
   {
-    "tier": 1,
-    "question": "In the Sichuan region of southwest China, cooks flavor their food with a tiny dried reddish husk called a Sichuan peppercorn. It isn't related to black pepper at all — it is actually the outer shell of a small citrusy berry from a prickly ash tree. Chew one for the very first time and forget everything you thought you knew about pepper. Within seconds your lips start doing something no ordinary spice makes them do. What?",
-    "answer": "Tingle, fizz, and go half-numb",
-    "choices": [
-      "Tingle, fizz, and go half-numb",
-      "Burn like fire and blister",
-      "Pucker, dry out, and sting",
-      "Swell up and slowly throb"
-    ],
-    "context": "That fizzy half-numbness is the 'ma' (麻, literally 'numbing') at the heart of Sichuan cooking — a totally different feeling from a chili's burn, which is exactly why Sichuan cooks prize it. Source: en.wikipedia.org/wiki/Mala_(seasoning)",
-    "topic": "the-sichuan-buzz-a-molecule-that-vibrates-your-nerves"
-  },
-  {
     "tier": 2,
-    "question": "In the Sichuan region of southwest China, a bowl of hot-pot — a fiery pot of simmering red broth loaded with dried chilies and Sichuan peppercorns — is built to hit a diner's mouth in a deliberate order. Two sensations arrive a beat apart, one landing before the other like the beats of a drum. Which of the two is meant to arrive first?",
+    "question": "A diner in Sichuan, in southwest China, dips into a hot-pot of simmering red broth loaded with dried chilies and Sichuan peppercorns. The pot is built to hit the mouth in a deliberate order, with two sensations arriving a beat apart. Which is meant to arrive first?",
     "answer": "The peppercorn's numbing buzz",
     "choices": [
       "The chili's fiery heat",
@@ -27509,7 +27158,7 @@
   },
   {
     "tier": 3,
-    "question": "Bite into a hot red chili and your mouth burns because of a molecule inside the chili called capsaicin. Capsaicin fools your heat-sensing nerves into thinking they've touched something scalding — so you 'feel fire' with no real fire on your tongue. The tingling buzz from a Sichuan peppercorn, though, comes from a totally different molecule called sanshool. What does sanshool act on inside your mouth?",
+    "question": "Suppose you bite into a hot red chili: your mouth burns because its capsaicin fools your heat-sensing nerves into feeling something scalding, with no real fire on your tongue. The tingle of a Sichuan peppercorn comes from a different molecule, sanshool. What does sanshool act on inside your mouth?",
     "answer": "Your touch-and-vibration nerves",
     "choices": [
       "Your touch-and-vibration nerves",
@@ -27522,7 +27171,7 @@
   },
   {
     "tier": 3,
-    "question": "The Sichuan peppercorn, used across southwest Chinese cooking, doesn't burn like a chili -- instead it makes your lips buzz and tingle as if they're softly vibrating. Curious scientists had volunteers hold their tingling lips to a small probe and dial its flutter up and down until the machine felt exactly like the peppercorn did. The match landed on the same buzz as one everyday object. Which?",
+    "question": "Scientists asked volunteers whose lips were tingling from a Sichuan peppercorn to hold them to a small probe and dial its flutter up and down until it felt exactly like the spice. The match landed on the same buzz as one everyday object. Which?",
     "answer": "A phone set to vibrate",
     "choices": [
       "A phone set to vibrate",
@@ -27535,7 +27184,7 @@
   },
   {
     "tier": 4,
-    "question": "Sanshool, the active molecule in the Sichuan peppercorn, sets your lip nerves firing like mad while nothing is actually touching your lips. In 2013, British scientists traced exactly how sanshool pulls off that trick. What does the molecule actually do to those lip nerves?",
+    "question": "British researchers worked out in 2013 how sanshool, the molecule in a Sichuan peppercorn, sets the nerves of a diner's lips firing like mad when nothing at all is there to set them off. What does the molecule do to those nerves?",
     "answer": "It jams the off-switch that keeps them quiet",
     "choices": [
       "It jams the off-switch that keeps them quiet",
@@ -27548,7 +27197,7 @@
   },
   {
     "tier": 1,
-    "question": "A souffle rises tall with no yeast and no baking powder — its lift comes entirely from air the cook whips in by hand. One ingredient is beaten until pale, foamy, and stiff enough to hold a peak, then folded gently into the flavored base. What does the cook whip?",
+    "question": "A souffle rises tall with no yeast and no baking powder, only air the cook whips in by hand. One ingredient is beaten until it is foamy and stiff enough to hold a peak, then folded into the flavored base. What does the cook whip?",
     "answer": "The egg whites",
     "choices": [
       "The egg whites",
@@ -27561,7 +27210,7 @@
   },
   {
     "tier": 2,
-    "question": "A souffle is a French dessert where beaten egg whites are folded into a sweet base and baked, and it rises tall and airy above the rim of its dish like a hot cloud. The name is itself a clue about that trick: the word 'souffle' is the past participle of the French verb 'souffler.' The verb describes exactly what the dessert seems to do as it swells in the oven. What does souffler mean?",
+    "question": "A cook opens the oven on a French souffle risen tall and airy above the rim of its dish. The dish takes its name from the French verb souffler, and the name says what it does in the oven. What does souffler mean?",
     "answer": "To blow or puff up",
     "choices": [
       "To blow or puff up",
@@ -27574,7 +27223,7 @@
   },
   {
     "tier": 2,
-    "question": "A souffle is a puffy, cloud-light French baked dish made by whipping egg whites into a stiff white foam and folding them gently into a rich egg-yolk batter. The beaten whites trap thousands of tiny air bubbles all through the mix. Slide the little dish into a hot oven and the souffle steadily climbs right up over the rim of its ramekin. What is the oven's heat actually doing to push all those trapped bubbles up?",
+    "question": "A cook folds a souffle batter laced with thousands of tiny air bubbles, spoons it into a ramekin and slides it into a hot oven, where it climbs steadily up over the rim. What is the oven's heat doing to push it up?",
     "answer": "The air swells as it heats and its moisture turns to steam",
     "choices": [
       "The air swells as it heats and its moisture turns to steam",
@@ -27600,7 +27249,7 @@
   },
   {
     "tier": 3,
-    "question": "A savory cheese souffle isn't just whipped egg whites -- the rich cheesy flavor rides on a thick, creamy white sauce that the whites get folded into just before baking. This white sauce is one of the five classic French 'mother sauces' that chef Auguste Escoffier laid out over a century ago. Which of Escoffier's mother sauces is the base of a cheese souffle?",
+    "question": "The cheese in a savory cheese souffle rides on a thick sauce, which carries the flavor while the whipped foam folded in later carries the lift. That sauce is one of the five French mother sauces that Auguste Escoffier laid out over a century ago. Which one?",
     "answer": "Bechamel",
     "choices": [
       "Bechamel",
@@ -27613,7 +27262,7 @@
   },
   {
     "tier": 4,
-    "question": "Halfway through baking your souffle, you're dying to crack open the oven door and peek at how tall your fluffy creation has climbed. Every French cookbook gives the same stern warning: keep that oven door shut for at least the first 25 minutes. What's the real danger in opening it too soon?",
+    "question": "Halfway through baking a souffle, a cook is itching to crack the oven door and peek at how tall it has climbed. French cooks give one stern warning: keep that door shut for at least the first 25 minutes. What is the real danger in opening it too soon?",
     "answer": "A rush of cold air chills it and it falls before it has set",
     "choices": [
       "A rush of cold air chills it and it falls before it has set",
@@ -27626,7 +27275,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1492, Christopher Columbus talked the Spanish crown into paying for a risky voyage west across the Atlantic. He wasn't chasing new lands. He wanted a shortcut to Asia's rich markets to bring back the cargo that made merchants wealthy. What was Columbus most set on reaching?",
+    "question": "Christopher Columbus talked the Spanish crown into paying for a risky voyage west across the Atlantic in 1492. He was not chasing new lands but a shortcut to Asia, where he could load the cargo that made merchants rich. What was Columbus most set on bringing back?",
     "answer": "Spices",
     "choices": [
       "Spices",
@@ -27638,34 +27287,8 @@
     "topic": "the-spice-hunt-that-launched-1492"
   },
   {
-    "tier": 2,
-    "question": "The spices Europe craved didn't grow in Europe, or anywhere near it. In Columbus's day, nutmeg and cloves grew wild in only one place on the whole planet — a place most Europeans had never laid eyes on. Where did nearly all the world's nutmeg and cloves come from?",
-    "answer": "Tropical islands in Indonesia",
-    "choices": [
-      "Tropical islands in Indonesia",
-      "Tropical islands off East Africa",
-      "The Malabar coast of India",
-      "The highlands of central China"
-    ],
-    "context": "Cloves and nutmeg grew only on the tiny Maluku 'Spice Islands' of Indonesia, and cinnamon only on Sri Lanka. That single-source scarcity — one flavor, one place on Earth — is exactly why a sea-shortcut to them was worth a fortune. Source: thevintagenews.com/2018/01/08/spices-new-world; britannica.com/money/spice-trade",
-    "topic": "the-spice-hunt-that-launched-1492"
-  },
-  {
     "tier": 3,
-    "question": "Christopher Columbus crossed the Atlantic hunting the peppercorn, the black spice he'd sailed all that way to find. He never found a single true peppercorn. But he did find a strange New World fruit, and he named it 'pepper' anyway. That 500-year-old mislabel is why we still say 'chili pepper' and 'bell pepper' for fruits that aren't pepper at all. Why did Columbus decide to call this fruit a 'pepper'?",
-    "answer": "It burned his mouth with the same fiery bite as real pepper",
-    "choices": [
-      "It burned his mouth with the same fiery bite as real pepper",
-      "It grew on a climbing vine, exactly like real pepper",
-      "It dried into small dark beads that looked like peppercorns",
-      "It was sold by the same Asian traders who dealt in pepper"
-    ],
-    "context": "Columbus's own word for the fruit was 'pimiento' — the masculine form of 'pimienta,' Spanish for the black pepper he was desperate to find. His crew were the first Europeans to taste capsicum, and they called them peppers because, like Piper nigrum, 'they have a hot spicy taste.' The name stuck for good. Source: en.wikipedia.org/wiki/Chili_pepper; atlasobscura.com/articles/why-called-pepper",
-    "topic": "the-spice-hunt-that-launched-1492"
-  },
-  {
-    "tier": 3,
-    "question": "In an old English kitchen you spot a jar labeled 'allspice' and assume it must be a blend of ground spices mixed together. Surprise — it's a single dried berry from one Caribbean tree, whole and unmixed. So why did English cooks name one little berry 'allspice'?",
+    "question": "An English cook pried open a jar labeled allspice, expecting a ready-made blend, and found nothing inside but single dried berries from one Caribbean tree, whole and unmixed. Why did English cooks give one little berry that name?",
     "answer": "That one berry tastes like cloves, cinnamon, and nutmeg at once",
     "choices": [
       "That one berry tastes like cloves, cinnamon, and nutmeg at once",
@@ -27678,7 +27301,7 @@
   },
   {
     "tier": 4,
-    "question": "We casually call the chili a 'pepper,' but botanists say it isn't related to true black pepper at all — the two aren't even in the same plant family. The chili is actually a close cousin of some familiar dinner vegetables: the tomato, the potato, and the eggplant. What plant family do all four share?",
+    "question": "A cook slicing a chili is handling a close cousin of three familiar dinner vegetables, the tomato, the potato and the eggplant, and no relation at all of the black-pepper vine. Which plant family do all four share?",
     "answer": "The nightshade family",
     "choices": [
       "The nightshade family",
@@ -27691,7 +27314,7 @@
   },
   {
     "tier": 5,
-    "question": "In 408 AD the Visigoth king Alaric surrounded the city of Rome and named his price to lift the siege: 5,000 pounds of gold, 30,000 pounds of silver, and 3,000 pounds of a single kitchen spice, demanded like treasure. Which spice did a conqueror rank beside gold and silver?",
+    "question": "Alaric, king of the Visigoths, surrounded Rome in AD 408 and named his price to lift the siege: 5,000 pounds of gold, 30,000 pounds of silver and 3,000 pounds of a single kitchen spice. Which spice did he rank beside gold and silver?",
     "answer": "Pepper",
     "choices": [
       "Pepper",
@@ -27704,7 +27327,7 @@
   },
   {
     "tier": 1,
-    "question": "Long ago in the medieval Middle East, sword-smiths in the city of Damascus forged blades so beautiful that stories of them spread across the world. A real Damascus blade shows a rippling watery pattern of light and dark swirls along its surface that seems to shift as you tilt it in the light. A kid holding one might ask how any smith could make solid metal look like that. How did the swirls get there?",
+    "question": "A sword forged by a smith in medieval Damascus shows a rippling, watery pattern of light and dark swirls that seems to shift as the blade tilts in the light, and stories of such blades spread across the world. How did the swirls get there?",
     "answer": "The smith forged the swirls right into the steel's own structure.",
     "choices": [
       "The smith forged the swirls right into the steel's own structure.",
@@ -27717,7 +27340,7 @@
   },
   {
     "tier": 1,
-    "question": "Old tales piled up around the Damascus sword's legendary keenness. In one story, a warrior held the blade edge-up and let something delicate drift down onto it — and the sword sheared it clean in two. What was that thing, in the legend?",
+    "question": "A warrior in one old legend held his Damascus blade edge-up, then let something delicate drift down on it; the sword sheared it clean in two. What was that thing, in the legend?",
     "answer": "a wisp of floating silk",
     "choices": [
       "a wisp of floating silk",
@@ -27730,7 +27353,7 @@
   },
   {
     "tier": 2,
-    "question": "The blades were forged in the workshops of Damascus — which is how they got their name. But the steel itself wasn't made there. It arrived as cakes and ingots, shipped in from another land, where smiths had first learned to make this high-carbon 'wootz' steel over two thousand years ago. Where did the steel come from?",
+    "question": "Smiths in the workshops of Damascus forged the famous blades that carry the city's name, but they did not make the steel. It arrived as cakes and ingots from another land, where smiths had first made high-carbon 'wootz' steel over two thousand years ago. Where did the steel come from?",
     "answer": "India",
     "choices": [
       "India",
@@ -27743,7 +27366,7 @@
   },
   {
     "tier": 4,
-    "question": "Your fancy Japanese chef's knife takes a scary-sharp edge and holds it for weeks — but the night someone uses it to hack apart frozen food, a tiny piece of the edge chips right off. The cheaper German knife in the drawer would have survived the same abuse. What is it about the good knife that makes it chip?",
+    "question": "A cook's fancy Japanese chef's knife takes a scary-sharp edge and holds it for weeks, but the night someone uses it to hack apart frozen food, a tiny piece of the edge chips off. The cheaper German knife in the drawer would have survived the same abuse. What makes the good knife chip?",
     "answer": "it's harder, and harder steel is more brittle",
     "choices": [
       "it's harder, and harder steel is more brittle",
@@ -27756,7 +27379,7 @@
   },
   {
     "tier": 5,
-    "question": "For centuries smiths turned Indian wootz cakes into blades with that watery ripple. Then the ripple stopped appearing. The smiths had lost none of their skill, yet the swirl would not come back, and people began calling Damascus steel a lost art. Metallurgists John Verhoeven and Alfred Pendray finally worked out what had gone missing. What was it?",
+    "question": "The watery ripple of Damascus steel appeared on blade after blade for centuries, and then it stopped. The smiths had lost none of their skill, yet the swirl would not come back, and the craft was lost. Alfred Pendray and John Verhoeven, two metallurgists, worked out in 1998 what had gone missing. What was it?",
     "answer": "the trace elements carried in one particular Indian ore",
     "choices": [
       "the trace elements carried in one particular Indian ore",
@@ -27769,7 +27392,7 @@
   },
   {
     "tier": 5,
-    "question": "Cooks who love carbon-steel knives do something that looks strange: they're delighted when the shiny blade slowly turns a mottled dark grey-blue. That dark film has a name — a 'patina' — and they'd rather have it than the factory shine. Why are they glad to see it form?",
+    "question": "The owner of a carbon-steel knife is delighted when its shiny blade slowly darkens to a mottled grey-blue, a film called a patina that he would rather have than the factory shine. Why is he glad to see it form?",
     "answer": "the patina shields the steel and slows rust",
     "choices": [
       "the patina shields the steel and slows rust",
@@ -27860,7 +27483,7 @@
   },
   {
     "tier": 1,
-    "question": "In a Moroccan home, dinner might be a fragrant, slow-cooked lamb stew that everyone at the table calls a tagine. But oddly, the family uses that very same word -- 'tagine' -- for something else sitting right on the table in front of them. What other thing does the word 'tagine' also name?",
+    "question": "A Moroccan family sits down to a fragrant, slow-cooked lamb stew that everyone at the table calls a tagine, and they use the very same word for something else sitting in front of them. What else does the word tagine name?",
     "answer": "the clay pot it was cooked in",
     "choices": [
       "the clay pot it was cooked in",
@@ -27873,7 +27496,7 @@
   },
   {
     "tier": 2,
-    "question": "A cook fills a tagine with lamb and spices, pours in only a splash of water — nowhere near enough to cover the meat — sets the tall cone lid on top, and never once stirs it. Hours later the stew comes out moist and fall-apart tender. What is the cone lid actually doing up there?",
+    "question": "A cook puts lamb and spices on to cook with only a splash of water, nowhere near enough to cover the meat, sets a tall cone-shaped lid over them and never once stirs. Hours later the stew comes out moist and fall-apart tender. What is the cone lid doing up there?",
     "answer": "it cools the steam, which rains back down",
     "choices": [
       "it cools the steam, which rains back down",
@@ -27886,7 +27509,7 @@
   },
   {
     "tier": 2,
-    "question": "A Moroccan lamb tagine tastes nothing like a European beef stew. Alongside the warm ginger, cumin, and cinnamon, the cook tucks something sweet in with the lamb and leaves it to slow-cook for hours -- so by dinnertime the sweetness has melted straight into the sauce. What sweet ingredient goes into the pot with the meat?",
+    "question": "A European beef stew tastes nothing like a Moroccan lamb tagine. Beside the warm ginger, cumin and cinnamon, the tagine's cook tucks something sweet in with the lamb and leaves it to cook slowly for hours, until the sweetness melts into the sauce. Which sweet ingredients go in with the meat?",
     "answer": "dried apricots and prunes",
     "choices": [
       "dried apricots and prunes",
@@ -27899,7 +27522,7 @@
   },
   {
     "tier": 3,
-    "question": "A Moroccan tagine's bright, salty tang comes from preserved lemons, whole lemons salt-cured in a jar for weeks until the rind turns soft and mellow. To finish the dish, cooks almost always simmer those lemons beside one other briny partner. Which classic ingredient joins them?",
+    "question": "Moroccan cooks cure whole lemons in salt in a jar for weeks until the rind turns soft, and those preserved lemons give a tagine its bright, salty tang. To finish the dish they almost always simmer them beside one other briny partner. Which classic ingredient joins them?",
     "answer": "green olives",
     "choices": [
       "green olives",
@@ -27912,7 +27535,7 @@
   },
   {
     "tier": 4,
-    "question": "American cookbook author Paula Wolfert, who spent decades studying North African cooking, calls making dinner in a tagine a 'magical process.' Part of the magic: a traditional tagine's bare, unglazed clay isn't just a container holding the stew -- the pot itself takes part in the cooking. What does the clay do to the stew as it simmers?",
+    "question": "Paula Wolfert, an American cookbook writer who spent decades studying North African cooking, calls cooking in a tagine a 'magical process.' Part of the magic is that a traditional tagine's bare, unglazed clay is no mere container; the pot itself takes part in the cooking. What does the clay do to the stew as it simmers?",
     "answer": "it drinks up some of the liquid",
     "choices": [
       "it drinks up some of the liquid",
