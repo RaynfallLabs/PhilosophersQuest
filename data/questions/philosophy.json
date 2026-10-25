@@ -20073,20 +20073,7 @@
   },
   {
     "tier": 2,
-    "question": "John Rawls asks you to design the basic rules of a whole society before you are born into it. You don't yet know if you'll arrive rich or poor, healthy or sick, brilliant or slow, into any race or family. When the veil lifts, you could turn out to be ANY member of the society you just designed. Knowing that, what did Rawls argue is the rational way to pick the rules?",
-    "answer": "Pick rules that would still be tolerable even if you ended up at the very bottom",
-    "choices": [
-      "Pick rules that would still be tolerable even if you ended up at the very bottom",
-      "Pick rules that reward whoever works hardest, since effort is in your control",
-      "Pick rules that benefit the largest number, since most people will be average",
-      "Pick rules at random, since you can't know who you'll become anyway"
-    ],
-    "context": "This is the heart of the 'original position.' Rawls's bet is that ignorance of your own place forces genuine fairness: unable to rig the rules for your kind of person, you protect every position — especially the worst — because it might be yours. Source: Stanford Encyclopedia of Philosophy, 'Original Position.'",
-    "topic": "rawls-and-the-veil-of-ignorance"
-  },
-  {
-    "tier": 2,
-    "question": "In John Rawls's thought experiment, you choose society's rules from behind a 'veil of ignorance.' The veil hides certain facts from you on purpose, so you can't quietly tilt the rules toward your own kind of person. But it leaves other facts in plain view. Which set of facts does the veil specifically hide from you?",
+    "question": "John Rawls's veil of ignorance hides some facts on purpose. Suppose you are choosing a society's rules behind it: the veil keeps you from quietly tilting the rules toward your own kind of person, yet it leaves other facts in plain view. Which facts does it hide from you?",
     "answer": "Your future wealth, your race, your sex, and how talented you'll turn out to be",
     "choices": [
       "Your future wealth, your race, your sex, and how talented you'll turn out to be",
@@ -20099,7 +20086,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1971 book A Theory of Justice, the American philosopher John Rawls gave his whole theory a two-word name: 'justice as fairness.' Rawls insisted a rule is not just merely because the powerful happen to like it, or because it has always been done that way. So what alone, in Rawls's view, could actually make a rule count as just?",
+    "question": "John Rawls named the view of his book A Theory of Justice 'justice as fairness.' A rule is not just, he insisted, merely because the powerful happen to like it, or because it has always been done that way. What alone, in Rawls's view, could make a rule just?",
     "answer": "It is a rule all would accept before knowing which person they'd turn out to be",
     "choices": [
       "It is a rule all would accept before knowing which person they'd turn out to be",
@@ -20112,7 +20099,7 @@
   },
   {
     "tier": 2,
-    "question": "John Rawls became obsessed with a single question: why do some people get crushed by a fate they did nothing to deserve? When he was seven, in 1928, he caught diphtheria. His younger brother Bobby visited his sickbed, caught the disease from him, and died. The next winter Rawls caught pneumonia, his brother Tommy caught that, and Tommy died too. His biographer called these the most important events of Rawls's childhood. What lifelong trait did Rawls trace back to them?",
+    "question": "Diphtheria struck John Rawls in 1928, when he was seven. His younger brother Bobby visited his sickbed, caught the disease from him, and died. The next winter Rawls had pneumonia, and his brother Tommy caught that and died too. What lifelong trait did Rawls trace back to those losses?",
     "answer": "A stammer he carried for the rest of his life",
     "choices": [
       "A stammer he carried for the rest of his life",
@@ -20125,7 +20112,7 @@
   },
   {
     "tier": 3,
-    "question": "In John Rawls's system, a society is allowed to have rich people and poor people, but not on just any terms. He gives a test for when a gap in wealth is actually just. A CEO's huge salary, he says, can be justified only if the arrangement that permits it also does something specific. According to Rawls's test, when is such an inequality just?",
+    "question": "A chief executive takes home a huge salary. John Rawls allowed a society to have rich people and poor people, but not on just any terms: he set one test that such a gap in wealth must pass before it counts as just. When, by his test, is the gap just?",
     "answer": "Only when it leaves the worst-off group better off than any other arrangement would",
     "choices": [
       "Only when it leaves the worst-off group better off than any other arrangement would",
@@ -20138,7 +20125,7 @@
   },
   {
     "tier": 3,
-    "question": "In John Rawls's system, a society may have rich people and poor people, but not on just any terms. He ranks his principles in strict order, and one comes first: it can never be traded away, not even for a deal that would make everyone wealthier. What does that first, untradeable principle promise every person?",
+    "question": "Two principles sat at the heart of John Rawls's just society, ranked in strict order. The first came before everything else, and no deal could trade it away, not even one that would make everyone wealthier. What did that first principle promise every person?",
     "answer": "An equal set of basic liberties, the same scheme for everyone",
     "choices": [
       "An equal set of basic liberties, the same scheme for everyone",
@@ -20150,8 +20137,8 @@
     "topic": "rawls-and-the-veil-of-ignorance"
   },
   {
-    "tier": 4,
-    "question": "Imagine you must choose between two societies but you'll be dropped into a random slot in whichever you pick. Society A has a dazzling top and a brutal bottom. Society B is duller all over but its bottom is bearable. John Rawls argues that behind the veil a rational chooser reasons by looking at one thing about each option and picking on that basis alone. Which thing does Rawls say you'd compare?",
+    "tier": 3,
+    "question": "Suppose you must choose, before you are born, between two societies, knowing you could be anyone in whichever you pick. One has a dazzling top and a brutal bottom; the other is duller all over, but its bottom is bearable. John Rawls said a rational chooser behind his veil of ignorance looks at one thing in each and decides on that alone. What did he say you should compare?",
     "answer": "How bad the WORST outcome is, choosing the one whose floor is least bad",
     "choices": [
       "How bad the WORST outcome is, choosing the one whose floor is least bad",
@@ -20159,12 +20146,12 @@
       "How many people land in the middle, choosing the one with the biggest middle",
       "How likely each slot is, choosing the one with the best average across slots"
     ],
-    "context": "Rawls calls this reasoning 'maximin' — maximize the minimum. When you can't know the odds and the stakes are your entire life, you don't gamble; you pick the option whose worst case is the least bad, because you might BE that worst case. This is his argument for choosing the difference principle. Source: Stanford Encyclopedia of Philosophy, 'Original Position.'",
+    "context": "Rawls calls this reasoning 'maximin' — maximize the minimum. Behind the veil (the 'original position') you cannot rig the rules for your own kind of person, so you protect every position — especially the worst — because it might be yours. When you can't know the odds and the stakes are your entire life, you don't gamble; you pick the option whose worst case is the least bad, because you might BE that worst case. His main rival inside the thought experiment is average utilitarianism (the best-average choice), which Rawls rejects precisely because it can sacrifice the few. This is his argument for choosing the difference principle. Source: Stanford Encyclopedia of Philosophy, 'Original Position.'",
     "topic": "rawls-and-the-veil-of-ignorance"
   },
   {
     "tier": 4,
-    "question": "John Rawls grants that a brilliant surgeon may have been born with rare gifts. But he denies that being born gifted, by itself, earns you anything. Where you land in what Rawls calls the 'natural lottery' of talent and family, he says, is something nobody chose and nobody earned. What does Rawls conclude follows from that fact about your inborn gifts?",
+    "question": "A brilliant surgeon may have been born with rare gifts, John Rawls granted. But Rawls held that nobody earns the hand he is dealt at birth: not his intelligence, not his strength, not even a sunny temperament. He called it the natural lottery, and its results morally arbitrary. What did he conclude follows for the gifted?",
     "answer": "The gifted may profit from their luck only on terms that also help those who drew worse",
     "choices": [
       "The gifted may profit from their luck only on terms that also help those who drew worse",
@@ -20172,38 +20159,12 @@
       "The gifted should have their advantages taxed away until everyone is equal",
       "The gifted deserve their rewards in full, because talent is what builds a society"
     ],
-    "context": "Rawls's deepest reason for redistribution: where you land in the natural lottery of talent and birth is 'arbitrary from a moral point of view.' None of us DESERVES our genes or family, so the gifted may benefit from their luck only on terms that also help those who drew worse. The other three are real rival views on desert that Rawls rejects. Source: Rawls, A Theory of Justice (1971); Stanford Encyclopedia of Philosophy, 'Justice and Bad Luck.'",
-    "topic": "rawls-and-the-veil-of-ignorance"
-  },
-  {
-    "tier": 4,
-    "question": "Robert Nozick poses a puzzle against Rawls. Start from any sharing of wealth you consider perfectly fair. Now a million basketball fans each happily drop 25 cents into a box to watch Wilt Chamberlain play. Chamberlain ends up $250,000 richer than everyone else, and the once-fair pattern is gone. Every single transfer was voluntary. Nozick asks: on what grounds could you call the new gap unjust? What is the point he is driving at?",
-    "answer": "Liberty upsets patterns — you can enforce a fixed pattern OR let people choose, not both",
-    "choices": [
-      "Liberty upsets patterns — you can enforce a fixed pattern OR let people choose, not both",
-      "The fans' choices count, yet society may still cap how far any one person is allowed to rise",
-      "The starting share was never truly fair, so a gap built on top of it cannot be fair either",
-      "Voluntary steps can still add up to a result no one would have agreed to in advance"
-    ],
-    "context": "From Nozick's Anarchy, State, and Utopia (1974), his most famous reply to Rawls. If you fix a 'pattern' of distribution, free choices will always disturb it — so holding the pattern in place means constantly interfering with people's voluntary exchanges. You can have liberty or an enforced pattern, not both. The other three are real rival readings of the case — a limited-pattern view, the Rawlsian 'unfair starting point' rejoinder, and the worry that voluntary steps can still yield an unintended whole. This strand declares no winner between Rawls and Nozick. Source: Internet Encyclopedia of Philosophy, 'Robert Nozick'; Nozick (1974).",
+    "context": "Rawls's deepest reason for redistribution: where you land in the natural lottery of talent and birth is 'arbitrary from a moral point of view' — 'no one deserves his place in the distribution of native endowments.' None of us DESERVES our genes or family, so the gifted may benefit from their luck only on terms that also help those who drew worse; his difference principle treats 'the distribution of natural talents as a common asset.' The other three are real rival views on desert that Rawls rejects; defenders of desert (Nozick among them) reject his premise and hold that you really do deserve what your talents earn. No side is taken here — a thoughtful person can land on either. Source: Rawls, A Theory of Justice (1971); Stanford Encyclopedia of Philosophy, 'Justice and Bad Luck'; Bentley scholars' 'Desert and Distributive Justice'; the ANU Undergraduate Research Journal.",
     "topic": "rawls-and-the-veil-of-ignorance"
   },
   {
     "tier": 5,
-    "question": "Robert Nozick offered a rival to Rawls built on history, not patterns. Justice, he argued, is about HOW you came to hold a thing — whether you acquired it cleanly and received it through willing trade — and 'whatever arises from a just situation by just steps is itself just.' From this he drew a famously sharp claim about the state taxing your wages to fund redistribution. What did Nozick say such taxation amounts to?",
-    "answer": "It is on a par with forced labor — seizing your earnings seizes hours of your life",
-    "choices": [
-      "It is on a par with forced labor — seizing your earnings seizes hours of your life",
-      "It is a fair price citizens owe for the protection the state provides them",
-      "It is acceptable only on income above what a person needs to live decently",
-      "It is theft when a king does it but lawful when a parliament votes for it"
-    ],
-    "context": "Nozick's entitlement theory rests on history: 'Whatever arises from a just situation by just steps is itself just' (Anarchy, State, and Utopia, 1974, p.151). His sharpest line: 'Taxation of earnings from labor is on a par with forced labor' — seizing the results of your labor seizes hours from you. No verdict is declared; the point is to recognize the move. Source: Nozick (1974).",
-    "topic": "rawls-and-the-veil-of-ignorance"
-  },
-  {
-    "tier": 5,
-    "question": "John Harsanyi, an economist, accepted Rawls's veil but trusted it far less fearfully. Behind the veil, Rawls assumes you'd be almost paralyzed by dread of ending up the worst-off person, and so would play it ultra-safe. Harsanyi answers that a rational chooser, weighing the odds like any sensible gambler, simply wouldn't be that afraid. Where does Harsanyi's calmer, less risk-averse reasoning behind the veil lead?",
+    "question": "John Harsanyi, an economist, accepted John Rawls's veil of ignorance but not the fear Rawls built into it. Rawls assumed a chooser behind the veil would be all but paralyzed by dread of ending up the worst-off person, and so would play it safe. Harsanyi answered that a rational chooser, weighing the odds like any sensible gambler, would not be that afraid. Where did his calmer reasoning lead?",
     "answer": "To maximizing the average well-being across everyone — which comes out as utilitarianism",
     "choices": [
       "To maximizing the average well-being across everyone — which comes out as utilitarianism",
@@ -20216,7 +20177,7 @@
   },
   {
     "tier": 5,
-    "question": "Michael Sandel aimed a different attack at the veil. To choose behind it, Rawls asks you to set aside your race, your faith, your loyalties, your whole history. Strip all of that away, Sandel argues, and look at what is left standing in the original position. What does Sandel say is wrong with the self the veil leaves behind?",
+    "question": "Michael Sandel went after John Rawls's veil of ignorance itself. To choose behind it, a person must set aside his race, his faith, his loyalties and his whole history. Strip all of that away, Sandel argued, and look at what is left standing behind the veil. What did he say is wrong with the self that remains?",
     "answer": "It has been emptied of every attachment and end, so it is no self that could choose at all",
     "choices": [
       "It has been emptied of every attachment and end, so it is no self that could choose at all",
@@ -20228,34 +20189,21 @@
     "topic": "rawls-and-the-veil-of-ignorance"
   },
   {
-    "tier": 3,
-    "question": "Robert Nozick asks you to picture a society where wealth is already shared out perfectly fairly. Now a star basketball player, Wilt Chamberlain, agrees to play only if every fan who comes to watch drops 25 cents in a box just for him. A million fans gladly pay across the season, and Chamberlain ends up far richer than anyone else. Nobody was forced; nobody was cheated. Nozick uses this to make one sharp point about any society that wants its wealth to keep a single fixed shape.",
+    "tier": 4,
+    "question": "Wilt Chamberlain, the basketball star, is the hero of Robert Nozick's answer to John Rawls. Wealth starts out shared perfectly fairly. Then Chamberlain agrees to play only if every fan drops 25 cents in a box for him; a million fans gladly pay, and by season's end he is far richer than anyone. Nobody is forced or cheated. What point did Nozick draw from the story?",
     "answer": "A free society cannot hold any fixed distribution without endlessly undoing people's voluntary trades",
     "choices": [
       "A free society cannot hold any fixed distribution without endlessly undoing people's voluntary trades",
       "The result is unjust, because no one ever agreed to Chamberlain growing this much richer than them",
-      "Chamberlain owed the extra money back the moment his pay broke the fair shape",
+      "The fans' choices count, yet society may still cap how far any one person is allowed to rise",
       "A society is only fair if everyone's wealth stays roughly equal over time"
     ],
-    "context": "Nozick's slogan for this: 'liberty upsets patterns.' A clean, free process (a million tiny gifts) produced a wildly unequal result, so any rule that demands a fixed distribution must keep stepping in to undo people's free trades. The rival reply in choice two is real — the philosopher G.A. Cohen argued that even if no one was forced, no one consented to the lopsided whole that resulted. Nozick laid this out in Anarchy, State, and Utopia (1974), written down the hall from his great rival John Rawls at Harvard. Source: Stanford Encyclopedia of Philosophy, 'Robert Nozick's Political Philosophy'; 1000-Word Philosophy, 'The Wilt Chamberlain Argument'.",
+    "context": "Nozick's slogan for this: 'liberty upsets patterns.' A clean, free process (a million tiny gifts) produced a wildly unequal result, so any rule that demands a fixed distribution must keep stepping in to undo people's free trades. You can have liberty or an enforced pattern, not both. The rival replies are real: the philosopher G.A. Cohen argued that even if no one was forced, no one consented to the lopsided whole that resulted, and a limited-pattern view lets the fans' choices stand while still capping how far one person may rise. Nozick laid this out in Anarchy, State, and Utopia (1974), written down the hall from his great rival John Rawls at Harvard. This strand declares no winner between Rawls and Nozick. Source: Stanford Encyclopedia of Philosophy, 'Robert Nozick's Political Philosophy'; 1000-Word Philosophy, 'The Wilt Chamberlain Argument'; Internet Encyclopedia of Philosophy, 'Robert Nozick'; Nozick (1974).",
     "topic": "rawls-vs-nozick-fairness-or-liberty"
   },
   {
     "tier": 3,
-    "question": "John Rawls invites you to design the rules of a society behind a 'veil of ignorance.' You must choose the rules before you know a single thing about who you'll be. You don't know your wealth, your race, your sex, your talents, or even what you'll grow up to believe is a good life. Since you might open your eyes as anyone at all, Rawls says a clear-headed, self-interested chooser would settle on one particular rule.",
-    "answer": "Make the worst-off position in society as good as it can possibly be",
-    "choices": [
-      "Make the worst-off position in society as good as it can possibly be",
-      "Maximize the average wealth, even if a few people end up destitute",
-      "Bet on landing near the top and pick rules that reward the winners",
-      "Split all wealth perfectly evenly, whatever it costs the economy"
-    ],
-    "context": "Rawls calls this reasoning 'maximin' — when you can't know your fate, protect the floor, because you could be standing on it. Because the starting situation is fair (nobody can rig the rules for personal gain), Rawls argues the principles chosen there are fair too: 'justice as fairness.' His main rival inside the thought experiment is choice two, average utilitarianism, which Rawls rejects precisely because it can sacrifice the few. Source: Stanford Encyclopedia of Philosophy, 'Original Position'.",
-    "topic": "rawls-vs-nozick-fairness-or-liberty"
-  },
-  {
-    "tier": 3,
-    "question": "Before he became a famous Harvard philosopher, John Rawls fought as an Army rifleman in the Pacific in World War Two. He earned a Bronze Star in New Guinea. In the fall of 1945, he walked through the ruins of Hiroshima after the atomic blast, and the sight shook him. Earlier in his service, this same soldier did something that got him stripped of his rank and busted back down to private.",
+    "question": "John Rawls fought as an Army rifleman in the Pacific in the Second World War and earned a Bronze Star in New Guinea. In the fall of 1945 he walked through the ruins of Hiroshima, and the sight shook him. Earlier in his service, he did something that got him busted back down to private. What had he done?",
     "answer": "He refused an order to discipline a fellow soldier",
     "choices": [
       "He refused an order to discipline a fellow soldier",
@@ -20268,7 +20216,7 @@
   },
   {
     "tier": 4,
-    "question": "A government offers a tempting deal. Everyone gives up one basic liberty, say free speech, and in return every single person, even the very poorest, ends up richer. John Rawls's theory has two principles, ranked in strict order, one fully met before the next even matters. On that ranking, Rawls's framework hands down a flat verdict on this trade.",
+    "question": "A government offers its people a tempting deal: everyone gives up one basic liberty, say free speech, and in return every person, even the very poorest, ends up richer. John Rawls ranked the two principles of his theory in strict order, the first fully met before the next even matters. What verdict does his framework hand down on this trade?",
     "answer": "Forbidden — basic liberties outrank wealth and may not be sold for it",
     "choices": [
       "Forbidden — basic liberties outrank wealth and may not be sold for it",
@@ -20281,7 +20229,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Nozick imagines two societies with the exact same enormous gap between rich and poor. In the first, every fortune was built from a fair start by voluntary trade and gift. In the second, every fortune was taken through conquest and theft. A snapshot of who owns what looks identical in both. What does Nozick conclude about the justice of these two societies?",
+    "question": "Robert Nozick pictured two societies with the same enormous gap between rich and poor. In one, every fortune was built from a fair start by voluntary trade and gift; in the other, every fortune was taken through conquest and theft. A snapshot of who owns what looks identical in both. What did Nozick conclude about the justice of the two?",
     "answer": "Only the fair-start society is just; matching wealth cannot launder fortunes seized by conquest",
     "choices": [
       "Only the fair-start society is just; matching wealth cannot launder fortunes seized by conquest",
@@ -20294,7 +20242,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Nozick argues that income tax reaches deeper than your wallet. When the state takes the money you earned from hours of work and hands it to someone else, he says, it has effectively laid claim to a piece of those very hours — a piece of you. In Anarchy, State, and Utopia he packs this into one blunt published line about what the state has really seized. Nozick names one specific thing it is 'on a par with.'",
+    "question": "Robert Nozick argued that an income tax reaches deeper than a worker's wallet. When the state takes the money a person earned by hours of work and hands it to someone else, Nozick wrote in Anarchy, State, and Utopia, it has laid claim to a piece of those very hours. He packed the point into one blunt line. What did he say such taxation is on a par with?",
     "answer": "Forced labor",
     "choices": [
       "Forced labor",
@@ -20302,25 +20250,12 @@
       "Outright theft",
       "Breaking a contract"
     ],
-    "context": "His exact line, from Anarchy, State, and Utopia (p. 169): 'Taxation of earnings from labor is on a par with forced labor.' If the state can take the fruit of the hours you worked, he reasons, it has claimed part of your labor itself — a partial slavery — and so treats earners as mere means to other people's ends. The other choices are all real-sounding rivals you might expect a libertarian to reach for — including indentured servitude, another unfree-labor relation — but the published phrase pins it exactly to forced labor. A Rawlsian, of course, would reject the whole comparison and call tax the fair price of a just society. Source: Internet Encyclopedia of Philosophy, 'Robert Nozick'; Stanford Encyclopedia of Philosophy, 'Robert Nozick's Political Philosophy'.",
+    "context": "His exact line, from Anarchy, State, and Utopia (p. 169): 'Taxation of earnings from labor is on a par with forced labor.' If the state can take the fruit of the hours you worked, he reasons, it has claimed part of your labor itself — a partial slavery — and so treats earners as mere means to other people's ends. It follows from his entitlement theory, which rests on history: 'Whatever arises from a just situation by just steps is itself just' (p. 151). The other choices are all real-sounding rivals you might expect a libertarian to reach for — including indentured servitude, another unfree-labor relation — but the published phrase pins it exactly to forced labor. A Rawlsian, of course, would reject the whole comparison and call tax the fair price of a just society; no verdict is declared, and the point is to recognize the move. Source: Internet Encyclopedia of Philosophy, 'Robert Nozick'; Stanford Encyclopedia of Philosophy, 'Robert Nozick's Political Philosophy'; Nozick (1974).",
     "topic": "rawls-vs-nozick-fairness-or-liberty"
   },
   {
     "tier": 5,
-    "question": "John Rawls makes his boldest claim: none of us actually earned the hand we were dealt at birth. Not our intelligence, not our strength, not even a naturally sunny temperament. He calls it the 'natural lottery' and says these inborn gifts are 'morally arbitrary,' pure luck. From this, Rawls draws a striking conclusion about what a society is allowed to do with the wealth those gifts produce.",
-    "answer": "The talented may profit from their gifts, but only on terms that also lift the worst-off",
-    "choices": [
-      "The talented may profit from their gifts, but only on terms that also lift the worst-off",
-      "People simply deserve whatever their natural talents manage to earn them",
-      "Society should ignore talent entirely and pay every person exactly the same",
-      "Those born with fewer gifts owe a debt to the more talented among them"
-    ],
-    "context": "Rawls: 'no one deserves his place in the distribution of native endowments.' So his difference principle treats 'the distribution of natural talents as a common asset' — the gifted may still gain, but only by rules that also raise the people at the bottom. Choice two is the serious rival, not a throwaway: defenders of desert (Nozick among them) reject Rawls's premise and hold that you really do deserve what your talents earn. No side is taken here — a thoughtful person can land on either. Source: John Rawls, A Theory of Justice (1971), quoted in Bentley scholars' 'Desert and Distributive Justice' and the ANU Undergraduate Research Journal.",
-    "topic": "rawls-vs-nozick-fairness-or-liberty"
-  },
-  {
-    "tier": 5,
-    "question": "Fifteen years after Anarchy, State, and Utopia made him the most dazzling defender of the minimal 'night-watchman' state, Robert Nozick surprised his readers. In his 1989 book The Examined Life he revisited that very position. About the libertarian view he had once so famously argued for, Nozick now said one blunt thing.",
+    "question": "Anarchy, State, and Utopia made Robert Nozick famous as a defender of the minimal 'night-watchman' state. Fifteen years later, in his 1989 book The Examined Life, he looked back at the libertarian position he had once argued for. What did he now say about it?",
     "answer": "That it now seemed to him 'seriously inadequate'",
     "choices": [
       "That it now seemed to him 'seriously inadequate'",
@@ -20333,7 +20268,7 @@
   },
   {
     "tier": 3,
-    "question": "David Hume pointed out that when you walk to a shop, reason can tell you which streets to take and that you had better bring money for the trip. But reason alone never gets you off the couch in the first place. In Hume's picture, what is the one job reason can do here, and the one job it can never do?",
+    "question": "David Hume pictured a walk to the shop. Reason can tell the walker which streets to take and that he had better bring money, but reason alone never gets him off the couch in the first place. How did Hume divide the work between reason and wanting?",
     "answer": "Reason works out how to reach a goal, but the wanting that picks the goal comes from feeling",
     "choices": [
       "Reason works out how to reach a goal, but the wanting that picks the goal comes from feeling",
@@ -20346,7 +20281,7 @@
   },
   {
     "tier": 4,
-    "question": "To show the limit of reason, David Hume wrote a deliberately shocking line: it is not contrary to reason, he said, to prefer the destruction of the whole world to the scratching of his own finger. He was not recommending it. He was making a point about what reason can and cannot judge. Why, on Hume's account, can reason not convict even that monstrous preference of being irrational?",
+    "question": "David Hume wrote a deliberately shocking line to show the limits of reason: it is not contrary to reason, he said, to prefer the destruction of the whole world to the scratching of his own finger. He was not recommending it; he was marking what reason can and cannot judge. Why, on his account, can reason not fault even that preference?",
     "answer": "Reason judges only what is true or false, and a bare preference is neither, so there is nothing for it to fault",
     "choices": [
       "Reason judges only what is true or false, and a bare preference is neither, so there is nothing for it to fault",
@@ -20359,7 +20294,7 @@
   },
   {
     "tier": 5,
-    "question": "You turn down a second slice of cake because you care about staying healthy, and it feels exactly like cool reason has just won out over hot desire. This everyday scene is what most people mean by reason beating passion. David Hume said the feeling fools us, and the real story is different. On Hume's account, what is actually winning when the wish to stay healthy beats the craving?",
+    "question": "A boy turns down a second slice of cake because he cares about staying healthy, and it feels exactly like cool reason beating hot desire. David Hume said the feeling fools us, and the real story is different. On his account, what is actually winning when the wish to stay healthy beats the craving?",
     "answer": "A quiet, steady desire is beating a loud one, and we mistake the quiet desire for reason because it is so calm",
     "choices": [
       "A quiet, steady desire is beating a loud one, and we mistake the quiet desire for reason because it is so calm",
@@ -20385,7 +20320,7 @@
   },
   {
     "tier": 3,
-    "question": "In Socrates' sand drawing, the starting square is 2 feet on each side, so its area is 4 square feet. Socrates asks an untaught slave boy for the side of a new square with double that area, which would be 8 square feet. The boy answers at once and confidently: just double the side to 4 feet. Socrates has him check it. What is the area of a square that is 4 feet on every side?",
+    "question": "Socrates drew a square in the sand, 2 feet along each edge, so its area was 4 square feet. He asked an untaught slave boy how long the edge must be for a new square of double that area, 8 square feet. The boy answered at once and confidently: just double it to 4 feet. Socrates had him check. What area does a 4-foot square hold?",
     "answer": "16 square feet",
     "choices": [
       "16 square feet",
@@ -20398,7 +20333,7 @@
   },
   {
     "tier": 4,
-    "question": "Socrates was leading an untaught slave boy through a geometry puzzle drawn in the sand. The boy's guesses of a 4-foot side and a 3-foot side had both missed, so Socrates kept asking questions until the boy saw the real answer. The side of the square with twice the area turned out to be a line that had been hiding inside the original square the whole time. Which line, drawn on the first square, gives the side of a square exactly double its area?",
+    "question": "An untaught slave boy was hunting for the edge of a square with double the area of one Socrates had drawn in the sand. His guesses, 4 feet and then 3, had both missed, so Socrates kept asking questions until the boy saw it: the edge he wanted was a line hidden inside the first square the whole time. Which line was it?",
     "answer": "The line from one corner straight to the opposite corner",
     "choices": [
       "The line from one corner straight to the opposite corner",
@@ -20411,7 +20346,7 @@
   },
   {
     "tier": 4,
-    "question": "All through the lesson Socrates only asked the slave boy questions and never told him any answer, yet the untaught boy reached a real geometry truth on his own. This stuns the onlookers: where did the knowledge come from? What explanation does Socrates give?",
+    "question": "The slave boy was never told a single answer; all through the lesson in the sand, Socrates only asked questions. Yet the untaught boy reached a real truth of geometry on his own. How did Socrates explain where that knowledge came from?",
     "answer": "His soul had known this truth before he was ever born",
     "choices": [
       "His soul had known this truth before he was ever born",
@@ -20424,7 +20359,7 @@
   },
   {
     "tier": 5,
-    "question": "Before the geometry demonstration, Meno hits Socrates with a puzzle designed to prove that searching for a truth you don't already possess is hopeless from the start. Socrates restates it as a clean trap with no escape. What is the trap Meno's puzzle sets for anyone who tries to inquire?",
+    "question": "Before the geometry lesson, Meno hit Socrates with a puzzle meant to prove that searching for a truth not already in hand is hopeless from the start, and Socrates restated it as a clean trap with no escape. Suppose you set out to inquire into something. What is the trap Meno's puzzle sets for you?",
     "answer": "If you know it, you needn't search; and if you don't, you won't recognize it when found",
     "choices": [
       "If you know it, you needn't search; and if you don't, you won't recognize it when found",
@@ -20437,7 +20372,7 @@
   },
   {
     "tier": 5,
-    "question": "Plato has Socrates conclude the slave boy must have been remembering geometry his soul knew before birth. But critics point to an admission Socrates himself makes in the same scene: the boy ends with only correct beliefs 'stirred up as in a dream,' not solid knowledge, and would need to go through the whole exercise many more times to truly know. A skeptic seizes on this to challenge the recollection claim. What is the skeptic's objection?",
+    "question": "Socrates concluded that the slave boy must have been remembering geometry his soul knew before birth. Yet in the same scene he admitted that the boy ended with only correct beliefs, 'stirred up as in a dream,' not solid knowledge, and would have to go through the same questions many more times to truly know. A skeptic seized on that admission. What was his objection?",
     "answer": "Socrates' own pointed questions did the work, so no memory from a past life is needed",
     "choices": [
       "Socrates' own pointed questions did the work, so no memory from a past life is needed",
@@ -20450,7 +20385,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 1957, Sports Illustrated put the #2-ranked Oklahoma football team on its cover, riding a 47-game unbeaten streak, under the headline 'Why Oklahoma Is Unbeatable.' That very week, unranked Notre Dame beat them 7-0 and the streak was over. Fans muttered that the cover had jinxed the team. What actually best explains the loss?",
+    "question": "Oklahoma's football team, ranked second in the country, rode a 47-game unbeaten streak onto the cover of Sports Illustrated in November 1957, under the headline 'Why Oklahoma Is Unbeatable.' That very week unranked Notre Dame beat them 7-0, and the streak was over. Fans muttered that the cover had jinxed the team. What actually best explains the loss?",
     "answer": "A once-in-a-lifetime hot streak was always going to cool back toward the team's usual level",
     "choices": [
       "A once-in-a-lifetime hot streak was always going to cool back toward the team's usual level",
@@ -20463,7 +20398,7 @@
   },
   {
     "tier": 3,
-    "question": "A baseball rookie wins Rookie of the Year with a dazzling first season, then plays noticeably worse the next year. Sportswriters call it the 'sophomore slump,' as if early success itself had cursed him. Why does a personal-best season tend to be followed by a worse one?",
+    "question": "A baseball rookie wins Rookie of the Year with a dazzling first season, then plays noticeably worse the next year. Sportswriters call it the 'sophomore slump,' as if early success itself had cursed him. Daniel Kahneman said no curse is needed: a record performance is almost always followed by a more ordinary one. Why, on his account, does a personal best give way to a worse season?",
     "answer": "A career-best year leans on good luck that won't repeat, while the real skill stays the same",
     "choices": [
       "A career-best year leans on good luck that won't repeat, while the real skill stays the same",
@@ -20471,12 +20406,12 @@
       "Rival teams study a breakout star closely and learn how to shut him down the next year",
       "The pressure of living up to a great season makes a player tighten up and press too hard"
     ],
-    "context": "The 'sophomore slump' and the 'rookie-of-the-year jinx' are the same statistical trick. A player who tops the league almost certainly had more good luck than bad that year; next season the skill remains but the luck evaporates, so he comes back to earth. Tellingly, this isn't special to second-year players: studies note that stars at EVERY experience level tend to fall off after a career-best season, which is why it has nothing to do with being a sophomore. Source: Wikipedia 'Sophomore slump'; The Ringer, 'Sophomore Slumps Aren't Real. Regression Is.' (2025).",
+    "context": "The 'sophomore slump' and the 'rookie-of-the-year jinx' are the same statistical trick. Kahneman's formula for the illusion is Success = talent + luck. A player who tops the league almost certainly had more good luck than bad that year; next season the skill remains but the luck evaporates, so he comes back to earth, and onlookers blame a 'curse' for what was just luck draining away. Tellingly, this isn't special to second-year players: studies note that stars at EVERY experience level tend to fall off after a career-best season, which is why it has nothing to do with being a sophomore. Source: Wikipedia 'Sophomore slump'; The Ringer, 'Sophomore Slumps Aren't Real. Regression Is.' (2025); LitCharts, Thinking, Fast and Slow ch.17 (Kahneman's 'success = talent + luck').",
     "topic": "regression-to-the-mean-the-sports-illustrated-jinx"
   },
   {
     "tier": 3,
-    "question": "In 2002, Sports Illustrated decided to investigate its own famous 'cover jinx.' It studied all 2,456 covers it had run since 1954 and found that the featured athletes and teams did slump afterward about 37% of the time. Yet the magazine concluded there was no curse at all. What did it decide was really going on?",
+    "question": "Sports Illustrated set out in 2002 to investigate its own famous 'cover jinx.' It studied all 2,456 covers it had run since 1954 and found that the featured athletes and teams did slump afterward about 37% of the time. Yet the magazine concluded there was no curse at all. What did it decide was really going on?",
     "answer": "Stars usually made the cover right after a peak, so they were simply drifting back to normal",
     "choices": [
       "Stars usually made the cover right after a peak, so they were simply drifting back to normal",
@@ -20489,20 +20424,7 @@
   },
   {
     "tier": 4,
-    "question": "The psychologist Daniel Kahneman said a champion's record-breaking day is almost always followed by a more ordinary one. No curse is needed to explain it. What did Kahneman say a record performance is really made of, and why does the next showing come back to earth?",
-    "answer": "A blend of real skill and a lucky streak; the skill carries over but the streak of luck does not",
-    "choices": [
-      "A blend of real skill and a lucky streak; the skill carries over but the streak of luck does not",
-      "A blend of real skill and sheer effort; the body tires, so the next showing sags from fatigue",
-      "A blend of real skill and soaring confidence; the nerve that peaks one day deserts him the next",
-      "A blend of real skill and outside pressure; the push to repeat the feat throws off everything after"
-    ],
-    "context": "Kahneman's formula for the illusion is Success = talent + luck. A record showing is partly skill and partly a lucky streak; the skill stays but the luck doesn't, so the next showing is closer to normal, and onlookers blame a 'curse' for what was just luck draining away. Source: LitCharts, Thinking, Fast and Slow ch.17 (Kahneman's 'success = talent + luck').",
-    "topic": "regression-to-the-mean-the-sports-illustrated-jinx"
-  },
-  {
-    "tier": 4,
-    "question": "In May 1958, the racer Pat O'Connor made the Sports Illustrated cover for the Indianapolis 500 preview, then died in a crash on the race's opening lap days later. Three years on, the skater Laurence Owen made the cover and died weeks afterward in a plane crash on the way to the World Championships. To believers, these losses proved the cover was cursed. Why don't these two deaths count as evidence of a curse?",
+    "question": "Pat O'Connor, a racer, made the Sports Illustrated cover for the Indianapolis 500 preview in May 1958, then died days later in a crash on the opening lap. Three years on, Laurence Owen, a figure skater, made the cover and died weeks afterward in a plane crash on the way to the World Championships. To believers, the deaths proved the cover was cursed. Why don't they count as evidence of a curse?",
     "answer": "Out of thousands of covers, a few are bound to land near a tragedy by sheer coincidence",
     "choices": [
       "Out of thousands of covers, a few are bound to land near a tragedy by sheer coincidence",
@@ -20515,7 +20437,7 @@
   },
   {
     "tier": 4,
-    "question": "Francis Galton, the Victorian British polymath and cousin of Charles Darwin, measured the heights of 1,078 English families in 1886. He noticed that very tall parents had children who were tall — but not quite as tall as themselves. Curious, Galton then checked very short parents against their grown children. What did he find in the short families, and what general rule about extremes did the whole comparison reveal?",
+    "question": "Francis Galton measured the heights of 1,078 English families in 1886. Very tall parents, he noticed, had children who were tall, but not quite as tall as themselves. Curious, he then checked very short parents against their grown children. What did he find in the short families?",
     "answer": "Their children were short but taller than their parents; every extreme drifts back toward the average",
     "choices": [
       "Their children were short but taller than their parents; every extreme drifts back toward the average",
@@ -20541,7 +20463,7 @@
   },
   {
     "tier": 5,
-    "question": "Daniel Kahneman drew a disturbing conclusion from regression to the mean. We tend to praise people right after they do unusually well and punish them right after they do unusually badly. Since a great showing is usually followed by a more ordinary one, and a terrible showing by a better one, what false lesson does life keep teaching us?",
+    "question": "People tend to praise others right after an unusually good performance and punish them right after an unusually bad one. Daniel Kahneman pointed out that a great showing is usually followed by a more ordinary one, and a terrible showing by a better one. What false lesson, he warned, does life keep teaching?",
     "answer": "That punishing people works and praising them fails, though neither did anything at all",
     "choices": [
       "That punishing people works and praising them fails, though neither did anything at all",
@@ -20567,7 +20489,7 @@
   },
   {
     "tier": 2,
-    "question": "A squire tells his knight that his blade has gone dull and badly needs sharpening before the next patrol. The knight snaps back, 'Soldiers are dying on the field and you whine about a sword?' The squire falls silent — but a philosopher listening in would call this a well-known dodge, the trick of shutting down a real, small complaint by pointing at a bigger problem far away. What is wrong with the knight's reply?",
+    "question": "A squire tells his knight that his blade has gone dull and badly needs sharpening before the next patrol. The knight snaps back, 'Soldiers are dying on the field and you whine about a sword?' The squire falls silent. What is wrong with the knight's reply?",
     "answer": "A dull sword and dying soldiers can both be real; the worse one doesn't erase the other",
     "choices": [
       "A dull sword and dying soldiers can both be real; the worse one doesn't erase the other",
@@ -20580,7 +20502,7 @@
   },
   {
     "tier": 2,
-    "question": "You are at a friend's dinner table and tell him honestly that his roast chicken was tough and hard to swallow. Instead of answering about the chicken, he shoots back, 'Plenty of starving people in the world would love a burnt chicken, let alone a dry one!' The line sounds sort of noble, but philosophers point out it is the same dodge as answering any small complaint by naming a bigger problem far away. Why is what he said no real answer to your complaint about the chicken?",
+    "question": "Suppose you tell a friend, at his own dinner table, that his roast chicken was tough and hard to swallow. Instead of answering about the chicken, he shoots back, 'Plenty of starving people in the world would love a burnt chicken, let alone a dry one!' The line sounds almost noble. Why is it no real answer to your complaint?",
     "answer": "What he said is true, yet a hungry stranger has no bearing on whether THIS chicken came out dry",
     "choices": [
       "What he said is true, yet a hungry stranger has no bearing on whether THIS chicken came out dry",
@@ -20593,7 +20515,7 @@
   },
   {
     "tier": 3,
-    "question": "At a team meeting, an employee tells her boss that the company's outdated software is slowing everyone down and costing the firm sales. The boss leans back in his chair and replies, 'At least we have software at all — some firms in our industry still do everything by hand.' The room nods along, and the real complaint gets quietly shrugged aside. What did the boss quietly do to win?",
+    "question": "At a team meeting, an employee tells her boss that the company's outdated software is slowing everyone down and costing the firm sales. The boss leans back in his chair and replies, 'At least we have software at all — some firms in our industry still do everything by hand.' The room nods along, and the real complaint is shrugged aside. What did the boss do to win the room?",
     "answer": "Traded the real question — is our software too slow? — for an easy one no one was asking",
     "choices": [
       "Traded the real question — is our software too slow? — for an easy one no one was asking",
@@ -20619,7 +20541,7 @@
   },
   {
     "tier": 3,
-    "question": "A son bursts through the door beaming: 'Dad, I got an A on my physics exam!' His father barely looks up and answers, 'Why not an A-plus? You got something wrong — that is not acceptable.' Notice the trick the father is pulling: he is holding a real accomplishment up against an imagined flawless ideal, so a genuine win shrinks into a failure. How exactly does that trick work on the son's A?",
+    "question": "A son bursts through the door beaming: 'Dad, I got an A on my physics exam!' His father barely looks up and answers, 'Why not an A-plus? You got something wrong — that is not acceptable.' How does the father's reply turn the son's real success into a loss?",
     "answer": "He measures a real, good thing against a perfect best-case so it reads as a failure",
     "choices": [
       "He measures a real, good thing against a perfect best-case so it reads as a failure",
@@ -20645,7 +20567,7 @@
   },
   {
     "tier": 4,
-    "question": "A teenage girl in a coffee shop grumbles that the cafe wifi is crawling. Her friend grins and says back, 'First World problem.' The phrase is popular online: it points out that slow wifi is a small trouble compared to hunger or war somewhere else in the world. But there is a difference between a joke you make about yourself and a jab someone flings at your complaint. Used as the second kind — a put-down aimed at the girl — what is that little phrase actually doing to her complaint?",
+    "question": "A teenage girl in a coffee shop grumbles that the café wifi is crawling. Her friend grins and says, 'First World problem.' The phrase sets slow wifi, a small trouble, beside hunger and war somewhere else in the world. Said about oneself it is a joke, but it can also be flung as a jab. Aimed at the girl, what is the phrase doing to her complaint?",
     "answer": "Waving it off as too small to bother with, since far worse troubles exist somewhere",
     "choices": [
       "Waving it off as too small to bother with, since far worse troubles exist somewhere",
@@ -20671,7 +20593,7 @@
   },
   {
     "tier": 2,
-    "question": "Yan Hui, the disciple Confucius loved best, lived on a single bowl of rice and a ladle of water in a run-down back alley -- poverty most people could not have borne. Yet one thing about Yan Hui never wavered, and it was the very thing that made Confucius praise him twice over. What never wavered?",
+    "question": "Yan Hui, the disciple Confucius loved best, lived on a single bowl of rice and a ladle of water in a run-down back alley, in poverty most people could not have borne. Yet one thing about him never wavered, the very thing that made Confucius praise him twice over. What never wavered?",
     "answer": "His joy",
     "choices": [
       "His joy",
@@ -20684,7 +20606,7 @@
   },
   {
     "tier": 2,
-    "question": "Around 500 BC in ancient China, a disciple named Zhonggong asked his teacher Confucius for one simple rule he could practice toward every person he met, all day, every day. Confucius answered him in a single sentence — recorded in the Analects, book 15 — and, unusually, framed the rule as a thing to be avoided rather than a thing to be done. Which rule did Confucius give Zhonggong?",
+    "question": "A disciple named Zhonggong asked Confucius for one simple rule he could practice toward every person he met, all day, every day. Confucius answered in a single sentence and, unusually, framed the rule as something to be avoided rather than something to be done. Which rule did he give Zhonggong?",
     "answer": "Never do to another what you would hate done to you.",
     "choices": [
       "Never do to another what you would hate done to you.",
@@ -20710,7 +20632,7 @@
   },
   {
     "tier": 4,
-    "question": "Yan Hui, the student Confucius loved best, asked the Master how a person actually becomes humane. Confucius answered with a famous formula in two halves: do this one thing, and then return to proper conduct. If you managed it for even a single day, he said, the entire world would turn toward goodness. What was the one thing Confucius told him to do?",
+    "question": "Yan Hui once pressed Confucius on how a person actually becomes humane. The Master answered with a formula in two halves: do this one thing, then return to proper conduct. Manage it for even a single day, he said, and the whole world would turn toward goodness. What was the one thing he told Yan Hui to do?",
     "answer": "Overcome your own selfish nature.",
     "choices": [
       "Overcome your own selfish nature.",
@@ -20723,7 +20645,7 @@
   },
   {
     "tier": 4,
-    "question": "Confucius made a provocative claim about the value of humaneness: a person of high ideals, he said, will not cling to life if clinging requires paying a certain price. There are moments when he gives up his life instead. What price will such a person absolutely refuse to pay, even to continue living?",
+    "question": "Confucius set a hard price on humaneness. A person of high ideals, he said, will not cling to life if clinging means paying a certain price; there are moments when he gives up his life instead. What price will such a person refuse to pay, even to go on living?",
     "answer": "Betraying what is right.",
     "choices": [
       "Betraying what is right.",
@@ -20736,7 +20658,7 @@
   },
   {
     "tier": 5,
-    "question": "The disciple Zigong tried to set humaneness as high as it could go: suppose a man could shower benefits on the whole population and rescue the multitudes from suffering -- surely THAT, he asked Confucius, must be humaneness itself? Confucius's reply reset the scale. Where did Confucius place such a world-saving deed?",
+    "question": "The disciple Zigong tried to set humaneness as high as it could go. A man who could shower benefits on the whole population and rescue the multitudes from suffering, he put it to Confucius, must surely be humane. Confucius's reply reset the scale. Where did he place such a world-saving deed?",
     "answer": "Far above humaneness -- a rare height few could ever reach.",
     "choices": [
       "Far above humaneness -- a rare height few could ever reach.",
@@ -20762,7 +20684,7 @@
   },
   {
     "tier": 2,
-    "question": "A young girl named Nia notices that her whole street fills with open umbrellas at the exact moment the rain starts, every single time. She half-wonders whether popping umbrellas open could actually be what summons the rain down out of the sky. Her dad thinks it over and gives her one simple test that settles which way the cause really runs between the two things. What does he point out to her?",
+    "question": "Nia notices that her whole street fills with open umbrellas the moment the rain starts, every single time, and she half-wonders whether opening umbrellas could be what calls the rain down out of the sky. Her dad gives her one simple test that settles which way the cause really runs. What does he point out?",
     "answer": "Rain pours down plenty of times with not one umbrella in sight, yet umbrellas pop open only because rain came",
     "choices": [
       "Rain pours down plenty of times with not one umbrella in sight, yet umbrellas pop open only because rain came",
@@ -20775,7 +20697,7 @@
   },
   {
     "tier": 2,
-    "question": "A proud rooster on a country farm crows at the first gray light of morning, and the sun climbs into the sky only minutes later. Every dawn it happens the same way. Soon the rooster is strutting about the yard certain that his own crowing is what hauls the sun up into the sky. A farmhand watching him only laughs. What is the rooster getting wrong about himself and the sunrise?",
+    "question": "A proud rooster on a farm crows at the first gray light, and the sun climbs into the sky minutes later, the same way every dawn. Soon he struts about the yard, certain that his crowing hauls the sun up. A farmhand watching only laughs. What is the rooster getting wrong?",
     "answer": "The first light of the coming dawn is what rouses the rooster to crow, so the sunrise stirs the bird, not the bird the sun",
     "choices": [
       "The first light of the coming dawn is what rouses the rooster to crow, so the sunrise stirs the bird, not the bird the sun",
@@ -20801,7 +20723,7 @@
   },
   {
     "tier": 3,
-    "question": "Across medieval Europe, many people were glad to be lousy, taking a head of lice as a sure sign of good health, because they had noticed that the gravely sick and the dying almost never carried any. From that they reasoned: lice keep a body healthy, and to lose them is to fall ill. What had they gotten wrong?",
+    "question": "Many people in medieval Europe were glad to be lousy, taking a head of lice as a sure sign of good health, because they had noticed that the gravely sick and the dying almost never carried any. From that they reasoned that lice keep a body healthy, and to lose them is to fall ill. What had they gotten wrong?",
     "answer": "A body burning with high fever drives the lice off, so their absence is a symptom of grave illness, not a cause of it",
     "choices": [
       "A body burning with high fever drives the lice off, so their absence is a symptom of grave illness, not a cause of it",
@@ -20827,7 +20749,7 @@
   },
   {
     "tier": 4,
-    "question": "A striver notices that nearly every rich man he can name owns a yacht, so he reasons that if he buys a yacht, wealth is sure to follow, and he sinks his savings into a boat. His shrewd uncle just shakes his head at the plan. What has the young man gotten wrong?",
+    "question": "A young striver notices that nearly every rich man he can name owns a yacht. He reasons that if he buys a yacht, wealth is sure to follow, and he sinks his savings into a boat. His shrewd uncle just shakes his head at the plan. What has the young man gotten wrong?",
     "answer": "Growing rich first is what lets a man afford a yacht, so the yacht is a result of wealth and never a cause of it",
     "choices": [
       "Growing rich first is what lets a man afford a yacht, so the yacht is a result of wealth and never a cause of it",
@@ -20840,7 +20762,7 @@
   },
   {
     "tier": 4,
-    "question": "A logic teacher chalks four real-world findings on the classroom board. Each finding shows a strong correlation — two things that rise and fall together — that somebody has misread as one thing causing the other. In three of the four mistakes, a hidden third variable is what really drives both paired things at once. But in exactly one of the four, the blunder is a true reversal: the very same two things really are linked, but the arrow of cause points the opposite direction of what was assumed. Which one is the genuine backwards-arrow mistake?",
+    "question": "A logic teacher chalks four real-world findings on the board. In each, two things rise and fall together, and somebody has misread one as causing the other. In three of them, some hidden third thing is driving both. In exactly one, the same two things really are linked, but the arrow of cause points the opposite way from what was assumed. Which is the true reversal?",
     "answer": "Concluding that wearing reading glasses is what wears a person's eyesight down over the years",
     "choices": [
       "Concluding that wearing reading glasses is what wears a person's eyesight down over the years",
@@ -20853,7 +20775,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1749, Jean-Jacques Rousseau was walking to Vincennes when he read a notice. An academy was offering a prize for an essay on whether the arts and sciences had improved people's morals. By his own account, the answer struck him so hard that he sank under a tree. When he stood up, his shirt was wet with tears he had not felt himself shed. What idea had hit him?",
+    "question": "Walking to Vincennes, Rousseau read a notice: an academy offered a prize for an essay on whether the arts and sciences had improved people's morals. The answer, he later wrote, struck him so hard he sank under a tree, his shirt wet with tears he had not felt. What idea had hit him?",
     "answer": "That civilization corrupts a humanity that is naturally good and free.",
     "choices": [
       "That civilization corrupts a humanity that is naturally good and free.",
@@ -20866,7 +20788,7 @@
   },
   {
     "tier": 2,
-    "question": "Jean-Jacques Rousseau asks you to picture a robber stepping out of an alley, pointing a pistol, and demanding your purse. You hand it over. But the instant the robber is gone, or the moment you somehow become the stronger one, do you owe him a single thing? Rousseau says raw strength, by itself, can never turn 'do as I say' into a real duty to obey. So where, he concludes, must any genuine authority come from instead?",
+    "question": "Rousseau imagined a robber with a pistol taking a traveller's purse. Once the robber is gone, or once the traveller is the stronger, Rousseau said, the traveller owes him nothing, since strength alone can never turn 'do as I say' into a real duty to obey. Where did he say genuine authority must come from?",
     "answer": "From an agreement that free and equal people make with one another.",
     "choices": [
       "From an agreement that free and equal people make with one another.",
@@ -20879,7 +20801,7 @@
   },
   {
     "tier": 3,
-    "question": "Jean-Jacques Rousseau opens The Social Contract with one of the most famous lines in all of political thought: 'Man is born free, and everywhere he is in chains.' A reader might expect a furious call to rebellion. Instead Rousseau is after something else entirely. What is his actual project?",
+    "question": "The Social Contract opens with one of the most famous lines in political thought: 'Man is born free, and everywhere he is in chains.' A reader might expect Rousseau to follow it with a furious call to rebellion. He was after something else entirely. What was his actual project?",
     "answer": "Show how the law that binds you can be one you give yourself, so obeying it is still free.",
     "choices": [
       "Show how the law that binds you can be one you give yourself, so obeying it is still free.",
@@ -20892,7 +20814,7 @@
   },
   {
     "tier": 3,
-    "question": "Jean-Jacques Rousseau pours scorn on the English for imagining themselves a free people. 'The people of England,' he writes, 'is free only during the election of members of parliament. As soon as they are elected, slavery overtakes it, and it is nothing.' For Rousseau, the very act of choosing a representative to make the laws is the moment freedom is lost. Why does handing your lawmaking to a representative destroy it?",
+    "question": "Rousseau poured scorn on the English for thinking themselves a free people. 'The people of England,' he wrote, 'is free only during the election of members of parliament. As soon as they are elected, slavery overtakes it, and it is nothing.' Suppose you hand your own lawmaking to a representative. Why, for Rousseau, have you then lost your freedom?",
     "answer": "Because no one can will the laws for you; once another decides in your place, you have stopped ruling yourself.",
     "choices": [
       "Because no one can will the laws for you; once another decides in your place, you have stopped ruling yourself.",
@@ -20905,7 +20827,7 @@
   },
   {
     "tier": 4,
-    "question": "In The Social Contract, Jean-Jacques Rousseau describes the founding act of a people as a 'total alienation': each person hands himself and every one of his rights, completely, to the whole community, keeping nothing back. On its face that sounds like the death of freedom, since you have given away everything. Yet Rousseau insists you walk away from this bargain more free than before, not less. How can giving up everything leave a person freer?",
+    "question": "Suppose you hand yourself and every one of your rights, completely, to the whole community, keeping nothing back. Rousseau called this founding act of a people a 'total alienation.' It sounds like the death of freedom, since you have given away everything, yet he insisted you would walk away freer than before. How can giving up everything leave you freer?",
     "answer": "Because everyone gives himself equally to all, so no one ends up under another, and you get yourself back as a protected citizen.",
     "choices": [
       "Because everyone gives himself equally to all, so no one ends up under another, and you get yourself back as a protected citizen.",
@@ -20918,7 +20840,7 @@
   },
   {
     "tier": 4,
-    "question": "Jean-Jacques Rousseau draws a line between two things people often confuse: the 'will of all' and the 'general will.' He insists you could poll an entire town, count every single hand honestly, and still not arrive at the general will. Among these four, which one is the general will he actually means?",
+    "question": "Rousseau drew a line between two things people often confuse, the 'will of all' and the 'general will.' A town could poll every citizen and count every hand honestly, he said, and still not arrive at the general will. What is the general will that such a count can miss?",
     "answer": "Whatever is genuinely good for the community taken as one whole.",
     "choices": [
       "Whatever is genuinely good for the community taken as one whole.",
@@ -20931,7 +20853,7 @@
   },
   {
     "tier": 4,
-    "question": "Rousseau worries about what happens when citizens stop thinking as individuals and clump together into parties and interest-groups inside the state. Each faction grows a will of its own. That will is 'general' for its own members but merely 'particular' toward the country as a whole. What do all these factions do to the true general will of the nation?",
+    "question": "Parties and interest groups worried Rousseau. When citizens stop thinking as individuals and clump into factions, he said, each faction grows a will of its own, 'general' for its members but merely 'particular' toward the country as a whole. What did he say such factions do to the general will of the nation?",
     "answer": "The factions' group interests drown out the common good, so the vote tracks the loudest of them, not what serves all.",
     "choices": [
       "The factions' group interests drown out the common good, so the vote tracks the loudest of them, not what serves all.",
@@ -20944,7 +20866,7 @@
   },
   {
     "tier": 5,
-    "question": "Jean-Jacques Rousseau wrote the line that has frightened readers for two centuries: anyone who refuses to obey the general will, he says, 'shall be compelled to do so by the whole body' and 'will be forced to be free.' Critics hear a tyrant's excuse. But Rousseau gives a precise reason for the phrase. In his own argument, being compelled to obey the law that you all made together is supposed to protect you from one specific thing. From what?",
+    "question": "One line of Rousseau's has frightened readers for two centuries: anyone who refuses to obey the general will 'shall be compelled to do so by the whole body' and 'will be forced to be free.' Critics hear a tyrant's excuse, but Rousseau gave a precise reason. Suppose you are compelled to obey the law all have made. From what, in his argument, does that protect you?",
     "answer": "From ever becoming the personal servant of any other particular man.",
     "choices": [
       "From ever becoming the personal servant of any other particular man.",
@@ -20957,7 +20879,7 @@
   },
   {
     "tier": 5,
-    "question": "Jean-Jacques Rousseau makes a move that worries his critics most. The general will, he insists, is always right and always aims at the public good; it simply cannot be wrong. And yet he openly admits that the people's actual votes often go badly astray. He squares the two without giving up either claim. In Rousseau's account, when a vote comes out wrong, what has gone wrong?",
+    "question": "Rousseau insisted that the general will cannot err: it is always right and always aims at the public good. Yet he openly admitted that the people's actual votes often go badly astray, and he squared the two without giving up either claim. When a vote comes out wrong, on his account, what has gone wrong?",
     "answer": "The people were deceived; the general will stayed right, only their reading of it went astray.",
     "choices": [
       "The people were deceived; the general will stayed right, only their reading of it went astray.",
@@ -20970,7 +20892,7 @@
   },
   {
     "tier": 5,
-    "question": "John Locke had taught that every person carries certain natural rights from birth, rights the government must never cross, no matter how the majority votes. Jean-Jacques Rousseau breaks sharply with Locke on exactly this point. In Rousseau's account, where do a person's rights ultimately come from?",
+    "question": "John Locke had taught that every person carries certain natural rights from birth, rights the government must never cross, no matter how the majority votes. Jean-Jacques Rousseau broke sharply with Locke on exactly this point. In Rousseau's account, where do a person's rights ultimately come from?",
     "answer": "From the sovereign people's general will, which alone decides what rights you have.",
     "choices": [
       "From the sovereign people's general will, which alone decides what rights you have.",
@@ -20983,7 +20905,7 @@
   },
   {
     "tier": 2,
-    "question": "Jean-Jacques Rousseau pointed to one small act as the true beginning of all human inequality: a man drives stakes around a patch of dirt and declares 'this is mine.' For Rousseau, the deep point was about why that flimsy moment held. Why did the claim stick?",
+    "question": "A man drives stakes around a patch of dirt and declares, 'This is mine.' Jean-Jacques Rousseau pointed to that one small act as the true beginning of human inequality, and for him the deep point was why so flimsy a moment held. Why did the claim stick?",
     "answer": "A made-up rule became as binding as a real one once everyone went along",
     "choices": [
       "A made-up rule became as binding as a real one once everyone went along",
@@ -20996,7 +20918,7 @@
   },
   {
     "tier": 2,
-    "question": "Rousseau placed the first step toward inequality at a scene most people would call harmless: a village gathering where folks sang and danced for one another. He said this gentle moment, not any war or theft, was where it all began. What about that scene did Rousseau blame?",
+    "question": "Villagers gather to sing and dance for one another, a scene most people would call harmless. Rousseau placed the first step toward inequality there, in that gentle moment, not in any war or theft. What about the scene did he blame?",
     "answer": "Once people were admired for being best, they began to mind their rank",
     "choices": [
       "Once people were admired for being best, they began to mind their rank",
@@ -21009,7 +20931,7 @@
   },
   {
     "tier": 3,
-    "question": "Jean-Jacques Rousseau split self-love into two kinds. One is the plain drive to keep yourself alive -- to find food, shelter, and warmth -- and it needs no one else. The other is a restless hunger that appears only once you are living among other people. What is the defining mark of that second kind of self-love?",
+    "question": "Jean-Jacques Rousseau split self-love into two kinds. Suppose you lived alone in the wild: you would still have the first, the plain drive to find food, shelter and warmth, which needs no one else. The second, a restless hunger, appears only once you live among other people. What is its defining mark?",
     "answer": "Wanting to be rated above the others, so that everyone places you first",
     "choices": [
       "Wanting to be rated above the others, so that everyone places you first",
@@ -21022,7 +20944,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 1755 Discourse on Inequality, the Genevan-French philosopher Jean-Jacques Rousseau drew a sharp contrast between two kinds of human being: the wild solitary man 'lives within himself,' while the man shaped by society 'lives outside himself.' By that odd phrase 'lives outside himself,' what did Rousseau say had actually gone wrong with the social man?",
+    "question": "Rousseau's Discourse on Inequality set two kinds of human being side by side: the wild, solitary man 'lives within himself,' while the man shaped by society 'lives outside himself.' By that odd phrase 'lives outside himself,' what did Rousseau say had gone wrong with the social man?",
     "answer": "He can only feel that he exists through other people's judgement of him",
     "choices": [
       "He can only feel that he exists through other people's judgement of him",
@@ -21035,7 +20957,7 @@
   },
   {
     "tier": 4,
-    "question": "Jean-Jacques Rousseau claimed that the first man to fence off land and call it 'mine' planted the seed of human misery. John Locke looked at that same act and reached the opposite verdict. What did Locke say a man gains by fencing a patch of ground and calling it his own?",
+    "question": "Rousseau claimed that the first man to fence off land and call it 'mine' planted the seed of human misery. John Locke looked at that same act and reached the opposite verdict. What did Locke say a man gains by fencing a patch of ground and calling it his own?",
     "answer": "It becomes his through the work he put in, and owning it sets him free",
     "choices": [
       "It becomes his through the work he put in, and owning it sets him free",
@@ -21048,7 +20970,7 @@
   },
   {
     "tier": 4,
-    "question": "The phrase 'noble savage' is stuck to Jean-Jacques Rousseau's name, though he never wrote it -- a poet had coined it decades before he was born. Picture Rousseau's earliest human, before any society. How did Rousseau describe that creature's moral character?",
+    "question": "The phrase 'noble savage' is stuck to Jean-Jacques Rousseau's name, though he never wrote it; a poet had coined it decades before he was born. Rousseau did write about the earliest human, before any society existed. How did he describe that creature's moral character?",
     "answer": "He was a simple creature with no sense of right or wrong at all",
     "choices": [
       "He was a simple creature with no sense of right or wrong at all",
@@ -21060,21 +20982,8 @@
     "topic": "rousseaus-noble-savage-and-amour-propre"
   },
   {
-    "tier": 1,
-    "question": "A village barber brags that he shaves every man who does not shave himself, and shaves no one else. A boy points at the barber's own stubbly chin and asks who ought to shave THAT. Going just by the barber's own rule, what is strange about his chin in particular?",
-    "answer": "His own rule cannot say whether he is allowed to shave his own chin or not",
-    "choices": [
-      "His own rule cannot say whether he is allowed to shave his own chin or not",
-      "His own rule plainly says he must grow a long beard and never shave again",
-      "His own rule clearly means a different barber has to shave his chin for him",
-      "His own rule simply forgot to mention chins, so his chin is none of its business"
-    ],
-    "context": "This is the barber's paradox, the kid-graspable form of Russell's paradox. The barber declares 'I shave anyone who does not shave himself, and noone else' (plus.maths.org, 'Mathematical mysteries: The Barber's Paradox'). The single question 'does the barber shave himself?' is the whole trap: his own rule gives no consistent answer for his own chin. Corroborated by the Internet Encyclopedia of Philosophy, 'Russell's Paradox' (iep.utm.edu/par-russ).",
-    "topic": "russells-paradox"
-  },
-  {
     "tier": 2,
-    "question": "Pressed on the barber who shaves every man who does not shave himself and no one else, a boy decides to settle 'does the barber shave himself?' by simply testing each answer in turn. He checks 'yes, he does,' then checks 'no, he doesn't.' How do those two checks turn out?",
+    "question": "A village barber brags that he shaves every man who does not shave himself, and no one else. A boy points at the barber's own stubbly chin and asks who ought to shave it. Then he tests both answers: yes, the barber shaves himself; no, he does not. How do the two tests turn out?",
     "answer": "Each branch forces its own opposite: if he shaves himself he breaks his rule, and if he does not the rule says he must",
     "choices": [
       "Each branch forces its own opposite: if he shaves himself he breaks his rule, and if he does not the rule says he must",
@@ -21082,7 +20991,7 @@
       "Only one branch ever fails: if he shaves himself there is trouble, but if he does not the rule is satisfied just fine",
       "Neither branch truly applies: whether he shaves himself or not, the rule was only meant for the other men in town"
     ],
-    "context": "If he shaves himself he violates his own rule (he only shaves men who don't shave themselves); but if he does not, he is exactly the sort of man his rule obliges him to shave. Each answer forces its own opposite, and the contradiction itself is the punchline, not the word 'paradox'. Source: plus.maths.org, 'Mathematical mysteries: The Barber's Paradox'; Internet Encyclopedia of Philosophy, 'Russell's Paradox' (iep.utm.edu/par-russ).",
+    "context": "This is the barber's paradox, the kid-graspable form of Russell's paradox. The barber declares 'I shave anyone who does not shave himself, and noone else.' If he shaves himself he violates his own rule (he only shaves men who don't shave themselves); but if he does not, he is exactly the sort of man his rule obliges him to shave. Each answer forces its own opposite, so his rule gives no consistent answer for his own chin, and the contradiction itself is the punchline, not the word 'paradox'. Source: plus.maths.org, 'Mathematical mysteries: The Barber's Paradox'; Internet Encyclopedia of Philosophy, 'Russell's Paradox' (iep.utm.edu/par-russ).",
     "topic": "russells-paradox"
   },
   {
@@ -21100,7 +21009,7 @@
   },
   {
     "tier": 3,
-    "question": "A teacher says the barber riddle is only a disguise. Strip off the costume: instead of 'the barber,' picture the collection of all collections that do NOT contain themselves, and instead of 'shaves,' read 'contains as a member.' Ask whether THAT collection contains itself. What happens compared with the barber version?",
+    "question": "Suppose you strip the costume off the barber riddle. In place of the barber, put the collection of all collections that do not contain themselves, and in place of 'shaves,' read 'contains as a member.' Then ask whether that collection contains itself. What happens, compared with the barber?",
     "answer": "You spring the very same trap all over again, yet the easy escape is gone, since this collection is no impossible person",
     "choices": [
       "You spring the very same trap all over again, yet the easy escape is gone, since this collection is no impossible person",
@@ -21113,7 +21022,7 @@
   },
   {
     "tier": 3,
-    "question": "When this one contradiction turned up deep inside the foundations of math, mathematicians did not shrug it off as a cute puzzle. They genuinely panicked, as if the whole building might come down over a single cracked brick. Under the strict laws of formal reasoning, why was one small contradiction such a disaster?",
+    "question": "Russell's paradox put a contradiction deep inside the foundations of mathematics, and mathematicians did not shrug it off as a cute puzzle. They panicked, as if the whole building might come down over a single cracked brick. Under the strict laws of formal logic, why was one small contradiction such a disaster?",
     "answer": "Once one contradiction is let in, the rules of logic let you prove anything at all, so every single result is drained of meaning",
     "choices": [
       "Once one contradiction is let in, the rules of logic let you prove anything at all, so every single result is drained of meaning",
@@ -21139,7 +21048,7 @@
   },
   {
     "tier": 4,
-    "question": "On June 16, 1902, Bertrand Russell mailed a short, courteous letter to the logician Gottlob Frege, who had spent his life trying to build all of arithmetic out of pure logic. The letter contained one quiet question about a predicate that cannot be predicated of itself. What did that polite paragraph do to Frege's work?",
+    "question": "Bertrand Russell mailed a short, courteous letter on June 16, 1902, to Gottlob Frege, a logician who had spent his life trying to build all of arithmetic out of pure logic. The letter held one quiet question about a predicate that cannot be predicated of itself. What did that polite paragraph do to Frege's work?",
     "answer": "It proved that his entire logical system contradicted itself",
     "choices": [
       "It proved that his entire logical system contradicted itself",
@@ -21152,7 +21061,7 @@
   },
   {
     "tier": 4,
-    "question": "The cruelty was in the timing. When Russell's letter arrived, Gottlob Frege's reaction was not a calm correction but something far more human. He hurriedly added an appendix to his nearly-finished masterwork, opening it with a line of pure dismay about a scientific writer's worst fate. What was that fate he was describing?",
+    "question": "A short letter from Bertrand Russell reached Gottlob Frege just as Frege's masterwork was nearly finished. Frege did not answer with a calm correction. He hurriedly added an appendix to the book, opening it with a line of pure dismay about the worst fate that can befall a scientific writer. What was that fate?",
     "answer": "Having a foundation of his finished edifice shaken just as the work is completed",
     "choices": [
       "Having a foundation of his finished edifice shaken just as the work is completed",
@@ -21165,7 +21074,7 @@
   },
   {
     "tier": 4,
-    "question": "Mathematicians needed a wall that would forever block the self-swallowing collection at the heart of Russell's paradox. The fix the world actually kept came from Ernst Zermelo: a strict rule about how any new collection is allowed to be built in the first place. What does Zermelo's rule demand before you may form a collection?",
+    "question": "Mathematicians needed a wall that would forever block the self-swallowing collection at the heart of Russell's paradox. Ernst Zermelo supplied the fix they kept, in 1908: a strict rule about how any new collection may be built in the first place. Suppose you set out to build one. What does his rule demand?",
     "answer": "You may only carve a new collection out of one you already have, never conjure a fresh one from a bare description",
     "choices": [
       "You may only carve a new collection out of one you already have, never conjure a fresh one from a bare description",
@@ -21178,7 +21087,7 @@
   },
   {
     "tier": 3,
-    "question": "Bertrand Russell loved this brain-teaser. France is a republic, so it has no king. Logic says every statement is either true, or its opposite is. So either 'the present king of France is bald' is true, or 'the present king of France is not bald' is true. But line up everyone in the world who is bald, then everyone who is not. When you go looking for the present king of France, which list is he on?",
+    "question": "France is a republic, so it has no king. Yet logic says that of a statement and its opposite, one must be true, so either 'the present king of France is bald' is true or 'the present king of France is not bald' is. Bertrand Russell proposed sorting everyone in the world into two lists, the bald and the not bald. Which list holds the present king of France?",
     "answer": "In neither list",
     "choices": [
       "In neither list",
@@ -21191,7 +21100,7 @@
   },
   {
     "tier": 4,
-    "question": "Russell had a fix for 'the present king of France is bald.' It is not gibberish, he said, and it is not about some ghostly king lurking in a shadow-world. Underneath, the little sentence secretly unpacks into a few plain claims. What, on Russell's analysis, is it really claiming?",
+    "question": "Bertrand Russell had a fix for a sentence about a king who does not exist: 'the present king of France is bald.' It is not gibberish, he said, and it is not about some ghostly king lurking in a shadow world. Underneath, the little sentence unpacks into a few plain claims. What, on Russell's analysis, is it really claiming?",
     "answer": "That there is exactly one king of France, and that he is bald",
     "choices": [
       "That there is exactly one king of France, and that he is bald",
@@ -21204,7 +21113,7 @@
   },
   {
     "tier": 4,
-    "question": "Russell's rival Alexius Meinong claimed that even a 'round square' or a 'golden mountain' must have some shadowy kind of being, or how could we so much as talk about them? Russell flatly refused to stuff the world with such impossible things. What did Russell say we need, to keep these pseudo-objects out of our thinking?",
+    "question": "Alexius Meinong held that even a round square or a golden mountain must have some shadowy kind of being, or no one could so much as talk about them. Bertrand Russell flatly refused to stuff the world with such impossible things. What did he say it takes to keep these pseudo-objects out of an honest analysis?",
     "answer": "A robust sense of reality",
     "choices": [
       "A robust sense of reality",
@@ -21217,7 +21126,7 @@
   },
   {
     "tier": 2,
-    "question": "A boy who skipped studying fails his exam and tells his father, \"I never had a choice — I was always going to fail, my dad flunked the same class.\" Sartre built his philosophy on a hard claim about excuses like this. How would Sartre answer the boy?",
+    "question": "A boy who skipped studying fails his exam and shrugs, \"I never had a choice — I was always going to fail, my dad flunked the same class.\" Jean-Paul Sartre built his philosophy on a hard claim about excuses like this one. How would Sartre answer the boy?",
     "answer": "You were free the whole time; with no fixed nature and nobody else to carry it, the failure is yours to own",
     "choices": [
       "You were free the whole time; with no fixed nature and nobody else to carry it, the failure is yours to own",
@@ -21230,7 +21139,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1964 the committee in Stockholm awarded Jean-Paul Sartre the Nobel Prize in Literature, the most coveted honor a writer can receive. Sartre had built his whole philosophy on the idea that you are nothing but your own choices. How did he respond to the prize?",
+    "question": "Jean-Paul Sartre, whose whole philosophy turned on freedom and choice, was awarded the 1964 Nobel Prize in Literature, the most coveted honor a writer can receive. How did he respond to the prize?",
     "answer": "He turned it down flat, saying a writer must not let himself be made into an institution",
     "choices": [
       "He turned it down flat, saying a writer must not let himself be made into an institution",
@@ -21243,7 +21152,7 @@
   },
   {
     "tier": 2,
-    "question": "A friend faces a hard decision and just shrugs, 'I'm staying out of it — I'll let things happen on their own.' The French philosopher Jean-Paul Sartre, writing in the 1940s about human freedom and responsibility, thought carefully about a person who refuses to decide. On Sartre's view, what has the friend really done by staying out of it?",
+    "question": "A friend faces a hard decision and just shrugs: 'I'm staying out of it. I'll let things happen on their own.' Jean-Paul Sartre thought carefully about a person who refuses to decide. On Sartre's view, what has the friend really done by staying out of it?",
     "answer": "Made a choice anyway, since standing aside is itself a position he has adopted and now owns",
     "choices": [
       "Made a choice anyway, since standing aside is itself a position he has adopted and now owns",
@@ -21256,7 +21165,7 @@
   },
   {
     "tier": 3,
-    "question": "The 20th-century French existentialist Jean-Paul Sartre summed up his whole view of freedom in one paradox — a person is, in his words, condemned to be free. It sounds like a curse, yet Sartre meant something precise. In his 1946 lecture 'Existentialism Is a Humanism,' he spelled it out. In what sense did Sartre mean that being free is a sentence you can never lay down?",
+    "question": "Jean-Paul Sartre summed up his whole view of freedom in one paradox: a person is, in his words, condemned to be free. It sounds like a curse, yet in his 1946 lecture 'Existentialism Is a Humanism' he gave it a precise meaning. In what sense is freedom a sentence no one can ever lay down?",
     "answer": "You did not ask to exist, yet once thrown into the world every choice is yours to answer for",
     "choices": [
       "You did not ask to exist, yet once thrown into the world every choice is yours to answer for",
@@ -21268,47 +21177,8 @@
     "topic": "sartre-condemned-to-be-free"
   },
   {
-    "tier": 3,
-    "question": "Jean-Paul Sartre watched a cafe waiter whose movements were a little too precise and a little too rapid, who balanced his tray with the recklessness of a tightrope-walker, his gestures and voice all like clockwork. Sartre said the man was \"playing at being a waiter.\" What was the waiter really doing, in Sartre's own term for it?",
-    "answer": "Pretending his role is a fixed thing he simply IS, to hide that he freely chose to be there",
-    "choices": [
-      "Pretending his role is a fixed thing he simply IS, to hide that he freely chose to be there",
-      "Taking honest pride in a hard job and performing it as skillfully as any craftsman could",
-      "Mocking his wealthy customers by exaggerating the servile manners they expected of him",
-      "Losing himself in the work so completely that he forgot the long hours and the low pay"
-    ],
-    "context": "Sartre's name for this is BAD FAITH: pretending your social role is a fixed thing-essence so you can hide from the fact that you freely chose to be there and could walk out. The waiter's clockwork gestures betray a man performing a role he treats as his very being. Source: Sartre, Being and Nothingness (1943), Part One ch.2 'Bad Faith'; PhilosophyBreak; Big Think 'Don't be like Sartre's cafe waiter'.",
-    "topic": "sartre-condemned-to-be-free"
-  },
-  {
-    "tier": 3,
-    "question": "In his 1944 play No Exit, Jean-Paul Sartre put three dead strangers in a locked room with no torturer and no exit, and had them torment each other forever just by watching. The play gave him his most quoted line: \"Hell is other people.\" He later warned that it is widely misread. What did he actually mean by it?",
-    "answer": "Under another person's gaze you are pinned down as a fixed object, robbed of defining yourself",
-    "choices": [
-      "Under another person's gaze you are pinned down as a fixed object, robbed of defining yourself",
-      "Other people hold up a mirror that forces you to finally see your own flaws and feel shame",
-      "True suffering comes only from others, never from your own regrets or your own bad choices",
-      "We can never truly know another mind, so every relationship ends in lonely misunderstanding"
-    ],
-    "context": "\"Hell is other people\" (\"L'enfer, c'est les autres\"). Under another's gaze you are pinned down as a fixed object, robbed for a moment of the freedom to define yourself. Sartre later clarified it was about people TRAPPED in others' judgment, not that everyone is hell. Source: Sartre, No Exit / Huis Clos (1944); TheCollector 'Hell Is Other People'; SparkNotes; Wikipedia 'No Exit'.",
-    "topic": "sartre-condemned-to-be-free"
-  },
-  {
-    "tier": 3,
-    "question": "To explain why a person has no built-in purpose, Jean-Paul Sartre pointed to a paper-knife. A craftsman holds the idea and the purpose of the paper-knife in his mind BEFORE he ever makes it, so what the knife is FOR comes first, before it ever exists. What did Sartre claim about the order for a human being?",
-    "answer": "A human exists first and only afterward decides what to be, with no maker who designed a purpose",
-    "choices": [
-      "A human exists first and only afterward decides what to be, with no maker who designed a purpose",
-      "A human is born already knowing its purpose, and the whole task of life is to live up to it",
-      "A human inherits a purpose from parents and country, then passes that same purpose to children",
-      "A human grows into a purpose set by nature, the way an acorn is always meant to become an oak"
-    ],
-    "context": "This is 'existence precedes essence': the paper-knife's essence (its purpose) comes before it is made, but a human exists first and only afterward defines itself. \"Man is nothing else but that which he makes of himself.\" The order reverses only for man because no maker designed him. Source: Sartre, Existentialism is a Humanism (1946), marxists.org; Stanford Encyclopedia of Philosophy: Jean-Paul Sartre.",
-    "topic": "sartre-condemned-to-be-free"
-  },
-  {
     "tier": 4,
-    "question": "During the war, a real student came to Jean-Paul Sartre torn in two. He could slip away to England to join the Free French and fight the Nazis — noble, but abstract and uncertain. Or he could stay and care for his widowed mother, for whom he was her one comfort — concrete and certain. He begged Sartre to tell him which duty was higher. What was Sartre's answer?",
+    "question": "A student came to Jean-Paul Sartre during the war, torn in two. He could slip away to England and fight the Nazis with the Free French, a noble cause but abstract and uncertain. Or he could stay with his widowed mother, whose one comfort he was, a duty concrete and certain. He begged Sartre to tell him which duty was higher. What did Sartre answer?",
     "answer": "No doctrine can decide it for you; you are free, therefore you must choose — that is, invent your own answer",
     "choices": [
       "No doctrine can decide it for you; you are free, therefore you must choose — that is, invent your own answer",
@@ -21321,20 +21191,7 @@
   },
   {
     "tier": 4,
-    "question": "A man insists, \"Deep down I am really brave and kind — I have just never had the chance to prove it.\" He is sure his true worth is a fine thing carried inside him, waiting for a moment that never came. Jean-Paul Sartre had a hard reply to exactly this comforting idea. How would Sartre judge the man's claim?",
-    "answer": "A person just IS the run of things he has actually done; no finer self waits behind the record, so the deeds are the verdict",
-    "choices": [
-      "A person just IS the run of things he has actually done; no finer self waits behind the record, so the deeds are the verdict",
-      "Character is inborn and real, and a man's deeds are the proof of it, so a coward who never acts has plainly shown his cowardice",
-      "What a man sincerely means weighs as much as what he does, so meaning well already makes him half the brave man he claims to be",
-      "Only the people around him can fix his worth, so what he privately feels about himself settles nothing about him at all"
-    ],
-    "context": "\"Man is nothing else than his plan... nothing else than the ensemble of his acts... You are nothing other than your life.\" There is no secret true self hiding behind your record of choices; the sum of what you actually did IS who you are, and no daydreamed potential counts. Source: Sartre, Existentialism is a Humanism (1946), marxists.org full text.",
-    "topic": "sartre-condemned-to-be-free"
-  },
-  {
-    "tier": 4,
-    "question": "Jean-Paul Sartre added a strange weight to every choice with the line \"In choosing myself, I choose man.\" He did not mean you literally command other people. He meant the act of choosing carries a hidden burden he called anguish. What did Sartre claim your one choice secretly does?",
+    "question": "\"In choosing myself, I choose man,\" Jean-Paul Sartre wrote, adding a strange weight to every choice. He did not mean that a chooser literally commands other people. He meant that choosing carries a hidden burden, which he called anguish. What did Sartre claim a single choice secretly does?",
     "answer": "Holds up a picture of how everyone ought to act, so each decision quietly lays down a rule meant for all people",
     "choices": [
       "Holds up a picture of how everyone ought to act, so each decision quietly lays down a rule meant for all people",
@@ -21347,7 +21204,7 @@
   },
   {
     "tier": 5,
-    "question": "Jean-Paul Sartre insists you are CONDEMNED to be free: you literally cannot stop choosing, ever. A determinist in the room smiles, because she thinks Sartre's own words quietly hand the argument to HER side. The determinist holds that what feels like free choice is really the forced product of genes, brain, and upbringing. What is her sharpest counter to \"condemned to be free\"?",
+    "question": "A determinist smiles when Jean-Paul Sartre insists that a person is condemned to be free, unable to stop choosing for a single moment. She thinks Sartre's own words quietly hand the argument to her side, for she holds that what feels like free choice is really the forced product of genes, brain and upbringing. What is her sharpest counter to \"condemned to be free\"?",
     "answer": "A freedom you can never switch off is itself a fixed feature of human nature, which is just what determinism claims",
     "choices": [
       "A freedom you can never switch off is itself a fixed feature of human nature, which is just what determinism claims",
@@ -21360,7 +21217,7 @@
   },
   {
     "tier": 5,
-    "question": "A critic presses Jean-Paul Sartre: \"You say we are radically free, but a man may be born a slave, or sick, or into crushing poverty — he did not choose any of that.\" Sartre agrees the critic names something real, which he calls the un-chosen givens of a situation. So how does Sartre still defend radical freedom against this objection?",
+    "question": "A critic presses Jean-Paul Sartre: \"You say we are radically free, but a man may be born a slave, or sick, or into crushing poverty — he did not choose any of that.\" Sartre agrees the critic names something real, which he calls the unchosen givens of a situation. How does Sartre still defend radical freedom against the objection?",
     "answer": "You never choose your circumstances, but you remain free in HOW you take up and respond to them",
     "choices": [
       "You never choose your circumstances, but you remain free in HOW you take up and respond to them",
@@ -21373,7 +21230,7 @@
   },
   {
     "tier": 5,
-    "question": "Jean-Paul Sartre said fleeing your own freedom — bad faith — is stranger than any ordinary lie. When you tell a normal lie, you know the truth and you conceal it. But Sartre says bad faith twists into something a plain lie never does. What makes bad faith a deeper puzzle than telling a lie?",
+    "question": "Suppose you tell an ordinary lie: you know the truth, and you hide it from someone else. Jean-Paul Sartre said that fleeing your own freedom, which he called bad faith, is stranger than any such lie; it twists into something a plain lie never does. What makes bad faith a deeper puzzle than lying?",
     "answer": "The deceiver and the deceived are the same person, so you must know your freedom in order to hide it from yourself",
     "choices": [
       "The deceiver and the deceived are the same person, so you must know your freedom in order to hide it from yourself",
@@ -21386,7 +21243,7 @@
   },
   {
     "tier": 3,
-    "question": "Ferdinand de Saussure pointed at a spot on the old French-German border to make a point about words. On one side, people called the very same farm animal an ox by saying 'boeuf'; a short walk across the line, people called that identical animal an ox by saying 'Ochs'. Same beast, two sounds that share nothing. What was Saussure arguing this proves about the bond between a word's sound and its meaning?",
+    "question": "Ferdinand de Saussure pointed to the old French-German border to make a point about words. On one side, people called a certain farm animal 'boeuf'; a short walk across the line, people called the identical animal 'Ochs.' Same beast, two sounds that share nothing. What did Saussure say this shows about the bond between a word's sound and its meaning?",
     "answer": "The bond is arbitrary — no sound truly fits a thing, so a community can pin any sound to it",
     "choices": [
       "The bond is arbitrary — no sound truly fits a thing, so a community can pin any sound to it",
@@ -21399,7 +21256,7 @@
   },
   {
     "tier": 3,
-    "question": "A child insists the word 'cat' must somehow contain the furry creature itself, that the meaning lives inside the sounds. Ferdinand de Saussure offered a simple drill to dissolve that idea: change 'cat' to 'cot' and the meaning leaps to a totally different thing, though only one vowel moved. Change the 'p' in 'pair' to a 'b' and you suddenly mean 'bear.' What does this swapping drill show about how a word carries its meaning?",
+    "question": "A child insists the word 'cat' must somehow hold the furry creature itself, as if the meaning lived inside the sounds. Ferdinand de Saussure had a simple drill to dissolve that idea. Change 'cat' to 'cot' and the meaning leaps to a different thing, though only one vowel moved; turn the 'p' in 'pair' into a 'b' and the word becomes 'bear.' What does the drill show about how a word carries its meaning?",
     "answer": "A word means what it does only by differing from the words it could have been",
     "choices": [
       "A word means what it does only by differing from the words it could have been",
@@ -21412,7 +21269,7 @@
   },
   {
     "tier": 4,
-    "question": "Ferdinand de Saussure died in 1913 without ever publishing a single book on his theories. Yet three years after his death, two younger colleagues, Charles Bally and Albert Sechehaye, put out a volume under his name that founded modern linguistics. Neither man had actually attended the lectures himself. Where did they get the material to reconstruct the founding text of the whole field?",
+    "question": "Ferdinand de Saussure died in 1913 without ever publishing a book of his theories. Three years later, two colleagues, Charles Bally and Albert Sechehaye, brought out a volume in his name that founded modern linguistics, though neither man had attended Saussure's lectures himself. Where did they get the material to rebuild the founding text of the field?",
     "answer": "From notes that students had scribbled during Saussure's Geneva lecture courses",
     "choices": [
       "From notes that students had scribbled during Saussure's Geneva lecture courses",
@@ -21425,7 +21282,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1878, working purely from the inner pattern of ancient Indo-European vowels, a 21-year-old Saussure claimed the parent language once held certain sounds that no living tongue preserves. He had no direct proof; the system simply required them to exist. Fifty years later, his bold prediction was proved right. How was it finally shown?",
+    "question": "A 21-year-old Saussure, working in 1878 purely from the inner pattern of ancient Indo-European vowels, claimed the parent language once held certain sounds that no living tongue preserves. He had no direct proof; the system simply required them to exist. Fifty years later his bold prediction was proved right. How was it finally shown?",
     "answer": "Newly deciphered Hittite texts revealed a consonant sitting exactly where he had placed it",
     "choices": [
       "Newly deciphered Hittite texts revealed a consonant sitting exactly where he had placed it",
@@ -21438,7 +21295,7 @@
   },
   {
     "tier": 5,
-    "question": "Ferdinand de Saussure granted that the French word 'mouton' and the English word 'sheep' point to the very same animal. Yet English keeps a second word, 'mutton', for that animal once it is cooked and on the plate, while French lets 'mouton' cover both the field and the plate. Saussure seized on this: the two words name the same creature, but they are not worth the same. So what truly fixes the worth a single word carries?",
+    "question": "The French word 'mouton' and the English word 'sheep' point to the very same animal, Ferdinand de Saussure granted. Yet English keeps a second word, 'mutton,' for the animal once it is cooked and on the plate, while French lets 'mouton' cover both field and plate. The two words name one creature, Saussure said, but they are not worth the same. What fixes the worth a word carries?",
     "answer": "The other words around it, which divide up the ground and leave it only its share",
     "choices": [
       "The other words around it, which divide up the ground and leave it only its share",
@@ -21529,7 +21386,7 @@
   },
   {
     "tier": 2,
-    "question": "A kid begs for a new bike for months, aching every time he passes one in a shop window. Then he finally gets it. Arthur Schopenhauer said that getting what you crave never brings lasting happiness. The moment a desire is satisfied, an opposite misery rushes in to replace it, and life just swings between the two. What is that second misery that arrives once you finally have the thing?",
+    "question": "A boy begs for a new bike for months, aching every time he passes one in a shop window. Then he finally gets it. Arthur Schopenhauer said that getting what one craves never brings lasting happiness: the moment a desire is satisfied, an opposite misery rushes in, and life swings between the two. What is that second misery?",
     "answer": "Boredom, nothing feels worth wanting once the craving dies",
     "choices": [
       "Boredom, nothing feels worth wanting once the craving dies",
@@ -21555,7 +21412,7 @@
   },
   {
     "tier": 2,
-    "question": "Arthur Schopenhauer, a young and unknown lecturer in Berlin in 1820, despised the era's celebrity philosopher, G.W.F. Hegel, whose lectures packed enormous halls. Burning with spite and certain his own genius would pull the crowd away, the unknown man made one arrogant move to go head to head with his famous rival. What did Schopenhauer do?",
+    "question": "An unknown young lecturer in Berlin in 1820, Arthur Schopenhauer despised Hegel, the celebrity philosopher of the age, whose lectures packed enormous halls. Burning with spite and certain his own genius would pull the crowd away, Schopenhauer made one move to go head to head with his famous rival. What did he do?",
     "answer": "He scheduled his own lectures for the very same hour as Hegel's",
     "choices": [
       "He scheduled his own lectures for the very same hour as Hegel's",
@@ -21568,7 +21425,7 @@
   },
   {
     "tier": 3,
-    "question": "Arthur Schopenhauer claimed the world has two faces. One is the world as it appears to us: solid objects laid out in space and time, orderly, measurable, the world we see. But he insisted there is a second, hidden face beneath the appearances, what the world truly is in itself. How did Schopenhauer describe that hidden inner reality of everything?",
+    "question": "Arthur Schopenhauer claimed the world has two faces. One is the world as it appears: solid objects laid out in space and time, orderly and measurable. Beneath the appearances, he insisted, lies a second, hidden face, what the world truly is in itself. How did he describe that hidden inner reality of everything?",
     "answer": "A single blind striving, a goalless, hungry drive pushing through all things",
     "choices": [
       "A single blind striving, a goalless, hungry drive pushing through all things",
@@ -21594,7 +21451,7 @@
   },
   {
     "tier": 4,
-    "question": "The philosopher Gottfried Leibniz had famously argued that because a good God made it, ours must be the best of all possible worlds. Arthur Schopenhauer thought this was a grotesque joke. He countered that our world is so riddled with misery it is closer to the WORST world that could still hold together, and he offered a brutal challenge to any cheerful optimist to prove it. What was Schopenhauer's challenge?",
+    "question": "Gottfried Leibniz had argued that because a good God made it, ours must be the best of all possible worlds. Arthur Schopenhauer thought this a grotesque joke. Our world, he countered, is so riddled with misery that it is closer to the worst world that could still hold together, and he offered any cheerful optimist a brutal challenge. What was it?",
     "answer": "Walk the optimist through hospitals, operating rooms, prisons, and battlefields",
     "choices": [
       "Walk the optimist through hospitals, operating rooms, prisons, and battlefields",
@@ -21607,7 +21464,7 @@
   },
   {
     "tier": 4,
-    "question": "Arthur Schopenhauer taught that life is essentially suffering, the endless ache of a craving that can never be filled. You might expect him to recommend suicide as the way out. He firmly rejected it, and not on religious grounds; he argued suicide fails to solve the real problem on its own terms. In Schopenhauer's reasoning, why does killing yourself NOT actually free a person from suffering?",
+    "question": "Arthur Schopenhauer taught that life is essentially suffering, the endless ache of a craving that can never be filled. A reader might expect him to recommend suicide as the way out. He firmly rejected it, and not on religious grounds: suicide, he argued, fails on its own terms. Why, in his reasoning, does it not free a person from suffering?",
     "answer": "It kills one body, but the will that drives all suffering is the real source and is untouched",
     "choices": [
       "It kills one body, but the will that drives all suffering is the real source and is untouched",
@@ -21620,7 +21477,7 @@
   },
   {
     "tier": 5,
-    "question": "Schopenhauer argued that the true foundation of morality is compassion, not reason, not duty, not divine command. When you act with real kindness toward a suffering stranger, he said, something in you has seen past an illusion that ordinary life takes for granted. He claimed the compassionate person has glimpsed a hidden truth about the deepest nature of reality itself. What is the illusion that compassion sees through?",
+    "question": "Suppose you feel a suffering stranger's pain as your own. Arthur Schopenhauer, who founded morality on compassion rather than on reason, duty or divine command, said you would then have seen past an illusion that ordinary life takes for granted, and glimpsed the deepest nature of reality. What illusion has your compassion seen through?",
     "answer": "That you and every other living thing are truly separate beings",
     "choices": [
       "That you and every other living thing are truly separate beings",
@@ -21633,7 +21490,7 @@
   },
   {
     "tier": 3,
-    "question": "Seneca had been the boyhood tutor of the emperor Nero. In AD 65, after a failed plot against him, Nero sent soldiers to Seneca's villa. The tribune reported that the old philosopher showed no sign of alarm, so Nero sent a centurion to pronounce the sentence. What did the order command?",
+    "question": "Seneca had been the boyhood tutor of the emperor Nero. After a plot against Nero failed in AD 65, the emperor sent soldiers to Seneca's villa. When the tribune reported that the old philosopher showed no sign of alarm, Nero sent a centurion to pronounce the sentence. What did the order command?",
     "answer": "That Seneca was to die by his own hand",
     "choices": [
       "That Seneca was to die by his own hand",
@@ -21646,7 +21503,7 @@
   },
   {
     "tier": 3,
-    "question": "In 65 AD, the Roman Stoic philosopher Seneca — once tutor and adviser to the emperor Nero — was ordered by Nero himself to take his own life, on the charge of plotting against the throne. Seneca calmly opened the veins in his arms and began to bleed to death, but his elderly body was slow and the dying dragged on for hours. As his blood slowly drained away, how did Seneca spend his final hours?",
+    "question": "Condemned by his old pupil Nero in AD 65, Seneca calmly opened the veins in his arms and began to bleed to death. But his elderly body bled slowly, and the dying dragged on for hours. How did Seneca spend those final hours as his blood drained away?",
     "answer": "Called his secretaries and dictated a long discourse",
     "choices": [
       "Sang an old soldier's hymn until his voice failed",
@@ -21659,7 +21516,7 @@
   },
   {
     "tier": 4,
-    "question": "When Seneca cut open the veins of his arms to die, his blood crept out far too slowly to kill him, and he had to slash the arteries behind his knees and in his legs too. Why did Seneca's blood flow so slowly that the cuts to his arms could not finish him?",
+    "question": "Cutting the veins of his arms did not kill Seneca: his blood crept out far too slowly, and he had to slash the arteries behind his knees and in his legs as well. Why did his blood flow so slowly that the cuts to his arms could not finish him?",
     "answer": "His own frugal living had left his aged body thin",
     "choices": [
       "His physician had drugged the wine to dull his pain",
@@ -21685,7 +21542,7 @@
   },
   {
     "tier": 4,
-    "question": "Seneca spent the letters of his final years teaching that philosophy is a rehearsal for hardship, and that the day we dread as our last is really 'the birthday of eternity.' He told his student to practice for death itself. According to Seneca, once a person has truly learned how to die, what has that person unlearned?",
+    "question": "The letters of Seneca's final years teach that philosophy is a rehearsal for hardship, and that the day a person dreads as his last is really 'the birthday of eternity.' He told his student to practice for death itself. Once a person has truly learned how to die, according to Seneca, what has he unlearned?",
     "answer": "How to be a slave",
     "choices": [
       "How to feel pure joy",
@@ -21724,7 +21581,7 @@
   },
   {
     "tier": 2,
-    "question": "The 8th-century Indian sage Shankara — the great teacher of the Advaita Vedanta school of Hindu philosophy — asks you to picture this: you are walking home along a dim path at dusk when you freeze. There, coiled right at your feet, is a snake. Your heart pounds. Then someone comes with a lamp and holds the light steady over the shape. In the lamplight, what do you actually find lying on the path?",
+    "question": "Shankara's best-known story is set at dusk on a dim path. Suppose you are walking home along it when you freeze: there, coiled right at your feet, is a snake, and your heart pounds. Then a lamp is brought, and its light is held steady over the shape. What do you actually find lying on the path?",
     "answer": "Only a coiled rope, lying still; no snake was ever there at all",
     "choices": [
       "A live snake, gliding off the coiled rope it had rested on",
@@ -21737,7 +21594,7 @@
   },
   {
     "tier": 2,
-    "question": "In Shankara's parable, a lamp's light suddenly shows that the frightening 'snake' on the path was only a coiled rope, and at once your terror drains away. Shankara presses a single question about that relief. What, exactly, did the work of freeing you from the snake?",
+    "question": "Shankara pressed a single question about a moment of relief. Suppose you see a frightening snake on your path, and then a lamp's light shows it was only a coiled rope; at once your terror drains away. What, exactly, did the work of freeing you from the snake?",
     "answer": "Knowing the truth, which left no snake there to fight or flee from",
     "choices": [
       "Your courage, which let you stand your ground instead of bolting away",
@@ -21750,7 +21607,7 @@
   },
   {
     "tier": 3,
-    "question": "In Shankara's rope-and-snake story, the instant you 'see the snake' your heart hammers and you leap back -- yet a lamp then reveals there was only a rope. A student scoffs: if no snake was ever there, then your terror was foolish and false. How does Shankara answer that charge?",
+    "question": "A student scoffed at Shankara's rope-and-snake story. Suppose you see the snake on a dim path: your heart hammers and you leap back, until a lamp shows there was only a rope. If no snake was ever there, the student said, your terror was foolish and false. How did Shankara answer that charge?",
     "answer": "The fear was real; only the thing it reacted to had ever been unreal",
     "choices": [
       "The fear was an error too, and it dies the very moment the rope is seen",
@@ -21763,7 +21620,7 @@
   },
   {
     "tier": 4,
-    "question": "Shankara, the young wandering monk, challenged the great ritual-scholar Mandana Mishra to a debate: does sacred action free the soul, or does KNOWLEDGE? By legend they chose a startling judge -- Mandana's own wife, Ubhaya Bharati -- and she settled the contest not by weighing the arguments at all, but by a quiet physical sign. What sign did she watch?",
+    "question": "Shankara, a young wandering monk, challenged the great ritual scholar Mandana Mishra to debate whether the soul is freed by sacred action or by knowledge. By legend they chose a startling judge, Mandana's own wife, Ubhaya Bharati, and she settled the contest not by weighing the arguments but by a quiet physical sign. What sign did she watch?",
     "answer": "A fresh flower garland she hung on each man, whoever's wilted first to lose",
     "choices": [
       "A fresh flower garland she hung on each man, whoever's wilted first to lose",
@@ -21776,7 +21633,7 @@
   },
   {
     "tier": 4,
-    "question": "Shankara gathers a whole family of perceptual mistakes that all operate in exactly the same way. A clear crystal appears red because a bright red flower happens to sit directly behind it. A tiny scratch on a mirror seems to be a blemish located on your own face. A coiled rope in dim light suddenly reads as a menacing snake. In every one of these familiar examples, what is the single underlying error a person is making?",
+    "question": "Shankara gathered a whole family of mistakes that all work the same way. A clear crystal appears red because a bright red flower sits directly behind it. Suppose you take a scratch on a mirror for a blemish on your own face, or a coiled rope in dim light for a snake. What single error are you making each time?",
     "answer": "You take something real from elsewhere and lay it over what is in front of you",
     "choices": [
       "You let your eyes invent colors and shapes that the things never truly had at all",
@@ -21789,7 +21646,7 @@
   },
   {
     "tier": 5,
-    "question": "A skeptic corners the Advaita teacher: that imagined snake was EITHER real or it was nothing -- which was it? The teacher refuses both. The snake was not real, for it was never on the path; yet it was not plain nothing either. What sets it apart from a sheer nothing like a square circle?",
+    "question": "Suppose you mistook a rope for a snake on a dim path. A skeptic then presses a teacher of Shankara's Advaita to say whether that snake was real or simply nothing, and the teacher refuses both answers: the snake was never on the path, yet it was not plain nothing either. What sets it apart from a sheer nothing like a square circle?",
     "answer": "You actually saw it, and it leaned on a real rope, while a square circle leans on nothing at all",
     "choices": [
       "It obeys its own steady laws of nature, while a square circle breaks the laws of logic outright",
@@ -21802,7 +21659,7 @@
   },
   {
     "tier": 5,
-    "question": "Shankara opens his greatest work by naming the single root of every human fear -- and it is the rope-and-snake mistake turned inward. Just as you misread a rope as a snake, he says, each of us misreads one thing as another, and from that one slip flows all our dread of death. What is the thing we misread, and as what?",
+    "question": "Shankara opened his greatest work by naming the single root of every human fear: the rope-and-snake mistake turned inward. As a person misreads a rope as a snake, he said, each of us misreads one thing as another, and all dread of death springs from that one slip. What is the inward mistake?",
     "answer": "We take the deathless witness, the 'I,' for the body and mind that are born and die",
     "choices": [
       "We take our short borrowed lives for a self that can somehow never really die",
@@ -21815,7 +21672,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1929, two students crammed together for the agregation, France's brutal national philosophy exam. Jean-Paul Sartre placed first; the 21-year-old beside him placed second, the youngest person ever to pass it. Simone de Beauvoir and Sartre would stay partners for life but never marry. What unusual arrangement did the pair agree to instead?",
+    "question": "Two students crammed side by side in 1929 for the agrégation, France's brutal national philosophy exam. Jean-Paul Sartre placed first; the 21-year-old beside him placed second, the youngest person ever to pass it. Simone de Beauvoir and Sartre stayed partners for life but never married. What unusual arrangement did the pair agree to instead?",
     "answer": "They were each other's essential love, free to have other affairs but pledged to disclose them",
     "choices": [
       "They were each other's essential love, free to have other affairs but pledged to disclose them",
@@ -21828,7 +21685,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1949 the French philosopher Simone de Beauvoir opened the second half of her book The Second Sex with a line that became famous: 'One is not born, but rather becomes, a woman.' Beauvoir was not denying that male and female bodies differ — she knew perfectly well that they do. So what was she actually claiming with that sentence?",
+    "question": "The second half of Simone de Beauvoir's 1949 book The Second Sex opens with a line that became famous: 'One is not born, but rather becomes, a woman.' Beauvoir was not denying that male and female bodies differ; she knew perfectly well that they do. What was she actually claiming with that sentence?",
     "answer": "That the ROLE of 'woman' is built into a girl by upbringing, not handed to her at birth",
     "choices": [
       "That the ROLE of 'woman' is built into a girl by upbringing, not handed to her at birth",
@@ -21841,7 +21698,7 @@
   },
   {
     "tier": 4,
-    "question": "Simone de Beauvoir noticed a lopsidedness in how people talk: a man asked who he is never starts by announcing that he is male; it simply goes without saying. A woman, she observed, is forever called 'the sex' she belongs to. Beauvoir summed up the woman in this picture with one word: she is 'the Other.' When Beauvoir called woman 'the Other,' what did she mean by it?",
+    "question": "A man asked who he is never starts by announcing that he is male, Simone de Beauvoir noticed; that simply goes without saying. She saw a lopsidedness in how people talk, and she had a name for where it leaves a woman: 'the Other.' In what sense, for Beauvoir, is woman the Other?",
     "answer": "She is the relative term, defined always by reference to man, while man is defined by reference to no one",
     "choices": [
       "She is the relative term, defined always by reference to man, while man is defined by reference to no one",
@@ -21854,7 +21711,7 @@
   },
   {
     "tier": 4,
-    "question": "To show how deep the habit of treating man as the standard human ran, Simone de Beauvoir reached back into the Western tradition. She quoted Aristotle calling the female a female 'by lack of qualities.' She quoted Thomas Aquinas describing woman as an 'imperfect man.' What pattern was Beauvoir using these old voices to expose?",
+    "question": "Aristotle called the female a female 'by lack of qualities,' and Thomas Aquinas described woman as an 'imperfect man.' Simone de Beauvoir reached back into the Western tradition and quoted them both. What pattern was she using these old voices to expose?",
     "answer": "That maleness was taken as the complete human pattern, and femaleness as a falling-short of it",
     "choices": [
       "That maleness was taken as the complete human pattern, and femaleness as a falling-short of it",
@@ -21893,7 +21750,7 @@
   },
   {
     "tier": 2,
-    "question": "Peter Singer asks you to picture this: you're walking past a shallow pond and notice a small child face-down in the water, drowning. No one else is around. You could wade in and pull the child out, and the only cost is muddy, ruined clothes. Almost everyone who hears this agrees on one thing instantly, before any argument is even made. What is that shared first reaction Singer builds his entire case on?",
+    "question": "Suppose you are walking past a shallow pond and see a small child face-down in the water, drowning. You could wade in and pull the child out, and the only cost is muddy, ruined clothes. Almost everyone who hears Peter Singer's case agrees on one thing at once. What is that shared first reaction?",
     "answer": "You're obligated to wade in; the cost to you is nothing beside a child's life.",
     "choices": [
       "You're obligated to wade in; the cost to you is nothing beside a child's life.",
@@ -21906,7 +21763,7 @@
   },
   {
     "tier": 2,
-    "question": "Peter Singer wrote his drowning-child essay in November 1971. A famine had driven nine million refugees from Bangladesh into starvation. Singer put the aid rich countries gave next to their own luxuries. Australia had spent twelve times more on its new Sydney opera house than on the refugees. What did he take that comparison to prove?",
+    "question": "Peter Singer wrote his drowning-child essay in November 1971. A famine had driven nine million refugees from Bangladesh into starvation, and Singer set the aid rich countries gave beside their own luxuries. Australia, for one, had spent twelve times more on its new Sydney Opera House than on the refugees. What did he take that comparison to prove?",
     "answer": "That the rich world weighs its own comforts above distant lives, ranking the two exactly upside down.",
     "choices": [
       "That the rich world weighs its own comforts above distant lives, ranking the two exactly upside down.",
@@ -21919,7 +21776,7 @@
   },
   {
     "tier": 3,
-    "question": "From the drowning-child case, Peter Singer extracts a general principle and then turns it on everyday life. Say the money you would spend on a new shirt could instead keep a faraway child from dying of a preventable disease. Singer says the duty that pulls you into the pond also reaches your wallet. Which principle is he relying on?",
+    "question": "Peter Singer draws a general principle from the drowning child and turns it on everyday life. Suppose you could take the money you would spend on a new shirt and use it to keep a faraway child from dying of a preventable disease. Singer says the duty that pulls you into the pond reaches your wallet too. Which principle is he relying on?",
     "answer": "If you can prevent something bad without giving up anything comparable, you must.",
     "choices": [
       "If you can prevent something bad without giving up anything comparable, you must.",
@@ -21932,7 +21789,7 @@
   },
   {
     "tier": 3,
-    "question": "A common reply to Singer: surely you owe more to a child drowning ten yards away than to a stranger ten thousand miles off. Singer rejects this reply, insisting distance carries no moral weight. According to Singer, what is the only thing that really changes as the child gets farther from you?",
+    "question": "Suppose you learn of two children in danger: one drowning ten yards from you, the other a stranger ten thousand miles off. A common reply to Peter Singer says you surely owe more to the near one. Singer rejects it, insisting that distance carries no moral weight. What is the only thing that really changes with the miles, on his view?",
     "answer": "How strongly you happen to feel about it",
     "choices": [
       "How strongly you happen to feel about it",
@@ -21945,7 +21802,7 @@
   },
   {
     "tier": 3,
-    "question": "Twenty adults stand around Peter Singer's shallow pond while a child drowns, and every one of them refuses to step in. You are the twenty-first, and you could still save the child yourself. Someone offers you an out: with so many others who could have acted, you can't really be on the hook alone. Singer rejects this escape. On his view, what does everyone else's refusal do to YOUR obligation?",
+    "question": "Twenty adults stand around Peter Singer's shallow pond while a child drowns, and every one of them refuses to step in. Suppose you are the twenty-first, and you could still save the child yourself. Someone offers you an out: with so many others who could have acted, you can't be on the hook alone. Singer rejects the escape. What does everyone else's refusal do to your obligation?",
     "answer": "Nothing; others refusing can't shrink a duty only you can still discharge.",
     "choices": [
       "Nothing; others refusing can't shrink a duty only you can still discharge.",
@@ -21958,7 +21815,7 @@
   },
   {
     "tier": 4,
-    "question": "Push Singer's logic to its end and it turns brutal: he says give until one more dollar would hurt you as much as it helps, which, he admits, means giving until you are nearly as poor as the refugees you're helping. So buying a coffee instead of a malaria net becomes morally WRONG. The philosopher Susan Wolf pressed the natural objection. What was her complaint against a morality this total?",
+    "question": "Peter Singer's logic turns severe at its end. He says to keep giving until one more dollar would cost the giver as much as it helps the receiver, which, he admits, means giving until the giver is nearly as poor as the refugees. On that view, buying a coffee instead of a malaria net is morally wrong. Susan Wolf pressed an objection. What was her complaint against a morality this total?",
     "answer": "It asks more than any real person can live by, leaving no room for an ordinary good life.",
     "choices": [
       "It asks more than any real person can live by, leaving no room for an ordinary good life.",
@@ -21971,7 +21828,7 @@
   },
   {
     "tier": 4,
-    "question": "The Australian philosopher Peter Singer once asked: if you walked past a shallow pond and saw a small child drowning, you would rush in and save the child, even if it ruined your good shoes. Singer argues that distant children dying of malaria make the very same moral claim on you. So consider a father who spends his monthly surplus on his own kids' shoes, braces, and swimming lessons rather than wiring it to a malaria charity that could save several distant children with the same money. Singer's pond logic seems to convict this father of doing wrong. A critic answers that the father has it right, and grounds the defense in a duty he genuinely owes. Which ground is the critic appealing to?",
+    "question": "A father spends his monthly surplus on his own children's shoes, braces and swimming lessons rather than sending it to a malaria charity that could save several distant children. Peter Singer's drowning-child logic, in which a distant child makes the same claim as a child in a pond, seems to convict him. A critic says the father has it right. What duty does the critic appeal to?",
     "answer": "A duty owed first to the very children he has taken into his care.",
     "choices": [
       "A duty owed first to the very children he has taken into his care.",
@@ -21984,7 +21841,7 @@
   },
   {
     "tier": 4,
-    "question": "Bernard Williams answered the impartial-duty crowd with a sharp little case. A man can save only one of two drowning people, and one of them is his WIFE. He saves her. But suppose that before diving he reasons: 'It's my wife, and in a situation like this it is morally permitted to save one's wife.' What did Williams say about that extra step of reasoning?",
+    "question": "Bernard Williams answered the champions of impartial duty with a sharp little case. A man can save only one of two drowning people, and one of them is his wife. He saves her. But suppose that before diving he reasons: 'It's my wife, and in a situation like this it is morally permitted to save one's wife.' What did Williams say about that extra step of reasoning?",
     "answer": "He had one thought too many; the justifying was already a small betrayal of the love.",
     "choices": [
       "He had one thought too many; the justifying was already a small betrayal of the love.",
@@ -21997,7 +21854,7 @@
   },
   {
     "tier": 1,
-    "question": "Socrates walked around the Athens marketplace barefoot, in one worn cloak. He would talk about ideas with anyone who would listen. Other teachers, the Sophists, took big fees to teach the sons of rich men. What did Socrates do about pay for his talks?",
+    "question": "Socrates would talk about ideas with anyone in the Athens marketplace who cared to listen. Other teachers, the Sophists, took big fees to teach the sons of rich men. What did Socrates do about pay for his talks?",
     "answer": "He refused to take any money for them at all",
     "choices": [
       "He refused to take any money for them at all",
@@ -22010,7 +21867,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 5th century BC, the city of Athens took great pride in fine looks and fine clothes. Into those elegant streets walked the philosopher Socrates. He went barefoot in every season, unwashed, in the same plain cloak by day and by night, and he carried only a rough walking stick. What stood out most about how Socrates lived?",
+    "question": "Athens took great pride in fine looks and fine clothes. Into its elegant streets walked Socrates, barefoot in every season, unwashed, in the same plain cloak by day and by night, carrying only a rough walking stick. What stood out most about how he lived?",
     "answer": "He owned almost nothing and never cared to",
     "choices": [
       "He owned almost nothing and never cared to",
@@ -22023,7 +21880,7 @@
   },
   {
     "tier": 2,
-    "question": "Socrates shaped the whole course of Western philosophy. Yet when scholars go looking for his writings, they find a strange gap. Everything we know of him lives on because his students Plato and Xenophon carefully preserved his sayings in ink. Why must we rely on what other people recorded?",
+    "question": "Scholars who go looking for the writings of Socrates, the man who shaped the whole course of Western philosophy, find a strange gap. All that is known of him survives because his students Plato and Xenophon set down his sayings in ink. Why must readers rely on what other people recorded?",
     "answer": "Socrates himself never wrote down a single line",
     "choices": [
       "Socrates himself never wrote down a single line",
@@ -22049,7 +21906,7 @@
   },
   {
     "tier": 2,
-    "question": "At his trial in ancient Athens, the philosopher Socrates was practically offered his life back if he would only stop questioning everything and live quietly from then on. He refused, saying that a certain kind of life was no life worth living at all. Soon after the verdict he was put to death by drinking hemlock. What did Socrates say was not worth living?",
+    "question": "Socrates was all but offered his life back at his trial in Athens, if only he would stop questioning everything and live quietly. He refused, saying that a certain kind of life was not worth living, and soon after the verdict he was put to death with hemlock. What kind of life did he mean?",
     "answer": "A life that is never examined",
     "choices": [
       "A life that is never examined",
@@ -22062,7 +21919,7 @@
   },
   {
     "tier": 2,
-    "question": "The 5th-century BC Athenian philosopher Socrates married a woman named Xanthippe, remembered ever after for her fiery temper. One story, retold centuries later by the Roman writer Diogenes Laertius, tells how Xanthippe once scolded Socrates until she had shouted herself hoarse — and then emptied a whole pitcher of cold water over his head. Socrates did not lose his temper. He answered with a quip. What did Socrates say?",
+    "question": "Xanthippe, the wife of Socrates, was remembered ever after for her fiery temper. In one story, retold centuries later by Diogenes Laertius, she scolded him until she had shouted herself hoarse and then emptied a whole pitcher of cold water over his head. Socrates kept his temper and answered with a quip. What did he say?",
     "answer": "Did I not say her thunder would end in rain?",
     "choices": [
       "Did I not say her thunder would end in rain?",
@@ -22075,7 +21932,7 @@
   },
   {
     "tier": 3,
-    "question": "When the oracle at Delphi declared no man wiser than Socrates, he was stunned, for how could that be true? He spent years cross-examining the citys celebrated wise men, and finally grasped what the god must have meant. What did Socrates conclude the oracle meant?",
+    "question": "The oracle at Delphi declared no man wiser than Socrates, and he was stunned. He spent years cross-examining the city's celebrated wise men until he finally grasped what the god must have meant. What did Socrates conclude the oracle meant?",
     "answer": "He alone knew the true extent of his own ignorance",
     "choices": [
       "He alone knew the true extent of his own ignorance",
@@ -22088,7 +21945,7 @@
   },
   {
     "tier": 3,
-    "question": "Socrates mother Phaenarete worked as a midwife, helping mothers bring their babies into the world. Socrates claimed his own work was just the same as hers, though plainly he birthed no infants. When Socrates called himself a midwife, what did he mean he did?",
+    "question": "Socrates' mother, Phaenarete, worked as a midwife, helping mothers bring their babies into the world. Socrates claimed his own work was just the same as hers, though plainly he delivered no infants. When he called himself a midwife, what did he mean he did?",
     "answer": "Helped people give birth to truths already inside them",
     "choices": [
       "Helped people give birth to truths already inside them",
@@ -22127,7 +21984,7 @@
   },
   {
     "tier": 4,
-    "question": "Everyone quotes Socrates as saying I know that I know nothing, four neat words of humble wisdom. But scholars point out he never said it in that snappy form anywhere in Plato. What Socrates actually claimed in his trial was something subtler. What did Socrates really say?",
+    "question": "A famous slogan has Socrates saying that he knows only one thing: that he knows nothing. Yet the line in that snappy form appears nowhere in Plato. What he claimed at his trial, setting himself beside the experts, was subtler. What did Socrates really say?",
     "answer": "I neither know, nor think that I know",
     "choices": [
       "I neither know, nor think that I know",
@@ -22140,7 +21997,7 @@
   },
   {
     "tier": 4,
-    "question": "Years before the trial, the comic playwright Aristophanes put Socrates on the Athenian stage in a comedy called The Clouds, running a school for clever nonsense. The crowd roared at his very first entrance, an absurd sight that Aristophanes dreamed up just for the laugh. How did Socrates first appear in the play?",
+    "question": "Aristophanes, the comic playwright, put Socrates on the Athenian stage years before his trial, in a comedy called The Clouds, running a school for clever nonsense. The crowd roared at his very first entrance, an absurd sight Aristophanes dreamed up just for the laugh. How did Socrates first appear in the play?",
     "answer": "Dangling in a hanging basket, treading the air",
     "choices": [
       "Dangling in a hanging basket, treading the air",
@@ -22153,20 +22010,7 @@
   },
   {
     "tier": 3,
-    "question": "Socrates loved to trap a man who bragged he was an expert. He would say he knew nothing himself and humbly beg to be taught — then a few gentle, simple-sounding questions tied the expert in knots until it was clear the man had never understood his own claim. What was Socrates up to?",
-    "answer": "Pretending to be the clueless one so the expert would talk himself into a corner",
-    "choices": [
-      "Pretending to be the clueless one so the expert would talk himself into a corner",
-      "Sincerely confessing he was lost and hoping the expert could finally settle the matter",
-      "Buttering up the expert so the flattered man would let slip a closely guarded secret",
-      "Killing time politely because he had not yet thought of a sharp objection to raise"
-    ],
-    "context": "This is the move called Socratic irony — from the Greek 'eironeia,' meaning feigned ignorance or shamming. Socrates feigns ignorance as part of a strategy for exposing the ignorance of the person he is questioning; the pretended confusion is the tactic, not real bewilderment. Source: Internet Encyclopedia of Philosophy, 'Socrates' (iep.utm.edu/socrates).",
-    "topic": "socratic-irony"
-  },
-  {
-    "tier": 4,
-    "question": "Euthyphro is so sure he understands holiness that he has come to court to prosecute his own father for a killing. Socrates greets him, says he knows nothing of holiness himself, and asks Euthyphro to teach him so he might become his pupil. Five attempts at a definition later, Euthyphro abruptly claims he is late and hurries away. Why had Socrates asked to be Euthyphro's student?",
+    "question": "Socrates had a favourite trick for any man who claimed to be an expert. Euthyphro, sure he knew what holiness demanded, had come to court to prosecute his own father for a killing. Socrates said he knew nothing of holiness and asked to become his pupil. Five failed definitions later, Euthyphro said he was late and hurried away. Why had Socrates asked to be his student?",
     "answer": "He was setting a trap to push Euthyphro into trying and failing to define holiness plainly",
     "choices": [
       "He was setting a trap to push Euthyphro into trying and failing to define holiness plainly",
@@ -22174,12 +22018,12 @@
       "He hoped that a friendly chat might persuade Euthyphro to drop the case against his own father",
       "He wanted to delay the hearing long enough for his own accusers to lose interest in his case"
     ],
-    "context": "In Plato's 'Euthyphro' (5a-b) Socrates says he 'can learn from him and will become his pupil' — the meek-pupil pose was the trap. After five failed definitions of holiness, Euthyphro 'abruptly ends the conversation and walks away, pretending to be late.' Sources: IEP, 'Socrates' (Euthyphro 5a-b); LitCharts, 'Euthyphro' summary.",
+    "context": "This is the move called Socratic irony — from the Greek 'eironeia,' meaning feigned ignorance or shamming. Socrates feigns ignorance as part of a strategy for exposing the ignorance of the person he is questioning; the pretended confusion is the tactic, not real bewilderment. In Plato's 'Euthyphro' (5a-b) Socrates says he 'can learn from him and will become his pupil' — the meek-pupil pose was the trap. After five failed definitions of holiness, Euthyphro 'abruptly ends the conversation and walks away, pretending to be late.' Sources: Internet Encyclopedia of Philosophy, 'Socrates' (iep.utm.edu/socrates; Euthyphro 5a-b); LitCharts, 'Euthyphro' summary.",
     "topic": "socratic-irony"
   },
   {
-    "tier": 2,
-    "question": "Thomas Sowell's most-quoted line, from a 2005 TV interview, is: \"There are no solutions, there are only trade-offs.\" Imagine a friend says a new rule will \"solve\" the litter in your park. Taking Sowell's line seriously, which worry would he most want you to raise?",
+    "tier": 3,
+    "question": "Thomas Sowell's best-known line is \"There are no solutions, there are only trade-offs,\" and he held that a solution is reached only when nothing at all has to be traded away. Suppose you hear a friend promise that a new rule will \"solve\" the litter in your park. Which worry would Sowell most want you to raise?",
     "answer": "Some cost lands on people you will never see or count.",
     "choices": [
       "Some cost lands on people you will never see or count.",
@@ -22187,12 +22031,12 @@
       "The loudest complainers should set what the rule does.",
       "A plan is fine as long as its first results look good."
     ],
-    "context": "Sowell's point is that every choice spends something - there is no free fix, only a better-or-worse exchange. The perfection worry (\"wipe it out entirely?\") chases a fantasy; letting the loudest voices decide is a different mistake; judging by the first visible results stops at \"Stage One,\" the immediate price. His move presses past all of that to the cost that does NOT show up in front of you - the people who quietly pay and never get counted. Source: Sowell, 2005 Fox News interview with Fred Barnes (https://www.aei.org/carpe-diem/video-thomas-sowells-most-profound-economic-insight-and-his-three-questions-for-the-left/).",
+    "context": "Sowell's strict definition: \"A solution is achieved when it is no longer necessary to make a trade-off.\" Every choice spends something - there is no free fix, only a better-or-worse exchange, so what people call a \"solution\" is usually a trade-off in disguise. The perfection worry (\"wipe it out entirely?\") chases a fantasy; letting the loudest voices decide is a different mistake; judging by the first visible results stops at \"Stage One,\" the immediate price. His move presses past all of that to the cost that does NOT show up in front of you - the people who quietly pay and never get counted. Source: Sowell, 2005 Fox News interview with Fred Barnes (https://www.aei.org/carpe-diem/video-thomas-sowells-most-profound-economic-insight-and-his-three-questions-for-the-left/); Sowell, A Conflict of Visions (1987), quoted at https://holisticinvestor.substack.com/p/there-are-no-solutions-only-trade",
     "topic": "sowell-trade-offs-and-compared-to-what"
   },
   {
     "tier": 2,
-    "question": "Thomas Sowell taught a three-word question he said would deflate most arguments he disagreed with: \"Compared to what?\" A town council is judging a flawed bus plan. One member calls it a failure because it isn't perfect. By Sowell's move, what should the plan actually be measured against?",
+    "question": "A town council is judging a flawed bus plan, and one member calls it a failure because it isn't perfect. Thomas Sowell had a three-word question for moments like this, one he said would deflate most arguments he disagreed with: \"Compared to what?\" By that question, what should the plan be measured against?",
     "answer": "The best real alternative the town could choose instead.",
     "choices": [
       "The best real alternative the town could choose instead.",
@@ -22205,7 +22049,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Sowell was born in 1930 in the segregated American South. His father died before he was born, and he grew up in Harlem. He dropped out of high school and served as a Marine Corps photographer before he ever reached Harvard University. As a young man he held one strong political conviction that he would later spend his entire career attacking. What was it?",
+    "question": "Thomas Sowell was born in 1930 in the segregated American South. His father died before he was born, and he grew up in Harlem. He dropped out of high school and served as a Marine Corps photographer before he ever reached Harvard. As a young man he held one strong conviction that he would spend his career attacking. What was it?",
     "answer": "He was a committed Marxist who believed in the system.",
     "choices": [
       "He was a committed Marxist who believed in the system.",
@@ -22218,20 +22062,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 2003 book \"Applied Economics,\" Thomas Sowell warns against stopping your thinking at \"Stage One\" - the immediate, visible result of a policy. He says many politicians can't see past it because they don't think beyond the next election. How does Sowell say you should judge a policy instead?",
-    "answer": "Trace it to its later effects, which can reverse the first one.",
-    "choices": [
-      "Trace it to its later effects, which can reverse the first one.",
-      "Judge it by whether the immediate, visible result looks good.",
-      "Judge it by how good the intentions behind it clearly are.",
-      "Judge it by whether the right experts endorse its design."
-    ],
-    "context": "The trap is treating the first visible result as the whole story - exactly what the second choice does. Intentions and expert approval are not the test either. Sowell's later stages often run opposite to Stage One, so you follow a policy through to its repercussions. The book's subtitle is literally \"Thinking Beyond Stage One.\" Source: https://en.wikipedia.org/wiki/Applied_Economics:_Thinking_Beyond_Stage_One",
-    "topic": "sowell-trade-offs-and-compared-to-what"
-  },
-  {
-    "tier": 3,
-    "question": "Thomas Sowell gives a plain example of stopping your thinking too early: a state raises taxes on a business. In Stage One, the visible win, the state collects more money. But Sowell says that if you keep tracing it through later stages, the result can flip. What does he say tends to happen next?",
+    "question": "Thomas Sowell's book Applied Economics cautions readers not to halt at \"Stage One,\" the immediate, visible result of a new policy, which many politicians never see past because they think no further than the next election. His example: a state raises taxes on a business, and in Stage One it collects more money. Trace it through the later stages, Sowell says, and the result can flip. What tends to happen next?",
     "answer": "The business moves parts of itself and builds elsewhere.",
     "choices": [
       "The business moves parts of itself and builds elsewhere.",
@@ -22239,12 +22070,12 @@
       "Every other business in the state lowers its own prices.",
       "The state's voters immediately demand even higher taxes."
     ],
-    "context": "New factories get built in other states, and over time the state can end up with LESS revenue, not more - the opposite of the Stage One win. The lesson is that stopping at the first result is the trap. Source: https://en.wikipedia.org/wiki/Applied_Economics:_Thinking_Beyond_Stage_One",
+    "context": "The trap is treating the first visible result as the whole story; intentions and expert approval are not the test either. Sowell's later stages often run opposite to Stage One, so you follow a policy through to its repercussions. Here, new factories get built in other states, and over time the state can end up with LESS revenue, not more - the opposite of the Stage One win. The book's subtitle is literally \"Thinking Beyond Stage One.\" Source: https://en.wikipedia.org/wiki/Applied_Economics:_Thinking_Beyond_Stage_One",
     "topic": "sowell-trade-offs-and-compared-to-what"
   },
   {
     "tier": 3,
-    "question": "In the summer of 1960, the young Marxist Thomas Sowell interned at the U.S. Labor Department studying the minimum wage in Puerto Rico's sugar industry, and found that as the wage rose, employment fell. But the detail that shook him most was about the agency itself. What did Sowell realize about the Labor Department?",
+    "question": "A summer internship at the U.S. Labor Department in 1960 set Thomas Sowell to studying the minimum wage in Puerto Rico's sugar industry, and he found that as the wage rose, employment fell. But the detail that shook him most was about the agency itself. What did Sowell realize about the Labor Department?",
     "answer": "It had little reason to find the harm, since the program funded it.",
     "choices": [
       "It had little reason to find the harm, since the program funded it.",
@@ -22256,21 +22087,8 @@
     "topic": "sowell-trade-offs-and-compared-to-what"
   },
   {
-    "tier": 4,
-    "question": "Thomas Sowell set a strict bar for the word \"solution\": he said you have reached one only when it is no longer necessary to make a trade-off at all. A friend insists a new law has finally \"solved\" a problem for good. By that strict bar, why would Sowell say the thing your friend is describing almost never qualifies?",
-    "answer": "Picking it still means accepting a real cost somewhere.",
-    "choices": [
-      "Picking it still means accepting a real cost somewhere.",
-      "The right experts were never put in charge of building it.",
-      "Most people are simply too lazy to finish the real job.",
-      "A true fix exists, but officials keep it hidden from us."
-    ],
-    "context": "Sowell's strict definition: \"A solution is achieved when it is no longer necessary to make a trade-off.\" Almost every real choice still forces you to bear a cost on one side to gain something on the other, so it never clears that bar - what people call a \"solution\" is usually just a trade-off in disguise, not a job left unfinished, not a missing expert, not a hidden cure. Source: Sowell, A Conflict of Visions (1987), quoted at https://holisticinvestor.substack.com/p/there-are-no-solutions-only-trade",
-    "topic": "sowell-trade-offs-and-compared-to-what"
-  },
-  {
     "tier": 5,
-    "question": "In \"A Conflict of Visions\" (1987), Thomas Sowell splits political thinkers by a single question: WHY does evil exist in the world? One camp, which includes Jean-Jacques Rousseau, blames bad institutions and people's foolish or immoral choices - all of it fixable. Sowell's other camp gives a very different answer about where evil comes from. What does that camp say?",
+    "question": "A Conflict of Visions, Thomas Sowell's book of 1987, splits political thinkers by how they account for the evil in the world. One camp, which includes Jean-Jacques Rousseau, blames bad institutions and people's foolish or immoral choices, all of them fixable. Where does Sowell's other camp say evil comes from?",
     "answer": "It comes from the permanent flaws built into every human being.",
     "choices": [
       "It comes from the permanent flaws built into every human being.",
@@ -22283,7 +22101,7 @@
   },
   {
     "tier": 2,
-    "question": "In July 1656, the rabbis of the Portuguese-Jewish community in Amsterdam pronounced a cherem — a formal ban and curse — against a 23-year-old philosopher named Baruch Spinoza, condemning his 'monstrous deeds' and 'abominable heresies.' Their community had issued many other bans over the years. But this one stood apart from every other in a striking way. What made the curse against Spinoza so unusual?",
+    "question": "The rabbis of Amsterdam's Portuguese-Jewish community pronounced a cherem, a formal ban and curse, against the 23-year-old Baruch Spinoza in July 1656, condemning his 'monstrous deeds' and 'abominable heresies.' The community had issued many other bans, but this one stood apart from every other in one striking way. What made it so unusual?",
     "answer": "It was never lifted",
     "choices": [
       "It was never lifted",
@@ -22309,7 +22127,7 @@
   },
   {
     "tier": 2,
-    "question": "The Dutch philosopher Baruch Spinoza — excommunicated at 23 and later scraping by grinding lenses in the 1660s Netherlands — knew his ideas were dangerous. A fanatic had even tried to stab him outside a synagogue. So Spinoza sealed his letters with a signet ring carved with a thorny rose and a single Latin word. He chose the word for a world he judged was not yet ready for him. What was the word on the ring?",
+    "question": "A fanatic once tried to stab Baruch Spinoza outside a synagogue, and Spinoza knew his ideas were dangerous. So he sealed his letters with a signet ring carved with a thorny rose and a single Latin word, chosen for a world he judged was not yet ready for him. What was the word on the ring?",
     "answer": "Caute",
     "choices": [
       "Caute",
@@ -22322,7 +22140,7 @@
   },
   {
     "tier": 2,
-    "question": "After Amsterdam's Jewish community cursed and cast him out, the young Baruch Spinoza stopped signing his Hebrew name. He picked the Latin form instead. Yet the two names carry the very same meaning. What name did he take, and what do both names mean?",
+    "question": "After Amsterdam's Jewish community cursed and cast him out, the young Baruch Spinoza stopped signing his Hebrew name and took a Latin one with the very same meaning. Which name did he take?",
     "answer": "Benedictus, meaning blessed",
     "choices": [
       "Benedictus, meaning blessed",
@@ -22335,7 +22153,7 @@
   },
   {
     "tier": 3,
-    "question": "The charge that got Baruch Spinoza cursed and expelled at 23 was, in part, his idea about God. He would soon build a whole philosophy out of it, captured in a Latin phrase historians still quote. Setting aside whether he was right, what was Spinoza's actual claim about God and the natural world?",
+    "question": "An idea about God was part of the charge that got Baruch Spinoza cursed and expelled at 23. He went on to build a whole philosophy on it, summed up in a Latin phrase historians still quote. What was his claim about God and the natural world?",
     "answer": "God and Nature are one and the same thing",
     "choices": [
       "God and Nature are one and the same thing",
@@ -22348,7 +22166,7 @@
   },
   {
     "tier": 3,
-    "question": "Baruch Spinoza argued that only one thing genuinely exists in its own right, requiring nothing else in order to exist. He called this a single infinite, eternal substance. Spinoza gave it the philosophical name God, or Nature. So what, in his system, is every rock, mind, and person you can point to?",
+    "question": "Baruch Spinoza argued that only one thing genuinely exists in its own right, requiring nothing else in order to exist: a single infinite, eternal substance, which he called God, or Nature. What, in his system, is every rock, mind and person in the world?",
     "answer": "A passing modification of that one substance",
     "choices": [
       "A passing modification of that one substance",
@@ -22374,7 +22192,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1673 the University of Heidelberg offered Baruch Spinoza its chair of philosophy. The letter promised him ample freedom to teach as he pleased, adding only that the prince trusted he would not use it to disturb the publicly established religion. To most scholars this was a dream post. Spinoza weighed that single clause and declined. What had he seen in it?",
+    "question": "The University of Heidelberg offered Baruch Spinoza its chair of philosophy in 1673. The letter promised him ample freedom to teach as he pleased, adding only that the prince trusted he would not use it to disturb the publicly established religion. To most scholars this was a dream post. Spinoza weighed that single clause and declined. What had he seen in it?",
     "answer": "A permission whose one condition quietly cancelled the permission",
     "choices": [
       "A permission whose one condition quietly cancelled the permission",
@@ -22387,7 +22205,7 @@
   },
   {
     "tier": 4,
-    "question": "Baruch Spinoza ground optical lenses for a living rather than chase fame. His glass was so fine that he kept company with Europe's leading astronomers. In 1665, the famous Christiaan Huygens, who ground his own lenses too, joined Spinoza at a thirty-foot telescope for one remarkable night of stargazing. Which world did they turn it on?",
+    "question": "Christiaan Huygens, the famous astronomer, spent one remarkable night in 1665 beside Baruch Spinoza, a man who had chosen a quiet craft over fame. The two men stood at a thirty-foot telescope through the dark hours. Which world did they turn it on?",
     "answer": "The planet Jupiter",
     "choices": [
       "The planet Jupiter",
@@ -22400,7 +22218,7 @@
   },
   {
     "tier": 5,
-    "question": "Baruch Spinoza held that nothing in Nature is merely possible. Every event was bound to happen, following from God-or-Nature as necessarily as a triangle's three angles follow from what a triangle is. A reader asks: then what about a miracle, an event that suspends the ordinary course of Nature? How must Spinoza answer?",
+    "question": "Baruch Spinoza held that nothing in Nature is merely possible: every event was bound to happen, following from God-or-Nature as necessarily as a triangle's three angles follow from what a triangle is. A reader asks him about miracles, events that suspend the ordinary course of Nature. How must Spinoza answer?",
     "answer": "Nothing can ever run contrary to Nature, so no true miracle is possible",
     "choices": [
       "Nothing can ever run contrary to Nature, so no true miracle is possible",
@@ -22413,7 +22231,7 @@
   },
   {
     "tier": 5,
-    "question": "Baruch Spinoza accepted only one substance, God-or-Nature, knowable in countless ways. Most thinkers of his day puzzled over how a mind and a body manage to push each other around, how a decision moves an arm, how a wound troubles the soul. Spinoza rejected the whole question as wrongly put. In his view, how do a person's mind and body actually relate?",
+    "question": "Thinkers of Baruch Spinoza's day puzzled over how a mind and a body manage to push each other around: how a decision moves an arm, how a wound troubles the soul. Spinoza, who accepted only one substance, God-or-Nature, knowable in countless ways, rejected the whole question as wrongly put. In his view, how do a person's mind and body actually relate?",
     "answer": "They are a single reality described two ways, neither one ever pushing the other",
     "choices": [
       "They are a single reality described two ways, neither one ever pushing the other",
@@ -22426,7 +22244,7 @@
   },
   {
     "tier": 5,
-    "question": "For Baruch Spinoza the highest human good was not pleasure, or power, or even being spared physical death, but something he called the intellectual love of God. This is the joy of a mind that genuinely understands Nature. Its ideas gradually come to mirror the deepest order of God-or-Nature itself. In Spinoza's view, what does a mind gain by attaining this remarkable understanding?",
+    "question": "For Baruch Spinoza the highest human good was not pleasure or power, or even being spared physical death, but what he called the intellectual love of God. It is the joy of a mind that genuinely understands Nature; its ideas gradually come to mirror the deepest order of God-or-Nature itself. What, in Spinoza's view, does such a mind gain?",
     "answer": "It comes to share in eternity",
     "choices": [
       "It comes to share in eternity",
@@ -22439,7 +22257,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1600s Holland, the Dutch-Jewish philosopher Benedict de Spinoza lived quietly as a lens grinder and wrote in secret. He set out to compose a whole book of ethics the same way the ancient Greek mathematician Euclid had written his geometry. Spinoza believed how a person ought to live could be worked out as rigorously as a math proof. How did he actually build the book?",
+    "question": "Benedict de Spinoza set out to write a whole book of ethics the way the ancient Greek mathematician Euclid had written his geometry, believing that how a person ought to live could be worked out as rigorously as a mathematical proof. How did he actually build the book?",
     "answer": "He began from self-evident definitions and axioms, then proved each new claim only from ones already established before it.",
     "choices": [
       "He began from self-evident definitions and axioms, then proved each new claim only from ones already established before it.",
@@ -22452,7 +22270,7 @@
   },
   {
     "tier": 4,
-    "question": "Benedict de Spinoza ended each of his moral proofs about God, the mind, and freedom the way Euclid signs off a proven theorem in geometry: with the geometer's proof-mark, Q.E.D. — quod erat demonstrandum, which was to be demonstrated. By stamping a conclusion about God with the very mark that closes a proof about a triangle, what was he asserting?",
+    "question": "Euclid closes a proven theorem with the geometer's mark, Q.E.D., short for quod erat demonstrandum, 'which was to be demonstrated,' and Benedict de Spinoza closed each of his proofs about God, the mind and freedom the same way. By stamping a conclusion about God with the mark that closes a proof about a triangle, what was he asserting?",
     "answer": "Reason by itself had reached the conclusion, with no appeal to scripture, authority, or revelation.",
     "choices": [
       "Reason by itself had reached the conclusion, with no appeal to scripture, authority, or revelation.",
@@ -22465,7 +22283,7 @@
   },
   {
     "tier": 5,
-    "question": "In the third part of his book the Ethics, the 17th-century Dutch philosopher Benedict de Spinoza turned his geometric method on the human passions — love, hate, jealousy, fear. He vowed to treat these passions as if he were dealing with lines, planes, and solids, aiming not to mock or condemn human actions but to understand them like any other part of nature. What stance toward the emotions did this commit him to?",
+    "question": "Love, hate, jealousy, fear: in the third part of the Ethics, Benedict de Spinoza turned his geometric method on the human passions. He vowed to handle them as though he were dealing with lines, planes and solids, aiming not to mock or condemn human actions but to understand them. What stance toward the emotions did this commit him to?",
     "answer": "They arise from their own causes by strict necessity, so they ask to be explained like any other effect.",
     "choices": [
       "They arise from their own causes by strict necessity, so they ask to be explained like any other effect.",
