@@ -61,6 +61,48 @@ def _now_live(subject: str, h: str) -> bool:
     return h in live
 
 
+def card_gate_after(subject: str, ch: dict) -> list[str]:
+    """Run the card gate (tests/test_ladder_blurb_coverage.py) on every ladder
+    this batch touches, as it will stand after the batch: a dropped rung can
+    leave its card naming another rung's wrong answers. Only NEW failures."""
+    import copy
+    import json
+    from bankbuild.cards.common import CDIR
+    from bankbuild.cards.extract import packet
+    from bankbuild.cards.gate import check_card
+    before_bank = list(_live(subject).values())
+    bank, probs, _ = stage.staged_bank(subject, [ch])
+    if probs:
+        return []                         # stage check reports these
+    cards = json.loads((CDIR / f'{subject}.json').read_text(encoding='utf-8'))
+    after_cards = copy.deepcopy(cards)
+    topic_of = {stem_hash(q['question']): q.get('topic') for q in before_bank}
+    for r in ch.get('replace') or []:
+        nq = (r.get('new') or {}).get('question')
+        te = (after_cards.get(topic_of.get(r['hash'])) or {}).get('teaches')
+        if nq and isinstance(te, dict) and r['hash'] in te:
+            te[stem_hash(nq)] = te.pop(r['hash'])
+    after_topic = {stem_hash(q['question']): q.get('topic') for q in bank}
+    for h, t in topic_of.items():
+        te = (after_cards.get(t) or {}).get('teaches') if isinstance(after_cards.get(t), dict) else None
+        if te and h in te and after_topic.get(h) != t:
+            te.pop(h)
+    touched = {topic_of.get(h) for h in set(ch.get('delete') or [])
+               | {r['hash'] for r in ch.get('replace') or []}}
+    errs = []
+    for t in sorted(x for x in touched if x):
+        old_card, new_card = cards.get(t), after_cards.get(t)
+        if not (isinstance(new_card, dict) and new_card.get('teaches')):
+            continue
+        was = set(check_card(packet(subject, t, [q for q in before_bank if q.get('topic') == t],
+                                    old_card), old_card))
+        for e in check_card(packet(subject, t, [q for q in bank if q.get('topic') == t],
+                                   new_card), new_card):
+            if e not in was:
+                errs.append(f'card gate ({t}): {e}')
+    return errs
+
+
 def problems(subject: str, batch: int) -> list[str]:
     pkt = pending_packet(subject, batch)
     ch = pending_changes(subject, batch)
@@ -180,6 +222,7 @@ def problems(subject: str, batch: int) -> list[str]:
         if not any(h in deleted for h in hs) and g not in named_off:
             errs.append(f'twin group {g} ({", ".join(hs)}): merge it, or list it in '
                         'notes "not_twins" with the reason')
+    errs += card_gate_after(subject, ch)
     return errs
 
 
