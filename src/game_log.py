@@ -4,6 +4,7 @@ Central error/event logging for Philosopher's Quest.
 Writes a verbose, human-readable log to a single, easy-to-find file:
 
     <Documents>/PhilosophersQuest/ERROR_LOG.txt   (rolling: 1 MB x 3 backups)
+    ~/Library/Logs/PhilosophersQuest/ERROR_LOG.txt on a Mac
 
 Playtesters can locate this one file and email it. Crash reports
 (crash_handler.py) are written to the SAME folder AND appended here, so
@@ -32,6 +33,9 @@ def log_dir() -> str:
 
     First writable location wins, in this order:
       1. <Documents>/PhilosophersQuest  -- chosen so testers can find + email it
+         (on a Mac, ~/Library/Logs/PhilosophersQuest instead: macOS asks the
+         player's permission before an app may touch Documents, and the
+         Console app lists ~/Library/Logs)
       2. the game's save directory        (paths.save_dir)
       3. the current working directory     (last resort)
     Cached after the first successful resolution.
@@ -41,8 +45,12 @@ def log_dir() -> str:
         return _LOG_DIR
     candidates = []
     try:
-        candidates.append(
-            os.path.join(os.path.expanduser('~'), 'Documents', 'PhilosophersQuest'))
+        if sys.platform == 'darwin':
+            candidates.append(
+                os.path.join(os.path.expanduser('~'), 'Library', 'Logs', 'PhilosophersQuest'))
+        else:
+            candidates.append(
+                os.path.join(os.path.expanduser('~'), 'Documents', 'PhilosophersQuest'))
     except Exception:
         pass
     try:

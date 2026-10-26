@@ -77,14 +77,14 @@ def test_workflow_runs_version_check_and_tests_before_building():
     assert 'tools/release/check_version.py' in WORKFLOW
     assert re.search(r'python -m pytest tests/', WORKFLOW)
     assert 'SDL_VIDEODRIVER: dummy' in WORKFLOW and 'SDL_AUDIODRIVER: dummy' in WORKFLOW
-    # both build jobs wait for the test job
-    assert len(re.findall(r'^\s+needs: test\s*$', WORKFLOW, re.M)) == 2
+    # all three build jobs (Windows, Linux, macOS) wait for the test job
+    assert len(re.findall(r'^\s+needs: test\s*$', WORKFLOW, re.M)) == 3
 
 
 def test_workflow_builds_with_python_314():
     assert "PYTHON_VERSION: '3.14'" in WORKFLOW
     versions = re.findall(r'python-version:\s*(.+)', WORKFLOW)
-    assert len(versions) == 3
+    assert len(versions) == 4                  # test + three build jobs
     assert all(v.strip() == '${{ env.PYTHON_VERSION }}' for v in versions)
 
 
@@ -150,6 +150,50 @@ def test_the_linux_job_smoke_tests_saves_in_the_built_appimage():
     assert 'exit $rc' in step
     # ...after the release key is written, so the build under test carries it
     assert job.index('write_dad_key.py') < smoke
+
+
+def _job(name):
+    start = WORKFLOW.index(f'\n  {name}:')
+    nxt = re.search(r'\n  [a-z][\w-]*:\n', WORKFLOW[start + 1:])
+    return WORKFLOW[start:start + 1 + nxt.start()] if nxt else WORKFLOW[start:]
+
+
+def test_the_macos_job_builds_an_apple_silicon_app_and_smoke_tests_it():
+    job = _job('build-macos')
+    assert 'needs: test' in job
+    assert 'runs-on: macos-15' in job            # pinned, an Apple Silicon image
+    assert 'python-version: ${{ env.PYTHON_VERSION }}' in job
+    key = job.index('write_dad_key.py')
+    build = job.index('pyinstaller PhilosophersQuest.spec')
+    smoke = job.index('- name: Smoke-test saves in the built app')
+    zipped = job.index('- name: Zip the app')
+    upload = job.index('- name: Upload macOS artifact')
+    assert key < build < smoke < zipped < upload
+    step = job[smoke:zipped]
+    assert ('dist/PhilosophersQuest.app/Contents/MacOS/PhilosophersQuest '
+            '--selftest-saves --require-frozen --require-real-key') in step
+    assert 'export HOME="$(mktemp -d)"' in step
+    assert 'SDL_VIDEODRIVER: dummy' in step and 'exit $rc' in step
+    assert 'ditto -c -k' in job and 'macOS-arm64.zip' in job
+
+
+def test_the_release_publishes_the_mac_app_with_instructions():
+    job = _job('release')
+    assert 'needs: [build-windows, build-linux, build-macos]' in job
+    assert 'name: macos-app' in job
+    assert 'release/PhilosophersQuest-*-macOS-arm64.zip' in job
+    assert 'Open Anyway' in job and 'Privacy & Security' in job
+
+
+def test_the_spec_bundles_a_mac_app():
+    spec = _read('PhilosophersQuest.spec')
+    mac = spec[spec.index("if sys.platform == 'darwin':"):]
+    assert 'BUNDLE(' in mac and "name='PhilosophersQuest.app'" in mac
+    assert "bundle_identifier='com.raynfalllabs.philosophersquest'" in mac
+    assert "'LSMinimumSystemVersion': '11.0'" in mac
+    # the version the spec reads is the game's own
+    m = re.search(r'^VERSION\s*=\s*"([^"]+)"', _read('src', 'layout.py'), re.M)
+    assert m and re.match(r'^\d+\.\d+\.\d+$', m.group(1))
 
 
 def test_frozen_player_files_live_outside_the_install_dir(monkeypatch, tmp_path):

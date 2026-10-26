@@ -2,10 +2,11 @@ name: Release
 
 # Fires when a version tag is pushed (e.g. `git tag v2.8.1 && git push origin v2.8.1`).
 # First checks the tag against the version written in the game and runs the
-# test suite; only then builds a Windows installer + a Linux AppImage in
-# parallel, and publishes both as a GitHub Release with auto-generated notes.
-# The AppImage is launched once, headless, to prove it saves a game and a
-# Seeker profile where a player's files go (src/selftest.py).
+# test suite; only then builds a Windows installer, a Linux AppImage and an
+# Apple Silicon macOS app in parallel, and publishes all three as a GitHub
+# Release with auto-generated notes. The AppImage and the Mac app are each
+# launched once, headless, to prove they save a game and a Seeker profile
+# where a player's files go (src/selftest.py).
 #
 # Pins, and why (bug bash 2026-10-16, CQ-01..03):
 #   * Python 3.14 everywhere: the game is developed and tested on 3.14.
@@ -249,9 +250,94 @@ jobs:
           path: PhilosophersQuest-*.AppImage
           if-no-files-found: error
 
+  build-macos:
+    name: Build macOS app (Apple Silicon)
+    needs: test
+    # Pinned, not macos-latest. macos-15 is an Apple Silicon (arm64) image,
+    # so the .app runs natively on every M-series Mac (macOS 11+); there is
+    # no Intel build. Every pinned package has a macOS arm64 wheel for
+    # Python 3.14 (checked 2026-10-26), so nothing is compiled here.
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-build.txt
+
+      - name: Write the reward-code key from the PQ_DAD_KEY secret
+        # As on Windows and Linux: no secret, no release (src/seeker_codes.py).
+        env:
+          PQ_DAD_KEY: ${{ secrets.PQ_DAD_KEY }}
+        run: python tools/release/write_dad_key.py
+
+      - name: Build the .app with PyInstaller
+        # The spec's BUNDLE makes dist/PhilosophersQuest.app on macOS. It is
+        # signed ad hoc (arm64 needs that to run) but not with a Developer
+        # ID, so Gatekeeper asks the player to allow it once.
+        run: pyinstaller PhilosophersQuest.spec --noconfirm
+
+      - name: Verify the app has its data files
+        run: |
+          test -x dist/PhilosophersQuest.app/Contents/MacOS/PhilosophersQuest
+          DATA="$(find dist/PhilosophersQuest.app/Contents -path '*data/questions/economics.json' | head -1)"
+          test -n "$DATA"
+          python -c "import json,sys;q=json.load(open(sys.argv[1]));print(f'app contains {len(q)} economics questions')" "$DATA"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' dist/PhilosophersQuest.app/Contents/Info.plist
+
+      - name: Read version (from git tag, e.g. v2.8.1 -> 2.8.1)
+        id: version
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Detected VERSION=$VERSION"
+
+      - name: Smoke-test saves in the built app
+        # The .app's own binary, headless (src/selftest.py), as on Linux:
+        # saves and restores a game and seals a Seeker profile in
+        # ~/Library/Application Support/PhilosophersQuest, with HOME pointed
+        # at a fresh temp folder so nothing on the runner is touched.
+        env:
+          SDL_VIDEODRIVER: dummy
+          SDL_AUDIODRIVER: dummy
+        run: |
+          export HOME="$(mktemp -d)"
+          set +e
+          dist/PhilosophersQuest.app/Contents/MacOS/PhilosophersQuest --selftest-saves --require-frozen --require-real-key
+          rc=$?
+          set -e
+          SAVES="$HOME/Library/Application Support/PhilosophersQuest"
+          echo "--- report and files ($SAVES)"
+          cat "$SAVES/selftest_report.txt" || echo "no report written"
+          ls -la "$SAVES" "$SAVES/seekers" || true
+          exit $rc
+
+      - name: Zip the app
+        # ditto keeps the bundle's symlinks, permissions and ad hoc
+        # signature, which a plain zip can break.
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent dist/PhilosophersQuest.app \
+            "PhilosophersQuest-${{ steps.version.outputs.version }}-macOS-arm64.zip"
+          ls -lh PhilosophersQuest-*-macOS-arm64.zip
+
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: macos-app
+          path: PhilosophersQuest-*-macOS-arm64.zip
+          if-no-files-found: error
+
   release:
     name: Publish GitHub Release
-    needs: [build-windows, build-linux]
+    needs: [build-windows, build-linux, build-macos]
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout (for changelog)
@@ -271,6 +357,12 @@ jobs:
           name: linux-appimage
           path: release/
 
+      - name: Download macOS artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: macos-app
+          path: release/
+
       - name: Show artifacts
         run: ls -lh release/
 
@@ -280,6 +372,7 @@ jobs:
           files: |
             release/PhilosophersQuest_Setup.exe
             release/PhilosophersQuest-*.AppImage
+            release/PhilosophersQuest-*-macOS-arm64.zip
           draft: false
           prerelease: false
           generate_release_notes: true
@@ -287,3 +380,4 @@ jobs:
           body: |
             **Windows:** download `PhilosophersQuest_Setup.exe` and run.
             **Linux:** download `PhilosophersQuest-*.AppImage`, `chmod +x` it, and double-click (or run from a terminal). No install needed.
+            **Mac (Apple Silicon, macOS 11 or later):** download `PhilosophersQuest-*-macOS-arm64.zip`, double-click it, and drag **PhilosophersQuest** into Applications. The app is not signed by Apple yet, so the first time macOS will refuse to open it: click **Done**, then open **System Settings → Privacy & Security**, scroll down, click **Open Anyway** next to PhilosophersQuest, and confirm. After that it opens normally. Saves are kept in `~/Library/Application Support/PhilosophersQuest`.

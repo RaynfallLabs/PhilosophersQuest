@@ -4,15 +4,19 @@ PyInstaller spec for Philosopher's Quest.
 Run from the project root:
     pyinstaller PhilosophersQuest.spec
 Output: dist\PhilosophersQuest\  (portable folder — zip for distribution)
+On macOS also dist/PhilosophersQuest.app (the BUNDLE at the end).
 
 Saves, highscores and settings go to paths.save_dir():
     Windows  %APPDATA%\PhilosophersQuest\
     Linux    $XDG_DATA_HOME/PhilosophersQuest/ (default ~/.local/share/...)
+    macOS    ~/Library/Application Support/PhilosophersQuest/
 ERROR_LOG.txt and crash_*.txt go to game_log.log_dir():
     <home>/Documents/PhilosophersQuest/ (falls back to the save dir)
+    macOS: ~/Library/Logs/PhilosophersQuest/ (no Documents permission prompt)
 """
 
 import os
+import re
 import sys
 
 block_cipher = None
@@ -150,3 +154,29 @@ coll = COLLECT(
     upx_exclude=[],
     name='PhilosophersQuest',
 )
+
+# ── macOS: the .app ─────────────────────────────────────────────────────────
+# Built on Apple Silicon by the release workflow (build-macos). Not signed
+# with a Developer ID (no Apple Developer account yet): PyInstaller signs it
+# ad hoc, which arm64 macOS requires to run at all, and the player clears
+# Gatekeeper once with System Settings > Privacy & Security > Open Anyway.
+# The icon is converted from the .ico by Pillow (requirements.txt).
+if sys.platform == 'darwin':
+    with open(os.path.join('src', 'layout.py'), encoding='utf-8') as _f:
+        _VERSION = re.search(r'^VERSION\s*=\s*"([^"]+)"', _f.read(), re.M).group(1)
+    app = BUNDLE(
+        coll,
+        name='PhilosophersQuest.app',
+        icon='assets/icon.ico',
+        bundle_identifier='com.raynfalllabs.philosophersquest',
+        version=_VERSION,
+        info_plist={
+            'CFBundleName': "Philosopher's Quest",
+            'CFBundleDisplayName': "Philosopher's Quest",
+            'CFBundleShortVersionString': _VERSION,
+            'CFBundleVersion': _VERSION,
+            'LSMinimumSystemVersion': '11.0',     # every Apple Silicon Mac
+            'LSApplicationCategoryType': 'public.app-category.role-playing-games',
+            'NSHighResolutionCapable': True,
+        },
+    )

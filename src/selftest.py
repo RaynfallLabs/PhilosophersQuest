@@ -5,9 +5,10 @@ the profile's seal (and a reward code) with the key the build carries.
 
     PhilosophersQuest --selftest-saves [--require-frozen] [--require-real-key]
 
-The release workflow runs it on the Linux AppImage with XDG_DATA_HOME pointed
-at a temporary folder (.github/workflows/release.yml), so a release that
-cannot save never ships, and no real player's files are touched.
+The release workflow runs it on the Linux AppImage (XDG_DATA_HOME pointed at a
+temporary folder) and on the macOS app (HOME pointed at one, so the files go
+to its Library/Application Support), .github/workflows/release.yml: a release
+that cannot save never ships, and no real player's files are touched.
 From source (``python src/main.py --selftest-saves [--save-dir DIR]``) it
 writes to DIR or a fresh temp folder, never the project root.
 ``--require-frozen`` fails unless this is the built game (not the source);

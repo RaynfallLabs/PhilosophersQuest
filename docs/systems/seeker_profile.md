@@ -21,6 +21,8 @@ A **Seeker** is the real child playing. A **hero** is who he or she plays in one
 `save_dir()/seekers/`:
 - Installed on Windows: `%APPDATA%\PhilosophersQuest\seekers\`. The installer's upgrade wipes only `{app}\_internal`, and uninstall removes only `{app}`, so the profile survives upgrades, reinstalls and uninstalls.
 - AppImage: the XDG data dir.
+- Mac app: `~/Library/Application Support/PhilosophersQuest/seekers/`.
+- The release workflow proves each built Linux and Mac game writes, re-reads and seals a profile there before it ships (`src/selftest.py`, `--selftest-saves`).
 - From source: the project root (gitignored).
 - Tests: the conftest temp dir, or `seeker_profile._DIR_OVERRIDE`.
 

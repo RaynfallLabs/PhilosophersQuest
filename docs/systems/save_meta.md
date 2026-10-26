@@ -396,7 +396,14 @@ def _project_root() -> str:
 
 Priority: `game_log.log_dir()` → `save_dir()` (frozen) → project
 root (dev). Playtesters find `crash_*.txt` and `ERROR_LOG.txt` in the
-same folder.
+same folder: `~/Documents/PhilosophersQuest/`, or on a Mac
+`~/Library/Logs/PhilosophersQuest/` (macOS asks the player's permission
+before an app touches Documents; the Console app lists Library/Logs).
+
+The release workflow runs the built Linux AppImage and Mac app once,
+headless, with `--selftest-saves` (`src/selftest.py`): each must save,
+reload and restore a game and seal a Seeker profile in its real save
+folder (pointed at a temp folder) before the release ships.
 
 ### 5.2 `write_crash_report(exc_type, exc_value, exc_tb, game=None)`
 

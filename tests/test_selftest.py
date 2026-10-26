@@ -83,3 +83,19 @@ def test_main_hands_the_self_test_its_game_and_the_bundle_includes_it():
     assert hook.index('--selftest-saves') < hook.index('main()')
     with open(os.path.join(ROOT, 'PhilosophersQuest.spec'), encoding='utf-8') as f:
         assert "'selftest'" in f.read()
+
+
+def test_on_a_mac_the_error_log_avoids_the_documents_folder(monkeypatch, tmp_path):
+    """macOS asks the player's permission before an app touches Documents,
+    so a Mac keeps ERROR_LOG.txt in ~/Library/Logs/PhilosophersQuest."""
+    import game_log
+    monkeypatch.setattr(game_log, '_LOG_DIR', None)
+    monkeypatch.setattr(sys, 'platform', 'darwin')
+    monkeypatch.setenv('HOME', str(tmp_path))
+    monkeypatch.setattr(os.path, 'expanduser',
+                        lambda p: p.replace('~', str(tmp_path), 1) if p.startswith('~') else p)
+    got = game_log.log_dir()
+    assert os.path.normpath(got) == os.path.normpath(
+        os.path.join(str(tmp_path), 'Library', 'Logs', 'PhilosophersQuest'))
+    assert not (tmp_path / 'Documents').exists()
+    monkeypatch.setattr(game_log, '_LOG_DIR', None)
