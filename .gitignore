@@ -290,3 +290,8 @@ final_rungs.json
 /TILE_SHEET_*.png
 /ITEM_SHEET_*.png
 /QUALITY_*.png
+
+# Seeker profiles (the dev save dir is the project root) and the reward-code key.
+# The key must NEVER be committed: the repo is public (seeker_codes.py).
+/seekers/
+src/_dad_key.py

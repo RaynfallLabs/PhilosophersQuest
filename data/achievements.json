@@ -1,0 +1,3064 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "scholar",
+   "name": "Scholar"
+  },
+  {
+   "id": "warrior",
+   "name": "Warrior"
+  },
+  {
+   "id": "depths",
+   "name": "Depths"
+  },
+  {
+   "id": "bosses",
+   "name": "Bosses"
+  },
+  {
+   "id": "endings",
+   "name": "Endings"
+  },
+  {
+   "id": "lore",
+   "name": "Lore"
+  },
+  {
+   "id": "craft",
+   "name": "Craft"
+  },
+  {
+   "id": "companions",
+   "name": "Companions"
+  },
+  {
+   "id": "heroes",
+   "name": "Heroes"
+  },
+  {
+   "id": "character",
+   "name": "Character"
+  },
+  {
+   "id": "journeys",
+   "name": "Journeys"
+  },
+  {
+   "id": "secrets",
+   "name": "Secrets"
+  }
+ ],
+ "counters": {
+  "questions_answered": {
+   "on": "quiz_answer"
+  },
+  "right_streak": {
+   "on": "quiz_answer",
+   "streak": {
+    "correct": true
+   }
+  },
+  "cards_opened": {
+   "on": "card_opened"
+  },
+  "study_answers": {
+   "on": "study_answer"
+  },
+  "kills": {
+   "on": "kill"
+  },
+  "ranged_kills": {
+   "on": "kill",
+   "where": {
+    "ranged": true
+   }
+  },
+  "kills_run": {
+   "on": "kill",
+   "scope": "run"
+  },
+  "damage_dealt": {
+   "on": "damage",
+   "add": "amount",
+   "where": {
+    "by": "hero"
+   }
+  },
+  "biggest_blow": {
+   "on": "damage",
+   "best": "amount",
+   "where": {
+    "by": "hero"
+   }
+  },
+  "full_chains": {
+   "on": "full_chain"
+  },
+  "deepest_floor": {
+   "on": "floor_reached",
+   "best": "floor"
+  },
+  "floors_explored": {
+   "on": "floor_explored"
+  },
+  "traps": {
+   "on": "trap"
+  },
+  "harvests": {
+   "on": "harvest"
+  },
+  "dishes": {
+   "on": "cooked"
+  },
+  "recipes": {
+   "on": "cooked",
+   "collect": "recipe"
+  },
+  "locks": {
+   "on": "lockpick"
+  },
+  "identified": {
+   "on": "identify"
+  },
+  "scrolls": {
+   "on": "scroll_read"
+  },
+  "wands": {
+   "on": "wand_zapped"
+  },
+  "spells_known": {
+   "on": "spell_learned",
+   "collect": "spell"
+  },
+  "spells_cast": {
+   "on": "spell_cast"
+  },
+  "prayers": {
+   "on": "prayer_answered"
+  },
+  "gold_earned": {
+   "on": "gold",
+   "add": "amount"
+  },
+  "traders": {
+   "on": "trade",
+   "collect": "trader"
+  },
+  "altars": {
+   "on": "mystery_solved",
+   "collect": "altar"
+  },
+  "pets_hatched": {
+   "on": "pet_hatched"
+  },
+  "pet_stage": {
+   "on": "pet_evolved",
+   "best": "stage"
+  },
+  "pet_level": {
+   "on": "pet_level",
+   "best": "level"
+  },
+  "escorts": {
+   "on": "escort_delivered"
+  },
+  "family_tier": {
+   "on": "family_tier",
+   "best": "tier"
+  },
+  "monsters_known": {
+   "on": "monster_known",
+   "collect": "monster"
+  },
+  "topics_read": {
+   "on": "topic_read",
+   "collect": "topic"
+  },
+  "traits": {
+   "on": "trait",
+   "collect": "trait"
+  },
+  "oaths_kept": {
+   "on": "oath_kept"
+  },
+  "forgone": {
+   "on": "deed",
+   "where": {
+    "kind": "forgo"
+   }
+  },
+  "rescued": {
+   "on": "deed",
+   "where": {
+    "kind": "saved"
+   }
+  },
+  "journeys": {
+   "on": "run_start"
+  },
+  "falls": {
+   "on": "run_end",
+   "where": {
+    "reason": [
+     "died",
+     "starved"
+    ]
+   }
+  },
+  "secret_builds": {
+   "on": "run_start",
+   "collect": "build"
+  },
+  "right_math": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "math",
+    "correct": true
+   }
+  },
+  "right_geography": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "geography",
+    "correct": true
+   }
+  },
+  "right_history": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "history",
+    "correct": true
+   }
+  },
+  "right_animal": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "animal",
+    "correct": true
+   }
+  },
+  "right_cooking": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "cooking",
+    "correct": true
+   }
+  },
+  "right_science": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "science",
+    "correct": true
+   }
+  },
+  "right_philosophy": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "philosophy",
+    "correct": true
+   }
+  },
+  "right_grammar": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "grammar",
+    "correct": true
+   }
+  },
+  "right_economics": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "economics",
+    "correct": true
+   }
+  },
+  "right_theology": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "theology",
+    "correct": true
+   }
+  },
+  "right_trivia": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "trivia",
+    "correct": true
+   }
+  },
+  "right_ai": {
+   "on": "quiz_answer",
+   "where": {
+    "subject": "ai",
+    "correct": true
+   }
+  },
+  "grown_lightning": {
+   "on": "pet_evolved",
+   "where": {
+    "line": "lightning",
+    "stage": 3
+   }
+  },
+  "grown_water": {
+   "on": "pet_evolved",
+   "where": {
+    "line": "water",
+    "stage": 3
+   }
+  },
+  "grown_plant": {
+   "on": "pet_evolved",
+   "where": {
+    "line": "plant",
+    "stage": 3
+   }
+  },
+  "grown_fire": {
+   "on": "pet_evolved",
+   "where": {
+    "line": "fire",
+    "stage": 3
+   }
+  }
+ },
+ "achievements": [
+  {
+   "id": "questions_100",
+   "name": "A Hundred Questions",
+   "category": "scholar",
+   "rarity": "common",
+   "hint": "A hundred questions answered in the dungeon. Right or wrong, each one counts.",
+   "unlocked_text": "A hundred questions faced. The dungeon is only getting started.",
+   "code_word": "HUNDRED",
+   "art": "questions_100",
+   "trigger": {
+    "stat": "questions_answered",
+    "at_least": 100
+   },
+   "ladder": "questions",
+   "tier": 1
+  },
+  {
+   "id": "questions_1000",
+   "name": "A Thousand Questions",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "A thousand questions answered in the dungeon.",
+   "unlocked_text": "A thousand questions faced across your journeys.",
+   "code_word": "THOUSAND",
+   "art": "questions_1000",
+   "trigger": {
+    "stat": "questions_answered",
+    "at_least": 1000
+   },
+   "ladder": "questions",
+   "tier": 2
+  },
+  {
+   "id": "questions_10000",
+   "name": "Ten Thousand Questions",
+   "category": "scholar",
+   "rarity": "epic",
+   "hint": "Ten thousand questions answered in the dungeon.",
+   "unlocked_text": "Ten thousand questions. Scholars in Alexandria would nod.",
+   "code_word": "MYRIAD",
+   "art": "questions_10000",
+   "trigger": {
+    "stat": "questions_answered",
+    "at_least": 10000
+   },
+   "ladder": "questions",
+   "tier": 3
+  },
+  {
+   "id": "questions_100000",
+   "name": "The Endless Exam",
+   "category": "scholar",
+   "rarity": "legendary",
+   "hint": "A hundred thousand questions. Yes, really.",
+   "unlocked_text": "A hundred thousand questions. There may be no one alive who has faced more.",
+   "code_word": "ENDLESS",
+   "art": "questions_100000",
+   "trigger": {
+    "stat": "questions_answered",
+    "at_least": 100000
+   },
+   "ladder": "questions",
+   "tier": 4
+  },
+  {
+   "id": "streak_25",
+   "name": "On a Roll",
+   "category": "scholar",
+   "rarity": "common",
+   "hint": "Twenty-five right in a row, from one quiz to the next.",
+   "unlocked_text": "Twenty-five right answers without a single slip.",
+   "code_word": "ROLL",
+   "art": "streak_25",
+   "trigger": {
+    "stat": "right_streak",
+    "at_least": 25
+   },
+   "ladder": "streak",
+   "tier": 1
+  },
+  {
+   "id": "streak_100",
+   "name": "Unbroken",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "A hundred right in a row.",
+   "unlocked_text": "A hundred right answers in a row. Not one wrong.",
+   "code_word": "UNBROKEN",
+   "art": "streak_100",
+   "trigger": {
+    "stat": "right_streak",
+    "at_least": 100
+   },
+   "ladder": "streak",
+   "tier": 2
+  },
+  {
+   "id": "streak_250",
+   "name": "Flawless Mind",
+   "category": "scholar",
+   "rarity": "epic",
+   "hint": "Two hundred and fifty right in a row.",
+   "unlocked_text": "Two hundred and fifty in a row. Flawless.",
+   "code_word": "FLAWLESS",
+   "art": "streak_250",
+   "trigger": {
+    "stat": "right_streak",
+    "at_least": 250
+   },
+   "ladder": "streak",
+   "tier": 3
+  },
+  {
+   "id": "subject_math",
+   "name": "Master of Numbers",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred math questions answered right.",
+   "unlocked_text": "Five hundred math questions, answered right.",
+   "code_word": "NUMBERS",
+   "art": "subject_math",
+   "trigger": {
+    "stat": "right_math",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_geography",
+   "name": "World-Walker",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred geography questions answered right.",
+   "unlocked_text": "Five hundred geography questions, answered right.",
+   "code_word": "WORLD",
+   "art": "subject_geography",
+   "trigger": {
+    "stat": "right_geography",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_history",
+   "name": "Keeper of Ages",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred history questions answered right.",
+   "unlocked_text": "Five hundred history questions, answered right.",
+   "code_word": "AGES",
+   "art": "subject_history",
+   "trigger": {
+    "stat": "right_history",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_animal",
+   "name": "Naturalist",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred animal questions answered right.",
+   "unlocked_text": "Five hundred animal questions, answered right.",
+   "code_word": "NATURE",
+   "art": "subject_animal",
+   "trigger": {
+    "stat": "right_animal",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_cooking",
+   "name": "Master of the Hearth",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred cooking questions answered right.",
+   "unlocked_text": "Five hundred cooking questions, answered right.",
+   "code_word": "HEARTH",
+   "art": "subject_cooking",
+   "trigger": {
+    "stat": "right_cooking",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_science",
+   "name": "Natural Philosopher",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred science questions answered right.",
+   "unlocked_text": "Five hundred science questions, answered right.",
+   "code_word": "SCIENCE",
+   "art": "subject_science",
+   "trigger": {
+    "stat": "right_science",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_philosophy",
+   "name": "Lover of Wisdom",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred philosophy questions answered right.",
+   "unlocked_text": "Five hundred philosophy questions, answered right.",
+   "code_word": "WISDOM",
+   "art": "subject_philosophy",
+   "trigger": {
+    "stat": "right_philosophy",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_grammar",
+   "name": "Wordsmith",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred grammar questions answered right.",
+   "unlocked_text": "Five hundred grammar questions, answered right.",
+   "code_word": "WORDSMITH",
+   "art": "subject_grammar",
+   "trigger": {
+    "stat": "right_grammar",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_economics",
+   "name": "Counter of Costs",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred economics questions answered right.",
+   "unlocked_text": "Five hundred economics questions, answered right.",
+   "code_word": "COSTS",
+   "art": "subject_economics",
+   "trigger": {
+    "stat": "right_economics",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_theology",
+   "name": "Student of the Divine",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Five hundred theology questions answered right.",
+   "unlocked_text": "Five hundred theology questions, answered right.",
+   "code_word": "DIVINE",
+   "art": "subject_theology",
+   "trigger": {
+    "stat": "right_theology",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "subject_trivia",
+   "name": "Keeper of Curiosities",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "A hundred trivia questions answered right.",
+   "unlocked_text": "A hundred trivia questions, answered right.",
+   "code_word": "CURIOUS",
+   "art": "subject_trivia",
+   "trigger": {
+    "stat": "right_trivia",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "subject_ai",
+   "name": "Reader of Machines",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "A hundred AI questions answered right.",
+   "unlocked_text": "A hundred AI questions, answered right.",
+   "code_word": "MACHINES",
+   "art": "subject_ai",
+   "trigger": {
+    "stat": "right_ai",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "polymath",
+   "name": "Polymath",
+   "category": "scholar",
+   "rarity": "epic",
+   "hint": "Every subject, a hundred right answers each.",
+   "unlocked_text": "A true polymath: right answers in every subject the dungeon asks.",
+   "code_word": "POLYMATH",
+   "art": "polymath",
+   "trigger": {
+    "all": [
+     {
+      "stat": "right_math",
+      "at_least": 100
+     },
+     {
+      "stat": "right_geography",
+      "at_least": 100
+     },
+     {
+      "stat": "right_history",
+      "at_least": 100
+     },
+     {
+      "stat": "right_animal",
+      "at_least": 100
+     },
+     {
+      "stat": "right_cooking",
+      "at_least": 100
+     },
+     {
+      "stat": "right_science",
+      "at_least": 100
+     },
+     {
+      "stat": "right_philosophy",
+      "at_least": 100
+     },
+     {
+      "stat": "right_grammar",
+      "at_least": 100
+     },
+     {
+      "stat": "right_economics",
+      "at_least": 100
+     },
+     {
+      "stat": "right_theology",
+      "at_least": 100
+     },
+     {
+      "stat": "right_trivia",
+      "at_least": 25
+     },
+     {
+      "stat": "right_ai",
+      "at_least": 25
+     }
+    ]
+   }
+  },
+  {
+   "id": "tier_cleared",
+   "name": "Tier Cleared",
+   "category": "scholar",
+   "rarity": "rare",
+   "hint": "Every question of one tier of one subject, in one journey.",
+   "unlocked_text": "Every question of a tier, answered in one journey.",
+   "code_word": "CLEARED",
+   "art": "tier_cleared",
+   "trigger": {
+    "event": "subject_cleared"
+   }
+  },
+  {
+   "id": "examined_life",
+   "name": "The Examined Life",
+   "category": "scholar",
+   "rarity": "legendary",
+   "hint": "Socrates said the unexamined life is not worth living. Master philosophy's highest tier.",
+   "unlocked_text": "Every philosophy question of the highest tier, answered in one journey.",
+   "code_word": "EXAMINED",
+   "art": "examined_life",
+   "trigger": {
+    "event": "philosophy_tier",
+    "where": {
+     "tier": 5
+    }
+   }
+  },
+  {
+   "id": "curious_mind",
+   "name": "Curious Mind",
+   "category": "scholar",
+   "rarity": "common",
+   "hint": "When a question puzzles you, read its card. A hundred times.",
+   "unlocked_text": "A hundred cards read. Curiosity is the start of wisdom.",
+   "code_word": "CARDS",
+   "art": "curious_mind",
+   "trigger": {
+    "stat": "cards_opened",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "lamp_lit",
+   "name": "Lamp-Lit Study",
+   "category": "scholar",
+   "rarity": "common",
+   "hint": "A hundred questions answered in Study Mode.",
+   "unlocked_text": "A hundred questions studied by lamplight, far from any dungeon.",
+   "code_word": "LAMPLIT",
+   "art": "lamp_lit",
+   "trigger": {
+    "stat": "study_answers",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "kills_100",
+   "name": "A Hundred Foes",
+   "category": "warrior",
+   "rarity": "common",
+   "hint": "A hundred foes defeated.",
+   "unlocked_text": "A hundred foes lie behind you.",
+   "code_word": "FOES",
+   "art": "kills_100",
+   "trigger": {
+    "stat": "kills",
+    "at_least": 100
+   },
+   "ladder": "kills",
+   "tier": 1
+  },
+  {
+   "id": "kills_1000",
+   "name": "A Thousand Foes",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "A thousand foes defeated.",
+   "unlocked_text": "A thousand foes. The dungeon has started to talk about you.",
+   "code_word": "LEGION",
+   "art": "kills_1000",
+   "trigger": {
+    "stat": "kills",
+    "at_least": 1000
+   },
+   "ladder": "kills",
+   "tier": 2
+  },
+  {
+   "id": "kills_10000",
+   "name": "Ten Thousand Foes",
+   "category": "warrior",
+   "rarity": "epic",
+   "hint": "Ten thousand foes defeated.",
+   "unlocked_text": "Ten thousand foes. Monsters tell their young about you.",
+   "code_word": "HORDE",
+   "art": "kills_10000",
+   "trigger": {
+    "stat": "kills",
+    "at_least": 10000
+   },
+   "ladder": "kills",
+   "tier": 3
+  },
+  {
+   "id": "damage_10k",
+   "name": "Heavy Hand",
+   "category": "warrior",
+   "rarity": "common",
+   "hint": "Ten thousand points of damage dealt.",
+   "unlocked_text": "Ten thousand points of damage, dealt by your own hand.",
+   "code_word": "HEAVY",
+   "art": "damage_10k",
+   "trigger": {
+    "stat": "damage_dealt",
+    "at_least": 10000
+   },
+   "ladder": "damage",
+   "tier": 1
+  },
+  {
+   "id": "damage_100k",
+   "name": "Siege Engine",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "A hundred thousand points of damage dealt.",
+   "unlocked_text": "A hundred thousand points of damage. Walls have fallen to less.",
+   "code_word": "SIEGE",
+   "art": "damage_100k",
+   "trigger": {
+    "stat": "damage_dealt",
+    "at_least": 100000
+   },
+   "ladder": "damage",
+   "tier": 2
+  },
+  {
+   "id": "damage_1m",
+   "name": "Earthshaker",
+   "category": "warrior",
+   "rarity": "epic",
+   "hint": "A million points of damage dealt.",
+   "unlocked_text": "A million points of damage. The ground remembers you.",
+   "code_word": "QUAKE",
+   "art": "damage_1m",
+   "trigger": {
+    "stat": "damage_dealt",
+    "at_least": 1000000
+   },
+   "ladder": "damage",
+   "tier": 3
+  },
+  {
+   "id": "damage_10m",
+   "name": "World-Breaker",
+   "category": "warrior",
+   "rarity": "legendary",
+   "hint": "Ten million points of damage dealt.",
+   "unlocked_text": "Ten million points of damage. Even giants step aside.",
+   "code_word": "WORLDBREAK",
+   "art": "damage_10m",
+   "trigger": {
+    "stat": "damage_dealt",
+    "at_least": 10000000
+   },
+   "ladder": "damage",
+   "tier": 4
+  },
+  {
+   "id": "blow_100",
+   "name": "Mighty Blow",
+   "category": "warrior",
+   "rarity": "common",
+   "hint": "A hundred damage in a single blow.",
+   "unlocked_text": "A hundred damage in one blow.",
+   "code_word": "MIGHTY",
+   "art": "blow_100",
+   "trigger": {
+    "stat": "biggest_blow",
+    "at_least": 100
+   },
+   "ladder": "blow",
+   "tier": 1
+  },
+  {
+   "id": "blow_1000",
+   "name": "Thunderclap",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "A thousand damage in a single blow.",
+   "unlocked_text": "A thousand damage in one blow. Thor would approve.",
+   "code_word": "THUNDER",
+   "art": "blow_1000",
+   "trigger": {
+    "stat": "biggest_blow",
+    "at_least": 1000
+   },
+   "ladder": "blow",
+   "tier": 2
+  },
+  {
+   "id": "blow_5000",
+   "name": "A Blow for the Ballads",
+   "category": "warrior",
+   "rarity": "epic",
+   "hint": "Five thousand damage in a single blow.",
+   "unlocked_text": "Five thousand damage in one blow. The bards are already writing.",
+   "code_word": "BALLAD",
+   "art": "blow_5000",
+   "trigger": {
+    "stat": "biggest_blow",
+    "at_least": 5000
+   },
+   "ladder": "blow",
+   "tier": 3
+  },
+  {
+   "id": "chain_1",
+   "name": "Full Chain",
+   "category": "warrior",
+   "rarity": "common",
+   "hint": "Every link of your weapon's chain, in one attack.",
+   "unlocked_text": "Every link of the chain, landed in one attack.",
+   "code_word": "LINKS",
+   "art": "chain_1",
+   "trigger": {
+    "stat": "full_chains",
+    "at_least": 1
+   },
+   "ladder": "chains",
+   "tier": 1
+  },
+  {
+   "id": "chain_500",
+   "name": "Chain-Master",
+   "category": "warrior",
+   "rarity": "epic",
+   "hint": "Five hundred full chains.",
+   "unlocked_text": "Five hundred full chains. Your sums are a weapon.",
+   "code_word": "CHAINS",
+   "art": "chain_500",
+   "trigger": {
+    "stat": "full_chains",
+    "at_least": 500
+   },
+   "ladder": "chains",
+   "tier": 2
+  },
+  {
+   "id": "bare_knuckles",
+   "name": "Bare Knuckles",
+   "category": "warrior",
+   "rarity": "common",
+   "hint": "Win a fight with empty hands.",
+   "unlocked_text": "A foe defeated with nothing in your hands.",
+   "code_word": "KNUCKLES",
+   "art": "bare_knuckles",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "unarmed": true
+    }
+   }
+  },
+  {
+   "id": "steady_aim",
+   "name": "Steady Aim",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "A hundred foes, defeated from afar.",
+   "unlocked_text": "A hundred foes defeated from a distance.",
+   "code_word": "AIM",
+   "art": "steady_aim",
+   "trigger": {
+    "stat": "ranged_kills",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "busy_journey",
+   "name": "A Hundred in One Journey",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "A hundred foes in a single journey.",
+   "unlocked_text": "A hundred foes in one journey.",
+   "code_word": "RAMPAGE",
+   "art": "busy_journey",
+   "trigger": {
+    "run": "kills_run",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "floor_10",
+   "name": "Below the Cellar",
+   "category": "depths",
+   "rarity": "common",
+   "hint": "Ten floors down.",
+   "unlocked_text": "Ten floors down. The cellar is far above you now.",
+   "code_word": "CELLAR",
+   "art": "floor_10",
+   "trigger": {
+    "stat": "deepest_floor",
+    "at_least": 10
+   },
+   "ladder": "depth",
+   "tier": 1
+  },
+  {
+   "id": "floor_25",
+   "name": "The Deep Roads",
+   "category": "depths",
+   "rarity": "common",
+   "hint": "Twenty-five floors down.",
+   "unlocked_text": "Twenty-five floors down the deep roads.",
+   "code_word": "DEEPROAD",
+   "art": "floor_25",
+   "trigger": {
+    "stat": "deepest_floor",
+    "at_least": 25
+   },
+   "ladder": "depth",
+   "tier": 2
+  },
+  {
+   "id": "floor_50",
+   "name": "Halfway to the Stone",
+   "category": "depths",
+   "rarity": "rare",
+   "hint": "Halfway down.",
+   "unlocked_text": "Halfway to the Stone.",
+   "code_word": "HALFWAY",
+   "art": "floor_50",
+   "trigger": {
+    "stat": "deepest_floor",
+    "at_least": 50
+   },
+   "ladder": "depth",
+   "tier": 3
+  },
+  {
+   "id": "floor_75",
+   "name": "Where Light Forgets",
+   "category": "depths",
+   "rarity": "epic",
+   "hint": "Seventy-five floors down.",
+   "unlocked_text": "Seventy-five floors down, where light forgets.",
+   "code_word": "LIGHTLESS",
+   "art": "floor_75",
+   "trigger": {
+    "stat": "deepest_floor",
+    "at_least": 75
+   },
+   "ladder": "depth",
+   "tier": 4
+  },
+  {
+   "id": "floor_100",
+   "name": "The Bottom of the World",
+   "category": "depths",
+   "rarity": "legendary",
+   "hint": "All the way down.",
+   "unlocked_text": "The bottom of the world. Few have stood here.",
+   "code_word": "BOTTOM",
+   "art": "floor_100",
+   "trigger": {
+    "stat": "deepest_floor",
+    "at_least": 100
+   },
+   "ladder": "depth",
+   "tier": 5
+  },
+  {
+   "id": "cartographer",
+   "name": "Cartographer",
+   "category": "depths",
+   "rarity": "rare",
+   "hint": "Ten floors, every corner seen.",
+   "unlocked_text": "Ten floors mapped to the last corner.",
+   "code_word": "MAPPER",
+   "art": "cartographer",
+   "trigger": {
+    "stat": "floors_explored",
+    "at_least": 10
+   }
+  },
+  {
+   "id": "trapfoot",
+   "name": "Trapfoot",
+   "category": "depths",
+   "rarity": "common",
+   "hint": "Fifty traps, found the hard way.",
+   "unlocked_text": "Fifty traps found, every one of them with your feet.",
+   "code_word": "TRAPFOOT",
+   "art": "trapfoot",
+   "trigger": {
+    "stat": "traps",
+    "at_least": 50
+   }
+  },
+  {
+   "id": "not_a_stair",
+   "name": "That Was Not a Stair",
+   "category": "depths",
+   "rarity": "rare",
+   "hint": "Mimics are famous for chests. Not only chests.",
+   "unlocked_text": "A staircase with teeth. You will never trust stairs again.",
+   "code_word": "HELLMOUTH",
+   "art": "not_a_stair",
+   "trigger": {
+    "event": "hellmouth"
+   }
+  },
+  {
+   "id": "boss_asterion",
+   "name": "The Labyrinth's End",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "The bull-headed prisoner of Crete's labyrinth.",
+   "unlocked_text": "Asterion is defeated. The labyrinth is quiet.",
+   "code_word": "LABYRINTH",
+   "art": "boss_asterion",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "asterion_minotaur"
+    }
+   }
+  },
+  {
+   "id": "boss_medusa",
+   "name": "Stone Cold",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "One look from her turned heroes to stone.",
+   "unlocked_text": "Medusa is defeated, and you are not a statue.",
+   "code_word": "GORGON",
+   "art": "boss_medusa",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "medusa_gorgon"
+    }
+   }
+  },
+  {
+   "id": "boss_fafnir",
+   "name": "The Hoard Is Yours",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "A dwarf who became a dragon to guard his gold.",
+   "unlocked_text": "Fafnir is defeated. The hoard is yours.",
+   "code_word": "DRAGONHOARD",
+   "art": "boss_fafnir",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "fafnir_dragon"
+    }
+   }
+  },
+  {
+   "id": "boss_fenrir",
+   "name": "Ragnarok Can Wait",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "The wolf the gods could not hold.",
+   "unlocked_text": "Fenrir is defeated. Ragnarok can wait.",
+   "code_word": "RAGNAROK",
+   "art": "boss_fenrir",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "fenrir_wolf"
+    }
+   }
+  },
+  {
+   "id": "boss_abaddon",
+   "name": "The Destroyer Destroyed",
+   "category": "bosses",
+   "rarity": "legendary",
+   "hint": "The angel of the bottomless pit.",
+   "unlocked_text": "Abaddon is defeated. The pit is closed.",
+   "code_word": "ABYSS",
+   "art": "boss_abaddon",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "abaddon_destroyer"
+    }
+   }
+  },
+  {
+   "id": "seven_seals",
+   "name": "The Seven Seals",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Seven seals, from the last book of the Bible.",
+   "unlocked_text": "All seven seals broken in one journey.",
+   "code_word": "SEALS",
+   "art": "seven_seals",
+   "trigger": {
+    "event": "seals_broken",
+    "where": {
+     "count": 7
+    }
+   }
+  },
+  {
+   "id": "story_way",
+   "name": "The Story's Way",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Win the way the heroes of the old stories won.",
+   "unlocked_text": "A great foe beaten the way the old story says it was beaten.",
+   "code_word": "STORYWAY",
+   "art": "story_way",
+   "trigger": {
+    "event": "story_way"
+   }
+  },
+  {
+   "id": "wanderer",
+   "name": "Wanderer-Slayer",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Some great foes roam wherever they please.",
+   "unlocked_text": "A legendary wanderer, defeated.",
+   "code_word": "WANDERER",
+   "art": "wanderer",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "legendary": true
+    }
+   }
+  },
+  {
+   "id": "quest_arachne",
+   "name": "Arachne",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the weaver who challenged a goddess.",
+   "unlocked_text": "Arachne is defeated.",
+   "code_word": "WEAVER",
+   "art": "quest_arachne",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "arachne"
+    }
+   }
+  },
+  {
+   "id": "quest_lamia",
+   "name": "Lamia",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the queen who became a serpent.",
+   "unlocked_text": "Lamia is defeated.",
+   "code_word": "SERPENT",
+   "art": "quest_lamia",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "lamia"
+    }
+   }
+  },
+  {
+   "id": "quest_talos",
+   "name": "Talos",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the bronze giant who guarded Crete.",
+   "unlocked_text": "Talos is defeated.",
+   "code_word": "BRONZE",
+   "art": "quest_talos",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "talos"
+    }
+   }
+  },
+  {
+   "id": "quest_echidna",
+   "name": "Echidna",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the mother of monsters.",
+   "unlocked_text": "Echidna is defeated.",
+   "code_word": "MOTHER",
+   "art": "quest_echidna",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "echidna"
+    }
+   }
+  },
+  {
+   "id": "quest_erlking",
+   "name": "The Erlking",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the king who rides through the forest at night.",
+   "unlocked_text": "The Erlking is defeated.",
+   "code_word": "FOREST",
+   "art": "quest_erlking",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "erlking"
+    }
+   }
+  },
+  {
+   "id": "quest_camazotz",
+   "name": "Camazotz",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the death bat of the Maya.",
+   "unlocked_text": "Camazotz is defeated.",
+   "code_word": "NIGHT",
+   "art": "quest_camazotz",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "camazotz"
+    }
+   }
+  },
+  {
+   "id": "quest_cacus",
+   "name": "Cacus",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the fire-breathing thief who stole from Hercules.",
+   "unlocked_text": "Cacus is defeated.",
+   "code_word": "FLAME",
+   "art": "quest_cacus",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "cacus"
+    }
+   }
+  },
+  {
+   "id": "quest_sphinx",
+   "name": "The Sphinx",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the one who asks riddles at the gate.",
+   "unlocked_text": "The Sphinx is defeated.",
+   "code_word": "RIDDLE",
+   "art": "quest_sphinx",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "the_sphinx"
+    }
+   }
+  },
+  {
+   "id": "quest_rangda",
+   "name": "Rangda",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the witch-queen of Bali.",
+   "unlocked_text": "Rangda is defeated.",
+   "code_word": "WITCH",
+   "art": "quest_rangda",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "rangda"
+    }
+   }
+  },
+  {
+   "id": "quest_nemean_lion",
+   "name": "The Nemean Lion",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the lion no blade could cut.",
+   "unlocked_text": "The Nemean Lion is defeated.",
+   "code_word": "LION",
+   "art": "quest_nemean_lion",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "nemean_lion"
+    }
+   }
+  },
+  {
+   "id": "quest_baba_yaga",
+   "name": "Baba Yaga",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the witch whose hut walks on chicken legs.",
+   "unlocked_text": "Baba Yaga is defeated.",
+   "code_word": "CRONE",
+   "art": "quest_baba_yaga",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "baba_yaga"
+    }
+   }
+  },
+  {
+   "id": "quest_jormungandr",
+   "name": "Jormungandr",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the serpent who will one day circle the world.",
+   "unlocked_text": "Jormungandr is defeated.",
+   "code_word": "WYRM",
+   "art": "quest_jormungandr",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "jormungandr_juvenile"
+    }
+   }
+  },
+  {
+   "id": "quest_set",
+   "name": "Set's Jackal",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the jackal of the god of chaos.",
+   "unlocked_text": "Set's Jackal is defeated.",
+   "code_word": "CHAOS",
+   "art": "quest_set",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "sets_jackal"
+    }
+   }
+  },
+  {
+   "id": "quest_green_knight",
+   "name": "The Green Knight",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the knight who can lose his head and pick it up again.",
+   "unlocked_text": "The Green Knight is defeated.",
+   "code_word": "GREEN",
+   "art": "quest_green_knight",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "green_knight"
+    }
+   }
+  },
+  {
+   "id": "quest_charybdis",
+   "name": "Charybdis",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the whirlpool that swallowed ships.",
+   "unlocked_text": "Charybdis is defeated.",
+   "code_word": "MAELSTROM",
+   "art": "quest_charybdis",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "charybdis"
+    }
+   }
+  },
+  {
+   "id": "quest_ravana",
+   "name": "Ravana's Arm",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat what is left of the ten-headed king of Lanka.",
+   "unlocked_text": "Ravana's Arm is defeated.",
+   "code_word": "DEMON",
+   "art": "quest_ravana",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "ravanas_arm"
+    }
+   }
+  },
+  {
+   "id": "quest_wendigo",
+   "name": "The Wendigo",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the hunger that walks in winter.",
+   "unlocked_text": "The Wendigo is defeated.",
+   "code_word": "HUNGER",
+   "art": "quest_wendigo",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "wendigo"
+    }
+   }
+  },
+  {
+   "id": "quest_wild_hunt",
+   "name": "The Wild Hunt",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the captain of the riders in the storm.",
+   "unlocked_text": "The Wild Hunt is defeated.",
+   "code_word": "HUNT",
+   "art": "quest_wild_hunt",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "wild_hunt_captain"
+    }
+   }
+  },
+  {
+   "id": "quest_anansi",
+   "name": "Anansi",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the spider who owns all the stories.",
+   "unlocked_text": "Anansi is defeated.",
+   "code_word": "SPIDER",
+   "art": "quest_anansi",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "anansi"
+    }
+   }
+  },
+  {
+   "id": "quest_nidhoggr",
+   "name": "Nidhoggr",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the dragon that gnaws the roots of the World Tree.",
+   "unlocked_text": "Nidhoggr is defeated.",
+   "code_word": "ROOT",
+   "art": "quest_nidhoggr",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "nidhoggr_fragment"
+    }
+   }
+  },
+  {
+   "id": "stone_home",
+   "name": "The Stone Comes Home",
+   "category": "endings",
+   "rarity": "legendary",
+   "hint": "Your village is waiting for the Stone.",
+   "unlocked_text": "The Philosopher's Stone is home. Amber will see another spring.",
+   "code_word": "STONE",
+   "art": "stone_home",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "victory": true
+    }
+   }
+  },
+  {
+   "id": "lake_of_fire",
+   "name": "The Lake of Fire",
+   "category": "endings",
+   "rarity": "legendary",
+   "hint": "The last enemy to be destroyed is death.",
+   "unlocked_text": "Death and Hades were thrown into the lake of fire, and you were there.",
+   "code_word": "ABYSSAL",
+   "art": "lake_of_fire",
+   "trigger": {
+    "event": "secret_victory"
+   }
+  },
+  {
+   "id": "checkmate",
+   "name": "Checkmate",
+   "category": "endings",
+   "rarity": "epic",
+   "hint": "A knight once played chess with Death to win more time.",
+   "unlocked_text": "You played chess with Death, and won.",
+   "code_word": "CHECKMATE",
+   "art": "checkmate",
+   "trigger": {
+    "event": "chess_won"
+   }
+  },
+  {
+   "id": "great_scott",
+   "name": "Great Scott!",
+   "category": "endings",
+   "rarity": "rare",
+   "hint": "Marty McFly never could stand being called one thing.",
+   "unlocked_text": "Nobody calls you chicken.",
+   "code_word": "MCFLY",
+   "art": "great_scott",
+   "trigger": {
+    "event": "flux"
+   }
+  },
+  {
+   "id": "found_worthy",
+   "name": "Weighed and Found Worthy",
+   "category": "endings",
+   "rarity": "epic",
+   "hint": "Mene, mene, tekel: be weighed, and not found wanting.",
+   "unlocked_text": "Weighed on Michael's scales, and found worthy.",
+   "code_word": "WORTHY",
+   "art": "found_worthy",
+   "trigger": {
+    "event": "judgment",
+    "where": {
+     "outcome": "sword_and_scales"
+    }
+   }
+  },
+  {
+   "id": "fall_1",
+   "name": "The First Fall",
+   "category": "endings",
+   "rarity": "common",
+   "hint": "Everyone falls once.",
+   "unlocked_text": "You fell. Then you came back. That is the whole secret.",
+   "code_word": "FALL",
+   "art": "fall_1",
+   "trigger": {
+    "stat": "falls",
+    "at_least": 1
+   },
+   "ladder": "falls",
+   "tier": 1
+  },
+  {
+   "id": "fall_10",
+   "name": "Back Again",
+   "category": "endings",
+   "rarity": "common",
+   "hint": "Ten falls, ten returns.",
+   "unlocked_text": "Ten falls, and ten returns.",
+   "code_word": "AGAIN",
+   "art": "fall_10",
+   "trigger": {
+    "stat": "falls",
+    "at_least": 10
+   },
+   "ladder": "falls",
+   "tier": 2
+  },
+  {
+   "id": "fall_50",
+   "name": "Unbowed",
+   "category": "endings",
+   "rarity": "rare",
+   "hint": "Fifty falls, and still you come back.",
+   "unlocked_text": "Fifty falls. Still unbowed.",
+   "code_word": "UNBOWED",
+   "art": "fall_50",
+   "trigger": {
+    "stat": "falls",
+    "at_least": 50
+   },
+   "ladder": "falls",
+   "tier": 3
+  },
+  {
+   "id": "fall_100",
+   "name": "Death Is a Teacher",
+   "category": "endings",
+   "rarity": "epic",
+   "hint": "A hundred falls. By now you know the dungeon better than it knows you.",
+   "unlocked_text": "A hundred falls. Death has taught you well.",
+   "code_word": "TEACHER",
+   "art": "fall_100",
+   "trigger": {
+    "stat": "falls",
+    "at_least": 100
+   },
+   "ladder": "falls",
+   "tier": 4
+  },
+  {
+   "id": "forgot_to_eat",
+   "name": "Forgot to Eat",
+   "category": "endings",
+   "rarity": "common",
+   "hint": "Heroes need breakfast too.",
+   "unlocked_text": "Starved. Next time, pack a sandwich.",
+   "code_word": "HUNGRY",
+   "art": "forgot_to_eat",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "reason": "starved"
+    }
+   }
+  },
+  {
+   "id": "short_story",
+   "name": "A Very Short Story",
+   "category": "endings",
+   "rarity": "common",
+   "hint": "Not every legend is a long one.",
+   "unlocked_text": "A legend that ended on the first floor.",
+   "code_word": "SHORT",
+   "art": "short_story",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "reason": "died",
+     "floor": 1
+    }
+   }
+  },
+  {
+   "id": "udderly",
+   "name": "Udderly Defeated",
+   "category": "endings",
+   "rarity": "rare",
+   "hint": "Lose to something that does not exist.",
+   "unlocked_text": "Defeated on a farm that does not exist.",
+   "code_word": "UDDER",
+   "art": "udderly",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "reason": "died",
+     "cow_level": true
+    }
+   }
+  },
+  {
+   "id": "the_scythe",
+   "name": "The Scythe",
+   "category": "endings",
+   "rarity": "rare",
+   "hint": "The pale rider never tires.",
+   "unlocked_text": "Caught by Death himself.",
+   "code_word": "SCYTHE",
+   "art": "the_scythe",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "reason": "died",
+     "killer": "death"
+    }
+   }
+  },
+  {
+   "id": "field_notes",
+   "name": "Field Notes",
+   "category": "lore",
+   "rarity": "common",
+   "hint": "Study one family of monsters closely.",
+   "unlocked_text": "Your field notes on one family run deep.",
+   "code_word": "NOTES",
+   "art": "field_notes",
+   "trigger": {
+    "stat": "family_tier",
+    "at_least": 3
+   },
+   "ladder": "families",
+   "tier": 1
+  },
+  {
+   "id": "bane",
+   "name": "Bane",
+   "category": "lore",
+   "rarity": "rare",
+   "hint": "Know one family of monsters better than it knows itself.",
+   "unlocked_text": "You are the bane of a whole family of monsters.",
+   "code_word": "BANE",
+   "art": "bane",
+   "trigger": {
+    "stat": "family_tier",
+    "at_least": 5
+   },
+   "ladder": "families",
+   "tier": 2
+  },
+  {
+   "id": "loremaster",
+   "name": "Loremaster",
+   "category": "lore",
+   "rarity": "legendary",
+   "hint": "Five families, mastered.",
+   "unlocked_text": "Loremaster: the bane of five families of monsters.",
+   "code_word": "LOREMASTER",
+   "art": "loremaster",
+   "trigger": {
+    "event": "loremaster"
+   }
+  },
+  {
+   "id": "circle_closed",
+   "name": "A Circle Closed",
+   "category": "lore",
+   "rarity": "epic",
+   "hint": "Monster lore runs in circles. Close one.",
+   "unlocked_text": "A circle of monster lore, closed.",
+   "code_word": "CIRCLE",
+   "art": "circle_closed",
+   "trigger": {
+    "event": "circle"
+   }
+  },
+  {
+   "id": "bestiary_50",
+   "name": "Bestiary",
+   "category": "lore",
+   "rarity": "common",
+   "hint": "Fifty kinds of monster, named and known.",
+   "unlocked_text": "Fifty kinds of monster in your bestiary.",
+   "code_word": "BESTIARY",
+   "art": "bestiary_50",
+   "trigger": {
+    "stat": "monsters_known",
+    "at_least": 50
+   },
+   "ladder": "bestiary",
+   "tier": 1
+  },
+  {
+   "id": "bestiary_250",
+   "name": "The Great Bestiary",
+   "category": "lore",
+   "rarity": "rare",
+   "hint": "Two hundred and fifty kinds, named and known.",
+   "unlocked_text": "Two hundred and fifty kinds of monster, known by name.",
+   "code_word": "GREATBEAST",
+   "art": "bestiary_250",
+   "trigger": {
+    "stat": "monsters_known",
+    "at_least": 250
+   },
+   "ladder": "bestiary",
+   "tier": 2
+  },
+  {
+   "id": "well_read",
+   "name": "Well-Read",
+   "category": "lore",
+   "rarity": "common",
+   "hint": "A hundred topics, read in the Lore Codex.",
+   "unlocked_text": "A hundred topics read.",
+   "code_word": "WELLREAD",
+   "art": "well_read",
+   "trigger": {
+    "stat": "topics_read",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "traits_10",
+   "name": "Strange Talents",
+   "category": "lore",
+   "rarity": "common",
+   "hint": "Odd habits make odd talents. Ten of them.",
+   "unlocked_text": "Ten strange talents earned.",
+   "code_word": "TALENTS",
+   "art": "traits_10",
+   "trigger": {
+    "stat": "traits",
+    "at_least": 10
+   },
+   "ladder": "traits",
+   "tier": 1
+  },
+  {
+   "id": "traits_40",
+   "name": "Stranger Talents",
+   "category": "lore",
+   "rarity": "rare",
+   "hint": "Forty odd talents.",
+   "unlocked_text": "Forty strange talents. Your friends are worried.",
+   "code_word": "STRANGER",
+   "art": "traits_40",
+   "trigger": {
+    "stat": "traits",
+    "at_least": 40
+   },
+   "ladder": "traits",
+   "tier": 2
+  },
+  {
+   "id": "traits_100",
+   "name": "Strangest of All",
+   "category": "lore",
+   "rarity": "legendary",
+   "hint": "A hundred odd talents. Who even are you?",
+   "unlocked_text": "A hundred strange talents. Nobody else is quite like you.",
+   "code_word": "STRANGEST",
+   "art": "traits_100",
+   "trigger": {
+    "stat": "traits",
+    "at_least": 100
+   },
+   "ladder": "traits",
+   "tier": 3
+  },
+  {
+   "id": "identify_100",
+   "name": "Appraiser",
+   "category": "lore",
+   "rarity": "common",
+   "hint": "A hundred things, known for what they are.",
+   "unlocked_text": "A hundred things identified.",
+   "code_word": "APPRAISER",
+   "art": "identify_100",
+   "trigger": {
+    "stat": "identified",
+    "at_least": 100
+   },
+   "ladder": "identify",
+   "tier": 1
+  },
+  {
+   "id": "identify_1000",
+   "name": "Sage of Things",
+   "category": "lore",
+   "rarity": "rare",
+   "hint": "A thousand things, known for what they are.",
+   "unlocked_text": "A thousand things identified. Nothing fools you now.",
+   "code_word": "SAGE",
+   "art": "identify_1000",
+   "trigger": {
+    "stat": "identified",
+    "at_least": 1000
+   },
+   "ladder": "identify",
+   "tier": 2
+  },
+  {
+   "id": "nothing_wasted",
+   "name": "Nothing Wasted",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "A hundred fallen foes, harvested for the pot.",
+   "unlocked_text": "A hundred harvests. Nothing goes to waste.",
+   "code_word": "HARVEST",
+   "art": "nothing_wasted",
+   "trigger": {
+    "stat": "harvests",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "camp_cook",
+   "name": "Camp Cook",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "A hundred meals cooked.",
+   "unlocked_text": "A hundred meals cooked over dungeon fires.",
+   "code_word": "COOK",
+   "art": "camp_cook",
+   "trigger": {
+    "stat": "dishes",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "cookbook",
+   "name": "The Cookbook",
+   "category": "craft",
+   "rarity": "rare",
+   "hint": "Fifty different recipes, cooked at least once.",
+   "unlocked_text": "Fifty recipes in your cookbook.",
+   "code_word": "COOKBOOK",
+   "art": "cookbook",
+   "trigger": {
+    "stat": "recipes",
+    "at_least": 50
+   }
+  },
+  {
+   "id": "locksmith",
+   "name": "Locksmith",
+   "category": "craft",
+   "rarity": "rare",
+   "hint": "A hundred locks, picked.",
+   "unlocked_text": "A hundred locks picked.",
+   "code_word": "LOCKSMITH",
+   "art": "locksmith",
+   "trigger": {
+    "stat": "locks",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "scroll_reader",
+   "name": "Scroll-Reader",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "A hundred scrolls, read.",
+   "unlocked_text": "A hundred scrolls read aloud.",
+   "code_word": "SCROLLS",
+   "art": "scroll_reader",
+   "trigger": {
+    "stat": "scrolls",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "wand_waver",
+   "name": "Wand-Waver",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "A hundred wands, zapped.",
+   "unlocked_text": "A hundred wands zapped.",
+   "code_word": "WANDS",
+   "art": "wand_waver",
+   "trigger": {
+    "stat": "wands",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "spellbound",
+   "name": "Spellbound",
+   "category": "craft",
+   "rarity": "rare",
+   "hint": "Twenty spells, learned.",
+   "unlocked_text": "Twenty spells learned by heart.",
+   "code_word": "SPELLBOUND",
+   "art": "spellbound",
+   "trigger": {
+    "stat": "spells_known",
+    "at_least": 20
+   }
+  },
+  {
+   "id": "archmage",
+   "name": "Archmage",
+   "category": "craft",
+   "rarity": "epic",
+   "hint": "Five hundred spells, cast.",
+   "unlocked_text": "Five hundred spells cast.",
+   "code_word": "ARCHMAGE",
+   "art": "archmage",
+   "trigger": {
+    "stat": "spells_cast",
+    "at_least": 500
+   }
+  },
+  {
+   "id": "faithful",
+   "name": "Faithful",
+   "category": "craft",
+   "rarity": "rare",
+   "hint": "Twenty-five prayers, answered.",
+   "unlocked_text": "Twenty-five prayers answered.",
+   "code_word": "FAITHFUL",
+   "art": "faithful",
+   "trigger": {
+    "stat": "prayers",
+    "at_least": 25
+   }
+  },
+  {
+   "id": "heard_on_high",
+   "name": "Heard on High",
+   "category": "craft",
+   "rarity": "epic",
+   "hint": "Ask for help from on high in your darkest hour.",
+   "unlocked_text": "You called from the darkest hour, and you were answered.",
+   "code_word": "HEARD",
+   "art": "heard_on_high",
+   "trigger": {
+    "event": "intercession"
+   }
+  },
+  {
+   "id": "gold_10k",
+   "name": "A Full Purse",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "Ten thousand gold, earned.",
+   "unlocked_text": "Ten thousand gold earned.",
+   "code_word": "PURSE",
+   "art": "gold_10k",
+   "trigger": {
+    "stat": "gold_earned",
+    "at_least": 10000
+   },
+   "ladder": "gold",
+   "tier": 1
+  },
+  {
+   "id": "gold_100k",
+   "name": "Merchant Prince",
+   "category": "craft",
+   "rarity": "rare",
+   "hint": "A hundred thousand gold, earned.",
+   "unlocked_text": "A hundred thousand gold. Merchants bow.",
+   "code_word": "MERCHANT",
+   "art": "gold_100k",
+   "trigger": {
+    "stat": "gold_earned",
+    "at_least": 100000
+   },
+   "ladder": "gold",
+   "tier": 2
+  },
+  {
+   "id": "gold_1m",
+   "name": "A King's Ransom",
+   "category": "craft",
+   "rarity": "epic",
+   "hint": "A million gold, earned.",
+   "unlocked_text": "A million gold: a king's ransom.",
+   "code_word": "RANSOM",
+   "art": "gold_1m",
+   "trigger": {
+    "stat": "gold_earned",
+    "at_least": 1000000
+   },
+   "ladder": "gold",
+   "tier": 3
+  },
+  {
+   "id": "every_market",
+   "name": "Known in Every Market",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "Five traders, each paid at least once.",
+   "unlocked_text": "Five traders know your face.",
+   "code_word": "MARKET",
+   "art": "every_market",
+   "trigger": {
+    "stat": "traders",
+    "at_least": 5
+   }
+  },
+  {
+   "id": "mystery_1",
+   "name": "Solver of Mysteries",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "Strange altars hide old stories. Solve one.",
+   "unlocked_text": "A strange altar, solved.",
+   "code_word": "MYSTERY",
+   "art": "mystery_1",
+   "trigger": {
+    "stat": "altars",
+    "at_least": 1
+   },
+   "ladder": "mysteries",
+   "tier": 1
+  },
+  {
+   "id": "mystery_10",
+   "name": "Keeper of Mysteries",
+   "category": "craft",
+   "rarity": "epic",
+   "hint": "Ten strange altars, solved.",
+   "unlocked_text": "Ten strange altars solved.",
+   "code_word": "MYSTERIES",
+   "art": "mystery_10",
+   "trigger": {
+    "stat": "altars",
+    "at_least": 10
+   },
+   "ladder": "mysteries",
+   "tier": 2
+  },
+  {
+   "id": "friend_in_dark",
+   "name": "A Friend in the Dark",
+   "category": "companions",
+   "rarity": "common",
+   "hint": "Every Soul Sphere holds a friend.",
+   "unlocked_text": "A friend, hatched from a Soul Sphere.",
+   "code_word": "FRIEND",
+   "art": "friend_in_dark",
+   "trigger": {
+    "stat": "pets_hatched",
+    "at_least": 1
+   }
+  },
+  {
+   "id": "evolving",
+   "name": "It's Evolving!",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "Raise a companion until it changes.",
+   "unlocked_text": "Your companion has changed.",
+   "code_word": "EVOLVE",
+   "art": "evolving",
+   "trigger": {
+    "stat": "pet_stage",
+    "at_least": 2
+   },
+   "ladder": "pet_stage",
+   "tier": 1
+  },
+  {
+   "id": "fully_grown",
+   "name": "Fully Grown",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "Raise a companion to its final form.",
+   "unlocked_text": "Your companion is fully grown.",
+   "code_word": "GROWN",
+   "art": "fully_grown",
+   "trigger": {
+    "stat": "pet_stage",
+    "at_least": 3
+   },
+   "ladder": "pet_stage",
+   "tier": 2
+  },
+  {
+   "id": "best_friend",
+   "name": "Best Friend",
+   "category": "companions",
+   "rarity": "legendary",
+   "hint": "A companion at level 100.",
+   "unlocked_text": "A companion at level 100. Best friends.",
+   "code_word": "BESTFRIEND",
+   "art": "best_friend",
+   "trigger": {
+    "stat": "pet_level",
+    "at_least": 100
+   }
+  },
+  {
+   "id": "four_elements",
+   "name": "Four Elements",
+   "category": "companions",
+   "rarity": "legendary",
+   "hint": "Lightning, water, plant and fire, each at its final form.",
+   "unlocked_text": "Lightning, water, plant and fire: all four grown.",
+   "code_word": "ELEMENTS",
+   "art": "four_elements",
+   "trigger": {
+    "all": [
+     {
+      "stat": "grown_lightning",
+      "at_least": 1
+     },
+     {
+      "stat": "grown_water",
+      "at_least": 1
+     },
+     {
+      "stat": "grown_plant",
+      "at_least": 1
+     },
+     {
+      "stat": "grown_fire",
+      "at_least": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "always_comes",
+   "name": "He Always Comes",
+   "category": "companions",
+   "rarity": "legendary",
+   "hint": "A good dog always finds his way home.",
+   "unlocked_text": "Shep found you. He always does.",
+   "code_word": "SHEP",
+   "art": "always_comes",
+   "trigger": {
+    "event": "rare_pet",
+    "where": {
+     "pet": "shep"
+    }
+   }
+  },
+  {
+   "id": "from_home",
+   "name": "Someone from Home",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "Some spheres purr.",
+   "unlocked_text": "A familiar face with whiskers, all the way down here.",
+   "code_word": "WHISKERS",
+   "art": "from_home",
+   "trigger": {
+    "event": "rare_pet",
+    "where": {
+     "pet": [
+      "sherlock",
+      "irene"
+     ]
+    }
+   }
+  },
+  {
+   "id": "dad_is_here",
+   "name": "Dad Is Here!",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "Every kid knows who to call when things go wrong.",
+   "unlocked_text": "Dad is here. Everything will be fine now.",
+   "code_word": "DADISHERE",
+   "art": "dad_is_here",
+   "trigger": {
+    "event": "dad_summoned"
+   }
+  },
+  {
+   "id": "i_choose_you",
+   "name": "I Choose You!",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In an old cartoon, a little fire lizard waited in the rain for a trainer who never came back.",
+   "unlocked_text": "A small fire, left alone, chose you back.",
+   "code_word": "EMBERPUP",
+   "art": "i_choose_you",
+   "trigger": {
+    "event": "emberpup",
+    "where": {
+     "outcome": "adopted"
+    }
+   }
+  },
+  {
+   "id": "gentle_hands",
+   "name": "Gentle Hands",
+   "category": "companions",
+   "rarity": "legendary",
+   "hint": "In the old tapestries, only the gentle could tame a unicorn.",
+   "unlocked_text": "The unicorn trusts you.",
+   "code_word": "UNICORN",
+   "art": "gentle_hands",
+   "trigger": {
+    "event": "unicorn_joined"
+   }
+  },
+  {
+   "id": "escort_1",
+   "name": "Safe Passage",
+   "category": "companions",
+   "rarity": "common",
+   "hint": "Walk someone safely to where he or she is going.",
+   "unlocked_text": "Someone is home safe, because of you.",
+   "code_word": "PASSAGE",
+   "art": "escort_1",
+   "trigger": {
+    "stat": "escorts",
+    "at_least": 1
+   },
+   "ladder": "escorts",
+   "tier": 1
+  },
+  {
+   "id": "escort_10",
+   "name": "Guardian of the Road",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "Ten people, walked safely home.",
+   "unlocked_text": "Ten people walked safely home.",
+   "code_word": "GUARDIAN",
+   "art": "escort_10",
+   "trigger": {
+    "stat": "escorts",
+    "at_least": 10
+   },
+   "ladder": "escorts",
+   "tier": 2
+  },
+  {
+   "id": "names_1",
+   "name": "A Name of Power",
+   "category": "heroes",
+   "rarity": "rare",
+   "hint": "Some names open doors.",
+   "unlocked_text": "You found a name that opens doors.",
+   "code_word": "NAME",
+   "art": "names_1",
+   "trigger": {
+    "stat": "secret_builds",
+    "at_least": 1
+   },
+   "ladder": "names",
+   "tier": 1
+  },
+  {
+   "id": "names_5",
+   "name": "Five Names",
+   "category": "heroes",
+   "rarity": "rare",
+   "hint": "Five names of power.",
+   "unlocked_text": "Five names of power, found.",
+   "code_word": "FIVENAMES",
+   "art": "names_5",
+   "trigger": {
+    "stat": "secret_builds",
+    "at_least": 5
+   },
+   "ladder": "names",
+   "tier": 2
+  },
+  {
+   "id": "names_10",
+   "name": "Ten Names",
+   "category": "heroes",
+   "rarity": "epic",
+   "hint": "Ten names of power.",
+   "unlocked_text": "Ten names of power, found.",
+   "code_word": "TENNAMES",
+   "art": "names_10",
+   "trigger": {
+    "stat": "secret_builds",
+    "at_least": 10
+   },
+   "ladder": "names",
+   "tier": 3
+  },
+  {
+   "id": "names_20",
+   "name": "Twenty Names",
+   "category": "heroes",
+   "rarity": "legendary",
+   "hint": "Twenty names of power.",
+   "unlocked_text": "Twenty names of power. You know nearly every door.",
+   "code_word": "TWENTYNAMES",
+   "art": "names_20",
+   "trigger": {
+    "stat": "secret_builds",
+    "at_least": 20
+   },
+   "ladder": "names",
+   "tier": 4
+  },
+  {
+   "id": "philosophers_quest",
+   "name": "Philosopher's Quest",
+   "category": "heroes",
+   "rarity": "legendary",
+   "hint": "The Stone, carried home by a lover of wisdom from long ago.",
+   "unlocked_text": "A philosopher brought the Stone home, as the title always promised.",
+   "code_word": "THINKER",
+   "art": "philosophers_quest",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "victory": true,
+     "build": [
+      "aristotle of stagira",
+      "socrates of athens",
+      "plato of athens",
+      "pythagoras of samos",
+      "diogenes of sinope",
+      "friedrich nietzsche"
+     ]
+    }
+   }
+  },
+  {
+   "id": "aim_high",
+   "name": "Aim High",
+   "category": "heroes",
+   "rarity": "rare",
+   "hint": "Some names are above every hero.",
+   "unlocked_text": "You aimed very high. Somebody corrected you.",
+   "code_word": "HIGHEST",
+   "art": "aim_high",
+   "trigger": {
+    "event": "title_god"
+   }
+  },
+  {
+   "id": "oath_1",
+   "name": "A Word Kept",
+   "category": "character",
+   "rarity": "common",
+   "hint": "Make a promise in the dungeon. Keep it.",
+   "unlocked_text": "A promise kept.",
+   "code_word": "WORD",
+   "art": "oath_1",
+   "trigger": {
+    "stat": "oaths_kept",
+    "at_least": 1
+   },
+   "ladder": "oaths",
+   "tier": 1
+  },
+  {
+   "id": "oath_10",
+   "name": "Known for Your Word",
+   "category": "character",
+   "rarity": "rare",
+   "hint": "Ten promises kept.",
+   "unlocked_text": "Ten promises kept. People believe you now.",
+   "code_word": "TRUSTED",
+   "art": "oath_10",
+   "trigger": {
+    "stat": "oaths_kept",
+    "at_least": 10
+   },
+   "ladder": "oaths",
+   "tier": 2
+  },
+  {
+   "id": "oath_25",
+   "name": "Oathkeeper",
+   "category": "character",
+   "rarity": "epic",
+   "hint": "Twenty-five promises kept.",
+   "unlocked_text": "Twenty-five promises kept. Oathkeeper.",
+   "code_word": "OATHKEEPER",
+   "art": "oath_25",
+   "trigger": {
+    "stat": "oaths_kept",
+    "at_least": 25
+   },
+   "ladder": "oaths",
+   "tier": 3
+  },
+  {
+   "id": "clean_soul",
+   "name": "Clean Soul",
+   "category": "character",
+   "rarity": "epic",
+   "hint": "A soul as bright as a soul can shine.",
+   "unlocked_text": "Your soul shines as brightly as a soul can.",
+   "code_word": "BRIGHT",
+   "art": "clean_soul",
+   "trigger": {
+    "event": "karma",
+    "where": {
+     "value": 10
+    }
+   }
+  },
+  {
+   "id": "open_hands",
+   "name": "Open Hands",
+   "category": "character",
+   "rarity": "rare",
+   "hint": "Five times, leave what you could have taken.",
+   "unlocked_text": "Five times, you left what you could have taken.",
+   "code_word": "OPENHANDS",
+   "art": "open_hands",
+   "trigger": {
+    "stat": "forgone",
+    "at_least": 5
+   }
+  },
+  {
+   "id": "rescuer",
+   "name": "Rescuer",
+   "category": "character",
+   "rarity": "rare",
+   "hint": "Ten people saved who could not save themselves.",
+   "unlocked_text": "Ten people saved.",
+   "code_word": "RESCUER",
+   "art": "rescuer",
+   "trigger": {
+    "stat": "rescued",
+    "at_least": 10
+   }
+  },
+  {
+   "id": "journeys_10",
+   "name": "Ten Journeys",
+   "category": "journeys",
+   "rarity": "common",
+   "hint": "Ten journeys begun.",
+   "unlocked_text": "Ten journeys begun.",
+   "code_word": "TENTRIPS",
+   "art": "journeys_10",
+   "trigger": {
+    "stat": "journeys",
+    "at_least": 10
+   },
+   "ladder": "journeys",
+   "tier": 1
+  },
+  {
+   "id": "journeys_50",
+   "name": "Fifty Journeys",
+   "category": "journeys",
+   "rarity": "rare",
+   "hint": "Fifty journeys begun.",
+   "unlocked_text": "Fifty journeys begun.",
+   "code_word": "FIFTYTRIPS",
+   "art": "journeys_50",
+   "trigger": {
+    "stat": "journeys",
+    "at_least": 50
+   },
+   "ladder": "journeys",
+   "tier": 2
+  },
+  {
+   "id": "journeys_100",
+   "name": "A Hundred Journeys",
+   "category": "journeys",
+   "rarity": "epic",
+   "hint": "A hundred journeys begun.",
+   "unlocked_text": "A hundred journeys. The road knows your name.",
+   "code_word": "HUNDREDTRIPS",
+   "art": "journeys_100",
+   "trigger": {
+    "stat": "journeys",
+    "at_least": 100
+   },
+   "ladder": "journeys",
+   "tier": 3
+  },
+  {
+   "id": "top_marks",
+   "name": "Top Marks",
+   "category": "journeys",
+   "rarity": "legendary",
+   "hint": "The highest grade there is.",
+   "unlocked_text": "The highest grade there is.",
+   "code_word": "TOPMARKS",
+   "art": "top_marks",
+   "trigger": {
+    "event": "run_end",
+    "where": {
+     "grade": "S"
+    }
+   }
+  },
+  {
+   "id": "duck_worn",
+   "name": "An Adorable Duckie",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "Munchkin players know the rule about ducks in dungeons.",
+   "unlocked_text": "You picked up a duck in a dungeon. You should have known better.",
+   "code_word": "QUACK",
+   "art": "duck_worn",
+   "trigger": {
+    "event": "duck_worn"
+   },
+   "spoiler_words": [
+    "pick",
+    "head",
+    "wear"
+   ]
+  },
+  {
+   "id": "duck_hatched",
+   "name": "The Duck of Doom",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "Some say the Duck of Doom is only a hat. Some say it is only the beginning.",
+   "unlocked_text": "It rode on your head for 2,026 turns, and then it hatched.",
+   "code_word": "DOOM",
+   "art": "duck_hatched",
+   "trigger": {
+    "event": "duck_hatched"
+   },
+   "spoiler_words": [
+    "2026",
+    "2,026",
+    "hatch",
+    "turns"
+   ]
+  },
+  {
+   "id": "duck_grown",
+   "name": "Sometimes Goose",
+   "category": "secrets",
+   "rarity": "legendary",
+   "hint": "Even a duck can grow wings fit for heaven.",
+   "unlocked_text": "A duck, grown into something holy.",
+   "code_word": "SERAPH",
+   "art": "duck_grown",
+   "trigger": {
+    "event": "pet_evolved",
+    "where": {
+     "line": "duck",
+     "stage": 3
+    }
+   }
+  },
+  {
+   "id": "hack_reality",
+   "name": "Hack Reality",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "In a colossal cave, long ago, adventurers learned a magic word.",
+   "unlocked_text": "You spoke the First Word, and reality listened.",
+   "code_word": "XYZZY",
+   "art": "hack_reality",
+   "trigger": {
+    "event": "xyzzy",
+    "where": {
+     "chain": {
+      "at_least": 1
+     }
+    }
+   },
+   "spoiler_words": [
+    "xyzzy",
+    "backquote",
+    "`"
+   ]
+  },
+  {
+   "id": "segfault",
+   "name": "Segfault",
+   "category": "secrets",
+   "rarity": "common",
+   "hint": "Even reality crashes sometimes.",
+   "unlocked_text": "Reality rejected your invocation.",
+   "code_word": "SEGFAULT",
+   "art": "segfault",
+   "trigger": {
+    "event": "xyzzy",
+    "where": {
+     "chain": 0
+    }
+   }
+  },
+  {
+   "id": "convergence",
+   "name": "Convergence",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "Three layers down, reality starts to listen.",
+   "unlocked_text": "Three layers of reality, rewritten.",
+   "code_word": "CONVERGE",
+   "art": "convergence",
+   "trigger": {
+    "event": "xyzzy",
+    "where": {
+     "chain": {
+      "at_least": 3
+     }
+    }
+   }
+  },
+  {
+   "id": "singularity",
+   "name": "Singularity",
+   "category": "secrets",
+   "rarity": "legendary",
+   "hint": "Past the last layer of reality, a wolf lies chained.",
+   "unlocked_text": "Singularity. The wolf at the end of the world now follows you.",
+   "code_word": "SINGULAR",
+   "art": "singularity",
+   "trigger": {
+    "event": "xyzzy",
+    "where": {
+     "chain": 5
+    }
+   }
+  },
+  {
+   "id": "cow_level",
+   "name": "There Is No Cow Level",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "The oldest rumour in dungeon-crawling. Surely it isn't true.",
+   "unlocked_text": "There is no cow level. You have been there.",
+   "code_word": "COWLEVEL",
+   "art": "cow_level",
+   "trigger": {
+    "event": "cow_level"
+   },
+   "spoiler_words": [
+    "poke"
+   ]
+  },
+  {
+   "id": "cow_king",
+   "name": "The Cow King",
+   "category": "secrets",
+   "rarity": "legendary",
+   "hint": "Every farm has a king, even a farm that does not exist.",
+   "unlocked_text": "The Cow King is defeated.",
+   "code_word": "MOO",
+   "art": "cow_king",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "cow_king"
+    }
+   }
+  },
+  {
+   "id": "bk_scratch",
+   "name": "'Tis but a Scratch",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "None shall pass. Or so he says.",
+   "unlocked_text": "You took his arm. He says it's just a flesh wound.",
+   "code_word": "SCRATCH",
+   "art": "bk_scratch",
+   "trigger": {
+    "event": "black_knight",
+    "where": {
+     "outcome": "sword_arm"
+    }
+   }
+  },
+  {
+   "id": "bk_draw",
+   "name": "We'll Call It a Draw",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "He is invincible. Just ask him.",
+   "unlocked_text": "All right, you called it a draw.",
+   "code_word": "DRAW",
+   "art": "bk_draw",
+   "trigger": {
+    "event": "black_knight",
+    "where": {
+     "outcome": "draw"
+    }
+   }
+  },
+  {
+   "id": "senet",
+   "name": "The Game of Senet",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "In an Egyptian tale, a prince played a ghost for a magic book.",
+   "unlocked_text": "You won the Book of Thoth at senet.",
+   "code_word": "SENET",
+   "art": "senet",
+   "trigger": {
+    "event": "setne",
+    "where": {
+     "outcome": "won"
+    }
+   }
+  },
+  {
+   "id": "thoth_returned",
+   "name": "Borrowed and Returned",
+   "category": "secrets",
+   "rarity": "legendary",
+   "hint": "In the old tale, the prince who took the book learned to give it back.",
+   "unlocked_text": "You gave the Book of Thoth back, and on time.",
+   "code_word": "RETURNED",
+   "art": "thoth_returned",
+   "trigger": {
+    "event": "setne",
+    "where": {
+     "outcome": "returned"
+    }
+   }
+  },
+  {
+   "id": "thoth_left",
+   "name": "Because She Asked",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "Ahwere lost everything to that book. Listen to her.",
+   "unlocked_text": "You left the book where it lay, because she asked.",
+   "code_word": "AHWERE",
+   "art": "thoth_left",
+   "trigger": {
+    "event": "setne",
+    "where": {
+     "outcome": "left"
+    }
+   }
+  },
+  {
+   "id": "right_words",
+   "name": "The Right Words",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "Ash never could remember the last word.",
+   "unlocked_text": "Klaatu, Barada, Nikto. Every word, exactly right.",
+   "code_word": "NIKTO",
+   "art": "right_words",
+   "trigger": {
+    "event": "necronomicon",
+    "where": {
+     "outcome": "recited"
+    }
+   },
+   "spoiler_words": [
+    "klaatu",
+    "barada",
+    "nikto"
+   ]
+  },
+  {
+   "id": "close_enough",
+   "name": "Close Enough",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "He said the words. Mostly.",
+   "unlocked_text": "Hey, you said the words! The dead disagreed.",
+   "code_word": "NECKTIE",
+   "art": "close_enough",
+   "trigger": {
+    "event": "necronomicon",
+    "where": {
+     "outcome": "failed"
+    }
+   }
+  },
+  {
+   "id": "sword_reforged",
+   "name": "The Sword Reforged",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "Odin broke the sword of Sigmund. Sigmund's son had it made whole.",
+   "unlocked_text": "Gram is whole again.",
+   "code_word": "GRAM",
+   "art": "sword_reforged",
+   "trigger": {
+    "event": "forged",
+    "where": {
+     "item": "gram"
+    }
+   }
+  },
+  {
+   "id": "thickest_shoe",
+   "name": "The Thickest Shoe",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "At Ragnarok, the silent god steps on the wolf's jaw. He will need a good shoe.",
+   "unlocked_text": "Vidar's Sandal, made from every scrap.",
+   "code_word": "VIDAR",
+   "art": "thickest_shoe",
+   "trigger": {
+    "event": "forged",
+    "where": {
+     "item": "vidars_sandal"
+    }
+   }
+  },
+  {
+   "id": "gleipnir",
+   "name": "The Ribbon That Holds a Wolf",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "The dwarves bound Fenrir with things that do not exist.",
+   "unlocked_text": "Gleipnir, made of six things that do not exist.",
+   "code_word": "GLEIPNIR",
+   "art": "gleipnir",
+   "trigger": {
+    "event": "forged",
+    "where": {
+     "item": "gleipnir"
+    }
+   }
+  },
+  {
+   "id": "short_handle",
+   "name": "Short Handle",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "A fly once bit a dwarf at the forge, and the hammer came out short.",
+   "unlocked_text": "Mjolnir, short handle and all.",
+   "code_word": "MJOLNIR",
+   "art": "short_handle",
+   "trigger": {
+    "event": "forged",
+    "where": {
+     "item": "mjolnir"
+    }
+   }
+  },
+  {
+   "id": "second_death",
+   "name": "Tablet of Second Death",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "The book of Revelation speaks of a second death.",
+   "unlocked_text": "The Tablet of Second Death is whole.",
+   "code_word": "TABLET",
+   "art": "second_death",
+   "trigger": {
+    "event": "tablet_complete"
+   }
+  },
+  {
+   "id": "shimmer",
+   "name": "A Shimmer in the Dark",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "Something in the dungeon shimmers that does not belong to it.",
+   "unlocked_text": "You found the Abyssal Shimmer.",
+   "code_word": "SHIMMER",
+   "art": "shimmer",
+   "trigger": {
+    "event": "lore_found",
+    "where": {
+     "item": "shimmer"
+    }
+   }
+  },
+  {
+   "id": "haunted",
+   "name": "Haunted by Myself",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "In the oldest dungeon games, the dead leave ghosts for whoever comes next.",
+   "unlocked_text": "You met the ghost of a hero you once were.",
+   "code_word": "GHOST",
+   "art": "haunted",
+   "trigger": {
+    "event": "ghost_met",
+    "where": {
+     "own": true
+    }
+   }
+  },
+  {
+   "id": "behind_curtain",
+   "name": "Behind the Curtain",
+   "category": "secrets",
+   "rarity": "legendary",
+   "hint": "???",
+   "unlocked_text": "Pay no attention to the person behind the curtain.",
+   "code_word": "CURTAIN",
+   "art": "behind_curtain",
+   "trigger": {
+    "event": "profile_edited"
+   }
+  },
+  {
+   "id": "not_dead_yet",
+   "name": "Not Dead Yet",
+   "category": "secrets",
+   "rarity": "legendary",
+   "hint": "???",
+   "unlocked_text": "Your hero was not dead yet. Not quite.",
+   "code_word": "NOTDEAD",
+   "art": "not_dead_yet",
+   "trigger": {
+    "event": "save_restored",
+    "where": {
+     "ended": true
+    }
+   }
+  },
+  {
+   "id": "thirty_lives",
+   "name": "Thirty Lives",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "Up, up, down, down...",
+   "unlocked_text": "Up, up, down, down, left, right, left, right, B, A. Old games remember.",
+   "code_word": "KONAMI",
+   "art": "thirty_lives",
+   "trigger": {
+    "event": "konami"
+   }
+  },
+  {
+   "id": "nice_try",
+   "name": "Nice Try",
+   "category": "secrets",
+   "rarity": "common",
+   "hint": "There is only one Dad.",
+   "unlocked_text": "Nice try.",
+   "code_word": "NICETRY",
+   "art": "nice_try",
+   "trigger": {
+    "event": "seeker_named",
+    "where": {
+     "name": "dad"
+    }
+   }
+  },
+  {
+   "id": "hollow_voice",
+   "name": "A Hollow Voice",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "Some hints are written in Caesar's hand.",
+   "unlocked_text": "A hollow voice says, \"Plugh.\"",
+   "code_word": "PLUGH",
+   "art": "hollow_voice",
+   "trigger": {
+    "event": "plugh"
+   },
+   "spoiler_words": [
+    "plugh"
+   ]
+  }
+ ]
+}
