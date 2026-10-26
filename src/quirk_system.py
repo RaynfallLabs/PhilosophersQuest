@@ -314,6 +314,8 @@ class QuirkSystem:
         if u is None:
             self._pl.unlocked_quirks = set()
         self._pl.unlocked_quirks.add(qid)
+        if hasattr(self.game, '_seeker_event'):
+            self.game._seeker_event('trait', trait=qid)     # powers count as traits too
         self._apply_within_caps(apply_fn)
         # Initialise tracking from definition
         pdef = _ACTIVE_POWER_DEFS.get(qid, {})

@@ -49,6 +49,7 @@ main.py.  Bound-method lookup goes through ``self.`` so MRO finds it.
 from __future__ import annotations
 from monster import the_name
 
+import false_stairs
 import random
 
 import pygame  # noqa: F401  -- kept for parity with sibling mixins; no direct use
@@ -565,6 +566,9 @@ class CombatMixin:
         pet.hatch_sphere = sphere_id          # the pet card's "Hatched From"
         self.pets.append(pet)
         self._seeker_event('pet_hatched', pet=species, line=species)
+        if pet.stage > 0:
+            # A Greater or Master sphere hatches it past its first form.
+            self._seeker_event('pet_evolved', pet=species, line=species, stage=pet.stage + 1)
         if species in FAMILY_PETS:
             self._seeker_event('rare_pet', pet=species)
             met = getattr(self.player, 'family_cats_met', None)
@@ -2475,15 +2479,9 @@ class CombatMixin:
                               killed: bool) -> None:
         """Kick off the end-of-attack flourish (effects/strike_finisher.py).
         Purely visual and non-blocking; never allowed to break combat."""
-        # Every link of the weapon's chain landed: the Seeker's Full Chain.
-        try:
-            w = getattr(self.player, 'weapon', None)
-            full = (w.max_chain_length() if callable(getattr(w, 'max_chain_length', None))
-                    else (getattr(w, 'max_chain_length', 0) or len(getattr(w, 'chain_multipliers', ()) or ())))
-            if w is not None and full and chain >= full:
-                self._seeker_event('full_chain', subject='math')
-        except Exception:
-            pass
+        # The attack's chain (melee, ranged or bare hands alike): the
+        # Seeker's chain ladder counts the long ones (data/achievements.json).
+        self._seeker_event('attack_chain', chain=int(chain or 0))
         rt = getattr(self, 'effects_runtime', None)
         if rt is None:
             return
@@ -2766,14 +2764,13 @@ class CombatMixin:
             if did_attack:
                 _hp_before_death = self.player.hp
                 dmg, msg = dm.attack(self.player)
-                if dmg:
-                    self._last_hit_by = 'death'      # who struck last (the Seeker's run end)
                 if self.player.hp <= 0 and self._death_gives_back_a_breath(_hp_before_death):
                     msg = None
                 if msg:
                     self.add_message(msg, 'danger')
                 if self.player.is_dead():
                     self.defeat_reason = 'died'
+                    self._killed_by = 'death'         # the Seeker's The Scythe
                     self._on_game_over()
                     self.state = STATE_DEAD
                     self.add_message("You have died! Press ESC to quit.", 'danger')
@@ -2838,8 +2835,13 @@ class CombatMixin:
             _pet_occ = self._occupants(hero=False)        # pets and escorts
             _was_in_pit = m.has_effect('stuck_in_pit')
             _pos_before = (m.x, m.y)
+            _posing = false_stairs.poses_as_stairs(m)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
+            if _posing and getattr(m, '_aware', False):
+                # A Hellmouth that sprang on its own turn (no blow, so no
+                # spring note): the Seeker's That Was Not a Stair.
+                self._seeker_event('hellmouth')
             # Rewired traps (player chained AI to >=3 on a trap) trigger when a
             # monster steps onto them. Only fires if the monster moved AND the
             # new tile holds a trap flagged safe_for_player.
@@ -2924,8 +2926,6 @@ class CombatMixin:
                     dmg, msg = m.attack(self.player)
                 finally:
                     self.player._trait_hooks_held = False
-                if dmg:
-                    self._last_hit_by = getattr(m, 'kind', None)
                 if (getattr(m, '_unseen', False) is True
                         and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > 1):
                     # Unseen and not beside you: the only clue is where it came from.
@@ -3219,6 +3219,7 @@ class CombatMixin:
                         _qs_dmg.on_status_applied(_new_eff, m.kind)
                 if self.player.is_dead():
                     self.defeat_reason = 'died'
+                    self._killed_by = getattr(m, 'kind', None)   # what struck the last blow
                     self._on_game_over()
                     self.state = STATE_DEAD
                     self.add_message("You have died! Press ESC to quit.", 'danger')

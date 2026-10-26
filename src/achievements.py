@@ -44,7 +44,7 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     # fighting
     'kill':             ('monster', 'ranged', 'unarmed', 'boss', 'legendary', 'family'),
     'damage':           ('amount', 'dealt', 'by'),
-    'full_chain':       ('subject',),
+    'attack_chain':     ('chain',),
     'seals_broken':     ('count',),
     'story_way':        ('monster',),
     # the dungeon
@@ -472,7 +472,20 @@ class Book:
     def progress(self, aid: str, profile, run: RunTally | None = None) -> tuple[int, int] | None:
         """(have, need) for an achievement that tests a counter, else None."""
         a = self.by_id.get(aid)
-        mark = _first_threshold(a['trigger']) if a else None
+        if a is None:
+            return None
+        t = a['trigger']
+        parts = t.get('all') if isinstance(t.get('all'), list) else None
+        if parts and all(('stat' in p or 'run' in p) for p in parts):
+            # Every subject of Polymath, every line of Four Elements: the bar
+            # fills with each part's share, not the first part's alone.
+            have = need = 0
+            for p in parts:
+                n = p['at_least']
+                have += min(self.value(p.get('stat', p.get('run')), profile, run), n)
+                need += n
+            return have, need
+        mark = _first_threshold(t)
         if not mark:
             return None
         _key, name, need = mark

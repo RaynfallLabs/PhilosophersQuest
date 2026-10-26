@@ -93,8 +93,13 @@
     "by": "hero"
    }
   },
-  "full_chains": {
-   "on": "full_chain"
+  "chains_of_ten": {
+   "on": "attack_chain",
+   "where": {
+    "chain": {
+     "at_least": 10
+    }
+   }
   },
   "deepest_floor": {
    "on": "floor_reached",
@@ -690,16 +695,13 @@
    "id": "examined_life",
    "name": "The Examined Life",
    "category": "scholar",
-   "rarity": "legendary",
-   "hint": "Socrates said the unexamined life is not worth living. Master philosophy's highest tier.",
-   "unlocked_text": "Every philosophy question of the highest tier, answered in one journey.",
+   "rarity": "epic",
+   "hint": "Socrates said the unexamined life is not worth living. Master a tier of philosophy in one journey.",
+   "unlocked_text": "Every philosophy question of a tier, answered in one journey.",
    "code_word": "EXAMINED",
    "art": "examined_life",
    "trigger": {
-    "event": "philosophy_tier",
-    "where": {
-     "tier": 5
-    }
+    "event": "philosophy_tier"
    }
   },
   {
@@ -891,33 +893,33 @@
    "tier": 3
   },
   {
-   "id": "chain_1",
-   "name": "Full Chain",
+   "id": "chain_10",
+   "name": "A Chain of Ten",
    "category": "warrior",
-   "rarity": "common",
-   "hint": "Every link of your weapon's chain, in one attack.",
-   "unlocked_text": "Every link of the chain, landed in one attack.",
+   "rarity": "rare",
+   "hint": "Ten right answers in a single attack.",
+   "unlocked_text": "Ten right answers in one attack: a chain of ten.",
    "code_word": "LINKS",
-   "art": "chain_1",
+   "art": "chain_10",
    "trigger": {
-    "stat": "full_chains",
+    "stat": "chains_of_ten",
     "at_least": 1
    },
    "ladder": "chains",
    "tier": 1
   },
   {
-   "id": "chain_500",
+   "id": "chain_master",
    "name": "Chain-Master",
    "category": "warrior",
    "rarity": "epic",
-   "hint": "Five hundred full chains.",
-   "unlocked_text": "Five hundred full chains. Your sums are a weapon.",
+   "hint": "A hundred attacks with a chain of ten or more.",
+   "unlocked_text": "A hundred chains of ten. Your sums are a weapon.",
    "code_word": "CHAINS",
-   "art": "chain_500",
+   "art": "chain_master",
    "trigger": {
-    "stat": "full_chains",
-    "at_least": 500
+    "stat": "chains_of_ten",
+    "at_least": 100
    },
    "ladder": "chains",
    "tier": 2
@@ -1573,7 +1575,7 @@
    "trigger": {
     "event": "deed",
     "where": {
-     "id": "flag.deaths_lost_turn"
+     "id": "saved.bartolo_family"
     }
    }
   },

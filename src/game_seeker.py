@@ -176,8 +176,11 @@ class SeekerMixin:
         """The run is over: count it, remember it ended (a copied-back save
         of it is then noticed), and write the profile."""
         s = getattr(self, '_seeker', None)
-        if s is None:
+        if s is None or self.__dict__.get('_seeker_ended'):
             return
+        # A run ends once: a second game-over (a trap's death, then the
+        # starvation tick of the same action) must not count another fall.
+        self._seeker_ended = True
         reason = 'victory' if victory else getattr(self, 'defeat_reason', 'died')
         try:
             grade = self._get_grade(self._calc_score())[0]
@@ -189,6 +192,6 @@ class SeekerMixin:
         self._seeker_event('run_end', reason=reason, victory=bool(victory),
                            floor=int(getattr(self, 'dungeon_level', 0) or 0), grade=grade,
                            build=self._seeker_build_key(),
-                           killer=getattr(self, '_last_hit_by', None),
+                           killer=getattr(self, '_killed_by', None),
                            cow_level=getattr(self, 'dungeon_level', 0) == COW_LEVEL)
         self._seeker_flush()

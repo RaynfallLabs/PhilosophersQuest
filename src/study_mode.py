@@ -77,6 +77,8 @@ class StudyMode:
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    if self._seeker is not None:
+                        self._seeker.flush()      # Study Mode's answers so far
                     pygame.quit()
                     sys.exit()
                 if event.type in (pygame.WINDOWRESIZED, pygame.WINDOWSIZECHANGED):

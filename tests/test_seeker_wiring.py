@@ -255,3 +255,99 @@ def test_loading_a_save_is_not_a_new_journey(seeker):
     assert g2 is not None and notice is None
     assert seeker_profile.load('Robyn').stat('journeys') == 1
     assert g2._seeker is not None and g2._seeker.profile.stat('journeys') == 1
+
+
+# ---- regressions from the independent wiring audit (_seeker/WIRING_AUDIT.md)
+
+def test_standing_on_the_shimmer_finds_it(seeker):
+    """B1: the Shimmer is fixed terrain, never picked up: finding it is
+    standing on it."""
+    from items import make_abyssal_shimmer
+    g = _game()
+    sh = make_abyssal_shimmer(g.player.x, g.player.y)
+    g.ground_items.append(sh)
+    g._notify_ground(g.player.x, g.player.y)
+    assert g._seeker.profile.is_unlocked('shimmer')
+
+
+def test_powers_count_as_traits(seeker):
+    """B2: the 30 powers come through _award_power and count too."""
+    g = _game()
+    g.quirk_system._award_power('ancestral_q', 'Ancestral', lambda pl: None)
+    assert 'ancestral_q' in g._seeker.profile.members('traits')
+
+
+def test_checkmate_is_the_win_for_the_family(seeker):
+    """B3 (and D9, no achievement for being a bad guy)."""
+    import deeds
+    g = _game()
+    deeds.note(g, 'flag.deaths_lost_turn', source='test')
+    assert not g._seeker.profile.is_unlocked('checkmate')
+    deeds.note(g, 'saved.bartolo_family', source='test')
+    assert g._seeker.profile.is_unlocked('checkmate')
+
+
+def test_a_hellmouth_springing_on_its_own_turn_counts(seeker):
+    """R1: the usual reveal (the hero walks up; it springs on its turn)."""
+    g = _game()
+    g.monsters = [m for m in g.monsters if m.kind == 'nothing']
+    hm = _monster('hellmouth')
+    hm.x, hm.y = g.player.x + 1, g.player.y
+    hm.speed = 999                       # it always gets its turn here
+    g.monsters.append(hm)
+    for _ in range(5):
+        if g._seeker.profile.is_unlocked('not_a_stair'):
+            break
+        g._do_monster_turns()
+        g.player.hp = g.player.max_hp
+    assert g._seeker.profile.is_unlocked('not_a_stair')
+
+
+def test_a_run_ends_once(seeker):
+    """R3: a second game-over in the same action is not another fall."""
+    g = _game()
+    g.defeat_reason = 'died'
+    g._seeker_run_end(False)
+    g.defeat_reason = 'starved'
+    g._seeker_run_end(False)
+    p = seeker_profile.load('Robyn')
+    assert p.stat('falls') == 1 and not p.is_unlocked('forgot_to_eat')
+
+
+def test_a_ghost_on_floor_one_is_told(seeker):
+    """R5: floor 1 is built before the Seeker opens; its ghost still counts."""
+    g = _game(name='Wiring Hero')
+    g.dungeon.bones_ghost_name = 'Ghost of Wiring Hero'
+    g._bones_ghost_notice(g.dungeon)
+    assert g._seeker.profile.is_unlocked('haunted')
+    assert g.dungeon.bones_ghost_name is None
+
+
+def test_a_pet_hatched_past_its_first_form_counts_that_form(seeker):
+    """R6: a Master sphere's pet hatches in its final form."""
+    g = _game()
+    g._hatch_sphere_pet('water', g.player.x, g.player.y, level=55)
+    p = g._seeker.profile
+    assert p.is_unlocked('fully_grown') and p.stat('grown_water') == 1
+
+
+def test_a_chain_of_ten_counts_from_any_weapon(seeker):
+    """R7: chains have no cap since combat v2; ten in one attack is the bar,
+    with a sword, a bow or bare hands alike."""
+    g = _game()
+    g.player.weapon = None
+    m = _monster('asterion_minotaur')
+    g._fire_strike_finisher(m, 9, 10, False)
+    assert not g._seeker.profile.is_unlocked('chain_10')
+    g._fire_strike_finisher(m, 10, 10, False)
+    assert g._seeker.profile.is_unlocked('chain_10')
+
+
+def test_polymath_progress_counts_every_subject(seeker):
+    """N7: the bar fills with every subject's share, not maths alone."""
+    g = _game()
+    s = g._seeker
+    s.profile.add('right_math', 100)
+    s.profile.add('right_history', 50)
+    have, need = s.book.progress('polymath', s.profile)
+    assert have == 150 and need > 150

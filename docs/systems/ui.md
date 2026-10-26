@@ -1079,6 +1079,34 @@ rule (secret builds are intentional surprises, don't demystify them).
 
 ---
 
+### 18.3 The Seeker card, F4 and the Seeker Profile screen (2026-10-25)
+
+The rules for the Seeker Profile, achievements and reward codes are in [seeker_profile.md](seeker_profile.md). The screens are in `src/seeker_screen.py`.
+
+**On the title screen:**
+- A card in the top-left corner shows `Seeker` and the active name, or "No Seeker chosen" with "F4 Choose".
+- **F4** (not Alt+F4) returns `__SEEKER_PROFILE__`, and `main()` runs `SeekerScreen(screen).run(clock)`.
+- The Konami code and typing "god" earn their achievements. Their unlock card is `seeker_screen.draw_unlock_card`, and any key dismisses it.
+
+**The Seeker Profile screen:**
+- A header plaque with the name and "N of 172 Won", then a line of lifetime stats.
+- Category chips (Tab / Shift+Tab; ◀ ▶ when they overflow).
+- A badge grid (arrows; Left/Right carry on into the next category at the ends; Home/End).
+- A Selected Achievement pane: the 128 px badge, the hint until it is earned and the unlocked text after, ladder pips and progress, and the Reward Code box with "Show this code to Dad."
+- "Who Is Playing?" (F4 again): type a name or pick one with Up/Down.
+
+**Badges:** `badge_surface(art, px, earned)` caches up to 96 badges and 8 source images.
+- A missing PNG becomes a code-drawn medallion in its rarity colour (`FP.RARITY_*`).
+- "Not yet earned" is greyscale, darkened, with a padlock mark, so the state is never shown by colour alone.
+- Badges are built when a tab opens, never during a frame.
+
+**In game:**
+- Encyclopedia tab **n**, Achievements: the stock three panes, with Tab cycling achievement categories.
+- The unlock popup is `STATE_STORY_POPUP` with `popup_data['achievements']` (up to three per page), drawn by `_draw_story_popup`.
+- `game_seeker._seeker_tick` raises the popup only in plain play, never over a quiz.
+
+**Study Mode** shows the same unlock card on a result page.
+
 ## 19. Menu primitives on RenderMixin
 
 Not every menu is a bespoke `_draw_<name>_menu`. Two generic

@@ -505,6 +505,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # loaded waits: load_state opens the Seeker for the loaded run.
         if new_run:
             self._seeker_init(new_run=True)
+            # A ghost on floor 1 (built before the Seeker opened) is told now.
+            self._bones_ghost_notice(self.dungeon)
 
     # ------------------------------------------------------------------
     # Message helper
@@ -710,6 +712,30 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A secret build's head start in monster lore (Geralt's medallion)
         # speaks on the first floor too, like every later arrival.
         self._family_arrival(first_visit=True)
+
+    def _bones_ghost_notice(self, dungeon):
+        """A dead hero's ghost haunts this floor (bones.py): say so, once.
+        Floor 1 is built before the Seeker opens, so __init__ calls this
+        again for it afterwards (the ghost name is cleared once told)."""
+        ghost_name = getattr(dungeon, 'bones_ghost_name', None)
+        if not ghost_name:
+            return
+        self.add_message(
+            f"Someone died here with your errand unfinished. The {ghost_name} has not left.",
+            'danger')
+        _who = ghost_name.replace('Ghost of ', '', 1)
+        # One of this Seeker's own past heroes (the profile keeps their names).
+        _s = getattr(self, '_seeker', None)
+        import seeker_codes as _sc
+        self._seeker_event('ghost_met', own=bool(
+            _s and _sc.normalise_name(_who) in _s.profile.members('heroes')))
+        self._chron(
+            'notice',
+            f"{_who} came this far before me. What is left of {_who} is "
+            f"still here, and it is not glad to see me.")
+        # Announce once: this used to repeat (and re-chronicle) on every
+        # return to the floor, even after the ghost was laid to rest.
+        dungeon.bones_ghost_name = None
 
     def _apply_save_affinity(self):
         """Set the player's innate save affinity from the build name. Idempotent:
@@ -1762,24 +1788,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if new_level in _MILESTONE_FLAVOR:
             self._chron('milestone', _MILESTONE_FLAVOR[new_level], once=f'depth:{new_level}')
         # Bones ghost notification
-        ghost_name = getattr(dungeon, 'bones_ghost_name', None)
-        if ghost_name:
-            self.add_message(
-                f"Someone died here with your errand unfinished. The {ghost_name} has not left.",
-                'danger')
-            _who = ghost_name.replace('Ghost of ', '', 1)
-            # One of this Seeker's own past heroes (the profile keeps their names).
-            _s = getattr(self, '_seeker', None)
-            import seeker_codes as _sc
-            self._seeker_event('ghost_met', own=bool(
-                _s and _sc.normalise_name(_who) in _s.profile.members('heroes')))
-            self._chron(
-                'notice',
-                f"{_who} came this far before me. What is left of {_who} is "
-                f"still here, and it is not glad to see me.")
-            # Announce once: this used to repeat (and re-chronicle) on every
-            # return to the floor, even after the ghost was laid to rest.
-            dungeon.bones_ghost_name = None
+        self._bones_ghost_notice(dungeon)
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
 
@@ -3505,6 +3514,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Abyssal Shimmer: show the inscription when stepped upon
         shimmer = next((i for i in here if i.id == 'abyssal_shimmer'), None)
         if shimmer:
+            # The Shimmer is fixed to the floor: finding it is standing on it.
+            self._seeker_event('lore_found', item='shimmer')
             if shimmer.activated:
                 self.add_message(
                     "The ground roils with abyssal energy -- something is ready.", 'danger'
@@ -3885,6 +3896,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                                    'complete_tablet_of_second_death')
             for i in self.player.inventory
         )
+        if not has_stone:
+            # Said before the game-over, which the Seeker's run end reads.
+            self.defeat_reason = 'fled'
         # Walking out alive leaves no ghost behind. (This used to write a
         # floor-1 bones file with the hero's whole kit for the next run.)
         self._on_game_over(leave_bones=False, victory=has_stone)
@@ -5852,8 +5866,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                  f"{_tr.value_text(self.player, item)}.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
-            if getattr(item, 'id', '') == 'abyssal_shimmer':
-                self._seeker_event('lore_found', item='shimmer')
             # Philosophy tier mastery: a thing of a tier the hero has mastered
             # this run names itself as it is picked up. A legendary one shows
             # its story, as the identify quiz would.
@@ -9229,6 +9241,9 @@ def main():
 
     # One-shot notice shown on the next welcome screen (e.g. after a failed load).
     _load_notice = None
+    # Achievements won as a run ended (a fall, the Stone home): the death and
+    # victory screens are no place for them, so the title shows their cards.
+    _carry_cards: list = []
 
     while True:
         # The last run is over (or there was none): a crash from here on must
@@ -9237,6 +9252,9 @@ def main():
         # ---------- welcome / study screen ----------
         welcome = WelcomeScreen(screen, VERSION, notice=_load_notice)
         _load_notice = None
+        if _carry_cards:
+            welcome._seeker_won(_carry_cards)
+            _carry_cards = []
         player_name, secret_build = welcome.run(clock)
 
         if player_name == '__STUDY_MODE__':
@@ -9362,6 +9380,8 @@ def main():
         except Exception:
             pass
 
+        # Achievements won as the run ended wait for the title screen.
+        _carry_cards = list(getattr(game, '_seeker_pending', None) or [])
         # If game ended by death or victory, loop back to welcome screen
         # (unless the window itself was closed: then the game quits)
         if game.state in (STATE_DEAD, STATE_VICTORY) and not getattr(game, '_window_closed', False):
