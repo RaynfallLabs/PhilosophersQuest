@@ -100,6 +100,8 @@ a = Analysis(
         # in the repo, and is imported only inside seeker_codes.
         'seeker_codes', 'seeker_profile', 'seeker_session', 'achievements',
         'game_seeker', 'seeker_screen', '_dad_key',
+        # The release self-test (main.py --selftest-saves; release.yml).
+        'selftest',
         # Standard lib used in except blocks / logging
         'pickle', 'traceback', 'logging', 'logging.handlers',
     ],

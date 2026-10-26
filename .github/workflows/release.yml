@@ -4,6 +4,8 @@ name: Release
 # First checks the tag against the version written in the game and runs the
 # test suite; only then builds a Windows installer + a Linux AppImage in
 # parallel, and publishes both as a GitHub Release with auto-generated notes.
+# The AppImage is launched once, headless, to prove it saves a game and a
+# Seeker profile where a player's files go (src/selftest.py).
 #
 # Pins, and why (bug bash 2026-10-16, CQ-01..03):
 #   * Python 3.14 everywhere: the game is developed and tested on 3.14.
@@ -213,6 +215,32 @@ jobs:
         run: |
           ./appimagetool --no-appstream --runtime-file runtime-x86_64 dist/AppDir "PhilosophersQuest-${{ steps.version.outputs.version }}-x86_64.AppImage"
           ls -lh PhilosophersQuest-*.AppImage
+
+      - name: Smoke-test saves in the built AppImage
+        # The AppImage itself, headless (src/selftest.py): writes a saved game
+        # and a Seeker profile where a player's would go ($XDG_DATA_HOME,
+        # pointed at a fresh temp folder), reads both back, restores the save
+        # as the title screen does, and checks the profile's seal and a reward
+        # code with the release key. --require-frozen: the built game, not the
+        # source; --require-real-key: not the public dev key. A release that
+        # cannot keep a player's things does not ship.
+        # APPIMAGE_EXTRACT_AND_RUN: no FUSE on the runner (as appimagetool).
+        env:
+          APPIMAGE_EXTRACT_AND_RUN: '1'
+          SDL_VIDEODRIVER: dummy
+          SDL_AUDIODRIVER: dummy
+        run: |
+          APPIMAGE="PhilosophersQuest-${{ steps.version.outputs.version }}-x86_64.AppImage"
+          chmod +x "$APPIMAGE"
+          export XDG_DATA_HOME="$(mktemp -d)"
+          set +e
+          "./$APPIMAGE" --selftest-saves --require-frozen --require-real-key
+          rc=$?
+          set -e
+          echo "--- report and files ($XDG_DATA_HOME/PhilosophersQuest)"
+          cat "$XDG_DATA_HOME/PhilosophersQuest/selftest_report.txt" || echo "no report written"
+          ls -la "$XDG_DATA_HOME/PhilosophersQuest" "$XDG_DATA_HOME/PhilosophersQuest/seekers" || true
+          exit $rc
 
       - name: Upload AppImage artifact
         uses: actions/upload-artifact@v7

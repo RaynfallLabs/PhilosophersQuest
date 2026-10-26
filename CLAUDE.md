@@ -140,6 +140,7 @@ src/
   highscore_system.py - High score table
   game_log.py         - ERROR_LOG.txt logging (log_error)
   crash_handler.py    - Crash report writer
+  selftest.py         - Release self-test (--selftest-saves): the built game saves, restores, seals a Seeker profile
   paths.py            - Path resolution helpers (dev and frozen)
   dev_tools/          - Developer-only previews
 

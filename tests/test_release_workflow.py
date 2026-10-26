@@ -133,6 +133,25 @@ def test_installer_clears_the_old_bundle_before_copying_the_new_one():
     assert iss.index('[InstallDelete]') < iss.index('[Files]')
 
 
+def test_the_linux_job_smoke_tests_saves_in_the_built_appimage():
+    """The AppImage itself is launched once, headless, and must save a game
+    and a Seeker profile in a temp $XDG_DATA_HOME with the release key
+    (src/selftest.py), before it is uploaded."""
+    job = WORKFLOW[WORKFLOW.index('build-linux:'):WORKFLOW.index('\n  release:')]
+    built = job.index('- name: Build AppImage')
+    smoke = job.index('- name: Smoke-test saves in the built AppImage')
+    upload = job.index('- name: Upload AppImage artifact')
+    assert built < smoke < upload
+    step = job[smoke:upload]
+    assert '--selftest-saves --require-frozen --require-real-key' in step
+    assert 'export XDG_DATA_HOME="$(mktemp -d)"' in step
+    assert "APPIMAGE_EXTRACT_AND_RUN: '1'" in step
+    assert 'SDL_VIDEODRIVER: dummy' in step
+    assert 'exit $rc' in step
+    # ...after the release key is written, so the build under test carries it
+    assert job.index('write_dad_key.py') < smoke
+
+
 def test_frozen_player_files_live_outside_the_install_dir(monkeypatch, tmp_path):
     """[InstallDelete] wipes {app}/_internal, so nothing the player owns may
     be written there by the frozen build."""

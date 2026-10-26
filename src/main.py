@@ -9403,6 +9403,11 @@ def main():
 _crash_game_ref = None   # set by main() once Game is constructed
 
 if __name__ == "__main__":
+    # The release build's self-test (src/selftest.py): write a save and a
+    # Seeker profile where a player's would go, read both back, then quit.
+    if '--selftest-saves' in sys.argv:
+        import selftest
+        sys.exit(selftest.run(sys.argv[1:], game_cls=Game, restore=_restore_saved_game))
     import crash_handler as _crash
     try:
         main()
