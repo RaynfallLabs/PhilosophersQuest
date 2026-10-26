@@ -1,0 +1,379 @@
+[
+ {
+  "id": "kills_100",
+  "family": "warrior_kills",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a single old iron sword with a notched, chipped blade lying across a battered round wooden shield on a dark stone floor, seen close and a little from above; the sword lies on a diagonal, hilt at the lower left, point at the upper right, and the shield behind it fills most of the picture. The sword's blade is pale steel with three or four dark notches bitten out of its edge; the shield is dark oak planks with a dented iron rim and an iron boss. Warm torchlight from the upper left makes the blade shine pale; the floor round them is dark.",
+  "colours": "A pale steel blade with dark notches, a dark iron crossguard, a brown leather grip; a dark oak shield with a grey iron rim and boss; dark grey stone floor.",
+  "must_show": [
+   "one notched sword",
+   "a battered round shield behind it",
+   "pale blade against dark wood"
+  ],
+  "must_not_show": [
+   "second sword",
+   "crossed swords",
+   "blood",
+   "body",
+   "skull",
+   "banner",
+   "helmet",
+   "person",
+   "hand",
+   "emblem on the shield",
+   "writing"
+  ]
+ },
+ {
+  "id": "kills_1000",
+  "family": "warrior_kills",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "two notched swords crossed in an X over a round shield, hung together on a dark stone wall, seen close and from the front; the shield fills most of the picture and the two swords cross in front of it, their hilts at the bottom left and bottom right, their points at the upper left and upper right. The shield is dark oak planks bound with a broad iron rim and a big round iron boss; the swords' blades are pale steel, each with dark notches along its edge. Warm torchlight from the upper left; the wall round them is dark.",
+  "colours": "Pale steel blades with dark notches, dark iron crossguards, brown leather grips; a dark oak shield with a grey iron rim and boss; dark grey stone wall.",
+  "must_show": [
+   "two swords crossed in an X",
+   "a round shield behind them",
+   "pale blades against the dark shield"
+  ],
+  "must_not_show": [
+   "one sword",
+   "three swords",
+   "banner",
+   "blood",
+   "skull",
+   "person",
+   "hand",
+   "emblem on the shield",
+   "writing",
+   "axe"
+  ]
+ },
+ {
+  "id": "kills_10000",
+  "family": "warrior_kills",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a tall war-banner on a pole planted on the top of a hill, seen close from below: a long tattered banner of plain dark red cloth with no emblem, its ragged end streaming in the wind, on a thick dark wooden pole with an iron spear point at its top; it rises up the middle of the picture. Around the foot of the pole and down the hill lies a field of fallen round shields and broken spears stretching away. Behind, a stormy sunset sky, bright gold low down and dark grey above, so the banner and pole stand out dark against the gold.",
+  "colours": "A plain dark red banner, dark wooden pole, iron point; dull brown and grey fallen shields; a stormy sky, bright gold near the hills and dark grey above.",
+  "must_show": [
+   "a tattered war-banner on a pole on a hill",
+   "a field of fallen shields round it",
+   "banner dark against a bright sunset"
+  ],
+  "must_not_show": [
+   "emblem on the banner",
+   "symbol",
+   "cross",
+   "lion",
+   "dragon",
+   "writing",
+   "bodies",
+   "corpses",
+   "blood",
+   "skulls",
+   "people",
+   "person",
+   "soldiers",
+   "flag of a country"
+  ]
+ },
+ {
+  "id": "damage_10k",
+  "family": "warrior_damage",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a heavy iron war-hammer standing head-down on a cracked flagstone in a dark dungeon, seen close: a big block-shaped head of dark iron with flat striking faces, on a thick straight wooden haft that rises up the middle of the picture, the haft bound with a strip of leather; under its head the flagstone is cracked in a star of dark cracks. Warm torchlight from the upper left shines on the iron's worn edges; the dungeon round it is dark.",
+  "colours": "Dark iron hammer head with bright pale worn edges; a brown wooden haft with a dark leather grip; grey flagstones with black cracks; dark dungeon behind.",
+  "must_show": [
+   "one heavy war-hammer standing head-down",
+   "a cracked flagstone under it",
+   "lit iron against a dark dungeon"
+  ],
+  "must_not_show": [
+   "axe blade",
+   "spike",
+   "person",
+   "hand",
+   "blood",
+   "skull",
+   "glow",
+   "lightning",
+   "fire",
+   "writing",
+   "second hammer"
+  ]
+ },
+ {
+  "id": "damage_100k",
+  "family": "warrior_damage",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a great iron war-hammer, larger than a man, swung by no one, crashing head-first into a castle wall of grey stone blocks, seen close: the hammer's big block-shaped dark iron head is buried in the wall in the middle of the picture and the blocks round it burst outward, flying apart, in a cloud of pale dust; its thick wooden haft runs out to the lower right. Bright daylight from the upper left lights the flying stones and dust pale; the hole in the wall behind the hammer is black.",
+  "colours": "A dark iron hammer head with bright worn edges and a brown wooden haft; grey stone blocks; pale dust; a black hole in the wall.",
+  "must_show": [
+   "a giant hammer smashing into a stone wall",
+   "stone blocks bursting outward",
+   "pale dust and stones against the dark hole"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "giant",
+   "soldiers",
+   "fire",
+   "catapult",
+   "blood",
+   "writing",
+   "axe blade",
+   "second hammer"
+  ]
+ },
+ {
+  "id": "damage_1m",
+  "family": "warrior_damage",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a huge war-hammer of dark iron bound with bands of gold, struck head-down into rocky ground, seen close: its block-shaped head is sunk in the ground in the middle of the picture, its thick haft rising straight up; around it the ground is split in a wide ring of jagged cracks glowing bright orange-gold from below, yellow-white where they are widest, and broken slabs of rock are flung up into the air all round. The glowing cracks are the brightest things in the picture; the sky behind is dark storm grey.",
+  "colours": "A dark iron hammer head with gold bands and bright edges, a dark wooden haft; dark brown-grey rock; cracks glowing orange-gold, yellow-white at their widest; a dark storm-grey sky.",
+  "must_show": [
+   "a great hammer struck into the ground",
+   "glowing cracks spreading in a ring round it",
+   "rocks flung up"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "lava lake",
+   "volcano",
+   "fire flames",
+   "blood",
+   "writing",
+   "axe blade",
+   "lightning",
+   "second hammer"
+  ]
+ },
+ {
+  "id": "damage_10m",
+  "family": "warrior_damage",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a whole mountain split in two from its peak to its foot, seen from a distance so it fills the picture: a jagged crack of blazing white-gold light runs down its middle, the two halves leaning apart, great boulders flying out from the crack. Above the split peak, in the middle of the picture, hangs a giant war-hammer of glowing gold with a block-shaped head, wreathed in crackling violet lightning. The crack of light and the golden hammer are the brightest things in the picture; the mountain is dark slate-grey and the sky behind is near black with violet storm clouds.",
+  "colours": "Dark slate-grey mountain rock; a crack of blazing white-gold light; a glowing gold hammer; crackling violet lightning with white cores; a near-black sky with violet storm clouds.",
+  "must_show": [
+   "a mountain split down the middle by a crack of light",
+   "a giant golden hammer above it",
+   "lightning round the hammer"
+  ],
+  "must_not_show": [
+   "person",
+   "giant",
+   "hand",
+   "planet",
+   "globe",
+   "city",
+   "writing",
+   "axe blade",
+   "fire everywhere",
+   "face in the mountain"
+  ]
+ },
+ {
+  "id": "blow_100",
+  "family": "warrior_blow",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a big woodsman's axe sunk deep into the top of a thick round oak chopping block, seen close: the axe's broad steel blade is bitten deep into the wood, with a long split running down the block from the cut and a few wood chips flying; the axe's dark wooden haft rises to the upper right. The axe head has one blade on one side only. Warm light from the upper left makes the steel blade shine pale; behind, the dark of a woodshed.",
+  "colours": "A pale steel axe blade with a bright edge; a dark brown wooden haft; a pale tan oak chopping block with dark bark and a dark split; dark brown shadow behind.",
+  "must_show": [
+   "an axe sunk deep in a chopping block",
+   "a split in the wood",
+   "pale blade against dark"
+  ],
+  "must_not_show": [
+   "double-bladed axe",
+   "person",
+   "hand",
+   "blood",
+   "tree",
+   "log pile",
+   "lightning",
+   "fire",
+   "writing"
+  ]
+ },
+ {
+  "id": "blow_1000",
+  "family": "warrior_blow",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a great round grey boulder split clean in two by one blow, seen close: its two halves fall apart to the left and right, and down the gap between them cracks one bright yellow zigzag of lightning from the top of the picture, white at its heart; a big battle-axe with a broad steel blade on one side only hangs in the top of the gap where it struck. Small chips of stone fly out. The lightning is the brightest thing in the picture; the sky behind is dark storm grey.",
+  "colours": "Grey granite boulder halves with pale lit edges; one bright yellow zigzag of lightning with a white heart; a steel axe blade and a dark wooden haft; a dark storm-grey sky.",
+  "must_show": [
+   "a boulder split in two halves",
+   "bright yellow lightning in the gap",
+   "an axe at the top of the split"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "hammer",
+   "Thor",
+   "double-bladed axe",
+   "fire",
+   "blood",
+   "writing",
+   "castle"
+  ]
+ },
+ {
+  "id": "blow_5000",
+  "family": "warrior_blow",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a huge standing stone of an ancient stone circle, taller than a house, cut clean in half down its whole length by one blow, seen close from below: its two tall halves fall apart to the left and right, and in the gap between them hangs a great battle-axe of blazing gold, its broad blade on one side only, pouring out gold-white light. Stone chips fly out in an arc. The golden axe is the brightest thing in the picture; behind, a deep violet-blue dusk sky with a few stars.",
+  "colours": "Weathered grey standing-stone halves lit gold along their cut faces; a blazing gold axe with gold-white light; a deep violet-blue dusk sky with a few stars.",
+  "must_show": [
+   "a tall standing stone split in two halves",
+   "a blazing gold axe in the gap",
+   "bright axe against a dark sky"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "writing",
+   "carvings",
+   "runes",
+   "double-bladed axe",
+   "lightning",
+   "castle",
+   "blood"
+  ]
+ },
+ {
+  "id": "chain_10",
+  "family": "warrior_chain",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a short chain of five big oval iron links lying in a gentle curve across a blacksmith's dark anvil, seen close: every link glows orange-hot like iron fresh from the forge, yellow-white at its hottest, and none of them is broken; a few bright sparks fly up. The glowing chain is the brightest thing in the picture; the anvil and forge behind are near black.",
+  "colours": "Five oval iron links glowing orange, yellow-white at their hottest; bright sparks; a near-black iron anvil with pale worn edges; a near-black forge behind.",
+  "must_show": [
+   "a short chain of big links glowing orange-hot",
+   "every link whole and joined",
+   "glowing chain against dark"
+  ],
+  "must_not_show": [
+   "broken link",
+   "sword",
+   "person",
+   "hand",
+   "hammer",
+   "fire filling the picture",
+   "writing",
+   "padlock"
+  ],
+  "note": "renamed from chain_1 (2026-10-25 audit); drawn under the old id"
+ },
+ {
+  "id": "chain_master",
+  "family": "warrior_chain",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a long bright steel sword lying on a diagonal across the picture, hilt at the lower left and point at the upper right, and a heavy chain of big glowing gold links wound round its blade in a spiral from the crossguard to the point; every gold link glows warm gold-white. The sword and its golden chain fill the picture; behind, near-black dark with a few drifting gold sparks.",
+  "colours": "A bright pale steel blade, a gold crossguard and pommel, a dark leather grip; a chain of glowing gold links, gold-white where brightest; near-black background with gold sparks.",
+  "must_show": [
+   "a long sword on a diagonal",
+   "a gold chain wound round its blade",
+   "bright against dark"
+  ],
+  "must_not_show": [
+   "broken chain",
+   "second sword",
+   "upright sword",
+   "person",
+   "hand",
+   "shield",
+   "padlock",
+   "writing",
+   "runes on the blade"
+  ],
+  "note": "renamed from chain_500 (2026-10-25 audit); drawn under the old id"
+ },
+ {
+  "id": "bare_knuckles",
+  "family": "warrior_misc",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "two bare fists raised in a fighter's guard, seen close from the front, side by side in the middle of the picture: strong hands clenched tight, the knuckles wrapped with strips of pale linen, the forearms in rolled-up rough brown wool sleeves running down out of the bottom of the picture. Exactly two hands, ten fingers. Warm torchlight from the upper left lights the knuckles; behind, a dark dungeon wall.",
+  "colours": "Weather-beaten light tan skin; pale cream linen wraps; rough brown wool sleeves; a dark grey-brown dungeon wall.",
+  "must_show": [
+   "two clenched fists raised",
+   "linen-wrapped knuckles",
+   "fists lit against dark"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "body",
+   "third hand",
+   "weapon",
+   "sword",
+   "boxing gloves",
+   "blood",
+   "ring",
+   "writing"
+  ]
+ },
+ {
+  "id": "steady_aim",
+  "family": "warrior_misc",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a round straw archery target seen face-on, filling most of the picture: a thick disc of coiled pale straw with painted rings, a black outer ring, a white ring, and a bright red centre; three arrows are stuck close together in the very centre, their dark wooden shafts pointing out toward the viewer and a little to the right, each with three white feather fletchings. Daylight from the upper left; behind, a dark green hedge.",
+  "colours": "Pale gold straw; painted rings of black, white and bright red; dark wooden arrow shafts with white feather fletchings; a dark green hedge.",
+  "must_show": [
+   "a round archery target face-on",
+   "arrows stuck in its centre",
+   "clear painted rings"
+  ],
+  "must_not_show": [
+   "bow",
+   "person",
+   "hand",
+   "blood",
+   "writing",
+   "numbers",
+   "dartboard",
+   "quiver",
+   "animal"
+  ]
+ },
+ {
+  "id": "busy_journey",
+  "family": "warrior_misc",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a heap of dented and broken enemy helmets of many kinds, polished steel, bright bronze and some with horns, piled in a tall mound beside a dusty road, seen close; the mound fills the middle of the picture. The helmets are bright metal catching the low evening sun, with white and gold glints on every dome. Leaning against the heap are a traveller's long wooden walking staff and a worn brown leather pack. Behind, the road winds away over dusky blue hills under a pale gold evening sky.",
+  "colours": "Bright polished steel and bright bronze helmets with white and gold glints; a brown wooden staff; a worn brown leather pack; a pale dusty road; dusky blue hills; a pale gold evening sky.",
+  "must_show": [
+   "a heap of many dented helmets",
+   "a traveller's staff and pack leaning on it",
+   "dark heap against a bright sky"
+  ],
+  "must_not_show": [
+   "skulls",
+   "heads",
+   "bodies",
+   "blood",
+   "person",
+   "hand",
+   "writing",
+   "banner",
+   "fire",
+   "dark heap",
+   "black helmets"
+  ]
+ }
+]

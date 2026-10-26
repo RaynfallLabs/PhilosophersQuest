@@ -1,0 +1,370 @@
+[
+ {
+  "id": "duck_worn_bg",
+  "family": "secrets_bg",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a dungeon corridor of dark old stone blocks, seen close and low, at the height of a small toy; a warm shaft of light from the upper left falls on an empty patch of stone floor in the very middle of the picture, and the corridor runs away behind into darkness. Nothing stands in the patch of light. Simple, dark and warm.",
+  "colours": "Dark grey-brown dungeon stone; a warm gold shaft of light on the floor; deep black-brown shadow behind.",
+  "must_show": [
+   "a dark dungeon corridor",
+   "an empty lit patch of floor in the middle"
+  ],
+  "must_not_show": [
+   "duck",
+   "toy",
+   "animal",
+   "person",
+   "skeleton",
+   "monster",
+   "treasure",
+   "writing",
+   "torch in the middle"
+  ]
+ },
+ {
+  "id": "duck_hatched_bg",
+  "family": "secrets_bg",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a dark dungeon alcove of blue-grey stone, seen close and low; a soft shaft of pale gold holy light falls from above into the middle of the picture onto an empty patch of floor, and scattered on the floor round the edges of the light lie a few curved broken pieces of bright yellow shell, like a cracked toy. Nothing stands in the light. Simple and dark, the light soft.",
+  "colours": "Dark blue-grey stone; a soft shaft of pale gold light; a few broken pieces of bright yellow shell; deep shadow.",
+  "must_show": [
+   "an empty lit patch of floor in a dark alcove",
+   "a few broken yellow shell pieces round it"
+  ],
+  "must_not_show": [
+   "duck",
+   "duckling",
+   "bird",
+   "egg whole",
+   "person",
+   "animal",
+   "writing",
+   "candle"
+  ]
+ },
+ {
+  "id": "duck_grown_bg",
+  "family": "secrets_bg",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a heavenly sky, seen close: in the middle of the picture a soft burst of gold-white rays fans out from an empty bright centre, and round it the sky deepens to a rich deep blue toward the edges, with a band of pale gold clouds low across the bottom. Nothing is in the middle but light. Simple and serene.",
+  "colours": "A soft burst of gold-white rays; a rich deep blue sky toward the edges; pale gold clouds low down.",
+  "must_show": [
+   "a deep blue sky with gold rays from the middle",
+   "clouds low down",
+   "nothing in the middle"
+  ],
+  "must_not_show": [
+   "angel",
+   "bird",
+   "duck",
+   "person",
+   "face",
+   "sun with a face",
+   "cross",
+   "writing",
+   "dove"
+  ]
+ },
+ {
+  "id": "hack_reality",
+  "family": "secrets_xyzzy",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "the mouth of a dark cave, seen from just outside: a rough arch of grey rock runs round the edges of the picture, and inside it is pitch-black darkness. In the very middle, standing on a flat rock at the cave's threshold, is an old brass miner's lantern: a round brass base, a glass chimney held in four thick brass bars, a brass cap with a big carrying ring. Inside the glass burns a flame of eerie phosphor green, the brightest thing in the picture, and its cold green light spills over the brass and the nearest rocks, fading into the black of the cave behind.",
+  "colours": "Warm polished brass with bright highlights; a cold, bright, eerie phosphor-green flame and glow; grey rock lit green near the lantern; pitch-black cave darkness behind.",
+  "must_show": [
+   "brass miner's lantern in the middle",
+   "eerie green glow",
+   "dark cave mouth round it",
+   "bright lantern against black"
+  ],
+  "must_not_show": [
+   "computer",
+   "screen",
+   "monitor",
+   "yellow flame",
+   "orange flame",
+   "person",
+   "miner",
+   "hand",
+   "skeleton",
+   "monster",
+   "eyes in the dark",
+   "treasure",
+   "sky",
+   "trees"
+  ],
+  "note": "pilot hack_reality_b, round 1; its candidates are copied in, not redrawn"
+ },
+ {
+  "id": "segfault",
+  "family": "secrets_xyzzy",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a floating crystal of reality cracking apart in a black void, seen close: one tall clear six-sided crystal, like a great quartz point, standing upright in the middle of the picture, split through its middle by a jagged crack, its two halves drifting a little apart with small sharp shards floating in the gap; a cold white and pale violet light leaks out of the crack, white at its heart. The crystal's faces catch pale highlights; everything round it is black.",
+  "colours": "A clear pale crystal with white and pale grey faces; a cold white and pale violet light from the crack; small pale shards; a black void.",
+  "must_show": [
+   "one tall crystal split by a jagged crack",
+   "light leaking from the crack",
+   "black void round it"
+  ],
+  "must_not_show": [
+   "computer",
+   "screen",
+   "skull",
+   "person",
+   "hand",
+   "writing",
+   "symbols",
+   "error text",
+   "planet",
+   "many crystals"
+  ]
+ },
+ {
+  "id": "convergence",
+  "family": "secrets_xyzzy",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "an old brass miner's lantern floating in the air in the middle of a dark cave, seen close: a round brass base, a glass chimney held in four thick brass bars, a brass cap with a big carrying ring, and inside the glass a flame of eerie phosphor green, white-green at its heart. Round the lantern circle three glowing rings of the same green light at three different tilts, like the orbits of planets, crossing each other. The lantern and its rings are the brightest things in the picture; the cave round them is black, its rocks touched with green.",
+  "colours": "Polished brass with bright highlights; an eerie phosphor-green flame, white-green at its heart; three glowing green rings; a black cave with rocks lit faint green.",
+  "must_show": [
+   "a floating brass lantern with a green flame",
+   "three glowing green rings circling it"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "planets",
+   "computer",
+   "screen",
+   "writing",
+   "symbols",
+   "yellow flame",
+   "monster"
+  ]
+ },
+ {
+  "id": "singularity",
+  "family": "secrets_xyzzy",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a swirling vortex of green and white light hanging in the air in a dark cave, like a whirlpool turned on its side, filling most of the picture; in the dark eye of the vortex looms the huge head of a monstrous black wolf, Fenrir, facing the viewer, with a great shaggy black mane, an ash-grey muzzle, white frost on the tips of its fur and two eyes burning pale icy blue, white at their hearts. In front of the vortex, on the cave floor at the bottom of the picture, stands a small old brass lantern with an eerie green flame.",
+  "colours": "A vortex of phosphor green and white light; a black and charcoal-grey wolf with an ash-grey muzzle and white frost; pale icy blue eyes with white hearts; a small brass lantern with a green flame; a black cave.",
+  "must_show": [
+   "a swirling green vortex",
+   "a huge black wolf's head in its middle",
+   "a small green-flamed lantern in front"
+  ],
+  "must_not_show": [
+   "tan fur",
+   "brown fur",
+   "red eyes",
+   "blood",
+   "person",
+   "hand",
+   "planets",
+   "galaxy",
+   "writing",
+   "second wolf"
+  ]
+ },
+ {
+  "id": "cow_level",
+  "family": "secrets_cows",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a tall stone archway in a dark dungeon wall, its opening filled with a glowing swirl of hellish red light. Standing in the middle of the opening, facing the viewer, is an ordinary farm cow: a real black-and-white dairy cow with a pink nose, short curved pale horns and an iron bell on a strap round her neck, calmly chewing and looking out with mild, puzzled eyes. She is completely calm and unharmed, and plainly out of place, which is the joke. Her front is lit by soft light from the upper left, and the red light behind outlines her.",
+  "colours": "A black-and-white dairy cow with bold black patches on bright white, a pink nose; a glowing hellish red light in the doorway; dark grey stone wall round it.",
+  "must_show": [
+   "a real black-and-white cow in the middle, facing the viewer",
+   "a doorway full of red light behind her",
+   "calm, comic, unharmed cow"
+  ],
+  "must_not_show": [
+   "blood",
+   "gore",
+   "dead cow",
+   "meat",
+   "skull",
+   "fire on the cow",
+   "demon",
+   "weapons",
+   "halberd",
+   "person",
+   "minotaur",
+   "standing on two legs",
+   "pentagram",
+   "cartoon cow",
+   "second cow"
+  ],
+  "note": "pilot cow_level_b, round 1; its candidates are copied in, not redrawn"
+ },
+ {
+  "id": "cow_king",
+  "family": "secrets_cows",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Cow King, the war-king of the hell cattle, seen close from the chest up before a hellish red sky: a huge grim bull-headed warrior king, painted as seriously as a minotaur lord, never comic. He has the head of a real fighting bull: a broad heavy scarred muzzle with flaring nostrils and a thick iron ring through the nose, small fierce glowing red eyes, and two long thick forward-curving pale horn-grey horns banded with tarnished gold; between the horns sits a heavy tarnished dark gold crown with tall square points. His head and neck are covered in short coarse piebald hide, black with big white patches and a broad white blaze down his black face. He wears blackened iron shoulder plates edged with dull gold, a coat of blackened iron scales and a long ragged dark wine-purple royal cape with a dull grey-white fur collar, and grips the dark shaft of a halberd with a bright steel axe-head beside him.",
+  "colours": "Short coarse piebald hide, black with big white patches and a white blaze; a dark grey muzzle with an iron nose ring; glowing red eyes; pale horn-grey horns banded with tarnished gold; a tarnished dark gold crown; blackened iron armour with dull gold edges; a dark wine-purple cape with a grey-white fur collar; a halberd with a dark shaft and bright steel head; a hellish red sky.",
+  "must_show": [
+   "a crowned black-and-white bull-headed king",
+   "a nose ring",
+   "a halberd",
+   "red sky behind"
+  ],
+  "must_not_show": [
+   "cartoon cow",
+   "smiling",
+   "brown bull",
+   "white bull",
+   "blood",
+   "gore",
+   "second figure",
+   "writing",
+   "Father Christmas"
+  ]
+ },
+ {
+  "id": "bk_scratch",
+  "family": "secrets_knight",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a small old wooden footbridge over a stream in a misty wood, seen close from the front at the level of its planks. On the middle of the bridge a broadsword lies across the planks on a diagonal, and resting on the sword's blade sits a black knight's great helm: a flat-topped barrel helm of blackened iron with one narrow eye slit and a few round breathing holes, still and empty. Behind the bridge the wood is pale grey-green morning mist with only the faint shapes of trees, so the black helm stands out dark against it, its worn edges catching the light.",
+  "colours": "Blackened iron helm with bright pale steel-white worn edges; a bright pale steel broadsword with a dark iron crossguard; grey-brown weathered oak planks; pale grey-green misty wood behind.",
+  "must_show": [
+   "black great helm in the middle, on the bridge",
+   "broadsword under it",
+   "small wooden bridge",
+   "dark helm against a pale misty background"
+  ],
+  "must_not_show": [
+   "head",
+   "body",
+   "arms",
+   "legs",
+   "knight",
+   "person",
+   "blood",
+   "skull",
+   "horns",
+   "plume",
+   "gold",
+   "shield",
+   "castle",
+   "second helm"
+  ],
+  "note": "pilot black_knight_b, round 1; its candidates are copied in, not redrawn"
+ },
+ {
+  "id": "bk_draw",
+  "family": "secrets_knight",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a small old wooden footbridge over a stream in a misty wood, seen close from the front at the level of its planks. In the middle of the bridge stands a knight's closed helmet that covers the whole head, flat on top, painted glossy jet-black, with one narrow horizontal eye slit across its face and a few small round breathing holes below it, still and empty, catching bright white highlights on its top edge. Lying scattered round it on the planks are the rest of his armour, all empty and all glossy jet-black with bright white highlights: one black armoured gauntlet on each side of the helmet, a black armoured boot in front, and his broadsword lying across the planks. Behind the bridge the wood is pale grey-green mist, so the black pieces stand out dark against it. Comic.",
+  "colours": "Glossy jet-black helm, gauntlets and armoured boots with bright white highlights; a bright pale steel broadsword with a dark crossguard; grey-brown weathered oak planks; pale grey-green mist behind.",
+  "must_show": [
+   "a closed black knight's helmet with an eye slit on the bridge",
+   "black gauntlets and an armoured boot scattered round it",
+   "dark pieces against pale mist"
+  ],
+  "must_not_show": [
+   "head",
+   "body",
+   "arms",
+   "legs",
+   "flesh",
+   "blood",
+   "person",
+   "knight standing",
+   "skull",
+   "plume",
+   "gold",
+   "shield",
+   "steel-grey armour",
+   "blue armour",
+   "barrel",
+   "keg",
+   "bucket",
+   "cask",
+   "pot"
+  ]
+ },
+ {
+  "id": "senet",
+  "family": "secrets_tomb",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an ancient Egyptian senet board on the stone floor of a tomb, seen close and a little from above, lit by a small clay oil lamp: a long low box of dark wood inlaid with ivory, its top divided into three rows of plain square cells; on it stand game pieces, little white cones and dark blue spool-shaped pieces, and beside the board lie four flat pale throwing sticks. The lamp's warm gold light falls on the board; the tomb round it is dark.",
+  "colours": "Dark wood inlaid with pale ivory squares; small white cone pieces and dark blue spool pieces; pale throwing sticks; a brown clay lamp with a gold flame; dark sandstone floor and walls.",
+  "must_show": [
+   "a long senet game board with three rows of squares",
+   "game pieces on it",
+   "lamplight in a dark tomb"
+  ],
+  "must_not_show": [
+   "hieroglyphs",
+   "writing",
+   "symbols",
+   "chess pieces",
+   "dice with dots",
+   "person",
+   "hand",
+   "ghost",
+   "mummy",
+   "skull"
+  ]
+ },
+ {
+  "id": "thoth_returned",
+  "family": "secrets_tomb",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Book of Thoth set back in its place on a stone pedestal in a dark tomb niche, seen close: one very thick, massive old book, closed, its cover woven of flat strips of old tan papyrus reed criss-crossed like a mat, framed all round by a broad band of yellow gold, with four gold corner plates, a broad gold clasp, and in the middle of the cover one large jet-black silhouette of an ibis, a wading bird with long legs and a long down-curved beak. A soft warm gold light falls on it from above, peaceful; one long white ibis feather lies on the pedestal beside it.",
+  "colours": "Dull straw-tan papyrus; bright yellow gold frame and fittings; a jet-black ibis; cream page edges; a pale sandstone pedestal; soft warm gold light; a dark niche; a white feather.",
+  "must_show": [
+   "a thick closed book with a gold frame and a black ibis on its cover",
+   "on a stone pedestal in a lit niche"
+  ],
+  "must_not_show": [
+   "hieroglyphs",
+   "writing",
+   "letters",
+   "open book",
+   "person",
+   "hand",
+   "mummy",
+   "skull",
+   "ghost",
+   "snake"
+  ]
+ },
+ {
+  "id": "thoth_left",
+  "family": "secrets_tomb",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the Book of Thoth lying untouched on a low stone slab in a dark tomb, seen close: one very thick old book, closed, its cover woven of tan papyrus strips framed by a broad band of yellow gold, with a jet-black ibis silhouette in the middle; before it on the floor lies one white lotus flower, laid there as a gift. A cold pale blue ghostly light falls on the scene from the left, and the book and the lotus glow softly in it; the tomb is dark.",
+  "colours": "Dull straw-tan papyrus; yellow gold frame; a jet-black ibis; a white lotus flower with a pale yellow heart; cold pale blue light; a grey stone slab; a dark tomb.",
+  "must_show": [
+   "a closed gold-framed book with a black ibis on a stone slab",
+   "a white lotus laid before it",
+   "cold pale blue light"
+  ],
+  "must_not_show": [
+   "hieroglyphs",
+   "writing",
+   "letters",
+   "person",
+   "ghost figure",
+   "woman",
+   "hand",
+   "skull",
+   "mummy",
+   "open book"
+  ]
+ }
+]

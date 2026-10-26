@@ -96,3 +96,18 @@ def test_every_counter_is_used():
 def test_art_ids_are_unique():
     arts = [a['art'] for a in ENTRIES]
     assert len(arts) == len(set(arts))
+
+
+def test_every_badge_is_installed():
+    """Brandon's D5: the art ships with the system. Each `art` stem has its
+    128 px PNG in assets/achievements (a missing one would quietly fall back
+    to the plain medallion)."""
+    import pygame
+    missing, wrong = [], []
+    for a in ENTRIES:
+        path = ROOT / 'assets' / 'achievements' / f"{a['art']}.png"
+        if not path.exists():
+            missing.append(a['art'])
+        elif pygame.image.load(str(path)).get_size() != (128, 128):
+            wrong.append(a['art'])
+    assert missing == [] and wrong == []

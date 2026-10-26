@@ -1,0 +1,341 @@
+[
+ {
+  "id": "quest_cacus",
+  "family": "bosses_quest2",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "Cacus, the fire-breathing giant of Virgil, seen close from the chest up in the mouth of his cave: an immense hunched, neckless giant whose hide is burnt cinder, dark cinder-grey and rough like clinker from a forge, nearly black in the hollows, split by a net of deep cracks in which fire glows bright orange, the same on his skull, face, chest and arms; it is cinder and not skin. His head is a monster's: a low bald sloping skull, a heavy brow, two small eyes of solid glowing orange, a broad flat snout, big pointed ears, a huge jutting lower jaw with two thick pale tusks. His mouth gapes open and one short thick cone of flame bursts from it, yellow-white at the mouth and orange at the tip, no longer than his head. Three pale horned cattle skulls hang from his black iron belt. Behind him the black cave.",
+  "colours": "Dark cinder-grey scaly hide on every part, nearly black in the hollows, cracks glowing bright orange; solid glowing orange eyes; two pale tusks; a short cone of yellow-white and orange flame; pale bone-white cattle skulls; a black iron belt; black cave behind.",
+  "must_show": [
+   "a cinder-grey giant with glowing orange cracks",
+   "a tusked monster head",
+   "a short burst of flame from the mouth"
+  ],
+  "must_not_show": [
+   "living skin",
+   "brown skin",
+   "human face",
+   "beard",
+   "hair",
+   "red skin",
+   "weapon",
+   "blood",
+   "writing",
+   "second figure"
+  ]
+ },
+ {
+  "id": "quest_sphinx",
+  "family": "bosses_quest2",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Sphinx of Thebes, seen close from the front, lying before the stone gate of Thebes at sunset: one animal with the whole body of a great lioness, short pale gold fur, the deep furred chest of a lion between her front paws, and two enormous white feathered wings with dark red-brown tips raised behind her. Only her head is human: the head of a human woman facing the viewer, a proud cold queenly face with smooth pale ivory skin, a straight human nose, dark red lips, a firm chin and bright gold eyes, with long thick dark auburn-red hair falling down both sides of her neck. A tall gold crown stands on her head and a broad gold collar set with dark red gems lies round her furred neck and chest. Behind her a stone gateway stands dark against a gold and orange sunset.",
+  "colours": "Short pale gold lion fur with a cream belly; white wings with dark red-brown tips; a pale ivory woman's face; long dark auburn-red hair; a tall bright gold crown; a broad gold collar with dark red gems; a dark stone gate; a gold and orange sunset.",
+  "must_show": [
+   "a woman's head with a gold crown on a lioness's body",
+   "great white wings",
+   "the furred lion chest and gold collar"
+  ],
+  "must_not_show": [
+   "bare chest",
+   "woman's breasts",
+   "lion's face",
+   "mane",
+   "Egyptian headdress",
+   "pyramid",
+   "blood",
+   "writing",
+   "person"
+  ]
+ },
+ {
+  "id": "quest_rangda",
+  "family": "bosses_quest2",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "Rangda, the widow-witch and demon queen of Bali, exactly as she appears in the Balinese temple dance, seen close from the chest up before a dark temple gate: her face is a great carved and painted demon mask, chalk-white with gold and black painted lines, two huge round bulging gold eyes ringed in black, a wide snarling mouth with big white teeth and four long curved white tusks, two up and two down; from the mouth hangs one very long broad flat tongue of dull dark red leather set with small gold flames, down to her waist. Round the mask bursts an enormous shaggy mane of wild coarse white and pale grey hair, standing up above the mask in a ragged crest and covering her shoulders. Her white-gloved hands are raised, each finger ending in a very long curved nail of pale horn. Behind her, a split stone temple gate dark against a deep red night sky.",
+  "colours": "A chalk-white mask with gold and black painted lines; bulging gold eyes; white teeth and tusks; a long dull dark red tongue with gold flames; a huge shaggy mane of white and pale grey hair; long sleeves of dull dark red; white gloves with long pale horn nails; a dark grey stone gate; a deep red night sky.",
+  "must_show": [
+   "a chalk-white tusked demon mask with bulging gold eyes",
+   "a long red tongue hanging down",
+   "a huge shaggy white mane",
+   "long curved nails"
+  ],
+  "must_not_show": [
+   "living face",
+   "human woman",
+   "bare skin",
+   "blood",
+   "skull",
+   "writing",
+   "Chinese dragon",
+   "lion dance"
+  ]
+ },
+ {
+  "id": "quest_nemean_lion",
+  "family": "bosses_quest2",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "the Nemean Lion, seen close from the front, head and chest, before a dark cave mouth on a rocky hill: a real enormous male lion, snarling, with a huge very dark brown mane, nearly black, a broad scarred muzzle, amber eyes and long ivory fangs; its short fur is pale tawny straw-gold with a dull metallic sheen and pale highlights, as if the hide were hammered metal. In front of its paws lies a broken sword, its steel blade snapped in two on the lion's hide. Behind it, the cave is black and the rocks round it are lit by a gold evening light.",
+  "colours": "Pale tawny straw-gold fur with a dull metallic sheen; a very dark brown mane, nearly black; amber eyes; ivory fangs; a broken pale steel sword; a black cave; rocks in gold evening light.",
+  "must_show": [
+   "a snarling lion with a near-black mane",
+   "metallic gold fur",
+   "a broken sword at its paws"
+  ],
+  "must_not_show": [
+   "orange lion",
+   "person",
+   "Hercules",
+   "lion skin worn by a man",
+   "blood",
+   "second lion",
+   "writing",
+   "crown"
+  ]
+ },
+ {
+  "id": "quest_baba_yaga",
+  "family": "bosses_quest2",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "Baba Yaga, the iron-toothed witch of the Russian tales, flying in her mortar over a dark forest at night, seen close: she rides inside a huge round wooden mortar of dark weathered grey-brown wood bound with two broad iron hoops, so only her upper half shows above its rim. She is a monstrous, bony, hunched hag, not a living woman: her skin is plainly grey-green like the bark of an old tree, a colour no living person has, deeply furrowed, on her face, neck and hands alike. She has a very long hooked warty nose curving down to a jutting chin, two small eyes glowing lamp-yellow, shaggy white brows, wild wisps of white hair, and a wide grinning mouth of long pointed teeth of dark grey iron; her bony hands end in long iron claws. She wears a dull ochre-yellow headscarf, a heavy dark brown shawl and a black dress. She holds a thick pale wooden pestle in one hand and a twig broom in the other. Far behind, her hut stands on two giant chicken legs among black fir trees under a pale moon.",
+  "colours": "Grey-green bark-coloured furrowed skin; yellow eyes; dark grey iron teeth; wisps of white hair; a dull ochre-yellow headscarf; a dark brown shawl; a black dress; a weathered grey-brown wooden mortar with dark iron hoops; a pale wooden pestle; a dark brown twig broom; black firs; a pale moon.",
+  "must_show": [
+   "a grey-green hag in a flying wooden mortar",
+   "iron teeth",
+   "a pestle",
+   "a hut on chicken legs far behind"
+  ],
+  "must_not_show": [
+   "pointed witch hat",
+   "broomstick riding",
+   "cauldron",
+   "cat",
+   "living pink skin",
+   "young woman",
+   "blood",
+   "writing",
+   "kind old woman",
+   "grandmother",
+   "tan skin",
+   "pink cheeks"
+  ]
+ },
+ {
+  "id": "quest_jormungandr",
+  "family": "bosses_quest2",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "a young Jormungandr, the world serpent of Norse myth, rising out of a stormy grey sea, seen close: an enormously thick ancient sea serpent whose body is as thick as a ship's hull, its great broad blunt head reared up in the middle of the picture, with a heavy armoured brow, two thick backswept dark horns, a fringe of thick fleshy barbels under its chin, cold glowing pale yellow eyes and long white fangs. Its plated scales are very dark sea-green and iron-grey with a pale grey-cream belly, and a row of tall dark spines runs down its back. One of its heavy coils, rising from the waves below, crushes a small wooden Viking longship with a broken mast. Waves break white round it under a dark storm sky.",
+  "colours": "Very dark sea-green and iron-grey plated scales; a pale grey-cream belly; black horns and spines; glowing pale yellow eyes; white fangs; a small weathered brown wooden longship; a grey sea with white breaking waves; a dark storm sky.",
+  "must_show": [
+   "a huge horned sea serpent's head rising from the sea",
+   "glowing yellow eyes",
+   "a small longship crushed in its coil"
+  ],
+  "must_not_show": [
+   "legs",
+   "arms",
+   "wings",
+   "second head",
+   "dragon with wings",
+   "people",
+   "blood",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_set",
+  "family": "bosses_quest2",
+  "rank": 7,
+  "body": "badge_scene",
+  "what": "Set's jackal, a hunting beast of the Egyptian god of the red desert, standing on a dune of the red desert, seen from the side and a little from the front so all four legs show: a real jackal on four legs, as large and lean as a racing hound, all bone and sinew, with a long slender down-curved muzzle, two very tall ears that stand straight up and are cut off square and flat at the top, and a long stiff tail held straight up that ends in a fork of two points. Its coat is short and jet-black all over; its eyes are narrow slits glowing dark red. Round its neck lies a broad Egyptian collar of gold with big dark red stones, and a broad gold band circles each leg. Behind it, a huge pale gold sun low in a dusty red sky, so the black jackal stands out sharp.",
+  "colours": "Short jet-black fur with dark charcoal-grey highlights; narrow dark red glowing eyes; ivory fangs; a broad bright gold collar with dark red stones; four gold leg bands; red-orange dunes; a huge pale gold sun in a dusty red sky.",
+  "must_show": [
+   "a jet-black lean jackal with tall square-topped ears",
+   "a forked tail",
+   "a gold collar",
+   "black beast against a bright sky"
+  ],
+  "must_not_show": [
+   "fifth leg",
+   "person",
+   "god",
+   "jackal-headed man",
+   "Anubis statue",
+   "pyramid",
+   "blood",
+   "writing",
+   "hieroglyphs"
+  ]
+ },
+ {
+  "id": "quest_green_knight",
+  "family": "bosses_quest2",
+  "rank": 8,
+  "body": "badge_scene",
+  "what": "the Green Knight of Arthurian legend, seen close from the chest up in a firelit winter hall: a giant of a knight, green all over: his skin is dark pond-weed green on his face and hands, plainly green, a green no living person has; he has a proud fierce face, pale yellow eyes, and a huge bushy beard and long wild hair of dark holly-green, with a wreath of dark holly leaves on his bare head. He wears a very dark emerald-green breastplate edged with dull gold and a dark forest-green mantle with a broad collar of dull grey-white fur. Over his shoulder he rests an enormous woodsman's axe with one huge pale steel crescent blade on one side only. Behind him the hall is dark, with the warm glow of a great fire.",
+  "colours": "Dark pond-weed green skin; dark holly-green hair and beard; pale yellow eyes; a dark holly wreath; a very dark emerald-green breastplate edged with dull gold; a dark forest-green mantle with a dull grey-white fur collar; a huge pale steel axe blade on a dark green haft; a dark hall with a warm orange glow.",
+  "must_show": [
+   "a green-skinned giant knight with a huge green beard",
+   "a holly wreath",
+   "a great axe with a crescent blade"
+  ],
+  "must_not_show": [
+   "normal skin",
+   "helmet",
+   "severed head",
+   "head in hand",
+   "blood",
+   "Father Christmas",
+   "red mantle",
+   "double-bladed axe",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_charybdis",
+  "family": "bosses_quest2",
+  "rank": 9,
+  "body": "badge_scene",
+  "what": "Charybdis, the whirlpool monster of Greek myth, seen from above in the middle of a whirlpool of dark sea, filling the picture: her body is a huge thick fleshy ring of deep sea-blue ridged flesh round a gaping round maw lined with three rings of long curved ivory fangs going down into a black throat; the ring's flesh is ridged in a deep spiral that winds inward. A crown of tall bone-white spines stands round the ring, and six small glowing yellow eyes are set round the maw. The sea round her swirls in a great spiral of dark blue water and white foam toward the maw, and a broken ship's mast is caught in the swirl.",
+  "colours": "Deep sea-blue and dark teal ridged flesh; a black throat; ivory fangs; bone-white spines; glowing yellow eyes; a swirl of dark blue sea and white foam; a broken brown wooden mast.",
+  "must_show": [
+   "a round fanged maw in the middle of a whirlpool",
+   "rings of ivory fangs",
+   "the sea swirling into it"
+  ],
+  "must_not_show": [
+   "legs",
+   "face",
+   "eyeball in the centre",
+   "people",
+   "blood",
+   "red tongue",
+   "octopus",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_ravana",
+  "family": "bosses_quest2",
+  "rank": 10,
+  "body": "badge_scene",
+  "what": "Ravana's Arm, one of the twenty arms of the ten-headed demon king of Lanka, still alive long after the war, seen close in the ruins of a golden palace: one single gigantic arm and nothing else, as big as a tree trunk, standing on its fingertips like a huge spider. The enormous hand is at the bottom left, its five thick fingers spread and arched with the fingertips pressed down like legs, each ending in a long curved claw-nail of dull gold; the heavily muscled forearm rises up and back to the right, bends at the elbow near the top of the picture, and the upper arm comes down at the right, ending in a big closed cap of worked gold. Its skin is dark slate-blue, the colour of a storm cloud. It is loaded with a king's jewels: a gold wrist cuff with dark red stones, gold bangles, a gold serpent armlet and a gold ring on each finger. Behind it, broken gold-roofed palace towers stand dark against a smoky orange sky.",
+  "colours": "Dark slate-blue skin with paler blue-grey highlights; dull gold claw-nails; bright gold cuff, bangles, serpent armlet, rings and end cap; dark red stones; dark ruined palace towers; a smoky orange sky.",
+  "must_show": [
+   "one giant blue arm standing on its fingertips like a spider",
+   "gold jewels on it",
+   "a gold cap closing its upper end"
+  ],
+  "must_not_show": [
+   "body",
+   "head",
+   "face",
+   "second arm",
+   "blood",
+   "gore",
+   "severed flesh",
+   "bone",
+   "person",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_wendigo",
+  "family": "bosses_quest2",
+  "rank": 11,
+  "body": "badge_scene",
+  "what": "a wendigo, the starving winter giant of Algonquian tales, seen close from the chest up in a dark winter forest at night with snow falling: an enormously tall gaunt giant starved to skin and bone, every rib showing; it is dead, its skin cold ash-grey like a body frozen in the snow, cracked and rimed with white frost, on head and body alike. Its long gaunt head has a shrunken dead face: sunken cheeks, a thin nose, tattered lips drawn back from long jagged teeth, two deep-set eyes glowing pale icy blue, white at their hearts, and long lank white hair; from its skull grow two great branching stag's antlers of dark grey-brown hung with icicles. In the middle of its chest between the ribs glows a jagged lump of pale icy blue ice, its frozen heart. A tattered dark brown fur mantle hangs on its shoulders.",
+  "colours": "Cold ash-grey frost-rimed dead skin with dark grey hollows; lank white hair; dark grey-brown antlers with white icicles; pale icy blue eyes and heart of ice, white at their hearts; a tattered dark brown fur mantle; a black forest with falling white snow.",
+  "must_show": [
+   "a gaunt grey antlered giant with ribs showing",
+   "glowing icy blue eyes",
+   "a glowing ice heart in its chest",
+   "snowy night"
+  ],
+  "must_not_show": [
+   "living skin",
+   "deer head",
+   "skull for a head",
+   "muscles",
+   "blood",
+   "gore",
+   "person",
+   "writing",
+   "fire"
+  ]
+ },
+ {
+  "id": "quest_wild_hunt",
+  "family": "bosses_quest2",
+  "rank": 12,
+  "body": "badge_scene",
+  "what": "the captain of the Wild Hunt, seen close from the chest up against a stormy night sky: a tall, gaunt, ghostly huntsman-king of northern legend with a pale stern old man's face, a long white beard and eyes that shine cold white. He wears an ornate tarnished silver helm with an open face, crowned with two great branching ivory stag antlers, and an engraved silver breastplate rimed with frost, with a long tattered charcoal-black wolf-fur cloak. He blows a great curved ivory ox horn bound with brass bands, its narrow end at his lips and its wide end curving up. Behind him, dark storm clouds lit by pale lightning.",
+  "colours": "Tarnished silver armour rimed with white frost; ivory antlers; a pale old face with a white beard; cold white glowing eyes; a charcoal-black wolf-fur cloak; a curved ivory horn with brass bands; dark storm clouds with pale lightning.",
+  "must_show": [
+   "an antlered silver helm on a white-bearded huntsman",
+   "a curved horn at his lips",
+   "stormy night sky"
+  ],
+  "must_not_show": [
+   "horse filling the picture",
+   "dogs",
+   "deer head",
+   "skull face",
+   "blood",
+   "writing",
+   "second rider in front",
+   "gold armour"
+  ]
+ },
+ {
+  "id": "quest_anansi",
+  "family": "bosses_quest2",
+  "rank": 13,
+  "body": "badge_scene",
+  "what": "Anansi, the spider of the Akan stories of Ghana, who won all the stories of the world from the Sky God, seen close from the front and a little from above, on his great web in a forest at dusk: one real spider, drawn very large, a golden orb-weaver with a small head-and-chest and a big long oval abdomen held high behind it, patterned all over like an old woven kente cloth in bold square blocks and zigzag bands of dull old gold, black and dark brick-red. His head-and-chest is glossy black with short gold hairs and a cluster of shining amber eyes. His long thin legs are black with broad bands of dull old gold at the joints. His front pair of legs holds up one small square carved box of dark brown wood with brass corners, the box of stories. Behind him the web shines pale gold against dark green forest.",
+  "colours": "An abdomen in bold square blocks and zigzags of dull old gold, black and dark brick-red; a glossy black head-and-chest with gold hairs; amber eyes; black legs with dull gold bands; a small dark brown box with brass corners; a pale gold web; a dark green forest.",
+  "must_show": [
+   "a large spider with a kente-patterned abdomen",
+   "a small carved box held up in its front legs",
+   "a web behind"
+  ],
+  "must_not_show": [
+   "human face",
+   "person",
+   "man",
+   "tarantula",
+   "cartoon face",
+   "blood",
+   "writing",
+   "letters on the box"
+  ]
+ },
+ {
+  "id": "quest_nidhoggr",
+  "family": "bosses_quest2",
+  "rank": 14,
+  "body": "badge_scene",
+  "what": "Nidhoggr, the corpse-dragon that gnaws the root of the world-tree, seen close from the side in a dark cavern under the tree: a great long serpentine dragon of the deep earth, its huge head in the middle of the picture, long and heavy, with a crown of six long straight backward-pointing horns of pale bone, small sunken burning pale yellow eyes, and huge jaws full of long uneven pale fangs, gripping crosswise one thick pale twisted tree root, gnawed and splintered. Its scales are coal-black with dull dark grey-green highlights, big and rough like wet slate, and its throat is plated in pale corpse-white; a ragged crest of pale bone spines runs down its neck, and tattered leathery wings with pale bone ribs are folded shut along its back. Drops of bright yellow-green venom drip from its fangs. Above it, great pale roots spread across the dark cavern roof.",
+  "colours": "Coal-black scales with dull dark grey-green highlights; a pale corpse-white throat; pale bone horns, spines and fangs; burning pale yellow eyes; a pale grey-tan gnawed root; bright yellow-green venom; pale roots across a black cavern.",
+  "must_show": [
+   "a black dragon's head with a crown of pale bone horns",
+   "a thick root gripped in its jaws",
+   "great roots above"
+  ],
+  "must_not_show": [
+   "second head",
+   "red dragon",
+   "fire breath",
+   "spread wings",
+   "blood",
+   "corpses",
+   "person",
+   "writing",
+   "green tree leaves"
+  ]
+ }
+]

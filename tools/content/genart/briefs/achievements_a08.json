@@ -1,0 +1,296 @@
+[
+ {
+  "id": "field_notes",
+  "family": "lore_families",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a naturalist's field notebook lying open on a flat grey rock in a forest, seen close from above at a slant: its covers are worn brown leather, and on its pale cream left page is one bold sketch in dark brown ink of a huge clawed monster footprint, four long toes with hooked claws; the right page is blank. A quill rests across the bottom of the book. Dappled daylight falls on the pages; the forest floor round the rock is dark green and brown.",
+  "colours": "Worn brown leather covers; pale cream pages; a bold dark brown ink sketch of a clawed footprint; a brown quill; a grey rock; dark green and brown forest floor.",
+  "must_show": [
+   "an open notebook",
+   "a sketch of a big clawed footprint on one page",
+   "pale pages against a dark forest floor"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "text",
+   "notes",
+   "numbers",
+   "real footprint in mud",
+   "person",
+   "hand",
+   "monster",
+   "blood",
+   "stains"
+  ]
+ },
+ {
+  "id": "bane",
+  "family": "lore_families",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a hunter's trophy on a dark stone wall, seen close: a great horned monster skull of pale bone, with long curving horns and a jaw of big fangs, mounted on a shield-shaped plaque of dark oak; crossed beneath it hang a long hunting spear with a bright silver blade and a silver-bladed hunting knife. Warm torchlight from the upper left lights the pale skull and the silver blades bright against the dark wall.",
+  "colours": "A pale bone skull with darker bone-brown shading; dark oak plaque; bright silver blades; dark wooden spear shaft; a dark grey stone wall.",
+  "must_show": [
+   "one great horned monster skull mounted on a plaque",
+   "crossed silver spear and knife below it",
+   "pale skull against a dark wall"
+  ],
+  "must_not_show": [
+   "human skull",
+   "flesh",
+   "blood",
+   "eyes",
+   "glowing eyes",
+   "animal head with fur",
+   "person",
+   "hand",
+   "writing",
+   "several skulls"
+  ]
+ },
+ {
+  "id": "loremaster",
+  "family": "lore_families",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a hunter-scholar's hall of trophies, seen close: on a dark stone wall, five monster skulls of pale bone are mounted in an arch, each on its own dark oak plaque: in the middle and highest, the largest, a dragon's skull with long swept-back horns; on its left a wolf's long narrow skull and a bull's skull with wide horns; on its right a serpent's flat wedge-shaped skull and a goblin's small skull with two tusks. Below them, on a stand, lies a huge ancient book bound in black scaled leather with gold corners, closed. A violet and gold light falls from above; the wall is dark.",
+  "colours": "Pale bone skulls with bone-brown shading; dark oak plaques; a book of black scaled leather with gold corners; violet and gold light; a dark grey stone wall.",
+  "must_show": [
+   "five different monster skulls mounted in an arch",
+   "a dragon skull largest in the middle",
+   "a great closed book below"
+  ],
+  "must_not_show": [
+   "human skull",
+   "flesh",
+   "blood",
+   "glowing eyes",
+   "person",
+   "hand",
+   "writing",
+   "letters on the book",
+   "candles"
+  ]
+ },
+ {
+  "id": "circle_closed",
+  "family": "lore_misc",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a great serpent biting its own tail, forming one perfect round circle that fills the picture: its head is at the top, its jaws closed on the tip of its own tail, its long body curving down round both sides and meeting again at the top. Its scales are dark green with a broad stripe of bright gold down its back, its belly pale cream, its eye a small gold spark. Behind it, a dark background with a soft gold glow in the middle of the circle.",
+  "colours": "Dark green scales with a bright gold stripe and pale cream belly plates; a gold eye; a dark background with a soft gold glow in the middle.",
+  "must_show": [
+   "one serpent forming a circle",
+   "its head biting its own tail",
+   "a gold glow inside the circle"
+  ],
+  "must_not_show": [
+   "two snakes",
+   "second head",
+   "dragon wings",
+   "legs",
+   "writing",
+   "symbols",
+   "runes",
+   "person",
+   "hand",
+   "letters inside the circle"
+  ]
+ },
+ {
+  "id": "bestiary_50",
+  "family": "lore_bestiary",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a thick old leather-bound book lying closed on a dark wooden desk, seen close and a little from above; its dark green leather cover bears one large gold silhouette of a dragon, stamped in the middle, and it is fastened by a clasp made from a monster's curved black claw. Gold corner pieces. Warm candlelight from the upper left makes the gold dragon gleam; behind, deep brown shadow.",
+  "colours": "Dark emerald-green leather; a bright gold dragon silhouette and gold corners; a black curved claw clasp; pale cream page edges; a dark wooden desk; deep brown shadow.",
+  "must_show": [
+   "a thick closed book",
+   "a gold dragon emblem on its cover",
+   "a claw clasp"
+  ],
+  "must_not_show": [
+   "writing",
+   "title",
+   "letters",
+   "open book",
+   "person",
+   "hand",
+   "skull",
+   "candle flame",
+   "second book"
+  ]
+ },
+ {
+  "id": "bestiary_250",
+  "family": "lore_bestiary",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a huge ancient bestiary lying wide open on a carved wooden stand, seen close and from the front: on its left page a painted picture in rich colours of a red dragon, on its right page a painted picture of a gold griffin, both pictures glowing softly; there is no writing anywhere on the pages. The book's covers are dark green leather with gold corners. Warm candlelight from both sides makes the pale pages glow against the deep brown shadow round it.",
+  "colours": "Pale cream pages with a painted red dragon and a painted gold griffin; dark green leather covers with gold corners; a dark carved wooden stand; deep brown shadow.",
+  "must_show": [
+   "a huge open book",
+   "painted pictures of a dragon and a griffin on its pages",
+   "glowing pages against dark"
+  ],
+  "must_not_show": [
+   "writing",
+   "text",
+   "letters",
+   "captions",
+   "labels",
+   "real dragon",
+   "monster coming out of the book",
+   "person",
+   "hand",
+   "skull"
+  ]
+ },
+ {
+  "id": "well_read",
+  "family": "lore_misc",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "an open book lying on a stone windowsill in afternoon sunlight, seen close: its pale cream pages are clean and blank, a red silk ribbon bookmark lies across them, and a pair of round old-fashioned spectacles with thin brass wire rims rests folded on the pages. Warm golden sunlight falls across the book from the window; the room behind is in shadow.",
+  "colours": "Pale cream blank pages; a red silk ribbon; thin brass wire spectacles with clear lenses; a grey stone windowsill; warm gold sunlight; dark brown shadow behind.",
+  "must_show": [
+   "an open book with blank pages",
+   "round wire spectacles on it",
+   "a red ribbon bookmark"
+  ],
+  "must_not_show": [
+   "writing",
+   "text",
+   "letters",
+   "person",
+   "face",
+   "eyes",
+   "candle",
+   "skull",
+   "modern glasses",
+   "sunglasses"
+  ]
+ },
+ {
+  "id": "traits_10",
+  "family": "lore_traits",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a jester's cap hanging on a wooden peg on a pale cream plaster wall, seen close from the front and filling the middle of the picture: a soft cloth cap with two long floppy points hanging down to the left and right, the left half bright buttercup yellow and the right half deep red, each point ending in a big round brass bell. Bright warm daylight from the upper left lights it, so the yellow half glows against the wall and the red half is strong and dark.",
+  "colours": "A cap of bright buttercup yellow and deep red cloth; big round brass bells; a dark wooden peg; a pale cream plaster wall.",
+  "must_show": [
+   "a two-pointed jester's cap with bells, hanging on a peg",
+   "bright yellow and deep red halves",
+   "the cap clear against a pale wall"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person",
+   "mask",
+   "clown",
+   "juggling balls",
+   "sparkles",
+   "writing",
+   "skull",
+   "stool",
+   "crumpled heap of cloth"
+  ]
+ },
+ {
+  "id": "traits_40",
+  "family": "lore_traits",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a jester's cap hanging on a wooden peg on a pale cream plaster wall, seen close from the front and filling the middle of the picture: a soft cloth cap with three long floppy points, the left one bright buttercup yellow, the middle one deep red and the right one bright emerald green, each ending in a big round brass bell. Above it three juggling balls, white, red and blue, float in an arc. Bright warm daylight from the upper left lights the cap and the balls against the pale wall.",
+  "colours": "A cap of bright buttercup yellow, deep red and bright emerald green cloth; big round brass bells; juggling balls of white, red and blue; a dark wooden peg; a pale cream plaster wall.",
+  "must_show": [
+   "a three-pointed jester's cap with bells, hanging on a peg",
+   "juggling balls in an arc above it",
+   "the cap clear against a pale wall"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person",
+   "hand",
+   "mask",
+   "clown",
+   "writing",
+   "skull",
+   "stool",
+   "magic sparkles",
+   "crumpled heap of cloth"
+  ]
+ },
+ {
+  "id": "traits_100",
+  "family": "lore_traits",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a splendid jester's cap with four long points of deep red, gold, deep green and deep violet cloth, each point ending in a golden bell, floating in the air in the middle of the picture, glowing with violet and gold sparkles of magic; round it circles a ring of odd things floating in the air: a teacup, a small silver fish, a little gold crown, an old iron key and a white feather. Behind, a deep violet darkness.",
+  "colours": "A cap of deep red, gold, deep green and deep violet cloth with golden bells; violet and gold sparkles; a white teacup, a silver fish, a gold crown, an iron key, a white feather; deep violet darkness.",
+  "must_show": [
+   "a four-pointed jester's cap floating and glowing",
+   "odd things circling round it"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person",
+   "hand",
+   "mask",
+   "clown",
+   "writing",
+   "skull",
+   "stool"
+  ]
+ },
+ {
+  "id": "identify_100",
+  "family": "lore_identify",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a round glass potion bottle with a long neck and a cork, full of a cloudy violet liquid with a pale glow, standing on a dark wooden shelf, seen close; tied round its neck with a piece of string is a small tag of pale cream parchment, clean and blank. The bottle is large in the middle of the picture. Warm candlelight from the upper left makes the glass shine with a white glint; behind, deep brown shadow.",
+  "colours": "Clear glass with white glints; a cloudy violet liquid with a pale glow; a brown cork; a pale cream blank tag; brown string; a dark wooden shelf; deep brown shadow.",
+  "must_show": [
+   "one potion bottle",
+   "a blank tag tied round its neck"
+  ],
+  "must_not_show": [
+   "writing on the tag",
+   "letters",
+   "label with text",
+   "skull",
+   "second bottle",
+   "person",
+   "hand",
+   "magnifying glass"
+  ]
+ },
+ {
+  "id": "identify_1000",
+  "family": "lore_identify",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "three mysterious things laid side by side on a cloth of dark blue velvet, seen close and a little from above, each with a small blank tag of pale cream parchment tied on with string: in the middle a round glass potion bottle of glowing violet liquid, on its left a gold ring set with a big red gem, on its right a carved dark wooden wand with a silver tip. A soft gold light falls on them from above, so the glass, gold and silver gleam against the dark velvet.",
+  "colours": "A glass bottle of glowing violet liquid; a gold ring with a red gem; a dark wooden wand with a silver tip; pale cream blank tags with brown string; dark blue velvet.",
+  "must_show": [
+   "a potion, a ring and a wand side by side",
+   "a blank tag tied to each",
+   "bright things on dark velvet"
+  ],
+  "must_not_show": [
+   "writing on the tags",
+   "letters",
+   "labels with text",
+   "skull",
+   "person",
+   "hand",
+   "coins",
+   "sword"
+  ]
+ }
+]

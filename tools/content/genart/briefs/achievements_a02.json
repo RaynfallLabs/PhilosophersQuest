@@ -1,0 +1,123 @@
+[
+ {
+  "id": "subject_math",
+  "family": "scholar_subjects",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a geometer's tools on a dark slate tablet, seen close and a little from above: a pair of large brass drawing dividers, two long straight polished brass legs hinged together at the top with a round brass knob, standing opened in a narrow upside-down V, their two steel points resting on the slate; on the black slate, drawn in bold white chalk, one big circle with a large triangle inside it whose three corners touch the circle, and nothing else on the slate. Warm lamplight from the upper left makes the brass gleam; the white chalk lines are bright against the black slate.",
+  "colours": "Polished brass dividers with bright highlights and steel points; a black slate tablet in a dark wooden frame; bold white chalk lines.",
+  "must_show": ["brass dividers standing open on the slate", "a chalk circle with a triangle inside", "bright lines and brass against dark slate"],
+  "must_not_show": ["numbers", "digits", "letters", "equations", "writing", "magnetic compass", "compass needle", "clock", "abacus", "person", "hand", "ruler with markings"]
+ },
+ {
+  "id": "subject_geography",
+  "family": "scholar_subjects",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "an old globe of the world on a dark wooden stand with a polished brass ring round it, seen close, filling most of the picture; its seas are deep blue and its lands painted in sandy brown and dull green like an old map, with no writing anywhere on it. Warm lamplight from the upper left makes one side of the globe shine and leaves the other in shadow; behind, a dark study, deep brown and black.",
+  "colours": "Deep blue seas, sandy brown and dull green lands, a polished brass ring, a dark walnut stand; deep brown shadow behind.",
+  "must_show": ["a globe of the world on a stand", "a brass ring round it", "lit globe against a dark background"],
+  "must_not_show": ["writing", "lettering", "place names", "numbers", "compass rose", "map on paper", "person", "hand", "planets", "stars"]
+ },
+ {
+  "id": "subject_history",
+  "family": "scholar_subjects",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the ruins of an ancient Greek temple at sunset, seen close from below: three tall fluted white marble columns still standing side by side, carrying one broken block of stone beam across their tops, and fallen drums of columns lying at their feet; they fill most of the picture. Behind them a huge pale gold setting sun sits low in a deep orange and red evening sky, so the columns stand out dark against the bright sky with gold light on their edges.",
+  "colours": "Weathered white marble in shadow, warm grey with gold edges; a huge pale gold sun; a deep orange and red evening sky.",
+  "must_show": ["three standing ruined marble columns", "a broken beam across their tops", "dark columns against a bright sunset"],
+  "must_not_show": ["writing", "carved letters", "statues", "people", "person", "face on the sun", "trees", "castle", "modern buildings", "birds"]
+ },
+ {
+  "id": "subject_animal",
+  "family": "scholar_subjects",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a great red deer stag, a real animal on four legs, standing in a forest clearing at dawn, seen from the side and a little from the front so all four of its legs can be seen, its head turned toward the viewer, with huge branching antlers spreading wide above its head; it fills most of the picture. It has exactly four legs. Behind it pale golden morning mist between dark tree trunks, so the dark stag stands out against the mist.",
+  "colours": "A dark red-brown stag with a darker brown neck mane and a pale cream rump, pale bone-brown antlers; pale golden mist; dark tree trunks.",
+  "must_show": ["a real stag with large branching antlers", "four legs", "dark stag against pale mist"],
+  "must_not_show": ["fifth leg", "extra leg", "raised leg", "person", "hunter", "arrow", "blood", "moose", "reindeer", "glowing eyes", "fawn", "second deer"]
+ },
+ {
+  "id": "subject_cooking",
+  "family": "scholar_subjects",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "a big round copper cooking pot hanging from an iron hook over a blazing fire in a stone hearth, seen close; the pot is large in the middle of the picture, steam rising from it, a long wooden spoon resting in it. The fire under it burns gold-white at its heart and orange at its tips and lights the pot's copper belly warm; bunches of dried herbs hang along the top of the picture; the stone of the hearth round it is dark.",
+  "colours": "A gleaming copper pot, warm orange-brown with bright highlights; a fire gold-white at its heart and orange at its tips; pale white steam; a pale wooden spoon; dark grey hearth stones; dry green-brown herbs.",
+  "must_show": ["a big copper pot over a fire", "steam rising", "bright fire and pot against a dark hearth"],
+  "must_not_show": ["person", "hand", "cauldron of witches", "skull", "bubbling green potion", "meat on a spit", "knife", "writing", "cat"]
+ },
+ {
+  "id": "subject_science",
+  "family": "scholar_subjects",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "a round glass flask with a long neck standing on a brass tripod over a small blue flame, full of a glowing bright green liquid that bubbles, a curl of pale vapour rising from its neck; the flask is large in the middle of the picture. The glowing green liquid is the brightest thing in the picture, pale yellow-green at its heart, and lights the glass and brass round it. Behind, a dark alchemist's workroom, deep brown, with the dim shapes of jars on shelves.",
+  "colours": "Clear glass with white glints; a glowing bright green liquid, pale yellow-green at its heart; brass tripod; a small blue flame; pale vapour; deep brown room behind.",
+  "must_show": ["a round long-necked glass flask", "glowing bubbling green liquid", "bright flask against a dark room"],
+  "must_not_show": ["skull", "person", "hand", "writing", "labels on jars", "explosion", "fire around the flask", "test tubes", "microscope", "modern laboratory"]
+ },
+ {
+  "id": "subject_philosophy",
+  "family": "scholar_subjects",
+  "rank": 7,
+  "body": "badge_scene",
+  "what": "a little owl, the small owl of Athena, perched on top of a broken white marble column, seen close and facing the viewer: a flat round face disc with both big round yellow eyes forward, small ear tufts, brown feathers spotted with white; it is large in the middle of the picture. A sprig of grey-green olive leaves lies on the column top beside its feet. Behind, a deep blue night sky with a pale full moon off to the upper right.",
+  "colours": "A brown owl spotted with white, bright yellow eyes with black pupils; white marble; grey-green olive leaves; a deep blue night sky with a pale moon.",
+  "must_show": ["a small owl facing the viewer with big yellow eyes", "a marble column top under it", "owl lit against a dark sky"],
+  "must_not_show": ["writing", "letters", "person", "statue", "helmet", "second owl", "crow", "eagle", "book", "glowing eyes beams", "halo"]
+ },
+ {
+  "id": "subject_grammar",
+  "family": "scholar_subjects",
+  "rank": 8,
+  "body": "badge_scene",
+  "what": "a blacksmith's anvil in a dark forge, seen close: a heavy black iron anvil fills the lower middle of the picture, and lying across its top is a large quill pen glowing red-hot orange like iron fresh from the forge, yellow-white at its hottest; a few bright sparks fly up from it. A heavy smith's hammer with a wooden handle leans against the anvil. The glowing quill is the brightest thing in the picture; behind, the forge is near black with a dim red glow.",
+  "colours": "A black iron anvil with pale grey worn edges; a quill glowing orange, yellow-white at its hottest; bright sparks; a dark iron hammer with a brown wooden handle; near-black forge with a dim red glow.",
+  "must_show": ["an iron anvil", "a red-hot glowing quill pen lying on it", "a smith's hammer", "glowing quill against dark"],
+  "must_not_show": ["sword", "horseshoe", "writing", "letters", "person", "hand", "book", "scroll", "real feather unheated", "fire filling the picture"]
+ },
+ {
+  "id": "subject_economics",
+  "family": "scholar_subjects",
+  "rank": 9,
+  "body": "badge_scene",
+  "what": "a merchant's brass balance scale on a dark wooden counting table, seen close: a short upright brass post with a level beam across its top, and a round brass pan hanging from each end of the beam on three chains. In the left pan lies a small heap of gold coins; in the right pan lies one round brown loaf of bread. The beam is perfectly level. Warm candlelight from the upper left makes the brass and gold gleam; behind, deep brown shadow.",
+  "allow": ["coin"],
+  "colours": "Polished brass scale with bright highlights; plain gold coins; a golden-brown crusty loaf; dark wooden table; deep brown shadow behind.",
+  "must_show": ["a brass balance scale with two hanging pans", "gold coins in one pan", "a loaf of bread in the other", "beam level"],
+  "must_not_show": ["writing", "numbers", "faces on the coins", "letters", "sword", "person", "hand", "blindfold", "statue", "paper money"]
+ },
+ {
+  "id": "subject_theology",
+  "family": "scholar_subjects",
+  "rank": 10,
+  "body": "badge_scene",
+  "what": "the inside of a dark, ancient, plain stone sanctuary, seen close: one broad shaft of bright gold-white light falls from a high opening above, slanting down onto a plain square stone altar in the middle of the picture, on which a small clay oil lamp burns with a little flame; dust glitters in the beam. The walls are plain dark stone with no carvings. The beam of light and the lit altar are the brightest things in the picture.",
+  "colours": "A beam of gold-white light; a pale lit stone altar; a small brown clay lamp with a gold flame; dark grey-brown stone walls.",
+  "must_show": ["a shaft of light from above", "a plain stone altar in the light", "a small burning lamp", "bright beam against a dark sanctuary"],
+  "must_not_show": ["cross", "crescent", "star symbol", "statue", "idol", "icon", "stained glass", "writing", "people", "person", "angel", "candles in rows", "skull"]
+ },
+ {
+  "id": "subject_trivia",
+  "family": "scholar_subjects",
+  "rank": 11,
+  "body": "badge_scene",
+  "what": "an ornate jewelled egg, as big as two fists, standing upright on a little gold stand on a dark red velvet cushion, seen close; it fills most of the picture. Its shell is deep royal blue enamel, divided by bands of gold set with small white pearls, and dotted with small gold stars, with a gold crown-shaped knob at its top. Warm light from the upper left makes its gold gleam and its enamel shine with white glints; behind, deep brown shadow, the dim shelves of a cabinet of curiosities.",
+  "colours": "Deep royal blue enamel; bright gold bands, stand and knob; small white pearls; a dark red velvet cushion; deep brown shadow behind.",
+  "must_show": ["a jewelled egg of blue enamel and gold", "a gold stand on a velvet cushion", "bright egg against a dark background"],
+  "must_not_show": ["chicken egg", "cracked egg", "chick", "bird", "writing", "letters", "person", "hand", "clock face", "second egg", "basket"]
+ },
+ {
+  "id": "subject_ai",
+  "family": "scholar_subjects",
+  "rank": 12,
+  "body": "badge_scene",
+  "what": "the head of a brass clockwork automaton on a dark workbench, seen close from the front and a little to the side: a head made of riveted brass plates like a statue's head, its face a smooth calm mask with a straight nose and closed lips, and two round glass eyes glowing pale blue-white, white at their hearts. The top of its skull is hinged open like a lid, showing a nest of brass gears and cogs inside. Warm lamplight from the upper left makes the brass gleam; behind, a dark workshop, deep brown and black.",
+  "colours": "Polished brass plates with bright highlights and dark seams; brass and copper gears; glowing pale blue-white eyes with white hearts; a dark workbench; deep brown shadow behind.",
+  "must_show": ["a brass mechanical head with a calm mask face", "an open skull showing gears", "glowing eyes", "bright brass against dark"],
+  "must_not_show": ["modern robot", "computer", "screen", "wires", "red eyes", "skull", "body", "hands", "person", "writing", "numbers"]
+ }
+]

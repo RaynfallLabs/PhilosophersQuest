@@ -125,6 +125,12 @@ def badge_surface(art_id, px, earned, *, rarity=None, category=None) -> pygame.S
         from renderer import fit_sprite
         surf = pygame.Surface((px, px), pygame.SRCALPHA)
         surf.blit(fit_sprite(raw, px, px), (0, 0))
+        # The rarity ring (bronze, silver, gold, violet) round the painted
+        # vignette: the art is only the scene, the game draws the frame.
+        ring = max(2, px // 22)
+        c = px // 2
+        pygame.draw.circle(surf, (12, 10, 20), (c, c), c - 1, ring + 2)
+        pygame.draw.circle(surf, rarity_color(rarity), (c, c), c - 2, ring)
     else:
         surf = medallion(px, rarity, category)
     if not earned:

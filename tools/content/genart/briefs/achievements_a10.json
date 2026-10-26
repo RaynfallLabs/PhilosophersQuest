@@ -1,0 +1,278 @@
+[
+ {
+  "id": "friend_in_dark",
+  "family": "companions_pets",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a soul sphere lying cracked open on a dark dungeon floor, seen close: a round globe of thick dark smoky blue-black glass as big as two fists, held in a cage of two thick crossing hoops of dark iron, split open along one side; out of the crack rises one bright wisp of soul-light, coiled like a twist of smoke, bright white at its heart and pale icy blue at its edges, the brightest thing in the picture. Its light falls on the floor round the sphere; beyond, the dungeon is dark.",
+  "colours": "Dark smoky blue-black glass with white glints; dark charcoal iron hoops; a wisp of white and pale icy blue light; dark grey flagstones.",
+  "must_show": [
+   "a dark glass sphere in iron hoops, cracked open",
+   "a bright wisp of light rising from it"
+  ],
+  "must_not_show": [
+   "creature",
+   "animal",
+   "eyes",
+   "face",
+   "person",
+   "hand",
+   "crystal ball on a stand",
+   "writing",
+   "egg"
+  ]
+ },
+ {
+  "id": "evolving",
+  "family": "companions_pets",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a small four-legged creature made entirely of brilliant white light, its whole body one glowing white shape with a soft gold outline, a round body, big pointed ears and a long tail, standing in the middle of a rising spiral of white and gold sparkles on a dark dungeon floor, seen close. The glowing creature is the brightest thing in the picture; the dungeon round it is dark blue-grey.",
+  "colours": "A creature of brilliant white light with a soft gold outline; white and gold sparkles; a dark blue-grey dungeon.",
+  "must_show": [
+   "a small creature shape made of white light",
+   "a spiral of sparkles round it"
+  ],
+  "must_not_show": [
+   "person",
+   "human shape",
+   "face details",
+   "fur colours",
+   "egg",
+   "writing",
+   "second creature",
+   "angel"
+  ]
+ },
+ {
+  "id": "fully_grown",
+  "family": "companions_pets",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a great majestic winged beast made entirely of brilliant white-gold light, standing tall on four legs with its wings spread high, its whole body one glowing shape with a bright gold outline, seen close and filling most of the picture; at its feet lies a small soul sphere of dark smoky glass in iron hoops, cracked open and empty. Behind, a dark violet-blue night.",
+  "colours": "A beast of brilliant white-gold light with a bright gold outline; a small dark smoky glass sphere in dark iron hoops; a dark violet-blue night.",
+  "must_show": [
+   "a large winged beast made of light",
+   "a small cracked sphere at its feet"
+  ],
+  "must_not_show": [
+   "person",
+   "rider",
+   "human shape",
+   "fire",
+   "second beast",
+   "writing",
+   "angel"
+  ]
+ },
+ {
+  "id": "best_friend",
+  "family": "companions_pets",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a human hand and a big furry animal's paw touching, palm to pad, seen close and filling the middle of the picture: the hand comes in from the left in a brown wool sleeve, open, its palm against the paw; the paw comes in from the right, big and soft, with thick grey and white fur and dark rounded pads. A warm gold-white glow shines where they touch, the brightest thing in the picture. Behind, a dark background.",
+  "colours": "Weather-beaten light tan skin; a brown wool sleeve; a paw of thick grey and white fur with dark pads; a warm gold-white glow; dark background.",
+  "must_show": [
+   "a human hand touching an animal's paw",
+   "a glow where they meet"
+  ],
+  "must_not_show": [
+   "face",
+   "person",
+   "animal head",
+   "claws drawn out",
+   "blood",
+   "third hand",
+   "writing",
+   "ring"
+  ]
+ },
+ {
+  "id": "four_elements",
+  "family": "companions_pets",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "four glowing orbs set in a diamond in a dark sky, each as big as a fist and each glowing brightest at its centre: at the top a ball of crackling lightning, a tangle of jagged zigzag bolts of bright yellow and white with no flame in it; at the right a swirling ball of clear bright blue water; at the bottom a round ball of bright green leaves and curling vines; at the left a ball of orange fire. Faint lines of white light join them into a diamond. They fill the picture; the sky behind is deep violet-black.",
+  "colours": "A ball of jagged yellow and white lightning bolts; a bright blue water orb; a bright green leaf orb; an orange fire orb; each brightest at its centre; faint white lines; a deep violet-black sky.",
+  "must_show": [
+   "four orbs: zigzag lightning, water, leaves, fire",
+   "set in a diamond",
+   "bright against dark"
+  ],
+  "must_not_show": [
+   "creatures",
+   "animals",
+   "faces",
+   "planets",
+   "person",
+   "writing",
+   "symbols",
+   "earth orb",
+   "fifth orb",
+   "second fire orb",
+   "yellow flame at the top",
+   "sun",
+   "heart shape",
+   "heart symbol",
+   "love heart"
+  ]
+ },
+ {
+  "id": "gentle_hands",
+  "family": "companions_pets",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "the Ethereal Unicorn lowering her head to a gentle hand, seen close in a misty forest glade: her slender head and neck fill the right of the picture, pale ivory-white with a faint pearly sheen, a long flowing pale gold mane, small neat ears, gentle dark eyes, and one long straight spiral horn of bright gold growing from the middle of her brow. She lowers her nose toward an open hand that comes in from the lower left in a brown sleeve, palm flat, holding out one orange carrot. Soft gold light falls through pale mist behind.",
+  "colours": "A pale ivory-white coat with soft silver-grey shading; a pale gold mane; a bright gold spiral horn; gentle dark eyes; weather-beaten light tan skin; a brown sleeve; an orange carrot; pale mist and soft gold light in a dark green glade.",
+  "must_show": [
+   "a white unicorn's head with a gold spiral horn",
+   "an open hand offering a carrot"
+  ],
+  "must_not_show": [
+   "person's face",
+   "rider",
+   "saddle",
+   "rainbow",
+   "wings",
+   "second horn",
+   "blood",
+   "writing",
+   "cartoon unicorn"
+  ]
+ },
+ {
+  "id": "escort_1",
+  "family": "companions_escorts",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a small cottage door standing open at night, seen close from the front: warm gold light pours out of the doorway onto a path of round stepping stones that leads up to it from the bottom of the picture; a lit lantern hangs on a hook beside the door. The cottage's walls are rough grey stone with a thatched roof edge above. Everything round the lit doorway is deep blue night.",
+  "colours": "A doorway pouring warm gold light; a dark wooden door; a brass lantern with a gold flame; rough grey stone walls; golden thatch; pale stepping stones; deep blue night.",
+  "must_show": [
+   "an open cottage door full of warm light",
+   "a lantern beside it",
+   "a path leading to it"
+  ],
+  "must_not_show": [
+   "person",
+   "people",
+   "silhouette in the door",
+   "writing",
+   "sign",
+   "monster",
+   "second house in front"
+  ]
+ },
+ {
+  "id": "escort_10",
+  "family": "companions_escorts",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a village of many small cottages on a hill at dusk, seen close, every window lit warm gold; a winding road climbs up to it from the bottom of the picture, and at the front of the road stands a tall wooden post with a lit lantern hanging from it. Behind the village a deep blue dusk sky with the first stars.",
+  "colours": "Cottages of grey stone and golden thatch with warm gold windows; a pale winding road; a dark wooden post with a brass lantern; a deep blue dusk sky.",
+  "must_show": [
+   "a village of many lit windows",
+   "a road leading to it",
+   "a lantern on a post"
+  ],
+  "must_not_show": [
+   "person",
+   "people",
+   "castle",
+   "writing",
+   "sign",
+   "monster",
+   "church cross"
+  ]
+ },
+ {
+  "id": "always_comes_bg",
+  "family": "companions_bg",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an empty farm lane at golden evening, seen low and close: a dirt lane runs toward the viewer between a weathered wooden fence and golden fields of wheat, and far off at the end of the lane a red barn stands under a warm gold and pale blue evening sky. The middle of the picture is an empty stretch of the sunlit lane with nothing on it. Soft and simple, with warm mid-tones, a little hazy.",
+  "colours": "A pale tan dirt lane; weathered grey wooden fence; golden wheat; a dark red barn far off; a warm gold and pale blue evening sky.",
+  "must_show": [
+   "an empty farm lane",
+   "fences and golden fields",
+   "nothing in the middle"
+  ],
+  "must_not_show": [
+   "dog",
+   "animal",
+   "person",
+   "farmer",
+   "cow",
+   "horse",
+   "tractor",
+   "car",
+   "writing"
+  ]
+ },
+ {
+  "id": "from_home_bg",
+  "family": "companions_bg",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a cosy room at night, seen close and low: a plump round cushion of dark red velvet lies on a worn wooden floor in the middle of the picture, empty, and behind it a tall window shows a deep blue night sky with a pale moon, its cool blue moonlight falling across the floor. Soft, dim and simple; the walls are dark blue-grey.",
+  "colours": "A dark red velvet cushion; a worn dark wooden floor; a deep blue night window with a pale moon; cool blue moonlight; dark blue-grey walls.",
+  "must_show": [
+   "an empty cushion on the floor",
+   "a moonlit window behind"
+  ],
+  "must_not_show": [
+   "cat",
+   "animal",
+   "person",
+   "dog",
+   "toy",
+   "writing",
+   "fireplace",
+   "candle"
+  ]
+ },
+ {
+  "id": "dad_is_here_bg",
+  "family": "companions_bg",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a dark dungeon doorway blown wide open, seen from inside the dungeon: the heavy wooden doors are flung back to both sides, and through the open arch pours brilliant gold-white light, so the middle of the picture is one blaze of light in the shape of a tall arch, framed by dark stone walls and the dark broken doors; dust and splinters float in the light. Nothing stands in the doorway.",
+  "colours": "Brilliant gold-white light filling a tall arch; dark grey stone walls; dark brown wooden doors flung open; pale floating dust.",
+  "must_show": [
+   "a tall doorway full of brilliant light",
+   "dark doors flung open on both sides",
+   "nothing in the doorway"
+  ],
+  "must_not_show": [
+   "person",
+   "silhouette",
+   "figure in the doorway",
+   "hero",
+   "monster",
+   "writing",
+   "angel",
+   "car"
+  ]
+ },
+ {
+  "id": "i_choose_you_bg",
+  "family": "companions_bg",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a rainy night by a lonely road, seen close and low: slanting streaks of rain fall across a dark blue-grey sky, and in the middle of the picture a flat grey rock beside the road, wet and shining, lit by a warm round patch of gold light, as if from a small fire; the rest of the picture is cool, dark and rainy. Nothing sits on the rock.",
+  "colours": "A dark blue-grey rainy sky; pale slanting rain; a flat wet grey rock with a warm gold patch of light; a dark wet road; dark grass.",
+  "must_show": [
+   "a rainy night",
+   "an empty wet rock in a warm patch of light"
+  ],
+  "must_not_show": [
+   "creature",
+   "lizard",
+   "animal",
+   "person",
+   "umbrella",
+   "fire on the rock",
+   "writing",
+   "car"
+  ]
+ }
+]

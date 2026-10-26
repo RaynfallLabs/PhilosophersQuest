@@ -1,0 +1,444 @@
+[
+ {
+  "id": "floor_10",
+  "family": "depths_floors",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an open wooden trapdoor in a cellar floor, seen close and from above at a slant: its heavy plank lid stands open, and through the square opening worn stone steps lead down into darkness; a brass lantern with a warm flame stands on the top step, lighting the first steps gold, the lower steps fading into black. Around the opening is the cellar floor of dark old planks. The lit steps and lantern are the brightest things in the picture.",
+  "colours": "Dark old oak planks; worn grey stone steps lit warm gold near the lantern; a brass lantern with a gold-white flame; black darkness below.",
+  "must_show": [
+   "an open trapdoor",
+   "stone steps going down into darkness",
+   "a lantern on the top step"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "monster",
+   "eyes in the dark",
+   "skeleton",
+   "barrels filling the picture",
+   "writing",
+   "ladder"
+  ]
+ },
+ {
+  "id": "floor_25",
+  "family": "depths_floors",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Deep Roads: a long, wide road carved through solid rock deep underground, running straight away from the viewer to a far point in the middle of the picture, between two rows of huge square stone pillars carved by dwarves; an iron brazier of fire burns on each pillar, smaller and smaller down the road into the dark. The road's paving is lit gold by the fires; the ceiling and the far end are black.",
+  "colours": "Dark grey carved stone pillars lit warm gold on their faces; small fires gold-white at their hearts; pale grey paving stones lit gold; black ceiling and far distance.",
+  "must_show": [
+   "a long underground road running into the distance",
+   "rows of great pillars with fires",
+   "lit road against black depths"
+  ],
+  "must_not_show": [
+   "people",
+   "person",
+   "dwarf",
+   "statues",
+   "monster",
+   "writing",
+   "runes",
+   "sky",
+   "trees",
+   "water"
+  ]
+ },
+ {
+  "id": "floor_50",
+  "family": "depths_floors",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "looking straight down a deep round shaft in the rock: a stone spiral stair winds down round its walls, ring below ring, each ring smaller than the last, down into darkness, so the rings of steps fill the picture like a whirlpool; far at the bottom, at the very centre of the picture, burns one small red-gold glow, white-gold at its heart. The nearest steps at the edges of the picture are lit pale grey by daylight from above; the lower rings fade to black.",
+  "colours": "Pale grey stone steps near the edges, darkening ring by ring to black; one small red-gold glow with a white-gold heart at the very centre.",
+  "must_show": [
+   "a spiral stair winding down a round shaft seen from above",
+   "a small glowing red-gold light at the very bottom centre",
+   "pale near steps, dark depths"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "railing",
+   "water",
+   "eye",
+   "monster",
+   "writing",
+   "sky"
+  ]
+ },
+ {
+  "id": "floor_75",
+  "family": "depths_floors",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a small brass lantern standing on the very edge of a rough rock ledge above an immense black abyss, seen close; the lantern is in the middle of the picture, its flame pale white-gold, and its light reaches only a little way, lighting the edge of the ledge and a few rocks round it; everywhere else the dark is enormous, with only a faint pale mist far below in the abyss. The lantern's light is the brightest thing in the picture.",
+  "colours": "A brass lantern with a pale white-gold flame; dark grey rock lit gold close to the lantern; black darkness; a faint pale grey mist far below.",
+  "must_show": [
+   "a lit lantern on the edge of a ledge",
+   "an immense black abyss round it",
+   "small light against huge dark"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "eyes in the dark",
+   "monster",
+   "skeleton",
+   "bridge",
+   "stairs",
+   "writing",
+   "fire"
+  ]
+ },
+ {
+  "id": "floor_100",
+  "family": "depths_floors",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "the bottom of the world: a vast cavern at the very bottom of the dungeon, seen close, and in its middle a plain ancient pedestal of rough black rock, on which rests the Philosopher's Stone: one large gem, roughly round, cut with big flat facets, glowing from within, blazing gold-white at its heart and deep red toward its edges, the brightest thing in the picture. Round the pedestal rise tall pillars of pale violet crystal, lit by the Stone's glow; far above, the cavern roof is lost in black. The gem's light falls in a warm pool on the rock floor.",
+  "colours": "A gem glowing gold-white at its heart and deep red toward its edges; a rough black rock pedestal; tall pale violet crystal pillars; a warm pool of gold light; black cavern above.",
+  "must_show": [
+   "a glowing red-gold gem on a rock pedestal",
+   "violet crystal pillars round it",
+   "bright gem against a dark cavern"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "dragon",
+   "monster",
+   "treasure heap",
+   "coins",
+   "skull",
+   "writing",
+   "throne",
+   "green gem",
+   "blue gem",
+   "stairs"
+  ]
+ },
+ {
+  "id": "cartographer",
+  "family": "depths_misc",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an old parchment map unrolled on a dark desk, its curled ends held down, seen close from above at a slant: on the pale cream parchment is drawn, in bold dark brown ink lines, the plan of a dungeon: square rooms joined by corridors, and nothing else; no writing anywhere. A pair of brass drawing dividers lies open across the map and a quill rests at its edge. Warm candlelight from the upper left makes the parchment glow pale; the desk round it is dark.",
+  "colours": "Pale cream parchment with bold dark brown ink lines; polished brass dividers; a dark brown quill; a dark oak desk.",
+  "must_show": [
+   "an unrolled map of square rooms and corridors",
+   "brass dividers on it",
+   "pale map against a dark desk"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "labels",
+   "numbers",
+   "compass rose",
+   "sea",
+   "coastlines",
+   "dragon drawing",
+   "person",
+   "hand",
+   "stains",
+   "blotches"
+  ]
+ },
+ {
+  "id": "trapfoot",
+  "family": "depths_misc",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a big iron bear trap with long jagged teeth, snapped shut on an old empty boot, lying on pale sandy flagstones in a bright beam of light, seen close and a little from above; the trap's two curved jaws of dull grey iron with bright pale steel teeth meet across the boot's ankle, the boot's toe sticking out on one side, its floppy top on the other. The boot is old pale weathered grey-brown leather, cracked and dusty, and empty. Comic.",
+  "colours": "Dull grey iron jaws with bright pale steel teeth; an old pale weathered grey-brown leather boot; pale sandy flagstones; a bright beam of light; dark shadow at the edges.",
+  "must_show": [
+   "an iron trap with jagged teeth",
+   "an empty boot caught in it",
+   "lit trap against a dark floor"
+  ],
+  "must_not_show": [
+   "foot",
+   "leg",
+   "blood",
+   "person",
+   "animal",
+   "bones",
+   "skull",
+   "writing",
+   "chain to the edge",
+   "teeth on the boot",
+   "boot with a mouth",
+   "mimic",
+   "dark brown boot"
+  ]
+ },
+ {
+  "id": "not_a_stair",
+  "family": "depths_misc",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a stone staircase going down into a dungeon floor, seen close from above at a slant, but its opening is a huge monster's mouth: the top steps run down over its lower jaw, lined with huge curved fangs of dull yellowed ivory, and above the opening its upper jaw arches with more fangs, a heavy blunt scaly snout and two small deep-set eyes glowing fierce amber-yellow under heavy horny brows. Deep in the throat where the steps go down, fire glows orange and yellow. The scaly hide is very dark brown, the colour of wet peat.",
+  "colours": "Very dark brown scaly hide, the colour of wet peat, with dull dark bronze-brown scales; dull yellowed ivory fangs; fierce amber-yellow eyes; orange and yellow fire deep in the throat; grey stone steps and floor.",
+  "must_show": [
+   "stone steps going down into a fanged mouth",
+   "glowing amber eyes above it",
+   "fire deep in the throat"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "body of the monster",
+   "legs",
+   "blood",
+   "red tongue",
+   "skull",
+   "writing",
+   "treasure chest"
+  ]
+ },
+ {
+  "id": "journeys_10",
+  "family": "journeys",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a weathered grey milestone, a short thick standing stone with a rounded top and a blank face, beside a dirt road, seen close; the milestone stands in the middle of the picture, and the road runs past it and away over green rolling hills under a pale gold morning sky. Morning light from the upper left lights the stone's edge; the stone stands out dark against the bright sky.",
+  "colours": "A weathered grey stone with pale lit edges and patches of pale lichen; a pale tan dirt road; green hills; a pale gold morning sky.",
+  "must_show": [
+   "a weathered milestone by a road",
+   "a road winding away over hills",
+   "stone against a bright sky"
+  ],
+  "must_not_show": [
+   "writing",
+   "numbers",
+   "carved letters",
+   "signpost",
+   "person",
+   "traveller",
+   "gravestone with a cross",
+   "castle",
+   "animals"
+  ]
+ },
+ {
+  "id": "journeys_50",
+  "family": "journeys",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a long road winding far away over many hills to the horizon, seen from beside a weathered grey milestone that stands large in the front middle of the picture, with a traveller's long wooden walking staff leaning against it; along the road, smaller and smaller into the distance, stand more milestones. Golden afternoon light; the hills fade blue toward the horizon under a warm gold sky.",
+  "colours": "A weathered grey milestone with pale lit edges; a brown wooden staff; a pale tan road; green and gold hills fading to blue; a warm gold sky.",
+  "must_show": [
+   "a milestone with a walking staff leaning on it",
+   "a long road winding over many hills",
+   "more milestones along it"
+  ],
+  "must_not_show": [
+   "writing",
+   "numbers",
+   "carved letters",
+   "signpost",
+   "person",
+   "traveller",
+   "gravestones",
+   "cross",
+   "castle"
+  ]
+ },
+ {
+  "id": "journeys_100",
+  "family": "journeys",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a great road of pale stone climbing in zigzags over high mountains toward a shining city of white towers on the highest peak, at sunrise; in the front middle of the picture stands a weathered grey milestone, with a traveller's long wooden staff and a worn brown leather pack leaning against it. The sunrise behind the far city is bright gold-white; the near mountains are dark blue-grey, so the milestone and the road stand out.",
+  "colours": "A weathered grey milestone; a brown wooden staff and a worn brown pack; a pale stone road; dark blue-grey mountains; a shining white city; a bright gold-white sunrise sky.",
+  "must_show": [
+   "a milestone with a staff and a pack",
+   "a road climbing over mountains",
+   "a shining city far away at sunrise"
+  ],
+  "must_not_show": [
+   "writing",
+   "numbers",
+   "person",
+   "traveller",
+   "dragon",
+   "castle in front",
+   "gravestones",
+   "cross"
+  ]
+ },
+ {
+  "id": "top_marks",
+  "family": "journeys",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a crown of golden laurel leaves, a round wreath of many gold leaves, resting on a plump cushion of dark violet velvet with a gold tassel at each corner, seen close; a soft shaft of gold-white light falls on it from above, so the gold leaves gleam with white highlights. Behind, deep violet-black darkness. The golden wreath is the brightest thing in the picture.",
+  "colours": "Gleaming gold laurel leaves with white highlights; a dark violet velvet cushion with gold tassels; deep violet-black background.",
+  "must_show": [
+   "a golden laurel wreath",
+   "a velvet cushion under it",
+   "bright gold against dark"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "grade",
+   "numbers",
+   "jewelled crown",
+   "person",
+   "head",
+   "hand",
+   "trophy cup",
+   "medal",
+   "ribbon with text"
+  ]
+ },
+ {
+  "id": "oath_1",
+  "family": "character",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "two hands clasped in a firm handshake, seen close from the side, filling the middle of the picture: one hand comes in from the left in a sleeve of rough brown wool, the other from the right in a sleeve of dark blue wool, and they grip each other firmly, palm to palm, thumbs over the backs. Exactly two hands. Warm light from the upper left lights the hands; behind, a plain dark brown background.",
+  "colours": "Weather-beaten light tan skin; a rough brown wool sleeve; a dark blue wool sleeve; plain dark brown background.",
+  "must_show": [
+   "two hands clasped in a handshake",
+   "lit hands against a dark background"
+  ],
+  "must_not_show": [
+   "third hand",
+   "extra fingers",
+   "faces",
+   "people",
+   "sword",
+   "ring",
+   "rope",
+   "gold cord",
+   "light rays",
+   "writing"
+  ]
+ },
+ {
+  "id": "oath_10",
+  "family": "character",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "two hands clasped in a firm handshake, seen close from the side, held over a sword that lies flat across the bottom of the picture: one hand comes in from the left in a sleeve of rough brown wool, the other from the right in a sleeve of dark blue wool with a silver cuff, gripping palm to palm. Exactly two hands. The sword below has a bright steel blade and a silver crossguard. A soft silver-white light falls from above; behind, a plain dark background.",
+  "colours": "Weather-beaten light tan skin; a brown wool sleeve; a dark blue sleeve with a silver cuff; a bright steel sword with a silver guard; plain dark blue-grey background.",
+  "must_show": [
+   "two hands clasped in a handshake",
+   "a sword lying flat below them",
+   "lit against dark"
+  ],
+  "must_not_show": [
+   "third hand",
+   "extra fingers",
+   "faces",
+   "people",
+   "upright sword",
+   "gold cord",
+   "ring",
+   "writing"
+  ]
+ },
+ {
+  "id": "oath_25",
+  "family": "character",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "two hands clasped wrist to wrist, gripping each other's forearms, seen close from the side and filling the middle of the picture, bound together by a shining gold cord wound three times round both wrists; one arm comes in from the left in a rough brown wool sleeve, the other from the right in a dark blue sleeve with a gold cuff. Exactly two hands. Rays of warm gold-white light shine out from behind the clasped hands; around the edges the background is dark.",
+  "colours": "Weather-beaten light tan skin; a shining gold cord; a brown wool sleeve; a dark blue sleeve with a gold cuff; gold-white rays; dark background at the edges.",
+  "must_show": [
+   "two arms clasped wrist to wrist",
+   "a shining gold cord binding them",
+   "gold light behind"
+  ],
+  "must_not_show": [
+   "third hand",
+   "extra fingers",
+   "faces",
+   "people",
+   "chains",
+   "handcuffs",
+   "ring",
+   "writing",
+   "sword"
+  ]
+ },
+ {
+  "id": "clean_soul",
+  "family": "character",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a white dove with its wings spread wide, rising upward in a broad shaft of bright gold-white light that falls from above, seen close from the front; the dove fills the middle of the picture, every feather pure white and glowing at its edges. Around the shaft of light the background is deep dark blue.",
+  "colours": "A pure white dove with soft pale grey shading and glowing edges; a shaft of gold-white light; deep dark blue background.",
+  "must_show": [
+   "a white dove with spread wings",
+   "a shaft of light",
+   "bright dove against dark blue"
+  ],
+  "must_not_show": [
+   "olive branch",
+   "cross",
+   "halo",
+   "person",
+   "angel",
+   "hand",
+   "second bird",
+   "writing",
+   "seagull"
+  ]
+ },
+ {
+  "id": "open_hands",
+  "family": "character",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "a pair of empty open hands held out palms up, side by side, seen close from the front, the forearms in rough brown wool sleeves running down out of the bottom of the picture; the hands hold nothing at all. Behind them, a little further away, lies a glittering heap of gold coins, gold cups and jewels, lit warm gold, untouched. Exactly two hands. Soft light from the upper left lights the empty palms.",
+  "allow": [
+   "coin"
+  ],
+  "colours": "Weather-beaten light tan skin; rough brown wool sleeves; a heap of gleaming gold coins, gold cups and red and green jewels; dark brown shadow round the heap.",
+  "must_show": [
+   "two empty open hands, palms up",
+   "a heap of gold behind them, untouched"
+  ],
+  "must_not_show": [
+   "coin in the hand",
+   "gold in the hand",
+   "third hand",
+   "faces",
+   "person",
+   "writing",
+   "chest lid",
+   "skull"
+  ]
+ },
+ {
+  "id": "rescuer",
+  "family": "character",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "a rescue, seen from inside a dark pit looking straight up: the round mouth of the pit is a bright circle of daylight above, and reaching down into the pit from its rim, toward the viewer, is one single strong open hand, its arm in a brown leather sleeve coming down from the rim, fingers spread to grab, large in the middle of the picture. The rough rock walls of the pit are dark all round the edges of the picture; the daylight behind the hand makes its edges glow.",
+  "colours": "Weather-beaten light tan skin; a brown leather sleeve; a bright circle of white-gold daylight; dark grey-brown rock walls.",
+  "must_show": [
+   "one hand reaching down into a pit toward the viewer",
+   "a bright opening of daylight behind it",
+   "dark pit walls round it"
+  ],
+  "must_not_show": [
+   "second hand",
+   "two arms",
+   "face",
+   "person's body",
+   "rope",
+   "blood",
+   "skeleton",
+   "writing",
+   "fire"
+  ]
+ }
+]

@@ -29,11 +29,12 @@ def check_briefs(briefs):
     """Front-end check: every brief is complete and its backdrop will not eat its own colours."""
     bad = []
     for b in briefs:
-        for f in FIELDS + (() if b.get('body') in ('object', 'item') else ('pose',)):
+        for f in FIELDS + (() if b.get('body') in ('object', 'item', 'badge', 'badge_scene') else ('pose',)):
             if not b.get(f):
                 bad.append(f"{b.get('id', '?')}: no {f}")
         text = (b.get('colours', '') + ' ' + b.get('what', '')).lower()
-        hit = [w for w in KEY_CLASH[b.get('key', 'magenta')] if re.search(r'\b' + w, text)]
+        # a badge scene is painted edge to edge and never cut, so it has no backdrop to clash with
+        hit = [] if b.get('body') == 'badge_scene' else [w for w in KEY_CLASH[b.get('key', 'magenta')] if re.search(r'\b' + w, text)]
         if hit:
             bad.append(f"{b['id']}: a {b.get('key', 'magenta')} backdrop would eat its {', '.join(hit)}")
         if b.get('body') == 'item' and b.get('scale') not in SCALES:
@@ -81,12 +82,18 @@ ACTION = {
     'item': "It is one single thing that can be picked up and carried, shown by itself the way an item is pictured in "
             "the pack of a classic roleplaying game: floating flat against the backdrop, nothing holding it, nobody "
             "wearing it, no hand, no mannequin, no stand and no hook. It has no face, no eyes and no limbs.",
+    # An achievement badge's emblem may be a toy with a face or a thing held in hands, so it
+    # gets none of the item's denials; those go in each brief's must_not_show instead.
+    'badge': "It is one bold, simple group of things shown by itself: seen from the front, compact, about as wide as "
+             "it is tall, every part touching the next so that together they make one shape. It floats against the "
+             "backdrop with nothing near it and nothing under it.",
 }
 WHOLE = {
     'legged': 'shown full length from the top of its head to the soles of its feet',
     'shapeless': 'shown whole from its highest point to its lowest, with nothing else beneath it',
     'object': 'shown whole from its top to its base, with nothing else beneath it',
     'item': 'shown whole, every end of it inside the picture, with nothing else near it',
+    'badge': 'shown whole, every part of it inside the picture, with nothing else near it',
 }
 # How much of its square an item's longest side fills. Every item is cut to one of
 # these, so a ring is small beside a sword and a sword small beside a halberd.
@@ -94,31 +101,78 @@ SCALES = {'tiny': 0.50, 'small': 0.64, 'medium': 0.76, 'large': 0.88, 'huge': 1.
 LIGHT = {'creature': 'dramatic warm light from the upper left with a cold rim light on the right',
          # an item's grey parts are tinted afterwards, so no coloured light may fall on them
          'item': 'plain neutral white light from the upper left, with no coloured light, no blue rim light and no '
-                 'coloured reflections anywhere on it'}
+                 'coloured reflections anywhere on it',
+         # a badge is shown grey until it is won, so light and dark must carry its shape
+         'badge': 'warm light from the upper left, bright highlights and deep dark shadows, strong contrast of light '
+                  'and dark'}
 ITEM_BOLD = (' It is drawn bold, chunky and a little thicker than life, like a game icon: blades broad, shafts and '
              'bands thick, so that its shape is plain when shrunk very small.')
 PIXEL_DENOISE = 0.42       # low: the painting survives, the edges sharpen
 INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 
+# Achievement badges: 128 px art in a round frame the game draws (bronze, silver, gold or
+# violet), grey until won. Two looks share the brief format:
+#   "body": "badge"        the emblem: the item recipe, cut out on its key colour and centred;
+#   "body": "badge_scene"  the vignette: a small scene painted edge to edge, never cut, then
+#                          masked to a circle by convert.to_medallion. It takes no `key`.
+BADGE = 128                # a badge's side
+BADGE_FILL = 0.80          # how much of it an emblem's longest side fills...
+BADGE_CIRCLE = 0.94        # ...unless a corner would poke out of a circle this share of the side wide
+BADGE_COLOURS = 48         # 32 bands a 128 px painting's skies and glows
+GREY_MIN = 0.45            # a badge whose light and dark lie closer than this is flat when grey
+BADGE_BOLD = (' It is drawn bold and simple, a little thicker than life, with a few large parts and no fine clutter, '
+              'so that its shape is plain when shrunk very small.')
+BADGE_NEG = (', letters, writing, words, numbers, runes, inscription, signature, coin, medal, round frame, border, '
+             'ring around it')
+SCENE = ("A classic fantasy oil painting of {what} Colours: {colours} {holds} {pose} "
+         "Painted like the cover illustration of a 1980s fantasy roleplaying rulebook: realistic proportions, {light}, "
+         "rich earthy colours with jewel-bright accents, weathered and intricate detail, heroic and serious. "
+         "It is a small, simple scene with one subject, seen close. The subject sits in the very middle of the picture, "
+         "large, whole and brightly lit, filling about three quarters of the picture's width, drawn bold with a few large "
+         "parts and no fine clutter. Around it the background is simpler, and the four corners hold only plain background. "
+         "The subject stands out from the background by light and dark as well as by colour. "
+         "The painting runs edge to edge across the whole picture.")
+SCENE_NEG = ("text, letters, writing, words, numbers, runes, inscription, signature, watermark, frame, border, round frame, "
+             "medallion, coin, vignette, photo, 3d render, blurry, chibi, big head, cartoon, cartoon proportions, "
+             "bright candy colours, flat lighting, low contrast, clutter, many small things, subject cut off by the edge, "
+             "gore, blood, nudity")
+SCENE_PIXEL = ("detailed pixel art of a classic fantasy oil painting, realistic proportions, dramatic warm lighting, "
+               "rich earthy colours, intricate detail, serious high fantasy, {what} {colours} {holds} "
+               "one subject in the middle, painted background edge to edge, no frame")
+SCENE_PIXEL_NEG = ("blurry, photograph, 3d render, text, letters, writing, frame, border, chibi, cartoon, big head, "
+                   "super-deformed, extra limbs")
+
 
 def prompts(b):
     holds = b.get('holds') or 'Its hands are empty and it holds nothing.'
     wears = b.get('wears', '')
-    body = b.get('body') if b.get('body') in ('shapeless', 'object', 'item') else 'legged'
+    body = b.get('body') if b.get('body') in ('shapeless', 'object', 'item', 'badge', 'badge_scene') else 'legged'
     f = dict(what=b['what'], colours=b['colours'], wears=wears, holds=holds, pose=b.get('pose', ''))
     if body == 'shapeless' and not b.get('holds'):
         f['holds'] = 'It holds nothing.'
-    if body in ('object', 'item'):
+    if body in ('object', 'item', 'badge', 'badge_scene'):
         f['holds'] = b.get('holds', '')
         f['pose'] = b.get('pose', '')
-    neg = DRAFT_NEG + ''.join(', ' + x for x in b.get('must_not_show', []))
+    must_not = ''.join(', ' + x for x in b.get('must_not_show', []))
+    if body == 'badge_scene':
+        # `allow` lifts words out of the fixed negatives for a badge that needs them (gold
+        # badges need "coin"; the fixed list has it so that no badge is drawn AS a coin).
+        allow = set(b.get('allow', []))
+        keep = lambda neg: ', '.join(w for w in neg.split(', ') if w not in allow)
+        return (SCENE.format(light=LIGHT['badge'], **f), keep(SCENE_NEG) + must_not,
+                SCENE_PIXEL.format(**f), keep(SCENE_PIXEL_NEG) + must_not)
+    neg = DRAFT_NEG + must_not
     if body == 'item':
         f['what'] = f['what'] + ITEM_BOLD
+    extra = ''
+    if body == 'badge':
+        f['what'] = f['what'] + BADGE_BOLD
+        extra = BADGE_NEG
     # A brief's own "action" replaces the fixed one: the fixed wording asks for a frozen frame
     # of a fight, which turns a steady archer's full draw into a lunge.
     return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=b.get('action') or ACTION[body], whole=WHOLE[body],
-                         light=LIGHT['item' if body == 'item' else 'creature'], **f), neg,
-            PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + ''.join(', ' + x for x in b.get('must_not_show', [])))
+                         light=LIGHT[body if body in ('item', 'badge') else 'creature'], **f), neg + extra,
+            PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + extra + must_not)
 
 
 def tint_leak(sprite):
@@ -141,6 +195,10 @@ def mechanical(facts):
     bad = []
     if facts.get('empty'):
         return ['nothing left after the cut-out']
+    if facts.get('grey_range', 1.0) < GREY_MIN:           # badges only: shown grey until won
+        bad.append(f"flat when grey ({facts['grey_range']:.2f})")
+    if facts.get('scene'):
+        return bad                                         # a painted scene has no cut-out to check
     if not 1 <= facts['parts'] <= facts.get('pieces', 1):
         bad.append(f"{facts['parts']} separate pieces")
     if facts.get('tint_leak', 0) > 0.06:
@@ -187,10 +245,18 @@ def cut(briefs, out, n):
             if not os.path.exists(p):
                 continue
             item = b.get('body') == 'item'
-            spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'),
-                                           scale=SCALES[b.get('scale', 'large')] if item else 1.0, stand=not item,
-                                           lift=float(b.get('lift', 1.0)), spill=bool(b.get('despill')))
-            facts['thin_ok'] = item
+            if b.get('body') == 'badge_scene':
+                spr, facts = convert.to_medallion(Image.open(p), BADGE, BADGE_COLOURS, lift=float(b.get('lift', 1.0)))
+            elif b.get('body') == 'badge':
+                spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'), tile=BADGE, colours=BADGE_COLOURS,
+                                               scale=BADGE_FILL, stand=False, lift=float(b.get('lift', 1.0)),
+                                               spill=bool(b.get('despill')), circle=BADGE_CIRCLE)
+                facts['grey_range'] = convert.grey_range(spr)
+            else:
+                spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'),
+                                               scale=SCALES[b.get('scale', 'large')] if item else 1.0, stand=not item,
+                                               lift=float(b.get('lift', 1.0)), spill=bool(b.get('despill')))
+            facts['thin_ok'] = item or b.get('body') == 'badge'
             facts['pieces'] = int(b.get('pieces', 1))        # a pair (bracers, greaves) may be two
             if b['id'].startswith('tpl_'):
                 facts['tint_leak'] = tint_leak(spr)

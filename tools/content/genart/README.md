@@ -803,6 +803,145 @@ and look for the same kind of slip when reviewing.
   pass had drawn several "canonical" wands and scrolls from the very unidentified names
   of live variants (the soapstone wand, the dusty-rose wand, the crumpled scroll) and
   filed them under ids the game no longer has; i29 hands those to their items.
+- **Badges (pilot, 2026-10-25).** These come from the six-badge pilot (`briefs/badges_pilot.json`):
+  - **A "bronze" quill is a feather in a colour, never cast metal.** "Polished bronze, warm
+    brown-gold, gleaming highlights" came out bright gold, which would collide with the gold tier
+    of a ladder. "Old dark bronze with blue-green patina" tinted the whole quill teal. "Deep coppery
+    brown metal, darker than gold and never yellow, with bright copper highlights" gave the
+    copper-brown quill that was picked. Tell ladder tiers apart by colour words that stay far apart
+    (copper-brown, silver-white, gold), and keep "polished" for the top tier.
+  - **A cowbell is drawn as a round church bell** however its outline is worded ("four flat
+    sides", "a flat-sided trapezoid, no curves at all", "square corners": 9 of 9). The "cow" is
+    carried by the strap: "a broad collar strap of black-and-white spotted cowhide hanging in a big
+    U as tall as the bell". The cowhide's spots leak onto the iron, which helps it read.
+  - **A glow's colour must have a white or pale-yellow core, or it goes dark when the badge is
+    locked.** A gem "deep red at its heart" was mid-grey on all six locked candidates. "Blazing
+    gold-white at its heart, deep red toward its edges" kept it the brightest thing in grey. Red and
+    blue are dark in grey; green and yellow stay bright.
+  - **A glow pouring out of an opening cuts out as a flat yellow blob** on the green key (a
+    "white-hot yellow" glow under a bell). Keep the glow inside the mouth.
+  - **Hands rise from the bottom edge and are cropped,** even with "only the hands and wrists
+    show; the cuffs are the lowest thing in the picture, with backdrop below them" (5 of 6).
+    "A pair of cupped hands floating in the air by themselves ... each wrist ends in a short
+    turned-back cuff no longer than a thumb, and below the cuffs there is nothing at all, only the
+    flat backdrop" gave 3 of 3 whole.
+  - **"Blackened iron" on magenta drifts steel-blue** (6 of 6 helms). "Painted glossy jet-black,
+    its black paint catching bright white highlights" gave a black helm on 3 of 3.
+  - **A sword standing point-down behind a helm reads as a grave marker.** For a comic badge, lay
+    the sword across.
+  - **A narrow slit in a dark thing (an eye slit) keeps backdrop colour** at the cut. Look for a
+    pink or green line inside every visor.
+  - **A wide group is small in a round frame.** A book with a quill and an inkpot, or a helm on
+    planks with a sword, is fitted by its width and the circle, so its height is about half the ring.
+    The emblem look suits one compact object (the duck, cupped hands, a lantern in an arch). Give a
+    group an upright part or make it taller than it is wide.
+  - **"Grey boulders" on magenta came out mint and read as a shrine niche.** "Warm brown-grey stone,
+    its opening filled with solid pitch-black darkness" read as a cave mouth (it comes out sandy).
+  - **"Brown stains and smudges of ink" on pages became orange blotches** (leopard spots at 64 px).
+    Say "clean, pale cream and blank" and show wear with dog-eared corners. With "blank" and the
+    badge negatives, no writing appeared on any of the 24 drafts of an open book.
+  - **A "hint of menace" on a toy is not drawn** ("looks sidelong at the viewer" changed nothing).
+    The hard white glint in the eye is all you get.
+  - **A scene's subject is smaller than asked** when it is small in a big setting (the duck filled
+    about 45% of the width, not two thirds). A setting that frames the subject (an archway, a cave
+    mouth, a footbridge running at the viewer) puts it in the middle, and those read best at 64 px.
+
+## Badges
+
+Achievement badges are 128 x 128 PNGs shown in the Seeker gallery inside a round frame
+the game draws (bronze, silver, gold or violet by rarity). A locked badge is shown grey
+and an earned one in full colour, so light and dark must carry the shape, not colour
+alone. The art has no text, letters, numbers or rune-like marks, and must still be
+recognisable at 64 px. Two looks share the ordinary brief format (what / colours / holds
+/ must_show / must_not_show); `pose` is optional for both:
+
+| `body` | Look | What the pipeline does |
+|---|---|---|
+| `"badge"` | **A, emblem**: one bold object or group, cut out | The item recipe with its own fixed wording (`ACTION['badge']`, `BADGE_BOLD`, `LIGHT['badge']`, `BADGE_NEG`): one compact group of touching things on the key colour, warm light with deep shadows. `convert.to_sprite(tile=128, colours=48, stand=False, circle=0.94)` cuts it, centres it, fills 80% of the square with its longest side, and shrinks it further if a corner would poke out of a circle 94% of the side wide. Needs a `key`; `despill` and `lift` work as for items. |
+| `"badge_scene"` | **B, vignette**: a small painted scene | Its own fixed wording (`SCENE`, `SCENE_NEG`, `SCENE_PIXEL`): one subject large in the middle, simple background, corners only background, painted edge to edge. `convert.to_medallion` shrinks it whole to 128 px, lifts and cuts it to 48 colours, and masks it to the inscribed circle with a soft 2 px inner edge. No `key`, no cut-out. Say in `what` which way the contrast runs (a bright subject on a dark ground, or a dark one on a pale ground). |
+
+    <ComfyUI python> tools/content/genart/pipeline.py tools/content/genart/briefs/badges_pilot.json --n 3 --out _genart/badges_pilot --seed 7100
+    <ComfyUI python> tools/content/genart/badge_sheet.py _genart/badges_pilot/picks.json ACHIEVEMENT_PILOT_SHEET.png
+
+Both looks get one extra mechanical check, `grey_range` (the spread between the 5th and
+95th percentile of grey brightness, 0 to 1); under `GREY_MIN` the badge is redrawn as
+"flat when grey". It only catches a badge that is flat all over: every pilot candidate
+scored 0.53 to 0.94, including ones whose red gem was lost in grey, so look at the grey
+version by eye as well. `badge_sheet.py` shows each pick as the game will: 128 px in
+colour, 128 px grey, and 64 px, inside a plain ring of its rarity's colour on a dark disc.
+Review every candidate at all three. Ids: one brief per look, `<art>_a` and `<art>_b`, with
+`family` `emblem` or `vignette` so each look gets one review sheet. 48 colours were chosen
+over 32 (32 bands a dawn sky and a glow) and 64 (no visible gain). The pilot's working
+files, rounds (`<id>_rN`), verdicts (`review.json`) and picks are in `_genart/badges_pilot/`.
+A candidate draws in about 13 s on the RTX 5090.
+
+### The full set (2026-10-25)
+
+Every badge uses look B (`badge_scene`). Briefs are `briefs/achievements_a01.json` to `a12.json`,
+grouped by category; each brief's `id` is the badge's `art` stem and its `family` a ladder or
+theme, so a ladder's tiers sit side by side on the sheets. A ladder keeps one motif and adds to it
+tier by tier (one book and quill, a stack, a library tower, an endless archive), and each tier's
+difference is in `must_show`. Bosses take their facts from the monster's own brief, so the badge
+matches the sprite on the map. Badges that are not drawn (a pilot pick reused) have their pilot
+candidates copied into the group's folder and a `note` saying so.
+
+    <ComfyUI python> tools/content/genart/pipeline.py tools/content/genart/briefs/achievements_a01.json --n 3 --out _genart/badges/a01 --seed 8100
+    <ComfyUI python> tools/content/genart/badge_review.py _genart/badges/a01 tools/content/genart/briefs/achievements_a01.json
+    <ComfyUI python> tools/content/genart/badge_composite.py
+    <ComfyUI python> tools/content/genart/install_achievements.py
+    <ComfyUI python> tools/content/genart/badge_sheet.py --catalogue ACHIEVEMENT_SHEET_{:02d}.png
+
+- `badge_review.py` makes the working sheets (`CANDS_<k>.png`): every candidate as the painting,
+  then in its rarity ring in colour, grey and at 64 px. Picks go in the group's `review.json`.
+- `allow` (badge scenes only) lifts words out of the fixed negatives: the gold badges need
+  `"allow": ["coin"]`, since `SCENE_NEG` lists "coin" to stop a badge being drawn as one.
+- **Protected art** (the duck line, Dad, the family cats, Shep, the Emberpup) is never painted.
+  Its badge is a background brief `<art>_bg` with no figure in it, and `badge_composite.py` puts
+  the game's own installed sprite on each background candidate, scaled x2 with nearest-neighbour
+  and cut to the same circle. Its table says which sprite, where it sits and at what scale. A
+  64 px sprite at x2 is as wide as the badge, so a long one (Shep running, Seraphimallard's
+  wings) loses its tips at the rim: place it so the head is whole.
+- `install_achievements.py` copies each pick to `assets/achievements/<art>.png` and lists what
+  it wrote in `installed_achievements.json`; it will not overwrite a PNG it did not write
+  unless `--force`. It ends by naming any `art` that still has no PNG.
+- `badge_sheet.py --catalogue` draws every badge from its installed PNG, by category, about 32
+  to a sheet, for Brandon's approval.
+
+What went wrong in the full set, and what fixed it (172 badges, 2026-10-25):
+
+- **A dark subject on a dark ground is flat when grey** (a black padlock on dark wood 0.37, a red
+  jester's cap on a dark stool 0.32, an evening market stall 0.31). Move it to daylight or a pale
+  wall ("bright polished brass", "a pale cream plaster wall", "bright morning sunshine"): every
+  redraw scored 0.68 or more.
+- **"A white heart" in a glow draws a heart symbol** in every orb. Say "glowing brightest at its
+  centre". **"A ball of lightning" draws a second fire**; "a tangle of jagged zigzag bolts of
+  bright yellow and white, with no flame in it" drew lightning.
+- **"Barrel helm" draws a wooden barrel** (3 of 3), even beside a sword. Say "a closed helmet that
+  covers the whole head, flat on top, one narrow eye slit".
+- **A coloured part leaks into a grey skin in a close-up**: Medusa's emerald snakes made a
+  green-skinned woman. Say the skin colour twice, the second time after the snakes, with "only the
+  snakes are green".
+- **A serpent-woman in a long robe is a woman in a green gown.** End the robe at a belt and say
+  "below the belt there is no skirt and no dress", with the coils "filling the bottom half".
+- **A plain hag with a named skin colour is a kind grandmother.** Lead with "a monstrous hag, not
+  a living woman", "a colour no living person has", lamp-yellow eyes, iron claws.
+- **A coffin is drawn as a crate or a chest** however its six sides are described (6 of 6). The
+  joke still reads; accept it or use another prop.
+- **A flame or lamp named near a gem puts the flame on the gem** (a candle in red glass, 3 of 3).
+  Leave every flame out of a brief whose subject glows, and deny "candle, lantern, flame on top".
+- **A key with a sunburst bow reads as a glowing cross at 64 px.** Pick the candidate whose bit
+  and bow both show; check religious-looking silhouettes on every pick.
+- **"A bold Y of glowing tubes" is the letter Y**: text. Bulbs on three thin tubes avoid the
+  letter but lose the shape; the fire trails carry the badge.
+- **A small symbol on a robe (a cross) makes a ghost a monk.** Deny "cross, emblem on the chest".
+- **A hand "reaching down toward the viewer" is drawn from the bottom edge reaching up.** The
+  model puts the arm at the bottom; a rescuer's hand is better shown gripping another.
+- **An open curve of beads comes back a closed bracelet** (3 of 3); fine for a ladder, as long as
+  each tier changes material (amber, then pearls, then one great pearl).
+- **A hammer told to stand head-down stands head-up.** Accept it, or lay it down.
+- **Protected sprites x2 fill the badge.** Wide sprites (Shep running, Seraphimallard's wings)
+  lose their tips at the rim; a background painted with an empty lit patch in the middle
+  (`<art>_bg`, "nothing stands in the light") gives the sprite a stage.
 
 ## Cleaning up a picked sprite (`edit.py`)
 

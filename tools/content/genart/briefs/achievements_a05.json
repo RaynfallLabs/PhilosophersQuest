@@ -1,0 +1,357 @@
+[
+ {
+  "id": "boss_asterion",
+  "family": "bosses_gate",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "Asterion, the Minotaur of the Labyrinth of Crete, seen close from the chest up, in a dark stone corridor of the Labyrinth: a huge, broad man with the head of a great bull. His bull's head, neck, shoulders and chest are covered in short pure white bull's hide scarred with old grey scars; the head has a broad white muzzle with a dark grey nose, small furious dark red eyes, and two very long, thick, ivory-white horns that sweep out and forward, bone-white for most of their length, with only a small cap of bright gold on each sharp tip. Across his chest and shoulders lies a broad royal collar of gold plates and dark red stones. He glares straight at the viewer. Behind him the Labyrinth's walls of dark stone blocks run away into shadow; torchlight from the upper left makes his white hide bright against the dark.",
+  "colours": "Short pure white bull's hide with pale grey shadows and grey scars; a dark grey muzzle; dark red eyes; ivory-white horns with small bright gold tips; a broad gold and dark red collar; dark grey-brown stone walls.",
+  "must_show": [
+   "a white-hided bull's head on a huge man's shoulders",
+   "long ivory horns with small gold tips",
+   "gold and red royal collar",
+   "bright white figure against the dark labyrinth"
+  ],
+  "must_not_show": [
+   "brown bull",
+   "black bull",
+   "nose ring",
+   "axe",
+   "weapon",
+   "blood",
+   "gore",
+   "full gold horns",
+   "helmet",
+   "second minotaur",
+   "writing"
+  ]
+ },
+ {
+  "id": "boss_medusa",
+  "family": "bosses_gate",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "Medusa the Gorgon, seen close from the chest up, in a dark ruined temple: a terrible woman-shaped monster whose skin is cold ash-grey with a dull brown tinge, the grey of an old stone statue, on her face, neck and hands alike, a colour no living woman has. Her face is the gorgon mask from an old Greek shield: a heavy scowling brow, a flat wide nose, two huge round glaring eyes filled to the brim with solid yellow light, and a very wide mouth stretched open in a snarl showing two long white tusks. She has no hair: growing from her whole scalp are seven very thick living snakes, dark emerald-green with pale yellow bellies, and big wedge-shaped heads, rearing out in every direction with white mouths gaping. A tarnished gold diadem crosses her brow; she wears a dull dark brown gown and a corselet of dark bronze scales. Her face, neck and hands stay cold ash-grey with a dull brown tinge, the grey of an old stone statue; only the snakes are green. Torchlight from the upper left; behind her, the temple is dark.",
+  "colours": "Cold ash-grey skin with a dull brown tinge; huge solid glowing yellow eyes; white tusks; seven thick dark emerald-green snakes with pale yellow bellies; a tarnished gold diadem; a dull dark brown gown; dark bronze scales; a dark temple behind.",
+  "must_show": [
+   "grey gorgon face with huge glowing yellow eyes",
+   "thick green snakes for hair, the face grey",
+   "tusked snarling mouth"
+  ],
+  "must_not_show": [
+   "beautiful woman",
+   "living pink skin",
+   "human hair",
+   "bare chest",
+   "blood",
+   "severed head",
+   "shield",
+   "mirror",
+   "statue in front",
+   "writing",
+   "green skin"
+  ]
+ },
+ {
+  "id": "boss_fafnir",
+  "family": "bosses_gate",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "Fafnir, the wingless dragon of the Norse saga, lying on his hoard in a cave, seen close: his huge heavy head fills the middle of the picture, with a jutting jaw, long ivory fangs dripping bright poison-green venom, burning amber eyes, and a mane of long black horns sweeping back from his skull; a thick gold ring is clasped round one horn. His scales are black and dark iron-grey, and his throat and underside are crusted with gold coins and gems stuck between the scales. His long serpent body coils behind him over a mountain of gold coins, cups and jewels that glitters in the dark. He has no wings.",
+  "allow": [
+   "coin"
+  ],
+  "colours": "Black and dark iron-grey scales; a gold-crusted throat with a few ruby glints; black horns; a gold horn-ring; burning amber eyes; ivory fangs; bright poison-green venom; a glittering heap of gold coins; dark cave behind.",
+  "must_show": [
+   "a huge black dragon's head with black horns",
+   "gold crusted on its throat",
+   "a glittering hoard of gold",
+   "venom dripping from fangs"
+  ],
+  "must_not_show": [
+   "wings",
+   "second head",
+   "red dragon",
+   "green dragon",
+   "fire breath",
+   "person",
+   "knight",
+   "sword",
+   "blood",
+   "writing"
+  ]
+ },
+ {
+  "id": "boss_fenrir",
+  "family": "bosses_gate",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "Fenrir, the wolf the gods could not hold, seen close from the front, head and chest, filling the picture: a monstrous wolf with a huge broad head and a great shaggy mane, black and charcoal-grey fur with an ash-grey muzzle and chest, the tips of his mane white with frost; his jaws are stretched wide open, crowded with enormous white fangs, and his eyes burn pale icy blue, white at their hearts. A broad pale steel collar round his neck is snapped, with a short broken length of chain, three big links, hanging against his chest, and a torn ribbon of shining pale gold is wound round his neck with its two torn ends flying. Behind him a dark night of storm and falling snow.",
+  "colours": "Black and charcoal-grey shaggy fur, an ash-grey muzzle and chest, white frost on the mane; pale icy blue eyes with white hearts; enormous white fangs; a black mouth; a broken pale steel collar and chain; a torn shining pale gold ribbon; a dark storm sky with white snow.",
+  "must_show": [
+   "a monstrous black wolf's head with jaws wide open",
+   "pale icy blue eyes",
+   "a snapped steel collar with broken chain",
+   "torn gold ribbon"
+  ],
+  "must_not_show": [
+   "tan fur",
+   "brown fur",
+   "red eyes",
+   "red tongue hanging out",
+   "blood",
+   "gore",
+   "second wolf",
+   "person",
+   "god",
+   "writing"
+  ]
+ },
+ {
+  "id": "boss_abaddon",
+  "family": "bosses_gate",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "Abaddon the Destroyer, the angel of the bottomless pit and king of the locusts, seen close from the waist up: a terrible fallen angel-king with a gaunt ash-grey stern man's face, a lion's long fangs, eyes that burn orange, long black hair and a tall spiked gold crown. He wears ornate black plate armour engraved with gold, with great spiked shoulder plates shaped like locust heads. Two vast black feathered wings spread behind him, and a black scorpion's tail of fat round segments arches up over his crown, ending in a curved golden sting. In his raised right palm burns a ball of orange and yellow hellfire, white at its heart. Behind him, far below, the glowing orange depths of a bottomless pit.",
+  "colours": "Black plate armour with rich gold trim; a tall gold crown; ash-grey skin; burning orange eyes; long black hair; black feathered wings; a black scorpion tail with a gold sting; a ball of hellfire white at its heart and orange at its edges; a glowing orange pit behind.",
+  "must_show": [
+   "a crowned grey-faced angel-king in black and gold armour",
+   "great black wings",
+   "a scorpion tail over his crown",
+   "hellfire in his palm"
+  ],
+  "must_not_show": [
+   "red skin",
+   "horns",
+   "goat",
+   "halo",
+   "white wings",
+   "sword",
+   "blood",
+   "second figure",
+   "writing"
+  ]
+ },
+ {
+  "id": "seven_seals",
+  "family": "bosses_gate",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "an ancient rolled scroll of thick pale parchment lying on a dark stone slab, seen close, filling the picture from side to side; it is tied with a dark cord, and along its edge sit seven round seals of red sealing wax, each as big as a coin and plain, and every one of the seven is broken: split clean in two by a jagged crack, the two halves pulled apart, and through every crack shines a thin bright line of gold-white light. A soft gold light falls from above onto the scroll; the stone round it is dark. The scroll is blank and plain.",
+  "colours": "Thick pale cream parchment; seven seals the red of red sealing wax with a thin dark brown edge; a dark brown cord; dark grey stone; soft gold light.",
+  "must_show": [
+   "a rolled scroll",
+   "red wax seals along it",
+   "every seal split in two with light shining through the crack"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "symbols on the seals",
+   "faces",
+   "lamb",
+   "angel",
+   "horsemen",
+   "blood",
+   "candle",
+   "person",
+   "hand",
+   "whole unbroken seals"
+  ]
+ },
+ {
+  "id": "story_way",
+  "family": "bosses_gate",
+  "rank": 7,
+  "body": "badge_scene",
+  "what": "a ball of thick red-gold thread lying on the stone floor of a labyrinth corridor, seen close and low, large in the front middle of the picture; it glows softly, gold-white where it is brightest. From the ball the thread, as thick as a cord, unrolls back along the floor and away round the corners of the dark winding passages behind, one bright glowing line in the dark. The walls of the labyrinth are dark grey stone blocks.",
+  "colours": "A ball of glowing red-gold thread, gold-white where brightest; a glowing red-gold line of thread; dark grey stone walls and floor.",
+  "must_show": [
+   "a glowing ball of thread on a stone floor",
+   "the thread running back into dark winding passages",
+   "bright thread against dark stone"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "minotaur",
+   "monster",
+   "skeleton",
+   "blood",
+   "sword",
+   "writing",
+   "torch"
+  ]
+ },
+ {
+  "id": "wanderer",
+  "family": "bosses_gate",
+  "rank": 8,
+  "body": "badge_scene",
+  "what": "Tiamat, the five-headed queen of dragons, seen close from the front under a stormy sky: five long thick necks rise from one massive dark crimson-brown body and spread wide apart like the ribs of an open fan, with sky showing between them, and each ends in one large horned dragon's head with open jaws and glowing yellow eyes. From left to right the five heads are bone-white, dark red, dull brass-yellow, dark green and coal-black, each head and neck one single colour. Behind the necks, two great dark bat-like wings rise against storm clouds lit by lightning.",
+  "colours": "A dark crimson-brown body with a pale bone-yellow belly; five heads and necks coloured bone-white, dark red, dull brass-yellow, dark green and coal-black; pale ivory horns; glowing yellow eyes; dark crimson-brown wings; dark grey storm clouds with pale lightning.",
+  "must_show": [
+   "one dragon body with five heads on long necks fanned out",
+   "each head a different colour",
+   "stormy sky behind"
+  ],
+  "must_not_show": [
+   "four heads",
+   "six heads",
+   "seven heads",
+   "separate dragons",
+   "person",
+   "knight",
+   "fire breath filling the picture",
+   "blood",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_arachne",
+  "family": "bosses_quest",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "Arachne of Lydia, the weaver whom Athena changed into a spider, seen close in her cave: above the waist she is a proud, stern, pale woman with a long neck, dark angry eyes, two thin fangs at her lips, and black hair bound up high with a gold band, in a long-sleeved tunic of dark wine-red with a gold border; at her belt she joins the front of one huge spider, a great round glossy black body with one dull-gold hourglass mark, its long, thick, jointed glossy black legs arching up on both sides of her. Both her hands are raised with the fingers hooked like claws. Behind her a huge web of bright pale silver threads spans the dark cave.",
+  "colours": "Pale ash-white skin; black hair with a gold band; a dark wine-red tunic with a gold border; a glossy black spider body and legs with charcoal highlights; one dull gold hourglass mark; a pale silver web; dark cave behind.",
+  "must_show": [
+   "a pale woman's upper body joined to a giant black spider",
+   "long black spider legs arching up",
+   "a web behind"
+  ],
+  "must_not_show": [
+   "bare chest",
+   "human legs",
+   "blood",
+   "spider face",
+   "skull",
+   "person in the web",
+   "writing",
+   "tarantula hair"
+  ]
+ },
+ {
+  "id": "quest_lamia",
+  "family": "bosses_quest",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "Lamia, the grieving serpent-queen of Libya, seen close in the ruins of her palace: above the waist she is a tall sorrowful queen with a pale cold ash-white face, dark hollows round her eyes, two thin fangs, long straight black hair, a tall gold crown and a broad gold collar, in a dark crimson long-sleeved robe edged with gold that ends at a gold belt. Below the belt there is no skirt and no dress: her body becomes one enormous snake, as thick as her waist, of dark emerald-green scales with a pale gold belly, and it winds round in front of her in two great heavy coils that fill the bottom half of the picture, its pointed tail tip curling up at one side. Both arms are held out wide. Behind her, broken pale stone columns stand dark against a deep red dusk sky.",
+  "colours": "Pale ash-white skin; long black hair; a tall gold crown and broad gold collar; a dark crimson robe with a gold border; a serpent body of dark emerald-green scales with a pale gold belly; broken pale stone columns; a deep red dusk sky.",
+  "must_show": [
+   "a crowned pale queen's upper body in crimson",
+   "two great green serpent coils filling the bottom half",
+   "arms held out wide"
+  ],
+  "must_not_show": [
+   "human legs",
+   "bare chest",
+   "blood",
+   "child",
+   "snake hair",
+   "second snake",
+   "writing",
+   "long dress",
+   "skirt",
+   "gown to the floor",
+   "green dress"
+  ]
+ },
+ {
+  "id": "quest_talos",
+  "family": "bosses_quest",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "Talos, the bronze giant who guarded Crete, seen close from the chest up on a cliff above the sea: a colossal bronze statue of an ancient Greek warrior come to life, every part of him the same dark weathered brown bronze with bright golden-bronze worn edges, pale verdigris in the hollows and rows of big rivets at the seams. His head is a Corinthian helmet cast in one piece with his face, with a tall stiff crest of bronze and two dark eye openings filled to the brim with solid orange-white light like a furnace; one thin bright line of glowing orange runs down the side of his neck. He raises one big rough boulder of pale grey stone above his head in both hands. Behind him, a bright blue sea and sky, and a small ship with a white sail far off.",
+  "colours": "Dark weathered brown bronze with bright golden-bronze edges and pale verdigris patches; furnace-orange glowing eye openings; one thin glowing orange line; a pale grey boulder; a bright blue sea and sky; a small white sail.",
+  "must_show": [
+   "a giant bronze warrior statue with a crested helmet",
+   "glowing orange eyes",
+   "a boulder raised above his head",
+   "the sea behind"
+  ],
+  "must_not_show": [
+   "flesh",
+   "skin",
+   "cloth",
+   "red cape",
+   "sword",
+   "spear",
+   "shield",
+   "blood",
+   "second figure",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_echidna",
+  "family": "bosses_quest",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "Echidna, the mother of monsters, seen close in her dark cave: above the waist she is a strong, savage woman with a fair but furious face, brows drawn down in rage, wild amber eyes, lips pulled back in a snarl showing two long white fangs, and a great mass of long tangled dark auburn hair, with a bronze diadem and a short dark pine-green Greek tunic; her clawed hands are raised to rake. At her belt her body continues as one enormous serpent of pale grey-green scales, the colour of dry sage leaves, with big black spots, coiling round her. Behind her in the dark cave glow several pairs of small yellow eyes: her monstrous children.",
+  "colours": "Fair skin; long tangled dark auburn hair; amber eyes; white fangs; a bronze diadem; a dark pine-green tunic; a serpent body of pale grey-green scales with big black spots and a pale cream belly; dark claws; a dark cave with small glowing yellow eyes.",
+  "must_show": [
+   "a furious woman's upper body with wild auburn hair",
+   "a spotted grey-green serpent body below",
+   "glowing eyes in the dark behind"
+  ],
+  "must_not_show": [
+   "human legs",
+   "bare chest",
+   "blood",
+   "snake hair",
+   "green skin",
+   "writing",
+   "babies"
+  ]
+ },
+ {
+  "id": "quest_erlking",
+  "family": "bosses_quest",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "the Erlking, the alder-king of Goethe's ballad, seen close from the chest up in a misty night forest: a very tall, thin, ancient elf-king with skin of pale grey-green like the bark of a young willow, a long narrow ageless face with a thin soft smile, long pointed ears, two eyes of solid pale silver light, very long straight hair white as mist, and a tall crown of bare black alder twigs. He wears a high-collared robe of pale silver-grey with a broad band of old gold embroidery and a dark forest-green mantle. One long-fingered hand with thorn-like dark claws is stretched toward the viewer, beckoning. Behind him, black willow trees in pale mist under a full moon.",
+  "colours": "Pale grey-green willow-bark skin; glowing silver eyes; long mist-white hair; a crown of black alder twigs; a pale silver-grey robe with old gold embroidery; a dark forest-green mantle; dark thorn claws; black trees, pale mist and a pale moon.",
+  "must_show": [
+   "a tall pale grey-green elf-king with a twig crown",
+   "glowing silver eyes",
+   "a beckoning clawed hand",
+   "misty night forest"
+  ],
+  "must_not_show": [
+   "child",
+   "horse",
+   "rider",
+   "living pink skin",
+   "antlers",
+   "metal crown",
+   "blood",
+   "writing",
+   "second figure"
+  ]
+ },
+ {
+  "id": "quest_camazotz",
+  "family": "bosses_quest",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "Camazotz, the death bat of the K'iche' Maya, seen close from the front in flight before a temple doorway: a gigantic real leaf-nosed vampire bat with huge tall pointed ears, a nose that turns up into one tall sharp blade-shaped leaf, small burning yellow eyes, and a wide open mouth with two very long curved white fangs; his body and head are covered in shaggy dark brown-black fur. His two enormous leathery wings of dark grey-brown, with long finger bones, spread wide across the picture. Round his neck is a wide collar of big carved plaques of dull dark jade, and a round jade disc in each ear. Behind him, a dark stone Maya temple doorway glows deep red inside.",
+  "colours": "Shaggy dark brown-black fur with dusty grey-brown highlights; dark grey-brown wings with paler finger bones; burning yellow eyes; long white fangs; a collar and ear discs of dull dark jade stone, a greyed deep green; a dark grey stone doorway glowing deep red.",
+  "must_show": [
+   "a giant bat face with tall ears and a blade-shaped nose leaf",
+   "long white fangs",
+   "wings spread wide",
+   "a jade collar"
+  ],
+  "must_not_show": [
+   "person",
+   "human body",
+   "blood",
+   "skull",
+   "writing",
+   "glyphs",
+   "carvings of faces",
+   "second bat",
+   "cartoon bat"
+  ]
+ }
+]

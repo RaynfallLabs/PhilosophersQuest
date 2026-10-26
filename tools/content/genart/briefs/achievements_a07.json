@@ -1,0 +1,477 @@
+[
+ {
+  "id": "stone_home",
+  "family": "endings",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "two cupped hands held up together, palms up, seen close from the front, holding up the Philosopher's Stone against a sunrise. The hands are a grown person's, strong and weathered, in dark blue wool sleeves that run down out of the bottom of the picture. In the hollow of the hands sits one large gem, roughly round, cut with big flat facets, glowing from within: blazing gold-white at its heart, deep red toward its edges, the brightest thing in the picture, its light warm on the fingers. Far behind, dark rolling hills with the tiny roofs of a village lie under a sky that is still the deep blue of dawn, with a band of gold sunrise along the horizon.",
+  "colours": "A gem glowing gold-white at its heart and deep red toward its edges, red-gold light on the fingers; weather-beaten light tan skin; dark blue wool sleeves; dark hills; a deep blue dawn sky with a gold band of sunrise low down.",
+  "must_show": [
+   "two cupped hands holding a glowing red-gold gem in the middle",
+   "the gem is the brightest thing",
+   "sunrise sky and far hills behind"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person's body",
+   "third hand",
+   "ring",
+   "coins",
+   "blood",
+   "egg",
+   "apple",
+   "heart",
+   "halo",
+   "sun in the hands",
+   "castle",
+   "green gem"
+  ],
+  "note": "pilot stone_home_b, round 2; its candidates are copied in, not redrawn"
+ },
+ {
+  "id": "lake_of_fire",
+  "family": "endings",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a lake of fire stretching to the horizon under a black sky, its whole surface rolling flames, gold-white at their hearts and orange at their tips; in the middle of the picture, sinking into the burning lake, are a great broken scythe, its long black shaft bound with silver rings snapped in two and its huge pale steel blade tipping into the flames, and beside it a black iron crown half sunk. The flames are the brightest things in the picture; the broken scythe and crown stand dark against them.",
+  "colours": "Rolling flames gold-white at their hearts and orange at their tips; a black sky; a black scythe shaft with silver rings; a pale steel blade; a black iron crown.",
+  "must_show": [
+   "a lake of fire",
+   "a broken scythe sinking into it",
+   "a black crown sinking beside it"
+  ],
+  "must_not_show": [
+   "person",
+   "skeleton",
+   "skull",
+   "hand",
+   "demon",
+   "bodies",
+   "blood",
+   "devil",
+   "writing",
+   "volcano"
+  ]
+ },
+ {
+  "id": "checkmate",
+  "family": "endings",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a game of chess with Death, seen close and low across a chessboard of black and white squares: in the front middle stands a tall white chess knight, a carved horse's head of ivory, and beside it the black king lies toppled on its side. Behind the board, dim in the shadow, sits the hooded figure of Death in a heavy black robe, only the pale chalk-grey skull inside the hood and the gleam of a scythe blade showing. Candlelight from the left lights the ivory knight bright.",
+  "colours": "A chessboard of black and pale ivory squares; an ivory-white knight; a black king; a black hooded robe and a chalk grey-white skull in shadow; a pale steel scythe blade; warm candlelight.",
+  "must_show": [
+   "a white chess knight standing",
+   "the black king toppled",
+   "Death's hooded skull behind the board"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "numbers",
+   "living person",
+   "hand",
+   "blood",
+   "second skull",
+   "playing cards",
+   "dice"
+  ]
+ },
+ {
+  "id": "great_scott",
+  "family": "endings",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a strange device standing on a dark dungeon floor, seen close from the front: a squat square box of dark grey riveted iron with thick brass corners, and in its front one big square window of dark glass. Behind the glass are three slim glass tubes, each with a round glass bulb at its outer end and a thin glowing filament inside: one runs in from the top left corner, one from the top right corner and one up from the bottom middle, and the three meet at one small round glowing brass node in the middle. The filaments and the node glow bright pale yellow-white, crackling. Three small scarlet knobs sit in a row on top of the box. Small arcs of white lightning crackle round it, and two parallel trails of fire burn on the floor in front of it, running away into the dark.",
+  "colours": "Dark grey riveted iron; dull brass corners; a dark window; three slim glass tubes with round bulbs and glowing pale yellow-white filaments meeting at a small glowing brass node; three small scarlet knobs; white sparks; two trails of orange fire; dark dungeon behind.",
+  "must_show": [
+   "a box with a window showing three glass tubes meeting in the middle",
+   "glowing filaments",
+   "two fire trails on the floor"
+  ],
+  "must_not_show": [
+   "car",
+   "person",
+   "chicken",
+   "clock",
+   "writing",
+   "letters",
+   "numbers",
+   "screen",
+   "wires everywhere",
+   "letter Y",
+   "bold solid Y",
+   "neon sign",
+   "thick glowing bars"
+  ]
+ },
+ {
+  "id": "found_worthy",
+  "family": "endings",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "the Sword and Scales of the archangel Michael, seen close in a shaft of heavenly light: a great bright steel longsword stands point down in the middle of the picture, and from the two arms of its gold crossguard hang two round golden scale pans on golden chains, perfectly level. Bright gold-white light falls from above onto the sword and the scales; behind them, soft gold and white clouds, darker blue-grey toward the edges of the picture.",
+  "colours": "A bright pale steel blade; a gold crossguard, grip and pommel; golden scale pans and chains; gold-white light; soft gold and white clouds, blue-grey at the edges.",
+  "must_show": [
+   "a sword standing point down",
+   "two golden scale pans hanging level from it",
+   "heavenly light"
+  ],
+  "must_not_show": [
+   "angel",
+   "person",
+   "hand",
+   "wings",
+   "writing",
+   "letters",
+   "blood",
+   "statue of justice",
+   "blindfold",
+   "coins"
+  ]
+ },
+ {
+  "id": "fall_1",
+  "family": "endings_falls",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a dented steel helmet lying on its side on a dark dungeon floor, seen close; it is the open-faced round helmet of a common adventurer, with a nose guard, scratched and dented, and it fills the middle of the picture. A single beam of pale light falls on it from above, with dust floating in the beam; everything round it is dark.",
+  "colours": "A scratched pale steel helmet with dark dents; a beam of pale gold-white light; dark grey flagstones; black shadow round it.",
+  "must_show": [
+   "one dented helmet lying on its side",
+   "a beam of light on it",
+   "lit helmet against dark"
+  ],
+  "must_not_show": [
+   "head",
+   "skull",
+   "body",
+   "bones",
+   "blood",
+   "sword",
+   "plume",
+   "sprout",
+   "person",
+   "writing"
+  ]
+ },
+ {
+  "id": "fall_10",
+  "family": "endings_falls",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a dented steel helmet, the open-faced round helmet of a common adventurer with a nose guard, scratched and dented, set back upright on a flat grey stone, seen close; beside it a small bright green sprout grows from a crack in the stone. Warm gold dawn light falls on it from the left; behind, the dark of a dungeon brightening to gold toward the light.",
+  "colours": "A scratched pale steel helmet with dark dents and warm gold highlights; a flat grey stone; a small bright green sprout; dark shadow warming to gold.",
+  "must_show": [
+   "one dented helmet standing upright on a stone",
+   "a small green sprout beside it",
+   "warm dawn light"
+  ],
+  "must_not_show": [
+   "head",
+   "skull",
+   "body",
+   "blood",
+   "sword",
+   "plume",
+   "person",
+   "writing",
+   "flowers"
+  ]
+ },
+ {
+  "id": "fall_50",
+  "family": "endings_falls",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a battered steel helmet, the open-faced round helmet of an adventurer with a nose guard, covered in dents and scratches, with a tall plume of bright red horsehair streaming from its crest, standing upright and steady on a jagged rock in driving rain and wind, seen close; it fills the middle of the picture. A break in the dark storm clouds behind it lets a shaft of silver light fall on the helmet, so it shines against the dark grey storm.",
+  "colours": "A battered pale steel helmet with dark dents and silver highlights; a bright red horsehair plume; a dark grey jagged rock; dark grey storm clouds; slanting pale rain; a shaft of silver light.",
+  "must_show": [
+   "one battered helmet with a red plume standing upright",
+   "a storm round it",
+   "the helmet lit against the dark"
+  ],
+  "must_not_show": [
+   "head",
+   "skull",
+   "body",
+   "person",
+   "blood",
+   "sword",
+   "flag",
+   "writing",
+   "second helmet"
+  ]
+ },
+ {
+  "id": "fall_100",
+  "family": "endings_falls",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "Death's schoolroom, seen close: a dented steel helmet, the open-faced round helmet of an adventurer, rests on top of a tall dark wooden lectern, beside an open book with clean, pale, blank pages and a small hourglass of black iron with pale sand; leaning behind the lectern stands a great scythe with a long black shaft bound with silver rings and a huge curved blade of bright pale steel arching over the top of the picture. Warm candlelight from the left lights the helmet and the pale pages; behind, deep black shadow.",
+  "colours": "A dented pale steel helmet; a dark wooden lectern; pale cream blank pages; a black iron hourglass with pale sand; a black scythe shaft with silver rings and a bright pale steel blade; warm candlelight; black shadow.",
+  "must_show": [
+   "a dented helmet on a lectern with an open book",
+   "a great scythe leaning behind",
+   "an hourglass"
+  ],
+  "must_not_show": [
+   "writing on the pages",
+   "letters",
+   "skeleton",
+   "skull",
+   "person",
+   "hand",
+   "blood",
+   "classroom desks",
+   "chalkboard"
+  ]
+ },
+ {
+  "id": "forgot_to_eat",
+  "family": "endings_misc",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an empty wooden bowl with a wooden spoon lying beside it on a dark dungeon floor, seen close and a little from above; the bowl is large in the middle of the picture and holds nothing but a few crumbs; a thin dusty cobweb stretches from the bowl's rim to the spoon. A beam of pale light falls on the bowl from the upper left; the floor round it is dark. Comic and a little sad.",
+  "colours": "A worn pale brown wooden bowl and spoon; a few pale crumbs; a grey cobweb; dark grey flagstones; pale light.",
+  "must_show": [
+   "an empty wooden bowl",
+   "a wooden spoon",
+   "a cobweb between them"
+  ],
+  "must_not_show": [
+   "food",
+   "skeleton",
+   "skull",
+   "bones",
+   "person",
+   "hand",
+   "rat",
+   "spider",
+   "writing",
+   "blood"
+  ]
+ },
+ {
+  "id": "short_story",
+  "family": "endings_misc",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a tall new white candle, barely burned, standing in a brass candlestick on a dark table, seen close; it has just been snuffed out, and a thin curl of grey smoke rises from its black wick, curling up into the dark. A faint warm light from the left lights the white wax and the brass; behind, black.",
+  "colours": "A tall white wax candle; a black wick; a curl of pale grey smoke; a brass candlestick; a dark wooden table; black background.",
+  "must_show": [
+   "a tall new candle, barely burned",
+   "a curl of smoke from its snuffed wick",
+   "white candle against dark"
+  ],
+  "must_not_show": [
+   "flame",
+   "fire",
+   "melted stub",
+   "second candle",
+   "skull",
+   "book",
+   "person",
+   "hand",
+   "writing"
+  ]
+ },
+ {
+  "id": "udderly",
+  "family": "endings_misc",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a dented steel helmet, the open-faced round helmet of an adventurer, lying upside down in the green grass of a farm field beside a wooden fence, seen close, with a big cow's hoof print pressed into the grass beside it. Behind it, a black-and-white dairy cow grazes calmly, completely unharmed and unbothered, under a strange red sky. Comic.",
+  "colours": "A dented pale steel helmet; bright green grass; a weathered grey wooden fence; a black-and-white dairy cow with a pink nose; a strange red sky.",
+  "must_show": [
+   "a dented helmet lying in farm grass",
+   "a calm black-and-white cow behind it",
+   "a red sky"
+  ],
+  "must_not_show": [
+   "person",
+   "body",
+   "skull",
+   "blood",
+   "weapons on the cow",
+   "halberd",
+   "cow standing on two legs",
+   "second cow in front",
+   "writing"
+  ]
+ },
+ {
+  "id": "the_scythe",
+  "family": "endings_misc",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "Death himself, the Grim Reaper, seen close from the chest up: a heavy black hooded robe with a broad border of tarnished silver embroidery at the hood, and inside the deep hood a bare skull of chalk grey-white bone with two small points of cold white light in its black eye sockets and a closed jaw. His bare bone hands grip a scythe with a long black shaft bound in silver rings, its huge curved blade of bright pale steel sweeping across the top of the picture. Behind him a pale moon in a dark night sky, so his hood is dark against the moon.",
+  "colours": "A heavy black robe with tarnished silver embroidery; a chalk grey-white skull and bone hands; cold white eye lights; a black scythe shaft with silver rings; a bright pale steel blade; a pale moon; a dark night sky.",
+  "must_show": [
+   "a hooded skull in a black robe",
+   "a great scythe blade",
+   "the moon behind"
+  ],
+  "must_not_show": [
+   "gold skull",
+   "flesh",
+   "face with skin",
+   "horse",
+   "wings",
+   "crown",
+   "blood",
+   "writing",
+   "second figure"
+  ]
+ },
+ {
+  "id": "names_1",
+  "family": "heroes",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a heavy old arched door of dark oak planks bound with black iron bands, set in a dark stone wall, seen close from the front so it fills the middle of the picture; it stands a little open, and bright gold-white light pours out through the gap down its edge and through its big iron keyhole, the brightest things in the picture. The corridor round the door is dark.",
+  "colours": "Dark oak planks; black iron bands and a black iron keyhole plate; gold-white light pouring through the gap and keyhole; dark grey stone wall.",
+  "must_show": [
+   "one heavy arched door standing a little open",
+   "bright light through the gap and keyhole"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "key",
+   "writing",
+   "carvings",
+   "runes",
+   "symbols on the door",
+   "monster",
+   "second door"
+  ]
+ },
+ {
+  "id": "names_5",
+  "family": "heroes",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "five ornate old keys hanging together on one big iron ring, seen close, the ring hung on an iron nail on a dark oak door: one key of black iron, one of dull bronze, one of copper, one of silver and one of gold, each with a big ornate bow and a toothed bit, fanned out below the ring. Warm light from the upper left makes the metals gleam; the wood behind is dark.",
+  "colours": "Keys of black iron, dull bronze, copper, bright silver and bright gold; a dark iron ring and nail; dark oak planks.",
+  "must_show": [
+   "several ornate keys on one ring",
+   "keys of different metals",
+   "bright keys against dark wood"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "lock",
+   "chest",
+   "writing",
+   "letters",
+   "numbers",
+   "tags",
+   "single key"
+  ]
+ },
+ {
+  "id": "names_10",
+  "family": "heroes",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a great ornate golden key, as long as a sword, floating upright in the air in front of a huge pair of closed arched doors of dark wood bound with gold, seen close; the key is in the middle of the picture, its bow shaped like a sunburst of golden rays, glowing gold-white, the brightest thing in the picture. Its light falls on the doors behind it; the edges of the picture are dark.",
+  "colours": "A shining gold key glowing gold-white; huge doors of dark wood with gold bands; dark shadow at the edges.",
+  "must_show": [
+   "one huge glowing golden key floating upright",
+   "great doors behind it"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "lock",
+   "chain",
+   "writing",
+   "letters",
+   "symbols",
+   "several keys",
+   "sword"
+  ]
+ },
+ {
+  "id": "names_20",
+  "family": "heroes",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a round hall seen from just inside its entrance: its curved wall is lined all round with many tall arched doors of dark wood, side by side, every one standing open, and from every open doorway pours bright gold-white light, so the hall is ringed with glowing arches. The floor is polished dark stone reflecting the light; above, a dome of deep violet shadow.",
+  "colours": "Dark wooden doors; glowing gold-white light in every doorway; polished dark stone floor with reflections; a deep violet dome above.",
+  "must_show": [
+   "a round hall ringed with many open doors",
+   "light pouring from every door"
+  ],
+  "must_not_show": [
+   "person",
+   "people",
+   "statues",
+   "writing",
+   "throne",
+   "monster",
+   "stairs",
+   "windows"
+  ]
+ },
+ {
+  "id": "philosophers_quest",
+  "family": "heroes",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "the Philosopher's Stone resting on an unrolled old scroll on a white marble table at dawn, seen close: one large gem, roughly round, cut with big flat facets like a cut jewel, lying on the scroll, glowing from within, blazing gold-white at its heart and deep red toward its edges, the brightest thing in the picture; nothing burns on it and nothing stands on top of it. Beside it lies a wreath of green laurel leaves. The scroll is pale cream and blank. Behind, the white columns of a Greek porch stand against a pale gold dawn sky.",
+  "colours": "A faceted gem glowing gold-white at its heart and deep red toward its edges; pale cream parchment; a green laurel wreath; white marble; white columns; a pale gold dawn sky.",
+  "must_show": [
+   "a faceted red-gold gem lying on a scroll",
+   "a laurel wreath beside it",
+   "a Greek porch at dawn behind"
+  ],
+  "must_not_show": [
+   "writing on the scroll",
+   "letters",
+   "person",
+   "face",
+   "statue",
+   "bust",
+   "hand",
+   "green gem",
+   "blue gem",
+   "skull",
+   "candle",
+   "flame on top",
+   "lantern",
+   "glass jar",
+   "oil lamp",
+   "vase",
+   "ornament"
+  ]
+ },
+ {
+  "id": "aim_high",
+  "family": "heroes",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "a pair of great wings made of white feathers set in wax, by themselves, with nobody wearing them, falling through a blazing gold sky beneath a dazzling white sun; the wings are large in the middle of the picture, tumbling, the wax between the feathers melting and dripping, loose white feathers scattering round them. Below, far down, a deep blue sea. The sun at the top is the brightest thing in the picture, and the white wings stand out against the gold.",
+  "colours": "White feathers with pale gold edges; dripping pale yellow wax; a blazing gold sky; a dazzling white sun; a deep blue sea far below.",
+  "must_show": [
+   "a pair of feather wings with no one in them",
+   "wax melting and feathers scattering",
+   "a blazing sun above"
+  ],
+  "must_not_show": [
+   "person",
+   "body",
+   "boy",
+   "man",
+   "angel",
+   "bird",
+   "face",
+   "halo",
+   "writing",
+   "crown"
+  ]
+ }
+]

@@ -4,7 +4,8 @@ The generator is asked for a flat key-colour background (magenta, or green for a
 purple creature). Everything of that hue is background wherever it sits, so the
 gap between two legs goes and so does any shadow on the ground. The figure is
 then shrunk to the tile size, lifted a little (a painting shrinks darker than it
-looks), cut to a small set of colours and outlined.
+looks), cut to a small set of colours and outlined. An achievement badge painted as
+a small scene (`to_medallion`) is not cut out: it is shrunk whole and masked to a circle.
 
 Run with ComfyUI's Python (it has numpy, scipy and Pillow).
 """
@@ -95,13 +96,15 @@ def despill(a, fig, key):
     return int(spill.sum())
 
 
-def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True, lift=1.0, spill=False):
+def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True, lift=1.0, spill=False, circle=None):
     """(RGBA sprite Image of tile x tile, facts).
 
     `scale` is how much of the tile the thing's longest side fills (an item's size
     class: a ring is small in its square, a halberd fills it). `stand` sets it on
     the bottom edge like a creature; otherwise it sits in the middle like an item.
-    `spill` runs despill() first (green key, figure with no green)."""
+    `spill` runs despill() first (green key, figure with no green).
+    `circle` (centred things only) is the diameter, as a share of the tile, of a round
+    frame the thing must stay inside: a wide thing is shrunk until its corners clear it."""
     a, fig, facts = figure_mask(im, key)
     if not fig.any():
         return Image.new('RGBA', (tile, tile)), dict(facts, empty=True)
@@ -114,6 +117,11 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=Tr
     oy, ox = (side - (y1 - y0)) if stand else (side - (y1 - y0)) // 2, (side - (x1 - x0)) // 2
     canvas[oy:oy + y1 - y0, ox:ox + x1 - x0, :3] = a[y0:y1, x0:x1] * fig[y0:y1, x0:x1, None]
     canvas[oy:oy + y1 - y0, ox:ox + x1 - x0, 3] = fig[y0:y1, x0:x1] * 255
+    if circle:
+        # the farthest figure pixel from the middle must land inside the circle once shrunk
+        reach = np.sqrt((ys - y0 + oy - (side - 1) / 2.0) ** 2 + (xs - x0 + ox - (side - 1) / 2.0) ** 2).max() + 1
+        scale = min(scale, circle * tile * side / (2.0 * reach * (tile - 2)))
+        facts['circle_scale'] = round(float(scale), 3)
     inner = max(8, int(round((tile - 2) * scale)))         # room for the outline; smaller for a small thing
     small = np.asarray(Image.fromarray(canvas.astype(np.uint8), 'RGBa').resize((inner, inner), Image.BOX)).astype(np.float32)
     al = small[..., 3:4]
@@ -152,3 +160,35 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=Tr
     out[ring] = (*OUTLINE, 255)
     facts['sprite_fill'] = float((out[..., 3] > 0).mean())
     return Image.fromarray(out, 'RGBA'), facts
+
+
+def grey_range(rgba):
+    """How far apart the dark and light of a picture are once it is grey (0 to 1): the
+    spread between its 5th and 95th brightest per cent of opaque pixels. A locked
+    achievement badge is shown grey, so its shape has to be carried by light and dark."""
+    a = np.asarray(rgba).astype(np.float32)
+    lum = (a[..., 0] * 0.299 + a[..., 1] * 0.587 + a[..., 2] * 0.114)[a[..., 3] > 127] / 255.0
+    return round(float(np.percentile(lum, 95) - np.percentile(lum, 5)), 3) if lum.size else 0.0
+
+
+def to_medallion(im, size=128, colours=COLOURS, lift=1.0, edge=2):
+    """(RGBA Image of size x size, facts): a painted scene kept whole, for a round badge.
+
+    Nothing is cut out. The picture is shrunk to `size`, lifted and cut to `colours`
+    colours the way a sprite is, then masked to the circle the square holds: outside
+    it is transparent, and the last `edge` pixels inside the rim fade out so the
+    frame drawn over it meets a soft edge, not a stair-stepped one."""
+    rgb = np.asarray(im.convert('RGB').resize((size, size), Image.BOX)).astype(np.float32)
+    rgb = 255.0 * (rgb / 255.0) ** (LIFT_GAMMA / max(0.5, lift))
+    grey = rgb.mean(2, keepdims=True)
+    rgb = np.clip(grey + (rgb - grey) * LIFT_COLOUR, 0, 255)
+    yy, xx = np.mgrid[0:size, 0:size] + 0.5
+    dist = np.sqrt((yy - size / 2.0) ** 2 + (xx - size / 2.0) ** 2)
+    alpha = np.clip((size / 2.0 - dist) / edge, 0, 1)
+    inside = alpha > 0
+    q = Image.fromarray(rgb[inside].astype(np.uint8).reshape(1, -1, 3), 'RGB').quantize(colours, method=Image.MEDIANCUT, kmeans=6)
+    rgb[inside] = np.asarray(q.convert('RGB')).reshape(-1, 3)
+    out = np.zeros((size, size, 4), np.uint8)
+    out[..., :3] = rgb * inside[..., None]
+    out[..., 3] = np.round(alpha * 255)
+    return Image.fromarray(out, 'RGBA'), {'scene': True, 'grey_range': grey_range(out)}

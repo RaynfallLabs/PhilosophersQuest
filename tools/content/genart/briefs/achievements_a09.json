@@ -1,0 +1,387 @@
+[
+ {
+  "id": "nothing_wasted",
+  "family": "craft_food",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a hunter's harvest on a thick wooden board on a dungeon floor, seen close: a big cut of red meat with a rim of white fat and a white bone end, beside it a broad skinning knife with a bright steel blade and a dark wooden handle, a monster's long curved pale horn, and a tied bundle of green herbs. Warm torchlight from the upper left; the floor round the board is dark.",
+  "colours": "Red meat with white fat and a white bone; a bright steel knife with a dark wooden handle; a pale bone-coloured horn; green herbs; a pale wooden board; dark grey floor.",
+  "must_show": [
+   "a cut of meat on a board",
+   "a skinning knife",
+   "a monster's horn"
+  ],
+  "must_not_show": [
+   "blood pool",
+   "gore",
+   "dead animal",
+   "carcass",
+   "head",
+   "eyes",
+   "person",
+   "hand",
+   "writing",
+   "flies"
+  ]
+ },
+ {
+  "id": "camp_cook",
+  "family": "craft_food",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a small round black iron pot hanging from a tripod of three straight sticks over a small campfire on a dungeon floor at night, seen close; white steam rises from the pot, a wooden ladle leans in it. The fire burns gold-white at its heart and orange at its tips and lights the pot and the nearby stones warm; everything beyond is dark.",
+  "colours": "A black iron pot with pale grey highlights; three brown sticks; a fire gold-white at its heart and orange at its tips; white steam; a pale wooden ladle; dark grey stones; black darkness.",
+  "must_show": [
+   "a small pot over a campfire on a tripod of sticks",
+   "steam rising",
+   "firelight against dark"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "copper pot",
+   "big hearth",
+   "fireplace",
+   "meat on a spit",
+   "skull",
+   "writing",
+   "tent"
+  ]
+ },
+ {
+  "id": "cookbook",
+  "family": "craft_food",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a thick old book lying open on a kitchen table, seen close and a little from above: its pale cream pages are clean and blank, and a wooden spoon rests across them; beside the book lie sprigs of green herbs, a head of white garlic and a little clay bowl of salt. The book's covers are worn brown leather. Warm firelight from the upper left makes the pages glow; behind, the kitchen is dark brown.",
+  "colours": "Pale cream blank pages; worn brown leather covers; a pale wooden spoon; green herbs; a white garlic bulb; a brown clay bowl of white salt; a dark wooden table; dark brown shadow.",
+  "must_show": [
+   "an open book with blank pages",
+   "a wooden spoon across it",
+   "herbs and garlic beside it"
+  ],
+  "must_not_show": [
+   "writing",
+   "text",
+   "recipe words",
+   "letters",
+   "pictures on the pages",
+   "person",
+   "hand",
+   "knife",
+   "meat",
+   "stains"
+  ]
+ },
+ {
+  "id": "locksmith",
+  "family": "craft_skills",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a heavy old padlock of bright polished brass hanging from the dark iron hasp of an old oak chest, seen close and large in the middle of the picture: its thick curved brass shackle has sprung open, free of the lock's body, and hanging from its keyhole is a ring of old iron skeleton keys and two slender steel lockpicks. Warm torchlight from the upper left makes the brass gleam bright gold with white highlights against the chest's dark planks.",
+  "colours": "A bright polished brass padlock with white highlights; dark iron keys on a ring; bright steel lockpicks; a dark iron hasp; dark oak planks with iron bands.",
+  "must_show": [
+   "a big brass padlock with its shackle sprung open",
+   "keys and picks hanging from it",
+   "bright brass against dark wood"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "gold",
+   "treasure",
+   "writing",
+   "numbers",
+   "combination dial",
+   "modern padlock",
+   "chain",
+   "black padlock",
+   "dark iron padlock"
+  ]
+ },
+ {
+  "id": "scroll_reader",
+  "family": "craft_magic",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an unrolled scroll of pale parchment floating in the air in a dark room, seen close from the front, its two rolled ends at the left and right of the picture; its blank surface glows softly white-gold from within, and small motes of gold light rise from it like sparks. The glowing scroll is the brightest thing in the picture; the room round it is dark.",
+  "colours": "Pale cream parchment glowing white-gold; rolled ends of darker parchment; motes of gold light; a dark brown room.",
+  "must_show": [
+   "an open scroll floating",
+   "glowing blank surface",
+   "glow against dark"
+  ],
+  "must_not_show": [
+   "writing",
+   "text",
+   "letters",
+   "runes",
+   "symbols",
+   "magic circles",
+   "person",
+   "hand",
+   "book",
+   "candle"
+  ]
+ },
+ {
+  "id": "wand_waver",
+  "family": "craft_magic",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a carved wand of dark wood with a silver tip, floating on a slant across the middle of the picture, its handle at the lower left; from its silver tip at the upper right bursts a spray of bright white-gold sparks, the brightest thing in the picture. Behind, a dark violet-black background.",
+  "colours": "A dark carved wooden wand with a silver tip and silver bands; a burst of white-gold sparks; a dark violet-black background.",
+  "must_show": [
+   "one carved wand",
+   "a burst of sparks from its tip",
+   "sparks bright against dark"
+  ],
+  "must_not_show": [
+   "hand",
+   "person",
+   "staff",
+   "second wand",
+   "writing",
+   "runes",
+   "star with a face",
+   "lightning across the picture"
+  ]
+ },
+ {
+  "id": "spellbound",
+  "family": "craft_magic",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a spellbook floating open in the air in a dark tower room, seen close: its covers are deep violet leather with silver corners, and from its clean blank pages a soft violet-white light pours upward in a rising spiral of sparkles. The glowing pages are the brightest thing in the picture; the room is dark.",
+  "colours": "Deep violet leather covers with silver corners; pale glowing blank pages; violet-white light and sparkles; a dark room.",
+  "must_show": [
+   "an open floating spellbook",
+   "a spiral of light rising from its pages"
+  ],
+  "must_not_show": [
+   "writing",
+   "text",
+   "runes",
+   "magic circle",
+   "symbols",
+   "person",
+   "hand",
+   "creature coming out",
+   "skull"
+  ]
+ },
+ {
+  "id": "archmage",
+  "family": "craft_magic",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a tall wizard's staff of dark twisted wood standing upright by itself in the middle of a ring of standing stones at night, seen close: at its top, held in curling wooden roots, a large crystal blazes with white-gold light, the brightest thing in the picture, and arcs of violet lightning crackle out from it. Behind, the dark standing stones and a deep blue night sky with stars.",
+  "colours": "A dark twisted wooden staff; a blazing white-gold crystal; crackling violet lightning with white cores; dark grey standing stones; a deep blue starry sky.",
+  "must_show": [
+   "a tall wizard's staff with a blazing crystal at its top",
+   "violet lightning",
+   "night behind"
+  ],
+  "must_not_show": [
+   "wizard",
+   "person",
+   "hand",
+   "hat",
+   "beard",
+   "writing",
+   "runes on the stones",
+   "skull",
+   "second staff"
+  ]
+ },
+ {
+  "id": "faithful",
+  "family": "craft_prayer",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a pair of hands pressed together palm to palm in prayer, fingers pointing up, seen close from the side, the forearms in rough grey wool sleeves running down out of the bottom of the picture; a warm beam of gold light falls on them from above. Exactly two hands. Behind, a plain dark background.",
+  "colours": "Weather-beaten light tan skin; rough grey wool sleeves; a warm beam of gold light; plain dark brown background.",
+  "must_show": [
+   "two hands pressed together in prayer",
+   "light falling on them"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person",
+   "rosary",
+   "beads",
+   "cross",
+   "ring",
+   "third hand",
+   "writing",
+   "halo"
+  ]
+ },
+ {
+  "id": "heard_on_high",
+  "family": "craft_prayer",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "dark storm clouds split open by a broad shaft of brilliant gold-white light pouring down from above onto a battered sword and a dented round shield lying on a rock, seen close; rays of light spread out from the break in the clouds. The shaft of light is the brightest thing in the picture; the storm clouds round it are dark grey.",
+  "colours": "Dark grey storm clouds; a shaft of brilliant gold-white light; a battered pale steel sword; a dented round shield of dark wood and iron; a dark grey rock.",
+  "must_show": [
+   "a shaft of light breaking through dark clouds",
+   "a battered sword and shield in the light"
+  ],
+  "must_not_show": [
+   "person",
+   "angel",
+   "face in the clouds",
+   "hand from the sky",
+   "cross",
+   "writing",
+   "blood",
+   "body"
+  ]
+ },
+ {
+  "id": "gold_10k",
+  "family": "craft_gold",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a fat brown leather purse with a drawstring, lying on its side on a dark wooden table, seen close, spilling a little heap of gold coins from its mouth; the purse fills the middle of the picture. Warm candlelight from the upper left makes the gold gleam bright against the dark wood.",
+  "allow": [
+   "coin"
+  ],
+  "colours": "A worn brown leather purse with a dark drawstring; plain gold coins with bright highlights; a dark wooden table; deep brown shadow.",
+  "must_show": [
+   "a fat leather purse",
+   "gold coins spilling from it"
+  ],
+  "must_not_show": [
+   "chest",
+   "crown",
+   "jewels",
+   "faces on the coins",
+   "writing",
+   "numbers",
+   "person",
+   "hand",
+   "paper money"
+  ]
+ },
+ {
+  "id": "gold_100k",
+  "family": "craft_gold",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "an iron-bound wooden treasure chest with its lid thrown open, heaped full and overflowing with gold coins, gold goblets and red and green jewels, seen close in a dark vault; the chest fills the middle of the picture and the gold glitters bright under a shaft of light from above.",
+  "allow": [
+   "coin"
+  ],
+  "colours": "Dark oak chest with black iron bands; heaps of bright gold coins and goblets; red and green jewels; a shaft of warm light; a dark vault.",
+  "must_show": [
+   "an open treasure chest overflowing with gold"
+  ],
+  "must_not_show": [
+   "crown on a mountain of gold",
+   "skeleton",
+   "skull",
+   "mimic teeth",
+   "person",
+   "hand",
+   "writing",
+   "faces on the coins"
+  ]
+ },
+ {
+  "id": "gold_1m",
+  "family": "craft_gold",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a mountain of treasure in a vast dark vault, seen close, filling the picture: a great heap of gold coins, gold goblets, gold plates and jewels piled high, and on its peak a jewelled golden crown, all glittering under a shaft of gold-white light from above. The crown on the peak is the brightest thing in the picture.",
+  "allow": [
+   "coin"
+  ],
+  "colours": "A great heap of bright gold coins, goblets and plates; red, green and blue jewels; a jewelled gold crown; a shaft of gold-white light; a dark vault.",
+  "must_show": [
+   "a mountain of gold treasure",
+   "a golden crown on its peak"
+  ],
+  "must_not_show": [
+   "dragon",
+   "chest",
+   "skeleton",
+   "person",
+   "hand",
+   "writing",
+   "faces on the coins"
+  ]
+ },
+ {
+  "id": "every_market",
+  "family": "craft_gold",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a merchant's market stall in bright morning sunshine, seen close from the front: a plain deep red cloth awning over a wooden counter laden with baskets of shining red apples, round golden-brown loaves, pale clay jars and folded bright blue and gold cloth; two brass lanterns hang from the front edge of the awning. Sunlight falls on the counter from the upper left so the goods are bright and the shade under the awning is dark; behind, a pale sunlit street wall.",
+  "colours": "A plain deep red awning; a weathered pale wooden counter; shining red apples; golden-brown loaves; pale clay jars; bright blue and gold cloth; brass lanterns; a pale sunlit wall behind.",
+  "must_show": [
+   "a market stall with an awning",
+   "goods on the counter",
+   "lanterns glowing"
+  ],
+  "must_not_show": [
+   "striped awning",
+   "person",
+   "merchant",
+   "hand",
+   "writing",
+   "sign",
+   "price tags",
+   "letters",
+   "modern shop"
+  ]
+ },
+ {
+  "id": "mystery_1",
+  "family": "craft_mystery",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a small cube-shaped coffer cut from polished black stone, with a thick flat black stone lid that overhangs it a little, standing on a plain stone altar in a dark niche, seen close; a heavy bronze lock plate with a keyhole sits in the middle of its front, and all the way round, in the crack between the lid and the box, a thin line of glowing dark red light leaks out, gold-white where it is brightest. An old iron key lies on the altar before it.",
+  "colours": "Polished black stone with pale grey highlights; a bronze lock plate; a thin line of glowing red light, gold-white where brightest; a grey stone altar; an iron key; a dark niche.",
+  "must_show": [
+   "a black stone coffer with light leaking from under its lid",
+   "a keyhole",
+   "a key before it"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "carved words",
+   "runes",
+   "skull",
+   "person",
+   "hand",
+   "open lid",
+   "monster"
+  ]
+ },
+ {
+  "id": "mystery_10",
+  "family": "craft_mystery",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a great dark hall where ten small ancient stone altars stand in a ring, seen from a little above, each altar with a small flame of light on it, all burning gold-white, round a tall glowing pillar of white-gold light in the middle of the ring. The ring of lights fills the picture; the hall round it is dark.",
+  "colours": "Grey stone altars; small gold-white flames; a tall pillar of white-gold light in the middle; a dark hall.",
+  "must_show": [
+   "a ring of small altars with flames",
+   "a pillar of light in the middle"
+  ],
+  "must_not_show": [
+   "writing",
+   "runes",
+   "person",
+   "people",
+   "monster",
+   "statue",
+   "skull",
+   "candles in rows"
+  ]
+ }
+]

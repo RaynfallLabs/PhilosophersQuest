@@ -1,0 +1,333 @@
+[
+ {
+  "id": "questions_100",
+  "family": "scholar_ladders",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a scholar's desk at night, seen close: an old open book lying on dark oak boards, its pages fanned open, clean, pale cream and blank; across the book on a diagonal lies a large quill pen made entirely of old dark bronze metal: hard and rigid, with sharp metal edges, its vane cast in bold ridges, deep coppery brown metal, darker than gold and never yellow, with bright copper highlights glinting on its hard metal ridges, its nib at the lower left, its tip at the upper right; a squat round inkpot of black glazed clay touches the book at the lower right. The book is well used: dark brown leather covers scuffed pale at the corners, dog-eared page corners, uneven page edges. Warm golden light falls on the book from the upper left, so the pale pages are the brightest thing in the picture; behind, the room is deep brown shadow with the dim shapes of shelves.",
+  "colours": "Clean pale cream pages; a quill of old dark bronze metal, deep coppery brown with dull copper-brown highlights, dark brown in its grooves; dark chocolate-brown leather; a black inkpot; dark oak boards; deep brown shadow behind.",
+  "must_show": [
+   "open old book with blank pages in the middle",
+   "large quill of shining bronze METAL across it",
+   "black inkpot",
+   "bright pages against a dark background"
+  ],
+  "must_not_show": [
+   "writing on the pages",
+   "lines of text",
+   "scribbles",
+   "white feather",
+   "real bird feather",
+   "candle flame",
+   "skull",
+   "hourglass",
+   "second book",
+   "laurel",
+   "silver",
+   "person",
+   "hand",
+   "face",
+   "window",
+   "brown bird feather",
+   "stains",
+   "blotches",
+   "gold quill",
+   "yellow metal",
+   "green",
+   "teal",
+   "peacock feather"
+  ],
+  "note": "pilot questions_100_b, round 4; its candidates are copied in, not redrawn"
+ },
+ {
+  "id": "questions_1000",
+  "family": "scholar_ladders",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a scholar's desk at night, seen close: a tall, neat stack of seven thick old books lying flat one on top of another, a little crooked, taller than it is wide, filling the middle of the picture. Each book has plain leather covers of a different dark colour, chocolate brown, deep oxblood, dark forest green, black, and thick pale cream page edges, and plain spines with only raised leather bands across them. Leaning against the side of the stack, its tip rising above the top book, is a large quill pen made entirely of shining silver-white metal: hard and rigid, its vane cast in bold ridges, bright silver-white with cool grey shadows; a squat round inkpot of black glazed clay stands at the foot of the stack. Warm golden light falls from the upper left, so the pale page edges glow; behind, the room is deep brown shadow.",
+  "colours": "Dark leather covers of chocolate brown, deep oxblood, dark forest green and black; pale cream page edges; a quill of bright silver-white metal with cool grey shadows; a black inkpot; dark oak desk; deep brown shadow behind.",
+  "must_show": [
+   "a tall stack of many books, taller than wide",
+   "a silver-white metal quill against the stack",
+   "bright page edges against a dark background"
+  ],
+  "must_not_show": [
+   "lettering on the spines",
+   "titles",
+   "writing",
+   "open book",
+   "gold quill",
+   "copper quill",
+   "real bird feather",
+   "white feather",
+   "candle",
+   "skull",
+   "person",
+   "hand",
+   "window",
+   "bookshelf filling the picture",
+   "stains"
+  ]
+ },
+ {
+  "id": "questions_10000",
+  "family": "scholar_ladders",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the inside of a tall round library tower, seen from its floor looking straight up: its round walls are lined from floor to ceiling with curved wooden shelves packed tight with old books with dark leather spines, ring above ring, rising up and narrowing toward the top, so the shelves circle the whole picture. In the very middle, at the top of the tower, a round opening lets in bright gold-white daylight, and in the middle of that light floats a large quill pen of shining polished gold, point down, the brightest thing in the picture. The shelves are lit warm gold near the light and fall into deep brown shadow toward the edges of the picture.",
+  "colours": "Dark oak shelves; book spines of dark brown, oxblood, forest green and black with pale page edges; a round opening of gold-white daylight; a shining polished gold quill; deep brown shadow at the edges.",
+  "must_show": [
+   "round tower of book-lined shelves seen looking up",
+   "bright round light in the middle",
+   "a shining gold quill in the light"
+  ],
+  "must_not_show": [
+   "lettering on the spines",
+   "titles",
+   "writing",
+   "people",
+   "person",
+   "hand",
+   "staircase",
+   "window with panes",
+   "silver quill",
+   "real bird feather",
+   "skull",
+   "clock"
+  ]
+ },
+ {
+  "id": "questions_100000",
+  "family": "scholar_ladders",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "an endless archive: a vast hall of towering bookshelves, row after row, running away from the viewer to a far point in the very middle of the picture, under a high vaulted stone ceiling; the far end blazes with gold-white light. Floating in the middle of the hall, large, close to the viewer, is one great open book whose blank pages glow white-gold, the brightest thing in the picture, with a shining gold quill hovering beside it and small motes of gold light rising from the pages like sparks. The shelves near the viewer are in deep violet-brown shadow, and they grow brighter and smaller toward the light, endless.",
+  "colours": "A great open book with glowing white-gold blank pages; a shining gold quill; motes of gold light; dark wooden shelves of books in deep violet-brown shadow near the viewer, gold-lit far away; a blaze of gold-white light at the far end.",
+  "must_show": [
+   "endless hall of bookshelves running to a far light",
+   "a large glowing open book floating in the middle",
+   "gold quill",
+   "glowing book bright against the dark shelves"
+  ],
+  "must_not_show": [
+   "writing on the pages",
+   "lettering",
+   "runes",
+   "symbols",
+   "people",
+   "person",
+   "hand",
+   "face",
+   "candles",
+   "skull",
+   "staircase"
+  ]
+ },
+ {
+  "id": "streak_25",
+  "family": "scholar_ladders",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "a short string of twelve big round beads of polished amber, warm honey-gold and glowing in the light, threaded close together so every bead touches the next, lying in one gentle curve across the middle of a cloth of dark blue velvet; each bead is as big as a walnut and has one bright white glint. Seen close and from a little above. Warm light falls from the upper left, so the beads glow bright gold against the dark velvet.",
+  "colours": "Warm honey-gold amber beads with bright white glints and deep orange-brown shadows; a cloth of dark midnight-blue velvet.",
+  "must_show": [
+   "a curved string of big amber beads, every bead touching the next",
+   "glowing beads on dark velvet"
+  ],
+  "must_not_show": [
+   "pearls",
+   "white beads",
+   "coins",
+   "a break in the string",
+   "loose beads",
+   "hand",
+   "person",
+   "jewellery box",
+   "cross",
+   "pendant",
+   "clasp"
+  ]
+ },
+ {
+  "id": "streak_100",
+  "family": "scholar_ladders",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "a long necklace of big lustrous white pearls, every pearl touching the next, laid in one unbroken round loop on a cloth of dark midnight-blue velvet, the loop filling most of the picture; each pearl is as big as a cherry, softly shining white with a pale silver sheen and one bright white glint. Seen close, from straight above. Soft light falls from the upper left, so the pearls glow white against the dark velvet, and the loop has no gap and no clasp.",
+  "colours": "Lustrous white pearls with a pale silver sheen and soft grey shadows; a cloth of dark midnight-blue velvet.",
+  "must_show": [
+   "one unbroken loop of big white pearls",
+   "white pearls bright on dark velvet",
+   "no gap in the loop"
+  ],
+  "must_not_show": [
+   "amber beads",
+   "gold beads",
+   "a break in the string",
+   "loose pearls",
+   "clasp",
+   "pendant",
+   "hand",
+   "person",
+   "neck",
+   "jewellery box",
+   "cross"
+  ]
+ },
+ {
+  "id": "streak_250",
+  "family": "scholar_ladders",
+  "rank": 7,
+  "body": "badge_scene",
+  "what": "one flawless huge pearl, perfectly round and as big as an apple, glowing softly from within with white-gold light, resting in the middle of an open oyster shell whose inside is lined with shimmering mother-of-pearl in pale pink, pale green and pale blue; the shell lies on a cloth of dark midnight-blue velvet. Seen close. A few soft rays of gold light shine out from the pearl. The glowing pearl is the brightest thing in the picture.",
+  "colours": "A glowing white-gold pearl; an oyster shell, rough grey-brown outside and shimmering pale pink, pale green and pale blue mother-of-pearl inside; dark midnight-blue velvet.",
+  "must_show": [
+   "one huge glowing round pearl",
+   "open oyster shell holding it",
+   "bright pearl on a dark ground"
+  ],
+  "must_not_show": [
+   "necklace",
+   "many pearls",
+   "beads",
+   "apple",
+   "egg",
+   "hand",
+   "person",
+   "face",
+   "crown",
+   "sea water",
+   "fish"
+  ]
+ },
+ {
+  "id": "polymath",
+  "family": "scholar_misc",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a great armillary sphere of polished gold: a round ball made of nested golden rings, six broad smooth bands crossing each other at different angles round a small glowing ball of white-gold light at its centre, standing on a short dark wooden stand; it fills most of the picture. Behind it a dark scholar's study, deep brown and black, with the dim shapes of shelves. Warm light from the upper left makes the gold bands gleam with white highlights; the ball of light in the middle is the brightest thing in the picture.",
+  "colours": "Polished gold rings with white highlights and brown-gold shadows; a ball of white-gold light at the centre; a dark wooden stand; a dark brown study behind.",
+  "must_show": [
+   "a round sphere of crossing gold rings",
+   "a glowing ball of light at its centre",
+   "bright gold against a dark background"
+  ],
+  "must_not_show": [
+   "numbers on the rings",
+   "markings",
+   "lettering",
+   "zodiac signs",
+   "globe with continents",
+   "clock",
+   "person",
+   "hand",
+   "telescope",
+   "planets"
+  ]
+ },
+ {
+  "id": "tier_cleared",
+  "family": "scholar_misc",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a stepped pyramid of five broad tiers built of big stone blocks, seen from the front at night, filling most of the picture; each tier is one wide flat step. The whole pyramid is dark grey-blue stone in night shadow, unlit, except ONE tier, the third from the bottom: all along that one tier runs a single band of bright gold-white light, as if a ring of fire had been lit round it, the only bright thing in the picture. The two tiers below it and the two above it are dark and unlit. Behind it a deep blue night sky.",
+  "colours": "Dark grey-blue stone blocks in night shadow; one single band of bright gold-white light round the third tier only; a deep blue night sky.",
+  "must_show": [
+   "a stepped pyramid of five tiers",
+   "only ONE tier glowing bright gold, the others dark",
+   "dark sky behind"
+  ],
+  "must_not_show": [
+   "writing",
+   "carvings",
+   "hieroglyphs",
+   "people",
+   "person",
+   "stairs up the middle",
+   "temple on top",
+   "sun",
+   "moon",
+   "palm trees",
+   "camels",
+   "every tier lit",
+   "sandstone lit gold"
+  ]
+ },
+ {
+  "id": "examined_life",
+  "family": "scholar_misc",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the view from deep inside a dark cave, looking out: the rough black rock walls of the cave frame the picture on every side, and in the middle the cave's mouth is a tall rounded arch filled with blazing white-gold sunlight, the brightest thing in the picture. A rough path of a few broad stone steps climbs from the bottom of the picture up toward the light. The light spills in along the floor and the edges of the rock, gold on black.",
+  "colours": "Black and very dark brown cave rock with gold light on its edges; a blazing white-gold sunlit opening; pale gold light on the stone steps.",
+  "must_show": [
+   "dark cave walls round the edge",
+   "a blazing bright cave mouth in the middle",
+   "steps leading up toward the light"
+  ],
+  "must_not_show": [
+   "people",
+   "person",
+   "silhouette",
+   "shadows of people",
+   "fire",
+   "torch",
+   "lantern",
+   "skull",
+   "sun with a face",
+   "trees",
+   "monster"
+  ]
+ },
+ {
+  "id": "curious_mind",
+  "family": "scholar_misc",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a large magnifying glass lying slanted across a small card of old parchment on a dark oak desk, seen close: a big round glass lens in a thick polished brass rim, with a short dark wooden handle at the lower right; through the lens the parchment's grain shows large and bright. The card is clean, pale cream and blank. Warm candlelight from the upper left makes the lens shine with a bright white glint and the brass rim gleam; behind, deep brown shadow.",
+  "colours": "A bright brass rim; a clear glass lens with a white glint; a pale cream blank card; dark oak desk; deep brown shadow behind.",
+  "must_show": [
+   "a large round magnifying glass with a brass rim",
+   "a pale blank card under it",
+   "bright lens against a dark background"
+  ],
+  "must_not_show": [
+   "writing on the card",
+   "letters",
+   "text",
+   "playing card",
+   "hand",
+   "person",
+   "eye",
+   "candle",
+   "map",
+   "insect",
+   "coins"
+  ]
+ },
+ {
+  "id": "lamp_lit",
+  "family": "scholar_misc",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "an old brass oil lamp of the ancient kind, low and round with a long spout and a curved handle, a bright flame burning at the tip of its spout, standing on an open book on a dark desk at night, seen close; the lamp is large in the middle of the picture. Its warm gold light pools on the book's clean, pale, blank pages, the brightest things in the picture besides the flame. Behind, a deep blue night window frame with a few small stars.",
+  "colours": "Polished brass lamp with bright highlights; a flame white-gold at its heart and orange at its tip; pale cream blank pages; dark oak desk; deep blue night behind.",
+  "must_show": [
+   "a brass oil lamp with a flame at its spout",
+   "an open book with blank pages under it",
+   "warm light against the dark night"
+  ],
+  "must_not_show": [
+   "writing on the pages",
+   "text",
+   "candle",
+   "genie",
+   "smoke figure",
+   "person",
+   "hand",
+   "lantern with glass",
+   "skull",
+   "hourglass"
+  ]
+ }
+]

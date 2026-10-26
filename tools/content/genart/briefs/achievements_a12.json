@@ -1,0 +1,351 @@
+[
+ {
+  "id": "right_words",
+  "family": "secrets_books",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "the Necronomicon lying closed on a flat grave slab in an old graveyard at night, seen close, quiet and at peace: one thick old book bound in pale dead-looking hide, cold grey-white like old candle wax, wrinkled and puckered, with heavy black iron plates on its corners and a broad black iron hasp holding it shut; across its cover runs one long crooked seam sewn shut with big coarse stitches of thick jet-black cord. A calm warm gold-white light glows softly round the book; behind it, plain rounded grave stones stand quiet in a pale blue mist.",
+  "colours": "Cold grey-white wrinkled hide; jet-black cord stitches; black iron fittings with pale worn edges; a soft warm gold-white glow; a grey stone slab; plain grey rounded stones; pale blue mist; dark night.",
+  "must_show": [
+   "a pale hide-bound book with a stitched seam and iron corners",
+   "a calm gold glow",
+   "a quiet graveyard behind"
+  ],
+  "must_not_show": [
+   "face on the cover",
+   "writing",
+   "letters on the stones",
+   "crosses",
+   "skeletons",
+   "hands",
+   "zombies",
+   "person",
+   "blood",
+   "open book"
+  ]
+ },
+ {
+  "id": "close_enough",
+  "family": "secrets_books",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Necronomicon lying on the ground of an old graveyard at night, seen close: one thick old book bound in pale dead-looking hide, cold grey-white, with black iron corners and a long crooked seam sewn with thick black stitches; all round it, pushing up out of the dark earth, rise five bony skeleton hands of pale grey bone, fingers reaching. A sickly green glow rises from the earth round the book. Comic and spooky, not gory.",
+  "colours": "Cold grey-white wrinkled hide; jet-black stitches; black iron corners; pale grey bony skeleton hands; a sickly green glow; dark earth; a dark night sky.",
+  "must_show": [
+   "a pale stitched book on the ground",
+   "skeleton hands rising from the earth round it",
+   "green glow"
+  ],
+  "must_not_show": [
+   "flesh",
+   "blood",
+   "gore",
+   "faces",
+   "zombies",
+   "person",
+   "chainsaw",
+   "writing",
+   "letters on stones",
+   "crosses"
+  ]
+ },
+ {
+  "id": "sword_reforged",
+  "family": "secrets_forge",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "Gram, the sword of Sigurd, lying newly reforged across a blacksmith's dark anvil, seen close: a long broad straight double-edged blade of very pale shining steel with a wide shallow groove, and across the middle of the blade, where its two broken halves were joined, a seam glowing bright orange-gold like metal fresh from the forge; a short thick straight crossguard of gilded bronze, a grip wrapped in dark green leather and a broad pommel of gilded bronze with five rounded lobes. Bright sparks fly up from the seam. The pale blade and the glowing seam are the brightest things in the picture; the forge round it is near black.",
+  "colours": "Very pale silver-white steel blade; a glowing orange-gold seam; yellow gilded bronze guard and pommel; a dark emerald-green grip; bright sparks; a near-black iron anvil and forge.",
+  "must_show": [
+   "a long straight sword on an anvil",
+   "a glowing seam across the middle of its blade",
+   "gold guard and lobed pommel"
+  ],
+  "must_not_show": [
+   "broken in two pieces",
+   "second sword",
+   "person",
+   "hand",
+   "hammer in the air",
+   "writing",
+   "runes on the blade",
+   "curved blade"
+  ]
+ },
+ {
+  "id": "thickest_shoe",
+  "family": "secrets_forge",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "Vidar's Sandal on a cobbler's workbench, seen close: one ancient soft shoe of the Viking age, like a leather bag for the foot with no heel, slumped and empty, with a blunt toe turning up a little; it is a crude patchwork of about ten odd-shaped scraps of dark leather, each a different dark brown, sewn edge to edge with big thick pale stitches like the stitches on a rag doll, and its ankle is gathered by a leather thong whose two ends hang loose. Round it on the bench lie a few more leather scraps, a big needle and an awl. Warm lamplight from the upper left; the workshop behind is dark.",
+  "colours": "Scraps of very dark walnut brown, dull grey-brown and dark chestnut leather; pale bone-coloured stitching; a darker brown thong; a dark wooden bench; warm lamplight; dark brown shadow.",
+  "must_show": [
+   "one patchwork leather shoe with big pale stitches",
+   "on a workbench with leather scraps"
+  ],
+  "must_not_show": [
+   "foot",
+   "person",
+   "hand",
+   "modern shoe",
+   "sneaker",
+   "high heel",
+   "boot with a sole",
+   "wolf",
+   "blood",
+   "writing"
+  ]
+ },
+ {
+  "id": "gleipnir",
+  "family": "secrets_forge",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "Gleipnir, the ribbon that holds a wolf, floating in the air of a dark dwarven forge-cave, seen close: one long, broad, perfectly flat band of silk as wide as three fingers, laid back and forth upon itself in four big soft flat folds, one above the other, its upper end at the top left and its lower end trailing to the bottom right; it is smooth and shines like polished metal, bright silver-white along every bend with pale sky-blue shadows in the folds, and it glows softly. Faint motes of light drift round it. Behind, the dark cave with the dim red glow of a forge.",
+  "colours": "Bright silver-white silk with pale sky-blue shadows and pure white shine; faint motes of light; a dark cave with a dim red forge glow.",
+  "must_show": [
+   "a long shining silver-white ribbon in big folds",
+   "floating and glowing",
+   "dark cave behind"
+  ],
+  "must_not_show": [
+   "chain",
+   "rope",
+   "knot",
+   "bow",
+   "wolf",
+   "person",
+   "hand",
+   "dwarf",
+   "writing",
+   "gold ribbon"
+  ]
+ },
+ {
+  "id": "short_handle",
+  "family": "secrets_forge",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "Mjolnir lying on the anvil at Brokkr's forge, seen close: the thunder-god's war hammer, a hammer with two blunt flat ends and no blade: its head an enormous block of dark iron, twice as long as it is tall, its side carved with deep interlaced knotwork lined with silver, a broad band of bright bronze clamped round each end; its handle is plainly too short for it, thick, no longer than the head itself, wrapped in dark brown leather and ending in a plain round iron knob. Crackling yellow lightning arcs round the head, and bright sparks fly. One small black fly sits on the short handle. The forge round it is dark with a red glow.",
+  "colours": "A dark charcoal-grey iron head with silver in the knotwork; bright warm bronze bands; a dark brown leather handle; a dark iron knob; crackling yellow lightning with white cores; bright sparks; a dark forge with a red glow.",
+  "must_show": [
+   "a big hammer head with a very short handle on an anvil",
+   "lightning crackling round it"
+  ],
+  "must_not_show": [
+   "long handle",
+   "axe blade",
+   "person",
+   "hand",
+   "dwarf",
+   "Thor",
+   "writing",
+   "runes",
+   "second hammer"
+  ]
+ },
+ {
+  "id": "second_death",
+  "family": "secrets_relics",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "the Tablet of Second Death, made whole, standing on a dark altar, seen close: one thick upright slab of cold grey stone with a rounded top, chipped at the corners, its broken pieces joined again with seams of bright gold running across its face; set in a round socket in the very middle of its face, as wide as a third of the slab, is one smooth round gem of deep glowing ruby, blazing gold-white at its heart and deep red toward its edge, and from it a warm golden light spreads over the stone. The rest of its face is plain and blank. Behind, deep black.",
+  "colours": "Cold mid-grey stone lit warm gold round the middle; seams of bright gold; one glowing ruby gem, gold-white at its heart and deep red at its edge; a dark altar; deep black behind.",
+  "must_show": [
+   "an upright stone tablet with a round top",
+   "a glowing ruby gem set in its middle",
+   "gold seams where it was joined"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "carved words",
+   "runes",
+   "cross",
+   "skull",
+   "person",
+   "hand",
+   "gravestone with a name",
+   "angel"
+  ]
+ },
+ {
+  "id": "shimmer",
+  "family": "secrets_relics",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Abyssal Shimmer, a place where ancient power wells up through the dungeon floor, seen close: one slanted spinning oval of pale silver-white light hanging in the air above the dark stone floor in the middle of the picture, bright pure white at its heart and pale grey at its edges, with soft folded swirling light inside it, and two broad curved tails of pale silver-white light spinning off it, one from its top sweeping round to the right and one from its bottom sweeping round to the left. It lights the floor beneath it faintly; everything else is dark.",
+  "colours": "Pale silver-white and pale grey light with a pure white heart; faint pale light on dark grey flagstones; deep dark shadow.",
+  "must_show": [
+   "a spinning oval whirl of silver-white light",
+   "two curved tails of light",
+   "over a dark dungeon floor"
+  ],
+  "must_not_show": [
+   "eye",
+   "face",
+   "person",
+   "portal with a door",
+   "fire",
+   "writing",
+   "planet",
+   "galaxy with stars"
+  ]
+ },
+ {
+  "id": "haunted",
+  "family": "secrets_relics",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the ghost of an adventurer floating in a dark dungeon corridor, seen close: an empty hooded travelling cloak with a round steel helmet worn over the hood and a sword belt with a sword hanging at its side, all made entirely of pale ash-white ghost-light, the colour of fog and old bone, every part the same pale ghost colour, hanging in the air where a hero would stand; under the helmet and the hood there is no face, only darkness. Below it on the floor lies an old rusted sword beside a small heap of old grey bones. The ghost is the brightest thing in the picture; the corridor is dark blue-grey.",
+  "colours": "Pale ash-white ghost-light, the colour of fog and old bone; a very dark brown rusted sword; dull grey bones; a dark grey-blue corridor.",
+  "must_show": [
+   "a floating ghostly cloak with a helmet over the hood and a sword at its belt",
+   "no face, only darkness",
+   "a rusted sword and bones below"
+  ],
+  "must_not_show": [
+   "face",
+   "skull face",
+   "eyes",
+   "living person",
+   "body",
+   "blood",
+   "gore",
+   "chains",
+   "writing",
+   "white sheet ghost",
+   "cross",
+   "monk",
+   "priest",
+   "emblem on the chest",
+   "lantern"
+  ]
+ },
+ {
+  "id": "behind_curtain",
+  "family": "secrets_fourth_wall",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a heavy deep red velvet curtain drawn aside to the left in great folds, revealing behind it a wall of glowing brass machinery: big brass gears and cogs turning, brass pipes and levers and dials with blank faces, all lit warm gold from within, filling the middle and right of the picture; a small green glass lamp glows among the gears. Comic and mysterious. The brass gears are the brightest things in the picture; the curtain is dark red in its folds.",
+  "colours": "A deep red velvet curtain, dark red in its folds with pale red highlights; glowing polished brass gears, pipes and levers, warm gold; a small green glass lamp; dark shadows between the gears.",
+  "must_show": [
+   "a red velvet curtain drawn aside",
+   "glowing brass gears behind it"
+  ],
+  "must_not_show": [
+   "person",
+   "man",
+   "wizard",
+   "face",
+   "hand",
+   "writing",
+   "numbers on the dials",
+   "clock face",
+   "stage audience"
+  ]
+ },
+ {
+  "id": "not_dead_yet",
+  "family": "secrets_fourth_wall",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a comic knight sitting bolt upright in an open wooden coffin, seen close from the front: the coffin is the classic six-sided coffin shape, narrow at the head, widest at the shoulders, tapering toward the feet, of plain dark wood, lying on the muddy ground, with its six-sided lid leaning against it. The knight wears dented steel plate armour, his helmet's visor pushed up to show a surprised old face with a big grey moustache and wide eyes, and he raises one finger in the air as if to say he is not dead yet. Behind him, a muddy village street under a grey sky with a wooden cart. Comic, cheerful and silly, no gore.",
+  "colours": "Dented pale steel armour; weather-beaten light tan face with a big grey moustache; a plain dark brown wooden coffin; a muddy brown street; a wooden cart; a grey sky.",
+  "must_show": [
+   "a knight sitting up in an open six-sided coffin",
+   "visor up, surprised face",
+   "one finger raised"
+  ],
+  "must_not_show": [
+   "blood",
+   "gore",
+   "skeleton",
+   "zombie",
+   "corpse",
+   "skull",
+   "flies",
+   "cross",
+   "writing",
+   "second knight",
+   "crate",
+   "box",
+   "square box",
+   "pale wood crate"
+  ]
+ },
+ {
+  "id": "thirty_lives",
+  "family": "secrets_fourth_wall",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "an old carved stone panel set in a dungeon wall, seen close and straight from the front, filling the picture: on its left half four big carved arrows point up, down, left and right, arranged in a cross; on its right half are two big round stone buttons side by side. The grooves of the arrows and the rims of the buttons glow with soft gold light from within. The stone is weathered grey, moss in its cracks; round the panel the wall is dark.",
+  "colours": "Weathered grey stone with pale lit edges; glowing soft gold arrow grooves and button rims; a little dark green moss in the cracks; a dark wall round it.",
+  "must_show": [
+   "four carved arrows in a cross",
+   "two round buttons",
+   "glowing gold grooves"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "numbers",
+   "the letters A and B",
+   "runes",
+   "face",
+   "person",
+   "hand",
+   "modern controller",
+   "plastic"
+  ]
+ },
+ {
+  "id": "nice_try",
+  "family": "secrets_fourth_wall",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a comic still life on a wooden table, seen close: a plain small round iron helmet sits upright on the table, and perched on top of it, much too big, sits a gold crown, slipping down over its sides. On the table in front of the helmet lies a fake moustache: one big bushy jet-black handlebar moustache, curled up at both ends, as wide as the helmet, plainly a moustache. Warm light from the upper left; behind, a dark brown room. Comic.",
+  "colours": "A plain dull grey iron helmet; a bright gold crown with red gems; one big bushy jet-black handlebar moustache; a pale wooden table; dark brown shadow.",
+  "must_show": [
+   "a small helmet with a too-big crown on top",
+   "a big black handlebar moustache lying in front of it"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person",
+   "real man",
+   "writing",
+   "letters",
+   "skull",
+   "beard on a face",
+   "blue cloth",
+   "ribbon",
+   "bow tie",
+   "cloth under the helmet"
+  ]
+ },
+ {
+  "id": "hollow_voice",
+  "family": "secrets_fourth_wall",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "the dark mouth of a cave in a rocky hillside at night, seen close from just outside: a rough arch of grey rock round a mouth of pitch-black darkness, and out of the darkness drifts a pale ghostly echo: rings of pale silver-white mist rippling outward from the black mouth one after another, like ripples of sound, glowing faintly. The pale rings are the brightest things in the picture; the night round the hill is dark blue.",
+  "colours": "Grey rock with pale lit edges; a pitch-black cave mouth; rings of pale silver-white glowing mist; a dark blue night.",
+  "must_show": [
+   "a black cave mouth",
+   "pale rings of ghostly mist rippling out of it"
+  ],
+  "must_not_show": [
+   "face",
+   "mouth with teeth",
+   "ghost figure",
+   "person",
+   "eyes",
+   "monster",
+   "writing",
+   "lantern",
+   "skull"
+  ]
+ }
+]
