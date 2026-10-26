@@ -971,12 +971,9 @@ class CombatMixin:
                     except ImportError:
                         pass
                     _fx = getattr(_acc, 'effects', None) or {}
-                    if 'stat' in _fx:
-                        self.player.apply_stat_bonus(_fx['stat'], -_fx.get('amount', 0))
-                    if 'stat2' in _fx:
-                        self.player.apply_stat_bonus(_fx['stat2'], -_fx.get('amount2', 0))
-                    self.player.hp = max(1, self.player.max_hp // 2)
-                    # Clear the slot that held the Ankh
+                    # Clear the slot that held the Ankh, then take off what it
+                    # lent (Player.accessory_off: AC, and its stats by the
+                    # strongest-counts rule)
                     if self.player.amulet_slot is _acc:
                         self.player.amulet_slot = None
                     else:
@@ -984,6 +981,8 @@ class CombatMixin:
                             if _r is _acc:
                                 self.player.accessory_slots[_i] = None
                                 break
+                    self.player.accessory_off(_acc)
+                    self.player.hp = max(1, self.player.max_hp // 2)
                     if 'status' in _fx:
                         self._remove_status_if_no_other_grants(_fx['status'])
                     self.add_message(
@@ -1596,10 +1595,13 @@ class CombatMixin:
                 except Exception:
                     pass
             if candidates:
-                # Weighted by each item's own floor spawn weight (a flat
-                # choice made a harmful potion as likely as a healing one).
-                from container_system import _weighted_common_pick
-                gear = _weighted_common_pick(candidates, effective_floor, _rng)
+                # The class by a written share (container_system.
+                # DROP_MAGIC_SHARE: it went by how many kinds a class has,
+                # which made a third of these rings), then the kind by its
+                # own floor spawn weight (a flat choice made a harmful potion
+                # as likely as a healing one).
+                from container_system import DROP_MAGIC_SHARE, pick_by_class_share
+                gear = pick_by_class_share(candidates, DROP_MAGIC_SHARE, effective_floor, _rng)
 
         if gear is not None:
             chosen = copy_at(gear, x, y) if hasattr(gear, 'id') else gear

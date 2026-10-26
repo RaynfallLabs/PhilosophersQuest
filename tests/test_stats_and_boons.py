@@ -69,10 +69,12 @@ def test_dexterity_dodges_and_a_held_body_cannot():
 def test_the_cooking_cap_for_one_stat_grows_with_depth():
     p = Player()
     caps = []
-    for floor in (1, 20, 40, 100):
+    for floor in (1, 8, 20, 40, 100):
         p.deepest_floor_reached = floor
         caps.append(p.cooking_stat_softcap())
-    assert caps == [2, 6, 10, 22]
+    # 3 + depth/4 (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26 F3; was 2 + depth/5)
+    assert caps == [3, 5, 8, 13, 28]
+    assert p.cooking_stat_softcap('WIS') == 14            # Wisdom keeps half
 
 
 # -------------------------------------------------- you are what you eat
@@ -122,7 +124,7 @@ def test_a_whole_run_of_cooking_is_about_fifty_points_and_one_speciality():
         p.reset_floor_cook_caps()
         p.feed_cut_stat('STR')
         p.feed_cut_stat('STR')
-    assert 21 <= p.cooking_stat_gained['STR'] <= p.cooking_stat_softcap() == 22
+    assert 27 <= p.cooking_stat_gained['STR'] <= p.cooking_stat_softcap() == 28
     q = Player()
     total = 0
     for floor in range(1, 101):

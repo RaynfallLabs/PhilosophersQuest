@@ -78,7 +78,7 @@
       170,
       90
     ],
-    "lore": "Small and ornate. Rings, amulets, the kind of trinket noble houses hide.",
+    "lore": "Small and ornate, lined with faded velvet: a few coins, a brooch or a gemstone, the kind of keepsake noble houses hide; now and then a ring with something more than gold in it.",
     "tier": 2,
     "quiz_tier": 2,
     "gold_share": [
@@ -87,9 +87,9 @@
     ],
     "trap_chance": 0.1,
     "loot_table": {
-      "treasure": 8,
-      "accessory": 70,
-      "gold_bonus": 30
+      "treasure": 15,
+      "accessory": 20,
+      "gold_bonus": 65
     },
     "rare_chance_chain3": 0.05,
     "spawn_weight_by_band": {

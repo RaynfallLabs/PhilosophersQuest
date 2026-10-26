@@ -489,7 +489,7 @@ def _spawn_monster_den_extras(dungeon, monsters: list, level_num: int):
 def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
     """Populate each hidden chamber with themed monsters or treasure items."""
     import random as _rng
-    from dungeon import spawn_monsters, spawn_items
+    from dungeon import spawn_chamber_cache, spawn_monsters
 
     # Theme keyword -> monster name/id substrings to prefer
     THEME_KEYWORDS = {
@@ -518,21 +518,10 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
         theme = chamber['theme']
 
         if ctype == 'treasure':
-            # Spawn 3-5 items inside the chamber
-            count_target = _rng.randint(3, 5)
-            placed = 0
-            # Re-use spawn_items on the single chamber room, then keep only
-            # items that land inside the chamber (spawn_items skips rooms[0])
-            # structures=False: loot only. A full second spawn_items pass
-            # re-carved quest shrines / altars and overwrote the dungeon's
-            # quest pointers, breaking ~half of all quest floors.
-            chamber_items = spawn_items([room, room], level, dungeon,
-                                        structures=False)
-            for it in chamber_items:
-                if placed >= count_target:
-                    break
-                items.append(it)
-                placed += 1
+            # A cache of 3-5 things: coin, treasure, potions and scrolls
+            # (dungeon.spawn_chamber_cache). It re-ran spawn_items here,
+            # which handed out an armory behind every secret door.
+            items.extend(spawn_chamber_cache(room, level, dungeon, _rng.Random()))
 
         elif ctype == 'lair':
             keywords = THEME_KEYWORDS.get(theme, [])

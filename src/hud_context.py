@@ -124,6 +124,26 @@ def cooking_hp_line(player) -> tuple[str, str]:
     return f"Meals: +{min(got, cap)}/{cap} Max HP", ('full' if got >= cap else 'open')
 
 
+def cooking_lesson_line(player, fits=None) -> tuple[str, str]:
+    """The sidebar's "Lesson" line, under "Meals": whether this floor's one
+    stat lesson from a cooked meal is still open (Player.feed_cut_stat), and
+    any stat with a meal already banked toward its next point. Without it a
+    meal that taught nothing looked like food stats not working
+    (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F2). Returns (text, state):
+    'open' or 'full'. ``fits(text) -> bool`` (the sidebar's width test)
+    drops the banked meals rather than cut the line short."""
+    used = int(getattr(player, '_cook_stat_gain_this_floor', 0) or 0) >= \
+        int(getattr(player, 'PER_FLOOR_STAT_CAP', 1) or 1)
+    need = int(getattr(player, 'COOK_MEALS_PER_STAT_POINT', 2) or 2)
+    banked = getattr(player, 'cook_stat_meals', None) or {}
+    pending = [f"{s} {n}/{need}" for s, n in sorted(banked.items()) if int(n or 0) > 0]
+    text = "Lesson: used" if used else "Lesson: open"
+    full = f"{text}  {' '.join(pending)}" if pending else text
+    if fits is None or fits(full):
+        text = full
+    return text, ('full' if used else 'open')
+
+
 def load_number(weight: float, limit: float, share: float = 0.75) -> str:
     """The carried weight as the readout shows it ("43" in "Carrying 43 /
     100"), never disagreeing with the state beside it. A whole number

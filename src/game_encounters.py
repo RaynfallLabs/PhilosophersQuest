@@ -1576,27 +1576,23 @@ class EncountersMixin:
                 p.shed_worn_grants(old)
                 removed = True
             elif p.amulet_slot and getattr(p.amulet_slot, 'id', '') == item_id:
-                # Reverse accessory stat bonuses
-                fx = p.amulet_slot.effects
-                if 'stat' in fx:
-                    p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                if 'stat2' in fx:
-                    p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                # Its status, then its AC and stats (Player.accessory_off,
+                # after the slot is empty: a weaker one of a stat takes over)
+                old = p.amulet_slot
+                fx = old.effects
                 if 'status' in fx:
                     p.status_effects.pop(fx['status'], None)
                 p.amulet_slot = None
+                p.accessory_off(old)
                 removed = True
             else:
                 for i, slot in enumerate(p.accessory_slots):
                     if slot and getattr(slot, 'id', '') == item_id:
                         fx = slot.effects
-                        if 'stat' in fx:
-                            p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                        if 'stat2' in fx:
-                            p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                         if 'status' in fx:
                             p.status_effects.pop(fx['status'], None)
                         p.accessory_slots[i] = None
+                        p.accessory_off(slot)
                         removed = True
                         break
         if not removed:
@@ -1614,13 +1610,10 @@ class EncountersMixin:
             belt = getattr(p, 'belt_slot', None)
             if belt is not None and getattr(belt, 'id', '') == item_id:
                 fx = getattr(belt, 'effects', None) or {}
-                if 'stat' in fx:
-                    p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                if 'stat2' in fx:
-                    p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
                     p.status_effects.pop(fx['status'], None)
                 p.belt_slot = None
+                p.accessory_off(belt)
                 removed = True
         return removed
 

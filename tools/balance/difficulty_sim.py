@@ -1319,14 +1319,16 @@ class Run:
             got = p.heal(heal_amt)
             self.fs['heal_used'] += got
             self.fs['heal_supply'] += heal_amt * self.kv('heal')
+            # food_system._apply_outcome_body: every proper meal builds the
+            # cook up by COOK_BASE_MAX_HP, and a recipe's own max-HP bonus
+            # comes on top (2026-10-26; it used to come instead).
+            base = int(getattr(p, 'COOK_BASE_MAX_HP', 0))
             if random.random() < p_hp:
                 amt = max(1, int(round(random.expovariate(1.0 / hp_amt)))) \
                     if hp_amt > 1 else 1
-                p.try_apply_cook_hp_gain(amt)            # real caps + softcap
+                p.try_apply_cook_hp_gain(base + amt)     # real caps + softcap
             else:
-                # food_system._apply_outcome_body: every proper meal builds
-                # the cook up when the recipe has no max-HP bonus of its own
-                p.try_apply_cook_hp_gain(int(getattr(p, 'COOK_BASE_MAX_HP', 0)))
+                p.try_apply_cook_hp_gain(base)
             # food_system: a proper meal raises the stat stamped on the cut
             # (one a floor, under the per-stat cap); richer recipes still
             # carry a stat of their own.
@@ -1846,7 +1848,8 @@ class Run:
                             pool.append(it)
                 self._drop_pool[eff] = pool
             if pool:
-                gear = copy.copy(container_system._weighted_common_pick(pool, eff, random))
+                gear = copy.copy(container_system.pick_by_class_share(
+                    pool, container_system.DROP_MAGIC_SHARE, eff, random))
         if gear is not None and random.random() < self.prof['loot_fraction']:
             self.consider(gear)
 

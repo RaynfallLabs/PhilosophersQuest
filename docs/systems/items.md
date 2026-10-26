@@ -250,7 +250,23 @@ existing one into inventory (see `_apply_equip`,
 
 `effects`: `{status, duration}` for permanent debuff/buff statuses, or
 `{stat, amount[, stat2, amount2]}` for stat bonuses. Applied by
-`Player._apply_equip`; reversed on unequip. Charge-based accessories
+`Player._apply_equip`; reversed on unequip (`Player.accessory_off`, after
+the slot is emptied).
+
+**Only the strongest ring or amulet of each stat counts**
+(BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L7a). Of everything worn (four
+rings, the amulet, the belt) the largest bonus to each of the six stats is
+lent, and every penalty is; two Rings of Strength +2 give +2, not +4.
+`Player.sync_worn_stats` applies the difference between that and
+`_worn_stat_ledger` (what is applied now) whenever an accessory goes on,
+comes off or is enchanted; old saves are migrated once in
+`Player.__setstate__`. Protection rings (`stat: "AC"`) still add up. Four
+stacked stat rings had lent +10 of one stat by floor 8 and +19 by floor 60.
+The rule covers each accessory's `effects`. A chain-equip legend's earned
+tier bonuses (`tier_bonuses` → `stat_bonus_*`, applied by `chain_equip`) are
+the reward for its chain quiz and stay outside it: they add on top, as
+before (nine legends carry them; three INT legends worn together still lend
+about +17 INT). Charge-based accessories
 (Lyre of Orpheus, Hand of Glory) set `use_charged: true` and are listed
 in the power menu with their remaining `charges`/`max_charges`.
 

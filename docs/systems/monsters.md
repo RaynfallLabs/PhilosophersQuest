@@ -221,7 +221,7 @@ Every monster carries ONE `family` (one of the 22 in `data/monster_families.json
 | field | type | notes |
 |---|---|---|
 | `gold` | [min, max] | Rolled uniformly; `0, 0` yields no gold. |
-| `item_chance` | float | 0..1 chance to drop a procedural common from `_spawn_treasure_item`. |
+| `item_chance` | float | 0..1 chance to drop a procedural common from `_spawn_treasure_item`: half the time gear, half a "magic" item whose class comes from `container_system.DROP_MAGIC_SHARE` (potion 33, accessory 22, scroll 20, wand 20, ammo 5; it went by how many kinds each class has, which made a third of these rings). |
 | `item_tier` | int | 1-5. `_spawn_treasure_item` scales the "effective floor" as `max(1, tier * 5)` and rolls (30% weapon, 10% armor, 10% shield, 50% magic-pool from `accessory`/`wand`/`scroll`/`potion`/`ammo`) excluding uniques. **Cap:** 5. The pre-v2.18.0 catalog had 7 dragon-tier monsters with `item_tier` 6-10 (audit P4); those were clamped to 5 in the v2.18.0 pass. Current catalog is 1=61, 2=99, 3=151, 4=116, 5=100. |
 | `unique_drop_id` | str | Mini-boss fixed drop — looked up by id in the unique-item pools. 20 monsters have one (Talos → `bronze_aegis`, Echidna → `echidna_fang`, Camazotz → `obsidian_talisman`, Cacus → `vulcans_brand`, The Sphinx → `sphinx_crown`, Baba Yaga → `iron_mortar_wand`, Set's Jackal → `anubis_scales`, Charybdis → `sailor's_amulet`, Ravana's Arm → `ring_of_iron_grip`, Wendigo → `wendigo_fang`, Wild Hunt Captain → `hunt_captains_sword`, each of the 7 seal demons → `seal_of_*`, …). |
 | `boss_scroll_id` | str | Fafnir / Abaddon style — a one-shot scroll of the hoard / abyss. |

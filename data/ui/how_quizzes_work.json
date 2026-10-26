@@ -57,7 +57,9 @@
   {
    "heading": "Cooking is how you grow",
    "paragraphs": [
-    "Your maximum HP grows only from meals you cook yourself: up to 5 more on each floor. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Going deeper raises the most that cooking can ever give."
+    "Your maximum HP grows only from meals you cook yourself: up to 5 more on each floor. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Going deeper raises the most that cooking can ever give.",
+    "You are what you eat. Every prime cut feeds one stat, and the recipe says which (Feeds STR). The first such meal you cook on each new floor is that floor's lesson; two lessons in the same stat raise it by one. The Lesson line under Meals shows whether this floor's lesson is still open. Going deeper raises how far food can take each stat.",
+    "Rings and amulets of the same stat do not add up: only the strongest one counts. Wear different ones, or cook the stat you want."
    ]
   }
  ]

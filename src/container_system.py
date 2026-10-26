@@ -45,11 +45,18 @@ ITEMS_BY_CHEST_TIER: dict[int, tuple[int, int, int]] = {
     4: FULL_ITEM_COUNT + (FULL_BONUS_SLOTS,),
     5: (4, 5, 1),
 }
-# Most pieces of one kind of gear (armor, weapon, shield) in a single chest:
-# one in a plain chest, two in a good one (a war chest is allowed to be an
-# armory; a wooden box on floor 1 is not).
-MAX_SAME_GEAR_PER_CHEST = 1
+# Gear in a single chest. A plain chest (tier 1-2: a traveller's wooden
+# chest, a lockbox, a jewelry box) holds at most MAX_GEAR_PLAIN_CHEST pieces
+# of common gear IN ALL (a named unique from its rare slot is extra); a
+# draw past it comes from the chest's other contents (potions, scrolls,
+# ammo, wands; not its rings), so the chest is no emptier. The old cap
+# was one of each KIND, so a floor-1 chest could hold a weapon, a piece of
+# armor and a shield at once, and chests gave 31% of a run's gear
+# (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L2). A good chest (tier 3+) may
+# hold MAX_SAME_GEAR_GOOD_CHEST of each kind: a war chest is an armory.
+MAX_GEAR_PLAIN_CHEST = 1
 MAX_SAME_GEAR_GOOD_CHEST = 2
+_GEAR_CATEGORIES = frozenset(('weapon_common', 'armor_common', 'shield_common', 'gear'))
 
 # Rare (unique) chance multiplier vs the JSON `rare_chance_chain3` baseline.
 # Matches the old chain-5 multiplier so a successful pick yields the full
@@ -483,6 +490,27 @@ def _weighted_common_pick(eligible: list, level: int, rng):
     return rng.choices(items, weights=weights, k=1)[0]
 
 
+# The magic half of a monster's death drop, by class (game_combat.
+# _spawn_treasure_item). It was picked by how many KINDS each class has, and
+# rings and amulets have the most: 31-39% of those drops. A goblin carries a
+# dagger or a potion more often than a ring of power
+# (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L6).
+DROP_MAGIC_SHARE = {'potion': 33, 'accessory': 22, 'scroll': 20, 'wand': 20, 'ammo': 5}
+
+
+def pick_by_class_share(candidates: list, shares: dict, level: int, rng):
+    """One item from ``candidates``: the class by ``shares`` (only classes
+    that have a candidate), then the kind by its own floor spawn weight."""
+    by_class: dict = {}
+    for it in candidates:
+        by_class.setdefault(getattr(it, 'item_class', ''), []).append(it)
+    classes = [c for c in by_class if shares.get(c, 0) > 0]
+    if not classes:
+        return _weighted_common_pick(candidates, level, rng) if candidates else None
+    cls = rng.choices(classes, weights=[shares[c] for c in classes], k=1)[0]
+    return _weighted_common_pick(by_class[cls], level, rng)
+
+
 def _pull_unique_from_category(category: str, unique_pool: list, rng,
                                level: int | None = None) -> object | None:
     """Draw a unique item compatible with the given loot-table category."""
@@ -536,7 +564,7 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
 
     chest_tier = max(1, min(5, int(getattr(container, 'tier', 1) or 1)))
     cmin, cmax, bonus_for_tier = ITEMS_BY_CHEST_TIER[chest_tier]
-    same_gear_cap = MAX_SAME_GEAR_PER_CHEST if chest_tier <= 2 else MAX_SAME_GEAR_GOOD_CHEST
+    plain_chest = chest_tier <= 2
     n_items = rng.randint(cmin, cmax)
 
     base_rare = float(template.get('rare_chance_chain3', 0.0))
@@ -559,11 +587,23 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
         return ic if ic in ('armor', 'weapon', 'shield') else None
 
     def draw_common() -> object | None:
-        # A chest is a mixed find, not an armory: no more than
-        # MAX_SAME_GEAR_PER_CHEST pieces of any one kind of gear. (Three
-        # suits of armor came out of one floor-1 chest.)
+        # A chest is a mixed find, not an armory. A plain chest holds
+        # MAX_GEAR_PLAIN_CHEST pieces of gear in all, then draws from its
+        # other categories; a good one MAX_SAME_GEAR_GOOD_CHEST of a kind.
+        # (Three suits of armor came out of one floor-1 chest.)
         for _attempt in range(4):
-            category = _weighted_pick_category(loot_table, rng)
+            table = loot_table
+            # (Common gear only: a named unique from the rare slot is the
+            # lucky find, not part of the cap.)
+            if plain_chest and sum(1 for x in loot if _gear_kind(x)
+                                   and not getattr(x, 'is_unique', False)) >= MAX_GEAR_PLAIN_CHEST:
+                # The freed draw goes to the chest's consumables, not its
+                # rings (a lockbox's and a strongbox's rings rose by a
+                # quarter when it went to every other category).
+                table = ({c: w for c, w in loot_table.items()
+                          if c not in _GEAR_CATEGORIES and c != 'accessory'}
+                         or {c: w for c, w in loot_table.items() if c not in _GEAR_CATEGORIES})
+            category = _weighted_pick_category(table, rng)
             if not category:
                 return None
             if category == 'gold_bonus':
@@ -572,7 +612,8 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
                 return None
             it = _pull_common_from_category(category, common_pool, level_cap, rng)
             kind = _gear_kind(it) if it is not None else None
-            if kind and sum(1 for x in loot if _gear_kind(x) == kind) >= same_gear_cap:
+            if (kind and not plain_chest
+                    and sum(1 for x in loot if _gear_kind(x) == kind) >= MAX_SAME_GEAR_GOOD_CHEST):
                 continue
             return it
         return None

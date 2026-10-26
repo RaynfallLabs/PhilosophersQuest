@@ -403,6 +403,7 @@ def _price_escort(spec: dict) -> None:
 COIN_PILE_CHANCE = 0.25            # an ordinary room (not the first) holds a pile
 COIN_PILE_SHARE = (0.015, 0.04)    # a dropped purse, a dead man's pay
 LAIR_GOLD_SHARE = (0.08, 0.20)     # a monster den's or a barracks' heap
+CACHE_COIN_SHARE = (0.03, 0.08)    # a purse in a hidden chamber's cache (dungeon.spawn_chamber_cache)
 
 
 # ------------------------------------------------------------- smaller amounts

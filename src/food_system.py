@@ -372,28 +372,26 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
             bits.append(f"+{hp} HP")
         messages.append("You eat it: " + ", ".join(bits) + ".")
 
-    # +max HP (per-floor softcap unless bypassed)
-    max_hp_bonus = int(outcome.get('max_hp_bonus', 0))
-    if max_hp_bonus > 0:
-        bypass = bool(outcome.get('permanent_power'))
-        if hasattr(player, 'try_apply_cook_hp_gain'):
-            applied = player.try_apply_cook_hp_gain(max_hp_bonus, bypass=bypass)
-        else:
-            applied = max_hp_bonus
-            player.increase_max_hp(applied, from_cooking=True)
-        if applied > 0:
-            messages.append(f"The meal fortifies you permanently. (+{applied} max HP)")
-        elif not bypass:
-            messages.append("You feel sated, but your body is already full of nourishment this floor.")
-    elif hasattr(player, 'try_apply_cook_hp_gain'):
-        # Every meal cooked properly builds the cook up a little. Recipes
-        # with a bonus of their own (above) give more. This is where a
-        # run's hit points come from: about four a floor for a cook who
-        # keeps at it, none for one who does not.
-        applied = player.try_apply_cook_hp_gain(
-            int(getattr(player, 'COOK_BASE_MAX_HP', 1)))
-        if applied > 0:
-            messages.append(f"Good food builds you up. (+{applied} max HP)")
+    # +max HP. Every meal cooked properly builds the cook up a little
+    # (COOK_BASE_MAX_HP); a recipe's own `max_hp_bonus` comes ON TOP of that.
+    # (It used to come instead of it, so the 160 recipes written "+1 max HP",
+    # the bone broths among them, gave less than a plain meal.) This is where
+    # a run's hit points come from: about four a floor for a cook who keeps
+    # at it, none for one who does not. Per-floor and lifetime caps apply; a
+    # trophy passes the per-floor one.
+    max_hp_bonus = int(outcome.get('max_hp_bonus', 0) or 0)
+    bypass = bool(outcome.get('permanent_power'))
+    gain = int(getattr(player, 'COOK_BASE_MAX_HP', 2)) + max(0, max_hp_bonus)
+    if hasattr(player, 'try_apply_cook_hp_gain'):
+        applied = player.try_apply_cook_hp_gain(gain, bypass=bypass)
+    else:
+        applied = gain
+        player.increase_max_hp(applied, from_cooking=True)
+    if applied > 0:
+        messages.append(f"{'The meal fortifies you permanently' if max_hp_bonus > 0 else 'Good food builds you up'}."
+                        f" (+{applied} max HP)")
+    elif max_hp_bonus > 0 and not bypass:
+        messages.append("You feel sated, but your body is already full of nourishment this floor.")
 
     # You are what you eat: the first good meal on a floor raises the stat
     # stamped on the MEAT (ingredient.json `stat_grant`). Every prime cut has
@@ -410,6 +408,7 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
         # of them (one a floor) make a point. The richer recipes used to
         # give a whole point each; deep down that was a point a floor.
         cut_stat = meal_stat
+        block = player.cut_stat_block(cut_stat) if hasattr(player, 'cut_stat_block') else None
         gained, banked = player.feed_cut_stat(cut_stat)
         label = _STAT_LABELS.get(cut_stat, cut_stat).title()
         if gained > 0:
@@ -418,6 +417,14 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
             messages.append(
                 f"You feel it doing you good. ({label}: {banked} of "
                 f"{player.COOK_MEALS_PER_STAT_POINT} meals toward +1)")
+        elif block == 'cap':
+            # A meal that teaches nothing says why (it said nothing at all,
+            # which read as "food stats do not work").
+            messages.append(f"Your {label} has learned all food can teach it at this depth. "
+                            f"Go deeper to learn more.")
+        elif block == 'floor':
+            messages.append("You have already learned from a meal on this floor. "
+                            "The next lesson waits on a new floor.")
     elif stat_grant_amount > 0:
         bypass = bool(outcome.get('permanent_power'))
         # A trophy grants ITS OWN stat (the one its preview shows), not the meat's.
@@ -794,69 +801,53 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete):
 
 
 def _apply_bonus(player, recipe) -> list[str]:
+    """A food's own bonus (food.json `bonus_type`): philosopher's tea, the
+    golden apple, ambrosia. A rare food is its own gift, outside the one
+    cooking lesson a floor (it took that lesson, so tea after a meal did
+    nothing, and ambrosia's "all stats" raised one stat). Each stat still
+    stops at what food can teach it at this depth (cooking_stat_softcap,
+    shared with cooking): BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F1."""
     bonus_type   = recipe.get('bonus_type', 'none')
     bonus_amount = int(recipe.get('bonus_amount', 0))
     messages     = []
 
     def _grant(stat: str, amt: int):
-        """Route cookable stat bonuses through the floor-softcap path.
-        Returns the actual amount applied (after diminishing returns).
-
-        Falls back to apply_stat_bonus if the player doesn't yet have the
-        cooking-cap method (old saves, harness mocks)."""
-        # A potion or dish that raises a stat counts against the same one
-        # lesson a floor as any other meal (it used to slip past it).
-        if hasattr(player, 'try_apply_cook_stat_gain'):
-            return player.try_apply_cook_stat_gain(stat, amt)
+        """The stat raised under its lifetime food cap. Returns the amount
+        applied. Falls back to apply_stat_bonus for a player without the
+        cooking caps (harness mocks)."""
         if hasattr(player, 'apply_cooking_stat_bonus'):
             return player.apply_cooking_stat_bonus(stat, amt)
         player.apply_stat_bonus(stat, amt)
         return amt
 
+    def _capped(stat: str) -> str:
+        return (f"Your {_STAT_LABELS[stat].title()} has learned all food can teach it "
+                f"at this depth.")
+
     if bonus_type == 'none' or bonus_amount == 0:
         pass
-    elif bonus_type == 'random_stat':
-        stat = random.choice(_ALL_STATS)
-        applied = _grant(stat, bonus_amount)
-        if applied > 0:
-            messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
+    elif bonus_type in ('random_stat', 'combat_stat', 'stat'):
+        if bonus_type == 'stat':
+            stat = recipe.get('bonus_stat', '')
         else:
-            messages.append(f"Your {_STAT_LABELS[stat]} resists further growth.")
-    elif bonus_type == 'combat_stat':
-        stat = random.choice(_COMBAT_STATS)
-        applied = _grant(stat, bonus_amount)
-        if applied > 0:
-            messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
-        else:
-            messages.append(f"Your {_STAT_LABELS[stat]} resists further growth.")
-    elif bonus_type == 'two_stats':
-        chosen = random.sample(_ALL_STATS, 2)
-        any_gained = False
+            stat = random.choice(_ALL_STATS if bonus_type == 'random_stat' else _COMBAT_STATS)
+        if stat in _STAT_LABELS:
+            applied = _grant(stat, bonus_amount)
+            messages.append(f"Your {_STAT_LABELS[stat].title()} increases by {applied}!"
+                            if applied > 0 else _capped(stat))
+    elif bonus_type in ('two_stats', 'all_stats'):
+        chosen = random.sample(_ALL_STATS, 2) if bonus_type == 'two_stats' else list(_ALL_STATS)
+        raised = []
         for stat in chosen:
             applied = _grant(stat, bonus_amount)
             if applied > 0:
-                messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
-                any_gained = True
-        if not any_gained:
-            messages.append("The dish is satisfying, but your body resists further change.")
-    elif bonus_type == 'all_stats':
-        any_gained = False
-        for stat in _ALL_STATS:
-            applied = _grant(stat, bonus_amount)
-            if applied > 0:
-                any_gained = True
-        if any_gained:
-            messages.append("A glow spreads — most of your stats edge upward.")
+                raised.append(f"{_STAT_LABELS[stat].title()} +{applied}")
+        if raised:
+            lead = "A glow spreads through you" if bonus_type == 'all_stats' else "It does you good"
+            messages.append(f"{lead}: {', '.join(raised)}.")
         else:
-            messages.append("Your body resists further change. The dish is filling, no more.")
-    elif bonus_type == 'stat':
-        stat = recipe.get('bonus_stat', '')
-        if stat in _STAT_LABELS:
-            applied = _grant(stat, bonus_amount)
-            if applied > 0:
-                messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
-            else:
-                messages.append(f"Your {_STAT_LABELS[stat]} cannot grow further from food.")
+            messages.append("Your body has learned all food can teach it at this depth. "
+                            "The dish is filling, no more.")
     elif bonus_type == 'status':
         effect = recipe.get('bonus_effect', '')
         if effect:

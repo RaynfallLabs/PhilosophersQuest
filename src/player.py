@@ -44,6 +44,7 @@ class Player:
         self.shield = None
         self.armor_slots = [None] * 8     # head, body, arms, hands, legs, feet, cloak, shirt
         self.accessory_slots = [None] * 4  # ring slots
+        self._worn_stat_ledger: dict = {}  # stats worn accessories lend now (sync_worn_stats)
         self.amulet_slot = None            # single amulet slot
         self.belt_slot   = None            # single belt slot (Megingjörð, Hippolyta's Girdle, Ariadne's Thread, etc.)
 
@@ -489,6 +490,7 @@ class Player:
                 if 'status' in old_fx:
                     self.status_effects.pop(old_fx['status'], None)
                 self.amulet_slot = None
+                self.accessory_off(amulet)
                 # Do NOT add back to inventory — it is consumed
                 self._rands_heart_triggered = True  # flag for message in main.py
                 return False
@@ -570,13 +572,16 @@ class Player:
         floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
         return max(self.COOKING_SOFTCAP_MIN, self.COOKING_SOFTCAP_PER_FLOOR * floor)
 
-    # Most a single stat can ever gain from cooking: 2, plus 1 for every five
-    # floors of depth (6 at floor 20, 10 at 40, 22 at 100). A run feeds about
-    # fifty points in all (see feed_cut_stat), so that is room for one real
-    # speciality and a second interest, not six maxed stats. +22 Strength is
-    # 1.66x damage: the ceiling the stacking table allows a stat build.
-    COOK_STAT_CAP_BASE = 2
-    COOK_STAT_CAP_FLOORS = 5
+    # Most a single stat can ever gain from food: 3, plus 1 for every four
+    # floors of depth (5 at floor 8, 8 at 20, 13 at 40, 28 at 100). A run
+    # feeds about fifty points in all (see feed_cut_stat), so that is room for
+    # one real speciality and a second interest, not six maxed stats. It was
+    # 2 + depth/5, which held a cook who fed one stat to a point every five
+    # floors after floor 4 while random rings lent more
+    # (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F3). Worn rings of one stat
+    # no longer add up (sync_worn_stats), so the build is the cook's choice.
+    COOK_STAT_CAP_BASE = 3
+    COOK_STAT_CAP_FLOORS = 4
     # Proper meals of a stat's cut it takes to raise that stat by one. Only
     # the first such meal on a floor counts, so a point takes two floors.
     # (One point a floor was measured: a hundred points by the end, and a
@@ -603,6 +608,18 @@ class Player:
             return 0, banked
         self.cook_stat_meals[stat] = 0
         return self.apply_cooking_stat_bonus(stat, 1), 0
+
+    def cut_stat_block(self, stat: str) -> str | None:
+        """Why a proper meal of `stat` would teach nothing now: 'floor' (this
+        floor's lesson is used), 'cap' (the stat has learned all food can
+        teach at this depth), or None (it would teach)."""
+        if stat not in self.cooking_stat_gained:
+            return 'cap'
+        if self.cooking_stat_gained[stat] >= self.cooking_stat_softcap(stat):
+            return 'cap'
+        if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
+            return 'floor'
+        return None
 
     def cooking_stat_softcap(self, stat: str | None = None) -> int:
         """Per-stat lifetime cap on cooking gains at the deepest floor reached.
@@ -852,6 +869,19 @@ class Player:
             except Exception:
                 pass
         self._con_hp_rule = 3
+        # Saves from before the strongest-ring rule (2026-10-26): every worn
+        # ring's stat had been added in full. Record that as what is applied,
+        # then bring it to the rule (two +2 Strength rings: +4 becomes +2).
+        if '_worn_stat_ledger' not in state:
+            try:
+                applied: dict = {}
+                for acc in self.worn_accessories():
+                    for stat, amount in self._stat_parts(getattr(acc, 'effects', None) or {}):
+                        applied[stat] = applied.get(stat, 0) + amount
+                self._worn_stat_ledger = {s: v for s, v in applied.items() if v}
+                self.sync_worn_stats()
+            except Exception:
+                self._worn_stat_ledger = {}
         if not hasattr(self, 'known_forms'):
             self.known_forms = set()
         if not hasattr(self, 'known_materials'):
@@ -1675,6 +1705,94 @@ class Player:
             self.max_mp += amount
             self.mp = min(self.mp, self.max_mp)
 
+    # ----- what worn rings, amulets and belts lend the six stats -----
+    # Only the strongest bonus to each stat counts; every penalty counts.
+    # Four Rings of Greater Strength and an Amulet of Strength gave +10
+    # Strength by floor 8 and +19 of one stat by floor 60, more than a run of
+    # cooking (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L7a). The stronger
+    # ring's virtue drowns the weaker. Protection rings (stat 'AC') still add
+    # up, as before. `_worn_stat_ledger` is what is applied to the stats now;
+    # sync_worn_stats moves the stats to what is worn.
+    WORN_STATS = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
+
+    def worn_accessories(self) -> list:
+        worn = [a for a in (getattr(self, 'accessory_slots', None) or ()) if a is not None]
+        for a in (getattr(self, 'amulet_slot', None), getattr(self, 'belt_slot', None)):
+            if a is not None:
+                worn.append(a)
+        return worn
+
+    @classmethod
+    def _stat_parts(cls, fx: dict):
+        """(stat, amount) for each of the six stats an effects dict names."""
+        for sk, ak in (('stat', 'amount'), ('stat2', 'amount2')):
+            stat = fx.get(sk)
+            if stat in cls.WORN_STATS:
+                yield stat, int(fx.get(ak, 0) or 0)
+
+    def worn_stat_targets(self) -> dict:
+        """What worn accessories lend each stat under the strongest-counts rule."""
+        best: dict = {}
+        target: dict = {}
+        for acc in self.worn_accessories():
+            for stat, amount in self._stat_parts(getattr(acc, 'effects', None) or {}):
+                if amount > 0:
+                    best[stat] = max(best.get(stat, 0), amount)
+                elif amount < 0:
+                    target[stat] = target.get(stat, 0) + amount
+        for stat, amount in best.items():
+            target[stat] = target.get(stat, 0) + amount
+        return {s: v for s, v in target.items() if v}
+
+    def worn_stat_gain(self, item, stat: str, worn: bool = True) -> int:
+        """What `item` lends `stat` beyond the strongest OTHER worn
+        accessory (0 when another is as strong). `worn=False` asks the same
+        of an item in the pack, for a comparison. A penalty counts in full."""
+        mine = sum(a for s, a in self._stat_parts(getattr(item, 'effects', None) or {}) if s == stat)
+        if mine <= 0:
+            return mine
+        others = [a2 for acc in self.worn_accessories() if acc is not item
+                  for s2, a2 in self._stat_parts(getattr(acc, 'effects', None) or {})
+                  if s2 == stat and a2 > 0]
+        return max(0, mine - max(others, default=0))
+
+    def sync_worn_stats(self) -> dict:
+        """Apply the difference between what worn accessories should lend now
+        and what they lent before. Call after any ring, amulet or belt goes
+        on, comes off or changes. Returns {stat: change} for each stat moved."""
+        ledger = getattr(self, '_worn_stat_ledger', None)
+        if not isinstance(ledger, dict):
+            ledger = {}
+        target = self.worn_stat_targets()
+        changes = {}
+        for stat in set(ledger) | set(target):
+            delta = target.get(stat, 0) - ledger.get(stat, 0)
+            if delta:
+                # Never through a trait's allowance (apply_stat_bonus routes
+                # there while a trait's reward is being applied).
+                flag, self._quirk_grant = getattr(self, '_quirk_grant', False), False
+                try:
+                    self.apply_stat_bonus(stat, delta)
+                finally:
+                    self._quirk_grant = flag
+                changes[stat] = delta
+        self._worn_stat_ledger = dict(target)
+        self._last_worn_stat_change = changes
+        return changes
+
+    def _accessory_ac(self, fx: dict, sign: int) -> None:
+        """The AC part of an accessory's effects (protection rings add up)."""
+        for sk, ak in (('stat', 'amount'), ('stat2', 'amount2')):
+            if fx.get(sk) == 'AC':
+                self.apply_stat_bonus('AC', sign * int(fx.get(ak, 0) or 0))
+
+    def accessory_off(self, item) -> dict:
+        """What a ring, amulet or belt lent comes off with it. Call AFTER its
+        slot is emptied. (Statuses stay with the caller, which knows whether
+        anything else still grants them.)"""
+        self._accessory_ac(getattr(item, 'effects', None) or {}, -1)
+        return self.sync_worn_stats()
+
     def refresh_carry_bonuses(self):
         """Sync carry bonuses with current inventory.
 
@@ -2013,14 +2131,12 @@ class Player:
                     if not ok:
                         return
                     self.inventory.append(old)
-                    # Reverse old amulet's effects
+                    # Reverse old amulet's effects (its stats leave with the
+                    # sync below, once the new one is in the slot)
                     old_fx = old.effects
                     if 'status' in old_fx:
                         self.status_effects.pop(old_fx['status'], None)
-                    if 'stat' in old_fx:
-                        self.apply_stat_bonus(old_fx['stat'], -old_fx.get('amount', 0))
-                    if 'stat2' in old_fx:
-                        self.apply_stat_bonus(old_fx['stat2'], -old_fx.get('amount2', 0))
+                    self._accessory_ac(old_fx, -1)
                 self.amulet_slot = item
             elif getattr(item, 'slot', 'ring') == 'belt':
                 # Belt slot — single-item, mirrors amulet handling.
@@ -2040,10 +2156,7 @@ class Player:
                     # belt for another took Haste away from a ring's wearer
                     if 'status' in old_fx and not self._still_granted(old_fx['status'], old):
                         self.status_effects.pop(old_fx['status'], None)
-                    if 'stat' in old_fx:
-                        self.apply_stat_bonus(old_fx['stat'], -old_fx.get('amount', 0))
-                    if 'stat2' in old_fx:
-                        self.apply_stat_bonus(old_fx['stat2'], -old_fx.get('amount2', 0))
+                    self._accessory_ac(old_fx, -1)
                 self.belt_slot = item
             else:
                 # Find first empty ring slot. If none free, bail out — the
@@ -2056,14 +2169,13 @@ class Player:
                 if slot_idx is None:
                     return  # all rings full — refuse silently
                 self.accessory_slots[slot_idx] = item
-            # Apply the accessory's effect permanently
+            # Apply the accessory's effect while worn: a status, AC, and the
+            # six stats by the strongest-counts rule (sync_worn_stats).
             fx = item.effects
             if 'status' in fx:
                 self.add_effect(fx['status'], fx.get('duration', -1))
-            if 'stat' in fx:
-                self.apply_stat_bonus(fx['stat'], fx.get('amount', 0))
-            if 'stat2' in fx:
-                self.apply_stat_bonus(fx['stat2'], fx.get('amount2', 0))
+            self._accessory_ac(fx, +1)
+            self.sync_worn_stats()
         # Re-sort inventory after any equipment swap that returned items
         self.sort_pack()
 

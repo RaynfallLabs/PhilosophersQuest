@@ -281,22 +281,27 @@ def test_v266_higher_success_rate_gives_more_uniques():
 def test_a_plain_chest_is_a_small_mixed_find():
     """Every chest paid four or five items, and one floor-1 chest held three
     suits of armor, two of them tier 2."""
-    from container_system import (ITEMS_BY_CHEST_TIER, MAX_SAME_GEAR_PER_CHEST,
+    from container_system import (ITEMS_BY_CHEST_TIER, MAX_GEAR_PLAIN_CHEST,
                                   _generate_loot_from_template)
     assert ITEMS_BY_CHEST_TIER[1] == (2, 3, 0)
     assert ITEMS_BY_CHEST_TIER[5][1] > ITEMS_BY_CHEST_TIER[1][1]
     random.seed(5)
+    sizes = []
     for _ in range(120):
         c = _make_container('wooden_chest')
         c.tier = 1
         loot = _generate_loot_from_template(c, dungeon_level=1)
         assert len(loot) <= 3
-        for cls in ('armor', 'weapon', 'shield'):
-            common = [it for it in loot if getattr(it, 'item_class', '') == cls
-                      and not getattr(it, 'is_unique', False)]
-            assert len(common) <= MAX_SAME_GEAR_PER_CHEST
-            for it in common:
-                assert it.quiz_tier == 1, (cls, it.name, it.quiz_tier)
+        sizes.append(len(loot))
+        # One piece of gear in all, whatever kind (BALANCE_REVIEW L2): a
+        # weapon, an armor piece and a shield came out of one floor-1 chest.
+        gear = [it for it in loot if getattr(it, 'item_class', '') in ('armor', 'weapon', 'shield')
+                and not getattr(it, 'is_unique', False)]
+        assert len(gear) <= MAX_GEAR_PLAIN_CHEST
+        for it in gear:
+            assert it.quiz_tier == 1, (it.name, it.quiz_tier)
+    # ...and no emptier for it: the draw past the gear comes from the rest.
+    assert statistics.mean(sizes) >= 2.2
 
 
 def test_no_material_appears_before_its_first_floor():

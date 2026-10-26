@@ -4331,7 +4331,10 @@ class RenderMixin:
                 bits = []
                 if o.get('sp'):            bits.append(f"+{o['sp']}SP")
                 if o.get('hp'):            bits.append(f"+{o['hp']}HP")
-                if o.get('max_hp_bonus'):  bits.append(f"+{o['max_hp_bonus']}maxHP")
+                # Every proper meal adds the base max HP; a recipe's own bonus
+                # comes on top (food_system._apply_outcome_body).
+                _mh = int(getattr(self.player, 'COOK_BASE_MAX_HP', 2)) + int(o.get('max_hp_bonus') or 0)
+                bits.append(f"+{_mh}maxHP")
                 # A trophy grants its stat outright. Any other meal is banked
                 # toward the stat of its meat (two meals, on two floors, make
                 # a point): say which stat, and promise no number.
@@ -5939,7 +5942,12 @@ class RenderMixin:
                     continue
                 fx_e = getattr(slot_item, 'effects', None) or {}
                 if fx_e.get('stat') == stat_c:
-                    d = int(amt_c) - int(fx_e.get('amount', 0))
+                    if stat_c in getattr(self.player, 'WORN_STATS', ()):
+                        # Only the strongest of a stat counts
+                        # (Player.sync_worn_stats): what wearing it adds.
+                        d = self.player.worn_stat_gain(candidate, stat_c, worn=False)
+                    else:
+                        d = int(amt_c) - int(fx_e.get('amount', 0))
                     return self._fmt_delta(d, stat_c)
             return ''
 

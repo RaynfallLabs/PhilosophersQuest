@@ -440,9 +440,10 @@ def test_floors_spawn_only_their_bands_spheres():
         assert set(found) <= ok, (floor, found)
 
 
-def test_a_hidden_treasure_chamber_can_hold_a_sphere(monkeypatch):
-    """The treasure chamber re-runs the loot pass (structures=False), so a
-    sphere turns up in one at its band's chance like anywhere else."""
+def test_a_loot_only_pass_can_hold_a_sphere(monkeypatch):
+    """A loot-only pass (structures=False) rolls the sphere like the floor's
+    own pass. (A hidden treasure chamber no longer re-runs it: its cache is
+    coin, treasure, potions and scrolls, dungeon.spawn_chamber_cache.)"""
     from dungeon import generate_dungeon, spawn_items
     random.seed(9)
     # Floor 71, not 70: every tenth floor is a maze of small cells

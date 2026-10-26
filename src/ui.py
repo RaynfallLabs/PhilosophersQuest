@@ -5,7 +5,7 @@ from ui_scale import px as S
 
 # FANTASY: Import theme helpers from the central fantasy_ui module
 from fantasy_ui import FP, ITEM_COLOR, KT, ScaledFont, contrast, display_text
-from hud_context import active_power_rows, cooking_hp_line, visible_context_rows
+from hud_context import active_power_rows, cooking_hp_line, cooking_lesson_line, visible_context_rows
 
 
 def floor_label(level: int) -> str:
@@ -418,12 +418,15 @@ class Sidebar:
         y = self._bar(y, "HP", player.hp, player.max_hp, FP.HP_RED)
         y = self._bar(y, "MP", player.mp, player.max_mp, FP.MP_BLUE)
         y = self._bar(y, "SP", player.sp, player.max_sp, sp_col)
-        # Max HP grows only by cooking: say how much this floor has given.
-        text, state = cooking_hp_line(player)
-        color = {'open': FP.GOLD_PALE, 'full': FP.SUCCESS_TEXT}.get(state, FP.FADED_TEXT)
-        self.screen.blit(self._fsm.render(self._fit(self._fsm, text, self.w - self.PAD * 2),
-                                          True, color), (self.x + self.PAD, y))
-        y += S(22)
+        # Max HP grows only by cooking: say how much this floor has given,
+        # and whether this floor's stat lesson from a meal is still open.
+        room = self.w - self.PAD * 2
+        lesson = cooking_lesson_line(player, fits=lambda t: self._fsm.size(t)[0] <= room)
+        for text, state in (cooking_hp_line(player), lesson):
+            color = {'open': FP.GOLD_PALE, 'full': FP.SUCCESS_TEXT}.get(state, FP.FADED_TEXT)
+            self.screen.blit(self._fsm.render(self._fit(self._fsm, text, self.w - self.PAD * 2),
+                                              True, color), (self.x + self.PAD, y))
+            y += S(22)
         return y + self.SECTION_GAP
 
     def _attributes(self, player, y: int) -> int:

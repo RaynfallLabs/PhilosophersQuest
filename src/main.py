@@ -7310,38 +7310,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Its status and anything else it lent come off with it (only the
             # swap path did this: the Blindfold left its wearer blind).
             self.player.shed_worn_grants(item)
-        elif slot_name.startswith('accessory_'):
-            acc_idx = int(slot_name.split('_')[1])
-            self.player.accessory_slots[acc_idx] = None
+        elif slot_name.startswith('accessory_') or slot_name in ('amulet', 'belt'):
+            if slot_name == 'amulet':
+                self.player.amulet_slot = None
+            elif slot_name == 'belt':
+                self.player.belt_slot = None
+            else:
+                self.player.accessory_slots[int(slot_name.split('_')[1])] = None
             from items import Accessory as _Acc
             if isinstance(item, _Acc):
+                # Its AC, and its stats by the strongest-counts rule (a
+                # weaker ring of the same stat takes over).
+                self.player.accessory_off(item)
                 fx = item.effects
-                if 'stat' in fx:
-                    self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                if 'stat2' in fx:
-                    self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
-                if 'status' in fx:
-                    self._remove_status_if_no_other_grants(fx['status'])
-        elif slot_name == 'amulet':
-            self.player.amulet_slot = None
-            from items import Accessory as _Acc
-            if isinstance(item, _Acc):
-                fx = item.effects
-                if 'stat' in fx:
-                    self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                if 'stat2' in fx:
-                    self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
-                if 'status' in fx:
-                    self._remove_status_if_no_other_grants(fx['status'])
-        elif slot_name == 'belt':
-            self.player.belt_slot = None
-            from items import Accessory as _Acc
-            if isinstance(item, _Acc):
-                fx = item.effects
-                if 'stat' in fx:
-                    self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                if 'stat2' in fx:
-                    self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
                     self._remove_status_if_no_other_grants(fx['status'])
         self.player.inventory.append(item)
@@ -7486,9 +7467,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"You slip on the {item_name}. You feel {_label}!", 'success'
                     )
                 elif fx.get('stat') and fx.get('amount'):
-                    self.add_message(
-                        f"You slip on the {item_name}. {fx['stat']} {int(fx['amount']):+d}!", 'success'
-                    )
+                    _st, _amt = fx['stat'], int(fx['amount'])
+                    # Only the strongest bonus to a stat counts
+                    # (Player.sync_worn_stats): say what this one adds
+                    # over the others worn.
+                    _got = (self.player.worn_stat_gain(item, _st)
+                            if _st in self.player.WORN_STATS else _amt)
+                    if _amt < 0 or _got >= _amt:
+                        self.add_message(
+                            f"You slip on the {item_name}. {_st} {_amt:+d}!", 'success')
+                    elif _got > 0:
+                        self.add_message(
+                            f"You slip on the {item_name}. {_st} {_got:+d}: of rings and amulets "
+                            f"of one stat, only the strongest counts.", 'success')
+                    else:
+                        self.add_message(
+                            f"You slip on the {item_name}, but you already wear a {_st} charm at "
+                            f"least as strong: of rings and amulets of one stat, only the "
+                            f"strongest counts.", 'info')
                 else:
                     self.add_message(f"You slip on the {item_name}.", 'success')
                 self._note_worn_curse(item)

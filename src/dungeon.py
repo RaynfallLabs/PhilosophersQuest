@@ -1438,6 +1438,17 @@ MIN_FLOOR_MONSTERS = 6
 MIMIC_FIRST_FLOOR = 8
 MIN_LOOT_ROOMS = 10
 EARLY_POTION_FLOORS = 20
+# Loot volume (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L5). A loot room held
+# a piece of gear a third of the time and rings and amulets were a quarter of
+# its magic finds: by floor 5 a hero had picked up thirty pieces of gear and
+# seven rings, nine armor slots were full and monsters hit only their minimum.
+ROOM_GEAR_CHANCE = 0.25
+# Weighted slots each item class gets in a floor's magic pool
+# (_item_eligible_weighted); a class not named here gets SLOTS_PER_TYPE (20).
+CLASS_POOL_SLOTS = {'Accessory': 13}
+# A hidden treasure chamber is a cache, not an armory (L4): coin, treasure,
+# potions and scrolls. Its own pass skips the MIN_LOOT_ROOMS repeat.
+CHAMBER_CACHE_ITEMS = (3, 5)
 # Gold in special rooms, as a share of the floor's income (economy.py).
 ZOO_GOLD_SHARE = 0.5
 VAULT_GOLD_SHARE = 0.5
@@ -1523,7 +1534,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
 
     ``structures=False`` spawns loot only and skips every floor-level
     structure (mystery altars, special rooms, traps, quest
-    shrines / altars) -- used by the hidden-chamber loot pass.
+    shrines / altars). A second pass must never build them twice. (A
+    hidden treasure chamber has its own cache, spawn_chamber_cache.)
     """
     from items import (load_items, Container, pick_random_weapon_for_floor, pick_random_armor_for_floor,
                        pick_random_shield_for_floor)
@@ -1540,13 +1552,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         loot_rooms = (loot_rooms * (MIN_LOOT_ROOMS // len(loot_rooms) + 1))[:MIN_LOOT_ROOMS]
 
     # -- Common gear (weapons / armor / shields) come from template+material
-    # composition. Picks one per room (33% chance) using bell-curve material
-    # spawn weighted by depth. The legacy weapon.json / armor.json / shield.json
-    # entries still load for UNIQUE/NAMED items, which spawn via the secondary
-    # pool below — never duplicated against the procedurally-generated set.
+    # composition. Picks one per room (ROOM_GEAR_CHANCE) using bell-curve
+    # material spawn weighted by depth. The legacy weapon.json / armor.json /
+    # shield.json entries still load for UNIQUE/NAMED items, which spawn via
+    # the secondary pool below — never duplicated against the procedurally-
+    # generated set.
     _ARMOR_SLOTS_FOR_DROP = ('body', 'head', 'hands', 'feet', 'legs', 'arms', 'cloak')
     for room in loot_rooms:
-        if rng.random() > 0.33:
+        if rng.random() > ROOM_GEAR_CHANCE:
             continue
         # 60% weapon, 20% armor piece, 15% shield, 5% nothing-special
         roll = rng.random()
@@ -1685,7 +1698,13 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         if c and _place_one([c], room, dungeon, ground_items, rng):
             break
 
-    # Additional containers with diminishing probability
+    # Additional containers: every loot room rolls, at 55% until one lands,
+    # then 25% a room until the next, then 11%... so a floor of ten rooms
+    # holds about 3.4 ordinary chests (2.8 on six rooms, 4 on eighteen).
+    # That count is kept on purpose (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26
+    # L1): halving it cost casual players at Asterion even with the potions,
+    # gold and uniques put back elsewhere. What a chest holds was cut instead
+    # (container_system.MAX_GEAR_PLAIN_CHEST, the jewelry box's table).
     extra_chance = 0.55
     for room in rng.sample(loot_rooms, len(loot_rooms)):
         if rng.random() > extra_chance:
@@ -1693,7 +1712,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         c = pick_container()
         if c:
             _place_one([c], room, dungeon, ground_items, rng)
-        extra_chance *= 0.45   # 0.55 -> 0.25 -> 0.11 -> ...
+        extra_chance *= 0.45   # 0.55 -> 0.25 -> 0.11 -> ... per chest placed
 
     # Lockpicks no longer spawn — the Master Lockpick is a permanent inventory
     # item granted at char-creation. Eco quiz is the gating mechanic.
@@ -1782,8 +1801,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
 
     # Everything below builds floor-level STRUCTURES (mystery altars,
     # special rooms, coin and lairs, vault gold, traps, quest shrines and altars).
-    # They must be built exactly once per floor. The hidden-chamber loot
-    # pass calls spawn_items a second time for one room and passes
+    # They must be built exactly once per floor: a loot-only pass passes
     # structures=False to stop here.
     if not structures:
         return ground_items
@@ -2165,6 +2183,50 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     return ground_items
 
 
+# What a hidden treasure chamber's cache is made of, by weight.
+CHAMBER_CACHE_KINDS = (('coin', 3), ('treasure', 2), ('potion', 3), ('scroll', 2))
+
+
+def spawn_chamber_cache(room: Room, level: int, dungeon: Dungeon, rng) -> list:
+    """A hidden treasure chamber's cache: CHAMBER_CACHE_ITEMS things that
+    somebody walled up to keep, coin, treasure, potions and scrolls.
+
+    The chamber used to re-run spawn_items on its one room. Once small
+    floors rolled each room MIN_LOOT_ROOMS times, that pass made ten rooms'
+    worth of loot, gear and magic first, and kept the first three to five:
+    an armory behind every secret door (12% of all gear a run found)."""
+    import economy
+    import treasure as _tr
+    from items import add_gold_to_tile, is_random_loot, load_items
+    got: list = []
+    potions = _item_eligible_weighted(load_items('potion'), level, rng)
+    scrolls = _item_eligible_weighted(
+        [s for s in load_items('scroll') if is_random_loot(s)], level, rng)
+    names = [k for k, _ in CHAMBER_CACHE_KINDS]
+    weights = [w for _, w in CHAMBER_CACHE_KINDS]
+    for _ in range(rng.randint(*CHAMBER_CACHE_ITEMS)):
+        kind = rng.choices(names, weights=weights, k=1)[0]
+        if kind == 'potion' and potions:
+            _place_one(potions, room, dungeon, got, rng)
+            continue
+        if kind == 'scroll' and scrolls:
+            _place_one(scrolls, room, dungeon, got, rng)
+            continue
+        free = [(x, y) for x, y in room.inner_tiles()
+                if dungeon.tiles[y][x] in (FLOOR, ICE)
+                and not any(i.x == x and i.y == y for i in got)]
+        if not free:
+            continue
+        x, y = rng.choice(free)
+        if kind == 'treasure':
+            piece = _tr.roll(level, rng, None, x, y)
+            if piece is not None:
+                got.append(piece)
+                continue
+        add_gold_to_tile(got, economy.roll_share(rng, level, economy.CACHE_COIN_SHARE), x, y)
+    return got
+
+
 def _force_place_quest_item(item, dungeon: Dungeon, ground_items: list):
     """Guaranteed placement: put item on any walkable tile (fallback for quest items)."""
     for y in range(dungeon.height):
@@ -2470,18 +2532,24 @@ def _item_eligible_weighted(templates: list, level: int,
         return [t for t in templates if t.min_level <= level] or templates[:]
 
     eligible = []
-    for items_weights in by_type.values():
+    for cls_name, items_weights in by_type.items():
+        # Rings and amulets take a smaller share than the other classes
+        # (CLASS_POOL_SLOTS): they had a quarter of every floor's magic finds.
+        # Only where classes compete: a one-class pool (a trader's ring
+        # shelf) keeps its full spread of kinds.
+        n_slots = (CLASS_POOL_SLOTS.get(cls_name, SLOTS_PER_TYPE) if len(by_type) > 1
+                   else SLOTS_PER_TYPE)
         total_w = sum(w for _, w in items_weights) or 1
         n = len(items_weights)
-        if n <= SLOTS_PER_TYPE:
+        if n <= n_slots:
             # Few candidates -- give each at least 1 slot, proportional distribution
             for item, w in items_weights:
-                slots = max(1, round(w / total_w * SLOTS_PER_TYPE))
+                slots = max(1, round(w / total_w * n_slots))
                 eligible.extend([item] * slots)
         else:
             # Many candidates -- weighted sample to ensure variety across levels
             weights = [w for _, w in items_weights]
-            selected = rng.choices(items_weights, weights=weights, k=SLOTS_PER_TYPE)
+            selected = rng.choices(items_weights, weights=weights, k=n_slots)
             for item, _ in selected:
                 eligible.append(item)
     return eligible

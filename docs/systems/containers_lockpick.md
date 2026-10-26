@@ -110,7 +110,10 @@ quiz_engine.start_quiz(
   rolled in the **top 30% of the range** because you did it right. A chest
   with no template keeps its written `gold` `[min, max]`.
 - Loot: `_generate_loot_from_template(container, dungeon.level)` returns
-  3–4 real slots + 1 bonus common + rare_chance × 2 (unique roll).
+  the chest tier's item count (`ITEMS_BY_CHEST_TIER`: 2-3 for a plain
+  chest, up to 4-5 + 1 bonus for the best) with rare_chance × 2 for a
+  unique. A plain chest holds at most one piece of common gear in all
+  (`MAX_GEAR_PLAIN_CHEST`); see the loot generation section.
 - Messages: "The lock yields! You crack the chest." + per-item + gold.
 - Callback receives `{status: 'opened', loot, gold, messages}`.
 
@@ -273,9 +276,9 @@ Example:
 ### Loot generation (`_generate_loot_from_template`, `src/container_system.py:395`)
 
 ```python
-level_cap   = dungeon_level + chest.tier * 2
-n_items     = randint(3, 4)
-bonus_slots = 1
+level_cap   = items.loot_floor(dungeon_level, chest.tier * 2)   # reach held to a third of depth
+cmin, cmax, bonus_slots = ITEMS_BY_CHEST_TIER[chest.tier]     # T1 (2,3,0) T2 (2,3,1) T3-4 (3,4,1) T5 (4,5,1)
+n_items     = randint(cmin, cmax)
 eff_rare    = min(1.0, base_rare * 2.0)
 rare_slot_index = randrange(n_items) if (unique_pool and random() < eff_rare) else -1
 
@@ -294,6 +297,28 @@ for _ in range(bonus_slots):
 `pick_random_weapon_for_floor` / `pick_random_armor_for_floor` /
 `pick_random_shield_for_floor` — chest loot is NOT drawn from a static
 `weapon.json` pool.
+
+**Gear cap (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L2).** A plain chest
+(tier 1-2) holds at most `MAX_GEAR_PLAIN_CHEST` (1) piece of common gear in
+all; once it has one, `draw_common` picks from the template's other
+categories except `accessory` (potions, scrolls, ammo, wands; a lockbox's
+rings rose by a quarter when the freed draw could go to them), so the chest
+is no emptier. A
+named unique from the rare slot does not count. A good chest (tier 3+) may
+hold `MAX_SAME_GEAR_GOOD_CHEST` (2) of each kind: a war chest is an armory.
+The old cap was one of each KIND, so a floor-1 chest could hold a weapon, an
+armor piece and a shield, and chests gave 31% of a run's gear.
+
+**The jewelry box** holds coin and keepsakes: treasure 15 / accessory 20 /
+gold bonus 65 (it was 8 / 70 / 30, and 43% of floor-5 boxes held three or
+four rings or amulets; now about 0.7 a box, three or more in 1%). A table
+of treasure 60 was tried and put 1.5 floors' income of gems in every deep
+box; at 15 a box holds about 0.4 of a floor's income in treasure deep.
+
+**How many chests.** `spawn_items` places one guaranteed chest, then rolls
+each loot room for another at 55%, falling to 25%, 11%... after each one
+placed: about 3.4 ordinary chests on a floor of ten rooms. That count is kept
+on purpose; what a chest holds was cut instead.
 
 **Ingredient hygiene.** Only `tier_role == 'dungeon'` ingredients
 (terrain-foraged: cave mushroom, swamp moss) are eligible for chest

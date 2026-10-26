@@ -3187,13 +3187,16 @@ class MagicMixin:
                     if 'amount' in fx and bonus:
                         _old = fx['amount']
                         fx['amount'] = max(0, _old + bonus)
-                        # The stat was given when the ring went on: change it
-                        # by the same step now. It was left alone, so taking
-                        # the ring off later removed the NEW amount (three
-                        # points lost for good, or a cursed scroll turning a
-                        # ring's points into permanent ones).
-                        if fx.get('stat') and fx['amount'] != _old:
-                            self.player.apply_stat_bonus(fx['stat'], fx['amount'] - _old)
+                        # What the ring lends changes now, not when it next
+                        # goes on: AC by the step, the six stats by the
+                        # strongest-counts rule (Player.sync_worn_stats).
+                        # Left alone, taking the ring off later removed the
+                        # NEW amount (three points lost for good, or a cursed
+                        # scroll turning a ring's points into permanent ones).
+                        if fx.get('stat') == 'AC' and fx['amount'] != _old:
+                            self.player.apply_stat_bonus('AC', fx['amount'] - _old)
+                        elif fx.get('stat') and fx['amount'] != _old:
+                            self.player.sync_worn_stats()
                         _an = self._bare_name(acc)
                         if int(getattr(acc, 'id_level', 0) or 0) >= 5 or self._item_is_known(acc):
                             self.add_message(

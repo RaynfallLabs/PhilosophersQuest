@@ -32,7 +32,10 @@ Three memory rules govern every decision in this system — rebalance against th
 | `src/items.py::Food` (L1115) | Ready-to-eat ration. Carries `sp_restore`, `hp_restore`, `bonus_type`, `bonus_stat`, `bonus_effect`, `bonus_amount`. |
 | `src/player.py::try_apply_cook_hp_gain` (L549) | Per-floor max-HP cap + lifetime softcap for cooked HP gains. |
 | `src/hud_context.py::cooking_hp_line` | The sidebar's Meals line: this floor's cooked max HP of its cap. |
-| `src/player.py::try_apply_cook_stat_gain` (L527) | Per-floor stat cap + per-stat lifetime softcap for cooked stat gains. |
+| `src/hud_context.py::cooking_lesson_line` | The sidebar's Lesson line under Meals: this floor's stat lesson open or used, and any banked stat. |
+| `src/player.py::feed_cut_stat` | A proper meal of a prime cut: the floor's one lesson, banked toward its stat, two meals a point (§7.2). |
+| `src/player.py::cut_stat_block` | Why a meal of a stat would teach nothing now (`'floor'` / `'cap'`), for the message. |
+| `src/player.py::try_apply_cook_stat_gain` (L527) | A trophy's own stat (bypassing the floor's lesson) under the per-stat lifetime cap. |
 | `src/player.py::apply_cooking_stat_bonus` (L585) | Diminishing-return + hard-cap stat delivery. |
 | `src/player.py::increase_max_hp` (L610) | Diminishing-return max-HP delivery, floored at +1. |
 | `src/player.py::reset_floor_cook_caps` (L579) | Called from `Game._change_level`. Resets the per-floor counters. |
@@ -192,9 +195,9 @@ The family drives recipe choice at the `_find_recipe_for_ingredient` family-tier
 
 ### 4.1 Entry point
 
-The player opens the cook menu (`C` → Recipes tab). `_COOK_TABS = [('Recipes', 'compound')]` — the old Single tab was deleted 2026-06-07 along with `basic_monster_stew`, because every surviving recipe needs ≥2 ingredient types.
+The player opens the cook menu (`C` → Recipes tab). `_COOK_TABS = [('Recipes', 'compound')]` — the old Single tab was deleted 2026-06-07 along with `basic_monster_stew`.
 
-`get_available_compound_recipes(inventory)` filters `recipes.json` to rows where (a) the player has every listed ingredient id and (b) `len(set(ingredients)) >= 2`. Solo cooks (one ingredient id repeated) are excluded — they are reachable in principle from the dead Single tab via `_find_recipe_for_ingredient`.
+`get_available_compound_recipes(inventory)` lists every row of `recipes.json` whose ingredients the player holds, single-ingredient recipes included (the ≥2-types filter was dropped 2026-10-03: it hid every "cook this one prime cut" dish). Sort: single-ingredient first, then by name (`food_system.py:225`), not by the stat a dish feeds; the recipe preview names it ("Feeds STR").
 
 ### 4.2 Flow
 
@@ -327,24 +330,32 @@ The 6 `_comment_t1`..`_comment_t5trophy` keys at `outcomes.<_comment_*>` are aut
 
 Order of operations when `_apply_recipe_outcome` dispatches on a successful cook:
 
-1. **SP + HP recovery.** `restore_sp(outcome.sp)`, `restore_hp(outcome.hp)`. One message line: `"You eat it: +X SP, +Y HP."`
-2. **Permanent +max HP.** `try_apply_cook_hp_gain(max_hp_bonus, bypass=bool(permanent_power))`. Trophies bypass the per-floor cap. If the cap is used up, the message changes to `"You feel sated, but your body is already full of nourishment this floor."` (non-trophy only).
-3. **Permanent +stat.** `try_apply_cook_stat_gain(stat_grant_default or 'STR', stat_grant, bypass=bool(permanent_power))`. Same per-floor cap logic. On success: `"Your <stat> increases by N!"`
-4. **Temp power.** `_resolve_temp_power(temp_power)` normalises the name (see §9), then `player.add_effect(canonical, temp_duration or 60)`. For `save_guard_*` the magnitude from `temp_amount` (clamped to 3) is written to `player._save_guard[cat]` so `Player.save_bonus_for` can pick it up. One message line: `"A short <effect> lingers."`
+1. **SP + HP recovery.** `restore_sp(outcome.sp)`, and a heal of at least a few percent of the health bar (`floor_curve.mend`). One message line: `"You eat it: +X SP, +Y HP."`
+2. **Permanent +max HP.** Every proper meal adds `COOK_BASE_MAX_HP` (2); a recipe's own `max_hp_bonus` comes **on top** (it used to come instead, so the 160 recipes written "+1 max HP", the bone broths among them, gave less than a plain meal). Through `try_apply_cook_hp_gain(gain, bypass=bool(permanent_power))`: trophies pass the per-floor cap. A bonus recipe with the floor's share used says `"You feel sated, but your body is already full of nourishment this floor."` The recipe preview shows the total (`"+3maxHP"`).
+3. **The stat of the meat.** The recipe carries `_cut_stat` (the first prime cut's `stat_grant` in `ingredient.json`, stamped by `cook_compound_recipe`). `Player.feed_cut_stat(stat)` banks the meal toward that stat; see §7.2. A trophy instead grants its own `stat_grant_default` outright through `try_apply_cook_stat_gain(..., bypass=True)`.
+4. **Temp power.** `_resolve_temp_power(temp_power)` normalises the name (see §9), then `player.add_effect(canonical, temp_duration or 60)`. For `save_guard_*` the magnitude from `temp_amount` (clamped to 3) is written to `player._save_guard[cat]` so `Player.save_bonus_for` can pick it up. One message line: `"<Effect> lingers for N turns."`
 5. **Permanent power.** For trophies, `_apply_permanent_power(player, outcome.permanent_power, fake_recipe)` runs — see §10. Returns a flavor message that is appended to the output.
-
-Steps 2–5 are each `if present` — a plain T1 recovery outcome stops after step 1 and returns `["You prepare X.", "You eat it: +Y SP, +Z HP."]`.
 
 ### 7.1 Per-floor cook caps
 
-Non-trophy cooks compete for two per-floor budgets, both reset by `Game._change_level` via `player.reset_floor_cook_caps()`:
+Two per-floor budgets, both reset by `Game._change_level` via `player.reset_floor_cook_caps()` **only on a floor reached for the first time** (a stair dance gives no second helping):
 
 | Budget | Cap | Field | Behaviour at cap |
 |--------|----:|-------|------------------|
-| Max HP from cooking this floor | **+5** | `_cook_hp_gain_this_floor` | Further `max_hp_bonus` cooks on this floor deliver 0 (message: "already full of nourishment"). |
-| Stat points from cooking this floor | **+1** | `_cook_stat_gain_this_floor` | Further `stat_grant` cooks on this floor are silent. |
+| Max HP from cooking this floor | **+5** | `_cook_hp_gain_this_floor` | Further meals add no max HP (a bonus recipe says "already full of nourishment"). |
+| The floor's stat lesson | **1 meal** | `_cook_stat_gain_this_floor` | Further stat-bearing meals teach nothing and say so (§7.2). |
 
-Trophy outcomes bypass both. The lifetime diminishing softcap in `increase_max_hp(from_cooking=True)` and the per-stat softcap in `apply_cooking_stat_bonus` still apply either way — the floor cap is additive atop the lifetime one, not a replacement.
+Trophy outcomes pass both. The lifetime caps still apply: max HP from cooking is at most 4 a floor of depth (`cooking_softcap`, min 20); each stat's food gains stop at `cooking_stat_softcap`.
+
+### 7.2 Stats from food: the lesson, the bank and the cap
+
+- **One lesson a floor.** Only the first stat-bearing meal cooked on a new floor counts (`PER_FLOOR_STAT_CAP` 1). It is used even when the meal only banks.
+- **Two meals make a point.** `COOK_MEALS_PER_STAT_POINT` (2) meals of the same stat, on two floors, give +1 (`cook_stat_meals` holds the bank, one per stat).
+- **The cap.** A stat's lifetime gain from food is `COOK_STAT_CAP_BASE + deepest // COOK_STAT_CAP_FLOORS` = 3 + depth/4 (5 at floor 8, 8 at 20, 13 at 40, 28 at 100); Wisdom has half. It was 2 + depth/5, which held a cook who fed one stat to a point every five floors after floor 4 while random rings lent more (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F3). It is an allowance read from the deepest floor reached; nothing is multiplied by the floor.
+- **Pace.** A cook who feeds one stat gets +4 by floor 8, +6 by 12, +8 by 20, +10 by 30, +28 by 100; a run feeds about fifty points in all.
+- **A meal that teaches nothing says why** (F2): `Player.cut_stat_block(stat)` returns `'floor'` ("You have already learned from a meal on this floor. The next lesson waits on a new floor.") or `'cap'` ("Your <Stat> has learned all food can teach it at this depth. Go deeper to learn more."). It used to say nothing at all.
+- **The sidebar** shows the lesson under "Meals" (`hud_context.cooking_lesson_line`): "Lesson: open" or "Lesson: learned this floor", with any banked stat ("DEX 1/2").
+- **Worn rings do not compete.** Only the strongest ring or amulet of each stat counts (`Player.sync_worn_stats`, see [items.md](items.md) §5), so the build comes from cooking and the gate-boss gifts.
 
 ---
 
@@ -412,7 +423,7 @@ Trophy flavor: when the trophy outcome has both a `temp_power` and a `permanent_
 
 ### 11.1 `eat_food(player, food_item)` — rations (`data/items/food.json`)
 
-17 rations: bread, cheese, apple, mushroom, jerky, pie, etc. Each row carries `sp_restore` (20–115), optional `hp_restore`, and an optional `bonus_type` with the same vocabulary as the dead `_apply_bonus` branch (`none / random_stat / combat_stat / two_stats / all_stats / stat / status`). Eating fires the bonus via `_apply_bonus(player, bonus_recipe)` — this bonus-dispatcher still routes through `player.apply_cooking_stat_bonus` when it falls through to a stat gain, so ration stats share the lifetime softcap with cooking stats.
+17 rations: bread, cheese, apple, mushroom, jerky, pie, etc. Each row carries `sp_restore` (20–115), optional `hp_restore`, and an optional `bonus_type` (`none / random_stat / combat_stat / two_stats / all_stats / stat / status`). Eating fires the bonus via `_apply_bonus(player, bonus_recipe)`. A rare stat food (philosopher's tea, golden apple, ambrosia, peach of immortality) is **its own gift, outside the floor's cooking lesson**: each stat it names rises through `apply_cooking_stat_bonus`, so it shares only the lifetime cap with cooking. "All stats" raises all six and "two stats" two (each used to take the one lesson a floor, so ambrosia raised Strength alone and tea after a meal gave nothing, blaming the cap). At the cap the message says so: "Your <stat> has learned all food can teach it at this depth."
 
 No quiz. No chance of ruin.
 
@@ -583,3 +594,4 @@ Contrast with the ruined branch (same recipe, wrong answer): ingredient is alrea
 | v2.6.5 | 2026-09-03 | Harvest outcome collapsed to one themed drop per corpse (`<monster_id>_prime` / `<monster_id>_trophy`) regardless of tier. |
 | 2026-09-27 | — | Dead-code sweep: `_apply_tier_outcome`, `SINGLE_MULT`, `COMPOUND_MULT`, `_potency`, `_single_max_hp`, `_compound_max_hp`, `_cooking_sp`, `_cooking_heal` removed from `src/food_system.py`. Offline copies retained in `tools/balance/`. |
 | v2.18 | 2026-10-01 | Compound-cook path now calls `on_food_eaten`, unlocking Tantalus / Persephone / Circe. Quality is read from `outcome.tier`; bonus category is derived via `_outcome_bonus_category`. `trophy_medusa.temp_power` canonicalised to `save_guard_CON` directly. 7 dead text fields removed from all 527 `prime_cuts.json` rows. |
+| — | 2026-10-26 | BALANCE_REVIEW_LOOT_AND_FOOD F1-F4: a recipe's `max_hp_bonus` comes on top of the base 2; stat foods are outside the floor's lesson and "all stats" raises all six; a meal that teaches nothing says why; sidebar Lesson line; per-stat cap 3 + depth/4 (was 2 + depth/5); worn rings of one stat no longer add up (items.md §5). |
