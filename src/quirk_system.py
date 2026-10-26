@@ -218,6 +218,8 @@ class QuirkSystem:
         if u is None:
             self._pl.unlocked_quirks = set()
         self._pl.unlocked_quirks.add(qid)
+        if hasattr(self.game, '_seeker_event'):
+            self.game._seeker_event('trait', trait=qid)     # the Seeker's trait ladder
         self._apply_and_record_statuses(apply_fn)
         effect  = _QUIRK_EFFECTS.get(qid, '')
         trigger = _QUIRK_TRIGGER.get(qid, '')

@@ -202,6 +202,7 @@ class QuizEngine:
         self._timer_modifier: float = 1.0
         self.on_answer = None   # optional callable(is_correct: bool) fired after each answer
         self.on_complete = None  # optional callable(result, mode, subject, correct, wrong) fired once at quiz end
+        self.on_card = None      # optional callable(subject) fired the first time a question's card opens
         self.play_all: bool = False   # see start_quiz
         self._on_each = None          # per-quiz callable(is_correct, correct, wrong)
 
@@ -1048,6 +1049,11 @@ class QuizEngine:
         if not self._card_counted and self.state == QuizState.ASKING:
             self._card_counted = True
             self._bump_card_stat('cards_opened')
+            if self.on_card is not None:
+                try:
+                    self.on_card(self.subject)
+                except Exception:
+                    pass
         if self._timer_paused:
             return True
         if not self.context_pause_available():

@@ -86,6 +86,7 @@ from game_road import RoadMixin
 from game_traders import TraderMixin
 from game_purse import PurseMixin
 from game_families import FamilyMixin
+from game_seeker import SeekerMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -195,7 +196,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin, TraderMixin, PurseMixin, FamilyMixin):
+           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -233,6 +234,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         old = self.__dict__.get('_player_gold', 0)
         if value > old:
             self.__dict__['gold_earned'] = self.__dict__.get('gold_earned', 0) + (value - old)
+            self._seeker_event('gold', amount=int(value - old))
         self.__dict__['_player_gold'] = value
         self._mirror_purse()
 
@@ -250,7 +252,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
-                 secret_build: dict | None = None):
+                 secret_build: dict | None = None,
+                 new_run: bool = True):
+        # new_run=False: a shell for load_state (_restore_saved_game), which
+        # opens the Seeker itself; counting it would add a journey per load.
         self.screen        = screen
         # A hero's name is shown as a name ("Achilles Son of Peleus", "Leonardo
         # di Ser Piero da Vinci"), however it was typed; every lookup
@@ -380,6 +385,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._score_saved       = False    # True after high score is written
         self.quiz_engine.on_answer = self._on_quiz_answer
         self.quiz_engine.on_complete = self._on_quiz_complete
+        # A teaching card read (the Seeker's Curious Mind, game_seeker.py).
+        self.quiz_engine.on_card = lambda subject: self._seeker_event('card_opened', subject=subject)
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -493,6 +500,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._death_omen_target = None
         self.player._anti_being_charged = False
         self._show_story_popup('dungeon_entrance', STATE_PLAYER)
+        # The Seeker playing this run (game_seeker.py): counts it, and opens
+        # whatever achievements are already owed. A shell for a save being
+        # loaded waits: load_state opens the Seeker for the loaded run.
+        if new_run:
+            self._seeker_init(new_run=True)
 
     # ------------------------------------------------------------------
     # Message helper
@@ -1035,6 +1047,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # _burdened is not trusted from the file; it is worked out afresh.
         self.player._burdened = False
         self._note_burden()
+        # This run's achievement counters, then the Seeker (game_seeker.py).
+        self._seeker_run = state.get('_seeker_run')
+        self._seeker_init(new_run=False)
         self._show_load_summary_popup()
 
     def _refresh_legacy_encounters(self):
@@ -1753,6 +1768,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"Someone died here with your errand unfinished. The {ghost_name} has not left.",
                 'danger')
             _who = ghost_name.replace('Ghost of ', '', 1)
+            # One of this Seeker's own past heroes (the profile keeps their names).
+            _s = getattr(self, '_seeker', None)
+            import seeker_codes as _sc
+            self._seeker_event('ghost_met', own=bool(
+                _s and _sc.normalise_name(_who) in _s.profile.members('heroes')))
             self._chron(
                 'notice',
                 f"{_who} came this far before me. What is left of {_who} is "
@@ -2121,6 +2141,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.quirk_progress['shard_dropped'] = False
             self.player.quirk_progress['levels_without_shard'] = 0
 
+        # The Seeker's depth ladder: the deepest floor this hero has reached.
+        self._seeker_event('floor_reached',
+                           floor=int(getattr(self.player, 'deepest_floor_reached', new_level) or new_level))
         # Notify quirk system of stair use and floor entry
         _qs_stair = getattr(self, 'quirk_system', None)
         if _qs_stair:
@@ -2665,6 +2688,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             note = m.__dict__.pop('_spring_note', None)
             if note and (m.x, m.y) in (getattr(self, 'visible', None) or ()):
                 self.add_message(note, 'danger')
+                # A Hellmouth (false_stairs.py) shows it was never a stair.
+                d = getattr(m, 'disguise', None)
+                if isinstance(d, dict) and d.get('tile') == 'stairs_down':
+                    self._seeker_event('hellmouth')
 
     def _spring_lurker(self, m) -> bool:
         """A wand, a spell or a pull reaches `m`: an unaware lurker springs
@@ -2780,6 +2807,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                            and _tiles[ey][ex] != 0)
             if total > 0:
                 qs.on_floor_explored(explored / total)
+                if explored >= total and not getattr(self.dungeon, '_seeker_explored', False):
+                    self.dungeon._seeker_explored = True
+                    self._seeker_event('floor_explored', floor=int(self.dungeon_level))
 
         # Chain-equip passive: beautiful_ruin (Necklace of Harmonia T5).
         # On every turn, the strongest visible monster is marked aware + seeks player.
@@ -3720,6 +3750,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 "You hold the Complete Tablet of Second Death.", 'loot'
             )
             self._chron('discovery', "Used the Wrench. The Stone and the Tablet fused into one, and the Complete Tablet glows with purpose. I think I know what it's for.")
+            self._seeker_event('tablet_complete')
         else:
             self.add_message(
                 "The wrench socket seems to need something to fit in it.", 'info'
@@ -3756,6 +3787,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _trigger_abyss(self, shimmer):
         """The Abyss opens and reclaims Death. The secret victory condition."""
         from items import make_death_bane_scroll
+        self._seeker_event('secret_victory')
         dx, dy = shimmer.x, shimmer.y
 
         self.add_message("The ancient words echo through the dungeon...", 'danger')
@@ -3884,6 +3916,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                        self.player, getattr(self, 'player_gold', 0))
         delete_save(self.player_name)
         self._record_high_score(victory)
+        self._seeker_run_end(victory)
         _snd.play('death')
 
     def _record_high_score(self, victory: bool = False):
@@ -3974,6 +4007,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         persisted at a clean exit, so any non-clean close reverted the player to
         wherever they loaded from. Never raises; logs OK/FAILED so a 'didn't
         save' report is diagnosable from ERROR_LOG.txt."""
+        self._seeker_flush()          # the Seeker's counters, whatever the run's state
         if getattr(self, 'state', None) in (STATE_DEAD, STATE_VICTORY) \
                 or getattr(self, '_run_over', False):
             return
@@ -4805,12 +4839,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         if not self._haste_skip_world:
             self._family_turn()            # families that flee on sight; hidden things shown
-            self._do_monster_turns()
-            if not self.player.is_dead():
-                self._do_pet_turns()
-                # Escorts move and are attacked in their own pass, pet or no pet.
-                self._do_escort_turns()
-                self._maybe_wander_spawn()
+            # Whose blows these are, for the Seeker's damage achievements
+            # (game_seeker.py): everything outside this block is the hero's.
+            self._damage_by = 'monster'
+            try:
+                self._do_monster_turns()
+                if not self.player.is_dead():
+                    self._damage_by = 'pet'
+                    self._do_pet_turns()
+                    # Escorts move and are attacked in their own pass, pet or no pet.
+                    self._damage_by = 'escort'
+                    self._do_escort_turns()
+                    self._damage_by = 'monster'
+                    self._maybe_wander_spawn()
+            finally:
+                self._damage_by = 'hero'
         self._say_springs()                # lurkers the pets' and escorts' blows gave away
         self._death_proximity_warning()
         self._tick_hp_regen()
@@ -5063,6 +5106,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message("The energy dissipates harmlessly.", 'info')
             else:
                 self.add_message("The energy dissipates harmlessly.", 'info')
+        self._seeker_event('trap', kind=trap_type)
         qs = getattr(self, 'quirk_system', None)
         if qs and hasattr(qs, 'on_trap_triggered'):
             qs.on_trap_triggered(trap_type)
@@ -5808,6 +5852,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                  f"{_tr.value_text(self.player, item)}.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
+            if getattr(item, 'id', '') == 'abyssal_shimmer':
+                self._seeker_event('lore_found', item='shimmer')
             # Philosophy tier mastery: a thing of a tier the hero has mastered
             # this run names itself as it is picked up. A legendary one shows
             # its story, as the identify quiz would.
@@ -6005,6 +6051,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not hasattr(self.player, 'quirk_progress') or self.player.quirk_progress is None:
             self.player.quirk_progress = {}
         self.player.quirk_progress['duck_of_doom_turns'] = 0
+        self._seeker_event('duck_worn')
         self._advance_turn()
 
     def _duck_of_doom_tick(self):
@@ -6024,6 +6071,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """At 2026 turns, the Duck hatches: remove the item from the
         head slot and spawn a Waddlekind pet at the player's tile."""
         from pet_system import Pet
+        self._seeker_event('duck_hatched')
         # Remove the duck from head; no inventory copy — the item is
         # CONSUMED by the transformation.
         head = self.player.armor_slots[0] if self.player.armor_slots else None
@@ -6216,6 +6264,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if result['gold'] > 0:
                     from items import add_gold_to_tile
                     add_gold_to_tile(self.ground_items, result['gold'], cx, cy)
+                if success:
+                    self._seeker_event('lockpick')
                 _qs_lk = getattr(self, 'quirk_system', None)
                 if _qs_lk:
                     if success:
@@ -6306,6 +6356,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.state = STATE_PLAYER
             success = bool(ingredients_list)
             self.add_message(message, 'loot' if success else 'warning')
+            if success:
+                self._seeker_event('harvest', monster=getattr(corpse, 'monster_id', None))
             _qs_harv = getattr(self, 'quirk_system', None)
             if _qs_harv:
                 _mon_def = getattr(corpse, 'monster_def', {}) or {}
@@ -6375,6 +6427,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _ruined = any(isinstance(m, str) and 'ruin' in m.lower() for m in messages)
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
+            if not _ruined:
+                self._seeker_event('cooked', recipe=_recipe_for_quirk.get('id')
+                                   or _recipe_for_quirk.get('name') or ingredient.id)
             # Notify quirk system. v2.6.4: quality = outcome tier on success,
             # 0 when ruined. Derive bonus_type from the outcome fields so
             # Circe (5 distinct bonus categories) can actually unlock.
@@ -6437,6 +6492,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             rname = recipe.get('name', '')
             if rname and rname not in self._cooked_recipes:
                 self._cooked_recipes.append(rname)
+            if not _ruined:
+                self._seeker_event('cooked', recipe=recipe.get('id') or rname)
             # Notify quirk system (previously unreachable path: Tantalus,
             # Persephone, Circe all hang off on_food_eaten). Quality = outcome
             # tier on success, 0 when ruined. bonus_type derived from the
@@ -6546,6 +6603,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             jm = getattr(qe, 'just_mastered', None)
             if jm:
                 msubj, mtier = jm
+                self._seeker_event('subject_cleared', subject=msubj, tier=int(mtier))
                 # "AI", not "Ai" (str.title); other subjects are one word.
                 name = 'AI' if str(msubj).lower() == 'ai' else str(msubj).title()
                 if msubj == 'math':
@@ -6586,6 +6644,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Per-subject + per-tier stats for the Discoveries panel.
         subj = (qe.subject or 'unknown')
         tier = int(getattr(qe, 'tier', 1) or 1)
+        # The Seeker's achievements (game_seeker.py): every answer counts.
+        self._seeker_event('quiz_answer', subject=subj, correct=bool(is_correct), tier=tier,
+                           chain=int(getattr(qe, 'chain', 0) or 0),
+                           mode=getattr(getattr(qe, 'mode', None), 'value', None))
         s = self.quiz_stats.setdefault(subj, {
             'correct': 0, 'wrong': 0,
             't1c': 0, 't1w': 0, 't2c': 0, 't2w': 0,
@@ -6676,6 +6738,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _resolve_hack_reality(self, chain: int):
         """Apply XYZZY hack reality rewards. Tier 1 always granted; tiers 2-5 once only."""
         import random as _rng
+        self._seeker_event('xyzzy', chain=int(chain))
         p = self.player
 
         # Cooldown: long (150-300 turns); longer for better rewards
@@ -7917,6 +7980,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
 
     def update(self, dt: float):
+        # An achievement won mid-quiz waits for calm play (game_seeker.py).
+        self._seeker_tick()
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
         quiz_dt = min(dt, self.MAX_QUIZ_DT)
@@ -8205,7 +8270,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 "",
                 "Well done.",
             ],
-            'code': 'QUEST-COMPLETE',
+            'code': None,
+            'achievement': 'stone_home',     # its code is the Seeker's (_show_story_popup)
         },
         'exit_without_stone': {
             'title': 'THE DESERTER',
@@ -8246,6 +8312,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         data = self._STORY_CONTENT.get(key)
         if data is None:
             return
+        if data.get('achievement'):
+            # A reward ending shows the Seeker's own code for it (one system
+            # for every code: seeker_codes.py), or none without a Seeker.
+            data = dict(data, code=self._seeker_code(data['achievement']))
         self.popup_data       = data
         self.popup_next_state = next_state
         self.state            = STATE_STORY_POPUP
@@ -8374,6 +8444,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # page is open (lore_known: the same set the Book of Thoth
                 # fills, which opens pages but teaches no family tiers).
                 self.player.lore_known_monster_ids.add(corpse.monster_id)
+                self._seeker_event('monster_known', monster=corpse.monster_id)
                 # Propagate to every corpse of the same monster on the floor
                 # and in the pack — corpses carry no per-instance secrets.
                 from items import Corpse as _Corpse
@@ -8819,6 +8890,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('k', 'treasure', 'Treasure'),
         ('l', 'wonders', 'Wonders'),     # the Soul Spheres and the Draught
         ('m', 'lore_codex', 'Lore Codex'),   # every topic card met (topic_cards.py)
+        ('n', 'achievements', 'Achievements'),   # the Seeker's, across every run (seeker_screen.py)
     ]
 
     def _open_encyclopedia(self):
@@ -9082,7 +9154,7 @@ def _restore_saved_game(screen, player_name: str, state: dict):
         try:
             game = Game(screen,
                         player_name=state.get('player_name', player_name),
-                        secret_build=state.get('secret_build'))
+                        secret_build=state.get('secret_build'), new_run=False)
         finally:
             if _had_nb is None:
                 os.environ.pop('PQ_NO_BONES', None)
@@ -9170,7 +9242,13 @@ def main():
         if player_name == '__STUDY_MODE__':
             study = StudyMode(screen)
             study.run(clock)
+            if getattr(study, '_seeker', None) is not None:
+                study._seeker.flush()     # Study Mode's answers, for its own achievements
             continue  # return to welcome screen after study mode
+        if player_name == '__SEEKER_PROFILE__':
+            from seeker_screen import SeekerScreen
+            SeekerScreen(screen).run(clock)
+            continue  # back to the welcome screen (F4 there)
 
         # Sync layout to actual window size (may have been resized during welcome)
         _cur_w, _cur_h = screen.get_size()
@@ -9278,6 +9356,11 @@ def main():
                 # good state remains and the run is still recoverable — but record
                 # that this session did not persist.
                 print("[Save] quit-save failed; previous save retained on disk")
+        # The Seeker's counters are written however the run ended.
+        try:
+            game._seeker_flush()
+        except Exception:
+            pass
 
         # If game ended by death or victory, loop back to welcome screen
         # (unless the window itself was closed: then the game quits)

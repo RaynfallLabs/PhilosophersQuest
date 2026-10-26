@@ -421,8 +421,132 @@ class WelcomeScreen:
         self._alltime_page = 0
         self._god_prompt   = False   # True when showing "Did you mean Dad?" popup
         self._confirm_delete = None  # the name whose save Del asked to erase (Y/N)
+        # The Seeker (the real child playing; seeker_screen.py): who is
+        # chosen, the unlock cards won here (Konami, "god", ...) and the
+        # Konami code's progress.
+        self._seeker = None
+        self._seeker_cards = []
+        self._konami = None
+        self._konami_buf = None      # the name box as it was before the code's B
+        self._open_seeker()
         # Pre-render stone background into a surface
         self._bg = self._make_stone_bg()
+
+    # ------------------------------------------------------------------ the Seeker
+
+    def _open_seeker(self):
+        """Open the active Seeker's profile (None when nobody is chosen: the
+        title's card then says so). A notice the profile carries (a backup
+        restored) shows once on the notice line; an edited file found on
+        load is owed its hidden achievement at once."""
+        try:
+            import seeker_screen
+            import seeker_session
+            self._konami = seeker_screen.KonamiDetector()
+            self._seeker = seeker_session.open_active()
+        except Exception:
+            self._seeker = None
+            return
+        if self._seeker is None:
+            return
+        prof = self._seeker.profile
+        if prof.notice and not self._notice:
+            self._notice = prof.notice
+        prof.notice = None
+        if prof.edited_found:
+            self._seeker_won(self._seeker.settle())
+
+    def _seeker_event(self, event: str, **fields):
+        """Tell the active Seeker (if any) something happened on the title."""
+        if self._seeker is None:
+            return
+        try:
+            self._seeker_won(self._seeker.emit(event, **fields))
+        except Exception:
+            pass
+
+    def _seeker_won(self, ids):
+        """Queue the "Achievement Unlocked" card for what was just won."""
+        import seeker_screen
+        have = {c['id'] for c in self._seeker_cards}
+        for aid in ids or ():
+            e = seeker_screen.entry_dict(self._seeker, aid)
+            if e and aid not in have:
+                self._seeker_cards.append(e)
+                have.add(aid)
+        if self._seeker_cards:
+            seeker_screen.prebuild_card(self._seeker_cards[:3])
+            try:
+                import sound_system
+                sound_system.play('achievement')
+            except Exception:
+                pass
+
+    def _seeker_card_rect(self) -> pygame.Rect:
+        """The Seeker card in the free top-left corner, beside the title
+        banner (empty when the window leaves no room for it)."""
+        x0 = S(24)
+        right = self.cx - S(320) - S(24)
+        w = min(S(270), right - x0)
+        if w < S(150):
+            return pygame.Rect(x0, S(14), 0, 0)
+        h = self._seeker_card_lines(w)[1]
+        return pygame.Rect(x0, S(self._BANNER_Y), w, h)
+
+    def _seeker_card_lines(self, w):
+        """([(text, font, colour)], card height) for a card ``w`` wide."""
+        bf = get_font('body', 18, bold=True)
+        sf = get_font('body', 16)
+        inner = w - 2 * S(12)
+        rows = []
+        if self._seeker is not None:
+            import seeker_screen
+            from text_layout import wrap_lines
+            for line in wrap_lines(self._seeker.name, inner, bf)[:2]:
+                rows.append((line, bf, KT.TEXT_QUIZ))
+            won, total = seeker_screen.won_count(self._seeker)
+            rows.append((f"{won} of {total} Won", sf, KT.TEXT_DIM))
+        else:
+            rows.append(("No Seeker chosen", bf, KT.TEXT_QUIZ))
+        def height(rows_):
+            h_ = S(29) + S(8) + sum(f.get_height() + S(2) for _t, f, _c in rows_) + S(6)
+            return h_ + (key_hints_height() + S(4) if self._seeker is None else 0)
+        if self._seeker is not None and height(rows) > S(self._BANNER_H):
+            rows = rows[:-1]          # a long name on a small window: the name comes first
+        return rows, min(height(rows), S(self._BANNER_H))
+
+    def _draw_seeker_card(self):
+        """"Seeker" and the name (with how many achievements are won), or "No
+        Seeker chosen" and the F4 key: without a Seeker nothing is recorded,
+        so choosing one must be obvious."""
+        from fantasy_ui import readable
+        rect = self._seeker_card_rect()
+        if rect.w <= 0:
+            return
+        rows, _h = self._seeker_card_lines(rect.w)
+        head = pygame.Rect(rect.x + 1, rect.y + 1, rect.w - 2, S(29))
+        hf = get_font('heading', 17, bold=True)
+        if ui_theme.draw_piece(self.screen, 'subpanel', rect, body_color=KT.RAISED):
+            ui_theme.draw_piece(self.screen, 'subpanel_header', head, accent=FP.GOLD)
+            bg = KT.RAISED
+            hs = hf.render("Seeker", True, KT.TEXT_HEAD)
+        else:
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=6)
+            pygame.draw.rect(self.screen, FP.GOLD_DARK, rect, 1, border_radius=6)
+            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, head, border_radius=6)
+            bg = FP.MIDNIGHT
+            hs = hf.render("Seeker", True, FP.GOLD_BRIGHT)
+        self.screen.blit(hs, (head.centerx - hs.get_width() // 2,
+                              head.y + (head.h - S(2) - hs.get_height()) // 2))
+        y = rect.y + S(29) + S(8)
+        for text, font, col in rows:
+            ts = font.render(text, True, readable(col, bg))
+            self.screen.blit(ts, (rect.x + S(12), y))
+            y += font.get_height() + S(2)
+        if self._seeker is None:
+            kh = key_hints_height()
+            draw_key_hints(self.screen, (rect.x + S(12), y + S(2), rect.w - 2 * S(12), kh),
+                           "F4: choose", align='left')
 
     def _make_stone_bg(self):
         """Build the grimoire welcome background: midnight gradient + drifting
@@ -506,6 +630,10 @@ class WelcomeScreen:
                     self._bg = self._make_stone_bg()
                     continue
                 if event.type == pygame.KEYDOWN:
+                    if self._seeker_cards:
+                        # An "Achievement Unlocked" card: any key moves on.
+                        self._seeker_cards = self._seeker_cards[3:]
+                        continue
                     if self._show_alltime:
                         # Up/Down (PgUp/PgDn) turn the pages of a long list;
                         # any other key closes the all-time overlay.
@@ -538,11 +666,24 @@ class WelcomeScreen:
                         elif event.key in (pygame.K_n, pygame.K_ESCAPE):
                             self._confirm_delete = None
                         continue
+                    if self._konami is not None:
+                        # Up Up Down Down Left Right Left Right B A. B and A
+                        # also type into the name box: the code takes back
+                        # what it typed.
+                        if self._konami.feed(event.key):
+                            if self._konami_buf is not None:
+                                self.name_buf = self._konami_buf
+                            self._konami_buf = None
+                            self._seeker_event('konami')
+                            continue
+                        if event.key == pygame.K_b and self._konami.primed():
+                            self._konami_buf = self.name_buf
                     if (event.key in (pygame.K_RETURN, pygame.K_KP_ENTER)
                             and self.name_buf.strip()):
                         name  = self.name_buf.strip()
                         if name.lower() == 'god':
                             self._god_prompt = True
+                            self._seeker_event('title_god')
                             continue
                         build = SECRET_BUILDS.get(name.lower())
                         # QA-tool builds (Shift+I immortal, Shift+W floor warp)
@@ -568,6 +709,10 @@ class WelcomeScreen:
                         self._alltime_page = 0
                     elif event.key == pygame.K_F3:
                         return '__STUDY_MODE__', None
+                    elif event.key == pygame.K_F4 and not (getattr(event, 'mod', 0) & pygame.KMOD_ALT):
+                        # The Seeker Profile screen (seeker_screen.py): who is
+                        # playing, and every achievement won.
+                        return '__SEEKER_PROFILE__', None
                     elif len(self.name_buf) < NAME_MAX and event.unicode.isprintable():
                         self.name_buf += event.unicode
 
@@ -775,6 +920,7 @@ class WelcomeScreen:
         if not kit:
             self._draw_vignette()
         self._draw_title_banner(self.cx)
+        self._draw_seeker_card()
         self._draw_name_input(self.cx, self.cy)
         self._draw_footer(self.cx)
         self._draw_leaderboard()
@@ -782,6 +928,9 @@ class WelcomeScreen:
             self._draw_alltime()
         if self._god_prompt:
             self._draw_god_prompt()
+        if self._seeker_cards:
+            import seeker_screen
+            seeker_screen.draw_unlock_card(self.screen, self._seeker_cards[:3])
 
     def _draw_god_prompt(self):
         """The 'Did you mean Dad?' easter-egg confirm — now in grimoire chrome."""
@@ -1235,11 +1384,13 @@ class WelcomeScreen:
             if confirm:
                 hints = "Y: erase the save   N / Esc: keep it"
             elif has_save and flash <= 0.0:
-                hints = ("Enter: continue your journey   Del: erase save   "
-                         "F2: leaderboard   F3: study mode   Esc: quit")
+                # Short labels: with F4 this row must still fit a 1093 px
+                # window at 16 px (draw_key_hints would otherwise cut them).
+                hints = ("Enter: continue   Del: erase save   F2: leaderboard   "
+                         "F3: study mode   F4: Seeker   Esc: quit")
             else:
                 hints = ("Enter: begin your quest   F2: leaderboard   "
-                         "F3: study mode   Esc: quit")
+                         "F3: study mode   F4: Seeker   Esc: quit")
             draw_key_hints(self.screen, keys, hints)
             ver = self.font_tiny.render(f"v{self.version}", True, FP.FADED_TEXT)
             self.screen.blit(ver, (self.W - ver.get_width() - S(10),
@@ -1251,7 +1402,8 @@ class WelcomeScreen:
         if notice:
             note = self.font_sm.render(notice, True, FP.GOLD_BRIGHT)
             self.screen.blit(note, (cx - note.get_width() // 2, self.H - S(78)))
-        text = "[ ENTER ] begin your quest     [ F2 ] leaderboard     [ F3 ] study mode     [ ESC ] quit"
+        text = ("[ ENTER ] begin your quest     [ F2 ] leaderboard     [ F3 ] study mode     "
+                "[ F4 ] Seeker     [ ESC ] quit")
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - S(28)))
         # Version number — bottom-right corner (FP.FADED_TEXT keeps it

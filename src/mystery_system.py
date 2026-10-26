@@ -526,6 +526,9 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
             game.add_message(m['fail_text'], 'warning')
         return
 
+    # The Seeker's mystery ladder (game_seeker.py), then the forge itself.
+    if hasattr(game, '_seeker_event'):
+        game._seeker_event('mystery_solved', altar=mystery_id)
     reward = m['reward']
 
     # --- Stat bonuses ---
@@ -564,6 +567,8 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
     # --- Special rewards ---
     special = reward.get('special')
     if special == 'forge_mjolnir':
+        if hasattr(game, '_seeker_event'):
+            game._seeker_event('forged', item='mjolnir')
         # The anvil finishes THE Mjolnir: the unique in data/items/weapon.json
         # (whose lore is this very forge). It used to build a second, weaker
         # hammer in code under the same id, so a run could hold two.

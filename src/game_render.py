@@ -7221,9 +7221,29 @@ class RenderMixin:
             h = sum(r // 2 if blank else r for _t, blank, _q in lines)
             return f, lines, r, chrome + h + code_h
 
+        # An unlock (game_seeker._show_achievement_popup): up to three
+        # achievements, each its badge in a rarity frame, name, text and
+        # Reward Code (seeker_screen.draw_block), above the popup's lines.
+        # The badges shrink from 128 px until the popup fits the window.
+        achs = list(d.get('achievements') or [])[:3]
+        ach_bp = ach_h = 0
+        ach_gap = S(14)
+
+        def ach_height(bp):
+            import seeker_screen
+            return (sum(seeker_screen.block_height(e, max_txt, bp) for e in achs)
+                    + ach_gap * (len(achs) - 1) + S(12))
+
         font_body, wrapped_lines, row, needed_h = measure(19)
-        if needed_h > max_h:
+        if achs:
+            for size in (128, 112, 96, 80, 64):
+                ach_bp = S(size)
+                ach_h = ach_height(ach_bp)
+                if needed_h + ach_h <= max_h:
+                    break
+        if needed_h + ach_h > max_h:
             font_body, wrapped_lines, row, needed_h = measure(16)
+        needed_h += ach_h
 
         bh = min(max_h, max(S(250), needed_h))
         by = (layout.WINDOW_H - bh) // 2
@@ -7241,6 +7261,12 @@ class RenderMixin:
             y = by + S(74)
             body_bottom = by + bh - S(48) - code_h
             tx = bx + S(36)
+        if achs:
+            import seeker_screen
+            for e in achs:
+                y += seeker_screen.draw_block(self.screen, tx, y, max_txt, e, ach_bp,
+                                              bg=KT.INTERIOR if b else FP.MIDNIGHT) + ach_gap
+            y += S(12) - ach_gap
         for text, is_blank, is_quoted in wrapped_lines:
             if is_blank:
                 y += row // 2
@@ -7248,7 +7274,11 @@ class RenderMixin:
             if y + font_body.get_height() > body_bottom:
                 break
             col = (200, 195, 160) if is_quoted else FP.PARCHMENT_LIGHT
-            self._ui_blit_text(text, font_body, col, tx, y)
+            if achs:
+                # "Show this code to Dad." sits centred under the codes.
+                self._ui_blit_text(text, font_body, col, bx + bw // 2, y, align='center')
+            else:
+                self._ui_blit_text(text, font_body, col, tx, y)
             y += row
 
         if code:
@@ -9040,6 +9070,8 @@ class RenderMixin:
             import topic_cards
             return (f"{topic_cards.subject_label(entry.get('_subject', ''))}  •  "
                     + ("Read" if entry.get('_read') else "Not read yet"))
+        if category == 'achievements':
+            return "Won" if entry.get('_won') else "Locked"
         if category == 'wonders':
             if entry.get('_kind') == 'sphere':
                 lvl = int((entry.get('sphere') or {}).get('hatch_level', 1) or 1)
@@ -9088,6 +9120,8 @@ class RenderMixin:
         return lines
 
     def _encyclopedia_article_lines(self, category, entry):
+        if category == 'achievements':
+            return self._achievement_article_lines(entry)
         if not entry:
             return [("No entry selected.", FP.FADED_TEXT, self.font_sm)]
         name = entry.get('name', entry.get('_id', entry.get('id', '?')))
@@ -9309,12 +9343,17 @@ class RenderMixin:
         title = "ENCYCLOPEDIA"
         _families_view = (category == 'bestiary'
                           and getattr(self, '_bestiary_view', 'kinds') == 'families')
+        # Tab n: the Seeker's achievements (seeker_screen.py), one category
+        # of them at a time (Tab cycles them, as the Bestiary's Tab does).
+        _ach_cats, _ach_cat = self._achievement_categories() if category == 'achievements' else ([], None)
         if category:
             label = next((label for _k, slug, label in cats if slug == category),
                          category.title())
             title = f"ENCYCLOPEDIA - {label.upper()}"
             if category == 'bestiary':
                 title += " - FAMILIES" if _families_view else " - KINDS"
+            if _ach_cat:
+                title += f" - {_ach_cat['name'].upper()}"
         panel = self._ui_modal_panel(title, border_color=FP.GOLD,
                                      max_w=1428, max_h=766)
         body = self._ui_modal_body(panel)
@@ -9330,7 +9369,12 @@ class RenderMixin:
         cat_body = self._ui_subpanel(cat_rect, "Categories")
         journal = category == 'journal'
         if not journal:
-            list_body = self._ui_subpanel(list_rect, "Families" if _families_view else "Known Entries")
+            list_label = "Families" if _families_view else "Known Entries"
+            if _ach_cat:
+                import seeker_screen
+                _w, _t = seeker_screen.won_count(self._seeker, _ach_cat['id'])
+                list_label = f"{_ach_cat['name']} {_w}/{_t}"
+            list_body = self._ui_subpanel(list_rect, list_label)
             article_body = self._ui_subpanel(article_rect, "Article")
 
         # Every category in view (twelve since the Wonders pages): the rows
@@ -9366,7 +9410,7 @@ class RenderMixin:
             self._draw_journal(pygame.Rect(list_rect.x, body.y,
                                            body.right - list_rect.x, body.h))
             self._ui_footer(panel, "Tab or 1-4: page   Up/Down/PgUp/PgDn: scroll   "
-                                   "Left/Right or a-m: category   ESC: categories")
+                                   "Left/Right or a-n: category   ESC: categories")
             return
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
@@ -9376,13 +9420,15 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-m: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-n: open   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),
                          max(0, len(entries) - 1)))
         self.encyclopedia_selection = sel
-        entry_row_h = S(60)
+        _ach = category == 'achievements'
+        # An achievement row holds its badge and, for a long name, two lines.
+        entry_row_h = S(68) if _ach else S(60)
         visible = max(1, list_body.h // entry_row_h)
         scroll = getattr(self, '_encyclopedia_scroll', 0)
         if sel < scroll:
@@ -9397,6 +9443,7 @@ class RenderMixin:
                                if _families_view else
                                "Every quiz you meet adds its topic's card here."
                                if category == 'lore_codex' else
+                               self._achievement_none_line() if _ach else
                                "No entries discovered in this category yet.",
                                self.font_sm, FP.FADED_TEXT, list_body)
         else:
@@ -9409,6 +9456,10 @@ class RenderMixin:
                 self._ui_row(rect, selected,
                             fill=(35, 43, 82) if selected else FP.MIDNIGHT,
                             border=FP.GOLD if selected else FP.ARCANE_DIM, radius=6)
+                if _ach:
+                    self._draw_achievement_row(rect, entry, selected)
+                    y += entry_row_h
+                    continue
                 name = self._fix_name_case(entry.get('name',
                                                      entry.get('_id', '?')))
                 kit = kit_on()
@@ -9432,6 +9483,7 @@ class RenderMixin:
         entry = getattr(self, '_encyclopedia_entry', None)
         if entry is None and entries:
             entry = entries[sel]
+        self._encyclopedia_article_w = article_body.w - S(14)
         lines = self._encyclopedia_article_lines(category, entry)
         render_lines = []
         for text, color, fnt in lines:
@@ -9445,9 +9497,13 @@ class RenderMixin:
                 # heading's own 24 px font: a two-line gap under the title)
                 render_lines.append(("", color, get_font('body', 10)))
         # The creature's or item's picture heads the article; the text flows
-        # below it and the picture scrolls away with it.
-        plate, spacers = self._lore_plate_lines(
-            lore_art.encyclopedia_ref(category, entry), article_body.w, self.font_sm, 5)
+        # below it and the picture scrolls away with it. An achievement's
+        # badge heads its page the same way.
+        if _ach:
+            plate, spacers = self._achievement_plate_lines(entry, article_body.w, self.font_sm, 5)
+        else:
+            plate, spacers = self._lore_plate_lines(
+                lore_art.encyclopedia_ref(category, entry), article_body.w, self.font_sm, 5)
         render_lines = spacers + render_lines
         self._encyclopedia_article_scroll = self._ui_draw_scroll_lines(
             render_lines, self.font_sm, FP.BODY_TEXT, article_body,
@@ -9461,11 +9517,148 @@ class RenderMixin:
                     else "list")
             footer = f"Up/Down/PgUp/PgDn: scroll article   ESC: {back}"
         else:
-            footer = "Left/Right or a-m: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
+            footer = "Left/Right or a-n: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
             if category == 'bestiary':
                 footer = ("Tab: " + ("kinds" if _families_view else "families") + "   Up/Down: entry   "
                           "Enter: detail   PgUp/PgDn: article   Left/Right: category   ESC: categories")
+            elif _ach_cat:
+                nxt = _ach_cats[(_ach_cats.index(_ach_cat) + 1) % len(_ach_cats)]['name']
+                footer = (f"Tab: {nxt}   Up/Down: entry   Enter: detail   PgUp/PgDn: article   "
+                          "Left/Right: category   ESC: categories")
         self._ui_footer(panel, footer)
+
+    # -- Achievements (Encyclopedia tab n; seeker_screen.py) ----------------
+
+    def _achievement_categories(self):
+        """(every achievement category, the one shown) for tab n, or
+        ([], None) without a Seeker."""
+        s = getattr(self, '_seeker', None)
+        if s is None:
+            return [], None
+        import seeker_screen
+        cats = seeker_screen.categories(s.book)
+        if not cats:
+            return [], None
+        return cats, cats[int(getattr(self, '_achievement_cat', 0) or 0) % len(cats)]
+
+    def _achievement_none_line(self) -> str:
+        """Tab n with nobody recording: say why, in one line."""
+        if getattr(self, '_seeker_off', False):
+            return "Achievements are not recorded on this journey."
+        return "Choose a Seeker on the title screen (F4) and your achievements are kept here."
+
+    def _draw_achievement_row(self, rect, entry, selected):
+        """One achievement in the list: its badge (grey and padlocked until
+        won), its name, and Won or Locked (with how far along a ladder is)."""
+        import seeker_screen
+        kit = kit_on()
+        bp = min(S(48), rect.h - S(8))
+        img = seeker_screen.badge_surface(entry['_art'], bp, entry['_won'],
+                                          rarity=entry.get('_rarity'), category=entry.get('_category'))
+        self.screen.blit(img, (rect.x + S(8), rect.centery - bp // 2))
+        tx = rect.x + S(8) + bp + S(12)
+        tw = rect.right - tx - S(10)
+        bf = get_font('body', 16) if kit else get_font('small', 12)
+        # What each row says is worked out once per list (and window size),
+        # not on every frame.
+        import ui_scale
+        entries = getattr(self, 'encyclopedia_entries', None) or []
+        key = (id(entries), len(entries), tw, kit, ui_scale.get())
+        got = getattr(self, '_achievement_rows', None)
+        if got is None or got[0] != key:
+            got = self._achievement_rows = (key, self._achievement_row_texts(entries, tw, kit, bf))
+        nf, texts = got[1]
+        lines, brief, won = texts.get(entry['_id'], ([entry.get('name', '')], '', False))
+        bg = KT.SELECTED if selected else KT.RAISED
+        col = self._ui_row_text(FP.GOLD_BRIGHT if selected else FP.BODY_TEXT, selected)
+        block = len(lines) * nf.get_height() + S(3) + bf.get_height()
+        ty = rect.y + max(S(4), (rect.h - block) // 2)
+        for line in lines:
+            self._ui_blit_text(line, nf, col, tx, ty)
+            ty += nf.get_height()
+        ty += S(3)
+        bcol = FP.SUCCESS_TEXT if won else FP.FADED_TEXT
+        self._ui_blit_text(brief, bf, readable(bcol, bg) if kit else bcol, tx, ty, max_width=tw)
+
+    def _achievement_row_texts(self, entries, tw, kit, bf):
+        """(name font, {id: (name lines, brief, won)}) for the list. ONE name
+        size for every row (the largest at which every name fits on a line);
+        a name that fits no size wraps to two lines."""
+        names = [self._fix_name_case(e.get('name', '')) for e in entries]
+        sizes = (18, 17, 16) if kit else (15, 14, 13)
+        role = 'body' if kit else 'small'
+        size = next((z for z in sizes
+                     if all(get_font(role, z, bold=True).size(n)[0] <= tw for n in names)),
+                    sizes[-1])
+        nf = get_font(role, size, bold=True)
+        s = getattr(self, '_seeker', None)
+        out = {}
+        for e, name in zip(entries, names):
+            brief = "Won" if e['_won'] else "Locked"
+            if not e['_won'] and s is not None:
+                prog = s.book.progress(e['_id'], s.profile, s.run)
+                more = f"  •  {prog[0]:,} of {prog[1]:,}" if prog else ''
+                if more and bf.size(brief + more)[0] <= tw:
+                    brief += more
+            out[e['_id']] = (self._wrap_text(name, nf, tw)[:2] or [''], brief, e['_won'])
+        return nf, out
+
+    def _achievement_plate_lines(self, entry, body_w, font, line_gap):
+        """The badge at the top of an achievement's article and the blank
+        lines that make room for it (as ``_lore_plate_lines``)."""
+        if not entry:
+            return None, []
+        import seeker_screen
+        pad = S(self._LORE_PLATE_PAD)
+        bp = min(S(seeker_screen.DETAIL_BADGE), body_w - S(12) - 2 * pad)
+        if bp < S(32):
+            return None, []
+        surf = seeker_screen.badge_surface(entry['_art'], bp, entry['_won'],
+                                           rarity=entry.get('_rarity'), category=entry.get('_category'))
+        line_h = font.get_height() + S(line_gap)
+        n = -(-(surf.get_height() + 2 * pad + S(12)) // line_h)
+        return surf, [('', None, font)] * n
+
+    def _achievement_article_lines(self, entry) -> list:
+        """An achievement's page: name, rarity and category, when and by
+        which hero it was won, the hint (until won) or what it says once
+        won, a ladder's progress, and the Reward Code for Dad."""
+        import seeker_screen
+        s = getattr(self, '_seeker', None)
+        a = s.entry(entry['_id']) if (s is not None and entry) else None
+        if a is None:
+            if s is None and not getattr(self, '_seeker_off', False):
+                return [("A Seeker is you, the one playing. Every hero you play adds to the "
+                         "same achievements, and each one won has a Reward Code to show Dad.",
+                         FP.FADED_TEXT, self.font_sm)]
+            return [(self._achievement_none_line(), FP.FADED_TEXT, self.font_sm)]
+        won = s.profile.is_unlocked(a['id'])
+        bg = KT.RAISED if kit_on() else FP.MIDNIGHT
+        cat = next((c['name'] for c in seeker_screen.categories(s.book) if c['id'] == a['category']), '')
+        lines = [(a['name'], FP.GOLD_PALE, get_font('heading', 24)),
+                 (f"{seeker_screen.RARITY_NAMES.get(a['rarity'], '')}  •  {cat}",
+                  readable(seeker_screen.rarity_color(a['rarity']), bg), self.font_sm),
+                 (seeker_screen.status_line(s, a['id']),
+                  FP.SUCCESS_TEXT if won else FP.FADED_TEXT, self.font_sm)]
+        lad = seeker_screen.ladder_info(s.book, a)
+        if lad:
+            lines.append((f"Tier {lad[0]} of {lad[1]}", FP.FADED_TEXT, self.font_sm))
+        lines.append(("", FP.BODY_TEXT, get_font('body', 10)))
+        if won:
+            code = s.code(a['id'])
+            lines += [(a['unlocked_text'], FP.BODY_TEXT, self.font_sm),
+                      ("", FP.BODY_TEXT, get_font('body', 10)),
+                      ("Reward Code", FP.GOLD_BRIGHT, self.font_sm),
+                      (code, FP.GOLD_BRIGHT,
+                       seeker_screen.code_font(code, getattr(self, '_encyclopedia_article_w', S(300)))),
+                      ("Show this code to Dad.", FP.PARCHMENT_LIGHT, self.font_sm)]
+        else:
+            lines += [("Hint", FP.GOLD_BRIGHT, self.font_sm),
+                      (a['hint'], FP.PARCHMENT_LIGHT, self.font_sm)]
+            prog = s.book.progress(a['id'], s.profile, s.run)
+            if prog:
+                lines.append((f"Progress: {prog[0]:,} of {prog[1]:,}", FP.CYAN_ACCENT, self.font_sm))
+        return lines
 
     # -- The Journal (Encyclopedia tab h; DEEDS_KARMA_DESIGN 7.5) ----------
 
@@ -9966,6 +10159,7 @@ class RenderMixin:
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Look / Bestiary", FP.BODY_TEXT),
                 ("B, Tab", "Monster families", FP.BODY_TEXT),
+                ("B, N", "Achievements", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [

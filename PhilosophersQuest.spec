@@ -45,6 +45,7 @@ added_files = [
     ('data/gate_lines.json',        'data'),
     ('data/traders.json',           'data'),
     ('data/item_worth.json',        'data'),
+    ('data/achievements.json',      'data'),   # the Seeker's achievements (achievements.py)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),
@@ -56,6 +57,7 @@ added_files = [
     ('assets/icon.ico',             'assets'),
     ('assets/fonts',                'assets/fonts'),
     ('assets/tiles',                'assets/tiles'),
+    ('assets/achievements',         'assets/achievements'),   # badge art (seeker_screen.py)
     # UI art kit (optional painted panels/frames; see assets/ui/README.md).
     # Loaded by src/ui_theme.py at startup; missing art = procedural UI.
     ('assets/ui',                   'assets/ui'),
@@ -68,6 +70,7 @@ added_files = [
 bundle_excludes = [
     'data/questions/_pruned',
     'assets/ui/README.md',
+    'assets/achievements/README.md',
 ]
 
 
@@ -92,6 +95,11 @@ a = Analysis(
         'npc_encounters', 'quirk_system', 'container_system',
         'fantasy_ui', 'sound_system', 'level_manager',
         'status_effects', 'paths', 'game_log',
+        # The Seeker profile. _dad_key is written by the release build from
+        # the PQ_DAD_KEY secret (tools/release/write_dad_key.py); it is never
+        # in the repo, and is imported only inside seeker_codes.
+        'seeker_codes', 'seeker_profile', 'seeker_session', 'achievements',
+        'game_seeker', 'seeker_screen', '_dad_key',
         # Standard lib used in except blocks / logging
         'pickle', 'traceback', 'logging', 'logging.handlers',
     ],

@@ -309,6 +309,7 @@ class EscortMixin:
         self._escort_end(esc, 'on_fail', chron_kind='loss', default_line=default)
 
     def _escort_arrived(self, esc):
+        self._seeker_event('escort_delivered', person=getattr(esc, 'name', None))
         self._escort_end(esc, 'on_arrive', chron_kind='consequence')
 
     # ------------------------------------------------------------------

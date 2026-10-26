@@ -161,6 +161,13 @@ def note(game, deed_id: str, *, source: str, tags=(), payload=None,
 
 # ---------------------------------------------------------------- recording
 
+# Who is listening for deeds as they are written: the Seeker's achievements
+# (game_seeker.py sets it to a callable(deed) for the run, or None). A
+# listener is never the reason a deed fails, and deeds backfilled from an old
+# save (source 'legacy') are not news.
+ON_RECORD = None
+
+
 def record(reg: dict, deed_id: str, *, floor: int, block: int, turn: int = 0,
            source: str = '', tags=(), payload=None, ttl_floors=None,
            unique: bool = False, engine: bool = False, deepest: int | None = None):
@@ -190,6 +197,11 @@ def record(reg: dict, deed_id: str, *, floor: int, block: int, turn: int = 0,
         'expires_floor': (int(base) + int(ttl_floors)) if ttl_floors is not None else None,
     }
     reg['log'].append(deed)
+    if ON_RECORD is not None and source != 'legacy':
+        try:
+            ON_RECORD(deed)
+        except Exception:
+            pass
     return deed
 
 

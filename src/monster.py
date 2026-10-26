@@ -171,6 +171,13 @@ def _edge_drain_block(player, m) -> bool:
         return False
 
 
+
+# Told of every blow a monster takes: callable(monster, amount, dealt) or None.
+# ``amount`` is the blow, ``dealt`` what it actually took off (no overkill).
+# The Seeker's achievements listen (game_seeker.py); the game says whose blow
+# it was (Game._damage_by).
+DAMAGE_OBSERVER = None
+
 class Monster:
     # Always title case, however monsters.json (or an old save) spelled it.
     name = ProperNameAttr('name')
@@ -842,7 +849,13 @@ class Monster:
                 mult = 1.0
             amount = int(amount * mult)
         actual = max(0, amount)
+        hp_before = self.hp
         self.hp = max(0, self.hp - actual)
+        if actual > 0 and DAMAGE_OBSERVER is not None:
+            try:
+                DAMAGE_OBSERVER(self, actual, min(actual, hp_before))
+            except Exception:
+                pass
         # A creature that splits (src/splitting.py) notes the split this blow
         # earned; the game sets the new body down at the end of the action.
         if (actual > 0 and self.hp > 0 and getattr(self, 'splits', None)

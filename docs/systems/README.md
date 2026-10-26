@@ -80,6 +80,7 @@ reporter are small, independent JSON/text siblings. See
 | [karma_prayer.md](karma_prayer.md) | Karma −10..+10 and the block cap (`karma.adjust`), 30 block anchors + 141 story/flavor encounters, the Road, Setne's Tomb, prayer chain, divine intercession, judgment tiers | Karma / encounter / prayer change |
 | [ui.md](ui.md) | Menus, HUD, help, bestiary, kit, discoveries, threshold copy helper | UI change |
 | [save_meta.md](save_meta.md) | save_system (atomic pickle), highscore_system, crash_handler, paths.py, player.`__setstate__` migration | Save format change |
+| [seeker_profile.md](seeker_profile.md) | The Seeker profile (the real player, across every run), achievements as data, reward codes for Dad and their key, the event spine, badge art | Achievement, profile or reward-code change |
 | [data_schemas.md](data_schemas.md) | JSON conventions, `_meta` sub-object (v2.18), spawn tables, unidentified_name discipline | Data file edit |
 
 ---

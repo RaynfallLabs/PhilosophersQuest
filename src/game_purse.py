@@ -82,12 +82,14 @@ class PurseMixin:
                 if earned:
                     self.__dict__['gold_earned'] = (self.__dict__.get('gold_earned', 0)
                                                     + treasure.total_value(g))
+                    self._seeker_event('gold', amount=int(treasure.total_value(g)))
             out['gems'] = gems
         if rest > 0:
             from items import add_gold_to_tile
             add_gold_to_tile(self.ground_items, rest, p.x, p.y, found=False)
             if earned:
                 self.__dict__['gold_earned'] = self.__dict__.get('gold_earned', 0) + rest
+                self._seeker_event('gold', amount=int(rest))
             out['spilled'] = rest
         if not quiet:
             if out['gems']:

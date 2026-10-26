@@ -25,6 +25,7 @@ Game loop and the one migration seam inside `Player`.
 | `highscores.json` | top-100 scores | JSON (indent 2) | `save_dir()` (frozen) / project root (dev) |
 | `crash_YYYYMMDD_HHMMSS.txt` | one-shot crash report | plain text | `log_dir()` |
 | `ERROR_LOG.txt` | rolling runtime log | plain text | `log_dir()` |
+| `seekers/seeker_<name>.json` | the Seeker's lifetime profile and achievements (sealed; see [seeker_profile.md](seeker_profile.md)) | JSON | `save_dir()/seekers` |
 
 The last three live beside each other so a playtester finds them in
 one place. Save files live in `save_dir()` (same base folder on

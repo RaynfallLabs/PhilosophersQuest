@@ -483,6 +483,10 @@ def harness(trace: bool = True):
             patch(sound_system, '_settings_path', lambda: str(tmp / 'settings.json'))
         patch(random, 'Random', DetRandom)
         patch(pygame.time, 'get_ticks', lambda: FROZEN_TICKS_MS)
+        # The Seeker scenes set a fixed code key (stable Reward Codes); it is
+        # put back on exit like everything else here.
+        import seeker_codes
+        patch(seeker_codes, '_KEYS_OVERRIDE', seeker_codes._KEYS_OVERRIDE)
         if trace:
             patch(pygame.font, 'Font', TracingFont)
             patch(pygame.sysfont, 'Font', TracingFont)
@@ -1038,6 +1042,152 @@ def _(screen):
        kind='study')
 def _(screen):
     return _study_answer_frame(screen, False)
+
+
+# -- The Seeker profile and its achievements (src/seeker_screen.py) ------------
+# Each scene writes its own profile through seeker_profile's API (the sandbox
+# is wiped before every scene), sealed with a fixed test key so the Reward
+# Codes on screen are the same every run.
+
+SEEKER_NAME = 'Robyn'
+_SEEKER_KEYS = {'label': 'pq1', 'keys': {'pq1': bytes(range(101, 133))}}
+
+
+def _seeker_fixture(name=SEEKER_NAME, *, others=(), events=('duck_worn', 'tier_cleared', 'aim_high'),
+                    unseen=('questions_100', 'duck_worn'), skip=()):
+    """A Seeker part way into the game: lifetime counters, everything those
+    counters earn, a few events won, two unlocks not yet seen ("New"). Made
+    the active Seeker; ``others`` are more Seekers on this computer."""
+    import achievements
+    import seeker_codes
+    import seeker_profile
+    seeker_codes._KEYS_OVERRIDE = _SEEKER_KEYS
+    for other in others:
+        seeker_profile.set_active(other)
+    doc = seeker_profile.new_doc(name)
+    doc['created'] = '2026-10-01'
+    doc['stats'].update({'questions_answered': 370, 'cards_opened': 112, 'kills': 412,
+                         'damage_dealt': 18_450, 'floors_explored': 9, 'traps': 6, 'falls': 3,
+                         'journeys': 7, 'right_math': 140, 'right_geography': 120,
+                         'right_history': 101, 'right_animal': 88, 'study_answers': 40})
+    doc['best'].update({'right_streak': 31, 'biggest_blow': 312, 'deepest_floor': 17})
+    doc['sets']['secret_builds'] = ['corwin', 'fianna']
+    book = achievements.load()
+    owed = book.settled(seeker_profile.Profile(name, doc))
+    heroes = ('Fianna', 'Corwin')
+    won = [a for a in list(events) + owed if a not in skip]
+    for i, aid in enumerate(won):
+        doc['unlocked'][aid] = {'at': f'2026-10-{10 + i % 15:02d}T19:{10 + i:02d}',
+                                'version': '3.3.0',
+                                'hero': '' if aid == 'aim_high' else heroes[i % 2]}
+    doc['seen'] = sorted(a for a in won if a not in unseen)
+    seeker_profile.write(seeker_profile.profile_path(name), doc)
+    seeker_profile.set_active(name)
+
+
+def run_seeker_frame(screen, keys=()):
+    """Drive the REAL SeekerScreen.run loop for one frame."""
+    from seeker_screen import SeekerScreen
+    s = SeekerScreen(screen)
+    _post_keys(keys)
+    _run_one_frame(lambda: s.run(FakeClock()))
+    return s
+
+
+def _seeker_in_game(g):
+    """The run's Seeker, as game_seeker._seeker_init opens it (without the
+    run_start event, which would count a journey)."""
+    import achievements
+    import seeker_profile
+    import seeker_session
+    _seeker_fixture()
+    g._seeker = seeker_session.Session(seeker_profile.load(SEEKER_NAME),
+                                       run=achievements.RunTally(getattr(g, '_seeker_run', None)),
+                                       hero=g.player_name)
+    return g._seeker
+
+
+@scene('seeker_gallery', 'Seeker', 'Title, F4: the Seeker Profile, Scholar badges; a won badge '
+       'chosen (date, hero, Reward Code, "New").', kind='seeker', key=True)
+def _(screen):
+    _seeker_fixture()
+    return run_seeker_frame(screen)
+
+
+@scene('seeker_detail', 'Seeker', 'Seeker Profile, Tab twice to Depths, Right: a locked ladder '
+       'tier (hint, tier pips, progress bar).', kind='seeker')
+def _(screen):
+    _seeker_fixture()
+    return run_seeker_frame(screen, [pygame.K_TAB, pygame.K_TAB, pygame.K_RIGHT])
+
+
+@scene('seeker_name_entry', 'Seeker', 'Seeker Profile, F4: "Who Is Playing?", a name being typed, '
+       'three Seekers listed.', kind='seeker')
+def _(screen):
+    _seeker_fixture(others=('Fianna', 'Corwin'))
+    return run_seeker_frame(screen, [pygame.K_F4, 'F', 'i'])
+
+
+@scene('seeker_name_first', 'Seeker', 'Title, F4 with no Seeker chosen yet: "Who Is Playing?" '
+       'straight away.', kind='seeker')
+def _(screen):
+    import seeker_codes
+    seeker_codes._KEYS_OVERRIDE = _SEEKER_KEYS
+    return run_seeker_frame(screen)
+
+
+@scene('title_seeker_active', 'Title', 'Welcome screen with a Seeker chosen: the Seeker card '
+       '(name, achievements won).', kind='welcome')
+def _(screen):
+    _seeker_fixture()
+    return run_welcome_frame(screen)
+
+
+@scene('title_seeker_none', 'Title', 'Welcome screen with no Seeker chosen: "No Seeker chosen", '
+       'F4 to choose.', kind='welcome')
+def _(screen):
+    return run_welcome_frame(screen)
+
+
+@scene('title_achievement_card', 'Title', 'Welcome screen, the Konami code: the Achievement '
+       'Unlocked card over the title.', kind='welcome')
+def _(screen):
+    _seeker_fixture()
+    return run_welcome_frame(screen, keys=[pygame.K_UP, pygame.K_UP, pygame.K_DOWN, pygame.K_DOWN,
+                                           pygame.K_LEFT, pygame.K_RIGHT, pygame.K_LEFT,
+                                           pygame.K_RIGHT, 'b', 'a'])
+
+
+@scene('menu_encyclopedia_achievements', 'Menus',
+       'B, n: the Achievements tab (Scholar), a won entry: badge, date and hero, Reward Code.',
+       expect='encyclopedia')
+def _(g):
+    _seeker_in_game(g)
+    press(g, pygame.K_b)
+    press(g, pygame.K_n, 'n')
+
+
+@scene('menu_encyclopedia_achievements_none', 'Menus',
+       'B, n with no Seeker chosen: one line on choosing one on the title (F4).',
+       expect='encyclopedia')
+def _(g):
+    g._seeker = None
+    press(g, pygame.K_b)
+    press(g, pygame.K_n, 'n')
+
+
+@scene('popup_achievement_unlocked', 'Popups', 'Win an achievement (the Konami code is one): '
+       'ACHIEVEMENT UNLOCKED with its badge and Reward Code.', expect='story_popup')
+def _(g):
+    _seeker_in_game(g)
+    g._show_achievement_popup(['thirty_lives'])
+
+
+@scene('popup_achievement_several', 'Popups', 'Three achievements won at once: one popup, three '
+       'badges and codes (the longest name and text among them).', expect='story_popup')
+def _(g):
+    _seeker_in_game(g)
+    g._show_achievement_popup(['questions_100', 'gleipnir', 'questions_100000'])
 
 
 # -- Main play view ------------------------------------------------------------

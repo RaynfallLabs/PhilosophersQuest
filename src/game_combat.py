@@ -564,7 +564,9 @@ class CombatMixin:
         pet = Pet(species, spawn_x, spawn_y, level=level)
         pet.hatch_sphere = sphere_id          # the pet card's "Hatched From"
         self.pets.append(pet)
+        self._seeker_event('pet_hatched', pet=species, line=species)
         if species in FAMILY_PETS:
+            self._seeker_event('rare_pet', pet=species)
             met = getattr(self.player, 'family_cats_met', None)
             if not isinstance(met, set):
                 met = set()
@@ -623,6 +625,7 @@ class CombatMixin:
         dad = DadPet(spawn_x, spawn_y, duration=5)
         self.pets.append(dad)
         self.add_message("Dad is here! Everything will be fine now!", 'success')
+        self._seeker_event('dad_summoned')
 
     def _find_first_monster_in_path(self, x0, y0, x1, y1):
         """Walk Bresenham line from (x0,y0) to (x1,y1). Return first alive monster hit, or None.
@@ -1124,6 +1127,15 @@ class CombatMixin:
                             if cur_str > 0:
                                 _pet.STR = cur_str + _bonus
                                 _pet._aura_str_applied_by = id(_slot)
+        # The Seeker's achievements (game_seeker.py): what fell, and how.
+        self._seeker_event('kill', monster=monster.kind, ranged=bool(ranged),
+                           unarmed=bool(unarmed), boss=bool(getattr(monster, 'is_boss', False)),
+                           legendary='legendary' in (getattr(monster, 'tags', None) or ()),
+                           family=getattr(monster, 'family', None))
+        if getattr(monster, 'is_boss', False):
+            import boons as _boons
+            if _boons.solved_quest(self.player, monster.kind):
+                self._seeker_event('story_way', monster=monster.kind)
         # Quirk on_kill hook — single canonical call site
         qs = getattr(self, 'quirk_system', None)
         if qs:
@@ -1198,6 +1210,7 @@ class CombatMixin:
             seal_id = 'seal_of_' + monster.kind.replace('seal_demon_', '')
             self.seals_broken.add(seal_id)
             count = len(self.seals_broken)
+            self._seeker_event('seals_broken', count=count)
             _ORD = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
             _SEAL_WORDS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven']
             _short = monster.name.split(',')[0]
@@ -1682,6 +1695,7 @@ class CombatMixin:
             self.state = STATE_PLAYER
             wand.identified = True
             self.player.known_item_ids.add(wand.id)
+            self._seeker_event('wand_zapped', wand=wand.id)
             _qs_wand = getattr(self, 'quirk_system', None)
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified)
@@ -2461,6 +2475,15 @@ class CombatMixin:
                               killed: bool) -> None:
         """Kick off the end-of-attack flourish (effects/strike_finisher.py).
         Purely visual and non-blocking; never allowed to break combat."""
+        # Every link of the weapon's chain landed: the Seeker's Full Chain.
+        try:
+            w = getattr(self.player, 'weapon', None)
+            full = (w.max_chain_length() if callable(getattr(w, 'max_chain_length', None))
+                    else (getattr(w, 'max_chain_length', 0) or len(getattr(w, 'chain_multipliers', ()) or ())))
+            if w is not None and full and chain >= full:
+                self._seeker_event('full_chain', subject='math')
+        except Exception:
+            pass
         rt = getattr(self, 'effects_runtime', None)
         if rt is None:
             return
@@ -2743,6 +2766,8 @@ class CombatMixin:
             if did_attack:
                 _hp_before_death = self.player.hp
                 dmg, msg = dm.attack(self.player)
+                if dmg:
+                    self._last_hit_by = 'death'      # who struck last (the Seeker's run end)
                 if self.player.hp <= 0 and self._death_gives_back_a_breath(_hp_before_death):
                     msg = None
                 if msg:
@@ -2899,6 +2924,8 @@ class CombatMixin:
                     dmg, msg = m.attack(self.player)
                 finally:
                     self.player._trait_hooks_held = False
+                if dmg:
+                    self._last_hit_by = getattr(m, 'kind', None)
                 if (getattr(m, '_unseen', False) is True
                         and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > 1):
                     # Unseen and not beside you: the only clue is where it came from.

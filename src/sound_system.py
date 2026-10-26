@@ -293,6 +293,10 @@ def init() -> bool:
         'stat_up':      lambda: _make_notes([(523, 0.08), (659, 0.08), (784, 0.08), (1047, 0.22)], volume=0.26),
         'trait':        lambda: _make_notes([(659, 0.10), (784, 0.10), (988, 0.10), ((784, 988, 1319), 0.40)],
                                             wave='triangle', volume=0.32),
+        # An achievement (game_seeker.py): a rising fanfare, brighter than a trait's.
+        'achievement':  lambda: _make_notes([(523, 0.09), (659, 0.09), (784, 0.09), (1047, 0.12),
+                                             ((784, 1047, 1319, 1568), 0.55)],
+                                            wave='triangle', volume=0.34),
         'chest_open':   lambda: _make_notes([(220, 0.06), (330, 0.06), (440, 0.16)], wave='square', volume=0.16),
         'lock_fail':    lambda: _make_notes([(150, 0.10), (120, 0.16)], wave='square', volume=0.16),
         'eat':          lambda: _make_notes([(190, 0.05), (150, 0.05), (175, 0.06)], wave='triangle', volume=0.24, gap=0.03),

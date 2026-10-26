@@ -152,6 +152,8 @@ def adjust(game, delta: int, *, kind: str, source: str,
         slots[slot_block] = source
     if new != cur:
         _crossing_line(game, cur, new)
+        if hasattr(game, '_seeker_event'):
+            game._seeker_event('karma', value=int(new))    # the Seeker's Clean Soul
     kreg['ledger'].append({
         'seq': deeds.next_seq(reg), 'floor': floor, 'block': block, 'kind': kind,
         'source': source, 'requested': requested, 'applied': applied,

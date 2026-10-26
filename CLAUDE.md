@@ -112,6 +112,14 @@ src/
   quirk_system.py     - Per-character unlockable quirks
   quirk_text.py       - Player-facing quirk and power text
 
+  # The Seeker profile (the real player, across every run) and achievements
+  seeker_profile.py   - The Seeker's sealed profile file (save_dir()/seekers): backup, merge, set-aside
+  seeker_codes.py     - Reward codes for Dad and the profile seal (the key is never in the repo)
+  achievements.py     - Achievement rules from data/achievements.json: counters, triggers, ladders
+  seeker_session.py   - The running Seeker: emit an event, unlock, save, look up a code
+  game_seeker.py      - SeekerMixin: game events reach the Seeker; the unlock popup waits for calm play
+  seeker_screen.py    - The Seeker Profile screen (title screen, F4) and the badge gallery
+
   # UI and presentation
   renderer.py         - Pygame tile rendering
   ui.py / fantasy_ui.py - Sidebar, message log, menus, fantasy-themed helpers

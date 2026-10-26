@@ -567,6 +567,7 @@ class DivineMixin:
             self.add_message(
                 "The shattered fragments of Gram fuse together in white-hot light. "
                 "A reforged blade rests upon the altar, whole and gleaming.", 'success')
+            self._seeker_event('forged', item='gram')
             # Spawn reforged Gram on the altar
             from items import load_items, copy_at
             weapons = load_items('weapon')
@@ -656,6 +657,7 @@ class DivineMixin:
             grant_identified(self, gleipnir)
             gleipnir.x, gleipnir.y = fx, fy
             self.ground_items.append(gleipnir)
+            self._seeker_event('forged', item='gleipnir')
             self.add_message(
                 "The six things that do not exist go into the fire, and the fire takes them.", 'info')
             self.add_message(
@@ -700,6 +702,7 @@ class DivineMixin:
                 from items import grant_identified
                 grant_identified(self, sandal)
                 self.ground_items.append(sandal)
+                self._seeker_event('forged', item='vidars_sandal')
                 self.add_message(
                     "The scraps draw together on the altar and close into one thick shoe.", 'info')
                 self.add_message(
@@ -1006,6 +1009,8 @@ class DivineMixin:
             self._resolve_simple_prayer(chain, at_altar, kind=kind,
                                         hp_pct=_hp_pct_at_prayer)
             self.state = STATE_PLAYER
+            if chain > 0:
+                self._seeker_event('prayer_answered')
             _qs_pray = getattr(self, 'quirk_system', None)
             if _qs_pray and chain > 0:
                 _qs_pray.on_prayer(_hp_pct_at_prayer)
@@ -1386,6 +1391,7 @@ class DivineMixin:
     # DEBUFFS.
     def _resolve_intercession_success(self):
         """Full-restore + invulnerable 10t + spawn random artifact at feet."""
+        self._seeker_event('intercession')
         p = self.player
         p.hp = p.max_hp
         p.mp = p.max_mp

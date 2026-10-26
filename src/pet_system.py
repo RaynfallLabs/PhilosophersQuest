@@ -547,6 +547,20 @@ def hatch_message(pet) -> str:
     return pet.species['stages'][0]['msg']
 
 
+# Told when a companion grows: callable(pet, 'level' or 'evolved', value) or
+# None. The Seeker's achievements listen (game_seeker.py); ``value`` is the
+# new level, or the new form counted from 1 (the hatchling is form 1).
+ON_GROWTH = None
+
+
+def _grew(pet, what: str, value: int):
+    if ON_GROWTH is not None:
+        try:
+            ON_GROWTH(pet, what, value)
+        except Exception:
+            pass
+
+
 class Pet:
     """A companion creature that follows the player and fights enemies."""
 
@@ -687,7 +701,9 @@ class Pet:
             self.level += 1
             self._refresh_stats()
             new_stage = self.stage
+            _grew(self, 'level', self.level)
             if new_stage > old_stage:
+                _grew(self, 'evolved', new_stage + 1)
                 # Evolution! Use species-name placeholder; the message
                 # template has {old} for the prior form.
                 new_species = self.species_name

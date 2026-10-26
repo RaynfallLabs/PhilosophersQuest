@@ -84,6 +84,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-build.txt
 
+      - name: Write the reward-code key from the PQ_DAD_KEY secret
+        # The Seeker's reward codes are signed with a key that is never in
+        # this public repo (src/seeker_codes.py). No secret, no release: a
+        # build with the public dev key would make codes Dad cannot check.
+        env:
+          PQ_DAD_KEY: ${{ secrets.PQ_DAD_KEY }}
+        run: python tools/release/write_dad_key.py
+
       - name: Build one-folder bundle with PyInstaller
         run: pyinstaller PhilosophersQuest.spec --noconfirm
 
@@ -143,6 +151,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-build.txt
+
+      - name: Write the reward-code key from the PQ_DAD_KEY secret
+        # The Seeker's reward codes are signed with a key that is never in
+        # this public repo (src/seeker_codes.py). No secret, no release: a
+        # build with the public dev key would make codes Dad cannot check.
+        env:
+          PQ_DAD_KEY: ${{ secrets.PQ_DAD_KEY }}
+        run: python tools/release/write_dad_key.py
 
       - name: Build one-folder bundle with PyInstaller
         run: pyinstaller PhilosophersQuest.spec --noconfirm

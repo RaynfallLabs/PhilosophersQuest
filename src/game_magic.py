@@ -404,6 +404,7 @@ class MagicMixin:
             self.state = STATE_PLAYER
             wand.identified = True
             self.player.known_item_ids.add(wand.id)
+            self._seeker_event('wand_zapped', wand=wand.id)
             _qs_wand = getattr(self, 'quirk_system', None)
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified_before)
@@ -1470,6 +1471,7 @@ class MagicMixin:
                         "The Robe of the Magus weaves the spell a second time!",
                         'success')
                     self._apply_spell_effect(spell, target)
+            self._seeker_event('spell_cast', spell=spell_id)
             _qs_spell = getattr(self, 'quirk_system', None)
             if _qs_spell:
                 hp_pct = self.player.hp / max(1, self.player.max_hp)
@@ -2557,6 +2559,7 @@ class MagicMixin:
             self.player.known_item_ids.add(scroll.id)
             self.player.remove_from_inventory(scroll)
             self.add_message(f"You read the {display}!", 'success')
+            self._seeker_event('scroll_read', scroll=scroll.id)
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
@@ -2602,6 +2605,18 @@ class MagicMixin:
             base_seconds=self.player.get_quiz_timer('grammar'),
         )
 
+    @staticmethod
+    def _reward_scroll_achievement(scroll_id: str) -> str:
+        """The achievement a reward scroll's template names ('' if none)."""
+        from items import load_items
+        try:
+            t = next((s for s in load_items('scroll') if s.id == scroll_id), None)
+        except Exception:
+            t = None
+        if t is not None:
+            return getattr(t, 'achievement', '') or ''
+        return 'lake_of_fire' if scroll_id == 'scroll_deaths_bane' else ''
+
     def _apply_scroll_effect(self, scroll: 'Scroll'):
         """v2.10.0: no chain arg. `_tstep` is derived from scroll.tier
         (0..4 for T1..T5) and drives the same 5-element ladders per effect
@@ -2630,10 +2645,19 @@ class MagicMixin:
                 f"Healing light washes over you -- {amount} HP restored!", 'success')
 
         elif effect == 'boss_reward':
-            code = scroll.power or '???'
-            self.add_message(f"[REWARD CODE: {code}]", 'loot')
-            self.add_message("Show this code to Dad in real life for a reward!", 'success')
-            self.add_message("You can re-read this scroll at any time to see the code again.", 'info')
+            # The code is the Seeker's own for this boss's achievement (one
+            # system for every code, seeker_codes.py). A scroll from an old
+            # save has no `achievement`: its template in scroll.json does.
+            aid = getattr(scroll, 'achievement', '') or self._reward_scroll_achievement(scroll.id)
+            code = self._seeker_code(aid) if aid else None
+            if code:
+                self.add_message(f"[REWARD CODE: {code}]", 'loot')
+                self.add_message("Show this code to Dad in real life for a reward!", 'success')
+                self.add_message("You can re-read this scroll at any time to see the code again.", 'info')
+            else:
+                self.add_message("The seal names a reward, but no Seeker has claimed it. "
+                                 "Choose your Seeker on the title screen (F4) to earn "
+                                 "reward codes.", 'info')
             # Put the scroll back in inventory so the player can re-read it
             self.player.inventory.append(scroll)
             return  # skip the remove that the caller does
@@ -3450,6 +3474,7 @@ class MagicMixin:
             tier = int(t['tier'])
             if (not qs.is_unlocked(t['id']) and qe.is_mastered(pm.SUBJECT, tier)
                     and qs.on_philosophy_tier_mastered(tier)):
+                self._seeker_event('philosophy_tier', tier=tier)
                 named = self._mastery_identify_carried()
                 if not named:
                     self.add_message(f"From now on, things of tier {tier} will name "
@@ -3530,6 +3555,7 @@ class MagicMixin:
             item.buc_known = True
         self._propagate_identification(item.id, seed_item=item)
         if not was_full:
+            self._seeker_event('identify', item=item.id)
             _qs_id = getattr(self, 'quirk_system', None)
             if _qs_id:
                 _qs_id.on_item_identified(item.id)
@@ -3795,6 +3821,7 @@ class MagicMixin:
             # Success: learn the spell + consume the book.
             mp_cost = book.mp_cost
             self.player.known_spells[spell_id] = mp_cost
+            self._seeker_event('spell_learned', spell=spell_id)
             book.identified = True
             self.player.known_item_ids.add(book.id)
             self.player.remove_from_inventory(book)
@@ -4134,6 +4161,8 @@ class MagicMixin:
             spell_id = book.spell_id
             mp_cost = book.mp_cost
             self.player.known_spells[spell_id] = mp_cost
+            self._seeker_event('spell_learned', spell=spell_id)
+            self._seeker_event('necronomicon', outcome='recited')
             book.identified = True
             self.player.remove_from_inventory(book)
             self.add_message(
@@ -4146,6 +4175,7 @@ class MagicMixin:
                 "Hey, I said the words! Maybe not every single little tiny "
                 "syllable, but I said them!", 'danger')
             self._spawn_necronomicon_undead()
+            self._seeker_event('necronomicon', outcome='failed')
         self._necro_qs = None
         self._advance_turn()
 

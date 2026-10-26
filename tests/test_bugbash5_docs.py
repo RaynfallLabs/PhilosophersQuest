@@ -16,7 +16,9 @@ def test_claude_md_lists_every_src_module():
     section = text.split('## Project Structure', 1)[1].split('\n## ', 1)[0]
     missing = []
     for name in sorted(os.listdir(os.path.join(ROOT, 'src'))):
-        if name.endswith('.py') and name != '__init__.py':
+        # _dad_key.py is the gitignored reward-code key (seeker_codes.py):
+        # it exists only on Brandon's machine and in the release build.
+        if name.endswith('.py') and name != '__init__.py' and not name.startswith('_'):
             if not re.search(r'\b' + re.escape(name[:-3]) + r'\b', section):
                 missing.append(name)
     assert missing == []

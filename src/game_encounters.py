@@ -169,6 +169,7 @@ class EncountersMixin:
             "The cow's eyes glow red. The ground splits open beneath you!", 'danger'
         )
         self.add_message("MOO MOO MOO MOO MOO!", 'danger')
+        self._seeker_event('cow_level')
         self._chron('milestone', "I poked a cow one time too many and the floor opened. Now I am in some kind of cow dimension. None of my books covered this.",
                     once='cow_level')
         self._cow_return_level = self.dungeon_level
@@ -640,6 +641,7 @@ class EncountersMixin:
             from pet_system import UnicornPet
             pet = UnicornPet(unicorn.x, unicorn.y)
             self.pets.append(pet)
+            self._seeker_event('unicorn_joined')
             unicorn.alive = False  # remove the NPC monster
             self.add_message(
                 "The unicorn bows her head to you. A bond forms between your souls — "
@@ -2245,6 +2247,7 @@ class EncountersMixin:
 
         self._judgment_text = text
         self.state = STATE_JUDGMENT
+        self._seeker_event('judgment', outcome=outcome)
 
         if outcome == 'sword_and_scales':
             # Grant both Sword and Scales of Michael + Paladin title

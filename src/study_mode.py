@@ -63,6 +63,11 @@ class StudyMode:
         self._topic = None
         self._card_scroll = 0
         self._card_return = None
+        # The active Seeker (seeker_session.py): Study Mode earns its own few
+        # achievements; its answers never count toward the dungeon ladder.
+        import seeker_session
+        self._seeker = seeker_session.open_active()
+        self._seeker_won: list[str] = []      # unlocks waiting to be shown
 
     def run(self, clock):
         """Main study mode loop. Returns when user presses ESC."""
@@ -83,6 +88,11 @@ class StudyMode:
                     continue
                 if event.type != pygame.KEYDOWN:
                     continue
+                if self._seeker_won:
+                    # Any key puts away the achievement card (it waits here
+                    # rather than over a question).
+                    self._seeker_won = self._seeker_won[3:]
+                    continue
 
                 if self._handle_key(event.key):
                     return  # back to welcome
@@ -95,6 +105,7 @@ class StudyMode:
                 # The Midnight Codex kit: one framed page, inset plaque,
                 # kit rows / answer cards, key-hint footer inside the frame.
                 self._draw_kit(W, H)
+                self._draw_seeker_card()
                 pygame.display.flip()
                 continue
             self._draw_frame(W, H)
@@ -111,7 +122,19 @@ class StudyMode:
                 self._kit_content(pygame.Rect(S(60), S(84), W - S(120), H - S(150)), draw=True)
                 hint = self.font_tiny.render(self._hint(), True, FP.HINT_TEXT)
                 self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - S(30)))
+            self._draw_seeker_card()
             pygame.display.flip()
+
+    def _draw_seeker_card(self):
+        """An achievement Study Mode just earned (Lamp-Lit Study), shown on
+        the answer's result page, never over a question."""
+        if not self._seeker_won or self._phase == 'quiz':
+            return
+        import seeker_screen
+        entries = [e for e in (seeker_screen.entry_dict(self._seeker, a)
+                               for a in self._seeker_won[:3]) if e]
+        if entries:
+            seeker_screen.draw_unlock_card(self.screen, entries)
 
     # Keypad keys do what their main-keyboard twins do (Enter, 1-4).
     _KEY_ALIASES = {
@@ -232,6 +255,9 @@ class StudyMode:
                     self._asked_count += 1
                     if is_correct:
                         self._correct_count += 1
+                    if self._seeker is not None:
+                        self._seeker_won += self._seeker.emit(
+                            'study_answer', subject=self._subject, correct=bool(is_correct))
                     self._last_correct = is_correct
                     self._last_q = q
                     self._last_chosen = chosen

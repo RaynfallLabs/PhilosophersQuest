@@ -151,7 +151,7 @@ DESIGNED_FREE_TEXT = {}
 # The title screen has no modal layer: its glow / vignette are full-window
 # blits, not overlays, and its text floats free by design. Its two modal
 # popups ARE checked.
-NO_PANEL_CHECKED_TITLES = ('title_alltime_scores', 'title_god_prompt')
+NO_PANEL_CHECKED_TITLES = ('title_alltime_scores', 'title_god_prompt', 'title_achievement_card')
 
 
 def _match(table, scene, text):
@@ -747,6 +747,16 @@ def test_title_wheel_captions_never_collide(size):
         lb, *_ = w._leaderboard_rect(len(w._lb_entries))
         assert lb.left >= 0 and lb.right <= size[0] - 20, (size, tuple(lb))
         assert not any(lb.colliderect(r) for r in rects), (size, tuple(lb))
+        # The Seeker card (seeker_screen.py) in the top-left corner, beside
+        # the title banner: clear of the banner, the wheel, Top Runs and the
+        # name box, inside the window.
+        card = w._seeker_card_rect()
+        assert card.w > 0, size
+        banner = pygame.Rect(w.cx - int(320 * ui_scale.get() + 0.5),
+                             int(w._BANNER_Y * ui_scale.get() + 0.5),
+                             int(640 * ui_scale.get() + 0.5), int(w._BANNER_H * ui_scale.get() + 0.5))
+        assert pygame.Rect(0, 0, *size).contains(card), (size, tuple(card))
+        assert not any(card.colliderect(r) for r in rects + [banner, lb, box]), (size, tuple(card))
 
 
 # =============================================================================

@@ -1114,6 +1114,9 @@ class Scroll(Item):
         self.max_chain        = int(defn.get('max_chain', 5))
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
+        # A reward scroll (effect boss_reward) names the achievement whose
+        # code it shows: the Seeker's own (game_seeker.py).
+        self.achievement      = defn.get('achievement', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
@@ -2821,7 +2824,7 @@ def make_death_bane_scroll(x: int, y: int) -> Scroll:
         'quiz_tier': 1,
         'quiz_threshold': 1,
         'effect': 'boss_reward',
-        'power': 'ABYSSAL-VICTOR',
+        'achievement': 'lake_of_fire',
         'unidentified_name': "Scroll of Death's Bane",
         'identified': True,
         'single_copy': True,

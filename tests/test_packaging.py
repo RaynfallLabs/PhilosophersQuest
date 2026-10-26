@@ -200,6 +200,9 @@ _BUNDLED_DIR_ALLOWED = {
     # bundle_excludes. Never .psd/.kra sources, ComfyUI workflows or
     # drafts: those live in _genart/.
     "assets/ui":               {".png", ".json"},
+    # Achievement badges (seeker_screen.py): one 128 px PNG per badge; the
+    # folder's README stays in the repo (bundle_excludes).
+    "assets/achievements":     {".png"},
 }
 _ARTIFACT_MARKERS = ("_v2", "_pre_v2", "_tellgate", "_backup", "_staging")
 

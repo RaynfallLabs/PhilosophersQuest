@@ -43,7 +43,7 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'philosophy_tier':  ('tier',),
     # fighting
     'kill':             ('monster', 'ranged', 'unarmed', 'boss', 'legendary', 'family'),
-    'damage':           ('amount', 'by'),
+    'damage':           ('amount', 'dealt', 'by'),
     'full_chain':       ('subject',),
     'seals_broken':     ('count',),
     'story_way':        ('monster',),
@@ -81,8 +81,7 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'topic_read':       ('subject', 'topic'),
     'trait':            ('trait',),
     # character
-    'oath_kept':        ('oath', 'late'),
-    'deed':             ('kind', 'id'),
+    'deed':             ('kind', 'id', 'late'),
     'karma':            ('value',),
     'judgment':         ('outcome',),
     # journeys
@@ -95,13 +94,10 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'xyzzy':            ('chain',),
     'cow_level':        (),
     'black_knight':     ('outcome',),
-    'emberpup':         ('outcome',),
-    'setne':            ('outcome',),
     'necronomicon':     ('outcome',),
     'forged':           ('item',),
     'tablet_complete':  (),
     'lore_found':       ('item',),
-    'chess_won':        (),
     'flux':             (),
     'ghost_met':        ('own',),
     'unicorn_joined':   (),

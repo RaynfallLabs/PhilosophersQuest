@@ -132,10 +132,22 @@ def note_met(player, subject: str, topic: str | None) -> None:
         _record(player, 'topics_met').add(_key(subject, topic))
 
 
+# Told the first time a topic card is read this run: callable(subject, topic)
+# or None. The Seeker's Well-Read achievement listens (game_seeker.py).
+ON_READ = None
+
+
 def note_read(player, subject: str, topic: str | None) -> None:
     if player is not None and subject and topic and card(subject, topic):
         _record(player, 'topics_met').add(_key(subject, topic))
-        _record(player, 'topics_read').add(_key(subject, topic))
+        read = _record(player, 'topics_read')
+        if _key(subject, topic) not in read:
+            read.add(_key(subject, topic))
+            if ON_READ is not None:
+                try:
+                    ON_READ(subject, topic)
+                except Exception:
+                    pass
 
 
 def has_read(player, subject: str, topic: str) -> bool:

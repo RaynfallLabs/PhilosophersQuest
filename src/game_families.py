@@ -68,6 +68,13 @@ class FamilyMixin:
             return ['', self._family_subhead(title), '']
 
         for what, key, tier in news:
+            # The Seeker's lore achievements (game_seeker.py).
+            if what == 'tier':
+                self._seeker_event('family_tier', family=key, tier=int(tier or 0))
+            elif what == 'circle':
+                self._seeker_event('circle', circle=key)
+            elif what == 'loremaster':
+                self._seeker_event('loremaster')
             if what == 'tier':
                 fid = key
                 line = family_lore.tier_chronicle(fid, tier)

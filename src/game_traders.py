@@ -358,6 +358,7 @@ class TraderMixin:
                              + (f", and pay {pay:,} gold for the rest." if pay else "."), 'success')
         else:
             self.add_message(f"You buy {iname} for {pay:,} gold.", 'success')
+        self._seeker_event('trade', trader=getattr(m, 'person', None) or getattr(m, 'kind', None))
         line = m.line('bought')
         if line:
             self.add_message(f'{m.person}: "{line}"', 'info')

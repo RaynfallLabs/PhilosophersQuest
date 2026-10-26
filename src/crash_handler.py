@@ -110,6 +110,9 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
                 run_over = run_is_over(game)
             if not run_over:
                 save_ok = save_game(game)
+            # The Seeker's profile too: it is written however the run stands.
+            if hasattr(game, '_seeker_flush'):
+                game._seeker_flush()
         except Exception as save_err:
             lines.append("")
             lines.append(f"  EMERGENCY SAVE FAILED: {save_err}")

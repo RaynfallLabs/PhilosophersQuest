@@ -768,6 +768,7 @@ class InputMixin:
             # run ("there are no second chances"); after that the choice
             # just turns you back to the dungeon.
             self.state = STATE_PLAYER
+            self._seeker_event('flux')
             if not getattr(self, '_flux_given', False):
                 self._flux_given = True
                 self._spawn_flux_capacitor()
@@ -796,9 +797,16 @@ class InputMixin:
             self.state = STATE_PLAYER
             return
         if key == pygame.K_RETURN:
-            if self._xyzzy_text.strip().lower() == 'xyzzy':
+            word = self._xyzzy_text.strip().lower()
+            if word == 'xyzzy':
                 self.state = STATE_XYZZY_CONFIRM
                 self._xyzzy_confirm_sel = 0  # 0=Yes, 1=No
+            elif word == 'plugh':
+                # Colossal Cave's other word. Only the cipher in the hints
+                # says so (an achievement; nothing else happens).
+                self.add_message('A hollow voice says, "Plugh."', 'info')
+                self._seeker_event('plugh')
+                self.state = STATE_PLAYER
             else:
                 self.add_message("Nothing happens.", 'info')
                 self.state = STATE_PLAYER
@@ -1826,6 +1834,18 @@ class InputMixin:
         cat_keys = {getattr(pygame, f'K_{key_label}'): slug
                     for key_label, slug, _ in cats}
 
+        def load_achievements():
+            # Tab n: the Seeker's achievements, one category at a time
+            # (seeker_screen.py; read-only). Their badges are built now, not
+            # on a frame.
+            import seeker_screen
+            from ui_scale import px as _px
+            self.encyclopedia_entries = seeker_screen.encyclopedia_entries(
+                getattr(self, '_seeker', None), int(getattr(self, '_achievement_cat', 0) or 0))
+            self._achievement_rows = None        # the rows' texts are worked out again
+            seeker_screen.prebuild_entries(self.encyclopedia_entries,
+                                           (_px(48), _px(seeker_screen.DETAIL_BADGE)))
+
         def open_category(slug: str):
             self.encyclopedia_category = slug
             self.encyclopedia_selection = 0
@@ -1835,7 +1855,10 @@ class InputMixin:
                 if cat_slug == slug:
                     self._encyclopedia_cat_idx = idx
                     break
-            self._encyclopedia_load_entries(slug)
+            if slug == 'achievements':
+                load_achievements()
+            else:
+                self._encyclopedia_load_entries(slug)
 
         if self.encyclopedia_category == '':
             # Category selection screen
@@ -1908,6 +1931,17 @@ class InputMixin:
             self._encyclopedia_scroll = 0
             self._encyclopedia_article_scroll = 0
             self._encyclopedia_load_entries('bestiary')
+            return
+        if key == pygame.K_TAB and self.encyclopedia_category == 'achievements':
+            # Tab / Shift+Tab: the next / previous achievement category.
+            back = bool(pygame.key.get_mods() & pygame.KMOD_SHIFT)
+            self._achievement_cat = int(getattr(self, '_achievement_cat', 0) or 0) + (-1 if back else 1)
+            import seeker_screen
+            self._achievement_cat %= max(1, len(seeker_screen.categories()))
+            self.encyclopedia_selection = 0
+            self._encyclopedia_scroll = 0
+            self._encyclopedia_article_scroll = 0
+            load_achievements()
             return
         if key in cat_keys:
             open_category(cat_keys[key])

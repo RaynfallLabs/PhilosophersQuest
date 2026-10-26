@@ -250,6 +250,9 @@ def save_game(game) -> bool:
             # The Road (road.py: a plain dict) and the people being escorted
             # (escort_system.Escort; never in 'pets').
             '_road': getattr(game, '_road', None),
+            # This run's achievement counters (achievements.RunTally, a plain
+            # dict). The Seeker's lifetime profile is its own file.
+            '_seeker_run': getattr(game, '_seeker_run', None),
             '_traders': getattr(game, '_traders', None),
             'escorts': list(getattr(game, 'escorts', None) or []),
             '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),

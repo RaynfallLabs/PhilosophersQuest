@@ -271,6 +271,7 @@ def _make_prayer_game(*, karma=0, at_altar=False):
     p.x, p.y = 1, 1
 
     g = types.SimpleNamespace()
+    g._seeker_event = lambda *a, **k: []   # no Seeker in this test (game_seeker.py)
     g.player = p
     g.dungeon = d
     g.dungeon_level = 5  # not L100; avoid the holy-fire branch
@@ -451,6 +452,7 @@ def _make_intercession_game(*, at_altar=False, karma=0):
     p.x, p.y = 1, 1
 
     g = types.SimpleNamespace()
+    g._seeker_event = lambda *a, **k: []   # no Seeker in this test (game_seeker.py)
     g.player = p
     g.dungeon = d
     g.dungeon_level = 20

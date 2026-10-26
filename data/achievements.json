@@ -81,7 +81,7 @@
   },
   "damage_dealt": {
    "on": "damage",
-   "add": "amount",
+   "add": "dealt",
    "where": {
     "by": "hero"
    }
@@ -181,7 +181,13 @@
    "collect": "trait"
   },
   "oaths_kept": {
-   "on": "oath_kept"
+   "on": "deed",
+   "where": {
+    "kind": "kept",
+    "late": {
+     "not": true
+    }
+   }
   },
   "forgone": {
    "on": "deed",
@@ -295,10 +301,10 @@
     "correct": true
    }
   },
-  "grown_lightning": {
+  "grown_electric": {
    "on": "pet_evolved",
    "where": {
-    "line": "lightning",
+    "line": "electric",
     "stage": 3
    }
   },
@@ -1565,7 +1571,10 @@
    "code_word": "CHECKMATE",
    "art": "checkmate",
    "trigger": {
-    "event": "chess_won"
+    "event": "deed",
+    "where": {
+     "id": "flag.deaths_lost_turn"
+    }
    }
   },
   {
@@ -2217,7 +2226,7 @@
    "trigger": {
     "all": [
      {
-      "stat": "grown_lightning",
+      "stat": "grown_electric",
       "at_least": 1
      },
      {
@@ -2293,9 +2302,9 @@
    "code_word": "EMBERPUP",
    "art": "i_choose_you",
    "trigger": {
-    "event": "emberpup",
+    "event": "deed",
     "where": {
-     "outcome": "adopted"
+     "id": "saved.emberpup"
     }
    }
   },
@@ -2650,7 +2659,7 @@
    "trigger": {
     "event": "pet_evolved",
     "where": {
-     "line": "duck",
+     "line": "duck_of_doom",
      "stage": 3
     }
    }
@@ -2786,9 +2795,9 @@
    "code_word": "DRAW",
    "art": "bk_draw",
    "trigger": {
-    "event": "black_knight",
+    "event": "deed",
     "where": {
-     "outcome": "draw"
+     "id": "flag.black_knight_draw"
     }
    }
   },
@@ -2802,9 +2811,9 @@
    "code_word": "SENET",
    "art": "senet",
    "trigger": {
-    "event": "setne",
+    "event": "deed",
     "where": {
-     "outcome": "won"
+     "id": "told.won_senet"
     }
    }
   },
@@ -2818,9 +2827,12 @@
    "code_word": "RETURNED",
    "art": "thoth_returned",
    "trigger": {
-    "event": "setne",
+    "event": "deed",
     "where": {
-     "outcome": "returned"
+     "id": "kept.thoth_return",
+     "late": {
+      "not": true
+     }
     }
    }
   },
@@ -2834,9 +2846,9 @@
    "code_word": "AHWERE",
    "art": "thoth_left",
    "trigger": {
-    "event": "setne",
+    "event": "deed",
     "where": {
-     "outcome": "left"
+     "id": "forgo.book_of_thoth"
     }
    }
   },

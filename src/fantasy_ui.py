@@ -152,6 +152,14 @@ class FP:
     ARCANE_ACCENT    = (200, 170, 255)
     AMBER_ACCENT     = (200, 155,  80)   # warm amber for warnings / passives
 
+    # Achievements (seeker_screen.py, game_seeker.py): the unlock popup's
+    # accent, and the badge frame of each rarity, all readable on midnight.
+    ACHIEVEMENT      = (255, 196,  92)   # warm laurel gold
+    RARITY_COMMON    = (205, 140,  80)   # bronze
+    RARITY_RARE      = (196, 206, 220)   # silver
+    RARITY_EPIC      = (255, 210,  80)   # gold
+    RARITY_LEGENDARY = (196, 150, 255)   # violet
+
     # Resource bar colors (HP / SP / MP) — used as BAR FILLS in the sidebar
     # and the quiz combat HUD. Some values run dark on purpose so the bars
     # read as bars, not text. Use the *_TEXT variants below when rendering

@@ -787,6 +787,9 @@ class _QuestGame:
     def _chron(self, kind, text, **kw):
         self.log.append(text)
 
+    def _seeker_event(self, event, **fields):
+        return []          # no Seeker in this test (game_seeker.py)
+
 
 def _bind(method_name):
     import game_divine

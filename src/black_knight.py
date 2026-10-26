@@ -569,6 +569,7 @@ class BlackKnightMixin:
         self.ground_items.append(sword)
         st['sword_dropped'] = True
         self.add_message(data()['sword_drop'], 'loot')
+        self._seeker_event('black_knight', outcome='sword_arm')
 
     def _black_knight_sword_tile(self, k) -> tuple:
         """A bridge tile beside him, the one the hero is not on if it can be,
