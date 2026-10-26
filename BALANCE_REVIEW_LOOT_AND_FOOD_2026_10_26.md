@@ -333,7 +333,7 @@ You answered: leave the chest count, L2 to L7 at the G1-lite numbers with L7(a),
 - **The jewelry box is treasure 15 / accessory 20 / gold bonus 65, not 60 / 20 / 20.**
   - At 60, a deep box held 1.5 floors' income in gems: a second income I missed, because the report showed gold but not treasure.
   - At 15, a box holds about 0.4 of a floor's income in treasure deep and 0.7 rings or amulets; three or more rings turn up in 1% of boxes (43% before).
-  - This deviates from what you approved, in the direction of your complaint. Say so if you want 60 back.
+  - This deviated from what you approved, in the direction of your complaint. You approved 15 / 20 / 65 on 2026-10-26.
 - **R1 needed no monster change.** The game as built, measured with 8 seeds × 60 runs, already has the committed build at 41%, inside your 40 to 50%. G1-lite had predicted 35%; the gap is that monster drops now give more potions.
   - A half-size ease of floors 41 to 79 (`mon_dmg` 1:1:1:0.975:0.94:0.94:0.96:0.98:1) would have pushed the committed build to 47% and the prepared player to 44%.
   - So `monsters.json` is untouched. That schedule is ready to bake with `tools/balance/scale_monsters.py` if the deep floors feel too hard in play.
