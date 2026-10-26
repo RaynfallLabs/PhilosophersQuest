@@ -178,6 +178,24 @@ Monster-den special rooms (`special_rooms[(cx, cy)] == 'monster_den'`) get 3-5 e
 | swamp        | 15        | `WATER` on ~40% of inner tiles (never one loot lies on: `_flood_swamp`) + scattered food |
 | throne_room  | 18        | 1 `THRONE` tile + 1 chest                                |
 
+**Deep sleepers stir (2026-10-26, `src/sleepers.py`).** On the first visit, a zoo gets 4-8 extra monsters, a graveyard 2-4 and a barracks 3-5, all laid down in a deep sleep (`DEEP_SLEEP`). They used to sleep until struck, which made a zoo free gold. Now each one can stir by chance:
+
+| Event | Chance it wakes | Which sleepers roll |
+|---|---|---|
+| A step inside the room | 2% each (barracks 3%) | those within 2 tiles |
+| A gold pile taken inside the room | 6% each | those within 3 tiles |
+
+In *Beowulf*, the dragon wakes when a thief takes one cup from its hoard.
+
+What changes the odds:
+- **DEX:** each point over 10 lowers the chance 3%, down to half at most.
+- **A Cat's Footfall** (Fenrir's boon) and any ring with `passive_silent_walk`: footsteps never wake anyone; taking gold still can.
+- **The Hand of Glory:** nothing wakes anyone.
+- **Burdened:** the chance doubles.
+- **Aggravated:** the whole room wakes.
+
+Finding the room warns that its creatures are asleep and what wakes them (`_SPECIAL_ROOM_MSGS`). The first time sleepers stir in a run, the Journal gets a line. A zoo's keepers carry `_keeper_of`. Emptying a zoo of its gold while every keeper still sleeps earns the Seeker's *Burglar* achievement (`EncountersMixin._burglar_check`).
+
 ### 4.5 Hidden chambers (populate)
 `_populate_hidden_chambers` reads `dungeon.hidden_chambers` (built in §2.7). Treasure caches get 3-5 bonus items. Lair chambers get 3-6 themed monsters where theme is matched by keyword against monster names (`rat_nest` → `rat`/`rodent`, `undead_crypt` → `skeleton`/`zombie`/`ghoul`/`ghost`/`wraith`/`vampire`/`lich`/…). If no themed monster is level-appropriate, level-appropriate fallback monsters spawn — chambers never come up empty.
 

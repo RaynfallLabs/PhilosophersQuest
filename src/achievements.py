@@ -101,6 +101,7 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'flux':             (),
     'ghost_met':        ('own',),
     'unicorn_joined':   (),
+    'burglar':          (),
     # the title screen and the fourth wall
     'title_god':        (),
     'seeker_named':     ('name',),

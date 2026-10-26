@@ -1,0 +1,25 @@
+[
+ {
+  "id": "burglar",
+  "family": "secrets_hoard",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "the hoard of a sleeping dragon, seen close, quiet and still: in front, one tall jewelled cup of bright gold with red gems round its rim stands upright on top of a heap of gold coins; behind the cup fills the picture a huge dragon's head lying flat on the gold, deep green scales, its one visible eye shut tight in sleep with a heavy scaled eyelid, a thin curl of pale smoke rising lazily from its nostril. Warm candle-gold light falls on the cup and the coins; the dragon is in soft shadow but its scales and closed eye can be read.",
+  "colours": "Bright gold cup with deep red gems; warm gold coins; deep green dragon scales with pale yellow-green edges; a shut eye in a heavy green lid; a thin pale grey wisp of smoke; dark warm brown shadow.",
+  "must_show": [
+   "a single jewelled gold cup on a heap of coins",
+   "a sleeping dragon's head with its eye shut",
+   "the dragon calm, not attacking"
+  ],
+  "must_not_show": [
+   "open eye",
+   "fire",
+   "flames",
+   "person",
+   "hand",
+   "writing",
+   "blood",
+   "teeth bared"
+  ]
+ }
+]

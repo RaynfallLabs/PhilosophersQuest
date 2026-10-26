@@ -66,6 +66,7 @@ src/
   unseen.py           - What the hero cannot see on a visible tile (invisible, ambush, disguise)
   false_stairs.py     - Hellmouth mimics that pose as the down stair
   splitting.py        - Creatures that split when struck the wrong way
+  sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
   emberpup_encounter.py - The abandoned Emberpup random event (floors 3-8)

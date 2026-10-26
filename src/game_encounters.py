@@ -76,6 +76,73 @@ def _system_placed_tags() -> set:
 
 
 class EncountersMixin:
+    # ------------------------------------------------------------------
+    # Deep sleepers stir (sleepers.py): a zoo, a graveyard, a barracks
+    # ------------------------------------------------------------------
+
+    def _sleepers_stir(self, kind: str):
+        """A step ('step') or a gold pile taken ('take') inside a room of deep
+        sleepers may wake some of them (sleepers.py has the odds). Each one
+        that wakes says so if the hero can see it; the first time in a run,
+        the Journal remembers. A zoo emptied with every keeper still asleep
+        is the Seeker's Burglar."""
+        import sleepers
+        from monster import the_name
+        player = getattr(self, 'player', None)
+        dungeon = getattr(self, 'dungeon', None)
+        if player is None or dungeon is None:
+            return
+        room, rtype = sleepers.room_at(dungeon, player.x, player.y)
+        if room is None:
+            return
+        asleep = sleepers.sleepers_in(getattr(self, 'monsters', ()), room)
+        woken = sleepers.stirred(player, kind, player.x, player.y, asleep, rtype)
+        visible = getattr(self, 'visible', None) or ()
+        for m in woken:
+            m.status_effects.pop('sleeping', None)
+            m._aware = True
+            m._alerted = True
+            if (m.x, m.y) in visible:
+                where = ' on its bed of gold' if rtype == 'zoo' else ''
+                self.add_message(f"{the_name(m)} stirs{where}, and wakes.", 'danger')
+        if woken:
+            if not isinstance(getattr(dungeon, '_disturbed_rooms', None), set):
+                dungeon._disturbed_rooms = set()
+            dungeon._disturbed_rooms.add(tuple(room.center))
+            if rtype == 'zoo':
+                self._chron('notice', "Something asleep on the gold opened its eyes while I was "
+                            "helping myself. I should have taken less.", once='stirred:zoo')
+            elif rtype == 'graveyard':
+                self._chron('notice', "Walked too loudly between the graves. Something in them "
+                            "stopped sleeping.", once='stirred:graveyard')
+            else:
+                self._chron('notice', "One of the sleeping soldiers woke while I crept past "
+                            "the bunks.", once='stirred:barracks')
+        elif kind == 'take' and rtype == 'zoo':
+            self._burglar_check(room)
+
+    def _burglar_check(self, room):
+        """The hoard is gone and every keeper still sleeps: the Burglar
+        (in the old poem, the dragon woke for a single cup)."""
+        import sleepers
+        from items import GoldPile
+        dungeon = self.dungeon
+        centre = tuple(room.center)
+        if centre in (getattr(dungeon, '_disturbed_rooms', None) or set()):
+            return
+        if any(isinstance(i, GoldPile) and sleepers.in_room(room, i.x, i.y)
+               for i in getattr(self, 'ground_items', ())):
+            return
+        keepers = [m for m in self.monsters if getattr(m, '_keeper_of', None) == centre]
+        laid = (getattr(dungeon, '_keepers_laid', None) or {}).get(centre)
+        if laid is not None and len(keepers) < laid:
+            return                                   # one was killed (and so woke)
+        if any(not sleepers.is_deep_sleeper(m) for m in keepers):
+            return
+        if laid is None and not sleepers.sleepers_in(self.monsters, room):
+            return                                   # an old floor with no keepers left
+        self._seeker_event('burglar')
+
     def _free_spawn_tile(self, occupied):
         """A free floor tile the hero can walk to, outside the arrival room:
         the fallback for every encounter spawner when the rooms it sampled

@@ -1089,7 +1089,7 @@ The rules for the Seeker Profile, achievements and reward codes are in [seeker_p
 - The Konami code and typing "god" earn their achievements. Their unlock card is `seeker_screen.draw_unlock_card`, and any key dismisses it.
 
 **The Seeker Profile screen:**
-- A header plaque with the name and "N of 172 Won", then a line of lifetime stats.
+- A header plaque with the name and "N of 173 Won", then a line of lifetime stats.
 - Category chips (Tab / Shift+Tab; ◀ ▶ when they overflow).
 - A badge grid (arrows; Left/Right carry on into the next category at the ends; Home/End).
 - A Selected Achievement pane: the 128 px badge, the hint until it is earned and the unlocked text after, ladder pips and progress, and the Reward Code box with "Show this code to Dad."

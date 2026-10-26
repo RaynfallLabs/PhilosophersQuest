@@ -239,6 +239,8 @@ class PurseMixin:
             self.add_message(
                 f"You can only carry {take:,} of the {total:,} gold. "
                 f"The rest stays on the floor.", 'warning')
+        # A hoard's sleepers may stir as its gold is taken (sleepers.py).
+        self._sleepers_stir('take')
         return True
 
     # ---------------------------------------------------------------- QA

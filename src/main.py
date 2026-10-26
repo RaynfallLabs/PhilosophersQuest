@@ -191,7 +191,7 @@ def _all_items_in_save(player, state: dict) -> list:
 
 
 RING_FEAR_CHANCE = 0.40        # Helm of Achilles: a monster's chance to flee on first sight
-DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until woken (the status cap of 60 woke them all on a timer)
+DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until woken or stirred (sleepers.py; the status cap of 60 woke them all on a timer)
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
@@ -2286,6 +2286,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                                        existing=monsters)
                             for zm in zoo_extra:
                                 zm.status_effects['sleeping'] = DEEP_SLEEP
+                                zm._keeper_of = (rcx, rcy)       # the hoard's keepers (sleepers.py)
+                            if not isinstance(getattr(dungeon, '_keepers_laid', None), dict):
+                                dungeon._keepers_laid = {}
+                            dungeon._keepers_laid[(rcx, rcy)] = len(zoo_extra)
                             monsters.extend(zoo_extra)
                             break
                 elif rtype == 'graveyard':
@@ -3200,6 +3204,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.x, self.player.y = nx, ny
             self._apply_aoo_disengage(_aoo_pre_adjacent)
             self._check_floor_trap(nx, ny)
+            self._sleepers_stir('step')       # deep sleepers may stir (sleepers.py)
             _qs_move = getattr(self, 'quirk_system', None)
             if _qs_move:
                 _qs_move.on_move()
@@ -3479,10 +3484,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'library':     ("Shelves of scroll-cases climb the walls, dry and undisturbed. A library, this far down.", 'info'),
             'shrine':      ("A small shrine, swept clean, with an altar that has seen recent use. It is easier to breathe in here.", 'info'),
             'monster_den': ("The floor here is trampled flat and littered with gnawed bone. This is where they sleep!", 'danger'),
-            'zoo':         ("Gold is heaped along the walls of this chamber, and things are asleep on top of it. Someone has been collecting both!", 'danger'),
-            'graveyard':   ("Rows of graves fill this chamber, each with its marker. Not all of the markers are standing straight.", 'danger'),
+            # The three rooms of deep sleepers (sleepers.py) warn that
+            # their creatures are asleep, and what wakes them.
+            'zoo':         ("Gold is heaped along the walls of this chamber, and things are asleep on top of it. "
+                            "Walk softly: every coin you take may wake them.", 'danger'),
+            'graveyard':   ("Rows of graves fill this chamber, each with its marker. Not all of the markers are standing "
+                            "straight. Whatever lies here is sleeping: walk softly, or it will wake.", 'danger'),
             'beehive':     ("Wax and old honey coat the walls of this chamber. The larder is full. Listen for the owners.", 'danger'),
-            'barracks':    ("Bunks, weapon racks and a cold cook-pot. A garrison slept here, and some of it still does.", 'info'),
+            'barracks':    ("Bunks, weapon racks and a cold cook-pot. A garrison slept here, and some of it still does. "
+                            "Walk softly, or they will wake.", 'danger'),
             'swamp':       ("Murky water and marsh gas fill this chamber.", 'warning'),
             'throne_room': ("An aura of ancient authority radiates from a throne.", 'info'),
         }

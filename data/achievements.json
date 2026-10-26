@@ -3001,6 +3001,25 @@
    }
   },
   {
+   "id": "burglar",
+   "name": "Burglar",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "In the old poem, the dragon woke for a single cup.",
+   "unlocked_text": "A whole hoard taken, and not one of its keepers stirred.",
+   "code_word": "BURGLAR",
+   "art": "burglar",
+   "trigger": {
+    "event": "burglar"
+   },
+   "spoiler_words": [
+    "zoo",
+    "gold",
+    "asleep",
+    "sleep"
+   ]
+  },
+  {
    "id": "behind_curtain",
    "name": "Behind the Curtain",
    "category": "secrets",
