@@ -114,7 +114,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'history.json', 'every Soviet refugee in their'): 'their = Britain and America',
     (_Q + 'history.json', 'every author the American founders quoted in their'): 'their = the founders',
     (_Q + 'history.json', 'every book in the world for their'): "their = Alexandria's rulers",
-    (_Q + 'history.json', 'every detail of the two-day event themselves'): 'themselves = the organizers',
     (_Q + 'philosophy.json', 'anyone thinks good to doubt their'): "their = 'things outside of us' (Kant, quoted)",
     (_Q + 'philosophy.json', 'each fail on their'): 'their = the two giveaways',
     (_Q + 'philosophy.json', 'each keep to their'): 'their = reason, drive and appetite',
