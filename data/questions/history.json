@@ -807,7 +807,7 @@
   },
   {
     "tier": 1,
-    "question": "Alexander Graham Bell, who would grow up to invent the telephone, was a curious boy in Scotland in the 1850s. His father studied the way the human mouth and throat shape sounds into speech, and young Alec loved that puzzle. One day he tried an unusual experiment on the family dog. While the dog held a long, low growl, Bell used his hands to gently shape its lips and throat into different positions. What did the dog seem to do?",
+    "question": "As a boy in Scotland, Alexander Graham Bell tried an experiment on the family dog. His father studied how mouths and throats shape speech. While the dog held a low growl, young Alec shaped its mouth and throat by hand. What did the dog seem to do?",
     "answer": "Say the words \"How are you, grandmama?\"",
     "choices": [
       "Say the words \"How are you, grandmama?\"",
@@ -820,20 +820,20 @@
   },
   {
     "tier": 1,
-    "question": "On March 10, 1876, in a small workshop in Boston, the Scottish-born inventor Alexander Graham Bell finally got his brand-new machine — the telephone — to actually work. He spoke into a mouthpiece in one room. Through a thin wire strung down the hallway, his young helper in the next room heard Bell's voice come out clearly from a receiver. What were those first words ever sent by telephone?",
+    "question": "Alexander Graham Bell was working late in his Boston workshop on 10 March 1876. He spoke into his new machine's mouthpiece, and in the next room, at the far end of a wire, his assistant heard every word. What were the first words ever sent by telephone?",
     "answer": "\"Mr. Watson, come here, I want to see you.\"",
     "choices": [
       "\"Mr. Watson, come here, I want to see you.\"",
+      "\"Watson, the wire is working at last.\"",
       "\"Can you hear me on the other side?\"",
-      "\"The machine works at last, my friend.\"",
-      "\"Speak back to me if my voice arrives.\""
+      "\"Come quickly, the experiment is done.\""
     ],
-    "context": "The assistant was Thomas Watson. A popular story says Bell had just spilled acid on himself, but that is a myth — no spilled acid appears in Bell's lab notes, his letter to his father that night, or Watson's own notes. Source: https://www.sciencemuseum.org.uk/objects-and-stories/ahoy-alexander-graham-bell-and-first-telephone-call",
+    "context": "The assistant was Thomas Watson. He heard the words clearly in the next room and wrote them down in his notebook (now in the Library of Congress Bell Papers). A popular story says Bell had just spilled acid on himself, but that is a myth: no spilled acid appears in Bell's lab notes, his letter to his father that night, or Watson's own notes. Sources: https://www.sciencemuseum.org.uk/objects-and-stories/ahoy-alexander-graham-bell-and-first-telephone-call; https://www.history.com/this-day-in-history/march-10/speech-transmitted-by-telephone",
     "topic": "alexander-graham-bell-and-the-telephone"
   },
   {
     "tier": 2,
-    "question": "In 1876, at a big fair in Philadelphia, Dom Pedro II of Brazil pressed Alexander Graham Bell's receiver to his ear. Bell stood far across the hall and spoke into the wire to prove it could carry a human voice. What famous lines did Bell choose to say?",
+    "question": "Dom Pedro II, the emperor of Brazil, pressed Alexander Graham Bell's receiver to his ear at the great Philadelphia fair of 1876. Far across the hall, Bell spoke into the wire to prove it could carry a human voice. Which famous lines did he choose to say?",
     "answer": "\"To be, or not to be — that is the question\"",
     "choices": [
       "\"To be, or not to be — that is the question\"",
@@ -846,7 +846,7 @@
   },
   {
     "tier": 2,
-    "question": "After Alexander Graham Bell invented the telephone in 1876, he tried to teach Americans what to say when they first picked up the strange new device. He wanted a bold sailor's word: 'Ahoy.' But a rival American inventor, working on his own telephone, pushed a shorter, friendlier greeting he thought sounded more welcoming. That word stuck for good and still rings out today. Which word beat 'Ahoy'?",
+    "question": "Alexander Graham Bell wanted everyone who picked up his strange new telephone to start with a bold sailor's cry: 'Ahoy.' A rival inventor working on a telephone of his own pushed a different greeting, and that word stuck for good. Which greeting beat 'Ahoy,' and who pushed it?",
     "answer": "\"Hello,\" pushed by Thomas Edison",
     "choices": [
       "\"Hello,\" pushed by Thomas Edison",
@@ -859,7 +859,7 @@
   },
   {
     "tier": 4,
-    "question": "Alexander Graham Bell's patent for the telephone (No. 174,465) issued on March 7, 1876 — but it was nearly a dead heat. On February 14, 1876, rival inventor Elisha Gray rushed to the same U.S. Patent Office on the very same day. Why did Bell's claim win out over Gray's?",
+    "question": "Elisha Gray, a rival inventor, reached the U.S. Patent Office on 14 February 1876, the very same day as Alexander Graham Bell. It was nearly a dead heat, yet Bell walked away with the telephone patent, No. 174,465, issued on 7 March. Why did Bell's claim win out over Gray's?",
     "answer": "Gray filed only a preliminary notice while Bell filed a full application",
     "choices": [
       "Gray filed only a preliminary notice while Bell filed a full application",
@@ -872,7 +872,7 @@
   },
   {
     "tier": 3,
-    "question": "Of all the faces printed on circulating U.S. money, only two men were never president of the United States. One is Benjamin Franklin. The other was a penniless orphan born on the Caribbean island of Nevis who grew up to design America's whole system of money and credit. Which founder is that second face?",
+    "question": "A penniless orphan from the Caribbean island of Nevis reached New York in his teens with nothing and grew up to design America's whole system of money and credit. His face is on circulating U.S. money today, and apart from Benjamin Franklin he is the only man there who was never president. Which founder is he?",
     "answer": "Alexander Hamilton",
     "choices": [
       "Alexander Hamilton",
@@ -885,7 +885,7 @@
   },
   {
     "tier": 3,
-    "question": "Alexander Hamilton grew up poor on the island of St. Croix. He had no money and no way off the island. Then in August 1772 a huge hurricane tore the island apart. What did Hamilton do after the storm that so amazed local leaders they took up a collection and paid his way to school in North America?",
+    "question": "Alexander Hamilton was a poor teenager on St. Croix, with no money and no way off the island, when a huge hurricane tore it apart in August 1772. What he did after the storm so amazed the local leaders that they took up a collection to send him to school in North America. What did he do?",
     "answer": "He wrote a vivid published account of the hurricane",
     "choices": [
       "He wrote a vivid published account of the hurricane",
@@ -897,8 +897,8 @@
     "topic": "alexander-hamilton-treasury-national-bank"
   },
   {
-    "tier": 4,
-    "question": "As the first Treasury Secretary, Alexander Hamilton wanted the new country to pay off the war debts the states had run up in the Revolution. Virginia and other Southern states had mostly paid their own and blocked him in Congress. At a private dinner Jefferson hosted in June 1790, Hamilton and Madison made a deal to break the tie. In exchange for letting the debt plan pass, what did the South win?",
+    "tier": 3,
+    "question": "Alexander Hamilton, the first Treasury Secretary, wanted the federal government to shoulder the war debts the states had run up in the Revolution. Virginia and the other Southern states, which had mostly paid their own, blocked him in Congress. Over a private dinner Jefferson hosted in June 1790, Hamilton and Madison struck a deal. In exchange for letting the debt plan pass, what did the South win?",
     "answer": "The permanent national capital, built on the Potomac",
     "choices": [
       "The permanent national capital, built on the Potomac",
@@ -906,12 +906,12 @@
       "Control of the new national bank's headquarters",
       "A guarantee that slavery could never be taxed"
     ],
-    "context": "The 'dinner table bargain' of June 20, 1790: Madison let Hamilton's debt-assumption plan pass, and in return the permanent capital was placed on the Potomac — which is why Washington, D.C. sits where it does. https://www.battlefields.org/learn/articles/compromise-1790",
+    "context": "The 'dinner table bargain' of 20 June 1790, the Compromise of 1790: Madison let Hamilton's debt-assumption plan pass, and in return the permanent capital was placed on the Potomac River, which is why Washington, D.C. sits where it does. Jefferson later wrote that assumption was 'a bitter pill' for the South, so moving the seat of government there 'was a just measure.' Sources: https://www.battlefields.org/learn/articles/compromise-1790; https://en.wikipedia.org/wiki/Compromise_of_1790",
     "topic": "alexander-hamilton-treasury-national-bank"
   },
   {
     "tier": 4,
-    "question": "On a rocky ledge at Weehawken, New Jersey, on July 11, 1804, Alexander Hamilton was shot in a duel and mortally wounded — dying the next day. What made the killing so shocking was the office his opponent held at that very moment. Who fired the shot that killed Hamilton?",
+    "question": "Alexander Hamilton faced his opponent across a rocky ledge at Weehawken, New Jersey, on 11 July 1804, for a duel with pistols. The ball that hit him ripped through his liver and stuck in his spine; he died the next day. What made the killing so shocking was the office the man who fired held at that very moment. Who fired the shot?",
     "answer": "Aaron Burr, the sitting Vice President",
     "choices": [
       "Aaron Burr, the sitting Vice President",
@@ -924,7 +924,7 @@
   },
   {
     "tier": 5,
-    "question": "When Hamilton proposed a national bank, Jefferson said it was plainly against the Constitution. He argued the Constitution lists the government's powers, those powers 'can all be carried into execution without a bank,' and the 10th Amendment leaves the rest to the states. Hamilton's reply won Washington over and shaped how the Constitution is read to this day. What was Hamilton's core argument?",
+    "question": "Thomas Jefferson called the national bank Alexander Hamilton wanted plainly unconstitutional. The Constitution listed the government's powers, he argued; those powers 'can all be carried into execution without a bank,' and the Tenth Amendment kept the rest for the states. Hamilton's reply won Washington over and still shapes how the Constitution is read. What was his core argument?",
     "answer": "The Constitution grants implied powers, so the Necessary-and-Proper Clause lets Congress charter a bank",
     "choices": [
       "The Constitution grants implied powers, so the Necessary-and-Proper Clause lets Congress charter a bank",
@@ -937,7 +937,7 @@
   },
   {
     "tier": 1,
-    "question": "When Alexander the Great was a boy, his dad King Philip owned a big black horse that no one could ride. It bucked and reared at everyone. Alexander watched and saw the horse was scared of its own moving shadow. What clever thing did the boy do to calm it before climbing on?",
+    "question": "Alexander the Great, still a boy, watched his father King Philip's big black horse buck and rear at every rider. Alexander noticed that the horse was scared of its own moving shadow. What clever thing did he do to calm it before climbing on?",
     "answer": "Turned it to face the sun",
     "choices": [
       "Turned it to face the sun",
@@ -949,21 +949,8 @@
     "topic": "alexander-the-great-s-conquest-of-the-persian-em"
   },
   {
-    "tier": 1,
-    "question": "At Gordium in Phrygia stood an ox-cart tied with a knot so hopelessly tangled that no one could find its ends, and an oracle promised that whoever loosed it would rule all of Asia. Alexander the Great tried and could not untie it. What did he do to the knot instead?",
-    "answer": "Slashed it apart with his sword",
-    "choices": [
-      "Slashed it apart with his sword",
-      "Soaked it loose in the river",
-      "Burned the cord away with fire",
-      "Left it for a wiser man"
-    ],
-    "context": "Frustrated, Alexander drew his sword and cut the knot in two — the origin of the phrase 'cutting the Gordian knot' for solving a problem by bold, direct force. (Some ancient writers, citing Aristobulus, say he instead pulled out the cart's linchpin and slid the cord free.) He went on to conquer Asia. Source: Wikipedia 'Gordian Knot'; Britannica 'Gordian knot'.  (Legend.)",
-    "topic": "alexander-the-great-s-conquest-of-the-persian-em"
-  },
-  {
     "tier": 2,
-    "question": "At the Granicus River in 334 BC, in his first big battle against Persia, Alexander was almost killed. A Persian noble's blade split his helmet and cut his head. As he swayed, another Persian raised a sword to strike him from behind. What saved Alexander's life at that instant?",
+    "question": "A Persian noble's blade split Alexander the Great's helmet and cut his head beside the Granicus River in 334 BC, in his first big battle against Persia. As the young king swayed, another Persian raised a sword to strike him from behind. What saved Alexander's life at that instant?",
     "answer": "Cleitus the Black sliced off the man's arm",
     "choices": [
       "Cleitus the Black sliced off the man's arm",
@@ -976,7 +963,7 @@
   },
   {
     "tier": 2,
-    "question": "In 326 BC, the young Macedonian king Alexander the Great had already conquered his way from Greece across the Persian Empire and into what is now Pakistan. There at the Hydaspes River in India, his army met and defeated King Porus and his terrifying line of war elephants. Porus was brought before Alexander wounded and in chains. Alexander asked him how he wished to be treated. What did Porus say?",
+    "question": "Porus, a king in India, faced Alexander the Great at the Hydaspes River in 326 BC with a terrifying line of war elephants, and lost. Brought before Alexander wounded and in chains, he was asked how he wished to be treated. What did Porus say?",
     "answer": "Treat me as a king treats a king",
     "choices": [
       "Treat me as a king treats a king",
@@ -989,7 +976,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Alexander the Great was ever a conqueror, he tamed a wild stallion that his father King Philip's grooms had given up on. Watching his young son ride the unrideable horse, Philip wept for joy, kissed him, and spoke words that sounded almost like a prophecy. What did Philip say to his son?",
+    "question": "Philip of Macedon watched his young son Alexander ride a wild stallion that the king's grooms had given up on. Philip wept for joy, kissed the boy, and spoke words that sounded almost like a prophecy. What did Philip say to his son?",
     "answer": "Macedonia is too small for you, my son",
     "choices": [
       "Macedonia is too small for you, my son",
@@ -1002,7 +989,7 @@
   },
   {
     "tier": 3,
-    "question": "In 335 BC the ancient Greek city of Thebes rose up against the young Macedonian king Alexander the Great. To crush the rebellion, Alexander burned the whole city to the ground, killed about 6,000 Thebans, and sold 30,000 more into slavery. But he gave a strict order to spare one single house — the home of a long-dead man Alexander deeply loved for his songs and odes. Whose house did Alexander save?",
+    "question": "Thebes rose against Alexander the Great in 335 BC, and he crushed the rebellion: he burned the city to the ground, killed about 6,000 Thebans and sold 30,000 more into slavery. But he gave a strict order to spare one single house, the home of one long-dead man. Whose house did Alexander save?",
     "answer": "The house of the poet Pindar",
     "choices": [
       "The house of the poet Pindar",
@@ -1015,7 +1002,7 @@
   },
   {
     "tier": 3,
-    "question": "After Alexander beat King Darius at Issus in 333 BC, he captured his mother Sisygambis. He also took Darius's wife and daughters. People thought a beaten enemy's family would be hurt or killed. Instead, how did Sisygambis come to feel about Alexander?",
+    "question": "Sisygambis, the mother of the Persian king Darius III, fell into Alexander the Great's hands after his victory at Issus in 333 BC, along with Darius's wife and daughters. A beaten enemy's family could expect to be hurt or killed. Instead, how did Sisygambis come to feel about Alexander?",
     "answer": "She came to love him as her own son",
     "choices": [
       "She came to love him as her own son",
@@ -1041,7 +1028,7 @@
   },
   {
     "tier": 3,
-    "question": "At Gaugamela in 331 BC, Alexander the Great's smaller army crashed into the center of King Darius III's enormous host. The battle that decided the fate of the whole Persian Empire turned on a single act. What did Darius do that caused his entire huge army to collapse?",
+    "question": "Darius III's enormous Persian host faced Alexander the Great's smaller army at Gaugamela in 331 BC, and Alexander drove straight at its heart. The battle that decided the fate of the whole Persian Empire turned on a single act. What did Darius do that made his entire huge army collapse?",
     "answer": "Darius turned and fled first",
     "choices": [
       "Darius turned and fled first",
@@ -1067,7 +1054,7 @@
   },
   {
     "tier": 4,
-    "question": "In 330 BC, drunk at a victory banquet, Alexander the Great and his men set fire to Persepolis, the ceremonial capital of Persia, torching the great palace of Xerxes itself. Ancient accounts say that the first person after the king to hurl a blazing torch into the palace was not one of his generals at all. Who threw that first torch?",
+    "question": "A drunken victory banquet at Persepolis, the ceremonial capital of Persia, ended in flames in 330 BC, when Alexander the Great and his men set fire to the great palace of Xerxes itself. Ancient accounts say that the first person after the king to hurl a blazing torch into the palace was not one of his generals at all. Who threw that first torch?",
     "answer": "Thais, an Athenian dancing-girl",
     "choices": [
       "Thais, an Athenian dancing-girl",
@@ -1080,7 +1067,7 @@
   },
   {
     "tier": 4,
-    "question": "After eight years of war and thousands of miles of marching, Alexander the Great reached the Hyphasis River in India in 326 BC — and for the first time in his life was forced to turn back. He had never lost a battle. So what finally halted the undefeated conqueror at the edge of the known world?",
+    "question": "Alexander the Great's army reached the Hyphasis River in India in 326 BC after eight years of war and thousands of miles of marching, and there, for the first time in his life, the king was forced to turn back. He had never lost a battle. What finally halted the undefeated conqueror at the edge of the known world?",
     "answer": "His own soldiers refused to march on",
     "choices": [
       "His own soldiers refused to march on",
@@ -1093,7 +1080,7 @@
   },
   {
     "tier": 4,
-    "question": "Marching home through the Gedrosian Desert, Alexander's army suffered from thirst and heat. Up to a third of his column may have died. Alexander was parched too when scouts brought him a helmet of water — enough for one person. In full view of his thirsty army, what did he do with it?",
+    "question": "Alexander the Great led his army home across the Gedrosian Desert through terrible thirst and heat, and up to a third of his column may have died. He was parched too when scouts brought him a helmet holding enough water for one man. In full view of his thirsty army, what did he do with it?",
     "answer": "Poured it out onto the sand untouched",
     "choices": [
       "Poured it out onto the sand untouched",
@@ -1106,7 +1093,7 @@
   },
   {
     "tier": 5,
-    "question": "Dying of fever at Babylon in 323 BC at just 32 years old, after building the largest empire the world had ever seen and never once losing a battle, Alexander the Great was asked who should inherit it all. According to the ancient accounts, what did he reply?",
+    "question": "Alexander the Great lay dying of fever at Babylon in 323 BC, just 32 years old, master of a vast empire and never once beaten in battle. He was asked who should inherit it all. According to the ancient accounts, what did he reply?",
     "answer": "To the strongest",
     "choices": [
       "To the strongest",
@@ -1119,7 +1106,7 @@
   },
   {
     "tier": 5,
-    "question": "In June of 323 BC, at the height of his power, the 32-year-old Macedonian conqueror Alexander the Great fell sick with a mysterious fever and died in the ancient city of Babylon. His generals then took days arguing over what to do with the body, while the embalmers waited outside the royal chamber. When those embalmers were at last allowed to reach the corpse, they were shocked. According to the ancient reports, what was strange about Alexander's body?",
+    "question": "Alexander the Great's generals argued for days over what to do with his body after a fever killed him at Babylon in June 323 BC, while the embalmers waited outside the royal chamber. When the embalmers were at last allowed in, they were astonished. According to the ancient reports, what was strange about the body?",
     "answer": "It showed no signs of decay",
     "choices": [
       "It showed no signs of decay",
@@ -1132,7 +1119,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 1942, after slipping away from the doomed American defense of the Philippines, General Douglas MacArthur reached Australia and made a promise to reporters at a railway station that became one of the most famous vows of the war. The U.S. government wanted him to say \"we\"; he refused and kept it personal. What three words did he promise?",
+    "question": "Douglas MacArthur slipped away in March 1942 from the doomed American defense of the Philippines, on President Roosevelt's orders. At a railway station in Australia he made reporters a promise that became famous. What did he promise?",
     "answer": "\"I shall return.\"",
     "choices": [
       "\"I shall return.\"",
@@ -1145,7 +1132,7 @@
   },
   {
     "tier": 2,
-    "question": "General George Patton carried two famous revolvers with ivory grips. A reporter once wrote that the grips were 'pearl-handled.' Patton got angry and yelled that they were ivory, not pearl. What kind of person, Patton said, carries a pearl-handled pistol?",
+    "question": "George Patton carried two famous revolvers with ivory grips. When a reporter wrote that the grips were 'pearl-handled,' Patton exploded: they were ivory, not pearl. What kind of person, Patton said, carries a pearl-handled pistol?",
     "answer": "\"A pimp from a cheap New Orleans whorehouse\"",
     "choices": [
       "\"A pimp from a cheap New Orleans whorehouse\"",
@@ -1158,7 +1145,7 @@
   },
   {
     "tier": 3,
-    "question": "General Douglas MacArthur had vowed to come back to the Philippines. Two and a half years later, on October 20, 1944, he waded through the surf onto a beach at Leyte. He spoke over the radio right from the water's edge. What words did he open with?",
+    "question": "Douglas MacArthur, the theatrical commander of the Pacific war, waded through the surf onto a beach at Leyte on 20 October 1944. He did not wait for dry ground: right at the water's edge he spoke into a radio microphone. What words did he open with?",
     "answer": "\"People of the Philippines, I have returned!\"",
     "choices": [
       "\"People of the Philippines, I have returned!\"",
@@ -1170,34 +1157,8 @@
     "topic": "allied-commanders-eisenhower-patton-macarthur"
   },
   {
-    "tier": 3,
-    "question": "The D-Day landing in Normandy needed a one-day break in awful weather. General Dwight Eisenhower listened to his weather chief, Group Captain Stagg. He paused alone with the choice no one else could make. Then he launched the biggest sea invasion in history. What three plain words did Eisenhower use to give the order?",
-    "answer": "\"OK, let's go.\"",
-    "choices": [
-      "\"OK, let's go.\"",
-      "\"Begin the crossing.\"",
-      "\"God help us.\"",
-      "\"Send them in.\""
-    ],
-    "context": "Eisenhower alone made the call to launch on June 6, 1944, gambling on a brief weather window Stagg had forecast. The understated three words have become legendary precisely because the stakes were so enormous. https://www.abmc.gov/video/ok-lets-go/",
-    "topic": "allied-commanders-eisenhower-patton-macarthur"
-  },
-  {
-    "tier": 4,
-    "question": "During the Battle of the Bulge in December 1944, rain and fog grounded General George S. Patton's aircraft when he needed them most. Patton ordered his chaplain, James O'Neill, to compose a prayer for clear weather and had it printed for the whole Third Army. When the skies finally cleared, what did Patton do for the chaplain?",
-    "answer": "Pinned a Bronze Star on him",
-    "choices": [
-      "Pinned a Bronze Star on him",
-      "Promoted him to colonel",
-      "Gave him his own ivory pistol",
-      "Named a tank in his honor"
-    ],
-    "context": "Patton said, \"That O'Neill sure did some potent praying,\" and decorated him. With the skies open, the Third Army wheeled north to relieve the 101st Airborne trapped at Bastogne. https://www.warhistoryonline.com/instant-articles/battle-of-the-bulge-patton-ordered-the-priest-to-pray-for-clear-weather-the-weather-subsequently-cleared.html",
-    "topic": "allied-commanders-eisenhower-patton-macarthur"
-  },
-  {
     "tier": 5,
-    "question": "On the night before D-Day, General Dwight D. Eisenhower handwrote a short note to be released only if the Normandy invasion failed. The striking thing about the note is where it placed responsibility: he wrote that the troops had done all that bravery could do, and then he took the entire failure onto himself. How did Eisenhower assign the blame in that note?",
+    "question": "Dwight Eisenhower handwrote a short note the night before D-Day, to be released only if the Normandy invasion failed. It said the troops had done all that bravery could do, and then it turned to the question of who was at fault. How did Eisenhower assign the blame in that note?",
     "answer": "He wrote that any blame \"is mine alone.\"",
     "choices": [
       "He wrote that any blame \"is mine alone.\"",
@@ -1210,7 +1171,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 1917, midway through World War One, the German foreign minister Arthur Zimmermann sent a secret coded telegram to Mexico. It urged Mexico to attack the United States and join Germany's side in the war. In return, Germany promised to help Mexico take back the 'lost land' Mexico had ceded to the U.S. in 1848. Which three American states did the telegram name as Mexico's prize?",
+    "question": "Arthur Zimmermann, Germany's foreign minister, wired a secret coded offer to Mexico in January 1917. It urged Mexico to attack the United States, and in return Germany promised to help Mexico take back the 'lost territory' it had ceded to the U.S. in 1848. Which three American states did the telegram name as Mexico's prize?",
     "answer": "Texas, New Mexico, and Arizona",
     "choices": [
       "Texas, New Mexico, and Arizona",
@@ -1223,7 +1184,7 @@
   },
   {
     "tier": 2,
-    "question": "In May 1915, during World War One, a German U-boat lurking off the coast of Ireland fired its torpedoes without warning at a giant British passenger liner steaming from New York. The great ship rolled over and sank in just eighteen minutes. About 1,198 people drowned, and 128 of them were Americans. The sinking turned Americans sharply against Germany's submarine war. Which famous ship went down?",
+    "question": "A German U-boat lurking off the coast of Ireland in May 1915 torpedoed a giant British passenger liner without warning. The great ship rolled over and sank, and about 1,198 people drowned, 128 of them Americans. The sinking turned Americans sharply against Germany's submarine war. Which famous ship went down?",
     "answer": "the Lusitania",
     "choices": [
       "the Lusitania",
@@ -1236,7 +1197,7 @@
   },
   {
     "tier": 2,
-    "question": "During World War One, in June 1918, U.S. Marines had just arrived in France to help stop Germany's last great push toward Paris. At a thick French forest called Belleau Wood, weary French soldiers were falling back and told the newly landed Americans they had better retreat too. Captain Lloyd W. Williams of the 5th Marines fired back with what reply?",
+    "question": "Lloyd W. Williams, a captain of the 5th Marines, reached a thick French forest called Belleau Wood in June 1918, as Germany made its last great push toward Paris. Weary French soldiers falling back told the newly arrived Americans they had better retreat too. What did Williams fire back?",
     "answer": "\"Retreat? Hell, we just got here.\"",
     "choices": [
       "\"Retreat? Hell, we just got here.\"",
@@ -1249,7 +1210,7 @@
   },
   {
     "tier": 2,
-    "question": "American soldiers in World War I were nicknamed 'doughboys.' The best story says the name came from 1916, when General Pershing chased bandits along the Mexican border. Riders on horses started to tease the foot soldiers. What did the riders mock them for?",
+    "question": "John J. Pershing's infantry chased bandits along the Mexican border in 1916. By the best-loved story, the mounted troopers riding with them teased the foot soldiers, and the teasing gave America's World War I soldiers their nickname, 'doughboys.' What did the riders mock them for?",
     "answer": "White adobe dust caked them, so riders called them 'adobes'",
     "choices": [
       "White adobe dust caked them, so riders called them 'adobes'",
@@ -1262,7 +1223,7 @@
   },
   {
     "tier": 3,
-    "question": "On July 4, 1917, the first American troops had just reached France, and an officer was sent to lay a wreath at the Paris tomb of the Marquis de Lafayette — the Frenchman who had aided America's own revolution. Standing there, Colonel Charles E. Stanton spoke four words repaying that old debt. What did he say?",
+    "question": "Charles E. Stanton, an aide to General Pershing, laid a wreath at the Paris tomb of the Marquis de Lafayette on 4 July 1917, just after the first American troops reached France. Lafayette was the Frenchman who had aided America's own revolution. Standing there, Stanton spoke four words that repaid that old debt. What did he say?",
     "answer": "\"Lafayette, we are here!\"",
     "choices": [
       "\"Lafayette, we are here!\"",
@@ -1275,7 +1236,7 @@
   },
   {
     "tier": 3,
-    "question": "At Belleau Wood in France in June 1918, U.S. Marines pushed forward under sweeping German machine-gun fire during World War One. First Sergeant Dan Daly — a stocky Irish-American who had already earned the Medal of Honor twice, once in China and once in Haiti — stood up and led his men up out of cover, across a waist-high wheat field, straight into the roaring guns. What did he shout to drive them forward?",
+    "question": "Dan Daly, a stocky Irish-American first sergeant who had already won the Medal of Honor twice, once in China and once in Haiti, led his Marines up out of cover at Belleau Wood in June 1918. Ahead of them lay a waist-high wheat field and the roaring German machine guns. What did he shout to drive them forward?",
     "answer": "\"Come on, you sons of bitches, do you want to live forever?\"",
     "choices": [
       "\"Come on, you sons of bitches, do you want to live forever?\"",
@@ -1288,7 +1249,7 @@
   },
   {
     "tier": 3,
-    "question": "In October 1918, Corporal Alvin York was a deeply religious man from Tennessee. He had even asked to skip combat. Yet in one fight he killed more than 20 Germans and marched a whole column back as prisoners. A general said, 'I hear you have captured the whole German army.' How did York answer?",
+    "question": "Alvin York, a deeply religious corporal from Tennessee, had asked to skip combat. Yet in one fight in October 1918 he killed more than 20 Germans and marched a whole column back as prisoners. A general told him, 'I hear you have captured the whole German army.' How did York answer?",
     "answer": "\"No sir. I got only 132.\"",
     "choices": [
       "\"No sir. I got only 132.\"",
@@ -1301,7 +1262,7 @@
   },
   {
     "tier": 3,
-    "question": "Tradition holds that the German troops who faced the U.S. Marines at Belleau Wood were so unnerved by their ferocity that they gave the Marines a fearsome nickname — one the Marine Corps still proudly uses today. What name did the Germans supposedly give them?",
+    "question": "German troops faced the U.S. Marines at Belleau Wood in June 1918, and tradition says the Marines' ferocity so unnerved them that they gave the Marines a fearsome nickname, one the Corps still proudly uses today. What name did the Germans supposedly give them?",
     "answer": "Devil Dogs ('Teufel Hunden')",
     "choices": [
       "Devil Dogs ('Teufel Hunden')",
@@ -1314,7 +1275,7 @@
   },
   {
     "tier": 4,
-    "question": "When the Zimmermann Telegram became public, German Foreign Secretary Arthur Zimmermann could have called it a British forgery. Most people thought he would do just that. Instead, on March 3, 1917, reporter William Bayard Hale asked him point-blank if the story was true. Zimmermann gave a startling reply. What did he say?",
+    "question": "William Bayard Hale, a reporter, asked Arthur Zimmermann point-blank on 3 March 1917 whether the story of his leaked telegram to Mexico was true. Zimmermann could have called it a British forgery, and most people expected him to do just that. What startling reply did he give?",
     "answer": "\"I cannot deny it. It is true.\"",
     "choices": [
       "\"I cannot deny it. It is true.\"",
@@ -1327,7 +1288,7 @@
   },
   {
     "tier": 4,
-    "question": "During World War One, British codebreakers worked in a hushed office in the Admiralty called 'Room 40.' In January 1917 they got hold of a secret German telegram from foreign minister Arthur Zimmermann. Codebreaker Nigel de Grey cracked most of it within a single day. The moment he saw Germany's shocking offer to bring Mexico into the war against the United States, he turned pale and looked up at his chief. What single stunned question did he ask?",
+    "question": "Nigel de Grey, a codebreaker in the Admiralty's hushed Room 40, went to work on a coded German telegram in January 1917. It came from the foreign minister, Arthur Zimmermann, and de Grey cracked most of it within a day. When he saw Germany's offer to bring Mexico into the war against the United States, he turned pale and looked up at his chief. What stunned question did he ask?",
     "answer": "\"Do you want to bring America into the war?\"",
     "choices": [
       "\"Do you want to bring America into the war?\"",
@@ -1340,7 +1301,7 @@
   },
   {
     "tier": 4,
-    "question": "Captain Eddie Rickenbacker of the 94th Aero Squadron was a former race-car driver. He became America's top flying ace with 26 kills in the air. His squadron painted a homemade emblem on their planes the day America finally joined the fight. What was on that emblem?",
+    "question": "Eddie Rickenbacker, a former race-car driver, flew with the 94th Aero Squadron and became America's top flying ace, with 26 victories in the air. His squadron painted a homemade emblem on its planes, born of an officer's quip on the day America finally joined the fight. What was on that emblem?",
     "answer": "Uncle Sam's stovepipe hat tossed inside a ring",
     "choices": [
       "Uncle Sam's stovepipe hat tossed inside a ring",
@@ -1353,7 +1314,7 @@
   },
   {
     "tier": 5,
-    "question": "In January 1917, during World War I, the German foreign minister Arthur Zimmermann sent a secret coded telegram to Mexico. The telegram invited Mexico to attack the United States, and offered to help Mexico take back Texas, New Mexico, and Arizona if it did. Germany believed the coded message was safe from every enemy eye. Yet for part of its long journey across the Atlantic Ocean, the coded telegram actually traveled over which line?",
+    "question": "Arthur Zimmermann sent his secret coded telegram to Mexico in January 1917, inviting Mexico to attack the United States. Germany believed the code kept the message safe from every enemy eye. Yet for part of its long journey across the Atlantic Ocean, the telegram actually traveled over which line?",
     "answer": "A U.S. State Department cable Washington had lent Germany for diplomacy",
     "choices": [
       "A U.S. State Department cable Washington had lent Germany for diplomacy",
@@ -1366,7 +1327,7 @@
   },
   {
     "tier": 5,
-    "question": "By 1917 the Allies were in real danger. It had nothing to do with the Western Front itself. A revolution had knocked one great power out of the war. That freed dozens of German divisions to pour west for a knockout blow before the Americans could arrive. Which power's collapse set off that race?",
+    "question": "Germany began shifting dozens of divisions west after a revolution in 1917 knocked one great power out of the war, racing to land a knockout blow before American troops could arrive in strength. Which power's collapse set off that race?",
     "answer": "Russia's",
     "choices": [
       "Russia's",
@@ -1379,7 +1340,7 @@
   },
   {
     "tier": 2,
-    "question": "Edward Hopper's 1942 painting Nighthawks shows four people inside a brightly lit late-night diner, sealed behind one big curved sheet of glass. Look hard at that glass diner and you notice something missing that every real diner has. What did Hopper leave out?",
+    "question": "Edward Hopper painted Nighthawks in 1942: four people inside a brightly lit late-night diner, sealed behind one big curved sheet of glass. A viewer who looks hard at that diner notices something missing that every real diner has. What did Hopper leave out?",
     "answer": "Any visible door to get in or out",
     "choices": [
       "Any visible door to get in or out",
@@ -1392,7 +1353,7 @@
   },
   {
     "tier": 2,
-    "question": "When Andy Warhol showed his Campbell's Soup Cans in 1962, he painted not one can but a whole row of them. Gallery director Irving Blum asked Warhol why on earth he had made so many separate canvases. What was Warhol's flat little reason for the exact number?",
+    "question": "Andy Warhol painted a whole row of Campbell's soup cans for his 1962 show, each on a canvas of its own. The gallery director Irving Blum asked him why on earth he had made so many separate canvases. What was Warhol's flat little reason?",
     "answer": "\"There are 32 varieties.\"",
     "choices": [
       "\"There are 32 varieties.\"",
@@ -1405,7 +1366,7 @@
   },
   {
     "tier": 3,
-    "question": "Jackson Pollock did not paint at an upright easel like other painters. He explained in 1947: \"On the floor I am more at ease. I feel nearer, more part of the painting... I can walk around it, work from the four sides and literally be in the painting.\" So how did Pollock actually make a painting?",
+    "question": "Jackson Pollock turned his back on the upright easel that other painters stood at. 'I feel nearer, more part of the painting,' he explained in 1947; he wanted to 'literally be in the painting.' How did Pollock actually make his paintings?",
     "answer": "He spread the canvas flat and poured paint while walking around it",
     "choices": [
       "He spread the canvas flat and poured paint while walking around it",
@@ -1418,7 +1379,7 @@
   },
   {
     "tier": 3,
-    "question": "People thought Andy Warhol painted soup cans as a cold joke about advertising. But Warhol said he chose Campbell's soup for a much simpler, more personal reason: \"I used to have the same lunch every day, for 20 years.\" Why did Warhol paint that soup?",
+    "question": "Andy Warhol painted Campbell's soup cans over and over, and critics read them as a cold joke about advertising. Warhol said his real reason was far simpler than that. Why did Warhol paint that soup?",
     "answer": "He really ate it every day, the lunch his mother Julia made him",
     "choices": [
       "He really ate it every day, the lunch his mother Julia made him",
@@ -1431,7 +1392,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1956 Time magazine wrote about Jackson Pollock, whose famous paintings were made by dripping and flinging paint across a canvas on the floor. The magazine pinned a mocking nickname on him — a pun on his drippy style — that stuck to him forever. What did Time call Pollock?",
+    "question": "Jackson Pollock made his name by dripping and flinging house paint off sticks and trowels. In 1956 Time magazine pinned a mocking nickname on him, and it stuck to him for good. What did Time call Pollock?",
     "answer": "\"Jack the Dripper\"",
     "choices": [
       "\"Jack the Dripper\"",
@@ -1444,7 +1405,7 @@
   },
   {
     "tier": 2,
-    "question": "In the American Revolution, British soldiers sang 'Yankee Doodle' to mock the colonists as country bumpkins. The joke turned on the word 'macaroni.' A 'doodle' was a fool who thought sticking one feather in his cap made him a macaroni. In the 1760s, what was a 'macaroni'?",
+    "question": "British soldiers sang 'Yankee Doodle' to mock the American colonists as country bumpkins. The joke turned on one word: a 'doodle' was a fool who thought sticking a single feather in his cap made him a 'macaroni.' In the 1760s, what was a macaroni?",
     "answer": "A flashy, over-dressed young English dandy",
     "choices": [
       "A flashy, over-dressed young English dandy",
@@ -1457,7 +1418,7 @@
   },
   {
     "tier": 3,
-    "question": "During the War of 1812, an American lawyer named Francis Scott Key watched British warships bomb Fort McHenry through the night in September 1814. Seeing the American flag still flying at dawn, he scribbled a poem, then set his words to a tune Americans already knew, called 'To Anacreon in Heaven.' A century later that combined song became the U.S. national anthem. What did the tune begin its life as?",
+    "question": "Francis Scott Key, an American lawyer, watched British warships bombard Fort McHenry through a September night in 1814. Seeing the American flag still flying at dawn, he wrote a poem and set it to a tune Americans already knew, 'To Anacreon in Heaven.' Words and tune together became the national anthem in 1931. What had the tune begun life as?",
     "answer": "The theme song of a London gentlemen's drinking club",
     "choices": [
       "The theme song of a London gentlemen's drinking club",
@@ -1470,7 +1431,7 @@
   },
   {
     "tier": 2,
-    "question": "Two whole continents are named America. The name honors Amerigo Vespucci, an Italian sailor who first argued in the early 1500s that Christopher Columbus had reached a brand-new world, not the eastern edge of Asia. When German mapmakers printed his idea on a famous 1507 map, they turned part of his name into a Latin label for the new land. Oddly, it does not come from his family name at all. Which part of his name did the mapmakers use?",
+    "question": "Martin Waldseemüller, a German mapmaker, printed a great world map in 1507 and gave the new lands a Latin name taken from the Italian navigator Amerigo Vespucci. Oddly, it does not come from Vespucci's family name at all, though two whole continents carry it today. Which part of his name did the mapmaker use?",
     "answer": "His first name, Amerigo",
     "choices": [
       "His first name, Amerigo",
@@ -1483,7 +1444,7 @@
   },
   {
     "tier": 4,
-    "question": "Christopher Columbus reached the western lands first, yet the continents bear Amerigo Vespucci's name instead. Columbus went to his grave insisting he had reached the eastern edge of Asia. What did Vespucci do that Columbus never would, which won him the honor?",
+    "question": "Christopher Columbus reached the western lands first, yet the continents bear Amerigo Vespucci's name instead. Columbus went to his grave insisting he had reached the eastern edge of Asia. What did Vespucci do that won him the honor?",
     "answer": "He argued in print the land was an entirely new continent, not Asia",
     "choices": [
       "He argued in print the land was an entirely new continent, not Asia",
@@ -1496,20 +1457,7 @@
   },
   {
     "tier": 2,
-    "question": "The Ancestral Puebloans of the American Southwest built whole stone towns in shady alcoves high in the cliff faces. Their biggest one was hidden at Mesa Verde until ranchers found it in 1888. It has about 150 rooms. What is this largest cliff dwelling in North America called?",
-    "answer": "Cliff Palace",
-    "choices": [
-      "Cliff Palace",
-      "Sunset Hall",
-      "Stone Harbor",
-      "Echo Keep"
-    ],
-    "context": "Cliff Palace at Mesa Verde sits in a sandstone alcove and holds about 150 rooms and 23 kivas, yet only roughly 100 to 125 people lived there. Ranchers found it in 1888. (coloradoencyclopedia.org/article/cliff-palace)",
-    "topic": "ancestral-puebloans-anasazi-of-the-southwest"
-  },
-  {
-    "tier": 2,
-    "question": "In the American Southwest — in what is now Arizona, New Mexico, and Colorado — an ancient people built huge stone cliff dwellings tucked into canyon walls between roughly the years 500 and 1300, then mysteriously moved on. Their descendants are today's Pueblo people, who usually avoid the old word 'Anasazi' for their ancestors. 'Anasazi' is not even a Pueblo word — it comes from the Navajo language spoken by a different tribe. Roughly, what does that Navajo word mean?",
+    "question": "The Ancestral Puebloans built great stone towns in the Southwest's Four Corners and moved away around 1300. Outsiders long knew them as the Anasazi, but the word is not theirs: it comes from the Navajo, a neighboring people. Roughly, what does the Navajo word mean?",
     "answer": "ancient enemies",
     "choices": [
       "ancient enemies",
@@ -1522,7 +1470,7 @@
   },
   {
     "tier": 3,
-    "question": "Deep in an Ancestral Puebloan kiva -- a round ceremonial room dug into the ground -- there is a small hole deliberately cut into the floor. To the people who built it, this hole was no ordinary hole: it was a portal. What did they believe happened at that spot, called the sipapu?",
+    "question": "Ancestral Puebloan builders cut a small hole into the floor of each kiva, the round ceremonial room they sank into the ground. To them that hole, called the sipapu, was no ordinary hole but a portal. What did they believe happened at that spot?",
     "answer": "their ancestors first emerged into this world",
     "choices": [
       "their ancestors first emerged into this world",
@@ -1548,20 +1496,7 @@
   },
   {
     "tier": 5,
-    "question": "On Fajada Butte at Chaco Canyon, three leaning stone slabs throw a thin blade of sunlight onto a spiral carved into the rock behind them. In 1977 the artist Anna Sofaer noticed that on the longest day of the year a single sliver of light pierces the spiral's exact center, and on the shortest day two slivers frame it. Researchers gave this striking light-and-stone marker a vivid name. What is it called?",
-    "answer": "the Sun Dagger",
-    "choices": [
-      "the Sun Dagger",
-      "the Moon Gate",
-      "the Star Wheel",
-      "the Shadow Stone"
-    ],
-    "context": "The 'Sun Dagger' on Fajada Butte marks the solstices -- one blade pierces the spiral's center at summer solstice, two frame it at winter solstice. It works as a stone solar calendar, found by Anna Sofaer in 1977. (solsticeproject.org/anna-sofaer)",
-    "topic": "ancestral-puebloans-anasazi-of-the-southwest"
-  },
-  {
-    "tier": 5,
-    "question": "Inside Pueblo Bonito at Chaco Canyon, diggers found skeletons of bright tropical creatures. These animals live only in far-off rainforests over 1,000 miles away. They had been carried to this dry canyon as early as AD 900 — proof of trade with distant Mexico. What were these creatures?",
+    "question": "Archaeologists digging inside Pueblo Bonito at Chaco Canyon uncovered the bones of creatures that had been brought to that dry canyon from more than 1,000 miles away as early as AD 900, proof of trade with distant Mexico. What were these creatures?",
     "answer": "scarlet macaws",
     "choices": [
       "scarlet macaws",
@@ -1574,7 +1509,7 @@
   },
   {
     "tier": 2,
-    "question": "About 3,200 years ago in ancient China, the kings of the Shang dynasty wanted advice from their dead ancestors about war, harvest, and rain. Their diviners — priest-like fortune-tellers at the royal court — scraped and polished an ox shoulder-blade or a turtle's belly-shell until it was perfectly smooth. To get an answer from the ancestors, what did a diviner do next to the prepared bone?",
+    "question": "King Wu Ding of the Shang wanted advice from his dead ancestors. His diviner scraped and polished an ox shoulder blade or a turtle's belly shell until it was perfectly smooth. To get the ancestors' answer, what did the diviner do next to the prepared bone?",
     "answer": "Pressed a red-hot rod into it until it cracked, and read the crack.",
     "choices": [
       "Pressed a red-hot rod into it until it cracked, and read the crack.",
@@ -1587,7 +1522,7 @@
   },
   {
     "tier": 3,
-    "question": "In ancient China more than 3,000 years ago, the Shang dynasty kings wanted to know the future — would the harvest come in, would the war go well, would the queen bear a son? Their diviners would carve a question into a turtle shell or an ox bone, heat the bone in a fire until it cracked, and read the pattern of cracks as an answer from the gods. Beside each crack the diviner scratched the question. Those Shang carvings are the oldest known Chinese writing. What happened to that script over the 3,000 years since?",
+    "question": "Shang diviners carved questions to the ancestors into turtle shells and ox bones more than 3,000 years ago, and later scratched the outcome beside each one. No older Chinese writing has ever been found. On those bones the sun appears as a dotted circle and the moon as a crescent. What happened to that script over the 3,000 years since?",
     "answer": "Today's Chinese characters descend straight from it, still recognizable.",
     "choices": [
       "Today's Chinese characters descend straight from it, still recognizable.",
@@ -1600,7 +1535,7 @@
   },
   {
     "tier": 5,
-    "question": "The Shang carved their oracle questions using an early form of the Chinese character for 'to divine,' \"bu\". Scholars think this character began as a tiny picture, and that even its sound carries a memory of the ritual. What do scholars believe that character is?",
+    "question": "Scribes of the Shang court carved the word bu, 'to divine,' onto their oracle bones in its earliest written form. Scholars think the character began as a tiny picture, and that even its sound carries a memory of the ritual. What do they believe the character shows, and what does its sound echo?",
     "answer": "A picture of the divination crack, said aloud to echo the 'pok' of the splitting bone.",
     "choices": [
       "A picture of the divination crack, said aloud to echo the 'pok' of the splitting bone.",
@@ -1613,7 +1548,7 @@
   },
   {
     "tier": 4,
-    "question": "King Wu Ding of the Shang once divined about the childbirth of his consort, Lady Hao, and read the cracks as a confident prophecy: if she gave birth on a lucky ding-day, there would be long good fortune. Weeks later a scribe carved what actually happened, right onto the same bone. What did that carving record?",
+    "question": "Wu Ding, a Shang king, once read the cracks of an oracle bone about the coming childbirth of his consort, Lady Hao, and made a confident prophecy: if she gave birth on a lucky ding-day, there would be long good fortune. Later a scribe carved what actually happened, right onto the same bone. What did that carving record?",
     "answer": "The baby came late, on an unlucky day, and was a girl.",
     "choices": [
       "The baby came late, on an unlucky day, and was a girl.",
@@ -1626,7 +1561,7 @@
   },
   {
     "tier": 2,
-    "question": "Not every oracle-bone question was grand. Shang kings asked the ancestors whether it would rain the next day, or whether three oxen or five was the right offering. One famous bone records a king with a sore tooth asking who was to blame for the pain. Who did the bone blame?",
+    "question": "A sore tooth sent one Shang king to his diviners with a question: who was causing the pain? Many Shang questions were homely ones like that, such as whether it would rain the next day, or whether three oxen or five made the right offering. Who did the bone blame for the toothache?",
     "answer": "A dead ancestor, 'father Yi,' reaching from beyond to cause it.",
     "choices": [
       "A dead ancestor, 'father Yi,' reaching from beyond to cause it.",
@@ -1639,7 +1574,7 @@
   },
   {
     "tier": 3,
-    "question": "For 3,000 years the oracle bones were lost. Chinese healers ground the plain ones into powder. They sold the powder as 'dragon bones' to cure fevers. In 1899 the scholar Wang Yirong was dosing his own malaria with them. He looked closely at some unground bones. What did he see that no one else had noticed?",
+    "question": "Wang Yirong, a scholar, was dosing his own malaria in 1899 with 'dragon bones,' the powder Chinese healers had long sold as a fever cure. He looked closely at some pieces that had not yet been ground up. What did he see on them that no one else had noticed?",
     "answer": "Lines of ancient writing carved across them.",
     "choices": [
       "Lines of ancient writing carved across them.",
@@ -1652,7 +1587,7 @@
   },
   {
     "tier": 5,
-    "question": "Just a year after the scholar Wang Yirong made the discovery that pushed China's recorded history back more than a thousand years, foreign armies stormed Beijing in August 1900 during the Boxer Rebellion. Wang took a doomed local command as the city fell. What did he do rather than be captured?",
+    "question": "Wang Yirong took a hopeless command as foreign troops fought their way into Beijing during the Boxer Rebellion in August 1900, only a year after his find among the dragon bones. The city fell. What did he do rather than be captured?",
     "answer": "Took his own life, together with his wife and daughter-in-law.",
     "choices": [
       "Took his own life, together with his wife and daughter-in-law.",
@@ -1665,7 +1600,7 @@
   },
   {
     "tier": 4,
-    "question": "On Shang dynasty oracle bones dug up in northern China from about 3,200 years ago, one royal woman turns up more than any other. She was Fu Hao, a consort of King Wu Ding, and her name appears on about 200 cracked bones — far more than any other Shang queen or princess. Strangely, the bones do not show her praying, weaving, or bearing children. What do they record her doing?",
+    "question": "Fu Hao, a consort of the Shang king Wu Ding, appears on about 200 cracked oracle bones from some 3,200 years ago, far more than any other Shang queen or princess. Strangely, the bones do not show her praying or weaving. What do they record her doing?",
     "answer": "Leading armies into battle as a Shang general.",
     "choices": [
       "Leading armies into battle as a Shang general.",
@@ -1678,7 +1613,7 @@
   },
   {
     "tier": 2,
-    "question": "The Huang He in northern China is one of the great rivers of the world and the cradle of Chinese civilization — the plain along its banks is where the first Chinese dynasties rose. In English it is better known by another name: the Yellow River. It earns that name honestly, because its water really is the color of straw and mustard. What turns the water so yellow?",
+    "question": "The Huang He rolls across the plain of northern China where Chinese civilization was born, and its water really is the color of straw and mustard. That is why it is better known in English as the Yellow River. What turns the water so yellow?",
     "answer": "Fine yellow soil, called loess, that it scoops up as it flows.",
     "choices": [
       "Fine yellow soil, called loess, that it scoops up as it flows.",
@@ -1691,7 +1626,7 @@
   },
   {
     "tier": 2,
-    "question": "Year after year, China's Yellow River dumps thick yellow silt across its own riverbed, raising the bed a little higher each flood season. To keep the water from bursting out and drowning the farmland, villagers pile the dikes on each bank higher and higher. In the worst stretches this endless race has done something almost unbelievable to where the river sits today. What has happened?",
+    "question": "China's Yellow River dumps thick yellow silt on its own bed every flood season, lifting the bed a little higher each time. To keep the water from bursting out and drowning the farmland, villagers pile the dikes ever higher. In the worst stretches, what has that endless race done to the river?",
     "answer": "The river now runs higher than the rooftops and fields beside it.",
     "choices": [
       "The river now runs higher than the rooftops and fields beside it.",
@@ -1704,7 +1639,7 @@
   },
   {
     "tier": 4,
-    "question": "Because the Yellow River had risen to run above the plain, when its dikes gave way near Zhengzhou in late September 1887 the water did not stay in a channel: it poured straight down onto the countryside and spread across some 50,000 square miles. What did that one flood do?",
+    "question": "The Yellow River burst its dikes near Zhengzhou in late September 1887, and its water spread across some 50,000 square miles of the northern Chinese plain. Villagers had built those dikes ever higher to hold the river in. What did that one flood do?",
     "answer": "Drowned close to a million people across northern China.",
     "choices": [
       "Drowned close to a million people across northern China.",
@@ -1717,7 +1652,7 @@
   },
   {
     "tier": 2,
-    "question": "Two mighty rivers cradle China. In the north runs the Yellow River, cradle of Chinese civilization. Farther south flows an even longer giant, the Yangtze — Chang Jiang in Chinese — which pours from the high Tibetan mountains all the way down to the sea at Shanghai. One fact about the Yangtze puts it among the most famous rivers on the whole Earth. Which is true of the Yangtze?",
+    "question": "The Yangtze, which the Chinese call Chang Jiang, pours down from the high Tibetan mountains and runs all the way to the sea at Shanghai, far to the south of the Yellow River. One fact about it puts the Yangtze among the most famous rivers on Earth. Which is true of the Yangtze?",
     "answer": "It is the longest river in Asia and the third-longest on Earth.",
     "choices": [
       "It is the longest river in Asia and the third-longest on Earth.",
@@ -1730,7 +1665,7 @@
   },
   {
     "tier": 3,
-    "question": "Legend tells of Yu the Great, founder of the Xia dynasty, who battled the flooding Yellow River for thirteen years. Where others had tried to dam the water, he dug channels and canals to lead it out to the sea, and the tale says he gave himself so completely to the work that he did one remarkable thing. What does the legend say he did?",
+    "question": "Yu the Great, the legendary founder of the Xia dynasty, battled the flooding Yellow River for thirteen years, the story goes. Where his father had tried to dam the water, Yu dug channels to lead it out to the sea, and he gave himself so completely to the work that he did one remarkable thing. What does the legend say he did?",
     "answer": "Passed the door of his own home three times without ever going in.",
     "choices": [
       "Passed the door of his own home three times without ever going in.",
@@ -1756,7 +1691,7 @@
   },
   {
     "tier": 4,
-    "question": "In the early 1100s, the Khmer king Suryavarman II built Angkor Wat in what is now Cambodia — the largest religious building on Earth, ringed by a wide moat and covered in stone carvings. Most Khmer temples face east toward the rising sun. But Angkor Wat's main entrance instead faces west, the direction the Khmers linked to death. Because of this, many scholars believe the king meant the temple to double as what?",
+    "question": "Suryavarman II, a Khmer king, built Angkor Wat in what is now Cambodia in the early 1100s: the largest religious building on Earth, ringed by a wide moat and covered in stone carvings. Most Khmer temples face east toward the rising sun, but Angkor Wat's main entrance faces west, the direction of death in Khmer belief. What do many scholars believe the king meant it to be as well?",
     "answer": "His own funerary temple, a tomb for his death",
     "choices": [
       "His own funerary temple, a tomb for his death",
@@ -1769,7 +1704,7 @@
   },
   {
     "tier": 1,
-    "question": "On 12 June 1942, a Jewish girl named Anne Frank turned thirteen in Nazi-occupied Amsterdam. The day before her birthday, she walked through an Amsterdam bookshop with her father Otto and pointed at the present she wanted more than any other. What did she choose as her birthday gift?",
+    "question": "Anne Frank, a Jewish girl in Nazi-occupied Amsterdam, turned thirteen on 12 June 1942. The day before her birthday she walked through a bookshop with her father, Otto, and pointed at the present she wanted more than any other. What did she choose?",
     "answer": "A small diary with a red-checkered cover",
     "choices": [
       "A small diary with a red-checkered cover",
@@ -1782,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "Anne Frank did not simply jot down events in her diary. She wrote it as a series of letters to an imaginary friend she invented, opening each entry by greeting her by name. What name did Anne give this make-believe friend she poured her heart out to?",
+    "question": "Anne Frank did not simply jot down events in her diary. She wrote it as a series of letters to a friend she invented, opening each entry by greeting her by name. What name did Anne give the make-believe friend she poured her heart out to?",
     "answer": "Kitty",
     "choices": [
       "Kitty",
@@ -1795,7 +1730,7 @@
   },
   {
     "tier": 2,
-    "question": "In Nazi-occupied Amsterdam in 1942, eight Jewish people — including the teenage Anne Frank, her sister Margot, and her parents Otto and Edith — went into hiding in a Secret Annex at the back of Otto Frank's office building. To keep any visitor from guessing there were extra rooms tucked behind the wall, the doorway to the Annex was cleverly disguised. Anyone walking the hall saw only a plain office wall. What was built to hide the doorway?",
+    "question": "Eight people went into hiding in 1942 in a Secret Annex at the back of Otto Frank's office building in Amsterdam, among them his wife Edith and his daughters Anne and Margot. Anyone walking the hall saw only a plain wall, because the doorway was cleverly disguised. What hid it?",
     "answer": "A swinging bookcase",
     "choices": [
       "A swinging bookcase",
@@ -1808,7 +1743,7 @@
   },
   {
     "tier": 2,
-    "question": "Anne Frank's room in the annex was cramped and its walls were bare, so she brightened it herself — pasting things up 'with a pot of glue and a brush' until, she wrote, she had turned 'the entire room into one big picture.' The faded originals still hang on those walls today. What did she cover her walls with?",
+    "question": "Anne Frank brightened her cramped, bare room in the annex herself, pasting things up 'with a pot of glue and a brush' until, she wrote, she had turned 'the entire room into one big picture.' The faded originals still hang on those walls today. What did she cover her walls with?",
     "answer": "Postcards and pictures of movie stars",
     "choices": [
       "Postcards and pictures of movie stars",
@@ -1821,7 +1756,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 1944, Anne Frank sat by the attic window and wrote in her diary. She wrote about the dew and the seagulls flashing silver as they flew past. She also wrote about one tall thing outside the attic window. She had already written about it three times before. What was it?",
+    "question": "Seagulls flashed silver past the attic window in February 1944, and Anne Frank, sitting there with her diary, wrote about them and about the dew. She also wrote about one tall thing outside that window, which she had already written about three times before. What was it?",
     "answer": "A chestnut tree",
     "choices": [
       "A chestnut tree",
@@ -1834,7 +1769,7 @@
   },
   {
     "tier": 2,
-    "question": "For two years Anne Frank's family hid in a secret annex above her father's Amsterdam office. One of the office helpers took care of feeding them. She biked over nearly every day with meat, vegetables, and library books. If the Nazis had caught her helping Jews in hiding, what would her penalty have been?",
+    "question": "Miep Gies, one of the office helpers, biked over to the hidden annex nearly every day for two years, bringing meat, vegetables and library books to Anne Frank's family. If the Nazis had caught her helping Jews in hiding, what would her penalty have been?",
     "answer": "Death or being sent to a concentration camp",
     "choices": [
       "Death or being sent to a concentration camp",
@@ -1847,7 +1782,7 @@
   },
   {
     "tier": 3,
-    "question": "All day long the eight people in the Secret Annex had to be silent. They could not run water, flush the toilet, or speak above a whisper. They could move around only after dark. Who were they so afraid of hearing them, just on the other side of the wall?",
+    "question": "All day long the eight people in the Secret Annex had to be silent. They could not run water, flush the toilet, or speak above a whisper. They could move around only after dark. Who were they so afraid would hear them?",
     "answer": "Warehouse workers in the rooms below",
     "choices": [
       "Warehouse workers in the rooms below",
@@ -1860,7 +1795,7 @@
   },
   {
     "tier": 3,
-    "question": "Hiding from the Nazis in the Secret Annex behind her father's Amsterdam office, the teenage Anne Frank dreamed of becoming a writer and journalist after the war. On 5 April 1944, she wrote in her diary that she knew she truly could write — and then set down a single line about her deepest hope, that her words might outlast her own short life. What did she write that she wanted?",
+    "question": "Anne Frank, hidden from the Nazis in the Secret Annex, dreamed of becoming a writer and journalist once the war was over. On 5 April 1944 she wrote in her diary that she knew she truly could write, and then set down a single line about her deepest hope. What did she write that she wanted?",
     "answer": "'I want to go on living even after my death'",
     "choices": [
       "'I want to go on living even after my death'",
@@ -1873,7 +1808,7 @@
   },
   {
     "tier": 3,
-    "question": "In spring 1944, Anne Frank heard a radio broadcast in which an exiled Dutch minister urged people to save their wartime diaries and letters so the world could read them afterward. The idea seized her. Still hidden in the annex, what did Anne immediately begin to do?",
+    "question": "Gerrit Bolkestein, the exiled Dutch minister, spoke on the radio in the spring of 1944 and urged the Dutch to keep their wartime diaries and letters so the world could read them afterward. In the hidden annex Anne Frank heard him, and the idea seized her. What did she at once begin to do?",
     "answer": "Rewrite her whole diary to publish as a book",
     "choices": [
       "Rewrite her whole diary to publish as a book",
@@ -1886,7 +1821,7 @@
   },
   {
     "tier": 4,
-    "question": "On the morning of 4 August 1944, after more than two years hidden in the annex, all eight were discovered and arrested in a sudden police raid. For decades since, people have combed the records and named suspects, but one haunting question about that day has never been answered. What is it?",
+    "question": "Karl Josef Silberbauer, an SS officer, led a sudden police raid on the annex on the morning of 4 August 1944 and arrested all eight people hidden there, after more than two years in hiding. People have combed the records for decades since. What haunting question about that day has never been answered?",
     "answer": "Who tipped off the police has never been proven",
     "choices": [
       "Who tipped off the police has never been proven",
@@ -1899,7 +1834,7 @@
   },
   {
     "tier": 4,
-    "question": "In August 1944 the Franks' Amsterdam hiding place was betrayed, and the family was shipped to Nazi camps. In November 1944 the teenage Anne Frank and her older sister Margot were moved to Bergen-Belsen in northern Germany. Both girls caught typhus in the freezing, lice-ridden camp and died within days of each other in February 1945. How close had they come to surviving?",
+    "question": "Typhus raged through Bergen-Belsen, a freezing, lice-ridden camp in northern Germany, after Anne Frank and her older sister Margot were moved there in November 1944. Both girls caught it and died within days of each other in February 1945. How close had they come to surviving?",
     "answer": "British troops freed the camp just weeks later",
     "choices": [
       "British troops freed the camp just weeks later",
@@ -1912,7 +1847,7 @@
   },
   {
     "tier": 4,
-    "question": "Anne Frank's most famous words, written 15 July 1944 — only three weeks before the raid — are now carved on memorials around the world. In the very same passage she also wrote, 'I hear the ever approaching thunder, which will destroy us too.' What is that famous, hopeful line set beside the dread?",
+    "question": "Anne Frank wrote her most famous words on 15 July 1944, only three weeks before the raid, and they are now carved on memorials around the world. In the very same passage she wrote, 'I hear the ever approaching thunder, which will destroy us too.' What hopeful line did she set beside that dread?",
     "answer": "'In spite of everything I still believe that people are really good at heart'",
     "choices": [
       "'In spite of everything I still believe that people are really good at heart'",
@@ -1925,7 +1860,7 @@
   },
   {
     "tier": 4,
-    "question": "After the eight were arrested and taken away, the helper Miep Gies climbed into the emptied annex and found Anne Frank's diary and loose pages scattered across the floor. She gathered them up, locked them in her desk drawer, and never opened them, meaning to hand them back to Anne someday. Why did she later say it was lucky she had never read them?",
+    "question": "Miep Gies climbed into the emptied annex after the eight were arrested and taken away, and found Anne Frank's diary and loose pages scattered across the floor. She gathered them up and locked them away unread in her desk drawer, meaning to hand them back to Anne someday. Why did she later say it was lucky she had never read them?",
     "answer": "They named the helpers, so she'd have had to burn them",
     "choices": [
       "They named the helpers, so she'd have had to burn them",
@@ -1938,7 +1873,7 @@
   },
   {
     "tier": 4,
-    "question": "Of the eight people who had hidden together in the Secret Annex, only one survived the war. When he returned to Amsterdam, Miep Gies handed him the diary she had saved, and in 1947 he had it published — a book now printed in about 70 languages. Which of the eight was the lone survivor?",
+    "question": "Miep Gies handed the diary she had saved to the one person from the Secret Annex who came back to Amsterdam after the war. Of the eight hidden there, he alone survived, and in 1947 he had the diary published; it has since been printed in about 70 languages. Which of the eight was the lone survivor?",
     "answer": "Otto Frank, Anne's father",
     "choices": [
       "Otto Frank, Anne's father",
@@ -1951,7 +1886,7 @@
   },
   {
     "tier": 1,
-    "question": "In September 1862, a Union soldier crossing a meadow in Maryland spotted three cigars lying in the grass. They were wrapped in a sheet of paper, and that paper turned out to be one of the luckiest finds of the whole Civil War. What was written on it?",
+    "question": "Barton W. Mitchell, a Union corporal crossing a field in Maryland in September 1862, spotted three cigars in the grass. They were wrapped in a sheet of paper, and that paper turned out to be one of the luckiest finds of the war. What was written on it?",
     "answer": "General Lee's secret battle plan",
     "choices": [
       "General Lee's secret battle plan",
@@ -2016,7 +1951,7 @@
   },
   {
     "tier": 5,
-    "question": "Antietam counted as enough of a Union victory that President Abraham Lincoln finally acted on a decision he had been holding back for months. He had told his Cabinet he would wait for a battlefield win before announcing it. Five days after the battle, what did Lincoln announce?",
+    "question": "Abraham Lincoln had been holding back a decision for months, telling his Cabinet he would wait for a battlefield win before announcing it. Antietam was enough of a Union victory to give him one. Five days after the battle, what did Lincoln announce?",
     "answer": "The Emancipation Proclamation, freeing the enslaved in the rebel states",
     "choices": [
       "The Emancipation Proclamation, freeing the enslaved in the rebel states",
@@ -6618,7 +6553,7 @@
   },
   {
     "tier": 2,
-    "question": "In December 1944 the German army made a sudden push that pressed a huge dent into the Allied battle line on the war maps. That swelling bulge of enemy-held ground stabbed into territory the Allies had held. American soldiers gave the fight a nickname taken directly from that shape on the map. What did they call it?",
+    "question": "Hitler's armies tore into the snowbound Ardennes forest of Belgium in December 1944, and on the war maps the ground they seized pushed deep into the Allied front line. American soldiers named the fight after that shape. What did they call it?",
     "answer": "the Battle of the Bulge",
     "choices": [
       "the Battle of the Bulge",
@@ -6631,7 +6566,7 @@
   },
   {
     "tier": 2,
-    "question": "In December 1944, American paratroopers were cut off in the Belgian town of Bastogne. The Germans sent in a written demand for an 'honorable surrender.' They thought the trapped men would give up. Brigadier General Anthony McAuliffe typed his whole reply as a single word. What was that one word answer?",
+    "question": "Anthony McAuliffe and his American paratroopers were surrounded in the Belgian town of Bastogne in December 1944. The Germans sent in a written demand for an 'honorable surrender,' sure the trapped men would give up. McAuliffe typed his whole reply as a single word. What was that word?",
     "answer": "NUTS!",
     "choices": [
       "NUTS!",
@@ -6644,7 +6579,7 @@
   },
   {
     "tier": 3,
-    "question": "On December 16, 1944, Hitler launched a surprise winter attack through the snowy Ardennes Forest, codenamed 'Wacht am Rhein' (Watch on the Rhine). His plan was to smash through Belgium and capture one great prize — a target that, if seized, would cut the Allied armies in two. What was the objective Hitler was driving for?",
+    "question": "Adolf Hitler launched a surprise winter attack through the snowy Ardennes Forest on 16 December 1944, codenamed 'Wacht am Rhein,' Watch on the Rhine. He meant to smash through Belgium and capture one great prize, a target that would cut the Allied armies in two. What was the objective Hitler was driving for?",
     "answer": "the port of Antwerp",
     "choices": [
       "the port of Antwerp",
@@ -6657,7 +6592,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Battle of the Bulge, English-speaking German commandos wore captured American uniforms and drove American jeeps behind the lines. American guards at checkpoints could not tell friend from spy by sight. So they grilled each other with a kind of question a real American would know cold but a disguised German might miss. What did the GIs quiz each other about?",
+    "question": "Otto Skorzeny's English-speaking German commandos put on captured American uniforms and drove American jeeps behind the lines. At checkpoints the guards could not tell friend from spy by sight, so they grilled each other with questions a real American would know cold but a disguised German might miss. What did the GIs quiz each other about?",
     "answer": "American pop culture, like Mickey Mouse's girlfriend",
     "choices": [
       "American pop culture, like Mickey Mouse's girlfriend",
@@ -6669,21 +6604,21 @@
     "topic": "battle-of-the-bulge"
   },
   {
-    "tier": 4,
-    "question": "With the 101st Airborne trapped at Bastogne, the weather grounded the planes that could have dropped supplies — so General George Patton ordered his Third Army chaplain, James O'Neill, to write a prayer for clear skies, and had it printed on cards for the troops. The very next day, December 23, 1944, the skies cleared and the planes flew. How did Patton reward the chaplain?",
-    "answer": "he pinned a Bronze Star on him",
+    "tier": 3,
+    "question": "George Patton needed his planes in the air, with the 101st Airborne trapped at Bastogne, but fog and rain kept them on the ground. He ordered his Third Army chaplain, James O'Neill, to write a prayer for clear skies and had it printed on cards for the troops. The skies cleared on 23 December 1944 and the planes flew. How did Patton reward the chaplain?",
+    "answer": "Pinned a Bronze Star on him",
     "choices": [
-      "he pinned a Bronze Star on him",
-      "he gave him a private's pay raise",
-      "he sent him home on leave",
-      "he named a tank after him"
+      "Pinned a Bronze Star on him",
+      "Promoted him to colonel",
+      "Gave him his own ivory pistol",
+      "Named a tank in his honor"
     ],
-    "context": "Patton reportedly said, 'God damn! That O'Neill sure did some potent praying,' and pinned a Bronze Star on the chaplain. The clear weather let Allied planes fly and drop supplies to the besieged defenders. Source: https://www.wwiimemorialfriends.org/blog/pattons-prayer",
+    "context": "Patton reportedly said, 'God damn! That O'Neill sure did some potent praying,' and pinned a Bronze Star on the chaplain. The clear weather let Allied planes fly and drop supplies to the besieged defenders, and the Third Army wheeled north to relieve the 101st Airborne at Bastogne. Sources: https://www.wwiimemorialfriends.org/blog/pattons-prayer; https://www.warhistoryonline.com/instant-articles/battle-of-the-bulge-patton-ordered-the-priest-to-pray-for-clear-weather-the-weather-subsequently-cleared.html",
     "topic": "battle-of-the-bulge"
   },
   {
     "tier": 4,
-    "question": "The day after the German offensive began, Waffen-SS troops under Joachim Peiper captured a group of unarmed American prisoners at the Baugnez crossroads near Malmedy, Belgium, and machine-gunned them in a field — about 84 men, the largest massacre of U.S. soldiers in Europe during the war. How did more than 50 of the captured Americans manage to survive the shooting?",
+    "question": "Joachim Peiper's Waffen-SS troops captured a group of unarmed American prisoners at the Baugnez crossroads near Malmedy, Belgium, on 17 December 1944 and machine-gunned them in a field: about 84 men, the largest massacre of U.S. soldiers in Europe during the war. How did more than 50 of the captured Americans manage to survive the shooting?",
     "answer": "they fell down playing dead, then ran",
     "choices": [
       "they fell down playing dead, then ran",
@@ -6696,7 +6631,7 @@
   },
   {
     "tier": 5,
-    "question": "On 19 December 1944, with the 101st Airborne trapped at Bastogne, General George Patton stunned the room by promising to counterattack within 48 hours. To honor that promise he pulled off a maneuver generals usually call impossible. He turned his whole Third Army a quarter-turn in the dead of winter. What did Patton actually do with his 250,000 men and hundreds of tanks?",
+    "question": "George Patton stunned a room full of generals on 19 December 1944, with the 101st Airborne trapped at Bastogne, by promising to counterattack within 48 hours. To keep that promise he pulled off a maneuver generals usually call impossible, in the dead of winter. What did Patton actually do with his 250,000 men and hundreds of tanks?",
     "answer": "wheeled them 90 degrees from facing east to driving north",
     "choices": [
       "wheeled them 90 degrees from facing east to driving north",
@@ -7008,33 +6943,7 @@
   },
   {
     "tier": 1,
-    "question": "In Boston in March 1876, the Scottish-American inventor Alexander Graham Bell was working late on his newest invention, a device that could send the human voice down an electric wire. He spilled acid on his clothes and shouted for his helper through the machine into the next room. Those few words became the first full sentence ever carried over a telephone. What did Bell say?",
-    "answer": "\"Mr. Watson, come here, I want to see you.\"",
-    "choices": [
-      "\"Mr. Watson, come here, I want to see you.\"",
-      "\"Watson, the wire is working at last.\"",
-      "\"Can you hear my voice from there?\"",
-      "\"Come quickly, the experiment is done.\""
-    ],
-    "context": "Boston, March 10, 1876. Thomas Watson, in the next room, heard it clearly and wrote it down in his notebook (now in the Library of Congress Bell Papers). https://www.history.com/this-day-in-history/march-10/speech-transmitted-by-telephone",
-    "topic": "bell-edison-and-the-late-century-invention-boom"
-  },
-  {
-    "tier": 1,
-    "question": "In 1877, the American inventor Thomas Edison built a machine in his lab at Menlo Park, New Jersey, that could record a human voice on a strip of tinfoil and then play it back. He spoke a few words into it as a test, and when the machine said them out loud, even Edison was astonished. What words did his new phonograph speak back?",
-    "answer": "\"Mary had a little lamb\"",
-    "choices": [
-      "\"Mary had a little lamb\"",
-      "\"Hello, can you hear me\"",
-      "\"Twinkle, twinkle, little star\"",
-      "\"The quick brown fox jumps\""
-    ],
-    "context": "His mechanic John Kruesi built the tinfoil phonograph in about 30 hours, and Edison recited the nursery rhyme to test it. https://ethw.org/Phonograph",
-    "topic": "bell-edison-and-the-late-century-invention-boom"
-  },
-  {
-    "tier": 1,
-    "question": "Thomas Edison ran his New Jersey lab like a factory. He promised a small invention every ten days and a big one every six months. The papers gave him a nickname that made him sound like a wizard who pulled wonders out of thin air. What was the nickname?",
+    "question": "Thomas Edison ran his lab like a factory. He promised a small invention every ten days and a big one every six months, and the newspapers, dazzled, gave him a nickname. What was it?",
     "answer": "The Wizard of Menlo Park",
     "choices": [
       "The Wizard of Menlo Park",
@@ -7047,33 +6956,7 @@
   },
   {
     "tier": 2,
-    "question": "At his Menlo Park laboratory in New Jersey, the American inventor Thomas Edison and his team were racing to build the first practical electric light bulb. To find a filament — the thin thread inside the bulb that would glow when electricity ran through it — they tested over 1,600 different substances, hunting for one that could burn bright without melting. On October 21, 1879, one finally glowed for about 13.5 hours. What did they burn inside that first successful bulb?",
-    "answer": "A carbonized cotton thread",
-    "choices": [
-      "A carbonized cotton thread",
-      "A thin strip of copper",
-      "A coil of iron wire",
-      "A sliver of polished glass"
-    ],
-    "context": "Carbonizing (charring) the cotton turned it into a filament that resisted the current and glowed instead of burning up. https://edison.rutgers.edu/life-of-edison/biographical-essays/lighting/the-carbon-filament-lamp",
-    "topic": "bell-edison-and-the-late-century-invention-boom"
-  },
-  {
-    "tier": 2,
-    "question": "The American inventor Thomas Edison's first working light bulb, made at his Menlo Park lab on October 21, 1879, glowed for only about half a day before it burned out. His team kept hunting for a filament — the thin thread inside the bulb — that could last far longer. They struck gold with one humble plant-based material that burned for over 1,200 hours and lit homes across America for years. What surprising material was it?",
-    "answer": "Carbonized bamboo",
-    "choices": [
-      "Carbonized bamboo",
-      "Spun sheep's wool",
-      "Braided horsehair",
-      "Dried seaweed strands"
-    ],
-    "context": "Charred bamboo fibers made a tough, long-lasting filament. Edison didn't invent the glowing bulb from nothing, but he built the first practical, long-lasting one plus the wires and generators to actually light a city. https://en.wikipedia.org/wiki/Thomas_Edison",
-    "topic": "bell-edison-and-the-late-century-invention-boom"
-  },
-  {
-    "tier": 2,
-    "question": "Thomas Edison did not think great inventions came from sudden flashes of genius. He said they came from constant trying and failing and trying again. He summed that up in one famous line, which he confirmed in a 1927 letter. What did Edison say invention really was?",
+    "question": "Thomas Edison did not think great inventions came from sudden flashes of genius. To him they came from trying, failing and trying again, and he packed that belief into one famous line, which he confirmed in a 1927 letter. What did he say invention really was?",
     "answer": "\"One percent inspiration and ninety-nine percent perspiration.\"",
     "choices": [
       "\"One percent inspiration and ninety-nine percent perspiration.\"",
@@ -7086,7 +6969,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 'War of the Currents,' Thomas Edison championed direct current (DC), which was safe but grew weak after a short distance. His rivals George Westinghouse and Nikola Tesla backed a rival kind of electricity that could be pushed for miles over thin wires. That rival won, and it still flows from every wall socket today. What kind of current was it?",
+    "question": "George Westinghouse and Nikola Tesla backed a kind of electricity that could be pushed for miles over thin wires. Thomas Edison, their rival in the War of the Currents, championed direct current (DC), which was safe but grew weak after a short distance. The rival to DC won, and it still flows from every wall socket today. What kind of current was it?",
     "answer": "Alternating current (AC)",
     "choices": [
       "Alternating current (AC)",
@@ -7099,7 +6982,7 @@
   },
   {
     "tier": 3,
-    "question": "During the War of the Currents, Thomas Edison's camp wanted the public to dread alternating current (AC) as a killer. They coined a creepy new verb meaning 'to execute someone with electricity,' built from the name of the rival inventor who championed AC. What was the made-up word?",
+    "question": "Thomas Edison's camp wanted Americans to dread his rivals' current as a killer. So they made up a creepy new verb meaning 'to execute someone with electricity,' built from the surname of the industrialist who put his money behind that current. What was the made-up word?",
     "answer": "\"Westinghoused\"",
     "choices": [
       "\"Westinghoused\"",
@@ -7112,7 +6995,7 @@
   },
   {
     "tier": 3,
-    "question": "At the 1893 Chicago World's Fair, George Westinghouse used Nikola Tesla's alternating current to switch on more than 100,000 light bulbs at once, more electric light than most people had ever seen in one place. The glowing fairgrounds earned a glittering nickname. What were they called?",
+    "question": "George Westinghouse used Nikola Tesla's alternating current to switch on more than 100,000 light bulbs at once at the Chicago World's Fair of 1893, more electric light than most people had ever seen in one place. What glittering nickname did the glowing fairgrounds earn?",
     "answer": "The White City",
     "choices": [
       "The White City",
@@ -7125,7 +7008,7 @@
   },
   {
     "tier": 4,
-    "question": "On July 30, 1888, Thomas Edison's man Harold Brown staged a grim public demonstration at Columbia College, in front of a hall of electricians and reporters. He shocked the same dog first with Edison's direct current, then with alternating current. What was the shocking result?",
+    "question": "Harold Brown, Thomas Edison's man, staged a grim demonstration at Columbia College on 30 July 1888, before a hall of electricians and reporters. He shocked the same dog first with Edison's direct current and then with alternating current. What happened to the dog?",
     "answer": "It survived 1,000 volts of DC but died at just 330 volts of AC.",
     "choices": [
       "It survived 1,000 volts of DC but died at just 330 volts of AC.",
@@ -7137,21 +7020,21 @@
     "topic": "bell-edison-and-the-late-century-invention-boom"
   },
   {
-    "tier": 4,
-    "question": "On August 6, 1890, the first electric chair, powered by the alternating current Edison's camp had branded as deadly, was used on William Kemmler, and it went horribly wrong. After the first jolt Kemmler was still breathing and a witness screamed 'Great God! He's alive!' George Westinghouse was appalled by the botched job. What did Westinghouse say afterward?",
+    "tier": 3,
+    "question": "George Westinghouse had fought to keep his alternating current out of executions. Yet it powered the first electric chair, and on 6 August 1890 the execution of William Kemmler went horribly wrong: after the first jolt he was still breathing, and a witness screamed, \"Great God! He's alive!\" What did Westinghouse say afterward?",
     "answer": "\"They could have done better with an ax.\"",
     "choices": [
       "\"They could have done better with an ax.\"",
-      "\"This proves my current is the safer one.\"",
       "\"No machine of mine was ever meant for this.\"",
-      "\"The fault lies with the men, not the wires.\""
+      "\"The fault lies with the men, not the wires.\"",
+      "\"This is murder dressed up as science.\""
     ],
-    "context": "Westinghouse had fought to keep his AC out of executions, and the gruesome failure horrified him. https://www.smithsonianmag.com/history/edison-vs-westinghouse-a-shocking-rivalry-102146036/",
+    "context": "Westinghouse had fought to keep his AC out of executions, and the gruesome failure horrified him. The first jolt of about 700 volts ran 17 seconds and failed; a second of over 1,000 volts ran two minutes. Edison's camp had used AC in the chair to smear Westinghouse's technology. Sources: https://www.smithsonianmag.com/history/edison-vs-westinghouse-a-shocking-rivalry-102146036/; https://en.wikipedia.org/wiki/William_Kemmler",
     "topic": "bell-edison-and-the-late-century-invention-boom"
   },
   {
     "tier": 4,
-    "question": "A popular story claims the American inventor Thomas Edison electrocuted Topsy, a working circus elephant, at New York's Coney Island in order to scare the public away from Nikola Tesla's rival alternating-current electricity. Historians say that version is false. Which of these is the real story behind Topsy's death?",
+    "question": "Thomas Edison, a popular story goes, electrocuted Topsy, a working circus elephant, in order to scare the public away from Nikola Tesla's rival alternating current. Historians say that version is false. What really happened to Topsy?",
     "answer": "Topsy died at Coney Island in 1903, after Edison had left his electric company, which only filmed it.",
     "choices": [
       "Topsy died at Coney Island in 1903, after Edison had left his electric company, which only filmed it.",
@@ -7372,20 +7255,20 @@
   },
   {
     "tier": 1,
-    "question": "In 1723, a hungry 17-year-old named Benjamin Franklin got off the boat in Philadelphia with barely any money. He bought three big puffy rolls. He had nowhere to put them. He walked up the street looking so silly that his future wife Deborah laughed at the sight. How did he carry the three rolls?",
-    "answer": "He tucked a roll under each arm and ate the third as he walked",
+    "question": "Benjamin Franklin walked off the boat into Philadelphia in October 1723, seventeen, broke and hungry. He bought three puffy rolls and had no bag to hold them. Deborah Read, the girl he would one day marry, laughed at the sight from her father's doorway. How did he carry the rolls?",
+    "answer": "With a roll under each arm, eating the third",
     "choices": [
-      "He tucked a roll under each arm and ate the third as he walked",
-      "He balanced all three rolls on his head and walked slowly",
-      "He stuffed the three rolls into his coat and buttoned it shut",
-      "He handed two rolls to strangers and ate the last himself"
+      "With a roll under each arm, eating the third",
+      "Balanced in a stack on top of his head",
+      "Wrapped in his coat slung over his shoulder",
+      "Stuffed two in his hat and ate the third"
     ],
-    "context": "Franklin tells this story in his Autobiography: he arrived broke and famished, bought three great rolls, and walked off with one under each arm, eating the third. Deborah Read, watching from her father's doorway, thought he looked absurd — and later married him. Source: Franklin, Autobiography (ushistory.org/franklin/autobiography); Penn Today, 'An inauspicious arrival for the ambitious Benjamin Franklin'.",
+    "context": "Franklin tells the story in his Autobiography: he arrived broke and famished, bought three great rolls, and marched up Market Street 'with a Roll under each Arm, & eating the third.' Deborah Read, watching from her father's doorway, thought he looked absurd, and later married him. Source: Franklin, Autobiography (ushistory.org/franklin/autobiography; Founders Online); Penn Today, 'An inauspicious arrival for the ambitious Benjamin Franklin'.",
     "topic": "benjamin-franklin-inventor-diplomat-founder"
   },
   {
     "tier": 2,
-    "question": "Ben Franklin printed a hit yearly almanac from 1732 to 1758. It was packed with sayings still quoted today, like 'Early to bed and early to rise makes a man healthy, wealthy and wise' and 'A penny saved is a penny earned.' He never signed his own name to it. Instead, he made up a folksy character to 'write' it. What was that made-up author's name?",
+    "question": "Benjamin Franklin printed a best-selling almanac every year from 1732 to 1758, packed with sayings still quoted today, such as 'A penny saved is a penny earned.' He never signed his own name to it. Instead he made up a folksy character to 'write' it. What was that author's name?",
     "answer": "Poor Richard Saunders",
     "choices": [
       "Poor Richard Saunders",
@@ -7398,33 +7281,33 @@
   },
   {
     "tier": 2,
-    "question": "In 1754, Ben Franklin printed the first American political cartoon in his Pennsylvania Gazette. It urged the separate colonies to band together. Under the words 'Join, or Die,' he drew a single picture that got famous across the colonies. What was the image?",
-    "answer": "A snake chopped into eight pieces, one for each colony",
+    "question": "Benjamin Franklin printed the first American political cartoon in 1754, as the colonies went to war with the French. It showed a snake cut into eight pieces, each marked with a colony's initials. By an old belief, a snake cut apart could come back to life if rejoined before sunset. What caption ran beneath it?",
+    "answer": "JOIN, or DIE",
     "choices": [
-      "A snake chopped into eight pieces, one for each colony",
-      "An eagle clutching eight broken arrows in its claws",
-      "A bundle of eight wooden sticks tied tightly together",
-      "A heavy iron chain with eight cracked links"
+      "JOIN, or DIE",
+      "UNITE OR FALL",
+      "DON'T TREAD ON ME",
+      "LIBERTY OR DEATH"
     ],
-    "context": "Franklin drew on an old belief that a snake cut apart could come back to life if its pieces were rejoined before sunset — so the divided colonies, like the divided snake, would die unless they reunited. The 'Join, or Die' snake later reappeared during the Revolution. Source: Join, or Die — Wikipedia; constitutioncenter.org, 'The story behind the Join or Die snake cartoon'.",
+    "context": "Franklin drew on a folk belief that a snake cut in pieces could come back to life if its pieces were joined before sunset: so the divided colonies, like the divided snake, would die unless they united, and a united America would live. The 'Join, or Die' snake was revived years later during the Revolution. Source: Join, or Die (Wikipedia); National Constitution Center, constitutioncenter.org/blog/the-story-behind-the-join-or-die-snake-cartoon.",
     "topic": "benjamin-franklin-inventor-diplomat-founder"
   },
   {
     "tier": 2,
-    "question": "Benjamin Franklin got tired of constantly swapping between his reading glasses and his distance glasses. So he had both kinds of lens sliced in half and fitted into a single frame, distance on top and reading on the bottom. He called them 'double spectacles.' What do we call them today?",
+    "question": "Benjamin Franklin grew tired of swapping between his reading glasses and his distance glasses. So he had the lenses cut and fitted together into a single frame. What are glasses made his way called today?",
     "answer": "Bifocals",
     "choices": [
       "Bifocals",
-      "Binoculars",
+      "Trifocals",
       "Monocles",
-      "Telescopes"
+      "Binoculars"
     ],
-    "context": "Franklin's 'double spectacles' are what we now call bifocals — one lens does two jobs, so the wearer never has to switch glasses. Like his other inventions, he never patented them. Source: The Franklin Institute, 'Benjamin Franklin's Inventions' (fi.edu); science.howstuffworks.com, '10 Ben Franklin Inventions'.",
+    "context": "Franklin's 'double spectacles' are what we now call bifocals: one pair does two jobs, so the wearer looks up to see across a room and glances down to read, exactly how bifocals still work. Like his other inventions, he never patented them. Source: The Franklin Institute, 'Benjamin Franklin's Inventions' (fi.edu); History.com; science.howstuffworks.com, '10 Ben Franklin Inventions'.",
     "topic": "benjamin-franklin-inventor-diplomat-founder"
   },
   {
     "tier": 2,
-    "question": "In 1761, Benjamin Franklin invented a new musical instrument. It had a row of 37 nested glass bowls, spun on a rod by a foot pedal, played by touching wet fingertips to the spinning rims. Mozart and Beethoven later wrote music for it. What did Franklin name this instrument?",
+    "question": "Mozart and Beethoven both wrote music for a strange instrument Benjamin Franklin built in 1761: a row of 37 nested glass bowls, spun on a rod by a foot pedal and played by touching wet fingertips to the turning rims. What did Franklin name his instrument?",
     "answer": "The armonica",
     "choices": [
       "The armonica",
@@ -7437,20 +7320,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 1752 in Philadelphia, the American printer and inventor Benjamin Franklin set out to prove his hunch that lightning was the same thing as an ordinary electric spark. During a thunderstorm he and his 21-year-old son William flew a silk kite up into the dark clouds, with a metal key tied to the bottom of the wet string. When Franklin brought his knuckle close to that key, what did he feel?",
-    "answer": "A spark jumped from the key to his knuckle",
-    "choices": [
-      "A spark jumped from the key to his knuckle",
-      "The key turned ice-cold under his finger",
-      "A loud crack of thunder right above him",
-      "The string yanked hard out of his hand"
-    ],
-    "context": "The spark proved that the storm's lightning was the same thing as electricity. Franklin's own Pennsylvania Gazette instructions (Oct. 19, 1752) told readers that once the rain wet the kite and twine, the electric fire 'will stream out plentifully from the Key on the Approach of your Knuckle.' Source: The Franklin Institute, 'Kite-Key Experiment' (fi.edu); Kite experiment — Wikipedia.",
-    "topic": "benjamin-franklin-inventor-diplomat-founder"
-  },
-  {
-    "tier": 3,
-    "question": "In Franklin's day, buildings often burned down when lightning struck them. Around 1750, Franklin invented a tall, pointed metal rod bolted onto a rooftop so the building would survive a direct strike, and some of the first ones went up on Independence Hall. When lightning hits the rod, what does the rod do with all that electricity?",
+    "question": "Benjamin Franklin invented a tall, pointed metal rod for rooftops around 1750, so that a building could survive a direct lightning strike instead of burning down. Independence Hall wore some of the first. When lightning hits the rod, what does the rod do with all that electricity?",
     "answer": "It carries the electricity safely down into the ground",
     "choices": [
       "It carries the electricity safely down into the ground",
@@ -7463,7 +7333,7 @@
   },
   {
     "tier": 3,
-    "question": "When Ben Franklin arrived in Paris as America's ambassador, the French treated him like a star. A gentleman was expected to wear a fancy powdered wig. Franklin showed up in something plain and homespun the French found charming. What did he wear on his head?",
+    "question": "The French treated Benjamin Franklin like a star when he arrived in Paris as America's envoy. A French gentleman was expected to wear a fancy powdered wig, but Franklin went about in something plain and homespun that the French found charming. What did he wear on his head?",
     "answer": "A plain fur cap",
     "choices": [
       "A plain fur cap",
@@ -7476,7 +7346,7 @@
   },
   {
     "tier": 4,
-    "question": "Benjamin Franklin invented the lightning rod, the Franklin stove, and bifocals — any one of which could have made him rich. Yet he refused to take out a patent on a single one. In his Autobiography, what reason did he give for letting everyone use his inventions for free?",
+    "question": "Benjamin Franklin could have grown rich on his inventions, from the lightning rod to the Franklin stove. Yet he refused to take out a patent on a single one. In his Autobiography, what reason did he give for letting everyone use his inventions for free?",
     "answer": "Since we enjoy others' inventions, we should gladly serve others with ours",
     "choices": [
       "Since we enjoy others' inventions, we should gladly serve others with ours",
@@ -7489,7 +7359,7 @@
   },
   {
     "tier": 4,
-    "question": "Franklin's greatest win as a diplomat came on February 6, 1778. He talked France into signing a treaty of alliance with the struggling young United States. Even a jealous John Adams admitted Franklin was treated like a star in Paris. What did this French alliance give the American cause that made winning the Revolution possible?",
+    "question": "Benjamin Franklin persuaded France to sign a treaty of alliance with the struggling young United States on 6 February 1778, his greatest win as a diplomat. Even a jealous John Adams admitted that Paris treated Franklin like a star. What did the alliance give the American cause that made winning the Revolution possible?",
     "answer": "Money, weapons, and a powerful navy",
     "choices": [
       "Money, weapons, and a powerful navy",
@@ -7501,43 +7371,17 @@
     "topic": "benjamin-franklin-inventor-diplomat-founder"
   },
   {
-    "tier": 5,
-    "question": "As the Constitutional Convention finished its work in 1787, the elderly Benjamin Franklin pointed to a sun carved on the back of George Washington's chair. All through the long, uncertain debates, he said, he had wondered about that sun. What did Franklin finally declare about it?",
-    "answer": "That it was a rising sun, not a setting one",
+    "tier": 3,
+    "question": "George Washington presided over the Constitutional Convention of 1787 from a chair with a half-sun carved on its back, and through the long, uncertain debates Benjamin Franklin sat staring at it. He could never tell, he said, whether it was rising or setting. As the delegates signed the finished Constitution, what did Franklin at last declare it to be?",
+    "answer": "A rising sun, not a setting one",
     "choices": [
-      "That it was a rising sun, not a setting one",
-      "That it should be painted gold for the new nation",
-      "That it stood for the king they had thrown off",
-      "That no man could tell sunrise from sunset"
+      "A rising sun, not a setting one",
+      "A setting sun, sinking at last",
+      "A noon sun, fixed in place",
+      "A clouded sun, its fate unclear"
     ],
-    "context": "James Madison's convention notes record Franklin saying he had often looked at that half-sun unsure if it was rising or setting, 'but now at length I have the happiness to know that it is a rising and not a setting Sun' — hope for the new republic. Source: James Madison's notes, via teachingamericanhistory.org, 'Benjamin Franklin's Final Remark'; nps.gov, 'September 17, 1787'.",
+    "context": "James Madison's convention notes record Franklin saying he had often looked at that half-sun unsure if it was rising or setting, 'but now at length I have the happiness to know that it is a rising and not a setting Sun', taking the carving as a sign of hope for the new republic. That very chair, with its half-sun, still survives. Source: James Madison's notes, via teachingamericanhistory.org, 'Benjamin Franklin's Final Remark'; National Park Service, 'September 17, 1787: A Republic, If You Can Keep It'.",
     "topic": "benjamin-franklin-inventor-diplomat-founder"
-  },
-  {
-    "tier": 5,
-    "question": "Just weeks before he died in April 1790, the 84-year-old Benjamin Franklin made his very last public act. He signed and sent a bold petition to the first United States Congress, asking it to fix what he called a deep inconsistency in the American character. What did Franklin's petition demand?",
-    "answer": "That Congress end slavery and the slave trade",
-    "choices": [
-      "That Congress end slavery and the slave trade",
-      "That Congress make him the first ambassador to Britain",
-      "That Congress build a great university in Philadelphia",
-      "That Congress put his face on the new dollar coin"
-    ],
-    "context": "Franklin led the Pennsylvania Abolition Society, and its petition asked Congress to end slavery and the slave trade and to 'devise means for removing the Inconsistency from the Character of the American People.' He died a few weeks later. Source: National Archives, 'Benjamin Franklin's Anti-Slavery Petitions to Congress' (archives.gov); constitutioncenter.org, petition document.",
-    "topic": "benjamin-franklin-inventor-diplomat-founder"
-  },
-  {
-    "tier": 1,
-    "question": "In October 1723, a broke and hungry 17-year-old Ben Franklin walked off a boat into Philadelphia. He spent his last pennies on three big puffy rolls at a baker's. With no bag and his pockets stuffed, how did he carry them up Market Street?",
-    "answer": "With a roll under each arm, eating the third",
-    "choices": [
-      "With a roll under each arm, eating the third",
-      "Balanced in a stack on top of his head",
-      "Wrapped in his coat slung over his shoulder",
-      "Stuffed two in his hat and ate the third"
-    ],
-    "context": "Franklin tells the story in his Autobiography: he marched up Market Street 'with a Roll under each Arm, & eating the third' — and a girl who would later become his wife saw him and thought he looked ridiculous. Source: Autobiography of Benjamin Franklin (Founders Online; Penn Today, penntoday.upenn.edu; ushistory.org).",
-    "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
     "tier": 1,
@@ -7554,20 +7398,7 @@
   },
   {
     "tier": 2,
-    "question": "Benjamin Franklin got tired of swapping between one pair of glasses for reading up close and another for seeing far away. So he had the lenses cut in half and recombined into a single frame — distance on top, reading on the bottom. What do we call the eyewear he invented?",
-    "answer": "Bifocals",
-    "choices": [
-      "Bifocals",
-      "Trifocals",
-      "A monocle",
-      "The magnifying glass"
-    ],
-    "context": "Franklin put two different lenses into one pair of glasses around 1785, so he could look up to see across a room and glance down to read — exactly how bifocals still work today. Source: The Franklin Institute, fi.edu; History.com.",
-    "topic": "benjamin-franklin-science-and-the-enlightenment"
-  },
-  {
-    "tier": 2,
-    "question": "After he proved that lightning was electricity, Benjamin Franklin designed a simple device to protect buildings. Sharp iron points went on the rooftop. They pulled the electric fire out of a storm cloud before it could strike. Soon these topped buildings all over the colonies. What was this invention?",
+    "question": "Benjamin Franklin sent a silk kite aloft in 1752, and the test proved his point. He soon turned the discovery into a practical invention, and before long it was found all over the colonies. Which of his inventions grew out of that kite?",
     "answer": "The lightning rod",
     "choices": [
       "The lightning rod",
@@ -7580,7 +7411,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1752, to prove lightning was the same thing as electricity, Benjamin Franklin flew a silk kite into a storm with a metal key tied to the wet string and a dry silk ribbon he held under shelter to stay safe. As the storm passed, he moved his knuckle close to the key. What happened?",
+    "question": "Benjamin Franklin flew a silk kite into a thunderstorm in June 1752, with his son William, to prove that lightning was electricity. A metal key hung from the wet string, and Franklin held a dry silk ribbon, kept under shelter. As the storm passed, he brought his knuckle close to the key. What happened?",
     "answer": "A spark jumped from the key",
     "choices": [
       "A spark jumped from the key",
@@ -7588,12 +7419,12 @@
       "The key melted in his fingers",
       "The whole string glowed blue"
     ],
-    "context": "A spark leaping to his knuckle showed the storm cloud had charged the key — lightning really was electricity. He also noticed the loose threads of the wet twine standing straight up, repelling each other. Source: The Franklin Institute, fi.edu; Franklin's 19 Oct 1752 letter to Peter Collinson (Pennsylvania Gazette).",
+    "context": "A spark leaping to his knuckle showed the storm cloud had charged the key: lightning really was electricity, the same thing as the spark from a laboratory. He also noticed the loose threads of the wet twine standing straight up, repelling each other. His own Pennsylvania Gazette instructions (19 October 1752) told readers that once the rain wet the kite and twine, the electric fire 'will stream out plentifully from the Key on the Approach of your Knuckle.' Source: The Franklin Institute, 'Kite-Key Experiment' (fi.edu); Franklin's 19 Oct 1752 letter to Peter Collinson; Kite experiment (Wikipedia).",
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
     "tier": 3,
-    "question": "Paintings and cartoons love to show Benjamin Franklin's kite getting blasted by a forked lightning bolt, but historians say that picture is flat wrong. The real kite only quietly soaked up electric charge from the storm cloud. If an actual bolt had struck the kite, why would that have been a catastrophe?",
+    "question": "Benjamin Franklin's kite hung in the storm clouds, quietly soaking up electric charge, and no forked bolt ever struck it, whatever the paintings show. Historians say that picture is flat wrong. If a real bolt had hit the kite, why would that have been a catastrophe?",
     "answer": "It would almost certainly have killed him",
     "choices": [
       "It would almost certainly have killed him",
@@ -7606,7 +7437,7 @@
   },
   {
     "tier": 3,
-    "question": "At 16, Benjamin Franklin was not allowed to publish in his older brother James's newspaper, the New-England Courant. So he invented a fake author, wrote letters in disguised handwriting, and slipped them under the print-shop door at night. James printed fourteen of them in 1722. Who was this made-up writer?",
+    "question": "James Franklin printed fourteen letters in his newspaper, the New-England Courant, in 1722. Then he learned that his sixteen-year-old brother Benjamin had written them in disguised handwriting and slipped them under the print-shop door at night. Benjamin, kept out of the paper, had invented a fake author. Who was the made-up writer?",
     "answer": "A middle-aged widow named Silence Dogood",
     "choices": [
       "A middle-aged widow named Silence Dogood",
@@ -7619,7 +7450,7 @@
   },
   {
     "tier": 3,
-    "question": "Benjamin Franklin, one of America's Founding Fathers in the 1700s, was famous as an inventor. He gave the world the lightning rod, bifocal spectacles, an iron stove that heated a room better than an open fire, and a strange spinning-crystal musical instrument played by wet fingertips. Late in life he said one of these had 'given me the greatest personal satisfaction' of all. Which invention did he say he loved most?",
+    "question": "Benjamin Franklin gave the world a pointed rod to guard rooftops in storms, spectacles with split lenses, an iron stove that heated a room better than an open fire, and a strange instrument of glass bowls, spun and played with wet fingers. Late in life he said one of them had 'given me the greatest personal satisfaction.' Which invention did he mean?",
     "answer": "The glass armonica",
     "choices": [
       "The glass armonica",
@@ -7631,21 +7462,8 @@
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
-    "tier": 3,
-    "question": "In 1754, war was breaking out in the frontier forests between the American colonies and the French. Benjamin Franklin, editor of the Pennsylvania Gazette in Philadelphia, printed a now-famous cartoon in his newspaper. A snake was cut into eight pieces — each piece marked with a colony's initials. The picture urged the colonies to stand together against the French. What two-word caption ran beneath the snake?",
-    "answer": "JOIN, or DIE",
-    "choices": [
-      "JOIN, or DIE",
-      "UNITE OR FALL",
-      "DON'T TREAD ON ME",
-      "LIBERTY OR DEATH"
-    ],
-    "context": "The idea came from a folk belief that a snake cut in pieces could come back to life if joined before sunset — so a divided America would die, but a united one would live. The image was revived years later during the Revolution. Source: National Constitution Center, constitutioncenter.org/blog/the-story-behind-the-join-or-die-snake-cartoon.",
-    "topic": "benjamin-franklin-science-and-the-enlightenment"
-  },
-  {
     "tier": 4,
-    "question": "In the 1740s Benjamin Franklin, later a Founding Father of America, designed a new iron fireplace that heated a room far better than an open hearth. It sold well and became known as the Franklin stove. Pennsylvania's governor offered him a patent — a legal document that would let him collect a fee from everyone who copied his design, a guaranteed stream of money for years. What did Franklin do?",
+    "question": "Pennsylvania's governor offered Benjamin Franklin a patent on the new iron fireplace he designed in the 1740s, the Franklin stove, which heated a room far better than an open hearth and sold well. The patent would let him collect a fee from everyone who copied the design, a guaranteed stream of money for years. What did Franklin do?",
     "answer": "Refused it, so anyone could copy it free",
     "choices": [
       "Refused it, so anyone could copy it free",
@@ -7657,8 +7475,8 @@
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
-    "tier": 4,
-    "question": "Benjamin Franklin's electrical work won him the Royal Society's top prize, the Copley Medal, in 1753. Along the way he made up plain English words for electricity that we still use today. Which set of common words did Franklin coin?",
+    "tier": 3,
+    "question": "Benjamin Franklin made up plain English words for what he was finding about electricity. His electrical work won him the Royal Society's Copley Medal in 1753, and his words are still in use. Which set of words did Franklin coin?",
     "answer": "battery, charge, conductor, positive, negative",
     "choices": [
       "battery, charge, conductor, positive, negative",
@@ -7666,12 +7484,12 @@
       "atom, molecule, electron, proton, neutron",
       "current, circuit, voltage, resistance, wattage"
     ],
-    "context": "Franklin needed new vocabulary to describe what he was discovering, so he named it — and the words stuck. (The volt, watt, ohm, ampere, and hertz came later, each named after a different scientist.) Source: Library of Congress, loc.gov/exhibits/franklin/franklin-scientist.html; Founders Online (Copley Medal award).",
+    "context": "Franklin needed new vocabulary to describe what he was discovering, so he named it, and the words stuck: positive and negative (plus and minus) for the two kinds of charge, battery for stored charge, conductor and charge. The volt, watt, ohm, ampere and hertz came later, each named after a different scientist. Source: Library of Congress, loc.gov/exhibits/franklin/franklin-scientist.html; Founders Online (Copley Medal award); https://physicstoday.aip.org/features/benjamin-franklin-and-lightning-rods",
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
     "tier": 4,
-    "question": "As colonial postmaster, Benjamin Franklin was baffled that British mail ships took two weeks longer to cross the Atlantic than American ships. His whaler cousin Timothy Folger explained the reason: the British captains were sailing straight against a powerful warm current. Franklin then charted and named it. What is this current?",
+    "question": "Timothy Folger, a whaler, solved a puzzle for his cousin Benjamin Franklin, then the colonial postmaster: why did British mail ships take two weeks longer to cross the Atlantic than American ones? The British captains, Folger explained, were sailing straight against a powerful warm current. Franklin charted it and named it. What is it called?",
     "answer": "The Gulf Stream",
     "choices": [
       "The Gulf Stream",
@@ -7684,7 +7502,7 @@
   },
   {
     "tier": 5,
-    "question": "The French statesman Turgot summed up Benjamin Franklin's whole life in a single Latin line later carved on busts and engravings — praising him for BOTH taming lightning with his rod AND helping topple a king through the American Revolution. The line said Franklin had snatched two things away. Which two?",
+    "question": "Turgot, a French statesman, summed up Benjamin Franklin's whole life in a single Latin line, later carved on busts and engravings. It praised Franklin for taming lightning with his rod and for helping to topple a king. The line said Franklin had snatched two things away. Which two?",
     "answer": "The thunderbolt from heaven and the scepter from tyrants",
     "choices": [
       "The thunderbolt from heaven and the scepter from tyrants",
@@ -7696,8 +7514,8 @@
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
-    "tier": 5,
-    "question": "As a younger man, Benjamin Franklin owned enslaved people and ran slave-sale ads in his Pennsylvania Gazette. Late in life he reversed himself completely, becoming president of the Pennsylvania abolition society in 1787. What was his very last public act before his death in 1790?",
+    "tier": 4,
+    "question": "Benjamin Franklin owned enslaved people as a younger man and ran slave-sale ads in his Pennsylvania Gazette. Late in life he turned against slavery, and in 1787 he became president of the Pennsylvania abolition society. A few weeks before he died in April 1790, the 84-year-old made his very last public act. What was it?",
     "answer": "Signing a petition asking the first Congress to abolish slavery",
     "choices": [
       "Signing a petition asking the first Congress to abolish slavery",
@@ -7705,7 +7523,7 @@
       "Delivering a speech to Congress against slavery",
       "Leaving his estate to the abolition society"
     ],
-    "context": "The man who once sold enslaved people made ending slavery his dying cause. Weeks before his death he also published a hoax as 'Historicus' — a fake speech by an Algerian, Sidi Mehemet Ibrahim, defending the enslavement of Christians, deliberately mirroring a Georgia congressman's defense of American slavery to expose it as absurd. Source: National Archives, archives.gov/legislative/features/franklin; Bill of Rights Institute.",
+    "context": "The man who once sold enslaved people made ending slavery his dying cause. The Pennsylvania Abolition Society's petition, which he signed as its president, asked Congress to end slavery and the slave trade and to 'devise means for removing the Inconsistency from the Character of the American People.' He died a few weeks later. In those last weeks he also published a hoax as 'Historicus', a fake speech by an Algerian, Sidi Mehemet Ibrahim, defending the enslavement of Christians, mirroring a Georgia congressman's defence of American slavery to expose it as absurd. Source: National Archives, 'Benjamin Franklin's Anti-Slavery Petitions to Congress' (archives.gov); Bill of Rights Institute.",
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
@@ -12208,7 +12026,7 @@
   },
   {
     "tier": 1,
-    "question": "Benjamin Franklin was 81 years old at the 1787 Convention in Philadelphia, the oldest delegate there. Crippled by gout, he could not even walk the short distance from his house to the State House. So every day he was carried to the meeting in a sedan chair. Who carried him?",
+    "question": "Benjamin Franklin, 81 years old, could barely walk the summer the Constitutional Convention met. Gout kept him from covering even the short way from his house to the State House, so every day he rode there in a sedan chair. Who carried it?",
     "answer": "Four prisoners from the city jail",
     "choices": [
       "Four prisoners from the city jail",
@@ -12221,7 +12039,7 @@
   },
   {
     "tier": 1,
-    "question": "In the hot Philadelphia summer of 1787, delegates from every state gathered at what became the Constitutional Convention to draft a new plan of government for the United States. They argued in heavy wool suits and sweated rather than let anyone outside hear their debates -- they wanted every word kept secret. To make sure of it, they did something drastic to the meeting room. What did they do to it?",
+    "question": "Delegates from twelve states sweated through the Philadelphia summer of 1787 in heavy wool suits, drafting a new plan of government for the United States. The delegates wanted not one word of their debates to get out. What drastic thing did they do to their meeting room?",
     "answer": "Nailed the meeting-room windows shut",
     "choices": [
       "Nailed the meeting-room windows shut",
@@ -12234,7 +12052,7 @@
   },
   {
     "tier": 1,
-    "question": "On the last day of the 1787 Constitutional Convention in Philadelphia, Ben Franklin walked out of the Pennsylvania State House where the delegates had just finished drafting the new United States Constitution. A woman named Elizabeth Powel stopped him on the street and asked what kind of government they had made -- a republic or a monarchy. What did Franklin answer her?",
+    "question": "Benjamin Franklin walked out of the State House as the Constitutional Convention ended. A woman named Elizabeth Powel stopped him and asked what kind of government the delegates had made, a republic or a monarchy. James McHenry's diary records Franklin's answer. What was it?",
     "answer": "A republic, if you can keep it",
     "choices": [
       "A republic, if you can keep it",
@@ -12247,20 +12065,7 @@
   },
   {
     "tier": 2,
-    "question": "All summer Benjamin Franklin had stared at a half-sun carved into the back of George Washington's chair. He said he could never tell whether the sun was rising or setting. On the last day, as the delegates signed the finished Constitution, he finally announced what he had decided the carved sun was. What did he say?",
-    "answer": "A rising sun, not a setting one",
-    "choices": [
-      "A rising sun, not a setting one",
-      "A setting sun, sinking at last",
-      "A noon sun, fixed in place",
-      "A clouded sun, its fate unclear"
-    ],
-    "context": "Franklin told the room he now had 'the happiness to know that it is a rising and not a setting sun' — taking the carving as a sign of hope for the new nation. That very chair, with its half-sun, still survives. Source: National Park Service, 'September 17, 1787: A Republic, If You Can Keep It' (Madison's record of Franklin's remark).",
-    "topic": "constitutional-convention-great-compromise"
-  },
-  {
-    "tier": 2,
-    "question": "The delegates who wrote the Constitution were not all grey-haired statesmen. Benjamin Franklin was the oldest at 81, but the average age was only about 42. The youngest of all was Jonathan Dayton of New Jersey. He became the youngest person ever to sign the Constitution. How old was he?",
+    "question": "Jonathan Dayton of New Jersey put his name to the Constitution in 1787 and became the youngest man ever to sign it. Benjamin Franklin, the oldest delegate, was 81, and the average delegate was only about 42. How old was Dayton?",
     "answer": "Just 26 years old",
     "choices": [
       "Just 26 years old",
@@ -12273,7 +12078,7 @@
   },
   {
     "tier": 3,
-    "question": "By July 1787 the Convention was stuck. The big states wanted seats in Congress handed out by population, so the more people you had the more votes you got. The small states demanded that every state get an equal vote no matter its size. Roger Sherman and Oliver Ellsworth of Connecticut proposed the deal that finally broke the deadlock. What was their fix?",
+    "question": "Roger Sherman and Oliver Ellsworth of Connecticut faced a convention stuck fast in July 1787. The big states wanted seats in Congress handed out by population, so a state with more people got more votes; the small states demanded an equal vote for every state, whatever its size. What was the two men's fix?",
     "answer": "Two houses: one by population, one equal per state",
     "choices": [
       "Two houses: one by population, one equal per state",
@@ -12286,7 +12091,7 @@
   },
   {
     "tier": 3,
-    "question": "Twelve of the thirteen states sent delegates to Philadelphia in 1787. One state alone refused to send anyone at all, so suspicious of a strong central government that it boycotted the whole meeting. Its opponents threw an insulting nickname at it, twisting the state's own name. What did they call Rhode Island?",
+    "question": "Rhode Island alone refused to send a single delegate to Philadelphia in 1787, so suspicious of a strong central government that it boycotted the whole meeting. Its opponents threw an insulting nickname at it. What did they call Rhode Island?",
     "answer": "Rogue Island",
     "choices": [
       "Rogue Island",
@@ -12299,7 +12104,7 @@
   },
   {
     "tier": 3,
-    "question": "Patrick Henry of Virginia was the famous 'Give me liberty, or give me death' speaker of the American Revolution. In 1787 he was picked to represent Virginia at the secret Philadelphia meeting that became the Constitutional Convention. But Henry flatly refused to go, certain the whole gathering was a plot to build a king-like central government. What memorable reason did he give for staying home?",
+    "question": "Patrick Henry, the Virginian who had once declared 'Give me liberty, or give me death,' flatly refused in 1787 to go to the secret Philadelphia meeting that became the Constitutional Convention, though he had been picked to represent his state. What memorable reason did he give for staying home?",
     "answer": "He smelt a rat in Philadelphia",
     "choices": [
       "He smelt a rat in Philadelphia",
@@ -12312,7 +12117,7 @@
   },
   {
     "tier": 3,
-    "question": "The first draft of the Constitution opened by listing the states one by one — 'We the People of the States of New Hampshire, Massachusetts...' and so on. Gouverneur Morris of Pennsylvania, who spoke more often than any other delegate and did it on a wooden peg leg, rewrote that clunky opening into a single ringing phrase. What did he write?",
+    "question": "Gouverneur Morris of Pennsylvania, who spoke more often than any other delegate and did it on a wooden peg leg, took up the Constitution's first draft. It opened by listing the states one by one: 'We the People of the States of New Hampshire, Massachusetts...' and so on. Morris turned that clunky opening into a single ringing phrase. What did he write?",
     "answer": "We the People of the United States",
     "choices": [
       "We the People of the United States",
@@ -12325,7 +12130,7 @@
   },
   {
     "tier": 4,
-    "question": "One bargain at the Convention has aged worse than any other. To decide how many House seats and how much tax each state got, James Wilson and Charles Pinckney pushed through a rule about how a state's enslaved people would be counted in its population. How much of each enslaved person did that rule count?",
+    "question": "James Wilson and Charles Pinckney pushed through the Convention's worst bargain, a rule for deciding how many House seats and how much tax each state got. It set how a state's enslaved people would be counted toward its population. How many of a state's enslaved people did the rule count?",
     "answer": "Three-fifths of them were counted",
     "choices": [
       "Three-fifths of them were counted",
@@ -12338,7 +12143,7 @@
   },
   {
     "tier": 5,
-    "question": "James Madison of Virginia walked into the Convention better prepared than anyone alive. Years earlier he had asked Thomas Jefferson, then in Paris, to ship him books, and received two whole trunks of them. He studied the ancient Greek, Roman, Swiss, and Dutch confederacies, then arrived with his own population-based blueprint, the Virginia Plan, already drawn up. What nickname did this earn him?",
+    "question": "James Madison of Virginia walked into the Convention better prepared than anyone alive. Thomas Jefferson had shipped him two whole trunks of books from Paris, and Madison had studied the ancient Greek, Roman, Swiss and Dutch confederacies. He arrived with his own population-based blueprint already drawn up, and he took notes at every session. What nickname did this earn him?",
     "answer": "Father of the Constitution",
     "choices": [
       "Father of the Constitution",
@@ -12351,7 +12156,7 @@
   },
   {
     "tier": 5,
-    "question": "The Great Compromise handed every state — even tiny Delaware — the same two votes in the Senate as giant Virginia. The Framers then protected that one deal in Article V in a way they protected no other part of the Constitution. What did they do to it?",
+    "question": "The delegates at Philadelphia handed every state the same two votes in the Senate, tiny Delaware as many as giant Virginia. Then, in Article V, they treated that one deal in a way they treated no other part of the Constitution. What did they do to it?",
     "answer": "Made it the one rule that can never be amended away",
     "choices": [
       "Made it the one rule that can never be amended away",
@@ -18370,20 +18175,7 @@
   },
   {
     "tier": 4,
-    "question": "In June 1790, Thomas Jefferson hosted Alexander Hamilton and James Madison at a private dinner to break a deadlock. Hamilton wanted the federal government to take on the states' war debts. In return, the Virginians wanted something too. What did Jefferson and Madison win at that dinner?",
-    "answer": "The permanent national capital moved south to the Potomac",
-    "choices": [
-      "The permanent national capital moved south to the Potomac",
-      "A national bank chartered in Philadelphia",
-      "A treaty of trade and friendship with Britain",
-      "An immediate end to all federal taxes on farms"
-    ],
-    "context": "This is the Compromise of 1790. Hamilton got federal assumption of the states' war debts; in return the capital was set on the Potomac River, the future Washington, D.C. Jefferson later wrote that assumption was 'a bitter pill' for the South, so moving the seat of government there 'was a just measure.' Source: https://en.wikipedia.org/wiki/Compromise_of_1790",
-    "topic": "first-political-parties-federalists-vs-democrati"
-  },
-  {
-    "tier": 4,
-    "question": "America's first two political parties were not born from an election. They grew out of a bitter feud between two men in George Washington's own cabinet. Those men were Treasury Secretary Alexander Hamilton and Secretary of State Thomas Jefferson. What did the two men split over?",
+    "question": "Alexander Hamilton and Thomas Jefferson sat in George Washington's own cabinet, Hamilton at the Treasury and Jefferson as Secretary of State, and their bitter feud gave birth to America's first two political parties. No election did it. What did the two men split over?",
     "answer": "How strong the central government should be",
     "choices": [
       "How strong the central government should be",
@@ -18396,7 +18188,7 @@
   },
   {
     "tier": 5,
-    "question": "By 1791 each side fought through its own newspaper. To answer the Federalists' paper, Jefferson and Madison recruited the poet Philip Freneau to Philadelphia to run the 'National Gazette' as their attack organ. George Washington was so stung by its assaults on his administration that in private he railed against the editor with a memorable insult. How did Washington refer to Freneau?",
+    "question": "Thomas Jefferson and James Madison recruited the poet Philip Freneau to Philadelphia in 1791 to run the National Gazette, their answer to the Federalists' paper. Its attacks on the administration reached George Washington, who in private had his own name for the editor. How did Washington refer to Freneau?",
     "answer": "As 'that Rascal Freneau'",
     "choices": [
       "As 'that Rascal Freneau'",
@@ -53379,33 +53171,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 1752 the American statesman and scientist Benjamin Franklin set out to prove that lightning was a form of electricity. During a thunderstorm outside Philadelphia he flew a silk kite high into the storm clouds. A metal key hung from the wet kite string below. When Franklin slowly moved his knuckle close to that key, what happened?",
-    "answer": "A spark jumped from the key to his hand",
-    "choices": [
-      "A spark jumped from the key to his hand",
-      "The key melted into a small lump of metal",
-      "The whole kite burst into bright flames",
-      "The wet string turned to brittle glass"
-    ],
-    "context": "The spark proved the electricity in a storm cloud was the same thing as the spark from a lab. The key was borrowed from his neighbor Benjamin Loxley, and his son William was with him. Source: https://en.wikipedia.org/wiki/Kite_experiment",
-    "topic": "the-electricity-pioneers-faraday-tesla-franklin"
-  },
-  {
-    "tier": 2,
-    "question": "Michael Faraday, born in 1791 to a poor blacksmith, had almost no schooling. At fourteen he was apprenticed to a London bookbinder. How did this penniless boy teach himself science?",
-    "answer": "He read the very books he was binding",
-    "choices": [
-      "He read the very books he was binding",
-      "He paid a private tutor with his wages",
-      "He snuck into a university's lectures at night",
-      "He memorized one borrowed encyclopedia"
-    ],
-    "context": "The books passing through his hands taught him everything, including the encyclopedia's article on electricity and Jane Marcet's 'Conversations on Chemistry.' Source: https://en.wikipedia.org/wiki/Michael_Faraday",
-    "topic": "the-electricity-pioneers-faraday-tesla-franklin"
-  },
-  {
-    "tier": 2,
-    "question": "In the 1880s a fight called the 'War of the Currents' broke out in America over how the country should be wired for electric power. The inventor Thomas Edison backed direct current (DC). The Serbian-born engineer Nikola Tesla, together with the businessman George Westinghouse, backed alternating current (AC). AC won, and it powers the world's grid today for one big reason. What could AC do that DC could not?",
+    "question": "Thomas Edison backed direct current (DC) in the War of the Currents that broke out over wiring America in the 1880s. Nikola Tesla and the businessman George Westinghouse backed alternating current (AC). AC won, and it powers the world's grid today for one big reason. What could AC do that DC could not?",
     "answer": "Travel long distances at high voltage",
     "choices": [
       "Travel long distances at high voltage",
@@ -53418,7 +53184,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1821 Michael Faraday built the first machine that turned electricity into steady motion. It was the seed of every electric motor. In his tiny device, what spun round and round?",
+    "question": "Michael Faraday built the first machine that turned electricity into steady motion in 1821, the seed of every electric motor since. In his tiny device, what spun round and round?",
     "answer": "A wire circling a magnet",
     "choices": [
       "A wire circling a magnet",
@@ -53430,21 +53196,8 @@
     "topic": "the-electricity-pioneers-faraday-tesla-franklin"
   },
   {
-    "tier": 2,
-    "question": "Benjamin Franklin gave us electrical words we still say every day. He threw out the clumsy old terms 'vitreous' and 'resinous' for the two kinds of charge and replaced them with which plain pair?",
-    "answer": "Positive and negative",
-    "choices": [
-      "Positive and negative",
-      "Hot and cold",
-      "Strong and weak",
-      "Open and closed"
-    ],
-    "context": "Franklin coined positive and negative (plus and minus), and the word 'battery' for stored charge, and invented the lightning rod to carry strikes safely into the ground. Source: https://physicstoday.aip.org/features/benjamin-franklin-and-lightning-rods",
-    "topic": "the-electricity-pioneers-faraday-tesla-franklin"
-  },
-  {
     "tier": 3,
-    "question": "The idea behind the AC (alternating current) motor came to the Serbian-American inventor Nikola Tesla all at once in 1882. He was walking through a park in Budapest, reading Goethe's poems aloud to a friend, when the design suddenly hit him. He had no paper on him. How did he capture the design right then?",
+    "question": "Nikola Tesla was strolling through a park in Budapest in 1882, reciting Goethe's poems aloud to a friend, when the whole design for an alternating-current motor came to him at once. He had no paper on him. How did he capture the design right then?",
     "answer": "He drew it in the dirt with a stick",
     "choices": [
       "He drew it in the dirt with a stick",
@@ -53457,7 +53210,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1812 a young London bookbinder named Michael Faraday, who would grow up to become one of the greatest scientists in history, was still just hungry for a science career. After attending the chemist Humphry Davy's famous public lectures at London's Royal Institution, Faraday used the one craft he had already mastered to win Davy's eye. What did Faraday make and send Davy?",
+    "question": "Humphry Davy, the chemist, gave his famous public lectures at the Royal Institution in 1812, and a young London bookbinder named Michael Faraday, hungry for a life in science, sat in the audience. Afterward Faraday sent Davy something to win his notice. What did Faraday make and send him?",
     "answer": "His own notes, bound into a handsome book",
     "choices": [
       "His own notes, bound into a handsome book",
@@ -53470,7 +53223,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1899 the Serbian-American inventor Nikola Tesla — the man who had already given the world the AC (alternating current) electric motor and pioneered radio — set up a strange lab high in Colorado Springs. He wanted to prove electricity could be sent through the air without wires. One night he switched on his giant Tesla coil, a machine as tall as a house. What did the coil hurl out, crackling up to 135 feet across the room?",
+    "question": "Nikola Tesla set up a strange laboratory high in Colorado Springs in 1899 to prove that electricity could be sent through the air without wires. One night he switched on his giant Tesla coil, a machine as tall as a house. What did the coil hurl out, crackling up to 135 feet across the room?",
     "answer": "Bolts of man-made lightning",
     "choices": [
       "Bolts of man-made lightning",
@@ -53483,7 +53236,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1831 Michael Faraday wound two separate coils of wire on opposite sides of an iron ring, never touching. He flicked the current in the first coil on and off, and each time, a pulse of electricity leapt up in the SECOND coil. What deep rule had he just uncovered, the rule behind every electric generator since?",
+    "question": "Michael Faraday wound two coils of wire on opposite sides of an iron ring in 1831, never touching. He flicked the current in the first coil on and off, and each time a pulse of electricity leapt up in the other coil. What deep rule had he uncovered, the rule behind every electric generator since?",
     "answer": "A changing magnetic field creates electric current",
     "choices": [
       "A changing magnetic field creates electric current",
@@ -53496,7 +53249,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1895 the world's first great hydroelectric power plant opened at Niagara Falls on the border between America and Canada. It proved that electricity could be made in one place and used far away. Nikola Tesla and George Westinghouse's alternating current, generated by the falling water, was sent 26 miles down a copper line. To do what?",
+    "question": "Falling water at Niagara Falls drove the world's first great hydroelectric plant when it opened in 1895, turning out Nikola Tesla and George Westinghouse's alternating current. The power ran 26 miles down a copper line, proof that electricity made in one place could be used far away. What did it do at the far end?",
     "answer": "Light up the city of Buffalo",
     "choices": [
       "Light up the city of Buffalo",
@@ -53508,34 +53261,8 @@
     "topic": "the-electricity-pioneers-faraday-tesla-franklin"
   },
   {
-    "tier": 4,
-    "question": "On August 6, 1890, William Kemmler became the first person ever executed in an electric chair, and it went horribly wrong: a first jolt failed to kill him, and a second left smoke rising from his head. Hearing of the gruesome scene, George Westinghouse delivered a bitter verdict. What did he say?",
-    "answer": "\"They would have done better with an axe.\"",
-    "choices": [
-      "\"They would have done better with an axe.\"",
-      "\"No machine should ever do this work.\"",
-      "\"This is murder dressed up as science.\"",
-      "\"Let the inventor sit in it himself.\""
-    ],
-    "context": "The first jolt of about 700 volts ran 17 seconds and failed; a second of over 1,000 volts ran two minutes. Westinghouse, whose AC was used in the chair to smear his technology, was disgusted. Source: https://en.wikipedia.org/wiki/William_Kemmler",
-    "topic": "the-electricity-pioneers-faraday-tesla-franklin"
-  },
-  {
     "tier": 5,
-    "question": "Michael Faraday, a humble and devout Christian, was offered a knighthood by his nation in honor of his discoveries. He turned it down, and later refused burial among the kings and great men of Westminster Abbey too. What did he say he wished to remain to the end?",
-    "answer": "Plain Mr Faraday",
-    "choices": [
-      "Plain Mr Faraday",
-      "A faithful servant of God",
-      "A simple London workman",
-      "The bookbinder's apprentice"
-    ],
-    "context": "Faraday belonged to a small Christian sect, the Sandemanians, and his faith shaped his humility; he wished to remain 'plain Mr Faraday to the end.' Source: https://en.wikipedia.org/wiki/Michael_Faraday",
-    "topic": "the-electricity-pioneers-faraday-tesla-franklin"
-  },
-  {
-    "tier": 5,
-    "question": "Nikola Tesla's 1888 deal with George Westinghouse promised him $2.50 for every horsepower of AC (alternating current) power the world would ever make. That contract could have made him history's first billionaire. When Westinghouse's company nearly went broke, what did Tesla reportedly do with that contract?",
+    "question": "George Westinghouse signed a deal with Nikola Tesla in 1888 that promised Tesla $2.50 for every horsepower of alternating-current power the world would ever make. That contract could have made Tesla history's first billionaire. When Westinghouse's company nearly went broke, what did Tesla reportedly do with that contract?",
     "answer": "He tore it up to save the company",
     "choices": [
       "He tore it up to save the company",
@@ -53548,7 +53275,7 @@
   },
   {
     "tier": 5,
-    "question": "The American inventor Thomas Edison had once spoken out publicly against the death penalty. But in the late 1880s, to scare the public away from his rival Nikola Tesla's alternating current (AC), Edison staged gruesome traveling shows meant to prove how deadly AC power could be. At these shows, what did Edison electrocute in front of the crowds?",
+    "question": "Thomas Edison had once spoken out publicly against the death penalty. Yet in the late 1880s, to scare the public away from his rival Nikola Tesla's alternating current, he staged gruesome traveling shows meant to prove how deadly that current could be. What did Edison electrocute in front of the crowds?",
     "answer": "Live animals",
     "choices": [
       "Live animals",
@@ -64286,7 +64013,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1870s, the American inventor Thomas Edison built the world's first true industrial research laboratory in a little village in New Jersey. Out of that workshop poured invention after invention — the phonograph, the carbon microphone, and soon the practical electric light bulb. By 1878 his fame had spread around the world, and newspapers gave Edison a magical nickname. What did they call him?",
+    "question": "Thomas Edison built a new kind of research laboratory in the 1870s. Out of it poured invention after invention: the phonograph, the carbon microphone and soon the practical electric light bulb. By 1878 newspapers everywhere had given him a magical nickname. What did they call him?",
     "answer": "The Wizard of Menlo Park",
     "choices": [
       "The Wizard of Menlo Park",
@@ -64298,8 +64025,8 @@
     "topic": "thomas-edison-and-the-light-bulb"
   },
   {
-    "tier": 2,
-    "question": "In 1877 Thomas Edison built a hand-cranked machine wrapped in tinfoil that could record a voice and play it right back — the first device ever to do so. The very first words he shouted into it, then heard repeated back to him, came from a nursery rhyme. Which words were they?",
+    "tier": 1,
+    "question": "Thomas Edison shouted a nursery rhyme into a hand-cranked tinfoil cylinder in 1877, as a test: one needle scratched grooves as he spoke, and another played them back. The machine startled even Edison by saying the words right back. What words did it say?",
     "answer": "\"Mary had a little lamb\"",
     "choices": [
       "\"Mary had a little lamb\"",
@@ -64307,12 +64034,12 @@
       "\"Hark, the herald angels sing\"",
       "\"Hickory dickory dock\""
     ],
-    "context": "Edison's first phonograph (1877) was a tinfoil cylinder with one needle to scratch the grooves and another to play them back; even Edison was startled it worked on the first try with 'Mary had a little lamb.' Source: ASME, https://www.asme.org/about-asme/engineering-history/landmarks/68-edison-experimental-recording-phonograph",
+    "context": "Edison's first phonograph (1877) was a tinfoil cylinder with one needle to scratch the grooves and another to play them back; his mechanic John Kruesi built it in about 30 hours. Edison recited the nursery rhyme to test it, and even he was startled that it worked on the first try. Sources: ASME, https://www.asme.org/about-asme/engineering-history/landmarks/68-edison-experimental-recording-phonograph; https://ethw.org/Phonograph",
     "topic": "thomas-edison-and-the-light-bulb"
   },
   {
     "tier": 2,
-    "question": "In 1879, at his New Jersey laboratory in Menlo Park, the American inventor Thomas Edison switched on the world's first practical electric light bulb. It glowed for over thirteen hours before burning out. The tiny thread — called the filament — that glowed white-hot inside the glass was not some rare or costly stuff. It was an everyday household item, baked black and sealed inside a vacuum. What was that first filament made from?",
+    "question": "Thomas Edison switched on his first practical electric light at Menlo Park in 1879, and it burned for more than thirteen hours. The thin thread that glowed inside the glass, called the filament, was no rare or costly stuff. It was an everyday household item, baked black and sealed in a vacuum. What was it?",
     "answer": "A loop of cotton sewing thread",
     "choices": [
       "A loop of cotton sewing thread",
@@ -64320,12 +64047,12 @@
       "A length of braided horsehair",
       "A strip of folded writing paper"
     ],
-    "context": "The filament in the first successful 1879 lamp (which burned about thirteen and a half hours) was a loop of ordinary carbonized cotton sewing thread. Sources: U.S. Dept. of Energy, https://www.energy.gov/articles/history-light-bulb ; IEEE, https://ethw.org/Edison's_Incandescent_Lamp",
+    "context": "The filament in the first successful 1879 lamp, which burned about thirteen and a half hours, was a loop of ordinary cotton sewing thread, carbonized (charred). Charring turned it into a filament that resisted the current and glowed instead of burning up. Sources: U.S. Dept. of Energy, https://www.energy.gov/articles/history-light-bulb; IEEE, https://ethw.org/Edison's_Incandescent_Lamp; https://edison.rutgers.edu/life-of-edison/biographical-essays/lighting/the-carbon-filament-lamp",
     "topic": "thomas-edison-and-the-light-bulb"
   },
   {
     "tier": 2,
-    "question": "On New Year's Eve in 1879, Thomas Edison strung rows of glowing electric lamps around his Menlo Park grounds and turned night into day. The Pennsylvania Railroad ran special trains and crowds poured in to gawk at the spectacle. What did some of those visitors do to the bulbs?",
+    "question": "Thomas Edison strung rows of glowing electric lamps around his Menlo Park grounds on New Year's Eve of 1879, and crowds poured off special trains of the Pennsylvania Railroad to see night turned into day. What did some of those visitors do to the bulbs?",
     "answer": "They stole eight of them as souvenirs",
     "choices": [
       "They stole eight of them as souvenirs",
@@ -64338,7 +64065,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Edison was almost completely deaf, yet he still wanted to enjoy music. A famous story says that to 'hear' a piano he would lean in and bite down on its wooden case, so the vibrations traveled up through his jaw into his skull. How did Edison describe doing this?",
+    "question": "Thomas Edison, a famous story says, would lean in and bite down on a piano's wooden case so the vibrations traveled up through his jaw into his skull. He was almost completely deaf, yet he still wanted to enjoy music. How did Edison describe doing this?",
     "answer": "\"I hear through my teeth\"",
     "choices": [
       "\"I hear through my teeth\"",
@@ -64351,7 +64078,7 @@
   },
   {
     "tier": 3,
-    "question": "Thomas Edison hunted for a bulb filament that would last. He sent scouts across the world and burned thousands of plant fibers to test them. The winner glowed for about 1,200 hours and stayed in his bulbs for nearly ten years. A scout shipped it home from a grove beside a far-off shrine. What plant gave Edison that filament?",
+    "question": "Thomas Edison's scouts combed the world for plant fibers after his first bulbs burned out in about half a day, and he burned thousands of them, hunting for a filament that would last. The winner glowed for about 1,200 hours and stayed in his bulbs for nearly ten years. A scout shipped it home from a grove beside a far-off shrine. What plant gave Edison that filament?",
     "answer": "Japanese bamboo",
     "choices": [
       "Japanese bamboo",
@@ -64359,12 +64086,12 @@
       "Egyptian papyrus",
       "Himalayan cotton"
     ],
-    "context": "In 1880 Edison's scout William H. Moore sent samples from a bamboo grove by the Iwashimizu Hachiman Shrine near Kyoto (Phyllostachys bambusoides); carbonized, it burned about 1,200 hours. Sources: Amusing Planet, https://www.amusingplanet.com/2019/05/how-japanese-bamboo-helped-edison-make.html ; Government of Japan, https://www.gov-online.go.jp/eng/publicity/book/hlj/html/202208/202208_08_en.html",
+    "context": "In 1880 Edison's scout William H. Moore sent samples from a bamboo grove by the Iwashimizu Hachiman Shrine near Kyoto (Phyllostachys bambusoides); carbonized, the charred bamboo fibres made a tough filament that burned about 1,200 hours. Edison did not invent the glowing bulb from nothing, but he built the first practical, long-lasting one, plus the wires and generators to light a city. Sources: Amusing Planet, https://www.amusingplanet.com/2019/05/how-japanese-bamboo-helped-edison-make.html; Government of Japan, https://www.gov-online.go.jp/eng/publicity/book/hlj/html/202208/202208_08_en.html; https://en.wikipedia.org/wiki/Thomas_Edison",
     "topic": "thomas-edison-and-the-light-bulb"
   },
   {
     "tier": 3,
-    "question": "In 1882 Thomas Edison opened the Pearl Street Station in Manhattan. It was America's first central power plant. Giant 27-ton generators ran it. Edison named those huge machines after the most famous animal of the day, P.T. Barnum's massive circus elephant. What were Edison's generators called?",
+    "question": "Thomas Edison opened Pearl Street Station in Manhattan in 1882, America's first central power plant, run by giant 27-ton generators. He named those huge machines after the most famous animal of the day, P.T. Barnum's massive circus elephant. What were the generators called?",
     "answer": "Jumbo",
     "choices": [
       "Jumbo",
@@ -64377,7 +64104,7 @@
   },
   {
     "tier": 3,
-    "question": "The American inventor Thomas Edison, working in his New Jersey laboratory in the late 1870s, tried thousands of different materials before he found a thin thread — the filament — that would glow steadily inside a light bulb without burning up. He failed over and over. When a reporter later asked him about all those failures, Edison gave a stubborn answer that refused to call them failures at all. What did Edison say?",
+    "question": "Thomas Edison tried thousands of materials in his New Jersey laboratory in the late 1870s, hunting for a thin filament that would glow steadily inside a bulb without burning up. He failed over and over. By legend, when a reporter asked him about all those failures, Edison gave a stubborn answer that refused to call them failures at all. What did he say?",
     "answer": "\"I have not failed — I've found 10,000 ways that won't work\"",
     "choices": [
       "\"I have not failed — I've found 10,000 ways that won't work\"",
@@ -64390,7 +64117,7 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Edison's laboratory at Menlo Park was something the world had never seen: a place built on purpose to produce one new device after another, with teams of workers and equipment all under one roof. Edison coined a nickname for this first-of-its-kind operation. What did he call it?",
+    "question": "At Menlo Park, Thomas Edison filled one building with a staff of skilled workers and all their equipment, set up on purpose to turn out one new device after another. No one had ever run a laboratory that way before. What did Edison call his first-of-its-kind operation?",
     "answer": "The Invention Factory",
     "choices": [
       "The Invention Factory",
@@ -64403,7 +64130,7 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Edison knew a light bulb was useless with no power to run it. So he built the whole electrical system: power plants, wires into homes, sockets, and switches. He also invented one more thing so the new electric company could fairly charge each customer. What was it?",
+    "question": "Thomas Edison knew a light bulb was useless with no power to run it, so he built the whole electrical system around it: power plants, wires into homes, sockets and switches. He also invented one more thing, so the new electric company could fairly charge each customer. What was it?",
     "answer": "An electric meter that measured each home's use",
     "choices": [
       "An electric meter that measured each home's use",
@@ -64416,7 +64143,7 @@
   },
   {
     "tier": 5,
-    "question": "A common story credits Thomas Edison with inventing the light bulb. But Britain's Joseph Swan had already demonstrated his own carbon-filament bulb and held a British patent in 1878, before Edison's. When Swan and Edison clashed over the invention in British courts, how did the case end?",
+    "question": "Joseph Swan had already shown off his own carbon-filament bulb in Britain and patented it there in 1878, before Thomas Edison's, though the common story credits Edison with inventing the light bulb. When the two men clashed over the invention in the British courts, how did the case end?",
     "answer": "Edison lost the case and took Swan in as a partner",
     "choices": [
       "Edison lost the case and took Swan in as a partner",
@@ -64429,7 +64156,7 @@
   },
   {
     "tier": 5,
-    "question": "Rival inventors built bulbs with thick filaments that gulped huge currents. Thomas Edison's key breakthrough was the opposite: a hair-thin filament with high resistance, which needed only a small current. Why did that thin, high-resistance filament matter so much for lighting a whole city?",
+    "question": "Thomas Edison went the opposite way from his rivals, whose thick filaments gulped huge currents: his filament was hair-thin, with high resistance, and needed only a small current. Why did that thin, high-resistance filament matter so much for lighting a whole city?",
     "answer": "It let thin, cheap copper wires feed many bulbs at once",
     "choices": [
       "It let thin, cheap copper wires feed many bulbs at once",
