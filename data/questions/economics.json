@@ -10219,7 +10219,7 @@
   },
   {
     "tier": 1,
-    "question": "Adam Back is a British computer scientist and one of the most important cypherpunks. In 1997 he built a system called Hashcash. It asked every email sender to attach a small proof-of-work stamp — a math puzzle solution — to slow down spammers who send millions of messages at once. But each Hashcash stamp had a strict limit compared to real money. What was that limit?",
+    "question": "Adam Back, a British computer scientist, built Hashcash in 1997 to slow down spammers who blast out millions of emails. Each sender had to solve a little math puzzle first and attach its answer, a proof-of-work stamp. Next to real money, though, every stamp had one strict limit. What was it?",
     "answer": "Each stamp was single-use and could not be transferred like a coin",
     "choices": [
       "Each stamp was single-use and could not be transferred like a coin",
@@ -10232,7 +10232,7 @@
   },
   {
     "tier": 2,
-    "question": "Adam Back's 1997 Hashcash used proof-of-work stamps that could only be spent once. In 2004 a California coder named Hal Finney took the idea further. He built a system where each proof-of-work stamp became a token you could pass to a friend, who could pass it again to someone else, and so on. What did Finney name his new system?",
+    "question": "Hal Finney, a California programmer, took Adam Back's Hashcash stamps a step further in 2004. Back's stamps could be spent only once; Finney's system turned each one into a token that could pass from one person to the next and then on again. What did Finney name his system?",
     "answer": "Reusable Proofs of Work (RPOW)",
     "choices": [
       "Reusable Proofs of Work (RPOW)",
@@ -10245,7 +10245,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2004, four years before Bitcoin, the California cypherpunk Hal Finney built a digital cash system called Reusable Proofs of Work. Each token was a proof-of-work stamp that a person could pass to a friend. But Finney faced a hard problem — how do you stop a token holder from copying and spending the same token twice? What architectural choice did Finney make to solve that double-spend problem?",
+    "question": "Hal Finney let his tokens of 2004, four years before Bitcoin, pass from hand to hand, and so ran straight into digital cash's hardest problem: a holder might copy a token and spend the same one twice. What did Finney build to stop it?",
     "answer": "A trusted server that tracked which stamps had been spent and issued replacements",
     "choices": [
       "A trusted server that tracked which stamps had been spent and issued replacements",
@@ -10258,7 +10258,7 @@
   },
   {
     "tier": 4,
-    "question": "Before Bitcoin, one early digital-cash design used special tamper-proof server hardware so users could trust the server was running honest code. Bitcoin took a totally different route to trust. What does Bitcoin trust instead of a special piece of hardware?",
+    "question": "Hal Finney leaned on a 4758 chip from International Business Machines (IBM), built to resist tampering, so the users of his 2004 system could check that it ran honest, audited code. Bitcoin found its trust somewhere else entirely. What does Bitcoin trust in place of special hardware?",
     "answer": "A public network of computers all checking each other",
     "choices": [
       "A public network of computers all checking each other",
@@ -10270,21 +10270,8 @@
     "topic": "hal-finneys-reusable-proofs-of-work-2004"
   },
   {
-    "tier": 4,
-    "question": "In the 1990s the American cryptographer David Chaum built DigiCash, the first serious attempt at digital cash. Payments were routed through a single trusted server that used strong math to keep them private. Chaum himself admitted the design had one weakness that no amount of tamper-proof hardware could fix — the same weakness that Satoshi Nakamoto's Bitcoin, launched in 2009, was built to remove. What was that weakness?",
-    "answer": "A single server that could be shut down or corrupted",
-    "choices": [
-      "A single server that could be shut down or corrupted",
-      "The cost of buying computers",
-      "The size of individual payments",
-      "The language of the software code"
-    ],
-    "context": "This is the weakness Satoshi's proof-of-work + longest-chain rule solved four years later -- consensus without a trusted third party. Finney's own public writings had named the problem he could not solve. Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
-    "topic": "hal-finneys-reusable-proofs-of-work-2004"
-  },
-  {
     "tier": 5,
-    "question": "Before 2008, digital-cash inventors could not solve one problem: how to make sure the same digital coin isn't spent twice, without trusting a central server that could freeze your money or shut down. What did the 2008 Bitcoin white paper invent to solve this?",
+    "question": "Satoshi Nakamoto took on, in his 2008 white paper, the problem digital-cash inventors before him had not solved: how to stop one coin being spent twice without a central server that could freeze the money or be shut down. What did his paper invent to do it?",
     "answer": "A public ledger that many strangers keep in sync using proof-of-work",
     "choices": [
       "A public ledger that many strangers keep in sync using proof-of-work",
@@ -10293,19 +10280,6 @@
       "A promise from world governments to never seize digital money"
     ],
     "context": "One of the earliest public traces of anyone besides Satoshi running the Bitcoin software. Finney had downloaded the software the day after Christmas 2008. Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
-    "topic": "hal-finneys-reusable-proofs-of-work-2004"
-  },
-  {
-    "tier": 5,
-    "question": "Bitcoin, the first decentralized digital currency, was launched by the anonymous inventor Satoshi Nakamoto on January 3, 2009. Just nine days later, on January 12, Satoshi sent the very first person-to-person Bitcoin transfer to the American cryptographer Hal Finney. The transaction was recorded in block 170 of the new blockchain. How much Bitcoin did that first transfer move?",
-    "answer": "10 BTC",
-    "choices": [
-      "10 BTC",
-      "50 BTC",
-      "100 BTC",
-      "1,000 BTC"
-    ],
-    "context": "Block 170 was the first Bitcoin transaction between two people (rather than a miner's block reward paying itself). Finney had answered Satoshi's forum post volunteering to test the network. Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
     "topic": "hal-finneys-reusable-proofs-of-work-2004"
   },
   {
@@ -10375,20 +10349,7 @@
   },
   {
     "tier": 1,
-    "question": "The American economist Murray Rothbard argued that even courts, roads, and police could be run by private firms competing with each other — no government at all, just companies selling protection and dispute-resolution to willing customers. What is this radical idea called?",
-    "answer": "Anarcho-capitalism",
-    "choices": [
-      "Anarcho-capitalism",
-      "Central planning",
-      "Fascism",
-      "Mixed economy"
-    ],
-    "context": "Hoppe was born September 2, 1949 in Peine, West Germany; joined Rothbard at UNLV in 1986; taught there until retiring in 2008. Source: grokipedia.com/page/Hans-Hermann_Hoppe.",
-    "topic": "hans-hermann-hoppe-democracy-the-god-that-failed"
-  },
-  {
-    "tier": 1,
-    "question": "In 2001 the German-American Austrian economist Hans-Hermann Hoppe published his best-known book. In it he argues that a hereditary king plans better for the long run than a modern elected leader, because the king owns the country while a president only rents it for a term. What is the book's title?",
+    "question": "Hans-Hermann Hoppe argued in 2001, in his best-known book, that a king who inherits his throne looks after a country better than an elected president does. The claim split his own Austrian school. What is the book's title?",
     "answer": "Democracy: The God That Failed",
     "choices": [
       "Democracy: The God That Failed",
@@ -10401,7 +10362,7 @@
   },
   {
     "tier": 2,
-    "question": "A young Central European scholar in the 1970s went to graduate school under one of the leading left-wing philosophers of his day. He read Marx carefully and, for years, thought his teacher was right. Then, after watching how socialist governments actually ran their economies and reading free-market thinkers like Friedrich Hayek, he changed his mind about many things. Later in life he became a well-known defender of free markets. What does this personal story show?",
+    "question": "Jürgen Habermas, a leading thinker of the left, supervised Hans-Hermann Hoppe's doctorate in Frankfurt in 1974. In 1986 Hoppe moved to Las Vegas to work beside Murray Rothbard, who wanted to do away with the state altogether. What does Hoppe's path show?",
     "answer": "People can change their political views over time",
     "choices": [
       "People can change their political views over time",
@@ -10414,7 +10375,7 @@
   },
   {
     "tier": 2,
-    "question": "Hans-Hermann Hoppe is a German-born Austrian-school economist and libertarian philosopher who taught for years at the University of Nevada, Las Vegas. In 2006 he founded an annual libertarian conference called the Property and Freedom Society. It meets every summer at a specific Turkish coastal resort town on the Aegean Sea, where Hoppe spends part of the year. What is the town?",
+    "question": "Hans-Hermann Hoppe started a yearly libertarian gathering in 2006, the Property and Freedom Society. Its members meet each summer in a seaside resort on Turkey's Aegean shore, where Hoppe himself lives for part of the year. Which town is it?",
     "answer": "Bodrum",
     "choices": [
       "Bodrum",
@@ -10427,7 +10388,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 2001 book Democracy: The God That Failed, Hans-Hermann Hoppe compares a hereditary king with an elected president. Both hold power over a country, but Hoppe says one weighs tomorrow against today very differently than the other. He builds his whole argument on one economic idea about how each ruler values the future. Which idea anchors his case?",
+    "question": "Two rulers face each other in Hans-Hermann Hoppe's 2001 book: a king who will hand his country to his heir, and a president who must leave when his term ends. Hoppe rested his whole case on one economic idea about how each of them values the future against the present. Which idea anchors it?",
     "answer": "Time-preference of the officeholder",
     "choices": [
       "Time-preference of the officeholder",
@@ -10440,7 +10401,7 @@
   },
   {
     "tier": 3,
-    "question": "Hans-Hermann Hoppe, a German libertarian philosopher trained in the Austrian tradition, wrote a controversial 2001 book called Democracy: The God That Failed. In it he compared the incentives of two very different rulers -- a hereditary king who passes his kingdom on to his heir, and an elected politician who holds office for a fixed short term. Hoppe used one clear analogy from ordinary property life to show how differently the two treat the country they govern. Which analogy captures his point?",
+    "question": "Hoppe reached for an analogy from everyday property when he set a hereditary king, who passes his kingdom to his heir, beside an elected politician serving a fixed term, and asked how differently each would treat the country he governs. Which analogy captures his point?",
     "answer": "A monarch owns the country; a democratic politician rents it",
     "choices": [
       "A monarch owns the country; a democratic politician rents it",
@@ -10453,7 +10414,7 @@
   },
   {
     "tier": 4,
-    "question": "In Democracy: The God That Failed, Hans-Hermann Hoppe argues that a hereditary king, who owns his kingdom outright, handles government debt differently than a president who holds office for only a fixed elected term. Because the king treats the country as his family's long-term property, he cares about its future revenue. What does Hoppe's argument predict the elected leader will do about public borrowing?",
+    "question": "Hoppe tested his comparison of king and president on public debt. A king who means to pass his kingdom on to his heir, he argued, cares about its future revenue, while a president holds office only for a fixed elected term. What does Hoppe's argument predict the elected leader will do about public borrowing?",
     "answer": "He borrows heavily against future taxpayers he will not answer to",
     "choices": [
       "He borrows heavily against future taxpayers he will not answer to",
@@ -10466,7 +10427,7 @@
   },
   {
     "tier": 4,
-    "question": "The German libertarian philosopher Hans-Hermann Hoppe developed a famous line of reasoning in the 1980s that he called 'argumentation ethics.' It goes like this: the very moment two people begin to argue with each other at all, both are already using their own voices, flesh-and-blood selves, and time to make the case. Nobody can consistently deny owning the very things needed to argue with. So arguing itself, Hoppe said, quietly assumes each person owns something. What does the argument say each person must own?",
+    "question": "Two people begin to argue over whether anyone has a right to property. Hans-Hermann Hoppe argued in 1988 that both are already using their own voices and their own time to make the case, so neither can deny owning what he argues with. He called the point argumentation ethics. What, on Hoppe's argument, must each person own?",
     "answer": "One's own body",
     "choices": [
       "One's own body",
@@ -10479,7 +10440,7 @@
   },
   {
     "tier": 5,
-    "question": "Hans-Hermann Hoppe's Democracy: The God That Failed split the Austrian school — the tradition of Carl Menger, Ludwig von Mises, Murray Rothbard, and Friedrich Hayek that stresses market prices and individual choice. Two Austrians accept much of Hoppe's incentive analysis of politicians but reject his anti-democratic conclusion. Which pair is most often cited?",
+    "question": "Hans-Hermann Hoppe turned against democracy itself at the end of his 2001 book, and there two fellow Austrians who grant much of his case about officeholders' incentives part company with him. Which pair is most often named?",
     "answer": "Peter Boettke and Joseph Salerno",
     "choices": [
       "Peter Boettke and Joseph Salerno",
@@ -10492,7 +10453,7 @@
   },
   {
     "tier": 5,
-    "question": "Long before Democracy: The God That Failed made him famous, the Austrian economist Hans-Hermann Hoppe wrote a 1989 book that laid out his praxeological ethics — an argument for private property that starts from the logic of purposeful human action itself — as a defense against socialism. What is that earlier book?",
+    "question": "Hans-Hermann Hoppe wrote his systematic defense of private property in 1989, arguing from the logic of choosing and acting on purpose, the structure of every deliberate choice. His best-known book, on democracy, came twelve years later. What did he title the 1989 book?",
     "answer": "A Theory of Socialism and Capitalism",
     "choices": [
       "A Theory of Socialism and Capitalism",
@@ -10505,46 +10466,33 @@
   },
   {
     "tier": 1,
-    "question": "Imagine a country where the government has abolished markets and prices. One central planning office in the capital must guess, each year, how many shoes, coats, tractors, and pencils the whole country should make. But without prices set by buyers and sellers, the office has no way to know what people actually want, or how scarce each material really is. Ludwig von Mises made this challenge famous in the 1920s. What is this hard problem called?",
+    "question": "Ludwig von Mises put a hard challenge to the socialists in 1920. Abolish markets and prices, and one office in the capital must decide each year how many boots, coats, tractors and pencils the whole nation will make. With nothing bought or sold, the officials cannot tell what people want or which materials run short. What is this obstacle called?",
     "answer": "The calculation problem",
     "choices": [
       "The calculation problem",
       "The free-rider problem",
-      "The trolley problem",
-      "The bank-run problem"
+      "The bank-run problem",
+      "The population problem"
     ],
     "context": "Hayek, teaching at LSE since 1931, assembled and edited the volume Collectivist Economic Planning (Routledge, 1935) to bring the German-language debate into English. Source: grokipedia.com/page/Collectivist_Economic_Planning.",
     "topic": "hayeks-collectivist-economic-planning-1935"
   },
   {
-    "tier": 1,
-    "question": "In 1920, the Austrian economist Ludwig von Mises had argued that a fully socialist economy could never rationally set prices -- without private markets, planners had no way to know what things were really worth. In 1935, Mises's younger colleague Friedrich Hayek edited a book for Routledge in London that gathered essays on this calculation debate from several economists on both sides. Its main title was three words followed by a colon and a longer subtitle. What was the main title?",
+    "tier": 2,
+    "question": "Friedrich Hayek, newly arrived to teach in London, put Ludwig von Mises's 1920 essay before English readers in 1935. He gathered it with Enrico Barone's 1908 paper and others into one volume for Routledge, framed by an opening and a closing essay of his own. What was the volume's main title?",
     "answer": "Collectivist Economic Planning",
     "choices": [
       "Collectivist Economic Planning",
-      "The Constitution of Liberty",
       "The Road to Serfdom",
-      "Prices and Production"
+      "Prices and Production",
+      "The Pure Theory of Capital"
     ],
     "context": "Collectivist Economic Planning: Critical Studies on the Possibilities of Socialism, edited by F. A. Hayek (Routledge, 1935). Source: grokipedia.com/page/Collectivist_Economic_Planning.",
     "topic": "hayeks-collectivist-economic-planning-1935"
   },
   {
     "tier": 2,
-    "question": "In 1935 the Austrian economist Friedrich Hayek edited an English-language collection called Collectivist Economic Planning. Its centerpiece was the very first English translation of a 1920 German essay that few English-speaking economists had ever read — an essay arguing that a socialist economy without market prices cannot rationally allocate resources. Whose essay was newly translated?",
-    "answer": "Ludwig von Mises's Economic Calculation in the Socialist Commonwealth",
-    "choices": [
-      "Ludwig von Mises's Economic Calculation in the Socialist Commonwealth",
-      "Karl Marx's Critique of the Gotha Program",
-      "Vilfredo Pareto's Manual of Political Economy",
-      "Leon Walras's Elements of Pure Economics"
-    ],
-    "context": "S. Adler's translation of Mises's 1920 essay became the volume's centerpiece; before 1935 the argument had circulated only in German-language economic journals. Source: grokipedia.com/page/Collectivist_Economic_Planning.",
-    "topic": "hayeks-collectivist-economic-planning-1935"
-  },
-  {
-    "tier": 2,
-    "question": "In 1908, Italian economist Enrico Barone wrote a famous math paper called 'The Ministry of Production in the Collectivist State.' He argued that a planning board could in theory set every price in an economy — if it could just solve millions of equations at once. Later Austrian economists like Ludwig von Mises pointed out something Barone had missed. What was the real, practical problem with the plan?",
+    "question": "Enrico Barone, an Italian economist, showed in 1908 that a planning board could in theory fix every price in an economy correctly, if only it could solve a vast system of equations all at once. Ludwig von Mises and the Austrians after him found a practical flaw in the scheme. What was it?",
     "answer": "No planner could ever gather all that information in time",
     "choices": [
       "No planner could ever gather all that information in time",
@@ -10557,7 +10505,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 1935 collection Collectivist Economic Planning, Friedrich Hayek wrote two of his own essays to bracket the translated centerpiece by Ludwig von Mises. The opening essay covered the debate's origins. The closing essay surveyed the answers socialism's defenders had offered since Mises wrote. What is the closing survey's short title?",
+    "question": "Friedrich Hayek bracketed the translated centerpiece of his 1935 volume, the essay by Ludwig von Mises, with a pair of his own essays. The opening one told where the problem came from; the closing one surveyed what socialism's defenders had proposed since Mises wrote. What is the closing survey's short title?",
     "answer": "The Present State of the Debate",
     "choices": [
       "The Present State of the Debate",
@@ -10566,32 +10514,6 @@
       "The Pretense of Knowledge"
     ],
     "context": "Hayek's two 1935 contributions were 'The Nature and History of the Problem' (introduction) and 'The Present State of the Debate' (survey of the 1920s German-language exchanges). Source: grokipedia.com/page/Collectivist_Economic_Planning.",
-    "topic": "hayeks-collectivist-economic-planning-1935"
-  },
-  {
-    "tier": 4,
-    "question": "In a 1920 German essay, the Austrian economist Ludwig von Mises argued that a socialist government which has taken over all the factories faces a hidden problem. Suppose the planners have to decide how much steel to send to making trucks, versus tractors, versus bridges. Mises said they cannot rationally make the choice. Why not?",
-    "answer": "Without private buyers and sellers, there are no market prices to guide the choice",
-    "choices": [
-      "Without private buyers and sellers, there are no market prices to guide the choice",
-      "Because paperwork always gets lost in transit",
-      "Because factories never keep records of any kind",
-      "Because steel simply cannot be measured"
-    ],
-    "context": "Lange's 'On the Economic Theory of Socialism' Parts I and II (Review of Economic Studies, 1936-1937) is the founding market-socialist reply to Mises and to the 1935 Hayek volume. Source: grokipedia.com/page/Oskar_R._Lange.",
-    "topic": "hayeks-collectivist-economic-planning-1935"
-  },
-  {
-    "tier": 5,
-    "question": "The Austrian economist Friedrich Hayek spent the 1930s and 1940s writing essays on two connected ideas -- that a socialist central planner cannot calculate prices without a market, and that no single mind can ever gather the scattered local knowledge that markets pool automatically. In 1948 the University of Chicago Press collected his most important essays on these themes into a single book. What is the book's title?",
-    "answer": "Individualism and Economic Order",
-    "choices": [
-      "Individualism and Economic Order",
-      "The Constitution of Liberty",
-      "Law, Legislation and Liberty",
-      "The Sensory Order"
-    ],
-    "context": "Individualism and Economic Order (Chicago, 1948) collects Hayek's 1930s-1940s essays, including 'Economics and Knowledge' (1937) and 'The Use of Knowledge in Society' (1945). Source: grokipedia.com/page/Individualism_and_Economic_Order.",
     "topic": "hayeks-collectivist-economic-planning-1935"
   },
   {
@@ -10674,7 +10596,7 @@
   },
   {
     "tier": 1,
-    "question": "Deflation means prices fall over time. Next year, a dollar buys more than today. That sounds nice, but it can hurt jobs, because people wait to buy, hoping prices drop again. What happens to workers when nobody buys anything?",
+    "question": "A family puts off buying a new car, sure the price will be lower next year, and thousands of other families wait too. Ben Bernanke, a Federal Reserve governor, warned about prices that keep falling in a speech in November 2002. What happens to workers when nobody buys anything?",
     "answer": "Businesses lay off workers",
     "choices": [
       "Businesses lay off workers",
@@ -10687,7 +10609,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 2002 the Federal Reserve governor Ben Bernanke gave a speech about fighting deflation — the danger of prices actually falling year after year. He borrowed a wild teaching image the economist Milton Friedman had first used in a 1969 essay to show one way a central bank could push new money straight into an economy. What was the teaching image?",
+    "question": "Milton Friedman had used a vivid teaching image in a 1969 essay, and Ben Bernanke, a Federal Reserve governor, borrowed it in November 2002 for a speech on fighting deflation. It was a picture of new money landing straight in people's hands. What was the image?",
     "answer": "Dropping money from a helicopter",
     "choices": [
       "Dropping money from a helicopter",
@@ -10700,7 +10622,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2002 the economist Ben Bernanke, later chair of America's Federal Reserve, gave a speech joking that a central bank could always fight deflation by dropping money from a helicopter. He was quoting a 1969 essay by Milton Friedman that first painted the helicopter picture. The nickname 'Helicopter Ben' stuck to Bernanke for the rest of his career. What is Friedman's essay called?",
+    "question": "Ben Bernanke borrowed one image from Milton Friedman for his November 2002 speech on deflation, and it saddled him with a nickname for life. Friedman had painted that image in a 1969 essay, as a thought experiment rather than a plan. What was Friedman's essay called?",
     "answer": "The Optimum Quantity of Money",
     "choices": [
       "The Optimum Quantity of Money",
@@ -10713,7 +10635,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2002, Ben Bernanke was a Federal Reserve governor -- he would later become Fed chairman in 2006, just before the 2008 crash. That year he gave a now-famous speech titled 'Deflation: Making Sure It Doesn't Happen Here.' It listed the unusual tools a central bank could still use once short-term interest rates had already been cut all the way to zero. Which large-scale asset-purchase tool headed his list?",
+    "question": "Ben Bernanke, then a Federal Reserve governor, listed in his 2002 speech, 'Deflation: Making Sure It Doesn't Happen Here,' what a central bank could still do once it had cut short-term interest rates all the way to zero. Which tool headed his list?",
     "answer": "Buying long-term Treasuries to lower long-term yields",
     "choices": [
       "Buying long-term Treasuries to lower long-term yields",
@@ -10726,7 +10648,7 @@
   },
   {
     "tier": 3,
-    "question": "Federal Reserve governor Ben Bernanke's November 2002 speech, 'Deflation: Making Sure It Doesn't Happen Here,' listed a menu of unusual tools a central bank could reach for when short-term interest rates were already near zero. Nearly every tool on that list was deployed between 2008 and 2014 under three named Federal Reserve programs. Which trio corresponds to what Bernanke had previewed?",
+    "question": "Ben Bernanke laid out a menu of unusual tools in his November 2002 speech for a central bank whose short-term rates were already near zero. The Fed put nearly all of it to work from 2008 to 2014, chiefly through three named programs. Which trio matches what Bernanke had previewed?",
     "answer": "QE1, QE2, and Operation Twist",
     "choices": [
       "QE1, QE2, and Operation Twist",
@@ -10739,7 +10661,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 2002 the Federal Reserve governor Ben Bernanke gave a speech titled 'Deflation: Making Sure It Doesn't Happen Here.' Its core argument was a bold claim about what a certain kind of central bank can always do to fight falling prices, no matter how low interest rates have already been pushed. What was Bernanke's claim?",
+    "question": "Ben Bernanke put one bold claim at the heart of his November 2002 speech, 'Deflation: Making Sure It Doesn't Happen Here,' and investors heard reassurance in it while Austrian economists heard a warning. The claim concerned what a certain kind of central bank can always do, however low interest rates have already gone. What was it?",
     "answer": "A central bank with a fiat currency can always create money at zero marginal cost",
     "choices": [
       "A central bank with a fiat currency can always create money at zero marginal cost",
@@ -10752,7 +10674,7 @@
   },
   {
     "tier": 4,
-    "question": "In November 2002 the Federal Reserve governor Ben Bernanke gave a speech saying central banks with fiat currency can always create more money to fight deflation. Austrian-tradition critics — economists in the Mises-Rothbard line who oppose central-bank money printing — attacked the speech in real time as a blueprint for eventual currency debasement. Which trio is usually cited as those critics?",
+    "question": "Critics in the Austrian line attacked Ben Bernanke's November 2002 deflation speech as it was given, calling it a blueprint for eventual currency debasement. Three of them are usually named: an economist at the Mises Institute, an investor and broadcaster, and a commodities investor. Which trio is it?",
     "answer": "Bob Murphy, Peter Schiff, and Jim Rogers",
     "choices": [
       "Bob Murphy, Peter Schiff, and Jim Rogers",
@@ -10764,21 +10686,8 @@
     "topic": "helicopter-ben-bernankes-2002-deflation-speech"
   },
   {
-    "tier": 4,
-    "question": "Exactly six years after his November 2002 deflation speech, Ben Bernanke — now the Federal Reserve chair — launched, in November 2008 during the financial crisis, the first Fed program to buy long-dated Treasury bonds and mortgage-backed securities at unprecedented scale, expanding the central bank's balance sheet by hundreds of billions of dollars. What was that first program called?",
-    "answer": "QE1",
-    "choices": [
-      "QE1",
-      "TARP",
-      "TALF",
-      "MMLF"
-    ],
-    "context": "QE1, launched November 25 2008, initially bought $600 billion of mortgage-backed securities and $300 billion of Treasuries. It grew from there. The 2002 speech now reads as the most accurate preview of Fed crisis policy ever given -- everything Bernanke said the Fed could do, he did. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
-    "topic": "helicopter-ben-bernankes-2002-deflation-speech"
-  },
-  {
     "tier": 5,
-    "question": "In his November 2002 deflation speech, Federal Reserve governor Ben Bernanke admitted one power a central bank with a fiat currency can always use. Austrian critics called it 'monetary financing of fiscal policy' — the central bank paying for the government's spending by simply creating new money. What specific action did Bernanke say a central bank could always take?",
+    "question": "Ben Bernanke, a Federal Reserve governor, listed tools for fighting deflation in his November 2002 speech, and for an extreme case he added one more step a central bank could take. What did he say a central bank could do if it had to?",
     "answer": "Fund direct tax cuts by printing money if necessary",
     "choices": [
       "Fund direct tax cuts by printing money if necessary",
@@ -10791,7 +10700,7 @@
   },
   {
     "tier": 5,
-    "question": "Ben Bernanke's 2002 Federal Reserve speech, 'Deflation: Making Sure It Doesn't Happen Here,' walked through the tools the Fed could deploy in a future crisis at the zero interest-rate bound. Six years later, during the 2008 financial crash -- with Bernanke now Fed chairman -- the Fed did almost exactly what the 2002 speech had described. Austrian and public-choice economists point to this pattern as a specific recognition move about how Fed chairmen signal what they will actually do. Which move does the 2002 speech teach?",
+    "question": "Ben Bernanke described in 2002 the tools the Fed could reach for in a future crisis once rates hit zero, and six years later, as chairman during the 2008 crash, he used almost exactly those tools. Economists of the Austrian and public-choice schools take one recognition move from the episode. Which move does it teach?",
     "answer": "Public speeches by central bankers about what they could do in a hypothetical crisis often preview exactly what they will do in a real one",
     "choices": [
       "Public speeches by central bankers about what they could do in a hypothetical crisis often preview exactly what they will do in a real one",
@@ -10804,20 +10713,7 @@
   },
   {
     "tier": 1,
-    "question": "One book argues a bottle of water is worth more to a thirsty hiker in the desert than to someone standing by a river. So a thing's value depends on who wants it and when. What is this idea about value called?",
-    "answer": "Subjective value",
-    "choices": [
-      "Subjective value",
-      "Labor theory of value",
-      "Fixed pricing",
-      "A price ceiling"
-    ],
-    "context": "Human Action: A Treatise on Economics (Yale University Press, 1949), roughly 881 pages. Socialism (1922, English 1936), The Theory of Money and Credit (1912), and Bureaucracy (1944) were the earlier Mises books it drew together. Source: en.wikipedia.org/wiki/Human_Action.",
-    "topic": "human-action-1949-misess-magnum-opus"
-  },
-  {
-    "tier": 1,
-    "question": "Ludwig von Mises, an Austrian economist who fled the Nazis and settled in New York City, published his masterwork in English in 1949 — a thousand-page treatise on how people choose. It built all of economics up from a single starting axiom about people. Mises opened its first chapter with a five-word sentence and said the whole rest of the treatise rested on it. Which sentence opens that chapter?",
+    "question": "A refugee economist living in New York, Ludwig von Mises, brought out a book nearly nine hundred pages long with Yale University Press in 1949, deriving the whole of economics from a single starting point. He opened its first chapter with a short sentence and rested the whole book on it. Which sentence?",
     "answer": "Human action is purposeful behavior.",
     "choices": [
       "Human action is purposeful behavior.",
@@ -10830,7 +10726,7 @@
   },
   {
     "tier": 2,
-    "question": "One economist said economics is like geometry: start from an obvious truth about people, then reason step by step. No lab tests needed. He rejected the opposing view that economics should copy physics and test ideas with real-world data. What is that opposing view called?",
+    "question": "Ludwig von Mises said economics is more like geometry than chemistry, and that history can illustrate its laws but never prove them. Which view of how economics should test its laws was he rejecting?",
     "answer": "Positivism, which models economics on natural-science hypothesis testing",
     "choices": [
       "Positivism, which models economics on natural-science hypothesis testing",
@@ -10842,47 +10738,8 @@
     "topic": "human-action-1949-misess-magnum-opus"
   },
   {
-    "tier": 2,
-    "question": "In his 1949 masterwork Human Action, the Austrian economist Ludwig von Mises argues that only one kind of thing in the world actually chooses — an individual human being with his own aims. Markets, societies, and whole economies, he says, are the outcome of many such individual choices, planned by no one from above. What does Mises call this basic rule of economic thinking?",
-    "answer": "Methodological individualism",
-    "choices": [
-      "Methodological individualism",
-      "Methodological holism",
-      "Methodological pluralism",
-      "Methodological monism"
-    ],
-    "context": "'The market' does not act; only Alice at the fruit stall and Bob at the cash register act. A price, a boom, a shortage are the aggregate outcome no individual planned. Methodological holism (the whole society acts as a unit) was the position Mises rejected; the other two are unrelated terms. Source: en.wikipedia.org/wiki/Human_Action.",
-    "topic": "human-action-1949-misess-magnum-opus"
-  },
-  {
-    "tier": 3,
-    "question": "Ludwig von Mises's Human Action was not first written in America. While living in exile in Geneva in 1940, Mises had already published a long German-language version of the same sweeping treatise, which he later rewrote and expanded in English after fleeing to New York. What was the title of that earlier 1940 German book?",
-    "answer": "Nationaloekonomie",
-    "choices": [
-      "Nationaloekonomie",
-      "Gemeinwirtschaft",
-      "Kapital und Kapitalzins",
-      "Grundsaetze der Volkswirtschaftslehre"
-    ],
-    "context": "Nationaloekonomie: Theorie des Handelns und Wirtschaftens (Union, Geneva, 1940) was completed in the spring of 1940, weeks before the fall of France. Mises rewrote and expanded it into English as Human Action. Gemeinwirtschaft (1922) was his book on socialism; Kapital und Kapitalzins was Boehm-Bawerk; Grundsaetze was Menger's 1871 founding text. Source: mises.org/library/book/nationalokonomie-theorie-des-handelns-und-wirtschaftens.",
-    "topic": "human-action-1949-misess-magnum-opus"
-  },
-  {
-    "tier": 3,
-    "question": "Chapter 26 of Ludwig von Mises's 1949 book Human Action folds in a much older argument he had first made in a 1920 German journal essay — the essay that opened the twentieth-century debate over whether a fully socialist economy could work at all. Which older Mises argument does Chapter 26 grow into?",
-    "answer": "That rational calculation under socialism is impossible without market prices",
-    "choices": [
-      "That rational calculation under socialism is impossible without market prices",
-      "That business cycles are caused by central-bank credit expansion",
-      "That the value of money regresses back to a prior barter demand",
-      "That interest rates reflect the community's time preference"
-    ],
-    "context": "Mises's 1920 essay 'Economic Calculation in the Socialist Commonwealth' became Chapter 26 of Human Action ('The Impossibility of Economic Calculation Under Socialism'). The credit-expansion theory of the cycle became Chapter 20; the regression theorem for money is Chapter 17; the time-preference theory of interest is Chapter 19. Each has its own chapter. Source: en.wikipedia.org/wiki/Human_Action.",
-    "topic": "human-action-1949-misess-magnum-opus"
-  },
-  {
     "tier": 4,
-    "question": "The Austrian-school economist Ludwig von Mises left Europe for America in 1940. New York University gave him an office and a title but no salary — his out-of-favor free-market views were not fashionable in the academy. For twenty-four years his paycheck came instead from the William Volker Fund, a private foundation set up by a rich businessman. What is this way of funding out-of-favor scholars called?",
+    "question": "Ludwig von Mises reached America in 1940 and took an unpaid visiting post at New York University, since his views were out of fashion in the academy. For many years the William Volker Fund covered his salary instead. What is this way of paying a scholar the universities will not pay called?",
     "answer": "Private philanthropy",
     "choices": [
       "Private philanthropy",
@@ -10895,7 +10752,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 20th century, Austrian economists like Ludwig von Mises and Murray Rothbard argued that a truly lasting monopoly is almost always the child of government. A single company can only keep rivals out if the state blocks them by law. Imagine there is no such legal block, and one giant company keeps its prices very high. What tends to happen next in the market?",
+    "question": "Murray Rothbard and his teacher Ludwig von Mises argued that a truly lasting monopoly is almost always the child of government. Suppose no law blocks rivals, and one giant company keeps its prices very high. What tends to happen next in the market?",
     "answer": "New competitors enter and undercut the price",
     "choices": [
       "New competitors enter and undercut the price",
@@ -10908,7 +10765,7 @@
   },
   {
     "tier": 5,
-    "question": "A 1949 book argues that economics starts from a single fact: people choose. Every choice ranks options against each other and takes one. From this starting point, the book claims, the whole shape of markets can be worked out. Which broad approach does this describe?",
+    "question": "Mises began his 1949 masterwork from one fact: every choice ranks some options above others and takes one. From there, he claimed, the whole shape of markets can be worked out step by step. Which broad approach does this describe?",
     "answer": "Reasoning outward from the fact that people act with purpose",
     "choices": [
       "Reasoning outward from the fact that people act with purpose",
@@ -10921,7 +10778,7 @@
   },
   {
     "tier": 5,
-    "question": "Inside the Austrian tradition, Mises's students and later Austrian economists refer to Human Action by a nickname so short it needs no adjective. Which one-word label do Austrians use when they say 'go read the ___' and mean Human Action?",
+    "question": "An Austrian-school teacher tells a new student, 'Go read the ___,' and the student knows at once that he means Ludwig von Mises's Human Action. Inside the tradition one short label is enough. Which one-word label fills the blank?",
     "answer": "the treatise",
     "choices": [
       "the treatise",
@@ -10934,7 +10791,7 @@
   },
   {
     "tier": 1,
-    "question": "In the early 1980s Japanese carmakers like Toyota and Honda were selling so many small, cheap, fuel-efficient cars in America that US carmakers in Detroit were losing sales and laying off workers. The US government told Japan: we could slap a huge tax on every car you ship us, but instead, would you just agree to ship fewer cars each year on your own? Japan agreed, and US carmakers kept more of their home market. What kind of trade limit is this?",
+    "question": "The Reagan administration held back in 1981 from taxing every imported car, though Japanese compacts from Toyota and Honda were selling in record numbers and Detroit was cutting jobs. It pressed Japan to cap its own shipments instead, and Japan agreed. What kind of trade limit is this?",
     "answer": "A voluntary export restraint",
     "choices": [
       "A voluntary export restraint",
@@ -10947,7 +10804,7 @@
   },
   {
     "tier": 2,
-    "question": "By 1980, small fuel-efficient Japanese cars from Toyota, Honda, and Nissan were outselling American models in the US market. Detroit's big automakers were losing sales fast and asking Washington for help. In 1981, the Reagan administration pressured Japan into what was called a 'voluntary export restraint' -- a hard yearly cap on how many Japanese cars could be shipped to America. About how many cars per year did the deal allow?",
+    "question": "Detroit's big automakers, losing sales fast to Toyota, Honda and Nissan, asked Washington for help around 1980. In 1981 Japan agreed, under pressure from the Reagan administration, to a hard yearly cap on the cars it shipped to America. About how many cars a year did the cap allow at first?",
     "answer": "About 1.68 million",
     "choices": [
       "About 1.68 million",
@@ -10960,7 +10817,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1981, the United States and Japan agreed on a 'voluntary export restraint' that capped the number of Japanese cars that could be sold in America each year. The deal was pushed through by American politicians to protect a specific set of home-country carmakers -- the giants of Detroit -- that were losing sales to cheaper, more fuel-efficient Japanese imports like the Toyota Corolla and Honda Civic. Which three carmakers were being protected?",
+    "question": "American politicians pushed Japan in 1981 to cap how many of its cars could be sold in America each year. The cap protected three home-grown giants of Detroit, which were losing sales to cheaper, fuel-efficient imports like the Toyota Corolla and the Honda Civic. Which three companies were being protected?",
     "answer": "General Motors, Ford, and Chrysler",
     "choices": [
       "General Motors, Ford, and Chrysler",
@@ -10973,7 +10830,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1981 Japan agreed to a 'Voluntary Export Restraint,' capping how many cars it shipped to the United States each year to protect Detroit's Big Three from Japanese competition. The economist Robert Crandall studied the deal for the Brookings Institution and published a 1987 paper working out how much it raised the average US car price. In 1983 dollars, about how much per car?",
+    "question": "Robert Crandall, an economist at the Brookings Institution, worked out in 1987 how much Japan's 1981 cap on car shipments to America had raised what Americans paid for an average car. In 1983 dollars, about how much was it per car?",
     "answer": "About $1,000 per car",
     "choices": [
       "About $1,000 per car",
@@ -10986,7 +10843,7 @@
   },
   {
     "tier": 4,
-    "question": "During the 1980s Japan car quota, models like the Honda Accord, Toyota Camry, and Nissan Maxima grew bigger, fancier, and more expensive. The cheap little hatchback almost vanished. Which feature of the quota caused that shift?",
+    "question": "Robert Feenstra documented in 1988 how Honda's Accord, Toyota's Camry and Nissan's Maxima grew bigger, plusher and costlier under Japan's cap on car shipments to America, while the cheap little hatchback nearly vanished. Which feature of the cap caused that shift?",
     "answer": "The cap was set in vehicles rather than in dollars, so each unit had to earn more profit",
     "choices": [
       "The cap was set in vehicles rather than in dollars, so each unit had to earn more profit",
@@ -10999,7 +10856,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1981 the United States told Japanese carmakers like Toyota and Honda they could sell only 1.68 million cars a year to Americans. With fewer Japanese cars on U.S. dealer lots, each car's price went up. Interestingly, that extra money on each car did not go to the American government as an import tax. Where did it end up?",
+    "question": "A buyer paid more for a new Toyota or Honda in America after 1981, once Japan capped how many cars it shipped there each year. Had Washington used a tariff instead, the extra money would have gone to the US Treasury. Where did it end up?",
     "answer": "To the foreign carmakers as extra profit per car",
     "choices": [
       "To the foreign carmakers as extra profit per car",
@@ -11012,7 +10869,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1985, a senator defends the auto Voluntary Export Restraint. He points to United Auto Workers (UAW) jobs it saved in Michigan and Ohio. A Brookings economist answers that the seen worker in Michigan cost an unseen American buyer priced out of a $4,500 Japanese car. Which classical reasoning move is he using?",
+    "question": "A senator defends the cap on Japanese car imports in 1985 by pointing to the United Auto Workers jobs it protected in Michigan and Ohio. A Brookings economist answers by pointing to a family priced out of a $4,500 Japanese compact, a family no hearing ever hears from. Which classical reasoning move is he using?",
     "answer": "Frederic Bastiat's seen-versus-unseen: name the invisible victim",
     "choices": [
       "Frederic Bastiat's seen-versus-unseen: name the invisible victim",
@@ -11116,7 +10973,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1840s France, the economist Frédéric Bastiat wrote sharp little pamphlets defending free trade in Paris. He watched brilliant opponents smear his ideas — but he told his friends the clever critics were not the real threat. Bastiat warned that a good cause has a worse enemy than any skilled attacker. What did he say was the worst thing that could happen to a good cause?",
+    "question": "Frédéric Bastiat, writing witty free-trade pamphlets in Paris against France's powerful protectionist lobby in the 1840s, told his friends that skilful opponents were not the real threat to a good cause. What did he say was the worst thing that could happen to a good cause?",
     "answer": "Ineptly defended",
     "choices": [
       "Ineptly defended",
@@ -11129,7 +10986,7 @@
   },
   {
     "tier": 1,
-    "question": "Frederic Bastiat was a French economist writing in the 1840s, famous for essays defending free trade. He complained that good causes were often ineptly defended, and that most writers never bothered to state their opponents' arguments fairly. Bastiat drew a personal writing rule from that complaint and followed it in every essay of his own. What rule did his essays follow?",
+    "question": "Frédéric Bastiat followed one rule of method in nearly every essay of his 1845 collection Economic Sophisms, before he answered the protectionists' arguments. What was the rule?",
     "answer": "First state the opposing case in its strongest form, then answer it",
     "choices": [
       "First state the opposing case in its strongest form, then answer it",
@@ -11142,7 +10999,7 @@
   },
   {
     "tier": 2,
-    "question": "In a school debate club, before you argue against a classmate's idea, you first repeat that idea out loud in the strongest and fairest way you can -- the way the classmate would say it. Debate coaches call this move 'steelmanning' your opponent. Why is it a good habit to build?",
+    "question": "Suppose you belong to a school debate club. Before arguing against a classmate's idea, you first restate it as strongly and fairly as the classmate himself would. Why is that a good habit to build?",
     "answer": "It stops you from beating up a weaker version of the argument",
     "choices": [
       "It stops you from beating up a weaker version of the argument",
@@ -11154,34 +11011,8 @@
     "topic": "ineptly-defended-the-line-sowell-borrowed"
   },
   {
-    "tier": 2,
-    "question": "In 2000 the American economist Thomas Sowell — a Chicago-trained scholar based at the Hoover Institution in California — published a plain-language introduction to economics. He set himself a rule: state the best case for a policy before criticizing it. The book grew through five editions and became a bestseller for students and adults who wanted the field explained without jargon. What is the book's title?",
-    "answer": "Basic Economics",
-    "choices": [
-      "Basic Economics",
-      "Knowledge and Decisions",
-      "A Conflict of Visions",
-      "The Vision of the Anointed"
-    ],
-    "context": "Basic Economics: A Citizen's Guide to the Economy (Basic Books, 2000; 5th ed. 2014) is Sowell's most widely-read book. Source: grokipedia.com/page/Basic_Economics.",
-    "topic": "ineptly-defended-the-line-sowell-borrowed"
-  },
-  {
-    "tier": 3,
-    "question": "In 1987 the American economist Thomas Sowell published a book with William Morrow that mapped two rival worldviews shaping Western politics. On one side stood the 'constrained vision' — humans are flawed and wisdom lives in tradition. On the other stood the 'unconstrained vision' — humans are perfectible if the right experts run things. Sowell traced how each vision leads to very different policies. What is the book's short title?",
-    "answer": "A Conflict of Visions",
-    "choices": [
-      "A Conflict of Visions",
-      "The Vision of the Anointed",
-      "Cosmic Justice",
-      "Intellectuals and Society"
-    ],
-    "context": "A Conflict of Visions: Ideological Origins of Political Struggles (1987) presents the 'constrained' and 'unconstrained' visions each in the strongest terms before analyzing the resulting policy disagreements. Source: grokipedia.com/page/A_Conflict_of_Visions.",
-    "topic": "ineptly-defended-the-line-sowell-borrowed"
-  },
-  {
     "tier": 4,
-    "question": "In 1850 the French economist Frédéric Bastiat wrote an essay called 'That Which Is Seen, and That Which Is Not Seen.' He argued that the seen result of any government spending is easy — the shiny new building everyone points at. The unseen cost is what taxpayers never got to do with the money that was taken. Imagine a town uses tax money to build a stadium and residents cheer at the ribbon-cutting. What is the hidden cost Bastiat would ask you to count?",
+    "question": "A town pays for a new stadium out of its taxes, and residents cheer as the ribbon is cut. Frédéric Bastiat, in his 1850 essay That Which Is Seen, and That Which Is Not Seen, would ask the town to count a hidden cost as well. Which cost?",
     "answer": "All the things the taxpayers would have bought or built with that money instead",
     "choices": [
       "All the things the taxpayers would have bought or built with that money instead",
@@ -11194,7 +11025,7 @@
   },
   {
     "tier": 5,
-    "question": "Before arguing against an idea, first restate it in the strongest possible form its supporters would agree with — no cheap distortions, no easy targets. This is the opposite of the \"straw man.\" What one-word verb do writers online use for that move?",
+    "question": "A writer on LessWrong, around 2010, restated a rival's argument as strongly as its own supporters would, and only then answered it. The rationalist writers there had one word for that move. What is the word?",
     "answer": "Steelman",
     "choices": [
       "Steelman",
@@ -11207,7 +11038,7 @@
   },
   {
     "tier": 1,
-    "question": "The American economist Milton Friedman, a University of Chicago Nobel winner, had one line he repeated everywhere — in a 1963 lecture, in his book Free to Choose, in Money Mischief, and in newspaper columns for decades. He said inflation is 'always and everywhere' one specific kind of phenomenon, not a wage story and not a supply story. Which cause did his famous line name?",
+    "question": "Milton Friedman of Chicago, a Nobel winner, repeated one line for three decades: inflation, he said, is 'always and everywhere' one kind of phenomenon, not a wage story and not a supply story. Which kind did his famous line name?",
     "answer": "A monetary phenomenon",
     "choices": [
       "A monetary phenomenon",
@@ -11219,21 +11050,8 @@
     "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
   },
   {
-    "tier": 1,
-    "question": "A country's government prints twice as much money and hands it out, but the country still makes the same amount of stuff as before. Store owners see more dollars chasing the same goods and raise their prices. What causes prices to rise in this story?",
-    "answer": "Too much money for too few goods",
-    "choices": [
-      "Too much money for too few goods",
-      "Cold weather",
-      "Union contracts",
-      "A shipping strike"
-    ],
-    "context": "Friedman's monetarist move: inflation is caused by the money supply growing faster than real economic output. Every historical inflation tracks the monetary expansion; no lasting inflation has ever occurred without it. Source: Friedman (1963); Friedman + Schwartz, A Monetary History of the United States (Princeton 1963).",
-    "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
-  },
-  {
     "tier": 2,
-    "question": "In their 1963 book 'A Monetary History of the United States,' the economists Milton Friedman and Anna Schwartz walked through a hundred years of American money. Their most famous finding hit the Great Depression head-on: between 1929 and 1933, the amount of money in circulation collapsed by about a third. What did Friedman and Schwartz say made the Depression so deep?",
+    "question": "Milton Friedman and Anna Schwartz reached the Great Depression in their 1963 book A Monetary History of the United States, in a chapter they called The Great Contraction. What did they say made the Depression so deep?",
     "answer": "The sudden shrinking of the money supply",
     "choices": [
       "The sudden shrinking of the money supply",
@@ -11245,21 +11063,8 @@
     "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
   },
   {
-    "tier": 2,
-    "question": "From 1929 to 1933, the amount of money circulating in America's economy collapsed by about a third. In their 1963 book 'A Monetary History of the United States,' the economists Milton Friedman and Anna Schwartz argued that this shrinking money supply turned a bad recession into the worst depression in the country's history. What lesson does that story teach?",
-    "answer": "When the money supply shrinks fast, businesses and jobs collapse with it",
-    "choices": [
-      "When the money supply shrinks fast, businesses and jobs collapse with it",
-      "Depressions are caused only by too much money being printed",
-      "Only bad harvests can cause a real depression",
-      "The money supply has nothing to do with jobs"
-    ],
-    "context": "Chapter 7 of A Monetary History, titled 'The Great Contraction,' documented that the US money supply fell by roughly one-third between 1929 and 1933 -- a Fed failure Friedman argued caused the depth of the Depression. Source: Friedman + Schwartz (1963), Chapter 7.",
-    "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
-  },
-  {
     "tier": 3,
-    "question": "In 1970, Milton Friedman gave a lecture called 'The Counter-Revolution in Monetary Theory.' It was a direct challenge to the ruling school of economics at the time. Which school was he trying to push aside?",
+    "question": "A London audience heard Milton Friedman give his famous Counter-Revolution in Monetary Theory lecture. It took on the school that ruled economics in his day, one that saw money as a mere bystander. Which school was he trying to push aside?",
     "answer": "Keynesian macroeconomics",
     "choices": [
       "Keynesian macroeconomics",
@@ -11272,7 +11077,7 @@
   },
   {
     "tier": 3,
-    "question": "Through the 1970s the American economy did something old textbooks said was impossible. Prices climbed and unemployment climbed at the same time — a mess reporters started calling stagflation. The economist Milton Friedman had predicted exactly this outcome. Slowly, professors began updating their textbooks to match Friedman's monetarist view. In which decade did most textbooks finally accept the newer view?",
+    "question": "Milton Friedman had predicted what the 1970s brought: prices and unemployment climbing together, which older textbooks ruled out and which reporters began calling stagflation. Professors slowly updated their textbooks to his monetarist view. In which decade had most textbooks come round?",
     "answer": "The 1980s",
     "choices": [
       "The 1980s",
@@ -11285,7 +11090,7 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman, the Chicago economist who spent decades defending the idea that inflation is a monetary phenomenon, was careful about credit. He said he did not invent monetarism — he was building on earlier thinkers. Two were fellow monetary economists at Chicago and elsewhere, and one was his lifelong co-author of A Monetary History of the United States. Which trio of predecessors did Friedman most often name as the roots of his framework?",
+    "question": "Milton Friedman, who spent decades arguing that inflation comes from money, named three people as the roots of his framework, careful never to take the credit alone. Which trio did he name?",
     "answer": "Henry Simons, Clark Warburton, and Anna Schwartz",
     "choices": [
       "Henry Simons, Clark Warburton, and Anna Schwartz",
@@ -11298,7 +11103,7 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman and the Austrian economists Ludwig von Mises and Friedrich Hayek all agreed that inflation is a monetary problem, not a wage or supply problem. But they split on the details. Friedman tracked one big number — the total money supply — month by month. The Austrians tracked something more granular: how new central-bank credit warps investment decisions and inflates booms that later crash. Which claim best marks that split?",
+    "question": "Milton Friedman argued that inflation is monetary, not a matter of wages or supply, and Ludwig von Mises and Friedrich Hayek argued the same, but they parted ways with him on the details. Which claim best marks the split?",
     "answer": "Friedman focuses on aggregate money supply growth; Austrians focus on credit-driven malinvestment structure",
     "choices": [
       "Friedman focuses on aggregate money supply growth; Austrians focus on credit-driven malinvestment structure",
@@ -11311,7 +11116,7 @@
   },
   {
     "tier": 5,
-    "question": "Through the 1970s the American price level climbed month after month. President Richard Nixon had cut the dollar's last link to gold in 1971, and the Federal Reserve was printing money aggressively. But politicians and television reporters did not want to point at the Fed. They kept parading out new villains to blame. Whom did they blame most often?",
+    "question": "Richard Nixon broke the dollar's last link to gold in 1971, the Federal Reserve kept creating money fast, and through the 1970s prices rose year after year. Politicians and television newsmen kept naming other culprits. Whom did they blame most often?",
     "answer": "Greedy businesses, unions demanding wages, and oil sheikhs",
     "choices": [
       "Greedy businesses, unions demanding wages, and oil sheikhs",
@@ -11324,7 +11129,7 @@
   },
   {
     "tier": 5,
-    "question": "When Milton Friedman said inflation is 'always and everywhere a monetary phenomenon,' he did not mean it as an armchair truth. He meant it as an empirical hypothesis that had been tested. Together with Anna Schwartz he had spent nearly a decade compiling US money-supply and price data going back to the Civil War, publishing their findings in a landmark 1963 volume. Which body of evidence did Friedman rest the claim on?",
+    "question": "Milton Friedman insisted that his famous line on the cause of inflation was a tested finding, not an armchair truth or a mere slogan. Which body of evidence did he rest it on?",
     "answer": "A century of US money-supply-and-inflation data documented in A Monetary History",
     "choices": [
       "A century of US money-supply-and-inflation data documented in A Monetary History",
@@ -11337,7 +11142,7 @@
   },
   {
     "tier": 1,
-    "question": "A ten-year-old girl named Jamie notices that her school cafeteria only sells cold juice and soda, even on freezing winter mornings when the other kids sit hunched over rubbing their hands. The next week she brings a big steel thermos of hot chocolate from home and sells small cups for a dollar each at lunch. After buying the cocoa and cups, she still has money left over. In economics, what do we call someone who spots a real need like this and starts a small business to fill it?",
+    "question": "A girl sees that the cafeteria at her school offers nothing but cold juice and soda, even on freezing winter mornings. She sells hot cocoa from a large thermos at a dollar a cup and, after paying for it all, has money over. What is someone called who spots a need like that and starts a business to fill it?",
     "answer": "An entrepreneur",
     "choices": [
       "An entrepreneur",
@@ -11349,8 +11154,8 @@
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
-    "tier": 1,
-    "question": "Israel Kirzner was born in London in 1930, grew up in South Africa, and later moved to New York. He finished his PhD at New York University (NYU) in 1957 under a single teacher -- an older Austrian economist who had escaped Vienna when the Nazis took Austria and had rebuilt his career at NYU. Kirzner would go on to become one of the most important Austrian-school economists himself, famous for his work on entrepreneurs. Who was that teacher?",
+    "tier": 2,
+    "question": "Israel Kirzner came from South Africa to New York to study and finished his doctorate at New York University in 1957 under one teacher, an older Austrian economist who had fled Europe and had written a huge treatise in 1949. Kirzner became his most important doctoral student. Who was the teacher?",
     "answer": "Ludwig von Mises",
     "choices": [
       "Ludwig von Mises",
@@ -11363,7 +11168,7 @@
   },
   {
     "tier": 2,
-    "question": "By the early 1970s, Israel Kirzner had spent almost twenty years teaching at New York University under his own former teacher Ludwig von Mises. In 1973 he published the book that made his name and would define modern Austrian economics for decades. It laid out how alert entrepreneurs, spotting profit opportunities that everyone else has overlooked, are the real driving force of market competition. What was the book called?",
+    "question": "Israel Kirzner, who had taken his doctorate at New York University in 1957, made his name in 1973 with one book that would shape modern Austrian economics for decades. What was the book called?",
     "answer": "Competition and Entrepreneurship",
     "choices": [
       "Competition and Entrepreneurship",
@@ -11376,7 +11181,7 @@
   },
   {
     "tier": 2,
-    "question": "Two kids walk past the same empty parking lot every day. One kid suddenly notices that on hot days, families walking to the park could use cold lemonade. He sets up a stand and does great. What single word best names what the successful kid had?",
+    "question": "Two boys pass the same empty lot each day. One sees that families on their way to the park on hot days would buy cold lemonade; he sets up a stand, and it does well. Israel Kirzner named what that boy had, and the other lacked, in a single word. What was it?",
     "answer": "Alertness",
     "choices": [
       "Alertness",
@@ -11389,7 +11194,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian economist Israel Kirzner described entrepreneurs as alert people who quietly spot small opportunities other traders missed — a kind of everyday arbitrage. His fellow Austrian Joseph Schumpeter told a stormier story: entrepreneurs charge in with new technologies that wipe out whole industries, sweeping away old companies to clear ground for new ones. Schumpeter gave that stormy process a famous two-word name. What did he call it?",
+    "question": "Joseph Schumpeter told a stormier story about entrepreneurs than Israel Kirzner did: inventors of new technology charge in and sweep away established firms and whole industries. Schumpeter gave that stormy process a famous two-word name. What did he call it?",
     "answer": "Creative destruction",
     "choices": [
       "Creative destruction",
@@ -11402,7 +11207,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian-born economist Joseph Schumpeter said entrepreneurs invent brand-new opportunities out of thin air through what he called 'creative destruction' — smashing old industries and building new ones. Later, the Austrian-school economist Israel Kirzner disagreed. Opportunities, Kirzner said, already sit in the market waiting for a sharp person to spot them. In Kirzner's view, what best describes what the entrepreneur does?",
+    "question": "Israel Kirzner parted from Joseph Schumpeter over where chances for profit come from. Schumpeter said entrepreneurs invent brand-new opportunities out of thin air. In Kirzner's view, what does each of those entrepreneurs really do?",
     "answer": "Discovers opportunities that were already there",
     "choices": [
       "Discovers opportunities that were already there",
@@ -11415,46 +11220,20 @@
   },
   {
     "tier": 4,
-    "question": "By 2006, Israel Kirzner was in his mid-seventies and long recognized as the leading Austrian-school theorist of entrepreneurship, four decades after his 1973 book on the subject. That year he won the top world prize in his field -- an award given by a Swedish foundation to the researcher who has most advanced our understanding of entrepreneurs and small business. It is considered the highest honor a scholar of entrepreneurship can receive. Which prize did Kirzner win?",
+    "question": "Israel Kirzner, in his mid-seventies, received a prize in Stockholm in 2006. Many Austrians thought he deserved a Nobel Prize, which never came. Which honor did he receive?",
     "answer": "The Global Award for Entrepreneurship Research",
     "choices": [
       "The Global Award for Entrepreneurship Research",
       "The John Bates Clark Medal",
       "The Adam Smith Prize",
-      "The Bank of Sweden Prize"
+      "The Templeton Prize"
     ],
     "context": "Awarded in Stockholm 2006 by the Global Award Foundation -- the entrepreneurship field's senior prize, sometimes called 'the Nobel of entrepreneurship.' The John Bates Clark Medal is for American economists under 40; the Adam Smith Prize is a Cambridge undergraduate award; the Bank of Sweden Prize is the Nobel in Economics itself. Source: Wikipedia, Israel Kirzner.",
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
-    "tier": 4,
-    "question": "An Austrian-school economist named Israel Kirzner spent his career studying entrepreneurs. He said their most important skill is not risk-taking or hard bargaining. What did Kirzner say the entrepreneur's real skill is?",
-    "answer": "Noticing a profit opportunity that everyone else has missed",
-    "choices": [
-      "Noticing a profit opportunity that everyone else has missed",
-      "Being willing to take huge financial risks with borrowed money",
-      "Managing large teams of workers efficiently",
-      "Predicting exactly what the government will do next"
-    ],
-    "context": "Kirzner joined NYU on completing his Ph.D. in 1957 and remained until his 2002 retirement, based in the business school (later Stern). Chicago was the mainstream free-market department; Columbia was Rothbard's Ph.D. institution; George Mason became the leading Austrian department AFTER Kirzner's generation, largely staffed by his students. Source: Wikipedia, Israel Kirzner.",
-    "topic": "israel-kirzner-alertness-and-entrepreneurship"
-  },
-  {
     "tier": 5,
-    "question": "In the 1970s the Austrian-school economist Israel Kirzner, teaching at New York University, refined the school's picture of the entrepreneur. Kirzner said an entrepreneur is not just a capitalist who owns things or a manager who runs them. The entrepreneur is the person who spots a gap in the market — a price difference between two towns, or a good nobody has made yet. What is the entrepreneur's key skill in Kirzner's view?",
-    "answer": "Alertness — noticing profit chances that others have missed",
-    "choices": [
-      "Alertness — noticing profit chances that others have missed",
-      "Predicting the exact price of every good next year",
-      "Convincing regulators to shut out competitors",
-      "Copying whatever last year's most successful firm did"
-    ],
-    "context": "Kirzner's NYU Austrian Economics Colloquium ran for decades and produced Peter Boettke (now at George Mason), Sanford Ikeda, and many others. The Mises Circle was the Vienna Privatseminar of the 1920s; the Bastiat Society and FEE are separate American educational organizations. Source: Econlib, 'Competition and Entrepreneurship: The Fountainhead of the Contemporary Austrian School'.",
-    "topic": "israel-kirzner-alertness-and-entrepreneurship"
-  },
-  {
-    "tier": 5,
-    "question": "Israel Kirzner, born in London in 1930, studied economics at New York University under the Austrian master Ludwig von Mises. In 1957 he finished his doctoral thesis on how economists across the centuries had defined the boundaries of their own field. Three years later, in 1960, he polished the thesis into his first published book. What title did Kirzner give that first book?",
+    "question": "Israel Kirzner wrote his doctoral thesis at New York University on how economists across the centuries had drawn the edges of their own subject, and in 1960 the thesis became his first book. What title did he give it?",
     "answer": "The Economic Point of View",
     "choices": [
       "The Economic Point of View",
@@ -11467,7 +11246,7 @@
   },
   {
     "tier": 5,
-    "question": "An Austrian economist argues that a real profit is not a payment for paperwork or for supplying money — those are already priced. Real profit shows up when someone spots that oranges cost one dollar in one town and three in the next, and moves some. What does the profit signal to everyone else?",
+    "question": "A trader finds oranges selling for one dollar in one town and three in the next, and carts some across. Israel Kirzner argued that profit like his carries information. What does the trader's profit signal to everyone else?",
     "answer": "That resources were being wasted in the low-value place",
     "choices": [
       "That resources were being wasted in the low-value place",
@@ -11571,7 +11350,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2020, during the COVID lockdowns, a Canadian tech founder named Jeff Booth wrote a short book about money and technology. It argues that falling prices from new technology are actually a good thing for people, but central banks hide that fact by printing money to keep prices rising. The book has become one of the top modern Bitcoin books. What is its title?",
+    "question": "Jeff Booth, a Canadian who had built and sold companies for thirty years, wrote a book about money and technology during the 2020 lockdowns. It is now among the most-read Bitcoin books of recent years. What is its title?",
     "answer": "The Price of Tomorrow: Why Deflation Is the Key to an Abundant Future",
     "choices": [
       "The Price of Tomorrow: Why Deflation Is the Key to an Abundant Future",
@@ -11584,7 +11363,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2020 the Canadian tech entrepreneur Jeff Booth published a short book called The Price of Tomorrow. His main argument: central banks and politicians treat one feature of the modern economy as a threat, but Booth says it is really a gift that would let ordinary families get richer every year without a raise. Semiconductors, solar panels, and disk storage all get cheaper as engineers improve them. Which trait of technology does Booth call the misunderstood gift?",
+    "question": "Jeff Booth argued in his 2020 book that central banks and politicians treat one feature of the modern economy as a threat, when it is really a gift that would let ordinary families grow richer every year without a raise. Which trait of technology does Booth call the misunderstood gift?",
     "answer": "Technology naturally cheapens things over time (computing power, solar energy, storage all fall in cost)",
     "choices": [
       "Technology naturally cheapens things over time (computing power, solar energy, storage all fall in cost)",
@@ -11596,21 +11375,8 @@
     "topic": "jeff-booth-and-the-price-of-tomorrow-technologys-natural-def"
   },
   {
-    "tier": 3,
-    "question": "The Canadian entrepreneur Jeff Booth wrote a 2020 book called The Price of Tomorrow. His argument: technology naturally makes things cheaper every year, so ordinary prices should be falling and savers should be getting richer just by holding cash. But that gift never reaches workers. Booth blames central banks for one specific move that erases the natural fall in prices. What does he say central banks do?",
-    "answer": "Expand the money supply, letting asset prices rise instead of consumer prices falling",
-    "choices": [
-      "Expand the money supply, letting asset prices rise instead of consumer prices falling",
-      "Buy technology stocks directly on the open market to raise their share prices",
-      "Print physical dollar bills at a fixed rate matching Moore's Law",
-      "Ban the sale of foreign-made technology to protect national producers"
-    ],
-    "context": "The technology-deflation benefit gets absorbed into rising stock, real-estate, and bond prices. Owners of assets gain; workers and savers whose wages and cash holdings should have bought more each year do not. Source: grokipedia.com/page/Jeff_Booth.",
-    "topic": "jeff-booth-and-the-price-of-tomorrow-technologys-natural-def"
-  },
-  {
     "tier": 4,
-    "question": "It is 2025. A saver notices that her wages have risen only modestly since 2010, yet the Standard and Poor's 500 stock index (the S&P 500) has more than tripled. She asks an analyst trained at the University of Chicago Booth School why. He answers in the style of the French economist Frederic Bastiat — by naming the thing you don't see. Which Bastiat-style unseen does he name?",
+    "question": "A saver finds that her pay has crept up only slightly since 2010, while share prices have more than tripled. Jeff Booth blames central banks, which create new money to keep prices from falling. Read in Frédéric Bastiat's way, the seen fact is steady prices in the shops, which look like proof that the Fed did its job. What is the unseen?",
     "answer": "The technology-cheapening she should have seen in her cost of living was absorbed into asset prices instead",
     "choices": [
       "The technology-cheapening she should have seen in her cost of living was absorbed into asset prices instead",
@@ -11623,7 +11389,7 @@
   },
   {
     "tier": 4,
-    "question": "Jeff Booth, the Canadian tech entrepreneur behind The Price of Tomorrow, argues that technology should let a working family's savings buy more every year. But central banks print new money to prop prices up, so those gains vanish into rising stock and housing values. Booth says only one form of money escapes that trap — one where no committee can expand the supply and steal the gain from savers. Which money does Booth pick?",
+    "question": "Jeff Booth, the Canadian tech entrepreneur, argues that technology should let a working family's savings buy more every year, but central banks print new money to prop prices up, so the gain never reaches the family. Booth says one form of money escapes that trap. Which money does he pick?",
     "answer": "Bitcoin, whose 21 million cap prevents any authority from expanding the supply to hide falling prices",
     "choices": [
       "Bitcoin, whose 21 million cap prevents any authority from expanding the supply to hide falling prices",
@@ -11636,7 +11402,7 @@
   },
   {
     "tier": 5,
-    "question": "Jeff Booth, the Canadian author of The Price of Tomorrow, is one of three thinkers regularly interviewed together as the leading voices of modern Bitcoin monetary theory. One co-voice is a Nebraska-born software executive who converted his public company's treasury reserves entirely into Bitcoin. The other is a Palestinian economist who wrote The Bitcoin Standard, teaching sound-money history through the lens of the twenty-one-million cap. Who are the other two figures in that trio?",
+    "question": "Jeff Booth shares the stage, in the Bitcoin argument about money, with two other leading voices: a software boss who put his listed company's cash reserves into Bitcoin, and the author of The Bitcoin Standard. Who are the other two?",
     "answer": "Michael Saylor and Saifedean Ammous",
     "choices": [
       "Michael Saylor and Saifedean Ammous",
@@ -11649,7 +11415,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 1910 a small group of powerful American bankers and one senator took a private train to Jekyll Island, a hunting retreat off the coast of Georgia. There, in secret, they drafted the plan for a new central bank in America. That plan later became the Federal Reserve, the country's central bank. What is a central bank's main job?",
+    "question": "Senator Nelson Aldrich led a handful of America's most powerful bankers by private railroad car to Jekyll Island, a hunting retreat for millionaires off Georgia, in November 1910. In secret they drafted a central bank, the plan that became the Federal Reserve. What is a central bank's main job?",
     "answer": "Managing a country's money supply",
     "choices": [
       "Managing a country's money supply",
@@ -11662,7 +11428,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 1910 a small group of US senators and Wall Street bankers slipped away to Jekyll Island, off the Georgia coast, and spent about ten days in secret drafting a plan for a new American central bank. Their plan was later carried to Washington and passed as a federal law. Only one branch of the US government has the power to pass a law like that. Which branch was it?",
+    "question": "Bankers and a senator spent about nine days in secret on Jekyll Island, off the Georgia coast, in November 1910, drafting a plan for a new American central bank. Only one body in Washington could turn a plan like that into law. Which branch of government had to pass it?",
     "answer": "Congress",
     "choices": [
       "Congress",
@@ -11675,20 +11441,20 @@
   },
   {
     "tier": 2,
-    "question": "In November 1910 a small group of America's most powerful bankers, led by Senator Nelson Aldrich, took a private train to Jekyll Island — a hunting retreat off the coast of Georgia. In secret, on that private island, they designed a new central bank for the United States. Their design later became the Federal Reserve. What is the main worry critics later raised about this meeting?",
+    "question": "A handful of America's richest bankers boarded a private train for Jekyll Island, Georgia, in November 1910, calling themselves a duck-shooting party so nobody would ask questions. In secret they drew up the plan that became the Federal Reserve Act of 1913. What central worry did critics later raise about a plan made that way?",
     "answer": "A powerful money system was designed by insiders, not by the public",
     "choices": [
       "A powerful money system was designed by insiders, not by the public",
-      "The bankers picked the wrong island for the weather",
       "They forgot to invite any economists at all",
-      "The plan was published in every newspaper the next day"
+      "The bank cannot legally exist without a public vote first",
+      "The public will refuse to spend the new money at all"
     ],
     "context": "Warburg (1868-1932) brought the expertise on European central-banking design that shaped the American plan. He later became one of the first members of the Federal Reserve Board. Source: Grokipedia 'Paul Warburg' (2026-09-05).",
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
     "tier": 2,
-    "question": "In November 1910 a small group of the most powerful bankers in America slipped away by private train to Jekyll Island, Georgia, and drafted in secret the blueprint that became the Federal Reserve. One of the men in that room ran a huge New York bank closely tied to the Rockefeller oil fortune. His name was Frank Vanderlip. Which bank did Vanderlip lead into the Jekyll Island meeting?",
+    "question": "Frank Vanderlip rode the private railroad car to Jekyll Island in November 1910 as president of a huge New York bank, the one tied to the Rockefeller fortune. Which bank did he lead?",
     "answer": "National City Bank of New York",
     "choices": [
       "National City Bank of New York",
@@ -11701,7 +11467,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 1910 six men gathered in secret at Jekyll Island, Georgia, to draft the plan that would become the Federal Reserve. Among them were Senator Nelson Aldrich of Rhode Island, Paul Warburg of the German-American investment house Kuhn Loeb, Frank Vanderlip of National City Bank, and Benjamin Strong, the president of Bankers Trust. One more banker at the meeting was Henry Davison, the man who wrote up much of the plan. Which Wall Street firm did Henry Davison work for?",
+    "question": "Henry Davison wrote up most of the plan at Jekyll Island in November 1910. His companions included Senator Nelson Aldrich of Rhode Island, Kuhn Loeb's Paul Warburg, Frank Vanderlip and Benjamin Strong of Bankers Trust. What post did Davison hold on Wall Street?",
     "answer": "Senior partner at J.P. Morgan and Company",
     "choices": [
       "Senior partner at J.P. Morgan and Company",
@@ -11714,7 +11480,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 1910 the Republican senator Nelson Aldrich led a handful of America's most powerful bankers, plus one Treasury official, to Jekyll Island off the coast of Georgia. There, in secret, they drew up the plan that Congress would soon pass as the Federal Reserve Act, creating America's central bank. Why does it matter that the plan was written in private by those very bankers?",
+    "question": "Benjamin Strong of Bankers Trust, Frank Vanderlip and the other bankers at Jekyll Island in November 1910 drew up, in private, the plan that would pass in modified form as the Federal Reserve Act. Why do public-choice economists think it matters that those bankers wrote it?",
     "answer": "The people being regulated helped write the rules that would govern them",
     "choices": [
       "The people being regulated helped write the rules that would govern them",
@@ -11727,7 +11493,7 @@
   },
   {
     "tier": 4,
-    "question": "The Jekyll Island meeting of 1910 was kept secret for years. The six men who drafted the Aldrich Plan — the blueprint that became the Federal Reserve — used only first names in front of the servants and never wrote about the meeting in public. Frank Vanderlip, the president of National City Bank in New York, was the first participant to finally confess the whole story in print. When did Vanderlip publicly acknowledge the Jekyll Island meeting for the first time?",
+    "question": "The men at Jekyll Island in November 1910 used first names only in front of the servants and drew the curtains. For years none of them said a word in public about what they had drafted. Frank Vanderlip was the first to tell the story in print. When did he tell it?",
     "answer": "1935, in a Saturday Evening Post article",
     "choices": [
       "1935, in a Saturday Evening Post article",
@@ -11739,21 +11505,8 @@
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
-    "tier": 4,
-    "question": "For most of the 1800s the United States had no central bank — President Andrew Jackson had killed the last one in 1836 by vetoing its charter. Then in December 1913, after years of quiet lobbying by the Jekyll Island group, the US Congress passed a law creating a new central bank empowered to control the dollar supply and set interest rates. President Woodrow Wilson signed it into law on December 23, 1913. What is that 1913 law called?",
-    "answer": "The Federal Reserve Act",
-    "choices": [
-      "The Federal Reserve Act",
-      "The Glass-Steagall Act",
-      "The National Banking Act",
-      "The Bland-Allison Act"
-    ],
-    "context": "The Federal Reserve Act was signed by Wilson on December 23 1913. It preserved the Aldrich Plan's essential structure (regional banks, note-issue power, private-bank ownership of regional-bank stock) with cosmetic changes for political viability. Source: Grokipedia 'Federal Reserve Act' (2026-09-05).",
-    "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
-  },
-  {
     "tier": 5,
-    "question": "In 1935, twenty-five years after the fact, Frank Vanderlip of National City Bank finally confessed the Jekyll Island story in a Saturday Evening Post article. He wrote openly about the secrecy — the private railcar down from New York, the first-names-only rule so the servants wouldn't gossip, the drawn curtains on the windows. Vanderlip picked one blunt word to describe how the six men had actually behaved during the meeting. What word did he use?",
+    "question": "Frank Vanderlip of the Jekyll Island party finally told its story in print, and he described his own conduct on the trip in blunt terms. Which phrase did he use?",
     "answer": "Furtive, as any conspirator",
     "choices": [
       "Furtive, as any conspirator",
@@ -11765,21 +11518,8 @@
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
-    "tier": 5,
-    "question": "In November 1910 six powerful men — a senator, a Treasury official, and bankers tied to the Morgan, Rockefeller, and Warburg fortunes — slipped away by private train to Jekyll Island, Georgia, and drafted the blueprint that became the Federal Reserve. They travelled in secret, using first names only. What lesson do critics draw from that scene about how central banks tend to be designed?",
-    "answer": "The specific individuals who design a central bank tend to be the very people whose institutions and dynasties will benefit from its structure",
-    "choices": [
-      "The specific individuals who design a central bank tend to be the very people whose institutions and dynasties will benefit from its structure",
-      "Central banks are always designed by disinterested academic economists",
-      "Central-bank design is a purely technical question with no distributional implications",
-      "Public participation in central-bank design has been the norm throughout American history"
-    ],
-    "context": "The men at Jekyll Island were the leaders of the very New York financial establishment whose banks would become primary dealers to the new central bank. G. Edward Griffin's 1994 book The Creature from Jekyll Island popularized this line of critique for a mass audience. Source: Grokipedia 'The Creature from Jekyll Island' (2026-09-05).",
-    "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
-  },
-  {
     "tier": 1,
-    "question": "In China about a thousand years ago, during the Song dynasty, merchants had to haul heavy iron coins to buy things — sometimes a whole cart's worth for a single deal. One clever fix in Sichuan was to leave the coins with a trusted holder and use a paper slip to trade instead. That paper slip later turned into what?",
+    "question": "A Sichuan merchant under China's Song dynasty, about a thousand years ago, hauled a cartload of heavy iron coins to settle a single deal. So merchants began leaving their coins in the keeping of people they trusted and trading the paper receipts instead. What did those paper slips grow into?",
     "answer": "Paper money",
     "choices": [
       "Paper money",
@@ -11792,7 +11532,7 @@
   },
   {
     "tier": 1,
-    "question": "In Sichuan, a busy trading region of China in the early 1000s, merchants got tired of hauling heavy iron coins on long journeys, so they began printing their own paper receipts to use in trade. In 1023 AD, the Song dynasty government stepped in and took over the system, turning those private notes into the world's first paper money issued by a government. What was this early paper money called?",
+    "question": "Song officials took over Sichuan's private paper receipts in 1023 and began issuing the notes themselves, the first paper money any government ever put out. What were the notes called?",
     "answer": "jiaozi",
     "choices": [
       "jiaozi",
@@ -11805,7 +11545,7 @@
   },
   {
     "tier": 2,
-    "question": "The Song dynasty of China ran the world's first government paper money, called jiaozi, starting around 1023 AD. The system worked well for about 40 years and then began to break down as the government printed more notes than its stores of gold and silver could back. Which outside pressure forced the Song government to print paper faster than its metal backing could support?",
+    "question": "Song China's rulers, the first anywhere to issue government paper money, ordered yet another batch of notes printed, far beyond what their reserves could back. What pressure drove them to print so much?",
     "answer": "military campaigns against the Jin and later the Mongols",
     "choices": [
       "military campaigns against the Jin and later the Mongols",
@@ -11818,7 +11558,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1200s the Mongol emperor Kublai Khan ruled China from Beijing. He printed a paper money called chao that was not backed by any gold or silver, and he ordered by law that every merchant and peasant had to accept it as payment. When a ruler can print money at will and force people to take it, what tends to happen to that money over the years that follow?",
+    "question": "Kublai Khan, the Mongol emperor who ruled China from Beijing in the late 1200s, printed a paper money called chao with no gold or silver behind it and made every merchant and peasant take it by law. When a ruler can print at will and force people to take it, what tends to happen to his money?",
     "answer": "The ruler prints more to pay his bills and each note buys less than before",
     "choices": [
       "The ruler prints more to pay his bills and each note buys less than before",
@@ -11831,7 +11571,7 @@
   },
   {
     "tier": 3,
-    "question": "The Italian traveler Marco Polo journeyed to China in the 1270s and wrote about the court of Kublai Khan, the Mongol emperor who ruled the country from Beijing. Polo described a paper money called chao that the Khan forced everyone in his empire to accept. Polo said the Khan used one harsh punishment to keep the notes moving through the markets. What was it?",
+    "question": "Marco Polo, the Venetian merchant who spent the 1270s and 1280s in Kublai Khan's service, described the Khan's paper money, the chao, and how the Khan kept the notes moving through the markets. What punishment did Polo report for anyone who refused them?",
     "answer": "death for refusing to accept the notes",
     "choices": [
       "death for refusing to accept the notes",
@@ -11844,7 +11584,7 @@
   },
   {
     "tier": 3,
-    "question": "Marco Polo devoted a whole chapter of his 1298 Travels to describing Kublai Khan's paper currency. He described the notes as being made from the bark of a specific tree stamped with imperial vermilion. Which tree's bark did Polo describe the chao being made from?",
+    "question": "Marco Polo gave a whole chapter of the book he wrote in 1298, his Travels, to Kublai Khan's paper money. He said the notes were cut from the inner bark of one kind of tree and sealed in vermilion ink with the emperor's stamp. Which tree?",
     "answer": "the mulberry tree",
     "choices": [
       "the mulberry tree",
@@ -11857,7 +11597,7 @@
   },
   {
     "tier": 4,
-    "question": "The Venetian merchant Marco Polo came from a Europe where money always meant gold and silver coin. Travelling in the 1270s and 1280s, he served the Mongol emperor Kublai Khan and watched him print paper notes made from the bark of the mulberry tree. In his book The Travels, Polo described the Khan's paper money with a striking comparison. Which comparison did Polo use to describe how the paper worked?",
+    "question": "Marco Polo came from a Europe where money always meant gold and silver coin, and in Kublai Khan's China he watched the emperor issue paper notes. In his Travels, Polo described the Khan's paper money with a striking comparison. Which comparison did he use?",
     "answer": "a kind of alchemy -- the Khan's magic that turns bark into wealth",
     "choices": [
       "a kind of alchemy -- the Khan's magic that turns bark into wealth",
@@ -11870,7 +11610,7 @@
   },
   {
     "tier": 4,
-    "question": "Kublai Khan, the Mongol emperor who ruled China from Beijing in the late 1200s, issued a paper money called chao that had no gold or silver backing — its value rested on his armies and the fear of punishment for refusing it. Kublai died in 1294. Within a generation of his death, what happened to the chao?",
+    "question": "Kublai Khan forced the chao, a paper money with no gold or silver behind it, on China from Beijing, and he died in 1294. What happened to the chao in the decades after his death?",
     "answer": "successor emperors printed at will to fund crises, and by the 1350s the chao was worthless",
     "choices": [
       "successor emperors printed at will to fund crises, and by the 1350s the chao was worthless",
@@ -11883,7 +11623,7 @@
   },
   {
     "tier": 5,
-    "question": "The jiaozi notes of Song-dynasty China in the 1000s and the chao notes of Kublai Khan's Yuan dynasty in the 1200s were the world's first two paper-money systems — and both hyperinflated after decades of government over-issuance. Which reasoning move do modern Austrian economists make about this early two-for-two record?",
+    "question": "Song officials in the 1000s and Kublai Khan in the 1200s issued the first two paper moneys any state ever put out, and both ended nearly worthless. Modern Austrian economists draw one pointed conclusion from that record. Which reasoning move do they make?",
     "answer": "That the very first two government paper currencies in world history hyperinflated, suggesting the failure pattern is structural rather than a modern accident",
     "choices": [
       "That the very first two government paper currencies in world history hyperinflated, suggesting the failure pattern is structural rather than a modern accident",
@@ -11896,7 +11636,7 @@
   },
   {
     "tier": 5,
-    "question": "The French economist Frederic Bastiat, writing in the 1840s, taught readers to look for both the seen and the unseen consequences of every policy. A Bastiat-style retelling of the Kublai Khan paper-money story applies that lens to what Marco Polo really saw when he called the Khan's paper 'a kind of alchemy.' Which claim does the Bastiat-style story make about the mechanism?",
+    "question": "Frédéric Bastiat taught his readers in the 1840s to look for both the seen and the unseen consequences of every policy. A Bastiat-style retelling of Kublai Khan's paper money applies that lens to what Marco Polo witnessed at the Khan's court. Which claim does it make about the mechanism?",
     "answer": "That the SEEN was the Khan turning bark into wealth, and the UNSEEN was the future price collapse absorbing the wealth of every current chao holder within a generation",
     "choices": [
       "That the SEEN was the Khan turning bark into wealth, and the UNSEEN was the future price collapse absorbing the wealth of every current chao holder within a generation",
@@ -12039,7 +11779,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1920 the Austrian economist Ludwig von Mises published a famous paper arguing that a socialist state cannot rationally calculate prices without private markets — an argument that became known as the socialist calculation debate. One Brooklyn-born economist who teaches at Pace University in New York is today the leading modern scholar of that debate. He argues for a strict Mises reading, not the milder Hayek interpretation. Who is he?",
+    "question": "One Brooklyn-born economist at Pace University took a side in 1990 in an old Austrian argument over Ludwig von Mises's 1920 essay on whether socialism can calculate. He defended a strict reading of Mises over the milder one drawn from Friedrich Hayek. Who is he?",
     "answer": "Joseph Salerno",
     "choices": [
       "Joseph Salerno",
@@ -12051,8 +11791,8 @@
     "topic": "joseph-salerno-and-the-calculation-debate-scholarship"
   },
   {
-    "tier": 1,
-    "question": "Joseph Salerno is a modern Austrian economist. He edits the main scholarly journal of the Austrian School, which the Mises Institute in Auburn, Alabama has published every quarter since 1998. Salerno's journal has a plain-spoken title that just says what it is — the frequency, the format, and the school. What is that title?",
+    "tier": 2,
+    "question": "Joseph Salerno became the editor of a new scholarly journal at its founding in 1998 and has edited it ever since. The Mises Institute in Auburn, Alabama, publishes it as the flagship outlet for research in the school's Rothbardian wing, and its plain title names its school. What is the journal called?",
     "answer": "Quarterly Journal of Austrian Economics",
     "choices": [
       "Quarterly Journal of Austrian Economics",
@@ -12065,7 +11805,7 @@
   },
   {
     "tier": 2,
-    "question": "In a socialist system with no private ownership of factories, tools, or land, no one can bid to buy those things. Without those bids there are no real market prices for capital goods — a point the Austrian economist Ludwig von Mises raised in 1920. What problem does this create for a central planner trying to run the whole economy?",
+    "question": "Ludwig von Mises pointed out in 1920 that where the state owns every factory, tool and field, nobody can bid for any of them, and goods nobody can bid for never get real market prices. What problem does that leave a central planner trying to run the whole economy?",
     "answer": "The planner has no way to know which uses of resources are worth it",
     "choices": [
       "The planner has no way to know which uses of resources are worth it",
@@ -12077,21 +11817,8 @@
     "topic": "joseph-salerno-and-the-calculation-debate-scholarship"
   },
   {
-    "tier": 2,
-    "question": "The Austrian economist Friedrich Hayek noticed something that a central planner in a capital city can never really fix. A farmer knows his own soil. A shopkeeper knows what shoppers are buying today. A truck driver knows which roads are closed. All that scattered, on-the-spot know-how would take a planner far too long to gather in one place. What name did Hayek give to this obstacle to central planning?",
-    "answer": "The knowledge problem",
-    "choices": [
-      "The knowledge problem",
-      "The wage problem",
-      "The tax problem",
-      "The interest-rate problem"
-    ],
-    "context": "Hayek's 1945 'The Use of Knowledge in Society' framed the calculation debate in knowledge-problem terms; Israel Kirzner and Don Lavoie extended this reading. Salerno argues it displaces Mises's original monetary-calculation point. Source: grokipedia.com/page/Socialist_calculation_debate.",
-    "topic": "joseph-salerno-and-the-calculation-debate-scholarship"
-  },
-  {
     "tier": 3,
-    "question": "The American Austrian economist Joseph Salerno teaches at Pace University in New York and is the top modern scholar of the 1920 socialist calculation debate, in which the Austrian founder Mises argued that socialism could not set prices without markets. Salerno's big move in that debate was a 1990 article in the Review of Austrian Economics that argued for a strict reading of the master. What was the article's short title?",
+    "question": "Joseph Salerno published his key statement on Mises's 1920 calculation essay in the Review of Austrian Economics in 1990, arguing for a strict reading of the master, and many Austrians around the Mises Institute came round to his view. What was the article's short title?",
     "answer": "Ludwig von Mises as Social Rationalist",
     "choices": [
       "Ludwig von Mises as Social Rationalist",
@@ -12104,7 +11831,7 @@
   },
   {
     "tier": 3,
-    "question": "Joseph Salerno, an American Austrian economist at Pace University in New York, is the leading modern defender of Ludwig von Mises's strict theory of money and credit. In 2010 the Mises Institute in Auburn, Alabama, published his book collecting essays that apply that strict theory to the Federal Reserve and the 2008 financial crisis. What is the book's title?",
+    "question": "Joseph Salerno turned Ludwig von Mises's strict theory of money on the Federal Reserve and on the 2008 crash in a run of essays, and the Mises Institute in Auburn, Alabama, collected them in 2010. What is the book's title?",
     "answer": "Money: Sound and Unsound",
     "choices": [
       "Money: Sound and Unsound",
@@ -12117,7 +11844,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2004 the American Austrian economist Joseph Salerno of Pace University edited the modern scholar's edition of a major book by Murray Rothbard, the American Austrian economist who died in 1995. The Mises Institute in Auburn, Alabama, printed it as a single volume with both of Rothbard's original books reunited under one cover for the first time. Which Rothbard book did Salerno edit?",
+    "question": "Joseph Salerno prepared a scholar's edition of the great treatise Murray Rothbard had left, for the Mises Institute in 2004, putting two books first published apart back under one cover. Which work did Salerno edit?",
     "answer": "Man, Economy, and State with Power and Market",
     "choices": [
       "Man, Economy, and State with Power and Market",
@@ -12130,7 +11857,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1920 the Austrian economist Ludwig von Mises published the founding essay of what became the socialist calculation debate. It ran in the German journal Archiv fur Sozialwissenschaft und Sozialpolitik and argued that a socialist economy without market prices could never rationally decide which uses of resources were worth it. In English translation, what is the essay's title?",
+    "question": "Ludwig von Mises published an essay in 1920 in a German journal of social science, the Archiv für Sozialwissenschaft und Sozialpolitik, and it opened decades of argument over whether a planned economy can work. What is the essay called in English?",
     "answer": "Economic Calculation in the Socialist Commonwealth",
     "choices": [
       "Economic Calculation in the Socialist Commonwealth",
@@ -13092,20 +12819,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1970s an Austrian-school economist named Israel Kirzner, working in New York City, wrote about what makes an entrepreneur different from anyone else. An entrepreneur, Kirzner said, is someone who spots a chance to make money that everybody else has missed — a shop nobody has opened in a certain neighborhood yet, or a product nobody has thought to build. What is the key skill Kirzner said an entrepreneur has?",
-    "answer": "Alertness to opportunities others miss",
-    "choices": [
-      "Alertness to opportunities others miss",
-      "Having the most money to invest",
-      "Being the best at math",
-      "Knowing the government well"
-    ],
-    "context": "Israel Kirzner (b. February 13, 1930), Competition and Entrepreneurship (University of Chicago Press, 1973). Kirzner was a student of Ludwig von Mises at NYU. Source: press.uchicago.edu (Kirzner 1973).",
-    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
-    "tier": 1,
-    "question": "The Austrian economist Israel Kirzner published his 1973 book Competition and Entrepreneurship. He wanted to settle a debate about what an entrepreneur really is. Frank Knight said the entrepreneur is mostly a risk-taker. Joseph Schumpeter said he is mostly an inventor of new products. Kirzner disagreed with both. What did he say the entrepreneur really is?",
+    "question": "Israel Kirzner published Competition and Entrepreneurship in 1973 to settle what an entrepreneur really is. Frank Knight had seen him chiefly as a risk-taker; Joseph Schumpeter, as an inventor whose new products wreck old industries. Kirzner disagreed with both. What did he say the entrepreneur really is?",
     "answer": "Someone alert to profit opportunities others missed",
     "choices": [
       "Someone alert to profit opportunities others missed",
@@ -13118,7 +12832,7 @@
   },
   {
     "tier": 2,
-    "question": "The Austrian economist Israel Kirzner taught that an entrepreneur is someone alert to profit opportunities others walk right past. Steve Jobs returned to Apple in 1997 and led the launch of the iPhone in June 2007. His rivals BlackBerry, Nokia, and Motorola dominated the phone market at the time, and all three kept their old designs. In Kirzner's terms, what did Jobs see that his rivals did not act on?",
+    "question": "Steve Jobs unveiled Apple's iPhone in June 2007, when BlackBerry, Nokia and Motorola led the phone market and all three kept their old designs. In Israel Kirzner's terms, what did Jobs see that his rivals did not act on?",
     "answer": "That touchscreens, music players, and phones could be integrated into one mass-market product",
     "choices": [
       "That touchscreens, music players, and phones could be integrated into one mass-market product",
@@ -13131,7 +12845,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2002 the South-African-born entrepreneur Elon Musk sold his stake in PayPal and used the money to start a rocket company called SpaceX. NASA, Boeing, and Lockheed Martin had all missed one specific chance for 40 years — every one of their rockets was thrown away after a single flight, like burning a jetliner after landing it once. Musk built SpaceX to chase what they had missed. What was that chance?",
+    "question": "Elon Musk founded SpaceX in 2002. NASA, Boeing and Lockheed Martin had tossed out every rocket after a single flight for forty years, like burning a jetliner after landing it once, and Musk built his company to go after what they had overlooked. What was that chance?",
     "answer": "Reusable orbital rockets that land and fly again",
     "choices": [
       "Reusable orbital rockets that land and fly again",
@@ -13144,7 +12858,7 @@
   },
   {
     "tier": 3,
-    "question": "When Elon Musk founded the rocket company SpaceX in 2002, the space industry treated every rocket as one-use — flown once and dropped in the ocean. Musk bet that rockets could land upright and fly again, cutting launch costs dramatically. By the mid-2020s SpaceX had proved him right by landing and reusing its Falcon 9 first-stage boosters many times over. About how many such first-stage landings and reuses had SpaceX done by that point?",
+    "question": "Elon Musk's SpaceX landed its first Falcon 9 booster in December 2015. Over the following decade or so the company kept landing first stages and flying them again, as Musk had bet it could. About how many such landings and reuses had SpaceX made by then?",
     "answer": "Over 300",
     "choices": [
       "Over 300",
@@ -13157,7 +12871,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian economist Israel Kirzner argued that great entrepreneurs are people alert to opportunities the market has left open. On July 5, 1994, Jeff Bezos founded Amazon out of a garage in Seattle. He picked a single product category to start with rather than opening a general store. In Kirzner's view, what made this category the perfect launch point for a large online retailer?",
+    "question": "Jeff Bezos started Amazon out of a garage outside Seattle in July 1994, selling just one kind of product at first rather than everything. His choice is a test case for Israel Kirzner's theory of the entrepreneur. What made that category the perfect launch point for an internet store?",
     "answer": "Books are standardized, durable, easily shipped, with a long-tail catalog",
     "choices": [
       "Books are standardized, durable, easily shipped, with a long-tail catalog",
@@ -13169,34 +12883,8 @@
     "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
   },
   {
-    "tier": 4,
-    "question": "Israel Kirzner emigrated from Britain and enrolled at New York University (NYU) in the 1950s. There he found an older Austrian economist who ran the famous NYU Friday-night seminar and had written a huge 1949 treatise on human action. Kirzner became this teacher's most devoted student, and later carried his method into a whole new generation of Austrian economists. Who was the teacher?",
-    "answer": "Ludwig von Mises",
-    "choices": [
-      "Ludwig von Mises",
-      "Friedrich Hayek",
-      "Carl Menger",
-      "Eugen von Bohm-Bawerk"
-    ],
-    "context": "Ludwig von Mises taught at NYU from 1945 to his death in 1973. Kirzner was among his most prominent students and inherited the Austrian entrepreneurship-and-market-process tradition. Source: mises.org (Mises + Kirzner biographical materials).",
-    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
-    "tier": 4,
-    "question": "The Austrian economist Israel Kirzner spent his career at New York University explaining what entrepreneurs actually do — spotting profit opportunities other people walked past. Many Austrians thought he deserved a Nobel Prize in economics for that work. He never got one. But in 2006 he did win a major international prize dedicated specifically to celebrating the work of business founders, funded by the Swedish government. Which prize did he win in 2006?",
-    "answer": "The Global Award for Entrepreneurship Research",
-    "choices": [
-      "The Global Award for Entrepreneurship Research",
-      "The Nobel Memorial Prize in Economic Sciences",
-      "The Presidential Medal of Freedom",
-      "The Templeton Prize"
-    ],
-    "context": "Israel Kirzner received the Global Award for Entrepreneurship Research (Swedish Entrepreneurship Forum) in 2006 for his lifetime work. He is widely regarded as the leading Austrian theorist of the entrepreneurial function. Source: e-award.org (Kirzner 2006 laureate).",
-    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
     "tier": 5,
-    "question": "Israel Kirzner's Austrian framework asks one specific question about any successful company founder — Jeff Bezos at Amazon, Elon Musk at SpaceX, Steve Jobs at the iPhone. The technology was available to dozens of competitors. So was the capital. So were the engineers. Something else was not. Kirzner tells the analyst to focus the whole question on that missing piece. What does the Kirzner framework tell you to ask about the founder?",
+    "question": "A student of Israel Kirzner's theory sizes up Jeff Bezos at Amazon, Elon Musk at SpaceX and Steve Jobs with the iPhone. The theory boils down to a single question for each of them. What question does it put to a founder?",
     "answer": "What did the founder see that competitors with the same technology and capital did not act on",
     "choices": [
       "What did the founder see that competitors with the same technology and capital did not act on",
@@ -13209,7 +12897,7 @@
   },
   {
     "tier": 5,
-    "question": "Austrian economists offered three different pictures of what an entrepreneur really is. Israel Kirzner said an entrepreneur is alert to opportunities others miss. Frank Knight said an entrepreneur is someone who bears true uncertainty about the future. Joseph Schumpeter said an entrepreneur invents new combinations that destroy old industries. Real founders like Elon Musk or Steve Jobs mix all three moves. What is the teaching value of pulling the three theories apart when we study a single founder?",
+    "question": "Israel Kirzner offered a third picture of the entrepreneur beside Frank Knight's bearer of true uncertainty and Joseph Schumpeter's inventor of new combinations that destroy old industries. Real founders such as Elon Musk and Steve Jobs mix all three. What is gained by pulling the three theories apart when studying one founder?",
     "answer": "It clarifies which theory fits which specific move being analyzed",
     "choices": [
       "It clarifies which theory fits which specific move being analyzed",
@@ -13937,20 +13625,7 @@
   },
   {
     "tier": 1,
-    "question": "The Austrian school of economics teaches that the worth of a thing isn't fixed by its ingredients or its production cost. It depends on who wants the thing, when they want it, and why. A cold water bottle in the desert is worth a lot; the same bottle sitting in your fridge is worth much less. What is this idea called?",
-    "answer": "Subjective value",
-    "choices": [
-      "Subjective value",
-      "Fixed cost",
-      "Objective price",
-      "Central pricing"
-    ],
-    "context": "Ludwig Lachmann (1906-1990) taught at the University of the Witwatersrand in Johannesburg from 1948 and became the leading voice of what is now called radical-subjectivist Austrian economics. Source: grokipedia.com/page/Ludwig_Lachmann.",
-    "topic": "ludwig-lachmann-radical-subjectivism-and-expectations"
-  },
-  {
-    "tier": 1,
-    "question": "Ludwig Lachmann was an Austrian-school economist teaching in South Africa in the 1950s. In 1956 he published a short but important book arguing that a factory's machines, a farmer's tractors, and a bakery's ovens are all different tools with different uses -- capital is not one big lump of 'stuff' that can be totaled up. What short title did Lachmann give this book?",
+    "question": "Ludwig Lachmann, a student of Hayek's who spent some forty years teaching in Johannesburg, published a short, influential book in 1956 about lathes, trucks and factory buildings and the particular ways such tools fit together. What did he title it?",
     "answer": "Capital and Its Structure",
     "choices": [
       "Capital and Its Structure",
@@ -13963,7 +13638,7 @@
   },
   {
     "tier": 2,
-    "question": "Ludwig Lachmann, an Austrian-school economist writing in the 1950s, published Capital and Its Structure in 1956. In it he pushed back against a habit mainstream economists had picked up: treating every drill, oven, tractor, and truck in a country as one giant number the textbooks called K. Lachmann said this trick hid the real story of how different tools fit together. Which idea did he attack?",
+    "question": "Ludwig Lachmann objected in 1956 to the way mainstream textbooks treated a lathe, a delivery truck and a factory building, arguing that their habit wiped out exactly the fit among different tools that a boom and bust throws into disorder. Which idea was he attacking?",
     "answer": "That capital can be aggregated into a single number K",
     "choices": [
       "That capital can be aggregated into a single number K",
@@ -13976,7 +13651,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1970s a new school of thought called 'rational expectations' argued that business owners can basically calculate the future using probability, as if tomorrow were a solvable math problem. Ludwig Lachmann, an aging Austrian-school economist who had known both Mises and Hayek, disagreed sharply. He said tomorrow is not a math problem -- it is genuinely open, and different business owners will guess about it in different ways. Which view did Lachmann defend against rational expectations?",
+    "question": "Frank Knight drew a line in 1921 between risk that can be measured and real uncertainty, and Ludwig Lachmann took it up against the rational-expectations school of the 1970s, which pictured business owners working out tomorrow by the laws of probability. Which view did Lachmann defend?",
     "answer": "The future is genuinely unknowable, so different entrepreneurs form different expectations",
     "choices": [
       "The future is genuinely unknowable, so different entrepreneurs form different expectations",
@@ -13989,7 +13664,7 @@
   },
   {
     "tier": 3,
-    "question": "Austrian economists and post-Keynesians like George Shackle and Ludwig Lachmann argue the economic future is not just risky like a dice roll. Dice have known odds. The future is genuinely unknown because new inventions, new companies, and new choices have not happened yet — no odds can be honestly assigned to what does not yet exist. If they are right, what does that mean for ten-year economic forecasts?",
+    "question": "George Shackle and Ludwig Lachmann argued that the economic future is not risky the way a dice roll is. Dice have known odds; tomorrow will bring inventions, firms and decisions no one has made yet, and nobody can put fair odds on what does not exist. If they are right, what follows for ten-year economic forecasts?",
     "answer": "They are basically guesses and should not be trusted like weather reports",
     "choices": [
       "They are basically guesses and should not be trusted like weather reports",
@@ -14002,7 +13677,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian economist Ludwig Lachmann taught for decades at the University of the Witwatersrand in South Africa. In a 1976 essay he pushed the Austrian school to its most radical position — markets are never in equilibrium, plans and expectations constantly shift, and the whole pattern reshuffles like a child's toy tube full of colored glass. Borrowing a word from the British economist George Shackle, Lachmann gave this restless picture of markets a two-word label. Which phrase became the name for his position?",
+    "question": "Ludwig Lachmann pushed the Austrian school to its most radical position in an essay of 1976, From Mises to Shackle. Markets, he wrote, never come to rest; plans and expectations change without end and the whole pattern keeps reshuffling. Borrowing a word from George Shackle, he gave that restless view a two-word name. What was it?",
     "answer": "The kaleidic society",
     "choices": [
       "The kaleidic society",
@@ -14014,21 +13689,8 @@
     "topic": "ludwig-lachmann-radical-subjectivism-and-expectations"
   },
   {
-    "tier": 4,
-    "question": "The Austrian school of economics — Ludwig von Mises, Friedrich Hayek, and their students — argues that a modern economy is far too complex for any handful of central planners to run well. Their attack is not on planners' character or motives. They point instead to a specific structural problem about information itself that they say makes real central planning impossible. Which problem do they identify?",
-    "answer": "No small group can gather all the knowledge scattered across millions of buyers and sellers",
-    "choices": [
-      "No small group can gather all the knowledge scattered across millions of buyers and sellers",
-      "Central planners are always personally lazy and dishonest",
-      "Computers are not yet powerful enough to run the calculations",
-      "Ordinary workers refuse to follow any orders from the government"
-    ],
-    "context": "The NYU Austrian program under Kirzner and Rothbard was the principal American training ground for the modern tradition; Lachmann's visiting stint made him one of its senior figures. Source: grokipedia.com/page/Ludwig_Lachmann.",
-    "topic": "ludwig-lachmann-radical-subjectivism-and-expectations"
-  },
-  {
     "tier": 5,
-    "question": "Max Weber was a German sociologist writing around 1900. In his book The Protestant Ethic and the Spirit of Capitalism (1905) he argued that the values a culture teaches — hard work, thrift, honesty in trade, keeping your word — shape how well its markets grow, on top of any laws or natural resources. What broad claim is he making?",
+    "question": "Max Weber traced in 1905 how a Protestant culture's teachings, hard work, thrift and keeping one's word among them, went hand in hand with the growth of capitalism. Ludwig Lachmann returned to Weber in 1971 in The Legacy of Max Weber. What broad claim was Weber making?",
     "answer": "Culture and shared habits shape a market as much as its rules do",
     "choices": [
       "Culture and shared habits shape a market as much as its rules do",
@@ -15315,7 +14977,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1982, a former congressional staffer named Lew Rockwell founded a small research institute in Auburn, Alabama, to keep alive the ideas of the Austrian-school economist Ludwig von Mises. The Mises Institute has run summer seminars, published books, and hosted scholars ever since, becoming the main U.S. home for one particular school of economics. Which school of economics does the Mises Institute teach?",
+    "question": "Lew Rockwell, who had worked as a congressional staffer, set up a small institute next to Auburn University's campus in Alabama in 1982. He named it after Ludwig von Mises, a lifelong enemy of central planning, and it became the leading American center of one school of economics. Which school?",
     "answer": "The Austrian school",
     "choices": [
       "The Austrian school",
@@ -15328,7 +14990,7 @@
   },
   {
     "tier": 1,
-    "question": "The US congressman Ron Paul, a doctor from Texas, ran for president three times mainly to protest what the Federal Reserve does. His campaign books and slogan repeated the same three words: 'End the Fed.' In Paul's view, the Fed's power to create new dollars out of thin air causes one big harm. What was Ron Paul's main complaint about the Fed?",
+    "question": "Ron Paul, a physician who represented Texas in Congress, ran for president three times, mostly as a protest against the Federal Reserve, and he packed his cause into three words: End the Fed. In his view the Fed's power to create new dollars from nothing does one great harm. What was his main complaint?",
     "answer": "Printing money makes the dollar lose value over time",
     "choices": [
       "Printing money makes the dollar lose value over time",
@@ -15341,7 +15003,7 @@
   },
   {
     "tier": 2,
-    "question": "The Mises Institute, founded in 1982 in Auburn, Alabama, is the main US home of Austrian economics in the Mises tradition. The moral right to use Mises's own name came from one specific person who served on the Institute's founding board until 1993. Who personally authorized the Institute's use of the Mises name?",
+    "question": "Lew Rockwell opened his small institute in Auburn in 1982 under a famous economist's name. The right to use that name came from one person, who gave the founding her blessing and served on its board until she died in 1993. Who was she?",
     "answer": "Margit von Mises",
     "choices": [
       "Margit von Mises",
@@ -15353,21 +15015,8 @@
     "topic": "mises-institute-auburn-alabama-founded-1982"
   },
   {
-    "tier": 2,
-    "question": "The Ludwig von Mises Institute in Auburn, Alabama is the US home of Austrian economics in the tradition of Mises and his student Murray Rothbard. Since 1998 the Institute has run its own scholarly journal, the flagship outlet for research in that Rothbardian tradition, printing new economics research every quarter. What is the journal called?",
-    "answer": "Quarterly Journal of Austrian Economics",
-    "choices": [
-      "Quarterly Journal of Austrian Economics",
-      "Review of Austrian Economics",
-      "Journal of Political Economy",
-      "Public Choice"
-    ],
-    "context": "The Quarterly Journal of Austrian Economics, edited by Joseph Salerno, is the flagship modern Mises-Institute journal. Source: mises.org/mises-university.",
-    "topic": "mises-institute-auburn-alabama-founded-1982"
-  },
-  {
     "tier": 3,
-    "question": "Every summer the Mises Institute in Auburn, Alabama runs Mises University, a one-week intensive program on Austrian economics for college students from all over the world. Students pay their own way to fly in and give up a week of vacation. Why do they travel to Auburn instead of just taking an Austrian-economics class at their own home college?",
+    "question": "A college student pays her own way to Auburn, Alabama, one summer for Mises University, an intensive week of lectures run by the Mises Institute. Students from many countries do the same. Why does she make the trip?",
     "answer": "Most universities teach little or none of the Austrian tradition",
     "choices": [
       "Most universities teach little or none of the Austrian tradition",
@@ -15380,7 +15029,7 @@
   },
   {
     "tier": 3,
-    "question": "Murray Rothbard was Ludwig von Mises's leading American student and the founder of a hard-money, anti-central-bank branch of Austrian economics. After Rothbard died in 1995, the Mises Institute in Auburn, Alabama became the US home of his branch of the tradition. Rothbard's followers push one specific money reform above all others. Which money reform is that branch best known for?",
+    "question": "Murray Rothbard, Ludwig von Mises's leading American student, founded a hard-money branch of Mises's school, and after Rothbard's death in 1995 its home was the Mises Institute in Auburn. Which money reform is that branch best known for?",
     "answer": "100 percent reserve banking and abolition of the Fed",
     "choices": [
       "100 percent reserve banking and abolition of the Fed",
@@ -15393,7 +15042,7 @@
   },
   {
     "tier": 4,
-    "question": "Ludwig von Mises was the leader of the Austrian school of economics in the twentieth century and the great enemy of socialist central planning. The main modern life story of Mises came out from the Mises Institute in 2007, written by the historian Jorg Guido Hulsmann. Its full title casts Mises as a knight defending an older liberal tradition. What is the book's subtitle?",
+    "question": "Jörg Guido Hülsmann, a historian, wrote the standard modern life of Ludwig von Mises, the twentieth century's great enemy of central planning, and the Mises Institute published it in 2007. Its subtitle gives Mises a heroic title. What is the subtitle?",
     "answer": "The Last Knight of Liberalism",
     "choices": [
       "The Last Knight of Liberalism",
@@ -15406,7 +15055,7 @@
   },
   {
     "tier": 5,
-    "question": "A think tank that teaches Austrian economics puts its entire founding library online for free. Every book and every essay by its major thinkers is there for anyone with internet. Why does making the primary sources free do more for the school than any advertising ever could?",
+    "question": "A student opens mises.org on a laptop and finds the school's great names there, Menger, Böhm-Bawerk, Mises, Hayek and Rothbard alike, free to read. Why does a free library like that spread a school further than any advertising could?",
     "answer": "Students anywhere can read the original arguments and decide for themselves",
     "choices": [
       "Students anywhere can read the original arguments and decide for themselves",
@@ -17343,20 +16992,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1920 the Austrian economist Ludwig von Mises published a big claim. A country where the government owns every factory and farm cannot know how much of each thing to make. Without free market prices to reveal what buyers actually want, the planners are guessing in the dark. What is this idea called?",
-    "answer": "The economic calculation problem",
-    "choices": [
-      "The economic calculation problem",
-      "The paperwork problem",
-      "The weather problem",
-      "The population problem"
-    ],
-    "context": "Oskar Lange, then teaching at Chicago, published 'On the Economic Theory of Socialism' in the Review of Economic Studies, October 1936 and February 1937. Source: en.wikipedia.org/wiki/Oskar_R._Lange.",
-    "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
-  },
-  {
-    "tier": 1,
-    "question": "In 1936 the Polish economist Oskar Lange proposed a new kind of socialism. The state would take over all factories and mines from private owners. But it would keep markets for the consumer goods people bought day to day, and a state planning board would set the prices of tools and factory machines by copying what a real market would have charged. What is Lange's plan called?",
+    "question": "Oskar Lange, a Polish economist then on the Chicago faculty, answered Ludwig von Mises in 1936 with a plan of his own. The state would hold factories and mines, shoppers would still buy everyday goods in markets, and a central board would price tools and machines by copying what a market would charge. What did Lange call the plan?",
     "answer": "Market socialism",
     "choices": [
       "Market socialism",
@@ -17369,7 +17005,7 @@
   },
   {
     "tier": 2,
-    "question": "The Austrian economist Ludwig von Mises had argued in a 1920 essay that without private ownership no one could rationally price steel, tools, and factory machines. In 1936 the Polish economist Oskar Lange conceded that Mises had a real point. But then, under his market-socialism plan, Lange offered a workaround for setting those prices anyway. What method did Lange propose?",
+    "question": "Oskar Lange granted that Ludwig von Mises had a point: without private owners, no one could rationally price steel, tools and factory machines. Under his own plan of 1936, though, Lange offered a way around it. What method did he propose?",
     "answer": "Trial and error by the central planning board",
     "choices": [
       "Trial and error by the central planning board",
@@ -17382,7 +17018,7 @@
   },
   {
     "tier": 2,
-    "question": "Some modern economists say a government should set its taxes and its spending only by what seems useful for the economy at that moment. Whether the books balance or the deficit grows — that, they say, does not matter. Austrian economists at the Mises Institute and elsewhere warn hard against this rule of thumb. What warning do they give?",
+    "question": "An economist tells a committee of lawmakers that taxes and spending should be set purely by what the economy appears to need right now, deficit or no deficit. Austrian critics at the Mises Institute and elsewhere answer him with a sharp warning. What is it?",
     "answer": "A government freed from the balanced-budget rule tends to overspend and cause inflation",
     "choices": [
       "A government freed from the balanced-budget rule tends to overspend and cause inflation",
@@ -17394,34 +17030,8 @@
     "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
   },
   {
-    "tier": 3,
-    "question": "In the 1930s the Polish economist Oskar Lange argued that a socialist central planning board could copy market prices well enough to run an economy. The Austrian-British economist Friedrich Hayek pushed back — first in a 1935 book, then in a famous 1945 essay called The Use of Knowledge in Society. His counter-move shifted the whole debate. What was Hayek's key change in framing the problem?",
-    "answer": "The problem is dispersed knowledge, not just price arithmetic",
-    "choices": [
-      "The problem is dispersed knowledge, not just price arithmetic",
-      "The problem is enforcement, not planning",
-      "The problem is corruption, not information",
-      "The problem is speed of computation only"
-    ],
-    "context": "Hayek argued market prices encode dispersed knowledge (local conditions, tastes, changing circumstances) held only by millions of individuals. A trial-and-error board cannot gather that knowledge in time; the market's speed and specificity cannot be replicated by any committee. Source: aeaweb.org (AER September 1945).",
-    "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
-  },
-  {
-    "tier": 3,
-    "question": "In 1945 the Austrian economist Friedrich Hayek published a short but famous essay in the American Economic Review journal. It argued that no central planner can gather the millions of small facts scattered across a whole society — only market prices can pull that knowledge together. The essay became the classic Austrian answer to those who said governments could plan an economy from the top down. What is the essay's title?",
-    "answer": "The Use of Knowledge in Society",
-    "choices": [
-      "The Use of Knowledge in Society",
-      "The Road to Serfdom",
-      "The Fatal Conceit",
-      "Individualism and Economic Order"
-    ],
-    "context": "'The Use of Knowledge in Society', American Economic Review 35(4), September 1945, is one of the most cited economics papers ever written. It reframed the calculation debate as being about dispersed knowledge rather than arithmetic. Source: aeaweb.org.",
-    "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
-  },
-  {
     "tier": 4,
-    "question": "In the 1930s the Polish economist Oskar Lange tried to save socialist central planning from an Austrian critique by Ludwig von Mises. Lange said a communist government could simply copy the prices seen in real capitalist markets and use those copied numbers to plan every factory and shop. Mises and Hayek said that answer collapses on itself. What is the main problem with Lange's reply?",
+    "question": "Oskar Lange suggested in the 1930s that a communist government could simply copy the prices it saw in real capitalist markets and plan every factory and shop with the copied numbers. Mises and Hayek said the answer collapses on itself. What is the flaw they found?",
     "answer": "You cannot copy prices from markets you have abolished",
     "choices": [
       "You cannot copy prices from markets you have abolished",
@@ -17430,45 +17040,6 @@
       "Nothing — the reply solves the problem perfectly"
     ],
     "context": "Lange served as Poland's first postwar ambassador to the United States (1945-47) and later held Polish State Council positions. He died in 1965. Source: en.wikipedia.org/wiki/Oskar_R._Lange.",
-    "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
-  },
-  {
-    "tier": 4,
-    "question": "For decades many economists thought Oskar Lange had answered Ludwig von Mises on paper in the socialist calculation debate. Then Friedrich Hayek's 1945 essay 'The Use of Knowledge in Society' pinpointed what central planners could not do that market prices did automatically. What did Hayek call this obstacle?",
-    "answer": "The knowledge problem",
-    "choices": [
-      "The knowledge problem",
-      "The incentive problem",
-      "The transaction-cost problem",
-      "The externalities problem"
-    ],
-    "context": "The 1989 collapse of the Warsaw Pact planned economies (Berlin Wall Nov 9, Ceausescu Dec 25, Velvet Revolution Dec 29) and the USSR's dissolution on December 25, 1991 shifted the calculation debate from theory to historical settlement. Lange had died in 1965. Source: mises.org/library/socialism-economic-and-sociological-analysis.",
-    "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
-  },
-  {
-    "tier": 5,
-    "question": "In the 1930s the Polish economist Oskar Lange offered a plan for 'market socialism' — planners would set prices as if they were a market. Since Lange, many new socialist plans have come out: David Schweickart's economic democracy, participatory-planning schemes, and forms of 21st-century socialism in Venezuela and elsewhere. Austrian economists like Friedrich Hayek said all these plans share one gap. What do they not answer?",
-    "answer": "Hayek's knowledge problem",
-    "choices": [
-      "Hayek's knowledge problem",
-      "Marx's labor theory of value",
-      "Keynes's liquidity trap",
-      "Ricardo's rent theory"
-    ],
-    "context": "Austrian critics observe that most modern socialist proposals recycle Lange's move (boards can mimic markets) without engaging Hayek's follow-up: markets encode information no board can gather in time. The knowledge problem is the load-bearing critique. Source: mises.org/library/socialism-and-anti-socialism.",
-    "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
-  },
-  {
-    "tier": 5,
-    "question": "In 1935 the Austrian economist Friedrich Hayek edited a landmark collection of early European critiques of socialist central planning. The volume gathered translated essays by Ludwig von Mises, Enrico Barone, and others, plus Hayek's own opening and closing essays laying out the calculation problem. It became a founding text of the Austrian side of the socialist calculation debate. What was the book's title?",
-    "answer": "Collectivist Economic Planning",
-    "choices": [
-      "Collectivist Economic Planning",
-      "Individualism and Economic Order",
-      "The Pure Theory of Capital",
-      "The Sensory Order"
-    ],
-    "context": "Collectivist Economic Planning (1935), edited by Hayek, collected translations of Mises's 1920 essay and other early Austrian critiques for English-language readers. This is the collection Lange responded to in his 1936-37 papers. Source: en.wikipedia.org/wiki/Collectivist_Economic_Planning.",
     "topic": "oskar-lange-and-market-socialism-the-reply-to-mises"
   },
   {
@@ -28653,33 +28224,20 @@
   },
   {
     "tier": 1,
-    "question": "In December 1913 President Wilson signed the law creating a new US central bank two days before Christmas. What is that central bank called?",
+    "question": "Woodrow Wilson signed a law two days before Christmas in 1913 creating a new American central bank, the body that decides how much money exists and where interest rates go. What is that central bank called?",
     "answer": "The Federal Reserve",
     "choices": [
       "The Federal Reserve",
       "The Treasury",
-      "The World Bank",
-      "The Mint"
+      "The Mint",
+      "The Bank of America"
     ],
     "context": "The Federal Reserve Act was signed on December 23, 1913, after most members of Congress had already left Washington for the holidays. Source: federalreservehistory.org/essays/federal_reserve_act_signed.",
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
-    "tier": 1,
-    "question": "In 1913, the US created its own central bank. It decides how much money exists and where interest rates go. What is this US central bank called?",
-    "answer": "The Federal Reserve",
-    "choices": [
-      "The Federal Reserve",
-      "The World Bank",
-      "The Treasury Department",
-      "The Bank of America"
-    ],
-    "context": "Wilson (Democrat, 28th president 1913-21) signed the Federal Reserve Act on December 23, 1913, ten months into his first term. Source: en.wikipedia.org/wiki/Federal_Reserve_Act.",
-    "topic": "the-federal-reserve-act-of-december-23-1913"
-  },
-  {
     "tier": 2,
-    "question": "In 1913, the US Congress passed the Federal Reserve Act, creating a central bank system for America. To keep any single city — like New York — from hoarding all the banking power, the law spread the new central bank across the country. Each region got its own Reserve Bank branch. How many regional Reserve Banks did the Act create?",
+    "question": "Lawmakers who wrote the Federal Reserve Act in 1913 spread the new central bank across the country, answering an old fear that one city would control the country's credit. Each district got a Reserve Bank of its own, belonging to the member banks there. How many districts did the Act create?",
     "answer": "Twelve",
     "choices": [
       "Twelve",
@@ -28692,7 +28250,7 @@
   },
   {
     "tier": 2,
-    "question": "On December 23, 1913 President Woodrow Wilson signed a landmark banking law, creating a new central bank for the United States and ending decades of arguments over who should print American money. Only this new bank was allowed to issue the green paper bills that Americans still carry in their wallets today. What are those bills formally called?",
+    "question": "Woodrow Wilson signed a banking law in December 1913, and after it no chartered bank could print its own bills. From then on the only legal paper money was the kind Americans still carry, backed by a central bank's assets rather than by any metal. What are those bills formally called?",
     "answer": "Federal Reserve Notes",
     "choices": [
       "Federal Reserve Notes",
@@ -28705,7 +28263,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1913, Congressman Charles Lindbergh Senior warned that the new Act had created 'the most gigantic trust on earth.' What was he warning about?",
+    "question": "Charles Lindbergh Sr. warned the House in 1913 that the new bill would set up a trust more gigantic than any other on earth. What fear lay beneath his objection?",
     "answer": "That control over money would put unelected bankers in charge behind the scenes",
     "choices": [
       "That control over money would put unelected bankers in charge behind the scenes",
@@ -28718,20 +28276,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 1910, a handful of America's richest bankers boarded a private train down to Jekyll Island, Georgia, disguising themselves as duck hunters so no one would recognize them. In secret they drafted a plan for a giant new central bank that would lend emergency money to other banks. Three years later that plan became the Federal Reserve Act of 1913. What is the biggest worry with a plan made that way?",
-    "answer": "The bank might quietly serve those few insiders more than ordinary people",
-    "choices": [
-      "The bank might quietly serve those few insiders more than ordinary people",
-      "The bank cannot legally exist without a public vote first",
-      "The public will refuse to spend the new money at all",
-      "The bank will forget to hire anyone to run it"
-    ],
-    "context": "The Jekyll Island meeting (November 1910) at the private hunting club of J.P. Morgan and other Wall Street bankers produced the Aldrich Plan, whose essential mechanisms were adopted (with Democratic rebranding) as the Federal Reserve Act. Source: en.wikipedia.org/wiki/Jekyll_Island.",
-    "topic": "the-federal-reserve-act-of-december-23-1913"
-  },
-  {
-    "tier": 3,
-    "question": "The Federal Reserve Act of 1913 became known by a short nickname taken from its two main sponsors in Congress: a Democratic senator from Oklahoma, and a Democratic House member from Virginia. Both had spent years arguing for a more elastic paper currency that could expand and contract with the needs of American businesses. What were their last names?",
+    "question": "Two Democrats steered the Federal Reserve Act through Congress in 1913, an Oklahoma senator and a Virginia congressman who had spent years pressing for a paper currency elastic enough to grow and shrink with the needs of business. The Act is sometimes known by their names. What were their last names?",
     "answer": "Owen and Glass",
     "choices": [
       "Owen and Glass",
@@ -28744,7 +28289,7 @@
   },
   {
     "tier": 4,
-    "question": "The Federal Reserve, the central bank of the United States, controls how much money is sloshing around in the American banking system. To add money it buys securities from banks, and to drain money it sells securities back to them. This buy-and-sell process is called open-market operations. Which single main type of security does the Fed use for it?",
+    "question": "A trader at the Federal Reserve buys securities from banks one morning to add reserves and push interest rates down; another day he sells them back to drain reserves and push rates up. This open-market buying and selling is the central bank's day-to-day tool. Which single main type of security does it trade?",
     "answer": "Treasury securities",
     "choices": [
       "Treasury securities",
@@ -28757,7 +28302,7 @@
   },
   {
     "tier": 4,
-    "question": "On December 23, 1913, President Woodrow Wilson signed the Federal Reserve Act into law, creating America's central bank. December 23 is unusually late in the year for a major bill — most substantive laws are wrapped up earlier. Historians say the timing was chosen on purpose. What was the practical effect of scheduling the signing so close to Christmas?",
+    "question": "Senators passed the Federal Reserve Act on December 19, 1913, the final terms were settled on the 22nd, and Woodrow Wilson signed it on the 23rd. Critics said the calendar had cut the debate short. What was the practical effect of a signing so close to Christmas?",
     "answer": "Most members of Congress had already left Washington for the holidays",
     "choices": [
       "Most members of Congress had already left Washington for the holidays",
@@ -28770,7 +28315,7 @@
   },
   {
     "tier": 5,
-    "question": "President Woodrow Wilson, who had signed the 1913 Federal Reserve Act, died in 1924. A quotation began circulating decades later in which a dying Wilson supposedly regretted creating the Fed, saying he had inadvertently destroyed his country. Historians who later hunted for the source have found the sourcing shaky. Which statement best describes the actual documentary status of the quote?",
+    "question": "Woodrow Wilson signed the bill creating the Fed in 1913, and years after he died in 1924 a quotation spread in which he supposedly confessed, on his deathbed, that by creating it he had inadvertently destroyed his country. Which statement best describes the quote's documentary status?",
     "answer": "The 'unwittingly ruined my country' portion has no verified primary source and is likely apocryphal",
     "choices": [
       "The 'unwittingly ruined my country' portion has no verified primary source and is likely apocryphal",
@@ -28779,19 +28324,6 @@
       "The quote comes from Wilson's 1913 book 'The New Freedom'"
     ],
     "context": "Historians (including Wilson biographer John Milton Cooper) have been unable to locate the 'unwittingly ruined' language in Wilson's papers. A separate passage about 'the invisible government by the money power' is authentic and appears in Wilson's pre-signing 1913 book 'The New Freedom'. Honesty rail: cite only what is verifiable. Source: princeton.edu/~mudd (Wilson papers).",
-    "topic": "the-federal-reserve-act-of-december-23-1913"
-  },
-  {
-    "tier": 5,
-    "question": "The 1913 law creating the Federal Reserve gave it no specific number goals -- only vague language about 'furnishing an elastic currency.' Congress did not add explicit goals until 1978. Which two goals did that later law tell the Fed to pursue at the same time?",
-    "answer": "Maximum employment and stable prices",
-    "choices": [
-      "Maximum employment and stable prices",
-      "Zero inflation and the abolition of paper money",
-      "Full public ownership of every commercial bank",
-      "A fixed exchange rate with the British pound"
-    ],
-    "context": "The 1978 Humphrey-Hawkins Full Employment and Balanced Growth Act added the explicit dual-mandate language (maximum employment plus stable prices) to the Federal Reserve Act. Before 1978 the Fed's goals were essentially self-defined. Source: en.wikipedia.org/wiki/Humphrey%E2%80%93Hawkins_Full_Employment_Act.",
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
@@ -34360,7 +33892,7 @@
   },
   {
     "tier": 1,
-    "question": "No single person in a country knows where every apple is, how many nails a factory needs, or what shoe size Aunt Judy prefers. That knowledge is spread across millions of people. What tool lets all of that hidden knowledge get used, without any boss having to know it?",
+    "question": "Friedrich Hayek argued that the knowledge an economy runs on is spread across millions of people. Nobody knows where every apple is, how many nails a factory needs, or what shoe size Aunt Judy prefers. What puts all of it to work without any boss having to know it?",
     "answer": "Prices in a free market",
     "choices": [
       "Prices in a free market",
@@ -34373,7 +33905,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1945, the Austrian economist Friedrich Hayek published his most-cited paper, 'The Use of Knowledge in Society,' arguing that markets aggregate scattered local knowledge no central planner can gather. It appeared in the flagship journal of the leading US economics society. Which journal was that?",
+    "question": "Friedrich Hayek published eleven pages in September 1945 in the flagship journal of the leading US economics society. The paper, The Use of Knowledge in Society, became the most-cited paper of the modern Austrian school. Which journal printed it?",
     "answer": "The American Economic Review",
     "choices": [
       "The American Economic Review",
@@ -34386,7 +33918,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1945 the Austrian economist Friedrich Hayek, then teaching at the London School of Economics, wrote a short essay for the American Economic Review about how information is scattered across every worker, shopper, and firm. He said the real problem of running an economy is not how to share out things we already have -- the 'blackboard planners' of the 1930s had been busy solving that puzzle with equations. Hayek said they were solving the wrong problem. So what did Hayek say the real problem is?",
+    "question": "Friedrich Hayek told the planners of the 1930s, in his 1945 essay, that they had been solving the wrong problem. They treated the economy as if the resources and the wants were already known, so that only the sharing out remained. Honesty and cleverness, he held, would not help a planner with the real one. What did Hayek say the real problem is?",
     "answer": "How to make use of knowledge that is not given to anyone in its totality",
     "choices": [
       "How to make use of knowledge that is not given to anyone in its totality",
@@ -34399,7 +33931,7 @@
   },
   {
     "tier": 2,
-    "question": "F. A. Hayek's 1945 essay draws a sharp line between two kinds of knowledge. On one side is the scientific knowledge in textbooks that a central board could in principle collect. On the other side is a different kind of knowledge -- inherently dispersed, held by individuals about their particular jobs, ships, warehouses, and customers. What does Hayek call this second, load-bearing kind of knowledge?",
+    "question": "Friedrich Hayek split knowledge in two in his 1945 essay. One kind, the scientific sort found in textbooks, a planning office might gather. The other belongs to individual people and concerns the customers, stock rooms, ships and jobs each one deals with. What did Hayek call the second kind?",
     "answer": "The knowledge of the particular circumstances of time and place",
     "choices": [
       "The knowledge of the particular circumstances of time and place",
@@ -34412,7 +33944,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1945 the Austrian-born economist Friedrich Hayek published an essay called The Use of Knowledge in Society. He used one metal as his running example. When a new use for it appears or a mine somewhere closes, its price rises. Every user around the world then cuts back on the metal -- even people who have no idea why the price moved. Which metal did Hayek use?",
+    "question": "Friedrich Hayek kept coming back to one metal in his 1945 essay. Somewhere a new use for it appears, or a mine closes, and its price rises; every user of the metal then uses less of it, even those with no idea why the price changed. Which metal did Hayek use?",
     "answer": "Tin",
     "choices": [
       "Tin",
@@ -34425,7 +33957,7 @@
   },
   {
     "tier": 3,
-    "question": "In 'The Use of Knowledge in Society' F. A. Hayek gave a famous metaphor for the price system: it works like a piece of machinery for registering change, a system where each producer watches only the movement of a few pointers. To which modern technology did Hayek compare the price system?",
+    "question": "Friedrich Hayek reached for a mechanical image of the price system in his 1945 essay: a machinery for registering change, where a producer has only to watch a few pointers move, the way an engineer keeps an eye on some dials. To which modern technology did he compare it?",
     "answer": "A system of telecommunications",
     "choices": [
       "A system of telecommunications",
@@ -34437,60 +33969,8 @@
     "topic": "the-use-of-knowledge-in-society-1945"
   },
   {
-    "tier": 4,
-    "question": "Mises said that without market prices, planners cannot figure out what to make. A younger Austrian added a sharper point: even trying hard, planners cannot gather all the little bits of local know-how that markets pull together every day. What is this idea called?",
-    "answer": "The knowledge problem",
-    "choices": [
-      "The knowledge problem",
-      "The tax collection problem",
-      "The public goods problem",
-      "The population problem"
-    ],
-    "context": "Mises 1920 said no exchange, no prices, no rational allocation. Hayek 1945 added: even if a benevolent, honest planner had perfect intentions, the dispersed knowledge that market prices summarize is not gatherable in usable time by any central agency. The Austrian critique of planning is not about will or motive -- it is about knowability. Source: Hayek 1945, University of Chicago PDF; Mises Institute critical commentary.",
-    "topic": "the-use-of-knowledge-in-society-1945"
-  },
-  {
-    "tier": 4,
-    "question": "In 1945 Friedrich Hayek published his famous essay 'The Use of Knowledge in Society,' arguing that no central planner can gather all the scattered local knowledge that markets use every day. Three years later, in 1948, the University of Chicago Press collected that essay together with Hayek's other pieces on individualism, spontaneous order, and the socialist calculation debate into a single volume. What is that 1948 book called?",
-    "answer": "Individualism and Economic Order",
-    "choices": [
-      "Individualism and Economic Order",
-      "The Constitution of Liberty",
-      "Studies in Philosophy Politics and Economics",
-      "The Counter-Revolution of Science"
-    ],
-    "context": "Individualism and Economic Order (University of Chicago Press, 1948) collected Hayek's essays from the 1930s and 1940s including 'The Use of Knowledge in Society,' 'Economics and Knowledge' (1937), and 'The Meaning of Competition.' The Constitution of Liberty (1960), Studies (1967), and The Counter-Revolution of Science (1952) are all real Hayek works of later or different focus. Source: Wikipedia, 'The Use of Knowledge in Society.'",
-    "topic": "the-use-of-knowledge-in-society-1945"
-  },
-  {
     "tier": 5,
-    "question": "In December 1974 F. A. Hayek delivered the Nobel Memorial Prize lecture in Stockholm on the failures of the mathematical macroeconomics of the day. The title of the lecture was a direct descendant of the 1945 essay's argument about what a central mind cannot hold. What was the title?",
-    "answer": "The Pretense of Knowledge",
-    "choices": [
-      "The Pretense of Knowledge",
-      "The Fatal Conceit",
-      "The Use of Knowledge in Society",
-      "The Road to Serfdom"
-    ],
-    "context": "Hayek's 1974 Nobel lecture 'The Pretense of Knowledge' argued that the postwar economics profession had adopted the manner of the physical sciences while imitating something it could not actually deliver -- the pretense that macroeconomic aggregates and models could substitute for the dispersed knowledge the price system aggregates. The lecture is the direct descendant of the 1945 essay. Source: Econlib version of Hayek 1945.",
-    "topic": "the-use-of-knowledge-in-society-1945"
-  },
-  {
-    "tier": 5,
-    "question": "The reasoning move at the heart of Hayek's 1945 essay is one a critic of central planning can carry into any policy debate -- rent control, minimum wages, wage-price controls, ration schemes. It is NOT a moral verdict; it is a claim about knowability. Which move does the essay actually press?",
-    "answer": "That the knowledge needed to plan an economy is dispersed and cannot be gathered up to any central board",
-    "choices": [
-      "That the knowledge needed to plan an economy is dispersed and cannot be gathered up to any central board",
-      "That central planners are always corrupt and always self-interested",
-      "That a planned economy must eventually generate hyperinflation of the consumer price index",
-      "That workers in planned economies are forbidden from changing jobs by law"
-    ],
-    "context": "The essay's argument is a claim about the STRUCTURE of economic knowledge, not a moral or motive claim. Even a saintly, brilliant planner cannot hold the knowledge the price system aggregates because that knowledge lives in millions of individual heads about local circumstances. The student can accept or reject the move, but the essay actually presses this reasoning move, not the corruption or hyperinflation charges. Source: Hayek 1945.",
-    "topic": "the-use-of-knowledge-in-society-1945"
-  },
-  {
-    "tier": 5,
-    "question": "F. A. Hayek's 1945 essay closes with a striking image of what a market economy accomplishes: without an order being issued, without more than perhaps a handful of people knowing the cause of a raw-material scarcity, tens of thousands of people are made to use the material more sparingly. What one word from the essay best names this achievement Hayek was praising?",
+    "question": "Friedrich Hayek ended his 1945 essay in astonishment. When one raw material runs short, tens of thousands of strangers start to use it more sparingly, though no order has been issued and hardly anyone knows the cause. What one word did Hayek use for that achievement?",
     "answer": "A marvel",
     "choices": [
       "A marvel",
