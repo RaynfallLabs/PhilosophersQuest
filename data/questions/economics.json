@@ -1145,20 +1145,7 @@
   },
   {
     "tier": 1,
-    "question": "Imagine a country with a hundred million voters heading to the polls to pick a president. Your one ballot is basically never the deciding vote — the chance you personally flip the outcome is about the same as winning the lottery. Meanwhile, studying every candidate on the ballot eats hours out of your evening. So how much time is it actually worth spending to research each name?",
-    "answer": "Very little -- studying takes real time, and one vote almost never decides",
-    "choices": [
-      "Very little -- studying takes real time, and one vote almost never decides",
-      "Hundreds of hours -- every vote is the deciding vote",
-      "Zero -- voting is against the law in most countries",
-      "About two hours -- the same as watching a movie"
-    ],
-    "context": "Anthony Downs's An Economic Theory of Democracy (Harper, 1957) was his Stanford PhD dissertation under Kenneth Arrow. It founded formal public-choice modeling of elections. Source: en.wikipedia.org/wiki/Anthony_Downs.",
-    "topic": "anthony-downs-and-the-median-voter-theorem"
-  },
-  {
-    "tier": 1,
-    "question": "In 1957 the American economist Anthony Downs published 'An Economic Theory of Democracy'. He asked what happens when two political parties compete for votes on a single issue. His prediction: both sides would keep shifting their positions toward the one voter standing at the exact middle of opinion — because winning that voter tips the majority. What is this famous result called?",
+    "question": "Anthony Downs asked in 1957 what two parties do when they compete on a single issue. Both, he predicted, drift toward the citizen at the dead center of opinion, because whoever wins him wins the majority. What is this result called?",
     "answer": "The median-voter theorem",
     "choices": [
       "The median-voter theorem",
@@ -1171,7 +1158,7 @@
   },
   {
     "tier": 2,
-    "question": "Anthony Downs's 1957 book made the median-voter theorem famous -- the idea that politicians in a two-party system converge on the voter in the middle. But the real mathematical proof of the idea had actually appeared nine years earlier, in 1948, in a paper by a British economist. What was that economist's last name?",
+    "question": "A British economist proved the mathematics nine years before Anthony Downs made the idea famous in his 1957 book: two parties chasing the voter in the middle. What was that economist's last name?",
     "answer": "Black",
     "choices": [
       "Black",
@@ -1184,7 +1171,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1957 the American economist Anthony Downs applied the median-voter theorem to elections: when two parties compete on a single issue, both drift toward the voter sitting at the exact middle of opinion, because winning that voter tips the majority. Chasing the median means the two campaigns end up sounding suspiciously alike. Political scientists point to one very common complaint about US elections that the theorem explains. Which real-world pattern does it explain?",
+    "question": "A third-party candidate on the campaign trail complains about the two big parties in US politics. Anthony Downs's model, in which both parties chase the citizen at the exact center of opinion, explains his complaint. Which pattern does it explain?",
     "answer": "Two major American parties on many issues look similar at election time",
     "choices": [
       "Two major American parties on many issues look similar at election time",
@@ -1197,7 +1184,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 1957 book 'An Economic Theory of Democracy', the American economist Anthony Downs offered a second big idea beyond his median-voter theorem. He noticed that in an election with millions of voters, one ballot almost never flips the winner, so the personal payoff for spending long evenings researching bills, candidates, and the tax code is nearly zero. Voters, being sensible people, mostly do not bother. What did Downs name this idea?",
+    "question": "Anthony Downs noticed that most citizens skip the homework before an election: few read the bills, study the candidates or check the budgets. He argued that this was no sign of stupidity but a sensible answer to the incentives each voter faces. What name did Downs give the idea?",
     "answer": "Rational ignorance",
     "choices": [
       "Rational ignorance",
@@ -1209,8 +1196,8 @@
     "topic": "anthony-downs-and-the-median-voter-theorem"
   },
   {
-    "tier": 3,
-    "question": "The American economist Anthony Downs, writing in 1957, worked out the math of a single vote in a large election. With millions of ballots being counted, the chance that yours alone flips the winner is vanishingly small. So each hour a citizen spends studying bills, candidates, and budgets pays almost nothing in personal benefit. In Downs's model, what are the private returns to becoming an informed voter?",
+    "tier": 2,
+    "question": "A citizen deciding whether to study every candidate before an election faces the arithmetic Anthony Downs worked out in 1957. Among a hundred million voters, his ballot's odds of deciding the result are about those of a lottery jackpot, and the studying costs whole evenings. In Downs's model, what are the private returns to becoming an informed voter?",
     "answer": "Near zero",
     "choices": [
       "Near zero",
@@ -1223,20 +1210,7 @@
   },
   {
     "tier": 4,
-    "question": "Three friends vote on lunch — pizza, tacos, or sushi — and each one ranks the three options from first to third. In the 1950s the American economist Kenneth Arrow proved something startling about this kind of setup and won a Nobel Prize for it. Is there any voting rule at all that will always pick a single fair winner who beats every rival head-to-head, no matter what rankings the friends happen to hold?",
-    "answer": "No, math shows some sets of preferences make every rule fail",
-    "choices": [
-      "No, math shows some sets of preferences make every rule fail",
-      "Yes, majority rule always gives the fairest answer",
-      "Yes, if everyone ranks honestly the answer is obvious",
-      "Only if there are exactly two choices on the menu"
-    ],
-    "context": "Arrow's Impossibility Theorem (1951) showed no voting rule can satisfy a modest set of intuitive fairness axioms across multidimensional preferences. Arrow was Downs's Stanford dissertation advisor. Source: en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem.",
-    "topic": "anthony-downs-and-the-median-voter-theorem"
-  },
-  {
-    "tier": 4,
-    "question": "The American economist Anthony Downs became famous in 1957 for 'An Economic Theory of Democracy' and its median-voter theorem. In the following decades his career took a surprising turn — he joined the Brookings Institution in Washington and spent the 1960s and 70s writing about a very concrete headache in booming American cities. Which area of urban economics did Downs's later work most influence?",
+    "question": "Anthony Downs, famous since his 1957 book on democracy, turned to a very concrete problem far from voting theory. He wrote about it for decades, later at the Brookings Institution in Washington. Which field did his later work most influence?",
     "answer": "Urban traffic and expressway congestion",
     "choices": [
       "Urban traffic and expressway congestion",
@@ -1248,21 +1222,8 @@
     "topic": "anthony-downs-and-the-median-voter-theorem"
   },
   {
-    "tier": 5,
-    "question": "In 1957 Anthony Downs argued that voters stay uninformed because studying takes time and one ballot almost never decides. Fifty years later, in 2007, the American economist Bryan Caplan published 'The Myth of the Rational Voter' and pushed the idea further. He said the near-zero personal cost of being wrong at the ballot box lets voters indulge cherished biases they would never act on in the grocery aisle or the used-car lot. Beyond just uninformed, what did Caplan say voters actually are?",
-    "answer": "Systematically irrational because the private cost of holding wrong beliefs is zero",
-    "choices": [
-      "Systematically irrational because the private cost of holding wrong beliefs is zero",
-      "Perfectly rational and consistently informed",
-      "Manipulated by hidden elites",
-      "Guided by strong moral principles"
-    ],
-    "context": "Caplan's Myth of the Rational Voter (2007) extended Downs: not just uninformed but systematically wrong, because holding economically incorrect beliefs is privately costless. This is the 'rational irrationality' move. Source: en.wikipedia.org/wiki/The_Myth_of_the_Rational_Voter.",
-    "topic": "anthony-downs-and-the-median-voter-theorem"
-  },
-  {
     "tier": 1,
-    "question": "A hurricane rips through a small town and knocks out power for days. Refrigerators warm, food spoils, and hospitals go dark. A trucker living hundreds of miles away hears the news, drives to a hardware store, spends his own savings buying 19 portable generators, and hauls them into the disaster zone — planning to sell them for roughly double their normal price. What good did his high prices actually do the town?",
+    "question": "A trucker heard that a hurricane had knocked out a town's power for days, leaving food to spoil in warm refrigerators. He bought 19 generators hundreds of miles away, drove them into the disaster zone and priced them at about double what he had paid. What good did his high prices do the town?",
     "answer": "They made it worth his trip -- the town now has generators it would not have had",
     "choices": [
       "They made it worth his trip -- the town now has generators it would not have had",
@@ -1275,7 +1236,7 @@
   },
   {
     "tier": 1,
-    "question": "In August 2005 Hurricane Katrina smashed into Mississippi and cut electricity to thousands of homes. A Kentucky man named John Shepperson bought 19 portable generators, rented a U-Haul, and drove them south to sell to families sitting in the dark. Mississippi had a price-gouging law making it illegal to sell essentials for far above their normal price. What did Mississippi police do to Shepperson when he arrived with his truckload?",
+    "question": "John Shepperson of Kentucky loaded 19 generators onto a rented truck in 2005 and drove south to Mississippi, where Hurricane Katrina had cut power to thousands of homes. State law made it a crime to charge far more than usual for necessities. What did the police do when he arrived?",
     "answer": "They arrested him, confiscated the generators, and jailed him for four days",
     "choices": [
       "They arrested him, confiscated the generators, and jailed him for four days",
@@ -1283,12 +1244,12 @@
       "They escorted him to hurricane shelters as a preferred vendor",
       "They asked him to sell only to registered emergency workers"
     ],
-    "context": "Police arrested Shepperson under Florida's anti-gouging statute, seized his 19 generators, and detained him for four days. The confiscated generators sat unused in police custody while hurricane victims went without power. Source: Munger, Cato Unbound (2007).",
+    "context": "Shepperson was arrested for price gouging, held four days, and the nineteen generators remained in police custody rather than in the hands of anyone in Mississippi. John Stossel used the case on ABC's 20/20; Mark Perry has cited it repeatedly.",
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
     "tier": 2,
-    "question": "A hurricane smashes a small coastal town. Power is out for days. There is no ice for medicine, no way to keep food from spoiling. A man from three states away loads a truck with bags of ice, drives sixteen hours through wreckage, and offers to sell them at triple the normal price to cover his gas, his time, and his risk. Local police arrest him for 'price gouging.' Economists say the arrest carries a hidden cost. What is it?",
+    "question": "Ice runs out in a town that a hurricane has left without power, and a man drives sixteen hours through the wreckage with a truckful to sell. He asks three times the normal price, enough to pay for his gas, his hours and his risk. Police arrest him for price gouging. Which hidden cost do economists see in the arrest?",
     "answer": "Fewer people bring in emergency supplies next time, because the trip does not pay",
     "choices": [
       "Fewer people bring in emergency supplies next time, because the trip does not pay",
@@ -1300,21 +1261,8 @@
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
-    "tier": 2,
-    "question": "After Hurricane Katrina hit Mississippi in 2005, a Kentuckian named John Shepperson bought 19 generators, drove them 600 miles south, and was arrested for 'price gouging' when he tried to sell them. Duke University economist Michael Munger later retold Shepperson's story using the language of one famous 1945 journal article by the Austrian economist Friedrich Hayek about how prices carry information. What is that article's title?",
-    "answer": "The Use of Knowledge in Society",
-    "choices": [
-      "The Use of Knowledge in Society",
-      "The Road to Serfdom",
-      "The Denationalization of Money",
-      "The Fatal Conceit"
-    ],
-    "context": "Hayek, 'The Use of Knowledge in Society' (American Economic Review, September 1945), argued that prices coordinate dispersed knowledge no central planner could possess. Munger applies the argument to disaster price controls. Source: jstor.org (Hayek AER 1945).",
-    "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
-  },
-  {
     "tier": 3,
-    "question": "After Hurricane Katrina battered Mississippi in 2005, John Shepperson drove 19 generators from Kentucky to Mississippi hoping to sell them at a big markup to people without power -- until Mississippi's anti-price-gouging law had him arrested and his generators seized. In the way the Austrian economist Friedrich Hayek would look at it, what had Shepperson's trip really done, and what did Mississippi's law block?",
+    "question": "John Shepperson drove 19 generators from Kentucky to Mississippi, where Hurricane Katrina had cut power to thousands of homes, hoping to sell them at a big markup, until the state's anti-gouging law stopped him. Read the way Friedrich Hayek read markets, what had Shepperson's trip really done?",
     "answer": "He moved scarce capital from a low-value use to a high-value use using the price signal",
     "choices": [
       "He moved scarce capital from a low-value use to a high-value use using the price signal",
@@ -1327,7 +1275,7 @@
   },
   {
     "tier": 3,
-    "question": "Duke University economist Michael Munger wrote a Cato Unbound essay about who really gets emergency supplies to disaster zones after a hurricane. Against people demanding 'fair' fixed prices, he argued the choice actually facing residents on the ground is not fair versus unfair prices but one stark pair. Which pair did Munger name?",
+    "question": "Michael Munger, a Duke University economist, took on the people who demand 'fair' fixed prices after a hurricane in an essay for Cato Unbound in 2007. Residents of a storm zone, he argued, are not really choosing between a fair price and an unfair one. What pair of choices did he say they face instead?",
     "answer": "Expensive supply that arrives versus cheap supply that does not exist",
     "choices": [
       "Expensive supply that arrives versus cheap supply that does not exist",
@@ -1339,21 +1287,8 @@
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
-    "tier": 3,
-    "question": "In the 1970s, oil shocks sent US fuel prices soaring, and the Nixon and Carter administrations responded with federal price caps making it illegal for gas stations to charge more than a set amount per gallon. The caps sat below the price that would clear the market, and the same mess showed up nationwide that price-gouging laws create in single states after storms. Which familiar 1970s symptom did those caps cause at gasoline pumps across the country?",
-    "answer": "Long gas lines at filling stations",
-    "choices": [
-      "Long gas lines at filling stations",
-      "Rapid electric-vehicle adoption",
-      "Federal gasoline rationing bonds",
-      "Voluntary carpooling clubs"
-    ],
-    "context": "The 1973-74 oil crisis and its 1970s aftermath saw federal price controls on gasoline. The visible shortage took the form of hours-long lines at filling stations rather than higher prices. Source: eia.gov (oil crisis history); Yergin, The Prize (Simon & Schuster 1991).",
-    "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
-  },
-  {
     "tier": 4,
-    "question": "In late August 2005, Hurricane Katrina flooded New Orleans and much of the Gulf Coast. The Federal Emergency Management Agency (FEMA) moved slowly, but the retail chain Walmart had bottled water, food, and diapers rolling into Louisiana within days — often before official trucks arrived. Researchers later compared the two responses head to head. Why did the private chain move so much faster than the federal agency?",
+    "question": "Walmart trucks were carrying bottled water, food and diapers into Louisiana within days of Hurricane Katrina in August 2005, often before the official trucks arrived. The Federal Emergency Management Agency was far slower. Two economists, Sobel and Leeson, later documented the gap. Why did the private chain move so much faster?",
     "answer": "Local managers had authority to act without waiting for headquarters",
     "choices": [
       "Local managers had authority to act without waiting for headquarters",
@@ -1365,21 +1300,8 @@
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
-    "tier": 4,
-    "question": "When Hugo Chavez died in 2013, his vice president Nicolas Maduro inherited the presidency of Venezuela and kept expanding the country's tight price-control regime — capping the legal price of bread, milk, medicine, and dozens of other basics far below what it cost to produce them. The American economist Michael Munger has long warned about this exact pattern: setting a legal price below the cost of supplying a good. What did Maduro's years of price controls actually produce in Venezuela?",
-    "answer": "Chronic and severe shortages of basic goods",
-    "choices": [
-      "Chronic and severe shortages of basic goods",
-      "Sudden general abundance of consumer goods",
-      "Rapid convergence with US per-capita income",
-      "The largest sustained economic boom in South American history"
-    ],
-    "context": "Venezuela's price controls under Maduro produced sustained shortages of food, medicine, and household necessities, empty shelves, and mass emigration. It is the extreme modern illustration of the price-control / knowledge-problem link. Source: Grokipedia 'Economic crisis in Venezuela.'",
-    "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
-  },
-  {
     "tier": 5,
-    "question": "The lesson at the heart of the Shepperson case applies across price-control debates. When a rule cuts the price signal in a market where knowledge is spread among many people, what should you expect to happen to the coordination that signal used to make possible?",
+    "question": "A man with a truckload of generators checks the price in a distant storm zone and decides whether the long drive will pay. Friedrich Hayek argued that prices pass along knowledge no planner could ever collect, knowledge scattered among many people. When a rule cuts that price signal, what happens to the coordination it made possible?",
     "answer": "It disappears",
     "choices": [
       "It disappears",
@@ -1392,7 +1314,7 @@
   },
   {
     "tier": 1,
-    "question": "A federal government pays a small group of farmers extra money for growing certain crops -- say sugar, or cotton. The cost is spread across everyone in the country as a tiny tax hike, pennies per shopper per year. Why does this kind of rule almost never get repealed once it is passed?",
+    "question": "A sugar grower collects his government bonus, and so do a few thousand other sugar and cotton farmers; the bill is spread over every shopper in the country at a few pennies each. Why does a rule like this almost never get repealed once it passes?",
     "answer": "The farmers fight hard to keep it; each taxpayer barely notices the cost",
     "choices": [
       "The farmers fight hard to keep it; each taxpayer barely notices the cost",
@@ -1405,7 +1327,7 @@
   },
   {
     "tier": 1,
-    "question": "The US government pays farmers extra money -- called a subsidy -- for growing certain crops such as corn, wheat, or sugar. Suppose Washington announces a big new subsidy for one of those crops. From a single farmer's point of view, what is the main effect of that subsidy on how much of the crop he chooses to plant?",
+    "question": "A farmer learns that the government will start paying him extra money, a subsidy, for the corn he grows. How does a subsidy like this change the amount of corn that gets planted?",
     "answer": "Farmers grow more of it than the market would want on its own",
     "choices": [
       "Farmers grow more of it than the market would want on its own",
@@ -1418,7 +1340,7 @@
   },
   {
     "tier": 2,
-    "question": "The American economist Mancur Olson argued in his 1965 book 'The Logic of Collective Action' that small groups with a large per-person stake will out-organize huge groups with tiny per-person stakes. The US sugar program — a mix of import quotas and price supports that protects a few thousand American sugar growers at the expense of every candy buyer — is often called the purest Olson case in modern policy. Roughly what multiple of the world sugar price does this program push US sugar to?",
+    "question": "A shopper in an American grocery drops a bag of sugar into her cart. The sugar's price carries the cost of a federal program that shelters a few thousand domestic growers with import quotas and price supports. The program is often called the purest case of Mancur Olson's logic in modern policy. Roughly what multiple of the world price does it push US sugar to?",
     "answer": "About twice",
     "choices": [
       "About twice",
@@ -1431,7 +1353,7 @@
   },
   {
     "tier": 2,
-    "question": "The American economist Mancur Olson argued in 1965 that small, tight groups organize far more easily than large, scattered ones. Take the US sugar program: it helps roughly 4,000 domestic sugar producers, who together earn about $1 billion a year from it. It costs each of the 330 million American shoppers only a few extra dollars a year in higher grocery prices. Under Olson's theory, which side is easier to organize?",
+    "question": "Mancur Olson asked in 1965 who bothers to organize when a policy hands a few people a lot and charges everyone else a little. Some 4,000 American sugar producers take in about $1 billion a year from the federal sugar program, while 330 million shoppers each pay a few dollars for it. Under his theory, which side is easier to organize?",
     "answer": "The 4,000 producers",
     "choices": [
       "The 4,000 producers",
@@ -1444,20 +1366,7 @@
   },
   {
     "tier": 3,
-    "question": "The share of US workers needing a state license jumped from 5 percent in 1950 to about a quarter today. Mancur Olson explained why: small groups (barbers, florists) win big from licensing while millions of consumers pay a tiny hidden cost each. What did Olson call this asymmetry?",
-    "answer": "Concentrated benefits, diffuse costs",
-    "choices": [
-      "Concentrated benefits, diffuse costs",
-      "Median voter theorem",
-      "Rational ignorance",
-      "Free-rider problem"
-    ],
-    "context": "Roughly 25% of US workers needed a state license by 2020, up from 5% in 1950. Barbers, hair braiders, morticians, interior designers, tour guides, florists (in some states). Source: Kleiner + Krueger 2013.",
-    "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
-  },
-  {
-    "tier": 3,
-    "question": "In many US states, workers already licensed in a trade -- cosmetologists, dental hygienists, funeral directors -- push state boards to keep licensing rules tough and expensive, so fewer new applicants can enter. The would-be newcomers, still outside the trade, don't push back much even though the rules hurt them the most. Under Mancur Olson's collective-action theory, why can't the outsiders organize a strong counter-push?",
+    "question": "A young man who hopes to open a barbershop finds the state's licensing rules stiff and expensive. Rules like these hurt would-be newcomers most, yet the newcomers barely push back. Under Mancur Olson's theory of collective action, why can't they organize a strong counter-push?",
     "answer": "They are not yet in the profession and cannot organize as members",
     "choices": [
       "They are not yet in the profession and cannot organize as members",
@@ -1470,7 +1379,7 @@
   },
   {
     "tier": 3,
-    "question": "A US state legislature passes a new cosmetology law. To braid hair for pay in that state, a woman now needs a full license -- hundreds of classroom hours and hundreds of dollars in fees. The existing licensed braiders and salon owners lobbied hard for the rule. Under standard occupational-licensing analysis, what usually happens to insider wages, and to newcomers trying to break in?",
+    "question": "A woman who braids hair for pay learns that her state now demands a full cosmetology license: hundreds of classroom hours and hundreds of dollars in fees. Under standard occupational-licensing analysis, what usually happens to insiders' wages, and to newcomers trying to break in?",
     "answer": "Insider wages rise because competition drops; newcomers find it much harder to start",
     "choices": [
       "Insider wages rise because competition drops; newcomers find it much harder to start",
@@ -1483,7 +1392,7 @@
   },
   {
     "tier": 4,
-    "question": "Across the United States, more than a quarter of all jobs now require a government license before a person can legally work — including, in some states, hair braiders, florists, interior designers, and even people who just shampoo customers before a haircut. These rules add training hours, exam fees, and long waits before a newcomer can open shop. Who tends to lobby state capitols hardest to pass and keep these licensing laws in the first place?",
+    "question": "A florist in Louisiana applies for the state license she needs before she may sell arrangements for pay, and about one American worker in four needs a license of some kind, from barbers to tour guides. Such rules add training hours, exam fees and long waits before a newcomer can open shop. Who tends to lobby state capitols hardest to pass and keep these laws?",
     "answer": "Existing workers in the field who want fewer competitors",
     "choices": [
       "Existing workers in the field who want fewer competitors",
@@ -1495,21 +1404,8 @@
     "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
   },
   {
-    "tier": 4,
-    "question": "The American economist Mancur Olson, in his 1965 book The Logic of Collective Action, showed that small tight groups almost always beat big scattered ones in politics. His applied cases share a pattern: whenever a policy delivers big rewards to a small lobby and spreads its costs thinly across a huge indifferent public, the small lobby almost always wins. What is the standard shorthand name for this pattern?",
-    "answer": "Concentrated benefits, dispersed costs",
-    "choices": [
-      "Concentrated benefits, dispersed costs",
-      "Median-voter capture",
-      "Cantillon distortion",
-      "Adverse selection"
-    ],
-    "context": "'Concentrated benefits, dispersed costs' is the standard shorthand for the Olson mechanism. It explains why farm subsidies, sugar tariffs, and occupational licensing all survive despite failing textbook welfare analysis. Source: Olson, Logic of Collective Action.",
-    "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
-  },
-  {
     "tier": 5,
-    "question": "In his 1965 book 'The Logic of Collective Action', the American economist Mancur Olson showed why concentrated interests beat dispersed ones — a small group with a big per-person stake will out-organize a huge group each losing pennies. His fix was to move important decisions up to a level that small pressure groups cannot easily capture and lobby year after year. Which tools are the standard package for doing that?",
+    "question": "A reformer in James Buchanan's tradition, one of Mancur Olson's heirs, looks for a way to stop lobbies like sugar's from winning in ordinary politics every year. He would lift such decisions to a level that small pressure groups cannot easily capture. Which tools make up the standard package for doing that?",
     "answer": "Constitutional-level rules, judicial review, sunset clauses",
     "choices": [
       "Constitutional-level rules, judicial review, sunset clauses",
@@ -1521,21 +1417,8 @@
     "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
   },
   {
-    "tier": 5,
-    "question": "A federal farm law pays 500,000 US farmers about $20,000 each per year in support payments. It costs each of 100 million American taxpayers only about $100 per year -- barely noticed on a single paycheck. The farmers fight hard to keep the law; most taxpayers never even hear of it. In public-choice economics, what is this pattern called?",
-    "answer": "Concentrated benefits and dispersed costs",
-    "choices": [
-      "Concentrated benefits and dispersed costs",
-      "The knowledge problem",
-      "The natural rate of output",
-      "Adverse selection in crop insurance"
-    ],
-    "context": "The AAA is the archetypal founding case: a relatively small farm sector concentrated benefits; 130 million taxpayers dispersed the costs. Olson would have written The Logic of Collective Action about this if the AAA had come 30 years later. Source: Olson (1965).",
-    "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
-  },
-  {
     "tier": 1,
-    "question": "In June 2020, during the COVID lockdowns, Argentina's Congress passed a nationwide rent-control law called Ley 27,551. It rewrote the rules for every apartment lease in the country, forcing longer terms and government-set price changes. What did the law mainly do?",
+    "question": "Argentine lawmakers passed a nationwide rent-control law, numbered 27,551, in June 2020, during the COVID lockdowns. It rewrote the rules for every apartment lease in the country. What did the law mainly do?",
     "answer": "Set three-year minimum leases and indexed rent adjustments",
     "choices": [
       "Set three-year minimum leases and indexed rent adjustments",
@@ -1548,7 +1431,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2020 Argentina's congress passed Ley 27,551, a strict rent-control law that limited how much landlords could charge and how often they could raise the rent in cities like Buenos Aires. Within a single year, real-estate brokers in the capital were reporting a dramatic swing in how many long-term apartments were being posted for rent. What happened to the number of new listings during that first year?",
+    "question": "Real-estate brokers in Buenos Aires counted the long-term apartments posted for rent after Argentina's strict 2020 rent-control law took effect. What happened to the number of new listings within that first year?",
     "answer": "It fell by roughly 40-50 percent",
     "choices": [
       "It fell by roughly 40-50 percent",
@@ -1561,7 +1444,7 @@
   },
   {
     "tier": 2,
-    "question": "After Argentina's 2020 rent-control law Ley 27,551 forced three-year minimum leases and capped rent adjustments, thousands of Buenos Aires landlords pulled their apartments off the long-term rental market. Instead of renting to a family for three fixed years at a controlled rent, where did those units go?",
+    "question": "A landlord in Buenos Aires looked at the new controlled leases after Argentina's 2020 rent-control law and pulled his apartment off the long-term market, as thousands of others did. Rather than sign while inflation ate the payments, the landlords put their units to other uses. Where did those apartments go?",
     "answer": "Airbnb, unfurnished monthly, or held empty",
     "choices": [
       "Airbnb, unfurnished monthly, or held empty",
@@ -1574,20 +1457,20 @@
   },
   {
     "tier": 2,
-    "question": "In late 2023, Argentine voters elected a new president -- Javier Milei, a wild-haired economist who campaigned waving a chainsaw as his symbol for cutting government. He promised to slash public spending, end price caps, tame the country's runaway inflation, and scrap a strict rent-control law. Milei openly named the tradition of economic thought he followed. Which school was it?",
-    "answer": "The Austrian school — small government, sound money, free prices",
+    "question": "Javier Milei waved a chainsaw on the campaign trail in 2023 and won Argentina's presidency that November. What label does he openly and proudly use for himself?",
+    "answer": "Anarcho-capitalist and Austrian-school",
     "choices": [
-      "The Austrian school — small government, sound money, free prices",
-      "Full state planning of every industry",
-      "Higher tariffs and more subsidies for local firms",
-      "More government hiring and free public jobs"
+      "Anarcho-capitalist and Austrian-school",
+      "Peronist national socialism",
+      "Third-way social democracy",
+      "Latin American structuralism"
     ],
-    "context": "Javier Milei, an economist and self-described anarcho-capitalist, won the November 19, 2023 runoff against Peronist Sergio Massa. Rent-control repeal was a specific campaign issue. Source: en.wikipedia.org/wiki/Javier_Milei.",
+    "context": "Javier Milei, an economist and self-described anarcho-capitalist, won the November 19, 2023 runoff against Peronist Sergio Massa. Rent-control repeal was a specific campaign issue. Milei has publicly identified as an anarcho-capitalist and Austrian-school economist, citing Rothbard, Mises, and Hayek as intellectual influences in campaign speeches and interviews.",
     "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
   },
   {
     "tier": 3,
-    "question": "In late December 2023, Argentina's new libertarian president Javier Milei — a chainsaw-waving economist elected weeks earlier on a promise to slash the state — signed a sweeping emergency order during his first month in office. In one stroke it struck down the 2020 rent-control law Ley 27,551 along with hundreds of other regulations. What is that particular kind of Argentine presidential order called?",
+    "question": "Javier Milei, within his first three weeks as Argentina's president, signed a sweeping emergency order in late December 2023 that struck down or reshaped hundreds of laws in one go, the 2020 rent law among them. What is that kind of Argentine presidential order called?",
     "answer": "A Decreto de Necesidad y Urgencia (DNU)",
     "choices": [
       "A Decreto de Necesidad y Urgencia (DNU)",
@@ -1600,7 +1483,7 @@
   },
   {
     "tier": 3,
-    "question": "In late 2023, Argentina's new libertarian president Javier Milei used a sweeping emergency decree to wipe out the 2020 rent-control law Ley 27,551. Within a few months, Buenos Aires saw a dramatic shift in rental supply as landlords returned to the market. What happened to new rental listings?",
+    "question": "Landlords across Buenos Aires watched the rent caps fall away on December 29, 2023, when Javier Milei's decree took effect. What happened over the next few months to rental listings in the city, and to their rents?",
     "answer": "Supply tripled and real rents on new listings fell",
     "choices": [
       "Supply tripled and real rents on new listings fell",
@@ -1613,7 +1496,7 @@
   },
   {
     "tier": 4,
-    "question": "Argentina lived through a rare natural experiment in rent control. From 2020 through 2023, Ley 27,551 capped what landlords in Buenos Aires and other cities could charge and how often they could raise the rent. In late 2023, president Javier Milei's mega-decree lifted the caps entirely, and by 2024 long-term apartments were flowing back onto the market. Looking at the whole three-and-a-half-year cycle — supply falls with caps on, supply returns with caps off — what plain economic lesson does the story show most clearly?",
+    "question": "Javier Milei lifted Argentina's rent caps at the end of 2023, after Congress had imposed them in June 2020, so one rental market felt the caps both go on and come off. Set side by side, what plain economic lesson do the two halves teach?",
     "answer": "An intervention that reduces the profitability of supplying rental housing will reduce the quantity supplied",
     "choices": [
       "An intervention that reduces the profitability of supplying rental housing will reduce the quantity supplied",
@@ -1626,7 +1509,7 @@
   },
   {
     "tier": 4,
-    "question": "Most academic studies of rent control only observe the years while the caps are in force, so critics can always claim that lifting them would not actually undo the damage. Argentina's 2020-to-2024 episode is unusual: strict caps under Ley 27,551 sat on Buenos Aires for over three years, and then in December 2023 president Javier Milei's emergency decree lifted them entirely. What feature of the aftermath made this such an unusually clean test of rent-control theory?",
+    "question": "Javier Milei's decree swept away Argentina's rent caps in December 2023, more than three years after they began. Most research on rent control watches only the years the caps are on, which leaves defenders free to claim that lifting them would not undo the damage. What about Argentina's aftermath made it an unusually clean test?",
     "answer": "The ceiling was fully lifted and supply rebounded within months",
     "choices": [
       "The ceiling was fully lifted and supply rebounded within months",
@@ -1639,7 +1522,7 @@
   },
   {
     "tier": 5,
-    "question": "Argentine president Javier Milei's December 2023 mega-decree — the Decreto de Necesidad y Urgencia that struck down hundreds of regulations at once — was quickly challenged in Argentina's courts on constitutional grounds. Judges froze pieces of the decree, but the specific portion that repealed the 2020 rent-control law Ley 27.551 survived every challenge. What is the standing status of Ley 27.551 as of 2026?",
+    "question": "Opponents took Javier Milei's sweeping December 2023 decree to court, where judges froze some of its parts. Among the hundreds of rules the decree reached was Argentina's 2020 rent-control law, Ley 27,551. What became of that law?",
     "answer": "Repealed and rental market operates under general contract law",
     "choices": [
       "Repealed and rental market operates under general contract law",
@@ -1651,34 +1534,8 @@
     "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
   },
   {
-    "tier": 5,
-    "question": "Javier Milei, elected president of Argentina in November 2023, quickly moved to slash federal spending, openly discuss dollarizing the peso, and repeal the 2020 rent-control law Ley 27,551. His wider economic program has drawn global press coverage and shocked much of the Latin American left. What label does Milei himself openly and proudly use for his stance?",
-    "answer": "Anarcho-capitalist and Austrian-school",
-    "choices": [
-      "Anarcho-capitalist and Austrian-school",
-      "Peronist national socialism",
-      "Third-way social democracy",
-      "Latin American structuralism"
-    ],
-    "context": "Milei has publicly identified as an anarcho-capitalist and Austrian-school economist, citing Rothbard, Mises, and Hayek as intellectual influences in campaign speeches and interviews. Source: en.wikipedia.org/wiki/Javier_Milei.",
-    "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
-  },
-  {
     "tier": 1,
-    "question": "Imagine a US president standing in the Oval Office, phone in hand, calling the chairman of the Federal Reserve — the central bank that decides how much money is created and how expensive it is to borrow. The president wants interest rates cut and more dollars printed, so that voters feel richer heading into election day. What is the hidden cost, later on, of that kind of choice?",
-    "answer": "Higher prices later -- printing extra money causes inflation",
-    "choices": [
-      "Higher prices later -- printing extra money causes inflation",
-      "Nothing -- cheap money is free",
-      "The election gets cancelled",
-      "Foreign countries lose all their money"
-    ],
-    "context": "Burns had a distinguished academic career at Columbia and had led the NBER. He inherited an economy already carrying inflationary pressure from 1960s Great Society and Vietnam War spending. Source: Grokipedia 'Arthur Burns' (2026-09-05).",
-    "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
-  },
-  {
-    "tier": 1,
-    "question": "In the early 1970s, US President Richard Nixon leaned hard on Federal Reserve chair Arthur Burns to keep interest rates low. Cheap credit would make the American economy feel booming, and Nixon was hoping to help his own timing on one big personal event. What was that event?",
+    "question": "Richard Nixon leaned hard on Arthur Burns, his chairman at the Federal Reserve, in the early 1970s to keep interest rates low. Cheap credit would make the economy feel like a boom, and Nixon had one big personal event in mind. What was it?",
     "answer": "The November 1972 re-election",
     "choices": [
       "The November 1972 re-election",
@@ -1691,7 +1548,7 @@
   },
   {
     "tier": 2,
-    "question": "The Federal Reserve chair whom President Richard Nixon pressured for low interest rates in the early 1970s kept a private diary about Nixon's demands. The diary stayed sealed for decades and only came out in print in 2010, long after that chair had died in 1987. What is that published diary called?",
+    "question": "The Federal Reserve chairman whom Richard Nixon pressed for cheap money kept a private diary through those years. It stayed unpublished long after the chairman died in 1987 and appeared in print only in 2010, confirming what the White House tapes had shown. What is the published diary called?",
     "answer": "Inside the Nixon Administration: The Secret Diary of Arthur Burns 1969-1974",
     "choices": [
       "Inside the Nixon Administration: The Secret Diary of Arthur Burns 1969-1974",
@@ -1704,7 +1561,7 @@
   },
   {
     "tier": 2,
-    "question": "Through the 1970s the US Federal Reserve, led by chairman Arthur Burns, kept money cheap and interest rates low even as prices began to climb. Middle Eastern oil producers cut supply in 1973 and again in 1979, pushing American fuel prices sharply higher. US consumer prices rose year after year, wiping out savings and squeezing paychecks. By 1980, how high did the yearly consumer-price inflation rate reach?",
+    "question": "Arab oil producers cut supply in 1973 while Arthur Burns's Federal Reserve was keeping money cheap, and Iran's revolution cut it again in 1979. Yearly inflation had already hit 11 percent in 1974. How high did it reach in 1980, the peak year?",
     "answer": "About 13.5 percent",
     "choices": [
       "About 13.5 percent",
@@ -1716,34 +1573,8 @@
     "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
   },
   {
-    "tier": 3,
-    "question": "By the mid-1970s the US and Britain saw both inflation and unemployment shoot up at the same time -- a shock the newspapers called 'stagflation.' A leading Keynesian model, built from a 1958 study by the New Zealand economist A.W. Phillips, said this could not happen. Phillips's model claimed unemployment always fell when inflation rose, and rose when inflation fell. What is this model called?",
-    "answer": "The Phillips curve",
-    "choices": [
-      "The Phillips curve",
-      "The IS-LM model",
-      "The Laffer curve",
-      "The Solow growth model"
-    ],
-    "context": "The Phillips curve, dating to A.W. Phillips's 1958 paper, held that inflation and unemployment traded off. The 1970s showed both could rise together -- 'stagflation' -- which the model could not explain. Source: Grokipedia 'Phillips curve' (2026-09-05).",
-    "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
-  },
-  {
-    "tier": 3,
-    "question": "A central bank tries to lower unemployment by printing extra money, letting prices creep up so employers hire more workers. The trick works at first. After a few rounds, workers catch on: they expect the higher prices next year and demand pay raises to match. The economist Milton Friedman warned in the late 1960s that this would happen. What then happens to the money-printing trade-off?",
-    "answer": "It breaks: unemployment goes back up, but inflation stays high too",
-    "choices": [
-      "It breaks: unemployment goes back up, but inflation stays high too",
-      "It gets stronger: each new round of printing lowers unemployment more",
-      "It vanishes: prices go back to their old level",
-      "It reverses: unemployment falls to zero permanently"
-    ],
-    "context": "Friedman's December 1967 AEA presidential address 'The Role of Monetary Policy' (delivered December 29 1967, published 1968) predicted stagflation. The 1970s proved him right and mainstream Keynesianism spectacularly wrong. Source: Grokipedia 'Milton Friedman' (2026-09-05).",
-    "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
-  },
-  {
     "tier": 4,
-    "question": "Arthur Burns chaired the US Federal Reserve from 1970 to 1978. Under pressure from Presidents Nixon and Ford, he kept money cheap and let inflation run wild — grocery bills nearly doubled. Austrian-school economists like Murray Rothbard argued Burns's failure was not just bad luck under one weak chairman but proof of a built-in flaw in the very institution of a central bank. What flaw did they say the institution had?",
+    "question": "Murray Rothbard and other Austrian-school writers would not put Arthur Burns's record at the Federal Reserve down to bad luck or a weak chairman. Burns had kept money cheap under pressure from Nixon, and they saw in it proof of a built-in flaw in the institution itself. What flaw did they name?",
     "answer": "Any institution empowered to expand credit will be captured by politicians who benefit from short-term stimulus regardless of long-term cost",
     "choices": [
       "Any institution empowered to expand credit will be captured by politicians who benefit from short-term stimulus regardless of long-term cost",
@@ -1756,7 +1587,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1979, a year after leaving the chairmanship of the US Federal Reserve, Arthur Burns delivered a famous speech titled 'The Anguish of Central Banking'. He confessed that central bankers cannot easily hold the line against inflation because one specific outside pressure keeps pushing them to loosen the money supply. What political pressure was Burns describing in that speech?",
+    "question": "Arthur Burns gave a lecture in Belgrade in 1979, a year after leaving the Federal Reserve, titled 'The Anguish of Central Banking.' He confessed that central bankers struggle to stand firm against inflation, because one outside force keeps leaning on them to loosen money. What pressure was he describing?",
     "answer": "Elected leaders push for cheap credit to help them win the next election",
     "choices": [
       "Elected leaders push for cheap credit to help them win the next election",
@@ -1769,7 +1600,7 @@
   },
   {
     "tier": 5,
-    "question": "Arthur Burns chaired the US Federal Reserve from 1970 to 1978. When the first wave of 1970s inflation eased, Burns cut interest rates too early, and a second, worse surge of inflation hit later that decade -- eventually forcing Paul Volcker, chair from 1979, to jack rates above 20 percent to break it. Austrian analysts point to Burns as a warning for the 2020s Fed. If the modern Fed cuts rates too early today, what specific 1980s outcome do they warn will recur?",
+    "question": "Arthur Burns cut interest rates when the first wave of 1970s inflation died down, and expectations of rising prices came loose. Austrian analysts hold up his mistake as a warning to every central bank tempted to ease early. What sequel do they warn an early cut invites?",
     "answer": "A second inflation wave requiring extraordinary rate hikes like Volcker's 20 percent",
     "choices": [
       "A second inflation wave requiring extraordinary rate hikes like Volcker's 20 percent",
@@ -1782,7 +1613,7 @@
   },
   {
     "tier": 5,
-    "question": "Arthur Burns was a distinguished Columbia economics professor and business-cycle scholar. In 1970 President Nixon named him chairman of the US Federal Reserve. Burns knew from his own theoretical work what loose money would produce. But when Nixon pressured him to keep interest rates low ahead of the 1972 election, Burns caved. The Great Inflation of the 1970s followed. What lesson about central-bank appointments does his tenure teach?",
+    "question": "Richard Nixon named Arthur Burns chairman of the Federal Reserve in 1970, and Burns had every credential the job could want: a celebrated Columbia professor and an expert on business cycles. Nixon pressed him for cheap money, and the Great Inflation followed. What lesson about central-bank appointments does Burns's tenure teach?",
     "answer": "An academically distinguished appointee with proper theoretical training can still cave to political pressure and produce the exact inflationary outcome his training warned against",
     "choices": [
       "An academically distinguished appointee with proper theoretical training can still cave to political pressure and produce the exact inflationary outcome his training warned against",
@@ -1795,7 +1626,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2009 and 2010, when Bitcoin was brand new, everyone mined coins on the same kind of chip. Satoshi Nakamoto (Bitcoin's mysterious inventor) did it, the early cryptographer Hal Finney did it, and any regular hobbyist at home could too. Which common chip did they all use during Bitcoin's first eighteen months?",
+    "question": "Satoshi Nakamoto mined Bitcoin in 2009 on the same kind of chip that Hal Finney, a cryptographer, and any hobbyist at home could use. Which common chip did they all mine with in 2009 and 2010?",
     "answer": "The CPU inside every ordinary laptop and desktop",
     "choices": [
       "The CPU inside every ordinary laptop and desktop",
@@ -1808,7 +1639,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2010, Bitcoin miners discovered a trick. The specialized rendering chip inside a video-game card could crunch Bitcoin's hashing puzzle roughly 50 to 100 times faster than the normal computer chip they had been using. Word spread quickly on Bitcoin forums, and gamers began repurposing their gaming rigs to mine coins around the clock. Which kind of chip took over Bitcoin mining in 2010 and 2011?",
+    "question": "Bitcoin miners stumbled on a trick in 2010. The rendering chip inside a video-game card could crunch the network's hashing puzzle roughly 50 to 100 times faster than the normal computer chip they had been using. Gamers set their machines mining day and night. Which kind of chip took over mining?",
     "answer": "The GPU (graphics processing unit)",
     "choices": [
       "The GPU (graphics processing unit)",
@@ -1821,7 +1652,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin mining evolved in four steps. First, hobbyists used the ordinary Central Processing Unit (CPU) inside a home computer. Then in 2010 miners switched to GPUs -- the fast parallel chips inside gaming graphics cards. Around 2011 they moved to FPGAs, chips a buyer can reprogram for one specific job. Finally by 2013 came ASICs, chips baked to run only Bitcoin's hashing math and nothing else. Why did each new step outcompete the last one?",
+    "question": "A Bitcoin miner unplugged his old rig and switched on a chip built for narrower work, as miners did at every step from 2009 to 2013. Each generation drove the older one out of the race. Why did each new step win?",
     "answer": "Each step used less energy per calculation, so older miners could not cover their power bill",
     "choices": [
       "Each step used less energy per calculation, so older miners could not cover their power bill",
@@ -1834,7 +1665,7 @@
   },
   {
     "tier": 3,
-    "question": "An ASIC (Application-Specific Integrated Circuit) is a computer chip designed to do exactly one calculation -- for Bitcoin miners, the SHA-256 (Secure Hash Algorithm 256) hashing math the network needs -- and absolutely nothing else. A general-purpose Central Processing Unit (CPU) inside a laptop can also run that math, but the two chips are wildly different at any other kind of work. Compared to that general-purpose chip trying to do the same job, what is the trade-off?",
+    "question": "Butterfly Labs and Avalon shipped a new kind of Bitcoin mining chip in early 2013: application-specific integrated circuits, able to compute the network's hashing puzzle and nothing else. A laptop's general-purpose processor can run the same puzzle. Set against that processor, what is the trade-off of the single-purpose chip?",
     "answer": "The single-purpose chip is far faster and cheaper per calculation, but useless for anything else",
     "choices": [
       "The single-purpose chip is far faster and cheaper per calculation, but useless for anything else",
@@ -1847,7 +1678,7 @@
   },
   {
     "tier": 4,
-    "question": "During Bitcoin's first few years, anyone with a home computer could plug in, run the mining software, and earn coins. By 2015, hobbyists could no longer keep up: a handful of large factories in China, notably in Sichuan and Inner Mongolia, had built warehouses full of purpose-built Application-Specific Integrated Circuit (ASIC) chips -- silicon designed to do only Bitcoin's hashing math. What made home mining stop being profitable?",
+    "question": "A hobbyist mining Bitcoin on his home computer found by 2015 that he could no longer keep up. Mining farms in China, many of them in Sichuan and Inner Mongolia, had filled whole warehouses with application-specific integrated circuits: silicon designed to do only Bitcoin's hashing math. What made home mining stop paying?",
     "answer": "Purpose-built mining chips are thousands of times faster than home computers",
     "choices": [
       "Purpose-built mining chips are thousands of times faster than home computers",
@@ -1860,7 +1691,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin mining runs on special chips called Application-Specific Integrated Circuits, or ASICs. Companies spend millions of dollars building each ASIC to compute one thing: the one math puzzle Bitcoin uses to add new blocks. An ASIC cannot run video games, browse the web, or edit photos. Why does this narrow use actually make Bitcoin more secure?",
+    "question": "A mining company sinks millions into chips that can compute Bitcoin's puzzle and nothing else: they cannot run a video game, browse the web or edit a photo. Critics call such narrow hardware centralization. Why does that narrowness make Bitcoin more secure?",
     "answer": "Miners have no way to abandon Bitcoin and reuse their expensive hardware",
     "choices": [
       "Miners have no way to abandon Bitcoin and reuse their expensive hardware",
@@ -1873,7 +1704,7 @@
   },
   {
     "tier": 5,
-    "question": "In June 2021 the Chinese government banned Bitcoin mining across the whole country. At the time, over half the world's Bitcoin hash power — the computers racing to solve mining puzzles — lived in China. Millions of specialized mining machines had to be packed up and shipped out to new homes. The great migration lasted months. Which set of destinations absorbed most of the migrating hash power?",
+    "question": "Miners in China packed up millions of machines after Beijing banned Bitcoin mining outright in June 2021. Over half of all the computing power securing Bitcoin had been running inside China, and the move took months. Which set of destinations absorbed most of the migrating machines?",
     "answer": "Texas, Kazakhstan, Iceland, and Paraguay (Itaipu Dam hydroelectric)",
     "choices": [
       "Texas, Kazakhstan, Iceland, and Paraguay (Itaipu Dam hydroelectric)",
@@ -1886,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "Modern economies have booms and busts. Growth roars for years, then suddenly crashes. In 1936, John Maynard Keynes blamed swings in mood, from hope to fear. Ludwig von Mises and Friedrich Hayek gave a different reason. They said the real cause was one policy tool being misused. Which tool did the Austrians blame?",
+    "question": "John Maynard Keynes blamed the swings of boom and bust in 1936 on shifting moods, the slide from hope into fear. Ludwig von Mises and Friedrich Hayek pointed somewhere else: at one policy tool being misused. Which tool did the Austrians blame?",
     "answer": "Artificially low interest rates set by a central bank",
     "choices": [
       "Artificially low interest rates set by a central bank",
@@ -1899,7 +1730,7 @@
   },
   {
     "tier": 1,
-    "question": "Ludwig von Mises first laid out what became the Austrian idea of booms and busts in a 1912 book. Friedrich Hayek then wrote two books that built on it, both by the time he was thirty-two. In which two decades did the young Hayek publish those two books?",
+    "question": "Ludwig von Mises first set out his account of boom and bust in a 1912 book. Friedrich Hayek built on it in two books of his own, the second of which made him famous worldwide at thirty-two. In which two decades did Hayek publish them?",
     "answer": "The 1920s and 1930s",
     "choices": [
       "The 1920s and 1930s",
@@ -1912,20 +1743,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1920s, a small circle of Austrian economists -- Ludwig von Mises in Vienna, and his young student Friedrich Hayek -- warned that keeping bank loans too cheap for too long would set off a boom of bad investments that would inevitably crash. When the Wall Street crash of October 1929 hit and the Great Depression followed, they were proven right. What is this line of thinking called?",
-    "answer": "Austrian Business Cycle Theory",
-    "choices": [
-      "Austrian Business Cycle Theory",
-      "Comparative advantage theory",
-      "Rational expectations theory",
-      "The efficient markets hypothesis"
-    ],
-    "context": "Hayek's Monetary Theory and the Trade Cycle (1929) and Prices and Production (1931) developed the theory that predicted a major crash was coming; the 1974 Nobel citation reads as retroactive vindication. Comparative advantage is Ricardo 1817; rational expectations is Lucas and Muth 1960s-70s; efficient markets is Fama 1970 -- none of these are Hayek's. Source: iea.org.uk/hayek-and-the-nobel-prize-50-years-on/.",
-    "topic": "austrian-business-cycle-theory-abct"
-  },
-  {
-    "tier": 2,
-    "question": "In 1929 Ludwig von Mises refused a top job at Austria's Kreditanstalt, telling his fiancee 'a great crash is coming.' Two years later the bank collapsed, triggering Europe's banking crisis. On which of his own theories did Mises base that prediction?",
+    "question": "Ludwig von Mises refused a senior job at Austria's great Kreditanstalt bank in 1929, and told his fiancée why: a great crash was on its way. The bank collapsed in May 1931, setting off a banking crisis across Europe. Which of his own theories lay behind the forecast?",
     "answer": "Austrian business cycle theory",
     "choices": [
       "Austrian business cycle theory",
@@ -1938,20 +1756,20 @@
   },
   {
     "tier": 3,
-    "question": "A developer sees very cheap 1% loans and starts a fifteen-year housing project. Others do the same in every long-term industry. Two years later, rates rise to 4% and many of those projects no longer make sense — some get abandoned mid-build. What do Austrian economists call projects like these?",
-    "answer": "Malinvestments",
+    "question": "A developer takes a loan at just 1 percent and starts a fifteen-year housing project, and builders in other long-term industries follow. Two years later rates rise to 4 percent. Many of the projects no longer make sense, and some are abandoned mid-build. What do Austrian economists call projects like these?",
+    "answer": "Malinvestment",
     "choices": [
-      "Malinvestments",
-      "Public goods",
-      "Positive externalities",
-      "Comparative advantages"
+      "Malinvestment",
+      "Overproduction",
+      "Excess capacity",
+      "Speculation"
     ],
-    "context": "MALINVESTMENT is the core ABCT concept -- resources committed to structures of production that cannot in fact be sustained. Not 'bad investment' in the ordinary sense but investment that would have been correct if the rate signal had been true; the misallocation is traceable to the rate distortion, not to entrepreneurial stupidity. Public goods, positive externalities, and comparative advantages are unrelated concepts from public finance, welfare economics, and trade theory. Source: mises.org/quarterly-journal-austrian-economics/explaining-malinvestment-and-overinvestment.",
+    "context": "MALINVESTMENT is the core ABCT concept -- resources committed to structures of production that cannot in fact be sustained. Not 'bad investment' in the ordinary sense but investment that would have been correct if the rate signal had been true; the misallocation is traceable to the rate distortion, not to entrepreneurial stupidity.",
     "topic": "austrian-business-cycle-theory-abct"
   },
   {
     "tier": 3,
-    "question": "The Federal Reserve under Alan Greenspan cut the federal funds rate from 6.5% in late 2000 down to 1.0% by mid-2003, and held it at 1% from June 2003 to June 2004. Austrian analysts writing at the time argued that a specific market -- especially sensitive to long-term interest rates -- would be the main sink for the resulting malinvestment. Which market did they identify?",
+    "question": "Alan Greenspan drove the Federal Reserve's key rate down from 6.5 percent late in 2000 to 1 percent by mid-2003, then kept it there for a year. Austrian analysts at the time named one market, especially sensitive to long-term interest rates, as the main sink for projects that cheap money would set going. Which market did they name?",
     "answer": "Housing and residential real estate",
     "choices": [
       "Housing and residential real estate",
@@ -1964,7 +1782,7 @@
   },
   {
     "tier": 4,
-    "question": "Peter Schiff, an American investment adviser trained in Austrian economics by his father Irwin, spent 2005 through 2007 warning of a US housing crash on cable business shows, where the standard reaction was open laughter. On the last day of 2006, in a Fox News debate, Schiff pushed one specific Austrian call. Which claim did he make?",
+    "question": "Peter Schiff, an investment adviser raised on Austrian economics by his father Irwin, kept warning on cable business shows about where the housing market was headed, and fellow guests often laughed at him. In a Fox News debate on the last day of 2006, he pressed one specific Austrian call. Which call was it?",
     "answer": "US real-estate prices would crash back to Earth in 2007",
     "choices": [
       "US real-estate prices would crash back to Earth in 2007",
@@ -1976,21 +1794,8 @@
     "topic": "austrian-business-cycle-theory-abct"
   },
   {
-    "tier": 4,
-    "question": "A book on the 1929 stock crash blamed one particular Federal Reserve action during the 1920s. The Federal Reserve pushed interest rates artificially low to help foreign banks. What does Austrian economics say cheap central-bank credit does to an economy?",
-    "answer": "It fuels a boom that ends in a crash as bad bets get exposed",
-    "choices": [
-      "It fuels a boom that ends in a crash as bad bets get exposed",
-      "It permanently makes everyone richer with no downside",
-      "It has no effect on business decisions of any kind",
-      "It only touches prices, never the pattern of production"
-    ],
-    "context": "Strong ran the New York Fed 1914-1928 and drove the Fed's 1920s low-rate policy, partly to help Britain return to gold at the pre-war parity. Rothbard traced the boom to Strong's inflationary credit expansion and the 1929 collapse to its inevitable correction. Marriner Eccles chaired the Fed 1934-1948; Paul Warburg was a founding governor 1914-1918; William McChesney Martin chaired 1951-1970. Source: en.wikipedia.org/wiki/America%27s_Great_Depression.",
-    "topic": "austrian-business-cycle-theory-abct"
-  },
-  {
     "tier": 5,
-    "question": "A town builds too many empty office towers during a lending boom. When the boom ends, buyers won't touch them at boom-era prices. Austrian-school economists say: if the government now steps in and buys the empty towers at boom prices, what happens to the correction?",
+    "question": "A lending boom ends, and a town is left with empty office towers that buyers will not touch at boom-era prices. The government now steps in and buys the towers at those boom prices. What do Austrian-school economists say happens to the correction?",
     "answer": "The correction drags on, because bad projects are kept alive instead of cleared",
     "choices": [
       "The correction drags on, because bad projects are kept alive instead of cleared",
@@ -2003,7 +1808,7 @@
   },
   {
     "tier": 5,
-    "question": "The Austrian economists Ludwig von Mises and Friedrich Hayek argued that in a healthy market -- one where a central bank isn't meddling with interest rates -- borrowing costs would settle at a level where the total amount people want to save exactly equals the total amount businesses want to borrow for real projects like factories, farms, and new equipment. What is the technical name for that reference rate?",
+    "question": "Knut Wicksell, a Swedish economist, asked where borrowing costs would settle if no central bank touched interest rates. His answer: at the level where the total people choose to save equals the total businesses want to borrow for factories, farms and new equipment. That level is the yardstick behind Ludwig von Mises and Friedrich Hayek's account of boom and bust. What is that reference rate called?",
     "answer": "The natural rate of interest",
     "choices": [
       "The natural rate of interest",
@@ -2016,7 +1821,7 @@
   },
   {
     "tier": 5,
-    "question": "John Maynard Keynes wrote a famous 1936 book on the boom-bust cycle. He turned down the monetary story and instead pointed to a mental force at the wheel -- spontaneous urges to invest that swing between confidence and panic. Keynes gave those urges a memorable two-word name. Which name?",
+    "question": "John Maynard Keynes put a new driver of the boom-bust cycle into his 1936 book, The General Theory: not money but a force in the mind. Keynes described spontaneous urges to invest that swing between confidence and panic, and gave them a memorable two-word name. What was it?",
     "answer": "Animal spirits",
     "choices": [
       "Animal spirits",
@@ -2029,7 +1834,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2000, the American economist Thomas Sowell -- a former Marxist who had become a Chicago-school defender of free markets, then 70 years old -- published a book aimed squarely at a working adult who had never taken an economics class. Basic Books put it out. By 2015 it had gone through five editions and been translated into more than a dozen languages. What was the book called?",
+    "question": "Thomas Sowell, a former Marxist trained at the University of Chicago, wrote a book in 2000 for adults with jobs who had never taken a class in the subject. Five editions later it runs to roughly 800 pages. What is it called?",
     "answer": "Basic Economics",
     "choices": [
       "Basic Economics",
@@ -2042,7 +1847,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Sowell is an American economist trained at the University of Chicago. In 2000 he published Basic Economics, a book written to explain how economies work to readers who had never taken a class. Later editions run about 800 pages. One choice by Sowell makes his book stand out from every other economics textbook on the shelf. What is that choice?",
+    "question": "A reader opening the fifth edition of Thomas Sowell's Basic Economics finds roughly 800 pages built from real cases rather than abstract theory. One deliberate choice sets the book apart from nearly every other economics textbook. What is it?",
     "answer": "No graphs, no equations, no algebra anywhere in the book",
     "choices": [
       "No graphs, no equations, no algebra anywhere in the book",
@@ -2055,7 +1860,7 @@
   },
   {
     "tier": 3,
-    "question": "Thomas Sowell's Basic Economics (2000) uses real cases instead of math models. It draws on Ghana's rice farms, US rent control, apartheid South Africa's labor rules, Ireland's famine, and post-Soviet Europe. Rather than march through theories one at a time, Sowell groups his chapters a different way. How does the book group its chapters?",
+    "question": "Thomas Sowell filled Basic Economics with real cases: Ghana's rice farms, American rent control, apartheid's labor rules, post-Soviet Europe. Rather than march through theories one at a time, Sowell grouped his chapters another way. How did the book group them?",
     "answer": "Organization by institution -- Prices, Production, Work and Pay, Time and Risk, National, International",
     "choices": [
       "Organization by institution -- Prices, Production, Work and Pay, Time and Risk, National, International",
@@ -2068,7 +1873,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1932 the British economist Lionel Robbins wrote a famous definition of the field: economics is the study of how people use scarce resources that could serve many different needs. Because time, money, and effort are always limited but human wants are not, what kind of decision does Robbins's definition force on every person, every single day?",
+    "question": "Lionel Robbins, a British economist, wrote in 1932 that economics is the study of how people use scarce means that could serve many different ends. Thomas Sowell built Basic Economics on that definition. Time, money and effort are always limited, but human wants are not. What kind of decision does that force on every person, every day?",
     "answer": "A tradeoff -- picking one use means giving up others",
     "choices": [
       "A tradeoff -- picking one use means giving up others",
@@ -2080,21 +1885,8 @@
     "topic": "basic-economics-2000-800-pages-no-graphs"
   },
   {
-    "tier": 4,
-    "question": "Thomas Sowell's Basic Economics (2000) is a long book — 800 pages, meant to be read across a summer. Fans often describe it as the broader version of an older short book from 1946, one so tight a reader can finish it in a single afternoon. That older book argued that policies must be judged by their unseen effects, not their good intentions. What was the older short book?",
-    "answer": "Henry Hazlitt's 'Economics in One Lesson'",
-    "choices": [
-      "Henry Hazlitt's 'Economics in One Lesson'",
-      "John Maynard Keynes's 'The Economic Consequences of the Peace'",
-      "Friedrich Hayek's 'Prices and Production'",
-      "Ludwig von Mises's 'Bureaucracy'"
-    ],
-    "context": "Hazlitt (1946) built his book around a single lesson: consider the effect of a policy not only on those it obviously affects, but on all groups over the long term. Sowell's Basic Economics applies the same reasoning approach across scenes and institutions. Source: grokipedia.com/page/Economics_in_One_Lesson.",
-    "topic": "basic-economics-2000-800-pages-no-graphs"
-  },
-  {
     "tier": 5,
-    "question": "Thomas Sowell is an American economist at the Hoover Institution who writes plainly for ordinary readers. In 2000 he published 'Basic Economics,' a book with almost no charts or equations that explains prices, wages, and trade one clear paragraph at a time. Since that first edition it has become the book most often recommended as the first serious economics reading for a high schooler or a curious adult. What is one specific reason for that reach?",
+    "question": "Thomas Sowell, an economist at the Hoover Institution who writes for ordinary readers, published Basic Economics in 2000. It has since become the book people most often recommend to a high schooler as a first serious economics read. What is one specific reason for that reach?",
     "answer": "It has been translated into eight or more languages and is widely used in home-school economics curricula",
     "choices": [
       "It has been translated into eight or more languages and is widely used in home-school economics curricula",
@@ -2172,7 +1964,7 @@
   },
   {
     "tier": 1,
-    "question": "In February 1848 France overthrew King Louis Philippe and set up the Second Republic. One of the new government's first big acts was ending slavery in every French colony. The abolitionist Victor Schoelcher drafted the decree in Paris that April. What was the date of that order?",
+    "question": "Victor Schoelcher, an abolitionist of twenty years' standing, drafted the decree that ended slavery on Martinique, Guadeloupe and Réunion and in French Guiana. France's new Second Republic issued it from Paris. On what date was it issued?",
     "answer": "April 27, 1848",
     "choices": [
       "April 27, 1848",
@@ -2185,7 +1977,7 @@
   },
   {
     "tier": 1,
-    "question": "When a country ends slavery, the workers who were once forced to labor without pay become free to pick their own jobs, quit if they want, and keep the money they earn each week. Compared to forced labor under whips and chains, what does free labor tend to be over time?",
+    "question": "A woman freed on Martinique in 1848 could now pick her own job, quit it and keep her wages. Compared with forced labor, what does free labor tend to become over time?",
     "answer": "More productive -- people work harder when they choose the work and keep the pay",
     "choices": [
       "More productive -- people work harder when they choose the work and keep the pay",
@@ -2198,7 +1990,7 @@
   },
   {
     "tier": 2,
-    "question": "During the French Revolution, France abolished slavery in its colonies in 1794. But eight years later a new French leader, trying to restore sugar profits from Saint-Domingue and other Caribbean holdings, brought slavery back. In 1802 he sent troops across the Atlantic to reimpose it by force. Who reversed that first end of slavery?",
+    "question": "A new French ruler sent soldiers across the Atlantic in 1802 to force slavery back onto Saint-Domingue and France's other Caribbean colonies. He wanted their sugar profits restored, and he was undoing an abolition the Revolution had decreed in 1794. Who was he?",
     "answer": "Napoleon Bonaparte",
     "choices": [
       "Napoleon Bonaparte",
@@ -2211,7 +2003,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 1848 revolution swept France and toppled King Louis Philippe. Two months later, in April 1848, the new French republic held elections for a National Assembly. The economist Frederic Bastiat — famous for his free-trade pamphlets and his tale of the broken window — ran for a seat and won. Which French department elected him?",
+    "question": "Frédéric Bastiat, the economist of the broken-window tale and the free-trade pamphlets, ran for France's new National Assembly in 1848, soon after a revolution toppled King Louis Philippe. He won. Which French department elected him?",
     "answer": "Landes",
     "choices": [
       "Landes",
@@ -2224,7 +2016,7 @@
   },
   {
     "tier": 3,
-    "question": "The French economist Frederic Bastiat, famous for the broken-window parable, argued against slavery using his usual method: compare what people SEE with what they miss. Defenders of the plantation economy pointed to cotton output and Southern wealth. Bastiat pressed a deeper move — one about incentives on the plantation and about what forced labor does to a master's own character. Which argument did he press?",
+    "question": "Frédéric Bastiat turned his usual method on slavery: compare what people see with what they miss. Slavery's defenders held up the cotton crop and the fortunes it made. Bastiat pressed on what they failed to see. Which argument did he make?",
     "answer": "The slave has no incentive to be productive and the master's character is corrupted",
     "choices": [
       "The slave has no incentive to be productive and the master's character is corrupted",
@@ -2237,7 +2029,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1833 the British Parliament passed the Slavery Abolition Act, ending slavery across most of the British Empire. To get the law past the powerful plantation lobby, Parliament wrote it in a way that has stirred lasting debate. France used a version of the same model when it abolished slavery in 1848. What choice did the British Act make?",
+    "question": "British lawmakers who abolished slavery across most of the empire in 1833 had to get the law past a powerful plantation lobby. They wrote it in a way that has stirred debate ever since, and France followed a version of the same model in 1848. What choice did the British act make?",
     "answer": "Compensating the former slave owners rather than the freed slaves",
     "choices": [
       "Compensating the former slave owners rather than the freed slaves",
@@ -2249,21 +2041,8 @@
     "topic": "bastiat-and-slavery-the-1848-abolition-vote"
   },
   {
-    "tier": 4,
-    "question": "In 1850, already dying of tuberculosis, the French economist Frederic Bastiat wrote a short pamphlet called The Law. In it he described how governments could take from some people to give to others while dressing the act in legal language. He walked through slavery, protectionism, and welfare with one running concept holding it all together. For Bastiat, slavery was the maximal case of that concept. Which concept did he use?",
-    "answer": "Legal plunder",
-    "choices": [
-      "Legal plunder",
-      "Natural monopoly",
-      "Diminishing returns",
-      "The margin of exploitation"
-    ],
-    "context": "The Law defines legal plunder as one person's labor or property being taken from them by legal force and given to another; slavery is its purest form. Source: bastiat.org/en/the_law.html.",
-    "topic": "bastiat-and-slavery-the-1848-abolition-vote"
-  },
-  {
     "tier": 5,
-    "question": "Frederic Bastiat was a French economist and, in the last years of his short life, a member of the new French National Assembly created in 1848. The decree that abolished slavery in French colonies was signed on April 27, 1848, but the new National Assembly did not first meet until May 4, 1848. So Bastiat's actual voting record on slavery had a particular shape. Which characterization is correct?",
+    "question": "Voters elected Frédéric Bastiat to France's new National Assembly in 1848, after his years of attacking slavery in print. The Provisional Government issued the decree abolishing colonial slavery after his election but before the new Assembly had ever met. Which description of his voting record on slavery is accurate?",
     "answer": "He did not vote on the initial decree; he supported the abolition publicly and voted for its implementation",
     "choices": [
       "He did not vote on the initial decree; he supported the abolition publicly and voted for its implementation",
@@ -2276,20 +2055,7 @@
   },
   {
     "tier": 1,
-    "question": "The Austrian School of economics — founded in 1871 by the Vienna professor Carl Menger — says value is subjective. Only people, with their own tastes, can decide what one thing is worth to them. A hungry kid values a candy bar more than a kid who just finished lunch. So what does subjective value mean about the 'true' price of a candy bar?",
-    "answer": "There is no single true price -- it is worth different amounts to different kids",
-    "choices": [
-      "There is no single true price -- it is worth different amounts to different kids",
-      "A government committee can calculate the true price exactly",
-      "The true price is always one dollar",
-      "The true price is written on every candy bar's atoms"
-    ],
-    "context": "Ludwig von Mises's Human Action: A Treatise on Economics was published by Yale University Press on September 14, 1949. Mises had left Vienna for the Graduate Institute in Geneva in 1934 and emigrated to New York City in 1940 after the Nazi occupation of Europe closed in. Source: https://en.wikipedia.org/wiki/Human_Action.",
-    "topic": "bastiat-inside-mises-s-human-action"
-  },
-  {
-    "tier": 1,
-    "question": "While living in Geneva, Ludwig von Mises wrote an early German version of what would become 'Human Action.' It came out in 1940. He spent most of the 1940s rewriting it, not just translating it, for readers in America. What was the 1940 German book called?",
+    "question": "Ludwig von Mises, teaching in Geneva after leaving Austria in 1934, wrote a German treatise that came out in 1940. Henry Hazlitt pressed him to translate it into English; Mises rewrote it for American readers instead, and it became Human Action. What was the 1940 German book called?",
     "answer": "Nationaloekonomie",
     "choices": [
       "Nationaloekonomie",
@@ -2301,60 +2067,8 @@
     "topic": "bastiat-inside-mises-s-human-action"
   },
   {
-    "tier": 2,
-    "question": "In 1920 Ludwig von Mises wrote a famous paper. Under socialism, no one owns the factories or the land or the machines, so there are no honest price signals for them. Then planners have no reliable way to tell which projects are worth doing. What is the missing tool that socialism removes?",
-    "answer": "Real market prices that reveal what things actually cost",
-    "choices": [
-      "Real market prices that reveal what things actually cost",
-      "The freedom to buy imported goods",
-      "The right to hold elections",
-      "The number of workers in each factory"
-    ],
-    "context": "The 1920 paper appeared in the Archiv fuer Sozialwissenschaft und Sozialpolitik, volume 47, and was translated by S. Adler as 'Economic Calculation in the Socialist Commonwealth,' reprinted in the 1935 volume Collectivist Economic Planning that Friedrich Hayek edited. Source: https://en.wikipedia.org/wiki/Economic_Calculation_in_the_Socialist_Commonwealth.",
-    "topic": "bastiat-inside-mises-s-human-action"
-  },
-  {
-    "tier": 2,
-    "question": "In September 1945, Friedrich Hayek published a short essay in The American Economic Review. It became one of the most-cited papers in modern economics. Its main claim: no central planner can gather all the small pieces of local knowledge held in millions of heads. What was the title?",
-    "answer": "The Use of Knowledge in Society",
-    "choices": [
-      "The Use of Knowledge in Society",
-      "The Road to Serfdom",
-      "The Pretence of Knowledge",
-      "The Constitution of Liberty"
-    ],
-    "context": "Hayek's 'The Use of Knowledge in Society' appeared in the September 1945 American Economic Review as a rebuttal to Oskar Lange's proposal for 'market socialism.' It was reprinted in Hayek's 1948 essay collection Individualism and Economic Order. The other three titles are real Hayek works from different decades. Source: https://en.wikipedia.org/wiki/The_Use_of_Knowledge_in_Society.",
-    "topic": "bastiat-inside-mises-s-human-action"
-  },
-  {
-    "tier": 3,
-    "question": "A school of economists called the Austrians — following Carl Menger, Ludwig von Mises, and Friedrich Hayek — argue that big economic downturns like the Great Depression are usually not caused by markets themselves going crazy. They point to something else instead, a policy choice made by a country's central bank. What do these Austrian economists say is the main cause of these financial crashes?",
-    "answer": "Central banks pushing interest rates below where savings and borrowing would naturally meet",
-    "choices": [
-      "Central banks pushing interest rates below where savings and borrowing would naturally meet",
-      "Farmers refusing to grow enough food during good years",
-      "Consumers being naturally too selfish to keep the economy stable",
-      "Small shopkeepers charging prices that are too fair"
-    ],
-    "context": "Murray Rothbard (1926-1995) published Man, Economy, and State in 1962 at age 36. Rothbard's book was commissioned by the Volker Fund as an accessible companion to Human Action; it grew into a full-scale rival treatise. Source: https://en.wikipedia.org/wiki/Man,_Economy,_and_State.",
-    "topic": "bastiat-inside-mises-s-human-action"
-  },
-  {
     "tier": 4,
-    "question": "In 1946 the American journalist Henry Hazlitt — an editorial writer at the New York Times — published a short book called Economics in One Lesson. Hazlitt had read Frederic Bastiat's seen-and-unseen essays closely. He wanted to boil that whole method into a single rule any ordinary reader could apply to any policy debate. What is that one lesson?",
-    "answer": "Look at the effect of a policy on every group, not just the group it is meant to help",
-    "choices": [
-      "Look at the effect of a policy on every group, not just the group it is meant to help",
-      "Every policy helps every group equally over time",
-      "Only the visible effects of a policy ever really matter",
-      "Government spending is always free money for the country"
-    ],
-    "context": "Henry Hazlitt's Economics in One Lesson (1946) is a chapter-by-chapter extension of Bastiat's seen/unseen method, with Hazlitt explicitly acknowledging the debt in his preface. Hazlitt was also the New York Times economics columnist who first urged Mises to write an English successor to Nationaloekonomie -- the project that became Human Action. Source: https://mises.org/mises-daily/broken-window.",
-    "topic": "bastiat-inside-mises-s-human-action"
-  },
-  {
-    "tier": 4,
-    "question": "Joseph Schumpeter was an Austrian-born economist who taught at Harvard University in the 1930s and 40s. In his 1954 book 'History of Economic Analysis,' published after his death, he dismissed the French economist Frederic Bastiat with one short famous line. That line shut down mainstream university study of Bastiat for a whole generation. Which line did Schumpeter write?",
+    "question": "Joseph Schumpeter, an Austrian-born economist at Harvard, dismissed Frédéric Bastiat in one short line in History of Economic Analysis, a book that came out in 1954, after his death. University economists left Bastiat largely unread for decades, much of it thanks to that line. Which line did Schumpeter write?",
     "answer": "I do not hold that Bastiat was a bad theorist. I hold that he was no theorist.",
     "choices": [
       "I do not hold that Bastiat was a bad theorist. I hold that he was no theorist.",
@@ -2367,7 +2081,7 @@
   },
   {
     "tier": 5,
-    "question": "Murray Rothbard was the American economist who carried the Austrian school forward after Ludwig von Mises. Before he died in 1995, Rothbard wrote a huge two-volume treatise tracing how ideas about markets, money, and value evolved across the centuries. The publisher Edward Elgar released it after his death. In it, Rothbard answered Joseph Schumpeter's put-down of Frederic Bastiat by treating Bastiat as a real theorist, not a mere pamphleteer. What was the book's title?",
+    "question": "Murray Rothbard, who carried Ludwig von Mises's school into the next generation, answered Joseph Schumpeter's put-down of Frédéric Bastiat in his last great work. Its two volumes treat Bastiat as a real theorist rather than a mere pamphleteer. Edward Elgar published it in 1995, the same year Rothbard died. What is its title?",
     "answer": "An Austrian Perspective on the History of Economic Thought",
     "choices": [
       "An Austrian Perspective on the History of Economic Thought",
@@ -2380,7 +2094,7 @@
   },
   {
     "tier": 5,
-    "question": "Three books form the spine of modern Austrian economics. Frederic Bastiat's 19th-century French essays came first. Ludwig von Mises's 1949 book 'Human Action' rebuilt the argument into a full system in English. Murray Rothbard's 1962 book 'Man, Economy, and State' made it more formal still. This is not just a genealogy of names — each book teaches the same one reasoning move applied more carefully. Which move is that shared analytic backbone?",
+    "question": "Frédéric Bastiat wrote his essays in plain French; a century later Ludwig von Mises rebuilt the argument as a full system in his treatise of 1949, and in 1962 Murray Rothbard made it more formal still in Man, Economy, and State. Each teaches the same reasoning move, more carefully than the last. Which move is that shared backbone?",
     "answer": "That because human action is purposive, economic reasoning must trace the seen and unseen consequences of every choice",
     "choices": [
       "That because human action is purposive, economic reasoning must trace the seen and unseen consequences of every choice",
@@ -2393,7 +2107,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1840 a young French printer's apprentice named Pierre-Joseph Proudhon published a small book with the question 'What is property?' right on the cover. Proudhon was the first thinker to publicly call himself an anarchist. His answer to his own question — just three short words — became a famous slogan quoted for the next 200 years. Which one?",
+    "question": "A young French printer's apprentice named Pierre-Joseph Proudhon put a question on the cover of a small book in 1840: what is property? He answered it in three words, and the line has been quoted ever since. What was his answer?",
     "answer": "'Property is theft'",
     "choices": [
       "'Property is theft'",
@@ -2406,7 +2120,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 1849, Pierre-Joseph Proudhon started a lending group in Paris. It aimed to lend to workers at zero interest, using notes traded for members' goods. About 3,600 people signed up and put in around 18,000 francs. Then Proudhon was jailed and the group was shut down. What was it called?",
+    "question": "Pierre-Joseph Proudhon opened a lending house in Paris in late January 1849 to lend to workers at zero interest, using notes its members could trade for one another's goods. About 3,600 people signed up and put in some 18,000 francs. Then Proudhon was jailed and it was shut down. What was it called?",
     "answer": "The Bank of the People",
     "choices": [
       "The Bank of the People",
@@ -2419,7 +2133,7 @@
   },
   {
     "tier": 2,
-    "question": "From late 1849 into early 1850, Frederic Bastiat and Pierre-Joseph Proudhon traded long public letters. They argued whether it was fair to charge interest on a loan. Almost every letter ran in the same Paris paper, Proudhon's own daily, edited from his prison cell. Name the paper.",
+    "question": "Frédéric Bastiat and Pierre-Joseph Proudhon traded long public letters through the winter of 1849 to 1850 over whether it was fair to charge interest on a loan. Almost every letter ran in Proudhon's own Paris daily, which he kept editing from a cell in Sainte-Pélagie prison. What was the paper called?",
     "answer": "La Voix du Peuple",
     "choices": [
       "La Voix du Peuple",
@@ -2432,7 +2146,7 @@
   },
   {
     "tier": 3,
-    "question": "Bastiat's central argument against interest-free lending was not that lenders deserved a reward or that borrowers were ungrateful. It was a claim about what price interest actually is. On his account, interest paid on a loan of 1,000 francs for a year is the price of exactly what?",
+    "question": "Frédéric Bastiat argued against interest-free lending in front of Pierre-Joseph Proudhon's readers, and he did not claim that lenders deserve a prize for lending. On his account, interest on a loan of 1,000 francs for a year is the price of exactly what?",
     "answer": "The lender's foregone use of the money for that year",
     "choices": [
       "The lender's foregone use of the money for that year",
@@ -2445,7 +2159,7 @@
   },
   {
     "tier": 3,
-    "question": "Frederic Bastiat, the French economist, and Pierre-Joseph Proudhon, a French socialist thinker, argued in a series of open letters in 1849 about interest on loans. Proudhon wanted the law to force lenders to charge zero interest. Bastiat pressed him on a consequence he refused to accept: if the law forced interest to zero, Bastiat said, borrowers would not actually get cheap loans at all. Something worse would happen. What?",
+    "question": "Frédéric Bastiat pressed Pierre-Joseph Proudhon on a result Proudhon refused to face. Suppose the law forced the interest on loans down to zero, Bastiat said: borrowers would not get cheap loans at all. What would happen instead?",
     "answer": "Savings would stop flowing into loans, and there would be nothing left to borrow",
     "choices": [
       "Savings would stop flowing into loans, and there would be nothing left to borrow",
@@ -2458,7 +2172,7 @@
   },
   {
     "tier": 3,
-    "question": "Pierre-Joseph Proudhon was a French socialist writer best known for the slogan 'property is theft.' In his 1849 exchange with the French economist Frederic Bastiat, Proudhon insisted that ending interest on loans would not need the state to force anyone at all. In his ideal society, he claimed, a force inside the economy itself would drive the interest rate all the way to zero. Which mechanism did Proudhon propose?",
+    "question": "Pierre-Joseph Proudhon insisted, in his exchange with Frédéric Bastiat, that ending interest on loans would need no force from the state at all. Let one arrangement take hold, he claimed, and the interest rate would fall all the way to zero by itself. Which mechanism did Proudhon propose?",
     "answer": "Free competition among mutually organised lenders",
     "choices": [
       "Free competition among mutually organised lenders",
@@ -2471,7 +2185,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1850 Frederic Bastiat gathered the whole exchange with Pierre-Joseph Proudhon into a single book, published in Paris by the Guillaumin house. He gave the volume a title that ironically named Proudhon's own slogan for the scheme -- one French noun and its qualifier. What title?",
+    "question": "Guillaumin, a Paris publisher, brought out Frédéric Bastiat's letters with Proudhon as one volume in 1850. For its title Bastiat borrowed, with irony, Proudhon's own slogan for lending without interest: one French noun and its qualifier. What was the title?",
     "answer": "Gratuite du credit",
     "choices": [
       "Gratuite du credit",
@@ -2484,7 +2198,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1849 the French economist Frederic Bastiat and the French socialist Pierre-Joseph Proudhon printed a series of open letters in Paris arguing about whether lenders should be allowed to charge interest. By convention their debate is described as fourteen letters — the count in Bastiat's own Paris edition. In Proudhon's rival edition of the same debate, the letter count is different. How different?",
+    "question": "Frédéric Bastiat printed his debate with Pierre-Joseph Proudhon in Paris as fourteen letters, and that is the count most people cite. Proudhon brought out a rival edition of the same exchange. How did its count differ?",
     "answer": "Thirteen letters -- Proudhon dropped Bastiat's closing letter",
     "choices": [
       "Thirteen letters -- Proudhon dropped Bastiat's closing letter",
@@ -2497,7 +2211,7 @@
   },
   {
     "tier": 5,
-    "question": "Bastiat had told Proudhon in plain prose that interest is the price of time preference. That idea got its full formal statement in a multi-volume work called 'Kapital und Kapitalzins' (Capital and Interest). It came out in Innsbruck across the 1880s and 1890s. Which Austrian economist wrote it?",
+    "question": "An Austrian economist began publishing Kapital und Kapitalzins, Capital and Interest, in parts from 1884, and counted Frédéric Bastiat among the forerunners of its theory. The work gave Bastiat's answer to Proudhon on interest its full formal statement. Who wrote it?",
     "answer": "Eugen von Bohm-Bawerk",
     "choices": [
       "Eugen von Bohm-Bawerk",
@@ -2510,7 +2224,7 @@
   },
   {
     "tier": 5,
-    "question": "After the second world war the Austrian school of economics rebuilt itself in exile from Vienna. In 1949 its mature argument came back to English readers as the core chapter of a thousand-page book published in New York. Its author, a Viennese exile then teaching in the United States, treated time preference not as a quirk of capitalism, but as a basic feature of any person's choice between now and later. Which book was it?",
+    "question": "A Viennese exile teaching in the United States brought the Austrian argument about interest back to English readers in 1949, at the core of a thousand-page treatise. The book treats time preference as part of every choice between now and later, not a quirk of capitalism. Which book was it?",
     "answer": "Human Action, by Ludwig von Mises",
     "choices": [
       "Human Action, by Ludwig von Mises",
@@ -2523,7 +2237,7 @@
   },
   {
     "tier": 1,
-    "question": "Picture a huge investment company on Wall Street in New York. Every single night it borrows enormous sums of money from other banks just so it can keep running the next day — that is how it pays its bills. One week the other banks all get scared about the company and refuse to lend to it. What is likely to happen to the company by Friday?",
+    "question": "The banks that lend a Wall Street investment firm enormous sums every night, just to keep it running the next day, take fright one Monday and stop lending. What is likely to happen to the firm by Friday?",
     "answer": "It collapses -- it cannot last a few days without the borrowed money",
     "choices": [
       "It collapses -- it cannot last a few days without the borrowed money",
@@ -2536,7 +2250,7 @@
   },
   {
     "tier": 1,
-    "question": "In March 2008 the American investment bank Bear Stearns was about to collapse. Over one weekend, the US government helped a healthier bank — JPMorgan Chase — buy Bear Stearns quickly for just $2 a share. Officials rushed to close the deal before Monday morning trading opened. Why does the government step in to arrange the sale?",
+    "question": "US officials spent one weekend in March 2008 rushing to find a buyer for the collapsing investment bank Bear Stearns before Monday's trading began. JPMorgan Chase agreed to buy it, with the Federal Reserve's help. Why did officials hurry to arrange the sale?",
     "answer": "To keep the collapse from spreading and scaring every other bank",
     "choices": [
       "To keep the collapse from spreading and scaring every other bank",
@@ -2549,7 +2263,7 @@
   },
   {
     "tier": 2,
-    "question": "Bear Stearns was a huge American investment bank based in New York. Over one weekend in March 2008 it collapsed as its lenders stopped renewing its overnight loans. That same weekend the larger bank JPMorgan Chase, with help arranged by the Federal Reserve, agreed to buy the wreckage. The first announced price per share was famously low — a fraction of the price Bear had traded at just days earlier. What was that first price, before shareholder lawsuits forced JPMorgan to raise it?",
+    "question": "Jamie Dimon agreed over one weekend in March 2008 to have JPMorgan Chase buy the collapsing investment bank Bear Stearns, whose shares had sold for $172 fourteen months before. His first offer per share was famously low; a week later, after shareholders threatened to sue, JPMorgan raised it. What was the first price?",
     "answer": "Two dollars",
     "choices": [
       "Two dollars",
@@ -2562,7 +2276,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 2008 the US central bank helped JPMorgan Chase buy the collapsing investment bank Bear Stearns. To make JPMorgan agree, the Fed created a special company called Maiden Lane to take about $30 billion of Bear Stearns' worst mortgage loans off the books first. JPMorgan only had to buy the healthy parts. Who ended up owning those bad loans in the end?",
+    "question": "Bankers at JPMorgan Chase agreed in March 2008 to buy the collapsing investment bank Bear Stearns, but only after some $30 billion in Bear's worst mortgage securities had been moved into a new company called Maiden Lane. JPMorgan took only the healthier parts. Who ended up owning those bad securities?",
     "answer": "The Federal Reserve, and through it US taxpayers",
     "choices": [
       "The Federal Reserve, and through it US taxpayers",
@@ -2575,7 +2289,7 @@
   },
   {
     "tier": 3,
-    "question": "The March 2008 rescue set an important precedent about how failing investment banks would be handled. Shareholders and executives would suffer losses, but one specific group would be made whole. Who did the Fed rescue protect at 100 cents on the dollar?",
+    "question": "Bear Stearns's shareholders and executives lost heavily when the Federal Reserve helped JPMorgan Chase buy the bank in March 2008. One group was paid in full. Which group did the rescue protect at 100 cents on the dollar?",
     "answer": "Creditors and counterparties whose panic had caused the run",
     "choices": [
       "Creditors and counterparties whose panic had caused the run",
@@ -2587,21 +2301,8 @@
     "topic": "bear-stearns-and-the-2-share-weekend-rescue"
   },
   {
-    "tier": 3,
-    "question": "When the US government rescued the investment bank Bear Stearns in 2008, critics warned that saving one big bank would make every other bank expect to be saved too. If a bank knows the Fed will catch it, it takes bigger risks — gambling with taxpayer money instead of its own. Market discipline weakens. Economists have a name for this failure mode, where insurance against a bad outcome makes the bad outcome more likely. What is it called?",
-    "answer": "Moral hazard",
-    "choices": [
-      "Moral hazard",
-      "Adverse selection",
-      "Ricardian equivalence",
-      "Regulatory capture"
-    ],
-    "context": "Moral hazard is the classic problem where insurance against a loss weakens the incentive to avoid it. Applied to bank rescues: if creditors expect government to make them whole, they discipline banks less carefully. Source: Grokipedia 'Moral hazard' (2026-09-05).",
-    "topic": "bear-stearns-and-the-2-share-weekend-rescue"
-  },
-  {
     "tier": 4,
-    "question": "After the Bear Stearns rescue in March 2008, everyone on Wall Street had watched the Federal Reserve broker a deal that made the failing bank's creditors and trading partners whole. Six months later, in September 2008, another huge New York investment bank, Lehman Brothers, was collapsing in the same way — its overnight lenders would not renew. What did the firms still lending to Lehman and trading with it expect the Fed to do this time?",
+    "question": "Traders across Wall Street had watched the Federal Reserve broker the Bear Stearns rescue in March 2008. By September, Lehman Brothers was failing the same way, its overnight lenders refusing to renew. What did the firms still lending to Lehman and trading with it expect the Fed to do?",
     "answer": "Broker a similar rescue so Lehman's creditors would also be paid in full",
     "choices": [
       "Broker a similar rescue so Lehman's creditors would also be paid in full",
@@ -2614,7 +2315,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2008 the US Federal Reserve helped JPMorgan Chase buy the collapsing investment bank Bear Stearns. Most Wall Street voices cheered the rescue as a save. But two well-known economists — one from the political left, one from the right — warned in real time that saving Bear would encourage even bigger risks at the next bank. Which two figures made this argument publicly in early 2008?",
+    "question": "One economist on the political left and one on the right warned in the spring of 2008, as the Federal Reserve helped JPMorgan Chase buy Bear Stearns, that the rescue would encourage even bigger risks at the next bank. Few listened to either at the time. Which two made the argument?",
     "answer": "Nouriel Roubini on the left; Peter Schiff on the right",
     "choices": [
       "Nouriel Roubini on the left; Peter Schiff on the right",
@@ -2627,7 +2328,7 @@
   },
   {
     "tier": 5,
-    "question": "The 2008 Bear Stearns rescue — when the US Federal Reserve backed JPMorgan Chase's fire-sale purchase of the collapsing investment bank — is now a textbook case in the Austrian School of economics. Austrians like Ludwig von Mises, Friedrich Hayek, and Murray Rothbard argue that every bailout teaches the market to expect the next one. What lesson do they draw from the rescue?",
+    "question": "Bankers saw the Federal Reserve save Bear Stearns in March 2008 and let Lehman Brothers fail that September, and Lehman's fall was violent. Austrian-school critics draw one lesson from the pair of decisions. What lesson?",
     "answer": "Each rescue changes the expectations for the next crisis; the sudden removal of an expected rescue can cause the panic the earlier rescue was meant to prevent",
     "choices": [
       "Each rescue changes the expectations for the next crisis; the sudden removal of an expected rescue can cause the panic the earlier rescue was meant to prevent",
@@ -2640,7 +2341,7 @@
   },
   {
     "tier": 5,
-    "question": "In the summer of 2007, two big hedge funds run inside the New York investment bank Bear Stearns were quietly collapsing. Bear's chairman, Jimmy Cayne, was reportedly at a national bridge tournament instead of managing the crisis. Less than a year later Bear itself failed. What lesson do critics draw from stories like this about the leaders of huge failing firms?",
+    "question": "Jimmy Cayne, chairman of the investment bank Bear Stearns, was reportedly away at a bridge tournament in July 2007 while two hedge funds inside his firm collapsed. Less than a year later Bear itself failed. What lesson do critics draw from stories like this about the leaders of giant firms?",
     "answer": "Top leaders can lose touch with what is really happening inside their own firm",
     "choices": [
       "Top leaders can lose touch with what is really happening inside their own firm",
@@ -2653,20 +2354,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1914 the United States created a central bank called the Federal Reserve, often just called 'the Fed.' Its main power is to change how much money is in circulation in the country. Suppose the Fed prints a lot of new money and hands it into the economy. What usually happens to the prices you see in the stores?",
-    "answer": "Prices go up -- more money chasing the same goods",
-    "choices": [
-      "Prices go up -- more money chasing the same goods",
-      "Prices stay exactly the same forever",
-      "Prices fall to zero",
-      "Prices change to a different color"
-    ],
-    "context": "Strong had been at the 1910 Jekyll Island meeting as president of Bankers Trust. He led the New York Fed from 1914 until his death in 1928. Source: Grokipedia 'Benjamin Strong Jr.' (2026-09-05).",
-    "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
-  },
-  {
-    "tier": 1,
-    "question": "Benjamin Strong Jr. led the Federal Reserve Bank of New York from 1914 until his death in 1928. He pioneered a Fed policy tool that is still central today. With it, the Fed buys US Treasury bonds from private banks, pushes new dollars of reserves into the banking system, and drives interest rates down. What is this tool called?",
+    "question": "Benjamin Strong pioneered a tool at the new Federal Reserve Bank of New York that is still central today: the Fed buys government bonds from private banks, pumping in new reserves and pulling interest rates down, and sells them to do the reverse. What is the tool called?",
     "answer": "Open market operations",
     "choices": [
       "Open market operations",
@@ -2679,7 +2367,7 @@
   },
   {
     "tier": 2,
-    "question": "Benjamin Strong ran the Federal Reserve Bank of New York through most of the 1920s — the most powerful arm of the young American central bank. He became close personal friends with the man who ran the Bank of England from 1920 all the way to 1944. Their friendship shaped world money policy through the whole decade, including the run-up to the 1929 crash. Who was the Bank of England chief?",
+    "question": "Across the Atlantic, Benjamin Strong of the New York Fed found his closest friend in finance. That friend ran the Bank of England from 1920 all the way to 1944, and together the two men steered world money policy through the 1920s. Who was he?",
     "answer": "Montagu Norman",
     "choices": [
       "Montagu Norman",
@@ -2691,21 +2379,8 @@
     "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
   },
   {
-    "tier": 2,
-    "question": "In 1925 Britain — under Chancellor of the Exchequer Winston Churchill — returned to the gold standard, tying the pound sterling back to a fixed weight of gold. Churchill chose a specific price for the pound. That price left the pound overvalued, caused painful deflation, and set off mass strikes and unemployment across British industry. John Maynard Keynes attacked the choice in a famous pamphlet. At what prewar rate did Britain return?",
-    "answer": "The 1914 prewar parity of about $4.86 per pound",
-    "choices": [
-      "The 1914 prewar parity of about $4.86 per pound",
-      "A 20% devaluation from prewar levels",
-      "A 10% appreciation above prewar levels",
-      "A floating market rate with no fixed peg"
-    ],
-    "context": "Britain's 1925 return to gold at the prewar parity, on Chancellor Churchill's decision, was economically painful. Strong agreed to help by keeping US rates low so gold would not flow from London to New York. Source: Grokipedia 'Return to gold' (2026-09-05).",
-    "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
-  },
-  {
     "tier": 3,
-    "question": "In July 1927 Benjamin Strong, head of the Federal Reserve Bank of New York, hosted a secret meeting on Long Island with three foreign central bankers. Days later the Fed cut its discount rate — the rate it charges when banks borrow from it — from 4% to 3.5%. The cut was meant to help Europe defend the gold standard. Which three foreign central bankers attended?",
+    "question": "Three foreign central bankers met Benjamin Strong in secret at a Long Island estate in July 1927. Days later the Fed lowered the rate it charges banks that borrow from it, from 4 to 3.5 percent. The cut was meant to help Europe stay on gold. Which three central bankers came?",
     "answer": "Montagu Norman of Britain, Charles Rist of France, and Hjalmar Schacht of Germany",
     "choices": [
       "Montagu Norman of Britain, Charles Rist of France, and Hjalmar Schacht of Germany",
@@ -2718,7 +2393,7 @@
   },
   {
     "tier": 3,
-    "question": "Benjamin Strong ran the Federal Reserve Bank of New York in the 1920s. In July 1927, after his secret Long Island meeting with three European central bankers, Strong pushed the Fed's discount rate down from 4% to 3.5%. In private, he reportedly described the cut using a distinctive alcoholic metaphor — an image of what the cheap money would do to the roaring Wall Street boom. Which phrase did he use?",
+    "question": "Wall Street was roaring in July 1927 when Benjamin Strong pushed the Fed's discount rate down from 4 to 3.5 percent, days after his secret Long Island meeting with three European central bankers. In private he reportedly described the cut with a drinker's metaphor, an image of what cheap money would do to the boom. Which phrase did he use?",
     "answer": "A little coup de whiskey to the stock market",
     "choices": [
       "A little coup de whiskey to the stock market",
@@ -2731,7 +2406,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1963 the American economist Murray Rothbard published 'America's Great Depression.' In it he argued that the Federal Reserve's 1927 interest-rate cut helped inflate the stock-market bubble that popped in the 1929 crash. In Austrian economics, what does a fake-low interest rate — one held below where savings and borrowing would naturally meet — wrongly signal to a business owner deciding whether to build a factory?",
+    "question": "A factory owner is deciding whether to build a new plant just after the Fed has pushed its rate down. In the Austrian account, a rate held below where savers and borrowers would settle on their own sends him a false message. What does the low rate wrongly tell him?",
     "answer": "That people want to save more, so long-term projects look profitable",
     "choices": [
       "That people want to save more, so long-term projects look profitable",
@@ -2743,21 +2418,8 @@
     "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
   },
   {
-    "tier": 4,
-    "question": "Rothbard's book America's Great Depression blamed the crash on the Fed's 1921-1929 credit expansion. After governor Benjamin Strong died in October 1928, no one was left to slow it. What did Austrians call the wasteful projects funded by that cheap credit -- projects doomed to fail once the boom ended?",
-    "answer": "Malinvestment",
-    "choices": [
-      "Malinvestment",
-      "Overproduction",
-      "Excess capacity",
-      "Speculation"
-    ],
-    "context": "M2 grew roughly 60% from 1921 to 1929, with much of the expansion coming during and after the 1927 easing. Source: Rothbard, America's Great Depression (1963).",
-    "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
-  },
-  {
     "tier": 5,
-    "question": "In 1927 the American central bank — the Federal Reserve, led by Benjamin Strong of the New York Fed — pushed US interest rates down partly to help European economies struggling to hold the gold standard. Cheap money flooded into New York. Two years later, in October 1929, the American stock market crashed, kicking off the Great Depression. What do critics of the 1927 easing say those low rates did?",
+    "question": "Cheap money poured into New York after Benjamin Strong pushed American interest rates down in 1927, partly so that Europe's central banks could hold their currencies to gold. What do critics of the 1927 easing say those low rates did?",
     "answer": "They fueled a stock-market bubble that later burst",
     "choices": [
       "They fueled a stock-market bubble that later burst",
@@ -2770,7 +2432,7 @@
   },
   {
     "tier": 5,
-    "question": "What does the Strong-Norman coordination story of 1927 show about central banks working together across borders?",
+    "question": "Winston Churchill put Britain back on gold in 1925 at a rate that overvalued the pound, and gold threatened to flow out of London toward New York. Benjamin Strong held American interest rates low to keep the gold in London, and cut them further in 1927. What does the episode show about central banks working together across borders?",
     "answer": "Coordinated easing among central banks to defend a fixed exchange rate can produce asset-price inflation in the country doing the easing, even when its own economy does not need easing",
     "choices": [
       "Coordinated easing among central banks to defend a fixed exchange rate can produce asset-price inflation in the country doing the easing, even when its own economy does not need easing",
@@ -2783,7 +2445,7 @@
   },
   {
     "tier": 1,
-    "question": "Imagine a big city like New York passes a law in 1975 freezing all apartment rents at a low price, locked there for five years. No landlord can raise rents, no matter what heating and repairs cost. A few years later, a young couple hunts for a brand-new apartment. What is likely to have happened to the number of new apartments being built?",
+    "question": "A young couple goes hunting for a brand-new apartment in a city that froze every rent at a low level a few years ago, for five years, no matter what heating and repairs cost. What has likely happened to the number of new apartments being built?",
     "answer": "It drops -- builders will not build for a rent they cannot raise",
     "choices": [
       "It drops -- builders will not build for a rent they cannot raise",
@@ -2796,7 +2458,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2020 the city of Berlin, Germany passed a law called the Mietendeckel -- a strict rent cap that froze rents on most apartments across the city. What made economists excited to study it was one clean feature: it applied inside Berlin only. Just outside the city line, in nearby towns like Potsdam, landlords could still charge market rents. That gave researchers a rare real-world experiment: same country, same year, one side capped, one side not. What was that special feature of the Berlin rent cap?",
+    "question": "Economists in Munich and Berlin seized on Berlin's 2020 rent freeze, the Mietendeckel, as a rare experiment: two sets of apartments in the same country and the same months, one under the lid and one not. What feature of the law made that comparison possible?",
     "answer": "It applied only within Berlin's city boundaries, so neighboring municipalities kept market pricing",
     "choices": [
       "It applied only within Berlin's city boundaries, so neighboring municipalities kept market pricing",
@@ -2809,7 +2471,7 @@
   },
   {
     "tier": 3,
-    "question": "Suppose a big American city passes a new law that caps how much any landlord can charge for rent — say, no more than a fixed dollar amount per apartment per month. Within a few months, researchers count how many apartments are listed for rent inside the city and compare that number with listings in the towns just outside the city line. What do they usually find?",
+    "question": "Researchers count the apartments listed for rent in a big city a few months after it caps how much any landlord may charge, and compare them with the listings in towns just past the city line. What do they usually find?",
     "answer": "Listings inside the city drop sharply while listings in the towns just outside rise",
     "choices": [
       "Listings inside the city drop sharply while listings in the towns just outside rise",
@@ -2822,7 +2484,7 @@
   },
   {
     "tier": 4,
-    "question": "A big city council, hoping to help renters, passes a law that freezes rents on every apartment already leased in the city. A year later, Maria -- a nurse moving in for a new hospital job -- searches the listings. She finds almost none available, and the few that are listed cost far more than before the freeze. Why did rents jump on the leftover listings?",
+    "question": "A nurse arrives in a big city for a new hospital job a year after it froze the rents on every apartment already leased. She finds almost nothing listed, and the few flats on offer cost far more than before the freeze. Why have rents jumped on the leftover listings?",
     "answer": "The freeze shrank the pool of listings, so movers now compete for the few left",
     "choices": [
       "The freeze shrank the pool of listings, so movers now compete for the few left",
@@ -2835,7 +2497,7 @@
   },
   {
     "tier": 4,
-    "question": "Berlin's Mietendeckel rent freeze had been in force for about 15 months when, on April 15, 2021, Germany's highest court -- the Bundesverfassungsgericht in Karlsruhe -- struck it down. The judges did not rule on whether the price cap was good or bad economics. They ruled on who had the legal power to make the rule at all. On what specific legal ground did the court strike the law down?",
+    "question": "Judges in Karlsruhe, on Germany's Federal Constitutional Court, struck down Berlin's rent freeze on April 15, 2021. They never weighed whether the price cap was good or bad economics. On what legal ground did they strike the law down?",
     "answer": "Federalism -- rent regulation is a federal competence and the Berlin state lacked the authority",
     "choices": [
       "Federalism -- rent regulation is a federal competence and the Berlin state lacked the authority",
@@ -2848,7 +2510,7 @@
   },
   {
     "tier": 5,
-    "question": "Berlin's 2020 Mietendeckel rent cap only lasted about 15 months before Germany's Constitutional Court killed it in April 2021. But during those 15 months, economists watched exactly what happens when a big European city suddenly freezes rents: listings collapsed, new construction stalled, and landlords pulled apartments off the market entirely. Today, in almost every European housing economics class, that short experiment plays one specific role. What has the Berlin case become?",
+    "question": "Germany's constitutional judges ended Berlin's rent lid in April 2021, some fourteen months after it began, and left economists excellent statistics and a clean before-and-after comparison. What has the Berlin case become in European housing economics?",
     "answer": "The standard modern case study of rent-control-shock supply response",
     "choices": [
       "The standard modern case study of rent-control-shock supply response",
@@ -2861,7 +2523,7 @@
   },
   {
     "tier": 1,
-    "question": "Across history people have used all kinds of things as money -- gold coins in Rome, silver bars in China, cowrie shells in West Africa, wampum belts in North America, and giant round rai stones on the Pacific island of Yap. Very different objects, very different places. But every single one shared one trait that let it hold value over time. What was that trait?",
+    "question": "A trader on the Pacific island of Yap accepted a giant stone disc as payment. Cowrie shells did the same work in West Africa, gold in Rome, silver bars in China and wampum belts in North America. Each of them had one trait in common that let it hold its value. What was it?",
     "answer": "It was difficult to produce more of",
     "choices": [
       "It was difficult to produce more of",
@@ -2873,21 +2535,8 @@
     "topic": "bitcoin-as-a-scarce-digital-commodity-the-21m-cap-in-monetar"
   },
   {
-    "tier": 1,
-    "question": "In 2009 an anonymous programmer known as Satoshi Nakamoto launched Bitcoin with one radical rule baked into the code: a hard cap on how many coins can ever exist. No central bank, no committee, and no future developer can raise it. The number is fixed forever by the protocol itself. That cap is a big reason Bitcoiners say it beats every government currency. What is that number?",
-    "answer": "21 million",
-    "choices": [
-      "21 million",
-      "1 billion",
-      "100 million",
-      "300 million"
-    ],
-    "context": "The 21-million-coin cap is coded into the reference client; the issuance curve halves every 210,000 blocks and terminates around the year 2140. Source: en.bitcoin.it/wiki/Controlled_supply.",
-    "topic": "bitcoin-as-a-scarce-digital-commodity-the-21m-cap-in-monetar"
-  },
-  {
     "tier": 2,
-    "question": "Carl Menger was a 19th-century Austrian economist and one of the founders of the whole Austrian school of economic thought. In his writings on money, Menger said money is not chosen because it is pretty, or small, or hard to break. Money wins out for one main reason: whatever a lot of people accept most easily in trade slowly becomes the money everyone uses. What one word names this feature of a good?",
+    "question": "Carl Menger set out to explain why one good, and not another, wins out as money. Beauty, size and toughness, he answered, matter less than one feature: whatever the widest circle of traders will take most easily slowly becomes the money everyone uses. What one word names that feature?",
     "answer": "Marketability",
     "choices": [
       "Marketability",
@@ -2900,7 +2549,7 @@
   },
   {
     "tier": 2,
-    "question": "Gold has been trusted as sound money for thousands of years because miners cannot suddenly flood the world with more of it. Every year new gold comes out of mines in South Africa, Australia, and Nevada, but that new supply is tiny compared to all the gold ever pulled from the ground and still sitting in vaults and jewelry. Austrian economists point to this slow growth as the gold standard's real strength. About what percentage does the world's total gold stock grow each year from new mining?",
+    "question": "A miner in Nevada pours fresh gold into the world's stock of gold ever mined and still kept in vaults and jewelry, as mines in South Africa and Australia do each year. Austrian economists call that stock's slow growth the true strength of gold as money. By about what percentage does the stock grow each year?",
     "answer": "About 1 to 2 percent",
     "choices": [
       "About 1 to 2 percent",
@@ -2913,7 +2562,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin is the digital money invented in 2009 by an anonymous person or group writing under the name Satoshi Nakamoto. Its computer code is written so that a total of exactly 21 million coins will ever exist — no additional units can be issued past that limit, ever. No previous form of money in history, not gold or silver or paper, has ever had a total upper bound written into it like this. What short phrase describes this property?",
+    "question": "Satoshi Nakamoto wrote a hard limit on how many coins can ever exist into Bitcoin's code when he launched it in 2009. Gold's stock keeps creeping upward year by year, and no metal or paper money had ever had a fixed upper bound written into it. What short phrase names Bitcoin's property?",
     "answer": "Absolute scarcity",
     "choices": [
       "Absolute scarcity",
@@ -2926,7 +2575,7 @@
   },
   {
     "tier": 3,
-    "question": "To measure how hard a form of money like gold or silver is to inflate, some economists take the total amount already in existence and divide it by how much fresh new supply is added each year through mining. A higher number means the money is harder to inflate, because the new yearly supply is small compared to what is already stored up in the world. What is this ratio called?",
+    "question": "Saifedean Ammous made popular a yardstick for money: divide all the supply that already exists by the fresh supply added each year. For gold the figure is about 60, and a higher figure means a money that is harder to inflate. What is the ratio called?",
     "answer": "Stock-to-flow",
     "choices": [
       "Stock-to-flow",
@@ -2938,34 +2587,8 @@
     "topic": "bitcoin-as-a-scarce-digital-commodity-the-21m-cap-in-monetar"
   },
   {
-    "tier": 4,
-    "question": "Bitcoin was designed by Satoshi Nakamoto with a fixed rule: every 210,000 blocks -- about every four years -- the reward miners get for finding a block gets cut in half. This is called the halving. Because of it, the flow of new bitcoins slows down over and over until it basically stops. The stock-to-flow ratio, which compares all existing coins to the yearly new coins, keeps rising toward infinity. Around what year does Bitcoin's new-coin issuance reach effectively zero?",
-    "answer": "About 2140",
-    "choices": [
-      "About 2140",
-      "About 2050",
-      "About 2200",
-      "About 2100"
-    ],
-    "context": "The block-reward halves every 210,000 blocks (~4 years); after about 33 halvings the reward rounds to zero and issuance ends, around 2140. Miners then earn only transaction fees. Source: en.bitcoin.it/wiki/Controlled_supply.",
-    "topic": "bitcoin-as-a-scarce-digital-commodity-the-21m-cap-in-monetar"
-  },
-  {
-    "tier": 4,
-    "question": "An analyst writing under the pen name PlanB built a Bitcoin price model based on how much scarcer the coins get after each 'halving' — the moment when the reward paid to Bitcoin miners is cut in half. His model looked accurate for a few years after 2019, then missed badly starting in 2021 when the price failed to reach the level it predicted. What limit of a model fitted to past data does PlanB's Bitcoin miss reveal about its future predictions?",
-    "answer": "A model that fits the past does not always predict the future",
-    "choices": [
-      "A model that fits the past does not always predict the future",
-      "Price models are always exactly right forever after being published",
-      "Scarcity has nothing to do with a coin's price at any time",
-      "Only government-approved models can predict any market"
-    ],
-    "context": "'PlanB' (pseudonym of a Dutch analyst) published the stock-to-flow price model in 2019; it forecast very high Bitcoin prices post-2021 halving. The model diverged sharply from reality after 2021. The MONETARY concept remains sound; the price model has not. Source: en.wikipedia.org/wiki/Stock-to-flow.",
-    "topic": "bitcoin-as-a-scarce-digital-commodity-the-21m-cap-in-monetar"
-  },
-  {
     "tier": 5,
-    "question": "Austrian-school economists -- thinkers like Ludwig von Mises and Friedrich Hayek's intellectual heirs -- argue Bitcoin's real point is not that it must become world money. Their argument is smaller and sharper: every past currency, from the Roman denarius to the US dollar, eventually lost value through one specific mechanism that Bitcoin's fixed 21-million cap makes impossible. Which mechanism does Bitcoin block?",
+    "question": "Germans watched the Weimar mark lose its value in 1923, as Romans had watched Diocletian's denarius and savers since 1971 have watched paper money. Austrian-school writers make a narrower case for Bitcoin than world conquest: all three lost value the same way, they argue, and Bitcoin's fixed cap shuts that way off. Which mechanism does the cap block?",
     "answer": "Debasement by the issuing authority",
     "choices": [
       "Debasement by the issuing authority",
@@ -2978,7 +2601,7 @@
   },
   {
     "tier": 5,
-    "question": "One school of Austrian-tradition economists argues that sound money must be genuinely difficult to produce more of, like gold or Bitcoin. This whole reasoning line traces back to a single foundational book published in 1871. Which book is the founding text of that tradition?",
+    "question": "A Bitcoin defender in the Austrian school, asked where his case for hard money begins, points to a single book that came out in Vienna in 1871. Every Austrian book on money since has built on it. Which book is it?",
     "answer": "Carl Menger's Principles of Economics",
     "choices": [
       "Carl Menger's Principles of Economics",
@@ -12611,7 +12234,7 @@
   },
   {
     "tier": 1,
-    "question": "Bitcoin's rules are written into code that nobody can quietly change. One of those rules says: about every four years, the reward that miners receive for adding a new block of transactions is automatically cut in half. This slowly shrinks the number of new Bitcoin created, on a schedule everyone can see decades in advance. What is this scheduled event called?",
+    "question": "Satoshi Nakamoto wrote a rule into Bitcoin's code: about every four years, the reward a miner earns for adding a block of transactions shrinks automatically, on a schedule anyone can see decades ahead. What is this scheduled event called?",
     "answer": "The halving",
     "choices": [
       "The halving",
@@ -12624,7 +12247,7 @@
   },
   {
     "tier": 2,
-    "question": "Since Bitcoin's launch in January 2009, its price has climbed in a rough four-year rhythm. Each cycle tends to end in a big bull-market peak roughly a year after each halving of the mining reward. Traders and analysts have marked five such peaks so far across Bitcoin's history. Which sequence gives the approximate peak prices in the right years?",
+    "question": "An analyst marks five big peaks on a chart of Bitcoin's price since 2009, in a rough four-year rhythm, most of them a year to a year and a half after a halving of the mining reward. Which sequence gives the approximate peak prices in the right years?",
     "answer": "About $30 in 2011, $1,100 in 2013, $20,000 in 2017, $69,000 in 2021, over $100,000 in 2024",
     "choices": [
       "About $30 in 2011, $1,100 in 2013, $20,000 in 2017, $69,000 in 2021, over $100,000 in 2024",
@@ -12637,7 +12260,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin has moved in a rough four-year rhythm ever since it began in 2009. First a hard crash after the peak. Then a quiet stretch of buying near the low. Then a slow rise as people notice again. Then a wild spike before the next crash. This repeating boom-and-bust shape looks a lot like an older economic pattern first described in the early 1900s. Which classic pattern does the Bitcoin cycle match?",
+    "question": "A trader studying Bitcoin's price since 2009 sees the same arc repeat on a rough four-year beat: a hard crash after each peak, a quiet stretch of buying near the low, a slow rise as people notice again, then a wild spike. Some writers say the shape matches an economic pattern first described in the early 1900s. Which pattern?",
     "answer": "The boom-bust cycle Mises and Hayek attributed to monetary supply shocks",
     "choices": [
       "The boom-bust cycle Mises and Hayek attributed to monetary supply shocks",
@@ -12649,21 +12272,8 @@
     "topic": "halving-cycles-and-market-patterns"
   },
   {
-    "tier": 3,
-    "question": "In 2018 a Palestinian-American economist published a book that made the Austrian-school case for Bitcoin as sound money. He argued that Bitcoin's built-in halving schedule — where the reward given to miners is cut in half every four years — forces a hard-money discipline that no government can break. The book has become one of the most influential works in the whole Bitcoin world. Who wrote it, and what is it called?",
-    "answer": "Saifedean Ammous, The Bitcoin Standard",
-    "choices": [
-      "Saifedean Ammous, The Bitcoin Standard",
-      "Nassim Nicholas Taleb, The Black Swan",
-      "Peter Thiel, Zero to One",
-      "Michael Lewis, The Big Short"
-    ],
-    "context": "Ammous made the argument that Bitcoin's programmatic supply schedule and its historical price cycles fit an Austrian monetary framework. Vijay Boyapati (The Bullish Case for Bitcoin) and Lyn Alden made related arguments. Source: grokipedia.com/page/Saifedean_Ammous.",
-    "topic": "halving-cycles-and-market-patterns"
-  },
-  {
     "tier": 4,
-    "question": "In 2019 an anonymous analyst writing under the name 'PlanB' published a Medium post claiming he could predict Bitcoin's price using only its halving schedule — the built-in event that cuts new Bitcoin supply in half roughly every four years. He fit a mathematical curve to past prices and drew it into the future. What was his model called, and how has it held up since?",
+    "question": "PlanB, an anonymous analyst, posted a model in 2019 that he said could forecast Bitcoin's price from the halving schedule alone: he fitted a curve to past prices and drew it into the future. What was the model called, and how has it held up?",
     "answer": "The stock-to-flow model; it has significantly diverged from actual prices since roughly 2021",
     "choices": [
       "The stock-to-flow model; it has significantly diverged from actual prices since roughly 2021",
@@ -12675,21 +12285,8 @@
     "topic": "halving-cycles-and-market-patterns"
   },
   {
-    "tier": 4,
-    "question": "The 2024-25 Bitcoin cycle broke $100,000 in December 2024, only about eight months after the April 2024 halving. Prior cycles had taken 12-18 months to peak. A specific new source of demand introduced in January 2024 helps explain the compressed timing. What was it?",
-    "answer": "US spot Bitcoin exchange-traded funds, approved by the SEC on January 10, 2024",
-    "choices": [
-      "US spot Bitcoin exchange-traded funds, approved by the SEC on January 10, 2024",
-      "Widespread retail adoption of a new El Salvador wallet app",
-      "A Chinese central-bank purchase program for Bitcoin reserves",
-      "A European Central Bank digital-currency swap facility"
-    ],
-    "context": "Spot Bitcoin ETFs let institutional and retail buyers hold Bitcoin exposure through ordinary brokerage accounts. Inflows in early 2024 totaled tens of billions of dollars and preceded the December 2024 six-figure breakthrough. Source: grokipedia.com/page/Bitcoin_exchange-traded_fund.",
-    "topic": "halving-cycles-and-market-patterns"
-  },
-  {
-    "tier": 5,
-    "question": "Bitcoin has had roughly four-year price cycles since 2012, with each big rally coming near a halving — the built-in event that cuts new Bitcoin supply in half. A first-time Bitcoin holder in 2025 asks whether this past pattern guarantees another four-year peak is on the way. What is the honest analytical answer?",
+    "tier": 3,
+    "question": "A first-time Bitcoin holder in 2025 notices that big rallies have come near each halving, on a rough four-year beat since 2012. He asks whether that past pattern guarantees another peak on schedule. What is the honest analytical answer?",
     "answer": "The past cycles are real observations, but the 2024-25 cycle already broke the pattern -- past patterns do not guarantee future ones",
     "choices": [
       "The past cycles are real observations, but the 2024-25 cycle already broke the pattern -- past patterns do not guarantee future ones",
@@ -21581,7 +21178,7 @@
   },
   {
     "tier": 1,
-    "question": "Hurricane Fran cut power to a million people around Raleigh in September 1996. Four men trucked in bagged ice from another town and sold it for many times the pre-storm price. Police arrested them and took the truck. What did the customers waiting in the line do?",
+    "question": "Four young men hired freezer trucks after Hurricane Fran blacked out Raleigh, North Carolina, in September 1996. They filled them with ice from a town with power and sold the bags for many times the pre-storm price. Police arrested them and took the truck. What did the customers waiting in line do?",
     "answer": "Clapped and cheered as the sellers were cuffed",
     "choices": [
       "Clapped and cheered as the sellers were cuffed",
@@ -21594,7 +21191,7 @@
   },
   {
     "tier": 1,
-    "question": "Most US states punish sellers who raise prices on water, fuel, or generators after a disaster. Florida's price-gouging law works differently -- it is not always on. It switches on at one specific moment, then compares current prices to the seller's average over the 30 days before. What flips Florida's law on?",
+    "question": "A Florida hardware store owner marks up his generators one calm week, and the state's price-gouging law lets it pass. That law is not always on. Once it switches on, a price breaks it by running far above the seller's own average over the previous 30 days. What switches it on?",
     "answer": "The governor declaring a state of emergency",
     "choices": [
       "The governor declaring a state of emergency",
@@ -21606,21 +21203,8 @@
     "topic": "price-gouging-laws-the-generator-that-never-leaves-georgia"
   },
   {
-    "tier": 2,
-    "question": "In 2005 John Shepperson of Kentucky watched news of Hurricane Katrina. He bought 19 generators, rented a truck, and drove about 600 miles to Mississippi. Buyers there would pay about double what he had paid. What happened to Shepperson and his generators?",
-    "answer": "Police jailed him for four days and kept the generators",
-    "choices": [
-      "Police jailed him for four days and kept the generators",
-      "The state bought his whole load at the price he had paid",
-      "A judge cleared the sale once he agreed to halve his price",
-      "FEMA hired him to haul relief supplies for the next month"
-    ],
-    "context": "Shepperson was arrested for price gouging, held four days, and the nineteen generators remained in police custody rather than in the hands of anyone in Mississippi. John Stossel used the case on ABC's 20/20; Mark Perry has cited it repeatedly. Sources: https://abcnews.com/2020/Stossel/story?id=1954352 ; https://www.aei.org/carpe-diem/dear-la-times-reporter-your-lack-of-understanding-of-economics-doesnt-mean-that-price-gouging-is-a-bad-thing/.",
-    "topic": "price-gouging-laws-the-generator-that-never-leaves-georgia"
-  },
-  {
     "tier": 3,
-    "question": "F. A. Hayek published 'The Use of Knowledge in Society' in the American Economic Review in September 1945. He asked readers to suppose that tin has suddenly grown scarce, and that tens of thousands of people who use tin must now use less of it. Hayek's whole argument turns on what those users have to be told first. What did Hayek say they need to know?",
+    "question": "Friedrich Hayek asked the readers of his 1945 essay on knowledge to suppose that tin has suddenly grown scarce. Tens of thousands of people who use it must now make do with less, and Hayek's whole argument turns on what they have to be told first. What did he say they need to know?",
     "answer": "Nothing beyond the new price they now face",
     "choices": [
       "Nothing beyond the new price they now face",
@@ -21633,7 +21217,7 @@
   },
   {
     "tier": 3,
-    "question": "After Hurricane Fran hit North Carolina in September 1996, four young men bought bags of ice at normal prices, drove them into blacked-out Raleigh neighborhoods, and sold them at higher-than-usual prices to grateful residents. Police arrested the men -- and the watching customers actually clapped. The Duke economist Michael Munger later wrote a famous essay about that Raleigh ice night. He gave it a two-word title taken from what the crowd did. The subtitle that followed was a six-word question, and that question is the argument of the whole essay. What did Munger's subtitle ask?",
+    "question": "Michael Munger wrote up the Raleigh ice arrests after Hurricane Fran in a 2007 essay, under a two-word title with a question beneath it. That question carries the argument of the whole essay. What did the subtitle ask?",
     "answer": "Can price-gouging laws prohibit scarcity?",
     "choices": [
       "Can price-gouging laws prohibit scarcity?",
@@ -21659,7 +21243,7 @@
   },
   {
     "tier": 4,
-    "question": "Florida's price-gouging law says a post-disaster price is illegal if it is much higher than the seller's own average selling price in the 30 days before the state of emergency was declared. A Hayekian critic -- echoing the Austrian economist Friedrich Hayek's warnings about how central planners misuse information -- says the law quietly assumes something that isn't true. What does the law assume about prices?",
+    "question": "A critic in Friedrich Hayek's tradition looks hard at the yardstick in Florida's price-gouging law. After a storm, a price breaks that law when it runs far above the seller's own average price for the 30 days before the law switched on. What does the law quietly assume about prices?",
     "answer": "That the pre-storm price is still the correct price after the storm",
     "choices": [
       "That the pre-storm price is still the correct price after the storm",
@@ -21672,7 +21256,7 @@
   },
   {
     "tier": 5,
-    "question": "The Duke University economist Michael Munger has argued against anti-price-gouging statutes for two decades on Russ Roberts's EconTalk podcast. During one appearance he boiled his whole position down to a single sentence about what a state has to permit if it wants a well-supplied city after a disaster like a hurricane. How did Munger put it?",
+    "question": "Michael Munger once boiled his whole case against anti-gouging laws down to a single sentence, on Russ Roberts's EconTalk podcast. The sentence was about what a state has to permit if it wants a well-supplied city after a hurricane. How did Munger put it?",
     "answer": "The only way to guarantee low prices is to allow sellers to charge high prices",
     "choices": [
       "The only way to guarantee low prices is to allow sellers to charge high prices",
@@ -32956,7 +32540,7 @@
   },
   {
     "tier": 1,
-    "question": "Bitcoin was invented by an anonymous programmer using the name Satoshi Nakamoto. He switched the network on for the first time on January 3, 2009, in a block called the genesis block. Every time a miner solved the network's puzzle and added a new block of transactions, the code paid the miner a fixed number of brand-new bitcoins as a reward. How many bitcoins did that very first block reward pay?",
+    "question": "The anonymous programmer who invented Bitcoin switched the network on for the first time on 3 January 2009, with a block called the genesis block. From then on, the code rewarded whoever added a new block with freshly minted bitcoins. How many did each block pay at the start?",
     "answer": "50 BTC",
     "choices": [
       "50 BTC",
@@ -32968,21 +32552,8 @@
     "topic": "the-halving-and-the-21-million-cap"
   },
   {
-    "tier": 1,
-    "question": "In 2009 the anonymous programmer Satoshi Nakamoto launched Bitcoin. He wrote a rule right into the code: miners earn new bitcoins as a reward for each block of transactions they secure, but every 210,000 blocks -- about every four years -- that reward is automatically cut in half. Bitcoin fans have a short name for this scheduled event. What do they call it?",
-    "answer": "the halving",
-    "choices": [
-      "the halving",
-      "the fork",
-      "the airdrop",
-      "the burn"
-    ],
-    "context": "'The halving' (early forum slang 'halvening') is the scheduled event that cuts the block reward in half. A fork is a protocol change or chain split; an airdrop is a token giveaway on other networks; a burn is destroying tokens by sending them to an unspendable address. Source: https://en.bitcoin.it/wiki/Controlled_supply.",
-    "topic": "the-halving-and-the-21-million-cap"
-  },
-  {
     "tier": 2,
-    "question": "Bitcoin was launched in 2009 by an anonymous inventor calling himself Satoshi Nakamoto. He built the schedule of new coins into the software itself, not on any calendar. A 'halving' event cuts the mining reward in half after a set number of blocks have been mined. Since blocks come about every ten minutes, that works out to roughly one halving every four years. How many blocks pass between halvings?",
+    "question": "Bitcoin's code counts down to each halving in blocks, not in calendar days. The mining reward is cut in half after a set number of blocks, which works out to roughly once every four years. How many blocks pass between halvings?",
     "answer": "210,000 blocks",
     "choices": [
       "210,000 blocks",
@@ -32995,7 +32566,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin was designed in 2008 by an anonymous inventor named Satoshi Nakamoto so that the reward miners earn for adding a new block gets cut in half about every four years. This event is called a halving. The very first Bitcoin halving happened in November 2012. Before it, each mined block paid the miner 50 new bitcoins. After the halving, how many bitcoins did each block pay?",
+    "question": "Bitcoin miners saw their reward cut for the first time in November 2012, at the first halving. Since the network started in January 2009, every new block had paid the same reward. How many bitcoins did each block pay after the first halving?",
     "answer": "25 bitcoins",
     "choices": [
       "25 bitcoins",
@@ -33008,7 +32579,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin was launched in 2009 by an anonymous inventor named Satoshi Nakamoto. He designed it so only 21 million coins will ever exist. Every four years or so, the reward miners get for adding new coins is cut in half -- this is called a halving. Eventually the reward will fall all the way to zero, and no more new coins will ever be created. What is the main point of this shrinking reward?",
+    "question": "Bitcoin's inventor gave miners a reward that halves about every four years and will one day reach zero, after which no new coins are ever made. What is the main point of a reward that keeps shrinking?",
     "answer": "To keep new supply scarce and predictable forever",
     "choices": [
       "To keep new supply scarce and predictable forever",
@@ -33020,8 +32591,8 @@
     "topic": "the-halving-and-the-21-million-cap"
   },
   {
-    "tier": 3,
-    "question": "Bitcoin is a digital money invented in 2009 by Satoshi Nakamoto. Its rules give miners new coins as a reward for adding blocks, but every four years that reward is cut in half — an event called a 'halving.' Because each halving shrinks the payout, the total coins ever created add up to one fixed limit written into the code from day one. What is Bitcoin's final total cap?",
+    "tier": 1,
+    "question": "A programmer adds up every mining reward written into Bitcoin's code, from the very first block onward. Because the reward halves again and again, the sum comes to one fixed total. What is Bitcoin's final cap?",
     "answer": "21 million bitcoins",
     "choices": [
       "21 million bitcoins",
@@ -33034,7 +32605,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin was launched in 2009 by an anonymous programmer known only as Satoshi Nakamoto. A whole bitcoin can be split into one hundred million tiny units, and those tiny units were named in his honor so his contribution would live on inside the currency. What is this smallest denomination called?",
+    "question": "A customer pays for one cup of coffee in bitcoin, handing over a sliver of a single coin. One bitcoin can be split into a hundred million tiny units, which lets a currency with a fixed cap price a single cup. What is each of those smallest units called?",
     "answer": "a satoshi",
     "choices": [
       "a satoshi",
@@ -33046,21 +32617,21 @@
     "topic": "the-halving-and-the-21-million-cap"
   },
   {
-    "tier": 4,
-    "question": "Bitcoin was designed by Satoshi Nakamoto in 2009 with a hard supply cap of 21 million coins. Every 210,000 blocks the mining reward is cut in half, and this halving pattern shrinks toward zero on a mathematical curve set by the code itself -- no committee or vote can change it. Following that curve, around what year will the very last new bitcoin be mined?",
-    "answer": "around 2140",
+    "tier": 3,
+    "question": "A Bitcoin miner collects his reward for a new block, a reward that each halving cuts again on a curve fixed in the code, running down toward zero. When the curve reaches bottom, miners will earn only transaction fees. Following that curve, around what year will the last new bitcoin be mined?",
+    "answer": "About 2140",
     "choices": [
-      "around 2140",
-      "around 2050",
-      "around 2200",
-      "around 2028"
+      "About 2140",
+      "About 2050",
+      "About 2200",
+      "About 2100"
     ],
-    "context": "The geometric issuance schedule -- 50 -> 25 -> 12.5 -> ... -- exhausts at approximately the year 2140 assuming the ~10-minute average block time holds. From that point on miners are compensated only by transaction fees. Source: https://en.bitcoin.it/wiki/Controlled_supply.",
+    "context": "The block-reward halves every 210,000 blocks (~4 years); after about 33 halvings the reward rounds to zero and issuance ends, around 2140. Miners then earn only transaction fees.",
     "topic": "the-halving-and-the-21-million-cap"
   },
   {
     "tier": 5,
-    "question": "The American economist Milton Friedman argued for decades that if a country's money supply grows faster than its goods do, prices must rise -- this is his monetarist line on inflation. When Satoshi Nakamoto launched Bitcoin in 2009, he built in a hard cap of 21 million coins as the sharpest possible reply to Friedman: money that literally cannot expand no matter what. What property of Bitcoin's 21-million cap makes it different from every past money system?",
+    "question": "Milton Friedman argued for decades that when money grows faster than goods, prices must rise. He wanted a central bank bound by a rule; Bitcoin's design goes a step beyond. What property of Bitcoin's cap sets it apart from every money system before it?",
     "answer": "the cap cannot be raised by any committee, politician, or emergency vote",
     "choices": [
       "the cap cannot be raised by any committee, politician, or emergency vote",
@@ -33073,7 +32644,7 @@
   },
   {
     "tier": 5,
-    "question": "Austrian-school economists like Friedrich Hayek celebrate Bitcoin's fixed 21-million-coin cap as its greatest strength, echoing Milton Friedman's warning that unlimited money causes inflation. Keynesian economists disagree; they see the very same fixed cap as a serious flaw. Their concern is not about inflation but about what a rigid money supply does in a slump, when spending is already falling. What is the main Keynesian complaint about a fixed cap?",
+    "question": "Paul Krugman and other Keynesian economists see Bitcoin's fixed cap as a serious flaw, not a strength. Their worry is not inflation but what a rigid money supply does in a slump, when spending is already falling. What is the main Keynesian complaint?",
     "answer": "That a truly fixed supply forces the general price level to adjust downward during a recession, worsening debt burdens",
     "choices": [
       "That a truly fixed supply forces the general price level to adjust downward during a recession, worsening debt burdens",
@@ -40743,7 +40314,7 @@
   },
   {
     "tier": 1,
-    "question": "In early August 1914, the great powers of Europe — Britain, France, Germany, Russia, Austria-Hungary — mobilized for what would become the First World War. Each government needed to pay for guns, shells, and soldiers with newly printed banknotes it did not have gold to back. Almost overnight, every side did the same thing to its currency. That move ended the classical gold standard, the century-old system that had let anyone trade paper bills for real gold coins at a fixed rate. What did every side do?",
+    "question": "The great powers of Europe mobilised for war in early August 1914. Within days of one another, Germany first, all of them did the same thing to their money, and the classical gold standard died in about a week. What did each of them do?",
     "answer": "Suspended the redemption of paper money for gold",
     "choices": [
       "Suspended the redemption of paper money for gold",
@@ -40756,7 +40327,7 @@
   },
   {
     "tier": 1,
-    "question": "In August 1914 the First World War broke out across Europe. Every major country that entered the war -- Britain, France, Germany, Russia, Austria-Hungary -- immediately stopped letting citizens trade paper money for physical gold at the bank, because a full gold standard would have strictly limited how much money a government could raise to pay for the war. Under a real gold standard, there were only two honest ways to fund a war. What were they?",
+    "question": "Europe's governments went to war in August 1914 with guns, shells and soldiers to pay for. While the promise to swap paper notes for gold still held, there were only two honest ways to raise the money. What were they?",
     "answer": "Taxing citizens or borrowing from lenders",
     "choices": [
       "Taxing citizens or borrowing from lenders",
@@ -40769,7 +40340,7 @@
   },
   {
     "tier": 2,
-    "question": "When the First World War began in 1914, the German government could not raise enough tax revenue to pay for the fighting. So it began printing paper marks by the ton. Between 1914 and 1918 the total quantity of German paper notes in circulation grew massively, planting the seed for the hyperinflation that would explode after the war ended. About how many times bigger did the paper stock get over those four years?",
+    "question": "German printing presses began turning out paper marks in 1914 to pay for a war that taxes could not cover. By 1918 the stock of paper notes had grown massively, sowing the hyperinflation that came after the war. About how many times bigger had it grown?",
     "answer": "About 12 times",
     "choices": [
       "About 12 times",
@@ -40781,8 +40352,8 @@
     "topic": "ww1-and-the-collapse-of-the-classical-gold-standard"
   },
   {
-    "tier": 2,
-    "question": "In every major war of the 20th century -- the First World War, the Second World War, the Korean War, Vietnam -- governments printed massive amounts of brand-new paper money to pay for soldiers, guns, tanks, and supplies. Prices in the shops rose quickly as a result, because factories and farms could not fill up store shelves any faster than before. What is the name for this rise in prices caused by too much new currency bidding for the same goods?",
+    "tier": 1,
+    "question": "Workers at a government printing press turn out fresh banknotes to pay for a war's shells, rifles and uniforms, while the country's factories and farms cannot stock the shops any faster than before. The same scene plays out in every major war of the 20th century. What does all that new money bring, and why?",
     "answer": "Inflation, because more money is chasing the same amount of goods",
     "choices": [
       "Inflation, because more money is chasing the same amount of goods",
@@ -40795,7 +40366,7 @@
   },
   {
     "tier": 3,
-    "question": "In early 1919, just after the First World War ended, an Austrian economist in Vienna published a book called Nation, State, and Economy. In it he argued the war could never have dragged on for four bloody years under a full gold standard — governments would have run out of real gold to pay soldiers within months and been forced to make peace. Only unlimited paper printing, freed from gold, let the killing continue. Who was that Austrian economist?",
+    "question": "An Austrian economist in Vienna published a book called Nation, State, and Economy in 1919, just after the First World War. He argued that a war fought under gold could never have dragged on for four years: each side would have spent its gold within months and been forced to make peace. Who was he?",
     "answer": "Ludwig von Mises",
     "choices": [
       "Ludwig von Mises",
@@ -40808,7 +40379,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1925 Britain went back to the gold standard, meaning the government would once again let people trade paper pounds for physical gold coins on demand. Chancellor of the Exchequer Winston Churchill picked a specific old rate to fix the pound at. It made the pound too strong on world markets and forced painful deflation, wage cuts, and unemployment on British coal miners and factory workers. At what rate did Churchill fix the pound?",
+    "question": "Winston Churchill, as Chancellor of the Exchequer, put Britain back on gold in 1925, so that paper pounds could again be traded for gold on demand. He fixed the pound at an old rate that left it too strong on world markets and pushed deflation, wage cuts, and unemployment on British coal miners and factory workers. At what rate did he fix it?",
     "answer": "The prewar 1914 parity",
     "choices": [
       "The prewar 1914 parity",
@@ -40821,7 +40392,7 @@
   },
   {
     "tier": 4,
-    "question": "In April 1925 Winston Churchill, then Britain's Chancellor of the Exchequer, made the fateful decision to put the British pound back on the pre-war gold standard -- and at the pre-war exchange rate, which many economists said was too high. The economist John Maynard Keynes was furious. Keynes wrote a short pamphlet attacking the decision, and its title named Churchill personally as the man responsible for what Keynes predicted would be a national disaster. What did Keynes call his pamphlet?",
+    "question": "John Maynard Keynes went after Winston Churchill in print in 1925, after the Chancellor of the Exchequer put the pound back on gold at a rate many economists thought too high. Keynes's weapon was a short pamphlet. What was it called?",
     "answer": "The Economic Consequences of Mr. Churchill",
     "choices": [
       "The Economic Consequences of Mr. Churchill",
@@ -40834,7 +40405,7 @@
   },
   {
     "tier": 4,
-    "question": "The 1922 Genoa Conference tried to ease pressure on world gold reserves. It proposed a weaker version of the classical system. Only central banks would hold real gold, and commercial reserves would be foreign currencies backed by gold. What is this weaker system called?",
+    "question": "Delegates who met at Genoa in 1922 looked for a way to ease the strain on the world's gold. They sketched a weaker version of the classical system: only central banks would hold the metal, while other reserves would be kept in pounds and dollars backed by gold. What is this weaker system called?",
     "answer": "The gold-exchange standard",
     "choices": [
       "The gold-exchange standard",
@@ -40847,7 +40418,7 @@
   },
   {
     "tier": 5,
-    "question": "When money is backed by gold or has a fixed supply, the government cannot just print more when it needs to pay for something huge. Austrian economists say this is why states that want to fight big wars have always wanted to break that link. What is their thesis?",
+    "question": "Every warring power in Europe did the same thing to its money in the opening days of August 1914. Austrian economists draw a thesis about money and power from that move. What is it?",
     "answer": "Sound money limits state power, and war-making states always want to escape that limit",
     "choices": [
       "Sound money limits state power, and war-making states always want to escape that limit",
@@ -40860,7 +40431,7 @@
   },
   {
     "tier": 5,
-    "question": "Austrian-school economists read the political and monetary catastrophes of the 20th century -- the two World Wars, the abandonment of the gold standard, the great hyperinflations, the Cold War -- as one connected story rather than as two independent tragedies (war on one side, money on the other). In this Austrian reading, industrial-scale war and monetary breakdown are bound together at the deepest level. Which pairing best captures that link?",
+    "question": "Armies across Europe mobilised in August 1914. Writers in the Austrian school refuse to file the 20th century's industrial wars under politics and its monetary breakdowns under money. They read the two as bound together at the deepest level. Which statement best captures that link?",
     "answer": "The industrial-scale wars and the abandonment of gold discipline were the same event",
     "choices": [
       "The industrial-scale wars and the abandonment of gold discipline were the same event",
