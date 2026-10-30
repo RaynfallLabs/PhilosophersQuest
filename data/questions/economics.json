@@ -2614,7 +2614,7 @@
   },
   {
     "tier": 1,
-    "question": "To spend bitcoin, your wallet must keep a huge secret number safe. That number is too long to memorize or copy by hand without errors. So every modern Bitcoin wallet turns it into a much friendlier backup -- a short list of common everyday vocabulary you can write on paper and lock in a safe. What is that word-based backup called?",
+    "question": "A Bitcoin wallet guards a secret number far too long to memorize or copy by hand without mistakes. So every modern wallet turns it into a friendlier backup: a short list of everyday words its owner can write on paper and lock in a safe. What is that backup called?",
     "answer": "a seed phrase of 12 or 24 English words",
     "choices": [
       "a seed phrase of 12 or 24 English words",
@@ -2627,7 +2627,7 @@
   },
   {
     "tier": 1,
-    "question": "Bitcoin wallets from every company -- Trezor, Ledger, and dozens of phone apps -- all build their word-list backups from the exact same short dictionary of common English words. That way, if one wallet dies, any other wallet in the world can read the same backup and restore your coins. That shared dictionary is fixed. How many words are on it?",
+    "question": "A Ledger owner writes her backup words on paper, and a Trezor owner does the same with his. Every word on both sheets comes from one fixed list of common English words, which countless phone wallets use too. How many words are on that list?",
     "answer": "2,048 words",
     "choices": [
       "2,048 words",
@@ -2640,7 +2640,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin lets you memorize a special sequence of 12 or 24 English words, called a seed phrase. Those words alone unlock all of your coins from any computer, anywhere on Earth. Suppose you cross a national border with no wallet on you, no printed paper, and no phone — just the seed phrase memorized in your head. What can customs officers actually find?",
+    "question": "Suppose you cross a border with no phone, no wallet and not a scrap of paper, only your seed phrase in your memory. Gold would set off the scanner, a bank account could be locked from far away, and a case of cash would draw the sniffing dogs. What can customs officers find?",
     "answer": "nothing — no search reveals the memorized words in your head",
     "choices": [
       "nothing — no search reveals the memorized words in your head",
@@ -2648,12 +2648,12 @@
       "customs freezes coins tied to any traveler crossing a border",
       "the network refuses to sign anything from the new country"
     ],
-    "context": "A memorized seed phrase leaves no physical trace; the coins remain moveable from any internet-connected machine that can reconstruct the wallet. Contrast: gold triggers metal detectors, cash triggers currency-dog searches, bank balances can be frozen from any jurisdiction. Source: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki; Antonopoulos, Mastering Bitcoin (2017 ed.).",
+    "context": "A memorized seed phrase leaves no physical trace; the coins remain moveable from any internet-connected machine that can reconstruct the wallet. Contrast: gold triggers metal detectors, cash triggers currency-dog searches, bank balances can be frozen from any jurisdiction. The novel property is that ownership can be reduced entirely to a memorized sequence of words in a human mind; every prior monetary asset had a physical or ledger footprint outside the owner.",
     "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
   },
   {
     "tier": 3,
-    "question": "When police search your house, they can seize the paper your seed phrase is written on. But if the phrase is only in your head -- memorized, never spoken -- American lawyers argue the state cannot force you to speak it out loud. One amendment to the US Constitution protects you from being made to testify against yourself, and it is the amendment defense lawyers cite in these crypto cases. Which amendment is it?",
+    "question": "Police search a Bitcoin owner's house and carry off the sheet of paper his seed phrase is written on. Had the phrase lived only in his memory, American defense lawyers argue, the state could not force him to say it aloud. They cite the amendment to the US Constitution that protects anyone from being made to testify against himself. Which amendment is it?",
     "answer": "the Fifth Amendment",
     "choices": [
       "the Fifth Amendment",
@@ -2666,7 +2666,7 @@
   },
   {
     "tier": 3,
-    "question": "The Fifth Amendment to the US Constitution says people cannot be forced to give testimony against themselves. American courts have split on whether that protection covers a phone or laptop password. Some judges refuse to force someone to unlock a device. Other judges order it anyway, using a rule that says the state already knows the answer is on the device, so making the person unlock it reveals nothing new. What is that rule called?",
+    "question": "A suspect refuses to give police the password to his laptop, saying no one can force him to testify against himself. American courts have split over refusals like his. Some judges will not compel the password. Others order it, reasoning that a password reveals nothing new once the state already knows the files exist, where they sit and that they are real. What is that rule called?",
     "answer": "the foregone-conclusion doctrine",
     "choices": [
       "the foregone-conclusion doctrine",
@@ -2678,21 +2678,8 @@
     "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
   },
   {
-    "tier": 4,
-    "question": "In 2013, a small team of Bitcoin developers wrote an open standard for recovering a wallet using a list of ordinary English words — a 12- or 24-word seed phrase. They published it for free, so any wallet company anywhere could use the same format without asking permission or paying a fee. Because so many companies adopted the same standard, users gained one big practical benefit. What is that main benefit for users?",
-    "answer": "A user can move funds between wallet brands without losing access",
-    "choices": [
-      "A user can move funds between wallet brands without losing access",
-      "Only one company at a time can sell wallets that work with Bitcoin",
-      "Wallets built to the standard must pay a yearly fee to a foundation",
-      "Users can only recover a phrase if the original vendor still exists"
-    ],
-    "context": "BIP-39 authors: Marek Palatinus (Slush), Pavol Rusnak (Stick), Aaron Voisine, Sean Bowe -- 2013. Back, Dai, and Szabo are earlier cypherpunks not on the BIP-39 author list. Source: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki.",
-    "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
-  },
-  {
-    "tier": 4,
-    "question": "You own a hardware Bitcoin wallet -- a small device that stores your secret key offline. It follows the open seed-phrase standard set in Bitcoin Improvement Proposal 39 (BIP-39), meaning its backup is 12 or 24 plain English words. One morning the company that made the device announces it is closing forever: no more updates, no more support. You feel a moment of panic, then realize your coins are still safe. What can you do?",
+    "tier": 3,
+    "question": "A Bitcoin owner learns one morning that the company behind his hardware wallet is closing for good: no more updates, no more support. His backup is a seed phrase built to Bitcoin Improvement Proposal 39, published free for any maker to use without asking permission, and makers from Ledger to Trezor to countless phone apps have adopted it. What can he do?",
     "answer": "Restore the phrase into any other wallet that follows the same open standard",
     "choices": [
       "Restore the phrase into any other wallet that follows the same open standard",
@@ -2704,34 +2691,8 @@
     "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
   },
   {
-    "tier": 5,
-    "question": "Every other form of money in history sits in a physical place: coins in a pocket, gold in a vault, dollars in a bank ledger. People who memorize their Bitcoin recovery phrase can hold their savings somewhere no earlier money has ever lived. Where?",
-    "answer": "Inside their own memory, with no physical or digital trace outside their head",
-    "choices": [
-      "Inside their own memory, with no physical or digital trace outside their head",
-      "Inside a special chip installed at each country's border",
-      "Inside a global vault run by the United Nations",
-      "Inside a ledger held by the International Monetary Fund"
-    ],
-    "context": "The novel property is that ownership can be reduced entirely to a memorized sequence of words in a human mind -- no border chip, UN vault, or IMF ledger is involved. Every prior monetary asset had a physical or ledger footprint outside the owner. Source: Antonopoulos, Mastering Bitcoin (2017 ed.).",
-    "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
-  },
-  {
-    "tier": 5,
-    "question": "Bitcoin users can memorize a 12-word seed phrase — the master key that controls their coins — and carry nothing physical at all when crossing a border. A person holding gold sets off scanners. A person carrying cash gets flagged by currency-detection dogs. A person with bank balances can have those accounts frozen from a distant office. The memorized phrase blocks one specific kind of state action that the others do not. Which action does the memorized phrase block?",
-    "answer": "seizure through physical search, currency detection, or remote account freeze",
-    "choices": [
-      "seizure through physical search, currency detection, or remote account freeze",
-      "market-price volatility during the crossing",
-      "double-spending by a corrupt merchant on the far side of the border",
-      "conversion of the coins into a new format"
-    ],
-    "context": "Gold is heavy and detectable; cash is dog-searchable; bank balances can be frozen from any jurisdiction. A memorized phrase leaves no target for any of the three. Volatility, double-spend and format conversion are separate technical issues. Source: Antonopoulos, Mastering Bitcoin (2017 ed.); The Bitcoin Standard (2018).",
-    "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
-  },
-  {
     "tier": 1,
-    "question": "A slick new website promises 1% interest every single day if you deposit your crypto with it. That grows $100 into more than $3,700 in a year -- thirty-seven times your money -- with no work and no risk. Even the safest US Treasury bond pays only about 4% for a whole year. When a crypto site promises 1% a day, what is that almost always a sign of?",
+    "question": "A slick website promises 1 percent a day on any crypto deposited with it. At that pace $100 would top $3,700 within a year. A Treasury bond issued by the United States, among the safest loans there are, pays about 4 percent a year. What is such a promise almost always a sign of?",
     "answer": "A scam -- no real business can pay that much",
     "choices": [
       "A scam -- no real business can pay that much",
@@ -2744,7 +2705,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1920 an Italian immigrant in Boston named Charles Ponzi promised huge returns on international postal coupons. He had no real business behind the pitch. He paid early investors with money from new ones and paid commissions to anyone who brought in more depositors. The whole thing collapsed within a year and his name became the label for that whole trick. What is this scam called?",
+    "question": "An Italian immigrant in Boston promised investors huge profits in 1920 from trading international postal coupons, with no real business behind the pitch. He paid a bonus to whoever recruited fresh depositors, and the whole operation collapsed within a year. What is a fraud of that shape called?",
     "answer": "a Ponzi scheme",
     "choices": [
       "a Ponzi scheme",
@@ -2757,7 +2718,7 @@
   },
   {
     "tier": 2,
-    "question": "BitConnect was a crypto firm that promised depositors huge, steady returns generated by a mysterious 'trading bot' nobody could inspect. In January 2018, financial regulators in Texas and North Carolina told the firm to stop taking new money because the scheme looked like a classic Ponzi. Its coin crashed from about 400 dollars to nearly zero in a matter of days, wiping out families around the world. How much did depositors lose in all?",
+    "question": "Satish Kumbhani launched BitConnect in 2016 on the claim that a hidden trading bot, which no outsider could examine, earned its returns. In January 2018 regulators in Texas and North Carolina told it to take no more deposits, and its coin crashed from roughly $400 to nearly zero in a few days. How much did depositors lose in all?",
     "answer": "about $2.4 billion",
     "choices": [
       "about $2.4 billion",
@@ -2770,7 +2731,7 @@
   },
   {
     "tier": 2,
-    "question": "An even bigger fake-crypto scheme than BitConnect was run by a woman who called herself the 'Cryptoqueen.' She staged sold-out promo events at big venues and vanished with billions of dollars in 2017. What makes a scheme like hers a Ponzi and not a real investment?",
+    "question": "Ruja Ignatova sold OneCoin around the globe as Bitcoin's successor, staging glitzy promotions for it, before she vanished in 2017 with billions of investors' dollars gone. What makes a scheme like hers a Ponzi rather than a real investment?",
     "answer": "Old investors were paid with new investors' money, not real earnings",
     "choices": [
       "Old investors were paid with new investors' money, not real earnings",
@@ -2783,7 +2744,7 @@
   },
   {
     "tier": 3,
-    "question": "Ruja Ignatova, a Bulgarian-born businesswoman with a Frankfurt law degree, launched a coin called OneCoin around 2014 and sold it worldwide as the next Bitcoin. She held glitzy events at Wembley Arena in London, pulled in an estimated $4 billion from investors, and promised a revolutionary cryptocurrency. When investigators finally took OneCoin apart, they found one crucial piece missing that any real cryptocurrency must have. What did OneCoin lack?",
+    "question": "Investigators finally took OneCoin apart after Ruja Ignatova, a Bulgarian-born businesswoman with a Frankfurt law degree, had sold it worldwide as the next Bitcoin and packed London's Wembley Arena for its promotions. They found one piece missing that every real cryptocurrency needs. What did OneCoin lack?",
     "answer": "any working blockchain -- the ledger was just an internal database",
     "choices": [
       "any working blockchain -- the ledger was just an internal database",
@@ -2796,7 +2757,7 @@
   },
   {
     "tier": 3,
-    "question": "OneCoin was a Bulgaria-based crypto project run by Ruja Ignatova, the self-styled 'Cryptoqueen,' who vanished in 2017. She sold OneCoin around the world as the next Bitcoin, but investigators later found no real blockchain behind it. Prosecutors in the US, UK, and Germany pieced together what investors had put in. Their number dwarfed the roughly $2 billion lost in the earlier BitConnect scam. What range do they give for OneCoin?",
+    "question": "Prosecutors in Germany, Britain and the United States pieced together how much money investors had poured into OneCoin, the coin Ruja Ignatova sold as the next Bitcoin. Their estimate dwarfed what BitConnect's depositors had lost. What range do they give for OneCoin?",
     "answer": "roughly 4 to 15 billion US dollars",
     "choices": [
       "roughly 4 to 15 billion US dollars",
@@ -2809,7 +2770,7 @@
   },
   {
     "tier": 4,
-    "question": "On October 25, 2017, US and German investigators were closing in on Ruja Ignatova, the Bulgarian-born founder of the OneCoin cryptocurrency scam that had taken an estimated $4 billion from investors around the world. That evening she boarded a Ryanair flight out of Sofia, Bulgaria -- and has not been seen in public since. Which country did that final Ryanair flight land in?",
+    "question": "Ruja Ignatova boarded a Ryanair flight out of Sofia, Bulgaria, on October 25, 2017, as investigators from America and Germany closed in on her OneCoin scam. She has not been seen in public since. Which country did that last flight land in?",
     "answer": "Greece (Athens)",
     "choices": [
       "Greece (Athens)",
@@ -2822,7 +2783,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2022, US federal prosecutors had spent years chasing Ruja Ignatova, the missing Bulgarian founder of the OneCoin cryptocurrency scam that stole an estimated $4 billion from investors worldwide. On June 30, 2022, the Federal Bureau of Investigation (FBI) publicly gave her a status that only a small handful of fugitives in American history have ever held. Which formal FBI listing did she receive that day?",
+    "question": "Ruja Ignatova, the self-styled Cryptoqueen behind OneCoin, had been missing since a flight out of Sofia in 2017. On June 30, 2022, American authorities gave her a status that only a small handful of fugitives in American history have ever held. What did she receive that day?",
     "answer": "placement on the FBI's Ten Most Wanted Fugitives list",
     "choices": [
       "placement on the FBI's Ten Most Wanted Fugitives list",
@@ -2835,7 +2796,7 @@
   },
   {
     "tier": 5,
-    "question": "Andreas Antonopoulos is a Greek-British computer scientist who wrote Mastering Bitcoin, the standard technical book on the protocol. He and other longtime Bitcoin teachers push back hard whenever reporters lump every blockchain project under the single word 'crypto.' To them that word blurs a real distinction between Satoshi's original 2009 protocol and the thousands of later coins run by companies, foundations, or promoters. Which point do they insist reporters recognize?",
+    "question": "Andreas Antonopoulos, who wrote Mastering Bitcoin, the standard technical book on the protocol, objects whenever reporters lump every coin together under the single word crypto. He and other longtime Bitcoin teachers say the word blurs a real distinction. Which point do they insist reporters recognize?",
     "answer": "That Bitcoin -- a specific 2009 protocol with a proven fixed supply -- is not the same category of thing as most projects that call themselves 'crypto'",
     "choices": [
       "That Bitcoin -- a specific 2009 protocol with a proven fixed supply -- is not the same category of thing as most projects that call themselves 'crypto'",
@@ -2848,7 +2809,7 @@
   },
   {
     "tier": 5,
-    "question": "Charles Ponzi was an Italian immigrant in Boston who in 1920 promised huge returns from trading international postage coupons; instead he paid old investors with new investors' money, and the whole scheme collapsed within a year. When modern Austrian-tradition writers examine crypto scams like BitConnect (2016–2018) and OneCoin (2014–2017), they compare them directly to Ponzi's original 1920 fraud. Which historical claim about the pattern do they most often press?",
+    "question": "A Boston promoter promised huge returns from international postal coupons in 1920, and his scheme collapsed within a year. Austrian-minded writers set BitConnect and OneCoin, both sold as cryptocurrencies, beside his fraud. Which historical claim about the pattern do they press?",
     "answer": "That the pattern of promising fixed high returns with a vague mechanism and paying them from new deposits is older than the technology it dresses in",
     "choices": [
       "That the pattern of promising fixed high returns with a vague mechanism and paying them from new deposits is older than the technology it dresses in",
@@ -2861,7 +2822,7 @@
   },
   {
     "tier": 1,
-    "question": "In old American towns, some places banned Sunday alcohol sales entirely. Church groups pushed for the ban because they believed drinking on Sunday was wrong. But illegal moonshine sellers also pushed for the ban — with legal stores closed on Sunday, thirsty buyers walked over to them instead, and the moonshiners made more money. The temperance preachers and the bootleggers ended up on the same side of the vote for completely clashing motives. What kind of coalition is this?",
+    "question": "A devout Baptist in a Southern town campaigns to keep the Sunday liquor ban, sure that drinking on the Sabbath is wrong. A moonshiner backs the ban too, because closed liquor stores send Sunday drinkers his way. What kind of coalition is this?",
     "answer": "Two very different groups quietly wanting the same rule for opposite reasons",
     "choices": [
       "Two very different groups quietly wanting the same rule for opposite reasons",
@@ -2874,33 +2835,20 @@
   },
   {
     "tier": 1,
-    "question": "In 1983, the American economist Bruce Yandle wrote a short essay describing a strange pattern he kept seeing while working at the Federal Trade Commission. Over and over, two very different groups -- one moral, one out for profit -- quietly backed the same regulations for opposite reasons. Yandle gave the pattern a memorable two-word nickname that stuck in economics classes ever after. What was that nickname?",
+    "question": "Bruce Yandle, a Clemson economist running the Federal Trade Commission's staff in the early 1980s, saw the same odd partnership behind rule after rule. In a 1983 essay he gave that partnership a short name. What did he call it?",
     "answer": "Bootleggers and Baptists",
     "choices": [
       "Bootleggers and Baptists",
-      "Preachers and Peddlers",
-      "Doctors and Dealers",
-      "Bosses and Buddies"
+      "The Iron Triangle",
+      "Concentrated benefits and dispersed costs",
+      "Regulatory capture"
     ],
-    "context": "The 1983 essay is titled 'Bootleggers and Baptists -- The Education of a Regulatory Economist'. The pairing has become one of the most-cited concepts in modern political economy. Source: cato.org (Regulation magazine 1983).",
+    "context": "The 1983 essay is titled 'Bootleggers and Baptists -- The Education of a Regulatory Economist'. Southern Baptists supported Sunday liquor bans on moral grounds; bootleggers supported them because Sunday legal sales would compete with their illegal operations. The pairing has become one of the most-cited concepts in modern political economy.",
     "topic": "bootleggers-and-baptists-bruce-yandle-1983"
   },
   {
     "tier": 2,
-    "question": "The classic example Bruce Yandle pointed to came from the American South. On Sundays, laws banned the sale of liquor. On the surface it looked purely moral, and one group of devout churchgoers loudly backed it as a moral crusade. But quietly, another group of criminals profited from the same ban, because they sold liquor illegally on Sundays with no legal competition to undercut them. Which two groups formed this famous unspoken coalition?",
-    "answer": "Baptists (moral) and Bootleggers (profit)",
-    "choices": [
-      "Baptists (moral) and Bootleggers (profit)",
-      "Doctors (moral) and Distillers (profit)",
-      "Preachers (moral) and Publishers (profit)",
-      "Pastors (moral) and Prosecutors (profit)"
-    ],
-    "context": "Southern Baptists supported Sunday liquor bans on moral grounds; bootleggers supported them because Sunday legal sales would compete with their illegal operations. The Baptists gave moral cover; the bootleggers supplied resources. Source: cato.org (Yandle 1983).",
-    "topic": "bootleggers-and-baptists-bruce-yandle-1983"
-  },
-  {
-    "tier": 2,
-    "question": "In Bruce Yandle's Bootleggers-and-Baptists pattern, both groups back exactly the same regulation but for opposite reasons. The bootleggers get real profit -- with legal liquor stores forced to close on Sundays, their illegal Sunday sales face no competition and prices rise. What do the Baptists give the same rule in return that makes it politically safe for lawmakers to keep?",
+    "question": "A Southern bootlegger sells his liquor on a Sunday with no legal store open to compete, and he helps pay for the fight to keep the Sunday-closing law. The Baptists, in Bruce Yandle's telling, bring something else, which lets lawmakers defend the rule without blushing. What do the Baptists give the rule?",
     "answer": "Moral cover",
     "choices": [
       "Moral cover",
@@ -2913,7 +2861,7 @@
   },
   {
     "tier": 3,
-    "question": "Bruce Yandle, an American economist, noticed that odd political coalitions form around new regulations: one group has money at stake, another has moral cover to give. A modern US example is city rules that tighten where Uber and Lyft can pick up passengers or what they can charge. Two very different groups usually show up together at city hall backing those tighter rules. Which pair?",
+    "question": "A hearing opens at city hall on new limits for Uber and Lyft: where their drivers may pick up riders, and what they may charge. Bruce Yandle's pattern predicts two unlikely allies at the microphone backing the limits, one with money at stake and one with a moral cause to plead. Which pair usually shows up?",
     "answer": "Taxi-medallion holders (economic) and pedestrian-safety advocates (moral cover)",
     "choices": [
       "Taxi-medallion holders (economic) and pedestrian-safety advocates (moral cover)",
@@ -2926,7 +2874,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern environmental regulations often look like a clean fight between green activists on one side and dirty industry on the other. But Bruce Yandle's Bootleggers-and-Baptists lens shows a hidden alliance underneath. Real environmentalists back a rule for the planet -- and a specific kind of business quietly cheers along, because the same rule crushes their competitors and locks in their own market share. Which kind of business most often plays that hidden bootlegger role in environmental fights?",
+    "question": "Environmentalists rally behind a new green rule, sincere in wanting to protect the planet. Bruce Yandle's lens looks for a quieter partner cheering the rule on: a business that gains because the rule weighs more heavily on its rivals than on itself. Which kind of business most often plays that bootlegger's part?",
     "answer": "Domestic producers seeking barriers against foreign competitors",
     "choices": [
       "Domestic producers seeking barriers against foreign competitors",
@@ -2939,7 +2887,7 @@
   },
   {
     "tier": 4,
-    "question": "America's most famous ban of all -- the 1919-1933 Prohibition of alcohol, written into the Constitution as the 18th Amendment -- is treated by economists as the biggest real-world example of Bruce Yandle's Bootleggers-and-Baptists pattern. Two very different groups ended up on the same side: one fought for the ban, and the other grew rich from it while it lasted. Which two groups were they?",
+    "question": "One group fought for the 18th Amendment, which banned alcohol across America from 1919 to 1933; another grew rich from the ban while it lasted. Economists read that ban as the biggest case of Bruce Yandle's pattern. Which two groups were they?",
     "answer": "Moralists and organized-crime beneficiaries",
     "choices": [
       "Moralists and organized-crime beneficiaries",
@@ -2951,8 +2899,8 @@
     "topic": "bootleggers-and-baptists-bruce-yandle-1983"
   },
   {
-    "tier": 4,
-    "question": "In 1983, the American economist Bruce Yandle wrote a short essay describing a strange political pattern he called 'bootleggers and Baptists' — the moral crusaders and the illegal booze sellers both quietly cheering the same Sunday liquor law. In 2014, Yandle published a full book-length expansion of that framework, co-authored with a modern American economist confusingly named Adam Smith (not the 1776 one). The Cato Institute released it. What is that 2014 book's title?",
+    "tier": 3,
+    "question": "Bruce Yandle turned his 1983 essay into a full book in 2014, written with a co-author who was, confusingly, named Adam Smith, a modern scholar and not the Scot of 1776. The Cato Institute published it, with modern cases from banking, green rules and tobacco deals. What is the book's full title?",
     "answer": "Bootleggers and Baptists: How Economic Forces and Moral Persuasion Interact to Shape Regulatory Politics",
     "choices": [
       "Bootleggers and Baptists: How Economic Forces and Moral Persuasion Interact to Shape Regulatory Politics",
@@ -2965,7 +2913,7 @@
   },
   {
     "tier": 5,
-    "question": "Bruce Yandle turned his Bootleggers-and-Baptists observation into a rule of thumb for reading political news. When a regulation has a clear moral reason on the surface and quiet backing from firms that will profit from it, look at which side does what in public. The moral (Baptist) side plays one specific public role, while the profit (bootlegger) side plays another quieter one. What role does the moral side play?",
+    "question": "Bruce Yandle made his insight into a way of reading the news. In a working coalition of moralists and profit-seekers, he said, each side plays its own part in public, and it takes a regulatory economist years to learn to see past the moral speeches to the bootlegger behind them. What part does the moral side play?",
     "answer": "The visible lobbying while the profit coalition supplies the resources",
     "choices": [
       "The visible lobbying while the profit coalition supplies the resources",
@@ -2978,20 +2926,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1920s American South, two very different groups both fought to keep Sunday laws that banned liquor sales: devout Protestant churchgoers pushing for moral order, and illegal liquor sellers who feared legal Sunday competition would ruin their profits. Fifty years later, the American economist Bruce Yandle would name a whole coalition pattern after this odd pair. What two-word name did he give it?",
-    "answer": "Bootleggers and Baptists",
-    "choices": [
-      "Bootleggers and Baptists",
-      "Farmers and Foundries",
-      "Merchants and Ministers",
-      "Sailors and Saloonkeepers"
-    ],
-    "context": "Bruce Yandle, 'Bootleggers and Baptists -- The Education of a Regulatory Economist' (Regulation, May/June 1983). Baptists supported Sunday closing on moral grounds; bootleggers supported it because closed legal outlets meant Sunday drinkers had to buy from illegal suppliers. Source: cato.org (Yandle 1983 reprint).",
-    "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
-  },
-  {
-    "tier": 1,
-    "question": "The Bootleggers-and-Baptists pattern is named for old US Sunday alcohol laws. Baptists preached against Sunday drinking on moral grounds. Bootleggers quietly loved the same law because it killed the legal Sunday competition and let them charge more. Their reasons for supporting the law were opposite. But for the pattern to fit at all, one thing had to match between the two groups. What must they share?",
+    "question": "A Baptist preaches in defense of the South's Sunday-closing law, while a bootlegger quietly loves it, since it shuts his legal rivals for the day. Their reasons are opposite, yet for Bruce Yandle's pattern one thing must match. What must the two share?",
     "answer": "Identical policy positions on the rule's specific design",
     "choices": [
       "Identical policy positions on the rule's specific design",
@@ -3004,20 +2939,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 2022, California's air board banned the sale of new gasoline cars starting in 2035. Bastiat would have asked about what the rule's fans never look at: the strain on the grid, the mining supply chain, the low-income drivers priced out. In his famous 1850 essay, what did Bastiat call these hidden effects that policymakers ignore?",
-    "answer": "The Unseen",
-    "choices": [
-      "The Unseen",
-      "The Seen",
-      "External benefits",
-      "Consumer surplus"
-    ],
-    "context": "California ACC II mandates that all new passenger vehicles sold in the state be zero-emission by 2035. About a dozen other states adopted the same target. Source: ww2.arb.ca.gov (Advanced Clean Cars II rulemaking).",
-    "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
-  },
-  {
-    "tier": 2,
-    "question": "In 2020, the state of California ordered that every new car sold in the state from 2035 onward must be a zero-emission electric vehicle — no more gasoline engines. Environmental groups cheered the rule as a victory for the climate. But the biggest established car makers — companies like GM (General Motors) and Ford — also cheered it and publicly said they supported the mandate. Why would huge, powerful car makers back a strict regulation like that?",
+    "question": "General Motors and Ford publicly backed California's goal that every new car sold in the state from 2035 run without tailpipe emissions, standing beside the environmental groups that cheered it. Why would two of America's biggest established carmakers welcome so strict a rule?",
     "answer": "They can afford the switch, but smaller rivals cannot",
     "choices": [
       "They can afford the switch, but smaller rivals cannot",
@@ -3030,7 +2952,7 @@
   },
   {
     "tier": 3,
-    "question": "The June 2018 Supreme Court ruling in South Dakota v. Wayfair allowed states to require out-of-state online sellers to collect state sales tax. Which category of business quietly supported the ruling as a way to raise compliance costs on smaller rivals?",
+    "question": "The justices of the US Supreme Court ruled in June 2018, in South Dakota v. Wayfair, that states may require online sellers based in other states to collect their sales tax. Tax collectors in the states and champions of a level playing field made the moral case, and a small online seller must now handle more than forty-five different state tax systems. Which businesses quietly welcomed the ruling?",
     "answer": "Large brick-and-mortar retailers and Amazon",
     "choices": [
       "Large brick-and-mortar retailers and Amazon",
@@ -3043,7 +2965,7 @@
   },
   {
     "tier": 3,
-    "question": "Starting with Colorado and Washington in 2012, many US states have legalized recreational marijuana. But those states added tight rules on the legal industry: only a few licenses granted, high sales taxes, and mountains of paperwork for growers and shops. In California in 2023, licensed stores were competing against unlicensed street dealers who paid no taxes at all. What share of the pot sold in the state that year was still from the illegal market?",
+    "question": "A licensed cannabis shop in California paid heavy taxes in 2023 and filled out piles of paperwork, while unlicensed dealers nearby paid no tax at all. California had legalized marijuana, following Colorado and Washington, the first to do so in 2012, but boxed the legal trade in with scarce licenses. What share of the cannabis sold in California that year still came from the illegal market?",
     "answer": "About two-thirds",
     "choices": [
       "About two-thirds",
@@ -3056,7 +2978,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1998 the four biggest US cigarette makers -- Philip Morris, R.J. Reynolds, Brown & Williamson, and Lorillard -- signed the Master Settlement Agreement with 46 state attorneys general. On paper it was a punishment for the tobacco industry. But economists later showed the settlement locked out new cigarette competitors and helped the big four keep market share, while states got a huge stream of tobacco money for decades. Which two coalitions ended up on the same side, despite opposite stated goals?",
+    "question": "Philip Morris, R.J. Reynolds, Brown & Williamson and Lorillard signed the Master Settlement Agreement in 1998 with forty-six state attorneys general. It looked like a punishment for the tobacco industry. Yet the per-pack payments it required made it ruinously expensive for any new cigarette maker to break in. Which two groups found themselves allies, for opposite reasons?",
     "answer": "Public-health advocates and the four largest tobacco companies",
     "choices": [
       "Public-health advocates and the four largest tobacco companies",
@@ -3069,20 +2991,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1983, the American economist Bruce Yandle noticed something strange: two totally different groups often lobby for the same regulation for opposite reasons. On Sunday liquor bans, churchgoing teetotalers pushed for the ban on moral grounds, while illegal liquor sellers quietly supported the same law because it killed their legal competition. In 2014, Yandle teamed up with the economist Adam Smith to expand this insight into a book for the Cato Institute, gathering modern cases from banking, green rules, and tobacco settlement deals. What did they title it?",
-    "answer": "Bootleggers and Baptists",
-    "choices": [
-      "Bootleggers and Baptists",
-      "The Political Economy of Regulation",
-      "The Captured Economy",
-      "Regulation Revisited"
-    ],
-    "context": "Adam Smith + Bruce Yandle, Bootleggers and Baptists: How Economic Forces and Moral Persuasion Interact to Shape Regulatory Politics (Cato Institute, 2014). Note: the Adam Smith here is a Johnson & Wales political scientist, not the 18th-century economist. Source: cato.org (2014).",
-    "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
-  },
-  {
-    "tier": 5,
-    "question": "Bruce Yandle, a Clemson University economist, wrote his famous Bootleggers-and-Baptists paper in 1983 after watching decades of US federal regulation. He wanted to teach students and policy analysts a specific mental habit: whenever an odd coalition of moral reformers and quiet business interests shows up backing the same new rule, do not just credit the moral story out front. Look one layer down. What should the analyst look for?",
+    "question": "Bruce Yandle wanted analysts to learn one habit. When moral reformers line up behind a new rule, do not settle for the moral story told up front, even though the moralists often mean every word. Look one layer down. What should the analyst look for there?",
     "answer": "A concentrated commercial beneficiary hiding behind the moral advocate",
     "choices": [
       "A concentrated commercial beneficiary hiding behind the moral advocate",
@@ -3090,25 +2999,12 @@
       "A single geographic region driving the outcome",
       "A hidden foreign influence campaign"
     ],
-    "context": "The Yandle move: when moral rhetoric and commercial interest happen to align on identical policy detail, look for the commercial beneficiary. This is a diagnostic tool, not a policy verdict on the substantive goal. Source: Yandle, Regulation (1983); Smith + Yandle (Cato 2014).",
-    "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
-  },
-  {
-    "tier": 5,
-    "question": "A US town proposes a rule to ban a legal product. At the public hearing, the people who show up to argue for the ban include church groups — who oppose the product on moral grounds — and rival companies who quietly profit if their competitor is banned. Economist Bruce Yandle named this the 'bootleggers and Baptists' coalition after Sunday-liquor laws. What broader lesson about regulation does this pattern teach?",
-    "answer": "Stated moral reasons rarely fully explain who really pushes for a rule",
-    "choices": [
-      "Stated moral reasons rarely fully explain who really pushes for a rule",
-      "Moral supporters always deserve more trust than business supporters",
-      "Businesses should be banned from every regulatory debate",
-      "Only bipartisan coalitions ever produce good rules"
-    ],
-    "context": "The Yandle move applies to left, right, and non-partisan rules alike. The moral coalition may be sincere; the commercial coalition may be following naked incentive. What matters is the joint outcome. Source: Yandle, Regulation (1983).",
+    "context": "The Yandle move: when moral rhetoric and commercial interest happen to align on identical policy detail, look for the commercial beneficiary. This is a diagnostic tool, not a policy verdict on the substantive goal. The moral coalition may be sincere; the commercial coalition may be following naked incentive.",
     "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
   },
   {
     "tier": 1,
-    "question": "In July 1944, with World War II almost won, delegates from 44 Allied nations gathered at a grand American hotel in the White Mountains for 22 days. Their job was to design the money system that would run the world after the war ended. In which hotel did they meet?",
+    "question": "Delegates of forty-four Allied nations gathered at a grand hotel among the White Mountains for three weeks of July 1944, with World War II almost won. Their job was to design the money system the world would run on after the war. In which hotel did they meet?",
     "answer": "the Mount Washington Hotel in Bretton Woods, New Hampshire",
     "choices": [
       "the Mount Washington Hotel in Bretton Woods, New Hampshire",
@@ -3121,7 +3017,7 @@
   },
   {
     "tier": 1,
-    "question": "Under the 1944 Bretton Woods plan, every Allied currency was tied to the US dollar at a fixed exchange rate. In turn, the dollar itself was tied to gold at one specific fixed price set by law. Any foreign government could bring its dollars to the US Treasury and swap them for gold at that rate. What was the dollar-to-gold price per ounce?",
+    "question": "Harry Dexter White drafted the plan that won at Bretton Woods in 1944: every Allied currency pegged to the dollar, and the dollar fixed by law to gold. Any foreign central bank could hand its dollars to the American Treasury and take gold at that fixed price. What was the price per ounce?",
     "answer": "$35 per ounce of gold",
     "choices": [
       "$35 per ounce of gold",
@@ -3134,7 +3030,7 @@
   },
   {
     "tier": 2,
-    "question": "In July 1944, delegates from 44 Allied nations gathered at a hotel in Bretton Woods, New Hampshire, to design the postwar world money order. John Maynard Keynes led the British team; Harry Dexter White led the Americans. They agreed to peg currencies to the US dollar and the dollar to gold, and to set up two new global institutions to run the system. Which pair did the meeting create?",
+    "question": "John Maynard Keynes led Britain's team and Harry Dexter White the Americans' when delegates of forty-four Allied nations met at Bretton Woods in July 1944. They pegged currencies to the dollar and the dollar to gold, and they founded two new bodies to run the system, both of which survive today. Which pair did they found?",
     "answer": "the International Monetary Fund (IMF) and the World Bank",
     "choices": [
       "the International Monetary Fund (IMF) and the World Bank",
@@ -3147,7 +3043,7 @@
   },
   {
     "tier": 2,
-    "question": "At the 1944 Bretton Woods meeting, Britain's top delegate was the famous economist John Maynard Keynes. Keynes pitched a rival plan against the American one. He wanted a truly global reserve money, run not by any single country but by a new 'International Clearing Union' that would settle trade balances between nations. What did Keynes name his proposed new currency?",
+    "question": "Keynes came to Bretton Woods in 1944 with a rival to the American plan. He wanted a reserve currency that no single nation owned, issued by a body he called the International Clearing Union to settle the trade accounts between countries. What did he name the new currency?",
     "answer": "the Bancor",
     "choices": [
       "the Bancor",
@@ -3160,7 +3056,7 @@
   },
   {
     "tier": 3,
-    "question": "In July 1944, delegates from 44 winning Allied nations gathered at a resort called Bretton Woods in New Hampshire to design a new world money system for after World War Two. They agreed to peg every major currency to the US dollar at a fixed exchange rate, and to peg the US dollar itself to gold at 35 dollars per ounce. What was the main goal of this arrangement?",
+    "question": "The delegates who left Bretton Woods in July 1944 had tied every Allied currency to the dollar at a fixed rate, and the dollar itself to gold, on Harry Dexter White's design. What was the arrangement meant to do?",
     "answer": "To keep exchange rates steady and stop countries from printing money without limit",
     "choices": [
       "To keep exchange rates steady and stop countries from printing money without limit",
@@ -3173,7 +3069,7 @@
   },
   {
     "tier": 3,
-    "question": "Starting in 1995, the National Security Agency (NSA) began releasing files from a wartime program that had cracked Soviet cables. The files proved that Harry Dexter White, while helping design the postwar money system, had been a Soviet source. Which project's files showed this?",
+    "question": "Code-breakers in the Second World War cracked a trove of Soviet cables, and the National Security Agency began releasing their files in 1995. The files identified Harry Dexter White, who had drafted the American plan at Bretton Woods, as a Soviet source; the cables called him Jurist and Richard. What was the code-breaking project called?",
     "answer": "the Venona project",
     "choices": [
       "the Venona project",
@@ -3186,7 +3082,7 @@
   },
   {
     "tier": 4,
-    "question": "A high US Treasury official helped design the world's postwar money system in 1944. Years later, testimony to Congress showed he had secretly worked for a foreign power. What hidden risk of letting a small group design the world's money does this Treasury official's story reveal?",
+    "question": "Whittaker Chambers, a former Soviet courier, named Harry Dexter White before a congressional committee in 1948, and decoded wartime Soviet cables later marked White as a Soviet source. White had drafted the American plan that won at Bretton Woods. What risk in designing the world's money does his story expose?",
     "answer": "A few insiders with hidden agendas can steer rules that bind everyone else",
     "choices": [
       "A few insiders with hidden agendas can steer rules that bind everyone else",
@@ -3198,21 +3094,8 @@
     "topic": "bretton-woods-1944-the-dollar-gold-anchor"
   },
   {
-    "tier": 4,
-    "question": "For 26 years after 1945 the US promised foreign governments they could trade paper dollars for gold at a fixed rate. In August 1971 a US president ended that promise on television one Sunday evening. What did that decision mean for the world's money?",
-    "answer": "The dollar became a paper currency backed only by the government's word",
-    "choices": [
-      "The dollar became a paper currency backed only by the government's word",
-      "Every family in America got a free bar of gold in the mail",
-      "The dollar was permanently pegged to silver instead",
-      "Every country in the world stopped using dollars overnight"
-    ],
-    "context": "Richard Nixon announced the closing of the gold window on August 15, 1971, formally ending Bretton Woods. Johnson expanded Great Society spending that stressed the peg; Kennedy died in 1963; Ford succeeded Nixon in 1974 after the peg had already broken. Source: https://en.wikipedia.org/wiki/Nixon_shock.",
-    "topic": "bretton-woods-1944-the-dollar-gold-anchor"
-  },
-  {
     "tier": 5,
-    "question": "The Bretton Woods system, agreed at a New Hampshire resort in 1944, pegged the US dollar to gold at 35 dollars per ounce and every other major currency to the dollar. It ran for 27 years until President Richard Nixon closed the gold window in August 1971, because the US no longer had enough gold to cover the dollars it had issued. A historian summarizing that collapse presses one specific reasoning move about what the peg's design revealed from the very start. Which move does the argument make?",
+    "question": "Murray Rothbard and Saifedean Ammous looked back at the gold peg Richard Nixon abandoned in August 1971. The world's hunger for dollars, they said, had kept America running a deficit, paid for in dollars it issued itself. What did they argue the peg's design meant from the start?",
     "answer": "That any peg that required the peg-setter to run payments deficits in its own currency was arithmetically doomed the moment those deficits exceeded gold reserves",
     "choices": [
       "That any peg that required the peg-setter to run payments deficits in its own currency was arithmetically doomed the moment those deficits exceeded gold reserves",
@@ -3225,7 +3108,7 @@
   },
   {
     "tier": 5,
-    "question": "Austrian monetary historians distinguish between two related but different forms of gold-based money. In the classical version, used in Britain before 1914, ordinary citizens could walk into a bank and redeem paper money directly for gold coins. In a looser version, only foreign central banks could redeem dollars for gold, while ordinary citizens could not. The Bretton Woods system that ran from 1944 to 1971 was the second form, not the first. Which technical term captures what Bretton Woods actually was?",
+    "question": "A British shopkeeper before 1914 handed a banknote across his bank's counter and walked out with gold coins, a swap any ordinary person could make. Under Bretton Woods, from 1944 to 1971, no private citizen had that right; the swap was open to foreign central banks alone, which could trade their dollars for gold. Strictly speaking, what kind of standard was Bretton Woods?",
     "answer": "a gold-exchange standard rather than a classical gold standard",
     "choices": [
       "a gold-exchange standard rather than a classical gold standard",
@@ -3238,7 +3121,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2009, four large rising economies decided to team up as a formal group: Brazil, Russia, India, and China. South Africa joined the club in 2010, giving the group five members spanning four continents. They meet regularly to coordinate on trade, banking, and world politics as a counterweight to the older G7. What short name do they go by?",
+    "question": "India, Brazil, China and Russia began meeting as a formal club in 2009, and South Africa joined them in 2010. Jim O'Neill of Goldman Sachs had given the first four a catchy label back in 2001. What short name does the group go by?",
     "answer": "BRICS",
     "choices": [
       "BRICS",
@@ -3251,7 +3134,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2001, the British economist Jim O'Neill at the bank Goldman Sachs noticed four large countries: Brazil, Russia, India, and China. Their economies looked ready to grow fast over the next 20 years, and he coined a snappy nickname for the group using the first letter of each country. What did those four countries share that made him bet on them?",
+    "question": "At Goldman Sachs in 2001, Jim O'Neill bet that four big emerging economies, China, India, Brazil and Russia, would grow fast for the next twenty years. What did the four share that made him pick them?",
     "answer": "Huge populations and lots of room to catch up to richer countries",
     "choices": [
       "Huge populations and lots of room to catch up to richer countries",
@@ -3264,7 +3147,7 @@
   },
   {
     "tier": 2,
-    "question": "Jim O'Neill's 2001 BRIC (Brazil, Russia, India, China) group grew into a formal bloc called BRICS (BRIC plus South Africa) after South Africa joined in 2010. In 2024, the bloc admitted new members from the Middle East and Africa, including Iran, Egypt, and the United Arab Emirates. Together the enlarged bloc wants to build a trading system independent of the US dollar. Why would these countries want a separate international system of their own?",
+    "question": "Iran, Egypt, Ethiopia and the United Arab Emirates joined the bloc of rising economies on January 1, 2024, and its members now speak openly of settling trade without dollars. Why do they want payment channels of their own?",
     "answer": "They fear the US could freeze their dollar reserves if it disagrees with them",
     "choices": [
       "They fear the US could freeze their dollar reserves if it disagrees with them",
@@ -3277,7 +3160,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 2022, Russian troops invaded Ukraine. Within days the US, the European Union, the UK, and Japan froze the dollar and euro savings that Russia's central bank had parked in Western banks — money built up over years of oil and gas sales. The freeze shocked other countries around the world that had assumed their own foreign reserves were untouchable. About how much of Russia's savings was frozen?",
+    "question": "Russian troops invaded Ukraine in the last days of February 2022. The United States, Britain, Japan and the European Union answered by freezing the reserves Russia's central bank kept in Western banks, money built up over years of oil and gas sales. Reserve holders beyond the West took note. About how much was frozen?",
     "answer": "About 300 billion dollars",
     "choices": [
       "About 300 billion dollars",
@@ -3290,7 +3173,7 @@
   },
   {
     "tier": 3,
-    "question": "After Russia invaded Ukraine in February 2022, the United States and its allies froze about 300 billion dollars of Russia's dollar reserves overnight. Russia and China responded by quickly moving their trade with each other away from dollars: they now pay each other in rubles and yuan, their own national currencies, instead. According to Chinese customs data, about what share of Russia–China trade now uses those two currencies?",
+    "question": "Russia and China moved fast from 2022 on to shift their trade with each other out of dollars and into rubles and yuan, and Indian buyers began settling Russian oil purchases in rupees and Emirati dirhams. By Chinese customs figures, what share of Russian-Chinese trade now settles in rubles and yuan?",
     "answer": "Over 90 percent",
     "choices": [
       "Over 90 percent",
@@ -3302,21 +3185,8 @@
     "topic": "brics-and-the-dollar-alternative-movement"
   },
   {
-    "tier": 3,
-    "question": "Since 2000 the dollar's share of world central-bank reserves has slipped from 71 percent to under 60, yet no rival currency has caught up. In the 1960s French finance minister Valery Giscard d'Estaing gave the dollar's status a famous name. What was it?",
-    "answer": "Exorbitant privilege",
-    "choices": [
-      "Exorbitant privilege",
-      "Special drawing right",
-      "Reserve arbitrage",
-      "Petrodollar recycling"
-    ],
-    "context": "IMF COFER data show dollar share of allocated reserves at roughly 58% in 2024, down from 71% in 2000. The trend is directional but slow; 88% of foreign-exchange transactions still have a dollar leg. Source: IMF Currency Composition of Official Foreign Exchange Reserves.",
-    "topic": "brics-and-the-dollar-alternative-movement"
-  },
-  {
     "tier": 4,
-    "question": "US federal debt now equals roughly a full year of everything the country makes. Ludwig von Mises warned that when governments can no longer tax enough to service their debt, they inflate their way out until the currency collapses. What did he call this final stage?",
+    "question": "Ludwig von Mises described how a government's debts can end in ruin. One that can no longer raise enough in taxes to carry what it owes turns to inflation, he argued, until the public decides the inflation will never stop, rushes to swap its money for real goods, and the currency breaks. What did Mises call that final stage?",
     "answer": "The crack-up boom",
     "choices": [
       "The crack-up boom",
@@ -3329,7 +3199,7 @@
   },
   {
     "tier": 4,
-    "question": "After the United States froze Russia's dollar reserves in 2022, central bankers in other countries began asking a nervous question: what if our reserves get frozen next? Combined with worries about the rising US national debt, they responded by sharply increasing purchases of one specific neutral reserve asset that no other government controls. That accumulation hit a 55-year high in 2022 and stayed elevated through 2024. What did the central banks buy?",
+    "question": "A central banker outside the West, uneasy after the United States froze Russia's dollar reserves in 2022 and watching American federal debt mount, signed off on a purchase of a reserve asset that sits outside any government's control. Central banks' buying in 2022 was the heaviest in fifty-five years and stayed high through 2024. What did the central banks buy?",
     "answer": "Gold",
     "choices": [
       "Gold",
@@ -3342,7 +3212,7 @@
   },
   {
     "tier": 5,
-    "question": "Several large countries — including China, Russia, India, and Turkey — have started keeping less of their national savings in US dollars and more in physical gold. At the same time, US federal government debt has climbed past 34 trillion dollars and keeps rising every year. Austrian-tradition analysts, who track monetary trends carefully and are skeptical of unlimited money printing, read these two facts together. What do they say is most likely to happen?",
+    "question": "Saifedean Ammous, Lyn Alden and Luke Gromen, analysts in the Austrian camp, read two trends side by side: central banks moving part of their reserves out of dollars, and an American federal debt past 34 trillion dollars. What do they conclude is happening?",
     "answer": "A slow shift toward neutral assets is starting, but the dollar isn't immediately replaced",
     "choices": [
       "A slow shift toward neutral assets is starting, but the dollar isn't immediately replaced",
@@ -3355,7 +3225,7 @@
   },
   {
     "tier": 5,
-    "question": "Historians who study why great trading currencies lose their perch — the Venetian ducat, the Spanish dollar, the Dutch guilder, the British pound — notice a pattern. Rival economies are usually there in the background for a long time before the shift happens. What actually tips the change is rarely a war lost or a competitor rising. It is one habit the issuing country falls into. What reason do they name?",
+    "question": "A merchant settled a far-off sale in British pounds, as traders before him had done in Dutch guilders, Spanish dollars and Venetian ducats; each of those currencies in turn lost its place. Historians of these currencies note that rivals had usually lurked for decades first. What do they say finally tipped the balance?",
     "answer": "The issuing country's own choices to overspend or freeze others' savings",
     "choices": [
       "The issuing country's own choices to overspend or freeze others' savings",
@@ -3367,21 +3237,21 @@
     "topic": "brics-and-the-dollar-alternative-movement"
   },
   {
-    "tier": 1,
-    "question": "After a disaster destroys a city block, you often hear people say 'well, at least the rebuilding will boost the economy — think of all the jobs.' The French economist Frederic Bastiat called this the broken-window fallacy. The seen part is the construction work. The unseen part is what the money for rebuilding would otherwise have done. Why is the boost claim a mistake in reasoning?",
+    "tier": 2,
+    "question": "Paul Krugman wrote, just three days after the attacks of September 11, that the country would suddenly need fresh office space. Readers of Frédéric Bastiat, Don Boudreaux among them, answered that rebuilding what was destroyed adds no growth. Why not, by Bastiat's reasoning?",
     "answer": "The money for rebuilding was going to be spent on other things people wanted",
     "choices": [
       "The money for rebuilding was going to be spent on other things people wanted",
-      "Rebuilding creates unlimited new wealth from thin air",
-      "Rebuilding is illegal in most countries",
-      "The block was worthless before, so it is a pure gain"
+      "Rebuilding creates goods that would never have existed otherwise",
+      "Only insurance companies benefit, so the argument fails only for them",
+      "Rebuilding creates unlimited new wealth from thin air"
     ],
-    "context": "Krugman, then a new Times columnist and later the 2008 Nobel laureate in economics, wrote in the column: 'Now, all of a sudden, we need some new office buildings.' Friedman and Dowd wrote opinion columns on foreign policy and politics; Brooks joined the Times in 2003. Source: outsidethebeltway.com 'Paul Krugman: 9/11 Has Become An Occasion For Shame'.",
+    "context": "Krugman, then a new Times columnist and later the 2008 Nobel laureate in economics, wrote in the column: 'Now, all of a sudden, we need some new office buildings.' Boudreaux, a former president of the Foundation for Economic Education, co-founded Cafe Hayek with Russ Roberts in 2004 and writes the recurring 'Quotation of the Day' invoking Bastiat.",
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
   },
   {
     "tier": 1,
-    "question": "In an 1850 essay, Frederic Bastiat told a story about a shopkeeper's son who breaks a window. Everyone sees the six francs paid to the glazier. But no one sees the six francs the shopkeeper would have spent on something else. What does the essay call that missing second purchase?",
+    "question": "Frédéric Bastiat told in 1850 of a shopkeeper's boy who broke a window. The glazier pocketed six francs for the new pane, and the neighbors called it good for trade. But the shopkeeper had meant to spend those coins on shoes or a book. What did Bastiat call that lost second purchase?",
     "answer": "That which is not seen",
     "choices": [
       "That which is not seen",
@@ -3394,20 +3264,7 @@
   },
   {
     "tier": 2,
-    "question": "In the summer of 2009, during the depths of the Great Recession, the US government offered to pay car dealers 3,500 or 4,500 dollars for each old, gas-guzzling car that a customer traded in for a newer, more fuel-efficient one. The dealers killed the old engine on the spot by pouring a sodium-silicate goo into it while it ran, seizing it forever. Then the whole car was crushed. What was the program called?",
-    "answer": "Cash for Clunkers",
-    "choices": [
-      "Cash for Clunkers",
-      "The Auto Rescue",
-      "The Detroit Bailout",
-      "The Green Fleet Programme"
-    ],
-    "context": "Its formal name was the Car Allowance Rebate System (CARS), enacted under Title XIII of the Supplemental Appropriations Act of 2009 and administered by the National Highway Traffic Safety Administration. The Auto Rescue and Detroit Bailout are informal names for the separate TARP-funded GM and Chrysler restructurings. Source: en.wikipedia.org 'Car Allowance Rebate System'.",
-    "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
-  },
-  {
-    "tier": 2,
-    "question": "In summer 2009, the US government launched Cash for Clunkers, a program that paid people to trade in old gas-guzzlers for new cars. The old clunkers had to be destroyed on the spot, their engines wrecked with sodium silicate so they could never drive again. The $3 billion budget ran out in only 55 days, from July 1 to August 24. About how many cars did the program force to be scrapped?",
+    "question": "A buyer in July 2009 traded in his old gas-guzzler toward a new car; the dealer collected a federal voucher, and the old car was destroyed. The program's $3 billion was gone in fifty-five days, from July 1 to August 24. How many vehicles had been scrapped by then?",
     "answer": "677,081",
     "choices": [
       "677,081",
@@ -3419,47 +3276,8 @@
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
   },
   {
-    "tier": 3,
-    "question": "French economist Frederic Bastiat's famous 1850 essay 'What Is Seen and What Is Not Seen' taught that every policy has a visible effect and an invisible cost you have to think hard to notice. Analysts at the Cato Institute and Mises Institute applied his method to the 2009 Cash for Clunkers program, which pulled hundreds of thousands of working used cars off the market to be crushed. They found a specific unseen cost. On whom did that cost fall hardest?",
-    "answer": "Lower-income buyers priced out of the shrunken used-car market",
-    "choices": [
-      "Lower-income buyers priced out of the shrunken used-car market",
-      "New-car dealers left with exhausted showroom inventories",
-      "Municipal fleet managers rebuilding patrol-car reserves",
-      "Long-haul freight carriers rebuilding tractor-cab fleets"
-    ],
-    "context": "Roughly 677,000 vehicles pulled out of the used-car supply pushed prices at the low end higher, hitting the buyers whose only option is a used car under a few thousand dollars. Dealers, fleet managers and freight carriers were largely unaffected -- their vehicle classes were not the ones being scrapped. Source: cato.org 'Cash for Clunkers: Dumbest Program Ever?'.",
-    "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
-  },
-  {
-    "tier": 3,
-    "question": "In 2013 the Brookings Institution released a study by the American economists Ted Gayer and Emily Parker checking whether Cash for Clunkers had actually boosted the US economy in 2009. They compared car sales in the program window with what buyers would have done in the months just after. Their finding cut hard against the program's fans. What did they conclude the vouchers had mostly done?",
-    "answer": "Pulled forward car purchases that would have happened anyway within a few months",
-    "choices": [
-      "Pulled forward car purchases that would have happened anyway within a few months",
-      "Created a lasting increase in the total US vehicle fleet's fuel economy",
-      "Prevented a wave of car-dealer bankruptcies in the summer recession",
-      "Transferred purchasing power from urban to rural households"
-    ],
-    "context": "Gayer and Parker's Brookings paper found the surge in July-August 2009 sales was largely offset by a corresponding fall over the following months, and that both the stimulus and the environmental benefit were far smaller than official estimates. The other three claims were made at the time but did not survive the data. Source: brookings.edu 'Cash for Clunkers Evaluation Policy Brief' (Gayer 2013).",
-    "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
-  },
-  {
     "tier": 4,
-    "question": "In 1850 the French economist Frederic Bastiat wrote a famous essay called 'That Which Is Seen and That Which Is Not Seen.' He used the story of a boy breaking a shop window to teach a rule about wealth: the glazier's new sale is visible, but the suit the shopkeeper cannot now afford is invisible. Today, after a hurricane wrecks a coastal town, some TV pundits say 'at least the storm will boost the economy through all the rebuilding.' What is the hidden flaw in that cheerful argument?",
-    "answer": "The money and time spent rebuilding could have built something new instead",
-    "choices": [
-      "The money and time spent rebuilding could have built something new instead",
-      "Storms really are the best way to grow a nation's wealth",
-      "Rebuilding creates goods that would never have existed otherwise",
-      "Only insurance companies benefit, so the argument fails only for them"
-    ],
-    "context": "Boudreaux, a former president of the Foundation for Economic Education, co-founded Cafe Hayek with Russ Roberts in 2004 and writes the recurring 'Quotation of the Day' invoking Bastiat. Cowen writes Marginal Revolution; Caplan writes at EconLog; Boettke works chiefly on Austrian scholarship. Source: cafehayek.com.",
-    "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
-  },
-  {
-    "tier": 4,
-    "question": "Russell Roberts is the host of the popular economics podcast EconTalk and a research fellow at Stanford University's Hoover Institution. In 2008 he wrote an economics novel set around a fictional earthquake that hits Palo Alto, California, using the story to teach Bastiat's seen-versus-unseen idea in the form of a family drama about supply, prices, and hidden costs. What is the novel called?",
+    "question": "Russell Roberts, who hosts the economics podcast EconTalk, put Bastiat's way of seeing into fiction. His novel of 2008 set an earthquake loose on Palo Alto, where sky-high prices sent bottled water and generators to the people who needed them most. What is the novel called?",
     "answer": "The Price of Everything",
     "choices": [
       "The Price of Everything",
@@ -3472,7 +3290,7 @@
   },
   {
     "tier": 5,
-    "question": "During World War Two the official measures of the American economy -- what today is called gross domestic product (GDP) -- shot up because the government was building tanks, ships, and planes at a furious pace. In the 1990s, the American economic historian Robert Higgs looked past those wartime headline numbers to what ordinary households actually experienced day to day. What did his research show?",
+    "question": "Robert Higgs, an economic historian, took a fresh look in the 1990s at the claim that the Depression was cured by the Second World War. Factories had poured out tanks, ships and planes, and the war's output figures soared. So he looked past the output figures to daily life at home. What did he find?",
     "answer": "Everyday goods for regular families barely improved from Depression levels during the war",
     "choices": [
       "Everyday goods for regular families barely improved from Depression levels during the war",
@@ -3485,7 +3303,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1850 the French economist Frederic Bastiat opened his essay 'That Which Is Seen and That Which Is Not Seen' with the story of a shopkeeper's son breaking a window. Bystanders comforted the shopkeeper by pointing out the glazier would now be paid — supposedly boosting the economy. Bastiat's broken-window section closes with a compressed four-word refutation, in French, of every later 'disaster-as-stimulus' claim. Which four words?",
+    "question": "The neighbors in Frédéric Bastiat's broken-window story of 1850 consoled the shopkeeper: at least the glazier would be paid. Bastiat ended the story with a four-word answer in French, aimed at every claim that wrecking things is good for trade. What were the four words?",
     "answer": "'Destruction n'est pas profit'",
     "choices": [
       "'Destruction n'est pas profit'",
@@ -3498,7 +3316,7 @@
   },
   {
     "tier": 1,
-    "question": "An economist argues that most of the extra pay a college graduate earns is not really from things learned in class. Instead, it comes from the diploma itself sending a message to employers: 'I can finish hard, boring things.' The degree acts like a flag waved at hiring managers, not proof of new skills. What is this idea called?",
+    "question": "A hiring manager offers more pay to the applicant with a college diploma. Bryan Caplan argues that most of the extra pay has little to do with what the graduate learned in class: the diploma shows the manager that its holder can see hard, dull work through. What do economists call this idea?",
     "answer": "Signaling",
     "choices": [
       "Signaling",
@@ -3511,7 +3329,7 @@
   },
   {
     "tier": 1,
-    "question": "The George Mason economist Bryan Caplan argues in his book The Case Against Education that a college degree helps a graduate mostly by SIGNALING — proving to employers that the person is smart, patient, and willing to sit through boring classes — rather than by teaching real job skills. If that story is right, students face one obvious choice. What will people spend a lot of money to get?",
+    "question": "A student weighs four years of classes against the diploma at the end. Bryan Caplan argues that a diploma pays off mostly by proving to employers that its holder is bright and patient, not by teaching job skills. If so, what will students pay dearly to get?",
     "answer": "The degree itself -- even if the actual classes taught nothing useful",
     "choices": [
       "The degree itself -- even if the actual classes taught nothing useful",
@@ -3524,7 +3342,7 @@
   },
   {
     "tier": 2,
-    "question": "The American economist Bryan Caplan noticed something odd in the labor-market numbers. A student who drops out one single class short of a diploma earns much less over a working life than a graduate with the exact same credits and grades. The physical paper — the sheepskin — appears to be worth tens of thousands of dollars all by itself. Economists have a special name for this earnings jump right at the diploma line. What is it called?",
+    "question": "Two classmates take almost the same courses, but one quits a single class short of graduating. Over his working life he earns much less than the one who got the diploma, so the paper itself seems worth a small fortune. Bryan Caplan points to this jump in the data. What do economists call the earnings jump at graduation?",
     "answer": "The sheepskin effect",
     "choices": [
       "The sheepskin effect",
@@ -3537,7 +3355,7 @@
   },
   {
     "tier": 2,
-    "question": "Bryan Caplan is an economist at George Mason University in Virginia. In his 2018 book The Case Against Education, he argues that most of college's payoff comes from signaling — the diploma itself — not from real learning. He points to the 'sheepskin effect' (the last course before graduating pays much more than earlier courses) and to how little most adults actually remember from class years later. What is his main policy recommendation?",
+    "question": "Bryan Caplan offered an estimate in his 2018 book The Case Against Education: about 80 percent of the extra pay college graduates earn comes from the message the diploma sends employers rather than from anything learned. It is a claim heterodox even among economists friendly to him. What is his main policy recommendation?",
     "answer": "Cut education subsidies",
     "choices": [
       "Cut education subsidies",
@@ -3550,20 +3368,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2007 the American economist Bryan Caplan published a book arguing that voters hold systematically slanted views about the economy — biased against markets, against foreigners, against saving. Because a single vote almost never changes the outcome of a big election, holding a wrong belief at the ballot box costs the voter nothing personally, so wrong ideas persist. What is the book's title?",
-    "answer": "The Myth of the Rational Voter",
-    "choices": [
-      "The Myth of the Rational Voter",
-      "The Vision of the Anointed",
-      "Rational Ignorance",
-      "Democracy and Its Critics"
-    ],
-    "context": "Bryan Caplan, The Myth of the Rational Voter: Why Democracies Choose Bad Policies (Princeton UP, 2007). Source: press.princeton.edu (Caplan 2007).",
-    "topic": "bryan-caplan-education-signaling-and-rational-irrationality"
-  },
-  {
-    "tier": 3,
-    "question": "Bryan Caplan of George Mason University coined a specific two-word term for a puzzle he saw in politics: voters hold systematically wrong views about economics and policy because they bear essentially no personal cost from doing so, unlike consumers who bear the cost of their wrong shopping choices. Caplan's term is distinct from the economist Anthony Downs's earlier 1957 phrase 'rational ignorance.' What did Caplan call his own idea?",
+    "question": "A voter who believes trade destroys jobs casts his ballot and pays nothing for the mistake, though a shopper who buys something foolish pays at the checkout. Bryan Caplan coined a two-word term for why voters keep such systematically wrong views, a term distinct from an older idea of Anthony Downs's. What did Caplan call it?",
     "answer": "Rational irrationality",
     "choices": [
       "Rational irrationality",
@@ -3576,7 +3381,7 @@
   },
   {
     "tier": 3,
-    "question": "Bryan Caplan, an American economist at George Mason University, wrote a popular parenting book with Basic Books in 2011. Using twin studies and adoption studies from behavioral genetics, he argues that parents shape their adult children far less than most parents assume. Its title makes a specifically optimistic case for having a larger family. What is the exact title of that 2011 book?",
+    "question": "Bryan Caplan drew on studies of twins and adopted children for a book of 2011. Parents shape how their grown children turn out far less than most of them assume, he argued, so child-rearing can be more relaxed than they fear. What did he title the book?",
     "answer": "Selfish Reasons to Have More Kids",
     "choices": [
       "Selfish Reasons to Have More Kids",
@@ -3589,7 +3394,7 @@
   },
   {
     "tier": 4,
-    "question": "Imagine a wheat farmer in a poor country who grows about $500 worth of crops each year using an ox and hand tools. That exact same worker, moved to a rich country with tractors, paved roads, and reliable electricity, could earn about $40,000 doing similar work. What economic idea does this huge productivity gap between the two places show?",
+    "question": "A farmer in a poor country brings in his harvest, about $500 worth of crops for a year's work using an ox and hand tools. Moved to a rich country of tractors, paved roads and reliable power, the same man doing similar work could earn around $40,000. What does the gap show, in Bryan Caplan's case for freer immigration?",
     "answer": "That where people work, not just effort, sets what they can produce",
     "choices": [
       "That where people work, not just effort, sets what they can produce",
@@ -3602,7 +3407,7 @@
   },
   {
     "tier": 4,
-    "question": "Imagine a booming American city like San Francisco makes it very hard to build new houses — endless permits, strict zoning, neighborhood vetoes on every project. For twenty years, almost no new homes go up. Meanwhile, tech jobs pull thousands of new residents into the city every single year, all looking for somewhere to live. Basic supply-and-demand reasoning gives a clear answer. What happens to home prices?",
+    "question": "A family moves to San Francisco for a tech job and goes house-hunting in a city that smothers new building in permits, zoning rules and neighborhood vetoes. Thousands of newcomers arrive the same way every year. Bryan Caplan's 2024 book Build, Baby, Build asks what basic supply-and-demand reasoning predicts. What happens to home prices?",
     "answer": "They go way up, because supply cannot keep up with demand",
     "choices": [
       "They go way up, because supply cannot keep up with demand",
@@ -3615,20 +3420,7 @@
   },
   {
     "tier": 5,
-    "question": "Caplan's rational-irrationality argument is a specific extension of an earlier public-choice claim from Anthony Downs. Downs argued that voters spend little effort studying issues, because any single vote is extremely unlikely to matter. What did Downs call that pre-Caplan claim?",
-    "answer": "Rational ignorance",
-    "choices": [
-      "Rational ignorance",
-      "Rational apathy",
-      "Political myopia",
-      "Structural confusion"
-    ],
-    "context": "Anthony Downs, An Economic Theory of Democracy (Harper 1957): voters rationally choose not to inform themselves because the private return on political knowledge is essentially zero. Caplan extends this from ignorance to irrationality. Source: Downs (1957); Caplan (2007).",
-    "topic": "bryan-caplan-education-signaling-and-rational-irrationality"
-  },
-  {
-    "tier": 5,
-    "question": "Bryan Caplan is a tenured economics professor at George Mason University. Unusually for a working academic, he writes nonfiction graphic novels — full comic books drawn by illustrators such as Zach Weinersmith — to teach economics topics like open borders and housing policy. Scholarly writing reaches other academics and mostly stops there. What problem does the graphic-novel form solve that plain academic writing cannot?",
+    "question": "Zach Weinersmith drew Bryan Caplan's 2019 case for open borders as a nonfiction graphic novel, and Ady Branzei drew his 2024 housing book the same way. Few tenured professors do anything of the kind. What problem does the comic form solve that scholarly prose cannot?",
     "answer": "Reaching general readers who do not read academic prose",
     "choices": [
       "Reaching general readers who do not read academic prose",
@@ -3641,7 +3433,7 @@
   },
   {
     "tier": 5,
-    "question": "In his 2018 book The Case Against Education, the American economist Bryan Caplan argued that most of college is signaling — showing employers you are smart, diligent, and willing to jump through hoops — rather than actually building useful skills. If Caplan is largely right, that changes what happens when taxpayers pump money into college through grants, subsidized loans, and state-funded universities. What follows for taxpayers paying for college?",
+    "question": "Suppose Bryan Caplan is right that a degree mostly shows employers its holder is bright and diligent, rather than building useful skills. Taxpayers fund college through grants, low-cost loans and state-run universities. What follows for that money?",
     "answer": "Subsidies pump up signals without producing corresponding productive skills",
     "choices": [
       "Subsidies pump up signals without producing corresponding productive skills",
@@ -3654,33 +3446,33 @@
   },
   {
     "tier": 1,
-    "question": "In a big election with millions of ballots cast, one single vote almost never decides the outcome. So being wrong at the ballot box — voting from confused ideas about the economy — costs the individual voter nothing personally. The American economist Bryan Caplan uses this fact to ask a sharp follow-up question. What does it suggest about the average voter's views on the economy?",
-    "answer": "They can be pretty wrong, because being wrong at the voting booth costs nothing",
+    "question": "A shopper fooled about a product hands over his own money for it, while a voter fooled about trade casts one ballot among tens of millions. Bryan Caplan argued that the voter can afford his comforting error. Why can the voter afford it?",
+    "answer": "The private cost of one wrong belief is essentially zero",
     "choices": [
-      "They can be pretty wrong, because being wrong at the voting booth costs nothing",
-      "They are always perfectly correct on every economic issue",
-      "They are decided by a computer program",
-      "They exactly match the top experts' views"
+      "The private cost of one wrong belief is essentially zero",
+      "Political leaders always correct voter mistakes",
+      "News media always deliver accurate information",
+      "Public education successfully teaches economics"
     ],
-    "context": "Bryan Caplan, Princeton-trained economist at George Mason University, is the author. The Myth of the Rational Voter (Princeton UP, 2007) extends Downs's rational-ignorance to 'rational irrationality'. Source: en.wikipedia.org/wiki/Bryan_Caplan.",
+    "context": "The private cost of holding an economically wrong belief is essentially zero because the belief influences one vote out of tens of millions. Consumers with wrong beliefs about products suffer directly; voters do not. Democracies systematically choose bad policies because voter beliefs face no discipline.",
     "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
   },
   {
-    "tier": 1,
-    "question": "In 2007 the American economist Bryan Caplan published a book with the subtitle 'Why Democracies Choose Bad Policies.' Its main title starts with the words 'The Myth of the' and ends with a two-word noun phrase about voters. What is the full title of that 2007 book?",
+    "tier": 2,
+    "question": "Anthony Downs had said in 1957 that voters skip the homework because a single vote seldom counts. Bryan Caplan pushed further in 2007: voters are not merely uninformed, he argued, but wrong in systematic ways. His book's subtitle was 'Why Democracies Choose Bad Policies.' What is its main title?",
     "answer": "The Myth of the Rational Voter",
     "choices": [
       "The Myth of the Rational Voter",
       "The Case Against Democracy",
       "The Voter's Fallacy",
-      "The Ignorance Trap"
+      "Rational Ignorance"
     ],
     "context": "The Myth of the Rational Voter: Why Democracies Choose Bad Policies (Princeton UP, 2007). Caplan's argument: voters are not just uninformed but systematically wrong on economic questions in identifiable ways. Source: press.princeton.edu.",
     "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
   },
   {
     "tier": 2,
-    "question": "In his 2007 book The Myth of the Rational Voter, the George Mason economist Bryan Caplan compared surveys of ordinary US voters against surveys of trained economists across left, right, and center. He found that voters share four systematic biases about the economy that economists — regardless of party — do not share. Which pair are two of those four?",
+    "question": "Bryan Caplan set ordinary Americans' answers about the economy beside those of economists with doctorates. He found four slants that voters shared and economists of every party lacked. Which pair are two of the four?",
     "answer": "Anti-market and anti-foreign biases",
     "choices": [
       "Anti-market and anti-foreign biases",
@@ -3693,7 +3485,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 2007 book The Myth of the Rational Voter, the American economist Bryan Caplan identified four systematic biases voters hold about the economy. The third one is that voters treat jobs as valuable in themselves — the more work required, the better — rather than valuing jobs for what those jobs actually produce. Cutting a wasteful position looks bad to voters even when it saves resources. What is Caplan's name for this third bias?",
+    "question": "Voters in a town watched a new machine take over a pointless job and saw only a loss, though the worker was freed for better use. Bryan Caplan saw voters prizing jobs for their own sake, the more work the better, rather than for what the work produces. What did he name this bias?",
     "answer": "Make-work bias",
     "choices": [
       "Make-work bias",
@@ -3706,7 +3498,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 2007 book The Myth of the Rational Voter, the American economist Bryan Caplan identified four systematic biases voters hold about the economy. The fourth bias is that voters consistently overestimate how bad current economic conditions are, and how much worse things are getting compared to the past. Caplan pointed to survey after survey showing voters expecting decline even during booms. What is Caplan's name for this fourth bias?",
+    "question": "A pollster reached a voter in the middle of a boom, and the voter said the economy was bad and getting worse. Bryan Caplan counted this gloom, an overestimate of how bad things are and how fast they are sliding, as the fourth of the voters' biases. What did he call it?",
     "answer": "Pessimistic bias",
     "choices": [
       "Pessimistic bias",
@@ -3719,7 +3511,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1996 the Washington Post, the Kaiser Family Foundation, and Harvard University together sponsored a big paired survey. They asked the same set of economic questions to ordinary American voters and to PhD economists, then compared the two groups' answers side by side. The American economist Bryan Caplan later used this survey as his main data source in The Myth of the Rational Voter. What is the short abbreviated name for that survey?",
+    "question": "Bryan Caplan leaned hardest on a survey of 1996 that asked ordinary Americans and PhD economists the identical list of economic questions. Harvard, the Kaiser Family Foundation and the Washington Post stood behind it. What is the survey's short name?",
     "answer": "SAEE",
     "choices": [
       "SAEE",
@@ -3731,34 +3523,8 @@
     "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
   },
   {
-    "tier": 4,
-    "question": "The George Mason economist Bryan Caplan uses the phrase 'rational irrationality' to explain why voters keep believing wrong things about the economy — that trade destroys jobs on net, that immigrants shrink the pie, that market prices are arbitrary — even after those beliefs are corrected. A single vote in a national US election almost never decides the outcome. So one simple calculation makes it rational for a voter to cling to a comforting mistaken idea. Why does it make sense to do that?",
-    "answer": "The private cost of one wrong belief is essentially zero",
-    "choices": [
-      "The private cost of one wrong belief is essentially zero",
-      "Political leaders always correct voter mistakes",
-      "News media always deliver accurate information",
-      "Public education successfully teaches economics"
-    ],
-    "context": "The private cost of holding an economically wrong belief is essentially zero because the belief influences one vote out of tens of millions. Consumers with wrong beliefs about products suffer directly; voters do not. Source: Caplan (2007).",
-    "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
-  },
-  {
-    "tier": 4,
-    "question": "In The Myth of the Rational Voter, the American economist Bryan Caplan draws a sharp contrast between two arenas in which people hold economic beliefs. In one arena, a wrong belief costs believers real money out of their own pockets — so they think carefully before acting. In the other arena, one wrong choice affects individuals almost not at all — so they can afford to be lazy or biased. What is that contrast?",
-    "answer": "Consumers pay for wrong beliefs about products; voters do not pay for wrong beliefs about policy",
-    "choices": [
-      "Consumers pay for wrong beliefs about products; voters do not pay for wrong beliefs about policy",
-      "Investors pay for wrong beliefs about stocks; workers do not pay for wrong beliefs about jobs",
-      "Homeowners pay for wrong beliefs about maintenance; renters do not pay for wrong beliefs about landlords",
-      "Producers pay for wrong beliefs about markets; distributors do not pay for wrong beliefs about supply"
-    ],
-    "context": "Caplan's central contrast: a consumer who buys a bad product suffers directly; a voter who supports a bad policy pays essentially nothing individually. Democracies systematically choose bad policies because voter beliefs face no discipline. Source: Caplan (2007).",
-    "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
-  },
-  {
     "tier": 5,
-    "question": "The public choice school of economics was born in the 1960s under the Nobel laureate James Buchanan and his colleague Gordon Tullock. Over the following decades one American university became its main institutional home, with a faculty roster including Peter Boettke, Alex Tabarrok, Tyler Cowen, and Bryan Caplan. That same university today runs the Mercatus Center think tank and hosts the Marginal Revolution economics blog. Which American university is it?",
+    "question": "Tyler Cowen and Alex Tabarrok run the blog Marginal Revolution from the university where Bryan Caplan and Peter Boettke also teach. The university grew into the chief home of James Buchanan and Gordon Tullock's public choice school, and it runs the Mercatus Center. Which university is it?",
     "answer": "George Mason University",
     "choices": [
       "George Mason University",
@@ -3771,20 +3537,7 @@
   },
   {
     "tier": 1,
-    "question": "For much of the 20th century, economists modeled politicians and bureaucrats as pure public servants trying to maximize social welfare. James Buchanan and Gordon Tullock argued this was silly. Politicians want votes and re-election, bureaucrats want bigger budgets, voters want handouts — all pursuing self-interest the same way people do in markets. The whole branch of economics that studies this became standard. What is it called?",
-    "answer": "Public choice",
-    "choices": [
-      "Public choice",
-      "Monetary policy",
-      "International trade",
-      "Labor economics"
-    ],
-    "context": "James M. Buchanan of George Mason University was announced as the 1986 sole laureate on October 16, 1986. The prize put public-choice theory on the world academic map. Source: nobelprize.org (Buchanan 1986).",
-    "topic": "buchanans-1986-nobel-prize"
-  },
-  {
-    "tier": 1,
-    "question": "In 1986 the Royal Swedish Academy of Sciences awarded the Nobel Memorial Prize in Economic Sciences to James Buchanan, a Tennessee-born economist who taught at George Mason University in Virginia. The citation was carefully worded to name his central idea rather than pin him to the 'public choice' school label he was famous for founding. What did the official citation say the prize was for?",
+    "question": "The Swedish academy chose the words of its citation carefully when it gave James Buchanan the 1986 economics Nobel, the first for the public-choice school. The citation named the idea beneath his work, not the school. What did it honor him for?",
     "answer": "The contractual and constitutional bases for the theory of economic and political decision-making",
     "choices": [
       "The contractual and constitutional bases for the theory of economic and political decision-making",
@@ -3792,12 +3545,12 @@
       "The macroeconomic foundations of economic growth",
       "The mathematical formalization of equilibrium theory"
     ],
-    "context": "The 1986 citation was carefully general to name the analytical move rather than the school-name 'public choice'. Source: nobelprize.org (1986 press release).",
+    "context": "The 1986 Nobel citation, October 16, 1986: 'for his development of the contractual and constitutional bases for the theory of economic and political decision-making.' The committee generalized rather than saying 'public choice.'",
     "topic": "buchanans-1986-nobel-prize"
   },
   {
     "tier": 2,
-    "question": "On December 8, 1986, James Buchanan stood in Stockholm to give the Nobel lecture that traditionally follows the award ceremony. He was 67. By then he had spent decades arguing that political fights over any single tax rate miss the deeper question — what rules make those fights possible in the first place. He put that whole idea into the title of his lecture. What was it called?",
+    "question": "James Buchanan stood up in Stockholm on December 8, 1986, aged sixty-seven, to give his Nobel lecture. A fight over one tax rate, he argued, skips an earlier question: which rules govern the fight. He put that idea into the lecture's title. What was it?",
     "answer": "The Constitution of Economic Policy",
     "choices": [
       "The Constitution of Economic Policy",
@@ -3809,21 +3562,8 @@
     "topic": "buchanans-1986-nobel-prize"
   },
   {
-    "tier": 2,
-    "question": "The public choice school of economics, founded in the 1960s by the American economists James Buchanan and Gordon Tullock, studies voters, elected politicians, and government bureaucrats the same way regular economics studies shoppers and business owners. It uses the same core tool: people react to the rewards and penalties they face. What is the new idea public choice adds specifically about people who work in government?",
-    "answer": "Politicians and bureaucrats respond to incentives just like everyone else",
-    "choices": [
-      "Politicians and bureaucrats respond to incentives just like everyone else",
-      "Politicians always act only for the public good",
-      "Voters carefully study every bill before elections",
-      "Government agencies never grow beyond their original mission"
-    ],
-    "context": "Buchanan was based at George Mason University's Center for Study of Public Choice at the time of his 1986 Nobel. He had moved from Virginia Tech in 1983. Source: en.wikipedia.org/wiki/James_M._Buchanan.",
-    "topic": "buchanans-1986-nobel-prize"
-  },
-  {
     "tier": 3,
-    "question": "Public-choice economists, in the tradition of the Nobel laureate James Buchanan and Gordon Tullock, treat politicians, regulators, and career bureaucrats as normal humans who chase rewards — reelection, bigger budgets, personal influence, comfortable careers — just like everyone else in the economy. Many rival economists strongly dislike this framing. Why do they object so much to public choice's view of government workers?",
+    "question": "Paul Samuelson reportedly grumbled, when James Buchanan's Nobel was announced, that it was really a prize for political science. Many economists disliked public choice's picture of politicians, regulators and bureaucrats as people chasing reelection, budgets and influence like everyone else. Why did that picture bother them so much?",
     "answer": "It removes the assumption that officials always act for the public good",
     "choices": [
       "It removes the assumption that officials always act for the public good",
@@ -3835,34 +3575,8 @@
     "topic": "buchanans-1986-nobel-prize"
   },
   {
-    "tier": 3,
-    "question": "The British economist Ronald Coase pointed out something simple. If two people could always negotiate a deal for free, they would work out any small dispute over noise or pollution on their own. In the real world, though, negotiating costs time, effort, and lawyers. Coase called this friction a transaction cost. What does this cost help explain?",
-    "answer": "Why firms exist, and why laws about who owns what matter so much",
-    "choices": [
-      "Why firms exist, and why laws about who owns what matter so much",
-      "Why interest rates always rise during winter",
-      "Why every worker in the world earns the same wage",
-      "Why governments must set every price by law"
-    ],
-    "context": "Ronald Coase won the 1991 Nobel for transaction-cost economics. His 1937 paper 'The Nature of the Firm' and 1960 paper 'The Problem of Social Cost' anchored much of what public-choice and new-institutional economics built. Source: nobelprize.org (Coase 1991).",
-    "topic": "buchanans-1986-nobel-prize"
-  },
-  {
     "tier": 4,
-    "question": "By the 1990s a research tradition called 'new institutional economics' — asking how the rules of the game shape prosperity — had already won three Nobel Prizes: James Buchanan for public choice in 1986, Ronald Coase for transaction costs in 1991, and Douglass North for economic history in 1993. In 2009 a fourth laureate in this same tradition won the prize for showing how real communities can self-govern shared resources — grazing lands, fisheries, irrigation canals — without either state ownership or privatization. Who was she?",
-    "answer": "Elinor Ostrom",
-    "choices": [
-      "Elinor Ostrom",
-      "Esther Duflo",
-      "Claudia Goldin",
-      "Anne Krueger"
-    ],
-    "context": "Elinor Ostrom (Indiana University) won the 2009 Nobel (shared with Oliver Williamson) for her analysis of governance of the commons. She was the first female laureate in economics. Source: nobelprize.org (Ostrom 2009).",
-    "topic": "buchanans-1986-nobel-prize"
-  },
-  {
-    "tier": 4,
-    "question": "In the US Senate, a senator is deciding how to vote on a big spending bill. The bill would build a new bridge in his home state that helps a small group of local businesses a lot. It would also cost every US taxpayer a few dollars each. Public-choice economists — the school of Mancur Olson and James Buchanan — say senators often vote yes on bills shaped like this one. Why?",
+    "question": "A senator weighs a spending bill that would build a bridge back in his home state. The bridge would be a windfall for a few local firms, and its bill would land on taxpayers in every state, a few dollars each. Public-choice economists, Mancur Olson and James Buchanan among them, expect him to vote yes. Why would he?",
     "answer": "The benefits are focused on a few, while the costs are spread thin over many",
     "choices": [
       "The benefits are focused on a few, while the costs are spread thin over many",
@@ -3875,7 +3589,7 @@
   },
   {
     "tier": 5,
-    "question": "The Nobel Memorial Prize in Economics has honored four economists in what is sometimes called the 'institutions matter' lineage: James Buchanan in 1986, Ronald Coase in 1991, Douglass North in 1993, and Elinor Ostrom in 2009. They studied constitutions, property rights, legal systems, and rules for sharing common resources like fisheries. All four owe a debt to one analytical move that Buchanan pioneered decades earlier. What was that move?",
+    "question": "Ronald Coase noticed that neighbors quarreling over smoke could settle the matter themselves if bargaining were free, and won the economics Nobel in 1991, after James Buchanan in 1986. Douglass North followed in 1993, and another laureate joined their line in 2009. They studied constitutions, property rights, courts and the rules villagers set for a common fishery, each resting on an idea Buchanan had pressed decades before. What was the idea?",
     "answer": "Taking institutions seriously as objects of economic analysis",
     "choices": [
       "Taking institutions seriously as objects of economic analysis",
@@ -3888,7 +3602,7 @@
   },
   {
     "tier": 1,
-    "question": "Kids at recess can argue over who gets the ball today, or sit down and write the rules for who gets the ball every day. The Nobel-winning American economist James Buchanan built a whole field of study around choosing the rules themselves, not each single decision. What did he call the study of the rules themselves?",
+    "question": "Two children grab for the same ball at recess, as they do every day, until one of them proposes a standing rule to settle whose turn it is each day. James Buchanan made that kind of choice, the choice of the rulebook itself, the subject of a whole field. What did he call it?",
     "answer": "Constitutional political economy",
     "choices": [
       "Constitutional political economy",
@@ -3901,7 +3615,7 @@
   },
   {
     "tier": 1,
-    "question": "James Buchanan, the American Nobel-winning founder of public choice economics, pointed out that arguing whether a specific tax should be 20 percent or 25 percent turns every new law into a fresh political fight, with lobbyists and rent-seekers lining up each time. He wanted the debate moved to a different level entirely — one step up from any single policy. Where does he want to move it?",
+    "question": "James Buchanan argued that a fight over a tax rate of 20 percent or 25 turns every new law into a fresh brawl, drawing lobbyists and favor-seekers each time. He wanted the debate raised a level, above any single policy. Where did he want it moved?",
     "answer": "The rules governing how policy is made",
     "choices": [
       "The rules governing how policy is made",
@@ -3914,7 +3628,7 @@
   },
   {
     "tier": 2,
-    "question": "James Buchanan won the 1986 Nobel Prize for founding public choice, the study of politicians as self-interested actors rather than saints. A year earlier, in 1985, Buchanan teamed with the Australian economist Geoffrey Brennan to write the standard modern textbook on why constitutions and firm rules must bind government policy instead of trusting officials' goodwill. What is that book called?",
+    "question": "James Buchanan wrote a book with Geoffrey Brennan, an Australian philosopher and economist, in 1985, a year ahead of his own Nobel. It became the standard case that firm rules, not the goodwill of officials, must bind government. What is the book called?",
     "answer": "The Reason of Rules",
     "choices": [
       "The Reason of Rules",
@@ -3927,7 +3641,7 @@
   },
   {
     "tier": 2,
-    "question": "In their 1985 book The Reason of Rules, the American economists James Buchanan and Geoffrey Brennan argued that people should choose the rules of the political game while pretending they do not know their own future spot in life — whether they will end up rich or poor, powerful or ordinary. That way the rules stay fair for whoever ends up where. What did Buchanan call this thought-experiment framing?",
+    "question": "Geoffrey Brennan and James Buchanan asked people to pick a country's political rulebook without knowing whether luck would leave them rich or poor, powerful or ordinary. They gave that thought experiment a name. What did they call it?",
     "answer": "The veil of uncertainty",
     "choices": [
       "The veil of uncertainty",
@@ -3939,21 +3653,8 @@
     "topic": "buchanans-constitutional-political-economy-rules-vs-outcomes"
   },
   {
-    "tier": 3,
-    "question": "In 1977 the American economist James Buchanan, founder of public choice, joined Richard Wagner to publish a book blaming John Maynard Keynes for teaching politicians they could safely spend far more than they taxed. Buchanan and Wagner said this Keynesian license had wrecked one specific old rule of American fiscal policy. Which shift did they target?",
-    "answer": "The dissolution of the balanced-budget norm and the ratchet upward of deficits",
-    "choices": [
-      "The dissolution of the balanced-budget norm and the ratchet upward of deficits",
-      "The gold-standard collapse and pure fiat",
-      "The Bretton Woods currency-peg system",
-      "The rise of federal income taxation"
-    ],
-    "context": "Democracy in Deficit: The Political Legacy of Lord Keynes (Academic Press, 1977) argued that the old constitutional norm of balanced budgets had disciplined politicians for a century. Once Keynes's General Theory legitimized deliberate deficit spending, the norm dissolved and deficits ratcheted upward. Source: en.wikipedia.org/wiki/Democracy_in_Deficit.",
-    "topic": "buchanans-constitutional-political-economy-rules-vs-outcomes"
-  },
-  {
-    "tier": 3,
-    "question": "James Buchanan's 1977 book with Richard Wagner, Democracy in Deficit, did not just attack this or that particular budget shortfall. Buchanan said American politicians had crossed a bigger line, that a habit as old as the republic had quietly died, and that every future deficit was the downstream result. What was the older rule Buchanan said had been lost?",
+    "tier": 2,
+    "question": "James Buchanan and Richard Wagner argued in 1977 that an unwritten rule had held American politicians in check for well over a century. John Maynard Keynes's teaching, they said, licensed deliberate spending beyond tax revenue, the rule dissolved, and the gap ratcheted upward ever after. Which older rule did they say had been lost?",
     "answer": "The old constitutional norm of balanced budgets",
     "choices": [
       "The old constitutional norm of balanced budgets",
@@ -3961,25 +3662,12 @@
       "The Fed's independence from Treasury",
       "The Senate's supermajority rule for tax hikes"
     ],
-    "context": "Buchanan's move: individual deficits are not the problem; the erosion of the RULE that had disciplined all politicians is. Once the norm dissolved, the political incentive structure changed permanently. Source: Buchanan + Wagner, Democracy in Deficit (1977).",
+    "context": "Democracy in Deficit: The Political Legacy of Lord Keynes (Academic Press, 1977) argued that the old constitutional norm of balanced budgets had disciplined politicians for a century. Once Keynes's General Theory legitimized deliberate deficit spending, the norm dissolved and deficits ratcheted upward. Buchanan's move: individual deficits are not the problem; the erosion of the RULE that had disciplined all politicians is.",
     "topic": "buchanans-constitutional-political-economy-rules-vs-outcomes"
   },
   {
     "tier": 4,
-    "question": "The whole public-choice tradition, the study of politicians and voters as self-interested actors, traces back to a 1962 book by the American economists James Buchanan and Gordon Tullock. It applied basic economic reasoning to the design of constitutions themselves, showing why simple majority rule alone is not enough to protect a minority. This founding book is remembered as the birth of the field. What was it called?",
-    "answer": "The Calculus of Consent",
-    "choices": [
-      "The Calculus of Consent",
-      "The Reason of Rules",
-      "The Limits of Liberty",
-      "Cost and Choice"
-    ],
-    "context": "The Calculus of Consent: Logical Foundations of Constitutional Democracy (University of Michigan Press, 1962) is the founding text of public-choice economics. Buchanan and Tullock introduced the constitutional-versus-post-constitutional distinction. Source: en.wikipedia.org/wiki/The_Calculus_of_Consent.",
-    "topic": "buchanans-constitutional-political-economy-rules-vs-outcomes"
-  },
-  {
-    "tier": 4,
-    "question": "In their 1985 book The Reason of Rules, the American economists Geoffrey Brennan and James Buchanan argued that a country is better off picking clear rules that everyone follows — like a posted speed limit — than letting individual officials decide the right choice one case at a time. Their argument turned on how ordinary citizens organize their lives and how power gets abused when discretion is wide. Why is a fixed rule better than case-by-case discretion?",
+    "question": "Geoffrey Brennan and James Buchanan held up the posted speed limit as a model in their book of 1985: a clear rule everyone follows, in place of officials who weigh each case on its own. Why is the fixed rule better, in their view?",
     "answer": "Fixed rules limit favoritism and let people plan ahead",
     "choices": [
       "Fixed rules limit favoritism and let people plan ahead",
@@ -3992,7 +3680,7 @@
   },
   {
     "tier": 5,
-    "question": "Before a coach picks teams for kickball, everyone agrees on how score will be kept. Once teams are picked, each side knows how the rules will help or hurt it. A public-choice thinker asks: judge each rule from before-you-know-your-team, not after. What does this move do to the argument?",
+    "question": "A gym class agrees on how kickball will be scored before anyone picks teams. After the teams are chosen, each side can see which rules help it. Thinkers in James Buchanan's tradition judge every rule from that earlier moment, before anyone knows his team. What does that do to the argument?",
     "answer": "It moves the debate from picking winners to picking fair rules",
     "choices": [
       "It moves the debate from picking winners to picking fair rules",
@@ -4005,7 +3693,7 @@
   },
   {
     "tier": 1,
-    "question": "A fisherman on a lake has two choices for feeding his family this month. He can wade in and grab fish by hand, which he can do all day starting now. Or he can spend a full day weaving a net, catch nothing that day, and then catch many more fish per day for the following weeks. The Austrian school gave the second method a name -- longer path now, more output later. What is it called?",
+    "question": "A fisherman on a lake can grab a few fish by hand this morning, or spend the day tying a net, go home empty-handed, then haul in far more each day for weeks. What did the Austrian school call that second, longer path?",
     "answer": "Roundabout production",
     "choices": [
       "Roundabout production",
@@ -4018,7 +3706,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1884 an economist in the Austrian school began publishing a giant three-volume work on the theory of interest — why lenders charge, why borrowers pay, and why the whole system of paying for time exists at all. The second volume in 1889 laid out his own original answer, later known as the 'time-preference' theory of interest. Who was this Austrian economist?",
+    "question": "An Austrian economist took up an old puzzle in Vienna in the 1880s: what makes anyone pay interest in the first place? His first volume came out in 1884; the second appeared in 1889 and offered what came to be called the time-preference account of interest. Who was he?",
     "answer": "Eugen von Boehm-Bawerk",
     "choices": [
       "Eugen von Boehm-Bawerk",
@@ -4031,20 +3719,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1800s Karl Marx claimed that interest and profit were stolen from workers by capitalists. Later, in Vienna, the Austrian economist Eugen von Boehm-Bawerk pushed back hard. He said interest is real payment for something the saver actually gives up. When people hand over money today so someone else can use it, they postpone all the things they could have enjoyed with that money right now. What is the saver being paid to do?",
-    "answer": "To wait",
-    "choices": [
-      "To wait",
-      "To supervise",
-      "To take risk",
-      "To organize"
-    ],
-    "context": "Boehm-Bawerk's answer to Marx: production takes TIME, and someone must release present resources so that future output can exist. That someone is the saver, and interest is the market price paid to persuade him to wait. It is not stolen from the worker; it is compensation for the postponement of consumption. Source: Capitalism Magazine, Ebeling on Boehm-Bawerk (https://capitalismmagazine.com/2016/02/eugen-von-bohm-bawerk-refuter-marxism-theorist-economics-capitalism/).",
-    "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
-  },
-  {
-    "tier": 2,
-    "question": "In 1889 the Austrian economist Eugen von Boehm-Bawerk asked why people value a loaf of bread today more than the same loaf next year. He listed three reasons: you may be better off next year than you are now; people tend to underrate the future, since life is short and uncertain; and a good on hand right now can be put to work to create even more goods. He said these three reasons together explain what?",
+    "question": "Eugen von Böhm-Bawerk asked in 1889 why a loaf in hand is worth more to people than the same loaf a year away. He gave three grounds, among them that people expect to be better off later and tend to undervalue wants that lie in the future. What did he say the three grounds together explain?",
     "answer": "Interest",
     "choices": [
       "Interest",
@@ -4057,20 +3732,7 @@
   },
   {
     "tier": 3,
-    "question": "A person could spend $100 today on candy, or lend it for a year and get back $105 instead. Some economists say the $5 extra is the reward for one specific thing. What is that thing?",
-    "answer": "Waiting — the person delayed enjoying the money for a year",
-    "choices": [
-      "Waiting — the person delayed enjoying the money for a year",
-      "Producing — the money itself worked in a factory",
-      "Stealing — the money was taken from another worker",
-      "Voting — the person supported the correct political party"
-    ],
-    "context": "Nassau William Senior (1790-1864), Oxford's first Drummond Professor of Political Economy, is the name Boehm-Bawerk associates in Volume 1 with the abstinence theory of interest -- the view that interest rewards the saver for the self-denial of postponing consumption. Ricardo and Mill worked mainly within cost-of-production and productivity accounts; Marshall came later. Source: Econlib, 'Eugen von Boehm-Bawerk' (https://www.econlib.org/library/Enc/bios/BohmBawerk.html).",
-    "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
-  },
-  {
-    "tier": 3,
-    "question": "Boehm-Bawerk asked people to notice a simple fact about how things get made. A fisherman weaves a net before he catches fish. A farmer builds a plow before he plants grain. A factory sets up its line before it ships a car. What one feature of making things is he pointing to?",
+    "question": "Eugen von Böhm-Bawerk pointed to a farmer who builds his plow before he sows a single field, and to a carmaker who sets up an assembly line before one car rolls out. He saw a plain fact behind interest in scenes like these. What feature of making things did he mean?",
     "answer": "That production takes time",
     "choices": [
       "That production takes time",
@@ -4083,7 +3745,7 @@
   },
   {
     "tier": 4,
-    "question": "Boehm-Bawerk gives interest three separate grounds in Volume 2. Ground one is that people expect the future to be more prosperous than the present, so a future good is worth less to them now. Ground two is that people are shortsighted and systematically underestimate their future wants. Ground three was the most controversial, because it implies positive interest rates would exist even if grounds one and two failed. What does ground three appeal to?",
+    "question": "Eugen von Böhm-Bawerk rested his theory of interest on three grounds. People expect to be better off later, so a future good is worth less to them now, and they undervalue their future wants. His third ground, the most disputed, would hold even if the first two collapsed: interest would still stay above zero. What does that third ground appeal to?",
     "answer": "The technical superiority of longer production processes",
     "choices": [
       "The technical superiority of longer production processes",
@@ -4095,21 +3757,8 @@
     "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
   },
   {
-    "tier": 4,
-    "question": "Suppose someone offers you a choice. Take $10 today, or wait exactly one year and take $10 then. The amount is identical. Almost every person alive picks today. Austrian economists gave this ordinary human habit a name -- time preference -- and built their whole theory of interest on it. What economic idea does this preference show?",
-    "answer": "People value goods and money in the present more than the same amount in the future",
-    "choices": [
-      "People value goods and money in the present more than the same amount in the future",
-      "People cannot count amounts of money over time",
-      "The price of goods always drops in a year, so today's dollar buys more",
-      "Waiting one year makes no real difference to anyone"
-    ],
-    "context": "Frank A. Fetter (1863-1949), an American Austrian, argued that time preference (ground two) is the whole explanation of interest and that Boehm-Bawerk's technical-productivity ground three is dispensable. John Bates Clark went the other direction and defended a pure productivity-of-capital theory; Irving Fisher tried to combine productivity and impatience; Knut Wicksell developed the natural-rate concept in a different direction. Source: Econlib, 'Eugen von Boehm-Bawerk' (https://www.econlib.org/library/Enc/bios/BohmBawerk.html).",
-    "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
-  },
-  {
-    "tier": 5,
-    "question": "A modern socialist argues that interest paid to a saver is unearned income. The saver did no labor — the money simply sat in an account and grew. In his 1889 book 'Capital and Interest' the Austrian economist Eugen von Boehm-Bawerk answered exactly this charge from Karl Marx head-on. Without appealing to risk or entrepreneurship, how did his answer go?",
+    "tier": 3,
+    "question": "Karl Marx called interest theft from the workers. A modern socialist agrees: a saver who lends $100 for a year and gets $105 back did no work, as the cash just sat there. How did Eugen von Böhm-Bawerk answer?",
     "answer": "The saver supplies waiting -- releasing present resources so future output can exist -- and interest is the market price for that waiting",
     "choices": [
       "The saver supplies waiting -- releasing present resources so future output can exist -- and interest is the market price for that waiting",
@@ -4117,12 +3766,12 @@
       "The saver exercises entrepreneurial judgment about which projects deserve capital, and interest is the reward for that judgment",
       "The saver enjoys legal protection under contract law, and interest is the state-enforced return on lawful lending"
     ],
-    "context": "The clean Boehm-Bawerkian move: production takes time; someone must release today's resources for tomorrow's output; that release is what the saver contributes; the interest payment is the market price of that contribution. Risk, entrepreneurship, and legal enforcement are separate real phenomena but they answer different questions -- this specific question is about where interest itself comes from, and the answer is time-preference plus waiting. Source: Capitalism Magazine, Ebeling on Boehm-Bawerk (https://capitalismmagazine.com/2016/02/eugen-von-bohm-bawerk-refuter-marxism-theorist-economics-capitalism/).",
+    "context": "The clean Boehm-Bawerkian move: production takes time; someone must release today's resources for tomorrow's output; that release is what the saver contributes; the interest payment is the market price of that contribution. It is not stolen from the worker; it is compensation for the postponement of consumption. Risk, entrepreneurship, and legal enforcement are separate real phenomena but they answer different questions.",
     "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
   },
   {
     "tier": 5,
-    "question": "A central bank forces interest rates down to zero. Austrian economists warn that interest rates aren't just any old price -- they measure something specific about how people trade what they have now for what they can have later. Which price does a zero-rate policy actually distort?",
+    "question": "Ludwig von Mises and Friedrich Hayek, building on Böhm-Bawerk, held that an interest rate is no ordinary price. Austrians in their line object whenever a central bank forces rates down to zero. Which price does such a policy distort?",
     "answer": "The price of time itself -- how much people value goods now versus later",
     "choices": [
       "The price of time itself -- how much people value goods now versus later",
@@ -4135,7 +3784,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1962 the American economist Milton Friedman published a book that grew out of lectures he had given at Wabash College in Indiana in 1956. His wife Rose helped shape the manuscript into plain English for general readers. It went on to sell more than half a million copies and spread free-market ideas to a wide audience. What was the book's title?",
+    "question": "At Wabash College in Indiana in 1956, Milton Friedman gave a series of talks, and his wife Rose helped him recast them in plain English for a book of 1962. Buyers took home more than half a million copies over the years. What was the book called?",
     "answer": "Capitalism and Freedom",
     "choices": [
       "Capitalism and Freedom",
@@ -4148,7 +3797,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1962 the American economist Milton Friedman published a slim book called Capitalism and Freedom. He argued that two kinds of freedom, the freedom to trade and produce and the freedom to vote and speak, are tightly linked but only in one direction. One kind of freedom is the ground the other stands on. Which link does the book argue for?",
+    "question": "Milton Friedman set out a one-way link in 1962 between two freedoms: the freedom to trade and produce, and the freedom to vote and speak. One, he argued, is the ground the other stands on. Which link did he argue for?",
     "answer": "Economic freedom is a necessary condition for political freedom",
     "choices": [
       "Economic freedom is a necessary condition for political freedom",
@@ -4161,7 +3810,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1962 the American economist Milton Friedman published Capitalism and Freedom, a slim book packed with proposals that sounded strange at the time. Several of its ideas later became normal US policy over the following decades. But one item in the list below was never in Friedman's 1962 book. Which one was not in it?",
+    "question": "A reader opening Milton Friedman's slim new book in 1962 found it packed with reforms that sounded strange at the time, and several later became ordinary American policy. Which reform was never in the book?",
     "answer": "Universal single-payer health insurance",
     "choices": [
       "Universal single-payer health insurance",
@@ -4173,21 +3822,8 @@
     "topic": "capitalism-and-freedom-1962-and-free-to-choose-1980"
   },
   {
-    "tier": 2,
-    "question": "In the late 1960s the American economist Milton Friedman argued that the US military draft should be ended and replaced with an all-volunteer force. In a famous hearing before a presidential commission, General William Westmoreland complained he did not want to command 'an army of mercenaries.' Friedman shot back one sentence that stopped the general cold. What did Friedman say?",
-    "answer": "'Would you rather have an army of slaves?'",
-    "choices": [
-      "'Would you rather have an army of slaves?'",
-      "'Would you draft your own children?'",
-      "'Is your own salary not a wage?'",
-      "'Who defends the mercenary's family?'"
-    ],
-    "context": "Congress let the induction authority expire in 1973, ending the American peacetime draft. Friedman had proposed abolishing the draft in Capitalism and Freedom (1962). Source: history.army.mil (draft history).",
-    "topic": "capitalism-and-freedom-1962-and-free-to-choose-1980"
-  },
-  {
     "tier": 3,
-    "question": "Imagine a shopper walks into a large supermarket and picks her own items freely from thousands of choices — bread, milk, apples, whatever her family actually wants — spending her weekly grocery budget however she likes. Now imagine that instead, a small committee of nutrition experts in an office chose everyone's groceries, with the same budget at the same store. What would most likely happen?",
+    "question": "A shopper walks the aisles of a supermarket with her family's weekly budget, picking freely among thousands of items. In Free to Choose, Milton and Rose Friedman set beside her a committee of nutrition experts choosing everyone's groceries, with the same budgets at the same store. What would most likely happen?",
     "answer": "Many shoppers would get food they did not want, and shelves would be full of things no one bought",
     "choices": [
       "Many shoppers would get food they did not want, and shelves would be full of things no one bought",
@@ -4200,7 +3836,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1980 Milton and Rose Friedman filmed a ten-episode Public Broadcasting Service (PBS) television series called Free to Choose. They shot it on location in Hong Kong, Chicago, Washington, and other cities so viewers could see for themselves how free markets work in the real world. They also released a companion book with the same title. Where did that book rank on US book sales for its year of publication?",
+    "question": "Milton and Rose Friedman took their case to public television in 1980 with a ten-part series filmed in Hong Kong, Chicago, Washington and other cities. A companion book carried the same title, Free to Choose. Where did it rank among American books that year?",
     "answer": "Best-selling nonfiction book of 1980",
     "choices": [
       "Best-selling nonfiction book of 1980",
@@ -4213,7 +3849,7 @@
   },
   {
     "tier": 4,
-    "question": "Friedman's book Free to Choose was translated into more than a dozen languages. According to his memoirs, it was smuggled into one particular bloc of countries in illegal underground translations. It influenced later economic reformers there. Which region was that?",
+    "question": "Milton Friedman recalled in his memoirs that Free to Choose, translated into more than a dozen languages, was smuggled into one bloc of countries in illegal underground translations. A reformer there later counted the book among the sources of his country's reforms. Which region was that bloc?",
     "answer": "The Soviet Union and Eastern Europe",
     "choices": [
       "The Soviet Union and Eastern Europe",
@@ -4226,7 +3862,7 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman, the American economist and later 1976 Nobel laureate, made the school-voucher proposal famous in his 1962 book 'Capitalism and Freedom.' But the voucher idea actually first appeared seven years earlier, in a stand-alone essay Friedman published in 1955 inside an academic volume edited by Robert A. Solo. Which 1955 essay was that?",
+    "question": "Robert Solo edited a volume in 1955 that carried an essay by Milton Friedman, who later folded the essay's proposal into his book of 1962. What was the essay called?",
     "answer": "The Role of Government in Education",
     "choices": [
       "The Role of Government in Education",
@@ -4239,7 +3875,7 @@
   },
   {
     "tier": 5,
-    "question": "In August 1971 President Nixon closed the US gold window and let the dollar float, ending the Bretton Woods fixed-exchange-rate system. Friedman had been recommending this move since 1953 in a paper arguing for letting currencies swing against one another. What did the resulting international monetary regime become?",
+    "question": "Richard Nixon in August 1971 shut the gold window, and the Bretton Woods order of fixed rates collapsed. Milton Friedman had pressed since 1953 for the change that came next. What regime had the world's leading currencies moved to by 1973?",
     "answer": "Floating exchange rates for major currencies",
     "choices": [
       "Floating exchange rates for major currencies",
@@ -4252,7 +3888,7 @@
   },
   {
     "tier": 5,
-    "question": "Milton Friedman's 1962 book Capitalism and Freedom argued for ideas that sounded radical at the time -- an all-volunteer army, a negative income tax, school vouchers, floating exchange rates, and the end of licensing rules that kept people out of trades. Decades later, historians looked back with a striking observation. Which one-sentence summary best captures why the book still matters?",
+    "question": "Milton Friedman offered a list of reforms in a slim book of 1962, and many readers found them odd. Historians looking back decades later noticed something striking about that list. What did they notice?",
     "answer": "Many proposals that seemed eccentric in 1962 later became mainstream policy",
     "choices": [
       "Many proposals that seemed eccentric in 1962 later became mainstream policy",
@@ -7411,7 +7047,7 @@
   },
   {
     "tier": 1,
-    "question": "After the 2008 US financial crash — the crash in which the American housing bubble popped and several huge banks like Lehman Brothers collapsed — Congress passed a big new law called the Dodd-Frank Act with hundreds of pages of new rules for banks. What is the general word for rules a government sets to tell banks and companies what they can and cannot do?",
+    "question": "Congress passed a banking law of more than 800 pages in 2010, the Dodd-Frank Act, after the financial crash of 2008. A government's rules telling banks what is allowed and what is forbidden share one general name. What is it?",
     "answer": "Regulation",
     "choices": [
       "Regulation",
@@ -7424,7 +7060,7 @@
   },
   {
     "tier": 2,
-    "question": "After the 2008 US housing crash, Congress passed the 2010 Dodd-Frank Act, a big new banking law. One part of it created a brand-new federal agency whose job was to watch over the loans ordinary families use most: home mortgages, credit cards, and payday loans. What kind of agency is it best called?",
+    "question": "Elizabeth Warren, a Harvard professor at the time, championed a brand-new federal agency written into the Dodd-Frank Act of 2010. Its job was to police the loans families depend on most: home mortgages, credit cards and payday loans. What kind of agency was it?",
     "answer": "A consumer financial protection agency",
     "choices": [
       "A consumer financial protection agency",
@@ -7437,7 +7073,7 @@
   },
   {
     "tier": 2,
-    "question": "After the 2008 financial crisis, US Congress asked former Federal Reserve chairman Paul Volcker to help design a new banking safety rule. Volcker's idea, passed in 2010, said federally insured banks — the ones whose customer deposits are backed by taxpayer money — should not use those deposits to make risky bets in the stock market for their own profit. What is the point of a rule like that?",
+    "question": "Paul Volcker, the former chairman of the Federal Reserve, helped design a new banking rule after the crisis of 2008, and Congress wrote it into the Dodd-Frank Act of 2010 under his name. What principle stood behind the Volcker Rule?",
     "answer": "Banks with government-insured deposits should not gamble with those deposits",
     "choices": [
       "Banks with government-insured deposits should not gamble with those deposits",
@@ -7450,7 +7086,7 @@
   },
   {
     "tier": 3,
-    "question": "After the 2008 housing crash, Congress passed the 2010 Dodd-Frank Act, adding hundreds of pages of new rules that fell heavily on small and mid-sized banks — compliance costs the big Wall Street banks could absorb but community banks could not. In 2010 the United States had about seven thousand commercial banks. By 2023, how many were left?",
+    "question": "A small-town banker watched Congress pass the Dodd-Frank Act in 2010, when America had about seven thousand commercial banks. In the years that followed, most of the vanished banks were bought up by bigger competitors, not shut down. How many commercial banks were left by 2023?",
     "answer": "About 4,700 -- down by roughly a third",
     "choices": [
       "About 4,700 -- down by roughly a third",
@@ -7463,7 +7099,7 @@
   },
   {
     "tier": 3,
-    "question": "Before the 2010 Dodd-Frank banking law, US regulators approved about 130 brand-new banks every year — small local start-ups meant to compete with the big national ones. Dodd-Frank added mountains of paperwork that only large banks could easily afford to handle. In the six years right after the law passed, the yearly average for new-bank charters collapsed. Roughly how many brand-new banks were being approved per year?",
+    "question": "A banker filed papers for a brand-new local bank before the Dodd-Frank Act passed in 2010; regulators were then approving about 130 such start-ups a year. They had also begun taking longer to vet new banks in 2009. In the six years after the law, how many new banks won charters each year?",
     "answer": "Fewer than six per year",
     "choices": [
       "Fewer than six per year",
@@ -7475,8 +7111,8 @@
     "topic": "dodd-frank-2010-the-community-banks-that-consolidated"
   },
   {
-    "tier": 4,
-    "question": "Imagine a new US banking law that says every bank must hire five extra lawyers to check paperwork. JPMorgan, a giant national bank with over sixty million customers, spreads that fixed cost across all of them — a fraction of a penny each. But a small-town bank in rural Kansas with only 500 customers still has to hire the same five lawyers. Which bank feels the rule more?",
+    "tier": 2,
+    "question": "Suppose Congress orders every bank in America to hire five more lawyers. JPMorgan spreads their pay over sixty million customers, a sliver apiece, while a hometown bank serving a few hundred families pays the same five salaries. Which bank feels the rule more?",
     "answer": "The small bank -- fixed rule costs hurt small players most",
     "choices": [
       "The small bank -- fixed rule costs hurt small players most",
@@ -7484,33 +7120,7 @@
       "Both banks feel it the same, since the rule is the same",
       "Neither bank -- lawyers can be hired cheaply anywhere"
     ],
-    "context": "Charles Calomiris of Columbia Business School and Stephen Haber made this the standard critique in Fragile by Design (Princeton 2014). Compliance-officer and legal staffing is largely a fixed cost per institution, so it consumes a much larger share of a small bank's revenue. Source: grokipedia.com/page/Charles_Calomiris.",
-    "topic": "dodd-frank-2010-the-community-banks-that-consolidated"
-  },
-  {
-    "tier": 4,
-    "question": "A US state bans selling alcohol on Sundays. Two very different groups quietly want the rule kept: churches who want a quiet Sunday, and illegal liquor sellers who profit when legal stores must close. What name did economist Bruce Yandle give this pattern?",
-    "answer": "Bootleggers and Baptists",
-    "choices": [
-      "Bootleggers and Baptists",
-      "The Iron Triangle",
-      "Concentrated benefits and dispersed costs",
-      "Regulatory capture"
-    ],
-    "context": "The pattern is named for Prohibition, where evangelical preachers publicly urged alcohol bans while bootleggers quietly welcomed the elimination of legal competition. Yandle argues the same coalition structure recurs whenever a rule concentrates benefits on a well-organized incumbent. Source: grokipedia.com/page/Bootleggers_and_Baptists.",
-    "topic": "dodd-frank-2010-the-community-banks-that-consolidated"
-  },
-  {
-    "tier": 5,
-    "question": "After the 2008 mega-bank crisis, Congress wrote strict rules for the giants but applied them to every bank the same way. Small hometown banks struggled with paperwork built for firms a hundred times their size. What lesson does this pattern usually teach?",
-    "answer": "Rules meant for the biggest players usually crush the small ones hardest",
-    "choices": [
-      "Rules meant for the biggest players usually crush the small ones hardest",
-      "Small banks are always more dangerous than large ones",
-      "Strict paperwork always makes finance safer, whatever the cost",
-      "A rule that fits every bank equally is the fairest rule"
-    ],
-    "context": "Signed May 24, 2018 by President Trump, sponsored by Senator Mike Crapo (R-Idaho). The law was a bipartisan concession that fixed compliance costs on small banks had shrunk community banking without protecting the system from another 2008. Source: grokipedia.com/page/Economic_Growth,_Regulatory_Relief,_and_Consumer_Protection_Act.",
+    "context": "Charles Calomiris of Columbia Business School and Stephen Haber made this the standard critique in Fragile by Design (Princeton 2014). Compliance-officer and legal staffing is largely a fixed cost per institution, so it consumes a much larger share of a small bank's revenue. A law signed May 24, 2018 by President Trump, sponsored by Senator Mike Crapo, was a bipartisan concession that fixed compliance costs on small banks had shrunk community banking without protecting the system from another 2008.",
     "topic": "dodd-frank-2010-the-community-banks-that-consolidated"
   },
   {
@@ -13456,20 +13066,7 @@
   },
   {
     "tier": 1,
-    "question": "'Public choice' is a school of economics started in the 1960s by James Buchanan and Gordon Tullock at the University of Virginia. It studies politicians, voters, and bureaucrats the same way it studies buyers and sellers -- as ordinary people responding to incentives, not as noble servants of the common good. Imagine a US senator has to decide how to vote on a new law. What does public-choice economics say she will most often care about first?",
-    "answer": "Getting re-elected",
-    "choices": [
-      "Getting re-elected",
-      "Reading every page of the law",
-      "What her grandma thinks",
-      "World peace"
-    ],
-    "context": "James McGill Buchanan (October 3, 1919 - January 9, 2013) was born on a Tennessee farm, the grandson of a Reconstruction-era governor. Middle Tennessee State Teachers College was his undergraduate school. Source: en.wikipedia.org/wiki/James_M._Buchanan.",
-    "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
-  },
-  {
-    "tier": 1,
-    "question": "In 1921 the Chicago economist Frank Knight published Risk, Uncertainty, and Profit. He drew a sharp line between two kinds of not-knowing. A coin flip is 50-50 every time, so you can put a real number on it. But no one can put clean odds on the chance of a new war next year. Knight gave that second kind — future events with no clear odds — its own special word. Which word did he use?",
+    "question": "Frank Knight, a Chicago economist, split the unknown in two in a book of 1921. A tossed coin lands heads half the time, so its odds can be measured; whether war breaks out somewhere next year has no honest odds at all. What did Knight call that second kind?",
     "answer": "Uncertainty",
     "choices": [
       "Uncertainty",
@@ -13482,7 +13079,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1957, the economists James Buchanan and Warren Nutter arrived at the University of Virginia and opened a new research center to study how governments, voters, and markets actually interact. Buchanan would later win the 1986 Nobel Prize in Economics for the public-choice school this center helped launch. They named their new center after a Virginian founding father famous for defending decentralized government and the small farmer. What did they name it?",
+    "question": "Warren Nutter and James Buchanan set up a research center at the University of Virginia in 1957. They named it for a champion of small farmers and of government kept small. What did they call it?",
     "answer": "The Thomas Jefferson Center for Political Economy",
     "choices": [
       "The Thomas Jefferson Center for Political Economy",
@@ -13495,33 +13092,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1960s the American economists James Buchanan and Gordon Tullock built a whole school called public choice. Their central idea was simple: people who go into government are still people, and they still respond to what rewards them. Imagine a mayor promising new sidewalks in a swing neighborhood right before an election, then cutting the ribbon the very month after he wins. What lesson do public-choice economists say a scene like that teaches?",
-    "answer": "Politicians respond to incentives just like anyone else responds to incentives",
-    "choices": [
-      "Politicians respond to incentives just like anyone else responds to incentives",
-      "Politicians never think about being re-elected after they win once",
-      "Sidewalks are always a bad public investment for any neighborhood",
-      "Voters always know exactly what they need from a mayor"
-    ],
-    "context": "The Center for Study of Public Choice was founded at Virginia Tech in Blacksburg in 1969. It moved with Buchanan and Tullock to George Mason University in 1983. Source: mercatus.org (Center biographical history).",
-    "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
-  },
-  {
-    "tier": 3,
-    "question": "In October 1986 the Royal Swedish Academy awarded the Nobel Prize in economics to the American economist James Buchanan of George Mason University. He was the first winner from the public-choice school — the field that studies government officials as ordinary people who follow their own incentives inside the rules they're given. The Nobel committee praised his work on the rules and contracts that shape a specific area of choice. Which area of decision-making did the prize honor?",
-    "answer": "The theory of economic and political decision-making",
-    "choices": [
-      "The theory of economic and political decision-making",
-      "General-equilibrium price theory",
-      "Growth accounting",
-      "Consumer-choice utility theory"
-    ],
-    "context": "The 1986 Nobel citation, October 16, 1986: 'for his development of the contractual and constitutional bases for the theory of economic and political decision-making.' The committee generalized rather than saying 'public choice.' Source: nobelprize.org (Buchanan 1986).",
-    "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
-  },
-  {
-    "tier": 3,
-    "question": "In 1957 the American economists James Buchanan and Warren Nutter opened a research center at the University of Virginia to ask one blunt question about politicians and government workers. Did they really pursue only 'the public good' when they voted on budgets, or did they behave more like everyone else — chasing votes, funding, and their own careers? After years of studies of voting, lobbying, and agency budgets, the answer was clear. What did the research find?",
+    "question": "Gordon Tullock and James Buchanan refused to treat people in government as saints. Their school spent years studying how citizens vote, how lobbies push and how agencies spend, and the studies kept turning up one finding about officials and lawmakers. What was it?",
     "answer": "They respond to incentives, just like people in business do",
     "choices": [
       "They respond to incentives, just like people in business do",
@@ -13529,12 +13100,12 @@
       "They follow whatever economists tell them",
       "They ignore money and power completely"
     ],
-    "context": "The Center moved to George Mason University in Fairfax, Virginia, in 1983. GMU has hosted public-choice research ever since, alongside the Mercatus Center. Source: gmu.edu (public choice program history).",
+    "context": "Public choice is politics without romance. Buchanan's contribution: strip the assumption that politicians act from pure public spirit; treat them as ordinary humans responding to ordinary incentives. The Center moved to George Mason University in Fairfax, Virginia, in 1983.",
     "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
   },
   {
     "tier": 3,
-    "question": "In the mid-1950s a young American economist named James Buchanan traveled to Italy on a Fulbright scholarship. He studied with Italian public-finance scholars who wanted a country's constitution itself to cap government spending, not just ordinary laws. Why put those limits in the constitution instead of trusting politicians to hold the line?",
+    "question": "Luigi Einaudi, a former president of Italy, was among the public-finance scholars James Buchanan met on a Fulbright year in 1955-56. They wanted limits on spending set in a country's constitution, above everyday politics. Why not simply trust politicians to hold the line?",
     "answer": "Politicians face short-term pressure to spend and print money, and firm rules bind them",
     "choices": [
       "Politicians face short-term pressure to spend and print money, and firm rules bind them",
@@ -13547,7 +13118,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1986 the American economist James Buchanan travelled to Stockholm to accept the Nobel Prize in economics for founding the field of public choice — the study of how self-interested people actually behave once they hold political office. At the ceremony Buchanan wanted a tribute to his old University of Chicago teacher shown alongside his own work. He was thanking the man whose class had changed his thinking. What did Buchanan display next to himself?",
+    "question": "At the Stockholm ceremonies for his 1986 Nobel, James Buchanan, the Tennessee farm boy turned economist, made sure one thing was displayed beside him. It honored the man whose course had once changed his thinking. What was it?",
     "answer": "A portrait of Frank Knight",
     "choices": [
       "A portrait of Frank Knight",
@@ -13560,7 +13131,7 @@
   },
   {
     "tier": 4,
-    "question": "The Nobel-winning American economist James Buchanan grew up in rural Tennessee during the Depression. He was named after his grandfather, John Price Buchanan, a Populist farmer-politician who rose through Tennessee politics in the years after Reconstruction. Family stories about the old man's tough campaigns shaped young James's early interest in political life. What top state office had John Price Buchanan held in the 1890s?",
+    "question": "John Price Buchanan, a Populist farmer-politician, won election on a Farmers' Alliance platform, and the family's tales of his campaigns later fed his grandson James's early interest in public life. What office did the grandfather hold from 1891 to 1893?",
     "answer": "Governor of Tennessee",
     "choices": [
       "Governor of Tennessee",
@@ -13573,7 +13144,7 @@
   },
   {
     "tier": 5,
-    "question": "James Buchanan, the Tennessee-born economist who later founded public-choice theory and won the 1986 Nobel Prize, often described his change at the University of Chicago as going from a 'libertarian socialist' to a market-order view. Frank Knight's course was the pivot. What does that 'libertarian socialist' phrase tell us about where Buchanan really started, before Knight's course?",
+    "question": "Back from the war, in which he had served on a Navy staff in Honolulu, James Buchanan arrived at the University of Chicago as a student in 1945. Years later he described the young man he had been as a 'libertarian socialist,' until six weeks in one price-theory course made him a market-order man. What had he really been, politically, when he arrived?",
     "answer": "He was a Southern rural Democrat sympathetic to redistribution",
     "choices": [
       "He was a Southern rural Democrat sympathetic to redistribution",
@@ -13582,19 +13153,6 @@
       "He was a Trotskyist committed to permanent revolution"
     ],
     "context": "Buchanan was the son of Tennessee farming Democrats, sympathetic to New Deal redistribution when he arrived at Chicago. The 'libertarian socialist' label was his own description of that starting point. Do not overstate an early conservatism -- he had none. Source: Buchanan, Better than Plowing (1992).",
-    "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
-  },
-  {
-    "tier": 5,
-    "question": "James Buchanan grew up on a Tennessee dairy farm and eventually stood in Stockholm to accept the 1986 Nobel Prize from the Royal Swedish Academy. Along the way, almost single-handedly, he built the field of public choice — the study of how people actually behave once they hold political office. In shaping the whole field from that unlikely path, what did Buchanan teach the world in a single sentence?",
-    "answer": "He taught the world that politicians are self-interested actors, not benevolent planners",
-    "choices": [
-      "He taught the world that politicians are self-interested actors, not benevolent planners",
-      "He proved mathematically that market prices reflect all available information",
-      "He founded the doctrine of comparative advantage in international trade",
-      "He reformed monetary policy by inventing the money-supply target rule"
-    ],
-    "context": "Public choice is politics without romance. Buchanan's contribution: strip the assumption that politicians act from pure public spirit; treat them as ordinary humans responding to ordinary incentives. Source: Buchanan, 'Politics Without Romance' (1979).",
     "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
   },
   {
@@ -17109,20 +16667,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1976 the American economist Milton Friedman won the Nobel Prize in economics. His most famous line is that 'inflation is always and everywhere a monetary phenomenon' -- meaning inflation is always a money problem, not a shopkeeper problem or a weather problem. What did Friedman mean by that line?",
-    "answer": "Inflation is caused by printing too much money",
-    "choices": [
-      "Inflation is caused by printing too much money",
-      "Inflation is caused by greedy shopkeepers",
-      "Inflation is caused by too many jobs",
-      "Inflation is caused by weather changes"
-    ],
-    "context": "Milton Friedman (1912-2006). His parents, Sara Ethel Landau and Jeno Saul Friedman, came from Beregszasz in Carpathian Ruthenia -- then the Kingdom of Hungary, today Berehove in Ukraine. Samuelson, Arrow and Kuznets were all real Nobel economists of the same era. Sources: Grokipedia, 'Milton Friedman' (https://grokipedia.com/page/Milton_Friedman); Wikipedia, 'Milton Friedman'.",
-    "topic": "milton-friedman-brooklyn-to-nobel-1976"
-  },
-  {
-    "tier": 1,
-    "question": "The Chicago economist Milton Friedman and his wife Rose wrote a bestselling 1980 book called Free to Choose that also became a TV series. Its big claim about spending: letting ordinary people freely spend their own money beats which alternative arrangement?",
+    "question": "Rose Friedman, a trained economist herself, and her husband Milton carried one claim about spending to readers and television viewers in 1980: no one watches someone else's money as closely as his own. Letting people spend their own money, they argued, beats what?",
     "answer": "Letting government experts spend it for them",
     "choices": [
       "Letting government experts spend it for them",
@@ -17135,20 +16680,7 @@
   },
   {
     "tier": 2,
-    "question": "A factory worker gets a one-time bonus of a thousand dollars. The Keynesian consumption rule of the 1940s predicted he spends a set fraction of it, just as he does of his wages. Milton Friedman's A Theory of the Consumption Function (1957) said that rule had missed something. What had it missed?",
-    "answer": "That he plans his spending around the income he expects over years, and reads the bonus as a one-off",
-    "choices": [
-      "That he plans his spending around the income he expects over years, and reads the bonus as a one-off",
-      "That he spends the bonus faster than his wages, because unearned money feels less real to him",
-      "That he cannot know whether the bonus is taxable until the spring, so he holds off spending it",
-      "That his employer set the size of the bonus knowing roughly how he was likely to spend it"
-    ],
-    "context": "This is the permanent income hypothesis. Friedman's charge against Keynes was precise: Keynes had related consumption to measured income without separating transitory income from permanent income. Published by Princeton University Press, 1957. Sources: Princeton University Press, 'Theory of the Consumption Function'; NBER, 'The Permanent Income Hypothesis'; Britannica.",
-    "topic": "milton-friedman-brooklyn-to-nobel-1976"
-  },
-  {
-    "tier": 2,
-    "question": "By 1980 the American economist Milton Friedman had left the University of Chicago for the Hoover Institution at Stanford and was famous well beyond economics. That year he and his wife, Rose Friedman, made the case for free markets to a huge audience. It came out as both a best-selling book and a ten-part public TV series with the same title. What was it called?",
+    "question": "Milton Friedman had left the University of Chicago for Stanford's Hoover Institution by 1980, when he and his wife Rose took their case for free markets to public television in ten parts, alongside a best-selling book of the same title. What was the title?",
     "answer": "Free to Choose",
     "choices": [
       "Free to Choose",
@@ -17160,8 +16692,8 @@
     "topic": "milton-friedman-brooklyn-to-nobel-1976"
   },
   {
-    "tier": 3,
-    "question": "In 1969 President Nixon appointed a commission under Thomas Gates to study ending the draft, and Milton Friedman sat on it. General William Westmoreland, then Army Chief of Staff, testified that he did not want to lead an army of mercenaries. Friedman stopped him with a single question. What did he ask?",
+    "tier": 2,
+    "question": "General William Westmoreland, Army chief of staff, told a commission on ending the draft that he did not want to lead an army of mercenaries. Richard Nixon had set it up under Thomas Gates in 1969. Milton Friedman, a member, answered with one question. What did Friedman ask?",
     "answer": "General, would you rather command an army of slaves?",
     "choices": [
       "General, would you rather command an army of slaves?",
@@ -17174,7 +16706,7 @@
   },
   {
     "tier": 3,
-    "question": "A famous 1963 book traced the amount of money in circulation in America year by year from just after the Civil War to 1960. It argued that the Great Depression was made much worse by the central bank letting the stock of dollars in the country shrink. What is the main lesson the book urged central bankers to learn?",
+    "question": "Anna Jacobson Schwartz, Milton Friedman's full co-author, tracked America's money with him from 1867 to 1960 in their book A Monetary History, published in 1963. The book's hardest-won lesson came out of the 1930s. What did it tell central bankers?",
     "answer": "Do not let the money supply collapse during a banking panic",
     "choices": [
       "Do not let the money supply collapse during a banking panic",
@@ -17187,7 +16719,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1976, the Royal Swedish Academy gave Milton Friedman the Nobel Prize in economics. The award named three of his works. Its closing line was almost a warning: it noted how hard it is for a government to steady an economy. Which three did the award name?",
+    "question": "The Swedish academy named three of Milton Friedman's achievements when it gave him the economics Nobel in 1976. Which three did it name?",
     "answer": "Consumption analysis, monetary history and theory, and the complexity of stabilization policy",
     "choices": [
       "Consumption analysis, monetary history and theory, and the complexity of stabilization policy",
@@ -17200,33 +16732,7 @@
   },
   {
     "tier": 4,
-    "question": "The common account of the Great Depression in 1963 was that markets had collapsed of their own accord and government had arrived to rescue what was left. Friedman and Anna Schwartz answered it with a measurement of the American money stock between August 1929 and March 1933. What had happened to it?",
-    "answer": "It fell by about a third, from $26.6 billion to $17.3 billion",
-    "choices": [
-      "It fell by about a third, from $26.6 billion to $17.3 billion",
-      "It rose by about a fifth, from $26.6 billion to $32.1 billion",
-      "It held almost flat, moving from $26.6 billion to $26.1 billion",
-      "It fell by about a twentieth, from $26.6 billion to $25.2 billion"
-    ],
-    "context": "Friedman and Schwartz's charge was not that the Fed had done too much but that it had done far too little: it let a third of the money supply disappear and turned an ordinary recession into the Great Depression. Friedman was no gold-standard partisan, which is what makes the finding so awkward for defenders of the Fed's record. Source: Grokipedia, 'Great Contraction' and 'A Monetary History of the United States'.",
-    "topic": "milton-friedman-brooklyn-to-nobel-1976"
-  },
-  {
-    "tier": 4,
-    "question": "In 1967 the American economist Milton Friedman gave his presidential address to the American Economic Association. The popular idea then, called the Phillips curve, said a bit more inflation could buy a lasting drop in unemployment. Friedman told the crowd the deal would not hold up once workers wised up to it. Why not?",
-    "answer": "Because once people come to expect that inflation, unemployment climbs back to where it started",
-    "choices": [
-      "Because once people come to expect that inflation, unemployment climbs back to where it started",
-      "Because the extra money reaches exporters first and drives the currency down before wages move",
-      "Because no government can measure inflation fast enough to know when it ought to stop printing",
-      "Because employers meet rising prices by buying machinery, so unemployment never falls at all"
-    ],
-    "context": "Published as 'The Role of Monetary Policy' in 1968. Friedman called the level unemployment returns to the natural rate. The 1970s -- high inflation AND high unemployment together -- were widely read afterwards as the test his argument passed and the older view failed. Sources: American Economic Association, 'Short-Run and Long-Run Effects of Milton Friedman's Presidential Address'; Bruegel.",
-    "topic": "milton-friedman-brooklyn-to-nobel-1976"
-  },
-  {
-    "tier": 5,
-    "question": "Congress wants to lift consumer spending and mails every household a single rebate cheque of six hundred dollars, announced in advance as a one-time payment. A supporter predicts households will spend most of it within the quarter. An economist holding Milton Friedman's 1957 account of consumption expects much less. What is the reasoning he presses?",
+    "question": "Congress mails every household a one-time rebate cheque of $600 to lift spending, and a supporter predicts most of it will be spent within the quarter. An economist who follows Milton Friedman's 1957 account of consumption, which challenged the Keynesian rule of thumb that families spend a set share of every dollar they receive, expects far less. What reasoning does he press?",
     "answer": "The cheque changes this year's cash, not the long-run income a household budgets against",
     "choices": [
       "The cheque changes this year's cash, not the long-run income a household budgets against",
@@ -17234,12 +16740,12 @@
       "The cheque is funded by borrowing that households expect to repay in later taxes anyway",
       "The cheque means far more to a poor household than a rich one, so the average misleads"
     ],
-    "context": "This is the permanent income hypothesis doing policy work. Note what the argument is and is not: it says the rebate will move spending less than its sponsors expect, not that the sponsors are acting in bad faith. The three other choices are also real arguments made about rebates -- the lag problem, Ricardian equivalence, and distributional averaging -- each pressed by real economists. Sources: NBER, 'The Permanent Income Hypothesis'; Britannica, 'A Theory of the Consumption Function'.",
+    "context": "This is the permanent income hypothesis doing policy work. Friedman's charge against Keynes was precise: Keynes had related consumption to measured income without separating transitory income from permanent income. The argument says the rebate will move spending less than its sponsors expect, not that the sponsors are acting in bad faith. The three other choices are also real arguments made about rebates -- the lag problem, Ricardian equivalence, and distributional averaging -- each pressed by real economists.",
     "topic": "milton-friedman-brooklyn-to-nobel-1976"
   },
   {
     "tier": 5,
-    "question": "Ludwig von Mises and Milton Friedman both concluded that central banking had made the twentieth century's worst downturns worse -- and they could barely stand each other's methods. Mises reasoned from principles about how acting people must behave, principles he held no statistic could overturn. Friedman thought that route unusable. What did he insist an economic claim had to do instead?",
+    "question": "Ludwig von Mises and Milton Friedman agreed that central banks had made the century's worst slumps deeper, but neither trusted the other's method. Mises built on principles of human action and held that no statistic could overturn them. What did Friedman insist an economic claim must do instead?",
     "answer": "Stand or fall on measured series -- money stock, prices, output -- that another researcher could check",
     "choices": [
       "Stand or fall on measured series -- money stock, prices, output -- that another researcher could check",
@@ -21932,7 +21438,7 @@
   },
   {
     "tier": 1,
-    "question": "For a long time, economists imagined a strange split: bakers, farmers, and shopkeepers acted in their own interest, but politicians and bureaucrats supposedly cared only about the public good. In the 1960s a school of American economists, led by James Buchanan and Gordon Tullock, said this was silly — leaders want things too, like re-election, larger budgets, and better jobs. What is this school called?",
+    "question": "James Buchanan and Gordon Tullock led a band of economists in the 1960s who would not split the world in two, with self-seeking shopkeepers in the market and selfless servants in government. Officials want things just as shopkeepers do, they said: reelection, bigger budgets, better jobs. What is their school called?",
     "answer": "Public choice",
     "choices": [
       "Public choice",
@@ -21945,7 +21451,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1966 the American economist Gordon Tullock founded a new academic journal at the University of Virginia. Its first title was long and awkward. A few years later editors renamed it simply Public Choice, and that two-word name spread so widely it stuck to the whole field. What was the journal's original awkward title?",
+    "question": "Gordon Tullock, trained as a lawyer, started a journal in 1966 under a first title that was long and clumsy. A few years later it took a short two-word name that soon stood for the entire field. What was the original title?",
     "answer": "'Papers on Non-Market Decision Making'",
     "choices": [
       "'Papers on Non-Market Decision Making'",
@@ -21958,7 +21464,7 @@
   },
   {
     "tier": 3,
-    "question": "The public choice school of economics studies politicians, voters, and government workers as ordinary people who respond to incentives just like everyone else does. It was founded in the 1950s and 1960s by the economists James Buchanan and Gordon Tullock. Their research program first grew at a state technical university, then moved down the road to a second university in the same US state, where it flourishes today. Which state was home to both schools?",
+    "question": "James Buchanan brought his research center to a third university in 1983, where it still thrives; it had begun at one university and moved to a second. All three campuses lie in a single American state, the one where the movement grew up. Which state is it?",
     "answer": "Virginia",
     "choices": [
       "Virginia",
@@ -21971,20 +21477,7 @@
   },
   {
     "tier": 4,
-    "question": "Public choice is a branch of economics founded in the 1960s by James Buchanan and Gordon Tullock. Its central move is refusing to treat people in government as different from people anywhere else — no halos, no special angel-status. Voters, politicians, bureaucrats, and regulators get studied the same way economists study shoppers or shopkeepers. What does the school assume about workers in government?",
-    "answer": "They respond to incentives too, and often act in their own interest",
-    "choices": [
-      "They respond to incentives too, and often act in their own interest",
-      "They ignore personal gain and always serve the public good",
-      "They act at random and cannot be predicted by economists",
-      "They only respond to what voters demand in each election"
-    ],
-    "context": "Founded 1965 as the Committee on Non-Market Decision Making. The society hosts an annual conference; the European Public Choice Society (1972) and Public Choice Society of Japan (1996) followed. Source: grokipedia.com/page/Public_choice.",
-    "topic": "public-choice-journal-founded-1966"
-  },
-  {
-    "tier": 4,
-    "question": "Public Choice economics studies politicians and bureaucrats as ordinary self-interested people, not as selfless public servants. Two Virginia economists co-founded the school in the 1960s and wrote 'The Calculus of Consent' together. In 1986 the whole field was ratified when one of the two co-founders received one of the highest honors in economics. What was that award, and to whom did it go?",
+    "question": "Two economists wrote The Calculus of Consent together in 1962 and co-founded a new school in the 1960s. Their field took the top honor in economics in 1986, and only one of the two partners received it. What was the award, and who got it?",
     "answer": "The Sveriges Riksbank Prize in Economic Sciences, to James Buchanan",
     "choices": [
       "The Sveriges Riksbank Prize in Economic Sciences, to James Buchanan",
@@ -21997,7 +21490,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2020 the field of public choice economics — founded by James Buchanan and Gordon Tullock in the 1960s — was being cited across economics, political science, sociology, and law. Its early pages had laid down a whole intellectual scaffolding: technical terms for the ways politicians, bureaucrats, and voters actually behave, rather than the pretend way old textbooks imagined them behaving. Which cluster of concepts is characteristic of the field's contribution?",
+    "question": "Gordon Tullock opened his journal's pages to authors who built up a whole stock of new terms. Which cluster of terms grew up there?",
     "answer": "Rent-seeking, logrolling, bureaucratic behavior, constitutional political economy, expressive voting",
     "choices": [
       "Rent-seeking, logrolling, bureaucratic behavior, constitutional political economy, expressive voting",
