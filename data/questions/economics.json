@@ -6761,20 +6761,7 @@
   },
   {
     "tier": 1,
-    "question": "In communist East Germany, one government-run factory in the city of Zwickau made a single tiny two-stroke car called the Trabant. Because no other company was allowed to make cars, buyers had to put their names on a list and wait ten years or more just to get one. When the Trabant finally arrived, it was smoky, slow, and low quality. What limit of a central-planned economy does the Trabant's monopoly reveal about product quality?",
-    "answer": "Without competition, quality gets stuck",
-    "choices": [
-      "Without competition, quality gets stuck",
-      "Central planning makes the best products",
-      "Waiting lists mean everyone is happy",
-      "Governments always make better cars than companies"
-    ],
-    "context": "The Trabant ('little satellite') was manufactured at the Zwickau plant from 1957 to 1991 -- about 3 million total. Its body was made of Duraplast (resin mixed with cotton fibers) because the DDR lacked steel supply chains. Source: en.wikipedia.org/wiki/Trabant.",
-    "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
-  },
-  {
-    "tier": 1,
-    "question": "In communist East Germany after World War II, the government ran every factory. At the Zwickau car plant, planners could not get enough steel to build normal cars. So the little Trabant was built with a body made from hard plastic mixed with cotton fibers. What limit of central planning does the Trabant's plastic-and-cotton body reveal about planning every material for an entire nation?",
+    "question": "Planners in communist East Germany ran short of sheet steel for the little Trabant built at Zwickau. So the car got a body of Duraplast, a hard plastic stiffened with waste cotton: cheap, light and rustproof. What does that improvised body show?",
     "answer": "One small group cannot plan every material for a whole country",
     "choices": [
       "One small group cannot plan every material for a whole country",
@@ -6787,20 +6774,7 @@
   },
   {
     "tier": 2,
-    "question": "In East Germany the government set the price of the Trabant car well below what people would have paid for it. The state then handed out cars from a long waiting list. Families sometimes signed up for one when a baby was born. Roughly how long was the wait?",
-    "answer": "Ten to fifteen years",
-    "choices": [
-      "Ten to fifteen years",
-      "One to two years",
-      "Six months",
-      "Fifty years"
-    ],
-    "context": "Delivery queues stretched to 10-15 years. Used Trabants sold at higher prices than new ones (because you could have it today), inverting the usual depreciation curve. Source: en.wikipedia.org/wiki/Trabant.",
-    "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
-  },
-  {
-    "tier": 2,
-    "question": "The Trabant was a small, boxy two-stroke car built in East Germany — the Deutsche Demokratische Republik, or DDR — under communist central planning from 1957 to 1990. The state set its official sticker price low, so on paper every worker could afford one. Frédéric Bastiat, the nineteenth-century French economist, taught readers to look past what is 'seen' — the obvious surface fact — and hunt for what is 'unseen' behind it. Apply his move to the Trabant supply system. The seen part was the affordable sticker price. What was the unseen part?",
+    "question": "Frédéric Bastiat taught readers to look past the seen, the obvious surface fact, and hunt for the unseen behind it. East Germany set the price of its little Trabant so low that, on paper, any worker could afford one. If that cheap sticker was the seen price, what was the unseen one?",
     "answer": "The 10-15-year queue and the used market that priced above new",
     "choices": [
       "The 10-15-year queue and the used market that priced above new",
@@ -6808,12 +6782,12 @@
       "The DDR's export earnings",
       "The environmental cost of two-cycle engines"
     ],
-    "context": "The visible low price hid the invisible time-cost (years in queue) and the black secondary market above the state sticker. The waiting list was the real 'price'. Source: mises.org/library/east-germany.",
+    "context": "The visible low price hid the invisible time-cost: delivery queues stretched to 10-15 years, and families sometimes signed up when a baby was born. Used Trabants sold for more than new ones, because a buyer could have one today, inverting the usual depreciation curve. The waiting list was the real 'price'.",
     "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
   },
   {
-    "tier": 3,
-    "question": "In communist East Germany, one state-owned company built every car — the little Trabant, made at the Zwickau plant. No private rival was allowed to enter the market. The same basic two-stroke design kept rolling off the line for more than thirty years, from 1957 until 1990. Why did the maker never bother to improve the design?",
+    "tier": 2,
+    "question": "An East German family drove home a brand-new Trabant, a smoky little two-stroke car built around essentially the same engine as the first ones of 1957. East Germany let no other company build cars. Why did the plant never bother to redesign it?",
     "answer": "No competitive pressure to redesign since no rival could enter the market",
     "choices": [
       "No competitive pressure to redesign since no rival could enter the market",
@@ -6825,8 +6799,8 @@
     "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
   },
   {
-    "tier": 3,
-    "question": "For nearly thirty years after 1961, the communist government of East Germany kept its people trapped inside East Berlin — separated from the free west by a concrete barrier splitting the city in two, guarded by soldiers ordered to shoot anyone trying to escape. Then on the night of November 9, 1989, the guards suddenly stood aside. In the weeks after, thousands of Trabants — small blue East German cars puffing two-cycle exhaust — drove through the checkpoints into free West Berlin. Which event triggered this iconic sight?",
+    "tier": 2,
+    "question": "East German border guards stood back on the night of November 9, 1989, and over the following weeks thousands of little Trabants puttered through the crossing points into West Berlin. The East German government had sealed that line with barbed wire and concrete in August 1961. Which event set the cars rolling?",
     "answer": "The fall of the Berlin Wall",
     "choices": [
       "The fall of the Berlin Wall",
@@ -6834,38 +6808,12 @@
       "The Chernobyl disaster",
       "The 1980 Moscow Olympics"
     ],
-    "context": "November 9, 1989 photographs of Trabants at the checkpoints became one of the visual symbols of the DDR's collapse. Within months of reunification, West-German used cars flooded the market and the Trabant disappeared almost overnight. Source: en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall.",
-    "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
-  },
-  {
-    "tier": 4,
-    "question": "The Trabant, the little plastic car built in communist East Germany from 1957 to 1991 without a real redesign, is sometimes called 'the calculation debate on wheels.' It shows, at physical scale, the Austrian-school argument that central planners cannot know what to build. A Vienna economist first laid the argument out in a 1920 German-language essay. Whose essay predicted this exact pattern?",
-    "answer": "Ludwig von Mises's 'Economic Calculation in the Socialist Commonwealth'",
-    "choices": [
-      "Ludwig von Mises's 'Economic Calculation in the Socialist Commonwealth'",
-      "Friedrich Hayek's 'The Road to Serfdom'",
-      "Milton Friedman's 'Free to Choose'",
-      "Murray Rothbard's 'Man, Economy, and State'"
-    ],
-    "context": "Mises's 1920 argument: without market prices reflecting real scarcities and consumer preferences, planners cannot know when a design needs updating -- so they build the same one for decades while the world moves on. The Trabant is the argument made physical. Source: mises.org/library/economic-calculation-socialist-commonwealth.",
-    "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
-  },
-  {
-    "tier": 4,
-    "question": "In communist East Germany, the only car most families could buy was the Trabant, made by a single state-run factory. Buying one meant putting your name on a waiting list — and then waiting ten years, sometimes fifteen. The car itself barely changed in design from 1957 to 1990: the same tiny plastic-and-cotton body, the same smoky two-stroke engine, decade after decade. What causes this pattern in a state-run economy?",
-    "answer": "No competing makers, so no reason to build more or improve",
-    "choices": [
-      "No competing makers, so no reason to build more or improve",
-      "People in East Germany did not really want cars",
-      "The government secretly hid better cars for later years",
-      "The cars were too advanced for regular customers to use"
-    ],
-    "context": "The Wartburg (Eisenach plant) was the DDR's larger sedan, with 10-year queues of its own. Like the Trabant, production ended shortly after reunification. Source: en.wikipedia.org/wiki/Wartburg_(car).",
+    "context": "November 9, 1989 photographs of Trabants at the checkpoints became one of the visual symbols of the DDR's collapse. The barrier had gone up overnight on August 12-13, 1961; within months of reunification, West-German used cars flooded the market and the Trabant disappeared almost overnight.",
     "topic": "east-germanys-trabant-the-calculation-debate-on-wheels"
   },
   {
     "tier": 5,
-    "question": "The Trabant design-freeze in communist East Germany is a favorite case study for Austrian-school economists. The little plastic car, built with almost the same engine for 34 years, collapses three Austrian reasoning-moves at once — the seen-vs-unseen queue for shoppers, the missing information about what to build, and the missing reason to build it better. Which pair of moves does the frozen design most sharply illustrate, alongside the seen-vs-unseen queue?",
+    "question": "Workers at Zwickau built the last Trabants in 1991 with almost the engine the car had started out with in 1957. Austrian economists read three of their reasoning moves into that frozen design, one of them Bastiat's seen and unseen in the cheap sticker price. Which other two does it show?",
     "answer": "The knowledge problem plus the incentive-to-improve problem",
     "choices": [
       "The knowledge problem plus the incentive-to-improve problem",
@@ -6878,7 +6826,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1920, an Austrian economist working in Vienna published a short essay in German. Translated into English, its title is 'Economic Calculation in the Socialist Commonwealth.' The essay argued that without real prices and private property, central planners cannot know what to make. It started a forty-year debate. Who wrote it?",
+    "question": "An economist of thirty-nine working for Vienna's Chamber of Commerce brought out an essay in German in 1920. In English it is called Economic Calculation in the Socialist Commonwealth, and it started a debate that ran for decades. Who wrote it?",
     "answer": "Ludwig von Mises",
     "choices": [
       "Ludwig von Mises",
@@ -6891,20 +6839,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1920, the Austrian economist Ludwig von Mises published a famous essay about socialism — a system where the state, not private owners, controls the factories, farms, and mines. Mises did not argue that socialism was immoral, or that its workers were lazy, or that its officials were corrupt. What did he actually argue?",
-    "answer": "That rational economic calculation under socialism is impossible",
-    "choices": [
-      "That rational economic calculation under socialism is impossible",
-      "That socialist regimes will always turn to political violence",
-      "That socialism destroys the incentive to work hard",
-      "That planners will inevitably use their power to enrich themselves"
-    ],
-    "context": "Mises deliberately set aside every other objection to isolate a technical one: without market prices for capital goods, a planner has no way to compare the cost of alternatives. It is not that planning is unwise -- it is that no rational plan can be drawn up at all. Source: Wikipedia, Economic calculation problem.",
-    "topic": "economic-calculation-in-the-socialist-commonwealth-1920"
-  },
-  {
-    "tier": 2,
-    "question": "In 1920, the Austrian economist Ludwig von Mises published his essay 'Economic Calculation in the Socialist Commonwealth' in a German academic journal based in Heidelberg. The sociologist Max Weber had helped edit that journal before the First World War. In which journal — volume 47 — did the essay first appear?",
+    "question": "Ludwig von Mises placed his 1920 essay on planning in volume 47 of a German scholarly journal, one the sociologist Max Weber had co-edited in the years before 1914. Which journal was it?",
     "answer": "Archiv fuer Sozialwissenschaft und Sozialpolitik",
     "choices": [
       "Archiv fuer Sozialwissenschaft und Sozialpolitik",
@@ -6917,20 +6852,20 @@
   },
   {
     "tier": 2,
-    "question": "In 1922, an Austrian economist named Ludwig von Mises published a long book with a one-word title: the very system he wanted to critique. The book argued that a fully planned economy has no way to know the true value of anything. What was its main claim?",
-    "answer": "Without free-market prices, planners cannot calculate what things really cost",
+    "question": "Ludwig von Mises asked in 1920 not whether socialism, with the state owning every factory, farm and mine, was cruel or kind, but whether such a system could function at all. He pressed the point again in a 1922 book whose one-word title named the system itself. What did he argue?",
+    "answer": "That rational economic calculation under socialism is impossible",
     "choices": [
-      "Without free-market prices, planners cannot calculate what things really cost",
-      "Planning always produces more consumer goods than markets do",
-      "Poor countries always beat rich ones under central planning",
-      "A committee can always outperform millions of buyers and sellers"
+      "That rational economic calculation under socialism is impossible",
+      "That socialist regimes will always turn to political violence",
+      "That socialism destroys the incentive to work hard",
+      "That planners will inevitably use their power to enrich themselves"
     ],
-    "context": "'Die Gemeinwirtschaft: Untersuchungen ueber den Sozialismus' (1922) was translated by J. Kahane in 1936 as simply 'Socialism: An Economic and Sociological Analysis.' The Road to Serfdom (1944) was Hayek's; Human Action (1949) came later, from Mises himself; Bureaucracy (1944) was another shorter Mises book. Source: en.wikipedia.org/wiki/Economic_Calculation_in_the_Socialist_Commonwealth.",
+    "context": "Mises deliberately set aside every other objection, laziness and corruption included, to isolate a technical one: without market prices for capital goods, a planner has no way to compare the cost of alternatives. It is not that planning is unwise; it is that no rational plan can be drawn up at all. In 1922 he expanded the argument into Die Gemeinwirtschaft, translated in 1936 simply as Socialism.",
     "topic": "economic-calculation-in-the-socialist-commonwealth-1920"
   },
   {
     "tier": 3,
-    "question": "A Soviet planner in 1925 is deciding whether to build a new rail line using rolled steel or aluminum. Both are available; both would work; each pulls labor and raw material from other uses. Mises's 1920 essay says the planner cannot rationally choose between them. What specifically is missing that would allow a rational choice?",
+    "question": "A Soviet planner in 1925 is deciding whether to lay a new railway line in rolled steel or in aluminum. Both are available, both would work, and each pulls labor and raw material from other uses. By Ludwig von Mises's argument of 1920, the planner cannot choose between them rationally. What exactly is missing?",
     "answer": "Exchange-generated prices for the capital goods involved",
     "choices": [
       "Exchange-generated prices for the capital goods involved",
@@ -6943,7 +6878,7 @@
   },
   {
     "tier": 3,
-    "question": "Engels claimed that socialist bookkeeping would be simple. Society could just add up the hours of work put into a steam engine or a bushel of wheat. In 1920, Mises quoted this passage and rejected the argument. Which reasoning move did Mises press against Engels?",
+    "question": "Friedrich Engels promised that socialist bookkeeping would be simple: society could just add up the hours of work that went into a steam engine or a bushel of wheat. Ludwig von Mises quoted the passage in 1920 and rejected it. What reasoning move did he press against Engels?",
     "answer": "That labor hours cannot capture how scarce the different material inputs are",
     "choices": [
       "That labor hours cannot capture how scarce the different material inputs are",
@@ -6955,34 +6890,8 @@
     "topic": "economic-calculation-in-the-socialist-commonwealth-1920"
   },
   {
-    "tier": 4,
-    "question": "In the 1920s and 1930s, a group of Austrian economists led by Ludwig von Mises and Friedrich Hayek argued that no committee, no matter how smart or well-meaning, could plan a whole country's production from the top down. Their core reason: without free-market prices set by real buyers and sellers, planners simply cannot tell what people actually want or what things really cost. What is that argument called?",
-    "answer": "The socialist calculation problem",
-    "choices": [
-      "The socialist calculation problem",
-      "The tragedy of the commons",
-      "The paradox of thrift",
-      "The lump of labor fallacy"
-    ],
-    "context": "'Collectivist Economic Planning: Critical Studies on the Possibilities of Socialism' (George Routledge and Sons, London, 1935), edited by Hayek at the LSE, put Mises's argument in front of the English-speaking economics profession for the first time. Robbins was Hayek's LSE colleague; Keynes was Hayek's Cambridge opponent; Schumpeter was writing at Bonn and later Harvard. Source: mises.org/library/book/collectivist-economic-planning.",
-    "topic": "economic-calculation-in-the-socialist-commonwealth-1920"
-  },
-  {
-    "tier": 4,
-    "question": "After Mises's essay reached English readers in 1935, two economists offered a reply. Their idea was to let the state own the factories, but have plant managers copy market prices by tweaking output until shortages and surpluses went away. This late-1930s answer was named for its two authors. What is that reply called?",
-    "answer": "The Lange-Lerner theorem of market socialism",
-    "choices": [
-      "The Lange-Lerner theorem of market socialism",
-      "The Keynes-Hansen doctrine of secular stagnation",
-      "The Samuelson-Solow doctrine of the neoclassical synthesis",
-      "The Sraffa-Robinson critique of capital theory"
-    ],
-    "context": "Oskar Lange and Abba Lerner argued central planners could simulate market prices by trial and error. Mises and Hayek replied that simulation without genuine private ownership still lacks the profit-and-loss discipline that generates real price information. The other three were real 20th-century economic controversies but on different questions. Source: en.wikipedia.org/wiki/Economic_calculation_problem.",
-    "topic": "economic-calculation-in-the-socialist-commonwealth-1920"
-  },
-  {
     "tier": 5,
-    "question": "In 1945 Hayek recast Mises's argument in a famous American Economic Review paper. He argued that prices are not just numbers, but compress the private knowledge of millions of people into signals no planner could gather. What did Hayek title the paper?",
+    "question": "Friedrich Hayek recast Ludwig von Mises's argument in 1945, in a paper for the American Economic Review. Prices, he wrote, boil the private knowledge of millions down into signals no planner could ever collect. What did he title the paper?",
     "answer": "The Use of Knowledge in Society",
     "choices": [
       "The Use of Knowledge in Society",
@@ -6995,7 +6904,7 @@
   },
   {
     "tier": 5,
-    "question": "At its peak, Soviet planners set about 22 million prices, 460,000 wage rates, and over 90 million work quotas. Even so, stores ran out of basic goods while warehouses filled with things nobody wanted. When the planned economies fell in 1989-1991, some Western economists like Robert Heilbroner said a Vienna economist had been right all along. What did they admit?",
+    "question": "Robert Heilbroner wrote on the failure of the planned economies in a 1990 article for The New Yorker. Soviet planners had fixed some 22 million prices at their peak, yet shops stood empty of staples while depots overflowed with things no one would buy. What did Heilbroner and other Western economists conclude?",
     "answer": "That Mises's 1920 calculation argument had been vindicated",
     "choices": [
       "That Mises's 1920 calculation argument had been vindicated",
@@ -7008,7 +6917,7 @@
   },
   {
     "tier": 1,
-    "question": "Frédéric Bastiat was a French economist in the 1840s who wrote short, punchy essays about how people trade with each other in a free market. Karl Marx, a German writer of the same century, argued that workers and factory owners must always fight one another as class enemies until one side wins. Bastiat looked at the very same free-market world and reached the opposite conclusion. What was his big idea about how different people's interests fit together?",
+    "question": "Karl Marx would soon argue that workers and factory owners must fight as class enemies until one side wins. Frédéric Bastiat, studying the same free markets in the 1840s, reached the opposite verdict. What was Bastiat's idea about how people's interests fit together?",
     "answer": "Interests in a free society are naturally harmonious rather than antagonistic",
     "choices": [
       "Interests in a free society are naturally harmonious rather than antagonistic",
@@ -7021,7 +6930,7 @@
   },
   {
     "tier": 2,
-    "question": "In a famous passage from 'Economic Harmonies,' the French economist Frederic Bastiat compares two equally useful diamonds. One is picked up by chance in a mountain stream. The other is dug from a mine after years of hard labor. Buyers want both. What did Bastiat say the two diamonds share equally to their buyers?",
+    "question": "Frédéric Bastiat told of two diamonds, equally useful, in a famous passage of Economic Harmonies: one found by chance in a mountain stream, the other dug from a mine after years of hard labor. Buyers want both alike. What did Bastiat say the two share equally?",
     "answer": "Value",
     "choices": [
       "Value",
@@ -7034,7 +6943,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1945, the Austrian economist Friedrich Hayek published a famous essay titled 'The Use of Knowledge in Society.' Hayek argued that market prices act like a silent messaging system — letting millions of strangers across the world coordinate their work without any central planner giving orders. Why does this coordination through prices work so well?",
+    "question": "Friedrich Hayek argued in 1945 that prices let millions of strangers across the world coordinate their work, with no central planner giving orders. Bastiat's diamonds had pointed the same way nearly a century before. Why, on Hayek's account, does that coordination work?",
     "answer": "Each price silently tells buyers and sellers something no single planner could know",
     "choices": [
       "Each price silently tells buyers and sellers something no single planner could know",
@@ -7047,7 +6956,7 @@
   },
   {
     "tier": 3,
-    "question": "For centuries, economists believed the price of a thing came from the labor invested in making it. In 1871, two economists working alone proposed a different answer. Something's worth turns on how much a person wants the next unit. What is this idea usually called?",
+    "question": "William Stanley Jevons and Carl Menger, each working alone, put forward the same new idea in 1871 about where a good's worth comes from. Bastiat's two diamonds, one found and one mined, had already pointed toward it a generation before. What is the idea called?",
     "answer": "Subjective value -- value depends on the person, not on the labor spent",
     "choices": [
       "Subjective value -- value depends on the person, not on the labor spent",
@@ -7060,7 +6969,7 @@
   },
   {
     "tier": 3,
-    "question": "The French economist Frederic Bastiat began writing his book 'Economic Harmonies' in Paris in the late 1840s. Tuberculosis was killing him, and he raced to finish it. He died in 1850 with only part of the manuscript ready — the rest survives as drafts and fragments. Roughly how many chapters did he complete?",
+    "question": "Prosper Paillottet gathered his late friend Frédéric Bastiat's drafts and fragments into an expanded edition of Economic Harmonies in 1851. Tuberculosis had killed Bastiat in Rome on Christmas Eve 1850, while he was still revising the book he had begun in Paris in the late 1840s. How many chapters had Bastiat finished?",
     "answer": "Ten",
     "choices": [
       "Ten",
@@ -7073,7 +6982,7 @@
   },
   {
     "tier": 4,
-    "question": "The nineteenth-century French economist Frederic Bastiat imagined this scene: a farmer's barn burns down. A neighbor cheerfully says, 'At least this creates work for the carpenters who will rebuild it!' Bastiat's answer was: yes, the carpenters get paid — that is the part you see. But the farmer's money now goes to a new barn instead of the new plow he had been saving for. The plow was never built, and no one notices what did not happen. What idea did Bastiat name?",
+    "question": "Frédéric Bastiat imagined a farmer whose barn burned down, and a neighbor who cheered the work it would bring the carpenters. Bastiat granted that the carpenters would be paid, then pointed to the new plow the farmer's savings were meant for, which would now never be bought or built. What did Bastiat call this habit of mind?",
     "answer": "The seen and the unseen",
     "choices": [
       "The seen and the unseen",
@@ -7086,7 +6995,7 @@
   },
   {
     "tier": 1,
-    "question": "The French economist Frederic Bastiat wrote a set of short, funny essays poking fun at bad economic ideas — pretend petitions, fake laws, mock speeches. The first group came out in Paris in 1845, and the second group in January 1848. What is the short title of the collection?",
+    "question": "Frédéric Bastiat published the first series of his short satires in Paris in 1845 and the second in January 1848: thirty-nine essays, each setting up a protectionist or socialist argument from the French Chamber in its best form, then knocking it down. What is the collection's short title?",
     "answer": "Economic Sophisms",
     "choices": [
       "Economic Sophisms",
@@ -7098,21 +7007,8 @@
     "topic": "economic-sophisms-the-wider-satire-collection"
   },
   {
-    "tier": 1,
-    "question": "The French economist Frederic Bastiat gave a simple example. A country puts a big tax on shoes made in other lands so its own shoemakers can charge higher prices at home. The rule looks like a gift to the shoemakers, but someone else quietly pays for it. Who is HURT by this rule?",
-    "answer": "Every family who now pays more for shoes",
-    "choices": [
-      "Every family who now pays more for shoes",
-      "The shoemakers who now sell more",
-      "Only foreign countries",
-      "Nobody -- it helps everyone"
-    ],
-    "context": "Jacques Bonhomme is Bastiat's literary device; he lets the arguments play out through dialogue rather than lecture. Source: grokipedia.com/page/Economic_Sophisms.",
-    "topic": "economic-sophisms-the-wider-satire-collection"
-  },
-  {
     "tier": 2,
-    "question": "In his 1845 collection 'Economic Sophisms,' the French economist Frederic Bastiat imagines a small-town mayor banning one specific carpentry tool. The mayor says using the tool would put unskilled workers out of a job, because chopping the same log will now need three men instead of one. Which tool does the mayor ban?",
+    "question": "A small-town mayor bans one woodcutter's tool to make work, in a satire by Frédéric Bastiat: without it, the mayor reasons, every log will need three men to chop instead of one. Which tool does the mayor ban?",
     "answer": "The sharp axe",
     "choices": [
       "The sharp axe",
@@ -7125,7 +7021,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1845, the French economist Frederic Bastiat published a book called 'Economic Sophisms,' meant to expose foolish economic arguments in plain, funny language. The opening essay of the First Series pairs two contrasting words as its title. Bastiat argues the true goal of economic activity is to give people more goods at lower prices, not fewer goods at higher prices. What is the two-word title?",
+    "question": "Frédéric Bastiat put one essay at the head of his first series of satires in 1845. In it he argued that a policy which makes goods dearer has the whole goal of producing backward. What is the essay's title?",
     "answer": "Abundance and Scarcity",
     "choices": [
       "Abundance and Scarcity",
@@ -7138,20 +7034,7 @@
   },
   {
     "tier": 3,
-    "question": "The best-known essay in Frederic Bastiat's 1845 collection 'Economic Sophisms' is a fake petition — a mock letter written to the French government. In it, one home industry begs to be protected from an unfair foreign rival that gives away its product for free every morning. The rival, in the joke, is the sun. Which home industry files the fake petition?",
-    "answer": "The candlemakers",
-    "choices": [
-      "The candlemakers",
-      "The blacksmiths",
-      "The vintners",
-      "The weavers"
-    ],
-    "context": "The Petition of the Candlemakers demands a law against the sun to protect domestic makers of candles and lamps -- a reductio of protectionism that appears in the First Series (1845). Source: bastiat.org/en/petition.html.",
-    "topic": "economic-sophisms-the-wider-satire-collection"
-  },
-  {
-    "tier": 3,
-    "question": "In 1845 the French writer Frederic Bastiat published Economic Sophisms, a book of short satires that mocked bad economic thinking. Bastiat aimed his sharpest jabs at two policies that both political parties of his day loved to defend. Which pair of policies does the book attack most often?",
+    "question": "Frédéric Bastiat turned his short satires of the 1840s on two favorite policies of his day, one beloved of the French left and the other of the right, and used the same method on both. Which pair did the satires attack most often?",
     "answer": "Make-work schemes and tariffs for domestic producers",
     "choices": [
       "Make-work schemes and tariffs for domestic producers",
@@ -7164,7 +7047,7 @@
   },
   {
     "tier": 4,
-    "question": "A country blocks cheap foreign shoes so its own shoemakers can charge more. Shoemakers cheer. But everyone else pays more for shoes, and the country's tailors, who traded shoes for jackets, lose sales too. Which type of cost did Bastiat teach us to look for?",
+    "question": "A shoemaker cheers when his country shuts out cheap foreign shoes. A tailor across the street, who used to sell the jackets that paid for those imports, loses sales. Which kind of cost does Bastiat teach readers to look for?",
     "answer": "The hidden cost paid by many, spread thin enough to overlook",
     "choices": [
       "The hidden cost paid by many, spread thin enough to overlook",
@@ -7176,21 +7059,8 @@
     "topic": "economic-sophisms-the-wider-satire-collection"
   },
   {
-    "tier": 5,
-    "question": "A shopkeeper's window is smashed. A crowd says, \"Cheer up! Now the glazier gets paid, and he'll spend that money too — the town is richer!\" Frederic Bastiat's answer was that the crowd only counts one side. What did they forget?",
-    "answer": "The money the shopkeeper would have spent on something else is gone forever",
-    "choices": [
-      "The money the shopkeeper would have spent on something else is gone forever",
-      "The glazier will overcharge because he knows the shopkeeper is desperate",
-      "Windows are cheaper to fix than to install new",
-      "Insurance will pay for it, so no one really loses anything"
-    ],
-    "context": "Jane Willems's Liberty Fund translation restored many chapters and cleaned up 19th-century Britishisms; it is the current best English-language edition. Source: libertyfund.org/collected-works-bastiat-vol-3.",
-    "topic": "economic-sophisms-the-wider-satire-collection"
-  },
-  {
     "tier": 1,
-    "question": "In 2021 the president of El Salvador, Nayib Bukele, passed a law that made Bitcoin real, legal money in his country, right alongside the US dollar. Bitcoin is a digital currency people trade over the internet. What is odd about Bitcoin compared with normal cash you carry in your pocket?",
+    "question": "Nayib Bukele, El Salvador's young president, pushed a law through in 2021 that made Bitcoin legal money in his country, beside the currency it already used. What sets Bitcoin apart from the paper bills in a Salvadoran shopper's pocket?",
     "answer": "No government or bank issues it -- it is made by computers around the world",
     "choices": [
       "No government or bank issues it -- it is made by computers around the world",
@@ -7203,7 +7073,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2001 the small Central American country of El Salvador retired its old money, the colon, and picked a foreign currency to use instead. Twenty years later, in 2021, its president Nayib Bukele would add Bitcoin as a second official money. Which currency did El Salvador pick back in 2001?",
+    "question": "A Salvadoran family spent its last colones in 2001, when El Salvador gave up its own money and took a foreign currency as its official one. Twenty years later Nayib Bukele added Bitcoin beside it. Which currency had El Salvador taken up?",
     "answer": "The US dollar",
     "choices": [
       "The US dollar",
@@ -7216,7 +7086,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 2021, the small Central American country of El Salvador made a historic move: it became the first country ever to make Bitcoin legal tender, meaning any business — from cafes to hospitals — had to accept Bitcoin as payment alongside US dollars. Salvadorans working abroad, especially in the United States, send billions of dollars home to their families every year through wire services that charge steep fees. What was the government hoping this Bitcoin move would do for them?",
+    "question": "A Salvadoran working in the United States wired part of his pay home to his family, as Salvadorans abroad did with billions of dollars every year. El Salvador's Bitcoin law of September 2021 was meant to help workers like him. What did the government hope it would do for them?",
     "answer": "Let them send money home faster and with lower fees than banks charge",
     "choices": [
       "Let them send money home faster and with lower fees than banks charge",
@@ -7229,7 +7099,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 2021, El Salvador's president Nayib Bukele sent a video message to a huge gathering of Bitcoin fans and developers in Miami, Florida. On the big screen, he shocked the crowd by announcing that El Salvador would make Bitcoin legal money in his country. What was the Miami conference called?",
+    "question": "A huge crowd of developers and enthusiasts at a conference in Miami watched Nayib Bukele announce by video in June 2021 that El Salvador would make Bitcoin legal money. What was the conference called?",
     "answer": "Bitcoin 2021",
     "choices": [
       "Bitcoin 2021",
@@ -7242,7 +7112,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2021, the Central American country El Salvador became the first nation to make Bitcoin an official currency. President Nayib Bukele's government also launched a free national mobile wallet running on the Lightning Network — a fast second layer on top of Bitcoin — so small merchants could take payments without paying heavy on-chain fees. What is the wallet called?",
+    "question": "A corner-shop owner in El Salvador took a tiny payment on his phone through a free national wallet the government launched in 2021. It ran on the Lightning Network, a faster layer of payments built on top of Bitcoin, so small sums cost little to send. What was the wallet called?",
     "answer": "Chivo",
     "choices": [
       "Chivo",
@@ -7255,7 +7125,7 @@
   },
   {
     "tier": 3,
-    "question": "When El Salvador rolled out Bitcoin as money in September 2021, the government built a phone app called Chivo -- Salvadoran slang for 'cool' -- to let ordinary people spend and receive it. To get every adult to try the app, the government gave each Salvadoran who signed up a small pile of free Bitcoin. What was the sign-up bonus?",
+    "question": "A Salvadoran farmer downloaded the new national Bitcoin wallet in September 2021 and found a sign-up gift of free bitcoin waiting for him. Millions downloaded the app in the first weeks, even though it was badly buggy at first. How big was the gift?",
     "answer": "$30 in Bitcoin",
     "choices": [
       "$30 in Bitcoin",
@@ -7268,7 +7138,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2021, El Salvador under President Nayib Bukele made Bitcoin an official currency alongside the US dollar. The International Monetary Fund (IMF) — the global lending body based in Washington — pressured El Salvador to drop the policy. The fund's main stated reason was about how the price behaved, not about crime or speed. What was the IMF's stated concern?",
+    "question": "Officials of the International Monetary Fund, the global lender based in Washington, urged El Salvador to abandon the Bitcoin law it had passed in 2021. Nayib Bukele laughed the Fund off and kept going. What reason had the Fund given?",
     "answer": "That Bitcoin's price jumps up and down too much to safely back a nation's economy",
     "choices": [
       "That Bitcoin's price jumps up and down too much to safely back a nation's economy",
@@ -7281,7 +7151,7 @@
   },
   {
     "tier": 4,
-    "question": "From 2021 through 2024, the government of El Salvador -- led by President Nayib Bukele -- kept buying Bitcoin on a fixed schedule, no matter whether the price was soaring or crashing. Bukele wanted the country to steadily build a Bitcoin treasury without trying to time the market. What was the fixed pace of the purchases?",
+    "question": "Nayib Bukele announced in November 2022 that El Salvador would buy bitcoin for its national reserves on a fixed schedule, whatever the price, rather than guess the best moment to buy. He meant to build up the country's holdings steadily. What was the pace?",
     "answer": "One Bitcoin per day",
     "choices": [
       "One Bitcoin per day",
@@ -7294,7 +7164,7 @@
   },
   {
     "tier": 5,
-    "question": "In September 2021, El Salvador became the first modern country to legalize as money an asset whose supply is fixed at 21 million coins by a computer algorithm — Bitcoin — and cannot be controlled by any state or central bank. President Nayib Bukele's move directly defied warnings from a group of global lenders and money-managers based in Washington, whose members prefer that countries stick to state-issued currencies they can influence. Which group did El Salvador defy?",
+    "question": "Lawmakers in El Salvador's Legislative Assembly passed the Bitcoin Law on June 9, 2021, and it took effect that September, making the country the first anywhere to give legal tender to a money whose supply its code caps at 21 million coins. The move went against lenders in Washington who would rather countries kept to government money they can sway. What did it defy?",
     "answer": "The consensus of international financial institutions like the IMF",
     "choices": [
       "The consensus of international financial institutions like the IMF",
@@ -7307,7 +7177,7 @@
   },
   {
     "tier": 5,
-    "question": "El Salvador wanted to mine Bitcoin without burning fossil fuels or draining its power grid. The small Central American country happens to sit on top of active volcanoes — including one named Tecapa. President Nayib Bukele announced a plan to turn that natural heat into a mining operation. What was the clever idea?",
+    "question": "Nayib Bukele looked to El Salvador's active volcanoes, Tecapa first, for the power to mine Bitcoin. In November 2021 he also unveiled plans for a Bitcoin City by the Conchagua volcano, to be funded by Bitcoin bonds. What was his plan?",
     "answer": "Use the volcano's heat to make steam, run generators, and mine Bitcoin with that electricity",
     "choices": [
       "Use the volcano's heat to make steam, run generators, and mine Bitcoin with that electricity",
@@ -7320,7 +7190,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2009, a professor at Indiana University in Bloomington won the Nobel Prize in Economics. She was the first woman ever to win it. For decades she had traveled the world studying real communities — Maine lobster fishers, Swiss mountain herders, Filipino fishing villagers — to show how everyday users can share a natural resource without a state or a private owner in charge. Who was she?",
+    "question": "A professor from Indiana University went out to lobster harbors and the high pastures of the Swiss Alps to check a gloomy textbook story about shared land against the real world. That fieldwork won her the 2009 Nobel Prize in economics, the first ever given to a woman. Who was she?",
     "answer": "Elinor Ostrom",
     "choices": [
       "Elinor Ostrom",
@@ -7333,7 +7203,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1990, an Indiana University economist named Elinor Ostrom published a book that shocked her field. Most economists at the time believed a shared resource with no owner would always be ruined by overuse — a doomed 'tragedy of the commons.' Ostrom's book gathered case after case where local user groups had managed shared land, water, and fisheries for hundreds of years with no state in charge. What was the book's main title?",
+    "question": "Elinor Ostrom published a book in 1990 full of real cases from around the world: villages sharing pastures, fisheries and irrigation water among their own people. What is the book's main title?",
     "answer": "Governing the Commons",
     "choices": [
       "Governing the Commons",
@@ -7346,7 +7216,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1968, the American biologist Garrett Hardin published a famous article in the journal Science. He asked a simple question: when no one owns a resource — a fish pond, a common village pasture, a public forest — each user has a strong reason to take a lot before others do. What is the usual result?",
+    "question": "A herder turns one more cow out onto a pasture open to everyone: the whole gain from that cow is his, while the cost of the extra grazing is shared by all. Garrett Hardin, a biologist, set out this picture in the journal Science in 1968. What did he say becomes of the pasture?",
     "answer": "The shared resource gets overused and eventually ruined",
     "choices": [
       "The shared resource gets overused and eventually ruined",
@@ -7358,21 +7228,8 @@
     "topic": "elinor-ostrom-governing-the-commons-1990"
   },
   {
-    "tier": 2,
-    "question": "Elinor Ostrom, an American political economist at Indiana University, won the 2009 Nobel Prize in Economics — the first woman ever to receive it. Across her career she studied places like Swiss mountain pastures, Filipino fishing villages, and Japanese forest commons, showing that ordinary people can share a village well, a fishery, or a grazing meadow without a state or private owner in charge. What did she find these communities use to make it work?",
-    "answer": "Local rules and social pressure that the users themselves invent and enforce",
-    "choices": [
-      "Local rules and social pressure that the users themselves invent and enforce",
-      "A random-lottery system decided each year",
-      "Full turn-taking supervised by outsiders",
-      "Complete equal shares handed out by a bank"
-    ],
-    "context": "The 2009 Nobel citation honored Ostrom for commons governance and Williamson for the economics of the firm and hierarchies. Both work on how real-world institutions solve coordination problems. Source: nobelprize.org (2009 Economic Sciences).",
-    "topic": "elinor-ostrom-governing-the-commons-1990"
-  },
-  {
     "tier": 3,
-    "question": "One famous researcher on shared land studied a mountain pasture in the Alps where cows from a dozen villages have grazed the same slopes for centuries under village-made rules. The pasture is not fenced or owned by one person, but it has not been ruined. What is the main lesson?",
+    "question": "A Törbel herder drove his cows up to the village's summer pasture in the Swiss Alps, under rules his neighbors had kept since the 1200s. Nobody owned the slopes outright; the herders had written the rules themselves, down to the number of cows each household could send up. Elinor Ostrom studied the village's pastures. What lesson did she draw?",
     "answer": "A community can share a resource well if it makes and enforces its own rules",
     "choices": [
       "A community can share a resource well if it makes and enforces its own rules",
@@ -7380,12 +7237,12 @@
       "Only government control can protect land from overuse",
       "Shared land always ends up destroyed within a generation"
     ],
-    "context": "Swiss alpine grazing commons (Toerbel and other villages in Valais) have been governed by user-written rules on stocking rates since the 1200s. The rules survived centuries of state changes and remain in force. Source: Ostrom, Governing the Commons (Cambridge 1990), Chapter 3.",
+    "context": "Swiss alpine grazing commons (Toerbel and other villages in Valais) have been governed by user-written rules on stocking rates since the 1200s. Ostrom found such commons held together by local rules and social pressure the users themselves invent and enforce, with fines, gossip and lost privileges; her case studies documented a third path beside state ownership and privatization: user groups governing the resource themselves, given the right institutional design.",
     "topic": "elinor-ostrom-governing-the-commons-1990"
   },
   {
     "tier": 3,
-    "question": "In one of Elinor Ostrom's most famous American case studies, coastal lobstermen along a rocky New England coastline quietly guard their own patches of sea. Each local 'harbor gang' knows which waters belong to which boats, and outsiders who drop lobster traps in claimed water find their lines cut. This user-run fishery has worked for generations, with no state fisheries police in charge. In which state did she study it?",
+    "question": "An outsider dropped his lobster traps in water a harbor gang had claimed on a rocky New England coast, and before long his buoy lines were cut. Each gang carved up the water among its own boats, with no state fisheries police in charge, and Elinor Ostrom made the fishery one of her famous cases. In which state did she study it?",
     "answer": "Maine",
     "choices": [
       "Maine",
@@ -7398,7 +7255,7 @@
   },
   {
     "tier": 3,
-    "question": "A key chapter of Elinor Ostrom's 1990 book 'Governing the Commons' lists the traits that long-lasting user-run commons around the world seem to share. Traits like clearly marked borders on the shared resource, rules tailored to local conditions, cheap ways to settle fights between users, and outside authorities that respect the users' own decisions. How many such design principles did she pull from her case studies?",
+    "question": "Comparing case after case of user-run commons that had lasted for centuries, Elinor Ostrom drew out the traits they shared: clearly marked borders around the resource, rules fitted to the place, cheap ways to settle quarrels, and higher governments that leave the users' decisions alone. How many design principles did she find?",
     "answer": "Eight",
     "choices": [
       "Eight",
@@ -7411,7 +7268,7 @@
   },
   {
     "tier": 4,
-    "question": "Elinor and Vincent Ostrom built a research home together at Indiana University in Bloomington, Indiana. Over decades it grew into one of the world's most famous schools of political economy — the study of how rules, institutions, and everyday politics shape economic life. In 1973 the Ostroms founded the institute there that would host generations of scholars. What did they name it?",
+    "question": "Elinor and Vincent Ostrom founded a research institute at Indiana University in Bloomington in 1973, where Elinor taught for decades. It trained scholar after scholar, and its way of working came to be called the Bloomington School. What did they name it?",
     "answer": "The Workshop in Political Theory and Policy Analysis",
     "choices": [
       "The Workshop in Political Theory and Policy Analysis",
@@ -7423,34 +7280,8 @@
     "topic": "elinor-ostrom-governing-the-commons-1990"
   },
   {
-    "tier": 4,
-    "question": "A group of fishing villages shares one lake. Instead of one big rule made in the capital, each village keeps its own rules for its own dock, and they meet up to handle shared problems. Ostrom's name for this many-centers, many-levels arrangement is what?",
-    "answer": "Polycentricity",
-    "choices": [
-      "Polycentricity",
-      "Federalism",
-      "Subsidiarity",
-      "Devolution"
-    ],
-    "context": "Vincent Ostrom introduced the term 'polycentricity' in his 1961 paper on metropolitan governance; Elinor made it central to her nested-enterprise principle for large commons. Source: Ostrom + Tiebout + Warren, American Political Science Review (1961).",
-    "topic": "elinor-ostrom-governing-the-commons-1990"
-  },
-  {
     "tier": 5,
-    "question": "In the 1980s and 1990s the American political economist Elinor Ostrom traveled the world studying how villages actually manage shared resources like forests, fisheries, and irrigation ditches. She visited Nepalese canals, Swiss alpine pastures, and Maine lobster grounds. Textbook theory said such 'commons' had only two options -- state ownership or full privatization -- or the resource would collapse. Ostrom's decades of case studies documented a third option the textbook missed. Which option did her work show works in the real world?",
-    "answer": "User groups can self-govern the resource with the right institutional design",
-    "choices": [
-      "User groups can self-govern the resource with the right institutional design",
-      "The resource inevitably collapses regardless of governance form",
-      "Only religious authorities can enforce sustainable use",
-      "The resource must be split into individual homesteads"
-    ],
-    "context": "Ostrom's central contribution: SEEN is the state-vs-market binary; UNSEEN is the polycentric self-organized alternative that empirically works when the eight design principles are present. Source: Ostrom, Governing the Commons (1990), preface and conclusion.",
-    "topic": "elinor-ostrom-governing-the-commons-1990"
-  },
-  {
-    "tier": 5,
-    "question": "Ostrom insisted her work should not be read as a full refutation of Hardin's 1968 warning about the commons. She thought his tragedy fit some situations but was not universal. How did she describe the connection between his prediction and her fieldwork?",
+    "question": "Garrett Hardin issued his famous warning about shared pastures in 1968, and Elinor Ostrom, for all her cases of commons kept healthy for centuries, refused to say she had proved him wrong. His tragedy was real, she argued. How did she describe the link between his prediction and her fieldwork?",
     "answer": "Hardin's tragedy is a conditional outcome, not an inevitable one",
     "choices": [
       "Hardin's tragedy is a conditional outcome, not an inevitable one",
@@ -7463,7 +7294,7 @@
   },
   {
     "tier": 1,
-    "question": "The Roman emperor Diocletian tried to fix a bread shortage in 301 AD with a strict rule: no baker in the empire could sell bread above a low price the emperor himself had set. Bakers pulled bread off the shelves rather than lose money on every loaf. What is this kind of rule called?",
+    "question": "Emperor Diocletian barred sellers across the Roman Empire in 301 AD from charging more than prices he had fixed himself, and bakers pulled bread off their shelves rather than lose money on every loaf. What is a rule like his called?",
     "answer": "A price cap",
     "choices": [
       "A price cap",
@@ -7476,7 +7307,7 @@
   },
   {
     "tier": 1,
-    "question": "In the year 362, the Roman emperor Julian arrived in the great eastern city of Antioch and found the local price of grain too high for his liking. Wanting to look generous to the poor, he ordered a strict low price cap on every sack of grain sold in the city. The market reacted right away. What happened to the grain supply?",
+    "question": "The emperor Julian rode into Antioch in the summer of 362 to ready his war on Persia and found bread short and costly. Eager to win the poor's favor, he decreed a low fixed price for all the grain sold in the city. What happened to the grain supply?",
     "answer": "Merchants and farmers withdrew their grain rather than sell at a loss",
     "choices": [
       "Merchants and farmers withdrew their grain rather than sell at a loss",
@@ -7484,12 +7315,12 @@
       "Prices fell further than the mandated cap",
       "Farmers doubled their planted acreage"
     ],
-    "context": "Antioch merchants and surrounding-region farmers withdrew grain from the market. The imperial grain was quickly bought up (often by the same merchants for resale on the black market), and shelves went empty again. Source: en.wikipedia.org/wiki/Julian_(emperor).",
+    "context": "Antioch's merchants and the farmers around it withdrew grain from the market. The imperial grain Julian shipped in was quickly bought up, often for resale on the black market, and over the following months merchants stopped sending grain to Antioch at all. The cap was quietly ended after Julian was killed fighting the Persians in June 363.",
     "topic": "emperor-julians-grain-price-ceiling-in-antioch-362-ad"
   },
   {
     "tier": 2,
-    "question": "In 362 AD the Roman emperor Julian visited the city of Antioch, which was suffering a grain shortage. To help the poor, Julian ordered a strict maximum price on grain -- sellers had to sell below what it cost to bring the grain to market. The shortage got worse, not better. Furious at the sellers, Julian wrote a public pamphlet blaming them for greed. What actually caused the shortage?",
+    "question": "A poor family in Antioch found the grain shops empty after the emperor Julian fixed a low price on grain in 362. Julian blamed the sellers' greed in a public pamphlet. What actually caused the shortage?",
     "answer": "The price cap made selling grain there unprofitable, so it dried up",
     "choices": [
       "The price cap made selling grain there unprofitable, so it dried up",
@@ -7502,7 +7333,7 @@
   },
   {
     "tier": 2,
-    "question": "When Emperor Julian's grain price cap made grain disappear from the shops of Antioch in 362 AD, he did not lift the cap. Instead, he wrote a public pamphlet blaming the sellers for greed. Austrian economists point to this Roman example when they warn about a recurring reasoning error in price control history -- the ruler treats the vanished goods as the problem, not the cap that made them vanish. What is this error called?",
+    "question": "Antioch's citizens had jeered at the emperor Julian's philosopher's beard, and early in 363 he answered them with Misopogon, the 'Beard-Hater,' a pamphlet blaming the empty grain shops on the sellers' greed; he never lifted his cap on grain. Opponents of price caps give his mistake a name. What is it?",
     "answer": "Blame the messenger for the message",
     "choices": [
       "Blame the messenger for the message",
@@ -7514,34 +7345,8 @@
     "topic": "emperor-julians-grain-price-ceiling-in-antioch-362-ad"
   },
   {
-    "tier": 3,
-    "question": "During a grain shortage in the ancient Roman city of Antioch, an emperor tried to help by ordering merchants to sell grain below the market price. The result was the opposite of what he wanted. What most likely happened to the grain in Antioch after his order?",
-    "answer": "Merchants stopped shipping grain to the city, so the shortage got worse",
-    "choices": [
-      "Merchants stopped shipping grain to the city, so the shortage got worse",
-      "Grain became plentiful and cheap for the poor of Antioch",
-      "Farmers rushed to plant more grain that same season",
-      "The city's grain stores stayed exactly the same"
-    ],
-    "context": "Julian was killed in battle against the Sassanid Persians on June 26, 363 AD. His death ended the last non-Christian Roman ruling dynasty. The Antioch price cap was quietly ended after his death. Source: en.wikipedia.org/wiki/Julian_(emperor).",
-    "topic": "emperor-julians-grain-price-ceiling-in-antioch-362-ad"
-  },
-  {
-    "tier": 3,
-    "question": "In his book 'Basic Economics,' the American economist Thomas Sowell reaches for two Roman examples of price controls to teach one point that holds across 1,700 years. Emperor Julian tried a grain price cap at Antioch in 362 AD, and Emperor Diocletian tried a sweeping wage and price edict in 301 AD. Both created shortages. What is Sowell's core teaching move?",
-    "answer": "Compared to what? -- name the counterfactual before praising or condemning a policy",
-    "choices": [
-      "Compared to what? -- name the counterfactual before praising or condemning a policy",
-      "Prices always signal information",
-      "The state cannot outrun the market",
-      "The visible hand is more efficient than the invisible"
-    ],
-    "context": "Sowell's 'compared to what?' move: any critique of high grain prices in Antioch must name the counterfactual (higher prices with grain on the shelves vs low prices with empty shelves). Applied to any policy analysis. Source: Sowell, Basic Economics.",
-    "topic": "emperor-julians-grain-price-ceiling-in-antioch-362-ad"
-  },
-  {
     "tier": 4,
-    "question": "The Roman emperor Julian, who ruled from 361 to 363 AD, tried to bring back the old Greek and Roman gods after his uncle Constantine had turned the empire toward Christianity. After Julian's death, the Christian church he had tried to demote gave him a hostile nickname that stuck in history books. What is that later Christian name for him?",
+    "question": "The emperor Julian turned from the Christianity his uncle Constantine had backed and tried to bring back the ancient gods of Greece and Rome. After he died fighting the Persians in 363, Christian writers fixed a hostile name on him. What is it?",
     "answer": "Julian the Apostate",
     "choices": [
       "Julian the Apostate",
@@ -7554,7 +7359,7 @@
   },
   {
     "tier": 4,
-    "question": "An ancient city on a river was once one of the world's richest ports, sitting where sea routes and desert routes met. Its wealth came from a location that gathered traders from many directions. What kind of place gives a city that kind of natural wealth?",
+    "question": "A caravan from the desert unloaded its goods in the markets of Antioch beside cargoes brought up from the sea, in a city among the wealthiest of Rome's eastern provinces. What kind of place gives a city wealth like that?",
     "answer": "A crossroads where many trade routes come together",
     "choices": [
       "A crossroads where many trade routes come together",
@@ -7567,7 +7372,7 @@
   },
   {
     "tier": 5,
-    "question": "In 362 AD Emperor Julian tried to cap grain prices in Antioch and grain vanished from the shops. In 301 AD Emperor Diocletian had already issued an Edict on Maximum Prices for the whole Roman Empire, and goods had vanished from markets everywhere. Austrian economists cite the two rulers together, saying the same reasoning error keeps returning across the centuries. What is the modern shorthand for the pattern the two cases share?",
+    "question": "Diocletian fixed maximum prices across the Roman Empire in 301, and the emperor Julian capped the price of grain in Antioch in 362. Austrian economists pair the two rulers because, they argue, one pattern keeps returning, from Richard Nixon's price controls of 1971 to Venezuela's after 2013. What is the pattern?",
     "answer": "Ruler sets a low price; goods vanish; ruler blames the seller",
     "choices": [
       "Ruler sets a low price; goods vanish; ruler blames the seller",
@@ -7580,7 +7385,7 @@
   },
   {
     "tier": 1,
-    "question": "For 41 years — from 1944 to 1985 — the dictator Enver Hoxha ruled the small Balkan country Albania. Farmers were forced off their own land onto giant collective farms. Private business was banned. Food shortages were common, and the borders were sealed. What is this system called?",
+    "question": "Enver Hoxha took power in Albania in 1944 and drove its farm families onto huge collective farms. He outlawed private business, food was often scarce, and no one could leave the country. What is the system he built called?",
     "answer": "Communism",
     "choices": [
       "Communism",
@@ -7593,7 +7398,7 @@
   },
   {
     "tier": 2,
-    "question": "From the late 1960s through the early 1980s the communist dictator Enver Hoxha ruled Albania in near-total isolation, convinced foreign armies might invade at any moment. His state poured cement into small concrete pillbox bunkers scattered across every field, beach, and hillside -- enough that many are still standing in the 21st century as tourist curiosities. Roughly how many were built, in a country of about 2.8 million people?",
+    "question": "A farmer plowing an Albanian field today still steers around a little concrete dome. Enver Hoxha, sure that foreign armies might invade at any moment, had such pillbox bunkers poured between the late 1960s and the 1980s. Roughly how many were built, in a country of some 2.8 million people?",
     "answer": "About 173,000",
     "choices": [
       "About 173,000",
@@ -7606,7 +7411,7 @@
   },
   {
     "tier": 3,
-    "question": "The Albanian dictator Enver Hoxha ruled his small Balkan country as a hardline communist state and broke with each of his big communist allies in turn over the decades, always accusing them of drifting from true Marxism-Leninism. By the early 1980s Albania stood alone as the only self-declared 'purely Marxist' state in the world. Which sequence of breaks did Hoxha lead?",
+    "question": "Enver Hoxha suspected everyone, the rulers who shared his creed included, and he broke with three powerful patrons in turn, every split leaving his country lonelier, until it was the most isolated in Europe. Which sequence of breaks did he lead?",
     "answer": "With Yugoslavia in 1948, with the USSR in 1961, and with China in 1978",
     "choices": [
       "With Yugoslavia in 1948, with the USSR in 1961, and with China in 1978",
@@ -7619,7 +7424,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1967 the Albanian communist state under Enver Hoxha issued a decree closing every mosque, church, and monastery in the country -- repurposing many buildings as warehouses or gymnasiums, arresting the clerics, and banning even private religious ceremonies at home. The move made Albania a first-of-its-kind polity. What kind?",
+    "question": "A priest in Albania saw his church turned into a warehouse in 1967, when Enver Hoxha decreed that every mosque, church and monastery in the country be closed. The clergy were arrested, and even private prayer at home was banned. The decree made Albania the first state of its kind. What kind?",
     "answer": "The first officially atheist state in the world",
     "choices": [
       "The first officially atheist state in the world",
@@ -7632,7 +7437,7 @@
   },
   {
     "tier": 4,
-    "question": "In communist Albania under Enver Hoxha, the secret police -- called the Sigurimi -- kept a file on nearly every family. One person in every apartment block was paid to inform on neighbors. Even telling a joke about Hoxha at a dinner table could land you in prison for years. What is the goal of this kind of watching?",
+    "question": "A man in Enver Hoxha's Albania told a joke about the dictator at dinner, and a neighbor paid by the secret police, the Sigurimi, reported him; a joke like that could cost years in prison. The Sigurimi held a file on nearly every family. What is the purpose of watching on that scale?",
     "answer": "To make people afraid to speak up, so no group can organize against the state",
     "choices": [
       "To make people afraid to speak up, so no group can organize against the state",
@@ -7645,7 +7450,7 @@
   },
   {
     "tier": 4,
-    "question": "After a communist regime falls — the Soviet Union in 1991, East Germany in 1990, Albania in 1992 — researchers try to count real victims by digging into the old secret-police files and prison-camp records. Even with those papers in hand, honest death counts are hard to reach. Why?",
+    "question": "A scholar worked through the files of the secret police and the prison camps of Hoxha's Albania after the regime fell in the early 1990s, and found an honest death count hard to reach. Why is the count so hard, even with the papers in hand?",
     "answer": "Regimes hide deaths, mislabel prisoners, and destroy files before losing power",
     "choices": [
       "Regimes hide deaths, mislabel prisoners, and destroy files before losing power",
@@ -7658,7 +7463,7 @@
   },
   {
     "tier": 5,
-    "question": "A country's rulers seal it off for decades — no travel, no foreign radio, no outside prices. When the borders finally open in 1990, ordinary citizens are shocked at how poor they had become compared with their free-market neighbors. What did the sealed border mostly hide?",
+    "question": "Ramiz Alia, Enver Hoxha's successor, chose in December 1990 not to fire on the students marching in Albania's streets, and three months later Albanians cast ballots in their first election with more than one party. Once the frontier opened, they could see what it had hidden. What had the sealed border mostly hidden from them?",
     "answer": "How far behind their planned economy had fallen",
     "choices": [
       "How far behind their planned economy had fallen",
@@ -7671,7 +7476,7 @@
   },
   {
     "tier": 5,
-    "question": "A high-school student compares the 173,000 concrete bunkers Enver Hoxha's Albania built between the 1960s and 1980s to the houses, schools, roads, and factories the same national labor and cement could have built instead. A Bastiatian economist -- following the 19th-century French thinker Frederic Bastiat, who taught that every choice has an unseen cost -- points to a specific reasoning move to describe what happened. Which is it?",
+    "question": "A student of Frédéric Bastiat stands beside one of Enver Hoxha's concrete bunkers on an Albanian beach, built for an invasion that never came, and asks what is not there beside it. Which reasoning move names what the bunker cost?",
     "answer": "The opportunity cost: every ton of cement in a bunker was a ton not in a house, school, or factory",
     "choices": [
       "The opportunity cost: every ton of cement in a bunker was a ton not in a house, school, or factory",
@@ -8074,7 +7879,7 @@
   },
   {
     "tier": 1,
-    "question": "The first paper money used by many ordinary people appeared in the Sichuan region of China in the 1000s. Merchants there were tired of hauling around heavy iron coins over long trade routes, so they began using printed paper notes as a lighter substitute. Which Chinese dynasty was ruling at the time?",
+    "question": "A merchant in Sichuan, in western China, paid with a printed paper note in the 1000s, sparing himself the heavy iron coins he had hauled along the trade roads. Around 1023 the government took over issuing such notes. Which dynasty ruled China then?",
     "answer": "the Song dynasty",
     "choices": [
       "the Song dynasty",
@@ -8087,7 +7892,7 @@
   },
   {
     "tier": 1,
-    "question": "Between 1716 and 1720 a Scottish banker ran France's newly-chartered royal bank under the child-king Louis XV. He printed enormous amounts of paper money to fund a scheme tied to French land in North America known as the Mississippi Company. When the bubble popped, the currency lost almost all its value and the whole plan collapsed. What was that Scottish banker's paper currency called?",
+    "question": "A Scottish banker running the French crown's bank for the child-king Louis XV flooded the country with paper money between 1716 and 1720 to inflate the Mississippi Company, a venture on French land in North America. When the bubble burst, his notes became almost worthless. What was his paper currency called?",
     "answer": "John Law's Banque Royale livre",
     "choices": [
       "John Law's Banque Royale livre",
@@ -8100,7 +7905,7 @@
   },
   {
     "tier": 2,
-    "question": "One twentieth-century hyperinflation still holds the world record as the worst ever measured. It hit a small central-European country right after the Second World War. By July 1946 prices there were doubling every 15 hours — a loaf of bread cost more in the evening than it had that morning, and the government kept printing bigger banknotes to keep up. Which country's money set that record?",
+    "question": "A baker in a small central-European country charged more for a loaf at supper than at breakfast in July 1946, soon after the Second World War ended. Prices there doubled roughly every fifteen hours, the worst runaway rise ever measured, while the government printed ever-bigger banknotes. Which country's money set that record?",
     "answer": "Hungary (the pengő)",
     "choices": [
       "Hungary (the pengő)",
@@ -8113,7 +7918,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2008 the African country of Zimbabwe got so caught in a runaway money-printing spiral under Robert Mugabe's government that its central bank issued a single banknote worth one hundred trillion Zimbabwe dollars. That note could not buy a loaf of bread. Prices doubled almost every day. What is the name for this kind of runaway price rise?",
+    "question": "A shopper in Zimbabwe held a banknote worth one hundred trillion Zimbabwe dollars in 2008, and it would not buy a loaf of bread. Robert Mugabe's central bank had printed money in a runaway spiral, and prices doubled almost every day. What is a runaway rise in prices like that called?",
     "answer": "Hyperinflation",
     "choices": [
       "Hyperinflation",
@@ -8126,20 +7931,7 @@
   },
   {
     "tier": 3,
-    "question": "Today's big currencies — the US dollar, the euro, the Japanese yen, and the British pound — are all pure paper promises, backed by nothing but government word. But this was not always so. There was a time when foreign governments could bring dollars to the US Treasury and trade them in for physical gold at a fixed price. One event in the early 1970s ended that last real link between money and gold. Which event ended it?",
-    "answer": "the August 15, 1971 Nixon shock closing the gold window",
-    "choices": [
-      "the August 15, 1971 Nixon shock closing the gold window",
-      "the July 1944 Bretton Woods Conference",
-      "the December 1913 Federal Reserve Act",
-      "the September 1985 Plaza Accord"
-    ],
-    "context": "The Nixon shock (August 15, 1971) closed the last gold link (dollar-to-gold redemption for foreign central banks). Bretton Woods CREATED the gold-exchange standard; the 1913 Fed Act founded the central bank; the 1985 Plaza Accord coordinated exchange-rate policy but did not involve gold. Source: https://en.wikipedia.org/wiki/Nixon_shock.",
-    "topic": "every-fiat-currency-dies-the-5-000-year-pattern"
-  },
-  {
-    "tier": 3,
-    "question": "Since the Federal Reserve opened in 1913, the US dollar has lost about 98 percent of its buying power measured in gold. What kind of money system, in which the government simply declares paper legal tender with no metal backing, makes this steady erosion possible?",
+    "question": "A collector holds a dollar bill from 1913, the year the Federal Reserve opened; measured in gold, it now buys about two cents' worth. The pound, the yen, the euro and the dollar all run on the same kind of money today. What kind, paper a government declares legal tender with no metal behind it, made that slow leak possible?",
     "answer": "Fiat money",
     "choices": [
       "Fiat money",
@@ -8147,12 +7939,12 @@
       "Representative money",
       "Barter"
     ],
-    "context": "In gold terms the US dollar has lost about 98-99% of its purchasing power since the Fed's 1913 founding (from ~$20.67/oz to $2,400+/oz); about 86% just since the Nixon shock 1971 (from $35/oz). 15% and 50% understate; 200% is not a purchasing-power figure. Source: https://en.wikipedia.org/wiki/Federal_Reserve.",
+    "context": "In gold terms the US dollar has lost about 98-99% of its purchasing power since the Fed's 1913 founding (from about $20.67 an ounce to $2,400+), about 86% of it since the Nixon shock of 1971 (from $35 an ounce), a step Nixon called 'temporary'. The fiat standard it left behind still runs the world's money.",
     "topic": "every-fiat-currency-dies-the-5-000-year-pattern"
   },
   {
     "tier": 4,
-    "question": "Defenders of fiat currencies often cite the British pound sterling as evidence that fiat money can survive for a very long time. Supporters have even called the pound '1,300 years old'. What is the standard Austrian counter-argument about the modern paper pound?",
+    "question": "A defender of paper money holds up the British pound, called 1,300 years old by its admirers, as proof that a fiat currency can endure. An Austrian economist answers him. What does the Austrian say about the modern paper pound?",
     "answer": "it has lost about 99.5% of its purchasing power since 1750, and its physical composition has repeatedly changed",
     "choices": [
       "it has lost about 99.5% of its purchasing power since 1750, and its physical composition has repeatedly changed",
@@ -8164,21 +7956,8 @@
     "topic": "every-fiat-currency-dies-the-5-000-year-pattern"
   },
   {
-    "tier": 4,
-    "question": "In 1997 a team of French historians led by Stephane Courtois published a landmark book that carefully added up the death tolls of every communist regime of the 20th century -- the Soviet Union, Communist China, Cambodia, North Korea, and more. The total ran to roughly 100 million people killed. It became a key source for economists arguing for sound money and free markets. What is the book called?",
-    "answer": "The Black Book of Communism",
-    "choices": [
-      "The Black Book of Communism",
-      "Das Kapital",
-      "The Wealth of Nations",
-      "The Communist Manifesto"
-    ],
-    "context": "'The Black Book of Communism' (Stéphane Courtois et al., 1997) totals 65-100M deaths across communist regimes. Marx's Das Kapital and the Communist Manifesto are 19th-century Marxist texts; Adam Smith's Wealth of Nations (1776) is unrelated to the death-toll accounting. Source: https://en.wikipedia.org/wiki/The_Black_Book_of_Communism.",
-    "topic": "every-fiat-currency-dies-the-5-000-year-pattern"
-  },
-  {
     "tier": 5,
-    "question": "The Austrian-school economists Ludwig von Mises, Murray Rothbard, Joseph Salerno, and Saifedean Ammous argue that fiat money -- currency backed only by government decree, with no gold or silver behind it -- has failed for 5,000 years across every civilization that tried it. They say the failures are not accidents. The rot flows from an incentive built into any central bank empowered to print without limit. Which incentive drives the failure?",
+    "question": "Murray Rothbard, like Ludwig von Mises before him, argued that money resting on nothing but a government's decree has failed for 5,000 years wherever it was tried, and not by accident. Joseph Salerno and Saifedean Ammous took up the case after them. They traced the rot to an incentive built into any authority that can print without limit. Which incentive drives the failure?",
     "answer": "politicians promise citizens more than tax revenue supports, monetary authorities close the gap by printing, printing debases the currency, savers absorb the loss, and the cycle accumulates until confidence breaks",
     "choices": [
       "politicians promise citizens more than tax revenue supports, monetary authorities close the gap by printing, printing debases the currency, savers absorb the loss, and the cycle accumulates until confidence breaks",
@@ -8191,7 +7970,7 @@
   },
   {
     "tier": 5,
-    "question": "Austrians argue that no fiat currency in 5,000 years has escaped debasement or collapse. They present that record as the empirical case for a specific reframing of the sound-money problem. Which reasoning move does the argument press about monetary reform?",
+    "question": "Saifedean Ammous, writing after Mises and Rothbard, argued that no fiat currency in 5,000 years has escaped debasement or collapse. From that record he drew a lesson about how money should be reformed. Which reasoning move did the argument press?",
     "answer": "That sound money is an engineering problem to be solved with fixed rules, not a political problem to be solved with better leaders",
     "choices": [
       "That sound money is an engineering problem to be solved with fixed rules, not a political problem to be solved with better leaders",
@@ -8200,19 +7979,6 @@
       "That sound money will emerge automatically over time without any deliberate change in monetary institutions or protocols by anyone"
     ],
     "context": "The 5,000-year pattern-argument culminates in Satoshi's 2008 Bitcoin white paper: solve the political-money problem with cryptography and consensus rather than with trust in better leaders. Better central-bank governance, tax policy alone, and passive emergence are precisely what the argument denies is sufficient. Source: Ammous, The Bitcoin Standard (2018); The Fiat Standard (2021).",
-    "topic": "every-fiat-currency-dies-the-5-000-year-pattern"
-  },
-  {
-    "tier": 5,
-    "question": "In August 1971 Richard Nixon cut the last link between the US dollar and gold, ending the Bretton Woods system. Nixon told Americans the change would be 'temporary.' Decades later, the world's currencies still use the money system his shock introduced. What is that system called?",
-    "answer": "Fiat standard",
-    "choices": [
-      "Fiat standard",
-      "Gold standard",
-      "Silver standard",
-      "Bimetallic standard"
-    ],
-    "context": "From $35/oz in 1971 to $2,400+/oz by the mid-2020s is roughly an 86%+ loss in the dollar's purchasing power measured in gold. 25%, 40%, and 5% are all significant understatements. Source: London Bullion Market Association historical gold prices.",
     "topic": "every-fiat-currency-dies-the-5-000-year-pattern"
   },
   {
@@ -23765,7 +23531,7 @@
   },
   {
     "tier": 1,
-    "question": "As the Great Depression began in 1930, the US Congress passed the Smoot-Hawley Tariff Act, putting big new taxes on more than 20,000 kinds of imports from other countries. Angry trading partners like Canada and France hit back with big new taxes of their own. What usually happens to world trade when countries throw tariffs at each other like this?",
+    "question": "Herbert Hoover signed a sweeping tariff in June 1930, with the Great Depression taking hold, lifting duties on imports higher than they had stood in about a hundred years. Canada, France and other American trading partners hit back with tariffs of their own. What usually happens when trading partners swap tariffs like this?",
     "answer": "Trade shrinks and both sides get poorer",
     "choices": [
       "Trade shrinks and both sides get poorer",
@@ -23778,7 +23544,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1930, just as the Great Depression was starting, the United States Congress passed a big tariff law that raised taxes on goods brought in from other countries. Historians now blame the law for making the depression worse -- other countries hit back with their own tariffs, and world trade collapsed. The act is named after the two American lawmakers who wrote it: a senator from Utah and a congressman from Oregon. What were their last names?",
+    "question": "A Utah senator who chaired the Senate Finance Committee and an Oregon congressman who chaired House Ways and Means steered a tariff through Congress in 1930. It would go down as modern history's best-known trade blunder, and it carries both men's surnames. Who were they?",
     "answer": "Reed Smoot and Willis Hawley",
     "choices": [
       "Reed Smoot and Willis Hawley",
@@ -23791,7 +23557,7 @@
   },
   {
     "tier": 2,
-    "question": "In May 1930, the US Congress was debating the Smoot-Hawley Tariff Act, a huge bill that would raise taxes on thousands of imported goods. Alarmed that this would ignite a worldwide trade war right in the middle of the Great Depression, a large group of American economists signed a public letter to President Herbert Hoover, begging him to veto it. It was one of the biggest joint statements economists had ever made. About how many names were on the letter?",
+    "question": "An American economist put his name to a petition in May 1930 begging Herbert Hoover to veto the tariff bill, for fear it would start a trade war in the middle of the Depression. The New York Times printed the petition, and Hoover signed the bill anyway. About how many names were on the petition?",
     "answer": "About one thousand",
     "choices": [
       "About one thousand",
@@ -23804,7 +23570,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 1930, the US Congress passed the Smoot-Hawley Tariff Act, one of the most sweeping trade laws in American history. Instead of setting one rate for all imports, lawmakers went item by item, adding a special tax on foreign goods from cheese to pocket watches to industrial chemicals. Each congressman fought to protect the industries in his own district. About how many separate goods were hit with new higher tariff rates?",
+    "question": "A congressman fought in 1930 for the businesses back home while Congress wrote the new tariff item by item, a special rate for each good from cheese to pocket watches to industrial chemicals. Every member did the same. About how many separate goods ended up with higher duties?",
     "answer": "More than twenty thousand",
     "choices": [
       "More than twenty thousand",
@@ -23817,7 +23583,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1930 the US Congress passed the Smoot-Hawley Tariff Act, sharply raising taxes on imported goods to protect American factories. Other big trading nations -- Canada, France, Britain, Germany -- hit back with tariffs of their own. Country after country slammed its doors on foreign trade during the Great Depression. From 1929 to 1934, by roughly how much did total world trade shrink?",
+    "question": "Canadian lawmakers struck back at the American tariff of 1930 with duties of their own, and France, Britain, Germany and country after country closed their doors as well. Between 1929 and 1934, by about how much did total world trade shrink?",
     "answer": "About two-thirds",
     "choices": [
       "About two-thirds",
@@ -23830,20 +23596,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1845 the French economist Frederic Bastiat wanted to expose the silliness of tariffs -- taxes that block cheap foreign goods to protect local sellers. So he wrote a fake petition to the French parliament, supposedly filed by a certain trade, begging lawmakers to shut out a hated foreign rival -- the sun itself -- because its free light was ruining their business by making their product unnecessary during the day. Which trade did Bastiat pretend was filing the petition?",
-    "answer": "The candlemakers",
-    "choices": [
-      "The candlemakers",
-      "The winegrowers",
-      "The steelmakers",
-      "The wheat farmers"
-    ],
-    "context": "Bastiat's 'Candlemakers' Petition' asked the French Chamber of Deputies to block sunlight so domestic candlemakers could sell more candles -- the classic satire of a producer-protection tariff that ignores costs to consumers. Source: en.wikipedia.org/wiki/Candlemakers%27_petition.",
-    "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
-  },
-  {
-    "tier": 3,
-    "question": "In 1930 the American government passed the Smoot-Hawley Tariff Act, putting big new taxes on goods coming from other countries. Some effects were easy to see right away — factory owners cheering, foreign goods vanishing from shelves. But the French economist Frédéric Bastiat had warned decades earlier that the biggest costs of tariffs are always the ones nobody sees at first. What was Smoot-Hawley's less-visible cost, the one that took months or years to notice?",
+    "question": "American factory owners cheered when the 1930 tariff took effect, and foreign goods vanished from the shelves. Frédéric Bastiat had warned decades earlier that a tariff's biggest costs are the ones nobody sees at first. What were this tariff's hidden costs, the ones that surfaced months or years later?",
     "answer": "Higher prices for shoppers and lost sales for American exporters",
     "choices": [
       "Higher prices for shoppers and lost sales for American exporters",
@@ -23856,7 +23609,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1930 the US passed the Smoot-Hawley Tariff, and world trade collapsed as country after country raised its own tariffs to strike back. Congress had built the mess piece by piece, with each congressman fighting to protect the industries in his own district. In 1934, Congress passed the Reciprocal Trade Agreements Act, handing the president the power to lower tariffs by negotiating whole trade deals with foreign governments. Why is it usually easier for a president to lower tariffs than for Congress?",
+    "question": "Secretary of State Cordell Hull championed the Reciprocal Trade Agreements Act, passed in 1934, which let the president lower tariffs through deals with other governments. Congress had written the 1930 tariff item by item, each member guarding the industries in his own district. Why is it usually easier for a president to lower tariffs than for Congress?",
     "answer": "A president can negotiate the whole deal at once, so no single local industry can block a line item",
     "choices": [
       "A president can negotiate the whole deal at once, so no single local industry can block a line item",
@@ -23869,7 +23622,7 @@
   },
   {
     "tier": 4,
-    "question": "After World War Two, the US and 22 other countries built a shared trade deal called the General Agreement on Tariffs and Trade (GATT), aiming to stop another 1930 Smoot-Hawley-style tariff war. In 1995 GATT was replaced by the World Trade Organization (WTO). Why do such shared deals cut down on tariff fights between countries?",
+    "question": "Delegates of the United States and twenty-two other countries signed, in 1947, the General Agreement on Tariffs and Trade, aiming never to see another tariff war like that of the 1930s. In 1995 it became the World Trade Organization. Why do shared deals like this calm tariff fights between countries?",
     "answer": "Each country promises not to raise tariffs on the others, so no one has reason to strike first",
     "choices": [
       "Each country promises not to raise tariffs on the others, so no one has reason to strike first",
@@ -23882,7 +23635,7 @@
   },
   {
     "tier": 5,
-    "question": "The 1930 Smoot-Hawley Tariff Act raised US import taxes on thousands of goods during the early Great Depression. Other countries hit back with their own tariffs and world trade collapsed. What lesson do economists usually draw from what happened next?",
+    "question": "Ben Stein, actor and economist, summed up the story of the 1930 tariff in a famous classroom scene of Ferris Bueller's Day Off. Congress had raised import taxes on thousands of goods early in the Great Depression. What general lesson do economists draw from the episode?",
     "answer": "Raising tariffs during a downturn usually deepens the downturn instead of fixing it",
     "choices": [
       "Raising tariffs during a downturn usually deepens the downturn instead of fixing it",
@@ -24961,20 +24714,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1997, French historian Stephane Courtois and a team of European scholars published a book called The Black Book of Communism. Chapter by chapter, they added up the deaths caused by communist governments across the 1900s: Soviet gulags, the Chinese Great Leap Forward famine, the Cambodian killing fields, and more. Roughly what total did the authors find?",
-    "answer": "About 85 to 100 million people",
-    "choices": [
-      "About 85 to 100 million people",
-      "About one hundred thousand people",
-      "About one million people",
-      "Fewer than ten thousand people"
-    ],
-    "context": "Courtois was born 1947 in Dreux, France. Solzhenitsyn was a Russian dissident writer, Furet a French historian of the French Revolution, Conquest an Anglo-American historian of the Soviet purges. Source: grokipedia.com/page/The_Black_Book_of_Communism.",
-    "topic": "stephane-courtois-the-french-maoist-who-counted"
-  },
-  {
-    "tier": 2,
-    "question": "In 1968, huge student protests and worker strikes shook Paris and nearly toppled the French government. A young French student named Stephane Courtois was swept up in the movement and fired up by China's Cultural Revolution — the mass upheaval then convulsing that country. That year he picked up a hard-left cause and would spend the rest of his life writing about it. Which cause did the young Courtois adopt?",
+    "question": "Students threw up barricades in Paris in May 1968, and one of them, Stephane Courtois, took up his fiercest classmates' creed. News from Cambodia and Moscow broke his faith in it during the 1970s, and he became its accuser. Which creed was it?",
     "answer": "Maoism",
     "choices": [
       "Maoism",
@@ -24982,12 +24722,12 @@
       "Anarcho-syndicalism",
       "Social democracy"
     ],
-    "context": "The May 1968 Paris upheavals radicalized many French students; Maoism was the fashionable variant among the most zealous. Courtois grew out of it in the 1970s as reports from Cambodia and the USSR made the ideology impossible to sustain intellectually. Source: grokipedia.com/page/St%C3%A9phane_Courtois.",
+    "context": "The May 1968 Paris upheavals radicalized many French students; Maoism was the fashionable variant among the most zealous. Courtois grew out of it in the 1970s as reports from Cambodia and the USSR made the ideology impossible to sustain. The trajectory from believer to counter-historian gives his introduction to The Black Book of Communism a particular authority.",
     "topic": "stephane-courtois-the-french-maoist-who-counted"
   },
   {
     "tier": 3,
-    "question": "Before writing The Black Book of Communism, Stephane Courtois built a career as a professional historian in France. He spent years digging through the archives of the French Communist Party and of the Comintern -- the Moscow-run organization that once directed communist parties around the world. To fund his research, France's largest state-run scientific research agency put him on staff. Which French research group hired him?",
+    "question": "Stephane Courtois went into the newly opened Soviet archives after 1991, already a veteran of the files of the French Communist Party and of the Comintern, Moscow's tool for running communist parties in other countries. One French state institution kept him on salary through all of it. Which was it?",
     "answer": "The CNRS (Centre National de la Recherche Scientifique)",
     "choices": [
       "The CNRS (Centre National de la Recherche Scientifique)",
@@ -25000,7 +24740,7 @@
   },
   {
     "tier": 3,
-    "question": "When French historian Stephane Courtois edited The Black Book of Communism in 1997, he pulled together chapters by many European scholars. Each chapter tallied the deaths under one communist government -- the USSR, China, Cambodia, North Korea, Ethiopia, Vietnam, and others. Of every chapter in the book, the one on the Soviet Union was by far the longest. Why was the Soviet chapter the longest?",
+    "question": "Nicolas Werth wrote the Soviet chapter of The Black Book of Communism, which Stephane Courtois edited in 1997 from the work of scholars in a dozen European countries, each chapter counting the dead under one communist government. Werth's chapter dwarfed all the others. Why was it so long?",
     "answer": "The Soviet system lasted the longest and killed the most people of any communist state",
     "choices": [
       "The Soviet system lasted the longest and killed the most people of any communist state",
@@ -25013,41 +24753,15 @@
   },
   {
     "tier": 4,
-    "question": "When French historian Stephane Courtois published his introduction to The Black Book of Communism in 1997, two of his own co-authors -- Nicolas Werth and Jean-Louis Margolin -- were so upset that they wrote a public dissent letter to the Paris newspaper Le Monde. They accepted the book's death-toll numbers themselves; the fight was over one specific comparison Courtois had drawn in his introduction. What specifically did they object to?",
-    "answer": "His equating of communist and Nazi crimes in the introduction",
+    "question": "Jean-Louis Margolin and Nicolas Werth, two of Stephane Courtois's own co-authors on The Black Book of Communism, wrote to the Paris newspaper Le Monde to dissent in public. Each had written chapters for the 1997 book. What did the two protest?",
+    "answer": "The equation of communist and Nazi crimes",
     "choices": [
-      "His equating of communist and Nazi crimes in the introduction",
+      "The equation of communist and Nazi crimes",
       "The USSR chapter's estimate of Gulag deaths",
       "The China chapter's estimate of Great Leap Forward deaths",
       "The Cambodia chapter's estimate of Khmer Rouge deaths"
     ],
-    "context": "Nicolas Werth and Jean-Louis Margolin agreed with the country-by-country archival totals but not with Courtois's editorial framing that put communist and Nazi crimes on the same moral plane. The country chapters have held up thirty years later. Source: grokipedia.com/page/The_Black_Book_of_Communism.",
-    "topic": "stephane-courtois-the-french-maoist-who-counted"
-  },
-  {
-    "tier": 5,
-    "question": "In 1997 the French historian Stephane Courtois edited a giant book called The Black Book of Communism. It tallied the killings of every communist regime of the 20th century — Lenin's and Stalin's USSR, Mao's China, the Khmer Rouge in Cambodia, North Korea, Eastern Europe, and more. Courtois's introduction gave a topline total that has become the standard scholarly figure for the century's communist death toll. Approximately what range did he give?",
-    "answer": "About 85 to 100 million",
-    "choices": [
-      "About 85 to 100 million",
-      "About 5 to 10 million",
-      "About 200 to 300 million",
-      "About 1 to 2 million"
-    ],
-    "context": "The country breakdown: China ~65 million, USSR ~20 million, North Korea ~2 million, Cambodia ~2 million, Africa ~1.7 million, Afghanistan ~1.5 million, Vietnam ~1 million, Eastern Europe ~1 million, Latin America ~150 thousand. Source: grokipedia.com/page/The_Black_Book_of_Communism.",
-    "topic": "stephane-courtois-the-french-maoist-who-counted"
-  },
-  {
-    "tier": 5,
-    "question": "French historian Stephane Courtois became famous in 1997 for editing The Black Book of Communism, a scholarly accounting of the 85 to 100 million people killed under communist regimes. What gives his indictment its unusual moral force, though, is not just the archival scholarship. It is a specific biographical fact about his own youth in Paris during the 1968 student uprisings. What is that fact?",
-    "answer": "Courtois had himself been a Maoist student militant in 1968 before becoming the leading French counter-historian of communism",
-    "choices": [
-      "Courtois had himself been a Maoist student militant in 1968 before becoming the leading French counter-historian of communism",
-      "Courtois had himself served in the KGB before defecting to France",
-      "Courtois had himself survived a Chinese labor camp",
-      "Courtois had himself fought in the Spanish Civil War"
-    ],
-    "context": "The trajectory from believer to counter-historian gives the introduction a particular authority. It also explains the confrontational tone that his more cautious co-authors resisted in their Le Monde letter. Source: grokipedia.com/page/St%C3%A9phane_Courtois.",
+    "context": "Nicolas Werth and Jean-Louis Margolin signed a Le Monde letter distancing themselves from Courtois's equation of communist and Nazi crimes, while standing by the country chapters they had written. The country totals were not disputed.",
     "topic": "stephane-courtois-the-french-maoist-who-counted"
   },
   {
@@ -27548,20 +27262,7 @@
   },
   {
     "tier": 1,
-    "question": "On the night of August 12-13, 1961, the East German communist government sealed the border between East and West Berlin to stop its citizens from fleeing to the free West. Soldiers first rolled out barbed wire in the dark. Then workers built a concrete barrier that would stand for 28 years, splitting families and a city in two. What did they build?",
-    "answer": "The Berlin Wall",
-    "choices": [
-      "The Berlin Wall",
-      "The Iron Curtain",
-      "The Elbe Line",
-      "The Warsaw Line"
-    ],
-    "context": "Walter Ulbricht's East German government built the initial barrier overnight August 12-13, 1961. It grew into a concrete wall encircling West Berlin, standing until November 9, 1989. Source: en.wikipedia.org/wiki/Berlin_Wall.",
-    "topic": "the-berlin-wall-1961-89-the-calculation-debate-made-physical"
-  },
-  {
-    "tier": 1,
-    "question": "After World War II, Germany was split in half — the free western part and the communist East Germany controlled by the Soviet Union. The old capital, Berlin, was also split. In 1961, the East German communist government built a huge concrete wall completely around West Berlin to stop its own citizens from escaping into the free western half of the city. The Berlin Wall became the most famous symbol of communist rule keeping its own people trapped. Roughly how long was the full barrier around West Berlin?",
+    "question": "Walter Ulbricht sealed off West Berlin overnight on 12 August 1961: barbed wire first, strung in the dark, then concrete. The barrier did not follow the border between the two Germanys; it ringed West Berlin. Roughly how long was it?",
     "answer": "About 155 kilometers",
     "choices": [
       "About 155 kilometers",
@@ -27574,7 +27275,7 @@
   },
   {
     "tier": 2,
-    "question": "The Berlin Wall stood in the middle of Berlin, Germany, from 1961 to 1989. It divided communist East Germany from free West Germany during the Cold War. Along the Wall, East German soldiers manned tall concrete watchtowers armed with machine guns. Those guns were not aimed westward at the free countries at all. They were aimed the opposite way. Which direction did the watchtower guns actually point?",
+    "question": "East German border guards shot twenty-year-old Chris Gueffroy as he tried to cross the Berlin Wall in February 1989; he was the last to die there. Machine guns stood in the Wall's watchtowers. Which way did they point?",
     "answer": "East, at East Germans",
     "choices": [
       "East, at East Germans",
@@ -27582,12 +27283,12 @@
       "Straight up, at aircraft",
       "Both directions equally"
     ],
-    "context": "The Wall's fortifications faced INWARD -- guns and mines directed at East Germans trying to leave, not westward at any invading force. The design fact is the argument: the state had to wall its own citizens in. Source: en.wikipedia.org/wiki/Berlin_Wall.",
+    "context": "The Wall's fortifications faced inward: guns and mines aimed at East Germans trying to leave, not westward at any invading force. Chris Gueffroy (February 5, 1989) was shot trying to cross to West Berlin; his was the last shooting death at the Wall. The design fact is the argument: the state had to wall its own citizens in.",
     "topic": "the-berlin-wall-1961-89-the-calculation-debate-made-physical"
   },
   {
     "tier": 2,
-    "question": "After World War II, Germany was split in two — communist East Germany on one side, free West Germany on the other. The city of Berlin sat inside East Germany but was itself split, and until 1961 people in East Berlin could simply walk across into West Berlin. So they did. Between 1949 and 1961 huge numbers of East Germans walked out this way, more than a fifth of the entire country. About how many people had left by the time the East German government finally built the Berlin Wall to stop them?",
+    "question": "A young East German walked across Berlin into the western half of the city in the summer of 1961, as East Germans had done since 1949, until those leaving made up roughly a fifth of everyone in East Germany. Then the Wall went up. Roughly how many had left?",
     "answer": "About 3.5 million",
     "choices": [
       "About 3.5 million",
@@ -27600,7 +27301,7 @@
   },
   {
     "tier": 3,
-    "question": "After the 1961 Berlin Wall closed the last escape route out of communist East Germany, people still tried to cross -- swimming rivers, climbing fences, digging tunnels, and racing across the border strip. Guards were ordered to shoot to kill. Over the 28 years the Wall stood, the Berlin Wall Memorial in Germany has confirmed a documented death toll at the Wall itself. What is that figure?",
+    "question": "A guard on the Berlin Wall opened fire on a man sprinting across the raked sand of the border strip, under orders to shoot to kill. The Berlin Wall Memorial has since documented every death it can confirm at the Wall itself in the 28 years it stood. About how many were there?",
     "answer": "About 140",
     "choices": [
       "About 140",
@@ -27613,7 +27314,7 @@
   },
   {
     "tier": 3,
-    "question": "East Germany's communist government ran a huge secret police force called the Stasi, based in East Berlin. To keep tabs on its roughly 16 million citizens, the Stasi employed one uniformed officer for every 180 people, and it also recruited about twice as many unpaid civilian informants — neighbors, friends, even spouses reporting on each other. What does that enormous amount of spying tell us about how the East German rulers actually held on to power?",
+    "question": "An East German husband filed reports on his own wife with the Stasi, the Ministry for State Security. The Stasi kept about one uniformed officer for every 180 citizens, and about two unpaid informers for every officer. What does watching on that scale say about the East German state?",
     "answer": "It had to spy on its own people constantly to hold control",
     "choices": [
       "It had to spy on its own people constantly to hold control",
@@ -27626,7 +27327,7 @@
   },
   {
     "tier": 3,
-    "question": "The Berlin Wall split communist East Berlin from the free West for nearly 30 years. Within days of its being built, people started dying trying to escape -- some by jumping from apartment windows in the border zone. What does that very first escape death show?",
+    "question": "Ida Siekmann leapt from a fourth-floor window of her Bernauer Strasse flat nine days after East Germany strung its barbed wire through Berlin in August 1961; her house was in the East, the street below it in the West. She died of the fall. What does her death show?",
     "answer": "People were willing to risk death rather than stay trapped inside",
     "choices": [
       "People were willing to risk death rather than stay trapped inside",
@@ -27639,20 +27340,7 @@
   },
   {
     "tier": 4,
-    "question": "The Berlin Wall was built by communist East Germany in 1961 and stood for 28 years. It was designed and guarded to stop people from moving in one direction only. In February 1989, only months before the Wall finally fell, East German border guards shot 20-year-old Chris Gueffroy — the last person killed trying to cross. In which direction were people like Gueffroy trying to escape?",
-    "answer": "From communist East Berlin to free West Berlin",
-    "choices": [
-      "From communist East Berlin to free West Berlin",
-      "From free West Berlin into communist East Berlin",
-      "From East Berlin north into Denmark",
-      "In both directions about equally at all times"
-    ],
-    "context": "Chris Gueffroy (February 5, 1989) was shot trying to cross to West Berlin. His death drew international protest and East German policy shifted; his was the last shooting fatality at the Wall. Source: berliner-mauer-gedenkstaette.de.",
-    "topic": "the-berlin-wall-1961-89-the-calculation-debate-made-physical"
-  },
-  {
-    "tier": 4,
-    "question": "After East Germany's communist government fell in 1990, its secret police, the Stasi, left behind millions of pages of files spying on ordinary citizens. Germany passed a law called the Stasi Records Act, giving all East Germans the right to read the file the state had kept about them personally — and to see which friends, coworkers, and family members had informed. Why does opening these kinds of files matter after a police state falls?",
+    "question": "A woman from East Germany read the file the Stasi had kept on her, a right a German law of December 1991 gave every former East German. The secret police left behind millions of pages on ordinary people. Why does opening such an archive matter once a police state falls?",
     "answer": "It lets people see who spied on them and makes the informers publicly known",
     "choices": [
       "It lets people see who spied on them and makes the informers publicly known",
@@ -27665,7 +27353,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 1920s the Austrian economist Ludwig von Mises argued that a fully planned socialist economy could not calculate prices rationally, because without real markets there is no way to know what people truly want. His student Friedrich Hayek carried on the debate for decades. The Berlin Wall — 3.5 million East Germans having already fled before it went up in 1961, and machine guns aimed inward at the East — illustrated the Austrian point at physical scale. Which core Austrian argument did the Wall's design demonstrate?",
+    "question": "Ludwig von Mises argued in 1920 that central planning has no way to price anything rationally, since without markets nothing tells a planner what people want; Friedrich Hayek pressed the case for fifty more years. In Berlin the border between the two systems stayed open for twelve years, from 1949 until 1961. In the Austrian reading, which argument did the Wall turn into masonry?",
     "answer": "When people are free to compare, they choose the market side and the planned economy has to wall them in",
     "choices": [
       "When people are free to compare, they choose the market side and the planned economy has to wall them in",
@@ -27678,7 +27366,7 @@
   },
   {
     "tier": 5,
-    "question": "The Berlin Wall was the concrete and barbed-wire barrier the East German communist government built completely around West Berlin, to keep its own citizens from fleeing to the free western half of the city. It stood for exactly 28 years. When the communist regime finally collapsed, ordinary Germans from both sides rushed the gates with hammers and pickaxes and tore the wall down with their own hands. In what years did the Berlin Wall stand?",
+    "question": "Ordinary Germans from both sides rushed the Berlin Wall with hammers and pickaxes when the East German regime collapsed, and tore it down with their own hands. The Wall had stood for twenty-eight years. In which years did it stand?",
     "answer": "1961 to 1989",
     "choices": [
       "1961 to 1989",
@@ -27899,33 +27587,20 @@
   },
   {
     "tier": 1,
-    "question": "In 1997 the French publisher Robert Laffont put out a huge 900-page book by six European historians, edited by Stephane Courtois. Using country archives that had opened after the Soviet Union fell in 1991, the book counted the deaths caused by communist governments across the entire 20th century -- from Lenin's Russia to Mao's China to Pol Pot's Cambodia. What is the book's short name?",
+    "question": "Six European historians, led by Stephane Courtois, worked through archives thrown open by the Soviet collapse, tallying the dead of every communist regime, Lenin's Russia, Mao's China and Pol Pot's Cambodia among them. Their 900-page book came out in Paris in 1997. What is its short title?",
     "answer": "The Black Book of Communism",
     "choices": [
       "The Black Book of Communism",
-      "The Red Ledger",
       "The Gulag Archipelago",
-      "Bloodlands"
+      "Bloodlands",
+      "The Rise and Fall of Communism"
     ],
-    "context": "Le Livre noir du communisme was published by Editions Robert Laffont, Paris, in 1997. Harvard University Press released the English translation in 1999. Source: en.wikipedia.org/wiki/The_Black_Book_of_Communism.",
-    "topic": "the-black-book-of-communism-1997"
-  },
-  {
-    "tier": 1,
-    "question": "In 1997, six European historians led by editor Stephane Courtois published a huge book counting the deaths caused by communist governments across the 20th century. They added up famines like Mao's Great Leap Forward, mass shootings under Stalin, prison-camp deaths across the gulag system, and killing fields in Cambodia and elsewhere. About how many people did they say died?",
-    "answer": "Around 100 million",
-    "choices": [
-      "Around 100 million",
-      "Around 1 million",
-      "Around 10 thousand",
-      "Around 500 thousand"
-    ],
-    "context": "Stephane Courtois, historian at the CNRS (French national research center), spent three decades reading the archives that opened after 1991. Source: en.wikipedia.org/wiki/St%C3%A9phane_Courtois.",
+    "context": "Le Livre noir du communisme was published by Editions Robert Laffont, Paris, on November 6, 1997; Harvard University Press released the English translation in 1999 as The Black Book of Communism: Crimes, Terror, Repression.",
     "topic": "the-black-book-of-communism-1997"
   },
   {
     "tier": 2,
-    "question": "The Black Book of Communism, published in France in 1997 by six historians led by editor Stephane Courtois, added up the deaths caused by communist governments across the 20th century. The team used country archives that had opened after the fall of the Soviet Union in 1991 -- Soviet, Chinese, Cambodian, and eastern-European records that had been secret for decades. What range of total deaths did Courtois record?",
+    "question": "Stephane Courtois added up the country chapters of The Black Book of Communism in his introduction of 1997: shootings under Stalin, Mao's famine, the labor camps, the killing fields of Cambodia. What total did he reach for the dead of communist rule in the twentieth century?",
     "answer": "About 85-100 million",
     "choices": [
       "About 85-100 million",
@@ -27933,25 +27608,12 @@
       "About 850 million to 1 billion",
       "About 5-10 million"
     ],
-    "context": "The Black Book's totals: about 65M in China, 20M in the USSR, 2M in Cambodia, 2M in North Korea, 1.7M in Africa, 1.5M in Afghanistan, ~1M in Vietnam, 150K in Eastern Europe. Aggregate 85-100M. Source: The Black Book of Communism (1997/1999).",
-    "topic": "the-black-book-of-communism-1997"
-  },
-  {
-    "tier": 2,
-    "question": "The Black Book of Communism is a history book first published in France in 1997. A team of European historians added up the deaths caused by communist governments across the 1900s — the Soviet Union, China, Cambodia, North Korea, and more. They counted deliberate shootings, executions in labor camps, and famines caused by state policies that seized farms. About how many total deaths did the book estimate?",
-    "answer": "Around 100 million",
-    "choices": [
-      "Around 100 million",
-      "Around 1 million",
-      "Around 500,000",
-      "Around 5 billion"
-    ],
-    "context": "Harvard University Press published the English edition in 1999 under the title The Black Book of Communism: Crimes, Terror, Repression. Source: hup.harvard.edu.",
+    "context": "The Black Book's country breakdown: China about 65 million, the USSR about 20 million, North Korea about 2 million, Cambodia about 2 million, Africa about 1.7 million, Afghanistan about 1.5 million, Vietnam about 1 million, Eastern Europe about 1 million, Latin America about 150 thousand: about 85-100 million in all, the figure rounded to 'around 100 million' in general use.",
     "topic": "the-black-book-of-communism-1997"
   },
   {
     "tier": 3,
-    "question": "In 1997 a team of European historians published The Black Book of Communism, a country-by-country count of deaths under communist rule during the 1900s. For the Soviet Union alone — the decades of Lenin and Stalin — they added up the Gulag camps, the Ukrainian famine of 1932-33, the Great Purge shootings, and other state killings. The Soviet total came to about how many deaths?",
+    "question": "Nicolas Werth worked from the newly opened Soviet files to write the Soviet chapter of The Black Book of Communism, counting the camps, the shootings of the Great Purge and the Ukrainian famine of 1932-33. What total did he reach for the Soviet Union?",
     "answer": "About 20 million",
     "choices": [
       "About 20 million",
@@ -27963,21 +27625,8 @@
     "topic": "the-black-book-of-communism-1997"
   },
   {
-    "tier": 3,
-    "question": "The Black Book of Communism, published in France in 1997, opened with an introduction by editor Stephane Courtois titled 'The Crimes of Communism.' The intro set off a famous public fight among the six co-authors -- two of them, Nicolas Werth and Jean-Louis Margolin, wrote open letters protesting one specific claim Courtois had made in the intro. What claim did the two co-authors publicly protest?",
-    "answer": "The equation of communist and Nazi crimes",
-    "choices": [
-      "The equation of communist and Nazi crimes",
-      "The specific China total of 65 million",
-      "The framing of Ceausescu's execution as justified",
-      "The inclusion of Ethiopia in the totals"
-    ],
-    "context": "Nicolas Werth and Jean-Louis Margolin signed a Le Monde letter distancing themselves from Courtois's equation of communist and Nazi crimes, while standing by the country chapters they had written. The country totals were not disputed. Source: Le Monde (November 1997 letter).",
-    "topic": "the-black-book-of-communism-1997"
-  },
-  {
     "tier": 4,
-    "question": "The China chapter of the Black Book of Communism counts deaths from three major disasters: the Great Leap Forward famine of 1959-61, the Cultural Revolution of 1966-76, and the ongoing laogai prison-labor camps. What total does the book give for China?",
+    "question": "Mao Zedong drove China into the Great Leap Forward, whose famine ran from 1959 to 1961, and then into the Cultural Revolution. The Black Book of Communism added the dead of both to the deaths in the laogai labor camps. What total did it give for China?",
     "answer": "About 65 million",
     "choices": [
       "About 65 million",
@@ -27990,7 +27639,7 @@
   },
   {
     "tier": 4,
-    "question": "The Black Book of Communism, published in 1997 by six historians led by editor Stephane Courtois, totaled around 85-100 million deaths caused by communist governments across the 20th century. Historians also count the crimes of Nazi Germany -- the Holocaust plus other Nazi killings -- as one of the great mass horrors of the same century. Compared to the whole communist total in the Black Book, roughly how big was the Nazi total?",
+    "question": "Stephane Courtois set communism's crimes beside Nazi Germany's in his introduction to The Black Book of Communism, and asked why the public remembers the two so unequally. Compared with the communist count in his book, roughly how big were the Nazi regime's killings, the Holocaust included?",
     "answer": "About one-fourth",
     "choices": [
       "About one-fourth",
@@ -28003,20 +27652,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2003 the American journalist Anne Applebaum won the Pulitzer Prize for General Nonfiction for a book called 'Gulag: A History.' It was the first thorough English-language account of the Soviet Union's massive forced-labor camp system, which stretched from the 1920s into the 1950s under Lenin and especially Joseph Stalin. Roughly how many people passed through those camps across the entire life of the system?",
-    "answer": "About 18 million",
-    "choices": [
-      "About 18 million",
-      "About 500,000",
-      "About 2 million",
-      "About 200 million"
-    ],
-    "context": "Applebaum's Gulag: A History (Doubleday, 2003) won the 2004 Pulitzer for General Nonfiction. It uses newly opened Soviet archives to tell the camp system's history from Solovki 1918 through the post-Stalin dismantling. Source: en.wikipedia.org/wiki/Gulag:_A_History.",
-    "topic": "the-black-book-of-communism-1997"
-  },
-  {
-    "tier": 5,
-    "question": "China's 'Great Leap Forward' from 1958 to 1962 tried to leap ahead of the West through forced collectivization of farms and backyard steel furnaces. The result was the largest famine in human history. Roughly how many people are now estimated to have died?",
+    "question": "Yang Jisheng, a journalist for China's Xinhua news agency, dug through provincial archives for years before publishing his account of the Great Leap Forward in Hong Kong in 2008. Mao's campaign had forced farms into collectives and set up backyard steel furnaces. How many deaths did Yang count from its famine alone?",
     "answer": "About 36 million",
     "choices": [
       "About 36 million",
@@ -28029,7 +27665,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1997 a team of European scholars led by Stephane Courtois published Le Livre noir du communisme (The Black Book of Communism). It compiled evidence of roughly 100 million deaths under communist regimes across the 20th century. The book drew both scholarly and popular interest around the world and was translated into many languages. Roughly how many translations were published?",
+    "question": "A reader in Paris bought one of the more than two hundred thousand copies of The Black Book of Communism sold in France in its first year. The book did not stay French for long. About how many language editions of it have appeared?",
     "answer": "About 26",
     "choices": [
       "About 26",
@@ -34945,7 +34581,7 @@
   },
   {
     "tier": 1,
-    "question": "From 1930 to the mid-1950s the Soviet Union ran a huge system of forced-labor camps, scattered across Siberia and the far north. Prisoners — many of them arrested for saying the wrong thing or belonging to the wrong class — worked in freezing mines and forests, cutting timber and digging ore. Millions died of cold, hunger, and overwork. What Russian word is the name for this camp system?",
+    "question": "A Soviet clerk wrote an abbreviation on a prisoner's papers, the short form of the Russian name for the Main Camp Administration. The camps it ran held people arrested for a careless joke, cutting timber and mining ore in killing cold across Siberia. What was the abbreviation?",
     "answer": "Gulag",
     "choices": [
       "Gulag",
@@ -34953,25 +34589,12 @@
       "Duma",
       "Politburo"
     ],
-    "context": "Glavnoye Upravleniye Lagerei (Main Camp Administration) ran the Soviet camp system. At peak it comprised over 400 camps and held several million prisoners at any given moment. Source: en.wikipedia.org/wiki/Gulag.",
-    "topic": "the-soviet-gulag-solzhenitsyns-accounting"
-  },
-  {
-    "tier": 1,
-    "question": "The Russian writer Alexander Solzhenitsyn had been a prisoner in the Soviet forced-labor camps himself. Back home he secretly wrote a huge book about what he had seen, kept the pages hidden from the secret police, and had friends smuggle them out on tiny rolls of film. When The Gulag Archipelago finally appeared in the West in 1973, it shook the world. What did his book give the world?",
-    "answer": "The truth about the Soviet camps",
-    "choices": [
-      "The truth about the Soviet camps",
-      "A love story from wartime Russia",
-      "A guide to Russian cooking",
-      "The plans of the Soviet space program"
-    ],
-    "context": "Aleksandr Solzhenitsyn (1918-2008) spent eight years in the camps (1945-53) after his arrest for a private letter mocking Stalin. His The Gulag Archipelago was published in Paris in three volumes 1973-75. Source: en.wikipedia.org/wiki/Aleksandr_Solzhenitsyn.",
+    "context": "Glavnoye Upravleniye Lagerei (Main Camp Administration) ran the Soviet camp system. At its peak it comprised over 400 camps and held several million prisoners at any given moment. Anne Applebaum's Gulag: A History (2003) drew on the newly opened Soviet archives.",
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
   },
   {
     "tier": 2,
-    "question": "In 1973 a Russian writer who had spent years inside the Soviet labor camps published a huge three-volume book in Paris exposing the whole camp system. His book broke the West's belief that the camps were a small problem. What did the book mostly reveal?",
+    "question": "Aleksandr Solzhenitsyn, once a camp prisoner himself, kept his manuscript hidden from the secret police and had it smuggled west on tiny rolls of film. It came out in Paris from 1973, for Western readers who had heard the Soviet camps were a small stain. What did it chiefly reveal?",
     "answer": "The vast scale of Soviet prison camps and mass killings",
     "choices": [
       "The vast scale of Soviet prison camps and mass killings",
@@ -34979,12 +34602,12 @@
       "That the camps held only convicted violent criminals",
       "That Stalin had personally freed most of the prisoners"
     ],
-    "context": "The Gulag Archipelago combined Solzhenitsyn's own experience with hundreds of survivor accounts he had collected. English translation appeared 1974-78 in three volumes. Source: en.wikipedia.org/wiki/The_Gulag_Archipelago.",
+    "context": "The Gulag Archipelago combined Solzhenitsyn's own eight years in the camps (1945-53), after his arrest for a private letter mocking Stalin, with hundreds of survivor accounts he had collected. It was published in Paris in three volumes, 1973-75; the English translation appeared 1974-78.",
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
   },
   {
     "tier": 2,
-    "question": "Aleksandr Solzhenitsyn was a Soviet writer who had survived Stalin's labor camps and secretly documented their horrors. In December 1973, the first book of his masterpiece The Gulag Archipelago was smuggled out and published in Paris. Two months later, in February 1974, the furious Soviet state hit back at him. What did it do?",
+    "question": "Soviet leaders struck at Aleksandr Solzhenitsyn in February 1974. Two months earlier the first volume of his account of the camps had come out in Paris, from a manuscript smuggled out of the country. What did they do to him?",
     "answer": "Stripped him of citizenship and flew him to Frankfurt",
     "choices": [
       "Stripped him of citizenship and flew him to Frankfurt",
@@ -34997,7 +34620,7 @@
   },
   {
     "tier": 3,
-    "question": "In the late 1930s, the Soviet dictator Joseph Stalin launched what became known as the Great Purge. He ordered mass arrests, staged show trials in Moscow, and executed generals, party members, poets, and ordinary citizens he thought disloyal. Soviet archives opened after the Soviet Union fell showed roughly how many people this campaign killed. What was that number?",
+    "question": "Joseph Stalin ordered mass arrests in 1937 and 1938, staged show trials in Moscow, and had generals, party members, poets and ordinary citizens executed as disloyal. Soviet archives opened after 1991 showed how many his Great Purge had killed. Roughly how many?",
     "answer": "Well over a million people",
     "choices": [
       "Well over a million people",
@@ -35009,21 +34632,8 @@
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
   },
   {
-    "tier": 3,
-    "question": "From the 1920s through the 1950s, under Lenin and then Stalin, the Soviet government sent millions of people to forced-labor camps. Many were arrested for so-called political crimes — a joke about a leader, a friend abroad, a spoken doubt. The camps were scattered across Siberia and other freezing regions, and prisoners cut timber and mined gold in temperatures far below zero. What was this camp system called?",
-    "answer": "The Gulag",
-    "choices": [
-      "The Gulag",
-      "The Peace Corps",
-      "The Marshall Plan",
-      "The Warsaw Pact"
-    ],
-    "context": "Anne Applebaum's Gulag: A History (Doubleday, 2003) drew on newly opened Soviet archives. Her later work includes Iron Curtain (2012) on postwar Eastern Europe and Red Famine (2017) on Ukraine. Source: en.wikipedia.org/wiki/Gulag:_A_History.",
-    "topic": "the-soviet-gulag-solzhenitsyns-accounting"
-  },
-  {
     "tier": 4,
-    "question": "The Gulag was the Soviet Union's vast network of forced-labor camps, running from Stalin's rise through his death in 1953. In her 2003 book Gulag: A History, the historian Anne Applebaum tallied every prisoner known to have passed through those camps between 1930 and 1953. What was her total figure?",
+    "question": "Anne Applebaum worked through the Soviet archives opened after 1991 to write the first full history of the camps in English, published in 2003 and awarded the Pulitzer Prize. She totalled the prisoners sent into the camps between 1930 and Stalin's death in 1953. Roughly how many were there?",
     "answer": "About 18 million",
     "choices": [
       "About 18 million",
@@ -35031,12 +34641,12 @@
       "About 180,000",
       "About 180 million"
     ],
-    "context": "About 18 million prisoners passed through the Gulag between 1930 and 1953, with roughly 1.5-1.7 million documented camp deaths. Further mortality in the deportation-settlement system for kulaks and deported peoples adds to the associated total. Source: Applebaum, Gulag: A History (2003).",
+    "context": "About 18 million prisoners passed through the Gulag between 1930 and 1953, with roughly 1.5-1.7 million documented camp deaths. Applebaum's Gulag: A History (Doubleday, 2003), drawn from the newly opened Soviet archives, won the 2004 Pulitzer Prize for General Nonfiction. Further mortality in the deportation-settlement system for kulaks and deported peoples adds to the associated total.",
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
   },
   {
     "tier": 4,
-    "question": "Aleksandr Solzhenitsyn was a Russian writer who survived a Soviet labor camp himself and then spent years secretly interviewing more than two hundred other survivors. In 1970 the Nobel Prize in Literature honored his testimony against Soviet tyranny. His most famous work, a three-volume book, mapped the entire Soviet slave-labor camp system, camp by camp, region by region. What is that book called?",
+    "question": "Aleksandr Solzhenitsyn collected the stories of more than two hundred former prisoners after his own eight years in the camps, which followed his 1945 arrest for mocking Stalin in a private letter. He won the Nobel Prize in Literature in 1970 and mapped the whole camp system, region by region, in three volumes. What is the work called?",
     "answer": "The Gulag Archipelago",
     "choices": [
       "The Gulag Archipelago",
@@ -35049,7 +34659,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1974, Aleksandr Solzhenitsyn's three-volume book The Gulag Archipelago appeared in the West and documented the Soviet labor-camp system in devastating detail. It hit the French intellectual left, which had long defended the Soviet Union, with real moral force. A group of former Maoist students in Paris broke with communism and began arguing that Marxist regimes produced camps, not paradise. What was this group called?",
+    "question": "Bernard-Henri Levy and Andre Glucksmann, two ex-Maoist students in Paris, turned publicly against Marxism once they had read Aleksandr Solzhenitsyn's three volumes on the Soviet camps. They and their circle began saying aloud that such regimes produce camps, not paradise. What did the French press call the group?",
     "answer": "The Nouveaux Philosophes",
     "choices": [
       "The Nouveaux Philosophes",
@@ -35058,19 +34668,6 @@
       "The Situationists"
     ],
     "context": "The Nouveaux Philosophes (New Philosophers) -- Andre Glucksmann, Bernard-Henri Levy, and others -- publicly renounced Marxism partly under the impact of Solzhenitsyn's book. The moment marked the French intellectual left's break with communist theory. Source: en.wikipedia.org/wiki/Nouveaux_philosophes.",
-    "topic": "the-soviet-gulag-solzhenitsyns-accounting"
-  },
-  {
-    "tier": 5,
-    "question": "In 1968 the British-American historian Robert Conquest published The Great Terror, a book about Stalin's mass killings of the 1930s. Working from letters, memoirs, and refugee accounts, he estimated the death toll far above the Soviet Union's official figures. For years many Western critics attacked his number as wildly too high. Then in 1991 the Soviet Union collapsed and the archives opened -- and the tallies matched Conquest almost exactly. What does that archival vindication reveal about scholarship done from abroad versus a dictatorship's own record-keeping?",
-    "answer": "Honest outside estimates can be closer to the truth than a closed regime's official numbers",
-    "choices": [
-      "Honest outside estimates can be closer to the truth than a closed regime's official numbers",
-      "Historians outside a country can never estimate that country's deaths accurately",
-      "Soviet official statistics on the Terror were always accurate all along",
-      "The Great Terror actually caused very few deaths"
-    ],
-    "context": "The editor did not use the suggested title -- the 1990 revised edition was still called The Great Terror -- but the anecdote captured the intellectual settlement. Sovietologists who had dismissed Conquest's 1968 count as Cold War inflation found the archives confirmed his numbers. Source: en.wikipedia.org/wiki/Robert_Conquest. (Original quote used an expletive; softened for a family bank.)",
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
   },
   {
@@ -35738,7 +35335,7 @@
   },
   {
     "tier": 1,
-    "question": "For decades the United States has kept the price of one common food at about twice the world price. It does this by strictly limiting how much of that food can be brought in from other countries and by giving low-interest loans to American growers of the crop. Kids taste this price every time they buy candy or soda. Which food is it?",
+    "question": "A kid buying candy and a soda in an American corner store pays extra for one ingredient in both. Congress has propped up its price since 1934, partly with cheap federal loans to the American farmers who grow it. Which food is it?",
     "answer": "Sugar",
     "choices": [
       "Sugar",
@@ -35751,7 +35348,7 @@
   },
   {
     "tier": 1,
-    "question": "The US government puts a big tariff -- a tax on imports -- on sugar brought in from Brazil, Mexico, and other countries. Because of that tariff, sugar in America costs about twice as much as sugar sold on the world market. Millions of families notice it every time they buy sweets, soft drinks, or baked goods. Who is hurt most?",
+    "question": "Frédéric Bastiat taught readers to ask first, of any law that raises a price, who pays for it. Washington has held American sugar near double the world price for decades. Who bears the cost?",
     "answer": "American shoppers -- they pay more for candy, soda, and food",
     "choices": [
       "American shoppers -- they pay more for candy, soda, and food",
@@ -35764,7 +35361,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2003 the candy company Kraft closed the Michigan factory that made Life Savers, the famous ring-shaped hard candy that kids have chewed for a century. Kraft moved production to Montreal, Canada, because US sugar cost about twice as much as Canadian sugar -- and sugar is the main ingredient of a Life Saver. Why was American sugar so pricey?",
+    "question": "Kraft closed its Life Savers factory in Holland, Michigan, in 2003 and sent the candy's production to Montreal, where sugar sold for about half the price. Sugar makes up most of every Life Saver. Why was American sugar so much dearer?",
     "answer": "US laws limit sugar imports so American sugar farmers can charge more",
     "choices": [
       "US laws limit sugar imports so American sugar farmers can charge more",
@@ -35777,7 +35374,7 @@
   },
   {
     "tier": 2,
-    "question": "American sugar tariffs and import quotas keep US sugar prices at roughly double the world price. Candy makers who rely on cheap sugar have to buy at that inflated price. In the 2000s, two big Chicago-area candy makers moved much of their production overseas, saying they could no longer afford to buy sugar inside America. Which pair of companies moved?",
+    "question": "Two Chicago-area candy makers moved a large share of their candy-making to Mexico in the 2000s, and both said plainly why: they could not afford American sugar at about double the world price. Which pair was it?",
     "answer": "Ferrara Pan and Brach's",
     "choices": [
       "Ferrara Pan and Brach's",
@@ -35789,34 +35386,8 @@
     "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
   },
   {
-    "tier": 3,
-    "question": "The US Sugar Program is a law that keeps American sugar prices about twice the world price. Every few years Congress votes on a new Farm Bill, and every time the Sugar Program stays in -- even though hundreds of millions of American shoppers pay more for candy, soda, and baked goods because of it. A small group of sugar growers gains millions; each shopper loses only a few dollars. Which economic idea best explains why the program keeps winning?",
-    "answer": "Mancur Olson's concentrated benefits and dispersed costs",
-    "choices": [
-      "Mancur Olson's concentrated benefits and dispersed costs",
-      "John Rawls's veil of ignorance",
-      "Ronald Coase's transaction-cost bargaining",
-      "John Kenneth Galbraith's countervailing power"
-    ],
-    "context": "Olson's The Logic of Collective Action (1965): about 4,000 sugar farms get large concentrated payoffs and organize politically; about 330 million consumers each pay a few dollars extra a year and do not. The smaller organized group wins. Source: grokipedia.com/page/The_Logic_of_Collective_Action.",
-    "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
-  },
-  {
-    "tier": 3,
-    "question": "US sugar lobbyists often say American sugar growers must be shielded from cheaper foreign sugar or they will go out of business. In 1845 the French economist Frederic Bastiat wrote a famous satire mocking that exact kind of argument. In his tale, French candlemakers petition the government to block the sun -- because the sun gives away free light and unfairly hurts their industry. What is this satire called?",
-    "answer": "The Petition of the Candlemakers",
-    "choices": [
-      "The Petition of the Candlemakers",
-      "The Broken Window fallacy",
-      "The Negative Railway argument",
-      "The Petition of the Vintners"
-    ],
-    "context": "In 1845 Frederic Bastiat's Petition of the Candlemakers had French makers of candles and lamps demand a law blocking sunlight to protect them from unfair sun-powered competition. Source: bastiat.org/en/petition.html.",
-    "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
-  },
-  {
     "tier": 4,
-    "question": "The French economist Frederic Bastiat taught the 'seen and unseen' method: don't just look at the workers a law protects, look at the industries that quietly buy that same good as an input. When the US doubles the price of sugar to help sugar growers, Bastiat's method points at the downstream industries that use sugar as an input -- candy factories, bakeries, soda bottlers. What outcome does his method predict for those industries when a domestic law doubles their input cost against the world price?",
+    "question": "An American soda bottler signs for a truckload of sugar at about double the world price. Frédéric Bastiat taught readers to look past the growers a law protects to the industries that buy the same crop as an ingredient. What does his method predict firms like this will do?",
     "answer": "They move production to where sugar is cheap",
     "choices": [
       "They move production to where sugar is cheap",
@@ -35829,7 +35400,7 @@
   },
   {
     "tier": 5,
-    "question": "The US Sugar Program is a set of federal price supports and import quotas that keep American sugar prices at about double the world price. Most of the multi-billion-dollar gain flows to a single Cuban-American family in Florida -- the owners of Domino Sugar and Florida Crystals, two of the largest sugar companies in the country. What is the family's name?",
+    "question": "A shopper takes a bag of Domino Sugar off the shelf of an American supermarket. Nearly all of the federal sugar program's gain, billions of dollars, goes to a single Cuban-American family in Florida, owners of Domino Sugar and Florida Crystals. What is the family's name?",
     "answer": "The Fanjul family",
     "choices": [
       "The Fanjul family",
@@ -37324,20 +36895,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1999, Hugo Chavez took power in Venezuela promising 'socialism for the twenty-first century.' One of his first economic moves was to freeze prices for food, fuel, and everyday goods at levels the government chose. Store owners were told: sell for the state's price or go to jail. But the mandated prices were often lower than what it cost to produce or import the goods, so every sale meant a loss. What happened next in Venezuelan shops?",
-    "answer": "Shelves went empty -- shops stopped stocking things that lost money",
-    "choices": [
-      "Shelves went empty -- shops stopped stocking things that lost money",
-      "Shelves stayed full -- shopkeepers gladly sold at a loss",
-      "Many new stores opened",
-      "Prices dropped to zero everywhere"
-    ],
-    "context": "Chavez ruled Venezuela from 1999 to 2013 and built the model his successor Maduro inherited. Source: Grokipedia 'Hugo Chavez' (2026-09-05).",
-    "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
-  },
-  {
-    "tier": 1,
-    "question": "By the mid-2010s the Venezuelan government's price controls had emptied store shelves — bread, milk, and medicine all gone. To keep paying its bills, the government under President Nicolás Maduro printed enormous amounts of new bolivar money. A loaf of bread that once cost a few bolivars was soon millions of pesos, then billions. People carried cash in shopping bags. What is this called?",
+    "question": "Nicolas Maduro had bolivars printed to pay his government's bills, until a loaf of bread that once cost a few bolivars cost millions, then billions. Venezuelans hauled bags of cash to the market. What is a runaway rise in prices like that called?",
     "answer": "Hyperinflation",
     "choices": [
       "Hyperinflation",
@@ -37349,8 +36907,8 @@
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
-    "tier": 2,
-    "question": "Through the 2010s, Venezuela's socialist government -- Hugo Chavez and then Nicolas Maduro -- set legal top prices on food and basic goods, prices far below what shops needed to charge just to restock. Producers stopped shipping at a loss. Walk into a Caracas supermarket or a drug store and shelves that used to be full were bare. What did shoppers keep finding was missing?",
+    "tier": 1,
+    "question": "Hugo Chavez won power in Venezuela in 1999 on a promise of socialism for a new century, and his government fixed the prices of food and fuel. Shopkeepers had to sell at those prices or face jail, though they often failed to cover what the goods cost to make or import. What did shoppers run into?",
     "answer": "Widespread shortages of flour, chicken, toilet paper, and medicine",
     "choices": [
       "Widespread shortages of flour, chicken, toilet paper, and medicine",
@@ -37358,12 +36916,12 @@
       "A rapid rise in real wages",
       "Falling emigration as living standards improved"
     ],
-    "context": "Producers facing prices below their costs cut output. Shelves emptied. The government blamed a 'capitalist conspiracy' and sent soldiers to force shops to sell at controlled prices. Source: Grokipedia 'Crisis in Venezuela' (2026-09-05).",
+    "context": "Chavez ruled Venezuela from 1999 to 2013 and built the model his successor Maduro inherited. Producers facing prices below their costs cut output, and shelves emptied. The government blamed a 'capitalist conspiracy' and sent soldiers to force shops to sell at controlled prices.",
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
     "tier": 2,
-    "question": "By 2018 Venezuela's economy was in freefall. Years of Chavez and Maduro's price controls, oil-industry seizures, and money-printing had unleashed hyperinflation on the same scale as Weimar Germany in 1923, when Germans burned marks in their stoves for heat. That year the International Monetary Fund (IMF) released its official estimate of Venezuela's yearly inflation rate. About how high did the IMF say prices were rising?",
+    "question": "A grocer raised his prices again and again through 2018 as Nicolas Maduro's government kept printing bolivars. The International Monetary Fund put a figure on that year's price rise in Venezuela. About how fast did it say prices were climbing?",
     "answer": "About 130,000% per year",
     "choices": [
       "About 130,000% per year",
@@ -37376,7 +36934,7 @@
   },
   {
     "tier": 3,
-    "question": "After two decades of socialist rule under Hugo Chavez and Nicolas Maduro, Venezuela's economy was in ruins -- hyperinflation, empty grocery shelves, medicine shortages, a broken oil industry. Ordinary Venezuelans packed what they could carry and walked out, crossing into Colombia, Peru, Brazil, and beyond. By 2024 the United Nations was tracking one of the largest peacetime exoduses in modern history. About what share of the country had left?",
+    "question": "A Venezuelan family packed what it could carry and set off on foot for Colombia, leaving a country that had once been middle-income. By 2024 the United Nations was tracking one of the largest peacetime exoduses in modern history. About what share of the country had left?",
     "answer": "About one quarter, some 7.7 million people",
     "choices": [
       "About one quarter, some 7.7 million people",
@@ -37389,7 +36947,7 @@
   },
   {
     "tier": 3,
-    "question": "By the early 2020s, Venezuela's hyperinflation had wrecked the bolivar so completely that people invented their own solution -- not from any government decree, but from millions of individual choices. Shopkeepers started listing prices in a foreign currency they trusted more. Meanwhile millions of Venezuelans working abroad wired money home to family through a US digital-payment app. Together these two moves gave Venezuela a partial economic recovery. What did Venezuelans start doing with prices and wages?",
+    "question": "A shopkeeper in Venezuela began quoting his prices in a foreign currency he trusted more than the bolivar, though no law told him to. Millions of other Venezuelans found their own ways around the wrecked national money. What did the country end up doing?",
     "answer": "Pricing goods in US dollars and receiving remittances via Zelle from relatives abroad",
     "choices": [
       "Pricing goods in US dollars and receiving remittances via Zelle from relatives abroad",
@@ -37401,47 +36959,8 @@
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
-    "tier": 4,
-    "question": "In 1920, an Austrian economist published a paper called 'Economic Calculation in the Socialist Commonwealth.' His argument was blunt: without private property in factories and land, there are no real markets; without markets, no real prices; and without prices telling planners that steel is scarcer than sand, central planners must guess in the dark. This paper opened what economists still call the 'socialist calculation debate.' Who wrote that 1920 paper?",
-    "answer": "Ludwig von Mises",
-    "choices": [
-      "Ludwig von Mises",
-      "Friedrich Hayek",
-      "Murray Rothbard",
-      "Israel Kirzner"
-    ],
-    "context": "Mises's 1920 paper 'Economic Calculation in the Socialist Commonwealth' argued that without market prices for capital goods, socialist planners have no way to know whether a proposed use of resources creates or destroys value. Source: mises.org/library/economic-calculation-socialist-commonwealth.",
-    "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
-  },
-  {
-    "tier": 4,
-    "question": "In 1920, just after Russia's Bolshevik revolution turned into full-scale central planning, the Austrian economist Ludwig von Mises published a paper called 'Economic Calculation in the Socialist Commonwealth.' Economists today call his argument the 'socialist calculation problem,' and it launched a decades-long debate. Mises said socialism could not work, for a reason baked into its design. Which deep flaw does the calculation problem point to?",
-    "answer": "Central planners cannot know what dispersed market prices would signal about scarcity and value",
-    "choices": [
-      "Central planners cannot know what dispersed market prices would signal about scarcity and value",
-      "Central planners always cheat and skim revenues for personal gain",
-      "Central planners cannot enforce laws without the consent of unions",
-      "Central planners fail because workers refuse to work for low wages"
-    ],
-    "context": "The calculation problem is epistemic, not moral. Even honest, well-intentioned planners cannot substitute for a working price system because prices aggregate dispersed knowledge that no central authority possesses. Source: Mises, Economic Calculation in the Socialist Commonwealth (1920).",
-    "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
-  },
-  {
     "tier": 5,
-    "question": "The Soviet collapse of 1991 and Mao's famines of 1958-62 happened before smartphones, in closed countries a Cold War away from most Americans -- their reality was hard to see even for the people living through them. Venezuela's collapse is different: it is unfolding right now, being filmed on cell phones and posted to social media, in a Spanish-speaking country close to the United States. That closeness gives the Venezuelan case something the older cases lack. What does Venezuela have that older socialist collapses do not?",
-    "answer": "It is happening now, on smartphone video, in a Western Hemisphere country a plane ride from Miami",
-    "choices": [
-      "It is happening now, on smartphone video, in a Western Hemisphere country a plane ride from Miami",
-      "It happened in a country with no oil resources or export commodities",
-      "It happened without a preceding period of price controls",
-      "It happened under a government that publicly renounced socialism"
-    ],
-    "context": "Old newsreels of Soviet or Maoist collapse are historical footage. Venezuela is on YouTube in Spanish that Google Translate handles instantly. A Western middle-schooler can watch the calculation problem play out in real time. Source: multiple English-language documentaries 2018-2024.",
-    "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
-  },
-  {
-    "tier": 5,
-    "question": "In 1920, Ludwig von Mises argued that a socialist economy cannot rationally allocate resources without market prices to signal scarcity. For most of the twentieth century, Mises's critics dismissed this as theoretical hand-waving -- an untestable claim from an old Austrian. Then Venezuela ran the experiment in slow motion, on live video, with hard economic data anyone can read. Which move does the Venezuelan case sharpen?",
+    "question": "Ludwig von Mises argued in 1920 that a socialist economy cannot allocate resources rationally without market prices to signal scarcity, and for most of the next century his critics called the claim untestable. Mao's famines and the Soviet collapse took place behind closed borders, hard to see even for those inside. Venezuela's collapse was filmed on phones as it happened, a short flight from Miami. Which move did the Venezuelan case sharpen?",
     "answer": "The socialist calculation problem is not an abstract academic dispute; it is an observable, current phenomenon",
     "choices": [
       "The socialist calculation problem is not an abstract academic dispute; it is an observable, current phenomenon",
@@ -37449,7 +36968,7 @@
       "Central planning is a good idea in principle but hard to execute in practice",
       "Modern digital tools solve the calculation problem central planners once faced"
     ],
-    "context": "The Mises argument that seemed like a theoretical dispute in 1920 is now a public fact playing out on smartphone video. The empirical case makes the theory unavoidable for any honest student. Source: Mises, Economic Calculation in the Socialist Commonwealth (1920).",
+    "context": "The Mises argument that seemed like a theoretical dispute in 1920 became a public fact playing out on smartphone video. Old newsreels of Soviet or Maoist collapse are historical footage; Venezuela is on YouTube in Spanish that Google Translate handles instantly, so a Western student can watch the calculation problem play out in real time.",
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
@@ -38663,20 +38182,7 @@
   },
   {
     "tier": 1,
-    "question": "For 28 years, a tall concrete wall built by the East German communist government split one German city in half -- the east side ruled by communists who shot people trying to escape, the west side free and prosperous. In November 1989 huge peaceful crowds tore the wall down with hammers when the border guards finally stood aside. What was that wall called?",
-    "answer": "The Berlin Wall",
-    "choices": [
-      "The Iron Curtain",
-      "The Berlin Wall",
-      "The DMZ fence",
-      "The Warsaw Pact line"
-    ],
-    "context": "Schabowski's slip triggered the physical opening of the wall that same night. The wall's fall became the visible signal that the Soviet-bloc planned economies had lost the argument. Source: www.archives.gov/news/topics/berlin-wall-anniversary.",
-    "topic": "why-the-austrians-won-the-1989-verdict"
-  },
-  {
-    "tier": 1,
-    "question": "For roughly 70 years the Soviet Union's government planned every farm, factory, and store in the country. Officials in Moscow decided how many tractors to build, how many potatoes to grow, and what wages to pay in each region. Then in 1991 the Soviet Union broke apart into 15 separate nations. What kind of economy had failed?",
+    "question": "A Soviet factory manager read his orders from Moscow: how many tractors to build, what wage to pay. Moscow decided what every farm and factory would produce for some seventy years, until the Soviet state broke into fifteen countries in 1991. What kind of economy had failed?",
     "answer": "A centrally planned command economy",
     "choices": [
       "A free-market economy",
@@ -38688,34 +38194,8 @@
     "topic": "why-the-austrians-won-the-1989-verdict"
   },
   {
-    "tier": 2,
-    "question": "In 1920 the Austrian economist Ludwig von Mises published a Vienna journal essay that became one of the most famous critiques of socialism ever written. He argued that a fully socialist economy would suffer chronic shortages, gluts, and waste because it would have no real market prices to compare the true costs of producing different things. The Soviet Union collapsed 69 years later, just as he had warned. What is the essay called?",
-    "answer": "Economic Calculation in the Socialist Commonwealth",
-    "choices": [
-      "Human Action",
-      "Economic Calculation in the Socialist Commonwealth",
-      "Nationaloekonomie",
-      "The Anti-Capitalistic Mentality"
-    ],
-    "context": "The German original 'Die Wirtschaftsrechnung im sozialistischen Gemeinwesen' appeared in Archiv fuer Sozialwissenschaft und Sozialpolitik volume 47 (1920), pages 86-121. Its predictions were tested at scale on hundreds of millions of people for seven decades. Source: en.wikipedia.org/wiki/Economic_Calculation_in_the_Socialist_Commonwealth.",
-    "topic": "why-the-austrians-won-the-1989-verdict"
-  },
-  {
-    "tier": 2,
-    "question": "In 1997, a team of French historians led by Stephane Courtois published a huge book adding up the deaths caused by 20th-century Communist regimes -- the Soviet Union, Maoist China, Cambodia's Khmer Rouge, North Korea, and others. Their total came to about 100 million lives. What is the book called?",
-    "answer": "The Black Book of Communism",
-    "choices": [
-      "The Black Book of Communism",
-      "The Gulag Archipelago",
-      "The Rise and Fall of Communism",
-      "Postwar"
-    ],
-    "context": "'Le Livre noir du communisme' (Robert Laffont, Paris, Nov 6 1997); English translation by Jonathan Murphy and Mark Kramer as 'The Black Book of Communism: Crimes, Terror, Repression' (Harvard University Press, 1999). Its introduction placed the total at around 100 million, compared with an estimated 25 million for the Nazi regimes. Source: en.wikipedia.org/wiki/The_Black_Book_of_Communism.",
-    "topic": "why-the-austrians-won-the-1989-verdict"
-  },
-  {
     "tier": 3,
-    "question": "In 1990, just after Eastern European communism collapsed, the American socialist economist Robert Heilbroner wrote a stunning essay in the New Yorker. He admitted that the Austrian economist Ludwig von Mises had been right all along: without real market prices, socialist planners were flying blind. Heilbroner named the exact problem Soviet pricing had caused. Which phrase did he use?",
+    "question": "Robert Heilbroner, a socialist all his life, wrote plainly in a 1990 magazine essay that Ludwig von Mises had been right. He gave a name to the results of Soviet pricing: mills turning out steel nobody bought, warehouses full of unsold shoes, shelves empty of anything people wanted. What phrase did he use?",
     "answer": "Grotesque misallocations of effort",
     "choices": [
       "Grotesque misallocations of effort",
@@ -38727,21 +38207,8 @@
     "topic": "why-the-austrians-won-the-1989-verdict"
   },
   {
-    "tier": 3,
-    "question": "Mises's 1920 argument said planners could not compare costs without market prices. Friedrich Hayek reframed the problem in a September 1945 essay. The real barrier, he said, was not the math but a kind of information markets create and planners can never get. Which kind of information?",
-    "answer": "The dispersed knowledge of time and place held in millions of minds",
-    "choices": [
-      "The dispersed knowledge of time and place held in millions of minds",
-      "The stable long-run demand elasticities for each consumer good",
-      "The public opinion polling on preferred production targets",
-      "The confidential cost accounts held by state enterprise managers"
-    ],
-    "context": "'The Use of Knowledge in Society' (AER 35:4, September 1945) argued the planner is missing the knowledge that only exists at the point of production and consumption. That knowledge is what prices summarise. Source: en.wikipedia.org/wiki/The_Use_of_Knowledge_in_Society.",
-    "topic": "why-the-austrians-won-the-1989-verdict"
-  },
-  {
     "tier": 4,
-    "question": "In December 1978 China's leader started pilot reforms letting farmers keep and sell whatever they grew above the state's required quota. Crop output jumped within a couple of years. Why did just letting farmers keep the extra cause such a fast harvest jump?",
+    "question": "A Chinese farmer sold the crops he raised above the state's required quota on his own account after December 1978, when the country's leaders allowed it. Harvests across China jumped within two seasons. Why did that one change work so fast?",
     "answer": "Farmers work harder when they get to keep more of what they produce",
     "choices": [
       "Farmers work harder when they get to keep more of what they produce",
@@ -38754,7 +38221,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1986 Vietnam's Communist Party copied China's 1978 reforms: they let farmers sell their crops, ended most price controls, and welcomed foreign investors. Vietnam's per-person income has since grown about eight times. What big change did these reforms make?",
+    "question": "Vietnam's leaders freed crop sales in 1986, scrapped most price controls and let foreign investors in, copying a move China had made in 1978. Income per head in Vietnam has risen roughly eightfold since. What big change did those reforms make?",
     "answer": "They moved the country from central planning toward a market economy",
     "choices": [
       "They moved the country from central planning toward a market economy",
@@ -38767,7 +38234,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1985 the American economist Don Lavoie published 'Rivalry and Central Planning.' He said the mainstream had answered Mises's point about prices but never engaged Hayek's deeper point about dispersed knowledge. Modern Austrians like Joseph Salerno, Peter Boettke, and Guido Huelsmann then drew a lesson about how the field handled the 1989 collapse. Which pattern did they name?",
+    "question": "Don Lavoie argued in Rivalry and Central Planning, in 1985, that economists had met Mises's point about prices but never faced Hayek's point about knowledge. Later Austrians, Peter Boettke, Joseph Salerno and Guido Huelsmann among them, named the pattern in how the profession took the collapse of 1989. What pattern did they name?",
     "answer": "The profession absorbed the empirical result while keeping Lange's blackboard verdict",
     "choices": [
       "The profession absorbed the empirical result while keeping Lange's blackboard verdict",
@@ -38780,7 +38247,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert Heilbroner was one of the 20th century's best-selling American socialist economists -- his book The Worldly Philosophers taught economic history to millions of students. In a 1990 New Yorker essay he made a famous public admission: Ludwig von Mises had been right about socialism all along. Heilbroner said his admission accepted the verdict of a 69-year experiment, the biggest test in social-science history. What deep question had planned economies been forced to answer with hundreds of millions of lives?",
+    "question": "Ludwig von Mises warned in 1920 that a fully planned economy would end in shortages, gluts and waste. Robert Heilbroner, the socialist author of The Worldly Philosophers, conceded in 1990 that a 69-year experiment had settled the matter. What question had the planned economies answered, with hundreds of millions of lives?",
     "answer": "Whether human beings could design an economic system rationally from a central point",
     "choices": [
       "Whether Marx's labour theory of value could be salvaged with better mathematics",
@@ -38793,7 +38260,7 @@
   },
   {
     "tier": 5,
-    "question": "A short 1920 German essay argued central planners could not calculate real prices without markets. Its ideas only reached most Western economists in 1935, when a fellow economist edited an English-language volume built around it. What effect did that translation and editing have?",
+    "question": "An English-speaking economist picked up a new volume in 1935 and met, for the first time, Ludwig von Mises's 1920 essay on whether planners can calculate. Friedrich Hayek had edited and introduced the collection. What effect did that translation and editing have?",
     "answer": "It set the terms of the whole planning-versus-markets debate for decades",
     "choices": [
       "It set the terms of the whole planning-versus-markets debate for decades",
