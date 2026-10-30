@@ -2861,7 +2861,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Greek city of Syracuse around 250 BC, the mathematician Archimedes was asked by King Hiero to figure out whether a new crown was really solid gold or a cheat mixed with silver — without melting it down. He puzzled over it for days with no answer. Then, lowering himself into his bath, he noticed the water rising as he sank in, and suddenly saw the trick. The story says he was so overjoyed he leapt out and ran through the streets shouting a single Greek word. Which word did Archimedes shout?",
+    "question": "Archimedes was lowering himself into a bath when he saw how to test King Hiero's gold crown for hidden silver without melting it. The story says he leapt out and ran naked through the streets, shouting one word. What did he shout?",
     "answer": "Eureka!",
     "choices": [
       "Eureka!",
@@ -2870,19 +2870,6 @@
       "Hurrah!"
     ],
     "context": "'Eureka' is Greek for 'I have found it!' The tale comes from the Roman writer Vitruvius (De Architectura, Book IX), writing about 200 years after Archimedes lived.",
-    "topic": "archimedes-eureka-and-the-siege-of-syracuse"
-  },
-  {
-    "tier": 1,
-    "question": "There is a famous water-lifting machine that bears Archimedes' name. It is a tube you crank by hand that scoops water up from a low place and pours it out higher up -- used to drain flooded ships and water fields, and still seen on farms today. What is it called?",
-    "answer": "the Archimedes screw",
-    "choices": [
-      "the Archimedes screw",
-      "the Archimedes claw",
-      "the Archimedes lever",
-      "the Archimedes wheel"
-    ],
-    "context": "A spiral inside a tube lifts water uphill as you turn it. It bears his name, though it may actually be older than Archimedes; he reportedly used one to pump bilge water out of the giant ship Syracusia. (Wikipedia: Archimedes)  (Legend.)",
     "topic": "archimedes-eureka-and-the-siege-of-syracuse"
   },
   {
@@ -2899,21 +2886,8 @@
     "topic": "archimedes-eureka-and-the-siege-of-syracuse"
   },
   {
-    "tier": 2,
-    "question": "In the Greek city of Syracuse around 250 BC, the mathematician Archimedes was one of the first people to work out how a lever multiplies force — a small push on the long end can lift an enormous weight on the short end. Boasting about the power of levers, he is said to have declared: 'Give me a place to stand, and I will move ___.' According to the famous line, what did Archimedes say he could move?",
-    "answer": "the Earth",
-    "choices": [
-      "the Earth",
-      "the heavens",
-      "the oceans",
-      "the mountains"
-    ],
-    "context": "Recorded in Doric Greek by Pappus of Alexandria: 'Dos moi pa sto kai tan gan kinaso.' (Pappus, Synagoge, Book VIII)",
-    "topic": "archimedes-eureka-and-the-siege-of-syracuse"
-  },
-  {
     "tier": 3,
-    "question": "In the 3rd century BC in the Greek city of Syracuse, the mathematician Archimedes bragged to King Hiero that with the right levers and pulleys he could move anything, no matter how heavy. To prove it was no joke, Archimedes sat on the shore and took hold of a rope rig connected to a giant load in the harbor. With one gentle pull, he set that huge loaded object moving. King Hiero was so amazed he said Archimedes should be believed in all he said. What did Archimedes pull by himself?",
+    "question": "With the right levers and pulleys, Archimedes told King Hiero, he could move any weight, however heavy. To prove it was no joke, he sat at a rig of compound pulleys, took hold of the rope, and with a single gentle tug set a huge loaded weight moving. Hiero was so amazed he said Archimedes should be believed in all he said. What had Archimedes moved by himself?",
     "answer": "a fully loaded three-masted ship",
     "choices": [
       "a fully loaded three-masted ship",
@@ -2925,8 +2899,8 @@
     "topic": "archimedes-eureka-and-the-siege-of-syracuse"
   },
   {
-    "tier": 3,
-    "question": "In 214 BC, during the Second Punic War between Rome and Carthage, a Roman fleet led by the general Marcellus attacked the wealthy Greek city of Syracuse on the island of Sicily. The city's greatest mind, the mathematician and engineer Archimedes, invented giant war-machines mounted along the sea walls to defend it. One such machine terrified the Roman marines so much they nicknamed it the 'Claw.' What did the Claw of Archimedes do to the Roman warships when they came in close?",
+    "tier": 2,
+    "question": "Marcellus brought a Roman fleet against Syracuse in 214 BC, and Archimedes turned the city's sea walls into a weapon. His most feared machine stood on the harbor wall, and the Romans called it the Claw. What did it do to their ships?",
     "answer": "lifted them clear of the water and dropped them",
     "choices": [
       "lifted them clear of the water and dropped them",
@@ -2939,20 +2913,7 @@
   },
   {
     "tier": 4,
-    "question": "During the Roman siege of the Greek city of Syracuse from 214 to 212 BC, the war-machines invented by the mathematician Archimedes — his giant Claw that lifted ships and his stone-throwing catapults — beat back the Roman attackers again and again. The Greek historian Plutarch later wrote that the Roman soldiers came to dread the Syracuse city wall itself. If they saw so much as a rope, a stick, or a wooden beam poke out over the top of that wall, how did the Romans react?",
-    "answer": "ran away, sure another machine was aimed at them",
-    "choices": [
-      "ran away, sure another machine was aimed at them",
-      "charged the wall before it could be used",
-      "shot their catapults at the spot at once",
-      "locked shields and refused to retreat"
-    ],
-    "context": "In Plutarch's words, they would cry 'There it is, Archimedes is training some engine upon us!' and turn and flee. (Plutarch, Life of Marcellus 17)",
-    "topic": "archimedes-eureka-and-the-siege-of-syracuse"
-  },
-  {
-    "tier": 4,
-    "question": "During the Roman siege of Syracuse around 212 BC, the Greek inventor Archimedes built war machines to defend his city on the coast of Sicily. One famous legend, first told long after his death, says Archimedes set the whole Roman fleet on fire by himself as it sat in the harbor. Serious historians do not buy the story. How does the legend say he did it?",
+    "question": "The Romans laid siege to Syracuse, where Archimedes built war machines to defend his city. A legend first told long after his death says he set the whole Roman fleet on fire by himself as it lay in the harbor. Serious historians do not believe the story. How does the legend say he did it?",
     "answer": "with mirrors that focused the sun into a burning beam",
     "choices": [
       "with mirrors that focused the sun into a burning beam",
@@ -2961,19 +2922,6 @@
       "with rafts of blazing pitch pushed out to sea"
     ],
     "context": "The earliest mention is Lucian (2nd century AD); burning-glasses were named by Anthemius of Tralles around 500 AD. No contemporary historian (Polybius, Livy, Plutarch) mentions any mirror, so most scholars treat it as later legend. (Wikipedia: Archimedes' heat ray)",
-    "topic": "archimedes-eureka-and-the-siege-of-syracuse"
-  },
-  {
-    "tier": 4,
-    "question": "As Roman soldiers stormed into Syracuse, the elderly Archimedes refused to stop what he was doing even with a soldier standing right over him. The most famous version of his last words -- a later paraphrase -- is a single sharp command. What is Archimedes said to have demanded?",
-    "answer": "Do not disturb my circles!",
-    "choices": [
-      "Do not disturb my circles!",
-      "Spare me, I am only a scholar!",
-      "Strike, and end an old man's work!",
-      "Take me to your general at once!"
-    ],
-    "context": "'Do not disturb my circles!' (Latin: 'Noli turbare circulos meos') is a later paraphrase. The only version surviving from antiquity is Valerius Maximus's: 'Noli, obsecro, istum disturbare' ('Do not, I beg you, disturb this'). (Valerius Maximus, Facta et dicta memorabilia VIII.7)  (Legend.)",
     "topic": "archimedes-eureka-and-the-siege-of-syracuse"
   },
   {
@@ -2990,8 +2938,8 @@
     "topic": "archimedes-eureka-and-the-siege-of-syracuse"
   },
   {
-    "tier": 5,
-    "question": "In the Greek city of Syracuse around 250 BC, the mathematician Archimedes made discovery after discovery -- floating bodies, levers, giant war machines. Yet the one result he was proudest of was a quiet theorem in geometry, showing that a ball fits inside a can in a beautifully exact way. He begged that a picture of it be carved on his tombstone. Which carving did Archimedes choose for his grave?",
+    "tier": 3,
+    "question": "Archimedes cared more for pure mathematics than for any of his war machines, and he asked that the result he loved best be carved on his tomb. About 137 years after Archimedes died, Cicero found the grave under brambles and thorns and knew it at once by that carving. What did it show?",
     "answer": "a sphere sitting inside a cylinder",
     "choices": [
       "a sphere sitting inside a cylinder",
@@ -3004,7 +2952,7 @@
   },
   {
     "tier": 5,
-    "question": "Around 75 BC, more than a century after the great mathematician Archimedes had died defending Syracuse, the young Roman lawyer Cicero was working in Sicily and decided to hunt down Archimedes' grave. He believed it lay near an old gate outside the city. When Cicero asked the Syracusan people where the tomb of their greatest citizen could be found, what did they tell him?",
+    "question": "Cicero, a young Roman lawyer, was working in Sicily around 75 BC, more than a century after Archimedes died, when he set out to hunt down the great man's grave. He believed it lay near an old gate outside Syracuse. He asked the people of the city where their greatest citizen was buried. What did they tell him?",
     "answer": "that no such tomb existed at all",
     "choices": [
       "that no such tomb existed at all",
@@ -3017,7 +2965,7 @@
   },
   {
     "tier": 5,
-    "question": "In the Greek city of Syracuse around 250 BC, long before calculators existed, the mathematician Archimedes set himself a puzzle: find the most exact value ever for pi -- the number linking a circle's width to the distance around its rim. His answer would hold as the world's best for nearly 400 years. How did Archimedes pin down pi so precisely?",
+    "question": "Archimedes set himself a puzzle in Syracuse: to find pi, the number linking a circle's width to the distance around its rim, more exactly than anyone before him. He worked long before calculators existed, yet his answer stood as the world's best for nearly 400 years. How did he pin pi down?",
     "answer": "he trapped the circle between many-sided shapes",
     "choices": [
       "he trapped the circle between many-sided shapes",
@@ -3030,20 +2978,7 @@
   },
   {
     "tier": 1,
-    "question": "King Hieron of Syracuse suspected his goldsmith had cheated him, mixing cheap silver into a golden crown. He asked Archimedes to prove it without melting the crown down. The answer struck Archimedes as he lowered himself into a bath and watched the water rise. He was so thrilled he leapt out and ran naked through the streets shouting one word. What word?",
-    "answer": "\"Eureka!\" — \"I have found it!\"",
-    "choices": [
-      "\"Eureka!\" — \"I have found it!\"",
-      "\"Behold!\" — \"Look upon it!\"",
-      "\"Victory!\" — \"The day is won!\"",
-      "\"Hieron!\" — \"Tell the king!\""
-    ],
-    "context": "Archimedes realized the water he displaced measured the crown's exact volume — so he could compare it to pure gold and expose the cheat. The naked-dash detail comes from the Roman writer Vitruvius (De Architectura IX, preface) and is likely embellished legend, but 'Eureka' stuck as the cry of discovery itself. Source: Vitruvius, De Architectura IX, preface.",
-    "topic": "archimedes-of-syracuse"
-  },
-  {
-    "tier": 1,
-    "question": "Archimedes built a big spiral sealed inside a tube. You crank the handle and the spiral turns. It does something to river water that looks like it should be impossible. The same tool is still used on farms today. What does turning the screw do to the water?",
+    "question": "Archimedes is credited with a spiral sealed inside a tube that bears his name. Cranked by its handle, the spiral does something to river water that looks impossible, and farms still use it today. What does Archimedes' screw do to the water as it turns?",
     "answer": "It lifts water uphill against gravity",
     "choices": [
       "It lifts water uphill against gravity",
@@ -3056,7 +2991,7 @@
   },
   {
     "tier": 2,
-    "question": "Archimedes worked out the law of the lever: a small force on a long enough arm can move an enormous weight. He was so sure of it that he made a wild public boast about what he could lift if only he had a long enough lever and a spot to plant himself. What did Archimedes claim he could move?",
+    "question": "Archimedes understood how a lever turns a small push on its long arm into an enormous lift. He was so sure of it that he is said to have boasted: 'Give me a place to stand, and I will move...' What did Archimedes claim he could move?",
     "answer": "The Earth itself",
     "choices": [
       "The Earth itself",
@@ -3069,33 +3004,20 @@
   },
   {
     "tier": 2,
-    "question": "In 214 BC the Roman fleet sailed into the harbor of Syracuse in Sicily and laid siege to the Greek city. Inside the walls, the old mathematician Archimedes had built a giant crane that swung out over the harbor wall on a chain. Its great iron hook -- nicknamed the 'Claw of Archimedes' -- would seize a Roman warship by the bow. What did the Claw do next?",
-    "answer": "Haul the ship into the air, then drop it to smash",
+    "question": "A Roman soldier found the old Archimedes crouched over a shape he had drawn in the sand when Syracuse fell in 212 BC, the story goes, and Archimedes would not leave until he had finished. His most famous last words, a later paraphrase, were one sharp command. What is he said to have demanded?",
+    "answer": "Do not disturb my circles!",
     "choices": [
-      "Haul the ship into the air, then drop it to smash",
-      "Set the ship on fire with burning oil",
-      "Drag the ship slowly down beneath the waves",
-      "Tear a hole in the ship's wooden hull"
-    ],
-    "context": "The Claw hoisted the bow straight up, then let go, capsizing the ship or dashing it on the rocks. The Roman general Marcellus mocked his own losses, calling Archimedes a 'geometrical Briareus' — the hundred-handed giant — 'who uses our ships like cups to ladle water from the sea.' Source: Plutarch, Life of Marcellus ch.15 & 17; en.wikipedia.org/wiki/Claw_of_Archimedes.",
-    "topic": "archimedes-of-syracuse"
-  },
-  {
-    "tier": 2,
-    "question": "In 212 BC, Roman troops broke into Syracuse. The story says they found Archimedes, now old, crouched over a shape he had drawn in the sand. He would not move until he was done. His famous last words tell the soldier not to ruin his drawing. What are they?",
-    "answer": "\"Do not disturb my circles!\"",
-    "choices": [
-      "\"Do not disturb my circles!\"",
-      "\"Spare my instruments!\"",
-      "\"Stand and I will move the world!\"",
-      "\"Fetch me to your general!\""
+      "Do not disturb my circles!",
+      "Spare me, I am only a scholar!",
+      "Strike, and end an old man's work!",
+      "Take me to your general at once!"
     ],
     "context": "In Latin: 'Noli turbare circulos meos.' The enraged soldier ran him through. Treat it as legend: the earliest detailed account, by Plutarch, has no 'circles' line — it only says Archimedes refused to leave until he had finished his demonstration, 'whereupon the soldier flew into a passion, drew his sword, and dispatched him.' The memorable phrasing is a much later embellishment. Source: en.wikipedia.org/wiki/Noli_turbare_circulos_meos; Plutarch, Life of Marcellus ch.19.",
     "topic": "archimedes-of-syracuse"
   },
   {
-    "tier": 3,
-    "question": "During the Roman siege of Syracuse around 213 BC, the Greek mathematician Archimedes had rigged the city walls with terrifying war machines -- giant claws, catapults, huge stone-throwers. The Roman biographer Plutarch says the invading soldiers lost their nerve completely. The moment they saw even a plain bit of rope or a stick of wood poke over the wall, how did they react?",
+    "tier": 2,
+    "question": "Plutarch tells how the Romans besieging Syracuse came to dread the very walls where Archimedes had mounted claws, catapults and huge stone-throwers. Even a plain rope or a stick of wood poking over the top was enough. How did they react to it?",
     "answer": "They cried 'There it is!' and turned and fled",
     "choices": [
       "They cried 'There it is!' and turned and fled",
@@ -3108,7 +3030,7 @@
   },
   {
     "tier": 3,
-    "question": "When Rome finally broke into Syracuse in 212 BC, the Roman general Marcellus had given one strict order to his troops: take the old mathematician Archimedes alive. But in the chaos of the sack, a Roman soldier killed the great man anyway. Marcellus did not reward the soldier at all. How did Marcellus treat the killer and Archimedes' family?",
+    "question": "Marcellus, the Roman general, had given his troops one strict order before they broke into Syracuse in 212 BC: take Archimedes alive. In the chaos of the sack a soldier killed the old man anyway, and Marcellus gave him no reward. How did Marcellus treat the killer, and Archimedes' family?",
     "answer": "He shunned the killer as polluted and honored Archimedes' kin",
     "choices": [
       "He shunned the killer as polluted and honored Archimedes' kin",
@@ -3120,21 +3042,8 @@
     "topic": "archimedes-of-syracuse"
   },
   {
-    "tier": 3,
-    "question": "About 137 years after Archimedes died, the Roman statesman Cicero, serving in Sicily, went hunting for Archimedes' lost grave. The locals swore it no longer existed. Cicero spotted a small column poking out of a tangle of brambles and thorns, and one carving on top proved at once that it was the right tomb. What was carved on it?",
-    "answer": "A sphere sitting inside a cylinder",
-    "choices": [
-      "A sphere sitting inside a cylinder",
-      "A laurel crown and a sword",
-      "The single word 'Eureka'",
-      "A ship lifted by a great hook"
-    ],
-    "context": "Archimedes had asked for that exact shape on his tombstone, prouder of the geometry behind it than of any war machine. Cicero, finding the grave forgotten and overgrown, had it cleared — a politician rescuing a mathematician's memory from the weeds. Source: Cicero, Tusculan Disputations V.64-66.",
-    "topic": "archimedes-of-syracuse"
-  },
-  {
     "tier": 4,
-    "question": "Archimedes built war machines that held off the Roman fleet for years. The Claw, the catapults, and other engines scared a whole army. Yet Plutarch says he thought engineering was beneath him, fit only for pure math. What did he do about those brilliant machines?",
+    "question": "Archimedes built the Claw, the catapults and the other engines that held off the Roman fleet at Syracuse for years. Yet Plutarch says he looked down on engineering, and on every craft that serves everyday needs, as unworthy of a real thinker. What did Archimedes do about those machines?",
     "answer": "He left no written instructions for any of them",
     "choices": [
       "He left no written instructions for any of them",
@@ -3147,7 +3056,7 @@
   },
   {
     "tier": 4,
-    "question": "In a work called 'The Sand Reckoner,' Archimedes set himself a deliberately absurd-sounding challenge: to count how many grains of sand it would take to fill the ENTIRE universe. The hard part was that Greek counting words ran out at the 'myriad' (10,000). To finish the job, what did Archimedes have to invent first?",
+    "question": "Archimedes set himself an absurd-sounding challenge in a work called The Sand Reckoner: to count how many grains of sand it would take to fill the whole universe. Before he could finish the job, he had to invent something first. What was it?",
     "answer": "A brand-new system for naming gigantic numbers",
     "choices": [
       "A brand-new system for naming gigantic numbers",
@@ -3160,7 +3069,7 @@
   },
   {
     "tier": 5,
-    "question": "Before Archimedes of Syracuse, people pinned down pi only by measuring round objects and eyeballing the ratio. He trapped a circle between a 96-sided polygon drawn inside it and another drawn outside it, squeezing the true value between two numbers he could calculate. What could Archimedes now claim about pi that no one could before?",
+    "question": "Archimedes squeezed the true value of pi between two numbers he could calculate, while people before him had found it only by measuring round objects and eyeballing the ratio. What could Archimedes now claim about pi that no one could before?",
     "answer": "Its exact value could be nailed down by proof",
     "choices": [
       "Its exact value could be nailed down by proof",
@@ -3173,7 +3082,7 @@
   },
   {
     "tier": 5,
-    "question": "One of Archimedes' lost books survived only as a 'palimpsest' — parchment that around 1229 a monk scrubbed clean of its mathematics so he could write a prayer book over the top. In 1906 the Danish scholar J. L. Heiberg, peering through a magnifying glass, read the faint scraped-away text underneath and recovered the work. Why did that recovered book, 'The Method,' stun mathematicians?",
+    "question": "J. L. Heiberg, a Danish scholar, bent over an old prayer book in 1906, magnifying glass in hand. Around 1229 a monk had scrubbed its parchment clean and written prayers over the top, but Heiberg could read the faint text underneath: The Method, a lost book of Archimedes. Why did it stun mathematicians?",
     "answer": "In it Archimedes anticipated calculus about 1,900 years early",
     "choices": [
       "In it Archimedes anticipated calculus about 1,900 years early",
@@ -3186,7 +3095,7 @@
   },
   {
     "tier": 2,
-    "question": "Aristotle insisted that whales and dolphins, though they swim in the sea among the fish, are NOT fish at all. Watching them closely, he pointed to two things about these creatures that set them apart. What did Aristotle notice about whales and dolphins?",
+    "question": "Whales and dolphins swim in the sea among the fish, yet Aristotle watched them closely and insisted that they are no fish at all. He pointed to two things about them that set them apart. What did Aristotle notice?",
     "answer": "They breathe air and bear live young",
     "choices": [
       "They breathe air and bear live young",
@@ -3199,7 +3108,7 @@
   },
   {
     "tier": 2,
-    "question": "In ancient Greece around 340 BC, the philosopher Aristotle studied sea creatures on the shores of the island of Lesbos and described the strange mouth of one animal so vividly that scientists still use his words today. He wrote that its mouth looks 'like a horn lantern with the panes of horn left out.' Modern zoologists still call that mouth-part 'Aristotle's lantern.' Which sea creature has it?",
+    "question": "On the shores of Lesbos, Aristotle studied sea creatures, and he wrote that the mouth of one of them looked 'like a horn lantern with the panes of horn left out.' Zoologists still call that mouth Aristotle's lantern. Which sea creature has it?",
     "answer": "a sea urchin",
     "choices": [
       "a sea urchin",
@@ -3212,7 +3121,7 @@
   },
   {
     "tier": 2,
-    "question": "In ancient Athens around 340 BC, the Greek philosopher Aristotle wrote one of the first serious books about animals — how they lived, what they ate, how they bred, how they were built inside. He did not just guess or copy other writers. To check his findings, Aristotle went out to the working people who actually handled animals every day and asked what they had seen with their own eyes. Which three kinds of workers did Aristotle ask?",
+    "question": "Aristotle wrote one of the first serious books on animals, from what they ate to how they were built inside, and he did not just copy other writers. He checked his findings with the working people who handled animals every day. Which three kinds of workers did Aristotle question?",
     "answer": "beekeepers, fishermen, and sponge divers",
     "choices": [
       "beekeepers, fishermen, and sponge divers",
@@ -3225,7 +3134,7 @@
   },
   {
     "tier": 2,
-    "question": "In his lectures at the Lyceum school in ancient Athens around 340 BC, the philosopher Aristotle told his students to look closely at every kind of animal — even the small, ugly, or lowly ones that seemed too humble to study. He promised that a careful eye would always be rewarded, no matter how mean the creature. What did Aristotle promise every animal would show?",
+    "question": "Aristotle told his students at the Lyceum to study every kind of animal, even the small, ugly and lowly ones that seemed too humble to bother with. A careful eye, he promised, would always be rewarded, however mean the creature. What did he promise every animal would show them?",
     "answer": "something natural and something beautiful",
     "choices": [
       "something natural and something beautiful",
@@ -3238,7 +3147,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristotle observed that a bee colony has workers, drones, and a single ruler that all the others serve -- and he called this ruler the 'king bee.' Centuries later, in 1586, the Spaniard Luis Mendez de Torres discovered that Aristotle had the ruler's most basic fact wrong. What was the truth about the 'king bee'?",
+    "question": "Aristotle observed that a bee colony had workers, drones and a single ruler that all the others served, and he called that ruler the 'king bee.' Centuries later, in 1586, a Spaniard named Luis Mendez de Torres showed that Aristotle had the ruler's most basic fact wrong. What was the truth about the 'king bee'?",
     "answer": "the ruler was actually a queen, a female",
     "choices": [
       "the ruler was actually a queen, a female",
@@ -3251,7 +3160,7 @@
   },
   {
     "tier": 3,
-    "question": "Long before anyone had sailed around the world, Aristotle argued from plain evidence that the Earth is a ball, not flat. One of his strongest proofs came from watching the Moon go dark during a lunar eclipse. What did Aristotle point to during the eclipse as his proof?",
+    "question": "Aristotle watched the Moon go dark during a lunar eclipse and found in it one of his strongest proofs that the Earth is a ball, not flat, long before anyone had sailed around the world. What did he point to during the eclipse as his proof?",
     "answer": "Earth always casts a round shadow on the Moon",
     "choices": [
       "Earth always casts a round shadow on the Moon",
@@ -3264,7 +3173,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristotle wrote that the octopus has one special arm used only for mating. He said this arm can snap off and stay inside the female. For centuries people laughed it off as a fisherman's tall tale. Then in 1829, Georges Cuvier found one of these loose arms inside a female. The wriggling thing baffled him so much that he gave it the wrong kind of name. What did Cuvier first take the arm to be?",
+    "question": "Georges Cuvier found a loose arm inside a female octopus in 1829, just as Aristotle had described: a mating arm that can break off and stay inside her. The thing baffled Cuvier so much that he gave it the wrong kind of name. What did he first take it to be?",
     "answer": "a parasitic worm",
     "choices": [
       "a parasitic worm",
@@ -3277,7 +3186,7 @@
   },
   {
     "tier": 4,
-    "question": "In ancient Greece around 340 BC, the philosopher Aristotle was carefully studying every animal he could catch. But eels stumped him: he could never find a single eel egg, nor a baby eel, nor any eel parents anywhere. He decided eels must have no parents at all and simply arise on their own from something else. Where did Aristotle claim that eels came from?",
+    "question": "Eels stumped Aristotle, who studied every animal he could catch. He never found an eel egg, a baby eel or any eel parents anywhere. He decided that eels must have no parents at all and simply arise from something else. Where did Aristotle say eels came from?",
     "answer": "from the mud and 'guts of the earth'",
     "choices": [
       "from the mud and 'guts of the earth'",
@@ -3290,7 +3199,7 @@
   },
   {
     "tier": 4,
-    "question": "In ancient Greece around 340 BC, the philosopher Aristotle carried out one of the world's first experiments in embryology -- the study of how babies grow before birth. He cracked open a hen's egg day by day, watching the tiny chick take shape inside. He noticed that one organ appeared before any other -- the very first spark of the new bird. Which organ did Aristotle see form first inside the egg?",
+    "question": "Aristotle cracked open a hen's egg day by day and watched the tiny chick take shape inside, in one of the world's first experiments in embryology, the study of how babies grow before birth. One organ appeared before any other, the first spark of the new bird. Which organ did Aristotle see form first?",
     "answer": "the heart",
     "choices": [
       "the heart",
@@ -3303,7 +3212,7 @@
   },
   {
     "tier": 5,
-    "question": "In ancient Greece around 340 BC, the philosopher Aristotle taught that human intelligence, feeling, and the very soul all lived in the heart -- not the brain. To him, the brain looked pale and bloodless and dull. He gave the brain a small, menial job instead, one that would sound almost comical to a modern doctor. What job did Aristotle assign to the brain?",
+    "question": "Aristotle taught that human intelligence, feeling and the soul itself did not live in the brain at all. To him the brain looked pale, bloodless and dull, so he gave it a small, humble job instead. What job did Aristotle assign to the brain?",
     "answer": "to cool the overheated heart",
     "choices": [
       "to cool the overheated heart",
@@ -3329,7 +3238,7 @@
   },
   {
     "tier": 4,
-    "question": "Aristotle ranked every living thing in one fixed order. Bare rocks sat at the bottom, then plants, then animals, then people on top. This order shaped how the West saw nature for 2,000 years. It later got a famous name. What is Aristotle's order called?",
+    "question": "Aristotle set the whole of nature in a single fixed order: bare rock at the bottom, then plants, then animals, and human beings at the top. His ranking shaped how the West saw nature for 2,000 years. What famous name did later ages give it?",
     "answer": "the Great Chain of Being",
     "choices": [
       "the Great Chain of Being",
@@ -3342,7 +3251,7 @@
   },
   {
     "tier": 5,
-    "question": "Charles Darwin, the great naturalist, kept portraits of the scientists he admired most. Just two months before he died in 1882, after reading a fresh translation of one of Aristotle's biology books, Darwin set his own two scientific 'gods' -- Linnaeus and Cuvier -- beside Aristotle in a letter. What did Darwin say about Linnaeus and Cuvier next to Aristotle?",
+    "question": "Charles Darwin was reading Aristotle's Parts of Animals, freshly translated, early in 1882, only weeks before he died. In a letter he set his own two scientific gods, Linnaeus and Cuvier, beside the old Greek. What did he write about the two of them next to Aristotle?",
     "answer": "they were mere schoolboys to old Aristotle",
     "choices": [
       "they were mere schoolboys to old Aristotle",
@@ -3355,7 +3264,7 @@
   },
   {
     "tier": 3,
-    "question": "Around 335 BC, the Greek philosopher Aristotle founded a school in Athens called the Lyceum, in a grove sacred to the god Apollo. Students soon nicknamed it the Peripatos -- 'the walkway' -- after the covered paths on its grounds. But the nickname really came from one odd habit of Aristotle himself while teaching. How did Aristotle teach his students?",
+    "question": "Aristotle opened a school of his own in Athens around 335 BC, the Lyceum, in a grove sacred to the god Apollo. His followers came to be called the Peripatetics, after one odd habit of their teacher's. How did Aristotle teach?",
     "answer": "He walked about as he taught, never sitting down",
     "choices": [
       "He walked about as he taught, never sitting down",
@@ -3368,7 +3277,7 @@
   },
   {
     "tier": 3,
-    "question": "In 343 BC, the powerful King Philip of Macedon needed a tutor for his 13-year-old crown prince and paid the Greek philosopher Aristotle to teach the boy at a royal country estate called Mieza. That teenager, drilled by Aristotle for three years in Homer, science, and rhetoric, grew up to become the greatest conqueror of the ancient world and Aristotle's most famous student of all. Who was he?",
+    "question": "King Philip of Macedon needed a tutor for his 13-year-old heir in 343 BC, and he paid Aristotle to teach the boy at a royal country estate called Mieza. For three years Aristotle drilled him in Homer, science and rhetoric. The prince grew up to be the greatest conqueror of the ancient world. Who was he?",
     "answer": "Alexander the Great",
     "choices": [
       "Alexander the Great",
@@ -3381,7 +3290,7 @@
   },
   {
     "tier": 3,
-    "question": "After Alexander the Great smashed the Persian army in 331 BC, he took a beautiful jeweled treasure box from the tent of the defeated Persian king Darius. Alexander decided to keep the one thing he treasured most inside it, and he slept with the little box under his pillow every night, right beside his dagger. What was in the box?",
+    "question": "Plutarch tells of a jewelled casket taken from the tent of the Persian king Darius after his defeat in 331 BC. The young Macedonian who won it, Aristotle's old pupil, kept inside it the thing he treasured most, and at night it lay under his pillow, next to his dagger. What was in the casket?",
     "answer": "A copy of Homer's Iliad corrected by Aristotle",
     "choices": [
       "A copy of Homer's Iliad corrected by Aristotle",
@@ -3394,7 +3303,7 @@
   },
   {
     "tier": 3,
-    "question": "Around 343 BC, the Greek philosopher Aristotle tutored the teenage prince Alexander -- later Alexander the Great -- at a royal country estate called Mieza, in the kingdom of Macedonia. Nearly four centuries later, the Greek biographer Plutarch wrote that tourists in his own day could still visit Mieza and see one surviving relic of those famous lessons. What could they see?",
+    "question": "Aristotle spent three years, from around 343 BC, tutoring a teenage Macedonian prince at Mieza, a royal country estate. Nearly four centuries later, Plutarch wrote that visitors to the estate could still see traces of those lessons. What could they see?",
     "answer": "Aristotle's stone seats and his shady garden walks",
     "choices": [
       "Aristotle's stone seats and his shady garden walks",
@@ -3407,7 +3316,7 @@
   },
   {
     "tier": 4,
-    "question": "By surviving record, Aristotle was the world's first marine biologist — he spent about two years dissecting sea creatures by hand in a lagoon on the island of Lesbos. One of his strangest findings was how the dogfish, a kind of small shark, feeds its unborn pup. How does the dogfish nourish its young before it is born?",
+    "question": "Beside a lagoon on the island of Lesbos, Aristotle spent about two years cutting open sea creatures, and one of his strangest finds concerned the dogfish, a small shark. How does a mother dogfish nourish her pup before it is born?",
     "answer": "By feeding it through a cord and a placenta, like a mammal",
     "choices": [
       "By feeding it through a cord and a placenta, like a mammal",
@@ -3420,7 +3329,7 @@
   },
   {
     "tier": 4,
-    "question": "Aristotle did not just lecture at his Lyceum. He kept a real, organized collection of things his students could examine. That way, they learned from actual objects and not just from words. Scholars call this collection the ancestor of which two places we still visit today?",
+    "question": "At his Lyceum, Aristotle kept an organised collection of things for his students to examine, so that they learned from real objects and not only from words. Scholars see it as the ancestor of two kinds of places people still visit today. Which two?",
     "answer": "The research library and the museum",
     "choices": [
       "The research library and the museum",
@@ -3433,7 +3342,7 @@
   },
   {
     "tier": 4,
-    "question": "Aristotle once reported something tender about a river catfish. He said the father fish guards the eggs for forty or fifty days, scaring off intruders and even making a murmuring sound. People laughed it off for centuries. Then in the 1850s, the Swiss naturalist Louis Agassiz proved him right. To honor the old philosopher, what did Agassiz do with the fish's official name?",
+    "question": "Aristotle once reported something tender about a river catfish. He said the father fish guarded the eggs for six or seven weeks, scaring off intruders and even making a murmuring sound. People laughed it off for centuries, until Louis Agassiz, a Swiss naturalist, proved him right in the 1850s. What official name did Agassiz give the fish?",
     "answer": "He named it Silurus aristotelis, 'Aristotle's catfish'",
     "choices": [
       "He named it Silurus aristotelis, 'Aristotle's catfish'",
@@ -3446,7 +3355,7 @@
   },
   {
     "tier": 5,
-    "question": "In ancient Athens around 335 BC, the philosopher Plato had once founded a school on private, walled grounds called the Academy. When his former student Aristotle later opened his own rival school, the Lyceum, it had to meet on public land and teach anyone who came, for free. One plain fact about Aristotle himself explains why he could never simply buy his own grounds in Athens. What was it?",
+    "question": "Plato had taught at his Academy on private, walled grounds in Athens. When his old student Aristotle opened a rival school, the Lyceum, it had to meet on public land and teach anyone who came, for free. One plain fact about Aristotle himself explains why he could not simply buy grounds of his own. What was it?",
     "answer": "He was a foreigner, not an Athenian citizen",
     "choices": [
       "He was a foreigner, not an Athenian citizen",
@@ -3459,7 +3368,7 @@
   },
   {
     "tier": 5,
-    "question": "Aristotle invented formal logic. He was the first to show that some conclusions are forced purely by the shape of an argument, no facts about the world needed. Here is one of his patterns: 'All Athenians are Greek; all Greeks are human; so all Athenians are human.' Why does this argument work even if you know nothing about Athens or Greeks?",
+    "question": "'All Athenians are Greek; all Greeks are human; so all Athenians are human.' Aristotle, who invented formal logic, set out patterns of argument like this one. A reader who knows nothing at all about Athens or the Greeks can still see that it holds. Why must the conclusion follow?",
     "answer": "Because the shape of the argument alone forces the conclusion",
     "choices": [
       "Because the shape of the argument alone forces the conclusion",
@@ -3472,7 +3381,7 @@
   },
   {
     "tier": 5,
-    "question": "In ancient Greece around 340 BC, the philosopher Aristotle described a feature of the male octopus so bizarre that for more than two thousand years later, naturalists dismissed it as a fisherman's tall tale -- until nineteenth-century zoologists finally proved him right. What was Aristotle's strange claim about the male octopus?",
+    "question": "Aristotle described a feature of the male octopus so bizarre that naturalists laughed it off as a fisherman's tall tale for more than two thousand years, until zoologists of the nineteenth century proved the old philosopher right. What had Aristotle claimed?",
     "answer": "One of the male's arms breaks off inside the female during mating",
     "choices": [
       "One of the male's arms breaks off inside the female during mating",
@@ -3485,7 +3394,7 @@
   },
   {
     "tier": 5,
-    "question": "In 4th-century BC Athens, the philosopher Aristotle wrote a book called the Politics on how people ought to organize their cities. In it he called the human being a 'political animal' — made by nature to live in a community, set apart from the beasts by the power of speech and moral reasoning. So, he argued, a person who could truly live completely outside any community at all must be one of two extremes. Which?",
+    "question": "Aristotle wrote in the Politics that the human being is a political animal, made by nature to live in a community. A person who could truly live wholly outside any community at all, he argued, must be one of two extremes. Which two?",
     "answer": "Either a beast or a god",
     "choices": [
       "Either a beast or a god",
@@ -3498,7 +3407,7 @@
   },
   {
     "tier": 5,
-    "question": "After Alexander the Great died in 323 BCE, the people of Athens turned on Aristotle and charged him with impiety — the exact accusation that had earlier sent Socrates to his death. Rather than stand trial, Aristotle fled the city, explaining his escape with a pointed line. What did he say he would not let the Athenians do?",
+    "question": "Athens accused Aristotle of impiety, the same charge that had sent Socrates to his death, and he fled the city rather than stand trial. He explained his escape with a pointed line. What did he say he would not let the Athenians do?",
     "answer": "Sin twice against philosophy",
     "choices": [
       "Sin twice against philosophy",
@@ -3511,7 +3420,7 @@
   },
   {
     "tier": 2,
-    "question": "The Armenian Genocide began on the night of April 24, 1915, in the Ottoman capital of Constantinople (now Istanbul). The Interior Minister, Talaat Pasha, ordered the first mass arrests, targeting the Armenian Christian community that had lived there for generations. He did not start with the soldiers or with rebels -- he began with a different group first. Which Armenians did Talaat round up first?",
+    "question": "Talaat Pasha, the Ottoman Interior Minister, ordered the first mass arrests of Armenians in Constantinople on 24 April 1915, by night. He did not start with soldiers or with rebels; he began with a different group. Which Armenians did he have seized first?",
     "answer": "The doctors, lawyers, teachers and poets — the community's educated leaders",
     "choices": [
       "The doctors, lawyers, teachers and poets — the community's educated leaders",
@@ -3524,7 +3433,7 @@
   },
   {
     "tier": 2,
-    "question": "The Armenian death marches ended at Deir ez-Zor, a desert town on the Euphrates River. One foreign official kept count of the dying. He reported that about 150,000 starving Armenian refugees were scattered around the town. Who was this witness keeping the tally?",
+    "question": "Starving Armenian refugees lay scattered around Deir ez-Zor, a desert town on the Euphrates River, where the death marches ended. One foreign official kept count of the dying and reported about 150,000 of them around the town. Who was this witness keeping the tally?",
     "answer": "The American consul in the city of Aleppo",
     "choices": [
       "The American consul in the city of Aleppo",
@@ -3537,7 +3446,7 @@
   },
   {
     "tier": 2,
-    "question": "News of the Armenian Genocide reached America. Schoolchildren gave their pennies to feed 'the starving Armenians' an ocean away. The group Near East Relief saved over a million refugees and raised 132,000 orphans. One rallying phrase became tied to its mission. What was the phrase?",
+    "question": "American schoolchildren sent their pennies to feed 'the starving Armenians' an ocean away. Near East Relief saved more than a million refugees and raised 132,000 orphans, and one rallying phrase became tied to its mission. What was the phrase?",
     "answer": "They Shall Not Perish",
     "choices": [
       "They Shall Not Perish",
@@ -3549,8 +3458,8 @@
     "topic": "armenian-genocide"
   },
   {
-    "tier": 3,
-    "question": "The Polish-Jewish lawyer Raphael Lemkin was haunted, as a young law student, by the Ottoman destruction of the Armenians and by the fact that no law on earth existed to punish it. In 1944 he built a brand-new word for the deliberate destruction of an entire people. Which word did he invent?",
+    "tier": 2,
+    "question": "Raphael Lemkin, a Polish-Jewish law student, was haunted by the Ottoman destruction of the Armenians, a crime that no law existed to punish. In 1944 he gave a name to the deliberate destruction of a whole people, and he fought to get it into the Nuremberg case. What name did he give it?",
     "answer": "genocide",
     "choices": [
       "genocide",
@@ -3563,7 +3472,7 @@
   },
   {
     "tier": 3,
-    "question": "Aurora Mardiganian was a teenage survivor of the Armenian Genocide. She was forced to march more than 1,400 miles. She saw her family killed and was sold in Turkish slave markets before escaping to America. In 1919, a Hollywood silent film told her story. What did she do that almost no survivor ever does?",
+    "question": "Aurora Mardiganian, a teenage Armenian survivor, escaped to America after a forced march of more than 1,400 miles; she had seen her family killed and had been sold in Turkish slave markets. A Hollywood silent film told her story in 1919. What did she do that almost no survivor ever does?",
     "answer": "She starred in it, playing herself on screen",
     "choices": [
       "She starred in it, playing herself on screen",
@@ -3576,7 +3485,7 @@
   },
   {
     "tier": 3,
-    "question": "In Berlin in 1921, a young Armenian shot the exiled organizer Talaat Pasha dead on the street. Talaat had helped plan the Armenian genocide, and the shooter had lost dozens of relatives in the slaughter. Germany put him on trial. What did the jurors decide?",
+    "question": "Soghomon Tehlirian, a young Armenian survivor, shot and killed the exiled Talaat Pasha on a Berlin street in 1921. Talaat had directed the killing of the Armenians, and Tehlirian had lost dozens of relatives in the slaughter. Germany put him on trial. What became of him?",
     "answer": "The German jury heard the genocide evidence and acquitted him",
     "choices": [
       "The German jury heard the genocide evidence and acquitted him",
@@ -3589,7 +3498,7 @@
   },
   {
     "tier": 4,
-    "question": "Komitas was an Armenian priest and composer who had rescued thousands of Armenian folk songs by writing them down; he is called the father of Armenian classical music. Arrested on April 24, 1915, he was freed after powerful friends intervened. But he had already witnessed the slaughter. What became of the man who saved Armenia's songs?",
+    "question": "Komitas, a priest and composer, had saved Armenia's folk music by writing down thousands of its village songs. He was among those seized in Talaat's arrests of 24 April 1915, and friends who included the American ambassador got him freed. But he had already witnessed the slaughter. What became of the man who saved Armenia's songs?",
     "answer": "He broke down and lived his last 20 years silent in an asylum",
     "choices": [
       "He broke down and lived his last 20 years silent in an asylum",
@@ -3602,7 +3511,7 @@
   },
   {
     "tier": 4,
-    "question": "During the First World War in 1915, the Ottoman government marched over a million Armenian Christians out of their villages and into the deserts of Syria to die of thirst, starvation, and massacre. The American ambassador in Constantinople, Henry Morgenthau, met again and again with Talaat Pasha, the interior minister who ran the killings, and begged him to stop. Talaat gave one short, cold answer and treated the matter as closed. What did Talaat say?",
+    "question": "Henry Morgenthau, America's ambassador in Constantinople, begged Talaat Pasha again and again in 1915 to stop the killing, while the Ottoman government marched whole Armenian villages into the Syrian desert to die of thirst, hunger and massacre. Talaat gave one short, cold answer and treated the matter as closed. What did he say?",
     "answer": "There are no more Armenians.",
     "choices": [
       "There are no more Armenians.",
@@ -3615,7 +3524,7 @@
   },
   {
     "tier": 4,
-    "question": "Henry Morgenthau Sr., the U.S. ambassador in the Ottoman capital, watched the deportations of the Armenians with his own eyes and cabled Washington on July 16, 1915. His words named exactly what he believed was happening — and became one of the strongest contemporary records that the killing was deliberate. What phrase did Morgenthau use?",
+    "question": "Watching the Armenian deportations with his own eyes, Henry Morgenthau, the United States ambassador in the Ottoman capital, Constantinople, cabled Washington on 16 July 1915. His message named exactly what he believed was happening to the Armenian people. What phrase did he use?",
     "answer": "a campaign of race extermination is in progress",
     "choices": [
       "a campaign of race extermination is in progress",
@@ -3628,7 +3537,7 @@
   },
   {
     "tier": 5,
-    "question": "In May 1915 the Ottoman government gave its slaughter of the Armenians a legal disguise, issuing a decree that framed the round-ups not as murder but as a routine, lawful wartime measure. The paperwork said one thing while the Syrian desert soon proved another. What did the decree claim the Armenians were merely undergoing?",
+    "question": "The Ottoman government gave its slaughter of the Armenians a legal disguise in May 1915. Its decree framed the round-ups not as murder but as a routine, lawful wartime measure, though the Syrian desert soon told the truth. What did the decree claim the Armenians were merely undergoing?",
     "answer": "a temporary relocation for safety",
     "choices": [
       "a temporary relocation for safety",
@@ -3641,7 +3550,7 @@
   },
   {
     "tier": 5,
-    "question": "Soghomon Tehlirian admitted in a Berlin courtroom that he had shot the exiled Talaat Pasha dead. Instead of denying the killing, his lawyers turned the proceedings into a trial of the genocide itself, parading evidence of the massacres before the world. Asked to speak, Tehlirian gave the court one unforgettable sentence. What did he say?",
+    "question": "In a Berlin courtroom, Soghomon Tehlirian admitted that he had shot the exiled Talaat Pasha dead. Instead of denying the killing, his lawyers put the genocide itself on trial, parading the evidence of the massacres before the world. Asked to speak, Tehlirian gave the court one unforgettable sentence. What did he say?",
     "answer": "I have killed a man, but I am not a murderer.",
     "choices": [
       "I have killed a man, but I am not a murderer.",
@@ -3654,7 +3563,7 @@
   },
   {
     "tier": 5,
-    "question": "A week before invading Poland in 1939, Adolf Hitler is said to have brushed aside his generals' fear that the world would punish mass murder. He pointed to one earlier slaughter the world had already forgotten. The exact wording is disputed, but the warning stuck: a forgotten genocide invites the next one. Which forgotten killing is Hitler reported to have named?",
+    "question": "Adolf Hitler's generals feared in August 1939 that the world would punish mass murder, and Hitler, days before he invaded Poland, is said to have waved their worry away. He pointed to an earlier slaughter the world had already forgotten. The exact wording is disputed, but the lesson stands: a forgotten genocide invites the next. Which killing is he reported to have named?",
     "answer": "the annihilation of the Armenians",
     "choices": [
       "the annihilation of the Armenians",
@@ -3667,7 +3576,7 @@
   },
   {
     "tier": 1,
-    "question": "The First World War, which had killed millions of soldiers across Europe, ended on November 11, 1918. That morning at exactly eleven o'clock, the roaring guns finally went silent on the Western Front in France. Officers said the moment was easy to remember, because it was built from a single number, said three times over. What was that famous pattern?",
+    "question": "The roaring guns finally went silent on the Western Front in 1918, ending a war that had killed millions. Officers said the moment was easy to remember, because it was built from a single number said three times over. What was that famous pattern?",
     "answer": "The eleventh hour of the eleventh day of the eleventh month",
     "choices": [
       "The eleventh hour of the eleventh day of the eleventh month",
@@ -3680,7 +3589,7 @@
   },
   {
     "tier": 2,
-    "question": "The papers that ended World War I were signed inside a railway carriage: Marshal Foch's own dining car, parked on a hidden siding in the Compiègne forest. Twenty-two years later, in June 1940, that same carriage became the scene of a stunning act of revenge. What happened to it?",
+    "question": "Marshal Ferdinand Foch set out the Allied terms to the German delegates in 1918 inside his own railway carriage, parked on a hidden siding in the Compiegne forest. Twenty-two years later, in June 1940, the carriage had one more part to play. What happened to it?",
     "answer": "Adolf Hitler had it hauled out so he could force a beaten France to surrender in it",
     "choices": [
       "Adolf Hitler had it hauled out so he could force a beaten France to surrender in it",
@@ -3693,7 +3602,7 @@
   },
   {
     "tier": 3,
-    "question": "The ceasefire ending World War I was set for exactly 11:00 a.m. on November 11, 1918, and commanders all along the line knew it was coming. An American soldier, Private Henry Gunther, charged a German machine-gun nest in the final moments — and the German gunners, knowing peace was seconds away, stood up waving and shouting for him to stop. He kept charging and fired, so they shot back. When was Gunther killed?",
+    "question": "Private Henry Gunther, an American soldier, charged a German machine-gun nest on the Western Front in 1918, while the German gunners rose to their feet, waving at him to stop. Commanders already knew the ceasefire was coming. Gunther kept charging and fired, so the gunners shot back. When was he killed?",
     "answer": "At 10:59 a.m., one minute before the war ended",
     "choices": [
       "At 10:59 a.m., one minute before the war ended",
@@ -3706,7 +3615,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1917 the artist Marcel Duchamp bought a plain porcelain urinal from a New York plumbing showroom, laid it on its back, signed it with the fake name \"R. Mutt,\" and submitted it to an art exhibition as a serious sculpture mocking the whole idea of \"fine art.\" What single-word title did he give this urinal?",
+    "question": "Marcel Duchamp bought a plain porcelain urinal from a New York plumbing showroom in 1917, turned it on its back and signed it with the false name R. Mutt. He entered it in an art exhibition as a serious sculpture, mocking the whole idea of fine art. What one-word title did he give it?",
     "answer": "Fountain",
     "choices": [
       "Fountain",
@@ -3718,21 +3627,8 @@
     "topic": "art-and-disillusionment-after-the-war"
   },
   {
-    "tier": 4,
-    "question": "The Spanish Surrealist painter Salvador Dalí filled his 1931 painting The Persistence of Memory with limp pocket-watches drooping and melting over a bare landscape. By Dalí's own account, the soft, melting look of the clocks came from staring at one ordinary thing he had just eaten at dinner. What was it?",
-    "answer": "a runny Camembert cheese",
-    "choices": [
-      "a runny Camembert cheese",
-      "a bowl of warm honey",
-      "a melted candle stub",
-      "a spoonful of soft butter"
-    ],
-    "context": "Dalí said the limp watches in The Persistence of Memory (1931) were inspired by a runny Camembert cheese melting on his plate. He built such dream-images using what he called the \"paranoiac-critical method\" — deliberately inducing a hypnotic, dream-like state so his hand would paint the irrational logic of dreams rather than the waking world. Sources: https://www.britannica.com/topic/The-Persistence-of-Memory ; https://www.salvadordali.com/melting-clocks-persistence-of-memory/",
-    "topic": "art-and-disillusionment-after-the-war"
-  },
-  {
     "tier": 3,
-    "question": "Under the Articles of Confederation, Congress could not tax a single person. It could only ask each state to chip in money, a plea called a requisition. In its last such request before the Constitution, Congress asked the states for $3,800,000 to keep the country running. How much did the states actually pay in?",
+    "question": "Congress begged the states for $3,800,000 in its last appeal before the Constitution took the place of the Articles of Confederation. Under the Articles it could not tax a single person; it could only ask each state to chip in, a plea called a requisition. How much did the states actually pay in?",
     "answer": "$663",
     "choices": [
       "$663",
@@ -3745,7 +3641,7 @@
   },
   {
     "tier": 4,
-    "question": "Under the Articles of Confederation, Congress could not stop states from taxing each other's goods like foreign rivals. New Jersey, lacking a great seaport, got squeezed between New York's port to the north and Philadelphia's port to the south, both draining its trade. Benjamin Franklin mocked poor New Jersey's plight with what homely image?",
+    "question": "New Jersey had no great seaport of its own, and under the Articles of Confederation it was caught between New York's port to the north and Philadelphia's to the south, which drained its trade while the states taxed one another's goods like foreign rivals. Benjamin Franklin mocked its plight with one homely image. What was it?",
     "answer": "a barrel tapped at both ends",
     "choices": [
       "a barrel tapped at both ends",
@@ -3758,7 +3654,7 @@
   },
   {
     "tier": 1,
-    "question": "In ancient India around 1500 BC, Vedic priests composed the Rigveda, a book of over a thousand sacred hymns in Sanskrit. It is one of the oldest religious books in the world, still chanted today after 3,500 years. Its very first hymn, the one every young worshiper would learn first, does not praise the king of the gods or the sun. Which god does the Rigveda name in its opening words?",
+    "question": "Vedic priests composed the Rigveda in ancient India, more than a thousand sacred hymns in Sanskrit that are still chanted today. Its very first hymn does not praise the king of the gods or the sun. Which god do its opening words name?",
     "answer": "Agni, the god of sacred fire",
     "choices": [
       "Agni, the god of sacred fire",
@@ -3771,7 +3667,7 @@
   },
   {
     "tier": 2,
-    "question": "The Rigveda is the oldest sacred book of Hinduism, a collection of over a thousand hymns composed in ancient India more than three thousand years ago. Its books are called mandalas. One whole mandala, all 114 of its hymns, is dedicated to a single god from start to finish -- a god whose sacred plant juice was strained and purified for the ritual fire. Which of the Rigveda's three chief gods gets a whole book to himself?",
+    "question": "Priests pressed the juice of a holy plant and filtered it for the Vedic sacrifice, and one of the Rigveda's three chief gods was the god of that plant. The Rigveda's ninth book, all 114 of its hymns, is his from start to finish. Which god gets a whole book to himself?",
     "answer": "Soma",
     "choices": [
       "Soma",
@@ -3784,7 +3680,7 @@
   },
   {
     "tier": 2,
-    "question": "The Gayatri mantra, a short prayer to the sun-god Savitr from the ancient Indian scripture called the Rigveda, is still chanted by Hindus in India every single day, more than three thousand years after it was first composed. For almost all of that long history, how was this prayer passed from one age to the next?",
+    "question": "The Rigveda's poets composed the Gayatri mantra, a short prayer to Savitr, the sun-god, and Hindus still chant it every day some three thousand years later. For almost all of that long history, how was the prayer passed from one age to the next?",
     "answer": "Memorized and chanted aloud, never written down",
     "choices": [
       "Memorized and chanted aloud, never written down",
@@ -3797,7 +3693,7 @@
   },
   {
     "tier": 3,
-    "question": "For over a thousand years, the Rigveda was never written down; it was preserved perfectly by memory alone. To catch any slip, reciters chanted the words backwards as a check. That works because of one striking feature of Sanskrit. Why does reversing the words still verify the text?",
+    "question": "Reciters of the Rigveda guarded against any slip by weaving its verses into braided patterns and chanting them even backwards; the hardest pattern, called the bell, swung the words to and fro. The backward check works because of one striking feature of Sanskrit. What is it?",
     "answer": "Reversing Sanskrit words doesn't change their meaning",
     "choices": [
       "Reversing Sanskrit words doesn't change their meaning",
@@ -3810,7 +3706,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2008 the United Nations Educational, Scientific and Cultural Organization (UNESCO) honored Vedic chant -- the ancient Sanskrit hymns of Hindu India, passed down entirely by voice for over three thousand years -- as a Masterpiece of humanity's heritage. It called the chant 'a perfect canon,' kept unchanged in word and even in the exact sounds. What sweeping claim did UNESCO make about the tradition of Vedic chanting?",
+    "question": "The United Nations Educational, Scientific and Cultural Organization (UNESCO) honored Vedic chant in 2008 as a masterpiece of humanity's heritage. It called the chant 'a perfect canon,' kept unchanged in word and even in the exact sounds. What sweeping claim did UNESCO make about the tradition?",
     "answer": "It may be the oldest unbroken oral tradition in existence",
     "choices": [
       "It may be the oldest unbroken oral tradition in existence",
@@ -3823,7 +3719,7 @@
   },
   {
     "tier": 4,
-    "question": "The Rigveda's Hymn of Creation (the Nasadiya Sukta) asks how the universe began — but it refuses to give a confident answer. After wondering aloud, it says even the god who watches creation from highest heaven 'knows — or maybe even he does not know.' What did Carl Sagan praise this hymn for showing about ancient India?",
+    "question": "Carl Sagan admired the Rigveda's Hymn of Creation, the Nasadiya Sukta, which asks how the universe began and will not give a sure answer. It ends by saying that even the god who watches creation from highest heaven 'knows, or maybe even he does not know.' What did Sagan praise the hymn for showing about ancient India?",
     "answer": "A tradition of skeptical questioning",
     "choices": [
       "A tradition of skeptical questioning",
@@ -3836,7 +3732,7 @@
   },
   {
     "tier": 4,
-    "question": "Around 1380 BC a peace treaty was signed in northern Syria between the Hittites and the Mitanni kingdom. To seal their oaths, the two kings swore by Mitra, Varuna, Indra and the Nasatya twins. Why did this treaty astonish later scholars?",
+    "question": "The Hittite king and the king of Mitanni sealed a peace treaty in northern Syria around 1380 BC, and the two kings swore their oaths by Mitra, Varuna, Indra and the Nasatya twins. Why did this treaty astonish later scholars?",
     "answer": "Those are the same gods praised in the Rigveda, found far west of India",
     "choices": [
       "Those are the same gods praised in the Rigveda, found far west of India",
@@ -3849,7 +3745,7 @@
   },
   {
     "tier": 5,
-    "question": "A Mitanni horse-trainer named Kikkuli wrote a training manual, preserved on Hittite clay tablets, that counts the horses' laps with words like aika, tera, panza, satta and na. Scholars seized on these counting words as hard evidence of one thing about the Mitanni elite. What did the numerals reveal?",
+    "question": "Kikkuli, who trained horses for the kingdom of Mitanni, left a training manual on Hittite clay tablets that counts the horses' laps with words like aika, tera, panza, satta and na. Scholars seized on those counting words as hard evidence. What did they reveal about the Mitanni elite?",
     "answer": "They were Indo-Aryan speakers, since the words match Sanskrit numbers",
     "choices": [
       "They were Indo-Aryan speakers, since the words match Sanskrit numbers",
@@ -3862,7 +3758,7 @@
   },
   {
     "tier": 5,
-    "question": "The oldest spoked-wheel chariots ever found come not from India or Egypt but from steppe graves dated to roughly 1950 BC and buried with the first known bridle-bits. Which steppe people left these earliest chariot burials that scholars link to the ancestors of the Vedic Indo-Aryans?",
+    "question": "Steppe people buried the oldest spoked-wheel chariots yet found in graves of about 1950 BC, along with the first known bridle-bits. Scholars link them to the ancestors of the Vedic Indo-Aryans, though that reconstruction is still debated. Who left these graves?",
     "answer": "The Sintashta culture",
     "choices": [
       "The Sintashta culture",
@@ -3875,7 +3771,7 @@
   },
   {
     "tier": 1,
-    "question": "On the morning of June 28, 1914, Archduke Franz Ferdinand — heir to the throne of Austria-Hungary — rode in an open car through the streets of Sarajevo, in Bosnia. A young Bosnian-Serb plotter named Nedeljko Cabrinovic stepped out of the crowd along the river and hurled a hand grenade at the car. The whole plan of the assassination hung on that first throw. What did the grenade do?",
+    "question": "Nedeljko Cabrinovic stepped out of the crowd by the river in Sarajevo on 28 June 1914 and hurled a hand grenade at the open car of Archduke Franz Ferdinand, heir to the throne of Austria-Hungary. What did the grenade do?",
     "answer": "It bounced off the car's folded roof and blew up under the next car in line",
     "choices": [
       "It bounced off the car's folded roof and blew up under the next car in line",
@@ -3888,7 +3784,7 @@
   },
   {
     "tier": 1,
-    "question": "On June 28, 1914, in the Bosnian city of Sarajevo, the young Serbian nationalist Gavrilo Princip shot Archduke Franz Ferdinand -- the heir to the Austro-Hungarian throne -- and sparked the First World War. Earlier that same morning, a friend of Princip had already thrown a bomb at the Archduke's motorcade, and Franz Ferdinand had escaped unhurt. What then put the Archduke back on Princip's street later that morning?",
+    "question": "Archduke Franz Ferdinand escaped unhurt when a plotter threw a bomb at his car in Sarajevo on the morning of 28 June 1914. Later that morning the Archduke turned up on the very street where another plotter, Gavrilo Princip, was standing. What brought him there?",
     "answer": "The driver took a wrong turn and stopped right in front of Princip",
     "choices": [
       "The driver took a wrong turn and stopped right in front of Princip",
@@ -3901,7 +3797,7 @@
   },
   {
     "tier": 2,
-    "question": "Later that same morning of June 28, 1914 in Sarajevo, a second plotter named Gavrilo Princip stepped up to Archduke Franz Ferdinand's stalled car and fired a pistol at point-blank range. One bullet struck the Archduke in the neck. Bleeding to death in the back seat, Franz Ferdinand did not speak of himself. He spoke to his wounded wife Sophie, who was slumped beside him. What did he say?",
+    "question": "Gavrilo Princip stepped up to Archduke Franz Ferdinand's open car in Sarajevo and fired at point-blank range, and one bullet struck the Archduke in the neck. Bleeding to death in the back seat, he did not speak of himself. He spoke to his wounded wife Sophie, slumped beside him. What did he say?",
     "answer": "\"Sophie, Sophie! Don't die! Live for our children!\"",
     "choices": [
       "\"Sophie, Sophie! Don't die! Live for our children!\"",
@@ -3914,7 +3810,7 @@
   },
   {
     "tier": 2,
-    "question": "Gavrilo Princip, the young Serbian nationalist who assassinated Archduke Franz Ferdinand in Sarajevo on June 28, 1914, had fired the two pistol shots that triggered the First World War. Yet the Austrian court trying him could not send him to the gallows. Born on July 25, 1894, Princip had missed Austrian law's minimum age for execution by just 27 days. What sentence did the court give him instead?",
+    "question": "Princip's judges in Austria-Hungary could not send him to the gallows, though his two shots in Sarajevo had set off the First World War. Austrian law hanged no one under twenty, and he had been born just 27 days too late. What sentence did the court give him instead?",
     "answer": "The maximum prison term of 20 years",
     "choices": [
       "The maximum prison term of 20 years",
@@ -3927,7 +3823,7 @@
   },
   {
     "tier": 2,
-    "question": "The governor shouted that the motorcade had taken the wrong street. Driver Leopold Lojka hit the brakes and tried to reverse the Archduke's open car. In doing so he made one fatal mistake that left the car dead in the road exactly where Gavrilo Princip stood. What happened?",
+    "question": "Leopold Lojka, the Archduke's driver, hit the brakes when the governor shouted at him, and tried to back the car up. In doing so he made one fatal slip that left the open car dead in the road. What happened?",
     "answer": "He accidentally stalled the engine",
     "choices": [
       "He accidentally stalled the engine",
@@ -3940,7 +3836,7 @@
   },
   {
     "tier": 2,
-    "question": "In Sarajevo on the morning of June 28, 1914, one of a group of Serbian assassins had thrown a grenade at the motorcade of Archduke Franz Ferdinand, heir to the Austro-Hungarian throne -- and missed him. Shaken but unhurt, Franz Ferdinand wanted to visit the wounded from the blast at the city hospital. The governor picked a safer road along the river. Yet the drivers still turned the wrong way onto the old, dangerous street. Why did the drivers take the dangerous route?",
+    "question": "Archduke Franz Ferdinand, shaken but unhurt after the grenade, wanted to see the people it had wounded in the city hospital, and the governor, Potiorek, chose a safer road along the river. Yet the cars still swung onto the old street. Why did the drivers take that route?",
     "answer": "No one had told the drivers the route was changed",
     "choices": [
       "No one had told the drivers the route was changed",
@@ -3953,7 +3849,7 @@
   },
   {
     "tier": 3,
-    "question": "On 28 June 1914 in Sarajevo, a group of young Bosnian Serb conspirators lined the route of the Austrian Archduke Franz Ferdinand, hoping to kill him and free the South Slavs from Austrian rule. One of them, Nedeljko Cabrinovic, threw a grenade at the archduke's car — but it bounced off the folded roof and exploded behind. His grenade having missed, Cabrinovic swallowed a cyanide capsule and jumped into the Miljacka River to kill himself before capture. Both attempts failed and he was pulled out and arrested. Why did they fail?",
+    "question": "Having missed the Archduke with his grenade, Nedeljko Cabrinovic swallowed a cyanide capsule and jumped into the Miljacka River to die before he could be caught. Both attempts failed, and he was pulled out and arrested. Why did they fail?",
     "answer": "The old cyanide only made him vomit and the river was barely ankle-deep",
     "choices": [
       "The old cyanide only made him vomit and the river was barely ankle-deep",
@@ -3966,7 +3862,7 @@
   },
   {
     "tier": 3,
-    "question": "A famous story says Gavrilo Princip was eating a sandwich at Schiller's delicatessen when the Archduke's stalled car appeared right in front of him. Historians say this tale grew up long after the fact, with no basis in the trial record. Where does the sandwich story actually come from?",
+    "question": "At Schiller's delicatessen, a famous story says, Gavrilo Princip was eating a sandwich when the Archduke's car appeared right in front of him. Historians find no trace of it in the court records. Where does the sandwich story actually come from?",
     "answer": "A 2001 Brazilian novel and a 2003 documentary",
     "choices": [
       "A 2001 Brazilian novel and a 2003 documentary",
@@ -3979,7 +3875,7 @@
   },
   {
     "tier": 3,
-    "question": "Two pistol shots fired by Gavrilo Princip in Sarajevo on June 28, 1914 killed Archduke Franz Ferdinand — and pulled the taut wires of Europe's alliance treaties tight. One month later, on July 28, 1914, Austria-Hungary declared war on Serbia to punish it for the killing. Each of the great powers had promised to fight for another, and now those promises came due. What happened over the next week?",
+    "question": "Austria-Hungary declared war on Serbia a month after Princip's shots, to punish it for the Archduke's murder. Each of Europe's great powers had promised to fight for another, and now those promises came due. What happened over the next week?",
     "answer": "Germany, Russia, France, Belgium, and Britain were all dragged into the fighting",
     "choices": [
       "Germany, Russia, France, Belgium, and Britain were all dragged into the fighting",
@@ -3992,7 +3888,7 @@
   },
   {
     "tier": 4,
-    "question": "The Bosnian-Serb plotters who killed Archduke Franz Ferdinand on June 28, 1914 did not pick that day by chance. They picked it on purpose, because it fell on Vidovdan (St. Vitus Day), the most sacred anniversary on the Serbian calendar. Every Serbian child grew up knowing what had happened on that same date over 500 years earlier. What event from 1389 did the date commemorate?",
+    "question": "The young plotters who killed Franz Ferdinand chose 28 June on purpose: it fell on Vidovdan, St Vitus Day, the most sacred anniversary on the Serbian calendar. Every Serbian child grew up knowing what had happened on that date more than 500 years earlier, in 1389. What did the day remember?",
     "answer": "The Battle of Kosovo, where Prince Lazar fell to the Ottomans",
     "choices": [
       "The Battle of Kosovo, where Prince Lazar fell to the Ottomans",
@@ -4005,7 +3901,7 @@
   },
   {
     "tier": 4,
-    "question": "The bombs and pistols used at Sarajevo did not come from the boys themselves. A Serbian secret group gave them the weapons and the training. It was run by Colonel Dragutin Dimitrijevic, code-named 'Apis,' the chief of Serbian military intelligence. What was that secret group called?",
+    "question": "Colonel Dragutin Dimitrijevic, code-named Apis, ran Serbia's military intelligence. He also led a secret society, and the young Sarajevo plotters' pistols, bombs and training all came from it rather than from the boys themselves. What was that secret society called?",
     "answer": "The Black Hand",
     "choices": [
       "The Black Hand",
@@ -4018,7 +3914,7 @@
   },
   {
     "tier": 4,
-    "question": "After his fellow conspirators failed, the nineteen-year-old Bosnian Serb Gavrilo Princip shot the Austrian Archduke Franz Ferdinand and his wife Sophie in Sarajevo on 28 June 1914 — the killing that lit the fuse of the First World War. At his trial Princip declared himself a Yugoslav nationalist seeking to unite all the South Slavs and free them from Austria. When the court asked by what method he meant to achieve it, what did he answer?",
+    "question": "On trial for the killings in Sarajevo, Gavrilo Princip told his judges that he was a Yugoslav nationalist who wanted to unite all the South Slavs and free them from Austria. When the court asked by what method he meant to achieve it, what did he answer?",
     "answer": "\"By means of terror.\"",
     "choices": [
       "\"By means of terror.\"",
@@ -4031,33 +3927,7 @@
   },
   {
     "tier": 2,
-    "question": "Athens and Sparta were the two great rival cities of ancient Greece, and they raised their sons in completely opposite ways. An Athenian boy lived at home and studied music, poetry, and how to argue. But a Spartan boy, at just seven years old, was handed over to the city itself. What happened to a Spartan boy at age seven?",
-    "answer": "He was taken from his parents to live in army barracks",
-    "choices": [
-      "He was taken from his parents to live in army barracks",
-      "He was sent to a temple to be raised as a priest",
-      "He was shipped to a colony to farm new land",
-      "He was bound to a master to learn a craft trade"
-    ],
-    "context": "At seven, Spartan boys entered the 'agoge,' the state's brutal military schooling, and lived in barracks rather than at home — the mirror opposite of the Athenian boy, who stayed home studying music, poetry, and argument. Source: https://en.wikipedia.org/wiki/Agoge",
-    "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
-  },
-  {
-    "tier": 2,
-    "question": "Sparta lay in a region called Laconia, and the Spartans were famous for using as few words as possible: which is why we still call a short reply 'laconic.' Philip of Macedon once threatened, 'If I invade Laconia, I will burn your city to the ground.' The Spartans sent back a reply just one word long. What was their whole answer?",
-    "answer": "\"If.\"",
-    "choices": [
-      "\"If.\"",
-      "\"Never.\"",
-      "\"Begone.\"",
-      "\"Cowards.\""
-    ],
-    "context": "Their whole reply was a single word: 'If.' — a dare daring Philip to even succeed at the first step. (This kind of polished one-liner is remembered as legend more than verified record.) Source: https://greekreporter.com/2025/11/03/spartan-wit-history-sharpest-one-liner/",
-    "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
-  },
-  {
-    "tier": 2,
-    "question": "Athens grew rich as a city of traders, its harbor packed with merchant ships from across the sea. Sparta wanted the exact opposite — no trade, no merchants, no one hoarding wealth or greedy for it. So Spartans were said to use money made of a material so bulky and worthless that storing a small fortune took a whole room and a team of oxen to haul it. What was Spartan money made of?",
+    "question": "Athens grew rich on trade, but Sparta wanted no trade, no merchants and no greed. So the story goes that Spartans used money so bulky and worthless that storing a small fortune took a whole room and a team of oxen to haul it. What was Spartan money made of?",
     "answer": "Bars of iron",
     "choices": [
       "Bars of iron",
@@ -4070,20 +3940,7 @@
   },
   {
     "tier": 3,
-    "question": "In one single lifetime, golden-age Athens produced the philosophers, the great playwrights, and the first true historians. Warlike Sparta never matched it. The Athenians even put on the world's first plays, as part of a yearly religious festival. Which god was that festival held to honor?",
-    "answer": "Dionysus, god of wine",
-    "choices": [
-      "Dionysus, god of wine",
-      "Apollo, god of music",
-      "Athena, goddess of the city",
-      "Zeus, king of the gods"
-    ],
-    "context": "Greek theater was born as a festival for Dionysus, the god of wine — so the very first tragedies and comedies were a form of worship. Apollo (music) and Athena (Athens' own patron) are tempting guesses, but the stage belonged to Dionysus. Source: https://en.wikipedia.org/wiki/History_of_Athens",
-    "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
-  },
-  {
-    "tier": 3,
-    "question": "Pericles was the great statesman of Athens at its peak. Over the bodies of the city's war dead, he gave the most famous speech in Athens's history. He praised everything that made his city special. One boast was about how Athens treated strangers from other lands. Which boast did Pericles make about Athens and outsiders?",
+    "question": "Pericles stood over the bodies of the Athenian war dead and gave the most famous speech in his city's history, praising everything that made Athens special. One boast was about how Athens treated strangers from other lands. Which boast did he make?",
     "answer": "\"We throw our city open to all the world\"",
     "choices": [
       "\"We throw our city open to all the world\"",
@@ -4096,7 +3953,7 @@
   },
   {
     "tier": 3,
-    "question": "Athens ran the boldest experiment in government the world had yet seen. Its great Assembly of citizens met on a bare hill called the Pnyx more than forty times a year to debate and vote on the city's laws. Picture an ordinary Athenian farmer who wants a say in a new law. What does he actually do at the Assembly?",
+    "question": "The citizens of Athens met in their Assembly on a bare hill called the Pnyx more than forty times a year, to debate and vote on the city's laws. An ordinary Athenian farmer wanted a say in a new law. What did he do at the Assembly?",
     "answer": "He climbed a platform and argued before the whole Assembly",
     "choices": [
       "He climbed a platform and argued before the whole Assembly",
@@ -4109,7 +3966,7 @@
   },
   {
     "tier": 3,
-    "question": "Athens had a strange power no other city had: it could banish a man for ten years without a crime, just by a vote scratched onto broken pottery. At one such vote a citizen who could not read handed his shard to a stranger. He asked him to scratch on the name 'Aristides,' not knowing the stranger was Aristides. Why did this man want him banished?",
+    "question": "An Athenian citizen who could not read handed his pottery shard to a stranger on the day of a banishment vote and asked him to scratch on the name Aristides. He did not know the stranger was Aristides himself. Athenians could send any man away for ten years this way, with no crime charged. Why did this man want Aristides gone?",
     "answer": "He was simply tired of hearing him called \"the Just\"",
     "choices": [
       "He was simply tired of hearing him called \"the Just\"",
@@ -4121,21 +3978,8 @@
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
   },
   {
-    "tier": 3,
-    "question": "You might expect the grim warrior city to crush its women, but the reverse was true: Spartan women trained in sports and were the freest in Greece. When an Athenian woman asked Queen Gorgo why Spartan women alone could rule their own husbands, Gorgo gave a famously cutting reply. What did Gorgo answer?",
-    "answer": "\"Because we are the only ones who give birth to real men\"",
-    "choices": [
-      "\"Because we are the only ones who give birth to real men\"",
-      "\"Because our husbands fear us more than they fear the foe\"",
-      "\"Because we alone are taught to fight beside our husbands\"",
-      "\"Because we alone of Greek women were never raised to obey\""
-    ],
-    "context": "Gorgo, wife of King Leonidas, shot back that Spartan women alone gave birth to (real) men. By the 300s BC Spartan women owned nearly two-fifths of all Sparta's land — a freedom the philosopher Aristotle actually blamed for Sparta's decline. Source: https://www.worldhistory.org/article/123/spartan-women/",
-    "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
-  },
-  {
     "tier": 4,
-    "question": "Athenian juries were enormous: often 500 ordinary citizens, sometimes 2,500. Athens trusted everyday people, not nobles or judges, to run its courts. In the courthouse stood a clever slab of stone called the 'kleroterion,' fitted with slots for citizens' bronze name-tickets and a tube that dropped black and white balls. What was this stone machine for?",
+    "question": "Ordinary citizens, not nobles or judges, ran the courts of Athens, on juries of 500 and sometimes 2,500. In the courthouse stood the kleroterion, a stone slab with slots for citizens' bronze name-tickets and a tube that dropped black and white balls. What was this stone machine for?",
     "answer": "It picked the day's jurors purely at random",
     "choices": [
       "It picked the day's jurors purely at random",
@@ -4148,20 +3992,7 @@
   },
   {
     "tier": 4,
-    "question": "Sparta could train every man as a full-time soldier only because enslaved serfs called helots — conquered neighbors — did all the farming. The helots vastly outnumbered their masters, and Sparta lived in terror of a revolt. So every single year, Sparta's rulers did one chilling thing to the helots. What did the Spartan leaders formally do to the helots each year?",
-    "answer": "Declared war on them, so any Spartan could kill one freely",
-    "choices": [
-      "Declared war on them, so any Spartan could kill one freely",
-      "Drafted the strongest of them, to swell the army's ranks",
-      "Freed a chosen few of them, to reward their good behavior",
-      "Counted every one of them, to track how fast they multiplied"
-    ],
-    "context": "Sparta's five magistrates (the ephors) formally declared WAR on the helots every year, so killing one carried no religious guilt — state-sanctioned terror to keep the serfs cowed. At the battle of Plataea there were seven helots for every Spartan soldier. This was the hidden, ugly foundation that 'free' Sparta rested on. Source: https://en.wikipedia.org/wiki/Helots",
-    "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
-  },
-  {
-    "tier": 4,
-    "question": "The two rival cities finally fought a brutal 27-year war (431-404 BC), and on paper they were mismatched: Athens ruled the sea with the mightiest navy in Greece, while Sparta's strength was its unbeatable army on land. Sparta could not break Athens — until it did the one thing that finally won the war. How did land-power Sparta beat sea-power Athens?",
+    "question": "Sparta's army was unbeatable on land and Athens had the mightiest navy in Greece when the two finally fought a brutal war of 27 years, 431 to 404 BC. Sparta could not break Athens until it did one thing. How did land-power Sparta beat sea-power Athens?",
     "answer": "It took Persian gold to build a fleet and beat Athens at sea",
     "choices": [
       "It took Persian gold to build a fleet and beat Athens at sea",
@@ -4173,21 +4004,8 @@
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
   },
   {
-    "tier": 3,
-    "question": "Spartan mothers raised their sons for one purpose: to win or to die, never to flee. A Spartan warrior carried a huge round shield, and a man who ran from battle would throw that heavy shield away to run faster — the ultimate disgrace. As her son left for war, a Spartan mother would hand him his shield with five famous words. What did she tell him?",
-    "answer": "\"With it, or on it\"",
-    "choices": [
-      "\"With it, or on it\"",
-      "\"Guard it with your life\"",
-      "\"Bring it home to me\"",
-      "\"Win, or do not return\""
-    ],
-    "context": "'With it, or on it' — come home carrying your shield in victory, or come home dead, carried ON it. To drop the shield and run was the deepest shame in Sparta. (Like the other polished Spartan sayings, this is remembered as legend more than documented fact.) Source: https://greekreporter.com/2025/11/03/spartan-wit-history-sharpest-one-liner/",
-    "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
-  },
-  {
     "tier": 2,
-    "question": "The dictator Julius Caesar was murdered on 15 March 44 BC. His will stunned everyone: he had adopted his teenage great-nephew, plain young Gaius Octavius, and made him chief heir. The boy at once seized the one inheritance that mattered most. What did he take?",
+    "question": "Gaius Octavius was a teenager when Brutus and Cassius killed his great-uncle, Julius Caesar, on 15 March 44 BC. Caesar's will stunned everyone: it adopted the boy as his son and made him chief heir, and he at once seized the one inheritance that mattered most. What did he take?",
     "answer": "Caesar's name",
     "choices": [
       "Caesar's name",
@@ -4200,7 +4018,7 @@
   },
   {
     "tier": 2,
-    "question": "One month of our calendar is named after Rome's first emperor. In 8 BC the Senate renamed the old month Sextilis after him. It was the month he first became consul, brought Egypt under Rome, and ended the civil wars. Which modern month carries his name?",
+    "question": "Rome's first emperor first held the consulship in the month the Romans called Sextilis, and in that same month he later took Egypt and ended the civil wars. In 8 BC the Senate renamed the month after him. What is that month called today?",
     "answer": "August",
     "choices": [
       "August",
@@ -4213,7 +4031,7 @@
   },
   {
     "tier": 2,
-    "question": "Augustus Caesar, who became the first emperor of Rome in 27 BC, loved a tidy two-word Latin motto that still makes good advice today. He liked to explain his idea by saying, 'whatever is done well enough is done quickly enough,' and he packed that whole thought into one short saying that seemed to contradict itself. What was Augustus's famous motto?",
+    "question": "'Whatever is done well enough is done quickly enough,' Augustus liked to say, and he packed the thought into a tidy two-word Latin motto that seemed to contradict itself. What was his famous motto?",
     "answer": "'Make haste slowly'",
     "choices": [
       "'Make haste slowly'",
@@ -4226,7 +4044,7 @@
   },
   {
     "tier": 3,
-    "question": "Augustus, then still called Octavian, wanted to be remembered for rebuilding Rome. The historian Suetonius wrote down his most famous boast. He said he had taken a shabby, flood-prone capital and left it a capital fit for an empire. How did Augustus sum up that change?",
+    "question": "Suetonius, the historian, wrote down the most famous boast Augustus ever made about rebuilding Rome. Augustus had taken a shabby, flood-prone capital, he said, and he had left it a capital fit for an empire. How did he sum up that change?",
     "answer": "'I found Rome brick and left it marble'",
     "choices": [
       "'I found Rome brick and left it marble'",
@@ -4239,20 +4057,7 @@
   },
   {
     "tier": 3,
-    "question": "At the sea battle of Actium in 31 BC, Octavian's fleet had cornered the ships of Mark Antony. Then one ally's squadron suddenly turned and fled for open water, and Antony abandoned his entire navy to chase that fleeing ship. He threw the battle and the future of Rome away. Whose flight wrecked Antony?",
-    "answer": "Cleopatra's",
-    "choices": [
-      "Cleopatra's",
-      "Agrippa's",
-      "Caesar's",
-      "Pompey's"
-    ],
-    "context": "Cleopatra's Egyptian squadron broke for the open sea; Antony followed her and left his navy to be destroyed by Octavian's admiral Agrippa. Source: https://en.wikipedia.org/wiki/Battle_of_Actium",
-    "topic": "augustus-and-the-founding-of-the-empire"
-  },
-  {
-    "tier": 3,
-    "question": "In 27 BC the Senate retired the name 'Octavian' for good and crowned him with a brand-new title no Roman had ever borne: 'Augustus.' It was not a family name or a place, but an ordinary word lifted into a man's title for the very first time. What did that new word actually mean?",
+    "question": "Octavian took a title on 16 January 27 BC that no Roman had ever borne before, granted to him by the Senate: Augustus. It was not a family name or a place but an ordinary word, lifted into a man's title for the very first time. What did that word mean?",
     "answer": "'the revered one'",
     "choices": [
       "'the revered one'",
@@ -4265,7 +4070,7 @@
   },
   {
     "tier": 3,
-    "question": "Augustus's worst day came in AD 9, when his general Varus marched three whole legions into Germania's Teutoburg Forest and was ambushed and wiped out. Suetonius says the news broke the old emperor. For months he banged his head against a door, crying out one anguished line again and again. What did he cry?",
+    "question": "Varus, a general of Augustus, marched three whole legions into Germany's Teutoburg Forest in AD 9, and there they were ambushed and wiped out. Suetonius says the news broke the old emperor: for months he banged his head against a door, crying one anguished line again and again. What did he cry?",
     "answer": "'Varus, give me back my legions!'",
     "choices": [
       "'Varus, give me back my legions!'",
@@ -4278,7 +4083,7 @@
   },
   {
     "tier": 3,
-    "question": "Augustus died in AD 14 at seventy-five. Suetonius says that near the end the dying emperor calmly called for a mirror and had his hair combed, then asked his gathered friends one strange question about how he had handled his whole long life. He summed it up with one surprising image. How did Augustus describe his life at the very end?",
+    "question": "Dying at seventy-five in AD 14, Augustus called for a mirror and had his hair combed. Then, Suetonius says, he asked his gathered friends a strange question about how he had handled his whole long life, summing it up in one surprising image. How did he describe his life at the very end?",
     "answer": "as a part played in a comedy",
     "choices": [
       "as a part played in a comedy",
@@ -4290,8 +4095,8 @@
     "topic": "augustus-and-the-founding-of-the-empire"
   },
   {
-    "tier": 4,
-    "question": "Augustus carefully avoided the one Roman word that could get a man killed: 'rex' (king), a word Romans had hated ever since they threw out their kings. So instead of a royal title he picked a plain Latin word that dodged that hated name entirely, even as he quietly held all the armies. Which title did Augustus choose?",
+    "tier": 3,
+    "question": "Augustus carefully avoided the one Roman word that could get a man killed: rex, king, a word Romans had hated ever since they threw out their kings. He quietly held all the armies, yet in the Res Gestae, the record of his deeds that stood in bronze at his tomb, he gives himself one plain title and no other. Which title did he choose?",
     "answer": "princeps, 'first citizen'",
     "choices": [
       "princeps, 'first citizen'",
@@ -4304,7 +4109,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Roman Forum stood a small shrine with double doors that were flung open in wartime and shut only when the whole empire was at peace, and in seven centuries they had been closed just twice. Augustus boasted he had managed to shut them three times, the great symbol of the Roman Peace. By the name of which god were those famous doors known?",
+    "question": "Augustus boasted that he had shut the double doors of a small shrine in the Roman Forum three times. Those doors stood open in wartime and were closed only when the whole empire was at peace, and in seven centuries before him they had been shut just twice. By the name of which god were they known?",
     "answer": "the Gates of Janus",
     "choices": [
       "the Gates of Janus",
@@ -4317,20 +4122,7 @@
   },
   {
     "tier": 4,
-    "question": "As the first Roman emperor grew old, Augustus — the man who had ended a century of civil war after his adoptive father Julius Caesar was murdered — wrote his own resume in stone, a first-person list of everything he had done. He called it the Res Gestae. The bronze originals once stood at his tomb in Rome and are lost, but a near-complete copy survives carved on a temple wall in Ankara, in modern Turkey. What is striking about how Augustus described himself in this stone autobiography?",
-    "answer": "He always calls himself first citizen, never king or emperor",
-    "choices": [
-      "He always calls himself first citizen, never king or emperor",
-      "He credits every victory to the gods, never to himself",
-      "He apologizes for the civil wars that brought him to power",
-      "He predicts the exact date Rome will fall"
-    ],
-    "context": "The 'Res Gestae Divi Augusti' was engraved on two bronze pillars at his tomb; the surviving copy is the Monumentum Ancyranum in Ankara, Turkey. Source: https://en.wikipedia.org/wiki/Res_Gestae_Divi_Augusti",
-    "topic": "augustus-and-the-founding-of-the-empire"
-  },
-  {
-    "tier": 4,
-    "question": "After his adoptive father Julius Caesar was murdered in Rome in 44 BC, the young Augustus swore revenge. At the Battle of Philippi in Greece two years later, he faced Caesar's assassins Brutus and Cassius, and vowed to build a temple to a certain god if the gods let him pay the killers back. He won. Years later he crowned his grand new Forum in Rome with that promised temple, honoring the god with a new 'Avenger' title. Which god did Augustus honor as 'the Avenger'?",
+    "question": "Brutus and Cassius, the killers of Julius Caesar, waited for his adopted son Augustus at Philippi in 42 BC, and before the battle Augustus vowed a temple to a god if he were granted vengeance. He won. Years later he crowned his grand new Forum in Rome with that temple, honoring the god with a new title, the Avenger. Which god did he honor?",
     "answer": "Mars the Avenger",
     "choices": [
       "Mars the Avenger",
@@ -4343,7 +4135,7 @@
   },
   {
     "tier": 5,
-    "question": "Augustus pulled off the ultimate magic trick of one-man rule. He kept the Senate, the consuls, and the elections, all the Republic's old forms, while really controlling the armies. In the memoir he carved in stone he summed up the trick in a single honest sentence, claiming that in the formal powers of his office he was no greater than his fellow magistrates, yet in one other quality he towered over them all. According to that sentence, what did Augustus have more of than anyone?",
+    "question": "Augustus kept the Senate, the consuls and the elections, all the old forms of the Republic, while he quietly controlled the armies. In the record of his deeds he gave away the secret in one honest sentence: in the formal powers of his office he was no greater than his fellow magistrates, yet in one other quality he towered over them all. What did he have more of than anyone?",
     "answer": "authority, not legal power",
     "choices": [
       "authority, not legal power",
@@ -4356,7 +4148,7 @@
   },
   {
     "tier": 5,
-    "question": "Augustus's forty-year rule gave Rome peace and stability, but at a price the old Republic had fought for centuries to prevent. When he died in AD 14, power did not return to the Senate and the people; it passed on to one chosen successor. What did the Republic permanently lose in that handover?",
+    "question": "Rome enjoyed forty years of peace and stability under Augustus, but at a price the old Republic had fought for centuries to prevent. When he died in AD 14, power did not return to the Senate and the people; it passed on to one chosen successor. What did the Republic lose for good in that handover?",
     "answer": "its elected leaders, replaced by family succession",
     "choices": [
       "its elected leaders, replaced by family succession",
@@ -4369,7 +4161,7 @@
   },
   {
     "tier": 2,
-    "question": "During the Second World War, the German army invaded and occupied its eastern neighbor in September 1939. Just outside a small town called Oswiecim, the SS built the largest death camp in history and gave it the German name Auschwitz. The camp ran from 1940 to 1945, killing over a million people. Even though German soldiers guarded the wire and ran the gas chambers, the camp did not stand on German soil. In which country did the camp stand?",
+    "question": "Germany invaded its eastern neighbor in September 1939, and outside the small town of Oswiecim the SS later built Auschwitz, the largest of the Nazi death camps. German guards ran the gas chambers there, yet the camp did not stand on German soil. In which country did it stand?",
     "answer": "Poland",
     "choices": [
       "Poland",
@@ -4382,7 +4174,7 @@
   },
   {
     "tier": 2,
-    "question": "Over the main gate of Auschwitz the SS forced prisoner metalworkers to forge an iron sign reading 'Arbeit macht frei' - 'Work Sets You Free,' a cruel lie to people being worked to death. As they built it, the prisoners slipped in one tiny, silent act of defiance the guards never caught. What did they do?",
+    "question": "Prisoner metalworkers, on SS orders, forged the iron sign over the main gate of Auschwitz, reading 'Arbeit macht frei,' 'work sets you free': a cruel lie to people being worked to death. As they made it, the prisoners slipped in one silent act of defiance the guards never caught. What did they do?",
     "answer": "Welded the letter B upside down",
     "choices": [
       "Welded the letter B upside down",
@@ -4395,7 +4187,7 @@
   },
   {
     "tier": 2,
-    "question": "During the Second World War, Nazi Germany ran dozens of concentration camps across Europe. The largest was Auschwitz, in occupied Poland, where over a million prisoners passed through the gates between 1940 and 1945. Of all the Nazi camps, only Auschwitz did one thing to the prisoners it kept alive for slave labor — a permanent mark that stayed on survivors' bodies for the rest of their lives. What did the SS do to them?",
+    "question": "The SS sorted the new arrivals at Auschwitz, sending some straight to the gas chambers and keeping others alive for slave labor. Of all the Nazi camps, only Auschwitz did one thing to the prisoners it spared, a permanent mark that stayed on them for life. What did the SS do to them?",
     "answer": "Tattooed a serial number on the forearm",
     "choices": [
       "Tattooed a serial number on the forearm",
@@ -4408,7 +4200,7 @@
   },
   {
     "tier": 2,
-    "question": "During World War II, Nazi Germany ran the death camp at Auschwitz in occupied Poland. In the gas chambers there, guards dropped pellets of a poison called Zyklon B. It had not been invented as a weapon — before the war, ordinary farmers and shopkeepers bought the same chemical off the shelf. What was Zyklon B normally used for?",
+    "question": "Guards at Auschwitz dropped pellets of a poison called Zyklon B into the gas chambers. It had not been invented as a weapon: before the war, ordinary farmers and shopkeepers bought the same chemical off the shelf. What was Zyklon B normally used for?",
     "answer": "Killing insects and rats",
     "choices": [
       "Killing insects and rats",
@@ -4421,7 +4213,7 @@
   },
   {
     "tier": 2,
-    "question": "By late January 1945, World War II was in its final months and Nazi Germany was collapsing. On January 27 that year, an advancing Allied army from the east reached the Auschwitz death camp in occupied Poland and freed about 7,000 prisoners. Most were so starved and sick they could barely stand. The world now marks that date as International Holocaust Remembrance Day. Whose army opened the gates?",
+    "question": "Soldiers of an advancing Allied army reached Auschwitz from the east on 27 January 1945 and freed about 7,000 prisoners, most of them so starved and sick they could barely stand. The world now marks that date as International Holocaust Remembrance Day. Whose army opened the gates?",
     "answer": "The Soviet Red Army",
     "choices": [
       "The Soviet Red Army",
@@ -4433,8 +4225,8 @@
     "topic": "auschwitz-and-the-death-camps"
   },
   {
-    "tier": 3,
-    "question": "Auschwitz had three main parts. The first was the original main camp. The second was a huge slave-labor camp built to serve a rubber factory. The third was a killing center with gas chambers and crematoria. About how many people did the Nazis murder inside that killing center in under five years?",
+    "tier": 2,
+    "question": "The SS ran Auschwitz as three camps: the main camp, a slave-labor camp for a rubber factory, and Birkenau, a killing center with gas chambers and crematoria. About how many people did the SS murder at Birkenau in under five years?",
     "answer": "Over 1 million people, most of them Jews",
     "choices": [
       "Over 1 million people, most of them Jews",
@@ -4447,20 +4239,7 @@
   },
   {
     "tier": 3,
-    "question": "The Auschwitz-Birkenau State Museum, on the site of the German death camp in occupied Poland, counts about 1.1 million people murdered there between 1940 and 1945. Most of the dead belonged to a single people — roughly one million out of the 1.1 million total. The Nazis had marked this group for total extermination in what they called the Final Solution. Which group was the largest by far?",
-    "answer": "Jews",
-    "choices": [
-      "Jews",
-      "Poles",
-      "Roma and Sinti",
-      "Soviet prisoners of war"
-    ],
-    "context": "The museum's figures: about 1,000,000 Jews, about 70,000 Poles, about 21,000 Roma and Sinti, about 15,000 Soviet prisoners of war, and some 12,000 others. Source: Auschwitz-Birkenau State Museum, 'The number of victims'.",
-    "topic": "auschwitz-and-the-death-camps"
-  },
-  {
-    "tier": 3,
-    "question": "In the spring and summer of 1944, with World War II grinding to its end, Nazi Germany's Adolf Eichmann still pushed to murder more Jews. One country's entire Jewish community was rounded up and sent to Auschwitz in occupied Poland faster than any group before it — about 426,000 people in barely ten weeks, most gassed within hours of arriving. From which country had they been taken?",
+    "question": "Adolf Eichmann rushed one country's Jews to Auschwitz in the spring and summer of 1944, with the war all but lost: about 426,000 people in barely ten weeks, most of them gassed within hours of arriving. From which country had they been taken?",
     "answer": "Hungary",
     "choices": [
       "Hungary",
@@ -4473,7 +4252,7 @@
   },
   {
     "tier": 4,
-    "question": "At Auschwitz-Birkenau, the people picked to die were marched into a sealed underground room. To keep them calm and moving in an orderly line, the SS told them a gentle, ordinary lie about what was about to happen next. What did the guards say they were going to do?",
+    "question": "The SS marched the people picked to die at Birkenau into a sealed underground room. To keep them calm and moving in an orderly line, the guards told them a gentle, ordinary lie about what was about to happen. What did the guards say the people were going to do?",
     "answer": "Take a shower",
     "choices": [
       "Take a shower",
@@ -4486,7 +4265,7 @@
   },
   {
     "tier": 4,
-    "question": "In April 1944 two Slovak Jews, Rudolf Vrba and Alfred Wetzler, broke out of Auschwitz and hid three days inside a hollow woodpile while SS guards and tracking dogs hunted them. They had prepared one clever trick to beat the dogs' noses. What had they done around their hiding place?",
+    "question": "Rudolf Vrba broke out of Auschwitz with Alfred Wetzler in April 1944, and the two young Slovak Jews hid for three days inside a hollow woodpile while the SS and their tracking dogs hunted them. They had prepared one clever trick to beat the dogs' noses. What was the trick?",
     "answer": "Scattered tobacco soaked in gasoline",
     "choices": [
       "Scattered tobacco soaked in gasoline",
@@ -4499,7 +4278,7 @@
   },
   {
     "tier": 4,
-    "question": "The SS doctor Josef Mengele stood on the Auschwitz arrival ramp and, with a flick of his hand, sent some new prisoners to the right and others to the left - and the left meant the gas chamber. The prisoners gave him a grim nickname for it. What did they call him?",
+    "question": "Josef Mengele, an SS doctor, stood on the Auschwitz arrival ramp and, with a flick of his hand, sent some new prisoners to the right and others to the left, and the left meant the gas chamber. The prisoners gave him a grim nickname for it. What did they call him?",
     "answer": "the Angel of Death",
     "choices": [
       "the Angel of Death",
@@ -4512,7 +4291,7 @@
   },
   {
     "tier": 4,
-    "question": "When Soviet soldiers reached Auschwitz in 1945, the SS had fled but left warehouses still piled with the belongings of the murdered, among them thousands of suitcases. One detail painted on many of the cases made them almost unbearable to look at. What was written there?",
+    "question": "When soldiers reached Auschwitz in January 1945, the SS had fled, leaving warehouses still piled with the belongings of the murdered, among them thousands of suitcases. One detail on many of the cases made them almost unbearable to look at. What was it?",
     "answer": "Their owners' names",
     "choices": [
       "Their owners' names",
@@ -4525,7 +4304,7 @@
   },
   {
     "tier": 5,
-    "question": "On October 7, 1944, the Jewish prisoners forced to work the Birkenau crematoria rose up in revolt. Women slave-laborers had smuggled them gunpowder a pinch at a time from a nearby munitions factory. Before the SS crushed the rising, what did the rebels manage to do with it?",
+    "question": "The Jewish prisoners whom the SS forced to work the Birkenau crematoria rose up in revolt on 7 October 1944. Women slave-laborers had smuggled them gunpowder a pinch at a time from a nearby munitions factory. Before the SS crushed the rising, what did the rebels manage to do with it?",
     "answer": "Blew up one of the crematoria",
     "choices": [
       "Blew up one of the crematoria",
@@ -4538,7 +4317,7 @@
   },
   {
     "tier": 5,
-    "question": "Rudolf Hoss, the commandant of Auschwitz, was asked at the Nuremberg trials how the guards could tell when the people locked in a gas chamber had finally died. He gave a flat, matter-of-fact answer that became one of the most chilling lines of the whole trial. How did Hoss say they knew the people were dead?",
+    "question": "Rudolf Hoss, the commandant of Auschwitz, faced a question at the Nuremberg trials: how did the guards know when the people locked in a gas chamber had finally died? He gave a flat, matter-of-fact answer that became one of the most chilling lines of the whole trial. How did he say they knew?",
     "answer": "The screaming stopped",
     "choices": [
       "The screaming stopped",
@@ -4551,7 +4330,7 @@
   },
   {
     "tier": 5,
-    "question": "After the war Rudolf Hoss, who had run Auschwitz longer than any other commandant, hid under the false name 'Franz Lang' until a Nazi-hunter tracked him down. In 1947 Poland sentenced him to hang. Of all the places they could have built the gallows, where did they choose to hang him?",
+    "question": "Hanns Alexander, a Nazi-hunter, tracked down Rudolf Hoss, who had run Auschwitz longer than any other commandant and had lived since the war under the false name Franz Lang. A Polish court sentenced Hoss to hang in 1947. Of all the places the gallows could have stood, where was he hanged?",
     "answer": "At Auschwitz, beside the crematorium",
     "choices": [
       "At Auschwitz, beside the crematorium",
@@ -4564,7 +4343,7 @@
   },
   {
     "tier": 4,
-    "question": "Ibn Sina — known in Europe as Avicenna — wrote the Canon of Medicine, a five-book encyclopedia of over a million words. European universities such as Padua and Bologna taught from it for roughly 600 years, right into the 1600s. Doctors trusted this one book so completely that they gave it a nickname. What did they call it?",
+    "question": "Ibn Sina, known in Europe as Avicenna, wrote the Canon of Medicine, a five-book encyclopedia of more than a million words. Universities such as Padua and Bologna were still teaching from it in the 1600s. Doctors put such faith in the book that they gave it a nickname. What did they call it?",
     "answer": "The Medical Bible",
     "choices": [
       "The Medical Bible",
@@ -4577,7 +4356,7 @@
   },
   {
     "tier": 5,
-    "question": "Ibn Sina — known in Europe as Avicenna — boasted he had mastered every science by eighteen. But one book defeated him: he read Aristotle's Metaphysics forty times until he nearly knew it by heart, yet still could not understand it, and fell into despair. What finally broke the riddle open for him?",
+    "question": "Young Ibn Sina boasted that he had mastered every science by eighteen, but one book defeated him. He read Aristotle's Metaphysics forty times until he nearly knew it by heart, yet still could not understand it, and he fell into despair. What finally broke the riddle open for him?",
     "answer": "a cheap little commentary a bookseller talked him into buying",
     "choices": [
       "a cheap little commentary a bookseller talked him into buying",
@@ -11090,7 +10869,7 @@
   },
   {
     "tier": 1,
-    "question": "On the night of December 25, 1991, the Soviet Union — the huge communist country stretching from Eastern Europe across all of Russia to the Pacific — was officially ended. The red hammer-and-sickle flag came down over the Kremlin in Moscow for the last time. As crowds watched, a different flag rose in its place. Which flag was raised over the Kremlin?",
+    "question": "The red hammer-and-sickle flag came down over the Kremlin in Moscow for the last time on the night of 25 December 1991, and the Soviet Union ended with it. As crowds watched, a different flag rose in its place. Which flag was raised?",
     "answer": "The pre-revolutionary white-blue-red Russian tricolor",
     "choices": [
       "The pre-revolutionary white-blue-red Russian tricolor",
@@ -11103,7 +10882,7 @@
   },
   {
     "tier": 1,
-    "question": "On August 19, 1991, hardliners tried to grab power in Russia. They sent tanks into Moscow to crush the elected leader, Boris Yeltsin. Instead of hiding, Yeltsin walked out to the parliament. What he did next became the symbol of the coup's defeat. What did Yeltsin do?",
+    "question": "Tanks rolled into Moscow on 19 August 1991, sent by hardliners grabbing for power, and Boris Yeltsin, whom Russia had just elected its president, stepped out of the parliament building. What he did next became the symbol of the coup's defeat. What did Yeltsin do?",
     "answer": "Climbed on top of one of the tanks to speak to the crowd",
     "choices": [
       "Climbed on top of one of the tanks to speak to the crowd",
@@ -11116,7 +10895,7 @@
   },
   {
     "tier": 2,
-    "question": "After seizing power on August 19, 1991, the coup leaders put their acting 'president,' Gennady Yanayev, in front of TV cameras to show they were in command. A reporter asked him whether this was a coup. One thing the watching public saw convinced them the plotters had already lost control. What did viewers notice about Yanayev?",
+    "question": "Gennady Yanayev, the coup's stand-in president, faced the television cameras after the plotters seized power in August 1991, to show that they were in command. A reporter asked him whether this was a coup. One thing the watching public saw convinced them the plotters had already lost control. What did viewers notice about Yanayev?",
     "answer": "His hands would not stop shaking",
     "choices": [
       "His hands would not stop shaking",
@@ -11129,7 +10908,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 1991, hardline Communist officials in Moscow tried to overthrow the Soviet leader Mikhail Gorbachev, hoping to stop his reforms and hold the crumbling Soviet Union together. During those tense days of the coup, Soviet state TV cut its normal programs. It played the same thing over and over for hours. Older Soviet viewers had learned this trick meant the leaders were hiding a crisis. What did state TV play on a loop?",
+    "question": "Hardline Communist officials tried to overthrow Mikhail Gorbachev in August 1991 to stop his reforms. While their coup lasted, Soviet state television dropped its normal programs and played the same thing over and over, a trick older viewers knew meant the leaders were hiding a crisis. What did it play?",
     "answer": "Tchaikovsky's ballet Swan Lake",
     "choices": [
       "Tchaikovsky's ballet Swan Lake",
@@ -11142,7 +10921,7 @@
   },
   {
     "tier": 3,
-    "question": "On live television on December 25, 1991, Mikhail Gorbachev sat down to sign his resignation as Soviet president. But his Soviet-made pen refused to write. Cable News Network (CNN) president Tom Johnson was standing right there, and handed him a replacement so the historic broadcast could continue. What kind of pen did Gorbachev use?",
+    "question": "Tom Johnson, president of the Cable News Network (CNN), stood by as Mikhail Gorbachev took his seat before the live television cameras on 25 December 1991 to sign his resignation as Soviet president. Gorbachev's Soviet-made pen would not write, so Johnson handed him a replacement. What kind of pen was it?",
     "answer": "A Montblanc pen",
     "choices": [
       "A Montblanc pen",
@@ -11168,7 +10947,7 @@
   },
   {
     "tier": 4,
-    "question": "The August 1991 coup pitted tanks and the KGB against unarmed crowds defending Russia's parliament — a clash that could have become a massacre. When it was over, the whole confrontation that brought down the Soviet order had cost lives in just one place: a single road underpass on the Garden Ring. How many people were killed?",
+    "question": "Unarmed Muscovites by the tens of thousands ringed Russia's parliament in August 1991 against the coup's tanks and secret police, a clash that could have become a massacre. In the end the confrontation took lives in just one place, a single road tunnel under the Garden Ring. How many people were killed?",
     "answer": "Three",
     "choices": [
       "Three",
@@ -11181,7 +10960,7 @@
   },
   {
     "tier": 4,
-    "question": "On December 8, 1991, the leaders of Russia, Ukraine, and Belarus met in secret. They signed an accord that declared the USSR 'is ceasing its existence.' Three men had effectively dissolved a superpower, and they did it not in any capital city, but inside one of Europe's last ancient forests. In which forest did they sign it?",
+    "question": "Boris Yeltsin and two fellow presidents met in secret on 8 December 1991 and signed an accord declaring that the Soviet Union was ceasing to exist. Those men had effectively dissolved a superpower, and they did it not in any capital city but inside one of Europe's last ancient forests. In which forest did they sign it?",
     "answer": "The Belovezha Forest of Belarus",
     "choices": [
       "The Belovezha Forest of Belarus",
@@ -11194,7 +10973,7 @@
   },
   {
     "tier": 4,
-    "question": "Mikhail Gorbachev resigned as Soviet president on December 25, 1991. Power then passed to Boris Yeltsin, leader of the new Russia. Even before his farewell speech aired, Gorbachev quietly handed one object directly to Yeltsin. What did he hand over?",
+    "question": "Mikhail Gorbachev resigned as Soviet president on 25 December 1991, and power passed to Boris Yeltsin, leader of the new Russia. Even before his farewell speech went out on the air, Gorbachev quietly passed one object straight to Yeltsin. What did he hand over?",
     "answer": "The briefcase controlling the nuclear missiles",
     "choices": [
       "The briefcase controlling the nuclear missiles",
@@ -11220,7 +10999,7 @@
   },
   {
     "tier": 5,
-    "question": "On December 8, 1991, right after secretly signing the accord that dissolved the Soviet Union, Boris Yeltsin reached for the phone. Astonishingly, before he informed Gorbachev, still the Soviet president, he placed a call to a Cold War adversary, telling him 'I couldn't even wait ten minutes to call you.' Whom did Yeltsin phone first?",
+    "question": "Boris Yeltsin reached for the phone on 8 December 1991, right after he secretly signed the accord that dissolved the Soviet Union. Before he told Gorbachev, still the Soviet president, he called a Cold War rival and said, 'I couldn't even wait ten minutes to call you.' Whom did Yeltsin phone first?",
     "answer": "U.S. President George H.W. Bush",
     "choices": [
       "U.S. President George H.W. Bush",
@@ -11233,7 +11012,7 @@
   },
   {
     "tier": 5,
-    "question": "The Soviet Union funded its Cold War arms race largely by selling oil abroad. Economists who study the collapse point to a single move in September 1985 — when one country abandoned its production limits and ramped output up roughly fivefold — that crashed world oil prices and starved the USSR of the hard currency it needed. Which country flooded the oil market?",
+    "question": "Moscow paid for its Cold War arms race largely by selling oil abroad. Then, in September 1985, one country dropped its production limits and pumped roughly five times as much; world oil prices crashed, and the Soviet Union was starved of the hard currency it needed. Which country flooded the oil market?",
     "answer": "Saudi Arabia",
     "choices": [
       "Saudi Arabia",
@@ -38299,7 +38078,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1945, World War II in Europe had just ended and Nazi Germany was defeated. The victorious Allies — Britain, America, France, and the Soviet Union — had to pick a city to try Germany's captured Nazi leaders for their crimes. They chose one German city on purpose: the very place where the Nazis had held their huge yearly party rallies through the 1930s. Which German city did the Allies pick?",
+    "question": "The four victorious powers had to choose a German city in 1945 in which to try the captured leaders of the Nazi regime. They chose one on purpose: the very place where the Nazis had held their huge yearly party rallies through the 1930s. Which city did they pick?",
     "answer": "Nuremberg",
     "choices": [
       "Nuremberg",
@@ -38312,7 +38091,7 @@
   },
   {
     "tier": 2,
-    "question": "Hermann Goering, the highest-ranking Nazi leader put on trial at Nuremberg, was sentenced to hang. But in the early hours of October 1946, only about two hours before he was due on the gallows, guards found him dead in his cell. How had Goering cheated the hangman?",
+    "question": "Guards found Hermann Goering, the highest-ranking Nazi put on trial at Nuremberg, dead in his cell in October 1946, only about two hours before he was due on the gallows. The court had sentenced him to hang. How had Goering cheated the hangman?",
     "answer": "He bit down on a smuggled cyanide capsule",
     "choices": [
       "He bit down on a smuggled cyanide capsule",
@@ -38325,7 +38104,7 @@
   },
   {
     "tier": 3,
-    "question": "Just over a week into the Nuremberg trial, in November 1945, the prosecutors did something no courtroom had done before: they dimmed the lights and screened an hour-long film. When it ended and the lights came back up, the whole courtroom, defendants and judges alike, sat in stunned silence. What had the film shown them?",
+    "question": "The prosecutors at Nuremberg dimmed the lights on 29 November 1945 and screened an hour of film, something no courtroom had done before. When the lights came back up, the whole courtroom, defendants and judges alike, sat in stunned silence. What had the film shown them?",
     "answer": "Footage of the just-liberated Nazi concentration camps",
     "choices": [
       "Footage of the just-liberated Nazi concentration camps",
@@ -38338,7 +38117,7 @@
   },
   {
     "tier": 3,
-    "question": "Gustave Gilbert was the American prison psychologist at Nuremberg. He secretly gave the captured Nazi leaders IQ tests. The results surprised him. People had pictured them as dull brutes. How did the Nazi defendants score?",
+    "question": "Gustave Gilbert, the American prison psychologist at the Nuremberg trial, secretly gave the captured leaders of the Nazi regime intelligence tests. Many people had pictured these men as dull brutes, and the results surprised him. How did the defendants score?",
     "answer": "In the genius and near-genius range",
     "choices": [
       "In the genius and near-genius range",
@@ -38364,7 +38143,7 @@
   },
   {
     "tier": 4,
-    "question": "Hermann Goering was the top Nazi on trial at Nuremberg. When the American prosecutor Robert Jackson accused Germany of secretly planning for war, Goering fired back so sharply that Jackson lost his temper. Court had to adjourn for the rest of the day. What was Goering's stinging reply?",
+    "question": "Robert Jackson, who led the American prosecution at Nuremberg, accused Germany of secretly planning for war. Hermann Goering fired back so sharply that Jackson lost his temper, and the court had to adjourn for the rest of the day. What was Goering's stinging reply?",
     "answer": "He didn't recall reading America's own published war-mobilization plans either",
     "choices": [
       "He didn't recall reading America's own published war-mobilization plans either",
@@ -38376,21 +38155,8 @@
     "topic": "nuremberg-trials"
   },
   {
-    "tier": 4,
-    "question": "The Nazi crimes were so vast that the world had no single word for wiping out a whole people. In 1944, a Polish-Jewish lawyer named Raphael Lemkin coined one in his new book. He then fought to get it used in the Nuremberg case. What was Lemkin's brand-new word?",
-    "answer": "Genocide",
-    "choices": [
-      "Genocide",
-      "Holocaust",
-      "Extermination",
-      "Pogrom"
-    ],
-    "context": "Lemkin built the word in 'Axis Rule in Occupied Europe' by fusing the Greek 'genos' (race or tribe) with the Latin '-cide' (killing). Though he got it into the conversation, no defendant was actually convicted of 'genocide' as a named crime at Nuremberg. Source: https://www.nationalww2museum.org/war/articles/defining-genocide-after-world-war-ii",
-    "topic": "nuremberg-trials"
-  },
-  {
     "tier": 5,
-    "question": "Hermann Goering and the other captured Nazi leaders could simply have been lined up and shot. Instead the four Allied nations chose to put them on trial. The American chief prosecutor, Robert H. Jackson, opened the case by saying that staying the hand of vengeance this way was 'one of the most significant tributes that Power has ever paid' to what?",
+    "question": "The Allies could simply have lined up Hermann Goering and the other captured Nazi leaders and shot them, but they put them on trial instead. The American prosecutor Robert Jackson opened the case by praising that choice: four nations staying the hand of vengeance was 'one of the most significant tributes that Power has ever paid' to one thing. What was it?",
     "answer": "Reason",
     "choices": [
       "Reason",
@@ -38416,7 +38182,7 @@
   },
   {
     "tier": 5,
-    "question": "Julius Streicher, a vicious Nazi propagandist, was among the men hanged at Nuremberg. On the gallows he shouted 'Heil Hitler!' and then sneered 'Purimfest 1946!', a jab at the Bible's Book of Esther, in which the villain Haman is hanged together with all ten of his male heirs. Why did Streicher choose that particular taunt as he faced the rope?",
+    "question": "Julius Streicher, the Nazi propagandist, shouted 'Heil Hitler!' on the gallows at Nuremberg, and then he sneered 'Purimfest 1946!' The jab pointed to the Book of Esther, in which the villain Haman is hanged together with all ten of his sons. Why did Streicher choose that taunt as he faced the rope?",
     "answer": "Exactly ten Nazis were hanged that night, matching Haman's ten sons",
     "choices": [
       "Exactly ten Nazis were hanged that night, matching Haman's ten sons",
@@ -38429,7 +38195,7 @@
   },
   {
     "tier": 5,
-    "question": "At Nuremberg the Soviet Union sat as one of the four judging nations, yet the Soviets pressed the court to convict the Germans of the Katyn massacre, the murder of thousands of Polish officers. The American and British judges quietly declined to pin Katyn on any defendant. Why did the Western judges hold back from convicting on that charge?",
+    "question": "Soviet prosecutors at Nuremberg pressed the court to convict the Germans of the Katyn massacre, the murder of thousands of Polish officers, even though their own country sat as one of the four judging nations. The American and British judges quietly declined to pin Katyn on any defendant. Why did they hold back?",
     "answer": "The Soviets themselves had actually committed that massacre",
     "choices": [
       "The Soviets themselves had actually committed that massacre",
@@ -38442,7 +38208,7 @@
   },
   {
     "tier": 5,
-    "question": "Most of the Nazi leaders at Nuremberg denied any guilt. But Albert Speer did the opposite. He was Hitler's architect and weapons chief. He stood up and publicly accepted a share of the blame for the regime's crimes. Historians think this one move helped Speer do what, even though men who worked under him were hanged?",
+    "question": "Albert Speer, Hitler's architect and weapons chief, stood up in the Nuremberg courtroom and accepted a share of the blame for the regime's crimes, while most of the other defendants denied any guilt. Historians think that one move helped him do what, even though men who worked under him were hanged?",
     "answer": "Avoid a death sentence, drawing 20 years in prison instead",
     "choices": [
       "Avoid a death sentence, drawing 20 years in prison instead",
@@ -48231,7 +47997,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1931 Salvador Dali painted 'The Persistence of Memory,' famous for its soft watches drooping as if gone limp in the heat. A physicist once asked Dali if the melting watches came from Einstein's theory of relativity. Dali said no. They came from something he had watched go runny in the summer sun. What was it?",
+    "question": "Salvador Dali filled The Persistence of Memory in 1931 with pocket watches hanging limp across a dreamscape as if they had melted. When a physicist asked whether Einstein's theory of relativity lay behind them, Dali said no. They came from something he had watched turn runny in the summer sun. What was it?",
     "answer": "A wheel of Camembert cheese",
     "choices": [
       "A wheel of Camembert cheese",
@@ -48244,7 +48010,7 @@
   },
   {
     "tier": 3,
-    "question": "In Dali's painting The Persistence of Memory, three watches sag and droop like soft cheese. Down in the lower-left corner sits one orange pocket watch with its case shut tight, the only one that has not gone soft. Dali covered that closed watch with something he used again and again to stand for things rotting away. What is crawling all over it?",
+    "question": "In the lower-left corner of The Persistence of Memory, where the other watches sag and droop, Dali painted one orange pocket watch with its case shut tight, the only one that has not gone soft. He covered it with something he used again and again to stand for things rotting away. What did he paint on it?",
     "answer": "A cluster of black ants",
     "choices": [
       "A cluster of black ants",
