@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "A country is worried its own shoemakers cannot compete with cheaper shoes coming in from another country. So the government puts a big extra tax on every foreign shoe that crosses the border. That way local shoemakers can charge higher prices without losing all their customers to the imports. What is the special name economists use for this kind of border tax on imports?",
+    "question": "Frédéric Bastiat, a Paris journalist and deputy, spent the late 1840s fighting the heavy charges France laid on iron, cloth and grain arriving from abroad. Those charges let French producers raise their prices and still keep their buyers. What is a tax like that called?",
     "answer": "A tariff",
     "choices": [
       "A tariff",
@@ -13,8 +13,8 @@
     "topic": "1840s-france-the-socialists-bastiat-was-answering"
   },
   {
-    "tier": 1,
-    "question": "A government tells its citizens that all jobless people can come get a guaranteed wage, and the government will pick the jobs for them. It sounds generous, but the money has to come from somewhere. What is usually the biggest hidden cost of a program like this?",
+    "tier": 2,
+    "question": "Against Louis Blanc's National Workshops of 1848, which promised a wage to any jobless man who asked, Frédéric Bastiat kept pointing to a cost that nobody saw. What is the hidden cost of a scheme like that?",
     "answer": "The government has to tax everyone else a lot to pay them all",
     "choices": [
       "The government has to tax everyone else a lot to pay them all",
@@ -27,7 +27,7 @@
   },
   {
     "tier": 2,
-    "question": "Imagine a national government makes a bold promise: any citizen who is out of work can sign up for a state-paid job, no questions asked, with wages coming from taxes. Within a few months, 100,000 people have signed up — but the government has only lined up real productive work for a small fraction of them. Digging holes and filling them back in doesn't count. The rest are put on the payroll anyway. What is the built-in problem with a program like this?",
+    "question": "Louis Blanc saw his National Workshops open to every jobless man in February 1848, and by May more than 100,000 had enrolled, their wages paid out of taxes. Digging holes and filling them in again would not count as work. What is the built-in trouble with a guaranteed-job scheme on that scale?",
     "answer": "There is not enough real work, so most enrolled people are paid to do very little",
     "choices": [
       "There is not enough real work, so most enrolled people are paid to do very little",
@@ -40,7 +40,7 @@
   },
   {
     "tier": 2,
-    "question": "Imagine a big city government decides to hire 100,000 people to do busywork -- raking leaves, filing papers, painting benches -- and pays them out of the city budget. This lasts a few years, then the money runs out and the program is shut down all at once. Those 100,000 people wake up the next morning with no paycheck. What usually happens in the streets right after?",
+    "question": "A man rakes leaves on a city payroll, one of 100,000 people hired for busywork like raking, filing and painting benches, all paid from the city budget. After a few years the money runs out, and one morning the whole scheme shuts at once. What usually happens in the streets right after?",
     "answer": "The suddenly unpaid workers riot, because their income has been cut off",
     "choices": [
       "The suddenly unpaid workers riot, because their income has been cut off",
@@ -53,20 +53,7 @@
   },
   {
     "tier": 3,
-    "question": "The French anarchist Pierre-Joseph Proudhon published his most notorious book in 1840. Asked in its title 'What Is Property?', Proudhon delivered a three-word French answer that became one of the most-quoted lines in 19th-century political thought: 'la propriete, c'est le ______.' Fill the blank.",
-    "answer": "vol",
-    "choices": [
-      "vol",
-      "roi",
-      "dieu",
-      "peuple"
-    ],
-    "context": "Proudhon's Qu'est-ce que la propriete? (1840) delivered the famous line 'la propriete, c'est le vol' -- 'property is theft.' Proudhon was the first thinker to call himself an anarchist, and he became Bastiat's most sustained French debate opponent. Source: https://www.britannica.com/biography/Pierre-Joseph-Proudhon.",
-    "topic": "1840s-france-the-socialists-bastiat-was-answering"
-  },
-  {
-    "tier": 3,
-    "question": "In October 1849 Pierre-Joseph Proudhon and Frederic Bastiat began a public debate in Proudhon's newspaper La Voix du Peuple. It ran roughly weekly through March 1850 -- fourteen letters back and forth. Proudhon wanted his Bank of the People to lend at zero cost. What was Bastiat defending against Proudhon's scheme?",
+    "question": "Pierre-Joseph Proudhon and Frédéric Bastiat argued in open letters from October 1849 until the following March, in Proudhon's own paper, La Voix du Peuple. Proudhon wanted his Bank of the People to lend money at no charge at all. What was Bastiat defending against the scheme?",
     "answer": "That interest is the market price of time-preference and cannot be legislated to zero",
     "choices": [
       "That interest is the market price of time-preference and cannot be legislated to zero",
@@ -79,20 +66,7 @@
   },
   {
     "tier": 4,
-    "question": "In October 1845 the French writer Bastiat published a mock petition. He signed it as if he were French candle-makers begging their government to shut every window, skylight, and shutter. The petition said a foreign rival was ruining their trade unfairly. Which rival did the petition name?",
-    "answer": "The sun",
-    "choices": [
-      "The sun",
-      "British gaslight",
-      "American whale oil",
-      "Belgian coal-tar lamps"
-    ],
-    "context": "The Petition of the Candlemakers (Petition des fabricants de chandelles) demands protection from the unfair competition of the sun. Bastiat's target was every real protectionist argument then live in the French Chamber -- that any foreign competitor with a natural advantage was somehow 'unfair' to French industry. Source: https://mises.org/library/candlemakers-petition-0.",
-    "topic": "1840s-france-the-socialists-bastiat-was-answering"
-  },
-  {
-    "tier": 4,
-    "question": "In 1840 the French writer Étienne Cabet published a novel called Voyage en Icarie about a perfect communist republic where everyone shared everything and no one owned private property. Readers loved it. In 1848 Cabet actually led about 500 followers across the Atlantic to Texas and then Illinois to build a real Icaria on American soil. Dozens of similar small communist colonies sprang up across the 1800s United States. What happened to most of these experiments in real life?",
+    "question": "Étienne Cabet imagined a perfect communist republic, Icaria, in a novel where everyone shared everything and no one owned private property. In 1848 he took several hundred followers across the Atlantic to build it on American soil, first in Texas and then at Nauvoo, Illinois. Dozens of small communist colonies rose in nineteenth-century America. What became of most of them?",
     "answer": "They fell apart within a few years from fighting and shortages",
     "choices": [
       "They fell apart within a few years from fighting and shortages",
@@ -105,7 +79,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1848 two German thinkers, Karl Marx and Friedrich Engels, were living in exile outside Germany. Europe was boiling with worker uprisings that year, and a small group called the Communist League asked them to write a manifesto. In just twenty-three pages, Marx and Engels called on workers everywhere to unite and overthrow the owners of factories and land. It became the founding text of communism -- a movement that would later kill roughly 65 to 100 million people in the twentieth century. What is that pamphlet called?",
+    "question": "Karl Marx and Friedrich Engels, two German exiles in London, published a twenty-three-page pamphlet in February 1848. It called on workers everywhere to unite and take the factories and the land from their owners. It became the founding text of a cause whose regimes, by the reckoning in The Black Book of Communism, killed 65 to 100 million people in the following century. What is it called?",
     "answer": "The Communist Manifesto",
     "choices": [
       "The Communist Manifesto",
@@ -114,19 +88,6 @@
       "The Social Contract"
     ],
     "context": "Karl Marx and Friedrich Engels published Manifest der Kommunistischen Partei in London in February 1848, the same month the February Revolution broke out in Paris. Marx's tradition was distinct from Louis Blanc's state-socialism, Proudhon's mutualism, and Cabet's utopianism, but it addressed the same crisis moment. Bastiat's 'The State,' September 1848, is his answer inside the French debate. Source: https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat.",
-    "topic": "1840s-france-the-socialists-bastiat-was-answering"
-  },
-  {
-    "tier": 5,
-    "question": "Against Louis Blanc's National Workshops -- which the treasury paid for by drawing on tax revenue and borrowing -- Bastiat's essays kept pressing one specific reasoning move a modern reader can learn to spot. Which move did Bastiat press against the workshops?",
-    "answer": "That every franc paid to a workshop enrollee had to be taken from another citizen who never saw the transfer",
-    "choices": [
-      "That every franc paid to a workshop enrollee had to be taken from another citizen who never saw the transfer",
-      "That workers' cooperatives always outperform private firms in productivity",
-      "That the state should issue paper currency to fund public works directly",
-      "That property in land is theft but property in movable goods is legitimate"
-    ],
-    "context": "Bastiat's answer to the workshops was the seen/unseen move: the enrolled worker's wage is SEEN; the tax-payer's or lender's foregone spending is UNSEEN. This is the same transfer-recognition his 1848 essay 'The State' compressed into the 'great fiction' line. The reader can accept or reject the evaluation; the reasoning MOVE is the transfer-recognition. Source: https://oll.libertyfund.org/pages/bastiat-and-the-state.",
     "topic": "1840s-france-the-socialists-bastiat-was-answering"
   },
   {
@@ -261,7 +222,7 @@
   },
   {
     "tier": 1,
-    "question": "Two friends in a big city talk about fixing traffic. Anna says the fix is easy -- put smart people in charge and let them plan it right. Ben shakes his head. He says no small group can ever know enough about all the drivers, all the streets, and all the daily changes to plan a whole city. What is Ben's cautious view called in one word?",
+    "question": "Two friends argue about a city's traffic. Anna wants to hand the job to smart planners who will get it right. Ben shakes his head: no small group could know enough about all the drivers, streets and daily changes to plan a city. Which one word fits Ben's view?",
     "answer": "Skeptical",
     "choices": [
       "Skeptical",
@@ -273,21 +234,8 @@
     "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
   },
   {
-    "tier": 1,
-    "question": "Some grown-ups believe that with the right rules and enough education, people can be made just about perfect. Other grown-ups believe that humans come with real, permanent limits -- selfishness, ignorance, weakness -- that no rulebook can fully erase. Many political fights come down to which of these ______ is correct.",
-    "answer": "views of human nature",
-    "choices": [
-      "views of human nature",
-      "election laws",
-      "tax brackets",
-      "foreign trade deals"
-    ],
-    "context": "Sowell chose 'visions' precisely because they are pre-analytical -- pictures of human nature that shape which policies feel obviously correct or obviously naive before any specific argument. Source: Sowell, Conflict of Visions (Morrow 1987), Chapter 1.",
-    "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
-  },
-  {
     "tier": 2,
-    "question": "In 1987 the American economist Thomas Sowell published a book called A Conflict of Visions. In it he argues that most political fights come down to two rival pictures of human nature -- one that sees people as fixed and flawed, one that sees people as endlessly improvable. He gave each picture a single one-word label. What is that pair of one-word labels?",
+    "question": "Thomas Sowell mapped two rival pictures of human nature in his 1987 book A Conflict of Visions. One holds that new and better institutions can remake people; the other holds that they cannot. What one-word label did he give each picture?",
     "answer": "Constrained and unconstrained",
     "choices": [
       "Constrained and unconstrained",
@@ -300,7 +248,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1987 book Conflict of Visions, the American economist Thomas Sowell described two very different pictures of what people are like at their core. One picture says people are stuck with fixed limits -- knowledge is spread out among millions, self-interest does not go away, and good rules take a long time to build up through trial and error. Which view of human beings does Sowell say this is?",
+    "question": "Adam Smith and Edmund Burke wrote from one picture of what people are like, Thomas Sowell argued, and Friedrich Hayek and the American Federalists shared it. In that picture, what anyone knows is spread across millions of heads, and good rules are built up over long trial and error. What view of human beings lies under it?",
     "answer": "A view that human nature has real limits we must work around",
     "choices": [
       "A view that human nature has real limits we must work around",
@@ -312,47 +260,8 @@
     "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
   },
   {
-    "tier": 3,
-    "question": "In his 1987 book Conflict of Visions, the American economist Thomas Sowell mapped two rival views of what people are like at their core. The first, called the constrained vision, says people are basically fixed -- greed, envy, and short-sightedness never really go away, so wise rules and long tradition are needed to steer them. Sowell said Adam Smith, Edmund Burke, and the American Founders held this view. What is the opposite view usually called?",
-    "answer": "The unconstrained vision — human nature is flexible and can be improved with new institutions",
-    "choices": [
-      "The unconstrained vision — human nature is flexible and can be improved with new institutions",
-      "The invisible hand — markets guide selfish choices toward good outcomes on their own",
-      "The knowledge problem — no central planner can know what everyone actually wants",
-      "The tragedy of the commons — shared resources tend to be overused"
-    ],
-    "context": "The unconstrained vision runs through Godwin, the French Revolutionaries, John Kenneth Galbraith, and Rawls. Politics in this vision is about identifying those who have the correct vision and empowering them to act. Source: Sowell (1987), Chapter 2.",
-    "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
-  },
-  {
-    "tier": 3,
-    "question": "In his 1987 book A Conflict of Visions, the American economist Thomas Sowell describes the 'constrained' view of human nature -- the picture in which people come with real, permanent limits that no policy can fully erase. He captured this view in a single short slogan that has become one of his most-quoted lines. It says every policy choice is a bargain between goods, never a pure fix. Which phrase captures the constrained view of politics?",
-    "answer": "There are no solutions, only trade-offs",
-    "choices": [
-      "There are no solutions, only trade-offs",
-      "The arc of history bends toward justice",
-      "Every child is a philosopher",
-      "The state is the moral agent of the community"
-    ],
-    "context": "The trade-offs slogan is Sowell's constrained-vision headline. It recurs across A Conflict of Visions (1987), The Vision of the Anointed (1995), and dozens of Sowell's shorter essays. Source: Sowell (1987); Sowell, The Vision of the Anointed (Basic 1995).",
-    "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
-  },
-  {
-    "tier": 3,
-    "question": "Thomas Sowell, the American economist behind A Conflict of Visions, often paired his 'no solutions, only trade-offs' slogan with a second short question. It refuses to let a reformer say 'this policy is bad' without naming the actual real-world option they'd prefer -- because every policy is measured against some alternative, never against a fantasy. What is that two-word question of Sowell's?",
-    "answer": "Compared to what?",
-    "choices": [
-      "Compared to what?",
-      "Who decides?",
-      "At what cost?",
-      "Which market?"
-    ],
-    "context": "'Compared to what?' recurs across Sowell's Knowledge and Decisions (1980), The Vision of the Anointed (1995), and Basic Economics (2000). It presses the constrained-vision comparative move against unconstrained-vision idealizations. Source: Sowell, Knowledge and Decisions (Basic 1980).",
-    "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
-  },
-  {
     "tier": 4,
-    "question": "In 1987 the American economist Thomas Sowell published Conflict of Visions, laying out his idea of two rival visions of human nature -- the constrained (people have fixed limits) and the unconstrained (people can be reshaped by smart plans). Sowell then developed that framework into a trilogy of books over the following twelve years. In 1995 he published the second book, applying the utopian lens as a diagnostic to modern American social policy. What was that book's title?",
+    "question": "Thomas Sowell grew his 1987 book on rival visions of human nature into a trilogy over the next twelve years. The second volume, in 1995, set the hopeful vision, that people can be remade by better institutions, against the social policy of modern America, and traced what follows when self-congratulation becomes the basis of policy. What is that volume called?",
     "answer": "The Vision of the Anointed",
     "choices": [
       "The Vision of the Anointed",
@@ -365,7 +274,7 @@
   },
   {
     "tier": 4,
-    "question": "The American economist Thomas Sowell started his conflict-of-visions series in 1987, arguing that thinkers split into two camps: the constrained (people have fixed limits) and the unconstrained (people can be perfected by wise planners). The second book, in 1995, was The Vision of the Anointed. Then in 1999 Sowell published the third book, which followed the unconstrained view all the way to its utopian endpoint and diagnosed the results. What did Sowell title that final volume?",
+    "question": "Thomas Sowell ended his trilogy on rival visions of human nature in 1999. Its last volume followed the hope that people can be remade by better institutions all the way to its utopian end, and diagnosed the results. What did he title that final book?",
     "answer": "The Quest for Cosmic Justice",
     "choices": [
       "The Quest for Cosmic Justice",
@@ -378,7 +287,7 @@
   },
   {
     "tier": 5,
-    "question": "Thomas Sowell's 1987 book A Conflict of Visions maps two rival pictures of human nature -- the constrained (people are fixed and flawed) and the unconstrained (people are endlessly improvable). The book carefully describes both views, traces them through named thinkers like Adam Smith and William Godwin, and applies them to specific policy debates. But it deliberately holds back on one final step. What does the book explicitly refuse to do?",
+    "question": "Thomas Sowell laid out both visions of human nature at their strongest in his 1987 book and followed each through named thinkers, from Adam Smith to William Godwin. Then, on purpose, he held back from one last step. Which step did he refuse to take?",
     "answer": "Declare either vision correct",
     "choices": [
       "Declare either vision correct",
@@ -390,8 +299,8 @@
     "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
   },
   {
-    "tier": 5,
-    "question": "The economist Thomas Sowell's Conflict of Visions framework helps explain something puzzling: professional economists and grassroots activists often talk past each other on the exact same policy question, as if they're not even hearing each other. Sowell says both sides may know the facts equally well -- the disagreement runs deeper than that. What is the underlying source of the gap, according to Sowell?",
+    "tier": 2,
+    "question": "Thomas Sowell took up a puzzle in 1987: an economist and an activist who know the same facts still talk past each other on the same policy. In A Conflict of Visions he traced the gap to something deeper than facts. What did he say lay beneath it?",
     "answer": "Each side operates from a different picture of what humans essentially are",
     "choices": [
       "Each side operates from a different picture of what humans essentially are",
@@ -404,7 +313,7 @@
   },
   {
     "tier": 1,
-    "question": "Sending an email costs your computer almost nothing, which is why spammers can blast out millions of emails a day for free. But imagine each email required your computer to solve a tiny math puzzle that takes half a second before it could send. For a normal person sending a few emails, that's nothing you'd even notice. What would happen to a spammer who sends millions a day?",
+    "question": "Adam Back proposed in 1997 that every email carry a small puzzle costing the sender's computer about half a second of work, a scheme he called Hashcash. Twenty emails a day would cost a person ten seconds. What would happen to a spammer sending a million?",
     "answer": "He could not afford to keep spamming -- the puzzles would take hours",
     "choices": [
       "He could not afford to keep spamming -- the puzzles would take hours",
@@ -416,21 +325,8 @@
     "topic": "adam-back-s-hashcash-and-reference-6"
   },
   {
-    "tier": 1,
-    "question": "Imagine every email you sent required your computer to solve a small puzzle that took half a second before it could go out. For a normal person sending twenty emails a day that's barely noticeable -- ten seconds of computer work spread across the day. Now imagine a spammer trying to blast out one million emails in a single day, one puzzle per email. Roughly how long would all that puzzle-solving take?",
-    "answer": "Hours or days",
-    "choices": [
-      "Hours or days",
-      "Half a second",
-      "A few minutes",
-      "Instantaneous"
-    ],
-    "context": "One puzzle costs milliseconds; a million puzzles multiply into hours or days on a spammer's hardware. Hashcash imposes no monetary fee or certificate; the asymmetry is pure CPU time. Source: https://en.wikipedia.org/wiki/Hashcash.",
-    "topic": "adam-back-s-hashcash-and-reference-6"
-  },
-  {
     "tier": 2,
-    "question": "In 1997 the British computer scientist Adam Back proposed a system called Hashcash to stop email spam. It made every sender's computer solve a puzzle before sending -- a puzzle that is expensive for a computer to solve but almost instant for the receiver to check. This asymmetric idea -- costly to produce, cheap to verify -- has a formal name in computer science, and it is the same idea Bitcoin later used to secure its blockchain. What is it called?",
+    "question": "Cynthia Dwork and Moni Naor sketched an early version in 1993 of the lopsided puzzle Adam Back built Hashcash around in 1997: slow for a sender's computer to solve, but checked by the receiver in a blink. Bitcoin later used the same idea to secure its blockchain. What is a puzzle of that kind called?",
     "answer": "proof-of-work",
     "choices": [
       "proof-of-work",
@@ -443,7 +339,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1997 the British cypherpunk Adam Back invented Hashcash. It made every email carry a small proof-of-work stamp -- a math puzzle the sender's computer had to solve first. Spammers who blast out millions of emails would find the puzzles far too expensive, while normal users would barely notice. One giant email provider in the mid-2000s tried Hashcash-style stamps as a spam filter, but it never spread everywhere because all email software would have needed to switch at the same time. Which mail service used them?",
+    "question": "One giant email service put Hashcash-style postmarks to work against spam in the mid-2000s. They never spread everywhere, since all the world's email software would have had to change at the same time. Which service tried them?",
     "answer": "Microsoft's mail servers",
     "choices": [
       "Microsoft's mail servers",
@@ -456,7 +352,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1997 the British cypherpunk Adam Back released Hashcash, which forced computers to burn a bit of real energy to send a message. His idea spread fast on cypherpunk mailing lists -- a scattered group of programmers dreaming up digital cash without banks. Over the next few years, two of those builders each designed a digital-money system that leaned directly on Hashcash-style proof-of-work, one in 1998 and one in 2004. Both men would later play a part in Bitcoin's story. Which two builders were they?",
+    "question": "Two cypherpunks, programmers in a scattered online circle who hoped for digital money without banks, took Adam Back's Hashcash and built money designs on it, one in 1998 and one in 2004. Both men would later play a part in Bitcoin's story. Which two were they?",
     "answer": "Wei Dai (b-money) and Hal Finney (RPOW)",
     "choices": [
       "Wei Dai (b-money) and Hal Finney (RPOW)",
@@ -468,21 +364,8 @@
     "topic": "adam-back-s-hashcash-and-reference-6"
   },
   {
-    "tier": 3,
-    "question": "In October 2008 the pseudonymous programmer Satoshi Nakamoto published a white paper for Bitcoin. Its mining system borrowed an idea from Adam Back's 1997 project Hashcash: to add a new block of transactions, a computer must first do real work by solving a math puzzle that costs electricity. Miners around the world race to solve it. Why does building money on top of that puzzle-work idea create scarcity?",
-    "answer": "Because each new coin costs real energy to mint, so no one can flood the network with cheap coins",
-    "choices": [
-      "Because each new coin costs real energy to mint, so no one can flood the network with cheap coins",
-      "Because a government office limits how many coins can be issued each year",
-      "Because only rich people are allowed to buy the mining hardware",
-      "Because the coins are stored on paper that is hard to copy"
-    ],
-    "context": "Satoshi emailed Adam Back in August 2008 asking for comments on the draft, on the strength of Back's Hashcash paper. Back later published the exchange. Chaum, Szabo, and Ulbricht were not part of that pre-publication group; Ulbricht (a physics student in 2008) was still years away from founding Silk Road. Source: https://satoshi.nakamotoinstitute.org/emails/back/.",
-    "topic": "adam-back-s-hashcash-and-reference-6"
-  },
-  {
     "tier": 4,
-    "question": "On October 31, 2008, an unknown figure named Satoshi Nakamoto quietly published a nine-page white paper titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' on a small cryptography mailing list. At the very end is a short references section listing eight earlier papers Satoshi drew on. One of them is Adam Back's Hashcash paper, which introduced the proof-of-work idea Bitcoin uses to secure blocks. Which numbered reference in Satoshi's paper is Hashcash?",
+    "question": "Satoshi Nakamoto posted his nine-page Bitcoin white paper on Halloween 2008, after asking Adam Back in August to look over a draft. The paper ends by citing eight earlier papers he had drawn on, and Back's Hashcash paper is one of them. Where in that list does it sit?",
     "answer": "Reference 6",
     "choices": [
       "Reference 6",
@@ -495,7 +378,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin is an open network with no owner, no CEO, and no central foundation gatekeeping its code. The software is public, so any company or team anywhere in the world can build wallets, tools, and improvements for it without asking anyone's permission. Compare this to a normal app store, where one company decides who gets to build what. What does it mean, in practice, that any team can build for Bitcoin freely?",
+    "question": "Adam Back helped found a company, Blockstream, in 2014, and it became one of the teams contributing to Bitcoin Core. Yet Bitcoin itself has no chief executive and no owner, and its code is open to the public. What does that open code mean in practice?",
     "answer": "Anyone can improve the network, and competing teams keep each other honest",
     "choices": [
       "Anyone can improve the network, and competing teams keep each other honest",
@@ -508,7 +391,7 @@
   },
   {
     "tier": 5,
-    "question": "Hashcash was in production email systems for years before Bitcoin existed. When Satoshi later used the same proof-of-work primitive as the heart of Bitcoin's mining, the primitive was put to a very different second job than fighting spam. What core function did PoW take on in Bitcoin that it never played in Hashcash?",
+    "question": "Adam Back's spam stamp picked up a new task in 2008, when Satoshi Nakamoto made it the engine of Bitcoin's mining. In email the stamp had only made each message cost a little computer work; in Bitcoin it took on a further role. What new job did it take on there?",
     "answer": "settling network-wide agreement on the ordering of transactions",
     "choices": [
       "settling network-wide agreement on the ordering of transactions",
@@ -520,8 +403,8 @@
     "topic": "adam-back-s-hashcash-and-reference-6"
   },
   {
-    "tier": 5,
-    "question": "A Bitcoin writer in 2026 looks back at the British cypherpunk Adam Back and his 1997 Hashcash. Before Hashcash, anything on a computer could be copied for free -- an mp3, a photo, a text file, a game. But Back's proof-of-work stamps forced real electricity to be spent to make one. The writer argues Hashcash was the first moment software showed one key economic trait that no earlier digital object had. Which trait does the writer name?",
+    "tier": 3,
+    "question": "Satoshi Nakamoto built Bitcoin's mining on Adam Back's old spam stamp, so a Bitcoin miner mints every new coin with puzzle work. Bitcoin writers say Hashcash gave software a trait no earlier digital thing had. Which trait?",
     "answer": "digital scarcity: something expensive to produce and cheap to check",
     "choices": [
       "digital scarcity: something expensive to produce and cheap to check",
@@ -534,20 +417,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1971 the American economist William Niskanen built a mathematical model of how federal government offices grow over time. He argued they end up bigger and better-funded than the public they serve actually needs. His trick was to ask a simple question: what does each government office act like it is trying to make as large as possible, year after year? What did Niskanen say every bureau tries to maximize?",
-    "answer": "Its own budget",
-    "choices": [
-      "Its own budget",
-      "Voter approval",
-      "Judicial rulings",
-      "Congressional testimony"
-    ],
-    "context": "Niskanen's argument: salary, prestige, staff, and career prospects all correlate with agency budget, so career-motivated bureaucrats rationally push to expand it. Source: Niskanen, Bureaucracy and Representative Government (Aldine-Atherton 1971).",
-    "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
-  },
-  {
-    "tier": 1,
-    "question": "After the September 11, 2001 terror attacks, the US Congress created a brand-new federal agency called the TSA (Transportation Security Administration) to search bags at every American airport. Twenty years later, in the 2020s, is the TSA smaller, bigger, or gone?",
+    "question": "Congress set up the Transportation Security Administration in November 2001, after the September 11 attacks, to search bags at every American airport. What had become of the agency two decades later?",
     "answer": "Bigger -- new government agencies almost never shrink",
     "choices": [
       "Bigger -- new government agencies almost never shrink",
@@ -560,7 +430,7 @@
   },
   {
     "tier": 2,
-    "question": "The Transportation Security Administration (TSA) was created after 9/11 to screen every US airport passenger and bag. In 2015 the Department of Homeland Security (DHS) ran a secret test: undercover agents tried to sneak fake guns and bombs through TSA checkpoints across the country. When the results leaked to reporters, the number stunned Congress. What was the reported failure rate?",
+    "question": "Undercover testers for the Department of Homeland Security set out in 2015 to sneak fake guns and bombs past American airport checkpoints. When the results leaked, the number stunned Congress. What share of the fakes did the screeners reportedly miss?",
     "answer": "About 95 percent",
     "choices": [
       "About 95 percent",
@@ -573,7 +443,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 2022 the US Congress passed the Inflation Reduction Act. Tucked inside was 80 billion dollars of new funding for the Internal Revenue Service (IRS), the federal tax collector, spread across ten years. Most of the money was set aside not for computers but for hiring an army of new agents and support workers. Roughly how many new IRS hires did the law authorize?",
+    "question": "Congress passed the Inflation Reduction Act in August 2022, and tucked inside it was some $80 billion, spread over ten years, for the Internal Revenue Service, the federal tax collector. Most of the money was meant for people rather than machines. Roughly how many new hires was it meant to pay for?",
     "answer": "About 87,000",
     "choices": [
       "About 87,000",
@@ -586,20 +456,7 @@
   },
   {
     "tier": 3,
-    "question": "When a problem catches the country's attention, Congress often creates a new federal agency to fix it. Over the decades that follow, the agency's budget grows, its staff grows, and its offices grow. Think of the Department of Education, launched in 1979 to raise US school test scores, or the Department of Homeland Security, launched in 2002 to secure US airports. What often happens to the very problem each agency was created to solve?",
-    "answer": "The problem does not clearly get better even as the agency grows",
-    "choices": [
-      "The problem does not clearly get better even as the agency grows",
-      "The problem is solved within about ten years and the agency is closed",
-      "The agency shrinks steadily until it disappears",
-      "Congress hands the problem back to the states within a decade"
-    ],
-    "context": "The Department of Education Organization Act was signed by Jimmy Carter on October 17, 1979. Reagan campaigned to abolish the department in 1980 but the department survived and grew. Source: ed.gov (department history).",
-    "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
-  },
-  {
-    "tier": 3,
-    "question": "Between 1970 and 2010, the United States more than doubled its real per-student spending in public schools. In 1979 President Jimmy Carter created a new federal Department of Education to push that money and set new rules. When researchers measured reading and math scores on major national tests at the end of high school across all those years, what did they usually find?",
+    "question": "Ronald Reagan campaigned to abolish the Department of Education, and failed. Meanwhile what American public schools spent on each pupil, after inflation, more than doubled from 1970 to 2010. What do the nation's long-term reading and math tests for high-school seniors show from 1979 to 2019?",
     "answer": "Scores stay roughly flat, even though spending has gone way up",
     "choices": [
       "Scores stay roughly flat, even though spending has gone way up",
@@ -611,8 +468,8 @@
     "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
   },
   {
-    "tier": 3,
-    "question": "Since 2001 the Transportation Security Administration has grown to over 60,000 workers guarding US airports. Since its founding the Internal Revenue Service (IRS) has grown into one of the largest tax offices on earth. Since 1979 the Department of Education has spent hundreds of billions of dollars trying to raise US test scores. Watching all three across the decades, what single pattern shows up in every one?",
+    "tier": 2,
+    "question": "Jimmy Carter created the Department of Education in October 1979. Set its officials beside the airport screeners and the tax collectors of the Internal Revenue Service, and one pattern runs through all three over the decades. What is it?",
     "answer": "Staff and budget grow while the results the agency should deliver do not clearly improve",
     "choices": [
       "Staff and budget grow while the results the agency should deliver do not clearly improve",
@@ -625,7 +482,7 @@
   },
   {
     "tier": 4,
-    "question": "Imagine a US government office where the yearly budget is set by how many workers it employs, not by anything it actually finishes or achieves. Public-choice economists like James Buchanan spent careers studying what this incentive creates. Over ten years, how does an office like this tend to change?",
+    "question": "Suppose a government office is paid each year by how many people it employs, not by anything it finishes. James Buchanan and other public-choice economists spent careers tracing incentives like that one. Over a decade, how does an office like this tend to change?",
     "answer": "It hires more people and finds new tasks so its budget keeps growing",
     "choices": [
       "It hires more people and finds new tasks so its budget keeps growing",
@@ -638,7 +495,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1971 the American economist William Niskanen wrote a book arguing that government agencies naturally push to grow their own budgets, whether or not the extra money produces more real results. His public-choice framework gives citizens a specific test to run whenever an agency claims it needs more funding. What comparative test does Niskanen's framework demand?",
+    "question": "William Niskanen left citizens a test to run whenever a government agency asks for more money, and he predicted that agencies would fight any kind of measurement that made the test possible. What does his test ask the agency to show?",
     "answer": "Show that the last ten percent of prior budget produced roughly ten percent of the output",
     "choices": [
       "Show that the last ten percent of prior budget produced roughly ten percent of the output",
@@ -651,20 +508,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1971 the American economist William Niskanen argued that government offices are run by people who want bigger budgets, more staff under them, and more power -- not by people who want to shrink the office they work in. Imagine a school district hires 100 workers to run its lunch program. Ten years later there are 400 workers, even though the number of kids eating lunch has not grown. A public-choice thinker following Niskanen would say the growth mostly reflects what?",
-    "answer": "What the workers themselves want, not what the job actually needs",
-    "choices": [
-      "What the workers themselves want, not what the job actually needs",
-      "A big rise in the number of kids eating school lunch",
-      "Workers being lazier than they used to be",
-      "New rules from a distant state agency"
-    ],
-    "context": "Niskanen's payoff: whenever budgets and headcounts grow while measurable output does not, the presumption should be that the growth reflects internal incentives, not rising external demand. The move is recognition, not a policy verdict. Source: Niskanen, Bureaucracy and Representative Government (1971).",
-    "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
-  },
-  {
-    "tier": 5,
-    "question": "The American economist William Niskanen warned in 1971 that government offices tend to grow past what their real work requires. In November 2024, President-elect Donald Trump announced a new federal effort, led by Elon Musk and Vivek Ramaswamy, to hunt for exactly that pattern -- bureaus that had bloated without doing more real work. Its short name was a joke on a popular internet meme about a Shiba Inu dog. What was the effort's full proposed name?",
+    "question": "Donald Trump won the 2024 election and chose Elon Musk and Vivek Ramaswamy to lead a hunt for bureaus that had swollen without doing more real work, the very pattern William Niskanen had warned of in 1971. What was the effort called?",
     "answer": "The Department of Government Efficiency",
     "choices": [
       "The Department of Government Efficiency",
@@ -677,7 +521,7 @@
   },
   {
     "tier": 1,
-    "question": "Imagine an insurance company that sells home-loan insurance to hundreds of banks across the country. If a single bank has a bad year and a few loans go bad, the insurer pays that bank and moves on. But suppose home loans start going bad everywhere at once — every state, every bank, all at the same time. What danger does the insurance company now face?",
+    "question": "An insurance company has sold home-loan insurance to hundreds of banks. If a single bank has a poor year and a few loans sour, the insurer pays it and carries on. Then home loans start going bad everywhere at once. What danger does the insurer now face?",
     "answer": "The company runs out of money -- it sold more coverage than it could ever pay",
     "choices": [
       "The company runs out of money -- it sold more coverage than it could ever pay",
@@ -690,7 +534,7 @@
   },
   {
     "tier": 1,
-    "question": "On September 15, 2008, the investment bank Lehman Brothers collapsed and Wall Street panicked. The next day, September 16, the Federal Reserve made an emergency loan to a failing insurance giant called American International Group (AIG), which had promised to cover hundreds of billions of dollars in bad mortgage bets. In return, the Fed took nearly 80 percent of the company. How big was that first emergency loan?",
+    "question": "Timothy Geithner, then running the New York Fed, drew up the rescue of the insurance giant American International Group in September 2008. The first loan came the day after Lehman Brothers collapsed, and the Fed took nearly 80 percent of the company in exchange. How big was that first loan?",
     "answer": "About 85 billion dollars",
     "choices": [
       "About 85 billion dollars",
@@ -703,7 +547,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 2008, the US Federal Reserve announced an 85 billion dollar emergency rescue of the giant insurance company AIG (American International Group), which had bet wrongly on the American housing market. Over the following months the total commitment kept growing well beyond that first size. What was the peak commitment?",
+    "question": "The Fed and the Treasury kept adding to their rescue of the insurer American International Group after its first emergency loan in September 2008. Month after month the commitment climbed, until no single American firm had ever been rescued on that scale. How high did it peak?",
     "answer": "About 182 billion dollars",
     "choices": [
       "About 182 billion dollars",
@@ -715,8 +559,8 @@
     "topic": "aig-the-182b-backdoor-bank-rescue"
   },
   {
-    "tier": 2,
-    "question": "Historians looking back at the September 2008 rescue of the insurance giant AIG (American International Group) say the AIG bailout was really a rescue of another group of firms. AIG had sold credit default swap (CDS) insurance to big Wall Street banks, and those banks would have taken enormous losses if AIG had gone bust. Whose rescue was the AIG rescue really?",
+    "tier": 3,
+    "question": "American International Group (AIG) had written credit default swaps, insurance contracts on mortgage bonds, for nearly every big bank. The government rescued the insurer in September 2008, saying the rescue would protect ordinary families' insurance. Whose rescue was it really?",
     "answer": "AIG's counterparties -- the banks that had bought CDS protection from it",
     "choices": [
       "AIG's counterparties -- the banks that had bought CDS protection from it",
@@ -729,7 +573,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2008, the giant US insurance company American International Group (AIG) had promised to pay Wall Street banks if their risky mortgage bets went bad. When those bets collapsed, the US government stepped in and made AIG cover every promise at full price, using taxpayer money. Which banks collected the biggest checks in that bailout?",
+    "question": "Federal officials made American International Group (AIG) pay every one of its swap promises at full price after the government rescued the insurer in September 2008. Those contracts had insured Wall Street's riskiest mortgage bets. Which banks collected the biggest checks?",
     "answer": "The biggest investment banks, the ones who had made the largest risky bets",
     "choices": [
       "The biggest investment banks, the ones who had made the largest risky bets",
@@ -742,7 +586,7 @@
   },
   {
     "tier": 3,
-    "question": "During the 2008 financial crisis, the US government bailed out American International Group (AIG), a giant American insurance company on the brink of collapse. Congress set up a special watchdog office, the Special Inspector General for the Troubled Asset Relief Program (SIGTARP), to track where the bailout money actually went. In 2009 the SIGTARP report showed the AIG rescue was really a pipe that paid the big Wall Street banks in full -- 100 cents on the dollar. The man who led SIGTARP paid for that report in his career. Who was he?",
+    "question": "Congress gave the 2008 bailout money its own watchdog, an inspector general whose job was to track where it went. The watchdog's chief issued reports between 2009 and 2011 on the insurer American International Group, tracing where its rescue money actually ended up, and later told the story in a book, Bailout. Who was he?",
     "answer": "Neil Barofsky at SIGTARP",
     "choices": [
       "Neil Barofsky at SIGTARP",
@@ -755,7 +599,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 2000s, the American insurance giant American International Group (AIG) sold contracts called credit default swaps -- promises to pay out if certain mortgage bonds went bad. Because AIG carried a top triple-A (AAA) credit rating, no regulator made it set aside cash to back those promises. Then in September 2008, as the housing market cracked, AIG's credit rating was cut. Under the terms of its own contracts, what suddenly happened?",
+    "question": "American International Group had sold credit default swaps, promises to pay out if mortgage bonds went bad, without setting aside any cash. Its top-grade triple-A rating let it, and no regulator demanded otherwise. Then, in September 2008, the rating agencies cut that rating. Under the terms of its own contracts, what suddenly happened?",
     "answer": "The company owed billions in collateral overnight and could not pay",
     "choices": [
       "The company owed billions in collateral overnight and could not pay",
@@ -767,34 +611,8 @@
     "topic": "aig-the-182b-backdoor-bank-rescue"
   },
   {
-    "tier": 4,
-    "question": "In September 2008 the Federal Reserve rescued American International Group (AIG), a giant US insurance company that had covered hundreds of billions of dollars in risky mortgage bets and lost. The Fed poured 85 billion dollars into AIG to keep it alive rather than let it fail. Every other big Wall Street firm was watching closely. What lesson do those big firms take away from a rescue like that?",
-    "answer": "Take even bigger risks next time, since the government will step in if they fail",
-    "choices": [
-      "Take even bigger risks next time, since the government will step in if they fail",
-      "Never take any risk again, since the rescue was so painful",
-      "Ask the Fed for permission before every new bet",
-      "Trust that regulators can predict every future crisis"
-    ],
-    "context": "Geithner led the New York Fed 2003-2009 and personally designed the AIG rescue. He became Treasury Secretary under Obama in January 2009. Source: Grokipedia 'Timothy Geithner' (2026-09-05).",
-    "topic": "aig-the-182b-backdoor-bank-rescue"
-  },
-  {
-    "tier": 5,
-    "question": "During a financial crisis, the government rescues a huge insurance company, saying it is to protect regular families' insurance. Later, people find most of the rescue money flowed straight through the company to major creditor banks it owed. What is the 'unseen' part?",
-    "answer": "The rescue money mostly went to the big banks, not to protecting regular policyholders",
-    "choices": [
-      "The rescue money mostly went to the big banks, not to protecting regular policyholders",
-      "The insurance company's workers all lost their jobs anyway",
-      "Every branch office had to close within a year",
-      "Foreign banks refused to accept the rescue money"
-    ],
-    "context": "The AIG rescue was a bank bailout laundered through an insurance company -- avoiding the political optics of paying Goldman and Deutsche Bank directly while producing the same substantive result. Source: Barofsky, Bailout (2012).",
-    "topic": "aig-the-182b-backdoor-bank-rescue"
-  },
-  {
-    "tier": 5,
-    "question": "Public-choice economists warn that when a government rescue is set up so voters cannot see who really gets the money -- like the 2008 American International Group (AIG) bailout that quietly paid off the big Wall Street banks holding AIG's insurance at 100 cents on the dollar -- two things tend to happen in the years that follow. What are they?",
+    "tier": 3,
+    "question": "Every big firm on Wall Street watched in September 2008 as the government poured billions into the insurer American International Group rather than let it fail, in a rescue that kept its real winners out of sight. Public-choice economists warn that two lasting results follow rescues like that, and one of them is called moral hazard. What are the two?",
     "answer": "Big risk-takers expect more rescues, and public trust in the government shrinks",
     "choices": [
       "Big risk-takers expect more rescues, and public trust in the government shrinks",
@@ -807,7 +625,7 @@
   },
   {
     "tier": 1,
-    "question": "From 1938 to 1978, the US Civil Aeronautics Board in Washington set the ticket prices for every American airline. An airline could not lower a fare without first asking this federal panel for permission. Who gained the most from this forty-year rule?",
+    "question": "An airline asks the Civil Aeronautics Board in Washington for leave to cut a fare; from 1938 to 1978 every airline had to. The Board also chose which airlines flew which routes. Who gained the most from that forty-year rule?",
     "answer": "The existing airlines -- they did not have to fear a cheaper competitor",
     "choices": [
       "The existing airlines -- they did not have to fear a cheaper competitor",
@@ -820,7 +638,7 @@
   },
   {
     "tier": 1,
-    "question": "From 1938 to 1978, a US agency called the Civil Aeronautics Board (CAB) decided which airlines could fly which routes and how much a plane ticket could cost. The Board never told the public this was a favor to the big established airlines. Instead it warned that letting anyone fly anywhere at any price would unleash one specific danger. Which danger did the Board name?",
+    "question": "Officials of the Civil Aeronautics Board, which picked the routes and set the fares of every American airline from 1938 to 1978, warned the public against letting any airline fly anywhere at any price. Open skies, they said, would unleash one specific danger. Which danger?",
     "answer": "Ruinous competition that would bankrupt carriers and strand small towns",
     "choices": [
       "Ruinous competition that would bankrupt carriers and strand small towns",
@@ -833,7 +651,7 @@
   },
   {
     "tier": 2,
-    "question": "The Civil Aeronautics Board (CAB) was the US agency that, from 1938 to 1978, decided which airlines could fly which US routes. Between 1950 and 1974, seventy-nine new companies applied to the CAB asking for permission to fly a US airline route. Each one hoped to break into the market and compete with the big established carriers. Of those seventy-nine hopeful applications, how many did the CAB approve?",
+    "question": "An outside firm files an application with the Civil Aeronautics Board to start a scheduled American airline against the big established carriers. The Board received seventy-nine such applications between 1950 and 1974. How many did the Board approve?",
     "answer": "None of them",
     "choices": [
       "None of them",
@@ -846,7 +664,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1960s and 1970s, Pacific Southwest in California and Southwest in Texas sold tickets 30 to 60 percent cheaper than other airlines. Their planes flew fuller too. The Civil Aeronautics Board never stopped them. Why couldn't the Board touch them?",
+    "question": "Pacific Southwest in California and Southwest in Texas sold tickets 30 to 60 percent cheaper than the regulated carriers in the 1960s and 1970s, and their planes flew fuller too. The Civil Aeronautics Board never stopped them. Why couldn't it touch them?",
     "answer": "Each flew only inside one state, so its business never reached the Board's authority",
     "choices": [
       "Each flew only inside one state, so its business never reached the Board's authority",
@@ -859,7 +677,7 @@
   },
   {
     "tier": 3,
-    "question": "Robert Timm ran the Civil Aeronautics Board until 1974. He set a rule that airlines should earn 12 percent on their money. Senator Ted Kennedy's team later asked the Justice Department to look at him for a gift he took from the airlines he oversaw. What was the gift?",
+    "question": "Robert Timm, while he chaired the Civil Aeronautics Board, set a rule that airlines should earn 12 percent on their money. Senator Ted Kennedy's team later asked the Justice Department to look at him for a gift he took from the airlines he oversaw. What was the gift?",
     "answer": "A golf holiday in Bermuda",
     "choices": [
       "A golf holiday in Bermuda",
@@ -872,7 +690,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1977, President Jimmy Carter put Alfred Kahn in charge of the Civil Aeronautics Board. Kahn was a Cornell professor and lifelong Democrat who had written two books on how regulated markets work. He liked to say he could not tell one plane from another. He then said something about planes that stuck to him for life. What did he say they were to him?",
+    "question": "Jimmy Carter put Alfred Kahn, a Cornell professor and lifelong Democrat, in charge of the Civil Aeronautics Board in 1977. Kahn joked that he could not tell one plane from another, then added a line about planes that stuck to him for life. What did he say they were to him?",
     "answer": "All just marginal costs with wings",
     "choices": [
       "All just marginal costs with wings",
@@ -885,7 +703,7 @@
   },
   {
     "tier": 4,
-    "question": "Under the Civil Aeronautics Board, flights to small towns had been paid for out of sight: passengers on busy trunk routes were charged above-competitive fares, and the surplus quietly covered the thin routes. When Congress ended fare control in 1978 that hidden transfer had nowhere left to hide, so Congress built a replacement. What did it create?",
+    "question": "Congress ended fare control in 1978, and a hidden transfer had nowhere left to hide. Under the Civil Aeronautics Board, travellers on busy trunk routes had paid fares above what competition would have set, and the surplus quietly kept flights going to small towns. So Congress built a replacement. What did it create?",
     "answer": "The Essential Air Service programme, funded as a line in the federal budget",
     "choices": [
       "The Essential Air Service programme, funded as a line in the federal budget",
@@ -898,7 +716,7 @@
   },
   {
     "tier": 5,
-    "question": "The Airline Deregulation Act cleared Congress by crushing margins -- 82 to 4 in the Senate, 356 to 6 in the House -- and President Carter signed it on October 24, 1978. The lopsided votes hid a long and bitter fight, and it is the identity of the losing side that economists still cite about the whole episode. Who fought hardest to keep the Board's controls?",
+    "question": "Jimmy Carter signed the Airline Deregulation Act on October 24, 1978, after it cleared Congress by crushing margins: 82 to 4 in the Senate, 356 to 6 in the House. The lopsided votes hid a long and bitter fight, and economists still cite the losing side. Who fought hardest to keep the Civil Aeronautics Board's controls?",
     "answer": "The established trunk airlines and the Air Line Pilots Association",
     "choices": [
       "The established trunk airlines and the Air Line Pilots Association",
@@ -911,7 +729,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1963 a young New York economist named Murray Rothbard published his Austrian-school account of the 1929 to 1933 slump that had wrecked the American economy. He blamed the Federal Reserve, not free markets, for the crash and the depression. What did Rothbard title the book?",
+    "question": "Murray Rothbard was thirty-seven when he published a 361-page re-examination of the 1929-33 slump in 1963, writing as an economist of the Austrian school. Where others faulted free markets and the 1929 crash, he faulted Washington. What did he title the book?",
     "answer": "America's Great Depression",
     "choices": [
       "America's Great Depression",
@@ -924,7 +742,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1963 the Austrian-school economist Murray Rothbard published a book called America's Great Depression. It re-examined the terrible economic slump of 1929 to 1933, when thousands of US banks failed and unemployment climbed to nearly a quarter of the workforce. Rothbard argued the free market was not to blame — two other culprits were. Which two did his account name?",
+    "question": "Murray Rothbard re-examined, in 1963, the slump that closed thousands of American banks between 1929 and 1933 and threw nearly a quarter of workers out of work. He argued the free market was not to blame. Which two culprits did his account name?",
     "answer": "The Federal Reserve and President Hoover",
     "choices": [
       "The Federal Reserve and President Hoover",
@@ -937,7 +755,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1963 book America's Great Depression, the Austrian economist Murray Rothbard pinned the reckless 1920s credit boom -- the one that led straight to the 1929 stock market crash -- on one specific Federal Reserve official. Rothbard said this man had loosened American credit in the mid-1920s partly to help Britain hold gold, inflating the US stock bubble. Which Fed official did Rothbard blame?",
+    "question": "One Federal Reserve official, who worked closely with the Bank of England's Montagu Norman, drew Murray Rothbard's sharpest blame for the boom of the 1920s. He was the dominant force in the Fed in those years. Which official did Rothbard blame?",
     "answer": "Benjamin Strong, Governor of the New York Fed",
     "choices": [
       "Benjamin Strong, Governor of the New York Fed",
@@ -950,7 +768,7 @@
   },
   {
     "tier": 2,
-    "question": "In late October 1929 the US stock market crashed. Weeks later, in November, President Herbert Hoover called the country's top factory owners to a series of meetings at the White House. Murray Rothbard's book America's Great Depression tells what Hoover pressed the industrialists to promise as unemployment began to rise. What did Hoover push them to promise?",
+    "question": "Herbert Hoover called Henry Ford, Pierre du Pont and other great industrialists to the White House in November 1929, weeks after the stock market crashed, as unemployment began to rise. What did he press them to promise?",
     "answer": "That they would not cut wage rates",
     "choices": [
       "That they would not cut wage rates",
@@ -963,7 +781,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1920 the US economy fell into a sharp recession. Unemployment jumped to about 12 percent, and industrial output dropped roughly 17 percent -- a bust deeper than the early years of the Great Depression that came a decade later. President Warren Harding took an unusual path for a modern politician: instead of launching new spending programs, he cut the federal budget almost in half and let wages and prices fall to new levels. What happened next?",
+    "question": "Warren Harding faced a savage slump in 1920 and 1921. Unemployment climbed to about 12 percent and industrial output fell roughly 17 percent. Instead of launching new spending programs, his government cut the federal budget almost in half and let wages and prices fall. What happened next?",
     "answer": "The recession ends within about a year and a half as prices reset",
     "choices": [
       "The recession ends within about a year and a half as prices reset",
@@ -976,20 +794,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1930, deep in the worst downturn the United States had ever seen, Congress passed the Smoot-Hawley Tariff Act. It slapped a huge extra tax on nearly every product coming into the country from abroad, promising to protect American workers. The same shape has shown up again and again when countries try this move in a recession. What do the other countries usually do next?",
-    "answer": "They pass their own big tariffs on that country's exports, and world trade collapses further",
-    "choices": [
-      "They pass their own big tariffs on that country's exports, and world trade collapses further",
-      "They cut all their tariffs to zero to keep trade flowing",
-      "They ignore it and keep buying that country's exports at the same rate",
-      "They send extra help to soften the effect on the recession"
-    ],
-    "context": "Signed June 17, 1930. Rothbard argued the tariff choked off foreign trade at precisely the moment the world economy needed liquidation and adjustment, spreading the American slump internationally. Source: millercenter.org/the-presidency/presidential-speeches/june-16-1930-message-regarding-smoot-hawley-tariff-act.",
-    "topic": "americas-great-depression-1963-the-austrian-account"
-  },
-  {
-    "tier": 3,
-    "question": "In 1932 President Herbert Hoover created the Reconstruction Finance Corporation (RFC), a brand-new federal agency whose whole job was to make giant emergency loans to banks and railroads that were about to fail. Several were saved from bankruptcy that year. But rescue programs like the RFC carry a long-run danger that plays out over the decades that follow. What is the main long-run risk?",
+    "question": "Herbert Hoover created the Reconstruction Finance Corporation in January 1932, and within six months it had lent failing banks and railroads more than a billion dollars. Franklin Roosevelt kept it and enlarged it. What is the main long-run danger of rescue programs like this one?",
     "answer": "Firms take bigger risks in the future, expecting a rescue loan if they get in trouble",
     "choices": [
       "Firms take bigger risks in the future, expecting a rescue loan if they get in trouble",
@@ -1002,7 +807,7 @@
   },
   {
     "tier": 4,
-    "question": "A common school story about the Great Depression says President Herbert Hoover did nothing as the economy fell after the October 1929 stock crash, and only when Franklin Roosevelt took office in 1933 did the government finally step in with big programs. But historians like Murray Rothbard and Amity Shlaes, who look at the actual records of Hoover's four years in office, find what?",
+    "question": "Amity Shlaes went back over Herbert Hoover's four years in office for The Forgotten Man, published in 2007, as Murray Rothbard had before her. The schoolbook story says Hoover sat idle after the October 1929 crash until Franklin Roosevelt stepped in from 1933. What did the record show the two writers?",
     "answer": "The first president also ran big spending and price-support programs",
     "choices": [
       "The first president also ran big spending and price-support programs",
@@ -1015,7 +820,7 @@
   },
   {
     "tier": 4,
-    "question": "A high-school textbook usually tells you the October 1929 stock-market crash caused the Great Depression. In his 1963 book America's Great Depression, the Austrian economist Murray Rothbard pressed back using a reasoning move from his school of thought known as Austrian Business Cycle Theory (ABCT). ABCT focuses on how central banks like the Federal Reserve steer the boom-bust cycle by pumping cheap credit into a country. Which reasoning move does Rothbard press against the crash-caused-it story?",
+    "question": "Murray Rothbard pushed back in 1963 against the schoolbook line that the October 1929 crash caused the Great Depression. He used a move from Austrian Business Cycle Theory, his school's account of boom and bust. Which move did he press against the crash-caused-it story?",
     "answer": "The 1929 bust was the inevitable liquidation of Fed-created 1920s malinvestment, not itself the cause",
     "choices": [
       "The 1929 bust was the inevitable liquidation of Fed-created 1920s malinvestment, not itself the cause",
@@ -1028,7 +833,7 @@
   },
   {
     "tier": 4,
-    "question": "Murray Rothbard's book America's Great Depression, published in 1963, was not a stand-alone project. It grew directly out of a much larger treatise Rothbard had finished the year before -- a full Austrian-school economics textbook covering money, prices, production, and government intervention. Which larger 1962 Rothbard treatise was America's Great Depression written as a companion volume to?",
+    "question": "Murray Rothbard finished a complete Austrian-school economics textbook in 1962, covering money, prices, production and government intervention. A year later he turned that framework on one historical case, the slump of 1929 to 1933. Which 1962 treatise was that later book a companion to?",
     "answer": "Man, Economy, and State",
     "choices": [
       "Man, Economy, and State",
@@ -1041,7 +846,7 @@
   },
   {
     "tier": 5,
-    "question": "A student compares two Fed-centered accounts of the 1929-1933 downturn. The Friedman-Schwartz 1963 Monetary History blames the Fed for CONTRACTING the money supply by roughly a third after the crash. Rothbard's 1963 monograph blames the Fed for a different failure mode across the whole preceding decade. Which failure mode does Rothbard blame?",
+    "question": "Milton Friedman and Anna Schwartz, in their Monetary History of 1963, blamed the Federal Reserve for shrinking the supply of money by about a third after the crash. Murray Rothbard's book of the same year faulted the Fed for a different failure, spread over the whole decade before the crash. Which failure?",
     "answer": "Expanding credit through the 1920s to support Britain's return to gold, producing the malinvestment that had to bust",
     "choices": [
       "Expanding credit through the 1920s to support Britain's return to gold, producing the malinvestment that had to bust",
@@ -1054,7 +859,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1816, after the War of 1812, the US Congress chartered a giant private bank based in Philadelphia. Only this bank could print paper notes accepted nationwide, and only this bank could hold the US Treasury's money. Its powerful president from 1823 onward was Nicholas Biddle of Philadelphia. What was the bank called?",
+    "question": "Nicholas Biddle took charge in 1823 of a giant Philadelphia bank that Congress had chartered in 1816, after the War of 1812. Its notes passed all over the country, and it held the Treasury's money. What was the bank called?",
     "answer": "The Second Bank of the United States",
     "choices": [
       "The Second Bank of the United States",
@@ -1067,7 +872,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1830s US President Andrew Jackson threw himself into a fight to kill the Second Bank of the United States, a giant national bank chartered by Congress and headquartered in Philadelphia. Jackson believed the Bank was controlled by a small circle of rich eastern shareholders and foreign investors. What danger was Jackson worried about?",
+    "question": "Andrew Jackson, a frontier general turned president in 1828, threw much of his two terms into a fight to kill the Second Bank of the United States. Its owners were wealthy Easterners and foreign investors. What danger did Jackson see in that?",
     "answer": "A small group having control over the whole country's money",
     "choices": [
       "A small group having control over the whole country's money",
@@ -1080,7 +885,7 @@
   },
   {
     "tier": 2,
-    "question": "On July 10, 1832, Andrew Jackson vetoed the bill to renew the Second Bank of the United States. It became one of the most famous vetoes in US history. His veto letter said Congress could not hand out special deals that shifted wealth in one direction. What did his letter say the Bank did?",
+    "question": "Andrew Jackson vetoed the bill to renew the Second Bank of the United States on July 10, 1832. His veto message attacked the privilege the Bank held. What did the message say a privilege like the Bank's did?",
     "answer": "Made the rich richer and the potent more powerful",
     "choices": [
       "Made the rich richer and the potent more powerful",
@@ -1093,7 +898,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1830s, President Andrew Jackson decided the Second Bank of the United States, run by Nicholas Biddle in Philadelphia, had too much power over ordinary Americans. Jackson refused to renew the bank's charter, and in 1833 he pulled all federal deposits out of it and moved them to state banks. Biddle fought back by tightening credit to punish the country. This long fight from 1832 to 1836 is remembered by a simple two-word name. What is it?",
+    "question": "Andrew Jackson and Nicholas Biddle fought from 1832 until the charter of Biddle's bank ran out in 1836, after Jackson refused to renew it. What simple two-word name is the long struggle remembered by?",
     "answer": "The Bank War",
     "choices": [
       "The Bank War",
@@ -1106,7 +911,7 @@
   },
   {
     "tier": 3,
-    "question": "When President Andrew Jackson began pulling federal deposits out of the Second Bank of the United States in 1833, the Bank's president Nicholas Biddle decided to fight back. Rather than lose without a struggle, Biddle used the Bank's power over credit across the country to try to hurt the US economy on purpose. He hoped voters would blame Jackson and force Congress to recharter the Bank. What did Biddle do?",
+    "question": "Nicholas Biddle, president of the Second Bank of the United States, hit back with the one weapon in his hands when Andrew Jackson began moving federal deposits away from the Bank in 1833. He hoped to hurt the economy badly enough that voters would blame Jackson and push Congress to recharter the Bank, and his own letters record the plan. What did Biddle do?",
     "answer": "He contracted credit sharply to induce a recession",
     "choices": [
       "He contracted credit sharply to induce a recession",
@@ -1119,7 +924,7 @@
   },
   {
     "tier": 3,
-    "question": "After winning re-election in 1832, US President Andrew Jackson pulled the federal government's money out of the Second Bank of the United States. He moved those deposits into a scattering of friendly state banks that had supported him politically. Jackson's opponents were furious, and they gave the chosen state banks a mocking animal nickname. What did his critics call them?",
+    "question": "Freshly re-elected, Andrew Jackson began moving the government's money out of the Second Bank of the United States in 1833 and parked it in a few state banks that were friendly to him. His enemies gave those banks a mocking animal nickname. What did they call them?",
     "answer": "Pet banks",
     "choices": [
       "Pet banks",
@@ -1132,7 +937,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1834 a delegation of directors from the Second Bank of the United States met US President Andrew Jackson face to face at the White House, hoping to change his mind about killing the Bank's charter. Jackson, who despised the Bank's Philadelphia-based board, reportedly answered them with a furious line comparing the bankers to snakes. Which line is Jackson said to have used?",
+    "question": "A delegation of directors from the Second Bank of the United States came to plead with Andrew Jackson in 1834, the story goes, hoping to save the Bank's charter. Jackson is said to have answered with a furious line that is still quoted, though historians dispute its exact source. Which line is he said to have used?",
     "answer": "You are a den of vipers and thieves; I intend to rout you out",
     "choices": [
       "You are a den of vipers and thieves; I intend to rout you out",
@@ -1145,7 +950,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1836, US President Andrew Jackson let the federal charter of the Second Bank of the United States expire, ending its life as a central bank. After that, the American economy operated with private and state banks but no federal central bank at all. How long did that stretch without a federal central bank last?",
+    "question": "Andrew Jackson let the charter of the Second Bank of the United States run out in 1836, ending its life as a central bank. Private and state banks then carried American money alone, with no national central bank at all, and the country lived through periodic panics. How long did that stretch last?",
     "answer": "Seventy-seven years, until 1913",
     "choices": [
       "Seventy-seven years, until 1913",
@@ -1158,7 +963,7 @@
   },
   {
     "tier": 5,
-    "question": "In January 1835 a man named Richard Lawrence attempted to assassinate Jackson at the Capitol. Both of his pistols failed to fire at point-blank range. Jackson later blamed the Bank's supporters for the attempt. What was the specific mechanical failure of the pistols?",
+    "question": "Richard Lawrence came at Andrew Jackson at the Capitol on January 30, 1835, with two pistols. Jackson went after him with his cane before bystanders pinned the man down, and later blamed friends of the Bank for the attack. What went wrong with the two pistols?",
     "answer": "Both pistols misfired -- the caps ignited but neither pistol discharged its main charge",
     "choices": [
       "Both pistols misfired -- the caps ignited but neither pistol discharged its main charge",
@@ -1171,7 +976,7 @@
   },
   {
     "tier": 5,
-    "question": "US President Andrew Jackson killed the Second Bank of the United States by 1836 through his veto pen and by pulling out federal deposits. No new central bank existed in America for another seventy-seven years, until Congress created the Federal Reserve in 1913. What does the whole Jackson-versus-Bank episode show about central banks?",
+    "question": "Andrew Jackson killed the Second Bank of the United States by 1836, with his veto pen and by pulling out the federal deposits. The country then went generations without a national central bank before Congress created another. What does the whole Jackson-versus-Bank episode show about central banks?",
     "answer": "A central bank's existence is always a political choice, not a technical necessity; it can be killed by a determined executive and revived only by a later political consensus",
     "choices": [
       "A central bank's existence is always a political choice, not a technical necessity; it can be killed by a determined executive and revived only by a later political consensus",
@@ -1184,7 +989,7 @@
   },
   {
     "tier": 1,
-    "question": "Two rival companies both want the same government license — say, the only permit to import a certain good into the country. Each hires a million dollars' worth of lawyers and lobbyists to try to talk officials into handing it the license. In the end one company wins, the other loses, and no new goods have been produced. Did the country as a whole get any richer from all that spending?",
+    "question": "Two rival companies want the only government license to import a certain good, and each pours a million dollars into lawyers and lobbyists to talk officials into granting it. In the end one company wins and the other loses. Did the country as a whole get any richer from all that spending?",
     "answer": "No -- they made nothing new; they only fought over a government favor",
     "choices": [
       "No -- they made nothing new; they only fought over a government favor",
@@ -1196,34 +1001,21 @@
     "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
   },
   {
-    "tier": 1,
-    "question": "Instead of building better factories or inventing better products, a whole US industry hires an army of lobbyists in Washington to convince Congress to ban its foreign competitors from selling here. The industry has made no new goods, invented nothing, and served no new customers — it has only chased a special government favor. Economists have a name for this kind of profit-hunting. What is it called?",
+    "tier": 2,
+    "question": "Anne Krueger looked hard at India and Turkey in the early 1970s, where the right to bring in foreign goods was handed out by government license. In a short paper of 1974 she named the effort firms spent chasing those licenses, and economists still use her name for it. What is it?",
     "answer": "Rent-seeking",
     "choices": [
       "Rent-seeking",
-      "Free trade",
-      "Saving",
-      "Investing"
+      "Regulatory capture",
+      "Moral hazard",
+      "Producer surplus"
     ],
     "context": "Rent-seeking: dissipation of real resources chasing state-created privileges. The term entered every economics vocabulary through Krueger 1974, though Tullock's 1967 paper 'The Welfare Costs of Tariffs, Monopolies, and Theft' described the mechanism first. Source: aeaweb.org.",
     "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
   },
   {
-    "tier": 2,
-    "question": "The American economist Anne Krueger studied India's system of government import licenses. She saw people spending huge effort chasing these permits -- hiring lobbyists, cultivating officials, waiting in long queues -- instead of making goods. In a famous 1974 paper on India and Turkey, she gave that wasted effort a name that stuck in economics. What did she call it?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Producer surplus",
-      "Deadweight tax",
-      "Opportunity cost"
-    ],
-    "context": "Krueger estimated Indian rent-seeking dissipation at ~7% of national income in 1964. Her Turkey 1968 estimate for rent-seeking around import licenses reached 15% of GNP. These are staggering deadweight-loss figures. Source: aeaweb.org.",
-    "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
-  },
-  {
     "tier": 3,
-    "question": "The American economist Anne Krueger studied Turkey in the early 1970s, where import licenses handed out by the government were often worth more than the goods those licenses let firms bring in. Her 1974 paper made explicit what Turkish firms actually did once a paper permit was worth more than a factory's output. What behavior did firms adopt?",
+    "question": "Anne Krueger found in Turkey, in the early 1970s, that a single government import license could fetch more than the whole shipment it let in. Her 1974 paper spelled out what firms did once a paper permit was worth more than a factory's output. What did they do?",
     "answer": "Hired whole departments to lobby for licenses instead of producing goods",
     "choices": [
       "Hired whole departments to lobby for licenses instead of producing goods",
@@ -1235,21 +1027,8 @@
     "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
   },
   {
-    "tier": 3,
-    "question": "In 1974 the American economist Anne Krueger published a paper on Turkey's import license system. She saw firms spending huge sums hiring lobbyists, cultivating officials, and paying bribes to chase government-granted privileges instead of producing anything new. Her paper gave a lasting name to a whole society organized around that waste. What did the paper call it?",
-    "answer": "A rent-seeking society",
-    "choices": [
-      "A rent-seeking society",
-      "A cronyist society",
-      "A closed society",
-      "A regulated society"
-    ],
-    "context": "Krueger estimated Turkish rent-seeking around import licenses at ~15% of GNP in 1968 -- an enormous share of the economy burned chasing government privileges. The figure shocked development economists. Source: aeaweb.org (Krueger 1974).",
-    "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
-  },
-  {
     "tier": 4,
-    "question": "Before the American economist Anne Krueger's famous 1974 paper studying Turkey and India, most development economists said poor countries were poor because they lacked capital or education. Krueger's paper looked at people wasting effort chasing government-granted privileges, and added a completely new reason to the list. What did she add?",
+    "question": "Anne Krueger added a new reason to the list of why nations stay poor, a list that until then named mostly too little capital or too little education. She came to it after studying firms in India and Turkey that chased government privileges. What did her 1974 paper add?",
     "answer": "A large fraction of measured 'economic activity' in state-led economies is unproductive rent-seeking",
     "choices": [
       "A large fraction of measured 'economic activity' in state-led economies is unproductive rent-seeking",
@@ -1262,7 +1041,7 @@
   },
   {
     "tier": 4,
-    "question": "For decades after independence in 1947, India ran an economic system built on a maze of government permits — a factory needed official approval to expand output, change what it made, or hire more workers. Businessmen spent their days lobbying officials in New Delhi rather than serving customers. In 1991 Finance Minister Manmohan Singh finally led sweeping reforms. Which system did his reforms target?",
+    "question": "Manmohan Singh, India's finance minister, led sweeping reforms in 1991 against a system that had kept businessmen lobbying officials in New Delhi for decades, rather than serving customers. A factory had needed government permission, from independence in 1947, to expand, to make something new or to hire more workers. Which system did his reforms target?",
     "answer": "Rent-seeking around the License Raj",
     "choices": [
       "Rent-seeking around the License Raj",
@@ -1275,7 +1054,7 @@
   },
   {
     "tier": 5,
-    "question": "Krueger's 1974 paper is one of the most-cited economics articles ever published. It gave the profession a standard name for a specific structural problem that shows up in every state-led economy. Which follow-on concept did later economists build directly on her work?",
+    "question": "Anne Krueger wrote a paper on the firms of India and Turkey that poured their effort into chasing import licenses. Her paper ranks among the most-cited economics articles ever published, and other economists built on it. Which later concept grew directly out of her work?",
     "answer": "Bhagwati's directly-unproductive-profit-seeking (DUPS, 1982)",
     "choices": [
       "Bhagwati's directly-unproductive-profit-seeking (DUPS, 1982)",
@@ -1288,7 +1067,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1985 an Oxford press published a bold little book on politics. It opened with the line: 'What would you do if you were the state?' The author had fled Communist Hungary as a young man in 1948, made it to the West, and later earned his PhD at Oxford. Who was this economist?",
+    "question": "A young Hungarian fled Communist rule in 1948, made his way to Oxford and settled at last in France. In 1985 the Oxford publisher Basil Blackwell brought out his short, startling book on politics, which asked readers to put themselves in a government's place. Who was he?",
     "answer": "Anthony de Jasay",
     "choices": [
       "Anthony de Jasay",
@@ -1301,7 +1080,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1985 the Hungarian-born economist Anthony de Jasay, who had fled Communist rule in 1948, published a short, bold book on politics. His argument was blunt: once a government exists, it will keep growing its own power no matter what the founders intended. He named the whole book after his one big subject -- a single stark word. What is that word?",
+    "question": "Anthony de Jasay, who had fled Communist Hungary in 1948, published a short, bold book on politics in 1985. A government, he argued, will keep stretching its own power, whatever its founders intended. He named the book after his one great subject, in a single stark word. What is the title?",
     "answer": "The State",
     "choices": [
       "The State",
@@ -1314,7 +1093,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1960s the American economists James Buchanan and Gordon Tullock built public-choice economics by asking a practical question: how do you write rules that will limit selfish politicians once they hold office? The Hungarian-born thinker Anthony de Jasay believed they had skipped an earlier step. He argued the state itself would never willingly obey any rule that shrank its own power. What deeper question did de Jasay ask first?",
+    "question": "James Buchanan and Gordon Tullock founded a new field of economics in the 1960s by working out how rules might hold back politicians who serve themselves. Anthony de Jasay thought they had skipped a step. What deeper question did he ask first?",
     "answer": "Why would a state, presumed to be self-interested, honor any constraint at all?",
     "choices": [
       "Why would a state, presumed to be self-interested, honor any constraint at all?",
@@ -1327,7 +1106,7 @@
   },
   {
     "tier": 3,
-    "question": "The Hungarian-French economist Anthony de Jasay attacked the traditional idea that the state rests on a 'social contract' — the story told by philosophers Thomas Hobbes, John Locke, and John Rawls in which citizens once consented to be ruled. De Jasay's critique rested on plain history rather than on clever theory. What did he point out?",
+    "question": "Anthony de Jasay attacked the social contract, the old account, told by Thomas Hobbes, John Locke and John Rawls, that citizens once consented to be ruled. He answered it with history rather than theory. What did he point out?",
     "answer": "No such consent had actually happened -- historical states were founded by conquest or by groups seizing power, then rationalized",
     "choices": [
       "No such consent had actually happened -- historical states were founded by conquest or by groups seizing power, then rationalized",
@@ -1340,7 +1119,7 @@
   },
   {
     "tier": 4,
-    "question": "The Hungarian-French economist Anthony de Jasay started as a public-choice thinker in the 1980s, but pushed his skepticism of state authority far further than most in that school. His later books argued against the very idea of political rule and the founding pact of the state itself. Which set of book titles best shows that later work?",
+    "question": "Anthony de Jasay kept pressing for fifteen years after his 1985 book, well past the limits of public choice. His later books argued against political rule itself and against the idea of a founding pact behind government. Which set of titles shows that later work?",
     "answer": "'Social Contract, Free Ride,' 'Choice, Contract, Consent,' 'Against Politics,' 'Justice and Its Surroundings'",
     "choices": [
       "'Social Contract, Free Ride,' 'Choice, Contract, Consent,' 'Against Politics,' 'Justice and Its Surroundings'",
@@ -1352,21 +1131,8 @@
     "topic": "anthony-de-jasay-the-state-1985"
   },
   {
-    "tier": 4,
-    "question": "The Nobel-winning economist James Buchanan and his colleague Gordon Tullock argued that people in government follow their own incentives, just as people in markets do. They founded a whole branch of economics that studies whether politicians, judges, and bureaucrats really act for the public good, or for their own gain. What is that branch called?",
-    "answer": "Public choice economics",
-    "choices": [
-      "Public choice economics",
-      "Behavioral finance",
-      "Monetary theory",
-      "Labor economics"
-    ],
-    "context": "Boettke is a longtime GMU Austrian economist and a prominent modern advocate for the Austrian and public-choice traditions. His essay helped shift de Jasay from a marginal figure to a widely-read one in libertarian and classical-liberal circles. Source: grokipedia.com/page/Peter_Boettke.",
-    "topic": "anthony-de-jasay-the-state-1985"
-  },
-  {
     "tier": 5,
-    "question": "Anthony de Jasay, born in Hungary in 1925, fled communism after World War II and eventually settled in France. He went on to become one of the most cited libertarian thinkers of the late 20th century, writing books like 'The State' that shaped political philosophy worldwide. Yet one fact about his everyday career sets him apart from almost every other big name in that tradition — where most were tenured professors at famous universities, de Jasay took a very different path. What was it?",
+    "question": "Peter Boettke, an Austrian economist, later helped carry Anthony de Jasay's work to a wide audience. Yet one fact about de Jasay's career set him apart from almost every great name in his tradition. What was it?",
     "answer": "He never held a permanent academic post; he spent his working life at a Normandy wine business",
     "choices": [
       "He never held a permanent academic post; he spent his working life at a Normandy wine business",
@@ -12078,7 +11844,7 @@
   },
   {
     "tier": 1,
-    "question": "A mayor of a large American city promises voters more parks during his campaign. He also very much wants to be re-elected. So instead of putting the new parks in the poorer neighborhoods that need them most, he places them in swing districts where active voters will thank him at the ballot box. A whole branch of economics studies politicians as ordinary people chasing their own goals, just like this mayor. What is that branch called?",
+    "question": "A mayor running for re-election promises more parks. Instead of putting them in the poorer neighborhoods that need them most, he puts them in swing districts whose voters can thank him at the ballot box. Gordon Tullock helped found a branch of economics that studies politicians like this mayor. What is it called?",
     "answer": "Public choice",
     "choices": [
       "Public choice",
@@ -12090,47 +11856,8 @@
     "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
   },
   {
-    "tier": 1,
-    "question": "Picture the boss of a large government office. He wants more staff, more prestige, and more power. So every year he asks the legislature for a bigger budget — even in years when there is less real work to do. In good years and bad, the office almost never volunteers to shrink itself. What does this repeating behavior show about how large government offices tend to act over time?",
-    "answer": "They try to grow themselves, not shrink",
-    "choices": [
-      "They try to grow themselves, not shrink",
-      "They shrink when work drops",
-      "They always spend less than they receive",
-      "They only follow what voters want"
-    ],
-    "context": "Tullock served in the US Foreign Service 1947-1956, with postings in Tianjin (during the Communist takeover), Hong Kong, and Korea. He later credited the experience with teaching him more about political incentives than any economics course. Source: Tullock, Selected Works (Liberty Fund, 2004).",
-    "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
-  },
-  {
-    "tier": 2,
-    "question": "The American economists Gordon Tullock and James Buchanan met at the University of Virginia in the late 1950s. They wanted to use economic tools — self-interest, trade-offs, incentives — to study politics itself, not just markets. In 1962 they wrote a founding book of the new field they called public choice. What was the title of the book they wrote together that year?",
-    "answer": "The Calculus of Consent",
-    "choices": [
-      "The Calculus of Consent",
-      "The Logic of Collective Action",
-      "Bureaucracy and Representative Government",
-      "The Politics of Bureaucracy"
-    ],
-    "context": "The Calculus of Consent: Logical Foundations of Constitutional Democracy (University of Michigan Press, 1962) is Buchanan-Tullock's founding text. Tullock arrived at Virginia in 1958. Source: press.umich.edu (Calculus of Consent).",
-    "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
-  },
-  {
-    "tier": 2,
-    "question": "In 1966 the American economist Gordon Tullock founded a new academic journal for a field he and his co-author James Buchanan had helped invent. The field studied politicians, voters, and bureaucrats as ordinary people chasing rewards — votes, budgets, careers — not as saints working only for the common good. Tullock and Buchanan argued this changed how you should read almost every government decision. What is the name of that field?",
-    "answer": "Public Choice",
-    "choices": [
-      "Public Choice",
-      "Public Relations",
-      "Political Science",
-      "Ancient History"
-    ],
-    "context": "Tullock founded 'Papers on Non-Market Decision Making' in 1966 and renamed it Public Choice in 1968. He edited it for more than three decades. Source: springer.com/journal/11127.",
-    "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
-  },
-  {
     "tier": 3,
-    "question": "In 1965 the American economist Gordon Tullock, a co-founder of public choice theory, wrote a short book. It applied cold economic thinking to government offices, showing how bureaucrats actually behave day to day: boosting their careers, expanding their agencies, and guarding turf against rival departments. What did he call the book?",
+    "question": "Gordon Tullock wrote a short book in 1965 that turned the tools of economics on government offices: how bureaucrats advance their careers, grow their agencies and guard their turf against rival departments. What did he call the book?",
     "answer": "The Politics of Bureaucracy",
     "choices": [
       "The Politics of Bureaucracy",
@@ -12142,34 +11869,8 @@
     "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
   },
   {
-    "tier": 3,
-    "question": "A country creates a small number of valuable government permits that let only a few companies do a certain kind of business. Firms then spend huge amounts of money lobbying for those permits instead of making better products. What is this behavior called?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Moral hazard",
-      "Adverse selection",
-      "Free trade"
-    ],
-    "context": "Tullock's 1967 paper introduced the idea; Anne Krueger's 1974 paper on Indian import licenses gave 'rent-seeking' its modern name. Source: Tullock, Western Economic Journal (1967).",
-    "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
-  },
-  {
     "tier": 4,
-    "question": "One branch of economics looks at politicians and officials as people who follow incentives. They chase votes, bigger budgets, and job perks, just like anyone else. It does not just assume they always act for the public good. What is this branch called?",
-    "answer": "Public-choice economics",
-    "choices": [
-      "Public-choice economics",
-      "Behavioral economics",
-      "Monetary economics",
-      "Development economics"
-    ],
-    "context": "Tullock and Buchanan moved the Center for Study of Public Choice to George Mason University in 1983. Tullock retired from GMU in 2008. Source: mercatus.org (Tullock biographical note).",
-    "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
-  },
-  {
-    "tier": 4,
-    "question": "The public-choice tradition applies economics to politicians and asks a hard question about dictators. To hold on to power, does a dictator really need to please the great mass of ordinary people — or does he only need to keep a small inner ring of insiders very well rewarded? Thinkers like Bruce Bueno de Mesquita answer the second. Why must a dictator keep that small inner group so happy?",
+    "question": "A dictator need not please the masses, Gordon Tullock argued in a 1987 book, and Bruce Bueno de Mesquita later made the same case: a dictator only has to keep a small inner ring of generals and courtiers handsomely paid. Why must the dictator keep that ring so happy?",
     "answer": "If the insiders (soldiers, courtiers) turn on him, he falls",
     "choices": [
       "If the insiders (soldiers, courtiers) turn on him, he falls",
@@ -12182,7 +11883,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1986 the American economist James Buchanan won the Nobel Prize in economics for helping found public-choice theory — the study of politicians and bureaucrats as self-interested actors. Much of that theory had come from a 1962 book on collective decision-making that Buchanan co-wrote with his close colleague Gordon Tullock. But when the Nobel was awarded, Tullock was pointedly left out. Tullock later made a famous bitter quip about the snub. What was it?",
+    "question": "James Buchanan won the Nobel Prize in 1986 for founding the economics of politics, and Gordon Tullock, who had written their 1962 book with him, was pointedly left out. Colleagues remember a bitter quip Tullock made about the snub. What was it?",
     "answer": "Being co-author of the Calculus of Consent apparently did not count",
     "choices": [
       "Being co-author of the Calculus of Consent apparently did not count",
@@ -12195,7 +11896,7 @@
   },
   {
     "tier": 5,
-    "question": "Before he ever wrote a word of economics, the American scholar Gordon Tullock spent almost ten years as a US State Department diplomat, posted in China and Korea. He later said that watching officials scheme, dodge, and cut deals inside a real working government taught him more than any textbook he ever cracked. What did he say his Foreign Service post taught him?",
+    "question": "Gordon Tullock finished law school at Chicago in 1947, then joined the Foreign Service for almost a decade, with postings in Tianjin as the Communists took China, then in Hong Kong and Korea. He later said that watching officials there scheme, dodge and cut deals taught him a lesson. What did he say those years taught him?",
     "answer": "More about political incentives than any economics course could have",
     "choices": [
       "More about political incentives than any economics course could have",
@@ -13703,7 +13404,7 @@
   },
   {
     "tier": 1,
-    "question": "In one country, a business needs a permit to open. Another to hire workers. Another to buy foreign parts. Another to change its prices. Every step needs a stamp from an official. What is this system called?",
+    "question": "A business owner waits for yet another official's stamp: he already has permits to open and to hire workers, and now needs one to buy foreign parts and another to change his prices. What is a system like this called?",
     "answer": "Central planning",
     "choices": [
       "Central planning",
@@ -13716,7 +13417,7 @@
   },
   {
     "tier": 1,
-    "question": "From 1947 to 1990 India ran an economic system called the License Raj, in which private businesses needed government permits for almost every decision — what to make, how much, and whom to hire. Under this system India's output per person grew only about 1 percent a year while other Asian nations raced ahead. Economists coined a wry nickname for the slow rate. What did they call it?",
+    "question": "India's leaders decided in 1947 to run the economy from New Delhi, and for decades a firm had to ask officials' leave for nearly everything it did. Between 1950 and 1980 output per person grew only about 1 percent a year. The economist Raj Krishna gave that pace a wry, self-critical nickname. What was it?",
     "answer": "The Hindu rate of growth",
     "choices": [
       "The Hindu rate of growth",
@@ -13729,7 +13430,7 @@
   },
   {
     "tier": 2,
-    "question": "For decades India kept heavy rules on business. Factories needed government permits for almost every choice, and growth was slow. Meanwhile South Korea, Taiwan, Singapore, and Hong Kong opened up trade and boomed. What nickname did those four fast-growing economies earn?",
+    "question": "South Korea, Taiwan, Singapore and Hong Kong opened their trade to the world in the decades when India's factories needed a government permit for almost every choice. The four grew many times faster than India and are the yardstick economists use for what India gave up. What nickname did they earn?",
     "answer": "The Four Asian Tigers",
     "choices": [
       "The Four Asian Tigers",
@@ -13741,34 +13442,8 @@
     "topic": "indias-license-raj-1947-1991"
   },
   {
-    "tier": 2,
-    "question": "Some businesses discover they can earn more money by lobbying the government for a special favor -- a tariff that blocks foreign rivals, a license nobody else can get, a subsidy check from taxpayers -- than by actually making a better product for customers. The American economist Anne Krueger gave this waste of effort a name in a famous 1974 paper. When firms chase government-granted privileges instead of competing on merit, what is it called?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Fair competition",
-      "Honest advertising",
-      "Product improvement"
-    ],
-    "context": "Anne Krueger's 1974 AER paper 'The Political Economy of the Rent-Seeking Society' introduced the term based on Indian and Turkish empirical work. Krueger later served as World Bank Chief Economist 1982-86 and IMF Deputy Managing Director 2001-06. Source: aeaweb.org (AER June 1974).",
-    "topic": "indias-license-raj-1947-1991"
-  },
-  {
     "tier": 3,
-    "question": "A country requires a special government permit to import cars, and the permit itself becomes worth more than the cars. Businesses spend most of their time and money chasing permits instead of making better products. What is this waste of effort called?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Regulatory arbitrage",
-      "Adverse selection",
-      "Moral hazard"
-    ],
-    "context": "Rent-seeking: dissipation of real resources in pursuit of state-created privileges rather than value-creation. Krueger estimated License-Raj rent-seeking dissipation at up to 7% of Indian GDP. Source: aeaweb.org (Krueger 1974).",
-    "topic": "indias-license-raj-1947-1991"
-  },
-  {
-    "tier": 3,
-    "question": "In 1991 India was running out of money and could barely pay for its imports. The finance minister cut a giant system of permits. Before, companies had to get government approval for almost every business choice. What happened once the permits were gone?",
+    "question": "Manmohan Singh, finance minister under Prime Minister Narasimha Rao, began tearing down India's permit system in 1991, when the country could barely pay for its imports. Until then companies needed government approval for almost every business choice. What happened once the licenses were gone?",
     "answer": "New businesses could start much more easily and the economy grew faster",
     "choices": [
       "New businesses could start much more easily and the economy grew faster",
@@ -13781,7 +13456,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1991, India faced a severe balance-of-payments crisis. Finance minister Manmohan Singh, working under Prime Minister P.V. Narasimha Rao, cut back the tangled 'License Raj' -- a decades-old system of government permits that had strangled Indian business ever since independence in 1947. In the three decades after those reforms, India's real income per person grew year after year. By 2020, roughly what multiple of the 1991 level did per-capita income reach?",
+    "question": "Narasimha Rao's finance minister, Manmohan Singh, set about cutting back the License Raj in 1991. In the three decades that followed, India's real income per head climbed year after year, and hundreds of millions escaped extreme poverty. By 2020, roughly what multiple of the 1991 level had income per person reached?",
     "answer": "More than four times its 1991 level",
     "choices": [
       "More than four times its 1991 level",
@@ -13794,7 +13469,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1991 India began cutting the vast web of permits and licenses that had strangled its economy for decades — the so-called License Raj. Over the next fifteen years growth surged and hundreds of millions rose out of poverty. In 2008 the Indian-American economist Arvind Panagariya, teaching at Columbia University in New York, published a landmark scholarly book that told the whole story of India's reforms and what followed. What is that book's title?",
+    "question": "Arvind Panagariya, an Indian-American economist at Columbia University in New York, published the standard scholarly account of India's reforms in 2008, telling the story from the License Raj to the growth that followed it. What is that book's title?",
     "answer": "India: The Emerging Giant",
     "choices": [
       "India: The Emerging Giant",
@@ -13807,7 +13482,7 @@
   },
   {
     "tier": 5,
-    "question": "India's 1991 reforms -- the Rao-Singh liberalization -- did not sweep away all of the country's red tape overnight. Big state-owned firms remained. Many licenses stayed on the books. Tariffs came down only slowly. Yet Indian growth clearly accelerated. Economists debate how to describe what actually happened in the three decades afterward. Which description better fits the reform's real effect?",
+    "question": "Manmohan Singh began cutting back India's permit system in 1991, but big state-owned firms came through intact and plenty of old rules stayed in force. Economists still argue over how to describe the three decades that followed. Which description fits the reform's real effect best?",
     "answer": "Growth accelerated dramatically without overnight transformation",
     "choices": [
       "Growth accelerated dramatically without overnight transformation",
@@ -13816,19 +13491,6 @@
       "Tariffs went to zero within a decade"
     ],
     "context": "The reforms opened investment, cut tariffs, ended most industrial licensing -- but many state enterprises, banking regulations, and labor rules remained. The pattern is reform-and-growth-acceleration, not overnight transformation. Source: Panagariya, India: The Emerging Giant.",
-    "topic": "indias-license-raj-1947-1991"
-  },
-  {
-    "tier": 5,
-    "question": "In India before 1991, starting a business required dozens of government permits — a system Indians called the License Raj. Instead of building factories or inventing products, ambitious people spent years hiring lobbyists, cultivating officials, and paying bribes just to secure the permits themselves. All that effort produced nothing new; it merely chased permission slips. Economists have a standard name for the waste that piles up when people compete for a government-granted privilege instead of creating real value. What is it called?",
-    "answer": "Rent-seeking dissipation",
-    "choices": [
-      "Rent-seeking dissipation",
-      "Consumer surplus loss",
-      "Deadweight monetary loss",
-      "Fiscal drag"
-    ],
-    "context": "Krueger's founding measurement: the real resources spent chasing state-created privileges are pure dissipation, adding nothing to output. This is why License-Raj-style regimes underperform: production is not just taxed but partially redirected into unproductive lobbying. Source: aeaweb.org (Krueger 1974).",
     "topic": "indias-license-raj-1947-1991"
   },
   {
@@ -14912,7 +14574,7 @@
   },
   {
     "tier": 1,
-    "question": "The American economist Milton Friedman won the Nobel Prize in economics in 1976 and was one of the most famous free-market thinkers of the twentieth century. One of Friedman's most famous rules warns people not to judge a policy by its nice-sounding goals but by what it actually does to real people over time. Which sentence best fits Friedman's rule?",
+    "question": "Milton Friedman, who won the Nobel Prize in 1976, warned again and again of one great mistake people make in judging laws meant to help the poor or protect renters. Which rule did he urge instead?",
     "answer": "Judge policies by their results, not their intentions",
     "choices": [
       "Judge policies by their results, not their intentions",
@@ -14924,86 +14586,8 @@
     "topic": "judge-by-results-not-intentions"
   },
   {
-    "tier": 1,
-    "question": "The American economist Milton Friedman won the Nobel Prize in 1976 and often used his own rule — judge policies by their results, not their intentions — to attack one job-market law popular with lawmakers who wanted to help low-paid workers. Friedman said this law actually forces employers to shut out the least-skilled workers, because a boss will not pay them more than they can produce. Which law was he talking about?",
-    "answer": "The minimum wage",
-    "choices": [
-      "The minimum wage",
-      "The forty-hour workweek",
-      "Union-shop right-to-work rules",
-      "The Fair Labor Standards Act as a whole"
-    ],
-    "context": "Friedman: 'The minimum wage law is most properly described as a law saying employers must discriminate against people who have low skills.' It appears repeatedly in his columns and in Free to Choose Chapter 8. Source: Friedman + Friedman, Free to Choose (Harcourt 1980), Chapter 8.",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
-    "tier": 2,
-    "question": "Milton Friedman, the American economist, liked to explain the minimum wage using two workers standing side by side. When Congress sets a legal wage floor above what a low-skill job is worth, one worker is easy to see: he keeps his job and his check gets bigger. The other worker is invisible — the employer never hires him at all, because the law made his labor too expensive. Which of these captures the seen benefit and the unseen cost?",
-    "answer": "SEEN: the worker who keeps the job. UNSEEN: the worker whose job is priced out of existence",
-    "choices": [
-      "SEEN: the worker who keeps the job. UNSEEN: the worker whose job is priced out of existence",
-      "SEEN: the employer who pays the wage. UNSEEN: the government that collects payroll tax",
-      "SEEN: the union that negotiated the wage. UNSEEN: the pension fund that received the dues",
-      "SEEN: the retailer's customers. UNSEEN: the retailer's shareholders"
-    ],
-    "context": "The Bastiat SEEN vs UNSEEN move applied to the minimum wage: the worker who keeps the job at the higher wage is visible; the marginal worker whose job is automated away or moved offshore is invisible. Friedman presses attention to the invisible category. Source: Friedman, Free to Choose (1980), Chapter 8.",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
-    "tier": 2,
-    "question": "Imagine a big city like New York passes a law saying that landlords can never charge more than a set low monthly rent for their apartments, no matter what happens to prices in the rest of the economy. Economists call this kind of law rent control. Over the years that follow, what does this kind of price cap on apartments usually cause?",
-    "answer": "Fewer new apartments and worse upkeep of old ones",
-    "choices": [
-      "Fewer new apartments and worse upkeep of old ones",
-      "A big boom in fancy new apartment buildings",
-      "Landlords always doing extra repairs for free",
-      "More apartments than people who need them"
-    ],
-    "context": "Milton Friedman + George Stigler, 'Roofs or Ceilings? The Current Housing Problem' (Foundation for Economic Education, 1946). It was Friedman and Stigler's first major joint work, before both became Chicago-school leaders. Source: fee.org (Roofs or Ceilings 1946 reprint).",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
-    "tier": 3,
-    "question": "Rent control laws cap what landlords can charge for their apartments and stay politically popular because they promise cheaper housing for renters. The American economist Milton Friedman taught that we should judge policies by their real results, not their kind-sounding intentions. Applying Friedman's rule to rent control, what does the research show actually happens to apartment buildings under it?",
-    "answer": "Landlords let them decay and new construction stops",
-    "choices": [
-      "Landlords let them decay and new construction stops",
-      "Landlords invest heavily in luxury upgrades",
-      "The buildings receive federal subsidies for maintenance",
-      "Occupancy drops sharply as tenants vacate"
-    ],
-    "context": "Rent-controlled buildings suffer deferred maintenance and the housing stock stops growing because new construction is unprofitable at the controlled rate. Existing tenants stay for decades because leaving means losing the rate. Source: Friedman + Stigler (1946); Diamond + McQuade + Qian, AER (2019) on San Francisco.",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
-    "tier": 3,
-    "question": "The Black American economist Thomas Sowell built a career on the results-not-intentions rule — a policy should be judged by what actually happened, not by the speeches given when it passed. He paired that rule with a short two-word question he made every student ask before praising or damning any policy. It forces the honest comparison instead of comparing a real policy to a perfect fantasy. What was Sowell's question?",
-    "answer": "Compared to what?",
-    "choices": [
-      "Compared to what?",
-      "Who benefits?",
-      "How much?",
-      "What next?"
-    ],
-    "context": "Sowell's 'compared to what?' presses the alternative any proposed reform is being measured against. Combined with Friedman's 'judge by results,' the pair produces a mature policy-analysis toolkit: what does the policy actually do, and compared to what alternative? Source: Sowell, Knowledge and Decisions (Basic 1980).",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
     "tier": 4,
-    "question": "Milton Friedman, the American Nobel Prize economist, taught that we should judge policies by results, not by their good intentions. Many US states require people to buy an occupational license before they can work in trades like hairdressing or interior design — supposedly to protect consumers from bad service. Applying Friedman's rule to these licenses, whose income do they mostly protect?",
-    "answer": "The incumbent licensed professionals",
-    "choices": [
-      "The incumbent licensed professionals",
-      "The state licensing-board staff",
-      "The consumers of the services",
-      "The federal Department of Labor"
-    ],
-    "context": "Friedman + Kleiner: occupational licensing raises incumbent incomes by restricting entry, with little measurable consumer-safety benefit. The stated intent is consumer protection; the result is incumbent rent extraction. Source: Friedman (1962) Chapter 9; Kleiner, Licensing Occupations (Upjohn 2006).",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
-    "tier": 4,
-    "question": "Milton Friedman, the American Nobel Prize economist, applied his results-not-intentions rule to the old US welfare system that ran from the 1960s through the 1990s. He argued its rules quietly discouraged poor couples from marrying, because getting married could cut off their benefits — and that this quietly damaged family structure among the poor. What specific problem did the old welfare rules create?",
+    "question": "Milton Friedman took aim at the old American welfare system that ran from the 1960s through the 1990s. Its rules, he argued, quietly damaged family structure among the poor. What flaw did he find built into them?",
     "answer": "A marriage penalty embedded in household-income aggregation rules",
     "choices": [
       "A marriage penalty embedded in household-income aggregation rules",
@@ -15016,20 +14600,7 @@
   },
   {
     "tier": 5,
-    "question": "Thomas Sowell's results-not-intentions rule tells the honest analyst to treat a policy the way a scientist treats a claim — never trust the label on the bottle. A minimum-wage law is not the goodwill in its title. A rent-control law is not the tenants it says it protects. Sowell says the analyst has one clear job instead of trusting a policy's own reasons for itself. What should the analyst do?",
-    "answer": "Look at what actually happened when the policy was applied",
-    "choices": [
-      "Look at what actually happened when the policy was applied",
-      "Look at the political party that sponsored the policy",
-      "Look at whether the policy was passed unanimously",
-      "Look at whether the policy has a memorable acronym"
-    ],
-    "context": "The Friedman move is a form of empiricism: policies come with their own theories about how they work; the honest analyst compares the theory to the observed outcome. This is what unites the minimum-wage, rent-control, and welfare cases. Source: Friedman + Friedman, Free to Choose (1980).",
-    "topic": "judge-by-results-not-intentions"
-  },
-  {
-    "tier": 5,
-    "question": "The American economist Milton Friedman taught readers to judge policies by their results rather than their intentions. His student Thomas Sowell added two questions that pin any proposal down: 'compared to what?' and 'at what cost?'. Fused together, the Friedman move and Sowell's two questions form a three-part diagnostic for any policy. Which sentence best captures what a responsible policy analysis asks?",
+    "question": "Thomas Sowell, Milton Friedman's student at Chicago, added two questions of his own to his teacher's rule for weighing a policy, and together they make a three-part test. Which sentence states it?",
     "answer": "What does the policy INTEND, what does it actually DO, and at what COST compared to what alternative",
     "choices": [
       "What does the policy INTEND, what does it actually DO, and at what COST compared to what alternative",
@@ -26586,7 +26157,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1987 the American economist Thomas Sowell wrote a book called A Conflict of Visions. It sets out two rival pictures of human nature — one that says people can be perfected by clever policy, and one that says people are flawed and stuck with hard choices. That second picture refuses a word politicians love to promise. Sowell packed the refusal into a famous six-word sentence. What is it?",
+    "question": "Thomas Sowell set two pictures of human nature side by side in 1987. In one, clever policy can perfect people; in the other, people are flawed and stuck with hard choices. The second refuses a word politicians love to promise. What sentence did Sowell use to say so?",
     "answer": "There are no solutions, only trade-offs.",
     "choices": [
       "There are no solutions, only trade-offs.",
@@ -26599,7 +26170,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1993 essay collection Is Reality Optional?, Thomas Sowell put two opening propositions side by side. The first, from economics, is that there is never enough of anything to satisfy everyone who wants it. Then came his line about politics that made the pair famous. What did he say politics is?",
+    "question": "Thomas Sowell paired two propositions in his 1993 essay collection Is Reality Optional? Economics, he wrote, starts from scarcity. Then came his line about politics, the one that made the pair famous. What did he say is the first job of politics?",
     "answer": "To disregard the first lesson of economics",
     "choices": [
       "To disregard the first lesson of economics",
@@ -26612,20 +26183,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Sowell, the American economist, spent his career pushing readers to think about the trade-offs behind every policy. Free college? Universal health care? A bigger military? Each one sounds noble on its own. Sowell says that if you endorse a policy without asking one particular three-word question, you have not analyzed it at all -- you have only cheered for it. What is the question?",
-    "answer": "At what cost?",
-    "choices": [
-      "At what cost?",
-      "Compared to what?",
-      "For how long?",
-      "Who pays first?"
-    ],
-    "context": "Sowell listed three questions he said would destroy most arguments on the left: 'Compared to what?', 'At what cost?', and 'What hard evidence do you have?' The second is the trade-off question -- and 'compared to what?' is its partner, not its rival. Source: Thomas Sowell, collected at quotefancy.com/quote/920957.",
-    "topic": "sowells-there-are-no-solutions-only-trade-offs"
-  },
-  {
-    "tier": 2,
-    "question": "In The Vision of the Anointed (1995), Thomas Sowell mocks the picture that smart planners carry around. On their view, every hard problem has an answer sitting somewhere, and policy just has to go get it. Sowell drew that picture with one homely image. Which image?",
+    "question": "Thomas Sowell mocked the picture of the world carried by the self-appointed experts he wrote about in 1995. On their view, every hard problem had an answer lying somewhere for policy to go and collect. Sowell drew that picture with one homely image. Which image?",
     "answer": "Eggs laid out for children at an Easter hunt",
     "choices": [
       "Eggs laid out for children at an Easter hunt",
@@ -26638,7 +26196,7 @@
   },
   {
     "tier": 3,
-    "question": "A programme has run for fifteen years and has not produced what its sponsors promised. Thomas Sowell says the two rival visions read that same record in opposite ways, and that watching which reading a person reaches for tells you which vision he holds. How does the constrained vision read it?",
+    "question": "Thomas Sowell pictures a programme that has run for fifteen years without delivering what its sponsors promised. He says the two rival visions read that same record in opposite ways, and that the reading a person reaches for shows which vision he holds. How does the constrained vision read it?",
     "answer": "The cost of the fix exceeded its benefit, so withdraw it",
     "choices": [
       "The cost of the fix exceeded its benefit, so withdraw it",
@@ -26651,7 +26209,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1995 the American economist Thomas Sowell wrote a book called The Vision of the Anointed. He said a certain class of educated thinkers — the ones he called 'the anointed' — have a favorite substitute for real policy analysis. When a hard problem stumps them, they reach for something that costs nothing, commits nobody, and fixes nothing. What do they reach for?",
+    "question": "Thomas Sowell wrote in 1995 that the self-appointed experts he criticised had a favourite substitute for real policy analysis. When a hard problem stumped them, they reached for something that cost nothing, committed nobody and fixed nothing. What did they reach for?",
     "answer": "A slogan that denounces the problem",
     "choices": [
       "A slogan that denounces the problem",
@@ -26660,19 +26218,6 @@
       "A statistic that shrinks the problem"
     ],
     "context": "Sowell calls these 'verbal solutions' -- a public denunciation of poverty, say, standing in for any assessment of what a poverty programme costs or what it does to incentives. He treats the substitution as the signature move of The Vision of the Anointed (1995). Source: Grokipedia, 'Thomas Sowell'.",
-    "topic": "sowells-there-are-no-solutions-only-trade-offs"
-  },
-  {
-    "tier": 3,
-    "question": "A city caps what may legally be charged for a flat, and tenants in the capped flats do pay less -- that part is real, immediate and countable. Thomas Sowell's method says the sentence is only half written until a student names what the lower rent was bought with. Which cost does his analysis put first?",
-    "answer": "Buildings that landlords stop maintaining",
-    "choices": [
-      "Buildings that landlords stop maintaining",
-      "Taxes that homeowners must now shoulder",
-      "Wages that construction crews must accept",
-      "Mortgages that banks now refuse to write"
-    ],
-    "context": "Sowell's argument is about incentives, not motives: rent-capped income will not cover upkeep, so upkeep stops, and the tenant's saving is paid for in decay, queues and substandard units. Whether that trade is worth making is the reader's call; the analysis only insists that a trade is being made. Source: Grokipedia, 'Thomas Sowell', on his price-control analysis.",
     "topic": "sowells-there-are-no-solutions-only-trade-offs"
   },
   {
@@ -26703,7 +26248,7 @@
   },
   {
     "tier": 5,
-    "question": "A student prices out a proposed programme down to the last line item and finds the total bearable -- the country can afford it. Thomas Sowell says the analysis is still unfinished, because an affordable price proves nothing whatever on its own. What has the student still not established?",
+    "question": "A student totals every line of a proposed programme and finds the total bearable: the country can pay for it. Thomas Sowell says she is not finished, because an affordable price proves nothing on its own. What has she still not shown?",
     "answer": "That no other real arrangement buys the same thing cheaper",
     "choices": [
       "That no other real arrangement buys the same thing cheaper",
@@ -26716,7 +26261,7 @@
   },
   {
     "tier": 5,
-    "question": "Thomas Sowell has never claimed the six-word line as a discovery. He treats it as a slogan for a proposition that economics has rested on since the subject began, and that every first-year textbook still opens with. Which proposition is the slogan compressing?",
+    "question": "Thomas Sowell never claimed his most famous line, from A Conflict of Visions, as a discovery of his own. He treated it as a slogan for a proposition economics has rested on since the subject began, one every first-year textbook still opens with. Which proposition did it compress?",
     "answer": "That resources are limited, so every use forgoes another",
     "choices": [
       "That resources are limited, so every use forgoes another",
@@ -27301,7 +26846,7 @@
   },
   {
     "tier": 1,
-    "question": "On September 20, 2008 — five days after the giant Wall Street investment firm Lehman Brothers went bankrupt and the American banking system started to seize up — US Treasury Secretary Henry Paulson sent Congress an urgent request for $700 billion. The money would buy 'troubled assets' (bad mortgages and bad securities) off the banks' books. Paulson's first draft was strangely, worryingly short. How long was it?",
+    "question": "Henry Paulson, Treasury Secretary and once Goldman Sachs's chief, asked Congress in September 2008 for $700 billion to buy bad mortgages and bad securities off the banks' books. Even members who backed the plan were taken aback by how little he sent over. How long was his first draft?",
     "answer": "Three pages",
     "choices": [
       "Three pages",
@@ -27314,12 +26859,12 @@
   },
   {
     "tier": 1,
-    "question": "In September 2008 US Treasury Secretary Henry Paulson sent Congress a three-page proposal asking to spend $700 billion of taxpayer money buying up bad loans from big Wall Street banks that were collapsing in the middle of a huge financial crisis. Rescuing a failing company or industry with public money has a plain, everyday name in American politics. What is that name?",
+    "question": "Henry Paulson asked Congress in September 2008 for $700 billion of taxpayer money to keep collapsing Wall Street banks alive, and the newspapers had a plain everyday word for it. Once the papers began using the word, the politics turned ugly fast. What was it?",
     "answer": "A bailout",
     "choices": [
       "A bailout",
       "A tariff",
-      "A dividend",
+      "A stimulus check",
       "A merger"
     ],
     "context": "Henry 'Hank' Paulson was Goldman Sachs's CEO from 1999 to 2006, then Bush Treasury Secretary June 2006 through January 2009. His Wall Street background became one of the flashpoints in the political fight over TARP. Source: Grokipedia 'Henry Paulson' (2026-09-05).",
@@ -27327,7 +26872,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 2008 US Treasury Secretary Henry Paulson's first draft of the $700 billion bank bailout bill was only three pages long. Buried in it was one short clause saying that no court and no federal agency could review any decision the Treasury made spending the money — total immunity from oversight. Which numbered section of the draft carried that language?",
+    "question": "Members of Congress reading Henry Paulson's first draft of the 2008 bank rescue found one clause that angered them most. It said no court and no agency could review the Treasury Secretary's decisions on spending the money: $700 billion with no appeal. Congress struck it out. Which numbered section of the draft carried that clause?",
     "answer": "Section 8",
     "choices": [
       "Section 8",
@@ -27340,7 +26885,7 @@
   },
   {
     "tier": 2,
-    "question": "On Monday, September 29, 2008, the US House of Representatives voted on an emergency $700 billion bank bailout bill during the worst financial crisis since the Great Depression. To Wall Street's shock, the House rejected the bill. Traders panicked, fearing the whole banking system could collapse without government help. What was the immediate stock-market reaction that day?",
+    "question": "House members voted down the $700 billion bank rescue on Monday, September 29, 2008, in the worst financial crisis since the Great Depression. Wall Street had taken passage for granted, and traders feared the whole banking system could collapse. What did the stock market do that day?",
     "answer": "The Dow Jones fell 777.68 points -- the largest single-day point drop in history to that date",
     "choices": [
       "The Dow Jones fell 777.68 points -- the largest single-day point drop in history to that date",
@@ -27353,7 +26898,7 @@
   },
   {
     "tier": 3,
-    "question": "After US Treasury Secretary Henry Paulson's three-page September 2008 rescue draft was ridiculed for having no oversight, Congress rewrote the bill and added pay limits on rescued executives, watchdog inspectors, and reporting rules. Both houses passed it on Friday, October 3, 2008, and President George W. Bush signed it the same day under a new formal statutory title. What was the Act officially called?",
+    "question": "George W. Bush signed a rewritten bank rescue on Friday, October 3, 2008, after the House had voted the first version down. The new bill capped pay for the executives of rescued firms and added an inspector general and an oversight panel of Congress. What was the Act officially called?",
     "answer": "The Emergency Economic Stabilization Act",
     "choices": [
       "The Emergency Economic Stabilization Act",
@@ -27366,7 +26911,7 @@
   },
   {
     "tier": 3,
-    "question": "During the 2008 crisis, the government first promised money to buy troubled mortgages off big banks. Within two weeks the plan changed to hand the money straight to the nine largest Wall Street institutions instead. What does that switch suggest about who the plan mostly helped?",
+    "question": "Henry Paulson had promised to spend the 2008 rescue money buying damaged mortgages off the banks. Within a fortnight the plan changed: on October 14 the Treasury put $125 billion of capital straight into banks instead, without going back to Congress. What does that switch suggest about who the plan mostly helped?",
     "answer": "The biggest banks and their owners, more than borrowers with bad loans",
     "choices": [
       "The biggest banks and their owners, more than borrowers with bad loans",
@@ -27379,20 +26924,7 @@
   },
   {
     "tier": 4,
-    "question": "In late 2008 the US government reached into a giant emergency rescue fund — Congress had built the fund that October to save collapsing banks — and used it to hand roughly $80 billion to two failing American car companies, General Motors and Chrysler. Economists have a name for the danger created when the government rescues a failing business. What is the general risk?",
-    "answer": "Other companies expect a rescue too, so they stop being careful with money",
-    "choices": [
-      "Other companies expect a rescue too, so they stop being careful with money",
-      "It always causes food prices to fall the next year",
-      "Foreign countries have to pay back the rescue",
-      "The rescued company's workers all lose their pensions"
-    ],
-    "context": "General Motors and Chrysler received TARP funds totaling roughly $80 billion. Ford declined federal assistance. The auto rescue was controversial because it stretched TARP well beyond its originally stated financial-sector purpose. Source: Grokipedia 'Automotive industry crisis of 2008-2010' (2026-09-05).",
-    "topic": "tarp-700-billion-in-a-3-page-memo"
-  },
-  {
-    "tier": 4,
-    "question": "During the 2008 banking crisis, US Treasury Secretary Henry Paulson called the heads of the nine biggest American banks to a room and forced every one of them to take rescue money — even the careful, healthy banks that did not want it — so outsiders could not tell which banks were the weakest. Why does one-size-fits-all rescue money bother critics of the bailout?",
+    "question": "Henry Paulson called the heads of the nine biggest American banks into one room in October 2008 and had every one of them sign for rescue money, the healthy banks too, so no outsider could tell which were weak. Sheila Bair, who chaired the Federal Deposit Insurance Corporation through the crisis, objected. Why does one-size-fits-all rescue money bother critics like her?",
     "answer": "It treats careful banks the same as reckless ones, so being careful stops paying off",
     "choices": [
       "It treats careful banks the same as reckless ones, so being careful stops paying off",
@@ -27404,8 +26936,8 @@
     "topic": "tarp-700-billion-in-a-3-page-memo"
   },
   {
-    "tier": 5,
-    "question": "In the fall of 2008, the American housing bubble collapsed and huge Wall Street banks were suddenly worth billions of dollars less than they owed their creditors. Congress rushed a bill through and passed the Troubled Asset Relief Program (TARP), which loaned around $442 billion of taxpayer money to big banks and car companies. By 2015 almost every dollar had been repaid, sometimes with interest. Even so, Austrian and public-choice economists still call TARP a costly precedent. Why do they?",
+    "tier": 4,
+    "question": "General Motors and Chrysler took roughly $80 billion from the 2008 bank rescue fund, while Ford turned the money down and raised its own loans from private lenders. By 2015 the Treasury had got nearly all of the fund's money back, often with interest, and its defenders still call it a success. Why do Austrian and public-choice economists still call it a costly precedent?",
     "answer": "It taught every big bank that a large enough failure will always be met with a public rescue",
     "choices": [
       "It taught every big bank that a large enough failure will always be met with a public rescue",
@@ -27418,7 +26950,7 @@
   },
   {
     "tier": 5,
-    "question": "When Congress passed the Troubled Asset Relief Program (TARP) in 2008, it created a small watchdog panel to check whether the banks were following the rules. Why does public-choice thinking say a watchdog is important whenever the government hands out huge sums?",
+    "question": "Congress bolted a small watchdog panel onto the 2008 bank rescue fund, to check whether the banks were following the rules. Why does public-choice thinking say a watchdog matters whenever the government hands out huge sums?",
     "answer": "The people spending the money have stronger incentives to bend rules than voters have to watch them",
     "choices": [
       "The people spending the money have stronger incentives to bend rules than voters have to watch them",
@@ -35842,7 +35374,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1845 the French economist Frederic Bastiat wrote a joke essay. He pretended to be a group of French candle makers writing a serious letter to the government. They begged lawmakers to pass a law forcing every home and shop in France to close all its windows during the day. Then people would have to burn candles even in bright sunshine. What is the joke poking fun at?",
+    "question": "Frédéric Bastiat published a mock petition in 1845 from France's candle-makers. With a straight face they asked the Chamber of Deputies for a law shutting every window and shutter in France by day, so people would burn candles at noon. What was the joke poking fun at?",
     "answer": "Businesses that beg the government to hurt competitors so they can charge more",
     "choices": [
       "Businesses that beg the government to hurt competitors so they can charge more",
@@ -35855,33 +35387,20 @@
   },
   {
     "tier": 2,
-    "question": "In 1845 the French economist Frederic Bastiat wrote a mock petition, pretending to speak for the candle makers of France. The petition complains bitterly to lawmakers about a foreign rival that floods the French market with cheap light and undercuts every French lamp maker on price. In the second paragraph the petitioners point straight at this unbeatable rival. Who is it?",
+    "question": "Bastiat wrote a mock petition in which France's candle-makers addressed the Chamber of Deputies with perfect gravity. A foreign rival, they wrote, was pouring cheap light into France and undercutting every French maker of lamps and candles on price. In their second paragraph they named it. Which rival did they name?",
     "answer": "The sun",
     "choices": [
       "The sun",
       "The whale",
-      "The tallow farmer",
-      "The gaslight company"
+      "British gaslight",
+      "The tallow farmer"
     ],
     "context": "'This rival is none other than the sun.' Bastiat's satire lets the petitioners say the quiet part loud: their real complaint is that free sunlight is more efficient than any French candle. Source: mises.org/library/candlemakers-petition.",
     "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
   },
   {
-    "tier": 2,
-    "question": "Frederic Bastiat's mock 1845 candlemakers' petition was not a stand-alone piece. It appeared as one short chapter in a larger book — a whole collection of his funny mock-essays and biting short pieces about trade, tariffs, and industry. What is the name of that Bastiat book?",
-    "answer": "Economic Sophisms",
-    "choices": [
-      "Economic Sophisms",
-      "Economic Harmonies",
-      "That Which is Seen and That Which is Not Seen",
-      "The Law"
-    ],
-    "context": "First series 1845, second series 1848; the candlemakers' petition appears in the first series and remains the best-known chapter. Source: fee.org/resources/economic-sophisms.",
-    "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
-  },
-  {
     "tier": 3,
-    "question": "In 1845 the French economist Frederic Bastiat wrote a joke petition, supposedly from the candlemakers of France, begging the government to block out the sun so people would have to burn candles all day. The petition then lists every job that would supposedly grow: more tallow farms, more whaling fleets, more forests, more shipping. This chain-of-benefits joke mocks which real argument for tariffs?",
+    "question": "Frédéric Bastiat had his candle-makers list everyone who would prosper once the windows of France were shut by day. Tallow farms would spread, with more cattle and pasture; whaling fleets would put to sea for oil; forests would fall to build the ships; carpenters would get work making shutters. Which real argument for tariffs did that chain of blessings parody?",
     "answer": "The multiplier argument for tariffs",
     "choices": [
       "The multiplier argument for tariffs",
@@ -35893,21 +35412,8 @@
     "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
   },
   {
-    "tier": 3,
-    "question": "Bastiat's 1845 candlemakers' petition works by taking a real protectionist argument — that France must shield her industries from cheap foreign competition — completely seriously, then pushing it to a ridiculous end no one would defend: block out the sun. The Latin name for this argument-move goes back to the ancient Greeks. What is it called?",
-    "answer": "Reductio ad absurdum",
-    "choices": [
-      "Reductio ad absurdum",
-      "Modus tollens",
-      "Argumentum ad hominem",
-      "Ex nihilo nihil fit"
-    ],
-    "context": "The whole petition is a reductio: if the protectionist principle 'shelter domestic producers from cheap foreign competition' is sound, then it justifies a law against sunlight. Bastiat used the same technique in the negative-railway sophism. Source: fee.org/resources/economic-sophisms.",
-    "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
-  },
-  {
     "tier": 4,
-    "question": "In his 1980 book Free to Choose, Milton Friedman used Bastiat's candlemakers' petition to attack a common trade argument. Friedman said any claim that treats one thing as a threat and its opposite as a benefit deserves the candlemakers' test. Which pair did his argument contrast?",
+    "question": "Milton Friedman brought Bastiat's candle-makers back in 1980, in Free to Choose, a book and television series he and his wife made. He used the petition as a test for any trade argument, and writers still reach for it over robots, foreign labour, cheap imports and cheap solar panels. Which pair does the candle-makers' test look for?",
     "answer": "Abundance treated as a threat, scarcity treated as a benefit",
     "choices": [
       "Abundance treated as a threat, scarcity treated as a benefit",
@@ -35919,8 +35425,8 @@
     "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
   },
   {
-    "tier": 4,
-    "question": "The 19th-century French economist Frederic Bastiat was famous for winning arguments with humor. In one essay he wrote a fake petition from French candlemakers demanding the government block out the sun so they could sell more candles. Instead of arguing directly against tariffs, he pushed the pro-tariff logic to a place so obviously ridiculous it collapsed on its own. What is that reasoning trick called?",
+    "tier": 3,
+    "question": "Frédéric Bastiat did not argue against tariffs head-on. He answered the protectionists, who wanted French makers shielded from cheaper goods from abroad, with a demand for a law closing every window in France by day. What reasoning move was that?",
     "answer": "Reductio ad absurdum -- pushing the other side's logic until it looks silly",
     "choices": [
       "Reductio ad absurdum -- pushing the other side's logic until it looks silly",
@@ -35929,32 +35435,6 @@
       "Appeal to authority -- quoting a famous name instead of arguing"
     ],
     "context": "Swift's 1729 A Modest Proposal takes the exploitative-labor logic of 18th-century Irish policy seriously enough to propose eating Irish children; Bastiat's 1845 candlemakers takes protectionism seriously enough to tax the sun. Same technique, two masterpieces. Source: en.wikipedia.org/wiki/A_Modest_Proposal.",
-    "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
-  },
-  {
-    "tier": 5,
-    "question": "In 1845 the French economist Frederic Bastiat wrote a joke petition to the French parliament. He pretended to speak for candlemakers, oil lamp sellers, and tallow makers. Their complaint? The sun was flooding France with free light every morning, and this 'foreign competitor' was ruining their industry. Bastiat begged the government to order all windows, shutters, and curtains closed forever, so honest candlemakers could earn a living. It was satire. Which policy idea was he attacking?",
-    "answer": "Protectionism",
-    "choices": [
-      "Protectionism",
-      "Socialism",
-      "Colonial monopoly",
-      "Church taxation"
-    ],
-    "context": "Bastiat named PROTECTIONISM and SOCIALISM as the two large categories of French legal plunder; the candlemakers' petition is his ridicule of protectionism, and the negative-railway is his ridicule of the make-work half of socialism. Source: fee.org/resources/the-law.",
-    "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
-  },
-  {
-    "tier": 5,
-    "question": "Frederic Bastiat's 1845 'Petition of the Candlemakers' begged the French government to block the sun so honest candlemakers could compete against its free light. Two centuries later, economists still cite the phrase whenever the same argument shape shows up in a new debate — cheap solar panels, cheap imports, robots, foreign labor. It has become standing shorthand for one very specific move. Which argument-shape does the phrase now flag?",
-    "answer": "Any argument that treats free abundance as a threat requiring policy remedy",
-    "choices": [
-      "Any argument that treats free abundance as a threat requiring policy remedy",
-      "Any argument that overstates the medium-term risks of a proposed policy",
-      "Any argument that appeals to fairness rather than efficiency",
-      "Any argument that uses foreign historical examples for a domestic case"
-    ],
-    "context": "Don Boudreaux's Cafe Hayek and countless econ-101 texts use 'candlemakers' petition' as the standing tag for any policy that would shut out cheaper substitutes to protect an incumbent producer. Source: cafehayek.com/tag/petition-of-the-candlemakers.",
     "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
   },
   {
@@ -37882,47 +37362,8 @@
     "topic": "the-theory-of-money-and-credit-1912"
   },
   {
-    "tier": 1,
-    "question": "A big-bank CEO becomes the Treasury Secretary (top government money job) for a few years, then quits and goes right back to a top-paid banking job at his old firm. Later his bank gets in trouble and the government bails it out. What is this move called?",
-    "answer": "The revolving door between government and Wall Street",
-    "choices": [
-      "The revolving door between government and Wall Street",
-      "An arm's-length transaction",
-      "A pure free market",
-      "A public works project"
-    ],
-    "context": "Robert Rubin, Goldman Sachs 1966-1992, Treasury Secretary 1995-99 under Clinton, Citigroup executive committee 1999-2009. Source: en.wikipedia.org/wiki/Robert_Rubin.",
-    "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
-  },
-  {
-    "tier": 1,
-    "question": "In late 2008, big US banks like Bear Stearns and Lehman Brothers were failing or on the edge of failing. Treasury Secretary Henry Paulson rushed a $700 billion rescue plan through Congress, using taxpayer money to keep the surviving banks alive. What do we call it when the government spends tax money to save a private business from failing?",
-    "answer": "A bailout",
-    "choices": [
-      "A bailout",
-      "A tariff",
-      "A tax cut",
-      "A stimulus check"
-    ],
-    "context": "Henry 'Hank' Paulson joined Goldman in 1974, became CEO in 1999, and served as Treasury Secretary July 2006 to January 2009. Source: en.wikipedia.org/wiki/Henry_Paulson.",
-    "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
-  },
-  {
     "tier": 2,
-    "question": "In September 2008 the giant American insurance company AIG (American International Group) was about to collapse from a wave of bad housing-linked bets. The US Treasury put up roughly 180 billion dollars to rescue AIG, and much of that money then flowed straight out to the big Wall Street banks that had done business with AIG. Economists call the danger that grows out of rescues like this 'moral hazard.' What is the worry when the government rescues big banks like this?",
-    "answer": "Banks will take even bigger risks next time, since they expect another rescue",
-    "choices": [
-      "Banks will take even bigger risks next time, since they expect another rescue",
-      "Small savers will suddenly earn much higher interest",
-      "Ordinary shoppers will pay less for groceries",
-      "Banks will start refusing to lend to anyone at all"
-    ],
-    "context": "Goldman received approximately $12.9B as an AIG counterparty via the ~$182B AIG rescue. The AIG-Goldman payments became a focal point of revolving-door criticism of the 2008 crisis response. Source: fcic.gov (Financial Crisis Inquiry Commission Report, 2011).",
-    "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
-  },
-  {
-    "tier": 2,
-    "question": "Timothy Geithner had a long career moving between finance and government. From 2003 to 2009 he led the Federal Reserve Bank of New York, the arm of the Fed closest to Wall Street. From 2009 to 2013 he served as Treasury Secretary under President Obama, running the bank bailouts of the financial crisis. After he left the Treasury, what kind of private firm did he join as president?",
+    "question": "Timothy Geithner took a new job in March 2014 as president of a firm, after running the Federal Reserve Bank of New York, the arm of the Fed closest to Wall Street, and then the Treasury, where he steered the bank rescues of the crisis. What kind of firm was it?",
     "answer": "A private-equity firm",
     "choices": [
       "A private-equity firm",
@@ -37935,7 +37376,7 @@
   },
   {
     "tier": 3,
-    "question": "Janet Yellen chaired the US Federal Reserve, the central bank that sets American interest rates, until 2018. After she stepped down she spent the next two years traveling and giving paid speeches to bankers and investors, pulling in about $7 million before President Biden made her his Treasury Secretary in 2021. Who paid most of that speaking money?",
+    "question": "Janet Yellen stepped down as head of the Federal Reserve, the central bank that sets American interest rates, in 2018. Over the next two years she gave paid speeches and collected about $7 million, before President Biden made her his Treasury Secretary in 2021. Who paid most of that speaking money?",
     "answer": "Wall Street firms including Citadel and Goldman Sachs",
     "choices": [
       "Wall Street firms including Citadel and Goldman Sachs",
@@ -37948,20 +37389,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2009 the American economist Simon Johnson, a former chief economist at the International Monetary Fund (IMF), gave a public warning about big Wall Street banks. He said they had grown so powerful that they helped write the very rules meant to regulate them -- lawmakers took their advice, hired their people, and copied their language. What is this pattern called?",
-    "answer": "Regulatory capture",
-    "choices": [
-      "Regulatory capture",
-      "Free-market competition",
-      "Proof-of-work mining",
-      "Voluntary exchange"
-    ],
-    "context": "Simon Johnson, 'The Quiet Coup' (The Atlantic, May 2009). Johnson, MIT professor and former IMF chief economist, applied his IMF-era capture-diagnosis toolkit to the US financial-crisis response. Source: theatlantic.com/magazine/archive/2009/05.",
-    "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
-  },
-  {
-    "tier": 3,
-    "question": "In 2012 the University of Chicago economist Luigi Zingales, an Italian-born free-market thinker, published a book aimed at American readers. He argued that America's finance industry had drifted away from real competitive capitalism into what he called 'crony capitalism' -- a system in which big firms use political connections to bend the rules in their favor. He asked for pro-market reforms to take the country back. What did he name the book?",
+    "question": "Luigi Zingales, an Italian-born champion of free markets who teaches at Chicago, argued in 2012 that American finance had slid away from competition into a system where the largest firms get ahead through political ties rather than better products. He wrote a book for American readers calling for pro-market reform. What did he title it?",
     "answer": "A Capitalism for the People",
     "choices": [
       "A Capitalism for the People",
@@ -37973,8 +37401,8 @@
     "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
   },
   {
-    "tier": 4,
-    "question": "In 2019 the head of a US agency that regulates drug companies stepped down. Soon after, he took a paid seat on the board of a big drug company he had just been regulating. What is this pattern of moving between regulator and regulated industry called?",
+    "tier": 1,
+    "question": "Robert Rubin left Goldman Sachs to serve as Treasury Secretary from 1995 to 1999, then spent ten years on Citigroup's executive committee. What is the name for a career move like his?",
     "answer": "The revolving door",
     "choices": [
       "The revolving door",
@@ -37986,21 +37414,8 @@
     "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
   },
   {
-    "tier": 4,
-    "question": "Simon Johnson and Luigi Zingales are two American economists who study why regulators so often end up defending the very industries they oversee. Both point to the revolving door -- an official leaves a big bank to work at the Treasury or the Fed, then leaves government to return to a big bank. They call it a form of regulatory capture. What feature of the setup makes the capture work?",
-    "answer": "The pool of qualified candidates comes from the industry and expects to return to it",
-    "choices": [
-      "The pool of qualified candidates comes from the industry and expects to return to it",
-      "Regulators are secretly bribed with cash payments",
-      "Federal law requires all regulators to work in industry first",
-      "The industry has hidden veto authority over hiring decisions"
-    ],
-    "context": "The Stigler-capture-via-revolving-door mechanism: the career incentives of every serving official partly align with the industry regardless of individual character, because the qualified pool has this shape by construction. This is institutional-incentive selection, not corruption. Source: Johnson (2009); Zingales (2012); Stigler (1971).",
-    "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
-  },
-  {
     "tier": 5,
-    "question": "From 1988 to 2013 four US Treasury secretaries -- Nicholas Brady, Robert Rubin, Henry Paulson, and Timothy Geithner -- all came out of Wall Street firms or the New York Federal Reserve before taking the top financial-regulation post in the US government. Public-choice economists use this Wall-Street-to-Treasury pattern to illustrate a general reasoning move about who ends up in top financial regulation. The move is not the claim that these individuals were personally corrupt. What is the actual claim?",
+    "question": "Public-choice economists point to four men who ran the Treasury in the twenty-five years from 1988, from Nicholas Brady to Timothy Geithner, each arriving from a Wall Street house or the New York Fed and each lawfully confirmed. What claim do they make?",
     "answer": "The pattern is institutional-incentive selection, not individual character",
     "choices": [
       "The pattern is institutional-incentive selection, not individual character",
@@ -38013,7 +37428,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2014 three economists -- Marianne Bertrand, Matilde Bombardini, and Francesco Trebbi -- published a paper that tried to put a dollar figure on Washington's 'revolving door.' They tracked former Members of Congress and senior congressional staffers who quit public service and went to work as lobbyists for private clients. When they compared the new lobbying salaries with the old public-service paycheck, they found a large jump. What pay jump over the old public-service salary does their research usually find?",
+    "question": "Marianne Bertrand, Matilde Bombardini and Francesco Trebbi followed former members of Congress and senior aides into lobbying jobs in a 2014 paper, and found that insiders with good connections are paid far more than they earned in public service. How large are the premiums quoted for such moves?",
     "answer": "500 to 1000 percent premiums over their government pay",
     "choices": [
       "500 to 1000 percent premiums over their government pay",
@@ -39443,7 +38858,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1967 the American economist Gordon Tullock wrote a short nine-page paper for a small journal called Western Economic Journal. In it, Tullock argued that the usual textbook cost of monopoly -- the little shaded triangle drawn in every intro economics book -- was way too small a number for the real harm monopolies, tariffs, and even ordinary theft do to a society. What title did he give the paper?",
+    "question": "Gordon Tullock placed a nine-page paper in the Western Economic Journal in 1967, after better-known journals had turned the paper down. He argued that the small shaded triangle every textbook drew for the cost of a monopoly was far too small. What title did he give the paper?",
     "answer": "The Welfare Costs of Tariffs, Monopolies, and Theft",
     "choices": [
       "The Welfare Costs of Tariffs, Monopolies, and Theft",
@@ -39455,8 +38870,8 @@
     "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
   },
   {
-    "tier": 1,
-    "question": "Imagine a US steel firm sees Congress about to pass a tariff worth $100 million a year to it -- protection from foreign competition, plus almost guaranteed profits. In his 1967 paper on tariffs and monopolies, the American economist Gordon Tullock asked a sharp question: how much of that $100 million would the firm be willing to spend on lawyers, campaign gifts, and Washington lobbyists to make sure Congress hands the tariff its way?",
+    "tier": 2,
+    "question": "A firm stands to gain $100 million a year if Congress passes a steel tariff, in Gordon Tullock's 1967 example. It could pay lawyers, Washington representatives and campaign funds to make sure the vote goes its way. How much would it be willing to spend on them, by Tullock's reckoning?",
     "answer": "Up to $100 million per year",
     "choices": [
       "Up to $100 million per year",
@@ -39469,20 +38884,7 @@
   },
   {
     "tier": 2,
-    "question": "A monopolist earns big profits. Rival companies and lobbyists know those profits are up for grabs. So they spend huge amounts of time and money lobbying politicians, filing lawsuits, and running ads to either grab the monopoly or defend it. What does an economist call this waste?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Fair competition",
-      "Consumer surplus",
-      "Cost-benefit balance"
-    ],
-    "context": "The 'Tullock rectangle': resources spent competing for the monopoly rent equal in expectation to the full monopoly-profit rectangle. Later scholars named it after him. Source: Posner, Journal of Political Economy (1975) formalized the Tullock rectangle.",
-    "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
-  },
-  {
-    "tier": 2,
-    "question": "The American economist Gordon Tullock spent his career studying rent-seeking -- the wasted effort people spend chasing a government-granted privilege instead of producing anything real. To show what he called the Tullock rectangle, he used a homespun example: theft. Tullock argued the value of what a thief actually steals is only a transfer from one pocket to another. The true drag on society, he said, was something else entirely. What did Tullock say was the real social cost of theft?",
+    "question": "A burglar breaks into a house in one of Gordon Tullock's 1967 examples. What the thief carries off, Tullock argued, merely moves wealth between pockets, leaving the total unchanged. Where did he say society's real loss from theft lies?",
     "answer": "The resources spent on locks, alarms, security guards, and burglary tools",
     "choices": [
       "The resources spent on locks, alarms, security guards, and burglary tools",
@@ -39495,20 +38897,7 @@
   },
   {
     "tier": 3,
-    "question": "A big American car company hires expensive lobbyists in Washington DC. Their job is to push Congress for a new rule that blocks foreign rivals from selling cars in the United States. The company spends millions on lawyers, ads, and dinners for congressmen — instead of building better, cheaper cars for its customers. Economists have a general name for this pattern. What is it called?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Regulatory capture",
-      "Moral hazard",
-      "Adverse selection"
-    ],
-    "context": "Tullock originated the concept in 1967; Krueger's 'The Political Economy of the Rent-Seeking Society' (American Economic Review, June 1974) coined the phrase 'rent-seeking' and cemented the term. Source: jstor.org (Krueger 1974).",
-    "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
-  },
-  {
-    "tier": 3,
-    "question": "In 1974 the American economist Anne Krueger took Gordon Tullock's 1967 idea about wasted lobbying effort and tested it on one big developing country. She showed how the country's government import licenses were worth huge sums, and how firms spent nearly as much money on lobbying, gifts, and paperwork to win the licenses as the licenses were themselves worth. Which country did Krueger study?",
+    "question": "Anne Krueger took Gordon Tullock's idea about wasted lobbying and tested it in 1974 on one big developing country, whose import licenses were worth huge sums. Firms there spent almost the full value of a license trying to win one. Which country did Krueger study?",
     "answer": "India",
     "choices": [
       "India",
@@ -39521,7 +38910,7 @@
   },
   {
     "tier": 3,
-    "question": "In his 1967 paper The Welfare Costs of Tariffs, Monopolies, and Theft, the American economist Gordon Tullock put three very different-looking things under a single analytical roof: a firm being granted a legal monopoly, a Congress-granted tariff on foreign steel, and even an ordinary burglar breaking into a house. What shared feature makes all three of them create the larger deadweight loss Tullock was pointing to?",
+    "question": "Gordon Tullock put three unlike things under one roof in his 1967 paper: a firm handed a legal monopoly, a tariff on foreign steel passed by Congress, and an ordinary burglar breaking into a house. What shared feature makes all three cost society more than the textbook triangle shows?",
     "answer": "Each attracts real-resource competition for a redistributive prize",
     "choices": [
       "Each attracts real-resource competition for a redistributive prize",
@@ -39534,7 +38923,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1967 the American economist Gordon Tullock studied a puzzle: some very smart, well-paid, skilled workers spend all day helping one group grab money from another group by working the rules of government. They produce nothing new — no crops, no houses, no medicine — just paperwork and favors. Tullock later called this pattern rent-seeking. Which job is the classic example?",
+    "question": "Gordon Tullock turned his eye in 1967 to skilled, well-paid people who spend whole days helping one group take money from another by working the rules of government. They produce no crops, no houses and no medicine, only paperwork and favors. Which job is the classic example?",
     "answer": "Lobbyists",
     "choices": [
       "Lobbyists",
@@ -39546,34 +38935,8 @@
     "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
   },
   {
-    "tier": 4,
-    "question": "The American economist Gordon Tullock's whole 1967 argument leans on a strong claim about what firms and lobbyists actually do when they compete for a government-granted rent -- a tariff, a special license, an exclusive monopoly grant, or a subsidy. What does Tullock say the competition among rival seekers uses up, on average, before the rent is even awarded?",
-    "answer": "The full value of the rent being sought",
-    "choices": [
-      "The full value of the rent being sought",
-      "Half the value of the rent being sought",
-      "Only a small fraction of the rent",
-      "None of the rent, since competition is impossible"
-    ],
-    "context": "Under free entry into the competition for rents and constant returns to lobbying, expected dissipation equals the full rent. Later scholarship (Posner 1975, Rogerson 1982) explored conditions under which dissipation is less than full. Source: Tullock 1967; Posner, Journal of Political Economy (1975).",
-    "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
-  },
-  {
     "tier": 5,
-    "question": "The American economist Gordon Tullock's 1967 paper The Welfare Costs of Tariffs, Monopolies, and Theft is now widely regarded as one of the founding texts of the public-choice subfield of political economy -- the study of what happens when self-interested behavior operates inside government too, not just in markets. Which single sentence best captures the enduring reasoning move at the heart of Tullock's argument?",
-    "answer": "Every government-granted privilege attracts wasteful real-resource competition for it",
-    "choices": [
-      "Every government-granted privilege attracts wasteful real-resource competition for it",
-      "Monopoly profits are always immediately competed away",
-      "Foreign tariffs impose no domestic welfare cost",
-      "Theft has no social cost because it merely transfers wealth"
-    ],
-    "context": "The rent-seeking move: whenever a redistributive prize is on offer, real economic resources will be burned competing for it, and society loses the value of those resources. This is a general result, not a partisan claim. Source: Tullock, Western Economic Journal (1967); Buchanan + Tollison + Tullock, Toward a Theory of the Rent-Seeking Society (Texas A&M 1980).",
-    "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
-  },
-  {
-    "tier": 5,
-    "question": "Rent-seeking is when a company spends money lobbying government for a special favor — a subsidy, a license, a tariff — instead of making better products for customers. The public-choice economists James Buchanan and Gordon Tullock argued in the 1960s that some kinds of policy invite far more rent-seeking than others. Which policy design tends to reduce this waste the most?",
+    "question": "James Buchanan and Gordon Tullock argued in the 1960s that some policies invite far more lobbying for special favors than others, since a favor worth having draws real money and talent into the chase. Which policy design tends to cut that waste the most?",
     "answer": "Broad-based rules that apply equally to all firms and citizens",
     "choices": [
       "Broad-based rules that apply equally to all firms and citizens",
