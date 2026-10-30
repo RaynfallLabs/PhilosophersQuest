@@ -7489,33 +7489,20 @@
   },
   {
     "tier": 1,
-    "question": "In the early 1990s, a small group of programmers in California — they called themselves the cypherpunks — argued that online chats should not depend on trusting a company or a government to keep secrets. They said one tool alone could keep messages private without asking anyone's permission. What tool did they mean?",
+    "question": "Timothy May, Eric Hughes and John Gilmore began meeting near San Francisco in the early 1990s to ask who would guard ordinary people's privacy in a wired world. Their answer left out every phone company and every state. What tool did they trust instead?",
     "answer": "Math -- encryption code that only the receiver can unlock",
     "choices": [
+      "A government office that checks messages",
       "Math -- encryption code that only the receiver can unlock",
-      "New laws forcing companies to be nice",
-      "Longer passwords",
-      "Trusting the biggest tech companies"
+      "Trusting the biggest tech companies",
+      "Only long, strong passwords"
     ],
     "context": "Eric Hughes wrote 'A Cypherpunk's Manifesto' on March 9, 1993. Timothy May wrote the earlier 1988 Crypto Anarchist Manifesto; John Gilmore ran toad.com; Phil Zimmermann wrote PGP. Source: https://www.activism.net/cypherpunk/manifesto.html.",
     "topic": "eric-hughes-and-a-cypherpunk-s-manifesto-march-9-1993"
   },
   {
-    "tier": 1,
-    "question": "In 1993 the American programmer Eric Hughes and his friends wrote a short paper called 'A Cypherpunk's Manifesto.' They argued that no company or government could be trusted to keep your online messages private -- and that ordinary people needed a tool of their own. What did they say people should use to protect their own messages?",
-    "answer": "Encryption math that only you and the person you write can unlock",
-    "choices": [
-      "Encryption math that only you and the person you write can unlock",
-      "Only long, strong passwords",
-      "The biggest, most trusted company you can find",
-      "A government office that checks messages"
-    ],
-    "context": "'A Cypherpunk's Manifesto' by Eric Hughes, March 9, 1993. Tim May wrote the earlier Crypto Anarchist Manifesto (1988); the Communist Manifesto (Marx-Engels 1848) and The Sovereign Individual (Davidson-Rees-Mogg 1997) are unrelated. Source: https://www.activism.net/cypherpunk/manifesto.html.",
-    "topic": "eric-hughes-and-a-cypherpunk-s-manifesto-march-9-1993"
-  },
-  {
     "tier": 2,
-    "question": "In 1993 the American cypherpunk Eric Hughes wrote 'A Cypherpunk's Manifesto,' a short essay arguing that privacy and secrecy are not the same thing. Secrecy hides what someone did; privacy is what a person chooses to share. Which single line from the manifesto captures that split most sharply?",
+    "question": "Eric Hughes sent A Cypherpunk's Manifesto out to his fellow cypherpunks by email on March 9, 1993. Its most quoted line defines privacy by what a person chooses to do. Which line is it?",
     "answer": "'Privacy is the power to selectively reveal oneself to the world.'",
     "choices": [
       "'Privacy is the power to selectively reveal oneself to the world.'",
@@ -7528,7 +7515,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1993 essay, Hughes drew a sharp line against a certain kind of privacy advocate. That person wrote articles and held conferences but produced no working software. His line became the cypherpunk movement's motto. What three-word phrase captured his rule?",
+    "question": "Eric Hughes ended his manifesto of March 1993 with three words aimed at one kind of privacy campaigner: the man who lectured and published but never released a program that ran. The cypherpunks took the words as their motto. What were they?",
     "answer": "'Cypherpunks write code.'",
     "choices": [
       "'Cypherpunks write code.'",
@@ -7541,7 +7528,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1993 the American cypherpunk Eric Hughes wrote a short manifesto about how ordinary people should protect their information online. He warned readers not to confuse privacy with another word that sounds similar but means something very different. That other word, Hughes said, hides wrongdoing — while privacy only protects a person's honest choice about what to share. Which word did Hughes contrast with privacy?",
+    "question": "Eric Hughes warned readers of his manifesto not to mix up privacy with a word that sounds close to it. A private matter, he wrote, is one a person would rather the whole world not learn; the other kind is one he wants nobody at all to learn. Which word did he set against privacy?",
     "answer": "secrecy",
     "choices": [
       "secrecy",
@@ -7554,7 +7541,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1993 the American programmer Eric Hughes published 'A Cypherpunk's Manifesto.' It said that if people want privacy in the computer age, they must build the tools themselves because governments will not. His essay launched a movement of coders who wrote encryption and digital-cash software so ordinary users could talk and trade without being watched. Which value about money and speech was this movement most focused on?",
+    "question": "Hughes's friends took his manifesto at its word: privacy would exist only if they built the tools themselves. They wrote encryption programs and designed digital cash, with money in mind as much as speech. Which freedom were they chiefly after?",
     "answer": "The right to send messages and payments without being watched",
     "choices": [
       "The right to send messages and payments without being watched",
@@ -7567,7 +7554,7 @@
   },
   {
     "tier": 4,
-    "question": "In the early 1990s the American cypherpunk Eric Hughes worked with fellow programmers who believed online privacy had to be built with code, not begged for from laws. One tool they created passed email messages through a chain of computers that stripped off the sender's address, so no one watching the network could see who wrote a message or where it started. The cypherpunks needed this to publish and organize freely without being traced. What kind of tool did Hughes and his friends help build?",
+    "question": "Hal Finney and his friend Eric Hughes helped build a tool for the cypherpunks in the early 1990s. Each of these servers accepted an email, stripped off the sender's address and forwarded it through a string of other computers, so no one watching could follow it back to the person who wrote it. What were the servers called?",
     "answer": "anonymous remailers",
     "choices": [
       "anonymous remailers",
@@ -7580,7 +7567,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1993 the American cypherpunk Eric Hughes wrote 'A Cypherpunk's Manifesto', a short document arguing that people who cared about online privacy had to build the tools themselves. Hughes said one powerful group would never bother to build strong privacy tools for regular users — because those users are exactly the ones that group wants to watch and track. Cypherpunks would have to write the code on their own. Which group did Hughes rule out?",
+    "question": "Eric Hughes refused, in his manifesto of 1993, to wait for privacy as a gift. He named the large, faceless bodies that would never hand it over out of kindness, since they were the very ones that wanted to watch and follow ordinary people. Which bodies did he rule out?",
     "answer": "governments and corporations",
     "choices": [
       "governments and corporations",
@@ -7593,7 +7580,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1993 the American programmer Eric Hughes wrote 'A Cypherpunk's Manifesto,' which called for coders to publish their designs openly, release the actual software, deploy it into public use, and then step back so no one person could control it. Fifteen years later, in 2008, a coder using the name Satoshi Nakamoto released Bitcoin -- and followed Hughes's playbook step by step. Which pattern did Satoshi copy from Hughes?",
+    "question": "Satoshi Nakamoto sent out the plan for Bitcoin late in 2008, fifteen years after Eric Hughes's manifesto told cypherpunks to build privacy with their own hands instead of waiting for anyone to grant it. Satoshi carried that playbook through to its end. Which sequence did he follow?",
     "answer": "publish a paper, ship working code, deploy a live network, then step aside",
     "choices": [
       "publish a paper, ship working code, deploy a live network, then step aside",
@@ -7606,7 +7593,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1993 the American cypherpunk Eric Hughes wrote 'A Cypherpunk's Manifesto', which ended with a famous three-word slogan telling coders to ship code. One historian of the cypherpunk movement, looking back years later, argued the manifesto was not just a wish or a hope — it worked more like a step-by-step guide for actually building future privacy tools. Which reasoning move does that historian's argument make?",
+    "question": "A historian of the cypherpunks, looking back at Eric Hughes's manifesto of 1993, argued that it should be read as a working plan rather than a hope. Hughes had closed it with a three-word motto for coders. Which reasoning move does the historian make about that motto?",
     "answer": "That 'cypherpunks write code' is a rule about proof: aspiration without a shipping working tool is not itself a privacy technology at all",
     "choices": [
       "That 'cypherpunks write code' is a rule about proof: aspiration without a shipping working tool is not itself a privacy technology at all",
@@ -7619,7 +7606,7 @@
   },
   {
     "tier": 1,
-    "question": "Today three enormous American investment firms own big pieces of almost every large US company through their index funds, which pool the savings of millions of ordinary retirement investors. Together the three firms cast about one out of every four votes at big company shareholder meetings. Journalists have nicknamed them 'the Big Three'. Which three firms are they?",
+    "question": "A big American company holds its shareholder meeting, and roughly a quarter of the votes come from just three investment firms. They run the index funds that hold the retirement savings of millions of ordinary people, and the press has nicknamed them the Big Three. Which three are they?",
     "answer": "BlackRock, Vanguard, and State Street",
     "choices": [
       "BlackRock, Vanguard, and State Street",
@@ -7632,7 +7619,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 2020s, the head of a giant Wall Street investment firm — the company BlackRock, which controls trillions of dollars — told companies he would only put money in them if they cut pollution, hired in certain ways, and changed how their board of directors ran. This kind of rule is called Environmental, Social, and Governance scoring (ESG). How does a rule like this change what those companies do?",
+    "question": "Larry Fink, head of the giant investment firm BlackRock, pressed companies in his yearly letters to chase climate and other social goals, graded under the label environmental, social and governance (ESG). What happens to a firm's aims once its largest shareholders grade it on a score like that?",
     "answer": "Companies will focus on the new score, not just on making a useful product cheaply",
     "choices": [
       "Companies will focus on the new score, not just on making a useful product cheaply",
@@ -7645,7 +7632,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2019 two American law professors, Lucian Bebchuk and Scott Hirst, wrote a paper warning about how much shareholder voting power the Big Three — BlackRock, Vanguard, and State Street — hold over public companies. They gave the paper a deliberately spooky title, borrowing the word 'specter' from the famous opening of Marx and Engels's Communist Manifesto. What did Bebchuk and Hirst call their paper?",
+    "question": "Lucian Bebchuk and Scott Hirst, two legal scholars, measured the voting power of the three index-fund giants in 2019 for the Boston University Law Review. They titled the paper with a nod to the famous first line of Marx and Engels's Communist Manifesto. What did they call it?",
     "answer": "The Specter of the Giant Three",
     "choices": [
       "The Specter of the Giant Three",
@@ -7658,7 +7645,7 @@
   },
   {
     "tier": 2,
-    "question": "The giant American investment firm BlackRock holds the retirement money of millions of Americans in its index funds. Each year its CEO Larry Fink sends letters telling companies to focus on climate change and other social causes. Because BlackRock's funds own big shares of nearly every listed firm, that letter carries weight far beyond an ordinary shareholder's. Why does the letter carry such weight?",
+    "question": "Managers at a listed firm open the yearly letter from Larry Fink, BlackRock's chief executive, pressing them on climate and other social causes. His company's funds hold pieces of almost every firm on the stock market. Why does his letter weigh so much more than an ordinary shareholder's?",
     "answer": "The company can vote against management if firms ignore it",
     "choices": [
       "The company can vote against management if firms ignore it",
@@ -7671,20 +7658,7 @@
   },
   {
     "tier": 3,
-    "question": "A handful of employees at the Big Three asset managers — BlackRock, Vanguard, and State Street — cast the shareholder votes for tens of millions of American retirement savers whose money sits in their index funds. Those savers never gave a direct yes or no on any specific vote. Public choice economists study patterns where a small group of decision-makers ends up wielding power on behalf of a much larger group that never signed off. What pattern from public choice does this Big Three situation fit?",
-    "answer": "Regulatory-style capture operating through private fiduciary infrastructure",
-    "choices": [
-      "Regulatory-style capture operating through private fiduciary infrastructure",
-      "A textbook competitive equilibrium",
-      "A shareholder-democracy revival",
-      "A merger-approval bottleneck"
-    ],
-    "context": "Capture need not require formal government regulators. When a small group of intermediaries makes decisions on behalf of many principals whose preferences are neither known nor consulted, the same alignment failure appears in private financial infrastructure. Source: Bebchuk + Hirst (2019); Boettke and various commentary in Cato Regulation (2022-24).",
-    "topic": "esg-as-regulatory-capture-blackrock-vanguard-state-street-an"
-  },
-  {
-    "tier": 3,
-    "question": "ESG (Environmental, Social, Governance) investing pushes companies to weigh climate and social goals, not just profit. In December 2022 Florida's chief financial officer, Jimmy Patronis, pulled two billion dollars of state money from the giant asset manager BlackRock over its ESG voting. He said Florida had never signed up to pay for BlackRock's social engineering. What was he objecting to?",
+    "question": "Jimmy Patronis, Florida's chief financial officer, pulled two billion dollars of state money out of the giant asset manager BlackRock in December 2022 over the way it voted on environmental, social and governance (ESG) causes. Florida, he said, had never signed up to pay for BlackRock's social engineering. What was he objecting to?",
     "answer": "The asset manager was using other people's money to push a political agenda",
     "choices": [
       "The asset manager was using other people's money to push a political agenda",
@@ -7697,20 +7671,7 @@
   },
   {
     "tier": 4,
-    "question": "The University of Chicago economist Milton Friedman argued that a company's managers have one job: making money for the shareholders who hired them. If those managers instead give profits away to causes they personally like -- climate campaigns, political donations, favorite charities -- what is Friedman saying they are really doing?",
-    "answer": "Spending other people's money without permission",
-    "choices": [
-      "Spending other people's money without permission",
-      "Following the wishes of every shareholder equally",
-      "Increasing long-term company profits by accident",
-      "Obeying a legal duty to their local community"
-    ],
-    "context": "Milton Friedman, 'The Social Responsibility of Business Is to Increase Its Profits' (New York Times Magazine, September 13, 1970). It argued that corporate managers are agents of shareholders and should not divert corporate resources to personal political preferences. Source: nytimes.com/1970/09/13/archives.",
-    "topic": "esg-as-regulatory-capture-blackrock-vanguard-state-street-an"
-  },
-  {
-    "tier": 4,
-    "question": "The giant asset manager BlackRock holds shares of nearly every US business on behalf of millions of savers whose retirement money it manages through index funds. It then votes those shares at company meetings. If BlackRock votes for causes many of those savers actively disagree with -- while still charging them fees to manage their money -- what problem does that show?",
+    "question": "A fund manager votes a block of savers' shares at a company's annual meeting for a cause that many of those savers oppose, while his firm goes on charging them fees. What problem does that show?",
     "answer": "The manager may vote for its own goals, not the goals of the people whose money it holds",
     "choices": [
       "The manager may vote for its own goals, not the goals of the people whose money it holds",
@@ -7722,8 +7683,8 @@
     "topic": "esg-as-regulatory-capture-blackrock-vanguard-state-street-an"
   },
   {
-    "tier": 5,
-    "question": "The American economist George Stigler won a Nobel Prize partly for describing 'regulatory capture' — the way a government agency can end up serving the industry it is supposed to regulate rather than the public. The Big Three story about BlackRock, Vanguard, and State Street voting other people's retirement shares extends Stigler's idea outside of government. What is the expanded lesson the Big Three case teaches?",
+    "tier": 4,
+    "question": "George Stigler described in 1971 how an agency meant to police an industry can end up working for it, and he named the pattern regulatory capture. A few employees at the three biggest index-fund firms cast the votes on shares belonging to tens of millions of savers, none of whom were consulted on any given ballot. Public-choice economists see Stigler's shape in the arrangement. What lesson do they draw from the case?",
     "answer": "Capture can operate through private financial gatekeepers, not only government regulators",
     "choices": [
       "Capture can operate through private financial gatekeepers, not only government regulators",
@@ -7736,7 +7697,7 @@
   },
   {
     "tier": 5,
-    "question": "The American economist Thomas Sowell taught a habit for judging any policy: look at the people acting on someone else's behalf and ask whether they really share the interests of the people they claim to serve. The Big Three asset managers — BlackRock, Vanguard, and State Street — cast the shareholder votes of tens of millions of retirement savers who were never asked what they wanted. When middlemen decide for many people who were never asked, what should the Sowell-style analyst ask?",
+    "question": "Thomas Sowell proposed one test for anyone acting on other people's behalf. The Big Three asset managers cast the shareholder votes of tens of millions of retirement savers who were never asked what they wanted. What question would an analyst following Sowell put to that arrangement?",
     "answer": "Whether the intermediaries' incentives align with the principals' interests",
     "choices": [
       "Whether the intermediaries' incentives align with the principals' interests",
@@ -7749,7 +7710,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1904 an Austrian Finance Minister resigned from the Habsburg emperor's cabinet rather than sign off on more government deficit spending. He went back to teach economics at the University of Vienna. His classroom seminar trained the next generation of Austrian-school economists, including a young Ludwig von Mises. Who was he?",
+    "question": "An Austrian finance minister walked out of the emperor's cabinet in 1904 rather than approve spending the budget could not bear. He returned to teaching in Vienna, and his university seminar trained the next generation of the Austrian school. Who was he?",
     "answer": "Eugen von Boehm-Bawerk",
     "choices": [
       "Eugen von Boehm-Bawerk",
@@ -7762,7 +7723,7 @@
   },
   {
     "tier": 1,
-    "question": "The Austrian economist Eugen von Boehm-Bawerk, one of the founding fathers of the Austrian school of economics, was born in 1851 in a Moravian city that was then part of the old Austrian Empire. Today that same city sits inside the Czech Republic and is the country's second-largest city, after Prague. In which city was Boehm-Bawerk born?",
+    "question": "Eugen von Boehm-Bawerk and Friedrich von Wieser, friends since their youth, both took up Carl Menger's ideas. Boehm-Bawerk had been born in 1851 in a city of Moravia, then part of the Austrian Empire and today the second-largest city of the Czech Republic, after Prague. Which city was it?",
     "answer": "Brno",
     "choices": [
       "Brno",
@@ -7775,7 +7736,7 @@
   },
   {
     "tier": 2,
-    "question": "The Austrian economist Eugen von Boehm-Bawerk, an Austrian-school founder, served as Austria's Finance Minister three separate times. He believed a government should live within its budget. In 1904 he resigned from the post rather than approve more deficit spending pushed by one powerful branch of the imperial government. Whose spending was Boehm-Bawerk refusing to approve?",
+    "question": "Eugen von Boehm-Bawerk, three times Austria's finance minister, believed a state should spend no more than it takes in. In 1904 one branch of the imperial government demanded more money than the budget could carry, and he resigned rather than approve the deficit. Whose spending was he refusing?",
     "answer": "The army's",
     "choices": [
       "The army's",
@@ -7787,21 +7748,8 @@
     "topic": "eugen-von-boehm-bawerk--who-he-was"
   },
   {
-    "tier": 2,
-    "question": "The Austrian economist Eugen von Boehm-Bawerk married the sister of another famous Austrian-school economist. The two men became brothers-in-law and worked side by side for decades. Together they carried the ideas of their common teacher, Carl Menger — the founder of the Austrian school — into the next generation of economics. Who was Boehm-Bawerk's brother-in-law?",
-    "answer": "Friedrich von Wieser",
-    "choices": [
-      "Friedrich von Wieser",
-      "Carl Menger",
-      "Ludwig von Mises",
-      "Joseph Schumpeter"
-    ],
-    "context": "Boehm-Bawerk married Paula von Wieser, whose brother Friedrich von Wieser (1851-1926) had also studied under Menger and developed the Austrian theory of imputation and opportunity cost. The two brothers-in-law between them wrote the second-generation Austrian curriculum. Menger was their teacher; Mises and Schumpeter were their students. Source: Wikipedia, 'Eugen von Boehm-Bawerk' (https://en.wikipedia.org/wiki/Eugen_B%C3%B6hm_von_Bawerk).",
-    "topic": "eugen-von-boehm-bawerk--who-he-was"
-  },
-  {
     "tier": 3,
-    "question": "In 1896 the Austrian economist Eugen von Boehm-Bawerk wrote a book-length essay attacking Karl Marx's labor theory of value — the claim that a good's value comes only from the labor put into producing it. Boehm-Bawerk argued that Marx's own Volume 1 and Volume 3 of Capital did not fit together: the theory contradicted itself once you followed both volumes carefully. What is that essay called in English?",
+    "question": "Marx argued that the labor poured into a good is the sole source of its value. Eugen von Boehm-Bawerk answered him in 1896 with a book-length essay, arguing that the theory falls apart once a reader follows Marx's own Capital through to its third volume. What is the essay called in English?",
     "answer": "Karl Marx and the Close of His System",
     "choices": [
       "Karl Marx and the Close of His System",
@@ -7814,7 +7762,7 @@
   },
   {
     "tier": 3,
-    "question": "After Boehm-Bawerk resigned as Finance Minister in 1904, he returned to a full-time chair at the university. His graduate seminar there ran 1905-06 and grew historically famous. Its Austrian students became the school's next great figures. Two of them went on to be household names in 20th-century economics. Who were they?",
+    "question": "Two young Austrians who would become household names in twentieth-century economics sat in Eugen von Boehm-Bawerk's seminar at the University of Vienna in 1905 and 1906, after he had quit the finance ministry and gone back to teaching. Who were they?",
     "answer": "Ludwig von Mises and Joseph Schumpeter",
     "choices": [
       "Ludwig von Mises and Joseph Schumpeter",
@@ -7827,7 +7775,7 @@
   },
   {
     "tier": 4,
-    "question": "The 1905-06 Boehm-Bawerk seminar drew as much attention for its Marxist students as for its Austrian ones. The room debated Marx's own theory week after week, with Boehm-Bawerk pressing his 1896 critique and the young Marxists defending. Two Austro-Marxist students in particular became the professor's principal adversaries. Who were the two?",
+    "question": "A future foreign minister of Austria and a future finance minister of Weimar Germany sat as students in Eugen von Boehm-Bawerk's Vienna seminar of 1905 and 1906. Week after week the two young Austro-Marxists defended Karl Marx against the professor's critique. Who were they?",
     "answer": "Otto Bauer and Rudolf Hilferding",
     "choices": [
       "Otto Bauer and Rudolf Hilferding",
@@ -7839,21 +7787,8 @@
     "topic": "eugen-von-boehm-bawerk--who-he-was"
   },
   {
-    "tier": 4,
-    "question": "The Austrian economist Eugen von Boehm-Bawerk's masterwork Capital and Interest, begun in the 1880s, built the Austrian theory of interest around one core human trait -- that people prefer goods sooner rather than later and must be paid to wait. A hungry person will pay more for lunch today than for the same lunch a month from now. What did Boehm-Bawerk name this preference?",
-    "answer": "Time preference",
-    "choices": [
-      "Time preference",
-      "Marginal utility",
-      "Roundabout production",
-      "Opportunity cost"
-    ],
-    "context": "Volume 3 of Kapital und Kapitalzins, titled 'Exkurse' (Further Essays on Capital and Interest), was published in 1921, seven years after Boehm-Bawerk's death; the material had accumulated as appendices to Volume 2 (1889) and grew large enough to require a separate volume. 1896 was his Marx essay; 1914 the year of his death and of the First World War's outbreak. Source: Wikipedia, 'Capital and Interest' (https://en.wikipedia.org/wiki/Capital_and_Interest).",
-    "topic": "eugen-von-boehm-bawerk--who-he-was"
-  },
-  {
     "tier": 5,
-    "question": "The Austrian economist Eugen von Boehm-Bawerk, who had served as Finance Minister of the Habsburg empire and taught Ludwig von Mises at the University of Vienna, died on 27 August 1914. Economic historians remember the exact date because it fell just weeks after another event that would consume the empire he had served. What had just happened?",
+    "question": "Eugen von Boehm-Bawerk walked out of the emperor's cabinet in 1904 rather than approve a deficit, and he died ten years later, on 27 August 1914. Historians mark the date because another event had started just a month earlier, one that would sweep his budget discipline away. What had begun?",
     "answer": "The First World War had broken out",
     "choices": [
       "The First World War had broken out",
@@ -7862,19 +7797,6 @@
       "The Federal Reserve had opened its doors"
     ],
     "context": "The First World War began on 28 July 1914 when Austria-Hungary declared war on Serbia; Boehm-Bawerk died a month later on 27 August 1914, having spent his final years watching the fiscal discipline he had defended in cabinet dissolve into war finance. The Austrian schilling was introduced in 1924; the Habsburg monarchy abdicated in November 1918; the US Federal Reserve had opened in November 1914. Source: Wikipedia, 'Eugen von Boehm-Bawerk' (https://en.wikipedia.org/wiki/Eugen_B%C3%B6hm_von_Bawerk).",
-    "topic": "eugen-von-boehm-bawerk--who-he-was"
-  },
-  {
-    "tier": 5,
-    "question": "The Austrian economist Eugen von Boehm-Bawerk argued that Karl Marx had contradicted himself in Das Kapital. Volume 1, published in 1867, said prices come from labor hours worked. Volume 3, edited by Engels and published in 1894 after Marx's death, said prices must also give equal profit rates across industries -- a rule that cannot hold if labor alone sets prices. Boehm-Bawerk said both cannot be true at the same time. What is this gap usually called today?",
-    "answer": "The transformation problem",
-    "choices": [
-      "The transformation problem",
-      "The knowledge problem",
-      "The calculation debate",
-      "The impossibility theorem"
-    ],
-    "context": "The 'transformation problem' names the gap Boehm-Bawerk sharpened in 1896: Marx's Volume 1 labor-theory-of-value prices cannot be transformed into Volume 3's equal-rate-of-profit prices without inconsistency. Marxists have proposed rescues for a century. The knowledge problem (Hayek 1945), calculation debate (Mises 1920), and impossibility theorem (Arrow 1951) are separate Austrian and welfare-economics critiques of central planning and social choice. Source: Wikipedia, 'Transformation problem' (https://en.wikipedia.org/wiki/Transformation_problem).",
     "topic": "eugen-von-boehm-bawerk--who-he-was"
   },
   {
@@ -7983,7 +7905,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1934, during the depths of the Great Depression, President Franklin Roosevelt signed an executive order creating a new federal agency in Washington. Its job was to lend US taxpayer money to foreign buyers so that those buyers could afford to purchase goods from American companies. Which agency did Roosevelt's 1934 order create?",
+    "question": "Franklin Roosevelt signed an executive order in 1934, in the depths of the Great Depression, setting up a federal lender in Washington. Its loans, backed by taxpayers, helped buyers abroad pay for goods made in America. Which agency did the order create?",
     "answer": "The Export-Import Bank of the United States (Ex-Im Bank)",
     "choices": [
       "The Export-Import Bank of the United States (Ex-Im Bank)",
@@ -7996,7 +7918,7 @@
   },
   {
     "tier": 2,
-    "question": "The Export-Import Bank (Ex-Im Bank) is a US government agency that hands out loans to help foreign buyers purchase American-made goods. A think-tank study of Ex-Im loans from 2007 to 2013 found that a single giant American corporation received about 40 percent of all the help -- a striking case of what economists call corporate welfare. Which company was it?",
+    "question": "Analysts at one think tank went through the Export-Import Bank's lending from 2007 to 2013. The federal agency helps foreign buyers purchase American-made goods, and they found that about 40 percent of its support had backed the sales of just one American firm, a textbook case of corporate welfare. Which company was it?",
     "answer": "Boeing",
     "choices": [
       "Boeing",
@@ -8009,7 +7931,7 @@
   },
   {
     "tier": 3,
-    "question": "The US Export-Import Bank is a federal agency that lends taxpayer money to foreign buyers of American goods — most famously to airlines buying Boeing airliners. In June 2015 three American free-market groups — the Heritage Foundation, the Club for Growth, and FreedomWorks — teamed up in Congress and won a rare fight against Boeing and other big corporate defenders of the bank. What happened to the Ex-Im Bank as a result of that fight?",
+    "question": "The Club for Growth, FreedomWorks and the Heritage Foundation took on the Export-Import Bank's big corporate defenders in Congress in June 2015 and won a rare fight. The federal agency lends taxpayer-backed credit to foreign buyers of American goods. What happened to the bank as a result?",
     "answer": "Congress declined to renew the bank's charter and it lapsed for about five months",
     "choices": [
       "Congress declined to renew the bank's charter and it lapsed for about five months",
@@ -8022,7 +7944,7 @@
   },
   {
     "tier": 3,
-    "question": "In December 2015 the US Export-Import Bank, which lends taxpayer-backed credit to foreign buyers of American goods, had let its charter lapse for months over free-market objections. Congress restored the charter through a specific legislative technique that made it hard for individual members to vote against the bank without also voting against something popular. What was the technique?",
+    "question": "Lawmakers renewed the Export-Import Bank's charter in December 2015 in a way that made it costly for any member to vote against the bank. Few of them wanted to oppose what the renewal came attached to. What was the technique?",
     "answer": "The renewal was bundled into a highway-bill omnibus (the FAST Act)",
     "choices": [
       "The renewal was bundled into a highway-bill omnibus (the FAST Act)",
@@ -8035,7 +7957,7 @@
   },
   {
     "tier": 4,
-    "question": "The US Export-Import Bank is a federal agency that lends taxpayer money to foreign buyers of American goods. From July through December 2015 its congressional charter lapsed and it could not sign new loans. Its defenders, led by Boeing, had warned loudly that US exports would collapse without government-backed loans behind them. What actually happened to US export volume during that five-month lapse?",
+    "question": "The Export-Import Bank's biggest corporate allies warned Congress in 2015 that sales of American goods abroad would collapse without its loans behind them. From July to December that year the bank could not sign a single new deal. What did the bank's critics find happened to American export volume in those months?",
     "answer": "It did not measurably decline; Boeing continued selling aircraft using commercial bank financing",
     "choices": [
       "It did not measurably decline; Boeing continued selling aircraft using commercial bank financing",
@@ -8047,21 +7969,8 @@
     "topic": "ex-im-bank-and-boeing-the-concentrated-federal-lending-case"
   },
   {
-    "tier": 5,
-    "question": "A high-school student asks a Mercatus-influenced economist why the US Ex-Im Bank keeps getting renewed despite the Boeing-heavy concentration and the empirical evidence that its absence did not collapse US exports. He points to a specific 1965 book that predicted exactly this. Which book?",
-    "answer": "Mancur Olson's 'The Logic of Collective Action'",
-    "choices": [
-      "Mancur Olson's 'The Logic of Collective Action'",
-      "Milton Friedman's 'Capitalism and Freedom'",
-      "Friedrich Hayek's 'The Road to Serfdom'",
-      "Adam Smith's 'The Wealth of Nations'"
-    ],
-    "context": "Olson predicted that programs with large concentrated benefits to a small number of firms would attract intense organized lobbying, while the dispersed cost to taxpayers, competitor firms, and foreign consumers would not organize against it. Boeing spent millions annually lobbying to preserve Ex-Im. Source: grokipedia.com/page/The_Logic_of_Collective_Action.",
-    "topic": "ex-im-bank-and-boeing-the-concentrated-federal-lending-case"
-  },
-  {
     "tier": 1,
-    "question": "In the late 1950s a European drug company sold a sleeping pill to pregnant women for morning sickness. The drug turned out to cause severe birth defects, and thousands of babies in Europe were born with malformed arms or legs. In America, a careful drug reviewer named Frances Kelsey refused to approve the pill for US sale, and American babies were largely spared. What lesson did US lawmakers take from the disaster?",
+    "question": "Frances Kelsey, a reviewer at the Food and Drug Administration, refused to approve a sleeping pill called thalidomide for sale in America. A European firm had sold it to expectant mothers for morning sickness, and it left thousands of European babies with deformed arms and legs. What lesson did American lawmakers take from the disaster?",
     "answer": "New medicines must be tested carefully before being sold to the public",
     "choices": [
       "New medicines must be tested carefully before being sold to the public",
@@ -8074,7 +7983,7 @@
   },
   {
     "tier": 1,
-    "question": "Before 1962 in America, a drug company only had to prove a new medicine was safe before it could be sold in stores. That year, after the thalidomide sleeping-pill disaster in Europe left thousands of babies with severe birth defects, the US Congress passed a new rule called the Kefauver-Harris Amendment. It added one extra kind of proof that drugmakers now had to give before selling a new pill. What extra proof did the new 1962 law require?",
+    "question": "John F. Kennedy honored Frances Kelsey in August 1962 for keeping thalidomide off American shelves, and within the year Congress passed the Kefauver-Harris Amendment. Until then a drugmaker had needed to show only that a new medicine was safe. What extra proof did the new law demand?",
     "answer": "Proof that it actually worked",
     "choices": [
       "Proof that it actually worked",
@@ -8086,21 +7995,8 @@
     "topic": "fda-drug-approval-peltzman-and-the-patients-who-die-waiting"
   },
   {
-    "tier": 2,
-    "question": "In 1962 the US Congress passed the Kefauver-Harris Amendment, forcing American drug companies to prove any new medicine was not just safe but also effective before it could be sold. It was hailed as pure public-health progress. A decade later the University of Chicago economist Sam Peltzman asked a question nobody in Washington had thought to ask -- what did the rule cost the patients waiting for new medicines? What did he find?",
-    "answer": "Far fewer new medicines reached patients after the law than before it",
-    "choices": [
-      "Far fewer new medicines reached patients after the law than before it",
-      "Roughly the same number of new medicines reached patients",
-      "Many more new medicines reached patients thanks to the new certainty",
-      "Medicine prices dropped sharply after the law"
-    ],
-    "context": "Sam Peltzman, 'An Evaluation of Consumer Protection Legislation: The 1962 Drug Amendments', Journal of Political Economy 81, no. 5 (September-October 1973). Peltzman took his Chicago PhD in 1965 and edited the JPE from 1974 to 1989. Stigler, Becker and Coase were Chicago colleagues working on regulation, human capital and social cost respectively. Sources: Wikipedia 'Sam Peltzman'; journals.uchicago.edu.",
-    "topic": "fda-drug-approval-peltzman-and-the-patients-who-die-waiting"
-  },
-  {
     "tier": 3,
-    "question": "The University of Chicago economist Sam Peltzman counted the brand-new medicines reaching the US market each year in the decades before and after the 1962 Kefauver-Harris Amendment, which forced drug companies to prove effectiveness, not just safety. Before 1962 the count ran about 40 new medicines a year. His statistical model said about 41 a year would have kept coming if the law had not changed the approval rules. What did the yearly count actually drop to after 1962?",
+    "question": "Sam Peltzman of the University of Chicago counted, in a study of 1973, the brand-new medicines reaching American patients each year, before and after the 1962 drug amendments. About forty a year had been arriving before the law, and his model said about forty-one a year would have kept coming if the old rules had stayed in force. What did the yearly count fall to instead?",
     "answer": "About 16",
     "choices": [
       "About 16",
@@ -8113,7 +8009,7 @@
   },
   {
     "tier": 3,
-    "question": "Sam Peltzman did not stop at counting. He set the gain from keeping useless medicines off the shelves against the loss from good ones that never arrived, then stated the net result in a form any shopper would recognise. What did he say the 1962 amendments came to?",
+    "question": "Sam Peltzman weighed the 1962 drug amendments in 1973: the gain from keeping worthless medicines off the shelves on one side, the harm from good ones delayed or never launched on the other. He stated the net result in a form any shopper would recognize. What did he say the amendments came to?",
     "answer": "A 5 to 10 percent tax on every prescription sold",
     "choices": [
       "A 5 to 10 percent tax on every prescription sold",
@@ -8126,7 +8022,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1970s the head of the US Food and Drug Administration, the agency that decides which drugs Americans can buy, made a sharp observation. When the FDA approves a drug and it later hurts patients, Congress holds angry hearings and blames the agency by name. But when the FDA delays a drug for years and sick people die quietly waiting, Congress never holds a single hearing. What incentive does this one-sided pressure give the agency?",
+    "question": "Alexander Schmidt, commissioner of the Food and Drug Administration in the 1970s, pointed out that no committee of Congress had ever looked into a drug his agency failed to approve, while hearings over drugs it did approve were too many to count. What incentive does that one-sided pressure give the agency?",
     "answer": "To be over-cautious and delay approving new medicines",
     "choices": [
       "To be over-cautious and delay approving new medicines",
@@ -8139,7 +8035,7 @@
   },
   {
     "tier": 4,
-    "question": "A regulator judging medicines can go wrong twice over: it can clear one that turns out to harm people, or it can hold back one that would have helped them. The first mistake produces a name, a face and a hearing. Alex Tabarrok of George Mason University argues the second produces something just as real, and he coined a phrase for where those people end up. What did he call it?",
+    "question": "Alex Tabarrok of George Mason University sorts a drug regulator's mistakes into two kinds. Approving a drug that harms people brings a name, a face and a hearing; blocking a drug that would have kept patients alive means they die of their disease, and their deaths pass as ordinary ones. Tabarrok coined a phrase for where those uncounted dead lie. What is it?",
     "answer": "The invisible graveyard",
     "choices": [
       "The invisible graveyard",
@@ -8152,7 +8048,7 @@
   },
   {
     "tier": 5,
-    "question": "A senator proposes making the Food and Drug Administration's review of new medicines much longer, so no unsafe drug ever reaches an American pharmacy. Two economists who study drug rules do not call the goal bad — but they put one question to the proposal. Which question?",
+    "question": "A senator proposes stretching the Food and Drug Administration's review of new medicines so that not one unsafe pill ever gets onto a pharmacy shelf. Sam Peltzman and Alex Tabarrok would not call safety a poor aim, but they put one question to the plan. Which question?",
     "answer": "What happens to the patients still waiting in the queue, and who is counting them?",
     "choices": [
       "What happens to the patients still waiting in the queue, and who is counting them?",
@@ -8165,7 +8061,7 @@
   },
   {
     "tier": 1,
-    "question": "During the Great Depression in the 1930s, American farmers were going broke because crop and meat prices had dropped very low. The US government tried to help by pushing farm prices back up. Its plan was to pay farmers to grow less food, plow up cotton fields, and even destroy some crops and animals on purpose. Why would growing less food on purpose push prices up?",
+    "question": "Franklin Roosevelt signed the Agricultural Adjustment Act in May 1933, in the worst stretch of the Depression, to push collapsed farm prices back up. Farmers were paid to let fields lie empty, plow under cotton already growing and slaughter animals. Why would growing less food on purpose push prices up?",
     "answer": "When there is less food to sell, buyers pay more for each piece",
     "choices": [
       "When there is less food to sell, buyers pay more for each piece",
@@ -8178,7 +8074,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1933, in the middle of the Great Depression, the US government paid American farmers to kill about six million young pigs and plow under acres of cotton fields — on purpose — to make food and clothes cost more for everyone else. The country was already poor and many people were struggling to eat. What does this pig-slaughter policy show about wrecking valuable goods to raise prices?",
+    "question": "Henry Wallace, Roosevelt's agriculture secretary, went on national radio to defend paying farmers to kill some six million pigs in the fall of 1933, many of them piglets, while city families struggled to afford a meal. What does the slaughter show about wrecking valuable goods to raise their price?",
     "answer": "Destroying useful things to make them scarce hurts hungry families the most",
     "choices": [
       "Destroying useful things to make them scarce hurts hungry families the most",
@@ -8191,20 +8087,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1933, during the worst years of the Great Depression, President Franklin Roosevelt's Agricultural Adjustment Act paid American farmers to kill baby pigs and plow their standing crops back into the ground. The idea was to shrink the food supply so prices would rise and farmers who were left would earn more. But America's cities were full of families who were already struggling to buy enough to eat. What did this policy do to those hungry families at the same time?",
-    "answer": "It made food more expensive for people who could barely afford it",
-    "choices": [
-      "It made food more expensive for people who could barely afford it",
-      "It made food cheaper as extra piglets flooded stores",
-      "It had no effect on food prices in the cities",
-      "It made bread free for city dwellers"
-    ],
-    "context": "Henry Wallace (Secretary of Agriculture 1933-40, Vice President 1941-45) had to publicly defend the pig-slaughter policy on national radio. He was booed at speeches and the AAA became a national embarrassment. Source: en.wikipedia.org/wiki/Henry_A._Wallace.",
-    "topic": "fdrs-agricultural-adjustment-act-1933-and-the-six-million-pi"
-  },
-  {
-    "tier": 2,
-    "question": "The French economist Frédéric Bastiat taught that every policy has a seen effect and an unseen effect, and the honest analyst has to name both. Applied to the 1933 New Deal pig slaughter — when the US government paid farmers to kill about six million young hogs on purpose to raise pork prices — the seen was the higher price the surviving hogs fetched, which helped some farmers' cash flow. What was the unseen part of the same policy?",
+    "question": "Frederic Bastiat told his readers to judge every policy by its hidden effect as well as its obvious one. When the United States government paid farmers in 1933 to kill about six million pigs to raise pork prices, the seen was the better price the surviving hogs fetched, a lift to some farmers' cash flow. What was the unseen?",
     "answer": "The food itself -- pork rendered into fertilizer while children in breadlines went hungry",
     "choices": [
       "The food itself -- pork rendered into fertilizer while children in breadlines went hungry",
@@ -8217,7 +8100,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 1936 the United States Supreme Court struck down the Agricultural Adjustment Act of 1933 — the New Deal law that had paid American farmers to grow less food and destroy livestock. The Court ruled that the way the law taxed food processors to fund those payments was an unconstitutional use of Congress's power to tax. What was the 1936 case called?",
+    "question": "The justices of the Supreme Court struck down the Agricultural Adjustment Act of 1933 in January 1936. They found that the tax on food processors which paid the farmers to grow less went beyond Congress's power to tax. What was the case called?",
     "answer": "United States v. Butler",
     "choices": [
       "United States v. Butler",
@@ -8230,7 +8113,7 @@
   },
   {
     "tier": 3,
-    "question": "During the Great Depression of the 1930s, President Franklin Roosevelt's New Deal paid American farmers to grow less food, and ordered factories under the National Industrial Recovery Act to raise wages and prices together. Decades later, the University of California, Los Angeles (UCLA) economists Harold Cole and Lee Ohanian ran the numbers and argued these steps actually made the Depression drag on for years longer than it needed to. Why?",
+    "question": "Harold Cole and Lee Ohanian, two economists from the University of California, Los Angeles, went back over the figures for Roosevelt's farm programs and the factory rules that raised wages and prices in step. They argued the measures kept the Depression going for years longer. Why, on their account?",
     "answer": "They raised the cost of food and goods when Americans already could not afford them",
     "choices": [
       "They raised the cost of food and goods when Americans already could not afford them",
@@ -8243,20 +8126,7 @@
   },
   {
     "tier": 4,
-    "question": "A government program raises milk prices a few cents for every family in the country. It hands the extra money to a smaller group of dairy farmers. Each family barely notices the pennies, but each farmer notices the check. What is this classic political-economy pattern called?",
-    "answer": "Dispersed costs, concentrated benefits",
-    "choices": [
-      "Dispersed costs, concentrated benefits",
-      "Rational apathy",
-      "Regulatory capture",
-      "The tragedy of the commons"
-    ],
-    "context": "Farm subsidy programs benefit a relatively small number of producers substantially while raising prices and taxes for everyone else diffusely. Olson's Logic of Collective Action theorized why the concentrated-benefit group organizes and the dispersed-cost group does not. Source: Olson, Logic of Collective Action (1965).",
-    "topic": "fdrs-agricultural-adjustment-act-1933-and-the-six-million-pi"
-  },
-  {
-    "tier": 4,
-    "question": "In the 1880s the Yale sociologist William Graham Sumner wrote a famous essay about a hidden pattern in politics. He said: imagine the government helps person A by taxing person B. Everyone talks about A and the politician who arranged the help. Nobody ever talks about person B, who quietly paid the bill and got nothing back. Sumner gave person B a memorable nickname. What did he call him?",
+    "question": "William Graham Sumner, who taught sociology at Yale, wrote in the 1880s about the person politics leaves out. When the state takes from one citizen to help another, everyone talks about the citizen helped and the politician who arranged it, while the one who paid and got nothing back drops from view. What did Sumner call him?",
     "answer": "The forgotten man",
     "choices": [
       "The forgotten man",
@@ -8269,7 +8139,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1933 President Franklin Roosevelt signed the Agricultural Adjustment Act as a 'temporary' program to help farmers survive the Great Depression. After a 1936 court defeat Congress simply rewrote it in 1938, and the farm programs never went away. Ninety years later, Congress still passes a giant farm bill every few years to keep the checks flowing. The economist Milton Friedman had a famous line about this pattern. What does the farm-bill story most often teach?",
+    "question": "Lawmakers rewrote the farm law in 1938 after the Supreme Court struck down the first version, and the farm bill Congress renews about every five years still rests on that 1938 law. Franklin Roosevelt had signed the original in 1933 as a stopgap for an emergency. Milton Friedman had a famous line about the pattern. What does the farm bill's story teach?",
     "answer": "Temporary government programs turn permanent once a group depends on the checks",
     "choices": [
       "Temporary government programs turn permanent once a group depends on the checks",
@@ -8282,7 +8152,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1933, US President Franklin D. Roosevelt signed an executive order telling Americans to hand in their gold coins and gold bars to the government. In exchange, people got paper dollars. It became illegal for a normal citizen to keep the gold. Why would a government want to sweep every citizen's gold into its own vaults?",
+    "question": "Franklin Roosevelt ordered Americans in April 1933 to hand in their gold coins, bars and certificates in exchange for paper dollars, and keeping a large stash of gold became a crime. Why would a government want every citizen's gold in its own vaults?",
     "answer": "With gold locked up, the government could print more paper money without limit",
     "choices": [
       "With gold locked up, the government could print more paper money without limit",
@@ -8295,7 +8165,7 @@
   },
   {
     "tier": 1,
-    "question": "In April 1933 President Franklin Roosevelt signed Executive Order 6102, which forced all Americans to hand in their gold coins, gold bars, and gold certificates to the federal government. The order was meant to stop 'hoarding' during the Great Depression. Those who refused and kept large gold holdings faced a serious punishment. What did they face?",
+    "question": "Franklin Roosevelt presented his gold order of April 5, 1933, Executive Order 6102, as a way to stop 'hoarding' in the Depression. It spared small holdings, a hundred dollars' worth of coins or less, and rare coins kept by collectors. Whoever held on to a large hoard faced a stiff punishment. What was it?",
     "answer": "A fine of up to $10,000 and up to 10 years in prison",
     "choices": [
       "A fine of up to $10,000 and up to 10 years in prison",
@@ -8308,7 +8178,7 @@
   },
   {
     "tier": 2,
-    "question": "In April 1933 President Franklin Roosevelt had ordered Americans to hand in their gold at the old official price of $20.67 per ounce. Less than a year later, on January 31, 1934, Roosevelt signed a proclamation under the newly-passed Gold Reserve Act that reset the official gold price at a much higher figure. What was the new official rate?",
+    "question": "Franklin Roosevelt fixed a new official price for gold on January 31, 1934, in a proclamation under the Gold Reserve Act passed the day before. Less than a year earlier he had ordered Americans to hand in their gold at the old official price of $20.67 an ounce. What was the new price?",
     "answer": "$35.00 per troy ounce",
     "choices": [
       "$35.00 per troy ounce",
@@ -8321,7 +8191,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 1934 the US Congress passed the Gold Reserve Act, and President Franklin Roosevelt signed a proclamation cutting the dollar's fixed weight in gold from about 23.22 grains down to 13.71 grains — nearly in half. Millions of Americans still held dollars in their pockets and bank accounts from before the change. In simple terms, what did the rewrite do to every one of those dollars overnight?",
+    "question": "Franklin Roosevelt put his name to the Gold Reserve Act on January 30, 1934, and a day later he shrank each dollar's backing from about 23.22 grains of gold to 13.71. Millions of Americans still held dollars from before the change, in pockets and bank accounts. What did the change do to each of those dollars?",
     "answer": "It made each dollar worth less in gold overnight",
     "choices": [
       "It made each dollar worth less in gold overnight",
@@ -8334,7 +8204,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 1934 President Franklin Roosevelt used the new Gold Reserve Act to cut the dollar's official gold weight nearly in half. Because the government had just seized private gold at the old price of $20.67 an ounce, and then set the new price at $35 an ounce, wealth shifted from ordinary savers who had been holding the metal to the US Treasury. About how much of those savers' buying power was moved?",
+    "question": "A saver who had obeyed Roosevelt's gold order in 1933 was paid $20.67 an ounce in paper dollars. Within a year the government had cut the dollar's gold content nearly in half, and a slice of that saver's wealth passed to the Treasury, with no way to buy the gold back at the old price. Roughly how big was that slice?",
     "answer": "Roughly 40% of the purchasing power of savers who had held gold",
     "choices": [
       "Roughly 40% of the purchasing power of savers who had held gold",
@@ -8347,7 +8217,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1933 and 1934 the US government took away private citizens' gold and then lowered the dollar's value against gold. Many contracts had promised payment \"in gold.\" In 1935 the Supreme Court, by one vote, refused savers any damages for those broken promises. What did this ruling mean for savers?",
+    "question": "Five of the nine Supreme Court justices ruled in 1935, in the Gold Clause Cases, that holders of bonds promising payment in gold could collect no damages, after Roosevelt had taken the metal and cut the dollar's gold value. Cancelling those promises, the Court said, was a breach of the Constitution where the government's own bonds were concerned. What did the ruling mean for savers?",
     "answer": "The government could reduce the real value of what it and others owed them",
     "choices": [
       "The government could reduce the real value of what it and others owed them",
@@ -8360,7 +8230,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1933, in the depths of the Great Depression, President Franklin Roosevelt signed Executive Order 6102 making it illegal for private American citizens to own gold coins, bullion, or gold certificates. The ban stayed on the books for four decades, blocking ordinary Americans from holding real gold as savings. When was it finally repealed?",
+    "question": "Congress at last lifted the ban on owning gold that Franklin Roosevelt had imposed on Americans in 1933, more than four decades after he signed it. The ban had blocked ordinary Americans from holding real gold as savings. When did the ban end, and under which president?",
     "answer": "December 31 1974, under President Gerald Ford",
     "choices": [
       "December 31 1974, under President Gerald Ford",
@@ -8373,7 +8243,7 @@
   },
   {
     "tier": 4,
-    "question": "After President Franklin Roosevelt's 1933 Executive Order 6102 seized Americans' privately held gold, the federal government suddenly held massive amounts of bullion and needed a hardened place to keep it. In 1936 the US Treasury built a specific new fortress vault in Kentucky, on an Army base, for exactly that purpose. What is that facility called?",
+    "question": "The Treasury finished a fortress at an Army base in Kentucky in 1936 for the gold Americans had handed in after Roosevelt's order of 1933. The fortress still keeps the greater part of the nation's official gold. What is it called?",
     "answer": "The Fort Knox Bullion Depository",
     "choices": [
       "The Fort Knox Bullion Depository",
@@ -8386,7 +8256,7 @@
   },
   {
     "tier": 5,
-    "question": "The French economist Frederic Bastiat taught readers to ask, for every policy, what is seen and what is unseen. Apply his lens to the 1933-34 gold episode: President Franklin Roosevelt's Executive Order 6102 seized Americans' gold at $20.67 an ounce, and his 1934 Gold Reserve Act then repriced gold at $35 an ounce. Which seen-and-unseen pairing best captures the structure of that combined seizure-and-devaluation?",
+    "question": "Frederic Bastiat taught readers to ask of every policy what is seen and what is unseen. Franklin Roosevelt's order of 1933 took Americans' gold at $20.67 an ounce, and his Gold Reserve Act of 1934 then repriced it far higher. Which pairing of seen and unseen fits the seizure and devaluation together?",
     "answer": "Seen: strengthening the banking system by preventing gold hoarding; Unseen: American middle-class savers who had prudently held gold were transferred wealth to the US Treasury via the devaluation",
     "choices": [
       "Seen: strengthening the banking system by preventing gold hoarding; Unseen: American middle-class savers who had prudently held gold were transferred wealth to the US Treasury via the devaluation",
@@ -8399,7 +8269,7 @@
   },
   {
     "tier": 5,
-    "question": "In April 1933, President Franklin Roosevelt signed Executive Order 6102. It ordered Americans to hand over their gold coins and bullion to the government at $20.67 an ounce, and made private gold hoarding a federal crime punishable by prison. Once the metal was locked in Treasury vaults, the government revalued gold to $35 an ounce, wiping out a big chunk of every dollar's purchasing power overnight. What lasting recognition move does this 1933 seizure teach about state power over privately-held bullion?",
+    "question": "John Law reached for a tool in France in 1720 that Franklin Roosevelt took up again in 1933. Roosevelt made it a federal crime to keep a large stash of gold, collected the coins and bullion at $20.67 an ounce, and then revalued gold far higher once it sat in Treasury vaults. What lasting lesson do Austrian economists draw from the episode?",
     "answer": "A determined state can criminalize private holding of hard money, seize existing holdings, and then devalue the currency at the new prices -- and this pattern has been used repeatedly across modern history",
     "choices": [
       "A determined state can criminalize private holding of hard money, seize existing holdings, and then devalue the currency at the new prices -- and this pattern has been used repeatedly across modern history",
@@ -8412,7 +8282,7 @@
   },
   {
     "tier": 1,
-    "question": "During World War II, the US Federal Reserve -- America's central bank -- kept the government's borrowing costs artificially low. To do it the Fed bought huge amounts of government war bonds, essentially printing new dollars to lend to Washington. When the war ended in 1945, all those new dollars were still sitting in the American economy. What did that cause once wartime price controls came off?",
+    "question": "The Federal Reserve bought another batch of government bonds to hold Washington's borrowing costs down, as it did all through the Second World War, in effect printing fresh dollars for the Treasury. That money was all still circulating when the war ended in 1945 and when the price controls came off. What followed?",
     "answer": "Rising prices as too much new money chased the same amount of goods",
     "choices": [
       "Rising prices as too much new money chased the same amount of goods",
@@ -8425,7 +8295,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1950s the head of America's central bank, William McChesney Martin, gave a famous speech about the Federal Reserve's job. He said the Fed's role was to 'take away the punch bowl just as the party gets going.' The punch bowl was his image for the cheap credit and loose cash that make an economic party feel lively. What did Martin mean?",
+    "question": "A roomful of New York investment bankers heard William McChesney Martin, chairman of the Federal Reserve, sum up his job in October 1955: the Fed has to end the drinking just as a party warms up. In his image the drink was the cheap credit and loose cash that make an economic party feel lively. What did he mean?",
     "answer": "The Fed should slow the flow of easy money before the boom turns into a crash",
     "choices": [
       "The Fed should slow the flow of easy money before the boom turns into a crash",
@@ -8438,7 +8308,7 @@
   },
   {
     "tier": 2,
-    "question": "In April 1951 President Harry Truman needed a new Federal Reserve chairman. He picked William McChesney Martin, expecting Martin would be a loyal ally to the White House. There was an ironic twist: Martin had just spent months at the negotiating table hammering out the Fed-Treasury Accord -- the deal that finally freed the Fed from taking orders from Treasury. Martin had argued hard for one specific side of that Accord. Which side had he been on?",
+    "question": "Harry Truman picked William McChesney Martin to chair the Federal Reserve in April 1951, expecting a loyal ally. Martin had just helped negotiate the Accord of March 4, 1951, which restored the Fed's freedom to set its own interest rates, and he had argued one side at that table. Which side?",
     "answer": "The Treasury side",
     "choices": [
       "The Treasury side",
@@ -8451,7 +8321,7 @@
   },
   {
     "tier": 2,
-    "question": "On an October evening in 1955, Federal Reserve chairman William McChesney Martin stood in front of the New York Group of the Investment Bankers Association and reached for a memorable image to describe what the Fed does when the economy runs hot. His line became one of the most quoted metaphors in central banking history and shaped his career. Martin said the Fed's role was to be a specific figure at a party. Which figure?",
+    "question": "William McChesney Martin addressed the New York Group of the Investment Bankers Association on an October evening in 1955, reaching for an image of what the Fed does when the economy runs hot. The line he found became one of the most quoted in central banking: the Fed, he said, was like a certain figure at a party. Which figure?",
     "answer": "The chaperone who has ordered the punch bowl removed just when the party was really warming up",
     "choices": [
       "The chaperone who has ordered the punch bowl removed just when the party was really warming up",
@@ -8464,20 +8334,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1955 the Federal Reserve chairman William McChesney Martin Jr. told a room of bankers that the Fed's job was to 'take away the punchbowl just as the party gets going' — meaning raise interest rates to cool an overheating boom before inflation broke out. The line was so vivid that financial journalism turned it into shorthand for a specific Fed function. What function does 'take away the punchbowl' name?",
-    "answer": "Restrictive monetary policy imposed against political pressure during an economic boom",
-    "choices": [
-      "Restrictive monetary policy imposed against political pressure during an economic boom",
-      "Rate cuts that stimulate the economy during a recession",
-      "Emergency lending to specific failing banks",
-      "Coordinated policy with foreign central banks during a currency crisis"
-    ],
-    "context": "'Take away the punchbowl' means: raise rates when everyone wants easy money because the party is fun. It captures the political-economy tension every anti-inflationary Fed chair faces. Source: Grokipedia 'William McChesney Martin' (2026-09-05).",
-    "topic": "fed-treasury-accord-and-william-mcchesney-martins-punchbowl"
-  },
-  {
-    "tier": 3,
-    "question": "William McChesney Martin was the longest-serving chairman of the US Federal Reserve, running the central bank for nearly 19 years from 1951 to 1970. During that stretch he answered to five different American presidents in a row. Which sequence of five presidents covers his full tenure at the Fed?",
+    "question": "William McChesney Martin stepped down as chairman of the Federal Reserve in 1970 after almost nineteen years, a longer run than anyone else has had in the job. He had taken over in 1951, the year of the Fed's accord with the Treasury. Which five presidents, in order, did he serve under?",
     "answer": "Truman, Eisenhower, Kennedy, Johnson, and Nixon",
     "choices": [
       "Truman, Eisenhower, Kennedy, Johnson, and Nixon",
@@ -8490,7 +8347,7 @@
   },
   {
     "tier": 4,
-    "question": "William McChesney Martin Jr. led the Federal Reserve as chairman from 1951 to 1970 — the longest run in Fed history. His father, William McChesney Martin Sr., had already held a specific earlier position inside the Federal Reserve System, making the Martins one of very few father-son central-banker pairs in US history. What was the father's role?",
+    "question": "William McChesney Martin took charge of the Federal Reserve in 1951, thirty-seven years after his namesake father had taken a post in it on the day it opened in 1914. What was the father's post?",
     "answer": "First governor of the Federal Reserve Bank of St. Louis",
     "choices": [
       "First governor of the Federal Reserve Bank of St. Louis",
@@ -8503,7 +8360,7 @@
   },
   {
     "tier": 4,
-    "question": "Imagine a country that fights an expensive foreign war and launches big new welfare programs at the same time -- the way the United States did in the late 1960s under President Lyndon Johnson, funding both the Vietnam War and the Great Society. The government does not raise taxes to cover either bill. The central bank keeps interest rates low so the government's borrowing stays cheap. What does the country tend to get a few years later?",
+    "question": "Lyndon Johnson funded both the war in Vietnam and his Great Society programs in the late 1960s, and he raised no taxes to pay for either. The Federal Reserve held interest rates down so Washington could borrow cheaply. What does such a mix of unfunded spending and cheap money tend to bring a few years later?",
     "answer": "High inflation",
     "choices": [
       "High inflation",
@@ -8516,7 +8373,7 @@
   },
   {
     "tier": 5,
-    "question": "During World War II the US Treasury needed cheap money to fund the war, so the Federal Reserve agreed to hold interest rates artificially low by buying whatever government bonds were needed. That arrangement only ended with the 1951 Fed-Treasury Accord, which restored the Federal Reserve's power to set interest rates on its own. What lesson does the episode teach about wartime finance and central-bank independence?",
+    "question": "Negotiators for the Treasury and the Federal Reserve reached an accord on March 4, 1951, ending the arrangement that had kept interest rates pinned low for Washington's borrowing. The central bank had spent the war buying government bonds to hold rates down, and it kept serving the Treasury's borrowing for years after. What lesson does the episode teach about wartime finance and a central bank's independence?",
     "answer": "During wars central banks lose their independence to fiscal financing; the reassertion of independence afterward is a political fight that must be won explicitly, not assumed",
     "choices": [
       "During wars central banks lose their independence to fiscal financing; the reassertion of independence afterward is a political fight that must be won explicitly, not assumed",
@@ -8529,7 +8386,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1955 the Federal Reserve chairman William McChesney Martin Jr. gave a famous speech saying the Fed's job is to 'take away the punchbowl just as the party gets going' — meaning it must raise interest rates and slow the economy right when Americans are enjoying the boom the most. What point does that image press about how central banks fight inflation?",
+    "question": "A central banker who raises rates to cool a boom, William McChesney Martin told bankers in 1955, is like someone taking the drink away from a party just as it gets lively. Financial writers turned the line into shorthand for tight money in a boom. What point does the image press about fighting inflation?",
     "answer": "The Fed's most important tightening decisions are always politically unpopular precisely because they arrive just when everyone is enjoying the boom",
     "choices": [
       "The Fed's most important tightening decisions are always politically unpopular precisely because they arrive just when everyone is enjoying the boom",
@@ -8542,85 +8399,20 @@
   },
   {
     "tier": 1,
-    "question": "In 1958 the American economist Leonard Read wrote a famous short essay called 'I, Pencil,' told from the point of view of a simple yellow pencil. Read argued that no single person on Earth knows how to make a pencil from scratch. The wood, graphite, rubber eraser, metal band, and yellow paint all come from different countries and thousands of different workers who have never met. What does Read say the pencil's story teaches?",
-    "answer": "A free market coordinates millions of people without any central planner",
+    "question": "Leonard Read wrote an essay in 1958 in the voice of a yellow pencil, whose cedar, graphite, rubber and brass come from different countries. The pencil brags that no one on earth knows how to make it, and Milton Friedman retold its story on his television program Free to Choose. What does the essay teach about a market economy?",
+    "answer": "Millions of people cooperate through prices without any single planner in charge",
     "choices": [
-      "A free market coordinates millions of people without any central planner",
-      "One factory in the US makes every pencil in the world",
-      "Pencils are a government-run product",
-      "Making a pencil is the simplest job in the world"
+      "Pencils are so simple that anyone could make one alone",
+      "Millions of people cooperate through prices without any single planner in charge",
+      "Only a central planner could organize something as complex as a pencil",
+      "Modern factories have made all the older skills useless"
     ],
     "context": "Leonard E. Read (1898-1983) founded the Foundation for Economic Education in March 1946 as the first American institutional home of the classical-liberal reading tradition. Source: grokipedia.com/page/Foundation_for_Economic_Education.",
     "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
   },
   {
-    "tier": 2,
-    "question": "In 1850 the French economist Frederic Bastiat wrote a short book called The Law, published only months before his death. Bastiat argued that when governments take property from one group of citizens and hand it to another group, they betray their proper role and become an instrument of legal plunder dressed up in official paper. What did Bastiat say the law should do instead?",
-    "answer": "Protect every person's life, freedom, and honestly-earned property",
-    "choices": [
-      "Protect every person's life, freedom, and honestly-earned property",
-      "Distribute all property equally among the citizens",
-      "Set the price of every good sold in the country",
-      "Choose which jobs each citizen must do"
-    ],
-    "context": "La Loi (1850) as The Law, translated by Dean Russell, was the 1950 FEE edition that reintroduced Bastiat to English-language American readers. Source: fee.org/resources/the-law.",
-    "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
-  },
-  {
-    "tier": 2,
-    "question": "Think of a simple yellow pencil. To make one, someone chops wood in Oregon, someone mines graphite, someone taps rubber trees for an eraser, someone smelts brass. Not a single person on Earth knows how to do all those jobs. What does this story teach?",
-    "answer": "No one person could plan the whole economy",
-    "choices": [
-      "No one person could plan the whole economy",
-      "Pencils should cost much more than they do",
-      "Only huge companies can make simple things",
-      "Governments make the best pencils"
-    ],
-    "context": "'I, Pencil' has an ordinary pencil describe the millions of coordinated market actions -- lumbering, mining graphite, refining rubber, mining zinc for brass ferrules -- required to make it, illustrating that no single actor holds the whole recipe. Source: fee.org/resources/i-pencil.",
-    "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
-  },
-  {
-    "tier": 3,
-    "question": "A famous essay pointed out that not one single person on earth knows how to make a common wooden pencil from scratch. The wood, the graphite, the rubber, the paint, and the metal band all come from different places and people. What is the essay teaching about a market economy?",
-    "answer": "Millions of people cooperate through prices without any single planner in charge",
-    "choices": [
-      "Millions of people cooperate through prices without any single planner in charge",
-      "Pencils are so simple that anyone could make one alone",
-      "Only a central planner could organize something as complex as a pencil",
-      "Modern factories have made all the older skills useless"
-    ],
-    "context": "Free to Choose (PBS, 1980), hosted by Milton and Rose Friedman, built its second episode around 'I, Pencil'. Source: grokipedia.com/page/Free_to_Choose.",
-    "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
-  },
-  {
-    "tier": 3,
-    "question": "In an 1850 essay called 'That Which Is Seen, and That Which Is Not Seen,' the French economist Frederic Bastiat told a small story that would echo through economics for two hundred years. A boy throws a rock and breaks a shopkeeper's window. Neighbors gather and shrug -- 'at least the glass-maker will get work now.' Bastiat said the neighbors had made a huge mistake in their reasoning. What were they failing to see?",
-    "answer": "The money the shopkeeper spends on a window can no longer buy the shoes he had planned for",
-    "choices": [
-      "The money the shopkeeper spends on a window can no longer buy the shoes he had planned for",
-      "The glass-maker was going to lose his job anyway",
-      "The window was already broken by the wind, not the boy",
-      "The shopkeeper had too many windows already"
-    ],
-    "context": "George B. de Huszar's 1964 FEE edition of Bastiat's Selected Essays on Political Economy became a standard American teaching text. Source: fee.org.",
-    "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
-  },
-  {
-    "tier": 4,
-    "question": "In 1946 the American journalist Henry Hazlitt published a short book called Economics in One Lesson. Hazlitt boiled the whole field down to a single rule he borrowed from the 19th-century French economist Frederic Bastiat. Every good economist, Hazlitt said, must follow this one rule when judging any policy. What is the rule?",
-    "answer": "Look at both the seen and the unseen effects of any policy",
-    "choices": [
-      "Look at both the seen and the unseen effects of any policy",
-      "Trust the government to set the right minimum wage",
-      "Print more money whenever people are out of work",
-      "Always tax imports to protect local jobs"
-    ],
-    "context": "Hazlitt's Economics in One Lesson (Harper, 1946) was published the same year as FEE's founding and became the paired popular introduction to the tradition. Source: grokipedia.com/page/Economics_in_One_Lesson.",
-    "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
-  },
-  {
     "tier": 5,
-    "question": "The Austrian economist Friedrich Hayek argued in his 1949 essay 'The Intellectuals and Socialism' that ordinary campaigning rarely changes a country's direction for long. What really matters, Hayek said, is what teachers, journalists, and writers accept as everyday background assumption — because politicians eventually follow that consensus. Free-market think tanks, magazines, and student reading programs try to do something ordinary campaigning cannot. What is it?",
+    "question": "Friedrich Hayek argued in his essay of 1949, 'The Intellectuals and Socialism,' that elections matter less to where a country goes than the ideas its teachers, journalists and writers take in and hand on, since politicians follow them in the end. Leonard Read's foundation and other free-market think tanks, magazines and student reading programs try to do something no campaign can. What is it?",
     "answer": "Slowly change what people take for common sense about how the economy works",
     "choices": [
       "Slowly change what people take for common sense about how the economy works",
@@ -8633,7 +8425,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1959 a young rebel named Fidel Castro marched into Havana and took control of Cuba. Once in power, he seized private farms, factories, and shops and put the government in charge of the whole economy -- deciding what got produced, who worked where, and who got paid. What is the system called where the government owns everything?",
+    "question": "Fidel Castro led his rebel army into Havana on January 1, 1959, and took power in Cuba. He seized the island's farms, factories and shops, and his government began to decide what got made, who worked where and who was paid what. What is a system called where the ruling party controls the whole economy?",
     "answer": "Communism",
     "choices": [
       "Communism",
@@ -8646,7 +8438,7 @@
   },
   {
     "tier": 1,
-    "question": "In April 1980, six Cubans stole a city bus and crashed it through the iron fence of a foreign embassy in Havana, the capital of communist Cuba. They were begging for asylum from Fidel Castro's government. Furious, Castro pulled the Cuban police guarding the embassy -- and within 48 hours more than 10,000 desperate Cubans poured onto the embassy grounds asking to leave the country. Which foreign embassy was it?",
+    "question": "Six Cubans crashed a stolen city bus through an embassy gate in Havana in April 1980 and asked for asylum. Fidel Castro, furious, pulled the police guard off the gate, and in two days about 10,800 people had packed the grounds asking to get out of Cuba. Which embassy was it?",
     "answer": "The Peruvian embassy",
     "choices": [
       "The Peruvian embassy",
@@ -8659,7 +8451,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1980 the leader of a poor communist country briefly opened a harbor and told all who wanted to leave that they could sail to a nearby free country. Boats packed with families crossed the sea. What does this kind of mass escape tell you about that country's system?",
+    "question": "Fidel Castro told Cubans in 1980 that whoever wished to leave might sail from the harbor at Mariel. From April to October families packed into boats and crossed to Florida. What does a mass flight like that say about the system people were leaving?",
     "answer": "People were fleeing a system that had failed them",
     "choices": [
       "People were fleeing a system that had failed them",
@@ -8672,7 +8464,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1980 the Cuban dictator Fidel Castro briefly opened the port of Mariel and told those unhappy with communist Cuba they could leave. From April to October that year, ordinary Cubans crowded onto boats and sailed north to Florida in what became known as the Mariel boatlift. About how many Cubans made it across?",
+    "question": "A Cuban family crowded into a boat at the port of Mariel in 1980 and crossed to Florida, one of many that sailed between April and October after Fidel Castro told the unhappy they were free to go. His government sent convicts and mental patients along with them to embarrass the United States. About how many Cubans made the crossing?",
     "answer": "About 125,000",
     "choices": [
       "About 125,000",
@@ -8685,20 +8477,7 @@
   },
   {
     "tier": 3,
-    "question": "After the Soviet Union collapsed in 1991, its huge subsidies of oil, food, and money to Cuba dried up almost overnight. Cuban dictator Fidel Castro's centrally-planned economy was left with almost no fuel, spare parts, or fertilizer. Cubans lost weight, blackouts became routine, and children were pulled from school to work fields with oxen. The Cuban government gave this long crisis a strangely soft-sounding official name. What was that name?",
-    "answer": "The Special Period",
-    "choices": [
-      "The Special Period",
-      "The Ration Years",
-      "The Blockade Era",
-      "The Second Revolution"
-    ],
-    "context": "The 'Special Period in Time of Peace' (1990-95) saw Cuban GDP fall about 35 percent in three years and average daily calorie intake fall from ~2,900 to ~1,800. Source: en.wikipedia.org/wiki/Special_Period.",
-    "topic": "fidel-castros-cuba-1959-2016-exit-as-verdict"
-  },
-  {
-    "tier": 3,
-    "question": "During the summer of 1994, at the worst weeks of Cuba's post-Soviet economic slump under Fidel Castro, tens of thousands of desperate Cubans lashed together rafts from old truck tires, wooden pallets, and inner tubes. They pushed off from the beaches around Havana and tried to cross ninety miles of shark-filled ocean water to Florida. Cubans called them balseros, or rafters. What does this desperate exodus tell you about how bad the shortages had become?",
+    "question": "A family on a beach near Havana lashed a raft together from inner tubes, truck tires and wooden pallets in mid-1994 and pushed off for Florida, ninety miles away across waters full of sharks. Some 35,000 of the balseros, as the rafters were called, made it across in six weeks. What does their flight say about the shortages at the depth of Cuba's post-Soviet slump?",
     "answer": "The shortages were so severe that people risked their lives on the open sea to leave",
     "choices": [
       "The shortages were so severe that people risked their lives on the open sea to leave",
@@ -8711,7 +8490,7 @@
   },
   {
     "tier": 3,
-    "question": "Armando Valladares was a young Cuban poet who refused to put a communist slogan on his desk at work. For that, Fidel Castro's government locked him away for 22 years. After his release he wrote a book called Against All Hope about what he had endured inside Cuba's prisons. Why did his book change many people's minds about Castro's government?",
+    "question": "Armando Valladares, a young poet, refused to display a pro-Castro sign at his desk, and Fidel Castro's government jailed him in 1960. Valladares came out twenty-two years later, freed in 1982 under pressure from France, and wrote a memoir of Castro's prisons, Against All Hope. Why did the book change many minds abroad?",
     "answer": "It gave first-hand proof from someone who lived through it",
     "choices": [
       "It gave first-hand proof from someone who lived through it",
@@ -8724,7 +8503,7 @@
   },
   {
     "tier": 4,
-    "question": "A country's new revolutionary government takes over all the big farms and factories. It puts a young fighter with no business or economics training in charge of the national bank. What tends to happen to the country's main crop output over the next few years?",
+    "question": "Fidel Castro put Ernesto 'Che' Guevara, a guerrilla fighter who had never studied economics or business, in charge of Cuba's National Bank in 1959 and then of its Ministry of Industry. What tends to happen to the main crop when plantations are seized and untrained commanders run the economy?",
     "answer": "It collapses",
     "choices": [
       "It collapses",
@@ -8737,7 +8516,7 @@
   },
   {
     "tier": 4,
-    "question": "After Fidel Castro's 1959 communist revolution seized businesses and farms across Cuba, waves of Cubans fled the island — first the middle class, then the 1980 Mariel boatlift, then the 1994 rafter crisis. By 2016 the number of Cubans living outside Cuba, plus their US-born children, had grown very large. Cuba itself has about 11 million people. What fraction of that number is the diaspora abroad?",
+    "question": "Fidel Castro took Havana in 1959, and by his death in 2016 Cubans had left in wave after wave: the middle class first, then the Mariel boatlift of 1980, then the rafters of 1994. By then the island held about eleven million people. What share of that number did the Cubans abroad, with their American-born children, come to?",
     "answer": "About a seventh (1.5 million)",
     "choices": [
       "About a seventh (1.5 million)",
@@ -8749,21 +8528,8 @@
     "topic": "fidel-castros-cuba-1959-2016-exit-as-verdict"
   },
   {
-    "tier": 5,
-    "question": "When the Soviet Union collapsed in December 1991, Cuba lost the enormous subsidies and cheap Soviet oil that had propped up its planned economy since the 1960s. Blackouts became routine, buses stopped running, and Cubans lost an average of twenty pounds each from food shortages. The government still insisted Cuba was a workers' paradise. Fidel Castro gave this long decade of hunger and rationing a strangely soft-sounding official name. What did he call it?",
-    "answer": "The Special Period",
-    "choices": [
-      "The Special Period",
-      "The Great Leap",
-      "The Rectification",
-      "The Struggle"
-    ],
-    "context": "Fidel Castro died November 25, 2016 at age 90. Raul Castro remained head of state until 2018 and party first secretary until 2021. Source: en.wikipedia.org/wiki/Fidel_Castro.",
-    "topic": "fidel-castros-cuba-1959-2016-exit-as-verdict"
-  },
-  {
     "tier": 1,
-    "question": "In January 2009, after the 2008 financial crisis had thrown millions of Americans out of work, President Barack Obama's incoming economists Christina Romer and Jared Bernstein published a memo. It promised that if Congress passed a $787 billion stimulus law, US joblessness would stay below a specific rate. What rate did the memo predict?",
+    "question": "Christina Romer and Jared Bernstein, two of Barack Obama's incoming economists, put out a memo in January 2009 on the $787 billion stimulus Congress was weighing. They forecast how high unemployment would climb with the stimulus in place. Below what rate did the memo say it would peak?",
     "answer": "Below 8 percent",
     "choices": [
       "Below 8 percent",
@@ -8776,7 +8542,7 @@
   },
   {
     "tier": 1,
-    "question": "In January 2009 President Barack Obama's economists Christina Romer and Jared Bernstein predicted that if Congress passed the $787 billion stimulus law, the US jobless rate would stay under 8 percent. Congress passed the law that February. The jobless rate rose past 10 percent instead and stayed high for years. What is one honest lesson a kid should draw from that gap?",
+    "question": "Lawmakers passed the $787 billion stimulus in February 2009, after Barack Obama's economists Christina Romer and Jared Bernstein had forecast how far joblessness would climb with it in place. Joblessness climbed past the forecast anyway and stayed high for years. What lesson does the gap teach?",
     "answer": "Even smart experts often cannot predict what a whole economy will do",
     "choices": [
       "Even smart experts often cannot predict what a whole economy will do",
@@ -8789,7 +8555,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2009, in the middle of the Great Recession, President Barack Obama's economic advisers -- led by Christina Romer -- told the country that every $1 the government spent through the new stimulus law would grow the economy by about $1.55. Later independent studies found the real payoff was often less than $1, meaning each dollar spent added less than a dollar of output. What does that gap tell us about the original White House predictions?",
+    "question": "Christina Romer's team assumed in 2009 that each dollar of stimulus would add about $1.55 to the economy as it moved from hand to hand. Later independent studies often found a smaller payoff than that. What does the gap say about the White House predictions?",
     "answer": "They were often too optimistic",
     "choices": [
       "They were often too optimistic",
@@ -8801,21 +8567,8 @@
     "topic": "fiscal-stimulus-and-the-multiplier-the-private-investment-cr"
   },
   {
-    "tier": 2,
-    "question": "The American economist Valerie Ramey studied enormous bursts of US federal spending during World War II and the Korean War, then measured what happens in ordinary peacetime. She found that in normal peacetime, every extra dollar the federal government spent produced less than a full dollar of new economic activity. What does that hint about ordinary federal spending?",
-    "answer": "Government spending often does not pay for itself",
-    "choices": [
-      "Government spending often does not pay for itself",
-      "Every dollar spent triples the economy",
-      "Only wartime spending is ever wasted",
-      "Peacetime spending always doubles wealth"
-    ],
-    "context": "Barro's estimate below 1 means: for every additional dollar of federal spending, private spending falls by MORE than the injected dollar, and total output rises by less than the dollar spent -- a net loss. Source: mercatus.org/publications/government-spending.",
-    "topic": "fiscal-stimulus-and-the-multiplier-the-private-investment-cr"
-  },
-  {
     "tier": 3,
-    "question": "The 19th-century French economist Frederic Bastiat taught readers to always ask a stubborn question: 'That dollar the government just spent -- where did it come from?' Any claim that government spending magically grows the economy by more than the dollar spent has to answer that question honestly. Bastiat's method names exactly three possible sources for a stimulus dollar. Which triple is the correct list?",
+    "question": "Frederic Bastiat asked the same thing of every dollar a government spends: where did it come from? Anyone who claims that public spending grows the economy by more than it spends has to answer him honestly, and Bastiat's method allows only three answers. Which three?",
     "answer": "Taxed from a household, borrowed from a lender, or printed by the central bank",
     "choices": [
       "Taxed from a household, borrowed from a lender, or printed by the central bank",
@@ -8827,8 +8580,8 @@
     "topic": "fiscal-stimulus-and-the-multiplier-the-private-investment-cr"
   },
   {
-    "tier": 3,
-    "question": "The American economist Valerie Ramey studied how much the US economy actually grows when the federal government spends one additional dollar in peacetime — on offices, gear, and salaries. Economists call that ratio the 'spending multiplier.' On average, across her peacetime data, how much did the economy grow for each added dollar of federal spending?",
+    "tier": 2,
+    "question": "Valerie Ramey looked at the giant jumps in federal spending during the Korean War and the Second World War, then measured what an added federal dollar did in ordinary peacetime, on offices, gear and salaries. On average, how much extra economic activity did each added dollar bring in normal times?",
     "answer": "Less than one extra dollar",
     "choices": [
       "Less than one extra dollar",
@@ -8841,7 +8594,7 @@
   },
   {
     "tier": 4,
-    "question": "A town has a limited pool of savings that people are willing to lend. When the town government borrows a big chunk to build a new stadium, less is left for local shops and families to borrow. What is the standard name for private borrowers being pushed aside by heavy government borrowing?",
+    "question": "A town council borrows a big share of the local savings pool to build a new stadium, and less is left over for shops and families who want loans. What is it called when heavy government borrowing pushes private borrowers aside like this?",
     "answer": "Crowding-out",
     "choices": [
       "Crowding-out",
@@ -8854,7 +8607,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2010, four American economists -- John Cogan, Tobias Cwik, John Taylor, and Volker Wieland -- published a paper in the Journal of Economic Dynamics and Control. They redid the Obama team's 2009 stimulus calculation but added standard real-world drag effects -- higher taxes later, private investment crowded out by government borrowing -- to the original 1.55 payoff model. What much smaller payoff number did their adjusted models produce?",
+    "question": "John Taylor and three colleagues reran Christina Romer's 2009 stimulus model in 2010, starting from its payoff of $1.55 per dollar and adding a drag real economies carry: taxes that rise later to pay the bill. What much smaller payoff did their adjusted models give?",
     "answer": "About 0.6-0.7",
     "choices": [
       "About 0.6-0.7",
@@ -8867,7 +8620,7 @@
   },
   {
     "tier": 5,
-    "question": "A town's mayor stands on the courthouse steps and announces, 'We will build a beautiful new bridge and put many good people to work!' A critic in the tradition of the 19th-century French economist Frederic Bastiat asks the same skeptical question every single time: before the bridge is built, before the first paycheck goes out, where does the money come from? What is the honest one-line answer to that question?",
+    "question": "A mayor stands on the courthouse steps and promises the town a handsome new bridge and many good jobs. A critic in Frederic Bastiat's line puts one question to him before the first paycheck goes out: where does the money come from? What is the honest one-line answer?",
     "answer": "Public works mean taxes on the people who would have spent that money elsewhere",
     "choices": [
       "Public works mean taxes on the people who would have spent that money elsewhere",
@@ -8880,7 +8633,7 @@
   },
   {
     "tier": 5,
-    "question": "The Bastiat objection to Keynesian public-works spending had a precedent in a 1932 letter to a British newspaper co-signed by four economists including F.A. Hayek, warning against Keynes-style deficit spending as a cure for the Depression. Which newspaper carried the letter?",
+    "question": "Friedrich Hayek and three colleagues from the London School of Economics, Lionel Robbins and Arnold Plant among them, warned on October 19, 1932 that Keynes-style public works paid for with borrowed money would not cure the Depression. Which newspaper carried their letter?",
     "answer": "The Times of London",
     "choices": [
       "The Times of London",
@@ -8893,7 +8646,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1973 the American economist Murray Rothbard published a popular book called For a New Liberty. Its core idea was simple: take power away from the government so that ordinary people are free to choose for themselves how they will live, work, worship, and trade. That whole worldview has a name. In one line, what is libertarianism?",
+    "question": "Murray Rothbard, a New Yorker who had sat in Ludwig von Mises's seminar, published a popular book in 1973 that sketched a whole libertarian society, from private courts and roads to an end of the military draft and the income tax. In one line, what does the worldview behind it hold?",
     "answer": "The belief that most decisions should be left to individuals rather than to governments",
     "choices": [
       "The belief that most decisions should be left to individuals rather than to governments",
@@ -8906,7 +8659,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1973 the American economist Murray Rothbard published his most popular book with the Macmillan publishing house. The book laid out a complete libertarian vision of society -- private courts, private roads, no draft, no income tax -- and its subtitle was 'The Libertarian Manifesto.' What was its short main title?",
+    "question": "The publisher Macmillan brought out Murray Rothbard's most popular book in 1973, under the subtitle The Libertarian Manifesto. It pictured private courts and roads, with neither a draft nor an income tax. What was its main title?",
     "answer": "For a New Liberty",
     "choices": [
       "For a New Liberty",
@@ -8919,7 +8672,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1973 the American economist Murray Rothbard published his libertarian book For a New Liberty. The whole argument of the book rests on one central rule Rothbard called the non-aggression principle -- a moral line no person and no government is allowed to cross. Which rule does the book itself state?",
+    "question": "Murray Rothbard rested every argument of his 1973 manifesto on one rule, and he held the state to it as strictly as a street criminal, so that taxes and the draft counted as breaking it too. He called it the non-aggression principle. What does it say?",
     "answer": "No person or group may aggress against the person or property of another",
     "choices": [
       "No person or group may aggress against the person or property of another",
@@ -8932,7 +8685,7 @@
   },
   {
     "tier": 2,
-    "question": "The American economist Murray Rothbard pushed further than most libertarians. He argued that people could live with no government at all — private firms would run the courts, the police, and even the roads, and every service would be paid for by voluntary choice rather than by tax. What is this stateless, purely free-market idea called?",
+    "question": "Even a minimal government was too much for Murray Rothbard. He wanted a society with no state at all, where people pay for every service by choice and never through taxes. What did he call his position?",
     "answer": "Anarcho-capitalism",
     "choices": [
       "Anarcho-capitalism",
@@ -8945,7 +8698,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1973 the American economist Murray Rothbard published his book For a New Liberty, defending an idea he called anarcho-capitalism -- a society with no state at all, only private property. Many parents hear the word and picture pure lawlessness. Rothbard pushed back with a specific answer to the obvious worry. Without any state, who does Rothbard say would handle police, courts, roads, and national defense?",
+    "question": "A worried reader of Murray Rothbard's manifesto of 1973 asks who would keep order in a society with no state at all, and pictures plain lawlessness. Rothbard answered that it would mean law provided by other hands, and his chapter on private roads was his test case. Who, in his scheme, would provide the police, the courts, the roads and even the army?",
     "answer": "Competing private organizations bound by property-rights contracts",
     "choices": [
       "Competing private organizations bound by property-rights contracts",
@@ -8958,7 +8711,7 @@
   },
   {
     "tier": 3,
-    "question": "Nine years after his 1973 book For a New Liberty, the American economist Murray Rothbard published a longer and more philosophical work. It grounded libertarianism in the 17th-century English thinker John Locke's natural-rights tradition — the idea that people own their own bodies, labor, and property before any government exists. What is that 1982 book titled?",
+    "question": "Murray Rothbard reached back to John Locke in 1982, nine years after his popular manifesto, for a longer and more philosophical book. It rests libertarianism on the old conviction that a person's body, labor and earnings are his own before any government exists. What is its title?",
     "answer": "The Ethics of Liberty",
     "choices": [
       "The Ethics of Liberty",
@@ -8971,7 +8724,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1974 the American thinker Robert Nozick published a famous libertarian book called Anarchy, State, and Utopia. He built his whole theory on an older idea he took from the English philosopher John Locke — the idea that people already own themselves, their labor, and what they earn, even before any government exists to hand out permissions. What is that older idea called?",
+    "question": "Robert Nozick, a Harvard philosopher, built his book of 1974, Anarchy, State, and Utopia, on an older idea he took from John Locke: that a person owns himself, his labor and what he earns before any government exists to hand out permission. What is that idea called?",
     "answer": "Natural rights",
     "choices": [
       "Natural rights",
@@ -8984,20 +8737,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1973 the American economist Murray Rothbard released For a New Liberty, defending anarcho-capitalism -- a stateless society -- on grounds of natural rights and moral principle. That same year another American economist released a book called The Machinery of Freedom. It argued for the same stateless setup, but on practical results and cost-benefit reasoning rather than natural rights. Who wrote it?",
-    "answer": "David Friedman, Milton Friedman's son",
-    "choices": [
-      "David Friedman, Milton Friedman's son",
-      "Robert Nozick, Harvard philosopher",
-      "Hans-Hermann Hoppe, Rothbard's own student",
-      "Israel Kirzner, Austrian entrepreneurship theorist"
-    ],
-    "context": "David D. Friedman's The Machinery of Freedom: Guide to a Radical Capitalism (Harper and Row, 1973) argued anarcho-capitalism on results-oriented grounds. The two 1973 manifestos, published within months of each other, defined the two branches of the modern anarcho-capitalist tradition, deontological (Rothbard) and consequentialist (Friedman). Source: en.wikipedia.org/wiki/The_Machinery_of_Freedom.",
-    "topic": "for-a-new-liberty-1973-and-the-ethics-of-liberty-1982"
-  },
-  {
-    "tier": 4,
-    "question": "In 1974 the Harvard philosopher Robert Nozick published Anarchy, State, and Utopia. Nozick argued that a government should exist, but should only do three things: protect people from physical force, protect them from theft, and enforce broken contracts. No welfare programs, no post office, no public schools -- nothing else at all. A famous nickname is used for this very small kind of government. What is it called?",
+    "question": "Robert Nozick argued in 1974 that a state should exist but limit itself to three jobs: protect people from force, protect them from theft and enforce their contracts. Murray Rothbard rejected his reasoning and held that any state violates rights. What is a state cut down to those few jobs called?",
     "answer": "A night-watchman state",
     "choices": [
       "A night-watchman state",
@@ -9010,7 +8750,7 @@
   },
   {
     "tier": 5,
-    "question": "The American economist Murray Rothbard's 1982 book The Ethics of Liberty spends most of its pages building his own natural-rights case for libertarianism, drawn from John Locke. Then, in Part IV, he turns critic and takes apart four other prominent theorists of liberty one by one — arguing each one's system fails to secure real freedom. Which four theorists does Rothbard critique in that Part IV?",
+    "question": "Murray Rothbard turned critic in Part IV of his treatise of 1982, after building his own case for liberty on John Locke. He weighed four other champions of freedom one after another and argued that none of them defended liberty with full consistency. Which four did he examine?",
     "answer": "Ludwig von Mises, Friedrich Hayek, Isaiah Berlin, and Robert Nozick",
     "choices": [
       "Ludwig von Mises, Friedrich Hayek, Isaiah Berlin, and Robert Nozick",
@@ -9114,7 +8854,7 @@
   },
   {
     "tier": 1,
-    "question": "In September 1970 The New York Times Magazine ran a short essay by the American economist Milton Friedman about what a business should really do. Friedman argued that a company's leaders should focus on running the company well and earning honest returns for the shareholders who owned it — not on chasing every fashionable social cause. The Times gave the essay a title that quickly became one of the most famous in business history. What title did they give it?",
+    "question": "Milton Friedman answered, in the New York Times Magazine on September 13, 1970, the people urging companies to take up social causes along with profit. His title said the argument outright, and both sides of the debate now call his argument the Friedman Doctrine. What was the title?",
     "answer": "The Social Responsibility of Business Is to Increase Its Profits",
     "choices": [
       "The Social Responsibility of Business Is to Increase Its Profits",
@@ -9127,7 +8867,7 @@
   },
   {
     "tier": 1,
-    "question": "In September 1970 the American economist Milton Friedman wrote a famous essay in the New York Times Magazine titled 'The Social Responsibility of Business Is to Increase Its Profits.' In it, Friedman said a company's executive really works for one specific group of people, and that group's interests set his job duties. Which group is it?",
+    "question": "Milton Friedman opened his argument of 1970 by asking whom a company's boss actually works for. The answer, he said, defines the boss's job: to make the business as profitable as possible for those people. Who are they?",
     "answer": "The shareholders",
     "choices": [
       "The shareholders",
@@ -9140,7 +8880,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1970 New York Times essay on business, the American economist Milton Friedman drew a sharp line. He said a company's boss can spend his own paycheck on any cause he wants -- that is his own money to give away. But if the boss spends the company's money on a cause the owners never voted for, that is a very different matter. What is the boss free to do only with his own salary?",
+    "question": "Milton Friedman drew his sharpest line in his essay of 1970 between two kinds of money a company boss might hand to a cause: his own salary, and the company's funds. What, in Friedman's view, is the boss free to do with his own salary?",
     "answer": "Donate to whatever cause he chooses",
     "choices": [
       "Donate to whatever cause he chooses",
@@ -9153,7 +8893,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1970 New York Times essay, the American economist Milton Friedman said a company executive is right to chase profit for the shareholders, but only inside certain limits. Friedman named two kinds of rules the executive must follow while doing his job. Which pair does he name?",
+    "question": "Milton Friedman defended honest business, not fraud, in his essay of 1970. A company's boss should chase as much profit as he can, Friedman wrote, but only while obeying his society's ground rules. Which rules did Friedman say the boss must obey?",
     "answer": "Both law and ethical custom",
     "choices": [
       "Both law and ethical custom",
@@ -9166,7 +8906,7 @@
   },
   {
     "tier": 3,
-    "question": "In his famous 1970 New York Times Magazine essay, the American economist Milton Friedman warned that if the leaders of a company must serve their workers, their town, the environment, and the shareholders all at the same time, a serious problem shows up in how anyone can hold those leaders to account. What is the problem Friedman named?",
+    "question": "A company's board tells its managers to serve the workers, the town, the environment and the owners all at once. Milton Friedman warned in 1970 that a mandate like that wrecks something about holding them to account. What problem did he name?",
     "answer": "They answer to no one and can justify any decision",
     "choices": [
       "They answer to no one and can justify any decision",
@@ -9178,34 +8918,8 @@
     "topic": "friedman-1970-business-responsibility-is-profit"
   },
   {
-    "tier": 3,
-    "question": "The 1970 New York Times Magazine essay by the American economist Milton Friedman was really the popular expansion of a single chapter he had written eight years earlier, in a 1962 book that laid out his whole case for free markets and limited government. The Times essay only shortened and sharpened that one chapter. Which 1962 book was it?",
-    "answer": "Capitalism and Freedom",
-    "choices": [
-      "Capitalism and Freedom",
-      "A Monetary History of the United States",
-      "A Theory of the Consumption Function",
-      "Free to Choose"
-    ],
-    "context": "Capitalism and Freedom (Chicago 1962), Chapter 8, made the shareholder-primacy argument that the 1970 NYT essay condensed and popularized. Friedman had been making the argument for at least a decade before the magazine version. Source: Friedman (1962), Chapter 8.",
-    "topic": "friedman-1970-business-responsibility-is-profit"
-  },
-  {
     "tier": 4,
-    "question": "In 1970 the American economist Milton Friedman wrote a famous essay in the New York Times Magazine arguing that a company's managers work for its shareholders -- the people who own the company -- and their job is to earn a profit within the rules. Today, Environmental, Social, and Governance (ESG) investing asks corporations to steer profits toward social causes chosen by executives. Friedman's 1970 argument is the main intellectual pushback against ESG. In one phrase, what is his critique?",
-    "answer": "Other people's money charity by executives with no shareholder mandate",
-    "choices": [
-      "Other people's money charity by executives with no shareholder mandate",
-      "A regressive tax on middle-class households",
-      "A violation of federal antitrust law",
-      "An invitation to hostile foreign takeover"
-    ],
-    "context": "Classical-liberal critics of ESG apply the Friedman 1970 frame directly: fund managers directing corporate votes toward ESG goals are spending beneficiaries' assets to pursue the managers' own values without explicit consent. Source: Friedman (1970) as applied in Fink CEO-letter debates 2018-24.",
-    "topic": "friedman-1970-business-responsibility-is-profit"
-  },
-  {
-    "tier": 4,
-    "question": "In 1970 the American economist Milton Friedman argued that a company's one job was to make money for its shareholders — anything else was managers spending 'other people's money' on their own favorite causes. For decades that view dominated US business. Then in August 2019 the Business Roundtable, a Washington lobby group of nearly 200 top American CEOs, put out a Statement on the Purpose of a Corporation that publicly broke with Friedman's rule. How many CEOs signed the statement?",
+    "question": "Chief executives in the Business Roundtable, a lobby of top American bosses based in Washington, put out a statement about the purpose of a corporation in August 2019, and it broke openly with Milton Friedman's rule of 1970. How many of them signed it?",
     "answer": "181",
     "choices": [
       "181",
@@ -9217,8 +8931,8 @@
     "topic": "friedman-1970-business-responsibility-is-profit"
   },
   {
-    "tier": 5,
-    "question": "On September 13, 1970, the American economist Milton Friedman published a short essay in the New York Times Magazine called 'The Social Responsibility of Business Is to Increase Its Profits'. His worry was that a corporate executive who spends the company's money on his own favored social causes — without asking the shareholders who actually own the firm — is quietly acting as a self-appointed tax collector. The essay boiled that worry down to one memorable phrase. Which phrase is it?",
+    "tier": 2,
+    "question": "A chief executive gives the company's funds to a cause its owners never approved. Milton Friedman likened such a man in 1970 to a self-appointed tax collector, and his essay remains the chief answer to ESG (environmental, social and governance) investing. What phrase did he use for what the executive does?",
     "answer": "Spending other people's money on his own priorities",
     "choices": [
       "Spending other people's money on his own priorities",
@@ -9231,7 +8945,7 @@
   },
   {
     "tier": 5,
-    "question": "Milton Friedman's 1970 New York Times essay argued that a company's only social duty was to make money for its shareholders. Decades later a wave of business school professors pushed back. Michael Porter of Harvard wrote about 'shared value.' Colin Mayer of Oxford wrote about the purpose of the firm. Rebecca Henderson of Harvard published Reimagining Capitalism. All three level the same charge at Friedman. What do they say his shareholder-only rule gets wrong about companies?",
+    "question": "Rebecca Henderson of Harvard took aim at Milton Friedman's rule of 1970 in her book Reimagining Capitalism; Michael Porter of Harvard did so with his idea of 'shared value', and Colin Mayer of Oxford with his work on what firms are for. What charge do the three professors level at Friedman's rule?",
     "answer": "That the shareholder-only mandate misses long-term corporate value creation",
     "choices": [
       "That the shareholder-only mandate misses long-term corporate value creation",
@@ -9244,7 +8958,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1963 a huge 860-page economics book came out titled 'A Monetary History of the United States, 1867-1960'. It walked readers through a hundred years of American money and banking. Decades later, Federal Reserve chairman Ben Bernanke called its chapter on the Great Depression the best account of the worst US economic disaster ever written. Who were the two economists who wrote the book together?",
+    "question": "Two economists published A Monetary History of the United States in 1963, some 860 pages tracing a hundred years of the nation's money and banks. Ben Bernanke, who later chaired the Federal Reserve, said its account of the Depression was the best ever written of the country's worst economic collapse. Who were the two?",
     "answer": "Milton Friedman and Anna Schwartz",
     "choices": [
       "Milton Friedman and Anna Schwartz",
@@ -9257,7 +8971,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1963 the American economists Milton Friedman and Anna Schwartz published a huge history of US money. Chapter 7 -- 'The Great Contraction 1929-1933' -- argued that the Great Depression was mainly a money failure. Between 1929 and 1933 the M2 money supply (cash plus checking and savings deposits) shrank sharply while the Federal Reserve stood back and did nothing. By about what percent did M2 shrink in those four years?",
+    "question": "Anna Schwartz and Milton Friedman measured, in chapter seven of their history of American money, the shrinking of the money Americans held in cash and bank accounts between 1929 and 1933, while the Federal Reserve stood aside. By about what percent did it shrink?",
     "answer": "About 33 percent",
     "choices": [
       "About 33 percent",
@@ -9270,7 +8984,7 @@
   },
   {
     "tier": 2,
-    "question": "The United States had about 25,000 commercial banks operating in 1929, each one holding neighbors' savings. Then between 1930 and 1933 the Federal Reserve allowed the money supply to shrink by about a third, and wave after wave of bank runs swept the country. Historians call this stretch the Great Contraction — the banking collapse at the heart of the Great Depression. How many American banks failed during those four years?",
+    "question": "A run on an American bank in the early 1930s wiped out its depositors' savings, for deposits went uninsured until 1933, and every failure shrank the money supply further. Some 25,000 banks were doing business when the crash of 1929 came. About how many failed between 1930 and 1933?",
     "answer": "About 9,000",
     "choices": [
       "About 9,000",
@@ -9283,7 +8997,7 @@
   },
   {
     "tier": 2,
-    "question": "In their 1963 book on US money, the American economists Milton Friedman and Anna Schwartz argued the Federal Reserve had made the Great Depression much worse. One key reason: in 1928 the strong leader who had guided the Fed for over a decade died suddenly. Without him the Fed splintered into feuding regional banks with no clear plan going into the 1929 crash. What did this leadership gap show?",
+    "question": "Friedman and Schwartz pointed to one death in October 1928: Benjamin Strong, who had steered the Fed for over ten years, died without warning. Without him, they argued, the regional reserve banks quarreled and went their own ways into the crash of 1929. What did the gap show?",
     "answer": "A single institution can be shaped heavily by one person",
     "choices": [
       "A single institution can be shaped heavily by one person",
@@ -9296,7 +9010,7 @@
   },
   {
     "tier": 3,
-    "question": "In their 1963 book A Monetary History of the United States, the American economists Milton Friedman and Anna Schwartz uncovered an internal Federal Reserve doctrine that had helped destroy the banking system in the early 1930s. According to this doctrine, the Fed should stand back and refuse to rescue banks it judged unsound -- letting them fail as a kind of purge. What is this rescue-averse Fed doctrine usually called?",
+    "question": "Friedman and Schwartz traced the Fed's refusal to rescue failing banks in the early 1930s to a doctrine many of its officials followed. In its harsh form it told the central bank to turn away any bank it judged unsound and let it go under, as a purge. What is the doctrine called?",
     "answer": "The real-bills doctrine (in its liquidationist form)",
     "choices": [
       "The real-bills doctrine (in its liquidationist form)",
@@ -9308,47 +9022,8 @@
     "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
   },
   {
-    "tier": 3,
-    "question": "In November 2002 Ben Bernanke, then a Federal Reserve governor who had trained as an economic historian of the Great Depression, gave a speech in Chicago at a conference honoring Milton Friedman's 90th birthday. Bernanke closed by turning directly to Friedman and his co-author Anna Schwartz — the two economists whose 1963 book had blamed the Fed for turning a 1929 downturn into the Great Depression. What did Bernanke admit to them at the close of his speech?",
-    "answer": "You're right, we did it, we're very sorry, but thanks to you we won't do it again",
-    "choices": [
-      "You're right, we did it, we're very sorry, but thanks to you we won't do it again",
-      "You were partly right, we admit some errors were made",
-      "You were largely wrong, but your work provoked useful thinking",
-      "You were right about the mechanics but wrong about the ultimate cause"
-    ],
-    "context": "Bernanke's November 8 2002 speech at Friedman's 90th-birthday conference conceded institutional Fed responsibility for the Great Depression -- an extraordinary public admission that made the Friedman-Schwartz thesis officially accepted. Source: federalreserve.gov (Bernanke 2002 speech text).",
-    "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
-  },
-  {
-    "tier": 4,
-    "question": "The Austrian school of economics -- founded in Vienna by Carl Menger and later carried forward by Ludwig von Mises and Friedrich Hayek -- looks back at America's roaring 1920s and says the Federal Reserve's loose credit and easy money in those boom years were themselves the cause of the 1929 crash. Cheap loans drove up stocks and factories that would never have been built at real interest rates. In the Austrian view, the crash and the Great Depression that followed were what?",
-    "answer": "The unavoidable hangover after an artificial boom",
-    "choices": [
-      "The unavoidable hangover after an artificial boom",
-      "A random bad-luck event with no economic cause",
-      "A result only of tariffs, not money or credit",
-      "A normal year, no worse than any other"
-    ],
-    "context": "The Austrian addition: the 1929 bust was not just an accident that the Fed mishandled; it was the necessary correction of the malinvestment the Fed's own 1921-29 easing had produced. The two 1963 books agree that the Fed erred; they disagree about which decade's error was primary. Source: Rothbard, America's Great Depression (1963).",
-    "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
-  },
-  {
-    "tier": 4,
-    "question": "Milton Friedman won the Nobel; his coauthor Anna Schwartz never did -- even though their Monetary History of the United States remains the definitive American monetary history. Their book argued the Great Depression became a decade-long catastrophe because of one institution's mistake. Which one?",
-    "answer": "The Federal Reserve",
-    "choices": [
-      "The Federal Reserve",
-      "The US Treasury",
-      "The New York Stock Exchange",
-      "The Bank of England"
-    ],
-    "context": "Friedman won the 1976 Nobel Prize in Economics for his work on monetary theory and consumption analysis. Schwartz's absence from the prize list is often cited as an example of the discipline's gender-biased recognition practices. Source: Grokipedia 'Anna Schwartz' (2026-09-05).",
-    "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
-  },
-  {
     "tier": 5,
-    "question": "Milton Friedman and Anna Schwartz's 1963 book 'A Monetary History of the United States' argued that the Federal Reserve's tight-money policy from 1929 to 1933 turned an ordinary downturn into the Great Depression. For decades the Fed rejected that charge. Then in November 2002 Fed governor Ben Bernanke publicly agreed with the two authors and apologized on the Fed's behalf. What broader point about political economy does Bernanke's admission press?",
+    "question": "Ben Bernanke, a governor of the Federal Reserve, accepted in November 2002 the charge Friedman and Schwartz had laid against the Fed in 1963, that its tight money from 1929 to 1933 had turned an ordinary downturn into the Great Depression. The Fed had rejected the charge for decades. What broader point about institutions does his concession press?",
     "answer": "Institutional acceptance of a critical thesis by the very institution being criticized changes how that institution thinks about its own crisis responses -- for better or worse",
     "choices": [
       "Institutional acceptance of a critical thesis by the very institution being criticized changes how that institution thinks about its own crisis responses -- for better or worse",
@@ -9357,19 +9032,6 @@
       "Fed doctrine is entirely determined by whoever chairs the FOMC"
     ],
     "context": "The 2002 concession shaped Bernanke's own 2008 response (aggressive lender-of-last-resort action, massive QE). Austrian critics argue that by avoiding the 1930s error Bernanke created a different error -- long-lasting cheap money that seeded the 2020-24 inflation. Institutional learning has costs as well as benefits. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
-    "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
-  },
-  {
-    "tier": 5,
-    "question": "In a 2008 Wall Street Journal interview at age 92, Anna Schwartz delivered a striking verdict on Ben Bernanke's crisis response. It effectively reversed the endorsement Bernanke had claimed six years earlier at Friedman's birthday party. What did she say about him?",
-    "answer": "That he has no true understanding of what is going on",
-    "choices": [
-      "That he has no true understanding of what is going on",
-      "That he was implementing exactly the policy she and Friedman had recommended",
-      "That his response would restore price stability within one year",
-      "That she remained firmly in agreement with his approach"
-    ],
-    "context": "Schwartz's October 2008 Wall Street Journal interview sharply criticized Bernanke's crisis response. Six years after Bernanke had claimed the Friedman-Schwartz mantle at the birthday party, the surviving coauthor publicly withdrew the endorsement. Source: Wall Street Journal (October 18 2008).",
     "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
   },
   {
@@ -28848,20 +28510,7 @@
   },
   {
     "tier": 1,
-    "question": "In the early 1990s, a small group of coders, mathematicians, and privacy activists — including Eric Hughes, Timothy May, and John Gilmore — began meeting near San Francisco. They wanted to build software using strong cryptography that would give ordinary people privacy no government could take away. What name did they take?",
-    "answer": "the cypherpunks",
-    "choices": [
-      "the cypherpunks",
-      "the Free Software Foundation",
-      "the Electronic Frontier Foundation",
-      "the Chaos Computer Club"
-    ],
-    "context": "The name -- a pun on 'cipher' and 'cyberpunk' -- was coined by hacker Jude Milhon at an early meeting hosted by Eric Hughes, Timothy May, and John Gilmore. The FSF (founded 1985 by Stallman) and EFF (founded 1990 by Kapor and Barlow) were older sibling movements; CCC is the German hacker collective. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 1,
-    "question": "In the 1980s and 1990s, before Bitcoin existed, computer scientists tried inventing digital cash — money that would live only inside computers and travel across the internet. But every attempt kept hitting the same problem, one built into how digital files work. What was that flaw that kept blocking them?",
+    "question": "Satoshi Nakamoto published his Bitcoin paper in 2008, after twenty years of tries at money made of computer bits, DigiCash and b-money among them. Each attempt ran into one problem that gold never had, built into how digital files work. What was it?",
     "answer": "A digital file can be copied and spent twice",
     "choices": [
       "A digital file can be copied and spent twice",
@@ -28873,99 +28522,8 @@
     "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
   },
   {
-    "tier": 2,
-    "question": "In November 1998, on a cypherpunk mailing list where coders swapped ideas about privacy technology, a Chinese-American programmer named Wei Dai posted a short two-page proposal. It described a form of digital cash with no bank in the middle -- all users would keep their own copy of a shared ledger that recorded every transaction ever made. What did Wei Dai call the plan?",
-    "answer": "b-money",
-    "choices": [
-      "b-money",
-      "Hashcash",
-      "bit gold",
-      "e-gold"
-    ],
-    "context": "Wei Dai posted 'b-money' to the cypherpunk list in November 1998. Hashcash (Adam Back, 1997) is a separate proof-of-work anti-spam scheme; bit gold (Nick Szabo, 1998) is a different cypherpunk digital-scarcity design; e-gold (Douglas Jackson, 1996) was a centralized gold-backed online payment system, not a cypherpunk proposal. Source: https://www.weidai.com/bmoney.txt.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 2,
-    "question": "In 1997, a British programmer proposed a simple rule. Before your computer can send any email, it must first solve a small math puzzle. The puzzle takes about half a second, and a normal person barely notices the delay. What happens to spammers who try to send a million emails a day?",
-    "answer": "The puzzles would take days, so spamming stops paying",
-    "choices": [
-      "The puzzles would take days, so spamming stops paying",
-      "Their emails would arrive faster than normal",
-      "The rule would only slow small senders",
-      "Spammers would ignore the rule and win anyway"
-    ],
-    "context": "Adam Back proposed Hashcash in 1997 as an anti-spam measure imposing a small proof-of-work stamp on each email. SpamAssassin is a Bayesian mail filter; PGP is Phil Zimmermann's email-encryption tool; bit gold is Nick Szabo's separate 1998 currency-design essay. Source: https://en.wikipedia.org/wiki/Hashcash.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 3,
-    "question": "In 1997 the British cryptographer Adam Back built a program called Hashcash to fight email spam. Hashcash forced email senders to make their computers solve a small math puzzle first — cheap for one message, but painfully expensive for a spammer sending millions. The puzzle had one property that Bitcoin's designer would later borrow in 2008 for a very different job: proving that real computer work had been done. Which property was that?",
-    "answer": "solving one puzzle is expensive but verifying a solution is instant",
-    "choices": [
-      "solving one puzzle is expensive but verifying a solution is instant",
-      "solving is cheap but verifying is expensive",
-      "puzzles chain into a tree structure with logarithmic verification",
-      "puzzles require a trusted authority to issue"
-    ],
-    "context": "Hashcash proof-of-work is asymmetric: brute-force hash search is costly, but anyone can hash the answer once to check it. Satoshi adopted the same primitive as Bitcoin's mining puzzle. Tree-structured verification (Merkle trees) is a separate 1979 technique also used in Bitcoin; PoW explicitly needs no trusted authority. Source: https://en.wikipedia.org/wiki/Hashcash.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 3,
-    "question": "In 1998 a coder and legal scholar, who had coined the term 'smart contracts' two years earlier, posted a new design. It used chained proof-of-work puzzles to make scarce digital tokens, with no issuer setting the supply. Which cypherpunk plan was this?",
-    "answer": "bit gold",
-    "choices": [
-      "bit gold",
-      "b-money",
-      "DigiCash",
-      "Hashcash"
-    ],
-    "context": "Nick Szabo drafted bit gold in 1998 (blog post 2005); the design chained PoW puzzles into scarce digital tokens. He coined 'smart contracts' in 1996. b-money is Wei Dai's separate 1998 proposal; DigiCash is Chaum's 1989 company; Hashcash is Adam Back's 1997 anti-spam PoW. Source: https://unenumerated.blogspot.com/2005/12/bit-gold.html.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 4,
-    "question": "In the early 1990s the American cryptographer David Chaum founded a company called DigiCash. It offered private online payments — hard to fake, hard to trace, decades ahead of its time. By 1998 the company had gone bankrupt. Later cypherpunk designers, including the people who would inspire Bitcoin, studied what had gone wrong and tried to fix one central weakness in Chaum's design. What was that flaw?",
-    "answer": "the money still had to be issued by a trusted bank that could be shut down",
-    "choices": [
-      "the money still had to be issued by a trusted bank that could be shut down",
-      "the cryptography relied on hash functions that were later broken",
-      "the anonymity technique required government registration of every user",
-      "the transaction fees were higher than credit-card fees"
-    ],
-    "context": "DigiCash's blind signatures made spending anonymous, but coins still had to be issued by a partner bank; without one, no money. That single trusted issuer became the choke point. b-money, bit gold, and later Bitcoin all specifically eliminated the trusted issuer. Source: https://en.wikipedia.org/wiki/DigiCash.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 4,
-    "question": "In 1998, Wei Dai wrote a paper describing a system called b-money. Every user kept a copy of the ledger, transactions were broadcast to the whole network, and new money came from proof-of-work. Dai openly identified two pieces he had not fully solved. Which technical gap did b-money leave open that Bitcoin's 2008 design later closed?",
-    "answer": "how to reach network consensus when different users see different transaction orderings",
-    "choices": [
-      "how to reach network consensus when different users see different transaction orderings",
-      "how to compress the ledger onto a single hard drive",
-      "how to convert existing dollars into b-money",
-      "how to encrypt individual transactions so third parties cannot read them"
-    ],
-    "context": "b-money left consensus and honesty-enforcement unsolved. Satoshi's proof-of-work plus longest-chain rule was specifically designed to resolve exactly those two problems. Ledger compression, dollar conversion, and payload encryption are separate matters. Source: https://www.weidai.com/bmoney.txt.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
     "tier": 5,
-    "question": "In October 2008 an anonymous coder using the name Satoshi Nakamoto published the nine-page Bitcoin white paper, a plan for peer-to-peer digital cash with no bank in the middle. Historians of Bitcoin agree the paper synthesizes four earlier cypherpunk digital-cash proposals -- DigiCash, Hashcash, b-money, and bit gold -- but Satoshi's short reference list only cites two of them by name. Which pair of proposals appears in the paper's references?",
-    "answer": "b-money and Hashcash",
-    "choices": [
-      "b-money and Hashcash",
-      "DigiCash and bit gold",
-      "DigiCash and Hashcash",
-      "bit gold and b-money"
-    ],
-    "context": "Satoshi's 2008 white paper cites Wei Dai's b-money as reference 1 and Adam Back's Hashcash as reference 6. It does not cite DigiCash (Chaum) or bit gold (Szabo) directly, though the intellectual debt is widely acknowledged. Source: https://bitcoin.org/bitcoin.pdf.",
-    "topic": "the-cypherpunk-lineage-digicash-b-money-hashcash-bit-gold"
-  },
-  {
-    "tier": 5,
-    "question": "In March 1993, cryptographer Eric Hughes wrote a founding essay for the cypherpunk mailing list. Its opening line is often quoted as the philosophical anchor of the whole cypherpunk lineage that eventually led to Bitcoin. Which sentence opens that manifesto?",
+    "question": "Eric Hughes posted a founding essay to the cypherpunks' mailing list in March 1993. Its first sentence is often quoted as the root of the whole line of thinking that ran from his circle to Bitcoin. Which sentence opens it?",
     "answer": "'Privacy is necessary for an open society in the electronic age.'",
     "choices": [
       "'Privacy is necessary for an open society in the electronic age.'",
@@ -28978,20 +28536,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1990s a small group of coders in the San Francisco Bay Area started meeting to swap ideas. They called themselves the cypherpunks. They wanted regular people — not just spies and generals — to keep their emails and messages secret from big companies and the government. What tool did they push everyday people to learn to use?",
-    "answer": "Cryptography (scrambling messages with a code)",
-    "choices": [
-      "Cryptography (scrambling messages with a code)",
-      "Just ignoring the internet",
-      "Waiting for a new law",
-      "Only writing letters on paper"
-    ],
-    "context": "Eric Hughes hosted the fall 1992 Oakland meetings in his house. Timothy May was the retired Intel physicist; John Gilmore was Sun's fifth employee. Adam Back is a British cryptographer who joined the broader mailing list later. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
-    "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
-  },
-  {
-    "tier": 1,
-    "question": "Back in the 1990s, some coders made secret codes to hide messages from the government. Why did they say this was so important?",
+    "question": "Eric Hughes and two friends met in Oakland in 1992 to put secret codes in ordinary hands. Why did they think it urgent?",
     "answer": "A government that can read all your messages can control you",
     "choices": [
       "A government that can read all your messages can control you",
@@ -29004,20 +28549,20 @@
   },
   {
     "tier": 2,
-    "question": "In the early 1990s, three friends near San Francisco -- Eric Hughes, Timothy May, and John Gilmore -- started a small mailing list for fellow code fans. They believed strong encryption could give ordinary people privacy from big governments and big companies, and they wanted to build the tools themselves rather than wait for anyone else. What did the group on that mailing list call themselves?",
-    "answer": "The cypherpunks",
+    "question": "Jude Milhon, a hacker and writer, named the group that Eric Hughes, Timothy May and John Gilmore started in the autumn of 1992. They met first in a house in Oakland, then argued about codes and privacy on a mailing list. What name did she give them, the one that stuck?",
+    "answer": "the cypherpunks",
     "choices": [
-      "The cypherpunks",
-      "The hackers union",
-      "The open-source movement",
-      "The free-software foundation"
+      "the Free Software Foundation",
+      "the cypherpunks",
+      "the Electronic Frontier Foundation",
+      "the Chaos Computer Club"
     ],
     "context": "John Gilmore hosted the cypherpunk mailing list on toad.com from his personal server. Hughes and May co-founded the community but did not host the list; Zimmermann is the PGP author. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
     "tier": 2,
-    "question": "By his mid-thirties Timothy May had made so much money on stock options at a big American chipmaker that he retired and became a full-time thinker. He would later help start the cypherpunks. In the late 1970s his engineering job had been to solve a strange bug: tiny alpha particles from trace radioactive elements in chip packaging were flipping memory bits and crashing computers. Which chip company had he done that work for?",
+    "question": "Timothy May spent part of the late 1970s hunting a strange fault: memory chips kept corrupting themselves at random. The culprit was alpha particles from tiny amounts of radioactive matter in the chips' casing. The stock options from that job let him retire in his thirties. Which company was it?",
     "answer": "Intel",
     "choices": [
       "Intel",
@@ -29030,7 +28575,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1990s a group of coders, hackers, and privacy activists gathered on an online mailing list they named the cypherpunks. They believed strong encryption — codes so tough that even a government could not crack them — was the key to keeping regular users free online. Every week they argued, wrote code, and mailed each other essays. What big idea did the cypherpunks push?",
+    "question": "John Gilmore hosted the group's mailing list on his own server in the early 1990s, when Washington's export rules counted strong encryption as a weapon of war, close to illegal for private citizens to use. The list existed to defend one political claim. Which claim?",
     "answer": "Ordinary people should be able to use unbreakable codes without asking permission",
     "choices": [
       "Ordinary people should be able to use unbreakable codes without asking permission",
@@ -29042,21 +28587,8 @@
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
-    "tier": 3,
-    "question": "The cypherpunks were a 1990s mailing list of programmers who believed ordinary people needed strong encryption to keep their privacy from governments and big corporations. In March 1993, one of the founders, Eric Hughes, wrote a short manifesto that ended with a three-word motto drawing a sharp line: only shipping real, working software counted, not just talking about it. Which motto captured that rule?",
-    "answer": "'Cypherpunks write code.'",
-    "choices": [
-      "'Cypherpunks write code.'",
-      "'Privacy above all.'",
-      "'Encrypt or die.'",
-      "'Freedom through math.'"
-    ],
-    "context": "'Cypherpunks write code' comes from Hughes's March 9, 1993 A Cypherpunk's Manifesto and became the operative motto: writing working software was the only thing that mattered. The other slogans circulate in adjacent movements but are not the specific line. Source: https://www.activism.net/cypherpunk/manifesto.html.",
-    "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
-  },
-  {
     "tier": 4,
-    "question": "In 1992 three friends — Eric Hughes, Timothy May, and John Gilmore — began hosting monthly cypherpunk meetings in Oakland, California. The location was no accident: within about an hour's drive sat two of the world's very best university cryptography programs. Which two universities were those?",
+    "question": "Eric Hughes and two friends held the group's first meetings in an Oakland house in the autumn of 1992. The spot was well chosen: within an hour's drive lay two of the world's best cryptography departments of that day, one where public-key cryptography was born and one where Hughes had studied. Which two universities were they?",
     "answer": "Stanford and Berkeley",
     "choices": [
       "Stanford and Berkeley",
@@ -29069,7 +28601,7 @@
   },
   {
     "tier": 4,
-    "question": "When Satoshi Nakamoto published the Bitcoin white paper in 2008, it credited earlier work by regulars on the 1990s cypherpunks mailing list. Those regulars had spent the decade quietly building experimental digital-money systems on their own — projects with names like b-money, Hashcash, RPOW (Reusable Proof of Work), and bit gold. Which team of four had all joined the cypherpunks list by the late 1990s and later shaped Bitcoin's design?",
+    "question": "Satoshi Nakamoto credited earlier work by regulars of the 1990s mailing list John Gilmore hosted. Before the decade was out its members included the makers of the parts of his system, among them the authors of a proof-of-work stamp for email and of a sketch for a currency with no bank. Who were they?",
     "answer": "Adam Back, Wei Dai, Hal Finney, and Nick Szabo",
     "choices": [
       "Adam Back, Wei Dai, Hal Finney, and Nick Szabo",
@@ -29082,7 +28614,7 @@
   },
   {
     "tier": 5,
-    "question": "Fifteen years after the Oakland meetings, in October 2008, someone using the name Satoshi Nakamoto posted a nine-page paper to a cryptography mailing list whose lineage traced directly back to the toad.com list. Which specific technical class of paper did Satoshi post in that message?",
+    "question": "A coder calling himself Satoshi Nakamoto sent a message on 31 October 2008 to a cryptography mailing list descended from John Gilmore's old server, fifteen years after the first meetings in Oakland where Eric Hughes's circle began. What did his message carry?",
     "answer": "a Bitcoin white paper describing a peer-to-peer electronic cash system with proof-of-work consensus",
     "choices": [
       "a Bitcoin white paper describing a peer-to-peer electronic cash system with proof-of-work consensus",
@@ -29095,7 +28627,7 @@
   },
   {
     "tier": 5,
-    "question": "A cypherpunk historian looking back at Bitcoin's 2008 emergence from the toad.com lineage argues that the community's fifteen-year bet on one specific proposition had finally paid off in the largest possible way. Which reasoning move does the argument credit the movement for making at the founding meetings?",
+    "question": "Three Bay Area engineers made a bet in an Oakland living room in the autumn of 1992, and it took fifteen years to pay off. Their mailing list went on to draw in the coders who would later design a new money. What proposition did they stake it on?",
     "answer": "That mathematics and code could give ordinary people privacy the government could not take away",
     "choices": [
       "That mathematics and code could give ordinary people privacy the government could not take away",
@@ -35894,7 +35426,7 @@
   },
   {
     "tier": 1,
-    "question": "On October 31, 2008, an anonymous author calling himself Satoshi Nakamoto posted a short paper to a small cypherpunk email list. The paper described a new kind of digital money called Bitcoin, sent person-to-person with no bank in the middle. For a math-heavy proposal it is famously brief. About how long is the main body of the paper, not counting the notes at the end?",
+    "question": "Members of a small cryptography mailing list opened a paper from Satoshi Nakamoto on 31 October 2008. It described Bitcoin, a money passed between people with no bank in the middle, and for a proposal so full of arithmetic it is famously short. About how long is its main body?",
     "answer": "About nine pages",
     "choices": [
       "About nine pages",
@@ -35907,7 +35439,7 @@
   },
   {
     "tier": 2,
-    "question": "The Bitcoin white paper, written under the name Satoshi Nakamoto and posted to a cypherpunk email list on October 31, 2008, begins with an abstract that names the exact problem Satoshi wants to fix. In that opening sentence, Satoshi is describing how online buying and selling now runs through banks and payment companies sitting in the middle of every purchase. Which of these is the actual opening line?",
+    "question": "Satoshi Nakamoto set out his design for a money that needed no bank in a paper of 2008, and he opened it by naming the problem he meant to fix rather than the fix itself. Which sentence is its first line?",
     "answer": "'Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments.'",
     "choices": [
       "'Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments.'",
@@ -35919,34 +35451,21 @@
     "topic": "the-white-papers-twelve-sections"
   },
   {
-    "tier": 3,
-    "question": "To add a new block of transactions to the Bitcoin blockchain, a computer called a miner must first solve a very hard math puzzle that eats real electricity. This design, laid out in Satoshi Nakamoto's 2008 Bitcoin white paper, makes cheating extremely expensive -- any attacker would have to redo all the puzzle work for every block to be changed. What is the name of this security method?",
-    "answer": "Proof-of-Work",
+    "tier": 4,
+    "question": "A reader who turns to the end of Satoshi Nakamoto's Bitcoin paper of 2008 finds a short reference list. Four earlier designs for digital cash had pointed the way: Wei Dai's b-money, Nick Szabo's bit gold, David Chaum's DigiCash and Adam Back's Hashcash. Only two of them appear among his references. Which two?",
+    "answer": "b-money and Hashcash",
     "choices": [
-      "Proof-of-Work",
-      "Proof-of-stake",
-      "Free banking",
-      "Legal tender"
-    ],
-    "context": "Section 3 introduces the timestamped chain concept; Section 4 shows how to secure it. The section explicitly cites Adam Back's Hashcash as prior art. Source: bitcoin.org/bitcoin.pdf.",
-    "topic": "the-white-papers-twelve-sections"
-  },
-  {
-    "tier": 3,
-    "question": "In 2008, an anonymous programmer using the name Satoshi Nakamoto published the Bitcoin white paper, proposing a peer-to-peer electronic cash system with no central bank behind it. The paper carefully cites specific earlier work in cryptography and digital cash. Which pair of predecessors does its reference list name?",
-    "answer": "Adam Back's Hashcash and Wei Dai's b-money",
-    "choices": [
-      "Adam Back's Hashcash and Wei Dai's b-money",
-      "David Chaum's DigiCash and Nick Szabo's bit gold",
-      "Vitalik Buterin's Ethereum and Charlie Lee's Litecoin",
-      "Ralph Nader's Public Citizen and Milton Friedman's Free to Choose"
+      "DigiCash and bit gold",
+      "b-money and Hashcash",
+      "DigiCash and Hashcash",
+      "bit gold and b-money"
     ],
     "context": "Both Hashcash and b-money were cypherpunk-lineage proposals from the 1990s that Satoshi combined and extended. DigiCash and bit gold are historically related but are not cited in the paper's references. Source: bitcoin.org/bitcoin.pdf.",
     "topic": "the-white-papers-twelve-sections"
   },
   {
     "tier": 4,
-    "question": "In section 7 of the 2008 Bitcoin white paper, Satoshi Nakamoto describes a data trick that lets old spent records be trimmed away from the chain while still leaving a compact fingerprint that proves the whole history has not been tampered with. Each block keeps only a short summary of its transactions, arranged so that any single record can be checked without storing them all. What is that tree-shaped hash structure called?",
+    "question": "Satoshi Nakamoto shows in section 7 of the Bitcoin paper how a computer on the network can delete old, already-spent records and still keep proof that the history is untouched. Every block stores a compact fingerprint of its transactions, arranged so that one record can be checked without keeping all the rest. What is the structure called?",
     "answer": "A Merkle tree",
     "choices": [
       "A Merkle tree",
@@ -35959,7 +35478,7 @@
   },
   {
     "tier": 4,
-    "question": "In October 2008 the anonymous author Satoshi Nakamoto published the Bitcoin white paper. In it Satoshi describes a way for a phone wallet to check that a payment really happened without downloading the whole history of every Bitcoin transaction. Instead the wallet keeps only tiny summary headers of each block plus a short cryptographic proof of inclusion. What is the point of this shortcut?",
+    "question": "A Bitcoin wallet built on a shortcut from Satoshi Nakamoto's paper of 2008 keeps only the little headers of each block, plus a brief proof that a certain payment lies in one of them, and leaves the full record of every transaction to others. What is the point of the shortcut?",
     "answer": "A small device can verify payments without running a full node",
     "choices": [
       "A small device can verify payments without running a full node",
@@ -35972,7 +35491,7 @@
   },
   {
     "tier": 5,
-    "question": "In October 2008 the anonymous author Satoshi Nakamoto emailed a cryptography mailing list a nine-page paper titled 'Bitcoin: A Peer-to-Peer Electronic Cash System.' The paper is broken into twelve numbered sections that cover the network, mining, incentives, and privacy. The twelfth and final section is unusually short for a technical paper -- just a brief summary of the coin-as-chain-of-signatures idea and the proof-of-work security argument. Which title does the twelfth section carry, and how long is it?",
+    "question": "Satoshi Nakamoto posted 'Bitcoin: A Peer-to-Peer Electronic Cash System' to a cryptography mailing list in October 2008. Its twelve numbered sections cover the network, mining, incentives and privacy, and the last one sums up the coin as a string of digital signatures and the premise that honest miners outmatch any attacker in computing power. What is that twelfth section titled, and how long is it?",
     "answer": "Conclusion, roughly two paragraphs",
     "choices": [
       "Conclusion, roughly two paragraphs",
@@ -37558,7 +37077,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1990s and early 2000s, a small group of programmers called the cypherpunks wrote papers about a new kind of digital money. No bank or government could print more of it, because the rules would be set by math and code, not by any person's decision. When Bitcoin appeared in 2009, it built directly on their ideas. What key idea did those earlier papers share with Bitcoin?",
+    "question": "Satoshi Nakamoto launched Bitcoin in 2009 on an idea that Wei Dai and other cypherpunks had circled for a decade: a digital money that no bank or government could print at will. What did their designs share with Bitcoin?",
     "answer": "The money's supply is fixed by math, not by a person deciding",
     "choices": [
       "Only rich people can use it",
@@ -37571,7 +37090,7 @@
   },
   {
     "tier": 1,
-    "question": "Wei Dai is a Chinese-born American computer engineer who worked on cryptography long before Bitcoin existed. He wrote, and still maintains today, a free open-source software library that other programmers use to add strong ciphers to their own applications. What is Wei Dai's cryptography library called?",
+    "question": "Wei Dai built a free library of strong ciphers long before Bitcoin existed, and he still keeps it up for other programmers to drop into their own applications. What is the library called?",
     "answer": "Crypto++",
     "choices": [
       "Crypto++",
@@ -37584,7 +37103,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 1998, one month before the American cryptographer Nick Szabo published his famous 'bit gold' proposal, another cryptographer named Wei Dai posted a short technical plan to a cryptography mailing list. It described a form of digital cash in which all users kept their own copy of the ledger, so no bank and no government sat in the middle. What did Wei Dai name his system?",
+    "question": "Wei Dai posted a two-page plan to a cypherpunk mailing list in November 1998, a month before Nick Szabo's bit gold. It sketched a digital cash with no bank and no government in the middle. What did Dai name it?",
     "answer": "b-money",
     "choices": [
       "b-money",
@@ -37597,7 +37116,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1998 the cypherpunk cryptographer Wei Dai published a design he called b-money -- a proposal for a form of digital cash that would run with no bank and no central issuer. In Dai's design there was no master ledger sitting on one server somewhere. Instead, every user on the network had one specific job to do about the record of who owned what. What did each b-money user have to do?",
+    "question": "Wei Dai left the master ledger off every server when he designed b-money in 1998, breaking with earlier digital cash, which had depended on a trusted issuer. He gave each user a job instead. What was the job?",
     "answer": "maintain a separate private copy of every user's balances",
     "choices": [
       "maintain a separate private copy of every user's balances",
@@ -37610,20 +37129,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1998, a cypherpunk programmer named Wei Dai wrote a short paper describing a new digital money he called b-money. In his design, new money was created when users solved small computer puzzles, which kept the money supply growing at a steady rate. Wei Dai borrowed this puzzle idea from Adam Back's earlier anti-spam invention, Hashcash. What was that idea called?",
-    "answer": "proof-of-work",
-    "choices": [
-      "proof-of-work",
-      "zero-knowledge proofs",
-      "elliptic-curve pairings",
-      "public-key encryption"
-    ],
-    "context": "b-money adopted Hashcash-style proof-of-work for money creation. Zero-knowledge proofs, elliptic-curve pairings, and public-key encryption are separate primitives that b-money did not use for issuance. Source: https://www.weidai.com/bmoney.txt.",
-    "topic": "wei-dai-and-b-money-november-1998"
-  },
-  {
-    "tier": 3,
-    "question": "When Wei Dai published his 1998 b-money paper for a digital cash without any bank or central issuer, he was refreshingly honest that his sketch was not finished. Two hard design problems, he wrote, still needed answers before anyone could actually build b-money. Which pair of open problems did Dai flag at the end of his paper?",
+    "question": "Wei Dai ended his b-money paper of 1998 by admitting it was not finished. Two hard problems still needed answers before anyone could build a digital cash with no bank behind it, and ten years later Bitcoin closed them. Which pair of open problems did he name?",
     "answer": "how to reach consensus on transaction ordering, and how to keep ledger-keepers honest",
     "choices": [
       "how to reach consensus on transaction ordering, and how to keep ledger-keepers honest",
@@ -37636,7 +37142,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1998 the cypherpunk Wei Dai posted a two-page essay to a cryptography mailing list, describing a digital money system he called b-money. Inside the paper itself, he warned readers that his proposal was not meant as a finished blueprint. Which specific self-description did Dai give his own essay?",
+    "question": "Satoshi Nakamoto took up, ten years later, a challenge that Wei Dai had left inside his two-page b-money paper of 1998. Dai had warned his readers that the paper was no finished blueprint. How did he describe his own proposal?",
     "answer": "that 'this proposal is intended to be provocative rather than practical'",
     "choices": [
       "that 'this proposal is intended to be provocative rather than practical'",
@@ -37649,7 +37155,7 @@
   },
   {
     "tier": 4,
-    "question": "On Halloween 2008, an unknown programmer using the name Satoshi Nakamoto emailed a nine-page paper to a cryptography mailing list. It described Bitcoin: an electronic money that needed no bank. The paper's very first citation -- Reference 1 -- named an earlier cypherpunk proposal that had inspired Bitcoin's design. Which proposal was it?",
+    "question": "Satoshi Nakamoto emailed a paper on Halloween 2008 to a cryptography mailing list, describing Bitcoin, an electronic money that needed no bank. Its reference list opens with an earlier cypherpunk proposal, cited ahead of everything else. Which proposal is Reference 1?",
     "answer": "Wei Dai's b-money",
     "choices": [
       "Wei Dai's b-money",
@@ -37662,7 +37168,7 @@
   },
   {
     "tier": 5,
-    "question": "Wei Dai's 1998 b-money proposal for a bankless digital cash left two big questions open: how the network would agree on transaction order and how it would keep ledger-keepers honest. Bitcoin would solve those with proof-of-work ten years later. Public records now show that Satoshi Nakamoto, Bitcoin's mystery creator, reached out to Wei Dai in the summer of 2008, months before publishing the Bitcoin white paper. What did Satoshi do with Wei Dai?",
+    "question": "Satoshi Nakamoto reached out to Wei Dai in the summer of 2008, months before the Bitcoin white paper went out, and the record of it is now public. Ten years earlier Dai had posted b-money, a sketch of a digital cash with no bank behind it. What did Satoshi do?",
     "answer": "he emailed Dai in August 2008 asking for comments on the draft",
     "choices": [
       "he emailed Dai in August 2008 asking for comments on the draft",
@@ -37675,7 +37181,7 @@
   },
   {
     "tier": 5,
-    "question": "Bitcoin's smallest unit is called a 'satoshi' after its founder Satoshi Nakamoto. In 2015, a new smart-contract network called Ethereum launched. Ethereum named its own smallest unit the 'wei', after Wei Dai -- the cypherpunk who had described b-money back in 1998. What does this naming pattern show about how cryptocurrencies see their history?",
+    "question": "Ethereum's makers launched their network in 2015 and named the smallest unit of their currency, ether, the wei, after Wei Dai. Bitcoin's smallest unit was already the satoshi. What does the habit show about how cryptocurrencies see their own past?",
     "answer": "Cryptocurrencies openly honor the earlier thinkers whose ideas made them possible",
     "choices": [
       "Cryptocurrencies openly honor the earlier thinkers whose ideas made them possible",
@@ -38624,85 +38130,33 @@
   },
   {
     "tier": 1,
-    "question": "In the 1960s the American economist Milton Friedman studied the Great Depression, the terrible slump that began in 1929 when the American stock market crashed. Banks closed by the thousands, workers lost jobs, and families went hungry through the 1930s. Friedman argued the crash never had to get that bad. He blamed the Federal Reserve — America's monetary authority — for standing by while banks failed and the country's money supply shrank by a third. What did Friedman say went wrong?",
-    "answer": "The central bank made the crash worse instead of stopping it",
+    "question": "Milton Friedman and Anna Schwartz sat in the audience in Chicago in November 2002 as Ben Bernanke, a governor of the Federal Reserve, rose to speak at a conference for Friedman's ninetieth birthday. He took up, on the Fed's behalf, the charge the two had made in their book of 1963 about the Depression. What was that charge?",
+    "answer": "The Fed caused the Great Depression by failing to lend to banks in the crisis",
     "choices": [
-      "Farmers refused to grow food that year",
-      "The central bank made the crash worse instead of stopping it",
-      "Businesses stopped wanting profit",
-      "Workers didn't want jobs anymore"
+      "Import tariffs caused the Great Depression by strangling international trade",
+      "The Fed caused the Great Depression by failing to lend to banks in the crisis",
+      "Rigid wage rules under President Hoover caused the Great Depression",
+      "Foreign countries devaluing their currencies caused the Great Depression"
     ],
-    "context": "The University of Chicago hosted a two-day conference in November 2002 to mark Milton Friedman's 90th birthday. Friedman (born July 31 1912) sat in the audience for Bernanke's remarks. Source: Grokipedia 'Milton Friedman' (2026-09-05).",
-    "topic": "youre-right-we-did-it-bernankes-friedman-apology"
-  },
-  {
-    "tier": 1,
-    "question": "In 2008 many of the biggest American banks were about to collapse. They had made huge loans on houses that were suddenly worth far less than the borrowed money — the housing bubble had burst. To stop the banks from failing, the central bank of the United States, called the Federal Reserve, created brand-new money and used it to buy up the banks' bad debts. That kept the banks running while ordinary homeowners lost their houses. What is that kind of rescue called?",
-    "answer": "A bailout",
-    "choices": [
-      "A tax cut",
-      "A bailout",
-      "A recession",
-      "A tariff"
-    ],
-    "context": "Bernanke had joined the Fed Board in 2002 after two decades as an academic at Princeton. His scholarly work focused on the monetary history of the 1929-33 downturn -- exactly the topic of his apology. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
-    "topic": "youre-right-we-did-it-bernankes-friedman-apology"
-  },
-  {
-    "tier": 2,
-    "question": "In November 2002, at Milton Friedman's 90th birthday party, Federal Reserve governor Ben Bernanke made a public apology. He said the Fed had caused the Great Depression by letting the money supply shrink about 33 percent between 1929 and 1933 — exactly the case Friedman and his coauthor Anna Schwartz had laid out in a heavy 1963 book of economic history. What is that book called?",
-    "answer": "A Monetary History of the United States",
-    "choices": [
-      "A Monetary History of the United States",
-      "Free to Choose",
-      "Capitalism and Freedom",
-      "The Great Contraction"
-    ],
-    "context": "The full title is A Monetary History of the United States, 1867-1960, coauthored with Anna Schwartz and published by Princeton University Press in 1963. Chapter 7, 'The Great Contraction,' contained the specific argument. Source: Grokipedia 'A Monetary History of the United States' (2026-09-05).",
-    "topic": "youre-right-we-did-it-bernankes-friedman-apology"
-  },
-  {
-    "tier": 2,
-    "question": "In their 1963 book A Monetary History of the United States, economists Milton Friedman and Anna Schwartz argued that the Federal Reserve had turned an ordinary 1929 downturn into the decade-long Great Depression. In 2002, Fed governor Ben Bernanke publicly accepted their charge on the Fed's behalf. What did the Fed actually do between 1929 and 1933 to make the collapse so much worse?",
-    "answer": "Allowed the money supply to contract about 33% by failing to act as lender of last resort during bank failures",
-    "choices": [
-      "Allowed the money supply to contract about 33% by failing to act as lender of last resort during bank failures",
-      "Deliberately raised interest rates to attack speculators",
-      "Devalued the dollar against gold in coordination with Britain",
-      "Printed money to bail out farmers hit by drought"
-    ],
-    "context": "Bank failures cascaded 1930-33, wiping out deposits and shrinking the money supply. Friedman and Schwartz argued a competent central bank should have flooded the system with liquidity -- exactly what Bernanke did in 2008. Source: Friedman and Schwartz, A Monetary History (1963).",
+    "context": "The Friedman-Schwartz thesis is now standard even inside the Fed. The remaining dispute is not whether the Fed failed but what the correct alternative response would have been -- which is where Austrian critics part ways with the monetarist prescription. Source: Friedman and Schwartz, A Monetary History (1963); Rothbard, America's Great Depression (1963).",
     "topic": "youre-right-we-did-it-bernankes-friedman-apology"
   },
   {
     "tier": 3,
-    "question": "In November 2002 the Federal Reserve official Ben Bernanke spoke at a University of Chicago birthday party for the economist Milton Friedman, who was turning 90. Friedman and his co-author Anna Schwartz had spent decades arguing that the Fed itself caused the Great Depression of the 1930s by letting thousands of banks collapse. In his closing sentences Bernanke turned to Friedman and Schwartz in the audience and made a direct concession. Which sentences captured it?",
+    "question": "Ben Bernanke warned his Chicago audience in November 2002 that he was about to misuse his standing as a spokesman for the Federal Reserve. He closed his talk by turning to Milton Friedman and Anna Schwartz in the audience at Friedman's ninetieth-birthday conference. What did he tell them?",
     "answer": "You're right, we did it. We're very sorry. But thanks to you, we won't do it again",
     "choices": [
+      "You were partly right, we admit some errors were made",
       "You're right, we did it. We're very sorry. But thanks to you, we won't do it again",
-      "You were wrong, but we forgive the theoretical mistake",
-      "We agree partially, but the fiscal side matters equally",
-      "You may be right but the evidence is not yet decisive"
+      "You may be right but the evidence is not yet decisive",
+      "We agree partially, but the fiscal side matters equally"
     ],
     "context": "Bernanke abused (his word) his official status as a Fed representative to deliver the extraordinary concession directly to the 90-year-old Friedman. The full text is on federalreserve.gov. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
     "topic": "youre-right-we-did-it-bernankes-friedman-apology"
   },
   {
-    "tier": 3,
-    "question": "In November 2002 the future Federal Reserve chairman Ben Bernanke -- then a Fed governor -- spoke at a birthday celebration for the economist Milton Friedman, who had long argued that the Federal Reserve caused the Great Depression by letting the money supply collapse in the early 1930s. Bernanke closed his talk with a rare public admission on behalf of his own institution. What did his speech say the Federal Reserve had caused?",
-    "answer": "The worst economic catastrophe in modern American history",
-    "choices": [
-      "The worst economic catastrophe in modern American history",
-      "The dot-com stock-market bubble of the 1990s",
-      "The 1970s inflation of the Great Inflation era",
-      "The 1998 collapse of Long-Term Capital Management"
-    ],
-    "context": "The Great Depression (1929-33) was the deepest and longest downturn in US history. An official Fed representative publicly conceding institutional responsibility for it was unprecedented. Source: Grokipedia 'Great Depression' (2026-09-05).",
-    "topic": "youre-right-we-did-it-bernankes-friedman-apology"
-  },
-  {
     "tier": 4,
-    "question": "In 2002, Fed governor Ben Bernanke stood at Milton Friedman's 90th birthday party and apologized on the Federal Reserve's behalf for causing the Great Depression. Six years later, Bernanke — now Fed chair — was in charge during the 2008 Global Financial Crisis. Austrian-school economists said his crisis response completely contradicted the humility of that 2002 speech. What did Bernanke do at the Fed that his Austrian critics attacked?",
+    "question": "Ben Bernanke, chairman of the Federal Reserve by 2008, met the housing bust six years after his speech at Milton Friedman's ninetieth birthday, as banks that had lent against houses teetered. Austrian-school economists attacked the way he met the crisis. What did he do that they attacked?",
     "answer": "Launched massive quantitative easing and zero interest rates that his critics argue mispriced capital and seeded a later inflation wave",
     "choices": [
       "Launched massive quantitative easing and zero interest rates that his critics argue mispriced capital and seeded a later inflation wave",
@@ -38715,7 +38169,7 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman died in November 2006, before he could see how Fed chair Ben Bernanke would handle the 2008 crisis. Friedman's longtime coauthor Anna Schwartz, however, lived until 2012, and in October 2008 the Wall Street Journal published a candid interview with her about Bernanke's response to the collapse. What was Schwartz's assessment?",
+    "question": "Anna Schwartz, Milton Friedman's co-author, gave the Wall Street Journal an interview in October 2008, at ninety-two, about Ben Bernanke's handling of the collapse; Friedman, dead since 2006, missed the crisis. What was her assessment?",
     "answer": "That he has no true understanding of what is going on",
     "choices": [
       "That he has no true understanding of what is going on",
@@ -38728,7 +38182,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2002 the Federal Reserve official Ben Bernanke publicly apologized to the economists Milton Friedman and Anna Schwartz for the Fed's disaster during the Great Depression — the mistake of letting banks and the money supply collapse in the 1930s. Six years later, when Bernanke ran the Fed during the 2008 crisis, Anna Schwartz sharply criticized him from the opposite direction: this time the Fed flooded markets with new money and rescued failing banks in ways she said stored up new problems. Together these two moments form a specific recognition about central-bank learning. Which move does the ladder press on the reader?",
+    "question": "Ben Bernanke had given twenty years at Princeton to studying how the Federal Reserve let banks and money collapse in the 1930s. As its chairman in 2008 he let no such cascade of failures run, yet Austrian critics charged that he had flunked another test. What recognition about how central banks learn does his story press?",
     "answer": "The lesson learned from one crisis can itself become the mistake that causes the next crisis",
     "choices": [
       "The lesson learned from one crisis can itself become the mistake that causes the next crisis",
@@ -38737,19 +38191,6 @@
       "Academic historians consistently produce better central-bank chairs than practitioners"
     ],
     "context": "Bernanke avoided the 1930s mistake and possibly caused a 2020s one. The pattern is not incidental. Every crisis-forged lesson becomes doctrine that the next crisis violates. Source: Rothbard, America's Great Depression (1963).",
-    "topic": "youre-right-we-did-it-bernankes-friedman-apology"
-  },
-  {
-    "tier": 5,
-    "question": "In November 2002, the Federal Reserve official Ben Bernanke spoke at a University of Chicago birthday party for the economist Milton Friedman. Bernanke stood before Friedman and his co-author Anna Schwartz and admitted, on behalf of the Fed, that their famous critique of the central bank was correct — the Fed itself caused a huge disaster in the 1930s, not private markets or greedy speculators. Which critique of the Fed was Bernanke agreeing with?",
-    "answer": "The Fed caused the Great Depression by failing to lend to banks in the crisis",
-    "choices": [
-      "The Fed caused the Great Depression by failing to lend to banks in the crisis",
-      "Import tariffs caused the Great Depression by strangling international trade",
-      "Rigid wage rules under President Hoover caused the Great Depression",
-      "Foreign countries devaluing their currencies caused the Great Depression"
-    ],
-    "context": "The Friedman-Schwartz thesis is now standard even inside the Fed. The remaining dispute is not whether the Fed failed but what the correct alternative response would have been -- which is where Austrian critics part ways with the monetarist prescription. Source: Friedman and Schwartz, A Monetary History (1963); Rothbard, America's Great Depression (1963).",
     "topic": "youre-right-we-did-it-bernankes-friedman-apology"
   },
   {
