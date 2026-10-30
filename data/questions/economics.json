@@ -13976,7 +13976,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2003, two economics professors at George Mason University in Virginia began writing a daily economics and ideas blog together. The site has kept running every single day for over twenty years, making it one of the oldest continuously updated economics blogs on the internet. Who started marginalrevolution.com?",
+    "question": "Two economists at George Mason University in Virginia started a blog together in 2003 and have posted on it daily ever since, for more than twenty years. Few economics blogs online have run as long. Who started marginalrevolution.com?",
     "answer": "Tyler Cowen and Alex Tabarrok",
     "choices": [
       "Tyler Cowen and Alex Tabarrok",
@@ -13989,7 +13989,7 @@
   },
   {
     "tier": 2,
-    "question": "The public-choice school of economics, founded in the 1960s by James Buchanan and Gordon Tullock, is built on one simple idea. People who work in government — congressmen, presidents, bureaucrats, judges — react to incentives just like people working in a business or a household. They are not selfless angels once they cross into public office. What does taking this idea seriously mean for how a politician actually makes choices?",
+    "question": "James Buchanan took the Nobel Prize in 1986 for a blunt idea he shared with Gordon Tullock. Everyone in government, from a congressman to an agency clerk, chases votes, bigger budgets and promotions like anyone else; no one turns selfless on taking office. What does the idea say about a politician's choices?",
     "answer": "The politician often picks what helps his or her own career, not the general good",
     "choices": [
       "The politician often picks what helps his or her own career, not the general good",
@@ -14002,7 +14002,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2012 the George Mason University economists Tyler Cowen and Alex Tabarrok launched Marginal Revolution University, a whole library of free economics video lessons. Anyone online can watch and learn — no tuition, no admissions office, no application fee. What is the main gift of free online lessons like these to someone learning economics?",
+    "question": "Two George Mason economists who had blogged together daily since 2003 opened Marginal Revolution University in 2012: a free online library of short economics videos, where millions have since enrolled. What matters most about lessons like these for someone setting out to learn the subject?",
     "answer": "Anyone with an internet connection can learn without paying college tuition",
     "choices": [
       "Anyone with an internet connection can learn without paying college tuition",
@@ -14015,7 +14015,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1800s and early 1900s, huge inventions like electricity, the automobile, indoor plumbing, and the airplane reshaped daily life. Since the 1970s, the George Mason economist Tyler Cowen argues in his book The Great Stagnation, far fewer such life-changing everyday inventions have appeared, and the economy has grown more slowly. What is this pattern usually called?",
+    "question": "Tyler Cowen looked back, in The Great Stagnation of 2011, at the airplane, the car, electricity and indoor plumbing, all arriving before the 1970s, and argued that inventions on that scale have been far rarer since. What did he say the shortage of big new inventions has caused?",
     "answer": "A slowdown in productivity growth",
     "choices": [
       "A slowdown in productivity growth",
@@ -14028,7 +14028,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2015, the George Mason economist and blogger Tyler Cowen launched a new podcast. Each episode features him interviewing a single guest for about an hour — economists, novelists, chess players, chefs, historians, and other public intellectuals. The show has now grown to more than 200 episodes and become one of the most respected long-form interview podcasts in the intellectual world. What is it called?",
+    "question": "An economist at George Mason University, one of the two who had blogged daily since 2003, launched an interview podcast in 2015. Each episode gives about an hour to a single guest, and the guests have run from chefs and chess players to novelists, historians and fellow economists. What is the show called?",
     "answer": "Conversations with Tyler",
     "choices": [
       "Conversations with Tyler",
@@ -14040,21 +14040,8 @@
     "topic": "marginal-revolution-and-mru-cowen-and-tabarrok-at-gmu"
   },
   {
-    "tier": 4,
-    "question": "James Buchanan, an American economist who won the 1986 Nobel Prize in Economics, founded a whole school of economics on one blunt idea. He argued that politicians, bureaucrats, and government workers respond to incentives just like everyone else — chasing votes, budgets, and career gains — rather than acting as selfless servants of the public. What is that school called?",
-    "answer": "Public choice economics",
-    "choices": [
-      "Public choice economics",
-      "Behavioral economics",
-      "Development economics",
-      "Institutional economics"
-    ],
-    "context": "It was renamed the Mercatus Center in 1999 after a donor benefactor. The renaming came a full 16 years after Buchanan brought the center to GMU. Source: grokipedia.com/page/Mercatus_Center.",
-    "topic": "marginal-revolution-and-mru-cowen-and-tabarrok-at-gmu"
-  },
-  {
     "tier": 5,
-    "question": "Tyler Cowen and Alex Tabarrok teach economics at George Mason University in Virginia, the home of the public-choice tradition built by James Buchanan, Gordon Tullock, and Vernon Smith. In 2003 they started the blog Marginal Revolution, and in 2012 they launched Marginal Revolution University with free video lessons. What did Cowen and Tabarrok add to that George Mason tradition?",
+    "question": "James Buchanan and Gordon Tullock brought their center for public choice to George Mason University in 1983 and built the school's academic structure there. A generation later two economists there, the pair behind the Marginal Revolution blog, added something of their own. What did the pair add to the Mason tradition?",
     "answer": "They moved the reasoning-move tradition online and into the popular economics conversation",
     "choices": [
       "They moved the reasoning-move tradition online and into the popular economics conversation",
@@ -14067,20 +14054,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1962 the American economist Milton Friedman published a short book making the case for free markets to a general audience. Chapter 9 went after state-issued doctor licenses, arguing they let doctors keep their numbers artificially low and their prices high. The book became one of the most-read defenses of free markets published in the 20th century. What is Friedman's 1962 book called?",
-    "answer": "Capitalism and Freedom",
-    "choices": [
-      "Capitalism and Freedom",
-      "Free to Choose",
-      "A Monetary History of the United States",
-      "There's No Such Thing as a Free Lunch"
-    ],
-    "context": "Milton Friedman, Capitalism and Freedom (University of Chicago Press, 1962). Chapter 9 is titled 'Occupational Licensure.' Source: press.uchicago.edu/ucp/books/book/chicago/C/bo25839091.html.",
-    "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
-  },
-  {
-    "tier": 1,
-    "question": "The economist Milton Friedman, in his 1962 book Capitalism and Freedom, argued that requiring a state license to practice medicine helps doctors more than it helps patients. Licensing keeps new doctors out of the profession, drives up the pay of the doctors already inside, and raises the price of care for everyone else. In each American state, who actually decides who gets a medical license and who does not?",
+    "question": "Milton Friedman argued in his 1962 book Capitalism and Freedom that a state license to practice medicine shields doctors from competition as well as protecting patients. In each American state, who decides who gets that license?",
     "answer": "The state medical board, staffed largely by physicians",
     "choices": [
       "The state medical board, staffed largely by physicians",
@@ -14093,7 +14067,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1910 the Flexner Report, funded by the Carnegie Foundation, pushed states across America to close many small medical schools. From then on, doctors had to train at a small number of big elite schools only. Over the next decades, the number of freshly-trained physicians entering the field each year fell relative to the growing population. What did this do to the price of seeing a doctor?",
+    "question": "Abraham Flexner, in a 1910 study for the Carnegie Foundation, urged the states to shut the small medical schools that failed the strict new standards and to model medical training on Johns Hopkins. School after school shut while America's population kept growing. What did that do to the price of seeing a doctor?",
     "answer": "It pushed prices higher because fewer new doctors entered the field",
     "choices": [
       "It pushed prices higher because fewer new doctors entered the field",
@@ -14106,7 +14080,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1910, a schoolteacher named Abraham Flexner published a report on American medical education. His report told state governments to shut down small proprietary medical schools that did not meet strict new standards. Over the next 30 years, the total count of medical schools in the United States dropped sharply as school after school was forced to close. About how did the number change between 1904 and 1935?",
+    "question": "A student hoping to train as a doctor in 1935 found far fewer American medical schools to choose from than in 1904, after Abraham Flexner had told the states in 1910 to close the small ones that fell short of strict new standards. About how did the number of schools change between 1904 and 1935?",
     "answer": "From about 160 to about 76",
     "choices": [
       "From about 160 to about 76",
@@ -14119,7 +14093,7 @@
   },
   {
     "tier": 3,
-    "question": "In many US states today, ordinary workers must get a government-issued occupational license before they can be paid to cut hair, arrange flowers, hang wallpaper, or even braid hair for their neighbors. Economists like Morris Kleiner have spent years studying what these licensing rules actually do to wages. What do studies of these rules generally find about the pay of workers who already hold a license?",
+    "question": "A hair braider in one American state applied for a government license before she could charge her neighbors for braiding their hair. Morris Kleiner, a labor economist, has spent years measuring what rules like that do to pay. What do his studies find about the pay of workers who already hold a license?",
     "answer": "License holders earn more, because new competitors are kept out",
     "choices": [
       "License holders earn more, because new competitors are kept out",
@@ -14132,7 +14106,7 @@
   },
   {
     "tier": 3,
-    "question": "The American economist Morris Kleiner has spent his career measuring occupational licensing in the US — laws that require a government permit to work in a job. Licensing covered about 5 percent of workers in 1950 and roughly a quarter today. His studies of hair-braider laws and interior-designer rules show that licensing mostly serves which group's interests?",
+    "question": "Morris Kleiner tallied the spread of job licensing in America: in the 1950s a license was needed by one worker in twenty, and now about a quarter need one, hair braiders and interior designers among them. He found little measurable gain in quality for all of it. In his findings, whose interests does licensing mostly serve?",
     "answer": "Existing practitioners",
     "choices": [
       "Existing practitioners",
@@ -14145,7 +14119,7 @@
   },
   {
     "tier": 4,
-    "question": "In the United States, doctors used to be the only ones allowed to run a small primary-care clinic on their own. But by 2024, about half of US states had changed the rules — a nurse practitioner, a nurse with two extra years of medical training past nursing school, could open and run her own clinic with no doctor supervising her. Economists then compared prices and patient outcomes in those states to the ones where only MDs could still run a clinic, and they kept finding one clear pattern. What pattern?",
+    "question": "A nurse practitioner, a nurse with advanced clinical training, opened her own primary-care clinic with no doctor supervising her, in one of about half the states that allowed it by 2024. Researchers compared those states with the ones where only a physician could run such a clinic. What did they keep finding?",
     "answer": "Lower primary-care prices with no measurable quality difference from physician-only states",
     "choices": [
       "Lower primary-care prices with no measurable quality difference from physician-only states",
@@ -14157,21 +14131,8 @@
     "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
   },
   {
-    "tier": 4,
-    "question": "In North Carolina, licensed dentists sitting on the state dental board tried to shut down cheaper teeth-whitening kiosks in shopping malls run by non-dentists. The kiosks were not hurting anyone -- they were just competition. The board used its state licensing power to run the rivals out of business. Free-market economists say this is a classic example of using government rules to shut out your competition. What is the term for that pattern?",
-    "answer": "Rent-seeking",
-    "choices": [
-      "Rent-seeking",
-      "Free trade",
-      "Comparative advantage",
-      "Creative destruction"
-    ],
-    "context": "North Carolina State Board of Dental Examiners v. FTC, 574 US 494 (2015). The board had been trying to stop non-dentists from offering teeth-whitening services. The Court held that industry-majority boards without active state supervision lose Parker antitrust immunity. Source: supremecourt.gov (NC Dental 574 US 494).",
-    "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
-  },
-  {
     "tier": 5,
-    "question": "The American economist Milton Friedman thought patients had a right to know whether their doctor was well-trained, but he did not want the government handing doctors a monopoly. He wanted a quality signal without the state-enforced barrier that lets a licensing board block newcomers from ever practicing. In place of state licensing, what did Friedman suggest?",
+    "question": "A patient choosing a doctor deserved, in Milton Friedman's view, to know who was well trained, yet Friedman did not want a state board deciding who may practice at all. He set out his alternative in Capitalism and Freedom in 1962. What did he propose in place of licensing?",
     "answer": "Certification rather than licensing",
     "choices": [
       "Certification rather than licensing",
@@ -14184,7 +14145,7 @@
   },
   {
     "tier": 5,
-    "question": "The heart of the public-choice critique of medical and other occupational licensing is one default suspicion. If a state licensing board is filled almost entirely with members of the very profession it regulates — doctors regulating doctors, dentists regulating dentists, lawyers regulating lawyers — the incentives are obvious. When you see that kind of setup, what should you suspect first about the rules the board writes?",
+    "question": "A state licensing board sits down to write its entry rules, and nearly every seat at the table belongs to a member of the profession it oversees: dentists judging dentists, lawyers judging lawyers. Public-choice economists have a default rule for a board like this. What should a reader suspect first about the rules it writes?",
     "answer": "That entry restrictions serve incumbent incomes more than public safety",
     "choices": [
       "That entry restrictions serve incumbent incomes more than public safety",
@@ -14197,20 +14158,7 @@
   },
   {
     "tier": 1,
-    "question": "The Austrian school of economics, founded in Vienna by Carl Menger in 1871 and carried on by Ludwig von Mises and Friedrich Hayek, insists that only individual human beings can really act, choose, prefer, or decide. Countries, companies, and social classes do not literally do anything — the people inside them do. Every social outcome has to trace back to the actions of those individuals. What is this rule called?",
-    "answer": "Methodological individualism",
-    "choices": [
-      "Methodological individualism",
-      "Methodological holism",
-      "Structural functionalism",
-      "Historical materialism"
-    ],
-    "context": "Methodological individualism, made central to praxeology in Mises's Human Action (Yale, 1949), holds that groups, classes, and markets are useful shorthand but never literally act. Source: grokipedia.com/page/Methodological_individualism.",
-    "topic": "methodological-individualism"
-  },
-  {
-    "tier": 1,
-    "question": "In economics, one camp says only real, individual people ever make choices, so all analysis must start from single humans. The rival camp says groups, classes, or whole societies act as units in their own right — Karl Marx's class analysis leans hard on this second move. What is the rival camp's method called?",
+    "question": "Karl Marx leaned heavily, in his class analysis, on a method that treats groups, classes and societies as units acting in their own right. Economists of the Austrian school reject it. What is the method called?",
     "answer": "Methodological holism",
     "choices": [
       "Methodological holism",
@@ -14223,7 +14171,7 @@
   },
   {
     "tier": 2,
-    "question": "One school of economics argues that a whole country's economy is really millions of individuals each pursuing their own aims. Each is trying to make life better. Every price and every trade is one of those choices. Where does this school say the study of economics has to begin?",
+    "question": "Ludwig von Mises laid one rule about method at the foundation of his great treatise of 1949, and Murray Rothbard opened his own treatise of 1962 the same way. Where did that rule say the study of economics has to begin?",
     "answer": "With the choices of individual people acting on purpose",
     "choices": [
       "With the choices of individual people acting on purpose",
@@ -14236,7 +14184,7 @@
   },
   {
     "tier": 2,
-    "question": "The Austrian economist Ludwig von Mises argued that 'society' cannot actually make choices — only the individual people inside it can. A five-year plan that treats a whole nation like one big person will miss what real people actually want, need, and choose day by day in their own lives. What is this idea called?",
+    "question": "A news report says a country has decided something, and an Austrian-school economist stops to ask who, exactly, decided. From Carl Menger to Ludwig von Mises and Friedrich Hayek, the school holds that only persons act or choose, and that a nation or a class is only a short name for its people. What is that rule called?",
     "answer": "Methodological individualism",
     "choices": [
       "Methodological individualism",
@@ -14249,7 +14197,7 @@
   },
   {
     "tier": 3,
-    "question": "A Marxist writer says the bourgeoisie exploits the proletariat. To an Austrian economist following Ludwig von Mises, that whole sentence hides what is really going on, because it talks in class abstractions instead of naming who is actually doing what to whom. A Misesian rewrites the sentence so the real people, choices, and incentives are easy to see. What move does the Misesian make?",
+    "question": "A Marxist writer declares: the bourgeoisie exploits the proletariat. A follower of Ludwig von Mises takes the sentence and rewrites it, so that the choices and incentives hiding behind its class words come out where a reader can see them. What move does the follower make?",
     "answer": "Replace class terms with specific persons acting in specific transactions",
     "choices": [
       "Replace class terms with specific persons acting in specific transactions",
@@ -14262,7 +14210,7 @@
   },
   {
     "tier": 3,
-    "question": "Methodological individualism says every social outcome has to trace back to individual people acting. Some critics think this must mean every language, every market, and every custom was consciously planned by somebody in charge. But that is a misread of the idea. Friedrich Hayek, following the Scottish philosopher Adam Ferguson, insisted on an important qualifier. What qualifier does the idea actually make room for?",
+    "question": "Friedrich Hayek, following the Scottish philosopher Adam Ferguson, stressed one point about the Austrian rule that every social outcome traces back to what persons did. Some critics read the rule as a claim that someone consciously planned every language, market and custom. What did Hayek say the rule leaves room for?",
     "answer": "Outcomes can be the result of human action but not of any human design",
     "choices": [
       "Outcomes can be the result of human action but not of any human design",
@@ -14274,34 +14222,8 @@
     "topic": "methodological-individualism"
   },
   {
-    "tier": 4,
-    "question": "In the 1700s the Scottish philosopher Adam Ferguson, a friend of Adam Smith, coined a famous phrase. He said the great human institutions — language, common law, money, and markets — are 'the result of human action, but not of human design.' Friedrich Hayek later built a whole theory on that line. What kind of order does the phrase describe?",
-    "answer": "A spontaneous order that grows without any single planner in charge",
-    "choices": [
-      "A spontaneous order that grows without any single planner in charge",
-      "A carefully engineered order designed by government experts",
-      "A random order with no useful patterns at all",
-      "A dictatorship where one leader controls everything"
-    ],
-    "context": "Adam Ferguson's An Essay on the History of Civil Society (1767) contains the phrase that Hayek would use to describe spontaneous orders like markets, law, and language. Source: grokipedia.com/page/Adam_Ferguson.",
-    "topic": "methodological-individualism"
-  },
-  {
-    "tier": 5,
-    "question": "The American Austrian economist Murray Rothbard published his own great economic treatise in 1962. It opens with the same methodological-individualist premise as Ludwig von Mises's 1949 Human Action — that all economic reasoning must start from individual human beings choosing means to reach chosen ends. What is the title of Rothbard's book?",
-    "answer": "Man, Economy, and State",
-    "choices": [
-      "Man, Economy, and State",
-      "America's Great Depression",
-      "The Ethics of Liberty",
-      "What Has Government Done to Our Money?"
-    ],
-    "context": "Rothbard's Man, Economy, and State (D. Van Nostrand, 1962) is the postwar American restatement of the Misesian system on the same foundational premise. Source: grokipedia.com/page/Man,_Economy,_and_State.",
-    "topic": "methodological-individualism"
-  },
-  {
     "tier": 1,
-    "question": "In 2020 the US Federal Reserve created huge amounts of new dollars to fight the COVID slowdown. Company treasurers watched their savings buy less each month. Some firms decided to move part of their cash reserves into Bitcoin instead of dollars. What makes Bitcoin different that would help protect a company's savings?",
+    "question": "Company treasurers watched the Federal Reserve create new dollars at a record pace in 2020, and Michael Saylor, fearing for his software company's cash reserves, began moving them into Bitcoin. What makes Bitcoin different that he counted on to protect those savings?",
     "answer": "Bitcoin has a fixed supply and can't be printed",
     "choices": [
       "Bitcoin has a fixed supply and can't be printed",
@@ -14314,7 +14236,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2020, Michael Saylor, the CEO of the software company MicroStrategy, shocked Wall Street by taking hundreds of millions of dollars of his company's cash savings out of the bank and buying Bitcoin with it. Saylor explained he was guarding against one specific threat: when governments print more and more new money each year, each dollar left sitting in a company's bank account buys less and less over time. What is this money-printing problem usually called?",
+    "question": "Michael Saylor shocked Wall Street in 2020 by turning company cash into Bitcoin at MicroStrategy. He was guarding, he said, against what a government's endless printing of new money does to each dollar a company holds in reserve. What is that problem usually called?",
     "answer": "Inflation",
     "choices": [
       "Inflation",
@@ -14327,7 +14249,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 2020, the Virginia software firm MicroStrategy, run by CEO Michael Saylor, announced it would stop holding company cash in U.S. dollars and buy Bitcoin instead. Saylor said the dollar was a losing bet, and he blamed one specific pandemic-era Federal Reserve policy that was flooding the economy with new dollars. Which Fed policy did Saylor blame?",
+    "question": "The dollar was a losing bet, Michael Saylor said in August 2020, as his software company, MicroStrategy, began holding Bitcoin in its place. He laid the blame on one pandemic-era policy of the Federal Reserve. Which Fed policy did Saylor blame?",
     "answer": "Trillion-dollar balance-sheet expansion",
     "choices": [
       "Trillion-dollar balance-sheet expansion",
@@ -14340,7 +14262,7 @@
   },
   {
     "tier": 2,
-    "question": "On August 11, 2020, the software company MicroStrategy -- led by CEO Michael Saylor in Tysons Corner, Virginia -- became the first big U.S. public company to move its cash reserves into Bitcoin. The money came from cash the company already had sitting on its books, not from any loan or new investors. Roughly how much did MicroStrategy spend on that first Bitcoin purchase?",
+    "question": "Michael Saylor's software company, MicroStrategy of Tysons Corner, Virginia, made news on August 11, 2020: it had swapped cash from its reserves for Bitcoin, a first for any big public company. The money was cash already on its books, not borrowed. Roughly how much did that first purchase cost?",
     "answer": "$250 million",
     "choices": [
       "$250 million",
@@ -14353,20 +14275,7 @@
   },
   {
     "tier": 3,
-    "question": "Michael Saylor's public case for holding Bitcoin sounds Austrian in almost every important way. He points to a monetary distortion in which new money benefits the first people who receive it, before market prices adjust. What is the name of that distortion?",
-    "answer": "The Cantillon effect",
-    "choices": [
-      "The Cantillon effect",
-      "The Fisher effect",
-      "The Balassa-Samuelson effect",
-      "The Baumol cost disease"
-    ],
-    "context": "Richard Cantillon's 18th-century observation: newly printed money enters the economy at specific points (banks, government contractors, financial-asset holders) and lifts those first-recipients' purchasing power before the broader price level catches up. Saylor frames Bitcoin as the escape hatch. Source: en.wikipedia.org/wiki/Cantillon_effect.",
-    "topic": "microstrategy-the-first-corporate-treasury-bet"
-  },
-  {
-    "tier": 3,
-    "question": "MicroStrategy is a US software company whose CEO Michael Saylor turned the firm's corporate treasury into a huge Bitcoin stockpile starting in 2020. Through the 2022 crypto crash, when the stash was down billions on paper, Saylor kept buying more coins. To fund those buys, MicroStrategy issued one specific type of corporate debt again and again. Which kind of debt did it use?",
+    "question": "Michael Saylor kept buying Bitcoin through the crypto slump of 2022, though his company's coins had sunk billions below what it paid for them. He raised the money for new purchases by selling the same kind of corporate debt again and again. Which kind of debt did MicroStrategy use?",
     "answer": "Convertible bonds",
     "choices": [
       "Convertible bonds",
@@ -14379,7 +14288,7 @@
   },
   {
     "tier": 4,
-    "question": "In August 2020 the American software company MicroStrategy, led by its founder Michael Saylor, chose to store most of its cash reserves in Bitcoin instead of dollars. Saylor said he wanted to protect the company's savings from the inflation he expected after the Federal Reserve's pandemic-era money printing. What is this practice called when a company parks its cash reserves in Bitcoin?",
+    "question": "Michael Saylor chose in August 2020 to keep MicroStrategy's cash reserves in Bitcoin rather than dollars, to shield them from the debasement he expected after the Fed's pandemic printing, and other companies have since copied him. What is the practice called when a company parks its cash reserves in Bitcoin?",
     "answer": "A Bitcoin treasury strategy",
     "choices": [
       "A Bitcoin treasury strategy",
@@ -14392,7 +14301,7 @@
   },
   {
     "tier": 4,
-    "question": "The American software company MicroStrategy, led by its founder Michael Saylor, changed its whole business identity to focus on holding Bitcoin as its main reserve. It even switched its corporate logo to Bitcoin orange and later renamed itself Strategy. Saylor tells shareholders that Bitcoin is not a short-term trading chip at all. What kind of asset does the company treat Bitcoin as?",
+    "question": "Michael Saylor's MicroStrategy built its whole identity around Bitcoin: it put on a logo in Bitcoin orange in February 2025, and that August it took the legal name Strategy. Saylor tells shareholders the company does not hold Bitcoin as a trading chip. What kind of asset does he say it holds Bitcoin as?",
     "answer": "A long-term store of value",
     "choices": [
       "A long-term store of value",
@@ -14405,7 +14314,7 @@
   },
   {
     "tier": 5,
-    "question": "Michael Saylor, the founder of the US software firm MicroStrategy, became the loudest corporate voice for putting company cash into Bitcoin. He argues the US Federal Reserve prints dollars so fast that holding cash silently steals from shareholders. In Saylor's view, protecting shareholders from that dollar debasement is not a nice-to-have or an optional choice for management. What kind of thing is it instead?",
+    "question": "Michael Saylor turns a habit of corporate finance upside down. A company that sits on cash under a central bank that keeps printing, he argues, is quietly losing its shareholders' money, so guarding them against dollar debasement is no optional extra for management. What does he say it is instead?",
     "answer": "A requirement of fiduciary duty",
     "choices": [
       "A requirement of fiduciary duty",
@@ -14418,7 +14327,7 @@
   },
   {
     "tier": 5,
-    "question": "Michael Saylor's MicroStrategy set off a small wave of US public companies putting Bitcoin into their corporate treasuries. In early 2021 one very high-profile carmaker joined in, buying about $1.5 billion of Bitcoin. Its CEO tweeted the news and Bitcoin's price jumped. But within months the firm sold much of the stash, spooking crypto markets. Which company made that quick retreat?",
+    "question": "A company's chief executive tweeted early in 2021 that it had sunk about $1.5 billion into Bitcoin, following the path Michael Saylor's MicroStrategy had opened, and the price jumped. Within months the company had sold much of the stash. Which company made that quick retreat?",
     "answer": "Tesla",
     "choices": [
       "Tesla",
@@ -14522,7 +14431,7 @@
   },
   {
     "tier": 1,
-    "question": "A US Senator wants to raise the federal minimum wage to $15 an hour to help low-wage workers. The Chicago economist Milton Friedman, following the French thinker Frederic Bastiat, taught readers to look for the person you don't see — the worker whose skill is worth less than a new wage floor. Whose job gets priced out by the new $15 floor?",
+    "question": "A senator proposes raising the federal minimum wage to $15 an hour to help low-wage workers. Critics in the line of Frédéric Bastiat and Milton Friedman look past the workers who get the raise for the worker nobody sees. Whose job does the new $15 floor price out?",
     "answer": "A 16-year-old with no experience whose value to a small-restaurant employer is around $8 per hour",
     "choices": [
       "A 16-year-old with no experience whose value to a small-restaurant employer is around $8 per hour",
@@ -14535,7 +14444,7 @@
   },
   {
     "tier": 1,
-    "question": "The Chicago economist Milton Friedman wrote a Newsweek column in 1966 and a bestselling book Free to Choose in 1980 with his wife Rose. In both he gave the same blunt one-line description of what a minimum wage law actually forces employers to do. Which line did Friedman use?",
+    "question": "Milton Friedman wrote a Newsweek column in 1966 and, with his wife Rose, the best seller Free to Choose in 1980. In both he put in one blunt line what a minimum wage law, rightly described, orders employers to do. Which line did he use?",
     "answer": "A law saying employers must discriminate against people who have low skills",
     "choices": [
       "A law saying employers must discriminate against people who have low skills",
@@ -14548,7 +14457,7 @@
   },
   {
     "tier": 2,
-    "question": "Starting in 2015 the US city of Seattle phased in a new minimum wage that hit its full $15 an hour in 2017-18, then the highest in the country. Right after the wage hit full force, three big fast-food chains — McDonald's, Panera, and Wendy's — rolled out a new piece of self-service gear inside their stores to cut labor. Which piece of gear showed up?",
+    "question": "McDonald's, Panera and Wendy's spread one new piece of self-service gear through their restaurants in 2017 and 2018, the years Seattle's $15 minimum wage reached full force for big employers. The gear draws no wage. Which piece of gear was it?",
     "answer": "Self-order kiosks",
     "choices": [
       "Self-order kiosks",
@@ -14561,7 +14470,7 @@
   },
   {
     "tier": 2,
-    "question": "After Seattle's $15 minimum wage hit full force in 2017-18, big fast-food chains rolled out self-order kiosks in their stores to cut cashier hours. Economists point to this as a clean textbook case of one simple idea: when the price of hiring workers goes up, employers swap in more machines to do the same job. What is that machine-for-worker swap called in microeconomics?",
+    "question": "A fast-food owner brought in machines to do work his cashiers had done, once Seattle's $15 minimum wage took full effect for the city's big employers; a machine draws no wage, and the cashiers had come to cost more. Economists use cases like his as a clean textbook example. What is that move called?",
     "answer": "Capital-for-labor substitution",
     "choices": [
       "Capital-for-labor substitution",
@@ -14574,7 +14483,7 @@
   },
   {
     "tier": 3,
-    "question": "In a famous 1994 paper, the American economists David Card and Alan Krueger checked jobs at fast-food chains sitting just across a state line. One state had recently raised its minimum wage floor. The other had not. They phoned the restaurant managers, counted workers, and reported little short-term job loss on the raise side. Which state pair did the paper make famous?",
+    "question": "David Card and Alan Krueger phoned managers and counted staff on both sides of a state line for a famous paper of 1994. One state had lifted its minimum wage shortly before; the other had not. Jobs, they reported, had barely fallen in the short run on the side that raised it. Which two states did the paper make famous?",
     "answer": "New Jersey vs Pennsylvania fast-food",
     "choices": [
       "New Jersey vs Pennsylvania fast-food",
@@ -14587,7 +14496,7 @@
   },
   {
     "tier": 3,
-    "question": "In their 2008 book Minimum Wages, the American economists David Neumark and William Wascher pushed back on David Card and Alan Krueger's famous fast-food study. They argued that the earlier finding falls apart once you throw out phone surveys and use a much more reliable kind of employer data instead. Which kind of data did Neumark and Wascher push for?",
+    "question": "David Neumark and William Wascher took aim at the method behind David Card and Alan Krueger's famous study: a manager's word over the phone, they said, was a poor way to count jobs. They argued it at length in their 2008 book, Minimum Wages. Which kind of data did Neumark and Wascher push for?",
     "answer": "Payroll records from the restaurants themselves",
     "choices": [
       "Payroll records from the restaurants themselves",
@@ -14600,7 +14509,7 @@
   },
   {
     "tier": 4,
-    "question": "In his famous textbook Basic Economics, the American economist Thomas Sowell states the case against the minimum wage in a single sharp line. He argues the real cost is not paid by the boss and not by the customer at the register, but by an unseen victim — a specific young person who never even gets that first job interview because the legal wage floor has priced him out. In Sowell's own phrasing, who exactly pays the real price of the minimum wage?",
+    "question": "Thomas Sowell asks in his textbook Basic Economics who truly pays when a law lifts the lowest wage an employer may offer. His answer passes over the people most readers would name first. Where does he say the real cost of a minimum wage lands?",
     "answer": "The chronically-unemployed teenager",
     "choices": [
       "The chronically-unemployed teenager",
@@ -14613,7 +14522,7 @@
   },
   {
     "tier": 4,
-    "question": "The Austrian economist Friedrich Hayek argued that no distant planner can gather all the local knowledge scattered across a huge country. Free-market economists apply Hayek's 'knowledge problem' to the minimum wage: one single national wage floor cannot possibly be right for every worker in every industry in every region. What key knowledge does the local shop owner have that a distant lawmaker in the capital does not?",
+    "question": "Friedrich Hayek argued that no distant planner can gather the knowledge scattered across a whole country, and the minimum wage's critics turn his argument on the wage floor. One floor, set far away, covers every worker in every town. What does the owner of the shop know that the lawmakers do not?",
     "answer": "What each specific worker is actually worth at that specific job in that specific town",
     "choices": [
       "What each specific worker is actually worth at that specific job in that specific town",
@@ -14626,7 +14535,7 @@
   },
   {
     "tier": 5,
-    "question": "In his 2011 book Race and Economics, Walter Williams anchors the minimum-wage debate on a single number. He points to teen unemployment in an era when the federal wage floor, in real terms, was very low. About what was the US teenage unemployment rate in the 1950s?",
+    "question": "Walter Williams anchored the minimum-wage debate on one number in his 2011 book Race and Economics. He looked back to the 1950s, when the federal wage floor, adjusted for prices, was low. About what was the teenage unemployment rate in America then?",
     "answer": "About 10 percent",
     "choices": [
       "About 10 percent",
@@ -14638,21 +14547,8 @@
     "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
   },
   {
-    "tier": 5,
-    "question": "The Chicago economist Milton Friedman and the two Black free-market economists Thomas Sowell and Walter Williams all wrote and spoke against minimum wage laws. Following the French thinker Frederic Bastiat, each of them ended his case with the same closing move about how a citizen should actually judge a policy like the minimum wage. What did their shared closing move say to judge?",
-    "answer": "The results, not the intentions of its sponsors",
-    "choices": [
-      "The results, not the intentions of its sponsors",
-      "The rhetoric, not the arithmetic of its opponents",
-      "The optimism, not the pessimism of its forecasters",
-      "The popularity, not the theory of its academic critics"
-    ],
-    "context": "'One of the great mistakes is to judge policies by their intentions rather than their results' -- Friedman, restated by Sowell and Williams. The Bastiat move: the intended visible good is the SEEN; the actual outcome for the unseen victim is what matters. Source: fee.org/articles/friedman-intentions-versus-results.",
-    "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
-  },
-  {
     "tier": 1,
-    "question": "In November 2010, a Czech coder using the name 'Slush' set up a new service. It let small Bitcoin miners join up, share their computing power, and split the payouts. Each miner got a small steady trickle instead of a rare lucky hit. What is this kind of service called?",
+    "question": "A Czech programmer known online as Slush set up a new service in November 2010 that let small Bitcoin miners join their machines' power and divide each prize. Each got a small, steady trickle instead of a rare jackpot. What is such a setup called?",
     "answer": "A mining pool",
     "choices": [
       "A mining pool",
@@ -14665,7 +14561,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin miners run computers that race to find a special number that unlocks a new block and its reward. Most miners team up in 'pools' so they can smooth out their income. Inside a pool, miners get paid for each valid partial hash they turn in — not just for finding the rare winning full hash. What is one of those partial-hash entries called?",
+    "question": "A miner in a Bitcoin pool hands in result after result: partial hashes, near-misses that would have taken a block had the network set an easier target. Each one proves he did real work, and the pool splits every reward by how many he turned in. What is one of those entries called?",
     "answer": "A share",
     "choices": [
       "A share",
@@ -14678,7 +14574,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin miners run computers that compete to find the special number that unlocks the next block and its ~3.125-coin reward. The whole network only produces one block every ten minutes. Many miners with just one or two machines join large 'pools' that combine everyone's computing power and share the rewards evenly. Why does a small solo miner choose to join a big pool instead of trying to win blocks alone?",
+    "question": "A Bitcoin miner running just a machine or two switches them on to race for the next block, which turns up only once every ten minutes or so across the whole network, with a prize of about 3.125 coins. Many miners like him join a big pool instead of racing alone. Why does a small miner join?",
     "answer": "Alone he may go months or years without ever winning a block reward",
     "choices": [
       "Alone he may go months or years without ever winning a block reward",
@@ -14691,20 +14587,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin's security depends on no single player controlling most of the mining power. If any one miner or mining pool ever gained more than half of the whole network's hashing power, that player could rewrite very recent blocks, undo its own past payments, or block transactions it didn't like. Bitcoin developers give this exact concentration danger a specific name. What is this danger called?",
-    "answer": "A 51-percent attack",
-    "choices": [
-      "A 51-percent attack",
-      "A soft fork",
-      "A double-signature freeze",
-      "A Byzantine handshake"
-    ],
-    "context": "The name refers to the threshold at which a single actor's chain becomes longer than the honest network's chain. Bitcoin's security assumes the largest actor stays below 50 percent. Source: grokipedia.com/page/51%25_attack.",
-    "topic": "mining-pools-from-solo-miners-to-global-cooperatives"
-  },
-  {
-    "tier": 4,
-    "question": "In July 2014, a Bitcoin mining pool called GHash.io briefly controlled more than 51 percent of the entire Bitcoin network's computing power. In theory, a pool that big could rewrite recent transactions and double-spend coins -- the nightmare scenario for Bitcoin's security. Bitcoin's designers had assumed no single actor would ever get that much power. What actually happened next?",
+    "question": "The operators of GHash.io, one of Bitcoin's big pools, watched it pass half of all the hashing power on the network for a short time in the summer of 2014. A pool that big could in theory rewrite recent blocks and spend coins twice over, yet neither a court nor a regulator stepped in. What happened next?",
     "answer": "Individual miners voluntarily left the pool, and the pool operators publicly asked users to switch away",
     "choices": [
       "Individual miners voluntarily left the pool, and the pool operators publicly asked users to switch away",
@@ -14717,7 +14600,7 @@
   },
   {
     "tier": 5,
-    "question": "A high-school student worries the 2014 GHash.io near-miss shows Bitcoin is vulnerable because a small number of pools now control most of the network. A public-choice-trained economist points out that the 2014 episode itself illustrates why the vulnerability is bounded. What is his reasoning move?",
+    "question": "A high-school student worries that the GHash.io scare of 2014 shows Bitcoin is fragile, now that a handful of big pools direct the bulk of the world's mining. An economist trained in public choice answers that the episode itself shows why the danger has limits. What is his reasoning move?",
     "answer": "Pool operators' economic value depends on the network's honesty, so they have private incentive to avoid the attack",
     "choices": [
       "Pool operators' economic value depends on the network's honesty, so they have private incentive to avoid the attack",
@@ -14821,7 +14704,7 @@
   },
   {
     "tier": 1,
-    "question": "By the late 1920s the Austrian economist Ludwig von Mises had spent ten years arguing that a mixed economy of subsidies, price controls, and targeted taxes was not a stable third path between capitalism and socialism. It was, he said, an escalator that slid further left with every new fix. In 1929 he put the case in one German-language book. What is its German title?",
+    "question": "Ludwig von Mises argued that a market economy run with price caps, subsidies and targeted taxes cannot stand still: each fix breeds a problem that calls for another fix. He gathered those essays into a German book in 1929. What is its German title?",
     "answer": "Kritik des Interventionismus",
     "choices": [
       "Kritik des Interventionismus",
@@ -14834,7 +14717,7 @@
   },
   {
     "tier": 1,
-    "question": "Ludwig von Mises, the leader of the Austrian school of economics, had fled Europe in 1940 and settled in New York. On April 18, 1950, Mises spoke at the University Club in New York and gave a short, sharp version of his long case against the mixed economy — half free market, half government controls. What was that famous speech called?",
+    "question": "Ludwig von Mises spoke at the University Club in New York in April 1950, ten years after he had fled Europe, and gave a short version of his long case against the mixed economy. He packed his warning into the talk's title. What was the speech called?",
     "answer": "Middle-of-the-Road Policy Leads to Socialism",
     "choices": [
       "Middle-of-the-Road Policy Leads to Socialism",
@@ -14847,7 +14730,7 @@
   },
   {
     "tier": 2,
-    "question": "In a 1950 speech, Ludwig von Mises used an example to show why price caps spread. The government caps the price of one basic food to help poor families. That causes a shortage, so the government caps the price of what goes into it. Then it caps the prices of those inputs too. Which food did Mises start with?",
+    "question": "Officials cap the price of one basic food so the poor can buy it. Farmers make less on it and raise less, the shelves go bare, and the officials cap the price of what goes into it, then of what goes into that. Which food does Ludwig von Mises's example of 1950 start with?",
     "answer": "Milk",
     "choices": [
       "Milk",
@@ -14860,7 +14743,7 @@
   },
   {
     "tier": 2,
-    "question": "In a 1950 speech, the Austrian economist Ludwig von Mises argued that a mixed economy is not a real middle ground between capitalism and socialism. Either free markets run production, or the state does — you cannot split the steering wheel between the two. Mises put this either-or into a short three-word rule about who ends up in charge. What was that rule?",
+    "question": "A New York audience heard Ludwig von Mises argue in April 1950 that a mixed economy offers no real middle ground. Production, he said, answers either to the prices consumers pay or to the state's decrees. What three-word rule did he pack that either-or into?",
     "answer": "Control is indivisible",
     "choices": [
       "Control is indivisible",
@@ -14873,7 +14756,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian economist Ludwig von Mises ended his 1950 speech, later titled 'Middle-of-the-Road Policy Leads to Socialism,' with a famous line. He said the mixed economy of price controls, subsidies, and quotas is not a lasting system at all. Instead, he said, it is a way of reaching one specific destination, step by step by step. What did Mises say it leads to, and how fast?",
+    "question": "Ludwig von Mises closed his talk at New York's University Club in 1950 with his most famous line. The mixed economy of price controls, subsidies and quotas, he said, is no lasting system at all, only a way of reaching one destination. Where did he say it leads, and how?",
     "answer": "Socialism, by installments",
     "choices": [
       "Socialism, by installments",
@@ -14886,7 +14769,7 @@
   },
   {
     "tier": 3,
-    "question": "In a 1950 talk, Ludwig von Mises used real history to show the pattern was not just theory. He pointed to one European country. In 1914 it began with ceiling prices on a few consumer goods. By 1917 it ran a near-total war economy under one big named plan. Which case did Mises cite?",
+    "question": "Ludwig von Mises insisted in 1950 that his pattern was history, not just theory, and he pointed to one European country. It went to war in 1914 with price ceilings on just a few consumer goods, and before the war was over its whole economy had been bent to making munitions. Which case did Mises cite?",
     "answer": "Germany's progression to the 1917 Hindenburg Plan",
     "choices": [
       "Germany's progression to the 1917 Hindenburg Plan",
@@ -14899,7 +14782,7 @@
   },
   {
     "tier": 3,
-    "question": "During big wars, depressions, and panics, the size of the US federal government grows a lot. After the crisis ends, government shrinks back -- but only partway, never all the way to where it started. Which everyday tool is often used as a name for this one-way pattern?",
+    "question": "Robert Higgs traced the growth of the American federal government in his 1987 book Crisis and Leviathan. The government swelled in wars, depressions and panics, he found, and shrank back only partway once the crisis passed. What did Higgs name that one-way pattern after?",
     "answer": "Ratchet",
     "choices": [
       "Ratchet",
@@ -14912,7 +14795,7 @@
   },
   {
     "tier": 4,
-    "question": "American farm policy is often called a textbook case of the Mises ratchet. New Deal price supports gave farmers a minimum price for corn and wheat. Harvests then piled up in surplus that Washington could not sell. Which next step did the government take to solve that surplus problem?",
+    "question": "A wheat farmer planted more once the New Deal's price supports guaranteed him a floor price, and growers like him raised more grain than buyers wanted at that price. Surpluses piled up. What was Washington's next fix for the surplus?",
     "answer": "Paying farmers to leave land idle under set-aside and payment-in-kind programs",
     "choices": [
       "Paying farmers to leave land idle under set-aside and payment-in-kind programs",
@@ -14925,7 +14808,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1927 the Austrian economist Ludwig von Mises wrote a book called Liberalismus. In it he defended an older political tradition — the one that Adam Smith, John Locke, and Thomas Jefferson had helped shape — which teaches that individual freedom, private property, and free markets are the best foundation for peace and prosperity. What is this tradition called?",
+    "question": "Ludwig von Mises made his positive case in a book of 1927, two years before his German book of 1929 on the mixed economy. He defended the tradition that runs from John Locke through Adam Smith to Thomas Jefferson. What is that tradition called?",
     "answer": "Classical liberalism",
     "choices": [
       "Classical liberalism",
@@ -14938,7 +14821,7 @@
   },
   {
     "tier": 5,
-    "question": "By the 1930s Ludwig von Mises had argued for a decade that the mixed economy is unstable. It must either move back toward markets or forward to full state control. He used one short label to reject the idea that a real middle path exists at all. Which label?",
+    "question": "Ludwig von Mises read protective tariffs, farm supports and rent control as half-measures bound to slip back toward markets or on toward full state control, never as resting points. He had one short phrase for a lasting resting point of that kind, and he used it only to deny that one could exist. Which phrase?",
     "answer": "A third system",
     "choices": [
       "A third system",
@@ -15016,7 +14899,7 @@
   },
   {
     "tier": 1,
-    "question": "Ludwig von Mises, the Austrian economist who fled Hitler's Europe and taught in New York, spent his life warning against inflation. He argued that governments should not be able to just print new money whenever they want to. What was Mises's big worry about letting governments run the printing press?",
+    "question": "Ludwig von Mises took a professorship in Geneva in 1934, and there, as in Vienna before and New York after, he warned against governments free to print new money at will. What did he say such printing does?",
     "answer": "Prices go up and people's savings lose value",
     "choices": [
       "Prices go up and people's savings lose value",
@@ -15029,7 +14912,7 @@
   },
   {
     "tier": 1,
-    "question": "Ludwig von Mises, the great Austrian economist, had to flee Europe in 1940 as Hitler's armies spread across the continent. He crossed to America and lived out the rest of his life in New York. From his New York classroom, Mises spent decades arguing for one specific kind of economic system. Which system did Mises defend?",
+    "question": "Ludwig von Mises left Geneva in the summer of 1940 and crossed a continent at war to reach New York, where he settled for the rest of his life. Which economic system did he defend there, as he had in Vienna and Geneva?",
     "answer": "Free-market capitalism",
     "choices": [
       "Free-market capitalism",
@@ -15042,20 +14925,7 @@
   },
   {
     "tier": 2,
-    "question": "In the late 1930s the Austrian economist Ludwig von Mises took a teaching post in Geneva, Switzerland to escape rising Nazi power. There in 1940 he finished a big German-language economics treatise that he would later rewrite and expand in English as his famous book Human Action. What is the German-language title of that Geneva precursor?",
-    "answer": "Nationalokonomie",
-    "choices": [
-      "Nationalokonomie",
-      "Grundlegung",
-      "Wirtschaftslehre",
-      "Kapital"
-    ],
-    "context": "Nationalokonomie: Theorie des Handelns und Wirtschaftens (Geneva, 1940) appeared in a Europe already at war and went almost unread. Human Action (Yale, 1949) was Mises's English rewrite. Source: grokipedia.com/page/Ludwig_von_Mises.",
-    "topic": "misess-emigration-vienna-to-geneva-to-new-york"
-  },
-  {
-    "tier": 2,
-    "question": "In 1938 Nazi Germany took over Austria in the event called the Anschluss. Gestapo agents searched the Vienna flat of the exiled Austrian economist Ludwig von Mises and hauled off his private papers back to Berlin. In 1945, as the Second World War ended, Soviet troops seized the same Mises papers in Berlin. Where did the papers finally end up?",
+    "question": "Gestapo agents searched Ludwig von Mises's empty Vienna flat after Nazi Germany swallowed Austria in 1938, and they hauled his private papers away to Berlin. Soviet troops seized the papers when the war ended and shipped them on, to sit hidden in an archive for some fifty years. Where did the papers end up?",
     "answer": "Moscow",
     "choices": [
       "Moscow",
@@ -15068,7 +14938,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1940 the Austrian economist Ludwig von Mises fled Nazi-occupied Europe and reached New York City with almost nothing. He had already written a shelf of books defending free markets and sound money. Yet no major American university would put him on the payroll. Other Austrian thinkers who arrived that decade got the same cold shoulder. Why did the top US schools keep Austrian economists at arm's length?",
+    "question": "Ludwig von Mises found safety in America in 1940, but not a job: not one major university offered him a post, and other Austrian exiles of that decade met the same cold reception. Why did the leading universities keep the Austrians at arm's length?",
     "answer": "Their views clashed with the mainstream Keynesian consensus of the day",
     "choices": [
       "Their views clashed with the mainstream Keynesian consensus of the day",
@@ -15080,34 +14950,8 @@
     "topic": "misess-emigration-vienna-to-geneva-to-new-york"
   },
   {
-    "tier": 3,
-    "question": "Ludwig von Mises, an Austrian economist who fled Hitler's Europe, taught at New York University for many years. But NYU paid him nothing. A wealthy businessman named Lawrence Fertig and a private group called the William Volker Fund paid his salary instead, so that Mises's Austrian ideas could reach American students. What broader role does Mises's private funding reveal about who backs ideas the academic establishment will not?",
-    "answer": "Private donors often fund ideas the mainstream refuses to support",
-    "choices": [
-      "Private donors often fund ideas the mainstream refuses to support",
-      "Universities always fund every professor equally",
-      "Governments always pay the salaries of visiting professors",
-      "Only tenured professors ever receive outside funding"
-    ],
-    "context": "The Kansas-City-based Volker Fund covered a research fellowship; the New York advertising executive Lawrence Fertig personally supplemented Mises's NYU stipend. Source: grokipedia.com/page/Ludwig_von_Mises.",
-    "topic": "misess-emigration-vienna-to-geneva-to-new-york"
-  },
-  {
-    "tier": 4,
-    "question": "Ludwig von Mises founded the modern Austrian school of economics. He said the whole subject starts from a single fact we can all check about ourselves: people choose things on purpose to reach goals they care about. Mises gave this starting point a Greek-rooted name -- praxeology -- and built all of economics on top of it. What is this starting point called, in plain English?",
-    "answer": "The study of purposeful human action",
-    "choices": [
-      "The study of purposeful human action",
-      "The study of animal instincts scaled up to nations",
-      "The study of random market noise",
-      "The study of whatever governments plan"
-    ],
-    "context": "Human Action (Yale, 1949) was Mises's English-language rewrite of Nationalokonomie (1940) and became the postwar Austrian-tradition anchor text. Source: grokipedia.com/page/Human_Action.",
-    "topic": "misess-emigration-vienna-to-geneva-to-new-york"
-  },
-  {
     "tier": 5,
-    "question": "When the Austrian-school economist Mises left Geneva in June 1940, with German armies pouring into France, his wife Margit fled with him -- a bus ride across a war zone to Portugal, then a ship to New York. In 1976, three years after her husband's death, Margit published a memoir that remains the main primary source for the story of their escape. What is Margit's memoir called?",
+    "question": "Margit fled Geneva with her husband, the economist Mises, in the summer of 1940, while German armies poured into France: they rode a bus through a continent at war to Portugal and took ship at Lisbon for New York. In 1976, three years after his death, she told the story in a memoir that is still the chief eyewitness account of their escape. What is it called?",
     "answer": "My Years With Ludwig von Mises",
     "choices": [
       "My Years With Ludwig von Mises",
@@ -15119,34 +14963,8 @@
     "topic": "misess-emigration-vienna-to-geneva-to-new-york"
   },
   {
-    "tier": 1,
-    "question": "Modern Monetary Theory (MMT) is a newer idea that says a country like the United States can just print more of its own money to pay its debts and never really run out. In real life, some countries have tried heavy money-printing to pay for spending. When a government prints huge amounts of new money, what happens to prices?",
-    "answer": "Prices go up and each dollar buys less",
-    "choices": [
-      "Prices go up and each dollar buys less",
-      "The country becomes richer forever",
-      "People get free things forever",
-      "Nothing at all -- it works fine"
-    ],
-    "context": "MMT, associated with Warren Mosler, L. Randall Wray, and Stephanie Kelton, argues that a fiat-issuing government is constrained only by real resources and inflation, not by debt-service math. Source: Grokipedia 'Modern Monetary Theory' (2026-09-05).",
-    "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
-  },
-  {
-    "tier": 1,
-    "question": "A newer idea called Modern Monetary Theory (MMT) says a country that prints its own currency can never run out of money. Its supporters say the government can simply print more anytime it wants to pay for something. But when countries have actually tried heavy money-printing for long, the real world usually pushes back. What happens to a country that tries this?",
-    "answer": "Prices shoot up until money is worth much less",
-    "choices": [
-      "Prices shoot up until money is worth much less",
-      "Other countries send more gold to help",
-      "Nothing -- the country stays rich forever",
-      "The country's people get bigger paychecks that buy more"
-    ],
-    "context": "Kelton advised the 2016 and 2020 Sanders presidential campaigns and became the most visible face of MMT. Alexandria Ocasio-Cortez cited MMT as economic backing for the Green New Deal. Source: Grokipedia 'Stephanie Kelton' (2026-09-05).",
-    "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
-  },
-  {
     "tier": 2,
-    "question": "Modern Monetary Theory (MMT) is an idea championed by economists like Stephanie Kelton at Stony Brook University. It says a country that prints its own currency can never truly run out and does not really need to worry about deficits. Critics say the theory downplays one real-world problem that hurts the people who can least afford it. What do they say it misses?",
+    "question": "Stephanie Kelton of Stony Brook University carried Modern Monetary Theory (MMT) to a wide public in 2020 with her best seller The Deficit Myth. Her critics answered that the theory plays down one danger. What do they say it misses?",
     "answer": "Printing extra money causes inflation, which hurts savers and the poor",
     "choices": [
       "Printing extra money causes inflation, which hurts savers and the poor",
@@ -15159,7 +14977,7 @@
   },
   {
     "tier": 2,
-    "question": "Modern Monetary Theory (MMT) is an idea from economists like Warren Mosler and Stephanie Kelton. They argue a government that prints its own currency is not really held back by tax revenue or its debt level. Instead, MMT says only two forces can hold government spending back in the real world. What does the theory itself say are those only two limits?",
+    "question": "Warren Mosler and Stephanie Kelton made the case for Modern Monetary Theory (MMT): a government issuing its own currency, they argued, is limited neither by its tax revenue nor by the size of its debt. Only two things, in MMT's own account, hold such a government back. Which two?",
     "answer": "Inflation and real resources",
     "choices": [
       "Inflation and real resources",
@@ -15172,7 +14990,7 @@
   },
   {
     "tier": 3,
-    "question": "Larry Summers, a former Treasury secretary on the Democratic side of American politics, attacked Modern Monetary Theory -- a modern claim that a government can safely print all the money it needs. To mock the theory, Summers reused a slogan Republican George H. W. Bush had thrown at Ronald Reagan's supply-side tax cuts back in 1980. Which nickname did Summers reuse?",
+    "question": "Larry Summers, a former Treasury secretary and a Democrat, went after Modern Monetary Theory in 2019 with an old insult. George H. W. Bush had thrown it at Ronald Reagan's tax cuts in the 1980 campaign. Which nickname did Summers reuse for the theory?",
     "answer": "Voodoo economics",
     "choices": [
       "Voodoo economics",
@@ -15185,7 +15003,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern Monetary Theory (MMT) says a government can safely print new money as long as the economy has 'unused capacity' — idle workers, empty factories, machines sitting still. Austrian-school economists like Robert Murphy answer that at the scale of a whole national economy, this idea does not really hold. What do Austrians say is wrong with the 'unused capacity' claim?",
+    "question": "Robert Murphy, an Austrian-school economist, took aim at one claim of Modern Monetary Theory (MMT): that new money is safe while a country has unused capacity, with idle workers, empty factories and machines standing still. What objection did he and other Austrians press?",
     "answer": "There is no such thing at that scale; prices rise instead of production",
     "choices": [
       "There is no such thing at that scale; prices rise instead of production",
@@ -15198,7 +15016,7 @@
   },
   {
     "tier": 4,
-    "question": "In early 2021 President Joe Biden's government passed the American Rescue Plan -- a huge round of new spending, most of it paid for with newly created money. Larry Summers, a well-known Democratic economist who had served in the Obama Treasury, warned that pouring in that much fresh money would push US prices up hard. Over the next two years, what actually happened?",
+    "question": "Joe Biden put his name to the American Rescue Plan in March 2021: $1.9 trillion of new spending, funded by borrowing and by newly created money. Larry Summers, a former Treasury secretary, predicted a hard push on prices. What happened over the next two years?",
     "answer": "The worst US price inflation in about forty years",
     "choices": [
       "The worst US price inflation in about forty years",
@@ -15211,7 +15029,7 @@
   },
   {
     "tier": 4,
-    "question": "After US prices shot up sharply in 2021 and 2022, one group of economists -- nicknamed 'Team Transitory' -- blamed shipping backups and stuck ports at Los Angeles and Long Beach instead of the trillions of newly printed dollars the government had spent through the pandemic. What was Team Transitory's explanation for the inflation?",
+    "question": "A camp of economists nicknamed Team Transitory offered its own explanation as US prices climbed through 2021 and 2022, and many advocates of Modern Monetary Theory took the same line. What did the camp blame for the climb?",
     "answer": "Supply-chain problems caused it, not the new money",
     "choices": [
       "Supply-chain problems caused it, not the new money",
@@ -15224,7 +15042,7 @@
   },
   {
     "tier": 5,
-    "question": "A theory called Modern Monetary Theory (MMT) said governments could print lots of money without causing much inflation. Between 2020 and 2022 many countries tried it, and prices rose fast worldwide. What did the real world teach faster than long theoretical arguments could?",
+    "question": "Critics of Modern Monetary Theory (MMT) looked back on the price surge of 2021 and 2022, which followed the theory's rise in the late 2010s, and drew a broad lesson about how schools of economics rise and fall. What lesson did they draw?",
     "answer": "A live test in the real economy can disprove a school of thought faster than years of debate",
     "choices": [
       "A live test in the real economy can disprove a school of thought faster than years of debate",
@@ -15236,8 +15054,8 @@
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
   },
   {
-    "tier": 5,
-    "question": "Modern Monetary Theory (MMT) grew out of a 1990s pamphlet called 'Soft Currency Economics' by Warren Mosler, an American bond trader who ran a hedge fund. Mosler argued that a government that prints its own currency can never really run out of money. Mainstream economists later rejected the sweeping version of his claim. Why?",
+    "tier": 3,
+    "question": "Warren Mosler, who traded bonds before he ran a hedge fund, argued in a pamphlet of the 1990s, Soft Currency Economics, that a government which prints its own currency can never run out of it. Mainstream economists accepted the narrow claim but threw out the sweeping version. Why did they throw it out?",
     "answer": "A government can always print more money, but each new bill buys less — inflation is the limit",
     "choices": [
       "A government can always print more money, but each new bill buys less — inflation is the limit",
@@ -15250,7 +15068,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2014 the huge Bitcoin trading website Mt Gox, based in Tokyo, Japan, suddenly went bust. It had held Bitcoins for hundreds of thousands of customers who trusted the site to keep their coins safe. About 850,000 of those Bitcoins were gone. What is the main lesson people took away from this disaster?",
+    "question": "Mt Gox's customers learned in February 2014 that about 850,000 of the bitcoins they had left in its accounts were gone. The Tokyo exchange had carried the bulk of the world's Bitcoin trading. What blunt lesson did Bitcoiners draw from the loss?",
     "answer": "If you don't hold your own coins yourself, someone else can lose them",
     "choices": [
       "If you don't hold your own coins yourself, someone else can lose them",
@@ -15263,20 +15081,7 @@
   },
   {
     "tier": 2,
-    "question": "A person buys Bitcoin on a big trading website and leaves the coins sitting in the website's account instead of moving them to a private wallet. Then the website is hacked and all the coins are stolen -- this is what happened to thousands of users of Mt. Gox in 2014. What is the well-known Bitcoin saying that warns against this exact mistake?",
-    "answer": "Not your keys, not your coins",
-    "choices": [
-      "Not your keys, not your coins",
-      "Buy the dip, sell the top",
-      "A coin saved is a coin earned",
-      "Only the miners can lose money"
-    ],
-    "context": "The site was launched in 2007 by Jed McCaleb as a card-trading platform for Magic: The Gathering. He repurposed it for Bitcoin in 2010 and sold the domain to Mark Karpeles in 2011. Source: grokipedia.com/page/Mt._Gox.",
-    "topic": "mt-gox-the-first-great-custody-catastrophe"
-  },
-  {
-    "tier": 2,
-    "question": "In February 2014 the Tokyo-based Bitcoin exchange Mt Gox suddenly collapsed, and roughly 850,000 customer bitcoins vanished from its books -- at the time, worth about half a billion dollars. Mt Gox had been run by a French national who lived in Japan and had bought the site from its original American founder years earlier. Who was the French CEO running Mt Gox at the time of its collapse?",
+    "question": "A Frenchman living in Japan bought Mt Gox in 2011 from the American who had started it. The Frenchman was still running the exchange in February 2014, when about 850,000 customer bitcoins, then worth some half a billion dollars, vanished from its books. Who was he?",
     "answer": "Mark Karpeles",
     "choices": [
       "Mark Karpeles",
@@ -15289,7 +15094,7 @@
   },
   {
     "tier": 3,
-    "question": "In February 2014 Mt. Gox -- the Tokyo-based Bitcoin exchange run by Mark Karpeles, which then handled most of the world's Bitcoin trades -- suddenly halted all Bitcoin withdrawals, blaming vague 'technical issues.' Two weeks later the site went dark, and a few days after that it declared bankruptcy. About 850,000 bitcoins had vanished. On which day did the withdrawal freeze begin?",
+    "question": "A Mt Gox customer tried to withdraw his bitcoins one day in 2014 and found every withdrawal frozen, blamed on technical problems. The site went dark on February 24; a bankruptcy filing in Tokyo followed on the 28th. On which day did the freeze begin?",
     "answer": "February 7, 2014",
     "choices": [
       "February 7, 2014",
@@ -15302,7 +15107,7 @@
   },
   {
     "tier": 3,
-    "question": "When Mt Gox — then the world's largest Bitcoin exchange, based in Tokyo — collapsed in February 2014, it reported that roughly 850,000 customer Bitcoins had vanished. In the weeks after, staff searched old computers and found some coins forgotten in a cold-storage wallet. Roughly how many of the missing Bitcoins were recovered from that old wallet?",
+    "question": "Mt Gox's staff found some of the 850,000 missing bitcoins weeks after the collapse of February 2014, forgotten in an old offline wallet, the kind Bitcoiners call cold storage. Roughly how many of the missing coins were in it?",
     "answer": "About 200,000",
     "choices": [
       "About 200,000",
@@ -15315,7 +15120,7 @@
   },
   {
     "tier": 4,
-    "question": "Jed McCaleb, an American programmer, launched Mt Gox in 2007 as a website for trading Magic: The Gathering cards, then sold it in 2011 before its later Bitcoin disaster. McCaleb did not stop building — he went on to co-found two other well-known cryptocurrency projects. Which pair of projects did he help start?",
+    "question": "Jed McCaleb, an American programmer, registered Mt Gox in 2007 as a site for trading Magic: The Gathering cards, turned it over to Bitcoin trading in 2010, and sold it a year later. He kept building. Which two projects did he co-found afterward?",
     "answer": "Ripple (XRP) in 2012 and Stellar (XLM) in 2014",
     "choices": [
       "Ripple (XRP) in 2012 and Stellar (XLM) in 2014",
@@ -15328,7 +15133,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2024, ten years after Mt Gox collapsed in Tokyo and lost hundreds of thousands of customer Bitcoins, the court-appointed trustee finally began mailing the roughly 200,000 salvaged bitcoins back to creditors. One specific fact softened the blow for the customers who had waited an entire decade to see anything. What was that fact?",
+    "question": "The trustee named by a Tokyo court began repaying Mt Gox's creditors from the salvaged coins in 2024, a decade after the exchange collapsed. One fact eased the years of waiting for the customers who had lost their bitcoin. What was it?",
     "answer": "Bitcoin's price had risen so much that the recovered coins were worth many times their 2014 dollar value",
     "choices": [
       "Bitcoin's price had risen so much that the recovered coins were worth many times their 2014 dollar value",
@@ -15341,7 +15146,7 @@
   },
   {
     "tier": 1,
-    "question": "In New York City in the 1950s, a young American student walks into a private economics seminar led by Ludwig von Mises — the great Austrian economist who had fled Vienna a decade before. The young man spends his whole life afterward fighting for free markets, sound money, and smaller government, just as his teacher did. Which school of economics is he a part of?",
+    "question": "Murray Rothbard walked into an economics seminar as a young man and never left its leader's school. Like his teacher he fought for a smaller state, free markets and sound money, and he became the school's most radical voice. Which school was it?",
     "answer": "The Austrian school",
     "choices": [
       "The Austrian school",
@@ -15354,7 +15159,7 @@
   },
   {
     "tier": 1,
-    "question": "Murray Rothbard, the American Austrian-school economist who would later write the two-volume treatise Man, Economy, and State, was born on March 2, 1926, and died on January 7, 1995. He was born in a specific American city -- and specifically in the borough where his Jewish immigrant parents were raising him. In which American city and which of its boroughs was Rothbard born?",
+    "question": "David Rothbard, a Jewish chemist, left Poland and made his home in an American city, where his son Murray arrived in March 1926. In which city, and which part of it, was Murray born?",
     "answer": "New York City, in the Bronx",
     "choices": [
       "New York City, in the Bronx",
@@ -15367,7 +15172,7 @@
   },
   {
     "tier": 2,
-    "question": "Murray Rothbard was a young American economist studying at Columbia University in New York. In 1956 he finished his PhD thesis on money and banking in the young United States. Later he turned it into a book that told the money story of the first great American depression. Which depression did his book cover?",
+    "question": "Murray Rothbard finished his doctoral thesis at Columbia University in 1956, on money and banking in the young American republic. Later he made it into a book about one great American depression, which, as he told it, followed a burst of credit from the Second Bank. Which depression was it?",
     "answer": "The Panic of 1819",
     "choices": [
       "The Panic of 1819",
@@ -15380,7 +15185,7 @@
   },
   {
     "tier": 2,
-    "question": "From the mid-1950s Murray Rothbard, then a young Austrian-school economist living in New York, joined a private economics seminar that met each week in Manhattan. An Austrian scholar who had fled Nazi Europe in 1940 led the room, and the pro-market Volker Fund quietly paid his salary. Which seminar did Rothbard attend?",
+    "question": "Murray Rothbard became a regular at a weekly economics seminar while he was still a graduate student. Its leader had fled Europe in 1940, and the leader's salary came quietly from the William Volker Fund. Which seminar did Rothbard attend?",
     "answer": "Ludwig von Mises's private seminar at NYU",
     "choices": [
       "Ludwig von Mises's private seminar at NYU",
@@ -15393,7 +15198,7 @@
   },
   {
     "tier": 3,
-    "question": "Murray Rothbard had a Columbia University PhD and was America's top Austrian-school economist. But from 1966 to 1986, no major economics faculty would hire him -- his libertarian politics, which called even the tax system a form of theft, were too radical for the profession. So where did Rothbard actually teach for those twenty years?",
+    "question": "Murray Rothbard called taxation theft, and to the economics profession he was far too radical. Despite his Columbia doctorate, no leading economics faculty would hire him for twenty years. Where did he teach from 1966 to 1986?",
     "answer": "Brooklyn Polytechnic Institute -- an engineering school, not an economics department",
     "choices": [
       "Brooklyn Polytechnic Institute -- an engineering school, not an economics department",
@@ -15406,7 +15211,7 @@
   },
   {
     "tier": 3,
-    "question": "Murray Rothbard, the Austrian-school economist and student of Ludwig von Mises, spent most of his career teaching at a small engineering college in New York called Brooklyn Polytechnic. In 1986 he finally left it for a named chair of economics at a desert university, where he taught until his death in 1995. Which named chair at which university did Rothbard take?",
+    "question": "Murray Rothbard took up a named professorship of economics in 1986, after a career the economics profession had kept at arm's length, and kept it until his death from a heart attack in January 1995. Which chair, at which university, did he take?",
     "answer": "S.J. Hall Distinguished Professor of Economics at the University of Nevada, Las Vegas",
     "choices": [
       "S.J. Hall Distinguished Professor of Economics at the University of Nevada, Las Vegas",
@@ -15418,60 +15223,8 @@
     "topic": "murray-rothbard-who-he-was"
   },
   {
-    "tier": 4,
-    "question": "In 1977 Murray Rothbard helped launch a Washington, D.C. libertarian think tank alongside two co-founders. Four years later a bitter dispute over strategy -- Rothbard wanted radical purity, the others wanted mainstream reach and beltway influence -- got him kicked off its board. Which think tank did he co-found and then break from?",
-    "answer": "The Cato Institute, co-founded with Charles Koch and Ed Crane",
-    "choices": [
-      "The Cato Institute, co-founded with Charles Koch and Ed Crane",
-      "The Heritage Foundation, co-founded with Paul Weyrich and Edwin Feulner",
-      "The Reason Foundation, co-founded with Robert Poole",
-      "The Foundation for Economic Education, co-founded with Leonard Read"
-    ],
-    "context": "Cato was founded 1977; Rothbard was ousted from the board in 1981 after a dispute with Crane and Koch, largely over political strategy and cultural stance. Heritage (1973), Reason (1978), and FEE (1946) are all real free-market institutions with their own real founders; Rothbard was not a co-founder of any of them. Source: Wikipedia, Murray Rothbard.",
-    "topic": "murray-rothbard-who-he-was"
-  },
-  {
-    "tier": 4,
-    "question": "In 1981 the Austrian-school economist Murray Rothbard had a bitter falling-out with the Cato Institute, the libertarian think tank in Washington he had helped shape. The next year, in 1982, he teamed up with a colleague to launch a rival research institute focused entirely on Austrian economics. Rothbard would serve as its academic vice president for the rest of his life. Which institute did he co-found?",
-    "answer": "The Ludwig von Mises Institute, in Auburn, Alabama, with Llewellyn Rockwell Jr.",
-    "choices": [
-      "The Ludwig von Mises Institute, in Auburn, Alabama, with Llewellyn Rockwell Jr.",
-      "The Independent Institute, in Oakland, California, with David Theroux",
-      "The Foundation for Economic Education, in Irvington-on-Hudson, with Leonard Read",
-      "The Atlas Economic Research Foundation, in Fairfax, with Antony Fisher"
-    ],
-    "context": "Rothbard, Rockwell, and Burton Blumert founded the Mises Institute in 1982 to house Austrian scholarship outside the Beltway-libertarian orbit. The three other choices are all real free-market organizations founded by the named people, but none is where Rothbard landed after Cato. Source: Wikipedia, Murray Rothbard.",
-    "topic": "murray-rothbard-who-he-was"
-  },
-  {
-    "tier": 4,
-    "question": "The American economist Murray Rothbard argued in the 1960s that there should be no government at all. Instead, private property rights and voluntary companies -- courts, insurance firms, security guards -- would do everything the state now claims to do. Rothbard coined a special name for this system where the market handles even law and defense. What is it called?",
-    "answer": "Anarcho-capitalism",
-    "choices": [
-      "Anarcho-capitalism",
-      "Classical liberalism",
-      "Small-government conservatism",
-      "Social democracy"
-    ],
-    "context": "The term is Rothbard's own, distinguishing his position from Nozickian minarchism (a minimal-state night-watchman position) and from Randian objectivism (which insists on a minimal state). Classical liberalism is the older 19th-century umbrella that all three sit under. Source: Wikipedia, For a New Liberty.",
-    "topic": "murray-rothbard-who-he-was"
-  },
-  {
     "tier": 5,
-    "question": "In 1973 Murray Rothbard wrote a popular book laying out his whole political system for the general reader. It opens with a history of American liberty -- from the Revolution through the Civil War -- and ends with a plan for a fully private-property society where even courts, police, and roads would be privately run. Which book is it?",
-    "answer": "For a New Liberty: The Libertarian Manifesto",
-    "choices": [
-      "For a New Liberty: The Libertarian Manifesto",
-      "The Ethics of Liberty",
-      "Anarchy, State, and Utopia",
-      "The Machinery of Freedom"
-    ],
-    "context": "For a New Liberty (Macmillan, 1973) is Rothbard's popular manifesto. The Ethics of Liberty (1982) is his systematic philosophical case. Anarchy, State, and Utopia (1974) is Nozick's minarchist rival. The Machinery of Freedom (1973) is David Friedman's economic-anarchist rival, published the same year. Source: Wikipedia, For a New Liberty.",
-    "topic": "murray-rothbard-who-he-was"
-  },
-  {
-    "tier": 5,
-    "question": "Murray Rothbard, the Austrian-school economist and libertarian writer, poured years into a huge history of the American colonies and the Revolution. He published it in four volumes between 1975 and 1979. It is his longest work of American history and it stretched from the earliest settlers to the fight against Britain. What is this four-volume book called?",
+    "question": "Murray Rothbard traced the American colonies from their earliest settlers to the war with Britain in four volumes that came out between 1975 and 1979, his biggest work of history. A fifth, put together from his notes, followed in 2019. What is the work called?",
     "answer": "Conceived in Liberty",
     "choices": [
       "Conceived in Liberty",
@@ -15484,7 +15237,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1940 France was falling to Nazi Germany and much of Europe was at war. Ludwig von Mises, the great Austrian economist, was teaching at a graduate institute in neutral Switzerland after fleeing Vienna. That year he printed a big new economics book in German. In which Swiss city did the book first come out?",
+    "question": "Ludwig von Mises published the largest book of his career so far in 1940, as Hitler's armies swept into France. He wrote it in German while teaching at a graduate institute in a neutral country. Where did it first come out, and from which publisher?",
     "answer": "Geneva, published by Editions Union",
     "choices": [
       "Geneva, published by Editions Union",
@@ -15497,7 +15250,7 @@
   },
   {
     "tier": 2,
-    "question": "Ludwig von Mises's 1940 German-language book Nationaloekonomie was one of the great economics works of the twentieth century. It was written in Switzerland by a man widely seen as the leader of the Austrian school. But something very strange happened after it was printed in wartime Geneva. What happened to the book?",
+    "question": "Ludwig von Mises printed a thick German treatise, Nationalökonomie, in 1940, with Europe at war. His books had been blacklisted in Nazi Germany since 1933. What became of the book?",
     "answer": "It attracted almost no readership -- Germany and Austria were closed to it and Switzerland was neutral but small",
     "choices": [
       "It attracted almost no readership -- Germany and Austria were closed to it and Switzerland was neutral but small",
@@ -15510,7 +15263,7 @@
   },
   {
     "tier": 3,
-    "question": "Ludwig von Mises fled Europe for the United States in the summer of 1940, taking his unread 1940 German book with him. Over the next nine years he rewrote and expanded it in English. In what year did the rewritten version appear, and what was its English title?",
+    "question": "Ludwig von Mises crossed to America in the summer of 1940, carrying the German treatise he had just published, and spent years rewriting and enlarging it in English. When did the new version appear, and under what title?",
     "answer": "1949; 'Human Action: A Treatise on Economics'",
     "choices": [
       "1949; 'Human Action: A Treatise on Economics'",
@@ -15523,7 +15276,7 @@
   },
   {
     "tier": 4,
-    "question": "The Austrian-school economist Ludwig von Mises published a big German-language treatise called Nationaloekonomie in Switzerland in 1940, just as war engulfed Europe and almost no one could read it. Nine years later, in America, he published Human Action (1949), which became the standard English Austrian treatise. The two books are not simply the same book in two languages. Which statement best describes how Human Action and Nationaloekonomie are related?",
+    "question": "A reader who sets Ludwig von Mises's German treatise of 1940 beside the English one he later published with Yale University Press finds that the two are not the same book in two languages. How are they related?",
     "answer": "The two cover the same terrain (praxeology, calculation, cycle, interventionism) but Human Action is longer, more polished, and updated for postwar American debates",
     "choices": [
       "The two cover the same terrain (praxeology, calculation, cycle, interventionism) but Human Action is longer, more polished, and updated for postwar American debates",
@@ -15536,7 +15289,7 @@
   },
   {
     "tier": 5,
-    "question": "Mises's 1940 German-language treatise Nationaloekonomie appeared in wartime Switzerland and almost immediately vanished from view — Germany and Austria were closed to it. For four decades the German original was nearly impossible to find. A German publisher reprinted the original in 1980, and soon after, one American group in Auburn, Alabama put it online free so any reader could reach it at last. Which group was that?",
+    "question": "A German publisher reprinted Nationalökonomie in 1980, forty years after the treatise first came out; for most of those decades the original had been almost impossible to find. One American group has since put it online free for any reader. Which group?",
     "answer": "The Ludwig von Mises Institute",
     "choices": [
       "The Ludwig von Mises Institute",
@@ -15549,7 +15302,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1940 the Austrian economist Ludwig von Mises published Nationaloekonomie in German while fleeing Nazi Europe. Almost no one read it — the war was raging and the German-reading world had no market for a fat treatise defending free markets. Mises did not give up. He moved to America, rewrote the whole book from scratch in English, and published Human Action in 1949. What broader lesson about the history of books does reading both together teach a student?",
+    "question": "Ludwig von Mises wrote one treatise in German in 1940 and later wrote the whole book again in English, for a new world. What lesson about the history of books do the two teach when they are read side by side?",
     "answer": "A great book's initial reception can be nearly nil and still be preserved by a single author's determination to rewrite it in a new language and context",
     "choices": [
       "A great book's initial reception can be nearly nil and still be preserved by a single author's determination to rewrite it in a new language and context",
@@ -15562,7 +15315,7 @@
   },
   {
     "tier": 1,
-    "question": "The National Collegiate Athletic Association, or NCAA, runs athletics for more than a thousand US colleges and universities. For a hundred years its rule was simple: student-athletes cannot be paid any money for playing, even though the NCAA and its member schools make billions of dollars from TV deals and ticket sales. What is a no-pay rule like that called?",
+    "question": "A freshman signed on with a college team under a century-old rule of the National Collegiate Athletic Association (NCAA): he could accept a scholarship, a room, his meals and a little stipend, but not a wage for playing. What did the NCAA call the rule?",
     "answer": "Amateurism",
     "choices": [
       "Amateurism",
@@ -15575,7 +15328,7 @@
   },
   {
     "tier": 1,
-    "question": "A big college sports group takes in around 18 billion dollars a year, mostly from TV deals. Its rule for a hundred years said the players who actually made the games could NOT be paid. About how much of that huge pile of money went to the players in cash?",
+    "question": "A college quarterback drew the crowds that made his sport rich, at a time when college athletics took in about 18 billion dollars a year, mostly from television deals. About how much of that money reached players like him in cash?",
     "answer": "Basically none of it",
     "choices": [
       "Basically none of it",
@@ -15588,7 +15341,7 @@
   },
   {
     "tier": 2,
-    "question": "For decades, every major American college quietly agreed with the others: none of them would pay their student athletes a salary, no matter how much money those athletes brought in from ticket sales and television deals. Each individual school could easily have offered pay on its own to attract the best basketball or football players in the country. But they all promised each other, through the National Collegiate Athletic Association (NCAA) rulebook, that none of them would. Economists have a blunt name for that kind of secret agreement between employers. What is it usually called?",
+    "question": "The colleges of the National Collegiate Athletic Association (NCAA) all agreed through its rulebook that none of them would pay a player, though any single school might have won the top recruits with a paycheck. Economists have a blunt name for an agreement like that. What is it?",
     "answer": "Price-fixing among employers who should be competing",
     "choices": [
       "Price-fixing among employers who should be competing",
@@ -15601,7 +15354,7 @@
   },
   {
     "tier": 2,
-    "question": "In the mid-2000s a former University of California, Los Angeles (UCLA) basketball star named Ed O'Bannon walked into a friend's living room and saw his own face, name, and jersey number on the screen in a college basketball video game. The game had sold millions of copies. O'Bannon had been paid nothing. He decided to sue the game company for a share of the money it had made off him. Why is it fair for him to sue?",
+    "question": "Ed O'Bannon, who had starred in basketball for the University of California, Los Angeles, sat in a friend's living room and saw his own face and jersey number in a college basketball video game. Millions of copies had sold, and he had never seen a penny of it. He sued. What did his case rest on?",
     "answer": "People own their own name and likeness, so a company that sells them owes payment",
     "choices": [
       "People own their own name and likeness, so a company that sells them owes payment",
@@ -15614,7 +15367,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 2021 the US Supreme Court ruled against the National Collegiate Athletic Association (NCAA), the governing body for American college sports, in a major antitrust case called NCAA v. Alston. All nine justices — appointed by presidents of both parties — agreed the NCAA had illegally limited what colleges could offer athletes. Why does such a unanimous 9-0 ruling matter more than a close 5-4?",
+    "question": "All nine justices of the Supreme Court voted against the National Collegiate Athletic Association in the Alston case of June 2021, striking down its caps on the education benefits a college could give its athletes. Why does a unanimous ruling like that carry more weight than a close five-to-four?",
     "answer": "It signals that even judges who usually disagree see the issue the same way",
     "choices": [
       "It signals that even judges who usually disagree see the issue the same way",
@@ -15627,7 +15380,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 2021 US Supreme Court case National Collegiate Athletic Association (NCAA) v. Alston, all nine justices ruled against the NCAA's cap on education-related benefits for college athletes. Justice Brett Kavanaugh wrote a separate opinion agreeing with the ruling and going further: he warned the NCAA's whole 'amateurism' setup was likely an illegal cartel. What is a cartel?",
+    "question": "Justice Brett Kavanaugh joined the other eight against the National Collegiate Athletic Association (NCAA) in the Alston case of 2021 and wrote a separate opinion going further. He warned that 'the NCAA is not above the law' and suggested that its whole no-pay system acted like an illegal cartel. What did he mean by a cartel?",
     "answer": "A group of sellers that agree to fix prices or limit competition",
     "choices": [
       "A group of sellers that agree to fix prices or limit competition",
@@ -15640,7 +15393,7 @@
   },
   {
     "tier": 3,
-    "question": "Since July 2021, after a Supreme Court loss forced the National Collegiate Athletic Association (NCAA) to rewrite its rules, US college athletes can finally be paid by outside companies for the use of their name, image, and likeness (NIL). Before that, athletes were amateurs by rule and got nothing beyond scholarships. How does this NIL change usually affect how long top players choose to stay in college?",
+    "question": "A college basketball player signed his first paid deal for his name, image and likeness (NIL) on July 1, 2021, the day athletes became free to make such deals. Within three years NIL deals topped a billion dollars a year. How has the change tended to affect how long top players stay in college?",
     "answer": "Some stay longer because they can earn real money without turning pro",
     "choices": [
       "Some stay longer because they can earn real money without turning pro",
@@ -15653,7 +15406,7 @@
   },
   {
     "tier": 4,
-    "question": "For decades US college sports made billions in television money, but the players themselves could not be paid. In 2025 a court settlement finally set up a system to share revenue with the athletes. What basic economic idea did that settlement finally admit?",
+    "question": "A federal judge signed off in June 2025 on a settlement in the House case that lets each college pay its athletes a share of its revenue, some $20 million a school each year. What basic economic point did the settlement concede?",
     "answer": "The people creating the value should be allowed to earn from it",
     "choices": [
       "The people creating the value should be allowed to earn from it",
@@ -15666,7 +15419,7 @@
   },
   {
     "tier": 4,
-    "question": "Before the 1980s the National Collegiate Athletic Association (NCAA) -- the big group that runs US college sports -- controlled which football games could appear on television and how many. In 1984 the US Supreme Court, in NCAA v. Board of Regents of the University of Oklahoma, ruled that each university could sell its own television rights instead. What happened to the number of college football games shown after that?",
+    "question": "The regents of the University of Oklahoma took the National Collegiate Athletic Association (NCAA) to the Supreme Court, and in 1984 the Court let each college sell the right to broadcast its own football games. Until then the NCAA had picked which games were televised and how many. What happened after the ruling?",
     "answer": "Many more games aired, and television money soared",
     "choices": [
       "Many more games aired, and television money soared",
@@ -15679,7 +15432,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades the National Collegiate Athletic Association (NCAA) — the body that runs US college sports — ran a business worth billions of dollars. Coaches got rich, television networks got rich, universities got rich. But the players themselves were forbidden to earn a cent for playing. The 'amateur' rule held their price at zero. Between 2014 and 2025 the rule broke — courts and states forced the NCAA to let athletes earn money from their name, image, and likeness. What tends to happen when any industry keeps a key input priced far below its market value?",
+    "question": "An economist in the public-choice tradition looks back on the no-pay rule of the National Collegiate Athletic Association, which kept the pay of even a star player at nothing for about a century. He draws a lesson for any industry that keeps a key input priced well under its market value, whether by law or by custom. What does he expect of the rule keeping that price low?",
     "answer": "The legal or cultural rule holding the low price in place will eventually break",
     "choices": [
       "The legal or cultural rule holding the low price in place will eventually break",
@@ -15692,7 +15445,7 @@
   },
   {
     "tier": 1,
-    "question": "During World War 2 the city of New York froze rents so landlords could not raise the price on tenants during the wartime emergency. That 'short' emergency freeze has stayed in place ever since, more than eighty years later. What is the general name for a rule that caps how much rent a landlord can charge?",
+    "question": "A New York tenant found his rent frozen by a wartime order from Washington, a measure intended for the emergency alone. The war ended; the freeze did not. What is a law like that called?",
     "answer": "Rent control",
     "choices": [
       "Rent control",
@@ -15705,7 +15458,7 @@
   },
   {
     "tier": 1,
-    "question": "New York City has the oldest rent-control program in the United States. It began in 1943 during World War II, when the federal government froze apartment rents as a 'temporary' wartime measure so soldiers' families would not be gouged while men were overseas. The freeze never ended. As of 2026, roughly how long has New York's rent control been running?",
+    "question": "New York's lawmakers passed a stabilization law in 1969 to keep alive the rent controls that Washington had first ordered as an emergency measure in wartime. No other American city has capped rents as long. About how long has New York's rent control been running?",
     "answer": "Over 80 years",
     "choices": [
       "Over 80 years",
@@ -15718,7 +15471,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1971 the Swedish socialist economist Assar Lindbeck, who spent his career at Stockholm University and advised Sweden's own left-leaning government, made a famous warning about one popular housing policy. He called it 'the most efficient way to destroy a city — except for bombing.' Which policy shocked Lindbeck that much even though he was a socialist?",
+    "question": "Assar Lindbeck, who taught at Stockholm University and stood on Sweden's democratic left, wrote in 1971 that one popular housing policy seemed the most efficient way known to destroy a city, short of dropping bombs on it. In cities no bomb had touched, apartments stood empty and fell apart while young families found nowhere to live. Which policy was he attacking?",
     "answer": "Rent control",
     "choices": [
       "Rent control",
@@ -15731,7 +15484,7 @@
   },
   {
     "tier": 2,
-    "question": "The nineteenth-century French economist Frederic Bastiat taught a lesson called 'the seen and the unseen' — an honest look at any policy counts not just the visible winners but the invisible losses no one photographs. Apply his lesson to New York City rent control, a law that caps how much landlords can raise rent. What was seen was the low rent stamped on a lucky tenant's lease. What was unseen?",
+    "question": "Frédéric Bastiat taught readers to weigh every policy by what is seen and what is not. Turned on New York's rent control, his test finds the seen on a lucky tenant's lease: the low rent printed there. What does it find in the unseen?",
     "answer": "The apartments never built, landlords deferring maintenance, and vacant units held off market",
     "choices": [
       "The apartments never built, landlords deferring maintenance, and vacant units held off market",
@@ -15744,7 +15497,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1970s New York City had an epidemic of building fires, and much of the South Bronx literally burned to the ground. Economists who had studied New York's rent laws connected those fires directly to the city's decades-old rent-control system. What was the connection they named?",
+    "question": "Block after block of the South Bronx went up in flames in the 1970s, and critics blamed New York's rent laws for the fires. What connection did they draw?",
     "answer": "The incentive to burn a rent-controlled building for the insurance",
     "choices": [
       "The incentive to burn a rent-controlled building for the insurance",
@@ -15756,34 +15509,8 @@
     "topic": "new-york-citys-rent-control-since-1943"
   },
   {
-    "tier": 3,
-    "question": "Right after World War II, in 1946, two young American economists at the University of Chicago wrote a short pamphlet called 'Roofs or Ceilings? The Current Housing Problem.' It was published by the Foundation for Economic Education and became the first classic economic critique of rent control. Both authors would each later win the Nobel Prize in Economics. Which pair wrote it?",
-    "answer": "Milton Friedman and George Stigler",
-    "choices": [
-      "Milton Friedman and George Stigler",
-      "John Kenneth Galbraith and Paul Samuelson",
-      "Kenneth Arrow and Gerard Debreu",
-      "Ronald Coase and James Buchanan"
-    ],
-    "context": "'Roofs or Ceilings?' by Milton Friedman and George Stigler, published by the Foundation for Economic Education in 1946, is the founding classical critique. Both won Nobel Prizes decades later (Friedman 1976, Stigler 1982). Source: fee.org (Roofs or Ceilings 1946).",
-    "topic": "new-york-citys-rent-control-since-1943"
-  },
-  {
     "tier": 4,
-    "question": "In 2019 the economists Rebecca Diamond, Tim McQuade and Franklin Qian, working at Stanford University, published a study in the American Economic Review that examined an expansion of San Francisco's rent-control rules in 1994. Earlier studies of New York had found that rent control shrinks the housing supply -- Diamond and her colleagues wanted to see whether San Francisco matched. What did they find?",
-    "answer": "Housing-stock destruction and reduced supply",
-    "choices": [
-      "Housing-stock destruction and reduced supply",
-      "Increased new construction of luxury units",
-      "Widespread lower rent burdens across all tenants",
-      "Rising quality of rent-regulated units"
-    ],
-    "context": "Diamond and Palmer's study of San Francisco's 1994 rent-control expansion found landlords converted, demolished, or removed roughly 15% of formerly-controlled units from the rental stock over the next two decades. Same mechanism as the New York pattern. Source: aeaweb.org (AER 2019).",
-    "topic": "new-york-citys-rent-control-since-1943"
-  },
-  {
-    "tier": 4,
-    "question": "In 2019 New York State passed the Housing Stability and Tenant Protection Act, known as HSTPA. The law made the city's already-strict rent rules even tighter — landlords could raise rents less, remove fewer units from regulation, and evict less easily. Within two years, economists studying the New York rental market noticed specific measurable effects. What did they find?",
+    "question": "New York tightened its rent rules again in 2019 with the Housing Stability and Tenant Protection Act: smaller rent increases, more apartments kept under regulation, evictions harder to win. Two years on, the law's critics said they could measure its effects. What were they?",
     "answer": "More warehoused units and less new rental construction",
     "choices": [
       "More warehoused units and less new rental construction",
@@ -15796,7 +15523,7 @@
   },
   {
     "tier": 5,
-    "question": "For eighty years, economists studying rent control have kept landing on the same reasoning move -- from Milton Friedman and George Stigler's 1946 pamphlet 'Roofs or Ceilings?', through Swedish economist Assar Lindbeck's 1971 book on housing, all the way to Rebecca Diamond's 2019 San Francisco study. It is one incentive story about landlords. What does the story say?",
+    "question": "A New York landlord collects a capped rent that sits below what his building costs to keep up. Critics of rent control have told the same incentive story about landlords like him for generations, from New York to San Francisco. What does the story say?",
     "answer": "Landlords with rent below cost have no reason to maintain, expand, or add supply",
     "choices": [
       "Landlords with rent below cost have no reason to maintain, expand, or add supply",
@@ -15809,7 +15536,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1996 the American computer scientist Nick Szabo had an idea. Write a contract as computer code, and it would run itself the moment its rules were met. If you paid rent, the digital door would unlock. If you missed, it would lock again. No lawyer, no judge, no court. What did Szabo call this kind of contract?",
+    "question": "Nick Szabo coined a term in the mid-1990s for a deal written in computer code that enforces itself: a tenant pays and the digital lock clicks open, misses a payment and it shuts, and no lawyer or judge is needed. What did he call such a deal?",
     "answer": "A smart contract",
     "choices": [
       "A smart contract",
@@ -15822,20 +15549,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1998 essay, the American computer scientist Nick Szabo laid out how bit gold — his invention of software-scarce digital tokens — would be minted. A computer would solve a hard math puzzle. The answer would become a new token, and that token would then feed the next puzzle. Which cryptographic tool did Szabo chain together to mint fresh bit-gold tokens?",
-    "answer": "proof-of-work",
-    "choices": [
-      "proof-of-work",
-      "blind signatures",
-      "hash-based message authentication",
-      "elliptic-curve key exchange"
-    ],
-    "context": "Bit gold works by chaining proof-of-work: solving one puzzle produces a new token whose hash seeds the next. Blind signatures (Chaum's DigiCash), HMACs, and key-exchange are separate cryptographic primitives that bit gold did not use for issuance. Source: https://unenumerated.blogspot.com/2005/12/bit-gold.html.",
-    "topic": "nick-szabo-s-bit-gold-1998"
-  },
-  {
-    "tier": 2,
-    "question": "In 1998 the American computer scientist Nick Szabo published his bit gold essay. Fiat money — dollars, yen, euros — could always be printed at a central bank's discretion. Bit gold, born from math puzzles, could not. Szabo named one money trait that no central bank could be trusted to give, but that bit gold could guarantee. Which trait did he mean?",
+    "question": "Nick Szabo sketched bit gold in 1998, a digital money a decade ahead of Bitcoin, and one trait of it mattered to him more than any other. Which trait was it?",
     "answer": "a supply whose growth rate is governed by fixed technical difficulty, not by any issuer's discretion",
     "choices": [
       "a supply whose growth rate is governed by fixed technical difficulty, not by any issuer's discretion",
@@ -15848,20 +15562,7 @@
   },
   {
     "tier": 3,
-    "question": "Nick Szabo's bit gold system was never fully built. Szabo himself named one technical piece he could not solve, the piece that would keep a distributed record consistent when many people were solving puzzles at once. Which unsolved problem did bit gold leave open?",
-    "answer": "how to reach consensus on the ordering of new bit-gold entries across a distributed network",
-    "choices": [
-      "how to reach consensus on the ordering of new bit-gold entries across a distributed network",
-      "how to make the puzzles asymmetric between solving and verifying",
-      "how to encode the tokens in a portable digital format",
-      "how to sign transactions to prove ownership"
-    ],
-    "context": "Bit gold assumed distributed timestamping but did not specify how the network would agree on the ordering when solutions arrived from many nodes. Puzzle asymmetry, digital-format portability, and signing were already established primitives. Source: https://unenumerated.blogspot.com/2005/12/bit-gold.html; Nakamoto 2008 sec 4.",
-    "topic": "nick-szabo-s-bit-gold-1998"
-  },
-  {
-    "tier": 3,
-    "question": "Nick Szabo's 1998 bit gold left one big problem unsolved: when two computers proposed different histories of the tokens, there was no rule to say which one everyone should accept. Ten years later, in 2008, the pseudonymous Satoshi Nakamoto published the Bitcoin white paper and closed that gap. Which mechanism did Satoshi introduce to pick the true chain of history?",
+    "question": "Satoshi Nakamoto, whoever he was, put a mechanism into his Bitcoin white paper of 2008 that bit gold, Nick Szabo's design of 1998, had lacked, and Bitcoin ran where bit gold was never even built. Which mechanism did Satoshi add?",
     "answer": "the longest-chain rule combined with proof-of-work as the tiebreaker for competing histories",
     "choices": [
       "the longest-chain rule combined with proof-of-work as the tiebreaker for competing histories",
@@ -15874,7 +15575,7 @@
   },
   {
     "tier": 4,
-    "question": "The American computer scientist Nick Szabo — inventor of smart contracts and of bit gold, the closest software ancestor to Bitcoin — is also a trained lawyer. He has spent his career blending computer science, monetary history, and legal analysis in essays widely read across the cypherpunk world. From which American law school did Szabo earn his law degree?",
+    "question": "Nick Szabo earned a law degree on top of his training in computer science, and his essays, read across the cypherpunk world, blend code, law and monetary history. At which American university did he earn the degree?",
     "answer": "George Washington University",
     "choices": [
       "George Washington University",
@@ -15887,7 +15588,7 @@
   },
   {
     "tier": 4,
-    "question": "Nick Szabo is an American computer scientist and legal scholar who wrote a detailed 1998 proposal called 'bit gold,' which described almost every piece of what would later become Bitcoin. Because of his rare writing style, where he lives, his lifelong crypto focus, and that very early bit gold design, journalists and researchers have often suspected Szabo is really the pseudonymous inventor of Bitcoin. What has Szabo always said in public when asked?",
+    "question": "A reporter puts the question to Nick Szabo once more: did he create Bitcoin under a pen name? Journalists and researchers point to Szabo's early bit gold design, the way he writes and his lifelong work on digital money. What has Szabo said in public when asked?",
     "answer": "he has consistently denied being Satoshi Nakamoto",
     "choices": [
       "he has consistently denied being Satoshi Nakamoto",
@@ -15900,7 +15601,7 @@
   },
   {
     "tier": 5,
-    "question": "Satoshi Nakamoto's 2008 Bitcoin white paper carries a short list of citations in its notes. It credits Adam Back's Hashcash, Wei Dai's b-money, and Haber and Stornetta's timestamping. But one cypherpunk project from 1998 is widely seen as Bitcoin's closest software ancestor — proof-of-work chained to mint scarce digital tokens — and Satoshi's paper leaves it off. Which project is missing from the notes?",
+    "question": "Satoshi Nakamoto ended his 2008 white paper with a short list of the earlier work it drew on, Adam Back's Hashcash and Haber and Stornetta's timestamping among them. One cypherpunk design of 1998, widely counted as Bitcoin's nearest forerunner, is nowhere in it. Which design is missing?",
     "answer": "Nick Szabo's bit gold",
     "choices": [
       "Nick Szabo's bit gold",
@@ -15912,8 +15613,8 @@
     "topic": "nick-szabo-s-bit-gold-1998"
   },
   {
-    "tier": 5,
-    "question": "In 1998 the American cryptographer Nick Szabo published a blueprint called bit gold -- a proposal for digital scarce money using proof-of-work puzzles. Ten years later, in 2008, an anonymous inventor calling himself Satoshi Nakamoto launched Bitcoin. Bitcoin historians press one reasoning move about what Satoshi actually added on top of Szabo's blueprint. Which move does the argument press?",
+    "tier": 4,
+    "question": "A Bitcoin historian sets bit gold, the design Nick Szabo sketched in 1998, beside Satoshi Nakamoto's Bitcoin of 2008. Szabo's design was never built, for one problem had been left unsolved, and the historian sums up the difference in a single line. What does the historian say?",
     "answer": "That bit gold is Bitcoin minus the consensus mechanism -- and consensus was the single hard piece the field had left open until Satoshi",
     "choices": [
       "That bit gold is Bitcoin minus the consensus mechanism -- and consensus was the single hard piece the field had left open until Satoshi",
@@ -15926,7 +15627,7 @@
   },
   {
     "tier": 1,
-    "question": "In one small California town, the neighbors keep voting to block new houses and apartments from being built. There are lots of jobs there and lots of people who want to move in. What is probably happening to the price of the houses that already exist?",
+    "question": "Homeowners in a small California town packed with jobs turn out to vote down one more plan for new houses and apartments, while people keep moving to the area for work. What is probably happening to the price of the houses already standing?",
     "answer": "It keeps going way up -- some homes cost millions",
     "choices": [
       "It keeps going way up -- some homes cost millions",
@@ -15939,7 +15640,7 @@
   },
   {
     "tier": 1,
-    "question": "In a growing town, neighbors show up at every meeting to block new apartments from being built near their houses -- they say new buildings will change the neighborhood. People joke this attitude fits the shorthand NIMBY. What three words does NIMBY stand for?",
+    "question": "Neighbors crowd into a hearing in a growing town to block the new apartments planned nearby, saying the buildings will change the neighborhood. People call them by a short nickname, NIMBY. What do the letters stand for?",
     "answer": "Not In My Backyard",
     "choices": [
       "Not In My Backyard",
@@ -15952,7 +15653,7 @@
   },
   {
     "tier": 2,
-    "question": "In Palo Alto, California -- the wealthy Silicon Valley city that is home to Stanford University -- roughly 94 percent of residential land is zoned only for single-family homes. That effectively bans anyone from building new apartment buildings across most of the city. What term do housing economists use for zoning rules that block denser, cheaper housing like that?",
+    "question": "A builder who wants to put up an apartment block in Palo Alto, beside Stanford University, finds almost all of the city's residential land set aside for single-family houses. What name do housing economists give rules like these?",
     "answer": "Exclusionary zoning",
     "choices": [
       "Exclusionary zoning",
@@ -15965,7 +15666,7 @@
   },
   {
     "tier": 2,
-    "question": "Two American economists -- Edward Glaeser of Harvard and Joseph Gyourko of the Wharton School -- coined a term for the gap between what housing costs in cities where building is hard, like San Francisco or Manhattan, and what it would cost to just build the house from lumber and labor. The gap is often hundreds of thousands of dollars per home, all created by rules. What term did they use?",
+    "question": "Edward Glaeser of Harvard and Joseph Gyourko of Wharton measured what tight building rules cost in places from San Francisco to Manhattan, where the price of a home runs far above what it would cost to build, often by six figures. They gave the gap the rules create a name. What did they call it?",
     "answer": "The zoning tax",
     "choices": [
       "The zoning tax",
@@ -15978,7 +15679,7 @@
   },
   {
     "tier": 3,
-    "question": "In Palo Alto, California, homeowners who live near Stanford University benefit from strict zoning that blocks new housing. Their houses grow more valuable every year because no new ones can be built next door. The gain to them is huge and visible, but the cost spreads across many people no one sees. Who are those hidden losers?",
+    "question": "A Palo Alto homeowner watches his house climb in value again, because the zoning lets nothing new go up next door. By Mancur Olson's account of how interest groups organize, his gain is big, visible and concentrated, and the cost is thinly spread among people nobody sees. Who are those hidden losers?",
     "answer": "Workers priced out to Modesto, Sacramento, or out of California entirely",
     "choices": [
       "Workers priced out to Modesto, Sacramento, or out of California entirely",
@@ -15991,7 +15692,7 @@
   },
   {
     "tier": 3,
-    "question": "Around 2015, as housing prices in American cities climbed higher and higher, a new group of activists formed. Unlike the old Not-In-My-Backyard neighbors — the NIMBYs — who fought every new apartment building, this group did the opposite. They showed up at city council meetings pushing for more homes to be built, more density, more construction. What short name do people call this pro-housing movement?",
+    "question": "A pro-housing activist stood up at a city council meeting around 2015, in a city where housing prices kept climbing, and called for more building, more density and more homes. What do activists like her call themselves?",
     "answer": "YIMBY",
     "choices": [
       "YIMBY",
@@ -16004,7 +15705,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2021 the California state legislature passed a bill letting homeowners split their lots and build a small duplex where a single-family house had once been the only option. It was a rare state-level win against the tight local zoning rules that had frozen housing supply in cities like Palo Alto and San Francisco. What short name did the bill go by?",
+    "question": "A California homeowner won the right in 2021 to divide his lot and build a duplex where only one house had been allowed, though many local governments objected. What is the state law that gave him that right?",
     "answer": "SB 9",
     "choices": [
       "SB 9",
@@ -16017,7 +15718,7 @@
   },
   {
     "tier": 4,
-    "question": "For most of the twentieth century the US city of Minneapolis -- on the Mississippi River in Minnesota, near the Great Lakes -- only allowed single-family houses on most of its residential land. In 2018 Minneapolis passed a plan called Minneapolis 2040, changing the rules so any residential lot in the city could hold up to three units. What did that change do to the supply of homes?",
+    "question": "Minneapolis passed its Minneapolis 2040 plan in 2018, doing away with single-family-only zoning citywide: any residential lot could now hold up to three homes. What did the change do to the supply of homes the city could add?",
     "answer": "More units per lot became legal, so more homes could be built",
     "choices": [
       "More units per lot became legal, so more homes could be built",
@@ -16030,7 +15731,7 @@
   },
   {
     "tier": 4,
-    "question": "Austin, Texas -- one of the fastest-growing cities in the United States -- let builders put up huge numbers of new apartments over about five years, from 2019 to 2024. Some people had claimed that adding new apartments always raises rents by attracting even more demand. To their surprise, what actually happened to rents in Austin?",
+    "question": "A builder in Austin, Texas, opened one more apartment block in a city that added a flood of them between about 2019 and 2024. Some people had argued that new buildings only pull in more demand and drive rents up. What happened to Austin's rents as the new apartments opened?",
     "answer": "Rents fell as more apartments were built",
     "choices": [
       "Rents fell as more apartments were built",
@@ -16043,7 +15744,7 @@
   },
   {
     "tier": 5,
-    "question": "In Palo Alto, California, decades of tight zoning that blocked new housing made the region unaffordable for workers, yet the rules never went away. The homeowners whose property values had been lifted by that scarcity turned out every election to keep them. Austrian economists lift a general rule from this story. When a bad policy hurts a region's economy but sticks around anyway, what should you look for?",
+    "question": "A public-choice economist looks at Palo Alto's zoning, which has dragged down a whole region for decades and still refuses to die. He reaches for a general rule that Austrian economists share with his school. What does it tell him to look for?",
     "answer": "Existing incumbent asset-holders whose wealth was created by the policy's restriction",
     "choices": [
       "Existing incumbent asset-holders whose wealth was created by the policy's restriction",
@@ -16056,7 +15757,7 @@
   },
   {
     "tier": 5,
-    "question": "Palo Alto, California and other Bay Area cities use strict local zoning to block new housing, and their home prices have soared. Japan does housing rules differently — the national government sets zoning, and cities have little power to stop builders. Tokyo has kept growing to 37 million people, adding new apartments year after year. What has happened to Tokyo's real housing prices over the long run?",
+    "question": "A developer in Tokyo puts up a new apartment block under zoning rules set by Japan's national government, and the city can do little to stop him. Tokyo, home to some 37 million people, adds new apartments every year. What has happened to its real housing prices over the long run?",
     "answer": "They have been comparatively stable",
     "choices": [
       "They have been comparatively stable",
@@ -16069,7 +15770,7 @@
   },
   {
     "tier": 1,
-    "question": "North Korea has been ruled by three generations of one family since 1948. What is that family's last name?",
+    "question": "North Korea's third ruler took over from his father, who had taken over from the man who founded the country in 1948. All three belong to one family. What is the family's name?",
     "answer": "Kim",
     "choices": [
       "Kim",
@@ -16082,7 +15783,7 @@
   },
   {
     "tier": 1,
-    "question": "North Korea's official state teaching, first spelled out under founder Kim Il-sung in the 1950s, is that the country must stand entirely on its own. It must not lean on outsiders — not China, not the Soviet Union, no one. What Korean word names this idea of total national self-reliance?",
+    "question": "The man who founded North Korea began spelling out an official creed in speeches of 1955: the nation must rely on itself alone and depend on neither the Soviet Union nor China. What Korean word names that creed of total self-reliance?",
     "answer": "Juche",
     "choices": [
       "Juche",
@@ -16095,20 +15796,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1990s, North Korea suffered a famine that killed hundreds of thousands of people. The government owned all the farms and set all the food prices. Austrian economists like Ludwig von Mises and Friedrich Hayek argued this kind of failure is baked into any fully planned system. Why does the Austrian school say a planned economy so often ends in shortage?",
-    "answer": "No planner can gather all the information that free prices carry",
-    "choices": [
-      "No planner can gather all the information that free prices carry",
-      "Planned economies always have too much rain and not enough sun",
-      "Farmers in planned countries choose to grow only flowers, not food",
-      "Free countries always send extra food to planned countries"
-    ],
-    "context": "'Gonan-ui Haenggun' (Arduous March) is North Korea's official term for the mid-1990s famine. The state has never acknowledged a death toll. Source: en.wikipedia.org/wiki/North_Korean_famine.",
-    "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
-  },
-  {
-    "tier": 2,
-    "question": "In the mid-1990s, floods and the collapse of Soviet aid triggered a mass famine in North Korea, known to its own people as the Arduous March. Because Kim Jong-il's government has never opened its records, outside scholars can only estimate how many people died beyond the normal death rate. What is the standard scholarly range for those excess deaths?",
+    "question": "An outside scholar trying to count the dead of North Korea's famine of the mid-1990s, which its rulers call the Arduous March, finds Pyongyang's records sealed. He is left to estimate how many died beyond the usual death rate, among a population of about 22 million. What is the standard range?",
     "answer": "About 600,000 to 2.5 million",
     "choices": [
       "About 600,000 to 2.5 million",
@@ -16121,7 +15809,7 @@
   },
   {
     "tier": 3,
-    "question": "The DPRK operates a set of political prison camps called kwanliso, hidden in the northern mountains and never officially acknowledged by the government in Pyongyang. Almost everything the outside world knows about them comes from escapees who made it to the South and from commercial satellite photos. Which American non-profit publishes yearly reports pairing those satellite images with survivor testimony?",
+    "question": "An escapee who reached the South has described what he saw inside a kwanliso, one of the political prison camps hidden in North Korea's northern mountains that Pyongyang has never acknowledged. Commercial satellite photos supply most of the rest of what outsiders know. Which American non-profit sets the photos beside the escapees' testimony in its reports?",
     "answer": "The Committee for Human Rights in North Korea",
     "choices": [
       "The Committee for Human Rights in North Korea",
@@ -16134,7 +15822,7 @@
   },
   {
     "tier": 3,
-    "question": "Inside North Korea's kwanliso prison camp system, a person accused of a political crime is not the only one arrested. The regime in Pyongyang also imprisons that person's parents, brothers and sisters, children, and even grandchildren, on the reasoning that disloyalty runs through the bloodline. What name does the regime give to this policy?",
+    "question": "A man accused of a political crime in North Korea is sent to a kwanliso prison camp, and his parents, brothers, sisters, children and grandchildren may be locked up with him, since the regime treats disloyalty as something passed down in the blood. What does the regime call that rule?",
     "answer": "Three generations of punishment",
     "choices": [
       "Three generations of punishment",
@@ -16147,7 +15835,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 1920s the Austrian economists Ludwig von Mises and Friedrich Hayek argued that a socialist state cannot rationally calculate what to produce — with no market prices, planners are blind. The dispute became known as the socialist calculation debate. Decades later a single photograph turned up in every textbook telling the story: a nighttime satellite view of the Korean peninsula. What does the image show?",
+    "question": "Friedrich Hayek carried on the socialist calculation debate that Ludwig von Mises had opened in 1920: planners without market prices cannot see. One picture of the Korean peninsula, taken from a satellite, now appears in countless textbooks to illustrate the debate. What does the picture show?",
     "answer": "North Korea nearly dark and South Korea blazing with light",
     "choices": [
       "North Korea nearly dark and South Korea blazing with light",
@@ -16160,7 +15848,7 @@
   },
   {
     "tier": 4,
-    "question": "After World War 2, Korea was split into two countries at the 38th parallel. South Korea picked markets, trade, and private business. North Korea picked a fully planned communist economy where the state owned the factories and set the prices. The two started at similar living standards. About 75 years later, how much richer is the average South Korean than the average North Korean?",
+    "question": "South Koreans picked markets, trade and private firms after the 38th parallel split Korea in two at the end of the Second World War, while the North chose full planning. Both halves started from similar living standards. About seventy-five years later, how much richer is the average South Korean than the average North Korean?",
     "answer": "About 40 times richer",
     "choices": [
       "About 40 times richer",
@@ -16172,8 +15860,8 @@
     "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
   },
   {
-    "tier": 5,
-    "question": "North Korea has run a near-total command economy since the 1950s — the state owns the farms and factories, and government planners set the prices. Chronic food shortages have followed the whole time. Austrian economists Ludwig von Mises and Friedrich Hayek offered a specific reason planned states fail this way. What is the Austrian-school explanation for why the planners cannot fix the problem?",
+    "tier": 3,
+    "question": "A North Korean farmer worked a field the state owned, at prices its planners set, when floods struck and Soviet aid ran out in the mid-1990s and the planned food system collapsed into famine. Ludwig von Mises and Friedrich Hayek had argued long before that a fully planned economy fails in a particular way. What is the Austrian explanation for the famine?",
     "answer": "Without market prices the state cannot allocate food or resources rationally at large scale",
     "choices": [
       "Without market prices the state cannot allocate food or resources rationally at large scale",
@@ -16186,7 +15874,7 @@
   },
   {
     "tier": 5,
-    "question": "North Korea has been running a strict command economy — every price set by planners, no free markets — since 1948. That's the longest single experiment with pure central planning still running. What broad economic result has that experiment produced?",
+    "question": "A North Korean planner sets one more price, as the country's planners have done since its founding in 1948. No country has run pure central planning for longer. What has the experiment produced over more than seventy years?",
     "answer": "Chronic food shortages and famine, decade after decade",
     "choices": [
       "Chronic food shortages and famine, decade after decade",
@@ -16199,7 +15887,7 @@
   },
   {
     "tier": 5,
-    "question": "China's Deng Xiaoping opened Chinese markets to private business starting in 1978. Vietnam launched its own market reforms — called Doi Moi — in 1986. Cuba has cautiously started letting citizens run small businesses. All three still call themselves Communist and still have one-party rule. Which statement best describes the modern picture of command versus market-with-Party economies?",
+    "question": "Deng Xiaoping opened China to private business from 1978, and Vietnam launched the reforms it calls Doi Moi in 1986, both under one-party Communist rule. Cuba's Communist Party, too, now lets some citizens run small businesses. Which statement best describes the communist states now?",
     "answer": "Only North Korea stays pure command; China, Vietnam, and Cuba allow markets under Party rule",
     "choices": [
       "Only North Korea stays pure command; China, Vietnam, and Cuba allow markets under Party rule",
@@ -18188,7 +17876,7 @@
   },
   {
     "tier": 1,
-    "question": "A king in a hungry kingdom announces a new law: 'From now on, no shop in my realm may sell a loaf of bread for more than one gold coin.' But the bakers all cry out that flour, yeast, and firewood cost them two gold coins for each loaf they make. What will most likely happen on the town's bread shelves in the weeks that follow?",
+    "question": "A king orders that no loaf of bread in his realm may cost more than one gold coin. His bakers protest that flour, yeast and firewood cost them two gold coins for every loaf they bake. What happens on the town's bread shelves in the weeks that follow?",
     "answer": "Bread will disappear from the shelves",
     "choices": [
       "Bread will disappear from the shelves",
@@ -18201,7 +17889,7 @@
   },
   {
     "tier": 1,
-    "question": "In the year 301 the Roman emperor Diocletian issued an Edict on Maximum Prices, setting the top price shops were allowed to charge for grain, wine, cloth, and hundreds of other goods, on pain of death. Soon after, a writer named Lactantius reported that goods vanished from open markets, black markets appeared, and 'many died on small accounts' when caught breaking the price law. What kind of writer was Lactantius?",
+    "question": "Lactantius wrote about the reign of the emperor Diocletian, who in 301 set legal top prices on over a thousand goods and wages, and he reported the grim results for the markets of the empire. What kind of writer was Lactantius?",
     "answer": "An early Christian historian",
     "choices": [
       "An early Christian historian",
@@ -18214,7 +17902,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 1971 US President Richard Nixon appeared on national TV and froze almost all wages and prices in the country for 90 days. He was trying to stop inflation without slowing spending. It was the first peacetime price control in US history and shocked economists on all sides. What usually happens when a government forces prices below what a free market would set?",
+    "question": "Richard Nixon told a national television audience in August 1971 that he was freezing nearly every wage and price in the country for 90 days, a rare control in peacetime. What usually happens when a government forces prices below the level a free market would set?",
     "answer": "Shortages, because sellers won't sell as much at the fixed low price",
     "choices": [
       "Shortages, because sellers won't sell as much at the fixed low price",
@@ -18226,60 +17914,8 @@
     "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
   },
   {
-    "tier": 2,
-    "question": "In October 1973 several Arab oil-producing states led by Saudi Arabia cut off oil exports to the United States over its support for Israel. At the same time, a US law left over from Nixon's earlier price freeze still capped American gasoline prices, so stations could not raise them to match the sudden shortage. What everyday image famously captured the 1973 crisis at the pump?",
-    "answer": "Fuel lines with odd-and-even license-plate rationing",
-    "choices": [
-      "Fuel lines with odd-and-even license-plate rationing",
-      "Empty grocery-store meat cases",
-      "Vacant furniture showrooms",
-      "Locked bank vaults"
-    ],
-    "context": "Winter 1973-74 gas lines with odd-and-even license-plate rationing became the visual argument for a generation that price caps produce shortages. The controls were partially lifted in 1974 but full oil-price decontrol did not come until 1981 under Reagan. Source: energyhistory.yale.edu.",
-    "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
-  },
-  {
-    "tier": 3,
-    "question": "In 1971 the Swedish left-leaning economist Assar Lindbeck was studying big-city housing shortages. Even in cities that had suffered no bombing, apartments were sitting empty and falling apart while young families could not find a place to live. Lindbeck said one popular government policy did more damage to a city's housing than any war ever had — that it was 'the best way to destroy a city, other than bombing.' Which housing policy was he attacking?",
-    "answer": "Rent control",
-    "choices": [
-      "Rent control",
-      "Public-housing demolition",
-      "Zoning restrictions",
-      "Property taxes"
-    ],
-    "context": "Assar Lindbeck (1930-2020), a leading Swedish social-democrat economist, made the observation in 1971 and repeated it in many later publications. He was not a libertarian; the line is widely cited across the political spectrum. Source: Lindbeck, The Political Economy of the New Left (1971).",
-    "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
-  },
-  {
-    "tier": 3,
-    "question": "In 2020 the German city of Berlin passed a strict law called the Mietendeckel, which capped how much rent landlords could charge tenants and froze many rents in place. Within a year and a half a German high court struck the law down as unconstitutional. Setting aside that legal ruling, what does basic economics usually predict a rent cap like this will do to the housing supply over time?",
-    "answer": "Landlords list fewer apartments and let some go into disrepair",
-    "choices": [
-      "Landlords list fewer apartments and let some go into disrepair",
-      "New apartment buildings pop up everywhere to meet demand",
-      "Rents fall to zero within a year with no side effects",
-      "The city gains a huge amount of tax income overnight"
-    ],
-    "context": "Berlin's Mietendeckel froze most residential rents from February 2020. The federal Constitutional Court struck it down as beyond state competence in April 2021, requiring landlords to be repaid the difference. Source: bundesverfassungsgericht.de (BVerfG 2 BvF 1/20).",
-    "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
-  },
-  {
-    "tier": 3,
-    "question": "New York City has kept some form of rent control without a single break since the middle of the second world war, when the US federal government first imposed price ceilings on housing to stop wartime landlords from gouging returning soldiers and defense workers. The New York City program is the longest continuous rent-control program anywhere in the country. In roughly what decade did the city's rent control start?",
-    "answer": "The 1940s",
-    "choices": [
-      "The 1940s",
-      "The 1970s",
-      "The 1960s",
-      "The 1990s"
-    ],
-    "context": "NYC rent control began in 1943 under wartime federal price controls and continued in state and city form after the war. Rent stabilization (a distinct, larger program) began 1969. Source: hcr.ny.gov (rent regulation history).",
-    "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
-  },
-  {
     "tier": 4,
-    "question": "Every big price-control failure -- from the Roman emperor Diocletian's Edict on Maximum Prices in 301 AD, to US President Nixon's wage-price freeze in 1971, to Berlin's Mietendeckel rent cap in 2020 -- turns on the same economic move. A legal ceiling set below the market-clearing price produces one particular set of outcomes, every single time. Which outcome pattern always shows up?",
+    "question": "Diocletian capped prices across the Roman Empire in 301, and rulers have tried the same thing ever since, from Richard Nixon's freeze of 1971 to Berlin's rent lid of 2020. When the law pins a price below the level where supply and demand would meet, which outcomes show up?",
     "answer": "Queuing, black markets, and reduced supply",
     "choices": [
       "Queuing, black markets, and reduced supply",
@@ -18292,7 +17928,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1920 Ludwig von Mises published 'Economic Calculation in the Socialist Commonwealth,' arguing that a fully socialist state — having abolished the private trading of factories and land — would have no market prices for those things, and without prices its planners could not tell whether steel should go to tractors or bridges. Now apply Mises's logic to ordinary rent control, where trading of apartments still happens but a legal ceiling caps what landlords may charge. What is the connection between the two cases?",
+    "question": "Ludwig von Mises argued in 1920 that a state owning every factory and field leaves its planners with no prices to show them whether steel should go into tractors or into bridges. Rent control abolishes nothing: apartments still change hands, but a legal ceiling caps the rent. On Mises's logic, how are the two cases connected?",
     "answer": "A ceiling below market suffices to break the local signal, the way full central planning breaks it economy-wide",
     "choices": [
       "A ceiling below market suffices to break the local signal, the way full central planning breaks it economy-wide",
@@ -18305,7 +17941,7 @@
   },
   {
     "tier": 5,
-    "question": "One popular American economics textbook, first published in 2000 and now in its fifth edition, walks readers through the Roman emperor Diocletian's price edict of 301, President Richard Nixon's 1971 wage-and-price freeze, and modern rent-controlled cities like New York — always to make the same point. Each time a government held a price below its market level, shortages, black markets, and worse housing followed. Which textbook makes this argument?",
+    "question": "A student opening one popular economics book meets Diocletian's price edict of 301, Richard Nixon's wage-and-price freeze of 1971 and rent-controlled cities, each told to make the same point about prices held below their market level. Which book is it?",
     "answer": "Basic Economics by Thomas Sowell",
     "choices": [
       "Basic Economics by Thomas Sowell",
@@ -32969,20 +32605,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1840s the French writer Frédéric Bastiat wrote short, funny essays defending free trade. His most famous point came in an essay called 'That Which is Seen, and That Which is Not Seen.' When the government does something — smash a window, hire workers, hand out a subsidy — you notice the visible result. But you also have to think about the hidden costs, the things that never got made because the money went elsewhere. What did he call this pair?",
-    "answer": "The seen and the unseen",
-    "choices": [
-      "The seen and the unseen",
-      "Supply and demand",
-      "The invisible hand",
-      "The gold standard"
-    ],
-    "context": "Bastiat was elected to the Constituent Assembly on April 23, 1848 as one of seven deputies from Landes, served on the finance committee, and generally voted with the center-left; his term ran until his death on December 24, 1850. Source: https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat.",
-    "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
-  },
-  {
-    "tier": 1,
-    "question": "The French economist Frederic Bastiat, writing in the 1840s, loved short and biting lines. One of his most famous defined the state as the great fiction by which everyone seeks to live at the expense of everyone else. What was his point?",
+    "question": "A Paris reader opened the Journal des Débats on September 25, 1848, while the new provisional government was promising programme after programme, and found inside the sentence Frédéric Bastiat is best remembered for. What does it say about where a government's handouts come from?",
     "answer": "Every dollar the government gives out is taken from someone else",
     "choices": [
       "Every dollar the government gives out is taken from someone else",
@@ -32995,7 +32618,7 @@
   },
   {
     "tier": 2,
-    "question": "Bastiat's 1848 essay 'The State' contains the single most-quoted line he ever wrote: a compact one-sentence definition of what a government actually is. Fill in the blank: 'The state is the great ______ by which everyone seeks to live at the expense of everyone else.'",
+    "question": "'... the great ______ by which everyone seeks to live at the expense of everyone else,' Frédéric Bastiat wrote of government in September 1848. It became the most quoted line he ever wrote. Which word fills the blank?",
     "answer": "fiction",
     "choices": [
       "fiction",
@@ -33008,7 +32631,7 @@
   },
   {
     "tier": 2,
-    "question": "Frédéric Bastiat's 1848 essay 'The State' opened with a joke prize. Not five hundred francs — a whole million, plus crowns, crosses, and ribbons of honor. It was offered to anyone who could give a clear, honest definition of one single word. Then Bastiat gave his own famous one-line entry, which mocked how people all expect the government to feed them at everyone else's expense. Which word was the prize for?",
+    "question": "Frédéric Bastiat opened an essay of September 1848 with a mock reward of a million francs, crowns, crosses and ribbons thrown in, for whoever could define one word clearly and honestly. Then he sent in his own entry, a jab at living at everyone else's expense. Which word did the reward hang on?",
     "answer": "The word 'the State'",
     "choices": [
       "The word 'the State'",
@@ -33021,7 +32644,7 @@
   },
   {
     "tier": 3,
-    "question": "Frederic Bastiat was a French economist and pamphleteer in the 1840s. In one famous line he summed up bad government this way: the state is 'the great fiction by which everyone tries to live at the expense of everyone else.' What key insight about voting and public spending is he pointing at?",
+    "question": "France's voters sent Frédéric Bastiat to the Constituent Assembly in April 1848, and that September he wrote that everyone tries to live at the expense of everyone else. The line reaches the ballot box as well as the purse. What does it say about voting and public spending?",
     "answer": "Voters can vote themselves benefits paid for by their neighbors",
     "choices": [
       "Voters can vote themselves benefits paid for by their neighbors",
@@ -33033,21 +32656,8 @@
     "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
   },
   {
-    "tier": 3,
-    "question": "In 1850 the French economist Frederic Bastiat published a pamphlet called The Law. He warned about a specific trick: get lawmakers to pass a law that makes taking property from your neighbor legal, and once it's on the books, the taking even looks respectable and orderly. What did Bastiat call this trick?",
-    "answer": "Legal plunder",
-    "choices": [
-      "Legal plunder",
-      "Free exchange",
-      "Voluntary trade",
-      "Simple charity"
-    ],
-    "context": "The Law (La Loi) was published in June 1850. It repeats and sharpens the 'great fiction' insight of the 1848 essay, casting the same claim as a critique of the perversion of legal force. Bastiat died on December 24, 1850. Source: https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat.",
-    "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
-  },
-  {
     "tier": 4,
-    "question": "In 1848, revolution broke out in Paris and a wave of new state programs was on the table. The French economist Frederic Bastiat printed his essay The State in the Journal des Debats, one of the top Paris daily newspapers, aimed at a very specific slice of French society — the people he wanted his 'great fiction' warning about state benefits to reach. Which readership was that?",
+    "question": "Frédéric Bastiat aimed his essay of September 1848 at one particular room. Paris had risen in revolution that year, and a provisional government was promising new programmes. He printed the essay in the Journal des Débats, one of the city's leading dailies, to reach one slice of French society. Which readership was that?",
     "answer": "The liberal-Orleanist bourgeois readership",
     "choices": [
       "The liberal-Orleanist bourgeois readership",
@@ -33059,21 +32669,8 @@
     "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
   },
   {
-    "tier": 4,
-    "question": "In 1986 the American economist James Buchanan won the Nobel Prize in economics. Together with Gordon Tullock he had built a whole school on one plain observation. Voters, politicians, and bureaucrats are people too. They use government power to help themselves — winning votes, expanding their agencies, steering benefits to friends and donors — and they respond to incentives like anyone else. What is the field they founded called?",
-    "answer": "Public choice",
-    "choices": [
-      "Public choice",
-      "Labor economics",
-      "Behavioral finance",
-      "Game theory"
-    ],
-    "context": "Buchanan won the 1986 Nobel for his work founding public choice theory -- the formal analysis of politics using economic tools -- with his 1962 book The Calculus of Consent, co-authored with Gordon Tullock, as the flagship text. Buchanan repeatedly cited Bastiat as the classical statement of the same insight. Source: https://mises.org/mises-daily/frederic-bastiat-government.",
-    "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
-  },
-  {
     "tier": 5,
-    "question": "Two French essays published within eleven days in September 1848 both attacked the Provisional Government's promises. One was Bastiat's 'The State,' with its 'great fiction' line. The other, published in the same paper, was an article by Alexis de Tocqueville. Bastiat himself sat on one of the Assembly committees that autumn, and was re-elected its vice-chairman again and again. Which committee was that?",
+    "question": "Frédéric Bastiat took a seat on one committee of France's Constituent Assembly in 1848, the year he wrote his line about everyone living at the expense of everyone else, and he was re-elected its vice-chairman again and again. Which committee was it?",
     "answer": "The finance committee",
     "choices": [
       "The finance committee",
@@ -33082,19 +32679,6 @@
       "The colonial committee"
     ],
     "context": "Bastiat served on the Constituent Assembly's finance committee through 1848-1849 -- the committee handling the tax and spending questions his 'great fiction' line directly framed. Tocqueville, elected the same April, served in the Assembly as well and would soon join the government as foreign minister. Source: https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat.",
-    "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
-  },
-  {
-    "tier": 5,
-    "question": "In 1848 the French economist Frederic Bastiat wrote that the state is 'the great fiction by which everyone tries to live at the expense of everyone else.' Free-market thinkers have quoted that line for more than a hundred and fifty years. But the real payoff for a reader today isn't the quotable slogan — it's the underlying reasoning move it presses on the reader. Which move does the line press?",
-    "answer": "That every promised state benefit must be funded by a transfer from other citizens, seen or unseen",
-    "choices": [
-      "That every promised state benefit must be funded by a transfer from other citizens, seen or unseen",
-      "That any government is a criminal conspiracy against its own population",
-      "That representative democracy is preferable to monarchy on efficiency grounds",
-      "That the free market always produces the best possible distribution of wealth"
-    ],
-    "context": "The 'great fiction' Bastiat is naming is the illusion that the state has some independent fund of wealth of its own; the reasoning move is that every promised benefit must in fact come from someone -- the tax-payer, the money-holder, the excluded competitor. The reader can accept or reject Bastiat's evaluation; the MOVE is the transfer-recognition. James Buchanan's public choice theory, honored with the 1986 Nobel, formalized the same insight. Source: https://mises.org/mises-daily/frederic-bastiat-government.",
     "topic": "the-state-is-the-great-fiction-the-most-famous-bastiat-line"
   },
   {
