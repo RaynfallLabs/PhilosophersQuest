@@ -4083,7 +4083,7 @@
   },
   {
     "tier": 1,
-    "question": "In the old British legends of King Arthur, the young king who pulled the sword from the stone has one favorite city. His court sits there, and his Knights of the Round Table feast in its great hall. Every finished quest is offered up to that city. What is the name of King Arthur's capital?",
+    "question": "King Arthur, the young king who pulled the sword from the stone, set his court in one city of the old British legends. His knights feasted in its great hall and rode back there to report each finished quest. What was Arthur's capital called?",
     "answer": "Camelot",
     "choices": [
       "Camelot",
@@ -4096,7 +4096,7 @@
   },
   {
     "tier": 1,
-    "question": "In the year 1155 the Norman poet Wace, writing an Arthurian history in French verse, gave a plain reason for the shape of King Arthur's famous Round Table. Wace said Arthur's father Uther Pendragon had suffered one ugly problem at every feast in his court, and the young Arthur meant to end it once he became king. What problem was the Round Table built to stop?",
+    "question": "The Norman poet Wace gave a plain reason around 1155 for the shape of King Arthur's Round Table. Uther Pendragon, Arthur's father, had suffered one ugly problem at every feast, Wace said, and Arthur meant to end it. What problem was the table built to stop?",
     "answer": "barons quarrelling over who sat highest",
     "choices": [
       "barons quarrelling over who sat highest",
@@ -4109,20 +4109,7 @@
   },
   {
     "tier": 2,
-    "question": "Every year at Camelot, Arthur holds a great feast on one Christian holy day. The whole fellowship of the Round Table gathers together. Arthur will not sit down to eat until he has heard of some wonder or adventure. Which feast day is this yearly gathering?",
-    "answer": "Pentecost",
-    "choices": [
-      "Pentecost",
-      "Christmas",
-      "Easter",
-      "All Saints' Day"
-    ],
-    "context": "Malory, Le Morte d'Arthur (throughout). Pentecost (Whitsunday, fifty days after Easter) is Arthur's great gathering day; it is at Pentecost that Galahad arrives and takes the Siege Perilous, and at Pentecost the Grail quest begins. Christmas is the feast of the Green Knight scene at Camelot in a different poem. Easter and All Saints' Day are important feasts but not Arthur's court-day.  (Legend.)",
-    "topic": "camelot-and-the-round-table"
-  },
-  {
-    "tier": 2,
-    "question": "In Sir Thomas Malory's Le Morte d'Arthur (1485), the young King Arthur of Britain asks for the hand of Princess Guinevere, daughter of a lesser British king. When Arthur marries Guinevere, her father sends the Round Table along with her as a dowry. He had kept the great table safe since the days of Arthur's father Uther Pendragon. Which king gives the Round Table to Arthur as Guinevere's dowry?",
+    "question": "King Arthur married Guinevere, the daughter of a lesser British king, in Sir Thomas Malory's Le Morte d'Arthur. Her father sent the Round Table along with her as a dowry, a great table he had kept safe since Uther Pendragon's day. Which king gave the Round Table to Arthur?",
     "answer": "King Leodegrance",
     "choices": [
       "King Leodegrance",
@@ -4135,7 +4122,7 @@
   },
   {
     "tier": 3,
-    "question": "The 15th-century English knight Sir Thomas Malory wrote the great collected Arthurian book Le Morte d'Arthur while sitting in prison. Malory gives an exact seating count for King Arthur's Round Table, and reports that every seat has the name of the knight worthy to sit there written in gold letters around the rim. In Malory's telling, how many knights does the Round Table seat?",
+    "question": "Sir Thomas Malory wrote Le Morte d'Arthur, the great collected Arthurian book, while sitting in prison, and he gave King Arthur's Round Table an exact seating count. Every seat, he said, had the name of the knight worthy to sit there written in gold letters around the rim. In Malory's telling, how many knights did the table seat?",
     "answer": "one hundred and fifty",
     "choices": [
       "one hundred and fifty",
@@ -4143,12 +4130,12 @@
       "twenty-four",
       "three hundred"
     ],
-    "context": "Malory, Le Morte d'Arthur Book III ch.1: Leodegrance sends the Table 'and a hundred knights' with it -- Arthur later fills the remaining seats. Twelve is the round number of Charlemagne's Twelve Peers of France, not Arthur's fellowship. Twenty-four fits the smaller Arthurian jousting-lists, not the Table itself. Three hundred is the count of Roman senators.  (Legend.)",
+    "context": "Malory, Le Morte d'Arthur Book III ch.1: Leodegrance sends the Table 'and a hundred knights' with it -- Arthur later fills the remaining seats, and Malory gives 150 as the count of the fellowship at its full strength. Twelve is the round number of Charlemagne's Twelve Peers of France, not Arthur's fellowship. Twenty-four fits the smaller Arthurian jousting-lists, not the Table itself. Three hundred is the count of Roman senators.  (Legend.)",
     "topic": "camelot-and-the-round-table"
   },
   {
     "tier": 3,
-    "question": "King Arthur's Round Table in Malory seats about a hundred and fifty knights, but one seat around it is always kept empty. It is not kept out of respect for an absent knight. It is kept because any knight who sits in it who is not perfectly worthy will die on the spot. Only the pure Sir Galahad, son of Lancelot, can safely sit there. Which seat at the Table carries this deadly reputation?",
+    "question": "King Arthur's knights sat down at the Round Table in Malory's telling, each at a place marked with his name in letters of gold, and one seat among them stayed empty, as it always did. It was not kept out of respect for an absent knight. What was that seat called?",
     "answer": "the Siege Perilous",
     "choices": [
       "the Siege Perilous",
@@ -4160,21 +4147,8 @@
     "topic": "camelot-and-the-round-table"
   },
   {
-    "tier": 3,
-    "question": "In all the many years of the Round Table only ONE knight in the whole story is able to sit in the perilous seat and live. He arrives at Camelot on Pentecost, the letters of his own name appear on the empty seat, and he takes it. Who is the only knight to sit in the Siege Perilous?",
-    "answer": "Galahad",
-    "choices": [
-      "Galahad",
-      "Percival",
-      "Lancelot",
-      "Gawain"
-    ],
-    "context": "Malory, Le Morte d'Arthur Book XIII ch.4. Galahad, the son of Lancelot, is the pure knight who alone can occupy the seat and later achieves the Grail. Percival is one of the three Grail companions but has his own seat. Lancelot -- Galahad's father -- is too flawed by his love for Guinevere to sit there. Gawain is the great courtier but not the pure knight.  (Legend.)",
-    "topic": "camelot-and-the-round-table"
-  },
-  {
     "tier": 4,
-    "question": "The name 'Camelot' does not appear in any of the earliest Arthurian material -- not in Geoffrey of Monmouth, not in Wace. It is coined by one specific twelfth-century French poet, in a poem about Lancelot rescuing Guinevere from the kingdom of Gorre. Who first named Camelot?",
+    "question": "One poet of the 1170s, telling how Lancelot rode to rescue Guinevere from the kingdom of Gorre, gave King Arthur's capital a name that the first Arthurian books never used. The legend was older than the name. Who first named the city?",
     "answer": "Chretien de Troyes",
     "choices": [
       "Chretien de Troyes",
@@ -4187,7 +4161,7 @@
   },
   {
     "tier": 4,
-    "question": "The Great Hall of Winchester Castle in England has, hanging on its wall, a real physical Round Table of oak -- eighteen feet across, weighing over a ton. The table itself was built in the 1200s but was left bare wood for centuries. Later an English king ordered it painted with Arthur and his knights, reportedly to impress the visiting emperor Charles V. Which king ordered the paintwork now on the Winchester Round Table?",
+    "question": "An English king ordered the bare oak Round Table at Winchester painted with Arthur and his knights, reportedly to impress the visiting emperor Charles V. The table itself, built in the 1200s, hangs on the wall of Winchester's great hall, eighteen feet across and over a ton in weight. Which king ordered the paintwork?",
     "answer": "Henry VIII",
     "choices": [
       "Henry VIII",
@@ -4200,7 +4174,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1542 the antiquary John Leland rode through the west country and reported that the local people around one particular hill still called it the site of the real Camelot. Modern archaeologists dug there from 1966 to 1970 under Leslie Alcock and found a major refortification from Arthur's era, though no proof it was his. Which hill did Leland record as the local Camelot?",
+    "question": "John Leland, the Tudor antiquary, rode through Somerset in 1542 and heard the local people call one hill the true seat of Arthur's court. Leslie Alcock dug there from 1966 to 1970 and found a major refortification from Arthur's era, though no proof it was his. Which hill did Leland record?",
     "answer": "Cadbury Castle",
     "choices": [
       "Cadbury Castle",
@@ -4213,7 +4187,7 @@
   },
   {
     "tier": 5,
-    "question": "When the fellowship of the Round Table finally breaks apart in the last books of Malory, the whole Arthurian order goes with it. The specific quarrel that shatters the Table starts with an accusation against Lancelot -- that he has been sleeping with Arthur's queen -- and it splits the knights into two warring parties. Which knight, after losing two brothers to Lancelot's sword, leads the party demanding vengeance?",
+    "question": "Agravaine and Mordred accused Lancelot of loving Arthur's queen in the last books of Malory, and the quarrel split the Round Table into two warring parties. Lancelot killed Gareth and Gaheris when he rescued Guinevere from the stake. Which knight, after losing those two brothers, led the party demanding vengeance?",
     "answer": "Sir Gawain",
     "choices": [
       "Sir Gawain",
@@ -4226,7 +4200,7 @@
   },
   {
     "tier": 1,
-    "question": "The Ulster Cycle is a set of ancient Irish hero-tales set around the royal fort of Emain Macha in the north of Ireland, in the age of King Conchobar mac Nessa. In that court the chief druid runs a school of young pupils and teaches them to divine what will come to pass. He also serves as King Conchobar's chief adviser. What is this druid's name?",
+    "question": "The chief druid of Ulster gathered his young pupils one morning at King Conchobar mac Nessa's royal fort of Emain Macha, to teach them to divine what would come to pass. He also served as the king's chief adviser. What was this druid's name?",
     "answer": "Cathbad",
     "choices": [
       "Cathbad",
@@ -4239,7 +4213,7 @@
   },
   {
     "tier": 2,
-    "question": "The chief druid at Emain Macha teaches his pupils outside the fort one morning, reading the fitness of the day. He tells them that if any warrior takes up arms for the very first time on this day, that warrior will win fame everlasting through Ireland. But there is a price attached to the day of arms. What is the price?",
+    "question": "Cathbad was teaching his pupils outside the fort of Emain Macha one morning, reading the fitness of the day. Any warrior who took up arms for the very first time on this day, he told them, would win fame everlasting through Ireland. But the day of arms carried a price. What was the price?",
     "answer": "he will live only a short life",
     "choices": [
       "he will live only a short life",
@@ -4252,7 +4226,7 @@
   },
   {
     "tier": 3,
-    "question": "When the chief druid Cathbad discovered that Conchobar had actually armed the boy Setanta that morning, he came before the king in anger and rebuked him for it. The boy answered his uncle's druid with a single line that sealed his character for the rest of the Tain. What did he say?",
+    "question": "Cathbad learned that King Conchobar had armed the boy Setanta that very morning, and he came before the king in anger and rebuked him for it. The boy answered the druid with a single line that sealed his character for the rest of the Tain, the great cattle-raid tale. What did the boy say?",
     "answer": "that a short life with lasting fame is better than a long life without it",
     "choices": [
       "that a short life with lasting fame is better than a long life without it",
@@ -4265,7 +4239,7 @@
   },
   {
     "tier": 4,
-    "question": "The chief druid Cathbad appears at ANOTHER birth in the Ulster Cycle -- the newborn daughter of Feidlimid, who would grow into the fairest woman in Ireland. Cathbad's prophecy over the infant terrified the whole court of Ulster, who demanded she be killed at birth. Whose birth was this?",
+    "question": "Cathbad stood over the newborn daughter of Feidlimid and foretold that she would grow into the fairest woman in Ireland and be a disaster for Ulster. His words terrified the whole court, and the warriors demanded that the child be killed at birth. Whose birth was this?",
     "answer": "Deirdre",
     "choices": [
       "Deirdre",
@@ -4278,7 +4252,7 @@
   },
   {
     "tier": 4,
-    "question": "In the ancient Irish tales of the Ulster Cycle, the druid Cathbad stood over a newborn girl named Deirdre and prophesied that her beauty would one day bring ruin on the men of Ulster. The warriors around him drew their swords and demanded the infant be killed on the spot. Their high king, Conchobar mac Nessa, refused to let her die. What did Conchobar do with the infant Deirdre instead?",
+    "question": "King Conchobar mac Nessa refused to let his warriors kill a newborn girl, though their swords were already drawn. Cathbad had just prophesied over her that her beauty would one day bring disaster on the men of Ulster. What did Conchobar do with the infant instead?",
     "answer": "had her raised in isolation so he himself could marry her when she was grown",
     "choices": [
       "had her raised in isolation so he himself could marry her when she was grown",
@@ -4291,7 +4265,7 @@
   },
   {
     "tier": 5,
-    "question": "The men of Ulster's greatest warrior went into exile at the court of Queen Medb of Connacht after Conchobar treacherously killed the sons of Uisliu -- the very ruin Cathbad had foretold over the newborn Deirdre. This is why he then leads the Connacht army against his own former Ulster people in the great cattle-raid of the Tain Bo Cuailnge. Which warrior was he?",
+    "question": "Ulster's greatest warrior guaranteed the safety of the sons of Uisliu, and King Conchobar treacherously killed them. Cathbad's prophecy over a newborn girl was coming true. Shamed, the warrior left for the court of Queen Medb of Connacht, then led her army against his own people in the great cattle-raid of the Tain Bo Cuailnge. Which warrior was he?",
     "answer": "Fergus mac Roich",
     "choices": [
       "Fergus mac Roich",
@@ -4304,7 +4278,7 @@
   },
   {
     "tier": 5,
-    "question": "At the newborn Deirdre's cradle, Cathbad laid a prophecy over her -- three things she would bring on the men of Ulster because of her beauty. The warriors on hearing it drew their swords and demanded the child be killed at once. Which three things did Cathbad name?",
+    "question": "The warriors of Ulster drew their swords at a newborn girl's cradle and demanded that the child be killed at once. Cathbad had just laid a prophecy over her, naming three things that her beauty would bring on the men of Ulster. Which three things did he name?",
     "answer": "blood, ruin, and exile",
     "choices": [
       "blood, ruin, and exile",
@@ -4317,7 +4291,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1347 in the Italian town of Siena, a wool-dyer named Jacopo Benincasa and his wife Lapa had a baby daughter they named Catherine, the future St Catherine of Siena. Catherine had a twin sister who died as a baby. The twins came near the tail end of a very large family. How many children did Jacopo and Lapa have in all?",
+    "question": "Lapa, wife of the wool-dyer Jacopo Benincasa, bore twin girls in Siena in 1347. One died as a baby; the other grew up to be Saint Catherine. The twins came near the tail end of a very large family. How many children did the couple have in all?",
     "answer": "25 children",
     "choices": [
       "25 children",
@@ -4330,7 +4304,7 @@
   },
   {
     "tier": 1,
-    "question": "At about six years old, Catherine of Siena was walking home with her brother when she looked up at the sky above the city's great church and froze in the street. Her brother had to shake her to make her move. According to her own later account, what had she seen in the sky?",
+    "question": "Catherine of Siena's brother had to shake her to make her move. She had frozen in the street at about six years old, walking home with him, her eyes on the sky above the city's great church. According to her own later account, what had she seen?",
     "answer": "Christ dressed as a pope, blessing her",
     "choices": [
       "Christ dressed as a pope, blessing her",
@@ -4343,7 +4317,7 @@
   },
   {
     "tier": 2,
-    "question": "Catherine had vowed her life to God as a small girl. Later her family tried to force her to marry her older sister's widower. She went into her room and did one drastic thing to make the marriage impossible. What did the teenage Catherine do to refuse?",
+    "question": "The family of Catherine of Siena tried to force her to marry her older sister's widower, though she had vowed her life to God as a small girl. She went into her room and did one drastic thing to make the marriage impossible. What did the teenage Catherine do?",
     "answer": "She cut off her long hair",
     "choices": [
       "She cut off her long hair",
@@ -4356,7 +4330,7 @@
   },
   {
     "tier": 4,
-    "question": "In June 1376 Catherine of Siena undertook her boldest journey. She traveled to a walled city where seven popes in a row had lived for nearly seventy years under the shadow of the French crown, and she confronted Pope Gregory XI face to face, urging him to move his court back to Rome. In what city did she find him?",
+    "question": "Catherine of Siena set out in June 1376 on her boldest journey, to a walled city where seven popes in a row had lived for nearly seventy years under the shadow of the French crown. She confronted Pope Gregory XI face to face there and urged him to move his court back to Rome. In what city did she find him?",
     "answer": "Avignon",
     "choices": [
       "Avignon",
@@ -4369,7 +4343,7 @@
   },
   {
     "tier": 1,
-    "question": "A young Roman girl of the third century was married against her will to a pagan husband, and she won him for Christ on their wedding night. Later she was put to death slowly in her own home, which then became one of the great churches of Rome. Which martyr is she?",
+    "question": "A young Roman girl of the third century, wed against her will to a pagan husband, won him over on their wedding night, the legend says. Later she was put to death slowly in her own home, which became one of the great churches of Rome. Which martyr was she?",
     "answer": "Cecilia",
     "choices": [
       "Cecilia",
@@ -4382,7 +4356,7 @@
   },
   {
     "tier": 2,
-    "question": "On the wedding night Cecilia tells her new pagan husband that an angel guards her virginity and that he too will see the angel if he is baptised. He agrees, is baptised by the pope on the Via Appia, sees the angel, and is martyred before her. What was the husband's name?",
+    "question": "Cecilia told her pagan husband on their wedding night that an angel stood guard over her virginity, and that he too would see the angel if he accepted baptism, the legend says. He went to the pope on the Via Appia, was baptised, saw the angel, and died a martyr before her. What was the husband's name?",
     "answer": "Valerian",
     "choices": [
       "Valerian",
@@ -4395,7 +4369,7 @@
   },
   {
     "tier": 2,
-    "question": "The Roman virgin Cecilia was forced to marry a young pagan nobleman named Valerian, but on their wedding night she persuaded him to be baptized as a Christian instead. Valerian later brought home his own brother, who was baptized at the same milestone on the road out of Rome. The brother was killed for the faith along with Valerian, before Cecilia herself was martyred. What was the name of Valerian's brother?",
+    "question": "Cecilia's husband, won over on their wedding night, brought his own brother to the same milestone on the road out of Rome for baptism, the legend says. The brother was killed for the faith along with him, before Cecilia herself was martyred. What was the brother's name?",
     "answer": "Tiburtius",
     "choices": [
       "Tiburtius",
@@ -4408,7 +4382,7 @@
   },
   {
     "tier": 4,
-    "question": "After the failed beheading, Cecilia did not die at once. She lay teaching the Christians who gathered around her bedside, and asked the pope to convert her house into a church before she died. According to the Passio, how long is she said to have lingered after the sword-strokes?",
+    "question": "The executioner failed to behead Cecilia, and she did not die at once. She lay teaching the Christians who gathered around her bedside, and she asked the pope to convert her house into a church. According to her legend, how long did she linger after the sword-strokes?",
     "answer": "three days",
     "choices": [
       "three days",
@@ -4421,7 +4395,7 @@
   },
   {
     "tier": 5,
-    "question": "In Chaucer's late-fourteenth-century pilgrimage cycle, one of the pilgrims tells the story of Cecilia at length as her contribution to the tale-telling contest on the road to Canterbury. She is not named as a major character but is identified only by her office in the party. Which of the pilgrims tells Cecilia's story?",
+    "question": "Geoffrey Chaucer gave Cecilia's story to one of the pilgrims of the Canterbury Tales in the late fourteenth century, as her contribution to the tale-telling on the road. He gave this pilgrim no name of her own, only her office in the party. Which of the pilgrims told Cecilia's story?",
     "answer": "the Second Nun",
     "choices": [
       "the Second Nun",
@@ -4434,7 +4408,7 @@
   },
   {
     "tier": 1,
-    "question": "In St. Peter's Basilica in Rome, Pope Leo III came up behind the kneeling Frankish king during Mass, placed a crown on his head, and hailed him as Emperor of the Romans. Charlemagne (his biographer Einhard says) claimed he had not expected it and would not have entered the church that day if he had known. On what day of the year 800 did this happen?",
+    "question": "Pope Leo III came up behind the kneeling Frankish king at Mass in St. Peter's, set a crown on his head and hailed him Emperor of the Romans. Charlemagne later claimed, his biographer Einhard says, that he would not have entered the church if he had known. On what day of the year 800 did this happen?",
     "answer": "Christmas Day",
     "choices": [
       "Christmas Day",
@@ -4447,7 +4421,7 @@
   },
   {
     "tier": 2,
-    "question": "In 781 at Parma, in northern Italy, Charlemagne met an English deacon on his way home from Rome. The deacon was already famous across Europe as the finest scholar of the age. He had been trained at the great library of his home city. Charlemagne asked him to come south and run the palace school. Which English center trained him?",
+    "question": "Charlemagne met an English deacon at Parma in northern Italy in 781, a man on his way home from Rome and already famous across Europe as the finest scholar of the age. The deacon had been trained at the great library of his home city, and Charlemagne asked him to come and run the palace school. Which English center trained him?",
     "answer": "York in Northumbria",
     "choices": [
       "York in Northumbria",
@@ -4460,7 +4434,7 @@
   },
   {
     "tier": 2,
-    "question": "Charlemagne built a stone chapel at Aachen. It is the oldest surviving stone church of its region north of the Alps. He deliberately modeled it on an older church he had seen on a trip to Italy, and even shipped columns and marble north from that Italian city. Which basilica was his model?",
+    "question": "Charlemagne built a stone chapel at Aachen and deliberately modeled it on an older church he had seen on a trip to Italy. He even had columns and marble shipped north from that Italian city to build it. Which basilica was his model?",
     "answer": "San Vitale at Ravenna",
     "choices": [
       "San Vitale at Ravenna",
@@ -4473,7 +4447,7 @@
   },
   {
     "tier": 3,
-    "question": "Around the year 800, the Frankish emperor Charlemagne gathered the greatest scholars of Europe at his palace school in Aachen. For fun the men gave each other classical or biblical nicknames. Alcuin of York was called Albinus. The court poet Angilbert was called Homer. Charlemagne himself took the name of a great biblical king of Israel. Which king?",
+    "question": "Alcuin went by Albinus at Charlemagne's palace school at Aachen around the year 800, and the court poet Angilbert went by Homer. The scholars there gave each other classical or biblical nicknames for fun. Charlemagne himself took the name of a great biblical king of Israel. Which king?",
     "answer": "David",
     "choices": [
       "David",
@@ -4486,7 +4460,7 @@
   },
   {
     "tier": 3,
-    "question": "Einhard knew Charlemagne well and wrote his life story, and he reports a strange detail about the emperor. For all his conquests and his palace school full of scholars, Charlemagne never mastered one ordinary skill. At night he kept wax tablets in a particular place so he could practice whenever he woke, but he never got good at it. Where did he keep the tablets, and what was he trying to learn?",
+    "question": "Einhard knew Charlemagne well and wrote his life story, and he shares a strange detail about the emperor. For all his conquests and his palace school full of scholars, Charlemagne never mastered one ordinary skill. He kept wax tablets in a particular place at night so he could practice whenever he woke. Where did he keep the tablets, and what was he trying to learn?",
     "answer": "Under his pillow, to practice forming letters",
     "choices": [
       "Under his pillow, to practice forming letters",
@@ -4499,7 +4473,7 @@
   },
   {
     "tier": 4,
-    "question": "From Alcuin's monasteries came a clear rounded lowercase hand, with real spaces between the words. Scribes across the empire used it so they could copy the Bible correctly. Six hundred years later, Italian humanists dug the letter forms out of old books and copied them eagerly, because they had made a mistake about what they were looking at. What did the humanists think they were copying?",
+    "question": "Italian humanists came upon old books written in a clear, rounded hand with real spaces between the words, six hundred years after Alcuin's monasteries had spread it so that scribes could copy the Bible correctly. They copied the letters eagerly, and modern lowercase type descends from their copies, but they had made a mistake about what they were looking at. What did the humanists think they were copying?",
     "answer": "Actual ancient Roman writing",
     "choices": [
       "Actual ancient Roman writing",
@@ -4512,7 +4486,7 @@
   },
   {
     "tier": 5,
-    "question": "Charlemagne died in 814 and was buried inside his Palatine Chapel at Aachen. In the chapel's upper gallery still stands the throne on which German kings were crowned for six centuries after him -- Otto I first sat on it in 936, and Ferdinand I last in 1531. The throne itself is older than any of them: it was built from re-used pieces of a much earlier civilization's stonework. What civilization's stone was recycled to make Charlemagne's throne?",
+    "question": "Otto I sat down in 936 on a plain marble throne in the upper gallery of the chapel at Aachen where Charlemagne lay buried, and German kings went on being crowned there until Ferdinand I sat on it in 1531. The throne was older than any of them, built from re-used pieces of a much earlier civilization's stonework. What civilization's stone was recycled to make it?",
     "answer": "Ancient Rome",
     "choices": [
       "Ancient Rome",
@@ -4525,7 +4499,7 @@
   },
   {
     "tier": 1,
-    "question": "In the old song of the pass at Roncesvalles, Charlemagne rushes his army back over the mountain and gets there too late. Oliver, the archbishop, and the twelve peers lie dead on the mountainside, beside their young captain. What was the young captain's name?",
+    "question": "Charlemagne rushed his army back over the mountain in the old song of Roncesvalles, and he came too late. Oliver, the archbishop and the twelve peers lay dead beside their young captain, the emperor's own nephew. What was the young captain's name?",
     "answer": "Roland",
     "choices": [
       "Roland",
@@ -4538,7 +4512,7 @@
   },
   {
     "tier": 2,
-    "question": "In the medieval French epic the Song of Roland, the aging emperor Charlemagne learns his nephew Roland has been slaughtered by a Saracen ambush in the mountain pass at Roncevaux. Charlemagne rides south in fury and pursues the Saracen force deep into Spain. He catches them at a great Iberian river and drives them into the water; the pagans drown in the current as the Franks press them from behind. Which river?",
+    "question": "The Franks forced the pagans into a great Iberian river and pressed them from behind until they drowned in the current, the medieval French epic of Roncesvalles tells. Charlemagne had ridden south in fury after his nephew's death, pursuing the Saracen force deep into Spain. Which river was it?",
     "answer": "the Ebro",
     "choices": [
       "the Ebro",
@@ -4551,7 +4525,7 @@
   },
   {
     "tier": 3,
-    "question": "At the trial in Charlemagne's hall, the traitor's guilt was not decided by words alone. Frankish law let it be settled by a judicial duel between one champion for the accuser and one for the accused, with God granting victory to the just side. Who fought on Roland's side, for Charlemagne?",
+    "question": "Ganelon stood trial at Aachen for betraying Charlemagne's rearguard, and words alone did not decide his guilt. Frankish law allowed a judicial duel, one champion for the accuser and one for the accused, with God granting victory to the just side. Pinabel, a kinsman of Ganelon, fought as his champion. Who fought for the emperor?",
     "answer": "Thierry",
     "choices": [
       "Thierry",
@@ -4564,7 +4538,7 @@
   },
   {
     "tier": 4,
-    "question": "Charlemagne's vengeance did not stop with Ganelon himself. Ganelon's whole extended kin-group had backed Pinabel and been implicated in the treason; on the same day, Charlemagne had a large number of them hanged. How many of Ganelon's kinsmen were hanged?",
+    "question": "The traitor Ganelon died torn apart by horses, and Charlemagne did not stop there. On that same day the emperor had a large number of Ganelon's kin hanged, the men who had stood surety for the traitor's champion Pinabel. How many of Ganelon's kinsmen were hanged?",
     "answer": "thirty",
     "choices": [
       "thirty",
@@ -4577,7 +4551,7 @@
   },
   {
     "tier": 5,
-    "question": "At the very end of the medieval French epic the Song of Roland, the aged emperor Charlemagne has finally punished the traitor Ganelon for the ambush of Roland, and prepares to sleep in his palace at Aachen. In the night an angel appears to him in a dream, commanding him to ride out yet again to another war, to aid King Vivien besieged by pagans at Imphe. Charlemagne weeps and pulls his white beard, but rises to obey. Which angel brought the summons?",
+    "question": "An angel appeared to the sleeping Charlemagne in his palace at Aachen at the very end of the great French epic, with the traitor Ganelon punished at last. The angel commanded him to ride out yet again, to aid King Vivien, besieged by pagans at Imphe. The old emperor wept and pulled his white beard, but he got up to obey. Which angel brought the summons?",
     "answer": "Gabriel",
     "choices": [
       "Gabriel",
@@ -4590,7 +4564,7 @@
   },
   {
     "tier": 1,
-    "question": "One of the most-quoted lines in the whole Old Testament ends: 'but as for me and my house, we will serve the LORD.' It is spoken by an old warrior at the end of his life, gathering the tribes for a farewell speech. Which Israelite leader gives that speech?",
+    "question": "'But as for me and my house, we will serve the LORD,' an old warrior told the tribes he had gathered for his farewell. It is one of the most-quoted lines in the whole Old Testament. Which Israelite leader gave that speech?",
     "answer": "Joshua",
     "choices": [
       "Joshua",
@@ -4603,7 +4577,7 @@
   },
   {
     "tier": 2,
-    "question": "Joshua's farewell in Joshua 24 is not held just anywhere. He calls the elders, heads, judges, and officers of every tribe of Israel to one old covenant town in the hills of Ephraim. It is the same town where Abraham first pitched his tent, and where Jacob later bought a plot of ground for a hundred pieces of silver. Which town is it?",
+    "question": "Joshua called the elders, heads, judges and officers of every tribe of Israel to one old covenant town in the hills of Ephraim for his farewell. Abraham had first pitched his tent there, and Jacob later bought a plot of ground there for a hundred pieces of silver. Which town was it?",
     "answer": "Shechem",
     "choices": [
       "Shechem",
@@ -4615,21 +4589,8 @@
     "topic": "choose-you-this-day-whom-ye-shall-serve-joshua-at-shechem"
   },
   {
-    "tier": 3,
-    "question": "Long before the farewell at Shechem, Joshua had led the walk around Jericho. For the first six days the procession went around the city once a day, priests carrying rams' horn trumpets before the ark. On the last day the procession went around a certain number of times before the trumpets blew and the walls came down. How many times did they march around on that final day?",
-    "answer": "seven",
-    "choices": [
-      "seven",
-      "three",
-      "twelve",
-      "forty"
-    ],
-    "context": "Joshua 6: seven priests bear seven trumpets of rams' horns; the people march once a day for six days, and on the seventh day seven times around; then the priests blow a long blast, the people shout, and the wall falls down flat. Three days marks Jonah in the fish and the resurrection; twelve is the tribes and the apostles; forty is the wilderness years and Jesus's fast.",
-    "topic": "choose-you-this-day-whom-ye-shall-serve-joshua-at-shechem"
-  },
-  {
     "tier": 5,
-    "question": "Joshua 24 closes with two burials. One is for the old warrior Joshua himself, and the other is for a set of bones the Israelites had carried out of Egypt more than forty years earlier and lugged the whole way through the wilderness. Whose bones were finally buried at Shechem, in the parcel of ground Jacob had bought?",
+    "question": "The Israelites laid the old warrior Joshua in his grave, and then they came to a second burial. They had carried these bones up out of Egypt more than forty years earlier and lugged them the whole way through the wilderness, and now they laid them in the plot of ground Jacob had bought. Whose bones were they?",
     "answer": "Joseph's",
     "choices": [
       "Joseph's",
@@ -4642,7 +4603,7 @@
   },
   {
     "tier": 1,
-    "question": "In old Christian legend, a giant later baptized Christopher waded across a raging river with a small child on his shoulders, and only afterward learned that the child was the young Christ himself. His Greek name is a compound of two words: the first is Christos, meaning Christ. Put together as one whole name, what does 'Christopher' literally mean in Greek?",
+    "question": "A giant waded across a raging river with a small child on his shoulders, old Christian legend tells, and learned only afterward that the child was the young Christ himself. He was later baptized Christopher, a Greek name whose first part is Christos, meaning Christ. What does the whole name literally mean?",
     "answer": "Christ-bearer",
     "choices": [
       "Christ-bearer",
@@ -4655,7 +4616,7 @@
   },
   {
     "tier": 2,
-    "question": "In the medieval Golden Legend, a huge Canaanite man wandered the world looking for the greatest king to serve. He ferried travellers across a dangerous river until one stormy night he carried a small child who grew heavier than the whole world -- for the child was Christ. After that baptism he took the name Christopher, meaning 'Christ-bearer.' But before the baptism and the river-crossing the story keeps using his older name. What was he called before?",
+    "question": "A huge Canaanite carried a small child across a dangerous river one stormy night, the Golden Legend tells, after wandering the world looking for the greatest king to serve. Baptism gave him the name Christopher, but until then the book keeps using his older name. What was he called before?",
     "answer": "Reprobus",
     "choices": [
       "Reprobus",
@@ -4668,7 +4629,7 @@
   },
   {
     "tier": 2,
-    "question": "The medieval saint's-life collection called the Golden Legend tells of a heathen giant named Reprobus, who would later be baptized under the new name Christopher. The book measures his height in cubits, the old unit equal to a grown man's forearm. The number given is huge on purpose, past any real human size. How many cubits does the Golden Legend say Reprobus stood?",
+    "question": "Jacobus de Voragine gave a heathen giant, later baptized Christopher, a height past any real human size in his Golden Legend, the medieval collection of saints' lives. He measured it in cubits, the old unit equal to a grown man's forearm. How many cubits tall did he say the giant stood?",
     "answer": "twelve",
     "choices": [
       "twelve",
@@ -4681,7 +4642,7 @@
   },
   {
     "tier": 3,
-    "question": "The giant sets out to serve the strongest master in the world. He first pledges himself to a great earthly king; then he sees the king flinch at a name and leaves in search of that master instead. Whom did the great earthly king fear, sending the giant off on the second leg of his search?",
+    "question": "The giant who became Saint Christopher set out to serve the strongest master in the world, the legend tells, and first pledged himself to a great earthly king. Then the king flinched at a name, and the giant left in search of that master instead. Whom did the great earthly king fear?",
     "answer": "the devil",
     "choices": [
       "the devil",
@@ -4694,7 +4655,7 @@
   },
   {
     "tier": 4,
-    "question": "In the medieval legend of St Christopher, the giant Reprobus works as a ferryman carrying travellers across a dangerous river on his shoulders. One night a small child asks to be carried over, but as Reprobus wades in the child grows heavier and heavier until the giant nearly drowns under the weight. On the far bank the giant, gasping, says he thought he had carried the whole world across the ford. The child answers with a specific line about what he has actually just done. What does the child tell Reprobus he has borne on his shoulders?",
+    "question": "The giant ferryman of the Golden Legend carried travellers across a dangerous river on his shoulders. A small child asked to be taken over one night, and as the giant waded in the boy grew heavier and heavier, until the giant nearly drowned under the weight. On the far bank he gasped that nothing could have weighed more. What did the child tell him he had borne on his shoulders?",
     "answer": "him that made all the world",
     "choices": [
       "him that made all the world",
@@ -4707,7 +4668,7 @@
   },
   {
     "tier": 4,
-    "question": "In the medieval Golden Legend the giant Christopher ferried travellers across a dangerous river with his heavy walking-staff. One stormy night he carried a small child who grew heavier than the whole world -- Christ himself. On the far bank the child asks the giant to plant his walking-pole in the ground as a sign that the story is true. In the morning the dry wood has done something no dead wood does. What did the planted staff do overnight?",
+    "question": "In the Golden Legend, the child Christ told the giant Christopher, on the far bank of a dangerous river, to plant his walking staff in the ground as a sign that the story was true. By morning the dry wood had done something no dead wood does. What did the planted staff do overnight?",
     "answer": "put out leaves and fruit",
     "choices": [
       "put out leaves and fruit",
@@ -4720,7 +4681,7 @@
   },
   {
     "tier": 5,
-    "question": "St Christopher, the giant ferryman said in medieval legend to have carried the Christ-child across a river, is normally shown in Western art as a big bearded man leaning on a staff. But some Eastern Christian icons show him with the head of an animal instead of a human head. Scholars trace the strange image to an early scribe who misread one Latin word about his birthplace, turning 'Canaanite' into 'canine'. What animal's head do these icons give Christopher?",
+    "question": "A scribe garbled one Latin word about Christopher's birthplace, scholars say, the word for Canaanite. Western art normally shows the saint as a big bearded man leaning on a staff, but some Eastern icons give him the head of an animal instead, and the strange image grew from that slip. What animal's head do these icons give Christopher?",
     "answer": "a dog",
     "choices": [
       "a dog",
@@ -4733,7 +4694,7 @@
   },
   {
     "tier": 1,
-    "question": "In Homer's Odyssey, the Greek hero Odysseus sails home from the war at Troy but is blown off course for ten years. On one wooded island his men spot smoke rising from a stone house among the trees. Inside lives an enchantress who invites strangers in for a feast and then turns them into pigs and other animals with a wave of her wand. What is her name?",
+    "question": "Odysseus's men spot smoke rising from a stone house among the trees of a wooded island, in Homer's Odyssey. Inside lives an enchantress who welcomes strangers to a feast and then turns them into beasts with a wave of her wand. What is her name?",
     "answer": "Circe",
     "choices": [
       "Circe",
@@ -4746,7 +4707,7 @@
   },
   {
     "tier": 1,
-    "question": "The witch of the wooded island welcomes Odysseus's men in and gives them a warm feast of cheese, meal, honey, and wine. Then she touches each of them with her wand -- and they become animals, driven out to a pen. Into which animal are the men transformed?",
+    "question": "The witch of the wooded island welcomes Odysseus's men and gives them a warm feast of cheese, meal, honey and wine. Then she touches each of them with her wand, and they change and are driven out to a pen. Into which animal are the men transformed?",
     "answer": "Pigs",
     "choices": [
       "Pigs",
@@ -4759,7 +4720,7 @@
   },
   {
     "tier": 2,
-    "question": "Odysseus sends only half his men to investigate Circe's house, led by an officer who suspects the invitation and hangs back at the door while the others go inside for the feast. When the men turn to pigs, this officer escapes and runs back to warn Odysseus. Who is he?",
+    "question": "Odysseus sends only half his men to investigate the house on the island, led by an officer who suspects the invitation. The officer hangs back at the door while the others go inside to feast. When his comrades change, he escapes and runs back to warn Odysseus. Who is he?",
     "answer": "Eurylochus",
     "choices": [
       "Eurylochus",
@@ -4772,7 +4733,7 @@
   },
   {
     "tier": 2,
-    "question": "On his long voyage home from the Trojan War, the Greek hero Odysseus landed on the island of Aeaea. There the witch-goddess Circe welcomed his sailors with a rich banquet, then touched them with her wand — and their bodies changed into pigs, with pig snouts and bristles. Herded into her sty, these pigs did something no ordinary pig does: they wept. Why do the pigs of Circe's sty weep?",
+    "question": "Circe strikes Odysseus's sailors with her wand on the island of Aeaea, and they turn into beasts. She shuts them in her pen. There they do something no ordinary beast does: they weep. Why do the beasts in Circe's pen weep?",
     "answer": "They still have their human minds inside",
     "choices": [
       "They still have their human minds inside",
@@ -4785,7 +4746,7 @@
   },
   {
     "tier": 3,
-    "question": "Odysseus sets out alone from the ship to rescue his men. On the forest path a god meets him and hands him a magical plant as an antidote to Circe's drugs -- Homer names it and describes it 'black at the root, white as milk at the flower.' Which god gives him the plant?",
+    "question": "Odysseus sets out alone from the ship to rescue his men from Circe. On the forest path a god meets him and hands him a magical plant as an antidote to her drugs, one Homer describes as 'black at the root, white as milk at the flower.' Which god gives him the plant?",
     "answer": "Hermes",
     "choices": [
       "Hermes",
@@ -4798,7 +4759,7 @@
   },
   {
     "tier": 3,
-    "question": "In Homer's Odyssey, the witch Circe has just turned Odysseus's crew into pigs on her island. Before Odysseus goes up to her hall to save them, the god Hermes meets him on the path and hands him a plant that will keep her magic from working. Homer says the plant has a black root and a milk-white flower, and only the gods can safely pull it from the soil. What does Homer call it?",
+    "question": "A god stops Odysseus on the path to Circe's hall and hands him a plant that will keep her magic from working. Homer says the plant has a black root and a milk-white flower, and only the gods can safely pull it from the soil. What does Homer call it?",
     "answer": "Moly",
     "choices": [
       "Moly",
@@ -4811,7 +4772,7 @@
   },
   {
     "tier": 4,
-    "question": "In Homer's Odyssey, the Greek hero Odysseus lands on the island of Aeaea, where the witch-goddess Circe has already turned half his crew into pigs with a stroke of her wand. Before Odysseus can march up to her hall to rescue them, the messenger god Hermes appears on the path and tells him exactly how to break Circe's magic: when she strikes with her wand and orders him to the pigsty, draw the sword. She will drop the wand and offer to sleep with him. What must Odysseus force Circe to do before he agrees?",
+    "question": "A god tells Odysseus on the forest path exactly how to break Circe's magic. When she strikes with her wand and orders him to the sty, he must draw the sword and rush her. She will drop the wand and invite him to her bed. What must Odysseus force Circe to do before he agrees?",
     "answer": "Swear a great oath to do him and his men no more harm",
     "choices": [
       "Swear a great oath to do him and his men no more harm",
@@ -4824,7 +4785,7 @@
   },
   {
     "tier": 4,
-    "question": "Odysseus does exactly what Hermes said. Circe strikes with the wand; the moly holds; he draws the sword and rushes her. She stares at him and drops the wand, and greets him by a phrase from a warning Hermes had given her long ago. Which phrase does she use?",
+    "question": "Odysseus does exactly as he has been told. Circe strikes with the wand, the magic plant holds, and he draws the sword and rushes her. She stares at him, drops the wand, and greets him with a phrase from a warning she was given long ago. Which phrase does she use?",
     "answer": "Odysseus of the many turns",
     "choices": [
       "Odysseus of the many turns",
@@ -4837,7 +4798,7 @@
   },
   {
     "tier": 4,
-    "question": "On the island of Aeaea, the Greek hero Odysseus forced the witch-goddess Circe to swear a great oath that she would work no more harm against him. She agreed to undo her earlier spell, walked out to her sty of enchanted pigs, and touched each pig-man in turn with a fresh potion. Their bodies changed back into human shape. In the Odyssey, Homer describes exactly how the restored men look after the change. How does Homer say they come back?",
+    "question": "Circe walks out at last to her sty of enchanted beasts on the island of Aeaea and touches each one in turn with a fresh potion. Their bodies change back into human shape. Homer describes exactly how the restored men look after the change. How does Homer say they come back?",
     "answer": "Taller, younger, and handsomer than they had been before",
     "choices": [
       "Taller, younger, and handsomer than they had been before",
@@ -4850,7 +4811,7 @@
   },
   {
     "tier": 5,
-    "question": "In Homer's Odyssey, once Odysseus makes the witch-goddess Circe swear her great oath, she turns his pig-shaped crew back into men and welcomes them as her guests in her feast-hall on the island of Aeaea. They stay a very long time, eating and drinking so well that they nearly forget their home island of Ithaca. At last the men beg Odysseus to remember Ithaca and sail on. Homer names a specific length of time before they leave. How long do Odysseus and his crew stay on Aeaea?",
+    "question": "Circe turns Odysseus's crew back into men and welcomes them as guests in her feast-hall on Aeaea. They stay on, eating and drinking so well that they nearly forget their home island of Ithaca, until at last the men beg Odysseus to remember it and sail on. How long do Odysseus and his crew stay on Aeaea?",
     "answer": "A full year",
     "choices": [
       "A full year",
@@ -4863,7 +4824,7 @@
   },
   {
     "tier": 5,
-    "question": "In Homer's Odyssey, when Odysseus at last asks the witch-goddess Circe on the island of Aeaea for the way home to Ithaca, she tells him he cannot sail straight there. First he must make a terrible detour to the land of the dead and consult one specific blind Theban seer, wherever his shade can be found in the underworld. Which seer must Odysseus consult, and where must he go to find him?",
+    "question": "Circe tells Odysseus he cannot sail straight home to Ithaca, when at last he asks her the way on the island of Aeaea. First he must make a terrible detour and consult one specific blind seer of Thebes. Which seer must Odysseus consult, and where must he go to find him?",
     "answer": "Tiresias, in the underworld",
     "choices": [
       "Tiresias, in the underworld",
@@ -4876,7 +4837,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Italian hill-town of Assisi in the early 1200s, a girl named Clare listened from an upstairs window. Down in the piazza below, a strange young preacher named Francis was drawing big crowds. He was about twelve years older than she was. What kind of home had Clare grown up in?",
+    "question": "Clare listened from an upstairs window in the Italian hill town of Assisi in the early 1200s, as a strange young preacher named Francis drew big crowds in the piazza below. He was about twelve years older than she was. What kind of home had Clare grown up in?",
     "answer": "A noble palazzo near the cathedral",
     "choices": [
       "A noble palazzo near the cathedral",
@@ -4889,7 +4850,7 @@
   },
   {
     "tier": 1,
-    "question": "On the night of Palm Sunday 1212, the eighteen-year-old Clare of Assisi turned down a rich marriage her family had arranged. She slipped out of the house after dark and ran down the hill through the fields. At the bottom, Francis and his brothers were waiting for her by torchlight at their own home chapel. Which chapel was it?",
+    "question": "Francis and his brothers waited by torchlight at their own chapel at the bottom of the hill, on the night of Palm Sunday 1212. Eighteen-year-old Clare of Assisi had turned down a rich marriage, and she came running down to them through the fields. Which chapel was it?",
     "answer": "The Portiuncula",
     "choices": [
       "The Portiuncula",
@@ -4902,7 +4863,7 @@
   },
   {
     "tier": 2,
-    "question": "In the year 1212, the young noblewoman Clare of Assisi ran away from her father's palazzo in the middle of the night to join Francis and his new order of poor brothers. She escaped through a narrow side-door built into the wall of the house. In Assisi the palazzos of the noble families actually had these small doors, and they had only one everyday purpose. What was the side-door normally used for?",
+    "question": "Clare of Assisi slipped out of her father's house in the middle of the night in 1212 to join Francis, and she went out through a narrow side door built into the wall. The great houses of Assisi had these small doors, with only one everyday purpose. What was the side door normally used for?",
     "answer": "Carrying a corpse out of the house",
     "choices": [
       "Carrying a corpse out of the house",
@@ -4915,7 +4876,7 @@
   },
   {
     "tier": 2,
-    "question": "When Clare of Assisi reached the little chapel where Francis and his brothers waited for her by torchlight, she gave up her old life on the spot. Francis received her vows and clothed her in a rough tunic like his own. What did he do with her long hair?",
+    "question": "Francis received the vows of Clare of Assisi at the little chapel, by torchlight, and clothed her in a rough tunic like his own. She gave up her old life on the spot. What did he do with her long hair?",
     "answer": "He cut it off with shears",
     "choices": [
       "He cut it off with shears",
@@ -4928,7 +4889,7 @@
   },
   {
     "tier": 3,
-    "question": "Clare's family soon discovered where she had gone. Her uncle and armed relatives arrived at the convent where Francis had placed her for safety and tried to drag her home to be married. She ran to the altar, clung to the altar cloth, and did something that stopped them cold. What did she do at the altar?",
+    "question": "Clare's uncle and her armed relatives arrived at the convent where Francis had placed her for safety, and they tried to drag her home to be married. She ran to the altar, clung to the altar cloth, and did something that stopped them cold. What did she do at the altar?",
     "answer": "Threw back her veil to show her shorn head",
     "choices": [
       "Threw back her veil to show her shorn head",
@@ -4941,7 +4902,7 @@
   },
   {
     "tier": 5,
-    "question": "In September 1240, mercenary Saracen troops in the pay of the Emperor Frederick II attacked Assisi and reached the walls of Clare's little house. Clare was too sick to stand. She had the sisters carry her out to the courtyard and lift into her hands a covered vessel from the chapel. When she raised it toward the soldiers, they turned back without attacking. What was she holding?",
+    "question": "Saracen troops in the pay of the Emperor Frederick II attacked Assisi in September 1240 and reached the walls of Clare's little house. Clare was too sick to stand. She had the sisters carry her out to the courtyard and lift a covered vessel from the chapel into her hands. When she raised it toward the soldiers, they turned back without attacking. What was she holding?",
     "answer": "The consecrated host from the altar",
     "choices": [
       "The consecrated host from the altar",
@@ -4954,7 +4915,7 @@
   },
   {
     "tier": 1,
-    "question": "An Irish monk of royal blood, born around 521, later sailed off to Scotland and founded the most famous island monastery in the Atlantic west. His Irish name was Colum Cille. What does that name mean?",
+    "question": "An Irish monk of royal blood crossed to Scotland in 563 and founded a monastery on the island of Iona, the most famous in the Atlantic west. His Irish name was Colum Cille. What does that name mean?",
     "answer": "Church dove",
     "choices": [
       "Church dove",
@@ -4967,7 +4928,7 @@
   },
   {
     "tier": 2,
-    "question": "Around 560 CE the young monk Columba stayed up nights in secret at Movilla, transcribing a beautiful psalter that belonged to his old teacher Finnian. When Finnian found out he claimed the new manuscript as his own. The Irish High King Diarmait was asked to judge, and his ruling became a famous line of medieval law. What was the ruling?",
+    "question": "The young monk Columba stayed up nights in secret at Movilla around 560, Irish tradition tells, transcribing a beautiful psalter that belonged to his old teacher Finnian. Finnian found out and claimed the new manuscript as his own. High King Diarmait was asked to judge, and his ruling became a famous line of medieval law. What was the ruling?",
     "answer": "To every cow her calf, and to every book its copy",
     "choices": [
       "To every cow her calf, and to every book its copy",
@@ -4980,7 +4941,7 @@
   },
   {
     "tier": 3,
-    "question": "In 561 CE the O Neill met High King Diarmait's forces near Drumcliff in County Sligo. About three thousand men lay dead by the end of the day. This clash, blamed by tradition on the scholar-monk who had transcribed his teacher's book, was later called the Battle of Cul Dreimhne. What did a synod of Irish abbots impose on Columba as his penance for it?",
+    "question": "The O Neill clans met High King Diarmait's forces near Drumcliff in 561, and about three thousand men lay dead by the end of the day. Tradition blamed the slaughter at Cul Dreimhne on the scholar-monk Columba, who had transcribed his teacher's book. What did a synod of Irish abbots impose on him as his penance?",
     "answer": "An exile, to win as many souls to the faith as had died in the fighting",
     "choices": [
       "An exile, to win as many souls to the faith as had died in the fighting",
@@ -4993,7 +4954,7 @@
   },
   {
     "tier": 3,
-    "question": "In the year 563, the exiled Irish monk Columba, banished from Ireland after a bloody quarrel over a copied psalter, pushed a small hide-covered boat off the shore of Derry. He sailed north-east across the Irish Sea to the western coast of Scotland, where a royal cousin granted him a bare little Hebridean island, later famous as Iona, for a new monastery. How many companions sailed with him on that voyage?",
+    "question": "Columba pushed a small hide-covered boat off the shore of Derry in 563, after a bloody quarrel over a copied psalter, and sailed across the Irish Sea to the western coast of Scotland. A royal cousin there granted him a bare little island, later famous as Iona, for a new monastery. How many companions sailed with him on that voyage?",
     "answer": "Twelve",
     "choices": [
       "Twelve",
@@ -5006,7 +4967,7 @@
   },
   {
     "tier": 4,
-    "question": "In 565, at the River Ness in Pictish country, Columba sent his companion Lugne swimming across the water while a great beast rose from the current and rushed at him. Columba raised his hand, made the sign of the cross, and spoke one sharp command, and Adomnan's Life says the beast fled as if hauled back by ropes. What did Columba say to it?",
+    "question": "Columba sent his companion Lugne swimming across the River Ness in Pictish country in 565, Adomnan's Life says, and a great beast rose from the current and rushed at the swimmer. Columba raised his hand, made the sign of the cross, and spoke one sharp command, and the beast fled as if hauled back by ropes. What did Columba say to it?",
     "answer": "Go no further, do not touch the man, go back at once",
     "choices": [
       "Go no further, do not touch the man, go back at once",
@@ -5019,7 +4980,7 @@
   },
   {
     "tier": 4,
-    "question": "On the evening of Whitsun 597, the old abbot of Iona sat copying out Psalm 33 in his cell when he reached the verse 'they that seek the Lord shall not want any good thing' and laid down his pen. He said 'here I must stop; let another write what follows', walked alone to the church, and died in front of the altar. Which of his brothers did he name to take up the pen?",
+    "question": "Columba, the old abbot of Iona, sat copying out Psalm 33 in his cell on the evening of Whitsun in 597. He reached the verse 'they that seek the Lord shall not want any good thing' and put down his pen. He said 'here I must stop; let another write what follows', walked alone to the church, and died in front of the altar. Who took up the pen after him?",
     "answer": "Baithene",
     "choices": [
       "Baithene",
@@ -5032,7 +4993,7 @@
   },
   {
     "tier": 5,
-    "question": "For roughly two centuries after Columba's death, the scriptorium at Iona was one of the great manuscript workshops of the Atlantic west. Around the year 800, its monks began an illuminated gospel book, so richly painted that later ages called it the finest surviving manuscript of the early Middle Ages. Viking raids eventually drove the monks and the book off the island. What is that book called today?",
+    "question": "Iona's monks fled their island under Viking raids, carrying with them a gospel book they had begun around the year 800. It was so richly painted that later ages called it the finest surviving manuscript of the early Middle Ages. What is that book called today?",
     "answer": "The Book of Kells",
     "choices": [
       "The Book of Kells",
@@ -5045,7 +5006,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Gospel of Mark, a desperate father comes running through the crowd and falls at Jesus's feet. He is a ruler of the local synagogue, and his only twelve-year-old daughter is dying at home. He begs Jesus to come lay hands on her before it is too late. What was this father's name?",
+    "question": "In the Gospel of Mark, a desperate father came running through the crowd and fell at the feet of Jesus. He was a ruler of the local synagogue, and his twelve-year-old daughter was dying at home. He begged Jesus to come lay hands on her. What was this father's name?",
     "answer": "Jairus",
     "choices": [
       "Jairus",
@@ -5058,7 +5019,7 @@
   },
   {
     "tier": 2,
-    "question": "In Mark's gospel, a synagogue leader in Galilee named Jairus begs Jesus to come heal his dying twelve-year-old daughter. By the time Jesus arrives at the house the little girl has already died, and the hired mourners are wailing loudly in the courtyard. Jesus tells them the girl is only sleeping, not dead. Mark records their reaction to him in one blunt phrase before Jesus puts them all out of the house. What did the mourners do?",
+    "question": "The hired mourners were already wailing in the courtyard when Jesus reached a synagogue ruler's house in Mark's gospel, for the man's little girl had died. Jesus told them she was only sleeping. Mark gives their reaction in one blunt phrase before Jesus put them out of the house. What did the mourners do?",
     "answer": "laughed him to scorn",
     "choices": [
       "laughed him to scorn",
@@ -5071,7 +5032,7 @@
   },
   {
     "tier": 3,
-    "question": "In the room Jesus takes the dead girl's hand and speaks in the ordinary language Galilean children spoke at home -- Aramaic. Mark preserves the actual words, then translates them for his Greek readers as 'Damsel, arise'. Which Aramaic words does Jesus speak?",
+    "question": "Jesus took a dead girl's hand in Mark's gospel and spoke in Aramaic, the ordinary language Galilean children spoke at home. Mark kept the actual words and then translated them for his Greek readers as 'Damsel, arise'. Which Aramaic words did Jesus speak?",
     "answer": "Talitha cumi",
     "choices": [
       "Talitha cumi",
@@ -5084,7 +5045,7 @@
   },
   {
     "tier": 3,
-    "question": "In Mark's gospel, Jesus enters the house of the synagogue leader Jairus, takes the hand of his dead twelve-year-old daughter, and tells her to get up. She rises and walks around the room, to the astonishment of her parents. Right after she stands up, Mark records one final instruction from Jesus in the room. It lands as a startlingly ordinary, physical, non-miracle line, almost like a checklist item. What does Jesus tell her parents to do?",
+    "question": "A dead twelve-year-old girl got up at the word of Jesus in the house of a synagogue leader, in Mark's gospel, and walked around the room, to the astonishment of her parents. Mark records one final instruction from Jesus in that room, and it was an ordinary one. What did Jesus tell her parents to do?",
     "answer": "give her something to eat",
     "choices": [
       "give her something to eat",
@@ -5097,7 +5058,7 @@
   },
   {
     "tier": 4,
-    "question": "The other great raising-from-the-dead scene in the gospels is told in the eleventh chapter of John. In the little village of Bethany, only two miles from Jerusalem, a man has fallen sick and died. He has two grieving sisters who live with him, and the sisters send urgent word to Jesus that their brother is very ill. By the time Jesus arrives, four days after the burial, the sisters run out to meet him. Whom does John name as the two sisters at Bethany?",
+    "question": "Two sisters in the little village of Bethany, two miles from Jerusalem, sent urgent word to Jesus in the eleventh chapter of John: their brother Lazarus was very ill. He died and was buried before Jesus arrived. Whom does John name as the two sisters?",
     "answer": "Martha and Mary",
     "choices": [
       "Martha and Mary",
@@ -5110,7 +5071,7 @@
   },
   {
     "tier": 4,
-    "question": "John says the sisters send word that Lazarus is sick -- but Jesus deliberately does not set out at once. By the time he arrives, Lazarus has already been sealed in the tomb long enough for Martha to warn Jesus, at the stone, that the body 'stinketh'. HOW many days does John say Lazarus has been in the tomb?",
+    "question": "Jesus heard that Lazarus was sick, John says, and he deliberately did not set out at once. By the time he arrived, Lazarus lay sealed in the tomb, and the dead man's sister warned Jesus at the stone that the body 'stinketh'. How many days does John say Lazarus had been in the tomb?",
     "answer": "four days",
     "choices": [
       "four days",
@@ -5123,7 +5084,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Ulster stories, the greatest Irish warrior sails away as a young man to learn to fight. He trains with a fearsome war-woman named Scathach on an island called the Isle of Shadow. Who is this Ulster warrior?",
+    "question": "The greatest warrior of Ulster sailed away as a young man to learn to fight, in the old Irish stories. He trained with a fearsome war-woman named Scathach on an island called the Isle of Shadow. Who was this Ulster warrior?",
     "answer": "Cu Chulainn",
     "choices": [
       "Cu Chulainn",
@@ -5136,7 +5097,7 @@
   },
   {
     "tier": 1,
-    "question": "In Irish myth the young Ulster hero Cu Chulainn crossed the sea to train with the warrior-woman Scathach on her Isle of Shadow. While there, Scathach fought a war against a rival warrior-queen whose lands lay right next to hers. Cu Chulainn met that rival queen in single combat and beat her, but spared her life; later she bore him a son. What is this warrior-queen's name?",
+    "question": "Scathach's rival, a warrior-queen whose lands lay right next to hers, met the young hero Cu Chulainn in single combat and lost, but he spared her life. Later she bore him a son. What was this warrior-queen's name?",
     "answer": "Aife",
     "choices": [
       "Aife",
@@ -5149,7 +5110,7 @@
   },
   {
     "tier": 2,
-    "question": "In the old Irish Ulster stories, the young hero Cu Chulainn had sailed east to train with the fearsome war-woman Scathach on the Isle of Shadow. There he defeated Scathach's rival, the warrior-woman Aife, and left her pregnant with his son. Before Cu Chulainn sailed home to Ireland, he left the pregnant Aife a small gold token. He told her that when their son had grown enough to wear it, she should send the boy after him to Ireland. What was the token?",
+    "question": "Cu Chulainn left the warrior-queen he had defeated a small gold token before he sailed home to Ireland, meant for their unborn son. He told her that when the boy had grown enough to wear it, she should send him to Ireland. What was the token?",
     "answer": "a gold thumb-ring",
     "choices": [
       "a gold thumb-ring",
@@ -5162,7 +5123,7 @@
   },
   {
     "tier": 2,
-    "question": "Along with the ring, Cu Chulainn laid three commandments on the son he had never seen -- three unbreakable geasa meant to shape the boy into a great warrior. He must never turn back once he set out, and he must never refuse a challenge. What was the THIRD commandment?",
+    "question": "Cu Chulainn laid three commandments on the son he had never seen, three unbreakable geasa meant to shape the boy into a great warrior. The boy must never turn back once he set out, and he must never refuse a challenge. What was the third commandment?",
     "answer": "he must never give his name",
     "choices": [
       "he must never give his name",
@@ -5175,7 +5136,7 @@
   },
   {
     "tier": 3,
-    "question": "Word of the champion-slaying boy reaches Cu Chulainn at Dun Dealgan, and he sets out for the strand. His wife runs after him, catches him, and pleads with him NOT to go down -- she has heard the story and guessed who the child must be. What is her name?",
+    "question": "A woman ran after Cu Chulainn as he set out from Dun Dealgan, caught him, and pleaded with him not to go down to the strand, where a boy was slaying Ulster's champions. She was his wife, and she had heard the story and guessed who the child must be. What was her name?",
     "answer": "Emer",
     "choices": [
       "Emer",
@@ -5188,7 +5149,7 @@
   },
   {
     "tier": 5,
-    "question": "The Irish tale of a father unknowingly killing his warrior son in single combat is not unique. Scholars point to two exact parallels from wholly separate traditions -- so exact that a common Indo-European origin has been proposed. One is the German Hildebrandslied (Hildebrand and Hadubrand). What is the other, from the Persian Shahnameh?",
+    "question": "A Persian champion in Ferdowsi's Shahnameh killed an unknown warrior in single combat, and recognised his own son only by the arm clasp left with the boy's mother. Scholars set that tale beside Cu Chulainn's and beside the German Hildebrandslied of Hildebrand and Hadubrand, so close that a common Indo-European root has been proposed. Which father and son does the Shahnameh name?",
     "answer": "Rustam and Sohrab",
     "choices": [
       "Rustam and Sohrab",
@@ -5201,7 +5162,7 @@
   },
   {
     "tier": 1,
-    "question": "In 651, a young shepherd named Cuthbert was watching his flock on the Northumbrian hills. One night he saw a vision of angels in the sky, carrying a soul up to heaven. In the morning he heard that an Irish missionary had died at the very same hour. Whose soul had Cuthbert seen carried up?",
+    "question": "The young shepherd Cuthbert was watching his flock on the Northumbrian hills one night in 651 when he saw a vision of angels carrying a soul up to heaven. In the morning he heard that an Irish missionary had died at the very same hour. Whose soul had Cuthbert seen carried up?",
     "answer": "Aidan of Lindisfarne",
     "choices": [
       "Aidan of Lindisfarne",
@@ -5214,7 +5175,7 @@
   },
   {
     "tier": 3,
-    "question": "Wanting greater solitude than even a tidal monastery could give him, Cuthbert withdrew in 676 to a tiny rocky outcrop in the North Sea. He dug a well in the rock, grew barley for food, and built his cell walls high enough that he could see only the sky. Which island did he choose?",
+    "question": "Cuthbert withdrew in 676 to a tiny rocky outcrop in the North Sea, wanting greater solitude than even a tidal monastery could give him. He grew barley there for food, dug a well in the rock, and raised his cell walls until he could see only the sky. Which island did he choose?",
     "answer": "Inner Farne",
     "choices": [
       "Inner Farne",
@@ -5227,7 +5188,7 @@
   },
   {
     "tier": 5,
-    "question": "Eleven years after Cuthbert was buried, in 698, the monks of Lindisfarne opened his coffin intending to lift his bones out into a reliquary. What they found instead became the most famous miracle told of him for the next thousand years. What did they find inside?",
+    "question": "Cuthbert's fellow monks opened his coffin on Lindisfarne in 698, eleven years after his burial, intending to lift his bones into a shrine. What they found instead became the most famous wonder told of him for the next thousand years. What did they find inside?",
     "answer": "The body incorrupt",
     "choices": [
       "The body incorrupt",
@@ -5240,7 +5201,7 @@
   },
   {
     "tier": 5,
-    "question": "When Viking raids began smashing Lindisfarne in 793, the monks lifted Cuthbert's coffin and carried it with them. For over a hundred years they wandered northern England, hunting for a safe place to lay him. In which English city did they finally set the coffin down, so that the cathedral was later built over his tomb?",
+    "question": "The monks of Lindisfarne lifted Cuthbert's coffin and carried it with them when Viking raids began smashing their island in 793. For over a hundred years they wandered northern England, hunting for a safe place to lay him. In which English city did they finally settle, where the cathedral later rose over his tomb?",
     "answer": "Durham",
     "choices": [
       "Durham",
@@ -5253,7 +5214,7 @@
   },
   {
     "tier": 1,
-    "question": "Two Greek brothers grew up in a Byzantine port where lots of Slavic was heard on the streets. They became the missionaries who first put Slavic into writing. The older brother was Methodius, and the younger took a monk's name that the whole family is now remembered by. What was that name?",
+    "question": "Two Greek brothers from a Byzantine port, where Slavic could be heard on the streets, became missionaries and first put Slavic into writing. The older was Methodius. The younger took a monk's name late in life, and both brothers are remembered by it. What was that name?",
     "answer": "Cyril",
     "choices": [
       "Cyril",
@@ -5266,7 +5227,7 @@
   },
   {
     "tier": 3,
-    "question": "Around the year 863, the Greek monk-scholar Cyril set out from Constantinople on a mission north to the Slavic lands of Moravia. When Cyril arrived he found the Slavs had no written alphabet of their own. So on the road north, Cyril sat down and designed a brand new writing system fitted to the sounds of Slavic speech. It became the very first alphabet used to write down Slavic manuscripts. What do historians call his original design?",
+    "question": "Cyril, a Greek monk and scholar, set out from Constantinople around 863 on a mission north to the Slavic lands of Moravia, and he found the Slavs had no written alphabet of their own. He sat down and designed a brand new writing system to fit the sounds of Slavic speech, the first alphabet used for Slavic manuscripts. What do historians call his original design?",
     "answer": "Glagolitic",
     "choices": [
       "Glagolitic",
@@ -5279,7 +5240,7 @@
   },
   {
     "tier": 4,
-    "question": "In 867 Cyril stopped in Venice and defended, against the local clergy, his right to celebrate the liturgy in Slavic. His opponents insisted that God could only be praised in the three languages Pilate had written above the cross. Which three languages did they name?",
+    "question": "Cyril stopped in Venice in 867 and stood up to the local clergy for his right to celebrate the liturgy in Slavic. His opponents insisted that God could only be praised in the three languages Pilate had written above the cross. Which three languages did they name?",
     "answer": "Hebrew, Greek, and Latin",
     "choices": [
       "Hebrew, Greek, and Latin",
@@ -5292,7 +5253,7 @@
   },
   {
     "tier": 1,
-    "question": "In the reign of King Darius the Mede over Babylon, the old prophet Daniel's enemies at court trick Darius into signing an edict that anyone who prays to any god but the king will be executed. When Daniel keeps praying to God anyway, he is sealed overnight in a pit of hungry wild beasts. What kind of beasts fill the pit?",
+    "question": "Daniel's enemies at court tricked King Darius the Mede into signing an edict that anyone who prayed to any god but the king would be executed. Daniel kept praying to God anyway, and he was sealed overnight in a pit of hungry wild beasts. What kind of beasts filled the pit?",
     "answer": "Lions",
     "choices": [
       "Lions",
@@ -5305,7 +5266,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Book of Daniel, the Jewish exile Daniel serves as a high official in the Persian court of King Darius. Jealous rivals trick the king into signing a decree that for thirty days no one may pray to any god except Darius himself. The moment Daniel learns the decree has been signed, he does not hide. He goes home to his upper room and does exactly what he has always done. In what direction does the King James Version say Daniel's windows are open when he kneels to pray three times a day?",
+    "question": "Daniel learned that King Darius had signed a decree: for thirty days no one might pray to any god except Darius himself. He did not hide. He went home to his upper room and knelt by the open windows, as he had always done three times a day. In what direction did those windows look?",
     "answer": "Toward Jerusalem",
     "choices": [
       "Toward Jerusalem",
@@ -5318,7 +5279,7 @@
   },
   {
     "tier": 3,
-    "question": "When King Nebuchadnezzar of Babylon captured Jerusalem, he brought back the smartest young Hebrew captives to be trained in his own royal court. One of them was a boy named Daniel. The Babylonians renamed each of these captive boys after their own gods (Daniel 1:7). What Babylonian court name did they give Daniel?",
+    "question": "King Nebuchadnezzar of Babylon captured Jerusalem and brought the smartest young Hebrew captives back to be trained in his own royal court. One of them was a boy named Daniel. The Babylonians renamed each of these boys after their own gods. What court name did they give Daniel?",
     "answer": "Belteshazzar",
     "choices": [
       "Belteshazzar",
@@ -5331,7 +5292,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Book of Daniel, King Darius of Persia has been trapped by his own thirty-day decree into throwing the Jewish official Daniel into a den of hungry lions for the crime of praying to his God. After Daniel is caught praying and cast into the pit, a great stone is rolled over the mouth of the den. To make sure no one in the night can dig Daniel out and cheat the decree, the stone is sealed. Whose seal is put on the stone?",
+    "question": "King Darius, trapped by his own thirty-day decree, had the Jewish official Daniel thrown into the den for the crime of praying. A great stone was rolled over the mouth of the den. Then the stone was sealed, so that no one could dig Daniel out in the night and cheat the decree. What sealed the stone?",
     "answer": "The king's own signet, and the signets of his lords",
     "choices": [
       "The king's own signet, and the signets of his lords",
@@ -5344,7 +5305,7 @@
   },
   {
     "tier": 5,
-    "question": "In the Book of Daniel, King Darius of Persia has been forced by his own signed decree to throw the Jewish official Daniel into a den of hungry lions for praying to his God. The king spends a sleepless night in his palace, refusing to eat. At the first light of dawn Darius runs to the mouth of the pit and cries down, fearing Daniel is torn to pieces. Daniel answers up out of the darkness with one of the most quoted verses of the story, explaining why the lions have not eaten him. What does Daniel say his God has done?",
+    "question": "King Darius spent the night sleepless in his palace, refusing to eat, after his own decree forced him to throw the Jewish official Daniel into the den. At the first light of dawn he ran to the mouth of the pit and cried down to him. Daniel answered up out of the darkness and explained why the beasts had not eaten him. What did Daniel say his God had done?",
     "answer": "Sent his angel, and shut the lions' mouths",
     "choices": [
       "Sent his angel, and shut the lions' mouths",
@@ -5357,7 +5318,7 @@
   },
   {
     "tier": 5,
-    "question": "After a night in the pit with the lions, the old prophet Daniel is drawn back up unhurt -- the beasts never touched him. King Darius the Mede is furious with the palace officials who had tricked him into sending Daniel down there in the first place. Daniel 6:24 records the sentence Darius passes on them. What does the King James Version say happens to them?",
+    "question": "Daniel came out of the pit unhurt, the beasts never having touched him, and King Darius the Mede turned in fury on the palace officials who had tricked him into sending Daniel down there. Daniel 6:24 records the sentence the king passed on them. What was done to those men?",
     "answer": "Thrown into the pit with their wives and children, and torn by the lions",
     "choices": [
       "Thrown into the pit with their wives and children, and torn by the lions",
@@ -5370,7 +5331,7 @@
   },
   {
     "tier": 1,
-    "question": "The Second Book of Samuel, chapter 11, opens with the famous line 'at the time when kings go forth to battle.' Israel's general Joab is off besieging the Ammonite capital of Rabbah on the far side of the Jordan. But the king of Israel is not out there fighting with his army. Where is King David?",
+    "question": "Joab, Israel's general, is off besieging Rabbah, the Ammonite capital on the far side of the Jordan, 'at the time when kings go forth to battle.' But King David is not out there fighting with his army. Where is he?",
     "answer": "in Jerusalem, at his own palace",
     "choices": [
       "in Jerusalem, at his own palace",
@@ -5383,7 +5344,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Second Book of Samuel, King David of Israel is at ease in his palace in Jerusalem while his army is off fighting a war in the spring. One evening David gets up from his bed and walks on the flat palace roof. Looking down over the wall he sees a beautiful woman doing something in the courtyard below, and sends a servant to find out who she is. What is the woman doing?",
+    "question": "King David gets up from his bed one evening and walks on the flat roof while his army is off at war in the spring. Looking down, he sees a beautiful woman doing something in the courtyard below, and he sends a servant to find out who she is. What is the woman doing?",
     "answer": "bathing",
     "choices": [
       "bathing",
@@ -5396,7 +5357,7 @@
   },
   {
     "tier": 2,
-    "question": "David asks his servants about the woman on the roof. They tell him her name is Bathsheba, and that she is the wife of a soldier the king knows well -- a foreigner serving in Israel's army, and one of the thirty listed later in the book as David's own mighty men. What is her husband's name and background?",
+    "question": "King David's servants tell him the woman he has seen from the roof is Bathsheba, the wife of a soldier the king knows well. Her husband is a foreigner serving in Israel's army, one of the thirty listed later as David's own mighty men. Who is he?",
     "answer": "Uriah the Hittite",
     "choices": [
       "Uriah the Hittite",
@@ -5409,7 +5370,7 @@
   },
   {
     "tier": 3,
-    "question": "After the killing, God sends the prophet Nathan to David. Nathan tells the king a story: a rich man with vast flocks and herds, and a poor man with only ONE small animal in his household. The poor man had raised it in his own house, fed it from his own plate, given it his own cup to drink, and let it lie in his bosom -- 'it was unto him as a daughter.' What one animal did the poor man have?",
+    "question": "The prophet Nathan comes to King David with a story, after the king has had a soldier killed and taken his wife. A rich man has vast flocks and herds, and a poor man has only one small animal. He has raised it in his own house, fed it from his own plate, given it his own cup to drink, and let it lie in his bosom: 'it was unto him as a daughter.' What one animal does the poor man have?",
     "answer": "a little ewe lamb",
     "choices": [
       "a little ewe lamb",
@@ -5422,7 +5383,7 @@
   },
   {
     "tier": 4,
-    "question": "David listens to Nathan's parable about the rich man who stole and killed the poor man's household lamb, and his anger flares up. He swears an oath that the rich man deserves to die. Nathan answers with one short sentence that turns the parable on David himself. What does Nathan say?",
+    "question": "Nathan finishes his story of a rich man who robbed his poor neighbour to feed a traveller, and David's anger flares up. The king swears an oath that the rich man deserves to die. Nathan answers with one short sentence that turns the story on David himself. What does Nathan say?",
     "answer": "'Thou art the man.'",
     "choices": [
       "'Thou art the man.'",
@@ -5435,7 +5396,7 @@
   },
   {
     "tier": 5,
-    "question": "Bathsheba's baby is struck sick. David fasts, lies on the ground, and refuses food for seven days. When his servants finally tell him the child has died, he rises, washes, changes his clothes, and asks for a meal -- terrifying them, because they expected him to break down. He explains himself in one line to his servants. What does David say?",
+    "question": "David fasts and lies on the ground for seven days, refusing food, while Bathsheba's baby is sick. The child dies, and David's servants are afraid to tell him. When he learns of it he rises, washes, changes his clothes and asks for a meal, terrifying them. He explains himself in one line. What does David say?",
     "answer": "'I shall go to him, but he shall not return to me.'",
     "choices": [
       "'I shall go to him, but he shall not return to me.'",
@@ -5448,7 +5409,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Old Testament book of 1 Samuel, the Israelite army and the Philistine army were camped on two facing hills with a broad valley between them. Every morning a Philistine giant named Goliath strode down into the valley and shouted for any Israelite brave enough to fight him one-on-one. This is the valley where the shepherd boy David would soon step forward. Which valley does the Bible name as the setting?",
+    "question": "The Philistine giant Goliath strides down at dawn between two armies camped on facing hills and shouts for any Israelite brave enough to fight him one-on-one. King Saul's men hold one hill and the Philistines the other, with a broad valley between them. Which valley does the Bible name as the setting?",
     "answer": "the Valley of Elah",
     "choices": [
       "the Valley of Elah",
@@ -5461,7 +5422,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Old Testament book of 1 Samuel, two armies faced each other across the Valley of Elah -- King Saul's Israelites on one hill, the Philistines on the other. Every morning and every evening the Philistine champion, a giant named Goliath in bronze armor, marched into the valley and dared any Israelite to fight him one-on-one. No Israelite would come down. This shameful stand-off dragged on for a long time before the shepherd boy David finally arrived with bread and cheese for his brothers. How many days does 1 Samuel 17 say it lasted before David showed up?",
+    "question": "King Saul's men watch the Philistine champion Goliath march out in his bronze armor and dare any one of them to fight him, and once more no Israelite goes down. He does it every morning and every evening. The stand-off drags on until David arrives with food for his brothers. How many days does 1 Samuel 17 say it lasts?",
     "answer": "forty days",
     "choices": [
       "forty days",
@@ -5474,7 +5435,7 @@
   },
   {
     "tier": 2,
-    "question": "David is not with the army. His father Jesse sends him from the sheepfold to the camp with food for his three oldest brothers and their captain. Jesse packs an ephah of parched corn, ten loaves of bread, and one very specific dairy item to be given to the captain of the thousand. What does Jesse send for the captain?",
+    "question": "David is not with the army. His father Jesse sends him from the sheepfold to the camp with food for his three oldest brothers and their captain. Jesse packs an ephah of parched corn, ten loaves of bread, and one more gift to be given to the captain of the thousand. What does Jesse send for the captain?",
     "answer": "ten cheeses",
     "choices": [
       "ten cheeses",
@@ -5487,7 +5448,7 @@
   },
   {
     "tier": 3,
-    "question": "Instead of Saul's kit, David goes down to the brook that runs through the valley and stoops to pick something up out of the water. He picks out several of them, chooses them for their smoothness, and puts them in the shepherd's bag he already carries. What does he pick up, and how many?",
+    "question": "David takes off the armor King Saul has dressed him in and goes down to the brook that runs through the valley. He stoops and picks something up out of the water, choosing with care, and drops it into the shepherd's bag he already carries. What does he pick up, and how many?",
     "answer": "five smooth stones",
     "choices": [
       "five smooth stones",
@@ -5500,7 +5461,7 @@
   },
   {
     "tier": 4,
-    "question": "David answers the giant back. He names the giant's own weapons -- sword, spear, shield -- and says what he himself is coming in the name of. He finishes with why the fight is going to happen this way: 'that all the earth may know that there is a God in Israel.' What does David say he is coming in the name of?",
+    "question": "Goliath curses the young David, and David answers the giant back. He names the giant's own weapons, sword and spear and shield, and says in whose name he himself is coming. He finishes with why the fight is going to happen this way: 'that all the earth may know that there is a God in Israel.' What does David say he is coming in the name of?",
     "answer": "'the LORD of hosts, the God of the armies of Israel'",
     "choices": [
       "'the LORD of hosts, the God of the armies of Israel'",
@@ -5513,7 +5474,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Valley of Elah, the shepherd boy David has walked out from the Israelite line to face the Philistine giant Goliath armed with only a sling and five smooth stones he chose from the brook. David runs at the giant, reaches into his bag for one stone, and slings it. The stone sinks into Goliath. The giant falls face-first to the earth. Where in Goliath's body does the stone strike?",
+    "question": "David walks out from the Israelite line to face Goliath with only a sling and his shepherd's bag. He runs at the giant, reaches into the bag for one stone and slings it. The stone sinks in, and the giant falls face-first to the earth. Where in Goliath's body does the stone strike?",
     "answer": "his forehead",
     "choices": [
       "his forehead",
@@ -5526,7 +5487,7 @@
   },
   {
     "tier": 5,
-    "question": "Years later David flees Saul unarmed and takes refuge with the priest Ahimelech, who feeds him and arms him. Saul soon orders Doeg the Edomite to butcher Ahimelech and eighty-five priests of his house. At which sanctuary town does the massacre happen?",
+    "question": "The priest Ahimelech feeds David and hands him Goliath's own sword, years later, when David comes to him unarmed, fleeing King Saul. For that kindness Saul orders Doeg the Edomite to kill Ahimelech and eighty-five priests of his house. At which sanctuary town does the massacre happen?",
     "answer": "Nob",
     "choices": [
       "Nob",
@@ -5539,7 +5500,7 @@
   },
   {
     "tier": 5,
-    "question": "There is a well-known textual puzzle deep in the David story. At 2 Samuel 21:19 a different Israelite is named as the killer of Goliath -- 'the Bethlehemite, slew the brother of Goliath the Gittite, the staff of whose spear was like a weaver's beam.' What is the name of this other Bethlehemite the second book gives credit to?",
+    "question": "Another man of Bethlehem slays Goliath of Gath, 'the staff of whose spear was like a weaver's beam,' at 2 Samuel 21:19, a well-known puzzle deep in the David story. The matching verse in 1 Chronicles says he killed Goliath's brother Lahmi instead. Who is this other Bethlehemite?",
     "answer": "Elhanan the son of Jaare-oregim",
     "choices": [
       "Elhanan the son of Jaare-oregim",
@@ -5552,7 +5513,7 @@
   },
   {
     "tier": 2,
-    "question": "That day the king's son seals the friendship with a gift. He strips off what he is wearing and hands it to David, giving him the outward marks of the throne he himself stands to inherit: his royal robe, his belt, his bow, and one more thing. What is the fourth item he gives?",
+    "question": "Jonathan, King Saul's eldest son, sealed his friendship with David with a gift. He stripped off what he was wearing and handed it over, giving David the outward marks of the throne he himself stood to inherit: his royal robe, his belt, his bow, and one more thing. What was the fourth item?",
     "answer": "his sword",
     "choices": [
       "his sword",
@@ -5565,7 +5526,7 @@
   },
   {
     "tier": 2,
-    "question": "After the young shepherd David killed the Philistine giant Goliath in the Valley of Elah, King Saul brought him into the royal court in Israel. David became Saul's personal harp player, soothing the king's dark and troubled moods with music. But Saul soon grew jealous of David's growing fame with the people, and twice, while David sat quietly playing his harp, the king snatched a weapon from his side and hurled it across the room at David's head. What weapon does the Bible say Saul threw?",
+    "question": "King Saul snatched a weapon from his side and hurled it across the room at young David's head, while David sat quietly playing his harp to calm the king's dark moods. Saul had grown jealous of David's fame with the people, and he did it twice. What weapon does the Bible say Saul threw?",
     "answer": "a javelin",
     "choices": [
       "a javelin",
@@ -5578,7 +5539,7 @@
   },
   {
     "tier": 3,
-    "question": "David flees the palace and hides in a field. Jonathan works out a signal to tell him whether it is safe to come back. At the new-moon feast Jonathan will tell his father David is away visiting family; then Jonathan will come to the field pretending to practice, and shoot arrows past a boy servant. If Jonathan calls out that the arrows are on this side, it is safe; if he calls that they are beyond, David must flee. How many arrows does Jonathan shoot as the signal?",
+    "question": "Jonathan worked out a signal for David, who had fled the palace and was hiding in a field. He would come to the field pretending to practice and shoot arrows past a boy servant. If he called that the arrows were on this side, it was safe; if he called that they were beyond, David must flee. How many arrows did Jonathan shoot as the signal?",
     "answer": "three arrows",
     "choices": [
       "three arrows",
@@ -5591,7 +5552,7 @@
   },
   {
     "tier": 3,
-    "question": "In the field after the arrows are shot, the two friends meet in secret. They fall on each other's necks and weep. Before they part, Jonathan makes David swear an oath. It uses one repeated phrase: 'The LORD be between me and thee, and between ______ and ______ for ever.' What two words fill the blanks?",
+    "question": "Jonathan met David in secret in the field after the arrows were shot, and the two friends fell on each other's necks and wept. Before they parted, Jonathan made David swear an oath. 'The LORD be between me and thee,' it ran, and then it named two more, 'for ever.' What were the other two?",
     "answer": "'my seed and thy seed'",
     "choices": [
       "'my seed and thy seed'",
@@ -5604,7 +5565,7 @@
   },
   {
     "tier": 4,
-    "question": "Years pass. The Philistines break the Israelite line on a mountain in the north; the king's sons are cut down around him and Saul himself is wounded by archers. Saul asks his armour-bearer to run him through so he will not be captured, and when the man refuses, the king does it himself. On what mountain do Saul and his sons -- including Jonathan -- die?",
+    "question": "King Saul, wounded by Philistine archers on a mountain in the north, asked his armour-bearer to run him through so he would not be captured. His sons had been cut down around him, and when the man refused, the king did it himself. On what mountain did Saul and his sons, Jonathan among them, die?",
     "answer": "Mount Gilboa",
     "choices": [
       "Mount Gilboa",
@@ -5617,7 +5578,7 @@
   },
   {
     "tier": 4,
-    "question": "The Philistines fasten Saul's body and his sons' bodies to the wall of Beth-shan. One town in Israel that had once been rescued by Saul from the Ammonites remembers the debt. Its valiant men march all night, take the bodies down from the wall, and burn them under a tamarisk tree back home, then fast seven days. What town's men come at night to recover Saul and Jonathan?",
+    "question": "The Philistines fastened the bodies of Saul and his sons to the wall of Beth-shan. The valiant men of one Israelite town, once rescued by Saul from the Ammonites, marched all night, took the bodies down, and burned them under a tamarisk tree back home, then fasted seven days. What town's men came by night to recover Saul and Jonathan?",
     "answer": "Jabesh-gilead",
     "choices": [
       "Jabesh-gilead",
@@ -5630,7 +5591,7 @@
   },
   {
     "tier": 5,
-    "question": "Inside the same lament, David turns from Saul and the army to Jonathan alone. He addresses his dead friend as 'my brother' and gives one line about the quality of their friendship that has been quoted for three thousand years, comparing it to another kind of love and saying it surpassed it. How does David's line finish? 'Thy love to me was wonderful, passing ______.'",
+    "question": "David turned from Saul and the army to Jonathan alone in the lament he sang over them. He called his dead friend 'my brother' and gave one line about their friendship, saying it surpassed another kind of love. How did David finish the line 'Thy love to me was wonderful, passing'?",
     "answer": "'the love of women'",
     "choices": [
       "'the love of women'",
@@ -5643,7 +5604,7 @@
   },
   {
     "tier": 1,
-    "question": "In the hills of Ephraim, back in the days of the Judges of Israel, the prophetess Deborah held court under a certain tree that became famous -- the tree itself was later named after her. Israelites walked up from all over the country to have her settle their quarrels. Under what kind of tree did Deborah sit?",
+    "question": "The prophetess Deborah sat down under one tree in the hills of Ephraim to settle Israel's quarrels, in the days of the Judges. Israelites walked up from all over the country to see her there, and the tree came to bear her name. Under what kind of tree did Deborah sit?",
     "answer": "a palm tree",
     "choices": [
       "a palm tree",
@@ -5656,7 +5617,7 @@
   },
   {
     "tier": 1,
-    "question": "The prophetess Deborah, judging Israel from her tree in Ephraim, summoned the war-captain Barak and told him God's order: gather ten thousand men and march north against Sisera, the Canaanite general who had been terrorizing Israel with nine hundred iron chariots. Barak agreed to go, but only on one strange condition. What did Barak ask for?",
+    "question": "Barak, Israel's war-captain, heard God's order from the prophetess Deborah: gather ten thousand men and march north against Sisera, the Canaanite general who had been terrorizing Israel. Barak agreed to go, but only on one strange condition. What did Barak ask for?",
     "answer": "that the prophetess come with him",
     "choices": [
       "that the prophetess come with him",
@@ -5669,7 +5630,7 @@
   },
   {
     "tier": 2,
-    "question": "Long ago in the Book of Judges, the Canaanite king Jabin of Hazor ruled over northern Israel with cruelty. His army was commanded by the fierce general Sisera. When the prophetess Deborah called the tribes of Israel to muster on Mount Tabor under the warrior Barak, Sisera marched out to crush them. He brought a force that terrified the lightly armed Israelites, because iron was still rare and expensive in that age. What fearsome force did Sisera bring with him?",
+    "question": "Sisera, general of the Canaanite king Jabin of Hazor, marched out to crush the tribes of Israel, mustered on Mount Tabor under the warrior Barak. He brought a force that terrified the lightly armed Israelites, one their foot soldiers could not stand against on open ground. What fearsome force did Sisera bring with him?",
     "answer": "nine hundred chariots of iron",
     "choices": [
       "nine hundred chariots of iron",
@@ -5682,7 +5643,7 @@
   },
   {
     "tier": 2,
-    "question": "The prophetess Deborah of Israel led the warrior Barak against the Canaanite general Sisera, whose nine hundred iron chariots seemed unstoppable on open ground. Deborah lured Sisera's chariots down from the hills into a river valley in northern Israel. A sudden storm turned the streambed to thick mud, and the heavy chariot wheels sank fast. Sisera's whole host was routed. What river was the trap?",
+    "question": "Barak mustered his men on Mount Tabor, and the great host of the Canaanite general Sisera rolled down into a river valley in northern Israel. A sudden storm turned the streambed to thick mud, the heavy wheels sank fast, and Sisera's whole host was routed. What river was the trap?",
     "answer": "the Kishon",
     "choices": [
       "the Kishon",
@@ -5695,7 +5656,7 @@
   },
   {
     "tier": 3,
-    "question": "In the book of Judges, the Canaanite general Sisera has just lost the battle at the Kishon river against the Israelites under Barak and the prophetess Deborah. His chariots are bogged in the mud and his army is broken. He flees on foot to a nomad's tent and begs a woman named Jael for shelter. She welcomes him in, and when he begs for water she opens a skin bottle and gives him something richer to drink instead. What did Jael give him?",
+    "question": "The beaten general Sisera ran on foot to a nomad's tent, and a woman named Jael took him in. When he begged for water she opened a skin bottle and gave him something richer to drink instead. What did Jael give him?",
     "answer": "milk",
     "choices": [
       "milk",
@@ -5708,7 +5669,7 @@
   },
   {
     "tier": 3,
-    "question": "After his army was destroyed at the river Kishon, the defeated Canaanite general Sisera fled on foot into the hills. He came to the tent of a Kenite woman named Jael, who welcomed him, gave him milk, and covered him with a mantle to hide him. The Israelite prophetess Deborah had foretold that Sisera would fall into the hand of a woman. Jael watched him sink into exhausted sleep, then quietly picked up two ordinary tools from her tent. What did Jael use to kill him?",
+    "question": "Jael, a Kenite woman, took the beaten Canaanite general Sisera into her tent, gave him a drink and covered him with a mantle to hide him. The prophetess Deborah had foretold that he would fall into the hand of a woman. Jael watched him sink into exhausted sleep, then crept to him. What did Jael use to kill him?",
     "answer": "a tent-peg and a hammer",
     "choices": [
       "a tent-peg and a hammer",
@@ -5721,7 +5682,7 @@
   },
   {
     "tier": 4,
-    "question": "After the Canaanite general Sisera was crushed at the river Kishon and killed in Jael's tent, the Israelite prophetess Deborah sang a triumphant war-poem preserved in Judges chapter 5. Her song refuses to credit only human weapons -- not the warrior Barak's spearmen, not Jael's tent-peg. It insists that heaven itself joined the fight, that a power from the night sky came down against the Canaanite host. What did Deborah's song claim fought against Sisera from above?",
+    "question": "Deborah sang a triumphant war-poem after the fall of the Canaanite general Sisera, and Judges chapter 5 preserves it. Her song refused to credit only human weapons, not the spears of the warrior Barak and not the hand of Jael. It insisted that heaven itself had joined the fight against the Canaanite host. What did Deborah's song claim fought against Sisera from above?",
     "answer": "the stars in their courses",
     "choices": [
       "the stars in their courses",
@@ -5734,7 +5695,7 @@
   },
   {
     "tier": 5,
-    "question": "In the Old Testament book of Judges, the prophetess Deborah led Israel to a great victory over the Canaanite general Sisera, whose iron chariots had oppressed Israel for years. Deborah's victory song fills chapter 5 of Judges. But the song ends far from the battlefield -- inside a Canaanite palace, watching a woman at a latticed window straining her eyes down the road and crying, 'Why is his chariot so long in coming? Why tarry the wheels of his chariots?' Whose grief is the song watching, unaware that Sisera lies dead in Jael's tent?",
+    "question": "A woman at a latticed window in a Canaanite palace strained her eyes down the road and cried, 'Why is his chariot so long in coming? Why tarry the wheels of his chariots?' Deborah's victory song leaves the battlefield for this scene in its last verses, and the man she waited for lay dead in Jael's tent. Who was the woman at the window?",
     "answer": "Sisera's mother",
     "choices": [
       "Sisera's mother",
@@ -5747,7 +5708,7 @@
   },
   {
     "tier": 1,
-    "question": "The ancient Greeks told stories to explain why crops grow in summer and die back in winter. In these tales the goddess Demeter is the older sister of Zeus, king of Olympus, and the mother of a girl named Persephone. Each of the twelve Olympian gods was given one part of the natural world to rule. Which part did the Greeks give Demeter?",
+    "question": "Zeus's older sister Demeter searched the earth for her stolen daughter, and her grief fell on the whole world. She was one of the twelve Olympian gods, each of them given one part of the natural world to rule. Which part did the Greeks give Demeter?",
     "answer": "Grain and the harvest",
     "choices": [
       "Grain and the harvest",
@@ -5760,7 +5721,7 @@
   },
   {
     "tier": 1,
-    "question": "In Greek myth, Demeter was the great goddess of grain and the harvest, one of the twelve Olympians. She had a single child, a daughter fathered by her brother Zeus. When this daughter was later stolen away to the underworld, Demeter's grief froze the fields — and that is the story the Greeks told to explain why the earth has winter. What was Demeter's daughter's name?",
+    "question": "Demeter lost her only child to the underworld, a daughter fathered by her brother Zeus. Her grief froze the fields, and the Greeks told that story to explain why the earth has winter. What was Demeter's daughter's name?",
     "answer": "Persephone",
     "choices": [
       "Persephone",
@@ -5773,7 +5734,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Greek myth of the seasons, young Persephone -- daughter of the harvest-goddess Demeter -- was gathering flowers in a sunny meadow with her friends. Hades, the grim god of the underworld, had asked his brother Zeus for her hand, and Earth herself grew one especially beautiful bloom as a trap. When Persephone reached for it, the ground split open and Hades charged up in his golden chariot to drag her down below. Which flower was the lure?",
+    "question": "Earth herself grew one especially beautiful flower in a sunny meadow, as a trap for the young daughter of Demeter. The lord of the dead had asked his brother Zeus for the girl. She was gathering flowers with her friends, and when she reached for the bloom the ground split open. Which flower was the lure?",
     "answer": "A narcissus",
     "choices": [
       "A narcissus",
@@ -5786,7 +5747,7 @@
   },
   {
     "tier": 2,
-    "question": "In Greek myth, Persephone was the young daughter of Demeter, the goddess of the harvest. One day Persephone was gathering flowers in a sunlit meadow when she spotted a strange and beautiful narcissus. As she reached for it, the earth split open beneath her feet and a dark god rushed up through the crack in a golden chariot pulled by four immortal black horses. He seized the girl and carried her down into the world of the dead to be his queen. Which god took her?",
+    "question": "Demeter's daughter reached for a strange and beautiful flower in a sunlit meadow, and the earth split open beneath her feet. A dark god rushed up through the crack in a golden chariot pulled by four immortal black horses, seized the girl and took her below as his queen. Which god took her?",
     "answer": "Hades",
     "choices": [
       "Hades",
@@ -5799,7 +5760,7 @@
   },
   {
     "tier": 3,
-    "question": "After Hades dragged Persephone down into the underworld, no one on earth would tell her mother where she had gone. The Greek harvest-goddess Demeter wandered the whole world searching for her daughter for nine days and nine nights, refusing to touch ambrosia or nectar, the food and drink of the gods. She walked even by night, and in the Homeric Hymn she carried two burning objects in her hands to light her way. What did Demeter carry as she searched?",
+    "question": "Demeter searched the whole world for her daughter for nine days and nine nights, refusing ambrosia and nectar, the food and drink of the gods, and no one would tell her where the girl had gone. She walked even by night, and in the Homeric Hymn she held something in her hands all the way. What did Demeter carry as she searched?",
     "answer": "Flaming torches",
     "choices": [
       "Flaming torches",
@@ -5812,7 +5773,7 @@
   },
   {
     "tier": 3,
-    "question": "In the ancient Homeric Hymn to Demeter, only two divine beings had heard young Persephone cry out as Hades dragged her into the underworld. Her mother Demeter searched for her for nine days by torchlight and finally went to the two witnesses. She came first to Helios, the sun-god who sees everything from above the sky. The other witness was a Greek goddess of moonlight, crossroads, and torches -- the only goddess who had heard Persephone's scream from below. Which goddess was the second witness?",
+    "question": "Helios, the sun-god who sees everything from above the sky, watched Demeter's daughter dragged into the underworld, in the ancient Homeric Hymn to Demeter. Only one other divine being knew: a goddess of crossroads, who heard the girl's scream from below. Which goddess was the second witness?",
     "answer": "Hecate",
     "choices": [
       "Hecate",
@@ -5825,7 +5786,7 @@
   },
   {
     "tier": 3,
-    "question": "Disguised as an old woman, Demeter came to the town of Eleusis and was hired as nurse to the royal baby prince Demophoon. To make the child immortal she anointed him with ambrosia by day and hid him at night in the heart of one dangerous thing -- until the mother caught her. What was he hidden in?",
+    "question": "Queen Metaneira of Eleusis caught her baby's old nurse at her work one night. The nurse was Demeter in disguise, trying to make the prince Demophoon immortal. She anointed him with ambrosia by day and hid him at night in the heart of one dangerous thing. What was he hidden in?",
     "answer": "The fire on the hearth",
     "choices": [
       "The fire on the hearth",
@@ -5838,7 +5799,7 @@
   },
   {
     "tier": 4,
-    "question": "In Greek myth, when the god Hades stole young Persephone down to the underworld to be his queen, her mother Demeter, goddess of the harvest, walked the earth in grief and fury. She blighted every field. The oxen dragged the plows in vain, the seeds never sprouted, and humans everywhere began to starve. Demeter did not care about the humans -- but her ruined world eventually forced the king of the gods, Zeus, to send the messenger god Hermes down to Hades to fetch Persephone back. What was the one thing that finally forced Zeus to act?",
+    "question": "Demeter blighted every field on earth in her grief and fury over her stolen daughter. The oxen dragged the plows in vain, the seeds never sprouted, and humans everywhere began to starve. At last Zeus, king of the gods, sent the messenger god Hermes down to fetch the girl back. What was the one thing that finally forced Zeus to act?",
     "answer": "The gods received no sacrifices from the empty altars",
     "choices": [
       "The gods received no sacrifices from the empty altars",
@@ -5851,7 +5812,7 @@
   },
   {
     "tier": 4,
-    "question": "In Greek myth, after Demeter's grief starved the earth, Zeus finally sent the swift messenger god Hermes down into the underworld to bring young Persephone back to her mother. But Hades, the god of the dead, was cunning. Before he let Persephone go, he slyly offered her one small thing to eat. This mattered enormously, because anyone who tasted any food in the underworld could never fully leave it. What did Hades give her to eat?",
+    "question": "Zeus sent the swift messenger god Hermes down into the underworld to bring Demeter's daughter back to her mother. But the lord of the dead was cunning. Before he let the girl go he slyly offered her one small thing, because anyone who tasted any food in the underworld could never fully leave it. What did he give her to eat?",
     "answer": "A pomegranate seed",
     "choices": [
       "A pomegranate seed",
@@ -5864,7 +5825,7 @@
   },
   {
     "tier": 5,
-    "question": "Zeus arranged a compromise. Because Persephone had tasted food in the underworld, she must go back for part of every year as Hades's queen, and spend the rest above with her grieving mother. In the oldest telling, the Homeric Hymn to Demeter, what share of each year does she spend below?",
+    "question": "Zeus arranged a compromise. Because Demeter's daughter had tasted food in the underworld, she had to go back for part of every year as queen below, and spend the rest above with her grieving mother. In the Homeric Hymn to Demeter, what share of each year did she spend below?",
     "answer": "One third of the year",
     "choices": [
       "One third of the year",
@@ -5877,7 +5838,7 @@
   },
   {
     "tier": 5,
-    "question": "Grieving for her stolen daughter, the Greek goddess Demeter wandered the earth disguised as an old woman. The royal family of the small Greek town of Eleusis took her in and treated her kindly, and in gratitude Demeter revealed her secret rites to them and taught their prince Triptolemus how to grow grain. These rites were celebrated for over a thousand years, and their central secret was so guarded that every initiate was sworn to lifelong silence about it. What were these rites called?",
+    "question": "The royal family of one small Greek town took in an old woman and treated her kindly, and she turned out to be Demeter in disguise. In gratitude she revealed her secret rites to them. The rites were celebrated for over a thousand years, and every initiate was sworn to lifelong silence about the central secret. What were these rites called?",
     "answer": "The Eleusinian Mysteries",
     "choices": [
       "The Eleusinian Mysteries",
@@ -5890,7 +5851,7 @@
   },
   {
     "tier": 5,
-    "question": "The Eleusinian prince who learned agriculture from Demeter did not keep the gift for Greece alone. She gave him a flying chariot to travel the world and teach farming, and it was pulled by two of the strangest animals in Greek myth. What drew Triptolemus's chariot across the sky?",
+    "question": "Prince Triptolemus learned to grow grain from Demeter and did not keep the gift for Greece alone. She gave him a flying chariot so that he could travel the world and teach farming, and it was pulled by two of the strangest animals in Greek myth. What drew Triptolemus's chariot across the sky?",
     "answer": "Winged serpents",
     "choices": [
       "Winged serpents",
@@ -5994,7 +5955,7 @@
   },
   {
     "tier": 1,
-    "question": "In the old Irish stories called the Fenian tales, Fionn mac Cumhaill was the great warrior-chief of a war-band called the Fianna. Late in his life Fionn had grown older than even the High King of Ireland himself. The High King, ruling from the sacred hill of Tara, promised Fionn his young and beautiful daughter as a bride. What is the princess's name in the tale?",
+    "question": "The High King of Ireland, ruling from the sacred hill of Tara, promises his young daughter to Fionn mac Cumhaill, the ageing chief of the Fianna war-band. Fionn has grown older than the High King himself, in these old Irish Fenian tales. What is the princess's name?",
     "answer": "Grainne",
     "choices": [
       "Grainne",
@@ -6007,7 +5968,7 @@
   },
   {
     "tier": 1,
-    "question": "In the old Irish Fenian tales, the great warrior-chief Fionn mac Cumhaill led a war-band called the Fianna. One of the finest young warriors in the Fianna carried a magical mark on his forehead called a love-spot, placed there long ago by a faery woman. Any mortal woman who caught even a glimpse of that mark fell instantly and hopelessly in love with him. Which young warrior of the Fianna was he?",
+    "question": "A fairy woman sets a magical mark on the forehead of a young warrior of the Fianna, the war-band of Fionn mac Cumhaill. Any mortal woman who catches even a glimpse of this love-spot falls hopelessly in love with him. Which young warrior of the Fianna is he?",
     "answer": "Diarmuid Ua Duibhne",
     "choices": [
       "Diarmuid Ua Duibhne",
@@ -6020,7 +5981,7 @@
   },
   {
     "tier": 2,
-    "question": "At the betrothal feast at Tara, Grainne looks around the hall at old white-haired Fionn and refuses the match in her heart. She sees Diarmuid across the room -- his love-spot showing under a cap -- and takes decisive action. What does she do to the rest of the hall?",
+    "question": "The young princess looks around the betrothal feast at Tara at old white-haired Fionn and refuses the match in her heart. She sees Diarmuid across the room, his love-spot showing under a cap, and she acts. What does she do to the rest of the hall?",
     "answer": "drugs every cup with a sleeping potion",
     "choices": [
       "drugs every cup with a sleeping potion",
@@ -6032,21 +5993,8 @@
     "topic": "diarmuid-and-grainne-the-elopement-and-the-boar-of-ben-gulba"
   },
   {
-    "tier": 2,
-    "question": "With the hall asleep, Grainne goes to Diarmuid and speaks. He refuses her at first, out of loyalty to Fionn. So she binds him with an unbreakable magical vow to elope with her that same night, one he cannot refuse. What is the Irish name for this kind of unbreakable vow?",
-    "answer": "a geis",
-    "choices": [
-      "a geis",
-      "a fian",
-      "a rath",
-      "a ban"
-    ],
-    "context": "A geis (plural geasa) is an unbreakable magical prohibition or command in Irish myth -- to break it is to invite destruction. Grainne's geis leaves Diarmuid no choice. Fian is the warrior-band itself; rath is a ringfort; ban is a plain English word here (not the Irish word). All four sound Irish and start with the right shape -- only geis is the term for the vow. Source: en.wikipedia.org/wiki/The_Pursuit_of_Diarmuid_and_Grainne.  (Legend.)",
-    "topic": "diarmuid-and-grainne-the-elopement-and-the-boar-of-ben-gulba"
-  },
-  {
     "tier": 3,
-    "question": "In the old Irish Fenian tales, the young princess Grainne was promised to the aging warrior-chief Fionn mac Cumhaill, but at the wedding feast at Tara she used a binding vow called a geasa to force the young warrior Diarmuid Ua Duibhne to run away with her. Bound by the vow, Diarmuid took Grainne and fled. Fionn and his war-band the Fianna chased the couple across the length and breadth of Ireland for so long that Irish oral tradition remembers the exact count. About how many years did the pursuit last?",
+    "question": "Fionn and his war-band chase the young warrior Diarmuid and the princess he has run away with across the length and breadth of Ireland. She has forced him to it by a binding vow at the feast at Tara, and the hunt goes on so long that five children are born to them along the way. About how many years does the pursuit last?",
     "answer": "sixteen years",
     "choices": [
       "sixteen years",
@@ -6059,7 +6007,7 @@
   },
   {
     "tier": 3,
-    "question": "Diarmuid's foster-father is one of the Tuatha De Danann, master of the great passage-tomb Brugh na Boinne on the Boyne. Throughout the flight he shelters the lovers again and again with mist and trickery, and eventually mediates a peace with Fionn. Who is Diarmuid's foster-father?",
+    "question": "Diarmuid's foster-father shelters the lovers again and again with mist and trickery as Fionn hunts them, and eventually he mediates a peace. He is one of the Tuatha De Danann, master of the great passage-tomb on the Boyne. Who is Diarmuid's foster-father?",
     "answer": "Aengus Og",
     "choices": [
       "Aengus Og",
@@ -6072,7 +6020,7 @@
   },
   {
     "tier": 4,
-    "question": "Years after the peace, Fionn organises a great boar-hunt on a real Irish mountain in County Sligo -- a limestone table-mountain with a sudden northern cliff, still visible from Sligo town today. It is here that Diarmuid meets his death. Which mountain is it?",
+    "question": "Fionn organises a great boar-hunt, years after the peace, on a real Irish mountain in County Sligo, a limestone table-mountain with a sudden northern cliff, still visible from Sligo town today. It is here that Diarmuid meets his death. Which mountain is it?",
     "answer": "Ben Bulben",
     "choices": [
       "Ben Bulben",
@@ -6085,7 +6033,7 @@
   },
   {
     "tier": 4,
-    "question": "The boar on Ben Bulben is no ordinary beast. It was once a human boy, changed into an enchanted boar by a druid after being killed as a child, and set under a prophecy binding it to be the death of one Fenian warrior. In the boy's identity lies the whole tragedy. WHO was the boy?",
+    "question": "A druid turns the body of a child killed long ago into an enchanted boar and binds it by prophecy to kill Diarmuid. Years later the beast meets him on Fionn's great hunt. In the boy's identity lies the whole tragedy. Who was the boy?",
     "answer": "a half-brother of the doomed man",
     "choices": [
       "a half-brother of the doomed man",
@@ -6098,7 +6046,7 @@
   },
   {
     "tier": 4,
-    "question": "The boar gores Diarmuid, but he mortally wounds it in return. Fionn arrives to find him dying. Long ago Fionn had gained a certain gift from the Salmon of Knowledge -- the ability to heal any wound with well-water, if only he carries it back to the wounded man in a very specific way. HOW must he carry it?",
+    "question": "The boar gores Diarmuid, but he mortally wounds it in return, and Fionn arrives to find him dying. Long ago Fionn gained a gift from the Salmon of Knowledge: he can heal any wound with well-water, if only he carries it back to the wounded man in one specific way. How must he carry it?",
     "answer": "cupped in his own two hands",
     "choices": [
       "cupped in his own two hands",
@@ -6111,7 +6059,7 @@
   },
   {
     "tier": 5,
-    "question": "Fionn walks to the well twice. Both times he brings the healing water back close to Diarmuid, and both times it is gone before it can touch the wound. He goes back a third time and does deliver it -- but by then it is too late. HOW, exactly, does the water get away from Fionn on the first two trips?",
+    "question": "Fionn walks to the well twice for the dying Diarmuid. Both times he brings the healing water back close to him, and both times it is gone before it can touch the wound. He goes back a third time and does deliver it, but by then it is too late. How does the water get away from Fionn on the first two trips?",
     "answer": "it slips through his cupped fingers",
     "choices": [
       "it slips through his cupped fingers",
@@ -6124,7 +6072,7 @@
   },
   {
     "tier": 5,
-    "question": "An old king, a young queen, and a young knight bound by love-spell to elope with her, followed by a long pursuit. This Irish tale's shape is so close to a great Continental romance that scholars regard it as the direct ancestor and still debate the direction of borrowing. Which later medieval romance grew from this shape?",
+    "question": "Old Fionn loses a young bride to a young warrior bound to her by a love-spell, and he hunts the pair through the wild for years. Scholars see this Irish tale as an ancestor of a great Continental romance, though they still debate the direction of borrowing. Which later medieval romance do they name?",
     "answer": "Tristan and Iseult",
     "choices": [
       "Tristan and Iseult",
@@ -6137,7 +6085,7 @@
   },
   {
     "tier": 1,
-    "question": "In ancient Greece there was a god of wild parties, madness, and one particular drink made from crushed and fermented grapes. His name was Dionysus, and the Romans later worshipped him under a different name: Bacchus. He was the youngest of the twelve Olympian gods, and his festivals gave the world the first theater. Which drink was Dionysus the god of?",
+    "question": "Dionysus joined the twelve Olympian gods as their youngest, a Greek god of wild rites and madness whom the Romans later worshipped as Bacchus. His festivals gave the world the first theater. Which drink was Dionysus the god of?",
     "answer": "Wine",
     "choices": [
       "Wine",
@@ -6150,7 +6098,7 @@
   },
   {
     "tier": 2,
-    "question": "In Greek myth, the mortal princess Semele of Thebes was pregnant by Zeus, king of the gods. Zeus's wife Hera burned with jealousy at the affair. She disguised herself as Semele's old nurse and came whispering to the girl that her mysterious lover might not really be a god at all -- that Semele had only been fooled. Hera then told Semele to force Zeus to prove himself by appearing to her in one particular way. Hera knew the demand would kill her. What was Hera's fatal suggestion?",
+    "question": "Jealous Hera disguised herself as the old nurse of Semele, a mortal Theban princess pregnant by Zeus. She came whispering that the girl's mysterious lover might not really be a god, and that Semele should force him to prove himself in one particular way. Hera knew the demand would kill her. What was Hera's fatal suggestion?",
     "answer": "Appear to her in his true form",
     "choices": [
       "Appear to her in his true form",
@@ -6163,7 +6111,7 @@
   },
   {
     "tier": 2,
-    "question": "Zeus had already sworn an unbreakable oath -- by the river Styx -- to grant Semele any request. He begged her not to ask this one, but he was bound. When he appeared to her in his true form, one thing about him killed her instantly. What killed Semele?",
+    "question": "Zeus had already sworn an unbreakable oath by the river Styx to grant Semele any request. He begged her not to ask this one, but he was bound, and he came to her as she demanded. One thing about him killed her instantly. What killed Semele?",
     "answer": "The lightning of his divine glory",
     "choices": [
       "The lightning of his divine glory",
@@ -6176,7 +6124,7 @@
   },
   {
     "tier": 3,
-    "question": "In Greek myth, Zeus foolishly kept his oath to appear to the mortal princess Semele of Thebes in his true divine form, and the blast of his glory burned her to ashes. But Semele was pregnant with Zeus's son, the future god Dionysus. Moving fast, Zeus snatched the unborn baby out of Semele's burning body and sewed the child into a part of his own body to finish growing him to term. Into what part of his own body did Zeus sew the baby Dionysus?",
+    "question": "Zeus kept his oath to the mortal princess Semele of Thebes, and she burned to ashes before him. But Semele was pregnant with his son, the future god Dionysus. Moving fast, Zeus snatched the unborn baby out of her burning body and sewed the child into a part of his own body to finish growing him. Into what part of his own body did Zeus sew the baby?",
     "answer": "Into his thigh",
     "choices": [
       "Into his thigh",
@@ -6189,7 +6137,7 @@
   },
   {
     "tier": 3,
-    "question": "In Greek myth, Dionysus was the god of wine and wild ecstasy, born to the mortal princess Semele and Zeus. When Dionysus was grown he wandered the world with a wild band of female followers. They wore spotted fawnskins, and each one carried a long fennel wand -- called a thyrsus -- topped with a pine cone and wrapped in ivy. What were these ecstatic female followers of Dionysus called?",
+    "question": "Dionysus wandered the world as a grown god with a wild band of female followers, in Greek myth. They wore spotted fawnskins, and each one carried a long fennel wand called a thyrsus, topped with a pine cone and wrapped in ivy. What were these ecstatic female followers of Dionysus called?",
     "answer": "The maenads",
     "choices": [
       "The maenads",
@@ -6202,7 +6150,7 @@
   },
   {
     "tier": 4,
-    "question": "In the ancient Greek tragedy called the Bacchae, by the playwright Euripides, the god Dionysus returned to his mother's city of Thebes to be worshipped. But the young king of Thebes refused to accept him as a god and tried to shut down his wild rites. In revenge, Dionysus lured the king up the trunk of a tall evergreen tree on Mount Cithaeron to peep down at the frenzied maenads dancing below. What was this doomed young king's name?",
+    "question": "Dionysus came back to his mother's city of Thebes to be worshipped, in the Bacchae of Euripides, and the young king refused to accept him as a god and tried to shut down his wild rites. In revenge, the god lured the king up a tall evergreen on Mount Cithaeron to peep down at the frenzied women dancing below. What was this doomed young king's name?",
     "answer": "Pentheus",
     "choices": [
       "Pentheus",
@@ -6215,7 +6163,7 @@
   },
   {
     "tier": 4,
-    "question": "When the maenads spotted the king spying on them from the tree, they pulled him down and tore him limb from limb in bacchic frenzy. His own mother led the killing and carried his head back to Thebes on her thyrsus, believing until the madness lifted that it was the head of one particular wild animal. What did she believe she was holding?",
+    "question": "Agave led the frenzied women who spotted the young king of Thebes spying from his tree, pulled him down and tore him limb from limb. He was her own son. She carried his head back to Thebes on her fennel wand, believing until the madness lifted that it was the head of one particular wild animal. What did she believe she was holding?",
     "answer": "A mountain lion's head",
     "choices": [
       "A mountain lion's head",
@@ -6228,7 +6176,7 @@
   },
   {
     "tier": 5,
-    "question": "Standing on a seashore one day in the shape of a handsome young man, Dionysus was captured by Tyrrhenian pirates who planned to sell him as a slave. As the ship put out, vines grew up the mast, wine ran across the deck, the oars turned into serpents, and Dionysus himself took the form of a great beast on the deck. What beast did he become?",
+    "question": "Dionysus stood on a seashore one day in the shape of a handsome young man, and Tyrrhenian pirates captured him, planning to sell him as a slave. As the ship put out, vines grew up the mast, the oars turned into serpents, and Dionysus himself took the form of a great beast on the deck. What beast did he become?",
     "answer": "A lion",
     "choices": [
       "A lion",
@@ -6241,7 +6189,7 @@
   },
   {
     "tier": 5,
-    "question": "In an old Greek story called the Homeric Hymn to Dionysus, a band of Tyrrhenian pirates seized the young Dionysus off the seashore, mistaking him for a rich prince they could sell as a slave. Once they were out at sea, Dionysus revealed his godhood -- vines burst from the ship's deck, sweet wine flowed down the mast, and the god himself took on the shape of a roaring lion. The terrified pirates leapt overboard to escape. They did not drown. In mid-leap they were transformed into another kind of sea creature entirely. What did the Tyrrhenian pirates become?",
+    "question": "Tyrrhenian pirates seized the young Dionysus off the seashore in the Homeric Hymn to Dionysus, mistaking him for a rich prince they could sell. Out at sea vines burst from the ship's deck and the god took on the shape of a great beast, and the terrified pirates leapt overboard. They did not drown. In mid-leap they were transformed. What did the Tyrrhenian pirates become?",
     "answer": "Dolphins",
     "choices": [
       "Dolphins",
@@ -6254,7 +6202,7 @@
   },
   {
     "tier": 5,
-    "question": "The Greek god of wine and wild rites, Dionysus, took a mortal wife with a famous backstory. She was a Cretan princess, daughter of King Minos of Crete. She had fallen in love with the Athenian hero Theseus and given him a ball of thread so he could find his way back out of the twisting Labyrinth after killing the monstrous Minotaur. Theseus then sailed away with her but abandoned her, sleeping, on the island of Naxos -- where Dionysus found her and married her. Whom did Dionysus marry?",
+    "question": "Theseus sailed away from Crete with a princess, the daughter of King Minos, who had given him a ball of thread to find his way out of the twisting Labyrinth after he killed the Minotaur. He abandoned her, sleeping, on the island of Naxos, and the god Dionysus found her there and married her. Whom did Dionysus marry?",
     "answer": "Ariadne",
     "choices": [
       "Ariadne",
@@ -14145,7 +14093,7 @@
   },
   {
     "tier": 1,
-    "question": "After forty years of leading Israel through the wilderness after the exodus from Egypt, the aged Moses climbed Mount Nebo, looked out at the promised land of Canaan he was not allowed to enter, and died there. One of his lieutenants took his place, led Israel across the Jordan River on dry ground, and prepared to attack the first walled Canaanite city they would face -- Jericho. Who was he?",
+    "question": "Moses climbed Mount Nebo after forty years of leading Israel, looked out at the promised land he was not allowed to enter, and died there. One of his lieutenants took his place, led Israel across the Jordan River on dry ground, and prepared to attack the walled city of Jericho. Who was he?",
     "answer": "Joshua son of Nun",
     "choices": [
       "Joshua son of Nun",
@@ -14158,7 +14106,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Israel attacked the walled Canaanite city of Jericho, Joshua sent two spies in secretly to look the city over. A Canaanite woman named Rahab, who lived in a house built into the city wall itself, hid the two spies on her flat mud roof. She had already spread a certain crop up there in orderly rows to dry in the hot sun, and she laid the two men down beneath it. What crop covered them?",
+    "question": "Rahab, a Canaanite woman of Jericho, hid Joshua's two spies on her flat mud roof, in a house built into the city wall itself. She had already spread a certain crop up there in orderly rows to dry in the hot sun, and she laid the two men down beneath it. What crop covered them?",
     "answer": "stalks of flax",
     "choices": [
       "stalks of flax",
@@ -14171,7 +14119,7 @@
   },
   {
     "tier": 2,
-    "question": "In the doomed Canaanite city of Jericho, Rahab hid Joshua's two Israelite spies on her flat roof, then lowered them by rope from her window -- since her house was built right into the city wall. Before they went, they gave her a promise: tie one single visible mark in that same window, and when Israel took the city her house alone, of all the houses inside, would be spared. What was the mark?",
+    "question": "Joshua's two Israelite spies went down a rope from Rahab's window, her house being built right into the wall of Jericho. Before they left, they gave her a promise: tie one visible mark in that same window, and when Israel took the city only her house would be spared. What was the mark?",
     "answer": "a scarlet cord",
     "choices": [
       "a scarlet cord",
@@ -14184,7 +14132,7 @@
   },
   {
     "tier": 3,
-    "question": "Near the walls of Jericho, just before the great battle that will bring those walls down, Joshua -- the leader of Israel who has taken over from Moses -- looked up and saw a man standing before him with a drawn sword in his hand. Joshua walked right up to the stranger and asked, 'Art thou for us, or for our adversaries?' The stranger refused both sides -- he had not come to belong to either army. Who did he say he was?",
+    "question": "Joshua looked up near the walls of Jericho, just before the great battle, and saw a man standing before him with a drawn sword in his hand. He walked right up to the stranger and asked, 'Art thou for us, or for our adversaries?' The stranger refused both sides, for he had not come to belong to either army. Who did the stranger say he was?",
     "answer": "captain of the host of the Lord",
     "choices": [
       "captain of the host of the Lord",
@@ -14197,7 +14145,7 @@
   },
   {
     "tier": 4,
-    "question": "After Moses died, the Israelites crossed the Jordan River under a new leader named Joshua and came at last to the walled city of Jericho — the first stronghold blocking their way into the promised land. God gave Joshua a strange plan for taking the city: for six days the army would march around Jericho once in silence, and on the seventh day seven priests would go before the ark of the covenant, each one blowing a trumpet. What were those trumpets made of?",
+    "question": "Joshua marched the army of Israel around the walled city of Jericho in silence, on a strange plan God had given him. Seven priests went ahead of the ark of the covenant, each one blowing a trumpet. What were those trumpets made of?",
     "answer": "rams' horns",
     "choices": [
       "rams' horns",
@@ -14209,8 +14157,8 @@
     "topic": "joshua-at-jericho-the-trumpets-and-the-walls"
   },
   {
-    "tier": 5,
-    "question": "Under Joshua's command, the army of Israel besieged the walled Canaanite city of Jericho in a way no army had ever tried. For six straight days they marched once around the city in silence, priests in front carrying the Ark of the Covenant, then returned to camp. On the seventh day they rose early and circled the city many more times before Joshua gave the great shout that would collapse the walls. How many times around on that final day?",
+    "tier": 3,
+    "question": "The army of Israel besieged the walled Canaanite city of Jericho under Joshua's command, in a way no army had ever tried. For six straight days it marched once around the city, priests in front carrying the ark. On the last day the men rose early and circled the city many more times before the trumpets blew and the walls came down. How many times around did they go that day?",
     "answer": "seven times",
     "choices": [
       "seven times",
@@ -14218,20 +14166,7 @@
       "twelve times",
       "forty times"
     ],
-    "context": "Joshua 6:15-16 (KJV): 'on the seventh day... they compassed the city after the same manner seven times.' Then the priests blew, the people shouted, and the wall fell down flat (6:20).",
-    "topic": "joshua-at-jericho-the-trumpets-and-the-walls"
-  },
-  {
-    "tier": 5,
-    "question": "In the book of Joshua, after Israel took Jericho, God had ordered that every spoil from the city be devoted to destruction. But at the very next battle, tiny Ai routed Israel and about thirty-six men fell. Joshua drew lots to find the guilty soldier, and Achan confessed: he had coveted and buried in his tent a wedge of gold, two hundred shekels of silver, and one stolen luxury cloak. Where was the cloak from?",
-    "answer": "Babylon",
-    "choices": [
-      "Babylon",
-      "Egypt",
-      "Phoenicia",
-      "Assyria"
-    ],
-    "context": "Joshua 7:21 (KJV): 'I saw among the spoils a goodly Babylonish garment... I coveted them, and took them; and, behold, they are hid in the earth in the midst of my tent.' Israel's early defeat at Ai was blamed on Achan's hidden loot.",
+    "context": "Joshua 6:15-16 (KJV): 'on the seventh day... they compassed the city after the same manner seven times.' Then the priests blew, the people shouted, and the wall fell down flat (6:20). Three days marks Jonah in the fish and the resurrection; twelve is the tribes and the apostles; forty is the wilderness years and Jesus's fast.",
     "topic": "joshua-at-jericho-the-trumpets-and-the-walls"
   },
   {
@@ -30122,7 +30057,7 @@
   },
   {
     "tier": 1,
-    "question": "In Malory's stories, King Arthur has a great round table at Camelot. His chosen knights sit around it as equals, so no one sits at the head. Once a year, these knights ride back to Camelot for a feast to renew their vows together. On which yearly church feast day do they gather?",
+    "question": "In Malory's stories, King Arthur would not sit down to eat until he had heard of some wonder, on the one day each year when his knights rode back to Camelot. They feasted at his round table as equals and renewed their vows. Which church feast was it?",
     "answer": "Pentecost",
     "choices": [
       "Pentecost",
@@ -30130,38 +30065,12 @@
       "Easter Sunday",
       "All Hallows"
     ],
-    "context": "Pentecost falls fifty days after Easter and was the high feast of the Round Table year in Malory. The knights gathered, feasted, and renewed the oath together; scribes recorded what each had done in the year past. Malory's Book III opens the pattern. Christmas and Easter were the two greatest feasts of the church year but did not have this special Round Table meaning; All Hallows (November 1) was a solemn feast for the dead, not for oath-renewal.  (Legend.)",
-    "topic": "the-round-table-fellowship-knights-quests-and-code"
-  },
-  {
-    "tier": 1,
-    "question": "King Arthur's chosen knights sit as equals around his great round table in Camelot. Malory tells us the seats around the table were always kept filled for the yearly feast. About how many seated knights sat at that table in all?",
-    "answer": "a hundred and fifty",
-    "choices": [
-      "a hundred and fifty",
-      "twelve",
-      "forty",
-      "three hundred"
-    ],
-    "context": "Malory gives 150 as the count of the fellowship of the Round Table at its full strength (Book III). Twelve is the number of apostles in the Christian pillar and of the Peers of France in the Roland tradition; forty is a number of days (the flood, the wilderness); three hundred is closer to the personal retinue of a great earl.  (Legend.)",
+    "context": "Pentecost (Whitsunday) falls fifty days after Easter and was the high feast of the Round Table year in Malory. It was Arthur's great gathering day, and he would not sit down to eat until he had heard of some wonder or adventure. The knights gathered, feasted, and renewed the oath together; scribes recorded what each had done in the year past. Malory's Book III opens the pattern. It is at Pentecost that Galahad arrives and the Grail quest begins. Christmas and Easter were the two greatest feasts of the church year but did not have this special Round Table meaning; All Hallows (November 1) was a solemn feast for the dead, not for oath-renewal.  (Legend.)",
     "topic": "the-round-table-fellowship-knights-quests-and-code"
   },
   {
     "tier": 2,
-    "question": "Every seat around the Round Table had the name of its knight written on it in gold letters that appeared by magic. One seat was called the Siege Perilous, and anyone unworthy who sat in it would die. Merlin foretold that one special knight alone could sit in the Siege Perilous safely. Which knight was he?",
-    "answer": "Sir Galahad",
-    "choices": [
-      "Sir Galahad",
-      "Sir Lancelot",
-      "Sir Gawain",
-      "Sir Kay"
-    ],
-    "context": "Galahad, Lancelot's pure son by Elaine, was the only knight who could safely sit in the Siege Perilous; his coming was foretold from the making of the table. Lancelot was the greatest in arms but flawed by his love for the queen. Gawain was Arthur's chief nephew and a great knight but hot-tempered. Kay was the seneschal, sharp-tongued and not of the highest chivalry.  (Legend.)",
-    "topic": "the-round-table-fellowship-knights-quests-and-code"
-  },
-  {
-    "tier": 2,
-    "question": "Each year at the great feast, the knights of the Round Table repeated their oath together at Camelot. They swore never to commit murder or treason, always to help ladies and widows, and never to fight in a wrongful quarrel. The oath also included one more rule about a defeated enemy. What was that final rule?",
+    "question": "The knights of the Round Table gathered at Camelot for the great feast and repeated their oath together. They swore never to commit murder or treason, always to help ladies and widows, and never to fight in a wrongful quarrel. One more rule in the oath concerned a defeated enemy. What was that rule?",
     "answer": "always to give mercy to any who asked mercy",
     "choices": [
       "always to give mercy to any who asked mercy",
@@ -30174,7 +30083,7 @@
   },
   {
     "tier": 4,
-    "question": "In Malory's Book 20, the fellowship of the Round Table is finally broken -- not by an invading army but from within its own ranks. Agravaine and Mordred bring an accusation before King Arthur against Queen Guinevere. The king is forced to condemn her to be burned at the stake, and the fellowship falls into civil war with itself. What accusation did the two knights bring?",
+    "question": "Agravaine and Mordred brought an accusation before King Arthur against Queen Guinevere, in Malory's twentieth book. No invading army broke the Round Table; Arthur's own law forced him to send her to the stake, and the fellowship went to war with itself. What accusation did the two knights bring?",
     "answer": "that she had lain with Sir Lancelot",
     "choices": [
       "that she had lain with Sir Lancelot",
@@ -30183,32 +30092,6 @@
       "that she had been born the daughter of a witch"
     ],
     "context": "Agravaine and Mordred trapped Lancelot in the queen's chamber and forced the accusation into the open; by his own laws Arthur had to condemn her to burn. Morgan le Fay's poisoning schemes belong to earlier books and did not touch the queen. The Benoic treasury and witch-birth accusations are inventions and do not appear in Malory.  (Legend.)",
-    "topic": "the-round-table-fellowship-knights-quests-and-code"
-  },
-  {
-    "tier": 5,
-    "question": "While Arthur was across the sea, laying siege to Lancelot in the castle of Joyous Gard, one member of the Round Table seized the throne of Britain in Arthur's absence, forced a crown on his own head, and tried to marry Queen Guinevere. Arthur turned back to fight him at the last battle of Camlann, where both were mortally wounded and the fellowship destroyed. Who was the usurper?",
-    "answer": "Sir Mordred",
-    "choices": [
-      "Sir Mordred",
-      "Sir Agravaine",
-      "Sir Palamedes",
-      "Sir Meliagrance"
-    ],
-    "context": "In Malory, Mordred is Arthur's own son by his half-sister Morgause, and himself a knight of the Round Table. Camlann killed nearly every knight on both sides. Agravaine was already dead before Camlann, killed with Colgrevaunce in the ambush of Lancelot. Palamedes was the Saracen knight of the Grail cycle; Meliagrance was the earlier abductor of Guinevere killed by Lancelot.  (Legend.)",
-    "topic": "the-round-table-fellowship-knights-quests-and-code"
-  },
-  {
-    "tier": 5,
-    "question": "After Camlann, only one knight of the Round Table remained with the dying Arthur on the shore. Arthur ordered him to throw Excalibur back into the water; a hand rose from the lake to catch it, and Arthur was carried away in a black barge to Avalon. Malory closes the book with the Latin epitaph said to be written on Arthur's tomb: what does it say?",
-    "answer": "Here lies Arthur, the once and future king",
-    "choices": [
-      "Here lies Arthur, the once and future king",
-      "Here lies the last of the Britons",
-      "Here rests the flower of chivalry",
-      "Here sleeps the sword that broke"
-    ],
-    "context": "Malory ends: 'HIC IACET ARTHURUS, REX QUONDAM REXQUE FUTURUS.' The 'once and future' promise is the tradition that Arthur is not truly dead but will return in Britain's greatest need; T.H. White's 'The Once and Future King' (1958) takes its title straight from this epitaph. The other three are invented for the choices.  (Legend.)",
     "topic": "the-round-table-fellowship-knights-quests-and-code"
   },
   {
