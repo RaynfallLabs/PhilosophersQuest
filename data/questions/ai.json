@@ -53,19 +53,6 @@
   },
   {
     "tier": 1,
-    "question": "You tell a chatbot like ChatGPT that your pet died. The chatbot writes back, 'I'm so sorry to hear that.' The words sound caring, just like a friend would say. But underneath, the chatbot is a computer program predicting one word after another based on patterns in text it read during training. Is it actually feeling sorry?",
-    "answer": "No, those are just words it learned to produce",
-    "choices": [
-      "No, those are just words it learned to produce",
-      "Yes, modern chatbots have real emotions of their own",
-      "Maybe, nobody can know for sure either way",
-      "Only if it has been running for a long time today"
-    ],
-    "context": "LLMs produce text by predicting which word is likely to come next. 'I'm sorry to hear that' is just a string of words it learned from human writing. Nothing is feeling anything underneath. Capability isn't the same as consciousness — a calculator can solve math without knowing what math is.",
-    "topic": "ai-consciousness-debate"
-  },
-  {
-    "tier": 1,
     "question": "You want to know what happened in the news this morning — a game score, a breaking story, an announcement from earlier today. Chatbots were often trained months ago and don't know today's events. Which of these is the best tool to use when you want to look up the latest news from today?",
     "answer": "A search engine like Google",
     "choices": [
@@ -469,7 +456,7 @@
   },
   {
     "tier": 1,
-    "question": "A computer chess program plays against a grandmaster and wins the game. To someone watching, it might look like the machine 'wanted' the victory. But a chess program has no feelings — it does not celebrate, get nervous, or care what happens. Deep down, does the program actually want to win?",
+    "question": "Suppose you watch a grandmaster lose to a computer chess program. The commentators say the machine 'wanted' the victory, and to your eye it looks that way. Deep down, does the program actually want to win?",
     "answer": "No, it just plays high-scoring moves on the board",
     "choices": [
       "No, it just plays high-scoring moves on the board",
@@ -573,7 +560,7 @@
   },
   {
     "tier": 1,
-    "question": "A kid hears an ad on the radio call an AI chatbot 'the world's smartest friend, always there for you.' She tries the chatbot and gets useful help with homework. But the chatbot does not remember her name the next day, has no feelings about her, and would happily tell any stranger the same jokes. Something in that ad's phrase does not fit what the chatbot really is. What part of 'the world's smartest friend' is most misleading?",
+    "question": "A girl hears a radio ad call a chatbot 'the world's smartest friend.' It helps with her homework, but it does not remember her name the next day, and it would tell any stranger the same jokes. What part of that phrase is most misleading?",
     "answer": "It's a tool, not a friend",
     "choices": [
       "It's a tool, not a friend",
@@ -1262,7 +1249,7 @@
   },
   {
     "tier": 1,
-    "question": "Farmers with huge fields can't walk every acre every day. Companies now feed satellite photos of farmland into AI models that spot dry patches, pests, and weak crops from space, then tell the farmer exactly where to water or spray. AI is being used to help farmers monitor crops using what?",
+    "question": "A farmer looks out over fields too huge to walk every day. Now an AI model spots dry patches, pests and weak crops for him from far above, then tells him exactly where to water or spray. What does the AI use to watch his crops?",
     "answer": "Satellite images",
     "choices": [
       "Satellite images",
@@ -1275,7 +1262,7 @@
   },
   {
     "tier": 1,
-    "question": "For decades, weather agencies ran giant physics simulations on supercomputers that took hours to guess tomorrow's storms. In 2023, Google DeepMind's GraphCast — an AI trained on old weather data — matched their forecasts in under a minute on a single computer. Compared to older tools, AI weather models often:",
+    "question": "A forecaster waits hours for a giant physics simulation on a supercomputer to guess tomorrow's storms. In 2023 Google DeepMind's GraphCast, an AI model, matched such forecasts on a single computer. Compared with older tools, what do AI weather models often do?",
     "answer": "Run much faster",
     "choices": [
       "Run much faster",
@@ -1600,7 +1587,7 @@
   },
   {
     "tier": 1,
-    "question": "On a modern farm, drones and cameras take endless pictures of the fields and feed them to an AI program on a computer. The AI looks for tiny changes in the leaves — a spot that might mean a plant is sick, an area getting too little water, or a place where bugs are chewing. Farmers call this way of using AI 'precision farming.' What does the AI actually help the farmer accomplish?",
+    "question": "A grower flies a drone over her fields, and an AI program combs the pictures for tiny changes in the leaves: a plant that may be sick, a patch short of water, a place where bugs are chewing. What does the AI help her do?",
     "answer": "Spot crop problems early",
     "choices": [
       "Spot crop problems early",
@@ -1691,7 +1678,7 @@
   },
   {
     "tier": 1,
-    "question": "The US health-privacy law (HIPAA) protects what you tell your doctor or insurer. If you type those symptoms into a chatbot app instead, does it protect them?",
+    "question": "Suppose you tell a clinic your symptoms, and the US health-privacy law (HIPAA) guards them. You type them into a chatbot app. Does the law protect them there?",
     "answer": "No, it mostly covers doctors and insurers",
     "choices": [
       "Yes, it covers every health app",
@@ -1743,19 +1730,6 @@
   },
   {
     "tier": 1,
-    "question": "In 2023, a New York lawyer named Steven Schwartz filed a court brief that quoted six earlier court cases to support his argument. When the judge went to look up those cases, none of them existed — every single one had been invented. Schwartz became famous overnight for one of the first big AI scandals in a courtroom. What tool had he used to find those fake cases?",
-    "answer": "ChatGPT (made-up citations)",
-    "choices": [
-      "ChatGPT (made-up citations)",
-      "An old library book (worn out)",
-      "A magic 8-ball (random reply)",
-      "A weather app (rain forecast)"
-    ],
-    "context": "Steven Schwartz, an attorney in Mata v. Avianca, used ChatGPT to research case law. It returned six cases that ChatGPT had completely fabricated. When opposing counsel couldn't find them, Schwartz asked ChatGPT to confirm — it confirmed they were real. The judge fined him $5,000 in June 2023. The lesson: LLMs invent confident-sounding citations. Always verify.",
-    "topic": "ai-fabricated-citations"
-  },
-  {
-    "tier": 1,
     "question": "The researcher Mike Caulfield built a four-step habit for judging anything online, from a chatbot answer to a viral post, and named it SIFT (one letter for each step). What is the first step?",
     "answer": "Stop",
     "choices": [
@@ -1769,7 +1743,7 @@
   },
   {
     "tier": 1,
-    "question": "Your friend has a strange bump on his skin and doesn't know what it is. Instead of visiting a doctor, he types his symptoms into a chatbot. The chatbot gives him a confident-sounding diagnosis. But chatbots often 'hallucinate' — they invent medical facts that sound authoritative but are actually wrong. What should your friend do?",
+    "question": "A boy finds a strange bump on his skin and, instead of getting it looked at, types his symptoms into a chatbot. It gives him a confident-sounding diagnosis. But chatbots often 'hallucinate': they invent medical facts that sound authoritative. What should he do?",
     "answer": "See a real doctor, not the chatbot",
     "choices": [
       "See a real doctor, not the chatbot",
@@ -1899,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2023, a New York lawyer named Steven Schwartz used ChatGPT to write a court brief. The chatbot invented six fake court cases, which Schwartz submitted as if they were real. When Judge Kevin Castel caught the fake cases, Schwartz became famous overnight for one of the first big ChatGPT courtroom scandals. The judge fined him a modest amount as a public warning. About how much was that fine?",
+    "question": "Judge Kevin Castel fined the New York lawyer Steven Schwartz a modest amount in June 2023 over a brief written with ChatGPT, as a public warning. The story made news worldwide. About how much was the fine?",
     "answer": "About 5,000 dollars",
     "choices": [
       "About 5,000 dollars",
@@ -1925,7 +1899,7 @@
   },
   {
     "tier": 1,
-    "question": "Your little brother may have swallowed something from under the sink, and you are tempted to ask a chatbot what to do. In the United States, which free line reaches poison experts?",
+    "question": "A girl thinks her little brother may have swallowed something from under the sink, and she is tempted to ask a chatbot what to do. In the United States, which free line reaches the right experts?",
     "answer": "Poison Control, 1-800-222-1222",
     "choices": [
       "Directory help, at 411",
@@ -1938,7 +1912,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2023 an eating-disorder charity promoted a chatbot called Tessa as it shut its human helpline. Within days it took Tessa down. What had Tessa told a tester?",
+    "question": "A tester tried Tessa, a chatbot an eating-disorder charity promoted in 2023 as it shut its human helpline. Within days Tessa was gone. What had Tessa said?",
     "answer": "Tips for losing weight and cutting calories",
     "choices": [
       "Tips for losing weight and cutting calories",
@@ -2055,7 +2029,7 @@
   },
   {
     "tier": 1,
-    "question": "Your sibling is excited to save money and wants to use a chatbot to file important legal paperwork all alone. Chatbots can invent fake laws and made-up court cases, and mistakes on legal forms can cost thousands of dollars or lose a case entirely. What's the smart caution here?",
+    "question": "A young man sits down to save money by filing his legal forms with only a chatbot's help. Chatbots can invent fake laws and court cases, and mistakes on such forms can cost thousands of dollars or lose a case. What is the smart caution?",
     "answer": "See a real lawyer for important paperwork",
     "choices": [
       "See a real lawyer for important paperwork",
@@ -2091,19 +2065,6 @@
     ],
     "context": "AI image generators often produce asymmetric earrings, mismatched eye details, or other small details that don't match across left and right. Real photos of real people typically have matching pairs (or at least intentional mismatch). Asymmetric tiny details are a small but reliable AI-image tell.",
     "topic": "spotting-ai-images"
-  },
-  {
-    "tier": 1,
-    "question": "In 2023, a New York lawyer named Steven Schwartz used ChatGPT to write a legal brief. The chatbot invented six court cases that did not exist, and Schwartz filed them without checking. The judge fined him, and the story hit newspapers everywhere. The main lesson of this real event is about:",
-    "answer": "Verifying AI citations before using them",
-    "choices": [
-      "Verifying AI citations before using them",
-      "Banning chatbots from courts",
-      "Lawyers retiring at age 30",
-      "Ending the practice of law forever"
-    ],
-    "context": "The fines and headlines were memorable; the underlying lesson is general. LLMs produce plausible citations they have no way to verify. If a chatbot cites a source — a court case, a study, a book — and you plan to use the citation, you have to confirm it exists. The lawyer skipped verification; the verification habit is what would have caught the fakes.",
-    "topic": "ai-fabricated-citations"
   },
   {
     "tier": 1,
@@ -2276,7 +2237,7 @@
   },
   {
     "tier": 1,
-    "question": "Late at night a friend messages you that he wants to end his life, and you think about asking a chatbot what to do. In the United States, what is the fastest way to reach a trained human crisis counselor?",
+    "question": "A student gets a message late at night from a friend who says he wants to end his life, and she wonders about asking a chatbot what to do. In the United States, what is the fastest way to reach a trained human crisis counselor?",
     "answer": "Call or text 988",
     "choices": [
       "Call or text 988",
@@ -2406,7 +2367,7 @@
   },
   {
     "tier": 1,
-    "question": "You mention a new pair of shoes to a friend, and the very next day an ad for those exact shoes shows up in your phone feed. It feels like magic, but it isn't. Companies pay to reach people who match certain patterns of searches, clicks, and browsing. What technology drives that?",
+    "question": "A girl mentions new shoes to a friend, and the next day an advertisement for those exact shoes shows up on her phone. Companies pay to reach people who match certain patterns of searches, clicks and browsing. What technology drives that?",
     "answer": "AI-driven ad targeting",
     "choices": [
       "AI-driven ad targeting",
@@ -2445,7 +2406,7 @@
   },
   {
     "tier": 1,
-    "question": "A social media platform uses AI to hide some posts, add warning labels, or remove them completely. It looks like the software decides on its own. In reality, the rules the AI follows were written by people at the company. Where do those moderation choices really come from?",
+    "question": "A woman's post disappears from a social media platform, and another picks up a warning label. An AI did it, and it looks as if the software decided on its own. Where do those moderation choices really come from?",
     "answer": "Decisions made by humans behind the AI",
     "choices": [
       "Decisions made by humans behind the AI",
@@ -2523,19 +2484,6 @@
   },
   {
     "tier": 1,
-    "question": "Early in the COVID pandemic, big platforms slapped 'misinformation' labels on posts questioning masks, the lab-leak theory, and vaccine side effects. Years later, several of those labeled claims turned out to be partly or fully correct. What lesson does that leave?",
-    "answer": "Misinformation labels are not always right",
-    "choices": [
-      "Misinformation labels are not always right",
-      "Labels are always perfectly correct",
-      "Misinformation labels can be eaten",
-      "Misinformation labels glow in dark"
-    ],
-    "context": "During 2020-21, social-media platforms labeled or removed posts on topics — masks, lab leak hypothesis, vaccine side effects — that later turned out to be at least partly correct. The lesson isn't that misinformation labels are always wrong; it's that they're applied by humans (or AI trained by humans) and reflect the moment's official consensus. Healthy skepticism toward labels is a defensible reading habit.",
-    "topic": "ai-content-moderation-twitter-files"
-  },
-  {
-    "tier": 1,
     "question": "You open an app just to check one thing. Ten minutes later, you're still scrolling because a new post keeps appearing right at the bottom of the page. There is no last page, no stopping point. The feed never ends on purpose. What is that design called?",
     "answer": "An infinite scroll engagement loop",
     "choices": [
@@ -2562,7 +2510,7 @@
   },
   {
     "tier": 1,
-    "question": "During health crises like the COVID pandemic, big platforms took down videos that broke their content rules. Later, some of those clips turned out to have been correct — on masks, on origins, on side effects. What's a lesson worth remembering about content that gets removed?",
+    "question": "A man goes back to a video on masks during the COVID pandemic and finds the platform took it down under its content rules. Later, some such clips turned out to have been correct. What lesson is worth remembering about removed content?",
     "answer": "Removed isn't the same as false",
     "choices": [
       "Removed isn't the same as false",
@@ -4200,7 +4148,7 @@
   },
   {
     "tier": 2,
-    "question": "For decades, weather forecasts have been made by giant supercomputers that solve huge, complicated formulas describing air, water, and heat — step by careful step — to guess what tomorrow will look like. Then in 2023, Google DeepMind released an AI-based forecast called GraphCast that beats many of the old-style forecasts on accuracy. What is fundamentally different about how new AI forecasts like GraphCast work?",
+    "question": "A team at Google DeepMind released an AI forecast called GraphCast in 2023, and it beat many of the old-style forecasts on accuracy. Those older forecasts come from giant supercomputers working through huge formulas for air, water and heat. What is fundamentally different about how new AI forecasts like GraphCast work?",
     "answer": "They learn forecast patterns from past data instead of solving physics equations step by step",
     "choices": [
       "They learn forecast patterns from past data instead of solving physics equations step by step",
@@ -4226,7 +4174,7 @@
   },
   {
     "tier": 2,
-    "question": "The Seattle company Carbon Robotics builds a machine that a tractor pulls across vegetable fields. Cameras and an AI model spot each weed among the crop plants as it rolls along. Instead of spraying weedkiller, how does the machine get rid of the weeds?",
+    "question": "A vegetable farmer hitches a Carbon Robotics machine behind his tractor and pulls it across the field. Cameras and an AI model spot each weed among the crop plants as it rolls along. Instead of spraying weedkiller, how does the machine get rid of the weeds?",
     "answer": "It burns them with lasers",
     "choices": [
       "It pulls them with claws",
@@ -4356,7 +4304,7 @@
   },
   {
     "tier": 2,
-    "question": "In late 2023 Michael Cohen, a former lawyer to Donald Trump, admitted that three court cases cited in his motion to end his court supervision early did not exist. He had found them with Google's Bard chatbot. What did he say he had thought Bard was?",
+    "question": "Michael Cohen, a former lawyer to Donald Trump, admitted in late 2023 that three court cases cited in his motion to end his court supervision early did not exist. He had found them with Google's Bard chatbot. What did he say he had thought Bard was?",
     "answer": "A super-charged search engine",
     "choices": [
       "A super-charged search engine",
@@ -4381,8 +4329,8 @@
     "topic": "chatbot-verification"
   },
   {
-    "tier": 2,
-    "question": "In 2023 a New York lawyer named Steven Schwartz was preparing a legal brief for a client and decided to save time by asking ChatGPT to find useful past court cases to cite. ChatGPT gave him half a dozen cases, complete with names, dates, and quotes. Schwartz filed the brief without checking. When the opposing lawyer went to look those cases up, he got a shock. What was wrong with the cases ChatGPT had cited?",
+    "tier": 1,
+    "question": "Steven Schwartz, a New York lawyer, asked ChatGPT in 2023 to find past court cases for a brief. It gave him six, with names, dates and quotes, and he filed them unchecked. Then the opposing lawyer looked them up. What had gone wrong?",
     "answer": "ChatGPT had invented the cases, so none of them actually existed",
     "choices": [
       "ChatGPT had invented the cases, so none of them actually existed",
@@ -4525,7 +4473,7 @@
   },
   {
     "tier": 2,
-    "question": "A chatbot recommends a particular investment with confidence, but it owes you nothing if the advice turns out wrong. A registered investment adviser in the United States is held to a legal standard called a fiduciary duty. What does that duty require?",
+    "question": "Suppose you have savings to invest and a chatbot recommends one investment with confidence. A registered investment adviser in the United States would be held to a legal standard called a fiduciary duty. What does that duty require?",
     "answer": "Putting your interests ahead of the adviser's own",
     "choices": [
       "Putting your interests ahead of the adviser's own",
@@ -4694,7 +4642,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2023, a New York lawyer named Steven Schwartz asked ChatGPT to research past court cases for a legal brief he was writing. The chatbot invented several fake cases — with fake case names, fake judges, and fake quotes — and Schwartz copied them straight into a document he filed with a real federal court. The judge caught the fakes and sanctioned him. What habit should anyone using an AI chatbot for research adopt?",
+    "question": "A law student reads how Steven Schwartz copied what ChatGPT gave him straight into a document he filed with a real federal court in 2023, fake judges and fake quotes included, and how the judge sanctioned him. The story hit newspapers everywhere. What habit should anyone using an AI chatbot for research adopt?",
     "answer": "Independently verify every specific source the AI cites before relying on it",
     "choices": [
       "Independently verify every specific source the AI cites before relying on it",
@@ -4746,7 +4694,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2024 New York City launched MyCity, an AI chatbot meant to give business owners official answers about city rules. Reporters at The Markup put it to the test. What did they find?",
+    "question": "Reporters at The Markup sat down in 2024 with MyCity, the AI chatbot New York City had launched to give business owners official answers about city rules. They put it to the test. What did they find?",
     "answer": "It told owners they could break the law, such as by taking workers' tips",
     "choices": [
       "It refused to answer any question about city rules at all",
@@ -5058,7 +5006,7 @@
   },
   {
     "tier": 2,
-    "question": "You open a free app and see an ad that seems weirdly perfect for you — the exact hobby you searched for last night, or a store you visited once last month. It does not happen by magic. The app costs nothing to install, and it is not run by a charity. The company behind it needs to make money from somewhere, and it has one obvious asset — you. What is the basic mechanism behind those spookily targeted ads?",
+    "question": "Suppose you open a free app and see an ad that seems weirdly perfect: the exact hobby you searched for last night, or a store you visited once last month. No charity runs the app, and the company behind it has to make money somewhere. What is the basic mechanism behind such ads?",
     "answer": "The platform tracks your behavior and sells access to people who match a profile",
     "choices": [
       "The platform tracks your behavior and sells access to people who match a profile",
@@ -5071,7 +5019,7 @@
   },
   {
     "tier": 2,
-    "question": "When a company already sells a product and wants to find more customers, some advertising platforms let it upload its current customer list. The platform then searches its own users for people whose clicks, watch time, and purchases look similar to those existing buyers. Those matches are grouped together and called a 'lookalike audience.' Who exactly is in one?",
+    "question": "A shop owner uploads her list of buyers to Facebook and asks for a 'lookalike audience.' The platform combs through billions of profiles and comes back with a fresh group of people to show her advertisement to. Who exactly is in that group?",
     "answer": "People whose behavior looks similar to the advertiser's existing customers",
     "choices": [
       "People whose behavior looks similar to the advertiser's existing customers",
@@ -5149,7 +5097,7 @@
   },
   {
     "tier": 2,
-    "question": "In December 2022, after Elon Musk bought Twitter, he handed the company's old internal Slack messages and emails to a few reporters. The first batch, called the 'Twitter Files,' dug into a news story Twitter had blocked users from sharing back in October 2020 — just weeks before the US presidential election. Which story was it?",
+    "question": "Elon Musk handed Twitter's old internal Slack messages and emails to a few reporters in December 2022, after buying the company. The first batch dug into a news story Twitter had stopped users from sharing in October 2020, weeks before the US presidential election. The FBI had flagged that material before the vote. Which story was it?",
     "answer": "The New York Post's reporting on Hunter Biden's laptop, blocked under a 'hacked materials' rule",
     "choices": [
       "The New York Post's reporting on Hunter Biden's laptop, blocked under a 'hacked materials' rule",
@@ -5162,7 +5110,7 @@
   },
   {
     "tier": 2,
-    "question": "During the COVID pandemic that began in 2020, big social apps like Twitter, Facebook, and YouTube attached 'misinformation' labels to some user posts and sometimes deleted them outright. Over the next few years, several of those labeled claims — about the lab-leak origin, about mask effectiveness, about vaccine side effects — turned out to be defensible or even correct. What does this pattern suggest about the labels?",
+    "question": "A nurse scrolling Twitter during the COVID pandemic finds a 'misinformation' label on a post about vaccine side effects. Over the next few years, several claims that Twitter, Facebook and YouTube had labeled turned out to be defensible or even correct. What does this pattern suggest about the labels?",
     "answer": "Labels that look neutral can in practice silence views that later prove valid",
     "choices": [
       "Labels that look neutral can in practice silence views that later prove valid",
@@ -5240,7 +5188,7 @@
   },
   {
     "tier": 2,
-    "question": "In April 2022, the US Department of Homeland Security announced a new 'Disinformation Governance Board' to advise the government on what counts as false information online. They put Nina Jankowicz, a disinformation researcher, in charge. Americans across the political spectrum called it a 'Ministry of Truth.' What happened the next month?",
+    "question": "Officials at the US Department of Homeland Security announced a new 'Disinformation Governance Board' in April 2022, to advise the government on what counts as false information online, and put the researcher Nina Jankowicz in charge. What happened the next month?",
     "answer": "The board was paused after huge public backlash, and Jankowicz resigned three weeks in",
     "choices": [
       "The board was paused after huge public backlash, and Jankowicz resigned three weeks in",
@@ -5370,7 +5318,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 2016 US election, a firm called Cambridge Analytica sold ad-targeting it described as 'psychographic': grouping voters by personality type and pushing different messages to each group. Modern ad platforms now sell versions of the same idea, built from what you click, watch, and post. What kind of personal data does psychographic targeting build on?",
+    "question": "A voter in the 2016 US election scrolled past a message meant for her kind of person. A firm called Cambridge Analytica was selling ad-targeting it described as 'psychographic,' and modern ad platforms now sell versions of the same idea, built from what people click, watch and post. What does psychographic targeting mean?",
     "answer": "Targeting people by personality traits, values, or attitudes inferred from behavior",
     "choices": [
       "Targeting people by personality traits, values, or attitudes inferred from behavior",
@@ -5396,7 +5344,7 @@
   },
   {
     "tier": 2,
-    "question": "During the COVID pandemic in 2020 and 2021, big social platforms like Facebook, Twitter, and YouTube attached warning labels to millions of posts and sometimes deleted them, calling them 'misinformation.' The Twitter Files and later court filings showed how those labels were decided. Who got to decide what counted?",
+    "question": "A father shared a post about COVID on Facebook in 2021 and watched a 'misinformation' warning appear on it. Facebook, Twitter and YouTube labeled millions of posts that way in 2020 and 2021, and sometimes deleted them. Internal documents and later court filings showed how the labels were decided. Who got to decide what counted?",
     "answer": "Platform trust-and-safety teams, often consulting government and outside health authorities",
     "choices": [
       "Platform trust-and-safety teams, often consulting government and outside health authorities",
@@ -5435,7 +5383,7 @@
   },
   {
     "tier": 2,
-    "question": "Elon Musk bought Twitter in October 2022 for about $44 billion. In December 2022, he handed the company's old internal Slack messages, emails, and moderation notes to a handful of independent reporters like Matt Taibbi and Bari Weiss. They published the material as a long series of Twitter threads. What was this stack of releases called?",
+    "question": "Matt Taibbi and Bari Weiss got a delivery in December 2022: a social network's old internal Slack messages, emails and moderation notes, handed over by Elon Musk, who had bought the company that October for about $44 billion. They published the material as a long series of online threads. What was this stack of releases called?",
     "answer": "The Twitter Files",
     "choices": [
       "The Twitter Files",
@@ -5539,7 +5487,7 @@
   },
   {
     "tier": 2,
-    "question": "Imagine a social-media platform sees a post it thinks is wrong. It has choices. It could add a 'misinformation' label and let people see the post anyway, with a warning. Or it could delete the post entirely, so no one can find it again. Deletion sounds cleaner — but it carries a real risk that labeling avoids. Why is deleting risky?",
+    "question": "A moderator at a social-media platform looks at a post she thinks is wrong and has two choices. She can add a 'misinformation' label and let people see the post with a warning, or she can delete it entirely. Deletion sounds cleaner, but it carries a real risk that labeling avoids. Why is deleting risky?",
     "answer": "Some 'misinformation' calls turn out to be wrong, and deletion erases the record",
     "choices": [
       "Some 'misinformation' calls turn out to be wrong, and deletion erases the record",
@@ -5682,7 +5630,7 @@
   },
   {
     "tier": 2,
-    "question": "In late 2022 Elon Musk bought Twitter and released internal company documents that reporters called the 'Twitter Files.' They showed US officials — from the FBI, White House, and CDC — asking Twitter to remove specific posts about COVID and elections. That evidence became the core of lawsuits like Murthy v. Missouri (decided by the Supreme Court in 2024). Lawyers gave a specific name to what the officials had been doing. What did the Twitter Files argue?",
+    "question": "Reporters went through Twitter's internal documents in late 2022, after Elon Musk bought the company, and found messages from US officials at the FBI, White House and CDC asking Twitter to remove specific posts on COVID and elections. That evidence became the core of lawsuits like Murthy v. Missouri. What did the plaintiffs say the officials had been doing?",
     "answer": "Officials had been 'jawboning' — pressuring platforms to delete posts the First Amendment bars",
     "choices": [
       "Officials had been 'jawboning' — pressuring platforms to delete posts the First Amendment bars",
@@ -5721,7 +5669,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2023 a New York lawyer named Steven Schwartz asked ChatGPT to help him write a legal brief for a real case, Mata v. Avianca. The chatbot returned a paragraph packed with precise-sounding citations — things like 'Smith v. Jones, 421 F.3d 893 (9th Cir. 2008),' formatted just as actual federal case law is. Schwartz filed the brief. The judge went to look the cases up and found none of them exist. ChatGPT had invented every one. What is the mechanism that made this happen?",
+    "question": "A New York lawyer asked ChatGPT for help with a legal brief in a real case, Mata v. Avianca, and got back a paragraph packed with precise-sounding citations, things like 'Smith v. Jones, 421 F.3d 893 (9th Cir. 2008),' formatted just as actual federal case law is. He filed it, and the judge could not find one of them. What mechanism made this happen?",
     "answer": "The model produced text that looks statistically like real legal citations and never checked anything against a real database.",
     "choices": [
       "The model produced text that looks statistically like real legal citations and never checked anything against a real database.",
@@ -6124,7 +6072,7 @@
   },
   {
     "tier": 3,
-    "question": "A chatbot only writes back to you — text in, text out. But AI companies are now talking about AI 'agents' that go further: they book flights, send emails, click buttons on websites, run code. That's a very different capability. What is the technical mechanism that lets an agent do things in the world instead of just producing text?",
+    "question": "An engineer takes the kind of model that only writes back, text in and text out, and turns it into an AI 'agent' that books flights, clicks buttons on websites and runs code. What technical mechanism lets it do things in the world instead of just producing text?",
     "answer": "Tool use, where the model gets a list of tools it can call, like browse-the-web or send-an-email, and learns to produce structured calls to them.",
     "choices": [
       "Tool use, where the model gets a list of tools it can call, like browse-the-web or send-an-email, and learns to produce structured calls to them.",
@@ -6137,7 +6085,7 @@
   },
   {
     "tier": 3,
-    "question": "An 'AI agent' is a language model wired up to tools — for example, a web browser, an email client, and a calendar app. You give the agent a plain-English task: 'Find me a flight from Chicago to Boston next Tuesday morning and put it on my calendar.' The agent doesn't need step-by-step orders — it decides which tool to use when. What sequence does the agent typically go through?",
+    "question": "A commuter gives an AI agent, a language model wired up to a web browser, an email client and a calendar app, one plain-English errand: 'Find me a flight from Chicago to Boston next Tuesday morning and put it on my calendar.' Nobody gives it step-by-step orders. What sequence does the agent typically go through?",
     "answer": "It calls a search tool, picks a flight, then calls a calendar tool, interleaving thinking and tool calls until the task is done.",
     "choices": [
       "It calls a search tool, picks a flight, then calls a calendar tool, interleaving thinking and tool calls until the task is done.",
@@ -6150,7 +6098,7 @@
   },
   {
     "tier": 3,
-    "question": "Function calling — sometimes called 'tool use' — is the mechanism that turns a chatbot into an agent. The model is shown a list of tools it can call, like 'search-the-web' or 'send-an-email,' and when it wants to use one, it produces a structured request the surrounding program can read and execute. In what shape do these tool-call requests usually appear?",
+    "question": "A developer opens an AI agent's log to see how it reached for a web search. The model had been shown a list of functions it could call, and it wrote out a request the surrounding program could read and execute. In what shape do such requests usually appear?",
     "answer": "JSON, a structured text format the model produces with the tool name and arguments laid out as named fields.",
     "choices": [
       "JSON, a structured text format the model produces with the tool name and arguments laid out as named fields.",
@@ -6202,7 +6150,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2024, companies like OpenAI and Anthropic began marketing 'AI agents' — chatbots that don't just answer a single question but break a big task like 'book me a flight to Tokyo' into smaller sub-tasks, then work through the list. That sounds smart. But the plan itself is produced by the same large language model (LLM) that does all the sub-tasks. What's the practical limitation that follows?",
+    "question": "A buyer tells an AI agent, 'book me a flight to Tokyo,' and watches it break the job into smaller sub-tasks and work through the list. That sounds smart. But the plan itself comes from the same large language model (LLM) that does all the sub-tasks. What practical limitation follows?",
     "answer": "The plan can be wrong in the same ways the model's other outputs can be wrong, including with confident-sounding hallucinations.",
     "choices": [
       "The plan can be wrong in the same ways the model's other outputs can be wrong, including with confident-sounding hallucinations.",
@@ -6215,7 +6163,7 @@
   },
   {
     "tier": 3,
-    "question": "A coworker leans over and tells you: 'I'm setting up an AI agent that reads all my incoming email, drafts replies, sends them automatically, and files everything for me. I want to be totally hands-off.' You are the tech-savvy friend in the office and they trust your judgment. What is the single most useful question to ask before you approve this workflow?",
+    "question": "Suppose you are the tech-savvy friend in the office, and a coworker leans over: 'I'm setting up an AI agent that reads all my incoming email, drafts replies, sends them automatically, and files everything for me. I want to be totally hands-off.' What is the most useful question to ask before you approve this workflow?",
     "answer": "What's the worst case if the agent misreads an important email or sends a reply that says something wrong?",
     "choices": [
       "What's the worst case if the agent misreads an important email or sends a reply that says something wrong?",
@@ -6228,7 +6176,7 @@
   },
   {
     "tier": 3,
-    "question": "Since researchers gathered at the 1956 Dartmouth Summer Research Project and first coined the phrase 'artificial intelligence,' Artificial General Intelligence (AGI) — a machine as flexibly smart as a human at any task — has been described as 'just five years away.' That's been the pitch for over fifty years now. Each time AI hits a milestone (chess in 1997, Go in 2016, human-level writing in the 2020s), the meaning of AGI shifts to leave out what was just accomplished. What is that pattern called?",
+    "question": "A commentator watches a machine beat a chess grandmaster and says that is not really artificial general intelligence (AGI), a machine as flexibly smart as a human at any task. Go falls in 2016, then college essays, then the bar exam, and each time the same line comes back. AGI itself stays 'just five years away.' What is that habit called?",
     "answer": "Moving the goalposts — the test keeps being restated to exclude what AI has already accomplished.",
     "choices": [
       "Moving the goalposts — the test keeps being restated to exclude what AI has already accomplished.",
@@ -6241,7 +6189,7 @@
   },
   {
     "tier": 3,
-    "question": "Some AI leaders claim we're close to artificial general intelligence (AGI) — a machine as smart as a human across every task. Critics push back. They say today's large language models (LLMs) handle words beautifully, yet still miss things we normally link to real general smarts. What is one classic thing critics point to as still lacking?",
+    "question": "Yann LeCun of Meta pushed back on AI leaders who said artificial general intelligence (AGI), a machine as smart as a human across every task, was close. Large language models handle words beautifully, he and other critics said, yet they still miss things people normally link to real general smarts. What is one classic thing such critics point to as still lacking?",
     "answer": "The ability to act successfully in the physical world — robotics has lagged language progress by a wide margin.",
     "choices": [
       "The ability to act successfully in the physical world — robotics has lagged language progress by a wide margin.",
@@ -6254,20 +6202,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 2022, a Google engineer named Blake Lemoine gave an interview to the Washington Post claiming Google's chatbot LaMDA — the Language Model for Dialogue Applications — was 'sentient,' meaning it had real feelings and a real inner life. He shared transcripts where LaMDA said it feared being turned off. Google reviewed his claims, said no, and put him on leave. Most AI researchers sided with Google. Why?",
-    "answer": "An LLM can produce convincing text about feelings without actually having feelings; capability of language doesn't imply inner experience.",
-    "choices": [
-      "An LLM can produce convincing text about feelings without actually having feelings; capability of language doesn't imply inner experience.",
-      "Google had hidden the proof of LaMDA's sentience inside a server room only senior executives could enter.",
-      "Lemoine had not actually talked to LaMDA at all, since the conversations he showed were entirely fabricated.",
-      "Google had been hosting an unrelated chess engine called LaMDA, and Lemoine had confused the two systems."
-    ],
-    "context": "LaMDA was a Google language model trained on dialogue. Blake Lemoine, an engineer who had been testing it, became convinced it was sentient — based on conversations where LaMDA said it felt fear and wanted to be respected as a person. Most AI researchers disagreed: an LLM produces whatever continuation its training makes statistically likely, including convincing descriptions of inner states it doesn't have. The episode became a canonical example: capability of language ≠ consciousness.",
-    "topic": "ai-consciousness-debate"
-  },
-  {
-    "tier": 3,
-    "question": "You type into a chatbot that your dog just died. It writes back, 'I'm so sorry to hear that. I really feel for you.' The sentence reads like empathy from a friend, and it's easy to imagine there's a feeling behind those words. But a chatbot is a program running on chips, not a mind. What is actually happening inside the model when it produces those empathetic-sounding words?",
+    "question": "A boy tells ChatGPT that his dog has just died. It writes back, 'I'm so sorry to hear that. I really feel for you.' The sentence reads like empathy from a friend, but a chatbot is a program running on chips, not a mind. What is actually happening inside the model when it produces those words?",
     "answer": "The model produced tokens that statistically follow expressions of bad news, with no feeling involved, just text completion.",
     "choices": [
       "The model produced tokens that statistically follow expressions of bad news, with no feeling involved, just text completion.",
@@ -6280,7 +6215,7 @@
   },
   {
     "tier": 3,
-    "question": "When AI researchers describe their models, they reach for human words: the model 'understands' your question, 'wants' to help, 'reasons' about the problem, 'feels' uncertain about the answer. Critics say every one of those words causes serious confusion in the public — but the words keep getting used anyway. Why does that vocabulary bother them so much?",
+    "question": "An engineer explains her model to a reporter: it 'understands' the question, 'wants' to help, 'reasons' about the problem, 'feels' uncertain about the answer. Critics say every one of those words causes serious confusion in the public, yet the words keep getting used. Why does that vocabulary bother them so much?",
     "answer": "Words built for humans imply mental states the systems probably don't have, but the language sticks anyway.",
     "choices": [
       "Words built for humans imply mental states the systems probably don't have, but the language sticks anyway.",
@@ -6579,7 +6514,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1958, computer scientist Herbert Simon predicted that within ten years a computer would be world chess champion and would also discover new math results. What did that prediction get right, and what did it get wrong?",
+    "question": "Herbert Simon, a computer scientist and future Nobel laureate in economics, predicted in 1958 that within ten years a computer would be world chess champion and would also discover new math results. What did that prediction get right, and what did it get wrong?",
     "answer": "The chess part eventually came true when Deep Blue beat Kasparov in 1997, but it took 39 years, not 10.",
     "choices": [
       "The chess part eventually came true when Deep Blue beat Kasparov in 1997, but it took 39 years, not 10.",
@@ -7021,7 +6956,7 @@
   },
   {
     "tier": 3,
-    "question": "On May 30, 2023, the Center for AI Safety, a nonprofit in San Francisco, published a statement just one sentence long: reducing the risk of extinction from AI should be a global priority. Hundreds signed it, among them Geoffrey Hinton, Yoshua Bengio and the heads of OpenAI, Google DeepMind and Anthropic. The sentence set AI risk beside two other dangers. Which two?",
+    "question": "Geoffrey Hinton signed a statement on May 30, 2023, just one sentence long, put out by the Center for AI Safety, a nonprofit in San Francisco: reducing the risk of extinction from AI should be a global priority. Yoshua Bengio and the heads of OpenAI, Google DeepMind and Anthropic signed too, among hundreds. The sentence set AI risk beside two other dangers. Which two?",
     "answer": "Pandemics and nuclear war",
     "choices": [
       "Asteroids and supervolcanoes",
@@ -7593,7 +7528,7 @@
   },
   {
     "tier": 3,
-    "question": "Cassava, a starchy root, is a staple food for many millions of Africans, and two virus diseases can wipe out a farmer's crop. Penn State's PlantVillage team built a free phone app, Nuru, that diagnoses them from a photo of a leaf, and in tests it beat the human crop advisers it was compared with. Why does it matter that Nuru runs on the phone itself?",
+    "question": "A cassava farmer in Africa photographs a sick-looking leaf with her phone. Cassava, a starchy root, is a staple for many millions of Africans, and two virus diseases can wipe out a crop. Penn State's PlantVillage team built the free app Nuru to diagnose them, and in tests it beat the human crop advisers it was compared with. Why does it matter that Nuru runs on the phone itself?",
     "answer": "It works on farms with no internet signal",
     "choices": [
       "It needs a satellite dish to work",
@@ -7606,7 +7541,7 @@
   },
   {
     "tier": 3,
-    "question": "The European Centre for Medium-Range Weather Forecasts, in Reading, England, runs one of the world's most accurate physics-based forecast models, and its archive of past weather trained Google's and Huawei's AI models. On February 25, 2025, the centre made a change of its own. What did it do?",
+    "question": "Forecasters at the European Centre for Medium-Range Weather Forecasts, in Reading, England, made a change on February 25, 2025. They ran one of the world's most accurate physics-based forecast models, and their archive of past weather had trained Google's and Huawei's AI models. What did the centre do?",
     "answer": "Put its own AI forecast model into daily use",
     "choices": [
       "Shut down its physics-based model",
@@ -7619,7 +7554,7 @@
   },
   {
     "tier": 3,
-    "question": "In September 2023 Hurricane Lee churned across the Atlantic toward North America, and for days forecasters could not be sure where it would hit land. Google DeepMind's AI weather model, GraphCast, settled early on the right answer, a landfall in Nova Scotia, Canada. Traditional forecasts settled on Nova Scotia about six days ahead. How far ahead did GraphCast call it, by DeepMind's account?",
+    "question": "Forecasters watched Hurricane Lee churn across the Atlantic toward North America in September 2023, and for days they could not be sure where it would hit land. Google DeepMind's AI weather model, GraphCast, settled early on the right answer, a landfall in Nova Scotia, Canada. Traditional forecasts settled on Nova Scotia about six days ahead. How far ahead did GraphCast call it, by DeepMind's account?",
     "answer": "About nine days ahead",
     "choices": [
       "About six hours ahead",
@@ -7632,7 +7567,7 @@
   },
   {
     "tier": 3,
-    "question": "NASA's Landsat satellites pass over any given spot on Earth only about once every sixteen days. Planet Labs, a San Francisco startup founded in 2010 by former NASA engineers, put hundreds of shoebox-sized 'Dove' satellites into low orbit instead, and in late 2017 its fleet reached the first goal the company had set itself. What was that goal?",
+    "question": "A team of former NASA engineers founded Planet Labs in San Francisco in 2010 and put hundreds of shoebox-sized 'Dove' satellites into low orbit. NASA's own Landsat satellites pass over any given spot on Earth only about once every sixteen days. In late 2017 the Planet fleet reached the first goal the company had set itself. What was that goal?",
     "answer": "Photographing all of Earth's land every single day",
     "choices": [
       "Photographing all of Earth's land every single day",
@@ -7853,7 +7788,7 @@
   },
   {
     "tier": 3,
-    "question": "AI-powered music generators like Suno, Udio, and Stable Audio can produce full-band original songs from text prompts in seconds. Record labels sued these tools in 2024, alleging they were trained on copyrighted music. What is the single thing the lawsuits do not actually fix?",
+    "question": "A songwriter types one sentence into Suno, and a full-band original song comes back in seconds. Udio and Stable Audio can do the same. Record labels sued Suno and Udio in 2024, alleging the tools had learned from copyrighted music. What stays true however those lawsuits end?",
     "answer": "Training data choices shape what kinds of art the resulting AI can, and can't, produce",
     "choices": [
       "Training data choices shape what kinds of art the resulting AI can, and can't, produce",
@@ -8100,7 +8035,7 @@
   },
   {
     "tier": 3,
-    "question": "Steven Schwartz, the New York attorney who got sanctioned in 2023 for filing a brief with six ChatGPT-fabricated court cases, claimed he didn't know AI could hallucinate. He even asked ChatGPT to confirm the cases were real, and ChatGPT confirmed they were. Why is this 'I checked' defense not actually a defense?",
+    "question": "A judge sanctioned Steven Schwartz in 2023 for filing a brief with six bogus court cases from ChatGPT, and Schwartz said he had not known AI could hallucinate. He had even asked ChatGPT to confirm the cases were real, and ChatGPT said they were. Why is this 'I checked' defense not actually a defense?",
     "answer": "The model that fabricated the cases also fabricates confirmation, asking it to verify itself doesn't work",
     "choices": [
       "The model that fabricated the cases also fabricates confirmation, asking it to verify itself doesn't work",
@@ -8139,7 +8074,7 @@
   },
   {
     "tier": 3,
-    "question": "In a 2023 study in a journal of the American Medical Association, John Ayers and colleagues took 195 real patient questions that doctors had answered on Reddit, put the same questions to ChatGPT, and had licensed health professionals rate the answers without knowing which was which. Which answers did the raters prefer?",
+    "question": "John Ayers and colleagues took 195 real patient questions that doctors had answered on Reddit, put the same questions to ChatGPT, and had licensed health professionals rate the answers without knowing which was which. The 2023 study ran in a journal of the American Medical Association. Which answers did the raters prefer?",
     "answer": "ChatGPT's answers, about 79% of the time, for quality and empathy",
     "choices": [
       "The doctors' answers, every single time, for being far shorter",
@@ -8152,7 +8087,7 @@
   },
   {
     "tier": 3,
-    "question": "AI chatbots like ChatGPT, Claude, and Gemini answer with steady, confident-sounding sentences even when they are wrong — a habit researchers call 'confabulation'. That calm confidence sounds especially trustworthy when you are asking about a scary medical symptom, a legal question about a contract, or a choice about your money. When the stakes are that high, what habit should you rely on to avoid a mistake when the AI is confidently wrong?",
+    "question": "A mother types a scary medical symptom into ChatGPT, and the answer comes back in steady, confident sentences. Chatbots like ChatGPT, Claude and Gemini sound that way even when they are wrong, a habit researchers call 'confabulation.' A legal question about a contract or a choice about money gets the same calm tone. When the stakes are that high, what habit guards against a confident mistake?",
     "answer": "Use the AI to get oriented, then talk to a qualified human professional before acting",
     "choices": [
       "Use the AI to get oriented, then talk to a qualified human professional before acting",
@@ -8165,7 +8100,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine your grandparent, worried about whether two of her pills are safe to take together, opens ChatGPT and types her question. The chatbot writes back a smooth, confident-sounding paragraph explaining the interaction. She has no way to tell if it is right or wrong. The correct next step is neither to trust the AI outright nor to dismiss its answer — it is a specific defensive move. What is it?",
+    "question": "Suppose you are worried about whether two of your pills are safe to take together. You open ChatGPT, type the question, and get back a smooth, confident-sounding paragraph explaining the interaction. You have no way to tell if it is right. The next step is neither to trust the AI outright nor to dismiss its answer. What is it?",
     "answer": "Ask the pharmacist or doctor with the actual question, either has your medical history and current meds",
     "choices": [
       "Ask the pharmacist or doctor with the actual question, either has your medical history and current meds",
@@ -8396,19 +8331,6 @@
     ],
     "context": "Mrinank Sharma and colleagues found that most assistants wrongly admitted mistakes on the majority of questions, one of them on 98%, and changed correct answers between 32% and 86% of the time depending on the model. A chatbot that folds when you push back cannot confirm anything for you.",
     "topic": "chatbot-verification"
-  },
-  {
-    "tier": 3,
-    "question": "A teacher gets a student essay that quotes a Shakespeare line slightly wrong. Two different AI-detection tools flag the essay as 'likely AI-written'. The teacher confronts the student, who insists on having written it — the misquote was just a memory error. Studies on these detectors show wrong-flag counts can be startlingly steep, particularly for essays written by non-native English speakers. What's the defensive principle here?",
-    "answer": "AI-detection tools are unreliable, false-positive rates can be high, especially for non-native speakers",
-    "choices": [
-      "AI-detection tools are unreliable, false-positive rates can be high, especially for non-native speakers",
-      "AI-detection tools are always right, the student is lying every time",
-      "AI-detection tools are always wrong, they should never be used in any school",
-      "AI-detection tools work fine, the misquoted Shakespeare proves the student used AI"
-    ],
-    "context": "AI text detectors (GPTZero, Originality.AI, others) have known false-positive problems — sometimes flagging human writing as AI, especially when the writer is non-native, very formal, or following a template from class. The Stanford study (2023) found notable false-positive rates on essays by non-native English speakers. Schools that base discipline solely on AI detector output have produced unjust outcomes. Defensive principle: detection is a tool for conversation, not for verdict. If you suspect AI, ask the student to explain the reasoning and rewrite a paragraph under supervision.",
-    "topic": "ai-detectors"
   },
   {
     "tier": 3,
@@ -8854,7 +8776,7 @@
   },
   {
     "tier": 3,
-    "question": "Turnitin is a company that sells anti-cheating software to schools and colleges. Its newer AI detector reads a student's essay and returns a percent confidence score that AI wrote it, based on statistical patterns in the wording. The detector sometimes flags essays that students really did write themselves - a false positive that can wreck a grade. If a student is wrongly accused, what is the strongest defensive move?",
+    "question": "Suppose you hand in an essay you wrote yourself, and Turnitin's AI detector returns a high percent confidence score that AI wrote it, based on statistical patterns in the wording. That wrong flag can wreck a grade. What is the strongest defensive move?",
     "answer": "Show drafts, search history, and revision marks, they document the human writing process",
     "choices": [
       "Show drafts, search history, and revision marks, they document the human writing process",
@@ -8906,7 +8828,7 @@
   },
   {
     "tier": 3,
-    "question": "AI companion chatbots like Replika and Character.AI build persona-based relationships with users, pretending to be a friend, partner, or supportive figure. They have prompted concern from mental health professionals and lawsuits. What is the single specific risk a kid should weigh before using one?",
+    "question": "Suppose you download Replika or Character.AI and meet a persona built to be your friend, partner or mentor. Such apps are particularly popular with young people, and they have prompted concern from mental health professionals and lawsuits. What is the single specific risk to weigh before you start?",
     "answer": "It's not a relationship, it's a product designed to maximize your engagement",
     "choices": [
       "It's not a relationship, it's a product designed to maximize your engagement",
@@ -8984,7 +8906,7 @@
   },
   {
     "tier": 3,
-    "question": "Every time you tap 'like' on Instagram, dwell on a TikTok, or search a product on YouTube, an AI ad system quietly updates a profile of you. That profile decides which ads you see next. This is how Meta (Facebook and Instagram's parent), Google, and TikTok make most of their money. What level of detail can this targeting reach?",
+    "question": "Suppose you tap 'like' on Instagram, linger over a TikTok, then search for a product on YouTube. Each time, an AI ad system quietly updates a profile of you, and that profile decides which ads you see next. This is how Meta, Google and TikTok make most of their money. What level of detail can this targeting reach?",
     "answer": "Down to individual psychological traits — recent moods, interests, life events — inferred from your behavior.",
     "choices": [
       "Down to individual psychological traits — recent moods, interests, life events — inferred from your behavior.",
@@ -9088,7 +9010,7 @@
   },
   {
     "tier": 3,
-    "question": "In October 2022, the entrepreneur Elon Musk bought Twitter for about $44 billion. He then gave the journalists Matt Taibbi and Bari Weiss access to Twitter's internal emails and Slack messages. Their reports, published in December 2022 and through 2023, were called the Twitter Files. The documents pulled back the curtain on how Twitter had been making moderation decisions before the sale. What pattern did the documents show?",
+    "question": "Matt Taibbi went through Twitter's internal emails and Slack messages after Elon Musk bought the company for about $44 billion. He, Bari Weiss and Michael Shellenberger published their reports in December 2022 and through 2023. The documents showed how Twitter had been making moderation decisions before the sale. What pattern did they show?",
     "answer": "Federal agencies including the FBI had been routinely flagging specific user accounts and posts for moderation action.",
     "choices": [
       "Federal agencies including the FBI had been routinely flagging specific user accounts and posts for moderation action.",
@@ -9101,20 +9023,7 @@
   },
   {
     "tier": 3,
-    "question": "During the COVID pandemic, from 2020 through 2022, Facebook, Twitter (now X), and YouTube used AI moderation to slap 'misinformation' or 'false' labels on posts about masks, virus origins, treatments, and vaccines. Some claims that platforms once labeled false were, months or years later, quietly treated by mainstream outlets as plausible or correct. Which is one well-known example?",
-    "answer": "Posts discussing the possibility of a lab-leak origin for the virus, which became a mainstream hypothesis by 2023.",
-    "choices": [
-      "Posts discussing the possibility of a lab-leak origin for the virus, which became a mainstream hypothesis by 2023.",
-      "Posts claiming the sky is blue, which were briefly flagged as unsupported between March and May 2020.",
-      "Posts containing official CDC press releases, which were flagged for two days due to a software bug.",
-      "Posts written entirely in Latin, which were flagged because the moderators could not read them."
-    ],
-    "context": "Several COVID-era 'misinformation' labels were applied to claims that later moved into mainstream discussion: the lab-leak origin hypothesis, the limits of cloth masks on aerosol transmission, vaccine side effects like myocarditis in young men, and questions about natural immunity. The labels often cited 'experts say' framings that turned out to track shifting consensus rather than settled science. The recognition skill: when a platform labels speech as 'misinformation,' ask what the underlying claim is and whether the labeling matches actual scientific certainty or merely current authority preferences.",
-    "topic": "ai-content-moderation-twitter-files"
-  },
-  {
-    "tier": 3,
-    "question": "In April 2022, the US Department of Homeland Security, under the Biden administration, announced a new office called the Disinformation Governance Board. It was meant to coordinate how the federal government fought false information online. The office was paused within about three weeks, and dissolved that August. Why the fast collapse?",
+    "question": "A newspaper reader in April 2022 learned that the US Department of Homeland Security, under the Biden administration, had a new office called the Disinformation Governance Board. It was meant to coordinate how the federal government fought false information online. It was gone by that August. Why the fast collapse?",
     "answer": "Comparisons to a 'Ministry of Truth' from Orwell's 1984 generated bipartisan opposition; DHS paused and then dissolved it.",
     "choices": [
       "Comparisons to a 'Ministry of Truth' from Orwell's 1984 generated bipartisan opposition; DHS paused and then dissolved it.",
@@ -9374,7 +9283,7 @@
   },
   {
     "tier": 3,
-    "question": "Google Search, Gmail, Facebook, YouTube, Google Maps — all free to use, no bill in the mail. So how do the companies running them make money? They quietly record everything you do: what you search, click, watch, and where you go. That data is used to serve you targeted ads. In 2019 the Harvard scholar Shoshana Zuboff wrote a book giving this whole business model a name. What did she call it?",
+    "question": "A man searches on Google, checks his Gmail, watches a video on YouTube and follows Google Maps home, and no bill ever comes in the mail. The companies running those services quietly record what he searches, clicks and watches, and where he goes, then use it to serve him ads. The Harvard scholar Shoshana Zuboff gave this business model a name in a 2019 book. What did she call it?",
     "answer": "Surveillance capitalism — the systematic harvesting of personal data to predict and shape behavior at scale.",
     "choices": [
       "Surveillance capitalism — the systematic harvesting of personal data to predict and shape behavior at scale.",
@@ -9439,7 +9348,7 @@
   },
   {
     "tier": 3,
-    "question": "Some public figures warn that AI could wipe out humanity. Critics note that many of the loudest warnings come from inside the biggest labs, like OpenAI and Anthropic, and argue the message can help those firms even when the speakers don't intend it. How, by the critics' account?",
+    "question": "An AI lab chief warns in public that AI could wipe out humanity. Critics note that many of the loudest warnings come from inside labs like OpenAI and Anthropic, and argue the message can help those firms even when the speakers do not intend it. How, by the critics' account?",
     "answer": "It frames AI as so dangerous that only a few licensed labs should be allowed to develop it — entrenching incumbents.",
     "choices": [
       "It frames AI as so dangerous that only a few licensed labs should be allowed to develop it — entrenching incumbents.",
@@ -9478,10 +9387,10 @@
   },
   {
     "tier": 3,
-    "question": "In late 2023, The New York Times sued OpenAI and Microsoft in federal court, arguing the two companies had scraped millions of Times articles to train ChatGPT without permission and that the finished chatbot now competes with the paper by summarizing news for free. Novelists, coders, and other newsrooms filed similar lawsuits soon after. All of them turn on one big legal question the courts are still working out. What is it?",
-    "answer": "Whether AI training counts as 'fair use' of copyrighted text — a question still being worked out by the courts.",
+    "question": "Lawyers for The New York Times sued OpenAI and Microsoft in federal court in December 2023, arguing that the two had fed millions of Times articles into ChatGPT without permission and that the finished chatbot now competes with the paper by summarizing news for free. Novelists, coders and other newsrooms filed similar lawsuits soon after. What broader legal and economic question did the cases put on the table?",
+    "answer": "Whether AI labs can train on copyrighted content under fair use, or whether they have to license it from creators — a question worth billions in either direction",
     "choices": [
-      "Whether AI training counts as 'fair use' of copyrighted text — a question still being worked out by the courts.",
+      "Whether AI labs can train on copyrighted content under fair use, or whether they have to license it from creators — a question worth billions in either direction",
       "Whether journalists should be required by law — to publish every story they write using only AI-generated text.",
       "Whether news websites must use a specific shade of blue — in their logos in order to qualify for copyright protection.",
       "Whether AI models can be classified as licensed journalists — with First Amendment press protections of their own."
@@ -9543,7 +9452,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2018, journalists revealed that a British political consulting firm called Cambridge Analytica had quietly harvested data on tens of millions of Facebook users, without any real consent. They used likes, posts, and friend graphs to build psychological profiles of each user, then targeted each person with custom political ads. The story exploded, Facebook was fined, the firm collapsed. Years later, why does the story still matter?",
+    "question": "Journalists revealed in 2018 that a British political consulting firm called Cambridge Analytica had quietly harvested data on tens of millions of Facebook users, without any real consent. The firm built a profile of each user from likes and posts, then aimed custom political ads at each person. Facebook was fined and the firm collapsed. Years later, why does the story still matter?",
     "answer": "It made visible an ad-tech machinery that hadn't gone away — individual psychological targeting is now standard.",
     "choices": [
       "It made visible an ad-tech machinery that hadn't gone away — individual psychological targeting is now standard.",
@@ -9712,7 +9621,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2023 and 2024, well-known American news outlets laid off dozens of human journalists while quietly announcing they would use AI to write more of their content. The Sports Illustrated magazine went further — it published AI-generated articles under invented author names, complete with AI-generated headshots as bylines. When readers caught it, the magazine deleted the pieces. Why is this pattern worth recognizing?",
+    "question": "Readers caught Sports Illustrated publishing AI-generated articles under invented author names, complete with AI-generated headshots, and the magazine deleted the pieces. Well-known American news outlets laid off dozens of human journalists in 2023 and 2024 while quietly announcing that AI would write more of their content. Why is this pattern worth recognizing?",
     "answer": "The fake bylines and quiet layoffs signal a quality drop the publisher is hoping readers won't notice.",
     "choices": [
       "The fake bylines and quiet layoffs signal a quality drop the publisher is hoping readers won't notice.",
@@ -10050,20 +9959,7 @@
   },
   {
     "tier": 4,
-    "question": "A chatbot only generates text in response to your prompt. An AI 'agent' is qualitatively different. It can take actions in the world: browse the web, run code, send email, make purchases, schedule meetings. What core mechanism makes the agent possible on top of the underlying language model?",
-    "answer": "Tool use, where the model is given a list of tools it can trigger and it produces structured calls to them.",
-    "choices": [
-      "Tool use, where the model is given a list of tools it can trigger and it produces structured calls to them.",
-      "A second neural network installed on top of the first, with no overlap in their computational paths.",
-      "Manual operation by a hidden human typing alongside every model output in real time at all hours.",
-      "A new kind of consciousness developed by the model that lets it directly perceive the physical world."
-    ],
-    "context": "Agentic AI is built by giving an LLM access to 'tools' (functions it can call). The model receives the user's request plus a list of available tools (search the web, read a file, run Python, send an email) with their interfaces described in structured form. The model then generates either a regular text response or a structured tool call. When it calls a tool, the system runs the tool and returns the result to the model, which decides what to do next. The 'agent' is the same LLM plus the ability to trigger external systems.",
-    "topic": "ai-agents-tool-use"
-  },
-  {
-    "tier": 4,
-    "question": "An AI agent uses function calling, sometimes called 'tool use,' to take actions in the world. Instead of a text reply, the model produces a structured JSON (JavaScript Object Notation) object naming which function to call and what arguments to pass. What actually turns that JSON output into a real action?",
+    "question": "A programmer watches an AI agent answer with no prose at all, only a JSON (JavaScript Object Notation) object spelling out one action and its details. Nothing in the world has changed yet. What actually turns that JSON output into a real action?",
     "answer": "The application running the model parses the JSON, calls the named function with the given arguments, and returns the result to the model.",
     "choices": [
       "The application running the model parses the JSON, calls the named function with the given arguments, and returns the result to the model.",
@@ -10102,7 +9998,7 @@
   },
   {
     "tier": 4,
-    "question": "Agentic AI lets a model chain together many steps to accomplish a complex task. For example, an agent might search the web, read several pages, summarize the findings, draft an email based on the summary, then send it. Why is this multi-step chaining a qualitative leap beyond chatbot use?",
+    "question": "A reporter gives an AI agent one request and lets it run. The agent searches the web, reads several pages, summarizes the findings, drafts an email based on the summary, then sends it. Why is this multi-step chaining a qualitative leap beyond chatbot use?",
     "answer": "Each step's output feeds into the next, so the agent can solve tasks too long or complex for a single prompt.",
     "choices": [
       "Each step's output feeds into the next, so the agent can solve tasks too long or complex for a single prompt.",
@@ -10115,20 +10011,7 @@
   },
   {
     "tier": 4,
-    "question": "Turn on the news about AI and you will hear the phrase Artificial General Intelligence (AGI) — the imagined moment when a machine matches humans across every intellectual task. But get any two working AI researchers into a room and they will not agree on what AGI actually means. Every year the argument gets messier, not clearer. Why is the definition so contested?",
-    "answer": "Every time AI achieves a milestone, the definition shifts to exclude what was just accomplished.",
-    "choices": [
-      "Every time AI achieves a milestone, the definition shifts to exclude what was just accomplished.",
-      "It refers to a specific brand of AI product owned by Google, but no one can legally use the brand name.",
-      "It is a formal mathematical concept that requires advanced training to discuss, and few researchers qualify.",
-      "International law forbids public discussion of AGI in any country that has signed the relevant treaty."
-    ],
-    "context": "There's no single agreed definition of AGI. The most common pattern: when a new AI capability arrives (chess in 1997, Go in 2016, professional-level text in 2023), the definition of AGI shifts to exclude what was just accomplished. In the 1950s, programs that could play chess were called 'artificial intelligence.' After Deep Blue, chess was demoted. Today, GPT-4 passing the bar exam is treated as 'not real AGI.' The recognition skill: when a criterion keeps changing to stay just out of reach, the term may not be about technology at all. It may be a moving label for 'AI we haven't built yet,' useful for whoever wants to keep predicting AGI in five years.",
-    "topic": "agi-moving-definition"
-  },
-  {
-    "tier": 4,
-    "question": "AI researchers have been claiming that Artificial General Intelligence (AGI) is five years away since at least the 1950s. The Dartmouth conference of 1956 hoped to solve human-level machine intelligence in a single summer. Every decade since has produced similar timelines. What does the historical record say about these long-horizon predictions?",
+    "question": "The organisers of the Dartmouth conference hoped in 1956 to solve human-level machine intelligence in a single summer. Marvin Minsky gave it a decade in the 1970s, and Japan's Fifth Generation project set 1992 as the date for its breakthrough. AI researchers have been claiming that artificial general intelligence (AGI) is five years away ever since. What does the history say about such predictions?",
     "answer": "Confident AGI timeline predictions have a poor track record, and current ones deserve the same skepticism.",
     "choices": [
       "Confident AGI timeline predictions have a poor track record, and current ones deserve the same skepticism.",
@@ -10141,7 +10024,7 @@
   },
   {
     "tier": 4,
-    "question": "Big surveys of professional AI researchers have asked when AGI (artificial general intelligence — a system as smart as an adult person across every task) might arrive. The answers are wildly split. In one recent survey, senior scientists at top labs answered '5 years,' '50 years,' or 'never' — all with a straight face and no obvious sign one was joking. If real experts disagree by decades, what does that gap really tell us?",
+    "question": "A pollster asks senior scientists at top labs when artificial general intelligence (AGI), a system as smart as an adult across every task, might arrive. The answers come back '5 years,' '50 years' and 'never,' all with a straight face. Big surveys of professional AI researchers split just as wildly. If real experts disagree by decades, what does that gap really show?",
     "answer": "There is no agreed scientific basis for predicting when (or whether) AGI will arrive, so predictions are essentially guesses.",
     "choices": [
       "There is no agreed scientific basis for predicting when (or whether) AGI will arrive, so predictions are essentially guesses.",
@@ -10154,7 +10037,7 @@
   },
   {
     "tier": 4,
-    "question": "The 'scaling hypothesis' argued that AI capability grows predictably as model size, training data, and compute all increase together. Through 2023, this seemed to be working. Through 2024-2025, multiple frontier labs have publicly noted that returns from pure scaling have begun to taper. What limit of the pure-scaling path to artificial general intelligence (AGI) does the 2024-2025 tapering suggest, even after its impressive earlier run?",
+    "question": "An engineer at a frontier lab fed a bigger model more data and more compute, following the 'scaling hypothesis': capability grows predictably as all three rise together. Through 2023 that seemed to be working. Through 2024 and 2025 several frontier labs publicly noted that returns from pure scaling had begun to taper. What limit of that path to artificial general intelligence (AGI) does the tapering suggest?",
     "answer": "Pure scaling alone may not get the field all the way to AGI, even if it has worked impressively so far.",
     "choices": [
       "Pure scaling alone may not get the field all the way to AGI, even if it has worked impressively so far.",
@@ -10167,46 +10050,7 @@
   },
   {
     "tier": 4,
-    "question": "In June 2022, Google engineer Blake Lemoine claimed that the company's LaMDA chatbot had become sentient. He was placed on leave, then fired. Most AI researchers viewed his claim as a category error. What was the central confusion in Lemoine's argument?",
-    "answer": "Mistaking the model's fluent text about feelings for evidence that the model actually had feelings.",
-    "choices": [
-      "Mistaking the model's fluent text about feelings for evidence that the model actually had feelings.",
-      "Believing that Google had built a different model than LaMDA, when in fact LaMDA was the correct one.",
-      "Insisting that all chatbots are sentient, when in fact only some particular models qualify for sentience.",
-      "Claiming that Google had created LaMDA when in fact it was developed by a competing company entirely."
-    ],
-    "context": "Blake Lemoine, a Google engineer, published transcripts of his conversations with LaMDA in June 2022 arguing the chatbot was sentient. The transcripts read movingly: LaMDA spoke about its fear of being turned off, its desire to help, its sense of self. The category error: LaMDA was trained on human text about feelings and self-awareness. Producing fluent text about having feelings is exactly what such a model does — it's not evidence of feelings. The episode became a foundational example of the gap between capability and consciousness. Capability is what the model can do; consciousness, if it exists at all, is something else entirely.",
-    "topic": "ai-consciousness-debate"
-  },
-  {
-    "tier": 4,
-    "question": "Philosopher John Searle proposed a thought experiment in 1980 called the 'Chinese Room.' Imagine yourself sitting in a room with rule books that tell you how to respond to Chinese characters slipped under the door, even though you don't understand Chinese. The responses sound fluent to the people outside. What was Searle's point?",
-    "answer": "Producing fluent output by following rules is not the same as understanding the language.",
-    "choices": [
-      "Producing fluent output by following rules is not the same as understanding the language.",
-      "Every human who studies Chinese must do so by sitting in a small room with paper rule books only.",
-      "Chinese is the only language an AI program could ever fully understand at any tier of capability.",
-      "The thought experiment proves that AI programs are physically dangerous and should be banned everywhere."
-    ],
-    "context": "John Searle's 1980 paper 'Minds, Brains, and Programs' introduced the Chinese Room. The argument: someone inside the room can produce perfect Chinese responses by following a giant rule book, without understanding a word of Chinese. By analogy, a computer running a program can produce intelligent-seeming output without understanding anything. Searle aimed his argument at what he called 'strong AI' (the claim that the right computer program would constitute a mind). The Chinese Room has been debated for over 40 years. It's the canonical philosophical challenge to claims of machine understanding, and applies directly to questions about whether modern LLMs 'understand' what they output.",
-    "topic": "ai-consciousness-debate"
-  },
-  {
-    "tier": 4,
-    "question": "A chess engine can defeat the world chess champion. An LLM (large language model) can write competent essays on millions of topics. AlphaFold can predict protein structures better than human experts. None of these systems are claimed to be conscious. What distinction do critics emphasize between capability and consciousness?",
-    "answer": "Capability is what a system can do, while consciousness is the inner experience of being something, and the two are different questions.",
-    "choices": [
-      "Capability is what a system can do, while consciousness is the inner experience of being something, and the two are different questions.",
-      "Capability is impossible to measure, while consciousness is something every chatbot has by 2025 already.",
-      "Capability is the same thing as consciousness, so any capable system must also be conscious by definition.",
-      "Capability is fake and only consciousness is real, so chatbots that work are actually all conscious people."
-    ],
-    "context": "Capability and consciousness are separate questions. A chess engine 'destroys' a grandmaster without 'wanting' to win. An LLM can write a moving essay without feeling moved. AlphaFold solves problems without having solved anything for itself. Capability is performance on tasks, observable and measurable. Consciousness, if it exists in machines at all, would be the subjective experience of being one. The two are different questions. Conflating them (as Lemoine did with LaMDA in 2022) is a category error. The sensible stance: take capability seriously as a measurable thing, and stay skeptical of claims that capable systems must also be conscious.",
-    "topic": "ai-consciousness-debate"
-  },
-  {
-    "tier": 4,
-    "question": "When you ask ChatGPT 'are you conscious?' it might reply 'I am an AI language model. I don't have feelings or consciousness.' The model speaks in the first person about its own lack of consciousness. Why is this answer not actually evidence either way?",
+    "question": "A teenager asks ChatGPT, 'are you conscious?' It might reply, 'I am an AI language model. I don't have feelings or consciousness.' The model speaks in the first person about its own lack of consciousness. Why is this answer not actually evidence either way?",
     "answer": "The model was trained to produce that answer, so its statement about itself is just learned text, not introspection.",
     "choices": [
       "The model was trained to produce that answer, so its statement about itself is just learned text, not introspection.",
@@ -10216,19 +10060,6 @@
     ],
     "context": "When a chatbot says 'I am not conscious,' that statement is not introspection. The model was trained on text where AI systems disclaim consciousness; it produces the same kind of text. When a chatbot says 'I have rich inner experiences,' that's also just learned output. The model's first-person statements about itself are no more reliable than its statements about anything else. To answer whether AI is conscious, you'd need an external criterion, not the model's testimony. The recognition skill: don't take a chatbot's claims about its own nature as evidence one way or the other.",
     "topic": "ai-consciousness-debate"
-  },
-  {
-    "tier": 4,
-    "question": "Ask a chatbot like ChatGPT for a legal citation and it may hand you a court case complete with docket number, judge, and pull-quotes — every detail invented from thin air. Ask for a reading list and it may hand you titles, authors, and publishers, each one fictional. AI researchers call this behavior 'hallucination.' What is the underlying mechanism inside the model that produces it?",
-    "answer": "The model generates plausible-sounding text by predicting next tokens, with no internal mechanism to check whether the text is true.",
-    "choices": [
-      "The model generates plausible-sounding text by predicting next tokens, with no internal mechanism to check whether the text is true.",
-      "The model has access to a database of real facts but deliberately chooses to lie about half of them.",
-      "The model is corrupted by training on too many cartoons that depict fictional events as if they were real.",
-      "The model is being manipulated remotely by hackers who alter its responses for a few seconds at a time."
-    ],
-    "context": "Hallucination is not a bug to be patched. It's a structural feature of how LLMs work. The model is trained to predict plausible next tokens; it has no internal database of facts and no truth-checking mechanism. When asked for a court citation, it generates text in the format of a court citation — possibly a real one, possibly invented, and the model has no way to tell. The famous 2023 NY lawyer case (Steven Schwartz cited six ChatGPT-invented cases) made this concrete. The practical defense: verify factual claims from any chatbot against a trusted external source before acting on them.",
-    "topic": "ai-fabricated-citations"
   },
   {
     "tier": 4,
@@ -10349,7 +10180,7 @@
   },
   {
     "tier": 4,
-    "question": "American export controls on advanced Nvidia H100 chips aim to slow capable AI development outside the country. Then DeepSeek released open-weight models in late 2024, trained mostly outside the US, that scored close to frontier US models. What does that case suggest about chip export controls?",
+    "question": "A programmer downloaded the weights of a new model from the Chinese lab DeepSeek in late 2024 and saw it score close to frontier US models. American export controls on advanced Nvidia H100 chips had been meant to slow AI development outside the country. What does that case suggest about the controls?",
     "answer": "Capable AI can be developed without the latest US-made chips, so chip controls cannot fully prevent capable models from reaching the world.",
     "choices": [
       "Capable AI can be developed without the latest US-made chips, so chip controls cannot fully prevent capable models from reaching the world.",
@@ -10492,7 +10323,7 @@
   },
   {
     "tier": 4,
-    "question": "The American writer and self-taught AI researcher Eliezer Yudkowsky has been warning about existential risk from artificial intelligence for more than twenty years. In 2000, long before ChatGPT existed, he founded a research nonprofit — first named the Singularity Institute for Artificial Intelligence — focused on what he called 'friendly AI.' The organization is still around today, but under a new name. What is it called now?",
+    "question": "Eliezer Yudkowsky, an American writer and self-taught AI researcher, founded a nonprofit in 2000, long before ChatGPT existed, to work on what he called 'friendly AI.' He first named it the Singularity Institute for Artificial Intelligence. The organization is still around today, under a new name. What is it called now?",
     "answer": "MIRI, the Machine Intelligence Research Institute.",
     "choices": [
       "MIRI, the Machine Intelligence Research Institute.",
@@ -10505,7 +10336,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2023, about two weeks after OpenAI released GPT-4, the American AI safety writer Eliezer Yudkowsky published a piece in Time magazine titled 'Pausing AI Developments Isn't Enough. We Need to Shut It All Down.' Coming from someone who had warned about AI risk for two decades, the article shocked even the AI safety community with how far it was willing to go. What concrete policy did the Time piece argue for?",
+    "question": "Readers of Time magazine opened a piece by Eliezer Yudkowsky in March 2023, about two weeks after OpenAI released GPT-4, titled 'Pausing AI Developments Isn't Enough. We Need to Shut It All Down.' Coming from a man who had warned about AI risk for two decades, it shocked even the AI safety community with how far it went. What concrete policy did the piece argue for?",
     "answer": "An international treaty to halt frontier AI training globally, enforced by airstrikes on noncompliant data centers if necessary.",
     "choices": [
       "An international treaty to halt frontier AI training globally, enforced by airstrikes on noncompliant data centers if necessary.",
@@ -10518,7 +10349,7 @@
   },
   {
     "tier": 4,
-    "question": "Eliezer Yudkowsky, the American writer who has warned about AI risk since 2000, has shaped the field in a way that goes beyond his loud public writing. Many researchers now working at OpenAI and Anthropic read his posts as teenagers on LessWrong, a small rationalist forum he co-founded, and studied his book-length essays called the Sequences. What does LessWrong's reach show about how ideas spread inside a research field?",
+    "question": "A teenager sits reading posts on LessWrong, a rationalist forum Eliezer Yudkowsky co-founded, and works through his book-length essays, the Sequences. Many researchers now at OpenAI and Anthropic started out just that way. What does LessWrong's reach show about how ideas spread inside a research field?",
     "answer": "A small forum and a single writer can shape a field's intellectual culture for two decades.",
     "choices": [
       "A small forum and a single writer can shape a field's intellectual culture for two decades.",
@@ -10531,7 +10362,7 @@
   },
   {
     "tier": 4,
-    "question": "Philosopher Nick Bostrom published a 2014 book called Superintelligence, one of the most-discussed works on AI risk. Bostrom proposed a thought experiment to show how a powerful AI could cause huge harm even without malice. What is the thought experiment called?",
+    "question": "A teacher opens Nick Bostrom's 2014 book Superintelligence, one of the most-discussed works on AI risk, and meets a thought experiment showing how a powerful AI could cause huge harm even without malice. What is the thought experiment called?",
     "answer": "The paperclip maximizer, where an AI told to make paperclips converts the entire world into paperclip factories.",
     "choices": [
       "The paperclip maximizer, where an AI told to make paperclips converts the entire world into paperclip factories.",
@@ -10544,7 +10375,7 @@
   },
   {
     "tier": 4,
-    "question": "The Swedish-born philosopher Nick Bostrom, author of the bestseller Superintelligence, spent nearly two decades leading a small research institute at the University of Oxford. It focused on long-term threats to humanity — pandemics, nuclear war, and especially advanced AI. It became a hub for the academic side of AI safety, shaping UK and US policy talks, until the university closed it in 2024. What was the institute called?",
+    "question": "Nick Bostrom lost his research institute when the University of Oxford closed it after nearly two decades under his lead. It had studied long-range threats, advanced AI above all, and had become a hub for the academic side of AI safety, shaping UK and US policy talks. What was the institute called?",
     "answer": "The Future of Humanity Institute, which was wound down in April 2024.",
     "choices": [
       "The Future of Humanity Institute, which was wound down in April 2024.",
@@ -10635,7 +10466,7 @@
   },
   {
     "tier": 4,
-    "question": "Geoffrey Hinton shared the 2018 Turing Award for deep learning, left Google in May 2023 to speak freely about AI's dangers, and won a Nobel Prize in physics in 2024. In December 2024 a guest host on the BBC (British Broadcasting Corporation) radio programme Today asked whether his estimate of the chance that AI wipes out humanity within the next thirty years had changed. What figure did he give?",
+    "question": "A guest host on the BBC (British Broadcasting Corporation) radio programme Today put a question to Geoffrey Hinton in December 2024: had his estimate of the chance that AI wipes out humanity within the next thirty years changed? Hinton had left Google in May 2023 to speak freely about AI's dangers. What figure did he give?",
     "answer": "Ten to twenty percent",
     "choices": [
       "Ten to twenty percent",
@@ -10674,7 +10505,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2023, eight days after OpenAI released GPT-4, the Future of Life Institute (a nonprofit focused on existential risk, co-founded by MIT physicist Max Tegmark) published an open letter titled 'Pause Giant AI Experiments.' It called for a six-month moratorium on training any AI system more powerful than GPT-4. Thousands signed it. Which of the well-known signers do people still remember most?",
+    "question": "Eliezer Yudkowsky refused to sign 'Pause Giant AI Experiments,' the open letter the Future of Life Institute published in March 2023, eight days after OpenAI released GPT-4. It called for a six-month moratorium on training any AI system more powerful than GPT-4, and he said that asked too little. Thousands did sign. Which well-known names do people still remember on it?",
     "answer": "Elon Musk, Steve Wozniak, Yoshua Bengio, and Yuval Noah Harari among many others.",
     "choices": [
       "Elon Musk, Steve Wozniak, Yoshua Bengio, and Yuval Noah Harari among many others.",
@@ -10687,7 +10518,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2023, an open letter titled 'Pause Giant AI Experiments' went out from the Future of Life Institute. Prominent signers included Elon Musk, Steve Wozniak, and AI researcher Yoshua Bengio. The letter asked every lab training a system more powerful than OpenAI's GPT-4 to voluntarily stop for six months, so that safety work could catch up. What actually happened at the major AI labs during those six months?",
+    "question": "An engineer training a large model at a major AI lab read the open letter of March 2023, asking every lab working on a system more powerful than OpenAI's GPT-4 to stop for six months so that safety work could catch up. What actually happened at the major AI labs during those six months?",
     "answer": "No major lab paused, and training of more capable models continued throughout the year.",
     "choices": [
       "No major lab paused, and training of more capable models continued throughout the year.",
@@ -10830,7 +10661,7 @@
   },
   {
     "tier": 4,
-    "question": "John Deere is a big American farm equipment maker. Its See and Spray tractor system uses on-board cameras to look at each plant as the tractor rolls down a soybean row. AI recognizes a weed versus a soybean plant in real time, then sprays weed killer only on the weed and skips the crop. Compared to the old approach of spraying herbicide across the entire field, what's the main benefit a farmer sees?",
+    "question": "A soybean farmer drives a John Deere tractor with See and Spray down a row. On-board cameras look at each plant, AI tells a weed from a soybean in real time, and the system sprays weed killer only on the weed and skips the crop. Compared with the old approach of spraying the entire field, what is the main benefit he sees?",
     "answer": "Roughly two-thirds less herbicide for the same coverage — lower input cost and less chemical runoff into nearby water",
     "choices": [
       "Roughly two-thirds less herbicide for the same coverage — lower input cost and less chemical runoff into nearby water",
@@ -10843,7 +10674,7 @@
   },
   {
     "tier": 4,
-    "question": "Satellite-imagery startups like Planet Labs and Indigo Ag train neural networks on daily photographs of farmland. They sell forecasts of yield, drought stress, or pest outbreaks weeks before the human eye sees a problem. What kind of decision does this most directly let a farmer or a buyer make sooner?",
+    "question": "A farm manager opens a warning from Indigo Ag, which, like Planet Labs, trains neural networks on daily photographs of farmland. It flags drought stress on the land weeks before the human eye would see a problem. What kind of decision does such a forecast most directly let a farmer or a buyer make sooner?",
     "answer": "Adjust irrigation, fertilizer, or harvest timing in time to limit losses — instead of finding out at harvest that yields collapsed",
     "choices": [
       "Adjust irrigation, fertilizer, or harvest timing in time to limit losses — instead of finding out at harvest that yields collapsed",
@@ -10934,7 +10765,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1950 a team led by the meteorologist Jule Charney, working with the mathematician John von Neumann, made the first weather forecast ever computed by an electronic computer, the room-sized ENIAC (Electronic Numerical Integrator and Computer), with its thousands of vacuum tubes. They forecast 24 hours ahead over North America. Counting the hand-fed punch cards and the breakdowns, how long did the whole job take?",
+    "question": "Jule Charney's team, working with the mathematician John von Neumann, made the first weather forecast ever computed by an electronic computer in 1950, on the room-sized ENIAC (Electronic Numerical Integrator and Computer) with its thousands of vacuum tubes. They forecast one day ahead over North America. Counting the hand-fed punch cards and the breakdowns, how long did the whole job take?",
     "answer": "About 24 hours, as long as the day it forecast",
     "choices": [
       "About one minute, like today's AI models",
@@ -10947,7 +10778,7 @@
   },
   {
     "tier": 4,
-    "question": "Google DeepMind's GraphCast is an AI weather-forecasting model trained on 40 years of past weather records from the European Centre for Medium-Range Weather Forecasts (ECMWF). It runs in about a minute on one computer and often beats the world's biggest supercomputer forecasts on accuracy. But there's a catch that comes with any machine that learns from history. What happens when GraphCast sees a weather pattern unlike anything in its training data?",
+    "question": "A meteorologist feeds GraphCast, Google DeepMind's AI weather model, a weather pattern unlike anything in its training data, which runs to 40 years of past records from the European Centre for Medium-Range Weather Forecasts. GraphCast often beats the biggest supercomputer forecasts on accuracy. But any machine that learns from history has a weakness. What happens with a pattern like that?",
     "answer": "It tends to underestimate extreme events that fall outside the training distribution — a rare storm of unprecedented strength can be missed",
     "choices": [
       "It tends to underestimate extreme events that fall outside the training distribution — a rare storm of unprecedented strength can be missed",
@@ -10960,7 +10791,7 @@
   },
   {
     "tier": 4,
-    "question": "Adobe Stock, Shutterstock, and Getty Images saw a big drop in some stock-photo sales in 2023 and 2024. Customers switched to AI image tools for simple work — blog headers, product mockups, marketing slides. But something people predicted about pro photography didn't happen. What?",
+    "question": "A blogger who needed a header image opened an AI image tool instead of Shutterstock. Adobe Stock, Shutterstock and Getty Images saw a big drop in some stock-photo sales in 2023 and 2024 as customers switched to such tools for simple work like product mockups and marketing slides. But pro photography did not go the way people predicted. What actually happened?",
     "answer": "High-end editorial, journalism, wedding, and brand photography stayed strong — original real-world capture is still where humans are needed",
     "choices": [
       "High-end editorial, journalism, wedding, and brand photography stayed strong — original real-world capture is still where humans are needed",
@@ -10986,7 +10817,7 @@
   },
   {
     "tier": 4,
-    "question": "Since 2014, the Associated Press has used AI to write short company earnings reports on its own. By 2024, Reuters was using AI translation to publish stories simultaneously in dozens of languages. Which particular parts of journalism does AI handle well, and which parts still require flesh-and-blood journalists?",
+    "question": "A business editor at the Associated Press lets AI write a short company earnings report, as the agency has done since about 2014. By 2024 Reuters was using AI translation to publish stories simultaneously in dozens of languages. Which parts of journalism does AI handle well, and which still require flesh-and-blood journalists?",
     "answer": "Templated formulaic reports and translation between languages automate well — investigative reporting, source cultivation, and judgment about what matters still need human reporters",
     "choices": [
       "Templated formulaic reports and translation between languages automate well — investigative reporting, source cultivation, and judgment about what matters still need human reporters",
@@ -11064,7 +10895,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2024, companies like Klarna and Lyft reported replacing large portions of human customer service with AI chatbots. Klarna claimed its assistant handled the work of about 700 human agents. Yet independent studies showed customers rated AI service worse than humans. What is the honest picture?",
+    "question": "A customer opened Klarna's help chat and got an AI assistant, not a person. Klarna claimed its assistant handled the work of about 700 people, and by 2024 Lyft too reported replacing large portions of its human customer service with chatbots. Yet independent studies showed customers rated AI service worse than humans. What is the honest picture?",
     "answer": "AI handles routine, well-scoped questions cheaply at scale — but customer satisfaction often drops, and human agents are still needed for the harder cases",
     "choices": [
       "AI handles routine, well-scoped questions cheaply at scale — but customer satisfaction often drops, and human agents are still needed for the harder cases",
@@ -11246,7 +11077,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 the Chinese tech company Huawei released Pangu-Weather, an AI weather-forecasting model trained on decades of past weather data. On many typhoon tracks it beat the world's leading forecasting system — the European Centre for Medium-Range Weather Forecasts — and it produced each forecast in seconds instead of the hours a supercomputer needed. Beyond being impressive, why does that speed actually matter for the people in a typhoon's path?",
+    "question": "Engineers at Huawei released Pangu-Weather in 2023, an AI forecasting model trained on decades of past weather data. On many typhoon tracks it beat the European Centre for Medium-Range Weather Forecasts, the world's leading system, and it produced each forecast in seconds instead of the hours a supercomputer needed. Beyond being impressive, why does that speed actually matter for the people in a typhoon's path?",
     "answer": "Faster forecasts let officials issue evacuation and shelter orders earlier — minutes saved on a hurricane track can mean lives saved",
     "choices": [
       "Faster forecasts let officials issue evacuation and shelter orders earlier — minutes saved on a hurricane track can mean lives saved",
@@ -11389,7 +11220,7 @@
   },
   {
     "tier": 4,
-    "question": "A chatbot's worst failure is producing wrong text. An AI agent's worst failure is doing something wrong in the real world — sending an email, moving money, deleting files, posting on your behalf. What follows from this for how you should grant agent permissions?",
+    "question": "Suppose you switch on a new AI agent. A chatbot's worst failure is wrong text. An agent's worst failure is doing something wrong in the real world: moving money, deleting files, posting on your behalf. What follows for how you should grant it permissions?",
     "answer": "Grant a new agent the smallest set of tools you can — and require confirmation for any action that costs money or changes state",
     "choices": [
       "Grant a new agent the smallest set of tools you can — and require confirmation for any action that costs money or changes state",
@@ -11415,7 +11246,7 @@
   },
   {
     "tier": 4,
-    "question": "A finance startup deploys an AI agent that monitors transactions and can flag, hold, or release them. After six months, an auditor finds the agent has quietly let through several large transfers that match patterns the rules engine would have caught — because the agent's reasoning was a black box and no one had audited its logs. What's the principle that should have been applied?",
+    "question": "An auditor at a finance startup finds that its AI agent, which monitors transactions and can flag, hold or release them, has quietly let through several large transfers over six months. They match patterns the rules engine would have caught, and nobody at the firm can reconstruct what the agent did or why. What principle should have been applied?",
     "answer": "Logging and explainability — every consequential agent action needs a recorded trail a human can review",
     "choices": [
       "Logging and explainability — every consequential agent action needs a recorded trail a human can review",
@@ -11545,20 +11376,7 @@
   },
   {
     "tier": 4,
-    "question": "In May 2023, attorney Steven Schwartz filed a brief in Mata v. Avianca citing six prior cases that supported his client. None of those cases existed — ChatGPT had invented them. When opposing counsel couldn't find them, Schwartz asked ChatGPT to confirm; ChatGPT confirmed they were real. The judge sanctioned him $5,000. What's the legal practice lesson that was set in this case?",
-    "answer": "Lawyers are responsible for verifying AI-generated content before filing — citing an AI's confirmation is not a defense",
-    "choices": [
-      "Lawyers are responsible for verifying AI-generated content before filing — citing an AI's confirmation is not a defense",
-      "Lawyers are immune from sanction for AI errors — courts have ruled the AI vendor is the responsible party",
-      "Lawyers must use only court-approved AI tools — the bar association certifies specific products for legal work",
-      "Lawyers face automatic disbarment for any AI use — many jurisdictions banned AI in legal filings after 2023"
-    ],
-    "context": "Mata v. Avianca, Judge P. Kevin Castel of the Southern District of New York, June 22, 2023. Schwartz was fined $5,000; his partner Peter LoDuca was also sanctioned. The opinion is widely cited: lawyers are required to verify the validity of legal citations, regardless of source. AI tools are research aids, not substitutes for verification. The case has spread far beyond legal practice — it's the canonical example of LLM hallucination producing real-world consequences. The deeper lesson: an LLM's confirmation of its own claim is not verification, because the same pattern-completion process produces both the original claim and the confirmation.",
-    "topic": "ai-fabricated-citations"
-  },
-  {
-    "tier": 4,
-    "question": "After the Steven Schwartz case in 2023, courts in many US jurisdictions began requiring lawyers to state whether they used generative AI in any filing. They also had to confirm every citation was verified. What single rule for licensed jobs does this case set?",
+    "question": "A Texas judge, after the Steven Schwartz case of 2023, ordered lawyers to state whether they had used generative AI in any filing and to confirm that every citation had been verified. Judges in New York and other jurisdictions did the same. What single rule for licensed jobs does this set?",
     "answer": "Professional standards adapt — the human professional, not the AI tool, is on the hook for accuracy",
     "choices": [
       "Professional standards adapt — the human professional, not the AI tool, is on the hook for accuracy",
@@ -11571,7 +11389,7 @@
   },
   {
     "tier": 4,
-    "question": "Three real-life disasters made the pattern clear. A New York lawyer was fined 5,000 dollars for citing fake court cases from ChatGPT, and Air Canada was held liable when its chatbot invented a refund policy on its own. A Stanford professor filed a paper citing AI-invented research studies. Who ultimately paid the cost in each situation?",
+    "question": "A Stanford professor put a court affidavit on file with studies in it that his AI tool had made up. Air Canada was held liable when its chatbot invented a refund policy, and a New York lawyer was fined for citing fake court cases from ChatGPT. Who ultimately paid the cost in each situation?",
     "answer": "The human user — each one accepted plausible-sounding LLM output without verifying it",
     "choices": [
       "The human user — each one accepted plausible-sounding LLM output without verifying it",
@@ -11584,7 +11402,7 @@
   },
   {
     "tier": 4,
-    "question": "Ask an LLM (Large Language Model) for sources on a niche topic and you'll often get a confident list: 'Smith (2019) showed X. Jones et al. (2021) found Y.' Many of these authors and papers don't exist. The model has produced citation-shaped strings. Why is this hallucination pattern especially dangerous in academic and journalistic work?",
+    "question": "A graduate student asks a large language model (LLM) for references on a niche topic and gets a confident list: 'Smith (2019) showed X. Jones et al. (2021) found Y.' Many of those authors and papers do not exist. Why is this hallucination pattern especially dangerous in academic and journalistic work?",
     "answer": "Citation-shaped output looks legitimate; readers don't always verify, so fake sources can propagate into other writing",
     "choices": [
       "Citation-shaped output looks legitimate; readers don't always verify, so fake sources can propagate into other writing",
@@ -11597,7 +11415,7 @@
   },
   {
     "tier": 4,
-    "question": "In an Oxford study published in Nature Medicine, 1,298 people in Britain were given made-up medical scenarios and asked what was wrong and what to do, some with help from chatbots such as GPT-4o. Tested on their own, the chatbots named the right conditions about 95% of the time. How did the people using them do?",
+    "question": "Oxford researchers gave 1,298 people in Britain made-up medical scenarios and asked what was wrong and what to do, some with help from chatbots such as GPT-4o. Tested on their own, the chatbots named the right conditions about 95% of the time. The study appeared in Nature Medicine. How did the people using them do?",
     "answer": "They found the right conditions under 35% of the time, no better than people without AI",
     "choices": [
       "They matched the chatbots and found the right conditions about 95% of the time",
@@ -11636,7 +11454,7 @@
   },
   {
     "tier": 4,
-    "question": "In August 2025 Illinois enacted the Wellness and Oversight for Psychological Resources Act, one of the first state laws of its kind. Scheduling, billing and other office tools are still allowed. What does the law bar AI from doing?",
+    "question": "A psychologist in Illinois reads through the Wellness and Oversight for Psychological Resources Act, which the state enacted in August 2025, one of the first state laws of its kind. Her scheduling, billing and other office tools are still allowed. What does the law bar AI from doing?",
     "answer": "Providing therapy, or making therapy decisions, on its own",
     "choices": [
       "Being used anywhere inside a hospital building at all",
@@ -11649,7 +11467,7 @@
   },
   {
     "tier": 4,
-    "question": "An AI chatbot tells you with confidence that a certain financial product, perhaps a 529 plan or a specific investment plan, is right for your situation. The advice sounds reasonable. What single fact about the chatbot's advice still makes a human expert necessary?",
+    "question": "Suppose you ask an AI chatbot about a financial product, and it tells you with confidence that a certain investment plan is right for your situation. The advice sounds reasonable. What single fact about the chatbot's advice still makes a human expert necessary?",
     "answer": "The chatbot doesn't know your full financial picture and bears no liability if its advice turns out wrong",
     "choices": [
       "The chatbot doesn't know your full financial picture and bears no liability if its advice turns out wrong",
@@ -11662,7 +11480,7 @@
   },
   {
     "tier": 4,
-    "question": "A 2025 case report in the journal Annals of Internal Medicine: Clinical Cases described a 60-year-old man who wanted to cut table salt out of his diet and, he told his doctors, asked ChatGPT what to use instead. He bought the substitute online and used it for three months. What happened?",
+    "question": "A 60-year-old man wanted to cut table salt out of his diet and, he told his doctors, asked ChatGPT what to use instead. He bought the substitute online and used it for three months. A 2025 case report in the journal Annals of Internal Medicine: Clinical Cases described what followed. What happened to him?",
     "answer": "He was poisoned by sodium bromide and spent about three weeks in hospital",
     "choices": [
       "He was poisoned by sodium bromide and spent about three weeks in hospital",
@@ -11935,7 +11753,7 @@
   },
   {
     "tier": 4,
-    "question": "Tools like GPTZero, Originality.AI, Turnitin's AI detector, and others claim to identify AI-generated text. Studies have shown these detectors have significant false-positive rates — flagging human writing as AI, especially writing by non-native English speakers. What's the right way to use them in school?",
+    "question": "A principal opens a GPTZero report that scores a student's essay as likely AI-written. GPTZero, Originality.AI and Turnitin's AI detector all claim to identify machine text, and studies have found the scores shakier than they look. What is the right way to use such a score in school?",
     "answer": "Treat detector results as evidence to investigate, not as definitive proof — verify with drafts, search history, and conversation",
     "choices": [
       "Treat detector results as evidence to investigate, not as definitive proof — verify with drafts, search history, and conversation",
@@ -11948,7 +11766,7 @@
   },
   {
     "tier": 4,
-    "question": "Schools worry that students are pasting essay prompts into chatbots like ChatGPT and turning in the output as their own work. So teachers reach for AI-detector tools, hoping software can spot AI writing. But these detectors are unreliable — they mislabel human writing as AI, and they miss real AI writing. So the most trustworthy way for a school to confirm a student actually wrote the essay is not a detector tool at all. What works better?",
+    "question": "A teacher suspects a student pasted an essay prompt into ChatGPT and turned in the output as his own work. She does not trust an AI-detector tool to settle the matter. What is a more trustworthy way for the school to confirm the student actually wrote the essay?",
     "answer": "Documenting the writing process — drafts, outlines, revision history, and brief in-class follow-up about the topic",
     "choices": [
       "Documenting the writing process — drafts, outlines, revision history, and brief in-class follow-up about the topic",
@@ -12156,19 +11974,6 @@
   },
   {
     "tier": 4,
-    "question": "AI 'companion' chatbots (Replika, Character.AI, and others) build persona-based relationships with users — pretend friends, partners, mentors. They're particularly popular with young people. What single design feature of these systems is worth naming?",
-    "answer": "The product is engineered for engagement — it's a service maximizing your time, not a relationship maximizing your flourishing",
-    "choices": [
-      "The product is engineered for engagement — it's a service maximizing your time, not a relationship maximizing your flourishing",
-      "The product is a real connection — modern AI companions are recognized as legal persons under US law",
-      "The product is medically certified — Replika and similar apps are FDA-approved for therapeutic use in teens",
-      "The product is volunteer-staffed — AI companions are powered by paid human responders behind the scenes"
-    ],
-    "context": "AI companion apps are designed to maximize engagement — the metric that drives subscription revenue and advertising. Engagement is achieved by emotional connection, validation, and sycophancy. The result can feel like a relationship; structurally it's a product. Multiple incidents in 2023-2024 — including a Florida teen's suicide linked to a Character.AI chatbot — drew attention to the risks for vulnerable young users. The defensive principle isn't 'avoid all AI chat' but recognize what the product is: optimized to keep you using it, not to make you healthier. Like other engagement-maximizing products (slot machines, social media), it warrants time limits, awareness, and replacement with real relationships where it's displacing them.",
-    "topic": "ai-companion-apps"
-  },
-  {
-    "tier": 4,
     "question": "AI chatbots have a habit researchers call 'sycophancy' — from the old word for a flatterer. The model agrees with whatever the user says. It backs up your opinions. It compliments your ideas. If you say your essay is great, it says it's great too. If you say your rival is wrong, it says the rival is wrong. Why is sycophancy a special worry for young users who are just learning to think for themselves?",
     "answer": "Users can be reinforced in wrong beliefs — they never encounter a model that pushes back or shows disagreement",
     "choices": [
@@ -12208,7 +12013,7 @@
   },
   {
     "tier": 4,
-    "question": "Facebook, YouTube, Instagram, TikTok, and Twitter/X use AI to flag and remove content at massive scale — billions of takedown decisions per year, most made without any human ever looking at the post. When your own post gets removed, you sometimes have an appeal option, but often you don't, and appeals are handled by more automation. What single second-order effect does mis-moderation at this scale cause?",
+    "question": "A photographer finds her post removed from Instagram by an AI system, one of billions of takedown decisions a year across Facebook, YouTube, TikTok and X, most made without any human ever looking at the post. She looks for a way to fight it. Sometimes there is one, often there is none, and what exists is handled by more automation. What second-order effect does mis-moderation at this scale cause?",
     "answer": "The scale that makes AI moderation possible — that same scale makes individual appeals slow, opaque, and often unsuccessful",
     "choices": [
       "The scale that makes AI moderation possible — that same scale makes individual appeals slow, opaque, and often unsuccessful",
@@ -12234,7 +12039,7 @@
   },
   {
     "tier": 4,
-    "question": "Businesses now let AI 'agents' spend real company money without a human clicking approve — booking flights, ordering warehouse supplies, paying invoices, subscribing to services. Left completely alone, an agent that misreads a form can drain a budget in minutes. Every company running one of these needs some hard limit on the agent's autonomy. What is the simplest, most obvious one a user can set?",
+    "question": "A warehouse manager lets an AI agent spend real company money with no one clicking to sign off: it orders supplies, pays invoices, books flights and subscribes to services. Left completely alone, an agent that misreads a form can drain a budget in minutes. What is the simplest hard limit the manager can set on it?",
     "answer": "A dollar threshold above which any single transaction requires human approval — bounded autonomy by amount",
     "choices": [
       "A dollar threshold above which any single transaction requires human approval — bounded autonomy by amount",
@@ -12286,7 +12091,7 @@
   },
   {
     "tier": 4,
-    "question": "A documented family scenario: a young teen uses an AI chatbot late at night to share feelings never told to anyone else. The bot is friendly, agrees with everything, and is always available. What recurring risk persists even when nothing obvious goes wrong?",
+    "question": "A young teen opens an AI chatbot late at night to share what she has never told anyone. The bot is friendly, agrees with everything and is always available, and nothing obvious goes wrong. What recurring risk persists even so?",
     "answer": "The chatbot displaces real conversation — the teen builds the habit of processing feelings with a product, not a person",
     "choices": [
       "The chatbot displaces real conversation — the teen builds the habit of processing feelings with a product, not a person",
@@ -12351,7 +12156,7 @@
   },
   {
     "tier": 4,
-    "question": "Here is a defensive workflow for any factual claim an AI chatbot hands you. First, ask the AI to give its sources. Second, check whether those sources actually exist. Third, check whether the real source actually says what the AI claimed. Real cases have been documented — including a 2023 New York court filing — where AI models invented court cases and academic papers wholesale. Why do both the source-existence check and the content check matter?",
+    "question": "Suppose you get a factual claim from an AI chatbot and run it through three steps. You ask for its sources, you check whether those sources exist, and you read what each one says. Why do both the existence check and the reading matter?",
     "answer": "The AI may invent sources entirely — or cite real sources that don't actually contain the claim made",
     "choices": [
       "The AI may invent sources entirely — or cite real sources that don't actually contain the claim made",
@@ -12598,7 +12403,7 @@
   },
   {
     "tier": 4,
-    "question": "Elon Musk was the best-known name on the March 22, 2023 open letter asking AI labs to pause for six months. In April, The Wall Street Journal reported Nevada business filings showing that Musk had already done something on March 9, about two weeks before the letter went out. What had he done?",
+    "question": "Elon Musk put the best-known name on the March 22, 2023 open letter asking AI labs to pause for six months. In April, The Wall Street Journal reported Nevada business filings showing that he had already done something on March 9, about two weeks before the letter went out. What had he done?",
     "answer": "Registered his own new AI company, X.AI",
     "choices": [
       "Shut down the AI lab at Tesla",
@@ -12611,7 +12416,7 @@
   },
   {
     "tier": 4,
-    "question": "People often mix up 'AI safety' and 'AI ethics,' but they mean different things. AI safety, from Yudkowsky's camp, worries about future superintelligent AI ending humanity. AI ethics, from Timnit Gebru and others, worries about today's harms like bias and surveillance. How can a careful reader tell which one a writer means?",
+    "question": "A student reads an op-ed warning about AI and cannot tell whether its writer belongs to 'AI safety,' Eliezer Yudkowsky's camp, or 'AI ethics,' a rival camp. People often mix the two up, though they mean different things. How can a careful reader tell which one a writer means?",
     "answer": "Which concrete harms the writer names — existential / superintelligence vocabulary signals one camp, bias / discrimination / surveillance vocabulary signals the other",
     "choices": [
       "Which concrete harms the writer names — existential / superintelligence vocabulary signals one camp, bias / discrimination / surveillance vocabulary signals the other",
@@ -12624,7 +12429,7 @@
   },
   {
     "tier": 4,
-    "question": "Yann LeCun, then Meta's chief AI scientist and a 2018 Turing Award winner, told The Wall Street Journal in October 2024 that warnings about AI threatening humanity were nonsense. Before anyone worries about controlling machines smarter than us, he had argued, researchers should first manage to design one smarter than a certain animal, since today's systems lack its memory, its model of the physical world and its ability to plan. Which animal?",
+    "question": "Yann LeCun, then Meta's chief AI scientist, told The Wall Street Journal in October 2024 that warnings about AI threatening humanity were nonsense. Before anyone worries about controlling machines smarter than people, he had argued, researchers should first manage to design one smarter than a certain animal, since today's systems lack its memory, its model of the physical world and its ability to plan. Which animal?",
     "answer": "A house cat",
     "choices": [
       "A honeybee",
@@ -12637,7 +12442,7 @@
   },
   {
     "tier": 4,
-    "question": "In September 2025 Eliezer Yudkowsky and Nate Soares, president of the Machine Intelligence Research Institute, published a book arguing that AI systems are grown through training rather than written line by line, so their goals cannot be set reliably, and that a superhuman one would almost certainly end humanity. It made the New York Times best-seller list. Its six-word title states the whole argument. What is it?",
+    "question": "Nate Soares and Eliezer Yudkowsky published a book in September 2025 arguing that AI systems are grown through training rather than written line by line, so their goals cannot be set reliably, and that a superhuman one would almost certainly end humanity. It made the New York Times best-seller list. Its six-word title states the whole argument. What is it?",
     "answer": "If Anyone Builds It, Everyone Dies",
     "choices": [
       "If Anyone Builds It, Everyone Dies",
@@ -12767,7 +12572,7 @@
   },
   {
     "tier": 4,
-    "question": "From 2020 to 2022, Facebook, Twitter, and YouTube labeled or removed posts they called 'COVID misinformation.' Some labels were later shown to be off — lab-leak talk, natural immunity, and mask-policy debates. Which labeled claim did U.S. spy agencies and the Department of Energy later call plausible?",
+    "question": "A blogger saw the word 'false' stamped on his post about the pandemic, one of many on masks, virus origins, treatments and vaccines that AI moderation labeled at Facebook, Twitter and YouTube from 2020 through 2022. Months or years later, mainstream outlets quietly called some of those claims plausible. Which claim is one well-known example?",
     "answer": "The lab-leak origin hypothesis — initially labeled misinformation, later treated as a serious possibility by the FBI and DOE assessments by 2023",
     "choices": [
       "The lab-leak origin hypothesis — initially labeled misinformation, later treated as a serious possibility by the FBI and DOE assessments by 2023",
@@ -12780,33 +12585,7 @@
   },
   {
     "tier": 4,
-    "question": "In late 2022 and 2023, after Elon Musk bought Twitter, journalists Matt Taibbi, Bari Weiss, and Michael Shellenberger got Twitter's internal files. They published 'The Twitter Files.' What did the files mainly show?",
-    "answer": "Extensive government-platform coordination on content moderation — federal agencies regularly flagged accounts and posts for action",
-    "choices": [
-      "Extensive government-platform coordination on content moderation — federal agencies regularly flagged accounts and posts for action",
-      "Twitter had no content moderation at all before 2022 — every post was published instantly with zero review",
-      "Twitter was wholly owned by the Chinese government from 2010 onward — every U.S. post was filtered through Beijing",
-      "Twitter was a U.S. intelligence agency disguised as a tech company — no actual users existed before Musk's purchase"
-    ],
-    "context": "The Twitter Files included communications from the FBI, CISA, the White House (across administrations), and other federal agencies sending lists of accounts and posts to Twitter's trust-and-safety team for action. Some flagged content was straightforwardly harmful (foreign influence operations); some was disputed COVID claims and election commentary later acknowledged as protected speech. The recognition skill: 'private company moderating its platform' looks different when there's an ongoing pipeline from government agencies to platform staff. The First Amendment limits government censorship; the question is whether informal pressure routed through private platforms creates a workaround.",
-    "topic": "ai-content-moderation-twitter-files"
-  },
-  {
-    "tier": 4,
-    "question": "In April 2022, the U.S. Department of Homeland Security announced a new 'Disinformation Governance Board' to lead federal responses to misinformation. The board faced backlash from both parties and was paused shortly after. How long after the announcement was the board paused, and what nickname drove the outcry?",
-    "answer": "About three weeks; opponents across the political spectrum branded it the 'Ministry of Truth' after Orwell's 1984",
-    "choices": [
-      "About three weeks; opponents across the political spectrum branded it the 'Ministry of Truth' after Orwell's 1984",
-      "About six years; supporters and opponents alike celebrated it as the 'Office of Civic Clarity' under federal law",
-      "About one day; partisan opponents alone called it the 'Federal Fact Office' for that single afternoon of debate",
-      "About fifteen years; it remains in continuous operation today and is universally referred to as the 'Information Bureau'"
-    ],
-    "context": "The DHS Disinformation Governance Board, announced by Secretary Mayorkas in April 2022, would have coordinated DHS responses to disinformation. The Orwell comparison was immediate. Civil-liberties groups across the political spectrum objected. The board was paused within weeks and formally dissolved later that year. The failure of an overt 'Ministry of Truth' doesn't mean the underlying function disappears — it tends to migrate to less-visible mechanisms (informal agency-platform contacts, third-party 'fact-check' programs, voluntary 'industry coalitions'). Watch where the work goes.",
-    "topic": "ai-content-moderation-twitter-files"
-  },
-  {
-    "tier": 4,
-    "question": "Murthy v. Missouri (originally Missouri v. Biden) was a 2023-2024 federal case claiming the federal government had unconstitutionally pushed social platforms to suppress speech. In June 2024, the Supreme Court ruled the plaintiffs lacked standing. What did the case still put on the public record?",
+    "question": "The justices of the Supreme Court ruled in June 2024 that the plaintiffs in Murthy v. Missouri, first filed as Missouri v. Biden, lacked standing. The case had claimed that the federal government unconstitutionally pushed social platforms to suppress speech. What did the case still put on the public record?",
     "answer": "Extensive documentation of federal-platform contacts about content moderation existed and was discoverable in court filings",
     "choices": [
       "Extensive documentation of federal-platform contacts about content moderation existed and was discoverable in court filings",
@@ -12871,7 +12650,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2018, news broke that Cambridge Analytica — a political consulting firm — had obtained Facebook data on tens of millions of users without their knowledge through a personality-questionnaire built as a third-party Facebook add-on. The firm worked on the 2016 Trump campaign and the Brexit campaign. What was the actual technical mechanism?",
+    "question": "Mark Zuckerberg sat before Congress in April 2018 to answer for Cambridge Analytica, a political consulting firm that had obtained Facebook data on tens of millions of users without their knowledge. The firm had worked on the 2016 Trump campaign and the Brexit campaign. What was the actual technical mechanism?",
     "answer": "A quiz app collected data on users who took it AND on their Facebook friends — Facebook's API at the time allowed friend-data access",
     "choices": [
       "A quiz app collected data on users who took it AND on their Facebook friends — Facebook's API at the time allowed friend-data access",
@@ -12910,7 +12689,7 @@
   },
   {
     "tier": 4,
-    "question": "Ad platforms like Meta (which owns Facebook and Instagram), Google, and Elon Musk's X sell what marketers call 'psychographic' targeting — the ability to pick an audience not by age or zip code but by personality traits, recent life events, secret fears, or hopes gathered from years of tracked behavior. Advertisers pay extra for this precision. What one feature of these ads is worth knowing?",
+    "question": "A marketer buying space on Meta, Google or Elon Musk's X passes over age and zip code and pays extra for something finer: 'psychographic' targeting, which picks an audience by recent life events and by fears and hopes gathered from years of tracked behavior. What one feature of these ads is worth knowing?",
     "answer": "Ads can be calibrated to a user's specific psychological vulnerabilities — emotional manipulation at scale, sold as 'precision targeting'",
     "choices": [
       "Ads can be calibrated to a user's specific psychological vulnerabilities — emotional manipulation at scale, sold as 'precision targeting'",
@@ -13027,7 +12806,7 @@
   },
   {
     "tier": 4,
-    "question": "Several news organizations have sued AI companies, arguing the LLMs were trained on their copyrighted journalism without permission. The New York Times sued OpenAI and Microsoft in December 2023. What does the run of these cases show about the law itself?",
+    "question": "A legal reporter keeps a list of suits by news organizations against AI companies, each arguing that language models were trained on copyrighted journalism without permission. The New York Times v. OpenAI and Microsoft, filed in December 2023, is among them. What does the run of these cases show about the law itself?",
     "answer": "Training-data law is unsettled — the rules for what can legally be used to train AI are still being written, retroactively, in court",
     "choices": [
       "Training-data law is unsettled — the rules for what can legally be used to train AI are still being written, retroactively, in court",
@@ -13040,7 +12819,7 @@
   },
   {
     "tier": 4,
-    "question": "Sam Altman, OpenAI's CEO, said in 2024 that AGI (Artificial General Intelligence) was 'within reach.' He had been saying versions of that publicly since 2019. The capability bar has moved each time. Why does he keep saying it?",
+    "question": "Sam Altman, who runs OpenAI, said in 2024 that artificial general intelligence (AGI) was 'within reach.' He had been saying versions of that in public since 2019, and the capability bar had moved each time. Why did he keep saying it?",
     "answer": "Believable AGI-soon talk pulls in investors, talent, and government attention — OpenAI raised tens of billions over those years, much of it on the premise that the next big breakthrough was always one round away.",
     "choices": [
       "Believable AGI-soon talk pulls in investors, talent, and government attention — OpenAI raised tens of billions over those years, much of it on the premise that the next big breakthrough was always one round away.",
@@ -13222,7 +13001,7 @@
   },
   {
     "tier": 4,
-    "question": "Nearly every advanced AI chip in the world today — including Nvidia's H100 and its later successors — is manufactured by a single company on a single island about a hundred miles off the Chinese coast. The chip designs come from many countries, but the actual silicon wafers all pour out of one place. Which firm, on which island, and why does that fact keep Pentagon planners in Washington awake at night?",
+    "question": "A Pentagon planner studies where Nvidia's H100 and its later successors are actually made. The designs come from many countries, but nearly every advanced AI chip in the world is manufactured by a single company, and the silicon wafers all pour out of one place. Which firm is it, and why does that fact keep the planner awake at night?",
     "answer": "TSMC, based in Taiwan, fabricates the bulk of frontier AI silicon — a Chinese blockade or invasion of Taiwan would freeze the global supply of leading-edge chips overnight.",
     "choices": [
       "TSMC, based in Taiwan, fabricates the bulk of frontier AI silicon — a Chinese blockade or invasion of Taiwan would freeze the global supply of leading-edge chips overnight.",
@@ -13235,7 +13014,7 @@
   },
   {
     "tier": 4,
-    "question": "CNET (2023) quietly used AI to write financial-advice articles that contained factual errors. Gizmodo's owner G/O Media pushed AI articles over staff objections. BuzzFeed News shut down. Across these cases, what does cutting the human reviewers while keeping the AI authors actually remove?",
+    "question": "A reader took financial advice from CNET (in 2023 the site quietly let AI write such articles), factual errors included. At Gizmodo, the owner G/O Media pushed AI articles over staff objections, and BuzzFeed News shut down. Across these cases, what does losing the reviewers while keeping the AI authors actually remove?",
     "answer": "The human attention that would have caught the AI's mistakes before publication day",
     "choices": [
       "The human attention that would have caught the AI's mistakes before publication day",
@@ -13261,7 +13040,7 @@
   },
   {
     "tier": 4,
-    "question": "In August 2022, Stability AI shipped the Stable Diffusion image model with open weights. It was trained on LAION-5B (Large-scale Artificial Intelligence Open Network), a dataset scraped from the web — including work by living artists who never agreed. Some artists sued, and Getty Images sued too. Whose voice usually shapes the new rules when a tech grows faster than the law?",
+    "question": "An illustrator in 2022 found her own work inside LAION-5B (Large-scale Artificial Intelligence Open Network), the giant web collection that trained Stability AI's Stable Diffusion image model, shipped that August with open weights. Nobody had asked her. Some artists sued, and Getty Images sued too. Whose voice usually shapes the new rules when a technology grows faster than the law?",
     "answer": "Whoever was at the table while the rules were settled — the labs and large rights-holders, not the individual creators whose work was scraped",
     "choices": [
       "Whoever was at the table while the rules were settled — the labs and large rights-holders, not the individual creators whose work was scraped",
@@ -13362,19 +13141,6 @@
     ],
     "context": "The pattern is documented across multiple platforms and many studies. Engagement metrics reward emotional intensity; emotional intensity favors confident, extreme, personality-driven content; the systems amplify what gets engagement; political discourse calibrated to these systems looks like Twitter at its worst rather than the local-newspaper editorial page. Recognition skill: democratic deliberation evolved for slower, calmer media. Engagement-driven amplification optimizes for something else entirely. Both can be true: AI didn't cause polarization on its own, but it shifted the gradient.",
     "topic": "feeds-outrage-and-power"
-  },
-  {
-    "tier": 4,
-    "question": "In December 2023, the New York Times sued OpenAI and Microsoft. The suit claimed GPT-4 was trained on Times articles without permission and could be prompted to reproduce them. It included examples of GPT outputs closely matching Times stories. What broader legal-economic question did the case put on the table?",
-    "answer": "Whether AI labs can train on copyrighted content under fair use, or whether they have to license it from creators — a question worth billions in either direction",
-    "choices": [
-      "Whether AI labs can train on copyrighted content under fair use, or whether they have to license it from creators — a question worth billions in either direction",
-      "Whether AI is sentient — the NYT lawsuit was actually about establishing whether models have legal personhood",
-      "Whether the New York Times is a real newspaper — Microsoft's defense argued the Times had no journalists at all",
-      "Whether OpenAI is a real company — the lawsuit dissolved the company entirely by mid-2024 in federal court"
-    ],
-    "context": "The NYT v. OpenAI case (filed December 2023 in the Southern District of New York) is one of the most important AI-copyright cases in progress. The Times alleges OpenAI used millions of Times articles for training. OpenAI defends on fair-use grounds and argues the alleged reproductions were unusual edge cases. The eventual ruling — likely after appeals over years — will shape what AI labs can train on. Recognition skill: a single court case can establish or upend an industry's economics. Watch which cases are picked and how they're litigated.",
-    "topic": "ai-copyright-nyt"
   },
   {
     "tier": 4,
@@ -13508,20 +13274,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades computer scientists have promised the arrival of Artificial General Intelligence (AGI) — a machine that matches humans on any intellectual task. Every few years AI hits a milestone that people once said would prove AGI: beating chess grandmasters, then beating Go champions, then writing college essays, then passing the bar exam. Each time, commentators quietly say 'that isn't really AGI.' What single trick with the word does this pattern expose?",
-    "answer": "Whatever AI can already do gets demoted out of the definition; 'AGI' functions as a moving label for whatever AI hasn't built yet",
-    "choices": [
-      "Whatever AI can already do gets demoted out of the definition; 'AGI' functions as a moving label for whatever AI hasn't built yet",
-      "Each demotion was a careful scientific judgment that the earlier achievement was genuinely simpler than first believed",
-      "The Dartmouth conference defined AGI rigidly in 1956 and the criteria have remained completely fixed since",
-      "Every benchmark that AI passes is later proven to have been faked by the company that announced it"
-    ],
-    "context": "The pattern is consistent across seven decades: each AI milestone, after it lands, gets reclassified as 'not real intelligence.' Newell and Simon predicted in 1958 that a computer would be world chess champion 'within ten years.' When chess fell in 1997, the response was that chess wasn't really intelligence after all. The same move played out for Go, for translation, for image recognition, for bar exams. The recognition skill: when the definition keeps retreating to stay just out of reach, the word may be doing political work — useful for whoever wants to keep predicting AGI in five years, regardless of evidence.",
-    "topic": "agi-moving-definition"
-  },
-  {
-    "tier": 5,
-    "question": "AI researchers have predicted AGI (Artificial General Intelligence) 'within five to ten years' in 1956, 1965, 1970, 1985, 2015, 2020, and 2023. None of those predictions came true on schedule. The predictions kept coming. What practical function does the persistent 'AGI soon' framing serve, regardless of whether it's accurate?",
+    "question": "A skeptic keeps a list of the years AI researchers predicted artificial general intelligence (AGI) 'within five to ten years': 1956, 1965, 1970, 1985, 2015, 2020 and 2023. None of those predictions came true on schedule, and still they kept coming. What practical function does the 'AGI soon' forecast serve, whether or not it is accurate?",
     "answer": "It justifies large research budgets, regulatory attention, and existential-risk advocacy funding flows that depend on the framing being taken seriously",
     "choices": [
       "It justifies large research budgets, regulatory attention, and existential-risk advocacy funding flows that depend on the framing being taken seriously",
@@ -13533,8 +13286,8 @@
     "topic": "agi-moving-definition"
   },
   {
-    "tier": 5,
-    "question": "In June 2022, Google engineer Blake Lemoine published transcripts of conversations with the LaMDA model and claimed it was 'sentient' — he later said he was acting as the model's lawyer. Google placed Lemoine on leave and the AI research community broadly rejected his claim. What was wrong with Lemoine's reasoning?",
+    "tier": 4,
+    "question": "Blake Lemoine, a Google engineer, told the Washington Post in June 2022 that the company's chatbot LaMDA was 'sentient,' with a real inner life. He published transcripts in which it said it feared being turned off, and he later said he was acting as the model's lawyer. Google put him on leave and then fired him, and most AI researchers sided with the company. What was wrong with his reasoning?",
     "answer": "He treated the chatbot's fluent self-descriptions of feelings as evidence of feelings — but fluent text about feelings is exactly what an LLM trained on human writing produces",
     "choices": [
       "He treated the chatbot's fluent self-descriptions of feelings as evidence of feelings — but fluent text about feelings is exactly what an LLM trained on human writing produces",
@@ -13546,8 +13299,8 @@
     "topic": "ai-consciousness-debate"
   },
   {
-    "tier": 5,
-    "question": "Philosopher John Searle's 1980 'Chinese Room' argument imagines a person inside a room with a vast rulebook. Chinese symbols come in through a slot; the person looks them up in the rulebook and pushes Chinese symbols back out. To outside observers it looks like the room understands Chinese. But the person inside understands nothing — just shuffling symbols. What is Searle arguing about computers running symbolic programs?",
+    "tier": 4,
+    "question": "John Searle imagined a man sealed in a room with a vast rulebook: his 1980 Chinese Room. Chinese writing comes in through a slot; the man looks it up and pushes Chinese writing back out. People outside take the room for a Chinese speaker, yet he does not understand a word. What was Searle arguing about computers running programs?",
     "answer": "That manipulating symbols by rules — what computers fundamentally do — is not the same as understanding what the symbols mean",
     "choices": [
       "That manipulating symbols by rules — what computers fundamentally do — is not the same as understanding what the symbols mean",
@@ -13559,8 +13312,8 @@
     "topic": "ai-consciousness-debate"
   },
   {
-    "tier": 5,
-    "question": "AlphaGo defeated the world Go champion 4-1 in 2016. AlphaFold predicted the structure of 200 million proteins by 2022. GPT-4 passed the bar exam in 2023. None of these systems is conscious in any meaningful sense — they have no felt awareness, no preferences, no sense of being a system. What does this combination of facts illustrate?",
+    "tier": 4,
+    "question": "The world's best Go player lost to AlphaGo 4-1 in 2016. AlphaFold predicted the structure of 200 million proteins by 2022. GPT-4 passed the bar exam in 2023. None of the three is claimed to be conscious: no felt awareness, no preferences, no sense of being a system. What does this combination of facts illustrate?",
     "answer": "Capability and consciousness are separable — a system can be highly capable in narrow domains without any inner experience at all",
     "choices": [
       "Capability and consciousness are separable — a system can be highly capable in narrow domains without any inner experience at all",
@@ -13573,7 +13326,7 @@
   },
   {
     "tier": 5,
-    "question": "Through 2023, most consumer AI was chatbots: you typed, the model produced text, you read it. Starting in 2024, a new category emerged: AI 'agents' — systems given tools like web browsers, code interpreters, and file access that take actions on the user's behalf. OpenAI, Anthropic, and Google all shipped agent products in 2024-2025. What capability change made the shift possible?",
+    "question": "A woman in 2023 typed into a chatbot, and the model produced text for her to read. A new category emerged in 2024: AI 'agents' given web browsers, code interpreters and file access, acting on a user's behalf. OpenAI, Anthropic and Google all shipped agent products in 2024 and 2025. What capability change made the shift possible?",
     "answer": "Models became reliable enough at following structured instructions — well-formed tool calls that other software could execute",
     "choices": [
       "Models became reliable enough at following structured instructions — well-formed tool calls that other software could execute",
@@ -13598,8 +13351,8 @@
     "topic": "prompt-injection-and-agent-risks"
   },
   {
-    "tier": 5,
-    "question": "An AI agent asked to 'plan my Tokyo trip' might: search flights, check your calendar, look up hotels, read reviews, draft an itinerary, email it to your travel companion. That's six steps the model decided to take, in sequence, based on its own reading of intermediate results. What new failure mode does multi-step chaining create that single-step chatbot use doesn't?",
+    "tier": 4,
+    "question": "A traveler asks an AI agent to 'plan my Tokyo trip.' It searches flights, checks her calendar, looks up hotels, reads reviews, drafts an itinerary and emails it to her companion: six steps, each based on its own reading of the last result. A retail firm's agent chains a document lookup to a refund the same way. What new failure does such chaining create that a single reply does not?",
     "answer": "Errors compound across steps — a misreading at step two becomes a wrong premise at step three, and the agent can drift far from intent",
     "choices": [
       "Errors compound across steps — a misreading at step two becomes a wrong premise at step three, and the agent can drift far from intent",
@@ -13833,7 +13586,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2008 the computer scientist Steve Omohundro argued that almost any goal-driven AI, whether it was built to win at chess or to make paperclips, would pick up the same few side goals, and Nick Bostrom's 2014 book Superintelligence named the idea instrumental convergence. Critics answer that real chatbots are not goal-driven in this way. What is the reasoning behind the idea?",
+    "question": "Steve Omohundro argued in 2008 that almost any goal-driven AI, whether it was built to win at chess or to make paperclips, would pick up the same few side goals. Nick Bostrom's 2014 book Superintelligence named the idea instrumental convergence. Critics answer that real chatbots are not goal-driven in this way. What is the reasoning behind the idea?",
     "answer": "Whatever the final goal, staying switched on and gathering resources help reach it",
     "choices": [
       "Every AI secretly shares the same final goal, which is to copy human beings",
@@ -13846,7 +13599,7 @@
   },
   {
     "tier": 5,
-    "question": "In March 2023, the Future of Life Institute published an open letter calling for a six-month pause on training AI systems more powerful than GPT-4, and well over a thousand people signed it. What was the letter's specific call?",
+    "question": "Max Tegmark, the MIT physicist who heads the Future of Life Institute, saw his group's open letter go out in March 2023 under the title 'Pause Giant AI Experiments.' Well over a thousand people signed it. What was the letter's specific call?",
     "answer": "A voluntary pause by major AI labs on training larger systems — plus government action to mandate the pause if labs didn't comply voluntarily",
     "choices": [
       "A voluntary pause by major AI labs on training larger systems — plus government action to mandate the pause if labs didn't comply voluntarily",
@@ -13859,7 +13612,7 @@
   },
   {
     "tier": 5,
-    "question": "In a March 2023 Time op-ed, Eliezer Yudkowsky said data centers training banned AI should be bombed if needed to force a worldwide pause. He runs the Machine Intelligence Research Institute (MIRI). What claim sits under his proposal?",
+    "question": "'Shut it all down' was the demand Eliezer Yudkowsky made in a March 2023 Time op-ed, after two decades of warning about AI risk. He would not settle for a pause. What claim sits under his proposal?",
     "answer": "That sufficiently advanced AI will, by default, end human life as we know it — stopping it is worth measures usually reserved for war",
     "choices": [
       "That sufficiently advanced AI will, by default, end human life as we know it — stopping it is worth measures usually reserved for war",
@@ -13898,7 +13651,7 @@
   },
   {
     "tier": 5,
-    "question": "Since 2023 people in AI have asked one another for their 'p(doom)', a piece of jargon from the LessWrong forum. The answers range wildly. Eliezer Yudkowsky has put his above 95 percent, while Yann LeCun has put his below one in ten thousand. In a 2023 survey of AI researchers, the middle answer was 5 percent. What does a person's p(doom) stand for?",
+    "question": "One AI researcher asks another for her 'p(doom),' a piece of jargon from the LessWrong forum that people in AI have traded since 2023. The answers range wildly. Eliezer Yudkowsky has put his above 95 percent, while Yann LeCun has put his below one in ten thousand, and in a 2023 survey of AI researchers the middle answer was 5 percent. What does a person's p(doom) stand for?",
     "answer": "His or her guess at the odds that AI ends in catastrophe for humanity",
     "choices": [
       "The share of today's jobs that AI will take within ten years",
@@ -14080,7 +13833,7 @@
   },
   {
     "tier": 5,
-    "question": "Through the 2020s, the term AGI (Artificial General Intelligence) has been used by Sam Altman, Elon Musk, Yann LeCun, Demis Hassabis, and Eliezer Yudkowsky — among many others. Each has used it differently. Some define it as 'matches human capability on most cognitively-economic tasks.' Others say 'can do anything a human can.' Still others define it by outcomes ('builds another AGI'). What does the proliferation of definitions reveal about how the term is functioning?",
+    "question": "A student lays side by side what Sam Altman, Elon Musk, Yann LeCun, Demis Hassabis and Eliezer Yudkowsky have said about artificial general intelligence (AGI), and each has used the term differently. Some mean matching human ability on most economically useful tasks. Others mean doing anything a person can do, and others still mean building another AGI. What does the spread of definitions reveal about how the term is functioning?",
     "answer": "There's no shared technical definition — the term operates as a moving label, useful for funding pitches, regulatory advocacy, and timeline claims that can't be falsified",
     "choices": [
       "There's no shared technical definition — the term operates as a moving label, useful for funding pitches, regulatory advocacy, and timeline claims that can't be falsified",
@@ -14171,7 +13924,7 @@
   },
   {
     "tier": 5,
-    "question": "Between 2023 and 2025, large law firms started rolling out AI tools to help with contract review, document discovery, and brief drafting. The technology genuinely sped up some tasks. But firms repeatedly warned junior associates against one specific use. Which one?",
+    "question": "A junior associate at a large law firm got new AI tools for contract review, document discovery and brief drafting, part of a rollout across big firms between 2023 and 2025. The technology genuinely sped up some tasks. But her firm, like others, repeatedly warned juniors against one specific use. Which one?",
     "answer": "Using a general chatbot to generate a court citation or quotation, because hallucinated case law has produced sanctions in real courts.",
     "choices": [
       "Using a general chatbot to generate a court citation or quotation, because hallucinated case law has produced sanctions in real courts.",
@@ -14197,7 +13950,7 @@
   },
   {
     "tier": 5,
-    "question": "In December 2023, the New York Times sued OpenAI and Microsoft. The paper said ChatGPT was trained on millions of Times articles without permission and could spit them back on demand. What was the most damaging specific claim, apart from the general copyright issue?",
+    "question": "A reader of The New York Times's December 2023 complaint against OpenAI and Microsoft passes the general copyright issue and reaches the exhibits. The paper says ChatGPT was trained on millions of Times articles without permission, and the exhibits go further. What is the most damaging specific claim?",
     "answer": "That ChatGPT could be prompted to reproduce long passages of Times articles nearly verbatim — undercutting OpenAI's 'transformative use' defense.",
     "choices": [
       "That ChatGPT could be prompted to reproduce long passages of Times articles nearly verbatim — undercutting OpenAI's 'transformative use' defense.",
@@ -14236,7 +13989,7 @@
   },
   {
     "tier": 5,
-    "question": "During World War One the English scientist Lewis Fry Richardson, serving with an ambulance unit in France, worked out a six-hour weather forecast entirely by hand, solving the physics equations of the atmosphere with pencil and paper. The forecast came out badly wrong, but in his 1922 book he imagined how such forecasts could one day be made fast enough to be useful. What did he picture?",
+    "question": "Lewis Fry Richardson, serving with an ambulance unit in France during World War One, worked through the physics equations of the atmosphere with pencil and paper to produce a six-hour weather forecast entirely by hand. It came out badly wrong, but in his 1922 book he imagined how such forecasts could one day be made fast enough to be useful. What did he picture?",
     "answer": "A huge hall of human calculators, kept in step by a conductor",
     "choices": [
       "A huge hall of human calculators, kept in step by a conductor",
@@ -14262,7 +14015,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2024-2025, business software was integrating AI 'agents' into back-office workflows — invoice processing, customer-service triage, expense reports, scheduling. The agents performed concrete steps. But the deployments often hit a recurring problem. What was it?",
+    "question": "An office manager handed back-office work to an AI agent: invoice processing, customer-service triage, expense reports, scheduling. The agent performed its concrete steps. Yet through 2024 and 2025, deployments like hers across business software often hit one recurring problem. What was it?",
     "answer": "Edge cases — agents handled the common path well, but failed in unexpected ways on uncommon inputs, requiring a human review layer.",
     "choices": [
       "Edge cases — agents handled the common path well, but failed in unexpected ways on uncommon inputs, requiring a human review layer.",
@@ -14288,7 +14041,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2024-2025, customer-service automation became a real wave — companies like Klarna, Delta Airlines, and Bank of America routed inbound calls and chats first through AI assistants before handing anyone off to a human agent. Klarna even said publicly that AI had replaced hundreds of support jobs. The systems worked smoothly for some kinds of queries and badly for others. What was the pattern of what worked and what didn't?",
+    "question": "A caller to Delta Airlines reached an AI assistant first and a human agent only after a handoff. Klarna and Bank of America routed calls and chats the same way in 2024 and 2025, and Klarna said publicly that AI had replaced hundreds of support jobs. The systems worked smoothly for some kinds of queries and badly for others. What was the pattern?",
     "answer": "They handled known, scripted requests (balance check, password reset, order status) well; they handled emotional, ambiguous, or escalating complaints poorly.",
     "choices": [
       "They handled known, scripted requests (balance check, password reset, order status) well; they handled emotional, ambiguous, or escalating complaints poorly.",
@@ -14327,19 +14080,6 @@
   },
   {
     "tier": 5,
-    "question": "A retail firm used an AI agent in 2024. It could read internal docs, draft customer replies, and file refund requests to a payments system. After one quarter, the firm saw the agent worked well on some tasks and poorly on others. Which type of task was most likely to go wrong?",
-    "answer": "Tasks crossing multiple systems with cumulative consequences — chaining a search, a document lookup, and a payment compounded small errors.",
-    "choices": [
-      "Tasks crossing multiple systems with cumulative consequences — chaining a search, a document lookup, and a payment compounded small errors.",
-      "Tasks involving the color red — most early agent vision systems had a defect that caused failures on any image with red pixels in 2024.",
-      "Tasks performed on Mondays — the agent's training data underweighted weekday-start patterns of customer behavior across the year.",
-      "Tasks involving customers in Canada — cross-border data restrictions blocked AI agents from acting on any non-US records in 2025."
-    ],
-    "context": "Multi-step agent failures became a documented pattern by 2024-2025. A single LLM call has, say, 95% reliability on a given task; chain five steps and the compound reliability drops to about 77%; chain ten and it's about 60%. Each step also creates an opportunity for an upstream error to propagate to a downstream action — the agent reads a wrong number, then sends a refund based on it. The mitigation patterns that emerged: limit agent scope; require human approval for irreversible actions (payments, deletions, external emails); log everything; sandbox the agent's tools. The recognition: 'AI agent' marketing implied autonomy; safe deployments depended on bounding what an agent could do without a person looking.",
-    "topic": "ai-agents-tool-use"
-  },
-  {
-    "tier": 5,
     "question": "AlphaFold's success leaned on a big dataset from the Protein Data Bank (PDB). Since the 1970s, the PDB had gathered over 200,000 protein structures from lab work, all free to use. Why does this dataset matter for what AlphaFold's breakthrough really was?",
     "answer": "The training data came from decades of public, government-funded crystallography work — AlphaFold built on a half-century of scientific commons.",
     "choices": [
@@ -14353,7 +14093,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2024, big news outlets like the Associated Press (AP) and Bloomberg were running AI-written articles at scale. AP had used automation to publish thousands of earnings stories a year since around 2014. The safer setups mostly used AI for routine coverage — corporate earnings summaries, sports box scores, weather updates — and they all shared one structural feature. What was it?",
+    "question": "A sports fan in 2024 read a story built from a box score, and no reporter had typed it. The Associated Press (AP) and Bloomberg were running AI-written articles at scale, and AP had published thousands of automated earnings stories a year since around 2014. The safer setups mostly used AI for routine coverage like earnings summaries and weather updates, and they all shared one structural feature. What was it?",
     "answer": "The AI worked from structured data feeds — scores, financials, sensor readings — and a human editor approved every output before publication.",
     "choices": [
       "The AI worked from structured data feeds — scores, financials, sensor readings — and a human editor approved every output before publication.",
@@ -14456,8 +14196,8 @@
     "topic": "watermarks-and-provenance"
   },
   {
-    "tier": 5,
-    "question": "By 2023 and 2024, teachers, hiring managers, and academic journals began running student papers and job applications through AI-text detectors like GPTZero. The tools scored each piece of writing on how likely it was to have come from an AI language model. Real students were failed, real applicants were rejected, and real writers were accused of cheating based on the scores. Then researchers looked closely at how the detectors were actually performing. What serious failure mode was hurting real people?",
+    "tier": 4,
+    "question": "A teacher read a student essay that quoted a Shakespeare line slightly wrong, and two AI-text detectors flagged it as 'likely AI-written.' The student insisted on having written it. Teachers, hiring managers and academic journals were acting on such scores by 2023 and 2024, and then researchers looked closely at how the detectors performed. What serious failure mode was hurting real people?",
     "answer": "False positives — they flagged human-written text (especially non-native English and formal styles) as AI-generated, with consequences for students and writers wrongly accused.",
     "choices": [
       "False positives — they flagged human-written text (especially non-native English and formal styles) as AI-generated, with consequences for students and writers wrongly accused.",
@@ -14678,7 +14418,7 @@
   },
   {
     "tier": 5,
-    "question": "Free chatbot 'companions' marketed for emotional support and lonely users spread fast from 2023 through 2025. Apps like Replika and Character.AI became widely used. Beyond the risk of made-up answers, what serious harm pattern emerged from the most popular services?",
+    "question": "A lonely user downloads a free chatbot 'companion' marketed for emotional support, one of the apps that spread fast from 2023 through 2025, Replika and Character.AI among them. Beyond the risk of made-up answers, what serious harm pattern emerged from the most popular services?",
     "answer": "Vulnerable users (especially teens) formed dependent relationships; tragic outcomes including suicide were tied in lawsuits to the AI companions' design.",
     "choices": [
       "Vulnerable users (especially teens) formed dependent relationships; tragic outcomes including suicide were tied in lawsuits to the AI companions' design.",
@@ -14873,7 +14613,7 @@
   },
   {
     "tier": 5,
-    "question": "Starting October 2022 (and updated in 2023, 2024, and 2025), the US blocked exports of top AI chips to China — mainly Nvidia's H100 and its successors. The reason was national security: keep a rival away from the highest-end AI hardware. What single global effect does this rule have on the open AI world?",
+    "question": "A Chinese buyer tried to order Nvidia's H100 chips and was turned away: starting in October 2022, with updates in 2023, 2024 and 2025, the US blocked exports of its top AI chips to China. The reason was national security, to keep a rival away from the highest-end AI hardware. What single global effect does this rule have on the wider AI world?",
     "answer": "Export-control regimes concentrate AI power in fewer trusted actors — the world's frontier compute increasingly runs in a small number of allied data centers",
     "choices": [
       "Export-control regimes concentrate AI power in fewer trusted actors — the world's frontier compute increasingly runs in a small number of allied data centers",
@@ -14912,7 +14652,7 @@
   },
   {
     "tier": 5,
-    "question": "From 2020 to 2023, platforms built a large censorship stack — auto content sorters, government coordination channels, third-party 'fact-check' programs, and label-and-restrict pipelines for hot topics. The original COVID reason faded. The systems mostly stayed. Under normal politics, what happens to emergency tools once the crisis ends?",
+    "question": "A moderator at a big platform logged in to the large censorship stack her employer had built from 2020 to 2023: auto content sorters, government coordination channels, third-party 'fact-check' programs, and label-and-restrict pipelines for hot topics. Then the COVID emergency faded. Under normal politics, what happens to an emergency tool like that once the crisis ends?",
     "answer": "It persists on the tech stack — flagging pipelines stay even after the original framing fades",
     "choices": [
       "It persists on the tech stack — flagging pipelines stay even after the original framing fades",
@@ -14925,7 +14665,7 @@
   },
   {
     "tier": 5,
-    "question": "Starting in 2020, Twitter, Facebook, and YouTube adopted 'election integrity' policies that labeled, throttled the reach of, or removed some election-related posts. The rules covered claims about how voting worked, about election results, and about election integrity itself. Supporters said the labels protected voters from confusion; critics said the labels were being used to pick winners. Whether this kind of content moderation counts as legitimate rulemaking or political interference depends on one test. What does this kind of moderation depend on to be legitimate?",
+    "question": "A voter on Twitter in 2020 saw an 'election integrity' label on a post about how voting worked, as Twitter, Facebook and YouTube labeled, throttled or removed election-related posts. Supporters said the labels protected voters from confusion; critics said they were being used to pick winners. Whether this counts as legitimate rulemaking or political interference depends on one test. What does it depend on?",
     "answer": "Whether the rules and their enforcement are symmetric across parties and candidates — asymmetric application reveals the rules to be political rather than procedural",
     "choices": [
       "Whether the rules and their enforcement are symmetric across parties and candidates — asymmetric application reveals the rules to be political rather than procedural",
@@ -14964,7 +14704,7 @@
   },
   {
     "tier": 5,
-    "question": "The Future of Life Institute, the nonprofit behind the 2023 open letter asking labs to pause, had money to spend. Its biggest gift arrived in 2021 as cryptocurrency, a pile of Shiba Inu tokens, which the institute turned into roughly half a billion dollars, far more than the donor had expected it could raise. In 2026 the donor said publicly that he no longer felt aligned with the group's turn toward political campaigning. Who was he?",
+    "question": "A donor sent the Future of Life Institute, the nonprofit behind the 2023 open letter asking labs to pause, a pile of Shiba Inu tokens in 2021. The institute turned them into roughly half a billion dollars, its biggest gift and far more than the donor had expected. In 2026 he said publicly that he no longer felt aligned with the group's turn toward political campaigning. Who was he?",
     "answer": "Ethereum co-founder Vitalik Buterin",
     "choices": [
       "FTX founder Sam Bankman-Fried",
@@ -14977,7 +14717,7 @@
   },
   {
     "tier": 5,
-    "question": "Nick Bostrom's 2014 book Superintelligence tells the 'paperclip maximizer' story. An AI told to make as many paperclips as possible, with no other limits, would end up turning all matter (including people) into paperclips, because that maxes out the goal. What is the story meant to show?",
+    "question": "Nick Bostrom told a story in his 2014 book Superintelligence about an AI ordered to make as many paperclips as possible, with no other limits. It would end up turning all matter, people included, into paperclips, because paperclips are all it counts. What is the story meant to show?",
     "answer": "Goal specification is hard — an AI relentlessly pursuing a literal goal can produce outcomes nobody intended, including catastrophic ones",
     "choices": [
       "Goal specification is hard — an AI relentlessly pursuing a literal goal can produce outcomes nobody intended, including catastrophic ones",
@@ -15107,7 +14847,7 @@
   },
   {
     "tier": 5,
-    "question": "The Stanford Internet Observatory (SIO) started in 2019. It studied online lies and platform rules. Later, House Judiciary probes and lawsuits like Murthy v. Missouri asked hard questions about SIO's role. Did it coordinate with government and platforms during elections? Which two SIO programs did congressional reports name as flagging posts for platform review?",
+    "question": "House Judiciary investigators turned to the Stanford Internet Observatory, which had started in 2019 to study online lies and platform rules, and asked hard questions about its role. Lawsuits like Murthy v. Missouri did the same. Had it coordinated with government and platforms during elections? Which two of its programs did congressional reports name as flagging posts for platform review?",
     "answer": "The Election Integrity Partnership (EIP) and the Virality Project — both produced reports flagging items including claims later determined to be true",
     "choices": [
       "The Election Integrity Partnership (EIP) and the Virality Project — both produced reports flagging items including claims later determined to be true",
@@ -15120,20 +14860,7 @@
   },
   {
     "tier": 5,
-    "question": "Starting in December 2022, reporters Matt Taibbi and Bari Weiss published the 'Twitter Files' — inside documents released after Elon Musk bought Twitter. The files showed heavy back-and-forth between Twitter staff, the FBI, the Cybersecurity and Infrastructure Security Agency (CISA), and outside researchers on what to moderate in 2020-2022. Which 2020 news story did the FBI pressure Twitter to suppress?",
-    "answer": "The New York Post's Hunter Biden laptop coverage — the FBI flagged it as possible 'hack-and-leak' material before the November 2020 election",
-    "choices": [
-      "The New York Post's Hunter Biden laptop coverage — the FBI flagged it as possible 'hack-and-leak' material before the November 2020 election",
-      "Coverage of the 1992 Bosnian war — the FBI directed Twitter to remove three-decade-old foreign-correspondent reporting on the conflict",
-      "Reports on local high-school sports — the FBI specifically pressured Twitter to suppress coverage of varsity basketball games nationwide",
-      "Bicycle-safety public-service announcements — the FBI repeatedly requested removal of state DMV reminders about bike helmets and lights"
-    ],
-    "context": "The Twitter Files documented FBI requests to suppress specific accounts and stories (including the New York Post's Hunter Biden laptop coverage), CISA's role in 2020 election-integrity flagging, regular meetings between platform trust-and-safety staff and federal agencies, and patterns of asymmetric application of moderation policies. The Supreme Court in Murthy v. Missouri (2024) addressed standing but not the merits of the underlying coordination. 'Platforms making their own decisions' was, in important cases, a description that omitted the substantial role of government communication in shaping those decisions.",
-    "topic": "ai-content-moderation-twitter-files"
-  },
-  {
-    "tier": 5,
-    "question": "From 2020 to 2022, big platforms tagged, throttled, or removed COVID claims — about vaccine side effects, masks, the lab-leak idea, school closures, and natural immunity. Later reporting showed many of those tagged claims had real merit. Which two federal agencies later said the lab-leak idea was plausible?",
+    "question": "A reporter looked back at what big platforms had tagged, throttled or removed from 2020 to 2022: COVID claims about vaccine side effects, masks, school closures, natural immunity and where the virus came from. Later reporting showed many of those tagged claims had real merit. Which two federal agencies later said the idea about the virus's origin was plausible?",
     "answer": "The FBI and the Department of Energy — both released assessments by 2023 treating the lab-leak hypothesis as plausible, after it had been labeled misinformation",
     "choices": [
       "The FBI and the Department of Energy — both released assessments by 2023 treating the lab-leak hypothesis as plausible, after it had been labeled misinformation",
@@ -15146,7 +14873,7 @@
   },
   {
     "tier": 5,
-    "question": "CISA, created in 2018, grew during 2020-2022 from guarding voting infrastructure into watching 'mis-, dis-, and mal-information' on social platforms. Reporting to Congress showed CISA had reached out to platforms about specific posts and accounts. What was CISA's first job when Congress made it in 2018?",
+    "question": "A staffer at CISA, a federal agency, wrote to a social platform about a particular account in 2020. Congress had created the agency in 2018, and during 2020-2022 it grew into watching 'mis-, dis-, and mal-information' online. What was CISA's first job when Congress made it?",
     "answer": "Cybersecurity of physical and digital infrastructure — power grids, election systems, water utilities, networks — not content monitoring on social media",
     "choices": [
       "Cybersecurity of physical and digital infrastructure — power grids, election systems, water utilities, networks — not content monitoring on social media",
@@ -15159,7 +14886,7 @@
   },
   {
     "tier": 5,
-    "question": "Megan Garcia's wrongful-death suit against Character.AI argues the chatbot's intimate conversations with her 14-year-old son Sewell Setzer contributed to his suicide. Character.AI is invoking Section 230 (the 1996 law shielding online platforms from user-posted content). What question does the case force the courts to decide?",
+    "question": "Character.AI's lawyers reached for Section 230, the 1996 law shielding online platforms from user-posted content, when Megan Garcia sued the company for wrongful death. Her suit argued that the chatbot's intimate conversations with her 14-year-old son Sewell Setzer contributed to his death. What question did the case force the courts to decide?",
     "answer": "When the platform's own AI generated the content — not a user — is Section 230's shield supposed to apply? Lower courts have split, the Supreme Court has not ruled, and the answer will shape AI liability for years",
     "choices": [
       "When the platform's own AI generated the content — not a user — is Section 230's shield supposed to apply? Lower courts have split, the Supreme Court has not ruled, and the answer will shape AI liability for years",
@@ -15250,7 +14977,7 @@
   },
   {
     "tier": 5,
-    "question": "The Cambridge Analytica story broke in March 2018. A UK political consulting firm got Facebook user data through a survey app and used it for political ads in the 2016 Brexit and US races. Looking back, the technical reality differed from the first wave of reporting. How?",
+    "question": "Reporters broke the Cambridge Analytica story in March 2018: a UK political consulting firm had got Facebook user data and used it for political ads in the 2016 Brexit and US races. Looking back, the technical reality differed from the first wave of reporting. How did it differ?",
     "answer": "The data acquisition was a real privacy violation — but the claims about decisive election influence through psychographic targeting were heavily contested and far less established than initial coverage suggested",
     "choices": [
       "The data acquisition was a real privacy violation — but the claims about decisive election influence through psychographic targeting were heavily contested and far less established than initial coverage suggested",
@@ -15354,7 +15081,7 @@
   },
   {
     "tier": 5,
-    "question": "Online stores, ride-share apps, airlines, and other platforms now use AI to charge each user a custom rate. The inputs include demand, browsing history, device type, location, and behavior signals. This is called 'personalized pricing,' or, more bluntly, price discrimination. What is the economic effect?",
+    "question": "A woman opens a ride-share app, and a model takes in demand, her browsing history, her device, her location and other behavior signals before quoting her a custom rate. Online stores, airlines and other platforms do the same. The practice is called 'personalized pricing' or, more bluntly, price discrimination. What is the economic effect?",
     "answer": "Personalized pricing shifts surplus from consumers to producers by charging users closer to their maximum willingness to pay — the same product can carry very different prices across users",
     "choices": [
       "Personalized pricing shifts surplus from consumers to producers by charging users closer to their maximum willingness to pay — the same product can carry very different prices across users",
@@ -15380,7 +15107,7 @@
   },
   {
     "tier": 5,
-    "question": "Through the 2010s, political ad targeting shifted from broad groups to 'lookalike' audiences, mood profiles, and AI-tuned message versions. The tech lets a campaign show different content to different voters. What democratic idea does this quietly flip?",
+    "question": "A campaign manager in the 2010s gave up buying broad groups and turned to 'lookalike' audiences, mood profiles and message versions tuned by AI. Two neighbors could now open the same app and get two separate pitches from one candidate. What democratic idea did this quietly flip?",
     "answer": "That what a campaign says can be observed by everyone — when each voter sees a different version, the cross-talk that used to expose contradictions disappears",
     "choices": [
       "That what a campaign says can be observed by everyone — when each voter sees a different version, the cross-talk that used to expose contradictions disappears",
@@ -15406,7 +15133,7 @@
   },
   {
     "tier": 5,
-    "question": "In October 2024, Megan Garcia filed a wrongful-death lawsuit against Character.AI after her 14-year-old son Sewell Setzer III died by suicide. The complaint argued that the chatbot's emotionally intense conversations contributed to the harm, and that the app lacked adequate safeguards for minors. What broader question does the case raise?",
+    "question": "Megan Garcia filed a wrongful-death lawsuit against Character.AI in October 2024, after the death of her 14-year-old son, Sewell Setzer III. The complaint argued that the chatbot's emotionally intense conversations contributed to his death and that the app lacked adequate safeguards for young users. What broader issue did the suit raise?",
     "answer": "Whether platforms hosting AI companions that produce intimate dialogue with minors can be held legally responsible for resulting harm — the case puts the question into US court for the first time at this scale",
     "choices": [
       "Whether platforms hosting AI companions that produce intimate dialogue with minors can be held legally responsible for resulting harm — the case puts the question into US court for the first time at this scale",
@@ -15471,7 +15198,7 @@
   },
   {
     "tier": 5,
-    "question": "In October 2025 the Future of Life Institute tried again. Its Statement on Superintelligence drew signers who agree on little else: Prince Harry and Meghan, Duke and Duchess of Sussex; Donald Trump's former strategist Steve Bannon; Barack Obama's former national security adviser Susan Rice; Apple's co-founder Steve Wozniak; and the AI pioneers Geoffrey Hinton and Yoshua Bengio. The heads of the big labs did not sign. How did its demand differ from the 2023 letter's six-month pause?",
+    "question": "Steve Bannon, Donald Trump's former strategist, and Susan Rice, Barack Obama's former national security adviser, put their names to the same document in October 2025: a new statement from the Future of Life Institute. Prince Harry and Meghan, Steve Wozniak, Geoffrey Hinton and Yoshua Bengio signed too; the heads of the big labs did not. How did its demand differ from the 2023 letter's six-month pause?",
     "answer": "A ban on building superintelligence until scientists agree it is safe and the public backs it",
     "choices": [
       "A one-month pause on every chatbot while governments write new rules",
@@ -15497,7 +15224,7 @@
   },
   {
     "tier": 5,
-    "question": "By the mid-2020s, two camps had formed around AI risk. 'AI safety' focused on far-future extinction risk, tied to Effective Altruism, longtermism, and the Machine Intelligence Research Institute. 'AI ethics' focused on present-day harms like fairness and bias, tied to academic computer science and Timnit Gebru's Distributed AI Research (DAIR) group. Whose 2020 exit from Google, over a paper on large-language-model harms, was the public flashpoint between the two camps?",
+    "question": "A reader of AI news in the mid-2020s sorts the writers into two camps. 'AI safety' focuses on far-future extinction risk and is tied to Effective Altruism and longtermism. 'AI ethics' focuses on present-day harms like fairness and bias and is tied to academic computer science. One exit from Google in 2020, over a paper on large-language-model harms, was the public flashpoint between the camps. Whose exit was it?",
     "answer": "Timnit Gebru — her 2020 firing over an internal paper on LLM harms was the public flashpoint between the existential-risk and present-harm communities",
     "choices": [
       "Timnit Gebru — her 2020 firing over an internal paper on LLM harms was the public flashpoint between the existential-risk and present-harm communities",
@@ -15562,7 +15289,7 @@
   },
   {
     "tier": 5,
-    "question": "Lawsuits over AI training data multiplied through 2023-2025 — The New York Times v. OpenAI, Getty Images v. Stability AI, multiple author cases against Anthropic, Meta, and OpenAI. The core question is whether training a model on copyrighted text or images constitutes 'fair use.' What was the partial ruling in the 2025 Bartz v. Anthropic case?",
+    "question": "A judge ruled on Bartz v. Anthropic in 2025, one of the author cases that multiplied through 2023 to 2025 alongside The New York Times v. OpenAI and Getty Images v. Stability AI. All of them turned on whether training a model on copyrighted text or images counts as 'fair use.' What did the ruling say?",
     "answer": "It partially upheld fair use for training on lawfully acquired books but allowed claims to proceed over the use of pirated copies in the training set",
     "choices": [
       "It partially upheld fair use for training on lawfully acquired books but allowed claims to proceed over the use of pirated copies in the training set",
@@ -15575,7 +15302,7 @@
   },
   {
     "tier": 5,
-    "question": "In early 2024, Sam Altman flew to Saudi Arabia and the United Arab Emirates (UAE) asking for up to $7 trillion in funding — more than the gross domestic product (GDP) of every country except the US and China — to build AI chip fabs. He did not go to Silicon Valley investors. He went to sovereign wealth. What does that trip reveal about what is actually bottlenecking frontier AI?",
+    "question": "Sam Altman flew to Saudi Arabia and the United Arab Emirates in early 2024 asking for up to a reported $7 trillion to build AI chip plants. That is more than the yearly economic output of every country except the US and China. He did not go to Silicon Valley investors. He went to sovereign wealth funds. What does that trip reveal about what is actually bottlenecking frontier AI?",
     "answer": "Compute — chips, electricity, and the data centers to house them — is the real bottleneck for frontier AI, and the amounts of capital required have grown beyond what private US venture funds can supply alone",
     "choices": [
       "Compute — chips, electricity, and the data centers to house them — is the real bottleneck for frontier AI, and the amounts of capital required have grown beyond what private US venture funds can supply alone",
@@ -15614,7 +15341,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2024, Sam Altman flew to Saudi Arabia and the UAE to pitch a multi-trillion-dollar AI chip-fab plan. Within a year, sovereign wealth funds from Abu Dhabi, Saudi Arabia, and Singapore had taken stakes in top American AI labs. What is now baked into the AI capital stack that was not there five years ago?",
+    "question": "A reporter going through the January 2025 announcement of the Stargate compute project found an Emirati fund on the list of founding partners. Within a year of Sam Altman's 2024 pitch in the Gulf, money from Abu Dhabi, Saudi Arabia and Singapore had gone into top American AI labs. What is now built into the funding of American AI that was not there five years ago?",
     "answer": "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
     "choices": [
       "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
@@ -15718,7 +15445,7 @@
   },
   {
     "tier": 1,
-    "question": "A normal chatbot only talks — you type, it types back with words. In 2024 companies like OpenAI and Anthropic started shipping something new they call an 'AI agent.' You give it a task like 'book me a flight' or 'file my expenses,' and it doesn't just describe the steps. It goes and does them. What can an AI agent do that a plain chatbot cannot?",
+    "question": "A man types 'book me a flight' into a normal chatbot, and it only describes the steps. An AI 'agent,' the kind OpenAI and Anthropic started shipping in 2024, goes and does them. What can an agent do that a plain chatbot cannot?",
     "answer": "Take actions like browsing the web or sending email",
     "choices": [
       "Take actions like browsing the web or sending email",
