@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "In 1993 an American mathematics professor invented a brand-new kind of game. Each player builds a custom deck of magical spells, creatures, and lands, then duels a rival to bring that rival from 20 life to zero. He called the game Magic: the Gathering, and it kicked off the whole trading-card-game craze that later included Pokemon and Yu-Gi-Oh! What was the mathematician's name?",
+    "question": "An American mathematics professor brought out a brand-new kind of game in 1993, in which each player builds a deck of magical spells, creatures and lands and duels a rival from 20 life to zero. He called it Magic: the Gathering. What was the mathematician's name?",
     "answer": "Richard Garfield",
     "choices": [
       "Richard Garfield",
@@ -14,7 +14,7 @@
   },
   {
     "tier": 1,
-    "question": "Magic: the Gathering is a fantasy card game where every spell needs magical energy called mana. Every card belongs to one of five colors, and each color has its own feel. One color is peaceful and orderly and heals; one is clever, cold, and draws cards; one is dark, ruthless, and kills things; one is fast, angry, and burns; one is wild, green, and full of growing life. Which five colors are they?",
+    "question": "A Magic: the Gathering player casts her spells from five colors of mana. One is peaceful and heals; one is clever and draws cards; one is ruthless and kills; one is fast and burns; one is wild and full of growing life. What are the five?",
     "answer": "White, blue, black, red, and green",
     "choices": [
       "White, blue, black, red, and green",
@@ -27,7 +27,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1990 a computer programmer named Peter Adkison started a small game company out of his garage in Renton, Washington, near Seattle. Three years later his tiny company published Magic: the Gathering, the very first modern trading card game. It quickly became one of the most famous game makers in the world and later bought the Dungeons & Dragons rules too. What is the company called?",
+    "question": "Magic: the Gathering's designer pitched a kind of game that did not yet exist to a tiny company in a garage in Renton, Washington. Its founder, a computer programmer who had started the outfit in 1990, agreed to publish it. What is the company called?",
     "answer": "Wizards of the Coast",
     "choices": [
       "Wizards of the Coast",
@@ -40,7 +40,7 @@
   },
   {
     "tier": 1,
-    "question": "In Magic: the Gathering, red is the color of fire and fury. Its most famous cheap spell costs just one red mana and hurls a jolt of electricity that deals three damage to any creature or player. Every red beginner deck has run four copies of it since 1993. The card art shows a jagged yellow bolt splitting the sky. What is this spell called?",
+    "question": "A Magic: the Gathering player pays a single red mana and deals three damage to any creature or player, with the most famous cheap spell in the color of fire and fury. It has sat in red beginner decks since 1993. What is this spell called?",
     "answer": "Lightning Bolt",
     "choices": [
       "Lightning Bolt",
@@ -53,7 +53,7 @@
   },
   {
     "tier": 1,
-    "question": "In Magic: the Gathering, when you play a creature card and it enters the battlefield, that creature cannot attack the very same turn it comes down. It has to wait one full turn before it can swing at anyone — as if the creature just got yanked from another plane of existence and is still dizzy. Cards with the 'haste' ability are the exception. What is this waiting rule called?",
+    "question": "Two Magic: the Gathering players are dueling, and one lays down a fresh creature. It cannot attack that turn. It has to wait for the next one unless it has haste, a rule that stops first-turn kills. What is this waiting rule called?",
     "answer": "Summoning sickness",
     "choices": [
       "Summoning sickness",
@@ -66,7 +66,7 @@
   },
   {
     "tier": 1,
-    "question": "In Magic: the Gathering, when you use a card's power you rotate it 90 degrees sideways on the table so you know you already used it this turn. A land you rotate this way produces one mana for casting spells; a creature you rotate this way is 'used up' from attacking. You straighten the cards back at the start of your next turn. What is this sideways-turning action called?",
+    "question": "A Magic: the Gathering player turns a land card 90 degrees sideways on the table and gets one mana for casting a spell. A creature turned the same way has gone on the attack, and both straighten up at the start of the next turn. What is this sideways turn called?",
     "answer": "Tapping",
     "choices": [
       "Tapping",
@@ -365,7 +365,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1993 the American mathematician Richard Garfield designed a new kind of card game called Magic: The Gathering (MtG), in which players cast spells and summon creatures from personal decks they built themselves. Wizards of the Coast printed the very first two runs, called Alpha and Beta, with bold thick black card borders. Later that same year Wizards rushed a third run into shops to keep up with demand. It was called Unlimited. How did Unlimited look different from Alpha and Beta?",
+    "question": "Magic: the Gathering's makers rushed a third print run into shops in December 1993 to keep up with demand, after the first two, called Alpha and Beta. They called the third one Unlimited. How did Unlimited differ from Alpha and Beta?",
     "answer": "It used white borders instead of black",
     "choices": [
       "It used white borders instead of black",
@@ -378,7 +378,7 @@
   },
   {
     "tier": 2,
-    "question": "After Magic: The Gathering (MtG) exploded onto game-shop shelves in 1993, its inventor Richard Garfield rushed the very first expansion set to print in December of that year. He borrowed its whole flavor from the old Middle Eastern folktales of Scheherazade — genies, camels, sultans, and desert cities — printing cards like Juzam Djinn, Library of Alexandria, and Erhnam Djinn that became instant collector prizes. What was this first-ever MtG expansion set called?",
+    "question": "Garfield rushed the very first expansion for Magic: the Gathering to print in December 1993. He borrowed its whole flavor from old folktales, printing cards like Library of Alexandria that became instant collector prizes. What was this first expansion called?",
     "answer": "Arabian Nights",
     "choices": [
       "Arabian Nights",
@@ -391,7 +391,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 1994 Wizards of the Coast printed the second Magic: The Gathering (MtG) expansion, an artifact-heavy set that told the story of a legendary war between two brothers in the ancient land of Terisiare. One brother was a brilliant tinkerer who built weapons from careful engineering; the other seized raw artifact power without truly understanding it. Their war eventually shattered the world and cooled the whole planet into an Ice Age. What were the two brothers named?",
+    "question": "Two brothers go to war in the ancient land of Terisiare in Magic: the Gathering's artifact-heavy expansion of March 1994. One is a brilliant tinkerer who builds weapons by careful engineering; the other seizes raw artifact power without truly understanding it. Their war shatters the world and cools the whole planet into an ice age. What are the two brothers named?",
     "answer": "Urza and Mishra",
     "choices": [
       "Urza and Mishra",
@@ -404,7 +404,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 1994 Wizards of the Coast released a huge Magic: The Gathering (MtG) expansion of 310 cards, the largest set the game had ever printed. It introduced a brand-new card type called legendary creatures — unique named heroes and villains like Nicol Bolas and Sivitri Scarzam that players could only run one copy of per deck. It also brought in the game's first multicolored cards and an odd combat rule called banding. What was the set called?",
+    "question": "A Magic: the Gathering player opens a pack from the huge expansion of June 1994, at 310 cards the largest set the game had ever printed. Inside are unique named heroes and villains like Sivitri Scarzam, the game's first multicolored cards and an odd combat rule called banding. What is the set called?",
     "answer": "Legends",
     "choices": [
       "Legends",
@@ -417,7 +417,7 @@
   },
   {
     "tier": 2,
-    "question": "In the trading card game Magic: The Gathering (MtG), the most valuable early cards are called the Power Nine. Four of them are 'moxen' — small artifact stones that let you tap them to add one mana of a specific color to cast spells. One is named Mox Pearl. Which color of mana does Mox Pearl produce?",
+    "question": "A duelist plays Mox Pearl, one of the small artifact stones called moxen and among the most valuable early cards in Magic: the Gathering. Each mox adds one mana of a single color. Which color of mana does Mox Pearl produce?",
     "answer": "White",
     "choices": [
       "White",
@@ -430,7 +430,7 @@
   },
   {
     "tier": 2,
-    "question": "In the trading card game Magic: The Gathering (MtG), one iconic white flying creature has been printed since the very first set (called Alpha) in 1993. She is an angel with 4 power and 4 toughness for five mana, and she has both flying and vigilance so she can attack without tapping. What is this famous white angel called?",
+    "question": "A duelist pays five mana in the first set of Magic: the Gathering, Alpha, and lays down a famous white creature. She has 4 power, 4 toughness, flying and vigilance. What is this creature called?",
     "answer": "Serra Angel",
     "choices": [
       "Serra Angel",
@@ -443,7 +443,7 @@
   },
   {
     "tier": 2,
-    "question": "In the trading card game Magic: The Gathering (MtG), one of the most famous blue spells cancels an opponent's spell before it can even happen. It costs one blue mana plus one generic mana, and it has appeared in nearly every set since the original Alpha printing in 1993. What is this classic blue spell called?",
+    "question": "A Magic: the Gathering player casts a spell, and her opponent spends two mana on a famous blue card and stops it before it can even happen. The card has appeared in nearly every set since the original Alpha printing in 1993. What is this classic blue spell called?",
     "answer": "Counterspell",
     "choices": [
       "Counterspell",
@@ -456,7 +456,7 @@
   },
   {
     "tier": 2,
-    "question": "In Magic: The Gathering (MtG), one tiny green mana-creature has been reprinted in edition after edition since the game's 1993 debut, making it one of the most-printed cards in MtG history. It costs a single green mana to cast, has the flying ability so nothing on the ground can block it, and taps to add one mana of any color you like — perfect for jump-starting a five-color deck. What is this iconic green flyer called?",
+    "question": "A player jump-starting a five-color Magic: the Gathering deck casts one tiny green creature for a single green mana, and it can add one mana of any color. It has been reprinted edition after edition since the game's 1993 debut. What is this creature called?",
     "answer": "Birds of Paradise",
     "choices": [
       "Birds of Paradise",
@@ -755,7 +755,7 @@
   },
   {
     "tier": 3,
-    "question": "American game designer Richard Garfield invented the trading card game Magic: The Gathering (MtG) in 1993. That same year he finished his doctorate (PhD) in mathematics from the University of Pennsylvania. The particular branch of math he studied is all about counting arrangements and analyzing games, and it directly helped him design MtG with balanced odds. What branch of mathematics was it?",
+    "question": "Garfield finished his doctorate in mathematics at the University of Pennsylvania in 1993, the same year his card game Magic: the Gathering reached the shops. His branch of mathematics directly helped him give the game balanced odds. What branch was it?",
     "answer": "Combinatorial mathematics, specifically combinatorial game theory",
     "choices": [
       "Combinatorial mathematics, specifically combinatorial game theory",
@@ -768,7 +768,7 @@
   },
   {
     "tier": 3,
-    "question": "Peter Adkison founded Wizards of the Coast in 1990 in a garage in Renton, Washington. He met Richard Garfield through a mutual acquaintance and saw a prototype of Magic in 1991. Adkison initially wanted to publish a different game by Garfield first. What was that other game?",
+    "question": "The game publisher Adkison met Garfield through a mutual acquaintance and saw a prototype of Magic: the Gathering in 1991. It was not what he wanted first. He hoped to publish a different Garfield game, but that one cost too much to make. What was that other game?",
     "answer": "RoboRally, a robot-programming board game",
     "choices": [
       "RoboRally, a robot-programming board game",
@@ -781,7 +781,7 @@
   },
   {
     "tier": 3,
-    "question": "Magic: the Gathering's first World Championship was held at Gen Con in Milwaukee from August 18-21, 1994. Sixteen-year-old player Zak Dolan defeated Bertrand Lestree in the finals using a deck centered on a single artifact-type monster card. What was Dolan's win condition?",
+    "question": "Zak Dolan, sixteen years old, beat Bertrand Lestree in the final of Magic: the Gathering's first World Championship in August 1994, at the Gen Con convention in Milwaukee. His deck centered on a single monster card. Which card was it?",
     "answer": "Su-Chi, a powerful Antiquities artifact creature",
     "choices": [
       "Su-Chi, a powerful Antiquities artifact creature",
@@ -794,7 +794,7 @@
   },
   {
     "tier": 3,
-    "question": "In April 1996 Wizards of the Coast created a Magic: The Gathering (MtG) list of cards they officially promised never to reprint again, called the Reserved List. It was born from a huge fan revolt one year earlier: in July 1995 Wizards had released a compilation set that reprinted a big chunk of the most famous cards from earlier expansions like Antiquities and Legends, which crashed the collector market and made longtime players furious. What was the 1995 reprint set called?",
+    "question": "Longtime Magic: the Gathering players rose up in fury in July 1995, when a cheap new set reprinted a big chunk of the most famous cards from earlier expansions and crashed the collector market. The makers answered in April 1996 with the Reserved List, a promise never to reprint. What was the 1995 set called?",
     "answer": "Chronicles, a 1995 reprint compilation",
     "choices": [
       "Chronicles, a 1995 reprint compilation",
@@ -807,20 +807,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 1994 the Magic: The Gathering (MtG) expansion Legends introduced dozens of huge new legendary creatures. One card was a five-headed dragon-goddess borrowed straight from Dungeons and Dragons: Tiamat, queen of evil dragons. Another was a mighty red seven-power ancient wyrm — a scheming, primordial reptile who would become the game's most famous recurring villain across the next thirty years of storylines. Who was this blue-black-red 7/7 legendary creature?",
-    "answer": "Nicol Bolas, the elder dragon legend",
-    "choices": [
-      "Nicol Bolas, the elder dragon legend",
-      "Bahamut, the platinum dragon king",
-      "Shivan Dragon, the molten red 5/5",
-      "Sliver Queen, the seven-color hivequeen"
-    ],
-    "context": "The Legends Elder Dragons were Nicol Bolas, Arcades Sabboth, Chromium, Palladia-Mors, and Vaevictis Asmadi. They were among the first multicolor cards ever printed. Bolas became a central villain in lore.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 3,
-    "question": "In 1993 the trading card game Magic: The Gathering (MtG) shipped its first print run — a set fans now call Alpha, of only about 2.6 million cards. The very next print run, called Beta, and every printing after used the same designs. Even so, experienced collectors can tell an Alpha card from a Beta by one physical difference in the card itself. What tells them a card is Alpha?",
+    "question": "An experienced collector holds up two Magic: the Gathering cards of the same design, one from the first print run of about 2.6 million cards, called Alpha, and one from the next, called Beta. One physical difference in the card itself tells her which is which. What marks a card as Alpha?",
     "answer": "Rounder corners than Beta and all later printings",
     "choices": [
       "Rounder corners than Beta and all later printings",
@@ -833,7 +820,7 @@
   },
   {
     "tier": 3,
-    "question": "MtG's Color Pie organizes the five colors along a circle: white is opposite black, blue is opposite red, green is opposite black. Each color has two 'enemy' colors and two 'allied' colors. White's allied colors are blue and green. What are white's two enemy colors?",
+    "question": "Garfield set the colors of Magic: the Gathering on a wheel, each with two allies at its side and two enemies opposite. White, the color of order, counts green among its allies. What are white's two enemy colors?",
     "answer": "Black and red",
     "choices": [
       "Black and red",
@@ -846,7 +833,7 @@
   },
   {
     "tier": 3,
-    "question": "The trading card game Magic: The Gathering (MtG) held its very first Pro Tour at the Park Central Hotel in New York City in February 1996. The game's maker, Wizards of the Coast, invited 128 of the world's top players to compete for a $100,000 prize pool — an unheard-of purse for a card game at that time. The winner played a fast, aggressive strategy called White Weenie, using cheap little white creatures to swarm his opponents. Who won that first Pro Tour?",
+    "question": "One player swarmed his opponents with cheap little creatures at the Park Central Hotel in New York City in February 1996, at Magic: the Gathering's very first Pro Tour. The game's makers had invited 128 of the world's top players to compete for a $100,000 prize pool, an unheard-of purse for a card game. Who won that first Pro Tour?",
     "answer": "Michael Loconto",
     "choices": [
       "Michael Loconto",
@@ -1145,7 +1132,7 @@
   },
   {
     "tier": 4,
-    "question": "Magic: the Gathering's Power Nine is the most coveted set of cards in the game's history. Eight of the nine were printed only in Alpha, Beta, and Unlimited (1993). The ninth was reprinted in subsequent base sets through 1995 before joining the Reserved List. Which card had that broader print history?",
+    "question": "A collector hunting the Power Nine, the most coveted cards in Magic: the Gathering, finds eight of them only in the Alpha, Beta and Unlimited printings of 1993. The ninth went on being reprinted in later base sets through 1995. Which card had that broader print history?",
     "answer": "Time Vault, which appeared in Beta, Unlimited, Revised, and Fourth Edition",
     "choices": [
       "Time Vault, which appeared in Beta, Unlimited, Revised, and Fourth Edition",
@@ -1158,7 +1145,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1993, mathematician Richard Garfield invented Magic: The Gathering (MtG), a trading card game where each player builds a unique deck and duels using spells and creatures. Garfield built the game around one guiding rule: any three cards drawn together should combine into some kind of workable plan. He borrowed that combo-first idea from another game he had loved for years — a science-fiction board game where every player controlled an alien species with one game-breaking special power. Which game inspired him?",
+    "question": "Garfield built Magic: the Gathering around one guiding rule: any three cards drawn together should combine into some kind of workable plan. He took that idea from an older board game he had loved for years, where every player held one game-breaking special power. Which game inspired him?",
     "answer": "Cosmic Encounter, a science-fiction negotiation game from 1977",
     "choices": [
       "Cosmic Encounter, a science-fiction negotiation game from 1977",
@@ -1171,7 +1158,7 @@
   },
   {
     "tier": 4,
-    "question": "Magic: the Gathering's first World Championship in August 1994 at Gen Con in Milwaukee was won by 16-year-old Zak Dolan. The runner-up, Bertrand Lestree from France, was famous for a single deck that has since become legendary in MtG circles. What kind of strategy was Lestree's deck?",
+    "question": "Bertrand Lestree of France sat down in the final of Magic: the Gathering's first World Championship in August 1994, at the Gen Con convention in Milwaukee, with a deck that has since become legendary. He lost the title to a sixteen-year-old. What kind of deck did Lestree play?",
     "answer": "A green creature-stomp deck featuring Erhnam Djinn and forest mana acceleration",
     "choices": [
       "A green creature-stomp deck featuring Erhnam Djinn and forest mana acceleration",
@@ -1184,7 +1171,7 @@
   },
   {
     "tier": 4,
-    "question": "MtG's June 1994 Legends expansion was the largest set ever printed up to that point — 310 cards. Legends introduced multicolor cards, the legendary supertype, and the 'banding' mechanic. It also introduced a card that became infamous for an unusual restriction on how many copies you can have in your deck — a single card. What card was that?",
+    "question": "A Magic: the Gathering player builds a tournament deck and reaches for a card from the huge expansion of June 1994, but the rules allow a single copy. The card became infamous for that restriction. What card is it?",
     "answer": "Karakas, a legendary land restricted because it could bounce any legendary creature",
     "choices": [
       "Karakas, a legendary land restricted because it could bounce any legendary creature",
@@ -1197,7 +1184,7 @@
   },
   {
     "tier": 4,
-    "question": "On August 5, 1993, the first sets of the trading card game Magic: The Gathering (MtG) rolled off the presses, timed to reach the huge Gen Con gaming convention in Milwaukee. The game's tiny maker, Wizards of the Coast, was down to its last dollars — founder Peter Adkison could not even wait for delivery. He got in a car, drove all the way to the print shop himself, and loaded the first boxes of cards straight into his trunk. In what town was the print shop?",
+    "question": "Adkison, nearly broke, could not wait for delivery when the first Magic: the Gathering cards rolled off the presses on August 5, 1993. He got in a car, drove to the print shop himself and loaded the first boxes straight into his trunk, to reach the Gen Con convention in Milwaukee. Where did those first boxes come from?",
     "answer": "From Carthage, Tennessee, where the printing plant was located",
     "choices": [
       "From Carthage, Tennessee, where the printing plant was located",
@@ -1209,8 +1196,8 @@
     "topic": "magic-the-gathering"
   },
   {
-    "tier": 4,
-    "question": "MtG's 1994 Legends set introduced the Elder Dragons: five legendary three-color dragons that each cost 8 mana. One of them became the game's most enduring villain, returning across storylines for the next thirty years. Which Elder Dragon, in blue-black-red, is that recurring villain?",
+    "tier": 3,
+    "question": "A duelist pays 8 mana to cast one of the five three-color Elder Dragons of 1994 in Magic: the Gathering. One of them, in blue-black-red, a scheming, primordial reptile, became the game's most famous recurring villain across the next thirty years of storylines. Which Elder Dragon is that villain?",
     "answer": "Nicol Bolas",
     "choices": [
       "Nicol Bolas",
@@ -1223,7 +1210,7 @@
   },
   {
     "tier": 4,
-    "question": "The Black Lotus card from MtG Alpha has become a symbol of trading-card value. In 2021, a single Professional Sports Authenticator (PSA) Gem Mint 10 Alpha Black Lotus signed by Christopher Rush, the original illustrator, sold at auction for a record-breaking sum. What was the approximate price?",
+    "question": "A bidder paid a record-breaking sum at auction in January 2021 for a single Alpha Black Lotus from Magic: the Gathering, graded gem mint and signed by Christopher Rush, the card's original illustrator. What was the approximate price?",
     "answer": "Around $511,000",
     "choices": [
       "Around $511,000",
@@ -1236,7 +1223,7 @@
   },
   {
     "tier": 4,
-    "question": "Magic: the Gathering's first banned-and-restricted list for tournament play in 1994 named several cards. One Alpha sorcery, when combined with Fireball, could kill an opponent on turn one by trading a huge chunk of the caster's own health for a burst of colorless mana. The card was eventually restricted to one per deck rather than banned outright. What was the sorcery?",
+    "question": "A duelist kills an opponent on turn one of Magic: the Gathering with Fireball, fed by a burst of colorless mana from one early card. The first banned-and-restricted list for tournament play came in 1994, and this card was eventually restricted to one per deck rather than banned outright. What was the card?",
     "answer": "Channel, the Alpha green sorcery converting life into mana",
     "choices": [
       "Channel, the Alpha green sorcery converting life into mana",
@@ -1535,7 +1522,7 @@
   },
   {
     "tier": 5,
-    "question": "MtG's 1993 Beta set was meant to fix Alpha's print errors and reprint the same cards. But a single dual land that had appeared in Alpha was omitted from Beta — apparently due to a print-sheet mistake. It was not reprinted until Revised in April 1994. The omission made the Beta version of this dual land effectively nonexistent, and the Alpha version highly prized. What was the missing dual land?",
+    "question": "Magic: the Gathering's makers ran Beta in 1993 to fix Alpha's print errors and reprint the same cards, and one dual land fell off the print sheets, apparently by mistake. It did not return until Revised in April 1994, which left its Alpha copies the rarest of the duals. What was the missing land?",
     "answer": "Volcanic Island, the red-blue dual land",
     "choices": [
       "Volcanic Island, the red-blue dual land",
@@ -1548,7 +1535,7 @@
   },
   {
     "tier": 5,
-    "question": "MtG's Antiquities set from 1994 introduced the Brothers' War story and featured a legendary land tied to the artificer Mishra's forge. The card produces three colorless mana, but only for artifact spells. It was originally printed at uncommon and never reprinted in the same form. One later reprint set revisited many Antiquities cards but skipped this one. Which reprint was that, and in what year?",
+    "question": "Wary of its power at tournaments, the makers of Magic: the Gathering left one land out of a later reprint set on purpose. The land came from the 1994 Antiquities set and makes three colorless mana, but only for artifact spells. The reprint set revisited many Antiquities cards and skipped this one. Which reprint was it, and in what year?",
     "answer": "Chronicles in 1995, which reprinted other Antiquities cards but skipped Mishra's Workshop",
     "choices": [
       "Chronicles in 1995, which reprinted other Antiquities cards but skipped Mishra's Workshop",
@@ -1561,7 +1548,7 @@
   },
   {
     "tier": 5,
-    "question": "MtG's Legends expansion in June 1994 introduced the Elder Dragon cycle: five legendary three-color dragons, including Nicol Bolas (blue-black-red) and Arcades Sabboth (white-blue-green). Each cost 8 mana to cast. They had a notorious design quirk that made them hard to keep on the table despite their power level. What was that quirk?",
+    "question": "Suppose you cast one of the five Elder Dragons from Magic: the Gathering's June 1994 expansion, a legendary three-color dragon that cost 8 mana. The cycle had a notorious design quirk that made these dragons hard to keep on the table despite their power. What was that quirk?",
     "answer": "Each upkeep, you paid 3 mana of their colors or sacrificed them",
     "choices": [
       "Each upkeep, you paid 3 mana of their colors or sacrificed them",
@@ -1574,7 +1561,7 @@
   },
   {
     "tier": 5,
-    "question": "MtG's first Pro Tour in February 1996 at the Park Central Hotel in New York City had a $100,000 prize pool -- unprecedented for any card game at the time. The 128-player event was won by Michael Loconto. Wizards of the Coast deliberately chose the format to make competitive Magic accessible to players who didn't own the game's most expensive early-set rarities. What did that mean for which cards were legal?",
+    "question": "Players at Magic: the Gathering's first Pro Tour, in New York City in February 1996, fought for $100,000 in prizes under a format chosen with care. The organizers wanted no old collection simply buying the title. What did that mean for which cards were legal?",
     "answer": "The Power Nine and other Alpha-Beta-Unlimited rarities were excluded",
     "choices": [
       "The Power Nine and other Alpha-Beta-Unlimited rarities were excluded",
@@ -1587,7 +1574,7 @@
   },
   {
     "tier": 5,
-    "question": "MtG's Reserved List was created in 1996 in response to fan anger over reprints in the 1995 Chronicles set. The Reserved List initially contained over 500 cards. In 2002, Wizards modified the list, removing one specific category of card while leaving the rares intact. What category did Wizards remove from the Reserved List in 2002?",
+    "question": "Fans furious over reprints won a promise in 1996: the Reserved List of more than 500 Magic: the Gathering cards that would never be reprinted. The makers went back to the list in 2002 and removed one specific category of card. What category did they remove?",
     "answer": "Uncommons and commons from Antiquities, Arabian Nights, Legends, and The Dark",
     "choices": [
       "Uncommons and commons from Antiquities, Arabian Nights, Legends, and The Dark",
@@ -1600,7 +1587,7 @@
   },
   {
     "tier": 5,
-    "question": "Magic: the Gathering's classic artwork has its own collector subculture. The Alpha card Black Lotus was illustrated by Christopher Rush, who also illustrated many other iconic Alpha cards. Rush's distinctive style influenced MtG's visual identity. Rush died in 2016, but had spent his final years signing Alpha cards at MtG conventions. What did fans nickname these specific signed cards?",
+    "question": "Christopher Rush sat at Magic: the Gathering conventions in his final years and signed the Alpha cards he had illustrated, the Black Lotus among them. What did fans nickname these signed cards?",
     "answer": "Rush Lotuses, with PSA Mint 10 signed copies commanding particular value at auction",
     "choices": [
       "Rush Lotuses, with PSA Mint 10 signed copies commanding particular value at auction",
@@ -1613,7 +1600,7 @@
   },
   {
     "tier": 5,
-    "question": "MtG's first official novel was published in 1994 — a companion piece for the Arabian Nights expansion. The novel was written by Jeff Grubb and centered on the planeswalker Taysir of Rabiah. Earlier in 1994, Wizards of the Coast had launched a comic book series adapting Magic's lore. What publisher produced the original MtG comics?",
+    "question": "Magic: the Gathering's makers launched a comic book series adapting the game's lore. What publisher produced those original comics?",
     "answer": "Armada Comics, an imprint of Acclaim Comics",
     "choices": [
       "Armada Comics, an imprint of Acclaim Comics",
@@ -1626,7 +1613,7 @@
   },
   {
     "tier": 5,
-    "question": "Among the rare cards in MtG's June 1994 Legends expansion, one particular non-basic terrain is consistently considered the most expensive -- it makes each creature's controller pay one mana per upkeep or sacrifice it. Played copies command thousands of dollars. What is the card?",
+    "question": "A duelist lays down one rare card of June 1994 in a game of Magic: the Gathering, and from then on each creature's controller must pay one mana per upkeep or sacrifice it. Played copies command thousands of dollars, more than any other card in the set. What is the card?",
     "answer": "The Tabernacle at Pendrell Vale, a legendary land",
     "choices": [
       "The Tabernacle at Pendrell Vale, a legendary land",
@@ -1635,19 +1622,6 @@
       "Eureka, a sorcery that puts permanents into play"
     ],
     "context": "The Tabernacle at Pendrell Vale taxes every nontoken creature one mana per upkeep. It is brutal in any matchup against creature decks. Played copies often sell for $2,000-$4,000; mint Alpha or Beta copies sell for far more. The Reserved List has guaranteed it will never be reprinted.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 5,
-    "question": "MtG's 1993 Alpha set was printed on three large uncut press sheets, each containing 121 cards in an 11-by-11 grid. The print sheet positioning created a peculiar effect: certain rares appear at slightly different rates than others, because the three sheets were not printed in identical quantities. Among Alpha's rares, Black Lotus and the five Moxes are the most legendary -- but a single Alpha rare is statistically rarer than the others because of a specific print-sheet quirk. What land card was this single rarest Alpha rare?",
-    "answer": "Volcanic Island, which appeared only on certain print runs",
-    "choices": [
-      "Volcanic Island, which appeared only on certain print runs",
-      "Underground Sea, which was misprinted on the rare sheet",
-      "Tropical Island, which was misnamed on its initial run",
-      "Bayou, which was double-printed on the uncommon sheet"
-    ],
-    "context": "Volcanic Island was famously missing from the Beta set due to a printing error and not reprinted until Revised in April 1994. Alpha Volcanic Islands command extreme premiums on the collector market — well above the other dual lands. The other dual lands (Bayou, Tundra, Underground Sea, Tropical Island, etc.) all appeared in both Alpha and Beta. The dual lands joined the Reserved List in 1996.",
     "topic": "magic-the-gathering"
   },
   {
@@ -1964,7 +1938,7 @@
   },
   {
     "tier": 1,
-    "question": "Monkey Punch's Japanese manga hero Lupin III is a master thief who steals treasures around the world while wearing a bright red or green jacket. His name comes from his grandfather, a much older character — the suave French gentleman-thief written by novelist Maurice Leblanc in a series of Paris-set adventure novels starting in 1905. Which fictional thief is Lupin III's grandfather?",
+    "question": "Monkey Punch gave his Japanese manga hero, a master thief in a bright red or green jacket, a famous grandfather in 1967: the suave French gentleman-thief of Maurice Leblanc's Paris-set adventure novels, which began in 1905. Which fictional thief is the grandfather?",
     "answer": "Arsene Lupin",
     "choices": [
       "Arsene Lupin",
@@ -2159,7 +2133,7 @@
   },
   {
     "tier": 2,
-    "question": "The 1979 anime Mobile Suit Gundam threw out cartoon-style super-robots and imagined giant piloted mechs as gritty military hardware — soldiers pulling levers, machines that overheated, weapons that ran out of ammo. That grounded approach kicked off what fans now call the real-robot style of anime, and the Gundam franchise has run for over four decades. Which director created Gundam and shaped its whole space-war universe?",
+    "question": "A soldier pulls the levers of a giant mech that overheats and runs out of ammo in Mobile Suit Gundam, the 1979 anime that threw out the cartoon super-robot for gritty military hardware. That grounded approach kicked off what fans now call the real-robot style. Which director created Gundam and shaped its whole space-war universe?",
     "answer": "Yoshiyuki Tomino",
     "choices": [
       "Yoshiyuki Tomino",
@@ -2315,7 +2289,7 @@
   },
   {
     "tier": 1,
-    "question": "Castle of Cagliostro is a 1979 Japanese animated film starring the master thief Lupin III. Lupin sneaks into a tiny European country ruled by a scheming count, hoping to rescue Princess Clarisse, a young woman being forced into marriage. The film was the very first feature movie directed by an animator who would go on to found Studio Ghibli. Who is he?",
+    "question": "The master thief Lupin III sneaks into a tiny European country ruled by a scheming count in the 1979 film Castle of Cagliostro, hoping to rescue Princess Clarisse from a forced marriage. It was the very first feature movie directed by an animator who would go on to found Studio Ghibli. Who is he?",
     "answer": "Hayao Miyazaki",
     "choices": [
       "Hayao Miyazaki",
@@ -2432,7 +2406,7 @@
   },
   {
     "tier": 2,
-    "question": "Monkey Punch's Japanese manga Lupin III, first drawn in 1967, follows a master thief named Arsene Lupin III, grandson of the classic French gentleman burglar. Wherever Lupin travels stealing famous treasures, one tired police inspector from Japan, working for the international police agency Interpol, chases him around the globe. The two have been playing cat-and-mouse for decades, and the inspector always seems just one step behind. What is the inspector's name?",
+    "question": "A tired police inspector from Japan, working for the international police agency Interpol, chases the master thief Lupin III around the globe in Monkey Punch's manga, first drawn in 1967. The two have been playing cat-and-mouse for decades, and the inspector always seems just one step behind. What is the inspector's name?",
     "answer": "Inspector Zenigata",
     "choices": [
       "Inspector Zenigata",
@@ -2445,7 +2419,7 @@
   },
   {
     "tier": 2,
-    "question": "Mobile Suit Gundam Wing is a Japanese anime that first aired in 1995. In the late 1990s it became one of the first big hits on Toonami, the Cartoon Network afternoon anime block. Set in the year After Colony 195, it follows a small group of teenage boys sent from the space colonies down to Earth as pilots of powerful mecha called Gundams, aiming to break the war with the Earth Alliance. How many teen Gundam pilots are there?",
+    "question": "A small group of teenage boys comes down from the space colonies to Earth in the year After Colony 195, at the controls of powerful mecha called Gundams, to break the war with the Earth Alliance. Mobile Suit Gundam Wing later became one of the first big hits on Toonami. How many teen Gundam pilots are there?",
     "answer": "Five",
     "choices": [
       "Five",
@@ -2614,7 +2588,7 @@
   },
   {
     "tier": 3,
-    "question": "The 1979 Mobile Suit Gundam anime stars rookie teenage pilot Amuro Ray, who stumbles into piloting a top-secret Federation mobile suit during a Zeon attack. His rival across the series is a Zeon ace who wears a half-mask. What name does this rival go by?",
+    "question": "Amuro Ray, a rookie teenage pilot, stumbles into a top-secret Federation mobile suit during a Zeon attack in the 1979 anime Mobile Suit Gundam. Hunting him across the series comes a half-masked Zeon ace. What name does this rival go by?",
     "answer": "Char Aznable",
     "choices": [
       "Char Aznable",
@@ -2757,7 +2731,7 @@
   },
   {
     "tier": 3,
-    "question": "In Monkey Punch's Japanese manga Lupin III, the master thief Arsene Lupin III travels the world stealing famous treasures. He has three close teammates: the sharpshooting gunman Daisuke Jigen, the silent sword-master samurai Ishikawa Goemon XIII, and a beautiful, long-haired woman who is sometimes Lupin's partner, sometimes his rival, and sometimes his lover. She often double-crosses the crew for her own scores. What is her name?",
+    "question": "A beautiful, long-haired woman double-crosses Lupin III's crew for her own scores in Monkey Punch's manga, and she is sometimes his partner, sometimes his rival and sometimes his lover. She works beside the sharpshooting gunman Daisuke Jigen and the silent samurai Ishikawa Goemon XIII. What is her name?",
     "answer": "Fujiko Mine",
     "choices": [
       "Fujiko Mine",
@@ -2874,7 +2848,7 @@
   },
   {
     "tier": 4,
-    "question": "Yoshiyuki Tomino's 1979 anime Mobile Suit Gundam introduced giant humanoid war robots called mobile suits, piloted by soldiers in a space-colony war. Its white-red-blue hero unit, model RX-78-2, is still the most iconic mecha in Japanese animation. Who designed it, and went on to be the Gundam franchise's main mecha artist for decades?",
+    "question": "Amuro Ray fights the space-colony war of the 1979 anime Mobile Suit Gundam in a white, red and blue machine, model RX-78-2, still the most iconic mecha in Japanese animation. Who designed it, and went on to be the Gundam franchise's main mecha artist for decades?",
     "answer": "Kunio Okawara",
     "choices": [
       "Kunio Okawara",
@@ -2952,7 +2926,7 @@
   },
   {
     "tier": 4,
-    "question": "Lupin III: The Castle of Cagliostro has a famous car chase. Lupin's tiny yellow Fiat 500 leaps off a winding mountain road, runs straight up a cliff wall on speed alone, and lands on a higher road. Who drew that scene?",
+    "question": "Lupin III throws his tiny yellow Fiat 500 off a winding mountain road in The Castle of Cagliostro, runs it straight up a cliff wall on speed alone and lands on a higher road. Who drew that famous car chase?",
     "answer": "Hayao Miyazaki himself drew the key animation for the sequence",
     "choices": [
       "Hayao Miyazaki himself drew the key animation for the sequence",
@@ -3043,7 +3017,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2002, the Japanese anime studio Sunrise brought its long-running giant-robot Gundam franchise back with a new TV series called Mobile Suit Gundam Seed. Director Mitsuo Fukuda set the story in a war between Earth and genetically engineered super-humans called Coordinators. The hero mobile suit was the Strike Gundam, model X105 — piloted by a shy, conflicted teenage Coordinator. What is that lead pilot's name?",
+    "question": "Director Mitsuo Fukuda set Sunrise's 2002 series Mobile Suit Gundam Seed in a war between Earth and genetically engineered super-humans called Coordinators. He put a shy, conflicted teenage Coordinator at the controls of the hero mobile suit, the Strike Gundam, model X105. What is that lead pilot's name?",
     "answer": "Kira Yamato",
     "choices": [
       "Kira Yamato",
@@ -3082,7 +3056,7 @@
   },
   {
     "tier": 4,
-    "question": "Lupin III has been voiced by multiple actors over decades. The longest-running voice — performing from 1979's Castle of Cagliostro through 2010's series — was a Japanese voice actor named Yasuo Yamada. After Yamada's death in 1995, the role passed to another voice actor whose performance is most associated with the long-running TV specials. Who took over the role after Yamada?",
+    "question": "Yasuo Yamada voiced Lupin III in the 1979 film Castle of Cagliostro. After Yamada died in 1995, the role passed to another voice actor, whose performance is most associated with the long-running TV specials. Who took over from Yamada?",
     "answer": "Kanichi Kurita",
     "choices": [
       "Kanichi Kurita",
@@ -3225,7 +3199,7 @@
   },
   {
     "tier": 5,
-    "question": "Lupin III: The Castle of Cagliostro's villain — Count Cagliostro — is named after a real 18th-century Italian occultist and counterfeiter. Hayao Miyazaki researched the historical figure for the film. What was the real Cagliostro famous for in 18th-century Europe?",
+    "question": "Giuseppe Balsamo, an 18th-century Italian, was swept into a French scandal in 1785 under the title Count Alessandro di Cagliostro, and the villain of Lupin III: The Castle of Cagliostro borrows that title from him. What was the real Cagliostro famous for in 18th-century Europe?",
     "answer": "Posing as an alchemist and Freemason while running fraudulent diamond-and-elixir schemes across European courts",
     "choices": [
       "Posing as an alchemist and Freemason while running fraudulent diamond-and-elixir schemes across European courts",
@@ -3238,7 +3212,7 @@
   },
   {
     "tier": 5,
-    "question": "Yoshiyuki Tomino's Mobile Suit Gundam flopped when it first aired on Japanese TV in 1979 — the network even shortened its run. It only exploded in popularity a year later, thanks to reruns and a plastic snap-together model-kit line Bandai released in July 1980, which let kids build their own RX-78-2 Gundam at home. What was that model-kit line called, still sold worldwide today?",
+    "question": "A Japanese network cut Mobile Suit Gundam short when it flopped on the air in 1979. Reruns saved it a year later, along with a model-kit line from Bandai that let kids build their own Gundam at home. What was that model-kit line called?",
     "answer": "The 1/144 scale Gunpla series, starting with the RX-78-2 in plastic-snap form",
     "choices": [
       "The 1/144 scale Gunpla series, starting with the RX-78-2 in plastic-snap form",
@@ -3407,7 +3381,7 @@
   },
   {
     "tier": 1,
-    "question": "My Hero Academia is a Japanese manga by Kohei Horikoshi set in a world where almost everyone is born with a superpower called a Quirk. A freckled green-haired middle-school boy named Izuku Midoriya is one of the very few born with no power at all, and other kids bully him for it. They call him a cruel Japanese word that means 'useless,' though a friend later flips it to mean 'you can do it.' What is this nickname?",
+    "question": "Freckled, green-haired Izuku Midoriya gets bullied at school in My Hero Academia, because he has no superpower in a world of Quirks. Other kids twist a Japanese word for 'useless' into a cruel nickname, though a friend later flips it to mean 'you can do it.' What is this nickname?",
     "answer": "Deku",
     "choices": [
       "Deku",
@@ -3420,7 +3394,7 @@
   },
   {
     "tier": 1,
-    "question": "In Kohei Horikoshi's Japanese manga My Hero Academia, the world's number-one hero is a tall, blond, super-muscular man whose famous smile is meant to make everyone feel safe. He looks and sounds like a golden-age American comic-book superhero. As the story begins he meets a powerless boy named Izuku Midoriya and chooses to pass his own superpower on to him. What is the top hero's name?",
+    "question": "The world's number-one hero meets a powerless boy named Izuku Midoriya as My Hero Academia begins, and he chooses to pass his own superpower on to the boy. He is tall, blond and super-muscular, and his famous smile is meant to make everyone feel safe. What is the top hero's name?",
     "answer": "All Might",
     "choices": [
       "All Might",
@@ -3641,7 +3615,7 @@
   },
   {
     "tier": 1,
-    "question": "In Yoshihiro Togashi's Japanese manga Hunter x Hunter, a cheerful twelve-year-old boy with spiky green hair lives with his aunt on tiny Whale Island. He learns that his father, who abandoned him as a baby, is a legendary world-explorer called a Hunter, and is still alive somewhere out there. The boy sets out on his own to pass the deadly Hunter Exam and find him. What is the boy's name?",
+    "question": "A cheerful twelve-year-old with spiky green hair leaves his aunt's home on tiny Whale Island in Yoshihiro Togashi's manga Hunter x Hunter. His father abandoned him as a baby, and the boy sets out alone to pass the deadly Hunter Exam and find him. What is the boy's name?",
     "answer": "Gon Freecss",
     "choices": [
       "Gon Freecss",
@@ -3680,7 +3654,7 @@
   },
   {
     "tier": 1,
-    "question": "The Japanese manga and anime Initial D is set in the mountains of Gunma, Japan in the 1990s. A bored high-school boy delivers tofu for his father's shop every morning before dawn. He drives an old black-and-white Toyota AE86 up and down Mount Akina, unaware his father has been secretly training him for years. When a hotshot street-racing crew shows up to conquer the mountain, this teen quietly outdrives every one of them, revealing himself as a downhill drifting prodigy. What is the boy's name?",
+    "question": "A bored Gunma high-school boy takes his father's old black-and-white Toyota AE86 out before dawn to deliver tofu in Shuichi Shigeno's Initial D. His father has been secretly training him for years. When a hotshot street-racing crew comes to conquer Mount Akina, he quietly outdrives every one of them. What is the boy's name?",
     "answer": "Takumi Fujiwara",
     "choices": [
       "Takumi Fujiwara",
@@ -3693,7 +3667,7 @@
   },
   {
     "tier": 1,
-    "question": "In JoJo's Bizarre Adventure Part 3: Stardust Crusaders, a tough Japanese high-school delinquent in 1988 discovers a star-shaped birthmark on his neck and the power to summon a purple ghost-fighter he names Star Platinum. To save his dying mother, he and his grandfather Joseph Joestar journey across half the world to Egypt, hunting the century-old vampire Dio Brando in his hidden mansion. What is this delinquent's name?",
+    "question": "A tough Japanese delinquent discovers a star-shaped birthmark on his neck in 1988, in JoJo's Bizarre Adventure Part 3, and finds he can summon a purple ghost-fighter he names Star Platinum. To save his dying mother he journeys to Egypt with his grandfather Joseph Joestar. What is this delinquent's name?",
     "answer": "Jotaro Kujo",
     "choices": [
       "Jotaro Kujo",
@@ -3732,7 +3706,7 @@
   },
   {
     "tier": 1,
-    "question": "In Kohei Horikoshi's superhero manga My Hero Academia, Class 1-A at Japan's top hero-training high school includes a loud, angry rival to the main hero Izuku 'Deku' Midoriya. His superpower, called a Quirk, makes his palms sweat nitroglycerin, which he ignites to blast enemies with explosions. He screams insults, hates losing worse than dying, and grew up bullying Deku. What is this explosive rival's name?",
+    "question": "A loud, angry boy in Class 1-A makes his palms sweat nitroglycerin and ignites it to blast enemies in Kohei Horikoshi's My Hero Academia. He screams insults, hates losing worse than dying, and grew up bullying Izuku Midoriya. What is this rival's name?",
     "answer": "Katsuki Bakugo",
     "choices": [
       "Katsuki Bakugo",
@@ -3784,20 +3758,7 @@
   },
   {
     "tier": 2,
-    "question": "Kohei Horikoshi began publishing his superhero manga My Hero Academia in 2014. It is set in a world where almost every child is born with a superpower called a Quirk. The number-one hero — the sunny, muscle-bound All Might — picks shy, powerless middle-schooler Izuku Midoriya as his successor and passes down a rare Quirk that grows stronger each generation it is inherited. What is that inherited Quirk called?",
-    "answer": "One For All",
-    "choices": [
-      "One For All",
-      "Explosion",
-      "Half-Cold Half-Hot",
-      "Erasure"
-    ],
-    "context": "Horikoshi's earlier short story 'My Hero' from 2008 contained an early version of Deku-as-quirkless protagonist. Studio Bones (Fullmetal Alchemist Brotherhood, Mob Psycho 100) handled all seasons. The manga concluded in 2024.",
-    "topic": "my-hero-academia"
-  },
-  {
-    "tier": 2,
-    "question": "My Hero Academia is set in a Japan where almost everyone has a superpower called a Quirk. It follows Class 1-A at a school for young heroes. One student can freeze things with his right side and burn things with his left. He has a large burn scar over his left eye, and his father, the Number Two Hero Endeavor, forced him to train nonstop as a small child. Name him.",
+    "question": "Endeavor, the Number Two Hero of My Hero Academia, forces his small son to train nonstop. The boy reaches Class 1-A with a large burn scar over his left eye, and he can freeze things with his right side and burn things with his left. What is the boy's name?",
     "answer": "Shoto Todoroki",
     "choices": [
       "Shoto Todoroki",
@@ -3953,7 +3914,7 @@
   },
   {
     "tier": 2,
-    "question": "In Yoshihiro Togashi's manga Hunter x Hunter, fighters wield a life-energy called Nen. Every Nen user has exactly one of six aura styles, chosen by a personality test with a floating drop of water. The style used by hot-headed, straight-forward brawlers who solve every problem by hitting harder belongs to the cheerful main character Gon Freecss, whose whole fighting instinct is to just power straight through. What is Gon's Nen category called?",
+    "question": "Gon takes a personality test in Yoshihiro Togashi's manga Hunter x Hunter: a drop of water floats, and what his aura does to it sorts him into one of the six styles of Nen, the life-energy every fighter wields. His style belongs to hot-headed, straightforward brawlers who solve every problem by hitting harder. What is Gon's Nen category called?",
     "answer": "Enhancement",
     "choices": [
       "Enhancement",
@@ -3966,7 +3927,7 @@
   },
   {
     "tier": 2,
-    "question": "JoJo's Bizarre Adventure is a Japanese manga by Hirohiko Araki about the Joestar family across generations, running in numbered story arcs called Parts since 1987. Part 3, Stardust Crusaders, follows the delinquent teenager Jotaro Kujo. It was the arc that first introduced the fighting-spirit ghosts the whole series is now famous for — humanoid guardians of pure willpower that only some people can see or fight with. What did Araki name them?",
+    "question": "Hirohiko Araki brought something new into JoJo's Bizarre Adventure with Part 3, Stardust Crusaders: ghostly fighting spirits, humanoid guardians of pure willpower that only some people can see or fight with. The whole series is now famous for them. What did Araki name them?",
     "answer": "Stands",
     "choices": [
       "Stands",
@@ -3992,7 +3953,7 @@
   },
   {
     "tier": 2,
-    "question": "Shuichi Shigeno's manga Initial D, about street racing on twisty mountain roads, launched in 1995 and takes place in Gunma Prefecture in Japan. The hero Takumi Fujiwara delivers tofu at night in his father's beat-up Toyota AE86 hatchback and races other drivers on a downhill mountain-pass road called Mt. Akina. Shigeno based Mt. Akina on a real Japanese touge — a winding mountain-pass road. Which real mountain was it?",
+    "question": "Takumi races other drivers down Mt. Akina at night in his father's beat-up Toyota AE86, in Shuichi Shigeno's manga Initial D, set in Japan's Gunma Prefecture. Shigeno based the road on a real touge, a winding mountain-pass road. Which real mountain was it?",
     "answer": "Mt. Haruna (the fictional Mt. Akina)",
     "choices": [
       "Mt. Haruna (the fictional Mt. Akina)",
@@ -4005,7 +3966,7 @@
   },
   {
     "tier": 2,
-    "question": "Initial D is a Japanese street-racing manga and anime about a teenage tofu delivery driver named Takumi Fujiwara, who becomes a legend drifting his father's beat-up hatchback down mountain roads at night. Its soundtrack made a fast, thumping Italian dance style super famous with drift-race fans. Japan's music label Avex Trax released it in a long-running album series under one name. What was it called?",
+    "question": "Takumi drifts his father's beat-up hatchback down mountain roads at night in Initial D, to a fast, thumping Italian dance style that grew famous with drift-race fans. Japan's music label Avex Trax released that music in a long-running album series under one name. What was it called?",
     "answer": "Super Eurobeat",
     "choices": [
       "Super Eurobeat",
@@ -4147,8 +4108,8 @@
     "topic": "pokemon-franchise"
   },
   {
-    "tier": 3,
-    "question": "In Kohei Horikoshi's manga My Hero Academia, the number-one hero All Might passes his inherited superpower — his Quirk — down to shy middle-schooler Izuku Midoriya. But the Quirk didn't begin with All Might. In the earliest days of Quirks, two brothers with matching powers fought each other bitterly. One brother could steal other people's Quirks and hoard them; the other could pass a single Quirk down across generations. Their rivalry became the show's central conflict. What are the two rival powers called?",
+    "tier": 2,
+    "question": "The number-one hero of My Hero Academia passes a rare inherited Quirk, stronger with each generation, to Izuku Midoriya. It began with two brothers who fought bitterly in the earliest days of Quirks: one could steal Quirks and hoard them, the other could pass a single Quirk down the generations. What are the two rival powers called?",
     "answer": "One For All and All For One",
     "choices": [
       "One For All and All For One",
@@ -4252,7 +4213,7 @@
   },
   {
     "tier": 3,
-    "question": "In Yoshihiro Togashi's manga Hunter x Hunter, the twelve-year-old friends Gon Freecss and Killua Zoldyck finish the Hunter Exam and head for a towering martial-arts stadium where fighters climb the floors one bout at a time. There a soft-spoken master named Wing teaches them Nen, the life-energy behind every fight in the series. What is that tower called?",
+    "question": "Gon and Killua, twelve-year-old friends, finish the Hunter Exam and head for a towering martial-arts building where fighters climb the floors one bout at a time. There a soft-spoken master named Wing teaches them Nen, the life-energy behind every fight in Yoshihiro Togashi's Hunter x Hunter. What is that tower called?",
     "answer": "Heavens Arena",
     "choices": [
       "Heavens Arena",
@@ -4265,7 +4226,7 @@
   },
   {
     "tier": 3,
-    "question": "In JoJo's Bizarre Adventure Part 3, the Japanese high schooler Jotaro Kujo and his globe-trotting grandfather Joseph Joestar race from Tokyo to Egypt in fifty days to save Jotaro's mother. Jotaro is cool, laconic and hard to impress, and both his signature finger-pointing pose and his grumbled catchphrase, yare yare daze, or good grief, come from Hirohiko Araki's favourite screen tough guy. Which actor did Araki model Jotaro on?",
+    "question": "Jotaro and his globe-trotting grandfather Joseph Joestar race from Tokyo to Egypt in fifty days in JoJo's Bizarre Adventure Part 3, to save Jotaro's mother. Jotaro is cool, laconic and hard to impress, and both his finger-pointing pose and his grumbled yare yare daze, or good grief, come from Hirohiko Araki's favourite screen tough guy. Which actor did Araki model Jotaro on?",
     "answer": "Clint Eastwood",
     "choices": [
       "Clint Eastwood",
@@ -4291,7 +4252,7 @@
   },
   {
     "tier": 3,
-    "question": "Shuichi Shigeno's Initial D began in 1995 and ended in 2013. Takumi drives a Toyota Trueno AE86 that was already ten years old and discontinued when the series started. Fans gave the panda-colored AE86 a popular slang nickname. What is that nickname?",
+    "question": "Shuichi Shigeno began Initial D in 1995 with Takumi behind the wheel of a panda-colored Toyota Trueno, a car already ten years old and discontinued. Fans took its chassis code and turned it into a popular slang nickname. What is that nickname?",
     "answer": "Hachi-Roku ('Eight-Six' in Japanese)",
     "choices": [
       "Hachi-Roku ('Eight-Six' in Japanese)",
@@ -4356,7 +4317,7 @@
   },
   {
     "tier": 3,
-    "question": "In My Hero Academia, the main villain organization is led by a young man with dry, cracked skin whose touch causes objects to crumble. His mentor, the original holder of the show's ur-quirk, is sealed inside a high-tech prison. What is the leader's name?",
+    "question": "A young man with dry, cracked skin gives the orders to the villains of My Hero Academia, and whatever he touches crumbles. His mentor, the first thief of Quirks, sits sealed inside a high-tech prison. What is the leader's name?",
     "answer": "Tomura Shigaraki (born Tenko Shimura)",
     "choices": [
       "Tomura Shigaraki (born Tenko Shimura)",
@@ -4512,7 +4473,7 @@
   },
   {
     "tier": 3,
-    "question": "In My Hero Academia, the Sports Festival in Season 2 ends with a final tournament that crowns one of Class 1-A as the top first-year combatant of U.A. High. The festival's iconic final fight between two ice-and-fire-quirked students became the franchise's first 'classic' battle. Who won the tournament?",
+    "question": "The first-years of Class 1-A fought it out at U.A. High's Sports Festival in Season 2 of My Hero Academia, in a final tournament that crowned one of them top first-year combatant. Who won the tournament?",
     "answer": "Katsuki Bakugo, who was strapped to a pillar for the medal ceremony",
     "choices": [
       "Katsuki Bakugo, who was strapped to a pillar for the medal ceremony",
@@ -4525,7 +4486,7 @@
   },
   {
     "tier": 4,
-    "question": "In Kohei Horikoshi's manga My Hero Academia, the underground hero Eraserhead can cancel other people's Quirks — the superpowers people are born with — just by staring at them. He is the strict homeroom teacher of Class 1-A, where the hero Izuku Midoriya trains. Eraserhead's civilian name is a hidden Japanese-word pun that points directly to what he does in a fight. What everyday object does the pun in his name point to?",
+    "question": "Shota Aizawa, the strict homeroom teacher of Class 1-A in Kohei Horikoshi's manga My Hero Academia, cancels other people's Quirks just by staring at them. His civilian name hides a Japanese-word pun that points directly at what he does in a fight. How does his name carry the pun?",
     "answer": "His given name Shota is written with the kanji for 'erase'",
     "choices": [
       "His given name Shota is written with the kanji for 'erase'",
@@ -4629,7 +4590,7 @@
   },
   {
     "tier": 4,
-    "question": "Yoshihiro Togashi, the creator of Yu Yu Hakusho, began Hunter x Hunter in Weekly Shonen Jump in 1998. While the first volume was being finished, a fellow manga artist pitched in on the grey shading, laying screentone on its single-color pages, and early in 1999 she married Togashi. She was already famous in her own right for a magical-girl series about a clumsy schoolgirl who fights evil in a sailor-suit uniform. Which series did she create?",
+    "question": "Yoshihiro Togashi began Hunter x Hunter in Weekly Shonen Jump in 1998, and a fellow manga artist pitched in on the grey shading of the first volume, laying screentone on its single-color pages. Early in 1999 she married him. She was already famous in her own right for a magical-girl series about a clumsy schoolgirl who fights evil. Which series did she create?",
     "answer": "Sailor Moon",
     "choices": [
       "Sailor Moon",
@@ -4642,7 +4603,7 @@
   },
   {
     "tier": 4,
-    "question": "JoJo's Bizarre Adventure Part 4, Diamond Is Unbreakable, ran from 1992 to 1995 and traded the world tour of Part 3 for one quiet seaside town, Morioh, where the high schooler Josuke Higashikata and his friends keep stumbling on strange Stand users among the neighbours. Hirohiko Araki modelled Morioh on a real place: the city where he himself grew up. Which city?",
+    "question": "Josuke Higashikata and his friends keep stumbling on strange spirit-fighters among the neighbours in Morioh, the quiet seaside town of JoJo's Bizarre Adventure Part 4. Hirohiko Araki traded the world tour of Part 3 for this one place, and he modelled it on a real city, the one where he himself grew up. Which city?",
     "answer": "Sendai",
     "choices": [
       "Sendai",
@@ -4668,7 +4629,7 @@
   },
   {
     "tier": 4,
-    "question": "Shuichi Shigeno's Initial D ended in July 2013 after about 18 years of serial runs. Takumi's final race is against a rival driver named Shinji Inui, who drives an AE86 of his own. The finish is famously bittersweet, not a clean win. Where is the final race held?",
+    "question": "Shuichi Shigeno closed Initial D in July 2013, after about 18 years of serial runs, on one last race between Takumi and a rival named Shinji Inui, who drives an AE86 of his own. Where did Shigeno set that race?",
     "answer": "Mt. Akagi, in Project D's hometown-circuit conclusion",
     "choices": [
       "Mt. Akagi, in Project D's hometown-circuit conclusion",
@@ -4785,7 +4746,7 @@
   },
   {
     "tier": 4,
-    "question": "In Hirohiko Araki's manga JoJo's Bizarre Adventure, characters fight with 'Stands' — invisible spirit fighters that only other Stand users can see. Araki, a lifelong rock fan, named nearly every Stand after a song, band, or album. That's a nightmare for the anime studio David Production, which has to rename or blur them for streaming rights. Part 3 is the exception, and it includes the vampire Dio Brando's time-stopping Stand, 'The World'. What are the Part 3 Stands named after?",
+    "question": "Hirohiko Araki, a lifelong rock fan, gave so many of his JoJo's Bizarre Adventure fighting spirits musical names that the anime studio David Production has to rename or blur them for streaming. Part 3 has Star Platinum, Magician's Red and The World, the spirit of the vampire Dio Brando. What are the Part 3 names drawn from?",
     "answer": "The tarot Major Arcana, one card to each Stand",
     "choices": [
       "The tarot Major Arcana, one card to each Stand",
@@ -4798,7 +4759,7 @@
   },
   {
     "tier": 4,
-    "question": "In Yoshihiro Togashi's manga Hunter x Hunter, twelve-year-old Killua Zoldyck runs away from home to become a Hunter. His family are the world's most feared assassins, and they live on a private mountain estate called Kukuroo Mountain, protected by high walls and traps. The very first obstacle at the outer gates is a huge, monstrous creature chained there. Only trained family members can walk past without being torn apart. What is at the gates?",
+    "question": "Killua Zoldyck, twelve years old, runs away from home in Yoshihiro Togashi's manga Hunter x Hunter to become a Hunter. His family, the world's most feared assassins, keep a private estate on Kukuroo Mountain behind high walls and traps, and the very first obstacle at the outer gates is a huge, monstrous creature on a chain. Intruders are torn apart. What is at the gates?",
     "answer": "Mike, a massive guard hound trained to identify family bloodlines",
     "choices": [
       "Mike, a massive guard hound trained to identify family bloodlines",
@@ -4902,7 +4863,7 @@
   },
   {
     "tier": 4,
-    "question": "My Hero Academia is Kohei Horikoshi's superhero manga set in a world where most people are born with powers called Quirks. Shoto Todoroki, son of the top hero Endeavor, has half-ice and half-fire abilities. He refused to use the fire half for years because his cruel father had forced it on him through abusive training. During his first year at hero school, one moment finally broke through and he lit up his left side. What changed his mind?",
+    "question": "Todoroki, son of the hero Endeavor, has half-ice and half-fire powers in My Hero Academia, and for years he refuses to use the fire half because his cruel father forced it on him through abusive training. During his first year at hero school one moment finally breaks through, and he lights up his left side. What changes his mind?",
     "answer": "Deku's heart-to-heart with him during their Sports Festival fight",
     "choices": [
       "Deku's heart-to-heart with him during their Sports Festival fight",
@@ -4915,7 +4876,7 @@
   },
   {
     "tier": 5,
-    "question": "My Hero Academia is Kohei Horikoshi's superhero manga where most people have powers called Quirks. Shota Aizawa is the sleepy homeroom teacher of Class 1-A and the pro hero known as Eraser Head. His Quirk lets him shut off foes' powers just by staring at them without blinking. He also carries a signature weapon looped around his neck that lets him bind and restrain enemies at a distance. What is that weapon?",
+    "question": "The sleepy homeroom teacher of Class 1-A in My Hero Academia stares at a foe without blinking to shut off his Quirk, but sooner or later he has to blink. For those seconds Shota Aizawa carries a signature weapon that lets him restrain enemies at a distance. What is that weapon?",
     "answer": "His capture weapon — a binding scarf of steel-wire-cored cloth",
     "choices": [
       "His capture weapon — a binding scarf of steel-wire-cored cloth",
@@ -5019,7 +4980,7 @@
   },
   {
     "tier": 5,
-    "question": "Yoshihiro Togashi's Hunter x Hunter has often paused because of his back pain. The longest single break ran from 2018 to 2022. During that time, Togashi posted slow updates on Twitter about his page count. About how many pages did he finish in the four-year break before the manga came back?",
+    "question": "Yoshihiro Togashi stopped work on Hunter x Hunter in 2018 because of his back pain, for the longest single break the manga had seen. He posted slow updates on Twitter about his page count until the series came back in 2022. About how many pages did he finish in those four years?",
     "answer": "About 95 pages — released as 10 chapters in October 2022",
     "choices": [
       "About 95 pages — released as 10 chapters in October 2022",
@@ -5032,7 +4993,7 @@
   },
   {
     "tier": 5,
-    "question": "Hirohiko Araki's JoJo's Bizarre Adventure has run for 38 years across nine Parts. Araki's art style — huge muscles, dramatic poses, fashion looks — has changed a lot. He has said two things shaped it most: Italian Renaissance paintings, and what kind of Western fashion magazine?",
+    "question": "Hirohiko Araki has named two sources himself for the huge muscles, dramatic poses and fashion looks of JoJo's Bizarre Adventure. One is Renaissance painting, which gave his figures their twist. What is the other?",
     "answer": "Italian high-fashion photography of the 1960s through 1980s, especially Versace campaigns",
     "choices": [
       "Italian high-fashion photography of the 1960s through 1980s, especially Versace campaigns",
@@ -5058,7 +5019,7 @@
   },
   {
     "tier": 5,
-    "question": "Shuichi Shigeno's street-racing manga Initial D turned Japan's mountain-pass drifting into a cultural phenomenon, and the anime turned Eurobeat — a fast, driving Italian dance genre — into its signature sound. The Japanese label Avex Trax licensed the tracks and pushed one particular Italian musician as the reigning king of Eurobeat, giving him more song placements than anyone else across the show's early episodes. What was that musician's stage name?",
+    "question": "Giancarlo Pasquini, an Italian musician, recorded under a stage name for the Japanese label Avex Trax, which licensed the tracks for the anime Initial D and pushed him as the reigning king of Eurobeat. He got more song placements than anyone else across the show's early episodes. What was that stage name?",
     "answer": "Dave Rodgers, whose tracks like 'Deja Vu' and 'Speedy Speed Boy' became Initial D staples",
     "choices": [
       "Dave Rodgers, whose tracks like 'Deja Vu' and 'Speedy Speed Boy' became Initial D staples",
@@ -5188,7 +5149,7 @@
   },
   {
     "tier": 5,
-    "question": "In Hirohiko Araki's manga JoJo's Bizarre Adventure Part 5, Golden Wind, the story moves to Naples in 2001 and follows Giorno Giovanna, a fifteen-year-old who sets out to rise through the city's mafia. His Stand's fists pour life into whatever they strike, turning stones and scraps into plants and animals. From Part 4 on, Araki named Stands after music, and this one shares its name with a 1995 album by an American pop star. Which musician?",
+    "question": "Giorno Giovanna, fifteen years old, sets out to rise through the mafia of Naples in 2001, in Part 5 of Hirohiko Araki's JoJo's Bizarre Adventure. His fighting spirit, Gold Experience, turns stones and scraps into living plants and animals with a blow of its fists. Araki took that name from a 1995 album by an American pop star. Which musician?",
     "answer": "Prince",
     "choices": [
       "Prince",
@@ -5266,7 +5227,7 @@
   },
   {
     "tier": 5,
-    "question": "Yoshihiro Togashi's manga Hunter x Hunter opens with the Hunter Exam — a brutal multi-stage test that turns ordinary applicants into licensed Hunters, elite roving agents with world-class privileges. The stages include a marathon run through poison-swamp, cooking a bizarre wild animal to a fussy chef-judge, and a survival tournament aboard an airship. The whole exam is run by a tiny, wizened old master who chairs the licensing guild itself. Who chairs the first-arc exam?",
+    "question": "Yoshihiro Togashi's Hunter x Hunter opens by dragging its applicants through a brutal exam: a marathon run through poison swamp, a bizarre wild animal cooked for a fussy chef-judge, a survival tournament aboard an airship. Those who pass become licensed Hunters, elite roving agents with world-class privileges. A tiny, wizened old master stands behind it all. Who runs the exam?",
     "answer": "Netero, the chairman of the Hunter Association",
     "choices": [
       "Netero, the chairman of the Hunter Association",
@@ -5292,7 +5253,7 @@
   },
   {
     "tier": 5,
-    "question": "Hirohiko Araki's JoJo's Bizarre Adventure is famous for poses that twist like Renaissance statues. In 2009 the Louvre in Paris chose Araki as one of five artists to make new comics set inside the museum for an exhibition. For his story he sent a character from Part 4: a prickly young manga artist whose Stand, Heaven's Door, turns people into books he can read. Who stars in it?",
+    "question": "Hirohiko Araki drew a comic for the Louvre in Paris in 2009, set inside the museum, as one of five artists chosen for an exhibition. He sent a character from Part 4 of JoJo's Bizarre Adventure: a prickly young manga artist whose power, Heaven's Door, turns people into books he can read. Who stars in the story?",
     "answer": "Rohan Kishibe",
     "choices": [
       "Rohan Kishibe",
@@ -5396,7 +5357,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1984 film The Karate Kid, Daniel LaRusso, hurt in one leg at the tournament final, spreads his arms like a bird's wings and kicks from his good leg. What is this signature move called?",
+    "question": "Daniel LaRusso, hurt in one leg at the tournament final of the 1984 film The Karate Kid, opens his arms wide and kicks from his good leg. He has watched Mr. Miyagi practise the move on the sand. What is this signature move called?",
     "answer": "The crane kick",
     "choices": [
       "The crane kick",
@@ -6371,7 +6332,7 @@
   },
   {
     "tier": 3,
-    "question": "The 1984 movie The Karate Kid tells the story of Daniel LaRusso, a bullied New Jersey teenager who moves to California and secretly trains in karate under his apartment building's handyman, Mr. Miyagi. It was directed by American filmmaker John G. Avildsen, who had already won the Academy Award for Best Director for another underdog sports film, this one about a poor Philadelphia boxer given one shot at the heavyweight title. Which film was that?",
+    "question": "John G. Avildsen took on The Karate Kid in 1984 knowing how an underdog story goes: Daniel LaRusso, a bullied teenager, learns karate from his apartment building's handyman, Mr. Miyagi. Avildsen had already won the Academy Award for Best Director for a sports film about a poor boxer given one shot at the heavyweight title. Which film was that?",
     "answer": "Rocky (1976)",
     "choices": [
       "Rocky (1976)",
@@ -6670,7 +6631,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1985, director Ron Howard — the redheaded kid who had grown up playing Opie on The Andy Griffith Show — made the sci-fi drama Cocoon. In it, a group of retirement-home men swim in a pool full of glowing alien pods and suddenly feel young and strong again. Don Ameche won the Best Supporting Actor Oscar for it. What Disney movie, released the year before Cocoon, had Howard directed too?",
+    "question": "Ron Howard, the redheaded kid who grew up playing Opie on The Andy Griffith Show, made the sci-fi drama Cocoon, where a group of retirement-home men swim in a pool full of glowing alien pods and suddenly feel young and strong again. Don Ameche won the Best Supporting Actor Oscar for it. What Disney movie had Howard directed the year before?",
     "answer": "Splash (1984), with Tom Hanks and Daryl Hannah as the mermaid",
     "choices": [
       "Splash (1984), with Tom Hanks and Daryl Hannah as the mermaid",
@@ -6735,7 +6696,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1984, director John G. Avildsen, who had already won a Best Director Oscar for Rocky, made The Karate Kid, about a bullied teenager named Daniel LaRusso learning karate from an elderly Japanese-American handyman, Mr. Miyagi. The studio could not simply use the title. A comic-book publisher already owned a superhero called Karate Kid, a martial-arts member of the Legion of Super-Heroes since 1966, so the filmmakers needed its permission. Which publisher?",
+    "question": "The filmmakers behind Daniel LaRusso and Mr. Miyagi could not simply use the title The Karate Kid in 1984. A comic-book publisher already owned a superhero of that name, a martial-arts member of the Legion of Super-Heroes since 1966, so they needed its permission. Which publisher was it?",
     "answer": "DC Comics",
     "choices": [
       "DC Comics",
@@ -6800,7 +6761,7 @@
   },
   {
     "tier": 4,
-    "question": "The 1990 gangster film Goodfellas was directed by American filmmaker Martin Scorsese and stars Ray Liotta as Henry Hill — a real New York mobster who spent decades inside the Lucchese crime family before turning informant for the FBI. The screenplay was adapted from a 1985 non-fiction book by American journalist Nicholas Pileggi, drawn from hundreds of taped interviews Pileggi had done with the real Hill himself. What was Pileggi's book called?",
+    "question": "Nicholas Pileggi, an American journalist, taped hundreds of interviews with Henry Hill, a real New York mobster who spent decades inside the Lucchese crime family before turning informant for the FBI. His 1985 book became Martin Scorsese's 1990 film Goodfellas, with Ray Liotta as Hill. What was Pileggi's book called?",
     "answer": "Wiseguy: Life in a Mafia Family",
     "choices": [
       "Wiseguy: Life in a Mafia Family",
@@ -6943,7 +6904,7 @@
   },
   {
     "tier": 5,
-    "question": "Released in 1982, John Carpenter's The Thing was a financial disappointment at $19.6M against an $11M budget — partly because it opened against E.T. (June 25, 1982 Carpenter; June 11, 1982 E.T.). The film's practical effects by Rob Bottin pioneered creature transformation imagery. The most-iconic transformation sequence involves a character's head detaching and growing spider legs. The shot has a specific cultural nickname. What's it called?",
+    "question": "Rob Bottin built the practical effects for John Carpenter's The Thing at twenty-two. The film, a financial disappointment at $19.6 million against an $11 million budget, opened two weeks behind E.T. in June 1982. In its most famous scene a dead man's body comes apart, and a piece of it grows legs and walks away. What is that scene known as?",
     "answer": "The Norris head-spider, named after the character (Charles Hallahan) whose head transforms",
     "choices": [
       "The Norris head-spider, named after the character (Charles Hallahan) whose head transforms",
@@ -6995,7 +6956,7 @@
   },
   {
     "tier": 5,
-    "question": "The 1985 science-fiction film Cocoon is about a group of Florida retirees who sneak into a neighbor's swimming pool and discover alien pods that make them feel young again. American actor Don Ameche plays retiree Art Selwyn and won the Academy Award for Best Supporting Actor for the role. In one show-stopping scene, seventy-seven-year-old Ameche crashes a nightclub dance floor and pulls off a real breakdance move — spinning on his shoulder blades while his legs point straight at the ceiling. Which breakdance move did Ameche perform?",
+    "question": "Don Ameche took the Oscar for Best Supporting Actor at seventy-seven as Art Selwyn, a Florida retiree who sneaks into a neighbor's swimming pool in Cocoon and finds alien pods that make him feel young again. In one show-stopping scene Art crashes a nightclub dance floor and goes down with his legs pointing straight at the ceiling. Which breakdance move does the scene show?",
     "answer": "A backspin (the move where the body rotates on the upper back/shoulders)",
     "choices": [
       "A backspin (the move where the body rotates on the upper back/shoulders)",
@@ -7047,7 +7008,7 @@
   },
   {
     "tier": 5,
-    "question": "Released in 1984, the original Karate Kid earned Pat Morita a Best Supporting Actor nomination for his Mr. Miyagi, a gentle Japanese-American handyman who carries painful memories of the Second World War. Morita knew that era first-hand: as a child during World War II (WWII) he and his family were held in American internment camps. Where was the real Pat Morita interned?",
+    "question": "Pat Morita drew a Best Supporting Actor nomination for his Mr. Miyagi, a gentle Japanese-American handyman who carries painful memories of the Second World War, in the 1984 film The Karate Kid. Morita knew that era first-hand, because as a child he and his family were interned in America during the war. Where was he held?",
     "answer": "Gila River, Arizona (then transferred to Tule Lake, California for security reclassification)",
     "choices": [
       "Gila River, Arizona (then transferred to Tule Lake, California for security reclassification)",
@@ -11272,7 +11233,7 @@
   },
   {
     "tier": 1,
-    "question": "In J.K. Rowling's Harry Potter books, wizard children across Britain get their acceptance letter at age eleven, board a scarlet steam engine at Platform Nine and Three-Quarters in London's King's Cross Station, and travel up to a hidden castle in the Scottish Highlands to learn magic. The castle has moving staircases, a Great Hall with a starlit ceiling, and four ancient student houses. What is the full name of the school?",
+    "question": "Harry Potter boards a scarlet steam engine at Platform Nine and Three-Quarters, in London's King's Cross Station, bound for a hidden castle in the Scottish Highlands. The castle has moving staircases, a Great Hall with a starlit ceiling and four ancient student houses. What is the full name of the school?",
     "answer": "Hogwarts School of Witchcraft and Wizardry",
     "choices": [
       "Hogwarts School of Witchcraft and Wizardry",
@@ -11285,7 +11246,7 @@
   },
   {
     "tier": 1,
-    "question": "In J.K. Rowling's Harry Potter books, the greatest dark wizard of the age is a pale, snake-faced sorcerer who split his own soul into hidden objects called Horcruxes to make himself immortal. When Harry was a baby, this dark lord murdered Harry's parents and tried to kill Harry too, leaving him with a lightning-shaped scar. Most wizards are so afraid of him that they refuse to say his name and call him only 'You-Know-Who.' What is his name?",
+    "question": "A pale, snake-faced dark lord murders Harry Potter's parents when Harry is a baby and tries to kill the boy too, leaving him with a lightning-shaped scar. Most wizards are so afraid of him that they refuse to say his name and call him only 'You-Know-Who.' What is his name?",
     "answer": "Voldemort",
     "choices": [
       "Voldemort",
@@ -11298,7 +11259,7 @@
   },
   {
     "tier": 1,
-    "question": "At Hogwarts, J.K. Rowling's magical school, every new student sits under an ancient Sorting Hat that reads each heart and calls out one of four student houses: brave Gryffindor, cunning Slytherin, clever Ravenclaw, or loyal Hufflepuff. When the Hat sat on Harry Potter's head, it whispered that Slytherin could make him great — but Harry begged for a different house and the Hat gave him the one he asked for. Which house did Harry join?",
+    "question": "The ancient Sorting Hat sits on Harry Potter's head at Hogwarts and whispers that Slytherin could make him great. Harry begs for a different house, and the Hat gives him the one he asks for. Which house does Harry join?",
     "answer": "Gryffindor",
     "choices": [
       "Gryffindor",
@@ -11311,7 +11272,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1990 a British woman was riding a delayed train from Manchester to London when the idea of a scrawny orphaned boy who discovers he is a wizard hit her all at once. She spent the next several years writing the first book on scraps of paper in Edinburgh cafés, often broke and raising a baby daughter alone on welfare. When the London publisher Bloomsbury finally put out Harry Potter and the Philosopher's Stone in 1997, she became one of the best-selling authors in history. Who wrote the Harry Potter books?",
+    "question": "A British woman was riding a delayed train from Manchester to London in 1990 when the idea of a scrawny orphan who discovers he is a wizard hit her all at once. She wrote the first book in Edinburgh cafés, often broke. Who wrote the Harry Potter books?",
     "answer": "J.K. Rowling",
     "choices": [
       "J.K. Rowling",
@@ -11324,7 +11285,7 @@
   },
   {
     "tier": 1,
-    "question": "When Harry Potter turns eleven, the huge half-giant Rubeus Hagrid takes him shopping in the wizard alley called Diagon Alley for his school supplies. In a magical pet store, Hagrid buys Harry a beautiful pure-white snowy owl as a birthday present — the first birthday present Harry has ever received. The owl carries his mail, sleeps in his dormitory, and later saves his life. What is her name?",
+    "question": "Hagrid takes Harry Potter shopping in Diagon Alley when the boy turns eleven, and in a magical pet store he buys him a pure-white snowy owl, the first birthday present Harry has ever received. What is the owl's name?",
     "answer": "Hedwig",
     "choices": [
       "Hedwig",
@@ -11337,7 +11298,7 @@
   },
   {
     "tier": 1,
-    "question": "For most of J.K. Rowling's Harry Potter books, Hogwarts is run by an ancient, kindly wizard with half-moon spectacles, a long silver beard tucked into his belt, and a twinkle in his blue eye. He once defeated the dark wizard Gellert Grindelwald in a legendary 1945 duel, and he was the only man the Dark Lord Voldemort truly feared. He becomes Harry's guide and protector at school. What is his name?",
+    "question": "A wizard in half-moon spectacles once defeated the dark wizard Gellert Grindelwald in a legendary 1945 duel. Now he runs Hogwarts with a long silver beard tucked into his belt, and he is Harry Potter's guide and protector. What is his name?",
     "answer": "Albus Dumbledore",
     "choices": [
       "Albus Dumbledore",
@@ -11350,7 +11311,7 @@
   },
   {
     "tier": 1,
-    "question": "At Hogwarts, Harry Potter's two closest friends are Ron Weasley — a tall, red-haired boy from a big, poor, loving pure-blood wizard family — and a bushy-haired Muggle-born girl who scores top marks in every class, memorizes textbooks before term even starts, and constantly reminds the boys to do their homework. Without her research and quick thinking, Harry would never have survived his first year. What is her name?",
+    "question": "Harry Potter would never survive his first year at Hogwarts without the research and quick thinking of a bushy-haired Muggle-born girl. She memorizes textbooks before term even starts and constantly reminds him and Ron Weasley to do their homework. What is her name?",
     "answer": "Hermione Granger",
     "choices": [
       "Hermione Granger",
@@ -11363,7 +11324,7 @@
   },
   {
     "tier": 1,
-    "question": "Quidditch is the wizarding sport in J.K. Rowling's Harry Potter, played on flying broomsticks around two towers of goal-hoops. Each team has seven players in four roles: Chasers throw the leather Quaffle, Keepers guard the hoops, Beaters swing bats to knock away heavy iron Bludgers, and one player alone chases a tiny golden winged ball called the Snitch — catching it ends the game and scores 150 points. Harry rides a Nimbus Two Thousand for that fourth job. Which position does he play?",
+    "question": "Harry Potter rides a Nimbus Two Thousand around the Quidditch hoops with one job on his team of seven: catch the Snitch, a tiny golden winged ball. Catching it ends the game and scores 150 points. Which position does he play?",
     "answer": "Seeker",
     "choices": [
       "Seeker",
@@ -11376,7 +11337,7 @@
   },
   {
     "tier": 1,
-    "question": "In J.K. Rowling's Harry Potter, an enormous, shaggy-bearded half-giant works as gamekeeper and Keeper of the Keys at Hogwarts. He lives in a wooden hut on the school grounds, adores dangerous magical creatures like dragons and three-headed dogs, and drinks his tea from bucket-sized mugs. When Harry turns eleven and the Dursleys try to hide him from his acceptance letter, this half-giant kicks down the door of the shack where they're hiding and hands Harry the letter in person. What is his name?",
+    "question": "An enormous, shaggy-bearded half-giant kicks down the door of the shack where the Dursleys are hiding Harry Potter, and he hands the boy his acceptance letter in person. He works as gamekeeper at Hogwarts and adores dragons and three-headed dogs. What is his name?",
     "answer": "Rubeus Hagrid",
     "choices": [
       "Rubeus Hagrid",
@@ -11389,7 +11350,7 @@
   },
   {
     "tier": 1,
-    "question": "A Patronus is a silvery guardian spirit a wizard conjures to fight off dementors, the soul-sucking prison guards of Azkaban. The Patronus takes the shape of the animal that best fits the caster's spirit. Harry Potter's father James was an unregistered Animagus who could turn himself into an antlered animal, earning the nickname 'Prongs' among his four friends. The first time Harry casts a full Patronus at age thirteen, it comes out as that same animal — and Harry breaks down crying. What shape did it take?",
+    "question": "Thirteen-year-old Harry Potter casts his first full Patronus, a silvery guardian spirit that drives off the soul-sucking dementors of Azkaban. It comes out as an animal tied to one of his dead parents, and Harry breaks down crying. What shape does it take?",
     "answer": "A stag, like his father 'Prongs'",
     "choices": [
       "A stag, like his father 'Prongs'",
@@ -11649,7 +11610,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1997 the British author J.K. Rowling published the first book in her Harry Potter series in the United Kingdom. It followed an orphaned eleven-year-old boy who learns he is a wizard, and it launched a global fantasy franchise. When the American publisher Scholastic released the same book in 1998, it changed the title, worried kids would think 'Philosopher' sounded too dry — so US copies use a different subtitle. What was the original British title of the very first book?",
+    "question": "Rowling published the first Harry Potter book in Britain in 1997, and a year later the American publisher Scholastic changed one word of its title, worried that kids would find the word too dry. What was the original British title?",
     "answer": "Harry Potter and the Philosopher's Stone",
     "choices": [
       "Harry Potter and the Philosopher's Stone",
@@ -11662,7 +11623,7 @@
   },
   {
     "tier": 2,
-    "question": "In J.K. Rowling's Harry Potter novels, one Hogwarts teacher hates Harry from the very first Potions class and seems cruel and petty for years. He is the greasy-haired, black-cloaked head of Slytherin house who brews potions in the school dungeons. In the final book we find out he had loved Harry's mother Lily and had been secretly serving Dumbledore against Voldemort the whole time — a heartbreaking double agent. Who is this Potions Master?",
+    "question": "A greasy-haired, black-cloaked Hogwarts teacher hates Harry Potter from the very first Potions class and seems cruel and petty for years. The last book reveals that this head of Slytherin house loved Lily, Harry's mother, and secretly served Dumbledore the whole time. Who is this Potions master?",
     "answer": "Severus Snape",
     "choices": [
       "Severus Snape",
@@ -11675,7 +11636,7 @@
   },
   {
     "tier": 2,
-    "question": "In J.K. Rowling's third Harry Potter novel, Prisoner of Azkaban, thirteen-year-old Harry learns that a dangerous convict has just escaped from Azkaban, the wizard prison guarded by soul-sucking dementors. Harry is told the man wants to kill him — but the truth turns out to be very different. The convict is actually Harry's own godfather, framed years ago for a crime he did not commit. Who is he?",
+    "question": "A dangerous convict has just escaped from Azkaban, the wizard prison, and thirteen-year-old Harry Potter is told the man wants to kill him. The truth in Prisoner of Azkaban turns out to be very different. The convict is Harry's own godfather, framed years ago for a crime he did not commit. Who is this godfather?",
     "answer": "Sirius Black",
     "choices": [
       "Sirius Black",
@@ -11688,7 +11649,7 @@
   },
   {
     "tier": 2,
-    "question": "In Prisoner of Azkaban, Harry Potter is given the Marauder's Map — an enchanted parchment made by his father and three friends when they were students at Hogwarts. Tap it with a wand and it reveals the location of every person moving inside the castle. But it only works if you speak the correct opening phrase, and you must speak a matching closing phrase to hide it again. What are those two magic phrases?",
+    "question": "Prisoner of Azkaban hands Harry Potter the Marauder's Map, an enchanted parchment his father and three friends made as students at Hogwarts. Tapped with a wand, it shows every person moving inside the castle, but only for someone who speaks the correct opening phrase, and a matching closing phrase hides it again. What are the two phrases?",
     "answer": "'I solemnly swear that I am up to no good' / 'Mischief managed'",
     "choices": [
       "'I solemnly swear that I am up to no good' / 'Mischief managed'",
@@ -11701,7 +11662,7 @@
   },
   {
     "tier": 2,
-    "question": "In Harry Potter and the Prisoner of Azkaban, the giant Hogwarts gamekeeper Hagrid gets promoted to teach the Care of Magical Creatures class. For his very first lesson he leads the students out to the paddock and brings out a rare flying beast — half giant eagle up front, half horse in back, with sharp claws and a huge orange beak. Hagrid warns the class the creature is proud and dangerous, and Harry has to walk forward slowly and bow deep before it will let him near. What magical creature is it?",
+    "question": "Hagrid leads his students out to the paddock for his first Care of Magical Creatures lesson in Prisoner of Azkaban and brings out a rare flying beast with sharp claws. He warns that it is proud and dangerous, and Harry Potter has to walk forward slowly and bow deep before it will let him near. What magical creature is it?",
     "answer": "A Hippogriff named Buckbeak",
     "choices": [
       "A Hippogriff named Buckbeak",
@@ -11714,7 +11675,7 @@
   },
   {
     "tier": 2,
-    "question": "In Harry Potter and the Goblet of Fire, three wizarding schools — Hogwarts, Beauxbatons, and Durmstrang — each send a champion to compete in the Triwizard Tournament, a dangerous three-task contest. In the final task, Harry and the Hogwarts co-champion Cedric Diggory race through a magical hedge maze and decide to grab the Triwizard Cup together as joint winners. The moment they touch it, the whole story turns dark. What happens next?",
+    "question": "Cedric Diggory and Harry Potter race through a magical hedge maze in the last task of the Triwizard Tournament in Goblet of Fire, and they decide to grab the Cup together as joint winners. The moment they touch it, the story turns dark. What happens next?",
     "answer": "They are Portkey-transported to a graveyard where Voldemort returns",
     "choices": [
       "They are Portkey-transported to a graveyard where Voldemort returns",
@@ -11727,7 +11688,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Harry Potter books, Hogwarts School of Witchcraft and Wizardry is split into four houses. Each house is named after one of the four wizards who founded the school a thousand years ago. Slytherin House prizes cunning and ambition, and its emblem is a green serpent. Which of the four founders started Slytherin House?",
+    "question": "Four wizards founded Hogwarts a thousand years ago, and each gave a name to one of its houses. One house prizes cunning and ambition, and its emblem is a green serpent. Which founder started it?",
     "answer": "Salazar Slytherin",
     "choices": [
       "Salazar Slytherin",
@@ -11740,7 +11701,7 @@
   },
   {
     "tier": 2,
-    "question": "In Harry Potter and the Chamber of Secrets, students at Hogwarts have been turning up petrified — frozen solid as stone — after a giant serpent called a basilisk has been slithering through the school's pipes. Down in the hidden Chamber under the castle, Harry stabs the monster through the roof of its mouth with the sword of Gryffindor and kills it. Then he grabs one of its poisonous fangs and drives it into the enchanted object that a memory of the young Tom Riddle had been using to possess Ginny Weasley. What object was it?",
+    "question": "Harry Potter goes down into the hidden Chamber under Hogwarts and stabs the giant basilisk through the roof of its mouth. Then he grabs one of its poisonous fangs and drives it into the enchanted object that has been possessing Ginny Weasley. What object is it?",
     "answer": "Tom Riddle's diary, a Horcrux",
     "choices": [
       "Tom Riddle's diary, a Horcrux",
@@ -11753,7 +11714,7 @@
   },
   {
     "tier": 2,
-    "question": "Alfonso Cuarón is a Mexican filmmaker known for Y Tu Mamá También and later Gravity and Roma. In the early 2000s he took over the Harry Potter film series from Chris Columbus and gave it a darker, more grown-up look — colder colors, tighter camera work, real weather in every scene. Every Potter film after his imitated that style. Which Harry Potter movie did Cuarón direct?",
+    "question": "Alfonso Cuarón took over the Harry Potter films from Chris Columbus in the early 2000s and gave the series a darker, more grown-up look, with colder colors, tighter camera work and real weather in every scene. Every Potter film after his imitated that style. Which Harry Potter movie did Cuarón direct?",
     "answer": "Harry Potter and the Prisoner of Azkaban (2004)",
     "choices": [
       "Harry Potter and the Prisoner of Azkaban (2004)",
@@ -11766,7 +11727,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Harry Potter novels, Headmaster Albus Dumbledore keeps a pet phoenix in his office at Hogwarts. The bird is named Fawkes after Guy Fawkes, the man behind the 1605 Gunpowder Plot in England. A phoenix bursts into flame when it dies and is reborn from its own ashes. Fawkes's feathers match the fire he keeps returning from. What color are they?",
+    "question": "Fawkes, the pet phoenix Dumbledore keeps in his office at Hogwarts, bursts into flame when he dies and is reborn from his own ashes. He takes his name from Guy Fawkes, the man behind the 1605 Gunpowder Plot in England. What color are his feathers?",
     "answer": "Crimson and gold (with a long golden tail)",
     "choices": [
       "Crimson and gold (with a long golden tail)",
@@ -12039,7 +12000,7 @@
   },
   {
     "tier": 3,
-    "question": "In Harry Potter and the Order of the Phoenix, the Ministry of Magic sends a pink-clad new teacher named Dolores Umbridge to Hogwarts. She bans real spellwork in Defense Against the Dark Arts class — students may only read theory from a textbook. With Voldemort actively rising again outside, Harry, Hermione, Ron, and their friends decide to defy her. They meet secretly in the hidden Room of Requirement to practice real defensive spells, and they give their student study-group a proud name. What do they call it?",
+    "question": "Dolores Umbridge comes to Hogwarts in pink, sent by the Ministry of Magic in Order of the Phoenix, and bans real spellwork in Defense Against the Dark Arts: students may only read theory from a textbook. With the Dark Lord rising again outside, Harry Potter and his friends defy her, meeting in the Room of Requirement to practice real defensive spells. What proud name do they give their study group?",
     "answer": "Dumbledore's Army (the DA)",
     "choices": [
       "Dumbledore's Army (the DA)",
@@ -12052,7 +12013,7 @@
   },
   {
     "tier": 3,
-    "question": "Sirius Black dies in Order of the Phoenix during the Battle of the Department of Mysteries, killed by his cousin Bellatrix Lestrange. He falls backward through an ancient stone archway draped with a tattered veil. What's the in-universe name for this artifact in the Death Chamber?",
+    "question": "Bellatrix Lestrange kills her cousin Sirius in the Battle of the Department of Mysteries in Order of the Phoenix. He falls backward through an ancient stone archway and is gone. What is this artifact called?",
     "answer": "The Veil of Death (or simply 'the Veil')",
     "choices": [
       "The Veil of Death (or simply 'the Veil')",
@@ -12065,7 +12026,7 @@
   },
   {
     "tier": 3,
-    "question": "In Harry Potter and the Half-Blood Prince, Dumbledore takes Harry into a Pensieve of memories and reveals a terrible piece of Voldemort's past. As a young student, Tom Riddle had used the darkest branch of magic to split his own soul into seven pieces, then hid each fragment inside a physical object (a diary, a ring, a locket, and more) so no killing curse could ever finish him for good. To create one, he first had to commit a murder. What is the wizarding term for each of these dark soul-fragment containers?",
+    "question": "Dumbledore takes Harry Potter into a Pensieve in Half-Blood Prince and shows him a terrible piece of the Dark Lord's past. As a young student, Tom Riddle used the darkest branch of magic to split his own soul into seven pieces and hid each fragment inside a physical object, such as a ring or a locket. To make one he first had to commit a murder. What are these containers called?",
     "answer": "Horcruxes",
     "choices": [
       "Horcruxes",
@@ -12078,7 +12039,7 @@
   },
   {
     "tier": 3,
-    "question": "In J.K. Rowling's Harry Potter and the Deathly Hallows, Hermione Granger reads aloud an old wizard fairy tale called The Tale of the Three Brothers. In the story, three wizard brothers meet Death on a lonely bridge and each demand a gift. The first asks for the mightiest wand ever made, the second for a Resurrection Stone to bring back the dead, and the third for a Cloak of Invisibility. The gifts together are the Deathly Hallows. What is the first brother's wand called?",
+    "question": "Hermione reads aloud an old wizard fairy tale, The Tale of the Three Brothers, in Deathly Hallows. The brothers meet Death on a lonely bridge and each demands a gift: the first the mightiest wand ever made, the second a Resurrection Stone to bring back the dead, the third a Cloak of Invisibility. What is the first brother's wand called?",
     "answer": "The Elder Wand",
     "choices": [
       "The Elder Wand",
@@ -12091,7 +12052,7 @@
   },
   {
     "tier": 3,
-    "question": "In J.K. Rowling's Harry Potter and the Deathly Hallows, Voldemort's Death Eaters storm Hogwarts castle in the final Battle of Hogwarts. The Weasleys, a red-headed wizarding family, defend the school alongside Harry and Hermione. One of the family's identical twin pranksters is fighting beside his older brother Percy — who has just rejoined the family after years of estrangement — and is laughing at a rare joke Percy has just cracked when an exploding wall crashes down on them mid-laugh. Which twin dies?",
+    "question": "Percy Weasley has just rejoined his family after years of estrangement when the Death Eaters storm Hogwarts in Deathly Hallows. He cracks a rare joke in the fighting, and one of his identical twin brothers is still laughing when an exploding wall crashes down on them. Which twin dies?",
     "answer": "Fred Weasley",
     "choices": [
       "Fred Weasley",
@@ -12104,7 +12065,7 @@
   },
   {
     "tier": 3,
-    "question": "Near the end of J.K. Rowling's Harry Potter and the Deathly Hallows (2007), Harry dips his face into a stone basin called the Pensieve to view Severus Snape's private memories. He discovers that Snape has quietly loved Harry's mother, Lily Potter, since they were children playing together. In one memory the headmaster Albus Dumbledore gently asks Snape whether he still loves Lily after all these years. Snape replies with a single, one-word answer. What word does he say?",
+    "question": "Harry Potter dips his face into the stone basin of the Pensieve near the end of Deathly Hallows to view Snape's private memories. Snape has quietly loved Harry's mother, Lily, since they were children playing together. In one memory Dumbledore gently asks Snape whether he still loves her after all these years. What does Snape answer?",
     "answer": "Always.",
     "choices": [
       "Always.",
@@ -12117,7 +12078,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Harry Potter books by J.K. Rowling, four friends attended Hogwarts School together in the 1970s: James Potter, Sirius Black, Remus Lupin, and Peter Pettigrew. They called themselves the Marauders. Because Remus was a werewolf, the other three secretly learned to become Animagi — wizards who can turn into a chosen animal at will — so they could keep him company on full-moon nights. They also made the Marauder's Map, signing it with each Animagus nickname. James was Prongs, a stag. What form did Sirius take?",
+    "question": "James Potter, Sirius and Peter Pettigrew secretly learned at Hogwarts in the 1970s to become Animagi, wizards who can turn into a chosen animal at will. They did it to keep their werewolf friend Remus Lupin company on full-moon nights, and they signed the Marauder's Map with their animal nicknames. What form did Sirius take?",
     "answer": "A large black dog (he was nicknamed Padfoot)",
     "choices": [
       "A large black dog (he was nicknamed Padfoot)",
@@ -12130,7 +12091,7 @@
   },
   {
     "tier": 3,
-    "question": "In J.K. Rowling's Harry Potter and the Prisoner of Azkaban, thirteen-year-old Hermione Granger has somehow been attending more classes than her Hogwarts timetable should allow. Finally she pulls a tiny gold hourglass on a chain out from under her robes and shows it to Harry and Ron. Professor McGonagall had lent it to her so she could quietly take two classes at the same hour. What is the necklace called?",
+    "question": "Hermione, thirteen, has somehow been attending more classes than her Hogwarts timetable should allow in Prisoner of Azkaban. Finally she pulls a tiny gold hourglass on a chain out from under her robes and shows it to Harry Potter and Ron. Professor McGonagall lent it to her so that she could quietly take two classes at the same hour. What is it called?",
     "answer": "A Time-Turner",
     "choices": [
       "A Time-Turner",
@@ -12143,7 +12104,7 @@
   },
   {
     "tier": 3,
-    "question": "Newt Scamander's textbook Fantastic Beasts and Where to Find Them is referenced throughout the Harry Potter series. The Yule Ball in Goblet of Fire (book 4) features two student musicians performing — the in-universe wizarding rock band whose drummer wears a kilt. What's the band called?",
+    "question": "A wizarding rock band plays the Yule Ball in Goblet of Fire, and its drummer wears a kilt. What is the band called?",
     "answer": "The Weird Sisters",
     "choices": [
       "The Weird Sisters",
@@ -12156,7 +12117,7 @@
   },
   {
     "tier": 3,
-    "question": "In Order of the Phoenix, Dolores Umbridge takes over Hogwarts as the Headmistress and inquisitor. She forces Harry to write lines with a magic quill that carves the words into his hand. What clever plan does Hermione use to get Umbridge removed from the school?",
+    "question": "Harry Potter writes lines for Dolores Umbridge in Order of the Phoenix with a magic quill that carves the words into his hand. She has taken over Hogwarts as Headmistress and inquisitor. What clever plan does Hermione use to get Umbridge removed from the school?",
     "answer": "Tricking Umbridge into the Forbidden Forest where centaurs carry her off",
     "choices": [
       "Tricking Umbridge into the Forbidden Forest where centaurs carry her off",
@@ -12429,7 +12390,7 @@
   },
   {
     "tier": 4,
-    "question": "J.K. Rowling famously sketched out the seven-book Harry Potter plan on a napkin in 1990 during a delayed Manchester-to-London train ride. She spent five years developing it before writing began. The first publisher to accept Philosopher's Stone after rejection from twelve houses was a small London independent. Their initial print run was just 500 hardcover copies. Which publisher took the gamble?",
+    "question": "Rowling carried the idea for Harry Potter off a delayed Manchester-to-London train in 1990, and twelve publishers later rejected the finished book. A small London independent finally took the gamble, with a first print run of just 500 hardcover copies. Which publisher was it?",
     "answer": "Bloomsbury",
     "choices": [
       "Bloomsbury",
@@ -12442,7 +12403,7 @@
   },
   {
     "tier": 4,
-    "question": "The Mirror of Erised, first encountered by Harry in Philosopher's Stone (book 1, 1997), shows the viewer their deepest, most desperate desire. The inscription on its frame reads 'Erised stra ehru oyt ube cafru oyt on wohsi' — a mirror-reversed sentence. What does the English original say?",
+    "question": "Harry Potter finds the Mirror of Erised in his first year at Hogwarts and reads the inscription on its frame: 'Erised stra ehru oyt ube cafru oyt on wohsi.' Read backward, the letters make an English sentence. What does it say?",
     "answer": "I show not your face but your heart's desire",
     "choices": [
       "I show not your face but your heart's desire",
@@ -12455,7 +12416,7 @@
   },
   {
     "tier": 4,
-    "question": "J.K. Rowling built the four houses of Hogwarts School around the four classical elements of ancient thought — fire, water, air, and earth. Gryffindor is fire, and prizes courage. Slytherin is water, and prizes ambition. Ravenclaw is air, and prizes wit. Each of the four houses was founded a thousand years ago by one witch or wizard, who left behind a personal relic that later became a treasured heirloom. What element and virtue does Hufflepuff represent, and what heirloom did its founder leave behind?",
+    "question": "Rowling built the four houses of Hogwarts around elements and virtues, giving Ravenclaw air and wit. Each founder, a thousand years ago, also left behind a personal relic that later became a treasured heirloom. Which element, virtue and heirloom belong to Hufflepuff?",
     "answer": "Earth, loyalty, and Helga Hufflepuff's gold-and-badger-engraved cup",
     "choices": [
       "Earth, loyalty, and Helga Hufflepuff's gold-and-badger-engraved cup",
@@ -12468,7 +12429,7 @@
   },
   {
     "tier": 4,
-    "question": "Cedric Diggory's death in Goblet of Fire (2000) was a turning point — the first major character death in the series. The killing curse is delivered by Peter Pettigrew on Voldemort's command in a graveyard in Little Hangleton. Voldemort's revival in the same scene requires three ritual ingredients. The first is bone of the father, unknowingly taken. The second is flesh of the servant, willingly given (Wormtail's hand). What's the third?",
+    "question": "Peter Pettigrew kills Cedric Diggory on his master's command in a graveyard in Little Hangleton in Goblet of Fire. The Dark Lord's revival in the same scene needs three ritual ingredients. The first is bone of the father, unknowingly taken. The second is flesh of the servant, willingly given, and Pettigrew gives his own hand. What is the third?",
     "answer": "Blood of the enemy, forcibly taken (from Harry, with a silver dagger)",
     "choices": [
       "Blood of the enemy, forcibly taken (from Harry, with a silver dagger)",
@@ -12481,7 +12442,7 @@
   },
   {
     "tier": 4,
-    "question": "In J.K. Rowling's fourth Harry Potter book, Goblet of Fire, Hogwarts hires a scarred old ex-Auror called Mad-Eye Moody to teach Defense Against the Dark Arts. He acts strange and paranoid all year, but he quietly steers Harry toward victory in the Triwizard Tournament. At the very end of the book it is revealed that this 'Moody' is actually a hidden Death Eater who kidnapped the real Moody, stuffed him inside a magical trunk, and drank Polyjuice Potion every hour all year to look like him. Who was the imposter?",
+    "question": "Mad-Eye Moody, a scarred old ex-Auror, comes to Hogwarts to teach Defense Against the Dark Arts in Goblet of Fire, and he quietly steers Harry Potter toward victory in the Triwizard Tournament. At the very end of the book this Moody proves to be a hidden Death Eater, who has stuffed the real man inside a magical trunk and drunk Polyjuice Potion every hour all year. Who is the imposter?",
     "answer": "Barty Crouch Jr.",
     "choices": [
       "Barty Crouch Jr.",
@@ -12494,7 +12455,7 @@
   },
   {
     "tier": 4,
-    "question": "In Order of the Phoenix (book 5), Dolores Umbridge takes over Hogwarts as 'High Inquisitor' on Cornelius Fudge's orders. Her cruel disciplinary methods include a magical detention quill that uses the writer's blood as ink, carving the words 'I must not tell lies' into the back of Harry's hand. The scar remains permanent on Harry's hand for the rest of the series. What has Rowling said Umbridge is modelled on?",
+    "question": "Cornelius Fudge sends Dolores Umbridge to Hogwarts as High Inquisitor in Order of the Phoenix. Her detention quill uses the writer's blood as ink and carves 'I must not tell lies' into the back of Harry Potter's hand, leaving a scar that stays for the rest of the series. What has Rowling said Umbridge is modelled on?",
     "answer": "A composite of authoritarian schoolteachers and middle-management bureaucrats Rowling had encountered",
     "choices": [
       "A composite of authoritarian schoolteachers and middle-management bureaucrats Rowling had encountered",
@@ -12507,7 +12468,7 @@
   },
   {
     "tier": 4,
-    "question": "Hogwarts has a poltergeist named Peeves who plagues students and even staff. Peeves answers to one authority at the school besides Dumbledore. Filch hates Peeves. But the only one who can actually keep Peeves in line short of Dumbledore is who?",
+    "question": "Filch hates Peeves, the Hogwarts poltergeist who plagues students and even staff, but only two figures at the school can keep the poltergeist in line. One of them is Dumbledore. Who is the other?",
     "answer": "The Bloody Baron (the Slytherin House ghost)",
     "choices": [
       "The Bloody Baron (the Slytherin House ghost)",
@@ -12520,7 +12481,7 @@
   },
   {
     "tier": 4,
-    "question": "In Deathly Hallows, Harry, Ron, and Hermione spend much of the book on the run, hunting Horcruxes while wearing Slytherin's locket Horcrux in turns. The locket exerts a corrupting psychological influence on its wearer. Harry, Ron, and Hermione each have different reactions. Ron's reaction in particular causes him to abandon Harry and Hermione for weeks before returning. What artifact does Ron use to find his way back to them?",
+    "question": "Ron Weasley takes his turn wearing Slytherin's locket on the run with Harry Potter and Hermione in Deathly Hallows, and its corrupting pull drives him to abandon them. He stays away for weeks before returning. What does he use to find his way back?",
     "answer": "The Deluminator left to him by Dumbledore in his will",
     "choices": [
       "The Deluminator left to him by Dumbledore in his will",
@@ -12533,7 +12494,7 @@
   },
   {
     "tier": 4,
-    "question": "The Battle of Hogwarts in Deathly Hallows takes place on May 2, 1998 (a date Rowling has confirmed). Voldemort kills Snape in the Shrieking Shack to claim mastery of the Elder Wand. Voldemort believes Snape is the Wand's master because Snape killed Dumbledore. Why is Voldemort wrong about who really mastered the Elder Wand?",
+    "question": "The Dark Lord kills Snape in the Shrieking Shack during the Battle of Hogwarts to claim mastery of the mightiest wand ever made. He believes Snape is its master because Snape killed Dumbledore. Why is the Dark Lord wrong about who really mastered the wand?",
     "answer": "Draco disarmed Dumbledore atop the Tower before Snape's curse, then Harry later disarmed Draco at Malfoy Manor",
     "choices": [
       "Draco disarmed Dumbledore atop the Tower before Snape's curse, then Harry later disarmed Draco at Malfoy Manor",
@@ -12546,7 +12507,7 @@
   },
   {
     "tier": 4,
-    "question": "J.K. Rowling has confirmed multiple deliberate dates throughout the series. Harry was born on July 31, 1980 (matching Rowling's own birthday). Voldemort attacked the Potters on Halloween — October 31, 1981 — killing James and Lily and giving Harry his lightning scar. The Potters were betrayed by their Secret-Keeper, switched at the last minute from Sirius to whom?",
+    "question": "James and Lily Potter switched their Secret-Keeper at the last minute, from Sirius to a new one. The Dark Lord came for them on Halloween of 1981, killed them both and left baby Harry with his lightning scar. Who was the Secret-Keeper who betrayed them?",
     "answer": "Peter Pettigrew (Wormtail)",
     "choices": [
       "Peter Pettigrew (Wormtail)",
@@ -12819,7 +12780,7 @@
   },
   {
     "tier": 5,
-    "question": "Harry Potter and the Philosopher's Stone was rejected by twelve publishers before Bloomsbury accepted it in 1996. J.K. Rowling has named several of the rejecting publishers in interviews over the years. The first major US-rights bid came from Arthur A. Levine Books, an imprint of Scholastic, at the 1997 Bologna Children's Book Fair. The advance Scholastic paid Rowling was the highest amount ever paid for a children's book at that point. What was the advance?",
+    "question": "Arthur A. Levine Books, an imprint of Scholastic, made the first major bid for the American rights to Harry Potter at the 1997 Bologna Children's Book Fair. The advance Scholastic paid Rowling was the highest ever paid for a children's book at that point. What was the advance?",
     "answer": "$105,000",
     "choices": [
       "$105,000",
@@ -12832,7 +12793,7 @@
   },
   {
     "tier": 5,
-    "question": "In J.K. Rowling's Harry Potter, the dark wizard Lord Voldemort split his soul into seven magical objects called Horcruxes so that he could not truly die. One Horcrux was Helga Hufflepuff's golden cup, hidden in a wizarding bank vault. In Deathly Hallows, Ron Weasley and Hermione Granger sneak down into the flooded ancient hall deep beneath Hogwarts — the very place Harry had entered in his second year — to finish the cup off. Hermione does the deed. What weapon does she use?",
+    "question": "Ron Weasley and Hermione sneak away together in Deathly Hallows to finish off Helga Hufflepuff's golden cup, one of the seven objects that hold pieces of the Dark Lord's soul. It had been hidden in a wizarding bank vault. Hermione does the deed. What weapon does she use?",
     "answer": "A basilisk fang from the Chamber of Secrets",
     "choices": [
       "A basilisk fang from the Chamber of Secrets",
@@ -12845,7 +12806,7 @@
   },
   {
     "tier": 5,
-    "question": "In Half-Blood Prince (book 6, 2005), Harry obtains a used Potions textbook with marginal annotations from a previous owner. The annotations dramatically improve every potion Harry brews. The previous owner had also invented original spells written in the book — including 'Sectumsempra,' a slashing curse Harry uses against Draco Malfoy in a bathroom duel that nearly kills him. The book is signed 'Property of the Half-Blood Prince.' Whose book was it?",
+    "question": "Harry Potter gets hold of a used Potions textbook in Half-Blood Prince, and its margin notes improve every potion he brews. The previous owner also wrote in spells of his own invention, among them Sectumsempra, a slashing curse that nearly kills Draco Malfoy when Harry uses it in a bathroom duel. The book is signed 'Property of the Half-Blood Prince.' Whose book was it?",
     "answer": "Severus Snape (his mother was Eileen Prince)",
     "choices": [
       "Severus Snape (his mother was Eileen Prince)",
@@ -12858,7 +12819,7 @@
   },
   {
     "tier": 5,
-    "question": "The Order of the Phoenix (book 5, 2003) headquarters is 12 Grimmauld Place, the ancestral London townhouse of the Black family. Sirius's nightmarish childhood home is filled with Black family tapestries, dark-arts artifacts, and the portrait of his portrait-shrieking mother Walburga Black. The house is protected by the Fidelius Charm with Dumbledore as Secret-Keeper. The house elf attached to the property is a disgruntled, generations-old half-mad servant who at first betrays the Order before reconciling with the protagonists. What's the elf's name?",
+    "question": "Walburga Black shrieks from her portrait at 12 Grimmauld Place, the ancestral London townhouse of the Black family and now the headquarters of the Order of the Phoenix. Her son Sirius's nightmarish childhood home is full of family tapestries and dark-arts artifacts. A disgruntled, half-mad old house-elf still serves the place, and at first he betrays the Order. What is the elf's name?",
     "answer": "Kreacher",
     "choices": [
       "Kreacher",
@@ -12871,7 +12832,7 @@
   },
   {
     "tier": 5,
-    "question": "In J.K. Rowling's Harry Potter and the Half-Blood Prince, the Hogwarts groundskeeper Rubeus Hagrid has kept a giant intelligent spider named Aragog as a pet in the Forbidden Forest since he was a boy. Aragog finally dies of old age. In tears, Hagrid begs Harry and Ron to sneak out of the castle at night and help him with the funeral. Aragog is enormous -- much too heavy for Hagrid to manage alone. What help does Hagrid need?",
+    "question": "Hagrid, in tears, begs Harry Potter and Ron to sneak out of the castle at night and help him with a funeral in Half-Blood Prince. Aragog, the giant intelligent spider he has kept in the Forbidden Forest since he was a boy, has died of old age. What help does Hagrid need?",
     "answer": "Lifting the body to bury it (Aragog is the size of a small elephant)",
     "choices": [
       "Lifting the body to bury it (Aragog is the size of a small elephant)",
@@ -12884,7 +12845,7 @@
   },
   {
     "tier": 5,
-    "question": "Harry Potter's wand contains a phoenix tail feather from Dumbledore's bird Fawkes — the same source feather that's in Voldemort's wand. This 'brother wand' connection causes the Priori Incantatem (golden cage of light) effect when Harry and Voldemort directly attack each other in the Goblet of Fire graveyard scene. Both wands were made by Ollivander, the legendary wandmaker. What is his first name?",
+    "question": "Harry Potter and the Dark Lord attack each other directly in the Goblet of Fire graveyard, and their wands throw up a golden cage of light, the Priori Incantatem effect. Each wand holds a tail feather from Dumbledore's phoenix Fawkes, and both came from the legendary wandmaker Ollivander of 1 Diagon Alley. What is his first name?",
     "answer": "Garrick Ollivander",
     "choices": [
       "Garrick Ollivander",
@@ -12897,7 +12858,7 @@
   },
   {
     "tier": 5,
-    "question": "Hermione Granger's parents — both dentists in London — appear briefly in Chamber of Secrets and Goblet of Fire. In Deathly Hallows, Hermione casts a memory-charm on them and sends them off so they cannot be tortured for her location. She erases their memory of having a daughter and gives them new identities. What new names does she give them?",
+    "question": "Hermione casts a memory charm on her own parents, two London dentists, in Deathly Hallows, and sends them off so that no one can torture them for her location. She erases their memory of having a daughter and gives them new identities. What new names does she give them?",
     "answer": "Wendell and Monica Wilkins",
     "choices": [
       "Wendell and Monica Wilkins",
@@ -12910,7 +12871,7 @@
   },
   {
     "tier": 5,
-    "question": "The Marauders — James, Sirius, Remus, and Peter — became secret Animagi at Hogwarts to keep Lupin company on full-moon nights. Becoming an Animagus is very hard magic and takes years. As part of the process, what plant's leaf must you keep in your mouth for a full month without a break?",
+    "question": "James Potter spent years at Hogwarts on very hard magic with Sirius and Peter, learning to become an Animagus so that the three could keep Lupin company on full-moon nights. What did each of them have to keep in his mouth for a full month without a break?",
     "answer": "A leaf from the Mandrake plant",
     "choices": [
       "A leaf from the Mandrake plant",
@@ -12923,7 +12884,7 @@
   },
   {
     "tier": 5,
-    "question": "The Battle of Hogwarts ends with Voldemort firing the killing curse at Harry in the Great Hall — and the curse rebounding to kill Voldemort because Voldemort has been the unwitting master of his own death. Harry survives the prior killing curse in the Forest because of the soul-anchor effect of Voldemort containing Harry's blood. Harry's blood was taken in 1995 to revive Voldemort. The 'King's Cross' chapter between forest-death and Great Hall return features Harry in conversation with Dumbledore. What does Harry see lying under a bench during this dream-sequence?",
+    "question": "Harry Potter survives a killing curse in the Forest near the end of Deathly Hallows, and the next chapter finds him at King's Cross in a kind of dream, in conversation with Dumbledore. What does Harry see lying under a bench there?",
     "answer": "A flayed, child-sized creature that represents the broken remnant of Voldemort's soul",
     "choices": [
       "A flayed, child-sized creature that represents the broken remnant of Voldemort's soul",
@@ -13040,7 +13001,7 @@
   },
   {
     "tier": 5,
-    "question": "In J.K. Rowling's Harry Potter books, Fawkes is Headmaster Albus Dumbledore's pet phoenix — a bird that bursts into flame and is reborn from its own ashes. In Chamber of Secrets, Fawkes flies down to Harry in the underground chamber, drops him the Sword of Gryffindor, and blinds the giant basilisk. Two books later, in Order of the Phoenix, Fawkes appears in the middle of a duel in the Ministry of Magic between Dumbledore and the dark wizard Voldemort. To save Dumbledore's life, Fawkes swoops in front of him and physically swallows one specific spell Voldemort has just cast. Which spell?",
+    "question": "Fawkes the phoenix flies down to Harry Potter in Chamber of Secrets, drops him a sword and blinds the giant basilisk. Two books later, in Order of the Phoenix, he appears in the middle of a duel at the Ministry of Magic between Dumbledore and the Dark Lord. He swoops in front of Dumbledore and swallows one spell whole. Which spell?",
     "answer": "Voldemort's killing curse (Avada Kedavra)",
     "choices": [
       "Voldemort's killing curse (Avada Kedavra)",
@@ -13105,7 +13066,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1912, American writer Edgar Rice Burroughs sold a pulp magazine a story about an English baby whose parents, Lord and Lady Greystoke, died in the African jungle. A gentle female ape found the orphan and raised him as her own child. He grew up climbing trees, wrestling leopards, and swinging on vines with the great apes as his family. What is this jungle-raised hero's name?",
+    "question": "Edgar Rice Burroughs's 1912 magazine story leaves an English baby alone in the African jungle after his parents die. A gentle female ape finds the orphan and raises him as her own child, and he grows up climbing trees, wrestling leopards and swinging on vines. What is this jungle-raised hero's name?",
     "answer": "Tarzan",
     "choices": [
       "Tarzan",
@@ -13144,7 +13105,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1930s, American writer Robert E. Howard invented a black-haired warrior born in the cold northern land of Cimmeria. He wanders the ancient Hyborian world as a thief, a pirate, and a mercenary before finally seizing a crown for himself and ruling the kingdom of Aquilonia. What is this Cimmerian warrior-king's name?",
+    "question": "Robert Howard, writing in the 1930s, sends a black-haired warrior out of the cold northern land of Cimmeria. He wanders the ancient Hyborian world as a thief, a pirate and a mercenary before he seizes a crown and rules the kingdom of Aquilonia. What is this Cimmerian warrior-king's name?",
     "answer": "Conan",
     "choices": [
       "Conan",
@@ -13235,7 +13196,7 @@
   },
   {
     "tier": 1,
-    "question": "In a 1912 story by the American writer Edgar Rice Burroughs — the same author who would later create Tarzan — an ex-Confederate cavalry officer is mysteriously transported to the planet Mars. The green-skinned four-armed Martians call their world Barsoom. Mars's lower gravity makes the Earthman leap huge distances and fight like a superhero, and he falls in love with a red-skinned princess named Dejah Thoris. What is his name?",
+    "question": "An ex-Confederate cavalry officer is mysteriously carried to Mars in a 1912 story by Edgar Rice Burroughs. The planet's lower gravity lets the Earthman leap huge distances and fight like a superhero, and he falls in love with a red-skinned princess named Dejah Thoris. What is his name?",
     "answer": "John Carter",
     "choices": [
       "John Carter",
@@ -13352,7 +13313,7 @@
   },
   {
     "tier": 2,
-    "question": "Robert E. Howard, the Texan who created Conan, spent most of his short life in one small town in central Texas, writing his stories in his parents' house. He took his own life there in June 1936, at thirty. The house is now a museum and a pilgrimage site for pulp fans. Which town was his lifelong home?",
+    "question": "Robert Howard sat in his parents' house in one small central Texas town and wrote his stories. He spent most of his short life there, and the house is now a museum and a pilgrimage site for pulp fans. Which town was it?",
     "answer": "Cross Plains",
     "choices": [
       "Cross Plains",
@@ -13430,7 +13391,7 @@
   },
   {
     "tier": 2,
-    "question": "In October 1912, a New York pulp magazine ran the first story of Tarzan, a boy raised by apes in the African jungle. In the tale, Tarzan's parents were English nobles marooned on the African coast by mutineers on their ship. They died in a jungle cabin before their baby son could speak — but the boy would later learn he was heir to a proud English family title. What was that title?",
+    "question": "Mutineers maroon two English nobles on the African coast in Edgar Rice Burroughs's 1912 story. The couple die in a jungle cabin before their baby son can speak, and the boy, raised by apes, later learns he is heir to a proud English family title. What is the family's title?",
     "answer": "Lord and Lady Greystoke",
     "choices": [
       "Lord and Lady Greystoke",
@@ -13495,7 +13456,7 @@
   },
   {
     "tier": 2,
-    "question": "In August 1939 Fritz Leiber's first published story introduced two swords-for-hire. One was a giant barbarian from the north. The other was a small thief and magician's apprentice. Together they roam a corrupt city of thieves and wizards. What were the two heroes called?",
+    "question": "Leiber put two swords-for-hire into his first published story in August 1939. One was a giant barbarian from the north, the other a small thief and magician's apprentice, and together they roamed a corrupt city of thieves and wizards. What were the two heroes called?",
     "answer": "Fafhrd and the Gray Mouser",
     "choices": [
       "Fafhrd and the Gray Mouser",
@@ -13508,7 +13469,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1961 Michael Moorcock wrote a novella in Science Fantasy magazine. It starred an albino sorcerer-emperor from a dying magical race. He leaned on drugs and a black sword that drank souls. He became a founding anti-hero of dark fantasy. What is his name?",
+    "question": "Michael Moorcock launched a new hero in a novella for Science Fantasy magazine in 1961: an albino sorcerer-emperor from a dying magical race. He leaned on drugs and on a black sword that drank souls, and he became a founding anti-hero of dark fantasy. What is his name?",
     "answer": "Elric of Melniboné",
     "choices": [
       "Elric of Melniboné",
@@ -13547,7 +13508,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1928 Robert E. Howard put a new hero in the pulp magazines. He was a Puritan in a slouch hat, armed with a rapier. He wandered the world fighting evil and avenging the innocent. He was Howard's grim religious answer to the pagan Conan. What is his name?",
+    "question": "Robert Howard put a new hero in the pulp magazines in 1928, a Puritan in a slouch hat, armed with a rapier. He wandered the world fighting evil and avenging the innocent, grim and religious. What is his name?",
     "answer": "Solomon Kane",
     "choices": [
       "Solomon Kane",
@@ -13625,7 +13586,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1922 the English civil servant Eric Rucker Eddison published a huge, gloriously old-fashioned fantasy novel written in mock-Elizabethan English. Its story of noble Demons and treacherous Witches locked in endless war is set — bizarrely — not on Earth but on the planet Mercury. J.R.R. Tolkien later admired the sheer force of Eddison's ringing prose but disapproved of the cruel morals of his aristocratic characters. What is the novel called?",
+    "question": "Eric Rucker Eddison, an English civil servant, published a huge, old-fashioned fantasy novel in 1922, written in mock-Elizabethan English. Its noble Demons and treacherous Witches lock in endless war, bizarrely, on the planet Mercury. J.R.R. Tolkien later admired the force of the prose and disapproved of the cruel morals of its aristocrats. What is the novel called?",
     "answer": "The Worm Ouroboros",
     "choices": [
       "The Worm Ouroboros",
@@ -13664,7 +13625,7 @@
   },
   {
     "tier": 3,
-    "question": "In December 1932, the pulp magazine Weird Tales printed Texan writer Robert E. Howard's first Conan the Barbarian story. Howard built the tale by rewriting an unpublished story about his earlier hero, King Kull — an Atlantean warrior who seized a decadent throne and became the king of a dying, pre-human kingdom on a lost continent long before Conan's time. What was Kull's fallen kingdom called?",
+    "question": "Robert Howard's earlier hero King Kull, an Atlantean warrior, seizes a decadent throne and becomes king of a dying, pre-human land on a lost continent, long before the age of Howard's later barbarian. What is Kull's fallen kingdom called?",
     "answer": "Valusia",
     "choices": [
       "Valusia",
@@ -13716,7 +13677,7 @@
   },
   {
     "tier": 3,
-    "question": "Edgar Rice Burroughs invented a series of subterranean novels about a hollow Earth accessed near the North Pole, where dinosaurs survive and primitive humans wage wars with stone tools. The world is lit by an inner sun and has no concept of time. What did Burroughs call this hollow-Earth realm?",
+    "question": "Edgar Rice Burroughs took his readers underground with a series of novels set in a hollow Earth, reached near the North Pole. Dinosaurs survive there, primitive humans wage wars with stone tools, and an inner sun lights a world with no concept of time. What did Burroughs call this realm?",
     "answer": "Pellucidar",
     "choices": [
       "Pellucidar",
@@ -13807,7 +13768,7 @@
   },
   {
     "tier": 3,
-    "question": "After Robert Howard died in 1936, L. Sprague de Camp and Lin Carter kept the Conan stories alive for decades, editing old manuscripts, completing unfinished pieces and writing new Conan tales of their own. The very first Conan books came from a small New York publisher that began putting the stories between hard covers in 1950, starting with Conan the Conqueror. Which publisher put them out?",
+    "question": "L. Sprague de Camp and Lin Carter took up Robert Howard's old manuscripts after his death in 1936, completing unfinished pieces and writing new barbarian tales of their own. The very first books of the saga, though, came from a small New York publisher, which began putting the stories between hard covers in 1950. Which publisher was it?",
     "answer": "Gnome Press",
     "choices": [
       "Gnome Press",
@@ -13924,7 +13885,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert E. Howard took his own life on 11 June 1936 in Cross Plains, Texas, as his mother lay in her final coma. He left behind a typed couplet: 'All fled, all done, so lift me on the pyre; the feast is over and the lamps expire.' The lines were not his own. Where did they come from?",
+    "question": "Robert Howard left a typed couplet behind him when he took his own life on 11 June 1936, as his mother lay in her final coma: 'All fled, all done, so lift me on the pyre; the feast is over and the lamps expire.' The lines were not his own. Where did they come from?",
     "answer": "Viola Garvin's 'The House of Caesar'",
     "choices": [
       "Viola Garvin's 'The House of Caesar'",
@@ -13963,7 +13924,7 @@
   },
   {
     "tier": 4,
-    "question": "The American writer who created Tarzan took control of his own work in 1923 by setting up a company and printing his own books through it. His ranch north of Los Angeles, which he had named Tarzana, later gave its name to the community that grew up around it. What was the company officially called?",
+    "question": "The writer who had sent a Confederate cavalryman to Mars took control of his own work in 1923, setting up a company and printing his own books through it. His ranch north of Los Angeles, which he had named Tarzana, later gave its name to the community that grew up around it. What was the company officially called?",
     "answer": "Edgar Rice Burroughs, Inc.",
     "choices": [
       "Edgar Rice Burroughs, Inc.",
@@ -14041,7 +14002,7 @@
   },
   {
     "tier": 4,
-    "question": "Karl Edward Wagner trained as a psychiatrist in North Carolina before he became a writer, and from 1980 he edited the long-running anthology The Year's Best Horror Stories. He created an immortal red-haired swordsman who is the Cain of Genesis, marked by God after killing his brother and doomed to wander the Earth forever. The hero debuted in a small-press novel in 1970 and appeared in about fifteen stories before Wagner died in 1994. What was the hero's name?",
+    "question": "Karl Edward Wagner, a trained psychiatrist, published a small-press novel in 1970 about an immortal red-haired swordsman. The hero was a man out of Genesis, marked by God after killing his brother and doomed to wander the Earth forever, and he went on to appear in about fifteen stories. What was the hero's name?",
     "answer": "Kane",
     "choices": [
       "Kane",
@@ -14132,7 +14093,7 @@
   },
   {
     "tier": 4,
-    "question": "Beyond Conan, Robert Howard wrote about many other heroes, and one of the best is the last king of the Picts, who leads his dwindling people against Rome's armies in Britain and even strikes at Hadrian's Wall. The Picts were a real ancient people of northern Britain, and most of his stories ran in Weird Tales between 1930 and 1932. What was this character's name?",
+    "question": "Robert Howard sent the last king of the Picts against Rome's armies in Britain at the head of his dwindling people, and even had him strike at Hadrian's Wall. The Picts were a real ancient people of northern Britain, and most of these stories ran in Weird Tales between 1930 and 1932. What was this king's name?",
     "answer": "Bran Mak Morn",
     "choices": [
       "Bran Mak Morn",
@@ -14210,7 +14171,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert E. Howard's Conan stories ran in Weird Tales from December 1932 to October 1936. Howard wrote only one full-length Conan novel, in 1934, for a British book publisher that went bankrupt before printing it, so Weird Tales ran it as a five-part serial from December 1935 to April 1936, the last months of Howard's life. In it King Conan of Aquilonia loses his throne to a sorcerer raised from the dead and must find a jewel called the Heart of Ahriman. What was the novel titled?",
+    "question": "Robert Howard wrote only one full-length novel of his Cimmerian, in 1934, for a British book publisher that went bankrupt before printing it. Weird Tales ran it instead as a five-part serial from December 1935 to April 1936. In it the king of Aquilonia loses his throne to a sorcerer raised from the dead and must find a jewel called the Heart of Ahriman. What was the novel titled?",
     "answer": "The Hour of the Dragon (later republished as Conan the Conqueror)",
     "choices": [
       "The Hour of the Dragon (later republished as Conan the Conqueror)",
@@ -14431,7 +14392,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Howard's 1935 Conan story Beyond the Black River takes the barbarian to a log fort on the edge of a forest held by the Picts, and critics have called it a transplanted Western. For the setting of that Pictish wilderness, Howard drew on a frontier novel by an American writer who is better known today for the eerie stories of The King in Yellow. Who was the novelist?",
+    "question": "Beyond the Black River, Robert Howard's 1935 story, takes his barbarian to a log fort on the edge of a forest held by the Picts, and critics have called it a transplanted Western. They say Howard drew that wilderness from a frontier novel by an American writer better known today for the eerie stories of The King in Yellow. Who was the novelist?",
     "answer": "Robert W. Chambers",
     "choices": [
       "Robert W. Chambers",
@@ -14444,7 +14405,7 @@
   },
   {
     "tier": 4,
-    "question": "Edgar Rice Burroughs invented several lost-world settings besides Tarzan and John Carter. In 1918 he ran a magazine serial about a captured German U-boat captain and a stranded American who find a strange island in the South Pacific. On the island, life gets more modern as you travel north. The 1975 Amicus film series was based on it. The island has one odd feature: a single river cuts through the steep cliffs that ring it. What did Burroughs call the island?",
+    "question": "Edgar Rice Burroughs ran a magazine serial in 1918 about a captured German U-boat captain and a stranded American who find a strange island in the South Pacific. Steep cliffs ring it, a single river cuts through them, and life gets more modern the farther north a traveler goes. The 1975 Amicus film series was based on it. What did Burroughs call the island?",
     "answer": "Caspak",
     "choices": [
       "Caspak",
@@ -14535,7 +14496,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert E. Howard launched Conan in the December 1932 Weird Tales with The Phoenix on the Sword, in which King Conan of Aquilonia fights off a plot against his throne. He built it by rewriting an unsold story about his earlier hero, the Atlantean warrior-king Kull, and long passages of the two are identical. What was the rejected Kull story called?",
+    "question": "Robert Howard launched his Cimmerian in the December 1932 Weird Tales with The Phoenix on the Sword, in which the king of Aquilonia fights off a plot against his throne. He built it by rewriting an unsold story about his earlier hero, the Atlantean warrior-king Kull, and long passages of the two are identical. What was the rejected Kull story called?",
     "answer": "By This Axe I Rule!",
     "choices": [
       "By This Axe I Rule!",
@@ -14574,7 +14535,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert E. Howard died in 1936, but his Conan tales of muscle, magic and doomed cities founded a whole genre, and later writers piled in after him. For decades the genre had no name. In 1961 the British writer Michael Moorcock asked fellow fans what to call this kind of story, and an American author of barbarian-and-thief adventures answered in a fanzine with a catchphrase that stuck. Who coined the term sword and sorcery?",
+    "question": "Michael Moorcock asked fellow fans in 1961 what to call the tales of muscle, magic and doomed cities that had grown up after Robert Howard's barbarian. For decades the genre had had no name. An American author of barbarian-and-thief adventures answered in a fanzine with a catchphrase that stuck. Who coined the term sword and sorcery?",
     "answer": "Fritz Leiber",
     "choices": [
       "Fritz Leiber",
@@ -16498,7 +16459,7 @@
   },
   {
     "tier": 1,
-    "question": "Conan the Barbarian -- the muscle-bound wandering warrior of the imagined Hyborian Age, who first stalked the pages of the pulp magazine Weird Tales in 1932 -- became the model for generations of fantasy barbarians. His creator was a young Texas writer who lived most of his short life in the tiny farm town of Cross Plains and typed his stories on a rickety desk in his parents' house. Who was this pulp author?",
+    "question": "A young Texas writer typed his stories on a rickety desk in his parents' house and sent a muscle-bound wanderer called Conan into the pulp magazine Weird Tales in 1932. Conan became the model for generations of fantasy barbarians. Who was this pulp author?",
     "answer": "Robert E. Howard",
     "choices": [
       "Robert E. Howard",
@@ -16602,7 +16563,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1979 Gary Gygax finished the three core rulebooks of Advanced Dungeons & Dragons (AD&D) by releasing the Dungeon Master's Guide. It joined the Monster Manual from 1977 and the Player's Handbook from 1978. Near the back of the book, one appendix lists the fantasy and sword-and-sorcery fiction that inspired the game: Tolkien, Robert E. Howard, Jack Vance, Fritz Leiber and many more. What is that appendix called?",
+    "question": "Gary Gygax finished the core rulebooks of Advanced Dungeons and Dragons with the Dungeon Master's Guide in 1979, joining the Monster Manual and the Player's Handbook. Near the back he listed the fantasy and sword-and-sorcery fiction that inspired the game: Tolkien, Howard, Jack Vance and many more. What is that list called?",
     "answer": "Appendix N",
     "choices": [
       "Appendix N",
@@ -16953,7 +16914,7 @@
   },
   {
     "tier": 3,
-    "question": "Robert E. Howard wrote his Conan stories in his family's house in Cross Plains, Texas, between 1932 and 1936. His mother had been ill for years, and when she fell into her final coma in June 1936, Howard took his own life. How old was he?",
+    "question": "Robert Howard's mother, ill for years, fell into her final coma in June 1936, and he took his own life. He had been writing his barbarian stories in the family's house in Texas since 1932. How old was he?",
     "answer": "Thirty",
     "choices": [
       "Thirty",
@@ -16966,7 +16927,7 @@
   },
   {
     "tier": 3,
-    "question": "Fritz Leiber's fantasy duo Fafhrd, a barbarian, and the Gray Mouser, a former wizard's apprentice turned thief, had been appearing in the pulps since 1939. Their adventures take place on the world of Nehwon, and most of their stories start or end in one sprawling, corrupt city of thieves and sorcerers. What city served as the duo's home base?",
+    "question": "Leiber sent Fafhrd, a barbarian, and the Gray Mouser, a former wizard's apprentice turned thief, across the world of Nehwon, and most of their stories started or ended in one sprawling, corrupt city of thieves and sorcerers. What city served as the duo's home base?",
     "answer": "Lankhmar, the city of black toga",
     "choices": [
       "Lankhmar, the city of black toga",
@@ -17148,7 +17109,7 @@
   },
   {
     "tier": 3,
-    "question": "Richard Garfield, a mathematics PhD, designed Magic: the Gathering and pitched it to a small Renton, Washington garage outfit called Wizards of the Coast in the early 1990s. The first set, Alpha, shipped in August 1993 with a print run of 2.6 million cards. Who was the WotC co-founder who agreed to the pitch?",
+    "question": "A Boeing programmer who ran a small garage game outfit in Renton, Washington, agreed to Garfield's pitch for Magic: the Gathering in the early 1990s. The first set, Alpha, shipped in August 1993 with a print run of 2.6 million cards. Who was the programmer?",
     "answer": "Peter Adkison",
     "choices": [
       "Peter Adkison",
@@ -17356,45 +17317,6 @@
   },
   {
     "tier": 4,
-    "question": "Magic: the Gathering's 1993 launch story is now industry legend. Richard Garfield pitched a 'collectible card game' concept (something that didn't exist as a category) to a small Renton, Washington outfit then operating out of Beth Moursund's basement. The company's founder agreed to publish it. Alpha (August 1993) shipped 2.6 million cards and sold through almost immediately. What was the company name?",
-    "answer": "Wizards of the Coast, founded 1990 by Peter Adkison",
-    "choices": [
-      "Wizards of the Coast, founded 1990 by Peter Adkison",
-      "Iron Crown Enterprises, founded 1980 in Charlottesville Virginia",
-      "Hero Games, founded 1981 by Steve Peterson and George MacDonald",
-      "FASA Corporation, founded 1980 in Chicago Illinois"
-    ],
-    "context": "Adkison was a Boeing software engineer when he co-founded WotC. The company's original products were small Greyhawk-style adventure modules and a sci-fi RPG called The Primal Order. Garfield had been pitching the card-game concept around the industry for years — only Adkison saw the potential. After Alpha sold out, WotC printed Beta (October 1993), Unlimited (December 1993), and Arabian Nights (December 1993).",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
-    "question": "Richard Garfield designed Magic the Gathering's five-color system as a deliberately rock-paper-scissors structure with five mana types. Each color has distinct commitments: white for order, blue for knowledge, black for ambition, red for emotion, and green for nature. This system is called the \"color pie.\" Which colors sit diametrically opposed on the wheel?",
-    "answer": "White and black, white and red, blue and red, blue and green, black and green",
-    "choices": [
-      "White and black, white and red, blue and red, blue and green, black and green",
-      "Red and blue only; white and green only; black is allied with all four",
-      "Each color is enemy of the two next to it on the wheel; allies with the two opposite",
-      "All colors are equally allied with the others except colorless (gray)"
-    ],
-    "context": "The color-wheel relationships: white-black-red-green-blue-white. Each color is allied with two adjacent colors and enemy of the two non-adjacent ones. White-Black are enemies (order vs ambition); Blue-Red (knowledge vs emotion); Green-Blue (nature vs artifice). Garfield designed this for both flavor (each color's spells and creatures reflect its philosophy) and game balance (no color is universally superior).",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
-    "question": "Magic: the Gathering held its first formal professional tournament in February 1996 in New York City, with a prize pool of around $100,000 — substantial for the time. It marked MtG's transition from a 'gateway' card-game to a serious competitive game with paid professionals. Who won the first Pro Tour?",
-    "answer": "Michael Loconto, a Massachusetts-based player using a White Weenie deck",
-    "choices": [
-      "Michael Loconto, a Massachusetts-based player using a White Weenie deck",
-      "Mark Justice, the 1995 World Champion using Black Lotus combos",
-      "Zak Dolan, the 1994 World Champion playing power-mana ramp",
-      "Bertrand Lestree, the 1994 World Championship finalist"
-    ],
-    "context": "Loconto played 'Pat Chapin Black' — black-based control with Necropotence as the centerpiece. The 1996 Pro Tour New York established the format. Subsequent Pro Tours were held in Los Angeles, Atlanta, Dallas, Columbus, and Paris that year alone. The 1994 World Champion, Zak Dolan, had won the original Magic World Championship using a deck that included Black Lotus and several other Power Nine cards.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
     "question": "Robert E. Howard (1906-1936) and H.P. Lovecraft (1890-1937) never met in person but exchanged hundreds of letters from 1930 until Howard's June 1936 suicide. Their correspondence is one of the most important records of pulp-era fantasy thinking, discussing everything from Conan's cultural milieu to civilization's collapse. The letters survive and have been published as a two-volume scholarly edition by what specialist press?",
     "answer": "Hippocampus Press, dedicated to Lovecraft and pulp-era scholarship",
     "choices": [
@@ -17434,7 +17356,7 @@
   },
   {
     "tier": 4,
-    "question": "Fritz Leiber kept writing about Fafhrd and the Gray Mouser for more than fifty years. In 1970 he finally told how the huge northern barbarian and the small grey-clad thief first met, on a night when both ambushed the same pair of Thieves' Guild burglars and decided to split the loot. The novella won both the Nebula and the Hugo. What is it called?",
+    "question": "Leiber finally told in 1970 how his huge northern barbarian and his small grey-clad thief first met, on a night when both ambushed the same pair of Thieves' Guild burglars and agreed to split the loot. The novella won both the Nebula and the Hugo. What is it called?",
     "answer": "Ill Met in Lankhmar",
     "choices": [
       "Ill Met in Lankhmar",
@@ -17616,7 +17538,7 @@
   },
   {
     "tier": 5,
-    "question": "Gary Gygax's 1979 Dungeon Masters Guide closes with Appendix N, his list of the authors whose books inspired Dungeons & Dragons. Many of the names are American pulp writers, such as Robert E. Howard and Fritz Leiber, but one is a titled Anglo-Irish nobleman who wrote dreamlike tales of elves and invented gods. Which lord made Gygax's list?",
+    "question": "Howard and Leiber both made the list Gary Gygax printed at the back of his 1979 Dungeon Masters Guide, of the authors whose books inspired Dungeons and Dragons. Many of the names are American pulp writers, but one is a titled nobleman. Which lord made Gygax's list?",
     "answer": "Lord Dunsany, of the Pegana mythology and 'The King of Elfland's Daughter'",
     "choices": [
       "Lord Dunsany, of the Pegana mythology and 'The King of Elfland's Daughter'",
@@ -17798,7 +17720,7 @@
   },
   {
     "tier": 5,
-    "question": "American writer Fritz Leiber and his college friend Harry Otto Fischer invented two sword-and-sorcery heroes in letters in the 1930s: Fafhrd, a giant red-haired barbarian of the north, and the Gray Mouser, a small thief and magician of the city. Then in August 1939 the first published Fafhrd-and-Mouser story appeared in Unknown, John W. Campbell's new fantasy pulp, and later collections renamed it The Jewels in the Forest. What was its original title?",
+    "question": "Leiber and his college friend Harry Otto Fischer invented two heroes in letters in the 1930s: Fafhrd, a giant red-haired barbarian of the north, and the Gray Mouser, a small thief and magician of the city. Their first published story appeared in August 1939 in Unknown, John W. Campbell's new fantasy pulp, and later collections renamed it The Jewels in the Forest. What was its original title?",
     "answer": "Two Sought Adventure",
     "choices": [
       "Two Sought Adventure",
