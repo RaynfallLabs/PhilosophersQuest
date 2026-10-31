@@ -39560,7 +39560,7 @@
   },
   {
     "tier": 1,
-    "question": "A physics teacher pours liquid nitrogen over a small black ceramic tile on the desk, sets a rare-earth magnet just above it, lets go -- and the magnet does not fall. It hangs in the air over the tile, held in place. What kind of material has she just cooled?",
+    "question": "A physics teacher chills a small black ceramic tile on the desk, holds a rare-earth magnet just above it and lets go. The magnet does not fall. It hangs in the air over the tile, held in place. What kind of material has she just cooled?",
     "answer": "a superconductor",
     "choices": [
       "a superconductor",
@@ -39573,7 +39573,7 @@
   },
   {
     "tier": 1,
-    "question": "Chill a special ceramic tile to about 90 kelvin - colder than any household freezer, colder than dry ice, cold enough that oxygen in the air would turn liquid on its surface. Now start an electric current flowing around a loop inside the tile. Something happens that no copper wire can ever do: the current flows with no heat, no fade, and no waste, no matter how long it runs. What is the tile's electrical resistance?",
+    "question": "A student starts an electric current circling a loop inside a ceramic tile chilled to about 90 kelvin, colder than dry ice. The current runs on and on, which no copper wire can ever do. What is the tile's electrical resistance?",
     "answer": "exactly zero ohms",
     "choices": [
       "exactly zero ohms",
@@ -39585,21 +39585,8 @@
     "topic": "the-superconductor-nobody-can-explain"
   },
   {
-    "tier": 2,
-    "question": "Leiden, the Netherlands, 1911. The physicist Heike Kamerlingh Onnes has just become the first person on Earth able to make helium cold enough to be a liquid, at about 4.2 K -- close to absolute zero. He dips a solid mercury wire in it and finds the wire's electrical resistance not merely small but gone. What effect had he just discovered?",
-    "answer": "Superconductivity",
-    "choices": [
-      "Superconductivity",
-      "Radioactivity",
-      "X-rays",
-      "Static electricity"
-    ],
-    "context": "Onnes had liquefied helium in 1908, giving Leiden the world's coldest laboratory. His 8 April 1911 notebook entry reads 'Kwik nagenoeg nul' -- 'Mercury practically zero'. He won the 1913 Nobel Prize. Sources: https://en.wikipedia.org/wiki/Heike_Kamerlingh_Onnes and Physics Today Sep 2010.",
-    "topic": "the-superconductor-nobody-can-explain"
-  },
-  {
     "tier": 4,
-    "question": "In 1986, at the Zurich lab of International Business Machines (IBM), two scientists tested a brittle ceramic that most metal physicists had written off. It was a lanthanum-barium-copper oxide, and it became a superconductor at 35 K. They won the Nobel Prize just one year later — the fastest gap in physics history. Which pair?",
+    "question": "Two scientists at the Zurich lab of International Business Machines (IBM) tested, in 1986, a brittle ceramic that most metal physicists had written off. The lanthanum-barium-copper oxide became a superconductor at 35 K. They won the Nobel Prize just one year later, the fastest gap in physics history. Which pair was it?",
     "answer": "Georg Bednorz and Alex Muller",
     "choices": [
       "Georg Bednorz and Alex Muller",
@@ -39612,7 +39599,7 @@
   },
   {
     "tier": 4,
-    "question": "Months after the International Business Machines (IBM) breakthrough, Maw-Kuen Wu at Alabama and Paul Chu at Houston swapped one element in the recipe. The critical temperature jumped to about 93 K. That crossed a practical line. The coolant needed was now something a lab could pour from a flask. Which cheap coolant?",
+    "question": "Maw-Kuen Wu at Alabama and Paul Chu at Houston swapped one element in a superconducting ceramic's recipe months after the International Business Machines (IBM) breakthrough, and the critical temperature jumped to about 93 K. That crossed a practical line: the coolant needed was now something a lab could pour from a flask. Which cheap coolant?",
     "answer": "liquid nitrogen",
     "choices": [
       "liquid nitrogen",
@@ -39625,7 +39612,7 @@
   },
   {
     "tier": 5,
-    "question": "It has been almost forty years since Bednorz and Muller opened the copper-oxide era. Physicists have argued through dozens of pairing models for those ceramics. What is the current state of the theory of how they superconduct?",
+    "question": "A patient lies inside an MRI magnet built with copper-oxide ceramics, the breakthrough materials of almost forty years ago. Physicists have argued through dozens of pairing models for those ceramics. What is the current state of the theory of how they superconduct?",
     "answer": "No accepted mechanism yet exists",
     "choices": [
       "No accepted mechanism yet exists",
@@ -39638,7 +39625,7 @@
   },
   {
     "tier": 5,
-    "question": "On July 22, 2023, two Korean chemists posted preprints online. They claimed a copper-doped lead apatite was a superconductor at room temperature and normal pressure. A video of a fragment tilting off a magnet went around the world. Three weeks later a Max Planck group in Stuttgart had grown clean single crystals of the stuff. What did those pure samples turn out to be?",
+    "question": "Two Korean chemists posted preprints online on July 22, 2023, claiming a copper-doped lead apatite was a superconductor at room temperature and normal pressure. A video of a fragment tilting off a magnet went around the world. Three weeks later a Max Planck group in Stuttgart had grown clean single crystals of the stuff. What did those pure samples turn out to be?",
     "answer": "transparent purple insulators",
     "choices": [
       "transparent purple insulators",
@@ -39651,7 +39638,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2019 Mikhail Eremets and his team at Max Planck in Mainz saw superconductivity in lanthanum hydride (LaH10) at 250 K. That is only 23 K below the freezing point of water. Reporters called it a room-temperature superconductor. Why is that reporting misleading?",
+    "question": "Mikhail Eremets and his team at Max Planck in Mainz saw superconductivity in lanthanum hydride at 250 K in 2019. That is only 23 K below the freezing point of water. Reporters called it a room-temperature superconductor. Why is that reporting misleading?",
     "answer": "It only worked near 170 GPa in a diamond anvil cell",
     "choices": [
       "It only worked near 170 GPa in a diamond anvil cell",
@@ -39664,7 +39651,7 @@
   },
   {
     "tier": 5,
-    "question": "Rochester physicist Ranga Dias published two room-temperature superconductor claims in Nature. One was in October 2020, the other in March 2023. Both were pulled. The second was pulled at the request of eight of his own eleven co-authors. A 2024 university probe found he had fabricated data. In a science paper, what does 'fabricated data' mean?",
+    "question": "Ranga Dias, a physicist at Rochester, published two room-temperature superconductor claims in Nature, in October 2020 and March 2023. The theorist Hirsch pressed for the raw data for more than a year. Eight of Dias's eleven co-authors asked for the second paper to be pulled, and both were. A university inquiry found in 2024 that Dias had fabricated data. In a science paper, what does that charge mean?",
     "answer": "He made up numbers he never actually measured",
     "choices": [
       "He made up numbers he never actually measured",
@@ -39677,7 +39664,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1920s the Viennese biologist Paul Kammerer said he had proved a serious open claim - that acquired traits can be inherited. His evidence was a change he said had appeared on male midwife toads and passed to their offspring. What did he say had appeared?",
+    "question": "Paul Kammerer made midwife toads mate in water, not on land, in 1920s Vienna, and said he had proved a serious open claim: that acquired traits can be inherited. He said a change had appeared on the males and passed to their offspring. What did he say had appeared?",
     "answer": "dark, rough breeding pads on the fingers",
     "choices": [
       "dark, rough breeding pads on the fingers",
@@ -39690,7 +39677,7 @@
   },
   {
     "tier": 3,
-    "question": "In the early 1920s the Austrian biologist Paul Kammerer claimed he had grown dark mating pads on the front feet of midwife toads by raising them in unusual water. The pads, he said, were inherited by their offspring - proof, he argued, of Lamarckian evolution, in which traits an animal picks up in life get passed to its young. In 1926 the American herpetologist G. K. Noble travelled to Vienna, took the last surviving specimen, and put it under a microscope. He published his finding in the journal Nature. What had those dark pads actually been made of?",
+    "question": "G. K. Noble, an American herpetologist, travelled to Vienna in 1926 and put the last surviving specimen of Paul Kammerer's midwife toads under a microscope. Kammerer had claimed that the dark marks on its front feet came from unusual water and were inherited, proof, he argued, of Lamarckian evolution, in which traits an animal picks up in life pass to its young. Noble published his finding in Nature. What had the dark marks actually been made of?",
     "answer": "India ink injected under the skin",
     "choices": [
       "India ink injected under the skin",
@@ -39703,7 +39690,7 @@
   },
   {
     "tier": 3,
-    "question": "In March 1974 the skin doctor William Summerlin showed off white lab mice at Memorial Sloan-Kettering. He said they had dark skin grafts from unrelated donors that had been accepted with no drugs to block rejection. If real, it would be a huge breakthrough. Then a lab helper did one thing that ended it. What?",
+    "question": "William Summerlin, a skin doctor, showed off white lab mice at Memorial Sloan-Kettering in March 1974. He said they had accepted dark skin grafts from unrelated donors, with no drugs to block rejection. If real, it would be a huge breakthrough. Then a lab helper did one thing that ended it. What did the helper do?",
     "answer": "wiped a dark patch with alcohol and the colour lifted off",
     "choices": [
       "wiped a dark patch with alcohol and the colour lifted off",
@@ -39716,7 +39703,7 @@
   },
   {
     "tier": 4,
-    "question": "Sir Cyril Burt was Britain's most famous educational psychologist and a founding figure in twin studies of intelligence - his data on identical twins raised apart was quoted in schools policy on both sides of the Atlantic. In the early 1970s the American psychologist Leon Kamin sat down and read carefully through Burt's published twin-IQ papers, one after another. He noticed something odd about the correlation numbers Burt reported across the run of papers. What did those numbers do?",
+    "question": "Leon Kamin, an American psychologist, sat down in the early 1970s and read carefully through Sir Cyril Burt's published twin-IQ papers, one after another. Burt was Britain's most famous educational psychologist, and his data on identical twins raised apart was quoted in schools policy on both sides of the Atlantic. Kamin noticed something odd about the correlation numbers across the run of papers. What did those numbers do?",
     "answer": "they stayed identical to three decimal places as new twins were added",
     "choices": [
       "they stayed identical to three decimal places as new twins were added",
@@ -39729,7 +39716,7 @@
   },
   {
     "tier": 4,
-    "question": "By 1976 doubts about Sir Cyril Burt's celebrated twin-IQ studies were spreading, five years after his death. That autumn the journalist Oliver Gillie of the London Sunday Times went hunting for two people named on Burt's papers as his research assistants who had helped collect the twin data - Margaret Howard and J. Conway. He asked at the London campus where Burt had spent his career, and everywhere else Burt had worked. What did he find?",
+    "question": "Oliver Gillie of the London Sunday Times went hunting in 1976 for two people named on Sir Cyril Burt's papers as research assistants who had helped collect the twin data: Margaret Howard and J. Conway. Burt had been dead five years, and doubts about his twin-IQ studies were spreading. Gillie asked at the London campus where Burt had spent his career, and everywhere else Burt had worked. What did he find?",
     "answer": "no trace of them at University College or anywhere else",
     "choices": [
       "no trace of them at University College or anywhere else",
@@ -39742,7 +39729,7 @@
   },
   {
     "tier": 4,
-    "question": "Sir Cyril Burt died in 1971 as Britain's most decorated psychologist, famous for twin-IQ studies that had shaped school-selection policy for a generation. His own family asked Leslie Hearnshaw, a respected historian of British psychology and a friendly acquaintance of Burt's, to write the official biography. Everyone expected the 1979 book to defend Burt against the fraud charges that had begun after his death. What did Hearnshaw actually decide about Burt's twin-IQ data?",
+    "question": "Leslie Hearnshaw, a respected historian of British psychology and a friendly acquaintance of Sir Cyril Burt, took on the official biography at the request of Burt's family. Everyone expected the 1979 book to defend Burt against the fraud charges that had begun after his death. Robert Joynson and Ronald Fletcher later argued against the charges, and the case is still disputed. What did Hearnshaw actually decide about Burt's twin-IQ data?",
     "answer": "that they were unreliable or invented",
     "choices": [
       "that they were unreliable or invented",
@@ -39755,7 +39742,7 @@
   },
   {
     "tier": 5,
-    "question": "From 2007 the biostatisticians Keith Baggerly and Kevin Coombes at MD Anderson tried to reproduce Duke University's much-praised genomic predictors of which chemotherapy would work for a given cancer patient. They rebuilt the whole analysis from the raw files. What did they find in the data?",
+    "question": "Keith Baggerly and Kevin Coombes, biostatisticians at MD Anderson, set out from 2007 to reproduce Duke University's much-praised genomic predictors of which chemotherapy would work for a given cancer patient. They rebuilt the whole analysis from the raw files. What did they find in the data?",
     "answer": "gene lists shifted by one row and patient samples mislabelled",
     "choices": [
       "gene lists shifted by one row and patient samples mislabelled",
@@ -39768,7 +39755,7 @@
   },
   {
     "tier": 5,
-    "question": "At Duke University in North Carolina, the oncologist Anil Potti had built a shining career on gene-signature tests that promised to match cancer patients to the right chemotherapy. Duke had put real cancer patients on trials that used the tests. Two Texas statisticians had been raising alarms for three years, but nothing stuck. In July 2010 a small trade paper, The Cancer Letter, broke the scandal open when its editor Paul Goldberg found something out about Potti. What was it?",
+    "question": "Paul Goldberg, editor of a small trade paper called The Cancer Letter, found something out about the Duke University oncologist Anil Potti in July 2010. Potti had built a shining career on gene-signature tests that promised to match cancer patients to the right chemotherapy, and Duke had put real patients on trials that used them. Two Texas statisticians had been raising alarms for three years, but nothing stuck. What had Goldberg found?",
     "answer": "he had claimed on grant applications a Rhodes Scholarship he never held",
     "choices": [
       "he had claimed on grant applications a Rhodes Scholarship he never held",
@@ -39781,7 +39768,7 @@
   },
   {
     "tier": 1,
-    "question": "William Gilbert was the personal doctor of Queen Elizabeth I of England in the year 1600. He wondered why the compasses on English ships always swung to point north. He guessed that the whole Earth might be one giant magnet. To test the guess, he took a chunk of lodestone - the natural magnetic rock miners had known for centuries - and carved it into a special shape. Then he walked a tiny compass across its surface, watching the needle. What shape did he carve?",
+    "question": "William Gilbert, doctor to Queen Elizabeth I, carved a chunk of lodestone, the natural magnetic rock, in 1600 to test a guess: that the whole Earth is one giant magnet. Then he walked a tiny compass across it, watching the needle. What shape did he carve?",
     "answer": "A sphere",
     "choices": [
       "A sphere",
@@ -39794,7 +39781,7 @@
   },
   {
     "tier": 2,
-    "question": "London compass-maker Robert Norman balanced a magnetised needle on a pivot in 1581. On deck a ship's compass hides this, because it is set to swing horizontally. Freed from that constraint in Norman's workshop, what did the needle do?",
+    "question": "London compass-maker Robert Norman balanced a magnetised needle on a pivot in 1581. On deck a ship's compass hides what he saw, because it is set to swing horizontally. Freed from that constraint in his workshop, what did the needle do?",
     "answer": "Dipped its north end toward the floor",
     "choices": [
       "Dipped its north end toward the floor",
@@ -39807,7 +39794,7 @@
   },
   {
     "tier": 3,
-    "question": "Rubbed amber picks up scraps of straw for a moment and then quits; lodestone pulls only iron, but pulls forever and points. Everyone before William Gilbert had lumped these together as one force. He split them, and coined a brand-new Latin name for the amber-and-straw kind. What word did he coin?",
+    "question": "William Gilbert pulled apart two forces that everyone before him had lumped together as one. Rubbed amber picks up scraps of straw for a moment and then quits; lodestone pulls only iron, but pulls forever and points. He coined a brand-new Latin name for the amber-and-straw kind. What word did he coin?",
     "answer": "Electricus",
     "choices": [
       "Electricus",
@@ -39820,7 +39807,7 @@
   },
   {
     "tier": 3,
-    "question": "One piece of sailor lore William Gilbert dismantled in De Magnete was the claim that a common kitchen ingredient, if rubbed on a compass, would destroy its power. Gilbert put the ingredient on his own needle and watched it work perfectly. What was the ingredient?",
+    "question": "William Gilbert put a common kitchen ingredient on his own compass needle to test a piece of sailor lore: the claim that rubbing it on a compass would destroy the compass's power. He watched the needle work perfectly. What was the ingredient?",
     "answer": "Garlic",
     "choices": [
       "Garlic",
@@ -39833,7 +39820,7 @@
   },
   {
     "tier": 3,
-    "question": "Three centuries after Gilbert, the Norwegian physicist Kristian Birkeland built a second terrella. He put a magnetised sphere inside a vacuum chamber, painted its surface so it would glow, and fired something at it. Rings of light appeared around its poles. What did he fire at the sphere?",
+    "question": "Kristian Birkeland, a Norwegian physicist, built a second little model Earth three centuries after William Gilbert's. He put a magnetised ball inside a vacuum chamber, painted its surface so it would glow, and fired something at it. Rings of light appeared around its poles. What did he fire at the ball?",
     "answer": "A beam of electrons",
     "choices": [
       "A beam of electrons",
@@ -39846,7 +39833,7 @@
   },
   {
     "tier": 4,
-    "question": "Kristian Birkeland argued the aurora was caused by charged particles from the Sun, funnelled onto the polar sky. The leading British geophysicist Sydney Chapman led an objection that seemed to sink the whole idea for fifty years. What was the objection?",
+    "question": "Sydney Chapman, the leading British geophysicist, led an objection that seemed to sink Kristian Birkeland's idea for fifty years. Birkeland had argued that the aurora was caused by charged particles from the Sun, funnelled onto the polar sky. What was the objection?",
     "answer": "Currents cannot cross the vacuum of space",
     "choices": [
       "Currents cannot cross the vacuum of space",
@@ -39859,7 +39846,7 @@
   },
   {
     "tier": 4,
-    "question": "Kristian Birkeland died in 1917 with his aurora theory still called crank science. In 1967 a US Navy satellite flew straight through the auroral zone carrying instruments to sample the region directly, and settled the argument in his favour. What did the satellite detect?",
+    "question": "Kristian Birkeland had been dead for fifty years when a US Navy satellite flew straight through the auroral zone in 1967, carrying instruments to sample the region directly. His aurora theory had still been called crank science when he died; the flight settled the argument in his favour. What did the satellite detect?",
     "answer": "Electric currents aligned with Earth's field",
     "choices": [
       "Electric currents aligned with Earth's field",
@@ -39872,7 +39859,7 @@
   },
   {
     "tier": 5,
-    "question": "Volcanic rock freezes a copy of Earth's magnetic field into itself as it cools, and stacked lava flows are Earth's own tape recording of its field. That recording shows the field has fully swapped north and south many times. How long ago was the most recent full flip?",
+    "question": "A geologist samples a stack of old lava flows, Earth's own tape recording of its magnetic field, each one frozen with a copy of the field as it cooled. The stack shows the field has fully swapped north and south many times, and nobody can predict the next swap. How long ago was the most recent full flip?",
     "answer": "About 780,000 years ago",
     "choices": [
       "About 780,000 years ago",
@@ -39885,7 +39872,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1913 two French scientists, Charles Fabry and Henri Buisson, measured sunlight very carefully. Most of it matched the light of any hot glowing body. But part of the Sun's ultraviolet light was missing — something high up in the sky was eating it before it reached the ground. What had they found?",
+    "question": "Charles Fabry and Henri Buisson, two French scientists, measured sunlight very carefully in 1913. Most of it matched the light of any hot glowing body, but a band of the Sun's ultraviolet light never reached the ground. What had they found?",
     "answer": "an invisible gas high in the atmosphere",
     "choices": [
       "an invisible gas high in the atmosphere",
@@ -39898,7 +39885,7 @@
   },
   {
     "tier": 2,
-    "question": "The ozone shield stops the wavelengths of sunlight that would sterilise the surface -- so you might guess it must be a huge, thick blanket. It is not. Gather every ozone molecule above your head and squeeze it down to sea-level pressure -- it forms a surprisingly thin film. About how thick would that squeezed film be?",
+    "question": "Charles Fabry and Henri Buisson worked out in 1913 how much ozone stands over one spot on the ground. A shield against sunlight that would sterilise the surface sounds like a thick blanket. Yet every ozone molecule above a person's head, squeezed down to sea-level pressure, forms only a thin film. About how thick is it?",
     "answer": "about three millimetres",
     "choices": [
       "about three millimetres",
@@ -39911,7 +39898,7 @@
   },
   {
     "tier": 3,
-    "question": "The Oxford weather scientist Gordon Dobson built a ground tool that measures all the ozone overhead. It works by comparing two ultraviolet wavelengths in normal daylight. Between 1928 and 1958 he did the thing that actually mattered. What did Dobson build besides the tool itself?",
+    "question": "Gordon Dobson, an Oxford weather scientist, built a ground tool that measures all the ozone overhead by comparing two ultraviolet wavelengths in normal daylight. Between 1928 and 1958 he did the thing that actually mattered. What did Dobson build besides the tool itself?",
     "answer": "a permanent worldwide network of matching stations",
     "choices": [
       "a permanent worldwide network of matching stations",
@@ -39924,7 +39911,7 @@
   },
   {
     "tier": 1,
-    "question": "The Bay of Fundy sits between Nova Scotia and New Brunswick on Canada's east coast. Twice a day the water there rises and falls by about 16 metres, as tall as a five-storey building. Fishermen and hotel guests know the exact times weeks ahead from a printed chart. What sets that clock so exactly?",
+    "question": "A fisherman on the Bay of Fundy, on Canada's east coast, reads a printed chart. Twice a day the water there rises and falls by about 16 metres, as tall as a five-storey building, and he knows the exact times weeks ahead. What sets that clock so exactly?",
     "answer": "The gravity of the passing Moon",
     "choices": [
       "The gravity of the passing Moon",
@@ -39937,7 +39924,7 @@
   },
   {
     "tier": 1,
-    "question": "On the Bay of Fundy between Nova Scotia and New Brunswick, a tourist watches at dawn as the water pulls a long way out. By noon it rushes back and covers the shore again. She decides to stay for one full lunar day — the roughly 24 hours and 50 minutes it takes the Moon to return overhead. How many high tides would she count in that time?",
+    "question": "A tourist on the Bay of Fundy watches the water pull a long way out at dawn and rush back over the shore by noon. She stays for one full lunar day, the roughly 24 hours and 50 minutes the Moon takes to return overhead. How many high tides does she count?",
     "answer": "Two, roughly twelve hours apart",
     "choices": [
       "Two, roughly twelve hours apart",
@@ -39950,7 +39937,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1632 book Dialogue on the Two Chief World Systems, Galileo said the tides were his strongest proof that Earth moves around the Sun. He mocked Kepler's idea that the Moon pulled the seas as strange magic. What did Galileo say really causes high and low tides?",
+    "question": "Galileo mocked Kepler's idea that the Moon pulled the seas as strange magic, in his 1632 book Dialogue on the Two Chief World Systems. What did Galileo say really causes high and low tides?",
     "answer": "Water sloshing in its basin as the Earth spins and orbits",
     "choices": [
       "Water sloshing in its basin as the Earth spins and orbits",
@@ -39963,7 +39950,7 @@
   },
   {
     "tier": 3,
-    "question": "The tide has a second high on the far side of Earth at the same moment as the near one, and a once-popular textbook explanation blamed centrifugal force from Earth-Moon rotation. That explanation is wrong. What actually creates the far-side bulge?",
+    "question": "A student marks the tides on a globe and finds a second high on the far side of Earth at the same moment as the near one. A once-popular textbook explanation blamed centrifugal force from Earth-Moon rotation. That explanation is wrong. What actually creates the far-side bulge?",
     "answer": "The Moon pulls the solid Earth harder than the far water, so the far water is left behind",
     "choices": [
       "The Moon pulls the solid Earth harder than the far water, so the far water is left behind",
@@ -39976,7 +39963,7 @@
   },
   {
     "tier": 4,
-    "question": "Sailors and coastal town-dwellers have long known that the very largest tides each month come at new moon and full moon, when the Sun and Moon pull in a straight line. In English these are called spring tides, a name that puzzles outsiders because they happen every month all year long. What does 'spring' actually mean in this term?",
+    "question": "A sailor waits for the very largest tide of the month, which comes at new moon or full moon, when the Sun and Moon pull in a straight line. English calls these spring tides, a name that puzzles outsiders because they happen every month all year long. What does 'spring' actually mean in this term?",
     "answer": "The verb, meaning to leap or spring up",
     "choices": [
       "The verb, meaning to leap or spring up",
@@ -39989,7 +39976,7 @@
   },
   {
     "tier": 5,
-    "question": "Earth's rotation drags its tidal bulge slightly ahead of the Moon, and the bulge's own gravity tugs the Moon forward in its orbit -- so the Moon is spiralling outward about 3.8 centimetres every year, and Earth's day is lengthening about 1.7 milliseconds per century. That number is a direct measurement, not a model. What tool makes the measurement possible?",
+    "question": "An astronomer sets this year's distance to the Moon beside last year's, and the Moon has drifted farther off. Earth's rotation drags its tidal bulge slightly ahead of the Moon, and the bulge's own gravity tugs the Moon forward in its orbit, while Earth's day lengthens about 1.7 milliseconds per century. That drift is a direct measurement, not a model. What tool makes the measurement possible?",
     "answer": "Laser pulses bounced off Apollo retroreflectors still on the Moon",
     "choices": [
       "Laser pulses bounced off Apollo retroreflectors still on the Moon",
@@ -40002,7 +39989,7 @@
   },
   {
     "tier": 2,
-    "question": "A man takes strong antibiotics for a chest cold. The drugs sweep his gut clean of most bacteria. Days later his colon burns with a nasty bug called Clostridioides difficile, or C. diff for short. The bug had been living in his gut all along, but only in tiny numbers, held down by the other bacteria around it. What did the antibiotic do to let it take over?",
+    "question": "A man takes strong antibiotics for a chest infection. Days later his colon burns with a nasty bug called Clostridioides difficile, or C. diff for short. The bug had been living in his gut all along, but only in tiny numbers. What did the antibiotic do to let it take over?",
     "answer": "Emptied out the neighbours that had kept it in check",
     "choices": [
       "Emptied out the neighbours that had kept it in check",
@@ -40015,7 +40002,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1958 the Denver surgeon Ben Eiseman had four patients dying from a colon disease. Their colon lining was falling off. Nothing normal was working. He and his team tried one wild idea. What did they give the four patients?",
+    "question": "Ben Eiseman, a Denver surgeon, had four patients dying from a colon disease in 1958, the lining of the colon falling away and nothing normal working. He and his team tried one more idea. What did they give the four patients?",
     "answer": "Enemas made from a healthy donor's stool",
     "choices": [
       "Enemas made from a healthy donor's stool",
@@ -40028,7 +40015,7 @@
   },
   {
     "tier": 4,
-    "question": "In Amsterdam, Els van Nood and colleagues ran the trial that finally settled whether donor faeces could beat the best available antibiotic for recurrent C. diff. They compared vancomycin against a single infusion of donor stool threaded through a nasal tube down past the stomach. Where did the tube's tip actually release the donor material?",
+    "question": "Els van Nood and colleagues in Amsterdam ran the trial that finally settled whether donor faeces could beat the best available antibiotic for recurrent C. diff. They compared vancomycin against a single infusion of donor stool threaded through a nasal tube down past the stomach. Where did the tube's tip actually release the donor material?",
     "answer": "Into the duodenum, the first bend of the small intestine",
     "choices": [
       "Into the duodenum, the first bend of the small intestine",
@@ -40041,7 +40028,7 @@
   },
   {
     "tier": 5,
-    "question": "In December 2022 the Food and Drug Administration (FDA) licensed the first stool-derived product ever approved as an actual drug in the United States: a rectally-administered treatment for recurrent C. diff called Rebyota. Four months later, in April 2023, a second product followed. It came in a form most patients would find enormously easier to accept. What form did the second approval take?",
+    "question": "A doctor treating recurrent C. diff prescribes Rebyota, the rectally given product the Food and Drug Administration (FDA) licensed in December 2022, the first stool-derived product ever approved as an actual drug in the United States. A second product followed four months later, in April 2023, in a form most patients would find far easier to accept. What form did the second approval take?",
     "answer": "An oral capsule of purified bacterial spores",
     "choices": [
       "An oral capsule of purified bacterial spores",
@@ -40054,7 +40041,7 @@
   },
   {
     "tier": 5,
-    "question": "Faecal transplants cure recurrent C. diff in over 80 per cent of patients on the first try, and the successful trials sent researchers rushing to try faecal microbiota transplantation (FMT) for obesity, autism, inflammatory bowel disease and depression. Those follow-on results have been far less clear. Beyond mixed results, what does the science still not know about how FMT works?",
+    "question": "Els van Nood's team cured about four patients in five of recurrent C. diff with a single treatment, and the success sent researchers rushing to try faecal microbiota transplantation (FMT) for obesity, autism, inflammatory bowel disease and depression. Those follow-on results have been far less clear. Beyond mixed results, what does the science still not know about how FMT works?",
     "answer": "Which specific microbes in the donor stool are doing the healing",
     "choices": [
       "Which specific microbes in the donor stool are doing the healing",
@@ -40340,7 +40327,7 @@
   },
   {
     "tier": 2,
-    "question": "The Right to Try Act, signed in 2018, lets dying US patients try experimental drugs before those drugs finish full US Food and Drug Administration (FDA) approval. Most American laws carry a lawmaker's name. This one instead carries four other names: Trickett Wendler, Frank Mongiello, Matthew Bellina, and Jordan McLinn. Who were those four?",
+    "question": "A student reads the popular name of the Right to Try Act of 2018 and finds no lawmaker in it. The Act opened experimental drugs to patients before full US Food and Drug Administration (FDA) approval, and it carries four other names: Trickett Wendler, Frank Mongiello, Matthew Bellina and Jordan McLinn. Who were those four?",
     "answer": "Patients or family of patients with terminal illnesses",
     "choices": [
       "Patients or family of patients with terminal illnesses",
@@ -40353,7 +40340,7 @@
   },
   {
     "tier": 2,
-    "question": "The Right to Try movement pushes to let dying patients try new drugs before the FDA gives full approval. Before Congress passed a nationwide statute in 2018, groups spent four years passing near-copies of it state by state. Why start with the states?",
+    "question": "A campaigner ticks Alaska off her list, the forty-first state to pass a near-copy of the Right to Try bill. She has spent four years going state by state, and Congress has not yet acted. The bill would let dying patients try new drugs before full federal approval. Why start with the states?",
     "answer": "To build political pressure for the federal law",
     "choices": [
       "To build political pressure for the federal law",
@@ -40366,7 +40353,7 @@
   },
   {
     "tier": 3,
-    "question": "The Right to Try Act lets dying US patients try new drugs before the Food and Drug Administration (FDA) has finished approving them. But the law only opens the door to certain test drugs — they must have passed one step in FDA testing, but not the whole approval process. Which step must the drug have passed?",
+    "question": "A woman with a fatal illness asks her doctor for a test drug under the Right to Try Act, before the Food and Drug Administration (FDA) has finished approving it. The law opens the door only to certain test drugs: they must have passed one step in FDA testing, but not the whole process. Which step must the drug have passed?",
     "answer": "Phase I safety testing",
     "choices": [
       "Phase I safety testing",
@@ -40379,7 +40366,7 @@
   },
   {
     "tier": 3,
-    "question": "The Right to Try Act of 2018 lets dying US patients ask for experimental drugs the US Food and Drug Administration (FDA) has not yet fully approved. A common gripe is that the law just clears the government's door — it doesn't force anyone to hand over the drug. Three groups in the medical chain can still say no, and often do. Dying patients with the law behind them may walk away empty-handed. Which three?",
+    "question": "A dying man with the Right to Try Act of 2018 behind him asks for an experimental drug the US Food and Drug Administration (FDA) has not yet fully approved, and walks away empty-handed. A common gripe is that the law just clears the government's door and does not force anyone to hand over the drug. Three groups in the medical chain can still say no, and often do. Which three?",
     "answer": "The drug company, the insurer, and the prescribing doctor",
     "choices": [
       "The drug company, the insurer, and the prescribing doctor",
@@ -40392,33 +40379,7 @@
   },
   {
     "tier": 4,
-    "question": "In the late 1950s a German morning-sickness pill called thalidomide caused thousands of babies across Europe to be born with badly deformed limbs. American mothers were mostly spared thanks to a cautious US Food and Drug Administration (FDA) reviewer, Frances Kelsey. Before thalidomide, US drug makers only had to prove a new drug was safe to win FDA approval. After that near-miss, a 1962 law signed by President Kennedy added a second, tougher requirement. What did drug makers now also have to prove?",
-    "answer": "That the drug actually works",
-    "choices": [
-      "That the drug actually works",
-      "That the drug is cheaper than existing drugs",
-      "That the drug was tested on animals first",
-      "That the drug was made in the United States"
-    ],
-    "context": "Before 1962 a manufacturer only had to show a drug was safe. Afterward it also had to prove the drug worked -- generally through two randomized controlled trials significant at the 0.05 level. That efficacy requirement is the rule Peltzman would later measure. Source: en.wikipedia.org/wiki/Kefauver-Harris_Amendment.",
-    "topic": "the-unseen-graveyard-right-to-try-and-the-cost-of-delay"
-  },
-  {
-    "tier": 4,
-    "question": "In 1962 the US Congress passed a new law forcing drug makers to prove their drugs actually worked, not just that they were safe. In 1973 the American economist Sam Peltzman studied what those tougher rules had done. He used data from before 1962 to guess what would have happened without them, then compared it to the years after. He made one striking finding. What did the rules roughly do?",
-    "answer": "Cut in half the rate of new drug introductions per year",
-    "choices": [
-      "Cut in half the rate of new drug introductions per year",
-      "Doubled the average price of a newly approved drug",
-      "Tripled the average length of a Phase III trial",
-      "Reduced generic-drug competition by about half"
-    ],
-    "context": "Peltzman's finding: the rules cut the flow of new medicines roughly in half, without a matching gain in drug quality. Medicines that were never developed have no patients to interview -- the unseen graveyard worth keeping in view. Source: journals.uchicago.edu/doi/abs/10.1086/260107.",
-    "topic": "the-unseen-graveyard-right-to-try-and-the-cost-of-delay"
-  },
-  {
-    "tier": 4,
-    "question": "During the 1980s Acquired Immunodeficiency Syndrome (AIDS) crisis, activists were furious. Life-saving test drugs sat unused for years while the federal agency in charge of new drugs finished its testing. On October 11, 1988, about 1,500 activists staged a nine-hour die-in at that agency's headquarters. Which agency?",
+    "question": "Activists lay down at the headquarters of a federal agency on October 11, 1988, about 1,500 of them, for a nine-hour die-in. During the Acquired Immunodeficiency Syndrome (AIDS) crisis, life-saving test drugs had sat unused for years while that agency finished its testing. Which agency was it?",
     "answer": "The FDA",
     "choices": [
       "The FDA",
@@ -40431,7 +40392,7 @@
   },
   {
     "tier": 5,
-    "question": "The Right-to-Try debate has a famous case of caution genuinely saving lives. In the early 1960s, a Canadian-born pharmacologist at the Food and Drug Administration (FDA) kept sending back one drug's application because the safety evidence was thin. Her stubbornness kept that drug -- thalidomide -- out of American pharmacies. What terrible effect did thalidomide later prove to cause?",
+    "question": "Frances Kelsey, a pharmacologist at the Food and Drug Administration (FDA), kept sending back one drug's application in the early 1960s because the safety evidence was thin. Her stubbornness kept that drug, thalidomide, out of American pharmacies. It is the Right-to-Try debate's famous case of caution genuinely saving lives. What terrible effect did thalidomide later prove to cause?",
     "answer": "Severe birth defects in babies born to mothers who took it",
     "choices": [
       "Severe birth defects in babies born to mothers who took it",
@@ -40444,7 +40405,7 @@
   },
   {
     "tier": 2,
-    "question": "Elisabeth Bik is a Dutch microbiologist who, back in 2013, began reading biology papers at night with a sharp eye for doctored images. In the years since she has flagged thousands of suspicious papers to journal editors and become one of science's best-known image detectives. What set her hunt for problems off in the very first place, in 2013?",
+    "question": "Elisabeth Bik, a Dutch microbiologist, began reading biology papers at night in 2013 with a sharp eye for doctored images. She has since flagged thousands of suspicious papers to journal editors and become one of science's best-known image detectives. What set her hunt off in the very first place?",
     "answer": "She discovered one of her own papers had been plagiarised",
     "choices": [
       "She discovered one of her own papers had been plagiarised",
@@ -40457,7 +40418,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2013 the Dutch microbiologist Elisabeth Bik began hunting for doctored figures in biology papers, comparing images by eye night after night. By 2016 she and two co-authors had checked 20,621 papers by hand and published the count in the journal mBio. About how many of those 20,621 papers had bad copied images?",
+    "question": "Elisabeth Bik and two co-authors had published a count in the journal mBio by 2016: 20,621 biology papers, every one checked by hand for doctored figures. About how many of those 20,621 papers had bad copied images?",
     "answer": "About one in twenty-five",
     "choices": [
       "About one in twenty-five",
@@ -40470,7 +40431,7 @@
   },
   {
     "tier": 3,
-    "question": "The Dutch microbiologist Elisabeth Bik spots faked figures in biology papers by comparing images side by side, looking for reused patches. A picture of a western blot — a lab test that shows dark protein bands on a gel — or of cells under a microscope carries something that a plain table of numbers never has. That extra thing is exactly what Bik hunts for. What is it?",
+    "question": "Elisabeth Bik laid biology images side by side, looking for reused patches. A picture of a western blot, a lab test that shows dark protein bands on a gel, or of cells under a microscope carries something that a plain table of numbers never has. That extra thing is exactly what she hunts for. What is it?",
     "answer": "A unique random speckle pattern - a kind of visual fingerprint",
     "choices": [
       "A unique random speckle pattern - a kind of visual fingerprint",
@@ -40483,7 +40444,7 @@
   },
   {
     "tier": 3,
-    "question": "Scientific papers are supposed to be checked by other scientists before they publish, but errors and fraud still slip through. Two websites now do much of the checking after papers are already out. One started in 2012 and lets anyone comment on any paper by its DOI (Digital Object Identifier) reference code. The other, launched in 2010, is a blog that tracks papers pulled back after publication. Which pair are they?",
+    "question": "A biologist types a published paper's DOI (Digital Object Identifier) reference code into a website and posts a comment on it. That site started in 2012 and lets anyone comment on any paper. A second site, launched in 2010, is a blog that tracks papers pulled back after publication. Between them the two do much of the checking after papers are already out. Which pair are they?",
     "answer": "PubPeer and Retraction Watch",
     "choices": [
       "PubPeer and Retraction Watch",
@@ -40496,7 +40457,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2021 Vanderbilt neuroscientist Matthew Schrag was hired to look into a struggling Alzheimer's drug. His investigation led him to a much bigger target - a landmark 2006 Nature paper by Sylvain Lesne that had been cited about 2,300 times. What did that famous paper claim?",
+    "question": "Matthew Schrag, a Vanderbilt neuroscientist, was hired in 2021 to look into a struggling Alzheimer's drug, and his investigation led him to a much bigger target: a landmark 2006 Nature paper by Sylvain Lesne, cited about 2,300 times. What did that famous paper claim?",
     "answer": "That a specific amyloid oligomer, Ab*56, directly caused memory loss in mice",
     "choices": [
       "That a specific amyloid oligomer, Ab*56, directly caused memory loss in mice",
@@ -40509,7 +40470,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2014 the young Japanese biologist Haruko Obokata published papers claiming a simple acid bath could turn ordinary body cells back into stem cells that grow into anything — the STAP method (stimulus-triggered acquisition of pluripotency). If real, it would have revolutionized medicine. Those papers were retracted only six months later, on 2 July 2014. Two independent checks converged on the same verdict at the same time. What were they?",
+    "question": "Haruko Obokata, a young Japanese biologist, published papers in January 2014 claiming a simple acid bath could turn ordinary body cells back into stem cells that grow into anything. If real, it would have revolutionized medicine. Those papers were retracted only six months later, on 2 July 2014, with two independent checks converging on the same verdict at the same time. What were the two checks?",
     "answer": "Labs worldwide could not reproduce it, and readers on PubPeer found reused images",
     "choices": [
       "Labs worldwide could not reproduce it, and readers on PubPeer found reused images",
@@ -40522,7 +40483,7 @@
   },
   {
     "tier": 1,
-    "question": "In October 1947 the US Air Force test pilot Chuck Yeager was scheduled to try to break the sound barrier for the first time, flying the rocket plane Bell X-1. Two nights before the flight he was thrown from a horse. He did not tell the Air Force, because it would have grounded him. A town doctor taped him up in secret. What had the fall done?",
+    "question": "A horse threw Chuck Yeager, a US Air Force test pilot, two nights before his October 1947 try at the sound barrier in the rocket plane Bell X-1. He did not tell the Air Force, because it would have grounded him. A town doctor taped him up in secret. What had the fall done?",
     "answer": "It broke two ribs under his right arm.",
     "choices": [
       "It broke two ribs under his right arm.",
@@ -40535,7 +40496,7 @@
   },
   {
     "tier": 1,
-    "question": "The Bell X-1's rocket drank its whole fuel load in minutes — far too little to also climb from the desert floor to the thin air where a speed record had to be set. So on 14 October 1947 the engineers gave Chuck Yeager his altitude another way. How did the X-1 get up there?",
+    "question": "The X-1's engineers gave Chuck Yeager his altitude a different way on 14 October 1947. Its rocket drank its whole fuel load in minutes, far too little to also climb from the desert floor to the thin air where a speed record had to be set. How did the X-1 get up there?",
     "answer": "A B-29 bomber carried it up in its bomb bay.",
     "choices": [
       "A B-29 bomber carried it up in its bomb bay.",
@@ -40561,7 +40522,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1947 nobody had ever flown faster than sound, so the Bell engineers shaping the X-1 had no flight data to work from. But people had been sending things past the speed of sound for two hundred years, and those things were already known to fly steadily while doing it. So the engineers copied one. What did they model the X-1's fuselage on?",
+    "question": "Bell's engineers shaped the X-1 in 1947 with no flight data to work from, because nobody had ever flown faster than sound. But people had been sending things past the speed of sound for two hundred years, and those things were known to fly steadily while doing it. So the engineers copied one. What did they model the X-1's fuselage on?",
     "answer": "A Browning .50-caliber machine gun round",
     "choices": [
       "A Browning .50-caliber machine gun round",
@@ -40574,7 +40535,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1935 a British scientist named W. F. Hilton showed a reporter his fast-flight work. The reporter cut one sentence into two words we still use today: 'the sound barrier.' What did Hilton mean by a barrier?",
+    "question": "W. F. Hilton, a British scientist, showed a reporter his fast-flight work in 1935. The reporter cut one sentence down to two words that are still in use: 'the sound barrier.' What did Hilton mean by a barrier?",
     "answer": "The steep climb of a wing's resistance near the speed of sound",
     "choices": [
       "The steep climb of a wing's resistance near the speed of sound",
@@ -40587,7 +40548,7 @@
   },
   {
     "tier": 3,
-    "question": "The 'barrier' name was wrong, but the danger was real. Late in World War 2, pilots diving fast were killed by their own planes. When Spitfire pilots pushed the stick sideways to roll out of a dive, one strange thing kept happening. What did the plane do instead?",
+    "question": "A Spitfire pilot diving fast late in World War 2 pushed the stick sideways to roll out of the dive, and the plane did something strange. The 'barrier' name was wrong, but the danger was real: their own planes were killing pilots. What did the plane do instead?",
     "answer": "It rolled the opposite way, because the wings themselves twisted.",
     "choices": [
       "It rolled the opposite way, because the wings themselves twisted.",
@@ -40600,7 +40561,7 @@
   },
   {
     "tier": 3,
-    "question": "A fighter crosses the coast at 30,000 feet, pushes past Mach 1 as it does, holds Mach 1.5 for ten minutes, and slows back below the speed of sound far inland. A boy standing 120 miles from the coast, directly under the flight path, hears a sharp crack. Where was the jet when it made the sound that reached him?",
+    "question": "A boy stands 120 miles from the coast, directly under a fighter's flight path. The jet crosses the coast at 30,000 feet, pushes past Mach 1 as it does, holds Mach 1.5 for ten minutes and slows back below the speed of sound far inland. The boy hears a sharp crack. Where was the jet when it made the sound that reached him?",
     "answer": "Almost overhead, just short of the boy",
     "choices": [
       "Almost overhead, just short of the boy",
@@ -40613,7 +40574,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1964 the US government wanted to know if Americans would put up with supersonic jets flying over. So it ran the test on a real city. From February to July, military jets boomed Oklahoma City about eight times a day — 1,253 booms in six months. People filed 9,594 damage complaints and 4,629 formal claims. How many claims did the government pay?",
+    "question": "A resident of Oklahoma City hears one more boom crack over the roofs in 1964 and fills in a claim form. Military jets are booming the city about eight times a day, 1,253 booms in six months, because the US government wants to know if Americans will put up with supersonic jets flying over. Residents file 9,594 damage complaints and 4,629 formal claims. How many claims does the government pay?",
     "answer": "229 of them, for about $13,000 in all",
     "choices": [
       "229 of them, for about $13,000 in all",
@@ -40626,7 +40587,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1887, sixty years before any aircraft could approach the speed of sound, Ernst Mach and the photographer Peter Salcher photographed the cone of piled-up air trailing from a rifle bullet in mid-flight. The bullet crossed the picture in well under a thousandth of a second. How did they stop it dead on the plate?",
+    "question": "Ernst Mach and the photographer Peter Salcher photographed the cone of piled-up air trailing from a rifle bullet in mid-flight in 1887, sixty years before any aircraft could approach the speed of sound. The bullet crossed the picture in well under a thousandth of a second. How did they stop it dead on the plate?",
     "answer": "They lit it with an electric spark too brief to blur",
     "choices": [
       "They lit it with an electric spark too brief to blur",
@@ -40639,7 +40600,7 @@
   },
   {
     "tier": 4,
-    "question": "On the X-1's eighth powered flight the pitch control simply died. At Mach 0.94 — a hair under the speed of sound — Chuck Yeager pulled and pushed the stick and the aeroplane ignored him, and no amount of extra rocket thrust would have given him back control. The project engineer, Jack Ridley, worked out an answer that almost every supersonic fighter since has carried. What did Ridley change?",
+    "question": "Chuck Yeager pulled and pushed the stick on the X-1's eighth powered flight, and the aeroplane ignored him. At Mach 0.94, a hair under the speed of sound, the pitch control had simply died, and no amount of extra rocket thrust would have given it back. The project engineer, Jack Ridley, worked out an answer that almost every supersonic fighter since has carried. What did Ridley change?",
     "answer": "He made the entire horizontal tail pivot as one piece",
     "choices": [
       "He made the entire horizontal tail pivot as one piece",
@@ -40652,7 +40613,7 @@
   },
   {
     "tier": 4,
-    "question": "Stand under Concorde's route and you do not hear one bang — you hear two, about three tenths of a second apart, and then nothing. A pressure gauge on the ground draws the shape of the event: pressure jumps suddenly, falls smoothly to below normal, then jumps suddenly back. Each jump is a shock wave arriving, and each takes only a few thousandths of a second, which is why the sound cracks instead of rumbling. Where do the two jumps come from?",
+    "question": "A farmer stands under Concorde's route and hears not one bang but two, about three tenths of a second apart, and then nothing. A pressure gauge on the ground draws the shape of the event: pressure jumps suddenly, falls smoothly to below normal, then jumps suddenly back. Each jump is a shock wave arriving. Where do the two jumps come from?",
     "answer": "One shock from the nose and one from the tail",
     "choices": [
       "One shock from the nose and one from the tail",
@@ -40665,7 +40626,7 @@
   },
   {
     "tier": 5,
-    "question": "Ernst Mach's spark photographs caught the cone of piled-up air a flying bullet drags with it, and a supersonic jet drags the same cone today. Every such photograph shows the cone closing to a sharp angle at the nose — an angle a protractor can read straight off the print. As an object flies faster and faster beyond Mach 1, what does that angle do?",
+    "question": "A student lays a protractor on one of Ernst Mach's spark photographs and reads the sharp angle at which the cone of piled-up air closes at a flying bullet's nose. A supersonic jet drags the same cone today. As an object flies faster and faster beyond Mach 1, what does that angle do?",
     "answer": "It narrows and sweeps further back",
     "choices": [
       "It narrows and sweeps further back",
@@ -40678,7 +40639,7 @@
   },
   {
     "tier": 5,
-    "question": "The crack of a bullwhip is a real sonic boom. It is a scrap of leather beating the speed of sound in your back garden. In 2002 two mathematicians worked out the physics. The tip ends up more than thirty times faster than the handle. The arm makes just one slow swing. Where does the extra speed come from?",
+    "question": "Goriely and McMillen, two mathematicians, worked out the physics of a bullwhip's crack in 2002. The crack is a real sonic boom, a scrap of leather beating the speed of sound in a back garden. The tip ends up more than thirty times faster than the handle, though the arm makes just one slow swing. Where does the extra speed come from?",
     "answer": "A loop speeding up as it runs into the whip's thin end",
     "choices": [
       "A loop speeding up as it runs into the whip's thin end",
@@ -40691,7 +40652,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1886, three years before the war of the currents really began, an engineer named William Stanley wired up the small town of Great Barrington, Massachusetts. He used a new invention that direct current could not use. What piece of gear made his demo work?",
+    "question": "William Stanley, an engineer, wired up the small town of Great Barrington, Massachusetts, in 1886. He used a new invention that direct current could not use. What piece of gear made his demo work?",
     "answer": "A transformer that stepped voltage up for the wires and back down for the lamps.",
     "choices": [
       "A transformer that stepped voltage up for the wires and back down for the lamps.",
@@ -40704,7 +40665,7 @@
   },
   {
     "tier": 3,
-    "question": "To send the same amount of power a hundred miles down a modest copper wire without much energy lost as heat, you have to think about the current inside the wire. The physical relationship between current and heating loss is unforgiving. So what do you want at the sending end?",
+    "question": "An engineer plans to send the same amount of power a hundred miles down a modest copper wire without much energy lost as heat. She has to watch the current inside the wire, because the physical relationship between current and heating loss is unforgiving. What does she want at the sending end?",
     "answer": "The voltage pushed as high as possible, so the current in the wire is small.",
     "choices": [
       "The voltage pushed as high as possible, so the current in the wire is small.",
@@ -40717,7 +40678,7 @@
   },
   {
     "tier": 3,
-    "question": "The Serbian-American inventor Nikola Tesla filed US patent 381,968, granted in May 1888, for a new kind of electric motor. Tesla fed several out-of-step alternating currents into separate coils arranged in a ring around a spinning iron rotor. What did those coils create between them that dragged the rotor around without any brushes touching it?",
+    "question": "Nikola Tesla filed US patent 381,968, granted in May 1888, for a new kind of electric motor. He fed several out-of-step alternating currents into separate coils arranged in a ring around a spinning iron rotor. What did those coils create between them that dragged the rotor around?",
     "answer": "A magnetic field that itself walked around the inside of the stator.",
     "choices": [
       "A magnetic field that itself walked around the inside of the stator.",
@@ -40730,7 +40691,7 @@
   },
   {
     "tier": 4,
-    "question": "The war of the currents did not end with a duel or a court verdict; it ended with a bid. In 1893 Westinghouse and Tesla underbid Edison's team for the contract to light a single event, and on opening night President Cleveland threw one switch and lit about a hundred thousand incandescent lamps at once. What was the event?",
+    "question": "George Westinghouse and Nikola Tesla underbid Edison's team in 1893 for the contract to light a single event, and the war of the currents ended there, with a bid, not a duel or a court verdict. On opening night President Cleveland threw one switch and lit about a hundred thousand incandescent lamps at once. What was the event?",
     "answer": "The World's Columbian Exposition in Chicago.",
     "choices": [
       "The World's Columbian Exposition in Chicago.",
@@ -40743,7 +40704,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1834 the American naturalist Richard Harlan studied a huge fossil bone. It was one vertebra — a single bone from a backbone — dug up in Louisiana. From that one bone he named the creature Basilosaurus, or 'king lizard.' What kind of animal was it?",
+    "question": "Richard Harlan, an American naturalist, studied a huge fossil bone in 1834: one vertebra, a single bone from a backbone, dug up in Louisiana. From that one bone he named the creature Basilosaurus, or 'king lizard.' What kind of animal was it?",
     "answer": "A whale",
     "choices": [
       "A whale",
@@ -40756,7 +40717,7 @@
   },
   {
     "tier": 1,
-    "question": "In rocks about fifty million years old in northern Pakistan, Philip Gingerich and Donald Russell dug up a fossil skull. They named the animal Pakicetus. It is the earliest animal that scientists count as a whale, and its size is the first surprise. How big was it?",
+    "question": "Philip Gingerich and Donald Russell dug up a fossil skull in rocks about fifty million years old in northern Pakistan, and named the animal Pakicetus. It is the earliest animal that scientists count as a whale, and its size is the first surprise. How big was it?",
     "answer": "About the size of a wolf",
     "choices": [
       "About the size of a wolf",
@@ -40769,7 +40730,7 @@
   },
   {
     "tier": 2,
-    "question": "A fossil skeleton with no skin and no soft parts sat on Richard Owen's bench. Owen was Britain's leading anatomist. He used the fossil to overturn a ruling that Basilosaurus was a giant sea reptile. Owen pointed to one feature and wrote that it was 'unknown in fishes and reptiles'. What was it?",
+    "question": "Richard Owen, Britain's leading anatomist, used a fossil skeleton on his bench, with no skin and no soft parts, to overturn a ruling that Basilosaurus was a giant sea reptile. He pointed to one feature and wrote that it was 'unknown in fishes and reptiles'. What was it?",
     "answer": "Molars carried on two roots each",
     "choices": [
       "Molars carried on two roots each",
@@ -40782,7 +40743,7 @@
   },
   {
     "tier": 2,
-    "question": "In July 1845 the showman Albert Koch charged New Yorkers twenty-five cents to view a 114-foot 'sea serpent' he called Hydrarchos. The anatomist Jeffries Wyman needed one visit to call it a fraud. Koch sold it to the King of Prussia anyway. What was the monster actually made of?",
+    "question": "Albert Koch, a showman, charged New Yorkers twenty-five cents in July 1845 to view a 114-foot 'sea serpent' he called Hydrarchos. The anatomist Jeffries Wyman needed one visit to call it a fraud. Koch sold it to the King of Prussia anyway. What was the monster actually made of?",
     "answer": "Bones from several Basilosaurus skeletons, padded with fossil shells",
     "choices": [
       "Bones from several Basilosaurus skeletons, padded with fossil shells",
@@ -40795,7 +40756,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1981 Philip Gingerich and Donald Russell described a fifty-million-year-old skull from rock west of Islamabad in northern Pakistan, named it Pakicetus, and declared it the oldest whale known. Nothing about the skull's outward shape looked remotely whale-like. One feature carried the entire claim, and it is still the founding mark of the whale group. What was it?",
+    "question": "Philip Gingerich rested the whole claim on one feature when he and Donald Russell described a fifty-million-year-old skull from rock west of Islamabad in 1981, named it Pakicetus and declared it the oldest whale known. Nothing about the skull's outward shape looked remotely whale-like. That feature is still the founding mark of the whale group. What was it?",
     "answer": "A dense thickened lip of bone wrapped round the ear capsule",
     "choices": [
       "A dense thickened lip of bone wrapped round the ear capsule",
@@ -40808,7 +40769,7 @@
   },
   {
     "tier": 3,
-    "question": "Ambulocetus natans came out of the Kala Chitta Hills of Punjab, Pakistan in 1992: three metres of early whale, a quarter of a tonne. No one has ever watched one hunt, yet Hans Thewissen could read its hunting style off the skull alone. Which feature of the skull did he read?",
+    "question": "Hans Thewissen read the hunting style of Ambulocetus natans off its skull alone, though no one has ever watched one hunt. The animal came out of the Kala Chitta Hills of Punjab, Pakistan, in 1992: three metres of early whale, a quarter of a tonne. Which feature of the skull did he read?",
     "answer": "Its eyes sat high on the skull, aimed upward",
     "choices": [
       "Its eyes sat high on the skull, aimed upward",
@@ -40821,7 +40782,7 @@
   },
   {
     "tier": 3,
-    "question": "Fossil hunters had spent decades arguing over the whale family tree from bones alone. In 1999 the biologists Nikaido, Rooney and Okada came at it a new way. They used jumping genes — bits of DNA that slip into a genome, almost never come back out, and mark shared ancestry like a stamp that cannot be faked. Which living animals did their result put closest to whales?",
+    "question": "Nikaido, Rooney and Okada, three biologists, came at the whale family tree a new way in 1999, after fossil hunters had spent decades arguing over it from bones alone. They used jumping genes, bits of DNA that slip into a genome, almost never come back out, and mark shared ancestry like a stamp that cannot be faked. Which living animals did their result put closest to whales?",
     "answer": "Hippos",
     "choices": [
       "Hippos",
@@ -40834,7 +40795,7 @@
   },
   {
     "tier": 4,
-    "question": "Pakicetus, the oldest animal that scientists count as a whale, was known for twenty years from its skull alone. The restoration drawn from that skull put it on the cover of Science: a sleek, crocodile-shaped hunter half-submerged in a river, chasing fish. In 2001 Hans Thewissen's team dug up the rest of the skeleton. What did the bones show?",
+    "question": "Hans Thewissen's team dug up the rest of the Pakicetus skeleton in 2001. For twenty years the oldest animal that scientists count as a whale had been known from its skull alone, and the restoration drawn from that skull put it on the cover of Science: a sleek, crocodile-shaped hunter half-submerged in a river, chasing fish. What did the bones show?",
     "answer": "A long-legged land runner with four full working legs",
     "choices": [
       "A long-legged land runner with four full working legs",
@@ -40847,7 +40808,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1990 Philip Gingerich, Holly Smith and Elwyn Simons reported a Basilosaurus fossil from the Egyptian desert. It was sixteen metres of animal, and its hind limbs were still in place, joined together. Each hind limb was just thirty-five centimetres long. What did that little leg actually contain?",
+    "question": "Philip Gingerich, Holly Smith and Elwyn Simons reported a Basilosaurus fossil from the Egyptian desert in 1990: sixteen metres of animal, with its hind limbs still in place, joined together. Each hind limb was just thirty-five centimetres long. What did that little leg actually contain?",
     "answer": "A knee, an ankle of fused bones, and three toes",
     "choices": [
       "A knee, an ankle of fused bones, and three toes",
@@ -40860,7 +40821,7 @@
   },
   {
     "tier": 4,
-    "question": "The Indohyus fossils spent decades in storage. The Indian geologist A. Ranga Rao had collected them in Kashmir and named the animal after Indira Gandhi; after his death his widow, Dr Friedlinde Obergfell, handed the rocks to Hans Thewissen. In Thewissen's laboratory the fossil finally gave up the feature that makes this small deer-like plant-eater the closest known relative of whales. How did that feature come to light?",
+    "question": "Dr Friedlinde Obergfell handed Hans Thewissen the rocks that her late husband, the Indian geologist A. Ranga Rao, had collected in Kashmir. The Indohyus fossils inside had spent decades in storage. In Thewissen's laboratory they finally gave up the feature that makes this small deer-like plant-eater the closest known relative of whales. How did that feature come to light?",
     "answer": "A technician accidentally broke one of the skulls open",
     "choices": [
       "A technician accidentally broke one of the skulls open",
@@ -40873,7 +40834,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2000 two methods had produced two answers and neither side would yield. Molecular biologists reading DNA placed whales inside the even-toed hoofed mammals. Fossil specialists, following an idea Leigh Van Valen published in 1966, backed the mesonychians — an extinct order of hoofed carnivores whose odd triangular teeth matched those of the earliest whales. In 2001, in the same month, Hans Thewissen's team in Nature and Philip Gingerich's team in Science published early whale ankle bones from Pakistan. Both carried the same astragalus — the bone that takes the body's weight at the top of the foot — and its shape ended the argument. What was that shape?",
+    "question": "Two teams published early whale ankle bones from Pakistan in the same month of 2001: Hans Thewissen's in Nature and Philip Gingerich's in Science. Molecular biologists reading DNA had placed whales inside the even-toed hoofed mammals; fossil specialists, following Leigh Van Valen, backed the mesonychians, extinct hoofed carnivores with odd triangular teeth. Both sets of bones carried the same astragalus, the bone that takes the body's weight at the top of the foot, and its shape ended the argument. What was that shape?",
     "answer": "An astragalus grooved like a pulley at both ends",
     "choices": [
       "An astragalus grooved like a pulley at both ends",
@@ -40886,7 +40847,7 @@
   },
   {
     "tier": 5,
-    "question": "The hind legs of a sixteen-metre Basilosaurus isis were thirty-five centimetres long — no use whatever for walking. Biologists call such a structure vestigial, meaning it has lost its ancestral job; most people hear the word as 'useless leftover'. In their 1990 Science paper Philip Gingerich, B. Holly Smith and Elwyn Simons argued these legs still did real work, and named the job. What job did they propose?",
+    "question": "A student hears that the hind legs of a sixteen-metre Basilosaurus isis, thirty-five centimetres long and no use whatever for walking, are vestigial, and takes the word to mean 'useless leftover'. It means only that a structure has lost its ancestral job. In their 1990 Science paper Philip Gingerich, B. Holly Smith and Elwyn Simons argued these legs still did real work, and named the job. What job did they propose?",
     "answer": "Guiding the two animals into position during mating",
     "choices": [
       "Guiding the two animals into position during mating",
@@ -40899,7 +40860,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1942 at Eastman Kodak in Rochester, Harry Coover's team wanted a clear plastic they could mould by the thousand instead of grinding each one from glass. The stuff they mixed stuck itself to the moulds and to the glassware, so they dropped it. What had the team been trying to mould?",
+    "question": "Harry Coover's team at Kodak in Rochester wanted, in 1942, a clear plastic they could mould by the thousand instead of grinding each one from glass. The stuff they mixed stuck itself to the moulds and to the glassware, so they dropped it. What had the team been trying to mould?",
     "answer": "Gun sights for fighter planes",
     "choices": [
       "Gun sights for fighter planes",
@@ -40912,7 +40873,7 @@
   },
   {
     "tier": 1,
-    "question": "Art Fry, a chemical engineer at 3M, sang in a church choir in St. Paul, Minnesota, and set his places in the hymnal beforehand so he could turn straight to each hymn. Every service the same thing went wrong, and he stood up to sing with the book open at the wrong page. What kept happening?",
+    "question": "Art Fry stood up to sing in his church choir in St. Paul, Minnesota, with the hymnal open at the wrong page. The 3M chemical engineer had set his places beforehand so he could turn straight to each hymn, but the same thing went wrong every service. What kept happening?",
     "answer": "His paper slips slid out of the book",
     "choices": [
       "His paper slips slid out of the book",
@@ -40925,7 +40886,7 @@
   },
   {
     "tier": 1,
-    "question": "In April 1980 the American company 3M put its Post-it Note on sale across the United States for the first time. The pads came in a bright canary yellow, and Post-it pads have stayed that colour ever since. The choice wasn't from a marketing study or a colour vote. What actually settled on that yellow?",
+    "question": "An office worker peels a canary-yellow Post-it Note off a pad. The pads have stayed that colour ever since 3M first put them on sale across the United States in April 1980, and the reason is an unglamorous one. What actually settled on that yellow?",
     "answer": "The scrap paper stacked in the lab next door",
     "choices": [
       "The scrap paper stacked in the lab next door",
@@ -40938,7 +40899,7 @@
   },
   {
     "tier": 2,
-    "question": "On 15 January 1959 Harry Coover took Kodak's new glue onto the TV panel show 'I've Got a Secret', where the panel had to guess what a guest was hiding. Coover put a single drop between a metal bar and a cable. What happened next on live television?",
+    "question": "Harry Coover took Kodak's new glue onto the TV panel show 'I've Got a Secret' on 15 January 1959, where the panel had to guess what a guest was hiding. He put a single drop between a metal bar and a cable. What happened next on live television?",
     "answer": "The host was hoisted off the studio floor hanging from it",
     "choices": [
       "The host was hoisted off the studio floor hanging from it",
@@ -40951,7 +40912,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1951, nine years after Kodak had thrown out the sticky cyanoacrylate, the chemist Fred Joyner was working with the same stuff at Kodak's Kingsport, Tennessee plant. He was testing heat-proof plastics for jet canopies. He loaded a sample into a tool for one routine check, and it cost Kodak the tool for good. What did Joyner wreck?",
+    "question": "Fred Joyner loaded a sample into a tool for one routine check in 1951, and it cost Kodak the tool for good. The chemist was testing heat-proof plastics for jet canopies at the Kingsport, Tennessee plant, using the same sticky cyanoacrylate that Kodak had thrown out nine years before. What did Joyner wreck?",
     "answer": "A refractometer, its glass prisms welded together",
     "choices": [
       "A refractometer, its glass prisms welded together",
@@ -40964,7 +40925,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1968 at a 3M lab in Minnesota, Spencer Silver added too much of one ingredient by mistake, and the result stunned him. Before he changed the recipe, his job had been simple: make a sticky glue stronger than anything else on 3M's shelf. What was that stronger glue meant for?",
+    "question": "Spencer Silver added too much of one ingredient by mistake at a 3M lab in Minnesota in 1968, and the result stunned him. Before that, his job had been simple: make a sticky glue stronger than anything else on 3M's shelf. What was that stronger glue meant for?",
     "answer": "Holding panels together in aircraft construction",
     "choices": [
       "Holding panels together in aircraft construction",
@@ -40977,7 +40938,7 @@
   },
   {
     "tier": 3,
-    "question": "Superglue is not drying when it sets: nothing evaporates out of it. A drop goes from liquid to hard solid in seconds as its molecules snap together into long chains. Something it meets on the way out of the tube starts that chain reaction. What is it?",
+    "question": "A model-maker squeezes a drop of superglue onto a workbench, and it goes from liquid to hard solid in seconds as its molecules snap together into long chains. Nothing evaporates out of it. Something it meets on the way out of the tube starts that chain reaction. What is it?",
     "answer": "The trace of water sitting on almost every surface",
     "choices": [
       "The trace of water sitting on almost every surface",
@@ -40990,7 +40951,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1968 the 3M chemist Spencer Silver was trying to make a super-strong glue and by accident made a weak one instead. Years later his 3M colleague Art Fry used the stuff to hold paper bookmarks in a hymnbook, and the Post-it Note was born. Peel a Post-it off a page and the page comes away undamaged; press the note somewhere else and it grips again, dozens of times over. What is on the back of a Post-it Note?",
+    "question": "Art Fry used the odd glue Spencer Silver had made by accident at 3M in 1968 to hold paper bookmarks in a hymnbook, and the Post-it Note was born. Peeled off a page, a note leaves the page undamaged; pressed somewhere else, it grips again, dozens of times over. What is on the back of a Post-it Note?",
     "answer": "A sparse layer of tough spheres touching the page at points",
     "choices": [
       "A sparse layer of tough spheres touching the page at points",
@@ -41003,7 +40964,7 @@
   },
   {
     "tier": 3,
-    "question": "A crime lab seals a stolen laptop in a glass chamber, warms a few drops of superglue inside it until the glue fumes, and shuts the door. When the chamber is opened, fingerprints nobody could see on the plastic are plainly there. What did the fumes do to the prints?",
+    "question": "A crime-lab technician seals a stolen laptop in a glass chamber, warms a few drops of superglue inside it until the glue fumes, and shuts the door. When she opens the chamber, fingerprints nobody could see on the plastic are plainly there. What did the fumes do to the prints?",
     "answer": "Grew a hard white polymer along every ridge of the print",
     "choices": [
       "Grew a hard white polymer along every ridge of the print",
@@ -41016,7 +40977,7 @@
   },
   {
     "tier": 4,
-    "question": "Harry Coover said that 'all surfaces have at least a monomolecular layer of water on them' - a film one molecule thick - and that this water is what sets his glue off. There is water vapour in the air as well. By that account a tube of superglue ought to set solid on the shop shelf, and it does not. What else is in the tube?",
+    "question": "Harry Coover said his glue is set off by something lying on every surface, and the same thing hangs in the air around the tube. By that account a tube of superglue ought to set solid on the shop shelf, and it does not. What else is in the tube?",
     "answer": "An acid, which holds the reaction back until the glue meets a surface",
     "choices": [
       "An acid, which holds the reaction back until the glue meets a surface",
@@ -41029,7 +40990,7 @@
   },
   {
     "tier": 4,
-    "question": "By 1977 the American company 3M had every piece of the Post-it Note ready — Spencer Silver's low-tack glue that stuck and unstuck cleanly, Art Fry's paper pad, and the little booklet of them. That year 3M test-marketed the pads in four American cities under the name 'Press 'n Peel', on ordinary stationery shelves alongside notebooks and envelopes. Sales were negligible. What was going wrong?",
+    "question": "A clerk in one of four American test cities shelves pads called Press 'n Peel beside the notebooks and envelopes in 1977. Spencer Silver's low-tack glue, which sticks and unsticks cleanly, and Art Fry's paper pad are both ready, and sales are negligible. What has gone wrong?",
     "answer": "A shopper in the aisle could not work out what a pad was for",
     "choices": [
       "A shopper in the aisle could not work out what a pad was for",
@@ -41042,7 +41003,7 @@
   },
   {
     "tier": 4,
-    "question": "By the late 1970s 3M's sticky-backed notepads had flopped in a four-city test launch, and two of the company's own men, Geoff Nicholson and his boss Joe Ramey, refused to let them die. They picked one city - Boise, Idaho - and saturated it, and what came back beat anything 3M had ever recorded. What did the two men do in Boise?",
+    "question": "Geoff Nicholson and his boss Joe Ramey picked one city, Boise, Idaho, to save 3M's sticky-backed notepads after a four-city test launch flopped in the late 1970s. They saturated it, and what came back beat anything 3M had ever recorded. What did the two men do in Boise?",
     "answer": "Handed free sample pads straight to secretaries and office managers",
     "choices": [
       "Handed free sample pads straight to secretaries and office managers",
@@ -41055,7 +41016,7 @@
   },
   {
     "tier": 5,
-    "question": "Water is a feeble chemical trigger; most liquid resins sit in an open dish and ignore it. Cyanoacrylate does not - the film of water on a benchtop sets it polymerising, molecules snapping into long chains, within seconds. The reason is the molecule's build: a cyano group and an ester sit crowded onto the same carbon, right beside the carbon-carbon double bond. What does that pairing do?",
+    "question": "A chemist leaves a drop of cyanoacrylate on a benchtop beside an open dish of liquid resin. The resin sits there; the drop polymerises within seconds, its molecules snapping into long chains. The reason is the molecule's build: a cyano group and an ester sit crowded onto the same carbon, right beside the carbon-carbon double bond. What does that pairing do?",
     "answer": "They strip the double bond of electrons and leave it open to attack",
     "choices": [
       "They strip the double bond of electrons and leave it open to attack",
@@ -41068,7 +41029,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1942 the chemist Harry Coover at Kodak, the film company, invented cyanoacrylate -- the super-strong glue we now call superglue -- and Kodak threw it out for being too sticky to be useful. Twenty-six years later at another company, 3M, the chemist Spencer Silver made the opposite: a weak adhesive that peeled cleanly back off paper without tearing it. Silver spent five or six years pitching it at one internal seminar after another, and he had a catchphrase he used every time. What did he call his odd invention?",
+    "question": "Spencer Silver pitched his odd invention at yet another internal 3M seminar: a weak adhesive that peeled cleanly back off paper without tearing it. It was the opposite of Harry Coover's superglue, which Kodak had thrown out in 1942 for being too sticky to be useful. Silver spent five or six years pitching it, with a catchphrase he used every time. What did he call it?",
     "answer": "A solution waiting for a problem to solve",
     "choices": [
       "A solution waiting for a problem to solve",
@@ -41081,7 +41042,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2014 Elizabeth Holmes's blood-testing company Theranos was worth about $9 billion on paper. Their fridge-sized Edison box was said to run hundreds of tests from one finger-prick drop. Later, checkers found the Edison only ran about a dozen of those tests. What ran the rest?",
+    "question": "Investigators looked inside Elizabeth Holmes's blood-testing company, Theranos, worth about $9 billion on paper in 2014. Its fridge-sized Edison box was said to run hundreds of tests from one finger-prick drop, and they found it handled only about a dozen of them. What ran the rest?",
     "answer": "modified commercial analysers made by Siemens",
     "choices": [
       "modified commercial analysers made by Siemens",
@@ -41094,7 +41055,7 @@
   },
   {
     "tier": 1,
-    "question": "Elizabeth Holmes started a California company called Theranos, claiming her machines could run hundreds of blood tests from a single fingerprick drop instead of a full vial. In 2014 Forbes magazine said Theranos was worth about $9 billion, making Holmes -- on paper -- the youngest self-made female billionaire in the world. Two years later, after reporters showed the machines did not actually work, Forbes revised her personal net worth. To what number?",
+    "question": "Elizabeth Holmes claimed her company, Theranos, could run hundreds of blood tests from a single fingerprick drop. Forbes magazine valued it at about $9 billion in 2014, making her, on paper, the youngest self-made female billionaire in the world. Two years later, after reporters showed what her machines could not do, Forbes revised her net worth. To what number?",
     "answer": "zero dollars",
     "choices": [
       "zero dollars",
@@ -41107,7 +41068,7 @@
   },
   {
     "tier": 2,
-    "question": "One finger-prick drop is only about 50 to 100 microlitres of blood. A routine glucose test alone uses roughly 15 microlitres of sample against 1,500 microlitres of reagent. Now split that single drop across the hundreds of tests Theranos advertised. What breaks first?",
+    "question": "A nurse pricks a finger and collects one drop, only about 50 to 100 microlitres of blood. A routine glucose test alone uses roughly 15 microlitres of sample against 1,500 microlitres of reagent. Theranos advertised hundreds of tests from that drop. What breaks first?",
     "answer": "each aliquot falls below the chemistry's detection threshold",
     "choices": [
       "each aliquot falls below the chemistry's detection threshold",
@@ -41120,7 +41081,7 @@
   },
   {
     "tier": 2,
-    "question": "Theranos, the Silicon Valley startup founded by Elizabeth Holmes, sold a fingertip blood test on a small machine it called Edison. To fill the volume a machine originally built for a full vein draw needed, Theranos staff topped the tiny finger-prick sample up with saline. For narrow-range tests like blood potassium, where a small change in the number matters a lot, this was a disaster. Why?",
+    "question": "A Theranos technician tops up a tiny finger-prick sample with saline to fill the volume that a machine built for a full vein draw needs. For narrow-range tests like blood potassium, where a small change in the number matters a lot, this is a disaster. Why?",
     "answer": "dilution drags the measured substance toward the instrument's noise floor and multiplies error",
     "choices": [
       "dilution drags the measured substance toward the instrument's noise floor and multiplies error",
@@ -41133,7 +41094,7 @@
   },
   {
     "tier": 3,
-    "question": "Theranos was a California startup that claimed its Edison machines could run hundreds of blood tests from a single fingerprick drop of blood. In February 2015 federal inspectors would later find that the Edison hormone test at Theranos was failing its own accuracy standard on most days -- the machine was giving patients wrong readings. The company's founding CEO was eventually convicted of fraud in federal court. Who was she?",
+    "question": "Federal inspectors found the Edison hormone test at Theranos failing its own accuracy standard on most days of February 2015, giving patients wrong readings. The California startup had claimed its Edison machines could run hundreds of blood tests from a single fingerprick drop. Its founding chief executive was eventually convicted of fraud in federal court. Who held that job?",
     "answer": "Elizabeth Holmes",
     "choices": [
       "Elizabeth Holmes",
@@ -41146,7 +41107,7 @@
   },
   {
     "tier": 3,
-    "question": "In May 2016, Theranos — the Silicon Valley blood-testing startup run by Elizabeth Holmes — was finally forced to face what its Edison finger-prick devices had really produced at Walgreens pharmacies. The company took a step almost unheard of for a medical lab. What did Theranos do to the results it had already sent to patients and their doctors?",
+    "question": "At least one Phoenix doctor sent a patient to the emergency room over a bad Theranos reading. In May 2016 Elizabeth Holmes's startup took a step almost unheard of for a medical lab, finally facing what its Edison devices had really produced at Walgreens pharmacies. What did Theranos do to the results it had already sent to patients and their doctors?",
     "answer": "voided or corrected tens of thousands of results covering roughly two years",
     "choices": [
       "voided or corrected tens of thousands of results covering roughly two years",
@@ -41159,7 +41120,7 @@
   },
   {
     "tier": 4,
-    "question": "On 25 January 2016 the federal lab regulator Centers for Medicare and Medicaid Services (CMS) finished inspecting the Theranos lab in Newark, California. It sent a letter about the lab's blood tests. This included prothrombin-time tests, used to set doses for the blood-thinner warfarin. What did the letter formally say?",
+    "question": "Inspectors from the Centers for Medicare and Medicaid Services (CMS), the federal lab regulator, finished going through the Theranos lab in Newark, California, on 25 January 2016. Their letter covered the lab's blood tests, including prothrombin-time tests, used to set doses for the blood-thinner warfarin. What did the letter formally say?",
     "answer": "the practices posed immediate jeopardy to patient health and safety",
     "choices": [
       "the practices posed immediate jeopardy to patient health and safety",
@@ -41172,7 +41133,7 @@
   },
   {
     "tier": 5,
-    "question": "The criminal trial over the fraud at Theranos, the Silicon Valley blood-testing startup led by Elizabeth Holmes, ended in San Jose, California, in January 2022. That November, Holmes was sentenced to 11 years and 3 months in federal prison. Her Edison devices had produced badly wrong results for patients tested at Walgreens pharmacies. Whom did the jury decide Holmes had defrauded?",
+    "question": "A jury in San Jose, California, ended the criminal trial of Elizabeth Holmes, who led the Silicon Valley blood-testing startup Theranos, in January 2022. That November she was sentenced to 11 years and 3 months in federal prison. Her Edison devices had produced badly wrong results for patients tested at Walgreens pharmacies. Whom did the jury decide she had defrauded?",
     "answer": "investors, but not the patients tested at Walgreens",
     "choices": [
       "investors, but not the patients tested at Walgreens",
@@ -41185,7 +41146,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1897 J.J. Thomson had a ray streaming off a metal plate inside a glass tube, and nobody knew what it was. He measured how far a magnet bent the ray, then fitted a plate of different metal and measured again, then changed the gas in the tube and measured again. What did the swaps do to his number?",
+    "question": "J.J. Thomson measured how far a magnet bent a ray streaming off a metal plate inside a glass tube in 1897, when nobody knew what the ray was. Then he fitted a plate of different metal and measured again, then changed the gas in the tube and measured again. What number did the swaps give him?",
     "answer": "The very same number every time",
     "choices": [
       "The very same number every time",
@@ -41198,7 +41159,7 @@
   },
   {
     "tier": 1,
-    "question": "On 30 April 1897 J.J. Thomson told a Royal Institution audience what his cathode-ray measurements had turned up, and the room did not buy it. Forty years later, in his memoirs, Thomson set down what one distinguished physicist who had been there admitted to him. What had the man thought?",
+    "question": "A Royal Institution audience heard J.J. Thomson out on 30 April 1897 and did not buy what his cathode-ray measurements had turned up. Forty years later, in his memoirs, Thomson set down what one distinguished physicist who had been there admitted to him. What had the man thought?",
     "answer": "That Thomson had been pulling their legs",
     "choices": [
       "That Thomson had been pulling their legs",
@@ -41211,7 +41172,7 @@
   },
   {
     "tier": 2,
-    "question": "J.J. Thomson's 1897 measurement gave a ratio of mass to charge for his cathode-ray particle - how much matter each unit of charge was dragging along - and he set that beside the same ratio measured for the hydrogen ion. Hydrogen was the lightest thing known, and the atom was taken to be the floor of the world. Against that floor, what did Thomson's paper claim for his particle's mass?",
+    "question": "J.J. Thomson set the ratio of mass to charge for his cathode-ray particle, how much matter each unit of charge was dragging along, beside the same ratio for the hydrogen ion in 1897. Hydrogen was the lightest thing known, and the atom was taken to be the floor of the world. Against that floor, what did his paper claim for his particle's mass?",
     "answer": "About a thousand times lighter than a hydrogen atom",
     "choices": [
       "About a thousand times lighter than a hydrogen atom",
@@ -41224,7 +41185,7 @@
   },
   {
     "tier": 2,
-    "question": "Ernest Rutherford's alpha-particle scattering wrecked J.J. Thomson's 1904 model of the atom. When Thomson died in 1940, his ashes were laid in the nave of Westminster Abbey near Isaac Newton - a few steps from Rutherford's grave. What had the two men been to each other?",
+    "question": "Ernest Rutherford wrecked J.J. Thomson's 1904 model of the atom with his alpha-particle scattering. When Thomson died in 1940, his ashes were laid in the nave of Westminster Abbey near Isaac Newton, a few steps from Rutherford's grave. What had the two men been to each other?",
     "answer": "Rutherford trained under Thomson, then took over his chair at the Cavendish",
     "choices": [
       "Rutherford trained under Thomson, then took over his chair at the Cavendish",
@@ -41237,7 +41198,7 @@
   },
   {
     "tier": 2,
-    "question": "Around 1878 Alfred Marshall Mayer pushed magnetised needles through corks, floated them in a dish of water and held a magnet above the dish. Up to six corks, they shoved one another apart and settled into a single evenly spaced ring. Then Mayer floated a seventh - and J.J. Thomson would later borrow the result as his picture of the inside of an atom. Where did the seventh cork settle?",
+    "question": "Alfred Marshall Mayer pushed magnetised needles through corks around 1878, floated them in a dish of water and held a magnet above the dish. Up to six corks, they shoved one another apart and settled into a single evenly spaced ring. Then Mayer floated a seventh, and J.J. Thomson later borrowed the result for his atom. Where did the seventh cork settle?",
     "answer": "Inside the ring, near the middle of the dish",
     "choices": [
       "Inside the ring, near the middle of the dish",
@@ -41250,7 +41211,7 @@
   },
   {
     "tier": 3,
-    "question": "Bending cathode rays with a magnet was easy; physicists had done it for years. Bending them with an electric field was the test that would show the rays carried charge - and every attempt had failed, which was the standard objection to the idea that the rays were charged particles at all. J.J. Thomson got the electric bend in 1897 without raising the voltage others had used. What had been defeating everybody, himself included?",
+    "question": "Without raising the voltage others had used, J.J. Thomson got cathode rays to bend in an electric field in 1897. Physicists had bent the rays with a magnet for years, but every attempt with an electric field had failed, and that was the standard objection to calling the rays charged particles at all. What had been defeating everybody, himself included?",
     "answer": "Gas left in the tube was conducting and screening the field out",
     "choices": [
       "Gas left in the tube was conducting and screening the field out",
@@ -41263,7 +41224,7 @@
   },
   {
     "tier": 3,
-    "question": "The word 'electron' is older than the electron. When J.J. Thomson measured his cathode-ray particle in 1897 he refused the word outright, called the thing a corpuscle, and held out until 1914. George Johnstone Stoney had put 'electron' into print back in 1891 without ever having seen such a particle; he had worked the quantity out in 1874 from measurements in a quite different corner of physics. Which measurements gave Stoney his number?",
+    "question": "George Johnstone Stoney put the word 'electron' into print in 1891 without ever having seen such a particle. He had worked the quantity out in 1874 from measurements in a quite different corner of physics. J.J. Thomson, measuring his cathode-ray particle in 1897, refused the word outright and held out until 1914. Which measurements gave Stoney his number?",
     "answer": "Electrolysis - weighing the metal a current lays down",
     "choices": [
       "Electrolysis - weighing the metal a current lays down",
@@ -41276,7 +41237,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1920s George Paget Thomson - son of J.J. Thomson - sent a beam of electrons through a thin crystal and caught them on a photographic plate behind it. Clinton Davisson was running a similar test in America. In 1937 the two men shared the Nobel Prize in Physics for what those plates showed. What had the electrons done in crossing the crystal?",
+    "question": "George Paget Thomson, son of J.J. Thomson, sent a beam of electrons through a thin crystal in the 1920s and caught them on a photographic plate behind it. Clinton Davisson was running a similar test in America, and in 1937 the two men shared the Nobel Prize in Physics for what those plates showed. What had the electrons done in crossing the crystal?",
     "answer": "Spread and interfered, the way light waves do",
     "choices": [
       "Spread and interfered, the way light waves do",
@@ -41289,7 +41250,7 @@
   },
   {
     "tier": 3,
-    "question": "Around 1913 J.J. Thomson sent positive rays of neon through crossed electric and magnetic fields and let them fall on a photographic plate. Neon was a clean, unreactive, chemically pure element, yet its measured atomic weight came out at an awkward 20.2 that nobody could explain. What did the developed plate show?",
+    "question": "Puzzled by the awkward 20.2 that neon came out at, J.J. Thomson sent positive rays of neon through crossed electric and magnetic fields around 1913 and let them fall on a photographic plate. Neon was a clean, unreactive, chemically pure element, and nobody could explain that measured atomic weight. What did the developed plate show?",
     "answer": "Two separate patches, at masses 20 and 22",
     "choices": [
       "Two separate patches, at masses 20 and 22",
@@ -41302,7 +41263,7 @@
   },
   {
     "tier": 4,
-    "question": "J.J. Thomson's whole evidence in 1897 came to this: he had measured how far a beam of cathode rays bent in a magnetic field, and how far it bent in an electric one. From those two deflections he wrote in the paper that 'we have in the cathode rays matter in a new state' - and then went much further, making a claim not about cathode rays but about every substance in the world. What did Thomson claim?",
+    "question": "J.J. Thomson wrote in his 1897 paper that 'we have in the cathode rays matter in a new state', on the strength of two bends in a beam: one in a magnetic field, one in an electric field. Then he went much further, making a claim not about cathode rays but about every substance in the world. What did he claim?",
     "answer": "That all matter is built from one and the same kind of stuff",
     "choices": [
       "That all matter is built from one and the same kind of stuff",
@@ -41315,7 +41276,7 @@
   },
   {
     "tier": 4,
-    "question": "J.J. Thomson's 1904 atom is remembered as a shape, but he did not build it to be a shape. In a Royal Institution lecture the next year he worked out where corpuscles - his name for electrons - would sit and circulate inside a sphere of positive charge: one at the centre, two at opposite ends of a diameter, three in an equilateral triangle, and rings of them further out. The arithmetic was aimed at a puzzle that had baffled his contemporaries for decades. What was Thomson trying to explain with the rings?",
+    "question": "Inside a sphere of positive charge J.J. Thomson worked out where corpuscles, his name for electrons, would sit and circulate: one at the centre, two at opposite ends of a diameter, three in an equilateral triangle, and rings of them further out. He gave those sums in a Royal Institution lecture the year after his 1904 atom. They were aimed at a puzzle that had baffled his contemporaries for decades. What was he trying to explain with the rings?",
     "answer": "Why the elements repeat their properties in regular periods",
     "choices": [
       "Why the elements repeat their properties in regular periods",
@@ -41328,7 +41289,7 @@
   },
   {
     "tier": 4,
-    "question": "By 1906 nobody knew how many corpuscles - J.J. Thomson's own name for electrons - an atom contained, and Thomson's own working figure was about a thousand of them per atom. That year he checked the count three independent ways: how light spreads passing through a gas, how X-rays scatter, and how beta rays are absorbed. All three landed in the same place. Where did they land?",
+    "question": "J.J. Thomson put his own working figure at about a thousand corpuscles, his name for electrons, per atom, and in 1906 he checked it three independent ways: how light spreads passing through a gas, how X-rays scatter, and how beta rays are absorbed. All three landed in the same place. Where did they land?",
     "answer": "About 1 for hydrogen and about 25 for an air molecule",
     "choices": [
       "About 1 for hydrogen and about 25 for an air molecule",
@@ -41341,7 +41302,7 @@
   },
   {
     "tier": 5,
-    "question": "J.J. Thomson published the arithmetic of his own atom's downfall. In a 1910 paper on the scattering of fast electrified particles he worked out what his design predicted for an alpha particle - a heavy, fast, positively charged one - crossing gold foil about four hundred atoms deep. Positive charge smeared smoothly through an atom cannot shove hard, so the alpha would take thousands of feeble random nudges, and random nudges pile up into a bell curve centred on zero. The measurement then came back with about one alpha in twenty thousand bending past ninety degrees. What was the largest bend Thomson's own paper had allowed?",
+    "question": "J.J. Thomson published the arithmetic of his own atom's downfall in a 1910 paper. He worked out what his design predicted for an alpha particle crossing gold foil about four hundred atoms deep. Positive charge smeared smoothly through an atom cannot shove hard, so the alpha would take thousands of feeble nudges, and those pile up into a bell curve. The measurement then came back with about one alpha in twenty thousand bending past ninety degrees. What was the largest bend his paper had allowed?",
     "answer": "About two degrees",
     "choices": [
       "About two degrees",
@@ -41354,7 +41315,7 @@
   },
   {
     "tier": 5,
-    "question": "The atom died; the mathematics did not. Building the 1904 model forced J.J. Thomson to ask where N equal charges will settle on a sphere so that their mutual repulsion energy is as small as it can be - a question mathematicians now call the Thomson problem, and one Steven Smale thought important enough to put on his 1998 list of eighteen problems for the twenty-first century. For how many values of N has anyone actually proved the answer, and which are they?",
+    "question": "Steven Smale put the Thomson problem on his 1998 list of eighteen problems for the twenty-first century. Building his 1904 model of the atom had forced J.J. Thomson to ask where N equal charges will settle on a sphere so that their mutual repulsion energy is as small as it can be. For how many values of N has anyone actually proved the answer, and which are they?",
     "answer": "Five of them - N = 2, 3, 4, 6 and 12",
     "choices": [
       "Five of them - N = 2, 3, 4, 6 and 12",
@@ -41367,7 +41328,7 @@
   },
   {
     "tier": 1,
-    "question": "Neil Shubin's team had flown into the Canadian Arctic five summers running and come back with nothing that mattered. In the 2004 field season, at a quarry on southern Ellesmere Island, someone chipping at the rock face looked up. Something was sticking out of the cliff. What was it?",
+    "question": "A digger on Neil Shubin's team looked up from the rock face at a quarry on southern Ellesmere Island in the 2004 field season. The team had flown into the Canadian Arctic five summers running and come back with nothing that mattered. Something was sticking out of the cliff. What was it?",
     "answer": "the tip of a flat, pointy snout",
     "choices": [
       "the tip of a flat, pointy snout",
@@ -41393,7 +41354,7 @@
   },
   {
     "tier": 2,
-    "question": "Neil Shubin and Ted Daeschler knew the age of rock they needed; what they did not know was where to look for it. In Shubin's office in the late 1990s a geological argument started, and to settle it he pulled out the thing that would end up choosing their dig site. What was it?",
+    "question": "Neil Shubin pulled out, in the late 1990s, the thing that would end up choosing his dig site, to settle an argument about geology in his office. He and Ted Daeschler knew the age of rock they needed; what they did not know was where to look for it. What did he pull out?",
     "answer": "a first-year college geology textbook",
     "choices": [
       "a first-year college geology textbook",
@@ -41406,7 +41367,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2004, high in the Canadian Arctic on Ellesmere Island, the American paleontologist Neil Shubin and his team chipped a stunning 375-million-year-old fossil out of the frozen rock -- a flat-headed fish with wrists and elbows in its fins, one of the great missing links between fish and the first land animals. The animal needed a name, and the team decided not to invent one themselves. They asked outside, were offered several names, and took one. Whom did they ask?",
+    "question": "Neil Shubin and his team chipped a 375-million-year-old flat-headed fish out of the frozen rock of Ellesmere Island in 2004, and it needed a name. They decided not to invent one. They asked outside, were offered several names, and took one. Whom did they ask?",
     "answer": "the Nunavut council of Inuit elders",
     "choices": [
       "the Nunavut council of Inuit elders",
@@ -41419,7 +41380,7 @@
   },
   {
     "tier": 3,
-    "question": "Lobe-finned fish are already common in rocks about 385 million years old, and animals with four limbs turn up by about 365, so Neil Shubin's team knew the age band they wanted. Age alone would not do: two more things had to be true of a patch of rock before it was worth flying to it. What were they?",
+    "question": "Two dates told Neil Shubin's team the age band to search: lobe-finned fish are already common in rocks about 385 million years old, and animals with four limbs turn up by about 365. Age alone would not do. Two more things had to be true of a patch of rock before it was worth flying to it. What were they?",
     "answer": "laid down by fresh river water, and bare at the surface",
     "choices": [
       "laid down by fresh river water, and bare at the surface",
@@ -41445,7 +41406,7 @@
   },
   {
     "tier": 4,
-    "question": "In a fish, the hyomandibula is a strut that braces the jaw against the braincase and drives the pump that pushes water over the gills. In Tiktaalik that bone is drastically shrunk, which Jason Downs read as an animal already leaning less on its gills. In you, that same bone is still there, doing a different job. Where is it?",
+    "question": "Jason Downs read the shrunken hyomandibula in Tiktaalik as the mark of an animal already leaning less on its gills. In a fish, that bone is a strut that braces the jaw against the braincase and drives the pump that pushes water over the gills. Suppose you look for the same bone in your own body, doing a different job. Where is it?",
     "answer": "in your middle ear, one of three tiny bones",
     "choices": [
       "in your middle ear, one of three tiny bones",
@@ -41458,7 +41419,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2010 Grzegorz Niedzwiedzki, Piotr Szrek and Per Ahlberg published trackways from a quarry at Zachelmie in Poland. Something walking on four legs had pressed its prints into rock about 395 million years old. Ahlberg, who had worked on the origin of land animals for twenty-five years, called it the biggest discovery he had ever been part of. Neil Shubin's team had predicted the age of Tiktaalik's rock and found the animal there. What does that make Tiktaalik?",
+    "question": "Grzegorz Niedzwiedzki, Piotr Szrek and Per Ahlberg published trackways from a quarry at Zachelmie in Poland in January 2010. Something walking on four legs had pressed its prints into rock about 395 million years old. Ahlberg called it the biggest discovery he had ever been part of. Neil Shubin's team had predicted the age of Tiktaalik's rock and found the animal there. What does that make Tiktaalik?",
     "answer": "a late cousin of animals that already walked",
     "choices": [
       "a late cousin of animals that already walked",
@@ -41471,7 +41432,7 @@
   },
   {
     "tier": 4,
-    "question": "Twenty years after the best Tiktaalik specimen came out of the Arctic quarry, Thomas Stewart's team ran the block through a micro-CT scanner and read out vertebrae and back ribs still buried inside. Stewart said Tiktaalik was probably not walking on land yet, but was 'definitely doing something new'. What did the buried bones show it could do?",
+    "question": "Thomas Stewart's team ran the best Tiktaalik block through a micro-CT scanner twenty years after it came out of the Arctic quarry, and read out vertebrae and back ribs still buried inside. Stewart said Tiktaalik was probably not walking on land yet, but was 'definitely doing something new'. What did the buried bones show it could do?",
     "answer": "prop itself up and push off with its hind fin",
     "choices": [
       "prop itself up and push off with its hind fin",
@@ -41484,7 +41445,7 @@
   },
   {
     "tier": 5,
-    "question": "Tiktaalik's front appendage holds a stout humerus, a radius and an ulna of about the same length, and a scatter of small irregular wrist bones, with an elbow that bends through roughly ninety degrees. What Neil Shubin's team still had to settle was how far toward a hand it had actually gone. What does its far tip carry?",
+    "question": "Neil Shubin's team found a stout humerus inside Tiktaalik's front appendage, with a radius and an ulna of about the same length and a scatter of small irregular wrist bones, plus an elbow that bends through roughly ninety degrees. What the team still had to settle was how far toward a hand it had actually gone. What does its far tip carry?",
     "answer": "lepidotrichia, the segmented rays of an ordinary fish fin",
     "choices": [
       "lepidotrichia, the segmented rays of an ordinary fish fin",
@@ -41497,7 +41458,7 @@
   },
   {
     "tier": 5,
-    "question": "The Zachelmie trackways in Poland - prints in rock about 395 million years old, older than Tiktaalik - did not settle the matter quietly. In 2015 Spencer Lucas argued that the marks were not footprints at all, and in 2019 Per Ahlberg published a hard rebuttal, pointing to how closely they match the anatomy of tetrapod feet. What had Lucas argued the marks really were?",
+    "question": "Spencer Lucas argued in 2015 that the Zachelmie trackways in Poland, in rock about 395 million years old, older than Tiktaalik, were not footprints at all. Per Ahlberg published a hard rebuttal in 2019, pointing to how closely they match the anatomy of four-legged feet. What had Lucas argued the marks really were?",
     "answer": "traces left by fish feeding and fish nesting",
     "choices": [
       "traces left by fish feeding and fish nesting",
@@ -41510,7 +41471,7 @@
   },
   {
     "tier": 5,
-    "question": "One rock block from the 2004 Arctic season that produced Tiktaalik — collected days before Tiktaalik itself — sat in storage for about fifteen years before anyone looked inside it. A CT scan in 2020 found a jointed fin in the rock. In 2022 Thomas Stewart, Neil Shubin and colleagues named the animal Qikiqtania wakei: about 75 cm long against Tiktaalik's nine feet, with a boomerang-shaped upper arm bone. What did that arm bone say the animal's line had done?",
+    "question": "Neil Shubin, Thomas Stewart and colleagues named a new animal, Qikiqtania wakei, in 2022, from a rock block collected days before Tiktaalik itself in the 2004 Arctic season. The block sat in storage for about fifteen years until a CT scan in 2020 found a jointed fin inside. The animal was about 75 cm long against Tiktaalik's nine feet, with a boomerang-shaped upper arm bone. What did that arm bone say the animal's line had done?",
     "answer": "gone back to paddling in open water",
     "choices": [
       "gone back to paddling in open water",
@@ -41666,7 +41627,7 @@
   },
   {
     "tier": 1,
-    "question": "About a fifth of the protein in your blood plasma is antibodies. Each one was pumped out by a plasma cell. A plasma cell is a B cell that has dropped every other job to work full time as an antibody factory. How many antibodies does one plasma cell release each second?",
+    "question": "A lab worker tests blood plasma and finds that about a fifth of its protein is antibodies. Each one was pumped out by a plasma cell. That is a B cell that has dropped every other job to work full time as an antibody factory. How many antibodies does one plasma cell release each second?",
     "answer": "About 2,000",
     "choices": [
       "About 20",
@@ -41679,7 +41640,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1976 the Japanese immunologist Susumu Tonegawa cracked one of biology's great puzzles -- how the body can build a nearly infinite variety of antibody shapes from a limited pile of genes. His Nobel-winning work was not done at a university. It was done at the Basel Institute for Immunology in Switzerland, which had opened in 1970. The Swiss drug company Roche had built the institute and paid all its bills, at $24 million a year. What did Roche do about the science it was funding?",
+    "question": "Susumu Tonegawa cracked one of biology's great puzzles in 1976, not at a university but at the Basel Institute for Immunology in Switzerland. The Swiss drug company Roche had built the institute and paid all its bills, at $24 million a year. What did Roche do about the science it was funding?",
     "answer": "Left the direction of the science alone",
     "choices": [
       "Set yearly targets and reviewed each project",
@@ -41692,7 +41653,7 @@
   },
   {
     "tier": 2,
-    "question": "In the summer of 1940 the American chemist Linus Pauling -- later a two-time Nobel laureate -- sat down to write his answer to a nagging puzzle about the blood. How can the body build an antibody, a Y-shaped protein shaped to grip a specific invader like a key fits a lock, when the body has never met that invader before? Pauling had a bold theory for where the shape came from. In his theory, what gave each antibody its shape?",
+    "question": "Linus Pauling sat down in the summer of 1940 to write his answer to a nagging puzzle about the blood. How can the body build an antibody, a Y-shaped protein that grips one invader as a key fits a lock, when it has never met that invader before? Pauling had a bold theory. In his theory, what gave each antibody its shape?",
     "answer": "The invader itself, with the chain moulding around it like clay on a coin",
     "choices": [
       "A separate inherited gene, one for every shape the body can make",
@@ -41705,7 +41666,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1971 Renato Dulbecco talked Susumu Tonegawa into leaving the Salk Institute for a new lab in Basel. Five years later, in Basel, Tonegawa settled the oldest fight in immunology. He had finished his PhD three years before that move. It was at the University of California, San Diego (UC San Diego), with Masaki Hayashi. What was the thesis on?",
+    "question": "Renato Dulbecco talked Susumu Tonegawa into leaving the Salk Institute for a new lab in Basel in 1971, and five years later, in Basel, Tonegawa settled the oldest fight in immunology. He had finished his PhD three years before that move, at the University of California, San Diego, with Masaki Hayashi. What was the thesis on?",
     "answer": "Genetic transcription in a virus that infects bacteria",
     "choices": [
       "Genetic transcription in a virus that infects bacteria",
@@ -41718,7 +41679,7 @@
   },
   {
     "tier": 2,
-    "question": "By 1957 immunologists were arguing hard about where an antibody's shape comes from. Nobody had ever watched a single immune cell on its own. In 1958 Gustav Nossal and Joshua Lederberg did it. They isolated cells one at a time and tested each one for antibody. What did each cell turn out to make?",
+    "question": "Gustav Nossal and Joshua Lederberg isolated immune cells one at a time in 1958 and tested each one for antibody, which nobody had ever done. Immunologists were arguing hard about where an antibody's shape comes from. What did each cell turn out to make?",
     "answer": "One antibody, the same one every time",
     "choices": [
       "Several antibodies, one for each invader met",
@@ -41731,7 +41692,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1965 William Dreyer and Claude Bennett published a paper whose title called antibody making a paradox. Dreyer, working with Leroy Hood at Caltech, had been staring at antibody chains no known rule of how a gene makes a protein could explain. The fix the two men offered was dismissed for a decade. What did they propose?",
+    "question": "William Dreyer, working with Leroy Hood at Caltech, stared at antibody chains that no known rule of how a gene makes a protein could explain. In 1965 he and Claude Bennett offered a fix, in a paper whose title called antibody making a paradox, and it was dismissed for a decade. What did the two men propose?",
     "answer": "That two separate genes, one constant and one variable, make one chain",
     "choices": [
       "That one gene is read twice over, in two different reading frames",
@@ -41744,7 +41705,7 @@
   },
   {
     "tier": 3,
-    "question": "Macfarlane Burnet's 1957 theory had each lymphocyte fix its receptor shape blindly, before any invader turns up. Burnet saw the danger at once. Among millions of blind guesses, some are bound to fit molecules of your own body. So his theory carried a fourth rule. It predicted immune tolerance years before either was demonstrated. What does that fourth rule say happens to a lymphocyte whose shape fits you?",
+    "question": "Macfarlane Burnet proposed in 1957 that each lymphocyte fixes its receptor shape blindly, before any invader turns up, and he saw the danger at once. Among millions of such blind guesses, some are bound to fit molecules of the body they live in. His theory carried a fourth rule for those cells. What does that rule say happens to a lymphocyte whose shape fits its own body?",
     "answer": "It is destroyed early, before it is ever put to work",
     "choices": [
       "It is stripped of its receptors and released anyway",
@@ -41757,7 +41718,7 @@
   },
   {
     "tier": 3,
-    "question": "Before a young lymphocyte can assemble an antibody gene out of separate pieces, the Recombination-Activating Gene (RAG) proteins have to cut its chromosome open. A child born with two dead copies of RAG1 has no adaptive immunity at all. But some children get a RAG1 that works feebly rather than not at all — blunt scissors instead of no scissors. What do doctors find in these children?",
+    "question": "Doctors examine children whose RAG1 gene works feebly rather than not at all: blunt scissors instead of no scissors. The Recombination-Activating Gene (RAG) proteins have to cut a young lymphocyte's chromosome open before it can assemble an antibody gene out of separate pieces, and a child born with two dead copies of RAG1 has no adaptive immunity at all. What do the doctors find in these children?",
     "answer": "An immune system that attacks their own tissue",
     "choices": [
       "A normal immune system that arrives years late",
@@ -41770,7 +41731,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1976 Nobumichi Hozumi and Susumu Tonegawa cut DNA from mouse embryo cells, and from a tumour cell that pumps out antibody, using the same restriction enzyme. They fished in both with the same radioactive probe made from the antibody's own message. In the embryo the probe lit two bands far apart: one holding the DNA for the antibody's fixed tail, one holding the DNA for its gripping tip. Every textbook then taught that every cell in an animal carries the same genome. What did the probe light up in the tumour lane?",
+    "question": "Nobumichi Hozumi and Susumu Tonegawa cut DNA from mouse embryo cells, and from a tumour cell that pumps out antibody, with the same restriction enzyme in 1976. They fished in both with one radioactive probe. In the embryo it lit two bands far apart: one holding the DNA for the antibody's fixed tail, one for its gripping tip. Every textbook then taught that every cell in an animal carries the same genome. What did the probe light up in the tumour lane?",
     "answer": "One band, smaller than either embryo band, carrying both pieces",
     "choices": [
       "One band, larger than the two embryo bands put together",
@@ -41783,7 +41744,7 @@
   },
   {
     "tier": 4,
-    "question": "In December 1989 David Schatz, Marjorie Oettinger and David Baltimore reported a gene they called Recombination-Activating Gene 1 (RAG-1). Drop it into ordinary connective-tissue cells, which never rearrange anything on their own, and the cells would start joining antibody gene pieces -- rarely, but for real. The next year the team found a second gene sitting right next to RAG-1, named it RAG-2, and put both in the cells together. How much did that boost the rearrangement rate?",
+    "question": "David Schatz, Marjorie Oettinger and David Baltimore dropped a gene into ordinary connective-tissue cells, which never rearrange anything on their own, and the cells started joining antibody gene pieces, rarely but for real. They reported it in December 1989 as Recombination-Activating Gene 1 (RAG-1). The next year the team found a second gene sitting right next to it, named it RAG-2, and put both in the cells together. How much did that boost the rearrangement rate?",
     "answer": "Roughly a thousandfold",
     "choices": [
       "Roughly double",
@@ -41796,7 +41757,7 @@
   },
   {
     "tier": 4,
-    "question": "A developing B cell builds its antibody gene by splicing together short pieces called gene segments, picked from a stock it inherited. Two neighbouring cells can pick the same segments and still end up with different antibodies, because an enzyme called TdT gets at the raw ends before they are sewn together. What is TdT doing there?",
+    "question": "A biologist compares two neighbouring B cells that picked the same gene segments, the short pieces a developing cell splices together from a stock it inherited, and finds two different antibodies. An enzyme called TdT got at the raw ends before they were sewn together. What was TdT doing there?",
     "answer": "Adding DNA letters that no gene anywhere specifies",
     "choices": [
       "Trimming a few letters off each end before joining",
@@ -41809,7 +41770,7 @@
   },
   {
     "tier": 5,
-    "question": "About a week after an infection, a temporary structure called a germinal centre organises itself inside your lymph node. In its dark zone, B cells divide furiously while deliberately introducing mutations into the very gene that codes their own antibody. In its light zone the daughters compete for scarce scraps of the invader, and the poorest grippers are killed off. Set that deliberate scrambling against the ordinary mutation rate elsewhere in the same cell's genome. How much faster is it?",
+    "question": "A girl is a week into an infection, and a temporary structure called a germinal centre is organising itself inside one of her lymph nodes. In its dark zone, B cells divide furiously while deliberately mutating the very gene that codes their own antibody; in its light zone the daughters compete for scarce scraps of the invader, and the poorest grippers are killed off. How much faster is that scrambling than the ordinary mutation rate elsewhere in the cell?",
     "answer": "Roughly a million times faster",
     "choices": [
       "Roughly ten times faster",
@@ -41822,7 +41783,7 @@
   },
   {
     "tier": 5,
-    "question": "In every developing lymphocyte, the Recombination-Activating Gene (RAG) proteins deliberately break the cell's own chromosome in two places, then rejoin the cut ends. Biologists traced where a machine like this could have come from. The trail pointed to an ancient family of genes -- and one intact pair, RAG1 and RAG2 side by side, still lives in the Chinese lancelet, a small fish-shaped sea animal alive today. What was RAG's ancestor doing before vertebrates put it to work building antibodies?",
+    "question": "A biologist reads the genome of the Chinese lancelet, a small fish-shaped sea animal alive today, and finds one intact pair of genes side by side: RAG1 and RAG2. In every developing lymphocyte, the Recombination-Activating Gene (RAG) proteins break the cell's own chromosome in two places, then rejoin the cut ends. The trail points to an ancient family of genes. What do biologists infer RAG's ancestor was doing before vertebrates put it to work building antibodies?",
     "answer": "Jumping: cutting itself out of a genome and dropping in elsewhere",
     "choices": [
       "Jumping: cutting itself out of a genome and dropping in elsewhere",
@@ -41835,7 +41796,7 @@
   },
   {
     "tier": 5,
-    "question": "Lampreys and hagfish are jawless fish whose line split from ours before jaws existed. They carry no antibodies and not one recombination-activating gene, yet they do have lymphocytes. Each lymphocyte displays a receptor assembled from a completely different set of interchangeable protein parts, shuffled by different enzymes entirely. Biologists have counted what that system can generate. How does its range compare with your own?",
+    "question": "A biologist counts the receptors a lamprey can make. This jawless fish, like the hagfish, carries no antibodies and not one recombination-activating gene, yet each of its lymphocytes displays a receptor assembled from a completely different set of interchangeable protein parts, shuffled by different enzymes entirely. Suppose you set that system beside your own. How does its range compare?",
     "answer": "Around as many as your own antibody system makes",
     "choices": [
       "Around a thousandth as many as your own system makes",
@@ -41848,20 +41809,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1600s, well-diggers in Florence hit a strange wall. No suction pump they built could lift water higher than about 10 metres, and nobody could say why. Which everyday object hits the same invisible ceiling for the same reason?",
-    "answer": "A drinking straw",
-    "choices": [
-      "A steam kettle",
-      "A garden hose",
-      "A drinking straw",
-      "A pair of bellows"
-    ],
-    "context": "You have never sucked anything through a straw in your life. You lower the pressure inside your mouth and the surrounding atmosphere pushes the liquid up the straw -- which is why a straw taller than about 10 metres can never work no matter how hard you pull. Source: Wikipedia 'Barometer' (siphon and suction-pump limit ~10 m; atmospheric-push mechanism).",
-    "topic": "torricellis-ocean-of-air"
-  },
-  {
-    "tier": 1,
-    "question": "In 1643 the Italian physicist Evangelista Torricelli, a former assistant of Galileo, filled a glass tube about a metre long with heavy silver-coloured mercury. He sealed the top end tight with his thumb, then turned the tube upside down and dipped its open end into a dish of mercury, and finally lifted his thumb clear. What did the mercury inside the tube do next?",
+    "question": "Evangelista Torricelli, a former assistant of Galileo, filled a glass tube about a metre long with heavy silver-coloured mercury in 1643. He held his thumb over the open end, turned the tube upside down into a dish of mercury and lifted his thumb clear. What did the mercury inside the tube do next?",
     "answer": "It fell partway and stopped, leaving an empty space above it",
     "choices": [
       "It drained out completely and left the whole tube empty",
@@ -41873,21 +41821,8 @@
     "topic": "torricellis-ocean-of-air"
   },
   {
-    "tier": 2,
-    "question": "In 1643 in Florence, Evangelista Torricelli — a former assistant of Galileo — filled a glass tube with liquid mercury, sealed one end, and stood it upside down in a dish of the same metal. The mercury column dropped to about 76 centimetres tall, held up by the weight of the air pressing on the dish. If he had used water instead of mercury, how tall would the water column be?",
-    "answer": "About 10.3 metres",
-    "choices": [
-      "About 76 centimetres",
-      "About 10.3 metres",
-      "About 1 metre",
-      "About 30 metres"
-    ],
-    "context": "Mercury is about 13.6 times denser than water. The same weight of air balances a short column of the heavy stuff or a tall column of the light stuff -- and 0.76 m x 13.6 lands right at about 10.3 m, exactly the height where the Florentine pumps had already stalled. Source: Wikipedia 'Barometer' (mercury ~14x denser than water; ~80 cm of mercury vs ~10.5 m of water).",
-    "topic": "torricellis-ocean-of-air"
-  },
-  {
     "tier": 3,
-    "question": "In 1644 the Italian physicist Evangelista Torricelli — who had just built the first barometer, a sealed tube of mercury standing about 76 cm tall over a dish of mercury in Florence — wrote a letter to a friend giving a picture of the world that explained what the tube did. What was his image?",
+    "question": "Evangelista Torricelli wrote a letter to a friend in 1644, giving a picture of the world that explained what his new tube did. He had just built the first barometer, a sealed tube of mercury standing about 76 cm tall over a dish of mercury in Florence. What was his image?",
     "answer": "We live submerged at the bottom of an ocean of air",
     "choices": [
       "The heavens push down on the Earth like a great vault",
@@ -41899,21 +41834,8 @@
     "topic": "torricellis-ocean-of-air"
   },
   {
-    "tier": 3,
-    "question": "In 1648 the French mathematician Blaise Pascal was puzzling over a strange new instrument, the barometer -- a sealed glass tube of mercury standing upside down in a dish, with the outside air pressing on the dish. Two rival theories were fighting over why the mercury stood at a certain height in the tube. One camp said 'nature abhors a vacuum' and was pulling the mercury up. The other said 'the air has weight' and was pushing it up. Pascal realised the two theories give different answers to one specific test. What question did he propose to settle it?",
-    "answer": "Does the mercury column read lower at the top of a mountain?",
-    "choices": [
-      "Does the mercury column read the same in daylight as at night?",
-      "Does a longer glass tube hold a taller mercury column inside it?",
-      "Does the mercury column change when the tube is tilted sideways?",
-      "Does the mercury column read lower at the top of a mountain?"
-    ],
-    "context": "If air really has weight, then higher up -- with less air overhead -- there must be less weight pressing the mercury up, so the column must fall. Horror vacui had no reason to care about altitude at all. Pascal had turned a metaphysical fight into a hike. Source: Wikipedia 'Blaise Pascal' (altitude-prediction argument for the Puy de Dome test).",
-    "topic": "torricellis-ocean-of-air"
-  },
-  {
     "tier": 4,
-    "question": "In 1648, Pascal's brother-in-law Florin Perier hauled a mercury barometer up a French mountain, the Puy de Dome. Pascal was too sick to climb it himself. Perier left a matching barometer at the monastery at the foot, watched all day by Father Chastin. Why did Father Chastin sit there all day?",
+    "question": "Father Chastin sat all day at a monastery at the foot of the Puy de Dome, a French mountain, watching a mercury barometer in 1648. Blaise Pascal, too sick to climb, had sent Florin Perier, his brother-in-law, up the mountain with a matching one. Why did Father Chastin sit there all day?",
     "answer": "To rule out the weather quietly shifting during the climb",
     "choices": [
       "To time the exact moment Perier reached the summit",
@@ -41926,7 +41848,7 @@
   },
   {
     "tier": 5,
-    "question": "The Puy de Dome drop was surprisingly large for a climb of only about 1,465 m -- because atmospheric pressure does not fall in a straight line with height. Roughly what fraction of all the air in the atmosphere lies below the shoulder of Mount Everest (about 5.6 km up)?",
+    "question": "Florin Perier saw a large drop in his mercury on the Puy de Dome, for a climb of only about 1,465 m, because atmospheric pressure does not fall in a straight line with height. Roughly what fraction of all the air lies below the shoulder of Mount Everest, about 5.6 km up?",
     "answer": "About half of the total",
     "choices": [
       "About one tenth of it",
@@ -41939,7 +41861,7 @@
   },
   {
     "tier": 5,
-    "question": "Most modern smartphones carry a tiny barometer -- a chip that measures the pressure of the air around it -- and it is sensitive enough that everyday movements shift the reading in real time. Because air pressure drops as you rise higher in the atmosphere, a small change in altitude gives a much bigger reading swing than horizontal walking or spinning does. Of these four things you could do with your phone in the next minute, which one moves the barometer reading the most?",
+    "question": "A student sets out to repeat Blaise Pascal's mountain test with the tiny barometer in her phone. The chip measures the pressure of the air around it, and everyday movements shift the reading in real time. She has a minute and four things to try. Which one moves the barometer reading the most?",
     "answer": "Riding an elevator up a few floors",
     "choices": [
       "Walking briskly around the block",
@@ -41952,7 +41874,7 @@
   },
   {
     "tier": 2,
-    "question": "The English biologist Julian Huxley — brother of the novelist Aldous Huxley, and the first Director-General of the United Nations Educational, Scientific and Cultural Organization (UNESCO) — coined the word 'transhumanism' in 1957 for the project of upgrading human beings by science. Across those same years he held a second, longer-running post. From 1959 to 1962 he served as president of which group?",
+    "question": "Julian Huxley, brother of the novelist Aldous Huxley and first head of the United Nations Educational, Scientific and Cultural Organization (UNESCO), gave the word 'transhumanism' its modern meaning in 1957: the project of upgrading human beings by science. Across those same years he held a second post. From 1959 to 1962 he served as president of which group?",
     "answer": "the British Eugenics Society",
     "choices": [
       "the British Eugenics Society",
@@ -41965,7 +41887,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1957 the British biologist Julian Huxley coined the word 'transhumanism' for the idea that humans should use science and technology to upgrade themselves beyond their natural biological limits. Decades later the movement organised itself. In 1998 the philosophers Nick Bostrom and David Pearce co-founded a group they called the World Transhumanist Association. It was rebranded in 2008. What shorter name does the same group use today?",
+    "question": "Nick Bostrom and David Pearce, two philosophers, co-founded a group in 1998 that they called the World Transhumanist Association, decades after Julian Huxley gave the word 'transhumanism' its modern meaning. It was rebranded in 2008. What shorter name does the same group use today?",
     "answer": "Humanity+",
     "choices": [
       "Humanity+",
@@ -41978,7 +41900,7 @@
   },
   {
     "tier": 3,
-    "question": "Ray Kurzweil is an American inventor and futurist, and the top prophet of the transhumanist movement — the idea that technology will merge with human beings. In a 2005 book he set two dates: human-level machine minds by 2029, and a full human-machine merger by 2045. In 2024 he stood by both dates. What was that 2005 book called?",
+    "question": "Ray Kurzweil, an American inventor and the top prophet of the transhumanist movement, set two dates in a 2005 book: human-level machine minds by 2029, and a full human-machine merger by 2045. In 2024 he stood by both dates. What was that 2005 book called?",
     "answer": "The Singularity Is Near",
     "choices": [
       "The Singularity Is Near",
@@ -41991,7 +41913,7 @@
   },
   {
     "tier": 4,
-    "question": "The American inventor and futurist Ray Kurzweil is famous for one bold prediction: that machines will match human intelligence around the year 2029 and blow past it soon after. He defends this timeline with what he calls the Law of Accelerating Returns. Which specific observation does that law actually rest on?",
+    "question": "A student checks Ray Kurzweil's bold prediction that machines will match human intelligence around the year 2029 and blow past it soon after. Kurzweil defends this timeline with what he calls the Law of Accelerating Returns. Which specific observation does that law actually rest on?",
     "answer": "Computing power has grown exponentially across five separate underlying technologies, not just one chip.",
     "choices": [
       "Computing power has grown exponentially across five separate underlying technologies, not just one chip.",
@@ -42004,7 +41926,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2011 the Microsoft co-founder Paul Allen and the researcher Mark Greaves wrote a MIT Technology Review essay titled 'The Singularity Isn't Near'. Their central objection carried a name. What did they call the effect that would drag Kurzweil's timeline?",
+    "question": "Paul Allen, the Microsoft co-founder, and the researcher Mark Greaves wrote an MIT Technology Review essay in 2011 against Ray Kurzweil's timeline. Their central objection carried a name. What did they call the effect that would drag Kurzweil's timeline?",
     "answer": "the complexity brake",
     "choices": [
       "the complexity brake",
@@ -42017,7 +41939,7 @@
   },
   {
     "tier": 4,
-    "question": "Ray Kurzweil is the loudest 'singularity' predictor. Unlike most prophets, he named two fixed dates: 2029 for human-level AI, and 2045 for a human-machine merger. People alive today will get to check. Many scientists say the claim is wrong. What is his strongest point as a prophet, no matter how it turns out?",
+    "question": "A schoolboy reads Ray Kurzweil, the loudest 'singularity' predictor, on human-level AI and a human-machine merger. Many scientists say the claim is wrong. Yet Kurzweil did one thing most prophets avoid. What is his strongest point as a prophet, no matter how it turns out?",
     "answer": "His predictions are testable on a fixed date",
     "choices": [
       "His predictions are testable on a fixed date",
@@ -42030,7 +41952,7 @@
   },
   {
     "tier": 5,
-    "question": "Transhumanism is the movement that would use gene editing, brain implants, life-extension drugs, and other biotech to upgrade humans past their natural limits. In a September 2004 Foreign Policy piece, the American writer Francis Fukuyama — best known for The End of History — argued that the transhumanist plan deserved its own title. What did he call it?",
+    "question": "Francis Fukuyama, best known for The End of History, argued in a September 2004 Foreign Policy piece that the transhumanist plan deserved its own title. He meant the movement that would use gene editing, brain implants, life-extension drugs and other biotech to upgrade humans past their natural limits. What did he call it?",
     "answer": "the world's most dangerous idea",
     "choices": [
       "the world's most dangerous idea",
@@ -42043,7 +41965,7 @@
   },
   {
     "tier": 2,
-    "question": "In the years before 1911, when the tungsten-wire filament finally won the light-bulb race and became the standard, inventors tried metal after metal in the search for one that would glow white-hot without burning up. One rare metal filament was so precious that when the bulb burned out, the buyer could return the dead bulb to the store and get part of the metal's value refunded. Which metal was that?",
+    "question": "A customer takes his dead light bulb back to the store and collects part of the metal's value as a refund, in the years before tungsten wire wins the race in 1911. Inventors are trying metal after metal, hunting one that will glow white-hot without burning up. Which precious metal filament is in his bulb?",
     "answer": "Osmium",
     "choices": [
       "Osmium",
@@ -42056,7 +41978,7 @@
   },
   {
     "tier": 1,
-    "question": "You pour milk into a mug of coffee and stir once. The white ribbon breaks into curls, and inside those curls are smaller curls, and inside those, smaller still. Where in physics does that everyday swirling belong -- one of the great unsolved problems, sitting on your kitchen table?",
+    "question": "A girl pours milk into a mug of coffee and stirs once. The white ribbon breaks into curls, and inside those curls are smaller curls, and inside those, smaller still. Where in physics does that swirling belong, one of the great unsolved problems sitting on a kitchen table?",
     "answer": "turbulence",
     "choices": [
       "turbulence",
@@ -42069,7 +41991,7 @@
   },
   {
     "tier": 1,
-    "question": "You crack a garden tap open only a hair and the water slides out as a glassy column you can see straight through. Open the tap all the way and the same water bursts into a foamy, chaotic gush. An engineer would call that first, glassy regime by what name?",
+    "question": "A gardener cracks a tap open only a hair, and the water slides out as a glassy column she can see straight through. She opens the tap all the way and the same water bursts into a foamy, chaotic gush. What would an engineer call that first, glassy regime?",
     "answer": "laminar flow",
     "choices": [
       "laminar flow",
@@ -42082,7 +42004,7 @@
   },
   {
     "tier": 2,
-    "question": "Manchester, 1883. An engineer runs a thin thread of coloured dye down the centre of water flowing through a long glass pipe. At low speed the dye holds a single straight line all the way through; past a threshold speed it bursts apart and fills the pipe. Whose classic experiment is that?",
+    "question": "An engineer ran a thin thread of coloured dye down the centre of water flowing through a long glass pipe in Manchester in 1883. At low speed the dye held a single straight line all the way through; past a threshold speed it broke up and filled the pipe. Whose classic experiment was that?",
     "answer": "Osborne Reynolds",
     "choices": [
       "Osborne Reynolds",
@@ -42095,7 +42017,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1941, the Soviet mathematician Andrey Kolmogorov turned Richardson's cascade into a hard number. His main claim, since confirmed in air, oceans, and wind tunnels, was that in the inertial range the energy per unit wavenumber follows a power law. Which power law?",
+    "question": "Andrey Kolmogorov, a Soviet mathematician, turned Lewis Fry Richardson's cascade of swirls into a hard number in 1941. His main claim, since confirmed in air, oceans and wind tunnels, was that in the inertial range the energy per unit wavenumber follows a power law. Which power law?",
     "answer": "k to the minus five-thirds",
     "choices": [
       "k to the minus five-thirds",
@@ -42108,7 +42030,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1941 the Soviet mathematician Andrey Kolmogorov published a theory of turbulence that predicted how the swirls in a moving fluid should scale from big to small. In real wind-tunnel and atmospheric measurements, however, about 4 percent of acceleration readings come in far higher than Kolmogorov's 1941 theory predicts. What is this well-known correction to his theory called?",
+    "question": "A researcher logs acceleration readings in a wind tunnel and finds about 4 percent of them far higher than Andrey Kolmogorov's 1941 theory predicts. That theory said how the swirls in a moving fluid should scale from big to small. What is this well-known correction to his theory called?",
     "answer": "intermittency",
     "choices": [
       "intermittency",
@@ -42121,7 +42043,7 @@
   },
   {
     "tier": 5,
-    "question": "Claude-Louis Navier wrote them down in 1822; George Gabriel Stokes finished the job in 1845. The equations governing viscous fluid flow have been used every day for almost two centuries, but one basic mathematical question about them, in three dimensions, has never been answered. Which question?",
+    "question": "Claude-Louis Navier wrote down the equations of viscous fluid flow in 1822, and it was George Gabriel Stokes who finished the job in 1845. Engineers have used them every day for almost two centuries, yet one basic mathematical question about them, in three dimensions, has never been answered. Which question?",
     "answer": "whether smooth solutions always stay smooth",
     "choices": [
       "whether smooth solutions always stay smooth",
@@ -42134,7 +42056,7 @@
   },
   {
     "tier": 4,
-    "question": "Nobody can solve the Navier-Stokes equations when flow gets fast and messy. That has one very costly result for every weather forecast. Skilful step-by-step predictions run out at about what horizon, past which one model's storm and another's have drifted totally apart?",
+    "question": "A forecaster runs the same storm through two models from measurements a hair apart. Tiny errors grow until one model's storm and the other's have drifted totally apart. Skilful step-by-step predictions run out at about what horizon?",
     "answer": "about two weeks",
     "choices": [
       "about two weeks",
@@ -42146,21 +42068,8 @@
     "topic": "turbulence-the-swirl-in-your-coffee-no-equation-tames"
   },
   {
-    "tier": 3,
-    "question": "For decades physics textbooks told the 'equal transit time' story to explain how a wing lifts an aeroplane: the air splits at the front of the wing, one stream travels along the top and one along the bottom, and both must rejoin at the back at the same time -- so the curved top must speed the air up and drop its pressure. But smoke-flow photos show the air over the top actually gets there well ahead of the air below, so the story is wrong. NASA now warns teachers against it. What does a wing really do to hold a plane up?",
-    "answer": "it turns a large mass of air downward each second",
-    "choices": [
-      "it turns a large mass of air downward each second",
-      "the curved top speeds air up so Bernoulli lifts it",
-      "the angled bottom acts as a wedge splitting the flow",
-      "the low-pressure zone above the wing sucks it up"
-    ],
-    "context": "A wing deflects a large mass of air downward each second; by Newton's third law the air pushes the wing upward. The pressure distribution and the downward turning are two views of the same fact, and the sharp trailing edge (Kutta condition) fixes the circulation that ties them together. The equal-transit story is a genuine misconception NASA specifically flags; 'Bernoulli alone', the wedge picture, and the pure-suction picture are the other popular half-truths. Source: https://www.grc.nasa.gov/www/k-12/airplane/wrong1.html",
-    "topic": "turbulence-the-swirl-in-your-coffee-no-equation-tames"
-  },
-  {
     "tier": 1,
-    "question": "From 1932 to 1972 the US Public Health Service signed up 600 poor black men in Macon County, Alabama. It was quietly a study of what untreated syphilis does to the body over many years. The 399 men who already had the disease were never told they had syphilis. What were they told they were being treated for?",
+    "question": "Doctors of the US Public Health Service signed up 600 poor black men in Macon County, Alabama, in 1932, to watch what untreated syphilis does to the body. The watching went on for forty years. The 399 men who already had the disease were never told they had syphilis. What were they told they were being treated for?",
     "answer": "bad blood",
     "choices": [
       "bad blood",
@@ -42173,7 +42082,7 @@
   },
   {
     "tier": 2,
-    "question": "The Public Health Service saw Tuskegee not as new work but as continuing an earlier European group of untreated syphilis patients. The long follow-up on that group had been published in 1929 by the first doctor's successor. Whose group was Tuskegee framed as extending?",
+    "question": "The Tuskegee researchers framed their study as no new work: it continued an earlier European group of untreated syphilis patients. The long follow-up on that group came out in 1929, from the first doctor's successor. Whose group did they say Tuskegee extended?",
     "answer": "Caesar Boeck's, in Oslo",
     "choices": [
       "Caesar Boeck's, in Oslo",
@@ -42186,7 +42095,7 @@
   },
   {
     "tier": 2,
-    "question": "The most painful part of the Tuskegee study was sold to the men as a special free treatment they should be grateful for. A roughly ten-inch needle was pushed into the spine without painkillers to sample the fluid around the spinal cord, looking for neurosyphilis. Doctors described the procedure to the participants in two words. Which two?",
+    "question": "Doctors in the Tuskegee study pushed a roughly ten-inch needle into a man's spine, without painkillers, to sample the fluid around the spinal cord and look for neurosyphilis. They sold it to the men as a special free treatment, and described it to them in two words. Which two?",
     "answer": "back shots",
     "choices": [
       "back shots",
@@ -42199,7 +42108,7 @@
   },
   {
     "tier": 3,
-    "question": "From 1932 the US Public Health Service ran the Tuskegee Syphilis Study, quietly watching how the disease progressed in hundreds of poor Black men in Alabama who had been told they were being treated for 'bad blood' but were never actually treated at all. By the mid-1940s a single course of a new antibiotic reliably cured syphilis. In 1947 the same Public Health Service opened treatment centres for the disease all over the country. But the doctors deliberately kept the Tuskegee men off the drug so they could keep observing them. Which drug was withheld?",
+    "question": "Doctors running the Tuskegee study deliberately kept hundreds of poor black men in Alabama off one drug in 1947, the year their own Public Health Service opened treatment centres for syphilis all over the country. The men already had the disease when they were enrolled. By the mid-1940s a single course of this new antibiotic reliably cured it, and the doctors withheld it so they could keep observing the men. Which drug was it?",
     "answer": "penicillin",
     "choices": [
       "penicillin",
@@ -42212,7 +42121,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Tuskegee syphilis study, the reason hundreds of Black men kept coming back for exams year after year was not the rotating white doctors. It was a Tuskegee Institute nurse who stayed with the study for 39 years, drove men to clinic days, and knew every family. What was her role in why the study went on so long?",
+    "question": "Eunice Rivers, a Tuskegee Institute nurse, drove the men to a clinic day, as she did across her 39 years with the study, and she knew every family. The white doctors came and went, and still the men returned for exams year after year. What was her role in why the study went on so long?",
     "answer": "The men trusted her personally",
     "choices": [
       "The men trusted her personally",
@@ -42225,7 +42134,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1932 US Public Health Service researchers began the Tuskegee study in Alabama, tracking about 400 poor Black men with untreated syphilis to watch the disease run its course, and kept it running even after penicillin became a standard cure in the 1940s. In February 1969 a Centers for Disease Control advisory panel was convened to review the deaths so far and decide what to do next. What did the panel decide?",
+    "question": "A Centers for Disease Control advisory panel met in February 1969 to review the deaths so far in the Tuskegee study and decide what to do next. US Public Health Service researchers had been tracking about 400 poor black men with untreated syphilis since 1932, and had kept the study running after a standard cure arrived in the 1940s. What did the panel decide?",
     "answer": "it voted to let the study continue to its end point",
     "choices": [
       "it voted to let the study continue to its end point",
@@ -42238,7 +42147,7 @@
   },
   {
     "tier": 5,
-    "question": "The Tuskegee syphilis study did not end because a scientist noticed. It ended because one Public Health Service investigator in San Francisco would not let it go. He filed formal protests inside the agency in 1966 and 1967, was overruled both times, then quit and took the papers to a reporter. What is the standard name for what he did?",
+    "question": "Peter Buxtun, a Public Health Service investigator in San Francisco, filed formal protests inside the agency against the Tuskegee study in 1966 and 1967. He was overruled both times. The study did not end because a scientist noticed; it ended because he would not let it go. He quit and took the papers outside. What is the standard name for what he did?",
     "answer": "Whistleblowing",
     "choices": [
       "Whistleblowing",
@@ -42251,7 +42160,7 @@
   },
   {
     "tier": 5,
-    "question": "The Tuskegee whistleblower, overruled inside the Public Health Service, in 1972 handed his stack of study documents to an Associated Press reporter. The reporter's story broke on July 25, 1972 and ran on more than 100 front pages the next morning. Once the story ran, what happened to the study?",
+    "question": "An Associated Press reporter took Peter Buxtun's stack of Tuskegee study documents in 1972, after Buxtun had been overruled inside the Public Health Service. The reporter's story broke on July 25, 1972 and ran on more than 100 front pages the next morning. What happened to the study once the story ran?",
     "answer": "It was shut down within months",
     "choices": [
       "It was shut down within months",
