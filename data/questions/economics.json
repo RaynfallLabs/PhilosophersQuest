@@ -22062,20 +22062,7 @@
   },
   {
     "tier": 1,
-    "question": "The government wants every child to learn to read and add, so it uses tax money to pay for schooling. But paying for school does not have to mean running every school. Instead of forcing every family into the nearest public school, the government could hand the funding to parents and let them spend it wherever they trust the classroom -- public, private, charter, or religious. Which arrangement matches this school-choice idea?",
-    "answer": "Parents can take the money to any approved school",
-    "choices": [
-      "Parents can take the money to any approved school",
-      "The government must run every single school itself",
-      "Only rich families should get to pick a school",
-      "Schools should have no rules or funding at all"
-    ],
-    "context": "Milton Friedman, 'The Role of Government in Education,' in Robert Solo, ed., Economics and the Public Interest (Rutgers University Press, 1955). Friedman argued for funding pupils (via vouchers) rather than school buildings. Source: JSTOR (Solo 1955 collection).",
-    "topic": "teachers-union-public-choice-from-friedman-1955-to-sowells-c"
-  },
-  {
-    "tier": 1,
-    "question": "Imagine the Chicago Teachers Union goes on strike twice in a decade, and every strike shuts down the city's tax-funded classrooms for around 300,000 kids at a stretch. Teachers are paid out of tax money, so the workers on strike are really employees of the city government. When those workers walk off the job, wealthy families can pay for a private school for a while — but who is left with no other choice?",
+    "question": "A Chicago mother found her children's school shut in 2019, when the city's teachers struck as they had in 2012, and roughly 300,000 children sat at home. Wealthier parents paid for a private school or a tutor. Who was left with no such choice?",
     "answer": "Families whose kids can only attend the public schools",
     "choices": [
       "Families whose kids can only attend the public schools",
@@ -22088,20 +22075,7 @@
   },
   {
     "tier": 2,
-    "question": "A US city sets up a new program: low-income families get a certificate worth about $10,000 per year that they may spend only on tuition at any state-approved private school they choose for their child. If they pick a Catholic school, the certificate pays. If they pick a Montessori school, the certificate pays. If they never use it, they lose it. What is this kind of school-choice payment called?",
-    "answer": "A school voucher",
-    "choices": [
-      "A school voucher",
-      "A public-school tax",
-      "A tuition loan",
-      "A federal college grant"
-    ],
-    "context": "The DC Opportunity Scholarship Program was enacted in the 2004 DC School Choice Incentive Act. Multi-year IES / Patrick Wolf and Anna Kisida evaluations (US Department of Education 2010, 2018) found statistically-significant graduation-rate gains for scholarship recipients. Source: ed.gov (DC OSP evaluations).",
-    "topic": "teachers-union-public-choice-from-friedman-1955-to-sowells-c"
-  },
-  {
-    "tier": 2,
-    "question": "For over a decade, the US Department of Education ran a formal study of the DC Opportunity Scholarship Program, a voucher program that helped low-income Washington families pay tuition at private schools. A research team led by University of Arkansas education professor Patrick Wolf compared students who won the voucher lottery to students who applied but did not. What clear benefit did the voucher-winning kids show?",
+    "question": "Patrick Wolf of the University of Arkansas, a professor of education, led researchers who set Washington children who won a lottery for a private-school scholarship beside children who entered it and lost. Congress had set up the scholarship for low-income families in 2004. How did the winners' records differ from the losers'?",
     "answer": "Higher graduation rates",
     "choices": [
       "Higher graduation rates",
@@ -22114,7 +22088,7 @@
   },
   {
     "tier": 3,
-    "question": "In New York City, some old public school buildings house two schools inside them at once — one run by the traditional public school district, and one an independent charter school like a Success Academy campus. Both schools take students from the same neighborhood blocks, share the same hallways, and use the same gyms and cafeterias. Why is this setup such a useful natural experiment for comparing the two kinds of schools?",
+    "question": "Two pupils from the same New York City block climb the same stairwell, one to a district school on one floor, the other to a charter school, a Success Academy campus for instance, on another. They share the gym and the cafeteria too. Why is a shared roof such a useful test of the two kinds of school?",
     "answer": "The neighborhood and building are the same, so those cannot explain any score gap",
     "choices": [
       "The neighborhood and building are the same, so those cannot explain any score gap",
@@ -22127,20 +22101,7 @@
   },
   {
     "tier": 3,
-    "question": "In big American cities like New York and Chicago, two schools sometimes share a single building — a district-run public school on one floor and an independent charter school like KIPP (Knowledge Is Power Program) or Success Academy on another. They share hallways, cafeterias, and gyms, and their students come from the exact same blocks. What is the biggest single advantage of comparing two schools under one shared roof like this?",
-    "answer": "You can rule out the building and the neighborhood as reasons for any score gap",
-    "choices": [
-      "You can rule out the building and the neighborhood as reasons for any score gap",
-      "You can force both schools to teach exactly the same lessons",
-      "You can give both schools the same teachers each school year",
-      "You can guarantee every student earns an A grade"
-    ],
-    "context": "NYC co-location rules place charter schools and district schools inside the same physical building, allowing direct like-for-like comparison. Sowell used this data to build his 2020 book. Source: schools.nyc.gov (co-location policy history).",
-    "topic": "teachers-union-public-choice-from-friedman-1955-to-sowells-c"
-  },
-  {
-    "tier": 3,
-    "question": "Public choice economists study how organized groups actually behave inside a political system. One well-known argument in their studies of American public schools says that teachers' unions push very hard for higher pay, longer tenure, and stronger job protection for their own members — sometimes at the direct cost of what individual parents and taxpayers say they want for the classroom. In the language of public choice, what general pattern is this an example of?",
+    "question": "Terry Moe of Stanford published a study of American teachers' unions in 2011, using the tools of public choice. A union, he granted, presses hard for higher pay, longer tenure and stronger job protection for its own members, which is its whole purpose, sometimes against what parents and taxpayers say they want. What pattern did he see in that?",
     "answer": "A special-interest group getting more from the system than the average voter does",
     "choices": [
       "A special-interest group getting more from the system than the average voter does",
@@ -22153,7 +22114,7 @@
   },
   {
     "tier": 4,
-    "question": "A US state votes on a school-choice law that would give families a check to send their kids to any school they pick, public or private. The main losers would be teachers in one big union, since some kids would switch out of public school. The union spends about ten times more money fighting against the law than parent groups spend fighting for it, even though far more families would gain than teachers would lose. Economists call this concentrated costs versus dispersed benefits. What does it show about who fights hardest in politics?",
+    "question": "A California family found Proposition 174 on its ballot in 1993: a voucher to spend at any school it chose, public or private. The California Teachers Association poured tens of millions into the fight against it, outspending the measure's backers about ten to one, though far more families would gain than teachers would lose. What does the campaign show about who fights hardest in politics?",
     "answer": "A small group with a lot to lose fights harder than a big group with a little to gain",
     "choices": [
       "A small group with a lot to lose fights harder than a big group with a little to gain",
@@ -22166,20 +22127,7 @@
   },
   {
     "tier": 5,
-    "question": "Mancur Olson's rule says a small group with a lot to gain will out-organize a large group with only a little to lose. Applied to American K-12 schools, one specific group fits that shape perfectly: it organizes members, negotiates contracts, backs candidates, and staffs school-board elections. Who is that concentrated interest?",
-    "answer": "The teachers' union",
-    "choices": [
-      "The teachers' union",
-      "State textbook publishers",
-      "Local chambers of commerce",
-      "Neighborhood parents' associations"
-    ],
-    "context": "The teachers' union is the concentrated organized beneficiary with the resources and staff to shape school-board and legislative outcomes. Parents and children are the dispersed victim class that pays higher taxes and receives worse outcomes but does not systematically organize. Source: Moe, Special Interest (Brookings 2011).",
-    "topic": "teachers-union-public-choice-from-friedman-1955-to-sowells-c"
-  },
-  {
-    "tier": 5,
-    "question": "James Buchanan's public-choice school of economics teaches readers to stop asking whether individual politicians or bureaucrats happen to be good or bad people, and to ask instead which organized groups have the strongest incentive to shape the rules. In the K-12 education-policy fight in America, what is the honest structural question a public-choice reader should press, rather than the shallow 'are teachers bad'?",
+    "question": "James Buchanan warned readers of public choice off one question about politicians and officials: whether they are good or bad people. Applied to America's school fights, where most teachers are decent people, what question should such a reader press instead?",
     "answer": "Which organized interest is best positioned to shape the rules",
     "choices": [
       "Which organized interest is best positioned to shape the rules",
@@ -22192,7 +22140,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1955, the American economist Milton Friedman published an essay called 'The Role of Government in Education.' It launched the modern school-choice movement in the United States. Friedman argued that governments had long fused two very different jobs into one — and that separating the two would let parents choose the school their tax dollars followed. Which pair of functions did Friedman propose separating?",
+    "question": "Milton Friedman published 'The Role of Government in Education' in 1955, and the modern school-choice movement grew out of it. Government, he argued, had fused two very different jobs into one, and pulling them apart would let parents choose the school their tax dollars followed. Which two jobs did he propose to separate?",
     "answer": "Funding schooling versus producing it",
     "choices": [
       "Funding schooling versus producing it",
@@ -22205,7 +22153,7 @@
   },
   {
     "tier": 1,
-    "question": "In the United States, a president can serve only two terms in the White House. This rule was added to the Constitution as the 22nd Amendment in 1951, after Franklin D. Roosevelt won four presidential elections in a row from 1932 through 1944. What is the general political term for any rule that caps how many terms an elected leader may serve?",
+    "question": "Franklin Roosevelt was elected president four times in a row, from 1932 to 1944, and the Twenty-Second Amendment of 1951 made sure no one could repeat the feat. What is the general name for a rule of that kind?",
     "answer": "Term limits",
     "choices": [
       "Term limits",
@@ -22218,7 +22166,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1995, the U.S. Supreme Court decided a 5-4 case brought against an Arkansas law that had barred long-serving members of Congress from appearing on the state ballot. The Court ruled that only a constitutional amendment — not any single state — could add new rules for who is allowed to serve in Congress. States could no longer cap how many times their federal representatives were allowed to run for re-election. What is the common name of this landmark case?",
+    "question": "Arkansas voters barred long-serving members of Congress from the state's ballot. The Supreme Court threw the ban out in 1995, five justices to four, holding that only a constitutional amendment can change who may sit in Congress. What is the case called?",
     "answer": "US Term Limits Inc. v. Thornton",
     "choices": [
       "US Term Limits Inc. v. Thornton",
@@ -22231,7 +22179,7 @@
   },
   {
     "tier": 2,
-    "question": "For over thirty years, US pollsters at Gallup and Pew have kept asking Americans the same question: should there be a legal limit on how many years a US senator or House member may serve? Every survey finds Republicans, Democrats, and independents all supporting term limits by strong majorities -- one of the rare issues where partisan splits nearly vanish. What range of support do Gallup and Pew typically find?",
+    "question": "A Gallup pollster asked an American voter whether a member of Congress should face a limit on how long he might serve. Gallup, Pew and others put the same question for decades, and Republicans, Democrats and independents answered it almost alike. What share of voters supported such a limit?",
     "answer": "About 75 to 83 percent",
     "choices": [
       "About 75 to 83 percent",
@@ -22243,21 +22191,8 @@
     "topic": "term-limit-resistance-why-incumbents-oppose-the-rules-that-w"
   },
   {
-    "tier": 2,
-    "question": "In 1962, the American economists James Buchanan and Gordon Tullock published a book called The Calculus of Consent. In it they divided political decision-making into two very different levels. At the top level, people agree together on the rules that will bind whoever later holds office. At the lower level, sitting officeholders naturally resist those very rules. What did Buchanan and Tullock name these two levels?",
-    "answer": "The constitutional and the post-constitutional",
-    "choices": [
-      "The constitutional and the post-constitutional",
-      "The federal and the local",
-      "The judicial and the legislative",
-      "The elected and the appointed"
-    ],
-    "context": "The constitutional level is where rules are chosen behind a veil of uncertainty about your own future position. The post-constitutional level is choices made within the rules by known-position actors. Term limits are the paradigmatic case of a rule desired at level one, resisted at level two. Source: Buchanan + Tullock, Calculus of Consent (Michigan 1962), Chapter 6.",
-    "topic": "term-limit-resistance-why-incumbents-oppose-the-rules-that-w"
-  },
-  {
     "tier": 3,
-    "question": "In November 1990, California voters passed the first US state law setting term limits for state lawmakers, capping how many years a senator or assembly member could serve in Sacramento. The measure came from voters who felt career politicians had grown too comfortable in office and too close to lobbyists. It passed by a narrow margin and set off a wave of copycat term-limit laws in other states. What was that ballot measure called?",
+    "question": "A California voter marked his ballot in November 1990 for the first state measure in America to cap how long lawmakers could sit in Sacramento. It passed by a narrow margin, and within four years about a dozen other states had followed. What was the measure called?",
     "answer": "Proposition 140",
     "choices": [
       "Proposition 140",
@@ -22270,7 +22205,7 @@
   },
   {
     "tier": 3,
-    "question": "After California voters passed strict state legislative term limits in 1990, and roughly a dozen other American states soon followed, political scientists studied what actually happened inside the state capitols. Elected lawmakers now had far shorter careers and less accumulated know-how about how bills, budgets, and technical rules were actually written. Toward which groups did the real day-to-day power visibly shift?",
+    "question": "A lawmaker elected to the California legislature in the 1990s arrived in Sacramento, learned a little and left, pushed out by the caps on service that voters had passed in 1990. The people who understood how bills and budgets were really drafted were no longer the ones voters had elected. Toward whom did day-to-day power shift?",
     "answer": "The executive branch, lobbyists, and permanent legislative staff",
     "choices": [
       "The executive branch, lobbyists, and permanent legislative staff",
@@ -22283,7 +22218,7 @@
   },
   {
     "tier": 4,
-    "question": "A US congressman who has been in office for more than thirty years is asked at a town hall why he opposes a legal limit on how long members of Congress may serve. He brushes off the question with a familiar line: 'We already have term limits -- they're called elections. If voters don't like me, they can vote me out.' Supporters of term limits find that answer weak because of one particular fact about congressional races. Why?",
+    "question": "A congressman who has held his seat for thirty years is asked at a town hall why he opposes a cap on how long members of Congress may serve. He gives the standard reply: elections are the real limit, and voters can remove him any time they like. Backers of a cap find the answer weak because of one fact about congressional races. What is it?",
     "answer": "Long-serving incumbents almost always win, so real elections barely limit anyone",
     "choices": [
       "Long-serving incumbents almost always win, so real elections barely limit anyone",
@@ -22296,7 +22231,7 @@
   },
   {
     "tier": 4,
-    "question": "Switzerland's national government is not run by a single president. Instead, the federal executive is a seven-member Federal Council chosen by the country's parliament. The role of president rotates among those seven every single year, so no one person can build up the perks, staff, and personal networks of the top office long enough to entrench a permanent hold on power. What does the Swiss system illustrate?",
+    "question": "A Swiss federal councillor handed the presidency to a colleague after his single year in it, as the seven members of the council take the office in turn. The rotation keeps any one officeholder from building up the staff, perks and favors that would make the post hard to surrender. What does the Swiss rule illustrate?",
     "answer": "A constitutional-level anti-consolidation rule that survives because it was set from the start",
     "choices": [
       "A constitutional-level anti-consolidation rule that survives because it was set from the start",
@@ -22309,7 +22244,7 @@
   },
   {
     "tier": 5,
-    "question": "The economist James Buchanan noticed that certain kinds of political reforms are almost impossible to pass, because the very officeholders whose votes are needed to enact them are the ones who would personally lose the most power. Legislative term limits are the textbook case. Which reform below shares that same shape — where the people who would lose from the change are the very ones whose votes would have to pass it?",
+    "question": "James Buchanan noticed that some reforms almost never pass, because the officeholders whose votes are needed to enact them are the very people who would lose the most by them. A cap on how many terms a lawmaker may serve is the classic case. Which other reform has the same shape?",
     "answer": "Campaign-finance reform in the US Congress",
     "choices": [
       "Campaign-finance reform in the US Congress",
@@ -22322,7 +22257,7 @@
   },
   {
     "tier": 5,
-    "question": "The public-choice study of term limits offers a general rule of thumb about political reforms in America. Whenever a proposed reform asks the current officeholders themselves to accept a personal cost — such as a shorter career — while the benefits mostly flow to future citizens or to future political challengers, what should a careful public-choice analyst expect will happen to that reform, even if a clear majority of voters supports it?",
+    "question": "A reformer brings Congress a bill that would cost its sitting members part of their careers, while the gains would go to future citizens and future challengers. Polls show a clear majority of voters behind it. What should a careful public-choice analyst expect to happen to the bill?",
     "answer": "The reform will typically fail to pass regardless of majority support",
     "choices": [
       "The reform will typically fail to pass regardless of majority support",
@@ -22335,7 +22270,7 @@
   },
   {
     "tier": 1,
-    "question": "In the summer of 2022, three separate 'crypto' companies fell apart one after another in a chain reaction that spread across the entire industry. Between May and July of that year, tens of billions of dollars in customer funds were wiped out — and importantly, none of the collapses were really about Bitcoin itself. Of the three well-known altcoin projects listed below, which one collapsed first and triggered the chain reaction?",
+    "question": "A crypto trader watched famous names fail one after another in 2022, each collapse helping to topple the next, while Bitcoin's own network kept running. Which collapse came first and set off the chain?",
     "answer": "Terra/LUNA",
     "choices": [
       "Terra/LUNA",
@@ -22348,11 +22283,11 @@
   },
   {
     "tier": 1,
-    "question": "In 2022, a cryptocurrency company called Terra promised that its coin, UST (short for TerraUSD), would always trade for exactly one U.S. dollar. But the company did not actually hold any real dollars in reserve to back UST. Instead, an automatic computer program traded a companion coin called LUNA on the market, trying to keep UST's price steady at one dollar. What can go badly wrong with that kind of setup during a panic?",
+    "question": "An investor bought Do Kwon's coin, TerraUSD (UST), promised to stay worth a dollar forever though no dollars stood behind it. Code traded a sister coin, Luna, to push UST back toward a dollar whenever it slipped. What does a panic reveal about that design?",
     "answer": "If everyone tries to sell at once, the program cannot keep the price up",
     "choices": [
       "If everyone tries to sell at once, the program cannot keep the price up",
-      "Computer programs never fail, so nothing can go wrong",
+      "Coins backed by trading formulas can never lose value",
       "The coin becomes safer than the U.S. dollar",
       "Sister coins are guaranteed to rise in value forever"
     ],
@@ -22361,7 +22296,7 @@
   },
   {
     "tier": 2,
-    "question": "A digital coin promised to always equal one dollar and paid huge rewards to holders. A rule tied it to a sister coin: if the coin fell below a dollar, the system printed more sister coins to fix it. In May 2022 it printed so many sisters that both crashed. Roughly how much money vanished in days?",
+    "question": "A small saver in South Korea watched a coin promised to hold at a dollar and its sister token fall to almost nothing within four days in May 2022. Much of the money lost belonged to savers like him. Roughly how much value vanished?",
     "answer": "about $40 billion",
     "choices": [
       "about $40 billion",
@@ -22374,7 +22309,7 @@
   },
   {
     "tier": 2,
-    "question": "A U.S. 'crypto bank' called Celsius Network, run by its CEO Alex Mashinsky, had been paying customers unusually high yields on their deposits — advertising them as safer than a normal savings account. When Terra crashed in May 2022 and confidence across the whole crypto industry collapsed, worried Celsius customers rushed to pull their money out, and a full-scale run set in. On which date did Celsius freeze withdrawals and later file for bankruptcy?",
+    "question": "Alex Mashinsky advertised his Celsius Network to savers as a safer place than a bank savings account, offering depositors interest far above any bank's. When Terra crashed in May 2022 and confidence drained from the whole industry, his customers rushed for their money. On which dates did Celsius freeze withdrawals and file for bankruptcy?",
     "answer": "Celsius froze on June 12, 2022 and filed bankruptcy July 13",
     "choices": [
       "Celsius froze on June 12, 2022 and filed bankruptcy July 13",
@@ -22387,7 +22322,7 @@
   },
   {
     "tier": 3,
-    "question": "Celsius Network was a US crypto lending company that promised customers eye-catching interest rates for parking their Bitcoin, Ethereum, and stablecoins with the firm. Ordinary savers, believing Celsius was safer than a bank, sent it billions of dollars. On June 12, 2022, Celsius suddenly froze all customer accounts and withdrawals, and soon filed for bankruptcy. About how much customer money was trapped inside when the freeze began?",
+    "question": "A Celsius Network customer tried to take his bitcoin out in the summer of 2022 and found every account frozen, and the lender went into bankruptcy a month later. It had promised savers rich interest on their coins. About how much customer money was locked inside?",
     "answer": "about $4.7 billion",
     "choices": [
       "about $4.7 billion",
@@ -22400,7 +22335,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2022 the crypto hedge fund Three Arrows Capital collapsed after its leveraged bets on the Terra ecosystem went bad. The crypto lender Voyager Digital had lent Three Arrows hundreds of millions of dollars and could not get the money back. Voyager itself then froze customer withdrawals and filed for bankruptcy weeks later. Economists have a general word for a chain reaction where one big failure knocks down the next firm, and then the next. What is that word?",
+    "question": "Su Zhu and Kyle Davies borrowed heavily for their hedge fund, Three Arrows Capital, to bet on Terra's coins, and could not repay when the bet died in 2022. One lender, the broker Voyager Digital, never saw its money again, locked its own customers out and filed for bankruptcy that July. What do economists call a sequence like that?",
     "answer": "Contagion",
     "choices": [
       "Contagion",
@@ -22413,20 +22348,7 @@
   },
   {
     "tier": 4,
-    "question": "A crypto coin promised to always be worth exactly one dollar without any real dollars backing it -- the promise depended on trading with a partner coin using a math formula. In May 2022 both coins collapsed to near zero in a few days. What did the crash reveal about coins backed only by a math trick?",
-    "answer": "Without a real reserve of value, one bad panic can wipe the coin out",
-    "choices": [
-      "Without a real reserve of value, one bad panic can wipe the coin out",
-      "Math-only coins are actually safer than Bitcoin",
-      "Only governments are allowed to create crypto coins",
-      "Coins backed by trading formulas can never lose value"
-    ],
-    "context": "Do Kwon was arrested at Podgorica airport in Montenegro in March 2023 with false Costa Rican documents; he was later extradited to the US in December 2024. Source: https://en.wikipedia.org/wiki/Do_Kwon.",
-    "topic": "terra-luna-celsius-and-voyager-the-2022-not-bitcoin-implosio"
-  },
-  {
-    "tier": 4,
-    "question": "Alex Mashinsky founded Celsius Network, a crypto lending firm that promised customers eye-catching returns on the coins they deposited. When crypto prices crashed in 2022, Celsius froze customer withdrawals and filed for bankruptcy, leaving depositors unable to reach their money. Mashinsky was arrested and, in December 2024, pleaded guilty before a federal judge in Manhattan. What did he admit to?",
+    "question": "Alex Mashinsky pleaded guilty before a federal judge in Manhattan in December 2024. His crypto lender, Celsius Network, had promised depositors big returns, then frozen their withdrawals in 2022 and gone bankrupt, leaving them unable to reach their money. What did he admit to?",
     "answer": "fraud and market manipulation of the Celsius token CEL",
     "choices": [
       "fraud and market manipulation of the Celsius token CEL",
@@ -22439,7 +22361,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2022, a whole string of major crypto companies collapsed — the stablecoin issuer Terra, the yield-lender Celsius, the broker Voyager Digital, and the giant exchange FTX run by Sam Bankman-Fried — and the users of those platforms lost billions of dollars in customer funds they had thought were safe. Yet one specific group of Bitcoin owners lost absolutely nothing across every single collapse. What one decision had they made that fully protected them?",
+    "question": "An FTX customer lost his savings when Sam Bankman-Fried's exchange went down in November 2022, after Terra, Celsius and Voyager had fallen earlier that year. Users of all four had lost billions they thought were safe, yet some Bitcoin owners lost not a single coin in any of those collapses. What had they done?",
     "answer": "They held their own bitcoin themselves instead of trusting a company to hold it for them",
     "choices": [
       "They held their own bitcoin themselves instead of trusting a company to hold it for them",
@@ -22452,7 +22374,7 @@
   },
   {
     "tier": 5,
-    "question": "Looking back at the 2022 collapses of Terra, Celsius, Voyager, and FTX, a Bitcoin educator named Andreas Antonopoulos — famous for the phrase 'not your keys, not your coins' — pressed a point he had been teaching for years. His claim was that the failing so-called 'crypto' firms were built very differently from Bitcoin itself. Which version of Antonopoulos's point does the argument press?",
+    "question": "Andreas Antonopoulos took stock of the 2022 collapses of Terra, Celsius, Voyager and FTX and pressed a point about where the failures lay, one he had been teaching for years. Bitcoin's own software kept producing blocks through all of it. Which statement captures his point?",
     "answer": "That 'crypto' companies with an issuer or a promised-yield model can collapse, while Bitcoin held in self-custody has no counterparty to fail in the first place",
     "choices": [
       "That 'crypto' companies with an issuer or a promised-yield model can collapse, while Bitcoin held in self-custody has no counterparty to fail in the first place",
@@ -22621,7 +22543,7 @@
   },
   {
     "tier": 1,
-    "question": "Through the 1920s American stocks soared as ordinary people borrowed money to buy shares. Then in late October 1929 the boom cracked. Panicked selling swept the New York Stock Exchange first on a Thursday and then, worse still, on the following Tuesday. Traders later gave those two worst days grim nicknames — each nickname pairing a color with a weekday. Which pair of days marked the crash?",
+    "question": "A New York broker watched panic selling sweep the Stock Exchange on a Thursday late in October 1929, and worse selling on the Tuesday after. Traders named both days forever after, each name pairing a color with a weekday. Which pair marked the crash?",
     "answer": "Black Thursday and Black Tuesday",
     "choices": [
       "Black Thursday and Black Tuesday",
@@ -22634,7 +22556,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1920s American stock prices rose year after year. People borrowed money just to buy MORE stock, believing prices would keep rising forever. In October 1929 the whole market crashed. What is the general name for a period when prices rise on hype and cheap borrowing?",
+    "question": "An investor borrowed money to buy shares late in the 1920s, certain the climb would never end, as the market's leading index rose from about 63 in 1921 to 381 in 1929. That October the market crashed. What do economists call an episode like that?",
     "answer": "A speculative bubble",
     "choices": [
       "A speculative bubble",
@@ -22647,7 +22569,7 @@
   },
   {
     "tier": 2,
-    "question": "America's most famous stock market index, first published in 1896 by newspaperman Charles Dow, tracks a small basket of large industrial companies. In September 1929 it reached a record high. Then the market crashed that October, and it took until 1954 — more than 25 years — for the index to climb back to its 1929 peak. Which index is this?",
+    "question": "A newspaperman began publishing an index in 1896 that tracked a small basket of big companies, and by the 1920s every investor watched it. It hit a record in September 1929, weeks before the crash, and took decades to climb back. Which index was it?",
     "answer": "The Dow Jones Industrial Average",
     "choices": [
       "The Dow Jones Industrial Average",
@@ -22660,7 +22582,7 @@
   },
   {
     "tier": 2,
-    "question": "In the roaring 1920s, ordinary Americans caught stock-market fever. Their brokers let them buy shares with borrowed money, so a buyer only had to put up a small share of the price in cash and the broker fronted the rest. This is called buying stock on margin. Roughly what minimum cash share was common at the peak of the 1929 boom, right before the great October crash?",
+    "question": "A broker in 1929 let a customer buy shares with borrowed money: the customer put down part of the price in cash, and the broker lent him the rest. Traders called it buying on margin. At the peak of the boom, roughly what share of the price did a customer commonly have to put down?",
     "answer": "About ten percent",
     "choices": [
       "About ten percent",
@@ -22673,7 +22595,7 @@
   },
   {
     "tier": 3,
-    "question": "On Tuesday October 29, 1929 — the day traders came to call Black Tuesday — panic selling on the New York Stock Exchange reached a level nobody had seen before. Sell orders piled up so fast the ticker tape ran hours late reporting prices. The single-day trading volume set a record that would stand for nearly forty years. Roughly how many shares changed hands that Tuesday?",
+    "question": "A clerk on the New York Stock Exchange watched the ticker tape fall hours behind the market on Tuesday, 29 October 1929, as sell orders piled up faster than the machines could print prices. The day's volume stood as a record for almost forty years. Roughly how many shares changed hands?",
     "answer": "About sixteen million",
     "choices": [
       "About sixteen million",
@@ -22686,7 +22608,7 @@
   },
   {
     "tier": 3,
-    "question": "The Dow Jones Industrial Average hit its all-time peak in September 1929, right before the October crash. But the crash was only the start. Prices kept sliding for almost three more years as banks failed, factories closed, and unemployment soared to a quarter of American workers. The Dow finally hit bottom in July 1932. From that 1929 top to the 1932 low, the fall was one of the largest in the history of any major market. About what percent did the index lose?",
+    "question": "A man who bought shares at the top in September 1929 saw prices keep sliding for almost three years after the crash, as banks failed, factories shut and one American worker in four lost his job. The market's leading index hit bottom in July 1932. About what percent of its value at the 1929 peak had it lost?",
     "answer": "About 89 percent",
     "choices": [
       "About 89 percent",
@@ -22699,7 +22621,7 @@
   },
   {
     "tier": 3,
-    "question": "Irving Fisher was one of the most respected economists in America — a Yale professor famous for his work on interest rates and money. On October 15, 1929, just two weeks before the market crashed, he stepped to a microphone and made a public forecast about where American stock prices stood. That single sentence became the most-quoted bad call in economics. What did he say the stock market had reached?",
+    "question": "Irving Fisher, a Yale economist as respected as any in America, spoke to an audience on 15 October 1929, two weeks before the crash, and gave his view of share prices. His forecast became the most quoted in economics. What did he say the market had reached?",
     "answer": "A permanently high plateau",
     "choices": [
       "A permanently high plateau",
@@ -22711,34 +22633,8 @@
     "topic": "the-1929-crash-black-thursday-and-black-tuesday"
   },
   {
-    "tier": 4,
-    "question": "The Wall Street crash of October 1929 was severe, but many economists -- most famously Milton Friedman and Anna Schwartz in their landmark 1963 book A Monetary History of the United States -- have argued it should have been only a short recession, not a decade-long depression. In their view, one policy choice by America's central bank turned the crash into the Great Depression. What did Friedman and Schwartz blame?",
-    "answer": "The Federal Reserve allowing the money supply to collapse by about a third",
-    "choices": [
-      "The Federal Reserve allowing the money supply to collapse by about a third",
-      "Excess consumer saving that starved industry of demand",
-      "A demographic bulge that shrank the working-age population",
-      "A sudden collapse in agricultural export prices alone"
-    ],
-    "context": "Friedman and Schwartz's Monetary History showed M2 fell about 33% between 1929 and 1933 as the Fed failed to counter bank runs. Recessions had followed earlier crashes (1907, 1920-21) without becoming decade-long depressions. Source: Friedman + Schwartz, A Monetary History of the United States (1963).",
-    "topic": "the-1929-crash-black-thursday-and-black-tuesday"
-  },
-  {
-    "tier": 4,
-    "question": "In 1920 America hit a brutal sharp downturn under President Warren Harding, with unemployment climbing near 12 percent. Instead of new spending programs or bailouts, the federal government cut its own budget, refused to print extra money, and let wages and prices fall on their own until businesses could hire again. About how long did that 1920 recession end up lasting?",
-    "answer": "About eighteen months",
-    "choices": [
-      "About eighteen months",
-      "About ten years",
-      "About four years",
-      "About six months"
-    ],
-    "context": "The 1920-21 depression under Harding ended within about a year and a half despite being deeper on some measures than the 1929 crash's opening year. It is the natural-experiment case for the 'do less' policy response. Source: mises.org/mises-daily/forgotten-depression-1920.",
-    "topic": "the-1929-crash-black-thursday-and-black-tuesday"
-  },
-  {
     "tier": 5,
-    "question": "The date the pre-crash Dow peak of 381 was first regained by the same index -- after the 1929 fall, the Depression years, World War II, and the postwar boom -- was a landmark for anyone who had held stocks since 1929. In what decade did the Dow finally recover to its September 1929 peak?",
+    "question": "A buyer who put his savings into shares at the very top in September 1929 lived through the crash, the Depression, the Second World War and the boom that followed it, waiting to break even. In which decade did the market's leading index first close above its September 1929 peak?",
     "answer": "The 1950s",
     "choices": [
       "The 1950s",
@@ -22972,7 +22868,7 @@
   },
   {
     "tier": 1,
-    "question": "After the 2001 recession, America's central bank -- the Federal Reserve, chaired by Alan Greenspan -- held its main short-term interest rate, the federal funds rate, at a very low 1 percent for a full year to help the economy recover. Then on June 30, 2004 the Fed finally began raising rates in what became a long tightening cycle, Greenspan's first hike in four years. By how much did the Fed raise the rate in that very first move?",
+    "question": "Alan Greenspan began raising the Federal Reserve's overnight rate on 30 June 2004, after holding it at one percent for a year following the slump of 2001. The first step was deliberately small. How big was it?",
     "answer": "25 basis points",
     "choices": [
       "25 basis points",
@@ -22985,7 +22881,7 @@
   },
   {
     "tier": 1,
-    "question": "From June 2004 to June 2006, the American Federal Reserve — led first by chairman Alan Greenspan and then by Ben Bernanke — raised its main short-term interest rate at every single meeting. That was seventeen small hikes in a row, each of 0.25 percent. By the June 2006 meeting the rate reached its peak, and the Fed held it there for over a year before cutting again. What was that peak rate?",
+    "question": "Ben Bernanke chaired the June 2006 meeting at which the Federal Reserve made the last of seventeen rate rises in a row, each a quarter point, a run begun under Alan Greenspan in June 2004. Where did the rate stand at its peak?",
     "answer": "5.25 percent",
     "choices": [
       "5.25 percent",
@@ -22998,7 +22894,7 @@
   },
   {
     "tier": 2,
-    "question": "The Federal Reserve, usually just called the Fed, is the central bank of the United States, and its policy committee meets about every six weeks to decide interest rates. When the committee plans to leave rates unchanged, it often reuses the exact same coded phrase in its short public statement, meeting after meeting. This slow, deliberately predictable language is on purpose. Why does the Fed use these repetitive code words?",
+    "question": "A bond trader read the Federal Reserve's statement after a meeting in 2004 and found the same two words as the time before: 'measured pace.' The Fed's rate committee chose such coded, repetitive language on purpose. Why?",
     "answer": "To signal its next move without surprising markets",
     "choices": [
       "To signal its next move without surprising markets",
@@ -23011,7 +22907,7 @@
   },
   {
     "tier": 2,
-    "question": "From 2003 to 2004 American banks handed out home loans called adjustable-rate mortgages, or ARMs. These loans opened with very low \"teaser\" interest rates for the first two or three years, then reset upward to whatever the market rate was on the reset date. When the Federal Reserve raised rates seventeen times from 2004 to 2006, those teaser loans began resetting into a much higher-rate world. What happened to many families' monthly payments overnight?",
+    "question": "A family signed for an adjustable-rate mortgage in 2004 on the strength of a cheap teaser rate that would last two or three years. After that the loan would reset to market rates, in a world the Federal Reserve's seventeen rate rises had remade. What happened to many such families' monthly payments?",
     "answer": "They doubled or tripled",
     "choices": [
       "They doubled or tripled",
@@ -23024,7 +22920,7 @@
   },
   {
     "tier": 3,
-    "question": "Normally banks charge a higher interest rate to lend money for 10 years than to lend it for 2 years, because more time means more risk of things going wrong. But sometimes short-term rates rise above long-term rates -- lenders start charging more for a 2-year loan than a 10-year one. That strange flip is called an inverted yield curve, and in United States history it has been the single most reliable warning sign of what?",
+    "question": "A saver comparing bonds in 2006 found two-year ones paying more than ten-year ones, though a ten-year loan normally pays more than a two-year one, since time carries risk. Bond desks call that flip an inverted yield curve. In American history, what has it been the most reliable warning of?",
     "answer": "A recession within the next year or two",
     "choices": [
       "A recession within the next year or two",
@@ -23037,7 +22933,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1996 two economists working at the Federal Reserve Bank of New York published a paper showing that a very specific bond-market signal -- the inverted yield curve, where short-term interest rates rise above long-term ones -- is the best statistical warning sign of a coming U.S. recession. Later financial-crisis writers cited their paper again and again. Who wrote that landmark paper?",
+    "question": "Two economists at the New York Fed measured in 1996 how well one bond-market shape, short-term rates rising above long-term ones, foretold what came next for the American economy. Writers on the 2008 crisis quoted their paper again and again. Who were the two?",
     "answer": "Arturo Estrella and Frederic Mishkin",
     "choices": [
       "Arturo Estrella and Frederic Mishkin",
@@ -23050,7 +22946,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2006, the US yield curve inverted — short-term interest rates rose higher than long-term ones. This is a warning sign because banks make money by borrowing short-term and lending long-term, and an inverted curve means they can no longer earn from doing that. The inversion held through most of 2007. The National Bureau of Economic Research is the private body that officially dates when US recessions begin and end. When did NBER later date the start of what became the Great Recession?",
+    "question": "A mortgage lender watched delinquencies on subprime loans keep rising in 2007, while short-term rates stayed above long-term ones for most of the year, an inversion that had begun in 2006. The National Bureau of Economic Research, the private body that dates American recessions, later fixed when the Great Recession began. What date did it give?",
     "answer": "December 2007",
     "choices": [
       "December 2007",
@@ -23063,7 +22959,7 @@
   },
   {
     "tier": 4,
-    "question": "Through 2007 alarming news kept piling up about American subprime mortgages — the risky home loans that banks had given to borrowers with poor credit. Delinquencies rose, hedge funds tied to subprime bonds collapsed, and two of Bear Stearns' internal funds imploded that summer. Yet Federal Reserve chairman Ben Bernanke and other officials kept repeating one calming phrase about the stress in these loans. What phrase did they use?",
+    "question": "Ben Bernanke went before Congress in 2007 as delinquencies climbed on subprime mortgages, the risky home loans made to borrowers with poor credit. Two Bear Stearns funds blew up that summer. Bernanke and other Fed officials kept using one calming word for the trouble. What did they say?",
     "answer": "The problems were contained",
     "choices": [
       "The problems were contained",
@@ -23076,7 +22972,7 @@
   },
   {
     "tier": 5,
-    "question": "The person who ran the U.S. bank-insurance agency (the Federal Deposit Insurance Corporation, or FDIC) through the 2008 crash later called it 'the most predictable financial crisis in American history.' Which two warning signs had been visible for years before the crash?",
+    "question": "Sheila Bair, who headed the agency that insures bank deposits during the crash of 2008, wrote afterwards that it was 'the most predictable financial crisis in American history.' Which two warning signs had been in plain view for years before it struck?",
     "answer": "A rapidly rising housing bubble and a huge boom in loans to people who could not repay them",
     "choices": [
       "A rapidly rising housing bubble and a huge boom in loans to people who could not repay them",
@@ -23089,7 +22985,7 @@
   },
   {
     "tier": 5,
-    "question": "Between 2004 and 2006 the US Federal Reserve raised its main interest rate seventeen times in a row. By late 2006 the yield curve — which normally slopes upward from short-term to long-term rates — had inverted, meaning short-term rates were paying more than long-term rates. In market history that shape has almost always signaled a coming recession. The Fed watched its own inverted signal for many months and did nothing before the 2008 crash landed. Taken together, what recognition move about central banks does this teach?",
+    "question": "A homebuyer borrowed cheaply in 2003, while Alan Greenspan held the Fed's rate at one percent and house prices climbed. Greenspan and then Ben Bernanke raised it seventeen times in a row, and by 2006 the yield curve had inverted. The Fed's leaders kept reassuring Congress through 2007. What recognition about central banks does the sequence press?",
     "answer": "The Fed can produce a bubble with cheap credit, then produce a warning signal by tightening, and then ignore its own warning signal for over a year",
     "choices": [
       "The Fed can produce a bubble with cheap credit, then produce a warning signal by tightening, and then ignore its own warning signal for over a year",
@@ -23310,7 +23206,7 @@
   },
   {
     "tier": 1,
-    "question": "Around 2018, hedge-fund manager Jesse Felder made a phrase popular. It means prices rising at the same time in many things: homes, stocks, art, and more. The same money cause drives them all. What is the phrase?",
+    "question": "Jesse Felder, a hedge-fund manager, argued around 2018 that a single cause was lifting houses, shares, art and collectibles all at once, unlike the dot-com craze, which had lifted a single sector. He made a phrase for it popular. What is the phrase?",
     "answer": "The everything bubble",
     "choices": [
       "The everything bubble",
@@ -23323,7 +23219,7 @@
   },
   {
     "tier": 1,
-    "question": "From January 2020 through June 2022, the Case-Shiller US home price index, built by economist Robert Shiller and his colleague Karl Case, rose about 45 percent. That was the fastest 30-month climb since the index began in 1987, part of the post-pandemic housing boom driven by low interest rates. What was the top yearly gain in that stretch?",
+    "question": "Karl Case and Robert Shiller built the index Americans use to track house prices, and from January 2020 it climbed about 45 percent in thirty months. What was its fastest twelve-month gain in that stretch?",
     "answer": "About 20.8 percent in April 2022",
     "choices": [
       "About 20.8 percent in April 2022",
@@ -23336,7 +23232,7 @@
   },
   {
     "tier": 2,
-    "question": "When the COVID-19 pandemic hit in March 2020, US stocks crashed as businesses shut down. The S&P 500 index, which tracks America's 500 largest companies, hit a low on March 23, 2020. Then the Federal Reserve pumped trillions of new dollars into the economy through emergency programs, and stock prices rocketed upward. The S&P 500 peaked in December 2021. About what percent did it rise from that pandemic low to that peak?",
+    "question": "A small investor bought into the S&P 500, the index of America's five hundred largest companies, at its pandemic low on 23 March 2020. The Federal Reserve kept its rate at zero and bought bonds by the trillion, and the index peaked at the turn of 2022. About what percent had it risen?",
     "answer": "About 115 percent",
     "choices": [
       "About 115 percent",
@@ -23349,7 +23245,7 @@
   },
   {
     "tier": 2,
-    "question": "When the COVID-19 pandemic crashed markets in March 2020, Bitcoin's price fell to about $4,000. Then the US Federal Reserve printed trillions of new dollars to fight the pandemic recession, and Bitcoin's price rocketed upward — since only 21 million bitcoins can ever exist, its supply cannot be printed to match. The price peaked in November 2021. About how high did it go?",
+    "question": "A Bitcoin buyer paid about $4,000 a coin in the panic of March 2020. The Federal Reserve then created trillions of new dollars, while the supply of bitcoin is capped at twenty-one million coins. The price peaked in November 2021. About how high did it go?",
     "answer": "About $69,000",
     "choices": [
       "About $69,000",
@@ -23362,7 +23258,7 @@
   },
   {
     "tier": 3,
-    "question": "In early 2021, a Reddit forum called WallStreetBets rallied millions of small investors to buy shares of two struggling US companies. Their share prices shot far above what the real businesses could justify. One was a mall-based video-game store; the other was a large movie-theater chain. Which two stocks became the face of the meme-stock craze?",
+    "question": "A small trader on the Reddit board WallStreetBets bought shares in January 2021 in two struggling companies that short-sellers were betting would fall. One was a mall chain selling video games, the other a cinema operator, and their share prices ran far beyond anything the two businesses earned. Which two stocks were they?",
     "answer": "GameStop and AMC Entertainment",
     "choices": [
       "GameStop and AMC Entertainment",
@@ -23375,7 +23271,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2021 a new market exploded: 'non-fungible tokens', or NFTs — digital art pieces whose ownership was recorded on a blockchain like Bitcoin. Buyers spent huge sums on cartoon apes, pixel portraits, and one-of-a-kind image files. Then over the next couple of years the whole NFT market crashed by more than 90 percent. About how big did NFT sales get at the 2021 peak?",
+    "question": "A collector paid a large sum in 2021 for a picture of a cartoon ape, buying not the image itself but a record of ownership kept on a blockchain. Such non-fungible tokens crashed by more than ninety percent within two years. What did sales of them total in 2021?",
     "answer": "About $25 billion",
     "choices": [
       "About $25 billion",
@@ -23388,7 +23284,7 @@
   },
   {
     "tier": 4,
-    "question": "During the 2020-21 stock-market boom, a special kind of Wall Street shell company let hundreds of private startups skip the usual public listing process and go public just by merging with the shell. These cash-shell vehicles raised over 160 billion dollars in 2021 alone, then nearly vanished by 2023 once the Federal Reserve raised interest rates and the boom broke. What are they called?",
+    "question": "A startup founder took his private company public in 2021 without the usual listing process, simply by merging it with a cash shell that had listed itself first. Shells like that raised well over $160 billion that year, then all but vanished by 2023. What are they called?",
     "answer": "SPACs -- special-purpose acquisition companies",
     "choices": [
       "SPACs -- special-purpose acquisition companies",
@@ -23401,7 +23297,7 @@
   },
   {
     "tier": 4,
-    "question": "During the boom of 2020-21 a famous American fund manager became a star by betting big on trendy tech companies. Her fund rose sharply, then fell about 80 percent when the boom ended. What is the general lesson when a fund concentrates on hot stocks during a boom?",
+    "question": "Cathie Wood bet her fund heavily on trendy technology shares and beat the market by a wide margin, a run that made her famous. From its peak in February 2021 the fund fell about 80 percent. What lesson does the fall teach about a fund packed into a few hot stocks?",
     "answer": "The same concentration that made it rise fast can make it crash just as hard",
     "choices": [
       "The same concentration that made it rise fast can make it crash just as hard",
@@ -23414,20 +23310,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 1730s the Irish-French banker Richard Cantillon wrote that fresh money does not spread evenly through an economy: whoever gets it first benefits, while those who get it later pay higher prices for everything. The 2020-24 US cycle fit this shape almost exactly. In 2020-21 asset prices — stocks, homes, art — rose first. In 2021-23 everyday consumer prices rose. In 2022-23 a bust hit. Which framework, from the Austrian tradition, names this pattern?",
-    "answer": "The Cantillon-effect pattern of first-receiver benefits followed by later-receiver adjustment",
-    "choices": [
-      "The Cantillon-effect pattern of first-receiver benefits followed by later-receiver adjustment",
-      "The Keynesian animal-spirits framework of investor sentiment",
-      "The efficient-markets hypothesis of neutral price discovery",
-      "The random-walk model of stock-market behavior"
-    ],
-    "context": "The Austrian intellectual contribution to the 2020s: identifying the pattern as a Cantillon-effect sequence rather than as 'irrational exuberance' or 'animal spirits.' The specific rise-then-fall timing across asset classes tracks the theory precisely. Source: Ammous, The Fiat Standard (2021).",
-    "topic": "the-2020-24-everything-bubble-across-asset-classes"
-  },
-  {
-    "tier": 5,
-    "question": "After a decade of near-zero interest rates, by 2021 what critics called the 'everything bubble' had pushed the most speculative assets to record highs. When the Federal Reserve hiked rates hard in 2022 to fight inflation, the crash hit hardest in a few specific corners -- the assets that had risen most on cheap money. Which trio saw the sharpest peak-to-trough drops during the 2022-23 bust?",
+    "question": "A trader held the assets that had risen most on cheap money in 2021 and watched them fall hardest when the Federal Reserve raised rates in 2022. House prices and the broad stock indexes fell less, since the rate rises came after their peaks. Which trio of drops matches that bust?",
     "answer": "Bitcoin -78%, ARK Innovation ETF -80%, and the meme-stock complex -90%+",
     "choices": [
       "Bitcoin -78%, ARK Innovation ETF -80%, and the meme-stock complex -90%+",
@@ -23440,7 +23323,7 @@
   },
   {
     "tier": 1,
-    "question": "A government runs out of money. It seizes land from a big organization inside its own country and prints paper money saying 'this money is backed by that land.' What is the danger of this kind of paper money?",
+    "question": "A finance minister with an empty treasury seizes the lands of his country's largest organization and prints paper money said to be backed by those acres. What is the danger in this kind of paper money?",
     "answer": "The government can just print more whenever it wants, so the money loses value",
     "choices": [
       "The government can just print more whenever it wants, so the money loses value",
@@ -23453,7 +23336,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1789, the new revolutionary government of France seized huge tracts of land owned by the Catholic Church. To pay its bills fast, it issued a paper currency backed by claims on that seized property. Each note was, in theory, a legal ticket to a piece of Church land. The paper money had one name. What was it called?",
+    "question": "France's revolutionary deputies voted on 2 November 1789 to seize the Catholic Church's estates, then issued paper notes against them to pay the state's bills. Each note was, in theory, a claim on particular acres of that land. What was the paper called?",
     "answer": "The assignat",
     "choices": [
       "The assignat",
@@ -23466,7 +23349,7 @@
   },
   {
     "tier": 2,
-    "question": "France's first paper money, the assignats, came out in late 1789. The first batch was 400 million livres, and the Assembly swore it would be the only one. By 1795 the total in use was a very different figure. What did the total reach?",
+    "question": "A saver took France's new paper notes in late 1789 on the deputies' word that the first issue, four hundred million livres of assignats, would be the only one. By late 1795 the notes' face value told another story. What had it reached?",
     "answer": "Over 40 billion livres, roughly 100 times the promised limit",
     "choices": [
       "Over 40 billion livres, roughly 100 times the promised limit",
@@ -23479,7 +23362,7 @@
   },
   {
     "tier": 2,
-    "question": "In revolutionary France, the assignat was the paper money the National Assembly had issued starting in 1789, supposedly backed by land it had seized from the Catholic Church. By the mid-1790s French farmers and traders had lost trust in the assignats and were asking for gold coin instead. The revolutionary state did not cut back on printing. Instead it raised the legal penalty for treating gold as worth more than paper. What was the top penalty for doing that?",
+    "question": "A trader in revolutionary France who priced gold above paper assignats in 1793 broke a new law of the Convention. Farmers and traders had lost faith in the notes and wanted coin, and the state answered not by printing less but by raising the penalty. What was the top penalty?",
     "answer": "Death",
     "choices": [
       "Death",
@@ -23492,7 +23375,7 @@
   },
   {
     "tier": 3,
-    "question": "The assignat, France's revolutionary paper currency issued from 1789 and supposedly backed by seized church lands, had lost almost all its value by 1796. One assignat was worth about one thousandth of its face amount. The Directory — the government running France at the time — pulled the assignats out of use and tried a fresh start with a new paper money, again supposedly backed by the same land. What was the replacement currency called?",
+    "question": "A Parisian holding one of the Revolution's paper notes in 1796 found it worth about a thousandth of the sum printed on it. The Directory, then governing France, withdrew the whole issue and started again with fresh paper backed by the same seized land. What was the new paper called?",
     "answer": "The mandat territorial",
     "choices": [
       "The mandat territorial",
@@ -23504,21 +23387,8 @@
     "topic": "the-assignat-1789-1796-french-revolutions-paper-money"
   },
   {
-    "tier": 3,
-    "question": "The Assignat crash was France's second try at a national paper money in less than a hundred years. The first try ended in a 1720 crash in Paris, run by a Scottish schemer. Whose plan was that first try?",
-    "answer": "John Law's Banque Royale and Mississippi Company",
-    "choices": [
-      "John Law's Banque Royale and Mississippi Company",
-      "Jean-Baptiste Colbert's royal treasury",
-      "Cardinal Richelieu's tax edicts",
-      "Necker's compte rendu"
-    ],
-    "context": "France tried paper money in 1716-1720 under John Law, saw it collapse, and stayed off paper for the next seventy years. The Assignat was the second full experiment -- same country, same result. Source: Grokipedia 'John Law (economist)' (2026-09-05).",
-    "topic": "the-assignat-1789-1796-french-revolutions-paper-money"
-  },
-  {
     "tier": 4,
-    "question": "In 1912 the American historian Andrew Dickson White, a co-founder of Cornell University, wrote a short but forceful book called Fiat Money Inflation in France. In it he warned his own country by retelling the 1789-1796 assignat crash, when the revolutionary French government printed paper money completely out of control and prices collapsed. Why do writers today keep pointing back to that French story?",
+    "question": "Andrew Dickson White, a co-founder of Cornell University, brought out the finished version of Fiat Money Inflation in France in 1912, retelling the collapse of the Revolution's paper money as a warning to his fellow Americans. Why do writers still point back to that French story?",
     "answer": "It shows what happens when a government prints too much paper money too fast",
     "choices": [
       "It shows what happens when a government prints too much paper money too fast",
@@ -23531,7 +23401,7 @@
   },
   {
     "tier": 4,
-    "question": "During the French Revolution in the 1790s, the new government printed paper money called assignats, supposedly backed by land seized from the church. Officials printed more and more of the paper to pay the government's bills, until the currency collapsed and shopkeepers refused to accept it. In 1912, the American historian Andrew Dickson White published a study of this disaster that Austrian economists still quote today. Which conclusion did he draw?",
+    "question": "Andrew Dickson White weighed every tool the French Revolution had used to prop up its paper money: legal-tender decrees, price controls and harsh penalties for anyone who refused the notes. Austrian economists still quote the conclusion he reached in 1912. What was it?",
     "answer": "No government could make paper worth as much as gold when there was more paper than the land could redeem",
     "choices": [
       "No government could make paper worth as much as gold when there was more paper than the land could redeem",
@@ -23544,7 +23414,7 @@
   },
   {
     "tier": 5,
-    "question": "During the French Revolution, the government printed huge amounts of paper money. When it lost value, the state tried price controls, made refusing the paper illegal, and even executed 'hoarders.' Prices kept climbing. Which later inflation episode used the same playbook and failed the same way?",
+    "question": "A French saver lost most of what his assignats were worth in the 1790s, while the state answered with price controls and laws against refusing the paper, and still prices climbed. Which later inflation reached for the same tools and failed the same way?",
     "answer": "Weimar Germany 1921-1923",
     "choices": [
       "Weimar Germany 1921-1923",
@@ -23557,7 +23427,7 @@
   },
   {
     "tier": 5,
-    "question": "The French economist Frederic Bastiat taught readers to look for 'the seen and the unseen' -- the visible near-term gain that hides a slow-moving destruction. Applied to the assignat, the paper money France issued in 1789 against seized Church land, the state printed more and more notes until prices exploded and household savings vanished. Which pairing best captures the seen-and-unseen contrast in that episode?",
+    "question": "Frederic Bastiat taught readers to set what a policy shows beside what it hides. The revolutionaries printed assignats against seized Church land through the 1790s until the notes were nearly worthless. Which pairing does Bastiat's test give for that episode?",
     "answer": "Seen: legal-tender laws and price controls; Unseen: goods vanishing from shops and savers wiped out",
     "choices": [
       "Seen: legal-tender laws and price controls; Unseen: goods vanishing from shops and savers wiped out",
@@ -23570,7 +23440,7 @@
   },
   {
     "tier": 1,
-    "question": "In a 1912 book on money, an Austrian economist made this claim. Money must have had some other use before it became money. If not, no one could know what it was worth on its first day. Which Austrian economist made this claim?",
+    "question": "A Viennese economist argued in a book on money of 1912 that anything which becomes money must first have been prized for another use, or no one could say what it was worth on its first day. Who was he?",
     "answer": "Ludwig von Mises",
     "choices": [
       "Ludwig von Mises",
@@ -23582,21 +23452,8 @@
     "topic": "the-austrian-dispute-about-bitcoin-shostak-versus-ammous"
   },
   {
-    "tier": 1,
-    "question": "The Austrian economist Ludwig von Mises argued in 1912 that money does not just appear as money out of thin air. Every real money, he said, must have had some earlier use or value in trade before people started treating it as money at all. His argument became a cornerstone of Austrian monetary theory and has a specific name. What is it called?",
-    "answer": "the Regression Theorem",
-    "choices": [
-      "the Regression Theorem",
-      "the Calculation Debate",
-      "the Praxeological Axiom",
-      "the Time-Preference Theorem"
-    ],
-    "context": "The Regression Theorem is Mises's 1912 argument. The Calculation Debate is Mises's separate 1920 case against socialism; praxeology is his general methodology; time-preference is a distinct concept in Bohm-Bawerkian capital theory. Source: https://en.wikipedia.org/wiki/Regression_theorem.",
-    "topic": "the-austrian-dispute-about-bitcoin-shostak-versus-ammous"
-  },
-  {
     "tier": 2,
-    "question": "Some Austrian economists said Bitcoin should never have caught on as money. They said money must start as a useful item first, like gold or salt. Bitcoin had no prior use. What did Bitcoin end up showing about that idea?",
+    "question": "A Bitcoin holder kept his coins through crash after crash in the 2010s and years of hostility from governments, and they held their value. Austrian critics had said a money must begin as a useful good, as gold began as jewellery, and that Bitcoin had no such past. What reading of its survival cut against those critics?",
     "answer": "Digital scarcity alone can give something monetary value",
     "choices": [
       "Digital scarcity alone can give something monetary value",
@@ -23609,7 +23466,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 2010s, the Austrian economist Frank Shostak analyzed Bitcoin using Ludwig von Mises's Regression Theorem. That theorem says any money must trace its origin back to some earlier use as a physical good, like gold coins that once had value as jewelry. Since Bitcoin has no such physical history, Shostak drew a direct conclusion — one that many other Austrians and Bitcoin supporters strongly dispute. What did Shostak predict about Bitcoin's future?",
+    "question": "Frank Shostak, a Mises Institute scholar, put Bitcoin to Mises's test in the 2010s. The rule traces a money's value back to an earlier use as a plain good, as gold coins trace back to jewellery, and Shostak found no such history behind a string of digits. What did he conclude about Bitcoin's future?",
     "answer": "that Bitcoin was a speculative bubble that would eventually collapse",
     "choices": [
       "that Bitcoin was a speculative bubble that would eventually collapse",
@@ -23622,7 +23479,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian economist Frank Shostak argued that Bitcoin could not really be money. He pointed to Mises's Regression Theorem — the rule that money must start out as a useful item first, like gold that was worn as jewelry long before it became coin — and said Bitcoin failed the test because it had never been anything other than a digital token before people started trading it as money. Younger Austrians pushed back. Saifedean Ammous, Peter St Onge, and others led the reply. What did the Ammous side claim?",
+    "question": "Peter St Onge and Saifedean Ammous argued that Frank Shostak had read Bitcoin's history too narrowly. Shostak had said Bitcoin failed Mises's test because it had never been anything but a digital token before people traded it as money. What did the two claim instead?",
     "answer": "that Bitcoin did have a prior non-monetary use -- a cypherpunk collectible cryptographers valued for the technical achievement itself",
     "choices": [
       "that Bitcoin did have a prior non-monetary use -- a cypherpunk collectible cryptographers valued for the technical achievement itself",
@@ -23635,7 +23492,7 @@
   },
   {
     "tier": 3,
-    "question": "The economist Saifedean Ammous, author of the 2018 book 'The Bitcoin Standard,' defended Bitcoin against Austrian critics who said it violated Mises' Regression Theorem -- the rule that money must have had an earlier non-money use. Ammous pointed to one specific deal in 2010 as the moment Bitcoin crossed from a hobby item into real money paid for real goods. Which deal marks that turning point?",
+    "question": "Saifedean Ammous answered the Austrians who said Bitcoin failed Mises's rule by dating the moment it stopped being a hobby item and became money. He made the case in his 2018 book The Bitcoin Standard. Which moment did he pick?",
     "answer": "the 10,000-BTC pizza purchase of May 22, 2010",
     "choices": [
       "the 10,000-BTC pizza purchase of May 22, 2010",
@@ -23648,7 +23505,7 @@
   },
   {
     "tier": 4,
-    "question": "For most of the 2010s, Austrian economists rejected Bitcoin, arguing it violated Mises' Regression Theorem -- the rule that money must first have had a non-money use. Then the Lebanese economist Saifedean Ammous and others made the case that Bitcoin's early collector-and-hobbyist value satisfied that rule after all. The Austrian mainstream slowly came around. By roughly what year did most Austrian economists agree with the Ammous side?",
+    "question": "Robert Murphy, an Austrian economist, came round to Saifedean Ammous's reading of Bitcoin's early history, and so did Vijay Boyapati, as most working Austrians eventually did; Frank Shostak held his ground. By roughly when, after years of argument, had most Austrians come round?",
     "answer": "by roughly 2018-2020",
     "choices": [
       "by roughly 2018-2020",
@@ -23660,21 +23517,8 @@
     "topic": "the-austrian-dispute-about-bitcoin-shostak-versus-ammous"
   },
   {
-    "tier": 4,
-    "question": "Some Austrian economists argue that anything used as money must have started life valued for a different purpose first -- like gold, which was worn as jewelry long before it became coins. Why does Bitcoin make people debate this old rule?",
-    "answer": "Bitcoin had no other use before people started trading it, yet it still became money",
-    "choices": [
-      "Bitcoin had no other use before people started trading it, yet it still became money",
-      "Bitcoin can only be spent inside a single video game",
-      "Bitcoin was invented by an old French king",
-      "Bitcoin coins are actually made of solid gold"
-    ],
-    "context": "Robert Murphy hosts the Bob Murphy Show and has featured the Bitcoin/Regression Theorem debate extensively. Sowell is not an Austrian and does not run a Bitcoin podcast; Friedman was a monetarist, died 2006; Samuelson was a Keynesian, died 2009. Source: https://en.wikipedia.org/wiki/Robert_P._Murphy.",
-    "topic": "the-austrian-dispute-about-bitcoin-shostak-versus-ammous"
-  },
-  {
     "tier": 5,
-    "question": "For years the Austrian economist Frank Shostak had insisted Bitcoin could not be true money — it had no earlier use, so Mises's Regression Theorem should rule it out. Younger Austrians like Saifedean Ammous replied that Bitcoin did have a prior use: a cypherpunk collectible that cryptographers valued for the technical achievement itself. Looking back at this Shostak-Ammous debate, one writer said the real lesson goes past Bitcoin. Which broader reasoning move does the story teach about how a serious school of thought should treat a new real-world case?",
+    "question": "Frank Shostak and Saifedean Ammous applied Mises's rule of 1912 to Bitcoin and reached opposite verdicts, and the Austrian school argued over it for years. What broader lesson does the dispute teach about how a serious school should treat a new case?",
     "answer": "That even a rigorous school can disagree internally about how to apply its own theorem, and the resolution comes by looking harder at the historical record",
     "choices": [
       "That even a rigorous school can disagree internally about how to apply its own theorem, and the resolution comes by looking harder at the historical record",
@@ -23686,21 +23530,8 @@
     "topic": "the-austrian-dispute-about-bitcoin-shostak-versus-ammous"
   },
   {
-    "tier": 5,
-    "question": "Austrian economists spent a century arguing that governments always debase paper money, and that only a truly scarce, hard-to-counterfeit asset (once, gold) protects savers. Bitcoiners say the same case now fits a new asset. Which property of Bitcoin carries that Austrian case?",
-    "answer": "Its fixed 21-million cap plus proof-of-work makes it costly to create and impossible to inflate",
-    "choices": [
-      "Its fixed 21-million cap plus proof-of-work makes it costly to create and impossible to inflate",
-      "Its friendly logo makes people want to save in it rather than spend it",
-      "Its use of the internet makes it faster than paper checks in the mail",
-      "Its price rises whenever the Federal Reserve prints more dollars"
-    ],
-    "context": "Peter St Onge's academic writing (papers 2015 onward) is the standard bridge between the Mises-Rothbard tradition and modern Bitcoin economics. Shostak took the opposite position; Block and Hulsmann have been publicly ambivalent. Source: Peter St Onge academic papers; https://en.wikipedia.org/wiki/Peter_St._Onge.",
-    "topic": "the-austrian-dispute-about-bitcoin-shostak-versus-ammous"
-  },
-  {
     "tier": 1,
-    "question": "A bunch of banks made bad bets on bonds that lost value. To keep them from failing, the country's central bank started a program that let them borrow money using those bad bonds as collateral. What is this kind of central-bank rescue usually called?",
+    "question": "A bank treasurer with underwater bonds found a new window open at the Federal Reserve on 12 March 2023, as a second bank was seized. Banks could pledge such bonds there and take cash for a year. What is a program like this called?",
     "answer": "An emergency lending facility",
     "choices": [
       "An emergency lending facility",
@@ -23713,7 +23544,7 @@
   },
   {
     "tier": 1,
-    "question": "A bank owns bonds only worth 80 cents on the dollar right now. The Fed lets the bank borrow using those bonds as collateral -- but counts them as worth the full 100 cents. Why do critics call this a hidden bailout?",
+    "question": "A banker pledges a Treasury bond with ten years to run that sells for about eighty cents on the dollar, since yields have climbed. The Federal Reserve lends against it as if it were worth a hundred. Why do critics call that a hidden bailout?",
     "answer": "The central bank is pretending the bonds are worth more than the market says",
     "choices": [
       "The central bank is pretending the bonds are worth more than the market says",
@@ -23726,7 +23557,7 @@
   },
   {
     "tier": 2,
-    "question": "When the Federal Reserve loans money to a bank, it takes bonds from the bank as collateral. Normally the Fed looks at what those bonds could actually sell for today, then trims that number a bit more for safety. What is this normal practice called?",
+    "question": "A loan officer at the Federal Reserve's ordinary discount window sizes up a bond that a bank wants to borrow against. The Fed takes care never to lend as much as the bond could sell for today. How does the window normally value such collateral?",
     "answer": "Collateral is valued at market price, typically with a haircut",
     "choices": [
       "Collateral is valued at market price, typically with a haircut",
@@ -23739,7 +23570,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 2023, Silicon Valley Bank collapsed and several other US banks looked wobbly. The Federal Reserve set up an emergency program called the Bank Term Funding Program (BTFP). It lent banks fresh money using their government bonds as collateral, but valued those bonds at what banks originally paid for them rather than at today's much lower market price. Critics said this worked just like the Fed's earlier bond-buying programs, known as quantitative easing (QE). What nickname did critics give the new program?",
+    "question": "Jim Bianco watched the Federal Reserve's balance sheet swell again in March 2023, just when the Fed was supposed to be shrinking it, as each loan from its new window for banks pushed it up. He, Peter Schiff and Lyn Alden had a nickname for the window within days. What was it?",
     "answer": "QE by another name",
     "choices": [
       "QE by another name",
@@ -23752,7 +23583,7 @@
   },
   {
     "tier": 3,
-    "question": "In March 2023, Silicon Valley Bank and Signature Bank failed after their bond holdings lost value when the Federal Reserve raised interest rates fast. To calm the panic, the Fed set up an emergency loan program — the Bank Term Funding Program (BTFP) — that let banks borrow cash using those damaged bonds as backup. Borrowing under the program grew quickly through 2023. About how much had banks borrowed from it at its peak in early 2024?",
+    "question": "A banker who pledged his bank's underwater bonds at the Federal Reserve's new emergency window in 2023 had plenty of company, for use of the window grew all year. When borrowing there peaked in early 2024, about how much was outstanding?",
     "answer": "About $167 billion",
     "choices": [
       "About $167 billion",
@@ -23765,7 +23596,7 @@
   },
   {
     "tier": 3,
-    "question": "The Fed can only set up special emergency loan programs when things are very bad. That was the case in March 2020 and again in March 2023. When the Fed reaches for that power, what does it usually tell the country?",
+    "question": "A trader who read the fine print noticed the Federal Reserve reaching in March 2023 for a clause of 1932, the same one it had used in March 2020. The clause lets the Fed open lending programs only in what the law calls 'unusual and exigent circumstances.' What does the Fed signal when it reaches for that power?",
     "answer": "Something is seriously wrong and the Fed is trying to stop a panic",
     "choices": [
       "Something is seriously wrong and the Fed is trying to stop a panic",
@@ -23778,20 +23609,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2023, after Silicon Valley Bank and Signature Bank suddenly collapsed, the Federal Reserve set up a new short-term loan program. It let banks borrow cash using their bonds as backup — even bonds whose market price had dropped sharply after the Fed raised interest rates. Why does a new rescue program like this one worry critics of the Federal Reserve?",
-    "answer": "Banks may take bigger risks in the future, expecting another rescue",
-    "choices": [
-      "Banks may take bigger risks in the future, expecting another rescue",
-      "Emergency programs cause every bank to close down",
-      "It forces the Fed to sell off its office buildings",
-      "It makes banks raise interest rates on savings accounts"
-    ],
-    "context": "BTFP expired on March 11 2024, one year after its launch. Outstanding balances continued to be paid down, but no new borrowings were permitted after that date. The precedent, however, stands. Source: Grokipedia 'Bank Term Funding Program' (2026-09-05).",
-    "topic": "the-bank-term-funding-program-stealth-qe-at-par"
-  },
-  {
-    "tier": 4,
-    "question": "In several crises the Fed has taken bonds from banks as loan backup at a price higher than the bonds could sell for. What is the risk when a central bank acts like shaky assets are worth more than they really are?",
+    "question": "A Federal Reserve lending officer accepts a bank's damaged bond in a crisis at the price it carried before the damage, and lends the bank cash against it. What is the risk when a central bank treats shaky assets as worth more than they really are?",
     "answer": "It hides real losses and lets weak banks keep going instead of failing",
     "choices": [
       "It hides real losses and lets weak banks keep going instead of failing",
@@ -23804,7 +23622,7 @@
   },
   {
     "tier": 5,
-    "question": "In March 2023 the Federal Reserve started a lending program (the Bank Term Funding Program, or BTFP) that let banks borrow using bonds worth less than face value -- but the Fed accepted them at full face value. Which 'seen vs unseen' reading best captures what that program really did?",
+    "question": "Frederic Bastiat taught readers to set a policy's visible result beside its hidden one. The Federal Reserve's Bank Term Funding Program of March 2023 took banks' sunken bonds at full face value as security for year-long loans. Which reading does Bastiat's test give?",
     "answer": "Seen: it steadied the banks. Unseen: it subsidized losses the Fed's own low-rate policy had caused.",
     "choices": [
       "Seen: it steadied the banks. Unseen: it subsidized losses the Fed's own low-rate policy had caused.",
@@ -23816,8 +23634,8 @@
     "topic": "the-bank-term-funding-program-stealth-qe-at-par"
   },
   {
-    "tier": 5,
-    "question": "In March 2023, after Silicon Valley Bank collapsed on losses from long-dated Treasury bonds, the Federal Reserve launched the Bank Term Funding Program (BTFP). It let banks post their underwater bonds as collateral at face value and borrow cash against them at par. The Fed formally shut the program down in March 2024. Why do Austrian critics say ending BTFP does not undo the precedent it set?",
+    "tier": 4,
+    "question": "A banker who had leaned on the Federal Reserve's window for underwater bonds watched it close on 11 March 2024, a year after it opened in the bank panic of March 2023. Critics feared banks would gamble bigger, counting on another rescue, and Austrians said the closing changed nothing. Why?",
     "answer": "Every bank now knows the Fed will lend against bad bond portfolios in the next crisis too",
     "choices": [
       "Every bank now knows the Fed will lend against bad bond portfolios in the next crisis too",
@@ -23830,20 +23648,7 @@
   },
   {
     "tier": 1,
-    "question": "Imagine the US federal government starts giving every college student a new $10,000 grant to help pay for tuition. Colleges know almost exactly how much extra money each student now has to spend on school. The economist William Bennett noticed a pattern in what happens next, year after year, whenever federal aid increases. What tends to happen to tuition prices in the years after such a grant?",
-    "answer": "Tuition prices go up by about the same amount",
-    "choices": [
-      "Tuition prices go up by about the same amount",
-      "Tuition prices fall because students have more money",
-      "Tuition prices stay exactly the same forever",
-      "Colleges refund the extra aid to families"
-    ],
-    "context": "William Bennett was Reagan's Secretary of Education (1985-88). His 1987 NYT essay 'Our Greedy Colleges' launched what came to be called the Bennett Hypothesis. Source: nytimes.com/1987/02/18 (Bennett op-ed).",
-    "topic": "the-bennett-hypothesis-federal-student-aid-and-the-tuition-i"
-  },
-  {
-    "tier": 1,
-    "question": "In 1987, William Bennett was the US Secretary of Education under President Ronald Reagan. He wrote a New York Times opinion piece accusing colleges of raising their tuition to swallow up whatever extra federal aid Congress gave to students. His claim now bears his name as the Bennett Hypothesis. According to Bennett, extra federal college aid mostly flows in the end to which group?",
+    "question": "A college president learns that every student he admits next year brings a new $10,000 federal grant. He knows how much more each family can now pay, and his seats have not multiplied. Where, by William Bennett's argument, does most of that money end up?",
     "answer": "Colleges, through higher tuition",
     "choices": [
       "Colleges, through higher tuition",
@@ -23856,7 +23661,7 @@
   },
   {
     "tier": 2,
-    "question": "US federal student loan debt exploded from the early 1990s through 2023, as college tuition kept rising faster than family incomes and Congress kept lending more to close the gap. Millions of former students now carry loan balances they may never fully repay. Total student loan debt is now one of the largest categories of household debt in America, larger than credit card debt or auto loans. About what dollar total does US federal student loan debt stand at in the mid-2020s?",
+    "question": "A college student in the 1990s borrowed from a pool of federal student loans then worth about $100 billion in all. The pool kept growing, until the debt outweighed every credit-card balance in America combined. By the mid-2020s, about how large had it grown?",
     "answer": "About $1.7 trillion",
     "choices": [
       "About $1.7 trillion",
@@ -23869,7 +23674,7 @@
   },
   {
     "tier": 2,
-    "question": "From 1978 to 2018, US public four-year college tuition rose about 213% in real terms, and private four-year tuition rose about 129%. That was faster than almost any other price in the economy — much faster than groceries, cars, or houses. Over those same forty years, one type of federal money kept expanding to help students pay, and its growth matched the tuition climb almost exactly. Which type of federal money was it?",
+    "question": "A family opened a public four-year college's bill in 2018. After inflation, tuition there stood about 213 percent above 1978, and at private colleges about 129 percent above. One stream of federal money grew right alongside that climb. Which stream was it?",
     "answer": "Federal student loan and Pell Grant programs",
     "choices": [
       "Federal student loan and Pell Grant programs",
@@ -23882,7 +23687,7 @@
   },
   {
     "tier": 3,
-    "question": "The New York Federal Reserve Bank has a research team that studies how public policy shapes prices. In 2015 that team, led by economist David Lucca, examined what happens each time Washington makes more government-backed borrowing available to college students. They compared each dollar of that extra government-provided lending to changes in colleges' published price tags. When such lending went up by a dollar, what did the researchers find happened to the posted price?",
+    "question": "David Lucca, an economist at the New York Fed, led a team that lined up college price tags against the moments when federal student-loan limits jumped. They set each added dollar of government-backed lending beside the change in the posted price. What did they find?",
     "answer": "A $1 increase in subsidized federal loans led to about a $0.60 increase in sticker tuition",
     "choices": [
       "A $1 increase in subsidized federal loans led to about a $0.60 increase in sticker tuition",
@@ -23895,7 +23700,7 @@
   },
   {
     "tier": 3,
-    "question": "Two American economists, Grey Gordon and Aaron Hedlund, built a detailed computer model of the entire US college tuition market from 1987 to 2010. They used it to test how much of the huge tuition rise came from Washington making more federal student aid — Pell Grants and subsidized loans — available to students. When they ran their simulation, roughly what share of the tuition rise did the model blame on this aid expansion?",
+    "question": "Grey Gordon and Aaron Hedlund simulated American college pricing from 1987 to 2010 in a computer model, to test how much of the tuition rise came from Washington's growing aid. Their result leaned on the model's assumptions. How much of the rise did it lay on the aid?",
     "answer": "Essentially all of it",
     "choices": [
       "Essentially all of it",
@@ -23908,7 +23713,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1987 William Bennett, the US Secretary of Education under President Reagan, wrote a famous New York Times op-ed. He argued that federal student loans do not really make college more affordable — instead, colleges quietly raise tuition every time Washington offers more loan money, because students can now borrow more, so schools will simply charge more. The more Washington lends, the more schools charge. What is this idea called in economics today?",
+    "question": "Ronald Reagan's Secretary of Education charged in a New York Times essay of February 1987 that colleges raised tuition to swallow every increase in federal aid: the more Washington lent, the more they charged. Economists named the claim after him. What is it called?",
     "answer": "Bennett Hypothesis",
     "choices": [
       "Bennett Hypothesis",
@@ -23921,20 +23726,7 @@
   },
   {
     "tier": 4,
-    "question": "For decades in the United States, college tuition has risen far faster than most other prices -- outpacing wages, medical care, and general inflation. In 1987, US education secretary William Bennett published a New York Times essay giving a famous answer: cheap federal borrowing for undergraduates meant colleges could steadily boost the sticker price and let taxpayers cover the gap. What is the most common explanation critics still give for the runaway costs?",
-    "answer": "Cheap government-backed student loans let colleges keep raising tuition",
-    "choices": [
-      "Cheap government-backed student loans let colleges keep raising tuition",
-      "Fewer people wanting to attend college each year",
-      "Falling wages for professors and staff",
-      "A shortage of paper for printing textbooks"
-    ],
-    "context": "Richard Vedder, Going Broke by Degree: Why College Costs Too Much (AEI Press, 2004). Vedder's book presented the tuition-inflation / administrative-bloat pattern years before the Lucca and Gordon-Hedlund quantitative work. Source: aei.org (Vedder 2004).",
-    "topic": "the-bennett-hypothesis-federal-student-aid-and-the-tuition-i"
-  },
-  {
-    "tier": 4,
-    "question": "The Bennett Hypothesis, named for US education secretary William Bennett, says a government subsidy paid to buyers gets captured by suppliers whenever supply is tight -- the price simply rises to soak up the new money, and the buyer ends up no better off. The pattern shows up in more than college costs. Where else does the same idea appear in US policy: a subsidy to buyers that gets eaten by tight supply?",
+    "question": "William Bennett aimed his charge of 1987 at American colleges, but the same machinery runs outside the campus too: money given to buyers in a market whose supply cannot grow to meet it. Where else does it turn up in American policy?",
     "answer": "Section 8 housing vouchers producing rent increases in tight rental markets",
     "choices": [
       "Section 8 housing vouchers producing rent increases in tight rental markets",
@@ -23947,7 +23739,7 @@
   },
   {
     "tier": 5,
-    "question": "The Bennett Hypothesis, named for US education secretary William Bennett, says a buyer-side subsidy in a tight market flows straight through to suppliers as higher prices instead of helping the buyer. That gives an analyst a check to run before any new buyer-side subsidy gets approved. What question should the analyst ask about the supply side?",
+    "question": "A senator is about to vote for a new subsidy that helps buyers pay for something they want. Before he does, an analyst who has learned William Bennett's lesson from the college market runs one check on the sellers. What does she ask?",
     "answer": "Who has the market power to price against the newly-enhanced payment capacity",
     "choices": [
       "Who has the market power to price against the newly-enhanced payment capacity",
@@ -23960,7 +23752,7 @@
   },
   {
     "tier": 5,
-    "question": "Since William Bennett's 1987 claim that colleges raise tuition to swallow federal aid, economists have refined the Bennett Hypothesis into three specific effects. First, aid raises the sticker price colleges can charge. Second, colleges spend the extra revenue on climbing walls, fancy dorms, and thick layers of administrators rather than on more classrooms. Third, the number of students actually taught per professor barely changes. Which one sentence best captures what federal student aid does overall?",
+    "question": "Richard Vedder asked in a book of 2004 why college had grown so expensive. As for the extra revenue, from 1987 to 2011 the number of administrators on American campuses rose by roughly 87 percent, while enrolment rose by about half and students per professor hardly changed. What, as economists refined William Bennett's claim, does federal aid do?",
     "answer": "It builds administrative bureaucracy and amenity competition, not classroom capacity",
     "choices": [
       "It builds administrative bureaucracy and amenity competition, not classroom capacity",
@@ -24090,7 +23882,7 @@
   },
   {
     "tier": 1,
-    "question": "Around 2019 on Bitcoin Twitter, a short three-word slogan took over as the standard reply to any headline about a bank freeze, a country's money-printing binge, or a currency crash. Fans typed it under news stories again and again until it became the defining Bitcoin meme of the era, part of an argument that sound money could cure many modern financial ills. Which phrase was it?",
+    "question": "A Twitter user read a news story on a frozen bank account around 2019 and typed a three-word reply beneath it. The same reply turned up under story after story about collapsing currencies and governments printing money, half joke and half argument. What was it?",
     "answer": "'Bitcoin fixes this'",
     "choices": [
       "'Bitcoin fixes this'",
@@ -24103,7 +23895,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin fans often insist they want nothing to do with the much larger online scene of thousands of copycat coins, scam tokens, and centralized cryptocurrency projects. They argue Bitcoin -- launched anonymously in 2009 by Satoshi Nakamoto -- is a separate thing, sound digital money, while the wider label lumps it in with speculative junk that mostly ends in losses. What broader label do they try to distance Bitcoin from?",
+    "question": "A speaker at a Bitcoin meet-up argued that one broad label hid the only thing he valued in his coin: a supply nobody can expand. Which label did he want Bitcoin kept apart from?",
     "answer": "'Crypto' as an umbrella term including altcoins",
     "choices": [
       "'Crypto' as an umbrella term including altcoins",
@@ -24116,7 +23908,7 @@
   },
   {
     "tier": 2,
-    "question": "A 'sat' or satoshi is Bitcoin's smallest divisible unit. How many satoshis make up one Bitcoin?",
+    "question": "A buyer with twenty dollars bought a sliver of one bitcoin, counted in satoshis, the tiny units named after Bitcoin's pseudonymous creator. Each coin divides into a fixed number of them. How many satoshis make up one bitcoin?",
     "answer": "100,000,000",
     "choices": [
       "100,000,000",
@@ -24129,7 +23921,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin is a digital currency created in 2009 that trades at a wildly changing price. Some fans do not try to time the market. Instead they buy a small fixed amount on a regular schedule — every week, every payday, or every month — no matter whether the price is up or down. The smallest unit of a bitcoin is called a satoshi, or 'sat' for short. In the online Bitcoin community, what slang phrase describes this steady buying habit?",
+    "question": "A young saver put the same small sum into bitcoin on payday, as on every payday before, without a glance at the price. Wall Street's name for the habit is dollar-cost averaging, and refusing to time the market counts as a virtue among Bitcoiners. What does the Bitcoin community call it?",
     "answer": "Stacking sats",
     "choices": [
       "Stacking sats",
@@ -24142,7 +23934,7 @@
   },
   {
     "tier": 4,
-    "question": "In Bitcoin online communities on sites like Twitter and Reddit, there is a well-known dismissive slogan that Bitcoin holders throw at people who refuse to buy any Bitcoin at all. The slogan is 'Have fun staying poor.' It is snarky, but the community means it as a serious economic prediction, not just a joke. What is the slogan's core claim about people who keep their savings only in regular government dollars?",
+    "question": "A Bitcoin holder told a friend who would not buy any, 'Have fun staying poor,' a line the community throws at anyone who refuses to own the coin. The community means it as a forecast, not an insult. What does the line claim?",
     "answer": "Inflation slowly eats dollar savings, so refusing Bitcoin leaves them poorer over time",
     "choices": [
       "Inflation slowly eats dollar savings, so refusing Bitcoin leaves them poorer over time",
@@ -24155,7 +23947,7 @@
   },
   {
     "tier": 4,
-    "question": "The Bitcoin community has developed its own habits and rituals without anyone in charge: stacking sats each payday, running personal computer nodes at home, meeting up in local city groups, holding giant yearly conferences. No committee designed any of this — it grew from the bottom up. A Nobel-winning Austrian economist decades earlier had a name for exactly this kind of unplanned pattern, where useful order emerges from many separate free choices. Which economist and which idea?",
+    "question": "A Bitcoin fan ran a node on a computer at home, joined a city meet-up and went to a yearly conference, and no committee had planned any of it. The whole culture grew out of countless separate decisions, with nobody in charge. Whose idea describes it?",
     "answer": "Friedrich Hayek's spontaneous order",
     "choices": [
       "Friedrich Hayek's spontaneous order",
@@ -24168,7 +23960,7 @@
   },
   {
     "tier": 5,
-    "question": "Every year, tens of thousands of people gather at big Bitcoin conferences in Nashville, Miami, Prague, and Riga. To an outsider they might look like typical Wall Street investment events with speakers offering quick-profit stock tips. In fact they feel very different. The keynote speakers on the main stage rarely talk about short-term price forecasts or trading strategies at all. What subject actually dominates those keynote talks?",
+    "question": "A newcomer walked into a Bitcoin conference in Nashville, one of a circuit that runs to Prague and Riga, expecting the stock tips of an ordinary investment event. The keynote speakers on the main stage barely mentioned price forecasts or trading. What filled their talks instead?",
     "answer": "Talks on monetary history, sound money, and Austrian economics rather than trading tips",
     "choices": [
       "Talks on monetary history, sound money, and Austrian economics rather than trading tips",
@@ -24181,7 +23973,7 @@
   },
   {
     "tier": 1,
-    "question": "In May 2010, a programmer named Laszlo Hanyecz offered 10,000 bitcoins to anyone who would send him a meal. What simple food did he ask for?",
+    "question": "Laszlo Hanyecz, a Florida programmer, posted an offer on a web forum in May 2010: ten thousand bitcoins for anyone who would get him a meal delivered, with some left over for the next day. What did he ask for?",
     "answer": "two large pizzas",
     "choices": [
       "two large pizzas",
@@ -24194,7 +23986,7 @@
   },
   {
     "tier": 1,
-    "question": "In May 2010, a Florida programmer named Laszlo Hanyecz paid 10,000 bitcoins for two Papa John's pizzas delivered to his home. At the time each bitcoin was worth less than a penny, so the whole meal cost about forty dollars. It was one of the very first real-world purchases made with Bitcoin. Why is that trade now famous?",
+    "question": "A delivery driver brought two pizzas to a Jacksonville house on 22 May 2010, and the programmer inside had paid for them with ten thousand bitcoins, worth a fraction of a cent each. Why is that dinner famous now?",
     "answer": "Those 10,000 bitcoins would later be worth hundreds of millions of dollars",
     "choices": [
       "Those 10,000 bitcoins would later be worth hundreds of millions of dollars",
@@ -24207,7 +23999,7 @@
   },
   {
     "tier": 2,
-    "question": "On May 22, 2010, in Jacksonville, Florida, a programmer named Laszlo Hanyecz completed the first known real-world purchase using Bitcoin. He paid 10,000 bitcoin for two Papa John's pizzas delivered to his door. Bitcoin was so new and untested that a single coin was worth only a tiny fraction of a penny. Roughly what were his 10,000 bitcoin worth in US dollars that day? (Bitcoin fans still celebrate the anniversary every year as 'Pizza Day.')",
+    "question": "A Florida programmer handed over ten thousand bitcoins for two pizzas on 22 May 2010, when a single coin was worth only a small fraction of a cent. Roughly what were his coins worth in dollars that day?",
     "answer": "about $41",
     "choices": [
       "about $41",
@@ -24220,7 +24012,7 @@
   },
   {
     "tier": 2,
-    "question": "On May 22, 2010, the Florida programmer Laszlo Hanyecz paid 10,000 bitcoins for two pizzas -- one of the earliest known uses of Bitcoin to buy anything real. Bitcoiners now treat that date as a milestone. It was not the very first Bitcoin trade ever -- earlier trades had swapped Bitcoin for cash between users -- but it was the first of a special kind. Which milestone did Hanyecz's pizza order set?",
+    "question": "Laszlo Hanyecz traded ten thousand bitcoins for two pizzas on 22 May 2010, and Bitcoiners still count the trade a milestone. Bitcoins had already been swapped for dollars and for other tokens, but his order was the first of a special kind. Which milestone did it set?",
     "answer": "the first documented purchase of a physical good with Bitcoin",
     "choices": [
       "the first documented purchase of a physical good with Bitcoin",
@@ -24233,20 +24025,7 @@
   },
   {
     "tier": 3,
-    "question": "Before the 2010 pizza order made him famous, the programmer Laszlo Hanyecz had already changed Bitcoin forever. In the early days, Bitcoin mining ran on ordinary computer processors (CPUs) and produced only a trickle of new coins. In 2010, Hanyecz posted a piece of code on the bitcointalk online forum that changed how mining worked from that day on. What did the code do?",
-    "answer": "the first software that let a graphics card (GPU) mine Bitcoin",
-    "choices": [
-      "the first software that let a graphics card (GPU) mine Bitcoin",
-      "the first mobile Bitcoin wallet",
-      "the first mixing service to anonymize transactions",
-      "the first Lightning Network channel implementation"
-    ],
-    "context": "Hanyecz worked out that a GPU could hash far faster than any CPU and wrote and shared the code, inadvertently starting the mining arms race that led to FPGAs, then ASICs. Mobile wallets came later; mixing services and Lightning are unrelated projects. Source: https://en.wikipedia.org/wiki/Bitcoin_Pizza_Day.",
-    "topic": "the-bitcoin-pizza-10-000-btc-for-two-pies"
-  },
-  {
-    "tier": 3,
-    "question": "On May 22, 2010, the Florida programmer Laszlo Hanyecz paid 10,000 bitcoins for two pizzas -- one of the first real-world purchases with Bitcoin. Every year on that same date, Bitcoin holders around the world order pizzas, post lunch pictures online, and celebrate the trade that turned Bitcoin from a hobby into money you could actually spend. What is this fan holiday commonly called?",
+    "question": "A Bitcoin holder posted a photograph of his dinner online on 22 May, as holders around the world do each year, to honor a purchase Laszlo Hanyecz made in 2010 with ten thousand coins. What do they call the day?",
     "answer": "Bitcoin Pizza Day",
     "choices": [
       "Bitcoin Pizza Day",
@@ -24259,7 +24038,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2010 a programmer paid 10,000 bitcoins for two pizzas. At bitcoin's cycle highs years later, what would that same 10,000 bitcoins have been worth?",
+    "question": "A Bitcoiner looking back from the 2020s winced at the price of Laszlo Hanyecz's dinner of 2010: two pizzas for ten thousand bitcoins, bought for him by a forum user who paid Papa John's in dollars. At the highs Bitcoin reached in the 2020s, what were those coins worth?",
     "answer": "over one billion US dollars",
     "choices": [
       "over one billion US dollars",
@@ -24272,7 +24051,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2010 a programmer traded 10,000 bitcoins for two pizzas. Years later, asked if he regretted it, he said no. What was his main reason?",
+    "question": "Laszlo Hanyecz told one interviewer after another that he did not regret the two pizzas he had bought for ten thousand bitcoins in 2010, through a forum user who ordered them from Papa John's for him. What was his main reason?",
     "answer": "The trade proved bitcoin could really be spent on real goods",
     "choices": [
       "The trade proved bitcoin could really be spent on real goods",
@@ -24281,19 +24060,6 @@
       "He said he had spent years trying to undo the trade"
     ],
     "context": "Hanyecz has said in multiple interviews that Bitcoin needed to be spent before it could be money, and that being the first person to spend it on a physical good was worth more to him than the coins were then. Source: https://en.wikipedia.org/wiki/Bitcoin_Pizza_Day; Cointelegraph interview archives.",
-    "topic": "the-bitcoin-pizza-10-000-btc-for-two-pies"
-  },
-  {
-    "tier": 5,
-    "question": "In 2022, Austrian economists argued about whether Bitcoin fit Mises's Regression Theorem — the rule that money must start with some non-money use. They often pointed to the Hanyecz pizza trade as the exact moment one thing became another. Which shift does Bitcoin Pizza Day mark in that argument?",
-    "answer": "the moment Bitcoin crossed from cypherpunk collectible to a medium of exchange for goods",
-    "choices": [
-      "the moment Bitcoin crossed from cypherpunk collectible to a medium of exchange for goods",
-      "the moment Bitcoin's supply first hit the halving schedule",
-      "the moment Bitcoin's block reward first dropped below one bitcoin",
-      "the moment Bitcoin was first regulated as a security"
-    ],
-    "context": "In the Ammous-vs-Shostak debate, Bitcoin's early non-monetary use as a cypherpunk collectible satisfies the Regression Theorem; the pizza trade is the dateable moment (May 22, 2010) when it began being used to acquire ordinary goods. Halving schedule and reward cuts are separate mechanical events; Bitcoin's US legal status was settled much later. Source: https://en.wikipedia.org/wiki/Bitcoin_Pizza_Day; Ammous, The Bitcoin Standard (2018).",
     "topic": "the-bitcoin-pizza-10-000-btc-for-two-pies"
   },
   {
@@ -24389,7 +24155,7 @@
   },
   {
     "tier": 1,
-    "question": "At the end of World War II the United States demobilized fast — over 8 million American soldiers came home by June 1946. Alvin Hansen, a Harvard economist often called the 'American Keynes,' made a bold public prediction about what would happen once wartime government spending was pulled back. What did he say the economy would do?",
+    "question": "Alvin Hansen, the Harvard economist known as the American Keynes, told the public what would happen as the war budget was cut and more than eight million soldiers came home. What did he say the economy would be doing?",
     "answer": "Slipping back into depression as wartime spending was withdrawn",
     "choices": [
       "Slipping back into depression as wartime spending was withdrawn",
@@ -24402,7 +24168,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1945 World War II ended. Federal spending in Washington fell fast, and 8 million American soldiers came home looking for civilian jobs all at once. Many famous economists at the time predicted a huge slump — even a second Great Depression. What actually happened to the US jobless rate in 1946 and 1947?",
+    "question": "A returning soldier looked for a civilian job in 1946, one of more than eight million home by midyear, while federal spending dropped like a stone. Famous economists were forecasting a second Great Depression. What happened to the American jobless rate in 1946 and 1947?",
     "answer": "Stayed around 4 percent",
     "choices": [
       "Stayed around 4 percent",
@@ -24415,7 +24181,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1946 book Economics in One Lesson, Henry Hazlitt said the end of World War II proved one Bastiat argument in the real world. All that wartime spending had not been what kept the country rich. Which Bastiat argument did Hazlitt say the postwar drop proved?",
+    "question": "Paul Krugman suggested in a New York Times column of 14 September 2001 that the wreckage might help the economy, so much would need rebuilding. The column became the modern textbook case of the fallacy in a Frederic Bastiat parable; Henry Hazlitt had read the demobilization of 1946 as the same parable run backwards. Which parable?",
     "answer": "The broken window",
     "choices": [
       "The broken window",
@@ -24427,21 +24193,8 @@
     "topic": "the-broken-window-applied-to-war-and-disaster-stimulus"
   },
   {
-    "tier": 2,
-    "question": "Right after the September 11, 2001 attacks on New York and the Pentagon, the New York Times economist Paul Krugman wrote a column suggesting the vast destruction might do some economic good, since so much would have to be rebuilt. Economists pointed out that this misses a classic warning the Frenchman Frederic Bastiat had made back in 1850. What thinking mistake did that column make?",
-    "answer": "The broken window fallacy",
-    "choices": [
-      "The broken window fallacy",
-      "The sunk cost fallacy",
-      "The law of supply and demand",
-      "The tragedy of the commons"
-    ],
-    "context": "Krugman's September 14 2001 NYT column, and follow-ups on Hurricane Katrina and the 2011 Japan earthquake, applied broken-window logic to disasters and terrorist attacks. He later walked the framing back. Source: nytimes.com (Krugman archive, September 14 2001).",
-    "topic": "the-broken-window-applied-to-war-and-disaster-stimulus"
-  },
-  {
     "tier": 3,
-    "question": "Bastiat teaches you to look for the hidden cost that a 'destruction helps the economy' claim ignores. Hurricane Katrina cost about $100 billion to rebuild. What did people in Louisiana and Mississippi end up with by late 2006, compared to before the storm?",
+    "question": "A Mississippi family moved back into its rebuilt house in late 2006, after Hurricane Katrina; putting the Gulf coast back together had cost on the order of a hundred billion dollars. Some had said the storm would lift the Gulf economy. Set beside life before the storm, what had the families of the Gulf ended up with?",
     "answer": "The same houses they had before, minus a year of alternative economic activity plus deaths and injuries",
     "choices": [
       "The same houses they had before, minus a year of alternative economic activity plus deaths and injuries",
@@ -24453,21 +24206,8 @@
     "topic": "the-broken-window-applied-to-war-and-disaster-stimulus"
   },
   {
-    "tier": 3,
-    "question": "When the September 11 attack destroyed the Twin Towers in New York, huge quantities of steel, concrete, and skilled workers were pulled in to rebuild them. Bastiat's method asks a critical question. What did the country lose the chance to build with all those same workers and materials?",
-    "answer": "Other new office buildings and other homes those workers and materials could have produced instead",
-    "choices": [
-      "Other new office buildings and other homes those workers and materials could have produced instead",
-      "The federal defense programs Congress passed later in 2001",
-      "The airport-security jobs the government hired for after the attacks",
-      "The insurance-industry reserves for covering future attacks"
-    ],
-    "context": "The classic seen/unseen split for reconstruction: the WTC rebuild used labor and materials that would otherwise have built new offices in Queens or new homes on Long Island. The rebuild is SEEN; those other buildings are UNSEEN because they never got built. Source: mises.org/mises-daily/broken-window-fallacy-and-911.",
-    "topic": "the-broken-window-applied-to-war-and-disaster-stimulus"
-  },
-  {
     "tier": 4,
-    "question": "The end of World War II is the biggest peacetime drop in federal spending ever recorded. About how much did federal spending fall from 1945 to 1946?",
+    "question": "Henry Hazlitt pointed, in his book of 1946 for ordinary readers, to the demobilization of that year, when federal spending fell faster than in any peacetime year ever recorded and millions of soldiers came home. By about how much did federal spending fall from 1945 to 1946?",
     "answer": "By close to two-thirds",
     "choices": [
       "By close to two-thirds",
@@ -24479,21 +24219,8 @@
     "topic": "the-broken-window-applied-to-war-and-disaster-stimulus"
   },
   {
-    "tier": 4,
-    "question": "In 1946, as 8 million American soldiers came home from World War II and federal wartime spending collapsed, most economists feared a huge slump. It did not come. That same year an American journalist named Henry Hazlitt published a short book aimed at ordinary readers. It laid out Frédéric Bastiat's seen-and-unseen way of thinking for a mass audience, just as the postwar transition was quietly proving the doom-predicting economists wrong. Which book was it?",
-    "answer": "Economics in One Lesson",
-    "choices": [
-      "Economics in One Lesson",
-      "The Road to Serfdom",
-      "Human Action",
-      "Bureaucracy"
-    ],
-    "context": "Hazlitt's Economics in One Lesson (Harper & Brothers, 1946) appeared alongside the demobilization it explained: the broken-window and public-works chapters map directly onto the postwar reallocation. Source: fee.org/resources/economics-in-one-lesson.",
-    "topic": "the-broken-window-applied-to-war-and-disaster-stimulus"
-  },
-  {
     "tier": 5,
-    "question": "The general Bastiat lesson from the 1946 postwar demobilization can be stated in one sentence about released resources and where they went next. Millions of soldiers came home, and fifty-four billion dollars of federal spending was freed up. What did all those released workers and dollars end up doing?",
+    "question": "A sailor came home in 1946, one of millions released from the forces as some fifty-four billion dollars a year of federal spending vanished. Frederic Bastiat's reasoning and the gloomy forecasts of the day disagreed about where such men and dollars would go. What became of all those released workers and dollars?",
     "answer": "Were absorbed by private demand and investment within months of the transition",
     "choices": [
       "Were absorbed by private demand and investment within months of the transition",
@@ -24506,7 +24233,7 @@
   },
   {
     "tier": 5,
-    "question": "A whole family of claims -- 'the September 11 attacks help the economy,' 'World War Two ended the Great Depression,' 'Hurricane Katrina will boost the Gulf Coast' -- all share the same Bastiat-style error. What two things are they wrongly treating as equal?",
+    "question": "Frederic Bastiat answered an error in 1850 that every generation has made again since: that a world war ended the Depression, that the September 2001 attacks were a boon to business, and that a hurricane could lift the Gulf economy. Which two things does each claim treat as one?",
     "answer": "Destruction and production",
     "choices": [
       "Destruction and production",
@@ -24519,7 +24246,7 @@
   },
   {
     "tier": 1,
-    "question": "A boy throws a rock through a shopkeeper's window. Some people say, 'at least this creates work for the window-maker!' What are they forgetting?",
+    "question": "Frederic Bastiat told of a shopkeeper's careless son who broke the shop window. The neighbours who gathered round called it good for trade, since the pane would have to be replaced. What were they forgetting?",
     "answer": "The shopkeeper could have spent that money on something new instead of just replacing what he had",
     "choices": [
       "The shopkeeper could have spent that money on something new instead of just replacing what he had",
@@ -24532,7 +24259,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1850 the French economist Frederic Bastiat wrote a famous parable. A shopkeeper's careless son smashes a windowpane in his father's shop. Neighbors console the father by pointing out that the glazier now earns money repairing it. Bastiat names a specific sum the shopkeeper must pay the glazier for the new glass. Which number of francs does Bastiat name?",
+    "question": "A careless boy smashes his father's shop window in Frederic Bastiat's parable of 1850, and the father must pay for new glass. Bastiat names the exact price, since everything in the story hangs on that sum. How many francs?",
     "answer": "Six francs",
     "choices": [
       "Six francs",
@@ -24545,7 +24272,7 @@
   },
   {
     "tier": 2,
-    "question": "In Frederic Bastiat's 1850 essay 'That Which Is Seen and That Which Is Not Seen,' a French shopkeeper's window is smashed by his careless son. The neighbors gather around and try to console him by pointing at a specific trade the broken pane has just fed with six francs of new business. Which trade do they say has been given that money?",
+    "question": "The shopkeeper in Frederic Bastiat's essay of 1850 stands before the window his son has smashed while the neighbours try to cheer him up. They point to one tradesman the accident has just handed a job. Which trade do they name?",
     "answer": "The glazier",
     "choices": [
       "The glazier",
@@ -24557,21 +24284,8 @@
     "topic": "the-broken-window-the-shopkeepers-son-and-the-missing-coat"
   },
   {
-    "tier": 2,
-    "question": "In Bastiat's broken-window story, the shopkeeper has to spend six francs replacing the glass. Bastiat's whole point is that this money was already planned for something else the shopkeeper now cannot buy. What is the name for that other, invisible purchase?",
-    "answer": "The unseen",
-    "choices": [
-      "The unseen",
-      "The multiplier",
-      "The stimulus",
-      "The externality"
-    ],
-    "context": "The tailor's foregone coat is Bastiat's chosen UNSEEN alternative: 'It is not seen that as our shopkeeper has spent six francs upon one thing, he cannot spend them upon another.' Source: mises.org/library/what-seen-and-what-not-seen.",
-    "topic": "the-broken-window-the-shopkeepers-son-and-the-missing-coat"
-  },
-  {
     "tier": 3,
-    "question": "Bastiat ends his broken-window chapter with a plain accounting summary. Before the break, the shopkeeper had a window and six francs; after the break, he has only a window. What single-sentence summary does Bastiat give about the community as a whole?",
+    "question": "Frederic Bastiat closed his broken-window chapter with a plain sum. Before the accident the shopkeeper had both his money and his pane; after it, he had a pane and no money. What did Bastiat conclude about the community as a whole?",
     "answer": "The community is exactly one window poorer",
     "choices": [
       "The community is exactly one window poorer",
@@ -24584,7 +24298,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1850 the French writer Frédéric Bastiat published a famous essay called 'That Which Is Seen, and That Which Is Not Seen.' In it, a shopkeeper's window is smashed by his careless son. Neighbors gather and try to comfort the shopkeeper by claiming his loss will actually be someone else's gain, since he now must pay the glazier. They open their speech with an old English proverb about wind and misfortune — and that proverb is now the folk name for the very fallacy Bastiat is refuting. Which proverb do they cite?",
+    "question": "The shopkeeper's neighbours in Frederic Bastiat's broken-window story remind him that everybody has to earn a living, and ask what the glass trade would do if panes never broke. They open their speech with an old English proverb, now the folk name of the very error Bastiat refutes. Which proverb?",
     "answer": "It is an ill wind that blows nobody good",
     "choices": [
       "It is an ill wind that blows nobody good",
@@ -24596,47 +24310,8 @@
     "topic": "the-broken-window-the-shopkeepers-son-and-the-missing-coat"
   },
   {
-    "tier": 4,
-    "question": "On September 14, 2001, three days after the 9/11 attacks destroyed the World Trade Center in New York City, the Nobel-winning economist Paul Krugman wrote a column in The New York Times suggesting the terrorist attacks might 'do some economic good' by forcing massive rebuilding. Austrian and libertarian writers immediately pushed back with an objection drawn straight from Bastiat's broken-window essay. What was that Bastiat-based objection?",
-    "answer": "The resources spent rebuilding could no longer be spent on other new construction",
-    "choices": [
-      "The resources spent rebuilding could no longer be spent on other new construction",
-      "The reconstruction would depress interest rates below their natural equilibrium",
-      "The insurance-industry payouts would fail to trigger a Keynesian multiplier",
-      "The federal deficit would rise faster than the private-sector recovery"
-    ],
-    "context": "The classic seen/unseen objection: the labor and capital that rebuilt lower Manhattan could not simultaneously build new offices in Queens. Krugman later walked the framing back; the objection has been standard Austrian-classroom material ever since. Source: cato.org/commentary/broken-window-fallacy-still-fooling-people.",
-    "topic": "the-broken-window-the-shopkeepers-son-and-the-missing-coat"
-  },
-  {
-    "tier": 4,
-    "question": "In 2009 the federal government paid buyers a cash rebate to trade in older vehicles for newer ones. But the trade-ins had to be destroyed by pouring sodium silicate directly into the engine. Which 2009 program is now the textbook broken-window example?",
-    "answer": "Cash for Clunkers",
-    "choices": [
-      "Cash for Clunkers",
-      "The American Recovery and Reinvestment Act",
-      "The Home Affordable Modification Program",
-      "The Troubled Asset Relief Program"
-    ],
-    "context": "Formally the Car Allowance Rebate System (CARS Act, June-August 2009): roughly 690,000 running used cars were destroyed to qualify buyers for a $3,500-$4,500 rebate on a new one. Source: brookings.edu/articles/cash-for-clunkers-an-evaluation-of-the-car-allowance-rebate-system.",
-    "topic": "the-broken-window-the-shopkeepers-son-and-the-missing-coat"
-  },
-  {
     "tier": 5,
-    "question": "The French economist Frederic Bastiat's 1850 broken-window essay was titled 'That Which Is Seen and That Which Is Not Seen.' From it economists took a shorthand rule for judging any policy or news story: look past the visible effect that everyone notices. Beyond that visible effect, what else must you always look for?",
-    "answer": "The unseen effects it hides",
-    "choices": [
-      "The unseen effects it hides",
-      "The nominal multiplier it produces",
-      "The distributional coefficient it triggers",
-      "The aggregate elasticity it embeds"
-    ],
-    "context": "The essay's title is the whole method: what is SEEN vs what is NOT SEEN. Every worked example in Bastiat, Hazlitt, Sowell, and Friedman since is another application of that single move. Source: fee.org/resources/what-is-seen-and-what-is-not-seen.",
-    "topic": "the-broken-window-the-shopkeepers-son-and-the-missing-coat"
-  },
-  {
-    "tier": 5,
-    "question": "In 1980 the American economist Milton Friedman — already famous for winning the Nobel Prize — published a bestselling book called 'Free to Choose' with his wife Rose, and hosted a popular ten-part public television series by the same name on PBS (the Public Broadcasting Service). It taught millions of viewers Frédéric Bastiat's seen-and-unseen way of thinking. Friedman's central argument was that free markets keep the power over daily choices — what to buy, where to live, how to work — in whose hands?",
+    "question": "Milton Friedman carried Bastiat's habit of looking for hidden effects to a mass audience in 1980, in a ten-part public-television series and a book written with his wife Rose, both called Free to Choose. Its episodes ran from schools and welfare to consumer safety and inflation. In whose hands, he argued, do the everyday choices of a life belong?",
     "answer": "Ordinary people's hands, not central planners' hands",
     "choices": [
       "Ordinary people's hands, not central planners' hands",
@@ -24649,7 +24324,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1962, the American economists James Buchanan and Gordon Tullock published the book that founded public choice as an academic field — the study of how self-interested people actually behave inside government, not just in markets. The University of Michigan Press printed it. What was the title?",
+    "question": "Two Virginia economists, James Buchanan and Gordon Tullock, brought out a book through the University of Michigan Press in 1962 that founded a field. It treated the state not as a referee but as people with interests of their own. What is its title?",
     "answer": "The Calculus of Consent",
     "choices": [
       "The Calculus of Consent",
@@ -24662,7 +24337,7 @@
   },
   {
     "tier": 1,
-    "question": "For a long time most economists assumed that everyone working inside government — voters at the ballot box, elected politicians, and career civil servants — always tried to do what was best for the whole country. In the 1960s two American economists, James Buchanan and Gordon Tullock, said no: those insiders act on their own self-interest just like the rest of us. Which group of insiders did Buchanan and Tullock have in mind?",
+    "question": "Gordon Tullock and James Buchanan threw out, in 1962, the old picture of government as a referee standing above everyone's self-interest. Whom did they treat as just as self-interested as any shopper or factory owner?",
     "answer": "Voters, politicians, and bureaucrats",
     "choices": [
       "Voters, politicians, and bureaucrats",
@@ -24675,7 +24350,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1960s the American economists James Buchanan and Gordon Tullock founded a school of thought called public choice economics. They said politics really has two levels. The lower level is choices made within the existing rules — everyday votes on things like taxes, tariffs, and subsidies. The upper level is the level where the rules themselves get chosen. What did Buchanan and Tullock call that upper level?",
+    "question": "A voter fights over a tax or a tariff within the rules already in place, on the lower of the two floors of politics in James Buchanan and Gordon Tullock's book of 1962. On the upper floor, the rules themselves are chosen. What did the two authors call that upper floor?",
     "answer": "The constitutional level",
     "choices": [
       "The constitutional level",
@@ -24687,21 +24362,8 @@
     "topic": "the-calculus-of-consent-1962"
   },
   {
-    "tier": 2,
-    "question": "In their 1962 book The Calculus of Consent, the American economists James Buchanan and Gordon Tullock argued that when citizens sit down to pick constitutional rules, they cannot know whether they will later end up on the winning or losing side of the votes those rules produce. What phrase did they use for this rule-choosing mindset?",
-    "answer": "The veil of uncertainty",
-    "choices": [
-      "The veil of uncertainty",
-      "The veil of ignorance",
-      "The original position",
-      "The natural condition"
-    ],
-    "context": "The 'veil of uncertainty' is Buchanan-Tullock's term. Individuals reasoning about future political outcomes rationally consent to rules that limit majority power. Source: Buchanan + Tullock, Calculus of Consent (1962), Chapter 6.",
-    "topic": "the-calculus-of-consent-1962"
-  },
-  {
     "tier": 3,
-    "question": "A philosopher asked a challenging question. What rules would you pick for your society if you did not yet know whether you would be born rich or poor, healthy or sick, popular or friendless? Choosing rules without knowing your own future spot is called reasoning from behind what?",
+    "question": "John Rawls, a philosopher, asked in 1971 which rules a man would pick for his society before learning whether he would be born rich or poor, healthy or sick. Choosing rules without knowing one's own future place is reasoning from behind what, in his phrase?",
     "answer": "A veil of ignorance",
     "choices": [
       "A veil of ignorance",
@@ -24714,7 +24376,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1962, two American economists — James Buchanan and Gordon Tullock — published a book called 'The Calculus of Consent.' It attacked a rosy view of majority voting: the idea that any vote by a majority must reflect the true will of the people. Buchanan and Tullock argued real votes get shaped by other, hidden forces instead. What three forces did their book say actually drive most majority outcomes?",
+    "question": "James Buchanan and Gordon Tullock asked in their book of 1962, written at the University of Virginia, what a bare majority's vote, fifty-one percent against forty-nine, really reveals about the people who cast it. What did they say drives most such outcomes?",
     "answer": "Interest-group pressure, logrolling, and rational ignorance",
     "choices": [
       "Interest-group pressure, logrolling, and rational ignorance",
@@ -24727,7 +24389,7 @@
   },
   {
     "tier": 3,
-    "question": "In The Calculus of Consent (1962), the American economists James Buchanan and Gordon Tullock argued that people picking constitutional rules from behind their 'veil of uncertainty' would demand higher-than-majority thresholds for some especially big decisions — because a bare 51 percent could too easily strip a losing minority of rights. What term describes these higher-than-majority thresholds?",
+    "question": "A delegate sits down to help write a constitution, not knowing whether he will end up among the winners or the losers of the votes it will govern. By James Buchanan and Gordon Tullock's reasoning, a margin of fifty-one percent is too slim to trust with a minority's rights on the gravest questions. Which kind of rule does he insist on for those?",
     "answer": "Supermajority rules",
     "choices": [
       "Supermajority rules",
@@ -24740,7 +24402,7 @@
   },
   {
     "tier": 4,
-    "question": "The economists James Buchanan and Gordon Tullock met at the University of Virginia after Tullock left the US Foreign Service in 1958. Together they founded what would become 'public choice' — the economics of how politicians and voters really behave. But research costs money. One big American foundation gave them the key early grant that funded their 1962 book 'The Calculus of Consent.' Which foundation was it?",
+    "question": "Gordon Tullock left the US Foreign Service in 1958 and met James Buchanan at the University of Virginia, where the two began the work that became public choice. Early money for their Virginia program came from one big American foundation, an irony given what the program later said about organized interests. Which foundation?",
     "answer": "The Ford Foundation",
     "choices": [
       "The Ford Foundation",
@@ -24753,7 +24415,7 @@
   },
   {
     "tier": 4,
-    "question": "James Buchanan and Gordon Tullock's 1962 book 'The Calculus of Consent' laid down most of the founding ideas of public choice — the economics of politics. But one idea below was actually borrowed from a different founding book of the field, not first laid out here. Which one did 'The Calculus of Consent' NOT introduce?",
+    "question": "A student hunts through James Buchanan and Gordon Tullock's book of 1962 for the founding ideas of public choice. She finds most of them, but one idea first appears three years later, in a book by someone else. Which idea is missing?",
     "answer": "The concentrated-benefits / dispersed-costs pattern of collective action",
     "choices": [
       "The concentrated-benefits / dispersed-costs pattern of collective action",
@@ -24765,21 +24427,8 @@
     "topic": "the-calculus-of-consent-1962"
   },
   {
-    "tier": 5,
-    "question": "The book Calculus of Consent became famous in public-choice theory because it drew one crucial distinction between two kinds of political question. That distinction is at the center of the book's whole analysis. Which distinction does the book emphasize?",
-    "answer": "The distinction between the RULES of the game and the choices WITHIN the rules",
-    "choices": [
-      "The distinction between the RULES of the game and the choices WITHIN the rules",
-      "The distinction between right-wing and left-wing voters",
-      "The distinction between economic policy and social policy",
-      "The distinction between elected and appointed officials"
-    ],
-    "context": "The constitutional / post-constitutional distinction is Buchanan's most enduring contribution. Individuals may agree on the rules (constitutional consent) while disagreeing on the choices made under the rules (post-constitutional politics). Source: Buchanan + Tullock, Calculus of Consent (1962), preface and Chapter 6.",
-    "topic": "the-calculus-of-consent-1962"
-  },
-  {
-    "tier": 5,
-    "question": "Half a century after James Buchanan and Gordon Tullock published The Calculus of Consent — the founding text of public choice, which helped win Buchanan the 1986 Nobel in economics — its influence extended far beyond formal scholarship. In one sentence, how is the book's abiding lesson best summarized?",
+    "tier": 4,
+    "question": "James Buchanan took the 1986 Nobel for work built on one distinction from the book he wrote with Gordon Tullock in 1962. Two neighbours can fight hard about a tax rate yet agree completely on the way tax rates should be set. What lesson did Buchanan draw, in a single line?",
     "answer": "How the rules are chosen matters more than who wins under the rules",
     "choices": [
       "How the rules are chosen matters more than who wins under the rules",
@@ -24792,7 +24441,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1821 Britain formally committed that its central bank would redeem paper pound notes for gold at a fixed price, the rate its Mint had held since 1717. This launched a monetary system that would become the model for the industrial world. What is that system called?",
+    "question": "Isaac Newton fixed the price of gold at Britain's Mint in 1717. In 1821 the Bank of England went back to paying gold for paper pounds at his price, and the industrial world followed. What is that system called?",
     "answer": "The gold standard",
     "choices": [
       "The gold standard",
@@ -24805,7 +24454,7 @@
   },
   {
     "tier": 1,
-    "question": "Before 1914, the world ran on the classical gold standard. Each major country's currency — the British pound, the American dollar, the French franc — was tied to gold at a fixed weight. Because every currency locked to gold, the exchange rates between currencies were locked too. For most of the years before 1914, one British pound was worth about how many US dollars?",
+    "question": "A London merchant read the pound-dollar rate in his trade paper before 1914 and found the figure that had stood there decade after decade, quoted like a constant in physics. About how many dollars did one pound buy?",
     "answer": "About 4.86 dollars",
     "choices": [
       "About 4.86 dollars",
@@ -24818,7 +24467,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1871, the newly-unified Germany of Otto von Bismarck adopted the gold standard, switching from silver. The switch demanded enormous sums of gold. Germany paid for it out of a huge war indemnity extracted from a European power it had just defeated in a short, decisive war. Which payment funded Germany's move to gold?",
+    "question": "Otto von Bismarck set out in 1871 to move his newly unified Germany from silver to gold, and the switch needed an enormous hoard of the metal. The hoard came from a power Germany had just beaten in a short war. Which payment funded the move?",
     "answer": "The French war reparations after the Franco-Prussian War",
     "choices": [
       "The French war reparations after the Franco-Prussian War",
@@ -24831,7 +24480,7 @@
   },
   {
     "tier": 2,
-    "question": "The classical gold standard tied paper money to gold at a fixed weight. Under that system in Britain, prices in 1914 were roughly the same as prices in 1821 — a full century apart. Britain industrialized massively over those hundred years, but the price of bread or coal barely drifted. What single word describes prices that stay flat over the long run like that?",
+    "question": "A London shopper spent a pound on bread and coal in 1914, after a century in which Britain had built its railways and factories. What word describes British prices since 1821, under gold-backed money?",
     "answer": "Stable",
     "choices": [
       "Stable",
@@ -24844,7 +24493,7 @@
   },
   {
     "tier": 3,
-    "question": "Under the classical gold standard before 1914, a working-class Italian family in Naples could receive money from a son laboring in London without worrying about currency conversion. If he mailed home five pounds sterling, the equivalent value in Italian lira arrived — the same worth across the whole trip, nothing eaten by shifting rates. What feature of the system made that possible?",
+    "question": "A labourer in London posted five pounds home to his family in Naples before 1914, sure that the lire they received would be worth just what he had mailed, with nothing lost to shifting rates. What made him so sure?",
     "answer": "Both currencies were redeemable for gold at fixed ratios, so their exchange rate was essentially fixed",
     "choices": [
       "Both currencies were redeemable for gold at fixed ratios, so their exchange rate was essentially fixed",
@@ -24857,7 +24506,7 @@
   },
   {
     "tier": 3,
-    "question": "The Austrian economist Ludwig von Mises, writing after World War II, looked back on the classical gold standard — the 1870s-to-1914 arrangement in which each currency was legally fixed to a real weight of gold. He read its meaning as political, not merely economic, because it bound governments' hands. How did Mises describe it?",
+    "question": "Ludwig von Mises argued after the Second World War that money anchored to gold had tied governments' hands, since a government that cannot print must persuade taxpayers or lenders to pay for what it wants. How did he describe the gold-based system of 1815 to 1914?",
     "answer": "The most important instrument of the constitution of freedom",
     "choices": [
       "The most important instrument of the constitution of freedom",
@@ -24870,7 +24519,7 @@
   },
   {
     "tier": 4,
-    "question": "Under the classical gold standard (1870s to 1914), every paper dollar or pound was legally redeemable for a fixed weight of real gold held in a vault. That put a hard limit on how much money a government could print, and therefore on how much it could spend without raising honest taxes. What did those honest gold-backed budgets make too costly to fund?",
+    "question": "A finance minister sat down before 1914 to find the money for a larger budget, knowing that every note he issued could be redeemed in gold on demand. He could raise it only through taxes that lawmakers would pass or loans that investors would take up. What did that discipline make too costly to fund?",
     "answer": "Fighting long industrial wars by inflation",
     "choices": [
       "Fighting long industrial wars by inflation",
@@ -24883,7 +24532,7 @@
   },
   {
     "tier": 4,
-    "question": "Between 1871 and 1914 most of Europe ran on gold-backed money. What is one big economic feature people remember from that time?",
+    "question": "A family paid its own way from Europe to America before 1914, in an age when people and capital moved between countries on private money and most of Europe ran on gold. What do people remember as the economic mark of that era, from 1871 to 1914?",
     "answer": "Rising trade, a growing middle class, and long stretches of stable prices",
     "choices": [
       "Rising trade, a growing middle class, and long stretches of stable prices",
@@ -24896,7 +24545,7 @@
   },
   {
     "tier": 5,
-    "question": "For nearly a hundred years, most European currencies had been redeemable for gold at fixed weights — the classical gold standard. Then in the first week of one specific month in 1914, every major belligerent in Europe suspended gold convertibility so its government could print new money to pay for the coming Great War. That month ended the classical gold standard forever. Which month was it?",
+    "question": "A Berliner who brought a banknote to be paid in gold on the fourth day of one month in 1914 was turned away, and the other warring powers shut their gold windows within the week. A century of gold-backed money was not defeated; it was switched off. In which month?",
     "answer": "August 1914",
     "choices": [
       "August 1914",
@@ -24909,7 +24558,7 @@
   },
   {
     "tier": 5,
-    "question": "Austrian economists praised the classical gold standard for a political reason, not a monetary one. Because the money supply could not expand at will, governments had to live within their budgets, and paying for a war with printed money became painful. Which specific effect do they emphasize most?",
+    "question": "A Briton took a paper pound to the Bank of England before 1914 and walked out with gold, as anyone could, so no chancellor could quietly print his way to a bigger budget. Austrian economists value the old standard less for its economics than for its politics. Which effect do they stress?",
     "answer": "It imposed a hard budget constraint on the state and made war spending painful",
     "choices": [
       "It imposed a hard budget constraint on the state and made war spending painful",
@@ -24922,7 +24571,7 @@
   },
   {
     "tier": 1,
-    "question": "There is a famous story from British-ruled India about colonial rulers who tried to solve a snake problem in one big city by offering a cash reward for every dead cobra. The plan backfired so badly that economists still use the story to name a whole class of well-meaning policies that produce perverse results — the Cobra Effect. In which Indian city is the original story set?",
+    "question": "Horst Siebert, a German economist, told a tale from British India in a book of 2001 about policies that backfire. In it, colonial officials set out to rid one great city of cobras, though no archive confirms the scheme ever ran. Which city?",
     "answer": "Delhi",
     "choices": [
       "Delhi",
@@ -24935,7 +24584,7 @@
   },
   {
     "tier": 1,
-    "question": "The British rulers wanted fewer cobras in the city. They set up a payment plan to get people to help. What did the government offer?",
+    "question": "A British official, as the story goes, wanted the capital rid of its venomous snakes and set up a payment to get the city's people to help. What, in the tale, did he offer?",
     "answer": "A cash bounty for every dead cobra brought in",
     "choices": [
       "A cash bounty for every dead cobra brought in",
@@ -24948,7 +24597,7 @@
   },
   {
     "tier": 2,
-    "question": "In British-ruled Delhi, colonial officials worried that cobras were killing too many people, so they offered a bounty: bring in a dead cobra, get paid. Poor Delhiites quickly found a way to work the system that never crossed the government's mind. This is the origin of the 'Cobra Effect' — good-intentions policy that produces the opposite of what leaders hoped. What did the locals start doing to cash in on the bounty?",
+    "question": "A man in British Delhi, in the old story, found a better way to earn the money officials paid for dead cobras than hunting the snakes. The scheme gave the cobra effect its name. What did he and his neighbours do?",
     "answer": "Began breeding cobras in their back yards for the bounty",
     "choices": [
       "Began breeding cobras in their back yards for the bounty",
@@ -24961,7 +24610,7 @@
   },
   {
     "tier": 2,
-    "question": "In British-ruled Delhi, colonial officials worried about the cobras in the streets and offered a cash bounty for every dead cobra brought to the authorities — the story that gave the 'Cobra Effect' its name. Locals soon began breeding cobras just to collect the reward. When the government caught on and stopped paying, what did the breeders do with all their now-worthless snakes?",
+    "question": "Officials in British Delhi, in the tale, cancelled their payments for dead cobras once they noticed what the payments had produced. The cobras in the city's back yards were suddenly worth nothing. What did their owners do with them?",
     "answer": "Released the now-worthless cobras into the streets",
     "choices": [
       "Released the now-worthless cobras into the streets",
@@ -24974,7 +24623,7 @@
   },
   {
     "tier": 3,
-    "question": "A very similar bounty story is well-recorded from French colonial rule in Southeast Asia. In the early 1900s the French administration in one of its capital cities wanted to cut the rat population and paid a bounty per severed rat tail. Locals promptly started breeding rats — or clipping the tails off live rats and releasing them to breed again. Which city was this?",
+    "question": "A rat-catcher in a French colonial city snipped the tail from a live rat in 1902, turned it in for the bounty, and let the animal go to breed. The scheme is better documented than the cobra tale. In which city did it happen?",
     "answer": "Hanoi",
     "choices": [
       "Hanoi",
@@ -24987,7 +24636,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1975, the British economist Charles Goodhart was studying how the Bank of England tried to control the money supply. He noticed something strange: the moment officials picked a specific number to grade themselves against, that number stopped working as an honest measurement — people gamed it. His short rule is now paraphrased everywhere as: 'When a measure becomes a ___, it stops being a good measure.' What word fills in the blank?",
+    "question": "Charles Goodhart, a British economist, was watching the Bank of England try to control the money supply in 1975 when he spotted a pattern. Once officials chose one figure to be graded on, it stopped measuring what it used to, because everyone began managing the figure itself. By his rule, a measure stops telling the truth once it becomes what?",
     "answer": "A target",
     "choices": [
       "A target",
@@ -25000,7 +24649,7 @@
   },
   {
     "tier": 4,
-    "question": "In the mid-2010s, Wells Fargo — one of the biggest banks in America — told every teller: hit your monthly quota for opening new customer accounts, or lose your bonus. Tellers responded by opening millions of fake accounts customers had never asked for. Whole families got credit cards they'd never signed up for. Economists call this a textbook case of Goodhart's Law. What is the lesson from the story?",
+    "question": "A Wells Fargo banker facing a monthly quota of new accounts in the mid-2010s, with her bonus at stake, opened accounts that customers never requested. Her colleagues opened millions more, and whole families found credit cards they had never signed up for. What lesson does the episode teach?",
     "answer": "Reward a target instead of the real goal and people will hit the target in harmful ways",
     "choices": [
       "Reward a target instead of the real goal and people will hit the target in harmful ways",
@@ -25013,7 +24662,7 @@
   },
   {
     "tier": 4,
-    "question": "From 2001 to 2015, a US federal education law tied school funding partly to standardized test scores. Critics complained schools started teaching only what appeared on the standardized test, and they called that pattern 'teaching to the test.' What was the popular name of that law?",
+    "question": "An American teacher in the 2000s drilled her pupils on what the state test would ask, under a federal law that tied part of her school's funding to its scores. Teachers called the habit teaching to the test. What was the law's popular name?",
     "answer": "No Child Left Behind",
     "choices": [
       "No Child Left Behind",
@@ -25026,7 +24675,7 @@
   },
   {
     "tier": 5,
-    "question": "The Cobra Effect, Goodhart's Law, and the Hanoi rat bounty all illustrate the same hidden pattern of unintended consequences. When policy creates a reward, people respond in ways nobody planned. In 2010, a US health law fined hospitals when patients returned within 30 days of discharge, and some hospitals responded creatively. What did they do to avoid the fine?",
+    "question": "A hospital administrator studied the 2010 American health law that fined a hospital whenever a discharged patient came back within thirty days. Some hospitals found a way to avoid the fine that improved the measured number without necessarily helping patients. What did they do?",
     "answer": "Held patients in the emergency department under observation rather than formally admitting them",
     "choices": [
       "Held patients in the emergency department under observation rather than formally admitting them",
@@ -25039,7 +24688,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1950s, most experts said the government should run more of the economy. One economist wrote a big book to defend an older idea. He said free people making their own choices is better than a small group planning for all. What is that older idea called?",
+    "question": "Friedrich Hayek finished a book at Chicago in 1959, when most experts held that the state should run more of the economy. It defended an older tradition, in which free people choose for themselves rather than planners choosing for all. What is that tradition called?",
     "answer": "Classical liberalism",
     "choices": [
       "Classical liberalism",
@@ -25051,21 +24700,8 @@
     "topic": "the-constitution-of-liberty-1960"
   },
   {
-    "tier": 1,
-    "question": "Friedrich Hayek — the Austrian-born economist and 1974 Nobel laureate — wrote his big 1960 book 'The Constitution of Liberty' while teaching at the University of Chicago. But he was not in Chicago's famous economics department. He was in a small interdisciplinary program that also housed the novelist Saul Bellow and the philosopher Allan Bloom. What was that program called?",
-    "answer": "The Committee on Social Thought",
-    "choices": [
-      "The Committee on Social Thought",
-      "The Chicago School of Sociology",
-      "The Cowles Commission",
-      "The Committee on Human Development"
-    ],
-    "context": "Hayek held the Committee on Social Thought chair at Chicago from 1950 through the late 1950s; The Constitution of Liberty was written there. Source: University of Chicago Press catalog listing (https://press.uchicago.edu/ucp/books/book/chicago/C/bo9253956.html).",
-    "topic": "the-constitution-of-liberty-1960"
-  },
-  {
     "tier": 2,
-    "question": "In his 1960 book 'The Constitution of Liberty,' the Austrian economist Friedrich Hayek insists that liberty means one specific, narrow thing. Liberty is NOT wealth. It is NOT political voice. It is NOT economic power. Liberty, Hayek says, is simply not being forced to serve another person's will. What single condition does Hayek call true liberty?",
+    "question": "Friedrich Hayek began The Constitution of Liberty by pinning down a word most people use loosely: liberty. It is not wealth, he wrote, nor a political voice, nor power over one's circumstances. What is it?",
     "answer": "The absence of coercion by another person",
     "choices": [
       "The absence of coercion by another person",
@@ -25078,7 +24714,7 @@
   },
   {
     "tier": 2,
-    "question": "Friedrich Hayek's 1960 book 'The Constitution of Liberty' is organized in three named parts. Part I sets up the philosophical foundations — what freedom is and why it matters. Part II covers the legal framework: the rule of law, the constitution, and private property. Part III applies the ideas to specific policies like taxation and welfare. What title did Hayek give to Part I?",
+    "question": "A student opening Friedrich Hayek's The Constitution of Liberty of 1960 finds it laid out in three parts. The first makes the philosophical case before the later parts turn to the law and to the welfare state. What title did Hayek give the first part?",
     "answer": "The Value of Freedom",
     "choices": [
       "The Value of Freedom",
@@ -25091,7 +24727,7 @@
   },
   {
     "tier": 3,
-    "question": "In 'The Constitution of Liberty,' the Austrian economist Friedrich Hayek says two fines feel very different in kind. Being fined for running a red light — a rule that was written down beforehand and applied the same way to everybody — feels like justice. But being fined because a police officer decided on the spot, 'you owe me because I said so,' feels tyrannical. Same money out of your pocket. Very different systems. Which classical legal contrast is Hayek pointing to?",
+    "question": "A driver is fined for jumping a red light, under a rule fixed beforehand for everyone alike. Another man pays the same sum because an official decides on the spot that he owes it. Friedrich Hayek sets the two side by side in The Constitution of Liberty. Which contrast is he drawing?",
     "answer": "The rule of law versus administrative discretion",
     "choices": [
       "The rule of law versus administrative discretion",
@@ -25104,7 +24740,7 @@
   },
   {
     "tier": 3,
-    "question": "In 'The Constitution of Liberty,' Hayek does not claim people are always wise. He says a free society will make discoveries in law, science, and culture that a planned one never could. His whole case rests on one key claim about knowledge. Which one?",
+    "question": "Friedrich Hayek asked in the last part of The Constitution of Liberty why a free order outdoes a planned one, and his answer did not rest on people being wise. It rested on one claim about knowledge and discovery. Which claim?",
     "answer": "That the value of an innovation cannot be known before someone is free to try it",
     "choices": [
       "That the value of an innovation cannot be known before someone is free to try it",
@@ -25117,7 +24753,7 @@
   },
   {
     "tier": 4,
-    "question": "At the very end of his 1960 book on liberty, Hayek rejects a political label that many readers had assumed applied to him. Instead he claims an older British label, the same one Edmund Burke had famously claimed for himself. What is the title of Hayek's closing chapter?",
+    "question": "Friedrich Hayek ended The Constitution of Liberty with a postscript that startled many of his readers. In it he refused a label most of them had pinned on him and claimed instead an older British name that Edmund Burke had once taken for himself. What was the postscript called?",
     "answer": "Why I Am Not a Conservative",
     "choices": [
       "Why I Am Not a Conservative",
@@ -25130,7 +24766,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 'Why I Am Not a Conservative' postscript to his 1960 book, Hayek explains why conservatism cannot be a genuine alternative to socialism. Conservatives, he says, want to keep things as they are; he himself wants to move somewhere. Which reasoning move against the conservative label is Hayek pressing?",
+    "question": "A reader who had taken Friedrich Hayek for a conservative reached the postscript to his book of 1960 and found him turning the label down for Edmund Burke's old name, an Old Whig. Which objection to conservatism did Hayek press?",
     "answer": "That conservatism has no positive program, only a resistance to change from wherever society currently stands",
     "choices": [
       "That conservatism has no positive program, only a resistance to change from wherever society currently stands",
@@ -25143,7 +24779,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1975 a new British political leader interrupted a speaker urging a 'middle way' between capitalism and government planning. She pulled a thick book by an Austrian economist out of her bag, slammed it on the table, and said 'This is what we believe.' What was the core belief that book pressed?",
+    "question": "Margaret Thatcher, as one account has it, stopped a colleague urging a middle course in 1975 by pulling Friedrich Hayek's book from her bag and setting it down hard on the table: 'This is what we believe.' What core belief does the book press?",
     "answer": "Individual liberty and free markets are what makes a free society possible",
     "choices": [
       "Individual liberty and free markets are what makes a free society possible",
@@ -25156,7 +24792,7 @@
   },
   {
     "tier": 5,
-    "question": "The Margaret Thatcher Foundation tells a famous story: in 1975 Thatcher slammed Hayek's book on a table and said 'this is what we believe.' But its own archive note calls the story 'perhaps a little too perfect to be actually true.' What rule about historical sources does that warning point to?",
+    "question": "John Ranelagh told the story of Margaret Thatcher slamming Hayek's book on a table in his 1991 history of her circle. The Margaret Thatcher Foundation cautions in its archive that the tale may be too perfect to be true. What does that warning point to?",
     "answer": "That vivid political anecdotes should be flagged as reported testimony, not treated as settled historical fact",
     "choices": [
       "That vivid political anecdotes should be flagged as reported testimony, not treated as settled historical fact",
