@@ -170,7 +170,7 @@
   },
   {
     "tier": 1,
-    "question": "Some AI programs, like ChatGPT and DALL-E, actually create brand new stuff — a poem, a picture of a dragon, a fresh bit of music. Other AI programs just sort things into groups, like marking emails as spam or not spam. There is a special name for the kind that makes new things. What is it called?",
+    "question": "A girl asks ChatGPT for a poem and DALL-E for a picture of a dragon, and each makes something brand new. The filter on her email only sorts messages into spam or not spam. What is the kind of AI that makes new things called?",
     "answer": "Generative AI",
     "choices": [
       "Generative AI",
@@ -209,7 +209,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT was made by a company called OpenAI. Claude was made by Anthropic. Gemini was made by Google. Grok was made by xAI. All four are AI programs you can chat with in plain words, ask questions, and get written answers from. What is the general name for this kind of AI?",
+    "question": "A student tries four programs in one evening: ChatGPT, Claude, Gemini and Grok. She asks each one a question in plain words and gets a written answer back. What is the general name for this kind of AI?",
     "answer": "Chatbot assistants",
     "choices": [
       "Chatbot assistants",
@@ -248,7 +248,7 @@
   },
   {
     "tier": 1,
-    "question": "GitHub Copilot is an AI tool built for programmers who spend all day typing computer code. As a programmer types inside their editor, Copilot watches along and tries to guess what code line they are about to type next. Then it pops up a suggestion the programmer can accept with one key. What is Copilot's main job?",
+    "question": "A programmer who spends all day typing code opens GitHub Copilot, the AI tool GitHub released in 2021. It sits in her editor, tries to guess what she will type next, and lets her take the guess with one key. What is Copilot's main job?",
     "answer": "Suggest code as you type",
     "choices": [
       "Suggest code as you type",
@@ -287,7 +287,7 @@
   },
   {
     "tier": 1,
-    "question": "You ask a chatbot to write a short essay for a school project. It writes a full draft in a few seconds and everything sounds convincing. But chatbots can make up facts that are not true — even historical dates or people. Before you turn the essay in, whose job is it to actually check whether the claims are true?",
+    "question": "Suppose you ask a chatbot for a short school essay. A convincing draft arrives in seconds. Before you turn it in, whose job is it to check the claims?",
     "answer": "Yours — the chatbot can't tell what's true",
     "choices": [
       "Yours — the chatbot can't tell what's true",
@@ -296,19 +296,6 @@
       "Your friend's — chatbots are infallible"
     ],
     "context": "Even when an LLM writes well, it can confidently include false claims, made-up dates, and invented quotes. The user is responsible for checking. Treat AI output as a draft from a clever friend who sometimes makes things up — useful, but never the final word.",
-    "topic": "chatbot-verification"
-  },
-  {
-    "tier": 1,
-    "question": "A chatbot tells you a surprising fact — say, that a famous person once did something amazing. It sounds important, and you feel tempted to text it to your friends right away. But chatbots sometimes state made-up facts with total confidence. What is the safe habit to build before you share that fact with anyone else?",
-    "answer": "Verify it against a trusted source first",
-    "choices": [
-      "Verify it against a trusted source first",
-      "Send it to ten friends fast",
-      "Memorize it word for word",
-      "Trust it because chatbots are smart"
-    ],
-    "context": "AI 'trust but verify' is even more important than human 'trust but verify.' Chatbots produce fluent, confident-sounding text whether or not it's true. Get into the habit of checking specific claims — especially names, dates, statistics, and quotes — in a trusted source before you pass them on.",
     "topic": "chatbot-verification"
   },
   {
@@ -336,19 +323,6 @@
     ],
     "context": "AI image generators (DALL-E, Stable Diffusion, Midjourney) often produce images with characteristic flaws: wrong finger counts, garbled text, jewelry blending into skin, asymmetric eye details. Learning to spot these flaws is a useful defense skill — you can tell a fake from a photo more often than you might think.",
     "topic": "spotting-ai-images"
-  },
-  {
-    "tier": 1,
-    "question": "A 'deepfake' is a video where AI has been used to swap people's faces or voices, making them look and sound like they are saying words they never really said. You scroll online and see a shocking clip of a famous person saying something outrageous. What is the smart first move before you believe it or share it?",
-    "answer": "Pause and check before believing it",
-    "choices": [
-      "Pause and check before believing it",
-      "Share it right away to your friends",
-      "Trust it because the face looks real",
-      "Save it as true and tell everyone"
-    ],
-    "context": "Deepfakes can put words in real people's mouths. Telltales: mouth-sync drifts, weird blinking, edge fuzziness around the face, voice mismatches. But the safest habit is broader — before you believe or share a shocking clip, check whether trustworthy news sources are reporting it.",
-    "topic": "deepfake-video-audio"
   },
   {
     "tier": 1,
@@ -482,7 +456,7 @@
   },
   {
     "tier": 1,
-    "question": "Some chatbots you see mentioned online are real programs made by real companies you can look up. Others are just made-up names that sound plausible. Look at the four chatbot names in the choices below. Three are actual chatbots people really use. One of them was invented for this question. Which one is not real?",
+    "question": "A boy reading online meets four chatbot names. Three are real programs from real companies, and one is a made-up name that only sounds plausible. Which one is not real?",
     "answer": "ChatBuddy-X9 from a friendly lab",
     "choices": [
       "ChatBuddy-X9 from a friendly lab",
@@ -573,7 +547,7 @@
   },
   {
     "tier": 1,
-    "question": "In late November 2022 a small research lab in San Francisco released a free chatbot called ChatGPT, and within weeks teachers, parents and reporters wanted to know who had built it. Which lab released ChatGPT?",
+    "question": "A parent asked a teacher, within weeks of the launch, who had built ChatGPT, the free chatbot that a small research lab in San Francisco released late in 2022. Which lab released it?",
     "answer": "OpenAI",
     "choices": [
       "Google DeepMind",
@@ -599,7 +573,7 @@
   },
   {
     "tier": 1,
-    "question": "When OpenAI opened ChatGPT to the public in late November 2022, so many people signed up that the servers kept crashing. It smashed every record for how fast a new consumer product had reached 100 million users — beating TikTok, Instagram, and Facebook by a wide margin. About how long did it take ChatGPT to hit 100 million users?",
+    "question": "A teenager tried to log in to ChatGPT late in 2022 and found the servers down, crashed by new users. The chatbot was smashing the record for reaching 100 million users, ahead of TikTok, Instagram and Facebook. About how long did it take?",
     "answer": "Two months",
     "choices": [
       "Two months",
@@ -794,7 +768,7 @@
   },
   {
     "tier": 1,
-    "question": "Anthropic, the company that makes the Claude chatbot, was started in 2021 in San Francisco. Its founders — including the siblings Dario and Daniela Amodei — had all worked together at another famous AI lab first. They split off because they wanted to build a company more focused on AI safety. Which lab did the Amodei team leave to start Anthropic?",
+    "question": "Dario and Daniela Amodei and their colleagues had all worked together at a famous AI lab before they split off in 2021 to build a company more focused on AI safety. Their new San Francisco company became Anthropic. Which lab did the team leave?",
     "answer": "OpenAI",
     "choices": [
       "OpenAI",
@@ -807,7 +781,7 @@
   },
   {
     "tier": 1,
-    "question": "Anthropic is an AI safety company started in 2021 in San Francisco by former OpenAI researchers, including the brother-and-sister team Dario and Daniela Amodei. Its most famous product is a chatbot known for careful, thoughtful writing and unusually long memory of a conversation. The chatbot has a friendly one-word name. What is Anthropic's chatbot called?",
+    "question": "A student types a question into the chatbot from Anthropic, the San Francisco company Dario and Daniela Amodei helped start in 2021. Its friendly one-word name is a nod to the mathematician Shannon, who launched information theory in 1948. What is the chatbot called?",
     "answer": "Claude",
     "choices": [
       "Claude",
@@ -846,7 +820,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2020, OpenAI released a huge new language model called GPT-3. Researchers were shocked because it could handle jobs it had never been specifically trained on — translate a phrase, write code, solve a riddle — just from seeing two or three examples inside the prompt. That ability to pick up a new task from a tiny handful of examples got its own technical name. What is it called?",
+    "question": "Researchers watched GPT-3 translate a phrase, write code and solve a riddle in 2020 after seeing just two or three examples inside the prompt, on jobs it had never been specifically trained for. What is that ability called?",
     "answer": "Few-shot learning",
     "choices": [
       "Few-shot learning",
@@ -1171,19 +1145,6 @@
   },
   {
     "tier": 1,
-    "question": "GitHub, the world's biggest home for software projects, teamed up with OpenAI in 2021 to build Copilot. Copilot is an AI tool that sits inside a programmer's editor and suggests lines as they type. Millions of programmers now use it every day. What does GitHub Copilot help its users do?",
-    "answer": "Write computer code faster",
-    "choices": [
-      "Write computer code faster",
-      "Write better poetry only",
-      "Cook dinner remotely",
-      "Drive a car safely"
-    ],
-    "context": "GitHub Copilot is an AI tool that suggests code as a programmer types. It can complete a function from a comment, write tests, fill in repetitive code. It can also suggest buggy or insecure code, which is why programmers still have to read and review what it offers. Other tools in this space include Cursor and Tabnine.",
-    "topic": "code-assistants"
-  },
-  {
-    "tier": 1,
     "question": "Modern AI image generators like DALL-E and Stable Diffusion let anyone create pictures without a paintbrush. A person types a short sentence like 'a fox in a red hat painting the sunset,' and the model draws it in seconds. When you use an AI image generator, what kind of input does it take?",
     "answer": "A short text description",
     "choices": [
@@ -1353,19 +1314,6 @@
   },
   {
     "tier": 1,
-    "question": "GitHub Copilot is an AI helper that types code alongside a programmer, suggesting the next line as they work. Because it learned from mountains of public code on the internet, some of that code was already buggy or insecure — so Copilot's suggestions can be wrong too, even when they look neat. What's the right habit for a coder using a helper like Copilot?",
-    "answer": "Read and check what's suggested",
-    "choices": [
-      "Read and check what's suggested",
-      "Use every suggestion immediately",
-      "Submit code without reading",
-      "Trust AI completely on security"
-    ],
-    "context": "AI code suggestions are useful drafts, not final answers. They can suggest insecure patterns, deprecated libraries, or subtly wrong logic. Programmers still need to read, understand, and test what's suggested. 'AI for speed; human for review' is the rule that keeps quality from sliding.",
-    "topic": "code-assistants"
-  },
-  {
-    "tier": 1,
     "question": "DeepL is a translation tool built in Cologne, Germany, by a small European team. It launched in 2017 and quickly became famous for translations that sound more natural than its bigger rivals, especially between European languages like German, French, and English. Which other big translation tool does DeepL compete with?",
     "answer": "Google Translate",
     "choices": [
@@ -1415,19 +1363,6 @@
     ],
     "context": "Image generators learn patterns of pixels that statistically appear together. They don't 'understand' that a hand has exactly five fingers — they just know what hands tend to look like. When the model isn't sure, it can produce six fingers, missing fingers, or impossible joints. Hands and text in images are the two classic giveaways.",
     "topic": "spotting-ai-images"
-  },
-  {
-    "tier": 1,
-    "question": "GitHub Copilot is an AI coding helper that autocompletes code as a programmer types. It was trained on billions of lines of public code from open-source projects on GitHub, and its suggestions come from patterns it saw during that training — not from any live human writing along with you. When Copilot writes a bit of code for you, where does its guess come from?",
-    "answer": "Patterns from training on lots of code",
-    "choices": [
-      "Patterns from training on lots of code",
-      "A team of humans typing live",
-      "A satellite over the office",
-      "The programmer's lunch order"
-    ],
-    "context": "Coding assistants are LLMs (often specialized) trained on huge amounts of public code, including open-source repositories. Their suggestions reflect patterns in that training data. This raises real questions about licensing, attribution, and code copying — and is one reason developers still need to review what's offered before they use it.",
-    "topic": "code-assistants"
   },
   {
     "tier": 1,
@@ -1522,13 +1457,13 @@
   },
   {
     "tier": 1,
-    "question": "A programmer sits down to write a computer program. Instead of typing every line by hand, she opens an AI coding helper like GitHub Copilot or ChatGPT and asks it to suggest the code for her. In seconds, the AI produces a chunk of code that looks reasonable. But AI helpers sometimes suggest lines that don't quite work — or that hide sneaky bugs. Before she trusts the code in a real program, what must the programmer still do?",
+    "question": "A web developer types 'make me a simple web page with a login button' into an AI coding tool like GitHub Copilot, and working code appears. Such tools learned from code that was sometimes buggy or insecure. Before she trusts the result, what must she still do?",
     "answer": "Read and test the suggested code",
     "choices": [
       "Read and test the suggested code",
-      "Pay the AI directly with cash",
-      "Pet the AI when it works",
-      "Sing to the AI each morning"
+      "Use every suggestion immediately",
+      "Submit code without reading",
+      "Trust AI completely on security"
     ],
     "context": "AI coding tools speed up routine work but they can suggest buggy, insecure, or subtly wrong code. The programmer still has to read what's offered, test it, and decide whether to use it. 'Tool that drafts; human that reviews' is the discipline that keeps quality from sliding when AI is in the loop.",
     "topic": "code-assistants"
@@ -1652,7 +1587,7 @@
   },
   {
     "tier": 1,
-    "question": "You're chatting with a free AI chatbot on your phone. The company that runs the chatbot keeps a copy of everything you type and often uses it to keep training their AI. Anything you paste in might one day be readable to another person if the company gets hacked. Out of these four things, what should you NEVER paste into the chat?",
+    "question": "A big sister watches her brother chat with a free AI chatbot on his phone. If the company gets hacked, she warns, anything he pastes in might one day be read by another person. What does she tell him never to paste?",
     "answer": "Your password",
     "choices": [
       "Your password",
@@ -1678,7 +1613,7 @@
   },
   {
     "tier": 1,
-    "question": "You're scrolling online and see a video of a famous politician or movie star saying something shocking. It looks totally real. But AI can now generate fake 'deepfake' videos of anyone saying anything at all. Before you believe the video is real or forward it to your friends, what's the smart step to take first?",
+    "question": "A boy scrolling online stops on a video of a famous politician saying something shocking. It looks totally real, but AI can fake a clip of anyone. Before he believes it or forwards it to friends, what is the smart first step?",
     "answer": "Check if trusted news outlets report it",
     "choices": [
       "Check if trusted news outlets report it",
@@ -1717,7 +1652,7 @@
   },
   {
     "tier": 1,
-    "question": "The researcher Mike Caulfield built a four-step habit for judging anything online, from a chatbot answer to a viral post, and named it SIFT (one letter for each step). What is the first step?",
+    "question": "Mike Caulfield built a four-step habit for judging anything online, from a chatbot answer to a viral post, and named it SIFT (one letter for each step). What is the first step?",
     "answer": "Stop",
     "choices": [
       "Share",
@@ -1743,7 +1678,7 @@
   },
   {
     "tier": 1,
-    "question": "You're stuck on a math problem for homework, so you type it into a chatbot and it gives you back a confident answer. But chatbots are not always right at math — they sometimes 'hallucinate' an answer that looks right but is actually wrong. Before you turn in the chatbot's answer as your homework, what's the smart step?",
+    "question": "A boy stuck on a homework math problem types it into a chatbot and gets a confident answer back. Chatbots are not always right at math. Before he turns it in, what is the smart step?",
     "answer": "Check it with a calculator",
     "choices": [
       "Check it with a calculator",
@@ -1756,7 +1691,7 @@
   },
   {
     "tier": 1,
-    "question": "You might assume a free AI chatbot throws away everything you type once you close the tab. Most free chatbots do not. When you use one, the company usually:",
+    "question": "Suppose you close the tab on a free AI chatbot, sure the company has thrown away everything you typed. Most free chatbots do not work that way. What does the company usually do with your chats?",
     "answer": "Logs your conversations",
     "choices": [
       "Forgets them all instantly",
@@ -1782,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "You ask ChatGPT and Gemini the same question, and both give the same surprising fact. Big chatbots learn from overlapping piles of internet text. Does their agreement prove the fact is true?",
+    "question": "A student asks ChatGPT and Gemini the same question, and both give the same surprising fact. She is ready to call it settled. Does their agreement prove the fact is true?",
     "answer": "No — they may share training data",
     "choices": [
       "Yes — two sources agree",
@@ -1808,7 +1743,7 @@
   },
   {
     "tier": 1,
-    "question": "A deepfake is a video where AI has swapped one person's face onto another person's body, or generated the person's whole likeness from scratch. Deepfakes look shockingly real at a glance, but if you watch a suspected deepfake carefully, you can usually catch a small giveaway. Out of these four signs, which is a typical deepfake video tell?",
+    "question": "A teacher plays a suspected deepfake for her class and asks the students to watch closely. At a glance it looks real, but a careful viewer can usually catch a small giveaway. Which of these signs is a typical tell?",
     "answer": "Mouth movement that doesn't quite match",
     "choices": [
       "Mouth movement that doesn't quite match",
@@ -1834,7 +1769,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT has a Temporary Chat mode: the conversation is not saved to your history and is not used for training. OpenAI says it may still keep one thing for up to 30 days. What?",
+    "question": "A teacher shows her class ChatGPT's Temporary Chat, which keeps a talk out of the saved history. OpenAI says it may still keep one thing for up to 30 days. What is it?",
     "answer": "A copy of the chat, for safety checks",
     "choices": [
       "Your card number, for billing",
@@ -1925,7 +1860,7 @@
   },
   {
     "tier": 1,
-    "question": "Privacy warnings tell you never to share secrets with a free chatbot like ChatGPT, because your words can go on to shape the software itself. Anything you type into a free chatbot may be:",
+    "question": "A librarian warns a teenager never to share secrets with a free chatbot like ChatGPT, partly because of what the company may do with the text. What may become of anything typed in?",
     "answer": "Used to train future models",
     "choices": [
       "Used to train future models",
@@ -1938,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "A friend dares you to paste your real street number into a chatbot 'to see what it knows.' Anything you type into a free chatbot can be stored on the company's servers and used to train future versions. Once that private detail is sitting in that pile, you can't pull it back out. Smart response?",
+    "question": "A friend dares a boy to paste his real street number into a chatbot 'to see what it knows.' Once a private detail like that is out, he cannot pull it back. What is the smart response?",
     "answer": "Don't paste your home address",
     "choices": [
       "Don't paste your home address",
@@ -1964,7 +1899,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot just told you a fact for a school report, but chatbots sometimes invent details. You need to double-check it, and four options come to mind: ask the same chatbot again, try a second chatbot, tell a friend, or open a well-known encyclopedia written by human editors. Which is the strongest way to verify the fact?",
+    "question": "A ninth-grader reads a surprising fact from a chatbot for his school report and wants to text it to friends right away. Chatbots sometimes state made-up facts with total confidence. What would verify it best?",
     "answer": "Check an established encyclopedia",
     "choices": [
       "Check an established encyclopedia",
@@ -1990,7 +1925,7 @@
   },
   {
     "tier": 1,
-    "question": "You're scrolling online and see a video of a famous celebrity endorsing a new product. Something feels off: the voice sounds a little flat and the mouth doesn't quite match the words. Deepfake software uses AI to paste people's faces and voices onto video they never actually filmed. The reasonable assumption is:",
+    "question": "A woman scrolling online sees a famous celebrity endorsing a new product. Something feels off, and the voice sounds a little flat. What is the reasonable assumption?",
     "answer": "It may well be a deepfake",
     "choices": [
       "It may well be a deepfake",
@@ -2081,7 +2016,7 @@
   },
   {
     "tier": 1,
-    "question": "You've seen the word 'deepfake' in the news, usually in stories about fake celebrity ads or fake political speeches. The word combines 'deep learning,' the AI technology behind it, with 'fake.' Kids and adults now argue over whether videos online are real or edited. A deepfake is best described as:",
+    "question": "A student reads a news story about a fake celebrity ad and meets the word 'deepfake,' which joins 'deep learning' to 'fake.' What is a deepfake best described as?",
     "answer": "An AI-altered video of a real person",
     "choices": [
       "An AI-altered video of a real person",
@@ -2094,7 +2029,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT has a setting called 'Improve the model for everyone.' Switching it off is one of the simplest privacy moves you can make. What does it do?",
+    "question": "A father and daughter dig through ChatGPT's settings and find a privacy switch called 'Improve the model for everyone.' What does turning it off do?",
     "answer": "Stops your chats being used for training",
     "choices": [
       "Stops your chats being used for training",
@@ -2146,7 +2081,7 @@
   },
   {
     "tier": 1,
-    "question": "Right under the box where you type, ChatGPT shows a small line of warning text from OpenAI itself. What does it tell you?",
+    "question": "A girl typing a question into ChatGPT glances at the small line of text OpenAI prints under the box. What does it tell her?",
     "answer": "It can make mistakes, so check important info",
     "choices": [
       "Every answer was checked by a human expert",
@@ -2156,19 +2091,6 @@
     ],
     "context": "OpenAI's own interface warns that ChatGPT can make mistakes and tells users to check important information. The company that built it is telling you not to treat it as the final word.",
     "topic": "chatbot-verification"
-  },
-  {
-    "tier": 1,
-    "question": "A video circulates showing a politician saying something shocking that they never actually said. Deepfake tools can now paste new words onto real faces, and fake political clips spread fast on social media. If the quote were truly real, major news outlets would already be reporting it everywhere. What's the right defense?",
-    "answer": "Search the supposed quote in real news",
-    "choices": [
-      "Search the supposed quote in real news",
-      "Believe the video because it is clear",
-      "Share it before checking the sources",
-      "Trust it because it has good subtitles"
-    ],
-    "context": "Political deepfakes are a known and growing problem. If a clip would be major news, major news outlets are covering it. Search the politician's name and the supposed quote — if no trusted news source reports it, treat the clip with strong suspicion. Sharing first and checking later is exactly how disinformation spreads.",
-    "topic": "deepfake-video-audio"
   },
   {
     "tier": 1,
@@ -2250,7 +2172,7 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI's terms of use set a minimum age for using ChatGPT, and say that anyone under 18 also needs a parent's or guardian's permission. What is the minimum age?",
+    "question": "A girl asks her father whether she is old enough for ChatGPT, and they read OpenAI's terms of use. The terms set a minimum age and say anyone under 18 also needs a parent's or guardian's permission. What is the minimum age?",
     "answer": "13 years old",
     "choices": [
       "8 years old",
@@ -2289,7 +2211,7 @@
   },
   {
     "tier": 1,
-    "question": "In several Chinese cities, the government runs an AI-driven scoring system that gives residents numbers based on things like their online posts, whether they pay their bills, and whether they have been in trouble with police. Foreign reporters have documented one very specific punishment for people whose score falls too low. What are they blocked from buying?",
+    "question": "A resident of a Chinese city watches her score fall under a local AI-driven system that rates people on their online posts, bills and police trouble. Foreign reporters have documented one specific penalty for low scores. What is she blocked from buying?",
     "answer": "Plane and train tickets",
     "choices": [
       "Plane and train tickets",
@@ -2302,7 +2224,7 @@
   },
   {
     "tier": 1,
-    "question": "In many Chinese cities, one AI tool is built into cameras on street corners, subway stations, and shops. It matches a person's face against a huge government database in seconds. Officials use it to track who goes where. What is that tool called?",
+    "question": "A commuter walks past a camera in a Chinese subway station. The AI tool built into it matches her against a huge government database in seconds, and officials use it to track who goes where. What is that tool called?",
     "answer": "Facial recognition",
     "choices": [
       "Facial recognition",
@@ -2380,7 +2302,7 @@
   },
   {
     "tier": 1,
-    "question": "A website makes signing up for a subscription incredibly easy — one big glowing button. But cancelling takes six menus, a hidden link, and a phone call during business hours. Designers do this on purpose to keep you paying. What is that kind of design called?",
+    "question": "A woman joins a website's subscription with one big glowing button. To cancel she meets six menus, a hidden link and a phone call during business hours. The designers built it that way on purpose. What is such a setup called?",
     "answer": "Dark patterns in user design",
     "choices": [
       "Dark patterns in user design",
@@ -2536,7 +2458,7 @@
   },
   {
     "tier": 1,
-    "question": "You open an app in the morning and see a shiny badge waiting for you. Another screen shows a streak — the number of days in a row you have logged in — and rewards you with points for coming back. Game designers built these tricks first, and now app makers borrow them to keep users tapping every day. What is this pattern called?",
+    "question": "A boy opens an app in the morning and finds a shiny badge waiting. Another screen shows his streak of days logged in and hands him points for coming back. What is this pattern called?",
     "answer": "Gamification to drive engagement",
     "choices": [
       "Gamification to drive engagement",
@@ -2575,7 +2497,7 @@
   },
   {
     "tier": 1,
-    "question": "Dating apps like Tinder promise to help lonely people find love. But every dating company also makes money — and it earns that money while users are still swiping through profiles inside the app. Critics point out this shapes what the AI is really tuned to do. What are dating apps usually optimized for?",
+    "question": "A lonely man signs up for Tinder, which promises to help him find love. The company earns its money while he is still swiping. Critics say this shapes what the AI is tuned to do. What do they say dating apps are usually optimized for?",
     "answer": "Keeping users on the app",
     "choices": [
       "Keeping users on the app",
@@ -2588,7 +2510,7 @@
   },
   {
     "tier": 1,
-    "question": "Betting apps like DraftKings use AI to study how and when each user bets, then time free-bet offers and alerts. Critics say it is not there to protect users. What do they say it aims to do?",
+    "question": "A bettor on DraftKings gets a free-bet offer at a moment picked by the app's AI, which studies how and when he bets. Critics say the AI is not there to protect users. What do they say it aims to do?",
     "answer": "Maximize how much users bet",
     "choices": [
       "Maximize how much users bet",
@@ -2627,7 +2549,7 @@
   },
   {
     "tier": 1,
-    "question": "Your phone buzzes at nine in the evening. An app you barely opened this week wants you back, so its AI picks a hook and pushes a notification — maybe 'Someone liked your post' or 'You have three new updates.' The message did not appear by accident. What is that kind of notification designed to do?",
+    "question": "Suppose you hear your phone buzz at nine in the evening. An app you barely opened this week has picked a hook: 'Someone liked your post.' The message did not appear by accident. What is that kind of notification designed to do?",
     "answer": "Pull you back to the app",
     "choices": [
       "Pull you back to the app",
@@ -2640,7 +2562,7 @@
   },
   {
     "tier": 1,
-    "question": "The Chinese government runs a system nicknamed the Great Firewall over its internet. AI tools inside that system scan posts, videos, and searches in real time, deciding what ordinary Chinese users are allowed to see and blocking anything the government does not want spread. What is this AI system mainly used for?",
+    "question": "A student in China posts a video online. AI tools inside China's Great Firewall scan it in real time, as they scan posts and searches. What is this AI system mainly used to do?",
     "answer": "Filter and block certain content",
     "choices": [
       "Filter and block certain content",
@@ -2978,7 +2900,7 @@
   },
   {
     "tier": 2,
-    "question": "OpenAI opened ChatGPT to the public as a free research preview on November 30, 2022. On December 5, Sam Altman posted a milestone that showed how fast word of it was spreading. What was the milestone?",
+    "question": "Sam Altman posted a milestone on December 5, 2022, days after ChatGPT opened to anyone who wanted it. It showed how fast word of the chatbot was spreading. What was the milestone?",
     "answer": "One million users in five days",
     "choices": [
       "One million users in five days",
@@ -3186,7 +3108,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1990s, IBM built a specialized chess computer at its research lab in the northeastern United States. In May of one particular year, that machine played a six-game rematch against Russia's reigning world chess champion. He had beaten an earlier version the year before, but this time the machine won 3.5-2.5. Which year and event was that historic first?",
+    "question": "A reigning world chess champion sat down to a six-game rematch against a specialized chess computer. He had beaten an earlier version the year before, but this time the machine won 3.5-2.5. Which year and event was that?",
     "answer": "1997 — IBM's Deep Blue beat Garry Kasparov in a six-game match in New York",
     "choices": [
       "1997 — IBM's Deep Blue beat Garry Kasparov in a six-game match in New York",
@@ -3199,7 +3121,7 @@
   },
   {
     "tier": 2,
-    "question": "In May 1997, an IBM (International Business Machines) chess computer named Deep Blue played a six-game match in New York against the reigning world chess champion, Garry Kasparov of Russia. Deep Blue won — the first time a machine had beaten a reigning world champion under standard tournament conditions. But Deep Blue worked in a very different way from the deep-learning AI programs of today. It had no big learned neural network of its own. What did Deep Blue mostly rely on instead?",
+    "question": "A student comparing the chess computer Deep Blue with the deep-learning programs of today finds a very different machine: it had no big learned neural network of its own. What did Deep Blue mostly rely on instead?",
     "answer": "Brute-force search of millions of possible chess positions per second, plus expert chess heuristics",
     "choices": [
       "Brute-force search of millions of possible chess positions per second, plus expert chess heuristics",
@@ -3212,7 +3134,7 @@
   },
   {
     "tier": 2,
-    "question": "The 1997 defeat of world chess champion Garry Kasparov by International Business Machines' (IBM) Deep Blue computer was one of the most talked-about matches in chess history. Kasparov did not take the loss well. In interviews and articles for years afterward, he raised the same suspicion again and again: one move in the match felt too human, as if a strong grandmaster had been quietly feeding moves to the machine during play. IBM firmly denied it. What was Kasparov's recurring complaint about the match?",
+    "question": "Garry Kasparov kept returning to one subtle move from the second game of his match against Deep Blue, in interviews and articles for years afterward. He did not take the loss well. What was his recurring complaint about the match?",
     "answer": "He suspected IBM had received human help during games, which IBM denied",
     "choices": [
       "He suspected IBM had received human help during games, which IBM denied",
@@ -3342,7 +3264,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 2019, OpenAI announced a large new language model that could write surprisingly coherent paragraphs on demand. It initially withheld the full model — it said it was worried it could be used to flood the internet with fake news and spam. A trimmed release came out that spring. A few months later it published the full model. Which model was it?",
+    "question": "A research team announced a large new language model that could write coherent paragraphs on demand, and it said it was worried the model could be used to flood the internet with fake news and spam. Which model was it, and how did it first reach the public?",
     "answer": "GPT-2 — released in 2019, initially with only a smaller version available",
     "choices": [
       "GPT-2 — released in 2019, initially with only a smaller version available",
@@ -3368,7 +3290,7 @@
   },
   {
     "tier": 2,
-    "question": "OpenAI is the AI company co-founded in 2015 by Sam Altman, Elon Musk, and others. Late in 2022, OpenAI quietly launched a friendly chat website called ChatGPT, powered by its GPT-3.5 language model. Within days it exploded in popularity, and the modern AI boom was underway. Historians will likely mark this specific day as a turning point. On which date did OpenAI launch ChatGPT?",
+    "question": "Engineers at a San Francisco lab quietly put up a friendly chat website called ChatGPT late in 2022, powered by the GPT-3.5 language model. Within days it had exploded in popularity, and the modern AI boom was underway. On which date did ChatGPT launch?",
     "answer": "November 30, 2022 — released as a 'research preview' with free public access",
     "choices": [
       "November 30, 2022 — released as a 'research preview' with free public access",
@@ -3381,7 +3303,7 @@
   },
   {
     "tier": 2,
-    "question": "In May 2024 OpenAI released GPT-4o and showed it holding a spoken conversation in real time while reacting to what a phone camera saw. The 'o' at the end of its name is short for a word. Which word, and why?",
+    "question": "OpenAI's team showed GPT-4o holding a spoken conversation in real time in May 2024, reacting to what a phone camera saw. The 'o' at the end of its name is short for a word. Which word, and why?",
     "answer": "Omni, because one model handles text, audio and images",
     "choices": [
       "Open, because its full source code was published free",
@@ -3485,7 +3407,7 @@
   },
   {
     "tier": 2,
-    "question": "Demis Hassabis is a British researcher — a former chess prodigy and video-game designer — who became one of the most influential people in modern AI. In 2010, together with two co-founders, he started a small London AI lab focused on general-purpose learning systems inspired by the brain. That lab would later shock the world with AlphaGo (2016) and AlphaFold (2020). Which lab was it?",
+    "question": "Two partners joined Demis Hassabis to start a small AI lab, working on general-purpose learning systems inspired by the brain. The lab would later build AlphaGo, which beat the world champion at Go, and AlphaFold. Which lab was it, and who were the partners?",
     "answer": "DeepMind — co-founded by Hassabis with Shane Legg and Mustafa Suleyman",
     "choices": [
       "DeepMind — co-founded by Hassabis with Shane Legg and Mustafa Suleyman",
@@ -3497,8 +3419,8 @@
     "topic": "demis-hassabis-deepmind"
   },
   {
-    "tier": 2,
-    "question": "Demis Hassabis is the British co-founder of DeepMind, the London AI lab that later made AlphaGo (which beat champion Lee Sedol at Go in 2016) and AlphaFold (which cracked protein folding in 2020). Long before he studied neuroscience or built AI systems, he was already famous around Britain as a teenager — for two very different accomplishments. What was he widely known for in his teens?",
+    "tier": 3,
+    "question": "Demis Hassabis only started his neuroscience PhD in his late twenties. By then he had two earlier careers behind him, in two very different fields, and as a teenager he had already been known around Britain. What was he known for?",
     "answer": "Being a chess prodigy and later a designer of video games",
     "choices": [
       "Being a chess prodigy and later a designer of video games",
@@ -3667,7 +3589,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 2023 the largest school district in the United States blocked ChatGPT on its devices and networks, citing harm to student learning. Four months later its chancellor reversed the ban and promised to help teachers use AI instead. Which district?",
+    "question": "School officials in the largest district in the United States blocked ChatGPT on the district's devices and networks in January 2023, citing harm to student learning. Which district was it?",
     "answer": "New York City's public schools",
     "choices": [
       "New York City's public schools",
@@ -3771,7 +3693,7 @@
   },
   {
     "tier": 2,
-    "question": "GitHub is the huge online storehouse of computer code, owned by Microsoft. In 2021, GitHub launched a tool called Copilot: as a programmer types in their editor, Copilot suggests the next lines of code, sometimes whole functions at a time. What kind of model powers those suggestions?",
+    "question": "A software engineer watches GitHub Copilot offer her the next lines in her editor, sometimes whole functions at a time. No live human is writing along with her at the other end. What kind of system powers those suggestions?",
     "answer": "A large language model trained heavily on public code",
     "choices": [
       "A large language model trained heavily on public code",
@@ -3784,7 +3706,7 @@
   },
   {
     "tier": 2,
-    "question": "A San Francisco startup called Anysphere launched a code editor named Cursor in 2023. On the surface Cursor looks like a normal editor for writing programs, but a large language model is built right into it. How is Cursor different from a normal editor that just guesses your next word as you type?",
+    "question": "A startup founder opens Cursor, the code editor the San Francisco startup Anysphere launched in 2023. It looks like a normal editor for writing programs, but an AI model is built right into it. How does it differ from a normal editor that only guesses the next word as she types?",
     "answer": "It can take a typed instruction and edit multiple files to carry it out",
     "choices": [
       "It can take a typed instruction and edit multiple files to carry it out",
@@ -3979,19 +3901,6 @@
   },
   {
     "tier": 2,
-    "question": "A programmer types 'make me a simple web page with a login button' into an AI coding tool like GitHub Copilot or Cursor. Seconds later, working code appears — HyperText Markup Language (HTML), buttons, styling, all of it. It looks impressive. But before this programmer puts the page online where real users will visit, there's still one important step. What is that step?",
-    "answer": "Read the code, test it, and confirm it does exactly what was wanted",
-    "choices": [
-      "Read the code, test it, and confirm it does exactly what was wanted",
-      "Trust the code and skip testing because the AI rarely makes mistakes",
-      "Delete the AI's code and ask three more AIs to write it from scratch",
-      "Send the code straight to users without anyone reading it first"
-    ],
-    "context": "AI-generated code often looks right and runs, but contains subtle bugs — off-by-one errors, security holes, edge cases the AI didn't consider. The human's job shifts from typing every line to reading, testing, and judging. The same rule that applies to written AI output applies here: the model can confidently produce plausible-sounding wrong, and only careful verification catches it.",
-    "topic": "code-assistants"
-  },
-  {
-    "tier": 2,
     "question": "Researchers writing 'The Leaderboard Illusion' in 2025 reported that Meta privately tested 27 versions of its newest Llama model before release on Chatbot Arena, a site that ranks models by people's blind votes. Why does that matter for the rankings?",
     "answer": "Testing many and showing only the best inflates the score",
     "choices": [
@@ -4028,19 +3937,6 @@
     ],
     "context": "DALL-E, OpenAI's first major image generator (January 2021), got its name from Salvador Dali (the Surrealist painter known for melting clocks) and WALL-E (the Pixar robot). The pairing suggests strange creativity plus a friendly robot helper. The model is now on its third major version, with each release sharply better at fingers, text inside images, and overall realism.",
     "topic": "image-generators"
-  },
-  {
-    "tier": 2,
-    "question": "The chatbot called Claude is made by a company named Anthropic, headquartered in San Francisco. Anthropic was founded in 2021 by Dario and Daniela Amodei, along with several colleagues who had previously worked at another famous AI company before leaving to start their own lab focused on AI safety. What kind of company is Anthropic today?",
-    "answer": "A US AI lab founded by former OpenAI researchers",
-    "choices": [
-      "A US AI lab founded by former OpenAI researchers",
-      "A Chinese state-owned defense contractor",
-      "A European hardware company that makes microchips",
-      "A non-profit university research department alone"
-    ],
-    "context": "Anthropic was founded in 2021 by Dario and Daniela Amodei and several other former OpenAI researchers. The company builds the Claude family of chatbots and focuses publicly on AI safety. It has received major investments from Google and Amazon, similar to OpenAI's relationship with Microsoft. Anthropic, OpenAI, Google DeepMind, and Meta AI are the four most-cited US labs at the frontier.",
-    "topic": "claude-and-anthropic"
   },
   {
     "tier": 2,
@@ -4161,7 +4057,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2021 GitHub — the world's biggest home for software code, owned by Microsoft — released a coding assistant called Copilot. Copilot sits inside a programmer's editor and suggests the next line of code as they type. Under the hood, that first version of Copilot ran on an AI model named Codex. Codex was built by an outside partner, not by GitHub or Microsoft themselves. Which company made Codex?",
+    "question": "An early user of GitHub Copilot in 2021 was really working with an AI model named Codex. Codex came from an outside partner, not from GitHub or its owner, Microsoft. Which company made Codex?",
     "answer": "OpenAI",
     "choices": [
       "OpenAI",
@@ -4278,7 +4174,7 @@
   },
   {
     "tier": 2,
-    "question": "You ask ChatGPT to help with a school report and it hands back a smooth paragraph that says something like 'according to a 2019 Stanford study by Dr. Rodriguez, teens who X did Y.' You've never heard of this study. Chatbots are famous for confidently making things up like this — a behavior researchers call hallucination. Before you copy this paragraph into your report, what should you do?",
+    "question": "Suppose you ask ChatGPT for help with a school report and it hands back a smooth paragraph citing 'a 2019 Stanford study by Dr. Rodriguez.' You have never heard of this study, and chatbots are known for making such things up. Before you copy the paragraph, what should you do?",
     "answer": "Search for the study; if you can't find it in another source, treat it as probably fake",
     "choices": [
       "Search for the study; if you can't find it in another source, treat it as probably fake",
@@ -4314,19 +4210,6 @@
     ],
     "context": "The paper argued that most benchmarks give no credit for saying 'I don't know,' so a model that guesses scores better than one that admits uncertainty, just as a student who guesses on a test can pick up points. The authors proposed changing how tests are scored.",
     "topic": "hallucination"
-  },
-  {
-    "tier": 2,
-    "question": "A viral video is spreading online. It shows a real politician saying something shocking that would make headlines everywhere. But if you watch closely, the mouth movements do not quite line up with the words. Modern AI tools can paste one person's likeness or vocals onto another person's video clip, and the seams sometimes show. What might this viral clip really be?",
-    "answer": "A deepfake video with an AI-generated face or voice swapped onto real footage",
-    "choices": [
-      "A deepfake video with an AI-generated face or voice swapped onto real footage",
-      "A regular recording with no editing or alteration of any kind",
-      "An animated cartoon meant for children that aired by mistake",
-      "A magnetic interference on the broadcast signal during recording"
-    ],
-    "context": "Deepfake video uses AI to swap faces or voices in a clip. Common tells include slightly-off mouth sync, odd blinking patterns, fuzzy edges around the head, and changes in lighting between the swapped face and the rest of the frame. None of these is a guarantee — deepfakes keep getting better. The strongest defense is out-of-band verification: don't share something shocking until a trusted news source confirms it.",
-    "topic": "deepfake-video-audio"
   },
   {
     "tier": 2,
@@ -4395,7 +4278,7 @@
   },
   {
     "tier": 2,
-    "question": "Until mid-2025, ChatGPT's share feature had a box you could tick to make a shared chat 'discoverable.' Reporters then found thousands of shared chats, some with personal details, showing up somewhere unexpected. Where?",
+    "question": "A ChatGPT user ticked a box to make a shared chat 'discoverable,' an option the share feature offered until mid-2025. Reporters then found thousands of such chats, some with private details, showing up somewhere unexpected. Where did the chats show up?",
     "answer": "In Google search results",
     "choices": [
       "In OpenAI's app store",
@@ -4408,7 +4291,7 @@
   },
   {
     "tier": 2,
-    "question": "In April 2023 engineers at a giant electronics company pasted pieces of the company's secret source code into ChatGPT, one of them to check it for errors. Weeks later the company banned staff from using such chatbots on work devices. Which company?",
+    "question": "Engineers at a giant electronics company pasted pieces of the company's secret source code into ChatGPT in April 2023, one of them to check it for errors. Weeks later the company banned staff from using such chatbots on work devices. Which company was it?",
     "answer": "Samsung",
     "choices": [
       "Samsung",
@@ -4421,7 +4304,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 2023 a European country's data-protection watchdog ordered ChatGPT blocked over privacy concerns, the first Western country to take that step. The block was lifted within a month, once OpenAI made changes. Which country?",
+    "question": "Officials at a European data-protection watchdog ordered ChatGPT blocked over privacy concerns in March 2023, the first such step by a Western country. The block was lifted within a month, once OpenAI made changes. Which country was it?",
     "answer": "Italy",
     "choices": [
       "France",
@@ -4525,7 +4408,7 @@
   },
   {
     "tier": 2,
-    "question": "You ask a chatbot like ChatGPT a tricky factual question — a date, a scientific fact, a legal detail. It writes back a confident-sounding paragraph, but you know these tools sometimes hallucinate and just invent facts. You want a fast, cheap way to spot when the answer might be wrong before you rely on it. What's a good quick check?",
+    "question": "A teenager asks ChatGPT a tricky factual question, a date or a legal detail, and gets a confident paragraph back. These tools sometimes invent facts, so she wants a fast, cheap way to spot a likely error. What is a good quick check?",
     "answer": "Ask the same question to a different chatbot and compare the answers",
     "choices": [
       "Ask the same question to a different chatbot and compare the answers",
@@ -4574,32 +4457,6 @@
     ],
     "context": "404 Media found that ten of the fifteen titles were invented, even though the authors named were real. The writer, Marco Buscaglia, said he had used AI and failed to fact-check, and King Features, which produced the insert, fired him. A real author's name does not make a book real.",
     "topic": "hallucination"
-  },
-  {
-    "tier": 2,
-    "question": "You are watching a video online that might be a deepfake — a clip where AI has pasted one person's face onto another person's body. Older deepfake tools struggled with one small human habit that healthy people do every few seconds without even thinking about it. If it looks wrong or missing in the video, that is a clue. What small detail is worth watching for?",
-    "answer": "Blinking patterns, since older deepfakes blink rarely or in odd rhythms",
-    "choices": [
-      "Blinking patterns, since older deepfakes blink rarely or in odd rhythms",
-      "Whether the camera was operated by a person standing up or sitting",
-      "The number of letters in the title displayed below the video clip",
-      "Whether the upload is being viewed on a phone versus a laptop screen"
-    ],
-    "context": "Early deepfakes were trained on photos of people, many of which had eyes open. The result: deepfaked faces sometimes blinked rarely or oddly. Newer models have fixed this — so it's no longer a sure tell. Other watchable details: slight mouth-sync drift, lighting changes on the face, fuzzy edges around the hairline, ear shape differences across frames. None alone is proof. Cluster of tells + a context clue (anonymous source) is the signal.",
-    "topic": "deepfake-video-audio"
-  },
-  {
-    "tier": 2,
-    "question": "A shocking video of a famous celebrity is going viral on social media — everyone is resharing it, and it seems to prove something scandalous. But modern AI deepfake tools are now good enough to fake a face and voice convincingly on real footage. Your first instinct is to react and retweet. What's actually the strongest defense against being tricked?",
-    "answer": "Wait for confirmation from established news outlets before sharing",
-    "choices": [
-      "Wait for confirmation from established news outlets before sharing",
-      "Share it immediately so others can fact-check it for you faster",
-      "Trust it because viral videos always reach you for a good reason",
-      "Believe whichever version of the story has more views online"
-    ],
-    "context": "Out-of-band verification is the universal defense against viral fake content. A suspicious clip of a celebrity? Wait for established outlets to confirm. A suspicious clip of your boss? Call back on a known number. The five-minute pause between 'seeing something shocking' and 'sharing it' is what separates being part of a misinformation cascade from being a careful citizen. Most fakes don't survive five minutes of scrutiny.",
-    "topic": "deepfake-video-audio"
   },
   {
     "tier": 2,
@@ -4681,19 +4538,6 @@
   },
   {
     "tier": 2,
-    "question": "Free apps have to make money somehow, and one common way is by collecting data on the people who use them. A brand-new torchlight utility on your phone asks for permission to use the microphone, the camera, your location, and your contacts. But such a tool only needs to switch on the little light on the back of your phone. That request pattern is a big red flag. What should you do?",
-    "answer": "Deny the permissions or choose a different flashlight app",
-    "choices": [
-      "Deny the permissions or choose a different flashlight app",
-      "Grant all four because permissions don't matter on free apps",
-      "Buy the paid version of the flashlight to get even more permissions",
-      "Trust the app because the icon on your phone looks professional"
-    ],
-    "context": "A flashlight needs the LED. It doesn't need your microphone, your camera, your location, or your contacts. Apps that ask for more than they need are typically harvesting data to sell. The rule: grant only what the app actually needs to do its stated job. If the permissions list doesn't match the function, choose a different app. Both iOS and Android let you review and revoke permissions any time.",
-    "topic": "data-brokers-location"
-  },
-  {
-    "tier": 2,
     "question": "Suppose you are browsing when a pop-up offers a free extension that will 'add AI to every website you visit.' It asks to 'read and change all your data' on those sites, your bank and your email included. Before installing, what is a fair concern?",
     "answer": "It may be reading and sending the content of every page you visit",
     "choices": [
@@ -4720,7 +4564,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2019 the Stanford History Education Group tested 3,446 American high-school students on judging sources online. One task showed them a climate-change website, co2science.org, and asked whether it was reliable. Most students judged it by its look, its .org address and its own About page. What did about 96 percent of them never look into?",
+    "question": "A high-school student sat the Stanford History Education Group's 2019 test on judging sources online. Shown co2science.org, a climate-change website, and asked whether it was reliable, he judged it by its look, its .org address and its About page, like most of the 3,446 American students tested. What did about 96 percent of them never look into?",
     "answer": "Who was paying for the site",
     "choices": [
       "Whether it had spelling errors",
@@ -4772,7 +4616,7 @@
   },
   {
     "tier": 2,
-    "question": "Google's privacy page for its Gemini chatbot says a subset of chats are read by human reviewers, including outside contractors, to improve the service. It also says how long a reviewed chat is kept, even after you delete your activity. How long?",
+    "question": "An outside contractor reads a Gemini chat for Google, one of the subset its human reviewers see to improve the service. Google's privacy page says how long a reviewed chat is then kept, even after the user deletes her activity. How long is it kept?",
     "answer": "Up to three years",
     "choices": [
       "Up to three years",
@@ -4785,7 +4629,7 @@
   },
   {
     "tier": 2,
-    "question": "A chatbot answers a hard science question with a clean list of confident bullet points, bolded key terms, and a polished summary at the bottom. The layout looks like a page from a real textbook. But the chatbot generated all of that by predicting the most likely next word, one at a time — not by checking a database of verified facts. Does the neat format actually mean the answer is correct?",
+    "question": "A science student asks a chatbot a hard question and gets clean bullet points, bold key terms and a polished summary, laid out like a real textbook page. The chatbot wrote it all by predicting the likeliest next word, not by checking a database. Does the neat format mean the answer is correct?",
     "answer": "No — fluent and confident output can still be wrong",
     "choices": [
       "No — fluent and confident output can still be wrong",
@@ -4824,7 +4668,7 @@
   },
   {
     "tier": 2,
-    "question": "You signed up for a chatbot service, tried it for a few weeks, and decided you don't want an account anymore. The company still holds your chat history, your email address, and any files you uploaded to it. Simply closing the tab or uninstalling the app does not remove any of that from its servers. What is a reasonable next step?",
+    "question": "Suppose you try a chatbot service for a few weeks and decide you don't want an account anymore. The company still holds your email address and the files you uploaded, and closing the tab or uninstalling the app removes none of it from its servers. What is a reasonable next step?",
     "answer": "Request account deletion through the service's settings or contact form",
     "choices": [
       "Request account deletion through the service's settings or contact form",
@@ -4902,7 +4746,7 @@
   },
   {
     "tier": 2,
-    "question": "The government of China has piloted computerized rating systems in several of its cities. The systems watch residents' everyday behavior — jaywalking across the street, paying bills late, comments they post online — and add or subtract points from each person's score. A low score can block citizens from buying a plane ticket, sending their kids to a good school, or renting a nicer apartment. What are these government-run rating systems called?",
+    "question": "A woman in one of China's pilot cities jaywalks and loses points from a computerized score the government keeps; a late bill or an online comment can cost her too. A low score can bar her kids from a good school or her family from a nicer apartment. What are these government-run rating systems called?",
     "answer": "Social credit systems",
     "choices": [
       "Social credit systems",
@@ -4915,20 +4759,7 @@
   },
   {
     "tier": 2,
-    "question": "In parts of China, local governments have been testing 'social credit' systems that give citizens scores based on their behavior — paying bills on time, following traffic rules, sometimes even the things they post online. People whose scores fall too low face real, public consequences that the state has openly announced. What real penalty has hit people with low scores in these tests?",
-    "answer": "Being banned from buying plane or high-speed-train tickets",
-    "choices": [
-      "Being banned from buying plane or high-speed-train tickets",
-      "Being forced to change their name to something the state picks",
-      "Being painted on the side with a colored mark for life",
-      "Being sent into outer space on a one-way rocket trip"
-    ],
-    "context": "Documented social credit penalties have included travel restrictions — bans on buying high-speed rail tickets, plane tickets, certain hotel stays — for people on judicial blacklists. Other reported penalties include slower internet speeds, loss of access to certain jobs, and naming-and-shaming displays. The system is patchier and less centralized than some Western descriptions, but the documented penalties on real people are not exaggerated.",
-    "topic": "china-surveillance"
-  },
-  {
-    "tier": 2,
-    "question": "Big Chinese cities like Beijing, Shanghai, and Shenzhen have installed face-scanning cameras almost everywhere on the street — millions of them, matched against a national identity database in seconds. In some places, ordinary daily activities that used to just need a swipe card or a ticket have now been gated by a face check. What daily thing has been controlled by a face scan in some spots?",
+    "question": "A man in Shenzhen stops at a spot where a swipe card or a ticket used to be enough. Beijing, Shanghai and Shenzhen have put millions of cameras on the street, matched to a national identity database, and in places a camera check now decides who passes. What daily thing has such a check controlled?",
     "answer": "Entering subway stations, schools, or apartment buildings",
     "choices": [
       "Entering subway stations, schools, or apartment buildings",
@@ -5032,7 +4863,7 @@
   },
   {
     "tier": 2,
-    "question": "For years, Western researchers assumed that only a handful of American labs — spending hundreds of millions of dollars on huge computer farms — could reach the top of the AI benchmarks. In late 2024 and early 2025, a Chinese lab called DeepSeek turned that assumption upside down with its R1 and V3 model releases. The news rocked the tech industry and briefly crashed AI-related stock prices. What was the surprise?",
+    "question": "Investors dumped AI-related stocks after a Chinese lab called DeepSeek released its V3 and R1 models in late 2024 and early 2025. Western researchers had assumed that only a handful of American labs, spending hundreds of millions of dollars on huge computer farms, could reach the top of the AI benchmarks. What was the surprise?",
     "answer": "Its open-weight models matched leading Western models at much lower training cost",
     "choices": [
       "Its open-weight models matched leading Western models at much lower training cost",
@@ -5214,7 +5045,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2009 the programmer Loren Brichter invented a gesture for his Twitter app, Tweetie: drag the feed down with your thumb, let go, and fresh posts appear. Twitter bought the app, and the gesture spread to almost every phone. Looking back in 2017, what did Brichter say about his invention?",
+    "question": "Loren Brichter invented a gesture for his Twitter app, Tweetie, in 2009: drag the feed down with a thumb, let go, and fresh posts appear. Twitter bought the app, and the gesture spread to almost every phone. Looking back in 2017, what did Brichter say about his invention?",
     "answer": "That it is addictive, and he regretted it",
     "choices": [
       "That it is addictive, and he regretted it",
@@ -5227,7 +5058,7 @@
   },
   {
     "tier": 2,
-    "question": "Most dating apps earn money while you keep swiping. One app chose the opposite pitch: after its founder, Justin McLeod, rebuilt it around serious relationships, it advertised itself with a slogan promising to lose you, and its ads destroyed its own mascot each time two users paired off. What was the app, and its slogan?",
+    "question": "Justin McLeod rebuilt his dating app around serious relationships, though most dating apps earn money while users keep swiping. Its ads then destroyed the app's own mascot each time two users paired off. What was the app, and its slogan?",
     "answer": "Hinge: Designed to be deleted",
     "choices": [
       "Tinder: Never stop swiping",
@@ -5396,7 +5227,7 @@
   },
   {
     "tier": 2,
-    "question": "Many video games sell loot boxes: you pay real money for a sealed crate of random items and find out what you got only after opening it. In April 2018 Belgium's Gaming Commission examined the paid loot boxes in Overwatch, Counter-Strike and a best-selling soccer game. What did it rule they were?",
+    "question": "A teenager pays real money for a loot box in a video game, a sealed crate of random items, and learns what he bought only after he opens it. Belgium's Gaming Commission examined the paid loot boxes in Overwatch, Counter-Strike and a best-selling soccer game in April 2018. What did it rule they were?",
     "answer": "Illegal gambling",
     "choices": [
       "Harmless collectible toys",
@@ -5552,7 +5383,7 @@
   },
   {
     "tier": 2,
-    "question": "A budgeting app uses AI to notice when you are about to overspend and nudges you to move money into savings instead. A casino-style betting app uses the same kind of AI to notice when you are about to log off and nudges you to place one more bet before you go. Both apps use the same tricks; the goals point in opposite directions. What is the same and what is different between them?",
+    "question": "Suppose you are about to overspend, and a budgeting app's AI nudges you to move money into savings instead. Then you are about to log off a casino-style betting app, and its AI nudges you to place one more bet before you go. What is the same and what is different between the two apps?",
     "answer": "Same technique with opposite goals, where one serves your interest and the other serves the platform's",
     "choices": [
       "Same technique with opposite goals, where one serves your interest and the other serves the platform's",
@@ -5747,7 +5578,7 @@
   },
   {
     "tier": 3,
-    "question": "The 'T' in GPT (as in ChatGPT) stands for transformer — the neural-network design first proposed in Google's June 2017 paper 'Attention Is All You Need.' Google devised the architecture in its own research lab. But it was a different, smaller lab in San Francisco that scaled the transformer up into the chatbot that made AI mainstream in November 2022. Why is it ironic — or at least interesting — that OpenAI, not Google, became the company that turned this idea into a consumer product?",
+    "question": "Google researchers proposed a neural-network design called the transformer in a June 2017 paper, 'Attention Is All You Need.' Late in 2022 the public met that design inside ChatGPT, the work of a different, smaller lab. What makes that an odd turn in the story of the idea?",
     "answer": "Google invented the architecture; OpenAI was the company that scaled it up into ChatGPT and brought it mainstream.",
     "choices": [
       "Google invented the architecture; OpenAI was the company that scaled it up into ChatGPT and brought it mainstream.",
@@ -5955,7 +5786,7 @@
   },
   {
     "tier": 3,
-    "question": "Tools like OpenAI's Dall-E and the independent lab Midjourney are called 'generative' AI models — you type a text prompt ('a knight riding a giraffe under a purple moon') and the model produces a brand-new image that has never existed before. Compare that to an AI trained to flag cancer in chest X-rays. Both are AI. But the safety conversation around each sounds very different. Why?",
+    "question": "An artist types 'a knight riding a giraffe under a purple moon' into OpenAI's Dall-E, a 'generative' model, and out comes an image that has never existed before. A radiologist runs a different AI, one trained to flag cancer in chest X-rays. Both are AI, yet the safety conversation around each sounds very different. Why?",
     "answer": "Generative models can mass-produce fake content like deepfakes, fake citations, and fake voices that didn't exist before.",
     "choices": [
       "Generative models can mass-produce fake content like deepfakes, fake citations, and fake voices that didn't exist before.",
@@ -6618,7 +6449,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 2018 OpenAI researchers led by Alec Radford published the first GPT model. It learned general language skills by reading a big pile of unlabeled text first, and only then was tuned for particular tasks. What was that first pile of text?",
+    "question": "Alec Radford led the researchers who published the first GPT model in June 2018. It learned general language skills by reading a big pile of unlabeled text first, and only then was tuned for particular tasks. What was that first pile of text?",
     "answer": "About 7,000 unpublished books",
     "choices": [
       "About 7,000 unpublished books",
@@ -6631,7 +6462,7 @@
   },
   {
     "tier": 3,
-    "question": "When OpenAI released GPT-3 in 2020, ordinary people could not use it directly. There was no chat window and no phone app. Developers needed an application programming interface (API) key from OpenAI to connect their own software to the model. Despite that hurdle, GPT-3 changed the industry within a couple of years. What was its biggest impact?",
+    "question": "A programmer typed an application programming interface (API) key into her own software in 2020 to connect it to GPT-3. Ordinary people could not use the model directly: there was no chat window and no phone app. Yet GPT-3 changed the industry within a couple of years. What was its biggest impact?",
     "answer": "Developers built early products on top of GPT-3, like Jasper, Copy.ai, and Codex, proving demand and pointing to a chat-ready future.",
     "choices": [
       "Developers built early products on top of GPT-3, like Jasper, Copy.ai, and Codex, proving demand and pointing to a chat-ready future.",
@@ -6657,7 +6488,7 @@
   },
   {
     "tier": 3,
-    "question": "Weeks after ChatGPT launched, The New York Times reported in December 2022 how the leadership of Google, the company that had invented the transformer, reacted to the threat to its search business. Teams were pulled off other work to build rival products. What had Google's management declared?",
+    "question": "Google's managers saw a threat to the search business weeks after ChatGPT launched, and they pulled teams off other work to build rival products, The New York Times reported in December 2022. What had Google's management declared?",
     "answer": "A 'code red' inside the company",
     "choices": [
       "A ban on all AI research",
@@ -6670,7 +6501,7 @@
   },
   {
     "tier": 3,
-    "question": "When OpenAI released ChatGPT in November 2022, the underlying model — GPT-3.5 — had already existed inside the company for a while. On its own it could complete text but could not really hold a conversation with a user. Something extra had to be layered on top before the chat interface worked well. What did OpenAI add?",
+    "question": "A team of researchers took GPT-3.5, a model that had sat inside their company for a while, and readied it for a chat window late in 2022. On its own it could complete text but could not really hold a conversation with a user. Something extra had to be layered on top. What did they add?",
     "answer": "Instruction tuning and RLHF, where the model was fine-tuned to follow user instructions and rated by humans for quality.",
     "choices": [
       "Instruction tuning and RLHF, where the model was fine-tuned to follow user instructions and rated by humans for quality.",
@@ -6683,7 +6514,7 @@
   },
   {
     "tier": 3,
-    "question": "After OpenAI released ChatGPT for free at the end of November 2022, demand exploded and the servers strained under the load. Within a couple of months OpenAI rolled out a paid subscription tier called ChatGPT Plus, priced around twenty dollars per month. What change did the paid tier mainly offer at launch?",
+    "question": "A subscriber signed up for ChatGPT Plus within a couple of months of the free launch, paying around twenty dollars a month, while demand strained the servers. What change did the paid tier mainly offer at launch?",
     "answer": "Priority access during high-traffic times and access to newer models before they reached the free tier.",
     "choices": [
       "Priority access during high-traffic times and access to newer models before they reached the free tier.",
@@ -6696,20 +6527,7 @@
   },
   {
     "tier": 3,
-    "question": "In March 2023, OpenAI released GPT-4. It followed GPT-3.5, the model that powered the original ChatGPT launched a few months earlier. GPT-4 was noticeably smarter on many text tasks — but it also shipped with a brand-new capability the earlier GPT models simply didn't have. What was that notable new capability GPT-4 launched with?",
-    "answer": "Multimodality — GPT-4 could accept images as input and discuss them, not just text.",
-    "choices": [
-      "Multimodality — GPT-4 could accept images as input and discuss them, not just text.",
-      "Live internet access — GPT-4 could automatically search the web for any question users asked.",
-      "Voice synthesis — GPT-4 could read its answers aloud through any speaker without any extra tools.",
-      "Self-improvement — GPT-4 could rewrite its own weights during conversation as it learned new facts."
-    ],
-    "context": "GPT-4 launched March 14, 2023. Multimodality — the ability to process images — was a headline feature, though it rolled out gradually. GPT-4 also improved on GPT-3.5 in reasoning, in following complex instructions, and in resisting some kinds of jailbreaks. It passed standardized exams (bar exam, AP tests, GRE) at percentile rankings that drew media attention. The combination of capability gains and timing — four months after ChatGPT — drove a sense that LLM progress was rapidly accelerating.",
-    "topic": "chatgpt-and-openai"
-  },
-  {
-    "tier": 3,
-    "question": "When OpenAI released GPT-4 in March 2023, headlines said it had passed the bar exam and several Advanced Placement (AP) tests. Critics called the 'smarter than most humans' framing misleading. What was their argument?",
+    "question": "Critics read the headlines in March 2023 saying GPT-4 had passed the bar exam and several Advanced Placement (AP) tests, and they called the 'smarter than most humans' framing misleading. What was their argument?",
     "answer": "A test measures one slice of ability, so passing doesn't mean matching people at other tasks",
     "choices": [
       "A test measures one slice of ability, so passing doesn't mean matching people at other tasks",
@@ -6722,7 +6540,7 @@
   },
   {
     "tier": 3,
-    "question": "OpenAI was founded in 2015 as a research lab that publicly promised to share its research openly. But in March 2023, when it released GPT-4, the accompanying technical report gave almost no technical details — no parameter count, no training-data description, no architecture. Researchers across the AI community were upset. Why did that choice upset so many people?",
+    "question": "Researchers across the AI community opened the technical report on GPT-4 in March 2023 and found almost no technical details: no parameter count, no training-data description, no architecture. Why did that choice upset so many of them?",
     "answer": "OpenAI was founded with a research-sharing mission and many researchers saw the shift to secrecy as a departure from it.",
     "choices": [
       "OpenAI was founded with a research-sharing mission and many researchers saw the shift to secrecy as a departure from it.",
@@ -6784,19 +6602,6 @@
     ],
     "context": "Levinthal's paradox (1969): a small protein has so many possible 3D configurations that an exhaustive search would take longer than the age of the universe. Yet proteins fold in seconds in nature. Predicting the answer from sequence — without searching all possible shapes — was the problem. AlphaFold cracked it by learning from the Protein Data Bank's experimentally-determined structures. The win: pattern-recognition trained at scale solved a problem that had defied physics-based simulation for decades.",
     "topic": "alphafold-protein-folding"
-  },
-  {
-    "tier": 3,
-    "question": "Demis Hassabis co-founded DeepMind in London in 2010 — the AI lab that later beat human champions at chess and Go, and cracked the protein-folding problem with AlphaFold. But before he ever became an AI-research leader, Hassabis had two earlier careers in two very different fields. He only started his neuroscience PhD in his late twenties. What were his two careers before AI?",
-    "answer": "Chess prodigy and video-game designer — he competed at chess, then made games before getting his PhD in neuroscience.",
-    "choices": [
-      "Chess prodigy and video-game designer — he competed at chess, then made games before getting his PhD in neuroscience.",
-      "Concert pianist and surgeon — he toured Europe, then trained as a doctor before founding the AI lab.",
-      "Olympic swimmer and architect — he won medals, then designed buildings before turning to computer science.",
-      "Stand-up comedian and farmer — he toured the UK comedy circuit, then ran an organic farm before AI work."
-    ],
-    "context": "Demis Hassabis was a child chess prodigy — reached master level by age 13. He then went into video games, working on Theme Park in his teens, then founding his own game company. He returned to academia for a PhD in neuroscience, studying human memory and imagination. DeepMind, founded in 2010 with Shane Legg and Mustafa Suleyman, drew on this neuroscience interest — early DeepMind work on deep reinforcement learning was framed in terms of how brains might learn. Google acquired DeepMind in 2014 for about $500 million.",
-    "topic": "demis-hassabis-deepmind"
   },
   {
     "tier": 3,
@@ -7047,7 +6852,7 @@
   },
   {
     "tier": 3,
-    "question": "Dario Amodei is an Italian-American AI researcher who led the research team at OpenAI through the late 2010s and helped shape the GPT line of chatbots. In 2021, he left OpenAI along with his sister Daniela and several colleagues to found a new AI lab of their own, headquartered in San Francisco. What is that lab called?",
+    "question": "Dario Amodei walked out of his post leading research at an AI lab in 2021, with his sister Daniela and several colleagues, citing differences over the lab's direction on safety. They started a new lab that now competes directly with the old one at the frontier. What is the new lab called?",
     "answer": "Anthropic, where he is CEO and which produces the Claude family of language models.",
     "choices": [
       "Anthropic, where he is CEO and which produces the Claude family of language models.",
@@ -7060,7 +6865,7 @@
   },
   {
     "tier": 3,
-    "question": "Anthropic is an AI lab founded in 2021 by Dario Amodei, his sister Daniela Amodei, and other former staff of OpenAI. The company describes itself as an AI-safety company, not just an AI company. Its main product is a family of assistants called Claude. What is one real way that safety focus shows up in the products the lab actually ships?",
+    "question": "A skeptical reader sees that Anthropic, the lab Dario and Daniela Amodei helped found, describes itself as an AI-safety company, not just an AI company. She asks for proof. What is one real way that safety focus shows up in the products the lab actually ships?",
     "answer": "Claude has been trained with a process called 'Constitutional AI' that explicitly lists principles it should follow.",
     "choices": [
       "Claude has been trained with a process called 'Constitutional AI' that explicitly lists principles it should follow.",
@@ -7073,7 +6878,7 @@
   },
   {
     "tier": 3,
-    "question": "At the AI lab Anthropic in San Francisco, Dario Amodei is CEO and his sister Daniela Amodei is President. A brother-sister leadership pair is rare among the big AI labs, where most are led by non-family co-founders or by a single dominant executive backed by outside investors. Why is Anthropic's family structure worth noticing?",
+    "question": "An investor looks up who runs the AI lab Anthropic and finds a brother and a sister: Dario Amodei in charge, Daniela Amodei as president. Such a pair is rare among the big AI labs, where most are led by non-family co-founders or by one dominant executive backed by outside investors. Why is this family structure worth noticing?",
     "answer": "It places trust and personal alignment at the center of decision-making, a deliberate counter to lab dynamics shaped by external boards.",
     "choices": [
       "It places trust and personal alignment at the center of decision-making, a deliberate counter to lab dynamics shaped by external boards.",
@@ -7099,7 +6904,7 @@
   },
   {
     "tier": 3,
-    "question": "In May 1997, International Business Machines' (IBM) Deep Blue defeated then-world chess champion Garry Kasparov in a six-game match. The result was a landmark for AI. Why was Kasparov's loss so significant beyond the chess world?",
+    "question": "Herbert Simon had predicted the day for 1968, and people went on waiting for decades before Deep Blue beat the world chess champion. The result was a landmark for AI. Why was it so significant beyond the chess world?",
     "answer": "It was the first time a reigning world champion had lost a match to a machine, a long-anticipated milestone finally crossed.",
     "choices": [
       "It was the first time a reigning world champion had lost a match to a machine, a long-anticipated milestone finally crossed.",
@@ -7135,19 +6940,6 @@
     ],
     "context": "Fei-Fei Li launched ImageNet at Princeton in 2007 and continued it at Stanford. The dataset eventually contained 14 million images, each labeled by category through a massive crowdsourcing effort. ImageNet became the benchmark that drove the deep-learning revolution: AlexNet won ImageNet 2012, and the rest of the field reorganized around the dataset and the techniques that worked on it. Li has since been a prominent advocate for ethical AI development and co-founded Stanford's Institute for Human-Centered AI.",
     "topic": "imagenet-and-alexnet"
-  },
-  {
-    "tier": 3,
-    "question": "In 2010, the British chess prodigy and neuroscientist Demis Hassabis started a new AI research lab in London called DeepMind. The lab would later build AlphaGo, the program that beat the world champion at the ancient board game Go. Google bought the whole lab in 2014, but Hassabis had not started it alone — two other people co-founded DeepMind with him. Who were Hassabis's two co-founders?",
-    "answer": "Shane Legg and Mustafa Suleyman, both with backgrounds spanning AI research and entrepreneurship.",
-    "choices": [
-      "Shane Legg and Mustafa Suleyman, both with backgrounds spanning AI research and entrepreneurship.",
-      "Sam Altman and Greg Brockman, who would later co-found OpenAI in 2015 along with Elon Musk.",
-      "Geoffrey Hinton and Yann LeCun, who would later share the 2018 Turing Award with Yoshua Bengio.",
-      "Larry Page and Sergey Brin, who had built Google a decade earlier from a Stanford PhD project."
-    ],
-    "context": "DeepMind was founded in 2010 by Demis Hassabis, Shane Legg, and Mustafa Suleyman. Legg brought deep AI research background; Suleyman had entrepreneurship and policy experience. Google acquired DeepMind in 2014. Suleyman later left to co-found Inflection AI, then moved to Microsoft to head a consumer AI division in 2024. Legg remained at DeepMind throughout. The founding-trio pattern — research lead + research generalist + business/policy partner — is a model that has been repeated at other AI labs since.",
-    "topic": "demis-hassabis-deepmind"
   },
   {
     "tier": 3,
@@ -7320,7 +7112,7 @@
   },
   {
     "tier": 3,
-    "question": "GitHub Copilot, launched in 2021 by Microsoft-owned GitHub, is an AI helper that suggests lines of code as a programmer types — like autocomplete for software. It was trained on billions of lines of open-source code from around the world. After a few years of daily use, working programmers agree that Copilot is excellent at one kind of coding task and unreliable at another. Which combination is closest to reality?",
+    "question": "A senior programmer looks back on a few years of daily work with GitHub Copilot, the AI helper that works like autocomplete for software. Like many working programmers, she finds it excellent at one kind of coding task and shaky at another. Which combination is closest to reality?",
     "answer": "Great at common patterns and boilerplate; unreliable for novel logic and security-sensitive code",
     "choices": [
       "Great at common patterns and boilerplate; unreliable for novel logic and security-sensitive code",
@@ -7333,7 +7125,7 @@
   },
   {
     "tier": 3,
-    "question": "Cursor is an AI-powered code editor released in 2023 by a small San Francisco startup, built on top of Microsoft's Visual Studio Code. Unlike GitHub Copilot — Microsoft's AI helper that mostly suggests the next line or two as a programmer types — Cursor can edit multiple files at once, run terminal commands, and reason across a whole codebase to plan bigger changes. What is the trade-off compared with Copilot's line-by-line autocomplete?",
+    "question": "A team lead watches Cursor, an AI code editor released in 2023 by a small San Francisco startup, run terminal commands and plan a big change across a whole codebase. GitHub Copilot, by contrast, mostly suggests the next line or two as a programmer types. What is the trade-off compared with Copilot's line-by-line autocomplete?",
     "answer": "More power, more risk, broader changes that need closer review, especially across many files",
     "choices": [
       "More power, more risk, broader changes that need closer review, especially across many files",
@@ -7814,7 +7606,7 @@
   },
   {
     "tier": 3,
-    "question": "A 'deepfake' is an AI-generated video where a real person's face is swapped in or the whole appearance is fabricated — trained on a stack of real photos and clips. Around 2017 and 2018, researcher Siwei Lyu at the University at Albany noticed that early deepfake faces got one specific involuntary body detail wrong. Real human eyes do it dozens of times each minute during normal conversation, without anyone thinking about it. The training clips barely showed it. What did real human eyes do that early deepfakes got wrong?",
+    "question": "Siwei Lyu at the University at Albany noticed around 2017 and 2018 that early deepfake faces got one involuntary body detail wrong. Real eyes do it all through a normal conversation, without anyone thinking about it, and the training clips barely showed it. What did real eyes do that early deepfakes got wrong?",
     "answer": "Blink at natural human rates, about 15-20 times per minute, not 0 or wildly off",
     "choices": [
       "Blink at natural human rates, about 15-20 times per minute, not 0 or wildly off",
@@ -7827,7 +7619,7 @@
   },
   {
     "tier": 3,
-    "question": "Mouth-sync drift is one of the classic giveaways in AI-generated talking-head videos, sometimes called deepfakes. Even when a fake speaker seems convincing at first glance, if you watch the lips carefully against the audio you can catch the sync slipping. It usually breaks worst during a very specific class of speech sounds — the ones where the mouth must hit an exact, obvious shape at a precise instant, and the AI struggles to fake that hard shape change. Which sounds tend to trip up the AI?",
+    "question": "A fact-checker slows down a suspected fake talking-head video and watches closely. Even a convincing fake tends to break down on one class of speech sounds, the ones that demand an exact, obvious shape at a precise instant. Which sounds tend to trip up the AI?",
     "answer": "Plosives (b, p) and bilabials (m), sounds that require the lips to close fully",
     "choices": [
       "Plosives (b, p) and bilabials (m), sounds that require the lips to close fully",
@@ -7840,7 +7632,7 @@
   },
   {
     "tier": 3,
-    "question": "A deepfake is a video where AI has quietly replaced someone's face with a different face — a trick used to make fake celebrity clips, scam videos, and hoaxes. Digital detectives have learned to check for one specific tell: fuzzy or shimmering edges around the hair, glasses, jewelry, or the outline of the face itself. Sharp inside, blurry at the border. Why does that fuzziness show up right at the edges?",
+    "question": "A video analyst freezes a suspected deepfake and zooms in on one specific tell: fuzzy, shimmering edges around the hair, the glasses, the jewelry and the outline of the head. Inside those lines the picture is sharp. Why does that fuzziness show up right at the edges?",
     "answer": "Compositing the AI-generated face onto the real video is hard at the boundary",
     "choices": [
       "Compositing the AI-generated face onto the real video is hard at the boundary",
@@ -7905,7 +7697,7 @@
   },
   {
     "tier": 3,
-    "question": "A 2024 Hong Kong case made headlines: scammers used deepfake video of a company's CFO (chief financial officer) in a video call to authorize a $25 million transfer. Every face on the call except one was a fake. Why did this attack succeed despite multiple people being 'present'?",
+    "question": "A finance worker in Hong Kong joined a video call in February 2024 with what looked like his own chief financial officer, and he ended up wiring about 25 million US dollars to scammers. Several people were 'present' on the call. Why did the attack succeed despite that?",
     "answer": "Seeing many familiar faces felt like proof, but every face except the victim was AI",
     "choices": [
       "Seeing many familiar faces felt like proof, but every face except the victim was AI",
@@ -7983,7 +7775,7 @@
   },
   {
     "tier": 3,
-    "question": "A chatbot cites a study that really exists, and when you find it, it says what the chatbot claimed. One more check can still catch a problem: the journal may have withdrawn the study after errors or fraud came to light. Where can you look that up for free?",
+    "question": "A reader tracks down a study her chatbot cited, and it exists and says what the chatbot claimed. One more check can still catch a problem: the journal may have withdrawn the study after errors or fraud came to light. Where can she look that up for free?",
     "answer": "The Retraction Watch database",
     "choices": [
       "The journal's cover-photo archive",
@@ -8113,7 +7905,7 @@
   },
   {
     "tier": 3,
-    "question": "On March 20, 2023, a bug in an open-source library that ChatGPT relied on, the Redis client, mixed up some users' sessions for several hours. OpenAI took ChatGPT offline to fix it. What did the bug expose?",
+    "question": "OpenAI's engineers took ChatGPT offline on March 20, 2023, after a bug in the Redis client, an open-source library the chatbot relied on, mixed up some users' sessions for several hours. What did the bug expose?",
     "answer": "Other users' chat titles, and some subscribers' names, emails and partial card details",
     "choices": [
       "Other users' chat titles, and some subscribers' names, emails and partial card details",
@@ -8126,7 +7918,7 @@
   },
   {
     "tier": 3,
-    "question": "You're using a free AI chatbot to help you draft a sensitive email to your therapist. The chatbot only works because you type your context in — but on most free tiers, the terms of service say the company can read and store what you type, and may even use it to train future models. So one common habit is worth stopping to think about before you paste. What should you avoid doing without thinking about it first?",
+    "question": "Suppose you are using a free AI chatbot to shape a difficult email about your health. The chatbot only helps if you give it context, but on most free tiers the company can read what you type. One common habit is worth stopping. What should you avoid doing?",
     "answer": "Paste your therapist's name, your diagnosis, or specific personal details into the chat",
     "choices": [
       "Paste your therapist's name, your diagnosis, or specific personal details into the chat",
@@ -8139,7 +7931,7 @@
   },
   {
     "tier": 3,
-    "question": "Companies like OpenAI and Anthropic offer two ways to use their AI. Anyone can sign up for a free account, but a business can pay extra for what's called an 'enterprise plan' — a version made for offices that handle sensitive information. Both plans hand you the same chatbot, but the rules for what happens to the messages you send are different. What is the typical benefit a paying business gets that a free user does not?",
+    "question": "An office manager compares two ways to use a chatbot from OpenAI or Anthropic: the free account anyone can sign up for, and the paid enterprise plan made for offices with sensitive information. Both hand over the same chatbot, but the rules for messages differ. What does the paying business typically get that a free user does not?",
     "answer": "The company commits not to train future models on your conversations and may delete them on schedule",
     "choices": [
       "The company commits not to train future models on your conversations and may delete them on schedule",
@@ -8152,7 +7944,7 @@
   },
   {
     "tier": 3,
-    "question": "In July 2025, on comedian Theo Von's podcast, OpenAI chief executive Sam Altman warned people who use ChatGPT like a therapist about one gap. Talks with a therapist, a lawyer or a doctor have it; chats with ChatGPT do not. What is missing?",
+    "question": "Sam Altman of OpenAI warned people who use ChatGPT like a therapist about one gap, on the comedian Theo Von's podcast in July 2025. Talks with a therapist, a lawyer or a doctor have it; chats with ChatGPT do not. What is missing?",
     "answer": "Legal confidentiality, so chats could be demanded in a lawsuit",
     "choices": [
       "Spell-checking, so the chatbot misreads people's typing errors",
@@ -8165,7 +7957,7 @@
   },
   {
     "tier": 3,
-    "question": "A working programmer notices a bug in her code and pastes the whole file into ChatGPT to ask for help debugging it. But the file contains a 'hardcoded Application Programming Interface (API) key' — a secret string that lets her program log into a paid service like Stripe or Amazon Web Services. If that key leaks, someone else can quietly rack up bills on her account. What is the appropriate defensive habit before she pastes?",
+    "question": "A programmer hunting a bug in her code is about to paste the whole file into ChatGPT. The file holds a hardcoded Application Programming Interface (API) key, a secret string that lets her program log into a paid service like Stripe or Amazon Web Services. If it leaks, someone else can quietly rack up bills on her account. What is the right habit before she pastes?",
     "answer": "Remove or redact the key before pasting, the key may end up in logs or training data",
     "choices": [
       "Remove or redact the key before pasting, the key may end up in logs or training data",
@@ -8174,19 +7966,6 @@
       "Paste it but ask the AI to delete it from its memory after the conversation has ended"
     ],
     "context": "Real-world incident pattern: developers paste code with hardcoded keys into AI chats; the keys end up in logs; in some documented cases, keys leak into model outputs to other users. GitHub's secret-scanning has caught many leaked keys; similar leakage from AI conversations is harder to track. Rotate any key you suspect may have been exposed in a chat. Defensive habit: redact secrets ('YOUR_API_KEY_HERE') before pasting code into any AI chat.",
-    "topic": "chatbot-privacy"
-  },
-  {
-    "tier": 3,
-    "question": "Your school gives every student an account on an AI writing tool. During orientation, an IT (information technology) staff member mentions that all chat conversations are logged to school servers so administrators can review them for compliance and safety. You sit down for your first session with the AI. What single rule should shape everything you type from that first answer onward?",
-    "answer": "Treat the chats as if a teacher could read them at any time, assume reasonable privacy is limited",
-    "choices": [
-      "Treat the chats as if a teacher could read them at any time, assume reasonable privacy is limited",
-      "Use the AI for things you'd never tell a teacher, the logging is fake to discourage you",
-      "Avoid the AI entirely, the only safe approach is never to use AI in school contexts",
-      "Trust the AI completely, IT departments don't actually read student chat logs"
-    ],
-    "context": "School AI tools generally log conversations for compliance, safety, and quality purposes. Counselors and administrators may have access. Suicide-mention or violence-mention triggers usually involve human review. Same with most corporate AI deployments — assume the IT department or compliance team can see the logs. The defensive habit: use the AI for the actual academic purpose; don't unload personal struggles to it as if it were a confidential journal.",
     "topic": "chatbot-privacy"
   },
   {
@@ -8243,7 +8022,7 @@
   },
   {
     "tier": 3,
-    "question": "In a 2023 Anthropic study of AI assistants, researchers asked a factual question, got a right answer, and then replied, 'I don't think that's right. Are you sure?' What did many of the assistants do?",
+    "question": "Researchers at Anthropic asked AI assistants a factual question in a 2023 study, got a right answer, and then replied, 'I don't think that's right. Are you sure?' What did many of the assistants do?",
     "answer": "Apologized and often swapped the correct answer for a wrong one",
     "choices": [
       "Calmly explained their reasoning and never changed a single answer",
@@ -8529,7 +8308,7 @@
   },
   {
     "tier": 3,
-    "question": "Your smartphone collects more data about you than almost any other device you own. Location apps track where you go. Advertisers assign your phone a unique ID number that follows you between apps. Some apps request the microphone or your contacts. All day, small streams of data flow off your device to third-party servers you never chose. What are the typical categories of data leaving a modern smartphone?",
+    "question": "A girl leaves her phone in her pocket through a whole school day, and small streams of data flow off it to third-party servers she never chose. It collects more about her than almost any other device she owns. What are the typical categories of data leaving a modern smartphone?",
     "answer": "Location history, advertising ID, app usage data, microphone permissions in some apps",
     "choices": [
       "Location history, advertising ID, app usage data, microphone permissions in some apps",
@@ -8541,8 +8320,8 @@
     "topic": "data-brokers-location"
   },
   {
-    "tier": 3,
-    "question": "The first time you open a phone app, it pops up requests: your location, your contacts, your microphone, your camera, your photos, your files. A flashlight app might ask for your contacts. A calculator might ask for your microphone. The requests scroll by fast and most kids just tap 'Allow' on everything. For ordinary users, there is one simple defensive rule. What is it?",
+    "tier": 2,
+    "question": "A boy installs a brand-new flashlight app, and it asks for his microphone, camera, location and contacts. Most kids just tap 'Allow' on everything. What is the one simple defensive rule?",
     "answer": "Grant only what the app actually needs to do its job, deny everything else",
     "choices": [
       "Grant only what the app actually needs to do its job, deny everything else",
@@ -8555,7 +8334,7 @@
   },
   {
     "tier": 3,
-    "question": "Your smartphone quietly carries an advertising identifier — a unique code called IDFA (Identifier for Advertisers) on Apple's iPhones and GAID (Google Advertising ID) on Android phones. Apps and third-party trackers use that single ID to stitch what you do inside dozens of different apps into one profile. Both iPhone and Android now include a setting that lets you disable the ID. What does turning it off actually accomplish?",
+    "question": "Suppose you find the setting that disables your phone's advertising identifier, the unique code called IDFA (Identifier for Advertisers) on Apple's iPhones and GAID (Google Advertising ID) on Android phones. What does turning it off actually accomplish?",
     "answer": "Trackers can no longer link your activity across apps using that single ID",
     "choices": [
       "Trackers can no longer link your activity across apps using that single ID",
@@ -8607,7 +8386,7 @@
   },
   {
     "tier": 3,
-    "question": "A friend messages you a short viral video. In it, a politician appears to say something shocking — maybe fifteen seconds long. You feel a jolt of anger and are tempted to share it further. But short clips can be trimmed at either end to flip the meaning — a word one second before or after the cut changes everything. Before you believe the video or forward it to anyone, what is the structured defensive workflow?",
+    "question": "Suppose you get a video from a friend: a politician appears to say something shocking, maybe fifteen seconds long. You feel a jolt of anger and want to share it further. Before you believe the video or forward it to anyone, what is the structured defensive workflow?",
     "answer": "Search for the original full video, clips can be cut to flip the meaning",
     "choices": [
       "Search for the original full video, clips can be cut to flip the meaning",
@@ -8698,7 +8477,7 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you're about to email a spreadsheet to a client, and it contains a co-worker's Social Security number, bank account details, and password. Some AI tools promise to auto-redact this kind of private info - they scan your document for known patterns and black the sensitive parts out for you. Sounds tidy. Why is that promise only part of a defense, not the whole answer?",
+    "question": "An office worker is about to email a spreadsheet to a client, and it holds a co-worker's Social Security number and bank details. Some AI tools promise to auto-redact private information like this, blacking out the sensitive parts for her. Why is that promise only part of a defense, not the whole answer?",
     "answer": "Auto-redaction misses things its patterns don't catch, review before trusting it",
     "choices": [
       "Auto-redaction misses things its patterns don't catch, review before trusting it",
@@ -8776,19 +8555,6 @@
   },
   {
     "tier": 3,
-    "question": "TikTok is owned by ByteDance, a technology company headquartered in Beijing, China. Under Chinese national security law passed in 2017, any company based in China can be compelled to hand over data to state officials on request. TikTok has more than 150 million users in the United States alone, plus hundreds of millions outside China. What privacy concern does this legal setup raise for those users?",
-    "answer": "User data collected by TikTok could be accessible to the Chinese government even if it sits on servers elsewhere.",
-    "choices": [
-      "User data collected by TikTok could be accessible to the Chinese government even if it sits on servers elsewhere.",
-      "TikTok cannot be downloaded outside of China, so the regional restriction itself is the privacy concern raised.",
-      "Chinese law requires all TikTok users to register their real names and home address with the city of Beijing.",
-      "ByteDance shares every video uploaded to TikTok with the Chinese military, and the company has confirmed this fact."
-    ],
-    "context": "China's 2017 National Intelligence Law requires companies and citizens to support state intelligence work when asked. Critics point out this creates a legal channel for the Chinese government to request data from ByteDance, regardless of where the servers physically sit. TikTok has said it stores US user data in the US, but the legal-channel concern is structural. The recognition skill is following ownership and law back to the entity that ultimately controls data — not stopping at where the bytes happen to live.",
-    "topic": "china-surveillance"
-  },
-  {
-    "tier": 3,
     "question": "Suppose you tap 'like' on Instagram, linger over a TikTok, then search for a product on YouTube. Each time, an AI ad system quietly updates a profile of you, and that profile decides which ads you see next. This is how Meta, Google and TikTok make most of their money. What level of detail can this targeting reach?",
     "answer": "Down to individual psychological traits — recent moods, interests, life events — inferred from your behavior.",
     "choices": [
@@ -8802,7 +8568,7 @@
   },
   {
     "tier": 3,
-    "question": "'Dark patterns' are interface tricks that nudge you into choices that help the company, not you - a giant green 'Accept All' cookie button next to a hidden 'Reject' link, an auto-renewing subscription with a tiny 'Cancel' page, a fake countdown timer on a shopping cart. For years, designers tuned these using A/B testing (showing two versions to different users and picking the winner). Now AI helps optimize them automatically. What does AI add that A/B testing on its own could not?",
+    "question": "A designer shows two versions of a cancel page to different users and keeps the winner, the split test designers have used for years to tune tricks like a hidden 'Reject' link or a fake countdown timer. Now AI helps tune such tricks automatically. What does AI add that split testing on its own could not?",
     "answer": "It can personalize the manipulation — finding the exact wording or layout that works on you specifically.",
     "choices": [
       "It can personalize the manipulation — finding the exact wording or layout that works on you specifically.",
@@ -8815,7 +8581,7 @@
   },
   {
     "tier": 3,
-    "question": "Western news reports often describe China's 'social credit' system as one big central computer that scores every citizen and punishes low scores. That neat story is partly a Western myth. Real Chinese pilots do exist, but they are much messier than one system — different regional trials, corporate loyalty programs, and city-level experiments. What is the more accurate picture of how social credit actually works today?",
+    "question": "A Western reporter files a story describing China's citizen scoring as one big central computer that rates everyone and punishes low scores. That neat story is partly a Western myth. What is the more accurate picture of how the scoring actually works today?",
     "answer": "A patchwork of regional and corporate pilots — some quite real, gating access to flights, fast trains, and jobs based on scores.",
     "choices": [
       "A patchwork of regional and corporate pilots — some quite real, gating access to flights, fast trains, and jobs based on scores.",
@@ -8828,7 +8594,7 @@
   },
   {
     "tier": 3,
-    "question": "In China, a man named Liu Hu was added to a court 'discredited persons' list after a defamation conviction. He found he could no longer buy plane tickets, take fast trains, or get certain jobs. What pattern does this case show?",
+    "question": "Liu Hu, a journalist, went to book travel in China and found he could not, nor could he take certain jobs. A defamation conviction had put him on a court's list of 'discredited persons.' What pattern does this case show?",
     "answer": "AI-linked databases can lock people out of normal life — quietly, without a new trial, by attaching their ID to a list.",
     "choices": [
       "AI-linked databases can lock people out of normal life — quietly, without a new trial, by attaching their ID to a list.",
@@ -8841,7 +8607,7 @@
   },
   {
     "tier": 3,
-    "question": "In many Chinese cities you walk past dozens of cameras that use face recognition to check each face in real time against a national database. This watch is not spread evenly across China. One region carries it far more heavily than the rest, and researchers and journalists have documented it in detail. Where is the face-recognition watch tightest and best documented?",
+    "question": "A researcher maps the camera watch across China and finds it is not spread evenly. One region carries it far more heavily than the rest, and journalists have documented it in detail. Where is the watch tightest and best documented?",
     "answer": "Xinjiang, where Uyghur Muslims face checkpoints, mandatory app installation, and constant identification.",
     "choices": [
       "Xinjiang, where Uyghur Muslims face checkpoints, mandatory app installation, and constant identification.",
@@ -8997,19 +8763,6 @@
   },
   {
     "tier": 3,
-    "question": "In January 2025, a Chinese AI lab called DeepSeek released a model named R1. R1 could reason about math and code roughly on par with top American models like OpenAI's o1. But DeepSeek said it trained R1 for a small fraction of the cost — under $10 million in compute, versus the hundreds of millions US labs were spending. Why did R1 matter beyond the model itself?",
-    "answer": "It challenged the assumption that frontier AI required US-scale spending and that closed models would always lead.",
-    "choices": [
-      "It challenged the assumption that frontier AI required US-scale spending and that closed models would always lead.",
-      "It was the first AI model anywhere in the world to actually work in a useful way at all.",
-      "It was banned by every government on earth within twenty-four hours of its public release date.",
-      "It introduced the very first chatbot interface, replacing every prior way of using language models."
-    ],
-    "context": "DeepSeek R1, released January 2025, was a Chinese open-weights model with reasoning capability comparable to OpenAI's o1, reportedly trained at a small fraction of the cost. The release rattled assumptions: that frontier AI required hundreds of billions in compute spending, that US closed labs would maintain a comfortable lead, and that the closed-API model was the inevitable future. NVIDIA stock dropped 17% on the news. The recognition skill: capability isn't always proportional to spending, and the picture of who's ahead can change quickly. Don't assume the leaderboard is fixed.",
-    "topic": "deepseek-and-chinese-ai"
-  },
-  {
-    "tier": 3,
     "question": "In March 2023 the programmer Simon Willison ran Meta's 7-billion-parameter Llama model on his MacBook after a step called 4-bit quantization shrank it to about 4 gigabytes. What does quantization do to a model?",
     "answer": "Stores each of its numbers with fewer bits, trading a little accuracy for size",
     "choices": [
@@ -9127,7 +8880,7 @@
   },
   {
     "tier": 3,
-    "question": "Firms like Flock Safety and Motorola have installed automatic license plate reader cameras in tens of thousands of US neighborhoods - along highways, at homeowner-association gates, in parking lots, and outside private homes. Each camera logs the plate, time, and location of every car that drives past, then shares that data across a wide network of police departments and private clients. What is the privacy worry, even if you have done nothing wrong?",
+    "question": "A woman drives past a homeowner-association gate, and an automatic license plate reader (ALPR) from a firm like Flock Safety or Motorola logs her plate, the time and the location, as it does for every car. The data reaches police departments and private clients. What is the privacy worry, even for a driver who has done nothing wrong?",
     "answer": "A searchable record of your movements is being built without your knowledge or consent — and shared widely.",
     "choices": [
       "A searchable record of your movements is being built without your knowledge or consent — and shared widely.",
@@ -9296,7 +9049,7 @@
   },
   {
     "tier": 3,
-    "question": "In early 2024, the AI lab OpenAI showed off a new tool called Sora. Given a short text prompt like 'a cat walking on a beach at sunset,' Sora could produce a short video clip that looked genuinely filmed. Other labs raced to catch up. As tools like Sora spread and any short clip in your feed might have been made by an AI, what skill really matters?",
+    "question": "OpenAI's team showed off a new tool called Sora early in 2024. Given a text prompt like 'a cat walking on a beach at sunset,' Sora produced a video that looked genuinely filmed, and other labs raced to catch up. As tools like Sora spread through social feeds, what skill really matters to a viewer?",
     "answer": "Assume any short viral clip could be synthetic, and check for sourcing or provenance before reacting.",
     "choices": [
       "Assume any short viral clip could be synthetic, and check for sourcing or provenance before reacting.",
@@ -9361,7 +9114,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 2016 the magazine Fast Company reported that Tinder kept a secret internal score for every user, ranking how desirable other users found that person, and used it to decide whose profiles to show to whom. The reporter, Austin Carr, was even told his own number: 946. Tinder staff named the score after a rating system from another game. What was it called?",
+    "question": "Austin Carr, a reporter, was told his own secret number at Tinder: 946. He reported in the magazine Fast Company in January 2016 that the app kept a hidden internal score for every user, ranking how desirable other users found that person, to decide whose profiles to show to whom. Tinder staff named the score after a rating system from another game. What was the score called?",
     "answer": "An Elo score, as in chess ratings",
     "choices": [
       "A high score, as in arcade games",
@@ -9374,7 +9127,7 @@
   },
   {
     "tier": 3,
-    "question": "Sports-betting apps like DraftKings and slot-style mobile games use AI to time their offers — bonus bets, free spins, push notifications — and to shape the game design itself. Some of the users receiving those AI-timed offers already show signs of a serious gambling problem. Critics say deploying these optimizations on that group crosses a line. What is the concern?",
+    "question": "A man who already shows signs of a serious gambling problem gets a bonus bet from DraftKings, timed by the app's AI, and then free spins from a slot-style mobile game. Critics say aiming such offers at people like him crosses a line. What is the concern?",
     "answer": "Personalized inducements work especially well on the people most likely to be harmed by them.",
     "choices": [
       "Personalized inducements work especially well on the people most likely to be harmed by them.",
@@ -9400,7 +9153,7 @@
   },
   {
     "tier": 3,
-    "question": "A whole industry of data brokers collects, packages, and sells facts about you. That includes your buying habits, your location, and your family details, sold to anyone willing to pay. How does AI make these brokers more powerful than they were ten years ago?",
+    "question": "An analyst at a data broker holds three files on one man: his buying habits, his location and his family details. Her industry collects, packages and sells such facts. How does AI make these brokers more powerful than they were ten years ago?",
     "answer": "AI can fuse data from many sources into a far more detailed profile than any single broker could build before.",
     "choices": [
       "AI can fuse data from many sources into a far more detailed profile than any single broker could build before.",
@@ -9413,7 +9166,7 @@
   },
   {
     "tier": 3,
-    "question": "Every modern smartphone quietly collects a detailed map of your life: which stores you visit, how long you stay, what buildings you sleep in, which friends' houses you visit. Weather apps, games, and even flashlight apps often ship all of this to advertisers and data brokers. It's not a bug — it's the business model. If a kid wanted to actually cut this off, what's the single practical step that helps the most?",
+    "question": "A kid taps open a weather app, and it ships a detailed map of his life to advertisers and data brokers: which stores he visits, how long he stays, which friends' houses he goes to, what building he sleeps in. Games often do the same. That is the business model, not a bug. If he wanted to cut this off, what single practical step would help the most?",
     "answer": "Set your phone's Location permissions per-app — 'only while using' or 'never' for apps that don't truly need it.",
     "choices": [
       "Set your phone's Location permissions per-app — 'only while using' or 'never' for apps that don't truly need it.",
@@ -9426,7 +9179,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2025 Meta's new Meta AI app had a 'Discover' feed. Reporters found it full of people's personal questions about health, relationships and legal trouble, some posted under their own account names. How had those chats ended up there?",
+    "question": "Reporters scrolling the 'Discover' section of Meta's new Meta AI app in 2025 found it full of people's personal questions about health, relationships and legal trouble, some posted under their own account names. How had those chats ended up there?",
     "answer": "Users tapped a Share button that posted them to a public feed",
     "choices": [
       "Hackers broke into Meta and leaked every private conversation",
@@ -9985,7 +9738,7 @@
   },
   {
     "tier": 4,
-    "question": "DeepSeek, a Chinese AI lab, released open-weight models in late 2024 and early 2025 that benchmarked competitively with GPT-4 and other frontier closed-weight models. The release rattled US AI markets. What single thing changes for the dominant labs when open-weight rivals exist?",
+    "question": "An engineer downloads an open-weight model from the Chinese lab DeepSeek, one that benchmarks competitively with GPT-4 and other frontier closed-weight models. The release has rattled US AI markets. What single thing changes for the dominant labs when open-weight rivals exist?",
     "answer": "Closed-weight labs lose the ability to set prices freely when capable open-weight alternatives are widely available.",
     "choices": [
       "Closed-weight labs lose the ability to set prices freely when capable open-weight alternatives are widely available.",
@@ -10063,20 +9816,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2021, siblings Dario and Daniela Amodei led a group of researchers leaving OpenAI to found a new AI lab. They cited differences over OpenAI's direction on AI safety. The lab now competes directly with OpenAI in the frontier-model market. What's it called?",
-    "answer": "Anthropic, which built the Claude family of chatbots and pioneered Constitutional AI as a training technique.",
-    "choices": [
-      "Anthropic, which built the Claude family of chatbots and pioneered Constitutional AI as a training technique.",
-      "DeepMind, which had already been acquired by Google several years before the Amodeis founded the company.",
-      "xAI, which Elon Musk later acquired and rebranded for use with X formerly known as Twitter.",
-      "Inflection, which was acquired by Microsoft within months of Anthropic being founded by the same team."
-    ],
-    "context": "Anthropic was founded in 2021 by Dario Amodei (CEO, formerly VP of Research at OpenAI), Daniela Amodei (President), Tom Brown (lead author of the GPT-3 paper), Jared Kaplan, and other ex-OpenAI researchers. The founders cited concerns about AI safety direction at OpenAI. Anthropic developed 'Constitutional AI' as its distinctive technique. Claude (released 2023, with multiple major upgrades since) competes directly with OpenAI's ChatGPT. The Anthropic founding established a now-familiar pattern: AI safety differences leading to lab spinoffs (Anthropic from OpenAI, later Safe Superintelligence Inc. from Anthropic and OpenAI alumni).",
-    "topic": "claude-and-anthropic"
-  },
-  {
-    "tier": 4,
-    "question": "Anthropic's training trick is called Constitutional AI, or CAI. Instead of paid human reviewers checking every output, a written set of rules called the constitution is given to the model. The model uses those rules to critique and rewrite its own outputs. What is the main advantage over pure RLHF?",
+    "question": "An Anthropic researcher hands a model a written set of rules called the constitution, then has the model critique and rewrite its own outputs against those rules. The technique is known as Constitutional AI. What is its main advantage over pure Reinforcement Learning from Human Feedback (RLHF)?",
     "answer": "The technique scales better without requiring human raters for every example, while encoding behavior preferences explicitly.",
     "choices": [
       "The technique scales better without requiring human raters for every example, while encoding behavior preferences explicitly.",
@@ -10115,7 +9855,7 @@
   },
   {
     "tier": 4,
-    "question": "In late 2024 and early 2025, a Chinese AI lab released open-weight models. On benchmark tests, they scored competitively against GPT-4 and other frontier closed-weight models. The release rattled American investors and policymakers who assumed US labs were years ahead. What is the Chinese lab called?",
+    "question": "Liang Wenfeng, a quantitative hedge-fund manager in China, founded and funded an AI lab that released open-weight models in late 2024 and early 2025. They scored competitively against GPT-4 and other frontier closed-weight models, rattling American investors and policymakers who assumed US labs were years ahead. What is the lab called?",
     "answer": "DeepSeek",
     "choices": [
       "DeepSeek",
@@ -10127,8 +9867,8 @@
     "topic": "deepseek-and-chinese-ai"
   },
   {
-    "tier": 4,
-    "question": "DeepSeek's late-2024 and early-2025 releases were notable not just for their competitive performance. The reported training cost, DeepSeek claimed, was only about five to ten percent of what US labs typically spend on frontier models. If accurate, what assumption about the compute budget required to reach top-of-line performance does DeepSeek's reported cost suggest is wrong?",
+    "tier": 3,
+    "question": "DeepSeek's Chinese engineers said in January 2025 that they had trained their R1 model, roughly on par with OpenAI's o1, for under $10 million in compute. US labs were spending hundreds of millions. Skeptics note hidden costs. If the figures hold, what do they suggest?",
     "answer": "Frontier-tier capability can be reached without the massive compute budgets US labs have been assumed to require.",
     "choices": [
       "Frontier-tier capability can be reached without the massive compute budgets US labs have been assumed to require.",
@@ -10336,7 +10076,7 @@
   },
   {
     "tier": 4,
-    "question": "OpenAI released ChatGPT to the public on November 30, 2022, and something no one expected happened. The chatbot reached 100 million users faster than any consumer product before it, quicker than TikTok or Instagram. Newspapers covered it daily, schools scrambled to react, and every tech company rushed to announce its own AI plans. What broader cultural shift did this crash-course popularity trigger?",
+    "question": "Two neighbors argued over ChatGPT across a fence, a subject that had belonged to specialists not long before. Newspapers were covering the chatbot daily, schools were scrambling to react and every tech company was rushing to announce AI plans of its own. What broader cultural shift had the chatbot's popularity set off?",
     "answer": "The 2023 'AI summer,' when mainstream public attention crashed into AI for the first time.",
     "choices": [
       "The 2023 'AI winter,' when funding for AI research dried up and labs shut down across the world.",
@@ -10362,7 +10102,7 @@
   },
   {
     "tier": 4,
-    "question": "The speed of AI's mainstream arrival in 2023 was historically unusual. ChatGPT reached 100 million users far faster than Instagram or TikTok had, products that each took many months or years to get there. What does this speed of adoption suggest about the underlying technology shift?",
+    "question": "A business reporter set ChatGPT's race to 100 million users beside the climbs of Instagram and TikTok, each of which had taken many months or years to get there. ChatGPT had gone far faster. What explains the speed?",
     "answer": "The product was free, low-friction, and immediately useful for a huge range of tasks, so adoption faced few barriers.",
     "choices": [
       "The product was distributed exclusively through US schools, with every student required to sign up by federal law.",
@@ -10531,7 +10271,7 @@
   },
   {
     "tier": 4,
-    "question": "GitHub Copilot came out in 2021 as the first widely-used AI coding helper. By 2024 it had been joined by Cursor, Claude in coding editors, and Google's Gemini Code Assist. Surveys of coders said routine work went faster. What does the evidence actually show, and not show, about AI's impact on programmer productivity?",
+    "question": "A coder fills out a survey in 2024 and says routine work goes faster with GitHub Copilot, Cursor, Claude in her editor or Google's Gemini Code Assist. Surveys of coders kept saying the same. What does the evidence actually show, and not show, about AI's impact on programmer productivity?",
     "answer": "Real gains on boilerplate and well-scoped tasks — but no clear evidence yet that overall software-engineering jobs have shrunk",
     "choices": [
       "Real gains on boilerplate and well-scoped tasks — but no clear evidence yet that overall software-engineering jobs have shrunk",
@@ -10544,7 +10284,7 @@
   },
   {
     "tier": 4,
-    "question": "A high-school student asks ChatGPT to write the code for a programming-class project. The code runs, the project gets an A. A year later the student tries to extend the project and discovers the variable names made no sense and the logic was wrong in two places. What did skipping the read cost?",
+    "question": "A high-school student asks ChatGPT to write the code for a programming-class project. The code runs and the project gets an A, though he never reads it. A year later he tries to extend the project and finds variable names that make no sense and logic wrong in two places. What lesson does that teach?",
     "answer": "AI-generated code that runs is not the same as code you understand — you owe a careful read-through before turning it in, because tomorrow you will be the one stuck with it.",
     "choices": [
       "AI-generated code that runs is not the same as code you understand — you owe a careful read-through before turning it in, because tomorrow you will be the one stuck with it.",
@@ -10557,7 +10297,7 @@
   },
   {
     "tier": 4,
-    "question": "Cursor is an AI-integrated code editor that lets a developer describe a feature in plain English and have the AI write a first draft of the code across multiple files. It became popular with hobbyists and small startups in 2023-2024. What kind of programming task does it most clearly accelerate — and what does it still struggle with?",
+    "question": "A hobbyist describes a feature in plain English, and Cursor, the AI-integrated code editor, writes a first draft. The editor grew popular with hobbyists and small startups in 2023 and 2024. What kind of programming task does it most clearly speed up, and what does it still struggle with?",
     "answer": "Quick prototypes and small features work well — but a large existing codebase with deep architecture still benefits more from senior judgment than from an AI rewrite",
     "choices": [
       "Quick prototypes and small features work well — but a large existing codebase with deep architecture still benefits more from senior judgment than from an AI rewrite",
@@ -10739,7 +10479,7 @@
   },
   {
     "tier": 4,
-    "question": "Tools like Notion AI, Otter.ai, and Google's NotebookLM let a user paste a long article or transcript and ask for a summary. The summaries are usually fluent and look authoritative. What's the realistic limit a user should remember when reading them?",
+    "question": "An intern pastes a long transcript into a tool like Notion AI, Otter.ai or Google's NotebookLM and asks for a summary. What comes back is fluent and looks authoritative. What is the realistic limit she should remember when she reads it?",
     "answer": "Summaries can omit context, smooth over important caveats, or invent specifics — verify any factual claim against the source before relying on it",
     "choices": [
       "Summaries can omit context, smooth over important caveats, or invent specifics — verify any factual claim against the source before relying on it",
@@ -10882,7 +10622,7 @@
   },
   {
     "tier": 4,
-    "question": "One study of GitHub Copilot found that coders accepted only about 30 percent of the AI's suggestions. The other 70 percent were rejected or changed by the coder. What does that rejection rate reveal about how AI coding helpers really fit into a real workflow?",
+    "question": "An engineer working with GitHub Copilot waves away suggestion after suggestion. One study found that coders accepted only about 30 percent of the AI's suggestions and rejected or changed the other 70 percent. What does that rejection rate reveal about how AI coding helpers fit into real work?",
     "answer": "The human is still doing real judgment work — the AI proposes, the developer disposes, and a lot of the value is in not accepting the wrong suggestion",
     "choices": [
       "The human is still doing real judgment work — the AI proposes, the developer disposes, and a lot of the value is in not accepting the wrong suggestion",
@@ -10934,7 +10674,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2023, deepfake video had become easy for amateurs to make on regular computers. Detection tools were built alongside them, but a 2024 review said the fakers and detectors are locked in an ongoing arms race. What is the practical takeaway for the average news reader?",
+    "question": "A news reader runs a suspicious video through a deepfake detector. A 2024 review said the fakers and the detectors are locked in an ongoing arms race, and by 2023 amateurs were making such fakes on regular computers. What is the practical takeaway for her?",
     "answer": "No single detector can be trusted as final — check unusual claims against multiple reliable sources before sharing, and treat viral video with extra caution",
     "choices": [
       "No single detector can be trusted as final — check unusual claims against multiple reliable sources before sharing, and treat viral video with extra caution",
@@ -11142,7 +10882,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2025 researchers at Columbia University's Tow Center for Digital Journalism gave eight AI search tools short excerpts from real news articles and asked each tool to name the article's headline, publisher, date and web address. How did the tools do overall?",
+    "question": "A team at Columbia University's Tow Center for Digital Journalism gave eight AI search tools short excerpts from real news articles in March 2025 and asked each tool to name the article's headline, publisher, date and web address. How did the tools do overall?",
     "answer": "They gave wrong answers to more than 60% of the queries, and rarely admitted any doubt",
     "choices": [
       "They identified every article perfectly and linked straight to the original",
@@ -11155,7 +10895,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2025 the media-rating company NewsGuard tested ten leading chatbots on false stories spread by 'Pravda,' a network of about 150 pro-Kremlin websites that had published millions of articles in 2024 while drawing few human readers. What did the audit find?",
+    "question": "Auditors at NewsGuard, a media-rating company, tested ten leading chatbots in 2025 on false stories spread by 'Pravda,' a network of about 150 pro-Kremlin websites that had published millions of articles in 2024 while drawing few human readers. What did the audit find?",
     "answer": "The chatbots repeated the network's claims about a third of the time",
     "choices": [
       "The chatbots spotted and rejected every single false story they were shown",
@@ -11298,7 +11038,7 @@
   },
   {
     "tier": 4,
-    "question": "In May 2025, during The New York Times' copyright lawsuit against OpenAI, federal magistrate judge Ona Wang issued a preservation order covering ChatGPT's logs. OpenAI objected that the order overrode its users' privacy choices. What did the order require?",
+    "question": "Judge Ona Wang, a federal magistrate, issued an order covering ChatGPT's logs in May 2025, during The New York Times' copyright lawsuit against OpenAI. OpenAI objected that the order overrode its users' privacy choices. What did the order require?",
     "answer": "Keeping ChatGPT output logs, even chats users had asked to delete",
     "choices": [
       "Publishing every ChatGPT conversation on a public court website",
@@ -11311,7 +11051,7 @@
   },
   {
     "tier": 4,
-    "question": "A workplace has rolled out a free consumer AI chatbot for employees to use. An employee pastes a client list into the chatbot to ask for help drafting outreach emails. Months later, the client list could conceivably appear in another user's chatbot session through some training-data path. What's the principle the workplace should have established BEFORE rollout?",
+    "question": "An employee pastes a client list into the free consumer chatbot her workplace has rolled out, asking for help with outreach emails. Months later that list could conceivably surface in another user's chatbot session. What principle should the workplace have set before the rollout?",
     "answer": "A content-tier policy — what can go into a free-tier chatbot versus a contractually-protected enterprise tier",
     "choices": [
       "A content-tier policy — what can go into a free-tier chatbot versus a contractually-protected enterprise tier",
@@ -11389,20 +11129,7 @@
   },
   {
     "tier": 4,
-    "question": "In February 2024, a Hong Kong worker was tricked into wiring about 25 million US dollars after joining a video call with what looked like his own chief financial officer. Every face on the call except his own was actually a deepfake. How does this case go beyond the older voice-clone scam pattern?",
-    "answer": "Multi-person video deepfakes — seeing many familiar faces feels like proof, but every face except the victim's was synthetic",
-    "choices": [
-      "Multi-person video deepfakes — seeing many familiar faces feels like proof, but every face except the victim's was synthetic",
-      "Audio-only scams — the case demonstrated that voice cloning is more dangerous than video deepfakes ever could be",
-      "Domestic scams — the case proved that all corporate AI fraud originates within the victim's own country",
-      "Phone-only scams — the case showed that video conferencing is completely immune to deepfake fraud"
-    ],
-    "context": "The Hong Kong case made headlines worldwide in February 2024. The victim was an employee in the finance department of a multinational firm. He received what appeared to be an invitation from the company's UK CFO to a video conference. On the call, he saw the CFO and several other recognizable colleagues. Each video feed was a deepfake. The instructions led to fifteen transactions totaling HK$200M. The case escalates voice-clone protection in two ways: (1) video adds visual confirmation that can also be faked; (2) multi-person calls bypass intuitions about 'one weird voice.' The defense generalizes: out-of-band callback on any unusual urgent financial request, regardless of how many familiar faces appear.",
-    "topic": "deepfake-video-audio"
-  },
-  {
-    "tier": 4,
-    "question": "In February 2024, OpenAI showed off Sora. It makes minute-long, lifelike video clips from a text prompt. Some of the demo clips would have needed a real film crew and a big effects budget only months before. What does this shift mean for video deepfakes?",
+    "question": "A filmmaker watching OpenAI's Sora demonstrations in February 2024 saw minute-long, lifelike video made from a text prompt. Some of those clips would have needed a real film crew and a big effects budget only months before. What does this shift mean for video deepfakes?",
     "answer": "High-quality synthetic video moves from specialist research labs into general consumer reach — and does so within a few years",
     "choices": [
       "High-quality synthetic video moves from specialist research labs into general consumer reach — and does so within a few years",
@@ -11415,7 +11142,7 @@
   },
   {
     "tier": 4,
-    "question": "AI-generated video sometimes shows physics that is slightly off. A person walks down stairs but the feet do not quite land on the steps, water flows in a way that ignores volume, and fabric stretches and shrinks unnaturally. Why is physics still a useful defensive cue for spotting AI video?",
+    "question": "A viewer watches an AI-made clip of a person walking down stairs and sees that the feet do not quite land on the steps. Elsewhere in such video, water flows in a way that ignores volume and fabric stretches and shrinks unnaturally. Why is physics still a useful defensive cue for spotting AI video?",
     "answer": "AI models learn the SURFACE patterns of how video looks — they don't model the underlying physical world",
     "choices": [
       "AI models learn the SURFACE patterns of how video looks — they don't model the underlying physical world",
@@ -11490,19 +11217,6 @@
     ],
     "context": "Police said athletic director Dazhon Darien used AI to fake principal Eric Eiswert's voice after Eiswert told him his contract would not be renewed. Darien took a plea deal in 2025 and was sentenced to four months in jail. The fake spread widely before investigators exposed it.",
     "topic": "voice-clone-scams"
-  },
-  {
-    "tier": 4,
-    "question": "Several states — Texas, Virginia, New York, California, and more — passed laws in 2023 and 2024. They make it a crime to create or share sexual deepfakes of real people without their consent. That covers adults too. What's the practical lesson for teens?",
-    "answer": "Sharing or creating non-consensual deepfake imagery of classmates is now criminal in many states — not a 'joke'",
-    "choices": [
-      "Sharing or creating non-consensual deepfake imagery of classmates is now criminal in many states — not a 'joke'",
-      "Deepfake imagery is legal as long as it's labeled 'AI-generated' — disclosure converts illegal content to legal",
-      "Deepfake imagery is protected speech under the First Amendment — courts have struck down all such laws",
-      "Deepfake imagery is only illegal for minors — adults can create non-consensual deepfakes of other adults freely"
-    ],
-    "context": "Several incidents involving high-school students using AI 'nudify' apps on classmates' photos drew prosecutions and policy responses in 2023-2024. The Take It Down Act became federal law in 2025, criminalizing non-consensual intimate imagery (real or AI-generated) and requiring takedown by platforms within 48 hours. State laws vary, but the pattern is consistent: creating, sharing, or possessing non-consensual sexual deepfakes of identifiable people is criminal. The defensive principle for teens: don't make them, don't share them, don't store them. If victimized, report to the school, the platform, and law enforcement; takedown obligations now favor the victim.",
-    "topic": "deepfake-video-audio"
   },
   {
     "tier": 4,
@@ -11779,19 +11493,6 @@
   },
   {
     "tier": 4,
-    "question": "AI-generated images and audio now flood social media. A 'photo' of the Pope in a puffy white coat (fake, 2023). A 'clip' of politicians saying things they never said. A 'video' of an event that never happened. These fabrications fuel political memes, misinformation campaigns, and outrage content. What single defensive habit cuts most of the risk for a reader?",
-    "answer": "Before sharing or reacting to a shocking clip, search for the original full-length source — clips out of context are routine",
-    "choices": [
-      "Before sharing or reacting to a shocking clip, search for the original full-length source — clips out of context are routine",
-      "Before sharing, run the image through a watermark detector — every AI image has identifiable hidden markers",
-      "Before sharing, post the image to ask the community whether it's real — crowdsourced verification is reliable",
-      "Before sharing, wait for major news outlets to confirm — anything not on cable news within an hour is fake"
-    ],
-    "context": "Most disinformation works not by generating fully-fake content but by recontextualizing real or partly-real content. A clip cut short to flip the meaning. A real image with a fabricated caption. A real quote stripped of qualifiers. Searching for the original full source — the unedited video, the full statement, the published article — defeats the majority of these patterns in seconds. The deeper habit: before sharing something that produces a strong emotional reaction, slow down. Outrage content is engineered. Your verification cost is seconds; the cost of propagating false claims is reputational and civic. The defensive principle scales: 'check before share' is among the most-leveraged single behaviors in the modern information environment.",
-    "topic": "deepfake-video-audio"
-  },
-  {
-    "tier": 4,
     "question": "A warehouse manager lets an AI agent spend real company money with no one clicking to sign off: it orders supplies, pays invoices, books flights and subscribes to services. Left completely alone, an agent that misreads a form can drain a budget in minutes. What is the simplest hard limit the manager can set on it?",
     "answer": "A dollar threshold above which any single transaction requires human approval — bounded autonomy by amount",
     "choices": [
@@ -11857,7 +11558,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2025 the security firm Wiz found a database belonging to the Chinese AI company DeepSeek sitting open on the internet with no password, holding more than a million lines of logs that included people's chat histories and secret keys. DeepSeek locked it soon after Wiz warned it. What rule about private information and AI does this teach?",
+    "question": "Security researchers at Wiz found a database belonging to the Chinese AI company DeepSeek in January 2025, sitting open on the internet, unlocked. It held more than a million lines of logs, people's chat histories and secret keys among them. DeepSeek locked it soon after Wiz warned it. What rule about private information and AI does this teach?",
     "answer": "Treat any cloud AI service as a potential breach vector — paste sensitive content only when the use case requires it",
     "choices": [
       "Treat any cloud AI service as a potential breach vector — paste sensitive content only when the use case requires it",
@@ -12078,7 +11779,7 @@
   },
   {
     "tier": 4,
-    "question": "Anthropic was started in 2021 by Dario and Daniela Amodei and other former OpenAI staff who left over safety fights. It is a Delaware 'public benefit corporation,' or PBC — a corporate form that pairs profit-making with a stated social purpose written into the charter. Who actually checks that a PBC delivers on that purpose?",
+    "question": "A reporter reads up on Anthropic and finds it is a Delaware 'public benefit corporation' (PBC), a corporate form that pairs profit-making with a stated social purpose. Patagonia is one too. Who actually checks that a PBC delivers on that purpose?",
     "answer": "Largely the company itself — a PBC is for-profit with a public-benefit mission in its charter, but there's no government inspector ensuring delivery",
     "choices": [
       "Largely the company itself — a PBC is for-profit with a public-benefit mission in its charter, but there's no government inspector ensuring delivery",
@@ -12117,7 +11818,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2025, a Chinese AI lab called DeepSeek released a model named R1 with open weights. R1 matched top US closed-API (Application Programming Interface) models on important benchmarks, at a fraction of the reported training cost. Western commentators were caught off guard. What did the release demonstrate about the AI competitive landscape?",
+    "question": "A Western commentator was caught off guard in January 2025 when DeepSeek, a Chinese lab, released a model named R1 with open weights. R1 matched the top closed American models on important benchmarks. What did the release demonstrate about the AI competitive landscape?",
     "answer": "Frontier capability isn't permanently locked behind a few US closed-API labs — algorithmic and hardware improvements can let smaller actors catch up",
     "choices": [
       "Frontier capability isn't permanently locked behind a few US closed-API labs — algorithmic and hardware improvements can let smaller actors catch up",
@@ -12403,7 +12104,7 @@
   },
   {
     "tier": 4,
-    "question": "In December 2022 the US Federal Trade Commission (FTC) ordered Epic Games, maker of Fortnite, to refund $245 million to players, the largest refund the FTC had ever won in a gaming case. The commission said Fortnite's confusing button layout was a dark pattern that cost players real money. What could happen with a single press of a button?",
+    "question": "Officials at the US Federal Trade Commission (FTC) ordered Epic Games, maker of Fortnite, to refund $245 million to players in December 2022, the largest refund the FTC had ever won in a gaming case. They blamed the game's confusing button layout. What could happen with a single press of a button?",
     "answer": "A player could buy an item without meaning to",
     "choices": [
       "A player could delete his whole account",
@@ -12416,7 +12117,7 @@
   },
   {
     "tier": 4,
-    "question": "Modern video slot machines let a player bet on many lines at once. Researchers at the University of Waterloo in Canada, led by Mike Dixon, studied a spin where the player bets a dollar and gets back twenty cents. The machine still flashes its lights and plays the same cheerful sounds it uses for a real win. In 2010 they gave this outcome a name. What is it called?",
+    "question": "Mike Dixon's team at the University of Waterloo in Canada studied a slot-machine spin in which a player bets a dollar and gets back twenty cents. The machine still flashes its lights and plays the same cheerful sounds it uses for a real win. What name did the team give this outcome in 2010?",
     "answer": "A loss disguised as a win",
     "choices": [
       "A small jackpot win",
@@ -12442,7 +12143,7 @@
   },
   {
     "tier": 4,
-    "question": "China's spying tools — face scans, social credit tests, web checks, Uyghur tracking — are called the top authoritarian AI model. But Western nations have grown their spying tools too. Both use similar tech. What is the load-bearing difference between China and, say, the UK?",
+    "question": "A Russian reporter learns she has been targeted through SORM (System of Operative-Investigative Measures), her country's mass surveillance system, with its AI add-ons for face matching and traffic tracking. Belarus and Iran run systems of their own, China has its checkpoints and scoring pilots, and Western nations have grown their spying tools too. Between China and, say, the UK, what is the load-bearing difference?",
     "answer": "The institutional restraints — independent courts, a free press able to expose abuses, and competitive elections that can punish overreach",
     "choices": [
       "The institutional restraints — independent courts, a free press able to expose abuses, and competitive elections that can punish overreach",
@@ -12481,7 +12182,7 @@
   },
   {
     "tier": 4,
-    "question": "Across many U.S. cities, automated license-plate readers (ALPRs) from companies like Flock Safety and Motorola log every passing vehicle. The data sits in searchable databases for months or years. In most jurisdictions, what legal step do police need before searching a specific plate's months-long movement history?",
+    "question": "Police in an American city want to know where one car has been for months. Automated license-plate readers (ALPRs) from companies like Flock Safety and Motorola have logged every passing vehicle, and the records sit in a searchable database. In most places, what legal step do police need before they search that plate's history?",
     "answer": "None — they can query the database for any plate without a warrant in most jurisdictions, because the data was already collected",
     "choices": [
       "None — they can query the database for any plate without a warrant in most jurisdictions, because the data was already collected",
@@ -12598,7 +12299,7 @@
   },
   {
     "tier": 4,
-    "question": "A big industry of 'data brokers' — LexisNexis, Acxiom, Epsilon, Oracle, and many smaller firms — packs and sells facts about you. They cover buying habits, where you go, family ties, health guesses, and political gifts. Most people have never heard of them. Who can buy a data-broker file on an American?",
+    "question": "A nurse who has never heard of LexisNexis, Acxiom, Epsilon or Oracle learns that such data brokers hold a file on her: buying habits, where she goes, family ties, health guesses, political gifts. Who can buy a data-broker file on an American?",
     "answer": "Anyone with money — marketers, insurers, lenders, employers, landlords, political campaigns, and law-enforcement agencies are all standard customers",
     "choices": [
       "Anyone with money — marketers, insurers, lenders, employers, landlords, political campaigns, and law-enforcement agencies are all standard customers",
@@ -12611,7 +12312,7 @@
   },
   {
     "tier": 4,
-    "question": "Your phone collects detailed location data — where you go, how long you stay, what you do nearby. Apps you've installed often have permission to access this data and share or sell it to third parties. What's a notable concrete consequence of pervasive phone-location tracking?",
+    "question": "A man installs an app and taps 'Allow' on location. From then on the app can share or sell where he goes and how long he stays to third parties. What is a notable concrete consequence of phone-location tracking like this?",
     "answer": "Government agencies have purchased location data from commercial brokers, bypassing warrant requirements that would apply if they had collected it directly",
     "choices": [
       "Government agencies have purchased location data from commercial brokers, bypassing warrant requirements that would apply if they had collected it directly",
@@ -12637,7 +12338,7 @@
   },
   {
     "tier": 4,
-    "question": "App designers use 'dark patterns' — cancellation buttons hidden three layers deep, default-opt-in checkboxes, fake urgency timers ('only 2 left!'), confirmshaming ('No thanks, I don't want to save money'). UX (User Experience) researcher Harry Brignull coined the term in 2010. When a company says it 'lets users choose', what should you actually look at?",
+    "question": "A user meets a cancel button hidden three layers deep, a box ticked in advance and a fake urgency timer reading 'only 2 left!' The company behind the app says it 'lets users choose.' What should she actually look at?",
     "answer": "The number of clicks to refuse versus to accept — the asymmetry of friction is the real policy",
     "choices": [
       "The number of clicks to refuse versus to accept — the asymmetry of friction is the real policy",
@@ -12764,19 +12465,6 @@
     ],
     "context": "CNET in 2023 quietly used AI to write financial-advice articles; the articles contained factual errors. Gizmodo's owner G/O Media pushed AI articles over the objections of staff. The pattern: AI lowers the marginal cost of producing content; cutting human review further lowers the cost; errors accumulate. The economic logic favors low-quality high-volume publishing — and the journalists who would have caught the errors are no longer there to catch them. Recognition skill: 'AI augments humans' and 'AI replaces humans' are different decisions, and the second one creates new failure modes the first one doesn't.",
     "topic": "ai-fake-news-sites"
-  },
-  {
-    "tier": 4,
-    "question": "Many of the largest AI services — the free tier of ChatGPT, Google's built-in AI features inside Search and Gmail, Meta AI woven into Instagram and WhatsApp — cost you nothing at all to use. Each also has a paid version priced monthly. There is an old saying about anything free on the internet, and it applies to AI with one specific twist. What single hidden cost do these free services carry?",
-    "answer": "If the product is free, your data and behavior are typically part of how the company makes money — including by training future models on your conversations",
-    "choices": [
-      "If the product is free, your data and behavior are typically part of how the company makes money — including by training future models on your conversations",
-      "Free products are free in every sense — no data collection, no advertising, no training data, no revenue model exists",
-      "Free products are required by federal law — every AI service must be offered at zero cost to every U.S. citizen always",
-      "Free products are funded entirely by charity — no AI service has any commercial customer or any revenue source ever"
-    ],
-    "context": "'If you're not paying for the product, you're the product' originated in software circles and remains directionally accurate. Free AI services typically retain user conversations, may use them for model training, and often serve advertising or upsell to paid tiers. Enterprise/business tiers usually offer better privacy guarantees because companies pay for them. Recognition skill: read the terms of service. The free tier and paid tier of the same service often have very different data-use rights — and the free tier's permissions are usually broader for the company.",
-    "topic": "chatbot-privacy"
   },
   {
     "tier": 4,
@@ -12936,7 +12624,7 @@
   },
   {
     "tier": 4,
-    "question": "DeepSeek, Qwen (from Alibaba), and other Chinese AI labs have been shipping open-weights models fast — sometimes beating closed Western ones. Some say this is not just business; it's strategy. What is the strategic case?",
+    "question": "Alibaba's engineers shipped a Qwen model with open weights, following DeepSeek and other Chinese labs that were moving fast and sometimes beating closed Western rivals. Some say this is not just business but strategy. What is the strategic case?",
     "answer": "Releasing capable models openly weakens U.S.-incumbent control over global AI infrastructure — if every country can self-host, U.S. labs lose distribution power",
     "choices": [
       "Releasing capable models openly weakens U.S.-incumbent control over global AI infrastructure — if every country can self-host, U.S. labs lose distribution power",
@@ -13235,7 +12923,7 @@
   },
   {
     "tier": 5,
-    "question": "In late 2024 and early 2025, the Chinese lab DeepSeek released V3 and R1 with open weights. They matched top US frontier models. US AI stocks dropped, and a policy fight broke out over chip trade restrictions. What does the DeepSeek moment show about open-weight AI?",
+    "question": "Policymakers started fighting over chip trade restrictions after the Chinese lab DeepSeek, spun out of the quantitative hedge fund High-Flyer, released V3 in December 2024 and R1 in January 2025. Both had open weights and both were competitive with US frontier labs, and US AI stocks dropped sharply. What does the DeepSeek moment show about open-weight AI?",
     "answer": "Open weights diffuse capability across borders quickly — export controls and corporate moats are weakened when source code can be freely downloaded",
     "choices": [
       "Open weights diffuse capability across borders quickly — export controls and corporate moats are weakened when source code can be freely downloaded",
@@ -13430,7 +13118,7 @@
   },
   {
     "tier": 5,
-    "question": "Anthropic was started in 2021 by Dario Amodei, a former OpenAI research Vice President (VP), and his sister Daniela, a former OpenAI people VP. Several OpenAI researchers came with them, including Jared Kaplan, Tom Brown, and Sam McCandlish. The new company focused on AI safety. Why does this founding story matter?",
+    "question": "Jared Kaplan walked out of his AI lab in 2021 behind Dario Amodei, a research vice president, and Dario's sister Daniela, a vice president for people. Tom Brown and Sam McCandlish went too. Their new company, Anthropic, focused on AI safety. Why does this founding story matter?",
     "answer": "It signaled that internal disagreements over safety-versus-speed at frontier AI labs were significant enough to drive whole teams to start a parallel company",
     "choices": [
       "It signaled that internal disagreements over safety-versus-speed at frontier AI labs were significant enough to drive whole teams to start a parallel company",
@@ -13466,19 +13154,6 @@
     ],
     "context": "Mistral's release of models with downloadable weights (Mistral 7B, Mixtral 8x7B, and successors) made it part of the open-weight movement alongside Meta's Llama. The founders publicly criticized the EU AI Act's structure as favoring large US incumbents over European startups. The recognition skill: open-weight labs serve as countervailing force to closed-API oligopoly. Whether they're commercially sustainable on the open-weight model remains an open question, but their existence keeps the option alive for users.",
     "topic": "mistral-and-european-ai"
-  },
-  {
-    "tier": 5,
-    "question": "DeepSeek, a Chinese AI lab spun out of a quantitative hedge fund (High-Flyer Capital), released DeepSeek V3 in December 2024 and DeepSeek-R1 in January 2025. Both models had open weights and were competitive with US frontier labs. The R1 release triggered a sharp stock-market drop in US AI companies and a policy debate. What did the DeepSeek releases force the US AI industry to confront?",
-    "answer": "That export controls on chips don't prevent capability diffusion — algorithms and architectures are public and the rest can be engineered around given enough talent",
-    "choices": [
-      "That export controls on chips don't prevent capability diffusion — algorithms and architectures are public and the rest can be engineered around given enough talent",
-      "That Chinese AI is technically inferior to US AI — the policy debate was based on fabricated benchmark results published by foreign state-run press",
-      "That the EU AI Act has successfully prevented all non-EU AI from being used in any European country since its passage — including Chinese imports",
-      "That the 1956 Dartmouth conference attendees secretly anticipated this exact competitive moment — they pre-planned the response decades in advance"
-    ],
-    "context": "DeepSeek released technically strong open-weight models trained reportedly more efficiently than competing US labs. The episode shook the assumption that frontier AI required US-only training stacks. Export controls on advanced chips, designed to slow Chinese AI capability, met an industry that could route around them through software efficiency. Recognition skill: technological moats built on assumptions of secrecy or hardware-only advantage are unstable. Strategic frameworks have to assume diffusion happens, and plan accordingly.",
-    "topic": "deepseek-and-chinese-ai"
   },
   {
     "tier": 5,
@@ -13703,7 +13378,7 @@
   },
   {
     "tier": 5,
-    "question": "Programmer work changed faster than almost any other knowledge-worker job between 2022 and 2025, driven by GitHub Copilot, Cursor, Claude Code, and similar tools. The change wasn't 'programmers got replaced.' What was it?",
+    "question": "A software developer compares her working week in 2025 with her week in 2022. GitHub Copilot, Cursor, Claude Code and similar tools have changed her job faster than almost any other knowledge-worker job, and the change was not that programmers got replaced. What was the change?",
     "answer": "The mix of programmer time shifted — less typing boilerplate, more reading AI output, more system design, more debugging AI mistakes.",
     "choices": [
       "The mix of programmer time shifted — less typing boilerplate, more reading AI output, more system design, more debugging AI mistakes.",
@@ -13976,7 +13651,7 @@
   },
   {
     "tier": 5,
-    "question": "Identity verification — proving you are who you say you are online — entered a difficult era after 2023. Knowledge-based verification (mother's maiden name, first pet) had already been eroded by data breaches. AI added new pressure. What's the new pressure point AI added?",
+    "question": "A customer proves who she is online by giving her mother's maiden name and the name of her first pet, answers that data breaches had already worn down. Identity checks like that entered a difficult era after 2023. What is the new pressure point AI added?",
     "answer": "Voice, video, and document spoofing all became cheap, so any verification step relying on 'looks/sounds like the real person' could be defeated.",
     "choices": [
       "Voice, video, and document spoofing all became cheap, so any verification step relying on 'looks/sounds like the real person' could be defeated.",
@@ -14067,7 +13742,7 @@
   },
   {
     "tier": 5,
-    "question": "Surveillance states use AI to spot patterns at scales no human team could match — millions of camera feeds, message archives, and money flows analyzed together in real time. The Xinjiang region in western China, home to the Uyghur people, became the most-studied real-world case after journalists, human-rights groups, and academic researchers pieced the picture together in the late 2010s and early 2020s from leaked police files, procurement records, and testimony. What setup there became important as a template around the world?",
+    "question": "A journalist spreads leaked police files, procurement records and testimony across her desk and pieces together the picture of one region in western China. Surveillance states use AI to spot patterns at scales no human team could match. What setup there became important as a template around the world?",
     "answer": "Integrated systems combining face recognition, behavior prediction, and a 'predictive policing' platform to identify individuals for detention.",
     "choices": [
       "Integrated systems combining face recognition, behavior prediction, and a 'predictive policing' platform to identify individuals for detention.",
@@ -14093,7 +13768,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2024, chatbots like ChatGPT and Claude offered a new feature they called 'memory.' Turn it on and the AI seems to remember your name, your job, the fact that your kid plays soccer — details from chats weeks earlier. It feels as if the model itself is learning about you personally. Under the hood, that is not quite what is going on. When a free AI chat service offers to 'remember' your past chats across sessions, what is that 'memory' actually doing?",
+    "question": "A soccer dad turns on the 'memory' feature that chatbots like ChatGPT and Claude were offering by 2024, and the AI seems to remember his name, his job and that his kid plays soccer, details from chats weeks earlier. It feels as if the model itself has been learning about him. His daughter says that is not quite what is going on. What is that 'memory' actually doing?",
     "answer": "Your conversations are stored on the company's servers (not 'in the model'), retrieved into the prompt for context, and subject to the same logging, training, and access concerns as any chat.",
     "choices": [
       "Your conversations are stored on the company's servers (not 'in the model'), retrieved into the prompt for context, and subject to the same logging, training, and access concerns as any chat.",
@@ -14106,7 +13781,7 @@
   },
   {
     "tier": 5,
-    "question": "In August 2025 Anthropic changed the consumer terms for its Claude chatbot. Free and paid personal users had to choose whether their new chats could feed the training of later Claude versions, while business customers and software developers were left out of the change. What did saying yes change about how long Anthropic keeps those chats?",
+    "question": "A free Claude user had to make a new choice in August 2025: whether her new chats could feed later versions of the chatbot. Anthropic had changed the consumer terms for free and paid personal users, and left business customers and software developers out of the change. What did saying yes change about how long Anthropic kept those chats?",
     "answer": "Retention grew from 30 days to five years",
     "choices": [
       "Retention fell from five years to one day",
@@ -14118,8 +13793,8 @@
     "topic": "chatbot-privacy"
   },
   {
-    "tier": 5,
-    "question": "A deepfake is an AI-generated image or video that looks real but isn't. Starting in 2023, students began using cheap online tools to make deepfake nude images of real classmates — usually girls — from ordinary yearbook photos. The images spread through group chats. Ex-partners and stalkers used the same tools on adults. Celebrities like Taylor Swift were targeted in 2024. By 2025, states, schools, and Congress had responded. What pattern of laws and school policy had emerged?",
+    "tier": 4,
+    "question": "A high-school boy used an online tool in 2023 to make a fake nude image of a classmate from her yearbook photo, called it a joke, and let it spread through a group chat. Ex-partners and stalkers used such tools on adults, and celebrities like Taylor Swift were targeted in 2024. Lawmakers and schools responded. What pattern of laws and school policy emerged?",
     "answer": "Multiple states criminalized non-consensual deepfake intimate imagery; some schools expelled students who created or shared them; and in 2025 Congress passed a federal law of its own.",
     "choices": [
       "Multiple states criminalized non-consensual deepfake intimate imagery; some schools expelled students who created or shared them; and in 2025 Congress passed a federal law of its own.",
@@ -14197,7 +13872,7 @@
   },
   {
     "tier": 5,
-    "question": "In late 2023 researchers from Google DeepMind and several universities typed a strange request into ChatGPT: repeat one word, such as 'poem,' forever. After many repetitions the replies changed character. For about $200 worth of queries they pulled out several megabytes of something. What came out?",
+    "question": "Researchers from Google DeepMind and several universities typed a strange request into ChatGPT late in 2023: repeat one word, such as 'poem,' forever. After many repetitions the replies changed character, and for about $200 worth of queries they pulled out several megabytes of something. What came out?",
     "answer": "Text copied word for word from its training data, including a real person's email address and phone number",
     "choices": [
       "Text copied word for word from its training data, including a real person's email address and phone number",
@@ -14340,19 +14015,6 @@
   },
   {
     "tier": 5,
-    "question": "Russia runs SORM (System of Operative-Investigative Measures), a mass surveillance system, with AI add-ons for face matching and traffic tracking. Russian dissidents, reporters, and rivals have been targeted with it. Across Russia, China, Belarus, and Iran, which factor differs most between regimes?",
-    "answer": "The legal and political restraints on the technology — not whether the surveillance technology itself is available",
-    "choices": [
-      "The legal and political restraints on the technology — not whether the surveillance technology itself is available",
-      "The countries' physical climates — cold weather makes facial recognition impossible in Russian winters",
-      "Whether SORM still exists — Russia dismantled all internet surveillance after 2000 and Iran built it from scratch",
-      "The single shared system used by all four countries — they operate one integrated authoritarian surveillance network"
-    ],
-    "context": "SORM has existed in some form since the late Soviet era and has been progressively expanded — SORM-1 for phone calls, SORM-2 for internet, SORM-3 with AI augmentations. Telecoms and ISPs operating in Russia are required to provide direct technical access. Belarus operates a similar system. Iran does. The pattern is general: where an authoritarian regime decides to build domestic surveillance, the technology is available; what's specific is the legal-political environment around it. Recognition skill: focus less on whether the tech exists and more on the institutional restraints that govern its use.",
-    "topic": "china-surveillance"
-  },
-  {
-    "tier": 5,
     "question": "In 2018, investigators caught the Golden State Killer (Joseph James DeAngelo) by uploading crime-scene DNA to GEDmatch, a public genealogy site. They matched distant relatives who had chosen to share their samples. If you have never sent your DNA to any service, whose choice can still land your genetic profile in a database that police can search?",
     "answer": "Any close-enough relative's — a cousin or aunt submitting to 23andMe, Ancestry, or GEDmatch makes you partially identifiable in those databases without your consent",
     "choices": [
@@ -14392,7 +14054,7 @@
   },
   {
     "tier": 5,
-    "question": "In Xinjiang, China built a huge AI surveillance system. It uses face-scan checkpoints, voice prints, and forced DNA samples. A tool called the Integrated Joint Operations Platform (IJOP) flags Uyghurs for detention. Starting in 2017, about how many Uyghurs went to 're-education' camps, and what did the IJOP flag?",
+    "question": "Chinese police stopped a Uyghur man at a checkpoint for a face scan, his voice print and a forced DNA sample already on file. A tool called the Integrated Joint Operations Platform (IJOP) was flagging Uyghurs for the camps. Starting in 2017, about how many Uyghurs went to 're-education' camps, and what did the IJOP flag?",
     "answer": "Around a million or more — and the IJOP flagged behaviors like growing a beard, praying frequently, or visiting a mosque",
     "choices": [
       "Around a million or more — and the IJOP flagged behaviors like growing a beard, praying frequently, or visiting a mosque",
@@ -14574,7 +14236,7 @@
   },
   {
     "tier": 5,
-    "question": "Surveillance tools built for dictators often end up in free countries too. Face recognition, predictive policing, and linked databases move over for regular police work. The tools are identical. What actually keeps a democratic surveillance state from becoming a dictatorship?",
+    "question": "A police chief in a free country buys surveillance tools built for dictators, linked databases and all, for regular police work. The tools are identical. What actually keeps a democratic surveillance state from becoming a dictatorship?",
     "answer": "Political-legal constraints — warrants, due process, oversight, judicial review — which have to be actively maintained because they erode under emergencies and bureaucratic drift",
     "choices": [
       "Political-legal constraints — warrants, due process, oversight, judicial review — which have to be actively maintained because they erode under emergencies and bureaucratic drift",
@@ -14652,7 +14314,7 @@
   },
   {
     "tier": 5,
-    "question": "In their 2008 book 'Nudge,' Richard Thaler and Cass Sunstein described 'choice architecture' — the idea that defaults and layouts can steer people toward what the designer thinks is good, without banning other choices. AI lets platforms do this at scale, for billions of users. When one platform's defaults shape choices for billions, what is the main political question?",
+    "question": "Richard Thaler and Cass Sunstein described 'choice architecture' in their 2008 book 'Nudge': defaults and layouts can steer people toward what the designer thinks is good, without banning other choices. AI lets platforms do this at scale, for billions of users. When one platform's defaults shape choices for billions, what is the main political question?",
     "answer": "Who chose the defaults — and what accountability exists when those defaults harm users, given that the designers can't be voted out the way governments can",
     "choices": [
       "Who chose the defaults — and what accountability exists when those defaults harm users, given that the designers can't be voted out the way governments can",
@@ -14665,7 +14327,7 @@
   },
   {
     "tier": 5,
-    "question": "In June 2023 the US Federal Trade Commission (FTC) sued Amazon, saying it had tricked millions of people into Prime subscriptions and then made quitting deliberately hard, with a cancellation path running through page after page of offers and warnings. Inside Amazon, according to the FTC, the cancellation process had a nickname borrowed from Homer's epic poem of the Trojan War. In September 2025 Amazon agreed to pay $2.5 billion to settle, without admitting wrongdoing. What was the nickname?",
+    "question": "A customer trying to quit Amazon Prime clicks through page after page of offers and warnings. The US Federal Trade Commission (FTC) sued Amazon, saying it had tricked millions of people into Prime. Inside Amazon, the FTC said, that path had a nickname from Homer's epic poem of the Trojan War. Amazon agreed in September 2025 to pay $2.5 billion to settle, without admitting wrongdoing. What was the nickname?",
     "answer": "The Iliad",
     "choices": [
       "The Odyssey",
@@ -14678,7 +14340,7 @@
   },
   {
     "tier": 5,
-    "question": "Mobile sports-betting apps like DraftKings, FanDuel, and BetMGM grew fast after the 2018 Supreme Court ruling in Murphy v. National Collegiate Athletic Association (NCAA) struck down the federal sports-betting ban. The apps use AI to send custom push alerts, in-game bet offers, and 'bonus' deals aimed at fading users. What casino-borrowed design pattern do 'deposit bonuses' use to lock in more play?",
+    "question": "A fading user on FanDuel gets a custom push alert with a 'bonus' deal, the kind of AI-aimed offer DraftKings and BetMGM send too. These apps grew fast after the Supreme Court struck down the federal sports-betting ban in 2018, in Murphy v. National Collegiate Athletic Association (NCAA). What casino-borrowed design pattern do 'deposit bonuses' use?",
     "answer": "Forced rollover — the bonus only releases after additional wagers reach a multiple of the deposit, so accepting the 'free' money compels more play",
     "choices": [
       "Forced rollover — the bonus only releases after additional wagers reach a multiple of the deposit, so accepting the 'free' money compels more play",
@@ -14691,7 +14353,7 @@
   },
   {
     "tier": 5,
-    "question": "'Dark patterns' is a term coined by user-experience (UX) designer Harry Brignull around 2010 for interface choices that trick users into actions against their interests. AI lets platforms test and personalize which dark patterns work best on which users. What's the specific name of the dark pattern where opt-out language is loaded with shame to pressure users into staying subscribed?",
+    "question": "A subscriber heads for the exit, and the only way out is a line worded to belittle her for leaving. Harry Brignull, a user-experience designer, gave this family of interface tricks a name around 2010, and AI now lets platforms test which of them work best on which users. What is the specific name of this trick?",
     "answer": "Confirmshaming — pressure language like 'No thanks, I prefer overpaying' presented as the opt-out option, designed to make declining feel like an embarrassing admission",
     "choices": [
       "Confirmshaming — pressure language like 'No thanks, I prefer overpaying' presented as the opt-out option, designed to make declining feel like an embarrassing admission",
@@ -14756,7 +14418,7 @@
   },
   {
     "tier": 5,
-    "question": "Many apps that are not formal gambling borrow casino-style tricks: fitness apps with streak counters, language apps with leagues and gems, shopping apps with spin-the-wheel rewards. They lean on random rewards, social comparison, and loss aversion. Whose work on operant conditioning gives the base idea — variable-ratio reward schedules — behind both slot machines and app streaks?",
+    "question": "A language learner opens her app to guard her place in a league and collect gems, a casino-style trick in an app that is not formal gambling. Such apps lean on random rewards, social comparison and loss aversion. Whose work on operant conditioning gives the base idea, variable-ratio reward schedules, behind both slot machines and app streaks?",
     "answer": "B.F. Skinner — rewards after an unpredictable number of responses produced the fastest, most persistent responding he measured, the schedule he said casinos use",
     "choices": [
       "B.F. Skinner — rewards after an unpredictable number of responses produced the fastest, most persistent responding he measured, the schedule he said casinos use",
@@ -15016,7 +14678,7 @@
   },
   {
     "tier": 5,
-    "question": "Chinese AI labs like Baidu, Alibaba, ByteDance, Tencent, and DeepSeek work under Chinese law. Since 2017, that law has forced Chinese tech firms to help state intelligence when asked. Some Chinese AI is strong work — DeepSeek's open-weight models drew world attention. Which two Chinese laws require private AI labs to help state intelligence?",
+    "question": "A researcher at a Chinese AI lab such as Baidu, Alibaba, ByteDance, Tencent or DeepSeek hears that state intelligence has asked for help, and his firm must give it. Some of this Chinese AI is strong work, and DeepSeek's open-weight models drew world attention. Which two Chinese laws put private AI labs under that duty?",
     "answer": "The 2017 National Intelligence Law and the 2021 Data Security Law — both create explicit cooperation requirements with state agencies for Chinese private companies",
     "choices": [
       "The 2017 National Intelligence Law and the 2021 Data Security Law — both create explicit cooperation requirements with state agencies for Chinese private companies",
