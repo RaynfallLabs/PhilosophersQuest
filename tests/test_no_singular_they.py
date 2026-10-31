@@ -106,7 +106,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'animal.json', 'every new tunnel by themselves'): 'themselves = the animals (plural answer choices)',
     (_Q + 'economics.json', 'Someone whose occupational output is ideas themselves'): 'themselves = ideas',
     (_Q + 'economics.json', 'every drug on their'): 'their = markets',
-    (_Q + 'economics.json', 'whoever was handy to fill their'): 'their = the local police',
     (_Q + 'geography.json', 'every note, yet together their'): 'their = the two players (polos and sangsih)',
     (_Q + 'history.json', 'each food, one part of their'): 'their = the finches',
     (_Q + 'history.json', 'every author the American founders quoted in their'): 'their = the founders',

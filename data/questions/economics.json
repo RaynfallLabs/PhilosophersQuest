@@ -17941,7 +17941,7 @@
   },
   {
     "tier": 1,
-    "question": "At recess two kids trade lunches on the schoolyard. One kid brings an apple that cost a quarter at the corner store. The other kid brings a store-made sandwich that cost four dollars. Even though the sandwich cost sixteen times as much money as the apple, both kids walk away smiling after the trade. Nobody was tricked and nobody was forced. How can that be?",
+    "question": "Two kids swap lunches at recess. One brings an apple that cost a quarter; the other brings a sandwich that cost four dollars, sixteen times as much. Nobody is tricked and nobody is forced, yet both walk away smiling. How can that be?",
     "answer": "Value depends on what each person wants, not just the price tag",
     "choices": [
       "Value depends on what each person wants, not just the price tag",
@@ -17953,34 +17953,8 @@
     "topic": "principles-of-economics-1871-mengers-founding-text"
   },
   {
-    "tier": 1,
-    "question": "You are dying of thirst after a long day walking in the desert. A stranger with a full crate finds you and offers you bottles of cold water, one at a time. The first bottle is a lifesaver — you gulp it down. By the tenth bottle, your belly is full, your canteen is refilled, and you barely need more. Austrian economists call this pattern the law of diminishing marginal utility. Why is the tenth bottle worth so much less to you than the first?",
-    "answer": "Each extra one adds less value than the one before",
-    "choices": [
-      "Each extra one adds less value than the one before",
-      "The tenth bottle contains less water",
-      "Water always gets cheaper over time",
-      "The desert changes the price of water"
-    ],
-    "context": "Grundsaetze der Volkswirtschaftslehre translates literally as 'Foundations of the Theory of the National Economy,' but the standard English rendering has always been Principles of Economics -- confusingly sharing a title with Alfred Marshall's 1890 book. The English translation by James Dingwall and Bert F. Hoselitz did not appear until 1950. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
-    "topic": "principles-of-economics-1871-mengers-founding-text"
-  },
-  {
-    "tier": 2,
-    "question": "In 1871 in Vienna, the Austrian economist Carl Menger published a book called Principles of Economics. Older thinkers had said a good's value came from the work poured into making it. Menger disagreed — that idea was backwards. A loaf of bread does not become valuable because bakers labored over it. So in Menger's view, where does the value of a good actually come from?",
-    "answer": "The usefulness the good has to the person choosing to buy it",
-    "choices": [
-      "The usefulness the good has to the person choosing to buy it",
-      "The number of hours workers spent making it",
-      "The total cost of the raw materials inside it",
-      "The price the seller decides to charge for it"
-    ],
-    "context": "Braumueller was a mid-sized Vienna academic publisher; Menger paid for the printing himself in the hope the book would open the university door -- which it did, two years later. Duncker und Humblot was the Berlin house of Schmoller and the German Historical School; Gustav Fischer of Jena published much of the later German-language economics literature. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
-    "topic": "principles-of-economics-1871-mengers-founding-text"
-  },
-  {
     "tier": 3,
-    "question": "A student asks Menger why Adam Smith and Karl Marx said a good's value comes from the work to make it. Menger says they were looking in the wrong place. Value is not in the good; it is in the mind of the buyer. A loaf is worth more to a hungry man than a full one. What is Menger's idea called?",
+    "question": "A Vienna economist, Carl Menger, threw out an old theory of value in 1871, in a slim book called Principles of Economics. Smith, Ricardo and Marx had each held some form of it, and Menger did not patch it up; he put a theory of his own in its place. What is Menger's theory called?",
     "answer": "The subjective theory of value",
     "choices": [
       "The subjective theory of value",
@@ -17992,21 +17966,8 @@
     "topic": "principles-of-economics-1871-mengers-founding-text"
   },
   {
-    "tier": 3,
-    "question": "For a long time economists were stuck on a puzzle. A single diamond costs a fortune, but water, which we need to live, costs almost nothing — how could that be? In 1871 the Austrian economist Carl Menger cracked it. He said: do not compare the total supply of all water on Earth to the total supply of all diamonds. Instead look at one exact glass or one exact gemstone at the moment somebody is choosing. Look at what?",
-    "answer": "The next specific unit a chooser is ranking",
-    "choices": [
-      "The next specific unit a chooser is ranking",
-      "The average labor-hours across all producers",
-      "The total quantity supplied in a year",
-      "The moral desert of the buyer"
-    ],
-    "context": "A chooser never ranks 'all water' against 'all diamonds'; he ranks the NEXT glass against the NEXT stone. Water is so abundant that the marginal glass is nearly worthless; diamonds are so scarce that the marginal stone is very valuable. Total utility is enormous for water and tiny for diamonds; the MARGINAL utility is the reverse -- and price tracks the margin. Adam Smith noticed the paradox in Wealth of Nations (1776); it took Menger, Jevons, and Walras 95 years to solve it. Source: en.wikipedia.org/wiki/Marginalism.",
-    "topic": "principles-of-economics-1871-mengers-founding-text"
-  },
-  {
     "tier": 4,
-    "question": "The German word Grenznutzen — meaning marginal utility, the extra usefulness of one more unit of something — is a landmark term in economics. But it does not appear in Carl Menger's 1871 book Principles of Economics. Another Austrian economist, a student of Menger's, coined the word a few years later. He built it on an older marginal-cost term from Johann Heinrich von Thunen. Who was this student?",
+    "question": "Carl Menger reasoned at the margin in his Principles of Economics of 1871 but never gave the idea a single name. One of his followers supplied the German word a few years later: Grenznutzen, marginal utility. Who was the follower?",
     "answer": "Friedrich von Wieser",
     "choices": [
       "Friedrich von Wieser",
@@ -18019,7 +17980,7 @@
   },
   {
     "tier": 4,
-    "question": "Menger wrote his 1871 book in plain prose. He used no math, no graphs, no curves. He said economics is about human choice, not numbers. Boehm-Bawerk, Mises, Hayek, and Rothbard all kept this style. What lasting mark did that choice leave on the Austrian school?",
+    "question": "Carl Menger wrote his Principles of Economics in 1871 holding that economics studies human choice, not numbers. Böhm-Bawerk, Mises, Hayek and Rothbard all followed him in that, while Jevons and Walras went the other way. What lasting mark did that stance leave on the Austrian school?",
     "answer": "Arguing in prose rather than in mathematical models",
     "choices": [
       "Arguing in prose rather than in mathematical models",
@@ -18032,20 +17993,7 @@
   },
   {
     "tier": 5,
-    "question": "Menger drafted but never published a Volume 2 of Principles, intended to cover capital and interest. The book that occupies that missing volume's place in the Austrian corpus was written by his student instead, appearing as Kapital und Kapitalzins in the 1880s. Who filled the gap?",
-    "answer": "Eugen von Boehm-Bawerk",
-    "choices": [
-      "Eugen von Boehm-Bawerk",
-      "Friedrich von Wieser",
-      "Ludwig von Mises",
-      "Fritz Machlup"
-    ],
-    "context": "Boehm-Bawerk (1851-1914) wrote Kapital und Kapitalzins (Capital and Interest) in three volumes 1884-1889 -- history and critique of interest theories, positive theory of capital, and further essays -- effectively the Volume 2 Menger never produced. Boehm-Bawerk also served three terms as Austrian finance minister and taught the young Mises. Wieser wrote on marginal utility and social economics rather than capital; Mises and Machlup were of later generations. Source: en.wikipedia.org/wiki/Carl_Menger.",
-    "topic": "principles-of-economics-1871-mengers-founding-text"
-  },
-  {
-    "tier": 5,
-    "question": "Menger's 1871 Principles founded the Austrian School in German. For 79 years there was no English edition -- the tradition traveled to America through Mises's students, not through the book itself. When did James Dingwall and Bert F. Hoselitz's English translation finally reach print through the Free Press?",
+    "question": "Frank Knight, the Chicago economist, wrote the introduction when Carl Menger's Principles of Economics, the founding book of the Austrian school, at last came out in English. James Dingwall and Bert Hoselitz translated it, and the Free Press published it. When did the translation appear?",
     "answer": "1950",
     "choices": [
       "1950",
@@ -18054,19 +18002,6 @@
       "1976"
     ],
     "context": "The 1950 Free Press edition, with an introduction by Frank Knight, appeared 29 years after Menger's death (1921) and only after his student Hayek had already moved to LSE (1931) and then Chicago (1950). Frank Knight -- the great Chicago economist and Milton Friedman's teacher -- wrote the introduction. The 79-year gap is a measure of how far the German-speaking Austrian tradition had traveled before English-speaking economics noticed the founding text. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
-    "topic": "principles-of-economics-1871-mengers-founding-text"
-  },
-  {
-    "tier": 5,
-    "question": "The Vienna economist who launched the marginalist school of thought in 1871 had a son named Karl, born in Vienna in 1902. Young Karl grew into a top mathematician of the interwar years. He joined the philosophy salon known as the Vienna Circle, ran his own mathematical colloquium in 1930s Vienna, and after fleeing the Nazis taught for decades at the Illinois Institute of Technology in Chicago. Whose son was he?",
-    "answer": "Son of Carl Menger, founder of the Austrian School",
-    "choices": [
-      "Son of Carl Menger, founder of the Austrian School",
-      "Son of Ludwig von Mises",
-      "Nephew of Friedrich Hayek",
-      "Grandson of Eugen von Boehm-Bawerk"
-    ],
-    "context": "Karl Menger the younger (1902-1985) did not follow his father into economics; he did mathematics, contributed to dimension theory, edited the Mathematical Colloquium proceedings that included work by Kurt Goedel and John von Neumann, and belonged to the Vienna Circle. So the Menger name reaches into TWO of interwar Vienna's great intellectual traditions -- Austrian economics through the father, mathematical positivism through the son. Sources: en.wikipedia.org/wiki/Carl_Menger.",
     "topic": "principles-of-economics-1871-mengers-founding-text"
   },
   {
@@ -18188,33 +18123,7 @@
   },
   {
     "tier": 1,
-    "question": "One kind of digital money — Bitcoin is the famous example — makes computers all over the world race to solve pointless-looking puzzles that burn lots of electricity. This sounds crazy on purpose. Yet the designers picked this system on purpose, and it is the whole reason Bitcoin has no boss. Why would anyone want money to work like that?",
-    "answer": "So no single group can easily fake or take over the money",
-    "choices": [
-      "So no single group can easily fake or take over the money",
-      "So only rich people can use it",
-      "To warm up cold rooms in winter",
-      "The designers wanted to sell more electricity"
-    ],
-    "context": "The Merge (September 15 2022) joined Ethereum's execution layer with its already-live proof-of-stake beacon chain. Ethereum's energy consumption dropped by roughly 99.95% overnight. Source: ethereum.org/en/roadmap/merge.",
-    "topic": "proof-of-work-vs-proof-of-stake-the-ethereum-merge"
-  },
-  {
-    "tier": 1,
-    "question": "In one kind of digital money, users do not burn any electricity to add new blocks. Instead block-makers each lock up a large deposit of that money as a promise of good behavior. If the network catches them cheating, they lose the deposit forever. Ethereum switched to this system in 2022. What is it called?",
-    "answer": "Proof-of-stake",
-    "choices": [
-      "Proof-of-stake",
-      "Proof-of-work",
-      "Proof-of-effort",
-      "Proof-of-honor"
-    ],
-    "context": "Proof-of-stake (PoS): the right to propose the next block is assigned in proportion to staked collateral, not to burned electricity. Cardano, Solana, and most post-2018 chains launched with PoS from the start. Source: en.wikipedia.org/wiki/Proof_of_stake.",
-    "topic": "proof-of-work-vs-proof-of-stake-the-ethereum-merge"
-  },
-  {
-    "tier": 2,
-    "question": "On September 15, 2022 the Ethereum Merge switched the network from Bitcoin-style energy-hungry mining to a very different consensus method. Overnight, the network's power use dropped by more than 99 percent. What is Ethereum's new consensus method called?",
+    "question": "Vitalik Buterin got his wish on September 15, 2022, when Ethereum dropped Bitcoin-style mining in the Merge. Its block-makers now pledge coins of their own as collateral, and a cheat forfeits his. What is the new method called?",
     "answer": "Proof of stake",
     "choices": [
       "Proof of stake",
@@ -18222,25 +18131,12 @@
       "Proof of authority",
       "Proof of burn"
     ],
-    "context": "The Ethereum Foundation's post-Merge figure is a roughly 99.95% cut in network electricity use. That is the strongest engineering argument PoS supporters make for the switch. Source: ethereum.org/en/energy-consumption.",
-    "topic": "proof-of-work-vs-proof-of-stake-the-ethereum-merge"
-  },
-  {
-    "tier": 2,
-    "question": "Bitcoin secures its network by making miners burn electricity solving cryptographic puzzles — a system called proof-of-work. In September 2022 the Ethereum blockchain switched to a completely different rule. Those who want to help validate new blocks lock up a large deposit of coins as a bond with the network. If they try to cheat, the software takes their deposit away. What is Ethereum's alternative method called?",
-    "answer": "Proof-of-stake",
-    "choices": [
-      "Proof-of-stake",
-      "Proof-of-work",
-      "Proof-of-labor",
-      "Proof-of-trust"
-    ],
-    "context": "Vitalik Buterin published the Ethereum white paper in late 2013 and has argued for proof-of-stake since Ethereum's earliest design discussions. The Merge was the culmination of an eight-year design goal. Source: en.wikipedia.org/wiki/Vitalik_Buterin.",
+    "context": "The Ethereum Foundation's post-Merge figure is a roughly 99.95% cut in network electricity use. That is the strongest engineering argument PoS supporters make for the switch. Source: ethereum.org/en/energy-consumption. Vitalik Buterin published the Ethereum white paper in late 2013 and has argued for proof-of-stake since Ethereum's earliest design discussions. The Merge was the culmination of an eight-year design goal. Source: en.wikipedia.org/wiki/Vitalik_Buterin.",
     "topic": "proof-of-work-vs-proof-of-stake-the-ethereum-merge"
   },
   {
     "tier": 3,
-    "question": "Bitcoin fans have a specific complaint about proof-of-stake — the system where whoever locks up the most coins gets the most say over new blocks. They argue proof-of-stake sneaks back in one bad feature of the old banking world, the exact feature that proof-of-work was designed to break. What feature do they say it brings back?",
+    "question": "Bitcoin's defenders took aim at proof-of-stake, the method Ethereum adopted in 2022. Under it, validators add blocks by putting up coins they already own as collateral. The defenders say it brings back a feature of the old banking world that proof-of-work was built to break. Which feature do they mean?",
     "answer": "Concentration of power in the hands of existing token holders",
     "choices": [
       "Concentration of power in the hands of existing token holders",
@@ -18253,7 +18149,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin uses proof-of-work, where miners spend real electricity to add blocks. Ethereum and many newer chains use proof-of-stake instead, where validators lock up their own coins as collateral and sign new blocks. Bitcoiners point to one specific weakness of that design with a name: the nothing-at-stake problem. What does the attack say a proof-of-stake validator can do?",
+    "question": "A Bitcoin miner switches on his rigs and races for the next block, burning real electricity as he goes. Bitcoiners see a weakness in an Ethereum validator, who adds blocks by signing them with coins he has put up as collateral. They call it the nothing-at-stake problem. What do they say a validator can do?",
     "answer": "Validators can costlessly sign multiple competing chains at once, since no real-world resource is spent per signature",
     "choices": [
       "Validators can costlessly sign multiple competing chains at once, since no real-world resource is spent per signature",
@@ -18266,7 +18162,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 the chairman of the main US agency that oversees stocks and bonds argued that most proof-of-stake tokens might legally count as investment contracts under a 1946 Supreme Court test called Howey. His public speeches worried the whole crypto industry, since being called an investment contract means heavy US registration rules apply. Which US agency does he chair?",
+    "question": "Gary Gensler argued in 2023 that a great many proof-of-stake tokens could legally count as investment contracts, judged by a test the Supreme Court set in 1946 in the Howey case. Such a label would bring heavy US registration rules, and his speeches worried the whole crypto industry. Which agency did Gensler then chair?",
     "answer": "The Securities and Exchange Commission",
     "choices": [
       "The Securities and Exchange Commission",
@@ -18279,7 +18175,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin has never left proof-of-work — computers still burn real electricity to mint new blocks. Bitcoin's community argues this energy cost is not a bug at all. They say it is a specific kind of feature: a link that ties digital money to something outside itself, in a way that pure software promises never could. Which specific kind of feature do they say it is?",
+    "question": "Bitcoiners stayed with proof-of-work when Ethereum dropped it in September 2022, power bill and all. Bitcoin has run on it since 2009, and Bitcoiners call the bill a feature, not a flaw. What kind of feature do they say it is?",
     "answer": "An external, real-world commitment that anchors the network to physical reality",
     "choices": [
       "An external, real-world commitment that anchors the network to physical reality",
@@ -18292,7 +18188,7 @@
   },
   {
     "tier": 5,
-    "question": "In September 2022 the Ethereum network switched from proof-of-work — miners burning electricity on puzzles, the same rule Bitcoin still uses — to proof-of-stake, where validators lock up coins as a bond and are slashed if they cheat. Ethereum bet the network on proof-of-stake, and Bitcoin stayed with proof-of-work. It is one of the largest live economic-engineering contrasts in cryptocurrency history. In one sentence, what will decide which side made the right bet?",
+    "question": "Ethereum's validators took over from its miners in September 2022, while Bitcoin kept its miners, and two great networks were left guarded in opposite ways: one by staked coins, the other by burned electricity. Neither side's argument can settle on paper which of the two bets was right. What will decide it?",
     "answer": "Whether either network survives multiple decades of live attacks and stress tests",
     "choices": [
       "Whether either network survives multiple decades of live attacks and stress tests",
@@ -18305,7 +18201,7 @@
   },
   {
     "tier": 5,
-    "question": "In September 2022 Ethereum did the Merge, switching from proof-of-work to proof-of-stake overnight. Two well-known cryptocurrencies stayed on proof-of-work well past that date, and both trace their technical roots back to Bitcoin — one launched in 2011 as 'the silver to Bitcoin's gold,' and the other began in 2013 as a joke coin with a Shiba Inu meme for a mascot. Which pair are they?",
+    "question": "Miners of two older coins kept at work after Ethereum's Merge of September 2022; both coins descend from Bitcoin's code and still run on proof-of-work. One came out in 2011 billed as silver to Bitcoin's gold; the other began in 2013 as a joke coin with a Shiba Inu for a mascot. Which pair are they?",
     "answer": "Litecoin and Dogecoin",
     "choices": [
       "Litecoin and Dogecoin",
@@ -18383,7 +18279,7 @@
   },
   {
     "tier": 1,
-    "question": "Imagine the workers at a shoe store go on strike. The store might lose money or even close, but nobody gets hurt — you can walk a few blocks and buy shoes somewhere else. Now imagine every police officer in a city walked off the job on the same day. Robbers, muggers, and gangs would suddenly face nobody. Who would be hurt the most by that kind of strike?",
+    "question": "The clerks at a shoe store walk out on strike one morning. The owner loses sales, but his customers just buy their shoes down the street. Now every police officer in a city walks off the job on the same day. Who does that strike hurt the most?",
     "answer": "The regular people who need protecting",
     "choices": [
       "The regular people who need protecting",
@@ -18396,7 +18292,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1937 President Franklin Roosevelt — himself a strong champion of private labor unions — wrote a public letter to the head of a federal-workers group. In it he argued that government workers should not bargain the way private workers do. The person sitting across the negotiating table is completely different in each case, Roosevelt said. Who sits across from workers at a private company but not at a government job?",
+    "question": "Luther Steward, head of a union of federal workers, got a letter from Franklin Roosevelt in 1937. Bargaining with a government, Roosevelt said, differs from bargaining with a company in who is sitting on the other side of the table. Across from a government union sit officials spending other people's money. Who faces a private union?",
     "answer": "A profit-maximizing private employer",
     "choices": [
       "A profit-maximizing private employer",
@@ -18409,7 +18305,7 @@
   },
   {
     "tier": 2,
-    "question": "By 2010, unions were more than four times as common in US government jobs as in private ones -- because government workers form a tight interest group bargaining against diffuse taxpayers. What did President Franklin Roosevelt himself say about public-sector collective bargaining?",
+    "question": "Franklin Roosevelt, a hero to the labor movement, set down his view of bargaining by government workers in 1937. By 2010 unions were more than four times as common in government jobs as in private ones. What was Roosevelt's view of collective bargaining in government service?",
     "answer": "He opposed it",
     "choices": [
       "He opposed it",
@@ -18422,7 +18318,7 @@
   },
   {
     "tier": 2,
-    "question": "A state governor pushes a new labor law through the state legislature. Under the old rules, money for the union had been pulled automatically from every public worker's paycheck each month, no signature needed. Under the new law, that automatic pull stops. Instead, each worker must actively choose every single year whether to send the money to the union or not. What kind of change is this?",
+    "question": "Scott Walker, Wisconsin's new governor, pushed a law called Act 10 through the state legislature in 2011. Among other things it changed how public workers' money reached the union, and it forced every union to face a fresh vote of its members each year. What kind of change did Act 10 make?",
     "answer": "Making union dues voluntary instead of automatic",
     "choices": [
       "Making union dues voluntary instead of automatic",
@@ -18435,7 +18331,7 @@
   },
   {
     "tier": 3,
-    "question": "In early 2011 the new Wisconsin governor Scott Walker pushed a bill called Act 10 that would sharply limit collective bargaining for most public-sector unions. Fourteen Democratic state senators fled across the border and hid in Illinois hotels. Under Wisconsin's rules, the state Senate could not vote on the bill without a certain minimum number of senators present in the chamber. What was the goal of the walkout?",
+    "question": "Fourteen Democratic state senators fled Wisconsin for Illinois in early 2011 and hid in hotels across the state line. Scott Walker, the new governor, was pushing a bill called Act 10 that would sharply limit bargaining by most public-sector unions. What was the walkout meant to do?",
     "answer": "To deny the Wisconsin Senate the quorum needed to pass Act 10",
     "choices": [
       "To deny the Wisconsin Senate the quorum needed to pass Act 10",
@@ -18448,7 +18344,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2011 the state of Wisconsin passed a law known as Act 10. Under Act 10, public school teachers could choose each year whether to pay union dues, instead of having the money pulled automatically from their paychecks. Within a few years the biggest teachers' union in Wisconsin — the Wisconsin Education Association Council — had lost most of its dues-paying members. What does that dramatic drop tell us about many of those members before the law changed?",
+    "question": "A Wisconsin teacher opened her paycheck after Act 10 took effect and found no union dues taken out; paying them had become her own choice, made each year. Within a few years the Wisconsin Education Association Council, Wisconsin's largest teachers' union, had lost most of its dues-paying members. What did the drop suggest about many of them?",
     "answer": "Many were paying only because the dues were automatic, not because they wanted to",
     "choices": [
       "Many were paying only because the dues were automatic, not because they wanted to",
@@ -18461,7 +18357,7 @@
   },
   {
     "tier": 4,
-    "question": "On June 27, 2018 the US Supreme Court decided a case that reshaped public-sector labor law across the country. The Court held 5-to-4 that non-member public workers — teachers, clerks, prison guards, city employees — could no longer be forced to pay so-called 'agency fees' to unions bargaining on their behalf. Mark Janus, an Illinois child-support specialist who had refused to pay the fees, was the plaintiff who brought the suit and won. What is the case called?",
+    "question": "An Illinois child-support specialist refused to pay the 'agency fees' a public-sector union charged him as a non-member, and he took his fight to the Supreme Court. On June 27, 2018, the justices split five to four and ruled that no public employee could be made to pay such fees, reshaping public-sector labor law across the country. What is the case called?",
     "answer": "Janus v. AFSCME",
     "choices": [
       "Janus v. AFSCME",
@@ -18474,7 +18370,7 @@
   },
   {
     "tier": 4,
-    "question": "The California pension fund CalPERS holds pension assets for state employees and is the largest US public pension fund. Its unfunded pension liabilities have remained a genuine long-term fiscal concern for the state. Roughly what size of assets does it manage in the mid-2020s?",
+    "question": "A retired California state worker opens this month's pension statement from CalPERS, which serves the state's employees and is the largest public pension fund in America. Its unfunded liabilities remain a long-term fiscal concern for the state. Roughly how much does the fund manage in the mid-2020s?",
     "answer": "About $460 billion",
     "choices": [
       "About $460 billion",
@@ -18486,21 +18382,8 @@
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
   },
   {
-    "tier": 5,
-    "question": "A public-sector union collects dues from its workers. Under most US state laws it also spends those dues on ads to elect governors and legislators. Those same elected officials then sit across the bargaining table from the union. What makes this different from a private union?",
-    "answer": "The union helps pick the officials who then bargain with the union",
-    "choices": [
-      "The union helps pick the officials who then bargain with the union",
-      "The union always represents a majority of workers by law",
-      "The union is not allowed to ever strike",
-      "The union receives federal matching funds automatically"
-    ],
-    "context": "Private-sector union dues cannot select the CEO across the bargaining table. Public-sector union dues can and do help select the mayor, governor, or school-board members who then negotiate. That is the circle FDR flagged in 1937. Source: Roosevelt letter (1937); Freeman + Ichniowski (1988).",
-    "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
-  },
-  {
-    "tier": 5,
-    "question": "Picture a public-sector union that spends millions of dollars in an election campaign to help elect friendly politicians into a state legislature. Two years later, the very same union sits down across the negotiating table from those same politicians to hammer out a new contract for teachers or bus drivers. In effect, the union has helped pick its own bargaining opponent. What happens to the usual idea of two independent sides at the bargaining table?",
+    "tier": 4,
+    "question": "A teachers' union pours millions of dollars of its members' dues into a governor's race one autumn, and its candidate wins. Two years later the same union sits down across the bargaining table from that governor to settle a new contract. What happens to the usual idea of two independent sides at the table?",
     "answer": "It breaks down because the group is really bargaining with itself",
     "choices": [
       "It breaks down because the group is really bargaining with itself",
@@ -18508,12 +18391,12 @@
       "It produces totally random outcomes",
       "It always leaves zero benefit for both sides"
     ],
-    "context": "The Olson + Stigler combined diagnosis: concentrated interest + captured counterparty gives you a single institutional structure where standard adversarial-bargaining assumptions fail. FDR saw the shape in 1937; the modern literature formalized it. Source: Olson (1965); Stigler (1971); DiSalvo, Government Against Itself (Oxford 2015).",
+    "context": "Private-sector union dues cannot select the CEO across the bargaining table. Public-sector union dues can and do help select the mayor, governor, or school-board members who then negotiate. That is the circle FDR flagged in 1937. Source: Roosevelt letter (1937); Freeman + Ichniowski (1988). The Olson + Stigler combined diagnosis: concentrated interest + captured counterparty gives you a single institutional structure where standard adversarial-bargaining assumptions fail. FDR saw the shape in 1937; the modern literature formalized it. Source: Olson (1965); Stigler (1971); DiSalvo, Government Against Itself (Oxford 2015).",
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
   },
   {
     "tier": 1,
-    "question": "In late 2008, at the height of the housing crash and banking crisis, the Federal Reserve — the US central bank — announced it would create $500 billion of new money and use it to buy up home-loan bonds from struggling banks. Nothing like it had ever been done in America. More rounds would follow in the years ahead. What do economists call this first program today?",
+    "question": "A Federal Reserve official announced something the central bank had never tried before on November 25, 2008, as banks failed. The Fed would create $500 billion of new money to buy home-loan bonds from struggling banks, and more rounds followed. What do economists now call that first program?",
     "answer": "QE1",
     "choices": [
       "QE1",
@@ -18526,7 +18409,7 @@
   },
   {
     "tier": 1,
-    "question": "In March 2009, as the crisis kept unfolding, the Federal Reserve — the US central bank — grew its first bond-buying program. It added $300 billion in US Treasury bonds and pushed home-loan-bond purchases up to $1.25 trillion. The program finally wound down in early 2010. Adding everything together, what total dollar figure did QE1 reach?",
+    "question": "A bond trader at a struggling bank sold the Federal Reserve more mortgage bonds in March 2009, after the Fed raised its planned purchases of them to $1.25 trillion and added Treasury bonds and other agency debt. The program ran until early 2010. About how much had it bought in all?",
     "answer": "About $1.75 trillion",
     "choices": [
       "About $1.75 trillion",
@@ -18539,7 +18422,7 @@
   },
   {
     "tier": 2,
-    "question": "When the Federal Reserve — the US central bank — buys a bond from a regular commercial bank, no truck full of paper cash ever leaves the Fed's vault. The Fed simply opens a computer screen and types a new, larger number into that bank's reserve account. The bond is now the Fed's, and the bank has fresh reserves. Where does the money for the purchase actually come from?",
+    "question": "A banker who sold a mortgage bond to the Federal Reserve during its first round of bond buying saw no truck of cash leave any vault to pay for it; his bank's reserve account simply showed a bigger balance. Where does the money for such a purchase come from?",
     "answer": "The central bank creates it out of thin air by typing in the new amount",
     "choices": [
       "The central bank creates it out of thin air by typing in the new amount",
@@ -18552,7 +18435,7 @@
   },
   {
     "tier": 2,
-    "question": "When Lehman Brothers collapsed in September 2008, the Federal Reserve's balance sheet — the pile of assets the US central bank owns — sat at roughly $900 billion. Over the next 21 months the Fed launched QE1 and bought up trillions of dollars in bonds. By the time QE1 wound down in mid-2010, the balance sheet had ballooned to a much larger figure. What size did it reach?",
+    "question": "An investor checking the Federal Reserve's books in September 2008, the month Lehman Brothers failed, found its balance sheet, all the assets it held, standing near $900 billion. Then came the Fed's first round of bond buying. About how large had the balance sheet grown by the time that program was over?",
     "answer": "About $2.3 trillion",
     "choices": [
       "About $2.3 trillion",
@@ -18565,20 +18448,7 @@
   },
   {
     "tier": 3,
-    "question": "An Irish-born banker and merchant living in Paris in the early 1700s wrote a book called An Essay on the Nature of Trade in General. He noticed something important about newly-created money. It does not sprinkle evenly across everyone at once, like rain. It enters the economy at particular spots — a silver mine, a royal treasury, a big bank — and the people who touch it first can spend it before shop prices rise. What is the standard name for this effect today?",
-    "answer": "The Cantillon effect",
-    "choices": [
-      "The Cantillon effect",
-      "The Keynes effect",
-      "The Smith effect",
-      "The Bastiat effect"
-    ],
-    "context": "Richard Cantillon (c. 1680s-1734), an Irish-born banker who shorted John Law's bubble before it collapsed, wrote his Essai in the 1730s. It was published posthumously in 1755. Source: Grokipedia 'Richard Cantillon' (2026-09-05).",
-    "topic": "qe1-the-first-bond-buying-program-2008-10"
-  },
-  {
-    "tier": 3,
-    "question": "When new money is created, it does not rain evenly across a country — it enters at one specific spot first, and whoever stands at that spot gets the fresh dollars before prices adjust. Economists call this the Cantillon effect, after the 18th-century Irish-French economist Richard Cantillon who first described it. During QE1 in 2008-09, the Federal Reserve created new reserves through a Fed-dealer window. Which group received them first?",
+    "question": "Richard Cantillon, a banker born in Ireland who worked in Paris, saw in the early 1700s that fresh money never spreads evenly like rain but comes in at certain doors, a mine, say, or a royal treasury, and those nearest spend it first. In QE1 the Federal Reserve created its new reserves through a Fed-dealer window. Which group received them first?",
     "answer": "Banks, hedge funds, financial-sector employees, and asset holders",
     "choices": [
       "Banks, hedge funds, financial-sector employees, and asset holders",
@@ -18591,7 +18461,7 @@
   },
   {
     "tier": 4,
-    "question": "After the 2008 crash, mainstream defenders of QE1 — including Ben Bernanke, the Federal Reserve chairman who launched the program, in his later memoirs, and Paul Krugman on his blog — pointed to one specific effect the program had in 2008 and 2009 that, in their telling, stopped an even worse outcome from unfolding. What did they credit QE1 with achieving?",
+    "question": "Paul Krugman on his blog and Ben Bernanke, writing later in his memoirs, defended QE1 against its critics. Both pointed to one effect the program had in 2008 and 2009 that, as they told it, stopped something worse from happening. What did they credit QE1 with achieving?",
     "answer": "Preventing depression by stabilizing MBS markets and keeping mortgage rates low",
     "choices": [
       "Preventing depression by stabilizing MBS markets and keeping mortgage rates low",
@@ -18604,7 +18474,7 @@
   },
   {
     "tier": 4,
-    "question": "When the US Federal Reserve — America's central bank — creates brand-new dollars to buy government bonds, the program has a soft, technical-sounding name: 'quantitative easing,' or QE. It could just as accurately be called 'money printing,' but that is not the label officials at the Fed choose to use. If a central bank runs this money-creation program for years on end, what is the most predictable long-run effect on the real economy?",
+    "question": "Suppose a central bank pays for bonds with money it has just created and keeps buying for years. Critics call that 'money printing' and say the name fits as well as 'quantitative easing,' the soft, technical label officials prefer. What is the likeliest long-run result?",
     "answer": "Prices across the economy tend to rise -- inflation",
     "choices": [
       "Prices across the economy tend to rise -- inflation",
@@ -18617,7 +18487,7 @@
   },
   {
     "tier": 5,
-    "question": "Between 2008 and 2010, during the first round of the Federal Reserve's 'quantitative easing' program (QE1), a handful of Austrian-school economists appeared on cable news, radio shows, and financial newsletters warning that the Fed was really printing money to fund the federal government's giant deficits, and that price hikes would come later even if not right away. Which three Austrian voices most publicly made this call in those years?",
+    "question": "Three men warned loudest, while QE1 ran, that the Federal Reserve was creating money to cover Washington's deficits and that higher prices would follow, if not at once. One made the case on television, one at an economics institute and one in his own newsletter. Which three were they?",
     "answer": "Peter Schiff, Bob Murphy, and Jim Grant",
     "choices": [
       "Peter Schiff, Bob Murphy, and Jim Grant",
@@ -18630,7 +18500,7 @@
   },
   {
     "tier": 5,
-    "question": "Before 2008 the Federal Reserve — the US central bank — had never bought bonds on the scale that QE1 launched. But QE1 was followed by QE2, QE3, and a whole new round after the 2020 pandemic. Analysts now call the whole stretch since 2008 the balance-sheet era of central banking. Looking at that pattern, which claim about central banking today does this history push readers to recognize?",
+    "question": "A reader tracing the Federal Reserve's bond buying finds QE1 in 2008, then QE2 and QE3, and then a still larger round after the 2020 pandemic. Before 2008 the Fed had never bought bonds on anything like that scale. What does the pattern show about central banking today?",
     "answer": "Central-bank balance-sheet expansion is now a standing policy tool rather than an emergency-only measure",
     "choices": [
       "Central-bank balance-sheet expansion is now a standing policy tool rather than an emergency-only measure",
@@ -18643,7 +18513,7 @@
   },
   {
     "tier": 1,
-    "question": "On November 3, 2010, more than a year after QE1 had wound down, the Federal Reserve — the US central bank — announced a second bond-buying program. It would create $600 billion of new money and use it to buy US Treasury bonds at a pace of $75 billion each month through June 2011. What is this second round of buying commonly called?",
+    "question": "Ben Bernanke led the Federal Reserve back into the bond market on November 3, 2010, with the recovery limping. The Fed would create $600 billion and buy Treasury bonds at about $75 billion each month through June 2011. What is that round of buying called?",
     "answer": "QE2",
     "choices": [
       "QE2",
@@ -18656,7 +18526,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 2010 the US Federal Reserve, America's central bank, launched a second round of buying government bonds with newly-created money. The plan was called QE2. One day after the November 3 announcement, Fed chairman Ben Bernanke did something unusual for a Fed chair -- he wrote an opinion piece straight to the public defending the program. Which major American newspaper printed his op-ed?",
+    "question": "A reader opening his newspaper on November 4, 2010, found something no Federal Reserve chairman had tried before: a column by Ben Bernanke, defending to the public the bond buying the Fed had announced the day before. Which newspaper printed it?",
     "answer": "The Washington Post",
     "choices": [
       "The Washington Post",
@@ -18669,7 +18539,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 2010 Federal Reserve chairman Ben Bernanke wrote a Washington Post op-ed defending QE2, a program in which the Fed would print money to buy US government bonds. Bernanke argued the bond-buying would flow through one specific market and make Americans feel richer, encouraging them to spend. Which market did he point to as the main channel?",
+    "question": "The Federal Reserve's chairman, Ben Bernanke, took his case for the Fed's new bond buying straight to newspaper readers in November 2010, the day after the Fed announced $600 billion of purchases. The buying, he argued, would do its work through one market in particular. Which market did he point to?",
     "answer": "The stock market, which he said would boost consumer wealth and spending",
     "choices": [
       "The stock market, which he said would boost consumer wealth and spending",
@@ -18682,7 +18552,7 @@
   },
   {
     "tier": 2,
-    "question": "In his November 2010 Washington Post op-ed defending the Fed's QE2 bond-buying program, chairman Ben Bernanke argued that higher stock prices and higher home prices would make American families feel wealthier, and that feeling would lead them to spend more at stores and restaurants. Economists have a common two-word name for the idea that rising asset prices push consumers to spend. What is this idea called?",
+    "question": "A shopper who read Ben Bernanke's newspaper column in November 2010 learned what the Federal Reserve's new bond buying was meant to do: lift the value of the shares families owned, so that they would spend more at stores and restaurants. Economists have a common two-word name for that idea. What is it?",
     "answer": "The wealth effect",
     "choices": [
       "The wealth effect",
@@ -18695,7 +18565,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 2010 the US Federal Reserve announced QE2 -- a second, larger round of creating new dollars to buy US government bonds. Germany's finance minister Wolfgang Schaeuble told a newspaper that the American policy was 'clueless.' Germany had lived through hyperinflation in the 1920s and had strong opinions about money-printing. What was Schaeuble most likely worried about?",
+    "question": "Wolfgang Schäuble, Germany's finance minister, told Der Spiegel that the Federal Reserve's new round of bond buying in 2010, $600 billion of freshly created money, was clueless. His country had lived through hyperinflation in the 1920s. What was Schäuble most likely worried about?",
     "answer": "That printing more dollars would push up prices and shake other countries' economies",
     "choices": [
       "That printing more dollars would push up prices and shake other countries' economies",
@@ -18708,7 +18578,7 @@
   },
   {
     "tier": 3,
-    "question": "In August 2011, Texas governor Rick Perry was running for the Republican nomination for US president. On the campaign trail he warned that it would be 'almost treasonous' if the Federal Reserve printed more money between then and the 2012 election, because it might help President Barack Obama get re-elected by boosting the economy. What was Perry accusing the Fed of doing?",
+    "question": "Rick Perry, governor of Texas and a candidate for the Republican nomination for president, told a crowd in Iowa in August 2011 that if the Federal Reserve printed more money between then and the 2012 election, it would be 'almost treasonous.' What was he accusing the Fed of doing?",
     "answer": "Bending its money policy to help one side win an election",
     "choices": [
       "Bending its money policy to help one side win an election",
@@ -18721,7 +18591,7 @@
   },
   {
     "tier": 4,
-    "question": "The Fed's QE2 program -- creating new dollars to buy US government bonds -- ran from its November 2010 announcement to its June 2011 conclusion. The Irish-French economist Richard Cantillon warned in the 1700s that new money helps whoever gets it first before prices rise. That 'Cantillon-effect' payoff was visible on stock-market tapes from Bernanke's first signal of the program in late August 2010 through to its end. What did the S&P 500 index of big US companies do over that stretch?",
+    "question": "An investor bought into the S&P 500, which tracks America's biggest companies, in late August 2010, when Ben Bernanke first signaled the Fed's new bond buying, and held on until the program ended in June 2011. Austrian critics pointed to Richard Cantillon: fresh money rewards whoever gets it first. What did the index do over that stretch?",
     "answer": "Rose approximately 24 percent",
     "choices": [
       "Rose approximately 24 percent",
@@ -18734,7 +18604,7 @@
   },
   {
     "tier": 4,
-    "question": "In November 2010 the Federal Reserve, chaired by Ben Bernanke, launched a second round of quantitative easing — nicknamed QE2 — buying 600 billion dollars of Treasury bonds and paying with newly created bank reserves. Austrian critics saw a classic Frederic Bastiat 'seen and unseen' problem hiding in the policy. Which seen-and-unseen pairing best captures QE2's structure?",
+    "question": "Austrian critics turned Frédéric Bastiat's test on the Federal Reserve's bond buying of 2010, in which it spent $600 billion of newly created reserves on Treasury bonds. Bastiat taught that every policy has effects that are seen and effects that are not. Which seen-and-unseen pairing best captures that program's structure?",
     "answer": "Seen: the recovery is strengthening; Unseen: the new reserves are flowing into asset prices, not wages or productive investment",
     "choices": [
       "Seen: the recovery is strengthening; Unseen: the new reserves are flowing into asset prices, not wages or productive investment",
@@ -18747,7 +18617,7 @@
   },
   {
     "tier": 5,
-    "question": "In November 2010 the chairman of the US Federal Reserve, Ben Bernanke, wrote an op-ed in the Washington Post defending a new round of 'quantitative easing' — buying long-term government bonds with newly-created money. In the piece he openly argued that a goal of the program was to lift stock prices so investors would feel richer and spend more. Once a central bank publicly says out loud that it wants to lift stock prices, what changes?",
+    "question": "'Higher stock prices will boost consumer wealth,' Ben Bernanke wrote in his newspaper column of November 4, 2010, defending the Fed's new bond buying. Critics had long thought the Fed was steering asset prices on purpose; now its chairman had said so in print. Once a central bank says in public that it wants stock prices up, what changes?",
     "answer": "It becomes a permanent, openly-admitted feature of policy, no longer a hidden side effect",
     "choices": [
       "It becomes a permanent, openly-admitted feature of policy, no longer a hidden side effect",
@@ -18760,7 +18630,7 @@
   },
   {
     "tier": 5,
-    "question": "In November 2010 Federal Reserve chairman Ben Bernanke wrote a Washington Post op-ed straight to the public defending QE2, the Fed's second big round of bond-buying with newly-created dollars. The piece is now cited as one of the first times a modern Fed chair broke from a long-standing tradition about how the central bank communicated. Which tradition did Bernanke break?",
+    "question": "Ben Bernanke broke with a long Federal Reserve tradition in November 2010, when he defended the Fed's new bond buying in a newspaper column the day after it was announced. The program would create $600 billion to buy Treasury bonds. Which tradition did he break?",
     "answer": "The Fed's tradition of speaking only through official statements and formal congressional testimony",
     "choices": [
       "The Fed's tradition of speaking only through official statements and formal congressional testimony",
@@ -18773,7 +18643,7 @@
   },
   {
     "tier": 1,
-    "question": "In the western Pacific Ocean, on a small island east of the Philippines, people spent hundreds of years using enormous round stone discs as money. Some of these limestone wheels were more than 12 feet across and weighed several tons -- as much as a car. Villagers would leave the biggest ones sitting outside houses or along paths. Which Pacific island is famous for using these giant stone-disc coins?",
+    "question": "A villager on a small Pacific island east of the Philippines walked past a stone disc taller than a man, with a hole in its middle, outside a neighbor's house. It was money. Which island is famous for this stone money?",
     "answer": "Yap",
     "choices": [
       "Yap",
@@ -18786,7 +18656,7 @@
   },
   {
     "tier": 1,
-    "question": "On the Pacific island of Yap, villagers used giant limestone discs called rai stones as money. But Yap itself had no limestone. Crews had to sail to another island about 250 miles away, quarry the huge discs by hand, and haul each one home strapped to an outrigger canoe. Which nearby island had the limestone quarry?",
+    "question": "The men of one Yap village sailed about 250 miles to another island to cut a giant stone disc, because their own island had no stone fit for it. They carved it by hand from that island's limestone and towed it home behind an outrigger canoe. Which island did they quarry?",
     "answer": "Palau",
     "choices": [
       "Palau",
@@ -18799,7 +18669,7 @@
   },
   {
     "tier": 2,
-    "question": "On the Pacific island of Yap, a rai stone was a giant limestone disc used as money. Some weighed several tons. Once a really big rai was installed in a village, no one could move it again. Yet the stones still changed owners in trades. Since nobody could physically drag the disc anywhere, how did the transfer of ownership actually take place?",
+    "question": "A family on Yap traded away a giant stone disc that weighed several tons and had stood in its village for years. Nobody moved the disc an inch, before the trade or after it. How did the stone change hands?",
     "answer": "By public community agreement that the stone now belonged to someone else, while the physical stone stayed put",
     "choices": [
       "By public community agreement that the stone now belonged to someone else, while the physical stone stayed put",
@@ -18812,7 +18682,7 @@
   },
   {
     "tier": 2,
-    "question": "On the Pacific island of Yap, giant carved limestone disks called rai stones served as money — some as tall as a house and far too heavy for one person to move. In one famous incident, a canoe crew was towing a particularly large new rai stone home across the open ocean when a sudden storm hit the boats. The heavy stone slid free of its ropes and sank to the bottom of the sea, far too deep for anyone to recover. What did the Yap islanders later decide about that lost stone?",
+    "question": "A canoe crew was towing a huge new stone disc home to Yap across the open sea when a storm struck, and the stone tore free and sank far too deep for anyone to reach. The crew swore to its size and quality. What did the islanders decide about the lost stone?",
     "answer": "They agreed it was still valuable, still ownable, and still transferable",
     "choices": [
       "They agreed it was still valuable, still ownable, and still transferable",
@@ -18825,7 +18695,7 @@
   },
   {
     "tier": 3,
-    "question": "On the Pacific island of Yap, people used giant stone disks as money, including one that had sunk to the bottom of the sea but was still traded from owner to owner. A famous American economist said this is not so different from how the US 'owns' gold at Fort Knox. What is the similarity?",
+    "question": "Milton Friedman retold the tale of Yap's sunken stone in 1991, a stone still traded from owner to owner though it rested on the bottom of the sea. He compared it with the gold the United States 'owns' at Fort Knox. What did he say the two have in common?",
     "answer": "Almost nobody sees the actual money, but everyone agrees who owns it",
     "choices": [
       "Almost nobody sees the actual money, but everyone agrees who owns it",
@@ -18838,7 +18708,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1991 the American economist Milton Friedman published an essay called 'The Island of Stone Money.' It compared the giant stone-disc money of the Pacific island of Yap to modern central-bank practice. He pointed to a real 1932-33 case: France asked to redeem its dollar deposits into gold, and clerks simply moved the gold bars from one shelf to another inside the same American vault. No metal ever crossed the ocean. Only the labels on the bars changed. Whose vault held that gold?",
+    "question": "Clerks handling France's request in 1932 and 1933 to turn its dollars into gold never shipped a bar across the Atlantic. They shifted the bars to drawers labeled as French in the very same vault, a case Milton Friedman later set beside Yap's stone money in his essay 'The Island of Stone Money.' Whose vault was it?",
     "answer": "The Federal Reserve Bank of New York",
     "choices": [
       "The Federal Reserve Bank of New York",
@@ -18851,7 +18721,7 @@
   },
   {
     "tier": 4,
-    "question": "The Chicago economist Milton Friedman wrote about the giant rai stones of the Pacific island of Yap in an essay called 'The Island of Stone Money.' The cypherpunks -- programmers of the 1990s who wanted digital cash -- later picked up the same story. Friedman and the cypherpunks drew the same deep lesson about what money fundamentally IS. Which claim did they draw from Yap?",
+    "question": "Milton Friedman, and the cypherpunks after him, drew one lesson from the stone money of Yap about what money really is. The cypherpunks were programmers of the 1990s who wanted digital cash, and they took up Friedman's story. Which claim did they all draw from Yap?",
     "answer": "Money is a ledger; the physical medium is only a container for social agreement about who owns what",
     "choices": [
       "Money is a ledger; the physical medium is only a container for social agreement about who owns what",
@@ -18864,7 +18734,7 @@
   },
   {
     "tier": 4,
-    "question": "On the Pacific island of Yap, all the villagers remembered in their own heads which rai stone belonged to whom. That shared memory WAS the money system. In Bitcoin, the same job -- knowing who owns which coin -- is done not by human memory but by a shared record book, enforced by math and copied onto thousands of computers around the world. What is that shared record book called?",
+    "question": "A Yap islander who bought a stone simply had the whole village remember that it was now his. Bitcoin gives that same job, knowing who owns which coin, to a shared record book guarded by mathematics and copied onto thousands of computers around the world. What is that record book called?",
     "answer": "The blockchain",
     "choices": [
       "The blockchain",
@@ -18877,7 +18747,7 @@
   },
   {
     "tier": 5,
-    "question": "The economist Milton Friedman told a famous story about Yap Island in the Pacific, where huge stone disks called rai served as money — even ones that had sunk to the bottom of the sea. Everyone on the island just remembered who owned which stone. Decades later, Bitcoin arrived as a shared computer record every user could check. Friedman's bridge from Yap stones to Bitcoin teaches a specific recognition move about monetary innovation. Which move?",
+    "question": "The cypherpunks, programmers of the 1990s, took up the story of Yap's stone money after Milton Friedman. On the island, the record of who owned each stone sat in the villagers' heads; Bitcoin keeps that record with cryptography instead. Seen that way, which point does the comparison make about monetary innovation?",
     "answer": "A purely digital ledger is a natural extension of monetary tradition, not a break from it",
     "choices": [
       "A purely digital ledger is a natural extension of monetary tradition, not a break from it",
@@ -18890,7 +18760,7 @@
   },
   {
     "tier": 5,
-    "question": "Most historical monies were easy to make -- kings could stamp new coins or governments could print new bills whenever they liked. But two monies stand apart. The giant rai stones of Yap had to be quarried by hand from another island 250 miles away and hauled home by canoe. Bitcoin has to be mined by computers solving hard math puzzles that burn real electricity. Which feature did both rai and Bitcoin share, that ordinary money lacks?",
+    "question": "Nick Szabo, the cypherpunk, pointed out a feature that Yap's rai stones and Bitcoin share and ordinary money lacks. A king could strike fresh coins whenever he pleased, and a government print new notes; but every rai had to be cut by hand on an island 250 miles off and carried home by canoe, and every bitcoin must be won by burning real electricity. What feature is it?",
     "answer": "Costly proof-of-work to create each new unit",
     "choices": [
       "Costly proof-of-work to create each new unit",
@@ -18903,20 +18773,7 @@
   },
   {
     "tier": 1,
-    "question": "A smooth-talking man promises his investors huge returns every single year. But he never actually invests their money in anything real. He simply uses the cash from brand-new investors to pay off the earlier ones, then pockets the rest. The trick only works so long as fresh money keeps rolling in the door -- and eventually the money runs dry. What is this kind of scam called?",
-    "answer": "A Ponzi scheme",
-    "choices": [
-      "A Ponzi scheme",
-      "A tariff",
-      "A bank run",
-      "Insider trading"
-    ],
-    "context": "Bernard Madoff ran the largest financial fraud in US history through his investment-advisory business. He confessed on December 10, 2008, was arrested December 11, and sentenced to 150 years in June 2009. Source: sec.gov (Madoff litigation releases).",
-    "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
-  },
-  {
-    "tier": 1,
-    "question": "In the early 2000s a Boston financial analyst named Harry Markopolos studied the trading results of a well-known New York investor named Bernie Madoff. Markopolos was a math expert, and he saw quickly that Madoff's returns could not be real -- no one in the world could earn that steady a profit every month, in every kind of market. For eight years Markopolos sent warnings to the US Securities and Exchange Commission, the government's investor-watchdog agency. What happened to his warnings?",
+    "question": "Harry Markopolos, a Boston analyst, started studying Bernie Madoff's results in 2000. No honest fund, he worked out, could make such steady gains month after month in rising and falling markets alike. For about eight years he warned the Securities and Exchange Commission. What happened to his warnings?",
     "answer": "The agency ignored him and the fraud kept going for years",
     "choices": [
       "The agency ignored him and the fraud kept going for years",
@@ -18929,7 +18786,7 @@
   },
   {
     "tier": 2,
-    "question": "In the early 2000s the American investigator Harry Markopolos, a mathematics expert, tried year after year to warn the Securities and Exchange Commission — the SEC — that the Wall Street investment fund run by Bernie Madoff was a fraud. Madoff's reported returns went up almost every single month with hardly any dips, impossibly smooth for real markets. Markopolos ran the numbers and said no honest fund can behave that way. He was right. What kind of scam turned out to be running there?",
+    "question": "Bernie Madoff confessed in December 2008 that his money-management firm had been a sham for decades. Years earlier Harry Markopolos had shown the Securities and Exchange Commission that Madoff's returns were impossibly smooth, rising almost every month with hardly a dip. What kind of scam had Madoff been running?",
     "answer": "A Ponzi scheme, paying old investors with new investors' money",
     "choices": [
       "A Ponzi scheme, paying old investors with new investors' money",
@@ -18942,7 +18799,7 @@
   },
   {
     "tier": 2,
-    "question": "In the early 2000s the American investigator Harry Markopolos sent the Securities and Exchange Commission — the SEC, the US stock-market watchdog — detailed warnings for years that the Wall Street investor Bernie Madoff was running a huge fraud. Each time SEC staff looked at the file and did nothing serious. When Madoff finally turned himself in during the 2008 crash, the losses were about $65 billion. What lesson do free-market thinkers draw from a story like this?",
+    "question": "Free-market thinkers weighed the Madoff case after his fraud fell apart in the 2008 crash, with about $65 billion lost on paper. For years the Securities and Exchange Commission had sat on detailed warnings about him from Harry Markopolos. What blunt lesson did they draw?",
     "answer": "Government watchdogs can miss huge frauds, so investors still need to think for themselves",
     "choices": [
       "Government watchdogs can miss huge frauds, so investors still need to think for themselves",
@@ -18955,7 +18812,7 @@
   },
   {
     "tier": 3,
-    "question": "In December 2008 the New York investor Bernie Madoff was arrested after admitting his investment firm was actually a giant Ponzi scheme. Madoff had been faking his returns for decades. Afterward the US Securities and Exchange Commission (SEC) -- the government agency supposed to catch this kind of fraud -- wrote its own internal report on what its staff had missed. Which of these was one of the failures the SEC report actually named?",
+    "question": "The Securities and Exchange Commission's own inspector general went back over the agency's handling of Bernie Madoff after the fraud collapsed in December 2008, and set down in a long report what it had missed. Which of these failures did the report name?",
     "answer": "Young staff were handed cases too complicated for their training",
     "choices": [
       "Young staff were handed cases too complicated for their training",
@@ -18968,7 +18825,7 @@
   },
   {
     "tier": 3,
-    "question": "Bernie Madoff, the New York man later exposed as the biggest Ponzi-scheme fraudster in American history, was not some fringe operator. In the early 1990s he had held one of the most senior positions in the American stock market world -- a position that made him a respected figure in finance long before the fraud came out. Which senior role did Madoff hold at a major US stock market?",
+    "question": "Bernie Madoff took a senior post at a major US stock market early in the 1990s, long before his fraud came out, and it made him a respected establishment figure in finance. Which post was it?",
     "answer": "Chairman of NASDAQ",
     "choices": [
       "Chairman of NASDAQ",
@@ -18981,7 +18838,7 @@
   },
   {
     "tier": 3,
-    "question": "For about eight years the American investigator Harry Markopolos, a math whiz turned fraud hunter, tried to warn the Securities and Exchange Commission that Bernie Madoff's Wall Street returns had to be fake. Nobody at the agency acted seriously on his math. In the end Madoff had to turn himself in during the 2008 crash. Markopolos then wrote a book about those long years of being ignored by regulators. Which phrase became the title of his book?",
+    "question": "Harry Markopolos, the analyst who had studied Bernie Madoff's returns since 2000, published a book about the case in 2010. Which phrase became its title?",
     "answer": "No one would listen",
     "choices": [
       "No one would listen",
@@ -18994,7 +18851,7 @@
   },
   {
     "tier": 4,
-    "question": "When Bernie Madoff's Ponzi scheme collapsed in December 2008, news outlets reported the fraud at $65 billion. But that figure included years of fake profits Madoff had told his clients they had earned -- money that never actually existed. When investigators added up only the REAL money that investors had handed Madoff and lost, the number was much smaller. About how much real cash did Madoff's investors actually lose?",
+    "question": "Investigators added up Bernie Madoff's damage after his fraud collapsed in December 2008. The $65 billion reported in the news included years of made-up profits that his statements had shown his clients, money that never existed. How much real money had his investors actually put in and lost?",
     "answer": "About $18 billion",
     "choices": [
       "About $18 billion",
@@ -19007,7 +18864,7 @@
   },
   {
     "tier": 4,
-    "question": "The US government wants people inside big companies to report fraud, but blowing the whistle can cost you your job. To make it worth the risk, the government pays whistleblowers a percentage of the fines it collects. Why does paying a percentage work better than a flat reward?",
+    "question": "An accountant inside a big company finds proof of a fraud and knows that blowing the whistle could cost him his job. Since 2010 the Securities and Exchange Commission has handed tipsters between 10 and 30 percent of whatever fines their information wins, rather than a flat reward. Why does a percentage work better?",
     "answer": "The bigger the fraud they expose, the bigger their reward -- so they speak up sooner",
     "choices": [
       "The bigger the fraud they expose, the bigger their reward -- so they speak up sooner",
@@ -19019,8 +18876,8 @@
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
   },
   {
-    "tier": 5,
-    "question": "Bernie Madoff ran the biggest US investment fraud in history for over a decade. The Securities and Exchange Commission (SEC), which was supposed to catch him, got detailed written warnings and ignored them again and again. What usually explains that pattern at a regulator?",
+    "tier": 4,
+    "question": "A student of the Madoff case asks why a regulator would ignore detailed written warnings about a well-connected Wall Street figure, again and again. The Securities and Exchange Commission had such warnings about Bernie Madoff from Harry Markopolos for years, and the fraud ran on. What usually explains that pattern at a regulator?",
     "answer": "The staff's own career incentives pulled them away from tough fraud detection",
     "choices": [
       "The staff's own career incentives pulled them away from tough fraud detection",
@@ -19028,25 +18885,12 @@
       "SEC staff genuinely believed Madoff's math was correct",
       "The SEC had zero legal power to investigate Madoff"
     ],
-    "context": "Stigler's 1971 capture theory predicts that regulators tend to identify with, defer to, and hire from established regulated figures. The SEC's staff incentive structure did not reward embarrassing a former NASDAQ chairman. Markopolos, an outsider, was on the wrong side of that capture. Source: Stigler, Bell Journal (1971); SEC OIG Report 509 (2009).",
-    "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
-  },
-  {
-    "tier": 5,
-    "question": "The Bernie Madoff Ponzi scheme was reported to the US Securities and Exchange Commission for years, in detailed math from Harry Markopolos, and the agency never seriously acted. The Madoff case teaches a public-choice way of thinking about regulators. When an agency gets repeated warnings about a well-connected person like Madoff and keeps doing nothing, what specific question should you ask about the regulators themselves?",
-    "answer": "Whose specific career interests are served by NOT investigating this figure",
-    "choices": [
-      "Whose specific career interests are served by NOT investigating this figure",
-      "Whether the whistleblower is entitled to a share of any eventual fine",
-      "Whether the regulator's paint scheme is up to date",
-      "Whether the whistleblower's college degree is from the right school"
-    ],
-    "context": "Stigler-style capture analysis: work out which specific decision-makers stand to lose or gain from an investigation. When the answer is that the decision-makers see mostly downside from investigating a well-connected figure, expect systematic under-enforcement. Source: Stigler (1971); Kwak, 'Cultural Capture and the Financial Crisis' (2013).",
+    "context": "Stigler's 1971 capture theory predicts that regulators tend to identify with, defer to, and hire from established regulated figures. The SEC's staff incentive structure did not reward embarrassing a former NASDAQ chairman. Markopolos, an outsider, was on the wrong side of that capture. Source: Stigler, Bell Journal (1971); SEC OIG Report 509 (2009). Stigler-style capture analysis: work out which specific decision-makers stand to lose or gain from an investigation. When the answer is that the decision-makers see mostly downside from investigating a well-connected figure, expect systematic under-enforcement. Source: Stigler (1971); Kwak, 'Cultural Capture and the Financial Crisis' (2013).",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
   },
   {
     "tier": 1,
-    "question": "For 40 years, a US agency called the Civil Aeronautics Board (CAB) decided which airlines could fly which routes and how much they could charge. Flying was expensive and only wealthy Americans did it much. In 1978 President Jimmy Carter signed the Airline Deregulation Act. Congress let the airlines set their own prices and pick their own routes. What happened to ticket prices for regular people after that?",
+    "question": "Jimmy Carter signed a law in 1978 that freed America's airlines to choose their own routes and set their own fares. Since 1938 the Civil Aeronautics Board had decided both, and few but the wealthy flew much. What happened to ticket prices for ordinary people after that?",
     "answer": "They dropped, and many more people could afford to fly",
     "choices": [
       "They dropped, and many more people could afford to fly",
@@ -19059,7 +18903,7 @@
   },
   {
     "tier": 1,
-    "question": "For years, the US had strict rules telling airlines what to charge and where to fly. The government removed those rules in 1978. Prices fell and many more people could afford to fly. What is it called when the government takes rules away from an industry?",
+    "question": "Alfred Kahn, a Cornell economist, championed one policy for the airlines as chairman of the Civil Aeronautics Board in 1977 and 1978. Jimmy Carter signed it into law. What is that policy called?",
     "answer": "Deregulation",
     "choices": [
       "Deregulation",
@@ -19072,20 +18916,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1887 the United States Congress created the Interstate Commerce Commission, the ICC, meant to protect shippers and farmers from powerful railroad companies charging them ruinous rates. Historians combing the archives later found that the railroads had quietly lobbied for the ICC themselves. They hoped a friendly regulator would freeze rates high enough for existing carriers and block new rail lines from ever entering the business. What pattern is this?",
-    "answer": "Regulatory capture, when the industry ends up running its own regulator",
-    "choices": [
-      "Regulatory capture, when the industry ends up running its own regulator",
-      "Free competition between many small firms",
-      "A price war between rivals",
-      "A tariff on foreign goods"
-    ],
-    "context": "The ICC (1887) was the first modern US regulatory agency. Kolko's Triumph of Conservatism (Free Press, 1963) argued incumbent railroads lobbied for it to stabilize rates and prevent price-cutting competition. Source: en.wikipedia.org/wiki/Interstate_Commerce_Commission.",
-    "topic": "regulatory-capture-case-studies-icc-cab-fcc"
-  },
-  {
-    "tier": 2,
-    "question": "The Federal Communications Commission, the FCC, is the United States agency that hands out radio and television broadcast licenses. Each license can be worth millions of dollars because it grants the holder a slice of the airwaves no rival can legally use. License holders then hire lobbyists in Washington to block new stations, slow the rollout of cable TV, and delay any new technology that might compete for viewers. What does this behavior show?",
+    "question": "A radio station owner hires a lobbyist in Washington to keep a rival station off the air. His license from the Federal Communications Commission gives him a slice of the airwaves no rival may legally use, and license holders like him fought for years to slow cable television too. What does this behavior show?",
     "answer": "Government-granted licenses can turn into protected privileges the holders fight to defend",
     "choices": [
       "Government-granted licenses can turn into protected privileges the holders fight to defend",
@@ -19098,7 +18929,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1978 the US Congress passed the Airline Deregulation Act, which ended the strict federal rules that had held airline ticket prices artificially high for decades. Fares tumbled and many more Americans could afford to fly. Two years later, in 1980, Congress passed a similar law for another industry that moves goods across the country on highways in big rigs. Which industry got deregulated in 1980?",
+    "question": "A shipper paid smaller freight bills after a law of 1980 ended decades of Interstate Commerce Commission control over one industry's rates and routes. The commission had been set up in 1887 to watch over the railroads, and the law came two years after Congress freed the airlines. Which industry did it free?",
     "answer": "Trucking",
     "choices": [
       "Trucking",
@@ -19111,20 +18942,7 @@
   },
   {
     "tier": 3,
-    "question": "A senior worker at a government agency spends years regulating a drug company, then quits to take a high-paying job at that same company. Later, someone from the company leaves and takes a job back at the agency. What is this back-and-forth pattern called?",
-    "answer": "The revolving door",
-    "choices": [
-      "The revolving door",
-      "The captured cage",
-      "The regulatory bridge",
-      "The industry pipeline"
-    ],
-    "context": "The revolving door: senior agency officials rotate into industry positions at companies they previously regulated. GAO studies (2007 and later) documented systematic migration between FDA reviewers and the pharmaceutical industry. Source: gao.gov (FDA post-employment reports).",
-    "topic": "regulatory-capture-case-studies-icc-cab-fcc"
-  },
-  {
-    "tier": 3,
-    "question": "In the years before the 2008 financial crash, two US federal bank agencies were supposed to watch how safely American banks were making home loans. Both missed the enormous risks piling up in mortgage-backed securities. Later Congressional investigations found their staff regularly rotated between the agencies and the banks they were supposed to police — the so-called 'revolving door.' Which pair of agencies gets the most blame?",
+    "question": "Critics looking back after the 2008 crash singled out two federal bank agencies that had failed to see the risks building in home lending. They pointed to staff who went from those agencies to the banks and back again, the revolving door. Which pair of agencies did they blame?",
     "answer": "The Office of the Comptroller of the Currency and the Office of Thrift Supervision",
     "choices": [
       "The Office of the Comptroller of the Currency and the Office of Thrift Supervision",
@@ -19137,7 +18955,7 @@
   },
   {
     "tier": 4,
-    "question": "The Chicago economist George Stigler wrote in 1971 about a pattern he saw again and again in Washington -- an agency created by Congress to police an industry (say, banking or trucking) ends up run mostly by people from that same industry, and its rules end up helping the industry more than the public. Stigler called this 'regulatory capture.' What is the most common reason it happens?",
+    "question": "George Stigler argued in 1971 that an agency Congress creates to police an industry, say banking or broadcasting, often ends up working for that industry, its rules helping the industry more than the public. Economists have looked hard at why. What is the most common reason it happens?",
     "answer": "The regulators come from and go back to the industry they oversee",
     "choices": [
       "The regulators come from and go back to the industry they oversee",
@@ -19150,20 +18968,7 @@
   },
   {
     "tier": 4,
-    "question": "Three US agencies show the same story: the Interstate Commerce Commission for railroads, the Civil Aeronautics Board for airlines, and the early Federal Communications Commission (FCC) for radio. Each was built for the public but ended up serving the industry. Which line best sums that story up?",
-    "answer": "Industry incumbents captured the agency and used it to restrict entry by new competitors",
-    "choices": [
-      "Industry incumbents captured the agency and used it to restrict entry by new competitors",
-      "The agency's staff turned against the industry and imposed heavy fines each year",
-      "Congress abolished each agency within a decade of its founding",
-      "Consumers seized the regulatory process through mass grassroots organizing"
-    ],
-    "context": "The common thread across the ICC, CAB, and FCC: agencies whose original public-interest justification gradually gave way to protecting incumbent firms against new entrants. Stigler's 1971 paper formalized the pattern as theory. Source: Stigler, Bell Journal (1971); Kolko, Triumph of Conservatism (1963).",
-    "topic": "regulatory-capture-case-studies-icc-cab-fcc"
-  },
-  {
-    "tier": 5,
-    "question": "In 1971 the American economist George Stigler, later a Nobel laureate at the University of Chicago, published a famous paper arguing that regulatory agencies often get 'captured' — that they quietly stop working for the public and start working for the industry they were set up to police. Without asking opinions or reading minds, which single visible behavior of an agency is the strongest sign that it has been captured?",
+    "question": "Gabriel Kolko, a historian, argued that the big railroad companies lobbied for the Interstate Commerce Commission themselves when Congress created it in 1887. The airlines' Civil Aeronautics Board and the early Federal Communications Commission ended up serving their industries too. George Stigler judged capture by an agency's results, not its intentions. Which visible behavior is the strongest sign that an agency has been captured?",
     "answer": "The agency blocks new companies from entering while protecting the profits of existing firms",
     "choices": [
       "The agency blocks new companies from entering while protecting the profits of existing firms",
@@ -19171,12 +18976,12 @@
       "The agency writes detailed technical rules",
       "The agency has a large research staff"
     ],
-    "context": "Capture is measured by outcomes, not intent. If regulation systematically raises incumbent profits and blocks new competitors, the regulation is functioning like an industry-serving barrier, whatever its stated purpose. Source: Stigler, Bell Journal (1971); Kleiner, Licensing Occupations (Upjohn 2006).",
+    "context": "Capture is measured by outcomes, not intent. If regulation systematically raises incumbent profits and blocks new competitors, the regulation is functioning like an industry-serving barrier, whatever its stated purpose. Source: Stigler, Bell Journal (1971); Kleiner, Licensing Occupations (Upjohn 2006). The common thread across the ICC, CAB, and FCC: agencies whose original public-interest justification gradually gave way to protecting incumbent firms against new entrants. Stigler's 1971 paper formalized the pattern as theory. Source: Stigler, Bell Journal (1971); Kolko, Triumph of Conservatism (1963).",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
   },
   {
     "tier": 5,
-    "question": "In 1971 the Chicago economist George Stigler published a paper called 'The Theory of Economic Regulation.' He argued that US regulatory agencies get captured by the very industries they are meant to police. Over the following decades, empirical scholars have tested his capture theory across dozens of US regulatory agencies -- from banking to trucking to airlines to communications. What has the broad pattern of that half-century of research been?",
+    "question": "Sam Peltzman, George Stigler's student, took up the testing of Stigler's 1971 paper, 'The Theory of Economic Regulation,' and followers of the two carried it on for half a century across transport, broadcasting, banking and licensing. As the Chicago school reads it, what has the broad pattern of that research been?",
     "answer": "Stigler's theory is largely vindicated across every major regulatory agency examined",
     "choices": [
       "Stigler's theory is largely vindicated across every major regulatory agency examined",
@@ -19189,7 +18994,7 @@
   },
   {
     "tier": 1,
-    "question": "The French economist Frederic Bastiat, writing in 1850, taught that every policy has a 'seen' effect right in front of you and an 'unseen' effect that never gets to happen. A city council plans to freeze rents on existing apartments to keep them affordable. The seen effect is that today's tenants pay less each month. What is the main unseen effect on future housing?",
+    "question": "A city councilwoman proposes freezing the rent on every apartment in town to keep housing affordable. Frédéric Bastiat taught that a policy has an effect everyone sees and one nobody sees; the seen effect here is today's tenants paying less. What is the main unseen effect on future housing?",
     "answer": "Apartment buildings a developer would have built are never built because future rents are capped below construction cost",
     "choices": [
       "Apartment buildings a developer would have built are never built because future rents are capped below construction cost",
@@ -19201,60 +19006,8 @@
     "topic": "rent-control-the-apartment-building-that-never-gets-built"
   },
   {
-    "tier": 1,
-    "question": "In a large city, the government passes a strict law: 'No landlord may ever raise the rent on any apartment.' Twenty years later, the old apartment buildings are falling apart from neglected repairs, and no new apartment building has been built anywhere in the city during those twenty years. Why did no builder ever start a new apartment project?",
-    "answer": "There was no way to make money building them, so no one bothered",
-    "choices": [
-      "There was no way to make money building them, so no one bothered",
-      "The government forgot to let them",
-      "The city ran out of land",
-      "Builders all moved to another country"
-    ],
-    "context": "Lindbeck's line: 'In many cases rent control appears to be the most efficient technique presently known to destroy a city -- except for bombing.' The bite of it is that a socialist Swedish economist said it. Source: Lindbeck, The Political Economy of the New Left, 1971.",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
-    "tier": 2,
-    "question": "A big American city passes a rent-control law that keeps apartment rents low and only lets landlords raise them a tiny amount each year, even when costs like heating oil and property taxes are rising fast. Austrian economists warned this was a classic price-ceiling mistake: fix the price below the market and shortages follow. Over many years in a rent-controlled city, what does economics predict will happen to the number of new apartments being built and to the upkeep of the buildings that already exist?",
-    "answer": "Fewer new apartments get built, and old ones fall into disrepair",
-    "choices": [
-      "Fewer new apartments get built, and old ones fall into disrepair",
-      "More new apartments get built because demand goes up",
-      "Rents fall for everyone in the whole state",
-      "Landlords compete to fix up their buildings"
-    ],
-    "context": "The ETPA of 1974 is the legal foundation of NYC's modern rent-stabilization regime; roughly 966,000 apartments were covered as of the 2023 NYC Housing and Vacancy Survey. Source: NYC HPD 2023 Housing Vacancy Survey.",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
-    "tier": 2,
-    "question": "Sweden's capital city Stockholm has run a strict rent-control system for decades. Under the rules, a renter cannot just find an apartment on the open market -- the city keeps a public waiting list for a first-hand rental (the direct kind of lease that comes with legal rent-controlled terms). By the mid-2010s, that waiting list had grown to an astonishing average length for a first-hand rental in central Stockholm. About how long was the average wait?",
-    "answer": "About 20 years",
-    "choices": [
-      "About 20 years",
-      "About 5 years",
-      "About 2 years",
-      "About 6 months"
-    ],
-    "context": "Stockholm's Bostadsformedlingen (municipal housing office) published waits above 20 years for central-city apartments through the mid-2010s; widely reported in SVT and The Economist 2015. Source: bostad.stockholm.se.",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
     "tier": 3,
-    "question": "A 2019 paper by Diamond, McQuade, and Qian on San Francisco's 1994 rent-control expansion found landlords cut rental supply by about 15 percent -- some converted units to condos, some tore them down. What did Swedish economist Assar Lindbeck famously say rent control is the most efficient known way to do to a city, apart from bombing?",
-    "answer": "Destroy it",
-    "choices": [
-      "Destroy it",
-      "Redistribute wealth in it",
-      "Raise its tax revenue",
-      "Attract new residents to it"
-    ],
-    "context": "Diamond-McQuade-Qian, 'The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality,' AER 2019: San Francisco's 1994 expansion caused a 15% cut in rental supply from affected landlords, deepening the shortage the policy meant to fix. Source: American Economic Review 109(9).",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
-    "tier": 3,
-    "question": "When strict rent control has been tried — in New York, Paris, and Stockholm at various points in the 1900s — a specific black-market side payment appears in every serious rent-controlled market. A would-be tenant slips upfront cash to the landlord, or to the outgoing tenant, just to secure the covered lease at the frozen rent. What is this side payment called in the rental market?",
+    "question": "A would-be tenant in a rent-controlled city pays the landlord, or the tenant moving out, an under-the-table sum to land the cheap lease. Payments like his have turned up under strict rent control in New York, Paris and Stockholm alike. What is the side payment called?",
     "answer": "Key money",
     "choices": [
       "Key money",
@@ -19267,20 +19020,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2020 the city of Berlin passed a five-year law, called the Mietendeckel or 'rent lid,' that froze rents on about 1.5 million apartments across the German capital. Germany's Federal Constitutional Court struck it down within a year, ruling that a single city had no authority to override national housing law. But suppose the court had let the freeze stand. What is the predictable long-run economic problem with a hard rent freeze?",
-    "answer": "Landlords stop building or repairing apartments, so the rental supply shrinks",
-    "choices": [
-      "Landlords stop building or repairing apartments, so the rental supply shrinks",
-      "Landlords raise the quality of every apartment to justify the frozen rent",
-      "Renters immediately move out to smaller cities to save money",
-      "The city instantly runs out of construction workers to build apartments"
-    ],
-    "context": "The Bundesverfassungsgericht in Karlsruhe struck down Berlin's Mietendeckel on April 15 2021, ruling rent regulation was a federal not a state matter; Berlin tenants suddenly owed back-rent for the freeze period. Source: en.wikipedia.org/wiki/Berlin_Mietendeckel.",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
-    "tier": 4,
-    "question": "Milton Friedman's Bastiat-style closing move on rent control names the specific reasoning fallacy behind the policy in one phrase. Friedman wrote: 'The most important single central fact about a free market is that no exchange takes place unless both parties benefit.' Applied to rent control, whom does the policy help and whom does it harm most?",
+    "question": "'The most important single central fact about a free market is that no exchange takes place unless both parties benefit,' Milton Friedman wrote. A rent cap breaks that principle. Whom does the cap help, and whom does it harm the most of all?",
     "answer": "Helps existing tenants; harms would-be tenants who never get a lease at all",
     "choices": [
       "Helps existing tenants; harms would-be tenants who never get a lease at all",
@@ -19292,34 +19032,8 @@
     "topic": "rent-control-the-apartment-building-that-never-gets-built"
   },
   {
-    "tier": 5,
-    "question": "The Fraser Institute's 1981 book 'Rent Control: Myths and Realities,' edited by Walter Block and Edgar Olsen, says price caps on rent lead to the same long-run results in every city that tries them. Which outcome does the book call the most damaging over decades?",
-    "answer": "Collapse of new rental construction combined with deteriorating maintenance of existing stock",
-    "choices": [
-      "Collapse of new rental construction combined with deteriorating maintenance of existing stock",
-      "Immediate uniform reduction in average rents across all neighborhoods",
-      "Redistribution of rental supply toward higher-income neighborhoods",
-      "Complete elimination of the private rental market within five years"
-    ],
-    "context": "The Fraser collection's cross-country evidence: capped future rents kill new construction, and capped current rents remove the incentive for landlords to maintain existing units. The city ends the decade with a smaller and shabbier housing stock than it started with. Source: fraserinstitute.org (Block & Olsen, Rent Control: Myths and Realities, 1981).",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
-    "tier": 5,
-    "question": "By Bastiat's method, the Stockholm 20-year waitlist and the New York cracked-plaster walk-up point at the same unseen cost -- the family that never got the apartment. What do economists call the queue-and-shortage outcome any binding price ceiling produces?",
-    "answer": "Non-price rationing",
-    "choices": [
-      "Non-price rationing",
-      "Producer surplus",
-      "Consumer sovereignty",
-      "Deadweight subsidy"
-    ],
-    "context": "A binding price ceiling forces the market to allocate scarce units by NON-PRICE means: waiting lists, insider connections, key money, discrimination. The seen tenant paid less; the unseen family got nothing. Source: Sowell, Basic Economics, chapter on price ceilings.",
-    "topic": "rent-control-the-apartment-building-that-never-gets-built"
-  },
-  {
     "tier": 1,
-    "question": "When the US government tells the Federal Reserve to print a huge pile of new dollars, the new money does NOT magically land in every American's wallet on the same day. It flows into big banks and big companies first, through loans and bond purchases. Those first-receivers spend the new money while store prices are still old prices. By the time ordinary employees get their paychecks, prices at the grocery store and the rent office have already jumped. Who loses out in this chain?",
+    "question": "Richard Cantillon, an Irish-born banker, saw around 1730 that new money does not reach everyone at once, and those who get it first can spend it before prices rise. When a central bank creates money today, who loses out in this chain?",
     "answer": "Regular workers, who get the money last after prices have already climbed",
     "choices": [
       "Regular workers, who get the money last after prices have already climbed",
@@ -19327,12 +19041,12 @@
       "The big companies that got new loans",
       "Nobody -- everyone gets equal amounts"
     ],
-    "context": "Cantillon (c. 1680s-1734) was an Irish-born banker who lived in Paris. His trading in the Mississippi Bubble made his fortune; his shorting of it made him a rare survivor. Source: Grokipedia 'Richard Cantillon' (2026-09-05).",
+    "context": "Cantillon (c. 1680s-1734) was an Irish-born banker who lived in Paris. His trading in the Mississippi Bubble made his fortune; his shorting of it made him a rare survivor. Source: Grokipedia 'Richard Cantillon' (2026-09-05). In Cantillon's day, mines and government-favored merchants received new coins first. They could buy at old prices before prices adjusted. Late-receivers -- wage earners, savers -- paid the new higher prices with old wages. Source: Cantillon, Essai (1755).",
     "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
   },
   {
     "tier": 1,
-    "question": "The Irish-French banker Richard Cantillon wrote his big economics book in French around 1730 while living in Paris. It was passed hand-to-hand among French economists for years before finally being printed in 1755, over two decades after his death. In English it is known as 'Essay on the Nature of Trade in General.' What is its original French title?",
+    "question": "Richard Cantillon wrote his great book on trade in French in Paris around 1730, and for two decades it passed from hand to hand among French thinkers in manuscript. It was printed at last in 1755, more than twenty years after his death. What is its original French title?",
     "answer": "Essai sur la Nature du Commerce en General",
     "choices": [
       "Essai sur la Nature du Commerce en General",
@@ -19345,33 +19059,20 @@
   },
   {
     "tier": 2,
-    "question": "In the 1730s an Irish-French banker named Richard Cantillon wrote an essay explaining how new money moves through an economy. His key insight was that money creation is NOT neutral -- new gold and silver from the mines, or new bills from a printer, does not raise all prices in every corner of the country at the same moment. In Cantillon's framing, where does new money enter?",
-    "answer": "At specific points, benefiting first-receivers who can spend at old prices",
-    "choices": [
-      "At specific points, benefiting first-receivers who can spend at old prices",
-      "Uniformly across the whole economy in a single moment",
-      "Only in the country producing the precious metals",
-      "Only at the seasonal harvest time"
-    ],
-    "context": "In Cantillon's day, mines and government-favored merchants received new coins first. They could buy at old prices before prices adjusted. Late-receivers -- wage earners, savers -- paid the new higher prices with old wages. Source: Cantillon, Essai (1755).",
-    "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
-  },
-  {
-    "tier": 2,
-    "question": "The Irish-French banker Richard Cantillon wrote in the 1730s that new money helps those who receive it first -- they get to spend it while prices are still low -- and hurts savers and wage-earners who receive the money last, after prices have risen. Modern Austrian-school economists like Murray Rothbard and Jesus Huerta de Soto revived this idea and gave it a name honoring Cantillon. What do they call this pattern?",
+    "question": "Murray Rothbard and Jesús Huerta de Soto revived the idea of an Irish-born banker who grew rich in Paris in the early 1700s: new money comes in at certain doors, a mine, a royal treasury, a bank, and those nearest spend it before prices adjust. What name did they give the pattern?",
     "answer": "The Cantillon effect",
     "choices": [
       "The Cantillon effect",
       "The Wicksell effect",
       "The Fisher effect",
-      "The Balassa effect"
+      "The Keynes effect"
     ],
-    "context": "The Cantillon effect is the standard Austrian label for the redistribution from late-receivers to first-receivers of newly created money. Whether the money is 18th-century Peruvian silver or 21st-century Fed reserves, the mechanism is the same. Source: Grokipedia 'Cantillon effect' (2026-09-05).",
+    "context": "The Cantillon effect is the standard Austrian label for the redistribution from late-receivers to first-receivers of newly created money. Whether the money is 18th-century Peruvian silver or 21st-century Fed reserves, the mechanism is the same. Source: Grokipedia 'Cantillon effect' (2026-09-05). Richard Cantillon (c. 1680s-1734), an Irish-born banker who shorted John Law's bubble before it collapsed, wrote his Essai in the 1730s. It was published posthumously in 1755. Source: Grokipedia 'Richard Cantillon' (2026-09-05).",
     "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
   },
   {
     "tier": 3,
-    "question": "The 18th-century Irish-French economist Richard Cantillon noticed that new money never enters the economy evenly — it lands somewhere first, and whoever holds it first gets to spend it before prices adjust. When the Federal Reserve creates new reserves today, it does so by buying Treasury bonds from a small handpicked group of Wall Street banks with a special federal designation. Whose accounts do those brand-new reserves land in first?",
+    "question": "A student tracing a new dollar from the Federal Reserve to her own pocket starts where the Fed makes it, when it buys Treasury bonds. Richard Cantillon asked the same question of fresh money in the 1730s; in his day it came from a mine or a printing press. Where do the Fed's brand-new reserves land first?",
     "answer": "At the Fed-dealer interface, in the accounts of primary dealers",
     "choices": [
       "At the Fed-dealer interface, in the accounts of primary dealers",
@@ -19384,7 +19085,7 @@
   },
   {
     "tier": 3,
-    "question": "Writing in Paris around 1730, the Irish-French banker Richard Cantillon noticed that when a king or a bank prints extra money, the new money does not raise all prices at once. It reaches the first borrowers and investors early, then flows through merchants, and only later shows up in what everyday shoppers pay for bread and rent. From 2020 to 2024 stocks and real estate jumped first in 2020-21 during the pandemic Fed rescue, then consumer prices caught up in 2021-23. Which part of that modern pattern best matches Cantillon's 1730s account?",
+    "question": "A shopper in 2023 paid more for her groceries than she had in 2020, the year the pandemic rescue began. Richard Cantillon had described around 1730 how new money moves through an economy. Which part of the pattern from 2020 to 2023 best matches his account?",
     "answer": "The lag between money creation and consumer-price adjustment, with asset prices moving first",
     "choices": [
       "The lag between money creation and consumer-price adjustment, with asset prices moving first",
@@ -19397,20 +19098,7 @@
   },
   {
     "tier": 4,
-    "question": "A merchant named Richard Cantillon wrote an early economics essay around 1730. He noticed something that still bears his name: when new money is created, it does not reach everyone at the same time. Who benefits most from being closest to the new money?",
-    "answer": "The people who receive the new money first, before prices have risen",
-    "choices": [
-      "The people who receive the new money first, before prices have risen",
-      "The people who receive the new money last, after prices have adjusted",
-      "Everyone benefits equally, since money spreads evenly through an economy",
-      "Only foreigners benefit, because new money always flows across borders first"
-    ],
-    "context": "Rothbard's 1995 An Austrian Perspective on the History of Economic Thought called Cantillon 'the founder of economic science' -- an unusual honor coming from an Austrian scholar, since it displaces both Adam Smith and Carl Menger from that title. Source: Rothbard, An Austrian Perspective (1995).",
-    "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
-  },
-  {
-    "tier": 4,
-    "question": "The Irish-French banker Richard Cantillon, writing his economics manuscript in French around 1730, gave the world a new word for the risk-taking business owner. Modern economics still uses it for the person who puts up her own money right now to buy raw materials, tools, and labor, hoping to sell a finished product later — knowing she may lose everything if the market price falls before she can sell. What is that word?",
+    "question": "Richard Cantillon described a figure in his manuscript of around 1730: someone who buys materials, tools and labor now at prices he knows, betting he can sell the finished goods later at a price nobody knows yet, and who may be ruined if prices fall first. Israel Kirzner later made this figure the heart of Austrian economics. What word did Cantillon give him?",
     "answer": "Entrepreneur",
     "choices": [
       "Entrepreneur",
@@ -19423,7 +19111,7 @@
   },
   {
     "tier": 5,
-    "question": "Three hundred years ago the economist Richard Cantillon pointed out that new money always enters the economy at one specific place first — and whoever gets it first can spend it before prices rise elsewhere. Austrian economists like Ludwig von Mises and Murray Rothbard press this old insight hard against modern central banks like the Federal Reserve. Which pattern do they say Cantillon's idea exposes?",
+    "question": "Ludwig von Mises, Murray Rothbard and their heirs turned Richard Cantillon's insight against modern central banks like the Federal Reserve. Cantillon had seen that new money enters at one place first, and whoever gets it first can spend it before prices rise elsewhere. Which pattern do they say his idea exposes?",
     "answer": "Central-bank money creation systematically benefits Wall Street before it reaches Main Street",
     "choices": [
       "Central-bank money creation systematically benefits Wall Street before it reaches Main Street",
@@ -19436,7 +19124,7 @@
   },
   {
     "tier": 5,
-    "question": "The Irish-French economist Richard Cantillon, who first named the entrepreneur and mapped how new money spreads through an economy, died in London in May 1734 under circumstances historians still debate. His townhouse burned to the ground, and his body was found inside so badly damaged that some investigators believed the fire had been set to hide a killing. Which unresolved suspicion has surrounded his death ever since?",
+    "question": "A Londoner reading the news in May 1734 learned that fire had gutted Richard Cantillon's house, apparently with the banker inside. Whispers began at once that someone had set the fire on purpose. Which suspicion has hung over his death from that day on?",
     "answer": "An insurance-fraud murder by a dismissed servant",
     "choices": [
       "An insurance-fraud murder by a dismissed servant",
@@ -19449,20 +19137,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1960s the US Food and Drug Administration (FDA) was given a stricter safety rule for new medicines. After that, the agency began taking many extra years to approve each new drug. Fewer bad drugs got through — a real gain. But the delay had a hidden cost that most people never see. What is the hidden cost of slower approvals?",
-    "answer": "Sick people die waiting for medicines that would have saved them",
-    "choices": [
-      "Sick people die waiting for medicines that would have saved them",
-      "Drug companies pay less tax",
-      "Doctors run out of pens",
-      "Hospitals get more crowded on Tuesdays"
-    ],
-    "context": "Sam Peltzman, 'An Evaluation of Consumer Protection Legislation: The 1962 Drug Amendments' (Journal of Political Economy, September 1973). Peltzman estimated lives lost from delayed approval of effective drugs significantly exceeded lives saved from blocking ineffective ones. Source: jstor.org (Peltzman 1973).",
-    "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
-  },
-  {
-    "tier": 1,
-    "question": "In the late 1950s a European sleeping pill called thalidomide was given to pregnant women in West Germany, Britain, and dozens of other countries to calm morning sickness. It caused terrible birth defects in more than 10,000 babies before being pulled in 1961. After that disaster, the United States tightened its drug approval rules sharply through the Food and Drug Administration. What is the trade-off of stricter drug rules?",
+    "question": "A doctor in West Germany prescribed a sedative called thalidomide to an expectant mother in the late 1950s. Before it was pulled in 1961, over 10,000 babies were born with terrible birth defects, and Congress answered in 1962 with stricter rules for proving that new medicines work. What trade-off do stricter drug rules bring?",
     "answer": "Fewer bad drugs get through, but good drugs also arrive much slower",
     "choices": [
       "Fewer bad drugs get through, but good drugs also arrive much slower",
@@ -19475,20 +19150,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1973 the American economist Sam Peltzman studied how the 1962 Kefauver-Harris Amendment had changed the US Food and Drug Administration. Peltzman named the seen benefit right away: fewer thalidomide-style birth-defect tragedies, because riskier drugs were now caught in longer trials. Then he named the unseen cost that no newspaper covered. What did his 1973 study identify as that unseen cost?",
-    "answer": "Patients dying while safe-and-effective drugs sat in a longer approval queue",
-    "choices": [
-      "Patients dying while safe-and-effective drugs sat in a longer approval queue",
-      "Pharmaceutical company profits reduced modestly",
-      "Government spending on FDA staff increased slightly",
-      "Universities hired more clinical-trial researchers"
-    ],
-    "context": "The Bastiat SEEN vs UNSEEN move applied to drug regulation: the prevented tragedies are visible; the patients who died waiting for approvals of drugs available in Europe or Japan are largely invisible. Peltzman argued the invisible category dominated in aggregate. Source: Peltzman, JPE (1973).",
-    "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
-  },
-  {
-    "tier": 2,
-    "question": "A person with a terminal illness wants to try an experimental drug that has passed early safety tests but is still waiting on full government approval, which can take years. A 2018 federal law finally lets such patients try the drug. What is the moral argument for the law?",
+    "question": "A woman with a fatal disease asks her doctor for an experimental drug that has passed early safety trials but is still years from full approval; she has run out of approved treatments. The Right to Try Act, which became law on May 30, 2018, lets patients like her use such a drug. What is the moral argument for the law?",
     "answer": "Dying patients have little to lose and should get to decide the risk for themselves",
     "choices": [
       "Dying patients have little to lose and should get to decide the risk for themselves",
@@ -19496,25 +19158,12 @@
       "Drug companies should be forced to give the drug away for free",
       "Approving drugs faster is always dangerous"
     ],
-    "context": "Alex Tabarrok (George Mason University) has been a leading academic advocate for FDA reform, including chairing the right-to-try movement. The Right to Try Act was signed by President Trump on May 30, 2018. Source: fda.gov (Right to Try).",
+    "context": "Alex Tabarrok (George Mason University) has been a leading academic advocate for FDA reform, including chairing the right-to-try movement. The Right to Try Act was signed by President Trump on May 30, 2018. Source: fda.gov (Right to Try). The right-to-try move: absent right-to-try, terminally-ill patients with no approved option are not being 'protected' by delay -- they are dying while decisions are made elsewhere. The default is death, not safety. Source: Tabarrok, 'Assessing the FDA via the Anomaly of Off-Label Drug Prescribing' (Independent Review 2000).",
     "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
   },
   {
     "tier": 3,
-    "question": "Some patients have a disease that will kill them and no approved treatment left to try. A newer experimental drug exists, but the Food and Drug Administration has not yet approved it. If those patients are simply told to wait for approval, what is the practical outcome for them?",
-    "answer": "Death",
-    "choices": [
-      "Death",
-      "Safety",
-      "Legal protection",
-      "Insurance coverage"
-    ],
-    "context": "The right-to-try move: absent right-to-try, terminally-ill patients with no approved option are not being 'protected' by delay -- they are dying while decisions are made elsewhere. The default is death, not safety. Source: Tabarrok, 'Assessing the FDA via the Anomaly of Off-Label Drug Prescribing' (Independent Review 2000).",
-    "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
-  },
-  {
-    "tier": 3,
-    "question": "The California oncologist Vinay Prasad, a cancer doctor who studies how new drugs really work, argues that the Food and Drug Administration, the FDA, often approves cancer drugs through fast-track programs based only on lab-test wins — like a tumor shrinking on a scan. But those lab wins may not translate into patients actually living longer or feeling better. What is Prasad's main worry?",
+    "question": "A California cancer doctor, Vinay Prasad, took aim in Malignant, his book of 2020, at the way the Food and Drug Administration clears some cancer drugs. On its fast-track programs, he argues, the agency often approves a drug on an early lab signal, like a scan where a tumor has shrunk. What is Prasad's main worry about that?",
     "answer": "That short-term test results are treated as proof the drug saves lives, when they are not",
     "choices": [
       "That short-term test results are treated as proof the drug saves lives, when they are not",
@@ -19527,7 +19176,7 @@
   },
   {
     "tier": 4,
-    "question": "The United States Food and Drug Administration (FDA) sometimes okays a new drug based on a 'surrogate marker' — a lab number like a tumor shrinking on a scan, or a blood-test level dropping — that looks encouraging but has not been shown to make real patients live longer or feel better. The California oncologist Vinay Prasad has argued forcefully against this shortcut. What is the strongest case against okaying drugs on those lab numbers alone?",
+    "question": "Vinay Prasad, an oncologist, calls for a better Food and Drug Administration, not a smaller one. He objects when the agency approves a drug on a lab number, such as a falling blood-test level, that merely stands in for whether patients live longer. What is his fix?",
     "answer": "Judge drugs by results, not by intentions or surrogate markers",
     "choices": [
       "Judge drugs by results, not by intentions or surrogate markers",
@@ -19539,47 +19188,8 @@
     "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
   },
   {
-    "tier": 4,
-    "question": "The American economist Milton Friedman argued that a drug regulator like the US Food and Drug Administration faces two very different mistakes. It can approve a drug that turns out to hurt people — a tragedy the newspapers cover in painful detail, name by name. Or it can block a drug that would have saved lives — a tragedy no one ever sees, because the saved lives never happen. Which of those two mistakes is much harder for the public to notice?",
-    "answer": "Blocking a good drug -- the people who would have been saved are never seen",
-    "choices": [
-      "Blocking a good drug -- the people who would have been saved are never seen",
-      "Approving a bad drug -- patients quietly recover with no news story",
-      "Both mistakes get equal coverage in every major newspaper",
-      "Neither mistake matters, since regulators fix them within a week"
-    ],
-    "context": "Merck withdrew Vioxx (rofecoxib) on September 30, 2004 after evidence of increased cardiovascular risk. It became the canonical Type-I error case in FDA reform debates. Source: fda.gov (Vioxx withdrawal history).",
-    "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
-  },
-  {
-    "tier": 4,
-    "question": "Imagine a promising cancer drug that could save many thousands of lives. The US Food and Drug Administration (FDA) takes ten full years to approve it. During that decade the pill already exists and already works in trials, but it cannot legally reach any patient. The benefit of caution is easy to see — no bad drug slips through the review. Which hidden cost of a slow drug-approval process is easiest for the public to miss?",
-    "answer": "The lives lost by patients who would have been saved if the drug had arrived sooner",
-    "choices": [
-      "The lives lost by patients who would have been saved if the drug had arrived sooner",
-      "The paperwork burden on drug-company lawyers",
-      "The parking costs at government office buildings",
-      "The extra weekend hours for federal regulators"
-    ],
-    "context": "The 21st Century Cures Act was signed December 13, 2016. It broadened accelerated-approval pathways, modernized trial designs, and increased funding for the NIH and FDA. Source: congress.gov (Public Law 114-255).",
-    "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
-  },
-  {
     "tier": 5,
-    "question": "The US Food and Drug Administration (FDA) approves or blocks new medicines. If it clears a harmful medicine, people get hurt and everyone notices. If it blocks a life-saving one, patients die waiting — and the deaths never make the news. An honest scorecard must count what?",
-    "answer": "Both the seen mistake (bad drug approved) and the unseen one (good drug blocked)",
-    "choices": [
-      "Both the seen mistake (bad drug approved) and the unseen one (good drug blocked)",
-      "Only the interests of drug companies",
-      "Only the interests of currently healthy voters",
-      "Only the cost of paying the agency's staff"
-    ],
-    "context": "The synthesis: the SEEN cost of approving a dangerous drug is politically overwhelming; the UNSEEN cost of not approving a lifesaving drug is politically invisible. Honest cost-benefit accounts for both, which is Peltzman 1973 as a live diagnostic in 2020s FDA debates. Source: Peltzman (1973); Prasad (2020); Tabarrok (2000-).",
-    "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
-  },
-  {
-    "tier": 5,
-    "question": "In December 2020 the US Food and Drug Administration (FDA) let the first coronavirus vaccines reach people months before finishing its normal full-approval process. This fast-track path is called Emergency Use Authorization. What is the built-in tradeoff of using this kind of authority?",
+    "question": "A nurse rolled up her sleeve for one of the first COVID-19 vaccines in December 2020, months before the Food and Drug Administration had finished its normal full approval. The agency had used an Emergency Use Authorization. What trade-off is built into that kind of authority?",
     "answer": "Faster access in an emergency in exchange for less complete safety data at first",
     "choices": [
       "Faster access in an emergency in exchange for less complete safety data at first",
@@ -19592,7 +19202,7 @@
   },
   {
     "tier": 1,
-    "question": "Under the Soviet dictator Joseph Stalin in the 1930s, millions of Soviet citizens were sent to Gulag prison camps in Siberia or shot in political 'purges' that targeted anyone Stalin's police suspected of disloyalty. Ukrainian and Kazakh farmers who resisted being pushed onto shared 'collective' farms starved by the millions in the Holodomor famine of 1932-33. Which line best sums up communism's real record across the countries that tried it?",
+    "question": "Robert Conquest, a British historian and poet, began counting the victims of Joseph Stalin's Soviet Union during the Cold War. Stalin's police shot or jailed millions in the 1930s, and his grain seizures starved millions in Ukraine. Which line best sums up communism's real record?",
     "answer": "It caused tens of millions of deaths across the countries that tried it",
     "choices": [
       "It caused tens of millions of deaths across the countries that tried it",
@@ -19605,7 +19215,7 @@
   },
   {
     "tier": 2,
-    "question": "Under the Soviet dictator Joseph Stalin, from 1936 to 1938, the secret police arrested and killed huge numbers of Soviet citizens in what became known as the Great Purge or Great Terror. Many of the victims were Stalin's own loyal Communist Party members — old revolutionaries, generals, and factory managers. What is the general lesson about a state that owns every farm, factory, and newspaper and answers to no voter?",
+    "question": "Joseph Stalin set his police on his own people from 1936 to 1938, and they arrested and shot huge numbers of Soviet citizens, among them loyal party members, old revolutionaries, generals and factory managers. What does the Terror teach about a state that owns every farm and factory and answers to no voter?",
     "answer": "When one group controls everything, they can turn violence on anyone with no check",
     "choices": [
       "When one group controls everything, they can turn violence on anyone with no check",
@@ -19618,20 +19228,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1968 the British historian Robert Conquest published 'The Great Terror,' the first serious Western study of Joseph Stalin's Soviet purges. He focused especially on 1937 and 1938, the peak years when Stalin's secret police shot political enemies by the hundreds of thousands and buried them in mass graves. Decades later, once Soviet archives opened, his numbers were largely confirmed. About how many executions did Conquest estimate for those two peak years?",
-    "answer": "About 750,000",
-    "choices": [
-      "About 750,000",
-      "About 20,000",
-      "About 20 million",
-      "About 100 million"
-    ],
-    "context": "Conquest also estimated about 1.5 million arrests in the same window, and specifically documented the targeting of the Old Bolsheviks and Red Army officer corps. The figures were treated as Cold War inflation by much of the Western academic establishment. Source: grokipedia.com/page/The_Great_Terror.",
-    "topic": "robert-conquests-great-terror-1968-the-vindicated-sovietolog"
-  },
-  {
-    "tier": 3,
-    "question": "The British historian Robert Conquest published 'The Great Terror' in 1968, a landmark book that put Stalin's personal ambition and enormous purge death tolls at the center of Soviet history. Through the 1970s and 1980s a rival academic school in Western universities argued Conquest had overcounted the dead and given Stalin too much personal blame, saying local pressures and bureaucratic chaos mattered more. The historians Sheila Fitzpatrick and J. Arch Getty led this rival current in Sovietology. What was this school called?",
+    "question": "Sheila Fitzpatrick and J. Arch Getty challenged Robert Conquest's The Great Terror of 1968, arguing that he had overcounted the dead and laid too much of the blame on Stalin himself. They pointed instead to local pressures and bureaucratic chaos. What was their rival school of Western Sovietology called?",
     "answer": "The revisionist school",
     "choices": [
       "The revisionist school",
@@ -19644,7 +19241,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1968 the British historian Robert Conquest published The Great Terror. He estimated Stalin's execution and gulag death tolls using smuggled documents and defector accounts. Western critics blasted his numbers as anti-Soviet propaganda and said he had wildly over-counted. Then in December 1991 the Soviet Union collapsed and the old secret-police archives were opened to outside researchers. What did those Soviet records show about Conquest's 1968 counts, and about the critics who said he had over-counted?",
+    "question": "Researchers opened the files of Stalin's secret police after the Soviet Union collapsed in December 1991. For two decades critics had called Robert Conquest's 1968 count of Stalin's executions anti-Soviet propaganda and said he had wildly overcounted. What did the secret police's files turn out to show?",
     "answer": "The NKVD's own records vindicated Conquest's execution estimate within a rounding error",
     "choices": [
       "The NKVD's own records vindicated Conquest's execution estimate within a rounding error",
@@ -19656,21 +19253,21 @@
     "topic": "robert-conquests-great-terror-1968-the-vindicated-sovietolog"
   },
   {
-    "tier": 5,
-    "question": "Beyond his 1968 book 'The Great Terror' on Stalin's purges, the British historian Robert Conquest wrote a second major work in 1986 — a full history of the 1932-33 Ukrainian famine that Stalin's forced grain seizures deliberately caused, starving millions of peasants to death. Ukrainians today call that famine the Holodomor, meaning 'death by hunger.' What is the title of Conquest's book about it?",
+    "tier": 4,
+    "question": "Robert Conquest turned from Stalin's purges to the Ukrainian countryside and published a second great book in 1986, through Oxford University Press. It told how Stalin's forced grain seizures of 1932 and 1933 starved millions of peasants. What was its title?",
     "answer": "The Harvest of Sorrow",
     "choices": [
       "The Harvest of Sorrow",
-      "The Rise of Nations",
-      "The Fall of the Kulaks",
-      "The Politics of Hunger"
+      "The Great Terror",
+      "Bloodlands",
+      "Red Famine"
     ],
-    "context": "'The Harvest of Sorrow: Soviet Collectivization and the Terror-Famine' (Oxford University Press, 1986) was the Western scholarly standard on the Holodomor before Snyder's 'Bloodlands' (2010). Conquest also wrote 'Reflections on a Ravaged Century' (1999). Source: grokipedia.com/page/Robert_Conquest.",
+    "context": "Robert Conquest's The Harvest of Sorrow: Soviet Collectivization and the Terror-Famine (Oxford UP, 1986) was the first major Western scholarly synthesis. It was funded partly by the Ukrainian diaspora and treated with skepticism by academic sovietology until the archives opened. Source: en.wikipedia.org/wiki/The_Harvest_of_Sorrow. 'The Harvest of Sorrow: Soviet Collectivization and the Terror-Famine' (Oxford University Press, 1986) was the Western scholarly standard on the Holodomor before Snyder's 'Bloodlands' (2010). Conquest also wrote 'Reflections on a Ravaged Century' (1999). Source: grokipedia.com/page/Robert_Conquest.",
     "topic": "robert-conquests-great-terror-1968-the-vindicated-sovietolog"
   },
   {
     "tier": 5,
-    "question": "Robert Conquest was the British-American historian who exposed the true scale of Stalin's mass murder — his 1968 book 'The Great Terror' documented the millions killed in the Soviet purges, and his 1986 'Harvest of Sorrow' laid bare the Ukrainian famine Stalin engineered. After 1981 he settled at a prestigious US research institute, where he taught for decades. In 2005 President George W. Bush awarded him the Presidential Medal of Freedom. Where in California did Conquest teach?",
+    "question": "George W. Bush gave Robert Conquest the Presidential Medal of Freedom in 2005. Conquest, the historian of Stalin's purges, had worked since 1981 at a research institute in California, where younger scholars of the Soviet Union learned under his guidance. Which institution was it?",
     "answer": "The Hoover Institution at Stanford",
     "choices": [
       "The Hoover Institution at Stanford",
@@ -19683,20 +19280,7 @@
   },
   {
     "tier": 1,
-    "question": "In the United States the Federal Reserve is the central bank. It can create brand-new dollars whenever the Treasury or Congress needs more money to spend. Some critics in the US Congress argue that the Federal Reserve prints far too many new dollars each year. That makes each American dollar buy less and less over time. What is this steady loss of a currency's value called?",
-    "answer": "Inflation",
-    "choices": [
-      "Inflation",
-      "A tariff",
-      "A bank run",
-      "A subsidy"
-    ],
-    "context": "Ron Paul (born 1935), an OB-GYN physician, served in Congress 1976-77, 1979-85, and 1997-2013. He was called 'Dr. No' for casting the lone No vote on many bills. Source: Grokipedia 'Ron Paul' (2026-09-05).",
-    "topic": "ron-paul-end-the-fed-and-audit-the-federal-reserve"
-  },
-  {
-    "tier": 1,
-    "question": "Ron Paul was a Texas congressman who spent decades in Washington fighting the Federal Reserve — the central bank he blamed for the 2008 crash. In September 2009, one year after the crash, he wrote a book for regular readers. It hit #6 on the New York Times bestseller list. Its title was three blunt words. What were they?",
+    "question": "Ron Paul, who had delivered babies as a Texas doctor before entering Congress, blamed the Federal Reserve for the 2008 crash and wrote a book about it for ordinary readers in September 2009. It reached number six on the New York Times bestseller list. Its title was three blunt words. What were they?",
     "answer": "End the Fed",
     "choices": [
       "End the Fed",
@@ -19709,7 +19293,7 @@
   },
   {
     "tier": 2,
-    "question": "A Texas congressman named Ron Paul served in the US House on and off from the 1970s until 2013 and ran for president three times. Throughout his career he built his speeches around three specific Austrian-school economists, quoting them again and again on the House floor. Which trio did he draw on?",
+    "question": "Ron Paul rose on the House floor to attack the Federal Reserve, building his speech, as he built so many, on three economists whose names he cited constantly. One of the three was his personal friend. Which trio did he draw on?",
     "answer": "Mises, Hayek, and Rothbard",
     "choices": [
       "Mises, Hayek, and Rothbard",
@@ -19722,7 +19306,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2003 the Texas congressman Ron Paul stood on the US House floor and warned that a huge housing bubble was building across the country. He said the sitting Federal Reserve chairman had held interest rates too low for too long, and that when the bubble popped there would be a terrible crash. Ron Paul named the same Fed chair over and over in the speech. Whose cheap-money stance was he attacking?",
+    "question": "Ron Paul warned the House in 2003 that a housing bubble was building across the country and would end in a crash. He blamed one Federal Reserve chairman's policy for inflating it, and the crash came five years later. Whose policy did he blame?",
     "answer": "Alan Greenspan's low-rate policy",
     "choices": [
       "Alan Greenspan's low-rate policy",
@@ -19735,7 +19319,7 @@
   },
   {
     "tier": 3,
-    "question": "In February 2009, just months after the 2008 financial crash, the Texas congressman Ron Paul filed a bill called the Federal Reserve Transparency Act. It would open the US central bank's books to a full audit by the Government Accountability Office, an investigative arm of Congress. The bill became famous under a punchy three-word tagline that Ron Paul chanted at rallies and printed on signs. What was the tagline?",
+    "question": "Ron Paul's supporters waved signs with a three-word slogan at a rally for his Federal Reserve Transparency Act, which he filed in February 2009. The bill would have let the Government Accountability Office, Congress's own investigators, go through the Fed's books from top to bottom. What did the signs say?",
     "answer": "Audit the Fed",
     "choices": [
       "Audit the Fed",
@@ -19748,7 +19332,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2009 a bill in the US House of Representatives called for a full public audit of the Federal Reserve. It picked up unusually broad support before being scaled back in the Senate. Out of 435 House members, roughly how many signed on as co-sponsors?",
+    "question": "House members lined up behind Ron Paul's 2009 bill to open the Federal Reserve's books to Congress's investigators, before Senate leaders trimmed it to a single review of the Fed's emergency lending. Out of 435 House members, about how many signed on as co-sponsors?",
     "answer": "About 320",
     "choices": [
       "About 320",
@@ -19761,7 +19345,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2009 Ron Paul, the Texas congressman and longtime critic of the Federal Reserve, published 'End the Fed'. His book made three main charges against America's central bank: that it violated the Constitution, that printing money out of thin air was morally wrong, and that it damaged the real economy. The third charge leaned on Austrian-school economics, especially the work of Ludwig von Mises and F.A. Hayek. Which Austrian argument did Paul use for the economic charge?",
+    "question": "In his 2009 book, Ron Paul charged the Federal Reserve with three wrongs: that it violates the Constitution, that creating money out of nothing is wrong in itself, and that it harms the real economy. What argument did he make for the third charge?",
     "answer": "The Fed creates the boom-bust cycles Austrian business-cycle theory predicts",
     "choices": [
       "The Fed creates the boom-bust cycles Austrian business-cycle theory predicts",
@@ -19774,7 +19358,7 @@
   },
   {
     "tier": 4,
-    "question": "The Mises Institute in Auburn, Alabama, is the leading center of Austrian-school economics in the United States. Its highest honor is named for Murray Rothbard, the Austrian economist who was a close personal friend of the Texas congressman Ron Paul. In 2011 the institute gave Ron Paul this top award for his lifelong defense of sound money and free markets. Which award did he receive?",
+    "question": "At the Mises Institute in Auburn, Alabama, Ron Paul received the institute's highest award in 2011, an honor named for his late friend. The institute, the leading American center of Austrian-school economics, was honoring his lifelong defense of sound money and free markets. Which award was it?",
     "answer": "The Rothbard Medal of Freedom",
     "choices": [
       "The Rothbard Medal of Freedom",
@@ -19787,7 +19371,7 @@
   },
   {
     "tier": 5,
-    "question": "The Texas congressman Ron Paul's biggest political legacy is not any single bill that passed. It is the shift he caused in what Republican politicians and primary voters treated as a normal view of the Federal Reserve. Before his 2008 and 2012 presidential campaigns, Fed-critical arguments were a tiny fringe view inside the party. Afterward, candidates who wanted to audit or rein in the Fed could win primary debates. What shift does his career show?",
+    "question": "Ron Paul ran for the Republican presidential nomination in 2008 and again in 2012. Comparing how his party treated the Federal Reserve before and after those campaigns, what shift does his career show?",
     "answer": "Prior to Ron Paul, Fed-critical positions were confined to fringes; after Ron Paul, they became a mainstream Republican-primary position",
     "choices": [
       "Prior to Ron Paul, Fed-critical positions were confined to fringes; after Ron Paul, they became a mainstream Republican-primary position",
@@ -19800,7 +19384,7 @@
   },
   {
     "tier": 5,
-    "question": "Ron Paul's Audit the Fed campaign rested on a specific constitutional argument he made for decades. Article One, Section Eight of the US Constitution gives Congress the power 'to coin money' and 'regulate the value thereof.' But the Federal Reserve, created in 1913, is an autonomous body Congress cannot directly steer. Which argument did Paul press against that arrangement?",
+    "question": "For his constitutional case against the Federal Reserve, Ron Paul turned to the clause that gives Congress the power 'to coin money' and 'regulate the value thereof.' The Fed, created in 1913, runs money policy on its own. What did Paul argue about that arrangement?",
     "answer": "Congress's Article I Section 8 monetary authority cannot legitimately be delegated to an independent agency",
     "choices": [
       "Congress's Article I Section 8 monetary authority cannot legitimately be delegated to an independent agency",
@@ -19904,7 +19488,7 @@
   },
   {
     "tier": 1,
-    "question": "Around 2011 a young American named Ross Ulbricht built a hidden marketplace on the internet called the Silk Road. He put it on the Tor network, so shoppers could only reach it through a special browser that hid their location. On the site, people bought and sold drugs and forged papers with no real names and no credit cards. To keep the payments hard to trace, what kind of money did shoppers use?",
+    "question": "Ross Ulbricht, a young libertarian, opened a secret online market, the Silk Road, early in 2011. It ran on the hidden Tor network, and people traded drugs and fake papers there without names or credit cards. What money did they pay with, so that payments would be hard to follow?",
     "answer": "Bitcoin",
     "choices": [
       "Bitcoin",
@@ -19917,7 +19501,7 @@
   },
   {
     "tier": 1,
-    "question": "Ross Ulbricht ran Silk Road, a hidden online marketplace where buyers used Bitcoin to shop out of sight of the police. He signed his messages 'Dread Pirate Roberts' — a name from the movie 'The Princess Bride', where one pirate name gets passed from person to person so no one can ever catch the real pirate. Why would a criminal want a name that works like that?",
+    "question": "The pirate in the film The Princess Bride hands his name down from one man to the next, so the real Dread Pirate Roberts can never be caught. Ross Ulbricht took that name to run his hidden market. Why would the boss of an illegal market want a name like that?",
     "answer": "So investigators can't be sure the person they catch is the real founder",
     "choices": [
       "So investigators can't be sure the person they catch is the real founder",
@@ -19930,7 +19514,7 @@
   },
   {
     "tier": 2,
-    "question": "Ross Ulbricht was the young American who built the Silk Road, a hidden Tor-network marketplace where people bought drugs with Bitcoin. On October 1, 2013 US federal agents in San Francisco were about to arrest him. His laptop was open and unlocked; if he closed the lid, the disk encryption would lock the whole case away forever. The agents had to grab it fast in a quiet public place. Where did the arrest happen?",
+    "question": "Federal agents caught Ross Ulbricht on October 1, 2013, with his laptop open and logged in to his secret market's controls, and they had staged the arrest with care. Where did they find him?",
     "answer": "the science-fiction section of the Glen Park branch of the San Francisco Public Library",
     "choices": [
       "the science-fiction section of the Glen Park branch of the San Francisco Public Library",
@@ -19943,7 +19527,7 @@
   },
   {
     "tier": 2,
-    "question": "On October 1, 2013 US federal agents were about to arrest Ross Ulbricht, the young founder of the hidden Silk Road Bitcoin marketplace, inside a quiet San Francisco public library. His open laptop had strong full-disk encryption. If he closed the lid or locked the screen even for a moment, the agents would never read the drive or prove that he was the Silk Road boss. What did the agents do at the moment of the arrest so he could not lock the machine before they grabbed it?",
+    "question": "Ross Ulbricht sat at his open laptop in a public place in San Francisco on October 1, 2013, as federal agents closed in. Had he closed the lid, the laptop's full-disk encryption would have sealed the drive for good, and with it the proof that he ran the Silk Road. What did the agents do so he could not lock it?",
     "answer": "physically distracted him to keep him from locking the running laptop",
     "choices": [
       "physically distracted him to keep him from locking the running laptop",
@@ -19956,7 +19540,7 @@
   },
   {
     "tier": 3,
-    "question": "In early 2015 a New York federal jury found Ross Ulbricht guilty on seven charges tied to the Silk Road, the hidden Bitcoin marketplace he had run on the Tor network. He was a first-time offender who had never personally used violence, though drugs had moved through his site. Judge Katherine Forrest then handed down a sentence far harsher than even prosecutors had asked for. What sentence did Ross Ulbricht receive?",
+    "question": "New York jurors convicted Ross Ulbricht in early 2015 on seven charges tied to the Silk Road, among them drug trafficking and money laundering. In May 2015 Judge Katherine Forrest passed sentence on a first-time offender who had never personally used violence. What sentence did she give him?",
     "answer": "two life sentences plus 40 years without possibility of parole",
     "choices": [
       "two life sentences plus 40 years without possibility of parole",
@@ -19964,12 +19548,12 @@
       "a 10-year sentence in a minimum-security prison",
       "a 5-year suspended sentence with community service"
     ],
-    "context": "Judge Katherine Forrest sentenced Ulbricht to two life sentences plus 40 years without parole. The lesser sentences never applied. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht.",
+    "context": "Judge Katherine Forrest sentenced Ulbricht to two life sentences plus 40 years without parole. The lesser sentences never applied. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht. The prosecution cited the site's roughly $1.2 billion in sales and unproven murder-for-hire allegations; the defense argued the sentence was disproportionate for a first-time nonviolent offense. Source: grokipedia.com/page/Ross_Ulbricht.",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 3,
-    "question": "Ross Ulbricht created the Silk Road, an online marketplace where people bought and sold things the US government had banned. In 2015 a federal judge sentenced him to two life terms in prison plus 40 years for a first-time nonviolent case. For eleven years after that sentence, one family member led the public fight to free him, arguing the punishment was far too harsh. Which family member led the push?",
+    "question": "One member of Ross Ulbricht's family saw eleven years of campaigning pay off in January 2025, when Donald Trump pardoned him. That family member had led the fight to free him since his sentencing in 2015, arguing the punishment was far too harsh. Who was it?",
     "answer": "Lyn Ulbricht (his mother)",
     "choices": [
       "Lyn Ulbricht (his mother)",
@@ -19982,20 +19566,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2011 Ross Ulbricht launched the Silk Road, a hidden online marketplace where people used Bitcoin to buy and sell things the US government had banned. In 2015 a federal judge sentenced Ulbricht to two life terms plus 40 years and shut the site down. Yet within weeks, copycat marketplaces appeared. Why do black markets like the Silk Road reappear even after their operators are locked up?",
-    "answer": "Buyers and sellers still want to trade, so a new marketplace opens somewhere the law cannot see",
-    "choices": [
-      "Buyers and sellers still want to trade, so a new marketplace opens somewhere the law cannot see",
-      "Governments always accidentally forget to close down copycat sites",
-      "The prison sentences are usually too short to matter",
-      "Nobody wants the banned goods once the original marketplace is gone"
-    ],
-    "context": "Donald Trump, having promised the pardon at the Libertarian Party's 2024 national convention, signed a full pardon for Ross Ulbricht on January 21, 2025 -- the second day of his second term. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht.",
-    "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
-  },
-  {
-    "tier": 4,
-    "question": "Ross Ulbricht quietly launched the Silk Road on January 27, 2011. It was a hidden Bitcoin marketplace on the Tor network where drugs and forged papers changed hands with no real names attached. It ran openly until US federal agents grabbed his unlocked laptop inside a San Francisco library on October 1, 2013. About how long did the Silk Road actually run before it was shut down?",
+    "question": "Ross Ulbricht promoted his new market online in late January 2011. It traded drugs and forged papers on the Tor network with no real names attached, and it lasted until federal agents seized it and arrested him. About how long did it run?",
     "answer": "about 2 years and 9 months",
     "choices": [
       "about 2 years and 9 months",
@@ -20008,7 +19579,7 @@
   },
   {
     "tier": 5,
-    "question": "In October 2013 the FBI arrested Ross Ulbricht in a San Francisco public library and shut down Silk Road, his hidden online market where buyers paid in Bitcoin. Federal agents seized the huge stash of bitcoins the site had kept in its wallets. The US Marshals Service auctioned them off in tranches starting in 2014-15. Roughly how many bitcoins did the initial takedown seizure yield?",
+    "question": "Agents going through Ross Ulbricht's computer after they shut his market down in October 2013 seized a hoard of digital coins they found there. US Marshals auctioned the coins off later, in batches. Roughly how many coins had the agents seized?",
     "answer": "about 144,000 BTC",
     "choices": [
       "about 144,000 BTC",
@@ -20021,7 +19592,7 @@
   },
   {
     "tier": 5,
-    "question": "Ross Ulbricht, the Silk Road founder who had been serving two life sentences without parole, was pardoned by President Donald Trump in January 2025. His mother Lyn Ulbricht and the 'Free Ross' campaign had spent eleven years lobbying for his release, gathering signatures and speaking at libertarian gatherings across America. Looking back on the win, one libertarian writer said the long campaign proved a big point about how a political movement should push back when its ideas run into a courtroom. Which point does the writer press?",
+    "question": "Donald Trump, on the second day of his second term, January 21, 2025, pardoned Ross Ulbricht, as he had promised the Libertarian Party's national convention in 2024. Libertarian writers looked back on the eleven-year campaign that had led to it. What lesson did they draw about how a movement should push back when its ideas run into a courtroom?",
     "answer": "That sustained public campaigning for a specific person can succeed where abstract advocacy fails, even against the largest legal apparatus",
     "choices": [
       "That sustained public campaigning for a specific person can succeed where abstract advocacy fails, even against the largest legal apparatus",
@@ -21165,7 +20736,7 @@
   },
   {
     "tier": 1,
-    "question": "From 2011 to 2013, a hidden website called the Silk Road ran on the dark web and sold illegal drugs and other contraband to customers around the world. The site refused every ordinary payment method — no bank transfers, no credit cards. It accepted only one form of payment: Bitcoin. Why would crooks running an illegal market pick Bitcoin over a bank transfer or a credit card?",
+    "question": "A buyer on the Silk Road, the secret drug market of 2011 to 2013, paid in Bitcoin, the only money the site would take. Some Bitcoiners cheered that it worked exactly as designed, while others feared for Bitcoin's good name. Why did an illegal market pick Bitcoin over a bank transfer or a credit card?",
     "answer": "Bitcoin can be sent without a bank or government approving it",
     "choices": [
       "Bitcoin can be sent without a bank or government approving it",
@@ -21173,12 +20744,12 @@
       "Bitcoin is issued by the police",
       "Bitcoin requires showing a driver's license to send"
     ],
-    "context": "Silk Road became the first widely-known use case for Bitcoin outside of hobbyist circles. AlphaBay was a successor Tor market shut down in 2017. Source: grokipedia.com/page/Silk_Road_(marketplace).",
+    "context": "Silk Road became the first widely-known use case for Bitcoin outside of hobbyist circles. AlphaBay was a successor Tor market shut down in 2017. Source: grokipedia.com/page/Silk_Road_(marketplace). The censorship-resistance was the design property Satoshi named in the 2008 white paper. Silk Road proved it functioned end-to-end at scale on an anonymous network. Whether the specific use was legitimate is separate from whether the property held. Source: grokipedia.com/page/Silk_Road_(marketplace).",
     "topic": "silk-road-bitcoins-first-widely-known-use-case"
   },
   {
     "tier": 2,
-    "question": "Bitcoin lets anyone send money anywhere without asking a bank for permission. This has helped people escape currency controls in poor countries. It has also helped criminals sell drugs online. What honest thing must a fair defender of Bitcoin admit here?",
+    "question": "A Bitcoin defender writing about the Silk Road owns up to an uncomfortable fact. The money that helps people in poor countries slip past currency controls also helped criminals sell drugs on the internet. What honest point must a fair defender of Bitcoin admit here?",
     "answer": "Any tool that gives people more freedom can also be used for wrongdoing",
     "choices": [
       "Any tool that gives people more freedom can also be used for wrongdoing",
@@ -21191,33 +20762,7 @@
   },
   {
     "tier": 3,
-    "question": "Silk Road was a hidden online marketplace where people used Bitcoin to buy drugs and other illegal goods. Its founder, Ross Ulbricht, ran it under the alias 'Dread Pirate Roberts'. On October 1, 2013 agents of the Federal Bureau of Investigation (FBI) needed to seize his laptop while it was still logged into Silk Road's admin panel, so they staged a very careful arrest in a specific public spot. Where did they catch him?",
-    "answer": "In the science-fiction section of a San Francisco public library",
-    "choices": [
-      "In the science-fiction section of a San Francisco public library",
-      "At his apartment in Austin, Texas",
-      "At an in-person Bitcoin conference in Las Vegas",
-      "At San Francisco International Airport"
-    ],
-    "context": "The library was Glen Park Branch. Agents staged a distraction so Ulbricht turned away from his laptop, then seized it while the session was live -- the operational-security failure the prosecution's evidence rested on. Source: grokipedia.com/page/Ross_Ulbricht.",
-    "topic": "silk-road-bitcoins-first-widely-known-use-case"
-  },
-  {
-    "tier": 3,
-    "question": "Ross Ulbricht was found guilty in February 2015 on seven counts, including drug trafficking and money laundering. On May 29, 2015 he was sentenced. His sentence became a rallying cause for libertarians, reformers, and the Bitcoin community for a decade. What was it?",
-    "answer": "Life in prison without parole",
-    "choices": [
-      "Life in prison without parole",
-      "Twenty years in federal prison",
-      "Ten years in federal prison",
-      "Five years plus lifetime probation"
-    ],
-    "context": "The prosecution cited the site's roughly $1.2 billion in sales and unproven murder-for-hire allegations; the defense argued the sentence was disproportionate for a first-time nonviolent offense. Source: grokipedia.com/page/Ross_Ulbricht.",
-    "topic": "silk-road-bitcoins-first-widely-known-use-case"
-  },
-  {
-    "tier": 4,
-    "question": "In October 2013 the FBI arrested a young man named Ross Ulbricht in a San Francisco library. He was the secret founder of Silk Road, a hidden online marketplace where people bought and sold illegal drugs using Bitcoin. The government seized the site and sent Ulbricht to prison for life. But within weeks, copycat sites -- Silk Road 2, AlphaBay, and others -- opened for business, and customers moved right over. What does that pattern show about shutting a market by arresting the boss?",
+    "question": "Federal agents shut down the Silk Road in October 2013 and locked up its founder, Ross Ulbricht. Within weeks copycat markets such as Silk Road 2.0 had opened and pulled in the same buyers. What does that pattern show about shutting a market by arresting the boss?",
     "answer": "As long as buyers and sellers still want to trade, a new marketplace will appear",
     "choices": [
       "As long as buyers and sellers still want to trade, a new marketplace will appear",
@@ -21229,21 +20774,8 @@
     "topic": "silk-road-bitcoins-first-widely-known-use-case"
   },
   {
-    "tier": 4,
-    "question": "Bitcoin, invented in 2009 by a person using the name Satoshi Nakamoto, was designed as digital cash that no bank or government could freeze or reverse. In the early 2010s a hidden drug market called Silk Road only accepted Bitcoin for payment. Some Bitcoiners cheered -- the payments worked exactly as designed. Others worried the drug-market link would forever taint Bitcoin's reputation. Which Bitcoin trait did Silk Road show off most?",
-    "answer": "Censorship-resistant electronic payments no intermediary could block",
-    "choices": [
-      "Censorship-resistant electronic payments no intermediary could block",
-      "A programmatic supply schedule capped at 21 million coins",
-      "Instant settlement of small everyday retail purchases",
-      "A permissioned ledger requiring bank onboarding for each user"
-    ],
-    "context": "The censorship-resistance was the design property Satoshi named in the 2008 white paper. Silk Road proved it functioned end-to-end at scale on an anonymous network. Whether the specific use was legitimate is separate from whether the property held. Source: grokipedia.com/page/Silk_Road_(marketplace).",
-    "topic": "silk-road-bitcoins-first-widely-known-use-case"
-  },
-  {
     "tier": 5,
-    "question": "A high-school student in 2025 wants to know whether Ross Ulbricht's release means the underlying policy debate is settled. A public-choice-trained analyst warns her that a pardon is a specific-case decision, not a policy verdict. Which classical reasoning move is he pressing?",
+    "question": "Donald Trump pardoned Ross Ulbricht in January 2025, ending a case that libertarians and Bitcoiners had rallied around for ten years. That year a high-school student asked a public-choice analyst what the pardon told her about markets like the Silk Road. Which reasoning move did he press?",
     "answer": "Recognizing the case's argument without collapsing it into a universal endorsement of the underlying market",
     "choices": [
       "Recognizing the case's argument without collapsing it into a universal endorsement of the underlying market",
@@ -22491,7 +22023,7 @@
   },
   {
     "tier": 1,
-    "question": "For decades, Sweden has set apartment rents by national law rather than letting landlords and renters agree on a market price. Politicians say the rule keeps housing affordable for working families. But when a rent is held below what people would freely pay for the apartment, an old economic law kicks in almost immediately. What happens next?",
+    "question": "Swedish lawmakers capped apartment rents in the 1940s, and the cap has held ever since: rents are set by law, not by what renters would gladly pay. Politicians say it keeps homes affordable. What follows when a rent is held below what people would freely pay?",
     "answer": "A long waiting list forms because too few apartments get built",
     "choices": [
       "A long waiting list forms because too few apartments get built",
@@ -22504,7 +22036,7 @@
   },
   {
     "tier": 2,
-    "question": "In Sweden, apartment rents are not set by market prices. Instead, the national tenant union and the association of landlords meet each year to negotiate an official rent for each kind of apartment, based on features like age, size, and neighborhood rather than what tenants would freely pay. This unusual pricing system has a specific Swedish name written into the law. What is that name?",
+    "question": "A negotiator for Sweden's national tenants' union meets the landlords' association for this year's round of bargaining over official rents. Every kind of flat gets a rent scored on its building's age, its size and its neighborhood, not on what a renter would freely pay. What name does Swedish law give this kind of rent?",
     "answer": "Bruksvardeshyra ('utility-value rent')",
     "choices": [
       "Bruksvardeshyra ('utility-value rent')",
@@ -22516,21 +22048,21 @@
     "topic": "stockholms-twenty-year-apartment-queue"
   },
   {
-    "tier": 3,
-    "question": "Because Sweden's rent-control law kept rents below the market price, apartments in Stockholm became bargains -- but not enough new ones got built to meet the demand. Instead of paying a higher rent, would-be renters had to sign up on a national waiting list run by the city, called Bostadsformedlingen. By the early 2020s, the average wait for a first-hand rental contract in central Stockholm reached a figure that made news around the world. About how long was that average wait?",
+    "tier": 2,
+    "question": "A Stockholm renter signed up for a first-hand lease at Bostadsformedlingen, the city's housing bureau, because he could not simply find one on the open market. By the early 2020s, about how long did a renter wait for such a lease in central Stockholm?",
     "answer": "About 20 years",
     "choices": [
       "About 20 years",
-      "About 6 months",
       "About 5 years",
-      "About 60 years"
+      "About 2 years",
+      "About 6 months"
     ],
-    "context": "The longest documented waits exceeded 30 years. Swedish parents commonly sign their children up to the queue at birth so the child has a chance of a first-hand contract by age 20. Source: grokipedia.com/page/Rent_control_in_Sweden.",
+    "context": "Stockholm's Bostadsformedlingen (municipal housing office) published waits above 20 years for central-city apartments through the mid-2010s; widely reported in SVT and The Economist 2015. Source: bostad.stockholm.se. The longest documented waits exceeded 30 years. Source: grokipedia.com/page/Rent_control_in_Sweden.",
     "topic": "stockholms-twenty-year-apartment-queue"
   },
   {
     "tier": 3,
-    "question": "Because Sweden's rent-control law kept rents artificially low, too few new apartments got built and the official Stockholm apartment waitlist, Bostadsformedlingen, stretched to a roughly twenty-year wait. Swedes quickly learned that if they wanted their child to have any chance at a Stockholm apartment as a young adult, they had to start queueing years in advance. One Swedish family practice has become the most-cited example of how deep this waitlist reaches into daily life. What do many Swedish parents do the day a child is born?",
+    "question": "A Stockholm couple brings a newborn home, and within the baby's first weeks they do something for him that he will not need for eighteen years or more. What do such parents do?",
     "answer": "Enter the newborn into the Bostadsformedlingen housing queue",
     "choices": [
       "Enter the newborn into the Bostadsformedlingen housing queue",
@@ -22543,20 +22075,7 @@
   },
   {
     "tier": 4,
-    "question": "A city passes a law economists call rent control: no landlord in the city can raise the rent on an apartment, even when more people want to move in than there are apartments and would happily pay more. Over a decade or two of living under such a law, what usually happens to the number of apartments actually available to rent in that city?",
-    "answer": "There are far fewer to rent, and long waiting lists appear",
-    "choices": [
-      "There are far fewer to rent, and long waiting lists appear",
-      "There are many more, because landlords rush to build",
-      "The number stays exactly the same forever",
-      "Rents fall so low that everyone rents two apartments"
-    ],
-    "context": "Lindbeck (1930-2020) was the long-serving chair of the Sveriges Riksbank Prize in Economic Sciences committee. His willingness to name his own country's policy publicly made his critique especially load-bearing. Source: grokipedia.com/page/Assar_Lindbeck.",
-    "topic": "stockholms-twenty-year-apartment-queue"
-  },
-  {
-    "tier": 4,
-    "question": "Because Stockholm's official rental price does not clear the market, a specific parallel market emerged, often charging 3-5 times the controlled rent. Stockholm police reports and the housing think-tank Timbro have documented it. What is this market?",
+    "question": "Stockholm police and researchers at Timbro, a Swedish institute, traced a market that had sprung up beside the city's official rents, charging three to five times the controlled rent. Demand had not vanished when the official price refused to move. What market did they find?",
     "answer": "An illegal second-hand sublet market",
     "choices": [
       "An illegal second-hand sublet market",
@@ -22568,8 +22087,8 @@
     "topic": "stockholms-twenty-year-apartment-queue"
   },
   {
-    "tier": 5,
-    "question": "The Austrian economist Friedrich Hayek argued that a market price is not just a number -- it is a signal that tells producers what to build and buyers what they truly want. Kill the price with a rent cap or a wage floor and you kill the signal, so the goods still have to be handed out somehow. A Stockholm high-school student asks her teacher how a below-market apartment ever actually gets allocated if the price does not do the work. A Hayekian economist points to a broader principle. Which is it?",
+    "tier": 4,
+    "question": "Friedrich Hayek argued that a price is information: the price on a flat signals to builders what to build and to renters what they truly value. When a cap silences that signal, the flats must still go to someone, as bread did in the Soviet Union and petrol did in America in 1973. Which broader principle does a Hayekian economist draw?",
     "answer": "When a price does not clear the market, some other mechanism must -- typically queueing, connections, black markets, or exit",
     "choices": [
       "When a price does not clear the market, some other mechanism must -- typically queueing, connections, black markets, or exit",
@@ -22577,7 +22096,7 @@
       "The European Union assigns units by lottery among all EU citizens",
       "Stockholm's climate does the allocation by discouraging most residents"
     ],
-    "context": "The pattern generalizes: Soviet bread lines, US 1973 gas queues, wartime rationing, and public-housing waiting lists all illustrate the same principle. Prices carry information; suppress them and the information reappears in another form, usually less efficient. Source: grokipedia.com/page/Rent_control_in_Sweden.",
+    "context": "The pattern generalizes: Soviet bread lines, US 1973 gas queues, wartime rationing, and public-housing waiting lists all illustrate the same principle. Prices carry information; suppress them and the information reappears in another form, usually less efficient. Source: grokipedia.com/page/Rent_control_in_Sweden. A binding price ceiling forces the market to allocate scarce units by NON-PRICE means: waiting lists, insider connections, key money, discrimination. The seen tenant paid less; the unseen family got nothing. Source: Sowell, Basic Economics, chapter on price ceilings.",
     "topic": "stockholms-twenty-year-apartment-queue"
   },
   {
@@ -28198,7 +27717,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1937 and 1938 the Soviet dictator Joseph Stalin ordered his secret police to arrest and shoot huge numbers of his own people. Even loyal party members, army generals, and factory bosses were killed. Historians now call this the Great Terror. What is a sudden mass roundup and killing of your own people by their own government called?",
+    "question": "Joseph Stalin ordered his police in 1937 and 1938 to arrest and shoot huge numbers of his own people, even loyal party members, army generals and factory bosses. Historians call it the Great Terror. What is a sudden mass roundup and killing like that called?",
     "answer": "A purge",
     "choices": [
       "A purge",
@@ -28211,7 +27730,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Soviet Union in the 1930s, dictator Joseph Stalin ran a special police force called the NKVD (the People's Commissariat for Internal Affairs). Its agents could pound on a family's door in the middle of the night, drag people away, and hold them for months with no trial. Then they shipped the prisoners to a work camp in freezing Siberia. What do we call a police force like this -- one that answers only to the ruler, not to any court?",
+    "question": "Agents of Joseph Stalin's police force, the People's Commissariat for Internal Affairs, pounded on a family's door in the middle of the night and dragged a man away. They held him without trial and shipped him to a Siberian camp, and no judge could ask why. What is a police force like that called?",
     "answer": "Secret police",
     "choices": [
       "Secret police",
@@ -28224,7 +27743,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1937 the Soviet dictator Joseph Stalin's secret police -- the NKVD (the People's Commissariat for Internal Affairs) -- sent a secret order to every local office in the country. The order told each office an exact number of people it had to shoot and an exact number to ship to labor camps. Local police then rounded up whoever was handy to fill their numbers. What kind of instruction is that?",
+    "question": "The chiefs of Stalin's police issued a numbered order on 30 July 1937. It told each regional office exactly how many people to shoot and how many to send to labor camps for a ten-year term. What kind of instruction was that?",
     "answer": "A quota to fill, whether or not people were guilty",
     "choices": [
       "A quota to fill, whether or not people were guilty",
@@ -28237,20 +27756,20 @@
   },
   {
     "tier": 2,
-    "question": "During the Soviet Great Terror of 1937 and 1938, the secret police carried out mass shootings for about 18 months. When Soviet archives opened after 1991, historians got a firm figure. Roughly how many people did the secret police shoot in that year and a half?",
+    "question": "Historians opened the Soviet archives after 1991 and got a firm count of the people Stalin's police shot from July 1937 to November 1938, the stretch Russians name after the police chief Nikolai Yezhov. Roughly how many were shot in that year and a half?",
     "answer": "About 750,000",
     "choices": [
       "About 750,000",
       "About 75,000",
-      "About 7,500",
-      "About 7.5 million"
+      "About 7.5 million",
+      "About 20,000"
     ],
-    "context": "About 750,000 shot -- roughly 1,000 per day for 18 months. About 1.5 million total were arrested. Figures are from opened NKVD archives after 1991. Source: memo.ru (Memorial archives).",
+    "context": "About 750,000 shot -- roughly 1,000 per day for 18 months. About 1.5 million total were arrested. Figures are from opened NKVD archives after 1991. Source: memo.ru (Memorial archives). Conquest also estimated about 1.5 million arrests in the same window, and specifically documented the targeting of the Old Bolsheviks and Red Army officer corps. The figures were treated as Cold War inflation by much of the Western academic establishment. Source: grokipedia.com/page/The_Great_Terror.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
   },
   {
     "tier": 3,
-    "question": "Time and again, after a revolution wins, the new dictator turns on the very friends who helped him seize power. Joseph Stalin shot most of Lenin's old Bolshevik comrades in the 1930s. Mao Zedong purged the men who had marched with him on the Long March. Robespierre sent his fellow French revolutionaries to the guillotine in 1794. Why does the new ruler keep doing this to his oldest allies?",
+    "question": "Nikolai Bukharin stood trial in March 1938, years after Lenin had called him the party's favourite, and Joseph Stalin had him shot. Mao Zedong turned on the men who had marched with him on the Long March, and Robespierre had sent fellow revolutionaries to the guillotine. Why does a new ruler turn on the very allies who helped him to power?",
     "answer": "They know his weaknesses and might replace him",
     "choices": [
       "They know his weaknesses and might replace him",
@@ -28263,7 +27782,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1968 the British historian Robert Conquest published a book called 'The Great Terror,' showing that Joseph Stalin's Soviet regime had killed millions of its own people in the 1930s. Many Western professors mocked the book and defended the Soviet record. When the Soviet archives finally opened after 1991, they proved Conquest right down to the numbers. Why do some scholars fight bad news about a system they like?",
+    "question": "Robert Conquest published The Great Terror in 1968, and many Western professors mocked it and defended the Soviet record. When the Soviet archives opened after 1991, they proved him right on the numbers. Why do some scholars fight bad news about a system they admire?",
     "answer": "They are more loyal to the theory than to the facts",
     "choices": [
       "They are more loyal to the theory than to the facts",
@@ -28276,7 +27795,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1937 and 1938, Joseph Stalin launched what historians now call the Great Terror. He accused his own senior Red Army officers of secretly plotting with Nazi Germany and put them on trial. The purge tore through every level from marshal down to colonel and broke the Soviet military just before World War II began. Stalin had five top Marshals of the Soviet Union at the start. How many of those five were killed?",
+    "question": "Joseph Stalin accused his senior Red Army officers of conspiring with Nazi Germany, and the killing tore through the army from marshals down to colonels, leaving it still rebuilding when Germany attacked in June 1941. At the start the army had five marshals, its highest rank. How many of those five were shot?",
     "answer": "Three of five",
     "choices": [
       "Three of five",
@@ -28289,7 +27808,7 @@
   },
   {
     "tier": 4,
-    "question": "In the Soviet Union during the late 1930s, the head of the secret police who ran the mass arrests and shootings was himself executed by his replacement soon after. This pattern repeated with each new chief. What lesson does this teach about a totalitarian regime?",
+    "question": "A censor scratched Nikolai Yezhov's face out of an official photograph after Yezhov, the man who had run Stalin's terror, was seized in 1939 and executed in February 1940. Lavrentiy Beria, who replaced him, was arrested and shot in his turn in 1953. What does this pattern teach about a totalitarian regime?",
     "answer": "Even the enforcers get killed once their work is done, so no one is ever safe",
     "choices": [
       "Even the enforcers get killed once their work is done, so no one is ever safe",
@@ -28302,7 +27821,7 @@
   },
   {
     "tier": 5,
-    "question": "During Joseph Stalin's Great Terror in the late 1930s, whole ethnic communities living near the Soviet Union's borders -- Poles, Koreans, Germans, and Finns -- were arrested wholesale and either shot or deported as suspected foreign spies. Nobody had to have done anything wrong; sharing an ancestry with a neighboring country was enough. What does this pattern show about how sweeping communist state terror could get?",
+    "question": "A Soviet police squad arrested an ethnic Polish family in 1937 under an order of August that year aimed at Poles across the Soviet Union. Police shot about 111,000 people in that one operation, and orders like it followed for Germans, Koreans and Finns near the frontiers. What do these orders show about how far Stalin's terror could reach?",
     "answer": "It could target people just for who their grandparents were, not for anything they had done",
     "choices": [
       "It could target people just for who their grandparents were, not for anything they had done",
@@ -28315,7 +27834,7 @@
   },
   {
     "tier": 5,
-    "question": "The American historian Timothy Snyder's 2010 book 'Bloodlands' studies Joseph Stalin's and Adolf Hitler's mass killings side by side. The same stretch of Eastern Europe -- Ukraine, Belarus, and Poland -- was crushed first by Soviet communism and then by Nazi Germany between 1933 and 1945. Together the two regimes killed around 14 million civilians there, one after the other. What does looking at both death tolls together show?",
+    "question": "Timothy Snyder laid Stalin's killing beside Hitler's in Bloodlands, his book of 2010, studying Ukraine, Belarus and Poland, the lands where both regimes struck. Between 1933 and 1945 the two together killed some fourteen million civilians there on purpose. What does reading both tolls side by side show?",
     "answer": "Two very different ideologies can produce a similar scale of slaughter of ordinary people",
     "choices": [
       "Two very different ideologies can produce a similar scale of slaughter of ordinary people",
@@ -28575,7 +28094,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1932 and 1933 Joseph Stalin's Soviet government sent collection squads into Ukraine. Their job was to take grain from every peasant farmer. The squads took almost everything — even the seeds farmers needed to plant the next spring's crop. Villages had nothing left to eat. What happened to the people of Ukraine that winter?",
+    "question": "A requisition brigade emptied a Ukrainian peasant family's storeroom in 1932, carrying out Joseph Stalin's grain quota, and the same happened in village after village. The families had nothing left to eat. What happened to the people of Ukraine that winter and into 1933?",
     "answer": "Millions starved to death",
     "choices": [
       "Millions starved to death",
@@ -28588,7 +28107,7 @@
   },
   {
     "tier": 1,
-    "question": "The Holodomor was the man-made famine in Soviet Ukraine in 1932 and 1933. It was not just a bad harvest. Joseph Stalin's government set a grain quota so high that no village could meet it, then sent search crews into peasant homes to enforce it. What did the crews take?",
+    "question": "Joseph Stalin set a grain quota for Ukraine in 1932 that no village could meet, and that was the point of it. His search crews went into peasant homes to enforce it. What did the crews take?",
     "answer": "Everything down to seed grain and food from the shelves",
     "choices": [
       "Everything down to seed grain and food from the shelves",
@@ -28601,7 +28120,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 1933 Joseph Stalin signed an order that sealed the borders of Soviet Ukraine during the Holodomor famine. Starving villagers could no longer walk to nearby Russian regions to buy or beg for food. Guards were posted on every road and rail line to check travel papers. What happened to Ukrainians who tried to leave anyway?",
+    "question": "Starving Ukrainian villagers headed for towns in Russia early in 1933, hoping to beg or buy bread, after Joseph Stalin signed an order on 22 January sealing Ukraine and the Kuban. Guards posted on every road and rail line checked travel papers. What happened to villagers who tried to leave?",
     "answer": "They were turned back or arrested",
     "choices": [
       "They were turned back or arrested",
@@ -28614,7 +28133,7 @@
   },
   {
     "tier": 2,
-    "question": "During the Holodomor famine in 1932 and 1933, Joseph Stalin's officials had a special punishment for Ukrainian villages that missed their impossible grain quota. The village was put on a state list. All trade with it was cut off, the last food was seized from every shelf, and no resident was allowed to leave. What were these villages called on the state list?",
+    "question": "Joseph Stalin's officials put a Ukrainian village on a state register in 1932 after it missed its grain quota. From then on all trade with it was cut off, the last food was taken from its shelves, nobody was allowed out, and a sign at its boundary marked what it had become. What were such villages called?",
     "answer": "Blacklisted villages",
     "choices": [
       "Blacklisted villages",
@@ -28627,7 +28146,7 @@
   },
   {
     "tier": 3,
-    "question": "The Holodomor was Joseph Stalin's man-made famine in Soviet Ukraine in 1932-33, when Communist Party grain quotas stripped villages bare and troops sealed the borders so starving peasants could not escape. After the Soviet Union collapsed in 1991, historians finally opened the party and secret-police archives and counted the dead in earnest. What is the standard range they now give?",
+    "question": "Scholars began counting the dead of Stalin's Ukrainian famine in earnest after 1991, when the party and secret-police archives opened. The famine of 1932 and 1933 had hit some of the best farmland in Europe. What range of deaths do peer-reviewed studies give today?",
     "answer": "About 3.5 to 7.5 million",
     "choices": [
       "About 3.5 to 7.5 million",
@@ -28640,7 +28159,7 @@
   },
   {
     "tier": 3,
-    "question": "The Holodomor was the man-made famine that killed millions of Ukrainians under Joseph Stalin in 1932 and 1933. For decades the Soviet Union denied it happened. Then, in November 2006, Ukraine's own parliament — the Verkhovna Rada — passed a law that finally named the famine as a specific kind of state crime. What did the Verkhovna Rada officially call it?",
+    "question": "Members of Ukraine's parliament, the Verkhovna Rada, voted on 28 November 2006 to give the famine of 1932 and 1933 a legal name. For decades the Soviet state had denied that its own policy caused the deaths. What did the Verkhovna Rada officially call the famine?",
     "answer": "A genocide",
     "choices": [
       "A genocide",
@@ -28652,21 +28171,8 @@
     "topic": "the-holodomor-stalins-ukrainian-terror-famine-1932-33"
   },
   {
-    "tier": 3,
-    "question": "The Holodomor was Joseph Stalin's man-made famine that killed millions of Ukrainian peasants in 1932-33. For decades Soviet authorities denied it had happened at all, and Western newspapers like the New York Times helped bury the story. In 1986 the British historian Robert Conquest published the first major Western scholarly account, released by Oxford University Press. What was its title?",
-    "answer": "The Harvest of Sorrow",
-    "choices": [
-      "The Harvest of Sorrow",
-      "The Great Terror",
-      "Bloodlands",
-      "Red Famine"
-    ],
-    "context": "Robert Conquest's The Harvest of Sorrow: Soviet Collectivization and the Terror-Famine (Oxford UP, 1986) was the first major Western scholarly synthesis. It was funded partly by the Ukrainian diaspora and treated with skepticism by academic sovietology until the archives opened. Source: en.wikipedia.org/wiki/The_Harvest_of_Sorrow.",
-    "topic": "the-holodomor-stalins-ukrainian-terror-famine-1932-33"
-  },
-  {
     "tier": 4,
-    "question": "In the early 1930s the Soviet dictator Joseph Stalin decided to break Ukrainian peasant resistance to his forced collective-farm policy. He sent armed grain squads into Ukrainian villages that seized not only the year's harvest but even the seed grain farmers needed for next year's crop. Millions of Ukrainians starved to death in their own farmhouses while grain sat guarded in Soviet warehouses. What is that engineered famine called in Ukraine today?",
+    "question": "Joseph Stalin sent armed squads into Ukrainian villages in the early 1930s to break peasant resistance to his collective farms. Millions starved in their own farmhouses while grain sat guarded in Soviet warehouses. Ukrainians do not call it simply a famine, a word that suggests bad weather. What do they call it?",
     "answer": "The Holodomor",
     "choices": [
       "The Holodomor",
@@ -28679,7 +28185,7 @@
   },
   {
     "tier": 4,
-    "question": "Soviet Kazakhstan's 1932-33 famine, the Asharshylyk, came from forced collectivization — the state seized the nomads' herds and banned private slaughter. Historians count roughly 1.5 million dead. That toll erased about what share of the entire ethnic Kazakh people?",
+    "question": "Soviet officials confiscated the herds of Kazakhstan's nomads in 1932 and 1933 and made it a crime to kill an animal privately. About 1.5 million Kazakhs died in the famine that followed, the Asharshylyk. About what share of the whole Kazakh people was that?",
     "answer": "About 40 percent",
     "choices": [
       "About 40 percent",
@@ -28692,7 +28198,7 @@
   },
   {
     "tier": 5,
-    "question": "The Holodomor killed roughly four million Ukrainians in 1932 and 1933. Historians distinguish it from ordinary famines caused by bad weather or a locust plague. They point to a specific mix of state actions by Joseph Stalin's Soviet government that turned a crop shortfall into deliberate mass death across the countryside. Which combination best describes that policy mechanism?",
+    "question": "Joseph Stalin's government stripped Ukraine's countryside of food in 1932 and 1933, and millions died on some of the best farmland in Europe. Which combination turned a shortage into mass death?",
     "answer": "A deliberately unfillable grain quota, plus border-sealing to prevent escape, plus blacklisting of under-quota villages",
     "choices": [
       "A deliberately unfillable grain quota, plus border-sealing to prevent escape, plus blacklisting of under-quota villages",
@@ -28705,7 +28211,7 @@
   },
   {
     "tier": 5,
-    "question": "The Holodomor was a famine engineered on purpose by Joseph Stalin's Soviet grain-seizure policies in Ukraine in 1932 and 1933. Armed squads stripped Ukrainian villages of every last kernel while the government blocked peasants from leaving the region to find food. Millions starved. Many European legislatures -- Germany, Poland, Ireland and others -- have since voted to formally recognize the Holodomor as a genocide. Why does that formal recognition matter?",
+    "question": "Members of the European Parliament voted in December 2022 to recognize Stalin's Ukrainian famine of 1932 and 1933, and lawmakers in Germany, Poland, Ireland and other countries have voted the same way. Why does such formal recognition matter?",
     "answer": "It records the deaths as a deliberate crime, not an accident of bad weather",
     "choices": [
       "It records the deaths as a deliberate crime, not an accident of bad weather",
