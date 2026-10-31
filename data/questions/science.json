@@ -4031,7 +4031,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1797, Henry Cavendish set out to measure the tiny gravitational pull between two lead balls. He worked inside a sealed outbuilding on his London estate. If he entered the room, his own body heat would stir the air and swamp the signal. How did he read the result?",
+    "question": "Henry Cavendish set out in 1797 to measure the tiny gravitational pull between two lead balls, inside a sealed outbuilding in London. If he entered the room, his own body heat would stir the air and swamp the signal. How did he read the result?",
     "answer": "through a telescope from outside the room",
     "choices": [
       "through a telescope from outside the room",
@@ -4043,8 +4043,8 @@
     "topic": "cavendish-weighs-the-world"
   },
   {
-    "tier": 1,
-    "question": "In 1797 the English scientist Henry Cavendish set up a torsion balance in a garden shed near London, measuring how faintly two large lead weights tugged on smaller lead balls hung from a thin wire. He called the project 'weighing the world.' In his paper, he only shared one number about the whole planet. What number was that?",
+    "tier": 2,
+    "question": "John Michell, a Yorkshire rector, designed a twisting balance but died before he could use it, and Henry Cavendish set it up in a garden shed near London in 1797. Cavendish called the project 'weighing the world.' In his paper he shared only one number about the whole planet. What number was that?",
     "answer": "its mean density, in multiples of the density of water",
     "choices": [
       "its mean density, in multiples of the density of water",
@@ -4052,25 +4052,12 @@
       "the gravitational pull at its surface, in units of feet per second",
       "the length of its diameter, measured in English miles"
     ],
-    "context": "Cavendish's 1798 paper in the Philosophical Transactions was titled 'Experiments to determine the Density of the Earth.' From that single number you can get the mass; from the mass and the size, everything else. Source: Grokipedia -- Cavendish experiment.",
-    "topic": "cavendish-weighs-the-world"
-  },
-  {
-    "tier": 2,
-    "question": "The twisting balance Henry Cavendish used in the 1790s to 'weigh the world' was not his own design. A country priest in Yorkshire had built it but died before he could use it. The kit passed to Cavendish second-hand. What number did his careful readings famously give?",
-    "answer": "The average density of the Earth",
-    "choices": [
-      "The average density of the Earth",
-      "The speed of light in a vacuum",
-      "The distance from Earth to the Moon",
-      "The age of the Earth in years"
-    ],
-    "context": "Michell had spent years planning the experiment; when he died, the balance had never been fired. Cavendish quietly rebuilt it and kept close to Michell's plan. Source: FamousScientists.org -- John Michell.",
+    "context": "Cavendish's 1798 paper in the Philosophical Transactions was titled 'Experiments to determine the Density of the Earth.' From that single number you can get the mass; from the mass and the size, everything else. Michell had spent years planning the experiment; when he died, the balance had never been fired. Cavendish quietly rebuilt it and kept close to Michell's plan. Sources: Grokipedia -- Cavendish experiment; FamousScientists.org -- John Michell.",
     "topic": "cavendish-weighs-the-world"
   },
   {
     "tier": 3,
-    "question": "In June 1798 Cavendish published his answer for 'weighing the world' -- the ratio of Earth's mean density to that of water -- in a 57-page paper in the Philosophical Transactions. Which value did he print?",
+    "question": "Henry Cavendish published his answer for 'weighing the world' in June 1798, in a 57-page paper in the Philosophical Transactions. The answer was one ratio: the Earth's mean density against that of water. Which value did he print?",
     "answer": "5.48",
     "choices": [
       "5.48",
@@ -4083,7 +4070,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1798 the reclusive English gentleman scientist Henry Cavendish measured the density of the whole Earth with a torsion-balance experiment in a sealed shed, weighing lead spheres against the tiny gravitational pulls they exerted on one another. Cavendish made 29 tries before printing his number for Earth's density. In 1821 the astronomer Francis Baily sat down and re-averaged his tables by hand. What did Baily find?",
+    "question": "Francis Baily sat down in 1821 and re-averaged Henry Cavendish's tables by hand. Cavendish had measured the density of the whole Earth in a sealed shed, weighing lead spheres against the tiny pulls they exerted on one another, and he had made 29 tries before printing his number. What did Baily find?",
     "answer": "a small arithmetic slip in Cavendish's own average",
     "choices": [
       "a small arithmetic slip in Cavendish's own average",
@@ -4096,7 +4083,7 @@
   },
   {
     "tier": 5,
-    "question": "Physics textbooks usually say the Cavendish experiment of 1797-98 measured big G, the gravitational constant. Historians of physics point out that this is not quite right: Cavendish himself never used the letter G or the term. Who actually extracted G from his data, and when?",
+    "question": "Henry Cavendish never used the letter G or the term, yet physics textbooks usually say his experiment of 1797-98 measured big G, the gravitational constant. Historians of physics point out that this is not quite right. Who actually extracted G from his data, and when?",
     "answer": "Alfred Cornu first extracted G from Cavendish's data in 1873",
     "choices": [
       "Alfred Cornu first extracted G from Cavendish's data in 1873",
@@ -4109,7 +4096,7 @@
   },
   {
     "tier": 5,
-    "question": "John Michell was a Yorkshire rector and amateur geologist who also designed the torsion balance that Henry Cavendish later used to weigh the world. In November 1783 Michell sent the Royal Society a long letter describing an object no one else would give a proper name to for nearly two hundred years. What did Michell propose in that 1783 letter?",
+    "question": "A long letter reached the Royal Society in November 1783 from John Michell, describing an object no one else would give a proper name to for nearly two hundred years. Michell was a Yorkshire rector and amateur geologist who also designed the torsion balance Henry Cavendish later used to weigh the world. What did Michell propose in that letter?",
     "answer": "a star so massive that its escape velocity would exceed the speed of light",
     "choices": [
       "a star so massive that its escape velocity would exceed the speed of light",
@@ -4122,7 +4109,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1925 a 25-year-old British graduate student at Harvard, Cecilia Payne, finished her doctoral thesis on the light of hundreds of stars. Reading their spectra line by line, she reached an answer nobody at the observatory wanted to hear — an answer that flipped the accepted picture of the universe. What did Payne find the Sun, and the other stars, are mostly made of?",
+    "question": "Cecilia Payne sailed to Harvard because Cambridge would not grant degrees to women. At 25 she finished a thesis on the light of hundreds of stars, and its answer flipped the accepted picture of the universe. What did she find the Sun and the other stars are mostly made of?",
     "answer": "Mostly hydrogen and helium, the lightest elements",
     "choices": [
       "Mostly iron, a hot version of the Earth's core",
@@ -4130,12 +4117,12 @@
       "Mostly carbon and oxygen in roughly equal parts",
       "Mostly heavy metals held together by gravity"
     ],
-    "context": "Payne's 1925 Harvard PhD thesis, 'Stellar Atmospheres,' concluded that the Sun and other stars are composed overwhelmingly of hydrogen and helium -- together about 98 percent of a star's mass -- the two lightest elements in the universe. Source: https://en.wikipedia.org/wiki/Cecilia_Payne-Gaposchkin",
+    "context": "Payne's 1925 Harvard PhD thesis, 'Stellar Atmospheres,' concluded that the Sun and other stars are composed overwhelmingly of hydrogen and helium -- together about 98 percent of a star's mass -- the two lightest elements in the universe. Her doctorate -- the first astronomy PhD ever granted at Harvard -- was formally issued through Radcliffe College because Harvard would not confer a doctorate on a woman. Source: https://en.wikipedia.org/wiki/Cecilia_Payne-Gaposchkin",
     "topic": "cecilia-payne-and-the-hydrogen-sun"
   },
   {
     "tier": 1,
-    "question": "In December 1919 a first-year Cambridge student named Cecilia Payne squeezed into a lecture hall to hear the astronomer Arthur Eddington. Eddington had just come back from an eclipse expedition to the African island of Principe. Payne wrote down every word he said, and that night she switched from botany to physics for the rest of her life. What had Eddington's Principe trip just done?",
+    "question": "Arthur Eddington lectured at Cambridge in December 1919, just back from an eclipse expedition to the African island of Principe. A first-year student named Cecilia Payne squeezed in and that night switched from botany to physics. What had his Principe trip just done?",
     "answer": "Confirmed Einstein's theory of general relativity",
     "choices": [
       "Measured the distance to the Andromeda galaxy",
@@ -4148,20 +4135,7 @@
   },
   {
     "tier": 2,
-    "question": "Cecilia Payne finished the physics course at Cambridge in the early 1920s, but Cambridge would not grant degrees to women. She sailed to Harvard on a fellowship, and in 1925 became the first person of any sex to earn a PhD in astronomy from Harvard. Her thesis argued that stars are made mostly of one element -- a shocking claim at the time. Which element?",
-    "answer": "Hydrogen",
-    "choices": [
-      "Hydrogen",
-      "Iron",
-      "Carbon",
-      "Oxygen"
-    ],
-    "context": "Payne's 1925 doctorate -- the first astronomy PhD ever granted at Harvard -- was formally issued through Radcliffe College because Harvard would not confer a doctorate on a woman. Source: https://en.wikipedia.org/wiki/Cecilia_Payne-Gaposchkin  (Legend.)",
-    "topic": "cecilia-payne-and-the-hydrogen-sun"
-  },
-  {
-    "tier": 2,
-    "question": "Cecilia Payne did not take her own photographs. She read hundreds of stellar spectra off glass plates already sitting on shelves at Harvard College Observatory. A team of women 'computers,' led by Annie Jump Cannon, had spent years classifying stars from those same shelves. What property of a star's light were the women sorting stars by?",
+    "question": "Cecilia Payne took down glass plates from the shelves at Harvard College Observatory and read hundreds of stellar spectra off them. A team of women 'computers,' led by Annie Jump Cannon, had spent years classifying stars from those same shelves. What property of a star's light were the women sorting stars by?",
     "answer": "The pattern of dark lines in the star's spectrum",
     "choices": [
       "The pattern of dark lines in the star's spectrum",
@@ -4174,7 +4148,7 @@
   },
   {
     "tier": 3,
-    "question": "Payne's key theoretical tool was a 1920 equation from the Indian physicist Meghnad Saha. Astronomers before her had been reading the strength of a spectral line as 'how much of this element is present.' Saha's equation showed that reading was mostly wrong -- line strength actually depends on something else about the star. What?",
+    "question": "Meghnad Saha, an Indian physicist, published an equation in 1920 that became Cecilia Payne's key tool. Astronomers before her had read the strength of a spectral line as 'how much of this element is present.' Saha showed that reading was mostly wrong: line strength depends mainly on something else about the star. What?",
     "answer": "The temperature of the star's outer atmosphere",
     "choices": [
       "The rotation speed of the star on its axis",
@@ -4187,7 +4161,7 @@
   },
   {
     "tier": 3,
-    "question": "Once Cecilia Payne applied the Indian physicist Meghnad Saha's temperature-and-ionization formula to hundreds of stellar spectra at Harvard, her hydrogen numbers came out enormous. They dwarfed anything earlier astronomers had guessed for the composition of stars. Compared to those earlier readings, roughly how much did Payne's result raise the hydrogen count?",
+    "question": "Cecilia Payne applied Meghnad Saha's formula to hundreds of stellar spectra at Harvard, and her hydrogen numbers came out enormous. They dwarfed anything earlier astronomers had guessed for the makeup of stars. Compared to those earlier readings, roughly how much did her result raise the hydrogen count?",
     "answer": "About a million times more abundant",
     "choices": [
       "About ten times more abundant",
@@ -4200,7 +4174,7 @@
   },
   {
     "tier": 3,
-    "question": "Harlow Shapley, the director of Harvard College Observatory, sent Cecilia Payne's PhD draft to Henry Norris Russell of Princeton — the most senior astronomer in the United States — for a check on her startling claim that stars are mostly hydrogen. Russell wrote back a short, blunt reply about that hydrogen number. How did his letter describe her finding?",
+    "question": "Harlow Shapley, director of Harvard College Observatory, sent Cecilia Payne's PhD draft to Henry Norris Russell of Princeton, the most senior astronomer in the United States, for a check on her startling hydrogen figure. Russell wrote back a short, blunt reply. How did his letter describe her finding?",
     "answer": "As a result that was clearly impossible",
     "choices": [
       "As a bold but premature conjecture",
@@ -4213,7 +4187,7 @@
   },
   {
     "tier": 3,
-    "question": "Russell's letter had come back calling Payne's hydrogen number 'clearly impossible.' Harlow Shapley was afraid her whole thesis would be thrown out. Under that pressure, Payne kept her calculated numbers in the text but added a single hedging sentence. Which sentence did she add?",
+    "question": "Cecilia Payne read Henry Norris Russell's letter and feared her whole thesis would be thrown out. She added a hedging sentence at an advisor's urging, while her calculated numbers stayed in the text. Which sentence did she add?",
     "answer": "'The enormous abundance derived for these elements is almost certainly not real.'",
     "choices": [
       "'The enormous abundance derived for these elements is almost certainly not real.'",
@@ -4226,7 +4200,7 @@
   },
   {
     "tier": 4,
-    "question": "Four years after Payne's quiet thesis, Henry Norris Russell wrote his own 1929 paper on the Sun's atmosphere. He reached the same hydrogen-heavy answer by a different route and listed exact ratios by volume. Much of the public credit for the discovery drifted to him. What breakdown did his 1929 paper publish?",
+    "question": "Henry Norris Russell wrote his own paper on the Sun's atmosphere in 1929, four years after Cecilia Payne's thesis. He reached the same hydrogen-heavy answer by a different route and listed its ratios by volume. Much of the public credit for the discovery drifted to him. What breakdown did his paper publish?",
     "answer": "About 60 parts hydrogen, 2 helium, 2 oxygen, 1 metallic vapors, 0.8 free electrons",
     "choices": [
       "About 60 parts hydrogen, 2 helium, 2 oxygen, 1 metallic vapors, 0.8 free electrons",
@@ -4239,7 +4213,7 @@
   },
   {
     "tier": 5,
-    "question": "Payne's hydrogen result turned out to be load-bearing for two of the twentieth century's biggest ideas at once. A hydrogen Sun is a Sun that can shine by fusing hydrogen into helium. And one major cosmological theory predicts that the universe should be dominated by those same two lightest elements. Which cosmological theory did her abundance result quietly line up with?",
+    "question": "Cecilia Payne handed physicists a Sun that could shine by fusing hydrogen into helium, and her result lined up with a second great idea as well. One major cosmological theory predicts a universe dominated by those same two lightest elements. Which cosmological theory was it?",
     "answer": "A hot Big Bang, with the universe expanding from an early hot dense state",
     "choices": [
       "A hot Big Bang, with the universe expanding from an early hot dense state",
@@ -4252,7 +4226,7 @@
   },
   {
     "tier": 1,
-    "question": "Cambridge, early 1932. James Chadwick keeps firing a strange 'beryllium beam' at a slab of wax. Protons keep flying out fast. After two weeks of nonstop work, he figures out what the beam is really made of and mails a note to Nature. What was the particle?",
+    "question": "James Chadwick fired a strange 'beryllium beam' at a slab of wax at Cambridge early in 1932, and protons flew out fast. After two weeks of nonstop work he saw what the beam was really made of and mailed a note to Nature. What was the particle?",
     "answer": "the neutron",
     "choices": [
       "the neutron",
@@ -4265,7 +4239,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1932 the English physicist James Chadwick was hunting a mysterious neutral particle streaming out of beryllium bombarded by alpha rays — the particle later named the neutron. He aimed his mystery beam at a slab of paraffin wax. Paraffin has carbon and hydrogen in it. He picked it for the hydrogen, not the carbon. What made hydrogen the perfect target?",
+    "question": "A mystery beam streamed out of beryllium struck by alpha rays, and James Chadwick turned it on paraffin wax in 1932. Paraffin holds carbon and hydrogen, and he picked it for the hydrogen. What made hydrogen the perfect target?",
     "answer": "its nucleus is a lone proton with nothing else attached",
     "choices": [
       "its nucleus is a lone proton with nothing else attached",
@@ -4278,7 +4252,7 @@
   },
   {
     "tier": 2,
-    "question": "James Chadwick was not the first to run the paraffin-wax test. In January 1932, two months before Chadwick's letter, a team in Paris did the same test and saw the same recoiling protons. But they reported that gamma rays were causing them. Who were the Paris researchers?",
+    "question": "A team in Paris beat James Chadwick to the paraffin-wax test in January 1932 and saw the same recoiling protons he did. These superb experimenters reported that gamma rays were causing them. Who were the Paris researchers?",
     "answer": "Irene and Frederic Joliot-Curie",
     "choices": [
       "Irene and Frederic Joliot-Curie",
@@ -4291,7 +4265,7 @@
   },
   {
     "tier": 4,
-    "question": "By 1932 the British physicist James Chadwick had spent about twelve years hunting for a neutral particle, roughly the mass of a proton, that he believed sat inside the atomic nucleus. He was hunting it because his own boss at the Cavendish Laboratory in Cambridge had already predicted such a particle in a famous 1920 lecture to the Royal Society. Which physicist gave that 1920 lecture?",
+    "question": "James Chadwick knew what he was seeing in 1932 because he had been hunting it for about twelve years: a neutral particle, roughly the mass of a proton, sitting inside the atomic nucleus. His own boss at the Cavendish Laboratory in Cambridge had predicted such a particle in a famous 1920 lecture to the Royal Society. Which physicist gave that lecture?",
     "answer": "Ernest Rutherford",
     "choices": [
       "Ernest Rutherford",
@@ -4304,7 +4278,7 @@
   },
   {
     "tier": 5,
-    "question": "Within seven years of James Chadwick's paper, physicists were splitting uranium with slow neutrons. A slow proton fired at uranium is turned away long before it reaches the nucleus. What property of the neutron lets it walk in where the proton cannot?",
+    "question": "Lise Meitner, Otto Hahn and Fritz Strassmann split uranium in 1938 and 1939 with James Chadwick's new particle, moving slowly. A slow proton fired at uranium is turned away long before it reaches the nucleus. What property of Chadwick's particle lets it walk in where the proton cannot?",
     "answer": "it carries no electric charge to be repelled by",
     "choices": [
       "it carries no electric charge to be repelled by",
@@ -4317,7 +4291,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1854, in the French city of Lille, a young chemist opened a brand-new science school for students bound for the factories and dye-works of the industrial north. In his opening lecture he told them a working mind, kept alert and ready, catches what luck offers. He put it in a single line: 'in the fields of observation, chance favours only the prepared mind.' Who said it?",
+    "question": "A young chemist opened a new science school for Lille in 1854, for students bound for the factories and dye-works of northern France. An alert mind catches what luck offers, he told them, and he put it in one line: 'in the fields of observation, chance favours only the prepared mind.' Who said it?",
     "answer": "Louis Pasteur",
     "choices": [
       "Louis Pasteur",
@@ -4330,7 +4304,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 1854 talk at Lille, Louis Pasteur told the story of 'the prepared mind.' He pointed to a Scandinavian scientist who saw a compass needle twitch next to a live wire during a lecture. Everyone saw the wobble. Only one man knew what it meant, because he had been chasing that question for years. What link did that tiny twitch reveal?",
+    "question": "Ørsted, a Danish scientist, was lecturing in 1820 when a compass needle twitched beside a live wire. Everyone saw the wobble. Only one man knew what it meant, because he had been chasing that question for years. What link did that tiny twitch reveal?",
     "answer": "An electric current creates a magnetic field around the wire",
     "choices": [
       "An electric current creates a magnetic field around the wire",
@@ -4342,47 +4316,8 @@
     "topic": "chance-favors-the-prepared-mind"
   },
   {
-    "tier": 3,
-    "question": "On 6 April 1938 the young DuPont chemist Roy Plunkett went to the lab freezer for a heavy steel cylinder of tetrafluoroethylene gas. He opened the valve and nothing came out. Most chemists would have written it up as a leak and moved on. Plunkett instead did one boring routine thing that revealed the discovery of Teflon. What single check did he run first?",
-    "answer": "He weighed the whole cylinder on a lab balance",
-    "choices": [
-      "He weighed the whole cylinder on a lab balance",
-      "He tested the valve with a soap-bubble sniffer",
-      "He heated the cylinder to release trapped gas",
-      "He rinsed the valve with hot solvent"
-    ],
-    "context": "The cylinder still weighed the same as when it had been full - so nothing had actually leaked. Plunkett sawed it open and found a slippery white powder inside. Remove the lab balance and there is no anomaly to notice. Source: Science History Institute, Roy J. Plunkett (https://www.sciencehistory.org/education/scientific-biographies/roy-j-plunkett/).",
-    "topic": "chance-favors-the-prepared-mind"
-  },
-  {
-    "tier": 3,
-    "question": "In 1913 the Sheffield metallurgist Harry Brearley was hunting a longer-lived steel for British gun barrels. Along the way he cast a chromium alloy that turned out to be the wrong hardness for the guns. The alloy might have been thrown out as a failure - but one routine step Brearley never skipped when examining a sample gave the alloy away. Which routine step?",
-    "answer": "He etched every polished sample with nitric acid",
-    "choices": [
-      "He etched every polished sample with nitric acid",
-      "He dropped every sample into a flame test",
-      "He struck every sample with a spring-loaded hammer",
-      "He bent every sample in a vise to failure"
-    ],
-    "context": "Etching with acid is how a metallurgist brings out the grain structure under a microscope. Brearley's sample stubbornly refused to etch - and that refusal is the moment stainless steel was noticed. Source: Nautilus, 'The Father of Modern Metal' (https://nautil.us/the-father-of-modern-metal-235939).",
-    "topic": "chance-favors-the-prepared-mind"
-  },
-  {
-    "tier": 4,
-    "question": "In 1968 the 3M scientist Spencer Silver produced an adhesive that stuck lightly, then peeled off cleanly and could be re-stuck. For about six years he could not find anyone at 3M who could name a use for it. Silver had a favourite phrase for what he had made, and he used it in every in-house pitch. How did he describe his invention?",
-    "answer": "A solution waiting for a problem to solve",
-    "choices": [
-      "A solution waiting for a problem to solve",
-      "A better rubber cement for schoolrooms",
-      "A cheap replacement for masking tape",
-      "A promising future aerospace adhesive"
-    ],
-    "context": "Six or seven years later Silver's colleague Art Fry needed a bookmark for his church hymnal that would not damage the page - and Silver's 'solution' finally had its problem. Post-it Notes shipped in 1980. Source: C&EN, 'Spencer F. Silver' (https://cen.acs.org/acs-news/Spencer-F-Silver-inventor-of-sticky-note-adhesive-dies-at-80/99/web/2021/05).",
-    "topic": "chance-favors-the-prepared-mind"
-  },
-  {
     "tier": 5,
-    "question": "Newton's apple appears in William Stukeley's 1752 Memoirs of Sir Isaac Newton's Life. Kekule's benzene-ring-as-snake dream appears in an 1890 speech he gave to the German Chemical Society. Careful historians of science rank both stories as the same KIND of source. Which kind?",
+    "question": "William Stukeley set down Newton's falling apple in his 1752 memoir of Newton. Kekule told of his dream of a snake and the benzene ring in an 1890 speech to the German Chemical Society. Careful historians of science rank both stories as the same kind of source. Which kind?",
     "answer": "A late self-told anecdote, not a contemporary record",
     "choices": [
       "A late self-told anecdote, not a contemporary record",
@@ -4395,7 +4330,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1930, 19-year-old Subrahmanyan Chandrasekhar sailed from India to England to start a Cambridge scholarship. Between meals he worked out that a burnt-out star heavier than about 1.4 times the Sun's mass cannot hold itself up against its own gravity. What does such a doomed star do next?",
+    "question": "Subrahmanyan Chandrasekhar, aged 19, sailed from India to England in 1930 for a Cambridge scholarship. Between meals he worked out that a burnt-out star above a certain mass cannot settle as a white dwarf. What does such a doomed star do next?",
     "answer": "It collapses into something even denser, like a black hole",
     "choices": [
       "It collapses into something even denser, like a black hole",
@@ -4408,7 +4343,7 @@
   },
   {
     "tier": 2,
-    "question": "A white dwarf is the leftover core of a small or medium star - a body only about the size of Earth but crammed with roughly the mass of the Sun. An ordinary white dwarf has already burned through all of its nuclear fuel, so it cannot rely on heat pressure to hold itself up against gravity. What DOES prop it up?",
+    "question": "Subrahmanyan Chandrasekhar studied the white dwarf, the burnt-out core of a Sun-like star, a body about the size of Earth crammed with roughly the mass of the Sun. With nothing left to burn, heat pressure cannot hold it up against gravity. What does prop it up?",
     "answer": "A quantum rule that forbids two electrons from occupying the same state",
     "choices": [
       "A quantum rule that forbids two electrons from occupying the same state",
@@ -4421,7 +4356,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1930, on a boat sailing from India to England, the 19-year-old physicist Subrahmanyan Chandrasekhar worked out that a white dwarf star - the leftover core of a dead sun-like star - cannot be heavier than about 1.4 times the mass of our Sun without collapsing. The older white-dwarf theory said such stars could grow to any size and still hold steady. Chandrasekhar's addition came from one specific piece of physics that the older theorists had left out. What did he put in?",
+    "question": "Subrahmanyan Chandrasekhar added one piece of physics to the theory of white dwarfs on a boat from India to England in 1930. The older theory said these leftover cores of dead stars could grow to any size and still hold steady, but his version put a ceiling on their mass. What had the older theorists left out?",
     "answer": "Special relativity",
     "choices": [
       "Special relativity",
@@ -4434,7 +4369,7 @@
   },
   {
     "tier": 4,
-    "question": "When a Sun-like star runs out of fuel, its core shrinks into a hot, dense ember the size of Earth called a white dwarf. In 1930 a young Indian astronomer named Chandrasekhar calculated that this ember can only balance against its own gravity if it weighs less than a limit measured in suns. Where did his calculation place that upper limit?",
+    "question": "Chandrasekhar calculated in 1930 that a white dwarf, the hot, dense ember the size of Earth left when a Sun-like star runs out of fuel, can balance against its own gravity only below a limit measured in suns. Where did his calculation place that upper limit?",
     "answer": "About 1.4 suns",
     "choices": [
       "About 1.4 suns",
@@ -4447,7 +4382,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1930 the young Indian physicist Subrahmanyan Chandrasekhar had shown by hard math that any dying star heavier than about 1.4 times the Sun cannot settle down as a stable white dwarf; it must keep collapsing. The older British astronomer Arthur Eddington hated the idea and mocked it in public. In a 1935 issue of The Observatory journal he printed a short, sharp objection to Chandrasekhar's mass limit. What did he actually write in that objection?",
+    "question": "Arthur Eddington rose in London in January 1935, before the Royal Astronomical Society, and attacked Subrahmanyan Chandrasekhar's result in public: any dying star above a certain mass cannot settle as a stable white dwarf and must keep collapsing. In The Observatory that year he put his objection in print. What did he write?",
     "answer": "'There should be a law of Nature to prevent a star from behaving in this absurd way.'",
     "choices": [
       "'There should be a law of Nature to prevent a star from behaving in this absurd way.'",
@@ -4460,7 +4395,7 @@
   },
   {
     "tier": 5,
-    "question": "In January 1932, one month before the neutron was found, a Soviet physicist made a bold prediction. He argued that squeezing a star's core hard enough would make it behave like one giant atomic nucleus. What kind of collapsed star did he predict, decades before any were confirmed?",
+    "question": "Landau, a Soviet physicist, made a bold proposal early in 1932: squeezing a star's core hard enough would make it behave like one giant atomic nucleus. That idea led him to speculate about one kind of collapsed star, decades before any were confirmed. What kind?",
     "answer": "A neutron star",
     "choices": [
       "A neutron star",
@@ -4473,7 +4408,7 @@
   },
   {
     "tier": 1,
-    "question": "Take a square metal plate, clamp it at its center on a small stand, sprinkle fine sand across the top, and drag a violin bow along one edge to make the plate ring. In 1787 the German physicist Ernst Chladni published a whole book of the shapes the sand takes when the plate sings. What does the sand do?",
+    "question": "Ernst Chladni clamps a square metal plate at its centre, sprinkles fine sand over it and drags a violin bow along one edge until the plate rings. A student repeats it in a kitchen with a baking sheet, a phone speaker and table salt. What does the sand do?",
     "answer": "heaps itself into sharp symmetrical lines",
     "choices": [
       "heaps itself into sharp symmetrical lines",
@@ -4486,7 +4421,7 @@
   },
   {
     "tier": 2,
-    "question": "During a Chladni demonstration, a bow steadily plays a note on a metal plate while sand on top settles into a striking pattern. Halfway through, the presenter presses one fingertip firmly near the centre of the plate. What happens to the sand pattern?",
+    "question": "A presenter at a Chladni demonstration bows a steady note on a metal plate while the sand on top settles into a striking pattern. Halfway through, she presses one fingertip firmly near the centre of the plate. What happens to the sand pattern?",
     "answer": "the whole pattern reorganises around the finger",
     "choices": [
       "the whole pattern reorganises around the finger",
@@ -4499,7 +4434,7 @@
   },
   {
     "tier": 3,
-    "question": "When you drag a violin bow across the edge of a clamped metal plate sprinkled with sand or flour, the powder jumps around and then settles into striking geometric patterns — stars, six-fold flowers, roses. The German physicist Ernst Chladni made this experiment famous in the 1780s. Why does the powder collect where it does?",
+    "question": "Ernst Chladni drew a violin bow across the edge of a clamped metal plate sprinkled with sand or flour, and the powder jumped around, then gathered into stars, six-fold flowers and roses. He made the experiment famous in the 1780s. Why does the powder collect where it does?",
     "answer": "It settles on lines where the plate is not vibrating",
     "choices": [
       "It settles on lines where the plate is not vibrating",
@@ -4512,7 +4447,7 @@
   },
   {
     "tier": 4,
-    "question": "Michael Faraday redid Chladni's experiment in 1831 with a much lighter dust than sand -- powdered lycopodium spores. The pattern was the exact inverse of Chladni's: the powder gathered in the loudest-moving regions, not the quiet ones. What was sorting the spores the opposite way?",
+    "question": "Michael Faraday redid Ernst Chladni's experiment in 1831 with a dust much lighter than sand, powdered lycopodium spores. The pattern came out the exact inverse of Chladni's: the powder gathered in the regions moving hardest, not the quiet ones. What was sorting the spores the opposite way?",
     "answer": "tiny air currents stirred up by the vibration",
     "choices": [
       "tiny air currents stirred up by the vibration",
@@ -4525,7 +4460,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1809 the French Academy offered a prize for the math of a vibrating plate. The idea came from the sand patterns Chladni had shown Napoleon. The only serious entry came from a young woman named Sophie Germain, who was barred from college because she was female. How did she learn the hard math she needed?",
+    "question": "Sophie Germain alone sent a serious entry when the French Academy offered a prize in 1809 for the mathematics of a vibrating plate. The idea came from the sand patterns Ernst Chladni had shown Napoleon. The École Polytechnique would not admit a woman. How did she learn the hard mathematics she needed?",
     "answer": "She taught herself from borrowed lecture notes",
     "choices": [
       "She taught herself from borrowed lecture notes",
@@ -4538,7 +4473,7 @@
   },
   {
     "tier": 4,
-    "question": "Sophie Germain's first submission to the Institut prize was rejected for mathematical errors. Her second earned only an honourable mention. She won the grand prize in 1816, the first woman ever to take a Paris Academy grand prize -- but the winning memoir was still not entirely correct. Who later supplied the last piece?",
+    "question": "Sophie Germain saw her first entry for the Paris Academy's prize rejected for mathematical errors, and her second earned only an honourable mention. She won the grand prize in 1816, the first woman ever to take one, but the winning memoir was still not entirely correct. Who later supplied the last piece?",
     "answer": "Gustav Kirchhoff, who corrected the boundary conditions",
     "choices": [
       "Gustav Kirchhoff, who corrected the boundary conditions",
@@ -4551,7 +4486,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1794 the physicist Chladni argued that the stones peasants reported falling from the sky really did come from beyond Earth. Scholars scoffed at his claim. Then in April 1803 a spectacular shower rained thousands of small stones over a French village in broad daylight. What key question about meteorites did that fall finally settle?",
+    "question": "Ernst Chladni made a bold claim in 1794 about the stones country people said had fallen from the sky, and learned men laughed. Then in April 1803 a spectacular shower rained thousands of small stones over a French village in broad daylight, and the physicist Biot investigated. What did that fall finally settle?",
     "answer": "That rocks really do fall to Earth from space",
     "choices": [
       "That rocks really do fall to Earth from space",
@@ -4564,7 +4499,7 @@
   },
   {
     "tier": 1,
-    "question": "Clair Patterson's rock tests kept coming out as junk. He tracked the trouble to lead getting into everything: the air of his lab, the dust, the benches, the glassware. Then he tested one thing that had nothing to do with the study. It had lead in it too. What did he test?",
+    "question": "Clair Patterson tracked the junk results from his rock tests to lead in everything: the air of his lab, the dust, the benches, the glassware. Then he tested one thing that had nothing to do with the study, and it held lead too. What did he test?",
     "answer": "The hair on his own head",
     "choices": [
       "The ink in his notebook",
@@ -4577,7 +4512,7 @@
   },
   {
     "tier": 1,
-    "question": "Clair Patterson was the Caltech geochemist who spent his life measuring lead in almost everything. In the late 1960s he tested the flesh of tuna two ways. A fresh tuna caught at sea carried about 0.3 nanograms of lead per gram of flesh. The same species canned carried 1,400 — thousands of times more. Where was the extra lead coming from?",
+    "question": "Tuna came into Clair Patterson's lab two ways in the late 1960s. A fresh fish caught at sea carried about 0.3 nanograms of lead per gram of flesh. The same species canned carried 1,400, thousands of times more. Where was the extra lead coming from?",
     "answer": "The lead solder sealing the can's seams",
     "choices": [
       "The lead solder sealing the can's seams",
@@ -4590,7 +4525,7 @@
   },
   {
     "tier": 2,
-    "question": "By 1953 Clair Patterson knew the lead ruining his readings came from the room, not the rock. So at Caltech he built one of the first ultra-clean labs. Every tool was acid-washed and every door sealed. He also refused to use the chemicals his suppliers sent as-is. What did he do to them first?",
+    "question": "The lead ruining Clair Patterson's readings came from the room and not the rock, so in 1953 he built one of the first ultra-clean labs at Caltech. He had every tool acid-washed and every door sealed. He also refused to use the chemicals his suppliers sent as they came. What did he do to them first?",
     "answer": "Re-distilled every one of them himself",
     "choices": [
       "Diluted them tenfold before any use",
@@ -4603,7 +4538,7 @@
   },
   {
     "tier": 2,
-    "question": "The rock Clair Patterson picked to date the Earth was the Canyon Diablo meteorite. It does not sit as one piece. About 30 tonnes of chunks have been found across northern Arizona. The biggest is a 639-kilogram lump now in a visitor centre. Why is it scattered rather than whole?",
+    "question": "A tourist in a visitor centre stands beside a 639-kilogram lump of the Canyon Diablo meteorite, the rock Clair Patterson picked to date the Earth. About 30 tonnes of such chunks have been found across northern Arizona. Why is the meteorite scattered rather than whole?",
     "answer": "The asteroid exploded on impact and blasted out a crater",
     "choices": [
       "The parent body broke apart high in the atmosphere",
@@ -4616,7 +4551,7 @@
   },
   {
     "tier": 2,
-    "question": "Nobody had measured the lead in the air in 1750, or 1850, or 1900 -- the instruments did not exist. Clair Patterson wanted those numbers anyway, so he went hunting for a place that had recorded each year's air and stored it, layer on layer, ever since. Where did he go?",
+    "question": "Clair Patterson wanted the lead in the air of 1750, of 1850 and of 1900, and nobody had measured it because the instruments did not exist. So he went hunting for a place that had recorded each year's air and stored it, layer on layer, ever since. Where did he go?",
     "answer": "To Greenland, to drill out a core of ice",
     "choices": [
       "To California, to core bristlecone pines",
@@ -4642,7 +4577,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1956 Clair Patterson published his answer for the age of the Earth -- 4.55 billion years, give or take 70 million -- read out of the lead in meteorites. The textbooks of the day carried roughly 3.3 billion. Seventy years of sharper instruments have gone by since. What has become of Patterson's figure?",
+    "question": "Clair Patterson published his answer for the age of the Earth in 1956: 4.55 billion years, give or take 70 million, read out of the lead in meteorites. The textbooks of the day carried roughly 3.3 billion. Decades of sharper instruments have gone by since. What has become of Patterson's figure?",
     "answer": "Later work has shifted it by only about ten million years",
     "choices": [
       "Later work halved it once radioactive heating was allowed for",
@@ -4655,7 +4590,7 @@
   },
   {
     "tier": 3,
-    "question": "Clair Patterson read the lead in Greenland ice layer by layer down the column, the deepest layers he reached having been laid down long before any industry existed. By 1969 the result was public. Set against those deep pre-industrial layers, what had the lead done in the most recent ice?",
+    "question": "Layer by layer, Clair Patterson read the lead in buried snow, down to layers laid long before any industry existed. By 1969 the result was public. Set against those deep pre-industrial layers, what had the lead done in the most recent snow?",
     "answer": "Risen more than two-hundredfold",
     "choices": [
       "Risen by about a tenth at most",
@@ -4668,7 +4603,7 @@
   },
   {
     "tier": 4,
-    "question": "For decades Robert Kehoe was the top expert on lead in the human body. His Kettering Lab at Cincinnati held a near-total lock on lead safety research. Its studies were the ones everyone cited on whether leaded petrol was safe. Who paid for that lab?",
+    "question": "Clair Patterson took on Robert Kehoe, the top expert on lead in the human body. Kehoe's Kettering Lab at Cincinnati held a near-total lock on lead safety research, and its studies were the ones everyone cited on whether leaded petrol was safe. Who paid for that lab?",
     "answer": "General Motors, DuPont and the Ethyl Corporation",
     "choices": [
       "The Rockefeller, Carnegie and Guggenheim foundations",
@@ -4681,7 +4616,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Kehoe's argument was that the lead in human bodies had always been there. To test it, Clair Patterson compared bone from 1,600-year-old Peruvian burials with modern bone, and found the modern bone carrying between seven hundred and twelve hundred times more lead. One objection was obvious: perhaps ancient bone simply loses what it holds over sixteen centuries. How did Patterson close that hole?",
+    "question": "Robert Kehoe argued that the lead in human bodies had always been there. To test it, Clair Patterson compared bone from 1,600-year-old Peruvian burials with modern bone, and found the modern bone carrying between seven hundred and twelve hundred times more lead. One objection was obvious: ancient bone might simply lose what it holds over sixteen centuries. How did Patterson close that hole?",
     "answer": "He measured barium and calcium too, and those had not shifted",
     "choices": [
       "He measured barium and calcium too, and those had not shifted",
@@ -4694,7 +4629,7 @@
   },
   {
     "tier": 4,
-    "question": "Patterson had built the ultra-clean lab, measured lead in old bone, deep ocean, and deep ice, and set the numbers other scientists worked from. In 1971 the National Research Council put together a panel on airborne lead pollution. What happened to Patterson when the panel was formed?",
+    "question": "Clair Patterson had built the ultra-clean lab, measured lead in old bone and the deep ocean, and set numbers everyone used. The National Research Council put together a panel on airborne lead pollution in 1971. What happened to him when the panel was formed?",
     "answer": "He was left off it entirely",
     "choices": [
       "He was made its chairman",
@@ -4707,7 +4642,7 @@
   },
   {
     "tier": 5,
-    "question": "Every radioactive clock has the same weak point: to read it you must know how much of the end product was already sitting in the sample at the start, before any decay began -- and nobody was there to write it down. Clair Patterson got round that by measuring several samples together and plotting them as a straight line, an isochron. Which feature of the plot hands him the starting amount?",
+    "question": "Clair Patterson ran into the weak point of every radioactive clock: to read it, a scientist must know how much of the end product sat in the sample before any decay began, and nobody was there to write it down. He took several samples at once and plotted them as a straight line, an isochron. Which feature of the plot handed him the starting amount?",
     "answer": "The point where the line crosses the axis",
     "choices": [
       "The steepness of the line across the plot",
@@ -4720,7 +4655,7 @@
   },
   {
     "tier": 5,
-    "question": "For decades the industry chemist Robert Kehoe defended tetraethyl leaded gasoline by insisting that human bodies had always carried lead. He went further: he held that the human species had biologically adapted to lead, the way a body adapts to anything it lives among. In the 1960s the Caltech geochemist Clair Patterson answered him in a single sentence. What did Patterson say?",
+    "question": "Robert Kehoe insisted, in defence of leaded petrol, that human bodies had always carried lead. He went further and held that the human species had biologically adapted to it, the way a body adapts to anything it lives among. Clair Patterson answered him in a single sentence in the 1960s. What did Patterson say?",
     "answer": "Humans have worked lead for a few thousand years, an instant on the Darwinian scale",
     "choices": [
       "Humans store lead in their bones, which no species adapted to a poison would do",
@@ -4733,7 +4668,7 @@
   },
   {
     "tier": 5,
-    "question": "Leaded petrol did not leave American pumps because one man won an argument, though Clair Patterson did supply the crucial measurement. The phase-out took twenty years of regulation, finishing in 1986. But one step mattered more than any argument about health: from the 1975 model year, new American cars had to burn unleaded fuel because lead wrecked a new device those cars now carried. Which device?",
+    "question": "Clair Patterson supplied the crucial measurement and forced the question, but leaded petrol did not leave American pumps because one man won an argument. The phase-out took twenty years of regulation, finishing in 1986. One step mattered more than any argument about health: from the 1975 model year, new American cars had to burn unleaded fuel because lead wrecked a new device they carried. Which device?",
     "answer": "The catalytic converter",
     "choices": [
       "The catalytic converter",
@@ -4746,7 +4681,7 @@
   },
   {
     "tier": 1,
-    "question": "In September 1904 a panel of experts gathered in a courtyard in Berlin to watch a horse called Clever Hans. His owner asked him math problems, and Hans answered by tapping the correct number with his hoof. A veterinarian, a circus director, a cavalry officer, several schoolteachers and the director of the Berlin zoo all watched carefully. What did the panel decide?",
+    "question": "A panel of experts gathered in a Berlin courtyard in September 1904 to watch a horse called Clever Hans tap out sums with his hoof. It included a veterinarian, a circus director, a cavalry officer, schoolteachers and the Berlin zoo's director. What did the panel decide?",
     "answer": "That no trickery was involved",
     "choices": [
       "That no trickery was involved",
@@ -4759,7 +4694,7 @@
   },
   {
     "tier": 1,
-    "question": "Clever Hans was a horse in Berlin who seemed to answer math problems by tapping a hoof. His owner charged no admission, believed every hoof tap, and taught the horse in his own backyard. Who was that owner?",
+    "question": "Clever Hans tapped his hoof to answer a math problem in front of a Berlin crowd. His owner charged no admission, believed every hoof tap and taught the horse in his own backyard. Who was that owner?",
     "answer": "A retired gymnasium mathematics teacher named Wilhelm von Osten",
     "choices": [
       "A retired gymnasium mathematics teacher named Wilhelm von Osten",
@@ -4772,7 +4707,7 @@
   },
   {
     "tier": 2,
-    "question": "Around 1904 in Berlin, a retired schoolteacher named Wilhelm von Osten led out a black stallion called Clever Hans and asked him arithmetic questions in front of paying crowds. The horse tapped his hoof for the answer, and audiences gasped - he seemed to be truly thinking. The Berlin crowds were shown Clever Hans doing far more than adding small numbers. Which trio of skills was in his advertised repertoire?",
+    "question": "The owner of Clever Hans led the black stallion out before a Berlin crowd around 1904 and asked him arithmetic questions. The horse tapped out each answer and seemed to be truly thinking. The crowds were shown far more than adding small numbers. Which trio of skills was in his advertised repertoire?",
     "answer": "Fractions, telling the time, and spelling German",
     "choices": [
       "Fractions, telling the time, and spelling German",
@@ -4785,7 +4720,7 @@
   },
   {
     "tier": 3,
-    "question": "In Berlin around 1900, a horse called Clever Hans became famous for seeming to solve math problems by tapping his hoof — audiences watched him answer sums and even spell out words. In 1907 Oskar Pfungst, a student at the Psychological Institute at the University of Berlin, redesigned the tests around two knobs he could turn independently. Between them, they cracked the case and revealed how Hans was really getting the answers. What were the two things Pfungst varied?",
+    "question": "Oskar Pfungst, a student at the Psychological Institute at the University of Berlin, redesigned the Clever Hans tests in 1907 around two knobs he could turn independently. The horse had become famous for seeming to solve math problems by tapping his hoof, and between them the two knobs revealed how he was really getting the answers. What were the two things Pfungst varied?",
     "answer": "Whether Hans could see the questioner, and whether the questioner knew the answer",
     "choices": [
       "Whether Hans could see the questioner, and whether the questioner knew the answer",
@@ -4798,7 +4733,7 @@
   },
   {
     "tier": 4,
-    "question": "Oskar Pfungst's decisive numbers, published in 1907, are the ones every experimental-psychology course still teaches. Given a questioner Hans could see who knew the right answer, Hans was right on 50 of 56 trials -- 89%. Given a questioner Hans could not see, how did his score change?",
+    "question": "Clever Hans scored 50 of 56, or 89 percent, in Oskar Pfungst's trials of 1907 when he faced a questioner he could see who knew the right answer. Given a questioner Hans could not see, how did his score change?",
     "answer": "It collapsed to 2 of 35 -- about 6%",
     "choices": [
       "It collapsed to 2 of 35 -- about 6%",
@@ -4811,7 +4746,7 @@
   },
   {
     "tier": 4,
-    "question": "In early-1900s Berlin a horse named Clever Hans amazed crowds by tapping out answers to arithmetic and spelling questions with his hoof. The young German psychologist Oskar Pfungst worked out that Hans could only answer when the questioner in front of him already knew the answer, so Hans had to be reading the human, not doing the sum. Pfungst then watched the questioners very closely as Hans tapped. What was the tiny movement they were making, the movement Hans was reading?",
+    "question": "A questioner stood before Clever Hans as the horse tapped, and Oskar Pfungst watched the man very closely. Pfungst had worked out that Hans could answer only when the person in front of him already knew the answer, so Hans had to be reading the human, not doing the sum. What was the tiny signal Hans was reading?",
     "answer": "A small upward jerk of the head on the correct tap",
     "choices": [
       "A small upward jerk of the head on the correct tap",
@@ -4824,7 +4759,7 @@
   },
   {
     "tier": 5,
-    "question": "After the German psychologist Oskar Pfungst proved that Clever Hans, the arithmetic-tapping horse of 1900s Berlin, was reading tiny head movements from his questioners rather than doing sums, Pfungst tried something braver. He sat in the questioner's chair himself, now fully aware of the little upward head-jerk that cued the correct tap, and tried hard not to give it. What happened when he ran the trial?",
+    "question": "Oskar Pfungst worked out that Clever Hans was reading a tiny cue from his questioners rather than doing sums, and then he tried something braver. He sat in the questioner's chair himself, now fully aware of the cue, and tried hard not to give it. What happened when he ran the trial?",
     "answer": "He emitted the cue involuntarily anyway, even while trying to suppress it",
     "choices": [
       "He emitted the cue involuntarily anyway, even while trying to suppress it",
@@ -4837,7 +4772,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1993, four researchers tested 'facilitated communication', in which an assistant physically supports a non-speaking client's hand at a keyboard. In some trials the client and the facilitator were shown different pictures. Whose picture did the typed answer name?",
+    "question": "Four researchers tested 'facilitated communication' in 1993, a method in which an assistant physically supports a non-speaking client's hand at a keyboard. In some trials the client and the facilitator were shown different pictures. Whose picture did the typed answer name?",
     "answer": "The facilitator's picture, essentially every time",
     "choices": [
       "The facilitator's picture, essentially every time",
@@ -4850,7 +4785,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1670s the Danish astronomer Ole Romer worked at the Paris Observatory. Jupiter's moon Io ducks into Jupiter's shadow once every 1.769 days, so those blackouts should tick like a pendulum. Romer logged about 140 of them and found they would not keep to the table. What was the pattern in the drift?",
+    "question": "Ole Romer logged about 140 eclipses of Io, a moon of Jupiter, in the 1670s. Io ducks into its planet's shadow once every 1.769 days, so those blackouts should tick like a pendulum, but they would not keep to the table. What was the pattern in the drift?",
     "answer": "Early when Earth was near Jupiter, late when it was far.",
     "choices": [
       "Early when Earth was near Jupiter, late when it was far.",
@@ -4863,7 +4798,7 @@
   },
   {
     "tier": 1,
-    "question": "In his 1638 book Two New Sciences, the Italian scientist Galileo Galilei describes an experiment to catch light itself in the act. Two men stand less than a mile apart across a valley at night, each holding a covered lantern. One uncovers his lantern; the moment the other sees the flash, he uncovers his in reply, and the first man times the round trip. Galileo ran the test himself. What did he then report?",
+    "question": "Galileo Galilei tried to time light with two men at night across a valley, each with a covered lantern. One uncovered his, the other answered on seeing the flash, and the first timed the round trip. What did Galileo report?",
     "answer": "He could not tell, only that light must be extraordinarily rapid.",
     "choices": [
       "He could not tell, only that light must be extraordinarily rapid.",
@@ -4889,7 +4824,7 @@
   },
   {
     "tier": 2,
-    "question": "James Bradley had spent three years stuck. Hunting for stellar parallax, he had found instead that every star traces a tiny annual ellipse, and he could not say why. The most-told story of his breakthrough puts him on a sailing boat on the Thames in 1728. What does the story say he noticed?",
+    "question": "James Bradley went sailing on the Thames in 1728, as the most-told story has it, three years stuck on a puzzle. Hunting for stellar parallax, he had found instead that every star traces a tiny yearly ellipse, and he could not say why. What does the story say he noticed on the boat?",
     "answer": "The masthead flag swung round when the boat turned, not the wind.",
     "choices": [
       "The masthead flag swung round when the boat turned, not the wind.",
@@ -4902,7 +4837,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1667 Florence's Accademia del Cimento tried Galileo's lantern test again. Two lanterns stood about a mile apart. Watchers looked for any gap between one lantern's flash and the other's reply. They saw no delay at all. About how long was the delay they were hunting?",
+    "question": "Watchers from Florence's Accademia del Cimento tried Galileo's lantern test again in 1667, with two lanterns about a mile apart. They looked for any gap between one lantern's flash and the other's reply and saw no delay at all. About how long was the delay they were hunting?",
     "answer": "About eleven millionths of a second.",
     "choices": [
       "About eleven millionths of a second.",
@@ -4915,7 +4850,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 1676 Ole Romer shared his finding at the Paris Academy of Sciences. The next month it hit print in the Journal des scavans. This was the public announcement of the most talked-about measurement of the century. What form did that printed announcement take?",
+    "question": "Ole Romer shared his finding at the Paris Academy of Sciences in November 1676, and the next month it reached print in the Journal des scavans. It was the most talked-about measurement of the century. What form did that printed announcement take?",
     "answer": "An anonymous six-paragraph notice, written in the third person.",
     "choices": [
       "An anonymous six-paragraph notice, written in the third person.",
@@ -4928,7 +4863,7 @@
   },
   {
     "tier": 3,
-    "question": "Textbooks that credit Ole Romer with a figure like 227,000 kilometres per second are quoting somebody else's arithmetic, done later and with someone else's numbers. Romer himself published no speed at all. What he gave was a duration. What did that time measure?",
+    "question": "Ole Romer published no speed for light at all. Textbooks that credit him with a figure like 227,000 kilometres per second are quoting somebody else's arithmetic, done later and with someone else's numbers. What he gave was a duration. What did that time measure?",
     "answer": "The time light needs to cross the diameter of Earth's orbit -- about 22 minutes.",
     "choices": [
       "The time light needs to cross the diameter of Earth's orbit -- about 22 minutes.",
@@ -4941,7 +4876,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1849 Fizeau ran a light beam from a tower at his father's house 8,633 metres to a mirror on Montmartre and back, and on both legs it had to slip between the teeth of a wheel carrying 720 of them. Fizeau spun that wheel from a crawl up to dozens of turns a second, watching the mirror's answering flash. What happened to that flash as the wheel sped up?",
+    "question": "Hippolyte Fizeau ran a light beam in 1849 from his father's house 8,633 metres to a mirror on Montmartre and back, and on both legs it had to slip between the teeth of a wheel carrying 720 of them. He spun that wheel from a crawl up to dozens of turns a second, watching the mirror's answering flash. What happened to that flash as the wheel sped up?",
     "answer": "It vanished at one wheel speed, and returned at double that.",
     "choices": [
       "It vanished at one wheel speed, and returned at double that.",
@@ -4954,7 +4889,7 @@
   },
   {
     "tier": 3,
-    "question": "From 1725 to 1728 James Bradley pointed a telescope straight up at one star, hunting stellar parallax, a tiny yearly shift that would prove Earth actually moves. Parallax must peak six months apart, in June and December. Bradley did find a yearly shift of about 20 arcseconds either side of the star's true position. What told him it was not parallax?",
+    "question": "James Bradley pointed a telescope straight up at one star from 1725 to 1728, hunting stellar parallax, a tiny yearly shift that would prove Earth actually moves. Parallax must peak six months apart, in June and December. Bradley did find a yearly shift of about 20 arcseconds either side of the star's true position. What told him it was not parallax?",
     "answer": "Its extremes fell in March and September, three months out.",
     "choices": [
       "Its extremes fell in March and September, three months out.",
@@ -4967,7 +4902,7 @@
   },
   {
     "tier": 4,
-    "question": "Francois Arago proposed the decisive test in 1838 and his failing health stopped him running it: compare light's speed in air with its speed in water. The corpuscular theory of light and the wave theory made opposite predictions about the denser medium, so the result would kill one of them. On 27 April 1850, in his own Paris apartment, Leon Foucault spun a mirror at 600 to 800 turns a second with a small steam engine and ran the comparison. What did he find?",
+    "question": "Leon Foucault spun a mirror at 600 to 800 turns a second with a small steam engine in his own Paris apartment on 27 April 1850. He was running the test Francois Arago had proposed in 1838: compare light's speed in air with its speed in water. The corpuscular theory of light and the wave theory made opposite predictions about the denser medium. What did he find?",
     "answer": "Light runs slower in water, by very nearly a factor of 1.33.",
     "choices": [
       "Light runs slower in water, by very nearly a factor of 1.33.",
@@ -4980,7 +4915,7 @@
   },
   {
     "tier": 4,
-    "question": "Ole Romer worked under Cassini at the Paris Observatory. Cassini flat-out rejected the finite-speed idea, blaming the drifting eclipse times on quirks in the moons' own orbits. Robert Hooke called the evidence weak. Then in 1693, Cassini published new tables of Jupiter's moon eclipses. What did those tables contain?",
+    "question": "Cassini, Ole Romer's boss at the Paris Observatory, rejected the finite-speed idea flat out and blamed the drifting eclipse times on quirks in the moons' own orbits. Robert Hooke called the evidence weak. Then in 1693 Cassini published new tables of Jupiter's moon eclipses. What did those tables contain?",
     "answer": "Corrections of up to fourteen minutes, keyed to where Earth stood.",
     "choices": [
       "Corrections of up to fourteen minutes, keyed to where Earth stood.",
@@ -4993,7 +4928,7 @@
   },
   {
     "tier": 4,
-    "question": "Albert Michelson had chased light's speed since 1878, when he was a 26-year-old instructor spinning a mirror at the US Naval Academy; asked why he gave a lifetime to one number, he said 'because it's so much fun.' On Mount Wilson in 1926 he spun an eight-sided mirror 528 times a second and fired the beam to a reflector some 35 kilometres away. A speed is a distance over a time, so his answer was only as good as that 35 kilometres. How did they pin down the line between the peaks?",
+    "question": "Albert Michelson spun an eight-sided mirror 528 times a second on Mount Wilson in 1926 and fired the beam to a reflector some 35 kilometres away. Asked why he gave a lifetime to one number, he said 'because it's so much fun.' A speed is a distance over a time, so his answer was only as good as that 35 kilometres. How was the line between the peaks pinned down?",
     "answer": "Surveyors taped the whole line along the ground in invar, tape length by tape length.",
     "choices": [
       "Surveyors taped the whole line along the ground in invar, tape length by tape length.",
@@ -5006,7 +4941,7 @@
   },
   {
     "tier": 5,
-    "question": "For three centuries the speed of light was something you went out and measured, from Ole Romer's eclipsing moons to Louis Essen's resonant cavities. By 1950 the figure was pinned to within a few kilometres per second. Then in 1983 the 17th General Conference on Weights and Measures ended the chase, not with a finer measurement, but with a decision. What did the conference decide?",
+    "question": "Delegates to the 17th General Conference on Weights and Measures ended a three-century chase in 1983, not with a finer measurement but with a decision. From Ole Romer's eclipsing moons to Louis Essen's resonant cavities, the speed of light had been something to go out and measure, and by 1950 the figure was pinned to within a few kilometres per second. What did the conference decide?",
     "answer": "To define the metre as the distance light travels in 1/299,792,458 of a second.",
     "choices": [
       "To define the metre as the distance light travels in 1/299,792,458 of a second.",
@@ -5019,7 +4954,7 @@
   },
   {
     "tier": 5,
-    "question": "Here is a claim that sounds like crankery and is not: nobody has ever measured the one-way speed of light. Every experiment ever performed -- Hippolyte Fizeau's wheel, Leon Foucault's mirror, Albert Michelson's mountain beam -- times a round trip, out and back. To time a one-way journey you would need a clock at each end. Why has no experiment ever managed it?",
+    "question": "A physicist sets a clock at each end of a long path, hoping to time a flash of light going one way. Every experiment ever performed, from Hippolyte Fizeau's wheel to Albert Michelson's mountain beam, has timed a round trip, out and back, and nobody has ever measured the one-way speed of light. Why has no experiment ever managed it?",
     "answer": "Any way of synchronising two distant clocks assumes the answer.",
     "choices": [
       "Any way of synchronising two distant clocks assumes the answer.",
@@ -5045,7 +4980,7 @@
   },
   {
     "tier": 1,
-    "question": "On 23 March 1989 two Utah chemists, Martin Fleischmann and Stanley Pons, announced they had produced nuclear fusion inside a simple jar of heavy water on a laboratory bench. If true, it would rewrite physics and hand the world a limitless clean energy source. Where did Fleischmann and Pons announce it?",
+    "question": "Martin Fleischmann and Stanley Pons announced on 23 March 1989 that they had produced nuclear fusion inside a simple jar of heavy water on a laboratory bench. If true, it would rewrite physics and hand the world a limitless clean energy source. Where did they announce it?",
     "answer": "At a press conference at the University of Utah",
     "choices": [
       "At a press conference at the University of Utah",
@@ -5058,7 +4993,7 @@
   },
   {
     "tier": 2,
-    "question": "The Fleischmann-Pons cell that claimed tabletop fusion in 1989 used a rod of one special metal. It sat in heavy water with a platinum wire and a running current. That metal soaks up hydrogen like a sponge. The two chemists hoped that packing enough hydrogen inside it would fuse the atoms. Which metal?",
+    "question": "Stanley Pons and Martin Fleischmann built their 1989 tabletop cell around a rod of one special metal, set in heavy water with a platinum wire and a running current. That metal soaks up hydrogen like a sponge, and the two chemists hoped that packing enough hydrogen inside it would fuse the atoms. Which metal?",
     "answer": "Palladium",
     "choices": [
       "Palladium",
@@ -5071,7 +5006,7 @@
   },
   {
     "tier": 2,
-    "question": "Palladium can soak up hundreds of times its own volume in hydrogen gas. Fleischmann and Pons made a bet. They thought packing deuterium into palladium would squeeze the nuclei close enough to fuse. What does a deuterium nucleus carry that plain hydrogen does not?",
+    "question": "Two chemists, Martin Fleischmann and Stanley Pons, made a bet on the deuterium in their heavy water: packed into a metal that soaks up hydrogen, its nuclei might be squeezed near enough to fuse. What does a deuterium nucleus carry that plain hydrogen does not?",
     "answer": "An extra neutron",
     "choices": [
       "An extra neutron",
@@ -5084,7 +5019,7 @@
   },
   {
     "tier": 3,
-    "question": "In March 1989 two chemists, Martin Fleischmann and Stanley Pons, held a press conference at the University of Utah. They claimed a jar of heavy water and a palladium electrode was producing more heat than any chemistry could explain — nuclear fusion at room temperature, they said. Within days, physicists raised an unnerving objection. If the excess heat had really come from fusion at the reported rate, what should the setup and the surrounding room have shown?",
+    "question": "Physicists raised an unnerving objection within days of the claim Martin Fleischmann and Stanley Pons made in March 1989: that a jar of heavy water and a metal electrode was producing more heat than any chemistry could explain. Nuclear fusion at room temperature, the pair said. If that heat had really come from fusion, what should the setup and the surrounding room have shown?",
     "answer": "A neutron flux fatal to anyone standing next to it",
     "choices": [
       "A neutron flux fatal to anyone standing next to it",
@@ -5097,7 +5032,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 1989 the chemists Martin Fleischmann and Stanley Pons announced they had produced nuclear fusion at room temperature in a simple electrochemical cell of heavy water and palladium, a discovery that would have rewritten physics. As their nuclear fingerprint they published a sharp peak in a gamma-ray spectrum. Later that year Richard Petrasso and colleagues at MIT (the Massachusetts Institute of Technology) took a hard look at that peak in Nature. What was wrong with it?",
+    "question": "Richard Petrasso and his colleagues at the Massachusetts Institute of Technology took a hard look, later in 1989, at the sharp gamma-ray peak Martin Fleischmann and Stanley Pons had published as their nuclear fingerprint. The group wrote up what it saw in Nature. What was wrong with the peak?",
     "answer": "It had no Compton edge - every real peak from that detector shows one",
     "choices": [
       "It had no Compton edge - every real peak from that detector shows one",
@@ -5110,7 +5045,7 @@
   },
   {
     "tier": 4,
-    "question": "When the University of Utah chemists Martin Fleischmann and Stanley Pons went on television in March 1989 to claim tabletop 'cold fusion' in a jar of heavy water, they skipped the ordinary route of writing a peer-reviewed paper first. Every physics and chemistry department on Earth suddenly had an extraordinary claim to check. In the weeks after the Utah press conference, what did the world's physics and chemistry labs actually do?",
+    "question": "Stanley Pons and Martin Fleischmann went on television in March 1989 to claim tabletop 'cold fusion' in a jar of heavy water, skipping the ordinary route of writing a peer-reviewed paper first. No outside lab had seen their data. In the weeks that followed, what did the world's physics and chemistry labs actually do?",
     "answer": "More than a hundred labs on four continents tried to replicate the experiment",
     "choices": [
       "More than a hundred labs on four continents tried to replicate the experiment",
@@ -5123,7 +5058,7 @@
   },
   {
     "tier": 5,
-    "question": "By May 1989 the cold-fusion claim of Martin Fleischmann and Stanley Pons — that a tabletop cell in Utah was producing nuclear heat — was crumbling. It effectively ended at the American Physical Society meeting in Baltimore on 1 May. A Caltech team had built a more careful version of the cell, watching for the five telltale nuclear signs any real fusion should leave behind. Speaking for that team, the chemist Nathan Lewis reported what to the audience that day?",
+    "question": "Nathan Lewis, a Caltech chemist, spoke at the American Physical Society meeting in Baltimore on 1 May 1989, as the claim of Martin Fleischmann and Stanley Pons was crumbling. His team had built a more careful version of their cell, watching for the five telltale nuclear signs any real fusion should leave behind. What did he report to the audience that day?",
     "answer": "None of the five nuclear fingerprints - heat, neutrons, gammas, tritium or helium",
     "choices": [
       "None of the five nuclear fingerprints - heat, neutrons, gammas, tritium or helium",
@@ -5136,7 +5071,7 @@
   },
   {
     "tier": 5,
-    "question": "In March 1989 Fleischmann and Pons rushed to a press conference instead of waiting for peer review. A rival researcher at Brigham Young University was about to publish a related low-energy nuclear claim. What kind of science-community pressure pushed them to go public first?",
+    "question": "Steven Jones, a rival at Brigham Young University, was preparing a related claim of his own in March 1989 when Martin Fleischmann and Stanley Pons went public without waiting for peer review. What kind of pressure pushed the pair to go to the press?",
     "answer": "The race to be first to publish a breakthrough",
     "choices": [
       "The race to be first to publish a breakthrough",
@@ -5149,7 +5084,7 @@
   },
   {
     "tier": 5,
-    "question": "After the 1989 Fleischmann-Pons cold-fusion fiasco at the University of Utah, mainstream physics dropped the idea. A small research community has kept working on excess-heat experiments in palladium-deuterium and nickel-hydrogen systems. They also renamed the field to shake off the Utah baggage and get a fresh hearing from journals and funders. What name does that community publish under today?",
+    "question": "A small community of researchers renamed its field to shake off the Utah baggage of the 1989 claim by Martin Fleischmann and Stanley Pons, and to get a fresh hearing from journals and funders. Its members still run excess-heat experiments in metals loaded with hydrogen. What name does that community publish under today?",
     "answer": "Low-energy nuclear reactions (LENR)",
     "choices": [
       "Low-energy nuclear reactions (LENR)",
@@ -5162,7 +5097,7 @@
   },
   {
     "tier": 2,
-    "question": "A glow stick glows because you snap a thin glass tube inside it and let two chemicals mix; the reaction gives off its energy as light instead of heat. Warmth speeds up any chemical reaction; cold slows it down. Now try this: two identical fresh glow sticks are cracked at the same moment. One is dropped into a mug of hot tap water; the other is stood upright in a home freezer. Which pair of outcomes will actually happen?",
+    "question": "A girl cracks two identical fresh glow sticks at the same moment, drops one into a mug of hot tap water and stands the other upright in a home freezer. Which pair of outcomes will actually happen?",
     "answer": "The hot one blazes brighter and burns out fast; the frozen one dims but lasts for days",
     "choices": [
       "The hot one blazes brighter and burns out fast; the frozen one dims but lasts for days",
@@ -5175,7 +5110,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1928 the German chemist H. O. Albrecht reported that a certain then-obscure compound would glow bright blue when dropped into alkaline hydrogen peroxide. Under what name did that compound go on to become famous, half-recognised today by every crime-drama viewer?",
+    "question": "H. O. Albrecht, a German chemist, reported in 1928 that a then-obscure compound, first made in 1902, glowed bright blue when dropped into alkaline hydrogen peroxide. Under what name did that compound go on to become famous, half-recognised today by every crime-drama viewer?",
     "answer": "Luminol",
     "choices": [
       "Luminol",
@@ -5188,7 +5123,7 @@
   },
   {
     "tier": 4,
-    "question": "In a darkened crime-scene room, technicians spray a luminol solution across a floor scrubbed clean of blood years earlier. The scrubbed floor lights up in faint blue patches for about thirty seconds. What specific component of blood is catalysing that glow?",
+    "question": "In a darkened crime-scene room, technicians spray a forensic solution across a floor scrubbed clean of blood years earlier. The scrubbed floor lights up in faint blue patches for about thirty seconds. What specific component of blood is catalysing that glow?",
     "answer": "The iron atoms locked inside haemoglobin",
     "choices": [
       "The iron atoms locked inside haemoglobin",
@@ -5201,7 +5136,7 @@
   },
   {
     "tier": 4,
-    "question": "Luminol spray lights up any bloodstain still present, no matter how well it was scrubbed. Yet forensic manuals still call it a presumptive test only, never proof. Which grated kitchen root is the classic false-positive offender, glowing just as brightly when the spray hits it?",
+    "question": "A detective watches a washed floor glow blue under a crime-scene spray, the mark of old blood, yet forensic manuals still call the test presumptive only, never proof. Bleach and copper can set it off too. Which grated kitchen root is the classic false-positive offender, glowing just as brightly when the spray hits it?",
     "answer": "Horseradish",
     "choices": [
       "Horseradish",
@@ -5214,7 +5149,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1910 the Eugenics Record Office (ERO) opened at Cold Spring Harbor on Long Island in New York. Its founders wanted to prove that human traits — from feeblemindedness to criminality — ran in families and should be bred out of the population. It had a peculiar way of gathering evidence. It sent trained field workers out into small towns and country lanes with notebooks to do one thing. What did those field workers actually do?",
+    "question": "Davenport, a Harvard-trained biologist, founded the Eugenics Record Office at Cold Spring Harbor in 1910 to show that traits from 'feeblemindedness' to crime ran in families. The office sent field workers into small towns with notebooks. What did those field workers actually do?",
     "answer": "walk up to strangers' doors and record family 'defects'",
     "choices": [
       "walk up to strangers' doors and record family 'defects'",
@@ -5227,7 +5162,7 @@
   },
   {
     "tier": 2,
-    "question": "The Eugenics Record Office opened in 1910 on Long Island. Carnegie and Rockefeller money paid the bills. The office gathered family-tree records from American homes. It used them to push for laws about who could have kids. Which policy did the office push for hardest?",
+    "question": "A field worker took down a family tree in an American home for the Eugenics Record Office on Long Island. The office used such records to push for laws about who could have children. Which policy did the office push for hardest?",
     "answer": "Forced sterilization laws",
     "choices": [
       "Forced sterilization laws",
@@ -5240,7 +5175,7 @@
   },
   {
     "tier": 2,
-    "question": "The Eugenics Record Office (ERO) opened on Long Island in 1910 and spent nearly thirty years cataloguing family 'defects' to argue that undesirable people should be prevented from having children. It was not paid for by fringe donors. Three of the most respected names in American philanthropy bankrolled it — the same donors who were funding legitimate science at the time. Which trio paid for the ERO?",
+    "question": "Davenport opened the Eugenics Record Office on Long Island in 1910, and no fringe donors paid for it. Three of the most respected names in American philanthropy bankrolled its nearly thirty years of cataloguing family 'defects', the same donors who were funding legitimate science at the time. Which trio paid for the office?",
     "answer": "Mary Harriman, the Rockefeller Foundation, and Carnegie",
     "choices": [
       "Mary Harriman, the Rockefeller Foundation, and Carnegie",
@@ -5253,7 +5188,7 @@
   },
   {
     "tier": 3,
-    "question": "Harry Laughlin ran the Eugenics Record Office (ERO). He went a step beyond publishing scientific papers. In 1922 he released a document that a state legislature could adopt with barely any change and pass into force. What did Laughlin publish that year?",
+    "question": "Harry Laughlin, superintendent of the Eugenics Record Office, went a step beyond publishing scientific papers in 1922. He released a document that a state legislature could adopt with barely any change and pass into force. What did he publish that year?",
     "answer": "a Model Eugenical Sterilization Law",
     "choices": [
       "a Model Eugenical Sterilization Law",
@@ -5266,7 +5201,7 @@
   },
   {
     "tier": 3,
-    "question": "Harry Laughlin, the superintendent of the American Eugenics Record Office, published a model sterilization law in 1922 that let states forcibly sterilize people the state judged 'unfit'. Virginia's 1924 Eugenical Sterilization Act — the law upheld by the US Supreme Court in the 1927 case Buck v. Bell — was built directly on his template. Beyond Virginia, what is the documented reach of Laughlin's template across the states by the mid-1930s?",
+    "question": "Virginia's lawmakers took Harry Laughlin's template of 1922, which let a state forcibly sterilize people it judged 'unfit', and built their 1924 sterilization act directly on it, the law the Supreme Court upheld in Buck v. Bell in 1927. Beyond Virginia, how far had his template reached among the states by the mid-1930s?",
     "answer": "roughly 18 other states passed laws built on it",
     "choices": [
       "roughly 18 other states passed laws built on it",
@@ -5279,7 +5214,7 @@
   },
   {
     "tier": 3,
-    "question": "Between 1920 and 1924 the biologist Harry Laughlin testified three times before the U.S. House Committee on Immigration. He argued with pedigree charts that certain nationalities carried 'defective stock' and should be kept out. What kind of quota system did the 1924 law he helped shape put in place?",
+    "question": "Congressmen on the House Committee on Immigration heard Harry Laughlin three times between 1920 and 1924. He argued with pedigree charts that some immigrant groups carried 'defective stock' and should be kept out. What kind of quota system did the 1924 law he helped shape put in place?",
     "answer": "Quotas based on national origin",
     "choices": [
       "Quotas based on national origin",
@@ -5292,7 +5227,7 @@
   },
   {
     "tier": 4,
-    "question": "The Eugenics Record Office (ERO) was not brought down by protesters, by a court, or by a rival lab. In 1935 the Carnegie Institution sent a visiting committee to review the office's science. In 1939 Carnegie's new president Vannevar Bush acted on their report. What did the committee's report say about the ERO's science?",
+    "question": "Reviewers from the Carnegie Institution visited the Eugenics Record Office in 1935 to judge its science. The office was not brought down by protesters, by a court or by a rival lab: in 1939 Carnegie's new president, Vannevar Bush, acted on their report. What did the report say about the office's science?",
     "answer": "that the work was seriously wanting scientifically",
     "choices": [
       "that the work was seriously wanting scientifically",
@@ -5305,7 +5240,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1936 an ancient European university awarded Harry Laughlin an honorary degree, its citation praising his work in what it called 'the science of racial cleansing.' He accepted the degree by mail rather than by traveling to receive it in person. Which university awarded it?",
+    "question": "Harry Laughlin accepted an honorary degree by mail in 1936 rather than traveling to receive it in person. It came from an ancient European university, whose citation praised his work in what it called 'the science of racial cleansing.' Which university awarded it?",
     "answer": "the University of Heidelberg",
     "choices": [
       "the University of Heidelberg",
@@ -5318,7 +5253,7 @@
   },
   {
     "tier": 5,
-    "question": "Three months after Laughlin accepted his honorary degree from Nazi-era Heidelberg, he helped found a new American foundation. The money came from textile heir Wickliffe Draper. The Pioneer Fund was set up in 1937. Its first project brought material out of Nazi Germany to American audiences. What did the Pioneer Fund distribute in American churches and schools?",
+    "question": "Wickliffe Draper, a textile heir, put up the money for a new American foundation in 1937, and Harry Laughlin helped found it three months after accepting his honorary degree from a university in Nazi Germany. The Pioneer Fund's first project brought material out of Nazi Germany to American audiences. What did the fund distribute in American churches and schools?",
     "answer": "the Nazi eugenics propaganda film Erbkrank",
     "choices": [
       "the Nazi eugenics propaganda film Erbkrank",
@@ -5331,7 +5266,7 @@
   },
   {
     "tier": 1,
-    "question": "Nicolaus Copernicus was a cathedral canon in Poland. He held his astronomy book back for nearly thirty years. A stroke left him unable to move. The story says a printed copy reached him the day he died in 1543. What did the book claim about the Earth?",
+    "question": "Nicolaus Copernicus, a cathedral canon in Poland, lay dying after a stroke in 1543. He had held his astronomy book back for nearly thirty years, and a printed copy, by the recorded account, reached him the day he died. What did the book claim about the Earth?",
     "answer": "It is one of six planets circling a motionless Sun",
     "choices": [
       "It is one of six planets circling a motionless Sun",
@@ -5344,7 +5279,7 @@
   },
   {
     "tier": 1,
-    "question": "Track Mars against the background stars every clear night for a couple of years. Almost always the red planet drifts steadily eastward, night after night, as it swings around the Sun on a wider, slower orbit than Earth's. Then for about seventy days it slows, halts, and loops backward through the stars, before resuming its eastward march. Ancient astronomers puzzled over that loop for centuries. What actually produces it?",
+    "question": "A skywatcher tracks Mars against the stars every clear night for a couple of years. It drifts steadily eastward, then for about seventy days it slows, halts and loops backward before marching on. What actually produces that loop?",
     "answer": "Earth, on the faster inside track, sweeps past Mars",
     "choices": [
       "Earth, on the faster inside track, sweeps past Mars",
@@ -5357,7 +5292,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1539 a young math student named Rheticus went to visit Copernicus. He was the only student Copernicus ever taught. The old canon's manuscript on the heavens had sat unpublished for years. In 1540 Rheticus had a small book of his own printed. What was in it?",
+    "question": "Rheticus, a young math student, went to visit Copernicus in 1539, the only student the old canon ever taught. The manuscript on the heavens had sat unpublished for years. In 1540 Rheticus had a small book of his own printed. What was in it?",
     "answer": "A short summary of the theory, his Narratio Prima",
     "choices": [
       "A short summary of the theory, his Narratio Prima",
@@ -5370,7 +5305,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1543, as Copernicus's book went to press in Nuremberg, an unsigned preface appeared at the very front. It came before his own dedication, so early readers took it for his own words. The Lutheran theologian Andreas Osiander had slipped it in without asking. What did that preface tell readers?",
+    "question": "Andreas Osiander, a Lutheran theologian, slipped an unsigned preface into Copernicus's book without asking, as it went to press in Nuremberg in 1543. It stood before the author's dedication, so early readers took it for the author's own words. What did that preface tell readers?",
     "answer": "That the hypotheses need not be true, or even probable",
     "choices": [
       "That the hypotheses need not be true, or even probable",
@@ -5383,7 +5318,7 @@
   },
   {
     "tier": 2,
-    "question": "Nicolaus Copernicus had a day job running a cathedral at Frombork, not stargazing full-time. In his whole life he logged only about twenty-seven sky readings of his own, and even those were only rough. So where did the numbers filling his book come from?",
+    "question": "Nicolaus Copernicus took perhaps twenty-seven sky readings of his own in his whole life, in the time his cathedral duties at Frombork left him, and even those were only rough. Where did the numbers filling his book come from?",
     "answer": "Centuries-old records from Ptolemy and from al-Battani",
     "choices": [
       "Centuries-old records from Ptolemy and from al-Battani",
@@ -5396,7 +5331,7 @@
   },
   {
     "tier": 3,
-    "question": "For 73 years after Copernicus printed his book in 1543, Rome had no problem with it. Copernicus had dedicated it to the Pope. Jesuit colleges taught the theory. Then in 1616, Rome suspended the book 'until corrected.' Why did Rome act then and not in 1543?",
+    "question": "Copernicus dedicated his book to the Pope in 1543, and Jesuit colleges taught the theory. Rome left it alone for 73 years. Then in 1616 Rome suspended the book 'until corrected.' Why did Rome act then and not in 1543?",
     "answer": "Galileo was now pressing heliocentrism as physical fact",
     "choices": [
       "Galileo was now pressing heliocentrism as physical fact",
@@ -5409,7 +5344,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1959, Arthur Koestler called Copernicus's book 'the book that nobody read.' He said the few hundred copies sat unopened. Owen Gingerich spent thirty years tracking down first editions to check for himself. In 2002 he published a survey of 277 surviving copies. What did he find inside them?",
+    "question": "Owen Gingerich published a survey of 277 surviving first editions of Copernicus's book in 2002, after thirty years of tracking them down. He was checking Arthur Koestler's 1959 claim that it was 'the book that nobody read,' its few hundred copies sitting unopened. What did Gingerich find inside them?",
     "answer": "Dense working annotations by sixteenth-century astronomers",
     "choices": [
       "Dense working annotations by sixteenth-century astronomers",
@@ -5422,7 +5357,7 @@
   },
   {
     "tier": 3,
-    "question": "Copernicus was not the first to move the Earth. Around 280 BC Aristarchus of Samos argued that the Sun and the stars stand still while the Earth circles the Sun, and he even had the reply to the missing star-shift: the Earth's orbit stands to the sphere of stars as a centre point stands to its surface. His own book is lost, and survives only because Archimedes summarised it. Copernicus named him in an early draft. What became of that mention?",
+    "question": "Aristarchus of Samos argued around 280 BC that the Sun and the stars stand still while the Earth circles the Sun. His own book is lost, and the claim survives only because Archimedes summarised it. Copernicus named him in an early draft. What became of that mention?",
     "answer": "Copernicus struck it out before the book went to press",
     "choices": [
       "Copernicus struck it out before the book went to press",
@@ -5435,7 +5370,7 @@
   },
   {
     "tier": 4,
-    "question": "Copernicus moved the Earth, but he kept the ancient rule that every heavenly motion must be a perfect circle swept at a steady rate. That cost him: he still needed extra circles -- small ones riding on larger, and circles swung off centre -- up to forty-eight of them across the planets. Set against Ptolemy's tables, how good were his predictions?",
+    "question": "Copernicus moved the Earth, but he kept the ancient rule that every heavenly motion must be a perfect circle swept at a steady rate. That cost him extra circles, small ones riding on larger and others swung off centre, up to forty-eight of them across the planets. Set against Ptolemy's tables, how good were his predictions?",
     "answer": "About the same, within roughly ten arcminutes",
     "choices": [
       "About the same, within roughly ten arcminutes",
@@ -5448,7 +5383,7 @@
   },
   {
     "tier": 4,
-    "question": "For decades, readers of De revolutionibus took the unsigned preface at the front of the book for Copernicus's own words. Andreas Osiander had in fact written it, and Johannes Kepler proved so and published the fact in 1609. What was Kepler's evidence?",
+    "question": "Johannes Kepler went after the unsigned preface at the front of De revolutionibus, which readers had taken for decades to be Copernicus's own words. He proved that Andreas Osiander had written it and published the fact in 1609. What was Kepler's evidence?",
     "answer": "A handwritten note in Hieronymus Schreiber's own copy",
     "choices": [
       "A handwritten note in Hieronymus Schreiber's own copy",
@@ -5461,7 +5396,7 @@
   },
   {
     "tier": 4,
-    "question": "From December 1725 James Bradley and Samuel Molyneux aimed a long telescope at a star near the top of the sky. They wanted to see the shift a moving Earth should cause. The star did move — but the wrong way, and every star did the same, no matter how far off. What had they found?",
+    "question": "James Bradley and Samuel Molyneux aimed a long telescope at a star near the top of the sky from December 1725, wanting to see the shift a moving Earth should cause. The star did move, but the wrong way, and every star did the same, no matter how far off. What had they found?",
     "answer": "Starlight arriving tilted because the observer is moving fast",
     "choices": [
       "Starlight arriving tilted because the observer is moving fast",
@@ -5474,7 +5409,7 @@
   },
   {
     "tier": 5,
-    "question": "By 1514 Copernicus was working through Ptolemy's old model of the sky. Europe had used it to predict the planets for fourteen centuries. One small piece of it he could not accept, and his answer was to rebuild the heavens. He called that piece the equant. What did the equant do?",
+    "question": "Copernicus was working through Ptolemy's old model of the sky by 1514, the model Europe had used to predict the planets for fourteen centuries. One small piece of it he could not accept, and his answer was to rebuild the heavens. He called that piece the equant. What did the equant do?",
     "answer": "It set an off-centre point about which the planet sweeps evenly",
     "choices": [
       "It set an off-centre point about which the planet sweeps evenly",
@@ -5487,7 +5422,7 @@
   },
   {
     "tier": 5,
-    "question": "Tycho Brahe's naked-eye instruments at Uraniborg were the best in the world, good to about one arcminute, and they showed no six-month shift in any star. If the Earth really swung across a vast orbit, that pushed the stars out to at least seven hundred times the distance from the Sun to Saturn. Tycho then measured the apparent discs of ordinary third-magnitude stars and worked out, at that range, how big each one would have to be. What did he get?",
+    "question": "Tycho Brahe saw no six-month shift in any star with his naked-eye instruments at Uraniborg, good to about one arcminute. If the Earth really swung across a vast orbit, that pushed the stars out to at least seven hundred times the distance from the Sun to Saturn. He then measured the apparent discs of ordinary stars and worked out how big each must be at that range. What did he get?",
     "answer": "A star as wide as the Earth's whole orbit",
     "choices": [
       "A star as wide as the Earth's whole orbit",
@@ -5500,7 +5435,7 @@
   },
   {
     "tier": 5,
-    "question": "Friedrich Bessel had to pick one star out of thousands and hope it lay near enough to shift. He chose 61 Cygni on a clue from Giuseppe Piazzi, who in 1804 had catalogued it as a freak -- 'the Flying Star', crossing the sky at over five arcseconds a year, faster than any other star the naked eye can see. Bessel took about a hundred measurements of it at Konigsberg over 1837-38. Why was Piazzi's freak a good bet?",
+    "question": "Friedrich Bessel had to pick one star out of thousands and hope it lay near enough to shift. He chose 61 Cygni on a clue from Giuseppe Piazzi, who in 1804 had catalogued it as a freak, 'the Flying Star', crossing the sky at over five arcseconds a year, faster than any other star the naked eye can see. Why was Piazzi's freak a good bet?",
     "answer": "Nearby stars slide fastest against the far ones behind them",
     "choices": [
       "Nearby stars slide fastest against the far ones behind them",
@@ -5513,7 +5448,7 @@
   },
   {
     "tier": 1,
-    "question": "In a beach town on the Atlantic coast, a newspaper columnist notices that ice-cream sales and drowning deaths climb together on the same days and fall together on other days. He writes a piece blaming the ice cream — kids eat, kids swim, kids drown. But the ice cream itself is not causing anyone to drown. What third thing is really driving BOTH the ice-cream sales and the drownings up and down together?",
+    "question": "A newspaper columnist in a beach town notices that ice-cream sales and drowning deaths climb together on the same days. He writes a piece blaming the ice cream, but the ice cream itself is causing no one to drown. What third thing is really driving both up and down together?",
     "answer": "Hot weather",
     "choices": [
       "Hot weather",
@@ -5526,7 +5461,7 @@
   },
   {
     "tier": 1,
-    "question": "A researcher measures a large group of kids and finds a very clear pattern: children with bigger shoes read at a higher level than children with smaller shoes. The local shoemaker hears about it and announces that buying kids bigger shoes will make them better readers. He has confused a real pattern with a real cause, and missed something obvious about who wears which shoes. What has he missed?",
+    "question": "A researcher finds that children with bigger shoes read at a higher level. A shoemaker announces that buying bigger shoes will make children better readers. He has confused a real pattern with a real cause. What has he missed about who wears which shoes?",
     "answer": "Older kids just have bigger feet and stronger reading",
     "choices": [
       "Older kids just have bigger feet and stronger reading",
@@ -5539,7 +5474,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2000, statistician Robert Matthews wrote a half-joking paper called 'Storks Deliver Babies.' He showed a real link across 17 European countries between stork pairs and human births. The link vanished once one hidden variable was added. What was it?",
+    "question": "Robert Matthews counted stork pairs and human births across 17 European countries in 2000, for a half-joking paper called 'Storks Deliver Babies.' The two really did track each other, until one hidden variable was added and the link vanished. What was the variable?",
     "answer": "The land area of each country",
     "choices": [
       "The land area of each country",
@@ -5552,7 +5487,7 @@
   },
   {
     "tier": 3,
-    "question": "Medieval Europeans noticed that sick people had almost no lice on them, and concluded that lice must be keeping folks healthy. In fact the lice were reacting to something the illness ITSELF did to the body -- so the arrow ran the other way. What did the illness do that drove the lice off?",
+    "question": "A medieval villager looked over a sick neighbour, found almost no lice on him and concluded that lice must keep folks healthy. In fact the lice were reacting to something the illness itself did to the body, so the arrow ran the other way. What did the illness do that drove the lice off?",
     "answer": "Raised the body's temperature with fever",
     "choices": [
       "Raised the body's temperature with fever",
@@ -5565,7 +5500,7 @@
   },
   {
     "tier": 4,
-    "question": "A 1999 study in Nature by Richard Stone and Graham Quinn reported that babies who slept with a night light on were far more likely to become nearsighted -- a finding that terrified new parents. Two 2000 Nature follow-ups by Jane Gwiazda and Karla Zadnik found no such link. What hidden third factor had fooled the first study?",
+    "question": "Richard Stone and Graham Quinn reported in Nature in 1999 that babies who slept with a night light on were far more likely to become nearsighted, a finding that terrified new parents. Two follow-up papers in Nature in 2000, by Jane Gwiazda and Karla Zadnik, found no such link. What hidden third factor had fooled the first study?",
     "answer": "Nearsighted parents were the ones using night lights",
     "choices": [
       "Nearsighted parents were the ones using night lights",
@@ -5578,7 +5513,7 @@
   },
   {
     "tier": 5,
-    "question": "For years, doctors said hormone therapy after menopause cut heart attacks, and it became standard advice. On 9 July 2002 a big trial called the Women's Health Initiative was halted three years early. One arm of the study showed more heart disease, stroke, and blood clots than the placebo group. Which arm?",
+    "question": "Researchers halted a big trial called the Women's Health Initiative on 9 July 2002, three years early. Doctors had long said hormone therapy after menopause cut heart attacks, and it had become standard advice. One arm of the study showed more heart disease, stroke and blood clots than the placebo group. Which arm?",
     "answer": "Combined estrogen plus progestin",
     "choices": [
       "Combined estrogen plus progestin",
@@ -5591,7 +5526,7 @@
   },
   {
     "tier": 4,
-    "question": "In medicine, deciding by coin flip who gets a new treatment and who does not is called randomization, and it is medicine's strongest tool against false results. It caught the bad advice about hormone replacement therapy for menopause: watching studies said it was heart-protective, but randomized trials in the early 2000s showed it actually raised heart-attack and stroke risk. What does randomly picking who gets the treatment do that plain watching cannot?",
+    "question": "A trial doctor flips a coin to decide who gets a new treatment and who does not. Deciding that way is called randomization, and it is medicine's strongest tool against false results: randomized trials in the early 2000s overturned the watching studies that had called hormone therapy after menopause heart-protective. What does randomly picking who gets the treatment do that plain watching cannot?",
     "answer": "Severs the link between the treatment and every other patient trait",
     "choices": [
       "Severs the link between the treatment and every other patient trait",
@@ -5604,7 +5539,7 @@
   },
   {
     "tier": 5,
-    "question": "Even the inventor of the randomized trial fooled himself once. In the late 1950s statistician Ronald Fisher publicly argued that cigarettes might NOT cause lung cancer -- proposing instead a single hidden factor that caused both the smoking habit AND the disease. What did Fisher blame?",
+    "question": "Ronald Fisher, who pioneered randomized trials, publicly argued in the late 1950s that cigarettes might not cause lung cancer, a real statistical worry that later evidence answered. He smoked a pipe and took consulting money from the tobacco industry. What single hidden factor did he blame for the habit and the disease alike?",
     "answer": "A shared genetic 'constitution' behind both",
     "choices": [
       "A shared genetic 'constitution' behind both",
@@ -5617,7 +5552,7 @@
   },
   {
     "tier": 5,
-    "question": "The smoking-and-cancer link was proved without ever making anyone smoke. In October 1951, Richard Doll and Austin Bradford Hill mailed a survey to every doctor in Britain. They then followed the 40,000 who replied for decades. Which finding from that group was the most telling?",
+    "question": "Richard Doll and Austin Bradford Hill mailed a survey to every doctor in Britain in October 1951, and then followed some 40,000 who replied for decades. The link between smoking and cancer was proved without ever making anyone smoke. Which finding from that group was the most telling?",
     "answer": "A dose-response curve, with risk falling when doctors quit",
     "choices": [
       "A dose-response curve, with risk falling when doctors quit",
@@ -5630,7 +5565,7 @@
   },
   {
     "tier": 4,
-    "question": "Software developer Tyler Vigen runs a website that pairs unrelated real-world series to make the point that any two things can look connected if you check enough pairs. His most famous pair -- correlating at roughly r = 0.947 across ten years of U.S. data -- links per-capita cheese consumption with WHAT?",
+    "question": "Tyler Vigen, a software developer, set unrelated series side by side on his website to show that any two things can look connected if enough pairs are checked. His most famous pair starts with per-capita cheese consumption, matching at roughly r = 0.947 across ten years of U.S. data. What is the other half?",
     "answer": "Deaths from becoming tangled in bedsheets",
     "choices": [
       "Deaths from becoming tangled in bedsheets",
@@ -5643,7 +5578,7 @@
   },
   {
     "tier": 1,
-    "question": "Lightning flashes across the valley and you wait for the bang. The light reaches your eyes almost instantly; the sound is still crawling toward you. Storm-watchers turn that lag into a rangefinder by counting the seconds after the flash. How does the count turn into a distance?",
+    "question": "A storm-watcher sees lightning flash across the valley and starts counting. The light reaches her eyes almost instantly, while the sound is still crawling toward her. Storm-watchers turn that lag into a rangefinder. How does her count turn into a distance?",
     "answer": "One kilometre for every three seconds counted",
     "choices": [
       "One kilometre for every three seconds counted",
@@ -5656,7 +5591,7 @@
   },
   {
     "tier": 2,
-    "question": "A lightning bolt is a jet of electric current racing back up its own channel at up to a third of the speed of light. As the current tears through the air it slams the atoms so hard the whole channel glows white — and it does all of this in a few millionths of a second. Compared with the surface of the sun, which sits around 5,500 degrees Celsius, how hot does a lightning channel get?",
+    "question": "A storm-watcher sees a lightning bolt race up its own channel at up to a third of the speed of light, slamming the air's atoms so hard that the whole channel glows white, all in a few millionths of a second. Compared with the surface of the Sun, which sits around 5,500 degrees Celsius, how hot does the channel get?",
     "answer": "About five times as hot",
     "choices": [
       "About five times as hot",
@@ -5669,7 +5604,7 @@
   },
   {
     "tier": 2,
-    "question": "A single lightning bolt is a jagged channel of superheated air, sometimes five or six miles long, punched from cloud to ground in a fraction of a second. When the storm sits right overhead, its thunder is a single sharp bang. But when the storm sits on the horizon miles away, the thunder does not bang, it rumbles, and the rumble can run on for tens of full seconds following a flash that lasted a heartbeat. What stretches the noise out so long?",
+    "question": "A hiker hears one sharp bang from a storm right overhead. From a storm on the horizon she hears a rumble that runs on for tens of seconds, from a flash that lasted a heartbeat. Each bolt is a jagged channel of superheated air, sometimes five or six miles long. What stretches the noise out so long?",
     "answer": "The far end of the bolt's path is heard seconds after the near end",
     "choices": [
       "The far end of the bolt's path is heard seconds after the near end",
@@ -5682,7 +5617,7 @@
   },
   {
     "tier": 2,
-    "question": "Party balloons are usually filled with helium, an extremely light gas that has drifted up out of Earth's rocks for billions of years. Take a lungful of that balloon helium and try to speak: a grown man's voice comes out as a cartoon squeak for a few seconds, a party trick with real physics inside it. His throat and cords are the same as before. What does the helium actually do to the sound of his voice?",
+    "question": "A grown man takes a lungful of helium from a party balloon and tries to speak, and his voice comes out as a cartoon squeak for a few seconds. His throat and vocal cords are the same as before. What does the helium actually do to the sound of his voice?",
     "answer": "Helium carries sound three times faster, tuning the throat higher",
     "choices": [
       "Helium carries sound three times faster, tuning the throat higher",
@@ -5695,7 +5630,7 @@
   },
   {
     "tier": 3,
-    "question": "A thunderstorm arrives on a 35-degree August afternoon and you count the seconds between flash and bang exactly as you would in a January storm. Air pressure, it turns out, cannot spoil that count: raise the pressure and the air's density rises in step, and the two cancel exactly. So what does the August heat do to it?",
+    "question": "Suppose you count the seconds between flash and bang on a 35-degree August afternoon, exactly as you would in a January storm. Air pressure cannot spoil that count: raise the pressure and the air's density rises in step, and the two cancel exactly. What does the August heat do to your count?",
     "answer": "The sound arrives sooner, so the storm is farther off than you counted",
     "choices": [
       "The sound arrives sooner, so the storm is farther off than you counted",
@@ -5708,7 +5643,7 @@
   },
   {
     "tier": 3,
-    "question": "William Derham, a country parson in Upminster, Essex, had spent months in his church tower timing cannon fired twelve miles away, and he had a speed-of-sound figure good enough to send to the Royal Society. He did not trust it. What did he do before he published?",
+    "question": "William Derham, a country parson, climbed down from his church tower in Upminster, Essex, with a speed-of-sound figure good enough to send to the Royal Society, after months of timing cannon fired twelve miles away. He did not trust it. What did he do before he published?",
     "answer": "He walked six miles of dark tidal sands, firing muskets at every mile",
     "choices": [
       "He walked six miles of dark tidal sands, firing muskets at every mile",
@@ -5721,7 +5656,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1708 William Derham timed the speed of sound from his church tower in Essex. He listened for cannon fired twelve miles away at Blackheath — far enough that a shot took a full minute to reach him. Earlier tests using a free-swinging pendulum came out far too fast. Derham had written a book on clocks, so he used a tuned pendulum clock instead. What did that clock give him that a swinging weight could not?",
+    "question": "A shot fired at Blackheath in 1708 took a full minute to reach William Derham in his church tower in Essex, twelve miles away. Earlier tests using a free-swinging pendulum had come out far too fast. Derham had written a book on clocks, so he used a tuned pendulum clock instead. What did that clock give him that a swinging weight could not?",
     "answer": "A tick he could hear every half second, so both eyes stayed on the muzzle flash",
     "choices": [
       "A tick he could hear every half second, so both eyes stayed on the muzzle flash",
@@ -5734,7 +5669,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1738 a French team set out to time the speed of sound along a line 28 kilometres long. They fired cannon from tower to tower. Every earlier try had been ruined by the same trouble: a following wind sped the sound up, and a headwind slowed it down. How did they get the wind out of their number?",
+    "question": "A French team set out in 1738 to time the speed of sound along a line of about 28 kilometres, firing cannon from tower to tower. Every earlier try had been ruined by the same trouble: a following wind sped the sound up, and a headwind slowed it down. How did they get the wind out of their number?",
     "answer": "They fired from both ends of the line and averaged the two runs",
     "choices": [
       "They fired from both ends of the line and averaged the two runs",
@@ -5747,7 +5682,7 @@
   },
   {
     "tier": 4,
-    "question": "Jean-Daniel Colladon spent October 1826 on Lake Geneva trying to hear a bell struck under a boat thirteen kilometres away. Ducking his own head under the surface worked, but only out to about two kilometres. So he built a listening device instead, and through it the far bell came in as loudly as a bell two hundred metres off sounds to a man with his head in the water. What had he built?",
+    "question": "Jean-Daniel Colladon ducked his head under Lake Geneva in October 1826 to hear a bell struck under a boat, and it worked only out to about two kilometres. His far boat lay thirteen kilometres away. So he built a listening device, and through it the distant bell came in as loudly as a bell two hundred metres off heard with the head under water. What had he built?",
     "answer": "A five-metre tin tube, closed at the bottom and full of air",
     "choices": [
       "A five-metre tin tube, closed at the bottom and full of air",
@@ -5760,7 +5695,7 @@
   },
   {
     "tier": 4,
-    "question": "Sound is a squeeze wave — each patch of a material shoves the next one along to pass the pulse forward. It crawls through soft rubber at about fifty meters a second, slower even than through thin air. But it rips through water at 1,500 meters a second, through steel at about 5,000, and through diamond at about 12,000. What do diamond, steel, and water have that rubber does not?",
+    "question": "A teacher sends a pulse of sound through a block of soft rubber, each patch shoving the next along. It crawls at about fifty metres a second, slower even than through thin air. Through water it rips along at 1,500 metres a second, through steel at about 5,000 and through diamond at about 12,000. What do diamond, steel and water have that rubber does not?",
     "answer": "They fight back hard when you try to squeeze them",
     "choices": [
       "They fight back hard when you try to squeeze them",
@@ -5773,7 +5708,7 @@
   },
   {
     "tier": 5,
-    "question": "Isaac Newton's Principia of 1687 did not measure the speed of sound - it calculated it, from the pressure and the density of air alone. The answer came out near 295 metres a second, and every careful measurement that followed sat about a sixth higher. For years Newton let it lie; his own rough echo test had bracketed the speed loosely enough to include his figure. Then William Derham's tables of long-baseline timings made the gap impossible to wave away. What did Newton do to his theory in the later editions?",
+    "question": "Isaac Newton calculated the speed of sound in his Principia of 1687 from nothing but air's pressure and density, and the answer came out near 295 metres a second. Every careful measurement that followed sat about a sixth higher. For years he let it lie, until William Derham's long-baseline timings made the gap impossible to wave away. What did Newton do to his theory in the later editions?",
     "answer": "He added corrections for the thickness of air's particles and its moisture",
     "choices": [
       "He added corrections for the thickness of air's particles and its moisture",
@@ -5786,7 +5721,7 @@
   },
   {
     "tier": 5,
-    "question": "For 129 years Isaac Newton's calculated speed of sound sat about a sixth below every careful measurement, and nobody could find a mistake in the algebra. In 1816 Pierre-Simon Laplace found the flaw: Newton had used the wrong stiffness for air, because he had left out something that happens to a gas whenever it is compressed. What had he left out?",
+    "question": "Pierre-Simon Laplace found the flaw in 1816, 129 years after Isaac Newton calculated a speed of sound that sat about a sixth below every careful measurement. Nobody had found a mistake in the algebra. Newton had used the wrong stiffness for air, because he had left out something that happens to a gas whenever it is compressed. What had he left out?",
     "answer": "The gas warms as it is squeezed, and the wave passes before that warmth can escape",
     "choices": [
       "The gas warms as it is squeezed, and the wave passes before that warmth can escape",
@@ -5799,7 +5734,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemists count atoms and molecules by a unit called the mole, and one mole is about 602,000,000,000,000,000,000,000 particles, a number so huge it is almost impossible to picture. Yet that many water molecules will fit inside a small everyday thing you could pour from a jug on your kitchen counter. Which one holds about that many water molecules?",
+    "question": "A chemist writes down one mole of water molecules: about 602,000,000,000,000,000,000,000 of them, a number almost impossible to picture. Yet that many molecules fit inside a small everyday thing that could be poured from a jug on a kitchen counter. Which one holds about that many water molecules?",
     "answer": "A single tablespoon of water",
     "choices": [
       "A single tablespoon of water",
@@ -5812,7 +5747,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1811, before anyone had ever seen a molecule, an Italian named Amedeo Avogadro made a bold guess. His rule made it possible to count things no eye could see. Take two gases at the same temperature and pressure. If their volumes are equal, what else must be equal?",
+    "question": "Amedeo Avogadro made a bold guess in 1811, before anyone had ever seen a molecule, and his rule made it possible to count things no eye could see. He considered two gases at the same temperature and pressure. If their volumes are equal, what else must be equal?",
     "answer": "The same number of molecules inside",
     "choices": [
       "The same number of molecules inside",
@@ -5825,7 +5760,7 @@
   },
   {
     "tier": 3,
-    "question": "Avogadro's 1811 idea sat ignored for nearly fifty years. Chemists could not agree on how much atoms weighed. Then in 1860, chemists held their first world meeting in Germany. On the last day, the Italian chemist Stanislao Cannizzaro handed out short papers reviving Avogadro's rule. What did the chemists carry away from that meeting?",
+    "question": "Stanislao Cannizzaro handed out short papers on the last day of chemistry's first world meeting, in Germany in 1860, reviving Avogadro's rule. That 1811 idea had sat ignored for nearly fifty years, and chemists could not agree on how much atoms weighed. What did the chemists carry away from the meeting?",
     "answer": "A consistent scale of atomic weights",
     "choices": [
       "A consistent scale of atomic weights",
@@ -5838,7 +5773,7 @@
   },
   {
     "tier": 4,
-    "question": "The man whose name is on the constant never actually measured it. The first person to put a number on how many particles are in a mole of gas did it in 1865 using the kinetic theory: he took the size of a molecule and one other property of gases and did the arithmetic. Which extra piece of information did he need?",
+    "question": "Loschmidt, a physicist, did in 1865 what Avogadro never did: he was the first to put a number on how many particles sit in a mole of gas. Using the kinetic theory, he took the size of a molecule and one other property of gases and did the arithmetic. Which extra piece of information did he need?",
     "answer": "How far molecules travel between collisions",
     "choices": [
       "How far molecules travel between collisions",
@@ -5851,7 +5786,7 @@
   },
   {
     "tier": 5,
-    "question": "For the modern Avogadro measurement, an international team ground one-kilogram spheres of isotopically pure silicon-28 to a roundness so extreme it is hard to picture. To fix an image: imagine one of these balls scaled up to the size of the Earth. On that Earth-sized sphere, how tall would the tallest bump stand above 'sea level'?",
+    "question": "An international team ground one-kilogram spheres of nearly pure silicon-28 to a roundness that is hard to believe, for the modern count of Avogadro's number. One of these balls is scaled up to the size of the Earth. How tall does its tallest bump stand above 'sea level'?",
     "answer": "A few metres",
     "choices": [
       "A few metres",
@@ -5864,7 +5799,7 @@
   },
   {
     "tier": 2,
-    "question": "Four letters in DNA, twenty of protein's building blocks to name: taken three at a time the letters give sixty-four words -- room to spare. George Gamow, the Big Bang physicist, had that counting right in 1954. But the scheme he published in Nature that year, for how the letters were actually read, was wrong in nearly every detail. What had Gamow pictured?",
+    "question": "George Gamow, the Big Bang physicist, got the counting right in 1954: four letters in DNA, taken in threes, give sixty-four words to name twenty of protein's building blocks, with room to spare. But the scheme he published in Nature that year for how the letters were actually read was wrong in nearly every detail. What had Gamow pictured?",
     "answer": "Amino acids dropping straight into diamond-shaped cavities",
     "choices": [
       "Amino acids dropping straight into diamond-shaped cavities",
@@ -5877,7 +5812,7 @@
   },
   {
     "tier": 2,
-    "question": "George Gamow could not crack the code alone. In 1954 he started a club to do it: twenty members, one for each amino acid, plus four honorary members for the four bases. Each got a black wool tie with an RNA helix on it, ordered from a Los Angeles shop for four dollars, and a motto: 'Do or die; or don't try.' Each also got a gold tiepin. What was engraved on it?",
+    "question": "A Los Angeles shop filled George Gamow's order in 1954 for black wool ties with an RNA helix on them, for the club he started to crack the code. It had twenty members, one for each amino acid, and a motto: 'Do or die; or don't try.' Each member also got a gold tiepin. What was engraved on it?",
     "answer": "His own amino acid's three-letter abbreviation",
     "choices": [
       "His own amino acid's three-letter abbreviation",
@@ -5890,7 +5825,7 @@
   },
   {
     "tier": 2,
-    "question": "At about three in the morning on 27 May 1961, at the National Institutes of Health, Heinrich Matthaei set twenty tubes running side by side. Each held a soup of broken-open E. coli that could still build protein, plus all twenty amino acids -- but in each tube a different one was tagged with radioactive carbon-14. Into every tube he dropped the same artificial RNA: a string of nothing but uracil. Nineteen tubes did nothing. Which one built protein?",
+    "question": "Heinrich Matthaei set twenty tubes running at about three in the morning on 27 May 1961. Each held a soup of broken-open E. coli, plus all twenty amino acids with a different one tagged radioactive in each tube. Into every tube he dropped the same artificial RNA, a string of nothing but uracil. Nineteen tubes did nothing. Which one built protein?",
     "answer": "The phenylalanine tube",
     "choices": [
       "The phenylalanine tube",
@@ -5903,7 +5838,7 @@
   },
   {
     "tier": 2,
-    "question": "The three stop codons — the RNA triplets UAA, UAG, and UGA (each letter names a base: uracil, adenine, or guanine) — stand for no amino acid. They just tell the ribosome to let go. Biologists nicknamed them amber, ochre, and opal. Richard Epstein and Charles Steinberg named amber first, when they found the mutation. Where did the name come from?",
+    "question": "Richard Epstein and Charles Steinberg found the mutation and gave the first nickname to a stop codon, one of the three RNA triplets that stand for no amino acid and just tell the ribosome to let go. They called it amber; ochre and opal came after. Where did the name amber come from?",
     "answer": "A friend's surname, Bernstein -- the German for amber",
     "choices": [
       "A friend's surname, Bernstein -- the German for amber",
@@ -5916,7 +5851,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1961 Francis Crick, Sydney Brenner, Leslie Barnett and Richard Watts-Tobin used proflavin -- an acridine dye that wedges itself in between DNA bases -- to slip extra bases into one gene of bacteriophage T4. One extra base wrecked the protein that gene made. Two extra bases wrecked it just as thoroughly. Three extra bases, and the gene made a working protein again. Why did more damage undo the damage?",
+    "question": "Sydney Brenner and Francis Crick led a team that slipped extra bases into one gene of a virus in 1961, using a dye called proflavin that wedges itself between the bases of DNA. One extra base wrecked the protein that gene made. Two extra bases wrecked it just as thoroughly. Three, and the gene made a working protein again. Why did more damage undo the damage?",
     "answer": "The letters downstream were chunked into the same words as before",
     "choices": [
       "The letters downstream were chunked into the same words as before",
@@ -5929,7 +5864,7 @@
   },
   {
     "tier": 3,
-    "question": "Heinrich Matthaei's tube of broken-open E. coli, fed an artificial string of uracil, threw off 38,000 counts of radioactivity per milligram of protein. On its own that number proves nothing, so beside it he ran a second tube, which came back with 70. That second tube existed to answer one specific objection, and answering it is what made the result believable. What was the objection?",
+    "question": "Heinrich Matthaei's counter read 38,000 counts of radioactivity per milligram of protein for a tube of broken-open E. coli fed an artificial string of uracil. On its own that number proved nothing, so beside it he ran a second tube, which came back with 70. That second tube existed to answer one specific objection. What was the objection?",
     "answer": "That the broken bacteria were reading messages of their own",
     "choices": [
       "That the broken bacteria were reading messages of their own",
@@ -5942,7 +5877,7 @@
   },
   {
     "tier": 3,
-    "question": "In the fall of 1961 Marshall Nirenberg was in a race he had not asked for. Severo Ochoa, already a Nobel winner, had turned his New York lab onto the same unread code words, and that lab moved fast. What the National Institutes of Health (NIH), where Nirenberg worked, then did for him was later called 'NIH's finest hour.' What did the NIH do?",
+    "question": "Marshall Nirenberg found himself in a race he had not asked for in the fall of 1961. Severo Ochoa, already a Nobel winner, had turned his New York lab onto the same unread code words, and that lab moved fast. What the National Institutes of Health (NIH), where Nirenberg worked, did for him next was later called 'NIH's finest hour.' What did the NIH do?",
     "answer": "NIH scientists dropped their own projects to work for him",
     "choices": [
       "NIH scientists dropped their own projects to work for him",
@@ -5955,7 +5890,7 @@
   },
   {
     "tier": 4,
-    "question": "In August 1961 Marshall Nirenberg -- unknown outside his own corridor at the National Institutes of Health (NIH) -- read the poly-U result at the International Congress of Biochemistry in Moscow. About thirty-five people sat in the room. Word of what he had said reached Francis Crick. What did Crick arrange?",
+    "question": "Marshall Nirenberg read the artificial-RNA result at the International Congress of Biochemistry in Moscow in August 1961, unknown outside his own corridor at the National Institutes of Health. About thirty-five people sat in the room. Word of what he had said reached Francis Crick. What did Crick arrange?",
     "answer": "That Nirenberg give the whole talk again, before the full congress",
     "choices": [
       "That Nirenberg give the whole talk again, before the full congress",
@@ -5968,7 +5903,7 @@
   },
   {
     "tier": 4,
-    "question": "Reading one code word by watching a protein get built took hours, and there were sixty-four words to read. In 1964 Marshall Nirenberg and Philip Leder found a shortcut. They mixed ribosomes, a single three-letter scrap of RNA, and transfer RNAs carrying radioactive amino acids -- then poured the mixture over a sheet of nitrocellulose and counted the radioactivity caught on the sheet. Why did that count tell them whether the scrap and a transfer RNA matched?",
+    "question": "Philip Leder and Marshall Nirenberg found a shortcut in 1964, when reading one code word by watching a protein get built took hours. They mixed ribosomes, a three-letter scrap of RNA and transfer RNAs carrying radioactive amino acids, poured the mixture over a sheet of nitrocellulose and counted the radioactivity caught on it. Why did that count show whether the scrap and a transfer RNA matched?",
     "answer": "Nitrocellulose traps ribosomes but lets unbound transfer RNA wash through",
     "choices": [
       "Nitrocellulose traps ribosomes but lets unbound transfer RNA wash through",
@@ -5981,7 +5916,7 @@
   },
   {
     "tier": 4,
-    "question": "Har Gobind Khorana spent the early 1960s on the genetic code without ever running the assay that made Marshall Nirenberg famous -- no extracts fed poly-U, no counts on a filter. In 1968 the Nobel committee gave him a share of the prize alongside Nirenberg anyway. What had Khorana done?",
+    "question": "Har Gobind Khorana took a share of the 1968 Nobel Prize alongside Marshall Nirenberg without ever running the assay that made Nirenberg famous: no extracts fed poly-U, no counts on a filter. What had Khorana done in the early 1960s?",
     "answer": "Built RNA messages to order and read the same code back out",
     "choices": [
       "Built RNA messages to order and read the same code back out",
@@ -5994,7 +5929,7 @@
   },
   {
     "tier": 5,
-    "question": "Sixty-four code words to name twenty amino acids leaves spare capacity, and the cell spends it unevenly. Leucine answers to six different words; serine answers to six of its own; methionine and tryptophan answer to exactly one each. That spare capacity has a shape: about seventy per cent of the single-letter typos that change nothing at all -- a letter swapped, the same amino acid built anyway -- land in the same place in the word. Where?",
+    "question": "Francis Crick looked in 1966 at how unevenly a cell spends the spare capacity of its code: leucine answers to six different words, tryptophan to exactly one. Some single-letter typos change nothing at all, and the same amino acid gets built anyway. About seventy percent of those harmless typos land in the same place in the word. Where?",
     "answer": "In the third letter of the word",
     "choices": [
       "In the third letter of the word",
@@ -6007,7 +5942,7 @@
   },
   {
     "tier": 5,
-    "question": "Inside every living cell, a table of code words translates DNA into proteins: three letters of RNA spell out one amino acid. This table is called the genetic code. The exact same table runs in bacteria, in oak trees, in whales and in you, with only tiny variations. That near-identity is among the strongest single pieces of evidence for one big conclusion about life on Earth. What is that conclusion?",
+    "question": "A biologist sets the genetic code of a bacterium beside those of an oak tree, a whale and a person: a table in which three letters of RNA spell out one amino acid. The tables match, with only tiny variations. That near-identity is among the strongest single pieces of evidence for one big conclusion about life on Earth. What is that conclusion?",
     "answer": "All living things share a single common ancestor",
     "choices": [
       "All living things share a single common ancestor",
@@ -6020,7 +5955,7 @@
   },
   {
     "tier": 1,
-    "question": "Bacteria get sick too. Tiny viruses called phages jab their DNA into a bacteria cell and take it over. To spot the same attacker next time, the bacteria saves a file of DNA bits from every phage that has ever hit it. What did biologists name that file?",
+    "question": "Francisco Mojica studied what a bacterium does about a phage, a tiny virus that jabs its DNA into the cell and takes it over. To spot the same attacker next time, the cell saves a file of DNA bits from phages that have hit it. What did biologists name that file?",
     "answer": "CRISPR",
     "choices": [
       "CRISPR",
@@ -6033,7 +5968,7 @@
   },
   {
     "tier": 4,
-    "question": "The proof that CRISPR (clustered regularly interspaced short palindromic repeats) is really a working immune system inside bacteria did not come from an academic lab. It came from a food-ingredients company whose vats of yogurt- and cheese-starter cultures kept being wiped out. What was that company trying to protect its cultures against?",
+    "question": "Vats of yogurt- and cheese-starter cultures kept being wiped out at Danisco, a food-ingredients company, when Barrangou and Horvath worked there. The proof of a working immune system inside bacteria did not come from an academic lab. It came from that trouble. What was the company trying to protect its cultures against?",
     "answer": "Viruses that attack bacteria (bacteriophages)",
     "choices": [
       "Viruses that attack bacteria (bacteriophages)",
@@ -6046,7 +5981,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2007, Barrangou and Horvath ran a paper in Science. They infected the bacteria Streptococcus thermophilus with a specific phage, then read the DNA of the survivors. What had the surviving bacteria done to their own DNA that proved CRISPR (clustered regularly interspaced short palindromic repeats) was an adaptive immune system?",
+    "question": "Horvath and Barrangou infected Streptococcus thermophilus, a starter-culture bacterium, with one specific phage and then read the DNA of the survivors, for a paper in Science in 2007. What had the survivors done to their own DNA that proved an adaptive immune system?",
     "answer": "Added a new spacer matching that exact phage",
     "choices": [
       "Added a new spacer matching that exact phage",
@@ -6059,7 +5994,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2011 the French microbiologist Emmanuelle Charpentier was studying Streptococcus pyogenes, the germ that causes strep throat. Bacteria use a defence system called CRISPR (clustered regularly interspaced short palindromic repeats) to slice up invading viruses, and she was tracking how it worked. She found a second, small RNA molecule that turned out to be essential. Without it, the Cas9 protein would not cut DNA at all. What is that second RNA called?",
+    "question": "Emmanuelle Charpentier was tracking how Streptococcus pyogenes, the germ that causes strep throat, slices up invading viruses when she found a second, small RNA molecule in 2011. It turned out to be essential: without it, the Cas9 protein would not cut DNA at all. What is that second RNA called?",
     "answer": "tracrRNA",
     "choices": [
       "tracrRNA",
@@ -6072,7 +6007,7 @@
   },
   {
     "tier": 5,
-    "question": "In August 2012 Jennifer Doudna and Emmanuelle Charpentier published a paper on CRISPR (clustered regularly interspaced short palindromic repeats). It took CRISPR out of bacteria and into any lab in the world. One engineering trick made it a general tool a scientist could aim at any 20-letter target. What was that trick?",
+    "question": "Jennifer Doudna and Emmanuelle Charpentier published a paper in August 2012 that took a bacterial defence out of bacteria and into any lab in the world. One engineering trick made it a general tool a scientist could aim at any 20-letter target. What was that trick?",
     "answer": "They fused the two natural RNAs into a single guide RNA",
     "choices": [
       "They fused the two natural RNAs into a single guide RNA",
@@ -6085,7 +6020,7 @@
   },
   {
     "tier": 5,
-    "question": "CRISPR (clustered regularly interspaced short palindromic repeats) is a molecular tool, first found in the immune systems of bacteria, that lets biologists cut and edit DNA at chosen spots; it is the most important gene-editing breakthrough of the 21st century so far. The 2020 Nobel Prize in Chemistry went to the French microbiologist Emmanuelle Charpentier and the American biochemist Jennifer Doudna for developing it. That prize also set a specific human first in Nobel history. What was it?",
+    "question": "Emmanuelle Charpentier, a French microbiologist, and Jennifer Doudna, an American biochemist, won the 2020 Nobel Prize in Chemistry for developing a molecular tool, first found in the immune systems of bacteria, that cuts and edits DNA at chosen spots. That prize also set a specific human first in Nobel history. What was it?",
     "answer": "The first science Nobel awarded to two women alone",
     "choices": [
       "The first science Nobel awarded to two women alone",
@@ -6098,7 +6033,7 @@
   },
   {
     "tier": 5,
-    "question": "One puzzle about a CRISPR (clustered regularly interspaced short palindromic repeats) immune system is this: why doesn't the bacterium chop up its own filed spacers, which are also virus DNA sitting inside its own chromosome? Cas9 fixes this with a checkpoint. It will only cut DNA that has a specific short tag right next to the target. What is that checkpoint called?",
+    "question": "A student asks why Cas9, a cutting protein, passes over the bits filed in a bacterium's own chromosome, though they are virus DNA like the invaders it destroys. It cuts only where a specific short tag sits right next to the target. What is that checkpoint called?",
     "answer": "the PAM",
     "choices": [
       "the PAM",
@@ -6111,7 +6046,7 @@
   },
   {
     "tier": 4,
-    "question": "Before CRISPR (clustered regularly interspaced short palindromic repeats) arrived around 2012, gene editing was slow and expensive. To hit a new DNA target with the leading tool of the 2000s, you had to design and build a fresh custom cutting protein for each address — a different one for every gene you wanted to edit. That took months of protein engineering per target. Which pre-CRISPR editing tool led that painful method?",
+    "question": "A biologist at her bench picked one new DNA target, with months of protein engineering ahead of her. The leading tool of the 2000s needed a fresh custom cutting protein for every address, a different one for each gene to be edited. Which editing tool worked that way?",
     "answer": "zinc-finger nucleases",
     "choices": [
       "zinc-finger nucleases",
@@ -6124,7 +6059,7 @@
   },
   {
     "tier": 3,
-    "question": "In February 1975, about 140 biologists, lawyers, and reporters met on the California coast. Their goal was to write safety rules for splicing DNA between species. Something rare had already happened. The biologists had freely stopped their own work while they wrote the rules. What is that kind of self-imposed pause on research called?",
+    "question": "Biologists, lawyers and reporters gathered in February 1975 on the California coast, about 140 of them, to write safety rules for splicing DNA between species. Something rare had already happened: the biologists had freely stopped their own work while they wrote the rules. What is that kind of self-imposed pause on research called?",
     "answer": "A moratorium",
     "choices": [
       "A moratorium",
@@ -6137,7 +6072,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 2018, a researcher shocked a Hong Kong summit. He said twin girls had been born from embryos edited with CRISPR (clustered regularly interspaced short palindromic repeats), the first heritable human gene edits ever. He had skipped ethics review, faked approval papers, and misled the doctors who implanted the embryos. A court in Shenzhen sent him to prison for three years. Who was he?",
+    "question": "A researcher stood before a summit in Hong Kong in November 2018 and said twin girls had been born from embryos he had edited, the first heritable human gene edits ever. He had skipped ethics review, faked approval papers and misled the doctors who implanted the embryos. A court in Shenzhen sent him to prison for three years. Who was he?",
     "answer": "He Jiankui",
     "choices": [
       "He Jiankui",
@@ -6150,7 +6085,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2019, Karavani and colleagues ran a simulation asking a blunt question. Say a couple has a batch of in vitro fertilization (IVF) embryos. They pick the one with the highest polygenic score for IQ. How much smarter would that child actually be on average? Thousands of variants each add a sliver, and one gene often does several jobs (this is called pleiotropy, and variants that raise IQ also raise the risk of anorexia). What was the simulated gain?",
+    "question": "Karavani and colleagues ran a blunt simulation in 2019: a couple has a batch of in vitro fertilization embryos and picks the one with the highest genetic score for IQ. Thousands of variants each add a sliver, and one gene often does several jobs, so some variants that raise IQ also raise the risk of anorexia. What was the simulated gain?",
     "answer": "About 2.5 IQ points",
     "choices": [
       "About 2.5 IQ points",
@@ -6163,7 +6098,7 @@
   },
   {
     "tier": 5,
-    "question": "The First International Summit on Human Gene Editing met in Washington in December 2015. David Baltimore chaired it. Big science academies from the US, UK, and China set it up. The final statement said basic research could go on with oversight, and editing a patient's body cells could be reviewed like gene therapy. On the third question — editing embryos for pregnancy — what did the group conclude?",
+    "question": "David Baltimore chaired the First International Summit on Human Gene Editing, held in Washington in December 2015 and set up by science academies from the US, UK and China. The final statement said basic research could go on with oversight, and editing a patient's body cells could be reviewed like gene therapy. On the third question, editing embryos for pregnancy, what did the group conclude?",
     "answer": "It would be irresponsible to proceed with any clinical use",
     "choices": [
       "It would be irresponsible to proceed with any clinical use",
@@ -6176,7 +6111,7 @@
   },
   {
     "tier": 5,
-    "question": "The 1974 National Research Act and the 1979 Belmont Report built US human-subjects ethics on three pillars: respect for persons, doing good, and justice. They came in answer to a scandal that broke in 1972. A Public Health Service worker named Peter Buxtun took what he knew to the Associated Press. Which study did Buxtun expose?",
+    "question": "A Public Health Service worker named Peter Buxtun took what he knew to the Associated Press in 1972. The scandal that broke led to the National Research Act of 1974 and, in 1979, the Belmont Report, which built US human-subjects ethics on three pillars: respect for persons, doing good, and justice. Which study did Buxtun expose?",
     "answer": "The Tuskegee syphilis study",
     "choices": [
       "The Tuskegee syphilis study",
@@ -6189,7 +6124,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1808 John Dalton drew a picture code for atoms. Every element got its own small circle, with a mark inside to tell you which one: hydrogen a dot at the center, nitrogen a single upright bar. One element Dalton left as a plain ring with nothing inside it. Which one?",
+    "question": "John Dalton drew a picture code for atoms in 1808. Every element got a small circle with a mark inside: hydrogen a dot at the centre, nitrogen a single upright bar. One element he left as a plain ring with nothing inside it. Which one?",
     "answer": "Oxygen",
     "choices": [
       "Oxygen",
@@ -6202,7 +6137,7 @@
   },
   {
     "tier": 1,
-    "question": "John Dalton was a Quaker, and Quakers dressed in sober, plain colours. At twenty-six he bought his mother a pair of stockings in what he took to be a modest Quaker blue. She held them up and said, 'Thou has brought me a pair of grand hose, John, but what made thee fancy such a bright colour?' What colour were they?",
+    "question": "A family legend has John Dalton, a Quaker, buying his mother a pair of stockings at twenty-six in what he took to be a sober Quaker blue. She held them up and said, 'Thou has brought me a pair of grand hose, John, but what made thee fancy such a bright colour?' What colour were they?",
     "answer": "Bright scarlet",
     "choices": [
       "Bright scarlet",
@@ -6215,7 +6150,7 @@
   },
   {
     "tier": 2,
-    "question": "Dalton's circles worked for the gases -- a dot here, an upright bar there -- but he had a dozen metals to fit into the same scheme: copper, lead, iron, silver, gold, mercury, platina. Every one of the metals got the same kind of mark inside its circle. What was that mark?",
+    "question": "Copper, lead, iron, silver, gold, mercury and platina all had to fit into the circles of John Dalton's picture code. The gases had taken a dot here and an upright bar there, but every one of the metals got the same kind of mark inside its circle. What was that mark?",
     "answer": "The first letter of the metal's own name",
     "choices": [
       "The first letter of the metal's own name",
@@ -6228,7 +6163,7 @@
   },
   {
     "tier": 2,
-    "question": "At Cambridge University, the natural philosopher William Whewell one day asked the English chemist John Dalton a simple question about the scarlet doctoral gown Dalton was wearing at a ceremony. What, Whewell asked, would he compare its colour to? Dalton did not answer in words. He raised his hand and pointed. At what?",
+    "question": "William Whewell asked John Dalton at Cambridge what he would compare his scarlet doctoral gown to, in a story that may be only legend. Dalton did not answer in words. He raised his hand and pointed. At what?",
     "answer": "The leaves of the trees outside",
     "choices": [
       "The leaves of the trees outside",
@@ -6241,7 +6176,7 @@
   },
   {
     "tier": 2,
-    "question": "On 31 October 1794 John Dalton read a paper to a science group in Manchester. Its title was 'Extraordinary Facts relating to the Vision of Colours.' It was the first science report on color blindness. He needed a subject willing to describe a world with colors missing from it. Whose eyes was he describing?",
+    "question": "John Dalton read a paper called 'Extraordinary Facts relating to the Vision of Colours' to a science group in Manchester on 31 October 1794. It was the first science report on colour blindness. He needed a subject willing to describe a world with colours missing from it. Whose eyes was he describing?",
     "answer": "His own eyes",
     "choices": [
       "His own eyes",
@@ -6254,7 +6189,7 @@
   },
   {
     "tier": 3,
-    "question": "Two thousand years before Dalton, Democritus argued that matter is made of pieces too small to cut. For 2,000 years it stayed just an argument. There was nothing a chemist could do with it at a bench. Dalton's book, published in 1808, turned the old idea into working chemistry. What did the book carry that had never existed before?",
+    "question": "Democritus argued two thousand years before John Dalton that matter is made of pieces too small to cut. For all those centuries it stayed just an argument, with nothing a chemist could do with it at a bench. Dalton's book of 1808 turned the old idea into working chemistry. What did the book carry that had never existed before?",
     "answer": "A table of the atoms' relative weights",
     "choices": [
       "A table of the atoms' relative weights",
@@ -6267,7 +6202,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1794 the English chemist John Dalton read a paper to the Manchester Literary and Philosophical Society describing his own strange vision. He set down exactly what his eyes did: scarlet he took for green, and pink he took for blue. One further observation in that paper mattered more than all the colour reports put together. What was it?",
+    "question": "Members of the Manchester Literary and Philosophical Society heard John Dalton read his paper in 1794, setting down exactly how one pair of eyes worked: scarlet taken for green, pink taken for blue. One further observation in that paper mattered more than all the colour reports put together. What was it?",
     "answer": "His brother confused the very same pairs",
     "choices": [
       "His brother confused the very same pairs",
@@ -6280,7 +6215,7 @@
   },
   {
     "tier": 3,
-    "question": "In the early 1800s the English chemist John Dalton was trying to prove that all matter is made of tiny, indivisible atoms that combine in whole-number ratios. He burned pure carbon two different ways, producing two different gases (what we now call carbon monoxide and carbon dioxide). Then, for exactly the same fixed weight of carbon in each, he weighed how much oxygen had combined with it. What did the scales show?",
+    "question": "John Dalton burned pure carbon two different ways in the early 1800s and got two different gases. Then, for exactly the same weight of carbon in each, he weighed what had combined with it. What did the scales show?",
     "answer": "One gas took exactly twice the oxygen of the other",
     "choices": [
       "One gas took exactly twice the oxygen of the other",
@@ -6293,7 +6228,7 @@
   },
   {
     "tier": 3,
-    "question": "Describing his colour blindness — scarlet seen as green, pink seen as blue — was one thing for the English chemist John Dalton; explaining it was another. In his 1794 paper he proposed a physical cause inside his own eyeballs, and wrote that his explanation seemed 'almost beyond a doubt'. What did he claim about his own eye?",
+    "question": "John Dalton went past describing his colour blindness in his 1794 paper, scarlet seen as green and pink seen as blue, and proposed a physical cause inside his own eyeballs. He wrote that his explanation seemed 'almost beyond a doubt'. What did he claim about his own eye?",
     "answer": "The jelly filling it was tinted blue",
     "choices": [
       "The jelly filling it was tinted blue",
@@ -6306,7 +6241,7 @@
   },
   {
     "tier": 4,
-    "question": "John Dalton had a theory about the fluid inside his own eyeballs, and no living person could check it -- you cannot look into an eye that is still in use. So Dalton left instructions that his eyes be examined once he was done with them, and said in advance what would be found. On 28 July 1844, the day after Dalton died, his friend and physician Joseph Ransome opened one of them and looked at the fluid. What did Ransome see?",
+    "question": "Joseph Ransome, John Dalton's friend and physician, opened one of Dalton's eyes on 28 July 1844, the day after the old man died. Dalton had left instructions for it, since no one can look into an eye still in use, and he had said in advance what would be found. What did Ransome see when he looked at the fluid inside?",
     "answer": "Fluid that was perfectly clear",
     "choices": [
       "Fluid that was perfectly clear",
@@ -6319,7 +6254,7 @@
   },
   {
     "tier": 4,
-    "question": "Before John Dalton could weigh one atom against another he had to know how many of each sat inside a compound -- and nobody could see a molecule. For water he fell back on a rule of his own devising for guessing formulas, and the whole table of atomic weights in his book rested on the answer it gave him. What did the rule tell him water was?",
+    "question": "John Dalton had to know how many atoms of each kind sat inside a compound before he could weigh one against another, and nobody could see a molecule. For water he fell back on a rule of his own devising for guessing formulas, and the whole table of atomic weights in his book rested on the answer it gave him. What did the rule tell him water was?",
     "answer": "One atom of hydrogen to one of oxygen",
     "choices": [
       "One atom of hydrogen to one of oxygen",
@@ -6332,7 +6267,7 @@
   },
   {
     "tier": 4,
-    "question": "Printed circles lie flat, and a compound does not. Around 1810 John Dalton had his engineer friend Peter Ewart turn him a set of wooden balls, drilled for pegs, so that he could build a compound and hold it in his hand -- the ancestor of every ball-and-stick model in every classroom since. Writing in 1842, Dalton owned up to one deliberate untruth built into that set. What was it?",
+    "question": "Peter Ewart, an engineer friend, turned John Dalton a set of wooden balls around 1810, drilled for pegs, so that Dalton could build a compound and hold it in his hand, the ancestor of every classroom ball-and-stick model. Writing in 1842, Dalton owned up to one deliberate untruth built into that set. What was it?",
     "answer": "He had made every one of the balls the same size",
     "choices": [
       "He had made every one of the balls the same size",
@@ -6345,7 +6280,7 @@
   },
   {
     "tier": 5,
-    "question": "Joseph Ransome had cut open one of John Dalton's eyes and found the fluid inside perfectly clear. He still had the second eye -- and what he did with that one settled the question better than any amount of cutting could. What did Ransome do with Dalton's second eye?",
+    "question": "Joseph Ransome opened one of John Dalton's eyes and examined the fluid inside, but he still had the second eye. What he did with that one settled the question. What did Ransome do with Dalton's second eye?",
     "answer": "Sliced the back off it and looked through it",
     "choices": [
       "Sliced the back off it and looked through it",
@@ -6358,7 +6293,7 @@
   },
   {
     "tier": 5,
-    "question": "Dalton's eyes were never buried. They sat in a jar at the Manchester society he had once presided over, and in 1995 D. M. Hunt, K. S. Dulai, J. K. Bowmaker and J. D. Mollon pulled DNA out of the 150-year-old tissue and published what they found in Science. Thomas Young -- the man of the double-slit experiment -- had already delivered a verdict on Dalton's eyes long before, working from nothing but Dalton's written descriptions. What did the genes say?",
+    "question": "J. D. Mollon, D. M. Hunt and their team pulled DNA in 1995 from John Dalton's eyes, 150-year-old tissue kept in a jar at the Manchester society he had once presided over, and published what they found in Science. Thomas Young, the man of the double-slit experiment, had delivered a verdict on those eyes long before, working from nothing but Dalton's written descriptions. What did the genes say?",
     "answer": "No gene at all for the green-sensitive pigment",
     "choices": [
       "No gene at all for the green-sensitive pigment",
