@@ -16147,20 +16147,20 @@
   },
   {
     "tier": 1,
-    "question": "In August 2005 the open-access journal PLoS Medicine printed a short essay by John Ioannidis, a doctor at Stanford University who studies how medical research goes wrong. The piece was only a few pages long and had no data tables. Its title read like a charge sheet against the entire scientific literature. What did that title say?",
+    "question": "John Ioannidis, a Stanford doctor, put out a short essay in PLoS Medicine in August 2005, with no data tables and a title like a charge sheet. He and David Chavalarias later found nearly every medical paper citing a p-value under 0.05, impossible unless failures stayed hidden. What did the title say?",
     "answer": "Why Most Published Research Findings Are False",
     "choices": [
       "Why Most Published Research Findings Are False",
-      "The Structure of Scientific Revolutions",
       "The End of Certainty in Modern Biology",
-      "How Statistics Lie in the Medical Age"
+      "How Statistics Lie in the Medical Age",
+      "A Manifesto for Reproducible Science"
     ],
-    "context": "PLoS Medicine 2(8): e124, August 30, 2005. Widely reported as the most-downloaded article in the history of open-access publishing. Ioannidis was at Stanford; the paper is one of the founding documents of the metascience movement. Kuhn's Structure came out in 1962 -- a real book, wrong here.",
+    "context": "PLoS Medicine 2(8): e124, August 30, 2005. Widely reported as the most-downloaded article in the history of open-access publishing. Ioannidis was at Stanford; the paper is one of the founding documents of the metascience movement. Chavalarias, Wallach, Salem, Ioannidis, JAMA 2016. Ioannidis: 'It's impossible that 96 percent of all the hypotheses being tested would be significant.' What you are seeing is a shelf, filtered -- the null results were strained out before print. The publication-bias mechanism has a name: the file-drawer problem.",
     "topic": "ioannidis-counts-the-false-positives"
   },
   {
     "tier": 2,
-    "question": "John Ioannidis, the Stanford University doctor who studies how medical research goes wrong, wrote a famous 2005 essay for the open-access journal PLoS Medicine. It ran only a few pages, had no data tables, and did no new experiments. Instead he worked out one equation from probability theory and applied it to the medical papers already in print. When a paper marks a finding 'statistically significant', Ioannidis's equation figures out one crucial number. What did that equation figure out?",
+    "question": "With no new experiment of his own, John Ioannidis worked out one equation from probability theory in 2005 and applied it to the medical papers already in print. When a paper marks a finding 'statistically significant', what number does his equation give?",
     "answer": "the positive predictive value of the finding",
     "choices": [
       "the positive predictive value of the finding",
@@ -16173,7 +16173,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2005 the Greek-American doctor John Ioannidis published a paper with a shocking title: 'Why Most Published Research Findings Are False.' He built a simple mathematical model to show how much you can really trust a study that reports 'p < 0.05' -- the standard statistical cutoff scientists use to call a result 'significant.' In Ioannidis's framework, one number decides how trustworthy that finding actually is. What mostly sets that number high or low?",
+    "question": "To show how far a reader can trust a study reporting 'p < 0.05', the cutoff scientists use to call a result 'significant', John Ioannidis built a simple mathematical model in 2005. In his model one number decides how trustworthy that finding really is. What mostly sets that number high or low?",
     "answer": "the true-hypothesis ratio, times the study's power",
     "choices": [
       "the true-hypothesis ratio, times the study's power",
@@ -16186,7 +16186,7 @@
   },
   {
     "tier": 3,
-    "question": "John Ioannidis's 2005 paper 'Why Most Published Research Findings Are False' laid out several corollaries -- short logical rules that follow from his model of how science works. Corollary 1 asked a blunt question about an entire research field: if that field mostly runs small studies with weak statistical power, what kind of results will end up filling its journal pages? What did Ioannidis say fills that shelf?",
+    "question": "John Ioannidis drew several corollaries from his 2005 model, short logical rules that follow from its arithmetic. The first took a whole research field that mostly runs small studies with weak statistical power, and asked what ends up on its journal pages. What did he say fills them?",
     "answer": "noise that will not replicate",
     "choices": [
       "noise that will not replicate",
@@ -16199,7 +16199,7 @@
   },
   {
     "tier": 4,
-    "question": "In his 2005 PLoS Medicine essay 'Why Most Published Research Findings Are False', the Stanford University doctor John Ioannidis listed six numbered corollaries — rules of thumb about when a positive scientific finding is most likely to be wrong. His Box 1 example imagines a lab testing 100,000 gene sites for a link to schizophrenia, when in truth only about 10 of those sites are really linked to the disease. Which of his six numbered corollaries does that example best show?",
+    "question": "John Ioannidis imagined a lab testing 100,000 gene sites for a link to schizophrenia, when in truth only about 10 of those sites are linked to the disease. The example sits in Box 1 of his 2005 PLoS Medicine essay, which listed six numbered corollaries, rules of thumb about when a positive finding is most likely to be wrong. Which one does it best show?",
     "answer": "the greater the number and the lesser the selection of tested relationships, the less likely the findings are to be true",
     "choices": [
       "the greater the number and the lesser the selection of tested relationships, the less likely the findings are to be true",
@@ -16212,7 +16212,7 @@
   },
   {
     "tier": 5,
-    "question": "Corollary SIX of Ioannidis's list sounds paradoxical until you picture the race. It says the more scientific teams pile into a hot question, the worse the published record on that question gets. What mechanism makes the racing itself manufacture false positives?",
+    "question": "At number six on his list of corollaries, John Ioannidis set down a paradox: the more scientific teams pile into a hot question, the worse the published record on that question gets. What mechanism makes a crowded field manufacture false positives?",
     "answer": "the first team to hit p < 0.05 publishes, so racing selects the lucky noisy runs out of the pack",
     "choices": [
       "the first team to hit p < 0.05 publishes, so racing selects the lucky noisy runs out of the pack",
@@ -16225,20 +16225,7 @@
   },
   {
     "tier": 5,
-    "question": "David Chavalarias and John Ioannidis surveyed medical papers from 1990 to 2015 and found nearly every one reporting a p-value came in under 0.05 — a rate impossible if the tests were honest. What was the title of Ioannidis's famous 2005 paper naming this problem?",
-    "answer": "Why Most Published Research Findings Are False",
-    "choices": [
-      "Why Most Published Research Findings Are False",
-      "The Replication Crisis Solved",
-      "A Manifesto for Reproducible Science",
-      "The End of Peer Review"
-    ],
-    "context": "Chavalarias, Wallach, Salem, Ioannidis, JAMA 2016. Ioannidis: 'It's impossible that 96 percent of all the hypotheses being tested would be significant.' What you are seeing is a shelf, filtered -- the null results were strained out before print. The publication-bias mechanism has a name: the file-drawer problem.",
-    "topic": "ioannidis-counts-the-false-positives"
-  },
-  {
-    "tier": 5,
-    "question": "The Ioannidis paper has been argued with in print. Leah Jager and Jeffrey Leek published a 2014 reanalysis in the journal Biostatistics that estimated the science-wise false-discovery rate at a much smaller figure than the headline claim. What was Jager and Leek's number?",
+    "question": "Leah Jager and Jeffrey Leek argued with John Ioannidis in print, in a 2014 reanalysis in the journal Biostatistics. They put the science-wise false-discovery rate at a much smaller figure than his headline claim, and the argument goes on. What was their number?",
     "answer": "about 14%",
     "choices": [
       "about 14%",
@@ -16251,7 +16238,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2005 the Greek-American medical researcher John Ioannidis published a paper called 'Why Most Published Research Findings Are False'. It became one of the most cited papers in modern science, arguing that small studies, weak effects and publication pressure together mean a big share of what medical journals print will not replicate. What his paper is often wrongly said to have claimed matters as much as what it did say. When critics steelman his argument, which of these does the paper not actually claim?",
+    "question": "John Ioannidis argued in 2005 that small studies, weak effects and publication pressure together mean a big share of what medical journals print will not replicate. The paper became one of the most cited in modern science, and what it is wrongly said to claim matters as much as what it says. Which of these does it not actually claim?",
     "answer": "that science is worthless and its published findings should be ignored",
     "choices": [
       "that science is worthless and its published findings should be ignored",
@@ -16264,7 +16251,7 @@
   },
   {
     "tier": 3,
-    "question": "The Greek-American medical researcher John Ioannidis, in his famous 2005 paper 'Why Most Published Research Findings Are False', argued that scientists, journalists and even fellow researchers routinely misread the number 'p < 0.05' as a much stronger claim than it actually makes. What does that p-value actually mean, in the strict technical sense?",
+    "question": "John Ioannidis argued in his 2005 paper that scientists, journalists and even fellow researchers routinely misread 'p < 0.05' as a much stronger claim than it makes. What does that p-value actually mean, in the strict technical sense?",
     "answer": "under a true null, data at least this extreme would appear less than 5% of the time",
     "choices": [
       "under a true null, data at least this extreme would appear less than 5% of the time",
@@ -16277,7 +16264,7 @@
   },
   {
     "tier": 1,
-    "question": "Scurvy — a disease that made sailors' gums bleed, teeth fall out, and old wounds reopen — killed more British seamen in the 1700s than enemy guns. In 1747, aboard HMS Salisbury patrolling the English Channel, the Scottish naval surgeon James Lind took twelve sick sailors and split them into six pairs. Each pair would get a different suspected remedy — cider, vinegar, sea water, a paste of garlic and mustard, oranges and lemons, and so on. Before the first dose, Lind did one careful thing with all twelve. What did he do?",
+    "question": "James Lind took twelve sailors sick with scurvy aboard HMS Salisbury in 1747 and split them into six pairs, each to get a different suspected remedy. Before the first dose he did one thing with all twelve. What was it?",
     "answer": "Put them in one sick berth on one identical diet.",
     "choices": [
       "Put them in one sick berth on one identical diet.",
@@ -16290,7 +16277,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1747, aboard HMS Salisbury, James Lind put twelve sailors sick with scurvy on six remedies, a pair to each. So little fruit was aboard that the citrus pair - two oranges and a lemon a day - ran out after six days. Where did six days leave the two men?",
+    "question": "James Lind handed one pair of his scurvy patients two oranges and a lemon a day aboard HMS Salisbury in 1747. So little fruit was aboard that it ran out after six days. Where did those six days leave the two men?",
     "answer": "One was fit for duty; the other nursed the rest.",
     "choices": [
       "One was fit for duty; the other nursed the rest.",
@@ -16303,7 +16290,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1740 the British admiral George Anson set sail with about 1,854 men aboard six ships to raid Spain's Pacific colonies. Four years later he came home rich, having captured the Spanish treasure galleon Nuestra Señora de Covadonga in a single sea battle. Only one man died in that fight. But the voyage itself, dragging around Cape Horn and across the Pacific, was a slaughter — mostly by scurvy, the vitamin-C deficiency that rots sailors from the inside. How many of the original 1,854 came home on his flagship, HMS Centurion?",
+    "question": "George Anson set sail in 1740 with about 1,854 men aboard six ships, bound to raid Spain's Pacific colonies. He took a Spanish treasure galleon in a fight that killed one man, but the voyage was a slaughter, mostly by scurvy. How many of the 1,854 came home on his flagship, the Centurion?",
     "answer": "188",
     "choices": [
       "188",
@@ -16316,7 +16303,7 @@
   },
   {
     "tier": 2,
-    "question": "Aboard HMS Salisbury in 1747, James Lind gave each of six pairs of scurvy patients a different remedy. Every one was a treatment top doctors pushed on the fleets. The pair on oranges and lemon recovered. Four pairs gained nothing at all. One pair improved a little. Which remedy gave that slight improvement?",
+    "question": "James Lind gave each of six pairs of scurvy patients a different remedy, every one a treatment top doctors pushed on the fleets. The pair on oranges and lemon recovered. Four pairs gained nothing at all. One pair improved a little. Which remedy gave that slight improvement?",
     "answer": "A quart of cider a day.",
     "choices": [
       "A quart of cider a day.",
@@ -16329,7 +16316,7 @@
   },
   {
     "tier": 2,
-    "question": "Salt beef, hard biscuit, nothing fresh: that was the standing diet on a long passage, and scurvy the standing result. Yet the food was almost impossible to convict, because a crew eating it stays perfectly well for a stretch before the gums begin to bleed. How long is that stretch?",
+    "question": "A sailor chews salt beef and hard biscuit on a long passage, with nothing fresh aboard. The food is almost impossible to convict of scurvy, because a crew eating it stays perfectly well for a stretch before the gums begin to bleed. How long is that stretch?",
     "answer": "At least a month.",
     "choices": [
       "At least a month.",
@@ -16342,7 +16329,7 @@
   },
   {
     "tier": 3,
-    "question": "Citrus cured scurvy, but fresh oranges rot in weeks, so no ship bound for the Indies could carry them. James Lind's fix was a syrup: citrus juice held near-boiling for hours until it cooked down to a sixth. He called it a 'rob'. What did those hot hours do to the vitamin C in the juice?",
+    "question": "James Lind recommended a fix for fresh oranges, which rot in weeks and could not last aboard a ship bound for the Indies: a 'rob', citrus juice held near boiling for hours until it cooked down to a sixth. What did those hot hours do to the vitamin C in the juice?",
     "answer": "Destroyed most of it, leaving a syrup that could not cure.",
     "choices": [
       "Destroyed most of it, leaving a syrup that could not cure.",
@@ -16355,7 +16342,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1700s the British Royal Navy watched sailors on long voyages die of scurvy. The disease was awful to see -- putrid gums, dark spots creeping up the legs, knees too weak to hold the man up. After years of testing, the Navy settled on a tiny daily ration to prevent it: two-thirds of an ounce of lemon juice, stirred into every sailor's grog. That works out to only about ten milligrams of vitamin C. Now picture a sailor already deep in the disease, gums bleeding, legs failing. What does that ten milligrams of vitamin C a day do to a man already that far gone?",
+    "question": "A sailor lies deep in scurvy, gums bleeding, knees too weak to hold him, as two-thirds of an ounce of lemon juice goes into his grog, the Royal Navy's tiny daily ration. That works out to only about ten milligrams of vitamin C. What does ten milligrams a day do to a man that far gone?",
     "answer": "Reverses every obvious symptom of the disease.",
     "choices": [
       "Reverses every obvious symptom of the disease.",
@@ -16368,7 +16355,7 @@
   },
   {
     "tier": 3,
-    "question": "The Scottish naval surgeon James Lind, who in 1747 ran his famous scurvy trial on twelve sick sailors aboard HMS Salisbury by splitting them into six pairs and giving each pair a different remedy, sat down after the voyage to write it all up. His book A Treatise of the Scurvy came out in 1753 and ran to some 400 sides of print. The whole book is remembered today for one thing only: those twelve men in six pairs aboard the Salisbury. How much of his own book did Lind give that trial?",
+    "question": "James Lind sat down after the voyage to write up his trial of twelve sick sailors, and his book A Treatise of the Scurvy came out in 1753 at some 400 sides of print. The whole book is remembered today for that trial alone. How much of it did Lind give the trial?",
     "answer": "About five paragraphs, two hundred pages in.",
     "choices": [
       "About five paragraphs, two hundred pages in.",
@@ -16381,7 +16368,7 @@
   },
   {
     "tier": 4,
-    "question": "When the Scottish naval surgeon James Lind ran his 1747 scurvy trial aboard HMS Salisbury, he split twelve sick sailors into six pairs and gave each pair a different remedy — cider, vinegar, sea water, oranges and a lemon, and so on. The two men on citrus were the only clear recovery of the whole trial. Yet when Lind wrote it up six years later in his 1753 book A Treatise of the Scurvy, he did not name citrus as the cure for scurvy. What did he argue instead?",
+    "question": "James Lind saw the two men on citrus make the only clear recovery of his 1747 trial. Yet when he wrote it up six years later in A Treatise of the Scurvy, he did not name citrus as the cure for scurvy. What did he argue instead?",
     "answer": "That scurvy had several causes at once, so needed several remedies.",
     "choices": [
       "That scurvy had several causes at once, so needed several remedies.",
@@ -16407,7 +16394,7 @@
   },
   {
     "tier": 4,
-    "question": "Lind ran his trial in 1747 and published in 1753; the Navy's Sick and Hurt Board turned down fruit-juice proposals the very next year. The order came at last after Rear Admiral Alan Gardner had lemon juice issued on HMS Suffolk for a twenty-three-week run to Madras, and Gilbert Blane pressed the case from inside that same board. How long after the trial did the Admiralty issue lemon juice to the whole fleet?",
+    "question": "Rear Admiral Alan Gardner had lemon juice issued on HMS Suffolk for a twenty-three-week run to Madras, while Gilbert Blane pressed the case from inside the Navy's Sick and Hurt Board. That board had turned down fruit-juice proposals the year after James Lind published in 1753. How long after Lind's 1747 trial did the Admiralty issue lemon juice to the whole fleet?",
     "answer": "Forty-eight years.",
     "choices": [
       "Forty-eight years.",
@@ -16420,7 +16407,7 @@
   },
   {
     "tier": 5,
-    "question": "By the 1860s the Royal Navy had scurvy beaten with Mediterranean lemon juice. Then the Admiralty switched its supply to lime juice, which carries about a quarter of the scurvy-fighting power - and by 1875 scurvy was back in the fleet, and polar expeditions met it for decades after. What drove the switch?",
+    "question": "A Royal Navy sailor in the 1860s found lime juice in his ration where Mediterranean lemon juice had been: the Admiralty had switched. Lime carries about a quarter of the scurvy-fighting power, and by 1875 scurvy was back in the fleet. Polar expeditions met it for decades after. What drove the switch?",
     "answer": "Limes came from Britain's own colonial plantations.",
     "choices": [
       "Limes came from Britain's own colonial plantations.",
@@ -16432,21 +16419,8 @@
     "topic": "james-lind-and-the-first-controlled-trial"
   },
   {
-    "tier": 5,
-    "question": "Joseph Svirbely set out in 1931 to test whether the substance Albert Szent-Gyorgyi had isolated was the thing in the fruit. He fed one group of guinea pigs boiled food, and a matched group the same food with the isolate stirred in; the boiled-food group sickened and died. Why do guinea pigs come down with scurvy when most animals never do?",
-    "answer": "They carry a broken gene for making their own vitamin C, as we do.",
-    "choices": [
-      "They carry a broken gene for making their own vitamin C, as we do.",
-      "They cannot store the vitamin for more than a few days at a time.",
-      "They lose the vitamin through the gut faster than they take it in.",
-      "They eat a dry grain diet close to a ship's biscuit and salt beef."
-    ],
-    "context": "Guinea pigs, higher primates and most bats all carry a broken, non-functional GULO gene and cannot make their own vitamin C - which is why a guinea pig can stand in for a sailor. Notice the design: two matched groups, one variable, boiling already known to destroy the substance. Svirbely ran Lind's experiment again, in a laboratory, 184 years later. Szent-Gyorgyi had isolated the substance in 1927-28 without knowing what it was, and half-jokingly proposed calling it 'ignose' and then 'godnose' - as in, God knows what it is; the journal editor refused, so it was published as 'hexuronic acid'. After Svirbely's proof it was renamed ascorbic acid, 'the acid that prevents scurvy', and Szent-Gyorgyi took the 1937 Nobel Prize. His supply problem was solved at the dinner table - by one telling of the story, he was served fresh paprika in Szeged, did not want to eat it, carried it to the lab instead and found Hungarian paprika an extraordinarily rich source; he and Ilona Banga then made ascorbic acid from it by the kilogram. Sources: sciencehistory.org/education/scientific-biographies/albert-szent-gyorgyi/ (which reports the paprika dinner explicitly as 'one version of the legend'); en.wikipedia.org/wiki/Vitamin_C; nobelprize.org/prizes/medicine/1937/szent-gyorgyi/biographical/; profiles.nlm.nih.gov/spotlight/wg/.",
-    "topic": "james-lind-and-the-first-controlled-trial"
-  },
-  {
     "tier": 4,
-    "question": "In 2002 Bell Labs realised its star physicist Jan Hendrik Schon had faked breakthrough results in one condensed-matter paper after another. The lab asked Stanford's Malcolm Beasley to chair an outside inquiry. On 25-26 September 2002 his committee reported. It had weighed twenty-four separate charges of scientific misconduct against Schon. In how many did it find the charge proven?",
+    "question": "Malcolm Beasley of Stanford chaired Bell Labs' outside inquiry into its star physicist, Jan Hendrik Schön, in 2002. His committee weighed twenty-four separate charges of scientific misconduct and reported that September. In how many did it find the charge proven?",
     "answer": "Sixteen",
     "choices": [
       "Sixteen",
@@ -16459,7 +16433,7 @@
   },
   {
     "tier": 4,
-    "question": "Between 1998 and 2002 the Bell Labs physicist Jan Hendrik Schon had put about twenty other scientists' names on his fake condensed-matter papers as co-authors. Those researchers worked at Bell Labs itself and at universities on two continents. When Stanford's Beasley committee finished its inquiry in September 2002 and ruled on those co-authors, what did the report say?",
+    "question": "Jan Hendrik Schön put about twenty other scientists' names on his fake papers as co-authors between 1998 and 2002, people at Bell Labs itself and at universities on two continents. Malcolm Beasley's committee ruled on those co-authors in September 2002. What did its report say?",
     "answer": "All co-authors were formally cleared of scientific misconduct",
     "choices": [
       "All co-authors were formally cleared of scientific misconduct",
@@ -16472,7 +16446,7 @@
   },
   {
     "tier": 5,
-    "question": "About two dozen of Schon's papers were withdrawn from Science, Nature, Physical Review, Applied Physics Letters and Advanced Materials. His alma mater -- the University of Konstanz -- then went after his doctorate, though a court in Freiburg reinstated it in 2010. Which court had the final word, and when?",
+    "question": "Jan Hendrik Schön saw about two dozen papers of his withdrawn from journals including Science and Nature. His alma mater, the University of Konstanz, then went after his doctorate, though a court in Freiburg reinstated it in 2010. Which court had the final word, and when?",
     "answer": "Germany's Federal Constitutional Court in Karlsruhe, in 2014",
     "choices": [
       "Germany's Federal Constitutional Court in Karlsruhe, in 2014",
@@ -16485,7 +16459,7 @@
   },
   {
     "tier": 1,
-    "question": "On 14 May 1796, in the English village of Berkeley, a country doctor made two shallow cuts in a boy's arm. The doctor was Edward Jenner. The boy was James Phipps, the eight-year-old son of Jenner's own gardener. Jenner then rubbed matter into the cuts. Where had he taken that matter from?",
+    "question": "Edward Jenner made two shallow cuts in a boy's arm on 14 May 1796, in the English village of Berkeley. The boy was James Phipps, the eight-year-old son of Jenner's own gardener. Jenner rubbed matter into the cuts. Where had he taken it from?",
     "answer": "A milkmaid's blistered hand",
     "choices": [
       "A cow's diseased udder",
@@ -16498,7 +16472,7 @@
   },
   {
     "tier": 1,
-    "question": "Edward Jenner's 1798 pamphlet described giving a small boy matter from a milkmaid's cowpox blister, to test whether the milder cow disease would head off deadly smallpox. Jenner never names the cow in the story, but tradition has called her Blossom. Part of her still hangs on the library wall at St George's medical school in London. What part?",
+    "question": "Edward Jenner left one name out of his 1798 pamphlet on cowpox: the cow's. Tradition has called her Blossom, and part of her still hangs on the library wall at St George's medical school in London. What part?",
     "answer": "Her hide",
     "choices": [
       "Her horns",
@@ -16511,7 +16485,7 @@
   },
   {
     "tier": 2,
-    "question": "On 14 May 1796 Edward Jenner deliberately infected eight-year-old James Phipps, his gardener's son, with cowpox — the mild disease of the dairy herds. Six weeks later the boy was perfectly well, which proved nothing about whether he could now resist smallpox. On 1 July 1796 Jenner came back to him. What did he do to the boy that day?",
+    "question": "James Phipps, eight years old, stayed perfectly well after Edward Jenner deliberately gave him cowpox, the mild disease of the dairy herds, on 14 May 1796. That proved nothing about whether the boy could now resist smallpox. Jenner came back to him on 1 July. What did he do to the boy that day?",
     "answer": "He scratched matter from a smallpox sore into the boy's arm",
     "choices": [
       "He scratched matter from a smallpox sore into the boy's arm",
@@ -16524,7 +16498,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1796 the English country doctor Edward Jenner scratched cowpox pus into the arm of James Phipps, the local gardener's eight-year-old boy, to test whether it would guard him from smallpox. It did. The first vaccination worked. Jenner never forgot the child who had trusted him with that first test. He also never charged a penny for a shot; he inoculated the poor for free from a rustic hut in his own garden. What did Jenner give Phipps as thanks?",
+    "question": "Edward Jenner rubbed cowpox matter into the arm of his own gardener's boy, eight-year-old James Phipps, in 1796, and he never forgot the child who had trusted him with that test. He also inoculated the poor for free from a rustic hut in his own garden. What did Jenner give Phipps as thanks?",
     "answer": "The lease of a cottage for his family",
     "choices": [
       "A place as his apprentice in medicine",
@@ -16537,7 +16511,7 @@
   },
   {
     "tier": 3,
-    "question": "Edward Jenner knew exactly what the old smallpox protection cost, because he had been put through it himself at about eight years old, in Gloucester around 1757. The procedure was the least of it: the six weeks of preparation beforehand wrecked his health for years. What did those six weeks consist of?",
+    "question": "Aged about eight, Edward Jenner went through the old smallpox protection himself, in Gloucester around 1757. The procedure was the least of it: the six weeks of preparation beforehand wrecked his health for years. What did those six weeks consist of?",
     "answer": "Repeated bleeding, purging and near-starvation on a vegetable drink",
     "choices": [
       "Repeated cold baths, mercury rubs and a course of hot cupping",
@@ -16550,7 +16524,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1796 the English country doctor Edward Jenner had scratched cowpox pus into an eight-year-old boy in the village of Berkeley to test whether it would guard him from smallpox — the first vaccination. In 1797 Jenner wrote the case up and sent it to the Royal Society in London, the most respected scientific body in Britain. The Society refused to print it. What did Jenner get back instead?",
+    "question": "Edward Jenner wrote up his cowpox test on an eight-year-old boy in 1797 and sent it to the Royal Society in London, the most respected scientific body in Britain. The Society refused to print it. What did Jenner get back instead?",
     "answer": "A warning not to risk his reputation on it",
     "choices": [
       "An invitation to demonstrate before the Fellows",
@@ -16563,7 +16537,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1774 smallpox was loose in the Dorset village of Benjamin Jesty, a cattle farmer with no medical training. He walked his wife Elizabeth and their two small boys about seven miles to a farm with sick cows. There he scratched matter from the cows into all three of their arms. What did Jesty scratch it in with?",
+    "question": "Benjamin Jesty, a Dorset cattle farmer with no medical training, walked his wife Elizabeth and their two small boys about seven miles to a farm with sick cows in 1774, with smallpox loose in his village. There he scratched matter from the cows into all three of their arms. What did he scratch it in with?",
     "answer": "A darning needle",
     "choices": [
       "A surgeon's lancet",
@@ -16576,7 +16550,7 @@
   },
   {
     "tier": 4,
-    "question": "In August 1805 the Original Vaccine Pock Institution in London sent for Benjamin Jesty, a Dorset cattle farmer with no medical training. Twelve medical officers sat him down. They asked about the cowpox he had scratched into his own wife and two sons thirty-one years before. What happened in front of the officers?",
+    "question": "Twelve medical officers of the Original Vaccine Pock Institution in London sat down Benjamin Jesty, a Dorset cattle farmer with no medical training, in August 1805. They asked about the cowpox he had scratched into his wife and two sons thirty-one years before. What happened in front of the officers?",
     "answer": "His eldest son Robert took an inoculation of live smallpox",
     "choices": [
       "His eldest son Robert took an inoculation of live smallpox",
@@ -16589,7 +16563,7 @@
   },
   {
     "tier": 4,
-    "question": "Edward Jenner was right that the dairy disease protected people and wrong about where the protection began. He did not think it started in the cow at all: in the Inquiry he traced it to a sore on a different farm animal, and blamed farmhands who dressed that sore and then went to the milking without washing their hands. Which sore did Jenner blame?",
+    "question": "In his Inquiry Edward Jenner wrote that the dairy disease did not start in the cow at all. He traced it to a sore on a different farm animal, and he blamed farmhands who dressed that sore and then went to the milking without washing their hands. Which sore did he blame?",
     "answer": "A horse's diseased heel",
     "choices": [
       "A pig's ulcerated snout",
@@ -16602,7 +16576,7 @@
   },
   {
     "tier": 5,
-    "question": "Edward Jenner's 1798 book on cowpox vaccination — usually called just 'the Inquiry' — was written to sell the new method to a skeptical medical establishment, and it made big promises about how well the technique would work. One of those promises doctors kept repeating for decades, and Jenner's own century of use proved false. What had Jenner promised in print?",
+    "question": "To sell the new method to a skeptical medical establishment, Edward Jenner wrote his 1798 Inquiry and made big promises in print about how well it would work. Doctors kept repeating one of them for decades, and his own century of use proved it false. What had he promised?",
     "answer": "That one course of cowpox protected a person for life",
     "choices": [
       "That a vaccinated mother passed her protection to her children",
@@ -16615,7 +16589,7 @@
   },
   {
     "tier": 5,
-    "question": "For nearly a hundred years, Jenner's Latin cow-word -- he had named cowpox Variolae vaccinae, from vacca, a cow -- meant just his one cowpox shot. Then in 1881, labs across Europe were making shots for many other diseases. One leading scientist said, in Jenner's honour, the cow-word should cover them all. The field agreed, which is why a flu shot is called a vaccine today. Who made that proposal?",
+    "question": "A leading scientist proposed in 1881, in Edward Jenner's honour, that Jenner's Latin cow-word should cover the shots labs across Europe were making for many other diseases. Jenner had meant only cowpox: Variolae vaccinae, from vacca, a cow. The word spread by that proposal, which is why a flu shot is called a vaccine today, though each new shot still had to bring its own evidence. Who made the proposal?",
     "answer": "Louis Pasteur",
     "choices": [
       "Louis Pasteur",
@@ -16628,7 +16602,7 @@
   },
   {
     "tier": 1,
-    "question": "Cholera struck Soho on 31 August 1854, and 127 people were dead within three days. John Snow, a London doctor who had studied cholera for years, walked the district to find the cause. What did he do?",
+    "question": "John Snow, a London doctor who had studied cholera for years, walked Soho to find the cause after the disease struck on 31 August 1854 and killed 127 people within three days. What did he do?",
     "answer": "He marked every death as a black bar at the address where it happened.",
     "choices": [
       "He marked every death as a black bar at the address where it happened.",
@@ -16641,7 +16615,7 @@
   },
   {
     "tier": 1,
-    "question": "In late summer 1854 a fierce cholera outbreak was killing people around Broad Street in Soho, London. The public pump the neighbourhood drank from stood among outdoor toilets and leaking cesspits, in one of the most crowded quarters of the city. During the outbreak the local doctor Edwin Lankester drew a glass from the pump and examined the water. What did he find?",
+    "question": "Edwin Lankester, a local doctor, drew a glass from the Broad Street pump in Soho while cholera was killing people around it in 1854. The pump stood among outdoor toilets and leaking cesspits. What did he find when he examined the water?",
     "answer": "It was clear, odourless and pleasant to the taste.",
     "choices": [
       "It was clear, odourless and pleasant to the taste.",
@@ -16654,7 +16628,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 1854 cholera was killing hundreds around Broad Street in Soho, London, and Doctor John Snow was walking the streets to work out where the disease came from. In the middle of the dying stood a brewery, and not one of its seventy-odd workmen had caught cholera. Snow called on the owner, Mr Huggins, to ask how his men had escaped it. What did Huggins tell him?",
+    "question": "Hunting the ones who had escaped, John Snow called on Mr Huggins, owner of a brewery in the middle of the dying around Broad Street in September 1854. Not one of the seventy-odd workmen there had died of cholera. What did Huggins tell him?",
     "answer": "They were allowed a daily ration of beer and drank no water at all.",
     "choices": [
       "They were allowed a daily ration of beer and drank no water at all.",
@@ -16667,7 +16641,7 @@
   },
   {
     "tier": 2,
-    "question": "The workhouse in Poland Street, where the parish housed its poor, was ringed on three sides by houses where people were dying, and 535 people were packed inside it. Five died of cholera. John Snow went looking for what the workhouse had that the streets around it did not. What did he find?",
+    "question": "Inside the Poland Street workhouse, where the parish housed its poor, John Snow went looking for what it had that the streets around it did not. Houses where people were dying ringed it on three sides, yet of the 535 people packed inside, five died of cholera. What did he find?",
     "answer": "A well of its own, sunk in the yard behind the wards.",
     "choices": [
       "A well of its own, sunk in the yard behind the wards.",
@@ -16680,7 +16654,7 @@
   },
   {
     "tier": 2,
-    "question": "Late in 1854 Henry Whitehead, a curate at St Luke's in Berwick Street, went door to door through Soho. He talked to 497 of the 896 people who had lived on the stricken streets, and wrote to those who had moved away. It was the deepest survey anyone made of the outbreak. Why had he begun it?",
+    "question": "Henry Whitehead, a curate at St Luke's in Berwick Street, went door to door through Soho late in 1854. He talked to 497 of the 896 people who had lived on the stricken streets and wrote to those who had moved away, the deepest survey anyone made of the outbreak. Why had he begun it?",
     "answer": "He believed in bad air himself and meant to break Snow's water theory.",
     "choices": [
       "He believed in bad air himself and meant to break Snow's water theory.",
@@ -16693,7 +16667,7 @@
   },
   {
     "tier": 3,
-    "question": "The outbreak's first case was a five-month-old baby at 40 Broad Street, whose mother, Sarah Lewis, rinsed the soiled nappies into the cesspit — the household waste pit — sunk in front of the house. The Broad Street pump drew its water from a well a short way off. How did the pit's filth reach that well?",
+    "question": "Sarah Lewis rinsed her five-month-old baby's soiled nappies into the cesspit, the household waste pit, sunk in front of 40 Broad Street. The baby was the outbreak's first case, and the Broad Street pump drew its water from a well a short way off. How did the pit's filth reach that well?",
     "answer": "The cesspit's brick lining had rotted, and the well stood in loose gravel.",
     "choices": [
       "The cesspit's brick lining had rotted, and the well stood in loose gravel.",
@@ -16706,7 +16680,7 @@
   },
   {
     "tier": 3,
-    "question": "In late summer 1854 cholera was killing hundreds around the Broad Street pump in Soho, London, and Doctor John Snow suspected the pump water itself was carrying the disease. Then on 2 September 1854 a widow of 59 died of cholera at West End in Hampstead, miles north of Soho, in a quiet district where nobody else had the disease. She was seized on the Friday evening and dead by Saturday. What had come to her from Broad Street?",
+    "question": "A widow of 59 fell ill with cholera on a Friday evening at West End in Hampstead, miles north of Soho, in a quiet district where nobody else had the disease. She was dead by Saturday, 2 September 1854. John Snow tied her death to the outbreak around Broad Street. What had come to her from there?",
     "answer": "A cart brought her a large bottle of the pump's water each day.",
     "choices": [
       "A cart brought her a large bottle of the pump's water each day.",
@@ -16719,7 +16693,7 @@
   },
   {
     "tier": 4,
-    "question": "In late summer 1854 cholera was killing hundreds around Soho in London. Doctor John Snow had traced the deaths to one water source: the Broad Street pump. On 7 September 1854 he argued his case to the parish board of St James's. The next day, 8 September, the board had the handle taken off the pump so nobody could draw from it. When Snow wrote the outbreak up in a book the following year, what did he say about that removal?",
+    "question": "John Snow argued his case to the parish board of St James's on 7 September 1854, and the next day the board had the handle taken off the Broad Street pump so nobody could draw from it. When Snow wrote the outbreak up in a book the following year, what did he say about that removal?",
     "answer": "He could not decide whether the well still held the poison by then.",
     "choices": [
       "He could not decide whether the well still held the poison by then.",
@@ -16732,7 +16706,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1855 the London doctor John Snow published a map of the Soho cholera outbreak of the previous year to prove the deaths clustered around the Broad Street water pump. The map is famous for its black bars — one drawn for each death at each address. But it also carries a single line that most people never notice, and Snow said the line, not the bars, was where his argument really lived. What does that line enclose?",
+    "question": "John Snow drew a single line on his 1855 map of the Soho cholera, one most people never notice among the marks for each death. Snow said the line, not the marks, was where his argument really lived. What does that line enclose?",
     "answer": "Every spot that lay nearer to the Broad Street pump than to any other.",
     "choices": [
       "Every spot that lay nearer to the Broad Street pump than to any other.",
@@ -16745,7 +16719,7 @@
   },
   {
     "tier": 4,
-    "question": "In October 1854 the General Board of Health sent three investigators — Edmund Parkes, J. Lea Smith and William Ranger — house to house through Soho. They rejected the pump, holding up the brewery's untouched workmen and the workhouse's five dead as proof that the water could not be the cause. What did their report blame instead?",
+    "question": "Three inspectors from the General Board of Health, Edmund Parkes, J. Lea Smith and William Ranger, went house to house through Soho in October 1854. They rejected the pump, holding up the brewery's untouched workmen and the workhouse's five dead as proof that the water could not be the cause. What did their report blame instead?",
     "answer": "The new sewers, built too flat and choked with butchers' waste.",
     "choices": [
       "The new sewers, built too flat and choked with butchers' waste.",
@@ -16758,7 +16732,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1855 the London doctor John Snow published his book On the Mode of Communication of Cholera. In it he laid out his case that the disease travelled in water: the Soho map with a dot per death around the Broad Street pump, a widow who died of cholera miles away in Hampstead after a bottle of the pump's water was sent up to her, and a comparison of two London water companies. The physician Edmund Parkes reviewed the book and named the weakness Snow's critics had all felt. What could Snow not produce?",
+    "question": "Edmund Parkes, a physician, reviewed John Snow's 1855 book On the Mode of Communication of Cholera, which laid out the case that the disease travelled in water: the Soho map, the Hampstead widow, a comparison of two London water companies. Parkes named the weakness Snow's critics had all felt. What could Snow not produce?",
     "answer": "Any impurity in the pump water itself that his own analysis could show.",
     "choices": [
       "Any impurity in the pump water itself that his own analysis could show.",
@@ -16771,7 +16745,7 @@
   },
   {
     "tier": 5,
-    "question": "South London's two water companies ran their pipes down the same streets, sometimes into neighbouring houses. Lambeth had moved its intake upriver to Seething Wells in 1852; Southwark and Vauxhall still drew from the sewage-fouled tidal Thames. Over the first seven weeks of the 1854 epidemic John Snow counted the cholera deaths house by house, and Southwark and Vauxhall's 40,046 houses lost 1,263 people. How much deadlier was cholera in their houses than in Lambeth's?",
+    "question": "House by house, John Snow counted the cholera deaths over the first seven weeks of the 1854 epidemic in south London, where two water companies ran their pipes down the same streets. Lambeth had moved its intake upriver to Seething Wells in 1852; Southwark and Vauxhall still drew from the sewage-fouled tidal Thames, and that company's 40,046 houses lost 1,263 people. How much deadlier was cholera in those houses than in Lambeth's?",
     "answer": "About eight and a half times as many deaths per house.",
     "choices": [
       "About eight and a half times as many deaths per house.",
@@ -16784,7 +16758,7 @@
   },
   {
     "tier": 5,
-    "question": "William Farr, the government's statistician, had built the best case bad air ever had: a real and repeatable link between cholera deaths and how low a district lay above the Thames. In 1866 cholera came back to London's eastern parishes and killed more than 5,000 people. Farr went house to house after it. What did he trace the deaths to?",
+    "question": "William Farr, the government's statistician, went house to house through London's eastern parishes in 1866, after cholera came back and killed more than 5,000 people. He had built the best case bad air ever had: a real and repeatable link between cholera deaths and how low a district lay above the Thames. What did he trace the deaths to?",
     "answer": "The reservoir belonging to one of the water companies.",
     "choices": [
       "The reservoir belonging to one of the water companies.",
@@ -16797,7 +16771,7 @@
   },
   {
     "tier": 1,
-    "question": "In Glasgow in the late 1750s the Scottish chemistry professor Joseph Black kept turning one question over. When the spring thaw finally came, why did a snowdrift take days to vanish? If warm air simply added heat, the drift should melt in minutes. Where was all that heat going?",
+    "question": "Joseph Black, chemistry professor at Glasgow, asked in the late 1750s why a snowdrift took days to vanish once the spring thaw came. If warm air simply added heat, the drift should have melted in minutes. Where was all that heat going?",
     "answer": "Into melting the ice without raising its temperature",
     "choices": [
       "Into melting the ice without raising its temperature",
@@ -16810,7 +16784,7 @@
   },
   {
     "tier": 2,
-    "question": "In December 1761 Joseph Black did the experiment. He put a lump of ice at 0 C into a warm room and clocked how long it took to melt, then took the same weight of water at 0 C and clocked how long IT took to warm all the way up to the temperature the melted ice had reached. Which took longer?",
+    "question": "Joseph Black set a lump of ice at 0 C in a warm room in December 1761 and clocked how long it took to melt. Then he took the same weight of water at 0 C and clocked how long it took to warm up to the temperature the melted ice had reached. Which took longer?",
     "answer": "The ice, by many times over",
     "choices": [
       "The ice, by many times over",
@@ -16823,7 +16797,7 @@
   },
   {
     "tier": 2,
-    "question": "In the late 1750s the Scottish chemistry professor Joseph Black discovered that heat pours into melting ice and boiling water without the thermometer moving at all — present in the substance but invisible to the instrument. He needed a name for it. He built the name from a Latin word meaning 'hidden' or 'lying in wait'. What did he call it?",
+    "question": "Joseph Black caught heat pouring into melting ice and boiling water in the late 1750s without the thermometer moving at all: present in the substance, invisible to the instrument. He built a name for it from a Latin word meaning 'hidden' or 'lying in wait'. What did he call it?",
     "answer": "Latent heat",
     "choices": [
       "Latent heat",
@@ -16836,7 +16810,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 1750s the Scottish chemist Joseph Black discovered that once a liquid reaches its boiling point, extra heat does not push its temperature any higher — it goes instead into turning liquid to vapour. He called that hidden heat 'latent heat'. Here is his discovery you can do at your kitchen stove. Put a thermometer in a pot of vigorously boiling water and crank the burner to maximum. What does the reading do?",
+    "question": "A student tests Joseph Black's discovery about boiling at her kitchen stove. She stands a thermometer in a pot of vigorously boiling water, cranks the burner to maximum and watches the numbers. What does the reading do?",
     "answer": "Stays stuck at about 100 C",
     "choices": [
       "Stays stuck at about 100 C",
@@ -16849,7 +16823,7 @@
   },
   {
     "tier": 3,
-    "question": "Black also showed that equal weights of different things warmed by the same amount need very different amounts of heat. He called this the specific heat. He found one common thing had an unusually big appetite -- ounce for ounce it soaked up more heat than almost anything else Black tested. Which was it?",
+    "question": "Joseph Black warmed equal weights of different things by the same amount and found they needed very different amounts of heat, which he named specific heat. One common substance had an unusually big appetite: ounce for ounce it soaked up more heat than almost anything else Black tested. Which was it?",
     "answer": "Water",
     "choices": [
       "Water",
@@ -16862,7 +16836,7 @@
   },
   {
     "tier": 4,
-    "question": "Joseph Black taught chemistry at Glasgow while a young man named James Watt earned his living as the university's instrument maker; the two became friends. In 1763 Watt was asked to repair a model Newcomen atmospheric engine and saw it was wasting most of its coal on ONE thing per cycle. In May 1765, on a Sunday walk on Glasgow Green, he solved it. What was the engine's ruinous waste?",
+    "question": "James Watt, instrument maker at Glasgow and the friend of the chemistry professor Joseph Black, set to repairing a model Newcomen atmospheric engine in 1763. He saw it wasting most of its coal on one thing, every cycle. He solved the problem on a Sunday walk on Glasgow Green in May 1765. What was the engine's ruinous waste?",
     "answer": "Reheating the cylinder after chilling it with cold water",
     "choices": [
       "Reheating the cylinder after chilling it with cold water",
@@ -16875,7 +16849,7 @@
   },
   {
     "tier": 5,
-    "question": "At ordinary kitchen pressure, water boils at 100 C and the steam coming off it is also at 100 C -- exactly the same temperature. And yet a burn from that steam is far worse than a burn from the boiling water it came out of. Applying what Black had shown about the heat hiding in a phase change, why?",
+    "question": "A cook reaches across a pot boiling at ordinary kitchen pressure, where the water stands at 100 C and the steam coming off it is at exactly the same temperature. The steam burns her arm far worse than the boiling water would. By what Joseph Black showed about the heat hiding in a phase change, why?",
     "answer": "The steam condenses on the skin and dumps its latent heat there",
     "choices": [
       "The steam condenses on the skin and dumps its latent heat there",
@@ -16888,7 +16862,7 @@
   },
   {
     "tier": 1,
-    "question": "When you mix vinegar and baking soda in a jug, they react and fizz — the bubbles are carbon dioxide gas filling the jug. If you now carefully tilt the jug over a lit candle, with no liquid ever leaving the jug, the flame goes out. What property of carbon dioxide is at work here?",
+    "question": "A girl mixes vinegar and baking soda in a jug, and carbon dioxide fills it. She tilts the jug over a lit candle, no liquid leaving it, and the flame dies. What property of the gas is at work?",
     "answer": "It is denser than ordinary air and displaces the oxygen the flame needs",
     "choices": [
       "It is denser than ordinary air and displaces the oxygen the flame needs",
@@ -16901,7 +16875,7 @@
   },
   {
     "tier": 2,
-    "question": "Edinburgh, 1754. The young Scottish chemist Joseph Black was studying a common white powder called magnesia alba, which we now know as magnesium carbonate. He put a sample on his balance, wrote down its weight, then heated it strongly over a fire and weighed the white residue that remained. What did the balance show, and what did Black conclude?",
+    "question": "Joseph Black, a young Edinburgh chemist, put a sample of a common white powder called magnesia alba on his balance in 1754 and wrote down its weight. Then he heated it strongly over a fire and weighed the white residue. What did the balance show, and what did Black conclude?",
     "answer": "It weighed less; a definite gas had escaped from the powder",
     "choices": [
       "It weighed more; heat had added something from the furnace to the powder",
@@ -16914,7 +16888,7 @@
   },
   {
     "tier": 3,
-    "question": "The American workplace safety agency, the Occupational Safety and Health Administration (OSHA), lists one gas as a top killer in confined spaces — the deep well pits dug on old farms, the grain silos on the plains, and the fermenting cellars under city breweries. A worker climbs down for routine maintenance and never comes back up alive. Which gas is it, and how does it kill him?",
+    "question": "A worker climbs down a farm well for routine maintenance and never comes back up alive. The Occupational Safety and Health Administration lists one gas as a top killer in such confined spaces, from well pits to grain silos and fermenting cellars. Which gas is it, and how does it kill him?",
     "answer": "Carbon dioxide, which is denser than air and pools in the space the worker must stand in, starving him of oxygen",
     "choices": [
       "Methane, which forms an explosive atmosphere and detonates when the worker's lamp ignites it",
@@ -16927,7 +16901,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1840s the English physicist James Prescott Joule set up a famous experiment. He hung heavy weights on strings that turned a paddle wheel sealed inside an insulated barrel of water. Every time he let the weights fall, the water in the barrel warmed slightly. Run after run, that warming matched one quantity exactly. Which quantity?",
+    "question": "James Prescott Joule hung heavy weights on strings in the 1840s to turn a paddle wheel sealed inside a barrel of water. Every time he let them fall, the water warmed slightly. Run after run, that warming matched one quantity exactly. Which quantity?",
     "answer": "the heaviness of the weights times how far they fell",
     "choices": [
       "the heaviness of the weights times how far they fell",
@@ -16940,7 +16914,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1840s the English physicist James Prescott Joule was trying to prove that falling weights could heat water. In his paddle-wheel experiment the weights were four pounds each. They fell twelve yards at about a foot a second, and he wound them up and dropped them sixteen times over for one single reading. How much warmer was the water when he was done?",
+    "question": "Sixteen times over, James Prescott Joule wound up his four-pound weights and let them fall twelve yards, at about a foot a second, turning a paddle wheel in water for one single reading. How much warmer was the water when he was done?",
     "answer": "about one degree Fahrenheit",
     "choices": [
       "about one degree Fahrenheit",
@@ -16953,7 +16927,7 @@
   },
   {
     "tier": 2,
-    "question": "James Prescott Joule's copper can held a brass wheel with eight arms to stir the water. But a wheel spinning in a smooth can just carries the water round with it in one lazy body, and water that only travels never rubs. What did Joule fit inside the can to stop that?",
+    "question": "In his copper can James Prescott Joule set a brass wheel with eight arms to stir the water. But a wheel spinning in a smooth can just carries the water round with it in one lazy body, and water that only travels never rubs. What did he fit inside the can to stop that?",
     "answer": "a set of fixed vanes bolted to the inner wall",
     "choices": [
       "a set of fixed vanes bolted to the inner wall",
@@ -16966,7 +16940,7 @@
   },
   {
     "tier": 2,
-    "question": "James Prescott Joule knew the warming he was chasing was so faint that almost anything in the room could counterfeit it. So for every run he set a large wooden screen around the apparatus, and mounted the barrel on wood touching at as few points as he could manage. What was the screen shutting out?",
+    "question": "Around his apparatus, before every run, James Prescott Joule stood a large wooden screen, because the warming he was chasing was so faint that almost anything in the room could counterfeit it. He also mounted the barrel on wood touching at as few points as he could manage. What was the screen shutting out?",
     "answer": "the heat coming off his own body",
     "choices": [
       "the heat coming off his own body",
@@ -16979,7 +16953,7 @@
   },
   {
     "tier": 2,
-    "question": "The Science Museum still holds a Joule paddle-wheel apparatus: a copper barrel with a fitted lid, lagged with wood and textile, no bigger than a large kitchen bin. The runs that fixed the exchange rate between work and heat were done in the 1840s. Where did the object in that case come from?",
+    "question": "A visitor to London's Science Museum stops at a Joule paddle-wheel apparatus: a copper barrel with a fitted lid, lagged with wood and textile, no bigger than a large kitchen bin. The runs that fixed the exchange rate between work and heat were done in the 1840s. Where did the object in that case come from?",
     "answer": "Joule built it himself in Salford in 1876, decades later",
     "choices": [
       "Joule built it himself in Salford in 1876, decades later",
@@ -16992,7 +16966,7 @@
   },
   {
     "tier": 3,
-    "question": "The English amateur James Prescott Joule was the man who worked out how much heat a given quantity of mechanical work will make — the foundation of the first law of thermodynamics. He never held a university post. From 1837 he ran his family's brewery in Salford, near Manchester. Doubters said no serious physics could come out of a brewhouse. Manchester's Museum of Science and Industry says those doubters missed exactly what the job gave him. What did the brewery give him that the professors did not have?",
+    "question": "With no university post behind him, James Prescott Joule faced doubters who said no serious physics could come out of his family's brewery in Salford. Manchester's Museum of Science and Industry says those doubters missed exactly what the job gave him. What did the brewery give him that the professors did not have?",
     "answer": "a trade where a fraction of a degree decides what the beer becomes",
     "choices": [
       "a trade where a fraction of a degree decides what the beer becomes",
@@ -17005,7 +16979,7 @@
   },
   {
     "tier": 3,
-    "question": "When Joule started, almost every physicist said heat was caloric -- a weightless fluid that soaked into matter and flowed from hot things to cold ones. A firm believer in caloric, watching the paddle wheel warm the water, had a ready story for what he saw. What was it?",
+    "question": "A firm believer in caloric, the weightless fluid most physicists said soaked into matter and flowed from hot things to cold ones, watched James Prescott Joule's paddle wheel warm the water. The believer had a ready story for what he saw. What was it?",
     "answer": "the stirring squeezed out caloric the water was already holding",
     "choices": [
       "the stirring squeezed out caloric the water was already holding",
@@ -17018,7 +16992,7 @@
   },
   {
     "tier": 3,
-    "question": "James Prescott Joule was an English brewer who spent his spare time doing careful experiments on heat, trying to prove that a fixed amount of mechanical work always makes a fixed amount of heat — a claim that led to the equivalence we now measure in joules. He read a paper on those experiments to the Royal Society in London — the most respected scientific body in the world — on 20 June 1844. What did the Society do with it?",
+    "question": "A brewer who spent his spare time on careful experiments on heat, James Prescott Joule read a paper on them to the Royal Society in London on 20 June 1844. He was trying to prove that a fixed amount of mechanical work always makes a fixed amount of heat. What did the Society do with the paper?",
     "answer": "refused to publish it, so he settled for the Philosophical Magazine",
     "choices": [
       "refused to publish it, so he settled for the Philosophical Magazine",
@@ -17031,7 +17005,7 @@
   },
   {
     "tier": 4,
-    "question": "When James Prescott Joule brought his paddle-wheel result to Britain's physicists, they did not begin by disputing his conclusions. They went after the work itself, at one specific point, and the objection kept him out of the leading journals for years. What did his critics say was impossible?",
+    "question": "James Prescott Joule brought Britain's physicists his paddle-wheel result, and they did not begin by disputing his conclusions. They went after the work itself, at one specific point, and the objection kept him out of the leading journals for years. What did his critics say was impossible?",
     "answer": "that anyone could read a thermometer to a two-hundredth of a degree",
     "choices": [
       "that anyone could read a thermometer to a two-hundredth of a degree",
@@ -17057,7 +17031,7 @@
   },
   {
     "tier": 4,
-    "question": "James Prescott Joule left the 1847 Oxford meeting of the British Association with one convert: a young William Thomson, later Lord Kelvin, who had come to hear him sceptically. From about 1852 the two ran a long series of experiments together, and one result still carries both their names. What does the Joule-Thomson effect do?",
+    "question": "William Thomson, later Lord Kelvin, came sceptically to hear James Prescott Joule at the 1847 Oxford meeting of the British Association and left as his one convert. From about 1852 the two ran a long series of experiments together, and one result still carries both their names. What does the Joule-Thomson effect do?",
     "answer": "it cools a gas when the gas is forced to expand through a plug",
     "choices": [
       "it cools a gas when the gas is forced to expand through a plug",
@@ -17070,7 +17044,7 @@
   },
   {
     "tier": 5,
-    "question": "When the Royal Society did at last publish James Prescott Joule, its committee made him cut his third conclusion out first - the one stating that friction is mechanical power being converted into heat. Joule recorded the loss in his own hand: a third proposition, he wrote, 'suppressed in accordance with the wish of the committee'. The anonymous referee behind that cut admired the measurements but would not follow the leap. Who was he?",
+    "question": "The Royal Society's committee made James Prescott Joule cut his third conclusion before it would at last publish him: the one stating that friction is mechanical power being converted into heat. He recorded the loss in his own hand, a third proposition 'suppressed in accordance with the wish of the committee'. The anonymous referee behind that cut admired the measurements but would not follow the leap. Who was he?",
     "answer": "Michael Faraday",
     "choices": [
       "Michael Faraday",
@@ -17083,7 +17057,7 @@
   },
   {
     "tier": 5,
-    "question": "James Prescott Joule married Amelia Grimes on 18 August 1847 and took her to the Alps. He had argued in print two years earlier that a waterfall must warm its own water on the way down - he had even put a figure on Niagara - and he and William Thomson had arranged to test the idea on the Cascade de Sallanches in Haute-Savoie, a free fall of 270 metres. How did the attempt turn out?",
+    "question": "James Prescott Joule married Amelia Grimes on 18 August 1847 and took her to the Alps. He had argued in print two years earlier that a waterfall must warm its own water on the way down, and had even reckoned it for Niagara. He and William Thomson had arranged to test the idea on the Cascade de Sallanches in Haute-Savoie, a free fall of 270 metres. How did the attempt turn out?",
     "answer": "it proved impractical, and he never got a figure from the waterfall",
     "choices": [
       "it proved impractical, and he never got a figure from the waterfall",
@@ -17096,7 +17070,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 1840s the English brewer-physicist James Prescott Joule ran the paddle-wheel experiments that showed mechanical work turns into heat in an exact ratio. From that grew his conviction that force — what we now call energy — can never be created or destroyed, only shifted from one form to another. His contemporaries assumed that certainty came straight out of his thermometer readings. Joule said in print that it did not. What did he say the conviction actually rested on?",
+    "question": "In print, James Prescott Joule said his certainty did not come straight out of his thermometer readings, as his contemporaries assumed. It was a certainty that force, now called energy, can never be created or destroyed, only shifted from one form to another. What did he say it actually rested on?",
     "answer": "his belief that the power to destroy belongs to the Creator alone",
     "choices": [
       "his belief that the power to destroy belongs to the Creator alone",
@@ -17109,7 +17083,7 @@
   },
   {
     "tier": 1,
-    "question": "Since 1958, the American chemist Charles David Keeling and his successors have measured the amount of carbon dioxide in Earth's atmosphere from the summit of Mauna Loa volcano in Hawaii. The graph they built, now called the Keeling Curve, is one of the most reproduced lines in science. It does not climb cleanly. What does the line actually do on its way up?",
+    "question": "Charles David Keeling started recording Earth's carbon dioxide from Mauna Loa in 1958, and his successors still do. The Keeling Curve does not climb cleanly. What does the line actually do on its way up?",
     "answer": "It saws up and down about six parts per million every year",
     "choices": [
       "It saws up and down about six parts per million every year",
@@ -17122,7 +17096,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1958 Charles David Keeling took the first Mauna Loa reading. It was 313 parts per million. Scripps and NOAA (the National Oceanic and Atmospheric Administration) still post the Mauna Loa number every month. Anyone can look up what the same mountain reads now. What does it read?",
+    "question": "Charles David Keeling took his first reading on Mauna Loa in March 1958, and it came to 313 parts per million. Scripps and the National Oceanic and Atmospheric Administration (NOAA) still post the number every month, so anyone can look up what the same mountain reads now. Where have recent monthly readings stood?",
     "answer": "About 429 parts per million",
     "choices": [
       "About 429 parts per million",
@@ -17135,7 +17109,7 @@
   },
   {
     "tier": 1,
-    "question": "From 1958 onward the American scientist Charles David Keeling had been measuring carbon dioxide in the air from the Mauna Loa observatory on a Hawaiian volcano, building the longest continuous record of the gas ever kept. The Mauna Loa record is often called unbroken. It is not. In early 1964 the measurements stopped for about three months, and the gap sits in the printed graph to this day. What stopped them?",
+    "question": "Charles David Keeling watched his Mauna Loa measurements stop for about three months in early 1964, and the gap sits in the printed graph to this day. His record is often called unbroken. It is not. What stopped the measurements?",
     "answer": "The instrument broke and no money was left for a technician",
     "choices": [
       "The instrument broke and no money was left for a technician",
@@ -17148,7 +17122,7 @@
   },
   {
     "tier": 2,
-    "question": "Charles David Keeling's Mauna Loa record saws up and down by about six parts per million every year. That rhythm is not instrument noise: something real puts carbon dioxide into the air and pulls it back out again on a yearly cycle. What is doing it?",
+    "question": "In his Mauna Loa record Charles David Keeling saw a rhythm that was not instrument noise: something real puts carbon dioxide into the air and pulls it back out again on a yearly cycle. What is doing it?",
     "answer": "Northern Hemisphere land plants pulling carbon in as they grow, then releasing it as they decay",
     "choices": [
       "Northern Hemisphere land plants pulling carbon in as they grow, then releasing it as they decay",
@@ -17161,7 +17135,7 @@
   },
   {
     "tier": 2,
-    "question": "Carbon dioxide was only about three parts in ten thousand of the air Keeling wanted to weigh. He needed that share to better than one part per million. He caught the air in five-litre flasks and froze the carbon dioxide out with liquid nitrogen. How did the instrument he built himself then measure what he had trapped?",
+    "question": "With five-litre flasks and liquid nitrogen, Charles David Keeling caught air and froze the carbon dioxide out of it. The gas was only about three parts in ten thousand of that air, and he needed its share to better than one part per million. How did the instrument he built himself then measure what he had trapped?",
     "answer": "By the pressure it pushed against a column of mercury",
     "choices": [
       "By the pressure it pushed against a column of mercury",
@@ -17174,7 +17148,7 @@
   },
   {
     "tier": 2,
-    "question": "From 1958 onward the American scientist Charles David Keeling had been measuring carbon dioxide in the air from the Mauna Loa observatory on Hawaii, building the longest continuous record of the gas anywhere. Through the 1960s his numbers were rising by about 0.7 parts per million a year, a slope so gentle that a decade of it barely showed on a printed page. What has become of that rate of climb since?",
+    "question": "At Mauna Loa, Charles David Keeling plotted a rise of about 0.7 parts per million a year through the 1960s, a slope so gentle that a decade of it barely showed on a printed page. What has become of that rate of climb since?",
     "answer": "It has more than tripled, passing 2.5 parts per million a year",
     "choices": [
       "It has more than tripled, passing 2.5 parts per million a year",
@@ -17187,7 +17161,7 @@
   },
   {
     "tier": 3,
-    "question": "Before Charles David Keeling, printed measurements of carbon dioxide in outdoor air scattered from 250 to 550 parts per million. Chemists took that spread to mean the figure was just local. From January 1955 Keeling took his own instrument to the Big Sur redwoods, an Olympic Peninsula rainforest, and a high Arizona forest. He sampled every few hours, day and night. What did his readings show?",
+    "question": "Carrying his own instrument from January 1955 to the Big Sur redwoods, an Olympic Peninsula rainforest and a high Arizona forest, Charles David Keeling sampled every few hours, day and night. Printed measurements of carbon dioxide in outdoor air scattered from 250 to 550 parts per million, and chemists took that spread to mean the figure was just local. What did his readings show?",
     "answer": "Night readings swung wildly, but every site's afternoon reading landed near 310 ppm",
     "choices": [
       "Night readings swung wildly, but every site's afternoon reading landed near 310 ppm",
@@ -17200,7 +17174,7 @@
   },
   {
     "tier": 3,
-    "question": "The 1980 eruption of Mount St. Helens vented roughly ten million tons of carbon dioxide in nine hours, and critics of the Mauna Loa record reasonably ask how human emissions could possibly compete with a volcano. The U.S. Geological Survey has measured it. How long does humanity now take to put out the same ten million tons?",
+    "question": "A critic of the Mauna Loa record points to Mount St. Helens, which vented roughly ten million tons of carbon dioxide in nine hours in 1980, and reasonably asks how human emissions could possibly compete with a volcano. The U.S. Geological Survey has worked it out. How long does humanity now take to put out the same ten million tons?",
     "answer": "About two and a half hours",
     "choices": [
       "About two and a half hours",
@@ -17213,7 +17187,7 @@
   },
   {
     "tier": 4,
-    "question": "A carbon dioxide reading taken at Mauna Loa this month is compared directly against one taken there in 1958, and that only means anything if the yardstick itself never moved. Charles David Keeling built the whole programme around keeping it still. What holds the modern analyser to the same scale the record started on?",
+    "question": "Charles David Keeling built the whole Mauna Loa programme around one demand: a reading taken this month must compare directly with one taken in 1958, which only means anything if the yardstick itself never moves. What holds the modern analyser to the same scale the record started on?",
     "answer": "Cylinders of reference gas traced to primary standards, the analyser rechecked every half hour",
     "choices": [
       "Cylinders of reference gas traced to primary standards, the analyser rechecked every half hour",
@@ -17226,7 +17200,7 @@
   },
   {
     "tier": 4,
-    "question": "Running the Mauna Loa programme cost about $100,000 a year, and in the mid-1960s Congress pruned federal budgets: the Weather Bureau would no longer pay for research that did not serve weather forecasting. Charles David Keeling scraped money out of the National Science Foundation to keep Hawaii running. Something else had to go. What did he give up?",
+    "question": "To keep Mauna Loa running at about $100,000 a year, Charles David Keeling scraped money out of the National Science Foundation after Congress pruned federal budgets in the mid-1960s and the Weather Bureau would no longer pay for research that did not serve weather forecasting. Something else had to go. What did he give up?",
     "answer": "The continuous monitoring station he was running at the South Pole",
     "choices": [
       "The continuous monitoring station he was running at the South Pole",
@@ -17239,7 +17213,7 @@
   },
   {
     "tier": 4,
-    "question": "Mauna Loa is an active volcano. Its top vents carbon dioxide from cracks in the rock only three or four kilometres upslope of the observatory. On clear nights the cooling air forms a lid that traps that gas near the ground, and the downslope wind can carry it straight to the intake. The problem is real, and NOAA (the National Oceanic and Atmospheric Administration) runs a filter for it. How do the analysts spot volcanic air and throw those hours out?",
+    "question": "An analyst at the Mauna Loa observatory scans the night's numbers for gas from the volcano itself, which vents carbon dioxide from cracks only three or four kilometres upslope. On clear nights cooling air traps that gas near the ground, and the downslope wind can carry it straight to the intake. The problem is real, and the National Oceanic and Atmospheric Administration (NOAA) runs a filter for it. How do its analysts spot volcanic air and throw those hours out?",
     "answer": "It arrives jumpy and noisy, so hours whose readings jitter past a set limit are discarded",
     "choices": [
       "It arrives jumpy and noisy, so hours whose readings jitter past a set limit are discarded",
@@ -17252,7 +17226,7 @@
   },
   {
     "tier": 5,
-    "question": "Charles David Keeling's Mauna Loa curve fixes how much carbon dioxide is in the air to about 0.2 parts per million, better than almost any other quantity in earth science. It does not, on its own, fix how much warming follows -- and one reason is the way the gas's warming effect scales. Adding another fifty parts per million to today's air does what, compared with adding fifty to the air of 1958?",
+    "question": "Charles David Keeling fixed how much carbon dioxide is in the air to about 0.2 parts per million, better than almost any other quantity in earth science. His curve does not, on its own, fix how much warming follows, and one reason is the way the gas's warming effect scales. Adding another fifty parts per million to today's air does what, compared with adding fifty to the air of 1958?",
     "answer": "Less warming, because the effect grows with the logarithm of the concentration",
     "choices": [
       "Less warming, because the effect grows with the logarithm of the concentration",
@@ -17265,7 +17239,7 @@
   },
   {
     "tier": 5,
-    "question": "Carbon dioxide is carbon dioxide whatever burnt or vented it, so Charles David Keeling's rising Mauna Loa curve alone cannot say where the extra gas came from. Carbon comes in a heavier form and a lighter one, and every source -- rock, seawater, living tissue -- carries its own signature mix. Before industry the atmosphere sat near -6.5 per mil on the carbon-13 scale; it is near -8 today and still drifting lighter. What kind of carbon does that drift point at?",
+    "question": "From his rising Mauna Loa curve alone, Charles David Keeling could not tell where the extra gas came from, since carbon dioxide is carbon dioxide whatever burnt or vented it. Carbon comes in a heavier form and a lighter one, and every source (rock, seawater, living tissue) carries its own mix. The air's carbon has grown lighter since industry began and is still drifting. What kind of carbon does that drift point at?",
     "answer": "Carbon that has passed through living plants and the fuels made from them",
     "choices": [
       "Carbon that has passed through living plants and the fuels made from them",
@@ -17278,7 +17252,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1989 Ralph Keeling, son of Charles David Keeling, took the first readings from an instrument he had built to track the oxygen in the air to a few parts per million. Since the start of the industrial era, that oxygen has dropped by about 972 molecules out of every million -- roughly a tenth of a percent of the air's oxygen. Which reason for the rising carbon dioxide does that drop point to?",
+    "question": "Ralph Keeling, son of Charles David Keeling, took the first readings in 1989 from an instrument he had built to track the oxygen in the air to a few parts per million. Since the start of the industrial era, that oxygen has dropped by about 972 molecules out of every million, roughly a tenth of a percent of the air's oxygen. What does that drop point to?",
     "answer": "That the extra carbon dioxide comes from burning fuel",
     "choices": [
       "That the extra carbon dioxide comes from burning fuel",
@@ -17291,7 +17265,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1825 the Royal Institution lit its rooms with a squeezed lighting gas kept in heavy iron cylinders. Michael Faraday saw a dark sludge left in the used cylinders. Instead of tossing it, he distilled it and pulled out a clear liquid nobody had ever seen. It was the first benzene in the world, and his labelled vial is still on show there. What was the lighting gas made from?",
+    "question": "Michael Faraday distilled the dark sludge left in the used iron cylinders of lighting gas at the Royal Institution in 1825, and he pulled out a clear liquid nobody had ever seen. It was the first benzene in the world, and his labelled vial is still on show there. What was the lighting gas made from?",
     "answer": "Whale oil dropped into a hot furnace",
     "choices": [
       "Whale oil dropped into a hot furnace",
@@ -17304,7 +17278,7 @@
   },
   {
     "tier": 2,
-    "question": "The name benzene says nothing about its shape. In 1833 Eilhard Mitscherlich built the liquid on purpose for the first time. He heated an acid crystal with quicklime until carbon dioxide came off. He named his product after the raw stuff that acid had first been drawn from. What was that raw stuff?",
+    "question": "Eilhard Mitscherlich built benzene on purpose for the first time in 1833, heating an acid crystal with quicklime until carbon dioxide came off. The name he gave his product says nothing about its shape: it comes from the raw stuff that acid had first been drawn from. What was that raw stuff?",
     "answer": "A fragrant resin bled from a tree",
     "choices": [
       "A fragrant resin bled from a tree",
@@ -17317,7 +17291,7 @@
   },
   {
     "tier": 2,
-    "question": "On 11 March 1890 the German Chemical Society filled Berlin's city hall to honour August Kekulé, twenty-five years after his paper on benzene. In his speech he told the room, for the first time in public, about a fireside daydream he said he had had in Ghent around 1862. Atoms wheeled in front of his half-closed eyes. What did he say he saw at the end of it?",
+    "question": "August Kekulé spoke in Berlin's city hall on 11 March 1890, twenty-five years after his paper on benzene. He told the room, for the first time in public, about a fireside daydream he said he had had in Ghent around 1862, atoms wheeling in front of his half-closed eyes. What did he say he saw at the end of it?",
     "answer": "A snake seizing hold of its own tail",
     "choices": [
       "A snake seizing hold of its own tail",
@@ -17343,7 +17317,7 @@
   },
   {
     "tier": 3,
-    "question": "Kekulé's hexagon was a drawing, and a drawing proves nothing. What made it science was that it ruled things out. If you stick two chlorines onto one benzene ring, only a set number of truly different compounds can exist. A chain would allow more. Chemists went to the bench and made these dichlorobenzenes every way they knew, bottling each new one they could separate. How many did they find?",
+    "question": "Chemists went to the bench to test August Kekulé's hexagon, since a drawing proves nothing until it rules something out. With two chlorines on one benzene ring, only a set number of truly different compounds can exist; a chain would allow more. They made these dichlorobenzenes every way they knew, bottling each new one they could separate. How many did they find?",
     "answer": "Exactly three",
     "choices": [
       "Exactly three",
@@ -17356,7 +17330,7 @@
   },
   {
     "tier": 3,
-    "question": "Bromine water is the bench test for a carbon-carbon double bond: drop it on cyclohexene, which has one, and the red-brown colour vanishes on the spot as bromine adds across the bond. Benzene is eight hydrogens short of hexane, the packed six-carbon chain, a shortfall wide enough for three double bonds and a ring. Yet bromine water leaves benzene's colour sitting there. Push benzene with a catalyst and it will finally take bromine. What does it do then?",
+    "question": "A student drips bromine water onto cyclohexene, which has a carbon-carbon double bond, and the red-brown colour vanishes on the spot as bromine adds across the bond. She tries benzene, eight hydrogens short of hexane, the packed six-carbon chain, a shortfall wide enough for three double bonds and a ring. The colour stays. Pushed with a catalyst, benzene will finally take bromine. What does it do then?",
     "answer": "Swaps one hydrogen for the bromine and keeps the ring",
     "choices": [
       "Swaps one hydrogen for the bromine and keeps the ring",
@@ -17369,7 +17343,7 @@
   },
   {
     "tier": 3,
-    "question": "August Kekulé had just told the Berlin banquet of 1890 about the snake daydream, twenty-five years after the paper it is said to have inspired, and the hall was full of young chemists. Before he sat down he gave them a rule about dreams. What did he tell them to beware of?",
+    "question": "August Kekulé had just told the Berlin banquet of 1890 about his daydream, twenty-five years after the paper it is said to have inspired, and the hall was full of young chemists. Before he sat down he gave them a rule about dreams. What did he tell them to beware of?",
     "answer": "Publishing a dream before it has been put to the proof",
     "choices": [
       "Publishing a dream before it has been put to the proof",
@@ -17382,7 +17356,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1858 Archibald Scott Couper, working on his own, showed that carbon atoms link easily to each other. It was Couper who invented the straight line drawn between two letters to mean a bond, the mark every chemistry student still draws. He handed his paper to Charles Adolphe Wurtz in Paris to submit for him. Wurtz sat on it, so it reached the French Academy weeks after Kekulé's paper. What did Couper do with his remaining thirty-odd years?",
+    "question": "Archibald Scott Couper handed his 1858 paper to Charles Adolphe Wurtz in Paris to submit for him. Working on his own, Couper had shown that carbon atoms link easily to each other, and he had invented the straight line between two letters that every chemistry student still draws. Wurtz sat on the paper, so it reached the French Academy weeks after Kekulé's. What did Couper do with his remaining thirty-odd years?",
     "answer": "He went home to Scotland and never published again",
     "choices": [
       "He went home to Scotland and never published again",
@@ -17408,7 +17382,7 @@
   },
   {
     "tier": 4,
-    "question": "For 64 years, chemists argued about benzene's shape, but nobody had ever measured it. In 1929 Kathleen Lonsdale grew crystals of hexamethylbenzene. She fired X-rays through them and read the shape off the pattern the rays scattered into. It was the first direct look at the ring Kekule had only reasoned his way to. What did the carbon-carbon bonds turn out to be?",
+    "question": "Kathleen Lonsdale grew crystals of hexamethylbenzene in 1929, after 64 years of argument over benzene's shape with no measurement at all. She fired X-rays through them and read the shape off the pattern the rays scattered into, the first direct look at the ring August Kekulé had only reasoned his way to. What did the carbon-carbon bonds turn out to be?",
     "answer": "All six the same length, in a flat regular hexagon",
     "choices": [
       "All six the same length, in a flat regular hexagon",
@@ -17421,7 +17395,7 @@
   },
   {
     "tier": 5,
-    "question": "Every carbon-carbon bond in benzene measures about 139 picometres, longer than a double bond at 134 and shorter than a single bond at 154, and all six are exactly alike. The explanation starts with what each carbon does with its four bonding electrons: three go into bonds lying in the flat plane of the ring, two to its carbon neighbours and one to a hydrogen. That leaves one electron per carbon, six in all, sitting in p orbitals that stick out above and below the plane. What becomes of those six?",
+    "question": "Kathleen Lonsdale found every carbon-carbon bond in the benzene ring the same length, and chemists put it at about 139 picometres, longer than a double bond at 134 and shorter than a single bond at 154. Each carbon has four bonding electrons, and three go into bonds lying in the flat plane of the ring, two to its carbon neighbours and one to a hydrogen. That leaves one electron per carbon, six in all. What becomes of those six?",
     "answer": "They smear into one cloud shared by the whole hexagon",
     "choices": [
       "They smear into one cloud shared by the whole hexagon",
@@ -17434,7 +17408,7 @@
   },
   {
     "tier": 5,
-    "question": "Historians have argued for decades over whether August Kekulé's snake daydream really happened. The only source is Kekulé himself, speaking in 1890 -- twenty-five years after the paper. One dated scrap shows the story was already going around the labs before that speech. In September 1886 a beer-evening spoof of the German chemical journal -- the 'Reports of the Thirsty Chemical Society' -- printed its own picture of the benzene ring. What did that cartoon show?",
+    "question": "A chemist at a beer evening in September 1886 opened a spoof of the German chemical journal, the 'Reports of the Thirsty Chemical Society', and found its own picture of the benzene ring. That dated scrap shows August Kekulé's daydream story was already going around the labs before his 1890 speech. He is its only source, and historians still argue over whether it happened. What did the cartoon show?",
     "answer": "Six monkeys gripping each other tail to paw in a ring",
     "choices": [
       "Six monkeys gripping each other tail to paw in a ring",
@@ -17447,7 +17421,7 @@
   },
   {
     "tier": 5,
-    "question": "Josef Loschmidt taught school in Vienna and paid out of his own pocket in 1861 to print a booklet, 'Chemische Studien', holding 368 structural formulas, four years before August Kekulé published on benzene. On one page Loschmidt drew the benzene molecule, and chemists have argued over that page ever since. How did he draw it?",
+    "question": "Josef Loschmidt, a Vienna schoolteacher, paid out of his own pocket in 1861 to print a booklet, 'Chemische Studien', holding 368 structural formulas, four years before August Kekulé published on benzene. On one page he drew the benzene molecule, and chemists have argued over that page ever since. How did he draw it?",
     "answer": "One large circle with six small hydrogen circles on its rim",
     "choices": [
       "One large circle with six small hydrogen circles on its rim",
@@ -17551,7 +17525,7 @@
   },
   {
     "tier": 2,
-    "question": "Robert Koch was a country doctor at Wollstein in the 1870s, cut off from libraries and from every other scientific worker, with a busy practice to run. He curtained off part of the room where he saw patients and built his own instruments there. One piece of real equipment he did not build -- it was a gift. What was it, and who gave it to him?",
+    "question": "Robert Koch curtained off part of the room where he saw patients at Wollstein in the 1870s and built his own instruments there, cut off from libraries and from every other scientific worker. One piece of real equipment he did not build. What was it, and who gave it to him?",
     "answer": "A microscope, a birthday gift from his wife Emmy",
     "choices": [
       "A microscope, a birthday gift from his wife Emmy",
@@ -17564,7 +17538,7 @@
   },
   {
     "tier": 2,
-    "question": "Others had already seen rod-shaped bodies in the blood of animals dead of anthrax. Robert Koch wanted to know if the rods were the killer. He pushed rods from dead animals into mice using slivers of wood, and every mouse died. What did he do with a second set of mice that same day?",
+    "question": "Using slivers of wood, Robert Koch pushed rods from animals dead of anthrax into mice, and every mouse died. Others had already seen the rods in the blood, but he wanted to know if they were the killer. What did he do with a second set of mice that same day?",
     "answer": "Inoculated them with blood taken from healthy animals",
     "choices": [
       "Inoculated them with the same rods after boiling them first",
@@ -17577,7 +17551,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1880s the German country doctor Robert Koch — the man who had already shown anthrax was caused by a specific bacterium — turned his microscope on tuberculosis. Roughly one person in seven on earth was dying of that disease. For two thousand years, ever since the Greek physician Hippocrates, respectable medicine had given the same answer to where tuberculosis came from. What was that old answer?",
+    "question": "Robert Koch turned his microscope on tuberculosis in the 1880s, with roughly one person in seven on earth dying of the disease. For two thousand years, ever since the Greek physician Hippocrates, respectable medicine had given the same answer to where it came from. What was that old answer?",
     "answer": "That it was inherited, running down through a family",
     "choices": [
       "That it came of cold sea winds and damp lodgings",
@@ -17590,7 +17564,7 @@
   },
   {
     "tier": 2,
-    "question": "The German doctor Robert Koch was a country physician at the little Prussian town of Wollstein, far from any university, when he began proving that specific bacteria cause specific diseases. Between patients he taught himself a craft that had nothing to do with medicine. Its results went into his 1877 paper on the shape and life-cycle of the anthrax bacillus — the rod-shaped microbe that kills cattle and can kill people. What did that paper carry?",
+    "question": "Robert Koch taught himself a craft between patients at the little Prussian town of Wollstein, one that had nothing to do with medicine. Its results went into his 1877 paper on the shape and life-cycle of the anthrax bacillus, the rod-shaped microbe that kills cattle and can kill people. What did that paper carry?",
     "answer": "Photographs taken through the microscope",
     "choices": [
       "Engravings cut from his own pencil drawings",
@@ -17603,7 +17577,7 @@
   },
   {
     "tier": 3,
-    "question": "A critic could say Robert Koch's dying mice proved nothing -- that some poison already in the sick animal's blood had ridden in with the rods and done the killing. So Koch grew anthrax bacilli through several generations outside any living body, in a fluid he had to find himself. Bacilli that had never touched a sick animal still gave healthy mice anthrax. What fluid did he grow them in?",
+    "question": "Robert Koch grew anthrax bacilli through several generations outside any living body, in a fluid he had to find himself, to answer a critic who could say some poison in the sick animal's blood had ridden in with the rods and done the killing. Bacilli that had never touched a sick animal still gave healthy mice anthrax. What fluid did he grow them in?",
     "answer": "The clear fluid from inside an ox's eye",
     "choices": [
       "The yolk stirred out of a fresh hen's egg",
@@ -17616,7 +17590,7 @@
   },
   {
     "tier": 3,
-    "question": "In the summer of 2016 a heat wave in Siberia thawed a reindeer carcass that had lain frozen in the ground since about 1941, and a boy who went near it caught anthrax. Robert Koch had already watched, through his own microscope in the 1870s, the thing that lets anthrax wait that long. What did he see the rods do when conditions turned against them?",
+    "question": "A boy in Siberia went near a reindeer carcass in the summer of 2016, thawed by a heat wave after lying frozen in the ground since about 1941, and he caught anthrax. Robert Koch had already watched, through his own microscope in the 1870s, the thing that lets anthrax wait that long. What did he see the rods do when conditions turned against them?",
     "answer": "Form rounded spores inside themselves, which became rods again later",
     "choices": [
       "Wind into tight coils and grow a chalky shell around the colony",
@@ -17629,7 +17603,7 @@
   },
   {
     "tier": 3,
-    "question": "Robert Koch was an unknown country doctor with no university post and no colleagues when, in the spring of 1876, he claimed he could prove which germ caused anthrax. Ferdinand Cohn, the professor of botany at Breslau, was not going to take a stranger's word for that. What did Cohn require of him?",
+    "question": "Ferdinand Cohn, the Breslau professor of botany, was not going to take a stranger's word when Robert Koch, an unknown country doctor with no university post, claimed in the spring of 1876 that he could prove which germ caused anthrax. What did Cohn require of him?",
     "answer": "That he run the whole proof at Cohn's bench, which took three days",
     "choices": [
       "That he run the whole proof at Cohn's bench, which took three days",
@@ -17642,7 +17616,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Koch needed a solid surface where one germ could grow into a visible speck. Potato slices grew anything that landed on them. Gelatin turned to soup at body warmth. In the summer of 1881 the fix came out of a kitchen. Fanny Hesse, the American-born wife of one of Koch's assistants, named a setting agent she had from a Dutch neighbour in New York. He had lived in Java, where it kept fruit jellies firm in the heat. What was it?",
+    "question": "Fanny Hesse, the American-born wife of one of Robert Koch's assistants, named a setting agent in the summer of 1881 that she had from a Dutch neighbour in New York, who had lived in Java, where it kept fruit jellies firm in the heat. Koch needed a solid surface where one germ could grow into a visible speck: potato slices grew anything, and gelatin turned to soup at body warmth. What was her setting agent?",
     "answer": "Agar, boiled out of a red seaweed",
     "choices": [
       "Arrowroot starch, ground from a tuber",
@@ -17655,7 +17629,7 @@
   },
   {
     "tier": 4,
-    "question": "By 1887 Koch's lab grew its colonies on a flat glass plate under a heavy bell jar. You had to lift the jar to look, and lifting it let in whatever was drifting in the air. His assistant Julius Richard Petri swapped the jar for a shallow round dish with its own slightly larger lid. You could stack it, sterilize it, and study the colonies without opening it. Every lab on earth still uses it. What did Petri call the paper in which he announced the dish?",
+    "question": "Julius Richard Petri, an assistant in Robert Koch's lab, swapped the heavy bell jar over its glass plates for a shallow round dish with its own slightly larger lid in 1887. Lifting the jar to look had let in whatever was drifting in the air, while the dish could be stacked, sterilized and studied without opening. Every lab on earth still uses it. What did Petri call the paper announcing the dish?",
     "answer": "A minor modification of Koch's plating method",
     "choices": [
       "An improved vessel for Koch's plating method",
@@ -17668,7 +17642,7 @@
   },
   {
     "tier": 4,
-    "question": "On 24 March 1882 Robert Koch laid the tuberculosis germ before the Berlin Physiological Society. He had found it in the sick, grown it pure outside the body, given it to guinea pigs, and taken it back out again. The room barely reacted at all. One man in that audience was Paul Ehrlich. He later called that evening the greatest science moment of his life. What did Ehrlich do when he got home that night?",
+    "question": "Robert Koch laid the tuberculosis germ before the Berlin Physiological Society on 24 March 1882: found in the sick, grown pure outside the body, given to guinea pigs and taken back out again. The room barely reacted. Paul Ehrlich, in the audience, later called that evening the greatest science moment of his life. What did Ehrlich do when he got home that night?",
     "answer": "Began improving Koch's way of staining the bacillus",
     "choices": [
       "Began raising guinea pigs to run the whole proof again",
@@ -17681,7 +17655,7 @@
   },
   {
     "tier": 5,
-    "question": "The first of Robert Koch's four rules says the germ must be found in every victim of the disease and not found in the healthy -- that absence is what marks it as the culprit rather than a bystander. Then Koch went to work on cholera, and later typhoid, and kept meeting people who carried the germ in perfect health. What did he do about it?",
+    "question": "Robert Koch went to work on cholera, and later typhoid, and met people carrying the germ in perfect health. The first of his own four steps says the germ must be found in every victim of the disease and not in the healthy: that absence marks it as the culprit rather than a bystander. What did he do about it?",
     "answer": "He said so in public and loosened the rule himself",
     "choices": [
       "He set the finding aside and let his assistants publish it",
@@ -17694,7 +17668,7 @@
   },
   {
     "tier": 5,
-    "question": "Koch's second rule turns a suspect into a killer. Get the germ out of the sick body and raise it in the lab for many generations, until nothing of the patient is left. In 1937 Thomas Rivers wrote a separate checklist for viruses. For a virus, that second step is not just hard but impossible. What is it about a virus that puts the step out of reach?",
+    "question": "Thomas Rivers wrote a separate checklist for viruses in 1937. Robert Koch's second rule had turned a suspect into a killer: the germ had to come out of the sick body and be raised in the lab for many generations, until nothing of the patient was left. For a virus, that step is not just hard but impossible. What is it about a virus that puts the step out of reach?",
     "answer": "It copies itself only inside a living cell",
     "choices": [
       "It copies itself only inside a living cell",
@@ -17707,7 +17681,7 @@
   },
   {
     "tier": 5,
-    "question": "In August 1890, at a medical congress in Berlin, Robert Koch -- the man who had written the rules for proving a cause -- announced a remedy for tuberculosis. He would not say what was in it, and a state-backed institute he directed sold it. A trial of 1,769 patients found about one in a hundred cured, more than half unchanged, and one in twenty-five dead of the treatment. Rudolf Virchow then laid autopsies of twenty-one treated patients before a Berlin meeting. What did those autopsies show the remedy had done?",
+    "question": "Robert Koch, the man who had written the rules for proving a cause, announced a remedy for tuberculosis at a medical congress in Berlin in August 1890, and he would not say what was in it. A trial of 1,769 patients found about one in a hundred cured, more than half unchanged and one in twenty-five dead of the treatment. Rudolf Virchow then laid autopsies of twenty-one treated patients before a Berlin meeting. What did those autopsies show the remedy had done?",
     "answer": "It had woken tuberculosis that was lying dormant in them",
     "choices": [
       "It had carried the bacilli out of the lung into the liver",
@@ -17720,7 +17694,7 @@
   },
   {
     "tier": 3,
-    "question": "Steven Koonin's 2021 book 'Unsettled' argued that climate reports are oversold. Critics said he was an outsider throwing stones. But Koonin had taught physics at Caltech since 1975. He was the school's provost from 1995 to 2004. From May 2009 to November 2011 he also held a Senate-confirmed post under President Obama. Which post was it?",
+    "question": "Steven Koonin argued in his 2021 book 'Unsettled' that climate reports are oversold, and critics said he was an outsider throwing stones. But he had taught physics at Caltech since 1975 and been its provost from 1995 to 2004. From May 2009 to November 2011 he also held a Senate-confirmed post under President Obama. Which post was it?",
     "answer": "Under Secretary for Science at the Department of Energy",
     "choices": [
       "Under Secretary for Science at the Department of Energy",
@@ -17733,7 +17707,7 @@
   },
   {
     "tier": 3,
-    "question": "Steven Koonin's climate argument is often waved off as a physicist who distrusts computer models. But Koonin wrote the 1986 textbook 'Computational Physics'. He also won the Energy Department's E.O. Lawrence Award in 1998 for his simulation work. One Energy Department program leaned on simulations like his for its main job. What were those computers checking?",
+    "question": "Often waved off as a physicist who distrusts computer models, Steven Koonin wrote the 1986 textbook 'Computational Physics' and won the Energy Department's E.O. Lawrence Award in 1998 for his simulation work. One Energy Department program leaned on simulations like his for its main job. What were those computers checking?",
     "answer": "that America's nuclear warheads would still work",
     "choices": [
       "that America's nuclear warheads would still work",
@@ -17746,7 +17720,7 @@
   },
   {
     "tier": 3,
-    "question": "On 19 September 2014 Steven Koonin ran an essay in the Wall Street Journal titled 'Climate Science Is Not Settled'. Later he shared an annotated version with twelve numbered notes. A newspaper column does not usually carry those. What do the twelve notes point to?",
+    "question": "Steven Koonin published an essay in the Wall Street Journal on 19 September 2014, 'Climate Science Is Not Settled'. Later he shared an annotated version with twelve notes, which a newspaper column does not usually carry. What do the twelve notes point to?",
     "answer": "numbered figures and sections of the IPCC's own report",
     "choices": [
       "numbered figures and sections of the IPCC's own report",
@@ -17759,7 +17733,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 1989 the chemists Martin Fleischmann and Stanley Pons announced from the University of Utah that they had produced nuclear fusion in a jar of water on a laboratory bench. Six weeks later, at the American Physical Society meeting in Baltimore on 1 May 1989, the Caltech theorist Steven Koonin stood up and told the session what he made of the Utah result. The room rose and applauded him. What did he say it was the product of?",
+    "question": "Standing up at the American Physical Society meeting in Baltimore on 1 May 1989, Steven Koonin, a Caltech theorist, told the session what he made of the Utah result. Six weeks earlier the chemists Martin Fleischmann and Stanley Pons had announced from Utah nuclear fusion in a jar of water on a laboratory bench. The room rose and applauded him. What did he say the result was the product of?",
     "answer": "the incompetence and delusion of Pons and Fleischmann",
     "choices": [
       "the incompetence and delusion of Pons and Fleischmann",
@@ -17772,7 +17746,7 @@
   },
   {
     "tier": 4,
-    "question": "Steven Koonin's 19 September 2014 Wall Street Journal essay 'Climate Science Is Not Settled' argues that the certainty in climate headlines is badly overstated. Its fourth paragraph takes up human influence on the climate directly, in a single sentence. What does Koonin write there?",
+    "question": "Writing in the Wall Street Journal on 19 September 2014, Steven Koonin argued that the certainty in climate headlines is badly overstated. He took up human influence on the climate directly in the essay's fourth paragraph, in a single sentence. What did he write there?",
     "answer": "That is no hoax: greenhouse gases from fossil fuels are influencing the climate",
     "choices": [
       "That is no hoax: greenhouse gases from fossil fuels are influencing the climate",
@@ -17785,7 +17759,7 @@
   },
   {
     "tier": 4,
-    "question": "Steven Koonin's 2014 essay 'Climate Science Is Not Settled' works from the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment. His note [9], on Antarctic sea ice, carries out in a single paragraph the reading technique the whole essay is recommending. What does note [9] do?",
+    "question": "Working from the Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment, Steven Koonin annotated his 2014 essay. His note [9], on Antarctic sea ice, carries out in a single paragraph the reading technique the whole essay is recommending. What does note [9] do?",
     "answer": "sets the summary's sentence beside the chapter's own sentence",
     "choices": [
       "sets the summary's sentence beside the chapter's own sentence",
@@ -17798,7 +17772,7 @@
   },
   {
     "tier": 4,
-    "question": "The Fifth Assessment by the Intergovernmental Panel on Climate Change (IPCC) used about fifty-five climate models. Each one tried to match a century of temperatures already on record. Steven Koonin, who had spent his career writing computer simulations, compared how the models described that century. What did he report?",
+    "question": "Steven Koonin, who had spent his career writing computer simulations, compared the roughly fifty-five climate models behind the Fifth Assessment of the Intergovernmental Panel on Climate Change (IPCC). Each one tried to match a century of temperatures already on record. What did he report about how they described that century?",
     "answer": "they differ from one another by over three times the measured warming",
     "choices": [
       "they differ from one another by over three times the measured warming",
@@ -17811,7 +17785,7 @@
   },
   {
     "tier": 4,
-    "question": "Three years before he called for climate reports to face tough debate, Steven Koonin held one himself. On 8 January 2014, he chaired a panel in Brooklyn. He sat Richard Lindzen, John Christy and Judith Curry across from Isaac Held, Bill Collins and Ben Santer, and grilled all six for a day. What did the American Physical Society do with that day?",
+    "question": "Steven Koonin sat Richard Lindzen, John Christy and Judith Curry across from Isaac Held, Bill Collins and Ben Santer in Brooklyn on 8 January 2014, and he grilled all six for a day. He was chairing the panel for the American Physical Society, three years before he called for climate reports to face tough debate. What did the Society do with that day?",
     "answer": "posted the full transcript of the day on its website",
     "choices": [
       "posted the full transcript of the day on its website",
@@ -17824,7 +17798,7 @@
   },
   {
     "tier": 4,
-    "question": "On 23 July 2025, five scientists gave Energy Secretary Chris Wright a review of how greenhouse gases affect the United States climate. The team was John Christy, Judith Curry, Steven Koonin, Ross McKitrick and Roy Spencer. The report said plainly that carbon dioxide warms the climate. But it said U.S. records do not show a clear long-term rise in extreme weather. What happened next?",
+    "question": "Five scientists handed Energy Secretary Chris Wright a review of how greenhouse gases affect the United States climate on 23 July 2025: John Christy, Judith Curry, Steven Koonin, Ross McKitrick and Roy Spencer. The report said plainly that carbon dioxide warms the climate. It also said U.S. records do not show a clear long-term rise in extreme weather. What happened next?",
     "answer": "more than eighty climate scientists published a joint rebuttal",
     "choices": [
       "more than eighty climate scientists published a joint rebuttal",
@@ -17837,7 +17811,7 @@
   },
   {
     "tier": 5,
-    "question": "Climate sensitivity is how much the planet warms once the carbon dioxide in the air has doubled. It is the one number that decides whether the next century is rough or awful. Koonin's 2014 essay quotes the range the Intergovernmental Panel on Climate Change (IPCC) gives for it. He adds a note on where that range came from. What does the note say produced it?",
+    "question": "Beside one range in his 2014 essay, Steven Koonin added a note on where it came from: the range the Intergovernmental Panel on Climate Change (IPCC) gives for climate sensitivity, the warming once the carbon dioxide in the air has doubled. What does his note say produced that range?",
     "answer": "the assessment panel's own expert judgment",
     "choices": [
       "the assessment panel's own expert judgment",
@@ -17850,7 +17824,7 @@
   },
   {
     "tier": 5,
-    "question": "Steven Koonin's 2014 complaint about climate sensitivity was that its quoted range - 1.5 to 4.5 degrees Celsius - was no narrower and no more certain than it had been thirty years and billions of dollars earlier. In August 2021, four months after his book 'Unsettled' appeared, the Intergovernmental Panel on Climate Change (IPCC)'s Sixth Assessment took the question up again. What did it report?",
+    "question": "Steven Koonin complained in 2014 that the quoted range for climate sensitivity, 1.5 to 4.5 degrees Celsius, was no narrower and no more certain than it had been thirty years and billions of dollars earlier. The Intergovernmental Panel on Climate Change (IPCC) took the question up again in its Sixth Assessment in August 2021, four months after his book 'Unsettled' appeared. What did it report?",
     "answer": "a best estimate of 3 degrees, likely range 2.5 to 4",
     "choices": [
       "a best estimate of 3 degrees, likely range 2.5 to 4",
@@ -17863,7 +17837,7 @@
   },
   {
     "tier": 5,
-    "question": "Steven Koonin always reads an Intergovernmental Panel on Climate Change (IPCC) paragraph to the very end. The 2021 Summary for Policymakers gives tropical cyclones just one paragraph, and its confidence is uneven. It has low confidence in long-term trends in how often cyclones of any kind form. But it says the share of the strongest storms, Categories 3 to 5, has 'likely' risen over the past forty years. One other finding in the same paragraph gets the report's strongest rating, 'very likely'. Which finding is it?",
+    "question": "Steven Koonin read to the very end of the one paragraph the 2021 Summary for Policymakers of the Intergovernmental Panel on Climate Change (IPCC) gives to tropical cyclones. Its confidence is uneven: 'low confidence' in long-term trends in how often cyclones of any kind form, and 'likely' that the share of the strongest storms, Categories 3 to 5, has risen over the past forty years. One other finding there gets the report's strongest rating, 'very likely'. Which finding is it?",
     "answer": "the latitude at which north-west Pacific cyclones peak has moved north",
     "choices": [
       "the latitude at which north-west Pacific cyclones peak has moved north",
@@ -17876,7 +17850,7 @@
   },
   {
     "tier": 5,
-    "question": "Koonin's book 'Unsettled' points hard at one stretch of the temperature record. From 1940 to 1970, greenhouse gas emissions climbed sharply but the global temperature did not rise. Climate models can match that flat stretch. But only by adding a second human effect that pushes the other way. What is that cooling effect?",
+    "question": "In his book 'Unsettled', Steven Koonin pointed hard at one stretch of the temperature record: from 1940 to 1970, greenhouse gas emissions climbed sharply but the global temperature did not rise. Climate models can match that flat stretch, but only by adding a second human effect that pushes the other way. What is that cooling effect?",
     "answer": "aerosols, the haze of particles that industry emits",
     "choices": [
       "aerosols, the haze of particles that industry emits",
@@ -17889,7 +17863,7 @@
   },
   {
     "tier": 5,
-    "question": "In September 2014 the American physicist Steven Koonin — a former Under Secretary for Science at the US Department of Energy — published a Wall Street Journal essay called Climate Science Is Not Settled. Most of its length argues that the climate's future is far less certain than the headlines and computer models suggest. Its closing paragraphs then say what should follow from that uncertainty. What does Koonin call well-justified prudence?",
+    "question": "For most of his September 2014 Wall Street Journal essay, Steven Koonin argued that the climate's future is far less certain than the headlines and computer models suggest. He closed by saying what should follow from that uncertainty. What did he call well-justified prudence?",
     "answer": "accelerating low-emissions technology and energy efficiency",
     "choices": [
       "accelerating low-emissions technology and energy efficiency",
@@ -17902,7 +17876,7 @@
   },
   {
     "tier": 1,
-    "question": "By 1964 the American chemist Stephanie Kwolek had been mixing polymer batches at the DuPont laboratory in Wilmington for years, hunting for a new fibre stiff enough to reinforce car tyres. Every batch had come out clear and syrupy, like molasses. Then one morning that year a fresh batch looked like nothing she had ever made before. How did it look?",
+    "question": "Stephanie Kwolek mixed a fresh polymer batch one morning in 1964 at the DuPont laboratory in Wilmington, hunting a new fiber stiff enough to reinforce car tires. Every batch before it had come out clear and syrupy, like molasses. This one looked like nothing she had ever made. How did it look?",
     "answer": "Cloudy and thin, like buttermilk",
     "choices": [
       "Cloudy and thin, like buttermilk",
@@ -17915,7 +17889,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1946 the young American chemist Stephanie Kwolek took a research job at DuPont, the giant chemical company, where she would one day invent the ultra-strong fibre Kevlar. The job was meant to be a way station: work a few years, save the money, and leave for what she really wanted to do. In the end she stayed forty years and never went. What had she been saving up for in the first place?",
+    "question": "Starting at DuPont in 1946, Stephanie Kwolek set herself a plan: work a few years, save the money and leave for what she really wanted to do. She stayed forty years, invented Kevlar and never went. What had she been saving up for in the first place?",
     "answer": "Medical school, to become a doctor",
     "choices": [
       "Medical school, to become a doctor",
@@ -17928,7 +17902,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1964 DuPont pointed Stephanie Kwolek's group at the steel cord buried inside every car tire and told them to replace it with a new fiber. The order came out of a worry about what the next decade would bring - nothing to do with soldiers or armor. What was DuPont worried about?",
+    "question": "Stephanie Kwolek's group got its orders from DuPont in 1964: replace the steel cord buried inside every car tire with a new fiber. The order came out of a worry about what the next decade would bring, nothing to do with soldiers or armor. What was DuPont worried about?",
     "answer": "A gasoline shortage - lighter tires stretch a gallon further",
     "choices": [
       "A gasoline shortage - lighter tires stretch a gallon further",
@@ -17954,7 +17928,7 @@
   },
   {
     "tier": 2,
-    "question": "Stephanie Kwolek's cloudy batch spun into fiber without a hitch, and what came off the spool was unlike anything she had drawn before. She did not wait for the testing lab - she ran the first test herself, right there at the machine. What did she do, and what happened?",
+    "question": "Without waiting for the testing lab, Stephanie Kwolek took up the first fiber spun from her strange batch, unlike anything she had drawn before, and ran the first test herself, right there at the machine. What did she do, and what happened?",
     "answer": "She pulled it in her hands, and it did not break",
     "choices": [
       "She pulled it in her hands, and it did not break",
@@ -17967,7 +17941,7 @@
   },
   {
     "tier": 3,
-    "question": "A cloudy liquid almost always means something solid is drifting in it, undissolved. Stephanie Kwolek's batch was cloudy, and the obvious verdict was that she had contaminated it. She settled that at the bench with one simple test, and the result was flat: whatever was scattering the light, it was not floating solids. What was the test?",
+    "question": "Looking at her cloudy batch, Stephanie Kwolek faced the obvious verdict: she had contaminated it, since a cloudy liquid almost always means something solid is drifting in it, undissolved. She settled that at the bench with one simple test, and the result was flat: whatever was scattering the light, it was not floating solids. What was the test?",
     "answer": "She pushed the batch through a fine filter, and none was caught",
     "choices": [
       "She pushed the batch through a fine filter, and none was caught",
@@ -17980,7 +17954,7 @@
   },
   {
     "tier": 3,
-    "question": "The strength numbers coming off Stephanie Kwolek's new fiber were so far above anything DuPont had ever spun that a scientist hunting a reputation would have run down the hall with them. Kwolek did not. What did she do before she would let herself say she had discovered anything?",
+    "question": "Stephanie Kwolek read strength numbers on her new fiber so far above anything DuPont had ever spun that a scientist hunting a reputation would have run down the hall with them. She did not. What did she do before she would let herself say she had discovered anything?",
     "answer": "Had the strength tests repeated over and over again",
     "choices": [
       "Had the strength tests repeated over and over again",
@@ -18006,7 +17980,7 @@
   },
   {
     "tier": 4,
-    "question": "Nothing solid floated in Stephanie Kwolek's cloudy batch - all of it went through a fine filter - and yet it scattered light like milk. Ordinary polymer solutions stay clear because their molecules are floppy tangles, tumbling every which way past one another. Kwolek's molecules were doing something else in that flask, and that is what was throwing the light back. What were her molecules doing?",
+    "question": "In her cloudy batch Stephanie Kwolek found nothing solid floating, and yet it scattered light like milk. Ordinary polymer solutions stay clear because their molecules are floppy tangles, tumbling every which way past one another. Her molecules were doing something else in that flask, and that was what threw the light back. What were they doing?",
     "answer": "Lining up side by side into liquid-crystal patches",
     "choices": [
       "Lining up side by side into liquid-crystal patches",
@@ -18019,7 +17993,7 @@
   },
   {
     "tier": 4,
-    "question": "A police vest is twenty to thirty layers of woven Kevlar, and the standard models are rated for handgun rounds - a 9mm, even a .44 Magnum. The word for them is bullet-resistant, not bulletproof, and the gap between those two words is real: a rifle round punches straight through. What has to be added to stop one?",
+    "question": "A police officer straps on a vest of twenty to thirty layers of woven Kevlar, rated for handgun rounds, a 9mm or even a .44 Magnum. The word for it is bullet-resistant, not bulletproof, and the gap between those two words is real: a rifle round punches straight through. What has to be added to stop one?",
     "answer": "A hard ceramic plate slid into the vest",
     "choices": [
       "A hard ceramic plate slid into the vest",
@@ -18032,7 +18006,7 @@
   },
   {
     "tier": 5,
-    "question": "Kevlar's molecules lie stretched out and parallel along the fiber, which is why pulling on it is so hard - weight for weight it beats steel about five to one. But a single chain on its own would simply slide past its neighbors, and the fiber would come apart like a handful of loose threads. Something grips neighboring chains together sideways. What holds them?",
+    "question": "Stephanie Kwolek had spun a fiber whose molecules lie stretched out and parallel along its length, which is why pulling on it is so hard: weight for weight it beats steel about five to one. But a single chain on its own would simply slide past its neighbors, and the fiber would come apart like a handful of loose threads. Something grips neighboring chains together sideways. What holds them?",
     "answer": "Hydrogen bonds, each N-H reaching the next C=O",
     "choices": [
       "Hydrogen bonds, each N-H reaching the next C=O",
@@ -18045,7 +18019,7 @@
   },
   {
     "tier": 5,
-    "question": "Kevlar reached the market in 1971, six years from beaker to product, and the fiber has since earned several billion dollars. US Patent 3,819,587, 'Wholly Aromatic Carbocyclic Polycarbonamide Fiber,' granted in 1974, names Stephanie Kwolek as its inventor. What became of that patent?",
+    "question": "Stephanie Kwolek saw her name go on a United States patent as the inventor of Kevlar in 1974. The fiber had reached the market in 1971, and it has since made several billion dollars. What became of that patent?",
     "answer": "She signed it over to DuPont and earned nothing from it",
     "choices": [
       "She signed it over to DuPont and earned nothing from it",
@@ -18058,7 +18032,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1809 the French biologist Jean-Baptiste Lamarck published Philosophie Zoologique, the first serious book-length theory of how living species change over long stretches of time. It contained a famous picture of a giraffe reaching up to strip leaves from a tall tree. Lamarck said the picture proved his explanation for how the giraffe got its long neck. What did he say the picture proved?",
+    "question": "Jean-Baptiste Lamarck gave his famous example in 1809 in Philosophie Zoologique, the first serious book-length theory of how living species change. He took a giraffe feeding at a tall tree. How did he say it got its long neck?",
     "answer": "each giraffe stretched for high leaves, and its calves inherited the longer neck",
     "choices": [
       "each giraffe stretched for high leaves, and its calves inherited the longer neck",
@@ -18071,7 +18045,7 @@
   },
   {
     "tier": 3,
-    "question": "August Weismann was a German biologist working in the 1880s. He wanted to test an old idea called Lamarckism -- the claim that a trait an animal picks up during its life (like a scar, or a lost tail) can be passed to its children in the next generation. Weismann cut the tails off 68 white mice and did the same to their pups, and their pups' pups, for five generations of 901 offspring. What did he find?",
+    "question": "August Weismann cut the tails off 68 white mice in the 1880s, then off their pups and their pups' pups, for five generations. He was testing Lamarckism, the old claim that a trait an animal picks up during its life, like a scar or a lost tail, can pass to its young. What did he find?",
     "answer": "zero shortened tails, not one single mouse across all 901 offspring",
     "choices": [
       "zero shortened tails, not one single mouse across all 901 offspring",
@@ -18084,7 +18058,7 @@
   },
   {
     "tier": 1,
-    "question": "Before 1900 a blood transfusion was a coin flip. Some patients rallied within the hour, others burned with fever and died, and no one knew why. In 1900 a young pathologist solved it: he showed that people belong to different groups whose blood does not mix. What did he discover?",
+    "question": "Karl Landsteiner, a young pathologist in Vienna, set drops of his colleagues' blood together on a plate in 1900 and watched some pairs clump. Until then a transfusion was a coin flip: some patients rallied within the hour, others burned with fever and died. What did his plate reveal?",
     "answer": "Blood types",
     "choices": [
       "Blood types",
@@ -18097,7 +18071,7 @@
   },
   {
     "tier": 2,
-    "question": "When Landsteiner sorted the pattern of clumped and smooth squares from his six-donor grid, the donors did not fall into a random tangle. Their blood sorted cleanly into three categories, and he gave each category a short letter label. Which labels did he choose?",
+    "question": "Karl Landsteiner sorted the pattern of clumped and smooth squares from his six-donor grid, and the donors did not fall into a random tangle. Their blood sorted cleanly into three categories, and he gave each one a short label. Which labels did he choose?",
     "answer": "A, B and C",
     "choices": [
       "A, B and C",
@@ -18110,7 +18084,7 @@
   },
   {
     "tier": 3,
-    "question": "Six donors were enough to reveal three blood groups. They were not enough to reveal a fourth, rarer one. In 1902 two of Landsteiner's students went back to the problem with a far larger set of samples and pulled out the missing group, later named AB for the two antigens it carried. Who were they?",
+    "question": "Two of Karl Landsteiner's students went back to his blood groups in 1902 with a far larger set of samples. His six donors had been enough to reveal three groups but not a fourth, rarer one. The students pulled out the missing group, later named AB. Who were they?",
     "answer": "Alfred von Decastello and Adriano Sturli",
     "choices": [
       "Alfred von Decastello and Adriano Sturli",
@@ -18123,7 +18097,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1900 the Austrian doctor Karl Landsteiner mixed drops of blood from different people on a glass plate and watched some pairs clump into red flecks while other pairs stayed smooth. The clumping on his plate was not the red cells themselves misbehaving. It was a real chemical fight between two invisible partners, and Landsteiner worked out what those two combatants were. What were they?",
+    "question": "Karl Landsteiner mixed drops of blood from different people on a glass plate in 1900 and watched some pairs clump into red flecks while other pairs stayed smooth. The clumping was not the red cells themselves misbehaving. It was a real chemical fight between two invisible partners. What were they?",
     "answer": "sugar antigens attacked by matching antibodies",
     "choices": [
       "sugar antigens attacked by matching antibodies",
@@ -18136,7 +18110,7 @@
   },
   {
     "tier": 4,
-    "question": "After Karl Landsteiner's 1900 work sorting human blood into groups A, B, AB and O, doctors learned that giving one person's blood to another can kill the patient unless the types match. Emergency rooms keep a small stock of one particular donor blood on hand because, in a crisis with no time to type the patient, it can be given to almost anyone. Which donor blood is that emergency stock?",
+    "question": "A nurse reaches into an emergency room's small stock of one particular donor blood for a patient there is no time to type. Since Karl Landsteiner's 1900 work, doctors have known that a mismatched transfusion can kill, but this stock can be given to almost anyone. Which donor blood is it?",
     "answer": "O-negative red cells",
     "choices": [
       "O-negative red cells",
@@ -18149,7 +18123,7 @@
   },
   {
     "tier": 4,
-    "question": "One of the first attempts to put an animal's blood into a human began in Paris on 15 June 1667. A young physician named Jean-Baptiste Denys transfused a 15-year-old boy with the blood of another creature, and the boy survived. Later Denys tried the same trick on a man named Antoine Mauroy; Mauroy died. Whose blood had Denys been using?",
+    "question": "Jean-Baptiste Denys, a young physician in Paris, transfused a 15-year-old boy with the blood of another creature on 15 June 1667, one of the first attempts to put an animal's blood into a human. The boy survived. A later patient, Antoine Mauroy, died. Whose blood had Denys given the boy?",
     "answer": "a lamb's",
     "choices": [
       "a lamb's",
@@ -18162,7 +18136,7 @@
   },
   {
     "tier": 1,
-    "question": "Burning is not a shrinking process -- it is really a metal or a fuel grabbing oxygen out of the air and hooking on to it. Try it on a kitchen scale. Set a wad of steel wool on one pan of a balance and level the beam. Then touch a lit match to the wool. It glows orange, spreads, and crumbles into a dark, brittle crust. What does the beam do?",
+    "question": "A girl sets a wad of steel wool on one pan of a kitchen balance and levels the beam. She touches a lit match to the wool, and it glows orange, spreads and crumbles into a dark, brittle crust. What does the beam do?",
     "answer": "It tips down on the burnt side; the crust outweighs the wool.",
     "choices": [
       "It tips down on the burnt side; the crust outweighs the wool.",
@@ -18175,7 +18149,7 @@
   },
   {
     "tier": 1,
-    "question": "On 1 August 1774 the English clergyman-chemist Joseph Priestley focused sunlight through a big burning lens onto some red powder scraped from heated mercury, and caught the strange new gas that came off in a glass jar. To see what the gas could do, he lowered a lit candle down into it. What did the candle do?",
+    "question": "Joseph Priestley focused sunlight through a big burning lens onto a red mercury powder on 1 August 1774 and caught the strange new gas that came off in a glass jar. He lowered a lit candle down into it. What did the candle do?",
     "answer": "It blazed up, five or six times brighter than in ordinary air.",
     "choices": [
       "It blazed up, five or six times brighter than in ordinary air.",
@@ -18201,7 +18175,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Lavoisier, every chemistry student in Europe learned about phlogiston. It was a fire-stuff said to be locked inside anything that burns. The theory stuck because it explained an old smelter's trick. Heat a dull grey calx (the powder a roasted metal leaves) with charcoal, and shiny metal comes back out. What did the theory say the charcoal was doing?",
+    "question": "A smelter heated a dull grey calx, the powder a roasted metal leaves, with charcoal, and shiny metal came back out. Before Antoine Lavoisier, every chemistry student in Europe learned to explain that trick with phlogiston, a fire-stuff said to be locked inside anything that burns. What did the theory say the charcoal was doing?",
     "answer": "Handing over its own phlogiston to the starved calx.",
     "choices": [
       "Handing over its own phlogiston to the starved calx.",
@@ -18214,7 +18188,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1630 the French doctor Jean Rey got a puzzle. An apothecary named Brun had melted two pounds and six ounces of tin in a furnace for six hours. The powder he poured out weighed seven ounces more than the tin had. What did Rey say had added the weight?",
+    "question": "Jean Rey, a French doctor, took up a puzzle in 1630. An apothecary named Brun had melted two pounds and six ounces of tin in a furnace for six hours, and the powder he poured out weighed seven ounces more than the tin had. What did Rey say had added the weight?",
     "answer": "Air, thickened by the long heat, had attached itself to it.",
     "choices": [
       "Air, thickened by the long heat, had attached itself to it.",
@@ -18227,7 +18201,7 @@
   },
   {
     "tier": 3,
-    "question": "Antoine Lavoisier sealed eight ounces of tin inside a glass vessel with about fifteen grains of air, weighed the whole thing, and heated the tin until it crusted over. Weighed again with the seal unbroken, the vessel came out at exactly its old weight -- not a tenth of a grain different. He then broke the seal and weighed the crusted metal by itself. What had happened to the tin, and to the air shut in with it?",
+    "question": "Antoine Lavoisier sealed eight ounces of tin inside a glass vessel with about fifteen grains of air, weighed the whole thing, and heated the tin until it crusted over. Weighed again with the seal unbroken, the vessel came out at exactly its old weight, not a tenth of a grain different. He then broke the seal and weighed the crusted metal by itself. What had happened to the tin, and to the air shut in with it?",
     "answer": "The tin gained 3.12 grains; the air lost the same 3.12.",
     "choices": [
       "The tin gained 3.12 grains; the air lost the same 3.12.",
@@ -18240,7 +18214,7 @@
   },
   {
     "tier": 3,
-    "question": "Phlogiston said that a burning body is losing something -- fire-stuff streaming out of it -- so a roasted metal ought to come out lighter. Chemists put it on the balance, and the ashy calx came out heavier than the metal every single time. In 1764 the French chemist Jean-Baptiste Chardenon offered a rescue that kept the theory alive another twenty years. What was it?",
+    "question": "Jean-Baptiste Chardenon, a French chemist, offered a rescue in 1764 that kept phlogiston alive another twenty years. The theory said a burning body gives off fire-stuff, so a roasted metal ought to come out lighter, yet on the balance the ashy calx came out heavier every single time. What was his rescue?",
     "answer": "Phlogiston has negative weight, so losing it adds weight.",
     "choices": [
       "Phlogiston has negative weight, so losing it adds weight.",
@@ -18253,7 +18227,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1777 Antoine Lavoisier proposed a name for the new gas, built out of two Greek words, and it is the name we still use today. He picked it to record something he was convinced the gas did -- a conviction most chemists of the 1780s shared with him. What did he think the gas was?",
+    "question": "Antoine Lavoisier reached for two Greek words in 1777 to record something he was convinced the new gas did, a conviction most chemists of the 1780s shared with him. The name he built from them is still in use. What did he think the gas was?",
     "answer": "The substance that makes every acid an acid.",
     "choices": [
       "The substance that makes every acid an acid.",
@@ -18266,7 +18240,7 @@
   },
   {
     "tier": 3,
-    "question": "Richard Kirwan's 'Essay on Phlogiston' (1787) was the strongest defence of the theory ever written. Marie-Anne Paulze Lavoisier already helped in the lab and had translated Priestley, Black and Cavendish. The next year she put the whole of Kirwan's book into French. What did the Paris edition of 1788 carry that Kirwan's original did not?",
+    "question": "Marie-Anne Paulze Lavoisier put the whole of Richard Kirwan's 'Essay on Phlogiston' into French the year after it appeared in 1787. It was the strongest defence of the theory ever written. She already helped in the lab and had translated Priestley, Black and Cavendish. What did the Paris edition of 1788 carry that Kirwan's original did not?",
     "answer": "The French chemists' refutation, running in notes underneath.",
     "choices": [
       "The French chemists' refutation, running in notes underneath.",
@@ -18279,7 +18253,7 @@
   },
   {
     "tier": 3,
-    "question": "Antoine Lavoisier paid for his lab with another job. He had bought into the Ferme generale, a group that collected France's taxes on salt, tobacco, and goods coming into cities. In November 1793 the Revolution jailed every surviving tax farmer. Lavoisier was tried with twenty-seven others on 8 May 1794 and guillotined that afternoon, at age fifty. One charge accused him of a fraud he had spent years catching himself. What was it?",
+    "question": "Antoine Lavoisier stood trial as a tax farmer with twenty-seven others on 8 May 1794 and went to the guillotine that afternoon, at age fifty. He had paid for his lab by buying into the Ferme générale, a group that collected France's taxes on salt, tobacco and goods coming into cities. One charge accused him of a fraud he had spent years catching himself. What was it?",
     "answer": "Watering the tax farm's tobacco to inflate its weight.",
     "choices": [
       "Watering the tax farm's tobacco to inflate its weight.",
@@ -18292,7 +18266,7 @@
   },
   {
     "tier": 4,
-    "question": "Twelve days of simmering mercury in a sealed jar of air had left Antoine Lavoisier with two things: a red crust that had formed on the metal, and a jar of air that had lost several cubic inches of its bulk. He put the crust alone into a fresh vessel and heated it hard. What came off it?",
+    "question": "Antoine Lavoisier put a red crust alone into a fresh vessel and heated it hard. It had formed on his mercury over twelve days of simmering in a sealed jar of air, and the air in the jar had lost several cubic inches of its bulk. What came off the crust?",
     "answer": "Running mercury, and the very air the jar had lost.",
     "choices": [
       "Running mercury, and the very air the jar had lost.",
@@ -18305,7 +18279,7 @@
   },
   {
     "tier": 4,
-    "question": "Antoine Lavoisier had named the gas oxygen, from the Greek for acid-maker. In 1810 Humphry Davy took apart muriatic acid. That was the fuming acid that ate through metals in every lab in Europe. He weighed every piece that came out of it. What is muriatic acid made of?",
+    "question": "Humphry Davy took apart muriatic acid in 1810, the fuming acid that ate through metals in every lab in Europe, and he weighed every piece that came out of it. His result showed Antoine Lavoisier's name for oxygen to be wrong. What is muriatic acid made of?",
     "answer": "Hydrogen and chlorine.",
     "choices": [
       "Hydrogen and chlorine.",
@@ -18318,7 +18292,7 @@
   },
   {
     "tier": 4,
-    "question": "'Nothing is lost, nothing is created, everything is transformed.' That one line sums up conservation of mass -- the idea that matter is never destroyed by fire or reaction, only rearranged. It is printed under the name of the great French chemist Antoine Lavoisier (guillotined in 1794) in chemistry books everywhere. Where does the sentence actually come from?",
+    "question": "'Nothing is lost, nothing is created, everything is transformed.' Chemistry books everywhere print that line under the name of Antoine Lavoisier, as the sum of conservation of mass: matter is never destroyed by fire or reaction, only rearranged. Where does the sentence actually come from?",
     "answer": "A later French summing-up, found in nothing he wrote.",
     "choices": [
       "A later French summing-up, found in nothing he wrote.",
@@ -18331,7 +18305,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1789 Antoine Lavoisier printed the first modern table of elements in his Traite elementaire de chimie: thirty-three substances he judged could not be broken down into anything simpler. Two entries stand at the very top of that list, printed ahead of oxygen itself. What are they?",
+    "question": "Antoine Lavoisier printed the first modern table of elements in his 1789 Traité élémentaire de chimie: thirty-three substances he judged could not be broken down into anything simpler. He set two entries at the very top of that list, ahead of oxygen itself. What were they?",
     "answer": "Light, and caloric -- the fluid he believed heat was.",
     "choices": [
       "Light, and caloric -- the fluid he believed heat was.",
@@ -18344,7 +18318,7 @@
   },
   {
     "tier": 5,
-    "question": "Antoine Lavoisier's law is taught as exact: equal matter before and after, and the books always balance. A student who pushes on it deserves the honest answer, which is that it is very slightly false. Burn one gram of carbon inside a sealed vessel and weigh the whole apparatus again, and the total really has dropped -- by about three ten-billionths of a gram, roughly a hundred-millionth of the mass of one electron for every carbon atom burned. No balance ever built could catch it. Where did that missing mass go?",
+    "question": "Suppose you burn one gram of carbon inside a sealed vessel and weigh the whole apparatus again, to push on Antoine Lavoisier's law of equal matter before and after. The total really has dropped, by about three ten-billionths of a gram, though no balance ever built could catch it. Where did that missing mass go?",
     "answer": "It left with the heat and light; energy has mass.",
     "choices": [
       "It left with the heat and light; energy has mass.",
@@ -18357,7 +18331,7 @@
   },
   {
     "tier": 1,
-    "question": "Antonie van Leeuwenhoek never went to college and never worked in a lab. The little magnifying glasses he first used made things three to five times bigger, no more. They were tools of the shop trade he learned in Amsterdam in 1648. Which trade was it?",
+    "question": "Antonie van Leeuwenhoek, with no college and no lab behind him, picked up his first little magnifying glasses in Amsterdam, learning a shop trade from 1648. They made things three to five times bigger, no more. Which trade were they tools of?",
     "answer": "Selling cloth, where a glass counted threads per inch",
     "choices": [
       "Grinding spectacles, where a glass checked the curve",
@@ -18370,7 +18344,7 @@
   },
   {
     "tier": 1,
-    "question": "In September 1674 Antonie van Leeuwenhoek looked at a drop from Berkelse Mere, the lake outside Delft that turned whitish every midsummer with 'little green clouds.' Under his lens the clouds were green streaks wound like serpents. But it was the other thing in that drop that made his letter famous. What else was in it?",
+    "question": "Antonie van Leeuwenhoek put a drop of water under his lens in September 1674, from Berkelse Mere, the lake outside Delft that turned whitish every midsummer with 'little green clouds.' The clouds were green streaks wound like serpents. But another thing in that drop made his letter famous. What was it?",
     "answer": "Very many little animals, swimming",
     "choices": [
       "Very many little animals, swimming",
@@ -18383,7 +18357,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1670s a Dutch cloth merchant named Antoni van Leeuwenhoek ground his own tiny glass lenses and became the first person to see bacteria and single-celled life -- his 'little animals,' as he called them. His readers in London had no lens like his, so a bare number would tell them nothing. In a 1674 letter he said his little animals were 'above a thousand times smaller' than a creature every one of his readers had seen at home. Which creature did Leeuwenhoek name?",
+    "question": "Writing to readers in London in 1674 who had no lens like his, Antonie van Leeuwenhoek knew a bare number would tell them nothing. He said some of the creatures he saw were 'above a thousand times smaller' than one every reader had seen at home. Which creature did he name?",
     "answer": "A mite on the rind of a cheese",
     "choices": [
       "A gnat on a summer windowpane",
@@ -18396,7 +18370,7 @@
   },
   {
     "tier": 2,
-    "question": "Antonie van Leeuwenhoek never learned Latin, the working language of European science. For fifty years he wrote to the Royal Society in Dutch about the tiny things he saw in a drop of lake water. He made up no fancy term. He used a plain Dutch word a Delft cloth-seller might use for anything small. What did translators later put his word into English as?",
+    "question": "Never having learned Latin, the working language of European science, Antonie van Leeuwenhoek wrote to the Royal Society in Dutch about the tiny things he saw in a drop of lake water. He made up no fancy term, only a plain word a Delft shopkeeper might use for anything small. What did translators make of his word in English?",
     "answer": "Little animals",
     "choices": [
       "Little animals",
@@ -18409,7 +18383,7 @@
   },
   {
     "tier": 2,
-    "question": "By 1683 Antonie van Leeuwenhoek had found his little animals in lake water, rainwater and pepper-water. Then, on 17 September, he wrote to Francis Aston at the Royal Society about a sample from a place nobody had thought to look -- one he carried about with him all day. The drawings sent with that letter are the first pictures of bacteria ever made. Where did the sample come from?",
+    "question": "Antonie van Leeuwenhoek wrote to Francis Aston at the Royal Society on 17 September 1683 about a sample from a place nobody had thought to look, one he carried about with him all day. The drawings sent with that letter are the earliest known pictures of bacteria. Where did the sample come from?",
     "answer": "The soft white matter between his own teeth",
     "choices": [
       "The wax taken from inside his own ear",
@@ -18422,7 +18396,7 @@
   },
   {
     "tier": 2,
-    "question": "Robert Hooke's microscope was a tall tube on a stand with several lenses inside. Antonie van Leeuwenhoek's was nothing like it: two thin metal plates riveted around a single tiny lens, about 5 cm by 2.5 cm, the specimen skewered on a brass pin and shifted by two fine screws. How did he use it?",
+    "question": "Antonie van Leeuwenhoek riveted two thin metal plates, about 5 cm by 2.5 cm, around a single tiny lens, with the specimen skewered on a brass pin and shifted by two fine screws. Robert Hooke's microscope was nothing like it: a tall tube on a stand with several lenses inside. How did Leeuwenhoek use his?",
     "answer": "He held the plate to his eye and aimed it at a candle flame",
     "choices": [
       "He held the plate to his eye and aimed it at a candle flame",
@@ -18435,7 +18409,7 @@
   },
   {
     "tier": 3,
-    "question": "Leeuwenhoek's letter of 17 September 1683 told the Royal Society what was in the film he had scraped from his own teeth. The numbers were hard to say. So he reached for a comparison. It is the line of his still quoted three centuries later. He added, dryly, 'especially in those who don't ever clean their teeth.' What was the comparison?",
+    "question": "Antonie van Leeuwenhoek found the numbers of his new creatures hard to say in his letter of 17 September 1683, so he reached for a comparison, the line of his still quoted three centuries later. He added, dryly, 'especially in those who don't ever clean their teeth.' What was the comparison?",
     "answer": "More animals in one man's mouth than men in a whole kingdom",
     "choices": [
       "More animals in one man's mouth than stars in a clear sky",
@@ -18448,7 +18422,7 @@
   },
   {
     "tier": 3,
-    "question": "Antonie van Leeuwenhoek did not only look at the creatures he found between his teeth -- he went after them. He tried hot coffee on them, and he tried vinegar, to see what would still them: one of the first kill-tests anyone had run on a microbe. When the vinegar result was printed in London it had an effect on readers he can hardly have intended. What did it do to them?",
+    "question": "Not content to look at the creatures he had found, Antonie van Leeuwenhoek went after them, trying hot coffee and vinegar to see what would still them: one of the first kill-tests anyone had run on a microbe. The vinegar result, printed in London, had an effect on readers he can hardly have intended. What did it do to them?",
     "answer": "Some were so disgusted they swore off vinegar for good",
     "choices": [
       "Some wrote in demanding he test the wine trade next",
@@ -18461,7 +18435,7 @@
   },
   {
     "tier": 3,
-    "question": "Antonie van Leeuwenhoek was ninety and dying of pneumonia in Delft in August 1723, fifty years after his first letter to the Royal Society. His friend Johan Hoogvliet was turning the last letters into Latin for him -- Leeuwenhoek 'being already in the throes of death,' Hoogvliet wrote, 'though none the less mindful of his art.' Thirty-six hours before the end, his limbs already going numb, he was still dictating. What was he dictating about?",
+    "question": "Johan Hoogvliet sat turning the last letters of his friend Antonie van Leeuwenhoek into Latin in Delft in August 1723, with the old man ninety and dying of pneumonia, 'being already in the throes of death,' Hoogvliet wrote, 'though none the less mindful of his art.' Thirty-six hours before the end, his limbs already going numb, Leeuwenhoek was still dictating. What was he dictating about?",
     "answer": "Sand an East India Company director had brought him, to test for gold",
     "choices": [
       "Sand an East India Company director had brought him, to test for gold",
@@ -18474,7 +18448,7 @@
   },
   {
     "tier": 4,
-    "question": "Henry Oldenburg, secretary of the Royal Society, had been printing Leeuwenhoek's letters in Philosophical Transactions within months. A Delft tradesman's notes were welcomed and set in type. Then the letters began claiming that living creatures lived in a drop of water, too small for any eye to see. Twelve more letters went to London. What did Oldenburg do with them?",
+    "question": "Henry Oldenburg, secretary of the Royal Society, faced twelve more letters from Antonie van Leeuwenhoek, a Delft tradesman whose notes he had been printing in Philosophical Transactions within months. Now the letters claimed that living creatures swam in a drop of water, too small for any eye to see. What did Oldenburg do with the twelve?",
     "answer": "He printed three, and none of those touched the creatures",
     "choices": [
       "He printed nine, and cut the animalcule passages out of them",
@@ -18487,7 +18461,7 @@
   },
   {
     "tier": 4,
-    "question": "On 11 November 1677 the Royal Society sat and heard the sworn affidavits Antonie van Leeuwenhoek had sent from Delft: men of standing -- a notary, ministers, a lawyer, a physician -- swearing on oath that they had put their own eyes to his lens and seen the little animals. The Fellows heard every one of them out, and were not satisfied. What did they do next?",
+    "question": "The Fellows of the Royal Society sat in November 1677 and heard the sworn affidavits Antonie van Leeuwenhoek had sent from Delft: a notary, a lawyer, a physician and ministers swearing they had put their own eyes to his lens and seen the creatures. The Fellows heard every one of them out, and were not satisfied. What did they do next?",
     "answer": "They ordered Robert Hooke to reproduce the observation himself",
     "choices": [
       "They had Henry Oldenburg write to Delft for a fuller account",
@@ -18500,7 +18474,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert Hooke, Curator of Experiments, tried in front of the Fellows and failed twice. On 1 November 1677 he examined pump-water in glass pipes: 'There was no discovery made in the liquor... of any such minute animals.' On 8 November he came back with a better mount, better lighting and pepper-water: still 'nothing of Mr. Leeuwenhoek's animals could be seen.' On 15 November he tried once more and saw 'great numbers of exceedingly small animals swimming to and fro,' with Christopher Wren, John Aubrey and Nehemiah Grew watching. What had he changed?",
+    "question": "Robert Hooke tried in front of the Fellows and failed twice. On 1 November 1677 pump-water in glass pipes gave 'no discovery'; on 8 November, with a better mount, better lighting and pepper-water, 'nothing of Mr. Leeuwenhoek's animals could be seen.' On 15 November he tried once more and saw 'great numbers of exceedingly small animals swimming to and fro,' with Christopher Wren, John Aubrey and Nehemiah Grew watching. What had he changed?",
     "answer": "He had let the pepper-water steep nine or ten days",
     "choices": [
       "He had ground a finer lens for the third attempt",
@@ -18513,7 +18487,7 @@
   },
   {
     "tier": 5,
-    "question": "Antonie van Leeuwenhoek told the Royal Society in 1676 that his method for seeing the smallest creatures he kept 'for myself alone.' In 1685 he showed Thomas Molyneux his working microscopes, then said he owned another sort 'which no man living had looked through setting aside himself' -- and would not let Molyneux look. For three centuries people assumed a lost lens-making secret. In 2021 Tiemen Cocquyt and a Delft team fired neutrons through two sealed instruments to image the lenses without prising them apart. What was the high-power lens?",
+    "question": "Tiemen Cocquyt and a Delft team fired neutrons through two sealed Leeuwenhoek instruments in 2021 to image the lenses without prising them apart. Antonie van Leeuwenhoek had told the Royal Society in 1676 that his method for seeing the smallest creatures he kept 'for myself alone,' and for three centuries people assumed a lost lens-making secret. What was the high-power lens?",
     "answer": "A blown glass globule, by a method Robert Hooke had published",
     "choices": [
       "A ground biconvex lens, by the method Christiaan Huygens used",
