@@ -53,7 +53,7 @@
   },
   {
     "tier": 1,
-    "question": "You want to know what happened in the news this morning — a game score, a breaking story, an announcement from earlier today. Chatbots were often trained months ago and don't know today's events. Which of these is the best tool to use when you want to look up the latest news from today?",
+    "question": "Suppose you want this morning's game score or a breaking story. Chatbots were often trained months ago and don't know today's events. Which of these is the best tool for looking up today's news?",
     "answer": "A search engine like Google",
     "choices": [
       "A search engine like Google",
@@ -66,7 +66,7 @@
   },
   {
     "tier": 1,
-    "question": "Since 2023 ChatGPT has had a tool that lets it write a short program and run it. When the answer to a big multiplication matters, what does that tool let the chatbot do?",
+    "question": "A nurse asks ChatGPT to work out a huge sum. Since 2023 it has been able to write a short program and run it. When the answer matters, what does that let the chatbot do?",
     "answer": "Compute the answer, not guess it",
     "choices": [
       "Search the web for the answer",
@@ -92,7 +92,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2024 people kept asking chatbots how many r's are in 'strawberry,' and many said two. Models read text in chunks called tokens, like 'straw' and 'berry.' Why did they miscount?",
+    "question": "A girl asks a chatbot how many r's are in 'strawberry,' and it says two, like many in 2024. Chatbots read text in chunks called tokens, like 'straw' and 'berry.' Why do they miscount?",
     "answer": "They don't see the single letters",
     "choices": [
       "They don't see the single letters",
@@ -105,7 +105,7 @@
   },
   {
     "tier": 1,
-    "question": "Today you open ChatGPT and mention that your favorite color is green. Tomorrow you close that chat and start a fresh new conversation with the same chatbot. By default — unless you've turned on a special memory feature — will ChatGPT remember what you told it yesterday?",
+    "question": "Suppose you tell ChatGPT today that your favorite color is green. Tomorrow you reopen it, with no memory feature on. Will it remember?",
     "answer": "No, each new chat starts fresh from blank",
     "choices": [
       "No, each new chat starts fresh from blank",
@@ -313,19 +313,6 @@
   },
   {
     "tier": 1,
-    "question": "You ask a chatbot a question. It gives you an answer in a smooth, confident voice — no hesitation, no 'I'm not sure.' But when you check a trusted book or website, the answer turns out to be flat wrong. This surprises people a lot. What key thing should you remember about how chatbots really work?",
-    "answer": "They can be confidently wrong",
-    "choices": [
-      "They can be confidently wrong",
-      "They never make mistakes",
-      "They feel guilt when wrong",
-      "They warn you of all errors"
-    ],
-    "context": "LLMs don't 'know' when they're wrong. They generate plausible-sounding text. A wrong answer often sounds just as confident as a right one. The fluency of the writing is no clue at all to its accuracy. This is the most important habit-shifting fact about LLMs.",
-    "topic": "chatbot-limits-and-right-tool"
-  },
-  {
-    "tier": 1,
     "question": "AI chatbots have giveaway habits when they write. They often stuff in long dashes, or use fancy phrases like 'delve into' and 'rich tapestry' way more than a normal kid ever would. Some sentences also feel weirdly balanced. When you learn to notice these clues, what real-life skill are you building?",
     "answer": "Spotting AI-written text",
     "choices": [
@@ -391,7 +378,7 @@
   },
   {
     "tier": 1,
-    "question": "If you ask a chatbot 'tell me about dogs,' you get a plain answer. But if you ask 'write a fun poem about a dog named Rex who loves cheese,' you get something totally different. The exact words you type — called your prompt — really change the reply. What is the name for the skill of wording prompts carefully?",
+    "question": "A boy types 'tell me about dogs' into a chatbot and gets a plain answer. His sister types 'write a fun poem about a dog named Rex who loves cheese' and gets something very different. What is the skill of careful wording called?",
     "answer": "Prompt engineering",
     "choices": [
       "Prompt engineering",
@@ -404,7 +391,7 @@
   },
   {
     "tier": 1,
-    "question": "In January 2024 a man chasing a lost parcel got the chatbot of DPD (a British parcel firm) to swear and write a poem mocking the firm. What did the firm do next?",
+    "question": "A man chasing a lost parcel got the chatbot of DPD (a British parcel firm) to swear and write a poem mocking the firm in January 2024. What did the firm do next?",
     "answer": "Switched off the chatbot's AI part",
     "choices": [
       "Switched off the chatbot's AI part",
@@ -573,7 +560,7 @@
   },
   {
     "tier": 1,
-    "question": "One popular chatbot leaderboard, Chatbot Arena, began in 2023 at Berkeley. A visitor types a question, reads two answers from unnamed models side by side, and then does one thing. What?",
+    "question": "A visitor to Chatbot Arena, a popular leaderboard that began at Berkeley in 2023, types a question and reads two answers from unnamed models side by side. Then she does one thing. What?",
     "answer": "Votes for the better answer",
     "choices": [
       "Votes for the better answer",
@@ -664,7 +651,7 @@
   },
   {
     "tier": 1,
-    "question": "AlphaGo was an AI program built by DeepMind in London. In 2016, it beat the world champion Lee Sedol at Go, an ancient board game from China that people had played for over 2,000 years. Go is played on a wooden grid, and players take turns placing black and white stones on the crossings of the lines. The board is much bigger than a chessboard. How many lines does a Go board have on each side?",
+    "question": "A beginner sits down at a wooden Go board like the one Lee Sedol used against AlphaGo in 2016. Stones go on the crossings of its lines, and it is much bigger than a chessboard. How many lines does it have on each side?",
     "answer": "Nineteen by nineteen",
     "choices": [
       "Nineteen by nineteen",
@@ -677,7 +664,7 @@
   },
   {
     "tier": 1,
-    "question": "AlphaFold is an AI program from DeepMind, a lab based in London. For fifty years, biologists had struggled with one hard puzzle: every living thing is built out of long chains of amino acids that fold up into complex 3D shapes, and scientists could barely predict those shapes. In 2020, AlphaFold finally cracked the puzzle. What are these folded-up amino-acid chains called?",
+    "question": "A biologist looks at a long chain of amino acids folded into a tangled 3D shape, the kind of molecule at work in every living thing. For fifty years scientists could barely predict those shapes, until DeepMind's AlphaFold. What are these chains called?",
     "answer": "Proteins",
     "choices": [
       "Proteins",
@@ -690,7 +677,7 @@
   },
   {
     "tier": 1,
-    "question": "Demis Hassabis is a British scientist and former chess prodigy who founded DeepMind, an AI lab in London that was later bought by Google. His team built AlphaFold, which predicted the folded shape of nearly every protein known to biology. In 2024, the Nobel committee gave him and his teammate John Jumper a shared prize for that work. In which field was that 2024 Nobel Prize awarded?",
+    "question": "Demis Hassabis's team at DeepMind in London built AlphaFold, which predicted the folded shape of nearly every known protein. The Nobel committee gave him and his teammate John Jumper a shared prize for it in 2024. In which field?",
     "answer": "Chemistry",
     "choices": [
       "Chemistry",
@@ -898,7 +885,7 @@
   },
   {
     "tier": 1,
-    "question": "AI has been through boom-and-bust cycles. In the mid-1970s, and again in the late 1980s, big AI projects failed to deliver on hyped promises. Government funders in the US and UK pulled their money out, and universities closed labs for years afterward. Historians of AI use a wintry name for those long slumps that followed each burst of hype. What are they generally called?",
+    "question": "A professor locked up her AI lab in the mid-1970s after government funders in the US and UK pulled their money over hyped promises. The slump came again in the late 1980s. What seasonal name do historians give these long slumps?",
     "answer": "AI winters",
     "choices": [
       "AI winters",
@@ -963,7 +950,7 @@
   },
   {
     "tier": 1,
-    "question": "In March 2016, an AI program from Google DeepMind called AlphaGo played a five-game match in Seoul against Lee Sedol, one of the greatest Go players alive. The ancient board game Go had long been thought too tricky for computers to master. This was years before ChatGPT would make AI famous, yet millions watched every move live — mostly in one part of the world where Go is the beloved national game. Where were most live viewers?",
+    "question": "Lee Sedol, one of the greatest Go players alive, faced DeepMind's AlphaGo in Seoul in 2016. Millions watched live. Where did most of that audience sit?",
     "answer": "East Asia, where Go is huge",
     "choices": [
       "East Asia, where Go is huge",
@@ -1080,7 +1067,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepMind's AlphaGo learned the ancient Chinese board game Go partly by studying famous human games from history. But most of its real skill came from a stranger method: it played the same game over and over inside the computer, faster than any human ever could, against a very particular opponent. Who did AlphaGo mostly play during training?",
+    "question": "DeepMind's engineers fed AlphaGo famous human games, yet most of its real skill came from games inside the computer against one very particular opponent. Who did it mostly play?",
     "answer": "Itself, millions of times",
     "choices": [
       "Itself, millions of times",
@@ -1093,7 +1080,7 @@
   },
   {
     "tier": 1,
-    "question": "Every living thing is built out of proteins — twisty molecules that fold into complicated 3D shapes to do their jobs. For decades, scientists could barely figure out the shape of even a few. Then DeepMind's AlphaFold arrived, and its team eventually released a giant public database that predicted the 3D shape of nearly every known protein on Earth. About how many proteins is that?",
+    "question": "A lab technician opens DeepMind's giant public AlphaFold database and finds predicted 3D shapes for nearly every known protein on Earth, after decades when scientists could barely work out even a few. About how many is that?",
     "answer": "200 million",
     "choices": [
       "200 million",
@@ -1106,7 +1093,7 @@
   },
   {
     "tier": 1,
-    "question": "Every protein in your body — the ones that fight infection, digest food, or carry oxygen — has a specific curly 3D shape. Most medicines work because a small molecule slips into a spot on that protein, like a key sliding into a lock. If chemists know the exact shape of the protein, they can design the right key much faster. Why is knowing a protein's 3D shape so important to medicine?",
+    "question": "A chemist studies a protein's curly 3D shape. A medicine slips into a spot on that protein like a key into a lock. Why does she need the exact shape?",
     "answer": "Drugs are designed to fit the shape",
     "choices": [
       "Drugs are designed to fit the shape",
@@ -1171,7 +1158,7 @@
   },
   {
     "tier": 1,
-    "question": "You visit an airline's website to change a flight. In the corner, a little chat window pops up saying 'Hi, how can I help?' You type your problem in plain English, and it types a helpful answer back within seconds — no human employee ever joins the chat. What kind of AI program is running that chat?",
+    "question": "A traveller opens an airline's website to change a flight, and a little window asks 'Hi, how can I help?' She types her problem and an answer comes back in seconds, with no employee ever joining. What kind of AI program is that?",
     "answer": "A chatbot AI",
     "choices": [
       "A chatbot AI",
@@ -1275,7 +1262,7 @@
   },
   {
     "tier": 1,
-    "question": "Finding a new medicine used to mean testing millions of molecules by hand in a lab, one by one, for years. Now AI models can scan huge chemical libraries and predict which molecules are worth building and testing first, so scientists only run experiments on the most promising ones. AI is being used in drug discovery mainly to:",
+    "question": "A chemist hunting a new drug faces a huge library of molecules that would take years to test by hand. An AI predicts which to build first. What is AI mainly used to do here?",
     "answer": "Speed up finding candidate compounds",
     "choices": [
       "Speed up finding candidate compounds",
@@ -1392,7 +1379,7 @@
   },
   {
     "tier": 1,
-    "question": "Go, the board game DeepMind's AlphaGo mastered in 2016, has a huge number of legal positions. How does that number compare with the atoms in the observable universe?",
+    "question": "A student sets out to have a computer search every legal position in Go, the game DeepMind's AlphaGo mastered in 2016. How does the number of positions compare with the atoms in the observable universe?",
     "answer": "Far more positions",
     "choices": [
       "Far fewer positions",
@@ -1405,7 +1392,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2008 scientists at the University of Washington released Foldit, which lets anyone at home try to twist a protein into its best shape and score points for it. What kind of thing is Foldit?",
+    "question": "A woman at home twists a protein on her computer screen into its best shape and scores points for it, using Foldit, which scientists at the University of Washington released in 2008. What kind of thing is Foldit?",
     "answer": "An online puzzle game",
     "choices": [
       "A microscope camera",
@@ -1509,7 +1496,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2017, Google DeepMind released AlphaZero — a follow-up to AlphaGo. Unlike AlphaGo, which had first studied millions of recorded matches played by people, AlphaZero was given only the rules of chess and Go. It then played itself over and over, and within hours became stronger than any human or program. How did AlphaZero learn chess and Go?",
+    "question": "DeepMind's engineers released AlphaZero in 2017 as a follow-up to AlphaGo, which had studied recorded matches first. How did AlphaZero learn chess and Go?",
     "answer": "From scratch with no human games",
     "choices": [
       "From scratch with no human games",
@@ -2133,7 +2120,7 @@
   },
   {
     "tier": 1,
-    "question": "In December 2023 a man told a car dealer's chatbot to agree with anything a customer said. Then he offered $1 for a new Chevy Tahoe, and the bot called it a 'legally binding offer.' Did he get it?",
+    "question": "A man told a car dealer's chatbot in December 2023 to agree with anything a customer said. Then he offered $1 for a new Chevy Tahoe, and the bot called it a 'legally binding offer.' Did he get it?",
     "answer": "No, the dealer never sold it",
     "choices": [
       "No, the dealer never sold it",
@@ -2224,7 +2211,7 @@
   },
   {
     "tier": 1,
-    "question": "A basic chatbot like ChatGPT is trained to predict the next word in a sentence. It sounds smart with language, but it isn't a calculator and often gets arithmetic wrong. Out of these four tasks, which is the worst job to hand a basic chatbot with no math tools attached?",
+    "question": "A teacher has four jobs to hand out and one basic chatbot, trained only to predict the next word in a sentence. Which is the worst job to give it, with no tools attached?",
     "answer": "Multiplying two big numbers",
     "choices": [
       "Multiplying two big numbers",
@@ -2575,7 +2562,7 @@
   },
   {
     "tier": 1,
-    "question": "Big companies get thousands of job applications every week. Instead of a person reading each one, they now feed the whole pile into an AI program that ranks the resumes and only passes the top picks to a human. The AI learned from years of old hiring records. Critics warn this creates a real problem. What is the common concern?",
+    "question": "A recruiter feeds a week's applications into an AI that ranks them and shows her the top picks. It learned from years of old hiring records. What do critics warn it does?",
     "answer": "Inherits biases from training data",
     "choices": [
       "Inherits biases from training data",
@@ -2614,7 +2601,7 @@
   },
   {
     "tier": 1,
-    "question": "Banks now use AI to score loan applications and decide who gets a mortgage or a credit card. The AI learns from decades of the bank's old records — including many years when lenders turned certain neighborhoods down for unfair reasons. Critics warn the model quietly copies what it sees. What is the real concern?",
+    "question": "A loan officer scores a mortgage with an AI trained on the bank's old files, including years when certain neighborhoods were unfairly refused. What do critics warn it does?",
     "answer": "Inherits patterns of past discrimination",
     "choices": [
       "Inherits patterns of past discrimination",
@@ -2744,7 +2731,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2023 researchers asked GPT-4 'Who is Tom Cruise's mother?' and it answered Mary Lee Pfeiffer about 79% of the time. Then they asked the same fact backwards: 'Who is Mary Lee Pfeiffer's son?' How did it do?",
+    "question": "Researchers asked GPT-4 'Who is Tom Cruise's mother?' in 2023, and it answered Mary Lee Pfeiffer about 79% of the time. Then they asked the same fact backwards: 'Who is Mary Lee Pfeiffer's son?' How did it do?",
     "answer": "Far worse, about a third of the time",
     "choices": [
       "Perfectly, every single time",
@@ -2783,7 +2770,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2024 Apple researchers gave chatbots a school math problem about Oliver picking kiwis, plus one useless sentence: five of Sunday's kiwis were a bit smaller than average. Size changes nothing about the count. What did models like o1-mini do?",
+    "question": "Apple researchers gave chatbots a school math problem in 2024 about Oliver picking kiwis, plus one useless sentence: five of Sunday's kiwis were a bit smaller than average. Size changes nothing about the count. What did models like o1-mini do?",
     "answer": "Subtracted the five small kiwis from the total",
     "choices": [
       "Subtracted the five small kiwis from the total",
@@ -2965,7 +2952,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2025 Anthropic traced what goes on inside its Claude model when it adds 36 and 59. Inside, one path made a rough estimate while another worked out the last digit exactly. Then the researchers asked Claude how it had done the sum. What did it say?",
+    "question": "Anthropic's researchers traced what went on inside Claude in 2025 as it added 36 and 59. One path made a rough estimate while another worked out the last digit exactly. Then they asked Claude how it had done the sum. What did it say?",
     "answer": "That it carried the 1, the way schools teach",
     "choices": [
       "That it carried the 1, the way schools teach",
@@ -2978,7 +2965,7 @@
   },
   {
     "tier": 2,
-    "question": "Google's search box and ChatGPT's chat box look almost identical on the screen — a rectangle where you type a question. But underneath, they are doing completely different jobs. Google scans an index of pages that already exist on the web and picks which ones to show you. A Large Language Model like ChatGPT generates brand-new sentences one token at a time, based on patterns learned during training. Which sentence best captures the key difference between them?",
+    "question": "A librarian puts Google's search box beside ChatGPT's chat box. Both are rectangles for a typed question, yet ChatGPT is a Large Language Model (LLM), and underneath they do completely different jobs. What is the key difference?",
     "answer": "A search engine finds existing web pages; an LLM produces new text by predicting tokens",
     "choices": [
       "A search engine finds existing web pages; an LLM produces new text by predicting tokens",
@@ -3186,7 +3173,7 @@
   },
   {
     "tier": 2,
-    "question": "Neural networks had a rough middle chapter in the history of AI. From the late 1960s to the mid 1980s, most researchers stopped working on them, funding dried up, and the whole approach was widely considered a dead end. Historians point to a specific event in 1969 as the trigger for that long winter — a well-argued book published from within the AI research community itself, calling out real limits in the neural networks being built at the time. What had hurt neural networks' name before the mid 1980s?",
+    "question": "A student pitched a neural network to a lab in the 1970s and came away empty-handed: funding had dried up, and most researchers had stopped working on the approach and called it a dead end. What had hurt neural networks' name before the mid 1980s?",
     "answer": "Minsky and Papert's 1969 book 'Perceptrons' pointed out limits of single-layer networks",
     "choices": [
       "Minsky and Papert's 1969 book 'Perceptrons' pointed out limits of single-layer networks",
@@ -3420,7 +3407,7 @@
   },
   {
     "tier": 2,
-    "question": "Go has vastly more possible positions than chess. Before 2016 most experts thought a program able to beat a top professional was at least five years away, and some said a decade. What happened in Seoul in March 2016?",
+    "question": "A Go expert, asked before 2016 when a program might beat a top professional, said at least five years, and some of his colleagues said a decade. What happened in Seoul in March 2016?",
     "answer": "DeepMind's AlphaGo beat Lee Sedol four games to one",
     "choices": [
       "DeepMind's AlphaGo beat Lee Sedol four games to one",
@@ -3433,7 +3420,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 2016, the AI program AlphaGo — made by the London lab DeepMind — defeated South Korean champion Lee Sedol four games to one in Go, an ancient board game long thought too complex for computers. Three years later, Lee Sedol shocked the Go world by retiring from professional play at just 36 years old. He explained his reason in a famous interview. What did he say?",
+    "question": "Lee Sedol shocked the Go world in November 2019, three years after his match against AlphaGo, by retiring from professional play at just 36. He explained his reason in a famous interview. What did he say?",
     "answer": "He said the rise of AI in Go meant top players could no longer be 'the best' even on perfect play",
     "choices": [
       "He said the rise of AI in Go meant top players could no longer be 'the best' even on perfect play",
@@ -3446,7 +3433,7 @@
   },
   {
     "tier": 2,
-    "question": "Proteins are the tiny molecular machines that do most of the work inside every living cell. To do their jobs, each protein folds up into a specific 3D shape. Predicting that shape from just the chemical recipe was called the 'protein folding problem' and it stumped biologists for fifty years. In 2020 DeepMind, the London AI lab behind AlphaGo, released a tool called AlphaFold that cracked it. What does AlphaFold actually figure out?",
+    "question": "A graduate student types a protein's chemical recipe into DeepMind's AlphaFold, which cracked the 'protein folding problem' after it stumped biologists for fifty years. What does AlphaFold actually figure out?",
     "answer": "The 3D shape of proteins from their amino-acid sequences",
     "choices": [
       "The 3D shape of proteins from their amino-acid sequences",
@@ -3459,7 +3446,7 @@
   },
   {
     "tier": 2,
-    "question": "Every two years the Critical Assessment of Structure Prediction (CASP) asks teams to predict protein shapes. So that no team can simply look the answers up, the organizers pick a special kind of target protein. What kind?",
+    "question": "The organizers of the 2020 round of the Critical Assessment of Structure Prediction (CASP), a contest held every two years, sat down to pick the targets teams must predict. So that no team could simply look the answers up, they chose a special kind of protein. What kind?",
     "answer": "Ones solved in labs but not yet made public",
     "choices": [
       "Ones that no lab will ever be able to solve",
@@ -3472,7 +3459,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2011, players of the online protein-folding game Foldit took on an enzyme from a monkey virus whose structure had stumped scientists for more than a decade. How long did the players need to build a model good enough to solve it?",
+    "question": "Foldit's users took on an enzyme from a monkey virus in 2011, one whose structure had stumped scientists for more than a decade. How long did Foldit's users need to build a model good enough to solve it?",
     "answer": "About three weeks",
     "choices": [
       "About ten years",
@@ -3485,7 +3472,7 @@
   },
   {
     "tier": 2,
-    "question": "Every AlphaFold prediction comes with a confidence score for each part of the protein, from 0 to 100, usually shown as colors running from deep blue to orange. DeepMind says parts scoring below 50 should not be read as a shape at all. What can a very low score be a sign of?",
+    "question": "A lab assistant reads an AlphaFold prediction on her screen, colored from deep blue to orange by a confidence score running from 0 to 100 for each part of the protein. One part scores below 50, and DeepMind warns readers off parts like that. What can a very low score be a sign of?",
     "answer": "A floppy stretch with no fixed shape",
     "choices": [
       "A protein found only in plants",
@@ -3888,7 +3875,7 @@
   },
   {
     "tier": 2,
-    "question": "Big drug companies like Pfizer and Novartis face millions of possible molecules that might become the next medicine. Testing even one candidate in a real lab takes months and can cost hundreds of thousands of dollars. So they now train AI models on chemistry data to predict which molecules are most likely to work, and only send the top few to the lab. Why is that narrowing so valuable?",
+    "question": "A chemist at a firm like Pfizer faces millions of molecules that might become the next medicine. The firm trains an AI on chemistry data and sends only the model's top few picks to the lab. Why is that shortlist so valuable?",
     "answer": "Lab testing is slow and expensive, so narrowing the candidate list saves years",
     "choices": [
       "Lab testing is slow and expensive, so narrowing the candidate list saves years",
@@ -3901,7 +3888,7 @@
   },
   {
     "tier": 2,
-    "question": "The 2024 Nobel Prize for protein work honored two different achievements: predicting protein structures with AI, and designing brand-new proteins that nature never made. How was the prize divided between the three winners?",
+    "question": "The Nobel committee chose three winners for its 2024 prize for protein work: two for predicting protein structures with AI, and one protein designer. How was the prize divided between the three?",
     "answer": "Half to the protein designer, half shared by the AlphaFold pair",
     "choices": [
       "A third to each of the three winners equally",
@@ -3914,7 +3901,7 @@
   },
   {
     "tier": 2,
-    "question": "When DeepMind and the European Bioinformatics Institute opened the free AlphaFold database in July 2021, it held about 350,000 predicted structures from 20 organisms. The launch made headlines for covering nearly all of the roughly 20,000 proteins of one species. Which species?",
+    "question": "Scientists at DeepMind and the European Bioinformatics Institute opened the free AlphaFold database in July 2021 with about 350,000 predicted structures from 20 organisms. The launch made headlines for covering nearly all of one species' roughly 20,000 protein shapes. Which species?",
     "answer": "Humans",
     "choices": [
       "Elephants",
@@ -3927,20 +3914,7 @@
   },
   {
     "tier": 2,
-    "question": "DeepMind's AlphaGo made history in 2016 by beating a human world champion at Go. Its follow-up, AlphaZero, mastered both Go and chess at a superhuman level. But AlphaZero started with only the rules — it never studied a single human game or opening book. How did the program teach itself?",
-    "answer": "By playing millions of games against itself and updating from the results",
-    "choices": [
-      "By playing millions of games against itself and updating from the results",
-      "By reading every chess book ever published in any language",
-      "By watching live tournaments through a camera pointed at the board",
-      "By copying the moves of the best grandmasters move-for-move exactly"
-    ],
-    "context": "AlphaZero (DeepMind, 2017) started knowing only the rules of Go, chess, and shogi. It learned by playing against itself, updating its neural network from each result. Within hours it surpassed the best dedicated programs in each game. Self-play in well-defined games is one of AI's clearest success stories — it works because the system can generate unlimited fresh training data on its own.",
-    "topic": "alphazero-self-play"
-  },
-  {
-    "tier": 2,
-    "question": "In March 2016, Google DeepMind's AlphaGo program played the 18-time world champion Lee Sedol at the ancient board game of Go in Seoul, South Korea. In the second game of the match, on its 37th turn, AlphaGo placed a stone on the fifth line — a spot professional commentators immediately called a mistake. Nobody they knew had ever played it. It became a famous moment in AI history. What did Move 37 turn out to be?",
+    "question": "Professional commentators immediately called it a mistake when AlphaGo's 37th stone came down on the fifth line, in game two against Lee Sedol in 2016. Nobody they knew had ever played it. What did Move 37 turn out to be?",
     "answer": "A creative move human players had not considered, which then proved strong",
     "choices": [
       "A creative move human players had not considered, which then proved strong",
@@ -3953,20 +3927,7 @@
   },
   {
     "tier": 2,
-    "question": "AlphaGo and its follow-up AlphaZero, both built by DeepMind, crushed the world's best humans at Go and chess. But each program was designed around one very specific kind of problem — the kind AlphaGo's neural network could search millions of times per move. What kind of problem is that?",
-    "answer": "Games with clear rules and clear win-or-lose outcomes you can play out fully",
-    "choices": [
-      "Games with clear rules and clear win-or-lose outcomes you can play out fully",
-      "Open-ended questions about ethics with no agreed correct answer",
-      "Driving a car in real traffic with humans changing the rules",
-      "Writing a novel that has to feel emotionally true to a reader"
-    ],
-    "context": "AlphaGo-style self-play works when the game has clear rules and a clear outcome you can score. Go, chess, shogi, poker variants — all fit. Open-ended creative or moral problems do not: there's no rule that tells the system who won. That's why progress on games has been dramatic while progress on, say, 'what should a society do about poverty' has not.",
-    "topic": "alphago-lee-sedol"
-  },
-  {
-    "tier": 2,
-    "question": "Today DeepMind's AlphaFold predicts a protein's 3D shape from its amino-acid sequence alone. Before it existed, biologists had to work out each shape in the lab, sometimes over most of a PhD. What was the main lab method they used?",
+    "question": "A doctoral student before AlphaFold gave most of her PhD to working out the shape of a single protein in the lab. Biologists had to work out each shape that way. How did she do it?",
     "answer": "By growing protein crystals and firing X-rays at them, often for months or years",
     "choices": [
       "By drawing the shape by hand from a textbook diagram",
@@ -4031,7 +3992,7 @@
   },
   {
     "tier": 2,
-    "question": "Chatbot Arena ranks models by people's blind votes. A 2025 paper, 'The Leaderboard Illusion,' reported that Meta privately tested 27 versions of its newest Llama model there before release. Why does that matter for the rankings?",
+    "question": "Researchers writing 'The Leaderboard Illusion' in 2025 reported that Meta privately tested 27 versions of its newest Llama model before release on Chatbot Arena, a site that ranks models by people's blind votes. Why does that matter for the rankings?",
     "answer": "Testing many and showing only the best inflates the score",
     "choices": [
       "Private tests are banned under European law",
@@ -4135,7 +4096,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2020, researchers at the Massachusetts Institute of Technology trained an AI to look at chemical molecules and predict which ones would kill bacteria. They pointed it at a huge library of possible drug molecules, and the AI flagged one that nobody had thought to try before. That molecule, later named halicin, worked against a dangerous drug-resistant bacterium in real lab tests. What was the AI actually doing in this whole process?",
+    "question": "Researchers at the Massachusetts Institute of Technology turned an AI on a huge library of drug molecules in 2020. One it flagged, later named halicin, beat a drug-resistant bacterium in lab tests. What was the AI doing?",
     "answer": "Scanning millions of molecules to predict which were likely to kill the bacterium",
     "choices": [
       "Scanning millions of molecules to predict which were likely to kill the bacterium",
@@ -4486,7 +4447,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 2025 the Center for AI Safety and Scale AI released 'Humanity's Last Exam,' 2,500 hard questions written by experts across dozens of subjects, because older tests had become too easy. How did the top models score at launch?",
+    "question": "Researchers at the Center for AI Safety and Scale AI released 'Humanity's Last Exam' in January 2025: 2,500 hard questions written by experts across dozens of subjects, because older tests had become too easy. How did the top models score at launch?",
     "answer": "Under 10%, with the best at about 8%",
     "choices": [
       "Over 90%, nearly a perfect score",
@@ -4733,7 +4694,7 @@
   },
   {
     "tier": 2,
-    "question": "You are browsing a website and a pop-up suggests installing a free browser extension that promises to 'add AI to every website you visit.' An extension with that level of access can quietly watch every page loaded in your browser, including your email, your bank site, and your school portal. Free tools with that much reach have to pay for themselves somehow. Before installing, what is a fair concern?",
+    "question": "Suppose you are browsing when a pop-up offers a free extension that will 'add AI to every website you visit.' It asks to 'read and change all your data' on those sites, your bank and your email included. Before installing, what is a fair concern?",
     "answer": "It may be reading and sending the content of every page you visit",
     "choices": [
       "It may be reading and sending the content of every page you visit",
@@ -4785,7 +4746,7 @@
   },
   {
     "tier": 2,
-    "question": "In a 2024 Nature paper, Ilia Shumailov and colleagues trained a language model on text, then trained the next model on the first one's output, and so on down the line. They started from writing about medieval architecture. By the ninth generation, what came out?",
+    "question": "Ilia Shumailov and colleagues trained a language model on writing about medieval architecture, then trained the next model on the first one's output, and so on down the line, for a 2024 Nature paper. By the ninth generation, what came out?",
     "answer": "A list of jackrabbits",
     "choices": [
       "A list of jackrabbits",
@@ -5032,7 +4993,7 @@
   },
   {
     "tier": 2,
-    "question": "By 2025, the strongest general-purpose AI models — the ones that write, reason, and code near the top of every benchmark — are built by a small handful of large American technology companies. Reporters call these outfits 'frontier labs,' and they spend hundreds of millions of dollars training each new model. Which five companies are usually named as the leaders of that frontier group?",
+    "question": "A reporter checks the top of every benchmark in 2025 to see who builds the AI models that write, reason and code best, and she finds the same small handful of large American companies. Reporters call them 'frontier labs.' Which five companies are usually named as the leaders of that group?",
     "answer": "OpenAI, Anthropic, Google, Meta, and Microsoft",
     "choices": [
       "OpenAI, Anthropic, Google, Meta, and Microsoft",
@@ -5279,7 +5240,7 @@
   },
   {
     "tier": 2,
-    "question": "Companies like Amazon, Unilever, and Goldman Sachs get thousands of resumes for a single job. Instead of hiring humans to read them all, they now feed the resumes through an AI that ranks or rejects most of them before a person ever sees the applicant's name. What's a typical concern with this system?",
+    "question": "A graduate sends a company like Amazon her resume, one of thousands for a single job. The company runs the pile through an AI that ranks it and cuts most of it. What is a typical concern with this system?",
     "answer": "The AI can reject good applicants for opaque reasons that no human reviewed",
     "choices": [
       "The AI can reject good applicants for opaque reasons that no human reviewed",
@@ -5461,7 +5422,7 @@
   },
   {
     "tier": 2,
-    "question": "By 2025, training a frontier AI model — meaning one in the same league as OpenAI's GPT-4, Anthropic's Claude, or Google's Gemini — has become extremely expensive. A pair of Stanford students with a laptop simply cannot compete. Why is it so hard and costly to start a brand-new frontier-AI company in 2025?",
+    "question": "Two Stanford students sit down with one laptop in 2025 to build a model in the league of GPT-4, Claude or Gemini, and they simply cannot compete. Why is it so hard to start a brand-new frontier-AI company?",
     "answer": "Training a leading model needs huge compute, huge data, and huge capital",
     "choices": [
       "Training a leading model needs huge compute, huge data, and huge capital",
@@ -5617,19 +5578,6 @@
   },
   {
     "tier": 2,
-    "question": "In 2025, almost all the frontier AI models — GPT, Claude, Gemini — are built by a handful of US companies: OpenAI, Anthropic, Google DeepMind, Meta, and a few others. Every kid using these tools is depending on decisions made inside those few labs. Why does that concentration matter for the rest of the world?",
-    "answer": "A small group of companies has unusual power to shape how the technology is used",
-    "choices": [
-      "A small group of companies has unusual power to shape how the technology is used",
-      "There is no effect, because concentration of any technology never matters at all",
-      "A handful of companies always ensures the lowest possible prices to users",
-      "A small group means each company can update its model only once a decade"
-    ],
-    "context": "Concentration of any major technology — railroads, telecoms, search, social media — has historically shaped how the technology is used and who it serves. Frontier AI is highly concentrated: a handful of US labs build the models everyone else uses. That gives those companies — and the governments that regulate them — outsized influence over what AI can and can't do. Open-weight releases, distributed compute, and international competition (Mistral, DeepSeek) all push back. Recognition is the first step.",
-    "topic": "ai-power-concentration"
-  },
-  {
-    "tier": 2,
     "question": "Reporters went through Twitter's internal documents in late 2022, after Elon Musk bought the company, and found messages from US officials at the FBI, White House and CDC asking Twitter to remove specific posts on COVID and elections. That evidence became the core of lawsuits like Murthy v. Missouri. What did the plaintiffs say the officials had been doing?",
     "answer": "Officials had been 'jawboning' — pressuring platforms to delete posts the First Amendment bars",
     "choices": [
@@ -5695,7 +5643,7 @@
   },
   {
     "tier": 3,
-    "question": "A Large Language Model (LLM) is an AI system trained to predict the next word of a text. You type 'What's 23,847 times 6,019?' into one, and it confidently answers a nice-looking wrong number like '143,571,693.' A one-dollar calculator app would return the exact answer in a blink. Why does an LLM, trained on billions of words of internet text, fail at a problem any calculator solves instantly?",
+    "question": "A bookkeeper types 'What's 23,847 times 6,019?' into a Large Language Model (LLM), and it confidently answers '143,571,693.' A one-dollar calculator app proves that wrong in a blink. Why does an LLM, trained on billions of words of internet text, fail at this?",
     "answer": "It predicts a number that looks plausible from training text, instead of running the actual multiplication algorithm.",
     "choices": [
       "It predicts a number that looks plausible from training text, instead of running the actual multiplication algorithm.",
@@ -5968,7 +5916,7 @@
   },
   {
     "tier": 3,
-    "question": "DeepMind's AlphaGo and its successor AlphaZero learn by reinforcement learning, a third kind of machine learning beside supervised and unsupervised learning. What one feature sets reinforcement learning apart?",
+    "question": "A teacher tells her class that AlphaGo and its successor AlphaZero learn by reinforcement learning, a third kind of machine learning beside supervised and unsupervised learning. What one feature sets it apart from the other two?",
     "answer": "The system takes actions in an environment and learns from a reward signal, not from labels or patterns in static data.",
     "choices": [
       "The system takes actions in an environment and learns from a reward signal, not from labels or patterns in static data.",
@@ -5981,7 +5929,7 @@
   },
   {
     "tier": 3,
-    "question": "Inside AlphaGo, two neural networks worked together with a search that played out possible futures. The first, called the policy network, looked at a board and suggested a short list of promising moves to try. The second, the value network, did a different job. What did it do?",
+    "question": "DeepMind's designers built AlphaGo around two neural networks and a search that played out possible futures. The first, called the policy network, looked at a board and suggested a short list of promising moves to try. The second, the value network, did a different job. What did it do?",
     "answer": "Judged how likely a position was to end in a win",
     "choices": [
       "Looked up the move in a book of famous openings",
@@ -6488,7 +6436,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1973, the British government published the Lighthill Report on AI research. Its conclusions led to deep funding cuts and triggered what's now called the 'first AI winter.' What was Lighthill's main complaint?",
+    "question": "British research officials asked the applied mathematician James Lighthill to judge AI research, and his report of 1973 led to deep funding cuts, the start of the first of the field's two famous collapses. What was his main complaint?",
     "answer": "AI hadn't lived up to its early promises: claimed milestones kept being missed and impressive demos didn't generalize.",
     "choices": [
       "AI hadn't lived up to its early promises: claimed milestones kept being missed and impressive demos didn't generalize.",
@@ -6497,19 +6445,6 @@
       "AI was being developed faster than expected and Lighthill wanted to slow it down out of caution."
     ],
     "context": "James Lighthill, an applied mathematician, was commissioned to evaluate AI research for the UK Science Research Council. His 1973 report concluded that AI's claimed successes were narrow demonstrations that didn't scale, and that promised breakthroughs had not arrived. Funding was cut sharply in the UK; the US followed soon after. The 'first AI winter' lasted roughly through the late 1970s. The pattern — overpromise, underdeliver, retreat, eventually return — has happened more than once in AI's history.",
-    "topic": "ai-winters"
-  },
-  {
-    "tier": 3,
-    "question": "The first 'AI winter' hit in the mid-1970s. It wasn't caused by any single discovery or event. Government funders — like the US Defense Advanced Research Projects Agency (DARPA) and the UK's Lighthill Report review of AI — decided the field wasn't delivering, and money for AI dried up for years. What underlying pattern in the field's earlier years had set that collapse up?",
-    "answer": "Early AI promises had outrun real capabilities, so funders eventually noticed and pulled money.",
-    "choices": [
-      "Early AI promises had outrun real capabilities, so funders eventually noticed and pulled money.",
-      "A new technology, personal computers, replaced AI as the hot field overnight in the early 1970s.",
-      "All major AI researchers retired in the same year, leaving no one to continue the field's work.",
-      "The Soviet Union shut down its AI program and the US matched the cut for symmetric arms-control reasons."
-    ],
-    "context": "AI's first wave in the 1950s and 60s came with confident predictions — machines doing 'any work a man can do' within decades, English-French translation 'within ten years.' By the early 1970s, these promises had not materialized. Funders — government agencies and the military — eventually noticed. The 1973 Lighthill Report formalized the disappointment in the UK; similar evaluations followed in the US. The winter wasn't dramatic; it was steady defunding. Pattern recognition: claims that outrun reality eventually get caught up to.",
     "topic": "ai-winters"
   },
   {
@@ -6527,7 +6462,7 @@
   },
   {
     "tier": 3,
-    "question": "After the first AI winter, funding and interest returned in the early 1980s around one very specific kind of AI system. Companies bought them, universities taught them, whole startups formed around them, and they had names like MYCIN, XCON, and DENDRAL. Then, in the late 1980s and early 1990s, the market collapsed and a second AI winter began. What kind of AI system had been the flagship of that boom?",
+    "question": "A corporate buyer signed an order for a new kind of AI product in the early 1980s, when money had come back to the field. Such products had names like MYCIN, XCON and DENDRAL, universities taught them, and startups formed around them. The market collapsed in the late 1980s and early 1990s. What had been the flagship of that boom?",
     "answer": "Expert systems, which were programs encoding human-expert knowledge as rules for specific domains.",
     "choices": [
       "Expert systems, which were programs encoding human-expert knowledge as rules for specific domains.",
@@ -6540,7 +6475,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1982 the Japanese government launched a huge national AI project: the Fifth Generation Computer Systems project (FGCS). It aimed to build machines that could reason and understand natural language, and Japan poured about 50 billion yen into it over ten years. Western governments panicked and started competing programs to keep up. By 1992, when the FGCS project ended, what had happened to it?",
+    "question": "Japanese officials launched the national AI effort called Fifth Generation Computer Systems in 1982, pouring about 50 billion yen into machines that could reason and understand natural language. Western governments panicked and started rival programs. What had become of it by 1992?",
     "answer": "The project was largely judged a failure since it didn't produce the breakthroughs it promised and was wound down.",
     "choices": [
       "The project was largely judged a failure since it didn't produce the breakthroughs it promised and was wound down.",
@@ -6553,7 +6488,7 @@
   },
   {
     "tier": 3,
-    "question": "The first AI winter of the mid-1970s was mostly a hit to research budgets — labs lost grants but the wider world barely noticed. The second AI winter, in the late 1980s and early 1990s, felt different from the outside. By then, real companies had built businesses on the AI of the day, and real customers had it running on real machines in real offices. What was different about the disappointment this time?",
+    "question": "A lab director lost his grants when AI funding collapsed in the mid-1970s, and the wider world barely noticed. The second collapse, in the late 1980s and early 1990s, felt different from the outside. What had changed this time?",
     "answer": "Expert systems had actually been deployed in companies, so the disappointment hit real budgets and real users, not just labs.",
     "choices": [
       "Expert systems had actually been deployed in companies, so the disappointment hit real budgets and real users, not just labs.",
@@ -6605,7 +6540,7 @@
   },
   {
     "tier": 3,
-    "question": "Months before the Seoul match, DeepMind quietly tested AlphaGo against a professional: the three-time European champion, a Chinese-born player living in France. In October 2015 the program won all five formal games, the first time a computer had beaten a Go professional on a full-size board with no handicap. The result was announced in January 2016. Who was the champion?",
+    "question": "The three-time European champion, a Chinese-born player living in France, took on AlphaGo in October 2015, in DeepMind's quiet test months before the Seoul match. The program won all five formal games, the first time a computer had beaten a Go professional on a full-size board with no handicap. Who was the champion?",
     "answer": "Fan Hui",
     "choices": [
       "Fan Hui",
@@ -6618,7 +6553,7 @@
   },
   {
     "tier": 3,
-    "question": "AlphaGo learned partly from millions of human moves, so it could estimate how likely a human professional would be to play any given move. Before playing its famous move 37 in game two against Lee Sedol, it put that chance at a tiny figure. About how tiny?",
+    "question": "An analyst opens the log of game two against Lee Sedol and finds AlphaGo's estimate for its famous move 37. The program learned partly from millions of human moves, so it can judge how likely a human professional is to play any given move. What chance did it give this one?",
     "answer": "About one in ten thousand",
     "choices": [
       "About one in two",
@@ -6631,7 +6566,7 @@
   },
   {
     "tier": 3,
-    "question": "The 2016 match in Seoul between AlphaGo and Lee Sedol carried a prize of one million dollars for the winner. After AlphaGo won the match, DeepMind did not keep the money. What happened to it?",
+    "question": "Lee Sedol and AlphaGo met in Seoul in 2016 with one million dollars at stake for the winner. AlphaGo took the match, and DeepMind did not keep the money. What happened to it?",
     "answer": "DeepMind gave it to charities",
     "choices": [
       "Lee Sedol was paid it anyway",
@@ -6644,7 +6579,7 @@
   },
   {
     "tier": 3,
-    "question": "After AlphaGo beat Lee Sedol in 2016, DeepMind kept going. In 2017 it released AlphaGo Zero — a new version that taught itself Go from scratch, without any human games at all, just playing against itself over and over. Later that same year came a further system called AlphaZero. What extra step did AlphaZero add on top of AlphaGo Zero?",
+    "question": "Go players watched AlphaGo Zero arrive in 2017, a new version that taught itself the game by playing against itself over and over. Later that year came a further system called AlphaZero. What extra step did AlphaZero add on top of AlphaGo Zero?",
     "answer": "It learned chess, shogi, and Go from scratch with the same algorithm, using no human data, just self-play in each game.",
     "choices": [
       "It learned chess, shogi, and Go from scratch with the same algorithm, using no human data, just self-play in each game.",
@@ -6800,7 +6735,7 @@
   },
   {
     "tier": 3,
-    "question": "A protein is a long chain of amino acids that folds up into a complex 3D shape, and its shape determines what the protein can do inside a living cell. For half a century biologists struggled to predict that folded shape from just the amino-acid sequence. Then DeepMind, an AI lab in London, built a system called AlphaFold. At a protein-structure contest known as CASP (Critical Assessment of Structure Prediction), AlphaFold's accuracy shocked every biologist watching. In what year did that first happen?",
+    "question": "A protein scientist watched DeepMind's AlphaFold shock the whole field with its accuracy, after half a century of struggle to predict a protein's folded shape from its amino-acid sequence. That shape determines what the protein can do inside a living cell. When and where did this first happen?",
     "answer": "2020 — at the CASP competition, where its accuracy was far ahead of any other approach.",
     "choices": [
       "2020 — at the CASP competition, where its accuracy was far ahead of any other approach.",
@@ -6813,7 +6748,7 @@
   },
   {
     "tier": 3,
-    "question": "In October 2024 three scientists shared a Nobel Prize for their work on proteins. Two of them, Demis Hassabis and John Jumper of DeepMind in London, were honored for AlphaFold's predictions of protein shapes. The third was honored for a separate achievement. Who was the third winner, and for what?",
+    "question": "Three scientists shared a Nobel Prize for protein work in October 2024. Two of them, Demis Hassabis and John Jumper of DeepMind in London, were honored for AlphaFold's predictions of protein shapes. The third was honored for a separate achievement. Who was the third winner, and for what?",
     "answer": "David Baker, at the University of Washington — for designing entirely new proteins from scratch.",
     "choices": [
       "Yann LeCun, at Meta — for inventing the convolutional neural network used in AlphaFold's design.",
@@ -6826,7 +6761,7 @@
   },
   {
     "tier": 3,
-    "question": "Before predicting a shape, AlphaFold lines up the same protein as it appears in many different species. Over millions of years, when one amino acid in certain pairs changes, its partner often changes along with it. Why is that a clue to the protein's shape?",
+    "question": "A programmer running AlphaFold on a protein watches it set the same protein from many different species side by side. Over millions of years, when one amino acid in certain pairs changes, its partner often changes along with it. Why is that a clue to the protein's shape?",
     "answer": "Amino acids that change together are probably touching in the folded protein",
     "choices": [
       "Amino acids that change together always sit at the two far ends of the chain",
@@ -6839,7 +6774,7 @@
   },
   {
     "tier": 3,
-    "question": "Every protein is a long chain of amino acids that folds up into a specific 3D shape, and its shape decides what the protein does inside a cell. For fifty years biologists tried to predict that folded shape from just the amino-acid sequence, using slow experimental methods like X-ray crystallography. This was known as the protein-folding problem, and it stood unsolved until DeepMind's AlphaFold cracked it in 2020. What had made it so hard for so long?",
+    "question": "A young researcher writes out a protein's amino-acid sequence and tries to predict the 3D shape it will fold into. Biologists chased that answer for fifty years, until DeepMind's AlphaFold cracked it. What had made it so hard for so long?",
     "answer": "The number of possible folded shapes for any given protein is astronomical, and predicting which one nature picks took years of experimental work.",
     "choices": [
       "The number of possible folded shapes for any given protein is astronomical, and predicting which one nature picks took years of experimental work.",
@@ -7047,7 +6982,7 @@
   },
   {
     "tier": 3,
-    "question": "Andrej Karpathy is a Slovak-born AI researcher and one of the most-followed teachers of neural networks online. Over the years his career has moved through several major AI labs and one automaker. He built his early reputation with a Stanford PhD on deep learning for vision. Where did Karpathy start in the AI industry after that degree?",
+    "question": "Fei-Fei Li saw Andrej Karpathy through a Stanford doctorate on deep learning for vision, and his career then ran through some of the biggest names in the field. He would leave his first employer, return to it and go independent in 2024. Where did he start in the AI industry after that degree?",
     "answer": "OpenAI — he was a founding member when the lab was launched in 2015.",
     "choices": [
       "OpenAI — he was a founding member when the lab was launched in 2015.",
@@ -7060,7 +6995,7 @@
   },
   {
     "tier": 3,
-    "question": "Andrej Karpathy was one of OpenAI's founding research scientists back in 2015 and 2016. In 2017 he left OpenAI to lead a major industrial AI project at another famous company — building AI that would actually steer physical machines in the real world, not just chat with users on a screen. Which project did he leave OpenAI to lead?",
+    "question": "Andrej Karpathy gave up a research post in 2017 for a job a long way from chat on a screen. He went to lead a major industrial AI project at a famous company, building AI that would steer physical machines in the real world. Which project did he go to lead?",
     "answer": "Tesla Autopilot — the team building Tesla's self-driving car software.",
     "choices": [
       "Tesla Autopilot — the team building Tesla's self-driving car software.",
@@ -7073,7 +7008,7 @@
   },
   {
     "tier": 3,
-    "question": "Andrej Karpathy is well-known for two things. One is his day jobs — Stanford PhD, founding member of OpenAI, then head of Tesla's AI team. The other is the long series of free video tutorials and hands-on coding walkthroughs he posts online, teaching ordinary people how neural networks actually work inside. Why has that second body of work mattered so much for AI's public reach?",
+    "question": "An engineer watches Andrej Karpathy, in a free YouTube video, build an AI model from nothing, line by line. Hundreds of thousands of engineers and students have done the same. Why has that body of work mattered so much for AI's public reach?",
     "answer": "His tutorials and code walkthroughs have taught a generation of developers what's actually inside a neural network.",
     "choices": [
       "His tutorials and code walkthroughs have taught a generation of developers what's actually inside a neural network.",
@@ -7281,7 +7216,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2025 the protein-prediction contest called the Critical Assessment of Structure Prediction (CASP), where AlphaFold had made its name, was about to shut down after its grant from the National Institutes of Health ran out. Who stepped in with a one-time gift to keep it going for about a year?",
+    "question": "The organizers of the Critical Assessment of Structure Prediction (CASP), a protein-prediction contest, faced a shutdown in 2025 when their grant from the National Institutes of Health ran out. Who stepped in with a one-time gift to keep it going for about a year?",
     "answer": "Google DeepMind, the maker of AlphaFold",
     "choices": [
       "OpenAI, the maker of the ChatGPT app",
@@ -7294,7 +7229,7 @@
   },
   {
     "tier": 3,
-    "question": "Around 1961 the American biochemist Christian Anfinsen unfolded an enzyme, ribonuclease, with harsh chemicals, then put it back into normal conditions and watched it fold itself up again and start working. His 1972 Nobel Prize rested on what this showed. What did it show?",
+    "question": "Christian Anfinsen unfolded an enzyme, ribonuclease, with harsh chemicals around 1961. He put it back into normal conditions and watched it fold itself up again and start working. His 1972 Nobel Prize rested on what this showed. What did it show?",
     "answer": "The amino-acid chain alone carries the instructions for the shape",
     "choices": [
       "The cell's nucleus pushes every protein into its shape by force",
@@ -7307,7 +7242,7 @@
   },
   {
     "tier": 3,
-    "question": "DeepMind's AlphaFold doesn't physically fold anything. It takes a protein's amino-acid sequence and predicts the 3D shape the chain will twist into, using a neural network trained on the structures scientists had already solved. Why is the everyday name 'protein folding' a bit misleading for what it does?",
+    "question": "A teacher reads a headline saying that DeepMind's AlphaFold has folded a protein, and she frowns, because the program physically folds nothing. It takes an amino-acid sequence and hands back a shape. Why is the everyday name 'protein folding' a bit misleading for what it does?",
     "answer": "It learned to predict the answer from many examples, it doesn't simulate the chemistry of folding",
     "choices": [
       "It physically folds the protein in a tiny lab on a chip, then photographs the result for the output",
@@ -7320,7 +7255,7 @@
   },
   {
     "tier": 3,
-    "question": "Oxford researchers led by Matthew Higgins wanted the full shape of Pfs48/45, a malaria-parasite protein being developed into a vaccine that could stop mosquitoes from spreading the disease. They solved its structure by X-ray crystallography in 2022. What part did AlphaFold play?",
+    "question": "Oxford researchers led by Matthew Higgins wanted the full shape of Pfs48/45, a malaria-parasite protein being developed into a vaccine that could stop mosquitoes from spreading the disease. They finally pinned it down in 2022. What part did AlphaFold play?",
     "answer": "Its predicted model guided the X-ray work that solved the structure",
     "choices": [
       "It replaced the lab work, so no crystals were ever needed",
@@ -7333,7 +7268,7 @@
   },
   {
     "tier": 3,
-    "question": "AlphaGo had no arms, so during the 2016 match in Seoul a DeepMind engineer sat across the board from Lee Sedol, read each move off a screen, and set the stones down for the program. He was a strong amateur player who had written Go programs of his own. Who was he?",
+    "question": "A DeepMind engineer sat across the board from Lee Sedol in Seoul in 2016, read each move off a screen and set the stones down, because AlphaGo had no arms. He was a strong amateur player who had written Go programs of his own. Who was he?",
     "answer": "Aja Huang",
     "choices": [
       "Aja Huang",
@@ -7346,7 +7281,7 @@
   },
   {
     "tier": 3,
-    "question": "Lee Sedol won game 4 of his 2016 match against AlphaGo (the only human win in that series) with move 78, which the Chinese professional Gu Li called a 'divine move.' What did the move expose about AlphaGo at the time?",
+    "question": "Lee Sedol won game 4 of his 2016 match against AlphaGo with move 78, which the Chinese professional Gu Li called a 'divine move.' The machine then misjudged several moves running. What did the move expose about AlphaGo at the time?",
     "answer": "Even superhuman systems can have unexpected blind spots in positions they trained for less",
     "choices": [
       "Even superhuman systems can have unexpected blind spots in positions they trained for less",
@@ -7502,7 +7437,7 @@
   },
   {
     "tier": 3,
-    "question": "Making a new medicine takes 10 to 15 years and costs over a billion dollars. Companies like Insilico Medicine and Atomwise use AI to speed up the first step: finding molecules that might work as drugs. What does the AI actually do in this early step?",
+    "question": "A scientist at Insilico Medicine starts work on a new medicine, a job that takes 10 to 15 years and costs over a billion dollars. Like the team at Atomwise, she hands the first step to AI. What does the AI actually do in that step?",
     "answer": "Searches huge chemical spaces for molecules that might bind the disease target effectively",
     "choices": [
       "Searches huge chemical spaces for molecules that might bind the disease target effectively",
@@ -7511,19 +7446,6 @@
       "Replaces every human in the lab including the pharmacologists running the experiments"
     ],
     "context": "Insilico Medicine (Hong Kong, Alex Zhavoronkov) and Atomwise (San Francisco, Abe Heifets) both use AI to scan vast chemical libraries — molecules that could plausibly bind to a disease target — and rank them by predicted effectiveness. The most promising candidates then go to traditional drug development: lab tests, animal studies, clinical trials. AI compresses the first weeks/months of the process. Insilico's INS018_055 (a fibrosis candidate) reached Phase 2 trials in 2023 — among the first AI-discovered drugs that far in the pipeline.",
-    "topic": "ai-in-science"
-  },
-  {
-    "tier": 3,
-    "question": "Insilico Medicine, a Hong Kong biotech founded in 2014, used AI to hunt for a new drug against idiopathic pulmonary fibrosis — a rare, deadly lung-scarring disease with almost no good treatments. Their AI-designed candidate reached first-in-people testing in about 30 months from project start. The industry average from idea to first patient dose is over 5 years. The testing itself still took the normal human pace. Which specific phase of drug development does Insilico's 30-month sprint show AI actually compresses — and which phase still takes human time?",
-    "answer": "Compressing the early molecule-search phase, clinical trials still take human time",
-    "choices": [
-      "Compressing the early molecule-search phase, clinical trials still take human time",
-      "Replacing all of human drug development top-to-bottom by the end of this decade",
-      "Eliminating the need for FDA review when an AI is highly confident in a drug",
-      "Producing drugs that work better than human-discovered drugs in every case"
-    ],
-    "context": "Clinical trials — testing safety in humans, then efficacy — are the long, expensive, irreducibly human phase of drug development. They take years for good reasons (long-term safety signal, statistical power for efficacy). AI compresses the discovery phase — finding plausible molecules to test. Realistically: AI speeds up phase 0-1, leaves phases 2-3 largely intact. The total time saved is meaningful but not revolutionary. Recognition: 'AI will revolutionize drug discovery in 5 years' is a category-error — the bottleneck is downstream of AI's strength.",
     "topic": "ai-in-science"
   },
   {
@@ -7645,7 +7567,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern chess engines like Stockfish (open-source, free), Komodo (commercial), and Leela Chess Zero (a neural-network engine inspired by DeepMind's AlphaZero) all play far above human grandmaster level. Even world champion Magnus Carlsen uses them to analyze his own games and hunt for stronger moves he missed. It's tempting to say these engines 'understand' chess the way Carlsen or Bobby Fischer did. What's the realistic way to describe what they're actually doing inside?",
+    "question": "Magnus Carlsen opens a chess engine such as Stockfish, Komodo or Leela Chess Zero (inspired by AlphaZero) to analyze one of his own games and hunt for stronger moves he missed. They all play far above grandmaster level. It is tempting to say they 'understand' chess the way he or Bobby Fischer did. What is the realistic way to describe what they do inside?",
     "answer": "Searching positions and evaluating them, extremely fast pattern matching, no understanding of chess",
     "choices": [
       "Searching positions and evaluating them, extremely fast pattern matching, no understanding of chess",
@@ -7658,7 +7580,7 @@
   },
   {
     "tier": 3,
-    "question": "AlphaZero (2017, DeepMind) learned chess, shogi, and Go entirely by playing itself over and over — no games from human masters, no opening books, no endgame tables. Within hours of that training it surpassed every prior engine in chess. What's the conceptual leap that made this possible?",
+    "question": "A chess programmer watched DeepMind's AlphaZero surpass every earlier engine within a day of training in 2017. It carried no opening book and no endgame table, and the same program learned shogi and Go as well. What is the conceptual leap that made this possible?",
     "answer": "Deep neural networks + Monte Carlo tree search trained by self-play, no human knowledge required",
     "choices": [
       "Deep neural networks + Monte Carlo tree search trained by self-play, no human knowledge required",
@@ -7840,7 +7762,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2017 DeepMind's AlphaZero learned to play chess, shogi (Japanese chess), and Go at superhuman level starting from nothing but self-play — but it was told the rules of each game up front. In 2019 the same London team released MuZero, which mastered dozens of Atari video games, plus chess, shogi, and Go, without ever being told the rules. It just played and figured out the mechanics on its own from raw inputs. What is the conceptual upgrade from AlphaZero to MuZero?",
+    "question": "A gamer watched DeepMind's MuZero master dozens of Atari video games in 2019, along with chess, shogi and Go. AlphaZero, two years earlier, had been told the rules of each game up front. What is the conceptual upgrade from AlphaZero to MuZero?",
     "answer": "MuZero learns a model of the game environment too, not just the policy for playing within it",
     "choices": [
       "MuZero learns a model of the game environment too, not just the policy for playing within it",
@@ -8360,32 +8282,6 @@
   },
   {
     "tier": 3,
-    "question": "A browser extension is a small program you install into Chrome, Firefox, or Edge that adds new powers to your browser. Some newer extensions plug in AI to summarize the page you are reading, translate this article, or write an email for you. They are powerful and convenient, but they carry a specific privacy risk that comes with granting them permission to read whatever you are viewing. What is that risk?",
-    "answer": "The extension can read every page you visit and may send the content to a remote AI server",
-    "choices": [
-      "The extension can read every page you visit and may send the content to a remote AI server",
-      "The extension uses too much battery and slows down all of your other browser tabs",
-      "The extension only works on certain websites because of cookies blocked by your browser",
-      "The extension shows pop-up advertisements every fifteen minutes of browsing time"
-    ],
-    "context": "When you install a browser AI extension, you typically grant it permission to read content on websites you visit. To 'summarize this page' or 'help me write this email,' it needs to read the page content. That content typically goes to the AI provider's server. Webmail, banking, school portals — content the user assumes is private — can flow to a third party. Recognition: read the permissions before installing a browser AI extension. 'Can read and change all your data on websites you visit' is a serious permission, even when the extension is from a reputable company.",
-    "topic": "browser-extensions"
-  },
-  {
-    "tier": 3,
-    "question": "You spot a shiny new browser extension in the Chrome or Firefox store promising to 'enhance your AI experience' — better prompts, faster summaries, prettier chat. It costs nothing to install. Before you click the install button, security-minded users apply one defensive principle to decide whether the free extension is worth granting the permissions it asks for. What principle should guide your choice?",
-    "answer": "Free = your data is likely the product, read the privacy policy and permissions carefully",
-    "choices": [
-      "Free = your data is likely the product, read the privacy policy and permissions carefully",
-      "Free = free, there's no catch to browser extensions in any major browser store",
-      "Free extensions are required by law to be safer than paid ones across all jurisdictions",
-      "Free extensions can never harvest data, only paid extensions have permission to do so"
-    ],
-    "context": "Free browser extensions have a long history of being sold or compromised — original developer sells the extension, new owner adds tracking or malware, the old install base inherits the upgrade. Even legitimately-developed free extensions need a business model: ads, data sales, or premium-feature upsell are typical. For AI extensions specifically: anything that 'reads page content' is also potentially exfiltrating it. Recognition: vet the developer, read the privacy policy, check community reviews for sketchy behavior. Treat 'free AI extension' as you'd treat 'free anything' — with healthy skepticism.",
-    "topic": "browser-extensions"
-  },
-  {
-    "tier": 3,
     "question": "C2PA — the Coalition for Content Provenance and Authenticity — is a technical standard for signing images and videos the moment they are made. A supporting camera digitally signs every real photo it shoots. An AI image generator signs every fake it produces. Anyone can later check the signature to see where a file came from. Why is this up-front signing stronger than trying to spot fakes after they've spread?",
     "answer": "A signature proves the source; detection is an arms race that AI generation keeps winning",
     "choices": [
@@ -8724,20 +8620,7 @@
   },
   {
     "tier": 3,
-    "question": "For years, phishing emails were easy to spot — misspelled words, awkward grammar, and obvious typos gave them away as the work of scammers who didn't speak English well. Then generative AI tools like ChatGPT arrived. Now the scam emails read in smooth, polished prose from anywhere in the world. That old giveaway is gone. What is the new defensive principle for spotting phishing?",
-    "answer": "Don't rely on text quality to spot phishing, check the actual sender address, links, and process",
-    "choices": [
-      "Don't rely on text quality to spot phishing, check the actual sender address, links, and process",
-      "Look more carefully for typos, AI still produces typos, just hidden ones in invisible text",
-      "Open the email only on a Tuesday, phishing emails do not work on Tuesdays for some reason",
-      "Trust the email if it has perfect grammar, only legitimate institutions write smoothly"
-    ],
-    "context": "AI-written phishing is genuinely a problem. Grammar tells are gone. What still works: check the sender's actual email address (not just the display name); hover over links to see the actual URL; verify any urgent financial request through a separate channel; trust the process more than the text. Banks don't email you to ask for passwords. Schools don't email demanding immediate gift-card purchases. Recognition: when the text looks fine, fall back on identity verification and process verification — not on text inspection.",
-    "topic": "ai-phishing"
-  },
-  {
-    "tier": 3,
-    "question": "A scam called the 'CEO email' or 'business email compromise' has been around for years. An attacker impersonates the CEO and emails the finance department asking for an urgent bank-wired payment. AI hasn't created this scam, but it has made the impersonation better. What's the defensive policy that catches the scam reliably?",
+    "question": "A finance clerk opens an email from the CEO asking for an urgent bank payment, but the CEO never wrote it. This is 'business email compromise,' a scam that AI did not create but has made better. What is the defensive policy that catches it reliably?",
     "answer": "Pre-arranged out-of-band callback for any wire transfer above a threshold, voice and email aren't proof",
     "choices": [
       "Pre-arranged out-of-band callback for any wire transfer above a threshold, voice and email aren't proof",
@@ -9062,20 +8945,7 @@
   },
   {
     "tier": 3,
-    "question": "Big US employers now use AI to screen job applications before any human sees them. HireVue analyzes recorded video interviews; other systems rank resumes against a model trained on which previous employees 'worked out.' In 2018, Amazon shut down its own AI recruiting engine when a specific issue came out. What is the documented problem with this whole approach?",
-    "answer": "Models trained on past hires inherit past hiring biases — Amazon scrapped its resume tool in 2018 after it downgraded women.",
-    "choices": [
-      "Models trained on past hires inherit past hiring biases — Amazon scrapped its resume tool in 2018 after it downgraded women.",
-      "AI screening tools achieve perfect parity across every demographic group by design — auditing is never needed for them.",
-      "The tools refuse to work in cold weather — most companies use these screening systems only during the summer.",
-      "Applicants can submit a single emoji to bypass the AI entirely — every applicant reaches a human reviewer this way."
-    ],
-    "context": "Amazon's experimental resume-screening system, in development from 2014, was scrapped around 2018 after engineers found it had learned to penalize resumes containing the word 'women's' (as in 'women's chess club captain') and degrees from two all-women colleges. The training data was past Amazon hires, mostly men, so the model learned 'looks like our past hires.' Similar concerns exist for video-analysis tools that rate facial expressions or vocal patterns. The recognition skill: when an AI ranks people, ask what it was trained on. The training set carries the past forward.",
-    "topic": "ai-in-hiring-bias"
-  },
-  {
-    "tier": 3,
-    "question": "HireVue is an American service that records job candidates on video and uses AI to score them on soft traits like 'engagement' and 'communication style.' In early 2021, after pressure from independent researchers and the FTC (the US consumer-protection regulator), the company quietly dropped one big part of its scoring system. Which part did it drop, and why?",
+    "question": "A job candidate recorded her answers on video for the service HireVue, whose AI scored her on soft traits like 'engagement' and 'communication style.' Early in 2021, under outside pressure, the company quietly dropped one big part of that scoring. Which part, and why?",
     "answer": "Facial expression analysis — researchers and the Federal Trade Commission raised concerns it was both biased and unreliable.",
     "choices": [
       "Facial expression analysis — researchers and the Federal Trade Commission raised concerns it was both biased and unreliable.",
@@ -9111,19 +8981,6 @@
     ],
     "context": "This is Goodhart's law in action: 'When a measure becomes a target, it ceases to be a good measure.' Mouse jigglers and keystroke automators are now a small industry. Workers gaming the metric is the predictable response — and the deeper cost is the lost focus on what work actually matters. The recognition skill: when management instruments behavior in detail, the metric shapes the behavior more than the underlying goal does. The fix isn't a better surveillance tool; it's a different way to measure what counts.",
     "topic": "workplace-surveillance"
-  },
-  {
-    "tier": 3,
-    "question": "In 2025, people started calling the biggest and smartest AI models 'frontier' models — the ones right at the edge of what is possible for chatbots, image tools, and coding assistants. Only a small handful of companies actually build them. Each cutting-edge release costs billions of dollars in chips and electricity. Which list of companies captures who dominates most of those launches today?",
-    "answer": "OpenAI, Anthropic, Google DeepMind, Meta, and Microsoft — a handful of large US firms control most frontier model releases.",
-    "choices": [
-      "OpenAI, Anthropic, Google DeepMind, Meta, and Microsoft — a handful of large US firms control most frontier model releases.",
-      "Hundreds of small startups — each producing one or two cutting-edge frontier models, all evenly distributed.",
-      "A consortium of European universities — they share a single supercomputer for all AI research worldwide.",
-      "The United Nations — owning and operating every major AI lab through a centralized world AI ministry."
-    ],
-    "context": "Despite many AI startups, the leading frontier models — those at the cutting edge of capability — come from a small cluster: OpenAI (GPT family), Anthropic (Claude), Google DeepMind (Gemini), Meta (Llama, partly open), and Microsoft (Copilot, plus deep partnership with OpenAI). Together they hold most of the talent, compute, and capital. The recognition skill: 'AI' isn't an industry with thousands of equal competitors. It's an oligopoly. That matters when you're asking about regulation, market power, or whose values get embedded in tools billions of people use.",
-    "topic": "ai-power-concentration"
   },
   {
     "tier": 3,
@@ -9166,12 +9023,12 @@
   },
   {
     "tier": 3,
-    "question": "In many industries — banking, farming, phone service — the biggest firms often lobby for new regulations that would be costly for smaller rivals to follow. It sounds odd at first: why would a big company push for more rules on itself? Economists have a name for this pattern going back to the 1970s work of George Stigler. The same dynamic is now showing up around AI. What is the pattern called, and why does it matter for AI?",
+    "question": "A phone company's chief lobbies for a costly new rule on his own industry, and his smaller rivals fight it. Why would a big firm push for more rules on itself? Economists have had a name for this since George Stigler's work of the 1970s, and it now shows up around AI. What is the pattern called, and how does it work?",
     "answer": "Regulatory capture — established players use the rule-making process to lock in their position against new entrants.",
     "choices": [
       "Regulatory capture — established players use the rule-making process to lock in their position against new entrants.",
-      "Free-market exuberance — companies in every industry universally oppose any form of regulation.",
-      "Mandatory transparency — large companies are legally required to oppose all government rules under federal law.",
+      "Voluntary self-restraint — incumbents accept a competitive cost to improve safety",
+      "Antitrust enforcement — the smaller firms requested the regulation to limit larger ones",
       "Customer empowerment — small companies always benefit from new regulation, regardless of its specific content."
     ],
     "context": "Regulatory capture is a well-documented pattern across industries. Compliance costs that a large company can absorb often crush a startup. So 'we welcome reasonable regulation' from a CEO of a dominant company is not always neutral civic-mindedness — it can be a moat. Economist George Stigler's 1971 paper formalized the idea. In AI, watch for incumbents publicly supporting safety regulations that happen to make open-source and small-startup competition harder. The recognition skill: when the regulated cheer the regulator, follow the money on who can afford to comply.",
@@ -9179,7 +9036,7 @@
   },
   {
     "tier": 3,
-    "question": "In May 2023, Sam Altman - the CEO of OpenAI, the company behind ChatGPT - testified before the US Senate. Later that year, Dario Amodei, CEO of Anthropic (the maker of Claude), joined similar hearings. Both told Congress that powerful AI was dangerous and asked lawmakers for a government permission scheme covering the biggest AI systems. Many open-source AI developers pushed back hard on that ask. Why did they say we should worry?",
+    "question": "Sam Altman of OpenAI told the US Senate in May 2023 that powerful AI was dangerous, and Dario Amodei of Anthropic joined similar hearings later that year. Both asked lawmakers for a government sign-off on the biggest AI systems. Many open-source AI developers pushed back hard. What was their worry?",
     "answer": "Federal licensing of large AI models would hand the few incumbents a permission slip that smaller competitors can't get.",
     "choices": [
       "Federal licensing of large AI models would hand the few incumbents a permission slip that smaller competitors can't get.",
@@ -9192,46 +9049,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2024, the European Union passed the AI Act - a tiered law that bans some uses of AI outright (like government social scoring of citizens) and heavily regulates 'high-risk' uses (like hiring, credit scoring, and policing). Open-source AI advocates and small European labs criticized parts of the law. What was their main concern?",
-    "answer": "Heavy compliance burdens on 'foundation models' could lock out small open-source labs while large US firms absorb the cost.",
-    "choices": [
-      "Heavy compliance burdens on 'foundation models' could lock out small open-source labs while large US firms absorb the cost.",
-      "The law required every European citizen to carry a printed AI license card by January 2026 by force.",
-      "The law made all AI illegal in the EU, ending the field's existence in Europe permanently overnight.",
-      "The law required AI models to be hosted on the moon, which is logistically very difficult for most labs."
-    ],
-    "context": "The EU AI Act (passed 2024, phased in starting 2025) bans certain uses outright (real-time biometric ID in public, social scoring), heavily regulates 'high-risk' uses, and imposes transparency requirements on 'foundation models.' Critics from the open-source community — including French AI lab Mistral and European researchers — argued the foundation-model rules would entrench US incumbents like OpenAI and Google, whose compliance budgets dwarf those of a Paris startup. The recognition skill: a rule that lets a big company keep operating while a small one shuts down has a competitive effect even when the intent is safety.",
-    "topic": "ai-regulation"
-  },
-  {
-    "tier": 3,
-    "question": "When you apply for a mortgage or a car loan, banks now use AI systems to help decide whether you get approved and at what interest rate. Even when the model doesn't take ethnicity or biological sex as direct inputs, its outputs can still track those categories. Zip code, employer, or spending patterns can act as hidden stand-ins. This is what fair-lending law calls 'disparate impact.' What does the term mean when it applies to a lending AI?",
-    "answer": "Even with no race or gender field in the input, the model can produce different acceptance rates across groups via correlated proxies.",
-    "choices": [
-      "Even with no race or gender field in the input, the model can produce different acceptance rates across groups via correlated proxies.",
-      "Loans are guaranteed by the AI to be fairly issued to every applicant, regardless of any financial detail at all.",
-      "Disparate impact is a Bitcoin trading strategy unrelated to the world of consumer lending decisions.",
-      "All US lending AI was banned by Congress in 2023, so the concern no longer applies in practice today."
-    ],
-    "context": "Lending models legally cannot use race directly. But they often use ZIP code, neighborhood, schools attended, employer, and other features that correlate with race. The model can end up producing different acceptance rates across demographic groups without anyone instructing it to — disparate impact, in the legal terminology of US fair-lending law (ECOA, Fair Housing Act). The recognition skill: 'we don't ask about race' doesn't guarantee fair outcomes when many other features carry the same information. Audits matter.",
-    "topic": "ai-in-hiring-bias"
-  },
-  {
-    "tier": 3,
-    "question": "An AI system denies your mortgage application. In the mail you get a short form letter — just the word 'denied' and maybe a two-line reason. When a human loan officer used to say no, you could argue face-to-face, ask why, and bring more paperwork. Now the decision came out of a machine-learning model with thousands of internal weights. Why is fighting this AI-driven call harder than fighting a human's decision?",
-    "answer": "The model's reasoning is often opaque — no single 'reason' may exist that the lender can show or you can dispute.",
-    "choices": [
-      "The model's reasoning is often opaque — no single 'reason' may exist that the lender can show or you can dispute.",
-      "Federal law specifically prohibits appealing any computer-made decision — every lending denial is automatic and final.",
-      "AI lending decisions are written in computer code — no human anywhere is legally allowed to read or audit them.",
-      "Banks are required to grant every appeal regardless of the original decision — so the appeal itself is unnecessary."
-    ],
-    "context": "A loan officer can usually tell you the top reasons for a denial — debt-to-income, credit score, recent missed payments. An AI model trained on hundreds of features may have no single dominant reason; the decision is the sum of many small weights. Even the bank may not be able to give you a satisfying explanation. The recognition skill: when a system's reasoning isn't transparent, the right to appeal is hollow in practice. The push for 'explainable AI' in regulated decisions like lending is partly about making appeal possible.",
-    "topic": "ai-in-hiring-bias"
-  },
-  {
-    "tier": 3,
-    "question": "Insurance companies use AI models to set premiums — the monthly price you pay for life, health, auto, or home coverage. The model reads dozens of data points about you and outputs a number. Two customers who look almost identical on paper can walk away with wildly mismatched prices, and the company often cannot explain in plain language why. What is the worry about this opacity?",
+    "question": "A driver asks an insurer what her policy will cost. A model takes in hundreds of facts about her and returns a number, the monthly premium, and the company often cannot say in plain language how it got there. What is the worry about this opacity?",
     "answer": "Two similar customers can get very different quotes for reasons neither one can be told or contest.",
     "choices": [
       "Two similar customers can get very different quotes for reasons neither one can be told or contest.",
@@ -9244,7 +9062,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2023, the American health insurer UnitedHealthcare used an AI tool called nH Predict. The tool judged claims for nursing-home stays and physical rehabilitation care after hospital visits. When patients and their families later sued, they said the AI was being used in a way that harmed sick people who weren't ready to be sent home. What did the lawsuit accuse UnitedHealthcare of doing with nH Predict?",
+    "question": "Families sued the American health insurer UnitedHealthcare in late 2023 over nH Predict, an AI tool that weighed claims for nursing-home stays and rehabilitation. The company denies the tool decided coverage alone. What did the lawsuit allege?",
     "answer": "The AI's predicted recovery times were used to deny ongoing care — even when treating doctors said the patient still needed it.",
     "choices": [
       "The AI's predicted recovery times were used to deny ongoing care — even when treating doctors said the patient still needed it.",
@@ -10388,20 +10206,7 @@
   },
   {
     "tier": 4,
-    "question": "Slovak-born Andrej Karpathy has become one of the most-followed teachers of AI on the internet — his YouTube videos build a neural network from scratch, line by line, and are watched by hundreds of thousands of engineers and students. Before all the teaching though, his actual working career ran through three of the biggest names in the field, jumping between them over the last decade. Where has he worked?",
-    "answer": "OpenAI as a founding member, then Tesla where he led Autopilot, then back to OpenAI before going independent.",
-    "choices": [
-      "OpenAI as a founding member, then Tesla where he led Autopilot, then back to OpenAI before going independent.",
-      "Google Brain, then Microsoft Research, then Amazon Web Services in three sequential research positions.",
-      "Meta AI, then Anthropic, then Adobe Research consecutively over the last decade in California.",
-      "Stanford, then MIT, then Carnegie Mellon as a tenured professor in three departments at once."
-    ],
-    "context": "Andrej Karpathy was a founding member of OpenAI in 2015. He left in 2017 to lead AI/Autopilot at Tesla, where he worked on self-driving. He returned to OpenAI in 2023 briefly, then left again in early 2024 to focus on AI education. His YouTube series ('Neural Networks: Zero to Hero,' 'Let's build GPT,' 'Intro to Large Language Models') have shaped how a generation of engineers understands the field. He's also Stanford-trained (PhD with Fei-Fei Li, on visual deep learning). The career arc maps the modern AI giants: OpenAI to Tesla to OpenAI to independent education.",
-    "topic": "andrej-karpathy"
-  },
-  {
-    "tier": 4,
-    "question": "Andrej Karpathy left OpenAI in early 2024 to focus on AI education. His 'Neural Networks: Zero to Hero' YouTube series walks viewers through building a small GPT-style model from scratch in Python. Why does his choice of post-OpenAI direction matter for the field?",
+    "question": "A student presses play on 'Neural Networks: Zero to Hero' on YouTube and follows along as a small GPT-style model is built from scratch in Python. Its maker, Andrej Karpathy, quit his lab job in early 2024 to focus on AI education. Why does that choice of direction matter for the field?",
     "answer": "Quality educational content from a founding insider directly counters the mystification of AI and helps more people understand how the technology actually works.",
     "choices": [
       "Quality educational content from a founding insider directly counters the mystification of AI and helps more people understand how the technology actually works.",
@@ -10570,7 +10375,7 @@
   },
   {
     "tier": 4,
-    "question": "In October 2024 Demis Hassabis and John Jumper of Google DeepMind shared a Nobel Prize for their AI system AlphaFold. Proteins are long chains of amino acids that fold into complex 3D shapes, and knowing that shape reveals how the protein does its job in the body. Before AlphaFold, working out a single fold demanded painstaking laboratory measurements — often years of effort per molecule. Why did the Nobel committee single AlphaFold out — what could researchers suddenly do?",
+    "question": "John Jumper and Demis Hassabis of Google DeepMind took a share of a Nobel Prize in October 2024 for their AI system AlphaFold. Knowing how a protein is folded reveals how it does its job in the body. Why did the Nobel committee single AlphaFold out: what could researchers suddenly do?",
     "answer": "Map a protein's 3D shape in hours — work that used to take years of X-ray crystallography per protein",
     "choices": [
       "Generate brand-new proteins not found in nature — a feat impossible without AlphaFold's predictive power",
@@ -10583,7 +10388,7 @@
   },
   {
     "tier": 4,
-    "question": "AlphaFold gives researchers a huge free database of predicted protein shapes. A biology lab studying a rare disease can now look up the relevant protein and start designing a drug the same day. What's the realistic limit of what AlphaFold by itself can do for that lab?",
+    "question": "A biology lab studying a rare disease looks up the relevant protein in AlphaFold's huge free database of predicted shapes and starts designing a drug the same day. What is the realistic limit of what AlphaFold by itself can do for that lab?",
     "answer": "It predicts the shape but not how the protein moves or binds — wet-lab experiments still confirm any actual drug candidate",
     "choices": [
       "It predicts the shape but not how the protein moves or binds — wet-lab experiments still confirm any actual drug candidate",
@@ -10596,7 +10401,7 @@
   },
   {
     "tier": 4,
-    "question": "Insilico Medicine used AI to identify a new drug candidate for a lung disease called idiopathic pulmonary fibrosis. The candidate reached human trials in about 30 months. Traditional drug discovery from target to trials averages five years or more. Where does AI most help — and where does it still NOT help?",
+    "question": "Insilico Medicine's scientists used AI to design a drug candidate for idiopathic pulmonary fibrosis, a rare, deadly disease that scars the lungs. It reached its first patient about 30 months after the project began, where the industry average runs over five years. Where does AI most help, and where does it still not help?",
     "answer": "AI accelerates early discovery and candidate screening — but clinical trials in humans still take years and cost most of the money",
     "choices": [
       "AI accelerates early discovery and candidate screening — but clinical trials in humans still take years and cost most of the money",
@@ -10609,7 +10414,7 @@
   },
   {
     "tier": 4,
-    "question": "Atomwise screens billions of molecules against a protein target using a neural network trained on known drug-binding patterns. A traditional virtual screen using docking software would take weeks; Atomwise can run a screen in a day. What's the practical catch when a lab moves the top hits into wet-lab testing?",
+    "question": "A lab runs an Atomwise screen of billions of molecules against one protein target, using a neural network trained on known drug-binding patterns. Docking software, the traditional virtual screen, would take weeks; this takes a day. What does the lab find when it moves the top hits into real experiments?",
     "answer": "Most flagged candidates still fail at the bench — the AI narrows the search, but binding in a simulation doesn't guarantee binding in real cells",
     "choices": [
       "Most flagged candidates still fail at the bench — the AI narrows the search, but binding in a simulation doesn't guarantee binding in real cells",
@@ -10856,7 +10661,7 @@
   },
   {
     "tier": 4,
-    "question": "Phishing emails used to be famously easy to spot — broken English, weird formatting, mismatched logos. After ChatGPT, phishing emails started arriving in fluent, well-written English with personal touches drawn from the target's social media. Defenders also use AI to scan inbound mail for threats. What's the realistic state of the cybersecurity arms race?",
+    "question": "A company's security team turns an AI scanner on its inbound mail, hunting the fluent, well-written phishing that started arriving after ChatGPT, complete with personal touches from the targets' social media. What is the realistic state of the cybersecurity arms race?",
     "answer": "Both sides have scaled up — attackers automate quality phishing at volume, defenders automate detection at volume, and end users still need to verify any unexpected request",
     "choices": [
       "Both sides have scaled up — attackers automate quality phishing at volume, defenders automate detection at volume, and end users still need to verify any unexpected request",
@@ -10869,7 +10674,7 @@
   },
   {
     "tier": 4,
-    "question": "Companies like Microsoft and CrowdStrike use machine learning on network traffic to spot attacks that hand-written rules would miss. The systems sometimes flag safe activity by mistake, and sometimes miss brand-new attacks. What is the human analyst's actual job today?",
+    "question": "A security analyst at a firm like Microsoft or CrowdStrike watches a machine-learning tool comb the network traffic for attacks that hand-written rules would miss. It sometimes cries wolf over safe activity and sometimes misses brand-new attacks. What is her actual job today?",
     "answer": "Tune the system, investigate the alerts, and decide which flagged events are real — the AI narrows the haystack, but humans still pull the needles",
     "choices": [
       "Tune the system, investigate the alerts, and decide which flagged events are real — the AI narrows the haystack, but humans still pull the needles",
@@ -10908,7 +10713,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 a team led by Minkyu Shin, with the Princeton psychologist Thomas Griffiths, used a superhuman Go program to grade about 5.8 million moves made by professional players between 1950 and 2021. What did the grades show about human play after AlphaGo's 2016 win?",
+    "question": "Minkyu Shin's team, with the Princeton psychologist Thomas Griffiths, used a superhuman Go program in 2023 to grade about 5.8 million moves made by professional players between 1950 and 2021. What did the grades show about human play after AlphaGo's 2016 win?",
     "answer": "Humans began making better moves, and more original ones",
     "choices": [
       "Humans got worse, because they had lost the will to compete",
@@ -10921,7 +10726,7 @@
   },
   {
     "tier": 4,
-    "question": "AlphaGo learned to play Go by training on millions of self-play games — playing itself, scoring the outcomes, and adjusting its weights. AlphaZero (2017) went further: it learned chess, shogi, and Go entirely from self-play with no human game data at all. What's the significance of the AlphaZero result for what AI can learn?",
+    "question": "A news editor reads that DeepMind's AlphaZero taught itself chess, shogi and Go to a superhuman level, and she asks what job it will take next. Each of those games is one very specific kind of problem. What is the real significance of the result for what AI can learn?",
     "answer": "Well-defined games with clear rules and outcomes can be mastered from scratch without human examples — a strong proof of concept, but a narrow domain",
     "choices": [
       "Well-defined games with clear rules and outcomes can be mastered from scratch without human examples — a strong proof of concept, but a narrow domain",
@@ -10973,7 +10778,7 @@
   },
   {
     "tier": 4,
-    "question": "AI is now being used in materials science labs to help design new catalysts, batteries, and alloys. In 2023, Google DeepMind announced its GNoME (Graph Networks for Materials Exploration) system had discovered hundreds of thousands of stable new materials on its own — a splashy claim that Nature later reported drew critical scrutiny from independent researchers. What is the honest picture of AI-driven materials discovery right now?",
+    "question": "A Google DeepMind team announced in 2023 that its system had discovered hundreds of thousands of stable new materials. Independent researchers went through the claim and reported that many entries were only small tweaks or copies of known materials. What is the honest picture of AI-driven materials discovery right now?",
     "answer": "Real acceleration of candidate screening and synthesis planning — but experimental validation is still slow, and headline 'discovery' claims need careful checking",
     "choices": [
       "Real acceleration of candidate screening and synthesis planning — but experimental validation is still slow, and headline 'discovery' claims need careful checking",
@@ -10982,19 +10787,6 @@
       "AI cannot help with materials at all — every announcement of an AI-discovered material has been retracted and proven to be fake"
     ],
     "context": "Materials discovery is one of the more credible AI-in-science applications. Neural networks trained on databases of known compounds can suggest novel candidates with target properties faster than systematic search. The A-Lab announcement was disputed — peer review found some of the claimed novel materials were already known — but the broader pattern is real: AI is changing the speed of the early-discovery loop. The wet lab still has to confirm anything that actually matters.",
-    "topic": "ai-in-science"
-  },
-  {
-    "tier": 4,
-    "question": "In 2023, DeepMind's GNoME tool predicted millions of stable crystal structures. That's way more than humans had ever catalogued. But outside reviewers later found many were just small tweaks or copies of known materials. What single check kills most overhyped AI-discovery papers?",
-    "answer": "Counting headline discoveries is misleading without expert review — many are duplicates or trivial variants, and the real novelty rate is smaller than the press release implies",
-    "choices": [
-      "Counting headline discoveries is misleading without expert review — many are duplicates or trivial variants, and the real novelty rate is smaller than the press release implies",
-      "All AI scientific claims are fake — every discovery announced by DeepMind or any other AI lab since 2020 was made up entirely",
-      "AI never makes mistakes in science — GNoME's predictions have all been confirmed and none has ever been a duplicate of anything",
-      "Scientific journals refuse to publish AI work — no peer-reviewed journal has accepted an AI-discovery paper since 2022 anywhere"
-    ],
-    "context": "GNoME generated a lot of headlines and a lot of subsequent skepticism. The point isn't that AI materials discovery is fake — it's that 'AI predicted millions of new materials' needs careful unpacking against 'how many were genuinely new and useful?' This is a healthy normal cycle for any new scientific tool, and learning to read these announcements skeptically is itself part of AI literacy.",
     "topic": "ai-in-science"
   },
   {
@@ -11051,7 +10843,7 @@
   },
   {
     "tier": 4,
-    "question": "AlphaGo's 2016 victory over Lee Sedol was watched live in Asia by over 200 million viewers. The game of Go had been considered a benchmark of human intuition that machines wouldn't beat for decades. What kind of effect did the match have on AI as a field beyond the technical result?",
+    "question": "Lee Sedol lost to AlphaGo in 2016 in front of over 200 million live viewers in Asia. Go had been considered a benchmark of human intuition that machines wouldn't beat for decades. What effect did the match have on AI as a field, beyond the technical result?",
     "answer": "It pulled enormous new investment and talent into AI research — the moment is often pointed to as the start of the modern AI boom",
     "choices": [
       "It pulled enormous new investment and talent into AI research — the moment is often pointed to as the start of the modern AI boom",
@@ -11064,7 +10856,7 @@
   },
   {
     "tier": 4,
-    "question": "In late 2021, Google DeepMind published a paper in the journal Nature with mathematicians Marc Lackenby of Oxford and Geordie Williamson of the University of Sydney. They used machine learning to hunt for structure in tables of numbers describing knots — the tangled loops studied in a branch of math called topology. The result was a real new theorem. What was the AI's actual role, versus what the human mathematicians did?",
+    "question": "Marc Lackenby of Oxford and Geordie Williamson of the University of Sydney, both mathematicians, used machine learning with Google DeepMind to hunt for structure in tables of numbers describing knots, the tangled loops of topology. Their paper in Nature, late in 2021, carried a real new theorem. What was the AI's actual role, and what was theirs?",
     "answer": "It surfaced statistical patterns in mathematical data that suggested likely theorems — the mathematicians then proved the theorems themselves",
     "choices": [
       "It surfaced statistical patterns in mathematical data that suggested likely theorems — the mathematicians then proved the theorems themselves",
@@ -11492,21 +11284,8 @@
     "topic": "ai-advice-high-stakes"
   },
   {
-    "tier": 4,
-    "question": "Browser extensions that integrate AI — 'summarize this page,' 'translate this,' 'write a reply' — have proliferated. Many of them request permissions to 'read and change all your data on the websites you visit.' Why is this permission category a serious concern?",
-    "answer": "That permission lets the extension see every page you visit, including banking, email, and private chats — and send the content anywhere",
-    "choices": [
-      "That permission lets the extension see every page you visit, including banking, email, and private chats — and send the content anywhere",
-      "That permission only applies to public pages — banking and email pages are automatically excluded from access",
-      "That permission expires every twenty-four hours — extensions can never persistently read your real browsing data",
-      "That permission requires biometric confirmation — the extension cannot read pages without your fingerprint each time"
-    ],
-    "context": "The Chrome and Firefox permission 'Read and change all your data on the websites you visit' is genuinely sweeping. An extension with this permission can see banking dashboards, email contents, messaging apps, social media direct messages, healthcare portals — anything in the browser. It can send the data anywhere. Some AI-integration extensions need this permission to do their job; others request it because they're free and your data IS the product. Audit your installed extensions. Remove any you don't use. Read the privacy policy before installing. Free + 'reads all your data' is the classic privacy-cost combo.",
-    "topic": "browser-extensions"
-  },
-  {
-    "tier": 4,
-    "question": "You spot an AI-integration browser extension offered for free on the Chrome Web Store. It has thousands of users, a high star rating, and a short, cheerful privacy policy. Nothing about it screams 'scam' at first glance — but the developer has to be paying for servers somewhere, and no one is running a free service out of pure kindness. Every AI-integration extension in your browser also gets to watch everything you type and every page you visit. What's the single most important question to ask before you click install?",
+    "tier": 3,
+    "question": "Suppose you spot a free AI browser extension on the Chrome Web Store, with thousands of users, a high star rating and a short, cheerful privacy policy. Yet the developer has servers to pay for, and the extension gets to watch everything you type. What is the most important question to ask before installing?",
     "answer": "How is the company making money — and if the answer is 'we sell user data,' the price is too high",
     "choices": [
       "How is the company making money — and if the answer is 'we sell user data,' the price is too high",
@@ -11674,8 +11453,8 @@
     "topic": "election-deepfakes"
   },
   {
-    "tier": 4,
-    "question": "Phishing emails used to be easy to spot. Bad grammar, weird typos, a generic 'Dear Customer' greeting, and links that clearly pointed to strange domains. In the 2020s, attackers started using AI to write these emails. Now the messages arrive with clean grammar, correct spelling, personal details pulled from public profiles like LinkedIn, and a voice that even mimics the way your real coworkers write. What single habit does this new reality suggest?",
+    "tier": 3,
+    "question": "A bookkeeper opens an email in polished English that names her real coworkers and mimics the way they write. She hunts for typos, as she has for years, and finds none, now that scammers have tools like ChatGPT. What is the new defensive principle for spotting phishing?",
     "answer": "Stop relying on writing quality as a signal — verify the sender's actual email address and check the actual link destination",
     "choices": [
       "Stop relying on writing quality as a signal — verify the sender's actual email address and check the actual link destination",
@@ -11688,7 +11467,7 @@
   },
   {
     "tier": 4,
-    "question": "'Spear phishing' is targeted attack — the email is crafted specifically for one victim using public info: name, employer, recent posts, projects, colleagues. AI has made spear phishing dramatically cheaper to produce at scale. What's the new normal for high-value targets?",
+    "question": "An attacker pulls a company's staff list from a professional network and has AI write a separate email for each person on it, drawing on names, recent posts, projects and colleagues. This is 'spear phishing,' an email crafted for one victim, and AI has made it dramatically cheaper at scale. What is the new normal for high-value targets?",
     "answer": "Assume any executive, IT admin, or finance employee is being targeted with personalized AI-crafted attacks — and train accordingly",
     "choices": [
       "Assume any executive, IT admin, or finance employee is being targeted with personalized AI-crafted attacks — and train accordingly",
@@ -11711,19 +11490,6 @@
     ],
     "context": "Police said athletic director Dazhon Darien used AI to fake principal Eric Eiswert's voice after Eiswert told him his contract would not be renewed. Darien took a plea deal in 2025 and was sentenced to four months in jail. The fake spread widely before investigators exposed it.",
     "topic": "voice-clone-scams"
-  },
-  {
-    "tier": 4,
-    "question": "AI image tools can make lifelike pictures of anyone — even children. In 2023 and 2024, the US Justice Department and several states made it clear that AI-made child abuse images are illegal under current law. It doesn't matter whether a living victim was involved. What broader legal rule is at work?",
-    "answer": "Existing child-protection laws cover AI-generated abuse material — the harm doesn't depend on whether a real child was photographed",
-    "choices": [
-      "Existing child-protection laws cover AI-generated abuse material — the harm doesn't depend on whether a real child was photographed",
-      "AI-generated content is legally exempt from existing laws — only photographs of real victims can ever be prosecuted",
-      "AI-generated content requires a new specific federal statute — until passed, the material is in a legal gray zone",
-      "AI-generated content is regulated only in the European Union — US law has no jurisdiction over synthetic imagery"
-    ],
-    "context": "The DOJ has prosecuted AI-generated CSAM cases since at least 2023. The 1996 federal child-protection statute (passed long before AI image generation) was deliberately drafted to cover synthetic depictions that are indistinguishable from real ones; later Supreme Court rulings narrowed but did not eliminate this scope. The principle: the harm of normalizing abuse material isn't conditional on a specific real victim being photographed. Several states have added explicit statutes covering AI-generated CSAM and non-consensual deepfake imagery. Major AI labs filter against generating such content; some open-weight models are misused. Reporting tools: the CyberTipline (NCMEC), 1-800-843-5678.",
-    "topic": "ai-regulation"
   },
   {
     "tier": 4,
@@ -11818,7 +11584,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 and 2024, reporters at STAT News and ProPublica found that AI tools at big health insurers were denying coverage at high rates with little human review. One example was UnitedHealth's nH Predict tool. Why does letting AI make these calls change what patients face when they appeal?",
+    "question": "Reporters at STAT News and ProPublica found in 2023 and 2024 that AI tools at big health insurers were denying coverage at high rates with little human review. One example was UnitedHealth's nH Predict tool. Why does letting AI make these calls change what patients face when they appeal?",
     "answer": "One model decides for thousands while each patient appeals alone — the asymmetry favors the insurer",
     "choices": [
       "One model decides for thousands while each patient appeals alone — the asymmetry favors the insurer",
@@ -11828,19 +11594,6 @@
     ],
     "context": "STAT News and ProPublica investigations in 2023-2024 documented insurers using AI tools (UnitedHealth's NaviHealth among them) to deny coverage for elderly patients in skilled-nursing facilities. The pattern: AI predicts a patient should be discharged on a certain date; coverage is cut; appeals are slow; many patients give up. A class-action suit followed. The structural concern is scale and asymmetry: the insurer's AI processes thousands of decisions; each patient appeals individually if at all. Federal regulators have begun to require human review of AI denials in some contexts. Defensive principle for affected families: the right to a human-reviewed appeal exists; ask for it explicitly; document the request.",
     "topic": "ai-insurance-healthcare"
-  },
-  {
-    "tier": 4,
-    "question": "AI is used more and more in credit scores, home loans, insurance, and trading. Regulators warn about 'algorithmic bias' — the AI denies people in patterns that line up with race, gender, or where they live. Yet none of those are direct inputs. What's the technical reason this happens?",
-    "answer": "Other data inputs (zip code, name patterns, education history) correlate with protected categories — the AI learns to use them as proxies",
-    "choices": [
-      "Other data inputs (zip code, name patterns, education history) correlate with protected categories — the AI learns to use them as proxies",
-      "AI models are programmed to discriminate — companies write explicit instructions to deny certain groups",
-      "AI models are tested only on majority groups — the systems work perfectly when configured correctly",
-      "AI models read social media — and only deny services to applicants who post negative reviews online"
-    ],
-    "context": "Proxy discrimination is a well-documented phenomenon in algorithmic systems. A model trained to minimize default risk learns whatever signals predict default. Zip code, last name, education history, employment history all correlate (sometimes strongly) with race and class. The model uses them — not because anyone told it to discriminate, but because they're predictive. The result can be patterns of denial that look like discrimination. Defenses include: fair-lending audits, statistical parity testing, careful feature selection, and explicit removal of obvious proxies. The CFPB has issued guidance; lawsuits have begun. Consumers should know they have rights to an adverse-action notice explaining a denial — including when AI was involved.",
-    "topic": "ai-in-hiring-bias"
   },
   {
     "tier": 4,
@@ -11948,7 +11701,7 @@
   },
   {
     "tier": 4,
-    "question": "In recent years, New York City (with its 2023 automated hiring bias audit law), the state of Illinois (with its 2020 AI Video Interview Act), and the European Union (with its 2024 AI Act) all passed laws requiring employers to tell workers when AI is being used to watch them or make decisions about them. These laws share a single guiding principle. What is it?",
+    "question": "A job applicant in New York City takes an AI-scored interview. Her city's 2023 hiring bias audit law covers her, as Illinois's 2020 AI Video Interview Act and the European Union's 2024 AI Act cover others like her. All three laws share a single guiding principle. What is it?",
     "answer": "Employees have a right to know when AI is being used to evaluate or monitor them — and to challenge significant decisions",
     "choices": [
       "Employees have a right to know when AI is being used to evaluate or monitor them — and to challenge significant decisions",
@@ -12052,7 +11805,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 and 2024, security researchers tracked several browser add-ons — PDF (Portable Document Format) viewers, translators, screen-clippers, coupon finders — that started out safe and useful. Then the original developer sold the add-on, or got hacked, and the new owner pushed a poisoned update that stole browsing data, passwords, or session cookies from every user. Millions of people already had the extensions installed. What routine cuts your risk here?",
+    "question": "Suppose you installed a coupon finder years ago, like millions who keep browser add-ons such as translators and screen-clippers. Then the original developer sells it, or gets hacked, and the new owner pushes a poisoned update that steals browsing data, passwords or session cookies. Security researchers tracked several such cases in 2023 and 2024. What routine cuts your risk here?",
     "answer": "Periodically audit installed extensions and remove ones you don't actively use — long-tail extensions are a known supply-chain risk",
     "choices": [
       "Periodically audit installed extensions and remove ones you don't actively use — long-tail extensions are a known supply-chain risk",
@@ -12143,7 +11896,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2024 and 2025, a useful reading habit emerged: when a piece of writing feels strangely smooth, balanced, and short on any specific opinion — no strong claim, no personal anecdote, no risky take, no author's actual voice — consider whether an AI wrote it. Marketing pages, condensed news write-ups, product descriptions, and customer-service replies now use AI heavily. What is the cleanest reason for a young reader to build this habit?",
+    "question": "Suppose you are reading a web page and the prose feels strangely smooth and balanced: no strong claim, no personal anecdote, no risky take, no author's actual voice. A useful reading habit says to ask whether an AI wrote it. What is the cleanest reason for a young reader to build this habit?",
     "answer": "AI-generated text is now common in marketing, news summaries, and customer-service content — knowing the tells lets you weight it appropriately",
     "choices": [
       "AI-generated text is now common in marketing, news summaries, and customer-service content — knowing the tells lets you weight it appropriately",
@@ -12195,7 +11948,7 @@
   },
   {
     "tier": 4,
-    "question": "AI now decides a lot of loan, credit-card, and insurance applications automatically. Two federal laws — the Equal Credit Opportunity Act and the Fair Credit Reporting Act — require the lender to send you an 'adverse action notice' explaining any denial. That rule applies even when the denial actually came from an AI scoring model, not a human loan officer. What real right does this give you?",
+    "question": "Suppose you apply for a credit card and a lender's AI scoring model turns you down, with no human loan officer involved. Two federal laws, the Equal Credit Opportunity Act and the Fair Credit Reporting Act, still make the lender send you an 'adverse action notice' explaining the denial. What real right does this give you?",
     "answer": "You can request specific reasons for the denial — and challenge any factual errors or biased proxies in the model's reasoning",
     "choices": [
       "You can request specific reasons for the denial — and challenge any factual errors or biased proxies in the model's reasoning",
@@ -12273,7 +12026,7 @@
   },
   {
     "tier": 4,
-    "question": "California's Senate Bill 1047 would have required developers of the largest AI models to conduct safety testing and file reports before training. Governor Newsom vetoed the bill in September 2024. Prominent researchers like Fei-Fei Li and Yann LeCun publicly opposed it. What was the central concern?",
+    "question": "Gavin Newsom vetoed California's Senate Bill 1047 in September 2024. The bill would have required developers of the largest AI models to conduct safety testing and file reports before training. Prominent researchers like Fei-Fei Li and Yann LeCun had publicly opposed it. What was their central concern?",
     "answer": "The compliance costs would fall mainly on smaller open-source competitors, entrenching the largest incumbents",
     "choices": [
       "The compliance costs would fall mainly on smaller open-source competitors, entrenching the largest incumbents",
@@ -12286,20 +12039,7 @@
   },
   {
     "tier": 4,
-    "question": "Senate Bill (SB) 1047 defined the AI models it would regulate by training compute — models trained on more than 10^26 floating-point operations. Critics argued any compute threshold has a built-in problem regardless of where the line is drawn. What's the problem?",
-    "answer": "Algorithmic and hardware efficiency improve over time — the same capability becomes reachable with less compute, making any fixed threshold obsolete",
-    "choices": [
-      "Algorithmic and hardware efficiency improve over time — the same capability becomes reachable with less compute, making any fixed threshold obsolete",
-      "Compute is impossible to measure — no software exists for tracking floating-point operations during AI training",
-      "Compute correlates perfectly with risk — every model above the threshold is guaranteed to be dangerous to humans",
-      "Compute thresholds are unconstitutional — federal law preempts every state law referencing computational capacity"
-    ],
-    "context": "Compute-threshold regulation tries to define 'large model' by training cost. But efficiency improves: a smaller actor in 2027 may match 2024-era capability with a tenth of the compute. The threshold then either lets the smaller actor escape oversight (defeating the purpose) or has to be lowered (catching ever-smaller actors). Either way, a fixed line is a snapshot, not a stable definition. Recognition skill: any regulatory threshold defined by today's costs tends to favor today's incumbents — they've already paid the bill, while smaller challengers face a moving target.",
-    "topic": "ai-regulation"
-  },
-  {
-    "tier": 4,
-    "question": "The EU finalized the AI Act in 2024 — a tiered system that bans 'unacceptable risk' uses like social scoring, tightly regulates 'high-risk' uses, and lightly touches 'minimal risk' uses. Mistral, a French open-weights lab, criticized the law. What was Mistral's main worry?",
+    "question": "The founders of Mistral, a French open-weights lab, criticized the EU AI Act when it was finalized in 2024. The law bans 'unacceptable risk' uses like government social scoring, tightly regulates 'high-risk' uses like hiring and policing, and lightly touches the rest. Big AI firms mostly supported it; startups in Europe and open-source advocates often opposed it. What was the founders' main worry?",
     "answer": "Tiered compliance costs scale to incumbents' lawyer budgets, not to small European startups' headcounts",
     "choices": [
       "Tiered compliance costs scale to incumbents' lawyer budgets, not to small European startups' headcounts",
@@ -12351,7 +12091,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2025, dominant builders of frontier AI models were a small group: OpenAI, Anthropic, Google, Meta, and Microsoft (which holds a large stake in OpenAI). That stake prompted the Federal Trade Commission (FTC) and other regulators to open antitrust inquiries. What broader recognition applies here?",
+    "question": "A lawyer at the Federal Trade Commission opens a file on Microsoft's 49% stake in OpenAI, one of the antitrust inquiries into the small group of firms that lead frontier AI. What does the record show about how antitrust moves against a dominant firm?",
     "answer": "Antitrust typically arrives only after dominance is established — and then takes years to produce remedies, by which time the market structure is entrenched",
     "choices": [
       "Antitrust typically arrives only after dominance is established — and then takes years to produce remedies, by which time the market structure is entrenched",
@@ -12390,7 +12130,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2025, five companies made the AI tools most ordinary people actually used every day: OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Meta (Llama), and Microsoft (Copilot). Hundreds of millions of users asked these five services for facts, writing help, therapy-like conversations, and personal advice. Almost none of those users had any voice in how the systems were built. What single power risk does this concentration show?",
+    "question": "A kid opens a chatbot for help with an essay. It comes from one of five companies, and hundreds of millions of users ask those same five services for facts, writing help, therapy-like conversations and personal advice. Every one of them depends on decisions made inside a few labs. What single power risk does this concentration show?",
     "answer": "A small group sets content policies, refusal patterns, and alignment defaults for billions of users with limited democratic input",
     "choices": [
       "A small group sets content policies, refusal patterns, and alignment defaults for billions of users with limited democratic input",
@@ -12507,7 +12247,7 @@
   },
   {
     "tier": 4,
-    "question": "Many big employers now use AI tools like Pymetrics (games that score personality traits), HireVue (video-interview scoring), and Workday (resume screening) to filter job applicants before any human recruiter looks at the pile. Resumes get parsed, ranked, and often rejected automatically. The AI is trained on records of whom the company chose to hire before. What is a well-documented problem with this approach?",
+    "question": "A hiring manager opens a neat ranked list of candidates. Tools such as Pymetrics (games that score personality traits), HireVue (video-interview scoring) and Workday (resume screening) parsed and filtered the pile before she saw it, and they were trained on records of whom the company chose to hire before. What do critics say the neat ranking hides?",
     "answer": "If trained on past hiring decisions, the AI learns the biases in those decisions and applies them at scale — laundering the bias as 'objective' ranking",
     "choices": [
       "If trained on past hiring decisions, the AI learns the biases in those decisions and applies them at scale — laundering the bias as 'objective' ranking",
@@ -12520,7 +12260,7 @@
   },
   {
     "tier": 4,
-    "question": "HireVue, an American recruiting-software company, offered video-interview software where an AI scored job candidates on their facial expressions, tone of voice, and word choice. Outside research groups examined the face-scoring model and found the underlying science was weak — reading personality from micro-expressions is not a reliable science. Under public pressure, HireVue quietly dropped the facial-scoring feature in 2021. What lesson does this case teach about the 'AI-powered' label on recruiting software?",
+    "question": "Outside researchers examined one of the scores in HireVue's video-interview software, where an AI graded job candidates, and found the science beneath it weak. Under public pressure HireVue quietly dropped that feature in 2021. What lesson does this case teach about recruiting software sold as AI?",
     "answer": "'AI-powered' hiring tools sometimes ship with components that aren't scientifically validated — the marketing runs ahead of the evidence",
     "choices": [
       "'AI-powered' hiring tools sometimes ship with components that aren't scientifically validated — the marketing runs ahead of the evidence",
@@ -12533,7 +12273,7 @@
   },
   {
     "tier": 4,
-    "question": "By the mid-2020s, big insurance carriers were using AI systems to set customer premiums for life, health, auto, and home policies. The models weigh hundreds of variables at once — credit score, postal code, driving telematics from a plugged-in device, purchase patterns on card statements. Civil-rights lawyers, actuaries, and state insurance regulators have raised the same worry about this style of algorithmic underwriting time and again. What is that recurring worry?",
+    "question": "A state insurance regulator reads a carrier's list of inputs to its pricing model: credit score, postal code, driving telematics from a plugged-in device, purchase patterns on card statements. Regulators like her, civil-rights lawyers and actuaries have raised the same worry about this kind of underwriting time and again. What is that recurring worry?",
     "answer": "Variables that correlate with protected characteristics (race, ethnicity) can produce disparate impact even when those characteristics aren't directly used",
     "choices": [
       "Variables that correlate with protected characteristics (race, ethnicity) can produce disparate impact even when those characteristics aren't directly used",
@@ -12546,7 +12286,7 @@
   },
   {
     "tier": 4,
-    "question": "Banks and lenders use ML (Machine Learning) models to score loan applications for mortgage, auto, and credit-card loans. Applicants get a yes or no, sometimes with a vague 'reason code' if denied. Federal law prohibits lending discrimination by race, national origin, sex, and other groups. Why is that hard to enforce against ML lending in practice?",
+    "question": "A customer opens the letter from his bank: his mortgage is 'denied,' with one vague reason code. A human loan officer could once have named the debt-to-income ratio to his face, but this call came from a model with thousands of weights. Federal law bans lending discrimination by race, national origin and sex. Why is that ban hard to enforce here?",
     "answer": "The model's internal logic can be opaque — even the bank may not know exactly which variables drove a particular denial",
     "choices": [
       "The model's internal logic can be opaque — even the bank may not know exactly which variables drove a particular denial",
@@ -12559,7 +12299,7 @@
   },
   {
     "tier": 4,
-    "question": "In late 2023, UnitedHealthcare was sued in a class action. Case managers were being graded on how closely their choices matched an AI tool called nH Predict — even when the tool clashed with the doctor. How can you tell that 'AI decision support' has turned into 'AI decision substitute' at work?",
+    "question": "A case manager at UnitedHealthcare read a recommendation from an AI tool called nH Predict, and it clashed with the patient's doctor. A class action filed in late 2023 made a claim about how staff like her were treated. What sign shows that 'AI decision support' has turned into 'AI decision substitute' at work?",
     "answer": "The staff using the tool are evaluated or graded on how closely they follow the AI's recommendation",
     "choices": [
       "The staff using the tool are evaluated or graded on how closely they follow the AI's recommendation",
@@ -13053,7 +12793,7 @@
   },
   {
     "tier": 4,
-    "question": "Some firms have released AI chatbots aimed at children — homework help, tutoring, and 'AI friend' apps. Kid-data rules like COPPA (Children's Online Privacy Protection Act) apply, but enforcement is spotty. How do COPPA violations actually get caught in practice?",
+    "question": "A child signs up for an 'AI friend' app, one of the chatbots some firms aim at children alongside homework help and tutoring. The Children's Online Privacy Protection Act (COPPA) applies to what he types, but enforcement is spotty. How does a breach of COPPA actually come to light?",
     "answer": "FTC complaints filed after the fact — meaning violations are caught only once someone notices and reports them, not before the data is collected",
     "choices": [
       "FTC complaints filed after the fact — meaning violations are caught only once someone notices and reports them, not before the data is collected",
@@ -13118,7 +12858,7 @@
   },
   {
     "tier": 4,
-    "question": "AI helps cyber defenders spot odd patterns, scan code for bugs, and automate routine work. It also helps attackers write believable phishing emails, find bugs faster, and dodge detection. When both sides use the same tools, who tends to have the edge?",
+    "question": "A cyber defender runs AI to spot odd patterns, scan code for bugs and automate routine work. On the other side, an attacker uses it to write believable phishing emails, find bugs faster and dodge detection. When both sides hold the same tools, who tends to have the edge?",
     "answer": "Whoever automates first and at scale — typically well-resourced attackers (nation-states, sophisticated criminal groups), until defenders catch up",
     "choices": [
       "Whoever automates first and at scale — typically well-resourced attackers (nation-states, sophisticated criminal groups), until defenders catch up",
@@ -13209,7 +12949,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 2024 U.S. election, both major parties named AI as a campaign issue. Democrats stressed 'guardrails' and 'safety testing.' Republicans stressed 'unleashing innovation' and cutting barriers. What did both parties agree on under the surface?",
+    "question": "A Democrat on the 2024 campaign trail stressed 'guardrails' and 'safety testing' under Executive Order 14110, while a Republican stressed 'unleashing innovation' and cutting barriers. AI had become a campaign issue for both major parties. What did both agree on under the surface?",
     "answer": "Both treated AI as a transformative technology requiring active federal engagement — they disagreed on the kind of engagement, not whether",
     "choices": [
       "Both treated AI as a transformative technology requiring active federal engagement — they disagreed on the kind of engagement, not whether",
@@ -13222,7 +12962,7 @@
   },
   {
     "tier": 4,
-    "question": "When an AI system causes harm — a wrongful loan denial, a misdiagnosis, an autonomous-vehicle crash — who's legally liable? Existing tort law was written for human actors. As of 2025, who actually bears liability when an AI deployed by one company harms a user?",
+    "question": "A judge hears a suit over harm from an AI: a wrongful loan denial, a misdiagnosis or an autonomous-vehicle crash. The tort law she applies was written for human actors. As of 2025, who actually bears liability when an AI deployed by one company harms a user?",
     "answer": "It varies by jurisdiction — courts are extending product-liability, professional-malpractice, or finding no liability at all, and the rules are still being worked out",
     "choices": [
       "It varies by jurisdiction — courts are extending product-liability, professional-malpractice, or finding no liability at all, and the rules are still being worked out",
@@ -13261,7 +13001,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2025, AI had spread far beyond chatbots — into product design, hiring, government surveillance, advertising, medicine, and daily communication. Some people ended up with new powers they did not have before; others did not. Look at AI simply as power infrastructure, the way electricity or roads are. Compared to 2020, who concretely has more capability now? Frame the answer in plain terms.",
+    "question": "A historian sits down in 2025 to treat AI simply as power infrastructure, the way one treats electricity or roads. It has spread far beyond chatbots into product design, hiring, government surveillance, advertising, medicine and daily communication. Compared to 2020, who concretely has more capability now?",
     "answer": "Large platforms, intelligence agencies, big employers, and advertisers gained the most; ordinary users gained less in comparison",
     "choices": [
       "Large platforms, intelligence agencies, big employers, and advertisers gained the most; ordinary users gained less in comparison",
@@ -13404,7 +13144,7 @@
   },
   {
     "tier": 5,
-    "question": "When you type 'capital of France' into Google, it looks up the answer from a database. When you type the same thing into ChatGPT, the model produces 'Paris' through a completely different process. The two systems can give the same answer for very different reasons. Why does the distinction matter for how you use each one?",
+    "question": "Suppose you type 'capital of France' into Google and then into ChatGPT, and both give you 'Paris.' Google looks the answer up from a database; ChatGPT produces it through a completely different process. The two systems give the same answer for very different reasons. Why does the distinction matter for how you use each one?",
     "answer": "Search returns where the information came from; LLMs return text whose source you cannot inspect — so 'who said this' is a question only search can answer",
     "choices": [
       "Search returns where the information came from; LLMs return text whose source you cannot inspect — so 'who said this' is a question only search can answer",
@@ -13533,8 +13273,8 @@
     "topic": "tokens-and-context-window"
   },
   {
-    "tier": 5,
-    "question": "AI research has gone through two well-documented 'winters' — funding collapses lasting years. The first followed the 1973 Lighthill Report; the second followed the late-1980s collapse of the expert-systems boom. Both winters had the same underlying cause. What was it?",
+    "tier": 4,
+    "question": "A program manager at the US Defense Advanced Research Projects Agency cut his AI budget in the mid-1970s, as British funders did after the Lighthill Report of 1973. A second collapse lasting years came in the late 1980s, when a commercial AI boom went bust. Both collapses had the same underlying cause. What was it?",
     "answer": "Repeated cycles of overpromising — researchers and companies committed to capabilities they couldn't deliver, and when the gap was discovered, funding evaporated",
     "choices": [
       "Repeated cycles of overpromising — researchers and companies committed to capabilities they couldn't deliver, and when the gap was discovered, funding evaporated",
@@ -13547,7 +13287,7 @@
   },
   {
     "tier": 5,
-    "question": "British mathematician Sir James Lighthill's 1973 report to the UK Science Research Council assessed AI research and concluded it had failed to deliver on its promises. UK AI funding was sharply cut afterward. The report is often cited as triggering the first AI winter. What was Lighthill's specific critique?",
+    "question": "Sir James Lighthill took aim at AI research in his 1973 report to the UK Science Research Council, and UK AI funding was sharply cut afterward. The report is often cited as the trigger of the field's first great funding collapse. What was his specific critique?",
     "answer": "AI methods that worked on simplified toy problems failed to scale to real-world complexity — the 'combinatorial explosion' made search-based approaches intractable",
     "choices": [
       "AI methods that worked on simplified toy problems failed to scale to real-world complexity — the 'combinatorial explosion' made search-based approaches intractable",
@@ -13755,7 +13495,7 @@
   },
   {
     "tier": 5,
-    "question": "Researchers have called the period from late 2022 through 2024 an 'AI summer' — a sustained boom in funding, capability, and public attention. The two previous AI 'winters' (1970s and late 1980s) collapsed when expectations outran delivery. What distinguishes the current summer from those earlier ones?",
+    "question": "An investor studies the boom that began in late 2022, which researchers call an 'AI summer': a sustained rise in funding, capability and public attention. She knows that two earlier booms ended in collapse, in the 1970s and the late 1980s. What distinguishes this summer from the earlier ones?",
     "answer": "Generative AI products — ChatGPT, Claude, image generation, code assistance — reached hundreds of millions of users and produced measurable revenue, unlike prior cycles built on demos",
     "choices": [
       "Generative AI products — ChatGPT, Claude, image generation, code assistance — reached hundreds of millions of users and produced measurable revenue, unlike prior cycles built on demos",
@@ -13781,7 +13521,7 @@
   },
   {
     "tier": 5,
-    "question": "In November 2021 Alphabet spun a company out of DeepMind called Isomorphic Labs, run by Demis Hassabis, to turn AlphaFold-style biology into new medicines. While the AlphaFold database stayed free to everyone, Isomorphic set out to make money from drug discovery. What did it sign in January 2024?",
+    "question": "Alphabet's executives spun Isomorphic Labs out of DeepMind in November 2021, with Demis Hassabis running it, to turn AlphaFold-style biology into new medicines. The AlphaFold database stayed free to everyone, while Isomorphic set out to make money from drug discovery. What did it sign in January 2024?",
     "answer": "Deals with the drug makers Eli Lilly and Novartis worth up to about $3 billion",
     "choices": [
       "Deals with the drug makers Eli Lilly and Novartis worth up to about $3 billion",
@@ -13791,19 +13531,6 @@
     ],
     "context": "Isomorphic's first partnerships brought about $83 million up front, with up to about $2.9 billion more if milestones are met. The open database and the commercial spin-off sit side by side: the science is shared, and the drugs, if they come, will be sold.",
     "topic": "alphafold-protein-folding"
-  },
-  {
-    "tier": 5,
-    "question": "Andrej Karpathy has a Stanford PhD, helped found OpenAI, and led Tesla's AI team. In the 2020s he became known for teaching, like his 'Neural Networks: Zero to Hero' video series. The videos build LLMs in code from scratch. Why has his teaching mattered for AI literacy?",
-    "answer": "He makes the internals of LLMs concrete and learnable — anyone willing to spend the time can follow along and understand what's happening inside the systems people use",
-    "choices": [
-      "He makes the internals of LLMs concrete and learnable — anyone willing to spend the time can follow along and understand what's happening inside the systems people use",
-      "He sells expensive online certifications — these grant the only legal authority to operate any AI system across the entire United States since 2024",
-      "He runs the official AI curriculum — the US Department of Education has mandated it for all American high schools since the 2023 school year started",
-      "He is the only person in the world who understands how LLMs work — he refuses to share his knowledge with anyone else outside his private circle"
-    ],
-    "context": "Karpathy's lectures (and Twitter / X writeups) demystify what's often presented as inscrutable black-box magic. The 'Zero to Hero' series builds a small LLM from scratch, in Python, with the math visible. The accessibility shifts AI from 'something only insiders understand' to 'something curious learners can grasp.' The broader recognition skill: when a field's experts make their work learnable, that's a sign of intellectual health. When experts shroud their work in mystification, ask why — sometimes the mystification serves rent-extraction more than understanding.",
-    "topic": "andrej-karpathy"
   },
   {
     "tier": 5,
@@ -13898,7 +13625,7 @@
   },
   {
     "tier": 5,
-    "question": "In May 2024 Google DeepMind and its drug-discovery sister company, Isomorphic Labs, unveiled AlphaFold 3, which predicts how proteins fit together with DNA, RNA and small drug-like molecules. Unlike AlphaFold 2, it was first offered only through a web server, with no code, and many scientists complained. What happened in November 2024?",
+    "question": "Many scientists complained when Google DeepMind and its drug-discovery sister company, Isomorphic Labs, unveiled AlphaFold 3 in May 2024. The system, which predicts how a protein fits together with DNA, RNA and small drug-like molecules, was first offered only through a web server, with no code, unlike AlphaFold 2. What happened in November 2024?",
     "answer": "The code was released, with the trained model available to academic researchers on request",
     "choices": [
       "The code was released, with the trained model available to academic researchers on request",
@@ -14002,7 +13729,7 @@
   },
   {
     "tier": 5,
-    "question": "The London AI lab DeepMind, owned by Google, made a big splash in 2020 and 2021 when its model AlphaFold predicted the 3D shapes of proteins — a problem biologists had struggled with for fifty years. By 2024 and 2025, AI's reach in real science had spread far past proteins into other fields entirely. Which is a real example of AI speeding up a science field that isn't proteins?",
+    "question": "A science reporter who covered AlphaFold and its protein shapes goes looking for her next story in 2025. AI's reach in real science has spread far past proteins into other fields entirely. Which is a real example of AI speeding up a science field that isn't proteins?",
     "answer": "Materials science — Google DeepMind's GNoME proposed 2.2 million new crystal structures in 2023, with 380,000 predicted stable.",
     "choices": [
       "Materials science — Google DeepMind's GNoME proposed 2.2 million new crystal structures in 2023, with 380,000 predicted stable.",
@@ -14054,7 +13781,7 @@
   },
   {
     "tier": 5,
-    "question": "AlphaFold's open release was unusual for a major commercial AI lab. DeepMind (owned by Google) released the model weights and a vast database of predicted structures free to academic researchers worldwide. Why was the openness itself part of the story?",
+    "question": "DeepMind's scientists, at a lab owned by Google, released AlphaFold's model weights and a vast database of predicted structures free to academic researchers worldwide, an unusual step for a major commercial AI lab. Why was the openness itself part of the story?",
     "answer": "It accelerated downstream research broadly — labs that could never have afforded crystallography or licensing now had the structures available immediately.",
     "choices": [
       "It was required by US law in 2021 — every AI lab had to release any biological model trained on government grants for free public use.",
@@ -14080,7 +13807,7 @@
   },
   {
     "tier": 5,
-    "question": "AlphaFold's success leaned on a big dataset from the Protein Data Bank (PDB). Since the 1970s, the PDB had gathered over 200,000 protein structures from lab work, all free to use. Why does this dataset matter for what AlphaFold's breakthrough really was?",
+    "question": "DeepMind's engineers trained AlphaFold on a big dataset from the Protein Data Bank, which had gathered over 200,000 protein structures from lab work since the 1970s, all free to use. Why does this dataset matter for what AlphaFold's breakthrough really was?",
     "answer": "The training data came from decades of public, government-funded crystallography work — AlphaFold built on a half-century of scientific commons.",
     "choices": [
       "The training data came from decades of public, government-funded crystallography work — AlphaFold built on a half-century of scientific commons.",
@@ -14170,8 +13897,8 @@
     "topic": "election-deepfakes"
   },
   {
-    "tier": 5,
-    "question": "By 2023, image AI models like Stable Diffusion and Midjourney could generate photorealistic children on demand. This drew urgent legal attention because bad actors used them to produce AI-generated child sexual abuse material — CSAM (Child Sexual Abuse Material). The images depicted no real child, which raised a hard legal question no country had answered clearly. Congress, state legislators, and the model providers all had to react. What was the legal response by 2024-2025?",
+    "tier": 4,
+    "question": "A state legislator faced a hard question in 2023. Bad actors were using image models to produce child sexual abuse material (CSAM), and the pictures showed no real child, a problem no country had answered clearly. What was the legal response by 2024 and 2025?",
     "answer": "Federal and state laws were updated to treat AI-generated CSAM as criminal regardless of whether a real child was depicted; major model providers added strict content filters.",
     "choices": [
       "Federal and state laws were updated to treat AI-generated CSAM as criminal regardless of whether a real child was depicted; major model providers added strict content filters.",
@@ -14223,7 +13950,7 @@
   },
   {
     "tier": 5,
-    "question": "Phishing is a scam where a fake email — pretending to be from your bank, your boss, or a delivery service — tricks you into giving up a password or clicking a poisoned link. For years, ordinary people spotted phishing by the terrible spelling and grammar in the fake email. Then between 2023 and 2025, scammers started using Large Language Models (LLMs) — the AI behind ChatGPT — to write their bait for them. What did LLMs actually change about the phishing threat?",
+    "question": "A con man opens a Large Language Model (LLM), the AI behind ChatGPT, and has it write his bait: a fake email from a delivery service, a bank or a boss, built to trick someone into giving up a password or clicking a poisoned link. For years ordinary people had one easy way to catch such bait. What did LLMs actually change about the phishing threat?",
     "answer": "LLMs eliminated the spelling and grammar tells that used to flag phishing emails, and made personalized scams affordable at huge scale.",
     "choices": [
       "LLMs eliminated the spelling and grammar tells that used to flag phishing emails, and made personalized scams affordable at huge scale.",
@@ -14236,7 +13963,7 @@
   },
   {
     "tier": 5,
-    "question": "Through 2024 and 2025, online scammers began combining tools that used to sit separately. They scraped a target's social media posts, built an AI personality profile from the words the target used, and then had a language model write personalized outreach — a message that named the target's dog, referenced a recent trip, and mentioned a real coworker by name. The old junk-mail scam of 'Dear Sir/Madam' was gone. What made this new style harder to defend against than mass-spam scams?",
+    "question": "A woman opens a message that asks after her dog by name and mentions a coworker of hers. A scammer has scraped her social media posts, built an AI personality profile from her words and had a language model write it. The old junk mail opened 'Dear Sir/Madam.' What made this style harder to defend against than mass spam?",
     "answer": "The scams referenced real people, real events, and real concerns in the target's life — defeating the 'this doesn't sound right' instinct.",
     "choices": [
       "The scams referenced real people, real events, and real concerns in the target's life — defeating the 'this doesn't sound right' instinct.",
@@ -14431,20 +14158,7 @@
   },
   {
     "tier": 5,
-    "question": "Through 2023, 2024, and 2025, browser extensions offering AI features spread quickly across Chrome, Firefox, and Edge — summarize-this-page buttons, translate-on-hover tools, AI shopping assistants, coding helpers. Users installed them the way they had installed ad blockers a decade earlier, clicking through the permission screen without reading. But an AI browser extension is not the same thing as an ad blocker — it has to send page content somewhere to be analyzed. What specific privacy risk did most users fail to consider?",
-    "answer": "An AI browser extension can read every page you visit — including banking, medical, and private accounts — and forward content to its servers.",
-    "choices": [
-      "An AI browser extension can read every page you visit — including banking, medical, and private accounts — and forward content to its servers.",
-      "An AI browser extension can change the color of every webpage you visit — a serious aesthetic violation under modern browser standards.",
-      "An AI browser extension uses up your internet bandwidth so fast — you can never use any other website while it is installed in your browser.",
-      "An AI browser extension prevents you from visiting any website that does not use AI itself — locking you out of most of the wider web."
-    ],
-    "context": "Browser extensions request permissions when installed — and many AI extensions ask for 'read and change all your data on all websites' to function. That permission gives the extension access to every page you visit, including authenticated banking, email, healthcare portals, internal company sites. Extensions can send page content to their servers, where it's processed. Some extensions sold or leaked user data; some were taken over by new owners with worse practices. The defensive recognition: extension permissions are the right place to look, not marketing copy. For sensitive browsing, either don't use a broad-access AI extension or use separate browser profiles. The same trade-off plays out elsewhere: convenience pays a privacy cost, often one you don't see at install time.",
-    "topic": "browser-extensions"
-  },
-  {
-    "tier": 5,
-    "question": "'Pig butchering' is a scam whose name comes from the Chinese phrase sha zhu pan — the scammer slowly 'fattens the pig' by building a warm relationship (a fake romance, a fake business friendship) with a target across many months, then drains the victim's bank account through phony crypto investments. Real people ran these scams for years out of scam compounds in Cambodia and Myanmar. When cheap AI tools became widely available around 2023, pig butchering exploded in scale. What specific role did AI play in scaling the scams up?",
+    "question": "A scammer in a compound in Cambodia or Myanmar spent months building a fake romance with one target, then drained her bank account through phony crypto investments. People like him ran this 'pig butchering' scam, from the Chinese sha zhu pan, for years. Cheap AI tools became widely available around 2023, and it exploded in scale. What specific role did AI play?",
     "answer": "LLMs handled the prolonged, personalized conversations across many targets at once, while voice and video AI made the cultivated persona feel real over weeks.",
     "choices": [
       "LLMs handled the prolonged, personalized conversations across many targets at once, while voice and video AI made the cultivated persona feel real over weeks.",
@@ -14535,7 +14249,7 @@
   },
   {
     "tier": 5,
-    "question": "By 2024, cheap AI tools could generate a whole fake person: a plausible profile picture, a smart-sounding bio, even a year of realistic background posts to fill out a history. Fake accounts of this shape spread across dating apps like Tinder and Bumble, social sites like Twitter/X and Facebook, and pro networks like LinkedIn. They ran romance scams, pushed political propaganda, or just farmed engagement for money. What is the safe habit for a user who runs into these profiles?",
+    "question": "Suppose you match with someone on a dating app whose profile shows a plausible picture, a smart-sounding bio and a year of realistic background posts. Cheap AI tools can generate all of it, a whole fake person, and such accounts run romance scams, push propaganda or farm engagement for money across dating apps, social sites and LinkedIn. What is the safe habit?",
     "answer": "Assume any single signal can be faked; verify through independent channels (video calls, mutual contacts, real-world meetings) before trust escalates.",
     "choices": [
       "Assume any single signal can be faked; verify through independent channels (video calls, mutual contacts, real-world meetings) before trust escalates.",
@@ -14547,21 +14261,8 @@
     "topic": "ai-slop-and-publishing"
   },
   {
-    "tier": 5,
-    "question": "California's Senate Bill 1047 in 2024 would have required safety testing for the biggest AI models before release. Governor Newsom vetoed the bill. Anthropic supported it, while Meta, Andreessen Horowitz, and the open-source community opposed it. When incumbents back a rule and challengers oppose it, what signal does that show?",
-    "answer": "Regulatory capture — the rule entrenches incumbents and raises a barrier to challengers",
-    "choices": [
-      "Regulatory capture — the rule entrenches incumbents and raises a barrier to challengers",
-      "Antitrust enforcement — the smaller firms requested the regulation to limit larger ones",
-      "Voluntary self-restraint — incumbents accept a competitive cost to improve safety",
-      "Constitutional preemption — the rule blocks future state action by federal design"
-    ],
-    "context": "Regulatory capture is a long-documented pattern across industries: established firms can absorb new compliance costs; smaller and open-source competitors cannot. The result is that 'safety regulation' often entrenches the largest players. SB 1047 was opposed not just by industry lobbyists but by AI researchers (Andrew Ng, Yann LeCun, Fei-Fei Li), Stanford's HAI center, the open-source AI community, and startups — many of whom believed safety mattered, but argued the bill's specific structure would freeze the field at its current incumbents. Newsom's veto message echoed many of these concerns. The recognition skill: when large companies in an industry endorse 'safety' regulation, ask who can afford the compliance bill and who can't.",
-    "topic": "ai-regulation"
-  },
-  {
-    "tier": 5,
-    "question": "California's Senate Bill (SB) 1047, debated through 2024, tried to regulate the most powerful AI models. It defined 'covered models' by training compute — any model trained using more than 10^26 floating-point operations, a threshold the biggest frontier labs were then approaching. Supporters said the number captured the frontier cleanly. Critics, including AI researchers who agreed the technology needed some oversight, argued that any compute threshold has a structural problem regardless of where the line is drawn. What's the problem?",
+    "tier": 4,
+    "question": "The authors of California's Senate Bill 1047 drew their line for 'covered models' at training compute: more than 10^26 floating-point operations, a threshold the biggest frontier labs were then approaching. Supporters said the number captured the frontier cleanly. Critics, including AI researchers who agreed the technology needed some oversight, argued that any compute threshold has a structural problem, wherever the line is drawn. What is that problem?",
     "answer": "Compute thresholds freeze the field at the moment of writing — they punish efficiency improvements that let smaller actors hit the same capability with less compute",
     "choices": [
       "Compute thresholds freeze the field at the moment of writing — they punish efficiency improvements that let smaller actors hit the same capability with less compute",
@@ -14571,45 +14272,6 @@
     ],
     "context": "Compute-threshold regulation tries to define 'large model' by training cost. But algorithmic and hardware efficiency improves over time: a smaller actor in 2027 may reach 2024-era capability with a tenth of the compute. The threshold then either lets the smaller actor escape oversight (defeating the purpose) or has to be lowered (catching ever-smaller actors). Either way, a fixed compute line is a snapshot, not a stable definition. The deeper recognition skill: regulatory thresholds defined by today's costs tend to favor today's incumbents — they get grandfathered or have already paid the compliance cost, while challengers face a moving target.",
     "topic": "ai-regulation"
-  },
-  {
-    "tier": 5,
-    "question": "The EU AI Act, finalized in 2024, sorts AI systems into four risk tiers with different compliance obligations for each category. Big AI firms mostly supported the framework. Small European startups and open-source advocates often opposed it. What recurring pattern shows up here?",
-    "answer": "The same regulatory-capture dynamic — tiered compliance costs scale to incumbents' lawyers, not to startups' headcount",
-    "choices": [
-      "The same regulatory-capture dynamic — tiered compliance costs scale to incumbents' lawyers, not to startups' headcount",
-      "European exceptionalism — EU regulation has historically been embraced by both small and large firms equally",
-      "Antitrust mismatch — small firms wanted heavier regulation to break up the larger AI companies first",
-      "Constitutional ambiguity — the EU has no clear authority to regulate cross-border AI services at all"
-    ],
-    "context": "The EU AI Act's tiered structure means high-risk AI requires conformity assessments, documentation, risk management systems, and ongoing monitoring. Large companies — OpenAI, Microsoft, Google — have compliance departments. A four-person French AI startup does not. Mistral AI's founders publicly criticized the Act's structure as protecting US incumbents at European startups' expense. The general lesson: 'risk-based regulation' sounds calibrated, but the calibration is often calibrated to whichever firms helped write it. Recognition skill: read whose lobbyists were in the room.",
-    "topic": "ai-regulation"
-  },
-  {
-    "tier": 5,
-    "question": "In the 2024 US election, both major parties made AI a campaign issue. Democrats pushed 'guardrails' and 'safety testing' under Executive Order 14110. Republicans pushed 'unleashing innovation' and cut prior rules. What do both sides quietly agree on?",
-    "answer": "That AI is a transformative technology requiring active federal involvement — they disagree on the kind of involvement, not whether",
-    "choices": [
-      "That AI is a transformative technology requiring active federal involvement — they disagree on the kind of involvement, not whether",
-      "That AI is an unimportant technology — both parties privately believed it was overhyped media talk",
-      "That AI should be regulated only at the state level — both parties favored zero federal involvement",
-      "That AI should be banned entirely — both parties campaigned on prohibition of consumer AI tools"
-    ],
-    "context": "The 'less regulation vs more regulation' debate often hides a shared premise. Both parties in 2024 treated AI as something the federal government must engage with — they just disagreed on how. A third position — 'this is mostly a normal technology that ordinary law (contract, tort, consumer protection) can handle' — got less airtime because it was less useful to either side's narrative. Recognition skill: when apparent opposites share a hidden assumption, the real argument is happening between them and the position they've both excluded from the room.",
-    "topic": "ai-regulation"
-  },
-  {
-    "tier": 5,
-    "question": "By 2024, a few firms led frontier AI: OpenAI, Anthropic, Google, Meta, and Microsoft. Microsoft's 49% stake in OpenAI raised antitrust concerns, and the Federal Trade Commission (FTC) opened inquiries. What has to be true before antitrust actually moves against a dominant firm?",
-    "answer": "Antitrust typically arrives late — after the dominant position is established — and even then the process takes years to produce remedies",
-    "choices": [
-      "Antitrust typically arrives late — after the dominant position is established — and even then the process takes years to produce remedies",
-      "Antitrust is instantaneous — the FTC dissolves dominant firms within weeks of opening an inquiry",
-      "Antitrust never applies to tech — federal law explicitly exempts software firms from competition rules",
-      "Antitrust always favors incumbents — the FTC has not won a case against a tech firm since 1980"
-    ],
-    "context": "The Microsoft antitrust case opened in 1998 and produced a settlement in 2001; the company remained dominant for years after. Google's antitrust cases (search, ad-tech) opened in 2020 and produced rulings only in 2024-2025. The pattern: dominance is established during the 'permissionless' phase, and enforcement only catches up after the network effects have locked in. Recognition skill: by the time antitrust is actually moving against an industry, the market structure that's being challenged is usually already entrenched.",
-    "topic": "ai-power-concentration"
   },
   {
     "tier": 5,
@@ -14626,7 +14288,7 @@
   },
   {
     "tier": 5,
-    "question": "Palantir builds the data platform Immigration and Customs Enforcement (ICE) uses to track and arrest immigrants. Case files, location data, and social media all get stitched together for field agents. The contracts pay Palantir hundreds of millions a year. If the American Civil Liberties Union (ACLU) asks Palantir to stop selling the software because of raids on schools and churches, what is Palantir likely to do, and why?",
+    "question": "An Immigration and Customs Enforcement field agent opens Palantir's data platform, where case files, location data and social media are stitched together to track and arrest immigrants. The contracts pay Palantir hundreds of millions a year. Suppose the American Civil Liberties Union asks it to stop selling the software because of raids on schools and churches. What is Palantir likely to do, and why?",
     "answer": "Stay in the contract — when government revenue is large enough to matter to the company, the incentive to refuse a customer request is weak, even when the customer is doing something the company's engineers personally object to",
     "choices": [
       "Stay in the contract — when government revenue is large enough to matter to the company, the incentive to refuse a customer request is weak, even when the customer is doing something the company's engineers personally object to",
@@ -14795,7 +14457,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2024, +972 Magazine and the Guardian reported on two AI targeting tools the Israeli military used in Gaza. 'Lavender' picked out suspected Hamas fighters from huge data sets. 'The Gospel' picked buildings to hit. Israeli sources said a human review of each Lavender name took only about how long?",
+    "question": "Reporters at +972 Magazine and the Guardian wrote in 2024 about two AI targeting tools the Israeli military used in Gaza. 'Lavender' picked out suspected Hamas fighters from huge data sets, and 'The Gospel' picked buildings to hit. Israel's government disputed parts of the reporting. By the account of the reporters' Israeli sources, how long did a human review of each Lavender name take?",
     "answer": "About 20 seconds — fast enough that the human-in-the-loop functioned as a formality rather than a meaningful check on the algorithm",
     "choices": [
       "About 20 seconds — fast enough that the human-in-the-loop functioned as a formality rather than a meaningful check on the algorithm",
@@ -14808,7 +14470,7 @@
   },
   {
     "tier": 5,
-    "question": "The war in Ukraine since 2022 has been called the first 'drone war' at scale. Both sides field large numbers of small drones with progressively autonomous targeting features. Some first-person-view (FPV) drones now lock onto and pursue targets even after the operator's signal is jammed. What's the name of the long-running UN forum where 'Lethal Autonomous Weapons Systems' have been debated for over a decade without producing binding restrictions?",
+    "question": "A drone operator in Ukraine loses his link to jamming, and reporting from the war describes what can happen next: his small first-person-view drone locks onto its target and finishes the attack alone. Both sides field large numbers of small drones like it. Where have diplomats debated 'Lethal Autonomous Weapons Systems' for over a decade?",
     "answer": "The UN's Convention on Certain Conventional Weapons (CCW) — major military powers have generally opposed broad bans, and no binding rule has emerged",
     "choices": [
       "The UN's Convention on Certain Conventional Weapons (CCW) — major military powers have generally opposed broad bans, and no binding rule has emerged",
@@ -15041,8 +14703,8 @@
     "topic": "dark-patterns-gambling"
   },
   {
-    "tier": 5,
-    "question": "Banks and lenders increasingly use machine-learning models to make credit decisions. The Equal Credit Opportunity Act bans discrimination on the basis of race, sex, and religion. Yet studies show AI lending models can produce 'disparate impact' on protected groups even when those variables are excluded from training. How does that happen?",
+    "tier": 4,
+    "question": "A bank's engineers strip race, sex and religion out of a lending model's inputs, the very grounds the Equal Credit Opportunity Act protects. Studies show such models can still produce what fair-lending law calls 'disparate impact': different acceptance rates across groups. How does that happen?",
     "answer": "Models can learn proxy variables — ZIP code, name patterns, shopping history, even browsing time of day — that correlate with protected characteristics, reproducing discrimination through ostensibly neutral data",
     "choices": [
       "Models can learn proxy variables — ZIP code, name patterns, shopping history, even browsing time of day — that correlate with protected characteristics, reproducing discrimination through ostensibly neutral data",
@@ -15055,7 +14717,7 @@
   },
   {
     "tier": 5,
-    "question": "Health, life, and auto insurance pricing now uses AI models with hundreds of inputs — credit score, some social-media pilots, buying history, car sensor data, and location. The pricing is often hard for buyers to read. Which two states have started to require bias audits of the algorithms that set insurance premiums?",
+    "question": "A buyer struggles to read a premium set by an AI model with hundreds of inputs, from credit score and location to buying history, car sensor data and, in some pilots, social media. Which two states have started to require bias audits of the algorithms that set insurance premiums?",
     "answer": "Colorado and Connecticut — both have begun requiring algorithmic-bias testing in insurance pricing, while most other states have not",
     "choices": [
       "Colorado and Connecticut — both have begun requiring algorithmic-bias testing in insurance pricing, while most other states have not",
@@ -15068,7 +14730,7 @@
   },
   {
     "tier": 5,
-    "question": "Resume-screening and video-interview AI like HireVue spread in the late 2010s and 2020s. Audit studies and American Civil Liberties Union (ACLU) complaints showed these tools could copy bias from their training data. Amazon's famous resume-screening model was dropped after engineers found it kept downgrading resumes with what kind of word?",
+    "question": "Engineers at Amazon looked into the company's resume-screening model and found it marking down resumes over one kind of word, and Amazon dropped the tool in 2018. Audit studies and American Civil Liberties Union complaints showed that tools like it could copy old bias. What kind of word was it?",
     "answer": "Words like 'women's' (as in 'women's chess club captain') — the model had learned from historical hiring data dominated by male engineers and downgraded female-coded resumes",
     "choices": [
       "Words like 'women's' (as in 'women's chess club captain') — the model had learned from historical hiring data dominated by male engineers and downgraded female-coded resumes",
@@ -15159,7 +14821,7 @@
   },
   {
     "tier": 5,
-    "question": "France held the AI Action Summit in February 2025, after the UK's Bletchley Summit (November 2023) and Korea's Seoul Summit (May 2024). The French summit shifted tone — leaning on 'innovation' and economic strength more than the doom framing of the earlier summits. Which two governments would not sign the French summit's main statement?",
+    "question": "Delegates gathered in Paris in February 2025 for France's AI Action Summit, which followed the Bletchley Summit of November 2023 and Korea's Seoul Summit of May 2024. The tone had shifted, leaning on 'innovation' and economic strength more than the doom framing of the earlier summits. Which two governments would not sign the main statement?",
     "answer": "The United States and the United Kingdom — both declined to sign, and US Vice President JD Vance gave a speech rejecting heavy regulation",
     "choices": [
       "The United States and the United Kingdom — both declined to sign, and US Vice President JD Vance gave a speech rejecting heavy regulation",
@@ -15172,7 +14834,7 @@
   },
   {
     "tier": 5,
-    "question": "Most proposed AI regulation puts heavier requirements on 'foundation models' or 'frontier models.' Those categories catch the biggest publicly released systems. Open-source models like Llama and Mistral and closed models like GPT-4 and Claude often fall under the same rules. Critics argue this treatment hits the two categories asymmetrically. How?",
+    "question": "A lawmaker's aide drafts heavier requirements for 'foundation models,' as most proposed AI regulation does, and the wording catches open-source models like Llama and Mistral along with closed models like GPT-4 and Claude. Critics argue that the one rule hits the two kinds of model asymmetrically. How?",
     "answer": "Open-source models can be downloaded and run by anyone — once released, compliance obligations on the publisher don't prevent further distribution, while closed-API models stay gatekeepable",
     "choices": [
       "Open-source models can be downloaded and run by anyone — once released, compliance obligations on the publisher don't prevent further distribution, while closed-API models stay gatekeepable",
@@ -15185,7 +14847,7 @@
   },
   {
     "tier": 5,
-    "question": "AI policy in the 2020s was shaped by a small group: top AI company bosses, Effective Altruism funders and nonprofits, a few academic centers, some federal agencies, and a narrow slice of Congress. The rules affect everyone using AI. What is the structural question worth naming?",
+    "question": "A citizen who sets out to learn who shaped AI policy in the 2020s finds a short list: top AI company bosses, Effective Altruism funders and nonprofits, a few academic centers, some federal agencies and a narrow slice of Congress. The rules affect everyone using AI. What is the structural question worth naming?",
     "answer": "When highly consequential rules are made by a small expert circle, the democratic question is whether their decisions track the public's interests or the circle's own — and there's no automatic mechanism that guarantees the former",
     "choices": [
       "When highly consequential rules are made by a small expert circle, the democratic question is whether their decisions track the public's interests or the circle's own — and there's no automatic mechanism that guarantees the former",
@@ -15211,7 +14873,7 @@
   },
   {
     "tier": 5,
-    "question": "AI has gone through several 'Summers' (1956-1974, 1980-1987, late-1990s, 2010s-present) and 'Winters' (1974-1980, 1987-1993). Each Summer features confident predictions; each Winter features funding pullbacks. What specific 1970 prediction did Marvin Minsky make about human-level AI, and how did it land?",
+    "question": "Marvin Minsky gave a forecast for human-level AI in 1970, deep in a boom of confident predictions that ran from 1956 to 1974. A funding pullback followed. Booms like it came again in the 1980s and the 2010s, each with its own forecasts. What did he predict, and how did it land?",
     "answer": "Minsky predicted human-level AI within 'three to eight years' in 1970; the prediction did not land, and the 1973 Lighthill Report ended UK AI funding for a decade",
     "choices": [
       "Minsky predicted human-level AI within 'three to eight years' in 1970; the prediction did not land, and the 1973 Lighthill Report ended UK AI funding for a decade",
@@ -15237,7 +14899,7 @@
   },
   {
     "tier": 5,
-    "question": "The White House Office of Science and Technology Policy published the 'Blueprint for an AI Bill of Rights' in October 2022. It listed five principles: safe systems, protection from algorithmic bias, data privacy, notice, and a human alternative. Two years later, the document's status had not changed. What is worth noticing about that pattern?",
+    "question": "Staff at the White House Office of Science and Technology Policy put out an 'AI Bill of Rights' blueprint in October 2022. It listed five principles: safe systems, protection from algorithmic bias, data privacy, notice and a human alternative. Two years later the document's status had not changed. What is worth noticing about that document?",
     "answer": "A document framed in the language of constitutional rights but issued as non-binding guidance is rhetoric, not law — the framing borrows moral weight from the actual Bill of Rights without granting any enforceable protection",
     "choices": [
       "A document framed in the language of constitutional rights but issued as non-binding guidance is rhetoric, not law — the framing borrows moral weight from the actual Bill of Rights without granting any enforceable protection",
@@ -15250,7 +14912,7 @@
   },
   {
     "tier": 5,
-    "question": "Two basic ways to regulate AI have emerged. The EU AI Act is 'horizontal' — it sets AI risk levels and applies rules across every sector. The US has drifted 'sectoral' — the Food and Drug Administration (FDA) covers medical AI, the Securities and Exchange Commission (SEC) covers finance AI, and civil-rights laws cover hiring AI. What is one clear plus and one clear minus of the sectoral way?",
+    "question": "A startup founder maps the two basic ways of regulating AI. The EU AI Act is 'horizontal,' setting risk levels and applying rules across every sector. The US has drifted 'sectoral': the Food and Drug Administration covers medical AI, the Securities and Exchange Commission finance AI, and civil-rights laws hiring AI. What is one clear plus and one clear minus of the sectoral way?",
     "answer": "Advantage: regulators already know their industry (FDA on medical devices, SEC on markets); disadvantage: produces inconsistencies and gaps where AI cuts across sectors",
     "choices": [
       "Advantage: regulators already know their industry (FDA on medical devices, SEC on markets); disadvantage: produces inconsistencies and gaps where AI cuts across sectors",
@@ -15263,7 +14925,7 @@
   },
   {
     "tier": 5,
-    "question": "In October 2024, the Biden White House put out a National Security Memorandum on AI (NSM-25). It told US intelligence and defense agencies to adopt AI while keeping safeguards. After the January 2025 change in administrations, the memo's status was unclear. What pattern does this show?",
+    "question": "Joe Biden's White House put out a National Security Memorandum on AI in October 2024, telling US intelligence and defense agencies to adopt AI while keeping safeguards. Administrations changed in January 2025, and the memo's status became unclear. What pattern does this show?",
     "answer": "AI policy issued at the end of an administration has a particularly short half-life — the practical effect depends on what the successor administration retains, and the successor often makes substantial changes",
     "choices": [
       "AI policy issued at the end of an administration has a particularly short half-life — the practical effect depends on what the successor administration retains, and the successor often makes substantial changes",
@@ -15276,7 +14938,7 @@
   },
   {
     "tier": 5,
-    "question": "By the mid-2020s, US states had passed dozens of AI laws - Colorado's AI Act, Illinois bias-audit rules, California deepfake statutes, New York City Local Law 144, and Connecticut notice rules. The result was a patchwork that shifts sharply across state lines. Why does the patchwork keep growing rather than being replaced by a federal law?",
+    "question": "A software vendor selling across the United States counts dozens of state AI laws by the mid-2020s: Colorado's AI Act, Illinois bias-audit rules, California deepfake statutes, New York City's Local Law 144, Connecticut notice rules. The patchwork shifts sharply across state lines. Why does it keep growing?",
     "answer": "Congress has not passed comprehensive federal AI legislation — so preemption hasn't happened, and states are filling the vacuum at different speeds and with different priorities",
     "choices": [
       "Congress has not passed comprehensive federal AI legislation — so preemption hasn't happened, and states are filling the vacuum at different speeds and with different priorities",
@@ -15315,7 +14977,7 @@
   },
   {
     "tier": 5,
-    "question": "Through the 2020s, top AI policy and safety jobs in the US government were often filled by people coming from big AI firms, Effective Altruism funders, or AI think tanks. People moved back the other way too. What structural conflict does this revolving door create, even when everyone acts in good faith?",
+    "question": "A researcher leaves a big AI firm for a top policy job in the US government, a move often made through the 2020s by people from AI firms, Effective Altruism funders and AI think tanks. Others go back the other way. What structural conflict does this revolving door create?",
     "answer": "People who recently worked at a company, or expect to work there soon, naturally frame questions partly through that lens — bad faith isn't required for the conflict to shape proposals",
     "choices": [
       "People who recently worked at a company, or expect to work there soon, naturally frame questions partly through that lens — bad faith isn't required for the conflict to shape proposals",
@@ -15367,7 +15029,7 @@
   },
   {
     "tier": 5,
-    "question": "When AI companies like OpenAI, Google, and Anthropic get sued or investigated, they usually refuse to hand over their training data, model designs, safety tests, or red-team reports. They call it all a 'trade secret' — commercial information that courts protect from disclosure. They warn that sharing it would help competitors or help bad actors slip past safety filters. Sometimes courts agree. Sometimes they don't. When have US courts refused to protect AI source code as a trade secret?",
+    "question": "A lawyer suing an AI company like OpenAI or Google asks for its training data, model designs and safety tests, and the company refuses. It calls them all a 'trade secret,' commercial information that courts protect from disclosure, and warns that sharing them would help competitors or help bad actors slip past safety filters. When have US courts declined to protect AI source code this way?",
     "answer": "When source code was used in criminal sentencing — some courts have refused trade-secret protection where a defendant's liberty depended on a model's output",
     "choices": [
       "When source code was used in criminal sentencing — some courts have refused trade-secret protection where a defendant's liberty depended on a model's output",
@@ -15380,7 +15042,7 @@
   },
   {
     "tier": 5,
-    "question": "Most of the AI a kid uses today came out of military research grants. The Defense Advanced Research Projects Agency paid for ARPANET (which became the internet), the early Stanford AI Lab, computer-vision and natural-language work, and the PhD pipeline that trained today's top AI researchers. Who paid for the research?",
+    "question": "A kid opens a chatbot, never thinking about who paid for the research under it. The Defense Advanced Research Projects Agency, the Pentagon's research arm, funded ARPANET (which became the internet), the early Stanford AI Lab, computer-vision and natural-language work, and the PhD pipeline that trained today's top researchers. What does that show?",
     "answer": "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
     "choices": [
       "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
@@ -15393,7 +15055,7 @@
   },
   {
     "tier": 5,
-    "question": "From 2017 to 2018, Google worked with the Pentagon on 'Project Maven.' The project used AI to spot objects in military drone video. Google workers protested, so the company let the deal end. Which two defense-tech firms then picked up the Pentagon's AI-targeting work without the same kind of backlash?",
+    "question": "Thousands of Google employees signed a protest against Project Maven, the company's 2017 Pentagon deal to spot objects in military drone video with AI, and Google let the deal end. Which two firms then picked up the Pentagon's AI-targeting work without the same kind of backlash?",
     "answer": "Palantir and Anduril — both took up military computer-vision and targeting work after Google declined to renew, and both have grown substantially since",
     "choices": [
       "Palantir and Anduril — both took up military computer-vision and targeting work after Google declined to renew, and both have grown substantially since",
@@ -15406,7 +15068,7 @@
   },
   {
     "tier": 5,
-    "question": "Many countries are writing AI rules at the same time. Australia wants face-based age checks online. Canada has worked on an AI act since 2022. Brazil passed an AI bill in 2024. India has issued AI guidance too. For a company that sells AI in many countries, which rule really sets the floor for what it must follow?",
+    "question": "A compliance officer at a company selling AI worldwide lists the rules she must watch: Australia wants face-based age checks online, Canada has worked on an AI act since 2022, Brazil passed an AI bill in 2024, and India has issued AI guidance too. Which rule really sets the floor for what her company must follow?",
     "answer": "The strictest applicable rule in any market it serves — the service must comply with it, partition its offerings region by region, or withdraw from that market",
     "choices": [
       "The strictest applicable rule in any market it serves — the service must comply with it, partition its offerings region by region, or withdraw from that market",
