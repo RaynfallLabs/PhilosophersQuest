@@ -183,7 +183,7 @@ def test_nixon_shock_ladder_keys_no_web_address():
     game. It now asks what the famous 1971 chart shows."""
     qs, blurbs = _econ()
     rungs = [q for q in qs if q.get('topic') == _NIXON]
-    assert len(rungs) == 12
+    assert len(rungs) == 11  # one rung dropped as a cross twin (economics voice pass, b018)
     for q in rungs:
         assert not any(_DOMAIN.search(c) for c in q['choices']), q['choices']
         assert 'wtf' not in (q['question'] + q['context']).lower()
