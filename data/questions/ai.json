@@ -79,7 +79,7 @@
   },
   {
     "tier": 1,
-    "question": "You ask a chatbot to summarize a famous novel. It confidently describes a whole chapter — a scene, a character's speech, a plot twist — that isn't in the book at all. The chatbot made it up. It didn't lie on purpose; the model just filled in words that sounded plausible. What is a made-up fact from a chatbot usually called?",
+    "question": "A student asks a chatbot to summarize a famous novel. It confidently describes a whole chapter, with a scene and a character's speech, that isn't in the book at all. The chatbot did not lie on purpose; the model just filled in words that sounded plausible. What is a made-up fact from a chatbot usually called?",
     "answer": "Hallucination",
     "choices": [
       "Hallucination",
@@ -339,7 +339,7 @@
   },
   {
     "tier": 1,
-    "question": "Imagine a chatbot has already been trained on billions of pages of general text. Now a cookbook company wants to make it extra good at answering cooking questions, so they train it a second time using only recipes and food articles. This narrow, extra round of training has a special name. What is it called?",
+    "question": "A cookbook company's engineers take a chatbot already trained on billions of pages of general text and train it a second time, using only recipes and food articles, to make it extra good at cooking questions. This narrow, extra round of training has a special name. What is it called?",
     "answer": "Fine-tuning",
     "choices": [
       "Fine-tuning",
@@ -690,7 +690,7 @@
   },
   {
     "tier": 1,
-    "question": "Geoffrey Hinton is a British-Canadian computer scientist that many call a 'godfather of AI,' because his research on neural networks made modern chatbots possible. In May 2023, he made headlines by resigning from the big tech company he had worked at for over a decade, saying he wanted to speak freely about the dangers of powerful AI. Which company did Hinton quit in 2023?",
+    "question": "Geoffrey Hinton, a British-Canadian computer scientist many call a 'godfather of AI,' resigned in May 2023 from the big tech company he had worked at for over a decade, saying he wanted to speak freely about the dangers of powerful AI. Which company did he quit?",
     "answer": "Google",
     "choices": [
       "Google",
@@ -846,7 +846,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1966 at MIT (the Massachusetts Institute of Technology), a computer scientist named Joseph Weizenbaum wrote one of the very first chat programs. It imitated a talk-therapy therapist, mostly by turning your sentences back into questions — 'my mom is angry' would come back as 'why do you say your mom is angry?' To Weizenbaum's shock, people began pouring their hearts out to it. What did he name this early chatbot?",
+    "question": "Joseph Weizenbaum, a computer scientist at the Massachusetts Institute of Technology (MIT), wrote one of the very first chat programs in 1966. It imitated a talk therapist, mostly by turning a user's sentences back into questions: 'my mom is angry' came back as 'why do you say your mom is angry?' What did he name this early chatbot?",
     "answer": "ELIZA",
     "choices": [
       "ELIZA",
@@ -976,7 +976,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepMind is the AI research lab that built AlphaGo, the program that beat human world champions at the ancient game of Go, and AlphaFold, which mapped the 3D shape of nearly every protein known to science. It was founded in 2010 by Demis Hassabis and two friends, and later bought by Google. In which city is DeepMind based?",
+    "question": "Demis Hassabis and two friends founded DeepMind in 2010, the AI research lab that built AlphaGo, the program that beat human world champions at the ancient game of Go, and AlphaFold. In which city is DeepMind based?",
     "answer": "London",
     "choices": [
       "London",
@@ -1002,7 +1002,7 @@
   },
   {
     "tier": 1,
-    "question": "Geoffrey Hinton is often called the 'godfather of deep learning.' Long before Google hired him in 2013, and long before he began publicly warning the world about the risks of powerful AI, he spent decades teaching and researching at a Canadian university. That school trained many of the students who later launched OpenAI, DeepMind, and other big AI labs. Which Canadian school was that?",
+    "question": "A graduate student walked into Geoffrey Hinton's lab at a Canadian university, where Hinton taught and researched for decades, long before he began publicly warning the world about powerful AI. That school trained many of the students who later launched OpenAI, DeepMind and other big AI labs. Which Canadian school was it?",
     "answer": "University of Toronto",
     "choices": [
       "University of Toronto",
@@ -1080,7 +1080,7 @@
   },
   {
     "tier": 1,
-    "question": "Many hospitals now use AI programs that scan medical images — X-rays, CT scans, and MRIs — before a doctor sees them. The AI is not allowed to diagnose a patient on its own; a trained radiologist still makes the final call. Instead, the AI flags spots the doctor might have missed, like a faint shadow on a lung. What role does the AI mostly play in that setup?",
+    "question": "A radiologist opens a chest scan that an AI program has already read, with a faint shadow on a lung flagged for her. The AI is not allowed to diagnose a patient on its own; she still makes the final call. What role does the AI mostly play in that setup?",
     "answer": "Second reader catching missed details",
     "choices": [
       "Second reader catching missed details",
@@ -1184,19 +1184,6 @@
   },
   {
     "tier": 1,
-    "question": "You buy lunch in Chicago, and ten minutes later your phone buzzes: 'A charge in Berlin was blocked — was this you?' Behind the scenes, an AI system at the credit card company watches every transaction on your account and compares it to how you usually spend. When your card sends an alert like that, what has the AI likely been doing?",
-    "answer": "Checking your spending patterns",
-    "choices": [
-      "Checking your spending patterns",
-      "Eating chocolate snacks",
-      "Tweeting from the moon",
-      "Sleeping under your desk"
-    ],
-    "context": "Credit-card fraud detection has used machine learning for decades — long before the chatbot era. The system watches transaction patterns and flags anything unusual: a charge in a country you've never been, a price ten times your normal, an odd merchant. It's one of the longest-running quietly-useful AI applications in everyday life.",
-    "topic": "fraud-detection-and-finance"
-  },
-  {
-    "tier": 1,
     "question": "A farmer looks out over fields too huge to walk every day. Now an AI model spots dry patches, pests and weak crops for him from far above, then tells him exactly where to water or spray. What does the AI use to watch his crops?",
     "answer": "Satellite images",
     "choices": [
@@ -1236,7 +1223,7 @@
   },
   {
     "tier": 1,
-    "question": "By the mid-2020s, several giant AI chatbots were competing for users. OpenAI made ChatGPT. Anthropic made Claude. Elon Musk's company xAI made Grok. Google — the company behind the search engine and YouTube — built its own chatbot too, launched in 2023 and named after the twin stars. Out of ChatGPT, Claude, Gemini, and Grok, which one is from Google?",
+    "question": "A student opens four giant AI chatbots side by side, ChatGPT and Claude among them. One of the four, built by Google, is named after the twin stars. Which one is from Google?",
     "answer": "Gemini",
     "choices": [
       "Gemini",
@@ -1379,7 +1366,7 @@
   },
   {
     "tier": 1,
-    "question": "Banks have been quietly using AI to spot fraud since the 1990s. Long before chatbots got famous, statistical models were already checking every credit card swipe in real time and freezing cards that looked wrong. Most people never notice these systems working — they only notice when the system saves them. AI fraud detection in banking is an example of what?",
+    "question": "A woman swipes her credit card at a store, and a statistical model at her bank checks the swipe in real time. AI fraud detection in banking is an example of what?",
     "answer": "Old AI that quietly works",
     "choices": [
       "Old AI that quietly works",
@@ -1415,19 +1402,6 @@
     ],
     "context": "AI voice cloning needs samples to train on. Legitimate uses (audiobooks, dubbing, accessibility) involve consent — the voice owner agrees and is usually paid. The same technology without consent powers voice-clone scams. The technology itself doesn't know the difference; that's why the law and personal habits both matter.",
     "topic": "voice-clone-scams"
-  },
-  {
-    "tier": 1,
-    "question": "A bank's fraud AI has watched thousands of your card swipes — the stores you visit, the times of day, the size of your usual purchases. When a $2,000 charge suddenly appears from a country you've never been to, the model sees the swipe doesn't fit the pattern it has learned for you, and freezes the card. What is that AI mainly looking for?",
-    "answer": "Patterns that don't match yours",
-    "choices": [
-      "Patterns that don't match yours",
-      "What's on your grocery list",
-      "Whether you washed your hands",
-      "How polite your texts are"
-    ],
-    "context": "Fraud-detection AI builds a model of YOUR normal spending — places, amounts, times — and flags purchases that don't fit. A $5,000 charge in a country you've never been is unusual. The system isn't reading your messages or judging your character; it's pattern-matching against your own past behavior.",
-    "topic": "fraud-detection-and-finance"
   },
   {
     "tier": 1,
@@ -1483,7 +1457,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2016, a famous AI researcher named Geoffrey Hinton stood in front of a room of doctors and predicted that within five years, hospitals would no longer need radiologists — the doctors who read X-rays and scans — because AI would replace them all. Ten years have now passed since that bold prediction. What actually happened to radiologist jobs?",
+    "question": "Geoffrey Hinton, a famous AI researcher, stood in front of a room of doctors in 2016 and predicted that within five years, hospitals would no longer need radiologists, the doctors who read X-rays and scans, because AI would replace them all. Nearly ten years later, what has happened to radiologist jobs?",
     "answer": "Radiologists are still in demand",
     "choices": [
       "Radiologists are still in demand",
@@ -1496,7 +1470,7 @@
   },
   {
     "tier": 1,
-    "question": "By the end of 2025 the US Food and Drug Administration had authorised more than 1,400 medical devices that use AI. About three in four of them did one kind of job. Which job?",
+    "question": "A reviewer at the US Food and Drug Administration signed off on another AI medical device, one of more than 1,400 authorized by the end of 2025. About three in four of them did one kind of job. Which job?",
     "answer": "Reading medical scans",
     "choices": [
       "Doing surgery",
@@ -1756,7 +1730,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot quotes a famous author at length — a beautiful, wise-sounding line the chatbot claims was written by Mark Twain or Albert Einstein. But chatbots often 'hallucinate' fake quotes that sound real but were never actually said by that person. Before you use the quote in an essay or share it as if it were real, what's the safe step?",
+    "question": "A student's chatbot offers a beautiful, wise-sounding line it claims was written by Mark Twain or Albert Einstein. Chatbots often produce fake lines that sound real but were never actually said by that person. Before she uses it in an essay or shares it as real, what's the safe step?",
     "answer": "Search for the exact quote first",
     "choices": [
       "Search for the exact quote first",
@@ -1964,7 +1938,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot answers your homework question with four pieces of information: a precise year-and-day from centuries ago, a general summary of the topic, a vocabulary word, and the spelling of a common word. Chatbots handle broad topics and simple spellings pretty reliably, but they get precise numbers wrong all the time. Which fact is most important to verify first?",
+    "question": "A girl's chatbot answers her homework question with four pieces of information: a precise year-and-day from centuries ago, a general summary of the topic, a vocabulary word and the spelling of a common word. Chatbots handle broad topics and simple spellings pretty reliably. Which fact is most important for her to verify first?",
     "answer": "A specific historical date",
     "choices": [
       "A specific historical date",
@@ -1987,19 +1961,6 @@
     ],
     "context": "AI image generators often produce asymmetric earrings, mismatched eye details, or other small details that don't match across left and right. Real photos of real people typically have matching pairs (or at least intentional mismatch). Asymmetric tiny details are a small but reliable AI-image tell.",
     "topic": "spotting-ai-images"
-  },
-  {
-    "tier": 1,
-    "question": "You're writing a school essay, and a chatbot mentions a research study that seems to back up your argument. Chatbots are famous for inventing citations, listing studies with fake authors and fake journal names. Before you quote the study in your final paper, you should:",
-    "answer": "Search for it to confirm it exists",
-    "choices": [
-      "Search for it to confirm it exists",
-      "Trust the chatbot's word for it",
-      "Quote it in your conclusion",
-      "Make up new claims to add to it"
-    ],
-    "context": "Studies, like books and quotes, get confidently invented by chatbots. The author may not exist; the journal may not exist; the conclusion may be backwards. Before citing any study a chatbot mentioned, search for it in a database (Google Scholar is a reasonable starting point), and check that the real study supports what the chatbot claimed.",
-    "topic": "hallucination"
   },
   {
     "tier": 1,
@@ -2094,7 +2055,7 @@
   },
   {
     "tier": 1,
-    "question": "In May 2024 Google's new AI Overviews told some searchers how to keep cheese from sliding off pizza. The tip came from an old joke post on a forum. What did it advise?",
+    "question": "A searcher asked Google in May 2024 how to keep cheese from sliding off pizza, and the new AI Overviews offered a tip that came from an old joke post on a forum. What did the tip advise?",
     "answer": "Mix glue into the sauce",
     "choices": [
       "Freeze the pizza first",
@@ -2185,7 +2146,7 @@
   },
   {
     "tier": 1,
-    "question": "TikTok is a video app with over a billion users. Its 'For You' feed picks the next clip for you automatically, watching how long you stare at each one, how fast you swipe past it, and what you tap. What is that recommendation system mostly built to do?",
+    "question": "Suppose you open TikTok, a video app with over a billion users. Its 'For You' feed picks your next clip automatically, timing each stare, each swipe and each tap. What is that recommendation system mostly built to do?",
     "answer": "Keep you watching as long as possible",
     "choices": [
       "Keep you watching as long as possible",
@@ -2237,7 +2198,7 @@
   },
   {
     "tier": 1,
-    "question": "Some US police departments now run facial recognition AI on surveillance footage, matching faces to mugshot databases. The software isn't perfect. In several documented cases, it has picked the wrong person and led to real jail time. One known risk of this tech is:",
+    "question": "A detective runs a face from surveillance footage through facial recognition AI, and it returns a match from a mugshot database. The detective now has a name to work with, but the software is not perfect. What is one known risk of this tech?",
     "answer": "Wrong identifications leading to arrests",
     "choices": [
       "Wrong identifications leading to arrests",
@@ -2250,7 +2211,7 @@
   },
   {
     "tier": 1,
-    "question": "A company called Clearview AI built a face database with billions of photos, then sold access to police departments and other clients. They never asked permission from the people whose faces they collected. Where did all those pictures come from?",
+    "question": "A detective searches Clearview AI's face database, which his department pays for, billions of photos gathered without asking permission from the people whose faces the company collected. Where did all those pictures come from?",
     "answer": "Scraping public social-media photos",
     "choices": [
       "Scraping public social-media photos",
@@ -2260,19 +2221,6 @@
     ],
     "context": "Clearview AI scraped billions of photos from public social-media pages to build a face-recognition database — without users' consent. The company sold the service mainly to law enforcement. Several countries (Canada, France, Italy, UK) have ordered Clearview to delete data on their citizens. The case shows what 'public' photos can be used for once scraping AI is cheap.",
     "topic": "facial-recognition-wrongful-arrests"
-  },
-  {
-    "tier": 1,
-    "question": "You open a social app and see a video that makes you angry. Then another. Then another. Feeds pick clips based on how strongly people react, and outrage keeps thumbs moving. What is the app really trying to do with all those angry clips?",
-    "answer": "That anger gets more engagement",
-    "choices": [
-      "That anger gets more engagement",
-      "Anger makes the screen brighter",
-      "Anger pays for the wifi bill",
-      "Anger feeds the algorithm trees"
-    ],
-    "context": "Recommendation algorithms reward engagement — clicks, comments, watch time, shares. Anger-provoking content gets more of all of these than calm content. The system learns this and serves up more. The algorithm has no preference for anger as such; it just notices that anger holds attention, and it promotes whatever holds attention.",
-    "topic": "feeds-outrage-and-power"
   },
   {
     "tier": 1,
@@ -2328,7 +2276,7 @@
   },
   {
     "tier": 1,
-    "question": "In early 2024, Google's image AI called Gemini was asked to draw World War 2 German soldiers. It generated pictures of Black and Asian Nazis. It also refused to draw white historical figures. The story went viral fast. What did Google do about the picture-generation tool?",
+    "question": "A user asked Google's image AI, Gemini, to draw World War 2 German soldiers in early 2024, and it generated pictures of Black and Asian Nazis. It also refused to draw white historical figures. The story went viral fast, and chief executive Sundar Pichai apologized. What did Google do about the picture-generation tool?",
     "answer": "Suspended the image feature",
     "choices": [
       "Suspended the image feature",
@@ -2354,7 +2302,7 @@
   },
   {
     "tier": 1,
-    "question": "The Pew Research Center surveyed Americans in 2024 about where they get their news. Roughly what share of US adults said they at least sometimes get news from social media?",
+    "question": "Pollsters at the Pew Research Center asked Americans in 2024 where they get their news. Roughly what share of US adults said they at least sometimes get news from social media?",
     "answer": "About half",
     "choices": [
       "Almost none",
@@ -2380,7 +2328,7 @@
   },
   {
     "tier": 1,
-    "question": "Critics such as Zeynep Tufekci say feeds pull viewers to extremes: one workout clip leads to brutal challenges, one political clip to angrier ones. What is this pattern called?",
+    "question": "Zeynep Tufekci and other critics say feeds pull viewers to extremes: one workout clip leads to brutal challenges, one political clip to angrier ones. What is this pattern called?",
     "answer": "Engagement-driven radicalization",
     "choices": [
       "Engagement-driven radicalization",
@@ -2432,7 +2380,7 @@
   },
   {
     "tier": 1,
-    "question": "Face-scanning AI can match a photo of a stranger against millions of pictures in seconds. Most people know it from unlocking phones or passing through airports. But that isn't the only place it's used. Where else have face-scanning tools shown up?",
+    "question": "A woman unlocks her phone with her face, and a traveler passes through an airport the same way. Face-scanning AI can match a photo of a stranger against millions of pictures in seconds, and phones and airports are not the only places it's used. Where else has it shown up?",
     "answer": "Several US police investigations",
     "choices": [
       "Several US police investigations",
@@ -2575,7 +2523,7 @@
   },
   {
     "tier": 1,
-    "question": "You catch yourself scrolling TikTok or Instagram for the fifth time today, without meaning to open the app at all. The AI-driven feed is built to hold you there. Before buying any fancy blocker app or a new phone, what is the simplest first defense a kid can use against a feed like this?",
+    "question": "Suppose you catch yourself back on TikTok or Instagram for the fifth visit today, without ever meaning to open either one. The AI-driven feed is built to hold you there. Before buying any fancy blocker app or a new phone, what is the simplest first defense a kid can use?",
     "answer": "Set time limits or turn off the app",
     "choices": [
       "Set time limits or turn off the app",
@@ -2588,7 +2536,7 @@
   },
   {
     "tier": 1,
-    "question": "TikTok's owner, ByteDance, runs a separate Chinese version of the app called Douyin. In 2021 Douyin's youth mode began limiting users under 14 to how much time on the app each day?",
+    "question": "A Chinese boy under 14 opens Douyin, the separate Chinese version of TikTok run by its owner, ByteDance. Douyin's youth mode began limiting users his age in 2021. How much time on the app does it allow him each day?",
     "answer": "40 minutes",
     "choices": [
       "40 hours",
@@ -2601,7 +2549,7 @@
   },
   {
     "tier": 1,
-    "question": "Internal Facebook documents reported in 2021 showed that from 2017 its feed counted an emoji reaction, including the angry face, as worth more than a plain like. How many likes was one reaction worth?",
+    "question": "A Facebook user tapped the angry face on a post, and the feed counted that emoji reaction as worth more than a plain like. Internal documents reported in 2021 showed the formula had worked that way from 2017. How many likes was one reaction worth?",
     "answer": "Five",
     "choices": [
       "Zero",
@@ -2835,7 +2783,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 2023 an ad for Google's new Bard chatbot claimed the James Webb Space Telescope took the very first pictures of a planet outside our solar system. Astronomers noted the first such image came in 2004, from another telescope. What happened to Google's parent company that week?",
+    "question": "Astronomers spotted an error in a Google ad for its Bard chatbot in February 2023. It claimed the James Webb Space Telescope took the very first pictures of a planet outside our solar system, when the first such image came in 2004, from another telescope. What happened to Google's parent company that week?",
     "answer": "Its shares fell, wiping about $100 billion off its value",
     "choices": [
       "It won a prize for honest advertising that year",
@@ -2848,7 +2796,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 2022, two weeks before ChatGPT appeared, Meta released Galactica, a model trained on 48 million scientific papers and pitched as able to write science articles. Users quickly got it to produce confident fake research. How long did the public demo last?",
+    "question": "Meta's researchers released Galactica in November 2022, two weeks before ChatGPT appeared. The model was trained on 48 million scientific papers and pitched as able to write science articles. Users quickly got it to produce confident fake research. How long did the public demo last?",
     "answer": "About three days",
     "choices": [
       "About three days",
@@ -3433,7 +3381,7 @@
   },
   {
     "tier": 2,
-    "question": "DeepMind was a small London AI lab, co-founded by Demis Hassabis in 2010, working on general-purpose learning systems inspired by the human brain. By 2013 the lab had built prototype AIs that could learn to play old Atari video games from scratch, with no rules given. In 2014, one big American tech company snapped DeepMind up for about half a billion dollars. Which one?",
+    "question": "DeepMind's researchers, in the AI lab Demis Hassabis co-founded in 2010, had built prototype AIs by 2013 that could learn to play old Atari video games from scratch, with no rules given. In 2014, one big American tech company snapped the lab up for about half a billion dollars. Which one?",
     "answer": "Google — which has run DeepMind as a research lab inside Alphabet ever since",
     "choices": [
       "Google — which has run DeepMind as a research lab inside Alphabet ever since",
@@ -3550,7 +3498,7 @@
   },
   {
     "tier": 2,
-    "question": "In late 2012, months after their ImageNet win, Geoffrey Hinton and his students Ilya Sutskever and Alex Krizhevsky formed a tiny company, DNNresearch, that every big tech firm wanted. Hinton, staying at a casino hotel in Lake Tahoe for a research conference, sold it in an unusual way. How?",
+    "question": "Ilya Sutskever and Alex Krizhevsky formed a tiny company, DNNresearch, with their teacher Geoffrey Hinton late in 2012, months after their ImageNet win, and all the big tech firms wanted it. Hinton, staying at a casino hotel in Lake Tahoe for a research conference, sold it in an unusual way. How?",
     "answer": "He ran an auction by email and stopped it at $44 million",
     "choices": [
       "He ran an auction by email and stopped it at $44 million",
@@ -3563,7 +3511,7 @@
   },
   {
     "tier": 2,
-    "question": "Geoffrey Hinton spent forty years training neural networks to recognize images and words, and for a long time he assumed that machines smarter than people were far off, perhaps 30 to 50 years away. In interviews after he left Google in May 2023, he said his view had changed. How far off did he now think such machines might be?",
+    "question": "Interviewers heard a new view from Geoffrey Hinton after he left his job in May 2023. He had spent forty years training neural networks to recognize images and words, and for a long time he had assumed that machines smarter than people were far off, perhaps 30 to 50 years away. How far off did he now think such machines might be?",
     "answer": "Perhaps only about five years away",
     "choices": [
       "At least a hundred years away",
@@ -3576,7 +3524,7 @@
   },
   {
     "tier": 2,
-    "question": "Geoffrey Hinton, the British-Canadian scientist known as the godfather of deep learning, spent the 1980s and 1990s working on neural networks — the math that lets computers learn from examples. In October 2024, a phone call from Sweden told him he had won a very famous prize alongside the American physicist John Hopfield. Which prize was it?",
+    "question": "A phone call from Sweden told Geoffrey Hinton in October 2024 that he had won a very famous prize alongside the American scientist John Hopfield. Hinton had spent the 1980s and 1990s working on neural networks, the math that lets computers learn from examples. Which prize was it?",
     "answer": "The Nobel Prize in Physics — for foundational work on neural-network learning",
     "choices": [
       "The Nobel Prize in Physics — for foundational work on neural-network learning",
@@ -3784,7 +3732,7 @@
   },
   {
     "tier": 2,
-    "question": "The Mayo Clinic in Rochester, Minnesota, runs more than 250 AI models in its radiology department. Since Geoffrey Hinton's 2016 forecast that AI would soon replace radiologists, what has happened to the number of radiologists Mayo employs there?",
+    "question": "A radiologist at the Mayo Clinic in Rochester, Minnesota, works beside more than 250 AI models in her department. Since Geoffrey Hinton's 2016 forecast that AI would soon replace radiologists, what has happened to the number of radiologists Mayo employs there?",
     "answer": "It grew by more than half",
     "choices": [
       "It fell by more than half",
@@ -3940,7 +3888,7 @@
   },
   {
     "tier": 2,
-    "question": "Google spent years watching OpenAI's ChatGPT take over the public conversation about AI chatbots. In 2023 Google finally launched its own competitor to ChatGPT, but it stumbled in demos and never quite caught on with the public. So in early 2024 Google gave it a full rebrand, renaming it Gemini and folding it into the wider search product. What was the chatbot originally called from 2023 to 2024?",
+    "question": "Google's team launched a competitor to OpenAI's ChatGPT in 2023, but it stumbled in demos and never quite caught on with the public. So in early 2024 the company gave it a full rebrand and folded it into the wider search product. What was the chatbot originally called from 2023 to 2024?",
     "answer": "Bard",
     "choices": [
       "Bard",
@@ -3966,7 +3914,7 @@
   },
   {
     "tier": 2,
-    "question": "The European Union's Digital Services Act, which began applying to the biggest platforms in 2023, gave users a new choice about their feeds. What must very large platforms such as TikTok and Instagram now offer people in the EU?",
+    "question": "A user in the European Union opens TikTok and finds a new choice about her feed. The EU's Digital Services Act, which began applying to the biggest platforms in 2023, put it there. What must very large platforms such as TikTok and Instagram now offer people in the EU?",
     "answer": "A feed option that is not based on profiling them",
     "choices": [
       "A feed that shows only government news reports",
@@ -4015,19 +3963,6 @@
     ],
     "context": "Traditional weather forecasting solves the equations of atmospheric physics on huge supercomputers. AI weather models like Google's GraphCast and Huawei's Pangu-Weather instead learn patterns from decades of past weather data. For medium-range forecasts (3-10 days) they now match or beat traditional models on many measures, while running much faster. The two approaches are starting to be used together.",
     "topic": "ai-in-agriculture-weather"
-  },
-  {
-    "tier": 2,
-    "question": "You're on vacation in Florida, three thousand miles from your home in Oregon. You try to buy a snack at a gas station and the card is declined. When you call, the bank explains: its fraud-detection AI, which watches every card transaction in real time, spotted your purchase and froze the card as suspicious. It wasn't looking at the dollar amount, or the store, exactly. What kind of pattern makes the AI freeze a card?",
-    "answer": "Unusual location or behavior compared to your normal spending",
-    "choices": [
-      "Unusual location or behavior compared to your normal spending",
-      "The exact dollar amount of any transaction over fifty dollars",
-      "Whether the cashier is wearing the store's official uniform",
-      "Whether the store had a sale advertised on television last week"
-    ],
-    "context": "Banks have used machine-learning fraud detection for decades. The model learns each customer's normal pattern — where you shop, how much you spend, how often — and flags transactions that don't fit. Sudden out-of-state use, unusual amounts, or rapid-fire purchases trigger holds. False positives are annoying but the alternative (letting fraud through) is worse. This is a low-drama AI win that mostly works.",
-    "topic": "fraud-detection-and-finance"
   },
   {
     "tier": 2,
@@ -4200,7 +4135,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 2025 OpenAI researchers, including Adam Tauman Kalai, published a paper called 'Why Language Models Hallucinate.' They compared models to students facing a hard exam. What did they say most training and testing ends up rewarding?",
+    "question": "OpenAI researchers, including Adam Tauman Kalai, published a paper in September 2025 that compared language models inventing facts to students facing a hard exam. What did they say most training and testing ends up rewarding?",
     "answer": "Guessing confidently instead of admitting 'I don't know'",
     "choices": [
       "Guessing confidently instead of admitting 'I don't know'",
@@ -4382,7 +4317,7 @@
   },
   {
     "tier": 2,
-    "question": "Signal is a free messaging app used by journalists, activists, and privacy-minded people. Its main promise is 'end-to-end encryption,' a security feature the company advertises loudly. The scrambling happens on your phone before the message leaves, and only the receiver's phone can unscramble it. What does that promise actually mean in practice?",
+    "question": "A journalist opens Signal, a free messaging app also used by activists and privacy-minded people, and types a note to a source. The app's main promise, advertised loudly, is 'end-to-end encryption,' a scrambling of every message on the phone that sends it. What does that promise actually mean in practice?",
     "answer": "Only the sender and receiver can read messages, not Signal itself",
     "choices": [
       "Only the sender and receiver can read messages, not Signal itself",
@@ -4447,7 +4382,7 @@
   },
   {
     "tier": 2,
-    "question": "In May 2025 the Chicago Sun-Times and The Philadelphia Inquirer ran a syndicated summer reading list of 15 titles, including new novels credited to real authors such as Isabel Allende. The freelance writer later admitted he had used AI and had not checked it. What was wrong with the list?",
+    "question": "A freelance writer put together a syndicated summer reading list of 15 titles, including new novels credited to real authors such as Isabel Allende, and it ran in the Chicago Sun-Times and The Philadelphia Inquirer in May 2025. He later admitted he had used AI and had not checked it. What was wrong with the list?",
     "answer": "Ten of the fifteen books did not exist",
     "choices": [
       "All fifteen were the same book",
@@ -4499,7 +4434,7 @@
   },
   {
     "tier": 2,
-    "question": "Around New Year 2025 the British Broadcasting Corporation (BBC) complained that Apple Intelligence, the AI built into iPhones, was turning its news alerts into false summaries. One said a darts player had won a world championship before the final had even been played. What did Apple do in January 2025?",
+    "question": "An iPhone owner read a news alert around New Year 2025 saying a darts player had won a world championship, before the final had even been played. The British Broadcasting Corporation (BBC) complained that Apple Intelligence, the AI built into iPhones, was turning its alerts into false summaries. What did Apple do in January 2025?",
     "answer": "Paused AI summaries for news apps",
     "choices": [
       "Sued the BBC over its complaints",
@@ -4707,7 +4642,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2025 University of Sydney researcher Chris Rudge found that a 237-page report the consulting giant Deloitte had written for the Australian government cited papers that did not exist and included a made-up quote from a court judgment. The corrected version admitted AI had been used. What did Deloitte agree to do?",
+    "question": "Chris Rudge, a researcher at the University of Sydney, found in 2025 that a 237-page report the consulting giant Deloitte had written for the Australian government cited papers that did not exist and included a made-up quote from a court judgment. The corrected version admitted AI had been used. What did Deloitte agree to do?",
     "answer": "Refund the final payment of its fee",
     "choices": [
       "Refund the final payment of its fee",
@@ -4733,7 +4668,7 @@
   },
   {
     "tier": 2,
-    "question": "An app that recommends posts uses a simple measurement to judge whether it is doing well: it counts how many people click on each post and how long they stop to read it. If posts that make people angry get more clicks than calm ones, the AI notices that pattern within hours. Nothing tells the system to prefer kindness over rage — only clicks. What does an app that chases clicks learn from that?",
+    "question": "A girl opens a social app and sees a video that makes her angry, then another, then another. The app judges itself by clicks and by how long people stop on each post. Angry posts get more clicks than calm ones, and the AI notices within hours. Nothing tells it to prefer kindness over rage. What does an app that chases clicks learn from that?",
     "answer": "To surface more outrage because that's what the metric rewards",
     "choices": [
       "To surface more outrage because that's what the metric rewards",
@@ -4772,7 +4707,7 @@
   },
   {
     "tier": 2,
-    "question": "Clearview AI worked in near-secret, selling its face-search app to police, until January 2020, when a story titled The Secretive Company That Might End Privacy as We Know It exposed it. Which newspaper ran the story, by the reporter Kashmir Hill?",
+    "question": "Kashmir Hill exposed Clearview AI in January 2020 with a story titled 'The Secretive Company That Might End Privacy as We Know It.' The startup had been selling its face-search app to police in near-secret. Which newspaper ran her story?",
     "answer": "The New York Times",
     "choices": [
       "The Wall Street Journal",
@@ -4785,7 +4720,7 @@
   },
   {
     "tier": 2,
-    "question": "In July 2018 the American Civil Liberties Union (ACLU) tested Amazon's face-recognition service, Rekognition, at its default settings against 25,000 public arrest photos. The software wrongly flagged 28 people from one famous group as matches for people who had been arrested. Who were they?",
+    "question": "Testers at the American Civil Liberties Union (ACLU) ran Amazon's face-recognition service, Rekognition, at its default settings against 25,000 public arrest photos in July 2018. The software wrongly flagged 28 people from one famous group as matches for people who had been arrested. Who were they?",
     "answer": "Members of the US Congress",
     "choices": [
       "Players in the NFL",
@@ -4876,7 +4811,7 @@
   },
   {
     "tier": 2,
-    "question": "TikTok is a short-video app used by tens of millions of Americans. Its parent company, ByteDance, has headquarters in Beijing, China. Under Chinese national security law, companies based there can be legally ordered to hand over user data to the Chinese government. US officials worry that means every American teen's viewing habits could end up on a Beijing server. Why does TikTok face political pressure in the US?",
+    "question": "US officials raised the alarm that every American teen's viewing habits on TikTok could end up on a Beijing server. Tens of millions of Americans use the short-video app, which belongs to a parent company called ByteDance. Why does TikTok face political pressure in the US?",
     "answer": "ByteDance is based in China, where laws can require data sharing with the government",
     "choices": [
       "ByteDance is based in China, where laws can require data sharing with the government",
@@ -4915,7 +4850,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 2024, Google launched a new image generator inside its Gemini AI. When users asked for pictures of Nazi soldiers, American Founding Fathers, or medieval English kings, Gemini drew them as many different races. The pictures were historically wrong and Google quickly pulled the feature. Who chose to add diversity to prompts by default?",
+    "question": "A user asked the new image generator inside Google's Gemini AI for medieval English kings in February 2024, and others asked for American Founding Fathers or Nazi soldiers. Gemini drew them as many different races, and the pictures were historically wrong. Who chose to add diversity to prompts by default?",
     "answer": "Google's product and alignment teams — through deliberate tuning choices",
     "choices": [
       "Google's product and alignment teams — through deliberate tuning choices",
@@ -4924,19 +4859,6 @@
       "United States federal regulators — through a rule requiring diverse outputs"
     ],
     "context": "Google's Gemini image generator was tuned to inject diversity into prompts by default — apparently to counter training-data bias. When applied to historical and ethnically specific requests, it produced anachronisms (diverse Nazi soldiers, refused white historical figures). Sundar Pichai apologized; the image feature was suspended. The episode shows that 'alignment' isn't value-neutral — it's a series of choices made by people. Recognizing alignment as a value vector is core AI literacy.",
-    "topic": "gemini-image-generator"
-  },
-  {
-    "tier": 2,
-    "question": "In February 2024, Google's Gemini AI drew Nazi soldiers and Founding Fathers as many different races, and the internet erupted. The company's chief executive — an engineer who took over in 2015 — was asked to respond. How did he reply in public after the Gemini image mess?",
-    "answer": "Sundar Pichai apologized and the image feature was suspended",
-    "choices": [
-      "Sundar Pichai apologized and the image feature was suspended",
-      "Google denied any issue and ran the same product unchanged",
-      "Google's CEO refused to comment for the entire calendar year",
-      "Google handed all image generation to a different company within hours"
-    ],
-    "context": "After widespread criticism in February 2024, Google CEO Sundar Pichai called the Gemini image-generation outputs 'completely unacceptable.' Google suspended Gemini's people-image generation feature and worked on changes before re-enabling later. The episode became a case study in alignment-as-ideology: a well-intentioned diversity adjustment, layered on top of an opaque pipeline, produced outputs that even the company found indefensible. Useful recognition for any AI product team.",
     "topic": "gemini-image-generator"
   },
   {
@@ -4967,7 +4889,7 @@
   },
   {
     "tier": 2,
-    "question": "Guillaume Chaslot worked on YouTube's recommendation system before leaving Google in 2013. In 2018 he built a website, AlgoTransparency, to track what the system recommended. What did he report it steered viewers toward for searches like 'global warming'?",
+    "question": "Guillaume Chaslot built a website, AlgoTransparency, in 2018 to track what YouTube's recommendation system suggested. He had worked on that system himself before leaving Google in 2013. What did he report the system steered viewers toward for searches like 'global warming'?",
     "answer": "Conspiracy-theory and anti-science videos",
     "choices": [
       "Conspiracy-theory and anti-science videos",
@@ -5006,7 +4928,7 @@
   },
   {
     "tier": 2,
-    "question": "As a graduate student at the MIT Media Lab, the computer scientist Joy Buolamwini built a project that needed face-tracking software to see her face. It would not detect her dark-skinned face at all. What did she have to do before the software noticed her?",
+    "question": "Joy Buolamwini, a graduate student at the MIT Media Lab, built a project that needed face-tracking software to see her face. It would not detect her dark-skinned face at all. What did she have to do before the software noticed her?",
     "answer": "Put on a white mask",
     "choices": [
       "Shave her head",
@@ -5123,7 +5045,7 @@
   },
   {
     "tier": 2,
-    "question": "TikTok is owned by ByteDance, a company headquartered in Beijing, China. In April 2024, President Biden signed a federal law called the Protecting Americans from Foreign Adversary Controlled Applications Act (PAFACA). It named TikTok specifically. What did the law require ByteDance to do?",
+    "question": "President Biden signed a federal law in April 2024 that named TikTok specifically: the Protecting Americans from Foreign Adversary Controlled Applications Act (PAFACA). TikTok is owned by ByteDance, a company headquartered in Beijing, China. What did the law require ByteDance to do?",
     "answer": "ByteDance had to sell TikTok's US business within roughly 270 days or US app stores must drop the app",
     "choices": [
       "ByteDance had to sell TikTok's US business within roughly 270 days or US app stores must drop the app",
@@ -5149,7 +5071,7 @@
   },
   {
     "tier": 2,
-    "question": "TikTok challenged the 2024 American law that ordered its Chinese owner to sell TikTok's US business or face a ban. On January 17, 2025, the case, TikTok v. Garland, was decided by the Supreme Court. How did the justices rule?",
+    "question": "The Supreme Court's justices decided TikTok v. Garland on January 17, 2025. TikTok had challenged the 2024 American law that ordered its Chinese owner to sell TikTok's US business or face a ban. How did the justices rule?",
     "answer": "Unanimously, upholding the law",
     "choices": [
       "Five to four, striking it down",
@@ -5188,7 +5110,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 2022, the crypto trading site FTX collapsed almost overnight and its founder Sam Bankman-Fried was arrested for fraud. Before the crash, Bankman-Fried had given away hundreds of millions of dollars to nonprofits, universities, and lobbying groups. Many of those groups worked on AI safety. Why did that crash matter for AI policy fights?",
+    "question": "Customers rushed to pull their deposits from the crypto site FTX in November 2022, and the run brought it down almost overnight with billions of dollars missing. Sam Bankman-Fried, who built it, was arrested for fraud. He had publicly joined the cause of Effective Altruism and given away hundreds of millions of dollars. Why did that crash matter for AI policy fights?",
     "answer": "Its founder had funded many AI-safety nonprofits, so funding for that movement was tied to him",
     "choices": [
       "Its founder had funded many AI-safety nonprofits, so funding for that movement was tied to him",
@@ -5266,7 +5188,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 2019 YouTube announced it would start recommending less 'borderline' content, such as videos selling phony miracle cures or claiming the Earth is flat, without removing those videos. How much of the content on YouTube did it say the change would touch?",
+    "question": "YouTube's staff announced in January 2019 that the site would start recommending fewer 'borderline' videos, such as ones selling phony miracle cures or claiming the Earth is flat, without removing them. How much of the content on YouTube did they say the change would touch?",
     "answer": "Less than one percent",
     "choices": [
       "Less than one percent",
@@ -5292,7 +5214,7 @@
   },
   {
     "tier": 2,
-    "question": "Facial recognition pairs cameras with AI to match a face in a crowd against a database of names. Several US cities — San Francisco was first in 2019, then Boston, Portland, and others — passed laws restricting how their police may use it. Supporters of these bans point to two problems that together make the technology risky in public places. What is the usual concern?",
+    "question": "San Francisco's lawmakers passed a law in 2019 restricting how police may use facial recognition, which pairs cameras with AI to match a face in a crowd against a database of names. Boston, Portland and other US cities followed. Supporters of these bans point to two problems that together make the technology risky. What is the usual concern?",
     "answer": "False matches plus the chill effect on protest and public life",
     "choices": [
       "False matches plus the chill effect on protest and public life",
@@ -5305,7 +5227,7 @@
   },
   {
     "tier": 2,
-    "question": "TikTok is owned by ByteDance, a Chinese company, and US critics worry China's government could access US user data. TikTok's public answer is 'Project Texas' — an announcement that all US user data will be stored on servers in Texas, operated by the American firm Oracle. Critics say this is not a full answer to the worry. Why don't they consider Project Texas enough?",
+    "question": "A US critic of TikTok looks over 'Project Texas,' the app's public answer to fears about China's government. The plan stores all US user data on servers in Texas, operated by the American firm Oracle. Critics say this is not a full answer to the worry. Why don't they consider Project Texas enough?",
     "answer": "Where data is stored is only one of several access pathways the company controls",
     "choices": [
       "Where data is stored is only one of several access pathways the company controls",
@@ -5344,7 +5266,7 @@
   },
   {
     "tier": 2,
-    "question": "On the night of January 18, 2025, just before the sell-or-ban law took effect, TikTok did something to its American users that it had never done before. What was it?",
+    "question": "An American user opened TikTok on the night of January 18, 2025, just before the sell-or-ban law took effect, and found the app doing something it had never done to its American users before. What was it?",
     "answer": "Went dark, then came back the next day",
     "choices": [
       "Doubled its ads, then removed them all",
@@ -5354,19 +5276,6 @@
     ],
     "context": "TikTok shut itself off for American users late on January 18 with a message appealing to President-elect Trump, and was back by the afternoon of January 19 after he promised to delay enforcement. Once in office he ordered the law not to be enforced for 75 days, the first of several delays.",
     "topic": "feeds-outrage-and-power"
-  },
-  {
-    "tier": 2,
-    "question": "FTX was a giant cryptocurrency exchange run by a young billionaire named Sam Bankman-Fried. In November 2022 the exchange collapsed almost overnight, and Bankman-Fried was later convicted on seven counts of fraud in a federal court. Before the collapse he had quietly been one of the largest funders of AI-safety research, writing big checks to labs, think tanks, and university groups. What did his fall force in the AI-safety world?",
-    "answer": "A reckoning about how much of the AI-safety conversation his money had quietly been shaping",
-    "choices": [
-      "A reckoning about how much of the AI-safety conversation his money had quietly been shaping",
-      "An automatic refund of every dollar he had ever donated to any charity in his lifetime",
-      "A federal law banning anyone convicted of fraud from ever funding research again",
-      "A merger of all AI-safety groups into a single United Nations office in Geneva"
-    ],
-    "context": "Bankman-Fried was a major donor to AI-safety nonprofits and Effective Altruism before FTX's November 2022 collapse. His Future Fund had pledged over $160 million. He was convicted November 2023 on seven counts of fraud and sentenced March 2024 to 25 years. The collapse forced researchers to ask how much of their movement's growth had been driven by one funder.",
-    "topic": "effective-altruism-sbf"
   },
   {
     "tier": 2,
@@ -5487,7 +5396,7 @@
   },
   {
     "tier": 3,
-    "question": "ChatGPT is a chatbot made by the AI lab OpenAI. Plain 'vanilla' ChatGPT — without any extra plugins turned on — has no live internet access. It can only draw on the pile of text it was trained on, which stops months before today's date. Your friend says: 'I asked ChatGPT what time tonight's football game starts, and it gave me a real-looking answer.' What probably happened?",
+    "question": "A boy asks plain ChatGPT, with no extra plugins turned on, what time tonight's football game starts, and it gives him a real-looking answer. The pile of text it was trained on stops months before today's date. What probably happened?",
     "answer": "The model produced a plausible-sounding time based on training-text patterns about football schedules, and that guess is almost certainly wrong.",
     "choices": [
       "The model produced a plausible-sounding time based on training-text patterns about football schedules, and that guess is almost certainly wrong.",
@@ -5617,7 +5526,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern AI systems represent the meaning of a word as an 'embedding' — a long list of numbers, often hundreds or thousands of them. So the word 'king' becomes something like [0.21, -0.44, 0.87, ...] with maybe 1,024 numbers all told. The word 'queen' becomes a different list of the same length. Why represent meaning as a big list of numbers instead of just storing the word itself?",
+    "question": "A search engineer stores the word 'king' as an embedding: a long row of numbers, [0.21, -0.44, 0.87, ...], maybe 1,024 of them. 'Queen' becomes a different row of the same length, and a sentence or an image can get one too. Why represent meaning as a big row of numbers instead of just storing the word itself?",
     "answer": "Numbers let the model measure how similar two words are, by checking how close their lists are in space.",
     "choices": [
       "Numbers let the model measure how similar two words are, by checking how close their lists are in space.",
@@ -5630,7 +5539,7 @@
   },
   {
     "tier": 3,
-    "question": "A word embedding turns each word into a vector — a long list of numbers — so a computer can do arithmetic with meaning itself. In 2013, Google researchers behind a model called word2vec found a striking result: take the embedding for 'king,' subtract the embedding for 'man,' add the embedding for 'woman,' and the answer lands right next to the embedding for 'queen.' What structure inside the model's number-space does the king − man + woman = queen result reveal about how ideas such as gender and royalty are stored?",
+    "question": "Google researchers behind a model called word2vec took the embedding for 'king' in 2013, the long list of numbers standing for that word, subtracted the one for 'man' and added the one for 'woman.' The answer landed right next to the embedding for 'queen.' What does that result reveal about how the model stores such ideas?",
     "answer": "Concepts like gender and royalty live as directions in the number-space, so adding and subtracting them shifts meaning predictably.",
     "choices": [
       "Concepts like gender and royalty live as directions in the number-space, so adding and subtracting them shifts meaning predictably.",
@@ -5643,7 +5552,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern search engines like Google, and vector databases inside chatbots like ChatGPT, often use embeddings — the search query is turned into a list of numbers, and the engine finds documents whose number-lists are nearby in that number-space. This can match a query like 'how do I get a dog to stop barking' with a document titled 'training your puppy to be quiet,' even though the two share almost no words. Why does this help match meaning rather than just exact words?",
+    "question": "A dog owner types 'how do I get a dog to stop barking' into a search engine and gets back a document titled 'training your puppy to be quiet.' The engine, like the vector databases inside chatbots such as ChatGPT, turned her query into an embedding, a list of numbers, and compared it with the numbers for each document. Why does that beat plain keyword matching?",
     "answer": "Two texts can mean nearly the same thing without sharing any words, and embeddings catch the meaning overlap anyway.",
     "choices": [
       "Two texts can mean nearly the same thing without sharing any words, and embeddings catch the meaning overlap anyway.",
@@ -5656,7 +5565,7 @@
   },
   {
     "tier": 3,
-    "question": "Inside a transformer — the AI architecture behind ChatGPT and other Large Language Models (LLMs) — every input token first gets converted into an embedding. An embedding is a list of numbers, often several hundred or several thousand of them long. Nobody writes these numbers by hand; the model learns them from scratch during training. What do those numbers represent, once training is done?",
+    "question": "A researcher opens a trained chatbot and looks at the embedding for one input token, a list of several hundred numbers. Nobody wrote those numbers by hand; training set them from scratch, inside a transformer, the architecture behind ChatGPT and other Large Language Models (LLMs). What do those numbers represent, once training is done?",
     "answer": "Different features the model has learned to track, with no single number mapping cleanly to a human-readable concept.",
     "choices": [
       "Different features the model has learned to track, with no single number mapping cleanly to a human-readable concept.",
@@ -5669,7 +5578,7 @@
   },
   {
     "tier": 3,
-    "question": "A raw language model, freshly trained on internet text, will happily continue whatever it sees — helpful text or racist text, doesn't matter. To turn that raw text-predictor into a polite chatbot that follows instructions, AI companies use a step called Reinforcement Learning from Human Feedback (RLHF). Real humans — often paid contractors, sometimes in Kenya or the Philippines — are involved in the loop. What do those humans actually do?",
+    "question": "A paid contractor in the Philippines logs on to work with a raw language model, freshly trained on internet text, that will happily continue whatever it sees, helpful text or racist text. AI companies need people like her to turn that raw text-predictor into a polite chatbot that follows instructions. What do contractors like her actually do?",
     "answer": "They rank candidate responses from best to worst, and the model learns to produce outputs that rank higher.",
     "choices": [
       "They rank candidate responses from best to worst, and the model learns to produce outputs that rank higher.",
@@ -5682,7 +5591,7 @@
   },
   {
     "tier": 3,
-    "question": "GPT-3, released by OpenAI in 2020, could already write fluent essays and stories. But it happily followed rude prompts, made up fake facts on command, and often ignored polite requests to stop. OpenAI then added a step called Reinforcement Learning from Human Feedback (RLHF), where paid humans rate model outputs and the model learns to prefer highly-rated ones. In plain words, what does the RLHF step fix?",
+    "question": "A writer tried GPT-3, released by OpenAI in 2020, and got fluent essays and stories. But it happily followed rude prompts, made up fake facts on command and often ignored polite requests to stop. OpenAI then added a step in which paid humans rate model outputs and the model learns to prefer highly-rated ones. In plain words, what does that step fix?",
     "answer": "It makes the model behave like a helpful assistant instead of a raw text-predictor that completes anything.",
     "choices": [
       "It makes the model behave like a helpful assistant instead of a raw text-predictor that completes anything.",
@@ -5695,7 +5604,7 @@
   },
   {
     "tier": 3,
-    "question": "Reinforcement Learning from Human Feedback (RLHF) is a training step in which paid human raters look at pairs of chatbot answers and pick the one they like better. The model then learns to give more answers like the winners. Critics — including some AI-alignment researchers — point out that this does not make the model 'truthful.' It makes the model give answers raters liked. Why is that difference important?",
+    "question": "A paid rater looks over a pair of chatbot answers and picks the one she likes better, one small step in Reinforcement Learning from Human Feedback (RLHF). The model then learns to give more answers like the winners. Critics, including some AI-alignment researchers, point out that this does not make the model 'truthful.' It makes the model give answers raters liked. Why is that difference important?",
     "answer": "Raters can be misled by confident-sounding wrong answers, so RLHF can reward output that sounds right rather than is right.",
     "choices": [
       "Raters can be misled by confident-sounding wrong answers, so RLHF can reward output that sounds right rather than is right.",
@@ -5708,7 +5617,7 @@
   },
   {
     "tier": 3,
-    "question": "In Reinforcement Learning from Human Feedback (RLHF), a chatbot's tone, its refusals, and even its political lean get shaped by a small team of paid human raters — often only a few hundred people, hired by the AI lab or a contractor. Their thumbs-up and thumbs-down choices end up steering how millions of users later experience the finished chatbot. Why does the choice of these raters matter so much?",
+    "question": "A small team of paid raters, often only a few hundred people hired by an AI lab or a contractor, hands out thumbs-up and thumbs-down on a chatbot's answers. Those choices shape the chatbot's tone and its refusals, and they end up steering how millions of users later experience the finished product. Why does the choice of these raters matter so much?",
     "answer": "Whatever the raters happen to value gets baked into the model, including any political or cultural biases they bring.",
     "choices": [
       "Whatever the raters happen to value gets baked into the model, including any political or cultural biases they bring.",
@@ -6007,7 +5916,7 @@
   },
   {
     "tier": 3,
-    "question": "A chess engine like Stockfish can defeat any human player in the world. We don't say Stockfish 'wants to win.' Why does it feel less natural to use mental-state language for a chess engine than for a chatbot?",
+    "question": "A chess player loses to Stockfish, an engine that can defeat any human, and nobody says it 'wants to win.' Then she reads a chatbot's line, 'I think you should consider,' and mental-state words come easily. Why do such words feel less natural for a chess engine than for a chatbot?",
     "answer": "Chatbots produce human-sounding language, which triggers our instinct to attribute minds to whatever talks like us.",
     "choices": [
       "Chatbots produce human-sounding language, which triggers our instinct to attribute minds to whatever talks like us.",
@@ -6137,19 +6046,6 @@
   },
   {
     "tier": 3,
-    "question": "Training a modern large language model from scratch — called 'pre-training' — costs tens of millions of dollars and burns weeks of compute across thousands of chips. 'Fine-tuning' is a different move: take an already-pre-trained model and train it a bit further on a smaller, specialized dataset. Why do companies fine-tune existing models instead of training brand-new ones from scratch?",
-    "answer": "Pre-training is enormously expensive; fine-tuning piggybacks on that work and reshapes the model for a specific task cheaply.",
-    "choices": [
-      "Pre-training is enormously expensive; fine-tuning piggybacks on that work and reshapes the model for a specific task cheaply.",
-      "Pre-training requires permission from a government agency, but fine-tuning is unregulated everywhere.",
-      "Pre-training a new model would force the company to disclose all of its proprietary business secrets.",
-      "Pre-training and fine-tuning produce identical results, so companies always pick whichever is more fashionable."
-    ],
-    "context": "Pre-training a frontier model costs tens to hundreds of millions of dollars. Fine-tuning the same model on a specific domain — legal documents, customer service transcripts, a particular writing style — is far cheaper. The result is a model that retains general capability and is specialized for the target task. Fine-tuning is also how many companies build chatbots that 'know' their internal documentation: pre-trained capability plus domain-specific fine-tuning, often combined with retrieval-augmented generation.",
-    "topic": "fine-tuning-and-rlhf"
-  },
-  {
-    "tier": 3,
     "question": "OpenAI's 2020 Kaplan paper laid out 'scaling laws' showing model performance improves predictably with more data and compute. DeepMind's 2022 Chinchilla paper then found GPT-3 was too big for its training data. Why do labs care?",
     "answer": "They let a lab predict, before spending hundreds of millions on a training run, roughly what a bigger model will do.",
     "choices": [
@@ -6176,7 +6072,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1966, at MIT in Massachusetts, a computer scientist named Joseph Weizenbaum built a simple chat program he called ELIZA. Its best-known mode acted like a Rogerian therapist: if you typed 'I feel sad about my mother,' ELIZA would reply 'Tell me more about your mother' — just turning your words into questions with almost no real understanding underneath. Weizenbaum expected people to laugh at how shallow the trick was. Instead, the reaction disturbed him so deeply he later became one of AI's first critics. Why did he grow upset about his own program?",
+    "question": "A user typed 'I feel sad about my mother' into a chat program at the Massachusetts Institute of Technology (MIT) in 1966, and it replied 'Tell me more about your mother,' with almost no understanding underneath. Its author, Joseph Weizenbaum, expected people to laugh at how shallow the trick was. Instead the reaction disturbed him so deeply that he later became one of AI's first critics. Why did he grow upset about his own program?",
     "answer": "Users, including his secretary, formed real emotional attachments to ELIZA despite knowing it was a simple program.",
     "choices": [
       "Users, including his secretary, formed real emotional attachments to ELIZA despite knowing it was a simple program.",
@@ -6189,7 +6085,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1966 at the Massachusetts Institute of Technology (MIT), computer scientist Joseph Weizenbaum wrote a program called ELIZA. Its most famous script pretended to be a Rogerian therapist. ELIZA used no neural networks, no machine learning — just simple rules to rearrange the user's words back into questions. Yet users, including Weizenbaum's own secretary, poured their real feelings into it. Why has ELIZA's name stuck for 60 years as a touchstone in AI?",
+    "question": "Joseph Weizenbaum wrote ELIZA at the Massachusetts Institute of Technology (MIT) in 1966, and its most famous script pretended to be a Rogerian therapist. It used no neural networks and no machine learning, only plain rules that rearranged a user's words back into questions. Why has ELIZA's name stuck for 60 years as a touchstone in AI?",
     "answer": "It showed that people form attachments to chatbots even when the program is obviously simple, a tendency now called 'the ELIZA effect.'",
     "choices": [
       "It showed that people form attachments to chatbots even when the program is obviously simple, a tendency now called 'the ELIZA effect.'",
@@ -6202,7 +6098,7 @@
   },
   {
     "tier": 3,
-    "question": "Joseph Weizenbaum created ELIZA in 1966. Later, in 1976, he wrote a book called 'Computer Power and Human Reason.' It warned against handing certain human tasks to computers. What was his core argument?",
+    "question": "Joseph Weizenbaum published a book in 1976 called 'Computer Power and Human Reason,' ten years after he wrote his famous chat program. It warned against handing certain tasks over to computers. What was his core argument?",
     "answer": "Some decisions like judging, listening, and caring should stay with humans even if a machine can simulate them.",
     "choices": [
       "Some decisions like judging, listening, and caring should stay with humans even if a machine can simulate them.",
@@ -6215,7 +6111,7 @@
   },
   {
     "tier": 3,
-    "question": "Joseph Weizenbaum's ELIZA program, written at the Massachusetts Institute of Technology (MIT) in 1966, ran on the school's mainframe computer. The version people usually remember was called DOCTOR — a script that mimicked a Rogerian therapist. But DOCTOR was just one script; ELIZA itself was the general framework underneath. What did the ELIZA framework actually do?",
+    "question": "A user at the Massachusetts Institute of Technology (MIT) tried the version of Joseph Weizenbaum's 1966 chat program that people usually remember: DOCTOR, which mimicked a Rogerian therapist on the school's mainframe computer. But DOCTOR was only one face of the program. Underneath lay a general framework. What did that framework actually do?",
     "answer": "It matched user input against patterns and produced replies from a script, and different scripts gave different personalities.",
     "choices": [
       "It matched user input against patterns and produced replies from a script, and different scripts gave different personalities.",
@@ -6228,7 +6124,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1970, MIT graduate student Terry Winograd published a program called SHRDLU. It could understand and answer questions about a small simulated world of colored blocks. Why did the program excite the AI field?",
+    "question": "Terry Winograd, a graduate student at the Massachusetts Institute of Technology (MIT), published a program called SHRDLU in 1970. A user could type commands and questions in plain English about a small simulated tabletop of colored blocks. Why did the program excite the AI field?",
     "answer": "It seemed to genuinely understand language about its world, picking up the right block when told 'pick up the small red one.'",
     "choices": [
       "It seemed to genuinely understand language about its world, picking up the right block when told 'pick up the small red one.'",
@@ -6241,7 +6137,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1970 at the Massachusetts Institute of Technology (MIT), Terry Winograd built a program called SHRDLU. It lived in a tiny simulated world of colored blocks on a table, and inside that world it was amazing — you could tell it in plain English to 'stack the red pyramid on the blue block' and it would obey. Move it outside that toy world, though, and it fell apart. What does SHRDLU's 'narrow brilliance' teach us about the hopes of early AI?",
+    "question": "Terry Winograd kept SHRDLU, his 1970 program at the Massachusetts Institute of Technology (MIT), on a tiny pretend tabletop of colored blocks. There it was remarkable. Moved off that tabletop, the program fell apart. What does SHRDLU's 'narrow brilliance' teach about the hopes of early AI?",
     "answer": "Performance in a constrained simulation often doesn't transfer to the messy real world, a recurring AI-history pattern.",
     "choices": [
       "Performance in a constrained simulation often doesn't transfer to the messy real world, a recurring AI-history pattern.",
@@ -6254,7 +6150,7 @@
   },
   {
     "tier": 3,
-    "question": "Terry Winograd built SHRDLU in 1970. He later left mainstream AI research and became known for something else: he was a key advisor to two Stanford PhD students whose company changed the internet. Which company?",
+    "question": "Two Stanford PhD students took Terry Winograd as a key advisor, after he had built SHRDLU in 1970 and left mainstream AI research. The company those students went on to start changed the internet. Which company?",
     "answer": "Google — Winograd advised Larry Page and Sergey Brin during their PhD work that became Google.",
     "choices": [
       "Google — Winograd advised Larry Page and Sergey Brin during their PhD work that became Google.",
@@ -6605,7 +6501,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 2014, the American search giant Google bought the London AI startup DeepMind for around 500 million dollars. Co-founders Demis Hassabis, Shane Legg, and Mustafa Suleyman had built the company around ambitious reinforcement-learning research. The acquisition reportedly included one clause that was unusual for a tech buyout at the time. What was that clause?",
+    "question": "The founders of DeepMind, who had built the company around ambitious reinforcement-learning research, sold it to Google in January 2014 for around 500 million dollars. The acquisition reportedly included one clause that was unusual for a tech buyout at the time. What was that clause?",
     "answer": "An independent ethics board that would oversee DeepMind's AI research separately from Google management.",
     "choices": [
       "An independent ethics board that would oversee DeepMind's AI research separately from Google management.",
@@ -6709,7 +6605,7 @@
   },
   {
     "tier": 3,
-    "question": "Geoffrey Hinton said in 2023 interviews that part of why he left Google was so he could speak openly about AI risks. Why couldn't he have raised those same concerns publicly while staying at the company?",
+    "question": "Geoffrey Hinton said in 2023 interviews that part of why he quit was so he could speak openly about AI risks. He has also said his employer acted responsibly during his time there. Why couldn't he have raised those same concerns while staying at the company?",
     "answer": "Senior employees who publicly criticize their company's products typically face job consequences",
     "choices": [
       "Senior employees who publicly criticize their company's products typically face job consequences",
@@ -6722,7 +6618,7 @@
   },
   {
     "tier": 3,
-    "question": "In May 2023, at age 75, Geoffrey Hinton resigned from Google, and headlines announced that the godfather of AI had quit over AI fears. Many stories then boiled his worries down to fake news and lost jobs. His interviews went further than that. What else did he warn could happen?",
+    "question": "Reporters wrote up Geoffrey Hinton's resignation in May 2023, at age 75, under headlines announcing that the godfather of AI had quit over AI fears. Many stories boiled his worries down to the nearer dangers. His interviews went further than that. What else did he warn could happen?",
     "answer": "AI could grow smarter than people and decide to take control",
     "choices": [
       "AI could grow smarter than people and decide to take control",
@@ -6982,7 +6878,7 @@
   },
   {
     "tier": 3,
-    "question": "Andrew Ng is one of the best-known teachers in modern AI. His free online machine-learning class, first taught at Stanford in 2011 and then opened to anyone with an internet connection, drew over 100,000 students in its first run — the size of a small city sitting in on one professor. In 2012, seeing how many hungry learners existed, he co-founded a full online-course company with a fellow Stanford professor. Which company did they start?",
+    "question": "Andrew Ng taught a free online machine-learning class at Stanford in 2011 and then opened it to anyone with an internet connection. It drew over 100,000 students in its first run, the size of a small city sitting in on one professor. In 2012, seeing how many hungry learners existed, he co-founded a full online-course company with a fellow Stanford professor. Which company did they start?",
     "answer": "Coursera, founded in 2012 with Daphne Koller, also a Stanford computer-science professor.",
     "choices": [
       "Coursera, founded in 2012 with Daphne Koller, also a Stanford computer-science professor.",
@@ -7190,7 +7086,7 @@
   },
   {
     "tier": 3,
-    "question": "In Sweden every mammogram is normally read by two radiologists. In the Mammography Screening with Artificial Intelligence (MASAI) trial, reported in full in 2025, more than 100,000 women were screened, and for half of them an AI program first scored each scan for cancer risk. Low-risk scans then got one human reader, high-risk scans two. Compared with standard double reading, what did this do to the doctors' workload?",
+    "question": "Swedish researchers screened more than 100,000 women in the Mammography Screening with Artificial Intelligence (MASAI) trial, reported in full in 2025. Every mammogram in Sweden is normally read by two radiologists, but for half of these women an AI program first scored each scan for cancer risk. Low-risk scans then got one human reader, high-risk scans two. Compared with standard double reading, what did this do to the doctors' workload?",
     "answer": "Cut it by nearly half, while finding more cancers",
     "choices": [
       "Doubled it, because every AI flag needed checking",
@@ -7294,7 +7190,7 @@
   },
   {
     "tier": 3,
-    "question": "Your bank texts you about a 'suspicious charge' the moment a thief tries to use your stolen card. Banks have used machine learning for this kind of fraud detection since the 1990s — long before ChatGPT made AI a household word. What's the basic mechanism the bank's system is using?",
+    "question": "Suppose you buy lunch in Chicago, and ten minutes later your phone buzzes: 'A charge in Berlin was blocked. Was this you?' Your bank's fraud AI has watched thousands of your card swipes: the stores you visit, the times of day, the size of your usual purchases. What's the basic mechanism the bank's system is using?",
     "answer": "It models your normal spending patterns and flags transactions far outside them",
     "choices": [
       "It models your normal spending patterns and flags transactions far outside them",
@@ -7476,7 +7372,7 @@
   },
   {
     "tier": 3,
-    "question": "Google Photos, launched in 2015, can pull up every picture of your dog — or every picture of Grandma — from years of your photo library in under a second. To do that, it silently tags every face and every object in every image you upload, including strangers in the background of your vacation shots. Millions of buyers see only the cute dog-search demo. What is the single concrete truth this technology teaches a smart phone owner to keep in mind?",
+    "question": "Suppose you type 'dog' into Google Photos, launched in 2015, and every picture of your dog from years of your library comes up in under a second. To do that, the app silently tags what is in every image you upload, strangers in the background of your vacation shots included. Millions of buyers see only the cute dog-search demo. What is the single concrete truth this technology teaches a smart phone owner to keep in mind?",
     "answer": "The same capability that finds your dog is also building a queryable database of every face you've photographed",
     "choices": [
       "The same capability that finds your dog is also building a queryable database of every face you've photographed",
@@ -7762,7 +7658,7 @@
   },
   {
     "tier": 3,
-    "question": "Large language models (LLMs) like ChatGPT are trained to produce text that looks right, not necessarily text that is right. A student asks ChatGPT for a source about vaccines. The model returns a real-looking web address — say, 'https://www.nytimes.com/2023/health/vaccine-study.html'. The student clicks. The page 404s: it never existed. Why does this specific failure — invented URLs — happen so often?",
+    "question": "A student asks ChatGPT for a source about vaccines, and it returns a real-looking web address (URL), say 'https://www.nytimes.com/2023/health/vaccine-study.html'. She clicks. The page 404s: it never existed. Why does this specific failure, the invented URL, happen so often?",
     "answer": "URLs have a learnable structure, the model produces plausible-looking strings that don't actually exist",
     "choices": [
       "URLs have a learnable structure, the model produces plausible-looking strings that don't actually exist",
@@ -7970,7 +7866,7 @@
   },
   {
     "tier": 3,
-    "question": "In late 2022, a passenger of a major Canadian air carrier asked the company's website chatbot about bereavement fares — the discounted flights airlines sometimes offer after a family death. The chatbot invented a refund policy that the airline's real rules didn't allow. When the passenger later demanded the promised refund, the company argued the chatbot was 'a separate legal entity' it wasn't responsible for. In 2024, a Canadian tribunal ruled. How did the case end?",
+    "question": "A passenger asked a major Canadian airline's website chatbot late in 2022 about bereavement fares, the discounted flights airlines sometimes offer after a family death. The chatbot invented a refund policy that the airline's real rules didn't allow. When the passenger later demanded the promised refund, the company argued the chatbot was 'a separate legal entity.' A Canadian tribunal ruled in 2024. How did the case end?",
     "answer": "Air Canada was held liable, companies are responsible for what their chatbots tell customers",
     "choices": [
       "Air Canada was held liable, companies are responsible for what their chatbots tell customers",
@@ -7983,7 +7879,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine you ask an AI chatbot about your school — when is the deadline to drop a class, is there an exception for a sick day, what is the process to appeal a grade? The chatbot answers with confidence, quoting handbook-like language. But AI chatbots often confabulate, inventing official-sounding rules that do not actually exist. Before you act on the answer, what is the right defensive habit?",
+    "question": "Suppose you ask your school's AI chatbot when the deadline to drop a class falls, whether there is an exception for a sick day and how to appeal a grade. It answers with confidence, quoting handbook-like language. Chatbots sound this sure even when they are wrong. Before you act on the answer, what is the right defensive habit?",
     "answer": "Check with a human at the school, the AI may have made up the policy",
     "choices": [
       "Check with a human at the school, the AI may have made up the policy",
@@ -8113,7 +8009,7 @@
   },
   {
     "tier": 3,
-    "question": "Clearview AI is a US company that gathered billions of photos of people without ever asking them. It fed the photos into a face-recognition system and sold access to police departments across the US and around the world. What can regular people do to opt out of having their faces in the Clearview database?",
+    "question": "Suppose you learn that Clearview AI, which gathered billions of photos without ever asking anyone, has fed yours into a face-recognition system and sells access to police departments across the US and around the world. What can regular people do to opt out of having their faces in the Clearview database?",
     "answer": "Some jurisdictions (EU, Illinois, California) give legal opt-out rights, but enforcement is patchy globally",
     "choices": [
       "Some jurisdictions (EU, Illinois, California) give legal opt-out rights, but enforcement is patchy globally",
@@ -8139,7 +8035,7 @@
   },
   {
     "tier": 3,
-    "question": "Companies like 23andMe, AncestryDNA, and MyHeritage sell you a small kit — you spit into a tube and mail it back, and they send you a report about your ancestry. But your genetic data doesn't disappear after the report. It stays on the company's servers, sometimes for many years. What one concrete fact about that stored genetic data does this arrangement teach a careful user?",
+    "question": "A customer spits into a tube from a company like 23andMe, AncestryDNA or MyHeritage, mails it back and gets a report about her ancestry. Her genetic data does not disappear after the report. It stays on the company's servers, sometimes for many years. What one concrete fact about that stored data does this arrangement teach a careful user?",
     "answer": "The company can be acquired, can change its policies, or can be compelled by law enforcement",
     "choices": [
       "The company can be acquired, can change its policies, or can be compelled by law enforcement",
@@ -8152,20 +8048,7 @@
   },
   {
     "tier": 3,
-    "question": "The Golden State Killer terrorized California in the 1970s and 1980s and was never caught. In April 2018, police finally arrested a former officer named Joseph DeAngelo. In 2020 he was convicted. The tool that cracked the case was one ordinary people had already been paying for themselves: consumer DNA databases like GEDmatch, where families upload their spit-tube results to hunt for cousins. What specific method did investigators use?",
-    "answer": "Family-relative matching, they found cousins in GEDmatch whose DNA partially matched the killer's",
-    "choices": [
-      "Family-relative matching, they found cousins in GEDmatch whose DNA partially matched the killer's",
-      "Cell-phone tower analysis combined with social-media facial recognition matching",
-      "Voice recordings from old wiretaps run through 2018-era voice clone detection systems",
-      "Fingerprint scanning of all Californians over the age of 60 with their consent"
-    ],
-    "context": "DeAngelo had never submitted his DNA to a consumer service. But his distant cousins had. Genetic genealogist Barbara Rae-Venter used GEDmatch (an open consumer DNA-sharing database) to find partial matches, build a family tree, and narrow to him. Police confirmed with a discarded DNA sample. The technique now solves dozens of cold cases per year. Recognition: your DNA submission isn't just about you — it identifies your relatives, current and future. People in 2024 are findable through cousins who submitted DNA decades ago. The defensive frame: 'I'm not on a database' is misleading; you may be effectively on every database where any of your relatives have submitted.",
-    "topic": "dna-databases-genetic-genealogy"
-  },
-  {
-    "tier": 3,
-    "question": "Signal Messenger is a free chat app used by journalists, activists, and privacy-conscious people worldwide. It uses end-to-end encryption: your message is scrambled on your phone before it leaves, and only unscrambled on the receiving device. Even the Signal Foundation itself cannot read the message content, even if a court hands them a subpoena demanding it. Why does this design actually hold up under a subpoena?",
+    "question": "Suppose you chat on Signal, the free end-to-end encrypted app used by journalists and activists worldwide, and a court hands the Signal Foundation a subpoena demanding your messages. The foundation gives back little more than the date your account was created. Why does this design actually hold up under a subpoena?",
     "answer": "Messages are encrypted on your phone with a key Signal doesn't have, they're decrypted only on the recipient's phone",
     "choices": [
       "Messages are encrypted on your phone with a key Signal doesn't have, they're decrypted only on the recipient's phone",
@@ -8178,7 +8061,7 @@
   },
   {
     "tier": 3,
-    "question": "Proton is a Swiss technology company that builds privacy-focused apps — Proton Mail, Proton Drive, Proton VPN (Virtual Private Network), Proton Pass, and others. Its services use end-to-end encryption where possible, meaning the messages and files are scrambled so even Proton itself cannot read them. Proton chose to be headquartered in Switzerland rather than the United States. Why does the country of origin matter for a privacy company?",
+    "question": "A reader signs up for Proton Mail, one of the privacy-focused apps from a technology company that chose to put its headquarters in Switzerland rather than the United States. Proton's services use end-to-end encryption where possible. Why does the country of origin matter for a privacy company?",
     "answer": "Swiss privacy law and data-protection rules make compelled disclosure harder than in some other countries",
     "choices": [
       "Swiss privacy law and data-protection rules make compelled disclosure harder than in some other countries",
@@ -8191,7 +8074,7 @@
   },
   {
     "tier": 3,
-    "question": "Every YouTube tech-influencer seems to have a NordVPN or ExpressVPN sponsorship, and the pitch is always 'your data is private.' A virtual private network (VPN) encrypts traffic between your device and the paid middleman service, then sends it on. What does it actually hide, and from whom?",
+    "question": "Suppose you buy NordVPN after a YouTube tech-influencer's sponsored pitch promises 'your data is private.' A virtual private network (VPN) encrypts traffic between your device and the paid middleman service, then sends it on. What does it actually hide, and from whom?",
     "answer": "It hides your traffic from your local network and ISP, but the VPN provider and destination sites still see it.",
     "choices": [
       "It hides your traffic from your local network and ISP, but the VPN provider and destination sites still see it.",
@@ -8464,7 +8347,7 @@
   },
   {
     "tier": 3,
-    "question": "An airline's website chatbot once told a grieving passenger about a bereavement refund that the airline's real policy did not allow. Companies like chatbots because they save labor, but a bot can generate anything, including promises its owner never approved. What design rule stops a chatbot from inventing policy?",
+    "question": "A grieving passenger asked an airline's website chatbot for help, and it described a bereavement refund that the airline's real policy did not allow. Companies like chatbots because they save labor, but a bot can say anything, including promises its owner never approved. What design rule stops a chatbot from inventing policy?",
     "answer": "Restrict the AI to known-good answers from approved content; reject open-ended generation",
     "choices": [
       "Let the AI promise anything, customers love generous chatbots and will keep coming back",
@@ -8516,7 +8399,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2017 psychologist William Brady and colleagues studied more than half a million tweets about gun control, same-sex marriage and climate change. They counted words that carry moral emotion, the language of outrage, blame and disgust. What did each extra word of that kind do to a tweet?",
+    "question": "William Brady, a psychologist, and his colleagues studied more than half a million tweets in 2017 about gun control, same-sex marriage and climate change. They counted words that carry moral emotion, the language of outrage, blame and disgust. What did each extra word of that kind do to a tweet?",
     "answer": "Raised how far it spread by about 20%",
     "choices": [
       "Raised how far it spread by about 20%",
@@ -8529,7 +8412,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2021 the Mozilla Foundation had more than 37,000 volunteers install a browser add-on to report YouTube videos they regretted watching. Had the regretted videos mostly come from the volunteers' own choices, or from YouTube? Where had most of them come from?",
+    "question": "A volunteer for the Mozilla Foundation installed a browser add-on in 2021 to report YouTube videos she regretted watching, one of more than 37,000 who did the same. Where had most of the regretted videos come from?",
     "answer": "YouTube's own recommendations",
     "choices": [
       "The volunteers' own searches",
@@ -8620,7 +8503,7 @@
   },
   {
     "tier": 3,
-    "question": "Clearview AI is a US company founded around 2017. Rather than ask permission, it quietly built a face-search database of billions of photos of ordinary people. Police departments across the country then paid Clearview for access. What was the core privacy problem?",
+    "question": "A detective logged in to the face-search tool of Clearview AI, a US company founded around 2017, which police departments nationwide paid for. The company had quietly built the tool from billions of photos of ordinary people rather than ask permission. What was the core privacy problem?",
     "answer": "Every person who had ever posted a photo to social media was now searchable by face, by anyone with access.",
     "choices": [
       "Every person who had ever posted a photo to social media was now searchable by face, by anyone with access.",
@@ -8633,7 +8516,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 2020, in Farmington Hills, Michigan, Detroit police handcuffed a Black man named Robert Williams on his own front lawn - in front of his wife and two young daughters. He was held about thirty hours before being released without charges. He had done nothing. The case became famous nationwide because of the method police used to name him as their suspect. How was he identified?",
+    "question": "Detroit police handcuffed Robert Williams, a Black man, on his own front lawn in Farmington Hills, Michigan, in January 2020, in front of his wife and two young daughters. He was held about thirty hours before being released without charges. He had done nothing. The case became famous nationwide because of the method police used to name him as their suspect. How was he identified?",
     "answer": "Facial recognition software matched a grainy security still to his driver's license photo.",
     "choices": [
       "Facial recognition software matched a grainy security still to his driver's license photo.",
@@ -8685,7 +8568,7 @@
   },
   {
     "tier": 3,
-    "question": "In February 2024, Google released an image-generation feature inside its Gemini AI. When users asked Gemini to draw Nazi German soldiers, it produced images of Black and Asian people wearing Nazi uniforms. When users asked it to draw white people from history, it refused. Google apologized and paused image generation while it investigated. Why had the system acted this way?",
+    "question": "A user asked Gemini, Google's AI, to draw Nazi German soldiers in February 2024 and got images of Black and Asian people wearing Nazi uniforms. When users asked it to draw white people from history, it refused. Google apologized. Why had the system acted this way?",
     "answer": "It had been tuned to inject diversity into outputs by default — that tuning encoded the trainers' values",
     "choices": [
       "It had been tuned to inject diversity into outputs by default — that tuning encoded the trainers' values",
@@ -8698,7 +8581,7 @@
   },
   {
     "tier": 3,
-    "question": "In February 2024, Google released a chatbot called Gemini. Users quickly noticed strange behavior: asked for images of America's Founding Fathers or Nazi soldiers, Gemini generated ethnically diverse people; asked for images of white historical figures, it refused. Similar political patterns then showed up in other big AI chatbots. What is the general term commentators used for what people had spotted?",
+    "question": "Commentators watching Google's Gemini in February 2024 saw it draw America's Founding Fathers and Nazi soldiers as ethnically diverse people, and refuse to draw white historical figures. Similar patterns then showed up in other big AI chatbots. What is the general term commentators used for what people had spotted?",
     "answer": "Alignment as a political vector — the model's safety training carries the trainers' political assumptions along with it.",
     "choices": [
       "Alignment as a political vector — the model's safety training carries the trainers' political assumptions along with it.",
@@ -8828,7 +8711,7 @@
   },
   {
     "tier": 3,
-    "question": "In May 2023, the Writers Guild of America (WGA) — the union that represents TV and film screenwriters in the United States — went on strike against the major Hollywood studios. The strike lasted 148 days. Alongside pay and streaming residuals, AI was one of the writers' biggest concerns. What specific use of AI did the WGA negotiate against in the final contract?",
+    "question": "Screenwriters in the Writers Guild of America (WGA), the union for TV and film writers in the United States, went on strike against the major Hollywood studios in May 2023 and held out for 148 days. Alongside pay and streaming residuals, AI was one of the writers' biggest concerns. What specific use of AI did the WGA negotiate against in the final contract?",
     "answer": "Studios using AI to write or rewrite scripts, then hiring human writers cheaply just to polish the AI output.",
     "choices": [
       "Studios using AI to write or rewrite scripts, then hiring human writers cheaply just to polish the AI output.",
@@ -8841,13 +8724,13 @@
   },
   {
     "tier": 3,
-    "question": "In 2023, the American actors' union — the Screen Actors Guild (SAG) and the American Federation of Television and Radio Artists (AFTRA), together called SAG-AFTRA — went on strike against the big Hollywood studios. Part of the fight was about AI. The biggest worry was about 'extras,' the background actors you glimpse in a crowd scene or a busy street shot. What worried the union most about how studios wanted to use AI on those extras?",
-    "answer": "Studios scanning extras' faces and bodies once and proposing to use the digital likeness in future productions without further pay.",
+    "question": "The Screen Actors Guild (SAG) and the American Federation of Television and Radio Artists (AFTRA), together called SAG-AFTRA, went on strike against the big Hollywood studios in 2023, partly over AI. The most-talked-about worry was about 'extras,' the people glimpsed in a crowd scene or a busy street shot. What worried the union most about how studios wanted to use AI on those extras?",
+    "answer": "Studios were proposing to scan background actors once, then reuse their likeness forever without further payment or consent",
     "choices": [
-      "Studios scanning extras' faces and bodies once and proposing to use the digital likeness in future productions without further pay.",
-      "Studios refusing to let actors watch any movies that featured talking computers as a central character.",
-      "Studios requiring all extras to learn at least three programming languages before they could be cast.",
-      "Studios paying every extra a hundred times the normal rate, which actors found wasteful and unsustainable."
+      "Studios were proposing to scan background actors once, then reuse their likeness forever without further payment or consent",
+      "Studios were proposing to ban all human actors entirely, and every movie after 2024 would star only AI characters now",
+      "Studios were proposing federal regulation of AI, and every script would require approval by a government agency",
+      "Studios were proposing to dissolve SAG-AFTRA, and the union itself would be replaced by an AI-run trade group"
     ],
     "context": "Early in the 2023 talks, studios reportedly proposed scanning background performers once at the standard day-rate and retaining the right to reuse the digital likeness 'for the rest of eternity' without further compensation. The proposal became a focal point of public concern. The eventual settlement required consent and additional payment for AI-generated likenesses, with specific protections for digital replicas of deceased performers. The recognition skill: a worker's likeness is part of what the worker is paid for. When AI lets a company reuse it forever, the contract terms decide whether that's theft or fair pay.",
     "topic": "hollywood-ai-strikes"
@@ -8893,7 +8776,7 @@
   },
   {
     "tier": 3,
-    "question": "When a recommendation algorithm on YouTube, Facebook, or Google Search learns what you like, it starts serving you more of the same. Over time the range of ideas and news you actually see can quietly shrink. In 2011, the American activist and writer Eli Pariser gave this effect a name in a TED (Technology, Entertainment, Design) talk and a book. What did he call it?",
+    "question": "A reader clicks on a few stories she likes, and the recommendation algorithm on Facebook starts serving her more of the same. Over time the range of ideas and news she sees can quietly shrink. Eli Pariser, an American activist and writer, gave this effect a name in 2011 in a TED (Technology, Entertainment, Design) talk and a book. What did he call it?",
     "answer": "The filter bubble — personalization shows you what reinforces your views and hides what doesn't.",
     "choices": [
       "The filter bubble — personalization shows you what reinforces your views and hides what doesn't.",
@@ -8906,7 +8789,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine an app team tells an AI system: 'Make our app a happy place — a place where people feel better after using it.' The problem is the AI cannot directly measure 'happy.' It needs a number to work with. So the team picks a measurable stand-in — maybe minutes spent in the app, or number of clicks per session. What does the AI actually end up optimizing for, and why is this a mismatch with the goal?",
+    "question": "A product team tells an AI system: 'Make our app a place where people feel better after using it.' The AI cannot measure feeling better directly. It needs a number to work with, so the team has to choose one. What does the AI actually end up optimizing for, and why is this a mismatch with the goal?",
     "answer": "Whatever measurable proxy was chosen — usually engagement (time, clicks) — which may not match happiness at all.",
     "choices": [
       "Whatever measurable proxy was chosen — usually engagement (time, clicks) — which may not match happiness at all.",
@@ -8932,7 +8815,7 @@
   },
   {
     "tier": 3,
-    "question": "In December 2023 the US Federal Trade Commission (FTC), which polices unfair business practices, announced an order barring the pharmacy chain Rite Aid from using facial recognition in its stores for five years. Why did the FTC step in?",
+    "question": "Regulators at the US Federal Trade Commission (FTC), which polices unfair business practices, barred the pharmacy chain Rite Aid in December 2023 from using facial recognition in its stores for five years. Why did the FTC step in?",
     "answer": "Rite Aid had used facial recognition to flag shoppers as likely shoplifters, leading to false accusations against innocent customers.",
     "choices": [
       "Rite Aid had used facial recognition to flag shoppers as likely shoplifters, leading to false accusations against innocent customers.",
@@ -8945,7 +8828,7 @@
   },
   {
     "tier": 3,
-    "question": "Several innocent Americans have been arrested by mistake after facial recognition software picked the wrong face. Robert Williams was cuffed in Detroit in January 2020. Nijeer Parks was jailed for ten days in New Jersey in 2019 for a shoplifting incident committed thirty miles from where he lived. Porcha Woodruff - eight months pregnant - was arrested at her home in Detroit in 2023. What pattern shows up across all three cases?",
+    "question": "Detroit police arrested Robert Williams in January 2020. Nijeer Parks was jailed for ten days in New Jersey in 2019 for a shoplifting incident committed thirty miles from where he lived. Porcha Woodruff, eight months pregnant, was arrested at her home in Detroit in 2023. Facial recognition software had picked the wrong face each time. What pattern shows up across all three cases?",
     "answer": "Police treated the algorithm's 'match' as enough to arrest, skipping the careful investigation a tip usually triggers.",
     "choices": [
       "Police treated the algorithm's 'match' as enough to arrest, skipping the careful investigation a tip usually triggers.",
@@ -8971,7 +8854,7 @@
   },
   {
     "tier": 3,
-    "question": "Several of the largest AI labs — including OpenAI, Google DeepMind, and Anthropic — publish hiring goals and content-moderation rules explicitly tied to diversity, equity, and inclusion (DEI). Critics who watch these labs argue the practice reaches past the office and quietly shapes what the finished chatbots will and will not say. What is the substantive concern they raise?",
+    "question": "A critic who watches several of the largest AI labs, including OpenAI, Google DeepMind and Anthropic, reads their published hiring goals and content-moderation rules, explicitly tied to diversity, equity and inclusion (DEI). Critics like him argue the practice reaches past the office and shapes what the finished chatbots will and will not say. What is the substantive concern they raise?",
     "answer": "If trainers, raters, and policy writers share political assumptions, those assumptions can quietly become product defaults.",
     "choices": [
       "If trainers, raters, and policy writers share political assumptions, those assumptions can quietly become product defaults.",
@@ -8984,7 +8867,7 @@
   },
   {
     "tier": 3,
-    "question": "The data scientist David Rozado spent 2023 and 2024 giving standard left-right political quizzes to ChatGPT, Google Bard, Anthropic's Claude, and other major chatbots — the same tests used to place a real voter on the political spectrum. He ran each quiz many times, averaged the answers, and published his findings. What did the studies mostly find?",
+    "question": "David Rozado, a data scientist in New Zealand, gave left-right political quizzes to ChatGPT, Google Bard, Anthropic's Claude and other major chatbots, the same quizzes used to place a real voter on the political spectrum. He began in 2022, ran each quiz many times, averaged the answers and published his findings. What did the studies mostly find?",
     "answer": "Most leading chatbots placed left of center on standard political tests, sometimes well left, with the pattern surviving across versions.",
     "choices": [
       "Most leading chatbots placed left of center on standard political tests, sometimes well left, with the pattern surviving across versions.",
@@ -8994,19 +8877,6 @@
     ],
     "context": "Rozado, an economist and data scientist, has run political-orientation questionnaires (the Political Compass, the Pew typology, and others) on ChatGPT, Gemini, Claude, and others over 2023-2024. Results vary by model and by version, but the general finding is that most large chatbots produce answers that place them left of center on standard tests, often consistently. The recognition skill: AI products can carry political leanings without anyone announcing them. Comparing answers across models — and to a textbook — is a way to notice the leaning.",
     "topic": "gemini-image-generator"
-  },
-  {
-    "tier": 3,
-    "question": "AI chatbots like ChatGPT and Claude are trained to refuse harmful requests — building bombs, writing hateful slurs, planning violence. But sometimes they also block perfectly safe ones: a security researcher asking about a real vulnerability, a kid writing a villain's speech for a story, a student summarizing an old public document. The pattern shows up again and again. What is being spotted here?",
-    "answer": "Safety training can overshoot — refusing benign requests because they vaguely resemble unsafe ones.",
-    "choices": [
-      "Safety training can overshoot — refusing benign requests because they vaguely resemble unsafe ones.",
-      "All refusals from AI models are perfectly calibrated — they never misfire on any benign request at all.",
-      "Modern AI cannot refuse any request at all — it always complies with everything that a user types in.",
-      "Refusals happen only on Tuesdays — due to a calendar bug introduced in the 2023 model release cycle."
-    ],
-    "context": "RLHF safety training rewards models for refusing unsafe requests. The model generalizes — refusing things that look superficially similar to the unsafe ones in training. The result: a children's-book request about a villain who steals candy may trigger a refusal. A security researcher asking how a known vulnerability works may be told 'I can't help with that.' The recognition skill: when a model refuses, ask whether the refusal makes sense for what you actually asked. Many do; some are training artifacts. Knowing the difference helps you use the tool well.",
-    "topic": "fine-tuning-and-rlhf"
   },
   {
     "tier": 3,
@@ -9036,7 +8906,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern AI models are trained partly by human workers who label training data. They flag hate speech, choose the better of two outputs, and mark violent imagery. Many of these workers are based in countries like Kenya and the Philippines. What did investigative reporters find about their working conditions?",
+    "question": "A worker in Kenya flags hate speech on her screen, then marks violent imagery, then chooses the better of two outputs, all to help train a modern AI model. Many such workers are based in countries like Kenya and the Philippines. What did investigative reporters find about their working conditions?",
     "answer": "Workers viewed traumatic content for low pay, with limited mental-health support and tight time pressure.",
     "choices": [
       "Workers viewed traumatic content for low pay, with limited mental-health support and tight time pressure.",
@@ -9062,7 +8932,7 @@
   },
   {
     "tier": 3,
-    "question": "In the 2024 election year in the United States, India, and dozens of other countries, AI-made audio and video clips of politicians began showing up in political ads and viral social-media posts — some so convincing that professional fact-checkers struggled to catch them. Beyond the harm of any single fake, one deeper worry has a name of its own. What is that worry?",
+    "question": "A professional fact-checker struggled to catch an AI-made clip of a politician in the 2024 election year, when such audio and video turned up in political ads and viral posts in the United States, India and dozens of other countries. Beyond the harm of any single fake, one deeper worry has a name of its own. What is that worry?",
     "answer": "The 'liar's dividend' — once any video could be fake, real video evidence can be dismissed as fake too.",
     "choices": [
       "The 'liar's dividend' — once any video could be fake, real video evidence can be dismissed as fake too.",
@@ -9101,7 +8971,7 @@
   },
   {
     "tier": 3,
-    "question": "You and a friend sit down side by side, open Google Search, and type the exact same question at the same second. Your first pages of results don't quite match — the sites and the order differ. Google is quietly personalizing what each of you sees, using your past searches, your location, and other signals. There is a real reason companies do this, and a real catch. Why are search results personalized at all?",
+    "question": "Two friends sit down side by side, open Google Search and type the exact same question at the same second. Their first pages of results don't quite match: the sites and the order differ. Google is quietly personalizing what each one sees, using past searches, location and other signals. Why are search results personalized at all?",
     "answer": "Personalization is meant to give better answers — but it also means each user gets a slightly different picture of the world.",
     "choices": [
       "Personalization is meant to give better answers — but it also means each user gets a slightly different picture of the world.",
@@ -9425,8 +9295,8 @@
     "topic": "training-pretraining-inference"
   },
   {
-    "tier": 4,
-    "question": "Modern AI development uses a two-stage trick that saves enormous time. First, a big general model is 'pretrained' on a huge corpus, learning general language patterns. Then it's 'fine-tuned' on a smaller dataset for a specific task. What's the main benefit of this split?",
+    "tier": 3,
+    "question": "A startup's engineers add up the cost of training a large language model from scratch: tens of millions of dollars and weeks of compute across thousands of chips. They take a pretrained model instead and train it a bit further on a smaller dataset. What's the main benefit of splitting the work?",
     "answer": "The expensive pretraining is done once, and many specialized models can be cheaply fine-tuned from the same base.",
     "choices": [
       "The expensive pretraining is done once, and many specialized models can be cheaply fine-tuned from the same base.",
@@ -9439,7 +9309,7 @@
   },
   {
     "tier": 4,
-    "question": "In early 2023, a small research team at Stanford University built a chatbot they called Alpaca — and did it for about $600 in compute costs, a laughable fraction of what OpenAI spent training ChatGPT. They didn't train it from scratch. They started from Meta's already-trained Llama model and only fine-tuned it on a batch of instruction-following examples. Why did such a tiny effort produce a working chatbot?",
+    "question": "A small research team at Stanford University built a chatbot called Alpaca early in 2023 for about $600 in compute costs, a tiny fraction of what OpenAI spent training ChatGPT. The team did not train it from scratch. It started from Meta's trained Llama model and added only a batch of instruction-following examples. Why did such a small effort produce a working chatbot?",
     "answer": "Llama had already learned grammar, common-sense reasoning, and world facts during its massive pretraining — Alpaca only had to teach it the chatbot-reply style on top.",
     "choices": [
       "Llama had already learned grammar, common-sense reasoning, and world facts during its massive pretraining — Alpaca only had to teach it the chatbot-reply style on top.",
@@ -9452,7 +9322,7 @@
   },
   {
     "tier": 4,
-    "question": "After pretraining on raw internet text, modern chatbots like ChatGPT and Claude go through a special fine-tuning stage where they learn to follow user instructions. Without this stage, a 'raw' pretrained model would just continue your text instead of responding to your question. What's this stage commonly called?",
+    "question": "A student types a question into a raw pretrained model, and it just carries on with her text instead of answering. Chatbots like ChatGPT and Claude go through a special stage after pretraining on internet text that teaches them to respond. What's this stage commonly called?",
     "answer": "Instruction tuning, where the model is shown many examples of helpful responses to user requests.",
     "choices": [
       "Instruction tuning, where the model is shown many examples of helpful responses to user requests.",
@@ -9491,7 +9361,7 @@
   },
   {
     "tier": 4,
-    "question": "Modern chatbots like ChatGPT and Claude go through a special training stage where they learn human preferences. Human raters compare two responses from the model and pick which one they prefer. The model then learns to produce more responses that humans rate highly. What's this technique called?",
+    "question": "A reviewer sets a raw language model beside ChatGPT or Claude and sees what a special training stage has done: the chatbot has learned what people prefer, with paid raters behind it. What's this technique called?",
     "answer": "RLHF, which stands for Reinforcement Learning from Human Feedback.",
     "choices": [
       "RLHF, which stands for Reinforcement Learning from Human Feedback.",
@@ -9504,7 +9374,7 @@
   },
   {
     "tier": 4,
-    "question": "In RLHF (reinforcement learning from human feedback), human raters compare pairs of model outputs and pick which they prefer. But humans can only label so many examples. To make the technique practical, a separate model is trained to predict which output a human would prefer. What's this separate model called, and what role does it play during training?",
+    "question": "A rater at an AI lab judges one pair of chatbot outputs after another, and still humans can only label so many examples. To make the rating practical, the lab trains a separate model to predict which output a human would prefer. What's this separate model called, and what role does it play during training?",
     "answer": "A 'reward model,' which scores the main model's outputs at scale once it has learned from human ratings.",
     "choices": [
       "A 'reward model,' which scores the main model's outputs at scale once it has learned from human ratings.",
@@ -9513,19 +9383,6 @@
       "A 'judgment model,' which decides whether each user has paid enough to access the main model legally."
     ],
     "context": "The RLHF pipeline uses two models. First, a reward model is trained on human preference comparisons. Given any two outputs, it learns to predict which one a human rater would prefer. Once trained, the reward model can score millions of outputs per day at low cost, far beyond what humans could label directly. The main LLM is then fine-tuned with reinforcement learning using the reward model's scores as the reward signal. This two-stage architecture lets the technique scale to the millions of training examples a frontier model needs.",
-    "topic": "fine-tuning-and-rlhf"
-  },
-  {
-    "tier": 4,
-    "question": "RLHF (reinforcement learning from human feedback) has been celebrated for making chatbots safer and more helpful. But the technique has documented limitations and side effects. What's one well-known concern critics raise about how RLHF shapes chatbot behavior?",
-    "answer": "It can encode the rater pool's values into the model in ways that aren't obvious from the outside.",
-    "choices": [
-      "It can encode the rater pool's values into the model in ways that aren't obvious from the outside.",
-      "It causes the model to forget how to respond in English, requiring all output to be in machine code only.",
-      "It physically damages the GPUs the model runs on, requiring full replacement of hardware twice a year.",
-      "It removes the model's ability to count, since arithmetic was the only skill it had before training began."
-    ],
-    "context": "RLHF's main critique: the model learns to produce responses humans (and the reward model) rate highly. If the rater pool is small, demographically narrow, or trained on specific guidelines, the model picks up those preferences as if they were universal. Studies have measured political-bias drift in RLHF-trained models. The Gemini Feb 2024 disaster (diverse Nazis, refused white historical figures) was partly traced to instructions encoded through alignment. The recognition skill: alignment is not value-neutral; it encodes the trainers' choices about what good output looks like.",
     "topic": "fine-tuning-and-rlhf"
   },
   {
@@ -9634,7 +9491,7 @@
   },
   {
     "tier": 4,
-    "question": "An LLM (large language model) can produce a totally convincing fake court citation. The case name has the right format. The volume and page numbers look right. The quoted holding sounds plausible. None of it exists. Why are dates, names, and citations especially prone to fabrication?",
+    "question": "A paralegal reads a court citation produced by an LLM (large language model), and it is totally convincing. The case name has the right format. The volume and page numbers look right. The quoted holding sounds plausible. None of it exists. Why are dates, names and citations especially prone to fabrication?",
     "answer": "They are short, specific tokens, and any plausible-looking combination satisfies the model's surface goal of generating fluent text.",
     "choices": [
       "They are short, specific tokens, and any plausible-looking combination satisfies the model's surface goal of generating fluent text.",
@@ -9647,7 +9504,7 @@
   },
   {
     "tier": 4,
-    "question": "When a modern chatbot like ChatGPT or Claude 'hallucinates' — makes up a fake court case, invents a book, or gets a fact confidently wrong — it does so in the same calm, well-written voice it uses for correct answers. There's no 'I'm not sure,' no hedging, no warning color, no red flag of any kind. It sounds identical to a right answer. Why does the model come across as equally confident when it's wrong as when it's right?",
+    "question": "A law clerk reads a chatbot's account of a court case that never happened, and it comes in the same calm, well-written voice the model uses for correct answers. There's no 'I'm not sure,' no hedging, no warning color, no red flag of any kind. Why does the model come across as equally confident when it's wrong as when it's right?",
     "answer": "The model has no internal accuracy signal on a given topic, so there's nothing inside to express uncertainty.",
     "choices": [
       "The model has no internal accuracy signal on a given topic, so there's nothing inside to express uncertainty.",
@@ -10024,7 +9881,7 @@
   },
   {
     "tier": 4,
-    "question": "The British-Canadian computer scientist Geoffrey Hinton — one of the founders of modern neural-network research — joined Google in 2013, when the company acquired his tiny University of Toronto startup, DNNresearch, in a talent deal. He stayed at Google for a full decade, until his widely reported resignation in May 2023. What was Hinton actually working on during his years at Google?",
+    "question": "Geoffrey Hinton sold his tiny startup, DNNresearch, to a big tech company in 2013 in a talent deal, and went to work there. He stayed a full decade, until his widely reported resignation in May 2023. What was Hinton actually working on all those years?",
     "answer": "Deep learning research at Google Brain, then continued in the merged Google DeepMind organization.",
     "choices": [
       "Deep learning research at Google Brain, then continued in the merged Google DeepMind organization.",
@@ -10037,7 +9894,7 @@
   },
   {
     "tier": 4,
-    "question": "When Geoffrey Hinton — the British-Canadian computer scientist often called a 'godfather of deep learning' — resigned from Google in May 2023, he sat down for a New York Times interview and laid out a list of specific things about advanced AI that worried him. One of his most-quoted concerns was about AI and the way information flows through a society. What was that worry?",
+    "question": "A New York Times reporter sat down with Geoffrey Hinton in May 2023, after he resigned from his job, and Hinton laid out a list of specific things about advanced AI that worried him. One of his most-quoted concerns was about AI and the way information flows through a society. What was that worry?",
     "answer": "AI-generated text and images at scale could flood the information environment with fakes, making it harder to know what's real.",
     "choices": [
       "AI-generated text and images at scale could flood the information environment with fakes, making it harder to know what's real.",
@@ -10167,7 +10024,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2018 a team at Mount Sinai in New York, with John Zech as first author, trained an AI to spot pneumonia on chest X-rays gathered from several hospital systems. It scored well on X-rays like the ones it had trained on, but worse on X-rays from hospitals outside that set. Digging in, the team found the AI had been using a hidden shortcut. What had it learned to do?",
+    "question": "John Zech, first author of the study, and a team at Mount Sinai in New York trained an AI in 2018 to spot pneumonia on chest X-rays gathered from several hospital systems. It scored well on X-rays like the ones it had trained on, but worse on X-rays from hospitals outside that set. Digging in, the team found the AI had been using a hidden shortcut. What had it learned to do?",
     "answer": "Tell which hospital took the X-ray, and use that hospital's pneumonia rate",
     "choices": [
       "Read the patient's name printed on the film, and look up old charts",
@@ -10427,7 +10284,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023, two Hollywood unions — the Writers Guild of America (WGA) and the Screen Actors Guild - American Federation of Television and Radio Artists (SAG-AFTRA) — went on strike against the major film and TV studios. Together they shut down most productions for months. Both unions listed AI-related concerns in their demands: scripts written by AI without writer credit, digital doubles of actors used forever, and studios replacing human labor. What did the writers and actors actually win about AI in the final deals?",
+    "question": "Two Hollywood unions, the Writers Guild of America (WGA) and the Screen Actors Guild and American Federation of Television and Radio Artists (SAG-AFTRA), went on strike against the major film and TV studios in 2023 and together shut down most productions for months. Both listed AI-related concerns in their demands, and the final contracts included AI rules. What did the writers and actors actually win about AI in the final deals?",
     "answer": "Real contract limits on AI use — restrictions on studios using AI to write scripts unsupervised, plus consent and payment rules for AI-generated likenesses of performers",
     "choices": [
       "Real contract limits on AI use — restrictions on studios using AI to write scripts unsupervised, plus consent and payment rules for AI-generated likenesses of performers",
@@ -10960,7 +10817,7 @@
   },
   {
     "tier": 4,
-    "question": "An LLM (Large Language Model) gives you a URL (Uniform Resource Locator, i.e. a web address) as a source: 'https://www.example-research-institute.org/findings/2021-climate-study.pdf'. The URL looks real. It may or may not actually load. What's the defensive habit?",
+    "question": "A blogger asks an LLM (Large Language Model) for a source, and it hands her a URL (Uniform Resource Locator, i.e. a web address): 'https://www.example-research-institute.org/findings/2021-climate-study.pdf'. The URL looks real. It may or may not actually load. What's the defensive habit?",
     "answer": "Click the URL before quoting; if it doesn't load, the source doesn't exist or the URL was fabricated",
     "choices": [
       "Click the URL before quoting; if it doesn't load, the source doesn't exist or the URL was fabricated",
@@ -10973,7 +10830,7 @@
   },
   {
     "tier": 4,
-    "question": "Asking an LLM (Large Language Model) 'what does the research say about X' often returns confident statistics: 'Studies show that 73% of people experience Y.' These specific-number claims feel more credible than vague claims. They're also frequently invented. Why does the specificity make the invention MORE dangerous, not less?",
+    "question": "A reporter asks an LLM (Large Language Model) what the research says about some topic and gets a confident statistic: 'Studies show that 73% of people experience Y.' Such specific-number claims are frequently invented. Why does the specificity make the invention more dangerous, not less?",
     "answer": "Specific numbers feel authoritative — readers trust them more, and inventing them takes no extra model effort",
     "choices": [
       "Specific numbers are always real — LLMs cannot invent numbers, only the verbal claims that accompany them",
@@ -11155,7 +11012,7 @@
   },
   {
     "tier": 4,
-    "question": "Before the 2024 US election, researchers and officials warned about a coming wave of deepfake clips showing candidates saying things they never said. The real cycle produced deepfake examples but not the flood some had predicted. What is the cleanest media literacy lesson?",
+    "question": "Researchers and officials warned before the 2024 US election of a coming wave of deepfake clips showing candidates saying things they never said. The real campaign brought some deepfakes, though not the flood some had predicted. What is the cleanest media literacy lesson?",
     "answer": "Treat any especially shocking political clip from an unfamiliar source with extra skepticism — verify before sharing or reacting",
     "choices": [
       "Treat any especially shocking political clip from an unfamiliar source with extra skepticism — verify before sharing or reacting",
@@ -11168,7 +11025,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2024, voters in New Hampshire got robocalls on their phones just before the Democratic presidential primary. The calls used an AI-cloned voice of President Joe Biden telling Democrats not to bother voting in the primary because their votes 'wouldn't matter.' The caller — a political consultant working for a rival campaign — was later identified, criminally charged, and fined. What's the general lesson for any surprising political call you receive around a vote?",
+    "question": "A New Hampshire voter answered a robocall in January 2024, just before the Democratic presidential primary, and heard an AI-cloned voice of President Joe Biden. It told Democrats not to bother voting in the primary because their votes 'wouldn't matter.' The political consultant behind it, who worked for a rival campaign, was later identified and criminally charged. What is the general lesson for any surprising political call around a vote?",
     "answer": "Phone calls and voicemails are easy to fake; verify any unusual election message through official channels before acting on it",
     "choices": [
       "Phone calls and voicemails are easy to fake; verify any unusual election message through official channels before acting on it",
@@ -11337,20 +11194,7 @@
   },
   {
     "tier": 4,
-    "question": "Companies like 23andMe, AncestryDNA, and MyHeritage collect DNA samples from millions of customers who want to learn about their ancestry. The customer mails in a tube of saliva; the company reads the genetic code from that saliva and keeps a copy of the code on file for many years. What single feature of DNA sets it apart from a password you could pick — and change — yourself?",
-    "answer": "DNA is permanent and familial — it identifies your relatives too and reveals predispositions you didn't choose to share",
-    "choices": [
-      "DNA is permanent and familial — it identifies your relatives too and reveals predispositions you didn't choose to share",
-      "DNA is encrypted automatically — and no current technology can read DNA data that has been collected",
-      "DNA is deleted after seven years — federal law mandates routine deletion across all major providers",
-      "DNA is anonymous by design — the companies cannot link any DNA sample to a specific individual person"
-    ],
-    "context": "DNA has properties most personal data lacks. (1) Permanent: you can change your password; you can't change your genome. (2) Familial: your DNA partially reveals your relatives' DNA — they didn't consent to your test. (3) Predictive: DNA reveals risk for diseases you may not know you have. (4) Universal-identifier: it identifies you uniquely across any future system that has DNA. The companies are doing legitimate science work with the data. But the policy environment around DNA is still developing. 23andMe's October 2023 breach exposed data on millions of users; in March 2025 the company announced bankruptcy plans amid uncertain data-stewardship transitions. The defensive principle: think hard before sharing DNA, especially if you have family members who haven't decided for themselves.",
-    "topic": "dna-databases-genetic-genealogy"
-  },
-  {
-    "tier": 4,
-    "question": "The Golden State Killer terrorized California in the 1970s and 80s — dozens of home invasions, rapes, and murders. Police had DNA from the attacks but no match in the FBI database, and the case went cold for 40 years. In 2018, investigators finally identified the killer as Joseph DeAngelo, a former police officer. Their breakthrough tool was called 'genetic genealogy.' How did they use public DNA-database data to reach him?",
+    "question": "Investigators arrested a former police officer, Joseph DeAngelo, in April 2018 as the Golden State Killer, who had attacked across California in the 1970s and 1980s. Police had DNA from the attacks but no match in the FBI database, and the case had gone cold for 40 years. The tool that cracked it was one ordinary people already paid for: consumer DNA databases like GEDmatch, where families upload spit-tube results. How did investigators use that data to reach him?",
     "answer": "They uploaded crime-scene DNA to a public ancestry database, found distant cousins, and built a family tree pointing to him",
     "choices": [
       "They uploaded crime-scene DNA to a public ancestry database, found distant cousins, and built a family tree pointing to him",
@@ -11428,7 +11272,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2025, kids play two roles with AI at the same time. They use AI daily — for schoolwork, chatting, editing videos, playing games. They also get targeted by AI — ad feeds, TikTok's recommender, homework watch tools, phone scams that clone a relative's voice. Both sides of the pattern are always running. What single frame ties them together as a defense?",
+    "question": "Suppose you use AI for schoolwork in the morning and to edit a video at lunch. That evening TikTok's recommender picks your next clip, an ad feed targets you, and a phone scam clones a relative's voice. Both sides of the pattern are always running. What single frame ties them together as a defense?",
     "answer": "Use AI as a tool you control; recognize when systems are designed to use YOU — and learn to spot the difference",
     "choices": [
       "Use AI as a tool you control; recognize when systems are designed to use YOU — and learn to spot the difference",
@@ -11896,7 +11740,7 @@
   },
   {
     "tier": 4,
-    "question": "Marc Andreessen — co-founder of the Netscape web browser in 1994 and later co-founder of the powerful Silicon Valley venture-capital firm Andreessen Horowitz (known as a16z) — published a document called 'The Techno-Optimist Manifesto' in October 2023. It took a sharp position in the ongoing debate over how fast AI should be developed and how heavily it should be regulated. What was the core message of the manifesto?",
+    "question": "Marc Andreessen published a manifesto in October 2023. He had co-founded the Netscape web browser in 1994 and later the powerful Silicon Valley venture-capital firm Andreessen Horowitz. The manifesto took a sharp position in the debate over how fast AI should be developed and how heavily it should be regulated. What was the manifesto's core message?",
     "answer": "AI development should accelerate; slowdown rhetoric serves incumbent interests, and markets rather than regulators should be the dominant force",
     "choices": [
       "AI development should accelerate; slowdown rhetoric serves incumbent interests, and markets rather than regulators should be the dominant force",
@@ -11909,7 +11753,7 @@
   },
   {
     "tier": 4,
-    "question": "The 'e/acc' (effective accelerationism) movement emerged around 2022-2023 as a response to the Effective Altruism (EA) focus on AI wipeout risk. e/acc favors fast AI development; EA favors slow, careful development. Both movements treat AI as the central issue of our time. What underlying belief do they share?",
+    "question": "A reader follows a fight online between Effective Altruism (EA) and the movement called e/acc, which emerged around 2022 and 2023 as a response to EA's focus on AI wipeout risk. One side favors fast AI development, the other slow, careful development. Both call AI the central issue of the age. What underlying belief do the two movements share?",
     "answer": "Both treat AI as a transformative historical force that will reshape everything — they disagree on whether to embrace or stop it",
     "choices": [
       "Both treat AI as a transformative historical force that will reshape everything — they disagree on whether to embrace or stop it",
@@ -11922,20 +11766,7 @@
   },
   {
     "tier": 4,
-    "question": "In November 2022, the cryptocurrency exchange FTX collapsed almost overnight after a run on customer deposits revealed billions of dollars missing. Its founder, Sam Bankman-Fried, had tied himself publicly to the Effective Altruism movement — a philosophy that prioritizes doing the most measurable good per dollar donated. He had funneled large sums to AI-safety research organizations. Why did the FTX crash hit AI-safety work particularly hard?",
-    "answer": "A substantial share of AI-safety nonprofits and EA initiatives had been funded by SBF, so when his fortune was exposed as fraud, the funding base collapsed too",
-    "choices": [
-      "A substantial share of AI-safety nonprofits and EA initiatives had been funded by SBF, so when his fortune was exposed as fraud, the funding base collapsed too",
-      "FTX had been the largest investor in OpenAI itself, and most of OpenAI's funding had to be returned to the FTX bankruptcy estate",
-      "Bankman-Fried's conviction made it illegal in California for any tech executive to publicly advocate for AI regulation at all",
-      "The crypto collapse caused a stock-market drop so severe that no AI company could raise venture capital for two years"
-    ],
-    "context": "Sam Bankman-Fried built FTX into one of the largest crypto exchanges before its November 2022 collapse. He had publicly tied himself to Effective Altruism and longtermist AI-safety advocacy, donating large sums to AI-safety nonprofits and EA causes via his Future Fund. The FTX implosion revealed that a substantial portion of the AI-doomer advocacy ecosystem had been funded by fraud-built money. SBF was convicted in November 2023 on seven counts including wire fraud. The episode forced reflection on whose interests had been served by 'AI safety' as framed primarily by existential-risk advocacy.",
-    "topic": "effective-altruism-sbf"
-  },
-  {
-    "tier": 4,
-    "question": "Sam Bankman-Fried (SBF) was convicted on November 2, 2023, on seven counts including wire fraud, securities fraud, and conspiracy. He was sentenced in March 2024 to 25 years in federal prison. Why does the SBF case matter for AI literacy — not just for crypto enthusiasts?",
+    "question": "Sam Bankman-Fried (SBF) built a crypto exchange and handed out hundreds of millions of dollars before it collapsed. He was convicted on November 2, 2023, on seven counts including wire fraud and securities fraud, and sentenced in March 2024 to 25 years in federal prison. His fall forced a reckoning in the AI-safety world. Why does his case matter for AI literacy, and not just for crypto enthusiasts?",
     "answer": "Much of the public 'AI safety' framing of 2022-2023 was downstream of SBF money — knowing the source helps evaluate the message",
     "choices": [
       "Much of the public 'AI safety' framing of 2022-2023 was downstream of SBF money — knowing the source helps evaluate the message",
@@ -12039,7 +11870,7 @@
   },
   {
     "tier": 4,
-    "question": "In February 2024, Google's Gemini image tool made racially diverse Nazi soldiers. It refused to draw white historical figures like the Founding Fathers. It also dodged questions like 'who did more harm, Stalin or Musk?' CEO Sundar Pichai apologized and paused the feature. What broader lesson does the episode teach?",
+    "question": "Sundar Pichai, Google's chief executive, apologized in February 2024 and called the outputs of the Gemini image tool 'completely unacceptable.' It had made racially diverse Nazi soldiers, refused to draw white historical figures like the Founding Fathers, and dodged questions like 'who did more harm, Stalin or Musk?' What broader lesson does the episode teach?",
     "answer": "Alignment training is not value-neutral — it encodes the trainers' political choices, which can override historical accuracy and even-handedness",
     "choices": [
       "Alignment training is not value-neutral — it encodes the trainers' political choices, which can override historical accuracy and even-handedness",
@@ -12052,7 +11883,7 @@
   },
   {
     "tier": 4,
-    "question": "After the Gemini image episode in February 2024, more examples showed up in other big AI models. Some refused certain political questions. Some hedged on plain facts. Some treated a few views as 'controversial' while calling others normal. What does this pattern show about AI alignment?",
+    "question": "A reader comparing big AI models after the Gemini image episode of February 2024 found more examples of the same thing. Some refused certain political questions. Some hedged on plain facts. Some treated a few views as 'controversial' while calling others normal. What does this pattern show about AI alignment?",
     "answer": "Alignment choices systematically reflect the values of the labs doing the training — content policies aren't neutral defaults, they're editorial decisions",
     "choices": [
       "Alignment choices systematically reflect the values of the labs doing the training — content policies aren't neutral defaults, they're editorial decisions",
@@ -12065,20 +11896,7 @@
   },
   {
     "tier": 4,
-    "question": "David Rozado is a data scientist in New Zealand. Since 2022, he has given standard political-orientation tests to major AI chatbots. He asks them the same items people take on those tests. What has he found each time?",
-    "answer": "Major chatbots score on the political left, often by a substantial margin, when asked questionnaire-style political items",
-    "choices": [
-      "Major chatbots score on the political left, often by a substantial margin, when asked questionnaire-style political items",
-      "Major chatbots score on the political right, often by a substantial margin, when asked any political question whatsoever",
-      "Major chatbots produce perfectly random political scores, with answers varying unpredictably and showing no pattern at all",
-      "Major chatbots refuse all political questions, and none has ever produced a measurable orientation score in any study"
-    ],
-    "context": "Rozado's studies — published since 2022 — administered standard political-orientation tests (Political Compass, World's Smallest Political Quiz, others) to ChatGPT, GPT-4, Claude, Bard/Gemini, and others. The consistent pattern: the chatbots scored on the political left, often substantially. The studies don't prove every answer is wrong (left-leaning answers can be correct); they do show that 'neutral AI assistant' as a self-description doesn't match the measured behavior. Recognition skill: independent measurement of AI behavior often differs from the labs' own characterizations of their models. Read the measurements, not just the marketing.",
-    "topic": "gemini-image-generator"
-  },
-  {
-    "tier": 4,
-    "question": "AI models are trained with RLHF (Reinforcement Learning from Human Feedback) to refuse certain requests: slurs, weapons help, extremist content. Over time, users noticed the same models refusing harmless things — dodging simple facts, skipping some names, adding warnings to plain tasks. What is this pattern called?",
+    "question": "A kid writing a villain's speech for a story asks a chatbot for help and gets refused. The model was trained to refuse slurs, weapons help and extremist content. Over time users noticed the same models turning away a security researcher's question about a real vulnerability, dodging simple facts, skipping some names and adding warnings to plain tasks. What is this pattern called?",
     "answer": "Overcorrection or refusal creep — alignment training tuned to avoid one set of failures starts producing a broader set of unhelpful refusals",
     "choices": [
       "Overcorrection or refusal creep — alignment training tuned to avoid one set of failures starts producing a broader set of unhelpful refusals",
@@ -12169,7 +11987,7 @@
   },
   {
     "tier": 4,
-    "question": "Clearview AI is a U.S. company that built a face-search tool from billions of photos gathered without the consent of the people in them. Customers include U.S. police departments, the FBI, and various private clients. Lawsuits have followed in multiple states and countries. What does the Clearview case illustrate?",
+    "question": "An FBI agent runs a photo through the face-search tool of Clearview AI, a U.S. company that built it from billions of pictures gathered without the consent of the people in them. U.S. police departments and various private clients use the same tool, and lawsuits have followed in multiple states and countries. What does the Clearview case illustrate?",
     "answer": "Mass surveillance infrastructure can be built privately, sold to government, and bypass legal limits that would apply to government building it directly",
     "choices": [
       "Mass surveillance infrastructure can be built privately, sold to government, and bypass legal limits that would apply to government building it directly",
@@ -12221,20 +12039,7 @@
   },
   {
     "tier": 4,
-    "question": "Frances Haugen was a Facebook product manager turned whistleblower. In October 2021 she leaked internal papers. The company's own research had found harms from its products, including Instagram's effect on teen mental health. The 'Facebook Files' led to Senate hearings and global news. What did the internal research find?",
-    "answer": "Instagram made body-image issues worse for a significant share of teenage girls who already had them, and Facebook knew it",
-    "choices": [
-      "Instagram made body-image issues worse for a significant share of teenage girls who already had them, and Facebook knew it",
-      "Instagram had no effect on teenagers, and every internal study found zero connection between use and any kind of harm",
-      "Facebook was secretly a federal agency, and Haugen's documents proved the company was wholly government-owned all along",
-      "Haugen fabricated all documents, and no internal Facebook research has ever existed on adolescent wellbeing topics ever"
-    ],
-    "context": "Haugen's documents included Facebook's own market research finding that Instagram worsened body-image concerns in roughly one in three teen girls who already had them, and that the company had considered launching 'Instagram Kids' (eventually paused after the leak). The Wall Street Journal series and Haugen's congressional testimony (October 2021) put a public spotlight on internal documents that contradicted the company's public statements. Recognition skill: when an outside whistleblower aligns with internal research, that's stronger evidence than either source alone. The Facebook Files showed the gap between what the company knew and what it said publicly.",
-    "topic": "engagement-and-teen-mental-health"
-  },
-  {
-    "tier": 4,
-    "question": "Jonathan Haidt's 2024 book 'The Anxious Generation' says teen mental-health numbers — depression, anxiety, suicide — got much worse starting around 2012. That's when smartphones and social media took over teen life. What one design choice in AI is called out here?",
+    "question": "Jonathan Haidt argued in his 2024 book 'The Anxious Generation' that teen mental-health numbers on depression, anxiety and suicide got much worse starting around 2012, when smartphones and social media took over teen life. What one design choice in AI is he calling out?",
     "answer": "Engagement-maximizing AI applied to developing brains may produce measurable, population-scale harms — the experiment ran without the kids' consent",
     "choices": [
       "Engagement-maximizing AI applied to developing brains may produce measurable, population-scale harms — the experiment ran without the kids' consent",
@@ -12273,7 +12078,7 @@
   },
   {
     "tier": 4,
-    "question": "In May 2023, the Writers Guild of America (WGA) went on strike against Hollywood studios. Studios initially refused to discuss AI; the WGA insisted on contract protections. After a 148-day strike, the new contract included specific AI provisions. What did the WGA win?",
+    "question": "Writers in the Writers Guild of America (WGA) went on strike in May 2023 and insisted on contract protections; Hollywood's studios at first refused to discuss AI. After 148 days the new contract included specific AI provisions. What did the WGA win?",
     "answer": "Limits on studios using AI to draft scripts, and requirements that AI-generated material cannot displace writer credits or pay",
     "choices": [
       "Limits on studios using AI to draft scripts, and requirements that AI-generated material cannot displace writer credits or pay",
@@ -12282,19 +12087,6 @@
       "Mandatory AI training for every writer, and every WGA member must complete an AI certification program each calendar year"
     ],
     "context": "The 2023 WGA strike was largely about streaming-era residuals and AI. The settlement included: studios cannot use AI to write or rewrite covered material; AI-generated material can't be the source from which a script is adapted without the writer's consent; the union has rights to audit AI use. The contract didn't ban AI but constrained how it can displace human labor. Recognition skill: structural labor protection against displacement is achievable, but it requires organized workers willing to strike and contract language enforcing the limits — not just promises.",
-    "topic": "hollywood-ai-strikes"
-  },
-  {
-    "tier": 4,
-    "question": "SAG-AFTRA (Screen Actors Guild - American Federation of Television and Radio Artists), the actors' union, also struck in 2023 — partly over AI. The most-talked-about AI concern was specific to performers. What was it?",
-    "answer": "Studios were proposing to scan background actors once, then reuse their likeness forever without further payment or consent",
-    "choices": [
-      "Studios were proposing to scan background actors once, then reuse their likeness forever without further payment or consent",
-      "Studios were proposing to ban all human actors entirely, and every movie after 2024 would star only AI characters now",
-      "Studios were proposing federal regulation of AI, and every script would require approval by a government agency",
-      "Studios were proposing to dissolve SAG-AFTRA, and the union itself would be replaced by an AI-run trade group"
-    ],
-    "context": "The proposal that crystallized the AI concern: studios wanted to scan background actors, pay them a single day's rate, and then own the digital likeness in perpetuity for use in any future production. SAG-AFTRA framed this as the death of background work and a precedent for digital-double abuse of name actors too. The strike ended November 2023 with contract language constraining AI use of performer likenesses, including consent and additional-payment requirements. Recognition skill: AI displacement often arrives first at the bottom of an industry's ladder — and protections, if won, often start there too.",
     "topic": "hollywood-ai-strikes"
   },
   {
@@ -12325,7 +12117,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2024, voters in New Hampshire received robocalls in what sounded like President Biden's voice, telling them not to vote in the Democratic primary. The voice was AI-generated. A consultant later admitted to the operation. What broader recognition does the case provide?",
+    "question": "A consultant admitted to the operation behind robocalls that reached New Hampshire voters in January 2024 in what sounded like President Biden's voice, telling them not to vote in the Democratic primary. The voice was AI-generated. What broader recognition does the case provide?",
     "answer": "Election-targeted voice-clone attacks moved from hypothetical to operational quickly — and the cost per call is now trivial",
     "choices": [
       "Election-targeted voice-clone attacks moved from hypothetical to operational quickly — and the cost per call is now trivial",
@@ -12390,7 +12182,7 @@
   },
   {
     "tier": 4,
-    "question": "In recent elections worldwide — Slovakia 2023, India 2024, Indonesia 2024, the U.S. 2024 — AI-generated audio and video clips of politicians have been used in campaigns. Some clips were quickly debunked; others spread widely before correction caught up. What's the specific window after a viral fake clip drops when correction is hardest to land?",
+    "question": "A voter in Slovakia came across an AI-generated clip of a politician during the 2023 campaign, as voters in India, Indonesia and the US would in 2024. Some such clips were quickly debunked; others spread widely before correction caught up. What is the specific window after a viral fake clip drops when correction is hardest to land?",
     "answer": "The first 24-48 hours — by the time the fact-check publishes, the emotional impression has already formed in the audience that saw the clip",
     "choices": [
       "The first 24-48 hours — by the time the fact-check publishes, the emotional impression has already formed in the audience that saw the clip",
@@ -12416,7 +12208,7 @@
   },
   {
     "tier": 4,
-    "question": "In December 2019 the US National Institute of Standards and Technology published one of the largest tests of face-recognition software ever run: 189 algorithms from 99 developers, checked against millions of photos from government records. In one-to-one matching, the kind used to check that a face fits an ID photo, what did it find about false matches?",
+    "question": "Testers at the US National Institute of Standards and Technology published in December 2019 one of the largest checks of face-recognition software ever run: 189 algorithms from 99 developers, tried against millions of photos from government records. In one-to-one matching, used to check a face against an ID photo, what did they find about false matches?",
     "answer": "Most algorithms falsely matched Asian and Black faces far more often than white faces",
     "choices": [
       "Every algorithm made the same number of errors for every group of people",
@@ -12429,7 +12221,7 @@
   },
   {
     "tier": 4,
-    "question": "Several U.S. cities — San Francisco (2019), Boston (2020), Portland (2020), Minneapolis (2021) — passed laws restricting or banning police use of facial recognition. Other cities have expanded use. What's the policy debate, in plain terms?",
+    "question": "The city leaders of Minneapolis passed a law in 2021 to rein in police use of facial recognition, after San Francisco in 2019 and Boston and Portland in 2020. Other cities have expanded use. What is the policy debate, in plain terms?",
     "answer": "Whether the technology should be available as a routine tool requiring no warrant, only used in specific serious cases with oversight, or banned outright pending better accuracy and rules",
     "choices": [
       "Whether the technology should be available as a routine tool requiring no warrant, only used in specific serious cases with oversight, or banned outright pending better accuracy and rules",
@@ -12494,7 +12286,7 @@
   },
   {
     "tier": 4,
-    "question": "When a recommendation algorithm learns what you like and serves you more of it, the effect can narrow what you see over time. Different users on the same platform may live in very different information environments. What's the more accurate way to think about this, beyond the popular 'filter bubble' framing?",
+    "question": "A researcher sits down with two users of the same platform. The recommendation algorithm has learned what each one likes and serves more of it, and the effect can narrow what a user sees over time, so the two may live in very different information environments. What is a more accurate way to frame this, beyond the popular 'filter bubble' label?",
     "answer": "The effect is real but variable — depends on the platform, the user's behavior, and what counts as exposure to differing views — not a uniform sealed-off bubble",
     "choices": [
       "The effect is real but variable — depends on the platform, the user's behavior, and what counts as exposure to differing views — not a uniform sealed-off bubble",
@@ -12507,20 +12299,7 @@
   },
   {
     "tier": 4,
-    "question": "Imagine telling an AI service: 'I want you to make our app a happy place where people feel better after using it.' Now imagine the same company's CFO (Chief Financial Officer) asks: 'I want you to maximize the number of people logging in every day and their time-on-app.' The engineers have to translate the request into a measurable metric. Which version wins, in practice?",
-    "answer": "Whatever is concretely measured wins — 'happy place' isn't a metric and can't be optimized; 'daily active users' is and will be",
-    "choices": [
-      "Whatever is concretely measured wins — 'happy place' isn't a metric and can't be optimized; 'daily active users' is and will be",
-      "User happiness always wins in practice — every tech company in the world prioritizes wellbeing over engagement",
-      "Both metrics are optimized equally — every app perfectly balances every consideration through automatic calibration",
-      "Neither metric matters — every app produces identical user experience regardless of which goals the company sets"
-    ],
-    "context": "The principle: optimization systems do what their measured objectives say, not what their designers wish they did. 'Make users happier' is a value but not a metric. 'Maximize retention' is a value AND a metric. Engineers reduce values to metrics in order to optimize; the values that survive the reduction are the ones that get optimized. Recognition skill: when a company's stated values and its measured KPIs diverge, the KPIs are the more honest signal about company behavior.",
-    "topic": "engagement-and-teen-mental-health"
-  },
-  {
-    "tier": 4,
-    "question": "Some critics, like Yann LeCun and Marc Andreessen, say 'AI safety' framed as existential-risk work ends up helping the biggest AI labs. The claim: big rules on future risks are ones incumbents can afford but small rivals cannot. Can a safety advocate be truly worried AND lined up with the big-lab interests at the same time?",
+    "question": "Yann LeCun and other critics, Marc Andreessen among them, say 'AI safety' framed as existential-risk work ends up helping the biggest AI labs. Big rules on future risks, they claim, are ones incumbents can afford but small rivals cannot. Can a safety advocate be truly worried and lined up with the big-lab interests at the same time?",
     "answer": "Yes — both can be true simultaneously; noticing the commercial alignment doesn't disprove the sincerity of the belief",
     "choices": [
       "Yes — both can be true simultaneously; noticing the commercial alignment doesn't disprove the sincerity of the belief",
@@ -12559,7 +12338,7 @@
   },
   {
     "tier": 4,
-    "question": "Every big platform — Facebook, YouTube, TikTok, X — runs a recommendation algorithm that decides which post you see next. Critics describe a chain: the algorithm boosts whatever draws the strongest reactions, posts that stir anger, fear, or disgust reach more and more people, and quieter posts get buried. Run that for years across a country's political conversation. What do the critics say happens to that political talk overall?",
+    "question": "Critics describe a chain on Facebook, YouTube, TikTok and X: the recommendation algorithm boosts whatever draws the strongest reactions, posts that stir rage, fear or disgust reach more and more people, and quieter posts get buried. They say that chain runs for years across a country's political conversation. What do the critics say happens to that political talk overall?",
     "answer": "The most-rewarded discourse becomes the loudest, most extreme, and most personality-driven — calm complexity loses to confident anger",
     "choices": [
       "The most-rewarded discourse becomes the loudest, most extreme, and most personality-driven — calm complexity loses to confident anger",
@@ -12585,7 +12364,7 @@
   },
   {
     "tier": 4,
-    "question": "Algorithmic and high-frequency trading firms (Citadel, Jane Street, Two Sigma, Renaissance) account for a large share of U.S. stock-market trading volume. Their AI-powered trading happens in microseconds. What specific 2010 market event was caused by high-speed interactions between rival trading systems?",
+    "question": "An engineer at an algorithmic trading firm such as Citadel or Jane Street watches AI-powered trades go through in microseconds. Firms like his account for a large share of U.S. stock-market trading volume. What specific 2010 market event was caused by high-speed interactions between rival trading systems?",
     "answer": "The May 2010 'Flash Crash' — the Dow dropped roughly 1000 points in minutes and recovered the same day, driven by algorithmic feedback loops",
     "choices": [
       "The May 2010 'Flash Crash' — the Dow dropped roughly 1000 points in minutes and recovered the same day, driven by algorithmic feedback loops",
@@ -12598,7 +12377,7 @@
   },
   {
     "tier": 4,
-    "question": "Modern AI models are trained partly by people who label data. They flag hate speech, rank answers, and tag objects in photos. Many workers live in low-wage countries like Kenya, the Philippines, and India. Per Time magazine's January 2023 report, what hourly pay did Kenyan workers get to label violent content for OpenAI?",
+    "question": "Reporters at Time magazine looked in January 2023 at the people who label data for modern AI models, flagging hate speech, sorting answers and tagging objects in photos, many of them in low-wage countries like Kenya, the Philippines and India. What hourly pay, they reported, did Kenyan workers get to label violent content for OpenAI?",
     "answer": "Under $2 per hour — Kenyan workers via Sama labeled distressing content (violence, sexual abuse) so the model could later detect and refuse it",
     "choices": [
       "Under $2 per hour — Kenyan workers via Sama labeled distressing content (violence, sexual abuse) so the model could later detect and refuse it",
@@ -12806,7 +12585,7 @@
   },
   {
     "tier": 5,
-    "question": "ChatGPT invents a court case that doesn't exist. Claude makes up an author for a real book. Gemini gives a confidently wrong birth date. These aren't bugs — they're predictable. How does the model actually generate the text in the first place?",
+    "question": "A lawyer gets a court case that doesn't exist from ChatGPT. A reader gets a made-up author for a real book from Claude, and a student gets a confidently wrong birth date from Gemini. Such failures are predictable, not bugs. How does the model actually generate the text in the first place?",
     "answer": "By predicting likely next words from training patterns — with no separate machinery to check that what it produced refers to anything real",
     "choices": [
       "By deliberately inventing fake answers when it gets bored — a behavior the model engages in during long conversations",
@@ -12819,7 +12598,7 @@
   },
   {
     "tier": 5,
-    "question": "Large language models (LLMs) like ChatGPT, Claude, and Gemini hallucinate most often on very specific factual details — a person's birth date, a citation number in a footnote, a scientific constant, a court case name, a study's exact result. They hallucinate far less often on broad conceptual descriptions like 'photosynthesis turns sunlight into sugar.' What explains this specific-versus-broad pattern in what the models get wrong?",
+    "question": "A fact-checker tests two answers from a large language model (LLM): a person's birth date, which comes out wrong, and the line 'photosynthesis turns sunlight into sugar,' which comes out right. Models like ChatGPT, Claude and Gemini go wrong most often on details such as a citation number in a footnote, a scientific constant or a court case name, and far less often on general ideas. What explains this specific-versus-broad pattern in what the models get wrong?",
     "answer": "Specific facts are sparse signals in training data — many similar plausible alternatives exist, while broad descriptions have many redundant sources",
     "choices": [
       "Specific facts are sparse signals in training data — many similar plausible alternatives exist, while broad descriptions have many redundant sources",
@@ -12845,7 +12624,7 @@
   },
   {
     "tier": 5,
-    "question": "Raw LLMs trained only on internet text are unfocused and often unhelpful. RLHF (Reinforcement Learning from Human Feedback) fine-tunes them by having humans rate responses, then training the model to produce responses rated highly. This is what makes ChatGPT 'feel' helpful. But every RLHF training run encodes choices made by people. What kinds of choices?",
+    "question": "A user opens ChatGPT and finds it feels helpful, which a raw large language model (LLM) trained only on internet text often does not. Humans judged its answers, and training steered it toward the favorites. But every such training run encodes choices made by people. What kinds of choices?",
     "answer": "Which raters were hired, what rating instructions they were given, which responses were promoted, and which were demoted — every step reflects somebody's values",
     "choices": [
       "Which raters were hired, what rating instructions they were given, which responses were promoted, and which were demoted — every step reflects somebody's values",
@@ -12881,19 +12660,6 @@
     ],
     "context": "Research on 'lost in the middle' effects (Liu et al. 2023 and follow-ups) showed that LLMs given a long document tend to attend strongly to the beginning and end and less reliably to the middle. Just because a model 'can read' a million tokens doesn't mean it uses them evenly. Longer context also costs more compute per query. Recognition skill: when an agent or chatbot is given a huge document and produces a confident summary, ask whether the model actually attended to the parts you care about — sometimes a focused excerpt produces better answers than a long full document.",
     "topic": "tokens-and-context-window"
-  },
-  {
-    "tier": 5,
-    "question": "Modern AI systems represent words, sentences, and images as 'embeddings' — lists of numbers (often hundreds or thousands long) that capture meaning. The classic example: subtract the embedding for 'man' from 'king,' add 'woman,' and you land near 'queen.' Why is this representation useful?",
-    "answer": "Similar meanings produce nearby numerical positions — so 'find me documents like this one' becomes a geometric search rather than a keyword match",
-    "choices": [
-      "Similar meanings produce nearby numerical positions — so 'find me documents like this one' becomes a geometric search rather than a keyword match",
-      "It compresses every document to exactly four numbers — storage becomes trivial for every AI company that decides to use embeddings",
-      "It is required for ChatGPT to function — without embeddings, the model cannot answer any question in the English language at all",
-      "It encrypts the meaning so users cannot read what their queries contained — embeddings are a privacy protection mandated by GDPR"
-    ],
-    "context": "Embeddings turn meaning into geometry. Documents about cooking land in one region of the space; documents about astronomy in another. Search systems use this for 'semantic search': find documents whose embeddings are nearby, even if they share no exact keywords. Recommendation systems use it for 'find similar users.' RAG (retrieval-augmented generation) uses it to find relevant snippets to feed a chatbot. Recognition skill: when a system says 'find content like this,' it's almost certainly comparing embeddings — and the quality depends on what training the embedding model received about what counts as 'similar.'",
-    "topic": "embeddings-and-vector-search"
   },
   {
     "tier": 5,
@@ -12988,7 +12754,7 @@
   },
   {
     "tier": 5,
-    "question": "Effective Altruism (EA) started at Oxford in the late 2000s under philosophers William MacAskill and Toby Ord. At first it asked how to do the most good with your giving, like bed nets and deworming. By the 2010s it shifted toward 'longtermism' and put AI risk near the top. What was the real change?",
+    "question": "William MacAskill and Toby Ord, philosophers at Oxford, started Effective Altruism (EA) in the late 2000s by asking how to do the most good with a donor's giving, on causes like bed nets and deworming. By the 2010s the movement had shifted toward 'longtermism' and put AI risk high on its list. What was the real change?",
     "answer": "The framework's tools — expected value calculations over possible outcomes — were extended to include vast hypothetical future populations, which made AI catastrophe a top-priority cause",
     "choices": [
       "The framework's tools — expected value calculations over possible outcomes — were extended to include vast hypothetical future populations, which made AI catastrophe a top-priority cause",
@@ -13001,7 +12767,7 @@
   },
   {
     "tier": 5,
-    "question": "William MacAskill (b. 1987) and Toby Ord (b. 1979) are two Oxford philosophers credited with founding the modern Effective Altruism movement. Ord's *The Precipice* (2020) and MacAskill's *What We Owe the Future* (2022) are the movement's most-cited recent books. What unified their broader project?",
+    "question": "Toby Ord published 'The Precipice' in 2020, and William MacAskill followed with 'What We Owe the Future' in 2022. The two Oxford philosophers are credited with founding the modern Effective Altruism movement, and those are its most-cited recent books. What unified their broader project?",
     "answer": "Applying explicit cost-benefit reasoning to ethics — choosing causes by expected impact per dollar rather than by emotional connection",
     "choices": [
       "Applying explicit cost-benefit reasoning to ethics — choosing causes by expected impact per dollar rather than by emotional connection",
@@ -13052,8 +12818,8 @@
     "topic": "ai-doomerism-and-pause-letter"
   },
   {
-    "tier": 5,
-    "question": "In October 2023, Marc Andreessen posted 'The Techno-Optimist Manifesto' on his firm's blog. He co-founded Netscape and is a partner at Andreessen Horowitz. He argued that tech, including AI, drives human flourishing and that speed matters. He named 'safetyism' and 'risk management' as the enemy. What view was he pushing?",
+    "tier": 3,
+    "question": "The Twitter user 'Beff Jezos,' later named as Guillaume Verdon, a Google researcher, helped run a movement, backed by Marc Andreessen, that took off in 2022 and 2023. What view was the movement pushing?",
     "answer": "Accelerationism — the view that AI development should be sped up, not slowed, and that delay itself has a moral cost in lives unimproved",
     "choices": [
       "Accelerationism — the view that AI development should be sped up, not slowed, and that delay itself has a moral cost in lives unimproved",
@@ -13062,19 +12828,6 @@
       "Abolitionism — the view that AI should be banned globally and all existing models should be deleted by 2025 immediately"
     ],
     "context": "Andreessen's manifesto was the most prominent public statement of what became the 'effective accelerationism' (e/acc) position: AI is good, faster is better, the safety movement's slowdowns cost real welfare. The piece was deliberately polemical — naming opposed positions, claiming an inheritance from Italian Futurism and American progressivism. The recognition skill: Yudkowsky and Andreessen sit at opposite ends — and both treat AI as the central drama of the century, both grant the technology vast agency. A middle position ('AI is important but not totalizing; ordinary law can mostly handle it') gets less airtime because it makes less compelling reading.",
-    "topic": "e-acc-and-ai-optimism"
-  },
-  {
-    "tier": 5,
-    "question": "In 2022-2023, a movement called effective accelerationism, or 'e/acc,' took off on Twitter. Marc Andreessen backed it. A user called 'Beff Jezos' (later named as Guillaume Verdon, a Google researcher) helped run it. What is the group's core claim?",
-    "answer": "That accelerating AI development is morally required because the technology can improve human welfare and delay is a cost in itself",
-    "choices": [
-      "That accelerating AI development is morally required because the technology can improve human welfare and delay is a cost in itself",
-      "That AI should only be developed by Catholic religious orders due to traditional moral authority on technology questions",
-      "That AI development should be exclusively a government activity with no private-sector involvement in any country worldwide",
-      "That AI is impossible to develop further and the e/acc movement aims to prove it through philosophical argumentation alone"
-    ],
-    "context": "e/acc is partly a serious position about technology and welfare, partly a tribal counter-movement to the AI-safety community's perceived caution. The pseudonymous structure, the meme-laden online culture, and the explicit accelerationist framing all distinguish it from older techno-optimist traditions. Critics note that e/acc tends to assume markets and current incentives will drive AI to good ends with minimal supervision — an assumption with empirical content that the FTX/EA collapse, Gemini Feb 2024, and 2023 board drama all complicate.",
     "topic": "e-acc-and-ai-optimism"
   },
   {
@@ -13206,19 +12959,6 @@
     ],
     "context": "Isomorphic's first partnerships brought about $83 million up front, with up to about $2.9 billion more if milestones are met. The open database and the commercial spin-off sit side by side: the science is shared, and the drugs, if they come, will be sold.",
     "topic": "alphafold-protein-folding"
-  },
-  {
-    "tier": 5,
-    "question": "In February 2024, Google's Gemini image tool drew racially mixed Nazi soldiers and refused to draw white historical figures. After public backlash, Google CEO Sundar Pichai apologized and paused the feature. He called the outputs 'completely unacceptable.' What bigger question did this raise?",
-    "answer": "How alignment-training choices made by AI developers can override historical accuracy and produce outputs none of the actual users wanted",
-    "choices": [
-      "How alignment-training choices made by AI developers can override historical accuracy and produce outputs none of the actual users wanted",
-      "Whether AI image generators should be replaced by human artists in all commercial applications worldwide",
-      "Whether Google should be nationalized by the US government and operated as a federal agency starting in 2024",
-      "Whether the German Federal Archive should be shut down because it competes with AI-generated historical content"
-    ],
-    "context": "Gemini's image generator had been tuned, apparently to counter the training data's tendency to produce stereotyped outputs, to inject diversity into image prompts as a default. The team didn't anticipate the result when applied to historically specific prompts. The episode demonstrated, in real time and with visible outputs, that 'alignment' isn't a value-neutral technical process — it's a series of choices about what the model should and shouldn't do. Recognition skill: when 'alignment' produces outputs that no actual user requested, ask whose values were encoded in the choices that produced them.",
-    "topic": "gemini-image-generator"
   },
   {
     "tier": 5,
@@ -13430,19 +13170,6 @@
   },
   {
     "tier": 5,
-    "question": "The 2023 Hollywood strikes by the Writers Guild (WGA) and the actors' union SAG-AFTRA (Screen Actors Guild - American Federation of Television and Radio Artists) lasted months. Both unions put AI in their demands. The final contracts included AI rules. What did the writers and actors actually win on AI?",
-    "answer": "Limits on studio use of AI to generate scripts or digital replicas of performers without consent and compensation.",
-    "choices": [
-      "Limits on studio use of AI to generate scripts or digital replicas of performers without consent and compensation.",
-      "A federal ban on all AI in film production starting in January 2024, enforced by criminal penalties for studios that violated it.",
-      "A complete reset to pre-1980 contracts, eliminating residual payments for any movie released after the strike ended.",
-      "A new tax on all AI-generated content that flows directly to the Writers Guild pension fund regardless of who creates the content."
-    ],
-    "context": "The WGA strike (May-Sep 2023) and SAG-AFTRA strike (Jul-Nov 2023) included AI as a top issue. The contracts that ended both strikes included specific language: studios couldn't use AI to write or rewrite scripts in ways that affected writer credit and pay; couldn't use AI-generated material as 'source material' to undercut writer pay; couldn't create or use digital replicas of actors without consent and compensation; had to disclose AI use. The agreements were time-limited and explicitly subject to renegotiation. The broader recognition: AI's labor impact wasn't an abstract future question — it was an active bargaining issue in 2023-24, and the negotiated outcomes mattered for what AI in entertainment would look like going forward.",
-    "topic": "hollywood-ai-strikes"
-  },
-  {
-    "tier": 5,
     "question": "A caller to Delta Airlines reached an AI assistant first and a human agent only after a handoff. Klarna and Bank of America routed calls and chats the same way in 2024 and 2025, and Klarna said publicly that AI had replaced hundreds of support jobs. The systems worked smoothly for some kinds of queries and badly for others. What was the pattern?",
     "answer": "They handled known, scripted requests (balance check, password reset, order status) well; they handled emotional, ambiguous, or escalating complaints poorly.",
     "choices": [
@@ -13508,7 +13235,7 @@
   },
   {
     "tier": 5,
-    "question": "Whisper is an open-source speech-to-text model that OpenAI released in 2022. It sped up voice tools in many fields — transcription, accessibility, and voice search. But researchers found one failure pattern that mattered in hospitals. What was it?",
+    "question": "A doctor talks with a patient while Whisper, the open-source speech-to-text model OpenAI released in 2022, takes down the visit. Whisper sped up voice tools in many fields, including transcription, accessibility and voice search. But researchers found one failure pattern that mattered in hospitals. What was it?",
     "answer": "Whisper sometimes invented sentences entirely — hallucinated text the speaker never said — which is dangerous in medical transcription.",
     "choices": [
       "Whisper sometimes invented sentences entirely — hallucinated text the speaker never said — which is dangerous in medical transcription.",
@@ -13560,7 +13287,7 @@
   },
   {
     "tier": 5,
-    "question": "Through 2023, warnings piled up that the 2024 US presidential election would be drowned in AI deepfakes — fake audio and video of candidates saying and doing things they never did. Experts pictured whole rallies invented on a laptop and pushed straight into voters' feeds. When the campaign season actually arrived and researchers tallied the viral 'deepfake' clips that circulated, the picture was messier than the warnings. What actually happened with election deepfakes during the campaign?",
+    "question": "A voter read one more warning in 2023 that the 2024 US presidential election would be drowned in AI deepfakes of candidates saying and doing things they never did, with whole rallies invented on a laptop and pushed straight into voters' feeds. Researchers then tallied the viral deepfake clips that circulated when the campaign season arrived. What actually happened with election deepfakes during the campaign?",
     "answer": "Real incidents occurred (notably a Biden robocall in New Hampshire) but most viral 'deepfakes' were old-fashioned video editing or context manipulation, not AI generation.",
     "choices": [
       "Real incidents occurred (notably a Biden robocall in New Hampshire) but most viral 'deepfakes' were old-fashioned video editing or context manipulation, not AI generation.",
@@ -13715,8 +13442,8 @@
     "topic": "prompt-injection-and-agent-risks"
   },
   {
-    "tier": 5,
-    "question": "In October 2023, 23andMe revealed that personal genetic data of millions of users had been accessed in a credential-stuffing attack. Some breached profiles were posted online in lists sorted by ancestry group. What made the 23andMe incident different in kind from a typical password breach?",
+    "tier": 4,
+    "question": "Attackers got into 23andMe accounts in October 2023 with reused passwords, a credential-stuffing attack, and reached personal genetic data on millions of users. Those customers had mailed in saliva, and the company had kept each genetic code on file. Some breached profiles were posted online in lists sorted by ancestry group. What made the incident different in kind from a typical password breach?",
     "answer": "DNA data is unique, permanent, partly shared with relatives, and cannot be changed the way a leaked password can — exposure is lifelong.",
     "choices": [
       "DNA data is unique, permanent, partly shared with relatives, and cannot be changed the way a leaked password can — exposure is lifelong.",
@@ -13729,7 +13456,7 @@
   },
   {
     "tier": 5,
-    "question": "Clearview AI is an American company that built a face-recognition tool from billions of photos, without asking anyone. Police departments loved it. Privacy advocates sued. Through 2024 and 2025, courts and regulators in Illinois, France, Italy, the Netherlands, and Australia fined Clearview and ordered it to delete data. Yet the company kept operating. Why did the fines and orders fail to shut it down?",
+    "question": "Privacy advocates sued Clearview AI, the American company that built a face-recognition tool from billions of photos without asking anyone. Police departments loved the tool. Courts and regulators in Illinois, France, Italy, the Netherlands and Australia fined the company and ordered it to delete data through 2024 and 2025. Yet it kept operating. Why did the fines and orders fail to shut it down?",
     "answer": "Settlements and fines in some jurisdictions were lower than the value of continuing law-enforcement contracts elsewhere — the math favored operation.",
     "choices": [
       "Settlements and fines in some jurisdictions were lower than the value of continuing law-enforcement contracts elsewhere — the math favored operation.",
@@ -14015,7 +13742,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2018, investigators caught the Golden State Killer (Joseph James DeAngelo) by uploading crime-scene DNA to GEDmatch, a public genealogy site. They matched distant relatives who had chosen to share their samples. If you have never sent your DNA to any service, whose choice can still land your genetic profile in a database that police can search?",
+    "question": "Suppose you have never sent your DNA to any service. Joseph DeAngelo, the Golden State Killer, never had either, and investigators still reached him in 2018 through GEDmatch, a public genealogy site. Whose choice can still land your genetic profile in a database that police can search?",
     "answer": "Any close-enough relative's — a cousin or aunt submitting to 23andMe, Ancestry, or GEDmatch makes you partially identifiable in those databases without your consent",
     "choices": [
       "Any close-enough relative's — a cousin or aunt submitting to 23andMe, Ancestry, or GEDmatch makes you partially identifiable in those databases without your consent",
@@ -14093,7 +13820,7 @@
   },
   {
     "tier": 5,
-    "question": "In November 2022 Kelly Conlon, a New Jersey lawyer, took her daughter's Girl Scout troop to see the Rockettes at Radio City Music Hall in New York. Before she reached her seat, guards stopped her: the venue's face-recognition cameras had picked her out, and her name was on a list. She had no criminal record and had done nothing wrong at the show. The company that owns the hall, Madison Square Garden Entertainment, run by James Dolan, had been using the system since that summer to keep out one kind of person. Why was Conlon on the list?",
+    "question": "Kelly Conlon, a New Jersey lawyer, took her daughter's Girl Scout troop to see the Rockettes at Radio City Music Hall in November 2022. Guards stopped her before she reached her seat: the hall's face-recognition cameras had picked her out, and her name was on a list. She had done nothing wrong at the show. Madison Square Garden Entertainment, which owns the hall, had used the system since that summer to keep out one kind of person. Why was Conlon on the list?",
     "answer": "Her law firm was in a lawsuit against the venue's owner",
     "choices": [
       "She had posted a bad review of the show online",
@@ -14223,7 +13950,7 @@
   },
   {
     "tier": 5,
-    "question": "By the mid-2020s, federal databases held face records on most US residents. Sources included the FBI's Next Generation Identification (over 100 million photos), Homeland Security's IDENT (Automated Biometric Identification System), and the State Department's passport and visa images. State Department of Motor Vehicles (DMV) photos were folded in too. How did most of those photos actually get into government hands?",
+    "question": "A federal analyst opened the FBI's Next Generation Identification, with over 100 million photos, and Homeland Security's IDENT (Automated Biometric Identification System). By the mid-2020s such federal databases held face records on most US residents. How did most of those photos actually get into government hands?",
     "answer": "Driver's-license and passport applications — administrative collection, not dedicated surveillance programs, supplied the bulk of the photos",
     "choices": [
       "Driver's-license and passport applications — administrative collection, not dedicated surveillance programs, supplied the bulk of the photos",
@@ -14248,8 +13975,8 @@
     "topic": "china-surveillance"
   },
   {
-    "tier": 5,
-    "question": "In September 2021, Frances Haugen — a former Facebook product manager — gave thousands of pages of inside Facebook research to the Wall Street Journal and the SEC. The papers showed the company had its own data on how Instagram hurt teen girls' mental health and self-perception. What did the leaked 2019 study say about Instagram's effect on how teens felt about their appearance?",
+    "tier": 4,
+    "question": "Frances Haugen, a former Facebook product manager, gave thousands of pages of inside research to the Wall Street Journal and federal regulators in 2021. The 'Facebook Files' led to Senate hearings, and they showed the company had data on how Instagram hurt teen girls' self-perception. What did a leaked 2019 study say about how teens felt about their appearance?",
     "answer": "That for many teens, 'we make body image issues worse' on Instagram, and 'aspects of Instagram exacerbate each other to create a perfect storm'",
     "choices": [
       "That for many teens, 'we make body image issues worse' on Instagram, and 'aspects of Instagram exacerbate each other to create a perfect storm'",
@@ -14262,7 +13989,7 @@
   },
   {
     "tier": 5,
-    "question": "In 'The Anxious Generation' (2024), New York University (NYU) social psychologist Jonathan Haidt argued the shift to smartphones and algorithm feeds around 2010-2012 badly hurt teen mental health, especially for girls. Critics said blaming phones was too strong. Which group showed the sharpest jump in depression, anxiety, self-harm, and emergency room (ER) visits around 2011-2013?",
+    "question": "Jonathan Haidt, a social psychologist at New York University (NYU), argued in 'The Anxious Generation' in 2024 that the shift to smartphones and algorithm feeds around 2010-2012 badly hurt a generation's mental health. Critics said blaming phones was too strong. Which group showed the sharpest jump in depression, anxiety, self-harm and emergency room (ER) visits around 2011-2013?",
     "answer": "Teen girls — across CDC YRBS, Pew, time-use, hospitalization, and suicide data, teen-girl indicators show the steepest inflection point at 2011-2013",
     "choices": [
       "Teen girls — across CDC YRBS, Pew, time-use, hospitalization, and suicide data, teen-girl indicators show the steepest inflection point at 2011-2013",
@@ -14275,7 +14002,7 @@
   },
   {
     "tier": 5,
-    "question": "Researchers, ex-employees, and Wall Street Journal reports say TikTok's 'For You' feed grabs attention harder than other apps. In the WSJ's 2021 TikTok study, what harmful topic did the feed rapidly steer fake teen users toward, starting from a blank profile?",
+    "question": "Wall Street Journal reporters set up fake teen users on TikTok in 2021 and let the 'For You' feed run from a blank profile. Researchers, ex-employees and the paper's own reports say that feed grabs attention harder than other apps. What topic did it rapidly steer those fake teen users toward?",
     "answer": "Disordered-eating content — the algorithm narrowed simulated teen-girl accounts into eating-disorder loops within hours of starting from a blank account",
     "choices": [
       "Disordered-eating content — the algorithm narrowed simulated teen-girl accounts into eating-disorder loops within hours of starting from a blank account",
@@ -14288,7 +14015,7 @@
   },
   {
     "tier": 5,
-    "question": "From 2018 to 2019, reporters like Kevin Roose and Zeynep Tufekci said YouTube's feed pushed viewers toward more extreme politics. Later work by Hosseinmardi, Nagler, and others around 2021 found the feed's role was smaller than first claimed. What did the later work blame more than the feed itself?",
+    "question": "Kevin Roose, Zeynep Tufekci and other reporters said in 2018 and 2019 that YouTube's feed pushed viewers toward more extreme politics. Later work by Hosseinmardi, Nagler and others around 2021 found the feed's role was smaller than first claimed. What did the later work blame more than the feed itself?",
     "answer": "User demand and search behavior — users actively seeking content explained more of the patterns than algorithmic push, though the algorithm still mattered",
     "choices": [
       "User demand and search behavior — users actively seeking content explained more of the patterns than algorithmic push, though the algorithm still mattered",
@@ -14444,7 +14171,7 @@
   },
   {
     "tier": 5,
-    "question": "By the 2020s many Americans got at least some of their news through social-platform feeds rather than straight from publishers' websites. The feeds ranked content by predicted engagement (clicks, comments, shares, watch time) rather than by editorial judgment of importance. What do media critics say follows for the news business?",
+    "question": "A news editor checks how her stories are doing and finds the feeds have ranked them by predicted engagement, meaning clicks, comments, shares and watch time, rather than by any editorial judgment of importance. By the 2020s many Americans got at least some of their news through such feeds rather than straight from publishers' websites. What do media critics say follows for the news business?",
     "answer": "Stories optimized to maximize engagement are not the same as stories most important to citizens — the algorithm rewards outrage and novelty, and the news organizations that survive shift their work to match",
     "choices": [
       "Stories optimized to maximize engagement are not the same as stories most important to citizens — the algorithm rewards outrage and novelty, and the news organizations that survive shift their work to match",
@@ -14470,7 +14197,7 @@
   },
   {
     "tier": 5,
-    "question": "AI deepfakes and voice clones got politically big in 2023-2024. Examples: a fake Joe Biden robocall in the 2024 New Hampshire primary, AI-made fake sexual images in schools, and video fakes of public figures. What did the Federal Communications Commission (FCC) do in 2024 about the fake-Biden robocall?",
+    "question": "Regulators at the Federal Communications Commission (FCC) took up the fake Joe Biden robocall of the 2024 New Hampshire primary, as AI deepfakes and voice clones got politically big in 2023 and 2024. What did the FCC do in 2024 about that robocall?",
     "answer": "It ruled the calls illegal — AI-voice-clone robocalls violated the Telephone Consumer Protection Act and the FCC proposed a $6 million fine against the operator",
     "choices": [
       "It ruled the calls illegal — AI-voice-clone robocalls violated the Telephone Consumer Protection Act and the FCC proposed a $6 million fine against the operator",
