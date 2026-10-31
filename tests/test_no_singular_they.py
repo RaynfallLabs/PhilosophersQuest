@@ -122,7 +122,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'science.json', 'each set against their'): 'their = the sixty adults',
     (_Q + 'science.json', 'every flex tugs their'): 'their = the lopsided molecules',
     (_Q + 'science.json', 'every stage of their'): 'their = B cells',
-    (_Q + 'theology.json', 'no one could have moved their'): 'their = Odysseus and Penelope',
     (_Q + 'trivia.json', 'each city-state are powerful defilers themselves'): 'themselves = the Sorcerer-Kings',
     (_Q + 'trivia.json', 'every magazine cover called their'): 'their = fans and magazine covers',
 }
