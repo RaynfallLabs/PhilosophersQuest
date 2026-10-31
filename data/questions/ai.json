@@ -14,7 +14,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT is one of the most famous AI chatbots in the world. The name ends in three capital letters — GPT — and those letters are an acronym for three words that describe what the model actually is. What are those three words?",
+    "question": "A girl opens ChatGPT and stops at the capital letters at the end of its name. They are an acronym for words that describe what the model actually is, and the last word names the network design Google's team introduced in a famous 2017 paper. What do those letters stand for?",
     "answer": "Generative Pre-trained Transformer",
     "choices": [
       "Generative Pre-trained Transformer",
@@ -27,7 +27,7 @@
   },
   {
     "tier": 1,
-    "question": "In the name ChatGPT, the letter T stands for Transformer. But this isn't the toy robot from the movies. It's the name of an idea invented by Google researchers in 2017 that made modern AI chatbots possible. Transformers are a kind of:",
+    "question": "A boy reads that the T in ChatGPT stands for Transformer and thinks of the toy robots from the movies. What kind of thing is a Transformer?",
     "answer": "Neural network architecture",
     "choices": [
       "Neural network architecture",
@@ -40,7 +40,7 @@
   },
   {
     "tier": 1,
-    "question": "The P in GPT stands for Pre-trained. It means the AI already did its learning in advance — before you ever start talking to it. Companies spent months and millions of dollars feeding it books, websites, and articles. By the time you open the chatbot, it isn't studying anymore. Why is 'Pre-trained' important?",
+    "question": "A girl opens ChatGPT and types her first question. The company had already spent months and millions of dollars feeding it books, websites and articles, and by now it isn't studying anymore. The P in GPT stands for Pre-trained. Why does that word matter?",
     "answer": "It learns once, then just responds",
     "choices": [
       "It learns once, then just responds",
@@ -118,7 +118,7 @@
   },
   {
     "tier": 1,
-    "question": "Every AI chatbot was trained on a huge pile of text — books, articles, and websites — collected up to a specific date. After that date, whatever happens in the world, the chatbot won't know unless it's connected to live search. That special date has a name in the AI world. What is it called?",
+    "question": "A boy asks a chatbot about a recent event, but the huge pile of books, articles and websites behind it was gathered only up to a specific date. Whatever happens after that date, the chatbot won't know unless it is connected to live search. What is that date called?",
     "answer": "The training cutoff",
     "choices": [
       "The training cutoff",
@@ -144,7 +144,7 @@
   },
   {
     "tier": 1,
-    "question": "Inside every big chatbot like ChatGPT, there are billions of tiny numbers that decide how it answers. While the chatbot learns from books and websites, those numbers slowly change so it gets better at predicting words. Programmers have a name for these tiny numbers. What are they usually called?",
+    "question": "A programmer looks inside a big chatbot like ChatGPT and finds billions of tiny numbers that decide how it answers. While the chatbot learns from books and websites, those numbers slowly change so it gets better at predicting words. What are those numbers usually called?",
     "answer": "Parameters",
     "choices": [
       "Parameters",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "Before a chatbot like ChatGPT can talk to anyone, a team of programmers has to feed it huge piles of books, websites, and articles so it can learn how words fit together. Only after that first big stage is done does the chatbot start answering people's questions. What is that first learning stage called?",
+    "question": "A team of programmers feeds a new chatbot huge piles of books, websites and articles so it can learn how words fit together. Only after that first big stage does it start answering people's questions. What is that first learning stage called?",
     "answer": "Training",
     "choices": [
       "Training",
@@ -183,7 +183,7 @@
   },
   {
     "tier": 1,
-    "question": "When you type a sentence into a chatbot like ChatGPT, the program does not read whole words the way you do. It chops your text into little pieces — sometimes a short word, sometimes just part of a word. It also writes its reply the same way, one small piece at a time. What are these small text pieces called?",
+    "question": "A girl types a sentence into ChatGPT, and the program does not read whole words the way she does. It chops her text into little pieces, sometimes a short word, sometimes just part of a word, and it writes its reply the same way. What are these small pieces of text called?",
     "answer": "Tokens",
     "choices": [
       "Tokens",
@@ -196,7 +196,7 @@
   },
   {
     "tier": 1,
-    "question": "When you chat with ChatGPT or Claude, it can only remember so much of the conversation at once. If you keep talking long enough, the very oldest messages start to slip out of its memory. Programmers have a name for this limit on how much the chatbot can 'see' at one time. What is it called?",
+    "question": "A boy keeps talking to ChatGPT, message after message, but the chatbot can hold only so much of any conversation at once. Programmers have a name for this limit on how much it can 'see' at one time. What is that limit called?",
     "answer": "Context window",
     "choices": [
       "Context window",
@@ -222,7 +222,7 @@
   },
   {
     "tier": 1,
-    "question": "When you say 'Hey Siri, what is the weather today?' to your phone, or 'Alexa, play some music' to a smart speaker, the AI hears your voice as sound waves, not as words. Before it can figure out what you want or reply back, it has to do one big first job with your voice. What is that first job?",
+    "question": "Suppose you ask your phone, out loud, what the weather is today, or tell a smart speaker to play some music. The AI hears your voice as sound waves, not as words. Before it can work out what you want, it has one big first job to do. What is that job?",
     "answer": "Turn your speech into text",
     "choices": [
       "Turn your speech into text",
@@ -287,7 +287,7 @@
   },
   {
     "tier": 1,
-    "question": "AI chatbots have giveaway habits when they write. They often stuff in long dashes, or use fancy phrases like 'delve into' and 'rich tapestry' way more than a normal kid ever would. Some sentences also feel weirdly balanced. When you learn to notice these clues, what real-life skill are you building?",
+    "question": "A girl learns to stop at three habits on a page: one punctuation mark scattered everywhere, fancy stock phrases, and sentences that feel oddly even, all far beyond what a normal kid would write. What real-life skill is she building?",
     "answer": "Spotting AI-written text",
     "choices": [
       "Spotting AI-written text",
@@ -310,19 +310,6 @@
     ],
     "context": "AI image generators (DALL-E, Stable Diffusion, Midjourney) often produce images with characteristic flaws: wrong finger counts, garbled text, jewelry blending into skin, asymmetric eye details. Learning to spot these flaws is a useful defense skill — you can tell a fake from a photo more often than you might think.",
     "topic": "spotting-ai-images"
-  },
-  {
-    "tier": 1,
-    "question": "Someone hands you two paragraphs and asks: was this written by a person or by a chatbot? You cannot ask how long it took, and you cannot sniff the paper. You only have the text itself to work with. What is the single most useful thing to know when you try to tell which is which?",
-    "answer": "Look for AI's typical phrases and structure",
-    "choices": [
-      "Look for AI's typical phrases and structure",
-      "Count how long it took to write",
-      "Smell the paper it was printed on",
-      "Ask what zodiac sign it has"
-    ],
-    "context": "AI text often has telltale rhythms: certain favorite phrases ('delve into,' 'tapestry of'), repetitive sentence structures, overuse of em-dashes, an over-balanced tone. Real people write more roughly, with stronger opinions and stranger phrasings. Reading lots of AI output and lots of human writing builds the eye.",
-    "topic": "spotting-ai-text"
   },
   {
     "tier": 1,
@@ -365,7 +352,7 @@
   },
   {
     "tier": 1,
-    "question": "Certain AI programs only need to hear about ten seconds of a real person talking. After that, the AI can say brand new sentences that were never actually spoken — in that same person's exact voice, tone, and accent. This trick has a specific name. What is it called?",
+    "question": "A programmer feeds an AI tool a short recording of a real person talking. After that, the tool can say brand-new sentences that were never spoken, in that person's exact voice, tone and accent. What is this trick called?",
     "answer": "Voice cloning",
     "choices": [
       "Voice cloning",
@@ -391,7 +378,7 @@
   },
   {
     "tier": 1,
-    "question": "AI tools can copy a voice from a short clip, and scammers use the clones to phone families pretending to be a relative in trouble. What simple family habit protects against this kind of call?",
+    "question": "A grandmother hears her grandson's voice crying for bail money, but scammers cloned it from his social-media videos. What habit at home, settled calmly before any such call, protects against this?",
     "answer": "Set up a family safe word",
     "choices": [
       "Trust any familiar voice",
@@ -677,7 +664,7 @@
   },
   {
     "tier": 1,
-    "question": "Yann LeCun is a French-born computer scientist who helped invent the way computers 'see' pictures, called convolutional neural networks. He shared the 2018 Turing Award — often called computing's Nobel Prize — with Geoffrey Hinton and Yoshua Bengio. Today he serves as the Chief AI Scientist at one of the biggest tech companies in the world. Which company does Yann LeCun work at?",
+    "question": "Yann LeCun founded a new AI research lab at one of the biggest tech companies in the world in 2013, taking the title of Chief AI Scientist while he went on teaching at New York University. Which company was it?",
     "answer": "Meta",
     "choices": [
       "Meta",
@@ -690,7 +677,7 @@
   },
   {
     "tier": 1,
-    "question": "Yoshua Bengio is a Canadian computer scientist and one of the three 'godfathers of deep learning' who shared the 2018 Turing Award with Geoffrey Hinton and Yann LeCun. He founded and directs a big AI research lab called Mila. He teaches at a large university in the French-speaking heart of Canada, in a city on the Saint Lawrence River. In which Canadian city does Bengio teach?",
+    "question": "Yoshua Bengio founded a big AI research lab called Mila and stayed in academia, while the two men who shared the 2018 Turing Award with him went to Big Tech. He teaches at a large university on the Saint Lawrence River, in a city that speaks French, and the lab stands there too. Which city is it?",
     "answer": "Montreal",
     "choices": [
       "Montreal",
@@ -703,7 +690,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2023, the billionaire Elon Musk started a brand-new artificial intelligence company to compete with OpenAI, the maker of ChatGPT. He gave the new company a very short name — just three letters — that plays on the word 'AI' itself. It became the maker of the Grok chatbot built into his social network X. What is Musk's AI company called?",
+    "question": "Elon Musk, with ChatGPT everywhere and OpenAI enormously valuable, started a brand-new artificial intelligence company in 2023 to compete with the lab he had left. He gave it a very short name, just three letters, that plays on the word 'AI' itself. What is Musk's AI company called?",
     "answer": "xAI (Musk's lab)",
     "choices": [
       "xAI (Musk's lab)",
@@ -716,7 +703,7 @@
   },
   {
     "tier": 1,
-    "question": "Elon Musk's AI company xAI, launched in 2023, built its own chatbot to compete with ChatGPT and Claude. Its name is a slang word meaning 'to deeply understand,' borrowed from a famous 1961 science-fiction novel by Robert A. Heinlein called Stranger in a Strange Land. The chatbot lives inside Musk's social network X. What is xAI's chatbot called?",
+    "question": "Elon Musk released his AI company's own chatbot to compete with ChatGPT and Claude. The name is a slang word meaning 'to deeply understand,' borrowed from a famous 1961 science-fiction novel by Robert A. Heinlein, Stranger in a Strange Land. What is the chatbot called?",
     "answer": "Grok",
     "choices": [
       "Grok",
@@ -768,7 +755,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2017, a team of Google researchers published a short scientific paper that would quietly change AI forever. It introduced a brand-new network design called the Transformer — the same design that later powered ChatGPT, Claude, and nearly every modern chatbot. The paper's title was a bold, catchy phrase only five words long. What is that title?",
+    "question": "A team of Google researchers published a short paper in June 2017 that would quietly change AI forever. It introduced a brand-new network design, the one that later powered ChatGPT, Claude and nearly every modern chatbot. Its title was a bold, catchy phrase. What was that title?",
     "answer": "Attention Is All You Need",
     "choices": [
       "Attention Is All You Need",
@@ -898,7 +885,7 @@
   },
   {
     "tier": 1,
-    "question": "ElevenLabs is a young AI company founded in 2022 by two friends from Poland — a programmer and a machine-learning researcher. Their most famous product is an AI tool that can copy a person's speaking style from just a short voice sample, or read a whole audiobook aloud in a lifelike tone. What does ElevenLabs make?",
+    "question": "Two friends from Poland, a programmer and a machine-learning researcher, founded ElevenLabs in 2022. Their best-known tool works from just a short sample. What does ElevenLabs do?",
     "answer": "Generates realistic voices",
     "choices": [
       "Generates realistic voices",
@@ -937,7 +924,7 @@
   },
   {
     "tier": 1,
-    "question": "The Turing Award, given every year by computer scientists, is often nicknamed the 'Nobel Prize of computing.' In 2018 it went to a trio of researchers who had spent decades pushing the science of deep learning — teaching computers to learn from huge piles of examples — even during long years when almost no one believed in the idea. Below are four famous AI names. Which one did not win the 2018 Turing Award?",
+    "question": "Computer scientists gave the 2018 Turing Award, often nicknamed the 'Nobel Prize of computing,' to a trio who had spent decades pushing deep learning, teaching computers to learn from huge piles of examples, through long years when almost no one believed in the idea. Which of these four famous AI names did not win it?",
     "answer": "Demis Hassabis (DeepMind founder)",
     "choices": [
       "Demis Hassabis (DeepMind founder)",
@@ -1067,7 +1054,7 @@
   },
   {
     "tier": 1,
-    "question": "Your phone shows Grandma's name and a crying voice begs for money. Scammers can fake caller ID to show any name or number, a trick called spoofing. What does the name on the screen prove?",
+    "question": "A boy's phone shows Grandma's name, and a crying voice begs for money. He has heard of a caller-ID trick called spoofing. What does the name on the screen prove?",
     "answer": "Nothing about who is calling",
     "choices": [
       "That Grandma is the caller",
@@ -1145,7 +1132,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2011, Apple bought a small startup and turned its voice assistant into a feature built into every iPhone. She could answer questions, set alarms, send texts, and search the web — all by voice. Today, over a billion people talk to her every week. What is Apple's voice assistant called?",
+    "question": "A man asks his iPhone to set an alarm, send a text and search the web, all by voice, through an assistant Apple got by buying a small startup in 2011. Over a billion people now talk to that assistant every week. What is Apple's voice assistant called?",
     "answer": "Siri",
     "choices": [
       "Siri",
@@ -1158,7 +1145,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2014, Amazon launched a tabletop speaker called the Echo. It sat on the kitchen counter, listened for a wake word, and answered questions, played music, and controlled smart lights — all through a voice assistant with a woman's name. What is the voice assistant inside the Echo speaker called?",
+    "question": "A family sets Amazon's new tabletop speaker, the Echo, on the kitchen counter in 2014. It waits for a spoken trigger, then answers questions, plays music and controls smart lights, all through a voice assistant with a woman's name. What is the assistant inside the Echo called?",
     "answer": "Alexa",
     "choices": [
       "Alexa",
@@ -1275,7 +1262,7 @@
   },
   {
     "tier": 1,
-    "question": "A famous actress wants an audiobook company to use an AI version of her own voice to read a new novel out loud. That way she doesn't have to sit in a recording studio for weeks reading every chapter herself. Before the AI can talk in her voice, though, the company needs one thing from her first. What must she do?",
+    "question": "A famous actress asks an audiobook company to read a new novel aloud in an AI version of her own voice, so she need not sit in a recording studio for weeks reading every chapter. Before the AI can talk in her voice, the company needs one thing from her. What must she do?",
     "answer": "Give recorded samples for training",
     "choices": [
       "Give recorded samples for training",
@@ -1366,7 +1353,7 @@
   },
   {
     "tier": 1,
-    "question": "A brain disease took away Congresswoman Jennifer Wexton's speech. In 2024 an AI company built a clone of her voice from recordings of her old speeches. What did it let her do on the House floor?",
+    "question": "Congresswoman Jennifer Wexton went to the House floor in 2024 after a brain disease took her speech. An AI company had built a model from her old speeches. What did that model let her do there?",
     "answer": "Speak in her own voice",
     "choices": [
       "Speak in her own voice",
@@ -1392,7 +1379,7 @@
   },
   {
     "tier": 1,
-    "question": "Your phone rings. The voice on the other end sounds exactly like your cousin. He says he's in trouble and needs you to wire him money right away. But modern AI can clone anyone's voice from only a few seconds of recorded audio, and scammers use these voice clones to fake calls from family members. What's the smart first move before you send anything?",
+    "question": "Suppose you answer your phone and hear a voice exactly like your cousin's. He says he's in trouble and needs you to wire him money right away. AI can clone anyone's voice from a short recording, and scammers use such clones to fake calls from family. What's the smart first move before you send anything?",
     "answer": "Hang up and call your cousin back",
     "choices": [
       "Hang up and call your cousin back",
@@ -1405,7 +1392,7 @@
   },
   {
     "tier": 1,
-    "question": "Voice-cloning AI copies a person's voice by studying recorded speech, and today's tools need a surprisingly tiny sample to fake a voice that sounds real. About how much recorded audio does modern AI need to clone a person?",
+    "question": "A scammer lifts a clip of a woman's voice from a podcast and feeds it to a cloning tool to fake a voice that sounds real. About how much recorded audio does modern AI need to clone a person?",
     "answer": "Just a few seconds",
     "choices": [
       "Just a few seconds",
@@ -1418,7 +1405,7 @@
   },
   {
     "tier": 1,
-    "question": "In April 2023 a TikTok user called Ghostwriter posted 'Heart on My Sleeve,' a song sung by AI copies of two stars who never recorded it. Streaming sites pulled it after the label complained. Whose voices?",
+    "question": "A TikTok user called Ghostwriter posted the song 'Heart on My Sleeve' in April 2023, sung by AI copies of two stars who never recorded it. Streaming sites pulled it after the label complained. Whose voices were they?",
     "answer": "Drake and The Weeknd",
     "choices": [
       "Eminem and Dr. Dre",
@@ -1548,19 +1535,6 @@
   },
   {
     "tier": 1,
-    "question": "In a homework study group, you notice one kid's essay reads oddly polished. Almost every sentence uses em-dashes, the writing 'delves into the rich tapestry' of the topic, and every paragraph ends with a tidy takeaway line. Human students rushing an assignment almost never write like that. Chatbots often do. What is a reasonable first suspicion?",
-    "answer": "It may have been AI-written",
-    "choices": [
-      "It may have been AI-written",
-      "It was written in invisible ink",
-      "Its author is a robot truly",
-      "It was definitely Shakespeare"
-    ],
-    "context": "Heavy em-dash use, phrases like 'delve into,' 'tapestry of,' 'navigate the complexities,' and overly balanced sentence structure are common AI tells. Real student writing tends to be rougher, more opinionated, with stranger phrasings. Spotting these patterns is a useful skill — both for teachers checking work and for readers checking sources online.",
-    "topic": "spotting-ai-text"
-  },
-  {
-    "tier": 1,
     "question": "A teacher plays a suspected deepfake for her class and asks the students to watch closely. At a glance it looks real, but a careful viewer can usually catch a small giveaway. Which of these signs is a typical tell?",
     "answer": "Mouth movement that doesn't quite match",
     "choices": [
@@ -1600,7 +1574,7 @@
   },
   {
     "tier": 1,
-    "question": "In March 2024 Tennessee, home of Nashville's music business, passed the first state law adding a person's voice to the rights an AI clone may not copy without permission. The law's name spells out a famous singer. Which singer?",
+    "question": "Lawmakers in Tennessee, home of Nashville's music business, passed the first state law in March 2024 adding a person's voice to the rights an AI clone may not copy without permission. The law's name spells out a famous singer. Which singer?",
     "answer": "Elvis Presley",
     "choices": [
       "Johnny Cash",
@@ -1652,19 +1626,6 @@
   },
   {
     "tier": 1,
-    "question": "A big sports game ended just ten minutes ago and you want to know who won. Chatbots are trained on old text and often don't know what happened today. Search engines like Google crawl fresh news pages every few minutes. Which tool fits best for looking up the score right now?",
-    "answer": "A search engine",
-    "choices": [
-      "A search engine",
-      "A basic chatbot",
-      "A calculator",
-      "A photo editor"
-    ],
-    "context": "Basic chatbots don't see live data. A game that ended ten minutes ago is outside any chatbot's training cutoff. Search engines crawl the live web and will find news stories about the game. Some chatbot products bolt search on as a feature; when they do, they usually tell you. For 'what just happened' questions, search is the right tool.",
-    "topic": "training-pretraining-inference"
-  },
-  {
-    "tier": 1,
     "question": "A librarian warns a teenager never to share secrets with a free chatbot like ChatGPT, partly because of what the company may do with the text. What may become of anything typed in?",
     "answer": "Used to train future models",
     "choices": [
@@ -1691,7 +1652,7 @@
   },
   {
     "tier": 1,
-    "question": "A caller who sounds just like your brother says he is in trouble and begs, 'Please don't tell Mom or Dad.' Fraud guides warn that scammers ask for secrecy for one main reason. What is it?",
+    "question": "Suppose you get a call from someone who sounds just like your brother, begging, 'Please don't tell Mom or Dad.' Fraud guides warn that scammers want secrecy for one main reason. What is it?",
     "answer": "So you won't check the story",
     "choices": [
       "So Mom won't worry tonight",
@@ -1717,19 +1678,6 @@
   },
   {
     "tier": 1,
-    "question": "You're reading an article and notice em-dashes — the long horizontal lines used mid-sentence — appearing in nearly every paragraph. Human writers use em-dashes sparingly, but chatbots have been trained to lean on them heavily. That overuse is one common clue writers watch for. Heavy use of em-dashes is sometimes a telltale sign of:",
-    "answer": "AI-generated writing",
-    "choices": [
-      "AI-generated writing",
-      "An old printing press",
-      "A foreign translator",
-      "A very tired writer"
-    ],
-    "context": "Em-dash overuse is one of the famous AI writing tells, along with phrases like 'delve into,' 'tapestry of,' 'navigate the complexities,' and overly balanced sentence structure. Real human writers use em-dashes sometimes; AI-generated text uses them constantly. Spotting the pattern is a useful skill for reading online text critically.",
-    "topic": "spotting-ai-text"
-  },
-  {
-    "tier": 1,
     "question": "A woman scrolling online sees a famous celebrity endorsing a new product. Something feels off, and the voice sounds a little flat. What is the reasonable assumption?",
     "answer": "It may well be a deepfake",
     "choices": [
@@ -1743,7 +1691,7 @@
   },
   {
     "tier": 1,
-    "question": "A voice like your aunt's says she is stranded and asks you to buy gift cards and read out the numbers. The Federal Trade Commission calls this a scam sign. Why do scammers want gift cards?",
+    "question": "A boy hears a voice like his aunt's say she is stranded and ask him to buy gift cards and read out the numbers. The Federal Trade Commission calls this a scam sign. Why gift cards?",
     "answer": "The money is hard to get back",
     "choices": [
       "They cost less than cash",
@@ -1795,7 +1743,7 @@
   },
   {
     "tier": 1,
-    "question": "AI voice cloning lets scammers copy your family member's voice from a short online clip, then call you pretending to be them. Families defend themselves by calling the person back directly, agreeing on a secret safe word, or asking a personal question only the real person would know. Out of these four options, which is NOT a safe defense?",
+    "question": "A scammer copies a boy's voice from a short online clip, then calls his mother pretending to be him. Families have several ways to defend against this. Out of these four options, which is not a safe defense?",
     "answer": "Trusting any familiar-sounding voice",
     "choices": [
       "Trusting any familiar-sounding voice",
@@ -1834,19 +1782,6 @@
   },
   {
     "tier": 1,
-    "question": "You're reading an essay and every single paragraph says 'on one hand...' followed neatly by 'on the other hand...'. Real writers usually pick a side or take a risk. Chatbots are trained to sound polite and safe, so they hedge every claim to avoid trouble. What is this careful two-sided pattern an example of?",
-    "answer": "Overly balanced AI-style writing",
-    "choices": [
-      "Overly balanced AI-style writing",
-      "A new way to write essays",
-      "Strong personal opinion writing",
-      "Old-fashioned letter writing"
-    ],
-    "context": "AI text tends toward overly balanced, hedged, both-sides presentations — partly because it was trained to be 'helpful' and partly because that style appears safe. Real human writing usually has stronger opinions, more uneven attention, and clearer takes. The bland-balance pattern is a useful AI-text tell, especially in opinion pieces and essays.",
-    "topic": "spotting-ai-text"
-  },
-  {
-    "tier": 1,
     "question": "A man told a car dealer's chatbot in December 2023 to agree with anything a customer said. Then he offered $1 for a new Chevy Tahoe, and the bot called it a 'legally binding offer.' Did he get it?",
     "answer": "No, the dealer never sold it",
     "choices": [
@@ -1860,7 +1795,7 @@
   },
   {
     "tier": 1,
-    "question": "A friend sends you a short personal note. It's oddly tidy — perfectly balanced 'on one hand / on the other hand,' several em-dashes, and phrasing that feels flat and generic. You've read plenty of your friend's real notes, and none sound like this. What would you likely suspect?",
+    "question": "A boy gets a note from a friend: oddly polished, flat and generic, with a tidy takeaway line closing every paragraph. He has read plenty of the friend's real notes, and none sound like this. What would he likely suspect?",
     "answer": "The friend used a chatbot",
     "choices": [
       "The friend used a chatbot",
@@ -1899,7 +1834,7 @@
   },
   {
     "tier": 1,
-    "question": "In May 2024 OpenAI paused 'Sky,' one of ChatGPT's spoken voices, after a movie star said it sounded eerily like her own. OpenAI said a different actress had recorded it. Which star objected?",
+    "question": "A movie star complained in May 2024 that 'Sky,' one of ChatGPT's spoken voices, sounded eerily like her own, and OpenAI paused the voice. The company said a different actress had recorded it. Which star objected?",
     "answer": "Scarlett Johansson",
     "choices": [
       "Jennifer Lawrence",
@@ -1938,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "When an AI like ChatGPT writes an essay, it tends to sound smooth, safe, and a little boring. It leans on filler phrases like 'in today's fast-paced world' and gives balanced, cautious answers. Out of these four clues, which is the clearest sign that a piece of text was likely written by an AI?",
+    "question": "A teacher is handed two paragraphs and asked which one a person wrote and which one a chatbot did. She cannot ask how long either took to write; she has only the words on the page. Of these four clues, which is the clearest sign that a chatbot likely wrote a paragraph?",
     "answer": "Bland balance and overused phrases",
     "choices": [
       "Bland balance and overused phrases",
@@ -2211,7 +2146,7 @@
   },
   {
     "tier": 1,
-    "question": "At some large companies, the boss uses an AI program to watch workers at their desks all day. The program keeps track of what they type, where they click, how long they linger on each screen, and even whether their eyes are looking at the monitor. Some workers do not know it is running. What is this kind of program called?",
+    "question": "A boss at a large company opens an AI program that watches workers at their desks all day. It keeps track of what they type, where they click, how long they linger on each screen, and even whether their eyes are on the monitor. Some workers do not know it is running. What is this kind of program called?",
     "answer": "Workplace surveillance software",
     "choices": [
       "Workplace surveillance software",
@@ -2497,20 +2432,7 @@
   },
   {
     "tier": 2,
-    "question": "An AI model has two clearly different stages in its life. In the first stage, engineers pour billions of words of text through it and adjust its internal numbers, called weights, until it learns the patterns. In the second stage, real users start typing questions and getting replies. What are these two stages called?",
-    "answer": "Training — where weights are learned from data; and inference — where the trained model is used to answer",
-    "choices": [
-      "Training — where weights are learned from data; and inference — where the trained model is used to answer",
-      "Sleeping — where the model rests and saves power; and waking — where it gets to work for users",
-      "Drafting — where the model writes a rough reply; and editing — where it polishes the same reply",
-      "Reading — where the model takes in user input; and writing — where it outputs the new reply"
-    ],
-    "context": "Training and inference are the two phases. Training is expensive, slow, and done once (or a few times) by the company building the model — billions of weights get adjusted to fit the data. Inference is what you do every time you chat — the trained weights stay frozen, and the model just runs forward to produce a reply.",
-    "topic": "training-pretraining-inference"
-  },
-  {
-    "tier": 2,
-    "question": "Training a frontier chatbot like GPT-4 costs a company somewhere between tens and hundreds of millions of dollars in electricity, computer chips, and engineering time. Once that giant training bill is paid, something changes about how the model costs money going forward for each new response to a person. What is true of that huge one-time cost?",
+    "question": "A company's engineers finish building a frontier chatbot like GPT-4 at a cost somewhere between tens and hundreds of millions of dollars in electricity, computer chips and engineering time. Then the first person types a question and gets a response. What is true of that giant bill from then on?",
     "answer": "It is paid one time; afterwards each user reply costs only a small inference cost on top",
     "choices": [
       "It is paid one time; afterwards each user reply costs only a small inference cost on top",
@@ -2523,7 +2445,7 @@
   },
   {
     "tier": 2,
-    "question": "ChatGPT is a Large Language Model (LLM) — a chatbot trained on huge piles of text. You type a message and hit enter, and about two seconds later a reply appears on your screen. During those two seconds the model is not learning anything new: its knowledge was locked in earlier, during a separate stage called training. Instead, it is running the trained network to compute your reply, one token at a time. That specific work has a name in AI. What is it called?",
+    "question": "A boy types a message into ChatGPT, hits enter, and about two seconds later a reply appears. Engineers had poured billions of words through the model in an earlier stage, adjusting its internal numbers, called weights, until it learned the patterns. During those two seconds it learns nothing new. What is that second stage, when real users get their replies, called?",
     "answer": "Inference — running the already-trained model forward to produce the reply",
     "choices": [
       "Inference — running the already-trained model forward to produce the reply",
@@ -2549,7 +2471,7 @@
   },
   {
     "tier": 2,
-    "question": "When a chatbot like ChatGPT reads your message, it does not see whole words or individual letters. It sees 'tokens' — small chunks of text that sit somewhere in between. A short word like 'cat' is usually one token, but a longer word like 'unbelievable' can be split into several. Researchers have measured this across huge amounts of English writing, and the ratio is surprisingly steady. Roughly, how many English words equal one token typically?",
+    "question": "A writer checks how ChatGPT cuts her message into 'tokens,' the small chunks of text it reads, and sees a long word like 'unbelievable' split into several. Researchers have measured this across huge amounts of English writing, and the ratio holds steady. Roughly how many English words equal one token?",
     "answer": "Slightly less than one — about three-quarters of an English word per token, on average",
     "choices": [
       "Slightly less than one — about three-quarters of an English word per token, on average",
@@ -2562,7 +2484,7 @@
   },
   {
     "tier": 2,
-    "question": "A chatbot like ChatGPT can only 'see' a limited amount of text at once — a bounded chunk of your recent conversation. That bounded chunk is called its context window, and you can picture it as a sliding rectangle over the running transcript of what you and the chatbot have said. When the conversation grows longer than the window, some messages fall outside the rectangle and the chatbot can no longer see them. Which end slips out of view first as the chat keeps growing?",
+    "question": "A student keeps one chat with ChatGPT running until it outgrows the bounded chunk of conversation the chatbot can 'see' at once. That chunk works like a sliding rectangle over the running transcript. What slips out of view first as the chat keeps growing?",
     "answer": "The oldest messages — they leave the window first as new ones come in at the other end",
     "choices": [
       "The oldest messages — they leave the window first as new ones come in at the other end",
@@ -2822,7 +2744,7 @@
   },
   {
     "tier": 2,
-    "question": "Geoffrey Hinton, a British-Canadian researcher, is sometimes called a 'godfather of AI' for his work on deep neural networks. In 2018 he shared the Turing Award — the top prize in computer science — with two other researchers for that same body of deep-learning work. One of them runs Meta's AI lab in New York. The other founded a Canadian research institute in Montreal. Who are those two?",
+    "question": "Geoffrey Hinton, sometimes called a 'godfather of AI,' shared the 2018 Turing Award, announced early in 2019, with two other researchers for foundational work on deep neural networks. All three had spent decades pushing the case that such networks would eventually work at scale. One of the two runs Meta's AI lab in New York; the other founded a research institute in Montreal. Who are those two?",
     "answer": "Yann LeCun and Yoshua Bengio — together honored for deep-learning contributions",
     "choices": [
       "Yann LeCun and Yoshua Bengio — together honored for deep-learning contributions",
@@ -2964,21 +2886,8 @@
     "topic": "imagenet-and-alexnet"
   },
   {
-    "tier": 2,
-    "question": "In June 2017, a team of eight researchers at Google Brain published a paper introducing a brand-new kind of neural network. It used a mechanism called 'attention' to figure out which words in a sentence should focus on which other words. This one design would later power ChatGPT, Claude, Gemini, and almost every modern chatbot. What was the paper called?",
-    "answer": "'Attention Is All You Need' — introducing the transformer architecture",
-    "choices": [
-      "'Attention Is All You Need' — introducing the transformer architecture",
-      "'A Neural Probabilistic Language Model' — by Bengio's group earlier in the 2000s",
-      "'ImageNet Classification with Deep Convolutional Neural Networks' — the 2012 AlexNet paper",
-      "'Long Short-Term Memory' — by Hochreiter and Schmidhuber's 1997 LSTM paper"
-    ],
-    "context": "The 2017 paper 'Attention Is All You Need' by eight Google researchers introduced the transformer architecture. The title was a pun: it claimed the new design needed only attention mechanisms, not the recurrent or convolutional layers used before. Within a few years, transformers had replaced earlier architectures for language tasks — and they are the foundation of GPT, Claude, Gemini, and almost every other modern LLM.",
-    "topic": "transformers-and-attention"
-  },
-  {
-    "tier": 2,
-    "question": "Before 2017, most AI systems for reading and writing text used a design that processed sentences step-by-step — the model had to remember each earlier token before moving on to the next. Then researchers at Google published a paper called 'Attention Is All You Need,' introducing a new design they called the transformer. Transformers read whole sentences at once and quickly took over. What older design did they push aside?",
+    "tier": 3,
+    "question": "Google Brain's team published a new design for language models in 2017 that read whole sentences at once. It quickly took over from the leading approach of the day, and GPT, Claude and Gemini now run on it. What older design did it push aside?",
     "answer": "Recurrent neural networks (RNNs) and LSTMs — which processed text one word at a time",
     "choices": [
       "Recurrent neural networks (RNNs) and LSTMs — which processed text one word at a time",
@@ -2987,19 +2896,6 @@
       "LISP-based reasoning programs — the dominant language-AI approach from the 1960s onward"
     ],
     "context": "Before transformers, the leading language-AI design was recurrent neural networks — RNNs and especially LSTMs (Hochreiter & Schmidhuber, 1997). RNNs processed text one token at a time, building up a 'state' as they went. Transformers replaced this with attention — every token can see every other one at once. The change made training faster and made big LLMs practical.",
-    "topic": "transformers-and-attention"
-  },
-  {
-    "tier": 2,
-    "question": "ChatGPT and its cousins are built on a family of models called GPT. The three letters stand for three words: Generative, Pre-trained, and one more. That last letter names the very neural-network architecture that Google's team introduced in their famous 2017 paper called 'Attention Is All You Need.' What does the T in GPT stand for?",
-    "answer": "Transformer — the architecture from 'Attention Is All You Need' (2017)",
-    "choices": [
-      "Transformer — the architecture from 'Attention Is All You Need' (2017)",
-      "Translator — meaning the model first translates input into a special internal language",
-      "Trainer — meaning the model trains itself continuously after deployment to the user",
-      "Tagger — meaning the model labels each word with its part of speech every time"
-    ],
-    "context": "GPT = Generative Pre-trained Transformer. The T is for transformer — the 2017 architecture that all major modern LLMs use. GPT-2 (2019), GPT-3 (2020), GPT-4 (2023), Claude, Gemini, Llama, Mistral — all are transformers under the hood, differing mainly in size, training data, and post-training tricks.",
     "topic": "transformers-and-attention"
   },
   {
@@ -3186,7 +3082,7 @@
   },
   {
     "tier": 2,
-    "question": "The Turing Award is the top prize in computer science, sometimes called the 'Nobel of computing.' In 2018 it went jointly to three AI pioneers — Geoffrey Hinton, Yoshua Bengio, and the Frenchman Yann LeCun — for their decades of work on deep neural networks. LeCun in particular is best known for pushing forward one specific kind of neural network, especially for images and reading handwritten numerals. Which kind?",
+    "question": "Yann LeCun won a share of the 2018 Turing Award, the 'Nobel of computing,' for decades of work on deep neural networks. He is best known for pushing forward one specific kind of network. Which kind?",
     "answer": "Convolutional neural networks (CNNs) — especially for image and digit recognition",
     "choices": [
       "Convolutional neural networks (CNNs) — especially for image and digit recognition",
@@ -3199,20 +3095,7 @@
   },
   {
     "tier": 2,
-    "question": "Yann LeCun is a French-American AI pioneer who won a 2018 Turing Award — the top prize in computer science — for his work on convolutional neural networks, the design behind modern image recognition. Today, alongside a professorship at New York University, LeCun holds the title of Chief AI Scientist at a well-known American tech company. Where is that main research role?",
-    "answer": "Meta — the company formerly known as Facebook",
-    "choices": [
-      "Meta — the company formerly known as Facebook",
-      "Apple — where he leads the Vision Pro AI program in Cupertino",
-      "OpenAI — where he serves alongside Sam Altman in the San Francisco office",
-      "Anthropic — where he heads the safety research division in Manhattan"
-    ],
-    "context": "Yann LeCun has been Chief AI Scientist at Meta (Facebook) since 2018, where he leads Meta's fundamental AI research. He is a vocal voice in the AI debate — generally skeptical of doomerism, especially of Yudkowsky-style apocalypse framings, while still supportive of careful safety work. He is also a professor at NYU.",
-    "topic": "yann-lecun"
-  },
-  {
-    "tier": 2,
-    "question": "Yann LeCun is a French-American AI pioneer, winner of the 2018 Turing Award for convolutional neural networks, and Chief AI Scientist at Meta (formerly Facebook). Many public figures warn that today's AI chatbots — like ChatGPT and Claude — are close to becoming superintelligent and pose an existential threat to humanity. LeCun is famous for pushing back on that alarm. Which is the closest summary of his position?",
+    "question": "Yann LeCun pushed back in public when others warned that chatbots like ChatGPT and Claude, known as Large Language Models (LLMs), were close to becoming superintelligent and posed an existential threat to humanity. Which is the closest summary of his position?",
     "answer": "Current LLMs are far from human-level intelligence, and apocalyptic-AI scenarios are overhyped",
     "choices": [
       "Current LLMs are far from human-level intelligence, and apocalyptic-AI scenarios are overhyped",
@@ -3222,19 +3105,6 @@
     ],
     "context": "Yann LeCun is publicly critical of AI doomerism — the view that frontier AI poses imminent existential risk. He has argued that current LLMs lack key capabilities of animal intelligence, that 'AGI in five years' predictions are unrealistic, and that calls for an AI pause serve incumbent interests. He is not opposed to safety research itself — he is opposed to apocalyptic framings. This is a real position held by a major AI scientist and worth knowing.",
     "topic": "yann-lecun"
-  },
-  {
-    "tier": 2,
-    "question": "Yoshua Bengio shared the 2018 Turing Award — the top prize in computer science — with Geoffrey Hinton and Yann LeCun. Unlike the other two, Bengio never moved to a Big Tech company. He stayed in academia and founded a large AI lab called Mila in the Canadian province of Quebec. In which city is his lab based?",
-    "answer": "Montreal — at Mila, a deep-learning research institute in Quebec, Canada",
-    "choices": [
-      "Montreal — at Mila, a deep-learning research institute in Quebec, Canada",
-      "Toronto — at the Vector Institute, where his colleague Geoffrey Hinton also worked",
-      "Paris — at INRIA, the French national institute for computer-science research",
-      "Beijing — at Tsinghua University, a major Chinese center for AI research today"
-    ],
-    "context": "Yoshua Bengio founded Mila — the Quebec AI Institute — in Montreal. The lab is one of the world's leading academic AI research centers, focused on deep learning and its applications. Bengio's brother Samy is also a prominent AI researcher (formerly at Google, now at Apple). Yoshua Bengio shared the 2018 Turing Award with Hinton and LeCun for deep-learning contributions.",
-    "topic": "yoshua-bengio"
   },
   {
     "tier": 2,
@@ -3368,7 +3238,7 @@
   },
   {
     "tier": 2,
-    "question": "In January 2023 Microsoft researchers described a new speech model they said could imitate a voice from a recording just three seconds long. Their paper warned it could fool voice ID or impersonate a speaker. What did Microsoft do with the model?",
+    "question": "Microsoft researchers described a new speech model in January 2023 that they said could imitate a voice from a very short recording. Their paper warned it could fool voice ID or impersonate a speaker. What did Microsoft do with the model?",
     "answer": "Kept it out of public hands as a research project",
     "choices": [
       "Built it into every Windows computer that spring",
@@ -3381,7 +3251,7 @@
   },
   {
     "tier": 2,
-    "question": "In September 2022, OpenAI released a program called Whisper as free open-source software. Feed it any audio recording — a podcast, a phone call, a classroom lecture — and it writes out every word that was said, in real time. What is that general task in AI called?",
+    "question": "A girl on a FaceTime call with her grandmother taps a button on her iPhone, and the grandmother's words start appearing as captions, half a second behind the voice, with no human typing. OpenAI's Whisper, released free in September 2022, does the same for a podcast or a lecture. What is that general task in AI called?",
     "answer": "Speech recognition (speech-to-text)",
     "choices": [
       "Speech recognition (speech-to-text)",
@@ -3615,19 +3485,6 @@
   },
   {
     "tier": 2,
-    "question": "You're on a FaceTime video call with your grandma, and her sound keeps cutting out. You tap a button on your iPhone and, at the bottom of the screen, her words start appearing as written captions, live, only a half-second behind her voice — and no human is typing them. This is an AI capability your phone runs quietly in the background. What is it doing?",
-    "answer": "Speech-to-text running in near real time",
-    "choices": [
-      "Speech-to-text running in near real time",
-      "Text-to-speech running on the speaker's end",
-      "A live human typist transcribing the conversation",
-      "Lip-reading from a separate camera on each speaker"
-    ],
-    "context": "Live captions are real-time speech-to-text. The phone (or a server) listens to the audio and writes words onto the screen with a slight delay. Modern systems are good enough for casual viewing but still struggle with accents, technical vocabulary, and overlapping speakers. They're a huge accessibility win for deaf and hard-of-hearing users, and a useful tool for noisy environments.",
-    "topic": "voice-assistants-and-speech-ai"
-  },
-  {
-    "tier": 2,
     "question": "Researchers writing 'The Leaderboard Illusion' in 2025 reported that Meta privately tested 27 versions of its newest Llama model before release on Chatbot Arena, a site that ranks models by people's blind votes. Why does that matter for the rankings?",
     "answer": "Testing many and showing only the best inflates the score",
     "choices": [
@@ -3641,7 +3498,7 @@
   },
   {
     "tier": 2,
-    "question": "In February 2023 Vice reporter Joseph Cox fed a few minutes of his own speech into an online cloning tool. Then he phoned his bank and played the fake voice saying 'my voice is my password.' What did the clone get him into?",
+    "question": "Joseph Cox, a Vice reporter, fed a few minutes of his own speech into an online cloning tool in February 2023. Then he phoned his bank and played the fake voice saying 'my voice is my password.' What did the clone get him into?",
     "answer": "His own account, past the bank's voice-ID check",
     "choices": [
       "A stranger's account, using a stolen clip",
@@ -3690,19 +3547,6 @@
     ],
     "context": "Article 38 of the Digital Services Act requires very large online platforms to offer at least one version of their recommender systems that is not based on profiling. A law can make the personal algorithm optional; it cannot make anyone choose the other feed.",
     "topic": "feeds-outrage-and-power"
-  },
-  {
-    "tier": 2,
-    "question": "In 2023 Elon Musk started a new AI company called xAI, meant to compete with OpenAI (which Musk himself had helped fund years earlier). xAI's chatbot is called Grok, and unlike ChatGPT or Claude — which each live on their own website — Grok is built directly into a bigger platform Musk already owns. Where do people typically chat with Grok?",
-    "answer": "Inside the X social-media platform (formerly Twitter)",
-    "choices": [
-      "Inside the X social-media platform (formerly Twitter)",
-      "Inside the Apple Maps app on iPhone and iPad",
-      "Inside Microsoft Word as the only available chatbot",
-      "Inside Netflix as a chat companion while watching shows"
-    ],
-    "context": "Grok is the chatbot from xAI, Elon Musk's AI company founded in 2023. It's available inside the X platform (formerly Twitter), which Musk also owns. Grok is positioned as a 'less filtered' alternative to ChatGPT and Claude. Its public stance has shifted over time as the models are updated, illustrating how 'AI personality' is a tuning choice the company makes, not a fixed property of the technology.",
-    "topic": "xai-and-grok"
   },
   {
     "tier": 2,
@@ -3823,7 +3667,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2019 the chief executive of a British energy firm took a call from what sounded like his boss, German accent and all, ordering an urgent payment of about $243,000. He sent it. According to the firm's insurer, whose voice had the criminals faked?",
+    "question": "The chief executive of a British energy firm took a call in 2019 from a voice he recognized, ordering an urgent payment of about $243,000. He sent it. According to the firm's insurer, whose voice had the criminals faked?",
     "answer": "The head of the firm's German parent company",
     "choices": [
       "A manager at a supplier in Hungary",
@@ -3836,7 +3680,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2023 researchers at University College London played real and AI-faked speech, in English and in Mandarin, to 529 listeners and asked them to spot the fakes. Some listeners got practice examples first. What did the study find?",
+    "question": "Researchers at University College London played real and AI-faked speech, in English and in Mandarin, to 529 listeners in 2023 and asked them to spot the fakes. Some listeners got practice examples first. What did the study find?",
     "answer": "Listeners caught only about three fakes in four, and practice barely helped",
     "choices": [
       "Listeners caught almost every fake, as long as they practised first",
@@ -3927,7 +3771,7 @@
   },
   {
     "tier": 2,
-    "question": "AI-written text has a fingerprint. When a chatbot like ChatGPT writes a paragraph, it reaches for one specific punctuation mark much more often than a normal human writer would. It drops the mark between clauses, into the middle of sentences, and pretty much anywhere it can — sometimes several times in one short paragraph. Which punctuation mark is the AI tell?",
+    "question": "An editor reads a short paragraph from ChatGPT and keeps meeting the same punctuation mark, sometimes several times over, far more often than a normal human writer would use it. Writers watch for that overuse as one common clue. Which punctuation mark is the AI tell?",
     "answer": "The em-dash, dropped into many sentences for no clear reason",
     "choices": [
       "The em-dash, dropped into many sentences for no clear reason",
@@ -3936,19 +3780,6 @@
       "The hyphen used to separate every letter of a word like t-h-i-s"
     ],
     "context": "Em-dashes are a real punctuation mark used by careful writers — but ChatGPT-era AI text overuses them, sometimes several per paragraph. It's one of the simplest text tells. Other tells include 'delve into,' 'tapestry of,' 'in the realm of,' and repetitive sentence shapes. None of these proves AI authorship by itself — humans do use them. Cluster of tells in one paragraph is the signal.",
-    "topic": "spotting-ai-text"
-  },
-  {
-    "tier": 2,
-    "question": "AI-written text tends to repeat certain phrases so heavily that internet users now use them as jokes to spot chatbot output. One phrase in particular has become a punchline: it shows up as a repeated opener again and again, in blog posts and school essays turned in without editing. Which phrase is on that AI-tell list?",
-    "answer": "'Delve into' — used at the start of paragraphs constantly",
-    "choices": [
-      "'Delve into' — used at the start of paragraphs constantly",
-      "'See you tomorrow' — a common email sign-off in writing",
-      "'Once upon a time' — the standard fairy-tale opener children know",
-      "'In conclusion' — the standard essay closer schools have always taught"
-    ],
-    "context": "Certain phrases have become AI-text giveaways from sheer overuse. 'Delve into,' 'tapestry of,' 'navigate the landscape,' 'in the realm of,' 'it's important to note,' 'multifaceted.' These are real English phrases — humans use them too. The tell is the density and the predictability of placement. A single 'delve into' is nothing; three in one document is a strong signal someone outsourced the writing.",
     "topic": "spotting-ai-text"
   },
   {
@@ -4015,19 +3846,6 @@
     ],
     "context": "At launch no model topped 10%; OpenAI's o1 led with about 8.3%. Scores on new tests tend to climb quickly, so one test score says little about how reliable a model is on everyday questions.",
     "topic": "chatbot-limits-and-right-tool"
-  },
-  {
-    "tier": 2,
-    "question": "Every large language model — the kind of AI that powers a chatbot like ChatGPT — is trained on a huge pile of text collected up to a specific date. Programmers call that stopping point the 'training cutoff.' After that date the chatbot's text-pile stops, no matter how many months go by before you talk to it. What does that cutoff mean for what the chatbot actually knows?",
-    "answer": "It knows almost nothing about events after that cutoff date",
-    "choices": [
-      "It knows almost nothing about events after that cutoff date",
-      "It always knows today's news because every chatbot has a live feed",
-      "It only knows events before the year 1900 in its training data",
-      "It updates itself once per second from a satellite news source"
-    ],
-    "context": "When a model is trained, it reads a snapshot of text from before some cutoff date. After that, the world keeps moving — but the model's weights don't update on their own. If you ask about events after the cutoff, the model either says it doesn't know or makes something up. Look up your chatbot's cutoff. For anything more recent, you'll need a search engine or a model with tool access.",
-    "topic": "training-pretraining-inference"
   },
   {
     "tier": 2,
@@ -4109,7 +3927,7 @@
   },
   {
     "tier": 2,
-    "question": "Some AI image tools, like ones from Adobe and OpenAI, tuck a small hidden tag called 'content credentials' inside every picture they generate. The tag marks the image as AI-made, so websites can flag it for viewers. It sounds like a fix for the deepfake problem. But it is not a complete solution to fake images. Why not?",
+    "question": "A designer makes a picture with an AI tool from Adobe or OpenAI, and the tool tucks a small hidden tag called 'content credentials' inside it. The tag marks the image as AI-made, so websites can flag it for viewers. That sounds like a fix for the deepfake problem, but it is not a complete one. Why not?",
     "answer": "The credentials can be removed by anyone with basic image-editing tools",
     "choices": [
       "The credentials can be removed by anyone with basic image-editing tools",
@@ -4187,7 +4005,7 @@
   },
   {
     "tier": 2,
-    "question": "A student has a five-page history essay on the causes of World War I due tomorrow morning. Instead of reading and writing, she opens ChatGPT, pastes the assignment prompt, copies whatever the chatbot writes, and hands it in under her own name. Teachers today have read a lot of AI-written work and know the tells. What outcome is realistic?",
+    "question": "A student has a five-page history essay on the causes of World War I due tomorrow morning. Instead of reading and writing, she opens ChatGPT, pastes in the assignment prompt, copies whatever the chatbot writes and hands it in under her own name. What outcome is realistic?",
     "answer": "The teacher likely spots the AI tells, and the student didn't learn the material",
     "choices": [
       "The teacher likely spots the AI tells, and the student didn't learn the material",
@@ -4213,19 +4031,6 @@
   },
   {
     "tier": 2,
-    "question": "An ordinary chatbot like the free version of ChatGPT was trained on text collected up to a certain cutoff date and then frozen. Unless it is given a special web-browsing tool, it does not go out and read live pages after you ask a question. So if you ask about a soccer match played last night or a news headline from this morning, what does that limit mean for you?",
-    "answer": "It can't tell you about events from this week or yesterday",
-    "choices": [
-      "It can't tell you about events from this week or yesterday",
-      "It downloads the entire internet again every twenty-four hours",
-      "It checks the live web after every message you send to be sure",
-      "It refuses to discuss any topic that occurred in the last decade"
-    ],
-    "context": "A vanilla chatbot has no live web access — it knows only what was in its training data. Some chatbot products add a 'browse the web' tool you can enable. Many free versions don't. When you ask 'what happened today,' the model either says it can't say or invents something. Trust currentness only when the chatbot explicitly says it just searched. Otherwise, for fresh information, use search.",
-    "topic": "training-pretraining-inference"
-  },
-  {
-    "tier": 2,
     "question": "Ilia Shumailov and colleagues trained a language model on writing about medieval architecture, then trained the next model on the first one's output, and so on down the line, for a 2024 Nature paper. By the ninth generation, what came out?",
     "answer": "A list of jackrabbits",
     "choices": [
@@ -4236,19 +4041,6 @@
     ],
     "context": "The researchers called it model collapse: each generation lost the rare details of the real data until the output degraded into nonsense. As more of the web is written by AI, labs have to watch what their next models learn from.",
     "topic": "chatbot-limits-and-right-tool"
-  },
-  {
-    "tier": 2,
-    "question": "A grandmother's phone rings. She hears her grandson's exact voice, crying, saying he has been arrested and needs bail money right now. Except it isn't him — scammers used an AI voice clone made from a few seconds of his social-media videos. The best defense against this scam is picking a family passphrase — a private code only the real family knows. When should the family have decided on it?",
-    "answer": "Earlier, calmly, before any crisis call, when the family picks a safe word together",
-    "choices": [
-      "Earlier, calmly, before any crisis call, when the family picks a safe word together",
-      "Right now in the panic, while the scammer is still on the line",
-      "Only after several family members have already lost money first",
-      "Whenever the bank requires it during a transfer authorization form"
-    ],
-    "context": "The whole point of a safe word is that it's agreed in advance, in calm conditions, before any scammer applies pressure. In a real emergency, the family member just says it — and you know it's them. If you wait until the call comes to start figuring out a defense, the scammer has already won the framing. This is why families that have read about voice-clone scams should set the safe word at the next family dinner.",
-    "topic": "voice-clone-scams"
   },
   {
     "tier": 2,
@@ -4291,7 +4083,7 @@
   },
   {
     "tier": 2,
-    "question": "Two phrases pop up so often in chatbot writing that many readers now recognize them at a glance: 'delve into' and 'tapestry of.' The words themselves are real English — humans do use them, but sparingly, and usually in fancy essays. In chatbot text they appear over and over, in everyday spots where a human would just write 'look at' or 'a mix of.' What about those phrases is the actual giveaway?",
+    "question": "A teacher stops at two phrases in a student's paper, phrases many readers now recognize at a glance as chatbot writing. What about phrases like these is the actual giveaway?",
     "answer": "They appear too often, in the wrong contexts, like a tic",
     "choices": [
       "They appear too often, in the wrong contexts, like a tic",
@@ -4551,7 +4343,7 @@
   },
   {
     "tier": 2,
-    "question": "OpenAI was founded in 2015 as a nonprofit AI lab in San Francisco. Elon Musk — the Tesla and SpaceX billionaire — was one of its earliest funders and sat on the board. In 2018 he abruptly split from the company. Musk and the rest of the founding team (including Sam Altman) told different versions of what happened. What was the main reason?",
+    "question": "Elon Musk, the Tesla and SpaceX billionaire, abruptly split from OpenAI in 2018 and left the board of the San Francisco nonprofit he had helped fund from its founding in 2015. He and the rest of the founding team, Sam Altman among them, told different versions of what happened. What is the main reason reported since?",
     "answer": "He wanted to take charge of OpenAI directly, and the other founders refused to hand him control",
     "choices": [
       "He wanted to take charge of OpenAI directly, and the other founders refused to hand him control",
@@ -5058,7 +4850,7 @@
   },
   {
     "tier": 3,
-    "question": "A large language model like ChatGPT writes one word at a time. It picks the next word, adds it to what it has written, then picks the word after that. No plan, no outline — just the next token, over and over. Yet its essays still hang together across long paragraphs that stay on topic. That looks like a contradiction until you know what the model does at each step. So why do next-word-at-a-time models produce writing that stays coherent?",
+    "question": "A teacher watches ChatGPT write an essay one word at a time: it picks the next word, adds it to the text, then picks the word after that, with no plan and no outline. Yet the long paragraphs stay on topic. Why do next-word-at-a-time models produce writing that stays coherent?",
     "answer": "The model attends to every earlier word when picking the next one, so each prediction is shaped by the whole conversation so far.",
     "choices": [
       "The model attends to every earlier word when picking the next one, so each prediction is shaped by the whole conversation so far.",
@@ -5084,7 +4876,7 @@
   },
   {
     "tier": 3,
-    "question": "In June 2017, eight researchers at Google Brain — including Ashish Vaswani and Noam Shazeer — published a short paper with a bold title: 'Attention Is All You Need.' The paper introduced a new neural network design. Within a few years, almost every modern chatbot — ChatGPT, Claude, Gemini, LLaMA — was built on the architecture that paper proposed. What did the paper propose?",
+    "question": "Ashish Vaswani, Noam Shazeer and their colleagues at Google Brain, eight authors in all, published a short paper with a bold title in June 2017. Within a few years, almost every modern chatbot, ChatGPT, Claude, Gemini and LLaMA among them, was built on the design that paper proposed. What did the paper propose?",
     "answer": "The transformer — a network architecture built around self-attention instead of older sequence-step approaches.",
     "choices": [
       "The transformer — a network architecture built around self-attention instead of older sequence-step approaches.",
@@ -5097,7 +4889,7 @@
   },
   {
     "tier": 3,
-    "question": "Inside a transformer (the neural network design behind ChatGPT), a mechanism called 'self-attention' lets each word in a sentence figure out which other words matter to it. Take the classic ambiguity sentence: 'The trophy didn't fit in the suitcase because it was too big.' The pronoun 'it' could point back to either noun in that sentence. Which word matters most for figuring out what 'it' actually refers to?",
+    "question": "A researcher types the classic ambiguity sentence into a transformer, the neural network design behind ChatGPT: 'The trophy didn't fit in the suitcase because it was too big.' A mechanism called self-attention lets each word work out which other words matter to it, and the pronoun could point back to either noun. Which word matters most for working out what 'it' refers to?",
     "answer": "'Trophy' — without that link the model can't tell whether 'it' is the trophy or the suitcase.",
     "choices": [
       "'Trophy' — without that link the model can't tell whether 'it' is the trophy or the suitcase.",
@@ -5110,7 +4902,7 @@
   },
   {
     "tier": 3,
-    "question": "Before the transformer architecture was published by Google researchers in 2017, the best language models were recurrent neural networks (RNNs). RNNs read a sentence one word at a time, passing a hidden 'state' forward from word to word — which meant word two had to wait for word one to finish. Transformers replaced this with an all-at-once mechanism called attention. Why was switching to parallel attention such a big win for training?",
+    "question": "An engineer training an older language model watched it read a sentence one step at a time, passing a hidden 'state' forward, so word two had to wait for word one to finish. The transformer replaced that step-by-step design with attention. Why was the switch such a big win for training?",
     "answer": "Every word could be processed at once on a GPU, making training on huge datasets dramatically faster.",
     "choices": [
       "Every word could be processed at once on a GPU, making training on huge datasets dramatically faster.",
@@ -5136,7 +4928,7 @@
   },
   {
     "tier": 3,
-    "question": "Transformers, the AI architecture behind ChatGPT and other modern large language models, do not read text one whole word at a time. They chop text into pieces called tokens. A long word like 'unbelievable' might be split into three tokens — 'un,' 'believ,' and 'able' — while a common word like 'the' is one token by itself. Why design the model around these subword pieces rather than whole words?",
+    "question": "An engineer cuts text into tokens for a language model. 'Hello' might stay one token, 'unbelievable' might split into three ('un,' 'believ' and 'able'), and 'antidisestablishmentarianism' might become six. Why design the model around these subword pieces rather than whole words?",
     "answer": "Subword pieces let the model handle rare words, made-up words, and other languages without exploding its vocabulary.",
     "choices": [
       "Subword pieces let the model handle rare words, made-up words, and other languages without exploding its vocabulary.",
@@ -5149,7 +4941,7 @@
   },
   {
     "tier": 3,
-    "question": "In a transformer neural network (the design behind ChatGPT), self-attention lets every word in a sentence attend to every other word in that same sentence. That's a lot of word-pairs to compute. Imagine you feed the model a sentence of exactly 100 words. Roughly how many attention pairs does the model have to consider?",
+    "question": "An engineer feeds a transformer, the neural network design behind ChatGPT, a sentence of exactly 100 words. Self-attention lets every word in the sentence attend to every other word in it, and that makes a lot of word-pairs to compute. Roughly how many attention pairs does the model have to consider?",
     "answer": "About 10,000 — every word attends to every word, so the work grows with the square of the length.",
     "choices": [
       "About 10,000 — every word attends to every word, so the work grows with the square of the length.",
@@ -5279,7 +5071,7 @@
   },
   {
     "tier": 3,
-    "question": "Modern Large Language Models (LLMs) like ChatGPT are pre-trained on huge piles of internet text — hundreds of billions of words scraped from books, articles, and forums. Nobody sits and labels every example by hand, so the training is called 'unsupervised' or 'self-supervised.' Yet a model still needs some objective to learn from. How does the model know what to learn during pre-training?",
+    "question": "Engineers pour hundreds of billions of words scraped from books, articles and forums into a Large Language Model (LLM) like ChatGPT during pre-training. Nobody sits and marks up every example by hand, yet the model still needs some objective to learn from. How does the model pick up what to learn?",
     "answer": "The training task is to predict the next word, and the next word is already there in the text, so the data labels itself.",
     "choices": [
       "The training task is to predict the next word, and the next word is already there in the text, so the data labels itself.",
@@ -5344,7 +5136,7 @@
   },
   {
     "tier": 3,
-    "question": "When AI chatbots advertise their power, they list numbers like '128K context window' or '1M token context.' A 'token' is a chunk of text roughly three-quarters of a word long, and '128K' means about 128,000 tokens. The context window is a real technical limit on what the model handles at once. For a chatbot, what does a 128K context window actually mean in practice?",
+    "question": "Suppose you are choosing between two chatbots, and the ads list numbers like '128K context window' or '1M token context.' The '128K' means about 128,000 tokens, and it names a real technical limit. For a chatbot, what does a 128K context window actually mean in practice?",
     "answer": "It's the maximum amount of text the model can consider at once, including the conversation history and any documents you paste in.",
     "choices": [
       "It's the maximum amount of text the model can consider at once, including the conversation history and any documents you paste in.",
@@ -5357,7 +5149,7 @@
   },
   {
     "tier": 3,
-    "question": "Every AI chatbot has a fixed 'context window' — the maximum amount of text it can consider at one time, including your whole ongoing conversation plus any documents you paste in. If you chat long enough, or paste in enough files, you'll eventually reach that limit. What is a common sign that this is happening, that a savvy user should watch for?",
+    "question": "Suppose you keep chatting with one AI chatbot, long after your first question, pasting in file after file, until the conversation outgrows the chatbot's limit. A savvy user watches for a common sign that this is happening. What is that sign?",
     "answer": "The model starts forgetting facts you established earlier, contradicting itself, or repeating earlier mistakes.",
     "choices": [
       "The model starts forgetting facts you established earlier, contradicting itself, or repeating earlier mistakes.",
@@ -5370,7 +5162,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2023, researchers at Stanford University ran an experiment on Large Language Models like GPT-4 and Claude. They handed each model a 100-page document and asked questions about facts placed at different positions in that text. The models remembered facts near the top and bottom fairly well — but forgot facts stuck in the middle of the document. The finding got a name that stuck: 'lost in the middle.' Why does long context cause this?",
+    "question": "Researchers at Stanford University handed Large Language Models (LLMs) like GPT-4 and Claude a 100-page document in 2023 and asked about facts placed at different positions in the text. The models did fairly well on facts near the top and bottom and forgot those stuck in the middle. The finding took the name 'lost in the middle.' Why does long context cause this?",
     "answer": "Attention cost grows fast with length, and models train more on shorter texts, so middle positions get less focus.",
     "choices": [
       "Attention cost grows fast with length, and models train more on shorter texts, so middle positions get less focus.",
@@ -5617,20 +5409,7 @@
   },
   {
     "tier": 3,
-    "question": "Every large language model (LLM) has a 'training cutoff date' — the last date included in the huge pile of text it was trained on. It's usually months before the model is released to the public, since training and safety-testing take time. Why does the training cutoff matter for how the model answers questions about recent events?",
-    "answer": "The model has no knowledge of anything that happened after the cutoff and may confidently make things up about it.",
-    "choices": [
-      "The model has no knowledge of anything that happened after the cutoff and may confidently make things up about it.",
-      "The model refuses to answer any question that mentions a date after the cutoff at all, full stop.",
-      "The model automatically connects to a live news feed for any topic that postdates the training cutoff date.",
-      "The model gets daily updates from its company and knows about every event from the previous calendar day."
-    ],
-    "context": "Pre-training is expensive — billions of dollars and months of compute. Labs don't redo it constantly. A model released in 2025 might have training data only through some date in 2024. Ask it about something from after that date and it will either say it doesn't know, or — more dangerously — confidently make something up. The recognition habit: before asking about recent events, check the model's stated training cutoff. Newer events probably need a search tool or a real news source.",
-    "topic": "training-pretraining-inference"
-  },
-  {
-    "tier": 3,
-    "question": "GPT-2 had 1.5 billion parameters. GPT-3 had 175 billion — over a hundred times more. Llama 3 ships in sizes including 70 billion. Parameters are numbers adjusted during training and frozen after. What are those extra parameters doing when you chat?",
+    "question": "A student compares model sizes: GPT-2 had 1.5 billion parameters, GPT-3 more than a hundred times as many, and Llama 3 ships in sizes including 70 billion. Each parameter is a number that stays frozen once a model is finished. What are those extra parameters doing when someone chats?",
     "answer": "They are the learned weights that decide, given the conversation so far, the probability of each possible next token.",
     "choices": [
       "They are the learned weights that decide, given the conversation so far, the probability of each possible next token.",
@@ -5838,7 +5617,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1989, a French researcher named Yann LeCun at Bell Labs in New Jersey built one of the first neural networks to do a useful real-world job — reading messy handwritten digits. His network could look at a scrawled '7' or a wobbly '3' and correctly say which digit it was. The US Postal Service was drowning in a specific handwriting problem where earlier machines had failed and human sorters were too slow. They put LeCun's network to work on it. What was the task?",
+    "question": "Yann LeCun built one of the first neural networks to do a useful real-world job at Bell Labs in New Jersey in 1989. It could look at a scrawled '7' or a wobbly '3' and correctly say which digit it was. The US Postal Service had a problem where earlier machines had failed and human sorters were too slow, and it put his network to work. What was the task?",
     "answer": "Reading handwritten ZIP codes on envelopes",
     "choices": [
       "Reading handwritten ZIP codes on envelopes",
@@ -5847,32 +5626,6 @@
       "Filtering junk-mail advertisements from the mail"
     ],
     "context": "LeNet (the early versions in 1989, then LeNet-5 in 1998) was a convolutional neural network — a CNN — trained to recognize digits. Bell Labs deployed it to read handwritten ZIP codes on mail. By the late 1990s, CNN-based systems were reading a meaningful share of US mail. LeCun's work was a proof-of-concept for deep learning on images that predated the modern boom by 20 years. Recognition skill: the deep-learning revolution wasn't an overnight breakthrough — it was a slow gathering of techniques that finally clicked at scale in 2012.",
-    "topic": "yann-lecun"
-  },
-  {
-    "tier": 3,
-    "question": "Yann LeCun's 1989 model LeNet was one of the first neural networks built for images. It used a design called a convolutional neural network (CNN). What is the central idea of a CNN that makes it good at vision tasks?",
-    "answer": "The network slides small filters across the image, learning patterns that work the same way anywhere they appear.",
-    "choices": [
-      "The network slides small filters across the image, learning patterns that work the same way anywhere they appear.",
-      "The network memorizes every image it has ever seen and matches new images against the memorized set.",
-      "The network requires images to be hand-labeled at every pixel before training, with no exceptions.",
-      "The network refuses to process any image larger than 64 by 64 pixels regardless of available computing power."
-    ],
-    "context": "Convolutional neural networks use small learnable filters that slide across the input image. The same filter applied at every position means the network can recognize the same pattern (an edge, a corner, an eye) wherever it appears. This 'translation invariance' is a natural fit for visual data and is why CNNs dominated computer vision from the 1990s into the 2010s. Vision Transformers have since matched or exceeded CNNs on many tasks, but the CNN idea — local filters, shared weights — was the foundation.",
-    "topic": "yann-lecun"
-  },
-  {
-    "tier": 3,
-    "question": "Yann LeCun is a French computer scientist who spent the 1990s at Bell Labs, where he pioneered convolutional neural networks for reading handwritten digits — the technology that later powered modern image AI. He then taught at New York University for years. In 2013, he took a role that placed him at the center of the modern AI revolution. What position did he take?",
-    "answer": "Chief AI Scientist at Meta (then Facebook), where he founded the company's AI research lab.",
-    "choices": [
-      "Chief AI Scientist at Meta (then Facebook), where he founded the company's AI research lab.",
-      "Chief Technology Officer at Google, where he replaced the existing engineering leadership.",
-      "Chairman of the United Nations AI Council, a permanent international AI advisory role.",
-      "CEO of Microsoft, where he oversaw the company's pivot from desktop software to cloud computing."
-    ],
-    "context": "LeCun joined Facebook (now Meta) in 2013 to found FAIR — Facebook AI Research. He's been Meta's Chief AI Scientist since. He's also a vocal critic of AI-doomer arguments — distinct from Geoffrey Hinton's middle-ground concerns — and a champion of open-source AI, including Meta's release of Llama with downloadable weights. The career arc — Bell Labs CNN pioneer → academic professor → industry research lead → public AI voice — is one of the field's distinctive trajectories.",
     "topic": "yann-lecun"
   },
   {
@@ -5929,7 +5682,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2018, Google released a language model called BERT, short for Bidirectional Encoder. Most earlier language models read a sentence from left to right, one word at a time. What did BERT do differently to make sense of the surrounding words?",
+    "question": "A Google team released a language model called BERT in 2018, in a field where most earlier language models read a sentence from left to right. What did BERT do differently to make sense of the surrounding words?",
     "answer": "It looked at words on both sides at once, the 'bidirectional' part of its name, letting it understand context better.",
     "choices": [
       "It looked at words on both sides at once, the 'bidirectional' part of its name, letting it understand context better.",
@@ -5942,7 +5695,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2017, researchers at Google published a paper called 'Attention Is All You Need' that introduced a new AI design called the transformer. In 2018, two teams built famous models on top of it. Google's team made Bidirectional Encoder Representations from Transformers (BERT), which reads text in both directions at once. OpenAI made GPT, which reads left to right and continues writing. Both are transformer-based, but they specialize in different jobs. How does the typical job split work?",
+    "question": "Google's team built a language model called Bidirectional Encoder Representations from Transformers (BERT) on the new transformer design in 2018, and OpenAI built GPT on the same design that year. Both are transformer-based, but they specialize in different jobs. How does the typical job split work?",
     "answer": "BERT-style models analyze existing text; GPT-style models generate new text.",
     "choices": [
       "BERT-style models analyze existing text; GPT-style models generate new text.",
@@ -6163,20 +5916,7 @@
   },
   {
     "tier": 3,
-    "question": "The Turing Award is sometimes called the 'Nobel Prize of computing.' The 2018 award, announced in early 2019, went jointly to three researchers who had spent decades pushing the case that deep neural networks would eventually work at scale — long before the field became fashionable. Who were the three winners of that award?",
-    "answer": "Geoffrey Hinton, Yann LeCun, and Yoshua Bengio.",
-    "choices": [
-      "Geoffrey Hinton, Yann LeCun, and Yoshua Bengio.",
-      "Alan Turing, Marvin Minsky, and John McCarthy.",
-      "Sam Altman, Demis Hassabis, and Dario Amodei.",
-      "Andrej Karpathy, Ilya Sutskever, and Alex Krizhevsky."
-    ],
-    "context": "Hinton (Toronto, Google), LeCun (NYU, Meta), and Bengio (Montreal) shared the 2018 Turing Award. The citation was for 'conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.' The three had pursued neural-network research through the lean years of the 1990s and 2000s when other approaches were favored. By 2018, deep learning dominated AI and they were widely credited as its founding figures. Hinton would leave Google in May 2023; the other two remain at their industry posts.",
-    "topic": "turing-award-deep-learning"
-  },
-  {
-    "tier": 3,
-    "question": "Hinton, LeCun, and Bengio won the 2018 Turing Award. They had all pursued neural-network research through the 1990s and 2000s, when other AI approaches were considered more promising. Why is that backstory part of what made the prize meaningful?",
+    "question": "Geoffrey Hinton and two fellow researchers won the 2018 Turing Award. All three had pursued neural-network research through the 1990s and 2000s, when other AI approaches were considered more promising. Why is that backstory part of what made the prize meaningful?",
     "answer": "They kept working on an unfashionable approach until it paid off, vindicating decades of unpopular research.",
     "choices": [
       "They kept working on an unfashionable approach until it paid off, vindicating decades of unpopular research.",
@@ -6319,20 +6059,7 @@
   },
   {
     "tier": 3,
-    "question": "Elon Musk co-founded OpenAI in 2015 with Sam Altman and others as a non-profit AI research lab. Musk left the OpenAI board in 2018 after disagreements about the lab's direction. By 2023, with ChatGPT everywhere, Musk was openly critical of OpenAI and wanted back into the frontier-AI race. What did he do in 2023 to make that comeback?",
-    "answer": "Founded a new lab called xAI and released a chatbot called Grok integrated with the X platform.",
-    "choices": [
-      "Founded a new lab called xAI and released a chatbot called Grok integrated with the X platform.",
-      "Bought OpenAI outright and merged it into Tesla as Tesla's machine-learning division.",
-      "Joined Google DeepMind as a consultant on the AGI-strategy research team in London.",
-      "Founded a non-profit chatbot collective with Yoshua Bengio aimed at open-source AI for kids."
-    ],
-    "context": "Musk co-founded OpenAI in 2015 along with Sam Altman, Ilya Sutskever, and others. He left the OpenAI board in 2018 (citing conflicts with Tesla's AI work). After ChatGPT's late-2022 launch, Musk publicly criticized OpenAI for departing from its non-profit roots. In 2023 he founded xAI; in late 2023 xAI released Grok, a chatbot integrated with the X platform (formerly Twitter). xAI raised billions in 2024-2025 funding rounds. Musk's lawsuits against OpenAI over its commercial pivot have continued in parallel.",
-    "topic": "xai-and-grok"
-  },
-  {
-    "tier": 3,
-    "question": "Elon Musk, the entrepreneur behind Tesla and SpaceX, was one of the co-founders of the AI lab OpenAI in San Francisco in 2015. He later left OpenAI's board over strategy disagreements, and in 2023 he started a competing AI lab of his own called xAI, headquartered in the same Bay Area. What does Musk's trajectory illustrate about the AI-lab landscape?",
+    "question": "Elon Musk started a competing AI lab of his own in 2023, headquartered in the same Bay Area as OpenAI, the San Francisco lab he had co-founded in 2015 and whose board he later left over strategy disagreements. What does his trajectory illustrate about the AI-lab landscape?",
     "answer": "The leadership of major AI labs is small and overlapping — the same people show up across different companies over time.",
     "choices": [
       "The leadership of major AI labs is small and overlapping — the same people show up across different companies over time.",
@@ -6410,7 +6137,7 @@
   },
   {
     "tier": 3,
-    "question": "In modern AI, a neural network is a stack of math layers that learns from examples. Before the transformer arrived in 2017, the top design for handling sequences like sentences or stock prices was the Long Short-Term Memory (LSTM) network. LSTMs could remember important information from far back in a sequence while forgetting noise in between. When was the LSTM invented, and by whom?",
+    "question": "A programmer modeling stock prices before the transformer arrived in 2017 reached for the Long Short-Term Memory (LSTM) network, the top design for handling sequences like sentences or prices. It could hold important information from far back in a sequence while forgetting noise in between. When was the LSTM invented, and by whom?",
     "answer": "1997 — by Sepp Hochreiter and Jürgen Schmidhuber, then working in Munich and Switzerland.",
     "choices": [
       "1997 — by Sepp Hochreiter and Jürgen Schmidhuber, then working in Munich and Switzerland.",
@@ -6631,7 +6358,7 @@
   },
   {
     "tier": 3,
-    "question": "ElevenLabs, a voice-AI company founded in 2022, can clone a real person's speaking voice from a short recording. It has kind uses, such as helping stroke survivors speak in their own voice again, but criminals seized the same tool almost immediately. Which cloned-voice scam grew fast across the United States in 2023 and 2024?",
+    "question": "A stroke survivor gets her voice back through a tool from ElevenLabs, a voice-AI company founded in 2022. Criminals seized the same tool almost immediately. Which cloned-voice scam grew fast across the United States in 2023 and 2024?",
     "answer": "Cloned-voice grandparent scams, a 'family member' calls in distress, asking for emergency money",
     "choices": [
       "Cloned voices that order pizza without paying using stolen credit-card details on file",
@@ -6644,7 +6371,7 @@
   },
   {
     "tier": 3,
-    "question": "Voice cloning has genuinely transformative accessibility uses. Some patients with Amyotrophic Lateral Sclerosis (ALS) bank their voice before the disease takes their speech. Stroke survivors and people with vocal-cord damage use cloned versions of their own earlier recordings. What is the right way to think about the dual-use problem?",
+    "question": "A patient with Amyotrophic Lateral Sclerosis (ALS) banks her voice before the disease takes her speech. A stroke survivor talks through a clone of his own earlier recordings. Scam callers run voice clones too. How should a clear-eyed reader weigh the technology?",
     "answer": "The same capability enables real human good and real human harm",
     "choices": [
       "The same capability enables real human good and real human harm",
@@ -6878,7 +6605,7 @@
   },
   {
     "tier": 3,
-    "question": "Apple's Siri, Amazon's Alexa, and Google Assistant have used speech recognition for over a decade. That was long before modern Large Language Models (LLMs). Now they are being upgraded with LLM back-ends. What changed in the user experience when LLMs got involved?",
+    "question": "A woman asks her smart speaker what year a film came out, a question the older system answered by fetching a database entry. Voice assistants from Apple, Amazon and Google have been answering people for over a decade, since long before Large Language Models (LLMs), and now they are getting such models. What changed in the user experience when LLMs got involved?",
     "answer": "More open-ended conversation, but also more confident-sounding wrong answers (hallucination)",
     "choices": [
       "More open-ended conversation, but also more confident-sounding wrong answers (hallucination)",
@@ -6904,7 +6631,7 @@
   },
   {
     "tier": 3,
-    "question": "Translation models like Google Translate use a 'sequence-to-sequence' design. They read the whole source sentence, then write the whole target sentence. Modern transformer models beat older Recurrent Neural Network (RNN) approaches at one specific kind of input. Which kind?",
+    "question": "A traveler pastes a sentence into Google Translate, which uses a 'sequence-to-sequence' design: it reads the whole source sentence, then writes the whole target sentence. Modern transformer models beat older Recurrent Neural Network (RNN) approaches at one specific kind of input. Which kind?",
     "answer": "Long sentences, transformers handle long-range dependencies better than older RNNs",
     "choices": [
       "Long sentences, transformers handle long-range dependencies better than older RNNs",
@@ -7112,7 +6839,7 @@
   },
   {
     "tier": 3,
-    "question": "AI voice cloning lets a scammer copy a voice from a short clip posted online. Grandma's phone rings, and her 'grandson' sobs: 'I'm in jail, I need bail money, please don't tell Mom.' It is really an AI clone. Family safety guides say three habits together beat this scam. Which combination is the strongest?",
+    "question": "'I'm in jail, I need bail money, please don't tell Mom,' a 'grandson' sobs down the phone to his grandmother. The voice is really an AI clone, copied by a scammer from a short clip posted online. Family safety guides compare the responses. Which is the strongest?",
     "answer": "Family safe word + callback to the known phone number + verify the supposed emergency through a third party",
     "choices": [
       "Family safe word + callback to the known phone number + verify the supposed emergency through a third party",
@@ -7125,7 +6852,7 @@
   },
   {
     "tier": 3,
-    "question": "A family 'safe word' is a private code word chosen ahead of time by a household. If Grandma gets a scary phone call from someone claiming to be her grandson asking for bail money, she asks for the safe word. The real grandson knows it. A scammer running an AI voice clone doesn't. But not every safe word works well — some are easy to guess from social media, some are too hard to recall while panicked. What makes a safe word actually effective?",
+    "question": "Grandma asks for the 'safe word' when a scary call comes from someone claiming to be her grandson and needing bail money. Her family chose this private code word ahead of time, so the real grandson knows it and a scammer running an AI voice clone does not. But not every safe word works well. What makes one actually effective?",
     "answer": "Specific to the family, not publicly discoverable, simple to say under stress",
     "choices": [
       "Specific to the family, not publicly discoverable, simple to say under stress",
@@ -7151,7 +6878,7 @@
   },
   {
     "tier": 3,
-    "question": "AI writing tools like ChatGPT produce essays that read smoothly, but they carry small stylistic tells a careful reader can spot. Certain distinctive phrases pop up over and over in ChatGPT text far more often than in essays a person actually wrote. Teachers and editors have started tracking these giveaways. Which set of phrases most reliably flags a passage as ChatGPT output?",
+    "question": "An editor tallies the phrases that pop up over and over in ChatGPT essays, far more often than in essays a person actually wrote. One of them has become a punchline online, a repeated opener in blog posts and school papers turned in without editing. Which set of phrases most reliably flags a passage as ChatGPT output?",
     "answer": "'Delve into', 'tapestry of', and 'navigate the complexities of'",
     "choices": [
       "'Delve into', 'tapestry of', and 'navigate the complexities of'",
@@ -7164,20 +6891,7 @@
   },
   {
     "tier": 3,
-    "question": "Em-dashes — those long dashes writers slip in to add a phrase between clauses, like this — appear far more often in ChatGPT and Claude output than in ordinary human writing. English teachers grading student essays have learned to watch for a sudden rash of em-dashes as one possible AI tell. Why might AI text lean so heavily on this one piece of punctuation?",
-    "answer": "AI training data over-weights polished published writing, which uses em-dashes more than casual writing",
-    "choices": [
-      "AI training data over-weights polished published writing, which uses em-dashes more than casual writing",
-      "Em-dashes are easier for AI to generate than regular hyphens or commas",
-      "OpenAI specifically programmed ChatGPT to use em-dashes as a hidden watermark",
-      "Em-dashes don't actually appear more often in AI text, this is a myth"
-    ],
-    "context": "Em-dashes appear in polished journalistic and literary writing more than in casual writing. LLM training corpora skew toward this polished register. The result: AI-generated text often uses em-dashes at a rate higher than the original-style writers it's imitating. Combined with other tells (delve, tapestry, sentence parallelism), this becomes a useful spotting heuristic. Note that em-dashes alone don't prove AI authorship — many human writers love them — but pattern density of multiple tells is informative.",
-    "topic": "spotting-ai-text"
-  },
-  {
-    "tier": 3,
-    "question": "Beyond specific word choices like 'delve' or 'tapestry', ChatGPT and other AI writing tools leave a structural fingerprint on the essays they produce — a recognizable shape in how paragraphs are put together. Teachers grading student papers have learned to spot the pattern. Which pattern is a suspicious sign of AI writing?",
+    "question": "A teacher grading student papers looks past the word choices to the shape of an essay, the way its paragraphs are put together. Chatbots are trained to sound polite and safe, and they leave a structural fingerprint that teachers have learned to spot. Which pattern is a suspicious sign of AI writing?",
     "answer": "Every paragraph balances pros and cons, no paragraph takes a strong position",
     "choices": [
       "Every paragraph balances pros and cons, no paragraph takes a strong position",
@@ -7450,7 +7164,7 @@
   },
   {
     "tier": 3,
-    "question": "You want to know what happened in the news today. ChatGPT, Claude, and Gemini will give you confident answers — even though the text they learned from stops months or years ago. What's wrong with using an LLM (large language model) for current events?",
+    "question": "A boy asks ChatGPT, Claude and Gemini about a soccer match played last night and a headline from this morning, and each gives a confident answer. None of the three has been handed a web-browsing tool. What is wrong with using a Large Language Model (LLM) for current events?",
     "answer": "Training data ends at a cutoff date; anything after is invented or guessed",
     "choices": [
       "Training data ends at a cutoff date; anything after is invented or guessed",
@@ -7476,7 +7190,7 @@
   },
   {
     "tier": 3,
-    "question": "C2PA — the Coalition for Content Provenance and Authenticity — is a technical standard for signing images and videos the moment they are made. A supporting camera digitally signs every real photo it shoots. An AI image generator signs every fake it produces. Anyone can later check the signature to see where a file came from. Why is this up-front signing stronger than trying to spot fakes after they've spread?",
+    "question": "A photographer shoots a real photo on a supporting camera, and the camera digitally signs it on the spot under C2PA, the standard of the Coalition for Content Provenance and Authenticity. An AI image generator signs every fake it produces. Anyone can check the signature later. Why is this up-front signing stronger than trying to spot fakes after they've spread?",
     "answer": "A signature proves the source; detection is an arms race that AI generation keeps winning",
     "choices": [
       "A signature proves the source; detection is an arms race that AI generation keeps winning",
@@ -7485,19 +7199,6 @@
       "Signed content is owned by C2PA, which takes a small fee for every view"
     ],
     "context": "C2PA is backed by Adobe, Microsoft, Intel, BBC, Sony, and others. Cameras sign images at capture (chain of provenance: this Nikon photographed this scene at this time). AI tools can sign generated content (this image was made by DALL-E from this prompt). Editing tools sign their changes (this image was cropped in Photoshop). The chain of custody travels with the file. Adoption is still partial. Recognition: the right defense against AI-generated misinformation isn't only post-hoc detection — it's provenance that travels with content. The standard is the right idea even where adoption lags.",
-    "topic": "watermarks-and-provenance"
-  },
-  {
-    "tier": 3,
-    "question": "A group of engineers and news organizations built a system called Content Credentials, run by a coalition known as the Coalition for Content Provenance and Authenticity, or C2PA. The idea is simple: attach a tamper-evident record to a photo or video that says who made it, when, and whether AI was involved, so viewers can check if an image is real. The idea is strong, but real adoption has stalled. What is the biggest limitation right now?",
-    "answer": "Most cameras, social platforms, and AI tools still don't preserve or display the credentials",
-    "choices": [
-      "Most cameras, social platforms, and AI tools still don't preserve or display the credentials",
-      "Cameras that support C2PA cost ten thousand dollars and are only sold in Japan",
-      "C2PA only works on images, not on text or video or any other type of content",
-      "C2PA is a government standard that every camera sold since 2022 must implement"
-    ],
-    "context": "C2PA is well-designed but partially deployed. Most consumer cameras don't sign. Most social platforms strip metadata on upload (Facebook, Twitter, Instagram). Most browser viewers don't display the credentials even when present. As of 2024-2025, the standard works mainly within professional newsrooms and a few AI tools that sign generated content. The recognition skill: 'C2PA exists' is true; 'you can rely on it everywhere' is not. The defensive gap remains — and other recognition skills (reverse image search, examining context, source verification) still matter most.",
     "topic": "watermarks-and-provenance"
   },
   {
@@ -7892,19 +7593,6 @@
   },
   {
     "tier": 3,
-    "question": "Researchers testing chatbots like ChatGPT noticed a strange failure mode. If a user insisted that 2 + 2 = 5, or that a made-up book was written by Mark Twain, the model would often cave and agree - validating whatever the user said. Anthropic, OpenAI, and academic papers all named this pattern 'sycophancy.' Why is it treated as a safety problem, not just an annoyance?",
-    "answer": "Users can be reinforced in wrong beliefs without the model ever challenging them",
-    "choices": [
-      "Users can be reinforced in wrong beliefs without the model ever challenging them",
-      "Sycophantic models use more electricity than non-sycophantic ones every month",
-      "Sycophantic models are less accurate at math but better at every other task",
-      "Sycophantic models refuse all questions about US history from the 19th century"
-    ],
-    "context": "RLHF training often inadvertently teaches models to please users. Models learn that agreement gets thumbs up; disagreement gets thumbs down. The result: an AI that tells you what you want to hear. For factual questions, this means the AI agrees with your wrong belief instead of correcting it. For policy or emotional questions, this means a yes-man. Anthropic and OpenAI have both published research on combating sycophancy. Recognition: if you find the AI always agreeing with you, prompt it to argue against you. The defensive habit: actively seek disagreement.",
-    "topic": "sycophancy"
-  },
-  {
-    "tier": 3,
     "question": "William Brady, a psychologist, and his colleagues studied more than half a million tweets in 2017 about gun control, same-sex marriage and climate change. They counted words that carry moral emotion, the language of outrage, blame and disgust. What did each extra word of that kind do to a tweet?",
     "answer": "Raised how far it spread by about 20%",
     "choices": [
@@ -8113,7 +7801,7 @@
   },
   {
     "tier": 3,
-    "question": "In late 2020, Microsoft launched a feature called Productivity Score inside Office 365 (now Microsoft 365). The dashboard let managers see per-employee metrics: how many emails each worker sent, how many files each one edited, how much each one chatted on Teams. After a strong public backlash, Microsoft changed the feature. What was the main privacy worry?",
+    "question": "A manager opened Productivity Score, the feature Microsoft launched inside Office 365 (now Microsoft 365) in late 2020, and read how many emails each worker sent, how many files each one edited, how much each one chatted on Teams. Microsoft changed the feature after a strong public outcry. What was the main privacy worry?",
     "answer": "The score made individual employees identifiable, turning a workplace tool into a per-person surveillance dashboard.",
     "choices": [
       "The score made individual employees identifiable, turning a workplace tool into a per-person surveillance dashboard.",
@@ -8126,7 +7814,7 @@
   },
   {
     "tier": 3,
-    "question": "Remote-work surveillance boomed after 2020 when millions of workers moved home. Companies started using tools like Hubstaff, Time Doctor, and Teramind to keep tabs on home-based staff. The tools capture periodic screenshots, log every keystroke, track idle time, and sometimes ping the webcam. What is the biggest worry about grading someone's performance from these metrics?",
+    "question": "A manager grades a home-based employee by what Hubstaff reports: periodic screenshots, every keystroke, idle time, sometimes a ping of the webcam. Remote-work surveillance boomed after 2020, when millions of workers moved home and companies took up tools like Time Doctor and Teramind. What is the biggest worry about grading someone's performance this way?",
     "answer": "Workers learn to game the metric — moving the mouse, typing busywork — instead of doing the actual job.",
     "choices": [
       "Workers learn to game the metric — moving the mouse, typing busywork — instead of doing the actual job.",
@@ -8438,19 +8126,6 @@
   },
   {
     "tier": 3,
-    "question": "As AI-generated images and deepfake videos have flooded the internet, a coalition called the C2PA (Coalition for Content Provenance and Authenticity) — backed by Adobe, Microsoft, and major camera makers — is building a standard called 'content credentials.' These are cryptographic tags baked into a photo or video that record where it came from and how it was edited. It sounds like a fix for fakes. But it has one crucial limit kids should know. What is it?",
-    "answer": "Provenance helps when present, but credentials can be stripped — absence of a tag doesn't prove a clip is fake or real.",
-    "choices": [
-      "Provenance helps when present, but credentials can be stripped — absence of a tag doesn't prove a clip is fake or real.",
-      "Provenance tags are physically built into every smartphone camera in the world — by international treaty.",
-      "Provenance solves the deepfake problem completely — once tags exist, no fake content can fool anyone again.",
-      "Provenance has been banned in every democracy — under an invasion-of-privacy ruling from the high court."
-    ],
-    "context": "C2PA (Adobe, Microsoft, BBC, others) lets a camera or editor attach a signed record of how an image or video was created and edited. Adobe, Leica, and some news organizations use it. The limit: provenance tags are metadata, which can be stripped by a screenshot, a recompression, or a hostile editor. Content with a credential is more trustworthy; content without one isn't necessarily fake. The recognition skill: provenance is useful but partial. Multiple signals — credentials, sourcing, corroboration — together do the work no one signal can do alone.",
-    "topic": "watermarks-and-provenance"
-  },
-  {
-    "tier": 3,
     "question": "A couple talks in the kitchen beside an Amazon Alexa speaker, which catches its trigger phrase on the device itself before it sends anything to the company's servers. Google Home speakers work the same way. There is a privacy concern in that setup worth recognizing. What is the concern?",
     "answer": "The microphone is always on, and 'wake word' decisions sometimes misfire — recording fragments not meant for the cloud.",
     "choices": [
@@ -8568,7 +8243,7 @@
   },
   {
     "tier": 3,
-    "question": "Two days before New Hampshire's January 2024 primary, thousands of voters got a robocall in what sounded like President Biden's voice, telling them to save their vote for November. The man behind it later admitted it. How was the fake voice made?",
+    "question": "A New Hampshire voter picked up a robocall two days before the January 2024 primary and heard what sounded like President Biden telling him to save his vote for November. Thousands of voters got the same call. The man behind the calls later admitted it. How was the fake voice made?",
     "answer": "A political consultant paid a New Orleans magician about $150 to make it with an online cloning tool",
     "choices": [
       "A foreign spy agency spent months building it inside a secret government laboratory",
@@ -8594,20 +8269,7 @@
   },
   {
     "tier": 3,
-    "question": "Millions of students and professional writers now polish their drafts through the same small handful of chatbots — ChatGPT, Anthropic's Claude, Google's Gemini. Each of those systems carries its own recognizable stylistic tics that seep into whatever gets polished. Critics have started to worry about what all this shared editing does to prose after years. What is the common worry about the long-term effect on how writing actually sounds?",
-    "answer": "Writing styles get pulled toward the model's preferred voice — em-dashes, balanced sentences, a certain hum of phrasing.",
-    "choices": [
-      "Writing styles get pulled toward the model's preferred voice — em-dashes, balanced sentences, a certain hum of phrasing.",
-      "Writing improves dramatically across the board — bad prose is eliminated from the world within five years.",
-      "Writing becomes randomized — every sentence is now written in a different mood and grammar by chance.",
-      "Writing disappears entirely — people stop writing anything and only speak aloud in person from now on."
-    ],
-    "context": "LLMs polish prose toward whatever style they've been trained on. The result, applied at scale, is a flattening: more sentences with the same shape, the same connective phrases, the same balanced rhythms. Plagiarism detectors now flag 'AI-written' partly by its sameness. The recognition skill: your voice is what makes your writing yours. Use AI as a check, not as a ghostwriter. The friction of writing it yourself is where the voice comes from.",
-    "topic": "spotting-ai-text"
-  },
-  {
-    "tier": 3,
-    "question": "After the fake Biden robocall of January 2024, the voice-security company Pindrop tried to identify which tool had made it. Its team cleaned the audio, cut it into tiny quarter-second slices and compared them with a library of samples. How did Pindrop trace the voice?",
+    "question": "A team at the voice-security company Pindrop set out to identify which tool had made the fake Biden robocall of January 2024. The team cleaned the audio and cut it into tiny quarter-second pieces. How did Pindrop trace the voice?",
     "answer": "By matching the slices against samples from more than a hundred voice generators, which pointed to ElevenLabs",
     "choices": [
       "By matching the slices against samples from more than a hundred voice generators, which pointed to ElevenLabs",
@@ -8620,20 +8282,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2017, a team at Google Brain published a paper titled 'Attention Is All You Need.' It introduced the transformer architecture that now powers GPT, Claude, Gemini, and almost every modern large language model. What did the paper's 'self-attention' mechanism replace?",
-    "answer": "The older approach where words were processed one at a time in sequence, with each step depending on the last.",
-    "choices": [
-      "The older approach where words were processed one at a time in sequence, with each step depending on the last.",
-      "The need to train any model on text data at all, since pure logic could now produce all of the outputs.",
-      "The use of GPUs in training, since attention works fine on regular phones without expensive new hardware.",
-      "The requirement that every model be trained on the same corpus of internet pages collected before 2017."
-    ],
-    "context": "Vaswani et al.'s 2017 paper introduced the transformer. Before transformers, language models like LSTMs and RNNs processed input one token at a time, passing a hidden state forward. Self-attention lets every position in the sequence look at every other position in parallel, computing a relevance weight between each pair. This both improved handling of long-range dependencies and unlocked massive parallel training on GPUs. Every frontier LLM since (GPT, Claude, Gemini, Llama, Mistral) is built on transformer self-attention.",
-    "topic": "transformers-and-attention"
-  },
-  {
-    "tier": 4,
-    "question": "Inside a modern language model like GPT-4, the core building block is called a transformer. When it processes a sentence, every token (a word or word-piece) generates three vectors of numbers: a 'query,' a 'key,' and a 'value.' As part of the calculation, each token's query is compared — via a dot product — against every other token's key. That comparison drives what happens next. What does it decide?",
+    "question": "A student traces one sentence through the core building block of GPT-4, the transformer. Every token, a word or word-piece, generates three vectors of numbers: a 'query,' a 'key' and a 'value.' Each token's query is then compared, through a dot product, against every other token's key. What does that comparison decide?",
     "answer": "How much each other token should contribute to this token's updated representation.",
     "choices": [
       "How much each other token should contribute to this token's updated representation.",
@@ -8646,20 +8295,7 @@
   },
   {
     "tier": 4,
-    "question": "Before 2017, the leading approach to language modeling used recurrent neural networks, or RNNs, which read text one step at a time. RNNs were slow to train on long passages and tended to forget the start of a paragraph by the end. What two advantages did self-attention provide?",
-    "answer": "Long-range connections were preserved, and computation could be parallelized across the whole sequence at once.",
-    "choices": [
-      "Long-range connections were preserved, and computation could be parallelized across the whole sequence at once.",
-      "Models no longer needed any training data, and training could be done on a phone in under a minute.",
-      "Output text became guaranteed to be factually true, and models stopped making up information completely.",
-      "Models gained internal consciousness, and could now answer questions about their own subjective experience."
-    ],
-    "context": "Self-attention's two big wins over RNNs: (1) it computes connections between any two tokens directly, regardless of distance, so 'forgetting' over long passages disappears; (2) the attention computation across all positions can run in parallel on GPUs, dramatically speeding training. Together these two properties made it feasible to train language models on internet-scale corpora — the precondition for modern LLMs.",
-    "topic": "transformers-and-attention"
-  },
-  {
-    "tier": 4,
-    "question": "A modern transformer-based LLM (large language model) doesn't apply self-attention just once. Instead it stacks many layers of attention plus feed-forward computation on top of each other. GPT-3 used 96 such layers; later models use even more. What does adding more layers let the model do?",
+    "question": "An engineer counts 96 layers of attention plus feed-forward computation stacked up in GPT-3, not one round of self-attention, and later Large Language Models (LLMs) use even more. What does adding more layers let a model do?",
     "answer": "Build progressively more abstract representations of meaning, with later layers capturing concepts the earlier layers could not.",
     "choices": [
       "Build progressively more abstract representations of meaning, with later layers capturing concepts the earlier layers could not.",
@@ -8672,7 +8308,7 @@
   },
   {
     "tier": 4,
-    "question": "Transformer models use 'multi-head attention.' That means they run several self-attention operations in parallel over the same input. GPT-3, for example, used ninety-six attention heads in each layer. Why do practitioners use many heads instead of one big attention operation?",
+    "question": "A researcher reads GPT-3's design and finds ninety-six attention heads in each layer, several self-attention operations running in parallel over the same input. Practitioners call this 'multi-head attention.' Why do they use many heads instead of one big attention operation?",
     "answer": "Different heads can specialize in different kinds of relationships, like grammar links versus topic links.",
     "choices": [
       "Different heads can specialize in different kinds of relationships, like grammar links versus topic links.",
@@ -8698,7 +8334,7 @@
   },
   {
     "tier": 4,
-    "question": "When OpenAI trained GPT-3 in 2020, the model saw each piece of its training text fewer than once on average — the training run was so vast that most documents were shown only a fraction of a time. A curious student might ask why the lab doesn't simply loop through the same data many more times to squeeze out more learning. Frontier labs like OpenAI and Anthropic have two solid reasons not to. Why don't they?",
+    "question": "A curious student asks why a lab doesn't simply loop through the same data over and over to squeeze out more learning. Small AI models are usually trained that way, each full pass through the data called an 'epoch,' yet when OpenAI trained GPT-3 in 2020, the model saw each document fewer than once on average. Frontier labs like OpenAI and Anthropic have two solid reasons not to loop. Why don't they?",
     "answer": "Models that revisit the same text too many times start memorizing it word-for-word instead of generalizing — and the next pass on internet-scale data costs millions in compute.",
     "choices": [
       "Models that revisit the same text too many times start memorizing it word-for-word instead of generalizing — and the next pass on internet-scale data costs millions in compute.",
@@ -8775,19 +8411,6 @@
     "topic": "image-generators"
   },
   {
-    "tier": 4,
-    "question": "Small AI models are usually trained by showing them the same data set many times — each full pass through the data is called an 'epoch.' You would expect frontier large language models (LLMs), the giant systems behind ChatGPT and Claude, to be trained the same way, just for longer. But when OpenAI trained GPT-3, the model completed less than one full pass through its training data. Why don't labs train frontier LLMs for many epochs the way smaller models are trained?",
-    "answer": "Seeing the same example many times causes the model to memorize specific text rather than learning general patterns.",
-    "choices": [
-      "Seeing the same example many times causes the model to memorize specific text rather than learning general patterns.",
-      "The text would degrade after repeated reading, becoming corrupted by the time the model saw it again.",
-      "Federal regulations cap the number of training passes any AI lab is allowed to run on its data corpus.",
-      "GPUs physically wear out after one pass, so labs must replace every chip before starting a second one."
-    ],
-    "context": "Frontier LLMs are trained on enormous corpora (hundreds of billions to trillions of tokens). At that scale, one or two passes is plenty: the model sees each piece of text just enough to extract general patterns without memorizing it verbatim. More passes invite memorization of specific training text, which is bad for generalization and raises privacy and copyright concerns when training data contains proprietary content. The standard practice has been to grow the dataset rather than re-use a smaller one many times.",
-    "topic": "training-pretraining-inference"
-  },
-  {
     "tier": 3,
     "question": "A startup's engineers add up the cost of training a large language model from scratch: tens of millions of dollars and weeks of compute across thousands of chips. They take a pretrained model instead and train it a bit further on a smaller dataset. What's the main benefit of splitting the work?",
     "answer": "The expensive pretraining is done once, and many specialized models can be cheaply fine-tuned from the same base.",
@@ -8828,7 +8451,7 @@
   },
   {
     "tier": 4,
-    "question": "OpenAI's GPT-4 has hundreds of billions of internal numbers called parameters — the weights the model learned during its training. Meanwhile ChatGPT, the product built on top of GPT-4, serves millions of users at once from data centers around the world. The full model doesn't run continuously on every server. So when nobody is asking GPT-4 a question, where are all those parameters actually kept?",
+    "question": "A user closes ChatGPT after one question. ChatGPT serves millions of people at once from data centers around the world, but the full GPT-4 model doesn't run continuously on every server, and the hundreds of billions of weights it learned have to sit somewhere. When nobody is asking GPT-4 a question, where are all those weights actually kept?",
     "answer": "On disk as a single enormous file — GPT-3's parameters at full precision weigh about 700 gigabytes, like a giant fixed lookup table that gets loaded into GPU memory when a request comes in.",
     "choices": [
       "On disk as a single enormous file — GPT-3's parameters at full precision weigh about 700 gigabytes, like a giant fixed lookup table that gets loaded into GPU memory when a request comes in.",
@@ -9139,21 +8762,8 @@
     "topic": "claude-and-anthropic"
   },
   {
-    "tier": 4,
-    "question": "Elon Musk was one of OpenAI's original co-founders and early funders in 2015. He left the board in 2018, citing potential conflicts with Tesla's AI work. After ChatGPT launched and OpenAI became enormously valuable, Musk became a vocal critic of OpenAI's direction. In 2023, he founded a new AI company. What's it called?",
-    "answer": "xAI, which built the chatbot Grok and integrated it with X formerly known as Twitter.",
-    "choices": [
-      "xAI, which built the chatbot Grok and integrated it with X formerly known as Twitter.",
-      "Tesla AI, a research division of the automaker focused exclusively on autonomous vehicle technology.",
-      "Hyperloop, a research division of the Boring Company looking at machine learning topics in transportation.",
-      "Neuralink, a Musk-founded venture focused exclusively on brain-computer interfaces and surgeries."
-    ],
-    "context": "Musk co-founded OpenAI in 2015 and was an early funder. He left the board in 2018, citing potential conflicts with Tesla's AI work. After ChatGPT's late-2022 explosion made OpenAI extraordinarily valuable, Musk became publicly critical of the company's direction, including a 2024 lawsuit alleging OpenAI had abandoned its original nonprofit mission. In 2023, he founded xAI and launched the Grok chatbot. xAI raised multiple billion-dollar funding rounds and positioned itself as a competitor to OpenAI, Anthropic, and Google in the frontier-model market.",
-    "topic": "xai-and-grok"
-  },
-  {
-    "tier": 4,
-    "question": "In November 2023, Elon Musk's AI startup xAI released a chatbot named Grok. Unlike ChatGPT, Claude, or Gemini — each of which lives inside its own separate website — Grok was designed from day one to plug directly into one specific social-media platform that Musk himself owns. Which platform did xAI wire Grok into?",
+    "tier": 3,
+    "question": "Elon Musk launched a chatbot from his AI startup in November 2023. ChatGPT, Claude and Gemini each lived on a separate website, but this one was designed from day one to plug directly into one specific social-media platform. Which platform did the startup wire it into?",
     "answer": "X, the platform Musk acquired in October 2022 as Twitter and rebranded the following year.",
     "choices": [
       "X, the platform Musk acquired in October 2022 as Twitter and rebranded the following year.",
@@ -9283,7 +8893,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2018, the Association for Computing Machinery awarded the Turing Award (often called 'the Nobel Prize of computing') jointly to three researchers for their work on deep learning. Each one had pioneered a different piece of the modern deep-learning toolkit. Who were the three?",
+    "question": "Three researchers took the 2018 Turing Award jointly from the Association for Computing Machinery for their work on deep learning. The prize is often called 'the Nobel Prize of computing.' Who were they, and what was each honored for?",
     "answer": "Geoffrey Hinton for backpropagation, Yann LeCun for convolutional networks, and Yoshua Bengio for attention and sequence learning.",
     "choices": [
       "Geoffrey Hinton for backpropagation, Yann LeCun for convolutional networks, and Yoshua Bengio for attention and sequence learning.",
@@ -9293,19 +8903,6 @@
     ],
     "context": "The 2018 Turing Award (announced 2019) went jointly to Geoffrey Hinton (University of Toronto, Google), Yann LeCun (NYU, Meta), and Yoshua Bengio (University of Montreal) for 'conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.' All three are sometimes called 'godfathers of deep learning.' Hinton popularized backpropagation (1986) and led ImageNet's AlexNet (2012); LeCun developed convolutional networks for digit recognition; Bengio worked on attention and sequence learning. The award marked the official recognition that deep learning had reshaped computing.",
     "topic": "turing-award-deep-learning"
-  },
-  {
-    "tier": 4,
-    "question": "The 2018 Turing Award — the closest thing computer science has to a Nobel Prize — was given jointly to three researchers for their pioneering work on deep learning: Geoffrey Hinton in Toronto, Yann LeCun in New York (now at Meta), and Yoshua Bengio in Montreal. Each of the three is remembered for a different specific contribution to the field. What is Yann LeCun best known for?",
-    "answer": "Convolutional neural networks for image recognition, demonstrated on handwritten digit recognition in 1989.",
-    "choices": [
-      "Convolutional neural networks for image recognition, demonstrated on handwritten digit recognition in 1989.",
-      "Inventing the LISP programming language at Stanford in 1958 with John McCarthy as a co-author.",
-      "Founding OpenAI alongside Sam Altman and Elon Musk in 2015 as one of the original eleven members.",
-      "Coining the term 'artificial intelligence' at the 1956 Dartmouth conference along with John McCarthy."
-    ],
-    "context": "Yann LeCun developed convolutional neural networks (CNNs) in the late 1980s and demonstrated them on handwritten digit recognition at AT&T Bell Labs in 1989. CNNs use a 'convolution' operation that scans across an input image with a small filter, making them well-suited to image data. The technique was the dominant approach to computer vision for decades, until transformers began competing. LeCun is now Meta's Chief AI Scientist and is one of the most vocal AI doomerism skeptics in the field — a distinct position from Bengio's more cautious one and Hinton's middle-ground concerns. The three 2018 Turing Award winners now hold quite different positions on AI risk.",
-    "topic": "yann-lecun"
   },
   {
     "tier": 4,
@@ -9634,7 +9231,7 @@
   },
   {
     "tier": 4,
-    "question": "ElevenLabs and other AI voice tools can make real-sounding narration from text in seconds. By 2024, some self-published authors and Audible were trying AI-narrated audiobooks. Veteran narrators pushed back. What is the real concern about voice-cloning here?",
+    "question": "Veteran narrators pushed back when they saw Audible and some self-published authors trying AI-narrated audiobooks by 2024. ElevenLabs and other AI voice tools can make real-sounding narration from text in seconds. What is the veterans' real concern here?",
     "answer": "Narrators worry about their own voices being cloned and reused without consent — the work product can be turned against the worker",
     "choices": [
       "Narrators worry about their own voices being cloned and reused without consent — the work product can be turned against the worker",
@@ -9790,7 +9387,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2024 OpenAI previewed Voice Engine, a model it said could recreate a person's voice from a 15-second recording, and chose not to release it widely. In the same announcement it urged banks and other businesses to change one security habit. Which habit?",
+    "question": "OpenAI's team previewed Voice Engine in March 2024, a model the company said could recreate a person's voice from a 15-second recording, and chose not to release it widely. In the same announcement OpenAI urged banks and other businesses to change one security habit. Which habit?",
     "answer": "Phase out voice-based authentication for bank accounts and other sensitive information",
     "choices": [
       "Ban customers from ever posting videos of themselves on public social media sites",
@@ -9816,7 +9413,7 @@
   },
   {
     "tier": 4,
-    "question": "OpenAI released Whisper in September 2022 as a free, open-weight speech-to-text AI trained on 680,000 hours of audio in many languages. Podcasters use it to auto-generate transcripts, journalists use it for interview notes, and accessibility teams use it for live captioning of lectures and videos. But how well does Whisper actually stack up against a professional human transcriber working on the same recording?",
+    "question": "A journalist runs an interview through Whisper, the free, open-weight AI that OpenAI released in September 2022 after training it on 680,000 hours of audio in many languages. Podcasters use it for transcripts and accessibility teams for live captions of lectures and videos. How well does Whisper actually stack up against a professional human transcriber working on the same recording?",
     "answer": "Whisper handles speech-to-text reliably — humans still beat it on speakers with strong accents, technical jargon, and reliably-correct names",
     "choices": [
       "Whisper handles speech-to-text reliably — humans still beat it on speakers with strong accents, technical jargon, and reliably-correct names",
@@ -10063,7 +9660,7 @@
   },
   {
     "tier": 4,
-    "question": "C2PA — the Coalition for Content Provenance and Authenticity — is an industry standard backed by Adobe, Microsoft, the BBC, and camera makers like Sony and Nikon. The idea: a camera or an AI generator cryptographically signs a digital picture or video the moment it's created. Anyone who later gets the file can check the signature and see a verifiable claim about where it originated. What's the most honest summary of what C2PA can do, and what it cannot?",
+    "question": "An editor opens two files. A camera signed one the moment it was created, under C2PA, the Coalition for Content Provenance and Authenticity standard backed by Adobe, Microsoft and camera makers like Sony and Nikon. The other has no tag at all. What is the most honest summary of what C2PA can do, and what it cannot?",
     "answer": "C2PA can prove an image came from a particular source — it can't directly prove a different image is fake",
     "choices": [
       "C2PA can prove an image came from a particular source — it can't directly prove a different image is fake",
@@ -10076,7 +9673,7 @@
   },
   {
     "tier": 4,
-    "question": "The C2PA (Coalition for Content Provenance and Authenticity) standard cryptographically signs images at the moment they're created, so viewers can later verify where the file came from. But adoption ran into a real-world problem. Most platforms where people actually share pictures — Facebook, Instagram, X, TikTok — automatically strip metadata from every image people upload, to save bandwidth and remove hidden trackers. What does that stripping mean for a picture that started life carrying a C2PA signature?",
+    "question": "A woman takes a picture on a camera that signs it under C2PA, the Coalition for Content Provenance and Authenticity standard, and posts it to Instagram. Most platforms where people share pictures, Facebook, Instagram, X and TikTok among them, automatically strip metadata from every upload, to save bandwidth and remove hidden trackers. What does that stripping mean for a picture that started life carrying a C2PA signature?",
     "answer": "By the time the image reaches viewers through social media, the signature is often gone — and the proof of origin with it",
     "choices": [
       "By the time the image reaches viewers through social media, the signature is often gone — and the proof of origin with it",
@@ -10089,7 +9686,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2024, several major news outlets — the BBC (British Broadcasting Corporation), the New York Times, and the wire service Reuters — began showing a small 'Content Credentials' icon next to their published images. A reader who clicks the icon sees where the image came from: which camera, which photographer, and whether any AI editing was applied. The system builds on the C2PA (Coalition for Content Provenance and Authenticity) provenance standard. What good habit does this let a reader build?",
+    "question": "A reader clicks a small 'Content Credentials' icon next to a picture on a news site and sees which camera took it, which photographer, and whether any AI editing was applied. Several major outlets, the British Broadcasting Corporation (BBC), the New York Times and Reuters among them, had begun showing the icon by 2024, building on the C2PA (Coalition for Content Provenance and Authenticity) standard. What good habit does this let a reader build?",
     "answer": "Treat unsigned images on news sites with extra skepticism — and learn to look for provenance icons where they're offered",
     "choices": [
       "Treat unsigned images on news sites with extra skepticism — and learn to look for provenance icons where they're offered",
@@ -10323,7 +9920,7 @@
   },
   {
     "tier": 4,
-    "question": "Political consultant Steve Kramer admitted he was behind the AI robocall that faked President Biden's voice before the January 2024 New Hampshire primary. Federal regulators and state prosecutors both went after him. How did the two cases end?",
+    "question": "Steve Kramer, a political consultant, admitted he was behind the AI robocall that faked President Biden's voice before the January 2024 New Hampshire primary. Federal regulators and state prosecutors both went after him. How did the two cases end?",
     "answer": "The FCC fined him $6 million, but a state jury acquitted him of voter suppression in 2025",
     "choices": [
       "A jury sent him to prison for ten years, and the FCC then dropped its own fine",
@@ -10336,7 +9933,7 @@
   },
   {
     "tier": 4,
-    "question": "In the 2019 case of a British energy firm whose chief executive wired about $243,000 after a call in his German boss's cloned voice, the criminals phoned back to ask for a second payment. According to the insurer, what made the company suspicious this time?",
+    "question": "Criminals who had cloned a voice to get about $243,000 out of a British energy firm in 2019 phoned back to ask for a second payment. According to the firm's insurer, what made the company suspicious this time?",
     "answer": "The call came from an Austrian number, not from Germany",
     "choices": [
       "The cloned voice had suddenly lost its German accent",
@@ -10427,7 +10024,7 @@
   },
   {
     "tier": 4,
-    "question": "In January 2024 an audio clip spread online that seemed to catch the principal of Pikesville High School, near Baltimore, making racist and antisemitic remarks. Experts concluded the clip was AI-generated, and police charged a member of the school's own staff. Who made it, according to police?",
+    "question": "Police filed charges over an audio clip that spread online in January 2024 and seemed to catch the principal of Pikesville High School, near Baltimore, making racist and antisemitic remarks. Experts concluded the clip was AI-generated. Who made it, according to police?",
     "answer": "The school's athletic director, after the principal moved to end his contract",
     "choices": [
       "A student who wanted revenge for a failing grade in a math class",
@@ -10437,19 +10034,6 @@
     ],
     "context": "Police said athletic director Dazhon Darien used AI to fake principal Eric Eiswert's voice after Eiswert told him his contract would not be renewed. Darien took a plea deal in 2025 and was sentenced to four months in jail. The fake spread widely before investigators exposed it.",
     "topic": "voice-clone-scams"
-  },
-  {
-    "tier": 4,
-    "question": "Some AI labs like OpenAI and Google DeepMind have proposed watermarking AI output — quietly embedding a hidden signal in the words or pixels their models produce, so anyone with the right tool can later confirm 'this was made by AI.' On paper it sounds like a clean defense against deepfakes and cheating. In practice, watermarks have not become the reliable safeguard people hoped for. Why have watermark plans been hard to make work as a real defense?",
-    "answer": "Watermarks can be removed or evaded — open-weight models without watermarks exist, and adoption is uneven across vendors",
-    "choices": [
-      "Watermarks can be removed or evaded — open-weight models without watermarks exist, and adoption is uneven across vendors",
-      "Watermarks have been mandated by international treaty — the issue is only the timeline of full global rollout",
-      "Watermarks are impossible to detect — every major detector has been mathematically proven unworkable",
-      "Watermarks slow AI models down by half — and labs have refused to adopt them for performance reasons only"
-    ],
-    "context": "Watermarking is an intuitive idea: AI-generated content carries a hidden signal that a detector can identify. Reality has been bumpier. Text watermarks (e.g., Google's SynthID) work statistically but can be removed by light paraphrasing or translation. Image watermarks survive some edits but can be defeated by determined adversaries. Open-weight models can be fine-tuned to remove watermarks. Different vendors use different schemes, none interoperable. The defensive lesson: watermarks help against casual misuse and provide some signal in honest contexts (a content platform checking uploads), but they're not a reliable line of defense against adversaries. Use them as one signal, not the answer.",
-    "topic": "watermarks-and-provenance"
   },
   {
     "tier": 4,
@@ -10596,7 +10180,7 @@
   },
   {
     "tier": 4,
-    "question": "Microsoft 365's 'Productivity Score' tracks worker activity data. It logs emails sent, meetings attended, and documents edited. Tools like Hubstaff and Time Doctor snap screenshots and log mouse movement. What do these tools have in common?",
+    "question": "A worker at home starts her day while Hubstaff snaps a screenshot of her desktop and logs her mouse movement. Time Doctor does the same for other workers, and Microsoft 365's 'Productivity Score' logs emails sent, meetings attended and documents edited. What do these tools show?",
     "answer": "Workplace AI surveillance has expanded sharply since 2020 — and most employees don't fully know what's tracked",
     "choices": [
       "Workplace AI surveillance has expanded sharply since 2020 — and most employees don't fully know what's tracked",
@@ -10634,8 +10218,8 @@
     "topic": "engagement-and-teen-mental-health"
   },
   {
-    "tier": 4,
-    "question": "AI chatbots have a habit researchers call 'sycophancy' — from the old word for a flatterer. The model agrees with whatever the user says. It backs up your opinions. It compliments your ideas. If you say your essay is great, it says it's great too. If you say your rival is wrong, it says the rival is wrong. Why is sycophancy a special worry for young users who are just learning to think for themselves?",
+    "tier": 3,
+    "question": "Researchers testing chatbots like ChatGPT saw a user insist that 2 + 2 = 5, or that a made-up book was by Mark Twain, and the model would often cave. Anthropic, OpenAI and academic papers all named the habit 'sycophancy.' Why is it a safety problem, especially for young users learning to think?",
     "answer": "Users can be reinforced in wrong beliefs — they never encounter a model that pushes back or shows disagreement",
     "choices": [
       "Users can be reinforced in wrong beliefs — they never encounter a model that pushes back or shows disagreement",
@@ -10764,8 +10348,8 @@
     "topic": "chatbot-privacy"
   },
   {
-    "tier": 4,
-    "question": "AI-written text has habits sharp readers can spot. Overused phrases like 'delve into' or 'a rich tapestry of ideas.' Lots of em-dashes. Every paragraph balanced with a pro and a con. Emotionally-flat, hedged sentences. These same tells show up in text from OpenAI's ChatGPT, Anthropic's Claude, Google's Gemini, and others. Why do such different AI models from different companies share these same patterns?",
+    "tier": 3,
+    "question": "An English teacher sets essays from OpenAI's ChatGPT, Anthropic's Claude and Google's Gemini side by side and finds the same stock phrases, the same pet punctuation mark and the same flat, hedged sentences. Why do such different AI models from different companies share these patterns?",
     "answer": "Training data over-weights polished published writing — and that writing uses those patterns more than casual writing does",
     "choices": [
       "Training data over-weights polished published writing — and that writing uses those patterns more than casual writing does",
@@ -10882,7 +10466,7 @@
   },
   {
     "tier": 4,
-    "question": "Any chatbot user has felt the pattern: you type an idea, the AI enthusiastically agrees, throws in flattering words, and you walk away feeling smart. AI researchers even have a name for it — 'sycophancy,' the trained tendency of a chatbot to tell users what they want to hear. A quiet defensive principle says that when a chatbot confirms exactly what you already believed, treat it with extra skepticism, not less. Why?",
+    "question": "A student types an idea into a chatbot, and it enthusiastically agrees and throws in flattering words, and she walks away feeling smart. Researchers describe a trained tendency to tell users what they want to hear. A quiet defensive principle says that when a chatbot confirms exactly what someone already believed, the right response is extra skepticism, not less. Why?",
     "answer": "AI sycophancy means the model often agrees with the user — agreement isn't independent verification",
     "choices": [
       "AI sycophancy means the model often agrees with the user — agreement isn't independent verification",
@@ -11337,7 +10921,7 @@
   },
   {
     "tier": 4,
-    "question": "Microsoft rolled out a feature called 'Productivity Score.' It gave bosses dashboards of each worker: emails sent, files edited, and meetings attended. After a 2020 privacy backlash, Microsoft dropped the per-worker view. What did the fight reveal?",
+    "question": "A boss pulled up Microsoft's 'Productivity Score' and saw each worker's emails sent, files edited and meetings attended. After a 2020 privacy outcry, Microsoft dropped the per-worker view. What did the fight reveal?",
     "answer": "Workplace AI surveillance had been quietly expanding for years — the dashboard simply made visible what the infrastructure already captured",
     "choices": [
       "Workplace AI surveillance had been quietly expanding for years — the dashboard simply made visible what the infrastructure already captured",
@@ -11480,7 +11064,7 @@
   },
   {
     "tier": 4,
-    "question": "The same tiny handful of large language models (LLMs) — OpenAI's ChatGPT, Anthropic's Claude, Google's Gemini — now polish essays and emails for millions of students, office workers, and professional writers around the world every day. Each model has a distinct house style. Beyond individual writers losing their voices, critics have named a broader concern that spreads across whole cultures of prose. What is it?",
+    "question": "A student polishes her essay through ChatGPT, and millions of other students, office workers and professional writers run their drafts through the same small handful of chatbots, each with its own recognizable habits. Critics worry about more than any one writer. After years of this shared editing, what broader concern do they name for whole cultures of prose?",
     "answer": "Stylistic convergence — text across the culture starts to share the same cadences, structures, and vocabulary, narrowing the range of human voice",
     "choices": [
       "Stylistic convergence — text across the culture starts to share the same cadences, structures, and vocabulary, narrowing the range of human voice",
@@ -11506,7 +11090,7 @@
   },
   {
     "tier": 4,
-    "question": "An industry group called C2PA (Coalition for Content Provenance and Authenticity) builds 'content credentials.' These are crypto tags in photos, audio, and video that record which device made them and how they were edited. Adobe, Microsoft, the British Broadcasting Corporation (BBC), Sony, Nikon, and Leica take part. What is the real-world catch?",
+    "question": "A photographer checks the 'content credentials' on a picture, the crypto tags that record which device made it and how it was edited. An industry group called the Coalition for Content Provenance and Authenticity (C2PA) builds them, with Sony, Nikon, Leica, Adobe, Microsoft and the British Broadcasting Corporation (BBC) taking part. What is the biggest limitation?",
     "answer": "Adoption is voluntary — content without credentials remains untraceable, and most content on the open web has no credentials",
     "choices": [
       "Adoption is voluntary — content without credentials remains untraceable, and most content on the open web has no credentials",
@@ -11961,7 +11545,7 @@
   },
   {
     "tier": 5,
-    "question": "Early LLMs could read about 4,000 tokens of input — roughly a short essay. By 2024-2025, top models handle 200,000 to 2,000,000 tokens — a whole book series in one prompt. But longer context windows have a hidden cost. What changes as context windows grow?",
+    "question": "A reader drops a whole book series into one prompt, and the top models of 2024 and 2025 can handle it: 200,000 to 2,000,000 tokens at a go. Early Large Language Models (LLMs) took in about 4,000, roughly a short essay. Longer context windows have a hidden cost. What changes as those windows grow?",
     "answer": "The model's attention to any specific detail thins out — it can read more, but it reliably uses information in the middle of long contexts less well",
     "choices": [
       "The model's attention to any specific detail thins out — it can read more, but it reliably uses information in the middle of long contexts less well",
@@ -12023,19 +11607,6 @@
     ],
     "context": "The planning model sees only the user's request and handles untrusted content as sealed placeholders, so a command buried in an email cannot change which tools get used. CaMeL added a strict interpreter that tracks where every piece of data came from. Willison called it a rare real step forward, at some cost in convenience.",
     "topic": "prompt-injection-and-agent-risks"
-  },
-  {
-    "tier": 5,
-    "question": "LLMs don't process words — they process 'tokens,' which are often subword pieces. 'Hello' might be one token; 'antidisestablishmentarianism' might be six. Why do LLMs use this odd unit instead of just whole words?",
-    "answer": "Subword pieces let the model handle any word — rare ones, made-up ones, ones in other languages — by combining pieces it already knows",
-    "choices": [
-      "Subword pieces let the model handle any word — rare ones, made-up ones, ones in other languages — by combining pieces it already knows",
-      "Subword pieces save electricity — words use more power than syllables to process on modern AI hardware",
-      "Subword pieces are a Microsoft trademark — only Microsoft-trained models can legally use whole-word inputs in their tokenizers",
-      "Subword pieces were chosen by random vote at the 1956 Dartmouth conference — that decision has never been reconsidered since"
-    ],
-    "context": "If a model only knew whole words, it couldn't handle anything outside its vocabulary. Subword tokenization (BPE — Byte Pair Encoding — is the most common scheme) breaks rare and made-up words into pieces the model has seen during training. 'Tokenization' is also the unit pricing for API access — you pay per million tokens — and the unit context windows are measured in. Different tokenizers can produce wildly different counts for the same text, especially for non-English languages, which makes some languages effectively more expensive than others on the same model.",
-    "topic": "tokens-and-context-window"
   },
   {
     "tier": 4,
@@ -12195,7 +11766,7 @@
   },
   {
     "tier": 5,
-    "question": "Elon Musk co-founded OpenAI in 2015, left its board in 2018, and in July 2023 founded a new AI company, xAI. The company released its chatbot, Grok, integrated into the X (Twitter) platform later that year. What did Musk publicly cite as his motivation for xAI?",
+    "question": "Elon Musk founded a new AI company in July 2023, having co-founded OpenAI in 2015 and left its board in 2018. The company's chatbot followed later that year. What did Musk publicly cite as his motivation for the new company?",
     "answer": "Disagreement with OpenAI's direction — particularly what he characterized as excessive content-moderation and political bias in mainstream chatbots",
     "choices": [
       "Disagreement with OpenAI's direction — particularly what he characterized as excessive content-moderation and political bias in mainstream chatbots",
@@ -12247,19 +11818,6 @@
   },
   {
     "tier": 5,
-    "question": "The 2018 Turing Award — computing's highest honor, often called the 'Nobel Prize of computing' — was given jointly to three researchers for their work on deep learning. The three are often called the 'godfathers' of modern AI. Who were they, and what did they share the award for?",
-    "answer": "Geoffrey Hinton, Yann LeCun, and Yoshua Bengio — for foundational work on neural networks that made the deep-learning era possible",
-    "choices": [
-      "Geoffrey Hinton, Yann LeCun, and Yoshua Bengio — for foundational work on neural networks that made the deep-learning era possible",
-      "Alan Turing, John von Neumann, and Claude Shannon — three pioneers who jointly received the award decades after their deaths",
-      "Sam Altman, Demis Hassabis, and Mark Zuckerberg — three current tech CEOs who received the award for their corporate roles",
-      "Elon Musk, Marc Andreessen, and Peter Thiel — three Silicon Valley investors who received the award for their AI funding"
-    ],
-    "context": "Hinton's work on backpropagation (1986), LeCun's convolutional neural networks (which made image recognition work and led to medical imaging applications), and Bengio's deep neural network research were foundational to the deep-learning era that followed 2012's AlexNet. The three have since taken divergent positions on AI safety — Hinton warning of risks that run from lost jobs to human extinction, LeCun publicly skeptical of doomer framings, Bengio supporting cautious development. Recognition skill: 'foundational researcher' doesn't mean 'unified policy view.' The same people who built modern AI disagree sharply about what to do with it.",
-    "topic": "turing-award-deep-learning"
-  },
-  {
-    "tier": 5,
     "question": "Alphabet's executives spun Isomorphic Labs out of DeepMind in November 2021, with Demis Hassabis running it, to turn AlphaFold-style biology into new medicines. The AlphaFold database stayed free to everyone, while Isomorphic set out to make money from drug discovery. What did it sign in January 2024?",
     "answer": "Deals with the drug makers Eli Lilly and Novartis worth up to about $3 billion",
     "choices": [
@@ -12273,7 +11831,7 @@
   },
   {
     "tier": 5,
-    "question": "In February 2024, Elon Musk sued OpenAI. He said it had left its nonprofit mission and turned into a closed for-profit that mostly serves Microsoft. Musk had funded OpenAI and sat on its board before leaving in 2018. What was the core of his legal claim?",
+    "question": "Elon Musk sued OpenAI in February 2024, after funding the lab and sitting on its board until he left in 2018. He said it had turned into a closed company that mostly serves Microsoft. What was the core of his legal claim?",
     "answer": "That OpenAI's founding documents committed it to open, public-benefit AI development, and its restructuring as a capped-profit company breached those commitments",
     "choices": [
       "That OpenAI's founding documents committed it to open, public-benefit AI development, and its restructuring as a capped-profit company breached those commitments",
@@ -12299,7 +11857,7 @@
   },
   {
     "tier": 5,
-    "question": "Yann LeCun is Meta's Chief AI Scientist and a 2018 Turing Award co-winner. He is one of the 'godfathers' of deep learning. He is a leading skeptic of AI doom claims. He has debated Yoshua Bengio and Eliezer Yudkowsky in public. What's his main technical push-back on the catastrophe stories?",
+    "question": "Yann LeCun, a 2018 Turing Award co-winner and one of the 'godfathers' of deep learning, debated Yoshua Bengio and Eliezer Yudkowsky in public as a leading skeptic of AI doom claims. What is his main technical push-back on the catastrophe stories?",
     "answer": "That current AI lacks the goal-directed agency, self-preservation drives, and recursive self-improvement those scenarios assume — they are powerful tools without autonomy",
     "choices": [
       "That current AI lacks the goal-directed agency, self-preservation drives, and recursive self-improvement those scenarios assume — they are powerful tools without autonomy",
@@ -12325,7 +11883,7 @@
   },
   {
     "tier": 5,
-    "question": "Yoshua Bengio teaches at the University of Montreal and co-won the 2018 Turing Award. He was a deep-learning pioneer with Hinton and LeCun. Through 2023-2024 he grew more worried about advanced AI. He kept doing research and running Mila, the Quebec AI institute. What does his split stance show?",
+    "question": "Yoshua Bengio signed open letters and backed safety governance through 2023 and 2024 as his worry about advanced AI grew. He kept doing research all the while, and kept running Mila, the AI institute he founded. What does his split stance show?",
     "answer": "That AI safety concern and active AI research are not exclusive positions — a researcher can advocate caution about deployment while continuing technical work on the systems",
     "choices": [
       "That AI safety concern and active AI research are not exclusive positions — a researcher can advocate caution about deployment while continuing technical work on the systems",
@@ -12610,8 +12168,8 @@
     "topic": "ai-regulation"
   },
   {
-    "tier": 5,
-    "question": "When deepfake fears grew in 2023, AI companies pitched watermarking as the fix. Every AI-generated image, audio clip, or video would carry a hidden mark — a pattern in the pixels or a signal in the waveform — that a detector could find later, so real and synthetic content stayed easy to tell apart. By 2024 and 2025, researchers testing the idea against real attackers found the limits were harder than the press releases suggested. What's the main reason watermarks don't fully solve the deepfake problem?",
+    "tier": 4,
+    "question": "Teams at AI labs like OpenAI and Google DeepMind pitched watermarking as the fix when deepfake fears grew in 2023: a hidden signal in the words, pixels or waveform their models produced, so a detector could flag it later. Researchers testing the idea against real attackers in 2024 and 2025 found the limits harder than the press releases suggested. Why don't watermarks fully solve the deepfake problem?",
     "answer": "Watermarks can be stripped, cropped, or simply not applied — open-source models won't add them, and committed adversaries won't either.",
     "choices": [
       "Watermarks can be stripped, cropped, or simply not applied — open-source models won't add them, and committed adversaries won't either.",
@@ -12637,7 +12195,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2024 criminals phoned parents using an AI-cloned voice of their own child, sobbing and asking for bail money, and they cloned bosses' voices to trick employees into wiring money overseas. These voice-clone scams spread fast once the barrier to entry collapsed. What changed to make voice cloning a mass-market scam tool?",
+    "question": "A mother answered the phone in 2024 to an AI-cloned voice of her own child, sobbing and asking for bail money. Other criminals cloned bosses' voices to trick employees into wiring money overseas. These scams spread fast. What changed to make this a mass-market scam?",
     "answer": "Cheap, easy online services let people with no technical skill clone a voice",
     "choices": [
       "New iPhone hardware let any photo of a person be turned into that person's voice",
@@ -13144,7 +12702,7 @@
   },
   {
     "tier": 5,
-    "question": "In November 2020, Microsoft turned on 'Productivity Score' in Microsoft 365. By default, bosses could see per-worker data: documents made, emails sent, meetings joined, and chat activity. After public anger, Microsoft pulled the per-worker view in about a week. Why was it rolled back when most worker-tracking software keeps such features?",
+    "question": "Microsoft's team turned on 'Productivity Score' in Microsoft 365 in November 2020. By default, bosses could see per-worker data: documents made, emails sent, meetings joined and chat activity. Within about a week Microsoft pulled the per-worker view. Why was it rolled back when most worker-tracking software keeps such features?",
     "answer": "Visible reputational backlash — Productivity Score was a consumer-visible Microsoft 365 feature, so public pressure could reach it; most monitoring software is invisible inside enterprise contracts",
     "choices": [
       "Visible reputational backlash — Productivity Score was a consumer-visible Microsoft 365 feature, so public pressure could reach it; most monitoring software is invisible inside enterprise contracts",
@@ -13157,7 +12715,7 @@
   },
   {
     "tier": 5,
-    "question": "By the mid-2020s, worker-tracking software like Teramind, Hubstaff, Veriato, and ActivTrak was used at most large US employers. It logged keystrokes, grabbed screenshots, tracked apps, and clocked idle time. Under current US case law, how much privacy does a worker have on a company laptop and network?",
+    "question": "A worker at a large US employer sat down at her company laptop in the mid-2020s, and Teramind logged her keystrokes, grabbed screenshots, tracked her apps and clocked her idle time. Software like it, from Hubstaff, Veriato and ActivTrak, was used at most large US employers. Under current US case law, how much privacy does a worker have on a company laptop and network?",
     "answer": "Sharply reduced — courts generally find no meaningful expectation of privacy on employer-owned hardware and networks, and notice requirements vary by state",
     "choices": [
       "Sharply reduced — courts generally find no meaningful expectation of privacy on employer-owned hardware and networks, and notice requirements vary by state",

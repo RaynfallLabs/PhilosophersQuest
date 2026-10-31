@@ -1,41 +1,4 @@
 {
  "_doc": "Questions that test the same fact as another question: a sister ladder's twin or a rung that re-asks its neighbour. The quiz engine asks one per run and counts the others as shown (src/quiz_engine.py, playtest 2026-10-24). Built from _cards/variants: 476 cross-ladder pairs (a word-overlap scan, each pair confirmed by a judge, 99% precision) and the within-ladder twins two judges found in a 160-ladder sample, plus Brandon's two named examples. A rewrite pass that replaces the extra rungs with new facts would retire this file.",
- "groups": {
-  "ai": [
-   [
-    [
-     "2e20f7262b",
-     2
-    ],
-    [
-     "3f8005f95e",
-     3
-    ],
-    [
-     "47fe57750b",
-     1
-    ]
-   ],
-   [
-    [
-     "3fb9da8f11",
-     1
-    ],
-    [
-     "ca6a1e9a46",
-     2
-    ]
-   ],
-   [
-    [
-     "d775686d1e",
-     2
-    ],
-    [
-     "df94199eb0",
-     4
-    ]
-   ]
-  ]
- }
+ "groups": {}
 }
