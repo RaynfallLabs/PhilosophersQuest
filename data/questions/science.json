@@ -13820,7 +13820,7 @@
   },
   {
     "tier": 1,
-    "question": "Around 1900, Edward Pickering ran Harvard's observatory. He hired a whole room of women. Their job was to measure stars on glass photo plates. He paid Henrietta Swan Leavitt about 30 cents an hour. What did Pickering call these women?",
+    "question": "Edward Pickering hired a whole room of women around 1900 to measure stars on the glass photo plates at Harvard's observatory. He paid Henrietta Swan Leavitt about 30 cents an hour. What did Pickering call each of these women?",
     "answer": "computer",
     "choices": [
       "computer",
@@ -13833,7 +13833,7 @@
   },
   {
     "tier": 1,
-    "question": "Delta Cephei sits about 890 light-years away in the constellation Cepheus. It is bright enough to see with the naked eye. A kid with a notebook can watch it brighten and dim against its neighbors on a repeating schedule. About how long is one full cycle?",
+    "question": "A kid with a notebook steps outside and finds Delta Cephei, a star in Cepheus bright enough to see with the naked eye. She logs it brightening and dimming against its neighbors on a repeating schedule. About how long is one full cycle?",
     "answer": "5.4 days",
     "choices": [
       "5.4 days",
@@ -13846,7 +13846,7 @@
   },
   {
     "tier": 2,
-    "question": "Henrietta Swan Leavitt never once looked through a telescope herself. She worked at a light table in Cambridge, Massachusetts, measuring stars on glass plates. The plates recorded the southern sky. A Harvard observing station on the far side of the world had captured them. On which continent was that observing station?",
+    "question": "Henrietta Swan Leavitt sat at a light table in Cambridge, Massachusetts, measuring stars on a glass plate of the southern sky. She herself never used a telescope. A distant Harvard observing station had captured the plate and shipped it north. On which continent was that station?",
     "answer": "South America",
     "choices": [
       "South America",
@@ -13859,7 +13859,7 @@
   },
   {
     "tier": 2,
-    "question": "A variable star is a star whose brightness changes on a schedule you can time. Leavitt hunted for them on the Harvard glass plates. In 1908 she published a landmark catalog listing every variable star she had discovered in two nearby small galaxies visible from the southern sky. About how many variable stars did that catalog list?",
+    "question": "With a print of one night's Harvard plate laid over another, Henrietta Leavitt hunted for variable stars, stars whose brightness changes on a schedule. Her landmark catalog of 1908 listed every one she had discovered in two small nearby galaxies of the southern sky. About how many did it list?",
     "answer": "1,777",
     "choices": [
       "1,777",
@@ -13872,7 +13872,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1912, working from a sample of 25 Cepheid variables inside the Small Magellanic Cloud, Leavitt plotted each star's brightness against how long it took to complete one bright-dim-bright cycle. The dots fell into a strikingly simple pattern. What did she find?",
+    "question": "Working from a sample of 25 Cepheid variables inside the Small Magellanic Cloud in 1912, Henrietta Leavitt plotted each star's brightness against how long it took to complete one bright-dim-bright cycle. The dots fell into a strikingly simple pattern. What did she find?",
     "answer": "the longer the cycle, the brighter the star",
     "choices": [
       "the longer the cycle, the brighter the star",
@@ -13885,7 +13885,7 @@
   },
   {
     "tier": 4,
-    "question": "Leavitt was scrupulous about what her law did and did not do. She had timed 25 Cepheids and compared them, but she flagged one hard limit in the 1912 circular itself and left that piece of the problem for other astronomers to solve. What was the honest limit she named?",
+    "question": "Henrietta Leavitt set down one hard limit of her own law in the 1912 paper itself. She had timed 25 Cepheids and compared them, and she left that piece of the problem for other astronomers to solve. What was the honest limit she named?",
     "answer": "her law gave only relative distances, not absolute ones",
     "choices": [
       "her law gave only relative distances, not absolute ones",
@@ -13898,20 +13898,7 @@
   },
   {
     "tier": 5,
-    "question": "On the night of October 5-6, 1923, Edwin Hubble was hunting exploding stars on a photographic plate of the Andromeda Nebula taken with Mount Wilson's 100-inch Hooker telescope. He first marked three dots with the letter N, for nova. Then he checked older plates going back to 1909, saw one of them had been dimming and brightening on a schedule, crossed out the N in red pen -- and wrote what across the plate?",
-    "answer": "VAR!",
-    "choices": [
-      "VAR!",
-      "NOVA",
-      "M31",
-      "H335H"
-    ],
-    "context": "The plate is catalogued H335H and the red 'VAR!' is still visible on it. That single Cepheid, timed against Leavitt's law, put Andromeda far outside the Milky Way -- Andromeda was not a fuzzy patch in our galaxy, it was a whole galaxy of its own. Hubble announced the result in the New York Times on November 23, 1924. Source: obs.carnegiescience.edu/PAST/m31var  (Legend.)",
-    "topic": "henrietta-leavitts-ruler-for-the-universe"
-  },
-  {
-    "tier": 5,
-    "question": "In 1925 the Swedish mathematician Gosta Mittag-Leffler mailed a letter to Leavitt at Harvard. He planned to nominate her for the 1926 Nobel Prize in Physics for her period-luminosity work. The reply from Harvard was one he had not braced for. What did the observatory tell him?",
+    "question": "Gosta Mittag-Leffler mailed a letter to Henrietta Leavitt at Harvard in 1925. The Swedish mathematician planned to nominate her for the 1926 Nobel Prize in Physics for her period-luminosity work. What did the observatory's reply tell him?",
     "answer": "she had died of stomach cancer nearly four years earlier",
     "choices": [
       "she had died of stomach cancer nearly four years earlier",
@@ -13924,7 +13911,7 @@
   },
   {
     "tier": 2,
-    "question": "The phrase 'herd immunity' began on a farm. In 1894 the head of the US Bureau of Animal Industry wrote about well-fed livestock that fought off disease as a group. Which livestock did his article describe?",
+    "question": "Daniel Elmer Salmon, head of the US Bureau of Animal Industry, wrote an article in 1894 about well-fed livestock that fought off disease as a group. The idea of protection by the herd began on a farm. Which livestock did his article describe?",
     "answer": "hogs",
     "choices": [
       "hogs",
@@ -13937,7 +13924,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1923 two British scientists, Topley and Wilson, turned herd immunity from a saying into a real experiment. They ran outbreaks in cages of a small animal. Their goal was to show that not every one has to be immune to stop the spread. Which animal did they use?",
+    "question": "Topley and Wilson, two British scientists, ran outbreaks through cages of a small animal in 1923 and turned a farm saying into a real experiment. Their goal was to show that not every animal has to be immune to stop the spread. Which animal did they use?",
     "answer": "mice",
     "choices": [
       "mice",
@@ -13950,7 +13937,7 @@
   },
   {
     "tier": 3,
-    "question": "A. W. Hedrich spent the early 1930s combing through three decades of measles records from one American city. He found the same protective pattern in the human data that Topley and Wilson had produced in cages of mice: when enough people were already immune, even the still-susceptible were protected. What concept did his work help establish?",
+    "question": "A. W. Hedrich combed through three decades of measles records from one American city in the early 1930s. He found the human version of what Topley and Wilson had produced in their animal cages. What concept did his work help establish?",
     "answer": "Herd immunity",
     "choices": [
       "Herd immunity",
@@ -13963,7 +13950,7 @@
   },
   {
     "tier": 3,
-    "question": "Scientists write R-nought for the average number of new cases one sick person causes in a crowd where no one is immune. Measles is the classic tough case for herd immunity because its R-nought is thought to sit in which range?",
+    "question": "A boy with measles walks into a crowd where no one is immune. R-nought is the average number of new cases one sick person causes in such a crowd. Measles is the classic tough case for stopping an outbreak. Which range is its R-nought thought to sit in?",
     "answer": "about 12 to 18",
     "choices": [
       "about 12 to 18",
@@ -13976,7 +13963,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1927 two Scottish researchers proved a threshold theorem. Below a certain fraction of susceptible people in a population, a large epidemic simply cannot take off. Their theorem is the mathematical parent of every modern herd-immunity number. Whose theorem is it?",
+    "question": "Two Scottish researchers proved a threshold theorem in 1927: below a certain fraction of susceptible people in a population, a large epidemic simply cannot take off. Their theorem is the mathematical parent of every modern herd-immunity number. Whose theorem is it?",
     "answer": "Kermack and McKendrick",
     "choices": [
       "Kermack and McKendrick",
@@ -13989,7 +13976,7 @@
   },
   {
     "tier": 4,
-    "question": "In the simple textbook version, the herd-immunity threshold is the share of a crowd that must be immune to stop new outbreaks (assuming everyone mixes evenly). R-nought is the number of new cases one sick person sparks in a crowd where nobody is immune yet. Written using R-nought, that fraction is:",
+    "question": "A student at a blackboard wants the herd-immunity threshold, the share of a crowd that must be immune to stop new outbreaks. She starts from R-nought, the number of new cases one sick person sparks in a crowd where nobody is immune yet. In the simple textbook version, where everyone mixes evenly, which expression gives the threshold?",
     "answer": "1 - 1/R-nought",
     "choices": [
       "1 - 1/R-nought",
@@ -14002,7 +13989,7 @@
   },
   {
     "tier": 5,
-    "question": "Take a disease whose R-nought - the average new infections per case in a fully susceptible crowd - equals 2.5. The tidy classroom formula puts its herd-immunity threshold at 60 percent immune. In 2020, Britton and colleagues rebuilt the same disease inside an age-structured population where people mostly mix with their own age group, and the disease-induced threshold in their model came out at about:",
+    "question": "Britton and his colleagues rebuilt a model disease in 2020. Its R-nought, the average new infections per case in a fully susceptible crowd, equals 2.5, and the tidy classroom formula puts its herd-immunity threshold at 60 percent immune. They set it inside an age-structured population where people mostly mix with their own age group. About what figure did the disease-induced threshold reach in their model?",
     "answer": "43 percent",
     "choices": [
       "43 percent",
@@ -14015,7 +14002,7 @@
   },
   {
     "tier": 5,
-    "question": "Even after an outbreak passes its peak, new cases keep landing, because those already sick keep spreading it. Modelers call this extra tail 'overshoot.' A 2023 study of the standard SIR (Susceptible-Infected-Recovered) model found the largest overshoot possible — the biggest share of a crowd that can still get infected past the peak. That maximum is about:",
+    "question": "Kreck and Brauner put a ceiling in 2023 on the tail of an outbreak in the standard SIR (Susceptible-Infected-Recovered) model. New cases keep landing after the peak, because those already sick keep spreading it, and modelers call this extra tail 'overshoot.' At most, about what portion of a crowd can still get infected past the peak?",
     "answer": "30 percent",
     "choices": [
       "30 percent",
@@ -14028,7 +14015,7 @@
   },
   {
     "tier": 1,
-    "question": "On the night of 13 March 1781 the English astronomer William Herschel was sweeping the sky with his backyard telescope in Bath. He noticed a small greenish object that did not look quite like a star. To be sure, he needed to tell whether it was a distant star or something much closer. He had a simple test any kid with a telescope can copy on Jupiter tonight. What did he do?",
+    "question": "William Herschel stopped his backyard telescope at a small greenish object over Bath on 13 March 1781. It did not look quite like a star. He ran a test any kid with a telescope can copy on Jupiter tonight. What did he do?",
     "answer": "He cranked up the magnification and watched it swell into a disk",
     "choices": [
       "He cranked up the magnification and watched it swell into a disk",
@@ -14041,7 +14028,7 @@
   },
   {
     "tier": 2,
-    "question": "William Herschel had reported his 1781 sky discovery as a comet. Then a Finnish-Swedish astronomer named Anders Johan Lexell worked out the object's orbit around the Sun. The shape of that orbit told the world it was not a comet at all but a new planet -- the one we now call Uranus. That find nearly doubled the map of the known solar system. What did Lexell find about the orbit?",
+    "question": "Anders Johan Lexell worked out the path around the Sun of the object William Herschel had reported as a comet in 1781. The shape of that orbit told the world it was no comet at all but a new planet, the one now called Uranus. What did Lexell find about the orbit?",
     "answer": "A nearly circular orbit far beyond Saturn",
     "choices": [
       "A nearly circular orbit far beyond Saturn",
@@ -14054,7 +14041,7 @@
   },
   {
     "tier": 3,
-    "question": "Once Herschel's planet had an orbit, astronomers went back through older star catalogues. It had been logged as an ordinary star at least twenty times, and no one had noticed that it moved. What entry did John Flamsteed give it in his 1690 catalogue?",
+    "question": "John Flamsteed wrote William Herschel's future planet into his 1690 star catalogue without noticing what it was. Others logged it too, at least twenty times in all, as an ordinary star, and no one noticed that it moved. What entry did Flamsteed give it?",
     "answer": "34 Tauri, an ordinary star in the constellation Taurus",
     "choices": [
       "34 Tauri, an ordinary star in the constellation Taurus",
@@ -14067,7 +14054,7 @@
   },
   {
     "tier": 3,
-    "question": "An arithmetic recipe published by Johann Titius and Johann Bode reproduced the spacing of the known planets and put a slot at about 19.6 astronomical units (AU). Uranus turned up at 19.2 AU, and confidence in the rule sent astronomers hunting for the missing planet another of its slots demanded, in the gap between Mars and Jupiter. Who found something there on 1 January 1801, and what was it named?",
+    "question": "Johann Titius and Johann Bode published an arithmetic recipe that reproduced the spacing of the known planets and put a slot at about 19.6 astronomical units (AU). Uranus turned out to fit at 19.2 AU, and confidence in the rule sent astronomers hunting in another of its slots, the gap between Mars and Jupiter. Who found something there on 1 January 1801, and what was it named?",
     "answer": "Giuseppe Piazzi found a body he named Ceres",
     "choices": [
       "Giuseppe Piazzi found a body he named Ceres",
@@ -14080,7 +14067,7 @@
   },
   {
     "tier": 4,
-    "question": "The Titius-Bode rule matched the spacing of the known planets. It correctly slotted Uranus at about 19 astronomical units (AU) and pointed astronomers at Ceres. The rule says the next planet outward should sit near 39 astronomical units. Where does Neptune actually orbit?",
+    "question": "A student runs the Titius-Bode rule one step past Uranus on a sheet of paper and lands near 39 astronomical units. The rule had matched the spacing of the known planets and slotted Uranus at about 19, so the next planet out should sit there. Where does Neptune actually orbit?",
     "answer": "About 30 astronomical units",
     "choices": [
       "About 30 astronomical units",
@@ -14093,7 +14080,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1800 at his home in Slough, William Herschel spread sunlight through a glass prism. He slid a blackened-bulb thermometer along the colored band. Then he moved it one step further, into a strip where nothing at all was visible. The reading there was higher than in any visible color. What kind of light had he just discovered?",
+    "question": "William Herschel slid a blackened-bulb thermometer along a prism's band of sunlight at home in Slough in 1800. One step further, in a strip where nothing showed, it read higher than in any visible colour. What kind of light had he found?",
     "answer": "infrared",
     "choices": [
       "infrared",
@@ -14106,7 +14093,7 @@
   },
   {
     "tier": 2,
-    "question": "William Herschel did not stumble onto invisible light while thinking about the spectrum. He was chasing a real problem at his telescope. He needed a colored-glass filter that would cut the Sun's glare and heat enough to let him safely do one kind of solar work. What was he trying to do more safely?",
+    "question": "William Herschel stood at his telescope with a real problem. He needed a coloured-glass filter that would cut the Sun's glare and heat enough to let him safely do one kind of solar work. What was he trying to do more safely?",
     "answer": "watch and sketch sunspots through the eyepiece",
     "choices": [
       "watch and sketch sunspots through the eyepiece",
@@ -14119,7 +14106,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1800 the English astronomer William Herschel spread a prism's rainbow of sunlight across a table to measure the heat in each colour. He did not lay a single thermometer along the coloured band. He laid three mercury thermometers with blackened bulbs on the table, and placed only one of them in the coloured band at a time. Why did he insist on the other two?",
+    "question": "Spreading a prism's rainbow of sunlight across a table in 1800, William Herschel laid out three mercury thermometers with blackened bulbs to measure the heat in each colour. He placed only one of them in the coloured band at a time. Why did he insist on the other two?",
     "answer": "as controls, to catch the room itself drifting warmer",
     "choices": [
       "as controls, to catch the room itself drifting warmer",
@@ -14132,7 +14119,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1800 the astronomer William Herschel wanted to know if different colours of sunlight carried different amounts of heat. He split a beam of sunlight through a prism and laid thermometers with soot-covered bulbs along the colours, plus one just past the red end where his eyes saw nothing at all. That last thermometer heated up faster than any visible colour — the first hint of infrared light. It is one of the few discoveries in physics a curious ten-year-old can redo on a Saturday with cheap gear. Which shopping list is the classic recipe for that redo?",
+    "question": "A curious ten-year-old sets out one Saturday to redo William Herschel's discovery of 1800 with cheap gear. Herschel had found that a spot just past the red end of sunlight's colours, where his eyes saw nothing, heated up faster than any visible colour. Which shopping list is the classic recipe for her redo?",
     "answer": "a prism, a sunny window and three blackened-bulb thermometers",
     "choices": [
       "a prism, a sunny window and three blackened-bulb thermometers",
@@ -14145,7 +14132,7 @@
   },
   {
     "tier": 4,
-    "question": "The James Webb Space Telescope is an infrared telescope. Its detectors chill to about 40 kelvin, and its mid-infrared camera to under 7 kelvin. A tennis-court sunshield and a special cryocooler do the work. Why must infrared telescopes be run so cold?",
+    "question": "Engineers chilled the James Webb Space Telescope's detectors to about 40 kelvin and one of its cameras to under 7 kelvin, with a tennis-court sunshield and a special cryocooler. The telescope hunts the invisible light William Herschel found past the red. Why must such a telescope be run so cold?",
     "answer": "the telescope itself glows in the infrared and would drown the signal",
     "choices": [
       "the telescope itself glows in the infrared and would drown the signal",
@@ -14158,7 +14145,7 @@
   },
   {
     "tier": 2,
-    "question": "On 13 November 1886, in a dark Karlsruhe laboratory, Heinrich Hertz cranked an induction coil until a spark jumped between two brass balls. Yards away, a plain copper loop with a small gap sparked in sympathy. It was not wired to anything. What had he built the first working example of?",
+    "question": "Heinrich Hertz cranked an induction coil in a dark Karlsruhe laboratory on 13 November 1886 until a spark jumped between two brass balls. Yards away, a plain copper loop with a small gap sparked in sympathy, wired to nothing. What had he built the first working example of?",
     "answer": "A radio",
     "choices": [
       "A radio",
@@ -14171,7 +14158,7 @@
   },
   {
     "tier": 3,
-    "question": "Hertz then set out to prove his invisible waves behaved in every way like ordinary light. He reflected them off metal mirrors and polarised them with a grid of parallel wires. To REFRACT them - to bend a beam by passing it through a transparent block - Hertz built a large 1.5-metre prism out of what unlikely-looking material?",
+    "question": "To prove his invisible waves behaved in every way like ordinary light, Heinrich Hertz reflected them off metal mirrors and polarised them with a grid of parallel wires. To refract them, bending a beam by passing it through a transparent block, he built a large 1.5-metre prism. What unlikely-looking material did he use?",
     "answer": "Pitch",
     "choices": [
       "Pitch",
@@ -14184,7 +14171,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1887 Hertz kept noticing that his receiver's tiny spark jumped MORE readily when ultraviolet light happened to fall on the gap. He wrote the observation up in Annalen der Physik and moved on to other things. Einstein would explain the phenomenon eighteen years later, in a March 1905 paper. What is the effect Hertz stumbled on and never pursued?",
+    "question": "Ultraviolet light fell on the tiny spark gap of Heinrich Hertz's receiver in 1887, and he noticed something odd. He wrote the observation up in Annalen der Physik and moved on to other things. Einstein would explain the phenomenon in a March 1905 paper. What is the effect Hertz stumbled on and never pursued?",
     "answer": "The photoelectric effect",
     "choices": [
       "The photoelectric effect",
@@ -14197,7 +14184,7 @@
   },
   {
     "tier": 4,
-    "question": "A student once asked Hertz what practical use his beautiful new waves could possibly have. By his students' later recollection, Hertz answered flatly that they were of no use at all — he had only wanted to prove Maxwell right. The quotation is second-hand, not from any Hertz manuscript. Within seven years, whose attic experiments would prove Hertz spectacularly wrong about that?",
+    "question": "A student once asked Heinrich Hertz what practical use his beautiful new waves could possibly have. By his students' later recollection, Hertz answered that they were of no use at all; he had only wanted to prove Maxwell right. The quotation is second-hand, not from any Hertz manuscript. Within seven years, whose attic experiments would prove him wrong about that?",
     "answer": "Guglielmo Marconi",
     "choices": [
       "Guglielmo Marconi",
@@ -14210,7 +14197,7 @@
   },
   {
     "tier": 5,
-    "question": "Hertz was not alone in working on Maxwell's waves in the late 1880s and 1890s. One English physicist showed wireless signaling at the Royal Institution in June 1894 — a year before Marconi's attic work near Bologna — but did not chase the business side. What best explains why Marconi, not the Englishman, became famous for radio?",
+    "question": "Oliver Lodge, an English physicist, showed wireless signaling at the Royal Institution in June 1894, a year before Marconi's attic work near Bologna. What best explains why Marconi, not the Englishman, became the famous name?",
     "answer": "Marconi turned the discovery into a business",
     "choices": [
       "Marconi turned the discovery into a business",
@@ -14223,7 +14210,7 @@
   },
   {
     "tier": 1,
-    "question": "In December 1872 the Royal Navy refitted HMS Challenger, a wooden steam corvette, at Sheerness for a three-year voyage. Her spars were cut down and 15 of her 17 guns were pulled out. What filled the gun deck when she sailed?",
+    "question": "Royal Navy crews at Sheerness cut down HMS Challenger's spars and pulled 15 of her 17 guns. She sailed in December 1872, bound for three and a half years at sea. What filled the gun deck when she left?",
     "answer": "laboratories",
     "choices": [
       "laboratories",
@@ -14236,7 +14223,7 @@
   },
   {
     "tier": 1,
-    "question": "HMS Challenger was the Royal Navy corvette that sailed the world from 1872 to 1876 as a floating laboratory, the first true global oceanography expedition. Her crew measured the depth of the ocean the crude way: a weighted line was paid out from the deck until it went slack, then hauled back and its length read off. In what unit was every one of those depths recorded in the ship's log?",
+    "question": "Sailors on HMS Challenger let a weighted line run out from the deck until it went slack, then hauled it back and read off its length. In what unit was every one of those ocean depths recorded in the ship's log?",
     "answer": "fathoms",
     "choices": [
       "fathoms",
@@ -14249,7 +14236,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Challenger sailed, the reigning theory of the deep sea came from Edward Forbes, dredging in the Aegean aboard HMS Beacon in 1843. From what his nets brought up, Forbes made a bold claim about the ocean below about 300 fathoms. What did he claim?",
+    "question": "Edward Forbes dredged the Aegean aboard HMS Beacon in 1843 and came away with the theory of the deep sea that still reigned when Challenger sailed. From what his nets brought up, he made a bold claim about the ocean below a certain depth. What did he claim?",
     "answer": "no animals could survive down there",
     "choices": [
       "no animals could survive down there",
@@ -14262,7 +14249,7 @@
   },
   {
     "tier": 3,
-    "question": "HMS Challenger was the British scientific expedition ship that sailed the world's oceans from 1872 to 1876, sounding the deep sea for the first time. On 23 March 1875, at her Station 225 near the Mariana Islands in the west Pacific, her crew paid out the sounding line and watched it keep going down and down. When the reading came back they sounded a second time in the same spot to check it. What did the doubled sounding read?",
+    "question": "HMS Challenger's men watched their sounding line go down and down at Station 225, near the Mariana Islands in the west Pacific, on 23 March 1875. When the reading came back they sounded a second time in the same spot to check it. What did the doubled sounding read?",
     "answer": "4,475 fathoms",
     "choices": [
       "4,475 fathoms",
@@ -14275,7 +14262,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1868, four years before Challenger set sail, Thomas Huxley opened an old bottle of Atlantic mud that had been dredged in 1857. Inside was a translucent gelatinous slime laced with veins, which he announced to the scientific world as a living organism. He named it Bathybius haeckelii, after Ernst Haeckel. What did Huxley claim this slime was?",
+    "question": "Thomas Huxley opened an old bottle of Atlantic mud in 1868, four years before Challenger set sail, and found a translucent gelatinous slime laced with veins. The mud had been dredged in 1857. He announced the slime to the scientific world as a living organism and named it Bathybius haeckelii, after Ernst Haeckel. What did Huxley claim this slime was?",
     "answer": "a primordial protoplasm bridging non-living matter and life",
     "choices": [
       "a primordial protoplasm bridging non-living matter and life",
@@ -14288,7 +14275,7 @@
   },
   {
     "tier": 3,
-    "question": "The Report on the Scientific Results of the Voyage of H.M.S. Challenger was not finished until 1895, nineteen years after the ship docked and thirteen years after Charles Wyville Thomson died. John Murray took it over and saw it through. Roughly how big was the finished Report?",
+    "question": "John Murray took up the unfinished Report on the Scientific Results of the Voyage of H.M.S. Challenger when Charles Wyville Thomson died, and he saw it through to 1895, nineteen years after the ship docked. Roughly how big was the finished Report?",
     "answer": "50 volumes and over 29,500 pages",
     "choices": [
       "50 volumes and over 29,500 pages",
@@ -14301,7 +14288,7 @@
   },
   {
     "tier": 4,
-    "question": "Aboard HMS Challenger the young ship's chemist John Young Buchanan set out to check Thomas Huxley's celebrated Bathybius haeckelii on fresh samples right out of the dredge. He came away certain it was not an organism at all. What did Buchanan show Bathybius actually was?",
+    "question": "John Young Buchanan, the young ship's chemist aboard HMS Challenger, set out to check Thomas Huxley's celebrated Bathybius haeckelii on fresh samples right out of the dredge. He came away certain it was not an organism at all. What did Buchanan show Bathybius actually was?",
     "answer": "a chemical precipitate thrown down in the sample bottle",
     "choices": [
       "a chemical precipitate thrown down in the sample bottle",
@@ -14327,7 +14314,7 @@
   },
   {
     "tier": 5,
-    "question": "HMS Challenger, the Royal Navy ship that circled the world from 1872 to 1876 as a floating laboratory, is remembered for sounding the ocean's depth. Her quiet triumph, though, was the thermometer, not the sounding rope. In every ocean her crew crossed they lowered thermometers to the seabed and read the temperature. What global pattern did their deep-water readings first hint at?",
+    "question": "HMS Challenger's crew lowered a thermometer to the seabed, read the temperature, and did it again in the next ocean, and the next. The ship is remembered for sounding the ocean's depth, but her quiet triumph was the thermometer, not the rope. What global pattern did those deep-water readings first hint at?",
     "answer": "cold polar water sinks and creeps along the seabed worldwide",
     "choices": [
       "cold polar water sinks and creeps along the seabed worldwide",
@@ -14340,7 +14327,7 @@
   },
   {
     "tier": 5,
-    "question": "The honest weakness of Challenger's weighted rope was that a line drifts, catches and stretches, so every deep reading was one unverifiable number. The answer, when it came in the 1920s, was not more rope but different physics. What replaced the weighted line?",
+    "question": "A sailor on HMS Challenger watched the weighted rope drift, catch and stretch on its way down, and no one aboard could verify the number it gave. The answer, when it came in the 1920s, was not more rope but different physics. What replaced the weighted line?",
     "answer": "timing the echo of a sound pulse off the seabed",
     "choices": [
       "timing the echo of a sound pulse off the seabed",
@@ -14353,7 +14340,7 @@
   },
   {
     "tier": 1,
-    "question": "Robert Hooke, curator of experiments for the Royal Society, sharpened a penknife 'as keen as a Razor.' He shaved off a sliver thin enough to see light through. Under his microscope it was not solid at all. He saw row on row of tiny hollow boxes. He wrote down a word describing them that biology still uses today. What had he sliced?",
+    "question": "Robert Hooke sharpened a penknife 'as keen as a Razor' and shaved off a sliver thin enough to see light through. Under his microscope lay row on row of tiny hollow boxes, and biology still uses his word for them. What had he sliced?",
     "answer": "A shaving of cork",
     "choices": [
       "A shaving of cork",
@@ -14366,7 +14353,7 @@
   },
   {
     "tier": 1,
-    "question": "Robert Hooke had to draw each specimen while it sat under his lens, and one of them nearly beat him. An ant would not hold still - it kept twisting and winding its body - and Hooke complained it was more troublesome to draw than anything else in Micrographia. What did he do to it?",
+    "question": "Robert Hooke bent over his lens to draw an ant that would not hold still. It kept twisting and winding its body, and he complained it was more troublesome to draw than anything else in Micrographia. What did he do to it?",
     "answer": "Dosed it with brandy until it dropped",
     "choices": [
       "Dosed it with brandy until it dropped",
@@ -14379,7 +14366,7 @@
   },
   {
     "tier": 2,
-    "question": "Robert Hooke did not just look at his cork slice - he counted. He tallied the little boxes lying end to end under the lens, multiplied the rate outward, and printed the total in Micrographia: 1,259,712,000 of them. How much cork held that many?",
+    "question": "Under the lens, Robert Hooke tallied the little boxes lying end to end in his cork slice, multiplied the rate outward, and printed the total in Micrographia: 1,259,712,000 of them. How much cork held that many?",
     "answer": "One cubic inch, a lump the size of a sugar cube",
     "choices": [
       "One cubic inch, a lump the size of a sugar cube",
@@ -14392,7 +14379,7 @@
   },
   {
     "tier": 2,
-    "question": "Robert Hooke's 1665 book Micrographia had sixty microscope drawings. The plates readers loved best were printed bigger than the book itself. They folded out to about 17 by 10 inches, so a single creature covered the whole table. Which two creatures got those giant fold-outs?",
+    "question": "A reader of Robert Hooke's 1665 book Micrographia unfolds a plate bigger than the book itself, about 17 by 10 inches, and a single creature covers the whole table. Of the sixty microscope drawings, readers loved two such fold-outs best. Which two creatures got them?",
     "answer": "The flea and the louse",
     "choices": [
       "The flea and the louse",
@@ -14405,7 +14392,7 @@
   },
   {
     "tier": 2,
-    "question": "Samuel Pepys was a London naval clerk whose diary tells us about the plague and the Great Fire. He spotted Hooke's Micrographia at the bookbinder's on 20 January 1665. The next night his diary called it 'the most ingenious book that ever I read in my life.' How had Pepys spent that evening?",
+    "question": "Samuel Pepys spotted Robert Hooke's Micrographia at the bookbinder's on 20 January 1665, and the next night his diary called it 'the most ingenious book that ever I read in my life.' How had Pepys spent that evening?",
     "answer": "Sat up in his chamber reading until two in the morning",
     "choices": [
       "Sat up in his chamber reading until two in the morning",
@@ -14418,7 +14405,7 @@
   },
   {
     "tier": 3,
-    "question": "Robert Hooke's cork slice gave biology a word, but it also did something humbler. Cork had been in daily use for centuries, and one familiar thing about it had never had an explanation - everyone knew cork did it, nobody could say why. Hooke read the answer straight off what his lens showed him and printed it in Micrographia beside the drawing. Which property of cork did he explain?",
+    "question": "Beside his drawing of a cork slice in Micrographia, Robert Hooke printed the answer to an old puzzle. Cork had been in daily use for centuries, and one familiar thing about it had never had an explanation: everyone knew cork did it, nobody could say why. Which property of cork did he explain?",
     "answer": "That it floats and rides high in water",
     "choices": [
       "That it floats and rides high in water",
@@ -14431,7 +14418,7 @@
   },
   {
     "tier": 3,
-    "question": "The first published picture of a microorganism - a growth whose structure no unaided eye can resolve - sits inside Micrographia, and Robert Hooke did not have to leave his house to find the specimen. Under the lens he drew slender transparent stalks, not quite straight, each bending under the weight of a round white knob at its top. What was the blue mould growing on?",
+    "question": "Without leaving his house, Robert Hooke found the specimen for the first published picture of a microorganism, a growth whose structure no unaided eye can resolve. Under the lens he drew slender transparent stalks, not quite straight, each bending under the weight of a round white knob at its top. What was the blue mould growing on?",
     "answer": "The sheepskin covers of a small book",
     "choices": [
       "The sheepskin covers of a small book",
@@ -14444,7 +14431,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Hooke's compound microscope was built for him by the London instrument maker Christopher Cock. It was not a great instrument: about thirty to fifty times magnification, with colored fringes smearing every edge. Hooke openly admitted in print that a single lens gave a clearer image than his own multi-lens tube. His real advantage over everyone else lay elsewhere. Where did he put his ingenuity?",
+    "question": "Christopher Cock, a London instrument maker, built Robert Hooke a compound microscope that was not a great instrument: about thirty to fifty times magnification, with coloured fringes smearing every edge. Hooke openly admitted in print that a single lens gave a clearer image than his own multi-lens tube. His real advantage over everyone else lay elsewhere. Where did he put his ingenuity?",
     "answer": "Into the light: a lamp beamed through a glass globe of brine",
     "choices": [
       "Into the light: a lamp beamed through a glass globe of brine",
@@ -14457,7 +14444,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Hooke laid a piece of petrified wood beside a piece of ordinary wood under the same lens and found the two built alike inside. From that match he argued the stone had once been a living tree - which set him against the learned view of his day, that such stones had never been alive at all and owed their shapes to something else entirely. What did that view say had made them?",
+    "question": "Robert Hooke laid a piece of petrified wood beside a piece of ordinary wood under the same lens and found the two built alike inside. From that match he argued the stone had once been a living tree, against the learned view of his day that such stones had never been alive at all. What did that view say had made their shapes?",
     "answer": "A shaping power latent in the Earth, growing stone into lifelike forms",
     "choices": [
       "A shaping power latent in the Earth, growing stone into lifelike forms",
@@ -14470,7 +14457,7 @@
   },
   {
     "tier": 4,
-    "question": "Robert Hooke coined the word \"cell\" for the little boxes he saw in a shaving of cork. That was Observation XVIII of Micrographia, and the cork was only where it began: Hooke went on cutting - elder pith, fennel, carrots, burdocks, teasels, ferns and reeds - and laid every one of them under the lens. What did he report finding inside those plants?",
+    "question": "Robert Hooke went on cutting after the cork that gave him the word \"cell\": elder pith, fennel, carrots, burdocks, teasels, ferns and reeds, every one of them laid under the lens. What did he report finding inside those plants?",
     "answer": "Cells full of juices, sweating them out by degrees",
     "choices": [
       "Cells full of juices, sweating them out by degrees",
@@ -14483,7 +14470,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert Hooke drew the blue mould on a book's leather covers - the slender stalks, the round white knob bending each one over - and beneath the drawing he wrote down his account of where such growth comes from in the first place. What did Hooke conclude?",
+    "question": "Robert Hooke finished his drawing of a blue mould growing on leather: the slender stalks, the round white knob bending each one over. Beneath the drawing he wrote down his account of where such growth comes from in the first place. What did Hooke conclude?",
     "answer": "That mould needs no seed, arising from rotting matter kept moist and warm",
     "choices": [
       "That mould needs no seed, arising from rotting matter kept moist and warm",
@@ -14496,7 +14483,7 @@
   },
   {
     "tier": 5,
-    "question": "Open almost any textbook and you will read that Robert Hooke named the boxes in his cork 'cells' because they reminded him of the bare little rooms where monks slept. In 2024 the plant biologist Winfried Peters searched Hooke's writings for that comparison. He reported that no monk, no monastery, and not even the Latin word cellula appears anywhere in them. What comparison did Hooke actually put on the page?",
+    "question": "Winfried Peters, a plant biologist, searched Robert Hooke's writings in 2024 for a comparison found in almost any textbook: that the boxes in his cork reminded him of the bare little rooms where monks slept. He reported that no monk, no monastery, and not even the Latin word cellula appears anywhere in those writings. What comparison did Hooke actually put on the page?",
     "answer": "A honeycomb with irregular pores",
     "choices": [
       "A honeycomb with irregular pores",
@@ -14509,7 +14496,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1945 Ray Owen tested the blood of Wisconsin cattle born as fraternal twins — two eggs, no more alike than ordinary siblings. Genetics said one red-cell type per calf. Owen found two. Where did the second come from?",
+    "question": "Ray Owen tested the blood of fraternal twin cattle in Wisconsin in 1945. Each pair came from two eggs, no more alike than ordinary siblings, and genetics said one red-cell type per calf. Owen found two. Where did the second come from?",
     "answer": "From its twin, through blood vessels fused in the womb.",
     "choices": [
       "From its twin, through blood vessels fused in the womb.",
@@ -14535,7 +14522,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1948 the Edinburgh cattle researcher Hugh Donald needed a way to tell identical calf twins from non-identical ones. He asked the zoologist Peter Medawar. Medawar suggested skin grafts: identical twins should keep each other's skin, and fraternal pairs should throw it off within days. At Donald's farm the test was useless. Why?",
+    "question": "Hugh Donald, an Edinburgh cattle researcher, asked the zoologist Peter Medawar in 1948 for a way to tell identical calf twins from non-identical ones. Medawar suggested skin grafts: identical twins should keep each other's skin, and fraternal pairs should throw it off within days. At Donald's farm the test was useless. Why?",
     "answer": "Fraternal twins kept each other's grafts as readily as identicals.",
     "choices": [
       "Fraternal twins kept each other's grafts as readily as identicals.",
@@ -14548,7 +14535,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1912 the Japanese surgeon Hakaru Hashimoto described four thyroid glands he had cut out of his patients. Each was swollen and turning to fibrous scar, yet he found no infection in them and no cancer. What filled the gland tissue instead?",
+    "question": "Hakaru Hashimoto, a Japanese surgeon, described four thyroid glands in 1912 that he had cut out of his patients. Each was swollen and turning to fibrous scar, yet he found no infection in them and no cancer. What filled the gland tissue instead?",
     "answer": "The patient's own white blood cells, packed in crowds.",
     "choices": [
       "The patient's own white blood cells, packed in crowds.",
@@ -14561,7 +14548,7 @@
   },
   {
     "tier": 2,
-    "question": "Type 1 diabetes shows up when a child's own immune system attacks a body tissue. Parents who hear the news almost always search the family tree for someone else who had it. About what share of people with type 1 diabetes have no family history of it at all?",
+    "question": "A mother learns that her child has type 1 diabetes, in which a child's own immune system attacks a body tissue, and she searches the family tree for someone else who had it. Parents almost always do. About what share of people with type 1 diabetes have no family history of it at all?",
     "answer": "About 80 to 90 percent.",
     "choices": [
       "About 10 to 20 percent.",
@@ -14574,7 +14561,7 @@
   },
   {
     "tier": 3,
-    "question": "Paul Ehrlich gave a big lecture to the Royal Society in 1900. He coined horror autotoxicus — the horror of self-poisoning — for a law he thought the body obeyed. It would be 'badly designed,' he wrote, for a body to make poisons against itself. This idea then stalled the study of self-attacking disease for fifty years. What did Ehrlich claim about antibodies aimed at a body's own tissue?",
+    "question": "Paul Ehrlich gave a big lecture to the Royal Society in 1900. Horror autotoxicus, the horror of self-poisoning, was his name for a law he thought the body obeyed. It would be 'badly designed,' he wrote, for a body to make poisons against itself. The idea then stalled the study of self-attacking disease for fifty years. What did Ehrlich claim about antibodies aimed at a body's own tissue?",
     "answer": "The body can make them, but safeguards stop them doing harm.",
     "choices": [
       "The body can make them, but safeguards stop them doing harm.",
@@ -14587,7 +14574,7 @@
   },
   {
     "tier": 3,
-    "question": "Before 1961 the thymus, a soft lump of tissue behind the breastbone, was written off as a leftover organ — a graveyard where worn-out lymph tissue collected. Jacques Miller cut it out of newborn mice and raised them to adulthood. What could those mice no longer do?",
+    "question": "Jacques Miller cut the thymus out of newborn mice in 1961 and raised them to adulthood. Until then that soft lump of tissue behind the breastbone had been written off as a leftover organ, a graveyard where worn-out lymph tissue collected. What could those mice no longer do?",
     "answer": "Throw off a skin graft, even one from another species.",
     "choices": [
       "Throw off a skin graft, even one from another species.",
@@ -14600,7 +14587,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1953 Rupert Billingham, Leslie Brent and Peter Medawar injected cells from one mouse strain into the embryos and newborn pups of another. Grown up, those mice wore skin grafts from the donor strain indefinitely, where an untreated mouse tears such a graft off within days. A critic could answer that the injections had simply crippled the animals' defences. Which finding in the same paper met that objection?",
+    "question": "Rupert Billingham, Leslie Brent and Peter Medawar injected cells from one mouse strain into the embryos and newborn pups of another in 1953. Grown up, those mice wore skin grafts from the donor strain indefinitely, where an untreated mouse tears such a graft off within days. A critic could answer that the injections had simply crippled the animals' defences. Which finding in the same paper met that objection?",
     "answer": "Skin from a third, unrelated strain was still rejected on schedule.",
     "choices": [
       "Skin from a third, unrelated strain was still rejected on schedule.",
@@ -14613,7 +14600,7 @@
   },
   {
     "tier": 4,
-    "question": "Ernest Witebsky refused to believe his own student. Noel Rose had spent months injecting rabbits with purified thyroid protein, and Witebsky — raised inside Paul Ehrlich's own scientific line — twice sent him back to the bench to run it again more carefully. Each time the result held. Then Witebsky named the single version of the experiment he would accept as proof. What did he demand?",
+    "question": "Ernest Witebsky refused to believe his own student. Noel Rose had spent months injecting rabbits with purified thyroid protein, and Witebsky, raised inside Paul Ehrlich's own scientific line, twice sent him back to the bench to run it again more carefully. Each time the result held. Then Witebsky named the single version of the experiment he would accept as proof. What did he demand?",
     "answer": "Take the protein from a rabbit and inject it back into that same rabbit.",
     "choices": [
       "Take the protein from a rabbit and inject it back into that same rabbit.",
@@ -14626,7 +14613,7 @@
   },
   {
     "tier": 4,
-    "question": "A child in a doctor's office has fully recovered from a strep throat infection weeks earlier -- no fever, no sore throat, and lab tests find no strep bacteria left in her body. But at her check-up the doctor hears something new: a soft murmur, the sound of blood slipping past a heart valve that is quietly scarring over. This condition is called rheumatic heart disease. The bacteria are long gone, and none can be found inside the valve itself. So what is doing the damage?",
+    "question": "A child sits in a doctor's office, weeks past a strep throat, with no fever and no strep bacteria left in her body. The doctor hears something new: a soft murmur, the sound of blood slipping past a heart valve that is quietly scarring over. No bacteria can be found inside the valve itself. What is doing the damage?",
     "answer": "Antibodies raised against the bacterium that also stick to heart tissue.",
     "choices": [
       "Antibodies raised against the bacterium that also stick to heart tissue.",
@@ -14639,7 +14626,7 @@
   },
   {
     "tier": 5,
-    "question": "Every T cell that leaves the thymus has passed an audition inside it: the cell is shown fragments of the body's own proteins, and any cell that grips them too tightly is killed on the spot. But the thymus sits behind the breastbone and never meets the pancreas, the retina or the adrenal gland, so a trainee there should never once see insulin — and a T cell that would attack insulin should stroll out alive. It does not. So how does the thymus stop that cell?",
+    "question": "A teacher sketches the thymus on a blackboard for her class. Every T cell must pass an audition there: it is shown fragments of the body's own proteins, and if it grips them too tightly it is killed. But the thymus, behind the breastbone, never sees the pancreas, so a trainee should meet no insulin, and a T cell that would attack insulin should stroll out alive. It does not. How does the thymus stop that cell?",
     "answer": "Thymus cells switch on thousands of genes belonging to other organs.",
     "choices": [
       "Thymus cells switch on thousands of genes belonging to other organs.",
@@ -14652,7 +14639,7 @@
   },
   {
     "tier": 5,
-    "question": "Hospital labs test blood for antinuclear antibodies — antibodies aimed at a cell's own nucleus. A positive result sounds like proof of autoimmune disease. Yet 20 to 30 percent of healthy people carry them at low levels. Every healthy body also makes self-binding antibodies of the IgM class. In a healthy body, what job do those antibodies do?",
+    "question": "A woman opens a lab report and finds a positive test for antinuclear antibodies, antibodies aimed at a cell's own nucleus. It sounds like proof of autoimmune disease, yet 20 to 30 percent of healthy people carry them at low levels. Every healthy body also makes self-binding antibodies of the IgM class. In a healthy body, what job do those antibodies do?",
     "answer": "They stick to damaged and dying cells and mark them for clearance.",
     "choices": [
       "They stick to damaged and dying cells and mark them for clearance.",
@@ -14665,7 +14652,7 @@
   },
   {
     "tier": 5,
-    "question": "About 78 percent of Americans living with an autoimmune disease are women, and nobody has explained why. In 2024 Howard Chang's team went after the best clue available: Xist, a long RNA that only females make, which coats one of a female's two X chromosomes to switch it off and drags a crowd of proteins along with it. To find out whether Xist itself was part of the answer, what did they do?",
+    "question": "Howard Chang's team went after the best clue available in 2024: Xist, a long RNA that only females make, which coats one of a female's two X chromosomes to switch it off. About 78 percent of Americans living with an autoimmune disease are women, and nobody has explained why. To find out whether Xist itself was part of the answer, what did the team do?",
     "answer": "Engineered male mice to make a non-silencing form of Xist.",
     "choices": [
       "Engineered male mice to make a non-silencing form of Xist.",
@@ -14678,7 +14665,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1966 a 27-year-old venereal-disease investigator inside the US Public Health Service, Peter Buxtun, filed a formal written objection to the Tuskegee syphilis study. He was overruled. He argued it in person in Atlanta in 1967. He was overruled again. In 1972 he finally did the one thing that actually closed the study within months. What did he do?",
+    "question": "Peter Buxtun, a 27-year-old investigator in the US Public Health Service, filed a written objection against the Tuskegee syphilis study in 1966. He was overruled. He argued it in person in Atlanta in 1967 and was overruled again. In 1972 he did the one thing that closed the study within months. What did he do?",
     "answer": "He handed the file to a reporter",
     "choices": [
       "He handed the file to a reporter",
@@ -14691,7 +14678,7 @@
   },
   {
     "tier": 3,
-    "question": "Harrison Martland was the medical examiner for Essex County, New Jersey, in the 1920s. Radium-dial painters were dying and their employers denied any link to the paint they had been licking to point their brushes. Martland could not X-ray the whole body of a living woman, but he found a way to prove the paint was still inside her using a single exhalation. What did he capture from her breath?",
+    "question": "Harrison Martland, medical examiner for Essex County, New Jersey, took a single exhalation from a living radium-dial painter in the 1920s. Her employers denied any link to the paint she had licked to point her brush, and he could not X-ray her whole body. What did he capture from her breath to prove the paint was still inside her?",
     "answer": "A trace of radon gas",
     "choices": [
       "A trace of radon gas",
@@ -14704,7 +14691,7 @@
   },
   {
     "tier": 3,
-    "question": "The Radium Girls' bosses controlled the payroll, the medical records, and the courtroom. Their bodies, however, were their own. Martland worked out what to do with the exhumed dead: he laid their bones on unexposed photographic plates for several weeks. When developed, the plates showed a soft image printed into the emulsion. Where had the image come from?",
+    "question": "Harrison Martland laid the bones of exhumed radium-dial painters on unexposed photographic plates for several weeks. The bosses had controlled the payroll, the medical records and the courtroom, but not the women's own bodies. When developed, the plates showed a soft image printed into the emulsion. Where had the image come from?",
     "answer": "The bones themselves were radioactive",
     "choices": [
       "The bones themselves were radioactive",
@@ -14717,7 +14704,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2010 the world learned that the US Public Health Service, in Guatemala during the late 1940s, had on purpose infected hundreds of people with syphilis and gonorrhoea. The story came out sixty-two years after it happened. Where, exactly, was the evidence found?",
+    "question": "Susan Reverby, a historian, brought a buried story to light in 2010: the US Public Health Service (PHS) had on purpose infected hundreds of people in Guatemala with syphilis and gonorrhoea during the late 1940s. It came out sixty-two years after it happened. Where, exactly, was the evidence found?",
     "answer": "In the personal papers of a dead PHS doctor",
     "choices": [
       "In the personal papers of a dead PHS doctor",
@@ -14729,21 +14716,8 @@
     "topic": "how-a-dark-chapter-gets-found"
   },
   {
-    "tier": 5,
-    "question": "Frances Kelsey, the FDA (Food and Drug Administration) reviewer who kept thalidomide off the US market in 1961, was not braver than her critics and not more famous. She simply kept asking the drug's maker for one specific thing and refused to sign until she got it. She never got it. What was the specific thing she kept demanding?",
-    "answer": "Adequate animal safety data on the drug",
-    "choices": [
-      "Adequate animal safety data on the drug",
-      "A signed sign-off from a foreign regulator",
-      "A larger sample of surveyed US patients",
-      "The chemist's original synthesis notes"
-    ],
-    "context": "The data did not exist because the drug had never been properly tested for pregnancy safety. Thousands of babies in Europe were born with severe birth defects; Kelsey's demand for evidence prevented an American cohort. The test was never courage - it was evidence. Source: fda.gov/about-fda/histories-product-regulation.",
-    "topic": "how-a-dark-chapter-gets-found"
-  },
-  {
     "tier": 2,
-    "question": "A small forward-facing tube juts from an airliner's nose today and gives the pilot his airspeed - the number he can least afford to lose. Its ancestor was built in 1732 by Henri Pitot, an engineer of the French Academie Royale des Sciences. Pitot's original tube worked by facing an oncoming flow, letting the fluid pile up inside, and reading how high it climbed - the faster the flow, the higher the column. The first thing he pushed his instrument into was not the sky. What was it?",
+    "question": "Henri Pitot built an instrument in 1732 that faced an oncoming flow, let the fluid pile up inside and read how high it climbed. Its descendant juts from an airliner's nose today and gives the pilot his airspeed. The first thing Pitot pushed his instrument into was not the sky. What was it?",
     "answer": "The current of the Seine, to learn how fast the river ran",
     "choices": [
       "The current of the Seine, to learn how fast the river ran",
@@ -14756,7 +14730,7 @@
   },
   {
     "tier": 2,
-    "question": "A Boeing 757 sat 20 days at Puerto Plata in the Dominican Republic. For at least two nights, no one had put the covers back on its pitot tubes -- the front tubes that read airspeed. It took off on 6 February 1996. The captain's dial showed 350 knots while the plane was really doing 220. The autopilot believed the dial, and all 189 aboard died. What was inside his tube?",
+    "question": "A crew took off from Puerto Plata in the Dominican Republic on 6 February 1996 in a Boeing 757 whose pitot tubes, the front tubes that read airspeed, had stood uncovered for at least two nights. The captain's dial showed 350 knots at a true 220. The autopilot believed it, and all 189 aboard died. What was inside his tube?",
     "answer": "A mud dauber wasp's nest, built of mud and grit",
     "choices": [
       "A mud dauber wasp's nest, built of mud and grit",
@@ -14769,7 +14743,7 @@
   },
   {
     "tier": 2,
-    "question": "Hold a strip of paper to your lower lip and blow across the top of it: the far end rises. Generations of teachers have called this Bernoulli's principle at work, the fast air above being low-pressure air that lifts the paper. Now turn the strip over and blow along its underside instead, with nothing at all moving above it. What does the strip do?",
+    "question": "A student holds a strip of paper to her lower lip and blows across the top, and the far end rises. Teachers call this Bernoulli's principle: the fast air above is low-pressure air that lifts the paper. She turns the strip over and blows along its underside, with nothing moving above it. What does the strip do?",
     "answer": "It rises again, just as it did before",
     "choices": [
       "It rises again, just as it did before",
@@ -14782,7 +14756,7 @@
   },
   {
     "tier": 2,
-    "question": "A glass pipe on a physics bench narrows to a throat and widens again, with slender liquid-filled side tubes tapped into its wall along the way. Water is pumped steadily through, the same amount passing every point, so at the pinch it must hurry. Each side tube reports the pressure at its own spot on the wall. What do they show?",
+    "question": "A physics class pumps water through a glass pipe on the bench. It narrows to a throat and widens again, with liquid-filled side tubes tapped into its wall. The same amount passes every point, so at the pinch the water must hurry. Each side tube reports the pressure at its spot. What do they show?",
     "answer": "The liquid stands lowest at the throat",
     "choices": [
       "The liquid stands lowest at the throat",
@@ -14795,7 +14769,7 @@
   },
   {
     "tier": 3,
-    "question": "Cambridge aerodynamics professor Holger Babinsky asks audiences if they were taught this story about how a wing lifts. The air splits at the nose. The top of the wing is the longer path. The two streams meet again at the back edge, so the top air must hurry. Faster air runs at lower pressure, so the wing is sucked up. About 95% of hands go up, and Babinsky says only a few know it is wrong. Which of those four steps is the invention?",
+    "question": "An audience listens as Holger Babinsky, a Cambridge aerodynamics professor, asks who was taught this story of how a wing lifts. The air splits at the nose. The top is the longer path. The two streams meet again at the back edge, so the top air must hurry. Faster air runs at lower pressure, so the wing is sucked up. About 95% of hands go up. Which of those four steps is the invention?",
     "answer": "That the two halves rejoin at the trailing edge",
     "choices": [
       "That the two halves rejoin at the trailing edge",
@@ -14808,7 +14782,7 @@
   },
   {
     "tier": 3,
-    "question": "Holger Babinsky mounted an aerofoil in a Cambridge wind tunnel and released pulses of smoke into the airflow, filming what became of them. Each pulse split at the wing's nose, half riding over the humped top and half running along underneath; he published the frames in Physics Education in 2003. Freeze one frame and look at the wing's trailing edge. Where have the two halves of a single pulse got to?",
+    "question": "Holger Babinsky mounted an aerofoil in a Cambridge wind tunnel and released pulses of smoke into the airflow, filming what became of them. Each pulse split at the wing's nose, half riding over the humped top and half running along underneath; he published the frames in 2003. In a single frame, where have the two halves of one pulse got to?",
     "answer": "The top half is past the trailing edge; the bottom half is not",
     "choices": [
       "The top half is past the trailing edge; the bottom half is not",
@@ -14821,7 +14795,7 @@
   },
   {
     "tier": 3,
-    "question": "On the schoolbook story an aeroplane could never fly upside down. Rolled onto its back, a wing's humped surface is now the lower one, so the longer path is underneath and the wing ought to be pressed toward the ground. Stunt pilots hold steady inverted flight at every airshow. What keeps the upside-down wing lifting?",
+    "question": "A stunt pilot rolls onto his back at an airshow and holds steady inverted flight. On the schoolbook story he should not be able to: the wing's humped surface is now the lower one, so the longer path is underneath and the wing ought to be pressed toward the ground. What keeps the upside-down wing lifting?",
     "answer": "The pilot holds the nose up, and the wing's tilt alone makes the lift",
     "choices": [
       "The pilot holds the nose up, and the wing's tilt alone makes the lift",
@@ -14847,7 +14821,7 @@
   },
   {
     "tier": 4,
-    "question": "The photographer Paul Bowen, shooting for Cessna, caught an aeroplane a moment after it had passed low over a flat bank of fog. Where the machine went by, a huge hole now stands open in the grey deck. Aerodynamicists reprint the frame whenever they argue about lift. What punched the hole?",
+    "question": "Paul Bowen, shooting for Cessna, caught an aeroplane a moment after it had passed low over a flat bank of fog. Where the machine went by, a huge hole stood open in the grey deck. Aerodynamicists reprint the frame whenever they argue about lift. What punched the hole?",
     "answer": "The wing had thrown a whole column of air downward as it passed",
     "choices": [
       "The wing had thrown a whole column of air downward as it passed",
@@ -14873,7 +14847,7 @@
   },
   {
     "tier": 5,
-    "question": "Write down the ideal-flow equations for air streaming past a wing and they refuse to give a single answer. They allow an infinity of solutions, each with a different circulation, a different strength of spin running round the wing, and each satisfies the mathematics perfectly. Only one of them describes a real wing in real air. What one physical requirement picks it out?",
+    "question": "An engineer writes down the ideal-flow equations for air streaming past a wing, and they refuse to give a single answer. They allow an infinity of solutions, each with a different circulation, a different strength of spin running round the wing, and each satisfies the mathematics perfectly. Only one of them describes a real wing in real air. What one physical requirement picks it out?",
     "answer": "That the flow must leave the sharp trailing edge smoothly, not whip round it",
     "choices": [
       "That the flow must leave the sharp trailing edge smoothly, not whip round it",
@@ -14886,7 +14860,7 @@
   },
   {
     "tier": 5,
-    "question": "Two camps argue about a wing. One says lift is a pressure difference: lower pressure pulling from above, higher pressure pushing from below. The other says lift is Newton's third law: the wing turns air downward and the air shoves back. Each calls the other's account a mere by-product. The Euler equations, which govern the flow itself, settle the quarrel. What do they say about which of the two comes first?",
+    "question": "Two engineers argue about a wing at a blackboard. One says lift is a pressure difference: lower pressure above, higher pressure below. The other says lift is Newton's third law: the wing turns air downward and the air shoves back. Each calls the other's account a mere by-product. The Euler equations, which govern the flow itself, settle the quarrel. What do those equations say about which of the two comes first?",
     "answer": "Neither is primary; pressure and turned flow produce each other together",
     "choices": [
       "Neither is primary; pressure and turned flow produce each other together",
@@ -14899,7 +14873,7 @@
   },
   {
     "tier": 1,
-    "question": "In November 1639, in the village of Much Hoole in England, the young astronomer Jeremiah Horrocks became the first person ever to predict and observe Venus crossing the face of the Sun. Put your eye to the far end of a telescope aimed at the Sun and you are blinded in an instant. Horrocks watched the transit for half an hour and kept his sight. How?",
+    "question": "Jeremiah Horrocks became the first person ever to predict and observe Venus crossing the Sun, at Much Hoole in England in 1639. An eye put to his telescope would have been blinded in an instant. He watched for half an hour and kept his sight. How?",
     "answer": "He cast the Sun's image out of the telescope onto paper.",
     "choices": [
       "He cast the Sun's image out of the telescope onto paper.",
@@ -14912,7 +14886,7 @@
   },
   {
     "tier": 1,
-    "question": "The Greek astronomer Aristarchus of Samos, around 280 BC, wanted to know how much farther the Sun is than the Moon. He had no instrument but his own eyes and a plan of pure geometry. He would wait for one particular moment, then take a single measurement. Which moment did he wait for?",
+    "question": "Aristarchus of Samos set out around 280 BC to learn how much farther the Sun is than the Moon. He had only his eyes and a plan of pure geometry: wait for one particular moment, then take a single measurement. Which moment did he wait for?",
     "answer": "When the Moon showed exactly half lit.",
     "choices": [
       "When the Moon showed exactly half lit.",
@@ -14925,7 +14899,7 @@
   },
   {
     "tier": 2,
-    "question": "Edmond Halley published his method for measuring the Sun's distance in the Philosophical Transactions of 1716. His method depended on a transit of Venus, and the next two transits would not occur until 1761 and 1769. Halley knew he would never live to see either one. What did Halley put in the closing lines of that paper?",
+    "question": "Edmond Halley printed his method for measuring the Sun's distance in the Philosophical Transactions of 1716. It depended on a transit of Venus, and the next two would not occur until 1761 and 1769. He knew he would live to see neither one. What did Halley put in the closing lines of that paper?",
     "answer": "A plea to strangers not yet born to make the observation.",
     "choices": [
       "A plea to strangers not yet born to make the observation.",
@@ -14938,7 +14912,7 @@
   },
   {
     "tier": 2,
-    "question": "Edmond Halley's way of measuring the Sun's distance needs two observers on far-apart parts of Earth. Each sees the planet cut a slightly different line across the Sun's face, so each records a slightly different crossing time - and that difference is the whole measurement. Mercury crosses the Sun too, and more often. Why did Halley insist on Venus?",
+    "question": "Two observers on far-apart parts of Earth time one planet crossing the Sun in Edmond Halley's way of measuring the Sun's distance. Each sees it cut a slightly different line, so each records a slightly different crossing time, and that difference is the whole measurement. Mercury crosses the Sun too, and more often. Why did Halley insist on Venus?",
     "answer": "Venus passes far nearer Earth, so its shift is far bigger.",
     "choices": [
       "Venus passes far nearer Earth, so its shift is far bigger.",
@@ -14951,7 +14925,7 @@
   },
   {
     "tier": 2,
-    "question": "Guillaume Le Gentil left Paris in March 1760 for Pondicherry in India, to time the transit of 6 June 1761. The British took the town before he arrived, and on transit morning he was still at sea, unable to fix his position on a rolling deck - and a shipboard timing is worthless. Rather than go home, he stayed in the Indian Ocean for the eight years to the next transit. What survey did he carry out?",
+    "question": "Guillaume Le Gentil left Paris in March 1760 to time the transit of 6 June 1761 from Pondicherry in India. The British took the town before he arrived, and on transit morning he was still at sea, where a shipboard timing is worthless. Rather than go home, he stayed in the Indian Ocean for the eight years to the next transit. What survey did he carry out?",
     "answer": "He charted the east coast of Madagascar.",
     "choices": [
       "He charted the east coast of Madagascar.",
@@ -14964,7 +14938,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1639 Kepler's Rudolphine Tables were the best star tables in Europe. They promised no transit of Venus before 1761. Jeremiah Horrocks, barely in his twenties, was at Much Hoole in Lancashire with a single telescope. On 24 November that year, by the old Julian calendar England still used, he was watching the Sun anyway. What had put him there?",
+    "question": "Jeremiah Horrocks, barely in his twenties, sat at Much Hoole in Lancashire with a single telescope, watching the Sun on 24 November 1639 by the old Julian calendar England still used. Kepler's Rudolphine Tables, the best star tables in Europe, promised no transit of Venus before 1761. What had put him there?",
     "answer": "He had reworked Kepler's own numbers and found the crossing himself.",
     "choices": [
       "He had reworked Kepler's own numbers and found the crossing himself.",
@@ -14977,7 +14951,7 @@
   },
   {
     "tier": 3,
-    "question": "For the 1761 transit the French astronomer Jean-Baptiste Chappe d'Auteroche hauled his instruments across a continent to Tobolsk in Siberia. That spring the rivers there flooded worse than anyone could remember. Chappe timed the whole crossing successfully - from a hilltop, with armed Cossacks standing round him. Why did he need the guard?",
+    "question": "Jean-Baptiste Chappe d'Auteroche hauled his instruments across a continent to Tobolsk in Siberia for the 1761 transit. That spring the rivers there flooded worse than anyone could remember. He timed the whole crossing successfully from a hilltop, with armed Cossacks standing round him. Why did he need the guard?",
     "answer": "Peasants blamed that spring's floods on his meddling with the Sun.",
     "choices": [
       "Peasants blamed that spring's floods on his meddling with the Sun.",
@@ -14990,7 +14964,7 @@
   },
   {
     "tier": 3,
-    "question": "Guillaume Le Gentil had lost the 1761 transit at sea, and had waited eight years in the Indian Ocean for the next one. On the morning of the 1769 transit a cloud covered the Sun over Pondicherry, while Manila - the station he had given up - stayed clear all day. Dysentery and a hurricane delayed him further. He crossed into France in October 1771, after eleven years, six months and thirteen days away. What had French law done with him in the meantime?",
+    "question": "Guillaume Le Gentil crossed back into France in October 1771, after eleven years, six months and thirteen days away. He had lost the 1761 transit at sea, and on the morning of the 1769 transit a cloud had covered the Sun over Pondicherry. What had French law done with him in the meantime?",
     "answer": "It had declared him dead and let his heirs divide his estate.",
     "choices": [
       "It had declared him dead and let his heirs divide his estate.",
@@ -15003,7 +14977,7 @@
   },
   {
     "tier": 4,
-    "question": "James Cook took his ship the Endeavour to Tahiti for the transit of 3 June 1769 and set up his instruments in a fortified camp on the beach at Matavai Bay. On the day, he wrote, 'not a Cloud was to be seen the whole day and the Air was perfectly clear.' Cook, Charles Green and Daniel Solander each timed the exact instants when Venus's edge met the Sun's - and their three sets of times disagreed far more than anyone had expected. What did Cook's journal blame?",
+    "question": "James Cook took the Endeavour to Matavai Bay in Tahiti for the transit of 3 June 1769. That day, he wrote, 'not a Cloud was to be seen the whole day and the Air was perfectly clear.' Cook, Charles Green and Daniel Solander each timed the instants when Venus's edge met the Sun's, and their three sets of times disagreed far more than anyone had expected. What did Cook's journal blame?",
     "answer": "A dusky shade clinging round the body of the planet.",
     "choices": [
       "A dusky shade clinging round the body of the planet.",
@@ -15016,7 +14990,7 @@
   },
   {
     "tier": 4,
-    "question": "The transit campaigns were mounted to measure a single distance. That is not what they are best remembered for today. Watching the 1761 crossing from St Petersburg, Mikhail Lomonosov noticed something at the two instants when Venus sat half on and half off the Sun's face. Nobody had sailed anywhere to look for that detail, and he interpreted it correctly on the spot. What had Lomonosov become the first human being to detect?",
+    "question": "Mikhail Lomonosov watched the 1761 crossing from St Petersburg and noticed something at the two instants when Venus sat half on and half off the Sun's face. The transit campaigns had been mounted to measure a single distance, and nobody had sailed anywhere to look for that detail. He interpreted it correctly on the spot. What had Lomonosov become the first human being to detect?",
     "answer": "An atmosphere on another planet.",
     "choices": [
       "An atmosphere on another planet.",
@@ -15029,7 +15003,7 @@
   },
   {
     "tier": 5,
-    "question": "The black drop defeated Halley's method. As Venus's disc meets the inner edge of the Sun, it seems to stretch a dark thread back to that edge, like a drop refusing to fall, and no two observers agree on the instant it breaks. It smeared the timings by around ten seconds; Halley's arithmetic had needed two. Astronomers argued for a century about the cause, and most of them blamed something belonging to Venus itself. Which observation ruled that out?",
+    "question": "An observer at a transit of Venus watched the planet's disc meet the Sun's inner edge and seem to stretch a dark thread back to that edge, like a drop refusing to fall. This black drop smeared the timings by around ten seconds; Halley's arithmetic had needed two. Astronomers argued for a century about the cause, and most blamed something belonging to Venus itself. Which observation ruled that out?",
     "answer": "Mercury's transits show the same thread, and Mercury has no air.",
     "choices": [
       "Mercury's transits show the same thread, and Mercury has no air.",
@@ -15042,7 +15016,7 @@
   },
   {
     "tier": 5,
-    "question": "Maximilian Hell, a Jesuit astronomer, timed the 1769 transit from Vardo, inside the Arctic Circle. Decades later Carl Littrow, who had inherited Hell's papers at Vienna, went through the original data sheets, found figures scraped out and written over in ink of a slightly different shade, and published the charge that Hell had faked his results. The charge stood for decades. In 1883 Simon Newcomb examined the very same sheets. What did Newcomb discover?",
+    "question": "Carl Littrow, who had inherited Maximilian Hell's papers at Vienna, went through the original data sheets from Hell's 1769 transit at Vardo, inside the Arctic Circle. He found figures scraped out and written over in ink of a slightly different shade, and he published the charge that Hell had faked his results. The charge stood for decades. In 1883 Simon Newcomb examined the very same sheets. What did Newcomb discover?",
     "answer": "Littrow was colour-blind, and the two inks were one ink.",
     "choices": [
       "Littrow was colour-blind, and the two inks were one ink.",
@@ -15055,7 +15029,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 1700s astronomers measured the size of the whole solar system by watching Venus cross in front of the Sun from different spots on Earth - the transits of 1761 and 1769 - and using the parallax between observers to work out the Earth-Sun distance. The transits gave their best answer long after the last one: Johann Encke's 1824 reanalysis of every 1761 and 1769 timing put the Sun at 153.3 million kilometres, against a true 149.6 million - an error of two and a half per cent wrung out of ships, clouds and shaky pendulum clocks. Then in 1961 teams in the United States, the Soviet Union and Britain each got the figure independently, and none of them watched Venus cross anything. How did the three teams get their figure?",
+    "question": "Johann Encke reworked every 1761 and 1769 transit timing in 1824 and put the Sun at 153.3 million kilometres, against a true 149.6 million, an error of two and a half per cent. Then in 1961 teams in the United States, the Soviet Union and Britain each got the figure independently, and none of them watched Venus cross anything. How did the three teams get their figure?",
     "answer": "They bounced radio pulses off Venus and timed the returning echo.",
     "choices": [
       "They bounced radio pulses off Venus and timed the returning echo.",
@@ -15068,7 +15042,7 @@
   },
   {
     "tier": 1,
-    "question": "Your body is built from tiny cells, most of them only about 10 to 30 micrometres across — that is 10 to 30 millionths of a metre. A single strand of your own hair, by contrast, is about 70 micrometres wide. If you tried to lay your own cells side by side to span the width of one hair, how many would fit?",
+    "question": "A student lays one of her hairs under a microscope, a strand about 70 micrometres wide, or 70 millionths of a metre. Most of her cells measure only about 10 to 30 micrometres across. How many of them, side by side, would span the hair?",
     "answer": "About three to seven",
     "choices": [
       "About three to seven",
@@ -15081,7 +15055,7 @@
   },
   {
     "tier": 2,
-    "question": "Ron Sender and Ron Milo's 2016 count put the human body at about 30 trillion cells. Eva Bianconi's 2013 count put it at about 37 trillion. Both counts agree on one surprise: roughly 84 percent of your cells belong to a single tiny kind that contributes only about 4 percent of your body mass. Which kind?",
+    "question": "Ron Sender and Ron Milo counted the cells of a human body in 2016 and got about 30 trillion; Eva Bianconi's 2013 count had reached about 37 trillion. Both agree on one surprise: roughly 84 percent of those cells belong to a single tiny kind that contributes only about 4 percent of the body's mass. Which kind?",
     "answer": "Red blood cells",
     "choices": [
       "Red blood cells",
@@ -15094,7 +15068,7 @@
   },
   {
     "tier": 3,
-    "question": "For forty years textbooks and TED (Technology, Entertainment, Design) talks repeated a startling line: 'you are only 10 percent human -- bacteria outnumber your own cells ten to one.' In 2016 Ron Sender, Shai Fuchs and Ron Milo simply redid the arithmetic. What ratio did the fresh count give?",
+    "question": "Ron Sender, Shai Fuchs and Ron Milo simply redid the arithmetic in 2016 on a line textbooks and talks had repeated for forty years: 'you are only 10 percent human -- bacteria outnumber your own cells ten to one.' What ratio did the fresh count give?",
     "answer": "Roughly 1.3 bacteria to 1 human cell",
     "choices": [
       "Roughly 1.3 bacteria to 1 human cell",
@@ -15107,7 +15081,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2022 marine biologists exploring the Guadeloupe archipelago in the Caribbean pulled sunken red-mangrove leaves from the shallow seafloor. On the rotting leaves they saw long white threads. Each thread turned out to be a single bacterial cell -- a shocking discovery, because almost every bacterium ever known has been so tiny you can only spot it under a microscope. When the team measured one, how big was that single cell?",
+    "question": "Marine biologists pulled sunken red-mangrove leaves from the shallow seafloor of the Guadeloupe archipelago in the Caribbean in 2022 and saw long white threads on the rotting leaves. Each thread turned out to be a single bacterial cell, though almost every bacterium ever known has been tiny. When the team measured one, how big was that single cell?",
     "answer": "Up to about 2 centimetres long -- visible without a microscope",
     "choices": [
       "Up to about 2 centimetres long -- visible without a microscope",
@@ -15120,7 +15094,7 @@
   },
   {
     "tier": 5,
-    "question": "A typical bacterium is about 5 micrometres long — small enough that food and oxygen flow easily through its whole interior. In 2022 biologists exploring mangrove swamps in the French Caribbean island of Guadeloupe found Thiomargarita magnifica, a bacterium up to two centimetres long — thousands of times bigger than normal. By the usual rule that a cell's surface must be big enough for its volume, it should starve because its middle is too far from its skin. It does not. What cheat lets the giant get around the surface-area-to-volume trap?",
+    "question": "Biologists lifted Thiomargarita magnifica from a mangrove swamp in Guadeloupe in 2022, a bacterium thousands of times bigger than the usual 5 micrometres. A cell's surface must be big enough for its volume, so by the usual rule it should starve, its middle too far from its skin. It does not. What cheat lets the giant get around that trap?",
     "answer": "A vast internal vacuole pins its living cytoplasm to the outer skin",
     "choices": [
       "A vast internal vacuole pins its living cytoplasm to the outer skin",
@@ -15133,7 +15107,7 @@
   },
   {
     "tier": 5,
-    "question": "The surface-to-volume rule says a cell that grows too big starves in the middle -- yet the single longest cell inside your own body runs from the base of your spine all the way down to your toe. How does one cell get away with being roughly a metre long?",
+    "question": "A runner wiggles her toe, at the far end of the longest cell in her body, which starts at the base of her spine roughly a metre away. The surface-to-volume rule says a cell that grows too big starves in the middle. How does this one get away with it?",
     "answer": "It is a thin thread, so every point is still close to its surface",
     "choices": [
       "It is a thin thread, so every point is still close to its surface",
@@ -15146,7 +15120,7 @@
   },
   {
     "tier": 3,
-    "question": "E. coli is a rod-shaped bacterium that lives by the trillions in every mammal's gut, and it is the workhorse organism of biology labs — cheap to grow, safe to handle, well-studied. In warm broth with all the food it can eat, a single E. coli cell splits into two roughly every 20 minutes. What is the consequence of that little number a first-year microbiology student meets in lab?",
+    "question": "A first-year microbiology student drops a single E. coli cell into warm broth with all the food it can eat. The rod-shaped bacterium, the workhorse organism of biology labs, splits into two roughly every 20 minutes. What is the consequence of that little number?",
     "answer": "One invisible cell becomes a visible colony overnight",
     "choices": [
       "One invisible cell becomes a visible colony overnight",
@@ -15159,7 +15133,7 @@
   },
   {
     "tier": 2,
-    "question": "At the back of your eye sits the retina, a layer of light-sensitive cells. Three kinds of cone cells there let you see colour, and scientists call them the red, green, and blue cones because each is tuned to a different range of light wavelengths. Researchers have carefully measured each cone's response to every wavelength across the rainbow. Where does the cone we call the red one actually peak?",
+    "question": "A biology student labels a diagram of the retina: red cone, green cone, blue cone, each tuned to a different range of light wavelengths. Researchers have carefully measured each cone's response to every wavelength across the rainbow. Where does the so-called red cone actually peak?",
     "answer": "In greenish-yellow, just past the green cone's peak",
     "choices": [
       "In greenish-yellow, just past the green cone's peak",
@@ -15172,7 +15146,7 @@
   },
   {
     "tier": 2,
-    "question": "A phone screen is built from pixels, and each pixel from a few smaller subpixels — small enough that a magnifying loupe pressed against the glass will pull them apart. Fill the screen with a solid patch of yellow, then put the loupe on it. What is actually sitting under the glass where the yellow looks solid?",
+    "question": "A teenager fills her phone screen with a solid patch of yellow and presses a magnifying loupe against the glass. A screen is built from pixels, and each pixel from a few smaller subpixels, small enough for the loupe to pull apart. What is actually sitting under the glass where the yellow looks solid?",
     "answer": "Red and green dots firing together, with no yellow dot",
     "choices": [
       "Red and green dots firing together, with no yellow dot",
@@ -15185,7 +15159,7 @@
   },
   {
     "tier": 2,
-    "question": "On 17 May 1861, at a Royal Institution talk in London, James Clerk Maxwell showed the first lasting color photograph ever made. Thomas Sutton had shot one object three times -- through a red filter, a green filter, and a blue-violet filter. Maxwell then threw the three plates back onto a screen from three lanterns, one filter each, stacked on top of each other. What was the object?",
+    "question": "James Clerk Maxwell stacked three projected plates on one screen at a Royal Institution talk in London on 17 May 1861, one lantern and one filter for each. Thomas Sutton had shot one object three times, through a red filter, a green filter and a blue-violet filter, for this first lasting colour photograph. What was the object?",
     "answer": "A tartan ribbon",
     "choices": [
       "A tartan ribbon",
@@ -15198,7 +15172,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1870s Germany, the physiologist Ewald Hering argued for years with the famous physicist Hermann von Helmholtz about how the eye sees colour. Helmholtz taught that colours mix freely inside your head; Hering said no, some pairs of colours fight each other and refuse to blend. To make his point Hering raised an objection that needs no laboratory, only your imagination. Try to picture each of these four colours in your mind's eye. Which one has no person ever seen?",
+    "question": "Ewald Hering put a test to Hermann von Helmholtz in 1870s Germany that needed no laboratory, only the imagination. Helmholtz taught that colours mix freely in the head; Hering said some pairs of colours fight each other and refuse to blend. Which of these four colours has no person ever seen?",
     "answer": "A reddish green",
     "choices": [
       "A reddish green",
@@ -15211,7 +15185,7 @@
   },
   {
     "tier": 2,
-    "question": "Here is a test you can run right now, while you are reading. Find something a strong solid red — a book cover, a patch of screen — and stare at one point on it, without letting your eyes wander, for a full half-minute. Then look at a blank white wall. A shape floats there. What colour is it?",
+    "question": "A reader stops and stares at a strong solid red book cover, eyes fixed on one point, for a full half-minute. Then she turns to a blank white wall. A shape floats there. What colour is it?",
     "answer": "A green shape",
     "choices": [
       "A green shape",
@@ -15224,7 +15198,7 @@
   },
   {
     "tier": 3,
-    "question": "In November 1801, Thomas Young spoke to the Royal Society about color vision. He had no anatomy to show. Cones would not be found for generations, so his argument rested on reasoning alone. He rejected one theory of the retina. Which theory did he reject?",
+    "question": "Thomas Young spoke to the Royal Society about colour vision in November 1801. He had no anatomy to show, since cones would not be found for generations, so his argument rested on reasoning alone. He rejected one theory of the retina. Which theory did he reject?",
     "answer": "A separate nerve for each of the thousands of tints the eye can tell apart",
     "choices": [
       "A separate nerve for each of the thousands of tints the eye can tell apart",
@@ -15250,7 +15224,7 @@
   },
   {
     "tier": 3,
-    "question": "Send sunlight through a prism and it fans out into a band running from about 700 nanometres at the red end to about 380 at the violet end. Hold a magenta card up against that band and you can search all day without finding a match — magenta is simply not in there. Why not?",
+    "question": "A teacher sends sunlight through a prism and it fans out into a band running from about 700 nanometres at the red end to about 380 at the violet end. She holds a magenta card up against that band and searches all along it without finding a match. Why is magenta not in there?",
     "answer": "Magenta needs long and short wavelengths together, with the middle silent",
     "choices": [
       "Magenta needs long and short wavelengths together, with the middle silent",
@@ -15263,7 +15237,7 @@
   },
   {
     "tier": 4,
-    "question": "Wet collodion plates were, for practical purposes, blind to red light — which means the red-filtered plate in Maxwell's 1861 demonstration had no business recording anything at all. It did, the projection worked, and for a hundred years nobody asked how. In November 1961 Ralph M. Evans published the answer in Scientific American. What had got through?",
+    "question": "Ralph M. Evans took up a question in 1961 that nobody had asked for a hundred years. Wet collodion plates were, for practical purposes, blind to red light, so the red-filtered plate in Maxwell's 1861 demonstration had no business recording anything at all. It did, and the projection worked. According to Evans in Scientific American, what had got through?",
     "answer": "Ultraviolet the red dyes reflected, which the red filter passed",
     "choices": [
       "Ultraviolet the red dyes reflected, which the red filter passed",
@@ -15276,7 +15250,7 @@
   },
   {
     "tier": 4,
-    "question": "Young and Helmholtz had the retina holding a few kinds of receptor, each answering to its own stretch of the spectrum. Ewald Hering had colour riding on opposing pairs, each hue cancelling its partner. For a century the two accounts were treated as rivals; then it turned out both were right, describing the same wire at different points along it. Where does the opponent stage sit?",
+    "question": "Ewald Hering insisted colour runs on opposing pairs, each hue cancelling its partner, against Thomas Young and Hermann von Helmholtz, who had the retina holding a few kinds of receptor. For a century the two accounts were treated as rivals; then it turned out both were right, describing the same wire at different points along it. Where does the opponent stage sit?",
     "answer": "In the retina's own ganglion cells, before the signal leaves the eye",
     "choices": [
       "In the retina's own ganglion cells, before the signal leaves the eye",
@@ -15288,21 +15262,8 @@
     "topic": "how-three-cones-fool-you-into-seeing-every-colour"
   },
   {
-    "tier": 4,
-    "question": "John Dalton read the first scientific account of colour blindness to the Manchester Literary and Philosophical Society in 1794, and the case was his own: he saw scarlet as green and pink as blue, and so did his brother. He blamed a blue tint in the fluid of his own eyeball, and asked that his eyes be opened after he died to check it. They were, in 1844 — the fluid was perfectly clear. His preserved eye stayed in a Manchester collection until 1995, when researchers pulled DNA from it. What did the DNA show?",
-    "answer": "The gene for the green-cone pigment was missing altogether",
-    "choices": [
-      "The gene for the green-cone pigment was missing altogether",
-      "The gene for the red-cone pigment carried one faulty letter",
-      "The gene for the blue-cone pigment had been copied three times",
-      "The gene for the green-cone pigment coded a red-like pigment"
-    ],
-    "context": "The paper was 'Extraordinary Facts Relating to the Vision of Colours', read on 31 October 1794 — nine years before Dalton brought atomic theory to the same room. He died on 27 July 1844, and the 1995 DNA work showed deuteranopia: the medium-wave (green) opsin gene gone entirely. The Swiss naturalist Pierre Prevost coined 'daltonisme' in print in 1827, and 'Daltonism' was still standard in English medical writing well into the twentieth century. His hypothesis was wrong and his self-observation was gold — and he is the one who set up the test that killed his own idea. Sources: grokipedia.com/page/John_Dalton; en.wikipedia.org/wiki/John_Dalton.",
-    "topic": "how-three-cones-fool-you-into-seeing-every-colour"
-  },
-  {
     "tier": 5,
-    "question": "Red-green colour blindness turns up in about one man in twelve and about one woman in two hundred. Blue-yellow deficiency is far rarer — under one person in ten thousand — and it strikes men and women at the same rate. The difference is genetic architecture, not pigment chemistry. What makes the red-green case so lopsided between the sexes?",
+    "question": "A doctor holds up a colour chart for a boy and his sister. Red-green colour blindness turns up in about one man in twelve and about one woman in two hundred, while blue-yellow deficiency, under one person in ten thousand, strikes men and women at the same rate. The difference is genetic architecture, not pigment chemistry. What makes the red-green case so lopsided between the sexes?",
     "answer": "Its two genes sit side by side on the X and trade segments easily",
     "choices": [
       "Its two genes sit side by side on the X and trade segments easily",
@@ -15315,7 +15276,7 @@
   },
   {
     "tier": 5,
-    "question": "On 26 February 2015 Caitlin McNeill posted a photograph to Tumblr asking whether a dress was white and gold or blue and black, and within a day the argument had swallowed the internet. Roman Originals settled the object question: the dress is royal blue and black, and no white-and-gold version was ever made. Everyone arguing was looking at exactly the same pixels. What were the two camps' visual systems disagreeing about?",
+    "question": "Caitlin McNeill posted a photograph to Tumblr on 26 February 2015 asking whether a dress was white and gold or blue and black, and within a day the argument had swallowed the internet. Roman Originals settled the object question: the dress is royal blue and black. Everyone arguing was looking at exactly the same pixels. What were the two camps' visual systems disagreeing about?",
     "answer": "What colour the light falling on the dress had been",
     "choices": [
       "What colour the light falling on the dress had been",
@@ -15328,7 +15289,7 @@
   },
   {
     "tier": 5,
-    "question": "The mantis shrimp is famous for the richest colour equipment on Earth: twelve to sixteen photoreceptor types against the human three, running from deep ultraviolet out to far red. In 2014 Hanne Thoen and colleagues trained the animals and measured, for the first time, how finely they could tell two wavelengths apart. What did the test find?",
+    "question": "Hanne Thoen and her colleagues trained mantis shrimps in 2014 and measured, for the first time, how finely the animals could tell two wavelengths apart. The mantis shrimp is famous for the richest colour equipment on Earth: twelve to sixteen photoreceptor types against the human three. What did the test find?",
     "answer": "They failed below about 25 nanometres apart, where humans manage a few",
     "choices": [
       "They failed below about 25 nanometres apart, where humans manage a few",
@@ -15341,7 +15302,7 @@
   },
   {
     "tier": 5,
-    "question": "About 12 percent of women carry the genetic recipe for a fourth cone type — tetrachromacy, four colour channels instead of three — because a shifted copy of one pigment gene rides alongside the usual set. Carrying the extra cone and using it are different things, though: fewer than one carrier in a hundred shows any measurable gain, and only a handful have ever passed stringent testing. In 2010 Gabriele Jordan's team tested one of those who did, logged as cDa29. What could she do that no three-cone eye can?",
+    "question": "Gabriele Jordan's team tested a woman logged as cDa29 in 2010, one of the roughly 12 percent of women who carry the genetic recipe for a fourth cone type. Fewer than one carrier in a hundred shows any measurable gain, only a handful have passed stringent testing, and her case is still debated. By the team's report, what could she do that a three-cone eye cannot?",
     "answer": "Tell apart yellows and reds that look identical to everyone else",
     "choices": [
       "Tell apart yellows and reds that look identical to everyone else",
@@ -15354,7 +15315,7 @@
   },
   {
     "tier": 3,
-    "question": "On August 27, 2021, the American ODNI (Office of the Director of National Intelligence) — the agency that coordinates the country's 18 intelligence services — did a rare thing. It shared a one-page unclassified summary of where its own agencies disagreed on how the COVID-19 pandemic began, drawing on the National Intelligence Council (NIC) and every intelligence element that had studied the question. How did the paper describe the split?",
+    "question": "A reader opens one unclassified page released on August 27, 2021, by the Office of the Director of National Intelligence (ODNI). It sets out where America's intelligence elements and the National Intelligence Council (NIC) disagreed on how the COVID-19 pandemic began, each judgement carrying its confidence word. How does the page describe the split?",
     "answer": "Four elements plus the NIC leaned spillover; one leaned a lab incident; three declined to choose",
     "choices": [
       "Four elements plus the NIC leaned spillover; one leaned a lab incident; three declined to choose",
@@ -15367,7 +15328,7 @@
   },
   {
     "tier": 3,
-    "question": "American spy agencies like the CIA (Central Intelligence Agency) end their reports with a set phrase -- 'we assess with high confidence' or 'moderate confidence' or 'low confidence.' Every analyst is trained to use those exact words. A kid reading a leaked report might guess 'confidence' means how sure the analyst personally feels. It does not. In official intelligence tradecraft, what do those confidence words actually measure?",
+    "question": "A student reading a report from the Central Intelligence Agency (CIA) stops at a set phrase: 'we assess with low confidence.' Every analyst is trained to use the exact words, high, moderate or low confidence. In official intelligence tradecraft, what do those confidence words actually measure?",
     "answer": "The quality and consistency of the evidence backing the judgement",
     "choices": [
       "The quality and consistency of the evidence backing the judgement",
@@ -15380,7 +15341,7 @@
   },
   {
     "tier": 3,
-    "question": "The 2021 ODNI (Office of the Director of National Intelligence) report told the American public that the country's spy agencies disagreed on how the COVID-19 pandemic began — some leaned toward a natural spillover from animals, others toward an accidental leak from a laboratory in Wuhan, China. But every single intelligence element in the report agreed on one thing about SARS-CoV-2, the virus that causes COVID-19. What did they agree on?",
+    "question": "American intelligence analysts put a divided judgement before the public in 2021 on how the COVID-19 pandemic began. Some leaned toward a natural spillover from animals, at low confidence; the lean toward an accidental leak from a laboratory in Wuhan, China, came at moderate confidence. Every intelligence element in the report agreed on one thing about SARS-CoV-2, the virus that causes the disease. What was it?",
     "answer": "That the virus was not developed as a biological weapon",
     "choices": [
       "That the virus was not developed as a biological weapon",
@@ -15393,7 +15354,7 @@
   },
   {
     "tier": 4,
-    "question": "COVID-19 broke out in Wuhan, China in late 2019, and from the start scientists split over the cause: a natural spillover in a wet market, or a leak from the nearby Wuhan Institute of Virology (WIV) lab that studied bat coronaviruses. From 2021 to 2025, several United States government agencies took fresh looks at the question. In February 2023 one agency that had been publicly undecided shifted its judgment to a lab-related origin, at 'low confidence'. Which agency was it?",
+    "question": "Analysts at one American agency changed their judgement in February 2023 on how COVID-19 began. From the start scientists had split over the cause: a natural spillover in a wet market, or a leak from the nearby Wuhan Institute of Virology. This agency had been publicly undecided, and now it came down on the side of a lab-related origin, at 'low confidence'. Which agency was it?",
     "answer": "The Department of Energy",
     "choices": [
       "The Department of Energy",
@@ -15406,7 +15367,7 @@
   },
   {
     "tier": 5,
-    "question": "On December 2, 2024, the House Select Subcommittee on the Coronavirus Pandemic released its 520-page final report. It said COVID-19 most likely came from a Wuhan lab. One central argument was a biological feature of SARS-CoV-2 not seen in nature among its close cousins. What was that feature?",
+    "question": "Members of the House Select Subcommittee on the Coronavirus Pandemic released a 520-page final report on December 2, 2024, saying COVID-19 most likely came from a Wuhan lab. One central argument was a biological feature of SARS-CoV-2 that the report said is not seen in nature among the virus's close cousins. What was that feature?",
     "answer": "A furin cleavage site in the spike protein",
     "choices": [
       "A furin cleavage site in the spike protein",
@@ -15419,7 +15380,7 @@
   },
   {
     "tier": 5,
-    "question": "The strongest specific piece of evidence for the natural-spillover hypothesis is not a smoking gun but a co-location. On 1 January 2020, hours after the Huanan Seafood Market in Wuhan was closed, Chinese CDC investigators swabbed the stall surfaces. Alongside SARS-CoV-2 RNA they detected DNA from live animals of one particular kind at the wildlife stalls. Which animal?",
+    "question": "Chinese investigators swabbed the stall surfaces at the Huanan Seafood Market in Wuhan on 1 January 2020, hours after it was closed. Alongside the virus's RNA they detected DNA from live animals of one particular kind at the wildlife stalls. That co-location, no smoking gun, is the strongest specific evidence for natural spillover. Which animal was it?",
     "answer": "Raccoon dogs",
     "choices": [
       "Raccoon dogs",
@@ -15432,7 +15393,7 @@
   },
   {
     "tier": 1,
-    "question": "On the night of October 5, 1923, Edwin Hubble aimed the huge 100-inch Hooker telescope at the fuzzy Andromeda cloud. He took a long 45-minute photo on a glass plate. Where was that giant telescope?",
+    "question": "Edwin Hubble aimed the huge 100-inch Hooker telescope at the fuzzy Andromeda cloud on the night of October 5, 1923, and took a long 45-minute photo on a glass plate. Where was that giant telescope?",
     "answer": "Mount Wilson, in California",
     "choices": [
       "Mount Wilson, in California",
@@ -15445,7 +15406,7 @@
   },
   {
     "tier": 1,
-    "question": "On his 1923 Andromeda plate, Edwin Hubble marked three suspected new stars with the letter N, for nova. Then he pulled older Mount Wilson plates of the same patch of sky. One of the N stars was getting brighter and dimmer on a regular schedule. What did he do to that mark?",
+    "question": "With the letter N, for nova, Edwin Hubble marked three suspected new stars on his 1923 Andromeda plate. Older plates of the same patch of sky showed one of them getting brighter and dimmer on a regular schedule. What did he do to that mark?",
     "answer": "Crossed out the N and wrote VAR! in red ink",
     "choices": [
       "Crossed out the N and wrote VAR! in red ink",
@@ -15458,7 +15419,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1923 the American astronomer Edwin Hubble spotted a Cepheid variable — a star whose brightness pulses on a clock — inside the fuzzy Andromeda nebula. Henrietta Leavitt had earlier discovered that the pulse period of a Cepheid tells you its true brightness, so comparing that to how bright it looks gives its distance. Hubble ran the numbers on his one star and got a distance to Andromeda of about 900,000 light years. That answer broke every existing map of the cosmos and proved Andromeda is a whole other galaxy. Today's better answer is how far?",
+    "question": "Edwin Hubble spotted a Cepheid inside the fuzzy Andromeda nebula in 1923, a star whose brightness pulses on a clock. Henrietta Leavitt had found that the pulse gives such a star's true brightness, so comparing that with how bright it looks gives its distance. Hubble got about 900,000 light years. How far away does today's better answer put Andromeda?",
     "answer": "About 2.5 million light years",
     "choices": [
       "About 2.5 million light years",
@@ -15471,7 +15432,7 @@
   },
   {
     "tier": 3,
-    "question": "Three years before Hubble's Cepheid settled the question, the two leading American astronomers on the size of the universe faced off in a public showdown at the U.S. National Museum in Washington, D.C., on 26 April 1920. Who were the two men on stage?",
+    "question": "Two leading American astronomers faced off on the size of the universe in a public showdown at the U.S. National Museum in Washington, D.C., on 26 April 1920, three years before Hubble's Cepheid settled the question. Who were the two men on stage?",
     "answer": "Harlow Shapley and Heber Curtis",
     "choices": [
       "Harlow Shapley and Heber Curtis",
@@ -15484,7 +15445,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Great Debate, Harlow Shapley's strongest card was a set of photographic measurements by Adriaan van Maanen. He had compared plates of spiral nebulae like the Pinwheel taken years apart. Van Maanen claimed the plates showed the spirals doing something that would be impossible at any great distance. What did they seem to be doing?",
+    "question": "Harlow Shapley played his strongest card in the Great Debate: a set of photographic measurements by Adriaan van Maanen, who had compared plates of spiral nebulae like the Pinwheel taken years apart. Van Maanen claimed the plates showed the spirals doing something that would be impossible at any great distance. What did they seem to be doing?",
     "answer": "Visibly rotating over a few years",
     "choices": [
       "Visibly rotating over a few years",
@@ -15497,7 +15458,7 @@
   },
   {
     "tier": 3,
-    "question": "The redshifts later plotted with Hubble's distances were not Hubble's data. A quieter astronomer at Lowell began measuring spiral spectra in 1912. Andromeda moved toward Earth at about 300 km per second. But of 25 other spirals he measured by 1917, what were almost all of them doing?",
+    "question": "Vesto Slipher, a quieter astronomer at the Lowell Observatory, began measuring spiral spectra in 1912, and the redshifts later plotted with Hubble's distances were his data, not Hubble's. He found Andromeda moving toward Earth at about 300 km per second. Of 25 other spirals he measured by 1917, what were almost all of them doing?",
     "answer": "Racing away from Earth",
     "choices": [
       "Racing away from Earth",
@@ -15510,7 +15471,7 @@
   },
   {
     "tier": 4,
-    "question": "Hubble's partner on the 1929 distance-velocity paper had an unusual background for a Mount Wilson astronomer. He had left school at 14, hauled supplies up the mountain as a mule driver, then worked as the observatory janitor. He was hired to the scientific staff in 1919. What formal schooling did he ever have?",
+    "question": "Milton Humason put his name beside Edwin Hubble's on the 1929 distance-velocity paper, an unusual place for a man who had hauled supplies up the mountain as a mule driver and then worked as the observatory janitor. He was hired to the scientific staff in 1919. What formal schooling did he ever have?",
     "answer": "None past 8th grade",
     "choices": [
       "None past 8th grade",
@@ -15523,7 +15484,7 @@
   },
   {
     "tier": 5,
-    "question": "The Belgian Catholic priest and physicist Georges Lemaitre worked out in 1927 that Einstein's own equations of general relativity implied a growing, expanding universe with a beginning — what we now call the Big Bang. Lemaitre met Einstein in Brussels to explain the idea in person. Einstein listened, agreed the mathematics was correct, and shot back a famous French one-liner rejecting the physics. By Lemaitre's own memory, what did Einstein say?",
+    "question": "Georges Lemaitre, a Belgian Catholic priest and physicist, met Albert Einstein in Brussels to explain in person what he had worked out in 1927: that Einstein's own equations of general relativity pointed to a growing universe with a beginning. Einstein listened and shot back a famous French one-liner. By Lemaitre's own memory, what did Einstein say?",
     "answer": "Your calculations are correct, but your physics is abominable",
     "choices": [
       "Your calculations are correct, but your physics is abominable",
@@ -15536,7 +15497,7 @@
   },
   {
     "tier": 5,
-    "question": "Hubble's 1929 slope gave a Hubble constant of about 500 km/s per megaparsec. That meant a universe only about 2 billion years old, younger than rocks already dated on Earth. In 1952, Walter Baade told a stunned IAU (International Astronomical Union) meeting in Rome about a fix. It roughly doubled every extragalactic distance overnight. What had Baade found?",
+    "question": "Walter Baade told a stunned International Astronomical Union meeting in Rome in 1952 about a fix that roughly doubled every extragalactic distance overnight. Hubble's 1929 slope had given a Hubble constant of about 500 km/s per megaparsec, which meant a universe only about 2 billion years old, younger than rocks already dated on Earth. What had Baade found?",
     "answer": "Cepheid variables come in two populations with different luminosities",
     "choices": [
       "Cepheid variables come in two populations with different luminosities",
@@ -15549,7 +15510,7 @@
   },
   {
     "tier": 5,
-    "question": "Modern astronomy has TWO good ways to pin down the Hubble constant. The Planck satellite fits the cosmic microwave background and reads 67.4 km/s/Mpc; the SH0ES team's local Cepheid-and-supernova ladder (confirmed by the James Webb Space Telescope in 2023) reads about 73. The two answers now disagree at more than 5 sigma. Where does the field stand on WHY?",
+    "question": "The SH0ES team read the Hubble constant from its local ladder of Cepheids and supernovae and got about 73 km/s/Mpc, confirmed by the James Webb Space Telescope in 2023. The Planck satellite, fitting the cosmic microwave background, reads 67.4. The two answers now disagree by more than chance can explain. Where does the field stand on why?",
     "answer": "Nobody yet knows -- it may be a hidden systematic, or genuinely new physics",
     "choices": [
       "Nobody yet knows -- it may be a hidden systematic, or genuinely new physics",
@@ -15562,7 +15523,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1991 comedy film Naked Gun 2½: The Smell of Fear, a bar-room scene was dressed with framed photographs of history's most famous disasters. The gag was that the year-old Hubble Space Telescope — NASA's flagship observatory, which had just returned blurry images because of a flawed mirror — had been hung on the wall among them. Which pair did the joke put Hubble between?",
+    "question": "The makers of the 1991 comedy Naked Gun 2½: The Smell of Fear dressed a bar-room scene with framed photographs of history's most famous disasters. Among them hung the year-old Hubble Space Telescope and its flawed mirror. Which pair did the joke put Hubble between?",
     "answer": "The Hindenburg and the Titanic",
     "choices": [
       "The Hindenburg and the Titanic",
@@ -15575,7 +15536,7 @@
   },
   {
     "tier": 1,
-    "question": "Hubble's mirror had been polished a bit too flat around its outer rim. Opticians call that flaw spherical aberration. In 1990, both of Hubble's high-resolution cameras aimed at a single star and sent back the same photo. What did that photo of the star show?",
+    "question": "Astronomers aimed both of Hubble's high-resolution cameras at a single star in 1990, and each sent back the same photo. The mirror's outer rim was a bit too flat, a flaw opticians call spherical aberration. What did that photo of the star show?",
     "answer": "A small bright core drowned in a wide halo",
     "choices": [
       "A small bright core drowned in a wide halo",
@@ -15588,7 +15549,7 @@
   },
   {
     "tier": 1,
-    "question": "NASA's Hubble Space Telescope, launched into orbit in April 1990, carries a 2.4-metre primary mirror — a curved disc of glass coated in a thin skin of aluminium to reflect starlight to the cameras behind it. When the first images came back, they were fuzzy. The mirror had been polished to the wrong curve — its outer edge was too flat, and starlight from the edge focused in a different place from starlight from the middle. By how much was that edge too flat?",
+    "question": "Perkin-Elmer's polishers left the outer edge of Hubble's 2.4-metre mirror too flat, and the telescope, launched in April 1990, sent back fuzzy first images. Starlight from the edge focused in a different place from starlight from the middle. By how much was that edge too flat?",
     "answer": "About 2.2 micrometres, roughly 1/450 of a millimetre",
     "choices": [
       "About 2.2 micrometres, roughly 1/450 of a millimetre",
@@ -15601,7 +15562,7 @@
   },
   {
     "tier": 2,
-    "question": "NASA's Allen Commission could not lay a hand on Hubble's primary mirror in 1990 -- the 2.4-metre disc was already in orbit. What the Board could read was Perkin-Elmer's own Danbury file: the tests made on the finished glass against its template, the target shape the polishers had been told to work to. How closely did the glass match that template?",
+    "question": "Lew Allen's board opened Perkin-Elmer's Danbury file in 1990, since Hubble's 2.4-metre mirror was already in orbit and out of reach. The file held the tests on the finished glass against its template, the target shape the polishers had been told to work to. How closely did the glass match that template?",
     "answer": "It beat the contract tolerance across the whole disc",
     "choices": [
       "It beat the contract tolerance across the whole disc",
@@ -15614,7 +15575,7 @@
   },
   {
     "tier": 2,
-    "question": "Perkin-Elmer's opticians could not judge Hubble's shape by eye. They read it off a null corrector -- a rig of two small mirrors and a field lens that shows a featureless pattern only when the glass has reached the shape wanted -- and polished until it came out clean. In 1990 the Allen Commission measured the rig. What was wrong with it?",
+    "question": "Perkin-Elmer's opticians polished Hubble's mirror against a null corrector, a rig of two small mirrors and a field lens that shows a featureless pattern only when the glass has reached the shape wanted. In 1990 Lew Allen's board measured the rig. What was wrong with it?",
     "answer": "Its field lens sat about a millimetre out of position",
     "choices": [
       "Its field lens sat about a millimetre out of position",
@@ -15627,7 +15588,7 @@
   },
   {
     "tier": 2,
-    "question": "Ten small corrective mirrors had to reach into Hubble's light beams, yet the package holding them had to slide into a bay about the size of a telephone booth. Jim Crocker, the engineer leading the design, was stuck. Then a hotel room in Germany handed him the answer. What did he notice there?",
+    "question": "Jim Crocker, the engineer leading the design, stood in a hotel room in Germany, stuck. Ten small corrective mirrors had to reach into Hubble's light beams, yet the package holding them had to slide into a bay about the size of a telephone booth. What did he notice in that room?",
     "answer": "A showerhead on a rod, folded flat to the wall",
     "choices": [
       "A showerhead on a rod, folded flat to the wall",
@@ -15640,7 +15601,7 @@
   },
   {
     "tier": 3,
-    "question": "The Allen Commission wanted to know whether Hubble's flaw could have been caught while the mirror was still on the ground. In July 1990 they set up one of Perkin-Elmer's alignment tools and took a fresh interferogram, a picture of the mirror's shape written in light and dark fringes. It showed the flaw plainly. Then they went looking for an older interferogram to compare it with. Where did the matching 1982 photo turn up?",
+    "question": "Lew Allen's board set up one of Perkin-Elmer's alignment tools in July 1990 and took a fresh interferogram, a picture of the mirror's shape written in light and dark fringes. It showed the flaw plainly. Then the board went looking for an older interferogram to compare it with. Where did the matching 1982 photo turn up?",
     "answer": "In the personal notebook of a Perkin-Elmer employee",
     "choices": [
       "In the personal notebook of a Perkin-Elmer employee",
@@ -15653,7 +15614,7 @@
   },
   {
     "tier": 3,
-    "question": "Hubble spent three and a half years working with the wrong mirror. But the blur the mirror made had been measured exactly. Sandra Faber, of Hubble's science team, helped develop deconvolution, a mathematical procedure that starts from a known blur and works back through it. Observers ran it on pictures already taken. What did the restored pictures show?",
+    "question": "Sandra Faber, of Hubble's science team, helped develop deconvolution, a mathematical procedure that starts from a known blur and works back through it. The telescope spent three and a half years working with the wrong mirror, but its blur had been measured exactly. Observers ran the procedure on pictures already taken. What did the restored pictures show?",
     "answer": "One blob came apart into a group of separate stars",
     "choices": [
       "One blob came apart into a group of separate stars",
@@ -15666,7 +15627,7 @@
   },
   {
     "tier": 3,
-    "question": "By 1993 Hubble's blur had been measured so exactly that opticians could write it down as a number. Nobody could regrind the 2.4-metre primary mirror in orbit, so the fix had to work on the light after it left that mirror. What did the new optics -- Wide Field and Planetary Camera 2, and COSTAR (Corrective Optics Space Telescope Axial Replacement), a package of ten small mirrors on swing-out arms -- do to the beam?",
+    "question": "Astronauts carried two new instruments up to Hubble in December 1993: Wide Field and Planetary Camera 2, and COSTAR (Corrective Optics Space Telescope Axial Replacement), a package of ten small mirrors on swing-out arms. Nobody could regrind the 2.4-metre primary mirror in orbit, so the fix had to work on the light after it left that mirror. What did the new optics do to the beam?",
     "answer": "They carried the equal and opposite error, cancelling the mirror's",
     "choices": [
       "They carried the equal and opposite error, cancelling the mirror's",
@@ -15679,7 +15640,7 @@
   },
   {
     "tier": 4,
-    "question": "Inside the null corrector -- two small mirrors and a field lens stacked along one beam -- the spacings had to be right to ten micrometres, and an operator set them by bouncing a laser down onto the rounded, polished end of one of the Invar metering rods. Perkin-Elmer had slipped a small cap over each rod's end to keep it from tipping. The laser came back clean, and the operator wrote down a number that was wrong by more than a millimetre. What had the laser reflected off?",
+    "question": "An operator at Perkin-Elmer set the spacings inside a null corrector, two small mirrors and a field lens stacked along one beam, by bouncing a laser onto the polished end of an Invar metering rod. A small cap sat over the rod's end. The laser came back clean, and the operator wrote down a number wrong by more than a millimetre. What had the laser reflected off?",
     "answer": "The cap's own metal, bared around its central hole",
     "choices": [
       "The cap's own metal, bared around its central hole",
@@ -15692,7 +15653,7 @@
   },
   {
     "tier": 4,
-    "question": "Before NASA's Hubble Space Telescope launched in 1990, its 2.4-metre mirror was polished to shape at Perkin-Elmer's factory using a device called a null corrector — a stack of lenses and a small mirror held on two long metal rods (rod A and rod B). The null corrector projects a test pattern that the big mirror is polished to match. Technicians setting it up brought the field lens toward the end of rod B and ran out of travel in the positioning screws: the lens would not go where their measurement said it belonged. What did they do next?",
+    "question": "Technicians at Perkin-Elmer brought the field lens of Hubble's null corrector toward the end of rod B and ran out of travel in the positioning screws. The rig of two small mirrors and a field lens, held on long metal rods, projected the test pattern the 2.4-metre mirror was polished to match. The lens would not go where their measurement said it belonged. What did they do next?",
     "answer": "Slipped extra spacers in behind the lens",
     "choices": [
       "Slipped extra spacers in behind the lens",
@@ -15705,7 +15666,7 @@
   },
   {
     "tier": 5,
-    "question": "Perkin-Elmer's optical division ran two other correctors at Danbury alongside the reflective one -- an inverse null corrector built to mimic the reflection of a perfect mirror, and a refractive corrector made only of lenses. Both showed something was wrong, one as early as 1982, and the division discounted both results. The Allen Commission asked why. What did it find?",
+    "question": "Opticians in Perkin-Elmer's optical division discounted two warnings at Danbury, one as early as 1982. An inverse null corrector, built to mimic the reflection of a perfect mirror, and a refractive corrector made only of lenses ran alongside the reflective one, and both showed something was wrong. Lew Allen's board asked why the division set them aside. What did the board find?",
     "answer": "That the division trusted no instrument but the reflective corrector",
     "choices": [
       "That the division trusted no instrument but the reflective corrector",
@@ -15718,7 +15679,7 @@
   },
   {
     "tier": 5,
-    "question": "NASA had directed Perkin-Elmer to order a spare Hubble primary from a rival firm, Eastman Kodak, and Kodak polished and tested a 2.4-metre mirror of its own. The Allen Commission listed that subcontract among the opportunities NASA let slip. What check did it make available that NASA never ran?",
+    "question": "Eastman Kodak's opticians polished and tested a 2.4-metre mirror of their own, a spare Hubble primary that NASA had directed Perkin-Elmer to order from its rival. Lew Allen's board listed that subcontract among the opportunities NASA let slip. What check did the subcontract make available that NASA never ran?",
     "answer": "Having Kodak's finished mirror checked against Perkin-Elmer's",
     "choices": [
       "Having Kodak's finished mirror checked against Perkin-Elmer's",
@@ -15731,7 +15692,7 @@
   },
   {
     "tier": 1,
-    "question": "John Playfair, the Edinburgh mathematician who sailed to Siccar Point on the Scottish coast in 1788 with the geologist James Hutton to see the rock layers that proved the Earth is unimaginably old, came to mathematics late in life. In 1782, at age 34, he resigned from a settled career he had held for nine years so he could tutor students privately in Edinburgh and study mathematics and science full time. What job did he give up?",
+    "question": "John Playfair resigned in 1782, at age 34, from a job he had held for nine years, so he could tutor students in Edinburgh and study mathematics and science full time. In 1788 he sailed to Siccar Point with the geologist James Hutton. What job had he given up?",
     "answer": "Minister of two country parishes in Scotland",
     "choices": [
       "Minister of two country parishes in Scotland",
@@ -15744,7 +15705,7 @@
   },
   {
     "tier": 1,
-    "question": "Siccar Point, on the coast of Berwickshire in Scotland, is where the geologist James Hutton in 1788 pointed at an 'unconformity' — vertical grey rocks buried under horizontal red rocks — and argued that only immense stretches of time could have laid one on the other. It is only a few metres of stone on a rough cliff. The American Museum of Natural History in New York wanted its guests to stand in front of that same exposure. What did a crew hanging off the cliff do?",
+    "question": "A crew hung off the cliff at Siccar Point, on the few metres of rock James Hutton pointed at in 1788. The American Museum of Natural History in New York wanted its guests to stand before that same exposure. What did the crew do?",
     "answer": "They painted it with thick liquid latex and lifted the mould",
     "choices": [
       "They painted it with thick liquid latex and lifted the mould",
@@ -15757,7 +15718,7 @@
   },
   {
     "tier": 2,
-    "question": "In the spring of 1788 James Hutton hired a boat down the Berwickshire coast and landed at Siccar Point. Grey rock layers stand there almost on end; red-brown layers lie flat across their tops. Hutton told the two men with him that the grey rock had a long history before any red sand settled on it. What had it been through?",
+    "question": "James Hutton hired a boat down the Berwickshire coast in the spring of 1788 and landed at Siccar Point. Grey rock layers stand there almost on end, with red-brown layers flat across their tops. He told his two companions the grey rock had a long history before any red sand settled on it. What had it been through?",
     "answer": "Laid down flat, hardened, tilted on end, worn down, then drowned",
     "choices": [
       "Laid down flat, hardened, tilted on end, worn down, then drowned",
@@ -15770,7 +15731,7 @@
   },
   {
     "tier": 2,
-    "question": "Every retelling of the Siccar Point trip quotes John Playfair: 'The mind seemed to grow giddy by looking so far back into the abyss of time.' It is usually staged as something he gasped while standing on the rock. Where did that sentence actually first appear?",
+    "question": "'The mind seemed to grow giddy by looking so far back into the abyss of time,' John Playfair wrote of the Siccar Point trip. The line is usually staged as something he gasped while standing on the rock. Where did that sentence actually first appear?",
     "answer": "In his account of Hutton's life, printed eight years after Hutton died",
     "choices": [
       "In his account of Hutton's life, printed eight years after Hutton died",
@@ -15783,7 +15744,7 @@
   },
   {
     "tier": 2,
-    "question": "After Siccar Point, James Hutton's party sailed on along the coast and found more of the grey beds standing on end. On the upright surfaces of those beds was something that told Hutton exactly how they had formed, and gave him, he said, 'great satisfaction.' What was on them?",
+    "question": "James Hutton's party sailed on along the coast after Siccar Point and found more of the grey beds standing on end. On the upright surfaces of those beds was something that told Hutton exactly how they had formed and gave him, he said, 'great satisfaction.' What was on them?",
     "answer": "Ripple marks, like the ones on a sandy sea bed",
     "choices": [
       "Ripple marks, like the ones on a sandy sea bed",
@@ -15796,7 +15757,7 @@
   },
   {
     "tier": 3,
-    "question": "The bottom of the red sandstone lying across the junction at Siccar Point is not clean sand at all. For up to six metres it is a jumble of rounded pebbles and sharp broken chunks cemented together. Geologists call a junction like this an angular unconformity. Where did the chunks come from?",
+    "question": "A geologist runs her hand along the bottom of the red sandstone at Siccar Point and finds no clean sand at all. For up to six metres it is a jumble of rounded pebbles and sharp broken chunks cemented together. Geologists call a junction like this an angular unconformity. Where did the chunks come from?",
     "answer": "From the grey rock lying directly beneath them",
     "choices": [
       "From the grey rock lying directly beneath them",
@@ -15809,7 +15770,7 @@
   },
   {
     "tier": 3,
-    "question": "Heat limestone in an open fire and it burns to quicklime, its gas escaping into the air. Sir James Hall, who had sailed with James Hutton to Siccar Point, wanted to know what limestone does when it is cooked deep underground instead, where nothing can escape. He packed limestone into a sealed gun barrel and heated it hard. What came out of the barrel?",
+    "question": "Sir James Hall, who had sailed with James Hutton to Siccar Point, packed limestone into a sealed gun barrel and heated it hard. In an open fire limestone burns to quicklime, its gas escaping into the air, and Hall wanted to know what it does when cooked deep underground, where nothing can escape. What came out of the barrel?",
     "answer": "A block of crystalline marble",
     "choices": [
       "A block of crystalline marble",
@@ -15822,7 +15783,7 @@
   },
   {
     "tier": 3,
-    "question": "James Hutton's Theory of the Earth ran to 2,138 pages, and his friend John Playfair judged that 'the great size of the book, and the obscurity which may justly be objected to many parts of it, have probably prevented it from being received as it deserves.' Hutton died in 1797. What did Playfair spend the next five years doing?",
+    "question": "John Playfair judged that 'the great size of the book, and the obscurity which may justly be objected to many parts of it' had probably kept James Hutton's 2,138-page Theory of the Earth from being received as it deserved. Hutton died in 1797. What did Playfair spend nearly five years doing after that?",
     "answer": "Rewriting Hutton's whole theory as a book of his own",
     "choices": [
       "Rewriting Hutton's whole theory as a book of his own",
@@ -15835,7 +15796,7 @@
   },
   {
     "tier": 4,
-    "question": "Modern radiometric dating gives the gray rock at Siccar Point an age of about 440 million years, and the red sandstone lying across it about 375 million. Hutton had no way to measure these numbers, though he was certain the time involved was beyond imagining. That leaves roughly 65 million years missing at a contact you can cover with two fingers. What geological events happened during the missing time?",
+    "question": "A student lays two fingers across the seam at Siccar Point. Modern radiometric dating gives the grey rock below an age of about 440 million years and the red sandstone above about 375 million, so roughly 65 million years are missing under her fingers. James Hutton had no way to measure these numbers, though he was certain the time was beyond imagining. What happened during the missing time?",
     "answer": "An ocean closed and Himalayan-sized mountains rose, then wore away",
     "choices": [
       "An ocean closed and Himalayan-sized mountains rose, then wore away",
@@ -15848,7 +15809,7 @@
   },
   {
     "tier": 4,
-    "question": "Abraham Werner taught that every rock on Earth, granite included, had settled out of one universal ocean that once covered the whole planet and then receded. In the summer of 1785, James Hutton went up Glen Tilt in the Scottish Highlands to study granite in place for the first time. What were the granite veins doing to the layered schist around them?",
+    "question": "James Hutton went up Glen Tilt in the Scottish Highlands in the summer of 1785 to study granite in place for the first time. Abraham Werner taught that every rock on Earth, granite included, had settled out of one universal ocean that once covered the whole planet and then receded. What were the granite veins doing to the layered schist around them?",
     "answer": "Cutting clean across its layers and breaking through them",
     "choices": [
       "Cutting clean across its layers and breaking through them",
@@ -15861,7 +15822,7 @@
   },
   {
     "tier": 4,
-    "question": "James Hutton is remembered for reading rock correctly, but on the Isle of Arran he got it wrong. At Lochranza in 1787 he found tilted rock lying under flat rock for the first time, in an exposure too poor to show what the rock did below the surface he could see. What did he wrongly conclude about the rock down there?",
+    "question": "James Hutton found tilted rock lying under flat rock for the first time on the Isle of Arran, at Lochranza in 1787, in an exposure too poor to show what the rock did below the surface he could see. He is remembered for reading rock correctly, but here he got it wrong. What did he wrongly conclude about the rock down there?",
     "answer": "That the two sets ran parallel again further down",
     "choices": [
       "That the two sets ran parallel again further down",
@@ -15874,7 +15835,7 @@
   },
   {
     "tier": 4,
-    "question": "Sir James Hall of Dunglass owned the estate the 1788 boat trip set out from, and he had argued with James Hutton for three years before accepting the theory. Then he set out to test it by melting rock in a furnace. Hutton disapproved, objecting one could not 'judge of the great operations of the mineral kingdom from having kindled a fire and looked into the bottom of a little crucible.' What did Hall do about his friend's objection?",
+    "question": "Sir James Hall set out to test James Hutton's theory by melting rock in a furnace, after arguing with Hutton for three years before accepting it. Hutton disapproved, objecting one could not 'judge of the great operations of the mineral kingdom from having kindled a fire and looked into the bottom of a little crucible.' What did Hall do about his friend's objection?",
     "answer": "He held back every result until Hutton died in 1797",
     "choices": [
       "He held back every result until Hutton died in 1797",
@@ -15900,7 +15861,7 @@
   },
   {
     "tier": 5,
-    "question": "James Hutton's 1788 paper ends: 'we find no vestige of a beginning, - no prospect of an end.' He meant that the rocks keep no record of a starting point, not that the Earth never had one - and he had no way to put a number on any of it. In 1956 Clair Patterson finally fixed the age of the Earth at 4.54 billion years. What did Patterson measure to get it?",
+    "question": "James Hutton closed his 1788 paper with the words 'we find no vestige of a beginning, - no prospect of an end.' He meant that the rocks keep no record of a starting point, not that the Earth never had one. Clair Patterson fixed the age of the Earth at 4.54 billion years in 1956. What did Patterson measure to get it?",
     "answer": "The lead built up inside a handful of fallen meteorites",
     "choices": [
       "The lead built up inside a handful of fallen meteorites",
@@ -15913,7 +15874,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2004 and 2005 the veterinarian Hwang Woo-suk of Seoul National University was South Korea's most celebrated scientist. He announced he had cloned human embryos and grown eleven stem-cell lines matched to individual patients — a Nobel-worthy result. Independent investigators later showed the stem-cell work had been faked. Of all his headline 2005 claims, only one result survived close review. What was it?",
+    "question": "Hwang Woo-suk, a veterinarian at Seoul National University, announced in 2004 and 2005 that he had cloned human embryos and grown eleven stem-cell lines matched to individual patients. Independent investigators later showed the stem-cell work had been faked. Of all his headline 2005 claims, only one result survived close review. What was it?",
     "answer": "Snuppy, an Afghan hound - the first cloned dog",
     "choices": [
       "Snuppy, an Afghan hound - the first cloned dog",
@@ -15926,7 +15887,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2004 and 2005 the cloning scientist Hwang Woo-suk of Seoul National University was celebrated across South Korea as the country's greatest living researcher. Before the fraud in his stem-cell papers came out at the end of 2005, the state honoured him with something ordinary scientists never receive. What?",
+    "question": "A government bodyguard walked beside Hwang Woo-suk, the cloning scientist celebrated across South Korea in 2004 and 2005 as the country's greatest living researcher. Before the fraud in his stem-cell papers came out at the end of 2005, the state honoured him with something ordinary scientists never receive. What was it?",
     "answer": "his own commemorative postage stamp",
     "choices": [
       "his own commemorative postage stamp",
@@ -15939,7 +15900,7 @@
   },
   {
     "tier": 3,
-    "question": "The 2005 Science paper claimed eleven separate patient-matched stem-cell colonies. Anonymous scientists on a Korean biology research community website did something no one at the journal had thought to do. It broke the story in December 2005. What did they do?",
+    "question": "Anonymous scientists on a Korean biology research website did something in December 2005 that no one at the journal had thought to do. Hwang Woo-suk's paper in Science claimed eleven separate patient-matched stem-cell colonies, and their check broke the story. What did they do?",
     "answer": "compared the photographs and spotted the same colony printed twice",
     "choices": [
       "compared the photographs and spotted the same colony printed twice",
@@ -15952,7 +15913,7 @@
   },
   {
     "tier": 3,
-    "question": "In 2004 and 2005 the South Korean scientist Hwang Woo-suk announced he had cloned human embryos and pulled patient-matched stem cells from them — a giant leap for medicine. He also announced Snuppy, an Afghan hound puppy said to be the world's first cloned dog. When his human-embryo results were exposed as faked, Seoul National University set up a panel to decide whether Snuppy the Afghan hound was also faked. The panel reached its verdict by running one straightforward check. What did the check show?",
+    "question": "A Seoul National University panel ran one straightforward check on Snuppy, the Afghan hound Hwang Woo-suk had announced as the world's first cloned dog. His human-embryo results had already been exposed as faked, and the panel had to decide whether the puppy was faked too. What did the check show?",
     "answer": "Snuppy's DNA matched the donor dog Tai - the cloning was real",
     "choices": [
       "Snuppy's DNA matched the donor dog Tai - the cloning was real",
@@ -15965,7 +15926,7 @@
   },
   {
     "tier": 4,
-    "question": "On November 22, 2005 the Korean investigative TV programme PD Notebook aired an episode about the celebrated cloning scientist Hwang Woo-suk of Seoul National University. The programme turned public opinion sharply against him — but it did not attack his science first. It attacked the ethics of where he had got the human eggs he used in his experiments. What did PD Notebook report about the source of those eggs?",
+    "question": "Reporters at the Korean television programme PD Notebook went after the cloning scientist Hwang Woo-suk on November 22, 2005, and they did not attack his science first. They attacked the ethics of where he had got the human eggs he used in his experiments. What did PD Notebook report about the source of those eggs?",
     "answer": "they came from his own junior researchers and from paid donors",
     "choices": [
       "they came from his own junior researchers and from paid donors",
@@ -15978,7 +15939,7 @@
   },
   {
     "tier": 5,
-    "question": "The Seoul National University panel reported on January 10, 2006 that all eleven claimed stem-cell lines were fabricated. It also totted up how many human eggs Hwang's team had actually consumed between November 2002 and December 2005. The number stunned even the scientific press. What was it?",
+    "question": "Investigators at Seoul National University reported on January 10, 2006 that all eleven claimed stem-cell lines were fabricated. Their panel also totted up how many human eggs Hwang Woo-suk's team had actually consumed between November 2002 and December 2005. What number did it reach?",
     "answer": "at least 2,061 eggs",
     "choices": [
       "at least 2,061 eggs",
@@ -15991,7 +15952,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2004 and 2005 the South Korean scientist Hwang Woo-suk claimed he could take an ordinary cell from a sick patient, clone it into an embryo, and harvest pluripotent stem cells — cells able to grow into any tissue the patient needed, with no immune rejection. The medical problem was real and enormous. In late 2005 his papers were exposed as fraud. Just one year later, a completely different scientist solved the same problem by a completely different route — without cloning and without embryos at all. Who, and how?",
+    "question": "Hwang Woo-suk claimed he could take an ordinary cell from a sick patient, clone it into an embryo, and harvest stem cells able to grow into any tissue the patient needed, with no immune rejection. The medical problem was real, and his papers were exposed as fraud in late 2005. One year later a different scientist solved it by a different route. Who, and how?",
     "answer": "Shinya Yamanaka - reprogrammed ordinary adult cells with four genes",
     "choices": [
       "Shinya Yamanaka - reprogrammed ordinary adult cells with four genes",
@@ -16004,7 +15965,7 @@
   },
   {
     "tier": 1,
-    "question": "The American psychologist Karl Lashley spent about thirty years, starting in the 1920s, training rats to run mazes for food rewards. Once each rat had the maze memorised, Lashley would put it under anaesthetic and cut out a piece of its cortex — the wrinkled outer layer of the brain where thinking and memory are believed to live. He hoped to find the exact spot the maze memory lived in. What did he find where he expected the memory to be?",
+    "question": "Karl Lashley put a rat that had memorised a maze under anaesthetic and cut a piece out of its cortex, the brain's wrinkled outer layer. He kept at it for about thirty years, hoping to find the exact spot the memory lived in. What did he find where he expected it to be?",
     "answer": "Nothing -- the memory was never in the piece he removed",
     "choices": [
       "Nothing -- the memory was never in the piece he removed",
@@ -16017,7 +15978,7 @@
   },
   {
     "tier": 2,
-    "question": "For about thirty years the American psychologist Karl Lashley tried to locate a rat's maze memory in one piece of the cortex — the outer layer of the brain — and failed. No matter which piece he cut out, the rat still remembered the maze; the rat only got a little worse the more brain tissue he removed, no matter which part. From that repeated failure Lashley proposed two principles, published in 1929, about how memory is stored across the brain. What are these two principles now called?",
+    "question": "A rat with a piece of its cortex, the brain's outer layer, cut away still ran Karl Lashley's maze. It got only a little worse the more tissue he removed, no matter which part. From that repeated failure Lashley proposed two principles, published in 1929, about how memory is stored. What are they now called?",
     "answer": "Mass action and equipotentiality",
     "choices": [
       "Mass action and equipotentiality",
@@ -16030,7 +15991,7 @@
   },
   {
     "tier": 3,
-    "question": "The American psychologist Karl Lashley was hunting for an 'engram' — the physical trace a memory leaves behind in the brain. He spent thirty years cutting out pieces of rat cortex and never found one. But the word 'engram' had already been coined years before Lashley started looking, back when no tool existed to hunt for one. Who invented the word 'engram'?",
+    "question": "Karl Lashley bent over one more rat's cortex, hunting for an 'engram,' the physical trace a memory leaves behind in the brain. He never found one. The word had already been coined years before he started looking, back when no tool existed to hunt for one. Who invented it?",
     "answer": "Richard Semon, a German biologist, in his 1904 book Die Mneme",
     "choices": [
       "Richard Semon, a German biologist, in his 1904 book Die Mneme",
@@ -16043,7 +16004,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1949 the Canadian psychologist Donald Hebb published a book called The Organization of Behavior. In it he proposed a simple rule for how the brain learns: when two neurons fire at the same time again and again, the connection between them grows stronger, so they end up wired into a lasting cell assembly. The rule is now usually remembered as a short rhyme. Which rhyme?",
+    "question": "Donald Hebb proposed a simple rule for how the brain learns in his 1949 book The Organization of Behavior: when two neurons are active at the same time again and again, the connection between them grows stronger. The rule is now usually remembered as a short rhyme. Which rhyme?",
     "answer": "Cells that fire together, wire together",
     "choices": [
       "Cells that fire together, wire together",
@@ -16056,7 +16017,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2012 a team in Susumu Tonegawa's lab at MIT tagged the exact hippocampus neurons that lit up while a mouse learned to fear one box, using a light-sensitive protein called channelrhodopsin. Then they moved the mouse into a completely different, completely safe box. They fired a pulse of blue light down a fibre-optic into the tagged cells. What did the mouse do?",
+    "question": "A team in Susumu Tonegawa's lab at MIT tagged, in 2012, the exact hippocampus neurons that lit up while a mouse learned to fear one box, using a light-sensitive protein called channelrhodopsin. Then the team moved the mouse into a completely different, completely safe box and fired a pulse of blue light down a fibre-optic into the tagged cells. What did the mouse do?",
     "answer": "It froze in place, as if the shock were about to come",
     "choices": [
       "It froze in place, as if the shock were about to come",
@@ -16069,7 +16030,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2012 the neuroscientist Susumu Tonegawa's team at MIT used a technique called optogenetics — inserting light-sensitive proteins into brain cells so that a fibre-optic flash can switch those cells on — to label the exact hippocampus neurons that fired while a mouse learned a specific box. Later, shining light on those labelled neurons made the mouse remember the box on cue. The following year the same MIT lab published a follow-up in the journal Science. This time the mouse froze in fear inside a box where nothing bad had ever happened to it — yet the fear was real and specific to that box. How had they done it?",
+    "question": "Susumu Tonegawa's lab at MIT made a mouse freeze in fear in 2013 inside a box where nothing bad had ever happened to it. The year before, the same team had used optogenetics, inserting light-sensitive proteins into brain cells so that a fibre-optic flash can switch those cells on, to make a mouse remember a box on cue. This time the fear was real and specific to that box. How had the team done it?",
     "answer": "They reactivated the tagged cells for that box while shocking the mouse in a different box",
     "choices": [
       "They reactivated the tagged cells for that box while shocking the mouse in a different box",
