@@ -19592,20 +19592,7 @@
   },
   {
     "tier": 1,
-    "question": "Some writers call Bitcoin 'sound money' — money that no government can secretly print more of to pay its bills. Governments have watered down every paper currency in history that way. Bitcoin has one hard rule written right into its code that stops anyone, even its inventors, from ever making more. Which feature of Bitcoin makes it truly sound?",
-    "answer": "Its total supply is capped forever at 21 million coins",
-    "choices": [
-      "Its total supply is capped forever at 21 million coins",
-      "A committee of experts decides its price",
-      "Central banks issue new Bitcoin every year",
-      "The US government controls it"
-    ],
-    "context": "Saifedean Ammous holds a Columbia PhD (2011) and was for years a tenured economics professor at Lebanese American University in Beirut. Saylor runs a Bitcoin-heavy corporate treasury; Schiff is a gold advocate; Taleb writes on risk and is now Bitcoin-critical. Source: https://en.wikipedia.org/wiki/Saifedean_Ammous.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 1,
-    "question": "In 2018 the Lebanese economist Saifedean Ammous published a book with the American publishing house John Wiley and Sons. The book explained why Bitcoin might be the hardest form of money ever created, and it argued that every fiat currency in history has eventually lost most of its value. It has since become the best-selling Bitcoin book of all time and has been translated into dozens of languages. What is the book's title?",
+    "question": "Saifedean Ammous, an economist teaching in Beirut, published a book with John Wiley and Sons in 2018 making the case that Bitcoin might be the hardest form of money ever made. No book about Bitcoin has sold more since, and it has appeared in more than forty languages. What is its title?",
     "answer": "The Bitcoin Standard: The Decentralized Alternative to Central Banking",
     "choices": [
       "The Bitcoin Standard: The Decentralized Alternative to Central Banking",
@@ -19618,20 +19605,7 @@
   },
   {
     "tier": 2,
-    "question": "In his 2018 book The Bitcoin Standard the Lebanese economist Saifedean Ammous argues that money has always formed around whichever item scores highest on one particular ratio. The ratio compares how much of the thing already exists in the world to how fast new units can be dug up, minted, or made. Gold scored highest among physical goods for most of history — which is why it kept becoming money. What is the ratio called?",
-    "answer": "stock-to-flow ratio",
-    "choices": [
-      "stock-to-flow ratio",
-      "debt-to-equity ratio",
-      "price-to-earnings ratio",
-      "current ratio"
-    ],
-    "context": "Ammous uses the stock-to-flow ratio (existing supply divided by annual new production) to argue money gravitates to whatever has the highest S2F. Debt-to-equity, P/E, and current ratio are accounting metrics with no monetary-theory role in his argument. Source: The Bitcoin Standard (2018) ch 1-3.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 2,
-    "question": "The Bitcoin protocol cuts its block reward in half every 210,000 blocks — an event known as the halving. So fewer new coins get minted each cycle, while the total already in existence keeps growing. In The Bitcoin Standard the Lebanese economist Saifedean Ammous applies his stock-to-flow ratio (existing stock divided by yearly new supply) to Bitcoin. Because of the halving schedule, what does his book say happens to Bitcoin's stock-to-flow ratio over time?",
+    "question": "A Bitcoin miner sees his reward for each new block cut in half at a halving, which comes once every 210,000 blocks, while the coins already mined keep piling up. Saifedean Ammous applies the central tool of his 2018 book to that schedule: the stock-to-flow ratio, a good's existing stock divided by its new supply each year. What does he say happens to Bitcoin's ratio as the halvings go on?",
     "answer": "it doubles every four years, heading toward infinity as issuance approaches zero",
     "choices": [
       "it doubles every four years, heading toward infinity as issuance approaches zero",
@@ -19644,20 +19618,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine a country that cuts the last link between its money and gold. From that day on, the central bank can create as many new bills as the government asks for, and it does — for fifty straight years. Salaries and wages grow larger over time, but so do prices at every shop and grocery store, and nothing ever stops the printing press. Which of these is the most predictable long-term result of this arrangement?",
-    "answer": "Prices rise steadily and savings lose value",
-    "choices": [
-      "Prices rise steadily and savings lose value",
-      "Prices fall steadily and savings gain value",
-      "The government's debt shrinks on its own",
-      "The economy stops needing any money at all"
-    ],
-    "context": "'The Fiat Standard' (Ammous, 2021) is the sequel to The Bitcoin Standard. The other titles are unrelated books or fabrications. Source: https://saifedean.com/tfs/.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 3,
-    "question": "Some kinds of money are easy for a country to make more of — a printing press, a keyboard entry at the central bank, or a mine that hits a rich new seam. Other kinds take real physical work to add even a little to the supply, or have a fixed number written into the code that nobody can raise. Gold and Bitcoin are the classic examples of the second kind. What is money whose supply is very hard to expand usually called by economists?",
+    "question": "Saifedean Ammous leans on an old Austrian contrast between two kinds of money. Some can be turned out cheaply, by a printing press, a keyboard entry at a central bank or a mine that hits a rich new seam. Gold and Bitcoin cannot: adding to gold takes real physical work, and Bitcoin's code fixes a number nobody can raise. What do economists call money whose supply will not grow quickly?",
     "answer": "hard money",
     "choices": [
       "hard money",
@@ -19670,7 +19631,7 @@
   },
   {
     "tier": 4,
-    "question": "The Lebanese economist Saifedean Ammous held a tenured teaching job at the Lebanese American University in Beirut, where he taught economics and wrote The Bitcoin Standard. In 2020 the pandemic hit hard, and his university ordered every class to move to remote video teaching over the internet. That mandate became the reason Saifedean Ammous left the university that year. Why did he leave?",
+    "question": "Saifedean Ammous got his university's order in 2020, as the pandemic spread: every class at the Lebanese American University in Beirut, where he taught economics, was to move onto remote video. He left the university that year. Why, by his own account, did he leave?",
     "answer": "he refused to comply with the university's online-teaching requirements during COVID lockdowns and was fired",
     "choices": [
       "he refused to comply with the university's online-teaching requirements during COVID lockdowns and was fired",
@@ -19683,7 +19644,7 @@
   },
   {
     "tier": 4,
-    "question": "A well-known economics professor quit his job at a big American university. He set up his own website and began charging students directly for his lectures and writings, cutting the school out of the deal. Thousands of students followed him online. What does his move show about buyers, sellers, and middlemen on the internet?",
+    "question": "Saifedean Ammous launched his own website and began charging students directly for his lectures and writings, and thousands of them followed him online. What does his move show about buyers, sellers and middlemen on the internet?",
     "answer": "Buyers and sellers can now connect directly, cutting the middleman out",
     "choices": [
       "Buyers and sellers can now connect directly, cutting the middleman out",
@@ -19696,20 +19657,7 @@
   },
   {
     "tier": 5,
-    "question": "Bitcoin's code sets a hard cap of 21 million coins that will ever exist — a rule enforced by every computer running the network. In The Bitcoin Standard the Lebanese economist Saifedean Ammous argues that this cap matters for a deep structural reason, not just as a marketing slogan about scarcity. What does the book say a truly fixed supply does to a currency over the long run?",
-    "answer": "That a fixed supply removes the political discretion to debase, which historically is the mechanism by which every fiat currency has lost value",
-    "choices": [
-      "That a fixed supply removes the political discretion to debase, which historically is the mechanism by which every fiat currency has lost value",
-      "That a fixed supply guarantees perpetual deflation of general prices regardless of what happens to real production or productivity growth",
-      "That a fixed supply requires a specific central authority to enforce the cap and defend it against political pressure to raise it",
-      "That a fixed supply automatically raises real interest rates in every credit market whenever borrowing demand rises against savings supply"
-    ],
-    "context": "The Ammous argument: fiat currencies have historically failed via political discretion to expand supply, and Bitcoin's fixed cap removes that specific mechanism. The other options misdescribe Ammous's actual claim about debasement as a political mechanism. Source: The Bitcoin Standard (2018) ch 4-5.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 5,
-    "question": "Saifedean Ammous is a Palestinian-Lebanese economist who wrote 'The Bitcoin Standard' in 2018, the book that pulled thousands of readers into Austrian economics through Bitcoin. He now teaches a Principles of Economics course entirely outside the university system. His students often call it the modern Austrian answer to a real economics degree. Which Austrian-school institute is his course most often compared to?",
+    "question": "A student signs up for Saifedean Ammous's independent Principles of Economics course, taught outside any university. Students like her often compare the course to the American home of the Austrian school of economics. Which institute do they name?",
     "answer": "the Ludwig von Mises Institute in Auburn, Alabama",
     "choices": [
       "the Ludwig von Mises Institute in Auburn, Alabama",
@@ -19722,7 +19670,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1994 voters in San Francisco passed Proposition I, which extended rent control to small buildings with 2 to 4 apartments. Years later, three Stanford economists used the sudden rule change as a real-world experiment on what rent control actually does to housing supply. Their study became the classic paper on the topic. Which trio wrote it?",
+    "question": "San Francisco voters passed Proposition I in 1994, bringing older buildings of two to four flats under rent control while near-identical neighbors stayed free. Three Stanford economists later treated the gap as a real-world experiment. Which trio wrote the classic study?",
     "answer": "Rebecca Diamond, Tim McQuade, and Franklin Qian",
     "choices": [
       "Rebecca Diamond, Tim McQuade, and Franklin Qian",
@@ -19735,7 +19683,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1994 the city of San Francisco voted to extend its strict rent-control law to cover many older apartment buildings that had not been covered before. Twenty-five years later three economists — Rebecca Diamond, Timothy McQuade, and Franklin Qian — used detailed address-level data to study what the law had actually done to renters and to the city's housing supply. Their paper ran in September 2019 in one of the top economics journals in the world. Which journal published it?",
+    "question": "Three Stanford economists traced, with detailed address-level data, what San Francisco's 1994 rent-control expansion had done to renters and to the city's housing. Their paper ran in September 2019 in one of the top economics journals in the world. Which journal printed it?",
     "answer": "The American Economic Review",
     "choices": [
       "The American Economic Review",
@@ -19748,7 +19696,7 @@
   },
   {
     "tier": 3,
-    "question": "Rebecca Diamond, Tim McQuade, and Franklin Qian were three Stanford economists who studied San Francisco's 1994 Proposition I. That law suddenly put small older 2-to-4-unit buildings under rent control while leaving very similar nearby buildings free of it. The trio compared the two groups over the next two decades. What did they find about the number of rental units in the small structures now covered by the new law?",
+    "question": "A tenant in a small older San Francisco building learned in 1994 that her flat now fell under rent control, after voters passed Proposition I; a tenant in a nearly identical building the measure did not reach got no such protection. Three Stanford economists followed buildings like these for two decades. What did they find about the number of rental units in the newly covered buildings?",
     "answer": "Rental supply on the newly-controlled buildings fell by about 15 percent",
     "choices": [
       "Rental supply on the newly-controlled buildings fell by about 15 percent",
@@ -19761,7 +19709,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1994 San Francisco expanded rent control to older small apartment buildings, freezing rents for tenants already living there. Twenty years later three Stanford economists — Rebecca Diamond, Tim McQuade, and Franklin Qian — pulled address-level data on every San Francisco rental and traced what happened. They found that landlords hit by the freeze converted units into condos, tore buildings down, or moved family members in, cutting the city's rental supply by 15 percent. What happened to average city-wide rents as a result?",
+    "question": "A San Francisco landlord whose small building came under rent control in 1994 turned his flats into condominiums, and other owners tore their buildings down to rebuild or moved relatives in. Three Stanford economists later traced what such moves did across the whole city. What happened to city-wide rents?",
     "answer": "They rose by about 5 percent",
     "choices": [
       "They rose by about 5 percent",
@@ -19774,7 +19722,7 @@
   },
   {
     "tier": 4,
-    "question": "After Rebecca Diamond, Tim McQuade, and Franklin Qian published their San Francisco rent-control study, the numbers told a mixed story: tenants already living in protected units saved billions, but the citywide rental supply shrank 15 percent, pushing rents up for everyone else. In later interviews Rebecca Diamond said clearly that the policy was not a housing fix. She used one specific way of framing the main result. Which framing was it?",
+    "question": "Rebecca Diamond told interviewers plainly, after her San Francisco rent-control study came out, that the policy was no cure for San Francisco's shortage of homes. Renters already holding protected leases had saved a lot under it. How did she frame the policy's main result?",
     "answer": "A wealth transfer from future tenants to current protected tenants",
     "choices": [
       "A wealth transfer from future tenants to current protected tenants",
@@ -19787,7 +19735,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2020 a housing activist dismissed the Diamond-McQuade-Qian San Francisco rent-control study as biased. An economist trained in the Thomas Sowell tradition replied that the study's finding matched a prediction two young Chicago-school economists — Milton Friedman and George Stigler, both future Nobel laureates — had published in a short 1946 pamphlet for the Foundation for Economic Education. What was that pamphlet called?",
+    "question": "A housing activist dismissed the San Francisco rent-control study as biased in 2020. An economist in Thomas Sowell's tradition answered that its finding matched a prediction two young economists, Milton Friedman and George Stigler, both future Nobel winners, had published in 1946 in a short pamphlet for the Foundation for Economic Education. What was the pamphlet called?",
     "answer": "'Roofs or Ceilings? The Current Housing Problem'",
     "choices": [
       "'Roofs or Ceilings? The Current Housing Problem'",
@@ -19800,7 +19748,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2001 the American energy giant Enron used tricky accounting to hide huge losses for years and then went bankrupt. Thousands of workers lost their jobs and their retirement savings almost overnight. When a big company lies about its money like that and then collapses, what do lawmakers usually pass right after a scandal of that shape?",
+    "question": "A worker at an American energy giant lost her job and her retirement savings almost overnight when the company went bankrupt in 2001, after years of hiding huge losses with accounting tricks. After a scandal of that shape, what do lawmakers usually pass?",
     "answer": "New rules forcing companies to prove their money reports are honest",
     "choices": [
       "New rules forcing companies to prove their money reports are honest",
@@ -19813,7 +19761,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2002 the US Congress passed the Sarbanes-Oxley Act, named for Senator Paul Sarbanes and Representative Michael Oxley. It came right after two enormous accounting scandals had shaken Wall Street: an energy-trading company that collapsed in December 2001 after hiding billions in losses, and a giant telecommunications firm that filed for bankruptcy in July 2002 after inflating its profits. Which two firms were they?",
+    "question": "Senator Paul Sarbanes and Representative Michael Oxley sponsored a sweeping law of 2002 that answered two collapses: an energy-trading company that went under in December 2001 after hiding billions in losses, and a phone company that went bankrupt in July 2002 after inflating its profits. Which two firms were they?",
     "answer": "Enron and WorldCom",
     "choices": [
       "Enron and WorldCom",
@@ -19826,7 +19774,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2001 and 2002, giant American companies like Enron and WorldCom collapsed after top executives were caught faking their profits for years. Congress responded with a 2002 law called Sarbanes-Oxley. It forces the CEO (chief executive officer) and CFO (chief financial officer) of every big public company to personally sign a statement every quarter saying the financial numbers are true. Lying can send them to prison. What is the idea behind this rule?",
+    "question": "A chief financial officer picks up his pen to sign the quarterly statement that his company's numbers are true; under the Sarbanes-Oxley Act of 2002 a false signature can send him to prison. His chief executive must sign one too. What is the idea behind the rule?",
     "answer": "Making real people legally responsible so they cannot hide behind the company",
     "choices": [
       "Making real people legally responsible so they cannot hide behind the company",
@@ -19839,7 +19787,7 @@
   },
   {
     "tier": 3,
-    "question": "The Sarbanes-Oxley Act of 2002 was passed after the Enron and WorldCom scandals to force stricter accounting at US public companies. One section of the law required company bosses to build and audit strict internal checks on their own books, and to certify them personally. It became the costliest part of the law to follow, running about $1-2 million a year for even a small public firm. Which section was it?",
+    "question": "An accountant at a small public company works through the checks on its books that its managers must build, test and personally vouch for under one section of the Sarbanes-Oxley Act. That section, the costliest part of the law to obey, can run even a small firm about $1-2 million a year. Which section is it?",
     "answer": "Section 404",
     "choices": [
       "Section 404",
@@ -19852,7 +19800,7 @@
   },
   {
     "tier": 3,
-    "question": "About 7,300 US companies were listed on public stock markets in 1996. Twenty years later many were gone — bought up in mergers, taken private by buyout firms, or simply delisted. The economist Gustavo Grullon and his co-authors published a widely cited study measuring the drop and warning that American industries were becoming much more concentrated. About how many US-listed companies were left by 2016, per the Grullon study?",
+    "question": "Gustavo Grullon and his co-authors counted the companies listed on American stock markets in a widely cited study: about 7,300 in 1996. Over the next twenty years many were gone, bought up in mergers, taken private by buyout firms or simply delisted. About how many were left by 2016?",
     "answer": "About 4,300",
     "choices": [
       "About 4,300",
@@ -19864,21 +19812,8 @@
     "topic": "sarbanes-oxley-2002-the-small-cap-ipos-that-never-happened"
   },
   {
-    "tier": 4,
-    "question": "A brand-new law requires every public company to file an expensive report each year. Complying costs about $1.5 million. A giant company earning $10 billion barely notices the bill. A small company earning $50 million cannot survive it. What general lesson does this show about regulations with big fixed costs?",
-    "answer": "Regulations with a large fixed compliance cost fall heaviest on the smallest firms",
-    "choices": [
-      "Regulations with a large fixed compliance cost fall heaviest on the smallest firms",
-      "Regulations always fail because bureaucracies are inefficient by design",
-      "Regulations succeed when their costs are widely publicized in advance",
-      "Regulations improve competition by weeding out weak firms"
-    ],
-    "context": "The same reasoning move that Calomiris and Haber applied to Dodd-Frank in Fragile by Design (2014). Fixed compliance costs create an anti-competitive moat around large incumbents. Source: grokipedia.com/page/Sarbanes%E2%80%93Oxley_Act.",
-    "topic": "sarbanes-oxley-2002-the-small-cap-ipos-that-never-happened"
-  },
-  {
     "tier": 5,
-    "question": "A retail investor in 2015 wants to buy shares in a promising small-cap tech firm before it grows into the next Apple. She discovers the firm has stayed private, funded instead by venture capital and later private equity. A Bastiatian critic points to the seen benefit of Sarbanes-Oxley (fewer Enron-style frauds) and names an unseen cost specific to ordinary savers. What is that unseen cost?",
+    "question": "A retail investor in 2015 hopes to buy shares in a promising young tech firm before it grows into the next Apple, and finds it has stayed private. A critic in Bastiat's tradition grants Sarbanes-Oxley its seen benefit, fewer accounting frauds, and names an unseen cost that falls on savers like her. What is it?",
     "answer": "Retail investors have lost access to early-stage growth investing, which is now reserved for accredited private-equity clients",
     "choices": [
       "Retail investors have lost access to early-stage growth investing, which is now reserved for accredited private-equity clients",
@@ -19891,7 +19826,7 @@
   },
   {
     "tier": 1,
-    "question": "On Halloween night, October 31, 2008, in the middle of the global banking crisis, a short message appeared on a small online mailing list for people who studied secret codes and privacy tools. It linked to a nine-page paper called 'Bitcoin: A Peer-to-Peer Electronic Cash System' and described 'a new electronic cash system that's fully peer-to-peer, with no trusted third party.' The writer used a pen name, not a real name. What pen name signed the post?",
+    "question": "A writer using a pen name sent a brief note to a small cryptography mailing list on Halloween night 2008, as the world's banks reeled. It linked to a nine-page paper on a new kind of money that could run with no bank in the middle. What pen name signed the note?",
     "answer": "Satoshi Nakamoto",
     "choices": [
       "Satoshi Nakamoto",
@@ -19904,7 +19839,7 @@
   },
   {
     "tier": 1,
-    "question": "On Halloween night 2008, someone using the name Satoshi Nakamoto sent a short email to a small cryptography mailing list. Attached was a nine-page paper describing a new kind of digital money that would not need any bank or government to run it. That paper launched Bitcoin. What is its famous title?",
+    "question": "Satoshi Nakamoto sent a short message on Halloween night 2008 to a small cryptography mailing list, pointing readers to a nine-page paper on a new kind of digital money that needed no bank or government to run it. That paper launched Bitcoin. What is its famous title?",
     "answer": "Bitcoin: A Peer-to-Peer Electronic Cash System",
     "choices": [
       "Bitcoin: A Peer-to-Peer Electronic Cash System",
@@ -19917,7 +19852,7 @@
   },
   {
     "tier": 2,
-    "question": "Before Bitcoin was invented in 2009 by a programmer using the pen name Satoshi Nakamoto, every online-cash idea had needed a trusted company — like a bank — sitting in the middle to keep track of who owned what. Without a trusted middleman, how could you stop a person from copying a digital coin and spending it twice, since a computer file can be copied endlessly? What is this old puzzle called?",
+    "question": "Satoshi Nakamoto took on in 2008 a puzzle that had beaten every earlier design for internet money without a trusted firm keeping the books. A digital coin is just a file, and a file can be copied; with nobody tracking who owns what, the same coin could be paid out again and again. What is the puzzle called?",
     "answer": "The double-spending problem",
     "choices": [
       "The double-spending problem",
@@ -19929,34 +19864,8 @@
     "topic": "satoshi-nakamoto-and-the-white-paper"
   },
   {
-    "tier": 2,
-    "question": "To keep Bitcoin honest without any central bank or trusted middleman, its inventor Satoshi Nakamoto designed a clever race. Computers around the world compete to solve a hard math puzzle. The winner adds the next page — called a block — to the shared record book of all Bitcoin transactions. Because each puzzle burns huge amounts of electricity, rewriting old pages later would be far too costly to be worth it. What is this system called?",
-    "answer": "Proof-of-work",
-    "choices": [
-      "Proof-of-work",
-      "Proof-of-stake",
-      "Proof-of-trust",
-      "Proof-of-purchase"
-    ],
-    "context": "Proof-of-work enforces the ordering: each block requires real-world computation, and the honest chain is the one with the most cumulative work. Rewriting history requires redoing all that work faster than the honest network. Source: bitcoin.org/bitcoin.pdf.",
-    "topic": "satoshi-nakamoto-and-the-white-paper"
-  },
-  {
     "tier": 3,
-    "question": "In 2008 a programmer using the pen name Satoshi Nakamoto published the Bitcoin white paper. It solved an old computer-science puzzle: how can strangers online agree on one shared list of who paid whom, with no boss and no central bank? Satoshi's answer was one sharp rule — whoever has the most compute power working honestly wins the right to add the next block of transactions to the chain. What is this design called?",
-    "answer": "Nakamoto Consensus",
-    "choices": [
-      "Nakamoto Consensus",
-      "Byzantine Consensus",
-      "Cascade Consensus",
-      "Delegated Consensus"
-    ],
-    "context": "'Nakamoto Consensus' is the cryptography-literature name for the proof-of-work plus longest-chain rule Satoshi introduced. It is the first known solution to the Byzantine Generals Problem for open, permissionless networks. Source: en.bitcoin.it/wiki/Nakamoto_consensus.",
-    "topic": "satoshi-nakamoto-and-the-white-paper"
-  },
-  {
-    "tier": 3,
-    "question": "In late 2008 the inventor of Bitcoin, writing under the pen name Satoshi Nakamoto, first shared his design not on a big news site but on a small mailing list devoted to cryptography. Its members were programmers who studied cryptography — secret codes and privacy tools — and had spent the 1990s arguing about how to build digital cash without a bank. Why show it to that group first, instead of a national newspaper?",
+    "question": "Satoshi Nakamoto first showed his design in late 2008 not to a newspaper but to a small mailing list that the cryptographer Perry Metzger ran. Its members, students of cryptography, had spent the 1990s arguing over how to build digital cash without a bank. Why show it to that group first?",
     "answer": "They were the people most likely to spot flaws and try running the code",
     "choices": [
       "They were the people most likely to spot flaws and try running the code",
@@ -19969,7 +19878,7 @@
   },
   {
     "tier": 4,
-    "question": "The Bitcoin white paper, written in 2008 by Satoshi Nakamoto, is only nine pages long but is split into numbered sections that build one on top of the next. It starts with Introduction and Transactions, then walks through Timestamp Server, Proof-of-Work, Network, Incentive, Reclaiming Disk Space, Simplified Payment Verification, Combining and Splitting Value, and Privacy, before finishing with Calculations and Conclusion. How many sections does the paper have?",
+    "question": "A reader who opens Satoshi Nakamoto's short Bitcoin paper of 2008 finds it carefully built in numbered sections. It opens with an Introduction and a section on Transactions, takes in Incentive, Privacy and Proof-of-Work along the way, and closes on Calculations and a Conclusion. How many sections does it have?",
     "answer": "Twelve sections",
     "choices": [
       "Twelve sections",
@@ -19982,7 +19891,7 @@
   },
   {
     "tier": 4,
-    "question": "No one has ever confirmed who Satoshi Nakamoto — the pseudonymous creator of Bitcoin — really is, and by 2026 the mystery is still unsolved. Satoshi mined Bitcoin heavily in the very first months of the network in 2009, when almost no one else was mining and blocks were easy to win. Those early coins sit in Satoshi's known addresses to this day, never spent, never moved. About how many bitcoins are in that untouched hoard?",
+    "question": "Satoshi Nakamoto mined almost alone in 2009, in the network's first months, when blocks were easy to win. Researchers have since estimated what sits in his addresses. About how many bitcoins?",
     "answer": "About one million",
     "choices": [
       "About one million",
@@ -19995,7 +19904,7 @@
   },
   {
     "tier": 5,
-    "question": "When the programmer using the pen name Satoshi Nakamoto published the Bitcoin white paper in October 2008 — in the middle of the global banking crisis — it read as a plain technical proposal: cryptography, hashing, timestamps. Nowhere did it call itself political. But over the next fifteen years, as governments printed trillions of new dollars and citizens watched their savings lose value, the paper's deeper meaning became clear to millions. What was that unseen political meaning?",
+    "question": "Satoshi Nakamoto posted his white paper in October 2008, in the middle of the global banking crisis, as a plain technical proposal about cryptography, hashing and timestamps, and nowhere did he call it political. Over the next fifteen years, as governments printed trillions of new dollars and savers watched their money lose value, its deeper meaning became clear to millions. What was that deeper meaning?",
     "answer": "That money could exist without any central issuing authority",
     "choices": [
       "That money could exist without any central issuing authority",
@@ -20008,7 +19917,7 @@
   },
   {
     "tier": 5,
-    "question": "Bitcoin went live in January 2009. The very second computer to run on the network belonged to Hal Finney, one of the world's most respected cryptographers, whose own earlier system called Reusable Proofs of Work (RPOW) had been a close cousin of Bitcoin. Finney received the first Bitcoin transaction ever sent, from Satoshi Nakamoto himself. Why does a respected expert joining early matter so much for a new open-source project?",
+    "question": "Hal Finney, one of the world's most respected cryptographers, began running Bitcoin almost as soon as its network started up in January 2009. He had built a close cousin of it himself, Reusable Proofs of Work, and he received the first transaction Satoshi Nakamoto ever sent. Why does a respected expert joining early matter so much to a new open-source project?",
     "answer": "A respected expert's participation signals to other skilled people that the system is worth trying",
     "choices": [
       "A respected expert's participation signals to other skilled people that the system is worth trying",
@@ -20021,7 +19930,7 @@
   },
   {
     "tier": 1,
-    "question": "From October 2008 until early 2011, the mysterious founder of Bitcoin — writing as Satoshi Nakamoto — was busy in the young Bitcoin community. He posted on internet forums, patched the software, and traded emails with the first coders. Then he wrote his last public message and went silent forever. When did he make his last public forum post?",
+    "question": "Satoshi Nakamoto posted on the BitcoinTalk forum one last time and never posted publicly again, after about two years of guiding the young project. He had written on forums, patched the software and traded emails with the first coders. On what date did that last forum post go up?",
     "answer": "December 12 2010",
     "choices": [
       "December 12 2010",
@@ -20034,7 +19943,7 @@
   },
   {
     "tier": 1,
-    "question": "After launching Bitcoin in early 2009, Satoshi Nakamoto slowly stepped back from the project and vanished from the internet for good in 2010. Satoshi's very last public message on the BitcoinTalk forum went up on December 12 2010 — no goodbye, no big farewell, just a plain technical post about one small topic. Which topic was it?",
+    "question": "Bitcoin's creator left no goodbye and no farewell when he made his final post on the BitcoinTalk forum: Satoshi Nakamoto's last public message there was a plain technical note on one small subject. Which subject was it?",
     "answer": "DDoS defenses",
     "choices": [
       "DDoS defenses",
@@ -20047,7 +19956,7 @@
   },
   {
     "tier": 2,
-    "question": "The inventor of Bitcoin was known only by the pen name Satoshi Nakamoto. In April 2011 Satoshi sent a short email saying he had 'moved on to other things', handed off the software keys to a developer named Gavin Andresen, and then quietly disappeared. The Bitcoin network kept humming along fine without him for the next fifteen years. Why is that a strength of Bitcoin, not a weakness?",
+    "question": "The developer Mike Hearn got an email from Satoshi Nakamoto in April 2011: 'I've moved on to other things.' Satoshi had left the software in Gavin Andresen's care, and the network has kept running without him ever since. Why is that a strength of Bitcoin, not a weakness?",
     "answer": "No single person needs to be alive for the network to keep working",
     "choices": [
       "No single person needs to be alive for the network to keep working",
@@ -20060,7 +19969,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin's software is open source: the full code sits on the internet where anyone in the world can read it, copy it, test it, or suggest fixes. A private bank's code, by contrast, is locked inside the company and only its own employees can look at it. Bitcoin supporters say this openness makes their money system safer than one run by a single private company. Why do they say that?",
+    "question": "A programmer on the other side of the world downloads Bitcoin's code, reads it line by line and sends in a suggested fix, as anyone may. A bank's code, by contrast, stays locked inside the company, where only the bank's employees may look at it. Why do Bitcoin's supporters say this openness makes their money safer?",
     "answer": "Thousands of eyes can spot problems, and no boss can secretly change the rules",
     "choices": [
       "Thousands of eyes can spot problems, and no boss can secretly change the rules",
@@ -20073,7 +19982,7 @@
   },
   {
     "tier": 3,
-    "question": "The inventor of Bitcoin, writing as Satoshi Nakamoto, ran the software himself in early 2009 when almost nobody else did. In those first months he mined roughly a million coins — a huge pile that has sat untouched at known addresses ever since. If Satoshi suddenly returned and tried to spend all of those coins on the open market today, what would most likely happen to Bitcoin's price?",
+    "question": "Satoshi Nakamoto mined about a million coins in Bitcoin's first months, and they still sit at known addresses that anyone can watch. If he came back and sold them all at once, what would most likely happen to Bitcoin's price?",
     "answer": "It would drop sharply as buyers worried about the sudden new supply",
     "choices": [
       "It would drop sharply as buyers worried about the sudden new supply",
@@ -20086,7 +19995,7 @@
   },
   {
     "tier": 3,
-    "question": "Satoshi Nakamoto, the pen name of Bitcoin's inventor, went quiet in 2011 and has not been heard from since. Every Bitcoin address he is known to have used in the first months has been watched around the clock by thousands of researchers ever since. In fifteen years, one clear fact about those early coins has become the strongest sign that Satoshi truly walked away. What is that fact?",
+    "question": "A researcher checks, one more time, the addresses holding the coins Satoshi Nakamoto mined in Bitcoin's first months, as others have watched them around the clock since he went quiet in 2011. In more than fifteen years, one fact about those early coins has become the strongest sign that Satoshi truly walked away. What is that fact?",
     "answer": "Not one satoshi from the early-mined addresses has ever moved",
     "choices": [
       "Not one satoshi from the early-mined addresses has ever moved",
@@ -20099,7 +20008,7 @@
   },
   {
     "tier": 4,
-    "question": "The person who invented Bitcoin mined about one million coins in the currency's first year. He never sold a single coin, even after they became worth tens of billions of dollars. Which temptation does that self-denial permanently remove from Bitcoin?",
+    "question": "Bitcoin's inventor mined roughly one million coins in its first year and never sold a single one, even after they were worth tens of billions of dollars. Which temptation did that restraint remove from Bitcoin for good?",
     "answer": "The founder's temptation to enrich himself at the expense of the currency's users",
     "choices": [
       "The founder's temptation to enrich himself at the expense of the currency's users",
@@ -20112,7 +20021,7 @@
   },
   {
     "tier": 4,
-    "question": "Even in 2026, no one has proven who created Bitcoin under the pen name Satoshi Nakamoto. An Australian computer scientist named Craig Wright spent years suing critics who called him a fake and trying to claim the title himself, but in March 2024 a British High Court judge formally ruled that Wright was not Satoshi. Why does Bitcoin actually work better when its true creator stays unknown?",
+    "question": "A British High Court judge ruled in March 2024 that Craig Wright, an Australian computer scientist who had spent years suing critics who called him a fake, was not Satoshi Nakamoto. No one has proven who Bitcoin's creator really is. Why does Bitcoin work better while its creator stays unknown?",
     "answer": "No single person can be arrested, silenced, or pressured to change the rules",
     "choices": [
       "No single person can be arrested, silenced, or pressured to change the rules",
@@ -20125,7 +20034,7 @@
   },
   {
     "tier": 5,
-    "question": "Since Satoshi Nakamoto, the pen-named inventor of Bitcoin, went silent in April 2011, many people have guessed why. Some think he died; others think he chose to disappear on purpose so no government could ever pressure him. Fifteen years on, none of the theories has ever been confirmed and no message signed with his private keys has ever appeared. In one honest line, what is the truthful answer as of 2026 to why Satoshi vanished?",
+    "question": "Satoshi Nakamoto went silent in April 2011, and no message signed with his private keys has appeared since. What is the honest answer, as of 2026, to why he vanished?",
     "answer": "Nobody knows for certain, though the coins stay untouched to this day",
     "choices": [
       "Nobody knows for certain, though the coins stay untouched to this day",
@@ -20138,7 +20047,7 @@
   },
   {
     "tier": 5,
-    "question": "The unknown creator of Bitcoin, 'Satoshi Nakamoto,' mined about a million bitcoins in the first years and then vanished, never touching them. At today's prices those coins are worth tens of billions of dollars. If cashed out, what title could that person have held?",
+    "question": "An analyst tots up the coins Satoshi Nakamoto mined in Bitcoin's first years, about a million of them. At recent prices they are worth tens of billions of dollars. If their owner cashed them out, what could he become?",
     "answer": "One of the richest people on earth",
     "choices": [
       "One of the richest people on earth",
@@ -20151,7 +20060,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1955 the American economist Milton Friedman wrote an essay called 'The Role of Government in Education.' He later included it in his famous 1962 book Capitalism and Freedom. Friedman argued that instead of assigning kids to one nearby public school by street address, the government should let parents choose which school to send them to. What K-12 change did the essay ask for?",
+    "question": "Milton Friedman published an essay on government and schooling in 1955, 'The Role of Government in Education.' He allowed that government might pay for schooling, but not that it had to run the schools. What did the essay propose?",
     "answer": "A voucher parents could redeem at any accredited school",
     "choices": [
       "A voucher parents could redeem at any accredited school",
@@ -20164,7 +20073,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1970 the United States spent one amount of tax money per public-school student. Since then, spending per pupil has roughly tripled after adjusting for inflation. Meanwhile the main national test that tracks how well high school seniors read and do math — the National Assessment of Educational Progress — has been given every few years for decades. What has happened to those senior reading and math scores over that same fifty-plus-year period?",
+    "question": "A seventeen-year-old takes the national test of reading and math that has tracked students her age for half a century. Over that half century the money spent on each public-school pupil has about tripled, even after adjusting for inflation. What has happened to the scores of seventeen-year-olds over the same span?",
     "answer": "They have remained essentially flat",
     "choices": [
       "They have remained essentially flat",
@@ -20177,20 +20086,7 @@
   },
   {
     "tier": 3,
-    "question": "Milton Friedman, the Chicago-school economist and Nobel laureate, first proposed the idea in a 1955 essay called 'The Role of Government in Education'. A city government gives poor families a paper voucher they can spend at any school that will accept it — public, private, or religious. Schools now have to compete for students instead of being handed them by the district. What is this kind of program usually called?",
-    "answer": "A school voucher program",
-    "choices": [
-      "A school voucher program",
-      "A district assignment lottery",
-      "A tuition subsidy tax",
-      "A public option for schools"
-    ],
-    "context": "The Milwaukee Parental Choice Program was championed by Democratic state legislator Polly Williams, herself a former welfare mother, and signed into law by Republican Governor Tommy Thompson. The program was the model for later urban vouchers. Source: grokipedia.com/page/Milwaukee_Parental_Choice_Program.",
-    "topic": "school-choice-milton-friedmans-1955-voucher-essay"
-  },
-  {
-    "tier": 3,
-    "question": "In 2002 the US Supreme Court upheld a school voucher program running in Cleveland, Ohio — a struggling Rust Belt city where the public schools were failing badly. The court ruled 5-4 that public money could flow to religious schools chosen by parents, without violating the First Amendment's ban on state establishment of religion. What was the case called?",
+    "question": "Five of the nine Supreme Court justices voted in 2002 to uphold Cleveland's school voucher program, though parents could spend its money at religious schools. The money reached those schools only because parents chose them, the majority held, so the program did not violate the First Amendment's clause against establishing a religion. What was the case called?",
     "answer": "Zelman v. Simmons-Harris",
     "choices": [
       "Zelman v. Simmons-Harris",
@@ -20203,7 +20099,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2023 a school board member in a big-city district complains that families should not be free to leave for other schools, because rival charter schools and voucher programs will drain her district's enrollment. A Chicago-trained free-market economist replies with a plain grocery analogy: a store that kept 90 percent of its customers by force — not by being good — would slowly get worse, because it would face no pressure to improve. Public schools without exit, he says, are that grocery store. Which classic reasoning move is he pressing?",
+    "question": "A school board member in a big city complains that charter schools and vouchers will drain her district of pupils. An economist answers her with a grocery store that holds on to nine customers in ten by force, not by being any good. Which reasoning move is he pressing?",
     "answer": "The competitive-pressure move: monopoly providers lose the discipline to improve when customers cannot exit",
     "choices": [
       "The competitive-pressure move: monopoly providers lose the discipline to improve when customers cannot exit",
@@ -20216,7 +20112,7 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman, the Chicago-school economist and Nobel laureate, and his wife Rose Friedman, an economist in her own right, founded an organization in 1996 during the last decade of Milton's life. It was dedicated to one specific policy application he had first proposed way back in a 1955 essay — the cause he considered his most important. The group was later renamed EdChoice in 2016. What cause did it promote?",
+    "question": "Milton and Rose Friedman set up an organization in 1996, late in Milton's life, for the cause he considered his most important, one he had first proposed in a 1955 essay. Which cause did the organization promote?",
     "answer": "K-12 school choice through vouchers and education savings accounts",
     "choices": [
       "K-12 school choice through vouchers and education savings accounts",
@@ -20229,7 +20125,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2023 and 2024 a wave of US states passed Education Savings Account (ESA) laws that broadly opened K-12 school choice for the first time in American history. An ESA gives a family public money in a spendable account to pay for private-school tuition, tutoring, or homeschool supplies. Some states made their programs universal — open to every family, not only the poor. Which states did?",
+    "question": "A mother opens an education savings account for her son and spends its public money on a tutor and homeschool books. Starting in 2022, one state after another opened accounts like hers to every family, or nearly every family. Which states were among them?",
     "answer": "Arizona, West Virginia, Iowa, Arkansas, Florida, and Ohio",
     "choices": [
       "Arizona, West Virginia, Iowa, Arkansas, Florida, and Ohio",
@@ -20242,7 +20138,7 @@
   },
   {
     "tier": 1,
-    "question": "Bitcoin runs on thousands of computers called nodes, all agreeing on the same rules. Sometimes developers change those rules. One kind of change is gentle — old nodes still see new blocks as valid, so nothing breaks. Another kind is sharp — old nodes reject the new blocks and the chain splits into two. What is the gentle, backward-compatible kind called?",
+    "question": "A volunteer switches on a Bitcoin node at home, one of thousands checking every block against the same rules. Some rule changes are gentle: his older software still accepts the new blocks, so the chain stays whole. Others split the chain in two. What is the gentle kind called?",
     "answer": "A soft fork",
     "choices": [
       "A soft fork",
@@ -20254,21 +20150,8 @@
     "topic": "segwit-and-taproot-the-two-big-soft-forks"
   },
   {
-    "tier": 2,
-    "question": "Bitcoin has a rule written into its computer code: only 21 million coins will ever exist, no matter what. No single person or company can change that rule alone — the entire network would have to agree, and it never has. The US central bank, called the Federal Reserve, can print more dollars whenever it decides to. Given those two facts, how is Bitcoin fundamentally different from dollars?",
-    "answer": "A central bank can create more dollars anytime, but no one can create more Bitcoin past the cap",
-    "choices": [
-      "A central bank can create more dollars anytime, but no one can create more Bitcoin past the cap",
-      "Bitcoin can be printed just as fast as dollars",
-      "A central bank promises to never print more dollars",
-      "Bitcoin has no fixed rule about how many coins exist"
-    ],
-    "context": "SegWit had been debated since 2015. Its activation followed a User-Activated Soft Fork (UASF) push (BIP148) that pressured miners to accept the upgrade. Source: grokipedia.com/page/SegWit.",
-    "topic": "segwit-and-taproot-the-two-big-soft-forks"
-  },
-  {
     "tier": 3,
-    "question": "The 2015-2017 dispute over how Bitcoin should scale is now known as the Block Size War. When the sides could not agree, one faction hard-forked on August 1, 2017 to create a separate cryptocurrency with a much larger base block size. What was the new coin called?",
+    "question": "One faction of Bitcoiners broke away in a hard fork on August 1, 2017, after two years of quarrelling that came to be called the Block Size War. Their new coin had much larger blocks than Bitcoin's. What was it called?",
     "answer": "Bitcoin Cash (BCH)",
     "choices": [
       "Bitcoin Cash (BCH)",
@@ -20281,7 +20164,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin's software can be updated, but only if a large majority of miners (the people running the powerful computers that add new blocks of transactions) and users (the people running the software on their own machines to check the rules) choose to install the new version. If most refuse, the change simply does not take effect. Why must such a big group agree, instead of one boss just changing the rules?",
+    "question": "A Bitcoin developer publishes a new version of the software, and it changes nothing at all until enough miners and users choose to install it. If most of them refuse, the upgrade never takes effect. Why must so many of them go along before anything changes?",
     "answer": "No single person or company runs Bitcoin, so a change only sticks if enough people accept it",
     "choices": [
       "No single person or company runs Bitcoin, so a change only sticks if enough people accept it",
@@ -20294,7 +20177,7 @@
   },
   {
     "tier": 4,
-    "question": "In November 2021 Bitcoin activated a big upgrade called Taproot. It swapped the old ECDSA (Elliptic Curve Digital Signature Algorithm) signature system for a newer one called Schnorr signatures. The change had two goals: making each transaction take up less space on the chain, and making it harder for outside watchers to tell one spender from another. What are the two main reasons to upgrade the signature scheme on money software?",
+    "question": "A Bitcoin miner signaled his support for the Taproot upgrade in 2021, as over ninety percent of miners did before it activated that November. The upgrade added Schnorr signatures, which can merge several signers into one; they take their name from the cryptographer Claus-Peter Schnorr. What did the new signatures bring to each transaction?",
     "answer": "Smaller signatures per transaction and less information leaked about the sender",
     "choices": [
       "Smaller signatures per transaction and less information leaked about the sender",
@@ -20307,7 +20190,7 @@
   },
   {
     "tier": 4,
-    "question": "A high-school student notices Ethereum releases changes every few months while Bitcoin barely changes at all. She asks a veteran Bitcoin coder why. He answers that thousands of separate operators — miners, node runners, wallet makers — must all accept the new rules, so no single architect at the top can unilaterally impose them. Which classic reasoning move fits his answer?",
+    "question": "A high-school student asks a veteran Bitcoin coder why Ethereum is updated every few months while Bitcoin hardly changes. The coder points to the miners, node operators and wallet builders, thousands of them, each separate, who would all have to accept any new rule. Which reasoning move fits the coder's answer?",
     "answer": "The knowledge-problem move: no central architect can safely rewrite a distributed system's rules",
     "choices": [
       "The knowledge-problem move: no central architect can safely rewrite a distributed system's rules",
@@ -20320,7 +20203,7 @@
   },
   {
     "tier": 5,
-    "question": "From 2015 to 2017 Bitcoiners fought bitterly over whether to make blocks bigger. The dispute became known as the Block Size War, ended in a hard fork that created Bitcoin Cash, and produced a book-length postmortem. Four years later the 2021 Taproot upgrade — a genuine change to signature math — passed almost silently, with wide agreement across the community. What lesson do Bitcoin developers usually draw from the contrast?",
+    "question": "A veteran Bitcoin developer sets two upgrades side by side: the Block Size War of 2015 to 2017, which ended with the chain split and a bitter book-length postmortem, and Taproot in 2021, a genuine change to signature math that went through almost silently. What lesson do Bitcoin developers draw from the contrast?",
     "answer": "Decentralized consensus can deliver careful technical progress when the community is broadly aligned",
     "choices": [
       "Decentralized consensus can deliver careful technical progress when the community is broadly aligned",
@@ -20333,7 +20216,7 @@
   },
   {
     "tier": 1,
-    "question": "In Bitcoin, every wallet has a secret number that only its owner should know. That number lets the owner sign a message proving ownership of the coins, so the rest of the network will accept a move. Without the number, nobody can move those coins, no matter how rich or powerful. Anyone who steals the number can move them all, right away. What is this secret number called?",
+    "question": "A Bitcoin owner signs a payment with a secret number only he knows, and the network lets his coins move. Without that number nobody, however powerful, can move them; a thief who steals it can take them all. What is the number called?",
     "answer": "the private key",
     "choices": [
       "the private key",
@@ -20346,7 +20229,7 @@
   },
   {
     "tier": 1,
-    "question": "You buy some Bitcoin on a big exchange like Coinbase, Kraken, or Binance. You leave the coins sitting in your account on their website. The private keys — the secret codes that actually move Bitcoin on the network — are held by the exchange, not by you. Then one day the exchange freezes withdrawals or goes bankrupt. What did you really own the whole time?",
+    "question": "A woman buys bitcoin on a big exchange and leaves it in her account there, while the exchange keeps the secret codes that move it. One day the exchange freezes withdrawals and then collapses. What did she really own all along?",
     "answer": "a claim on the exchange to be paid Bitcoin",
     "choices": [
       "a claim on the exchange to be paid Bitcoin",
@@ -20359,7 +20242,7 @@
   },
   {
     "tier": 2,
-    "question": "Andreas Antonopoulos was a Greek-British Bitcoin teacher who wrote the textbook Mastering Bitcoin. For years he traveled the conference circuit repeating one short line to teach the self-custody rule: if someone else holds your private keys, the holder, not you, controls your Bitcoin. Which six-word line did he make famous?",
+    "question": "Andreas Antonopoulos, who wrote the textbook Mastering Bitcoin, summed up a hard lesson for a conference crowd. Bitcoin writers, setting the two great exchange collapses of 2014 and 2022 side by side, made the same point: a coin its holder cannot sign for is not really his money. Which line did Antonopoulos make famous?",
     "answer": "Not your keys, not your coins.",
     "choices": [
       "Not your keys, not your coins.",
@@ -20372,7 +20255,7 @@
   },
   {
     "tier": 2,
-    "question": "The safest way to store Bitcoin is to keep the secret keys on a small physical device that never connects to the internet. Popular brands include Trezor, Ledger, and Coldcard. The owner plugs it in only long enough to sign a transaction on the device itself, then unplugs it, so hackers on the internet can never reach the keys. What is this kind of device called?",
+    "question": "A Bitcoin owner plugs a small device into her laptop, okays a payment on its own little screen, and unplugs it again. Trezor, Ledger and Coldcard each make one, and it holds her keys on a chip that is never online. What is the device called?",
     "answer": "a hardware wallet",
     "choices": [
       "a hardware wallet",
@@ -20385,7 +20268,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin developers propose new rules through documents called Bitcoin Improvement Proposals (BIPs). One BIP dealt with backups: if your hardware wallet is lost or broken, it lets you recover every private key from a list of plain English words. The words are drawn from a fixed dictionary of 2,048. Which BIP set this seed-phrase rule?",
+    "question": "A Bitcoin owner's wallet device breaks, and he rebuilds every one of his keys from a list of twelve plain English words. The standard behind that backup, written in 2013, draws its words from one fixed list of 2,048. Bitcoin's developers number such standards as Bitcoin Improvement Proposals. Which one is it?",
     "answer": "BIP-39",
     "choices": [
       "BIP-39",
@@ -20397,34 +20280,8 @@
     "topic": "self-custody-and-not-your-keys-not-your-coins"
   },
   {
-    "tier": 3,
-    "question": "In February 2014 a Tokyo-based Bitcoin exchange called Mt. Gox — at the time the largest exchange in the world, handling most of all Bitcoin trades — suddenly halted withdrawals and filed for bankruptcy. About 850,000 customer coins, worth hundreds of millions of dollars, vanished with it. Savers around the world watched their balances go to zero overnight. What is the main lesson savers took from that disaster?",
-    "answer": "Coins kept on someone else's website can vanish if that company fails",
-    "choices": [
-      "Coins kept on someone else's website can vanish if that company fails",
-      "Bitcoin itself was broken and had to be redesigned from scratch",
-      "Only governments should be allowed to hold coins for customers",
-      "Tokyo police can always recover any coins that are lost"
-    ],
-    "context": "Mt Gox (originally 'Magic: The Gathering Online eXchange'), run by Mark Karpeles from Tokyo, filed for civil rehabilitation on February 28, 2014 after 850,000 BTC went missing. BitInstant had shut down earlier; Cryptsy imploded in 2016; Coinbase is still trading. Source: https://en.wikipedia.org/wiki/Mt._Gox.",
-    "topic": "self-custody-and-not-your-keys-not-your-coins"
-  },
-  {
     "tier": 4,
-    "question": "Eight years after Mt Gox, in November 2022, a second giant Bitcoin exchange collapsed with billions of customer dollars missing. Its founder was later convicted of fraud in a New York federal court and sentenced to 25 years in prison. Which 2022 collapse taught the self-custody lesson a second time?",
-    "answer": "the FTX collapse under Sam Bankman-Fried",
-    "choices": [
-      "the FTX collapse under Sam Bankman-Fried",
-      "the Coinbase collapse under Brian Armstrong",
-      "the BitMEX collapse under Arthur Hayes",
-      "the Binance collapse under Changpeng Zhao"
-    ],
-    "context": "FTX filed for Chapter 11 on November 11, 2022; Sam Bankman-Fried was convicted in November 2023 on seven fraud counts and sentenced March 28, 2024 to 25 years. Coinbase is a public company still operating; Arthur Hayes pleaded guilty to a Bank Secrecy Act violation in 2022 but BitMEX did not collapse; CZ pleaded guilty on AML charges in 2023 but Binance did not fold. Source: https://en.wikipedia.org/wiki/Bankruptcy_of_FTX.",
-    "topic": "self-custody-and-not-your-keys-not-your-coins"
-  },
-  {
-    "tier": 4,
-    "question": "Two of the biggest crypto exchange collapses were Mt Gox in 2014 and FTX (a large exchange) in 2022. In both, one specific group of customers kept every coin they owned while other customers lost theirs. Which decision separated the winners from the losers?",
+    "question": "Two customers of Mt Gox took stock after the exchange collapsed in February 2014: one had lost every coin, while the other had lost nothing. Customers of Sam Bankman-Fried's exchange split the same way when it failed in 2022. Which decision separated those who lost nothing from the rest?",
     "answer": "holding the private keys themselves rather than leaving coins on the exchange",
     "choices": [
       "holding the private keys themselves rather than leaving coins on the exchange",
@@ -20437,7 +20294,7 @@
   },
   {
     "tier": 5,
-    "question": "A Bitcoin holder can protect against a single stolen or broken wallet by splitting the spending power across several devices. Funds can move only when a set number of them sign together -- say, two of three kept in three different places. What is this wallet setup called?",
+    "question": "A careful Bitcoin holder keeps three keys in three different places and sets up her wallet so that any two of them together can spend her coins. Losing one device, or having one stolen, can then no longer cost her the coins. What is this kind of wallet called?",
     "answer": "a multisig wallet",
     "choices": [
       "a multisig wallet",
@@ -20449,47 +20306,8 @@
     "topic": "self-custody-and-not-your-keys-not-your-coins"
   },
   {
-    "tier": 5,
-    "question": "In 2022 the crypto exchange FTX, run by an American named Sam Bankman-Fried, collapsed and lost billions in customer money — the same shape of disaster that had struck the Tokyo exchange Mt. Gox back in 2014. A Bitcoin writer set the two failures side by side, eight years apart, and argued that both teach the same brutal lesson about who takes the loss when a middleman holding your coins fails. Which self-custody argument is he pressing?",
-    "answer": "That an unspent output the holder cannot sign for is not the holder's money in any meaningful sense",
-    "choices": [
-      "That an unspent output the holder cannot sign for is not the holder's money in any meaningful sense",
-      "That regulators should require exchanges to insure customer deposits like commercial banks do",
-      "That the Bitcoin protocol should be changed to freeze coins associated with failed exchanges",
-      "That customers should diversify across multiple exchanges to spread counterparty risk"
-    ],
-    "context": "The self-custody argument is a definitional one: if you cannot sign the transaction, you do not own the coin -- you own a claim on whoever can. Deposit-insurance and coin-freezing responses accept the custodial model the argument rejects; diversifying across exchanges only spreads the same counterparty risk. Source: https://en.wikipedia.org/wiki/Bankruptcy_of_FTX; Antonopoulos, Mastering Bitcoin (2017 ed.).",
-    "topic": "self-custody-and-not-your-keys-not-your-coins"
-  },
-  {
     "tier": 1,
-    "question": "On a Friday in March 2023, a big American bank called Silicon Valley Bank failed after depositors tried to pull out billions at once. Over that weekend, worried customers at other banks that held the same kind of long-term bonds started pulling their money too. By Sunday night a second bank had been shut down by regulators. Why does one bank failing often trigger another right after?",
-    "answer": "People panic and pull their money out of similar banks too",
-    "choices": [
-      "People panic and pull their money out of similar banks too",
-      "Bank buildings are always in the same neighborhood",
-      "Banks all share one computer that crashes together",
-      "The government pays banks to fail one after another"
-    ],
-    "context": "Signature Bank, founded 2001, had grown to $110 billion in assets serving major crypto exchanges through its 24/7 payment network Signet. Its March 12 2023 seizure was the third-largest US bank failure at the time. Source: Grokipedia 'Signature Bank' (2026-09-05).",
-    "topic": "signature-first-republic-and-the-march-2023-domino"
-  },
-  {
-    "tier": 1,
-    "question": "A US lawmaker spends years in Congress writing big new rules for banks. When she retires, she takes a well-paid seat on the board of one of the very banks that must follow those rules — hired for her insider knowledge and old friendships. What is this pattern of jumping to jobs in the industries you used to regulate called?",
-    "answer": "The revolving door",
-    "choices": [
-      "The revolving door",
-      "Free trade",
-      "The invisible hand",
-      "The knowledge problem"
-    ],
-    "context": "Frank served in Congress 1981-2013 and co-wrote Dodd-Frank. His post-Congress board seat at Signature and his public criticism of the seizure created an awkward institutional twist -- the co-author of the post-2008 banking regulation defending a 2023 bank failure. Source: Grokipedia 'Signature Bank' (2026-09-05).",
-    "topic": "signature-first-republic-and-the-march-2023-domino"
-  },
-  {
-    "tier": 2,
-    "question": "One well-known bank suddenly collapses over a weekend. Customers of a completely different bank across town see the news the next morning, panic, and rush to pull their own deposits — even though that second bank is perfectly healthy. Fear, not fundamentals, spreads the crisis from the first bank to the second. What is this kind of chain reaction called?",
+    "question": "A depositor at Signature Bank in New York saw Silicon Valley Bank fail on Friday, March 10, 2023, and pulled her money out over the weekend, though no one yet knew whether Signature itself was sound. Regulators shut it that Sunday. What is a chain reaction like that called?",
     "answer": "Financial contagion, when fear spreads from one bank to the next",
     "choices": [
       "Financial contagion, when fear spreads from one bank to the next",
@@ -20502,7 +20320,7 @@
   },
   {
     "tier": 2,
-    "question": "On March 16, 2023, right in the middle of the US banking crisis, eleven of the biggest American banks — including JPMorgan Chase, Bank of America, Citigroup, and Wells Fargo — teamed up in an emergency rescue for a shaky California lender called First Republic. Each of the eleven poured deposits into the failing bank, hoping to steady it and stop customers from fleeing. How much did the eleven banks put in together?",
+    "question": "Bankers from eleven of America's largest banks, JPMorgan Chase, Bank of America, Citigroup and Wells Fargo among them, placed deposits with the shaky First Republic on March 16, 2023, to steady it. How much did the eleven put in together?",
     "answer": "$30 billion",
     "choices": [
       "$30 billion",
@@ -20515,7 +20333,7 @@
   },
   {
     "tier": 3,
-    "question": "In May 2023 the midsize US bank First Republic failed. Federal regulators quickly sold nearly all of it to JPMorgan Chase, already the biggest bank in the country. This is one of many mergers over the last forty years — the US had over 14,000 banks in 1984 but fewer than 4,000 by 2023. When smaller banks keep getting swallowed like this, what tends to happen over time?",
+    "question": "A First Republic customer woke on May 1, 2023, to find that regulators had closed her bank and sold most of it to JPMorgan Chase, already the largest bank in the country. Mergers like that had cut the number of American banks from over 14,000 in 1984 to fewer than 4,000. When small banks keep getting swallowed, what tends to happen over time?",
     "answer": "The biggest banks get bigger and customers have fewer choices",
     "choices": [
       "The biggest banks get bigger and customers have fewer choices",
@@ -20528,7 +20346,7 @@
   },
   {
     "tier": 3,
-    "question": "From March to May 2023, three American banks collapsed in fast succession: Silicon Valley Bank in California, Signature Bank in New York, and First Republic in San Francisco. All three had been rated safe just months earlier. When analysts dug into the wreckage, they found one shared root cause tying all three failures together. What was it?",
+    "question": "An analyst going over the wreckage of Silicon Valley Bank, Signature and First Republic in 2023 found one root cause behind all three. All three had been rated safe just months earlier. What was that root cause?",
     "answer": "Held-to-maturity bond losses from the Fed's rate-hike cycle",
     "choices": [
       "Held-to-maturity bond losses from the Fed's rate-hike cycle",
@@ -20540,34 +20358,8 @@
     "topic": "signature-first-republic-and-the-march-2023-domino"
   },
   {
-    "tier": 4,
-    "question": "In 2023 three US banks failed. The Federal Deposit Insurance Corporation (FDIC) normally only guarantees deposits up to $250,000, but this time it paid back everyone -- even people with much more. What is the predictable long-term problem with covering losses above the cap?",
-    "answer": "Big depositors stop watching how risky their bank is, since they know they will be bailed out",
-    "choices": [
-      "Big depositors stop watching how risky their bank is, since they know they will be bailed out",
-      "Banks stop failing forever, because bailouts prevent every future crisis",
-      "Small depositors immediately lose their insurance under $250,000",
-      "Insurance rates automatically fall for every bank in the country"
-    ],
-    "context": "The FDIC Improvement Act of 1991 allows the systemic-risk exception when a full uninsured-deposit haircut would threaten broader stability. It had been invoked rarely before 2023. The three consecutive uses in March-May 2023 established a new practical baseline. Source: Grokipedia 'FDIC Improvement Act' (2026-09-05).",
-    "topic": "signature-first-republic-and-the-march-2023-domino"
-  },
-  {
-    "tier": 4,
-    "question": "In early March 2023 a California bank called Silvergate — whose customers were almost entirely crypto companies — quietly announced it was shutting itself down. Two days later Silicon Valley Bank, whose customers were mostly tech startups, also collapsed. Why does a bank with all its customers in one industry usually fail faster than a bank with a mix?",
-    "answer": "When that one industry gets in trouble, all the customers try to withdraw at the same time",
-    "choices": [
-      "When that one industry gets in trouble, all the customers try to withdraw at the same time",
-      "The bank's staff can only speak one shared industry language",
-      "Federal rules ban single-industry banks from lending money",
-      "Single-industry banks pay double the taxes of mixed banks"
-    ],
-    "context": "Silvergate voluntarily liquidated on March 8 2023, making 2023 a year with four US bank failures in nine weeks. Republic First (Philadelphia) also failed April 26 2024 as a lagging casualty of the same cycle. Source: Grokipedia 'Silvergate Bank' (2026-09-05).",
-    "topic": "signature-first-republic-and-the-march-2023-domino"
-  },
-  {
     "tier": 5,
-    "question": "In May 2023 three regional US banks had already collapsed one after another. JPMorgan Chase — the biggest US bank — bought failing First Republic, and its chief said 'this part of the crisis is over.' Why does the biggest bank buying a failing bank tend to stop a chain of runs?",
+    "question": "Jamie Dimon, JPMorgan's chief, told the world in May 2023, after his bank bought most of the failed First Republic: 'this part of the crisis is over.' Three banks had gone down one after another that spring. What does a takeover like that do to depositors at other banks?",
     "answer": "A giant, obviously-safe bank taking over calms depositors and stops the panic from spreading",
     "choices": [
       "A giant, obviously-safe bank taking over calms depositors and stops the panic from spreading",
@@ -20580,7 +20372,7 @@
   },
   {
     "tier": 5,
-    "question": "From March to May 2023, three US banks — Silicon Valley Bank, Signature, and First Republic — failed in quick succession, all wrecked by losses on long-term bonds they had bought when interest rates were near zero and then watched crash as the Federal Reserve, or Fed, raised rates sharply in 2022 and 2023. Bitcoin economists say the sequence shows something about Fed policy and the banks' exposure to it. What do they say it shows?",
+    "question": "A Bitcoin economist laid the three bank failures of spring 2023 beside the Federal Reserve's own record in the years before: near-zero interest rates and heavy bond buying, then the sharp rate rises of 2022 and 2023. What did he say the sequence shows?",
     "answer": "The same central bank that creates assets during a QE cycle exposes those assets to loss during the subsequent tightening cycle",
     "choices": [
       "The same central bank that creates assets during a QE cycle exposes those assets to loss during the subsequent tightening cycle",
@@ -20593,20 +20385,20 @@
   },
   {
     "tier": 1,
-    "question": "Imagine a bank whose customers are almost all technology startups clustered in one small region — say, Silicon Valley in California. Business is booming when the tech industry is booming. But when tech slows down and many of those startups all pull their savings at the same time to keep paying their workers, this bank ends up in extra danger compared with a normal town bank. Why is it in extra danger?",
+    "question": "A startup founder in Santa Clara deposits her company's payroll at Silicon Valley Bank, beside a crowd of other startups from the same industry and the same region. Then the tech boom cools. Why does a bank like hers face more danger than a typical small-town bank?",
     "answer": "Its customers are too similar, so trouble hits them all at once",
     "choices": [
       "Its customers are too similar, so trouble hits them all at once",
-      "Tech startups only use pennies, not dollars",
-      "The bank has no windows, so nobody can find it",
-      "Banks are not allowed to have startup customers"
+      "Federal rules ban single-industry banks from lending money",
+      "Single-industry banks pay double the taxes of mixed banks",
+      "The bank's staff can only speak one shared industry language"
     ],
     "context": "SVB was founded 1983 to serve the Bay Area tech ecosystem. Its deposit base was overwhelmingly startup companies with venture funding parked in the bank between funding rounds. Source: Grokipedia 'Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
   },
   {
     "tier": 1,
-    "question": "When the Federal Reserve holds interest rates near zero, banks and big investors can borrow money almost for free. Safe things like US Treasury bonds barely pay any interest at all. So people with money to invest go hunting for anything that might pay better — including risky new startup companies. What usually happens to the money flowing into those risky startups?",
+    "question": "A venture fund manager eyes safe government bonds paying almost nothing while the Federal Reserve holds interest rates near zero. What usually happens to the money flowing into risky startups at a time like that?",
     "answer": "It floods in -- investors chase any chance of higher returns",
     "choices": [
       "It floods in -- investors chase any chance of higher returns",
@@ -20619,7 +20411,7 @@
   },
   {
     "tier": 2,
-    "question": "A bank buys long-term bonds when interest rates are very low. Later, rates jump up, and those same bonds are worth much less on the open market. Under one common accounting rule, the bank does not have to write that loss down on paper. What danger does this create?",
+    "question": "A bank treasurer buys long-term bonds while interest rates are very low. Rates then jump, and the bonds are worth much less on the open market, but under one common accounting rule the bank need not write that loss down. What danger does this create?",
     "answer": "The bank looks healthy on paper while quietly holding big real losses",
     "choices": [
       "The bank looks healthy on paper while quietly holding big real losses",
@@ -20632,7 +20424,7 @@
   },
   {
     "tier": 2,
-    "question": "In March 2023, California's Silicon Valley Bank collapsed after depositors pulled about $42 billion in a single day using their phones. Back in the old days, worried depositors had to travel to the bank in person and stand in line for hours to pull their money out. Today anyone can tap out a huge withdrawal in seconds while reading scary posts on social media. What has this done to the speed of a bank run?",
+    "question": "A Silicon Valley Bank customer read a warning on Twitter in March 2023 and moved her company's money out with a few taps on her phone. Worried savers once had to queue at the teller's window, and a run could take days. What have phones and social media done to how fast a run on a bank unfolds?",
     "answer": "Bank runs now happen in hours instead of days, giving regulators much less time to react",
     "choices": [
       "Bank runs now happen in hours instead of days, giving regulators much less time to react",
@@ -20644,21 +20436,21 @@
     "topic": "silicon-valley-bank-march-10-2023"
   },
   {
-    "tier": 3,
-    "question": "In March 2023 Silicon Valley Bank, a California bank whose customers were mostly tech startups, had a very bad day. In just one afternoon, depositors tried to yank about $42 billion — roughly a quarter of the bank's total deposits — out through wire transfers and phone apps. What is the name for that kind of sudden rush by depositors trying to escape a failing bank?",
+    "tier": 1,
+    "question": "A tech founder wired his startup's money out of Silicon Valley Bank on March 9, 2023, as other customers asked for about $42 billion back that single day. What is a sudden rush like that called?",
     "answer": "A bank run",
     "choices": [
       "A bank run",
-      "A bank strike",
       "A margin call",
-      "A stock split"
+      "A short sale",
+      "A bank strike"
     ],
     "context": "$42 billion in one day was the fastest bank run in US history by a wide margin. The California Department of Financial Protection and Innovation seized SVB at 11:20 AM Pacific time that day. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
   },
   {
     "tier": 3,
-    "question": "In September 2008 an American bank called Washington Mutual collapsed. It was the biggest bank failure in United States history. Across the country other banks were falling too, and the federal government had to step in. For years, banks had made huge loans to families to buy houses. When home prices dropped, many of those families could no longer keep up with the payments. What main problem pushed so many banks over the edge that year?",
+    "question": "A family borrowed heavily from a bank to buy a house, and then house prices across America began to fall. Washington Mutual, the largest bank failure the United States has ever had, collapsed in September 2008, and banks across the country were falling with it. What main problem pushed so many of them over the edge?",
     "answer": "They had lent against home loans that borrowers could not repay",
     "choices": [
       "They had lent against home loans that borrowers could not repay",
@@ -20671,7 +20463,7 @@
   },
   {
     "tier": 4,
-    "question": "In March 2023 a California bank called Silicon Valley Bank collapsed in about 48 hours. Most American bank deposits are protected up to $250,000 by a federal insurance program called the FDIC (Federal Deposit Insurance Corporation). But at Silicon Valley Bank nearly every deposit was well above that cap -- tech startups had parked millions there. When rumors spread that the bank was in trouble, customers rushed to withdraw their balances fast. Why does a big share of uninsured deposits make a bank more likely to face a run?",
+    "question": "A startup's finance chief parked millions at Silicon Valley Bank, far above the $250,000 per account that federal deposit insurance covers; about nine in ten of the bank's dollars were uninsured. When rumors spread in March 2023, customers rushed to pull their balances out. Why does a big share of uninsured deposits make a bank more likely to face a run?",
     "answer": "Uninsured depositors have a big reason to pull money out at the first sign of trouble",
     "choices": [
       "Uninsured depositors have a big reason to pull money out at the first sign of trouble",
@@ -20684,7 +20476,7 @@
   },
   {
     "tier": 4,
-    "question": "The day after Silicon Valley Bank was seized in March 2023, the US Treasury, the Federal Reserve, and the Federal Deposit Insurance Corporation (FDIC) held a joint announcement about depositors. Normally the FDIC only guarantees the first $250,000 in each account. But many Silicon Valley Bank customers were tech companies with millions of dollars on deposit. What did the three agencies say?",
+    "question": "Officials of the Treasury, the Federal Reserve and the Federal Deposit Insurance Corporation made a joint announcement about Silicon Valley Bank's depositors on Sunday, March 12, 2023, two days after the bank was seized. Insurance normally covers $250,000 per account, and many of its customers had millions there. What did the officials announce?",
     "answer": "Every dollar of deposit would be paid in full, even amounts above the cap",
     "choices": [
       "Every dollar of deposit would be paid in full, even amounts above the cap",
@@ -20697,7 +20489,7 @@
   },
   {
     "tier": 5,
-    "question": "Silicon Valley Bank was a large US bank that collapsed in early 2023. For eight months before it failed the bank had no one in one senior job whose whole purpose is to spot dangerous mismatches between short-term debts and long-term holdings. Which senior role had the bank left empty?",
+    "question": "A depositor reading about Silicon Valley Bank after its fall learned that one senior post there had sat empty for roughly eight months in 2022. Whoever holds it has one job: to spot dangerous mismatches between short-term debts and long-term holdings. Which post was it?",
     "answer": "Chief Risk Officer",
     "choices": [
       "Chief Risk Officer",
@@ -20706,19 +20498,6 @@
       "Chief Investment Officer"
     ],
     "context": "SVB's Chief Risk Officer departed in April 2022. The bank operated without a CRO for the eight months through late 2022 -- exactly the period when the rate-cycle bond losses were building on its balance sheet. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
-    "topic": "silicon-valley-bank-march-10-2023"
-  },
-  {
-    "tier": 5,
-    "question": "In March 2023 Silicon Valley Bank collapsed in a single day. Warnings raced through Twitter, Slack, and group chats in minutes; customers used phone apps to move billions of dollars to other banks in hours. Older bank runs took days as depositors lined up on the sidewalk to reach a teller window. What does the Silicon Valley Bank collapse teach about how bank runs work now?",
-    "answer": "A digital-age run can drain a bank in one day, faster than any run in earlier banking history",
-    "choices": [
-      "A digital-age run can drain a bank in one day, faster than any run in earlier banking history",
-      "Digital-age runs are slower because customers deliberate longer online",
-      "Deposit insurance now completely prevents bank runs from happening",
-      "Modern banks cannot experience runs because reserves sit at the Fed"
-    ],
-    "context": "SVB's $42 billion in withdrawal requests in a single day is faster than any pre-2020 US bank run. When customers can move deposits by mobile app and coordinate via Twitter, the classic three-day run compresses to hours. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
   },
   {
@@ -20892,7 +20671,7 @@
   },
   {
     "tier": 1,
-    "question": "Ida May Fuller was a retired legal secretary living in Ludlow, Vermont. On January 31, 1940, her mail carrier brought her Social Security check number 1 — the very first one ever paid to anyone. It was for $22.54. During her working years she had paid a total of $24.75 in Social Security taxes. Fuller lived on to age 100. What did she collect from Social Security in all across her long retirement?",
+    "question": "Ida May Fuller of Ludlow, Vermont, a legal secretary in her working years, received Social Security check number 1 on January 31, 1940, for $22.54. She had paid in $24.75 in all, and she lived to 100. About how much did she collect over her retirement?",
     "answer": "About $22,900",
     "choices": [
       "About $22,900",
@@ -20905,7 +20684,7 @@
   },
   {
     "tier": 1,
-    "question": "US Social Security works by having current workers pay taxes that fund current retirees' checks — not by saving up your own money for later. In 1950, there were 16.5 workers paying in for each retiree collecting a check, a comfortable cushion. Since then, families had fewer babies and people lived much longer. By 2024, how many workers paid in for each person receiving benefits?",
+    "question": "A worker in 1950 opened his pay envelope and found Social Security tax taken out, money bound for that year's retirees, not for his own old age. Sixteen and a half workers paid in for each person collecting. Families have since had fewer babies, and people live longer. By 2024, how many workers paid in for each person receiving benefits?",
     "answer": "About 2.7",
     "choices": [
       "About 2.7",
@@ -20918,7 +20697,7 @@
   },
   {
     "tier": 2,
-    "question": "The government calls the money workers must send to Social Security a 'contribution,' as if it were a gift you chose to give. But you go to prison if you refuse to send it. What did the economists Milton and Rose Friedman say was wrong with using words this way?",
+    "question": "Milton and Rose Friedman took aim in Free to Choose at the Social Security law's word for what workers must pay in: a 'contribution,' as if they gave it freely. Yet a worker who refuses to pay can be sent to prison. What did the Friedmans say was wrong with the word?",
     "answer": "Calling a forced tax a contribution hides what is really happening",
     "choices": [
       "Calling a forced tax a contribution hides what is really happening",
@@ -20931,7 +20710,7 @@
   },
   {
     "tier": 3,
-    "question": "Ephram Nestor came from Bulgaria in 1913. He paid Social Security tax on his US wages from 1936 to 1955. In July 1956 the government sent him back for old Communist Party ties and cut off his benefits. Nestor sued. In 1960 the Supreme Court ruled against him. What did the Court say about money paid into Social Security?",
+    "question": "Ephram Nestor sued after the government deported him in July 1956 for his old Communist Party ties and cut off his Social Security benefits. He had come from Bulgaria in 1913 and paid the tax on his wages from 1936 to 1955. The Supreme Court ruled against him in 1960. What did the Court say about money paid into Social Security?",
     "answer": "It buys no property right, and Congress may change the benefits at will",
     "choices": [
       "It buys no property right, and Congress may change the benefits at will",
@@ -20944,7 +20723,7 @@
   },
   {
     "tier": 3,
-    "question": "Each year Social Security's board of trustees publishes a report on when its trust fund — the reserve of savings — will run dry. The 2025 report moved that date one year closer, to 2034. By law, Social Security cannot borrow money to cover a gap between what comes in from workers' paychecks and what it owes retirees. On the day the reserves finally run out, what does the report say happens?",
+    "question": "Social Security's trustees moved the date their trust fund runs dry a year closer in their 2025 report, to 2034. By law the program cannot borrow to cover a gap between what comes in from workers' paychecks and what it owes retirees. On the day the reserves run out, what does the report say happens?",
     "answer": "Incoming payroll taxes would cover about 81% of scheduled benefits",
     "choices": [
       "Incoming payroll taxes would cover about 81% of scheduled benefits",
@@ -20957,7 +20736,7 @@
   },
   {
     "tier": 4,
-    "question": "In May 1981 Chile became the first country to let workers leave the state pension. They could send ten percent of their wages into a private retirement account instead. Jose Pinera, the labor minister, made the switch optional for those in the old plan. But one group was barred from switching. Which workers could not switch?",
+    "question": "José Piñera, Chile's labor minister, let workers leave the state pension in May 1981 and send ten percent of their wages to a private retirement account instead. Those already in the old plan could choose whether to switch, but one group was barred. Which workers could not switch?",
     "answer": "Those within five years of retirement",
     "choices": [
       "Those within five years of retirement",
@@ -20970,7 +20749,7 @@
   },
   {
     "tier": 4,
-    "question": "George W. Bush opened his second term in January 2005 by making personal Social Security accounts his signature domestic proposal, with a White House campaign directed by Karl Rove and Ken Mehlman. Congress never brought a bill to a vote. Support collapsed once voters worked out what opening an account would do to the rest of what the program promised them. What did they conclude it would do?",
+    "question": "George W. Bush opened his second term in January 2005 by making personal Social Security accounts his signature domestic proposal, with a White House campaign directed by Karl Rove and Ken Mehlman. Congress never brought a bill to a vote. Support collapsed once voters worked out what the plan would mean for them. What did they conclude it would do?",
     "answer": "Cut the guaranteed benefit for all but the lowest-income recipients",
     "choices": [
       "Cut the guaranteed benefit for all but the lowest-income recipients",
@@ -20996,7 +20775,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2009 the US government lent $535 million of taxpayer money to Solyndra, a California solar-panel company officials thought would win big against Chinese competitors. Two years later, in 2011, Solyndra went bankrupt and could not repay a cent of the loan. Who ends up eating that loss?",
+    "question": "Barack Obama toured the California factory of Solyndra, a solar-panel maker his administration had backed in 2009 with a $535 million federal loan guarantee. Solyndra went bankrupt in 2011 and could not repay the loan. Who ends up eating that loss?",
     "answer": "Taxpayers",
     "choices": [
       "Taxpayers",
@@ -21009,7 +20788,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2009 the US government lent $535 million of taxpayer money to Solyndra, a California solar-panel firm, because officials thought Solyndra would beat both its US and Chinese competitors. Two years later the company went bankrupt and could not repay a single cent. What is the general problem with letting officials pick winning firms this way?",
+    "question": "Federal officials bet in 2009 that Solyndra, a California solar-panel maker, would outsell its rivals in America and China, and they stood behind it with a $535 million loan guarantee. It went bankrupt two years later. What is the general problem with officials picking winning firms this way?",
     "answer": "Officials guessing which private companies will win rarely guess better than the market",
     "choices": [
       "Officials guessing which private companies will win rarely guess better than the market",
@@ -21022,7 +20801,7 @@
   },
   {
     "tier": 3,
-    "question": "Solyndra's tube-shaped solar panels used a rare-metal coating instead of the silicon wafers that most competitors — including cheap Chinese rivals — used. Between 2008 and 2011 one massive world price shift on a key panel material collapsed the cost gap and made Solyndra's design look far too expensive next to Chinese-made flat panels. The company went bankrupt in 2011. Which price shift was the decisive one?",
+    "question": "A Solyndra worker in California coated tube-shaped solar panels with a blend of rare metals, a design unlike the flat wafers most rivals made. Between 2008 and 2011 one massive shift in the world price of a key panel material made Solyndra's tubes far too costly next to cheap Chinese flat panels. Which shift was decisive?",
     "answer": "The world price of silicon collapsed from about $400 per kilogram in 2008 to about $40 per kilogram by 2011",
     "choices": [
       "The world price of silicon collapsed from about $400 per kilogram in 2008 to about $40 per kilogram by 2011",
@@ -21035,7 +20814,7 @@
   },
   {
     "tier": 4,
-    "question": "By 2010, private venture investors had walked away from more Solyndra funding. They had seen silicon prices crash and Chinese factories scale up. The Department of Energy backed the $535 million loan anyway. Which Austrian idea does this pattern show?",
+    "question": "Private venture investors walked away from more Solyndra funding as Chinese panel factories grew, while the Department of Energy kept standing behind its $535 million guarantee. The investors had seen the danger coming. Which economist's idea does this pattern show?",
     "answer": "Friedrich Hayek's knowledge problem: private investors' declined bets are dispersed information a central agency lacks",
     "choices": [
       "Friedrich Hayek's knowledge problem: private investors' declined bets are dispersed information a central agency lacks",
@@ -21048,7 +20827,7 @@
   },
   {
     "tier": 4,
-    "question": "Solyndra was an American solar-panel company. In 2009 it received a half-billion-dollar federal loan guarantee from the Obama administration to build a new factory in California. Two years later, in 2011, Solyndra went bankrupt and American taxpayers were left holding the bag. Congress opened hearings, and reporters zeroed in on one big private backer of the failed company -- an Oklahoma billionaire who had also raised campaign cash for President Obama. Who drew the heat?",
+    "question": "Members of Congress opened hearings after Solyndra, a solar-panel maker backed by a half-billion-dollar federal loan guarantee, went bankrupt in 2011. Reporters zeroed in on one private backer, an Oklahoma billionaire whose investment firm had put more into Solyndra than anyone else, and who had also raised campaign cash for President Obama. Who drew the heat?",
     "answer": "George Kaiser through his Argonaut Ventures firm",
     "choices": [
       "George Kaiser through his Argonaut Ventures firm",
@@ -21061,7 +20840,7 @@
   },
   {
     "tier": 5,
-    "question": "In 2011 a US solar-panel company called Solyndra went bankrupt after getting about $500 million from a $16 billion federal loan-guarantee program. Critics in the news focused only on Solyndra. A Bastiat-style critic says that focus misses the bigger unseen cost. What is the unseen cost?",
+    "question": "A critic in Frederic Bastiat's tradition says the reporters who fixed on Solyndra alone, after its bankruptcy in 2011, missed the larger unseen cost. Solyndra's guarantee came out of a much larger federal program. What is that unseen cost?",
     "answer": "The full $16 billion could not be doing anything else, and other funded firms failed too",
     "choices": [
       "The full $16 billion could not be doing anything else, and other funded firms failed too",
@@ -21074,20 +20853,7 @@
   },
   {
     "tier": 1,
-    "question": "The Soviet Union was a giant communist country that existed from 1922 to 1991 and stretched from Poland to the Pacific Ocean. Instead of letting shops and factories decide what to sell, the Soviets used a huge central-planning office in Moscow called Gosplan. A small committee there tried to decide how many shoes, tractors, and loaves of bread the whole country should make each year. Why is doing this well almost impossible?",
-    "answer": "No small group can know what millions of people actually want",
-    "choices": [
-      "No small group can know what millions of people actually want",
-      "The committee did not have enough clipboards",
-      "Russians did not want shoes or bread",
-      "There are only three products in a whole country"
-    ],
-    "context": "Gosplan (Gosudarstvenniy Planovyy Komitet -- State Planning Committee) coordinated Soviet five-year plans and yearly targets from 1921 through the USSR's dissolution in December 1991. Source: en.wikipedia.org/wiki/Gosplan.",
-    "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
-  },
-  {
-    "tier": 1,
-    "question": "In the Soviet Union, the government agency called Gosplan tried to plan the entire economy from the top down. Instead of letting prices and buyers decide what got made, Gosplan set production targets for how many boots, screws, tractors, and toothbrushes the country should produce each year. At its peak in the 1980s, Gosplan tried to set targets for an enormous list of separate products. What is the usual estimate of how many it tried to plan?",
+    "question": "A factory director received his production targets from Gosplan, the Soviet state planning office, one small part of a list that in the 1980s ran to boots, screws, tractors, toothbrushes and an enormous number of other separate products. By the usual estimate, how many kinds of products did Gosplan try to plan?",
     "answer": "Over 200,000",
     "choices": [
       "Over 200,000",
@@ -21100,7 +20866,7 @@
   },
   {
     "tier": 2,
-    "question": "The Austrian economist Ludwig von Mises argued in 1920 that a central planner cannot possibly do the math. To coordinate an economy, he said, you have to compare each pair of prices to every other pair. If a country makes N different products, the number of comparisons is roughly N times N, divided by two. A modern economy has around 200,000 different product categories. About what size number does that formula give?",
+    "question": "A planner at Gosplan faced the arithmetic that Ludwig von Mises had argued in 1920 no central planner could do. Every price had to be weighed against every other, and the pairs to compare multiplied as the square of the product count: about half of N times N for N products. About how many pairs did that give for a list of about 200,000 products?",
     "answer": "20 billion",
     "choices": [
       "20 billion",
@@ -21113,7 +20879,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Soviet Union of the 1900s, the state planning office Gosplan tried to decide what every factory should make. But the plan always had gaps -- a bakery might not get flour, a shop might not get shoes. Ordinary Soviets survived by trading favors with friends, cousins, and workmates who could quietly help them get scarce goods. This informal shadow system had its own Russian word, meaning 'favor-trading' or 'connections'. What is the word?",
+    "question": "A shopper who found no shoes in the Soviet stores got a pair through a favor from a friend at work. Gosplan's plans always had gaps like that, and ordinary people filled them by trading favors with friends, cousins and coworkers. What was the Russian word for that system of favors?",
     "answer": "Blat",
     "choices": [
       "Blat",
@@ -21126,7 +20892,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Soviet Union, factories were told by Gosplan -- the central planning office in Moscow -- exactly what to produce. But the plan was always short on some parts. If a tractor factory needed steel and Moscow forgot to ship any, the manager could not just call a supplier -- there was no market. So Soviet factory bosses hired traveling agents whose whole job was to go to Moscow, work every contact, and pry loose the missing supplies. What were these travelers called?",
+    "question": "A Soviet tractor-plant manager found that Moscow had forgotten to ship his steel, and there was no market where he could simply buy some. So he sent agents on the road to the capital to work their contacts and pry the steel loose. What were such travelers called?",
     "answer": "Tolkachi (pushers)",
     "choices": [
       "Tolkachi (pushers)",
@@ -21139,7 +20905,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Soviet Union, nail factories were paid to hit a total weight quota by the end of each month. Near the deadline, managers rushed to finish by making only giant, heavy, nearly useless nails so the numbers came out. Elsewhere Soviet glass factories paid by square meters produced panes so thin they shattered on delivery. What is the predictable result of paying only for weight or count, never for quality?",
+    "question": "A nail-factory manager in the Soviet Union, paid on the total weight of the nails he shipped, turned out a handful of huge, useless nails at the end of the month to make his number. A glassworks paid by area turned out panes so thin they shattered on delivery. What is the predictable result of paying for weight or count, never for quality?",
     "answer": "Lots of heavy, poorly-made products that nobody wants to use",
     "choices": [
       "Lots of heavy, poorly-made products that nobody wants to use",
@@ -21152,7 +20918,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1983 a socialist economist — not a free-market thinker — published a book titled The Economics of Feasible Socialism. In it he conceded that the calculation problem, first raised by the Austrian economist Ludwig von Mises against central planning, is real and cannot be waved away. Any large central-planned economy, he wrote, must face it head-on. Who wrote the book?",
+    "question": "A socialist economist and scholar of the Soviet economy conceded in 1983 that Ludwig von Mises's calculation problem was real, and that every big planned economy has to reckon with it. He made the admission in his book The Economics of Feasible Socialism. Who was he?",
     "answer": "Alec Nove",
     "choices": [
       "Alec Nove",
@@ -21165,7 +20931,7 @@
   },
   {
     "tier": 4,
-    "question": "The Soviet Union spent 70 years running its economy through Moscow's Gosplan office. By the late 1980s the plan was failing and shortages were everywhere. In December 1991 the Soviet parliament voted the whole country out of existence. President Mikhail Gorbachev resigned live on television, the red hammer-and-sickle flag came down over the Kremlin -- on Christmas Day, no less -- and Gosplan closed for good. What is the exact date?",
+    "question": "Mikhail Gorbachev resigned as Soviet president on live television, and the red hammer-and-sickle flag came down over the Kremlin. The Soviet Union ended, and with it Gosplan, which had run the country's economy from Moscow for most of seventy years. On what date did all this happen?",
     "answer": "December 25, 1991",
     "choices": [
       "December 25, 1991",
@@ -21178,7 +20944,7 @@
   },
   {
     "tier": 5,
-    "question": "In 1920 the Austrian economist Ludwig von Mises published a paper arguing that socialism could never work. Without real market prices, he said, a central planner cannot know what to make in what amounts. Mises's opponents countered that modern statistics and computers would solve the problem. Then, in 1991, the Soviet Union collapsed after 70 years of Gosplan trying. The West went on producing shoes, tractors, and bread by the millions with no committee at all. What did the market do that Gosplan could not?",
+    "question": "Ludwig von Mises argued in 1920 that without real market prices a central planner cannot know what to make, or how much, and his critics trusted that better statistics and faster computers would save the planners. The Soviet Union collapsed instead in 1991, and market prices then did what Gosplan never could. What did those prices do?",
     "answer": "Coordinate 200,000 product categories with no committee needed",
     "choices": [
       "Coordinate 200,000 product categories with no committee needed",
@@ -21191,7 +20957,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2018 the American economist Thomas Sowell published a book called Discrimination and Disparities. He took aim at a common news line: if two groups end up with different outcomes, someone must have treated them differently. Sowell agreed the gap is real. But he argued the gap by itself only tells you one thing. What does he say a gap alone shows?",
+    "question": "A reporter writes that two groups have ended up with different outcomes and concludes that one of them must have been treated worse. Thomas Sowell took aim at that line of reasoning in Discrimination and Disparities (2018). He agreed the gaps are real. What did he say a gap shows on its own?",
     "answer": "That something differs between them, and not yet what",
     "choices": [
       "That something differs between them, and not yet what",
@@ -21204,7 +20970,7 @@
   },
   {
     "tier": 1,
-    "question": "Thomas Sowell likes to point to a group that was banned from jobs, held back by law, and hit by riots. Yet it still ended up richer than the majority that shut it out. His main case is from Malaysia, Indonesia, Thailand, and the Philippines. Which group is it?",
+    "question": "Thomas Sowell held up one minority as his main example: shut out of occupations, hemmed in by law and set upon by mobs, it still grew richer than the majority around it. His case comes from Indonesia, Malaysia, Thailand and the Philippines. Which group was it?",
     "answer": "The overseas Chinese",
     "choices": [
       "The overseas Chinese",
@@ -21217,7 +20983,7 @@
   },
   {
     "tier": 2,
-    "question": "Lebanese families set up as traders across West Africa; Indian merchant families did the same across East Africa. Both arrived poor, both were resented, and both ended up running a large share of the commerce around them. Thomas Sowell says the two cases share a cause, and it is not the countries they landed in. What is it?",
+    "question": "A Lebanese trader arrived poor and resented in West Africa, as an Indian merchant family did in East Africa, and in time both were running a large share of the trade around them. Thomas Sowell says the two cases share one cause, and it is not the countries they landed in. What is it?",
     "answer": "The trading skills and business habits they brought, which kept working in a new place",
     "choices": [
       "The trading skills and business habits they brought, which kept working in a new place",
@@ -21230,7 +20996,7 @@
   },
   {
     "tier": 2,
-    "question": "Between 1994 and 1998 Thomas Sowell published three linked volumes -- Race and Culture, Migrations and Cultures, Conquests and Cultures -- built on fifteen years of research and travels that took him round the world twice. He gave all three the same underlying theme. What was it?",
+    "question": "Thomas Sowell finished in 1998 the last of three linked books, Race and Culture, Migrations and Cultures and Conquests and Cultures, the fruit of fifteen years' research and two journeys around the world. He gave all three one theme. What was it?",
     "answer": "That groups carry their own way of life, and their economic histories cannot be read without it",
     "choices": [
       "That groups carry their own way of life, and their economic histories cannot be read without it",
@@ -21256,7 +21022,7 @@
   },
   {
     "tier": 3,
-    "question": "Thomas Sowell wanted a case where no group-level cause could explain uneven outcomes: same parents, same house, same schools, same family income. He found one in a study of America's top scholarship finalists — kids who scored so high on national tests that they qualified for elite college scholarships — but only from families of exactly five children. What did the study show about the eldest child in those families?",
+    "question": "Thomas Sowell went looking for uneven outcomes that no group cause could explain, among children with the same parents, home, schools and family income. He found them in a study of finalists for National Merit Scholarships drawn from families of exactly five children. What did the study show about the eldest child?",
     "answer": "The first-born was the finalist more often than the other four siblings combined",
     "choices": [
       "The first-born was the finalist more often than the other four siblings combined",
@@ -21269,7 +21035,7 @@
   },
   {
     "tier": 3,
-    "question": "Chinese families in Indonesia were a small share of the country. At times they were banned from certain jobs and hit by riots. Still, Thomas Sowell picks Indonesia to make a point about what those families held. What share of Indonesia's wealth does he say they held?",
+    "question": "Thomas Sowell chose Indonesia for his sharpest case. Chinese families there were a small share of the people, barred from some jobs and hit by deadly riots. What share of the country's wealth does he say they held?",
     "answer": "About eighty per cent",
     "choices": [
       "About eighty per cent",
@@ -21282,7 +21048,7 @@
   },
   {
     "tier": 4,
-    "question": "A committee looks at a tough engineering program. Admits are uneven across regions, and the committee treats the unevenness as the puzzle to solve. Thomas Sowell's Discrimination and Disparities argues this kind of outcome needs many things at once: schooling, language, family, mobility, and money. What does Sowell say follows?",
+    "question": "An admissions committee sees that a demanding engineering program admits students unevenly across regions and treats the unevenness as the puzzle to solve. Thomas Sowell argues that getting in takes several things at once: schooling, language, family backing, mobility and money. What does he say follows?",
     "answer": "Four of the five in place is worth nothing, so even spreading would be the astonishing result",
     "choices": [
       "Four of the five in place is worth nothing, so even spreading would be the astonishing result",
@@ -21334,7 +21100,7 @@
   },
   {
     "tier": 5,
-    "question": "A legislature drafts a rule forbidding any organisation from sorting applicants by characteristics that come out unevenly across groups. An airline points out that it screens pilots on logged flight hours, and a bank that it screens borrowers on repayment records -- and both practices come out unevenly. Thomas Sowell's two-word distinction predicts exactly this collision. What does he say such a rule reaches?",
+    "question": "A lawmaker drafts a rule forbidding any organization to sort applicants by any characteristic that turns out uneven from group to group. An airline answers that it screens pilots on logged flight hours, and a bank that it screens borrowers on repayment records, and both come out unevenly. Thomas Sowell's distinction between two meanings of one word predicts the collision. What does he say such a rule reaches?",
     "answer": "Fact-based sorting on real qualifications, not only sorting on arbitrary aversion",
     "choices": [
       "Fact-based sorting on real qualifications, not only sorting on arbitrary aversion",
@@ -21347,7 +21113,7 @@
   },
   {
     "tier": 1,
-    "question": "For decades, Thomas Sowell heard people say some market outcome -- a wage, a price, a shortage -- was too bad to accept. He said most such claims fall apart with one short question back. Almost no one had an answer ready. What was Sowell's trademark question?",
+    "question": "Thomas Sowell answered opponents of charter schools, who pointed to the flaws of one particular charter, with the short question he had long put to anyone calling a shortage, a high price or a low wage unacceptable. Almost no one, he said, had an answer ready. What was his question?",
     "answer": "Compared to what?",
     "choices": [
       "Compared to what?",
@@ -21360,7 +21126,7 @@
   },
   {
     "tier": 2,
-    "question": "At a town meeting a speaker says the market has failed this town's working families and that the council must step in and run things better. Thomas Sowell's habitual reply denies nothing the speaker has said; it simply shifts a burden onto him. What does the speaker now have to produce?",
+    "question": "At a town meeting a speaker says the market has failed the town's working families and the council must step in and run things better. Thomas Sowell's reply denies none of it; it shifts a burden onto the speaker. What must the speaker now produce?",
     "answer": "The name of the institution he would put in its place",
     "choices": [
       "The name of the institution he would put in its place",
@@ -21373,7 +21139,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Sowell's book Applied Economics rests on one idea: stage one versus everything after it. A state raises the tax on business, and the treasury does take in more money that first year. Sowell says elected officials stop thinking right there. Why?",
+    "question": "A governor signs a higher tax on business, and the treasury does take in more money that first year. Thomas Sowell, in Applied Economics (2003), calls that stage one and says elected officials stop thinking right there. Why do they stop?",
     "answer": "They do not think beyond the next election",
     "choices": [
       "They do not think beyond the next election",
@@ -21385,21 +21151,8 @@
     "topic": "sowells-compared-to-what-reasoning-move"
   },
   {
-    "tier": 2,
-    "question": "A student compares a real, messy grocery store to an imaginary perfect one where no food is ever wasted and every shelf is always full. Then he says the real store is a failure. Economists have a name for this unfair kind of comparison. What is the mistake?",
-    "answer": "Comparing a real thing to a perfect fantasy instead of to other real options",
-    "choices": [
-      "Comparing a real thing to a perfect fantasy instead of to other real options",
-      "Ignoring the past when studying today",
-      "Assuming people never respond to prices",
-      "Trusting only what math models predict"
-    ],
-    "context": "Harold Demsetz (1930-2019) taught at Chicago from 1963 to 1971 and published 'Information and Efficiency: Another Viewpoint' in the Journal of Law and Economics vol. 12 no. 1 (1969), pp. 1-22. Alchian was his UCLA collaborator; Stigler and Coase were Chicago colleagues. Source: econlib.org, Biography of Harold Demsetz.",
-    "topic": "sowells-compared-to-what-reasoning-move"
-  },
-  {
     "tier": 3,
-    "question": "Harold Demsetz saw a common habit in policy writing. A writer picks a real, working setup, holds it against an ideal that lives only on paper, finds the real one worse, and calls it a failure. His 1969 paper gave the habit a name. What did he call it?",
+    "question": "Harold Demsetz took aim in a 1969 paper at Kenneth Arrow, who had demonstrated that a market might produce too little of some goods, new inventions among them, and had taken for granted that government would do better. Arrow never checked, Demsetz complained: he had weighed a real, flawed market against a government found only in the imagination. What did Demsetz call that habit?",
     "answer": "The nirvana approach",
     "choices": [
       "The nirvana approach",
@@ -21412,7 +21165,7 @@
   },
   {
     "tier": 3,
-    "question": "Harold Demsetz granted at once that no market is perfect. His point was that no government is perfect either, so measuring one of them against a flawless standard settles nothing at all. He said policy economics therefore always faces a choice of a quite different kind. What did Demsetz say the relevant choice lies between?",
+    "question": "Harold Demsetz readily granted, in his 1969 paper, that markets have flaws. He added at once that governments have flaws too. Where did he say the real choice in policy always lies?",
     "answer": "Between one real institution and another real institution",
     "choices": [
       "Between one real institution and another real institution",
@@ -21434,19 +21187,6 @@
       "Firms have merged and the revenue has stayed flat"
     ],
     "context": "Sowell's stage-two point: businesses relocate to other states and new companies choose competitors, so the state ends up collecting less than before the increase. This is the pattern the book's subtitle names. Source: Wikipedia, 'Applied Economics: Thinking Beyond Stage One'.",
-    "topic": "sowells-compared-to-what-reasoning-move"
-  },
-  {
-    "tier": 4,
-    "question": "An economist demonstrates that a market might supply less of some good than would be ideal. He jumps directly to the conclusion that the government should step in and never checks whether real governments actually do that job better. What is the name for this reasoning error?",
-    "answer": "Comparing a real, flawed market to a perfect imagined government",
-    "choices": [
-      "Comparing a real, flawed market to a perfect imagined government",
-      "Confusing higher prices with higher costs",
-      "Ignoring the effect of taxes on producers",
-      "Assuming every consumer wants the same thing"
-    ],
-    "context": "Kenneth Arrow had argued the free market might provide too little innovation, then assumed government intervention would move the economy toward the optimum. Demsetz conceded that ideal intervention might improve matters, but noted Arrow had never shown that actual intervention would. Source: econlib.org, Biography of Harold Demsetz.",
     "topic": "sowells-compared-to-what-reasoning-move"
   },
   {
@@ -21490,7 +21230,7 @@
   },
   {
     "tier": 1,
-    "question": "Thomas Sowell is a Black American economist who taught for many years at Stanford University in California. He is famous for writing clear, data-driven books that challenge conventional wisdom on race, poverty, and public policy. In June 2020 Sowell turned 90 years old. That same month he published a new book arguing that a certain kind of public school, run outside the teacher-union system, was helping poor city kids learn far better than nearby traditional schools. What was the book called?",
+    "question": "Thomas Sowell published a book in June 2020, the same month he turned 90, about schools paid for by the public but run outside the district and its unions. He argued they were serving poor children in the cities far better than the ordinary public schools next door. What was the book called?",
     "answer": "Charter Schools and Their Enemies",
     "choices": [
       "Charter Schools and Their Enemies",
@@ -21503,7 +21243,7 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Sowell, an American economist who taught at Stanford, wrote a 2020 book called Charter Schools and Their Enemies. Critics of charter schools often say the students only do well because they come from richer or more motivated families. Sowell wanted to strip that objection away. So he used a clever comparison design that held income, race, and neighborhood factors steady. What exactly did he compare?",
+    "question": "Thomas Sowell set out in 2020 to answer critics who said charter-school pupils did well only because their families were richer or more motivated. He built a comparison that would strip that objection away. What exactly did he compare?",
     "answer": "Test scores of charter students vs traditional-public-school students in the SAME school buildings or same neighborhoods",
     "choices": [
       "Test scores of charter students vs traditional-public-school students in the SAME school buildings or same neighborhoods",
@@ -21516,7 +21256,7 @@
   },
   {
     "tier": 3,
-    "question": "In cities like New York, a growing network of charter schools -- free public schools run outside the traditional school district -- uses one simple rule for who gets in. Any family can apply, and when there are more applicants than seats, the seats are picked by a public lottery drawn from a barrel. No admissions tests, no interviews, no political favors, no connections. What is the main fairness argument for these lottery schools?",
+    "question": "A mother in Harlem watches names drawn by public lottery for the seats at a Success Academy charter school, which has more applicants than places. There is no entrance test and no interview. What is the main fairness argument for picking pupils this way?",
     "answer": "The lottery gives all families the same shot, no matter who they know",
     "choices": [
       "The lottery gives all families the same shot, no matter who they know",
@@ -21529,7 +21269,7 @@
   },
   {
     "tier": 3,
-    "question": "Thomas Sowell, in his 2020 book Charter Schools and Their Enemies, dug into New York City test-score data building by building. He looked at the top charter schools in Harlem -- a mostly Black, working-class neighborhood in Manhattan -- and compared them both to the traditional public schools right next door and to wealthy schools far outside the city in the suburbs. What did his comparison show about the highest-performing Harlem charter schools?",
+    "question": "Thomas Sowell set the test results of Harlem's best charter schools beside those of the ordinary public schools next door, school by school, for his 2020 book. What did he find about the top Harlem charters?",
     "answer": "They produced test scores comparable to affluent suburban schools -- from students in the same neighborhoods as much lower-scoring traditional-school peers",
     "choices": [
       "They produced test scores comparable to affluent suburban schools -- from students in the same neighborhoods as much lower-scoring traditional-school peers",
@@ -21542,20 +21282,7 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Sowell, the American economist, is famous for boiling policy debates down to a handful of unavoidable questions. When someone objects to expanding charter schools by pointing at a flaw in a particular charter, Sowell insists on framing the debate with one trademark question. The point: no policy exists in a vacuum -- you have to weigh it against the real alternative these kids would otherwise face. Which question does Sowell apply?",
-    "answer": "Compared to what? -- the alternative to charter expansion for these children is their current traditional-school outcome, not a hypothetical perfect public system",
-    "choices": [
-      "Compared to what? -- the alternative to charter expansion for these children is their current traditional-school outcome, not a hypothetical perfect public system",
-      "How much does it cost? -- the cost per student is the only relevant metric",
-      "Who benefits? -- the answer is only teacher unions and the alternative is worse",
-      "Is it fair? -- fairness alone should determine the policy outcome"
-    ],
-    "context": "Sowell's 'Compared to what?' is his trademark analytical move. It reframes policy debate away from ideal-theory comparisons and toward realistic counterfactuals. Source: grokipedia.com/page/Thomas_Sowell.",
-    "topic": "sowells-late-career-charter-schools-and-their-enemies-2020"
-  },
-  {
-    "tier": 4,
-    "question": "Public-choice economics studies how politics really works -- how organized interest groups capture rules the general public would never vote for. In his 1965 book The Logic of Collective Action, the economist Mancur Olson showed that small concentrated groups almost always beat big diffuse ones in politics. Thomas Sowell uses Olson's idea to explain charter-school politics. Why does the political outcome tilt against charter families?",
+    "question": "Thomas Sowell asked, in his 2020 book, why the parents of charter pupils keep losing political battles over their schools. He answered with an argument borrowed from another economist about who wins in politics and who loses. Which argument explains the tilt against them?",
     "answer": "Olson's dispersed-costs/concentrated-benefits: teacher unions are concentrated and organized; charter parents are diffuse and unorganized",
     "choices": [
       "Olson's dispersed-costs/concentrated-benefits: teacher unions are concentrated and organized; charter parents are diffuse and unorganized",
@@ -21568,7 +21295,7 @@
   },
   {
     "tier": 5,
-    "question": "The American economist Thomas Sowell, still writing books in his nineties, has spent decades studying why groups end up with different incomes, jobs, and test scores. He argues that the 'social justice' movement -- which pushes government action to close gaps between racial and gender groups -- keeps making the same reasoning mistake, over and over, whenever it looks at those gaps. Which mistake does Sowell say it makes?",
+    "question": "Thomas Sowell, at 93, brought out a book in 2023 called Social Justice Fallacies. In it he argued that the social justice movement makes the same reasoning mistake over and over. Which mistake does he name?",
     "answer": "It assumes any gap in outcomes between groups must be caused by unfair discrimination",
     "choices": [
       "It assumes any gap in outcomes between groups must be caused by unfair discrimination",
@@ -21698,7 +21425,7 @@
   },
   {
     "tier": 1,
-    "question": "Every few years, a mayor of some American city announces a plan to build a shiny new stadium for the local football, baseball, or basketball team, paid for with taxpayer money. Boosters promise the stadium will bring jobs, tourists, and a booming local economy. But two American economists have spent 20 years digging into the actual data from dozens of cities. Their finding is blunt -- taxpayer-funded stadiums do not measurably grow a region's economy. Which pair?",
+    "question": "A mayor stands beside a model of a gleaming new ballpark for the city's team, to be built with taxpayers' money, and promises jobs, tourists and a busier downtown. Two economists spent twenty years sifting data from dozens of cities to test promises like his. Who were they?",
     "answer": "Dennis Coates and Brad Humphreys",
     "choices": [
       "Dennis Coates and Brad Humphreys",
@@ -21711,7 +21438,7 @@
   },
   {
     "tier": 1,
-    "question": "When an American city agrees to help build a new stadium for a pro football or baseball team, the deal is usually huge -- hundreds of millions of dollars, and some cross a billion. Cities can borrow that money at low interest rates because of one specific tool. This tool lets city governments raise money without their bond investors having to pay federal income tax on the interest they earn. That tax break effectively shifts costs from investors to the federal treasury, subsidizing the stadium project. Which tool provides much of that taxpayer help?",
+    "question": "A city treasurer borrows hundreds of millions of dollars for a new stadium at an unusually low interest rate, thanks to one federal tool. Part of the bill quietly shifts to taxpayers across the country. Which tool lets the city borrow so cheaply?",
     "answer": "Tax-exempt municipal bonds",
     "choices": [
       "Tax-exempt municipal bonds",
@@ -21724,7 +21451,7 @@
   },
   {
     "tier": 2,
-    "question": "Frederic Bastiat was a French economist who in 1850 wrote a famous essay called That Which Is Seen and That Which Is Unseen. His point: when you count only the money you can see being spent on a new project, you miss the spending that would have happened somewhere else without it. Apply this to a new baseball stadium. A family spends $200 on tickets, hot dogs, and parking at the game. What most likely happens to that money across the local area?",
+    "question": "A family spends $200 on tickets, hot dogs and parking at a new ballpark. By Frederic Bastiat's reasoning, what most likely happens to that money across the local area?",
     "answer": "It substitutes for other local entertainment spending",
     "choices": [
       "It substitutes for other local entertainment spending",
@@ -21737,7 +21464,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1965 the American economist Mancur Olson wrote a book called The Logic of Collective Action. He explained why small groups often beat big ones in politics: their gain is huge and concentrated, while their opponents' costs are spread thin across millions. Apply that idea to an American pro sports stadium deal. Who is the big concentrated winner — the one who lobbies city hall, funds campaigns, and threatens to move the team to another city?",
+    "question": "Mancur Olson explained in 1965, in The Logic of Collective Action, why small groups often beat big ones in politics: their gains are large and concentrated, while their opponents' costs are spread thin. Applied to a new pro stadium, who is the concentrated winner who lobbies city hall and funds campaigns?",
     "answer": "The team owner",
     "choices": [
       "The team owner",
@@ -21750,7 +21477,7 @@
   },
   {
     "tier": 3,
-    "question": "American cities that host pro football, baseball, or basketball teams face a nasty bind. When a team's owner demands a big public payment to fix up the stadium -- or threatens to move -- any city that says no risks losing its team to a city that says yes. The cities would all be better off if they refused together. But no single city trusts the others to hold the line, so they all end up paying. Game theorists have a name for a setup where each player is pushed to defect even though cooperation would help them all. Which classic setup best fits this pattern across US cities?",
+    "question": "A city council hears that the local team will leave for another city unless the city pays for a new stadium. A city that says no can lose its team to a city that says yes. All the cities would do better refusing together, but no city trusts the rest to hold the line, so every one of them pays. Which classic setup from game theory fits this bind?",
     "answer": "A prisoner's dilemma",
     "choices": [
       "A prisoner's dilemma",
@@ -21763,7 +21490,7 @@
   },
   {
     "tier": 3,
-    "question": "In the United States, cities often help pay for a new pro sports stadium by adding a special tax on hotel rooms instead of a direct tax on residents. Local politicians love the trick: they get a shiny new stadium without asking their own voters to pay for it. Every out-of-town visitor booking a bed for a wedding or business trip pays a little extra without noticing. Which group ends up quietly paying most of that stadium bill?",
+    "question": "A city councilwoman votes for a tax on hotel rooms, rather than on residents, to help pay for a new stadium. She gets the stadium without asking her own voters to pay for it. Which group quietly pays most of the bill?",
     "answer": "Travelers and vacationers who stay at the city's hotels",
     "choices": [
       "Travelers and vacationers who stay at the city's hotels",
@@ -21776,7 +21503,7 @@
   },
   {
     "tier": 4,
-    "question": "For thirty years, US pro football and baseball teams demanding new stadiums promised huge boosts to local jobs and tax revenue. In 2008, two American economists, Dennis Coates and Brad Humphreys, published a review of every independent study on stadium subsidies -- meaning studies not paid for or commissioned by the teams themselves. They wanted to see whether the promised regional payoff was real. What did nearly all of these studies find?",
+    "question": "Two economists reviewed in 2008 every independent study of stadium subsidies, the studies the teams had not paid for, to see whether the promised regional payoff was real. Teams had promised big gains in local jobs and taxes for thirty years. What did nearly all of those studies find?",
     "answer": "Near-unanimous agreement that subsidies do not produce positive net regional effects",
     "choices": [
       "Near-unanimous agreement that subsidies do not produce positive net regional effects",
@@ -21789,7 +21516,7 @@
   },
   {
     "tier": 4,
-    "question": "Almost every economist agrees that public subsidies for pro sports stadiums do not help a region overall — the promised jobs and tourism rarely materialize, and taxpayers foot the bill. Yet American cities keep handing them out, and voters keep backing them at the polls. Two structural forces, taken together, explain why. What are they?",
+    "question": "A taxpayer reads that his city has just approved another stadium subsidy for its team, though almost every independent economist who studies such deals calls them a loss for the region. Voters keep backing them too. Two structural forces, taken together, explain why. What are they?",
     "answer": "Concentrated-benefit / dispersed-cost combined with a jurisdictional prisoner's dilemma",
     "choices": [
       "Concentrated-benefit / dispersed-cost combined with a jurisdictional prisoner's dilemma",
@@ -21802,7 +21529,7 @@
   },
   {
     "tier": 5,
-    "question": "Suppose experts on a policy nearly all agree it has bad net effects — like public sports-stadium subsidies, which economists almost unanimously call a losing deal for a city — yet the policy keeps happening everywhere. The stadium case teaches a general rule for spotting why that pattern shows up. When an analyst sees a policy like this, what should she look for first?",
+    "question": "An analyst studying stadium subsidies finds that economists almost unanimously call them a losing deal for a city, yet cities keep paying them. The stadium case teaches a general rule for policies like that. When she meets the next one, what should she look for first?",
     "answer": "Concentrated beneficiaries with organizational advantages",
     "choices": [
       "Concentrated beneficiaries with organizational advantages",
@@ -21814,21 +21541,8 @@
     "topic": "sports-stadium-subsidies-the-economists-near-consensus"
   },
   {
-    "tier": 5,
-    "question": "The 19th-century French economist Frederic Bastiat warned that people count the money visibly spent at a new stadium but forget the money families would have spent somewhere else if the stadium had never been built. That is his famous 'seen and unseen'. For decades, independent stadium studies have kept finding the same pattern: dollars spent at football games are largely dollars that would otherwise have gone to bowling, movies, or local restaurants. This is the substitution effect at the heart of the Bastiat critique. Which broad claim is honest to the literature?",
-    "answer": "Sports spending substitutes for other local entertainment; the multiplier is small",
-    "choices": [
-      "Sports spending substitutes for other local entertainment; the multiplier is small",
-      "Sports spending is entirely new economic activity with a huge multiplier",
-      "Sports spending has no measurable effect of any kind",
-      "Sports spending permanently exports wealth to other cities"
-    ],
-    "context": "The consistent independent-economist finding: sports-attendance spending is largely substituted from other local entertainment. Multipliers claimed by boosters (often 2-3x) systematically fail to appear in the data. Source: Coates + Humphreys (2008); Rosentraub (1999).",
-    "topic": "sports-stadium-subsidies-the-economists-near-consensus"
-  },
-  {
     "tier": 1,
-    "question": "On January 10, 2024, the US Securities and Exchange Commission (SEC) — the federal regulator that watches over the stock market — approved eleven new investment products all at once. They finally let big investors buy real Bitcoin through an ordinary brokerage account, no crypto wallet or crypto exchange needed. What kind of product got the green light that day?",
+    "question": "Regulators at the Securities and Exchange Commission approved eleven new funds at once on January 10, 2024, letting them onto the stock market. Each could be bought and sold like a share and held actual bitcoin, not contracts on its price. What kind of fund were they?",
     "answer": "Spot Bitcoin ETFs",
     "choices": [
       "Spot Bitcoin ETFs",
@@ -21841,7 +21555,7 @@
   },
   {
     "tier": 1,
-    "question": "For years, getting hold of Bitcoin meant signing up with a crypto exchange and safeguarding your own secret password. In January 2024, US regulators finally approved a spot Bitcoin exchange-traded fund (ETF) -- a regular stock-market fund that holds real bitcoin on behalf of its investors. Suddenly, anyone with an ordinary brokerage account could buy Bitcoin the same way as a share of Apple stock. Why did fans of Bitcoin see this approval as a big deal?",
+    "question": "A retiree bought bitcoin in January 2024 through the brokerage account that held her other investments, with no wallet, no exchange and no secret phrase to guard. For years regulators had refused the kind of fund that let her do it. Why did Bitcoin's fans see its approval as a big deal?",
     "answer": "It made buying Bitcoin as easy as buying a stock",
     "choices": [
       "It made buying Bitcoin as easy as buying a stock",
@@ -21854,20 +21568,7 @@
   },
   {
     "tier": 2,
-    "question": "For years, the US Securities and Exchange Commission (SEC) refused to let normal investment funds hold Bitcoin directly — to own any, you had to open a crypto wallet on a special exchange, a hassle most retirement savers skipped. In January 2024 the SEC finally allowed spot-Bitcoin funds, and anyone with an ordinary brokerage account could buy in. Why did Bitcoin fans cheer this change?",
-    "answer": "It made owning Bitcoin much easier for ordinary savers and retirement accounts",
-    "choices": [
-      "It made owning Bitcoin much easier for ordinary savers and retirement accounts",
-      "It made Bitcoin illegal for the first time",
-      "It removed Bitcoin's fixed supply of 21 million coins",
-      "It gave the government a copy of every Bitcoin wallet"
-    ],
-    "context": "The DC Circuit's August 2023 ruling in Grayscale v SEC held that the SEC could not consistently approve Bitcoin futures ETFs (which it had done in 2021) while denying spot Bitcoin ETFs based on the same underlying market. The ruling essentially forced approval. Source: Grokipedia 'Grayscale v SEC' (2026-09-05).",
-    "topic": "spot-bitcoin-etfs-approved-january-10-2024"
-  },
-  {
-    "tier": 2,
-    "question": "In January 2024, the US Securities and Exchange Commission (SEC) -- the federal agency that polices Wall Street -- voted on whether to approve funds that hold real bitcoin. Inside the five-person commission, the final vote split 3 to 2, one of the closest possible outcomes. Chairman Gary Gensler even admitted he was not personally thrilled about the result. What does such a close agency vote tell you about how officials view a new technology?",
+    "question": "Gary Gensler, chairman of the Securities and Exchange Commission, joined its two Republican commissioners in January 2024 to approve funds holding real bitcoin, three votes to two, though he said plainly he was not keen on it. What does so close a vote show about how officials view a new technology?",
     "answer": "Even experts inside one agency deeply disagree about whether to allow it",
     "choices": [
       "Even experts inside one agency deeply disagree about whether to allow it",
@@ -21880,7 +21581,7 @@
   },
   {
     "tier": 3,
-    "question": "Bitcoin's software rules cap the total supply at 21 million coins forever. In January 2024, the US Securities and Exchange Commission approved the first spot Bitcoin exchange-traded funds (ETFs) -- stock-market funds that hold real bitcoin for their investors. Money poured in far faster than skeptics predicted. By December 2024, roughly eleven months after launch, the ETFs together held about 5% of every bitcoin that had ever been mined. About how many bitcoin was that?",
+    "question": "A fund manager at BlackRock watched its new Bitcoin fund outgrow every rival after the spot funds opened in January 2024, as money flooded in faster than skeptics had predicted. How many bitcoin did all the funds together hold by December 2024, about 5% of every bitcoin ever mined?",
     "answer": "About 1.1 million BTC",
     "choices": [
       "About 1.1 million BTC",
@@ -21893,7 +21594,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 2024, the US Securities and Exchange Commission approved the first spot Bitcoin exchange-traded funds (ETFs) -- stock-market funds that let big institutions buy Bitcoin without setting up their own crypto wallets. A general rule of financial markets is that those who get new access first benefit most, because they can buy in before prices are bid up. Small home savers with cold-storage wallets were already in. Who profits earliest from this brand-new Wall Street product?",
+    "question": "Richard Cantillon observed long ago that the first to reach something new usually gains most, since he buys before others bid the price up. Spot Bitcoin funds opened on Wall Street in January 2024, and savers holding coins in wallets of their own were already in. By Cantillon's rule, who profited earliest?",
     "answer": "The big pension and endowment funds that can pile in on day one",
     "choices": [
       "The big pension and endowment funds that can pile in on day one",
@@ -21906,7 +21607,7 @@
   },
   {
     "tier": 4,
-    "question": "Some Bitcoin supporters warn that buying Bitcoin through a big Wall Street fund is not really the same as owning it, because a bank holds the keys for you. What special feature of Bitcoin do these critics say you give up when a fund holds it on your behalf?",
+    "question": "A Bitcoin teacher in Andreas Antonopoulos's tradition warned his students that a share in a Wall Street Bitcoin fund falls short of owning bitcoin, since someone else, a custodian, keeps the keys. What feature of Bitcoin did he say a fund's investors give up?",
     "answer": "The ability to hold your own money without needing to trust a bank",
     "choices": [
       "The ability to hold your own money without needing to trust a bank",
@@ -21919,7 +21620,7 @@
   },
   {
     "tier": 4,
-    "question": "A big American company was the first to move a huge share of its cash into Bitcoin instead of dollars. Its leader welcomed the new Wall Street Bitcoin funds even though some Bitcoiners criticized them. What was his main reason for welcoming the funds?",
+    "question": "Michael Saylor had made MicroStrategy the first big American company to swap a large share of its cash into bitcoin, and he welcomed the new Wall Street Bitcoin funds that other Bitcoiners criticized. What was his main reason for welcoming them?",
     "answer": "They let millions more people buy Bitcoin easily, growing its reach",
     "choices": [
       "They let millions more people buy Bitcoin easily, growing its reach",
@@ -21932,7 +21633,7 @@
   },
   {
     "tier": 5,
-    "question": "In early 2024, U.S. regulators approved the first spot-Bitcoin exchange-traded funds (ETFs) -- baskets big investors buy on a stock exchange. By late 2024, Bitcoin's price crossed a round-number milestone for the first time. Which milestone did it pass?",
+    "question": "A Bitcoin holder checked the price one December day in 2024 and saw it past a round-number milestone for the first time. The spot funds approved eleven months earlier were one cause among several, beside the April halving and the wider economy. Which milestone had the price passed?",
     "answer": "$100,000 per bitcoin",
     "choices": [
       "$100,000 per bitcoin",
@@ -21945,7 +21646,7 @@
   },
   {
     "tier": 5,
-    "question": "In January 2024 the US Securities and Exchange Commission (SEC) approved the first spot-Bitcoin exchange-traded funds (ETFs). Overnight, big pension funds, banks, and ordinary brokerage customers could buy Bitcoin the easy legal way through the regular stock market. But the approval did not touch Bitcoin's own code — its 21-million coin cap and its open peer-to-peer network stayed exactly as designed. Which choice best describes what the approval did and did not do?",
+    "question": "A pension-fund manager bought bitcoin through one of the new spot funds on their first day of trading in January 2024, from the same account that held his stocks. What did the approval of those funds change, and what did it leave alone?",
     "answer": "It made it easier for big investors to buy in; it did not change Bitcoin's fixed supply or design",
     "choices": [
       "It made it easier for big investors to buy in; it did not change Bitcoin's fixed supply or design",
@@ -22088,20 +21789,7 @@
   },
   {
     "tier": 1,
-    "question": "In 2018, the US government put a 25% tax on imported steel and a 10% tax on imported aluminum, meant to protect American metal factories from foreign competition. Steel and aluminum are the raw materials for cars, soup cans, refrigerators, and skyscrapers. When those metals get more expensive at the border, who ends up paying more for the cars, cans, and appliances at the store?",
-    "answer": "Everyday buyers in the country that added the taxes",
-    "choices": [
-      "Everyday buyers in the country that added the taxes",
-      "Only foreign metal companies",
-      "Only rich CEOs of car makers",
-      "Nobody -- taxes on imports are free money"
-    ],
-    "context": "March 8 2018 proclamations: 25% on imported steel and 10% on imported aluminum under Section 232 national-security authority; specific mill workers in Granite City IL and Ashland KY were cited by the administration as beneficiaries. Source: en.wikipedia.org/wiki/Trump_tariffs.",
-    "topic": "tariffs-the-consumer-who-pays-and-does-not-know-it"
-  },
-  {
-    "tier": 1,
-    "question": "In 2018, President Trump put a 25 percent tax on steel coming into the United States. Newspapers said it would help American steelworkers keep their jobs. But the 19th-century French economist Frederic Bastiat taught a method for judging any policy: look past the obvious winners for the hidden losers that no headline names. Under Bastiat's method, which unseen group actually bears the real cost of a steel tariff?",
+    "question": "The American government put a 25 percent tax on imported steel in March 2018, and 10 percent on aluminum, to protect American metal mills. Steel goes into cars, cans and refrigerators. Frederic Bastiat taught readers to look past a headline's winners for the losers nobody counts. By his method, who bears the hidden cost?",
     "answer": "American consumers of goods that use steel as an input",
     "choices": [
       "American consumers of goods that use steel as an input",
@@ -22114,7 +21802,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2020 the American economists Chad Bown and Yilin Zhang studied President Trump's 2018 steel tariffs — extra US taxes on foreign steel that were meant to protect American steel jobs. They totaled the higher prices Americans paid for anything made with steel, divided that total by the number of steel jobs the tariffs actually saved, and got a per-job cost. About how much did each saved job cost per year?",
+    "question": "Chad Bown and Yilin Zhang totaled, in 2020, the extra money Americans paid for everything made with steel under the 2018 tariffs, and divided it by the number of steel jobs the tariffs actually saved. About how much did each saved job cost per year?",
     "answer": "About $900,000",
     "choices": [
       "About $900,000",
@@ -22127,7 +21815,7 @@
   },
   {
     "tier": 2,
-    "question": "A country adds a big tax on imported steel to save jobs at its own steel mills. Some steel jobs do come back. But other factories that buy steel to make cars and tools now pay much more, and they lay off workers. How should we honestly measure whether the tariff helped?",
+    "question": "A president signs a big tax on imported steel to save jobs at his country's mills, and some steel jobs do come back. But factories that buy steel to make cars and tools now pay much more for it. How should the tariff's results be measured honestly?",
     "answer": "Count the jobs saved and subtract the jobs lost at every factory that buys steel",
     "choices": [
       "Count the jobs saved and subtract the jobs lost at every factory that buys steel",
@@ -22139,60 +21827,8 @@
     "topic": "tariffs-the-consumer-who-pays-and-does-not-know-it"
   },
   {
-    "tier": 3,
-    "question": "In the spring of 1930, more than a thousand American economists signed a public letter begging President Herbert Hoover not to sign a huge new tariff law — the Smoot-Hawley Tariff Act, which would raise import taxes on more than 20,000 foreign goods. Hoover signed it anyway that June. What did the other big trading countries do next that made the pain far worse?",
-    "answer": "They put their own tariffs on American exports in return",
-    "choices": [
-      "They put their own tariffs on American exports in return",
-      "They increased their imports from America to help out",
-      "They asked the United Nations to punish America",
-      "They dropped all their own tariffs to keep the peace"
-    ],
-    "context": "Smoot-Hawley (June 1930): 1,028 economists led by Paul Douglas signed a petition against it; Hoover signed anyway. Foreign retaliation followed, US exports collapsed from $5.2B (1929) to $1.7B (1933). Source: en.wikipedia.org/wiki/Smoot-Hawley_Tariff_Act.",
-    "topic": "tariffs-the-consumer-who-pays-and-does-not-know-it"
-  },
-  {
-    "tier": 3,
-    "question": "In May 1930, more than 1,000 American economists signed an open petition begging President Herbert Hoover to veto a giant new tariff law -- the Smoot-Hawley Tariff Act, which would raise import taxes on over 20,000 goods. The signers came from every major American university. Their main warning was not about foreign policy or war but about ordinary shoppers at home. What did they warn tariffs would do to shoppers?",
-    "answer": "Shoppers would pay higher prices for many everyday goods",
-    "choices": [
-      "Shoppers would pay higher prices for many everyday goods",
-      "Every good in the store would suddenly become free of tax",
-      "Shoppers would refuse to buy anything American-made",
-      "Shoppers would suddenly earn twice as much money"
-    ],
-    "context": "Paul Douglas, University of Chicago economics professor before his Senate career, was the lead signatory; the petition ran the same day in the New York Times, May 5 1930. Source: en.wikipedia.org/wiki/Paul_Douglas.",
-    "topic": "tariffs-the-consumer-who-pays-and-does-not-know-it"
-  },
-  {
-    "tier": 4,
-    "question": "In June 1930 President Herbert Hoover signed the Smoot-Hawley Tariff Act, raising US import taxes on more than 20,000 foreign goods. Other countries hit back with tariffs of their own, and world trade fell off a cliff over the next four years. Economists still cite the 1929-1934 collapse as one of the great trade-policy disasters in American history. Roughly how much did world trade fall in that stretch?",
-    "answer": "About 66 percent",
-    "choices": [
-      "About 66 percent",
-      "About 15 percent",
-      "About 30 percent",
-      "About 85 percent"
-    ],
-    "context": "World trade fell from roughly $5.3B (1929) to $1.8B (1934) -- about 66 percent. Douglas Irwin's Peddling Protectionism 2011 gives the standard modern account. Source: Grokipedia 'Smoot-Hawley Tariff Act' + Irwin 2011.",
-    "topic": "tariffs-the-consumer-who-pays-and-does-not-know-it"
-  },
-  {
-    "tier": 4,
-    "question": "In 1963 the American economists Milton Friedman and Anna Schwartz published A Monetary History of the United States — a huge history of every dollar the country had printed. They settled one long-running question about why the Great Depression from 1929 onward was so unusually bad. The main cause, they argued, was not the Smoot-Hawley tariff and not the 1929 stock crash. What was it?",
-    "answer": "The Federal Reserve's failure to prevent a one-third collapse in the money stock",
-    "choices": [
-      "The Federal Reserve's failure to prevent a one-third collapse in the money stock",
-      "The stock-market crash of October 1929 driving consumer confidence down",
-      "European war debts pulling gold reserves out of the American banking system",
-      "The Dust Bowl reducing agricultural productivity across the Great Plains"
-    ],
-    "context": "Friedman & Schwartz argued the Depression's severity was monetary: the Fed let the money stock collapse by about a third, 1929-33. Smoot-Hawley made a monetary contraction worse but did not cause it. Source: Friedman & Schwartz, A Monetary History of the United States, 1963.",
-    "topic": "tariffs-the-consumer-who-pays-and-does-not-know-it"
-  },
-  {
     "tier": 5,
-    "question": "In 1845 the French economist Frederic Bastiat wrote his 'Candlemakers' Petition' — a satire in which the candlemakers of France beg parliament to block out the sun, since sunlight is unfair foreign competition against candles. It became the classic mockery of protectionism (the policy of using taxes to block foreign goods). When the US imposed steel tariffs in 2018, critics pointed straight back at Bastiat. In one line, what political feature does the 2018 steel tariff share with the candlemakers' argument?",
+    "question": "Frederic Bastiat had France's candlemakers petition parliament in 1845, in a satire, to board up the nation's windows and shut out the sun, unfair foreign competition against honest domestic candles. Critics of the 2018 steel tariffs pointed straight back at his joke. In one line, what political feature does the steel tariff share with the candlemakers' plea?",
     "answer": "Concentrated benefit for a small named group; dispersed cost across every consumer",
     "choices": [
       "Concentrated benefit for a small named group; dispersed cost across every consumer",
@@ -22205,7 +21841,7 @@
   },
   {
     "tier": 5,
-    "question": "After President Trump's 2018-19 US steel tariffs took effect, Federal Reserve economists Aaron Flaaen and Justin Pierce studied the jobs impact carefully. In the Bastiat frame — count the seen jobs AND the unseen ones — the tariffs helped a small group of primary-steel workers but hurt a bigger group of downstream manufacturers whose steel inputs suddenly cost more. In one line, what ratio of jobs lost to jobs added did the Flaaen-Pierce study document?",
+    "question": "Aaron Flaaen and Justin Pierce, economists at the Federal Reserve, counted both sides of the 2018 steel tariffs: the jobs gained in primary steel, and the jobs lost at the steel-buying factories facing higher input bills. What ratio of jobs lost to jobs gained did they find?",
     "answer": "About 75 downstream jobs lost per primary-steel job added",
     "choices": [
       "About 75 downstream jobs lost per primary-steel job added",
@@ -22335,7 +21971,7 @@
   },
   {
     "tier": 1,
-    "question": "By October 2008, the US financial system was in chaos. Big banks like Lehman Brothers had already failed after making risky home loans, and other giants like Citigroup looked ready to go under. On October 3, 2008, President George W. Bush signed a huge $700 billion program that let the Treasury Department buy troubled loans and stock from major banks to keep them alive. What is its four-letter name?",
+    "question": "George W. Bush signed a $700 billion program on October 3, 2008, under which the Treasury could buy bad loans and stock from major banks to keep them alive. Big banks like Lehman Brothers had already failed after making risky home loans, and giants like Citigroup looked ready to go under. What is the program's four-letter name?",
     "answer": "TARP",
     "choices": [
       "TARP",
@@ -22348,7 +21984,7 @@
   },
   {
     "tier": 1,
-    "question": "In the autumn of 2008, the U.S. government spent hundreds of billions of taxpayer dollars to rescue big Wall Street banks that had made huge bad bets on housing loans. Economists have a name for the trap that appears when people know they will be rescued and so they take even bigger risks the next time around. What is this trap called?",
+    "question": "A Wall Street banker watched Washington spend hundreds of billions rescuing banks in autumn 2008. Economists had a name ready for the trap such a rescue sets: like a climber sure of being caught, people who expect a rescue take bigger risks. What is the trap called?",
     "answer": "Moral hazard",
     "choices": [
       "Moral hazard",
@@ -22360,34 +21996,8 @@
     "topic": "tarp-and-bailouts-moral-hazard-and-the-2023-svb-sequel"
   },
   {
-    "tier": 2,
-    "question": "In late 2008, the American government spent hundreds of billions of taxpayer dollars to rescue giant Wall Street banks like Citigroup and Bank of America after they lost fortunes on bad housing loans. The visible good was clear right away — the immediate crash was stopped. But Frederic Bastiat's rule from 1850 said always to look for the unseen long-term cost as well. What is the hidden cost that Austrian critics of these rescues keep pointing out?",
-    "answer": "Future bankers take bigger risks because they now expect a rescue when things go wrong",
-    "choices": [
-      "Future bankers take bigger risks because they now expect a rescue when things go wrong",
-      "The paperwork cost of running the rescue program",
-      "The tax revenue lost on stock dividends the government received",
-      "The paperwork burden the rescue put on small community banks"
-    ],
-    "context": "The Bastiat UNSEEN in a bailout is not in the year of the bailout; it is in the next crisis. The rescued creditors' expectation of rescue changes behavior going forward. Source: cato.org/commentary/tarp-moral-hazard.",
-    "topic": "tarp-and-bailouts-moral-hazard-and-the-2023-svb-sequel"
-  },
-  {
-    "tier": 2,
-    "question": "A bank kept most of its money in long-term government bonds it had bought when interest rates were very low. When rates jumped up, those bonds were worth much less. Nervous customers heard the news and rushed to pull their cash out all at once. What is that panicked mass withdrawal called?",
-    "answer": "A bank run",
-    "choices": [
-      "A bank run",
-      "A margin call",
-      "A short sale",
-      "A dividend cut"
-    ],
-    "context": "SVB failed March 10 2023 with roughly 93% of its deposits UNINSURED, mostly tech firms and venture-capital funds. Signature Bank followed days later. Source: en.wikipedia.org/wiki/Collapse_of_Silicon_Valley_Bank.",
-    "topic": "tarp-and-bailouts-moral-hazard-and-the-2023-svb-sequel"
-  },
-  {
     "tier": 3,
-    "question": "The Federal Deposit Insurance Corporation (FDIC) normally protects only $250,000 in any one American bank account. In March 2023, Silicon Valley Bank collapsed after a bank run by frightened tech-startup depositors, most of whom had far more than that limit sitting in the bank. The federal government then announced it would cover every dollar, even the accounts far above the insurance limit. What lesson does that decision send to wealthy savers?",
+    "question": "Officials from the Federal Reserve, the Treasury and the Federal Deposit Insurance Corporation announced in March 2023 that every Silicon Valley Bank depositor would get every dollar back, even on balances far above the $250,000 insurance limit. The other banks that fell that spring were handled the same way. What lesson does that send to wealthy savers?",
     "answer": "Do not worry about the limit; the government may cover you anyway",
     "choices": [
       "Do not worry about the limit; the government may cover you anyway",
@@ -22400,7 +22010,7 @@
   },
   {
     "tier": 3,
-    "question": "When Silicon Valley Bank collapsed in March 2023, many tech startups had parked tens of millions of dollars in a single account — far above the $250,000 insurance limit of the Federal Deposit Insurance Corporation (FDIC) — betting a full bank run would simply never happen to them. After the run hit and the bank failed, the federal government promised to make every depositor whole, insured or not. What lesson about caution does that rescue erase for the next time around?",
+    "question": "A startup's treasurer parked tens of millions of dollars in one Silicon Valley Bank account, far above the $250,000 insurance limit, betting a run would never happen to his bank. After the run came and the bank failed, the government made every depositor whole, insured or not. What lesson about caution does the rescue erase?",
     "answer": "Splitting your money across many banks was the safe move; the bailout hides that lesson",
     "choices": [
       "Splitting your money across many banks was the safe move; the bailout hides that lesson",
@@ -22413,7 +22023,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1873, the British economist and journalist Walter Bagehot published a book called Lombard Street. In it, he laid down the classic rule for how a central bank should respond during a financial panic. Bagehot said the lender of last resort should lend freely to any solvent bank, and should take only good collateral in exchange — but he added one more piece to keep bailouts from turning into free money. What sort of interest rate did he say the central bank should charge?",
+    "question": "Walter Bagehot, the Victorian editor, laid down in Lombard Street in 1873 how a central bank should act in a panic: lend freely to any solvent bank and take only good collateral. He added one more piece to keep emergency loans from turning into free money. What kind of interest rate did he say the central bank should charge?",
     "answer": "A high, punishing rate",
     "choices": [
       "A high, punishing rate",
@@ -22426,7 +22036,7 @@
   },
   {
     "tier": 4,
-    "question": "The moral-hazard critique of federal bailouts has a Bastiat-shaped logic. One rescue in one crisis changes what every future actor expects. The real cost shows up in the next crisis the earlier bailout quietly invited. Which precedent-and-sequel pair fits that logic?",
+    "question": "Frederic Bastiat taught readers in 1850 to look for the cost no camera catches. The moral-hazard critique of bailouts follows his rule: one rescue changes what every later banker and depositor expects, and its real cost surfaces in the next crisis it quietly invited. Which precedent-and-sequel pair fits that logic?",
     "answer": "TARP 2008 as precedent; SVB 2023 as institutionalization",
     "choices": [
       "TARP 2008 as precedent; SVB 2023 as institutionalization",
@@ -22439,7 +22049,7 @@
   },
   {
     "tier": 5,
-    "question": "Anna Schwartz co-wrote the 1963 Monetary History of the United States with Milton Friedman. Later, she offered a sharp one-line warning about the direction the Federal Reserve had taken by the 21st century. In her words, the Fed was now really in the business of doing what?",
+    "question": "Anna Schwartz, Milton Friedman's co-author on the Monetary History of 1963, left a sharp last warning about the Federal Reserve in her old age. The Fed had slipped into a new line of work, she argued. What was the Fed now really doing, in her view?",
     "answer": "Preserving asset values, not merely stabilizing money",
     "choices": [
       "Preserving asset values, not merely stabilizing money",
