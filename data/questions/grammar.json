@@ -10622,7 +10622,7 @@
   },
   {
     "tier": 1,
-    "question": "A student writes: \"She said that she IS tired.\" What is the standard reported-speech rule?",
+    "question": "A student's short story reads, \"She said that she IS tired.\" What is the standard reported-speech rule?",
     "answer": "when the reporting verb is past, the tense inside the quote shifts BACK one step: \"she said she WAS tired\"",
     "choices": [
       "when the reporting verb is past, the tense inside the quote shifts BACK one step: \"she said she WAS tired\"",
@@ -10635,7 +10635,7 @@
   },
   {
     "tier": 1,
-    "question": "What is reported speech?",
+    "question": "A teacher opens a grammar lesson by pointing to the words \"reported speech\" on her slide. What does the term mean?",
     "answer": "turning a direct quote (\"I am tired\") into an indirect statement (\"she said that she was tired\")",
     "choices": [
       "turning a direct quote (\"I am tired\") into an indirect statement (\"she said that she was tired\")",
@@ -10648,7 +10648,7 @@
   },
   {
     "tier": 2,
-    "question": "In reported speech with a past reporting verb, PRESENT (am) shifts to what?",
+    "question": "\"I am leaving tomorrow,\" a boy tells his aunt, and later she passes his words on, starting with \"He said...\" What does \"am\" become?",
     "answer": "past (was)",
     "choices": [
       "past (was)",
@@ -10661,7 +10661,7 @@
   },
   {
     "tier": 2,
-    "question": "PAST (was) in reported speech shifts to what?",
+    "question": "A news reporter turns a quote into reported speech after \"She said that...\" and comes to the past verb \"was.\" What does \"was\" become?",
     "answer": "past perfect (had been)",
     "choices": [
       "past perfect (had been)",
@@ -10674,7 +10674,7 @@
   },
   {
     "tier": 3,
-    "question": "\"She said, ‘I will call you.’\" How does this become reported speech?",
+    "question": "A boy repeats a friend's promise to his mother: \"She said, ‘I will call you.’\" How does he put it into reported speech?",
     "answer": "She said she WOULD call me",
     "choices": [
       "She said she WOULD call me",
@@ -10687,7 +10687,7 @@
   },
   {
     "tier": 4,
-    "question": "When can present tense be kept in reported speech?",
+    "question": "A copy editor spots a present-tense verb in a sentence that begins \"He said that...\" When may reported speech keep the present tense?",
     "answer": "when the quoted content is a general truth still valid (\"water BOILS at 100 degrees\")",
     "choices": [
       "when the quoted content is a general truth still valid (\"water BOILS at 100 degrees\")",
@@ -10700,7 +10700,7 @@
   },
   {
     "tier": 5,
-    "question": "Identify the CORRECT reported-speech version of \"He said, ‘I CAN swim.’\"",
+    "question": "A lifeguard copies a line into the pool log: \"He said, ‘I CAN swim.’\" Which version reports it correctly?",
     "answer": "He said he COULD swim (CAN shifts to COULD)",
     "choices": [
       "He said he COULD swim (CAN shifts to COULD)",
@@ -10713,7 +10713,7 @@
   },
   {
     "tier": 1,
-    "question": "A student's history essay opens with 'LOL' (laughing out loud) and other text abbreviations. What kind of mistake is that?",
+    "question": "A teacher grading history essays finds one that opens with \"LOL\" (laughing out loud). What kind of mistake is that?",
     "answer": "text-speak abbreviations and slang belong in text messages, not academic essays",
     "choices": [
       "text-speak abbreviations and slang belong in text messages, not academic essays",
@@ -10726,7 +10726,7 @@
   },
   {
     "tier": 1,
-    "question": "What is text-speak?",
+    "question": "A lab instructor writes \"text-speak\" in red beside one line of a report: \"idk, the temp was prob too low.\" What does the term mean?",
     "answer": "abbreviations and informal spellings developed for phone texting and chat (LOL, IMO, IIRC, BTW, TBH, IDK, FWIW)",
     "choices": [
       "abbreviations and informal spellings developed for phone texting and chat (LOL, IMO, IIRC, BTW, TBH, IDK, FWIW)",
@@ -10738,34 +10738,8 @@
     "topic": "text-speak-vs-formal-register-lol-imo-iirc"
   },
   {
-    "tier": 2,
-    "question": "Which register accepts text-speak?",
-    "answer": "text messages, chat threads, and casual social posts",
-    "choices": [
-      "text messages, chat threads, and casual social posts",
-      "formal essays, business letters, and job applications",
-      "academic writing and legal briefs",
-      "no register accepts text-speak"
-    ],
-    "context": "Text-speak is standard in casual digital contexts. It reads as careless in formal writing.",
-    "topic": "text-speak-vs-formal-register-lol-imo-iirc"
-  },
-  {
-    "tier": 3,
-    "question": "Where do EMOJIS fit register-wise?",
-    "answer": "casual-register: fine in texts and casual posts; out in formal reports",
-    "choices": [
-      "casual-register: fine in texts and casual posts; out in formal reports",
-      "formal-register: required in business reports",
-      "academic-register: standard in scholarly writing",
-      "legal-register: mandatory in contracts"
-    ],
-    "context": "Emojis signal informality. A smiley in a business report reads as unprofessional; the same emoji in a chat is normal.",
-    "topic": "text-speak-vs-formal-register-lol-imo-iirc"
-  },
-  {
     "tier": 4,
-    "question": "Which sentence fits the formal register of an academic paper?",
+    "question": "A professor reads the closing lines of four lab papers. Which one fits the formal register of an academic paper?",
     "answer": "The results were inconclusive",
     "choices": [
       "The results were inconclusive",
@@ -10778,7 +10752,7 @@
   },
   {
     "tier": 5,
-    "question": "Which sentence should be REWRITTEN for a formal report?",
+    "question": "A chemist proofreads a draft of a formal report before it goes out. Which sentence must be rewritten?",
     "answer": "The experiment failed, IMO, bc the temperature was too low",
     "choices": [
       "The experiment failed, IMO, bc the temperature was too low",
@@ -10791,7 +10765,7 @@
   },
   {
     "tier": 1,
-    "question": "'The book that changed her life sat on the shelf.' Is the 'that' clause essential to identify WHICH book?",
+    "question": "A book club's flyer reads, \"The book that changed her life sat on the shelf.\" Is the \"that\" clause needed to identify which book?",
     "answer": "yes -- restrictive; identifies the specific book (no commas)",
     "choices": [
       "yes -- restrictive; identifies the specific book (no commas)",
@@ -10804,7 +10778,7 @@
   },
   {
     "tier": 1,
-    "question": "'The book, which was blue, sat on the shelf.' What role do the commas around 'which was blue' play?",
+    "question": "A librarian's note reads, \"The book, which was blue, sat on the shelf.\" What role do the commas around \"which was blue\" play?",
     "answer": "mark the clause as non-restrictive (extra info, could be removed)",
     "choices": [
       "mark the clause as non-restrictive (extra info, could be removed)",
@@ -10817,7 +10791,7 @@
   },
   {
     "tier": 2,
-    "question": "'The car that was red' vs 'The car, which was red' -- what is the meaning difference?",
+    "question": "A detective writes two versions of one line in his notebook: \"The car that was red\" and \"The car, which was red.\" What is the difference in meaning?",
     "answer": "restrictive picks out THE RED CAR among several; non-restrictive adds colour info about the only car",
     "choices": [
       "restrictive picks out THE RED CAR among several; non-restrictive adds colour info about the only car",
@@ -10830,7 +10804,7 @@
   },
   {
     "tier": 2,
-    "question": "In American style, which sentence has the right punctuation?",
+    "question": "An editor at an American kennel club's newsletter checks four versions of a line about barking dogs. Which one is punctuated right in American style?",
     "answer": "The dogs that bark loudest are the smallest.",
     "choices": [
       "The dogs that bark loudest are the smallest.",
@@ -10843,7 +10817,7 @@
   },
   {
     "tier": 3,
-    "question": "British English is less strict about 'that/which'. What does this mean in practice?",
+    "question": "An American copy editor starts work at an English newspaper and is warned that British practice is looser about \"that\" and \"which.\" What does the looser practice mean on the page?",
     "answer": "British writers often use 'which' for restrictive clauses too; the commas do the disambiguating",
     "choices": [
       "British writers often use 'which' for restrictive clauses too; the commas do the disambiguating",
@@ -10856,7 +10830,7 @@
   },
   {
     "tier": 3,
-    "question": "'The man, who lived next door, waved.' Only ONE man lives next door. Which clause type is this?",
+    "question": "A neighbor's diary reads, \"The man, who lived next door, waved.\" Only one man lives next door. Which clause type is \"who lived next door\"?",
     "answer": "non-restrictive (extra info about the already-identified man)",
     "choices": [
       "non-restrictive (extra info about the already-identified man)",
@@ -10869,7 +10843,7 @@
   },
   {
     "tier": 4,
-    "question": "'My brother, who lives in Paris, sent a postcard.' Why non-restrictive?",
+    "question": "A girl's holiday letter reads, \"My brother, who lives in Paris, sent a postcard.\" Why does the clause about Paris sit between commas?",
     "answer": "'my brother' identifies the person; 'who lives in Paris' adds extra info",
     "choices": [
       "'my brother' identifies the person; 'who lives in Paris' adds extra info",
@@ -10882,7 +10856,7 @@
   },
   {
     "tier": 5,
-    "question": "'My brother who lives in Paris sent a postcard.' Missing commas signal what?",
+    "question": "A proofreader takes the two commas out of a family newsletter's line, leaving \"My brother who lives in Paris sent a postcard.\" What do the missing commas now tell a reader?",
     "answer": "the writer has multiple brothers; the Paris one is being distinguished",
     "choices": [
       "the writer has multiple brothers; the Paris one is being distinguished",
@@ -10895,7 +10869,7 @@
   },
   {
     "tier": 1,
-    "question": "'She loved coffee, he preferred tea.' What punctuation error is this?",
+    "question": "A love story's first line reads, \"She loved coffee, he preferred tea.\" What punctuation error is this?",
     "answer": "comma splice (two full sentences joined by just a comma)",
     "choices": [
       "comma splice (two full sentences joined by just a comma)",
@@ -10908,7 +10882,7 @@
   },
   {
     "tier": 2,
-    "question": "'The rain fell, the game was cancelled.' Which is NOT a valid fix for this comma splice?",
+    "question": "A sports reporter's draft reads, \"The rain fell, the game was cancelled.\" His editor weighs four ways to handle it. Which one is not a real fix?",
     "answer": "leave it as-is; commas can join sentences in modern writing",
     "choices": [
       "leave it as-is; commas can join sentences in modern writing",
@@ -10921,7 +10895,7 @@
   },
   {
     "tier": 2,
-    "question": "'I came, I saw, I conquered.' Caesar's famous line uses commas between clauses. Why is this NOT considered a comma splice error?",
+    "question": "A history teacher writes Caesar's line on the board: \"I came, I saw, I conquered.\" Why do editors let those commas stand?",
     "answer": "tightly parallel short clauses are a recognised stylistic exception",
     "choices": [
       "tightly parallel short clauses are a recognised stylistic exception",
@@ -10934,7 +10908,7 @@
   },
   {
     "tier": 3,
-    "question": "'She was tired, however, she kept working.' What punctuation error appears here?",
+    "question": "A nurse's shift log reads, \"She was tired, however, she kept working.\" What punctuation error appears here?",
     "answer": "comma splice (however is a conjunctive adverb, not a conjunction)",
     "choices": [
       "comma splice (however is a conjunctive adverb, not a conjunction)",
@@ -10947,7 +10921,7 @@
   },
   {
     "tier": 3,
-    "question": "'The clock struck midnight, everyone cheered.' Which fix best keeps the two events feeling closely tied?",
+    "question": "A diary entry reads, \"The clock struck midnight, everyone cheered.\" Which fix keeps the two events most closely tied?",
     "answer": "semicolon: 'The clock struck midnight; everyone cheered.'",
     "choices": [
       "semicolon: 'The clock struck midnight; everyone cheered.'",
@@ -10960,7 +10934,7 @@
   },
   {
     "tier": 4,
-    "question": "Which sentence contains a comma splice?",
+    "question": "A tutor hands a student four versions of one sentence about a dog and a mailman. Which one contains a comma splice?",
     "answer": "The dog barked, the mailman ran.",
     "choices": [
       "The dog barked, the mailman ran.",
@@ -10973,7 +10947,7 @@
   },
   {
     "tier": 5,
-    "question": "'The book was long, though, it was worth reading.' Which comma-splice fix is cleanest here?",
+    "question": "A student's book review reads, \"The book was long, though, it was worth reading.\" Which fix is cleanest?",
     "answer": "swap in a conjunction: 'The book was long, but it was worth reading.'",
     "choices": [
       "swap in a conjunction: 'The book was long, but it was worth reading.'",
@@ -10986,7 +10960,7 @@
   },
   {
     "tier": 1,
-    "question": "'Let's eat Grandma!' The kids are calling Grandma to dinner but the sentence sends a much scarier message. Which correction is right?",
+    "question": "A grandson's note on the kitchen door reads, \"Let's eat Grandma!\" He means to call her to dinner, but the note says something much scarier. Which correction is right?",
     "answer": "Add a vocative comma: 'Let's eat, Grandma!'",
     "choices": [
       "Add a vocative comma: 'Let's eat, Grandma!'",
@@ -10999,7 +10973,7 @@
   },
   {
     "tier": 2,
-    "question": "'I like cooking my family and my pets.' The writer meant three things she likes. Which comma fix rescues the sentence?",
+    "question": "A girl's profile page reads, \"I like cooking my family and my pets.\" Which comma fix rescues her family?",
     "answer": "'I like cooking, my family, and my pets.'",
     "choices": [
       "'I like cooking, my family, and my pets.'",
@@ -11012,7 +10986,7 @@
   },
   {
     "tier": 2,
-    "question": "In 2011 a magazine cover read 'Rachael Ray finds inspiration in cooking her family and her dog.' What two commas would save Rachael from cannibalism?",
+    "question": "A magazine cover in 2011 read, \"Rachael Ray finds inspiration in cooking her family and her dog.\" What two commas would save Rachael from cannibalism?",
     "answer": "'cooking, her family, and her dog' -- commas after 'cooking' and after 'family' turn one horror-list into three items",
     "choices": [
       "'cooking, her family, and her dog' -- commas after 'cooking' and after 'family' turn one horror-list into three items",
@@ -11025,7 +10999,7 @@
   },
   {
     "tier": 3,
-    "question": "Compare: 'Woman: without her, man is nothing.' vs 'Woman, without her man, is nothing.' What is the difference the commas create?",
+    "question": "A debate coach hands out a card with one sentence punctuated two ways: \"Woman: without her, man is nothing.\" and \"Woman, without her man, is nothing.\" What difference does the punctuation make?",
     "answer": "In the first, man is nothing without woman. In the second, woman is nothing without her man. Same words, opposite claim.",
     "choices": [
       "In the first, man is nothing without woman. In the second, woman is nothing without her man. Same words, opposite claim.",
@@ -11037,34 +11011,8 @@
     "topic": "the-grandma-comma-and-other-missing-comma-horrors"
   },
   {
-    "tier": 4,
-    "question": "'A panda eats, shoots and leaves' vs 'A panda eats shoots and leaves.' Lynne Truss's 2003 book title turns on this contrast. What does the comma do?",
-    "answer": "The comma changes the panda from an herbivore to a gunman: 'eats' + 'shoots' + 'leaves' as three actions vs 'eats [bamboo] shoots and leaves' as one meal",
-    "choices": [
-      "The comma changes the panda from an herbivore to a gunman: 'eats' + 'shoots' + 'leaves' as three actions vs 'eats [bamboo] shoots and leaves' as one meal",
-      "The comma capitalizes the following letter",
-      "The comma marks a pause but keeps the meaning identical",
-      "The comma turns the sentence into a question"
-    ],
-    "context": "The joke rests on 'shoots and leaves' being either two verbs (fires + departs) or two nouns (young stems + foliage), depending on the comma after 'eats.' Source: Lynne Truss, 'Eats, Shoots and Leaves' (2003).",
-    "topic": "the-grandma-comma-and-other-missing-comma-horrors"
-  },
-  {
-    "tier": 5,
-    "question": "Chicago's guiding principle: 'Use punctuation for CLARITY, not for ritual.' Which of these sentences is CLEARER with the comma than without?",
-    "answer": "'While eating, the cat watched TV.' -- without the comma, the sentence could read 'while [somebody] eating the cat'",
-    "choices": [
-      "'While eating, the cat watched TV.' -- without the comma, the sentence could read 'while [somebody] eating the cat'",
-      "'The dog, ran through the park.' -- comma between subject and verb (bad)",
-      "'I want a cookie, or a brownie.' -- comma before OR when clauses are dependent (bad)",
-      "'She said, hello.' -- comma before an unquoted word (bad)"
-    ],
-    "context": "The introductory comma keeps the reader from parsing 'eating the cat' as verb + object. Ambiguity-preventing commas are what Chicago prizes; ritual commas that split subject from verb are what Chicago forbids. Source: Chicago Manual of Style 17e section 6.16.",
-    "topic": "the-grandma-comma-and-other-missing-comma-horrors"
-  },
-  {
     "tier": 1,
-    "question": "'I invited the strippers, JFK (John F. Kennedy) and Stalin.' Without an Oxford comma, what unintended reading appears?",
+    "question": "A party planner's note reads, \"I invited the strippers, JFK (John F. Kennedy) and Stalin.\" Without an Oxford comma, what unintended reading appears?",
     "answer": "JFK and Stalin are being named AS the strippers",
     "choices": [
       "JFK and Stalin are being named AS the strippers",
@@ -11077,7 +11025,7 @@
   },
   {
     "tier": 1,
-    "question": "What is the OXFORD (or serial) comma?",
+    "question": "An editor pencils the words \"Oxford comma\" beside a draft line, \"We invited the clowns, my aunt and the mayor.\" What is the Oxford, or serial, comma?",
     "answer": "the comma before the final 'and' in a list of three or more items",
     "choices": [
       "the comma before the final 'and' in a list of three or more items",
@@ -11090,7 +11038,7 @@
   },
   {
     "tier": 2,
-    "question": "'This book is dedicated to my parents, Ayn Rand and God.' Why does this famous joke need an Oxford comma?",
+    "question": "A joke dedication page reads, \"This book is dedicated to my parents, Ayn Rand and God.\" Why does the line need an Oxford comma?",
     "answer": "without it, the reader thinks the writer's parents ARE Ayn Rand and God",
     "choices": [
       "without it, the reader thinks the writer's parents ARE Ayn Rand and God",
@@ -11103,7 +11051,7 @@
   },
   {
     "tier": 2,
-    "question": "Which big American style guide drops the Oxford comma by default?",
+    "question": "A proofreader flips through four big American style guides, hunting for the one that drops the Oxford comma by default. Which guide is it?",
     "answer": "AP Stylebook (news writing)",
     "choices": [
       "AP Stylebook (news writing)",
@@ -11116,7 +11064,7 @@
   },
   {
     "tier": 3,
-    "question": "In O'Connor v. Oakhurst Dairy (2018), a MISSING Oxford comma in a Maine state law cost the dairy company how much in a settlement?",
+    "question": "A law student read O'Connor v. Oakhurst Dairy (2018), a case over a Maine state law that left out an Oxford comma. How much did the missing comma cost the dairy in its settlement?",
     "answer": "about five million dollars in overtime pay",
     "choices": [
       "about five million dollars in overtime pay",
@@ -11129,7 +11077,7 @@
   },
   {
     "tier": 3,
-    "question": "'For breakfast I had eggs, toast and jam and coffee.' Without an Oxford comma, what ambiguity results?",
+    "question": "A hotel guest's review reads, \"For breakfast I had eggs, toast and jam and coffee.\" Without an Oxford comma, what ambiguity results?",
     "answer": "did toast come WITH jam, or were jam and coffee separate items?",
     "choices": [
       "did toast come WITH jam, or were jam and coffee separate items?",
@@ -11141,21 +11089,8 @@
     "topic": "the-oxford-comma-strippers-jfk-and-stalin"
   },
   {
-    "tier": 4,
-    "question": "'I have lived in Paris, France, Rome, Italy, and Athens, Greece.' Even with an Oxford comma, this reads badly. What punctuation solves it?",
-    "answer": "semicolons between items (Paris, France; Rome, Italy; and Athens, Greece)",
-    "choices": [
-      "semicolons between items (Paris, France; Rome, Italy; and Athens, Greece)",
-      "more Oxford commas",
-      "colons after each country",
-      "no fix possible"
-    ],
-    "context": "When list ITEMS themselves contain commas, the comma-as-separator breaks down. Semicolons become 'super-commas' to keep items distinct. The Oxford comma alone cannot save it.",
-    "topic": "the-oxford-comma-strippers-jfk-and-stalin"
-  },
-  {
     "tier": 5,
-    "question": "'I dedicate this to my mother, Amy Tan, and God.' Even WITH an Oxford comma, this reads oddly. Why?",
+    "question": "A poet's dedication reads, \"I dedicate this to my mother, Amy Tan, and God.\" The Oxford comma is there, yet the line still reads oddly. Why?",
     "answer": "the commas around 'Amy Tan' can be read as an appositive renaming the mother",
     "choices": [
       "the commas around 'Amy Tan' can be read as an appositive renaming the mother",
@@ -11168,7 +11103,7 @@
   },
   {
     "tier": 1,
-    "question": "A punctuation mark combining ? and ! for incredulous questions (\"You did WHAT?!\") is called what?",
+    "question": "A comic-book letterer squeezes an exclamation point and a question mark into one symbol for a shocked line, \"You did WHAT?!\" What is that mark called?",
     "answer": "the interrobang (invented 1962 by advertiser Martin K. Speckter)",
     "choices": [
       "the interrobang (invented 1962 by advertiser Martin K. Speckter)",
@@ -11181,7 +11116,7 @@
   },
   {
     "tier": 2,
-    "question": "In legal and religious texts, one symbol marks paragraph breaks - what is it called?",
+    "question": "A typist turns on the hidden marks in her word processor, and a little backwards P appears all through her letter. What is that mark called?",
     "answer": "the pilcrow (also called the paragraph mark)",
     "choices": [
       "the pilcrow (also called the paragraph mark)",
@@ -11194,7 +11129,7 @@
   },
   {
     "tier": 3,
-    "question": "The section symbol used in legal citations like \"18 U.S.C. section 1001\" is used to reference what?",
+    "question": "A student copies a citation into her notes: 18 U.S.C., then a mark of two interlocking S shapes, then 1001. What does that mark point to?",
     "answer": "sections of a statute; doubled means multiple sections",
     "choices": [
       "sections of a statute; doubled means multiple sections",
@@ -11207,7 +11142,7 @@
   },
   {
     "tier": 4,
-    "question": "GUILLEMETS (angle brackets used as quotation marks) are standard in which languages?",
+    "question": "A printer sets a page of dialogue with guillemets, the little angle marks used as quotation marks. In which languages are guillemets standard?",
     "answer": "French, Spanish, Russian, and other European languages",
     "choices": [
       "French, Spanish, Russian, and other European languages",
@@ -11220,7 +11155,7 @@
   },
   {
     "tier": 5,
-    "question": "In the old Chicago footnote sequence, what mark comes after the asterisk?",
+    "question": "A typesetter tags the first footnote on a page with an asterisk, following the old Chicago sequence of marks. What comes after the asterisk in that sequence?",
     "answer": "dagger, then double dagger, then section symbol, then pilcrow, then hash",
     "choices": [
       "dagger, then double dagger, then section symbol, then pilcrow, then hash",
@@ -11233,7 +11168,7 @@
   },
   {
     "tier": 1,
-    "question": "'Let's eat Grandma!' vs 'Let's eat, Grandma!' What punctuation mark separates dinner from disaster?",
+    "question": "A cousin texts the whole family, \"Let's eat Grandma!\" What punctuation mark would separate dinner from disaster?",
     "answer": "the vocative comma (comma of direct address)",
     "choices": [
       "the vocative comma (comma of direct address)",
@@ -11245,21 +11180,8 @@
     "topic": "the-vocative-comma-lets-eat-grandma"
   },
   {
-    "tier": 1,
-    "question": "'I love cooking my family and my pets.' What single punctuation fix stops this from being a horrifying admission?",
-    "answer": "commas around 'my family': 'I love cooking, my family, and my pets.'",
-    "choices": [
-      "commas around 'my family': 'I love cooking, my family, and my pets.'",
-      "period after 'cooking'",
-      "capitalise 'Family'",
-      "remove 'my'"
-    ],
-    "context": "Adding vocative commas turns 'my family' and 'my pets' into direct-address terms -- the speaker is telling them she loves cooking, not cooking THEM.",
-    "topic": "the-vocative-comma-lets-eat-grandma"
-  },
-  {
     "tier": 2,
-    "question": "'Attention students, class is cancelled.' What missing punctuation makes this sound like a class OF students called 'attention'?",
+    "question": "A substitute teacher's sign on the classroom door reads, \"Attention students, class is cancelled.\" What missing punctuation makes it sound like a class of students called \"attention\"?",
     "answer": "comma after 'Attention': 'Attention, students, class is cancelled.'",
     "choices": [
       "comma after 'Attention': 'Attention, students, class is cancelled.'",
@@ -11272,7 +11194,7 @@
   },
   {
     "tier": 2,
-    "question": "'Thanks for cooking Dad.' Without the comma, what does the sentence appear to name Dad as?",
+    "question": "A boy's note to his father reads, \"Thanks for cooking Dad.\" With no comma, what does the note seem to name Dad as?",
     "answer": "the thing that was cooked",
     "choices": [
       "the thing that was cooked",
@@ -11285,7 +11207,7 @@
   },
   {
     "tier": 3,
-    "question": "'Please Dad can I go?' Where do the vocative commas go?",
+    "question": "A girl texts her father, \"Please Dad can I go?\" Where do the commas go?",
     "answer": "around Dad: 'Please, Dad, can I go?'",
     "choices": [
       "around Dad: 'Please, Dad, can I go?'",
@@ -11298,7 +11220,7 @@
   },
   {
     "tier": 4,
-    "question": "'Come here my brother!' vs 'My brother, come here!' -- what comma job is at work?",
+    "question": "A sister writes one call to her brother two ways in a story: \"Come here my brother!\" and \"My brother, come here!\" What comma job is at work?",
     "answer": "vocative (direct address); both need a comma between the address and the rest",
     "choices": [
       "vocative (direct address); both need a comma between the address and the rest",
@@ -11311,7 +11233,7 @@
   },
   {
     "tier": 4,
-    "question": "Which sentence uses commas for direct address correctly?",
+    "question": "A mother writing a reminder for Susan cannot decide how to punctuate it. Which version punctuates Susan's name correctly?",
     "answer": "I told you, Susan, to close the door.",
     "choices": [
       "I told you, Susan, to close the door.",
@@ -11324,7 +11246,7 @@
   },
   {
     "tier": 5,
-    "question": "'Well, Grandma, dinner is ready.' The comma AFTER 'Well' does what different job from the ones around Grandma?",
+    "question": "A boy slips a note under his grandmother's door: \"Well, Grandma, dinner is ready.\" What job does the comma after \"Well\" do that the two around \"Grandma\" do not?",
     "answer": "marks 'well' as an interjection (a filler word), not a vocative",
     "choices": [
       "marks 'well' as an interjection (a filler word), not a vocative",
@@ -11337,7 +11259,7 @@
   },
   {
     "tier": 1,
-    "question": "A note: \"She is taller then her brother.\" Which word was misused?",
+    "question": "A school nurse's note reads, \"She is taller then her brother.\" Which word was misused?",
     "answer": "\"then\" (should be \"than\")",
     "choices": [
       "\"then\" (should be \"than\")",
@@ -11350,7 +11272,7 @@
   },
   {
     "tier": 1,
-    "question": "\"Back then, we walked to school.\" What does THEN mean here?",
+    "question": "A grandfather starts a story for his grandson with \"Back then, we walked to school.\" What does \"then\" mean there?",
     "answer": "at that time in the past",
     "choices": [
       "at that time in the past",
@@ -11363,7 +11285,7 @@
   },
   {
     "tier": 2,
-    "question": "Memory trick for THEN vs THAN?",
+    "question": "A spelling coach hangs a poster about \"then\" and \"than\" over the classroom door. What memory trick does it give?",
     "answer": "thEn has an E like timE / sEquence; thAn has an A like compAre / contrAst",
     "choices": [
       "thEn has an E like timE / sEquence; thAn has an A like compAre / contrAst",
@@ -11376,7 +11298,7 @@
   },
   {
     "tier": 2,
-    "question": "\"I would rather eat pizza ___ salad.\" Which word fits?",
+    "question": "A boy fills in a cafeteria survey: \"I would rather eat pizza ___ salad.\" Which word fits?",
     "answer": "than",
     "choices": [
       "than",
@@ -11389,7 +11311,7 @@
   },
   {
     "tier": 3,
-    "question": "Which sentence uses THEN correctly?",
+    "question": "A teacher grading journals finds \"then\" in four different sentences. Which one uses it correctly?",
     "answer": "She ate lunch, then went for a walk",
     "choices": [
       "She ate lunch, then went for a walk",
@@ -11401,21 +11323,8 @@
     "topic": "then-vs-than-time-vs-comparison"
   },
   {
-    "tier": 4,
-    "question": "\"Different than\" vs \"different from\": which best describes the modern usage split?",
-    "answer": "American English accepts \"different than\" before a clause; British English prefers \"different from\" throughout",
-    "choices": [
-      "American English accepts \"different than\" before a clause; British English prefers \"different from\" throughout",
-      "\"different than\" is always incorrect in every dialect",
-      "\"different from\" is British only; Americans say \"different to\"",
-      "both forms are considered errors in modern usage"
-    ],
-    "context": "Regional preference, not a strict error. American formal writing still favors \"different from\"; \"different than\" is standard in American speech and journalism.",
-    "topic": "then-vs-than-time-vs-comparison"
-  },
-  {
     "tier": 1,
-    "question": "In casual speech people constantly say 'There's many reasons to be careful.' In careful writing, what is the correct verb form?",
+    "question": "A safety poster in a school hallway reads, \"There's many reasons to be careful.\" What is the correct verb form in careful writing?",
     "answer": "There ARE many reasons -- the verb agrees with REASONS (plural)",
     "choices": [
       "There ARE many reasons -- the verb agrees with REASONS (plural)",
@@ -11428,7 +11337,7 @@
   },
   {
     "tier": 2,
-    "question": "'There ___ a cookie on the plate for you.' Which verb fits?",
+    "question": "A grandmother leaves a half-finished note on the counter: \"There ___ a cookie on the plate for you.\" Which verb fits?",
     "answer": "is -- verb agrees with COOKIE (singular, the true subject)",
     "choices": [
       "is -- verb agrees with COOKIE (singular, the true subject)",
@@ -11441,7 +11350,7 @@
   },
   {
     "tier": 3,
-    "question": "In 'There ARE cookies on the plate,' the word THERE fills the subject slot but is not really the subject. What is this kind of construction called?",
+    "question": "A teacher underlines the first word of \"There ARE cookies on the plate\" for her class. What is that kind of construction called?",
     "answer": "An expletive construction (or dummy-subject construction)",
     "choices": [
       "An expletive construction (or dummy-subject construction)",
@@ -11454,7 +11363,7 @@
   },
   {
     "tier": 3,
-    "question": "'There ___ three students left in the classroom.' Which verb fits?",
+    "question": "A hall monitor is filling in her end-of-day report: \"There ___ three students left in the classroom.\" Which verb completes it?",
     "answer": "are -- STUDENTS is plural, the true subject",
     "choices": [
       "are -- STUDENTS is plural, the true subject",
@@ -11467,7 +11376,7 @@
   },
   {
     "tier": 4,
-    "question": "'There ___ a cookie and a glass of milk on the tray.' Which verb is technically correct in formal writing, and why do editors usually recast the sentence?",
+    "question": "A hotel clerk is typing a room-service card: \"There ___ a cookie and a glass of milk on the tray.\" Which verb is technically correct in formal writing, and why do editors usually recast the sentence?",
     "answer": "ARE -- the compound subject (cookie AND glass) is plural, so ARE; often rewritten as 'A cookie and a glass of milk are on the tray'",
     "choices": [
       "ARE -- the compound subject (cookie AND glass) is plural, so ARE; often rewritten as 'A cookie and a glass of milk are on the tray'",
@@ -11480,7 +11389,7 @@
   },
   {
     "tier": 5,
-    "question": "Which of these sentences uses CORRECT there-construction agreement?",
+    "question": "A principal checks four lines from the morning announcements before reading them out. Which line gets its verb to agree?",
     "answer": "'There are many students in the hallway.'",
     "choices": [
       "'There are many students in the hallway.'",
@@ -11493,7 +11402,7 @@
   },
   {
     "tier": 5,
-    "question": "In casual speech, 'there's' is often used before both singular and plural nouns. In FORMAL writing, what is the honest rule?",
+    "question": "A radio producer finds \"there's two reasons\" in a host's script. In formal writing, what is the honest rule?",
     "answer": "Use 'there is' with a singular noun that follows, 'there are' with a plural noun that follows",
     "choices": [
       "Use 'there is' with a singular noun that follows, 'there are' with a plural noun that follows",
@@ -11506,7 +11415,7 @@
   },
   {
     "tier": 1,
-    "question": "'THEIR going to THERE house with THEY'RE dog.' Every one of those three words is wrong. Which ORDER should they take instead?",
+    "question": "A neighbor texts, \"THEIR going to THERE house with THEY'RE dog,\" and every one of those three words is wrong. Which version fixes all three?",
     "answer": "THEY'RE going to THEIR house with THEIR dog.",
     "choices": [
       "THEY'RE going to THEIR house with THEIR dog.",
@@ -11519,7 +11428,7 @@
   },
   {
     "tier": 2,
-    "question": "Three memory tricks for the three spellings: THERE has ___ inside it (a place word); THEIR has ___ inside it (an inheritance word); THEY'RE has an apostrophe marking a missing letter. Which pair of hidden words fills the blanks?",
+    "question": "A tutor makes a flash card saying that \"there\" hides a place word and \"their\" hides a word about inheriting. Which pair of hidden words does she mean?",
     "answer": "HERE ... HEIR",
     "choices": [
       "HERE ... HEIR",
@@ -11532,7 +11441,7 @@
   },
   {
     "tier": 3,
-    "question": "Which of these sentences uses the RIGHT form -- 'they are' can be swapped in cleanly?",
+    "question": "A student tests four sentences by reading \"they are\" into each one. Which sentence passes the test with the right spelling?",
     "answer": "'They're going to the park.'",
     "choices": [
       "'They're going to the park.'",
@@ -11545,7 +11454,7 @@
   },
   {
     "tier": 3,
-    "question": "'Please put the groceries over ___ on the counter.' Which of the three spellings fills the blank?",
+    "question": "A mother's note to her kids is missing one word: \"Please put the groceries over ___ on the counter.\" Which of the three spellings fills the blank?",
     "answer": "there -- points to a place",
     "choices": [
       "there -- points to a place",
@@ -11558,7 +11467,7 @@
   },
   {
     "tier": 4,
-    "question": "'___ going to ___ grandmother's house because ___ car is being fixed.' Which sequence of three spellings fills the blanks correctly?",
+    "question": "A cousin leaves three gaps in a message for her little brother to fill: \"___ going to ___ grandmother's house because ___ car is being fixed.\" Which spellings fill the gaps, in order?",
     "answer": "They're ... their ... their",
     "choices": [
       "They're ... their ... their",
@@ -11584,7 +11493,7 @@
   },
   {
     "tier": 5,
-    "question": "Which of these sentences uses ALL THREE spellings (there / their / they're) correctly?",
+    "question": "A teacher grades four sentences, each of which tries \"there,\" \"their\" and \"they're\" at once. Which one gets all three right?",
     "answer": "'They're going to their house over there.'",
     "choices": [
       "'They're going to their house over there.'",
@@ -11597,7 +11506,7 @@
   },
   {
     "tier": 1,
-    "question": "'Time flies like an arrow; fruit flies like a banana.' The two clauses LOOK parallel, but they are not. In the SECOND clause, what is the actual grammatical role of the word FLIES?",
+    "question": "A science teacher tapes a joke to her classroom door: \"Time flies like an arrow; fruit flies like a banana.\" In the second half, what job does \"flies\" do?",
     "answer": "It is a noun -- 'fruit flies' is a noun phrase naming the insects",
     "choices": [
       "It is a noun -- 'fruit flies' is a noun phrase naming the insects",
@@ -11609,21 +11518,8 @@
     "topic": "time-flies-like-an-arrow-parsing-ambiguity"
   },
   {
-    "tier": 2,
-    "question": "'Time flies like an arrow; fruit flies like a banana.' Who is this gag most often (though not necessarily correctly) attributed to?",
-    "answer": "Groucho Marx -- popular attribution though the exact origin is disputed",
-    "choices": [
-      "Groucho Marx -- popular attribution though the exact origin is disputed",
-      "Winston Churchill -- documented 1940s speech",
-      "Mark Twain -- from a lecture on the American language",
-      "Yogi Berra -- baseball malapropism"
-    ],
-    "context": "The gag circulates in linguistics from the 1960s onward. Anthony Oettinger's Scientific American article (1966) is an early documented citation. Attribution to Groucho Marx is folk-tradition. Source: Oettinger, Scientific American (1966).",
-    "topic": "time-flies-like-an-arrow-parsing-ambiguity"
-  },
-  {
     "tier": 3,
-    "question": "You want to help a reader parse 'fruit flies like a banana' correctly on first read. Which punctuation choice would most flag the pivot?",
+    "question": "An editor wants readers to parse \"fruit flies like a banana\" correctly on the first read. Which punctuation choice would best signal the switch in meaning?",
     "answer": "Hyphenate the compound noun: 'fruit-flies like a banana'",
     "choices": [
       "Hyphenate the compound noun: 'fruit-flies like a banana'",
@@ -11636,7 +11532,7 @@
   },
   {
     "tier": 4,
-    "question": "Another classic parsing-ambiguity sentence: 'They are cooking apples.' What are the TWO readings, and can punctuation resolve it?",
+    "question": "A farm stand's sign reads, \"They are cooking apples.\" What are its two readings, and can punctuation settle it?",
     "answer": "COOKING as verb: they are cooking some apples now. COOKING as adjective: they are the type of apples used for cooking. No punctuation fix; context alone tells you which",
     "choices": [
       "COOKING as verb: they are cooking some apples now. COOKING as adjective: they are the type of apples used for cooking. No punctuation fix; context alone tells you which",
@@ -11649,7 +11545,7 @@
   },
   {
     "tier": 5,
-    "question": "Under Chicago style, when should you hyphenate 'fruit fly' as 'fruit-fly'?",
+    "question": "A biology teacher typing a worksheet stops at \"fruit fly\" and checks Chicago style on the hyphen. When should \"fruit fly\" become \"fruit-fly\"?",
     "answer": "Rarely -- 'fruit fly' is an open compound in standard dictionaries; hyphenate only where the ambiguity requires (as in the 'time flies' gag), or when using it as a compound modifier ('fruit-fly research')",
     "choices": [
       "Rarely -- 'fruit fly' is an open compound in standard dictionaries; hyphenate only where the ambiguity requires (as in the 'time flies' gag), or when using it as a compound modifier ('fruit-fly research')",
@@ -11662,7 +11558,7 @@
   },
   {
     "tier": 3,
-    "question": "The classic parsing joke pairs 'Time flies like an arrow' with a second line where 'flies' suddenly means small insects hovering near a banana. What does the joke turn on?",
+    "question": "A boy tells his sister, \"Time flies like an arrow,\" and follows it with a line about a banana in which \"flies\" turns into small insects. What does the joke turn on?",
     "answer": "a PARSING-AMBIGUITY: the second half re-parses every word (fruit flies = insects, like = verb)",
     "choices": [
       "a PARSING-AMBIGUITY: the second half re-parses every word (fruit flies = insects, like = verb)",
@@ -11675,7 +11571,7 @@
   },
   {
     "tier": 3,
-    "question": "In \"fruit flies like a banana,\" what part of speech is LIKE?",
+    "question": "A grammar teacher diagrams \"fruit flies like a banana\" on the board. What part of speech is \"like\" there?",
     "answer": "a verb (meaning \"to enjoy\")",
     "choices": [
       "a verb (meaning \"to enjoy\")",
@@ -11688,7 +11584,7 @@
   },
   {
     "tier": 4,
-    "question": "A NOUN-NOUN COMPOUND is what?",
+    "question": "A tutor points to \"paper clip\" on a school supply list and calls it a noun-noun compound. What does she mean by the term?",
     "answer": "two nouns joined into a compound that functions as one noun (fruit flies, ice cream, computer chip)",
     "choices": [
       "two nouns joined into a compound that functions as one noun (fruit flies, ice cream, computer chip)",
@@ -11701,7 +11597,7 @@
   },
   {
     "tier": 4,
-    "question": "Who is the \"time flies like an arrow\" sentence commonly attributed to?",
+    "question": "A librarian wants to credit \"Time flies like an arrow; fruit flies like a banana\" on a poster. Who usually gets the credit, and where does the line first turn up in print?",
     "answer": "often attributed to Groucho Marx (apocryphal); first documented in a 1966 paper by Anthony Oettinger at Harvard",
     "choices": [
       "often attributed to Groucho Marx (apocryphal); first documented in a 1966 paper by Anthony Oettinger at Harvard",
@@ -11714,7 +11610,7 @@
   },
   {
     "tier": 5,
-    "question": "Distinguish PARSING-AMBIGUITY PUN vs GARDEN-PATH SENTENCE. Which is the garden-path?",
+    "question": "A reading coach holds up four sentences for a student. Which one is a garden-path sentence?",
     "answer": "The horse raced past the barn fell (reader must back up mid-sentence to re-parse)",
     "choices": [
       "The horse raced past the barn fell (reader must back up mid-sentence to re-parse)",
@@ -11726,21 +11622,8 @@
     "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
   },
   {
-    "tier": 5,
-    "question": "Given four quoted lines, which is a PARSING-AMBIGUITY PUN (two parallel clauses shifting parse)?",
-    "answer": "Time flies like an arrow; fruit flies like a banana",
-    "choices": [
-      "Time flies like an arrow; fruit flies like a banana",
-      "The horse raced past the barn fell",
-      "Wanted: rocking chair, cane bottom (a pun on word meanings)",
-      "She tasted the whole worm (a spoonerism)"
-    ],
-    "context": "Two parallel clauses share a shape but parse differently. Garden-path forces mid-clause reparse; the others are word-puns and sound-swaps.",
-    "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
-  },
-  {
     "tier": 1,
-    "question": "A caption: \"The New York Times ARE reporting the story.\" Which word was misused?",
+    "question": "A caption under a news photo reads, \"The New York Times ARE reporting the story.\" Which word was misused?",
     "answer": "\"are\" (should be \"is\" -- a title takes a singular verb)",
     "choices": [
       "\"are\" (should be \"is\" -- a title takes a singular verb)",
@@ -11753,7 +11636,7 @@
   },
   {
     "tier": 1,
-    "question": "\"Star Wars ___ a movie franchise.\" Which verb fits?",
+    "question": "A boy is writing a report on his favorite films: \"Star Wars ___ a movie franchise.\" Which verb fits?",
     "answer": "is (a title is one work)",
     "choices": [
       "is (a title is one work)",
@@ -11766,7 +11649,7 @@
   },
   {
     "tier": 2,
-    "question": "\"Little Women IS a novel by Louisa May Alcott (published 1868).\" Why does the title take IS not ARE?",
+    "question": "A library catalog card reads, \"Little Women IS a novel by Louisa May Alcott (published 1868).\" Why does the title take \"is\" and not \"are\"?",
     "answer": "the title names ONE novel, so it is grammatically singular",
     "choices": [
       "the title names ONE novel, so it is grammatically singular",
@@ -11779,7 +11662,7 @@
   },
   {
     "tier": 2,
-    "question": "\"Great Expectations ___ a Dickens novel from 1861.\" Which verb fits?",
+    "question": "A student's book report opens, \"Great Expectations ___ a Dickens novel from 1861.\" Which verb fills the gap?",
     "answer": "is (title is one work)",
     "choices": [
       "is (title is one work)",
@@ -11792,7 +11675,7 @@
   },
   {
     "tier": 3,
-    "question": "\"The Beatles ___ a band from Liverpool.\" Which verb is correct?",
+    "question": "A music teacher's handout begins, \"The Beatles ___ a band from Liverpool.\" Which verb is correct?",
     "answer": "are (the name itself is plural)",
     "choices": [
       "are (the name itself is plural)",
@@ -11805,7 +11688,7 @@
   },
   {
     "tier": 4,
-    "question": "Which of these -ICS words is conventionally SINGULAR in modern English?",
+    "question": "A tutor writes four words ending in \"-ics\" on a card, each in a sample sentence. Which one is conventionally singular in modern English?",
     "answer": "mathematics (\"mathematics IS my favorite subject\")",
     "choices": [
       "mathematics (\"mathematics IS my favorite subject\")",
@@ -11818,7 +11701,7 @@
   },
   {
     "tier": 1,
-    "question": "A text: \"I want too pieces of cake to.\" Which usage is wrong?",
+    "question": "A boy texts his mom from a birthday party, \"I want too pieces of cake to.\" Which usage is wrong?",
     "answer": "\"too\" should be \"two\" (the number); \"to\" at the end should be \"too\"",
     "choices": [
       "\"too\" should be \"two\" (the number); \"to\" at the end should be \"too\"",
@@ -11831,7 +11714,7 @@
   },
   {
     "tier": 1,
-    "question": "\"Me too!\" What does TOO mean here?",
+    "question": "A friend replies to a group chat with \"Me too!\" What does \"too\" mean there?",
     "answer": "also",
     "choices": [
       "also",
@@ -11844,7 +11727,7 @@
   },
   {
     "tier": 2,
-    "question": "Memory trick for TOO?",
+    "question": "An older sister gives her brother, who keeps writing \"to\" for \"too,\" a memory trick. What is the trick?",
     "answer": "TOO has an EXTRA O because it means \"in excess\" or \"in addition\"",
     "choices": [
       "TOO has an EXTRA O because it means \"in excess\" or \"in addition\"",
@@ -11857,7 +11740,7 @@
   },
   {
     "tier": 2,
-    "question": "\"He walked ___ the store to buy ___ apples ___.\" Which triple fills the blanks?",
+    "question": "A teacher hands out a fill-in line: \"He walked ___ the store to buy ___ apples ___.\" Which words fill the blanks, in order?",
     "answer": "to / two / too",
     "choices": [
       "to / two / too",
@@ -11870,7 +11753,7 @@
   },
   {
     "tier": 3,
-    "question": "Which sentence uses TOO correctly?",
+    "question": "A dad checks four lines of his son's homework. Which one uses \"too\" correctly?",
     "answer": "This soup is too hot to eat right now",
     "choices": [
       "This soup is too hot to eat right now",
@@ -11883,7 +11766,7 @@
   },
   {
     "tier": 4,
-    "question": "At the end of a sentence, a comma before TOO (\"I want one, too\") is what?",
+    "question": "Two editors argue over a line in a children's book, \"I want one, too,\" and whether its comma should stay. What is the rule on that comma?",
     "answer": "acceptable but optional -- both \"one, too\" and \"one too\" are correct",
     "choices": [
       "acceptable but optional -- both \"one, too\" and \"one too\" are correct",
@@ -11896,7 +11779,7 @@
   },
   {
     "tier": 1,
-    "question": "In modern writing, what goes after a period?",
+    "question": "A grandmother typing her first email asks her grandson how many spaces to leave at the end of a sentence. What goes after a period in modern writing?",
     "answer": "ONE space (Chicago Manual of Style 17th ed. explicitly requires one space)",
     "choices": [
       "ONE space (Chicago Manual of Style 17th ed. explicitly requires one space)",
@@ -11909,7 +11792,7 @@
   },
   {
     "tier": 2,
-    "question": "What is the HISTORICAL origin of the two-space rule?",
+    "question": "A teacher finds two spaces after every period in a student's essay and tells him where the habit came from. What is the history of the two-space rule?",
     "answer": "MONOSPACED typewriter fonts made a single space look tight after a period, so typists were taught two spaces from the 1890s through the mid-20th century",
     "choices": [
       "MONOSPACED typewriter fonts made a single space look tight after a period, so typists were taught two spaces from the 1890s through the mid-20th century",
@@ -11922,7 +11805,7 @@
   },
   {
     "tier": 3,
-    "question": "What is a ZOMBIE RULE?",
+    "question": "A copy editor writes \"zombie rule\" in the margin of a manuscript. What does the term mean?",
     "answer": "a rule that persists past its rationale (like \"two spaces after a period\" or \"never split an infinitive\")",
     "choices": [
       "a rule that persists past its rationale (like \"two spaces after a period\" or \"never split an infinitive\")",
@@ -11935,7 +11818,7 @@
   },
   {
     "tier": 4,
-    "question": "The 2018 Skidmore College study by Rebecca Johnson et al. found what about reading speed with one vs two spaces?",
+    "question": "Rebecca Johnson and her team at Skidmore College tested reading speed with one space and with two after a period in 2018. What did the study find?",
     "answer": "a slight advantage for two spaces in the one MONOSPACED font it tested",
     "choices": [
       "a slight advantage for two spaces in the one MONOSPACED font it tested",
@@ -11948,7 +11831,7 @@
   },
   {
     "tier": 5,
-    "question": "What happens when you type several spaces in a row inside HTML (HyperText Markup Language) and view the page in a web browser?",
+    "question": "A web designer types a run of spaces between two words in a page's HTML (HyperText Markup Language) and opens it in a browser. What happens?",
     "answer": "browsers COLLAPSE multiple spaces into ONE unless \"&nbsp;\" or CSS is used",
     "choices": [
       "browsers COLLAPSE multiple spaces into ONE unless \"&nbsp;\" or CSS is used",
@@ -11961,7 +11844,7 @@
   },
   {
     "tier": 1,
-    "question": "What is MOOD in grammar?",
+    "question": "A grammar teacher holds up two sentences, \"Boil the kettle\" and \"I wish the kettle were quicker,\" and says the verbs differ in mood. What is mood in grammar?",
     "answer": "the FORM a verb takes to show fact, command, wish, or supposition",
     "choices": [
       "the FORM a verb takes to show fact, command, wish, or supposition",
@@ -11974,7 +11857,7 @@
   },
   {
     "tier": 2,
-    "question": "What does the INDICATIVE mood do?",
+    "question": "An editor labels the sentence \"The kettle is boiling\" indicative. What does the indicative mood do?",
     "answer": "states a fact or asks a question (\"the sun rises in the east\", \"is it raining?\")",
     "choices": [
       "states a fact or asks a question (\"the sun rises in the east\", \"is it raining?\")",
@@ -11986,21 +11869,8 @@
     "topic": "verb-mood-indicative-imperative-subjunctive-conditional"
   },
   {
-    "tier": 3,
-    "question": "What does the IMPERATIVE mood do?",
-    "answer": "gives a command or request; the subject \"you\" is usually understood",
-    "choices": [
-      "gives a command or request; the subject \"you\" is usually understood",
-      "states a fact about the past",
-      "expresses a wish or hypothetical",
-      "lists conditions and consequences"
-    ],
-    "context": "IMPERATIVE = command. \"Close the door\" = \"YOU close the door\" with YOU dropped.",
-    "topic": "verb-mood-indicative-imperative-subjunctive-conditional"
-  },
-  {
     "tier": 4,
-    "question": "What does the SUBJUNCTIVE mood express?",
+    "question": "A tutor writes \"subjunctive\" at the top of a page of practice sentences. What does that mood express?",
     "answer": "a wish, hypothetical, or contrary-to-fact statement (\"I wish I WERE taller\", \"she demanded that he BE present\")",
     "choices": [
       "a wish, hypothetical, or contrary-to-fact statement (\"I wish I WERE taller\", \"she demanded that he BE present\")",
@@ -12013,7 +11883,7 @@
   },
   {
     "tier": 5,
-    "question": "Which sentence uses the CONDITIONAL mood?",
+    "question": "A student sorts four sentences into four moods for homework. Which one goes under \"conditional\"?",
     "answer": "If it rained, I would stay home",
     "choices": [
       "If it rained, I would stay home",
@@ -12026,7 +11896,7 @@
   },
   {
     "tier": 1,
-    "question": "A student writes: \"I walked to the store, and then I BUY some milk.\" What is the error?",
+    "question": "A boy's journal entry reads, \"I walked to the store, and then I BUY some milk.\" What is the error?",
     "answer": "verb-tense JUMP -- WALKED is past but BUY is present; pick one and stick with it",
     "choices": [
       "verb-tense JUMP -- WALKED is past but BUY is present; pick one and stick with it",
@@ -12039,7 +11909,7 @@
   },
   {
     "tier": 1,
-    "question": "What is the rule for verb-tense CONSISTENCY?",
+    "question": "An English teacher writes \"tense consistency\" in red across the top of a student's story. What rule is she pointing to?",
     "answer": "within a paragraph or narrative sequence, keep tenses aligned unless meaning genuinely shifts",
     "choices": [
       "within a paragraph or narrative sequence, keep tenses aligned unless meaning genuinely shifts",
@@ -12052,7 +11922,7 @@
   },
   {
     "tier": 2,
-    "question": "\"Yesterday I visited the museum. It IS the largest in the city.\" Why is the tense shift OK here?",
+    "question": "A girl's travel diary reads, \"Yesterday I visited the museum. It IS the largest in the city.\" Why is the shift in tense fine here?",
     "answer": "the visit is past, but the museum's size is a general PRESENT fact still true",
     "choices": [
       "the visit is past, but the museum's size is a general PRESENT fact still true",
@@ -12065,7 +11935,7 @@
   },
   {
     "tier": 3,
-    "question": "What is the HISTORICAL PRESENT tense?",
+    "question": "A writing coach suggests the historical present for the opening of a student's adventure story. What is the historical present?",
     "answer": "telling past-tense stories in the present (\"Napoleon MARCHES on Moscow\") for immediacy",
     "choices": [
       "telling past-tense stories in the present (\"Napoleon MARCHES on Moscow\") for immediacy",
@@ -12078,7 +11948,7 @@
   },
   {
     "tier": 4,
-    "question": "A writer using historical present writes: 'Napoleon marches on Moscow, and his army suffered terribly.' What is the error?",
+    "question": "A history student's essay reads, \"Napoleon marches on Moscow, and his army suffered terribly.\" What is the error?",
     "answer": "tense slippage -- MARCHES (present) and SUFFERED (past) clash mid-scene; pick one",
     "choices": [
       "tense slippage -- MARCHES (present) and SUFFERED (past) clash mid-scene; pick one",
@@ -12091,7 +11961,7 @@
   },
   {
     "tier": 5,
-    "question": "Which paragraph is tense-consistent?",
+    "question": "A teacher compares four students' paragraphs about a girl in a park. Which paragraph keeps one tense?",
     "answer": "She walked to the park. She sat on a bench. She watched the ducks. She smiled.",
     "choices": [
       "She walked to the park. She sat on a bench. She watched the ducks. She smiled.",
@@ -12104,7 +11974,7 @@
   },
   {
     "tier": 1,
-    "question": "'___ did you invite to the party?' Test with HE/HIM: 'I invited ___.' Which fits, and thus which wh-word?",
+    "question": "A girl asks her mother, \"___ did you invite to the party?\" and tests the gap with \"I invited ___.\" Which pronoun fits the test, and so which word fills the gap?",
     "answer": "him → whom",
     "choices": [
       "him → whom",
@@ -12117,7 +11987,7 @@
   },
   {
     "tier": 1,
-    "question": "'___ is coming to dinner?' Test with HE/HIM: '___ is coming.' Which fits?",
+    "question": "A dad scribbles \"___ is coming to dinner?\" on the fridge whiteboard and tests it with \"___ is coming.\" Which pair does the test give?",
     "answer": "he → who",
     "choices": [
       "he → who",
@@ -12130,7 +12000,7 @@
   },
   {
     "tier": 2,
-    "question": "'To ___ should I address the letter?' Which wh-word?",
+    "question": "A boy sealing an envelope asks, \"To ___ should I address the letter?\" Which word fills the gap?",
     "answer": "whom (object of preposition 'to')",
     "choices": [
       "whom (object of preposition 'to')",
@@ -12142,21 +12012,8 @@
     "topic": "who-vs-whom-the-he-him-substitution-trick"
   },
   {
-    "tier": 2,
-    "question": "'She is the person ___ I trust most.' Test: 'I trust ___.' Which fits?",
-    "answer": "her → whom",
-    "choices": [
-      "her → whom",
-      "she → who",
-      "she → whom",
-      "her → who"
-    ],
-    "context": "'I trust HER' works. Her is object; whom is object. 'The person WHOM I trust' is technically correct, though modern usage often drops the pronoun entirely: 'the person I trust'.",
-    "topic": "who-vs-whom-the-he-him-substitution-trick"
-  },
-  {
     "tier": 3,
-    "question": "'The candidate ___ we hoped would win lost.' Which wh-word?",
+    "question": "A school paper's story on the student-council vote reads, \"The candidate ___ we hoped would win lost.\" Which word belongs in the gap?",
     "answer": "who (subject of 'would win')",
     "choices": [
       "who (subject of 'would win')",
@@ -12169,7 +12026,7 @@
   },
   {
     "tier": 3,
-    "question": "'She invited everyone ___ she knew.' Which wh-word?",
+    "question": "A bride's mother pauses over one word in a wedding announcement: \"She invited everyone ___ she knew.\" Which word completes it?",
     "answer": "whom (object of 'knew' -- 'she knew HIM')",
     "choices": [
       "whom (object of 'knew' -- 'she knew HIM')",
@@ -12182,7 +12039,7 @@
   },
   {
     "tier": 4,
-    "question": "'For ___ the bell tolls' -- Hemingway's title uses WHOM. Why?",
+    "question": "A bookstore clerk shelves a copy of Hemingway's For Whom the Bell Tolls. Why does the title use \"whom\"?",
     "answer": "object of preposition 'for'; even in poetic titles, whom follows prepositions",
     "choices": [
       "object of preposition 'for'; even in poetic titles, whom follows prepositions",
@@ -12195,7 +12052,7 @@
   },
   {
     "tier": 5,
-    "question": "'The tourists ___ she thought were lost turned up.' Which wh-word?",
+    "question": "A hotel manager writes in the guest log, \"The tourists ___ she thought were lost turned up.\" What goes in the gap?",
     "answer": "who (subject of 'were lost' -- parenthetical 'she thought' does not change it)",
     "choices": [
       "who (subject of 'were lost' -- parenthetical 'she thought' does not change it)",
@@ -12208,7 +12065,7 @@
   },
   {
     "tier": 1,
-    "question": "'___ ate the last cookie?' Which word is the SUBJECT (the eater)?",
+    "question": "A mother finds the cookie jar empty and writes on a sticky note, \"___ ate the last cookie?\" Which word fills the gap as the subject, the one doing the eating?",
     "answer": "who",
     "choices": [
       "who",
@@ -12221,7 +12078,7 @@
   },
   {
     "tier": 1,
-    "question": "'To ___ did you give the letter?' Which word is the OBJECT (the receiver)?",
+    "question": "A post-office clerk asks a customer, \"To ___ did you give the letter?\" Which word is the object there, the one receiving?",
     "answer": "whom",
     "choices": [
       "whom",
@@ -12234,7 +12091,7 @@
   },
   {
     "tier": 2,
-    "question": "The reliable test for who vs whom is to substitute what pronoun?",
+    "question": "An English teacher promises her class one reliable test for \"who\" and \"whom.\" Which pronouns does the test swap in?",
     "answer": "'he' (→ who) or 'him' (→ whom) -- both end in the giveaway letter",
     "choices": [
       "'he' (→ who) or 'him' (→ whom) -- both end in the giveaway letter",
@@ -12247,33 +12104,20 @@
   },
   {
     "tier": 2,
-    "question": "Which sentence uses 'whom' correctly?",
-    "answer": "Whom did you invite to the party?",
+    "question": "A girl's essay begins, \"The person ___ I trust most is my sister,\" and her teacher tests the gap with \"I trust ___.\" Which pair does the test point to?",
+    "answer": "her → whom",
     "choices": [
-      "Whom did you invite to the party?",
-      "Whom is coming to the party?",
-      "Whom ate the last slice?",
-      "Whom sings the loudest?"
-    ],
-    "context": "'You invited HIM' → whom (object). The other three are subject slots (he is coming, he ate, he sings) → who. Substitution test: he/him tells you which.",
-    "topic": "who-vs-whom-the-m-means-object"
-  },
-  {
-    "tier": 3,
-    "question": "'The person ___ I trust most is my sister.' Which form?",
-    "answer": "whom (object of 'trust' -- 'I trust her')",
-    "choices": [
-      "whom (object of 'trust' -- 'I trust her')",
-      "who (subject)",
-      "who's",
-      "whose"
+      "her → whom",
+      "she → who",
+      "she → whom",
+      "her → who"
     ],
     "context": "In the relative clause 'I trust ___ most', the blank is the object of 'trust' -- 'I trust her/him', so whom. The main-clause subject is 'the person', but the relative pronoun's role is inside the clause.",
     "topic": "who-vs-whom-the-m-means-object"
   },
   {
     "tier": 3,
-    "question": "'She is the friend ___ always calls on my birthday.' Which form?",
+    "question": "A girl writes a note of thanks: \"She is the friend ___ always calls on my birthday.\" Which form fills the gap?",
     "answer": "who (subject of 'calls')",
     "choices": [
       "who (subject of 'calls')",
@@ -12286,7 +12130,7 @@
   },
   {
     "tier": 4,
-    "question": "'To whom it may concern' -- why 'whom' in this standard letter opening?",
+    "question": "A job seeker opens a cover letter with \"To whom it may concern.\" Why does the opening take \"whom\"?",
     "answer": "object of the preposition 'to' -- 'it may concern him/her'",
     "choices": [
       "object of the preposition 'to' -- 'it may concern him/her'",
@@ -12299,7 +12143,7 @@
   },
   {
     "tier": 5,
-    "question": "'Whom shall I say is calling?' A copy-editor marks this wrong. Why?",
+    "question": "A receptionist's phone script reads, \"Whom shall I say is calling?\" Why does a copy editor mark it wrong?",
     "answer": "'is calling' needs a subject; who is correct ('who shall I say IS calling?')",
     "choices": [
       "'is calling' needs a subject; who is correct ('who shall I say IS calling?')",
@@ -12312,7 +12156,7 @@
   },
   {
     "tier": 1,
-    "question": "A sign: \"Who's coat is this?\" Which word was misused?",
+    "question": "A sign above the lost-and-found box reads, \"Who's coat is this?\" Which word was misused?",
     "answer": "\"who's\" (should be \"whose\")",
     "choices": [
       "\"who's\" (should be \"whose\")",
@@ -12325,7 +12169,7 @@
   },
   {
     "tier": 1,
-    "question": "\"Who's coming to dinner?\" What does WHO'S mean here?",
+    "question": "A mother texts her son, \"Who's coming to dinner?\" What does \"who's\" mean there?",
     "answer": "who is",
     "choices": [
       "who is",
@@ -12338,7 +12182,7 @@
   },
   {
     "tier": 2,
-    "question": "Why does WHOSE take no apostrophe?",
+    "question": "A boy asks his tutor why \"whose\" takes no apostrophe. What is her answer?",
     "answer": "possessive pronouns (his, hers, ours, theirs, whose) REFUSE the apostrophe",
     "choices": [
       "possessive pronouns (his, hers, ours, theirs, whose) REFUSE the apostrophe",
@@ -12351,7 +12195,7 @@
   },
   {
     "tier": 2,
-    "question": "Which swap-test correctly checks WHO'S vs WHOSE?",
+    "question": "A copy editor stops at \"who's\" in a headline and reaches for a quick test. Which test correctly checks \"who's\" against \"whose\"?",
     "answer": "read \"who is\" or \"who has\" in its place -- if it fits, use WHO'S",
     "choices": [
       "read \"who is\" or \"who has\" in its place -- if it fits, use WHO'S",
@@ -12364,7 +12208,7 @@
   },
   {
     "tier": 3,
-    "question": "Which sentence uses WHOSE correctly?",
+    "question": "A neighbor fills a block-party flyer with four questions that start with \"whose.\" Which question uses the word correctly?",
     "answer": "Whose car is parked in the driveway?",
     "choices": [
       "Whose car is parked in the driveway?",
@@ -12377,7 +12221,7 @@
   },
   {
     "tier": 4,
-    "question": "\"Who's the person whose coat this is?\" How does the sentence use both words correctly?",
+    "question": "A coat-check attendant holds up a coat and asks, \"Who's the person whose coat this is?\" How does the question use both words correctly?",
     "answer": "WHO'S = who is (asking about identity); WHOSE = shows possession of the coat",
     "choices": [
       "WHO'S = who is (asking about identity); WHOSE = shows possession of the coat",
@@ -12390,7 +12234,7 @@
   },
   {
     "tier": 1,
-    "question": "'Due to the fact that it was raining.' Shorter equivalent?",
+    "question": "A coach's email about a canceled game begins, \"Due to the fact that it was raining.\" What is the shorter way to say it?",
     "answer": "'Because it was raining.' (drop the deadweight)",
     "choices": [
       "'Because it was raining.' (drop the deadweight)",
@@ -12403,7 +12247,7 @@
   },
   {
     "tier": 2,
-    "question": "'In the event that we are late.' Concise fix?",
+    "question": "A text to a dinner host reads, \"In the event that we are late.\" What is the concise fix?",
     "answer": "'If we are late.' (three words → one)",
     "choices": [
       "'If we are late.' (three words → one)",
@@ -12416,7 +12260,7 @@
   },
   {
     "tier": 2,
-    "question": "'At this point in time.' Concise equivalent?",
+    "question": "A principal's announcement opens, \"At this point in time.\" What is the concise equivalent?",
     "answer": "'now' (one word)",
     "choices": [
       "'now' (one word)",
@@ -12429,7 +12273,7 @@
   },
   {
     "tier": 3,
-    "question": "'Prior to' vs 'before' -- which is more concise?",
+    "question": "A teacher marking an essay underlines \"prior to.\" Which wording says it most concisely?",
     "answer": "'before' (one word vs two)",
     "choices": [
       "'before' (one word vs two)",
@@ -12442,7 +12286,7 @@
   },
   {
     "tier": 3,
-    "question": "'For the purpose of.' Concise fix?",
+    "question": "An editor marks \"for the purpose of\" in a club newsletter. What concise fix does she suggest?",
     "answer": "'to' or 'for' (one word)",
     "choices": [
       "'to' or 'for' (one word)",
@@ -12455,7 +12299,7 @@
   },
   {
     "tier": 4,
-    "question": "'It should be noted that the meeting has been cancelled.' Concise version?",
+    "question": "An office email reads, \"It should be noted that the meeting has been cancelled.\" What is the concise version?",
     "answer": "'The meeting is cancelled.' (drop the noting-verbiage)",
     "choices": [
       "'The meeting is cancelled.' (drop the noting-verbiage)",
@@ -12468,7 +12312,7 @@
   },
   {
     "tier": 4,
-    "question": "The phrase 'absolutely essential' is redundant. What word repeats meaning?",
+    "question": "A product brochure calls one feature \"absolutely essential.\" What is wrong with the phrase?",
     "answer": "essential means already 'absolutely necessary'; 'absolutely' adds nothing",
     "choices": [
       "essential means already 'absolutely necessary'; 'absolutely' adds nothing",
@@ -12481,7 +12325,7 @@
   },
   {
     "tier": 5,
-    "question": "Which sentence is the most concise version of the idea 'we need to think about it'?",
+    "question": "A team captain drafts a note that boils down to \"we need to think about it.\" Which version says it most concisely?",
     "answer": "We should consider it.",
     "choices": [
       "We should consider it.",
@@ -12494,7 +12338,7 @@
   },
   {
     "tier": 1,
-    "question": "A friend writes on your birthday card: 'YOUR the best!' Taken literally, that sentence never finishes -- it means 'the best belongs to you' and stops. Which correction is right?",
+    "question": "A friend writes on a girl's birthday card, \"YOUR the best!\" Taken literally, the line never finishes. Which correction is right?",
     "answer": "YOUR should be YOU'RE -- a contraction of 'you are'",
     "choices": [
       "YOUR should be YOU'RE -- a contraction of 'you are'",
@@ -12507,7 +12351,7 @@
   },
   {
     "tier": 2,
-    "question": "Someone texts 'Your going to be late again.' Using the swap test (put 'you are' in place and see if it works), what is the correct fix?",
+    "question": "A sister texts her brother, \"Your going to be late again.\" What is the correct fix?",
     "answer": "Change YOUR to YOU'RE -- 'You are going to be late' works",
     "choices": [
       "Change YOUR to YOU'RE -- 'You are going to be late' works",
@@ -12520,7 +12364,7 @@
   },
   {
     "tier": 3,
-    "question": "A note on the fridge says 'YOU'RE dog is chasing the mailman!' Using the swap test, what is the correct fix?",
+    "question": "A note on the fridge reads, \"YOU'RE dog is chasing the mailman!\" A boy checks it by reading \"you are\" in place of the first word. Which fix does the check call for?",
     "answer": "Change YOU'RE to YOUR -- 'You are dog is chasing' fails the swap",
     "choices": [
       "Change YOU'RE to YOUR -- 'You are dog is chasing' fails the swap",
@@ -12533,7 +12377,7 @@
   },
   {
     "tier": 3,
-    "question": "A birthday note reads 'YOUR welcome!' Which correction is right?",
+    "question": "An uncle signs a reply note to his niece, \"YOUR welcome!\" Which correction is right?",
     "answer": "Change YOUR to YOU'RE -- means 'you are welcome'",
     "choices": [
       "Change YOUR to YOU'RE -- means 'you are welcome'",
@@ -12546,7 +12390,7 @@
   },
   {
     "tier": 4,
-    "question": "'___ right about ___ homework -- ___ almost done with it.' Which sequence of three words fills the blanks correctly?",
+    "question": "A tutor hands a student a line with three gaps: \"___ right about ___ homework -- ___ almost done with it.\" Which words fill the gaps, in order?",
     "answer": "You're ... your ... you're",
     "choices": [
       "You're ... your ... you're",
@@ -12559,7 +12403,7 @@
   },
   {
     "tier": 5,
-    "question": "A student writes in a serious academic paper: 'Ur going to enjoy this book.' What is wrong here, and what is the correct fix?",
+    "question": "A student's academic paper opens with the line \"Ur going to enjoy this book.\" What is wrong here, and what is the fix?",
     "answer": "UR is a texting register that does not belong in a formal essay -- write YOU'RE",
     "choices": [
       "UR is a texting register that does not belong in a formal essay -- write YOU'RE",
@@ -12572,7 +12416,7 @@
   },
   {
     "tier": 5,
-    "question": "Which of these sentences uses BOTH your and you're correctly?",
+    "question": "A bike-shop owner paints a birthday banner and cannot settle on the spelling. Which version gets both \"your\" and \"you're\" right?",
     "answer": "'You're going to love your new bike.'",
     "choices": [
       "'You're going to love your new bike.'",
@@ -12585,7 +12429,7 @@
   },
   {
     "tier": 1,
-    "question": "The Flanders-and-Swann line \"She lowered her standards by raising her glass, her courage, her eyes, and his hopes.\" What technique does the sentence use?",
+    "question": "A line by Flanders and Swann runs, \"She lowered her standards by raising her glass, her courage, her eyes, and his hopes.\" What technique does it use?",
     "answer": "zeugma (one verb \"raising\" stretched across incompatible objects)",
     "choices": [
       "zeugma (one verb \"raising\" stretched across incompatible objects)",
@@ -12598,7 +12442,7 @@
   },
   {
     "tier": 1,
-    "question": "What is ZEUGMA?",
+    "question": "A comedy writer calls her line \"He lost his keys, his temper and his girlfriend in a single afternoon\" a zeugma. What is a zeugma?",
     "answer": "one verb governing multiple objects, often in different senses",
     "choices": [
       "one verb governing multiple objects, often in different senses",
@@ -12611,7 +12455,7 @@
   },
   {
     "tier": 2,
-    "question": "Alexander Pope's \"The Rape of the Lock\" (1712) contains \"Or stain her honour, or her new brocade.\" What does the shared verb do?",
+    "question": "Alexander Pope wrote the line \"Or stain her honour, or her new brocade\" in a poem of 1712. What does the shared verb do?",
     "answer": "STAIN governs a MORAL object (honour) and a LITERAL object (a dress) at once",
     "choices": [
       "STAIN governs a MORAL object (honour) and a LITERAL object (a dress) at once",
@@ -12624,7 +12468,7 @@
   },
   {
     "tier": 3,
-    "question": "Distinguish ZEUGMA (broad) from SYLLEPSIS (strict). What is SYLLEPSIS?",
+    "question": "Two rhetoric teachers argue over where zeugma ends and syllepsis begins, and both call syllepsis the stricter term. What is syllepsis?",
     "answer": "the version where the shared verb fits each object grammatically but shifts MEANING between them",
     "choices": [
       "the version where the shared verb fits each object grammatically but shifts MEANING between them",
@@ -12637,20 +12481,7 @@
   },
   {
     "tier": 4,
-    "question": "Which sentence uses ZEUGMA (shared-verb-shifting-meaning)?",
-    "answer": "She broke his heart and his favorite vase",
-    "choices": [
-      "She broke his heart and his favorite vase",
-      "The road stretched out ahead like a ribbon",
-      "The night was dark and full of stars",
-      "She sold seashells by the seashore"
-    ],
-    "context": "BROKE = one verb, two senses (emotional heart, literal vase). Classic zeugma. The others use metaphor, description, alliteration.",
-    "topic": "zeugma-and-syllepsis-one-verb-incompatible-objects"
-  },
-  {
-    "tier": 5,
-    "question": "\"She broke his heart and his favorite vase.\" Is this technically zeugma?",
+    "question": "A girl's short story ends, \"She broke his heart and his favorite vase.\" Is that technically a zeugma?",
     "answer": "yes -- BROKE means one thing emotionally and one thing physically; the shift IS the punchline",
     "choices": [
       "yes -- BROKE means one thing emotionally and one thing physically; the shift IS the punchline",
@@ -12754,7 +12585,7 @@
   },
   {
     "tier": 1,
-    "question": "'What are you looking at?' Grammatically wrong (per the old superstition about prepositions)?",
+    "question": "An aunt raised on an old rule about prepositions winces when her nephew asks, \"What are you looking at?\" Is his question grammatically wrong?",
     "answer": "no -- ending with a preposition is fine; the zombie rule has no grammatical basis",
     "choices": [
       "no -- ending with a preposition is fine; the zombie rule has no grammatical basis",
@@ -12767,7 +12598,7 @@
   },
   {
     "tier": 2,
-    "question": "People say Churchill once made a joke about this rule. Which joke was it?",
+    "question": "A teacher mentions a famous joke that mocks the rule against closing a sentence on a preposition. Which joke is it?",
     "answer": "'This is the sort of English up with which I will not put' (probably not really said by Churchill)",
     "choices": [
       "'This is the sort of English up with which I will not put' (probably not really said by Churchill)",
@@ -12780,7 +12611,7 @@
   },
   {
     "tier": 2,
-    "question": "'The person to whom I spoke.' vs 'The person I spoke to.' Which follows natural English?",
+    "question": "A memoir writer weighs two versions of one line: \"The person to whom I spoke.\" and \"The person I spoke to.\" Which one sounds the way English speakers really talk?",
     "answer": "'The person I spoke to' (natural English; ending with preposition is fine)",
     "choices": [
       "'The person I spoke to' (natural English; ending with preposition is fine)",
@@ -12793,7 +12624,7 @@
   },
   {
     "tier": 3,
-    "question": "Where did the 'never end with a preposition' rule come from?",
+    "question": "A student asks her English teacher about the rule that a sentence must never end with a preposition. Where did that rule come from?",
     "answer": "17th-century writers wanting English to imitate Latin (which cannot end sentences with prepositions)",
     "choices": [
       "17th-century writers wanting English to imitate Latin (which cannot end sentences with prepositions)",
@@ -12806,7 +12637,7 @@
   },
   {
     "tier": 3,
-    "question": "'This is the book I was talking about.' Wrong to end with 'about'?",
+    "question": "A librarian hands over a novel and says, \"This is the book I was talking about.\" Is it wrong to end the sentence on \"about\"?",
     "answer": "no -- natural English; the alternative ('about which I was talking') sounds stilted",
     "choices": [
       "no -- natural English; the alternative ('about which I was talking') sounds stilted",
@@ -12819,7 +12650,7 @@
   },
   {
     "tier": 4,
-    "question": "When is it good style to avoid ending with a preposition?",
+    "question": "A writer stops at a sentence that ends in \"with\" and wonders whether to move the word forward. When is it good style to avoid ending on a preposition?",
     "answer": "formal writing where the alternative reads naturally without straining",
     "choices": [
       "formal writing where the alternative reads naturally without straining",
@@ -12832,7 +12663,7 @@
   },
   {
     "tier": 5,
-    "question": "The 'never end a sentence with a preposition' rule is a zombie rule. Which version does ordinary English speech actually prefer?",
+    "question": "A hostel clerk greets a new guest and asks about her home town. Which version of the question does ordinary English speech prefer?",
     "answer": "Where are you from?",
     "choices": [
       "From where are you?",
