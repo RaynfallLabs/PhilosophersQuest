@@ -7202,19 +7202,6 @@
     "topic": "panda-punctuation-eats-shoots-and-leaves"
   },
   {
-    "tier": 4,
-    "question": "A teacher chalks 'A woman without her man is nothing.' on the board and dares the class to reverse its meaning with punctuation alone. Which version does it?",
-    "answer": "A woman: without her, man is nothing.",
-    "choices": [
-      "A woman: without her, man is nothing.",
-      "A woman, without her man, is nothing.",
-      "A, woman without her man, is nothing.",
-      "A woman without her, man, is nothing."
-    ],
-    "context": "Truss cites this as a classic comma-flip. Original reads as 'a woman is nothing without her man'; the colon-plus-comma version reads as 'a woman -- without her, man is nothing.' Same words, opposite meaning.",
-    "topic": "panda-punctuation-eats-shoots-and-leaves"
-  },
-  {
     "tier": 5,
     "question": "A valentine reads, 'What is this thing called love?' A prankster reaches for a pencil to add one comma. What can the line become?",
     "answer": "What is this thing called, love? (asking a beloved what an object is called)",
@@ -8853,19 +8840,6 @@
     "topic": "restrictive-vs-non-restrictive-clauses-that-vs-which"
   },
   {
-    "tier": 4,
-    "question": "A morning newspaper prints 'The train which arrived at platform three was delayed.' Under which house style is that sentence written?",
-    "answer": "British -- WHICH is used for restrictive AND non-restrictive clauses; American style would use THAT here",
-    "choices": [
-      "British -- WHICH is used for restrictive AND non-restrictive clauses; American style would use THAT here",
-      "American -- WHICH is required for all clauses",
-      "Chicago Manual -- the standard for all English",
-      "Academic -- all essays must use WHICH"
-    ],
-    "context": "No commas mean the clause is restrictive (which train). British writers accept WHICH here; American style guides would use THAT. Source: Fowler's 'Modern English Usage' on that/which.",
-    "topic": "restrictive-vs-non-restrictive-clauses-that-vs-which"
-  },
-  {
     "tier": 5,
     "question": "A principal compares two drafts of a memo. One reads, 'The students who studied passed the test.' The other reads, 'The students, who studied, passed the test.' What difference in meaning do the commas create?",
     "answer": "No commas: only the students who studied passed. With commas: all the students studied, and all of them passed.",
@@ -10501,19 +10475,6 @@
       "The flowers, in a bouquet, were beautiful."
     ],
     "context": "Subject = BOUQUET (singular). The prepositional phrase 'of flowers' does not make it plural. Correct: 'The bouquet was beautiful.' The plural attractor 'flowers' is the trap.",
-    "topic": "subject-verb-agreement-basics-singular-vs-plural"
-  },
-  {
-    "tier": 3,
-    "question": "A graduation card reads, 'There ___ many reasons to celebrate.' Which verb fits?",
-    "answer": "are (verb agrees with 'reasons', not 'there')",
-    "choices": [
-      "are (verb agrees with 'reasons', not 'there')",
-      "is",
-      "were",
-      "were only many"
-    ],
-    "context": "In THERE IS/ARE sentences, the verb agrees with the noun that follows -- not with 'there'. 'There are many reasons'; 'there is one reason'. The subject follows the verb.",
     "topic": "subject-verb-agreement-basics-singular-vs-plural"
   },
   {
