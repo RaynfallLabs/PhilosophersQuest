@@ -10207,12 +10207,12 @@
   {
     "tier": 5,
     "question": "A web designer copies the Uniform Resource Locator \"https://example.com/page\" with its forward slashes, then opens a Windows file path. What does that path use to separate folders?",
-    "answer": "BACKSLASHES (\"C:\\Users\\brand\")",
+    "answer": "BACKSLASHES (\"C:\\Users\\Public\")",
     "choices": [
-      "BACKSLASHES (\"C:\\Users\\brand\")",
-      "forward slashes (\"C:/Users/brand\")",
-      "colons (\"C::Users::brand\")",
-      "pipes (\"C|Users|brand\")"
+      "BACKSLASHES (\"C:\\Users\\Public\")",
+      "forward slashes (\"C:/Users/Public\")",
+      "colons (\"C::Users::Public\")",
+      "pipes (\"C|Users|Public\")"
     ],
     "context": "Windows uses backslash; URLs use forward slash. Both are technical conventions, not grammatical rules; Chicago accepts them in code and citations.",
     "topic": "slashes-and-or-dates-and-line-breaks-in-poetry"
