@@ -101,7 +101,6 @@ ALLOW: dict[tuple[str, str], str] = {
     ('data/monsters.json', 'anyone who enters their'): 'their = the dead soldiers of the line',
     ('data/monsters.json', 'everyone but themselves'): 'themselves = the tengu',
     (_Q + 'ai.json', 'every image including ones outside their'): 'their = image-recognition systems',
-    (_Q + 'ai.json', 'every summary on their'): 'their = Notion, Otter and Google',
     (_Q + 'animal.json', 'each editing site to do their'): 'their = the editing enzymes',
     (_Q + 'animal.json', 'every new tunnel by themselves'): 'themselves = the animals (plural answer choices)',
     (_Q + 'economics.json', 'Someone whose occupational output is ideas themselves'): 'themselves = ideas',
