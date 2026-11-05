@@ -11013,12 +11013,12 @@
   {
     "tier": 1,
     "question": "A safety poster in a school hallway reads, \"There's many reasons to be careful.\" What is the correct verb form in careful writing?",
-    "answer": "There ARE many reasons -- the verb agrees with REASONS (plural)",
+    "answer": "There ARE many reasons -- REASONS is plural",
     "choices": [
-      "There ARE many reasons -- the verb agrees with REASONS (plural)",
+      "There ARE many reasons -- REASONS is plural",
+      "There IS many reasons -- THERE is singular",
       "There WAS many reasons -- past-tense singular",
-      "There'S many reasons -- casual is always allowed",
-      "There BE many reasons -- infinitive verb"
+      "There'S many reasons -- casual is always allowed"
     ],
     "context": "In a THERE-construction the verb agrees with the true subject that follows -- here REASONS (plural). Source: Chicago Manual of Style 17e section 5.143.",
     "topic": "there-is-there-are-agreement-with-the-noun-after"
@@ -11026,9 +11026,9 @@
   {
     "tier": 2,
     "question": "A grandmother leaves a half-finished note on the counter: \"There ___ a cookie on the plate for you.\" Which verb fits?",
-    "answer": "is -- verb agrees with COOKIE (singular, the true subject)",
+    "answer": "is -- COOKIE is singular",
     "choices": [
-      "is -- verb agrees with COOKIE (singular, the true subject)",
+      "is -- COOKIE is singular",
       "are -- 'there' is always plural",
       "were -- past-tense plural",
       "am -- first-person singular"
@@ -11039,9 +11039,9 @@
   {
     "tier": 3,
     "question": "A teacher underlines the first word of \"There ARE cookies on the plate\" for her class. What is that kind of construction called?",
-    "answer": "An expletive construction (or dummy-subject construction)",
+    "answer": "An expletive construction",
     "choices": [
-      "An expletive construction (or dummy-subject construction)",
+      "An expletive construction",
       "A passive construction",
       "A subordinate clause",
       "A gerund phrase"
@@ -11052,9 +11052,9 @@
   {
     "tier": 3,
     "question": "A hall monitor is filling in her end-of-day report: \"There ___ three students left in the classroom.\" Which verb completes it?",
-    "answer": "are -- STUDENTS is plural, the true subject",
+    "answer": "are -- STUDENTS is plural",
     "choices": [
-      "are -- STUDENTS is plural, the true subject",
+      "are -- STUDENTS is plural",
       "is -- THERE is always singular",
       "was -- past-tense singular",
       "am -- first-person singular"
@@ -11064,15 +11064,15 @@
   },
   {
     "tier": 4,
-    "question": "A hotel clerk is typing a room-service card: \"There ___ a cookie and a glass of milk on the tray.\" Which verb is technically correct in formal writing, and why do editors usually recast the sentence?",
-    "answer": "ARE -- the compound subject (cookie AND glass) is plural, so ARE; often rewritten as 'A cookie and a glass of milk are on the tray'",
+    "question": "A hotel clerk is typing a room-service card: \"There ___ a cookie and a glass of milk on the tray.\" Which verb does formal writing call for?",
+    "answer": "ARE -- COOKIE AND GLASS make a plural subject",
     "choices": [
-      "ARE -- the compound subject (cookie AND glass) is plural, so ARE; often rewritten as 'A cookie and a glass of milk are on the tray'",
+      "ARE -- COOKIE AND GLASS make a plural subject",
       "IS -- THERE-constructions always take IS",
       "WAS -- past-tense singular required",
       "HAVE BEEN -- perfect tense required"
     ],
-    "context": "The AND-joined compound is plural, so the verb is plural -- but the wording sounds clunky, so writers often flip to a non-THERE construction. Source: Chicago Manual of Style 17e section 5.143.",
+    "context": "A cookie AND a glass of milk make a compound subject, and a compound joined by AND is plural, so formal writing wants ARE. In casual speech many people say IS, matching the nearer noun. Because 'There are a cookie and...' sounds clunky, editors often recast it with the subject first: 'A cookie and a glass of milk are on the tray.' Source: Chicago Manual of Style 17e section 5.143.",
     "topic": "there-is-there-are-agreement-with-the-noun-after"
   },
   {
@@ -11090,15 +11090,15 @@
   },
   {
     "tier": 5,
-    "question": "A radio producer finds \"there's two reasons\" in a host's script. In formal writing, what is the honest rule?",
-    "answer": "Use 'there is' with a singular noun that follows, 'there are' with a plural noun that follows",
+    "question": "A radio producer finds \"there's two reasons\" in a host's script. What rule does formal writing follow here?",
+    "answer": "Match the verb to the noun that follows THERE",
     "choices": [
-      "Use 'there is' with a singular noun that follows, 'there are' with a plural noun that follows",
-      "Always use 'there is' -- it is more concise",
-      "Always use 'there are' -- it is more inclusive",
-      "Avoid THERE-constructions entirely in formal writing"
+      "Match the verb to the noun that follows THERE",
+      "Match the verb to the word THERE itself",
+      "Always use 'there is', since it is shorter",
+      "Avoid THERE-constructions entirely"
     ],
-    "context": "The verb agrees with the true subject that follows. 'There's many reasons' is a casual contraction; in formal writing it should be 'There are many reasons.' Source: Merriam-Webster's Dictionary of English Usage.",
+    "context": "The verb agrees with the true subject, the noun that comes after it. 'There's two reasons' is casual speech; formal writing says 'There are two reasons.' Source: Merriam-Webster's Dictionary of English Usage.",
     "topic": "there-is-there-are-agreement-with-the-noun-after"
   },
   {
@@ -11193,120 +11193,81 @@
     "topic": "time-flies-like-an-arrow-parsing-ambiguity"
   },
   {
-    "tier": 3,
-    "question": "An editor wants readers to parse \"fruit flies like a banana\" correctly on the first read. Which punctuation choice would best signal the switch in meaning?",
-    "answer": "Hyphenate the compound noun: 'fruit-flies like a banana'",
-    "choices": [
-      "Hyphenate the compound noun: 'fruit-flies like a banana'",
-      "Add an exclamation point: 'fruit flies like a banana!'",
-      "Delete the semicolon before it entirely",
-      "Capitalize FRUIT: 'FRUIT flies like a banana'"
-    ],
-    "context": "Hyphenating 'fruit-flies' makes it obvious the two words form a compound noun (the insects), not a subject-verb pair. Chicago allows optional hyphens where they resolve ambiguity. Source: Chicago Manual of Style 17e section 7.85.",
-    "topic": "time-flies-like-an-arrow-parsing-ambiguity"
-  },
-  {
     "tier": 4,
-    "question": "A farm stand's sign reads, \"They are cooking apples.\" What are its two readings, and can punctuation settle it?",
-    "answer": "COOKING as verb: they are cooking some apples now. COOKING as adjective: they are the type of apples used for cooking. No punctuation fix; context alone tells you which",
+    "question": "A farm stand's sign reads, \"They are cooking apples.\" It could mean the farmers are cooking, or that the apples are the cooking kind. What settles which one it means?",
+    "answer": "the context the sign is read in",
     "choices": [
-      "COOKING as verb: they are cooking some apples now. COOKING as adjective: they are the type of apples used for cooking. No punctuation fix; context alone tells you which",
-      "COOKING can only mean 'preparing food'",
-      "APPLES can only be a noun; there is no ambiguity",
-      "A comma after ARE fixes both readings"
+      "the context the sign is read in",
+      "a comma placed after the word ARE",
+      "quotation marks around COOKING",
+      "the size of the letters on the sign"
     ],
-    "context": "The whole ambiguity lies in whether COOKING is present-progressive verb or adjectival modifier. Only surrounding context can pin it down. Source: Grokipedia 'Ambiguity' (2026-09-05).",
-    "topic": "time-flies-like-an-arrow-parsing-ambiguity"
-  },
-  {
-    "tier": 5,
-    "question": "A biology teacher typing a worksheet stops at \"fruit fly\" and checks Chicago style on the hyphen. When should \"fruit fly\" become \"fruit-fly\"?",
-    "answer": "Rarely -- 'fruit fly' is an open compound in standard dictionaries; hyphenate only where the ambiguity requires (as in the 'time flies' gag), or when using it as a compound modifier ('fruit-fly research')",
-    "choices": [
-      "Rarely -- 'fruit fly' is an open compound in standard dictionaries; hyphenate only where the ambiguity requires (as in the 'time flies' gag), or when using it as a compound modifier ('fruit-fly research')",
-      "Always -- all two-word compound nouns take a hyphen",
-      "Never -- hyphens between English words are forbidden in Chicago style",
-      "Only in scientific writing"
-    ],
-    "context": "Most compounds start open (ice cream), sometimes migrate to hyphenated (long-term), then closed (bookshelf). 'Fruit fly' remains open in most dictionaries. Source: Chicago Manual of Style 17e section 7.85.",
+    "context": "COOKING can be the verb (the farmers are cooking apples right now) or a describing word (these are cooking apples, the kind meant for baking). No comma, quotation mark or lettering fixes that; only the context does: a stall full of raw fruit, or a stove with a pan on it. Source: Grokipedia 'Ambiguity' (2026-09-05).",
     "topic": "time-flies-like-an-arrow-parsing-ambiguity"
   },
   {
     "tier": 3,
     "question": "A boy tells his sister, \"Time flies like an arrow,\" and follows it with a line about a banana in which \"flies\" turns into small insects. What does the joke turn on?",
-    "answer": "a PARSING-AMBIGUITY: the second half re-parses every word (fruit flies = insects, like = verb)",
+    "answer": "a parsing pun (the words switch jobs)",
     "choices": [
-      "a PARSING-AMBIGUITY: the second half re-parses every word (fruit flies = insects, like = verb)",
+      "a parsing pun (the words switch jobs)",
       "a spoonerism (swapped opening sounds)",
       "a malapropism (wrong word substituted)",
-      "a straight pun on a single word"
+      "an oxymoron (two opposites paired)"
     ],
-    "context": "Same-shape sentence with totally different parse. In \"time flies like an arrow\" TIME is noun and FLIES is verb. In \"fruit flies like a banana\" FRUIT FLIES is a noun-noun compound and LIKE is a verb.",
+    "context": "Same-shape sentence, totally different parse. In 'time flies like an arrow' TIME is a noun and FLIES a verb. In 'fruit flies like a banana' FRUIT FLIES is a noun-noun compound and LIKE is the verb. A spoonerism swaps sounds, a malapropism swaps in a wrong word, and an oxymoron pairs opposites; none of them happens here.",
     "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
   },
   {
     "tier": 3,
     "question": "A grammar teacher diagrams \"fruit flies like a banana\" on the board. What part of speech is \"like\" there?",
-    "answer": "a verb (meaning \"to enjoy\")",
+    "answer": "a main verb",
     "choices": [
-      "a verb (meaning \"to enjoy\")",
-      "a preposition (as in \"like an arrow\")",
+      "a main verb",
+      "a preposition",
       "a conjunction",
       "an interjection"
     ],
-    "context": "In the second half, FRUIT FLIES is the subject (Drosophila), LIKE is the verb (\"enjoy\"), A BANANA is the object.",
+    "context": "In the second half, FRUIT FLIES is the subject (the insects), LIKE is the verb (they enjoy something), and A BANANA is the object. In the first half LIKE is a preposition: time flies the way an arrow does.",
     "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
   },
   {
     "tier": 4,
     "question": "A tutor points to \"paper clip\" on a school supply list and calls it a noun-noun compound. What does she mean by the term?",
-    "answer": "two nouns joined into a compound that functions as one noun (fruit flies, ice cream, computer chip)",
+    "answer": "two nouns working together as a single noun",
     "choices": [
-      "two nouns joined into a compound that functions as one noun (fruit flies, ice cream, computer chip)",
-      "a noun modified by an adjective",
-      "a noun modified by a verb",
-      "a noun repeated for emphasis"
+      "two nouns working together as a single noun",
+      "a noun with an adjective in front of it",
+      "a verb ending in -ing that acts as a noun",
+      "one noun repeated twice for emphasis"
     ],
-    "context": "FRUIT FLIES = one noun (the insect). Compound noun formed by two nouns pushed together.",
+    "context": "PAPER CLIP is two nouns locked into one: a clip for paper. FRUIT FLIES in the banana joke is the same kind of compound, and so are ice cream and computer chip.",
     "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
   },
   {
     "tier": 4,
-    "question": "A librarian wants to credit \"Time flies like an arrow; fruit flies like a banana\" on a poster. Who usually gets the credit, and where does the line first turn up in print?",
-    "answer": "often attributed to Groucho Marx (apocryphal); first documented in a 1966 paper by Anthony Oettinger at Harvard",
+    "question": "A librarian wants to credit \"Time flies like an arrow; fruit flies like a banana\" on a poster. The joke is often pinned on Groucho Marx, without evidence. Where does it first turn up in print?",
+    "answer": "in 1960s Harvard writing on computers and grammar",
     "choices": [
-      "often attributed to Groucho Marx (apocryphal); first documented in a 1966 paper by Anthony Oettinger at Harvard",
-      "Groucho Marx wrote it in his 1930 autobiography",
-      "It appears in a Shakespeare play",
-      "It was coined by Noah Webster"
+      "in 1960s Harvard writing on computers and grammar",
+      "in a 1920s joke book for vaudeville comics",
+      "in an 1880s school textbook on English grammar",
+      "in a 1990s internet list of computer jokes"
     ],
-    "context": "Popularly attributed to Groucho; documented in print by computational linguist Oettinger in 1966 as an example of automatic parsing difficulty.",
-    "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
-  },
-  {
-    "tier": 5,
-    "question": "A reading coach holds up four sentences for a student. Which one is a garden-path sentence?",
-    "answer": "The horse raced past the barn fell (reader must back up mid-sentence to re-parse)",
-    "choices": [
-      "The horse raced past the barn fell (reader must back up mid-sentence to re-parse)",
-      "Time flies like an arrow; fruit flies like a banana (two parallel sentences share a shape)",
-      "She sells seashells by the seashore (alliteration)",
-      "The bee went buzz (onomatopoeia)"
-    ],
-    "context": "GARDEN-PATH forces mid-clause reparse (the horse [that was] raced past the barn fell). PARSING-AMBIGUITY PUN is two parallel sentences with the same shape but different parse.",
+    "context": "No evidence ties the line to Groucho Marx; the Yale Book of Quotations found no reason to think he said it. Anthony Oettinger, a Harvard computing pioneer, contrasted 'time flies like an arrow' with 'fruit flies like bananas' in 1963 to show how hard English is for a machine to parse, and treated it at more length in Scientific American in 1966.",
     "topic": "time-flies-like-an-arrow-the-parsing-ambiguity-pun"
   },
   {
     "tier": 1,
-    "question": "A caption under a news photo reads, \"The New York Times ARE reporting the story.\" Which word was misused?",
-    "answer": "\"are\" (should be \"is\" -- a title takes a singular verb)",
+    "question": "A caption under a news photo reads, \"The New York Times are reporting the story.\" Which word was misused?",
+    "answer": "\"are\" (should be \"is\")",
     "choices": [
-      "\"are\" (should be \"is\" -- a title takes a singular verb)",
+      "\"are\" (should be \"is\")",
       "\"the\" (should be dropped)",
       "\"reporting\" (should be \"reports\")",
       "\"story\" (should be \"stories\")"
     ],
-    "context": "A title, even ending in -s, names ONE work. Singular verb: IS reporting.",
+    "context": "A title names ONE publication, even when it ends in -s, so it takes a singular verb: 'The New York Times IS reporting the story.'",
     "topic": "titles-of-works-the-new-york-times-is-a-newspaper"
   },
   {
@@ -11325,14 +11286,14 @@
   {
     "tier": 2,
     "question": "A library catalog card reads, \"Little Women IS a novel by Louisa May Alcott (published 1868).\" Why does the title take \"is\" and not \"are\"?",
-    "answer": "the title names ONE novel, so it is grammatically singular",
+    "answer": "the title names one book, so it is singular",
     "choices": [
-      "the title names ONE novel, so it is grammatically singular",
-      "because Alcott chose to treat it that way",
-      "because it was written in the 19th century",
-      "because it is British English"
+      "the title names one book, so it is singular",
+      "the verb agrees with NOVEL, which follows it",
+      "WOMEN is a group, and groups take IS",
+      "Alcott chose the singular for her title"
     ],
-    "context": "One book = one title = singular. The plural \"women\" inside the title does not change the verb.",
+    "context": "One book = one title = singular. The plural WOMEN inside the title does not change the verb, and a verb agrees with its subject, not with the noun that follows IS.",
     "topic": "titles-of-works-the-new-york-times-is-a-newspaper"
   },
   {
@@ -11355,23 +11316,23 @@
     "choices": [
       "are (the name itself is plural)",
       "is (the group counts as one unit)",
-      "have been (perfect required)",
+      "has been (one group, so singular)",
       "was (past required)"
     ],
-    "context": "American convention: bands as singular units. British commentary often says \"The Beatles ARE.\" Both are heard.",
+    "context": "A band name that is plural in form takes a plural verb: The Beatles ARE. American usage follows the sound of the name, so a singular-looking name such as Coldplay takes IS; British usage often treats every band as plural.",
     "topic": "titles-of-works-the-new-york-times-is-a-newspaper"
   },
   {
     "tier": 4,
-    "question": "A tutor writes four words ending in \"-ics\" on a card, each in a sample sentence. Which one is conventionally singular in modern English?",
+    "question": "A tutor writes four words ending in \"-ics\" on a card, each in a sample sentence about a school subject. Which sentence gets its verb right?",
     "answer": "mathematics (\"mathematics IS my favorite subject\")",
     "choices": [
       "mathematics (\"mathematics IS my favorite subject\")",
-      "politics (\"politics ARE always about people\")",
-      "acoustics (\"the acoustics ARE good in here\")",
+      "physics (\"physics ARE my hardest class\")",
+      "economics (\"economics ARE on the final exam\")",
       "ethics (\"ethics ARE a required course\")"
     ],
-    "context": "-ICS subject names look plural but are singular: MATHEMATICS IS, PHYSICS IS, POLITICS IS. Also THE NEWS IS ON at six.",
+    "context": "An -ICS word that names a field of study is singular however plural it looks: MATHEMATICS IS, PHYSICS IS, ECONOMICS IS, and ETHICS IS when it names the course. Some -ics words go plural when they mean a person's opinions or conduct: 'His ethics ARE questionable.'",
     "topic": "titles-of-works-the-new-york-times-is-a-newspaper"
   },
   {
@@ -11455,9 +11416,9 @@
   {
     "tier": 1,
     "question": "A grandmother typing her first email asks her grandson how many spaces to leave at the end of a sentence. What goes after a period in modern writing?",
-    "answer": "ONE space (Chicago Manual of Style 17th ed. explicitly requires one space)",
+    "answer": "ONE space (the modern style-guide rule)",
     "choices": [
-      "ONE space (Chicago Manual of Style 17th ed. explicitly requires one space)",
+      "ONE space (the modern style-guide rule)",
       "TWO spaces (the typewriter tradition)",
       "THREE spaces (for extra emphasis)",
       "NO space (compact digital style)"
@@ -11468,53 +11429,53 @@
   {
     "tier": 2,
     "question": "A teacher finds two spaces after every period in a student's essay and tells him where the habit came from. What is the history of the two-space rule?",
-    "answer": "MONOSPACED typewriter fonts made a single space look tight after a period, so typists were taught two spaces from the 1890s through the mid-20th century",
+    "answer": "it began with typewriters, whose letters shared one width",
     "choices": [
-      "MONOSPACED typewriter fonts made a single space look tight after a period, so typists were taught two spaces from the 1890s through the mid-20th century",
-      "the rule comes from medieval scribal tradition",
-      "it originated in ancient Rome",
-      "it was invented in 2005 by Microsoft"
+      "it began with typewriters, whose letters shared one width",
+      "it began with medieval scribes who left gaps",
+      "it began with telegraph clerks marking sentence ends",
+      "it began with Roman stone carvers spacing sentences"
     ],
-    "context": "Monospaced fonts gave every character the same width; a single space after a period looked cramped. Proportional fonts (all modern computers) fix the spacing automatically.",
+    "context": "Typewriter letters were MONOSPACED: every character, a thin i or a fat m, took the same width. Typists learned to hit the space bar twice after a period to copy the wide sentence gaps of printed books, and typing classes taught it well into the late 20th century. Proportional fonts on modern computers space a period correctly with one.",
     "topic": "two-spaces-after-a-period-the-zombie-typewriter-rule"
   },
   {
     "tier": 3,
-    "question": "A copy editor writes \"zombie rule\" in the margin of a manuscript. What does the term mean?",
-    "answer": "a rule that persists past its rationale (like \"two spaces after a period\" or \"never split an infinitive\")",
+    "question": "A copy editor writes \"zombie rule\" in the margin beside the two spaces a writer leaves after every period. What does she mean?",
+    "answer": "a rule still obeyed after its reason has died",
     "choices": [
-      "a rule that persists past its rationale (like \"two spaces after a period\" or \"never split an infinitive\")",
-      "a rule invented for the undead in horror fiction",
-      "a rule that must be followed for security",
-      "a rule that means the opposite of what it says"
+      "a rule still obeyed after its reason has died",
+      "a rule that only applies in fiction writing",
+      "a rule a style guide has only just invented",
+      "a rule that flips meaning in British English"
     ],
-    "context": "ZOMBIE RULE = the rationale died but the rule shambles on. Two-space, split-infinitive ban, no-ending-with-preposition, no-starting-with-conjunction all qualify.",
+    "context": "A ZOMBIE RULE is dead but still walking: its reason is gone, yet people keep obeying it. Two spaces after a period (a typewriter habit), the split-infinitive ban, no ending on a preposition and no starting with a conjunction all qualify.",
     "topic": "two-spaces-after-a-period-the-zombie-typewriter-rule"
   },
   {
     "tier": 4,
     "question": "Rebecca Johnson and her team at Skidmore College tested reading speed with one space and with two after a period in 2018. What did the study find?",
-    "answer": "a slight advantage for two spaces in the one MONOSPACED font it tested",
+    "answer": "a small edge for two spaces, in one monospaced font",
     "choices": [
-      "a slight advantage for two spaces in the one MONOSPACED font it tested",
-      "two spaces are always significantly faster",
-      "one space is always significantly faster",
-      "the study found no data"
+      "a small edge for two spaces, in one monospaced font",
+      "a large edge for two spaces, in every font tested",
+      "a large edge for one space, in every font tested",
+      "a small edge for one space, in one monospaced font"
     ],
-    "context": "Since almost nobody uses monospaced fonts today, the one-space rule wins in practice. Research confirms the modern typography position.",
+    "context": "The 2018 eye-tracking study found that two spaces after a period slightly eased reading, but every passage was set in Courier New, a monospaced font, and comprehension did not change. It says little about the proportional type most people read, so the style guides still ask for one space.",
     "topic": "two-spaces-after-a-period-the-zombie-typewriter-rule"
   },
   {
     "tier": 5,
     "question": "A web designer types a run of spaces between two words in a page's HTML (HyperText Markup Language) and opens it in a browser. What happens?",
-    "answer": "browsers COLLAPSE multiple spaces into ONE unless \"&nbsp;\" or CSS is used",
+    "answer": "browsers show the whole run as one space",
     "choices": [
-      "browsers COLLAPSE multiple spaces into ONE unless \"&nbsp;\" or CSS is used",
+      "browsers show the whole run as one space",
       "browsers show every space typed",
       "browsers double every space typed",
       "browsers ignore all spaces after a period"
     ],
-    "context": "HTML collapse finalized the death of two-space online. Even if you type two, the browser shows one. Non-breaking-space entity or CSS is the workaround.",
+    "context": "HTML collapses any run of spaces into one, so even a writer who types two sees one on the page. The non-breaking-space code (&nbsp;) or a CSS (Cascading Style Sheets) setting keeps the extra spaces.",
     "topic": "two-spaces-after-a-period-the-zombie-typewriter-rule"
   },
   {
@@ -11545,15 +11506,15 @@
   },
   {
     "tier": 4,
-    "question": "A tutor writes \"subjunctive\" at the top of a page of practice sentences. What does that mood express?",
-    "answer": "a wish, hypothetical, or contrary-to-fact statement (\"I wish I WERE taller\", \"she demanded that he BE present\")",
+    "question": "A tutor heads a practice page \"subjunctive\" and writes under it, \"The coach insisted that he be on time.\" What does that mood express?",
+    "answer": "something wished, demanded or imagined, not stated as fact",
     "choices": [
-      "a wish, hypothetical, or contrary-to-fact statement (\"I wish I WERE taller\", \"she demanded that he BE present\")",
-      "a plain statement of fact",
-      "a command directed at the listener",
-      "a future prediction"
+      "something wished, demanded or imagined, not stated as fact",
+      "a plain statement of something that is true",
+      "a direct command spoken to the listener",
+      "a prediction about what will happen next"
     ],
-    "context": "SUBJUNCTIVE is rare in modern English but survives in wishes, hypotheticals, and formal demands. Note the bare BE and the WERE for hypothetical I.",
+    "context": "The SUBJUNCTIVE handles what is not the case: wishes ('I wish I WERE taller'), suppositions, and demands. It survives in modern English in WERE for a hypothetical and in the bare BE after verbs of demanding ('The coach insisted that he BE on time').",
     "topic": "verb-mood-indicative-imperative-subjunctive-conditional"
   },
   {
@@ -11571,65 +11532,52 @@
   },
   {
     "tier": 1,
-    "question": "A boy's journal entry reads, \"I walked to the store, and then I BUY some milk.\" What is the error?",
-    "answer": "verb-tense JUMP -- WALKED is past but BUY is present; pick one and stick with it",
+    "question": "A boy's journal entry reads, \"I walked to the store, and then I buy some milk.\" What is the error?",
+    "answer": "a jump from past to present tense",
     "choices": [
-      "verb-tense JUMP -- WALKED is past but BUY is present; pick one and stick with it",
-      "a comma splice",
-      "a missing conjunction",
-      "a dangling modifier"
+      "a jump from past to present tense",
+      "a comma splice joining two clauses",
+      "a subject that does not match its verb",
+      "a dangling modifier at the start"
     ],
-    "context": "Tense-consistency rule: within a narrative sequence, keep tenses aligned. Fix: \"I walked ... and BOUGHT some milk.\"",
-    "topic": "verb-tense-consistency-do-not-jump-tenses-mid-paragraph"
-  },
-  {
-    "tier": 1,
-    "question": "An English teacher writes \"tense consistency\" in red across the top of a student's story. What rule is she pointing to?",
-    "answer": "within a paragraph or narrative sequence, keep tenses aligned unless meaning genuinely shifts",
-    "choices": [
-      "within a paragraph or narrative sequence, keep tenses aligned unless meaning genuinely shifts",
-      "switch tense in every sentence for variety",
-      "use only present tense in essays",
-      "always use past tense in narrative writing"
-    ],
-    "context": "Consistency helps the reader track time. Meaningful shifts (flashback, general truth) are the exception.",
+    "context": "WALKED is past but BUY is present: pick one tense and stick with it. Fix: 'I walked to the store, and then I BOUGHT some milk.'",
     "topic": "verb-tense-consistency-do-not-jump-tenses-mid-paragraph"
   },
   {
     "tier": 2,
     "question": "A girl's travel diary reads, \"Yesterday I visited the museum. It IS the largest in the city.\" Why is the shift in tense fine here?",
-    "answer": "the visit is past, but the museum's size is a general PRESENT fact still true",
+    "answer": "the size is still true, so it stays present",
     "choices": [
-      "the visit is past, but the museum's size is a general PRESENT fact still true",
-      "the sentence is grammatically incorrect",
-      "the shift is only OK in British English",
-      "the shift is required by formal style"
+      "the size is still true, so it stays present",
+      "each new sentence may pick a new tense",
+      "British usage allows a mid-story shift",
+      "the present tense sounds more formal"
     ],
-    "context": "General truths still valid at the time of writing take the present tense. Meaningful, not arbitrary.",
+    "context": "The visit is over, so it takes the past, but the museum is still the largest in the city, so that general truth takes the present. The shift follows the meaning, not a whim.",
     "topic": "verb-tense-consistency-do-not-jump-tenses-mid-paragraph"
   },
   {
     "tier": 3,
-    "question": "A writing coach suggests the historical present for the opening of a student's adventure story. What is the historical present?",
-    "answer": "telling past-tense stories in the present (\"Napoleon MARCHES on Moscow\") for immediacy",
+    "question": "A writing coach shows a student an opening line: \"It is 1812, and Napoleon marches on Moscow.\" She calls it the historical present. What does that mean?",
+    "answer": "telling a past event in the present tense",
     "choices": [
-      "telling past-tense stories in the present (\"Napoleon MARCHES on Moscow\") for immediacy",
-      "the tense used for writing about the year 1900",
-      "the tense used only in history textbooks",
-      "a synonym for present perfect"
+      "telling a past event in the present tense",
+      "stating a general truth in the present tense",
+      "describing a past event with HAS or HAVE",
+      "mixing past and present to show a flashback"
     ],
-    "context": "Historical present adds drama. Once you start it, stay in it -- do not slip back to past tense mid-scene.",
+    "context": "The HISTORICAL PRESENT tells a finished event as if it were happening now, for immediacy: 'Napoleon MARCHES on Moscow.' A writer who starts it stays in it and does not slip back to the past mid-scene.",
     "topic": "verb-tense-consistency-do-not-jump-tenses-mid-paragraph"
   },
   {
     "tier": 4,
     "question": "A history student's essay reads, \"Napoleon marches on Moscow, and his army suffered terribly.\" What is the error?",
-    "answer": "tense slippage -- MARCHES (present) and SUFFERED (past) clash mid-scene; pick one",
+    "answer": "a slip from present back to past tense",
     "choices": [
-      "tense slippage -- MARCHES (present) and SUFFERED (past) clash mid-scene; pick one",
-      "a missing comma before AND",
-      "a misplaced modifier",
-      "the sentence is factually incorrect"
+      "a slip from present back to past tense",
+      "a comma splice before the AND",
+      "a verb that does not agree with ARMY",
+      "a misplaced modifier, TERRIBLY"
     ],
     "context": "Once in historical present, stay in it: \"MARCHES ... and his army SUFFERS.\" Slipping to past breaks the frame.",
     "topic": "verb-tense-consistency-do-not-jump-tenses-mid-paragraph"
@@ -11676,22 +11624,22 @@
   {
     "tier": 2,
     "question": "A boy sealing an envelope asks, \"To ___ should I address the letter?\" Which word fills the gap?",
-    "answer": "whom (object of preposition 'to')",
+    "answer": "whom",
     "choices": [
-      "whom (object of preposition 'to')",
+      "whom",
       "who",
       "who's",
       "whose"
     ],
-    "context": "Preposition 'to' takes object pronouns. Test: 'address the letter to HIM' → whom. Prepositions ALWAYS take whom in careful writing; this is the safest rule of thumb.",
+    "context": "The preposition TO takes the object form. Test: 'address the letter to HIM' → whom. A pronoun that is the object of a preposition takes the M form in careful writing; this is the safest rule of thumb.",
     "topic": "who-vs-whom-the-he-him-substitution-trick"
   },
   {
     "tier": 3,
     "question": "A school paper's story on the student-council vote reads, \"The candidate ___ we hoped would win lost.\" Which word belongs in the gap?",
-    "answer": "who (subject of 'would win')",
+    "answer": "who",
     "choices": [
-      "who (subject of 'would win')",
+      "who",
       "whom",
       "who's",
       "whose"
@@ -11702,35 +11650,35 @@
   {
     "tier": 3,
     "question": "A bride's mother pauses over one word in a wedding announcement: \"She invited everyone ___ she knew.\" Which word completes it?",
-    "answer": "whom (object of 'knew' -- 'she knew HIM')",
+    "answer": "whom",
     "choices": [
-      "whom (object of 'knew' -- 'she knew HIM')",
+      "whom",
       "who",
       "who's",
       "whose"
     ],
-    "context": "Test on the internal verb: 'she knew HIM' → whom. The wh-word's role is as the object of KNEW, not as a subject. 'Everyone WHOM she knew' is technically correct; casual English often drops.",
+    "context": "Test on the internal verb: 'she knew HIM' → whom. The wh-word is the object of KNEW, not a subject. 'Everyone WHOM she knew' is correct; casual English often drops the word altogether: 'everyone she knew.'",
     "topic": "who-vs-whom-the-he-him-substitution-trick"
   },
   {
     "tier": 4,
     "question": "A bookstore clerk shelves a copy of Hemingway's For Whom the Bell Tolls. Why does the title use \"whom\"?",
-    "answer": "object of preposition 'for'; even in poetic titles, whom follows prepositions",
+    "answer": "it follows the preposition FOR",
     "choices": [
-      "object of preposition 'for'; even in poetic titles, whom follows prepositions",
-      "poetic license",
-      "old English",
-      "should be 'who' in modern English"
+      "it follows the preposition FOR",
+      "it is a poet's license with grammar",
+      "it is Old English, now out of date",
+      "it should be WHO in modern English"
     ],
-    "context": "'For whom the bell tolls' (1940 Hemingway novel, from John Donne 1624). Preposition FOR takes object WHOM. 'For who' would be grammatically wrong even today. This is one of the safest whom rules.",
+    "context": "'For whom the bell tolls' (Hemingway's 1940 novel, its title taken from John Donne's 1624 meditation): the preposition FOR takes the object WHOM. 'For who' would be wrong in formal writing even today.",
     "topic": "who-vs-whom-the-he-him-substitution-trick"
   },
   {
     "tier": 5,
     "question": "A hotel manager writes in the guest log, \"The tourists ___ she thought were lost turned up.\" What goes in the gap?",
-    "answer": "who (subject of 'were lost' -- parenthetical 'she thought' does not change it)",
+    "answer": "who",
     "choices": [
-      "who (subject of 'were lost' -- parenthetical 'she thought' does not change it)",
+      "who",
       "whom",
       "whose",
       "who's"
@@ -11766,19 +11714,6 @@
   },
   {
     "tier": 2,
-    "question": "An English teacher promises her class one reliable test for \"who\" and \"whom.\" Which pronouns does the test swap in?",
-    "answer": "'he' (→ who) or 'him' (→ whom) -- both end in the giveaway letter",
-    "choices": [
-      "'he' (→ who) or 'him' (→ whom) -- both end in the giveaway letter",
-      "'she' or 'her'",
-      "'they' or 'them'",
-      "'it' works for both"
-    ],
-    "context": "The HE/HIM test: if 'he' fits, use 'who' (both subject forms). If 'him' fits, use 'whom' (both object forms, both end in M). 'Whom did you invite?' -- 'I invited him.'",
-    "topic": "who-vs-whom-the-m-means-object"
-  },
-  {
-    "tier": 2,
     "question": "A girl's essay begins, \"The person ___ I trust most is my sister,\" and her teacher tests the gap with \"I trust ___.\" Which pair does the test point to?",
     "answer": "her → whom",
     "choices": [
@@ -11792,39 +11727,39 @@
   },
   {
     "tier": 3,
-    "question": "A girl writes a note of thanks: \"She is the friend ___ always calls on my birthday.\" Which form fills the gap?",
-    "answer": "who (subject of 'calls')",
+    "question": "A girl writes a note of thanks: \"He is the neighbor ___ feeds our cat every summer.\" Which form fills the gap?",
+    "answer": "who",
     "choices": [
-      "who (subject of 'calls')",
+      "who",
       "whom",
       "who's",
       "whose"
     ],
-    "context": "In the relative clause '___ always calls', the blank is the SUBJECT of 'calls' -- 'she calls', so who. Rule holds even when the sentence looks like it should take whom.",
+    "context": "In the relative clause '___ feeds our cat', the blank is the SUBJECT of 'feeds' ('he feeds our cat'), so who. The rule holds even when the sentence sounds formal enough for whom.",
     "topic": "who-vs-whom-the-m-means-object"
   },
   {
     "tier": 4,
     "question": "A job seeker opens a cover letter with \"To whom it may concern.\" Why does the opening take \"whom\"?",
-    "answer": "object of the preposition 'to' -- 'it may concern him/her'",
+    "answer": "it is the object: 'it may concern HIM'",
     "choices": [
-      "object of the preposition 'to' -- 'it may concern him/her'",
-      "whom is always used in letters",
-      "who would be too casual",
-      "the phrase is fossilised and wrong"
+      "it is the object: 'it may concern HIM'",
+      "it is the subject of 'may concern'",
+      "letters always use the formal WHOM",
+      "the phrase is fossilized and wrong"
     ],
-    "context": "Prepositions ALWAYS take object pronouns. 'To whom', 'for whom', 'with whom', 'about whom' -- always whom. This is the safest whom rule: after a preposition, never who.",
+    "context": "Inside the clause, IT is the subject and the wh-word is what it may concern: 'it may concern HIM', so WHOM. After a preposition the M form is the usual choice too: to whom, for whom, with whom.",
     "topic": "who-vs-whom-the-m-means-object"
   },
   {
     "tier": 5,
     "question": "A receptionist's phone script reads, \"Whom shall I say is calling?\" Why does a copy editor mark it wrong?",
-    "answer": "'is calling' needs a subject; who is correct ('who shall I say IS calling?')",
+    "answer": "IS CALLING needs a subject, so it takes WHO",
     "choices": [
-      "'is calling' needs a subject; who is correct ('who shall I say IS calling?')",
-      "'shall' requires whom",
-      "the sentence is fine",
-      "no test applies"
+      "IS CALLING needs a subject, so it takes WHO",
+      "WHOM needs a preposition, such as TO, before it",
+      "SHALL should be WILL in a polite question",
+      "the question needs a comma after SAY"
     ],
     "context": "The tempting 'I say' is a parenthetical; the real verb is 'is calling', and its subject is the wh-word. 'Who is calling?' -- 'She is calling' -- who, not whom. Classic hypercorrection.",
     "topic": "who-vs-whom-the-m-means-object"
@@ -11910,12 +11845,12 @@
   {
     "tier": 1,
     "question": "A coach's email about a canceled game begins, \"Due to the fact that it was raining.\" What is the shorter way to say it?",
-    "answer": "'Because it was raining.' (drop the deadweight)",
+    "answer": "'Because it was raining.'",
     "choices": [
-      "'Because it was raining.' (drop the deadweight)",
-      "'Due to raining'",
-      "'On account of it was raining'",
-      "no shorter version"
+      "'Because it was raining.'",
+      "'Due to raining.'",
+      "'On account of it was raining.'",
+      "'Owing to the fact it rained.'"
     ],
     "context": "'Due to the fact that' → 'because' (one word). Chicago 5.250 lists common wordy phrases to cut. Concise writing respects the reader's time.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
@@ -11923,50 +11858,50 @@
   {
     "tier": 2,
     "question": "A text to a dinner host reads, \"In the event that we are late.\" What is the concise fix?",
-    "answer": "'If we are late.' (three words → one)",
+    "answer": "'If we are late.'",
     "choices": [
-      "'If we are late.' (three words → one)",
-      "'In event we are late'",
-      "'Should we be late'",
-      "no fix"
+      "'If we are late.'",
+      "'In event we are late.'",
+      "'In the case that we are late.'",
+      "'Should it be that we are late.'"
     ],
-    "context": "'In the event that' → 'if'. Classic wordy-to-concise swap. Same meaning, fewer words. Both 'if' and 'should' work; 'if' is the most common concise form.",
+    "context": "'In the event that' (four words) → 'if' (one). Same meaning, three fewer words. Cutting only THE leaves broken English, and 'in the case that' or 'should it be that' are just as padded.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
   },
   {
     "tier": 2,
     "question": "A principal's announcement opens, \"At this point in time.\" What is the concise equivalent?",
-    "answer": "'now' (one word)",
+    "answer": "'now'",
     "choices": [
-      "'now' (one word)",
-      "'presently'",
-      "'at this time'",
-      "'at present'"
+      "'now'",
+      "'in time'",
+      "'soon'",
+      "'lately'"
     ],
-    "context": "'At this point in time' is famous bureaucratic padding. 'Now' says exactly the same thing in one word. If tone requires slight formality: 'at present' or 'currently'.",
+    "context": "'At this point in time' is famous bureaucratic padding: five words for 'now'. IN TIME means early enough, SOON means later, and LATELY means recently.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
   },
   {
     "tier": 3,
     "question": "A teacher marking an essay underlines \"prior to.\" Which wording says it most concisely?",
-    "answer": "'before' (one word vs two)",
+    "answer": "'before'",
     "choices": [
-      "'before' (one word vs two)",
+      "'before'",
       "'prior to'",
       "'in advance of'",
-      "'preceding'"
+      "'previous to'"
     ],
-    "context": "'Prior to' is often used to sound formal but 'before' is shorter and clearer. Chicago 5.250 recommends 'before' unless legal precision requires 'prior to'.",
+    "context": "'Prior to' sounds formal, but 'before' says the same thing in one word. 'In advance of' and 'previous to' only add words.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
   },
   {
     "tier": 3,
     "question": "An editor marks \"for the purpose of\" in a club newsletter. What concise fix does she suggest?",
-    "answer": "'to' or 'for' (one word)",
+    "answer": "'to' or 'for'",
     "choices": [
-      "'to' or 'for' (one word)",
+      "'to' or 'for'",
       "'in order for'",
-      "'so as to'",
+      "'for purposes of'",
       "'with the purpose'"
     ],
     "context": "'For the purpose of increasing sales' → 'to increase sales'. Wordy prepositional phrases often reduce to a single word. Trim ruthlessly.",
@@ -11975,12 +11910,12 @@
   {
     "tier": 4,
     "question": "An office email reads, \"It should be noted that the meeting has been cancelled.\" What is the concise version?",
-    "answer": "'The meeting is cancelled.' (drop the noting-verbiage)",
+    "answer": "'The meeting is cancelled.'",
     "choices": [
-      "'The meeting is cancelled.' (drop the noting-verbiage)",
-      "'It should be noted the meeting cancelled'",
-      "'One should note that the meeting'",
-      "'Note: the meeting'"
+      "'The meeting is cancelled.'",
+      "'It should be noted the meeting is cancelled.'",
+      "'Please note that the meeting is cancelled.'",
+      "'Note that the meeting has been cancelled.'"
     ],
     "context": "'It should be noted that', 'the fact is that', 'it is important to point out' -- all filler that adds words without meaning. Cut and state the fact.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
@@ -11988,12 +11923,12 @@
   {
     "tier": 4,
     "question": "A product brochure calls one feature \"absolutely essential.\" What is wrong with the phrase?",
-    "answer": "essential means already 'absolutely necessary'; 'absolutely' adds nothing",
+    "answer": "ESSENTIAL is already absolute, so the adverb repeats it",
     "choices": [
-      "essential means already 'absolutely necessary'; 'absolutely' adds nothing",
-      "'absolutely' is not a real word",
-      "'essential' should be 'important'",
-      "no redundancy"
+      "ESSENTIAL is already absolute, so the adverb repeats it",
+      "an adverb may not modify an adjective",
+      "ABSOLUTELY belongs in speech, never in print",
+      "ESSENTIAL is too strong a word for a brochure"
     ],
     "context": "REDUNDANCY: 'absolutely essential', 'unexpected surprise', 'exact same', 'end result', 'past history', 'future plans', 'free gift'. Each adds words that repeat what's already implied.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
@@ -12008,7 +11943,7 @@
       "We ought to give thought to consideration of this.",
       "Consideration is required of this issue."
     ],
-    "context": "Direct verb + object + subject. The other versions use nominalisations (consideration), passive voice (be given), or filler ('it is imperative that'). Concise beats bureaucratic every time.",
+    "context": "Direct verb + object + subject. The other versions use nominalizations (consideration), passive voice (be given), or filler ('it is imperative that'). Concise beats bureaucratic every time.",
     "topic": "wordy-vs-concise-cut-the-deadweight"
   },
   {
@@ -12105,11 +12040,11 @@
   {
     "tier": 1,
     "question": "A line by Flanders and Swann runs, \"She lowered her standards by raising her glass, her courage, her eyes, and his hopes.\" What technique does it use?",
-    "answer": "zeugma (one verb \"raising\" stretched across incompatible objects)",
+    "answer": "zeugma (one verb across mismatched objects)",
     "choices": [
-      "zeugma (one verb \"raising\" stretched across incompatible objects)",
+      "zeugma (one verb across mismatched objects)",
       "chiasmus (mirror-image structure)",
-      "anaphora (repeated openings)",
+      "spoonerism (swapped opening sounds)",
       "metaphor (comparison across categories)"
     ],
     "context": "ONE VERB (raising) governs four objects, each in a different sense (glass literally, courage figuratively, eyes toward someone, hopes emotionally). Definition of zeugma.",
@@ -12130,41 +12065,41 @@
   },
   {
     "tier": 2,
-    "question": "Alexander Pope wrote the line \"Or stain her honour, or her new brocade\" in a poem of 1712. What does the shared verb do?",
-    "answer": "STAIN governs a MORAL object (honour) and a LITERAL object (a dress) at once",
+    "question": "Alexander Pope wrote the line \"Or stain her honour, or her new brocade\" in a mock-epic poem. What does the shared verb do?",
+    "answer": "it takes a moral object and a literal one at once",
     "choices": [
-      "STAIN governs a MORAL object (honour) and a LITERAL object (a dress) at once",
-      "STAIN is a metaphor for washing",
-      "STAIN is used only in the literal sense",
-      "both objects take STAIN in exactly the same sense"
+      "it takes a moral object and a literal one at once",
+      "it works as a metaphor for washing",
+      "it is used only in its literal sense",
+      "it means the same with both objects"
     ],
-    "context": "Classic zeugma: one verb, two meanings. Moral staining (honour) and literal staining (brocade fabric). Pope's wit lies in the audible click.",
+    "context": "Classic zeugma: one verb, two senses. A stain on her honour is moral, a stain on her brocade (a rich patterned fabric) is literal. The wit lies in the audible click between them.",
     "topic": "zeugma-and-syllepsis-one-verb-incompatible-objects"
   },
   {
     "tier": 3,
-    "question": "Two rhetoric teachers argue over where zeugma ends and syllepsis begins, and both call syllepsis the stricter term. What is syllepsis?",
-    "answer": "the version where the shared verb fits each object grammatically but shifts MEANING between them",
+    "question": "A rhetoric teacher writes \"He took his hat and his leave\" on the board and calls it syllepsis, the strict kind of zeugma. What makes it the strict kind?",
+    "answer": "TOOK fits both objects but changes its meaning",
     "choices": [
-      "the version where the shared verb fits each object grammatically but shifts MEANING between them",
-      "the version where the shared verb is a metaphor for both",
-      "the version where the sentence reads the same forward and backward",
-      "the version where two words share an origin"
+      "TOOK fits both objects but changes its meaning",
+      "TOOK is a metaphor for both objects",
+      "TOOK fits only one object grammatically",
+      "the two objects mean the same thing"
     ],
-    "context": "SYLLEPSIS = strict subset of zeugma. Verb fits each object grammatically but shifts sense (literal to figurative). Most usage lumps them; strict rhetoric splits them.",
+    "context": "SYLLEPSIS is the strict case of zeugma: the verb fits each object grammatically but shifts its sense as it travels. He takes his hat in the literal sense and takes his leave in an idiomatic one. Usage often lumps the two terms together; strict rhetoric splits them.",
     "topic": "zeugma-and-syllepsis-one-verb-incompatible-objects"
   },
   {
     "tier": 4,
     "question": "A girl's short story ends, \"She broke his heart and his favorite vase.\" Is that technically a zeugma?",
-    "answer": "yes -- BROKE means one thing emotionally and one thing physically; the shift IS the punchline",
+    "answer": "yes -- BROKE shifts from a feeling to an object",
     "choices": [
-      "yes -- BROKE means one thing emotionally and one thing physically; the shift IS the punchline",
-      "no -- BROKE is loose enough that both readings are ordinary",
-      "no -- zeugma requires exactly three objects, not two",
-      "no -- zeugma requires the verb to be irregular"
+      "yes -- BROKE shifts from a feeling to an object",
+      "no -- BROKE has the same sense both times",
+      "no -- zeugma requires three objects, not two",
+      "no -- zeugma requires an irregular verb"
     ],
-    "context": "Judgment case: some argue the metaphorical BREAK is a dead metaphor and both readings are ordinary. Strict rhetoric still calls the semantic shift zeugma.",
+    "context": "BROKE does two jobs: a heart breaks figuratively, a vase literally. One verb, two senses, and the shift is the punchline, which makes it a zeugma (a syllepsis, in the strict sense).",
     "topic": "zeugma-and-syllepsis-one-verb-incompatible-objects"
   },
   {
@@ -12261,12 +12196,12 @@
   {
     "tier": 1,
     "question": "An aunt raised on an old rule about prepositions winces when her nephew asks, \"What are you looking at?\" Is his question grammatically wrong?",
-    "answer": "no -- ending with a preposition is fine; the zombie rule has no grammatical basis",
+    "answer": "no -- the ban has no basis in English",
     "choices": [
-      "no -- ending with a preposition is fine; the zombie rule has no grammatical basis",
-      "yes -- always wrong",
-      "yes -- only in casual speech",
-      "yes -- only in questions"
+      "no -- the ban has no basis in English",
+      "yes -- it should be 'At what are you looking?'",
+      "yes -- in any sentence, spoken or written",
+      "yes -- a question may never end on AT"
     ],
     "context": "ZOMBIE RULE: 'never end a sentence with a preposition' comes from 17th-century writers imitating Latin. English has always ended sentences with prepositions. Chicago 5.176 explicitly debunks the rule.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
@@ -12274,9 +12209,9 @@
   {
     "tier": 2,
     "question": "A teacher mentions a famous joke that mocks the rule against closing a sentence on a preposition. Which joke is it?",
-    "answer": "'This is the sort of English up with which I will not put' (probably not really said by Churchill)",
+    "answer": "'This is the sort of English up with which I will not put'",
     "choices": [
-      "'This is the sort of English up with which I will not put' (probably not really said by Churchill)",
+      "'This is the sort of English up with which I will not put'",
       "'To be or not to be, that is the question'",
       "'Ask not what your country can do for you'",
       "'The medium is the message'"
@@ -12287,12 +12222,12 @@
   {
     "tier": 2,
     "question": "A memoir writer weighs two versions of one line: \"The person to whom I spoke.\" and \"The person I spoke to.\" Which one sounds the way English speakers really talk?",
-    "answer": "'The person I spoke to' (natural English; ending with preposition is fine)",
+    "answer": "'The person I spoke to'",
     "choices": [
-      "'The person I spoke to' (natural English; ending with preposition is fine)",
-      "'The person to whom I spoke' (strictly correct)",
-      "both are equally natural",
-      "neither"
+      "'The person I spoke to'",
+      "'The person to whom I spoke'",
+      "both sound equally natural",
+      "neither, since both sound stiff"
     ],
     "context": "English idiom often ends with prepositions. 'To whom I spoke' is grammatically fine but sounds stilted in most contexts. 'I spoke to' is natural. Choose based on register, not the fake rule.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
@@ -12300,25 +12235,25 @@
   {
     "tier": 3,
     "question": "A student asks her English teacher about the rule that a sentence must never end with a preposition. Where did that rule come from?",
-    "answer": "17th-century writers wanting English to imitate Latin (which cannot end sentences with prepositions)",
+    "answer": "17th-century writers copying Latin",
     "choices": [
-      "17th-century writers wanting English to imitate Latin (which cannot end sentences with prepositions)",
-      "medieval Old English",
-      "Shakespeare",
-      "the Chicago Manual of Style"
+      "17th-century writers copying Latin",
+      "the Old English of the Middle Ages",
+      "the first Chicago Manual of Style",
+      "a 1950s American school textbook"
     ],
-    "context": "John Dryden (1631-1700) is often blamed for spreading the rule -- he criticised Ben Jonson for ending sentences with prepositions. Latin cannot; English can and always has.",
+    "context": "John Dryden (1631-1700) is often blamed for spreading the rule -- he criticized Ben Jonson for ending sentences with prepositions. Latin cannot strand a preposition; English can and always has.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
   },
   {
     "tier": 3,
     "question": "A librarian hands over a novel and says, \"This is the book I was talking about.\" Is it wrong to end the sentence on \"about\"?",
-    "answer": "no -- natural English; the alternative ('about which I was talking') sounds stilted",
+    "answer": "no -- 'about which I was talking' sounds stiff",
     "choices": [
-      "no -- natural English; the alternative ('about which I was talking') sounds stilted",
-      "yes -- must be 'about which'",
-      "yes -- ending with preposition breaks the rule",
-      "yes -- only in speech"
+      "no -- 'about which I was talking' sounds stiff",
+      "yes -- it must be 'about which I was talking'",
+      "yes -- ABOUT may never close a sentence",
+      "yes -- the rule holds in speech as well"
     ],
     "context": "Chicago 5.176: 'The traditional caveat of yesteryear against ending sentences with prepositions is, for most writers, an unnecessary and pedantic restriction.' English idiom permits and prefers it.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
@@ -12326,18 +12261,18 @@
   {
     "tier": 4,
     "question": "A writer stops at a sentence that ends in \"with\" and wonders whether to move the word forward. When is it good style to avoid ending on a preposition?",
-    "answer": "formal writing where the alternative reads naturally without straining",
+    "answer": "in formal prose, when the moved version sounds natural",
     "choices": [
-      "formal writing where the alternative reads naturally without straining",
-      "always",
-      "never",
-      "only in poetry"
+      "in formal prose, when the moved version sounds natural",
+      "in every kind of writing, whatever the sound",
+      "never, since the rule is only a myth",
+      "only in poetry, where rhythm matters most"
     ],
     "context": "The pragmatic rule: if the non-preposition version sounds natural, use it; if it sounds like 'up with which I will not put', use the preposition. Reader ease wins.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
   },
   {
-    "tier": 5,
+    "tier": 2,
     "question": "A hostel clerk greets a new guest and asks about her home town. Which version of the question does ordinary English speech prefer?",
     "answer": "Where are you from?",
     "choices": [
@@ -12346,18 +12281,18 @@
       "Where are you from?",
       "Whence are you from?"
     ],
-    "context": "'Whom did you speak to?' -- natural, ends with preposition, whom is object. 'To whom did you speak?' -- formal, follows the fake rule. Both are grammatically correct. Context decides.",
+    "context": "'Where are you from?' ends on a preposition and is what speakers actually say. 'From where are you?' obeys the fake rule and sounds like a phrasebook. 'Whence' is archaic, and since it already means 'from where', 'from whence' and 'whence ... from' say FROM twice.",
     "topic": "zombie-rule-never-end-a-sentence-with-a-preposition"
   },
   {
     "tier": 1,
     "question": "A bumper sticker on a family's car reads, 'To boldly go where no one has gone before.' Is it an error in English to put 'boldly' between 'to' and 'go'?",
-    "answer": "no -- split infinitives are fine; the zombie rule has no grammatical basis",
+    "answer": "no -- the old ban has no basis in English",
     "choices": [
-      "no -- split infinitives are fine; the zombie rule has no grammatical basis",
-      "yes -- infinitives must never be split",
-      "yes -- only in formal writing",
-      "yes -- 'boldly' is wrong"
+      "no -- the old ban has no basis in English",
+      "yes -- an infinitive must never be split",
+      "yes -- but only in formal writing",
+      "yes -- 'boldly' belongs after 'go'"
     ],
     "context": "ZOMBIE RULE: 'never split an infinitive'. The Star Trek line ('to boldly go') is the canonical modern example. Chicago 5.108 explicitly permits split infinitives when they clarify meaning or read naturally.",
     "topic": "zombie-rule-never-split-an-infinitive"
@@ -12365,12 +12300,12 @@
   {
     "tier": 2,
     "question": "A teacher circles 'to never speak' in a student's story, where 'never' comes between 'to' and the verb, and writes 'Never split an infinitive' in the margin. Where did that rule come from?",
-    "answer": "19th-century writers wanting English to imitate Latin (where infinitives are single words that cannot be split)",
+    "answer": "19th-century writers copying Latin",
     "choices": [
-      "19th-century writers wanting English to imitate Latin (where infinitives are single words that cannot be split)",
-      "Chaucer disliked them",
-      "always was a rule",
-      "Chicago Manual of Style demanded it"
+      "19th-century writers copying Latin",
+      "monks copying Bibles in the Middle Ages",
+      "the Chicago Manual of Style, in 1906",
+      "Old English grammar before 1066"
     ],
     "context": "Latin infinitives are ONE WORD (amare = to love), physically unsplittable. English infinitives are two words (to love). 19th-century Latin-worshippers invented the rule; it never applied to English.",
     "topic": "zombie-rule-never-split-an-infinitive"
@@ -12378,38 +12313,25 @@
   {
     "tier": 2,
     "question": "A boy's diary reads, 'She decided to quickly leave.' His sister changes the line to 'She decided quickly to leave.' What is the difference between the two?",
-    "answer": "'quickly' next to 'leave' modifies leave; away from it, ambiguity arises about what was quick",
+    "answer": "the second may mean the deciding was quick",
     "choices": [
-      "'quickly' next to 'leave' modifies leave; away from it, ambiguity arises about what was quick",
-      "no difference",
-      "the second is wrong",
-      "the first is wrong"
+      "the second may mean the deciding was quick",
+      "none: both say the leaving was quick",
+      "the first is wrong for splitting 'to leave'",
+      "the second is wrong for moving the adverb"
     ],
-    "context": "MEANING can depend on where the adverb sits. 'To quickly leave' = the leaving was quick. 'Quickly to leave' or 'to leave quickly' can also work but sometimes shift emphasis. Split when meaning demands.",
-    "topic": "zombie-rule-never-split-an-infinitive"
-  },
-  {
-    "tier": 3,
-    "question": "A girl recites the most famous split infinitive in English to her little brother: 'To boldly go where no man has gone before.' Which show is the line from?",
-    "answer": "Star Trek (original series opening, 1966)",
-    "choices": [
-      "Star Trek (original series opening, 1966)",
-      "Star Wars",
-      "Doctor Who",
-      "Buck Rogers"
-    ],
-    "context": "Gene Roddenberry's Star Trek opening monologue (1966). Deliberately split infinitive -- 'to go boldly' or 'boldly to go' both work grammatically but don't have the poetic rhythm. Split for style.",
+    "context": "Next to LEAVE, QUICKLY describes the leaving. Moved in front of 'to leave', it may attach to DECIDED instead, so a reader cannot tell what was quick. 'To leave quickly' also works. Split when the meaning demands it.",
     "topic": "zombie-rule-never-split-an-infinitive"
   },
   {
     "tier": 3,
     "question": "A science fair judge writes of one student, 'She wants to quickly find a solution.' Is the split infinitive in that line appropriate?",
-    "answer": "yes -- adverb 'quickly' most naturally sits inside the infinitive",
+    "answer": "yes -- 'quickly' sits best beside 'find'",
     "choices": [
-      "yes -- adverb 'quickly' most naturally sits inside the infinitive",
-      "no -- move 'quickly'",
-      "no -- infinitives cannot be split",
-      "no -- should use 'rapidly'"
+      "yes -- 'quickly' sits best beside 'find'",
+      "no -- 'quickly' belongs after 'solution'",
+      "no -- an infinitive may never be split",
+      "no -- 'rapidly' is the formal word"
     ],
     "context": "Modern usage places adverbs where they read most naturally. 'To quickly find' beats 'quickly to find' (formal, stiff) or 'to find quickly' (which can be misread as modifying the whole clause).",
     "topic": "zombie-rule-never-split-an-infinitive"
@@ -12417,18 +12339,18 @@
   {
     "tier": 4,
     "question": "A copy editor looks up split infinitives in section 5.108 of the Chicago Manual of Style. What does that section say about them?",
-    "answer": "they are 'often the most natural placement' and should not be avoided by contortion",
+    "answer": "a split is acceptable English, not an error",
     "choices": [
-      "they are 'often the most natural placement' and should not be avoided by contortion",
-      "they should always be avoided",
-      "they are only acceptable in fiction",
-      "they are always wrong"
+      "a split is acceptable English, not an error",
+      "a split should always be avoided",
+      "a split is allowed only in fiction",
+      "a split is allowed only in speech"
     ],
-    "context": "Chicago 5.108: 'When an adverb modifies a verb in the infinitive, it generally should sit between the two.' Explicit rejection of the zombie rule. Same position taken by Fowler's, Garner's, and virtually every modern style guide.",
+    "context": "Chicago 5.108 (17th edition) accepts the split infinitive. By the manual's own account it has not frowned on it since its thirteenth edition, in the early 1980s, and it grants that an adverb sometimes justifiably sits between TO and the verb.",
     "topic": "zombie-rule-never-split-an-infinitive"
   },
   {
-    "tier": 5,
+    "tier": 2,
     "question": "A novelist tries the adverb 'carefully' in four spots in one sentence. Which version splits the infinitive?",
     "answer": "She wanted to carefully consider her options.",
     "choices": [
