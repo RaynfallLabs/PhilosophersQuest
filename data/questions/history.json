@@ -4426,7 +4426,7 @@
     "choices": [
       "Obsidian",
       "Marble",
-      "Chert",
+      "Jade",
       "Granite"
     ],
     "context": "The tecpatl was knapped from obsidian (volcanic glass), or sometimes flint, to an edge sharper than a modern scalpel. Source: Human sacrifice in Aztec culture / Tecpatl, en.wikipedia.org.",
@@ -4551,13 +4551,13 @@
   },
   {
     "tier": 2,
-    "question": "Nebuchadnezzar II faced Babylon's northern entrance, the Ishtar Gate, with brick glazed a deep blue, and across it he set rows of golden beasts that seemed to glow, each one sacred to a god. Which three creatures marched across the face of the Ishtar Gate?",
-    "answer": "A lion, a bull, and a dragon-snake",
+    "question": "Nebuchadnezzar II faced Babylon's Ishtar Gate in brick glazed a deep blue and set rows of golden beasts across it. His own inscription names the two kinds he placed in the gateways, one for the storm god Adad and one for Marduk, Babylon's chief god. Which two creatures were they?",
+    "answer": "A bull and a scaly dragon-snake",
     "choices": [
-      "A lion, a bull, and a dragon-snake",
-      "A lion, a horse, and an eagle",
-      "A lion, a bull, and a winged bull",
-      "A lion, a ram, and a serpent"
+      "A bull and a scaly dragon-snake",
+      "A horse and a great eagle",
+      "A ram and a soaring falcon",
+      "A stag and a winged griffin"
     ],
     "context": "Each beast belonged to a god: the lion to Ishtar, goddess of love and war; the bull to the storm god Adad; and the scaly dragon-snake, the mushhushshu, to Marduk, chief god of Babylon. Source: https://www.worldhistory.org/Ishtar_Gate/",
     "topic": "babylon-and-the-hanging-gardens"
@@ -4624,20 +4624,20 @@
       "A star fell burning into the hall",
       "A voice thundered from an empty throne"
     ],
-    "context": "A disembodied hand wrote glowing words on the wall, which is where we get the phrase 'the writing on the wall.' That same night the city was taken and Belshazzar was killed. Source: https://www.ebsco.com/research-starters/history/fall-babylon  (Legend.)",
+    "context": "A disembodied hand wrote glowing words on the wall, which is where English gets the phrase 'the writing on the wall.' That same night the city was taken and Belshazzar was killed. Source: https://www.ebsco.com/research-starters/history/fall-babylon  (Legend.)",
     "topic": "babylon-and-the-hanging-gardens"
   },
   {
     "tier": 4,
-    "question": "Soldiers of Nebuchadnezzar stormed Jerusalem in 587 BC and led thousands of its people away into exile in Babylon. Before they marched the captives off, they burned one great building of the city to the ground. Which building did they burn?",
+    "question": "Soldiers of Nebuchadnezzar stormed Jerusalem in 587 BC and led thousands of its people away into exile in Babylon. They set the city on fire, and with it the holiest building in the kingdom of Judah, once they had stripped it of its gold and silver vessels. Which building was it?",
     "answer": "The Temple of Solomon",
     "choices": [
       "The Temple of Solomon",
-      "The royal palace of the city",
-      "The great granaries by the gate",
-      "The library of the old kings"
+      "The Temple of Herod",
+      "The Tabernacle of Moses",
+      "The Temple of Zerubbabel"
     ],
-    "context": "Nebuchadnezzar's men carried off the Temple's gold and silver vessels along with the people. Half a century later, in 538 BC, the Persian king Cyrus let the exiles go home. Source: https://www.britannica.com/biography/Nebuchadnezzar-II",
+    "context": "Nebuchadnezzar's men carried off the Temple's gold and silver vessels along with the people, and they burned the royal palace and the great houses of the city as well. Half a century later, in 538 BC, the Persian king Cyrus let the exiles go home; the temple they rebuilt, later enlarged by Herod, was burned by the Romans in AD 70. Source: https://www.britannica.com/biography/Nebuchadnezzar-II",
     "topic": "babylon-and-the-hanging-gardens"
   },
   {
@@ -4711,9 +4711,9 @@
     "answer": "Felix Mendelssohn",
     "choices": [
       "Felix Mendelssohn",
-      "Joseph Haydn",
-      "Johannes Brahms",
-      "Wolfgang Mozart"
+      "Frédéric Chopin",
+      "Robert Schumann",
+      "Franz Liszt"
     ],
     "context": "Felix Mendelssohn, only 20, conducted the St. Matthew Passion in Berlin on 11 March 1829, the first major performance in some 80 years, and essentially revived Bach's reputation. Source: Classical Music, 'How Mendelssohn helped bring back the St. Matthew Passion'; Library of Congress, Mendelssohn reviving Bach.",
     "topic": "bach-baroque-counterpoint"
@@ -4876,7 +4876,7 @@
   },
   {
     "tier": 4,
-    "question": "Three small Portuguese ships under Bartolomeu Dias sailed past the southern tip of Africa in 1488 and proved that a sea route around Africa toward India could be sailed. Dias wanted to press on and reach India itself, but his sailors had been at sea for months and were nearly out of food and water. How did the voyage end?",
+    "question": "Bartolomeu Dias led three small Portuguese ships past the southern tip of Africa in 1488 and proved that a sea route around Africa toward India could be sailed. He wanted to press on and reach India itself, but his sailors had been at sea for months and were nearly out of food and water. How did the voyage end?",
     "answer": "His crew refused to go on, forcing Dias to turn back",
     "choices": [
       "His crew refused to go on, forcing Dias to turn back",
@@ -5110,7 +5110,7 @@
   },
   {
     "tier": 1,
-    "question": "William of Normandy won the English crown in 1066, and the Bayeux Tapestry, made in the late 1000s, told the story in 58 scenes nearly 70 metres long. Despite its name, it was never a tapestry at all. What kind of object was it really?",
+    "question": "William of Normandy won the English crown in 1066, and the Bayeux Tapestry, made in the late 1000s, tells the story in 58 scenes nearly 70 metres long. Despite its name, it is not a tapestry at all. What kind of object is it really?",
     "answer": "A long strip of embroidered wool stitched onto linen",
     "choices": [
       "A long strip of embroidered wool stitched onto linen",
@@ -5166,9 +5166,9 @@
     "answer": "About 24",
     "choices": [
       "About 24",
+      "About 45",
       "About 70",
-      "About 130",
-      "About 220"
+      "About 100"
     ],
     "context": "Around 300 Norse ships came; survivors needed only 24 to sail home — a measure of how many men never left. Both leaders, Harald Hardrada and the traitor Tostig, were killed. Sources: https://en.wikipedia.org/wiki/Battle_of_Stamford_Bridge ; https://en.wikipedia.org/wiki/Battle_of_Hastings",
     "topic": "battle-of-hastings-the-norman-conquest-1066"
@@ -5214,15 +5214,15 @@
   },
   {
     "tier": 3,
-    "question": "Harald Hardrada, the towering Viking king of Norway, had invaded England from the north, and before the battle at Stamford Bridge he demanded that Harold of England hand over some land. Legend says an English messenger gave him an answer. What did the messenger offer?",
-    "answer": "Six feet of ground, or a little more",
+    "question": "Harald Hardrada, the towering Viking king of Norway, invaded England from the north with Tostig, the English king's own rebel brother. Legend says an English rider came before the battle at Stamford Bridge to offer Tostig peace, and Tostig asked what Hardrada would get. What did the rider offer Hardrada?",
+    "answer": "Seven feet of ground, or a little more",
     "choices": [
-      "Six feet of ground, or a little more",
+      "Seven feet of ground, or a little more",
       "A rich earldom in the north",
       "A chest of silver and gold",
       "Half of England to rule"
     ],
-    "context": "The full reply, from Snorri Sturluson's saga: Hardrada would get 'six feet of ground, or as much more as he needs, as he is taller than most men' — meaning a grave. Hours later Hardrada was dead. Told as legend. Source: https://en.wikipedia.org/wiki/Battle_of_Stamford_Bridge",
+    "context": "The full reply, in Snorri Sturluson's saga: Hardrada would get 'seven feet of English ground, or as much more as he may be taller than other men,' meaning a grave; many later retellings make it six feet. Hours later Hardrada was dead. Told as legend. Source: Snorri Sturluson, King Harald's Saga (Laing translation); https://en.wikipedia.org/wiki/Battle_of_Stamford_Bridge",
     "topic": "battle-of-hastings-the-norman-conquest-1066"
   },
   {
@@ -5244,11 +5244,11 @@
     "answer": "Four knights cut him down with lance and blade",
     "choices": [
       "Four knights cut him down with lance and blade",
-      "A single arrow struck him through the eye",
+      "He was trampled in the last cavalry charge",
       "A crossbowman shot him from his horse",
-      "William himself ran him through with a spear"
+      "He drowned in a marsh while fleeing the field"
     ],
-    "context": "Per the Carmen, four knights set on Harold: one ran him through with a lance, the second cut off his head, the third speared his entrails, the fourth carried off his thigh. The arrow in the famous Bayeux Tapestry scene may itself be an 1800s repair — eighteenth-century drawings of the same figure show a plain shaft, not a fletched arrow. Some scholars think the real arrow-death belonged to Harald Hardrada (shot through the throat weeks earlier) and got transplanted onto Harold over time. Source: https://www.medievalists.net/2022/10/arrow-king-harold-eye/",
+    "context": "Per the Carmen, four knights set on Harold, Duke William himself among them: one ran him through with a lance, the second cut off his head, the third speared his entrails, the fourth carried off his thigh. The arrow in the famous Bayeux Tapestry scene may itself be an 1800s repair: eighteenth-century drawings of the same figure show a plain shaft, not a fletched arrow. Some scholars think the real arrow-death belonged to Harald Hardrada (shot through the throat weeks earlier) and got transplanted onto Harold over time. Source: https://www.medievalists.net/2022/10/arrow-king-harold-eye/ ; https://www.historytoday.com/shot-through-eye-and-who%E2%80%99s-blame",
     "topic": "battle-of-hastings-the-norman-conquest-1066"
   },
   {
@@ -5279,13 +5279,13 @@
   },
   {
     "tier": 2,
-    "question": "Iwo Jima lay right on the bomber route to Tokyo, and United States Marines stormed it in February 1945. The island's Japanese name, Iōtō, told exactly what the island was made of. What did Iōtō mean?",
+    "question": "Iwo Jima lay right on the bomber route to Tokyo, and United States Marines stormed it in February 1945. The island's Japanese name, Iōtō, came from something its volcanic ground was full of. What did Iōtō mean?",
     "answer": "Sulfur Island",
     "choices": [
       "Sulfur Island",
       "Iron Island",
       "Ash Island",
-      "Storm Island"
+      "Salt Island"
     ],
     "context": "Iōtō means 'Sulfur Island,' and the name was no exaggeration — the volcanic air on Iwo Jima actually stank of sulfur. The island mattered because it lay about 650 miles from Tokyo with airfields right on the route Allied bombers flew to Japan. Sources: en.wikipedia.org/wiki/Iwo_Jima ; National WWII Museum, nationalww2museum.org/war/topics/battle-iwo-jima",
     "topic": "battle-of-iwo-jima"
@@ -5331,13 +5331,13 @@
   },
   {
     "tier": 3,
-    "question": "Chandler Johnson, the battalion commander, sent for a second flag to fly over Mount Suribachi after an officer asked to keep the first one as a souvenir. The second flag was the one Joe Rosenthal photographed. What were Johnson's orders about the new flag?",
-    "answer": "\"Make it a bigger one\"",
+    "question": "Chandler Johnson, the battalion commander, sent for a second flag to fly over Mount Suribachi after the Navy Secretary, James Forrestal, asked to keep the first one as a souvenir. The second flag was the one Joe Rosenthal photographed. What were Johnson's orders about the new flag?",
+    "answer": "To make it a bigger one",
     "choices": [
-      "\"Make it a bigger one\"",
-      "\"Raise it before nightfall\"",
-      "\"Guard it with your lives\"",
-      "\"Fly it at half-staff\""
+      "To make it a bigger one",
+      "To raise it before nightfall",
+      "To guard it with their lives",
+      "To fly it at half-staff"
     ],
     "context": "Johnson said \"And make it a bigger one,\" so troops fighting on the far side of Suribachi could see it. The little first flag measured 54x28 inches; the big replacement was 96x56 inches and came from the ship USS LST-779. Sources: en.wikipedia.org/wiki/Raising_the_Flag_on_Iwo_Jima ; military.com/history/story-behind-two-flag-raisings-battle-of-iwo-jima.html",
     "topic": "battle-of-iwo-jima"
@@ -5345,19 +5345,19 @@
   {
     "tier": 3,
     "question": "Chester Nimitz, commander of the United States Pacific Fleet, read the casualty lists from Iwo Jima, where nearly 7,000 Americans had died fighting Japanese defenders dug into the rock. He summed up the men who served there in one sentence, later cut into the stone of the Marine Corps War Memorial. What did Nimitz say about them?",
-    "answer": "\"Uncommon valor was a common virtue\"",
+    "answer": "That uncommon valor was a common virtue",
     "choices": [
-      "\"Uncommon valor was a common virtue\"",
-      "\"They died so that freedom might live\"",
-      "\"No finer fighting men ever drew breath\"",
-      "\"Their courage outlasted the longest night\""
+      "That uncommon valor was a common virtue",
+      "That they had died so that freedom might live",
+      "That no finer fighting men had ever drawn breath",
+      "That their courage had outlasted the longest night"
     ],
     "context": "Nimitz's line — \"Among those who served on Iwo Jima, uncommon valor was a common virtue\" — is now engraved on the Marine Corps War Memorial in Arlington. Sources: National Museum of the Marine Corps, usmcmuseum.com/blog/uncommon-valor-was-a-common-virtue ; defensemedianetwork.com",
     "topic": "battle-of-iwo-jima"
   },
   {
     "tier": 3,
-    "question": "A damaged B-29 bomber set down safely on Iwo Jima's runway on 4 March 1945, while Marines were still fighting for the island. It was the first of about 2,400 bombers in trouble to land on the island, and an estimated 27,000 airmen were saved that way. What name was painted on that first bomber?",
+    "question": "Marines were still fighting for Iwo Jima on 4 March 1945 when a damaged B-29 bomber set down safely on its runway. It was the first of about 2,400 bombers in trouble to land on the island, and an estimated 27,000 airmen were saved that way. What name was painted on that first bomber?",
     "answer": "\"Dinah Might\"",
     "choices": [
       "\"Dinah Might\"",
@@ -5409,15 +5409,15 @@
   },
   {
     "tier": 5,
-    "question": "As a young officer, Tadamichi Kuribayashi spent time in the United States, at Harvard and the University of Michigan, years before he would defend Iwo Jima to the death. Having seen American factories and American power up close, what did he keep warning his family?",
-    "answer": "\"America is the last country in the world Japan should fight\"",
+    "question": "As a young officer, Tadamichi Kuribayashi spent time in the United States, at Harvard and the University of Michigan, years before he would defend Iwo Jima to the death. Having seen American factories and American power up close, what did he keep telling his family?",
+    "answer": "That America was the last country in the world Japan should fight",
     "choices": [
-      "\"America is the last country in the world Japan should fight\"",
-      "\"America will soon tire of war and seek peace\"",
-      "\"America's soldiers have no stomach for losses\"",
-      "\"America can be beaten if Japan strikes first\""
+      "That America was the last country in the world Japan should fight",
+      "That America would soon tire of war and seek peace",
+      "That America's soldiers had no stomach for losses",
+      "That America could be beaten if Japan struck first"
     ],
-    "context": "Kuribayashi knew American industrial might firsthand and told his family America was the last country Japan should ever take on. He was probably killed leading a final attack in the early morning of 26 March 1945 — and held that grim conviction as he defended the island. Source: en.wikipedia.org/wiki/Tadamichi_Kuribayashi",
+    "context": "Kuribayashi knew American industrial might firsthand, and before Pearl Harbor he told his family again and again: \"America is the last country in the world Japan should fight.\" He was probably killed leading a final attack in the early morning of 26 March 1945, and held that grim conviction as he defended the island. Source: en.wikipedia.org/wiki/Tadamichi_Kuribayashi",
     "topic": "battle-of-iwo-jima"
   },
   {
@@ -5500,7 +5500,7 @@
   },
   {
     "tier": 2,
-    "question": "The Spartans agreed to help Athens against the Persian army that had landed at Marathon, but they would not march yet, and they reached the field only after the battle was over. What were the Spartans waiting for before their army could set out?",
+    "question": "Greece's mightiest warrior city agreed to help Athens against the Persian army that had landed at Marathon, but its soldiers would not march yet, and they reached the field only after the battle was over. What were they waiting for before they could set out?",
     "answer": "For the moon to grow full",
     "choices": [
       "For the moon to grow full",
@@ -5604,15 +5604,15 @@
   },
   {
     "tier": 4,
-    "question": "Herodotus wrote the earliest account of the Battle of Marathon, and in it no messenger ran back to Athens, cried that the Athenians had won and dropped dead. Robert Browning's poem later retold that story. Where did the drop-dead version first appear?",
-    "answer": "In Lucian, writing 600 years later",
+    "question": "Herodotus wrote the earliest account of the Battle of Marathon, and in it no messenger ran back to Athens, cried that the Athenians had won and dropped dead. Robert Browning's poem later retold that story. Whose surviving writings are the first to tell the drop-dead version?",
+    "answer": "Plutarch",
     "choices": [
-      "In Lucian, writing 600 years later",
-      "In a Spartan war monument",
-      "In Herodotus's own footnotes",
-      "In an Athenian victory hymn"
+      "Plutarch",
+      "Thucydides",
+      "Demosthenes",
+      "Xenophon"
     ],
-    "context": "The satirist Lucian (2nd century AD) has a runner named 'Philippides' cry 'Nenikekamen' ('We have won!') and die on the spot. Lucian is the only ancient source with every element of the modern legend; over the centuries Herodotus's Pheidippides, Plutarch's Eucles, and Lucian's Philippides got merged into one hero. Source: https://sententiaeantiquae.com/2015/12/06/myths-of-marathons-herodotus-lucian-plutarch-and-us/",
+    "context": "The earliest surviving version is in Plutarch (about AD 46 to 120), who names the runner as a herald called Thersippus or Eucles. About a century later the satirist Lucian told it of a runner named Philippides, who cried 'Joy, we win!' and died on the spot. Over the centuries Herodotus's Pheidippides, Plutarch's Eucles and Lucian's Philippides merged into one hero. Source: https://en.wikipedia.org/wiki/Pheidippides",
     "topic": "battle-of-marathon-490-bc-and-the-runner-pheidip"
   },
   {
@@ -5623,7 +5623,7 @@
       "It turned the tide of the Pacific War",
       "It forced Japan to surrender within weeks",
       "It ended all fighting in the Pacific",
-      "It captured the Japanese home islands"
+      "It changed little, as Japan rebuilt fast"
     ],
     "context": "The four sunk carriers were Akagi, Kaga, Soryu, and Hiryu. Japan had used these same ships to attack Pearl Harbor; losing all four in one day cost it the heart of its carrier striking force. (en.wikipedia.org/wiki/Battle_of_Midway)",
     "topic": "battle-of-midway"
@@ -5734,13 +5734,13 @@
   },
   {
     "tier": 5,
-    "question": "The destroyer Arashi was alone that morning, far behind the rest of the Japanese fleet, when Wade McClusky's dive-bombers spotted her and followed her wake. She had been held back by a task that had nothing to do with McClusky. Why had the Arashi fallen behind the fleet?",
-    "answer": "She had stayed behind to hunt an American submarine",
+    "question": "Wade McClusky's dive-bombers spotted the destroyer Arashi steaming by herself on the morning of 4 June 1942. She was on her own because of a job that had nothing to do with McClusky. What had the Arashi been doing before he found her?",
+    "answer": "Hunting an American submarine",
     "choices": [
-      "She had stayed behind to hunt an American submarine",
-      "She had stopped to pick up downed Japanese pilots",
-      "She had broken down and made hasty repairs",
-      "She had been scouting eastward for the American fleet"
+      "Hunting an American submarine",
+      "Picking up downed Japanese pilots",
+      "Making hasty repairs to her engines",
+      "Scouting east for the American fleet"
     ],
     "context": "The Arashi had been depth-charging the U.S. submarine Nautilus (Lt. Cdr. William Brockman), which was harassing the carriers; her dash back to rejoin drew the wake McClusky followed. So an American submarine indirectly led the dive-bombers to their targets -- skill and luck braided together. (en.wikipedia.org/wiki/USS_Nautilus_(SS-168))",
     "topic": "battle-of-midway"
@@ -5786,12 +5786,12 @@
   },
   {
     "tier": 4,
-    "question": "Jean Lafitte ran a pirate base in the swamps south of New Orleans, and before the battle of January 1815 the British wrote to him offering $30,000 and a captain's rank in the Royal Navy if he would help them take the city. Andrew Jackson had once called his men 'hellish banditti.' Lafitte did not take the bribe. What did he do instead?",
+    "question": "Jean Lafitte ran a pirate base in the swamps south of New Orleans, and before the battle of January 1815 the British wrote to him offering $30,000 and a captain's rank in the Royal Navy if he would help them take the city. Andrew Jackson had once called his men 'hellish banditti.' What did Lafitte do?",
     "answer": "He handed the British letters to the Americans and joined Jackson for a pardon",
     "choices": [
       "He handed the British letters to the Americans and joined Jackson for a pardon",
       "He fled the region with his ships and stayed out of the fighting entirely",
-      "He pocketed the money and then quietly betrayed the British plans to no one",
+      "He took the British gold and guided their boats through the swamps",
       "He demanded twice the sum and a fleet before agreeing to help the British"
     ],
     "context": "Jackson had once called Lafitte's Baratarian privateers 'hellish banditti' — but he took the deal. About 50 of Lafitte's men worked the cannons in Jackson's defense. The defending army was a wild mix: Tennessee and Kentucky frontier marksmen, Louisiana militia, New Orleans free Men of Color, Choctaw warriors under leaders like Pushmataha, U.S. regulars, sailors, marines, and the pirates. Source: britannica.com/biography/Jean-Laffite; nps.gov.",
@@ -5916,20 +5916,7 @@
   },
   {
     "tier": 1,
-    "question": "Hitler's armies drove toward a city on the Volga in 1942. Its old name was Tsaritsyn, but in 1925 it took the name of the Soviet Union's rising leader, so holding it became a matter of personal pride for him. Who was that leader?",
-    "answer": "Joseph Stalin",
-    "choices": [
-      "Joseph Stalin",
-      "Vladimir Lenin",
-      "Leon Trotsky",
-      "Nikita Khrushchev"
-    ],
-    "context": "Renamed Stalingrad, the city carried Stalin's own name, so holding or taking it became a prestige contest for both Stalin and Hitler on top of its value controlling Volga shipping. The battle there (17 July 1942 to 2 February 1943) is often called the deadliest single battle in human history. Source: https://en.wikipedia.org/wiki/Battle_of_Stalingrad",
-    "topic": "battle-of-stalingrad"
-  },
-  {
-    "tier": 2,
-    "question": "German and Soviet soldiers fought through Stalingrad's bombed-out ruins for single rooms, cellars and stairwells, and the same building changed hands again and again. The Germans gave this grinding fight a grim nickname. What did they call it?",
+    "question": "German and Soviet soldiers fought through Stalingrad's bombed-out ruins for single rooms, cellars and stairwells, and the same building changed hands again and again. The Germans gave this close, savage fighting a grim nickname. What did they call it?",
     "answer": "the War of the Rats",
     "choices": [
       "the War of the Rats",
@@ -5994,13 +5981,13 @@
   },
   {
     "tier": 4,
-    "question": "The German Sixth Army had pushed deep into Stalingrad by November 1942, but weaker allied armies guarded its long flanks. The Soviets launched Operation Uranus on 19 November: instead of hitting the Germans head-on, their pincers smashed through one ally's lines and met near the town of Kalach, encircling about 290,000 Axis troops. Whose troops did the pincers tear through?",
-    "answer": "Romania's",
+    "question": "The German Sixth Army had fought its way deep into Stalingrad by November 1942. On 19 November the Soviets launched Operation Uranus, and within four days their pincers met near the town of Kalach, encircling about 290,000 Axis troops. How did the Soviet attack break through?",
+    "answer": "It struck the weak Romanian armies on the flanks",
     "choices": [
-      "Romania's",
-      "Italy's",
-      "Hungary's",
-      "Bulgaria's"
+      "It struck the weak Romanian armies on the flanks",
+      "It stormed the Germans head-on across the Volga",
+      "It dropped paratroopers behind the German lines",
+      "It drove through the ruined city center at night"
     ],
     "context": "The pincers broke the Romanian armies holding the flanks and met near Kalach on 22 November, sealing the 6th Army inside the city. Source: https://en.wikipedia.org/wiki/Operation_Uranus",
     "topic": "battle-of-stalingrad"
@@ -6020,15 +6007,15 @@
   },
   {
     "tier": 4,
-    "question": "Adolf Hitler promoted Friedrich Paulus to field marshal on 30 January 1943, with the Sixth Army doomed inside Stalingrad, and pointedly noted that no German field marshal had ever surrendered. It was a coded order for Paulus to shoot himself. Paulus surrendered the next morning instead. What did his aide record him saying about killing himself?",
-    "answer": "I'm not going to do them such a favour.",
+    "question": "Adolf Hitler promoted Friedrich Paulus to field marshal on 30 January 1943, with the Sixth Army doomed inside Stalingrad, and pointedly noted that no German field marshal had ever surrendered. It was a coded order for Paulus to shoot himself. Paulus surrendered the next morning instead. What did his aide record him saying about it?",
+    "answer": "That he would not do them such a favour",
     "choices": [
-      "I'm not going to do them such a favour.",
-      "A soldier dies, he does not beg.",
-      "Let history judge this defeat.",
-      "I serve Germany, not one man."
+      "That he would not do them such a favour",
+      "That a soldier dies but does not beg",
+      "That history should judge this defeat",
+      "That he served Germany, not one man"
     ],
-    "context": "Paulus's surrender made the 6th Army the first of Hitler's field armies ever to capitulate. Of roughly 91,000 frozen, starving Germans taken prisoner, only about 5,000 to 6,000 ever returned home. Source: https://en.wikipedia.org/wiki/Friedrich_Paulus",
+    "context": "His aide, Colonel Wilhelm Adam, recorded Paulus saying: \"One can't help feeling it's an invitation to suicide. However I'm not going to do them such a favour.\" The surrender made the 6th Army the first of Hitler's field armies ever to capitulate. Of roughly 91,000 frozen, starving Germans taken prisoner, only about 5,000 to 6,000 ever returned home. Source: https://en.wikipedia.org/wiki/Friedrich_Paulus",
     "topic": "battle-of-stalingrad"
   },
   {
@@ -6059,7 +6046,7 @@
   },
   {
     "tier": 3,
-    "question": "Writing his war memoirs afterwards, Winston Churchill confessed that while Britain fought to keep its Atlantic supply line open against Germany's submarines, only one danger had ever really frightened him. Which danger did he name?",
+    "question": "Winston Churchill led Britain through five years of war, from the dark days of 1940 to victory in 1945. Writing his war memoirs afterwards, he confessed that only one danger in the whole war had ever really frightened him. Which danger did he name?",
     "answer": "The U-boat peril",
     "choices": [
       "The U-boat peril",
@@ -6072,15 +6059,15 @@
   },
   {
     "tier": 3,
-    "question": "German U-boats hunted the Allied merchant ships that carried food, weapons and troops across the Atlantic from America to Britain. To live through the attacks, the merchant ships did not sail alone: they packed together by the dozens, up to about sixty in columns of five, with Allied warships ringed around them. What was this guarded grouping called?",
-    "answer": "A convoy",
+    "question": "German U-boats hunted the Allied merchant ships that carried food, weapons and troops across the Atlantic from America to Britain. To survive, the merchant ships sailed together in convoys, dozens at a time in columns, with warships ringed around them. How did the U-boats answer the convoys?",
+    "answer": "They gathered in wolfpacks to swarm one convoy at night",
     "choices": [
-      "A convoy",
-      "A flotilla",
-      "A blockade",
-      "A picket line"
+      "They gathered in wolfpacks to swarm one convoy at night",
+      "They flew false Allied flags to slip in among the ships",
+      "They laid smoke screens to hide from the escorts",
+      "They towed decoy rafts to lure the escorts away"
     ],
-    "context": "Safety came from sailing together, not alone — the escorts could only guard ships that stayed bunched in the box. The Germans answered the convoy with their 'Wolfpack' tactic, gathering many U-boats to swarm one convoy at night. Source: Imperial War Museum, 'What you need to know about the Battle of the Atlantic'.",
+    "context": "A wolfpack, Rudeltaktik in German, gathered many U-boats on one convoy, usually attacking on the surface at night, when a low submarine was hard to see. The convoy still worked, because escorts could guard only ships that kept together. Source: Imperial War Museum, 'What you need to know about the Battle of the Atlantic'; https://en.wikipedia.org/wiki/Wolfpack_(naval_tactic)",
     "topic": "battle-of-the-atlantic-and-u-boats"
   },
   {
@@ -6111,29 +6098,16 @@
   },
   {
     "tier": 5,
-    "question": "British escorts forced the submarine U-110 to the surface on 9 May 1941, and its crew abandoned ship. David Balme, a sub-lieutenant, led a boarding party down into the dark, possibly sinking hull. What did his men carry out that soon proved priceless to Britain?",
-    "answer": "Its intact Enigma cipher machine and codebooks",
+    "question": "British escorts forced the submarine U-110 to the surface on 9 May 1941, and its crew abandoned ship. David Balme, a sub-lieutenant, led a boarding party down into the dark, possibly sinking hull. What did his men carry out of the boat?",
+    "answer": "Its Enigma machine and codebooks, unharmed",
     "choices": [
-      "Its intact Enigma cipher machine and codebooks",
+      "Its Enigma machine and codebooks, unharmed",
       "A complete map of the convoy routes",
       "A list of every U-boat captain",
-      "The submarine's secret fuel reserves"
+      "The boat's new acoustic torpedoes"
     ],
-    "context": "U-110's captain Fritz-Julius Lemp had jumped into the sea to swim back and scuttle the boat, but it was too late. Reading this traffic ('Ultra') let the Allies steer convoys around waiting wolfpacks — and German intelligence kept assuring Admiral Dönitz that Enigma was unbreakable. The genuine 'science wins wars' thread linking the Atlantic to Bletchley. Source: ForcesNews; WW2Today.",
+    "context": "U-110's captain, Fritz-Julius Lemp, had ordered the boat abandoned, then tried to swim back to destroy the secret material and was never seen again. The capture stayed one of the war's best-kept secrets, and Bletchley Park's reading of U-boat signals ('Ultra') let the Allies steer convoys around waiting wolfpacks, while German intelligence kept assuring Admiral Dönitz that Enigma was unbreakable. Source: https://en.wikipedia.org/wiki/German_submarine_U-110_(1940); ForcesNews; WW2Today.",
     "topic": "battle-of-the-atlantic-and-u-boats"
-  },
-  {
-    "tier": 2,
-    "question": "Hitler's armies tore into the snowbound Ardennes forest of Belgium in December 1944, and on the war maps the ground they seized pushed deep into the Allied front line. American soldiers named the fight after that shape. What did they call it?",
-    "answer": "the Battle of the Bulge",
-    "choices": [
-      "the Battle of the Bulge",
-      "the Battle of the Dent",
-      "the Battle of the Breakthrough",
-      "the Battle of the Wedge"
-    ],
-    "context": "The German breakthrough on December 16, 1944 pushed a huge dent into the Allied front line — the bulge that gave the battle its nickname. Over 600,000 American troops were eventually drawn in, making it the largest battle the U.S. Army has ever fought. Source: https://www.nationalww2museum.org/war/articles/battle-of-the-bulge",
-    "topic": "battle-of-the-bulge"
   },
   {
     "tier": 2,
@@ -6164,19 +6138,19 @@
   {
     "tier": 3,
     "question": "Otto Skorzeny's English-speaking German commandos put on captured American uniforms and drove American jeeps behind the lines. At checkpoints the guards could not tell friend from spy by sight, so they grilled each other with questions a real American would know cold but a disguised German might miss. What did the GIs quiz each other about?",
-    "answer": "American pop culture, like Mickey Mouse's girlfriend",
+    "answer": "American trivia, like Mickey Mouse's girlfriend",
     "choices": [
-      "American pop culture, like Mickey Mouse's girlfriend",
-      "the day's secret password",
-      "their home addresses and birthdays",
-      "the names of their officers"
+      "American trivia, like Mickey Mouse's girlfriend",
+      "the day's password and its countersign",
+      "their home towns and their birthdays",
+      "the names and ranks of their officers"
     ],
     "context": "GIs asked things like who Mickey Mouse's girlfriend was, which baseball team played where, or state capitals — trivia a homegrown American absorbed by osmosis. Otto Skorzeny led the operation; only about 10 of his men spoke flawless American slang. Source: https://www.nationalww2museum.org/war/articles/operation-greif-secret-mission-sow-chaos-us-army",
     "topic": "battle-of-the-bulge"
   },
   {
     "tier": 3,
-    "question": "George Patton needed his planes in the air, with the 101st Airborne trapped at Bastogne, but fog and rain kept them on the ground. He ordered his Third Army chaplain, James O'Neill, to write a prayer for clear skies and had it printed on cards for the troops. The skies cleared on 23 December 1944 and the planes flew. How did Patton reward the chaplain?",
+    "question": "George Patton had his Third Army chaplain, James O'Neill, write a prayer for clear weather early in December 1944 and printed it on cards for the troops. Then the Germans struck, and fog kept the planes grounded while the 101st Airborne was trapped at Bastogne. On 23 December the skies cleared and the planes flew. How did Patton reward the chaplain?",
     "answer": "Pinned a Bronze Star on him",
     "choices": [
       "Pinned a Bronze Star on him",
@@ -6189,7 +6163,7 @@
   },
   {
     "tier": 4,
-    "question": "Joachim Peiper's Waffen-SS troops captured a group of unarmed American prisoners at the Baugnez crossroads near Malmedy, Belgium, on 17 December 1944 and machine-gunned them in a field: about 84 men, the largest massacre of U.S. soldiers in Europe during the war. How did more than 50 of the captured Americans manage to survive the shooting?",
+    "question": "Joachim Peiper's Waffen-SS troops captured a group of unarmed American prisoners at the Baugnez crossroads near Malmedy, Belgium, on 17 December 1944 and machine-gunned them in a field: about 84 men, the largest massacre of U.S. soldiers in Europe during the war. Some of the captured Americans lived through it. How did they survive the shooting?",
     "answer": "they fell down playing dead, then ran",
     "choices": [
       "they fell down playing dead, then ran",
@@ -6197,7 +6171,7 @@
       "they were ransomed back by officers",
       "a German soldier let them go"
     ],
-    "context": "On December 17, 1944, more than 50 GIs survived by dropping as if killed and then running once the SS men moved on. After the war Peiper was sentenced to death for the massacre, but his sentence was commuted and he was released in 1956; in 1976 his house in France was firebombed and he was killed. Source: https://www.nationalww2museum.org/war/articles/malmedy-massacre",
+    "context": "On December 17, 1944, 43 GIs lived through it, many by dropping as if killed and then running once the SS men moved on. After the war Peiper was sentenced to death for the massacre, but his sentence was commuted and he was released in 1956; in 1976 his house in France was firebombed and he was killed. Source: https://www.nationalww2museum.org/war/articles/malmedy-massacre ; https://en.wikipedia.org/wiki/Malmedy_massacre",
     "topic": "battle-of-the-bulge"
   },
   {
@@ -6527,28 +6501,15 @@
   },
   {
     "tier": 2,
-    "question": "Thomas Edison did not think great inventions came from sudden flashes of genius. To him they came from trying, failing and trying again, and he packed that belief into one famous line, which he confirmed in a 1927 letter. What did he say invention really was?",
-    "answer": "\"One percent inspiration and ninety-nine percent perspiration.\"",
+    "question": "Thomas Edison did not think great inventions came from sudden flashes of brilliance. To him they came from trying, failing and trying again, and he packed that belief into one famous line, which he confirmed in a 1927 letter. What did he say genius really was?",
+    "answer": "One percent inspiration, ninety-nine percent perspiration",
     "choices": [
-      "\"One percent inspiration and ninety-nine percent perspiration.\"",
-      "\"A thousand failures for every single success.\"",
-      "\"Equal parts imagination and stubborn hard work.\"",
-      "\"Mostly luck, and a little bit of cleverness.\""
+      "One percent inspiration, ninety-nine percent perspiration",
+      "A thousand failures for every single success",
+      "Equal parts imagination and stubborn hard work",
+      "Ten parts patience for every part of talent"
     ],
-    "context": "The line captures Edison's whole method: test 1,600 materials if that's what it takes. https://en.wikiquote.org/wiki/Thomas_Edison",
-    "topic": "bell-edison-and-the-late-century-invention-boom"
-  },
-  {
-    "tier": 3,
-    "question": "George Westinghouse and Nikola Tesla backed a kind of electricity that could be pushed for miles over thin wires. Thomas Edison, their rival in the War of the Currents, championed direct current (DC), which was safe but grew weak after a short distance. The rival to DC won, and it still flows from every wall socket today. What kind of current was it?",
-    "answer": "Alternating current (AC)",
-    "choices": [
-      "Alternating current (AC)",
-      "Stronger direct current (DC)",
-      "Static electric charge",
-      "Stored battery current"
-    ],
-    "context": "Alternating current reverses direction many times a second, which let transformers boost it to high voltage for long trips and then lower it again for safe use in homes. https://www.history.com/articles/what-was-the-war-of-the-currents",
+    "context": "Edison's words: \"Genius is one percent inspiration, ninety-nine percent perspiration.\" In a 1927 letter he wrote that it was \"quite true\" he had once said so. The line captures his whole method: test 1,600 materials if that's what it takes. https://en.wikiquote.org/wiki/Thomas_Edison",
     "topic": "bell-edison-and-the-late-century-invention-boom"
   },
   {
@@ -6593,14 +6554,14 @@
   {
     "tier": 3,
     "question": "George Westinghouse had fought to keep his alternating current out of executions. Yet it powered the first electric chair, and on 6 August 1890 the execution of William Kemmler went horribly wrong: after the first jolt he was still breathing, and a witness screamed, \"Great God! He's alive!\" What did Westinghouse say afterward?",
-    "answer": "\"They could have done better with an ax.\"",
+    "answer": "That they would have done better using an ax",
     "choices": [
-      "\"They could have done better with an ax.\"",
-      "\"No machine of mine was ever meant for this.\"",
-      "\"The fault lies with the men, not the wires.\"",
-      "\"This is murder dressed up as science.\""
+      "That they would have done better using an ax",
+      "That his machines were never meant for killing",
+      "That the fault lay with the men, not the wires",
+      "That it was murder dressed up as science"
     ],
-    "context": "Westinghouse had fought to keep his AC out of executions, and the gruesome failure horrified him. The first jolt of about 700 volts ran 17 seconds and failed; a second of over 1,000 volts ran two minutes. Edison's camp had used AC in the chair to smear Westinghouse's technology. Sources: https://www.smithsonianmag.com/history/edison-vs-westinghouse-a-shocking-rivalry-102146036/; https://en.wikipedia.org/wiki/William_Kemmler",
+    "context": "Westinghouse had fought to keep his AC out of executions, and the gruesome failure horrified him: \"They would have done better using an ax,\" he said. The first jolt ran 17 seconds and failed; a second, stronger one was needed to finish the job. Edison's camp had used AC in the chair to smear Westinghouse's technology. Sources: https://www.smithsonianmag.com/history/edison-vs-westinghouse-a-shocking-rivalry-102146036/; https://en.wikipedia.org/wiki/William_Kemmler",
     "topic": "bell-edison-and-the-late-century-invention-boom"
   },
   {
@@ -6674,9 +6635,9 @@
     "answer": "Christ himself",
     "choices": [
       "Christ himself",
-      "royal envoy",
-      "lost brother",
-      "wandering angel"
+      "a royal envoy",
+      "a lost brother",
+      "a wandering angel"
     ],
     "context": "'Let all guests who arrive be received like Christ, for He is going to say: I was a stranger and you welcomed me.' Every traveler at the gate, however poor, was to be greeted as if Christ Himself had come. Source: https://en.wikipedia.org/wiki/Rule_of_Saint_Benedict",
     "topic": "benedictine-monasticism-monastery-life"
@@ -6709,7 +6670,7 @@
   },
   {
     "tier": 3,
-    "question": "Benedict ordered his monks to spend set hours of every day at hard manual labour and other set hours at sacred reading. In chapter 48 of the Rule he gave his blunt reason: one thing, he wrote, was the enemy of the soul. What did Benedict call the enemy of the soul?",
+    "question": "Benedict of Nursia could be blunt with his monks. Chapter 48 of his Rule opens with a short warning that names one thing as the enemy of the soul, a danger he meant every monastery to guard against. What did Benedict call the enemy of the soul?",
     "answer": "Idleness",
     "choices": [
       "Idleness",
@@ -6722,7 +6683,7 @@
   },
   {
     "tier": 3,
-    "question": "High on a mountaintop in southern Italy, around 529, Benedict founded his greatest monastery, Monte Cassino, which became the home of all Benedictine monks. The summit was not empty when he came, and before he could build he tore down what already stood there. What did he tear down?",
+    "question": "High on a mountaintop in southern Italy, around 529, Benedict founded his greatest monastery, Monte Cassino, the mother house of the monks who would follow his Rule. The summit was not empty when he came, and before he could build he tore down what already stood there. What did he tear down?",
     "answer": "A pagan temple to Apollo",
     "choices": [
       "A pagan temple to Apollo",
@@ -6735,7 +6696,7 @@
   },
   {
     "tier": 3,
-    "question": "An English scribe of the eleventh century, worn out by copying books by hand, scribbled a short four-word prayer in Old English into a margin. One monk complained that such work dimmed the eyes, ached the back and knit the chest and belly together. What did the weary scribe write?",
+    "question": "An English scribe of the eleventh century bent over his desk in the scriptorium, copying a book letter by letter with a quill. Worn out, he scribbled a short prayer of four words in Old English into the margin. What did the weary scribe write?",
     "answer": "'God help my hands'",
     "choices": [
       "'God help my hands'",
@@ -6761,7 +6722,7 @@
   },
   {
     "tier": 3,
-    "question": "Dom Pierre Perignon, a Benedictine monk, worked on the wines of the Champagne region in the 1600s. A beloved story has him cry out on first tasting sparkling champagne, 'Come quickly, I am drinking the stars!' Historians say Perignon never said it, was blind in old age, and did not even invent champagne. Where did the line first appear?",
+    "question": "Dom Pierre Perignon, a Benedictine monk, worked on the wines of the Champagne region in the 1600s. A beloved story has him cry out on first tasting sparkling champagne, 'Come quickly, I am drinking the stars!' Historians say Perignon never said it and did not even invent champagne. Where did the line first appear?",
     "answer": "In a 19th-century advertisement",
     "choices": [
       "In a 19th-century advertisement",
@@ -6813,7 +6774,7 @@
   },
   {
     "tier": 1,
-    "question": "Benjamin Franklin walked off the boat into Philadelphia in October 1723, seventeen, broke and hungry. He bought three puffy rolls and had no bag to hold them. Deborah Read, the girl he would one day marry, laughed at the sight from her father's doorway. How did he carry the rolls?",
+    "question": "Benjamin Franklin stepped off the boat in Philadelphia in October 1723, seventeen, broke and hungry, and bought three puffy rolls with no bag to hold them. Deborah Read, his future wife, watched him pass and found the sight ridiculous. How did he carry the rolls?",
     "answer": "With a roll under each arm, eating the third",
     "choices": [
       "With a roll under each arm, eating the third",
@@ -6860,7 +6821,7 @@
       "Monocles",
       "Binoculars"
     ],
-    "context": "Franklin's 'double spectacles' are what we now call bifocals: one pair does two jobs, so the wearer looks up to see across a room and glances down to read, exactly how bifocals still work. Like his other inventions, he never patented them. Source: The Franklin Institute, 'Benjamin Franklin's Inventions' (fi.edu); History.com; science.howstuffworks.com, '10 Ben Franklin Inventions'.",
+    "context": "Franklin's 'double spectacles' are what are now called bifocals: one pair does two jobs, so the wearer looks up to see across a room and glances down to read, exactly how bifocals still work. Like his other inventions, he never patented them. Source: The Franklin Institute, 'Benjamin Franklin's Inventions' (fi.edu); History.com; science.howstuffworks.com, '10 Ben Franklin Inventions'.",
     "topic": "benjamin-franklin-inventor-diplomat-founder"
   },
   {
@@ -6891,11 +6852,11 @@
   },
   {
     "tier": 3,
-    "question": "The French treated Benjamin Franklin like a star when he arrived in Paris as America's envoy. A French gentleman was expected to wear a fancy powdered wig, but Franklin went about in something plain and homespun that the French found charming. What did he wear on his head?",
-    "answer": "A plain fur cap",
+    "question": "The French treated Benjamin Franklin like a star when he arrived in Paris as America's envoy. A French gentleman was expected to wear a fancy powdered wig, but Franklin went about with something quite different on his head, and the French adored him for it. What did he wear?",
+    "answer": "A fur cap",
     "choices": [
-      "A plain fur cap",
-      "A simple straw hat",
+      "A fur cap",
+      "A straw hat",
       "A tall silk hat",
       "A red liberty cap"
     ],
@@ -6922,8 +6883,8 @@
     "choices": [
       "Money, weapons, and a powerful navy",
       "Maps, spies, and a promise of secrecy",
-      "Settlers, farm tools, and seeds for the frontier",
-      "Gold, silk, and fine wine for the generals"
+      "Indian allies and the old frontier forts",
+      "Canadian ports and the northern fur trade"
     ],
     "context": "France's cash, guns, and especially its fleet tipped the war toward American victory; without the French alliance Franklin secured, independence might have failed. Source: history.state.gov, 'Benjamin Franklin: First American Diplomat'; history.com, 'Ben Franklin in Paris'.",
     "topic": "benjamin-franklin-inventor-diplomat-founder"
@@ -6943,28 +6904,28 @@
   },
   {
     "tier": 1,
-    "question": "Benjamin Franklin loved to swim, and at about 11 years old he made his very first invention to go faster in the water. He cut two flat oval pieces of wood with holes for his thumbs and strapped them to his hands. What had he built?",
+    "question": "Benjamin Franklin loved to swim, and at about 11 years old he made his very first invention for the water. He shaped two flat oval pieces of wood, each about ten inches long with a hole cut in it. What had he built?",
     "answer": "Swim paddles for his hands",
     "choices": [
       "Swim paddles for his hands",
-      "A wooden diving mask",
-      "A pair of webbed wooden flippers",
-      "An inflatable leather float"
+      "A pair of wooden goggles",
+      "Floats to tie around his arms",
+      "A small raft to rest on"
     ],
     "context": "The oval paddles were about 10 by 6 inches; Franklin recalled they sped him up by letting him push more water, but they tired out his wrists. He stayed a strong swimmer his whole life. Source: The Franklin Institute, fi.edu/en/science-and-education/benjamin-franklin/inventions; History.com.",
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
     "tier": 2,
-    "question": "Benjamin Franklin sent a silk kite aloft in 1752, and the test proved his point. He soon turned the discovery into a practical invention, and before long it was found all over the colonies. Which of his inventions grew out of that kite?",
+    "question": "Benjamin Franklin flew a silk kite in a storm in 1752 and showed that a thundercloud carries electricity. The proof backed an invention he had first proposed a few years earlier, and he soon put it to work. Which invention was it?",
     "answer": "The lightning rod",
     "choices": [
       "The lightning rod",
-      "The Franklin stove",
-      "The glass armonica",
-      "Bifocal spectacles"
+      "The electric battery",
+      "The Leyden jar",
+      "The static generator"
     ],
-    "context": "The pointed iron rod carries the charge safely down a wire into the ground instead of letting it blast through the roof — a direct payoff from Franklin's kite work, and still standard on tall buildings today. Source: The Franklin Institute, fi.edu/en/science-and-education/benjamin-franklin/inventions; History.com.",
+    "context": "Franklin had proposed pointed iron rods as early as 1749 to 1750; the kite showed that storm clouds really carry electricity, and rods that lead the charge safely down a wire into the ground soon went up on buildings. They are still standard on tall buildings today. Source: https://en.wikipedia.org/wiki/Lightning_rod ; The Franklin Institute, fi.edu/en/science-and-education/benjamin-franklin/inventions",
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
@@ -7081,7 +7042,7 @@
       "Delivering a speech to Congress against slavery",
       "Leaving his estate to the abolition society"
     ],
-    "context": "The man who once sold enslaved people made ending slavery his dying cause. The Pennsylvania Abolition Society's petition, which he signed as its president, asked Congress to end slavery and the slave trade and to 'devise means for removing the Inconsistency from the Character of the American People.' He died a few weeks later. In those last weeks he also published a hoax as 'Historicus', a fake speech by an Algerian, Sidi Mehemet Ibrahim, defending the enslavement of Christians, mirroring a Georgia congressman's defence of American slavery to expose it as absurd. Source: National Archives, 'Benjamin Franklin's Anti-Slavery Petitions to Congress' (archives.gov); Bill of Rights Institute.",
+    "context": "The man who once owned enslaved people and advertised their sale made ending slavery his dying cause. The Pennsylvania Abolition Society's petition, which he signed as its president, asked Congress to end slavery and the slave trade and to 'devise means for removing the Inconsistency from the Character of the American People.' He died a few weeks later. In those last weeks he also published a hoax as 'Historicus', a fake speech by an Algerian, Sidi Mehemet Ibrahim, defending the enslavement of Christians, mirroring a Georgia congressman's defence of American slavery to expose it as absurd. Source: National Archives, 'Benjamin Franklin's Anti-Slavery Petitions to Congress' (archives.gov); Bill of Rights Institute.",
     "topic": "benjamin-franklin-science-and-the-enlightenment"
   },
   {
@@ -7372,7 +7333,7 @@
   },
   {
     "tier": 2,
-    "question": "In the Eighth Amendment, the shortest of the ten in the Bill of Rights, James Madison banned three things in a single sentence. Two of the three are excessive bail and excessive fines. What is the third thing the Eighth Amendment forbids?",
+    "question": "James Madison drafted the Eighth Amendment, the shortest of the ten in the Bill of Rights, and it bans three things in a single sentence. Two of the three are excessive bail and excessive fines. What is the third thing the Eighth Amendment forbids?",
     "answer": "Cruel and unusual punishments",
     "choices": [
       "Cruel and unusual punishments",
@@ -7393,20 +7354,20 @@
       "Throwing the book",
       "Reading the charges"
     ],
-    "context": "This right against self-incrimination lives in the Fifth Amendment, which also promises 'due process of law' and a grand jury for serious crimes — but its most quoted line is the one that gave us 'pleading the Fifth.' Source: National Archives, Bill of Rights Transcript.",
+    "context": "This right against self-incrimination lives in the Fifth Amendment, which also promises 'due process of law' and a grand jury for serious crimes, but its most quoted line is the one behind 'pleading the Fifth.' Source: National Archives, Bill of Rights Transcript.",
     "topic": "bill-of-rights-first-ten-amendments"
   },
   {
     "tier": 3,
-    "question": "Clarence Earl Gideon, a poor man, faced his trial alone, so from his prison cell he wrote a five-page plea to the Supreme Court by hand, in pencil, on prison stationery. In Gideon v. Wainwright (1963) the Court ruled unanimously in his favor. What did the justices say states must now provide to any defendant who cannot pay?",
-    "answer": "A lawyer paid for by the state",
+    "question": "Clarence Earl Gideon wrote a five-page plea to the Supreme Court from his prison cell, by hand, in pencil, on prison stationery. In Gideon v. Wainwright (1963) the Court ruled for him unanimously. What did the justices say every state must now give a poor defendant?",
+    "answer": "A lawyer to defend him",
     "choices": [
-      "A lawyer paid for by the state",
+      "A lawyer to defend him",
       "A faster date for the trial",
       "A transcript of the whole case",
       "A jury drawn from his neighbors"
     ],
-    "context": "Gideon's penciled petition turned the Sixth Amendment's promise of counsel into a real right for the poor: if you cannot afford a lawyer, one must be provided. Source: Wikipedia, Gideon v. Wainwright; U.S. Courts case summary.",
+    "context": "Gideon's penciled petition turned the Sixth Amendment's promise of counsel into a real right for the poor: a defendant who cannot afford a lawyer must be given one, paid for by the state. Source: Wikipedia, Gideon v. Wainwright; U.S. Courts case summary.",
     "topic": "bill-of-rights-first-ten-amendments"
   },
   {
@@ -7450,19 +7411,6 @@
   },
   {
     "tier": 4,
-    "question": "Franklin Roosevelt proclaimed a Bill of Rights Day to mark the 150th anniversary of the Bill of Rights, and he chose 15 December 1941 for it. That first observance fell in the shadow of a national catastrophe just eight days earlier. What had happened on 7 December 1941?",
-    "answer": "The attack on Pearl Harbor",
-    "choices": [
-      "The attack on Pearl Harbor",
-      "The great stock-market crash",
-      "The sinking of the Lusitania",
-      "The assassination of a president"
-    ],
-    "context": "Roosevelt's proclamation of the 150th anniversary collided with the Pearl Harbor attack of December 7, 1941, that pulled the United States into World War II — so the first Bill of Rights Day passed almost unnoticed. Source: National Archives, 'Bill of Rights Day'; Proclamation 2524.",
-    "topic": "bill-of-rights-first-ten-amendments"
-  },
-  {
-    "tier": 4,
     "question": "John Hancock and Samuel Adams worked out the Massachusetts Compromise during the fight to ratify the Constitution: ratify now, amend at once. It became the template for one faction that made written protections for individual rights the price of its votes. Which faction demanded a bill of rights as its price?",
     "answer": "The Anti-Federalists",
     "choices": [
@@ -7471,7 +7419,7 @@
       "The Federalists",
       "The Sons of Liberty"
     ],
-    "context": "Several states ratified only on the promise that protections would be added at once — the Massachusetts Compromise was the model. Georgia alone thought a bill of rights so pointless it refused to ratify. Source: Wikipedia, United States Bill of Rights; Library of Congress, 'Demand for a Bill of Rights.'",
+    "context": "Several states ratified only on the promise that protections would be added at once, and the Massachusetts Compromise was the model. Georgia, which found a bill of rights unnecessary, did not ratify the amendments until 1939. Source: Wikipedia, United States Bill of Rights; Library of Congress, 'Demand for a Bill of Rights.'",
     "topic": "bill-of-rights-first-ten-amendments"
   },
   {
@@ -7497,7 +7445,7 @@
       "He won a seat in Congress for himself",
       "He rewrote the whole Bill of Rights"
     ],
-    "context": "Watson's 1789 amendment was finally ratified as the 27th Amendment in 1992 — about 203 years after Madison proposed it, the longest gap in U.S. constitutional history. In 2017 the University of Texas went back and changed his grade to an A. Source: National Constitution Center; NPR, 'The Bad Grade That Changed The U.S. Constitution.'",
+    "context": "Madison's 1789 amendment was finally ratified as the 27th Amendment in 1992, about 203 years after he proposed it, the longest gap in U.S. constitutional history. In 2017 the University of Texas went back and changed Watson's grade to an A. Source: National Constitution Center; NPR, 'The Bad Grade That Changed The U.S. Constitution.'",
     "topic": "bill-of-rights-first-ten-amendments"
   },
   {
@@ -7567,13 +7515,13 @@
   },
   {
     "tier": 4,
-    "question": "Solon set free the Athenian citizens who had been sold into slavery for their debts, around 594 BC, and he banned ever again using a person's own body as security for a loan. Athenians remembered the rescue by a single Greek name. What did that name mean?",
-    "answer": "The shaking-off of burdens",
+    "question": "Poor farmers around Athens were being sold into slavery when they could not repay their debts, and about 594 BC the city gave the poet and lawgiver Solon the power to set things right. What did Solon do for the citizens already enslaved for debt?",
+    "answer": "Set them free and banned loans secured on a person",
     "choices": [
-      "The shaking-off of burdens",
-      "The breaking of the chains",
-      "The gift of the poor",
-      "The mending of the city"
+      "Set them free and banned loans secured on a person",
+      "Paid off their debts from the city's treasury",
+      "Shipped them abroad to found a new colony",
+      "Let them work off their debts within ten years"
     ],
     "context": "The law was the seisachtheia -- literally 'the shaking off of burdens.' It ended Athenian debt-slavery before democracy was even born. Source: https://en.wikipedia.org/wiki/Seisachtheia",
     "topic": "birth-of-athenian-democracy-cleisthenes-solon-os"
@@ -7801,13 +7749,13 @@
   },
   {
     "tier": 3,
-    "question": "The Sailendra dynasty raised Borobudur, the largest Buddhist temple in the world, on the island of Java around 800 AD. Pilgrims climb its nine stone platforms, stacked into a giant mandala, level by level, and the climb carries a meaning drawn from the Buddhist path. What is a pilgrim's walk up Borobudur meant to represent?",
+    "question": "The Sailendra dynasty raised Borobudur, the largest Buddhist temple in the world, on the island of Java around 800 AD. Pilgrims climb its nine stone platforms, stacked into a giant mandala, level by level, past hundreds of carved panels of sacred stories. What is the climb meant to represent?",
     "answer": "The journey from worldly desire up toward Nirvana",
     "choices": [
       "The journey from worldly desire up toward Nirvana",
-      "The voyage of a trader from India home to China",
-      "The march of an army up to besiege a hill fort",
-      "The flight of a soul up through nine starry heavens"
+      "A soul's rebirth through nine lives, one on each level",
+      "The flight of a soul up through nine starry heavens",
+      "A monk's yearly round of prayer, season by season"
     ],
     "context": "Borobudur's tiers map the stages of the Buddhist path: Kamadhatu, the realm of desire, at the hidden base; Rupadhatu, the realm of form, on the square terraces; and Arupadhatu, the formless realm, on the bare circular terraces at the top. So climbing the monument is walking from worldly desire toward Nirvana. Built around 800 AD by the Sailendra dynasty from roughly 2 million andesite blocks fitted without mortar. Source: en.wikipedia.org/wiki/Borobudur; UNESCO World Heritage #592.",
     "topic": "borobudur-srivijaya-maritime-se-asia"
@@ -7957,13 +7905,13 @@
   },
   {
     "tier": 2,
-    "question": "Suppose you climb the 463 steps that visitors take today to the top of Filippo Brunelleschi's dome in Florence, up to the lantern that crowns it. Which way do the steps take you up?",
-    "answer": "You walk up the curved gap between two domes, one inside the other",
+    "question": "Visitors today climb 463 steps to the top of Filippo Brunelleschi's dome in Florence, all the way up to the lantern that crowns it. Which way do the steps take them up?",
+    "answer": "Up the curved gap between two domes, one inside the other",
     "choices": [
-      "You walk up the curved gap between two domes, one inside the other",
-      "You ride a wooden cage pulled up the outside by ropes",
-      "You climb a straight iron ladder bolted to the inner wall",
-      "You wind up a stone tower built against the cathedral side"
+      "Up the curved gap between two domes, one inside the other",
+      "In a wooden cage hauled up the outside by ropes",
+      "Up a straight iron ladder bolted to the inner wall",
+      "Up a stone tower built against the cathedral's side"
     ],
     "context": "It is a double dome — a shell within a shell — and the 463-step climb spirals up the hollow gap between them. Source: brunelleschi.imss.fi.it (TheDomeOfSantaMariaFiore); duomo.firenze.it.",
     "topic": "brunelleschi-s-dome-of-florence"
@@ -7997,12 +7945,12 @@
   {
     "tier": 3,
     "question": "To lift millions of bricks and stones hundreds of feet up to his rising dome, Brunelleschi invented a hoist driven by a team of oxen walking in a circle. What was the cleverest feature of his machine?",
-    "answer": "A reversible hoist that could raise or lower without turning the oxen around",
+    "answer": "A reversing gear, so the oxen never had to turn round",
     "choices": [
-      "A reversible hoist that could raise or lower without turning the oxen around",
-      "A water wheel on the river that wound the ropes by current",
-      "A spiral ramp the oxen themselves walked up to the rooftop",
-      "A counterweight of sand that dropped to lift each load"
+      "A reversing gear, so the oxen never had to turn round",
+      "Leather ropes so strong they could never snap",
+      "A spiral ramp the oxen walked up to the rooftop",
+      "A sand counterweight that dropped to lift each load"
     ],
     "context": "His ox-powered hoist had a gear that reversed the load between rising and lowering without un-hitching the animals. Decades later the young Leonardo da Vinci sketched these machines. Source: bdml.stanford.edu/BrunelleschiNotes; brunelleschi.imss.fi.it.",
     "topic": "brunelleschi-s-dome-of-florence"
@@ -8023,12 +7971,12 @@
   {
     "tier": 3,
     "question": "High on the rising dome, Brunelleschi's men worked on platforms hung hundreds of feet above the ground, where a man could freeze with fear or fall. Besides fitting railings to the platforms, Brunelleschi made one change his workers grumbled about, to keep them steady and clear-headed. What was it?",
-    "answer": "Watered down the workers wine so they stayed steady up high",
+    "answer": "He watered down the wine they drank on the job",
     "choices": [
-      "Watered down the workers wine so they stayed steady up high",
-      "Tied every worker to a rope fixed at the lantern above",
-      "Sent the workers home whenever the wind began to gust",
-      "Made the workers climb blindfolded so they felt no fear"
+      "He watered down the wine they drank on the job",
+      "He tied every man to a rope fixed at the lantern",
+      "He sent the men home whenever the wind gusted",
+      "He made the men climb blindfolded to feel no fear"
     ],
     "context": "Brunelleschi watered the men's wine (to grumbling) and added parapets to the suspended platforms so they wouldn't fall or freeze looking down. Source: througheternity.com; firenzemadeintuscany.com.",
     "topic": "brunelleschi-s-dome-of-florence"
@@ -8040,8 +7988,8 @@
     "choices": [
       "Leonardo da Vinci",
       "Sandro Botticelli",
-      "Donatello",
-      "Lorenzo Ghiberti"
+      "Filippino Lippi",
+      "Domenico Ghirlandaio"
     ],
     "context": "The golden ball was made in Andrea del Verrocchio's workshop and hoisted up on 27 May 1471, with the teenage apprentice Leonardo da Vinci helping. Source: duomo.firenze.it (Verrocchio's golden ball); guidedflorencetours.com.",
     "topic": "brunelleschi-s-dome-of-florence"
@@ -8049,9 +7997,9 @@
   {
     "tier": 4,
     "question": "Filippo Brunelleschi took on a job in 1420 that had beaten every builder in Florence for a century: closing the vast eight-sided hole above the cathedral. Yet he had never been trained to design buildings at all. What had he trained as before he took on the dome?",
-    "answer": "He was a trained goldsmith and clockmaker, not an architect",
+    "answer": "He had trained as a goldsmith and clockmaker",
     "choices": [
-      "He was a trained goldsmith and clockmaker, not an architect",
+      "He had trained as a goldsmith and clockmaker",
       "He had built three smaller cathedrals in northern Italy",
       "He had studied dome-building under a master in Rome",
       "He had spent his youth as a stonemason in the quarries"
@@ -8062,9 +8010,9 @@
   {
     "tier": 4,
     "question": "Lorenzo Ghiberti, Brunelleschi's lifelong rival, shared command of the dome with him by order of the city, and Ghiberti took the credit without understanding the engineering. At the most critical moment, the story goes, Brunelleschi exposed him with a trick. What did he do?",
-    "answer": "He pretended to be sick and stayed home until work ground to a halt",
+    "answer": "He faked illness and stayed home until work stalled",
     "choices": [
-      "He pretended to be sick and stayed home until work ground to a halt",
+      "He faked illness and stayed home until work stalled",
       "He tore up the building plans in front of the whole guild",
       "He challenged the rival to a public building contest",
       "He bribed the workers to follow only his orders"
@@ -8183,7 +8131,7 @@
     "choices": [
       "Romans",
       "Greeks",
-      "Hellenes",
+      "Latins",
       "Trojans"
     ],
     "context": "They called themselves Romaioi — 'Romans.' To them, the Roman Empire had never fallen; it simply ruled from a new capital. The word 'Byzantine' was invented by outsiders centuries later. Source: https://en.wikipedia.org/wiki/Byzantine_Empire",
@@ -8290,7 +8238,7 @@
       "55",
       "90"
     ],
-    "context": "Just 7 of Sophocles's ~120 plays survive; of Aeschylus's ~90 only 7, and of Euripides's ~80 only about 18. A work vanished the instant the last copy crumbled and no one had made a new one, which is why the thousand-year labor of hand-copyists is the reason any ancient Greek books reached us at all. Source: talesoftimesforgotten.com 'If You Like Ancient Greek Texts, Thank the Byzantines'; potentialdifference.org.uk on the lost Greek tragedies.",
+    "context": "Just 7 of Sophocles's ~120 plays survive; of Aeschylus's ~90 only 7, and of Euripides's ~80 only about 18. A work vanished the instant the last copy crumbled and no one had made a new one, which is why the thousand-year labor of hand-copyists is the reason any ancient Greek books survive at all. Source: talesoftimesforgotten.com 'If You Like Ancient Greek Texts, Thank the Byzantines'; potentialdifference.org.uk on the lost Greek tragedies.",
     "topic": "byzantium-as-the-bridge-that-preserved-greek-lea"
   },
   {
@@ -8607,7 +8555,7 @@
   },
   {
     "tier": 1,
-    "question": "England's Edward I laid siege to Stirling Castle in 1304 and ordered the biggest siege engine ever built, a huge trebuchet made to throw boulders and crack open the Scottish castle's walls. He gave it a dreaded name. What was it called?",
+    "question": "England's Edward I laid siege to Stirling Castle in 1304 and ordered the biggest siege engine yet built, a huge trebuchet made to throw boulders and crack open the Scottish castle's walls. He gave it a dreaded name. What was it called?",
     "answer": "Warwolf",
     "choices": [
       "Warwolf",
@@ -8897,9 +8845,9 @@
     "answer": "A law abolishing slavery",
     "choices": [
       "A law abolishing slavery",
-      "A law raising tariffs on imports",
-      "A law granting the president a second term",
-      "A law admitting a free state to the Confederacy"
+      "A law drafting men into the army",
+      "A law printing paper money",
+      "A law moving the capital city"
     ],
     "context": "The Confederate Constitution barred the Confederate Congress from ever passing 'any law denying or impairing the right of property in negro slaves' (Art. I, Sec. 9) and required that slavery 'be recognized and protected' in all new territories (Art. IV) -- making it legally impossible for the Confederacy to end slavery itself. (Avalon Project, Yale Law School, Constitution of the Confederate States.)",
     "topic": "causes-of-the-civil-war-and-the-cornerstone-spee"
@@ -8919,13 +8867,13 @@
   },
   {
     "tier": 5,
-    "question": "So sure was Alexander Stephens of his 'great truth' that he likened it to ideas the world had once scorned before it came round to them. He named Galileo first, then Adam Smith. Third on his list came a 17th-century English doctor. Which scientist did Stephens name third?",
+    "question": "So sure was Alexander Stephens of his 'great truth' that he likened it to ideas the world had once scorned before it came round to them. He named Galileo first, then Adam Smith. Third on his list came an English doctor. Which doctor did Stephens name third?",
     "answer": "William Harvey",
     "choices": [
       "William Harvey",
-      "Isaac Newton",
-      "Charles Darwin",
-      "Louis Pasteur"
+      "Edward Jenner",
+      "John Snow",
+      "Thomas Willis"
     ],
     "context": "Stephens: 'It was so with the principles announced by Galileo -- it was so with Adam Smith... It was so with Harvey, and his theory of the circulation of the blood.' He genuinely expected his racial 'truth' to be proven right by history. It was not. (American Battlefield Trust, Cornerstone Speech.)",
     "topic": "causes-of-the-civil-war-and-the-cornerstone-spee"
@@ -9101,7 +9049,7 @@
   },
   {
     "tier": 1,
-    "question": "Charlemagne made Aachen his capital for its hot springs. Einhard, who wrote his life, says nobody could beat him in the water, and that he loved company there so much a whole crowd sometimes joined him at once. Roughly how many shared his bath?",
+    "question": "Charlemagne made Aachen his capital for its hot springs. Einhard, who wrote his life, says nobody could beat him in the water, and that he liked to invite others in to bathe with him. Roughly how many might share his bath at once?",
     "answer": "A hundred or more men",
     "choices": [
       "A hundred or more men",
@@ -9120,7 +9068,7 @@
       "Form his letters and write",
       "Pray in proper Latin",
       "Play the harp like David",
-      "Speak the Greek tongue"
+      "Carve ivory like his craftsmen"
     ],
     "context": "Einhard says Charlemagne kept 'tablets and blanks in bed under his pillow, that at leisure hours he might accustom his hand to form the letters; however... they met with ill success.' The near-illiterate king still drove a learning revival. (Life of Charlemagne ch.25; Fordham)",
     "topic": "charlemagne-the-carolingian-empire"
@@ -9171,7 +9119,7 @@
     "choices": [
       "The lowercase letters",
       "The Roman numerals",
-      "The printing press",
+      "The apostrophe",
       "The exclamation mark"
     ],
     "context": "The script, Carolingian minuscule, introduced lowercase letters and spaces between words. Renaissance humanists revived it as 'roman' type, thinking it ancient. (en.wikipedia.org/wiki/Carolingian_minuscule; en.wikipedia.org/wiki/Alcuin)",
@@ -9179,15 +9127,15 @@
   },
   {
     "tier": 3,
-    "question": "Charlemagne fixed money across his empire around 793 on one silver penny: 12 pennies to a shilling, 240 to a pound. Britain kept that pounds, shillings and pence system for nearly twelve centuries, until 15 February 1971, when it switched to a pound worth 100 new pence. What did Britons call the day of the switch?",
-    "answer": "Decimal Day",
+    "question": "Charlemagne fixed money across his empire around 793 on one silver penny: 12 pennies to a shilling, 240 to a pound. One country went on counting its money that way for nearly twelve centuries, until it switched to decimal coins on 15 February 1971. Which country was it?",
+    "answer": "Britain",
     "choices": [
-      "Decimal Day",
-      "Sterling Day",
-      "Coronation Day",
-      "Empire Day"
+      "Britain",
+      "Germany",
+      "Spain",
+      "Austria"
     ],
-    "context": "The L/s/d system (the d standing for the Roman denarius) survived in Britain until decimalisation in 1971 -- almost 1,200 years after Charlemagne set it. (en.wikipedia.org/wiki/Carolingian_monetary_system)",
+    "context": "The L/s/d system (the d standing for the Roman denarius) survived in Britain until decimalisation on 15 February 1971, which Britons called Decimal Day: almost 1,200 years after Charlemagne set it, in a land that was never part of his empire. (en.wikipedia.org/wiki/Carolingian_monetary_system)",
     "topic": "charlemagne-the-carolingian-empire"
   },
   {
@@ -9452,7 +9400,7 @@
   },
   {
     "tier": 5,
-    "question": "The ancient Hebrews counted the burning of children among Canaan's worst evils, and their Bible tells of such burnings in a valley at the edge of Jerusalem, the Valley of Hinnom. The valley's Hebrew name, Ge-Hinnom, grew so hateful that it passed into Greek as the New Testament's word for hell. What is that word?",
+    "question": "The ancient Hebrews counted the burning of children among Canaan's worst evils, and their Bible tells of such burnings in a valley at the edge of Jerusalem. The valley's Hebrew name grew so hateful that it passed into Greek as the New Testament's word for hell. What is that word?",
     "answer": "Gehenna",
     "choices": [
       "Gehenna",
@@ -9465,7 +9413,7 @@
   },
   {
     "tier": 5,
-    "question": "Hebrew scribes who wrote down the name of the god of child sacrifice refused to spell it plainly. They started from melekh, 'king,' but gave it the vowels of another word, so that the name itself read as an insult to anyone who knew Hebrew. Which word lent its vowels to the god's name?",
+    "question": "Abraham Geiger, a scholar, argued in 1857 that the Hebrew scribes who wrote down the name of the god of child sacrifice refused to spell it plainly. They started, he said, from melekh, 'king,' but gave it the vowels of another word, so that the name read as an insult. The idea is still debated. Which word did Geiger say lent its vowels?",
     "answer": "boshet, meaning 'shame'",
     "choices": [
       "boshet, meaning 'shame'",
@@ -9473,7 +9421,7 @@
       "tame, meaning 'unclean'",
       "ra, meaning 'evil'"
     ],
-    "context": "The name Moloch (Molech) is widely understood as melekh, 'king,' deliberately given the vowels of boshet, 'shame' — so the god's own name was rigged to read 'the shameful king.' The scribes built their verdict on the cult right into its spelling. Sources: jewishvirtuallibrary.org/the-cult-of-moloch ; en.wikipedia.org/wiki/Tophet",
+    "context": "Geiger read Moloch (Molech) as melekh, 'king,' deliberately given the vowels of boshet, 'shame,' so that the god's own name reads 'the shameful king.' The idea is widely repeated, but scholars such as R. M. Kerr reject it as unsupported. Sources: https://en.wikipedia.org/wiki/Moloch ; jewishvirtuallibrary.org/the-cult-of-moloch",
     "topic": "child-sacrifice-in-the-ancient-near-east-the-top"
   },
   {
