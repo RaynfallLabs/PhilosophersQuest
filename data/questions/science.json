@@ -41744,15 +41744,15 @@
   },
   {
     "tier": 5,
-    "question": "Two mechanics with no college degree and no funding ran a real screening test in the back of a Dayton bicycle shop from October to December 1901. About how many wing shapes did the Wright brothers push through their tunnel before picking finalists to measure closely?",
-    "answer": "around one hundred to two hundred",
+    "question": "The Wright brothers had stopped trusting anyone's published figure for how hard moving air presses on a surface. So in 1901 they built the little balances inside their Dayton tunnel so that the figure never entered the result at all. What did those balances read?",
+    "answer": "One force as a ratio of another force",
     "choices": [
-      "around one hundred to two hundred",
-      "around eight to a dozen",
-      "around one to two thousand",
-      "around three to five"
+      "One force as a ratio of another force",
+      "Each force in ounces, on a spring scale",
+      "The wind's speed, on a spinning-cup gauge",
+      "The air's density, on a small barometer"
     ],
-    "context": "Sources differ on the exact count, but the Wrights screened somewhere between roughly 100 and 200 surfaces in about two months, then measured about 30 to 38 of the most promising in detail. Two bicycle mechanics re-measured the foundation of a scientific field on scrap-metal instruments in the back of a shop -- and then flew. Source: NASA Beginners' Guide to Aeronautics, 1901 Wind Tunnel Tests.",
+    "context": "The lift balance set a model wing's lift against the drag of a set of flat reference plates, and the drift balance read the ratio of a wing's drag to its lift. Because each reading was a ratio, the air-pressure constant everyone else relied on dropped out of the arithmetic, and the Wrights no longer had to trust anybody's published value. With these balances they screened somewhere between about 100 and 200 surfaces in about two months, then measured roughly 30 to 38 of the most promising in detail. Sources: NASA Glenn Research Center, 'Wright 1901 Lift Balance' (grc.nasa.gov/www/k-12/airplane/wrights/liftold.html) and 'Wright 1901 Drag Balance'; NASA Beginners' Guide to Aeronautics, 1901 Wind Tunnel Tests.",
     "topic": "two-bicycle-mechanics-build-their-own-wind-tunnel"
   },
   {
@@ -41906,9 +41906,9 @@
       "a push from one meets a pull from the other, cancelling",
       "the sound is being absorbed by the still air itself",
       "the two waves miss each other and skip those spots",
-      "the ear briefly loses sensitivity as your head turns"
+      "the ear briefly loses sensitivity as the head turns"
     ],
-    "context": "In wave language, a compression from one source meets a rarefaction from the other -- crest on trough. Sound plus sound equals quiet. You can test it at home with two phones playing the same tone. Source: https://phys.libretexts.org/Courses/University_of_California_Davis/UCD:_Physics_7C_-_General_Physics/8:_Waves/8.5:_Superposition_and_Interference",
+    "context": "In wave language, a compression from one source meets a rarefaction from the other -- crest on trough. Sound plus sound equals quiet. Two phones playing the same tone show it at home. Source: https://phys.libretexts.org/Courses/University_of_California_Davis/UCD:_Physics_7C_-_General_Physics/8:_Waves/8.5:_Superposition_and_Interference",
     "topic": "two-sounds-that-add-up-to-silence"
   },
   {
@@ -41926,15 +41926,15 @@
   },
   {
     "tier": 3,
-    "question": "Paul Lueg, a German doctor and physicist, patented an idea early in 1933, long before the electronic parts existed to build it. To silence an unwanted sound, a speaker plays back the very same waveform flipped upside down, so that the peaks of one line up with the troughs of the other. Headphones use the idea now. What is the technology called today?",
-    "answer": "Active noise cancellation",
+    "question": "Paul Lueg, a German doctor and physicist, filed a patent early in 1933 for quieting an unwanted noise with a microphone and a loudspeaker, two decades before electronics were quick enough to manage it. What did his loudspeaker play back at the noise?",
+    "answer": "The same noise, flipped upside down",
     "choices": [
-      "Active noise cancellation",
-      "Passive sound insulation",
-      "Stereo surround sound",
-      "Ultrasonic imaging"
+      "The same noise, flipped upside down",
+      "A steady hiss loud enough to mask it",
+      "A matching tone a few hertz higher",
+      "A deep hum too low for the ear to hear"
     ],
-    "context": "Lueg understood the principle -- microphone listens, loudspeaker plays the inverse -- twenty years before analogue electronics could execute it in real time. The patent brought him no fortune; he ran into political trouble under the Nazi regime instead. Source: https://patents.google.com/patent/US2043416A/en",
+    "context": "Lueg's patent has a microphone pick up the noise and a loudspeaker answer it with the same waveform inverted, so that peaks meet troughs and the two cancel. Engineers now call the idea active noise cancellation, and noise-cancelling headphones use it. He had the principle twenty years before analogue electronics could carry it out in real time, and the patent brought him no fortune. Source: US Patent 2,043,416, 'Process of silencing sound oscillations' (https://patents.google.com/patent/US2043416A/en).",
     "topic": "two-sounds-that-add-up-to-silence"
   },
   {
@@ -42264,13 +42264,13 @@
   },
   {
     "tier": 4,
-    "question": "Joseph Fourier suggested in the 1820s that the atmosphere warms the Earth like a greenhouse, and John Tyndall showed by 1859 which gases do the absorbing. The first actual number for how much a doubling of carbon dioxide would warm the whole planet was ground out with pen and paper. In what decade?",
-    "answer": "The 1890s",
+    "question": "Joseph Fourier argued in the 1820s that the air keeps the Earth warm, and John Tyndall showed by 1859 which gases do the absorbing. The first actual figure for how much a doubled load of carbon dioxide would warm the whole planet came in the 1890s, ground out by hand with pen and paper. Who did the sums?",
+    "answer": "Svante Arrhenius",
     "choices": [
-      "The 1890s",
-      "The 1950s",
-      "The 1970s",
-      "The 2000s"
+      "Svante Arrhenius",
+      "Guy Callendar",
+      "Gilbert Plass",
+      "Charles Keeling"
     ],
     "context": "Svante Arrhenius made the first serious attempt in 1896; Guy Callendar came later still. Tyndall supplied the missing WHICH -- which gases do the absorbing -- and stopped there: he never computed a temperature for the planet. What he DID do is worth keeping straight, because popular accounts blur it. He named carbonic acid gas in print as an absorber of Earth's heat, he measured gases at small fractions of an atmosphere, and he gave a second Bakerian Lecture in 1864 ('Contributions to Molecular Physics: being the Fifth Memoir of Researches on Radiant Heat'), collecting the whole campaign into a book in 1872. Tyndall's biographer Roland Jackson puts it that the discovery \"rest[s] on many shoulders\": Fourier, Pouillet, Foote, Tyndall, Arrhenius, Callendar. Sources: Royal Institution, 'Who discovered the greenhouse effect?'; Roland Jackson (2019); Wikipedia, 'Royal Society Bakerian Medal'.",
     "topic": "tyndalls-ribbon-of-invisible-heat"
@@ -42368,13 +42368,13 @@
   },
   {
     "tier": 4,
-    "question": "Judges on the Tokyo war-crimes tribunal tried the surviving leaders of Imperial Japan from 1946 to 1948 for crimes across Asia. General Shiro Ishii's Unit 731 had run its germ-warfare program from a huge complex at Pingfang in Manchuria. What did the Tokyo court do about the Pingfang program?",
-    "answer": "It left the program out of the trial entirely",
+    "question": "Judges on the Tokyo war-crimes tribunal tried the surviving leaders of Imperial Japan from 1946 to 1948 for crimes across Asia. General Shiro Ishii's Unit 731 had run its germ-warfare program from a huge complex at Pingfang in Manchuria. What became of the Pingfang program at the Tokyo trial?",
+    "answer": "It was never brought into the charges at all",
     "choices": [
-      "It left the program out of the trial entirely",
-      "It convicted Ishii but not his subordinates",
-      "It sentenced eight biological-warfare officers to death",
-      "It tried the officers separately at Yokohama"
+      "It was never brought into the charges at all",
+      "Ishii was convicted, but none of his officers",
+      "Eight of its officers were sentenced to death",
+      "Its officers were tried apart, at Yokohama"
     ],
     "context": "The exclusion was directed by the American occupation command; it was part of the same bargain that granted the scientists immunity. Japan had signed the 1925 Geneva Protocol banning biological and chemical weapons before the program began. Source: Wikipedia, Unit 731.",
     "topic": "unit-731-and-the-data-the-americans-bought"
@@ -42408,12 +42408,12 @@
   {
     "tier": 2,
     "question": "A chemist runs the two carvones of spearmint and caraway through her tests, and only one test separates them: they twist a beam of polarised light in opposite directions. Chemists call such pairs 'chiral', from the Greek for hand. A person's nose still tells spearmint from caraway in one sniff. Why can it?",
-    "answer": "Smell receptors are themselves chiral, so only one shape fits",
+    "answer": "Smell receptors are chiral too, so only one shape fits",
     "choices": [
-      "Smell receptors are themselves chiral, so only one shape fits",
-      "The nose senses polarised light directly",
-      "Only one of them dissolves in nasal mucus",
-      "Nerve cells count how many atoms are present"
+      "Smell receptors are chiral too, so only one shape fits",
+      "Only one chiral form dissolves in nasal mucus",
+      "Each chiral form has a different electric charge",
+      "The nose senses the twist in polarised light"
     ],
     "context": "Smell receptors are built from proteins, and proteins are chiral. The binding pocket is a right glove - only a right hand fits. Source: Chiralpedia, 'The Chemistry of Taste and Smell' (https://chiralpedia.com/blog/the-chemistry-of-taste-and-smell-how-chirality-affects-senses/).",
     "topic": "van-t-hoffs-tetrahedron-and-the-professor-who-called-it-pega"
@@ -42446,15 +42446,15 @@
   },
   {
     "tier": 5,
-    "question": "Jacobus van 't Hoff won the very first Nobel Prize in Chemistry, in 1901. Almost every school textbook implies the prize was for his tetrahedral carbon paper, but the citation itself names two other achievements: chemical kinetics and osmotic pressure. What honour did the tetrahedron paper itself actually receive at the top of its own field?",
-    "answer": "The Royal Society's Davy Medal in 1893",
+    "question": "Jacobus van 't Hoff, a Dutch chemist, won the very first Nobel Prize in Chemistry in 1901, twenty-seven years after the short pamphlet he had published as a twenty-two-year-old student in Utrecht, in the Netherlands. What work did the Nobel citation name?",
+    "answer": "Chemical kinetics and osmotic pressure",
     "choices": [
-      "The Royal Society's Davy Medal in 1893",
-      "The Copley Medal in 1874",
-      "The Helmholtz Medal of the Prussian Academy in 1898",
-      "The Faraday Lectureship of the Chemical Society in 1889"
+      "Chemical kinetics and osmotic pressure",
+      "The tetrahedral carbon and its mirror images",
+      "The ring structure of the benzene molecule",
+      "The synthesis of urea from inorganic salts"
     ],
-    "context": "The 1901 Nobel citation was for 'the laws of chemical dynamics and osmotic pressure' - kinetics and solutions, not stereochemistry. The tetrahedron paper had already been honoured with the Davy Medal in 1893. Sources: NobelPrize.org 1901 summary; van 't Hoff biographical entry, Wikipedia.",
+    "context": "The 1901 citation honoured him 'in recognition of the extraordinary services he has rendered by the discovery of the laws of chemical dynamics and osmotic pressure in solutions' - kinetics and solutions, not stereochemistry. Textbooks often imply the prize was for the tetrahedron; it was not. The tetrahedron paper had already been honoured on its own, with the Royal Society's Davy Medal in 1893, shared with Joseph Le Bel. Sources: NobelPrize.org, 'The Nobel Prize in Chemistry 1901'; Wikipedia, 'Davy Medal'.",
     "topic": "van-t-hoffs-tetrahedron-and-the-professor-who-called-it-pega"
   },
   {
@@ -42576,15 +42576,15 @@
   },
   {
     "tier": 5,
-    "question": "The staff of Nikolai Vavilov's institute chose to starve through the 872-day siege of Leningrad rather than eat the collection they had been left to guard, and nine died at their posts. What did they find on the desk of the botanist Dmitri Ivanov after he was found dead?",
-    "answer": "several thousand packs of rice",
+    "question": "The staff of Nikolai Vavilov's institute chose to starve through the 872-day siege of Leningrad rather than eat the collection they had been left to guard, and several starved to death at their posts. One of them, Dmitri Ivanov, died of hunger with his own specialist crop stored all around him. Which crop was it?",
+    "answer": "rice",
     "choices": [
-      "several thousand packs of rice",
-      "the last unpublished chapter of Vavilov's book",
-      "an unsent letter to the Kremlin",
-      "a wireless radio and a Comintern codebook"
+      "rice",
+      "potatoes",
+      "maize",
+      "barley"
     ],
-    "context": "Ivanov -- the institute's rice specialist -- was found starved at his desk surrounded by rice he had refused to eat. Alexander Stchukin, the peanut specialist, likewise died at his writing table in January 1942. Source: Amusing Planet essay drawing on VIR historical records.",
+    "context": "Dmitri Sergeyevich Ivanov kept the institute's rice collection and headed its rice section; the institute's own roll of its siege dead lists him beside the oat keeper Lidia Rodina and the peanut keeper Alexander Shchukin. He died of hunger in the winter of 1941-42, and thousands of packets of grain were left in his office, uneaten. Sources: N. I. Vavilov Institute of Plant Industry, blockade memorial list (vir.nw.ru); Novaya Gazeta, 23 November 2012; Alexanyan and Krivchenko, Diversity (1991), as reported in Dawn, 4 October 2002.",
     "topic": "vavilov-and-the-seed-bank-that-outlived-him"
   },
   {
@@ -42823,15 +42823,15 @@
   },
   {
     "tier": 2,
-    "question": "A boy presses his thumb to his pinky and lifts his palm, and a thin cord stands up in the middle of his forearm. About one person in seven is missing it, and grip strength is the same either way. What is the tendon?",
-    "answer": "The palmaris longus",
+    "question": "A boy presses his thumb to his little finger and lifts his palm, and a thin cord, the palmaris longus, stands up in his forearm. About one person in seven has no such cord, and grip strength is the same either way. What do surgeons often do with it?",
+    "answer": "Take it out to use as a graft elsewhere",
     "choices": [
-      "The palmaris longus",
-      "The flexor carpi radialis",
-      "The brachioradialis muscle",
-      "The abductor pollicis brevis"
+      "Take it out to use as a graft elsewhere",
+      "Shorten it to steady a loose wrist joint",
+      "Cut it to ease a stiff, aching wrist",
+      "Stimulate it to test the nerves of the hand"
     ],
-    "context": "Because it does nothing critical, surgeons harvest palmaris longus for tendon grafts. It is one of the cleanest at-home checks for a vestigial structure. Source: Britannica; Everything Lowercase.",
+    "context": "Because the cord is dispensable, surgeons harvest the palmaris longus for tendon grafts, using it to rebuild damaged tendons elsewhere in the body. It is one of the cleanest at-home checks for a vestigial structure: missing in about one person in seven, and nobody's grip suffers for it. Source: Britannica, 'Palmaris longus'; Everything Lowercase.",
     "topic": "vestigial-what-the-body-kept-after-the-job-ended"
   },
   {
@@ -43304,15 +43304,15 @@
   },
   {
     "tier": 5,
-    "question": "A student opens the telescope logbooks of about 1645 to 1715 and finds almost no sunspots: fewer than fifty in the 28 years to 1699, when a modern span that long would show forty or fifty thousand. The Little Ice Age's coldest winters fall inside this gap, though the cooling had started before the Sun fell quiet. What is this quiet stretch called?",
-    "answer": "The Maunder Minimum",
+    "question": "A student opens the telescope logbooks of about 1645 to 1715 and finds almost no sunspots: fewer than fifty in the 28 years to 1699, where a modern span that long would show forty or fifty thousand. The stretch is now known as the Maunder Minimum, and the Little Ice Age's coldest winters fall inside it. Why is the quiet Sun not enough to explain the cold?",
+    "answer": "The cooling had begun before the Sun went quiet",
     "choices": [
-      "The Maunder Minimum",
-      "The Dalton Minimum",
-      "The Sporer Minimum",
-      "The Grand Solar Minimum"
+      "The cooling had begun before the Sun went quiet",
+      "A spotless Sun actually shines a little brighter",
+      "Sunspots change the Sun's light but not its heat",
+      "Nobody had logged sunspots before the gap began"
     ],
-    "context": "About 0.24% - roughly 0.82 watts per square metre averaged over Earth's surface, enough for perhaps 0.1 to 0.3 degrees C of global cooling, against a Little Ice Age cooling of about 0.5 to 1 degree C. So the tidy solar story does not hold: the cooling began BEFORE the solar minimum, and the primary cause is believed to be volcanic activity. The Sun is part of this story, not the story - and one neat explanation should not be swapped for another. The gap itself was dug out of the old logbooks by Gustav Sporer, who published in 1887 and 1889; Edward Walter Maunder wrote it up in 1890 and 1894; it then lay forgotten for most of a century until John A. Eddy revived it in a 1976 Science paper and gave it the name we use. Annie Russell Maunder did the sunspot-latitude research and received no public credit, women being barred from that recognition at the time. Sources: en.wikipedia.org/wiki/Maunder_Minimum; swsc-journal.org, Space Weather and Space Climate 2017",
+    "context": "The cooling began BEFORE the solar minimum, so the tidy solar story does not hold; the primary cause is believed to be volcanic activity. A spotless Sun is slightly dimmer, not brighter, because the bright patches called faculae that come with sunspots outweigh the dark spots, and the dip was perhaps 0.24 percent, roughly 0.82 watts per square metre averaged over Earth's surface: enough for about 0.1 to 0.3 degrees C of global cooling, against a Little Ice Age cooling of about 0.5 to 1 degree C. The Sun is part of this story, not the story - and one neat explanation should not be swapped for another. Telescopes had been logging sunspots since about 1610. The gap itself was dug out of the old logbooks by Gustav Sporer, who published in 1887 and 1889; Edward Walter Maunder wrote it up in 1890 and 1894; it then lay forgotten for most of a century until John A. Eddy revived it in a 1976 Science paper and gave it the name we use. Annie Russell Maunder did the sunspot-latitude research and received no public credit, women being barred from that recognition at the time. Sources: en.wikipedia.org/wiki/Maunder_Minimum; en.wikipedia.org/wiki/Solar_cycle; swsc-journal.org, Space Weather and Space Climate 2017",
     "topic": "warm-vikings-frozen-thames-the-climate-before-the-smokestack"
   },
   {
@@ -43368,19 +43368,6 @@
     "topic": "wasons-2-4-6-and-the-urge-to-confirm"
   },
   {
-    "tier": 3,
-    "question": "Peter Wason gave his subjects the triple 2, 4, 6 in 1960, told them it fit a secret rule, and had them guess it by proposing new triples and hearing yes or no. He named the trap the task exposes in the title of his paper. What was that paper called?",
-    "answer": "On the failure to eliminate hypotheses in a conceptual task",
-    "choices": [
-      "On the failure to eliminate hypotheses in a conceptual task",
-      "Reasoning and the survival of the fittest guess",
-      "The illusion of adding two: a study in inductive error",
-      "Why humans cannot count: an experimental note"
-    ],
-    "context": "The failure Wason named -- collecting only tests that could confirm your idea -- is the phenomenon he later called 'confirmation bias', the term he coined. Both his 2-4-6 task and his four-card task are still classic labs. Source: en.wikipedia.org/wiki/Peter_Cathcart_Wason.",
-    "topic": "wasons-2-4-6-and-the-urge-to-confirm"
-  },
-  {
     "tier": 4,
     "question": "Peter Wason put four cards on a table for his second famous puzzle in 1966: 3, 8, blue, red. Each has a number on one face and a colour on the other. The rule: 'if a card shows an even number on one face, its opposite face is blue'. Which cards must a player turn over to test the rule?",
     "answer": "The 8 and the red card",
@@ -43429,7 +43416,7 @@
       "A strong test involves at least three subjects; a worthless test involves one",
       "A strong test always includes a control group; a worthless test never does"
     ],
-    "context": "'Add two each time', 'even numbers ascending', and 'first two average to the third' are all consistent with 2-4-6 -- and each was announced by real Wason subjects. Their tests all came back yes and taught them nothing, because the tests could not come back no. A prediction that fits every result is not a prediction. Source: Wason 1960; Nickerson review.",
+    "context": "'Add two each time', 'even numbers ascending' and 'the middle number is the average of the other two' all fit 2-4-6, and rules like these were announced by real Wason subjects. Their tests all came back yes and taught them nothing, because the tests could not come back no. A prediction that fits every result is not a prediction. Source: Wason 1960; Nickerson review.",
     "topic": "wasons-2-4-6-and-the-urge-to-confirm"
   },
   {
@@ -43564,13 +43551,13 @@
   },
   {
     "tier": 4,
-    "question": "An angler cuts a hole in the ice of a frozen pond, where the fish survive because the densest water settles at the bottom and ice caps the top. Almost every liquid keeps getting denser as it cools, right down to freezing. Water breaks that rule: below a certain temperature, colder water actually floats. At what temperature does liquid water reach its maximum density?",
-    "answer": "About 4 C.",
+    "question": "An angler drills through the ice of a frozen pond in January and lowers a thermometer on a string. Almost every liquid gets denser as it cools, right down to freezing, so its coldest part sinks to the bottom. Where in the pond does he find the coldest liquid water?",
+    "answer": "Just under the ice, at the top",
     "choices": [
-      "About 4 C.",
-      "About 1 C.",
-      "About 12 C.",
-      "About 25 C."
+      "Just under the ice, at the top",
+      "Lying on the bottom, in the mud",
+      "Spread evenly from top to bottom",
+      "In a band about halfway down"
     ],
     "context": "Liquid water is densest at 3.98 C -- Grokipedia gives the modern refinement as 3.98 plus or minus 0.0005 C at 1 atm. That anomaly is what makes the winter lid possible: as a pond cools past that point the coldest water is no longer the heaviest, so it stops sinking, stays on the surface, and freezes there. It also writes the lake's whole calendar. In autumn the chilled surface keeps sinking until the entire column sits at that temperature and goes uniform, and for a few days a moderate wind can then stir the lake top to bottom -- the 'fall turnover' that carries oxygen down to the deep water and lifts nutrients off the sediment. All winter the lake then runs upside down: near-freezing water on top, densest water resting on the bottom. Sources: en.wikipedia.org/wiki/Properties_of_water; grokipedia.com/page/maximum_density; iisd.org/ela on lake stratification and turnover.",
     "topic": "water-the-molecule-that-breaks-the-rules"
@@ -43647,7 +43634,7 @@
     "choices": [
       "a warm telescope glows in the same infrared band it is trying to observe",
       "a warm mirror coating would slowly tarnish and lose its gold shine",
-      "a warm beryllium mirror would expand and lose its precise figure",
+      "a warm fuel tank would boil away the steering propellant",
       "a warm instrument bay would overheat and shut down for safety"
     ],
     "context": "Anything warm radiates in the infrared. A room-temperature telescope trying to observe the infrared is like a floodlit stadium trying to observe candles -- the observatory's own emission is brighter than the signal. Webb has to be actively kept cold, which is why the sunshield, the L2 orbit and even MIRI's mechanical refrigerator all exist. Source: https://science.nasa.gov/mission/webb/",
@@ -43741,7 +43728,7 @@
       "Supported by the plain-language text",
       "A minority view within the field"
     ],
-    "context": "Soares-Weiser also wrote the plain-language summary 'was open to misinterpretation, for which we apologize' and 'we take responsibility for not making the wording clearer'. Source: cochrane.org statement, March 10, 2023.",
+    "context": "Soares-Weiser also wrote the plain-language summary 'was open to misinterpretation, for which we apologize' and 'we take responsibility for not making the wording clearer'. The review's lead author answered back. Tom Jefferson told the journalist Maryanne Demasi that he had been given 'little workable notice' of the statement and that 'Cochrane has thrown its own researchers under the bus again'; the apology, he pointed out, was Cochrane's, not the authors'. The review itself was not withdrawn. Sources: cochrane.org statement, March 10, 2023; Maryanne Demasi, 'Did Cochrane sacrifice its researchers to appease critics?', March 15, 2023; Vinay Prasad, 'The Cochrane Mask Fiasco', Sensible Medicine, March 15, 2023.",
     "topic": "what-a-mask-trial-can-and-cannot-prove"
   },
   {
@@ -43889,10 +43876,10 @@
   },
   {
     "tier": 3,
-    "question": "Alfred Wegener put forward continental drift, and his idea was turned down for about fifty years. His critics were no fools, and his idea had a missing piece. Which objection of the time was the load-bearing one?",
-    "answer": "He offered no MECHANISM for how continents could move",
+    "question": "Alfred Wegener put forward continental drift in 1912, and geologists turned his idea down for about fifty years. His critics were no fools, and they raised several serious objections against it at the time. Which of those objections was the load-bearing one?",
+    "answer": "He offered no mechanism for how continents could move",
     "choices": [
-      "He offered no MECHANISM for how continents could move",
+      "He offered no mechanism for how continents could move",
       "His matching fossils could be explained by ancient land bridges",
       "His matching paleoclimates could be explained by shifting poles on a fixed Earth",
       "His fit of the continental coastlines was too loose to be exact"
@@ -44062,11 +44049,11 @@
     "answer": "The temperature it sets at shifts when you cool it faster.",
     "choices": [
       "The temperature it sets at shifts when you cool it faster.",
-      "The glass creeps back toward liquid over centuries of standing.",
+      "Its heat capacity stays flat right through the setting.",
       "The same melt sets tens of degrees apart from run to run.",
       "The transition fades away if the glass is reheated slowly."
     ],
-    "context": "The glass transition temperature moves roughly 3–5 K for every tenfold change in cooling rate — and a transition whose temperature moves when the experimenter changes speed is a very strange transition. That is the kinetic camp's best argument: nothing special happens thermodynamically, they say; relaxation just slows until the liquid can no longer keep up with the experiment. The thermodynamic camp answers with the Kauzmann paradox (Walter Kauzmann, 1948): extrapolate the supercooled liquid's configurational entropy downward and it would fall below the crystal's at a finite temperature, which is impossible — so something real must intervene. Note too that unlike freezing, glass formation releases no latent heat and shows no abrupt volume change, which is why glass has a softening range instead of a melting point. Nobody has settled it, thirty years after Anderson called it out in Science. Sources: Science 267, 1615 (1995); Grokipedia, 'Glass transition'.",
+    "context": "The glass transition temperature moves roughly 3–5 K for every tenfold change in cooling rate — and a transition whose temperature moves when the experimenter changes speed is a very strange transition. That is the kinetic camp's best argument: nothing special happens thermodynamically, they say; relaxation just slows until the liquid can no longer keep up with the experiment. The thermodynamic camp answers with the Kauzmann paradox (Walter Kauzmann, 1948): extrapolate the supercooled liquid's configurational entropy downward and it would fall below the crystal's at a finite temperature, which is impossible — so something real must intervene. Note too that unlike freezing, glass formation releases no latent heat and shows no abrupt volume change, which is why glass has a softening range instead of a melting point; what it does show is a step down in heat capacity, which is how laboratories locate the transition. Nobody has settled it, thirty years after Anderson called it out in Science. Sources: Science 267, 1615 (1995); Grokipedia, 'Glass transition'.",
     "topic": "what-glass-actually-is"
   },
   {
@@ -44305,7 +44292,7 @@
   },
   {
     "tier": 2,
-    "question": "Chinese researchers posted the genetic code of a new virus, SARS-CoV-2, on a public database on January 31, 2020. Within days Kristian Andersen, a virus scientist at the Scripps Research Institute in California, went through the sequence and sent a short private email to Anthony Fauci, head of the US National Institute of Allergy and Infectious Diseases. What did Andersen tell Fauci?",
+    "question": "Chinese researchers posted the genetic code of the new virus SARS-CoV-2 online in January 2020. Late on 31 January, Kristian Andersen, a virologist at Scripps Research in California, sent a short private email to Anthony Fauci, the US government's top infectious-disease official. What did Andersen tell Fauci?",
     "answer": "That some of its features potentially looked engineered",
     "choices": [
       "That some of its features potentially looked engineered",
@@ -44313,7 +44300,7 @@
       "That it had already jumped four times independently from bats",
       "That it was almost certainly the wild SARS-CoV-1 virus reappearing"
     ],
-    "context": "The exact phrase Andersen used was 'some of the features (potentially) look engineered.' He added that he, Edward Holmes, Robert Garry and Michael Farzan found the genome 'inconsistent with expectations from evolutionary theory,' with the caveat that their opinions might still change with further analysis. That short email would haunt the next four years of the origin debate. Source: FOIA'd Fauci emails released 2021; Intercept January 2023.",
+    "context": "The exact phrase Andersen used was 'some of the features (potentially) look engineered.' He added that he, Edward Holmes, Robert Garry and Michael Farzan found the genome 'inconsistent with expectations from evolutionary theory,' with the caveat that their opinions might still change with further analysis. The genome had gone public around 10 January; the email went out at 10:32 pm on 31 January. Sources: FOIA'd Fauci emails released 2021; Newsweek, 'Fauci emails: Kristian Andersen defends article' (June 2021).",
     "topic": "what-they-wrote-and-what-they-were-saying"
   },
   {
@@ -44326,7 +44313,7 @@
       "Marion Koopmans, of Erasmus Medical Centre",
       "Michael Farzan, of Scripps Research"
     ],
-    "context": "Farrar later wrote in his memoir 'Spike' that he considered the discussions so sensitive that he used a disposable ('burner') phone for the surrounding communications. Five participants on that call became the eventual authors of the Proximal Origin paper. Source: Farrar, 'Spike' (2021); US Right To Know timeline.",
+    "context": "Farrar later wrote in his memoir 'Spike' that he considered the discussions so sensitive that he used a disposable ('burner') phone for the surrounding communications. Four participants on that call, Andersen, Holmes, Rambaut and Garry, became authors of the Proximal Origin paper; its fifth author, Ian Lipkin, was not on Farrar's invitation list. Sources: Farrar, 'Spike' (2021); Farrar's 1 February 2020 invitation email, reproduced in the House Democratic staff report exhibits (usrtk.org).",
     "topic": "what-they-wrote-and-what-they-were-saying"
   },
   {
@@ -44344,28 +44331,28 @@
   },
   {
     "tier": 3,
-    "question": "Kristian Andersen typed one sentence into a private Slack channel on 1 February 2020 that became the most-quoted line of the whole affair, after the House released his messages. The Scripps Research virologist was drafting the 'Proximal Origin' paper on where the new coronavirus had come from, with his co-authors in the channel. Which line did he actually type?",
-    "answer": "'The lab escape version of this is so friggin' likely'",
+    "question": "Kristian Andersen typed one sentence into a private Slack channel on 1 February 2020 that became the most-quoted line of the whole affair, after the House released his messages. The Scripps Research virologist was weighing where the new coronavirus had come from, with the colleagues who would write the 'Proximal Origin' paper. What did his sentence say about a lab escape?",
+    "answer": "That a lab escape was very likely, as such work was already under way",
     "choices": [
-      "'The lab escape version of this is so friggin' likely'",
-      "'The lab escape hypothesis is so friggin' hard to rule out'",
-      "'The passaged-strain scenario is so friggin' consistent with the data'",
-      "'The furin site was so friggin' obviously inserted on purpose'"
+      "That a lab escape was very likely, as such work was already under way",
+      "That a lab escape was unlikely, since the genome matched pangolin viruses",
+      "That a lab escape could be ruled out from the sequence alone",
+      "That a lab escape was possible but far less likely than spillover"
     ],
-    "context": "The full sentence continued: 'to have happened because they were already doing this type of work and the molecular data is fully consistent with that scenario.' Andersen later described his own view during that week as 'swiveling day by day' as new sequence data arrived. Source: House Select Subcommittee document release, July 2023; Intercept July 2023.",
+    "context": "His full sentence, from the messages the House Select Subcommittee released in July 2023: 'I think the main thing still in my mind is that the lab escape version of this is so friggin' likely to have happened because they were already doing this type of work and the molecular data is fully consistent with that scenario.' In his 2023 written testimony to Congress he said his view on engineering 'had changed after just a few days'. Sources: Public, 'Top Scientists Misled Congress About Covid Origins, Newly Released Emails And Messages Show' (July 2023); The Intercept, July 2023.",
     "topic": "what-they-wrote-and-what-they-were-saying"
   },
   {
     "tier": 4,
     "question": "Kristian Andersen and his co-authors published a short paper in the journal Nature Medicine on March 17, 2020, titled 'The proximal origin of SARS-CoV-2'. It came about six weeks after their first private messages about the new virus, and the journal ran it as a correspondence, not an original research article. What did the paper's central sentence declare about the virus?",
-    "answer": "That the virus 'is not a laboratory construct or a purposefully manipulated virus'",
+    "answer": "That it was not built in a lab or deliberately manipulated",
     "choices": [
-      "That the virus 'is not a laboratory construct or a purposefully manipulated virus'",
-      "That the virus 'is most probably the accidental release of a passaged strain'",
-      "That the origin question 'cannot be answered from the sequence alone at this time'",
-      "That the virus 'shows no similarity whatsoever to any known bat coronavirus'"
+      "That it was not built in a lab or deliberately manipulated",
+      "That it had most probably escaped a lab as a passaged strain",
+      "That it bore no likeness to any bat coronavirus yet known",
+      "That it had jumped straight from bats, with no animal between"
     ],
-    "context": "The paper appeared as a Correspondence, not an original research article. It sat as the single most-cited scientific reference used to publicly dismiss any lab-related origin for the next three years. Source: Andersen et al., Nature Medicine, 17 March 2020.",
+    "context": "The sentence itself: 'Our analyses clearly show that SARS-CoV-2 is not a laboratory construct or a purposefully manipulated virus.' The paper appeared as a Correspondence, not an original research article, and for the next three years it was the single most-cited scientific reference used to publicly dismiss any lab-related origin. Source: Andersen et al., 'The proximal origin of SARS-CoV-2', Nature Medicine, 17 March 2020.",
     "topic": "what-they-wrote-and-what-they-were-saying"
   },
   {
@@ -44383,41 +44370,15 @@
   },
   {
     "tier": 5,
-    "question": "Kristian Andersen appeared before a US House subcommittee in July 2023 with three other authors of 'The proximal origin of SARS-CoV-2', his Nature Medicine paper of March 2020. They answered questions about a possible cover-up, and subpoenaed Slack messages and emails had shown the authors voicing uncertainty in private just weeks before the paper. In his written statement to Congress, how did Andersen describe the cover-up claims against the paper?",
-    "answer": "'absurd and false'",
-    "choices": [
-      "'absurd and false'",
-      "'baseless and defamatory'",
-      "'a serious mischaracterisation'",
-      "'thoroughly discredited nonsense'"
-    ],
-    "context": "Andersen, Garry, Rambaut and Holmes all appeared under oath; the private Slack messages had been subpoenaed the previous month. His defence rested on three concrete claims about the paper's drafting, but the phrase he chose for the allegations themselves was the crisp two-word dismissal. Source: Andersen written testimony, House Select Subcommittee, July 11, 2023; CNN, July 11, 2023.",
-    "topic": "what-they-wrote-and-what-they-were-saying"
-  },
-  {
-    "tier": 5,
     "question": "House Republicans subpoenaed Kristian Andersen's emails and Slack messages in 2023, and he answered at a July hearing before the Select Subcommittee on the Coronavirus Pandemic. He had led the March 2020 Nature Medicine paper 'The Proximal Origin of SARS-CoV-2,' which told the public the new coronavirus had not been built. His defence rested on three concrete claims about how the paper actually came together. Which set of three did he put on the record?",
-    "answer": "About 45 days of new data changed his view; Fauci and Collins edited no draft; his NIH grant was awarded on a pre-pandemic application",
+    "answer": "The paper came out 45 days after the February call; Fauci and Collins edited no draft; his NIH grant was awarded on a pre-pandemic application",
     "choices": [
-      "About 45 days of new data changed his view; Fauci and Collins edited no draft; his NIH grant was awarded on a pre-pandemic application",
+      "The paper came out 45 days after the February call; Fauci and Collins edited no draft; his NIH grant was awarded on a pre-pandemic application",
       "The paper was drafted at Farrar's request; NIAID reviewed the manuscript before submission; the Slack channel was closed at Fauci's suggestion",
-      "About 45 days of new data changed his view; Collins co-authored an early draft; his NIH grant was renewed just after the paper appeared",
+      "The paper came out 45 days after the February call; Collins co-authored an early draft; his NIH grant was renewed just after the paper appeared",
       "Andersen initially believed the engineering hypothesis throughout; Farrar chose the journal; the NIH grant was awarded specifically to fund the origin analysis"
     ],
-    "context": "Steel-man reading: changing one's mind on new evidence is scientific; the load-bearing question is whether the paper's confident public conclusion was proportionate to the still-live private uncertainty. Source: Andersen written testimony, House Select Subcommittee, July 11, 2023.",
-    "topic": "what-they-wrote-and-what-they-were-saying"
-  },
-  {
-    "tier": 5,
-    "question": "Ian Lipkin and his four co-authors went back to Nature Medicine in 2021 with a short follow-up to 'The Proximal Origin of SARS-CoV-2'. Kristian Andersen, Robert Garry, Edward Holmes, Andrew Rambaut and Lipkin had written that March 2020 paper, widely read as ruling out any lab origin for COVID, and the follow-up clarified what it had actually claimed. Which clarification did they publish?",
-    "answer": "That the paper had argued against engineered origins only, not every possible lab-leak scenario",
-    "choices": [
-      "That the paper had argued against engineered origins only, not every possible lab-leak scenario",
-      "That the pangolin receptor-binding-domain match had been over-stated in the original paper",
-      "That new bat-coronavirus sequences from Laos had strengthened the natural-origin case",
-      "That the furin-insertion argument had been re-analysed and still held"
-    ],
-    "context": "For three years the paper had been cited as though it had closed every lab-related question. The lesson: changing your mind on new evidence is scientific; publishing a confident negative while still arguing the opposite in private is what turns a paper into an authority claim. Source: Andersen et al., 'On the origins of SARS-CoV-2,' Nature Medicine 2021.",
+    "context": "In his written testimony Andersen said the paper appeared on 17 March 2020, 45 days after the 1 February conference call, with a preprint posted 16 days after it; that neither Fauci nor Collins provided any edits, the only suggested change coming from Farrar, who asked for one 'unlikely' to become 'improbable'; and that the grant was applied for in June 2019 and scored in November 2019. He also wrote that his view on engineering 'had changed after just a few days'. Steel-man reading: changing one's mind on new evidence is scientific; the load-bearing question is whether the paper's confident public conclusion was proportionate to the still-live private uncertainty. Source: Andersen written testimony, House Select Subcommittee, July 11, 2023 (oversight.house.gov).",
     "topic": "what-they-wrote-and-what-they-were-saying"
   },
   {
@@ -44500,28 +44461,15 @@
   },
   {
     "tier": 2,
-    "question": "Madison Grant helped start the Bronx Zoo, saved the bison from dying off and helped create Glacier and Denali National Parks. He also wrote a race-science book that Hitler praised. What does his life show about people in history?",
-    "answer": "The same person can do both admirable and horrifying things",
+    "question": "Madison Grant, a New York lawyer, wrote a race-science book that Hitler praised. The same man was one of the country's leading conservationists: he helped start the Bronx Zoo and campaigned to protect the land that became Glacier and Denali National Parks. Which animal did he help save from dying out?",
+    "answer": "The American bison",
     "choices": [
-      "The same person can do both admirable and horrifying things",
-      "Every conservationist has always opposed racism",
-      "Nobody in the early 1900s cared about wildlife",
-      "History cleanly separates heroes from villains"
+      "The American bison",
+      "The bald eagle",
+      "The California condor",
+      "The whooping crane"
     ],
-    "context": "Muir, Leopold, and Pinchot are the more famous names in American conservation and are the reason this is a real recognition question rather than a giveaway. Source: National Park Service, 'Madison Grant.'",
-    "topic": "when-eugenics-was-the-respectable-opinion"
-  },
-  {
-    "tier": 2,
-    "question": "Madison Grant brought out an American bestseller with a big New York publisher in 1916. Historians today name it as the founding text of scientific racism in the United States. It went through four revised editions and was translated into German in 1925. What was the book called?",
-    "answer": "The Passing of the Great Race",
-    "choices": [
-      "The Passing of the Great Race",
-      "Applied Eugenics",
-      "The Kallikak Family",
-      "Mankind at the Crossroads"
-    ],
-    "context": "'Applied Eugenics' (Popenoe and Johnson, 1918), 'The Kallikak Family' (Goddard, 1912), and 'Mankind at the Crossroads' (East, 1923) are all real, contemporary American eugenics books. Source: Wikipedia, 'The Passing of the Great Race.'",
+    "context": "Grant was instrumental in forming the American Bison Society in 1905, which worked to bring the bison back from the edge of extinction, and he helped build the New York Zoological Society that opened the Bronx Zoo. The man behind those rescues and the man behind the race book were the same person. Sources: Grokipedia, 'Madison Grant'; National Park Service, 'Madison Grant.'",
     "topic": "when-eugenics-was-the-respectable-opinion"
   },
   {
@@ -44539,28 +44487,28 @@
   },
   {
     "tier": 3,
-    "question": "Adolf Hitler reportedly wrote Madison Grant a fan letter after a German translation of Grant's book appeared in 1925. The account traces back to Grant's own circle, and no physical letter survives to prove it. What striking short phrase did Hitler reportedly use for what the book was to him?",
-    "answer": "'my Bible'",
+    "question": "Madison Grant, a New York lawyer and conservationist, published a race-science book in 1916. A story says that after it appeared in German in 1925, Adolf Hitler wrote to Grant calling it his Bible. Historians repeat the story to this day. What is it based on?",
+    "answer": "An account from Grant's friends, with no letter surviving",
     "choices": [
-      "'my Bible'",
-      "'our compass'",
-      "'the roadmap'",
-      "'my textbook'"
+      "An account from Grant's friends, with no letter surviving",
+      "The letter itself, kept among Grant's papers in New York",
+      "A passage naming Grant in Hitler's book Mein Kampf",
+      "A thank-you note printed in a later edition of the book"
     ],
-    "context": "The 'my Bible' letter has not survived; historians repeat the anecdote with a 'reportedly.' Karl Brandt, Hitler's physician, did enter excerpts from the German translation into evidence at Nuremberg -- which is documented. Source: Wikipedia, 'The Passing of the Great Race.'  (Legend.)",
+    "context": "The anecdote comes from people around Grant, and no copy of the letter is known to survive, so historians repeat it with a 'reportedly' attached, and so does this bank. What is documented: Karl Brandt, Hitler's physician, entered excerpts from the German translation into evidence at Nuremberg. Sources: Grokipedia, 'Madison Grant'; Wikipedia, 'The Passing of the Great Race' (citing Stefan Kuhl, The Nazi Connection, 1994).  (Legend.)",
     "topic": "when-eugenics-was-the-respectable-opinion"
   },
   {
     "tier": 3,
-    "question": "Margaret Sanger set out a clear eugenic program in one article in the April 1932 issue of her journal, Birth Control Review. She founded the organization that later became Planned Parenthood and led what she called the birth-control movement, and she was also a lifelong eugenicist, arguing that the state should discourage the 'unfit' from having children. What was that article titled?",
-    "answer": "'A Plan for Peace'",
+    "question": "Margaret Sanger, founder of the group that grew into Planned Parenthood, published a eugenic program of her own in the April 1932 issue of her journal, Birth Control Review, under the title 'A Plan for Peace'. What exactly did the program propose?",
+    "answer": "Intelligence tests for immigrants and sterilizing the feeble-minded",
     "choices": [
-      "'A Plan for Peace'",
-      "'A Plea for the Fit'",
-      "'A Cure for Poverty'",
-      "'A Charter for Motherhood'"
+      "Intelligence tests for immigrants and sterilizing the feeble-minded",
+      "Sterilizing black Americans as a group, chosen by race alone",
+      "Free abortion clinics opened in every large American city",
+      "A federal ban on marriage between people of different races"
     ],
-    "context": "The article proposed IQ requirements for immigrants, sterilization or segregation of the 'feeble-minded,' and government work camps for 'morons, illiterates, paupers, unemployables, criminals, prostitutes, and drug addicts.' Source: John Locke Foundation, 'Margaret Sanger and Eugenics.'",
+    "context": "The article proposed intelligence-test requirements for immigrants, sterilization or segregation of the 'feeble-minded,' and government work camps for 'morons, illiterates, paupers, unemployables, criminals, prostitutes, and drug addicts.' It sorted people by condition, not by race or nationality, and Sanger herself opposed abortion. Sources: John Locke Foundation, 'Margaret Sanger and Eugenics'; FactCheck.org, 'Cain's False Attack on Planned Parenthood' (2011).",
     "topic": "when-eugenics-was-the-respectable-opinion"
   },
   {
@@ -44582,9 +44530,9 @@
     "answer": "Eugenics",
     "choices": [
       "Eugenics",
-      "Alchemy",
-      "Astrology",
-      "The flat-Earth theory"
+      "Phrenology",
+      "Spontaneous generation",
+      "The four bodily humors"
     ],
     "context": "George W. Hunter's 'A Civic Biology: Presented in Problems' (1914) called large classes of Americans 'parasites' on the gene pool and praised European advances in eugenics. Truman Moon's 'Biology for Beginners' (1926), Peabody and Hunt's 'Elementary Biology' (1913), and Smallwood, Reveley and Bailey's 'New General Biology' were competing US high-school biology textbooks of the same era. Sources: Wikipedia, 'Civic Biology.'",
     "topic": "when-eugenics-was-the-respectable-opinion"
@@ -44599,18 +44547,18 @@
       "It would roughly double the trait's frequency",
       "It would have no measurable effect at all"
     ],
-    "context": "Punnett -- famous today for the grid every biology student uses to work out Mendelian crosses -- published 'Eliminating Feeblemindedness' in the Journal of Heredity in 1917 and estimated it would take roughly 8,000 years for the sterilization program to make a serious difference. Bateson, Fisher, and Haldane are all real, major British geneticists of the era; Fisher was himself sympathetic to eugenics, making him the most tempting wrong answer. Source: Journal of Heredity 8:464-465 (1917), 'Eliminating Feeblemindedness.'",
+    "context": "Punnett -- famous today for the grid every biology student uses to work out Mendelian crosses -- published 'Eliminating Feeblemindedness' in the Journal of Heredity in 1917 and estimated it would take roughly 8,000 years for the sterilization program to make a serious difference. Source: Journal of Heredity 8:464-465 (1917), 'Eliminating Feeblemindedness.'",
     "topic": "when-eugenics-was-the-respectable-opinion"
   },
   {
     "tier": 5,
     "question": "A genetics student works through the 1917 refutation of the sterilization program, granting that 'feeblemindedness' really was a simple Mendelian recessive, as the eugenicists claimed. The math comes from a rule every genetics class now teaches. Which mechanism made the program hopeless?",
-    "answer": "most copies of a rare recessive allele are hidden inside phenotypically normal heterozygous carriers, so sterilizing only the visibly affected barely lowers the allele's frequency",
+    "answer": "Most copies hide in healthy carriers, beyond sterilization's reach",
     "choices": [
-      "most copies of a rare recessive allele are hidden inside phenotypically normal heterozygous carriers, so sterilizing only the visibly affected barely lowers the allele's frequency",
-      "recessive traits appear in blended form in every generation, so removing them only weakens the blend",
-      "sterilization triggers epigenetic reactivation of the recessive trait in surviving lineages within two generations",
-      "population growth outpaces sterilization at any plausible administrative rate"
+      "Most copies hide in healthy carriers, beyond sterilization's reach",
+      "Population growth outran any rate of sterilization a state could run",
+      "A recessive trait returns by fresh mutation in every generation",
+      "Epigenetic change switches the trait back on within two generations"
     ],
     "context": "This is a direct consequence of the Hardy-Weinberg principle, worked out by Hardy in 1908; Punnett brought it to Hardy for exactly this problem. The refutation was in print, in the Journal of Heredity, in 1917. Nobody who mattered acted on it -- Buck v. Bell went the other way ten years later. Sources: ScienceDirect, 'Punnett Square'; Nature Heredity, 'Eugenics and the Genetics Society.'",
     "topic": "when-eugenics-was-the-respectable-opinion"
@@ -44696,12 +44644,12 @@
   {
     "tier": 3,
     "question": "A senior scientist adds his name to a public letter in The Lancet in February 2020, as COVID begins spreading worldwide. He is one of 27 signers, and the letter calls any suggestion that the virus escaped from a laboratory a 'conspiracy theory.' It looks like an independent statement of the field's consensus, but it hides something about who actually drafted and organized it. What does the letter hide?",
-    "answer": "The head of the non-profit that had spent years funding bat coronavirus work in Chinese labs",
+    "answer": "The head of a non-profit that had long funded bat-coronavirus work in Chinese labs",
     "choices": [
-      "The head of the non-profit that had spent years funding bat coronavirus work in Chinese labs",
-      "An intern with no biology training assembled the signatures",
-      "The World Health Organization wrote every word directly",
-      "A pharmaceutical company ghostwrote the whole thing"
+      "The head of a non-profit that had long funded bat-coronavirus work in Chinese labs",
+      "The director of the agency that had approved the bat-coronavirus grants",
+      "Press officers at the Chinese embassy in London, who wrote the first draft",
+      "The journal's own editor, who wanted a calm statement for the public"
     ],
     "context": "Daszak's own emails, later released, describe wanting the letter to look independent of his organisation. The Lancet added a competing-interest addendum in June 2021 after readers challenged the original no-conflict disclosure. Source: usrtk.org emails, thelancet.com addendum.",
     "topic": "who-paid-for-the-bat-work"
@@ -44735,14 +44683,14 @@
   {
     "tier": 4,
     "question": "American diplomats at the US Embassy in Beijing sent home two cables in January 2018 after a visit, two years before anyone had heard of COVID-19. The cables warned that a Chinese lab had poor training, too few staff and serious management problems. Which lab did the cables warn about?",
-    "answer": "The Wuhan Institute of Virology's new BSL-4 lab",
+    "answer": "The Wuhan Institute of Virology's new high-containment lab",
     "choices": [
-      "The Wuhan Institute of Virology's new BSL-4 lab",
+      "The Wuhan Institute of Virology's new high-containment lab",
       "A People's Liberation Army field station in Yunnan",
       "The Shanghai Public Health Clinical Center",
       "The Harbin Veterinary Research Institute"
     ],
-    "context": "The cables were reported by Josh Rogin in the Washington Post in April 2020. BSL-4 is the highest biocontainment level; much of the actual chimeric bat-coronavirus work at the site, however, was done at the lower BSL-2 and BSL-3 conditions. Source: Washington Post, April 14, 2020.",
+    "context": "The cables were reported by Josh Rogin in the Washington Post in April 2020. The new lab was rated biosafety level 4, the highest containment level there is; much of the actual chimeric bat-coronavirus work at the institute, however, was done under the lower biosafety levels 2 and 3. Source: Washington Post, April 14, 2020.",
     "topic": "who-paid-for-the-bat-work"
   },
   {
@@ -44942,7 +44890,7 @@
   },
   {
     "tier": 3,
-    "question": "An English chemist better known for his work on electricity pressed two blocks of ice together in a cold room in 1842. A thin neck of ice grew between them and fused them into a single lump. He proposed that the ice surface must already be coated with something liquid-like, even below freezing. Who was he?",
+    "question": "An English chemist better known for his work on electricity pressed two blocks of ice together in a cold room in 1850. A thin neck of ice grew between them and fused them into a single lump. He proposed that the ice surface must already be coated with something liquid-like, even below freezing. Who was he?",
     "answer": "Michael Faraday",
     "choices": [
       "Michael Faraday",
@@ -44950,7 +44898,7 @@
       "Humphry Davy",
       "John Tyndall"
     ],
-    "context": "Faraday's fused-blocks trick is called regelation, and it is why a snowball packs together while dry sand does not. The 'thin liquid film on every ice surface' idea he floated in 1842 turned out, roughly, to be right. Source: https://pubs.aip.org/physicstoday/article/58/12/50/394684/Why-Is-Ice-Slippery-In-1859-Michael-Faraday",
+    "context": "Faraday's fused-blocks trick is called regelation, and it is why a snowball packs together while dry sand does not. The 'thin liquid film on every ice surface' idea he floated in 1850 turned out, roughly, to be right. Source: https://pubs.aip.org/physicstoday/article/58/12/50/394684/Why-Is-Ice-Slippery-In-1859-Michael-Faraday",
     "topic": "why-ice-is-slippery"
   },
   {
@@ -45007,28 +44955,28 @@
   },
   {
     "tier": 2,
-    "question": "Michel Eugene Chevreul, a French chemist, solved an old puzzle in 1813. For thousands of years people had made soap by boiling animal fat with wood-ash lye without knowing why it worked, and he showed what a fat actually is at the molecular level. What did he show a fat to be?",
-    "answer": "A glycerol ester of fatty acids",
+    "question": "Soapmakers boiled animal fat with lye from wood ash for thousands of years without knowing why the mixture turned to soap. In France in 1813 Michel Eugene Chevreul worked out what a fat is made of. What does the lye do to the fat?",
+    "answer": "It splits off fatty acids, whose salts are soap",
     "choices": [
-      "A glycerol ester of fatty acids",
-      "A pure hydrocarbon oil",
-      "A protein bound to sugar",
-      "A crystalline mineral salt"
+      "It splits off fatty acids, whose salts are soap",
+      "It cooks the fat down into a hard, waxy glycerol",
+      "It burns off the fat's impurities, leaving it pure",
+      "It whips air into the fat until the fat turns foamy"
     ],
-    "context": "Chevreul showed that the alkali splits those ester bonds and hands back the sodium salt of the fatty acid, which is soap. Suddenly the ancient recipe made mechanical sense. He lived to 102 and gave lipid chemistry its vocabulary. Source: OCL Journal, Contribution of Chevreul to lipid chemistry (2023).",
+    "context": "Chevreul showed that a fat is fatty acids bonded to glycerol, and that the alkali splits those bonds and hands back a salt of each fatty acid: that salt is soap, and the glycerol is left over. Suddenly the ancient recipe made mechanical sense. He lived to 102 and gave lipid chemistry its vocabulary. Source: OCL Journal, Contribution of Chevreul to lipid chemistry (2023).",
     "topic": "why-soap-wrecks-a-virus"
   },
   {
     "tier": 3,
-    "question": "A student stirs a tiny amount of soap into a glass of water, and the molecules just drift around one by one. She adds a little more, crosses a specific threshold, and they suddenly snap together all at once into microscopic balls. Chemists measure that snap-together threshold for every detergent they design. What is it called?",
-    "answer": "The critical micelle concentration",
+    "question": "A girl lathers her hands with plain soap for twenty seconds during flu season. A flu virus on her skin wears a thin outer envelope that it stole from the cell it grew in, and the soap wrecks it. What do the soap molecules do to that envelope?",
+    "answer": "Their greasy tails wedge into it and pry it apart",
     "choices": [
-      "The critical micelle concentration",
-      "The Krafft point",
-      "The cloud point",
-      "The isoelectric point"
+      "Their greasy tails wedge into it and pry it apart",
+      "They eat through it the way a strong acid would",
+      "They dry it out until it cracks and crumbles",
+      "They glue its spikes down so it cannot grip a cell"
     ],
-    "context": "Above the critical micelle concentration, tails hide from water in the ball's core while charged heads face outward; any grease from a plate tucks into the core and rinses down the drain. The Krafft, cloud, and isoelectric points are real surfactant thresholds that mean different things. Source: Biolin Scientific on critical micelle concentration.",
+    "context": "Above a threshold called the critical micelle concentration, soap molecules gather into microscopic balls, greasy tails hidden in the core and charged heads facing out, and grease from a plate tucks into those cores and rinses away. The envelope of a flu virus or a coronavirus is grease too: fat taken from the membrane of the cell it budded out of. The tails slide into that fatty layer and pry it apart, and without its envelope the virus cannot infect. Soap is mildly alkaline, not acidic. Sources: Biolin Scientific on critical micelle concentration; Pall Thordarson, 'The science of soap - here's how it kills the coronavirus', The Guardian, 12 March 2020.",
     "topic": "why-soap-wrecks-a-virus"
   },
   {
@@ -45158,7 +45106,7 @@
       "The molecules themselves, scattering light",
       "The molecules themselves, spinning end over end"
     ],
-    "context": "An O-H bond is the link between the oxygen and each hydrogen in H2O. Water absorbs red through a four-quantum overtone (v1+3v3) of its O-H stretching vibrations at 698 nm, sitting right at the red edge of vision. Braun and Smirnov called it 'the only example from nature in which color originates from vibrational transitions'; every other colour you see is made by electrons. Water is most transparent at 418 nm, deep violet-blue, where its attenuation length is about 227 metres, which is why a glassful looks clear and a lake looks blue: you need metres of path before the absorption shows. Check it where no sky can reflect, in deep holes punched in fresh snow, in frozen waterfalls, in glacier ice. Sources: C. L. Braun & S. N. Smirnov, 'Why is water blue?', J. Chem. Educ. 70(8) 612 (1993); Wikipedia, 'Electromagnetic absorption by water'; Woods Hole Oceanographic Institution, 'Why is the ocean blue?'.",
+    "context": "An O-H bond is the link between the oxygen and each hydrogen in H2O. In liquid water the red absorption is the short-wavelength tail of a band centred near 760 nm, a four-quantum overtone of the O-H stretching vibrations, with two weaker bands at 660 and 605 nm; the 698 nm often quoted is where one such overtone sits in water vapour, not in the liquid. Braun and Smirnov called it 'the only example from nature in which color originates from vibrational transitions'; every other colour you see is made by electrons. Water is most transparent at 418 nm, deep violet-blue, where its attenuation length is about 227 metres, which is why a glassful looks clear and a lake looks blue: you need metres of path before the absorption shows. Check it where no sky can reflect, in deep holes punched in fresh snow, in frozen waterfalls, in glacier ice. Sources: C. L. Braun & S. N. Smirnov, 'Why is water blue?', J. Chem. Educ. 70(8) 612 (1993), Table 1 (https://www.webexhibits.org/causesofcolor/ref/Braun-Smirnov.html); Wikipedia, 'Electromagnetic absorption by water'; Woods Hole Oceanographic Institution, 'Why is the ocean blue?'.",
     "topic": "why-the-sky-is-blue-and-the-sunset-is-red"
   },
   {
