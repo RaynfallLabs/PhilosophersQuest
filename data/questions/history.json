@@ -13273,16 +13273,16 @@
     "topic": "diderot-s-encyclopedia"
   },
   {
-    "tier": 4,
-    "question": "Diocletian decided one man could no longer guard Rome's vast borders alone. So he shared out the rule of the empire between senior emperors and their younger heirs, each guarding his own part of it, and he called the system the Tetrarchy. What does that Greek word literally mean?",
-    "answer": "Rule of four",
+    "tier": 3,
+    "question": "Diocletian became emperor in 284, taking charge of a Roman Empire that fifty years of civil war, assassination and invasion had nearly torn apart. He decided that no single ruler, however able, could hold so vast an empire alone. What was his answer?",
+    "answer": "He split its rule among four emperors",
     "choices": [
-      "Rule of four",
-      "Rule of the wise",
-      "Rule of the army",
-      "Rule of two"
+      "He split its rule among four emperors",
+      "He handed the provinces back to the Senate",
+      "He crowned his son as his co-emperor",
+      "He paid the Goths to guard the frontiers"
     ],
-    "context": "'Tetra' (four) + 'archy' (rule). Diocletian took the East with Galerius as his junior Caesar; Maximian held the West with Constantius. This East/West division foreshadowed Rome's eventual permanent split into two empires. Source: worldhistory.org/image/18530; britannica.com/place/ancient-Rome/Diocletian.",
+    "context": "His answer was the Tetrarchy, from the Greek 'tetra' (four) and 'archy' (rule): two senior emperors and their two junior heirs, each guarding a quarter of the empire. Diocletian took the East with Galerius as his junior Caesar; Maximian held the West with Constantius. This East/West division foreshadowed Rome's eventual permanent split into two empires. Source: worldhistory.org/image/18530; britannica.com/place/ancient-Rome/Diocletian.",
     "topic": "diocletian-and-the-splitting-of-the-empire"
   },
   {
@@ -13326,13 +13326,13 @@
   },
   {
     "tier": 3,
-    "question": "Donatello cast a bronze of the boy David in Florence around 1440, standing bare over the giant Goliath's severed head. The figure stood on its own, with no wall or pillar to prop it up. Cosimo de' Medici most likely commissioned it. What record did Donatello's David set?",
+    "question": "Donatello cast a bronze of the boy David in Florence around 1440, the young hero standing over the giant Goliath's severed head. Cosimo de' Medici most likely commissioned it, and it was displayed on a column at the Medici family's palace. What record did Donatello's David set?",
     "answer": "The first freestanding nude statue cast since antiquity",
     "choices": [
       "The first freestanding nude statue cast since antiquity",
       "The largest bronze ever poured in a single mold",
       "The first statue to be gilded entirely in gold leaf",
-      "The tallest figure carved from a single marble block"
+      "The first bronze cast by lost wax since antiquity"
     ],
     "context": "Donatello's bronze David (about 158 cm tall, now in the Bargello in Florence) was the first freestanding nude male statue made since the Romans — roughly a thousand-year gap — and the first unsupported standing bronze cast in the Renaissance. It was most likely commissioned by Cosimo de' Medici and stood on a column in the courtyard of the old Medici Palace. Source: https://en.wikipedia.org/wiki/David_(Donatello,_bronze)",
     "topic": "donatello-and-ghiberti-early-renaissance-sculptu"
@@ -13703,7 +13703,7 @@
   },
   {
     "tier": 3,
-    "question": "An Egyptian doctor peered into a man's broken skull around 1600 BC and gave the first known description of the brain, setting it down in a casebook of 48 injuries, the Edwin Smith Papyrus, the oldest surgical text ever found. He compared the brain's strange wrinkled surface to one thing. What did he say it looked like?",
+    "question": "An Egyptian doctor peered into a man's broken skull and gave the first known description of the brain. His case survives in the Edwin Smith Papyrus, a book of 48 injuries copied out around 1600 BC and the oldest surgical text ever found. He compared the brain's wrinkled surface to one thing. What did he say it looked like?",
     "answer": "The corrugations of molten copper",
     "choices": [
       "The corrugations of molten copper",
@@ -13746,9 +13746,9 @@
     "answer": "Head and legs from the side, but eye and shoulders from the front",
     "choices": [
       "Head and legs from the side, but eye and shoulders from the front",
-      "The entire body face-on, staring straight at the viewer",
-      "The entire body in full side-view, flat like a shadow",
-      "The entire body seen from high above, as if looking down"
+      "Head and eye from the front, but shoulders and legs from the side",
+      "Head and shoulders from the front, but eye and legs from the side",
+      "The entire body in full side-view, flat like a shadow"
     ],
     "context": "Scholars call this the 'composite' pose. Clarity of each part mattered more than realistic perspective, which is why a single eye stares out from a sideways face. Source: https://www.ancientsociety.com/egypt/why-ancient-egyptians-depicted-people-in-profile/",
     "topic": "egyptian-art-and-the-pyramids-of-giza"
@@ -13794,13 +13794,13 @@
   },
   {
     "tier": 3,
-    "question": "The artists who decorated Egypt's tombs and temples drew every figure at a size set by its rank, not by where it stood in the scene. The most important figure was always the biggest and the least important the smallest, a rule now called hierarchical scale. In a grand royal scene, who would they draw largest of all?",
-    "answer": "The pharaoh or a god",
+    "question": "Egyptian artists drew some figures two or three times the size of others in the same scene, and they kept to that habit on tomb and temple walls for some 3,000 years. What decided how big each figure was drawn?",
+    "answer": "How important the person was",
     "choices": [
-      "The pharaoh or a god",
-      "A soldier or a guard",
-      "A servant or a slave",
-      "A merchant or a trader"
+      "How important the person was",
+      "How near the person stood to the viewer",
+      "How tall the person really was",
+      "How much wall space was left to fill"
     ],
     "context": "This rule is called hierarchical scale: importance is readable at a glance from size alone. The pharaoh or a god looms largest, officials and family smaller, and servants or captives smallest of all. Source: https://www.thecollector.com/king-narmer-palette-artistic-convention/",
     "topic": "egyptian-art-and-the-pyramids-of-giza"
@@ -13820,7 +13820,7 @@
   },
   {
     "tier": 3,
-    "question": "Napoleon's soldiers reached Egypt long after the Great Sphinx had lost its nose, for sketches drawn about sixty years before they arrived already showed it gone. A favourite story blamed them all the same, saying they shot it off with a cannon. Who, by the leading account, really broke it?",
+    "question": "Napoleon's soldiers reached Egypt in 1798, and a favourite story blames them for the Great Sphinx's missing nose: they shot it off with a cannon, it says. Yet the nose had been gone long before the French arrived. Who, by the leading account, really broke it?",
     "answer": "A local Sufi protesting idol-worship",
     "choices": [
       "A local Sufi protesting idol-worship",
@@ -13833,15 +13833,15 @@
   },
   {
     "tier": 4,
-    "question": "Khafre raised his pyramid at Giza a generation after his father Khufu built the Great Pyramid, and set it right beside his father's. Khafre's was slightly lower than Khufu's, yet to anyone standing between them it looked the taller of the two. What made the son's pyramid seem to win the contest?",
+    "question": "Khafre raised his pyramid at Giza a generation after his father built the Great Pyramid, and set it right beside his father's. Khafre's was a little shorter, yet it looks the taller of the two. What made the son's pyramid seem to win the contest?",
     "answer": "It was built on higher ground up the plateau",
     "choices": [
       "It was built on higher ground up the plateau",
       "It was finished in darker, looming colors",
-      "It was given a much sharper, steeper point",
-      "It was ringed by deep pits that lower the view"
+      "It was raised on a broader base than his father's",
+      "It was stacked from bigger, heavier blocks"
     ],
-    "context": "Khafre set his pyramid on bedrock about 10 m (33 ft) higher up the plateau, so it appears to overtop Khufu's even though it is slightly shorter. It also still keeps a cap of original smooth limestone casing at its very top. Source: https://en.wikipedia.org/wiki/Pyramid_of_Khafre",
+    "context": "Khafre set his pyramid on bedrock about 10 m (33 ft) higher up the plateau, so it appears to overtop Khufu's even though it is slightly shorter and stands on a smaller base. It also still keeps a cap of original smooth limestone casing at its very top. Source: https://en.wikipedia.org/wiki/Pyramid_of_Khafre",
     "topic": "egyptian-art-and-the-pyramids-of-giza"
   },
   {
@@ -13924,12 +13924,12 @@
   },
   {
     "tier": 3,
-    "question": "Set murdered his own brother out of jealousy in the great Egyptian myth. Plutarch, a Greek writer, wrote that killing him was not enough for Set: he did something to the corpse that turned finding it into a long search. What did Set do to the body?",
+    "question": "Set murdered his own brother out of jealousy in the great Egyptian myth. Plutarch, a Greek writer, wrote that killing him was not enough for Set, who went after the corpse as well. What did Set do to the body?",
     "answer": "He hacked it into pieces and flung them across Egypt",
     "choices": [
       "He hacked it into pieces and flung them across Egypt",
       "He burned it to ashes in a sealed furnace",
-      "He sank it in a stone chest in the sea",
+      "He buried it deep beneath the desert sand",
       "He fed it to the sacred temple crocodiles"
     ],
     "context": "Plutarch says Set tore the body into 14 pieces and scattered them the length of Egypt. Source: Britannica, https://www.britannica.com/topic/Osiris-Egyptian-god ; https://en.wikipedia.org/wiki/Osiris_myth  (Legend.)",
@@ -14015,13 +14015,13 @@
   },
   {
     "tier": 5,
-    "question": "One Theban took to his grave, around 1250 BC, the finest copy of the Book of the Dead known: a scroll some 78 feet long that the British Museum bought in 1888. He was no pharaoh and no king. Who was he?",
-    "answer": "Ani, a royal scribe",
+    "question": "Ani of Thebes took to his grave, around 1250 BC, the finest copy of the Book of the Dead known: a scroll some 78 feet long that the British Museum bought in 1888. He was no pharaoh and no king. What post did Ani hold?",
+    "answer": "A royal scribe",
     "choices": [
-      "Ani, a royal scribe",
-      "Imhotep, a temple architect",
-      "Sinuhe, a palace guard",
-      "Hesy-Ra, a court dentist"
+      "A royal scribe",
+      "A priest of Amun",
+      "A chariot general",
+      "A mayor of Thebes"
     ],
     "context": "It is called the Papyrus of Ani, made around 1250 BCE for Ani, a royal scribe of Thebes — proof that even a working scribe, not just royalty, could be sent into the afterlife with the full book of spells. Source: https://en.wikipedia.org/wiki/Papyrus_of_Ani",
     "topic": "egyptian-gods-and-the-book-of-the-dead"
@@ -14045,11 +14045,11 @@
     "answer": "Mass and energy are the same thing",
     "choices": [
       "Mass and energy are the same thing",
-      "Light and sound travel together",
-      "Gravity and magnetism are equal",
-      "Time and distance never change"
+      "Light and sound are the same thing",
+      "Gravity and magnetism are the same thing",
+      "Mass and weight are the same thing"
     ],
-    "context": "Because you multiply by the speed of light (about 186,000 miles per second) squared, even a pinch of matter holds enormous energy -- the principle behind both the Sun's furnace and the atomic bomb. Source: https://www.discovermagazine.com/the-sciences/e-mc2-what-does-einsteins-most-famous-equation-mean",
+    "context": "Because the mass is multiplied by the speed of light (about 186,000 miles per second) squared, even a pinch of matter holds enormous energy -- the principle behind both the Sun's furnace and the atomic bomb. Source: https://www.discovermagazine.com/the-sciences/e-mc2-what-does-einsteins-most-famous-equation-mean",
     "topic": "einstein-and-relativity"
   },
   {
@@ -14059,15 +14059,15 @@
     "choices": [
       "Einstein's 'miracle year'",
       "Einstein's 'patent year'",
-      "Einstein's 'Bern lectures'",
-      "Einstein's 'first theory'"
+      "Einstein's 'golden year'",
+      "Einstein's 'lucky year'"
     ],
     "context": "In Latin it is the 'annus mirabilis.' No other scientist has matched four field-changing papers in twelve months -- and he did it as a junior clerk, not a professor. Source: https://en.wikipedia.org/wiki/Annus_mirabilis_papers",
     "topic": "einstein-and-relativity"
   },
   {
     "tier": 2,
-    "question": "Arthur Eddington, a British astronomer, sailed to the island of Principe off West Africa in May 1919 to photograph a total eclipse of the Sun. He meant to test Einstein's bold claim about the Sun's pull on starlight. What had happened to the light of the stars near the Sun in his photographs?",
+    "question": "Arthur Eddington, a British astronomer, sailed to Principe off West Africa in May 1919 to photograph a total eclipse of the Sun. He meant to test a bold prediction of Einstein's about starlight passing close to the Sun. What had happened to the starlight near the Sun in his photographs?",
     "answer": "The starlight bent off its straight path",
     "choices": [
       "The starlight bent off its straight path",
@@ -14075,7 +14075,7 @@
       "The starlight turned a deep red",
       "The starlight split into two beams"
     ],
-    "context": "Eddington's result matched Einstein's prediction exactly and made Einstein the most famous scientist in the world almost overnight. Source: https://earthsky.org/human-world/may-29-1919-solar-eclipse-einstein-relativity/",
+    "context": "Eddington's result agreed with Einstein's prediction, within the wide margins of his plates, and made Einstein the most famous scientist in the world almost overnight. Source: https://earthsky.org/human-world/may-29-1919-solar-eclipse-einstein-relativity/ ; https://en.wikipedia.org/wiki/Eddington_experiment",
     "topic": "einstein-and-relativity"
   },
   {
@@ -14085,7 +14085,7 @@
     "choices": [
       "The law of the photoelectric effect",
       "The motion of atoms inside fluids",
-      "The theory of special relativity",
+      "The theory of heat in solids",
       "The equation linking mass and energy"
     ],
     "context": "The official citation read 'for his discovery of the law of the photoelectric effect' -- not for relativity, which the committee thought too contested. At the 1923 ceremony Einstein lectured on relativity anyway. Source: https://www.advancedsciencenews.com/the-dramatic-story-behind-general-relativitys-nobel-prize-snub/",
@@ -14114,7 +14114,7 @@
       "A spinning person sees no stars",
       "A sleeping person hears no sound"
     ],
-    "context": "If you fall freely, you don't feel your own weight at all -- so Einstein realized that 'gravity' and simply 'accelerating' must be two names for one thing. That insight grew into general relativity. Source: https://en.wikipedia.org/wiki/Einstein%27s_thought_experiments",
+    "context": "A person falling freely does not feel his own weight at all, so Einstein realized that 'gravity' and simply 'accelerating' must be two names for one thing. That insight grew into general relativity. Source: https://en.wikipedia.org/wiki/Einstein%27s_thought_experiments",
     "topic": "einstein-and-relativity"
   },
   {
@@ -14124,10 +14124,10 @@
     "choices": [
       "The twin who traveled is younger",
       "The twin who stayed is younger",
-      "The twins have switched bodies",
+      "The twin who traveled is now shorter",
       "The twins are exactly the same age"
     ],
-    "context": "Time runs slower for whoever is moving fast (time dilation), so the rocket twin ages less. This 'twin paradox' is the most famous thought experiment in relativity. Source: https://www.scientificamerican.com/article/time-and-the-twin-paradox-2006-02/",
+    "context": "Time runs slower for whoever is moving fast (time dilation), so the rocket twin ages less. This 'twin paradox' is the most famous thought experiment in relativity; the physicist Paul Langevin first told it as a story of a traveller in 1911. Source: https://www.scientificamerican.com/article/time-and-the-twin-paradox-2006-02/ ; https://en.wikipedia.org/wiki/Twin_paradox",
     "topic": "einstein-and-relativity"
   },
   {
@@ -14136,9 +14136,9 @@
     "answer": "Its president",
     "choices": [
       "Its president",
+      "Its prime minister",
       "Its chief rabbi",
-      "Its army general",
-      "Its court inventor"
+      "Its foreign minister"
     ],
     "context": "Prime Minister David Ben-Gurion had privately worried, 'But if he accepts, we are in trouble.' Einstein declined, citing his lack of 'the natural aptitude and the experience to deal properly with people.' Source: https://www.britannica.com/story/the-time-albert-einstein-was-asked-to-be-president-of-israel",
     "topic": "einstein-and-relativity"
@@ -14158,26 +14158,26 @@
   },
   {
     "tier": 5,
-    "question": "Two bolts of lightning struck a railway track at the same instant in one of Einstein's thought experiments, one far ahead and one far behind, for a man watching from the embankment. A passenger raced past on a fast train at that very moment. Einstein worked out that the passenger would not see the timing the watcher saw. For the passenger, when did the two bolts strike?",
-    "answer": "One clearly struck before the other",
+    "question": "Albert Einstein pictured two bolts of lightning hitting a railway track at the same instant, as seen by a man on the embankment halfway between them. A fast train was carrying a passenger past that man at that very moment, rushing toward one bolt and away from the other. For the passenger, which bolt struck first, if either?",
+    "answer": "The one his train was heading for",
     "choices": [
-      "One clearly struck before the other",
-      "Both struck at the exact same instant",
-      "Both struck just after the train passed",
-      "Both struck the instant the train stopped"
+      "The one his train was heading for",
+      "The one his train was leaving behind",
+      "Both struck at the very same instant",
+      "Their order could never be known"
     ],
-    "context": "Two events that are simultaneous for one observer are NOT simultaneous for another who is moving -- whether two things happen 'at the same time' depends on who is moving. This is the relativity of simultaneity. Source: https://en.wikipedia.org/wiki/Einstein%27s_thought_experiments",
+    "context": "Two events that are simultaneous for one observer are not simultaneous for another who is moving. The passenger is rushing toward the light from the bolt ahead, so it reaches him first, and in his frame that bolt really did strike first. This is the relativity of simultaneity. Source: Einstein, Relativity: The Special and General Theory (1917), ch. 9; https://en.wikipedia.org/wiki/Relativity_of_simultaneity",
     "topic": "einstein-and-relativity"
   },
   {
-    "tier": 5,
-    "question": "Einstein argued that gravity is no invisible rope pulling things downward. His general relativity predicted that even a beam of light, which has no weight for any rope to grab, will swerve as it passes a heavy object like the Sun. In his theory, what bends the light's path?",
-    "answer": "The Sun's mass curves the space around it",
+    "tier": 4,
+    "question": "Einstein argued, in his general relativity of 1915, that gravity is no invisible rope pulling things downward. In his theory a planet circles the Sun and an apple falls to the ground for another reason altogether. What did he say gravity really is?",
+    "answer": "Mass curving the space around it",
     "choices": [
-      "The Sun's mass curves the space around it",
-      "The Sun's heat shoves the beam aside",
-      "The Sun's magnetism pulls the beam inward",
-      "The Sun's brightness drags the beam along"
+      "Mass curving the space around it",
+      "Magnetism hidden inside all matter",
+      "The weight of the air pressing down",
+      "A push from tiny particles striking matter"
     ],
     "context": "Physicist John Wheeler put it in one line: 'Matter tells spacetime how to curve; spacetime tells matter how to move.' Gravity isn't a pull -- mass bends spacetime, and objects (and even light) simply follow the curves. Source: https://en.wikiquote.org/wiki/John_Archibald_Wheeler",
     "topic": "einstein-and-relativity"
@@ -14185,12 +14185,12 @@
   {
     "tier": 4,
     "question": "Joseph Nicholson, a congressman from Maryland, was so sick in February 1801 that he could barely stand, yet the House of Representatives was balloting day after day to choose the next president, Thomas Jefferson or Aaron Burr. Maryland's vote hung on him. How did Nicholson keep casting his vote for Jefferson?",
-    "answer": "He had himself carried into the Capitol on a stretcher to cast each ballot",
+    "answer": "He had himself carried in on a stretcher",
     "choices": [
-      "He had himself carried into the Capitol on a stretcher to cast each ballot",
-      "He mailed in a signed ballot from his sickbed every morning",
-      "He sent his wife to the Capitol to vote in his place",
-      "He had a doctor declare him healthy so he could attend"
+      "He had himself carried in on a stretcher",
+      "He mailed a signed ballot from his sickbed",
+      "He sent his wife to vote in his place",
+      "He had a doctor swear he was fit to attend"
     ],
     "context": "Joseph Hopper Nicholson was gravely ill in February 1801 but had himself carried on a stretcher to the Capitol to keep casting his ballots for Jefferson. Without his sickbed vote, Maryland's delegation would have flipped to Burr. Source: en.wikipedia.org/wiki/Joseph_Hopper_Nicholson (citing John Ferling, Adams vs. Jefferson, p.187).",
     "topic": "election-of-1800-peaceful-transfer-of-power"
@@ -14198,12 +14198,12 @@
   {
     "tier": 5,
     "question": "Thomas Jefferson and Aaron Burr, his own running mate, tied at 73 electoral votes each in 1800, and the choice fell to the House of Representatives, voting state by state. The chamber jammed for 35 ballots over six days, and partisans spoke openly of settling the matter by force. Delaware's single congressman, James Bayard, controlled his entire state's vote by himself. What did he do on the 36th ballot?",
-    "answer": "He switched from voting for Burr to abstaining, ending the deadlock",
+    "answer": "He stopped voting for Burr and abstained",
     "choices": [
-      "He switched from voting for Burr to abstaining, ending the deadlock",
-      "He convinced two other states to change their votes overnight",
-      "He proposed a coin flip to settle the contest fairly",
-      "He demanded a brand-new election be held that spring"
+      "He stopped voting for Burr and abstained",
+      "He switched Delaware's vote to Jefferson",
+      "He walked out to break the House quorum",
+      "He demanded a new election that spring"
     ],
     "context": "James Bayard of Delaware, the lone representative from his state, controlled an entire state's vote; after seeking assurances from a Jefferson ally, he switched from voting for Burr to abstaining on the 36th ballot, collapsing the deadlock and giving Jefferson the presidency. Two states had put their militia on alert, raising the real prospect of armed conflict — yet power passed by ballot, the first U.S. transfer from one party to its bitter rival. Source: smithsonianmag.com/history/thomas-jefferson-aaron-burr-and-the-election-of-1800-131082359.",
     "topic": "election-of-1800-peaceful-transfer-of-power"
@@ -14262,13 +14262,13 @@
   },
   {
     "tier": 3,
-    "question": "Eli Whitney, like many Americans, hoped slavery would slowly fade away, since tobacco was wearing out the soil and paying less each year. Then his gin made upland cotton, which grew all over the inland South, fast and cheap to clean. What happened to slavery instead?",
+    "question": "Eli Whitney, like many Americans, hoped slavery would slowly fade away, since tobacco was wearing out the soil and paying less each year. Then his gin made upland cotton, which grew all over the inland South, fast and cheap to clean. What did that do to slavery?",
     "answer": "The demand for enslaved labor grew enormously as cotton spread west",
     "choices": [
       "The demand for enslaved labor grew enormously as cotton spread west",
       "Slavery shrank to the coast where smooth-seeded cotton grew",
       "Plantations replaced enslaved field hands with the new machines",
-      "The South turned away from cotton back to tobacco"
+      "Slavery faded out within a generation, as Whitney had hoped"
     ],
     "context": "The gin reversed expectations: with cleaning suddenly fast and profitable, the cotton South expanded and the demand for enslaved labor exploded. The number of enslaved people in the U.S. rose from about 700,000 in 1790 to over three million by 1850, and raw-cotton output jumped from about 3,138 bales in 1790 to roughly 3.8 million by 1860. Source: https://www.pbs.org/wgbh/aia/part3/3h1522.html and https://courses.lumenlearning.com/wm-ushistory1/chapter/the-cotton-revolution/",
     "topic": "eli-whitney-s-cotton-gin-and-its-consequence"
@@ -14392,15 +14392,15 @@
   },
   {
     "tier": 5,
-    "question": "Elizabeth I took the throne in 1558 after years in which Catholic and Protestant rulers alike had burned their enemies for wrong belief. She set out to end the bloodshed with a compromise: everyone had to attend the official Church of England on Sunday, but she would not hunt heretics or punish quiet Catholics. She said she had no wish to do one thing to men's souls. What was it?",
-    "answer": "make windows into men's souls",
+    "question": "Elizabeth I took the throne in 1558 after years in which Catholic and Protestant rulers alike had burned their enemies. She chose a compromise: everyone must go to the Church of England on Sunday, but she would not punish quiet Catholics for private belief. Francis Bacon wrote that the queen did not like to do one thing to the hearts and secret thoughts of her subjects. What was it?",
+    "answer": "make windows into men's hearts",
     "choices": [
-      "make windows into men's souls",
-      "pry open the doors of men's souls",
-      "read the secret pages of men's souls",
-      "hold a bright candle to men's souls"
+      "make windows into men's hearts",
+      "pry open the doors of men's hearts",
+      "read the secret pages of men's hearts",
+      "hold a bright candle to men's hearts"
     ],
-    "context": "Elizabeth's 1559 religious settlement was a deliberate 'middle way' — outward conformity without prying into belief — captured in the line that she had no wish to 'make windows into men's souls.' Source: elizabethi.org 'The Elizabethan Religious Settlement (1559)'; America Magazine 'Windows into Men's Souls'.  (Legend.)",
+    "context": "Elizabeth's 1559 religious settlement was a deliberate 'middle way': outward conformity without prying into belief. In 1592 Francis Bacon described her as 'not liking to make windows into men's hearts and secret thoughts.' The famous version credited to Elizabeth herself, 'windows into men's souls,' is a later rewording; she is not known to have said it. Source: Bacon, Certain Observations upon a Libel (1592), via metaphors.lib.virginia.edu; elizabethi.org 'The Elizabethan Religious Settlement (1559)'.  (Legend.)",
     "topic": "elizabeth-i-england-s-golden-age"
   },
   {
@@ -14418,7 +14418,7 @@
   },
   {
     "tier": 5,
-    "question": "The painter of the Rainbow Portrait showed the ageing Elizabeth I gripping a rainbow beneath the motto 'No rainbow without the sun,' and covered her golden cloak with a repeating pattern that carried a warning to her subjects. What images covered the cloak?",
+    "question": "The painter of the Rainbow Portrait, made late in her reign, showed Elizabeth I gripping a rainbow beneath the motto 'No rainbow without the sun,' and covered her golden cloak with a repeating pattern that carried a warning to her subjects. What images covered the cloak?",
     "answer": "eyes and ears",
     "choices": [
       "eyes and ears",
@@ -14457,15 +14457,15 @@
   },
   {
     "tier": 4,
-    "question": "Northern merchants on Ghana's trade routes laid out their goods, beat a drum and walked off. The gold people then came, set gold beside the goods they wanted and left again; the two sides never met, and the mines stayed secret. What is this way of trading called?",
-    "answer": "Silent barter",
+    "question": "Salt traders from the north came to the edge of the lands where Ghana's gold was dug, but no outsider was ever allowed to learn where the mines lay. How did the traders and the gold people make their deals?",
+    "answer": "Each side left goods and withdrew, never meeting the other",
     "choices": [
-      "Silent barter",
-      "Tribute payment",
-      "Sacred bargain",
-      "Drum auction"
+      "Each side left goods and withdrew, never meeting the other",
+      "They haggled through interpreters at the royal market",
+      "They met once a year at a secret spot in the desert",
+      "The king's officers set every price and made each swap"
     ],
-    "context": "In silent barter (the 'silent trade'), the two sides never met, which kept the gold mines' location a secret for generations. Sources: en.wikipedia.org/wiki/Silent_trade; brewminate.com/the-medieval-west-african-trading-empire-of-ghana/",
+    "context": "This was silent barter, the 'silent trade': the salt traders laid out their goods, beat a drum and walked off; the gold people came, set gold beside what they wanted and withdrew in turn. The two sides never met, which kept the mines' location a secret for generations. Sources: en.wikipedia.org/wiki/Silent_trade; brewminate.com/the-medieval-west-african-trading-empire-of-ghana/",
     "topic": "empire-of-ghana-the-land-of-gold"
   },
   {
@@ -14530,7 +14530,7 @@
       "Sinking, because the cold numbed the body",
       "Floating, because guilt made the body lighter"
     ],
-    "context": "It feels backwards to us: sinking saved you. The priest had consecrated the water, so if it 'accepted' your body and you sank, you were judged innocent; if the holy water 'rejected' you and you floated, you were guilty. A rope kept the innocent from drowning. Sources: https://hls.harvard.edu/today/the-veiled-history-of-the-english-jury-trial/ ; https://en.wikipedia.org/wiki/Trial_by_ordeal",
+    "context": "It sounds backwards, but sinking saved the accused. The priest had consecrated the water, so if it 'accepted' his body and he sank, he was judged innocent; if the holy water 'rejected' him and he floated, he was guilty. A rope kept the innocent from drowning. Sources: https://hls.harvard.edu/today/the-veiled-history-of-the-english-jury-trial/ ; https://en.wikipedia.org/wiki/Trial_by_ordeal",
     "topic": "english-common-law-the-jury-and-innocent-until-p"
   },
   {
@@ -14548,7 +14548,7 @@
   },
   {
     "tier": 3,
-    "question": "Old Giles Corey of Salem would not plead to the charge against him in 1692, and without a plea the law could not try him. So his tormentors laid him on his back and piled heavy stones on him to make him speak. He held out for two days, and each time they demanded his plea, he gave the same answer. What was it?",
+    "question": "Old Giles Corey of Salem would not plead to the charge against him in 1692, and without a plea the law could not try him. So his tormentors laid him on his back and piled heavy stones on him to make him speak. He held out for two days, and each time they demanded his plea, the story goes, he gave the same answer. What was it?",
     "answer": "More weight",
     "choices": [
       "More weight",
@@ -14556,7 +14556,7 @@
       "God will judge",
       "Take them off"
     ],
-    "context": "'More weight' is what Giles Corey is said to have growled as the stones piled on. He chose to be pressed to death rather than plead, because a man who died WITHOUT a verdict kept his estate for his heirs, while a convicted felon's property was forfeited to the crown. 'Peine forte et dure' is Law-French for 'hard and forceful punishment.' Sources: https://en.wikipedia.org/wiki/Giles_Corey ; https://www.britannica.com/topic/peine-forte-et-dure",
+    "context": "'More weight' is what Giles Corey is said to have growled as the stones piled on; the words come down by later tradition, not from a record made at the time. He chose to be pressed to death rather than plead, and a man who died WITHOUT a verdict kept his estate for his heirs, while a convicted felon's property was forfeited to the crown. 'Peine forte et dure' is Law-French for 'hard and forceful punishment.' Sources: https://en.wikipedia.org/wiki/Giles_Corey ; https://www.britannica.com/topic/peine-forte-et-dure",
     "topic": "english-common-law-the-jury-and-innocent-until-p"
   },
   {
@@ -14578,9 +14578,9 @@
     "answer": "Priests from blessing the iron or the water",
     "choices": [
       "Priests from blessing the iron or the water",
-      "Kings from sentencing any man to lose a limb",
-      "Judges from travelling between the country districts",
-      "Sheriffs from seizing the goods of a convicted man"
+      "Kings from using the ordeal in cases of treason",
+      "Judges from putting women to the red-hot iron",
+      "Courts from sending any man to the ordeal twice"
     ],
     "context": "The priest's blessing was the secret ingredient — it was what supposedly called down God's judgment. Canon 18 of the Fourth Lateran Council barred priests from blessing the iron or the water, and without that the ordeal was 'just torture' and meaningless. England then had to invent a replacement: letting twelve men weigh the evidence. Sources: https://academic.oup.com/ojls/article-abstract/26/3/473/1452002 ; https://hls.harvard.edu/today/the-veiled-history-of-the-english-jury-trial/",
     "topic": "english-common-law-the-jury-and-innocent-until-p"
@@ -14593,9 +14593,9 @@
       "The Fifth and Fourteenth Amendments' due-process guarantees",
       "The Eighth Amendment's ban on cruel and unusual punishment",
       "The Declaration of Independence's list of royal abuses",
-      "The Northwest Ordinance's guarantee of trial by jury"
+      "The First Amendment's shield for speech and a free press"
     ],
-    "context": "An 800-year-old line from an English charter is load-bearing in American law: Magna Carta's 'judgment of his peers' and 'law of the land' were copied straight into the due-process guarantees of the Fifth and Fourteenth Amendments. Clause 40 added a companion promise — 'To no one will we sell, to no one deny or delay, right or justice.' Sources: https://magnacarta.cmp.uea.ac.uk/read/magna_carta_1215/Clause_39 ; https://en.wikipedia.org/wiki/Presumption_of_innocence",
+    "context": "An 800-year-old line from an English charter is load-bearing in American law: Magna Carta's 'judgment of his peers' and 'law of the land' passed, as 'due process of law,' into the guarantees of the Fifth and Fourteenth Amendments. Clause 40 added a companion promise: 'To no one will we sell, to no one deny or delay, right or justice.' Sources: https://magnacarta.cmp.uea.ac.uk/read/magna_carta_1215/Clause_39 ; https://en.wikipedia.org/wiki/Due_process",
     "topic": "english-common-law-the-jury-and-innocent-until-p"
   },
   {
@@ -14639,7 +14639,7 @@
   },
   {
     "tier": 2,
-    "question": "Bletchley's Wrens, some 700 of them, took turns at Bletchley Park's noisy code-breaking machines while the codebreakers worked on Nazi Germany's Enigma messages. About 9,000 people worked there at the peak, and most of them were not the men later films remember. Out of every four Bletchley workers, about how many were women?",
+    "question": "Bletchley Park had about 9,000 people at work on Nazi Germany's ciphers at its peak, and some 700 Wrens took turns at its noisy code-breaking machines. Films about the place tend to centre on a few brilliant men. Out of every four Bletchley workers, about how many were women?",
     "answer": "Three",
     "choices": [
       "Three",
@@ -14669,9 +14669,9 @@
     "answer": "Replica Enigma machines and their breaking methods",
     "choices": [
       "Replica Enigma machines and their breaking methods",
-      "A captured German invasion timetable",
-      "A list of every German spy in Britain",
-      "The blueprints for a new Polish tank"
+      "A captured German Enigma from a crashed plane",
+      "A list of the German army's daily keys for 1939",
+      "The radio sets of a captured German spy ring"
     ],
     "context": "At Pyry the Poles gave Dilly Knox and Alastair Denniston working Enigma replicas plus their methods. Britain had been beaten by the cipher until then; the Polish gift was the foundation of the entire Bletchley effort. Source: https://en.wikipedia.org/wiki/Marian_Rejewski",
     "topic": "enigma-and-bletchley-park-codebreaking"
@@ -14717,15 +14717,15 @@
   },
   {
     "tier": 5,
-    "question": "Cipher Deavours, a cryptologist, gave a grand nickname to one theorem that Marian Rejewski had leaned on to crack Enigma. Rejewski had used no stolen secrets, only permutation group theory, which studies how symbols can be shuffled. What did Deavours call the theorem?",
+    "question": "Cipher Deavours, a cryptologist, gave a grand nickname to one theorem that Marian Rejewski leaned on to crack Enigma. It came from permutation group theory, which studies how symbols can be shuffled, and it helped Rejewski work out the machine's hidden wiring. What did Deavours call the theorem?",
     "answer": "'The theorem that won World War II'",
     "choices": [
       "'The theorem that won World War II'",
-      "'The Warsaw conjecture'",
-      "'The unbreakable lemma'",
-      "'The Enigma equation'"
+      "'The key that unlocked the Reich'",
+      "'The lemma that broke the machine'",
+      "'The proof that saved the Atlantic'"
     ],
-    "context": "The theorem — that two permutations are conjugate exactly when they share the same cycle structure — let Rejewski reconstruct Enigma's wiring. Deavours called it 'the theorem that won World War II': abstract algebra, not spycraft, cracked the machine. Source: https://en.wikipedia.org/wiki/Marian_Rejewski",
+    "context": "The theorem, that two permutations are conjugate exactly when they share the same cycle structure, let Rejewski reconstruct Enigma's wiring, helped by German key settings a spy had sold to French intelligence. Deavours called it 'the theorem that won World War II.' Source: https://en.wikipedia.org/wiki/Marian_Rejewski",
     "topic": "enigma-and-bletchley-park-codebreaking"
   },
   {
@@ -14847,7 +14847,7 @@
   },
   {
     "tier": 5,
-    "question": "John Locke had written that 'the necessity of pursuing happiness is the foundation of liberty,' long before the Declaration of Independence set 'the pursuit of Happiness' in place of Locke's 'property.' Yet that line of Locke's did not come from his political book on government. Which kind of Locke work did it appear in?",
+    "question": "John Locke had written that the need to pursue true happiness is the foundation of liberty, long before the Declaration of Independence set 'the pursuit of Happiness' in place of Locke's 'property.' Yet that line of Locke's did not come from his political book on government. Which kind of Locke work did it appear in?",
     "answer": "his book on how the human mind knows things",
     "choices": [
       "his book on how the human mind knows things",
@@ -14899,20 +14899,20 @@
   },
   {
     "tier": 3,
-    "question": "Desiderius Erasmus of Rotterdam worked like a textual detective, comparing old handwritten copies of ancient books with one another. In 1516 he did something with the New Testament that no printer had ever done before him. What was this first?",
-    "answer": "He printed the New Testament in its Greek, beside his own fresh Latin.",
+    "question": "Desiderius Erasmus of Rotterdam worked like a textual detective, comparing old handwritten copies of ancient books with one another. In 1516, working with the printer Johann Froben at Basel, he did something with the New Testament that no one before him had done. What was this first?",
+    "answer": "He published the New Testament in its Greek, beside his own fresh Latin.",
     "choices": [
-      "He printed the New Testament in its Greek, beside his own fresh Latin.",
-      "He printed the New Testament with a painted picture beside every chapter.",
-      "He printed the New Testament small enough to tuck inside a coat pocket.",
-      "He printed the New Testament set as rhyming verse for singing."
+      "He published the New Testament in its Greek, beside his own fresh Latin.",
+      "He published the New Testament with a painted picture beside every chapter.",
+      "He published the New Testament small enough to tuck inside a coat pocket.",
+      "He published the New Testament set as rhyming verse for singing."
     ],
-    "context": "Erasmus's Novum Instrumentum omne ('A Whole New Instrument'), printed by Johann Froben in Basel in 1516, set the Greek text in one column and Erasmus's own new Latin translation beside it — the first Greek New Testament ever published. A believing scholar was applying humanist textual scholarship straight to Scripture. Source: https://en.wikipedia.org/wiki/Novum_Instrumentum_omne",
+    "context": "Erasmus's Novum Instrumentum omne ('A Whole New Instrument'), printed by Johann Froben in Basel in 1516, set the Greek text in one column and Erasmus's own new Latin translation beside it, the first Greek New Testament ever published (Spain's Complutensian Polyglot had printed one in 1514 but kept it back until the 1520s). A believing scholar was applying humanist textual scholarship straight to Scripture. Source: https://en.wikipedia.org/wiki/Novum_Instrumentum_omne",
     "topic": "erasmus-christian-humanism"
   },
   {
     "tier": 4,
-    "question": "When Erasmus prepared his printed Greek New Testament, he left out one short verse that was prized as proof of the Trinity, since he could find it in no Greek manuscript at all. Critics howled. Then something happened that led him to put the verse in after all. What was it?",
+    "question": "When Erasmus edited the New Testament in 1516, he left out one short verse prized as proof of the Trinity, since none of the old Greek copies he had found contained it. Critics howled. Then something happened that led him to put the verse in after all. What was it?",
     "answer": "A lone Greek manuscript containing the verse suddenly turned up.",
     "choices": [
       "A lone Greek manuscript containing the verse suddenly turned up.",
@@ -14939,12 +14939,12 @@
   {
     "tier": 4,
     "question": "Eratosthenes, who ran the great Library of Alexandria, set out to measure the whole Earth with nothing but sunlight and geometry. He began from one strange fact about the town of Syene, today called Aswan, at noon on the summer solstice. What did the sunlight do there at that moment?",
-    "answer": "It shone straight down a deep well and lit the water at the very bottom, casting no shadow at all",
+    "answer": "It shone straight down a deep well to the water",
     "choices": [
-      "It shone straight down a deep well and lit the water at the very bottom, casting no shadow at all",
-      "It bent sideways through the desert haze and split into a faint band of colors over the river",
-      "It dimmed to a deep red as a thin veil of dust rolled in off the surrounding sand dunes",
-      "It glared off the temple's polished bronze gates and blinded the priests gathered to watch"
+      "It shone straight down a deep well to the water",
+      "It made a stick's shadow point straight south",
+      "It came in lower than on any other day",
+      "It cast a stick's shadow twice the stick's length"
     ],
     "context": "At noon on the summer solstice the sun stood directly overhead at Syene, so it lit the bottom of a deep well and a vertical stick cast no shadow — proof the sun was straight up. Eratosthenes (c. 245 BC) ran the Library of Alexandria and tutored Pharaoh Ptolemy III's children. Source: https://www.worldhistory.org/Eratosthenes/",
     "topic": "eratosthenes-measures-the-earth-s-circumference"
@@ -15210,19 +15210,6 @@
     "topic": "fall-of-berlin-and-hitler-s-death"
   },
   {
-    "tier": 3,
-    "question": "Magda Goebbels gave her six children morphine in the Berlin bunker the day after Hitler's death, and then cyanide as they slept. Witnesses later told what she did in the minutes that followed. According to them, what did Magda do?",
-    "answer": "Sat down and played a game of solitaire",
-    "choices": [
-      "Sat down and played a game of solitaire",
-      "Ran screaming through the bunker",
-      "Tried to surrender to the Soviets",
-      "Wrote a long letter to Hitler"
-    ],
-    "context": "The six children were all given names beginning with H (Helga, Hilde, Helmut, Holde, Hedda, Heide), ages 4 to 12. After the killings Magda reportedly played solitaire before she and Joseph Goebbels took their own lives. Source: en.wikipedia.org/wiki/Magda_Goebbels.",
-    "topic": "fall-of-berlin-and-hitler-s-death"
-  },
-  {
     "tier": 4,
     "question": "Yevgeny Khaldei staged the famous photograph of a Soviet soldier raising the flag over the Reichstag in May 1945, using a flag his uncle had sewn from a tablecloth. Before the picture ran, Khaldei scratched something off one soldier's arm. What did he remove, and why?",
     "answer": "A second wristwatch, hiding that troops had looted",
@@ -15285,32 +15272,6 @@
       "A signet ring on his hand"
     ],
     "context": "Heusermann and a dental technician described Hitler's unusual gold bridgework from memory, and it matched fragments the Soviets recovered, for years the only physically identified part of Hitler ever found. Source: en.wikipedia.org/wiki/Death_of_Adolf_Hitler.",
-    "topic": "fall-of-berlin-and-hitler-s-death"
-  },
-  {
-    "tier": 5,
-    "question": "Writing from the Berlin bunker in her last days to her grown stepson, Magda Goebbels explained why she meant to kill her six children rather than let them live on. How did she describe the world that would come after Hitler and National Socialism?",
-    "answer": "'Not worth living in' after the regime fell",
-    "choices": [
-      "'Not worth living in' after the regime fell",
-      "Too poor and starving to survive",
-      "Too dangerous from Allied revenge",
-      "Too shameful after Germany's defeat"
-    ],
-    "context": "Magda wrote that the coming world was 'too good, too lovely' and that the children could not bear to live in one without National Socialism. She killed them rather than let them grow up free of the ideology. Source: en.wikipedia.org/wiki/Magda_Goebbels.",
-    "topic": "fall-of-berlin-and-hitler-s-death"
-  },
-  {
-    "tier": 5,
-    "question": "Antony Beevor, the historian, combed Soviet files opened after the Cold War to measure a crime that came with the fall of Berlin: Red Army soldiers carried out mass rape across the occupied city. How many women did Beevor estimate were raped in Berlin alone?",
-    "answer": "At least 100,000 women",
-    "choices": [
-      "At least 100,000 women",
-      "Around 5,000 women",
-      "Several hundred women",
-      "Roughly 1,000 women"
-    ],
-    "context": "Beevor estimated at least 100,000 women raped in Berlin and perhaps 2 million across the whole Soviet occupation zone. The conquest of the city opened a new chapter of brutality for the German East. Source: en.wikipedia.org/wiki/Rape_during_the_occupation_of_Germany.",
     "topic": "fall-of-berlin-and-hitler-s-death"
   },
   {
@@ -15392,16 +15353,16 @@
     "topic": "fall-of-constantinople-1453-2"
   },
   {
-    "tier": 4,
-    "question": "Cardinal Bessarion gathered some 800 Greek manuscripts and later gave them to Venice, while other scholars fleeing fallen Constantinople carried Greek books and learning west into Italy. What great European awakening did this tide of Greek books and teachers help to feed?",
-    "answer": "The Renaissance",
+    "tier": 3,
+    "question": "Cardinal Bessarion, a Greek scholar who had come west and risen high in the Church, set out after Constantinople fell to save the written learning of his lost city. He gathered hundreds of Greek manuscripts and in 1468 gave the whole collection to one Italian city, where it became the core of a great public library. Which city?",
+    "answer": "Venice",
     "choices": [
-      "The Renaissance",
-      "The Reformation",
-      "The Enlightenment",
-      "The Crusades"
+      "Venice",
+      "Florence",
+      "Rome",
+      "Milan"
     ],
-    "context": "Bessarion alone gathered some 800 Greek manuscripts; refugee scholars taught Greek and the ancient texts in Italy, helping revive classical learning and feed the Renaissance. https://en.wikipedia.org/wiki/Greek_scholars_in_the_Renaissance",
+    "context": "Bessarion gave his library of about 480 Greek and 264 Latin manuscripts to Venice in 1468, and it became the core of the Biblioteca Marciana. Refugee scholars taught Greek and the ancient texts in Italy, helping revive classical learning and feed the Renaissance. https://en.wikipedia.org/wiki/Biblioteca_Marciana",
     "topic": "fall-of-constantinople-1453-2"
   },
   {
@@ -15453,7 +15414,7 @@
       "The Antonine Walls",
       "The Theodosian Walls"
     ],
-    "context": "The Theodosian Walls were a triple line with a 60-foot-wide moat that had protected Constantinople for roughly 800 years and were long thought unbreachable. Source: https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+    "context": "The Theodosian Walls, raised under Theodosius II in the early 400s, were a triple line with a 60-foot-wide moat that had guarded Constantinople's land side for about a thousand years and were long thought unbreachable. Source: https://en.wikipedia.org/wiki/Walls_of_Constantinople",
     "topic": "fall-of-constantinople-1453"
   },
   {
@@ -15524,12 +15485,12 @@
   {
     "tier": 4,
     "question": "The Germans did not send their panzers where the French expected when they struck France in May 1940, and within six weeks they had beaten an army that looked, on paper, the strongest in the West. Their main thrust drove through a region the French had barely defended. Which region did the Germans punch through?",
-    "answer": "The Ardennes, a hilly forest the French called impassable to tanks",
+    "answer": "The hilly Ardennes forest",
     "choices": [
-      "The Ardennes, a hilly forest the French called impassable to tanks",
-      "The open wheat plains of Picardy north of Paris",
-      "The marshlands of the Rhine delta near the sea",
-      "The high alpine passes along the Italian border"
+      "The hilly Ardennes forest",
+      "The flat fields of Flanders",
+      "The marshy Rhine delta",
+      "The Alpine passes near Italy"
     ],
     "context": "The French were certain the dense Ardennes woods and the Meuse River made the region impregnable to tanks, so they barely defended it. The German panzers poured through exactly there, crossing the Meuse at Sedan on May 13. The strongest army in the West on paper was beaten in six weeks - doctrine failed, not courage. Source: Britannica, Battle of France; Manstein Plan, Wikipedia.",
     "topic": "fall-of-france-1940"
@@ -15575,7 +15536,7 @@
   },
   {
     "tier": 2,
-    "question": "Günter Schabowski, the East German government spokesman, read out new travel rules on the evening of 9 November 1989, rules meant to start the next day. When a reporter asked when they took effect, his one-word answer sent crowds rushing to the border that night. What was the word?",
+    "question": "Günter Schabowski, East Germany's government spokesman, announced new rules for travel to the West on live television on the evening of 9 November 1989. A reporter asked when they took effect, and Schabowski's answer turned on a single word. What was the word?",
     "answer": "\"Immediately\"",
     "choices": [
       "\"Immediately\"",
@@ -15588,13 +15549,13 @@
   },
   {
     "tier": 2,
-    "question": "A reporter shouted a question at Günter Schabowski during a live televised press conference on 9 November 1989: when would East Germany's new travel rules take effect? Schabowski had barely studied the paperwork himself, and millions of East Germans were watching. What did he do at that moment?",
-    "answer": "He fumbled with his glasses, shuffled his papers, and guessed at an answer",
+    "question": "A reporter shouted a question at Günter Schabowski during a live televised press conference on 9 November 1989: when would East Germany's new travel rules take effect? Millions of East Germans were watching. What did Schabowski do at that moment?",
+    "answer": "He shuffled his papers and guessed",
     "choices": [
-      "He fumbled with his glasses, shuffled his papers, and guessed at an answer",
-      "He confidently quoted the official start date from memory",
-      "He snapped that it was none of the reporter's business",
-      "He stepped aside and let an aide read the rules aloud"
+      "He shuffled his papers and guessed",
+      "He read out the official start date",
+      "He refused to give any date at all",
+      "He let an aide read the rules aloud"
     ],
     "context": "He had been handed a note about the new rules he hadn't read. Peering at his papers, he stammered that the change was effective \"immediately, without delay\" — the rules were really meant to begin the next day. Source: chronik-der-mauer.de (Hertle account, 9 Nov 1989 18:00).",
     "topic": "fall-of-the-berlin-wall-1989"
@@ -15757,7 +15718,7 @@
   },
   {
     "tier": 4,
-    "question": "Anna Anderson insisted for decades that she was Grand Duchess Anastasia, the one Romanov child who had escaped the cellar alive. Hers was the most famous royal mystery of the century, until DNA testing in 1994 revealed who she really was. Who was she?",
+    "question": "Anna Anderson insisted for decades that she was Grand Duchess Anastasia and had escaped the cellar alive. Hers was the most famous royal mystery of the century, until DNA testing in 1994 revealed who she really was. Who was she?",
     "answer": "Franziska Schanzkowska, a missing Polish factory worker",
     "choices": [
       "Franziska Schanzkowska, a missing Polish factory worker",
@@ -15783,7 +15744,7 @@
   },
   {
     "tier": 2,
-    "question": "Emperor Zeno still sat on the throne of the empire's other half in 476, the year the West lost its last emperor, and that half lived on for almost another thousand years. It was ruled from one great city until the Turks took that city in 1453. Which city was it?",
+    "question": "Emperor Zeno sat on the throne of the empire's other half in 476, the year the West lost its last emperor, and that half lived on for almost another thousand years. It was ruled from one great city until the Turks took that city in 1453. Which city was it?",
     "answer": "Constantinople",
     "choices": [
       "Constantinople",
@@ -15791,12 +15752,12 @@
       "Carthage",
       "Jerusalem"
     ],
-    "context": "The Eastern Roman Empire, which we call Byzantium, was ruled from Constantinople by Emperor Zeno in 476 and carried the Roman name onward until Constantinople fell in 1453 — almost a thousand years after the West ended. Source: https://www.worldhistory.org/article/835/fall-of-the-western-roman-empire/",
+    "context": "The Eastern Roman Empire, which historians call Byzantium, was ruled from Constantinople by Emperor Zeno in 476 and carried the Roman name onward until Constantinople fell in 1453, almost a thousand years after the West ended. Source: https://www.worldhistory.org/article/835/fall-of-the-western-roman-empire/",
     "topic": "fall-of-the-western-roman-empire-476"
   },
   {
     "tier": 2,
-    "question": "Romulus Augustulus lost his throne in 476 but not his life. The Germanic general who deposed him did not have him killed; he granted the boy a pension of 6,000 solidi a year and sent him away to live. Where did the boy go?",
+    "question": "The boy who was the last western emperor lost his throne in 476 but not his life. The Germanic general who deposed him did not have him killed; he granted the boy a pension of 6,000 solidi a year and sent him away to live. Where did the boy go?",
     "answer": "To a seaside fortress-villa in Italy",
     "choices": [
       "To a seaside fortress-villa in Italy",
@@ -15809,11 +15770,11 @@
   },
   {
     "tier": 3,
-    "question": "Behind the boy emperor Romulus Augustulus, who held the western throne for less than a year, stood another man who made every big decision and ran what was left of the empire in the boy's name. Who was the man really in charge?",
+    "question": "Behind the boy who sat on the western Roman throne in 476, holding it for less than a year, stood another man who made every big decision and ran what was left of the empire in the boy's name. Who was the man really in charge?",
     "answer": "His father, Orestes",
     "choices": [
       "His father, Orestes",
-      "His uncle, Julius Nepos",
+      "The deposed emperor Julius Nepos",
       "The general Odoacer",
       "The eastern emperor Zeno"
     ],
@@ -15835,20 +15796,20 @@
   },
   {
     "tier": 3,
-    "question": "Germanic soldiers rose in revolt, and on 4 September 476 their general stormed into Ravenna, the imperial capital, and pulled the boy Romulus Augustulus off the throne. Historians mark that day as the end of the Western Roman Empire. Who was the general who took down the last emperor?",
+    "question": "Germanic soldiers rose in revolt, and on 4 September 476 their general marched into Ravenna, the imperial capital, and pulled the boy emperor off the throne. Historians mark that day as the end of the Western Roman Empire. Who was the general who took down the last emperor?",
     "answer": "Odoacer",
     "choices": [
       "Odoacer",
       "Theodoric",
-      "Alaric",
-      "Attila"
+      "Gundobad",
+      "Euric"
     ],
     "context": "Odoacer, general of the revolting mercenaries, deposed Romulus Augustulus at Ravenna on 4 September 476. He then ruled Italy himself, governing from Ravenna and keeping the Roman Senate running. Source: https://en.wikipedia.org/wiki/Odoacer",
     "topic": "fall-of-the-western-roman-empire-476"
   },
   {
     "tier": 3,
-    "question": "The Germanic general who overthrew the last western emperor in 476 let the boy live, though winners in those hard times usually killed a beaten rival. A Roman chronicle known as the Anonymus Valesianus gives a very personal reason for the mercy. What does it say moved the general to spare Romulus Augustulus?",
+    "question": "The Germanic general who overthrew the last western emperor in 476 let the boy live, though winners in those hard times usually killed a beaten rival. A Roman chronicle known as the Anonymus Valesianus gives a very personal reason for the mercy. What does it say moved the general to spare the boy?",
     "answer": "The boy's youth and good looks",
     "choices": [
       "The boy's youth and good looks",
@@ -15875,12 +15836,12 @@
   {
     "tier": 3,
     "question": "Italy's new master after 476, the Germanic general who deposed the last western emperor, could easily have crowned himself emperor of the West. He refused, and with the imperial crown and the purple robes he did something that told the world the West needed no emperor of its own. What did he do with them?",
-    "answer": "Shipped them across the Adriatic to Constantinople",
+    "answer": "Shipped them east to Constantinople",
     "choices": [
-      "Shipped them across the Adriatic to Constantinople",
+      "Shipped them east to Constantinople",
       "Burned them publicly in the Roman Forum",
       "Locked them away in his private treasury",
-      "Wore them at his own grand coronation"
+      "Gave them to the Pope for safekeeping"
     ],
     "context": "Odoacer sent the Western regalia to Emperor Zeno in Constantinople and took for himself only the humbler title 'rex,' King of Italy. The gesture declared the West no longer needed its own emperor. Source: https://en.wikipedia.org/wiki/Odoacer",
     "topic": "fall-of-the-western-roman-empire-476"
@@ -16035,7 +15996,7 @@
     "choices": [
       "\"The only thing we have to fear is fear itself.\"",
       "\"Ask not what your country can do for you.\"",
-      "\"We have nothing to offer but blood, toil, tears, and sweat.\"",
+      "\"I have nothing to offer but blood, toil, tears and sweat.\"",
       "\"Government of the people, by the people, for the people.\""
     ],
     "context": "FDR's 1933 inaugural line — \"the only thing we have to fear is fear itself — nameless, unreasoning, unjustified terror\" — is often credited to adviser Louis Howe, who added it to the draft. The other three quotes belong to John F. Kennedy, Winston Churchill, and Abraham Lincoln. Source: National Archives, FDR's First Inaugural Address (archives.gov); Yale Avalon Project (avalon.law.yale.edu).",
@@ -16220,7 +16181,7 @@
       "Call the fire brigade and wait on your own porch",
       "Lock your hose away so the fire can't spread to you"
     ],
-    "context": "You don't haggle '$15 for the hose' while the fire spreads — you lend it and he replaces it after. That image sold Lend-Lease, which by 1945 shipped about $36.5 billion in war supplies to Britain, the Soviet Union, and China. Source: https://www.fdrlibrary.org/lend-lease",
+    "context": "No one haggles over '$15 for the hose' while the fire spreads: the owner lends it and gets it back afterward. That image sold Lend-Lease, which by 1945 shipped about $36.5 billion in war supplies to Britain, the Soviet Union, and China. Source: https://www.fdrlibrary.org/lend-lease",
     "topic": "fdr-s-wartime-leadership"
   },
   {
@@ -16229,9 +16190,9 @@
     "answer": "Never to photograph him in his wheelchair",
     "choices": [
       "Never to photograph him in his wheelchair",
-      "Never to mention his age in print",
-      "Never to report on his fireside chats",
-      "Never to film him giving a speech"
+      "Never to mention his polio in print",
+      "Never to report that he used a cane",
+      "Never to ask about his health in public"
     ],
     "context": "Locking steel braces on his withered legs, FDR swung his hips forward a few agonizing steps. His own wheelchair was a homemade thing — an armless kitchen chair on a bicycle-wheeled frame — and reporters honored the no-photo agreement for years. Source: https://www.history.com/articles/inside-fdrs-lifelong-health-struggles-and-his-sudden-death",
     "topic": "fdr-s-wartime-leadership"
@@ -16322,20 +16283,20 @@
       "40 days a year",
       "12 days a year",
       "100 days a year",
-      "365 days a year"
+      "90 days a year"
     ],
     "context": "This unit was called a 'knight's fee.' The 40-day cap kept nobles from abandoning their own lands too long; when the lord called, the knight rode to war with his own arms and armour. Source: World History Encyclopedia, 'Feudalism'; Wikipedia 'Knight's fee'; Britannica 'Knight service'.",
     "topic": "feudalism-lords-vassals-fiefs"
   },
   {
     "tier": 3,
-    "question": "Henry II of England collected one payment from his knights seven times between 1157 and 1187, and with it he hired paid soldiers loyal only to him. A knight paid it instead of riding to war for his lord, and its name meant shield-money. What was the payment called?",
-    "answer": "Scutage",
+    "question": "Henry II of England let a knight pay scutage, shield-money, instead of riding to war for his lord, and he collected it seven times between 1157 and 1187. Each payment put cash into the king's own hands. What did Henry do with the money?",
+    "answer": "Hired soldiers who answered to him alone",
     "choices": [
-      "Scutage",
-      "Tithe",
-      "Wergild",
-      "Danegeld"
+      "Hired soldiers who answered to him alone",
+      "Built a royal fleet to guard the Channel",
+      "Bought peace from the princes of Wales",
+      "Paid pensions to his knights' widows"
     ],
     "context": "Scutage ('shield-money') let kings swap unreliable feudal levies for cash-paid troops loyal to the crown alone, quietly weakening the old land-for-fighting bargain. Source: Wikipedia 'Scutage'; Britannica 'Scutage'.",
     "topic": "feudalism-lords-vassals-fiefs"
@@ -16355,15 +16316,15 @@
   },
   {
     "tier": 4,
-    "question": "William the Conqueror summoned about 170 of his great landholders to Old Sarum on Lammas Day, 1 August 1086. There he had each of them swear loyalty directly to him as king, ahead of their own immediate lords. What is that event remembered as?",
-    "answer": "The Oath of Salisbury",
+    "question": "William the Conqueror, twenty years after he won England, summoned about 170 of England's great landholders to Old Sarum on Lammas Day, 1 August 1086, the summer his great survey of the kingdom was finished. What did he make every one of them do there?",
+    "answer": "Swear loyalty to him above their own lords",
     "choices": [
-      "The Oath of Salisbury",
-      "The Treaty of Sarum",
-      "The Domesday Charter",
-      "The Council of Clarendon"
+      "Swear loyalty to him above their own lords",
+      "Give up their castles to royal garrisons",
+      "Send a son to his court as a hostage",
+      "Pledge a tenth of their lands to the Church"
     ],
-    "context": "By making even his vassals' vassals swear personally to him, William bound the whole pyramid to the crown. It was finished the same month as the Domesday Book survey. Source: English Heritage, 'William the Conqueror and the Oath of Sarum'; Anglo-Saxon Chronicle; Wikipedia 'Oath of Salisbury'.",
+    "context": "This was the Oath of Salisbury: by making even his vassals' vassals swear personally to him, William bound the whole pyramid to the crown. It came the same month the Domesday Book survey was finished. Source: English Heritage, 'William the Conqueror and the Oath of Sarum'; Anglo-Saxon Chronicle; Wikipedia 'Oath of Salisbury'.",
     "topic": "feudalism-lords-vassals-fiefs"
   },
   {
@@ -16421,12 +16382,12 @@
   {
     "tier": 2,
     "question": "Alexander Fleming came back from his summer holiday to his messy lab at St Mary's Hospital in London and found a blob of mould on one of his dishes of bacteria. All around the mould ran a clear ring. What had the mould done to the bacteria in that ring?",
-    "answer": "Killed it off",
+    "answer": "Killed them with a substance it made",
     "choices": [
-      "Killed it off",
-      "Made it glow",
-      "Frozen it solid",
-      "Turned it blue"
+      "Killed them with a substance it made",
+      "Eaten them up as its own food",
+      "Pushed them aside as it spread",
+      "Used up all of their food"
     ],
     "context": "1928. Fleming realized the Penicillium mould was making something that killed germs around it — the clear ring was the first glimpse of the world's first antibiotic. Source: https://www.sciencehistory.org/education/scientific-biographies/alexander-fleming/",
     "topic": "fleming-and-the-discovery-of-penicillin"
@@ -16489,9 +16450,9 @@
     "answer": "Howard Florey and Ernst Chain",
     "choices": [
       "Howard Florey and Ernst Chain",
-      "Louis Pasteur and Robert Koch",
-      "Marie Curie and Pierre Curie",
-      "Edward Jenner and Joseph Lister"
+      "Frederick Banting and Charles Best",
+      "Selman Waksman and René Dubos",
+      "John Cockcroft and Ernest Walton"
     ],
     "context": "Discovering penicillin was NOT enough to save anyone — Florey and Chain revived the work in 1939-1940 and made it a drug. They shared the 1945 Nobel Prize with Fleming. Source: https://www.sciencemuseum.org.uk/objects-and-stories/how-was-penicillin-developed",
     "topic": "fleming-and-the-discovery-of-penicillin"
@@ -16499,9 +16460,9 @@
   {
     "tier": 4,
     "question": "The Oxford team put penicillin to the test on 25 May 1940. They injected eight mice with deadly streptococci germs and then gave the drug to only four of them. When the scientists came back the next morning, what did they find?",
-    "answer": "The four treated mice were alive; the four untreated were dead",
+    "answer": "The treated four lived; the other four died",
     "choices": [
-      "The four treated mice were alive; the four untreated were dead",
+      "The treated four lived; the other four died",
       "All eight mice had survived the night",
       "All eight mice had died despite the drug",
       "Only one treated mouse had pulled through"
@@ -16511,7 +16472,7 @@
   },
   {
     "tier": 4,
-    "question": "Albert Alexander, a 43-year-old Oxford policeman, became the first person ever treated with penicillin on 12 February 1941. He had a bad face infection, so bad that one of his eyes had already been removed. Within 24 hours of his first shot, what happened?",
+    "question": "Albert Alexander, an Oxford policeman, got his first shot of penicillin on 12 February 1941, the first infected patient the Oxford scientists ever treated with it. His face was so badly infected that one of his eyes had already been removed. Within 24 hours of that shot, what happened?",
     "answer": "His fever dropped and his infection began to heal",
     "choices": [
       "His fever dropped and his infection began to heal",
@@ -16564,9 +16525,9 @@
   {
     "tier": 5,
     "question": "Anne Miller was dying of blood poisoning in New Haven in March 1942 when penicillin saved her, the first patient the drug truly rescued. The dose flown in for her was only about a tablespoon, yet that small amount was a huge share of something. What was a tablespoon of penicillin roughly equal to?",
-    "answer": "Half of all the penicillin then existing in the United States",
+    "answer": "Half of all the penicillin in the country",
     "choices": [
-      "Half of all the penicillin then existing in the United States",
+      "Half of all the penicillin in the country",
       "A single week's output of one factory",
       "The yearly dose for one small hospital",
       "What a doctor's bag normally carried"
