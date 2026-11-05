@@ -14279,11 +14279,11 @@
     "answer": "A citizen of the world",
     "choices": [
       "A citizen of the world",
-      "A man of no city or master",
+      "An Athenian by his own choice",
       "A subject of the great king",
       "A native of every harbor town"
     ],
-    "context": "Diogenes' Greek word was kosmopolites — the root of \"cosmopolitan.\" To an ancient Greek it was almost shocking, since your city was supposed to be your entire identity. The Stoics took this Cynic line and built a whole philosophy on it: the idea that the wise belong to the whole world, not just one tribe. Source: Diogenes Laertius, Lives of Eminent Philosophers 6.63 (via Stanford Encyclopedia of Philosophy: Cosmopolitanism, plato.stanford.edu/entries/cosmopolitanism).",
+    "context": "Diogenes' Greek word was kosmopolites — the root of \"cosmopolitan.\" To an ancient Greek it was almost shocking, since a man's city was supposed to be his entire identity. The Stoics took this Cynic line and built a whole philosophy on it: the idea that the wise belong to the whole world, not just one tribe. Source: Diogenes Laertius, Lives of Eminent Philosophers 6.63 (via Stanford Encyclopedia of Philosophy: Cosmopolitanism, plato.stanford.edu/entries/cosmopolitanism).",
     "topic": "living-according-to-nature-and-the-cosmopolis"
   },
   {
@@ -15380,13 +15380,13 @@
   },
   {
     "tier": 3,
-    "question": "'Good' and 'evil' are no fixed, eternal givens for Friedrich Nietzsche. In his 1887 book he treats each word as something with a history, asking who first coined it and how its meaning drifted across the centuries. What does he call this way of probing a moral word's past?",
-    "answer": "Genealogy — the study of how a value came to exist at all",
+    "question": "Two neighbors quarrel over whether pride is a virtue or a sin, each sure he knows what the word 'good' means. Friedrich Nietzsche, in a book of 1887, steps around such quarrels and puts a different question to the moral words themselves. What does he ask of each word?",
+    "answer": "Who first used it, and how its meaning has shifted over time",
     "choices": [
-      "Genealogy — the study of how a value came to exist at all",
-      "Dialectic — pitting two opposed claims until truth surfaces",
-      "Deduction — deriving each rule from one fixed first principle",
-      "Census — tallying how many people approve of a given act"
+      "Who first used it, and how its meaning has shifted over time",
+      "Which single first principle all its uses can be derived from",
+      "How many people today approve of the acts it is used to name",
+      "What two opposed claims about it reveal when set side by side"
     ],
     "context": "Nietzsche calls this method 'genealogy.' His 1887 book is titled On the Genealogy of Morality: A Polemic (Zur Genealogie der Moral: Eine Streitschrift) — a preface plus three essays. The gambit: 'good' and 'evil' were not handed down from above but invented, and changed meaning over time; genealogy digs up that buried origin to expose what a moral word once meant and who coined it. Source: Wikipedia, On the Genealogy of Morality (en.wikipedia.org/wiki/On_the_Genealogy_of_Morality); IEP, Nietzsche's Ethics (iep.utm.edu/nietzsches-ethics/).",
     "topic": "master-morality-slave-morality-and-ressentiment"
@@ -16974,7 +16974,7 @@
       "'We can read off some goods, but the hardest cases stay unclear.'",
       "'Nature points us toward the good, though we often ignore it.'"
     ],
-    "context": "The teacher voices the central natural-law move: morality is DISCOVERED in our nature by reason, not DECREED by a will. The deepest rival denies exactly that and says morality is whatever is COMMANDED, so nothing is right or wrong until an authority decrees it. The other two students still grant that morality is read off nature; they only quibble over who reads it or how far it reaches. No verdict is given; this shows the live fork. Source: Internet Encyclopedia of Philosophy, 'Natural Law'; Stanford Encyclopedia of Philosophy, 'The Natural Law Tradition in Ethics'.",
+    "context": "The teacher voices the central natural-law move: morality is DISCOVERED in human nature by reason, not DECREED by a will. The deepest rival denies exactly that and says morality is whatever is COMMANDED, so nothing is right or wrong until an authority decrees it. The other three replies still grant that morality is read off nature; they only quibble over who can read it, how far it reaches, or how well people heed it. No verdict is given; this shows the live fork. Source: Internet Encyclopedia of Philosophy, 'Natural Law'; Stanford Encyclopedia of Philosophy, 'The Natural Law Tradition in Ethics'.",
     "topic": "natural-law"
   },
   {
@@ -17113,11 +17113,11 @@
     "answer": "Treated smoke, which merely has to be there if the alarm rings, as though only the alarm could put it there",
     "choices": [
       "Treated smoke, which merely has to be there if the alarm rings, as though only the alarm could put it there",
-      "Treated the alarm, which only follows once smoke appears, as though the smoke alone could set it ringing",
-      "Treated the alarm’s ringing as required for smoke, when smoke is what actually requires the alarm",
-      "Treated the missing alarm as proof of missing smoke, when smoke can still be absent for other reasons"
+      "Treated what he saw, which might only have been steam or mist, as though his eyes could never be fooled",
+      "Treated the rule, which may hold only most of the time, as though it could never once fail him",
+      "Treated the missing alarm as proof of missing smoke, when smoke can still be present for other reasons"
     ],
-    "context": "Sufficiency runs one way: the ringing alarm guarantees smoke (S ⇒ N), so smoke is the necessary condition — but smoke can come from a stove or a candle too, so it never runs the arrow back to the alarm. Concluding the alarm rang because smoke is present is affirming the consequent; the three other inferences from the rule are valid forward steps. Source: Wikipedia, ‘Necessity and sufficiency.’",
+    "context": "Sufficiency runs one way: the ringing alarm guarantees smoke (S ⇒ N), so smoke is the necessary condition — but smoke can come from a stove or a candle too, so it never runs the arrow back to the alarm. Concluding the alarm rang because smoke is present is affirming the consequent. Of the classic moves from the rule, only two are valid: the alarm rang, so there is smoke; there is no smoke, so the alarm did not ring. 'No alarm, so no smoke' is the twin blunder, denying the antecedent. The fault is in the logic, not in his eyes or in the rule: even with real smoke and a rule that never fails, the inference does not follow. Source: Wikipedia, ‘Necessity and sufficiency.’",
     "topic": "necessary-vs-sufficient-conditions"
   },
   {
@@ -20090,7 +20090,7 @@
     "answer": "Only when it leaves the worst-off group better off than any other arrangement would",
     "choices": [
       "Only when it leaves the worst-off group better off than any other arrangement would",
-      "Only when the higher earner first proves the talent was fully their own doing",
+      "Only when the higher earner first proves the talent was fully his own doing",
       "Only when an equal share is offered to everyone before the gap is allowed",
       "Only when the majority votes to approve that particular pay package"
     ],
@@ -21834,7 +21834,7 @@
       "He refused to take any money for them at all",
       "He charged a small fee that the poor could afford",
       "He took payment only from students who became famous",
-      "He asked for a share of his students future earnings"
+      "He asked for a share of his students' future earnings"
     ],
     "context": "Socrates embraced poverty deliberately and never took a coin for his talk, which set him apart from the paid Sophists who sold their teaching. Source: Internet Encyclopedia of Philosophy: Socrates (iep.utm.edu/socrates); Stanford Encyclopedia of Philosophy: Socrates.",
     "topic": "socrates-the-gadfly-of-athens"
@@ -25040,14 +25040,14 @@
   {
     "tier": 2,
     "question": "Ludwig Wittgenstein challenged his students at Cambridge to give one final meaning of 'game' that would fit chess, solitaire and hide-and-seek. Every meaning a student offered, a classmate broke by naming a game it missed or a non-game it let in. What was Wittgenstein showing about pinning a living idea down with one neat label?",
-    "answer": "The label can quietly shrink it, fencing off the whole and losing part of it",
+    "answer": "The label can quietly shrink it, fencing off part of the whole and losing the rest",
     "choices": [
       "The label captures it perfectly, since any real thing fits in one good sentence",
-      "The label proves the thing was never real, since only what we can define exists",
-      "The label can quietly shrink it, fencing off the whole and losing part of it",
-      "The label makes the word useless, since no one else will accept your meaning"
+      "The label proves the thing was never real, since only what can be defined exists",
+      "The label can quietly shrink it, fencing off part of the whole and losing the rest",
+      "The label makes the word useless, since no one else will accept that meaning"
     ],
-    "context": "This is the opening move of Daoism. The Daodejing (Tao Te Ching) begins: 'The tao that can be told is not the eternal Tao. The name that can be named is not the eternal Name.' The Dao is the nameless source and pattern running through everything; the instant you slap a fixed label on the Way, you've already lost the real thing. (Stephen Mitchell, Tao Te Ching Ch.1, terebess.hu; IEP: Daoist Philosophy, iep.utm.edu/daoism)",
+    "context": "This is the opening move of Daoism. The Daodejing (Tao Te Ching) begins: 'The tao that can be told is not the eternal Tao. The name that can be named is not the eternal Name.' The Dao is the nameless source and pattern running through everything; the instant anyone slaps a fixed label on the Way, the real thing is already lost. (Stephen Mitchell, Tao Te Ching Ch.1, terebess.hu; IEP: Daoist Philosophy, iep.utm.edu/daoism)",
     "topic": "the-dao-the-way"
   },
   {
@@ -25079,14 +25079,14 @@
   {
     "tier": 3,
     "question": "A boy setting out to follow the Daoist Way asked his teacher how it would guide him. The teacher answered with the comparison scholars of Daoism draw, to one everyday thing that shows how a follower should use the Way. What did the teacher compare the Way to?",
-    "answer": "A map of the land, showing the open routes you find and walk yourself",
+    "answer": "A map of the land, showing open routes he must find and walk himself",
     "choices": [
       "A rulebook that lists, step by step, the one correct move to make",
-      "A map of the land, showing the open routes you find and walk yourself",
+      "A map of the land, showing open routes he must find and walk himself",
       "A prize at the finish, handed to whoever pushes hardest to reach it",
       "A single straight road that carries everyone to the very same place"
     ],
-    "context": "The Stanford Encyclopedia stresses the Dao is 'more like a map than a formula, rule or law.' It marks natural possibilities you can walk, the way water finds its way downhill without forcing — the model for 'wu-wei,' acting without forcing. The Way shows permissible paths; it doesn't bark commands. (Stanford Encyclopedia of Philosophy: Daoism, plato.stanford.edu/entries/daoism)",
+    "context": "The Stanford Encyclopedia stresses the Dao is 'more like a map than a formula, rule or law.' It marks natural possibilities a person can walk, the way water finds its way downhill without forcing — the model for 'wu-wei,' acting without forcing. The Way shows permissible paths; it doesn't bark commands. (Stanford Encyclopedia of Philosophy: Daoism, plato.stanford.edu/entries/daoism)",
     "topic": "the-dao-the-way"
   },
   {
@@ -25512,10 +25512,10 @@
     "choices": [
       "His death is something he would gladly have avoided had any way to save the others let him live.",
       "His death was forced on him by the desperate moment, and a death forced like that is not his own fault.",
-      "His death served a worthy cause, and a death in a worthy cause is never the kind of thing we call suicide.",
+      "His death served a worthy cause, and a death in a worthy cause is never rightly called a suicide.",
       "His death wounded nobody at all but himself, while a real suicide always scars the people left behind."
     ],
-    "context": "The grenade-jumper is the gentle mirror of the doctrine of double effect. A man who throws himself on a grenade FORESEES his own death but does not INTEND it -- if he could shield his friends and live, he gladly would. That is the opposite of suicide, where death is the very thing aimed at. The same intend-versus-foresee line that can excuse a harm also explains why we honor a death knowingly caused but not sought. (Stanford Encyclopedia of Philosophy, 'Doctrine of Double Effect,' self-sacrifice discussion.)",
+    "context": "The grenade-jumper is the gentle mirror of the doctrine of double effect. A man who throws himself on a grenade FORESEES his own death but does not INTEND it -- if he could shield his friends and live, he gladly would. That is the opposite of suicide, where death is the very thing aimed at. The same intend-versus-foresee line that can excuse a harm also explains why people honor a death knowingly caused but not sought. (Stanford Encyclopedia of Philosophy, 'Doctrine of Double Effect,' self-sacrifice discussion.)",
     "topic": "the-doctrine-of-double-effect"
   },
   {
@@ -25780,7 +25780,7 @@
   },
   {
     "tier": 4,
-    "question": "Theologians of two great Muslim schools, the Mu'tazila and the Ash'aris, fought over where good and evil actually come from, long before Europe's thinkers took up the same question. The Ash'aris, whose answer eventually won out across much of Sunni theology, took one definite side. What did they hold makes an act good?",
+    "question": "Theologians of two great Muslim schools, the Mu'tazila and the Ash'aris, fought over where good and evil actually come from, centuries before William of Ockham took up the same question in Europe. The Ash'aris, whose answer eventually won out across much of Sunni theology, took one definite side. What did they hold makes an act good?",
     "answer": "That God commanded it, and nothing in the act counts as good before that",
     "choices": [
       "That God commanded it, and nothing in the act counts as good before that",
@@ -26612,15 +26612,15 @@
   },
   {
     "tier": 4,
-    "question": "A factory worker clocks out exhausted and flops down for hours of easy entertainment to recover from the assembly line. Adorno and Horkheimer looked hard at that evening of cheap relaxing. In their view, what is really true of all that soothing fun?",
-    "answer": "It runs on the same passive, mind-numbing logic as the assembly line itself.",
+    "question": "A factory worker clocks out exhausted and flops down for hours of easy entertainment, hoping to escape the assembly line for one evening. Adorno and Horkheimer said the escape fails, because the fun he turns to shares one thing with the work he is fleeing. What does it share?",
+    "answer": "The same passive, mind-numbing logic that runs his working day",
     "choices": [
-      "It runs on the same passive, mind-numbing logic as the assembly line itself.",
-      "It leaves him too soothed and content to ever resent the assembly line.",
-      "It feeds him dreams of a richer life the factory will never grant him.",
-      "It slowly trains his taste to crave only what the studios already sell."
+      "The same passive, mind-numbing logic that runs his working day",
+      "The same exhaustion, since a late night leaves him wrecked for work",
+      "The same low wages, which leave him only the cheapest fun to buy",
+      "The same hunger for status, as he shows off what he can afford"
     ],
-    "context": "Their line: 'Amusement under late capitalism is the prolongation of work.' You seek fun to escape the assembly line, but the fun runs on the same logic - passive, processed, demanding nothing - so it just extends the workday's deadening. They called it bluntly a 'medicinal bath' the industry keeps prescribing. Source: Adorno & Horkheimer, 'The Culture Industry' (primary text), https://www.marxists.org/reference/archive/adorno/1944/culture-industry.htm",
+    "context": "Their line: 'Amusement under late capitalism is the prolongation of work.' The worker seeks fun to escape the assembly line, but the fun runs on the same logic - passive, processed, demanding nothing - so it just extends the workday's deadening. They called it bluntly a 'medicinal bath' the industry keeps prescribing. Source: Adorno & Horkheimer, 'The Culture Industry' (primary text), https://www.marxists.org/reference/archive/adorno/1944/culture-industry.htm",
     "topic": "the-frankfurt-school-and-the-culture-industry"
   },
   {
@@ -27913,14 +27913,14 @@
   {
     "tier": 3,
     "question": "Carl Menger, a young Austrian economist, promised in 1871 to resolve without contradiction the puzzle Adam Smith had left open: water keeps people alive yet costs next to nothing, while a diamond is nearly useless yet costs a fortune. Which explanation did Menger give for this diamond-water paradox?",
-    "answer": "What you pay tracks the worth of the NEXT unit, not the whole supply: water is everywhere, so one more glass is worth almost nothing.",
+    "answer": "What a buyer pays tracks the worth of the NEXT unit, not the whole supply: water is everywhere, so one more glass is worth almost nothing.",
     "choices": [
-      "What you pay tracks the worth of the NEXT unit, not the whole supply: water is everywhere, so one more glass is worth almost nothing.",
-      "What you pay tracks the labor inside a thing: a diamond is dug from deep mines, while water costs no one any real toil to gather.",
-      "What you pay tracks how rare a thing is alone: diamonds are scarce and water is common, and scarcity by itself fixes every price.",
-      "What you pay tracks how badly people need a thing: since no one truly needs diamonds, their high price must be a temporary craze."
+      "What a buyer pays tracks the worth of the NEXT unit, not the whole supply: water is everywhere, so one more glass is worth almost nothing.",
+      "What a buyer pays tracks the labor inside a thing: a diamond is dug from deep mines, while water costs no one any real toil to gather.",
+      "What a buyer pays tracks how rare a thing is alone: diamonds are scarce and water is common, and scarcity by itself fixes every price.",
+      "What a buyer pays tracks how badly people need a thing: since no one truly needs a diamond, its high price must be a temporary craze."
     ],
-    "context": "This is the marginalist move — value lives in the last unit you'd give up (the 'margin'), not in total usefulness or hours of labor. Water has immense total utility but, being everywhere, low MARGINAL utility; one more glass is worth little. Diamonds have trivial total utility but high marginal worth because they are scarce. Source: Wikipedia: Paradox of value / Marginalism; Study.com: Diamond-Water Paradox.",
+    "context": "This is the marginalist move — value lives in the last unit a person would give up (the 'margin'), not in total usefulness or hours of labor. Water has immense total utility but, being everywhere, low MARGINAL utility; one more glass is worth little. Diamonds have trivial total utility but high marginal worth because they are scarce. Source: Wikipedia: Paradox of value / Marginalism; Study.com: Diamond-Water Paradox.",
     "topic": "the-labor-theory-of-value-and-the-marginalist-reply"
   },
   {
@@ -28393,13 +28393,13 @@
   },
   {
     "tier": 4,
-    "question": "A hunting otter or hawk drives its prey toward cover. Mencius used that picture to show that a cruel king is not just wicked but self-defeating, since tyrants drive their own subjects into a rival's arms. The people turn to a kind ruler, he said, the way water flows in one direction. Which way does the water flow?",
-    "answer": "Downward — the people flow to a benevolent ruler as surely as water runs downhill",
+    "question": "Mencius pictured an otter chasing fish down into deep water and a hawk driving small birds into the thickets. The cruel kings Jie and Zhou, he said, did the same favor for Tang and Wu, the founders who overthrew them. What did the tyrants do?",
+    "answer": "Drove their own people into the arms of a kinder rival",
     "choices": [
-      "Downward — the people flow to a benevolent ruler as surely as water runs downhill",
-      "Upward — a great king draws his people to him as the sun draws the morning mist",
-      "Outward — the people scatter from a kingdom the way a river spreads into the sea",
-      "In circles — the people return to a just king as a stream winds back to its spring"
+      "Drove their own people into the arms of a kinder rival",
+      "Wore out their armies chasing rebels into the far hills",
+      "Emptied their treasuries hunting down every last critic",
+      "Scattered the old nobles who might have defended the throne"
     ],
     "context": "Mencius 4A.9: 'The people turn to a benevolent ruler as water flows downward.' His twist: tyrants like Jie and Zhou actually HELPED the virtuous kings who replaced them, 'as the otter drives the fish into deep water, and the hawk drives the little birds into the thickets.' A cruel ruler herds his own people straight into a rival's arms — misrule is self-defeating. Source: Mencius 4A.9 (nothingistic.org/library/mencius/mencius26.html).",
     "topic": "the-mandate-of-heaven"
@@ -29577,14 +29577,14 @@
   {
     "tier": 4,
     "question": "Edmund Burke published a famous book on beauty and terror in 1757. Pain and danger, he argued, can be truly thrilling, a raging storm or a cliff edge, and he called the thrill the sublime. Yet he insisted on one strict condition, without which danger gives no delight at all. On what condition did he say danger delights?",
-    "answer": "only from a safe distance, never near enough to bring us real harm",
+    "answer": "only from a safe distance, never near enough to do any real harm",
     "choices": [
-      "only from a safe distance, never near enough to bring us real harm",
+      "only from a safe distance, never near enough to do any real harm",
       "only after it has been lived through and is looked back on in memory",
-      "only when it falls on some stranger we never met and do not care about",
+      "only when it falls on a stranger the watcher has never met or cared about",
       "only once it is dressed up in beautiful music and finely chosen words"
     ],
-    "context": "Burke's 1757 'Philosophical Enquiry into the Sublime and Beautiful': 'when danger or pain press too nearly, they are incapable of giving any delight,' yet 'at certain distances' they turn delightful. The tragedy grips precisely because we watch from a seat in the dark, never at risk. Source: Stanford Encyclopedia of Philosophy, 'Paradox of Tragedy'.",
+    "context": "Burke's 1757 'Philosophical Enquiry into the Sublime and Beautiful': 'when danger or pain press too nearly, they are incapable of giving any delight,' yet 'at certain distances' they turn delightful. The tragedy grips precisely because the audience watches from a seat in the dark, never at risk. Source: Stanford Encyclopedia of Philosophy, 'Paradox of Tragedy'.",
     "topic": "the-paradox-of-tragedy"
   },
   {
@@ -30466,7 +30466,7 @@
       "His soul becomes diseased, like a sick and disordered body",
       "He lives in constant terror that someone will discover him",
       "The gods see his every deed and punish him after death",
-      "His victims families will track him down and take revenge"
+      "His victims' families will track him down and take revenge"
     ],
     "context": "On Socrates' account a just soul is healthy and an unjust soul is diseased, so the unseen wrongdoer ruins himself from within; he would rather be just and unseen than unjust and admired. The other answers are real rival explanations of why injustice supposedly costs us, which is why they tempt. Source: Plato, Republic IV 442d-444e; Internet Encyclopedia of Philosophy, https://iep.utm.edu/republic/; Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/plato-ethics-politics/",
     "topic": "the-ring-of-gyges"
@@ -31037,7 +31037,7 @@
     "choices": [
       "A heap with one grain taken away is still a heap",
       "A heap must contain at least a thousand grains",
-      "A heap stops being a heap once you can count it",
+      "A heap stops being a heap once its grains can be counted",
       "A heap and a pile are really just two words for one thing"
     ],
     "context": "Logicians call the first claim the 'base step' and the second the 'inductive step.' Each is wildly plausible on its own -- who would deny that removing one grain leaves a heap? -- but accept both and apply the second a million times over, and you are forced to conclude that one lonely grain is a heap. The whole paradox lives in that second, endlessly repeatable premise. Source: Wikipedia, 'Sorites paradox'; Stanford Encyclopedia of Philosophy (induction form).",

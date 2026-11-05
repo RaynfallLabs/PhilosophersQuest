@@ -115,7 +115,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'philosophy.json', 'each studied the claim on their'): 'their = many people',
     (_Q + 'philosophy.json', 'every metal object off their'): 'their = the believers',
     (_Q + 'philosophy.json', 'everyone, resist evidence that violates their'): 'their = scientists',
-    (_Q + 'philosophy.json', 'no one truly needs diamonds, their'): 'their = diamonds',
     (_Q + 'philosophy.json', 'no one would choose for their'): "their = the goods (Plato, Republic 357c, quoted)",
     (_Q + 'philosophy.json', 'someone else must apply their'): 'their = the lawmakers',
     (_Q + 'science.json', 'each carry fewer nuclear charges than their'): 'their = tellurium and cobalt',
