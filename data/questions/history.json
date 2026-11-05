@@ -16567,16 +16567,16 @@
     "answer": "A small lamp",
     "choices": [
       "A small lamp",
-      "A heavy hammer",
       "A leather ledger",
-      "A basket of bread"
+      "A basket of bread",
+      "A jug of water"
     ],
     "context": "The soldiers called her 'the Lady with the Lamp.' The Times described a 'ministering angel' with 'a little lamp in her hand,' and Henry Wadsworth Longfellow fixed the image forever in his 1857 poem 'Santa Filomena': 'A Lady with a lamp shall stand.' Her actual lamp (c.1856) survives in a museum collection. Sources: https://www.nam.ac.uk/explore/florence-nightingale-lady-lamp ; https://en.wikipedia.org/wiki/Florence_Nightingale",
     "topic": "florence-nightingale-and-modern-nursing"
   },
   {
     "tier": 3,
-    "question": "Florence Nightingale was certain that filth and disease, rather than enemy bullets, had killed most of the British soldiers at the hospital at Scutari. She had to convince doubtful officials in Parliament, and she won them over with something she made that put the truth in plain view. What did she create?",
+    "question": "Florence Nightingale was certain that filth and disease, rather than enemy bullets, had killed most of the British soldiers at the hospital at Scutari. She had to convince doubtful officials in Parliament, and in the end she won them over with something she made herself. What did she create?",
     "answer": "A colored statistical diagram",
     "choices": [
       "A colored statistical diagram",
@@ -16628,15 +16628,15 @@
   },
   {
     "tier": 4,
-    "question": "De Grasse, the six-foot-two French admiral, hosted George Washington at a victory dinner aboard his flagship when Yorktown fell in 1781, and Washington stood taller still. To everyone's amusement, de Grasse kept doing one thing to the American commander. What was it?",
-    "answer": "Hugging him and calling him 'my little general'",
+    "question": "De Grasse, the six-foot-two French admiral, hosted George Washington at dinner aboard his flagship in September 1781, as the allies made ready to besiege the British at Yorktown, and Washington stood taller still. All through the dinner, de Grasse kept doing one thing to the American commander. What was it?",
+    "answer": "Calling him 'my little general'",
     "choices": [
-      "Hugging him and calling him 'my little general'",
+      "Calling him 'my little general'",
       "Saluting him as 'King of America'",
-      "Toasting him with twelve cannon volleys",
-      "Offering him command of the French navy"
+      "Toasting him with cannon volleys",
+      "Offering him the French navy"
     ],
-    "context": "The 6-foot-2 Comte de Grasse repeatedly embraced the 6-foot-4 Washington aboard the Ville de Paris, calling him 'mon petit général' — my little general. Source: americanrevolution.org/degrasse.php",
+    "context": "On 17 September 1781, while the two planned the siege of Yorktown, the 6-foot-2 Comte de Grasse dined with the 6-foot-4 Washington aboard his flagship, the Ville de Paris, and kept calling him 'mon petit général', my little general. Source: americanrevolution.org/?p=2337",
     "topic": "foreign-allies-lafayette-von-steuben-france"
   },
   {
@@ -16654,15 +16654,15 @@
   },
   {
     "tier": 2,
-    "question": "Confederate gunners around Charleston Harbor opened fire on Fort Sumter on 12 April 1861, the first shots of the Civil War. They heated cannonballs in ovens until the iron glowed red, then fired them into the fort to set its wooden barracks on fire. What was this kind of shot called?",
-    "answer": "Hot shot",
+    "question": "Confederate gunners around Charleston Harbor opened fire on Fort Sumter on 12 April 1861, the first shots of the Civil War. Before loading some of their iron cannonballs, they treated them in a special way, and soon the fort's wooden barracks were ablaze. What had the gunners done to them?",
+    "answer": "Heated them in furnaces until they glowed red",
     "choices": [
-      "Hot shot",
-      "Grapeshot",
-      "Chain shot",
-      "Canister shot"
+      "Heated them in furnaces until they glowed red",
+      "Coated them in tar and set them alight",
+      "Chained them together in pairs to spin",
+      "Greased them so they would fly farther"
     ],
-    "context": "Over the 34-hour bombardment beginning at 4:30 a.m. on April 12, 1861, the Confederates hurled more than 3,000 rounds at Sumter's brick walls, and the red-hot 'hot shot' set the fort's wooden barracks on fire. Source: https://www.history.com/articles/fort-sumter",
+    "context": "Over the 34-hour bombardment that began at 4:30 a.m. on 12 April 1861, the Confederates hurled more than 3,000 rounds at Sumter's brick walls. Some were 'hot shot': iron balls heated in furnaces until they glowed red, which set the fort's wooden barracks on fire. Source: https://www.history.com/articles/fort-sumter",
     "topic": "fort-sumter-and-the-outbreak-of-the-civil-war"
   },
   {
@@ -16693,13 +16693,13 @@
   },
   {
     "tier": 2,
-    "question": "The Mexica told how their war god guided them south and ordered them to build their city where they saw an eagle sitting on a prickly cactus. By the story, they found that sign on a swampy island in Lake Texcoco and founded Tenochtitlan there. Where does the sign still appear today?",
+    "question": "The Aztecs told how their war god guided them south and ordered them to build their city where they saw an eagle sitting on a prickly cactus. By the story, they found that sign on a swampy island in Lake Texcoco and founded Tenochtitlan there. Where does the sign still appear today?",
     "answer": "On Mexico's national flag",
     "choices": [
       "On Mexico's national flag",
-      "On the U.S. dollar bill",
-      "On the Olympic rings",
-      "On a Roman coin"
+      "On Peru's national flag",
+      "On Guatemala's national flag",
+      "On Spain's national flag"
     ],
     "context": "The eagle on the prickly-pear cactus sits at the center of Mexico's flag and coat of arms, making the founding legend a living national symbol. (Legend element: the divine omen.) Source: https://education.nationalgeographic.org/resource/tenochtitlan/",
     "topic": "founding-of-tenochtitlan-eagle-on-the-cactus"
@@ -16861,14 +16861,14 @@
     "topic": "four-great-inventions-paper-printing-compass-gun"
   },
   {
-    "tier": 4,
-    "question": "Napoleon III, emperor of France, was at war with Prussia in 1870, and on 1 September his army was caught in a valley at Sedan, ringed by hills the Germans had crowned with cannon. He raised a white flag, and the army laid down its arms. What made this surrender unheard of in modern Europe?",
-    "answer": "A reigning emperor was captured on the battlefield with his whole army",
+    "tier": 3,
+    "question": "A French army found itself trapped at Sedan on 1 September 1870, in a valley the Germans had ringed with cannon. When the French raised the white flag, about 104,000 soldiers laid down their arms and became prisoners. One man taken with them made the surrender unheard of in modern Europe. Who was he?",
+    "answer": "Emperor Napoleon III himself",
     "choices": [
-      "A reigning emperor was captured on the battlefield with his whole army",
-      "A king escaped in disguise and was never found by the enemy",
-      "A peace treaty was signed before the first shot was fired",
-      "A capital city surrendered without losing a single soldier"
+      "Emperor Napoleon III himself",
+      "France's young crown prince",
+      "France's minister of war",
+      "The military governor of Paris"
     ],
     "context": "Roughly 104,000 French soldiers and 558 cannon were taken prisoner, along with Napoleon III himself — the first time in modern European history a reigning emperor was captured on the battlefield with his entire army. He was sent into comfortable captivity at Schloss Wilhelmshöhe, then exile in England, where he died in 1873. Source: en.wikipedia.org/wiki/Battle_of_Sedan; Britannica summary (ebsco.com).",
     "topic": "franco-prussian-war-and-the-capture-at-sedan"
@@ -16879,9 +16879,9 @@
     "answer": "In the Hall of Mirrors at the Palace of Versailles",
     "choices": [
       "In the Hall of Mirrors at the Palace of Versailles",
-      "In the throne room of the royal palace in Berlin",
       "In the cathedral where French kings were crowned",
-      "In a captured fortress on the German border"
+      "In the throne room of the Louvre in Paris",
+      "In the great gallery of the Fontainebleau palace"
     ],
     "context": "On 18 January 1871 Bismarck, in a cuirassier uniform, read the proclamation in the Hall of Mirrors at Versailles as Wilhelm I was hailed Kaiser on French soil. The Treaty of Frankfurt then stripped Alsace-Lorraine from France — the grievance that fed 1914 and 1919. Source: en.chateauversailles.fr/discover/history/key-dates/proclamation-german-empire-1871; en.wikipedia.org/wiki/Proclamation_of_the_German_Empire.",
     "topic": "franco-prussian-war-and-the-capture-at-sedan"
@@ -16906,7 +16906,7 @@
     "choices": [
       "Traded his own bread to poor white boys for lessons",
       "Hid a spelling book under the floorboards of the kitchen",
-      "Practiced writing letters in chalk on the ship timbers",
+      "Listened at the window of a white schoolhouse",
       "Memorized the sermons the preacher gave each Sunday"
     ],
     "context": "Sophia Auld had begun teaching him until her husband Hugh forbade it. Douglass kept learning in secret, giving bread to hungry poor white boys on Philpot Street in exchange for lessons; he called it buying 'the bread of knowledge.' (frederick-douglass-heritage.org/biography-early-life; SparkNotes, Narrative ch. VII-IX)",
@@ -16966,13 +16966,13 @@
   },
   {
     "tier": 3,
-    "question": "Frederick Douglass, himself a runaway from slavery in Maryland, launched his own weekly antislavery newspaper in Rochester, New York, in 1847. He named it after the one bright thing that escaping slaves followed through the night to freedom. What did he call the paper?",
+    "question": "Frederick Douglass, himself a runaway from slavery in Maryland, launched his own weekly antislavery newspaper in Rochester, New York, in 1847. He named it after a guide that escaping slaves trusted in the dark on the road to freedom. What did he call the paper?",
     "answer": "The North Star",
     "choices": [
       "The North Star",
-      "The Liberator",
-      "The Freeman's Torch",
-      "The Morning Bell"
+      "The Lantern",
+      "The Beacon",
+      "The Compass"
     ],
     "context": "Runaways navigated north by the fixed North Star. The paper's masthead read: 'Right is of no Sex — Truth is of no Color — God is the Father of us all, and we are all Brethren.' (en.wikipedia.org/wiki/Frederick_Douglass; loc.gov Frederick Douglass Timeline)",
     "topic": "frederick-douglass-and-the-abolitionists"
@@ -16992,15 +16992,15 @@
   },
   {
     "tier": 4,
-    "question": "The citizens of Rochester, New York, invited Frederick Douglass in 1852 to give their town's yearly Fourth of July oration. Douglass agreed, but he made one pointed choice to protest a nation celebrating freedom while roughly three million Black people were still held in chains. What did he do?",
-    "answer": "He gave the speech a day late, on July 5, refusing to honor the Fourth itself",
+    "question": "The citizens of Rochester, New York, invited Frederick Douglass in 1852 to give their town's yearly Fourth of July oration. He spoke at Corinthian Hall on 5 July, while about three million Americans were held in slavery. He told the crowd plainly whose holiday it was. What did he say?",
+    "answer": "'This Fourth of July is yours, not mine'",
     "choices": [
-      "He gave the speech a day late, on July 5, refusing to honor the Fourth itself",
-      "He delivered it in total silence, holding up a chained man's irons",
-      "He spoke only the words of the Declaration and then walked off",
-      "He refused his fee and gave it to a fund for runaway slaves"
+      "'This Fourth of July is yours, not mine'",
+      "'This Fourth of July belongs to every man'",
+      "'This Fourth of July is the slave's day too'",
+      "'This Fourth of July is God's, not the nation's'"
     ],
-    "context": "On July 5, 1852, at Corinthian Hall, Douglass told the crowd: 'This Fourth of July is yours, not mine. You may rejoice, I must mourn.' He asked what the day meant to the slave and answered: 'your celebration is a sham... your shouts of liberty and equality, hollow mockery.' (constitutioncenter.org; nmaahc.si.edu, 'A Nation's Story'; americanyawp.com reader)",
+    "context": "On July 5, 1852, at Corinthian Hall, Douglass told the crowd: 'This Fourth of July is yours, not mine. You may rejoice, I must mourn.' He asked what the day meant to the slave and answered: 'your celebration is a sham... your shouts of liberty and equality, hollow mockery.' The Fourth fell on a Sunday that year, the reason Douglass's own paper gave for holding the oration on Monday, 5 July. (constitutioncenter.org; nmaahc.si.edu, 'A Nation's Story'; americanyawp.com reader)",
     "topic": "frederick-douglass-and-the-abolitionists"
   },
   {
@@ -17031,7 +17031,7 @@
   },
   {
     "tier": 5,
-    "question": "Frederick Douglass, born a slave himself, rose before a Rochester crowd in 1852 to give the town's Fourth of July oration. He told them that the Fourth belonged to them and not to him. What did he urge his listeners to do with them?",
+    "question": "Frederick Douglass, born a slave himself, rose before a Rochester crowd in 1852 to give the town's Fourth of July oration. He spared nothing in condemning a nation that held millions in slavery. He also spoke of the principles in its Declaration of Independence. What did he urge his listeners to do with those principles?",
     "answer": "Stand by them 'against all foes, and at whatever cost'",
     "choices": [
       "Stand by them 'against all foes, and at whatever cost'",
@@ -17096,7 +17096,7 @@
   },
   {
     "tier": 3,
-    "question": "With his naked eye, Galileo Galilei could count only about nine stars in Orion the hunter, one of the easiest constellations to find. Then he raised his telescope to the same patch of sky, and the number leapt. Roughly how many stars did he count in Orion through the lens?",
+    "question": "With his naked eye, Galileo Galilei could count only nine stars in Orion's belt and sword, in one of the easiest constellations to find. Then he raised his telescope to the same patch of sky, and the count leapt. Roughly how many new stars did he add there?",
     "answer": "About 80",
     "choices": [
       "About 80",
@@ -17104,7 +17104,7 @@
       "About 30",
       "About 200"
     ],
-    "context": "The Pleiades did the same: 6 stars to the naked eye became about 35 through his lens. The sky was far fuller than anyone had imagined. https://en.wikipedia.org/wiki/Sidereus_Nuncius",
+    "context": "Galileo wrote that to the three stars of Orion's belt and the six of his sword, long known, he added eighty others. In the Pleiades, six stars to the naked eye, he saw more than forty others. The sky was far fuller than anyone had imagined. https://www.gutenberg.org/ebooks/46036",
     "topic": "galileo-and-the-telescope"
   },
   {
@@ -17153,8 +17153,8 @@
     "choices": [
       "Pope Urban VIII's",
       "Cardinal Bellarmine's",
-      "Ptolemy's",
-      "Aristotle's"
+      "Grand Duke Ferdinando's",
+      "Benedetto Castelli's"
     ],
     "context": "Putting Pope Urban VIII's own anti-Copernican argument in the mouth of 'Simplicio' (literally 'Simpleton') turned a science book into a personal insult, and that wound helped trigger the trial as much as the doctrine did. Source: Wikipedia, Galileo affair; EBSCO Research Starters, Galileo's Dialogue Concerning the Two Chief World Systems.",
     "topic": "galileo-and-the-telescope"
@@ -17221,7 +17221,7 @@
       "About a hundred more",
       "About four hundred more"
     ],
-    "context": "Orion told the same story, jumping from nine visible stars to about eighty through the lens. The universe was suddenly vastly more crowded than anyone had imagined. Source: Cloudy Nights, The Discoveries of Galileo Part 5; Sidereus Nuncius (Smithsonian Libraries digital edition).",
+    "context": "Orion told the same story: to the nine long-known stars of its belt and sword he added about eighty more. The universe was suddenly vastly more crowded than anyone had imagined. Source: Cloudy Nights, The Discoveries of Galileo Part 5; Sidereus Nuncius (Smithsonian Libraries digital edition).",
     "topic": "galileo-the-telescope"
   },
   {
@@ -17303,29 +17303,16 @@
     "topic": "galileo-the-telescope"
   },
   {
-    "tier": 5,
-    "question": "Pope John Paul II stood up in public in 1992 and admitted that the churchmen who condemned Galileo Galilei had been wrong to demand a strictly literal reading of Scripture. The Church had left the case unsettled for centuries. How long had it taken to admit its error?",
-    "answer": "359 years",
-    "choices": [
-      "359 years",
-      "About 50 years",
-      "About 150 years",
-      "About 700 years"
-    ],
-    "context": "From the 1633 condemnation to the 1992 acknowledgment was 359 years. Pope John Paul II conceded that Galileo was right that the Sun, not the Earth, sits at the center. Source: Wikipedia, Galileo affair (1992 John Paul II acknowledgment).",
-    "topic": "galileo-the-telescope"
-  },
-  {
     "tier": 3,
-    "question": "William Scurry, an Australian corporal, rigged two kerosene tins one above the other in December 1915, as the Allies made ready to slip away from Gallipoli by night. Water trickled from the top tin into the lower one until its weight tugged a rifle's trigger, so the emptied trenches kept firing on their own. What was Scurry's device called?",
-    "answer": "The drip rifle",
+    "question": "William Scurry, an Australian lance corporal, rigged rifles in the Gallipoli trenches in December 1915, as the Allies made ready to slip away by night. Long after the last men had crept down to the boats, those rifles went on firing by themselves, and the Turks never noticed that the trenches had emptied. What pulled the triggers?",
+    "answer": "Water dripping into a tin until it grew heavy",
     "choices": [
-      "The drip rifle",
-      "The trench mortar",
-      "The smoke screen",
-      "The dummy sentry"
+      "Water dripping into a tin until it grew heavy",
+      "A clock spring wound before the men left",
+      "A rope tied to the last boats as they left",
+      "A pendulum knocking against the trigger"
     ],
-    "context": "Scurry's 'drip rifle' let abandoned trenches keep firing on their own after the men had crept away, helping screen the secret withdrawal. Source: https://www.awm.gov.au/articles/encyclopedia/gallipoli/drip_rifle",
+    "context": "Scurry's 'drip rifle': water trickled from an upper kerosene tin into a lower one until its weight pulled the trigger, so abandoned trenches kept firing after the men had crept away, helping screen the secret withdrawal. Source: https://www.awm.gov.au/articles/encyclopedia/gallipoli/drip_rifle",
     "topic": "gallipoli-campaign"
   },
   {
@@ -17408,7 +17395,7 @@
   },
   {
     "tier": 2,
-    "question": "British officials ground the shore salt at Dandi into the sand to stop Mohandas Gandhi, but on 6 April 1930, after his march to the sea, he found a lump of salty mud anyway. He held it over his head before the crowd. What did Gandhi declare as he held it up?",
+    "question": "Officials ground the shore salt at Dandi into the sand to stop Mohandas Gandhi, but on 6 April 1930, after his march to the sea, he found a lump of salty mud anyway. He held it over his head before the crowd. What did Gandhi declare as he held it up?",
     "answer": "\"With this, I am shaking the foundations of the British Empire.\"",
     "choices": [
       "\"With this, I am shaking the foundations of the British Empire.\"",
@@ -17416,7 +17403,7 @@
       "\"Let the King come and take this salt from my hand.\"",
       "\"This grain of salt is worth more than English gold.\""
     ],
-    "context": "British officials had tried to cheat him by grinding the seashore salt back into the sand so he couldn't pick any up — but he easily found a salt-crusted lump and raised it in triumph. The protest he triggered led to over 60,000 Indians being arrested, Gandhi included. (en.wikipedia.org/wiki/Salt_March; history.com/articles/gandhi-salt-march-india-british-colonial-rule)",
+    "context": "Officials had tried to stop him by grinding the seashore salt back into the sand so that he could not pick any up, but he found a salt-crusted lump and raised it high. The protest he triggered led to over 60,000 Indians being arrested, Gandhi included. (en.wikipedia.org/wiki/Salt_March; history.com/articles/gandhi-salt-march-india-british-colonial-rule)",
     "topic": "gandhi-nonviolent-independence"
   },
   {
@@ -17468,7 +17455,7 @@
       "The longest-lasting empire in history",
       "The first empire with a written constitution"
     ],
-    "context": "At its peak it covered about 9 million square miles (~23 million sq km) of unbroken territory — the largest contiguous land empire that has ever existed. Source: britannica.com/place/Mongol-empire and en.wikipedia.org/wiki/Mongol_Empire  (Legend.)",
+    "context": "At its peak it covered about 9 million square miles (~23 million sq km) of unbroken territory — the largest contiguous land empire that has ever existed. Source: britannica.com/place/Mongol-empire and en.wikipedia.org/wiki/Mongol_Empire",
     "topic": "genghis-khan-the-mongol-empire"
   },
   {
@@ -17577,13 +17564,13 @@
   },
   {
     "tier": 5,
-    "question": "The people of one Persian town fought back against a Mongol army, and the army wiped them out; famine followed the killing. Every town that resisted met the same end, until a whole people collapsed. By one common count, Persia held 2,500,000 people before the conquest. About how many were left?",
+    "question": "A Mongol army met resistance in one Persian town after another, and each town that resisted was wiped out, with famine following the killing. By one common count, Persia held 2,500,000 people before the conquest. About how many were left after it?",
     "answer": "About 250,000",
     "choices": [
+      "About 25,000",
       "About 250,000",
-      "About 1,500,000",
-      "About 2,000,000",
-      "About 900,000"
+      "About 900,000",
+      "About 1,500,000"
     ],
     "context": "One cited estimate puts the fall at 2,500,000 down to 250,000 — a tenth — through massacre and famine (the Persia figures are contested). Overall Mongol-conquest death tolls run from ~30 million to 40–60 million. Source: en.wikipedia.org/wiki/Destruction_under_the_Mongol_Empire",
     "topic": "genghis-khan-the-mongol-empire"
@@ -17616,7 +17603,7 @@
   },
   {
     "tier": 1,
-    "question": "George Washington had led America to victory in the Revolutionary War, and by December 1783 no one in the new country was more powerful or more loved. He hurried home to Virginia and got there on Christmas Eve. What did he go home to become?",
+    "question": "George Washington had led America to victory in the Revolutionary War, and by December 1783 no one in the new country was more powerful or more loved. On Christmas Eve he reached his Virginia home. What did he go home to become?",
     "answer": "a farmer working his own fields",
     "choices": [
       "a farmer working his own fields",
@@ -17630,12 +17617,12 @@
   {
     "tier": 2,
     "question": "Congress was sitting at Annapolis on 23 December 1783 when George Washington walked in, holding the most dangerous thing in the new country: command of its only army. The war was won. What did he do with that power?",
-    "answer": "handed it back to Congress and went home",
+    "answer": "handed it back to Congress",
     "choices": [
-      "handed it back to Congress and went home",
-      "used it to make himself the new king",
-      "kept the army under his own command",
-      "demanded that Congress pay him for it"
+      "handed it back to Congress",
+      "used it to make himself king",
+      "kept the army under his command",
+      "asked Congress to pay him for it"
     ],
     "context": "He told Congress, 'Having now finished the work assigned me, I retire from the great theatre of Action,' surrendered his commission, and left as a private citizen. Generals who win wars almost never give the power back. Source: Mount Vernon Digital Encyclopedia, 'Resignation of Military Commission'; Wikipedia, 'George Washington's resignation as commander-in-chief'.",
     "topic": "george-washington-general-and-first-president"
@@ -17851,12 +17838,12 @@
   {
     "tier": 2,
     "question": "George Meade's Union army and Robert E. Lee's Confederates fought for three days in July 1863 in the fields around the little town of Gettysburg, Pennsylvania. By the time the guns fell silent, the battle had set a grim record. What was it?",
-    "answer": "It caused about 50,000 casualties, the most of any battle in North America",
+    "answer": "It caused about 50,000 casualties, the most in North America",
     "choices": [
-      "It caused about 50,000 casualties, the most of any battle in North America",
+      "It caused about 50,000 casualties, the most in North America",
       "It lasted longer than any other battle ever fought on the continent",
-      "It was the first battle in history to be photographed by cameras",
-      "It was the only Civil War battle fought during a heavy snowstorm"
+      "It left more civilians dead than any battle of the war",
+      "It burned the whole town of Gettysburg to the ground"
     ],
     "context": "Three days of fighting, July 1-3, 1863, left roughly 50,000 men killed, wounded, or missing — the bloodiest battle ever fought in North America. Lee's army began retreating south on July 4 and never invaded the North again. Source: https://www.battlefields.org/learn/civil-war/battles/gettysburg",
     "topic": "gettysburg-and-pickett-s-charge"
@@ -17958,7 +17945,7 @@
     "answer": "He only nodded, unable to speak the command aloud",
     "choices": [
       "He only nodded, unable to speak the command aloud",
-      "He shouted it eagerly to spur the men onward",
+      "He read it aloud from Lee's written orders",
       "He wrote it on paper and handed it over silently",
       "He fired a single pistol shot as the signal"
     ],
@@ -17980,13 +17967,13 @@
   },
   {
     "tier": 5,
-    "question": "As Lewis Armistead lay dying in Pickett's Charge, he asked that his regrets be sent to Winfield Scott Hancock, the Union general defending that very spot, who lay wounded nearby. What does the story say had once bound the two generals?",
-    "answer": "They were dear old friends who had wept as they parted before the war",
+    "question": "As Lewis Armistead lay dying in Pickett's Charge, he asked that his regrets be sent to Winfield Scott Hancock, the Union general defending that very spot, who lay wounded nearby. What does the story say had passed between the two generals before the war?",
+    "answer": "They were dear friends who wept when they parted",
     "choices": [
-      "They were dear old friends who had wept as they parted before the war",
-      "They were brothers who had not spoken in many long years",
-      "They had once dueled each other over a bitter insult",
-      "They had been rival suitors competing for the same woman"
+      "They were dear friends who wept when they parted",
+      "They were brothers who had not spoken in years",
+      "They had once fought a duel over an insult",
+      "They had courted the same woman as rivals"
     ],
     "context": "Story holds that Armistead and Hancock were close friends who parted in tears to 'Auld Lang Syne'; as Armistead lay dying he asked that his regrets be sent to Hancock, wounded nearby at almost the same moment. Armistead died on July 5. (Told as legend — the depth of the friendship is debated by historians.) Source: https://militaryhistorynow.com/2022/11/27/armistead-and-hancock-rethinking-the-storied-friendship-between-opposing-generals-at-gettysburg/",
     "topic": "gettysburg-and-pickett-s-charge"
@@ -18044,16 +18031,16 @@
     "topic": "globalization-the-internet-age"
   },
   {
-    "tier": 2,
-    "question": "Malcolm McLean sent 58 steel boxes, each the size of a truck trailer, from New Jersey to Houston in April 1956. Loading them took under eight hours, where loose cargo took days. What were those 58 boxes the first true example of?",
-    "answer": "The shipping container",
+    "tier": 3,
+    "question": "Malcolm McLean had 58 truck-sized steel boxes craned aboard a ship at Port Newark, New Jersey, in April 1956, bound for Houston. Loading took under eight hours, where loose cargo took days. He built no new ship for this first container voyage. What carried the boxes?",
+    "answer": "An old wartime oil tanker",
     "choices": [
-      "The shipping container",
-      "The oil supertanker",
-      "The cargo airplane",
-      "The railroad boxcar"
+      "An old wartime oil tanker",
+      "A retired navy aircraft carrier",
+      "A river barge pulled by tugs",
+      "A converted passenger liner"
     ],
-    "context": "Loose 'breakbulk' cargo had to be carried aboard sack by sack; McLean's 58 boxes loaded in under eight hours instead of days. Marc Levinson called his history of it 'The Box: How the Shipping Container Made the World Smaller and the World Economy Bigger.' Source: porthouston.com / maritime-executive.com.",
+    "context": "The ship was the Ideal X, a T-2 oil tanker built for the Second World War and fitted to carry the boxes; she sailed from Port Newark on 26 April 1956. Loose 'breakbulk' cargo had to be carried aboard sack by sack. Marc Levinson called his history of it 'The Box: How the Shipping Container Made the World Smaller and the World Economy Bigger.' Source: grokipedia.com/page/SS_Ideal_X / porthouston.com.",
     "topic": "globalization-the-internet-age"
   },
   {
@@ -18071,11 +18058,11 @@
   },
   {
     "tier": 3,
-    "question": "Tim Berners-Lee gave his boss, Sendall, a short paper in March 1989 about a way to link documents across many computers, the idea that grew into the World Wide Web. Sendall scrawled a three-word note at the top that let the project go ahead. What did it say?",
+    "question": "Tim Berners-Lee gave his boss, Sendall, a short paper in March 1989 about a way to link documents across many computers, the idea that grew into the World Wide Web. Sendall scrawled a short note at the top that let the project go ahead. What did it say?",
     "answer": "'Vague, but exciting…'",
     "choices": [
       "'Vague, but exciting…'",
-      "'Brilliant — start now.'",
+      "'Brilliant, start now.'",
       "'Strange, but worth trying.'",
       "'Confusing, but promising.'"
     ],
@@ -18123,26 +18110,26 @@
   },
   {
     "tier": 1,
-    "question": "Mikhail Gorbachev launched a policy called glasnost in 1985, and Soviet newspapers began printing stories about empty shops, corruption and Stalin's crimes. What does the Russian word glasnost mean?",
-    "answer": "Openness",
+    "question": "Mikhail Gorbachev took charge of the Soviet Union in 1985, and soon its newspapers were printing stories about empty shops, corruption and Stalin's crimes, things no one had dared print for decades. He gave his new policy of openness a Russian name. What was it?",
+    "answer": "Glasnost",
     "choices": [
-      "Openness",
-      "Rebuilding",
-      "Equality",
-      "Victory"
+      "Glasnost",
+      "Perestroika",
+      "Pravda",
+      "Gosplan"
     ],
-    "context": "Glasnost (literally 'publicity' or 'public voice') relaxed strict government censorship and allowed open public discussion of political and social problems for the first time in decades. Source: britannica.com/topic/glasnost ; time.com/5512665/mikhail-gorbachev-glasnost-perestroika/",
+    "context": "Glasnost means openness (literally 'publicity' or 'public voice'). It relaxed strict government censorship and allowed open public discussion of political and social problems for the first time in decades. Source: britannica.com/topic/glasnost ; time.com/5512665/mikhail-gorbachev-glasnost-perestroika/",
     "topic": "gorbachev-glasnost-and-perestroika"
   },
   {
     "tier": 1,
-    "question": "Mikhail Gorbachev inherited a Soviet economy of empty shelves in 1985. He weakened the central planners in Moscow and allowed some private ownership again, and he called the reform perestroika. What does the word mean?",
-    "answer": "Restructuring",
+    "question": "Mikhail Gorbachev inherited a Soviet economy of empty shelves in 1985. He weakened the central planners in Moscow and allowed some private ownership again, and he gave this restructuring of the economy a Russian name. What was it?",
+    "answer": "Perestroika",
     "choices": [
-      "Restructuring",
-      "Openness",
-      "Brotherhood",
-      "Friendship"
+      "Perestroika",
+      "Glasnost",
+      "Gosplan",
+      "Kolkhoz"
     ],
     "context": "Perestroika means 'restructuring' or 'reconstruction' -- Gorbachev's plan to decentralize the economy: weakening the central planners in Moscow, allowing more local decisions, and permitting some private ownership for the first time since the 1920s. Source: alphahistory.com/coldwar/glasnost-and-perestroika/ ; history.com/articles/perestroika-and-glasnost",
     "topic": "gorbachev-glasnost-and-perestroika"
@@ -18401,7 +18388,7 @@
     "choices": [
       "Spouts rainwater out through its mouth",
       "Holds the heavy roof up on its back",
-      "Frightens evil spirits from the church",
+      "Lets candle smoke escape the church",
       "Marks a buried saint down below it"
     ],
     "context": "A real gargoyle is a waterspout: rain runs through a trough in its back and pours out its open mouth, throwing the water clear of the walls. The name comes from the Old French 'gargouille', meaning throat or gullet - the same root as the word 'gurgle.' Source: https://en.wikipedia.org/wiki/Gargoyle",
@@ -18430,7 +18417,7 @@
       "Angels blowing golden trumpets",
       "The walls of the Holy City"
     ],
-    "context": "In the lower 'donor panels' you can still find the shoemakers, the tanners, the butchers, and the money-changers shown plying their trades - the ordinary craftsmen who footed the bill, proudly pictured in the windows they paid for. Source: https://en.wikipedia.org/wiki/Stained_glass_windows_of_Chartres_Cathedral",
+    "context": "The lower 'donor panels' still show the shoemakers, the tanners, the butchers, and the money-changers plying their trades - the ordinary craftsmen who footed the bill, proudly pictured in the windows they paid for. Source: https://en.wikipedia.org/wiki/Stained_glass_windows_of_Chartres_Cathedral",
     "topic": "gothic-cathedrals-chartres-notre-dame"
   },
   {
@@ -18487,15 +18474,15 @@
   },
   {
     "tier": 3,
-    "question": "Bell-founders cast a giant bell for Notre-Dame de Paris in 1683, during the reign of Louis XIV, and it was named Emmanuel. The great bell weighed about 13 tonnes, and its clapper alone half a tonne. It rang out on only a handful of days each year. Which days called for it?",
+    "question": "Bell-founders cast a giant bell for Notre-Dame de Paris in the 1680s, during the reign of Louis XIV, and it was named Emmanuel. The great bell weighs about 13 tonnes, and its clapper alone half a tonne. It rings out on only a handful of days each year. Which days call for it?",
     "answer": "The greatest feasts, like Christmas",
     "choices": [
       "The greatest feasts, like Christmas",
-      "The funeral day of a French king",
-      "The day a new pope is chosen",
-      "The city's yearly founding day"
+      "The first day of the grape harvest",
+      "The city's yearly founding day",
+      "The yearly fair of the Paris guilds"
     ],
-    "context": "Emmanuel rings for the greatest feasts and major national events - moments grave enough to deserve the deepest voice in Paris. Source: https://www.friendsofnotredamedeparis.org/cathedral/artifacts/bells/",
+    "context": "Emmanuel rings for the greatest feasts, such as Christmas, Easter and Pentecost, for the death or election of a pope, and for major national events - moments grave enough to deserve the deepest voice in Paris. Source: https://www.friendsofnotredamedeparis.org/cathedral/artifacts/bells/",
     "topic": "gothic-cathedrals-chartres-notre-dame"
   },
   {
@@ -18505,7 +18492,7 @@
     "choices": [
       "Added in the 1800s, not the Middle Ages",
       "Carved by the cathedral's first bishop",
-      "Made of solid gold beneath the grime",
+      "Copied from carvings in ancient Rome",
       "Given as a gift by England's king"
     ],
     "context": "These brooding figures are 'chimeras' - pure decoration that drains no water, so not true gargoyles either. They were added during Eugene Viollet-le-Duc's 1844-1864 restoration. Le Stryge became famous through Charles Meryon's 1850s etching. Source: https://www.friendsofnotredamedeparis.org/cathedral/artifacts/grotesques/le-stryge/",
@@ -18539,26 +18526,26 @@
   },
   {
     "tier": 4,
-    "question": "The masons of Notre-Dame in Paris leaned stone arms against its walls, each reaching from high on the wall across open air to a heavy pier standing apart. Those flying buttresses were the trick that let the walls turn into walls of glass. What does each stone arm do?",
-    "answer": "Carries the roof's outward push to a pier, freeing the wall",
+    "question": "The masons of Notre-Dame in Paris braced its walls from outside with stone arms that leap across open air to heavy piers standing apart. These flying buttresses are why the cathedral could rise so high. What does each stone arm do?",
+    "answer": "Carries the roof's outward push away from the wall",
     "choices": [
-      "Carries the roof's outward push to a pier, freeing the wall",
-      "Adds heavy weight to the wall so it cannot sway in the wind",
-      "Funnels rainwater down from the high roof to the street",
-      "Hides iron chains that secretly tie the building together"
+      "Carries the roof's outward push away from the wall",
+      "Props up the wall only while the mortar dries",
+      "Lets masons climb up to work on the roof",
+      "Hides iron chains that tie the building together"
     ],
     "context": "The arched arm catches the roof's outward thrust high up and channels it across open air into a massive pier, which sends the force straight down into the ground. Freed from holding itself up, the wall can become a thin curtain pierced by enormous windows. Source: https://en.wikipedia.org/wiki/Flying_buttress",
     "topic": "gothic-cathedrals-chartres-notre-dame"
   },
   {
     "tier": 5,
-    "question": "Suger, abbot of Saint-Denis, rebuilt his abbey church just north of Paris and dedicated it in 1144, and historians call it the birthplace of the Gothic style. He opened its walls with pointed arches and ribbed vaults, and he called the glow of the art that filled them lux nova, the new light. What was that art?",
+    "question": "Suger, abbot of Saint-Denis, rebuilt his abbey church just north of Paris and dedicated it in 1144, and historians call it the birthplace of the Gothic style. He built it with pointed arches and ribbed vaults, and he called the glow of one art inside it lux nova, the new light. What was that art?",
     "answer": "Stained glass",
     "choices": [
       "Stained glass",
-      "Mosaic tiles",
-      "Painted plaster",
-      "Frescoes"
+      "Gold mosaic",
+      "Painted frescoes",
+      "Marble inlay"
     ],
     "context": "Abbot Suger called the glowing result 'lux nova' - new light. By combining the pointed arch, ribbed vault, and radiating chapels lit by large stained-glass windows, Saint-Denis set the template every later Gothic cathedral would follow. Source: https://en.wikipedia.org/wiki/Basilica_of_Saint-Denis",
     "topic": "gothic-cathedrals-chartres-notre-dame"
@@ -18607,10 +18594,10 @@
     "question": "Emperor Yang of Sui toured his finished Grand Canal in 609 aboard a fleet of giant dragon-boats. By the old accounts, they moved in one solid row down the water. How far did that line of boats stretch from end to end?",
     "answer": "About 65 miles long",
     "choices": [
-      "About 65 miles long",
       "About 7 miles long",
       "About 20 miles long",
-      "About 40 miles long"
+      "About 65 miles long",
+      "About 200 miles long"
     ],
     "context": "The flotilla reportedly stretched about 105 km (65 miles) as it traveled from the north down to the southern capital — a column of boats longer than many countries are wide. Source: https://en.wikipedia.org/wiki/Grand_Canal_(China)",
     "topic": "grand-canal-of-china"
@@ -18773,7 +18760,7 @@
   },
   {
     "tier": 2,
-    "question": "Forebears of the Shona raised a great granite city in southern Africa in the Middle Ages, high on a plateau. Centuries later the modern country around its ruins took its name straight from them, borrowing a phrase in the Shona language: 'dzimba dza mabwe.' What does that phrase mean?",
+    "question": "Forebears of the Shona raised a great city in southern Africa in the Middle Ages, high on a plateau. Centuries later the modern country around its ruins took its name straight from them, borrowing a phrase in the Shona language: 'dzimba dza mabwe.' What does that phrase mean?",
     "answer": "Houses of stone",
     "choices": [
       "Houses of stone",
@@ -18816,9 +18803,9 @@
     "answer": "The largest of them all",
     "choices": [
       "The largest of them all",
-      "About the tenth-largest",
-      "Roughly average-sized",
-      "One of the smallest known"
+      "The second-largest of them",
+      "The third-largest of them",
+      "The fifth-largest of them"
     ],
     "context": "The Great Enclosure is the largest ancient stone structure in sub-Saharan Africa. Its walls run about 250 meters (820 feet) around and rise up to 11 meters (36 feet). Source: en.wikipedia.org/wiki/Great_Zimbabwe.",
     "topic": "great-zimbabwe"
@@ -18930,9 +18917,9 @@
   {
     "tier": 4,
     "question": "Builders at Great Zimbabwe raised the Conical Tower, some 9 meters of fitted granite, inside the Great Enclosure, and its purpose is still debated. Many scholars read the whole tower as a giant stone copy of an everyday Shona object. What object is it thought to copy?",
-    "answer": "A grain bin (granary)",
+    "answer": "A grain bin",
     "choices": [
-      "A grain bin (granary)",
+      "A grain bin",
       "A war drum",
       "A king's crown",
       "A cooking pot"
@@ -18981,7 +18968,7 @@
   },
   {
     "tier": 5,
-    "question": "Gertrude Caton-Thompson, the British archaeologist, came to dig at Great Zimbabwe in 1929, after decades in which European settlers had refused to believe that Africans built it. She worked carefully beneath the walls and settled the long argument over the city's builders. What did her evidence show?",
+    "question": "Gertrude Caton-Thompson, the British archaeologist, came to dig at Great Zimbabwe in 1929, when writers had argued for decades over who built it. She worked carefully through the soil layers beneath the walls and settled the long argument over the city's builders. What did her evidence show?",
     "answer": "Africans, ancestors of the Shona, built it in medieval times",
     "choices": [
       "Africans, ancestors of the Shona, built it in medieval times",
@@ -19024,11 +19011,11 @@
     "answer": "They wrote down the vowels",
     "choices": [
       "They wrote down the vowels",
-      "They wrote on papyrus scrolls",
-      "They carved letters into stone",
-      "They read the lines aloud"
+      "They put spaces between words",
+      "They wrote from left to right",
+      "They wrote in columns, top to bottom"
     ],
-    "context": "The Phoenician script was an 'abjad' (consonants only). By repurposing spare Phoenician consonants their tongue didn't need (aleph became alpha, He became epsilon, and so on), the Greeks gave every sound on the page a letter the first true alphabet. That line ran Phoenicians to Greeks to Etruscans to Romans, whose Latin letters we still write. Source: en.wikipedia.org/wiki/History_of_the_Greek_alphabet; worldhistory.org/Greek_Alphabet.",
+    "context": "The Phoenician script was an 'abjad' (consonants only). By repurposing spare Phoenician consonants their tongue didn't need (aleph became alpha, the letter he became epsilon, and so on), the Greeks gave every sound on the page a letter: the first true alphabet. That line ran from the Phoenicians to the Greeks, the Etruscans and the Romans, whose Latin letters are still written today. Source: en.wikipedia.org/wiki/History_of_the_Greek_alphabet; worldhistory.org/Greek_Alphabet.",
     "topic": "greek-alphabet-and-the-gift-of-vowels"
   },
   {
@@ -19111,7 +19098,7 @@
   },
   {
     "tier": 1,
-    "question": "Hephaestus, the smith-god, swung his heavy axe at the skull of Zeus, the king of the gods, when Zeus begged him for relief from a terrible, splitting headache. Out of the cracked skull leapt the goddess Athena. What was startling about the way Athena was born?",
+    "question": "Hephaestus, the smith-god, swung his heavy axe at the skull of Zeus, the king of the gods, when Zeus begged him for relief from a terrible, splitting headache. Out of the cracked skull leapt the goddess Athena. How did Athena come out?",
     "answer": "Fully grown, in armor, and shouting a war-cry",
     "choices": [
       "Fully grown, in armor, and shouting a war-cry",
@@ -19215,7 +19202,7 @@
   },
   {
     "tier": 4,
-    "question": "One Greek poet, naming the twelve chief gods of Olympus, the Dodekatheon or 'Twelve Gods,' put Hestia, goddess of the home and hearth, in the twelfth place. Other poets and cities chose a different god, for no list was ever official. Who was the other claimant to that disputed twelfth seat?",
+    "question": "One Greek poet, naming the twelve chief gods, the Dodekatheon or 'Twelve Gods,' put Hestia, goddess of the home and hearth, in the twelfth place. Other poets and cities chose a different god, for no list was ever official. Who was the other claimant to that disputed twelfth seat?",
     "answer": "Dionysus, god of wine",
     "choices": [
       "Dionysus, god of wine",
@@ -19462,28 +19449,15 @@
   },
   {
     "tier": 2,
-    "question": "A singer in an Athenian chorus left his place around 534 BC and spoke lines alone, as a single character. No one had done it before, and he became the first true actor of Western theater. What are actors still called after him?",
-    "answer": "Thespians",
+    "question": "A singer in an Athenian chorus left his place around 534 BC and spoke lines alone, as a single character. No one had done it before, and he became the first true actor of Western theater; actors are still named after him. Who was he?",
+    "answer": "Thespis",
     "choices": [
-      "Thespians",
-      "Choristers",
-      "Dramatists",
-      "Orators"
+      "Thespis",
+      "Arion",
+      "Phrynichus",
+      "Pratinas"
     ],
     "context": "Thespis (around 534 BC) was the first to step out of the chorus and speak as a character — the first actor. Performers have been called 'thespians' after him ever since. Source: en.wikipedia.org/wiki/Theatre_of_ancient_Greece + ebsco.com 'Thespis'.",
-    "topic": "greek-theater-tragedy-and-comedy-sophocles-the-a"
-  },
-  {
-    "tier": 3,
-    "question": "The Athenians cut their great stone theater into a steep natural hillside above the city instead of building it on flat ground, so that its curving rows of seats could climb the slope. At its peak it held some 16,000 people. Into the side of which famous Athenian height was the theater carved?",
-    "answer": "The south slope of the Acropolis",
-    "choices": [
-      "The south slope of the Acropolis",
-      "The harbor wall of Piraeus",
-      "The summit of Mount Olympus",
-      "The marble quarry of Pentelicus"
-    ],
-    "context": "The Theater of Dionysus was cut into the south slope of the Acropolis hillside; at its peak under Lycurgus (around 330 BC) it held roughly 16,000–17,000 spectators. Source: worldhistory.org/article/814/theatre-of-dionysos-eleuthereus + en.wikipedia.org/wiki/Theatre_of_Dionysus.",
     "topic": "greek-theater-tragedy-and-comedy-sophocles-the-a"
   },
   {
@@ -19566,15 +19540,15 @@
   },
   {
     "tier": 5,
-    "question": "Stagehands in Athens swung an actor playing a god out over the stage on a crane called the mechane, when a poet's plot had grown too tangled for any human to fix. The god set everything right, and the trick gave later writers a famous phrase for an out-of-nowhere rescue. What is the phrase?",
+    "question": "Stagehands in Athens swung an actor playing a god out over the stage on a crane, when a poet's plot had grown too tangled for any human to fix. The god set everything right, and the trick gave later writers a famous phrase for an out-of-nowhere rescue. What is the phrase?",
     "answer": "Deus ex machina",
     "choices": [
       "Deus ex machina",
+      "Deus vult",
       "In medias res",
-      "Anagnorisis",
-      "Catharsis"
+      "Deo gratias"
     ],
-    "context": "A crane called the mechane hoisted the god-actor over the stage to resolve tangled plots — giving us 'deus ex machina,' Latin for 'god from the machine.' Euripides loved the device. Source: en.wikipedia.org/wiki/Deus_ex_machina + helinika.com 'Greek Stage Machinery'.",
+    "context": "A crane called the mechane hoisted the god-actor over the stage to resolve tangled plots, giving later writers 'deus ex machina,' Latin for 'god from the machine.' Euripides loved the device. Source: en.wikipedia.org/wiki/Deus_ex_machina + helinika.com 'Greek Stage Machinery'.",
     "topic": "greek-theater-tragedy-and-comedy-sophocles-the-a"
   },
   {
@@ -19619,19 +19593,19 @@
   {
     "tier": 2,
     "question": "Guido of Arezzo, a monk who taught church singers, found a hymn around the year 1000 whose every line begins one note higher than the line before. He named the six climbing notes from the words that open each line. What did those six names become?",
-    "answer": "The do-re-mi we still sing today",
+    "answer": "The do-re-mi that singers still use",
     "choices": [
-      "The do-re-mi we still sing today",
-      "The A-B-C note letters",
-      "The loud-soft volume marks",
-      "The sharp and flat signs"
+      "The do-re-mi that singers still use",
+      "The names of the church modes",
+      "The Italian tempo words like largo",
+      "The names of the organ's stops"
     ],
     "context": "The hymn was 'Ut queant laxis,' a song to St. John the Baptist; Guido (c. 991-1033) named the notes ut-re-mi-fa-sol-la, and centuries later 'ut' was changed to 'do,' giving the do-re-mi children still sing. Source: https://en.wikipedia.org/wiki/Ut_queant_laxis",
     "topic": "gregorian-chant-and-medieval-sacred-music"
   },
   {
     "tier": 4,
-    "question": "Ernest King, the American admiral, pushed the Marines' landing on Guadalcanal forward in August 1942, though they went in badly short of supplies. The plan's official name was Operation Watchtower, America's first big offensive of the Pacific war. What bitter nickname did the Marines give the operation?",
+    "question": "Ernest King, the American admiral, rushed the landing on Guadalcanal forward, and the Marines went ashore in August 1942 badly short of supplies. The plan's official name was Operation Watchtower, America's first big offensive of the Pacific war. What bitter nickname did the Marines give the operation?",
     "answer": "Operation Shoestring",
     "choices": [
       "Operation Shoestring",
@@ -19639,7 +19613,7 @@
       "Operation Lost Cause",
       "Operation Empty Hand"
     ],
-    "context": "Operation Watchtower began August 7, 1942 -- just six months after Pearl Harbor and the first major American ground offensive of the Pacific war. Admiral Ernest King had ordered the invasion forward 'even on a shoestring,' and the under-supplied Marines turned that phrase into a grim nickname for the whole campaign. Source: nationalww2museum.org/war/articles/war-shoestring-fight-guadalcanal",
+    "context": "Operation Watchtower began August 7, 1942 -- eight months after Pearl Harbor and the first major American ground offensive of the Pacific war. Admiral Ernest King had ordered the invasion forward 'even on a shoestring,' and the under-supplied Marines turned that phrase into a grim nickname for the whole campaign. Source: nationalww2museum.org/war/articles/war-shoestring-fight-guadalcanal",
     "topic": "guadalcanal-campaign"
   },
   {
@@ -19670,13 +19644,13 @@
   },
   {
     "tier": 3,
-    "question": "A Gupta emperor had an iron column more than 7 meters tall raised some 1,600 years ago, and today it is in a courtyard in Delhi. Ordinary iron left out in rain and sun rusts away within a few years. After sixteen centuries in the open, what state is this pillar in?",
+    "question": "A Gupta king had an iron column more than 7 meters tall set up some 1,600 years ago, and it still stands in a courtyard in Delhi, open to the rain and sun. What state is the iron in today?",
     "answer": "It has barely rusted at all",
     "choices": [
       "It has barely rusted at all",
-      "It has rusted down to a thin stump",
-      "It has turned bright green like old copper",
-      "It has crumbled into reddish flakes"
+      "It is crusted in thick red rust",
+      "It is saved only by yearly paint",
+      "It has turned dark green with age"
     ],
     "context": "The Iron Pillar of Delhi weighs over 6 tonnes (about 13,000 lb) and is roughly 98% wrought iron, yet after ~1,600 years outdoors it has scarcely corroded — a metallurgical marvel of the Gupta age. https://en.wikipedia.org/wiki/Iron_pillar_of_Delhi",
     "topic": "gupta-empire-india-s-golden-age"
@@ -19697,9 +19671,9 @@
   {
     "tier": 3,
     "question": "Samudragupta, the Gupta conqueror nicknamed the 'Indian Napoleon,' put his own image on his gold coins for his subjects to see. One well-known coin type shows him seated, absorbed in a favorite pastime. What is Samudragupta doing on that coin?",
-    "answer": "Seated, playing the veena, a lute",
+    "answer": "Seated, playing the veena",
     "choices": [
-      "Seated, playing the veena, a lute",
+      "Seated, playing the veena",
       "Seated, playing a board game",
       "Seated, reading from a scroll",
       "Seated, feeding a tame peacock"
@@ -19800,7 +19774,7 @@
   },
   {
     "tier": 5,
-    "question": "A surgeon of the Sushruta school bent over a patient whose intestine had been sliced, and he needed stitches that would still hold deep inside once the belly was sewn shut. Their answer used living creatures as the stitches themselves. What did these surgeons do?",
+    "question": "A surgeon of the Sushruta school bent over a patient whose intestine had been sliced, and he needed stitches that would still hold deep inside once the belly was sewn shut. His school's answer used living creatures as the stitches themselves. What did these surgeons do?",
     "answer": "Let black ants bite across the cut, then snipped off their bodies",
     "choices": [
       "Let black ants bite across the cut, then snipped off their bodies",
@@ -19827,12 +19801,12 @@
   {
     "tier": 1,
     "question": "Johannes Gutenberg spent years in Mainz perfecting an invention that let a single press do the work of dozens of hand-copying scribes, and around 1455 he finished the first major book ever printed in Europe with it. What was his great breakthrough?",
-    "answer": "Casting hundreds of tiny metal letters that could be arranged into a page and then rearranged for the next",
+    "answer": "Casting metal letters to reuse page after page",
     "choices": [
-      "Casting hundreds of tiny metal letters that could be arranged into a page and then rearranged for the next",
-      "Carving each whole page into a single wooden block that was inked and stamped",
-      "Teaching dozens of scribes to copy the same page at the same time",
-      "Pressing wet clay tablets against a stone master copy"
+      "Casting metal letters to reuse page after page",
+      "Carving each whole page into one wooden block",
+      "Engraving each whole page on a copper plate",
+      "Pressing wet clay against a stone master copy"
     ],
     "context": "This was movable metal type. Gutenberg cast hundreds of individual letters, locked them into a page, printed, then broke the page apart and reused the same letters for the next, instead of carving a brand-new block for every page, so one press replaced a roomful of hand-copyists. Source: https://en.wikipedia.org/wiki/Gutenberg_Bible",
     "topic": "gutenberg-s-printing-press-and-the-printed-book"
@@ -19847,38 +19821,25 @@
       "The 66-line Bible",
       "The 100-line Bible"
     ],
-    "context": "Each column ended up with exactly 42 lines, so collectors call it the '42-line Bible.' Gutenberg actually began printing with 40 lines per column, then tightened the spacing to squeeze in two more partway through — you can spot the switch, since the earliest pages have fewer, more open lines. Source: https://en.wikipedia.org/wiki/Gutenberg_Bible",
+    "context": "Each column ended up with exactly 42 lines, so collectors call it the '42-line Bible.' Gutenberg actually began printing with 40 lines per column, then tightened the spacing to squeeze in two more partway through; the switch shows, since the earliest pages have fewer, more open lines. Source: https://en.wikipedia.org/wiki/Gutenberg_Bible",
     "topic": "gutenberg-s-printing-press-and-the-printed-book"
   },
   {
     "tier": 2,
-    "question": "Johannes Gutenberg, the German who first printed books in Europe with movable metal type, turned up in 1999 on a countdown by A&E, an American television network. What did A&E name him?",
-    "answer": "The single most influential person of the millennium",
+    "question": "Johannes Gutenberg, the Mainz craftsman whose Bible was Europe's first great printed book, turned up in 1999 on a countdown by A&E, an American television network. What did A&E name him?",
+    "answer": "The most influential person of the millennium",
     "choices": [
-      "The single most influential person of the millennium",
-      "Inventor of the year for the 1450s",
-      "The richest man of medieval Germany",
-      "The first modern celebrity"
+      "The most influential person of the millennium",
+      "The most important German who ever lived",
+      "The father of the modern newspaper",
+      "The richest man of medieval Germany"
     ],
     "context": "A&E rated Gutenberg the most influential PERSON of the whole millennium — ahead of every king, scientist, and explorer — because cheap printed books spread knowledge to ordinary people for the first time. Source: https://en.wikipedia.org/wiki/Johannes_Gutenberg",
     "topic": "gutenberg-s-printing-press-and-the-printed-book"
   },
   {
-    "tier": 2,
-    "question": "For the luxury copies of his Bible, Johannes Gutenberg passed over paper and printed on vellum, a fine parchment made from calfskin. He made roughly 180 copies in all at Mainz in the 1450s. How many calves gave their skins for the pages of just one of those vellum Bibles?",
-    "answer": "about 170 calfskins",
-    "choices": [
-      "about 170 calfskins",
-      "about 12 calfskins",
-      "about 40 calfskins",
-      "about 600 calfskins"
-    ],
-    "context": "About 170 calfskins went into a single vellum copy, an entire calf herd for one Bible. Of all the copies, only three complete vellum Gutenberg Bibles survive today. Source: https://www.history.com/news/7-things-you-may-not-know-about-the-gutenberg-bible",
-    "topic": "gutenberg-s-printing-press-and-the-printed-book"
-  },
-  {
     "tier": 3,
-    "question": "Vido Aras hid inside Harvard's Widener Library one night in 1969 until the doors closed, then stuffed both heavy volumes of its Gutenberg Bible into a knapsack. He tried to rope his way down the outside of the building. What happened to him on the way down?",
+    "question": "Vido Aras hid inside Harvard's Widener Library one night in 1969 until the doors closed, then stuffed both volumes of its Gutenberg Bible into a knapsack. He tried to rope his way down the outside of the building. What happened to him on the way down?",
     "answer": "The heavy load dragged him off the wall and he fell six stories",
     "choices": [
       "The heavy load dragged him off the wall and he fell six stories",
@@ -19887,32 +19848,6 @@
       "He froze halfway down and had to be talked back up by police"
     ],
     "context": "The two volumes weighed about 70 pounds — so heavy the load pulled Aras off the building. He plunged six stories and fractured his skull, but he survived, and so did the Bible, which went back on the shelf. Source: https://www.history.com/news/7-things-you-may-not-know-about-the-gutenberg-bible",
-    "topic": "gutenberg-s-printing-press-and-the-printed-book"
-  },
-  {
-    "tier": 4,
-    "question": "For all his fame, Johannes Gutenberg was not the first to print with metal letters that could move. A Buddhist book called the Jikji had already been printed that way in 1377, in the Korean city of Cheongju. How long was that before Gutenberg's Bible?",
-    "answer": "About 73 years earlier",
-    "choices": [
-      "About 73 years earlier",
-      "About 5 years earlier",
-      "About 300 years earlier",
-      "About the same year"
-    ],
-    "context": "The Jikji, printed in Korea in 1377, beat Gutenberg by 73 years and survives as the oldest book printed with movable metal type — now held in Paris and listed in UNESCO's Memory of the World. Gutenberg's leap was building a whole system that flooded a continent with books. Source: https://www.guinnessworldrecords.com/world-records/689333-oldest-book-printed-using-movable-metal-type",
-    "topic": "gutenberg-s-printing-press-and-the-printed-book"
-  },
-  {
-    "tier": 5,
-    "question": "Maruzen, a Tokyo firm, bought a single volume of the Doheny copy of the Gutenberg Bible at Christie's in New York in October 1987, at a price that set a world record for any printed book. About how much did that one volume bring?",
-    "answer": "About $5.4 million",
-    "choices": [
-      "About $5.4 million",
-      "About $90,000",
-      "About $250 million",
-      "About $400,000"
-    ],
-    "context": "The buyer, Maruzen of Tokyo, paid about $5.4 million for one volume — a record for any printed book at the time. Experts now estimate a complete two-volume copy would fetch over $35 million. Source: https://www.upi.com/Archives/1987/10/23/Record-49-million-spent-on-Gutenberg-Bible/1356561960000/",
     "topic": "gutenberg-s-printing-press-and-the-printed-book"
   },
   {
@@ -19956,13 +19891,13 @@
   },
   {
     "tier": 3,
-    "question": "While his Bible took about two years, Johannes Gutenberg kept his workshop paying by printing thousands of small slips for the Church, each with a blank for the buyer's name. For a fee, the Church promised that the heavenly punishment owed for the buyer's sins would be cancelled, and one batch around 1454 was sold to fund a crusade. What were these slips called?",
-    "answer": "Indulgences",
+    "question": "While his Bible took about two years, Johannes Gutenberg kept his workshop paying with small jobs for the Church: thousands of printed slips, each with a blank for the buyer's name, and one batch around 1454 was sold to fund a crusade. What were the slips?",
+    "answer": "Indulgences for the buyer's sins",
     "choices": [
-      "Indulgences",
-      "Crusader maps",
-      "Cathedral tickets",
-      "Church tax bills"
+      "Indulgences for the buyer's sins",
+      "Tickets to view a holy relic",
+      "Receipts for the church tithe",
+      "Prayer cards for a saint's feast"
     ],
     "context": "Gutenberg's shop printed thousands of paper indulgences for the Church, with blanks for the buyer's name, including Cypriot indulgences issued under Pope Calixtus III around 1454-1455 to fund a crusade: fast, profitable jobs next to the slow Bible. An indulgence known to exist by 22 October 1454 is the earliest work from his shop with a firm date. (https://www.mainz.de/en/microsite/gutenberg/zeit/zeitleiste_gutenberg)",
     "topic": "gutenberg-s-printing-press-c-1450"
@@ -19972,10 +19907,10 @@
     "question": "To make his printed Bible look exactly like a monk's handwriting, where letters often join and shrink into shorthand, Johannes Gutenberg needed many more than the 26 letters of the alphabet. Copying every joined pair, every shorthand mark and both capitals and small letters, his Bible type held a startling number of different characters. About how many?",
     "answer": "About 290",
     "choices": [
+      "About 75",
+      "About 140",
       "About 290",
-      "About 26",
-      "About 52",
-      "About 75"
+      "About 900"
     ],
     "context": "The B42 type had roughly 290 characters: 47 capitals, 63 lowercase, 92 abbreviations, 83 joined-letter ligatures, and 5 punctuation marks -- all to mimic a scribe's hand. (https://oldbookappreciator.com/libraryofhistoricaltype/exhibits/show/gutenbergsb42/b42type)",
     "topic": "gutenberg-s-printing-press-c-1450"
@@ -19983,9 +19918,9 @@
   {
     "tier": 3,
     "question": "Johann Fust, a rich Mainz businessman, had lent Johannes Gutenberg a fortune to build his shop and print what Gutenberg called 'the Work of the Books.' In November 1455, just as the Bibles were ready to sell, Fust took him to the archbishop's court in Mainz and won. What did the verdict let Fust carry off?",
-    "answer": "His press and the finished Bibles",
+    "answer": "His press and a share of the Bibles",
     "choices": [
-      "His press and the finished Bibles",
+      "His press and a share of the Bibles",
       "His house and his goldsmith's tools",
       "His store of fresh paper and ink",
       "His chest of gold and silver coins"
@@ -20016,7 +19951,7 @@
       "An archbishop's account book of his pension",
       "A goldsmiths' guild register bearing his name"
     ],
-    "context": "The Helmasperger Notarial Instrument, recording the 1455 lawsuit, is the only contemporary account of Gutenberg's work -- so our knowledge of the printing revolution rests largely on the document that ruined its inventor. (https://www.mainz.de/en/microsite/gutenberg/zeit/zeitleiste_gutenberg)",
+    "context": "The Helmasperger Notarial Instrument, recording the 1455 lawsuit, is the only contemporary account of Gutenberg's work -- so what is known of the printing revolution rests largely on the document that ruined its inventor. (https://www.mainz.de/en/microsite/gutenberg/zeit/zeitleiste_gutenberg)",
     "topic": "gutenberg-s-printing-press-c-1450"
   },
   {
@@ -20047,7 +19982,7 @@
   },
   {
     "tier": 3,
-    "question": "Johannes Gutenberg set his press in Mainz to printing Bibles in the 1450s. A lone scribe bent over his desk needed roughly a whole year to copy out just one by hand. In that same span, about how many copies did Gutenberg's press turn out?",
+    "question": "Johannes Gutenberg set his press in Mainz to printing Bibles in the 1450s, while a lone scribe still needed long months of steady work to copy out a single Bible by hand. In about the time one scribe took for one Bible, about how many copies did the press turn out?",
     "answer": "about 180",
     "choices": [
       "about 180",
@@ -20073,13 +20008,13 @@
   },
   {
     "tier": 4,
-    "question": "Aeneas Sylvius Piccolomini, a churchman who would one day be Pope Pius II, looked over pages of Gutenberg's new Bible on show at Frankfurt in March 1455. He wrote the earliest known eyewitness report of printing. What amazed him most about the pages?",
-    "answer": "so clean and clear you could read it without glasses",
+    "question": "Aeneas Sylvius Piccolomini, a churchman who would one day be Pope Pius II, looked over pages of Gutenberg's new Bible on show at Frankfurt in March 1455. He wrote the earliest known eyewitness report of printing. What did he write about the lettering?",
+    "answer": "It was so neat it could be read without glasses",
     "choices": [
-      "so clean and clear you could read it without glasses",
-      "so bright with gold paint it lit up the room",
-      "so sweet with perfume the whole hall smelled of it",
-      "so thin and light you could fold it into a pocket"
+      "It was so neat it could be read without glasses",
+      "It shone with so much gold it lit up the room",
+      "It was so small a whole page fit in a palm",
+      "It was so large it could be read across a hall"
     ],
     "context": "In his letter of 12 March 1455 to Cardinal Carvajal, Piccolomini marveled that the lettering was so neat and correct it 'could be read effortlessly, even without glasses.' It is the first eyewitness account of printing. Source: https://www.historyofinformation.com/detail.php?id=292",
     "topic": "gutenberg-s-printing-press"
@@ -20098,16 +20033,16 @@
     "topic": "gutenberg-s-printing-press"
   },
   {
-    "tier": 5,
-    "question": "Martin Luther turned out short German pamphlets after his 95 Theses of 1517, and printers ran them off so fast that more than half a million copies had sold by 1525. Historians give Luther a title that no author had held before him. What is that title?",
-    "answer": "the first bestselling author in history",
+    "tier": 4,
+    "question": "Historians call Martin Luther the first bestselling author in history. After his 95 Theses in 1517, printers ran off his writings so fast that more than half a million copies had sold by 1525. What were most of those copies?",
+    "answer": "Short pamphlets in plain German",
     "choices": [
-      "the first bestselling author in history",
-      "the first man to print a book",
-      "the first translator of the Bible",
-      "the first to write in German"
+      "Short pamphlets in plain German",
+      "Long Latin books for scholars",
+      "Latin sermons for village priests",
+      "Rhymed German plays for the stage"
     ],
-    "context": "Between 1517 and 1525 Luther published over half a million works — making him the first bestselling author of the modern age. His short German pamphlets were nicknamed Flugschriften, 'flying writings,' because they spread so fast; Luther called printing 'God's highest and extremest act of grace.' Source: https://www.worldhistory.org/article/2039/the-printing-press--the-protestant-reformation/",
+    "context": "Between 1517 and 1525 more than half a million copies of Luther's works sold, most of them short German pamphlets nicknamed Flugschriften, 'flying writings,' because they spread so fast. Luther called printing 'God's highest and extremest act of grace.' Source: https://www.worldhistory.org/article/2039/the-printing-press--the-protestant-reformation/",
     "topic": "gutenberg-s-printing-press"
   },
   {
