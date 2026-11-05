@@ -20141,10 +20141,10 @@
     "question": "Martin Luther wrote out his 95 Theses in 1517, a list of complaints against the Church meant only for his fellow scholars. Printers seized on them and ran off copies without asking him. Thanks to the press, how fast did Luther's 95 Theses spread?",
     "answer": "across Germany in about two weeks",
     "choices": [
+      "across Germany in about two days",
       "across Germany in about two weeks",
-      "across Germany in about two years",
-      "across Germany in about twenty years",
-      "across Germany in about two centuries"
+      "across Germany in about six months",
+      "across Germany in about two years"
     ],
     "context": "Within two weeks the Theses had spread across Germany, and within two months across Europe. Historians say bluntly, 'No printing press, no Reformation' — ideas could now multiply faster than any king or church could suppress them. Source: https://www.worldhistory.org/article/2039/the-printing-press--the-protestant-reformation/",
     "topic": "gutenberg-the-printing-press"
@@ -20164,15 +20164,15 @@
   },
   {
     "tier": 4,
-    "question": "Writing a report at Vindolanda, a Roman soldier sneered that the wretched Britons would not even climb onto their horses to throw javelins. In it he pinned a single mocking Latin word on them, a word found in no other surviving Latin writing. What was the insult?",
+    "question": "Writing a report at Vindolanda, a Roman soldier sneered that the wretched locals would not even climb onto their horses to throw javelins. In it he pinned a single mocking Latin word on them, a word found in no other surviving Latin writing. What was the insult?",
     "answer": "Brittunculi",
     "choices": [
       "Brittunculi",
-      "Gallunculi",
       "Barbarunculi",
-      "Germanunculi"
+      "Caledunculi",
+      "Brigantunculi"
     ],
-    "context": "Tab.Vindol. 164 (c. AD 97-105) is the only known use of 'Brittunculi' in all of surviving Latin — a contemptuous diminutive coined by a Roman on the frontier. The full line jeers that 'the cavalry do not use swords nor do the wretched Britons mount in order to throw javelins.' Source: romaninscriptionsofbritain.org TabVindol164; penelope.uchicago.edu.",
+    "context": "Tab.Vindol. 164 (c. AD 97-105) is the only known use of 'Brittunculi', 'nasty little Britons', in all of surviving Latin, a contemptuous diminutive used by a Roman on the frontier. The full line jeers that 'the cavalry do not use swords nor do the wretched Britons mount in order to throw javelins.' Source: romaninscriptionsofbritain.org TabVindol164; penelope.uchicago.edu.",
     "topic": "hadrian-s-wall-and-the-edges-of-empire"
   },
   {
@@ -20216,11 +20216,11 @@
   },
   {
     "tier": 2,
-    "question": "Suppose you visit Hagia Sophia and stop at its wishing column, where you press your thumb into the hole worn through its bronze plate and slowly turn your hand. According to the old legend, what sign tells you your wish will come true?",
-    "answer": "Your thumb comes out damp.",
+    "question": "A visitor to Hagia Sophia stops at its wishing column, presses a thumb into the hole worn through its bronze plate and slowly turns the hand. According to the old legend, what sign shows that the wish will come true?",
+    "answer": "The thumb comes out damp.",
     "choices": [
-      "Your thumb comes out damp.",
-      "Your thumb feels suddenly warm.",
+      "The thumb comes out damp.",
+      "The thumb feels suddenly warm.",
       "The hole hums very faintly.",
       "The bronze turns slightly green."
     ],
@@ -20268,15 +20268,15 @@
   },
   {
     "tier": 4,
-    "question": "Anthemius of Tralles and Isidore of Miletus, the builders of Hagia Sophia, had to set a round dome on top of a square hall. They solved it by filling the four upper corners with curved triangles of masonry, like sails of stone. What is each of those corner pieces called?",
-    "answer": "A pendentive.",
+    "question": "Anthemius of Tralles and Isidore of Miletus, the builders of Hagia Sophia, had to set a vast round dome on top of a square hall, and a circle does not sit neatly on a square. How did they carry the dome's round rim down onto the square walls below?",
+    "answer": "They filled the four corners with curved triangles of masonry",
     "choices": [
-      "A pendentive.",
-      "A buttress.",
-      "A keystone.",
-      "An archway."
+      "They filled the four corners with curved triangles of masonry",
+      "They set small arches diagonally across each corner",
+      "They laid a square frame of timber beams under it",
+      "They raised a round inner wall inside the square"
     ],
-    "context": "Pendentives let a round dome sit smoothly on a square base — the breakthrough that made Hagia Sophia's vast dome possible. Source: en.wikipedia.org/wiki/Hagia_Sophia; smarthistory.org 'Hagia Sophia, Istanbul'.",
+    "context": "Each of those curved corner triangles is a pendentive. Pendentives let a round dome sit smoothly on a square base, the breakthrough that made Hagia Sophia's vast dome possible. Source: en.wikipedia.org/wiki/Hagia_Sophia; smarthistory.org 'Hagia Sophia, Istanbul'.",
     "topic": "hagia-sophia"
   },
   {
@@ -20411,13 +20411,13 @@
   },
   {
     "tier": 2,
-    "question": "Hammurabi had his 282 laws carved into a single upright black stone more than two meters tall, around 1754 BC, and set it up in public in Babylon so that anyone could come and hear the laws read aloud. Archaeologists have a special word for a tall carved pillar like this. What is it?",
+    "question": "Hammurabi had his 282 laws carved into a single upright black stone more than two meters tall, around 1754 BC, and raised it in a public place where anyone could come and hear the laws read aloud. Archaeologists have a special word for a tall carved pillar like this. What is it?",
     "answer": "a stele",
     "choices": [
       "a stele",
       "a tablet",
-      "a scroll",
-      "a ledger"
+      "an obelisk",
+      "a menhir"
     ],
     "context": "The stele still stands today in the Louvre in Paris. The whole code (about 4,130 lines) is carved in cuneiform in the Old Babylonian dialect of Akkadian. It is the earliest famous written law code -- the deep root of the idea that the law is written down, public, and read aloud to all. Source: https://en.wikipedia.org/wiki/Code_of_Hammurabi ; https://www.louvre.fr/en/the-code-of-hammurabi",
     "topic": "hammurabi-s-code"
@@ -20471,20 +20471,20 @@
       "the accuser was branded",
       "the accuser was exiled"
     ],
-    "context": "Law 1: 'If a man accuses another man and charges him with homicide, but cannot bring proof against him, his accuser shall be killed.' Bringing a deadly charge you couldn't prove cost you your own life -- an early version of putting the burden of proof on the accuser. Source: https://en.wikipedia.org/wiki/Code_of_Hammurabi",
+    "context": "Law 1: 'If a man accuses another man and charges him with homicide, but cannot bring proof against him, his accuser shall be killed.' Bringing a deadly charge he could not prove cost the accuser his own life -- an early version of putting the burden of proof on the accuser. Source: https://en.wikipedia.org/wiki/Code_of_Hammurabi",
     "topic": "hammurabi-s-code"
   },
   {
     "tier": 3,
-    "question": "Shutruk-Nahhunte, an Elamite king, sacked Babylon around 1158 BC and carried off a black stone more than two meters tall as a war trophy. Carved on it were 282 laws laid down centuries earlier by a famous Babylonian king, best known for the rule 'an eye for an eye.' What was that king's name?",
-    "answer": "Hammurabi",
+    "question": "Jacques de Morgan's French diggers at Susa, in what is now Iran, unearthed a black stone more than two meters tall in 1901, carved with Hammurabi's laws. Hammurabi had ruled far to the west, from Babylon. How had his law stone come to Susa?",
+    "answer": "An Elamite king had carried it off as war plunder",
     "choices": [
-      "Hammurabi",
-      "Nebuchadnezzar",
-      "Sargon the Great",
-      "Gilgamesh"
+      "An Elamite king had carried it off as war plunder",
+      "Babylonian priests had hidden it there from invaders",
+      "Hammurabi had raised it in a city he conquered",
+      "A Persian king had bought it for his new palace"
     ],
-    "context": "The Elamite king Shutruk-Nahhunte (reigned c. 1185-1160 BC) carried the stele off as plunder to his capital, Susa, in modern Iran. A French archaeological team under Jacques de Morgan rediscovered it there in 1901; the Louvre has displayed it since 1904. Source: https://en.wikipedia.org/wiki/Code_of_Hammurabi ; https://www.louvre.fr/en/the-code-of-hammurabi",
+    "context": "An Elamite king carried the stele off as plunder to his capital, Susa, in modern Iran; the usual identification, first made by the scholar Vincent Scheil, is Shutruk-Nahhunte (reigned c. 1184-1155 BC). A French archaeological team under Jacques de Morgan rediscovered it there in 1901; the Louvre has displayed it since 1904. Source: https://en.wikipedia.org/wiki/Code_of_Hammurabi ; https://en.wikipedia.org/wiki/Shutruk-Nakhunte",
     "topic": "hammurabi-s-code"
   },
   {
@@ -20523,7 +20523,7 @@
       "floating to the top",
       "being swept downstream"
     ],
-    "context": "Law 2 prescribes trial by river ordeal: if the river drowned the accused, the accuser took their estate; but 'if the River has cleared that man and he has come out alright,' the false accuser was executed. The river itself delivered the verdict. Source: https://ehammurabi.org/law/2",
+    "context": "Law 2 prescribes trial by river ordeal: if the river drowned the accused, the accuser took his estate; but 'if the River has cleared that man and he has come out alright,' the false accuser was executed. The river itself delivered the verdict. Source: https://ehammurabi.org/law/2",
     "topic": "hammurabi-s-code"
   },
   {
@@ -20554,7 +20554,7 @@
   },
   {
     "tier": 5,
-    "question": "The Hebrews wrote down the law of Moses centuries after Hammurabi, and it shared his 'eye for an eye' rule, but it split from him sharply on rank. Where Hammurabi cut off a slave's ear for striking a free man, the law in Exodus did the opposite for a slave whose master knocked out his eye or tooth. What happened to that slave?",
+    "question": "The Hebrews wrote down the law of Moses centuries after Hammurabi, and it shared his 'eye for an eye' rule, but it split from him sharply on rank. Under Hammurabi, a man who put out a slave's eye paid the owner half the slave's price. In Exodus, what happened to a slave whose master knocked out his eye or tooth?",
     "answer": "the slave was set free",
     "choices": [
       "the slave was set free",
@@ -20562,7 +20562,7 @@
       "the slave was given land",
       "the slave was sent home"
     ],
-    "context": "Honest contrast: lex talionis in Hammurabi's Code (~1754 BC) predates the Hebrew Torah versions by centuries. The key difference -- Hammurabi sorted punishments by class, while the Hebrew code posited one set of laws for the whole community, and where Hammurabi cut off a slave's hand, Exodus set the injured slave free (Exodus 21:26-27). Source: https://www.newworldencyclopedia.org/entry/Lex_talionis ; https://www.britannica.com/topic/Hebraic-law",
+    "context": "Honest contrast: lex talionis in Hammurabi's Code (~1754 BC) predates the Hebrew Torah versions by centuries. The key difference -- Hammurabi sorted punishments by class, while the Hebrew code posited one set of laws for the whole community, and where Hammurabi paid a blinded slave's owner half the slave's value (Law 199), Exodus set the injured slave free (Exodus 21:26-27). Source: https://www.newworldencyclopedia.org/entry/Lex_talionis ; https://www.britannica.com/topic/Hebraic-law",
     "topic": "hammurabi-s-code"
   },
   {
@@ -20606,7 +20606,7 @@
   },
   {
     "tier": 2,
-    "question": "Zhang Heng built a machine for the Han court in 132 that no one had seen before: a bronze urn circled by eight dragons, each gripping a ball in its mouth above an open-mouthed bronze toad. When a tremor from a distant earthquake reached the urn, a pendulum inside swung. What happened next?",
+    "question": "Zhang Heng built a machine for the emperor's court in 132 that no one had seen before: a bronze urn circled by eight dragons, each gripping a ball in its mouth above an open-mouthed bronze toad. When a tremor from a distant earthquake reached the urn, a pendulum inside swung. What happened next?",
     "answer": "A dragon dropped its ball into a toad's mouth",
     "choices": [
       "A dragon dropped its ball into a toad's mouth",
@@ -20645,13 +20645,13 @@
   },
   {
     "tier": 3,
-    "question": "Court officials scoffed at Zhang Heng's earthquake machine, until one day it gave its signal in Luoyang, the capital, though no one in the city had felt the ground move at all. What arrived days later?",
+    "question": "Court officials scoffed at Zhang Heng's bronze earthquake machine with its eight dragons, until one day it gave its signal in Luoyang, the capital, though no one in the city had felt the ground move at all. What happened a few days later?",
     "answer": "A messenger arrived reporting a quake hundreds of miles away",
     "choices": [
       "A messenger arrived reporting a quake hundreds of miles away",
-      "A second dragon released its ball moments later",
+      "A small tremor at last shook the capital itself",
       "A rival official accused him of faking the drop",
-      "An order from the emperor to destroy the device"
+      "The emperor ordered the device destroyed as a fraud"
     ],
     "context": "The galloping messenger from the Long region (Gansu) reported an earthquake exactly where the dragon had pointed, far beyond where anyone in the capital could feel it. The doubters fell silent. Source: https://www.ancient-origins.net/ancient-technology/incredible-earthquake-detector-invented-nearly-2000-years-ago-001377.",
     "topic": "han-dynasty-the-silk-road-origins"
@@ -20736,7 +20736,7 @@
   },
   {
     "tier": 2,
-    "question": "The London audience at the premiere of Handel's Messiah rose to its feet during the Hallelujah Chorus because of one man in the crowd, the story goes, and audiences still stand for it today. Who is said to have stood up first, so that everyone else stood too?",
+    "question": "Audiences at the London premiere of Handel's Messiah in 1743 rose to their feet during the Hallelujah Chorus because one man stood up first, the story goes, and listeners still stand for it today. Who is said to have started it?",
     "answer": "King George II",
     "choices": [
       "King George II",
@@ -20757,7 +20757,7 @@
       "two years",
       "a single night"
     ],
-    "context": "Handel wrote all 259 pages of Messiah in just 24 days, working at his home on Brook Street in London. By accounts from the time, during those weeks he barely slept or ate; servants who brought his meals often found them untouched. He wrote only the music — the words were assembled by his librettist Charles Jennens from the King James Bible and the Book of Common Prayer. Source: https://en.wikipedia.org/wiki/Messiah_(Handel)",
+    "context": "Handel wrote all 259 pages of Messiah in just 24 days, from 22 August to 14 September 1741, at his home on Brook Street in London. Popular retellings say he hardly slept or ate in those weeks, lost in inspiration, but historians call that story apocryphal: writing so fast was normal for Handel, who began his next oratorio, Samson, within a week. He wrote only the music; the words were assembled by his librettist Charles Jennens from the King James Bible and the Book of Common Prayer. Source: https://en.wikipedia.org/wiki/Messiah_(Handel)",
     "topic": "handel-messiah-and-the-hallelujah-chorus"
   },
   {
@@ -20952,7 +20952,7 @@
       "From the personal diary of the caliph Harun al-Rashid",
       "From an old Persian poem he translated himself"
     ],
-    "context": "Aladdin, Ali Baba, and Sinbad's voyages are \"orphan tales\" with no original Arabic manuscript. Antoine Galland (translating 1704–1717) got Aladdin and Ali Baba from a Syrian storyteller named Hanna Diyab; Diyab's role was only firmly confirmed by scholars in 2015. The legendary caliph who wanders the Nights in disguise, Harun al-Rashid, was a real ruler (786–809) — but these particular famous tales were never part of the old Arabic core. (pookpress.co.uk; en.wikipedia.org/wiki/Aladdin)",
+    "context": "Aladdin and Ali Baba are 'orphan tales' with no original Arabic manuscript behind them. Antoine Galland (translating 1704-1717) heard both from Hanna Diyab, a young storyteller from Aleppo in Syria, and Galland's own diary records Diyab telling him Aladdin in May 1709. The legendary caliph who wanders the Nights in disguise, Harun al-Rashid, was a real ruler (786-809), but these two famous tales were never part of the old Arabic core. (en.wikipedia.org/wiki/Hanna_Diyab; en.wikipedia.org/wiki/Aladdin)",
     "topic": "harun-al-rashid-and-the-1001-nights"
   },
   {
@@ -21034,21 +21034,8 @@
     "topic": "henry-ford-and-the-assembly-line"
   },
   {
-    "tier": 3,
-    "question": "Henry Ford was turning out close to 10,000 cars a day in 1925. At the peak, finished Model Ts rolled off his line one hard on the heels of another, with hardly a pause between them. How often did a finished Model T come off the line?",
-    "answer": "Every 24 seconds",
-    "choices": [
-      "Every 24 seconds",
-      "Every 90 seconds",
-      "Every 240 seconds",
-      "Every 540 seconds"
-    ],
-    "context": "A finished Model T rolled off about every 24 seconds at peak, and Ford built close to 10,000 cars a day in 1925. Source: automotivehistory.org 'October 7, 1913 - Model T chassis moving assembly line'; bestsellingcarsblog.com.",
-    "topic": "henry-ford-and-the-assembly-line"
-  },
-  {
     "tier": 4,
-    "question": "Henry Ford was losing men from his moving line so fast in 1913 that his worker turnover hit about 380 percent; the work was that dull. On 5 January 1914 he answered with a new daily wage for eight hours' work, over twice the old minimum, meant to keep men on the job and let them buy the cars they built. What daily wage did Ford announce?",
+    "question": "Henry Ford was losing men from his moving line so fast in 1913 that his worker turnover hit about 380 percent; the work was that dull. On 5 January 1914 he answered by more than doubling the old pay of $2.34 for a nine-hour day, now for eight hours' work, to keep men on the job. What daily wage did Ford announce?",
     "answer": "$5 a day",
     "choices": [
       "$5 a day",
@@ -21095,7 +21082,7 @@
       "A city already burned to the ground by rivals",
       "A river of gold dust guarded by armored warriors"
     ],
-    "context": "The fabled cities turned out to be plain Zuni Pueblo villages of mud and stone. The whole legend traced back to Fray Marcos de Niza, who relied on reports from the enslaved African scout Estevanico. Source: https://www.worldhistory.org/article/1754/cibola---the-seven-cities-of-gold--coronado/ ; https://www.tshaonline.org/handbook/entries/coronado-expedition",
+    "context": "The fabled cities turned out to be plain Zuni Pueblo villages of mud and stone. The legend of seven rich cities was much older, but the report that sent Coronado north came from Fray Marcos de Niza, who in 1539 called a Zuni pueblo Cibola and described treasures that were not there; the enslaved African scout Estevanico had gone ahead of him. Source: https://en.wikipedia.org/wiki/Seven_Cities_of_Gold ; https://www.tshaonline.org/handbook/entries/coronado-expedition",
     "topic": "henry-hudson-later-north-american-explorers"
   },
   {
@@ -21152,13 +21139,13 @@
   },
   {
     "tier": 2,
-    "question": "Henry VIII wrote a book in 1521, long before his break with Rome, that defended the seven sacraments of the Church and attacked Martin Luther. Pope Leo X, grateful, rewarded him with a Latin title, and British monarchs still carry it. What was the title?",
+    "question": "Henry VIII wrote a book in 1521, long before his break with Rome, attacking Martin Luther and taking the pope's side. Pope Leo X, grateful, rewarded him with a Latin title, and British monarchs still carry it. What was the title?",
     "answer": "\"Fidei Defensor\" — Defender of the Faith",
     "choices": [
       "\"Fidei Defensor\" — Defender of the Faith",
       "\"Rex Catholicus\" — the Catholic King",
       "\"Vicarius Christi\" — Vicar of Christ",
-      "\"Sacrae Maiestas\" — the Sacred Majesty"
+      "\"Sacra Maiestas\" — the Sacred Majesty"
     ],
     "context": "Pope Leo X granted the title on 11 October 1521 for Henry's book the 'Assertio Septem Sacramentorum' (Defence of the Seven Sacraments). The irony is that British monarchs still carry 'Defender of the Faith' today — even after Henry's own break with Rome, the very thing the title was meant to oppose. Source: https://www.tudorsociety.com/october-11-henry-viii-becomes-defender-of-the-faith/",
     "topic": "henry-viii-the-english-reformation"
@@ -21210,7 +21197,7 @@
       "Charles V, the Holy Roman Emperor",
       "Francis I, the King of France",
       "Suleiman, the Ottoman Sultan",
-      "Ferdinand, the King of Aragon"
+      "John III, the King of Portugal"
     ],
     "context": "Catherine of Aragon was the aunt of Charles V, the Holy Roman Emperor, whose troops had recently sacked Rome. The Pope dared not offend him, so the annulment was blocked. The break with Rome turned above all on this political deadlock — and led directly to the 1534 Act of Supremacy making Henry \"Supreme Head of the Church of England.\" Source: https://www.ebsco.com/research-starters/history/act-supremacy",
     "topic": "henry-viii-the-english-reformation"
@@ -21234,16 +21221,16 @@
     "answer": "The sun stood on their right hand",
     "choices": [
       "The sun stood on their right hand",
-      "The stars wheeled backward overhead",
       "The sea boiled at the world's edge",
-      "The days grew longer than the nights"
+      "The sun rose in the west each morning",
+      "Ice closed over the sea in summer"
     ],
     "context": "Rounding southern Africa, a crew sees the midday sun to the NORTH — on their right hand as they sail west. Herodotus reported this but wrote he did NOT believe it. Because no Greek of his day knew the Southern Hemisphere works this way, his very disbelief is treated as evidence the voyage really occurred. This shows his rule for sources: 'My duty is to report what is said, but it is not my duty to believe it all alike.' Source: https://www.livius.org/sources/content/herodotus/herodotus-on-the-first-circumnavigation-of-africa/",
     "topic": "herodotus-the-father-of-history"
   },
   {
     "tier": 2,
-    "question": "Napoleon's scholars gave a French name to the oval loop that Egyptian scribes always drew around a pharaoh's name, in the form of a knotted rope tied in a circle, to wrap the king's name in protection. Egyptologists still use their word. What is the loop called?",
+    "question": "Egyptian scribes always drew an oval loop around a pharaoh's name, shaped like a knotted rope tied in a ring, to wrap the king's name in protection. What do Egyptologists call that oval loop?",
     "answer": "A cartouche",
     "choices": [
       "A cartouche",
@@ -21273,9 +21260,9 @@
     "answer": "It kept the person's soul living in the afterlife",
     "choices": [
       "It kept the person's soul living in the afterlife",
-      "It doubled the size of the royal harvest",
-      "It frightened away enemy armies at the border",
-      "It forced the Nile to flood on command"
+      "It kept the person's body from rotting in the tomb",
+      "It guarded the person's tomb against robbers",
+      "It let the person be born again on earth"
     ],
     "context": "To Egyptians a name was sacred: many believed that as long as people's names were still spoken or read, their souls would keep living in the afterlife. That is why the cartouche was said to 'preserve their essence.' Source: egyptunitedtours.com/ancient-egyptian-cartouche",
     "topic": "hieroglyphics"
@@ -21338,16 +21325,16 @@
     "answer": "Cipher",
     "choices": [
       "Cipher",
-      "Riddle",
-      "Token",
-      "Symbol"
+      "Code",
+      "Signal",
+      "Decoy"
     ],
     "context": "'Sifr' Latinized to 'zephirum' (via Fibonacci), then Italian 'zefiro', contracted to 'zero' -- while the same root traveled separately into 'cipher', a secret code. (etymonline.com/word/cipher; etymonline.com/word/zero; sciencefriday.com/articles/the-origin-of-the-word-zero/)",
     "topic": "hindu-arabic-numerals-and-zero"
   },
   {
     "tier": 2,
-    "question": "Brahma creates the universe and Vishnu keeps it in balance, Hindu tradition tells, while a third great god destroys each world so that a fresh one can begin. Which of the three is the destroyer?",
+    "question": "Hindu tradition tells of the Trimurti, three great gods who keep the cosmos turning: one creates the universe, one preserves it, and one destroys each world so that a fresh one can begin. Which of them is the destroyer?",
     "answer": "Shiva",
     "choices": [
       "Shiva",
@@ -21360,7 +21347,7 @@
   },
   {
     "tier": 2,
-    "question": "Vishnu, the preserver, keeps the universe in balance, as Hindu tradition tells it. Whenever evil grows strong and the world starts to slide toward chaos, he sets things right, and he does not stay up in heaven and send help from above. What does he do?",
+    "question": "Vishnu, the preserver, keeps the universe in balance, as Hindu tradition tells it. Whenever evil grows strong and the world starts to slide toward chaos, he acts to set things right. How does he do it?",
     "answer": "He is born on earth in a new bodily form",
     "choices": [
       "He is born on earth in a new bodily form",
@@ -21490,7 +21477,7 @@
   },
   {
     "tier": 5,
-    "question": "The demon Hiranyakashipu wins a near-perfect boon in a Hindu legend: he cannot be killed by man or beast, by day or by night, indoors or outdoors, on the ground or in the air, or by any weapon. He believes himself unkillable, yet Vishnu, coming in one of his avatars, slays him without breaking a single clause. Which way of doing it threads every loophole at once?",
+    "question": "The demon Hiranyakashipu wins a near-perfect boon in a Hindu legend: he cannot be killed by man or beast, by day or by night, indoors or outdoors, on the ground or in the air, or by any weapon. He believes himself unkillable, yet Vishnu, coming in one of his avatars, slays him without breaking a single clause. How does Vishnu do it, as the legend tells?",
     "answer": "A man-lion, striking at twilight, on the threshold of a doorway",
     "choices": [
       "A man-lion, striking at twilight, on the threshold of a doorway",
@@ -21507,9 +21494,9 @@
     "answer": "Apollo, the healer",
     "choices": [
       "Apollo, the healer",
-      "Hades, lord of the dead",
-      "Ares, god of war",
-      "Poseidon, the earth-shaker"
+      "Asclepius, the physician",
+      "Zeus, king of the gods",
+      "Athena, goddess of wisdom"
     ],
     "context": "The Oath opens: 'I swear by Apollo Healer, by Asclepius, by Hygieia, by Panacea, and by all the gods and goddesses.' Asclepius was the god of medicine and Hygieia (root of 'hygiene') the goddess of health. Source: https://en.wikipedia.org/wiki/Hippocratic_Oath",
     "topic": "hippocrates-and-the-hippocratic-oath"
@@ -21581,7 +21568,7 @@
   },
   {
     "tier": 3,
-    "question": "Hiroshima lay all but flattened for a mile around the bomb's burst on 6 August 1945, but one domed building, now called the A-Bomb Dome, kept its walls and the skeletal frame of its dome, though everyone inside died. The bomb had burst in the air only about 500 feet from it. Why did it survive when others nearby were swept flat?",
+    "question": "Hiroshima lay all but flattened for a mile around the bomb's burst on 6 August 1945, but one domed building, now called the A-Bomb Dome, kept its walls and the skeletal frame of its dome, though everyone inside died. Why did it survive when others nearby were swept flat?",
     "answer": "The blast was almost directly overhead, so its force pressed straight down through the building",
     "choices": [
       "The blast was almost directly overhead, so its force pressed straight down through the building",
@@ -21589,7 +21576,7 @@
       "Deep underground vaults soaked up the force of the shock wave",
       "Thick earthen walls had been packed around it as a bomb shelter"
     ],
-    "context": "The bomb burst almost directly above the building, so the blast wave pushed straight down through its center, leaving the walls and metal dome intact. Designed by Czech architect Jan Letzel in 1915, the Genbaku (A-Bomb) Dome is now a UNESCO World Heritage site and the iconic ruin of Hiroshima. Source: en.wikipedia.org/wiki/Hiroshima_Peace_Memorial",
+    "context": "The bomb burst almost directly above the building, about 600 m (2,000 ft) up and only some 150 m (490 ft) to one side, so the blast wave pushed straight down through it, leaving the walls and the metal frame of the dome standing. Designed by Czech architect Jan Letzel in 1915, the Genbaku (A-Bomb) Dome is now a UNESCO World Heritage site and the iconic ruin of Hiroshima. Source: en.wikipedia.org/wiki/Hiroshima_Peace_Memorial",
     "topic": "hiroshima-and-nagasaki"
   },
   {
@@ -21620,15 +21607,15 @@
   },
   {
     "tier": 3,
-    "question": "The crew of the second atomic bomber made three runs over Kokura, the city they had been sent to bomb, on the morning of 9 August 1945, but smoke and haze hid it every time, so they flew on to their backup target, Nagasaki. The spared city never knew how close it had come. What do the Japanese still call that kind of narrow, unknowing escape?",
-    "answer": "Kokura's luck",
+    "question": "The crew of the second atomic bomber was sent to destroy Kokura on the morning of 9 August 1945. They made three runs over the city, then gave up and flew on to their backup target, Nagasaki, and Kokura never knew how close it had come. Why did they never drop the bomb on Kokura?",
+    "answer": "Smoke and haze hid the aiming point on every run",
     "choices": [
-      "Kokura's luck",
-      "Bomber's luck",
-      "Soldier's luck",
-      "Devil's luck"
+      "Smoke and haze hid the aiming point on every run",
+      "A radio order switched them to Nagasaki",
+      "They mistook a nearby town for the target",
+      "The bomb's fuse jammed above the city"
     ],
-    "context": "Smoke — partly from a firebombing raid on nearby Yahata the day before — covered about 70% of Kokura. Over Nagasaki, clouds also blocked the view until a hole opened at the end of the run and bombardier Capt. Kermit Beahan called out that he could see the target. 'Kokura's luck' came to mean a narrow escape from disaster. Source: en.wikipedia.org/wiki/Bockscar",
+    "context": "Clouds and drifting smoke, partly from a firebombing raid on nearby Yahata the day before, covered about 70% of Kokura. Over Nagasaki, clouds also blocked the view until a hole opened at the end of the run and bombardier Capt. Kermit Beahan called out that he could see the target. Writers have since called the city's escape the luck of Kokura. Source: en.wikipedia.org/wiki/Bockscar",
     "topic": "hiroshima-and-nagasaki"
   },
   {
@@ -21715,9 +21702,9 @@
     "answer": "Mein Kampf",
     "choices": [
       "Mein Kampf",
-      "The Communist Manifesto",
-      "The Prince",
-      "Das Kapital"
+      "Mein Leben",
+      "Storm of Steel",
+      "Der Stürmer"
     ],
     "context": "So the book at the heart of Nazism was literally composed by a convicted coup-plotter sitting in a jail cell, dictated to Rudolf Hess. The title means 'My Struggle.' Source: en.wikipedia.org/wiki/Mein_Kampf; en.wikipedia.org/wiki/Landsberg_Prison.",
     "topic": "hitler-s-rise-to-power"
@@ -21776,15 +21763,15 @@
   },
   {
     "tier": 3,
-    "question": "President Hindenburg, aged and pressed by Hitler, signed the Reichstag Fire Decree the day after the parliament building burned in February 1933. It cancelled freedom of speech and of the press, the right to gather and the privacy of the mail. With those rights gone, what did the police do overnight, days before the election?",
-    "answer": "Arrested thousands of Communists, including every KPD deputy",
+    "question": "President Hindenburg, aged and pressed by Hitler, signed the Reichstag Fire Decree the day after the parliament building burned in February 1933. It cancelled freedom of speech and of the press, the right to gather and the privacy of the mail. With those rights gone, what did the police do in the days before the election?",
+    "answer": "Arrested thousands of Communists, deputies among them",
     "choices": [
-      "Arrested thousands of Communists, including every KPD deputy",
+      "Arrested thousands of Communists, deputies among them",
       "Shut every newspaper and radio station in the country",
       "Seized all the gold in Germany's banks",
       "Drafted every jobless man into the army"
     ],
-    "context": "Police arrested thousands overnight, jailing every Communist (KPD) member of parliament and gutting the opposition before the 5 March 1933 vote. The Fire Decree was never lifted and became the permanent legal skeleton of the dictatorship. Source: encyclopedia.ushmm.org Reichstag Fire Decree article.",
+    "context": "Police arrested thousands in the days after the fire, Communist members of parliament among them, while some party leaders escaped into hiding or exile, gutting the opposition before the 5 March 1933 vote. The Fire Decree was never lifted and became the permanent legal skeleton of the dictatorship. Source: en.wikipedia.org/wiki/Reichstag_Fire_Decree; encyclopedia.ushmm.org Reichstag Fire Decree article.",
     "topic": "hitler-s-rise-to-power"
   },
   {
@@ -21815,7 +21802,7 @@
   },
   {
     "tier": 5,
-    "question": "Franz von Papen, a former chancellor, struck a backroom deal in January 1933. The Nazis had become the biggest party in the Reichstag with 37.4 percent of the vote the summer before, yet still lacked a majority, and Papen persuaded the aged President Hindenburg to make Hitler chancellor anyway, giving the Nazis just three of eleven cabinet seats. What did Papen convince Hindenburg that Hitler would be?",
+    "question": "Franz von Papen, a former chancellor, struck a backroom deal in January 1933. The Nazis had become the biggest party in the Reichstag with about 37 percent of the vote the summer before, yet still lacked a majority, and Papen persuaded the aged President Hindenburg to make Hitler chancellor anyway, giving the Nazis just three of eleven cabinet seats. What did Papen convince Hindenburg that Hitler would be?",
     "answer": "A harmless puppet they could control",
     "choices": [
       "A harmless puppet they could control",
@@ -21845,9 +21832,9 @@
     "answer": "Make his own laws",
     "choices": [
       "Make his own laws",
-      "Command the army only in wartime",
-      "Appoint mayors of cities",
-      "Set tax rates"
+      "Abolish the Reichstag",
+      "Remove the president",
+      "Rule as dictator for life"
     ],
     "context": "The Centre (Catholic) Party voted 72 to 0 in favor after Hitler verbally promised to protect Catholic schools and civil liberties. Without their cooperation the two-thirds majority would have failed and the legal road to dictatorship would have closed. Source: en.wikipedia.org/wiki/Enabling_Act_of_1933.",
     "topic": "hitler-s-rise-to-power"
@@ -21945,7 +21932,7 @@
   },
   {
     "tier": 4,
-    "question": "The Trojan warrior Asteropaios hurls his spear at Achilles, the greatest of the Greeks, in Book 21 of Homer's Iliad, and its point finds Achilles' forearm, though legend makes Achilles almost proof against weapons. What does Homer say happens when the spear strikes him?",
+    "question": "The Trojan warrior Asteropaios hurls his spear at Achilles, the greatest of the Greeks, in Book 21 of Homer's Iliad, and its point grazes Achilles' forearm, though legend makes Achilles almost proof against weapons. What does Homer say happens next?",
     "answer": "Black blood spurts forth from the wound",
     "choices": [
       "Black blood spurts forth from the wound",
@@ -21962,9 +21949,9 @@
     "answer": "Christopher Marlowe",
     "choices": [
       "Christopher Marlowe",
-      "Homer himself",
-      "Virgil of Rome",
-      "Geoffrey Chaucer"
+      "William Shakespeare",
+      "Thomas Kyd",
+      "George Peele"
     ],
     "context": "The line is from Marlowe's play Doctor Faustus: 'Was this the face that launch'd a thousand ships, / And burnt the topless towers of Ilium?' In Homer, a Greek fleet of about a thousand ships did sail for Troy to win Helen back after she left with the prince Paris. en.wikipedia.org/wiki/Helen_of_Troy; interestingliterature.com on Marlowe",
     "topic": "homer-and-the-trojan-war-iliad-and-odyssey"
@@ -21979,7 +21966,7 @@
       "His hand",
       "His heart"
     ],
-    "context": "The river Scamander's channels choked with corpses until the river-god flooded to drown Achilles; the goddess Hera saved him by sending Hephaistos, god of fire, whose flames boiled the river until it surrendered. Homer, Iliad Book 21; sparknotes.com The Iliad Books 21-22; etc.usf.edu Lit2Go Iliad Book 21",
+    "context": "The dipping in the river Styx, which left only the heel unprotected, first appears in Statius's unfinished Achilleid, written around AD 90, some 800 years after Homer; in the Iliad, Achilles can be wounded and bleed like any man. 'Achilles' heel' still means a single fatal weak spot. en.wikipedia.org/wiki/Achilles%27_heel; talesoftimesforgotten.com on Statius, Achilleid",
     "topic": "homer-and-the-trojan-war-iliad-and-odyssey"
   },
   {
@@ -22010,7 +21997,7 @@
   },
   {
     "tier": 1,
-    "question": "Odysseus, trapped in the cave of the Cyclops Polyphemus, gave the giant a false name, got him drunk and blinded his one eye. When the blinded giant howled to his neighbors for help, he bellowed that name. What name had Odysseus given?",
+    "question": "Odysseus, trapped in the cave of the Cyclops Polyphemus, gave the giant a false name, got him drunk and blinded his one eye. The giant bellowed that name to his neighbors for help, and they shrugged and went home. What name had Odysseus given?",
     "answer": "Nobody",
     "choices": [
       "Nobody",
@@ -22114,15 +22101,15 @@
   },
   {
     "tier": 2,
-    "question": "Workers with blowtorches cut into Stalin's giant bronze statue in Budapest on 23 October 1956, while a crowd of about 200,000 Hungarians looked on. They looped a thick steel rope around its neck and pulled, and an hour later the towering figure crashed down. What part of the statue was still standing on the pedestal?",
-    "answer": "Only his boots",
+    "question": "Workers with blowtorches cut into Stalin's giant bronze statue in Budapest on 23 October 1956, while a huge crowd of Hungarians looked on. They looped a thick steel rope around its neck and pulled, and an hour later the towering figure crashed down. What part of the statue was still standing on the pedestal?",
+    "answer": "Only his knee-high boots",
     "choices": [
-      "Only his boots",
-      "Only his head",
-      "Only his right arm",
-      "Only his bronze coat"
+      "Only his knee-high boots",
+      "His legs, up to the waist",
+      "One leg, snapped at the knee",
+      "The lower half of his coat"
     ],
-    "context": "The blowtorches and rope severed the figure at the ankles, leaving the giant bronze boots planted on the limestone base. Hungarians mockingly renamed the spot 'Boots Square.' The statue had stood about 25 meters (82 feet) tall, unveiled in 1951 as a 'gift' for Stalin's 70th birthday. Source: https://en.wikipedia.org/wiki/Stalin_Monument_(Budapest)",
+    "context": "The cutters worked at the statue's boots, so the giant bronze boots stayed planted on the limestone base. Hungarians mockingly renamed the spot 'Boots Square.' The whole monument stood about 25 meters (82 feet) tall, the bronze figure itself about 8 meters, unveiled in 1951 as a 'gift' for Stalin's 70th birthday. Source: https://en.wikipedia.org/wiki/Stalin_Monument_(Budapest)",
     "topic": "hungarian-revolution-1956"
   },
   {
@@ -22166,15 +22153,15 @@
   },
   {
     "tier": 2,
-    "question": "Ibn Battuta left Tangier alone at twenty-one, bound for Mecca, and the loneliness hit him hard. Reaching the city of Tunis without a single friend to lift his spirits, he did something he later admitted to, until a stranger befriended him. What did he do?",
-    "answer": "He wept bitterly from loneliness",
+    "question": "Ibn Battuta left Tangier alone at twenty-one, bound for Mecca. When his caravan reached Tunis, the townsfolk came out to greet the other travellers, but no one there knew him. He did something he later admitted to, until a stranger befriended him. What did he do?",
+    "answer": "He broke down and wept bitterly",
     "choices": [
-      "He wept bitterly from loneliness",
+      "He broke down and wept bitterly",
       "He turned back toward Tangier",
       "He sold his horse for passage",
       "He prayed through the night"
     ],
-    "context": "In Tunis he wrote that he 'wept bitterly' because he had 'neither fellow-traveller in whose companionship I might find cheer,' until a stranger befriended him. The greatest traveler in the world began in tears. Source: worldhistory.org/Ibn_Battuta/",
+    "context": "At Tunis no one greeted him, since no one there knew him, and he 'wept bitterly' from loneliness until a fellow pilgrim saw his distress and befriended him. He had left Tangier with 'neither fellow-traveller in whose companionship I might find cheer, nor caravan whose party I might join.' The greatest traveler of his age began in tears. Source: https://sourcebooks.web.fordham.edu/source/1354-ibnbattuta.asp ; worldhistory.org/Ibn_Battuta/",
     "topic": "ibn-battuta-the-great-muslim-traveler"
   },
   {
@@ -22206,9 +22193,9 @@
   {
     "tier": 3,
     "question": "Ibn Battuta, too afraid of the brutal sultan of Delhi to go back without the gifts for China he had lost, drifted to the Maldive Islands. Their rulers were desperate for someone who could read Arabic and Islamic law, and they heaped pearls and gold on him. What did they do to keep this rare scholar from leaving?",
-    "answer": "They refused to let his ship leave so he would stay as their judge",
+    "answer": "They refused to let his ship sail",
     "choices": [
-      "They refused to let his ship leave so he would stay as their judge",
+      "They refused to let his ship sail",
       "They hid his maps and charts at sea",
       "They jailed him until he swore loyalty",
       "They burned the only ship in the harbor"
@@ -22296,7 +22283,7 @@
   },
   {
     "tier": 5,
-    "question": "Alone in a cave at Manresa for nearly a year, Ignatius of Loyola fasted, let his hair and nails grow wild, and was at times so tormented by despair that he thought of suicide. Out of that ordeal he wrote a step-by-step program of guided meditations that Jesuits still lead people through on silent retreats today. What is this book called?",
+    "question": "Alone in a cave at Manresa for nearly a year, Ignatius of Loyola fasted, let his hair and nails grow wild, and was at times close to despair. Out of that ordeal he wrote a step-by-step program of guided meditations that Jesuits still lead people through on silent retreats today. What is this book called?",
     "answer": "The Spiritual Exercises",
     "choices": [
       "The Spiritual Exercises",
@@ -22400,7 +22387,7 @@
   },
   {
     "tier": 4,
-    "question": "Gerald of Wales, a travelling writer also known as Giraldus Cambrensis, saw a gospel book in Ireland around 1185 whose pages were so crowded with spirals and interlace that they hardly seemed human work. His line of praise has clung to the Book of Kells ever since. What did he say the book looked like?",
+    "question": "Gerald of Wales, a travelling writer also known as Giraldus Cambrensis, saw a gospel book in Ireland around 1185 whose pages were packed with tiny spirals and knotwork. His line of praise has clung to the Book of Kells ever since. What did he say the book looked like?",
     "answer": "The work of an angel, not of a man",
     "choices": [
       "The work of an angel, not of a man",
@@ -22427,9 +22414,9 @@
   {
     "tier": 2,
     "question": "Claude Monet painted the harbor of Le Havre in 1872 as a blur of gray, its ghostly ships and cranes fading into the mist. One blazing thing sits in the middle of all that gray, and the eye jumps straight to it. What is it?",
-    "answer": "A small burning orange sun and its rippling reflection on the water",
+    "answer": "A small orange sun with its rippling reflection",
     "choices": [
-      "A small burning orange sun and its rippling reflection on the water",
+      "A small orange sun with its rippling reflection",
       "A tall white lighthouse flashing above the docks",
       "A red sail crossing in front of the harbor",
       "A golden church spire rising over the rooftops"
@@ -22440,14 +22427,14 @@
   {
     "tier": 2,
     "question": "John Goffe Rand patented a collapsible tin paint tube in 1841, and painting outdoors suddenly became easy. Before it, artists had no clean way to carry wet oil paint out into a field. What did they squeeze their oil paint out of before the tube?",
-    "answer": "Tied-off pig's bladders that you pricked with a pin",
+    "answer": "Tied-off pig's bladders, pricked with a pin",
     "choices": [
-      "Tied-off pig's bladders that you pricked with a pin",
+      "Tied-off pig's bladders, pricked with a pin",
       "Hollow cow horns stoppered with wax",
       "Sealed clay jars dug into the ground",
       "Folded squares of oiled leather"
     ],
-    "context": "You pricked the bladder with a pin, squeezed, then tried to patch the hole; they leaked, burst, and dried out within a day or two. American artist John Goffe Rand's collapsible tin tube (patented 1841) fixed all of it. Source: https://uk.winsornewton.com/blogs/articles/winsor-newton-archive-pigs-bladders",
+    "context": "A painter pricked the bladder with a pin, squeezed out the paint, then tried to patch the hole; the bladders leaked, burst, and dried out within a day or two. American artist John Goffe Rand's collapsible tin tube (patented 1841) fixed all of it. Source: https://uk.winsornewton.com/blogs/articles/winsor-newton-archive-pigs-bladders",
     "topic": "impressionism-monet-and-the-movement"
   },
   {
@@ -22473,7 +22460,7 @@
       "In the drying coat of varnish",
       "Under the warm studio lamplight"
     ],
-    "context": "This is the 'broken color' trick: the separate dabs of pure color combine in your eye as you step back, so the picture shimmers instead of going flat. The mixing happens in your eyeball, not on the palette. Source: https://www.jacksonsart.com/blog/2015/04/24/impressionist-painting-techniques/",
+    "context": "This is the 'broken color' trick: the separate dabs of pure color combine in the viewer's eye from a few steps back, so the picture shimmers instead of going flat. The mixing happens in the eye, not on the palette. Source: https://www.jacksonsart.com/blog/2015/04/24/impressionist-painting-techniques/",
     "topic": "impressionism-monet-and-the-movement"
   },
   {
@@ -22495,7 +22482,7 @@
     "answer": "Circle the whole Earth",
     "choices": [
       "Circle the whole Earth",
-      "Reach partway to the Moon",
+      "Reach all the way to the Moon",
       "Cross the Sahara Desert",
       "Span the Atlantic Ocean"
     ],
@@ -22517,7 +22504,7 @@
   },
   {
     "tier": 2,
-    "question": "A chasqui came pounding up an Inca road with a royal message for the runner waiting at the next hut, who had to be on the move already when the two met, so that no time was lost. How did the arriving chasqui signal him to set off?",
+    "question": "A chasqui, a royal messenger of the Inca, came pounding up a mountain road toward a small stone hut. While he was still well short of it, he signalled the man inside to be ready. How did the chasqui give the signal?",
     "answer": "He blew a conch-shell trumpet",
     "choices": [
       "He blew a conch-shell trumpet",
@@ -22525,7 +22512,7 @@
       "He rang a heavy bronze bell",
       "He shouted out a secret password"
     ],
-    "context": "The trumpet was a pututu, a sea-conch shell. The chasqui also wore a white feather headdress so he could be spotted coming from far off, and often carried a knotted-string record called a quipu. We can still see one drawn from life in Felipe Guaman Poma de Ayala's 1615 manuscript. Source: en.wikipedia.org/wiki/Chasqui; trexperienceperu.com/blog/chasquis-ancient-messengers",
+    "context": "The trumpet was a pututu, a sea-conch shell. The chasqui also wore a white feather headdress so he could be spotted coming from far off, and often carried a knotted-string record called a quipu. A chasqui appears among the drawings in Felipe Guaman Poma de Ayala's chronicle of about 1615. Source: en.wikipedia.org/wiki/Chasqui; trexperienceperu.com/blog/chasquis-ancient-messengers",
     "topic": "inca-road-network-machu-picchu"
   },
   {
@@ -22583,12 +22570,12 @@
   {
     "tier": 4,
     "question": "Spanish builders raised churches and mansions in Cusco on top of Inca foundations after the 1530s. When earthquakes struck, the newer Spanish work cracked and fell, while the older Inca walls beneath, set without a speck of mortar, stayed standing. What let the Inca walls ride out the quakes?",
-    "answer": "The interlocking blocks shift and resettle, so the wall 'dances' instead of cracking",
+    "answer": "The interlocking blocks shift, then settle back in place",
     "choices": [
-      "The interlocking blocks shift and resettle, so the wall 'dances' instead of cracking",
+      "The interlocking blocks shift, then settle back in place",
       "A hidden iron frame ran through the core of each wall",
       "The stones were fused together by intense heat",
-      "Deep mortar channels absorbed the shaking"
+      "Wooden beams laid between the courses flexed with the shaking"
     ],
     "context": "Because the mortarless blocks interlock like a 3-D jigsaw, they can shift slightly and resettle during a tremor — the walls 'dance' through earthquakes instead of cracking, surviving centuries of Andean quakes that toppled later Spanish buildings. Sources: peru-explorer.com (earthquake-resistant techniques); History.com/articles/machu-picchu-construction.",
     "topic": "inca-stonework-and-sacsayhuaman"
