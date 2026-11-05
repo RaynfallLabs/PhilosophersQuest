@@ -52781,7 +52781,7 @@
   },
   {
     "tier": 3,
-    "question": "Hannibal set out from Spain in 218 BC at the head of over 100,000 men, with 37 elephants, and he led them over the Pyrenees, across the Rhône and finally over the Alps as autumn ended. The mountains, the rivers and the cold took their toll before he fought any battle with Rome. How many men did he still have when he reached Italy?",
+    "question": "Hannibal marched out of Spain in 218 BC at the head of over 100,000 men, with 37 elephants. He left thousands behind to hold Spain and sent thousands home, then led the rest over the Pyrenees, across the Rhône and finally over the Alps as autumn ended, losing men to fighting, rivers and cold. How many men did he still have when he reached Italy?",
     "answer": "About 26,000",
     "choices": [
       "About 26,000",
@@ -52789,7 +52789,7 @@
       "About 84,000",
       "About 12,000"
     ],
-    "context": "He lost roughly half his army before fighting a single Roman in battle — to mountains, rivers, and cold, not to swords. Source: Wikipedia, Hannibal's crossing of the Alps; history.com, 'How Hannibal Crossed the Alps.'",
+    "context": "Polybius gives the figures: about 90,000 foot and 12,000 horse set out; some 22,000 were left to hold Spain or sent home, and about 59,000 crossed the Pyrenees, yet only 20,000 foot and 6,000 horse reached Italy, before Hannibal had fought a single Roman battle. Source: Polybius, Histories 3.35 and 3.56, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html",
     "topic": "the-punic-wars-and-hannibal-at-cannae"
   },
   {
@@ -52833,7 +52833,7 @@
   },
   {
     "tier": 4,
-    "question": "Quintus Fabius Maximus took command for Rome after the slaughter at Cannae and refused Hannibal the head-on battle he was hungry for. He shadowed the Carthaginians through the hills, where their cavalry was useless, and wore them down. What nickname did the Romans give Fabius?",
+    "question": "Quintus Fabius Maximus took command for Rome as dictator after the slaughter at Lake Trasimene, and he refused Hannibal the head-on battle he was hungry for. He shadowed the Carthaginians through the hills, where their cavalry was useless, and wore them down. What nickname did the Romans give Fabius?",
     "answer": "Cunctator, 'the Delayer'",
     "choices": [
       "Cunctator, 'the Delayer'",
@@ -52841,7 +52841,7 @@
       "Cautus, 'the Careful'",
       "Custos, 'the Guardian'"
     ],
-    "context": "'Fabian strategy' still means winning by patient avoidance — George Washington later used the same approach against the British. In the hills, Hannibal's feared cavalry was nearly useless. Source: Wikipedia, Quintus Fabius Maximus / Fabian strategy; Mount Vernon, 'Fabian Strategy.'",
+    "context": "Rome named Fabius dictator in 217 BC, after the disaster at Lake Trasimene, and after Cannae it went back to his plan. 'Fabian strategy' still means winning by patient avoidance; George Washington later used the same approach against the British. Source: https://grokipedia.com/page/Quintus_Fabius_Maximus_Verrucosus ; Mount Vernon, 'Fabian Strategy.'",
     "topic": "the-punic-wars-and-hannibal-at-cannae"
   },
   {
@@ -52872,12 +52872,12 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you wished to become a Muslim. Islam asks one thing to begin: that you say a single short sentence, the Shahada, and mean it sincerely. What does the Shahada say?",
+    "question": "A man who wishes to become a Muslim begins with a single short sentence, the Shahada. Islam asks only that he say it and mean it sincerely. What does the Shahada say?",
     "answer": "There is no god but God, and Muhammad is the messenger of God",
     "choices": [
       "There is no god but God, and Muhammad is the messenger of God",
       "Pray five times each day and give to the poor",
-      "Make the pilgrimage to Mecca at least once in your life",
+      "Make the pilgrimage to Mecca at least once in a lifetime",
       "Fast from dawn to sunset all through Ramadan"
     ],
     "context": "The Shahada is the first of the Five Pillars of Islam. Simply saying it sincerely is how a person becomes a Muslim. Source: islamic-relief.org.uk Five Pillars of Islam.",
@@ -52976,13 +52976,13 @@
   },
   {
     "tier": 2,
-    "question": "At a colliery in 1814, George Stephenson built his first locomotive, and it dragged 30 tons of coal up a slope, gripping smooth iron rails with nothing but friction. He named the engine after a Prussian general who had helped beat Napoleon. What was its name?",
+    "question": "George Stephenson built his first locomotive at a colliery in 1814, and it dragged 30 tons of coal up a slope, gripping smooth iron rails with nothing but friction. He named it after one of the generals who had fought Napoleon. Whose name did the engine bear?",
     "answer": "Blucher",
     "choices": [
       "Blucher",
-      "Hercules",
-      "Samson",
-      "Goliath"
+      "Wellington",
+      "Kutuzov",
+      "Bernadotte"
     ],
     "context": "Stephenson's 1814 locomotive Blucher was named after the Prussian general Gebhard von Blucher. It was the first successful flanged-wheel locomotive to grip a smooth iron rail by friction alone. Source: https://en.wikipedia.org/wiki/George_Stephenson",
     "topic": "the-railway-revolution-and-stephenson-s-rocket"
@@ -53055,9 +53055,9 @@
   {
     "tier": 3,
     "question": "One member of a committee of Parliament tried to make George Stephenson's railway plans look foolish in 1825. What, he asked, would happen if a cow strayed onto the line in front of a speeding engine? By tradition, Stephenson had a reply. What did he say?",
-    "answer": "'Very awkward -- for the coo (cow)'",
+    "answer": "'Very awkward, for the coo'",
     "choices": [
-      "'Very awkward -- for the coo (cow)'",
+      "'Very awkward, for the coo'",
       "'Then the cow had best learn to run'",
       "'No cow would dare stand its ground'",
       "'We shall fence the whole line, sir'"
@@ -53093,19 +53093,6 @@
   },
   {
     "tier": 4,
-    "question": "Members of Parliament voted through a new railway line in the mania that followed the Rainhill Trials of 1829, one of many they approved. Britain's railways ran just 98 miles in 1830. How far had the network grown by 1849?",
-    "answer": "6,000 miles",
-    "choices": [
-      "6,000 miles",
-      "500 miles",
-      "1,200 miles",
-      "20,000 miles"
-    ],
-    "context": "Britain's rail network grew from 98 miles (1830) to 6,000 miles (1849). In 1846 alone Parliament passed 263 railway acts for 9,500 proposed miles before the share bubble burst. Source: https://en.wikipedia.org/wiki/Railway_Mania",
-    "topic": "the-railway-revolution-and-stephenson-s-rocket"
-  },
-  {
-    "tier": 4,
     "question": "George Hudson, the Railway King, controlled over a third of Britain's railway lines by 1844, and he paid the people who had invested early with money from those who invested later. Once the fraud was exposed, what happened to his wax figure at Madame Tussaud's?",
     "answer": "It was melted down",
     "choices": [
@@ -53132,13 +53119,13 @@
   },
   {
     "tier": 3,
-    "question": "The Stephensons gave their engine of 1829 one of its two great tricks: a device that shot the used steam out through the chimney and sucked air through the fire like a bellows, so that the fire burned hotter the faster the engine ran. What was the device called?",
-    "answer": "The blast pipe",
+    "question": "The Stephensons gave their engine of 1829 a pipe that shot its used steam up the chimney in a hard jet. The trick tied the strength of the fire to the speed of the engine. What happened to the fire as the engine ran faster?",
+    "answer": "It burned fiercer and hotter",
     "choices": [
-      "The blast pipe",
-      "The steam dome",
-      "The safety valve",
-      "The slide valve"
+      "It burned fiercer and hotter",
+      "It burned lower to save coal",
+      "It went out unless stoked",
+      "It choked on its own steam"
     ],
     "context": "Rocket's blast pipe shot exhaust steam up the chimney, drawing air through the fire like a bellows so the coke burned hotter at speed. This plus the multitube boiler became standard on nearly every steam locomotive worldwide. Source: https://www.railwaymuseum.org.uk/objects-and-stories/stephensons-rocket-rainhill-and-rise-locomotive",
     "topic": "the-railway-revolution-and-stephenson-s-rocket"
@@ -53158,7 +53145,7 @@
   },
   {
     "tier": 1,
-    "question": "By legend, young Rodrigo Díaz de Vivar chose a colt out of the herd, and his godfather, who thought it weak, blurted out the word that became its name, Babieca. It grew into Spain's most famous warhorse, ridden by El Cid. What does Babieca mean?",
+    "question": "By legend, young Rodrigo Díaz de Vivar chose a colt out of the herd, and his godfather, unimpressed by the choice, blurted out the word that became its name, Babieca. It grew into Spain's most famous warhorse, ridden by El Cid. What does Babieca mean?",
     "answer": "Roughly 'stupid' or 'dummy'",
     "choices": [
       "Roughly 'stupid' or 'dummy'",
@@ -53197,15 +53184,15 @@
   },
   {
     "tier": 3,
-    "question": "Spaniards mocked Boabdil, the last sultan of Granada, in the late 1400s, while Ferdinand and Isabella waged war on his emirate: they called him the little king, el rey chico. The name had nothing to do with his height. Why did they call him little?",
+    "question": "Spaniards mocked Boabdil, the last sultan of Granada, in the late 1400s, while Ferdinand and Isabella waged war on his emirate: they called him the little king, el rey chico. By the best-known explanation of the name, why did they call him little?",
     "answer": "His kingdom kept shrinking around him",
     "choices": [
       "His kingdom kept shrinking around him",
-      "He had been crowned while still a young boy",
-      "He ruled in his powerful father's shadow",
-      "He paid tribute and ruled at Ferdinand's mercy"
+      "He stood a head shorter than his guards",
+      "His reign was the briefest of any sultan",
+      "He had fathered no sons of his own"
     ],
-    "context": "He was also called 'el-Zogoibi,' 'the unfortunate' or 'unlucky one.' After surrendering he was given the mountainous Alpujarras, then crossed to Fez in Morocco, where he is said to have died decades later. Source: Andalucia.com, 'Boabdil'; Discovery UK, 'Boabdil: The Last Sultan of Granada.'",
+    "context": "Chico can also mean young or the younger, and Washington Irving gave el Rey Chico as 'the Young King', set against his father; the best-known explanation ties the jibe to his ever-shrinking realm. He was also called 'el-Zogoibi,' 'the unfortunate' or 'unlucky one.' After surrendering he was given the mountainous Alpujarras, then crossed to Fez in Morocco, where he is said to have died decades later. Source: Andalucia.com, 'Boabdil'; Washington Irving, 'A Chronicle of the Conquest of Granada' (1829), gutenberg.org/ebooks/3293",
     "topic": "the-reconquista-fall-of-granada-1492"
   },
   {
@@ -53236,15 +53223,15 @@
   },
   {
     "tier": 5,
-    "question": "Cardinal Cisneros tore up the promises of Granada's surrender terms of 1491, which had let the city's Muslims keep their religion, their mosques, their property and their language. He then boasted to the Pope of what he had done. What was it?",
-    "answer": "Forced mass baptisms, 3,000 Muslims converted in a single day",
+    "question": "Archbishop Cisneros of Toledo tore up the promises of Granada's surrender terms of 1491, which had let the city's Muslims keep their religion, their mosques, their property and their language. He then boasted to the Pope of what he had done. What was it?",
+    "answer": "Forced mass baptisms, 3,000 in a single day",
     "choices": [
-      "Forced mass baptisms, 3,000 Muslims converted in a single day",
-      "Forced 4,000 baptisms in the cathedral over one weekend",
-      "Burned the city's Qurans in the public square",
-      "Banned Arabic and the Muslim call to prayer"
+      "Forced mass baptisms, 3,000 in a single day",
+      "Sent the city's imams in chains to Rome",
+      "Ransomed the city's Muslim nobles for gold",
+      "Turned the Alhambra into his own palace"
     ],
-    "context": "Cisneros boasted to the Pope of 3,000 conversions in one December day in 1499. The broken promise sparked the Alpujarras revolt and a 1501 decree ordering the Muslims of Granada to convert or leave. Source: Wikipedia, 'Treaty of Granada (1491)' and 'Rebellion of the Alpujarras (1499-1501)'; Britannica, 'Spain: The conquest of Granada.'",
+    "context": "Cisneros told Pope Alexander VI of 3,000 Muslims converted in one December day in 1499, and he also had Granada's Arabic manuscripts, all but the medical ones, burned in public. The broken promise sparked the Alpujarras revolt and a 1501 decree ordering the Muslims of Granada to convert or leave. Source: https://en.wikipedia.org/wiki/Rebellion_of_the_Alpujarras_(1499%E2%80%931501) ; https://en.wikipedia.org/wiki/Francisco_Jim%C3%A9nez_de_Cisneros",
     "topic": "the-reconquista-fall-of-granada-1492"
   },
   {
@@ -53678,7 +53665,7 @@
   },
   {
     "tier": 4,
-    "question": "Alexander Hamilton, James Madison and John Jay wrote 85 essays urging Americans to back the new Constitution, and all three signed them with one shared pen name. Their opponents answered under names such as Brutus and Cato. What did all of these pen names share?",
+    "question": "Alexander Hamilton, James Madison and John Jay wrote 85 essays urging Americans to back the new Constitution, and all three signed them with one shared pen name. Two of their opponents answered as Brutus and Cato. What did those three pen names have in common?",
     "answer": "They were all names from ancient Rome's republic",
     "choices": [
       "They were all names from ancient Rome's republic",
@@ -53686,12 +53673,12 @@
       "They were all names from the Bible",
       "They were all names of Greek philosophers"
     ],
-    "context": "The name honored Publius Valerius Publicola, who in Plutarch's 'Lives' repeatedly rescued the young Republic from would-be tyrants; with both sides using Roman pseudonyms, the entire debate over the Constitution was conducted in Roman costume. Source: federalism.org/library/american-federalism/who-was-publius/ ; csac.history.wisc.edu/2022/07/22/pseudonyms-and-the-debate-over-the-constitution/",
+    "context": "The shared name honored Publius Valerius Publicola, who in Plutarch's 'Lives' repeatedly rescued the young Republic from would-be tyrants. With both sides reaching for Roman pseudonyms, much of the debate over the Constitution was argued in Roman costume, though some opponents wrote as Centinel or the Federal Farmer. Source: federalism.org/library/american-federalism/who-was-publius/ ; https://en.wikipedia.org/wiki/Anti-Federalist_Papers",
     "topic": "the-roman-republic-as-the-american-founders-mode"
   },
   {
     "tier": 4,
-    "question": "The U.S. House of Representatives sat in session, and beside the Speaker's chair stood a bronze bundle of rods bound around an axe, a copy of the emblem the guards of Roman magistrates carried. Its thirteen rods, one for each original state, taught that a single rod snaps easily but a bound bundle holds. What is the emblem called?",
+    "question": "Two bronze bundles of rods flanked the flag behind the Speaker's chair as the U.S. House of Representatives sat in session. They copied the emblem the guards of Roman magistrates had carried, and Americans read the bundle as a sign of strength through unity. What is the emblem called?",
     "answer": "The fasces",
     "choices": [
       "The fasces",
@@ -53699,7 +53686,7 @@
       "The labarum",
       "The corona"
     ],
-    "context": "The fasces was adopted as the emblem of the House's Sergeant at Arms in 1789; the House version carries 13 rods (one more than the Roman model) for the original 13 states, signifying strength through unity. Source: history.house.gov/Blog/Detail/15032450168 ; en.wikipedia.org/wiki/Symbols_of_the_United_States_Senate",
+    "context": "Two bronze fasces have flanked the flag behind the Speaker's rostrum since the chamber's 1950 remodeling, replacing gilded iron ones. The House's ceremonial mace copies the fasces too: 13 ebony rods, one for each original state, bound in silver and topped by an eagle on a globe. Source: https://en.wikipedia.org/wiki/Fasces ; https://en.wikipedia.org/wiki/Mace_of_the_United_States_House_of_Representatives",
     "topic": "the-roman-republic-as-the-american-founders-mode"
   },
   {
@@ -53723,22 +53710,9 @@
       "Consuls",
       "Dictators",
       "Emperors",
-      "Pharaohs"
+      "Censors"
     ],
     "context": "Two consuls shared the old king's power, each holding office for just one year. Romans even dated their years by them — they called 59 BC 'the consulship of Caesar and Bibulus.' Source: Wikipedia, 'Roman consul'.",
-    "topic": "the-roman-republic-s-mixed-government"
-  },
-  {
-    "tier": 2,
-    "question": "By one old legend, Romulus picked a hundred leading men to sit in Rome's first Senate and called them patres. Their descendants, the noble patricians, took their own name from that Latin word. What does patres mean?",
-    "answer": "Fathers",
-    "choices": [
-      "Fathers",
-      "Soldiers",
-      "Strangers",
-      "Servants"
-    ],
-    "context": "Legend: 'patres' is Latin for 'fathers,' and the descendants of Romulus's first senators became the patrician nobility. Everyone else — the plebeians who farmed and fought — could at first hold no high office. Source: Wikipedia, 'Patrician (ancient Rome)'.",
     "topic": "the-roman-republic-s-mixed-government"
   },
   {
@@ -53925,24 +53899,24 @@
   },
   {
     "tier": 3,
-    "question": "Voltaire sent off yet another letter into the Republic of Letters, the network of thinkers who argued by post across eighteenth-century Europe, most of whom never met face to face; he was its busiest writer. About how many of his letters still survive?",
-    "answer": "About 19,000 letters",
+    "question": "Voltaire was the busiest writer in a web of thinkers who argued by post across eighteenth-century Europe, over borders, faiths and languages, though most of them never once saw each other. What name did these thinkers give their scattered network?",
+    "answer": "The Republic of Letters",
     "choices": [
-      "About 200 letters",
-      "About 2,000 letters",
-      "About 19,000 letters",
-      "About 50 letters"
+      "The Republic of Letters",
+      "The Empire of the Quill",
+      "The Kingdom of Ink",
+      "The Commonwealth of Paper"
     ],
-    "context": "Voltaire alone left nearly 19,000 surviving letters. Stanford's 'Mapping the Republic of Letters' project plotted where they traveled and found the network ran heavily through Paris and Geneva — a kind of slow, paper internet linking thinkers who mostly never met face to face. Sources: republicofletters.stanford.edu/casestudies/voltaire.html; neh.gov 'Mapping the Republic of Letters' (2013).",
+    "context": "They called it the Republic of Letters. Voltaire alone left nearly 19,000 surviving letters, and Stanford's 'Mapping the Republic of Letters' project plotted where they traveled, finding that the network ran heavily through Paris and Geneva, a kind of slow, paper internet. Sources: republicofletters.stanford.edu/casestudies/voltaire.html; neh.gov 'Mapping the Republic of Letters' (2013).",
     "topic": "the-salon-and-the-republic-of-letters"
   },
   {
     "tier": 4,
     "question": "Madame du Deffand, who was blind, hired Julie de Lespinasse in 1754 to help her run her Paris salon, an evening gathering where thinkers argued over ideas. A decade later she discovered that Lespinasse had been quietly entertaining the best guests, d'Alembert among them, for an hour before she herself came down, and she fired her. How did Lespinasse make the firing du Deffand's loss?",
-    "answer": "She walked out and took d'Alembert and the whole literary clique with her to start a rival salon",
+    "answer": "She walked out and lured the whole literary clique after her",
     "choices": [
       "She apologized and quietly retired from Paris society",
-      "She walked out and took d'Alembert and the whole literary clique with her to start a rival salon",
+      "She walked out and lured the whole literary clique after her",
       "She wrote a book exposing du Deffand's private letters",
       "She married d'Alembert and left Paris for the countryside"
     ],
@@ -53972,7 +53946,7 @@
       "That his memories were accurate, every one of them",
       "That God was good, so no demon could fool him"
     ],
-    "context": "This is the famous 'I think, therefore I am.' Descartes reasoned that the act of doubting is itself thinking, and thinking proves there is a thinker. Even a demon faking your whole world cannot make you not exist while you are being fooled, because there has to be a 'you' there to fool. The other claims sound certain, but the cogito alone does not establish them. (Stanford Encyclopedia of Philosophy, 'Descartes')",
+    "context": "This is the famous 'I think, therefore I am.' Descartes reasoned that the act of doubting is itself thinking, and thinking proves there is a thinker. Even a demon faking a whole world cannot make a man stop existing while he is being fooled, because someone has to be there to be fooled. The other claims sound certain, but the cogito alone does not establish them. (Stanford Encyclopedia of Philosophy, 'Descartes')",
     "topic": "the-scientific-method-bacon-and-descartes"
   },
   {
@@ -53981,8 +53955,8 @@
     "answer": "The graph and its x and y axes",
     "choices": [
       "The graph and its x and y axes",
-      "The telescope",
-      "The printing press",
+      "The grid of latitude and longitude",
+      "The slide rule",
       "The number zero"
     ],
     "context": "Historians treat the fly-on-the-ceiling tale as a legend, not documented fact. But Descartes really did invent coordinate geometry, marrying algebra to geometry to create the system of pinning any point down by two distances. (wild.maths.org, 'Rene Descartes and the Fly on the Ceiling')",
@@ -53998,12 +53972,12 @@
       "Galilean coordinates",
       "Baconian coordinates"
     ],
-    "context": "We call it 'Cartesian' because Cartesius is the Latin form of Descartes's name. He published the system in 'La Geometrie' in 1637, and he is also the reason we use x, y, and z to stand for unknowns in equations. The doubter of everything gave math one of its most useful tools. (Britannica, 'Cartesian coordinates')",
+    "context": "It is called 'Cartesian' because Cartesius is the Latin form of Descartes's name. He published the system in 'La Geometrie' in 1637, and the habit of letting x, y and z stand for unknowns in equations also goes back to that book. The doubter of everything gave mathematics one of its most useful tools. (Britannica, 'Cartesian coordinates')",
     "topic": "the-scientific-method-bacon-and-descartes"
   },
   {
     "tier": 3,
-    "question": "Travelling on a freezing road in the spring of 1626, Francis Bacon wondered whether cold might stop meat from spoiling and tested it then and there, for he held that the way to learn nature's secrets was to prod it with a test. He caught a chill that turned to pneumonia and killed him. What had he done?",
+    "question": "Francis Bacon, as John Aubrey tells the story, was travelling on a freezing road in the spring of 1626 when he wondered whether cold might stop meat from spoiling. He tested it then and there, for he held that the way to learn nature's secrets was to prod it with a test, and the chill he caught turned to pneumonia and killed him. What had he done?",
     "answer": "Stuffed a chicken with snow",
     "choices": [
       "Stuffed a chicken with snow",
@@ -54011,7 +53985,7 @@
       "Packed a chicken in river ice",
       "Sealed a chicken in icy water"
     ],
-    "context": "Bacon believed 'the nature of things shows itself more openly under the vexations of art' - meaning you learn most by manipulating nature in a controlled test. Fittingly, the experiment that killed him was a hands-on one: packing a fowl with snow to test refrigeration. He died on 9 April 1626. (Stanford Encyclopedia of Philosophy, 'Francis Bacon')",
+    "context": "Bacon believed 'the nature of things shows itself more openly under the vexations of art,' meaning a person learns most by working on nature in a controlled test. The story of the snow-stuffed hen comes from John Aubrey, who had it from Thomas Hobbes. Bacon died on 9 April 1626. Source: https://en.wikipedia.org/wiki/Francis_Bacon",
     "topic": "the-scientific-method-bacon-and-descartes"
   },
   {
@@ -54050,7 +54024,7 @@
       "The Idols of the Cave",
       "The Idols of the Theatre"
     ],
-    "context": "Bacon's four Idols: the Tribe (errors built into all humans), the Cave (your personal biases), the Marketplace (confusion from sloppy words - 'the greatest nuisances of them all'), and the Theatre (blind faith in old dogmas, like mistaking a play for reality). Naming them was an early map of how the mind deceives itself. (Wikipedia, 'Novum Organum')",
+    "context": "Bacon's four Idols: the Tribe (errors built into all humans), the Cave (each person's own biases), the Marketplace (confusion from sloppy words, 'the greatest nuisances of them all'), and the Theatre (blind faith in old dogmas, like mistaking a play for reality). Naming them was an early map of how the mind deceives itself. (Wikipedia, 'Novum Organum')",
     "topic": "the-scientific-method-bacon-and-descartes"
   },
   {
@@ -54124,7 +54098,7 @@
     "answer": "King Leopold II of Belgium",
     "choices": [
       "King Leopold II of Belgium",
-      "Queen Victoria of Britain",
+      "Kaiser Wilhelm I of Germany",
       "A Belgian rubber tycoon",
       "A French explorer"
     ],
@@ -54168,19 +54142,6 @@
       "The ivory trade was secretly more profitable"
     ],
     "context": "Morel realized that cargo of only weapons going out and only rubber coming back meant the rubber was taken by force, not traded. He quit his job and founded the Congo Reform Association to expose it. Source: https://en.wikipedia.org/wiki/E._D._Morel",
-    "topic": "the-scramble-for-africa-and-the-berlin-conferenc"
-  },
-  {
-    "tier": 4,
-    "question": "Alice Seeley Harris, a missionary in the Congo, took a photograph in 1904 of a father named Nsala of Wala sitting on the porch of her mission and staring down at a small bundle on the boards. His village had come up short of its rubber quota. What was Nsala looking at?",
-    "answer": "The severed hand and foot of his daughter",
-    "choices": [
-      "The severed hand and foot of his daughter",
-      "An empty basket where she had slept",
-      "The torch marks of his burned hut",
-      "A soldier's discarded rifle"
-    ],
-    "context": "Alice Seeley Harris's 1904 photograph of Nsala contemplating the severed hand and foot of his five-year-old daughter, all the Force Publique left of her after his village missed its rubber quota, became an iconic image of the rubber terror. Source: https://en.wikipedia.org/wiki/Atrocities_in_the_Congo_Free_State",
     "topic": "the-scramble-for-africa-and-the-berlin-conferenc"
   },
   {
@@ -54242,8 +54203,8 @@
     "choices": [
       "The Proud",
       "The Cruel",
-      "The Foreigner",
-      "The Tall"
+      "The Greedy",
+      "The Faithless"
     ],
     "context": "'Superbus' means 'the Proud' or 'the Arrogant.' He earned it by his overbearing rule, not by inheritance, and it has stuck to him for 2,500 years. Source: https://www.britannica.com/biography/Tarquin-king-of-Rome-534-509-BC",
     "topic": "the-seven-kings-and-the-birth-of-the-republic-50"
@@ -54263,7 +54224,7 @@
   },
   {
     "tier": 3,
-    "question": "Rome's young noblemen, away at the siege of Ardea, made a bet over their wine on whose wife was the worthiest, then rode home by night to spy on the women unannounced. The king's sons found their own wives feasting at a lavish banquet, but Lucretia, the wife of Collatinus, won the wager. What was she doing when they found her?",
+    "question": "Livy tells how Rome's young noblemen, away at the siege of Ardea, made a bet over their wine on whose wife was the worthiest, then rode home by night to spy on the women unannounced. The king's sons found their own wives feasting at a lavish banquet, but Lucretia, the wife of Collatinus, won the wager. What was she doing when they found her?",
     "answer": "Spinning wool by lamplight with her maids",
     "choices": [
       "Spinning wool by lamplight with her maids",
@@ -54276,20 +54237,7 @@
   },
   {
     "tier": 3,
-    "question": "Livy tells how Lucretia, wronged by the king's son Sextus, sent for her father and her husband and made them swear to avenge her. She told them her shame must never become an excuse for a faithless wife. Then, before anyone could stop her, what did she do?",
-    "answer": "Drew a hidden knife and stabbed herself",
-    "choices": [
-      "Drew a hidden knife and stabbed herself",
-      "Threw herself down from the high wall",
-      "Drank a cup of deadly poison",
-      "Fled into the night with her maids"
-    ],
-    "context": "Livy gives her dying words: she acquitted herself of sin but would not absolve herself of punishment, lest any unchaste woman ever cite Lucretia as her example. Her death, told as legend, became the spark of the Republic. Source: https://pressbooks.claremont.edu/clas112pomonavalentine/chapter/livy-i-49-1-60/",
-    "topic": "the-seven-kings-and-the-birth-of-the-republic-50"
-  },
-  {
-    "tier": 3,
-    "question": "Horatius Cocles stood alone at the far end of the one wooden bridge between Rome and the army of Lars Porsena, the Etruscan king whom the exiled Tarquin had talked into marching on the city. Behind him his comrades hacked the bridge down. When it fell, how did Horatius get away?",
+    "question": "Horatius Cocles, by the legend, stood alone at the far end of the one wooden bridge between Rome and the army of Lars Porsena, the Etruscan king whom the exiled Tarquin had talked into marching on the city. Behind him his comrades hacked the bridge down. When it fell, how did Horatius get away?",
     "answer": "Swam back across the Tiber in his armor",
     "choices": [
       "Swam back across the Tiber in his armor",
@@ -54302,7 +54250,7 @@
   },
   {
     "tier": 4,
-    "question": "Lucretia's husband and father stood by as Lucius Junius Brutus raised the bloody knife and swore by her blood to drive King Tarquin and his whole family out 'with sword, with fire.' What did Brutus do with the knife once he had sworn?",
+    "question": "Lucretia's husband and father stood by, as Livy tells it, while Lucius Junius Brutus raised the bloody knife and swore by her blood to drive King Tarquin and his whole family out 'with sword, with fire.' What did Brutus do with the knife once he had sworn?",
     "answer": "Passed it to each man to swear the same oath",
     "choices": [
       "Passed it to each man to swear the same oath",
@@ -54328,7 +54276,7 @@
   },
   {
     "tier": 4,
-    "question": "King Tarquin's sons went to the Oracle of Delphi to learn who would rule Rome next, and the answer came: 'the first to kiss his mother shall hold supreme power.' While the princes planned a race home, Brutus, who had come along with them, read the riddle another way. What did he do?",
+    "question": "King Tarquin's sons, the legend goes, went to the Oracle of Delphi to learn who would rule Rome next, and the answer came: 'the first to kiss his mother shall hold supreme power.' While the princes planned a race home, Brutus, who had come along with them, read the riddle another way. What did he do?",
     "answer": "Pretended to trip and kissed the earth",
     "choices": [
       "Pretended to trip and kissed the earth",
@@ -54661,12 +54609,12 @@
       "Rowed out in small boats to tow the burning hulks away",
       "Fired every cannon at the drifting ships at once"
     ],
-    "context": "On the night of 7-8 August 1588 the English floated eight fireships into the Armada at Calais. The Spanish dreaded 'hellburners' (floating bombs), so they cut their cables and scattered in panic, breaking their crescent formation for good. Not one Spanish ship actually caught fire -- the terror alone did the damage. Source: https://en.wikipedia.org/wiki/Spanish_Armada",
+    "context": "On the night of 7-8 August 1588 (28-29 July by England's Old Style calendar) the English floated eight fireships into the Armada at Calais. The Spanish dreaded 'hellburners' (floating bombs), so they cut their cables and scattered in panic, breaking their crescent formation for good. Not one Spanish ship actually caught fire: the terror alone did the damage. Source: https://en.wikipedia.org/wiki/Spanish_Armada",
     "topic": "the-spanish-armada-1588"
   },
   {
     "tier": 3,
-    "question": "Storms smashed ship after ship of the beaten Armada on the rocks of Scotland and Ireland in 1588, as it fled the long way home because it could not sail back down the Channel against the wind. Queen Elizabeth gave God the credit for that storm on her victory medal, not her sailors. What did the English call the storm?",
+    "question": "Storms smashed ship after ship of the beaten Armada on the rocks of Scotland and Ireland in 1588, as it fled the long way home because it could not sail back down the Channel against the wind. The victory medals gave God the credit for that storm, not the sailors. By what name is the storm remembered?",
     "answer": "The Protestant Wind",
     "choices": [
       "The Protestant Wind",
@@ -54674,12 +54622,12 @@
       "The Channel Gale",
       "The Armada Squall"
     ],
-    "context": "Elizabeth's medal read 'Flavit Jehovah et Dissipati Sunt' -- 'He blew with His winds, and they were scattered' (echoing Psalm 104) -- and gave us the phrase 'the Protestant Wind.' As many as 24 ships were wrecked on the Scottish and Irish coasts on that long flight home; around half the 130-ship fleet never made it back. Source: https://en.wikipedia.org/wiki/Spanish_Armada",
+    "context": "The most famous medal, made in the Dutch Republic, read 'Flavit Jehovah et Dissipati Sunt,' 'Jehovah blew and they were scattered,' after Job 4:9, and Queen Elizabeth is said to have given her admirals a medal with the same phrase. As many as 24 ships were wrecked on the Scottish and Irish coasts on that long flight home; around half the 130-ship fleet never made it back. Source: https://en.wikipedia.org/wiki/He_blew_with_His_winds,_and_they_were_scattered ; https://en.wikipedia.org/wiki/Spanish_Armada",
     "topic": "the-spanish-armada-1588"
   },
   {
     "tier": 3,
-    "question": "Philip II of Spain launched a fleet of about 130 ships and 30,000 men against Protestant England in 1588, meaning to depose Queen Elizabeth I and end the English raids on his treasure fleets. The fleet went down in history under a boastful name that became a bitter joke, for about half of it never returned. By what name is the fleet remembered?",
+    "question": "Philip II of Spain launched a fleet of about 130 ships and 30,000 men against Protestant England in 1588, meaning to depose Queen Elizabeth I and end the English raids on his treasure fleets. The fleet went down in history under a grand-sounding name given in mockery, for about half of it never returned. By what name is the fleet remembered?",
     "answer": "the Invincible Armada",
     "choices": [
       "the Invincible Armada",
@@ -54687,7 +54635,7 @@
       "the Grand Catholic Navy",
       "the Sword of Philip"
     ],
-    "context": "The Spanish called it 'la Armada Invencible' — the Invincible Armada. About half of it never came home, making the name one of history's most famous overreaches. Source: https://www.worldhistory.org/Spanish_Armada/",
+    "context": "Spain's own name for it was the Grande y Felicísima Armada, the 'Great and Most Fortunate Navy'; 'Invincible Armada' was a sarcastic name used by later English writers, since about half the fleet never came home. Source: https://en.wikipedia.org/wiki/Spanish_Armada ; https://www.britainexpress.com/History/tudor/armada.htm",
     "topic": "the-spanish-armada"
   },
   {
@@ -54705,7 +54653,7 @@
   },
   {
     "tier": 3,
-    "question": "The broken Armada fled the long way home after the battle of Gravelines in 1588, round the top of Scotland and down past the Irish coast, and gales wrecked ship after ship. England struck a victory medal, and its Latin line gave the glory to God instead of the sailors. What did the medal say?",
+    "question": "The broken Armada fled the long way home after the battle of Gravelines in 1588, round the top of Scotland and down past the Irish coast, and gales wrecked ship after ship. Victory medals made by the English and the Dutch gave the glory to God, not the sailors, in one short Latin line. What did the line say?",
     "answer": "God blew and they were scattered",
     "choices": [
       "God blew and they were scattered",
@@ -54713,7 +54661,7 @@
       "God defend the right and crown of England",
       "The Lord alone is my shield and my fortress"
     ],
-    "context": "The medal read 'Afflavit Deus et dissipati sunt' — 'God blew and they were scattered' — crediting the storm and the divine wind rather than the fleet. About 24 ships were lost off Ireland alone. Source: https://www.worldhistory.org/Spanish_Armada/",
+    "context": "Medals bore the line 'Flavit Deus et dissipati sunt,' 'God blew and they were scattered,' after Job 4:9; the most famous, made in the Dutch Republic, wrote 'Jehovah' in Hebrew letters in place of God. About 24 ships were lost off Ireland alone. Source: https://en.wikipedia.org/wiki/He_blew_with_His_winds,_and_they_were_scattered",
     "topic": "the-spanish-armada"
   },
   {
@@ -54743,29 +54691,29 @@
     "topic": "the-spanish-flu-pandemic-of-1918"
   },
   {
-    "tier": 3,
-    "question": "Philadelphians crowded the streets, more than 200,000 of them, to watch a Liberty Loan parade selling war bonds on 28 September 1918, with the flu already in the city. Three days later every one of the city's 31 hospitals was full. What title did the parade earn?",
-    "answer": "The deadliest parade in American history",
+    "tier": 2,
+    "question": "Philadelphians crowded the streets, more than 200,000 of them, to watch a Liberty Loan parade selling war bonds on 28 September 1918, with the flu already loose in the city. What had become of the city's 31 hospitals three days later?",
+    "answer": "Every bed in every one was full",
     "choices": [
-      "The deadliest parade in American history",
-      "The first quarantine of an American city",
-      "The largest war-bond drive ever held",
-      "The end of all public gatherings nationwide"
+      "Every bed in every one was full",
+      "The army had taken them all for soldiers",
+      "The city had shut them to stop the spread",
+      "Only a few had any flu patients yet"
     ],
-    "context": "About 2,600 Philadelphians were dead by the end of that week, and roughly 12,000 died in the weeks that followed. St. Louis, which cancelled its own parade and shut down public gatherings, fared far better, a stark lesson in the cost of going ahead. Sources: history.com/this-day-in-history/september-28/flu-epidemic-hits-philadelphia ; smithsonianmag.com/history/philadelphia-threw-wwi-parade-gave-thousands-onlookers-flu-180970372/",
+    "context": "About 2,600 Philadelphians were dead by the end of that week and roughly 12,000 in the weeks that followed, which made it the deadliest parade in American history. St. Louis, which cancelled its own parade and shut down public gatherings, fared far better. Sources: history.com/this-day-in-history/september-28/flu-epidemic-hits-philadelphia ; smithsonianmag.com/history/philadelphia-threw-wwi-parade-gave-thousands-onlookers-flu-180970372/",
     "topic": "the-spanish-flu-pandemic-of-1918"
   },
   {
     "tier": 4,
-    "question": "A strong, healthy adult between 25 and 35, the kind most flu seasons spare, died of the flu in 1918, one of so many that the year's chart of deaths took the shape of a W, with a third spike in the middle. What killed so many of them?",
+    "question": "A strong, healthy adult between 25 and 35, the kind most flu seasons spare, died of the flu in 1918, one of so many that the year's chart of deaths took the shape of a W, with a third spike in the middle. What do many scientists think killed so many of them?",
     "answer": "Their own powerful immune systems overreacting and flooding their lungs",
     "choices": [
       "Their own powerful immune systems overreacting and flooding their lungs",
-      "A second bacterial infection that only spread among young adults",
+      "Lungs already scarred by poison gas in the trenches",
       "The physical exhaustion of wartime work and rationing",
       "A weakness in young adults' hearts that the virus attacked"
     ],
-    "context": "The strong immune response of healthy young adults triggered a 'cytokine storm,' an overreaction that flooded the lungs with fluid and suffocated them, which is why the disease was deadliest to the people you'd expect to survive it. Sources: history.com/articles/spanish-flu-second-wave-resurgence ; ncbi.nlm.nih.gov/pmc/articles/PMC3734171/",
+    "context": "A widely held explanation is that the strong immune response of healthy young adults set off a 'cytokine storm,' an overreaction that flooded the lungs with fluid, so the disease was deadliest to the people most expected to survive it. Most of the pandemic's deaths came from the bacterial pneumonia that often followed the flu. Sources: https://en.wikipedia.org/wiki/Spanish_flu ; ncbi.nlm.nih.gov/pmc/articles/PMC3734171/",
     "topic": "the-spanish-flu-pandemic-of-1918"
   },
   {
@@ -54834,19 +54782,6 @@
     "topic": "the-suez-canal"
   },
   {
-    "tier": 2,
-    "question": "A captain bound from London to Bombay steered his ship into the Suez Canal after it opened in 1869, sparing himself the long and dangerous voyage ships had made before. About how much shorter did the canal make the trip?",
-    "answer": "About 4,500 miles",
-    "choices": [
-      "About 4,500 miles",
-      "About 45 miles",
-      "About 450 miles",
-      "About 45,000 miles"
-    ],
-    "context": "The new shortcut from the Mediterranean to the Red Sea slashed the Europe-to-India voyage by roughly 4,000 to 6,000 miles, letting ships skip the long and dangerous trip around the Cape of Good Hope. Source: https://www.shippingwondersoftheworld.com/suez_canal.html",
-    "topic": "the-suez-canal"
-  },
-  {
     "tier": 3,
     "question": "Empress Eugénie of France sailed aboard the imperial yacht L'Aigle at the opening of the Suez Canal in November 1869, with 77 ships lined up to follow her in. But in the dark of the night before, one rival power's warship crept past the whole procession to be first through the canal. Which country's ship was it?",
     "answer": "Britain",
@@ -54887,11 +54822,11 @@
   },
   {
     "tier": 4,
-    "question": "A student drew a circle of 360 degrees, a number handed down, like the sixty-minute hour, from a people who counted in sixties instead of tens. The choice was a clever one for a single mathematical reason. What makes 60 special?",
+    "question": "A student draws a circle of 360 degrees, a number handed down, like the sixty-minute hour, from a people who counted in sixties instead of tens. Their choice was a clever one for a single mathematical reason. What makes 60 special?",
     "answer": "It is the smallest number that divides evenly by every number from 1 to 6",
     "choices": [
       "It is the smallest number that divides evenly by every number from 1 to 6",
-      "It is the largest number you can count to on both hands at once",
+      "It is the product of the first three prime numbers",
       "It is the only number that equals the days in a Sumerian month",
       "It is the smallest number that is a perfect square and a cube"
     ],
@@ -54926,15 +54861,15 @@
   },
   {
     "tier": 3,
-    "question": "The merchants of Kilwa, richest of the Swahili cities, rode the monsoon winds to Arabia and back, and their trade paid for their sultan's coral-stone palace, with over a hundred rooms, an eight-sided pool and indoor plumbing. Across which body of water did they trade?",
-    "answer": "The Indian Ocean",
+    "question": "The merchants of Kilwa, richest of the Swahili cities, rode the monsoon winds to Arabia and India and back. Their trade paid for their sultan's palace, Husuni Kubwa, with over a hundred rooms, an eight-sided pool and indoor plumbing. What was the palace built from?",
+    "answer": "Coral stone set in mortar",
     "choices": [
-      "The Indian Ocean",
-      "The Atlantic Ocean",
-      "The Mediterranean Sea",
-      "The Red Sea"
+      "Coral stone set in mortar",
+      "Sun-dried mud bricks",
+      "Marble shipped from India",
+      "Granite from inland hills"
     ],
-    "context": "Husuni Kubwa also had a stepped courtyard that doubled as a warehouse-and-rest-stop where merchants stored goods and reloaded them onto ships. Source: panafrocore.com/2024/03/13/husuni-kubwa-palace-a-brief-history ; nationalgeographic.com/history/history-magazine/article/abandoned-east-african-city-kilwa",
+    "context": "Husuni Kubwa was built of coral stone, coral rag set in limestone mortar, and it also had a stepped courtyard that doubled as a warehouse where merchants stored goods and reloaded them onto ships. Source: https://en.wikipedia.org/wiki/Kilwa_Kisiwani ; panafrocore.com/2024/03/13/husuni-kubwa-palace-a-brief-history",
     "topic": "the-swahili-coast-city-states"
   },
   {
@@ -54953,9 +54888,9 @@
   {
     "tier": 4,
     "question": "Morry Isenberg, a soldier during the Second World War, picked up a few odd coins on a beach in the Wessel Islands off northern Australia, dropped them into a tin, and left them there for 35 years. When experts finally identified them in 1979, what made the find a mystery?",
-    "answer": "They were medieval Kilwa coins, the oldest foreign object found in Australia",
+    "answer": "They were medieval coins from Kilwa, in East Africa",
     "choices": [
-      "They were medieval Kilwa coins, the oldest foreign object found in Australia",
+      "They were medieval coins from Kilwa, in East Africa",
       "They were forged copies stamped centuries after Kilwa fell",
       "They matched no mint and could not be dated at all",
       "They were Portuguese coins lost in a later shipwreck"
@@ -54979,14 +54914,14 @@
   {
     "tier": 4,
     "question": "Francisco de Almeida landed at Kilwa in 1505 with some 500 Portuguese soldiers, fought through the town street by street, and left it looted and burning. Before he sailed north to sack Mombasa too, he left a lasting mark on the conquered town. What did the Portuguese build at Kilwa?",
-    "answer": "A stone fort, the Gereza, to control the harbor",
+    "answer": "A stone fort to command the harbor",
     "choices": [
-      "A stone fort, the Gereza, to control the harbor",
+      "A stone fort to command the harbor",
       "A new cathedral over the Great Mosque",
       "A treaty-house for the captured sultan",
       "A shipyard to repair their war fleet"
     ],
-    "context": "Three years earlier Vasco da Gama had already forced Kilwa's ruler to promise yearly tribute in gold and pearls. After taking Kilwa, the same Portuguese fleet sailed north and sacked and burned Mombasa on 13 August 1505, the second great Swahili port to fall in one voyage. Source: en.wikipedia.org/wiki/Sack_of_Kilwa ; zum.de/whkmla/military/16cen/kilwa1505.html",
+    "context": "Almeida's fort, Santiago, went up in July 1505; the Gereza fort that stands on the site today has the form of a later Omani fort, perhaps on Portuguese foundations. Three years earlier Vasco da Gama had already made Kilwa pay tribute, and after taking it the same fleet sailed north and sacked and burned Mombasa, the second great Swahili port to fall in one voyage. Source: https://en.wikipedia.org/wiki/Sack_of_Kilwa ; https://en.wikipedia.org/wiki/Kilwa_Kisiwani",
     "topic": "the-swahili-coast-city-states"
   },
   {
@@ -55030,15 +54965,15 @@
   },
   {
     "tier": 3,
-    "question": "Moses came down from the cloud on Mount Sinai carrying two stone tablets, the one thing in all the Bible said to be written by God in person. Exodus describes how the words were put on the stone in a single striking phrase. What is it?",
-    "answer": "Written 'by the finger of God'",
+    "question": "Moses came down from the cloud on Mount Sinai carrying two stone tablets, and Exodus says the words on them were God's own writing. It describes how they were put on the stone in a single striking phrase. What is it?",
+    "answer": "'By the finger of God'",
     "choices": [
-      "Written 'by the finger of God'",
-      "Carved 'with a tongue of flame'",
-      "Burned 'by the breath of heaven'",
-      "Cut 'with the sword of the word'"
+      "'By the finger of God'",
+      "'By the breath of God'",
+      "'By the light of God'",
+      "'By the spirit of God'"
     ],
-    "context": "Exodus 31:18 says the tablets were 'written with the finger of God.' Nothing else in the Bible is described as inscribed directly by God. Source: en.wikipedia.org/wiki/Tablets_of_Stone (citing Exodus 31:18).",
+    "context": "Exodus 31:18 says the tablets were 'written with the finger of God,' and Exodus 32:16 adds that 'the writing was the writing of God, graven upon the tables.' Source: en.wikipedia.org/wiki/Tablets_of_Stone (citing Exodus 31:18); https://www.biblegateway.com/passage/?search=Exodus+32%3A16&version=KJV",
     "topic": "the-ten-commandments-and-the-decalogue-as-a-law-"
   },
   {
@@ -55069,7 +55004,7 @@
   },
   {
     "tier": 4,
-    "question": "A seated god holds out a rod and a ring to King Hammurabi at the top of the black stone carved with the king's laws, a slab more than seven feet tall. The rod and ring are the signs of the power to make law. Which god is shown giving Hammurabi that power?",
+    "question": "Hammurabi's carvers crowned the black stone of his laws, a slab more than seven feet tall, with a scene: a seated god holding out a rod and a ring to the king. The rod and ring were the signs of the power to make law. Which god did they show giving Hammurabi that power?",
     "answer": "Shamash, the sun god",
     "choices": [
       "Shamash, the sun god",
@@ -55129,7 +55064,7 @@
       "The Ten Judgments",
       "The Ten Decrees"
     ],
-    "context": "'Aseret ha-Devarim' means the Ten Words (or Ten Utterances). The Greek Septuagint rendered this 'deka logoi,' the source of our word 'Decalogue.' Source: jewishvirtuallibrary.org/decalogue; thetorah.com/article/the-decalogue-ten-commandments-or-ten-statements (Deut 4:13, 10:4).",
+    "context": "'Aseret ha-Devarim' means the Ten Words (or Ten Utterances). The Greek Septuagint rendered this 'deka logoi,' the source of the English word 'Decalogue.' Source: jewishvirtuallibrary.org/decalogue; thetorah.com/article/the-decalogue-ten-commandments-or-ten-statements (Deut 4:13, 10:4).",
     "topic": "the-ten-commandments-and-the-decalogue-as-a-law-"
   },
   {
@@ -55155,7 +55090,7 @@
       "One-third of the slave's purchase price",
       "Twice the slave's purchase price"
     ],
-    "context": "Hammurabi's Law 196-199 graded penalties by class: destroying a noble's eye cost your own, but a slave's eye was paid off in silver, valued at half the slave's price. The Decalogue, by contrast, bound everyone equally. Source: courses.lumenlearning.com (Law 196-199); encyclopedia.com 'Class and Society in Ancient Near Eastern Law.'",
+    "context": "Hammurabi's Laws 196-199 graded penalties by class: destroying a noble's eye cost the offender his own, but a slave's eye was paid off in silver, valued at half the slave's price. The Decalogue, by contrast, bound everyone equally. Source: courses.lumenlearning.com (Law 196-199); encyclopedia.com 'Class and Society in Ancient Near Eastern Law.'",
     "topic": "the-ten-commandments-and-the-decalogue-as-a-law-"
   },
   {
@@ -55354,16 +55289,16 @@
     "topic": "the-twelve-tables-rome-s-first-written-law"
   },
   {
-    "tier": 5,
-    "question": "Abd al-Rahman I, then a young Umayyad prince, escaped in 750 when the rival Abbasid family broke his dynasty's power by the river Zab, then hunted the princes down one after another. He made his way west across the full length of North Africa. Where did he found a new Umayyad state?",
-    "answer": "Cordoba, in Spain",
+    "tier": 4,
+    "question": "Abd al-Rahman I, then a young Umayyad prince, was the only one to get away in 750, when the rival Abbasid family broke his dynasty's power by the river Zab and hunted the princes down one by one. He fled west across the whole length of North Africa. What did he do at the end of his flight?",
+    "answer": "Founded a new Umayyad state in Spain",
     "choices": [
-      "Cordoba, in Spain",
-      "Cairo, in Egypt",
-      "Kairouan, in Tunisia",
-      "Tangier, in Morocco"
+      "Founded a new Umayyad state in Spain",
+      "Raised an army that retook Damascus",
+      "Found refuge at the Byzantine court",
+      "Made peace and served the Abbasids"
     ],
-    "context": "Abd al-Rahman I was the sole prince to survive the Abbasid massacre. After fleeing across North Africa he founded an Umayyad state at Cordoba in Spain that became a famed center of learning. Source: https://en.wikipedia.org/wiki/Umayyad_Caliphate",
+    "context": "Abd al-Rahman I was the only Umayyad prince to survive the Abbasid purge. After fleeing across North Africa he founded an Umayyad state at Cordoba, in Spain, which became a famed center of learning. Source: https://en.wikipedia.org/wiki/Umayyad_Caliphate",
     "topic": "the-umayyad-caliphate-and-damascus"
   },
   {
@@ -55381,7 +55316,7 @@
   },
   {
     "tier": 5,
-    "question": "Juan Ginés de Sepúlveda argued at Valladolid for Spain's war against the natives of the New World, resting his case on Aristotle's idea of the natural slave: people who, he claimed, were born to be ruled by their betters. What did Sepúlveda claim about the natives?",
+    "question": "Juan Ginés de Sepúlveda rose before the judges at Valladolid in 1550 to argue for Spain's war against the natives of the New World. He rested his case on an idea he took from Aristotle, the natural slave. What did Sepúlveda claim about the natives?",
     "answer": "They stood to Spaniards as children to adults, as women to men, even as apes to men",
     "choices": [
       "They stood to Spaniards as children to adults, as women to men, even as apes to men",
@@ -55511,7 +55446,7 @@
   },
   {
     "tier": 2,
-    "question": "Wilbur Wright ran alongside the Flyer at Kitty Hawk, North Carolina, on 17 December 1903, as it lifted off into a 27-mile-an-hour wind with a pilot lying flat across its lower wing. It was the first powered, controlled flight in history. How long did it last?",
+    "question": "The Wright Flyer lifted off the sand at Kitty Hawk, North Carolina, on 17 December 1903, into a 27-mile-an-hour wind, with its pilot lying flat across the lower wing. It was the first powered, controlled flight in history. How long did it last?",
     "answer": "About 12 seconds",
     "choices": [
       "About 12 seconds",
@@ -55524,10 +55459,10 @@
   },
   {
     "tier": 2,
-    "question": "Neil Armstrong stepped onto the Moon in 1969, sixty-six years after the Wright brothers' first flight, and he had brought a small relic of that very first airplane down to the lunar surface with him. What did Armstrong carry to the Moon?",
-    "answer": "A piece of wood from the 1903 Flyer's propeller and a swatch of its wing cloth",
+    "question": "Neil Armstrong stepped onto the Moon in 1969, sixty-six years after the Wright brothers' first flight, and he had brought a small keepsake of the Wrights down to the lunar surface with him. What did Armstrong carry to the Moon?",
+    "answer": "Wood and cloth from the 1903 Flyer",
     "choices": [
-      "A piece of wood from the 1903 Flyer's propeller and a swatch of its wing cloth",
+      "Wood and cloth from the 1903 Flyer",
       "A photograph of Orville and Wilbur Wright",
       "A bolt from the 1903 Flyer's engine",
       "Wilbur Wright's pocket watch"
@@ -55688,7 +55623,7 @@
       "a stranger",
       "a debt"
     ],
-    "context": "'Ephialtes' became the ordinary Greek word for nightmare and, by extension, traitor. The hidden route he revealed was the Anopaea path over the mountains. Source: https://en.wikipedia.org/wiki/Ephialtes_of_Trachis",
+    "context": "'Ephialtes' is also the Greek word for a nightmare, which the ancient Greeks pictured as a demon that sat on sleepers and choked them, and his name came to mean traitor too. The hidden route he revealed was the Anopaea path over the mountains. Source: https://en.wikipedia.org/wiki/Ephialtes_of_Trachis ; https://en.wiktionary.org/wiki/%E1%BC%90%CF%86%CE%B9%CE%AC%CE%BB%CF%84%CE%B7%CF%82",
     "topic": "thermopylae-480-bc-leonidas-and-the-300-spartans"
   },
   {
@@ -55887,19 +55822,6 @@
     "topic": "thomas-aquinas-the-summa-theologica"
   },
   {
-    "tier": 3,
-    "question": "On his way to a Church council, Thomas Aquinas fell ill in 1274 and died at the Cistercian abbey of Fossanova, already whispered to be a saint. A saint's bones drew pilgrims and gifts, and the monks feared his own Dominicans would carry the body off. What did the monks do to the corpse to keep it?",
-    "answer": "cut off his head and boiled the flesh from his bones",
-    "choices": [
-      "cut off his head and boiled the flesh from his bones",
-      "sealed it inside the abbey's thickest stone wall",
-      "buried it secretly beneath the high altar at night",
-      "dressed it in armor and posted guards around it"
-    ],
-    "context": "In 1369 about 50 of his bones were finally handed to the Dominicans of Toulouse, where his tomb stands today — and two rival skulls are still each claimed as his. Source: https://en.wikipedia.org/wiki/Canonization_of_Thomas_Aquinas ; https://live.christian.expert/skull-aquinas",
-    "topic": "thomas-aquinas-the-summa-theologica"
-  },
-  {
     "tier": 4,
     "question": "Thomas Aquinas spent his last years on a giant summary of Christian teaching, the Summa Theologica: about 3,000 pages, with thousands of short Articles under its 512 Questions, taking on every major debate of the Church in the 1200s. Yet in its opening lines he named a very simple audience. Who did he say he wrote it for?",
     "answer": "beginners in Christian doctrine",
@@ -55927,13 +55849,13 @@
   },
   {
     "tier": 3,
-    "question": "Reginald, Thomas Aquinas's secretary, begged him to keep writing, but after a shattering vision at Mass on 6 December 1273 Aquinas never wrote another word, and the Summa stayed unfinished. Next to what had been revealed to him, he said, all of his writing now seemed like one thing. What did it seem like to him?",
+    "question": "Thomas Aquinas had a shattering vision at Mass on 6 December 1273, and from that day he put down his pen for good, leaving the Summa unfinished. When Reginald, his secretary, begged him to go on, he said that next to what had been revealed to him, all his writing now seemed like one thing. What did it seem like?",
     "answer": "straw",
     "choices": [
       "straw",
       "dust",
       "ash",
-      "chaff"
+      "smoke"
     ],
     "context": "His exact reported words: 'I cannot, because all that I have written seems like straw to me.' He left the Summa unfinished forever and died about three months later. Source: https://en.wikipedia.org/wiki/Thomas_Aquinas ; https://www.newadvent.org/cathen/14663b.htm ; christianhistoryinstitute.org, 'I can write no more'",
     "topic": "thomas-aquinas-the-summa-theologica"
