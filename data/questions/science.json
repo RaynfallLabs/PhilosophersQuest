@@ -36804,15 +36804,15 @@
   },
   {
     "tier": 5,
-    "question": "Jay Katz, a medical historian, looked back on how American doctors took the Nuremberg Code and summed up their attitude in a phrase of his own, not in any doctor's words: the Code, they seemed to feel, was written for the sort of people they were not. How did Katz characterize the American view?",
-    "answer": "'a code for barbarians and not for civilized' investigators",
+    "question": "Jay Katz, a Yale professor of law and psychiatry, looked back on how American doctors took the Nuremberg Code and summed up their attitude in words of his own, not in any doctor's: the Code, they seemed to feel, was written for the sort of people they were not. How did Katz characterize the American view?",
+    "answer": "a fine code for barbarians, needless for ordinary doctors",
     "choices": [
-      "'a code for barbarians and not for civilized' investigators",
-      "'a set of rules for defeated Germans, not free men'",
-      "'the price of victory, to be paid and put away'",
-      "'a curious document, drafted by lawyers for lawyers'"
+      "a fine code for barbarians, needless for ordinary doctors",
+      "a set of rules for the defeated, not for the victors",
+      "a price of victory, paid once and then forgotten",
+      "a lawyers' document with no bearing on medicine"
     ],
-    "context": "Katz's phrase is a scholarly characterization -- not a contemporaneous quote from a named physician -- of how American medicine actually behaved. It read the Code as a rule for Nazis, not for itself. The next twenty-five years of American research proved him right. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC5719679/",
+    "context": "Katz, in his 1996 reappraisal in JAMA, wrote that the Code was taken as a 'code for barbarians' but unnecessary for ordinary physicians. That is a scholar's characterization of how American medicine behaved, not a contemporaneous quote from a named physician: it read the Code as a rule for Nazis, not for itself. The next twenty-five years of American research proved him right. Sources: https://en.wikipedia.org/wiki/Nuremberg_Code ; Katz J., 'The Nuremberg Code and the Nuremberg Trial: A Reappraisal', JAMA 276(20):1662-6 (1996).",
     "topic": "the-nuremberg-code-ten-rules-written-in-a-verdict"
   },
   {
@@ -36825,7 +36825,7 @@
       "the Human Radiation Experiments and the CIA's MKUltra program",
       "the Holmesburg Prison trials and the Stateville malaria studies"
     ],
-    "context": "The Tuskegee syphilis study ran for 25 more years after the Code was published in 1947. The Guatemala experiments (1946-1948) -- in which U.S. physician John Cutler infected roughly 1,300 Guatemalans through prostitutes and open sores -- were being conducted during the trial itself. The Code was moral force, not law; American medicine treated it as somebody else's problem. Source: https://en.wikipedia.org/wiki/Guatemala_syphilis_experiments",
+    "context": "The Tuskegee syphilis study ran for 25 more years after the Code was published in 1947. The Guatemala experiments (1946-1948) -- in which the U.S. physician John Cutler deliberately exposed roughly 1,300 Guatemalans to syphilis and other diseases -- were being conducted during the trial itself. The Code was moral force, not law; American medicine treated it as somebody else's problem. Source: https://en.wikipedia.org/wiki/Guatemala_syphilis_experiments",
     "topic": "the-nuremberg-code-ten-rules-written-in-a-verdict"
   },
   {
@@ -36834,16 +36834,16 @@
     "answer": "It was not itself legally binding on anyone",
     "choices": [
       "It was not itself legally binding on anyone",
-      "It only covered German researchers",
-      "It was written in Latin nobody read",
-      "It did not mention consent at all"
+      "It applied only to experiments on prisoners",
+      "It made an exception for wartime research",
+      "It was kept secret until the 1960s"
     ],
-    "context": "The Declaration of Helsinki (World Medical Association, 1964) put the Code into medical-society law. The U.S. National Research Act (1974), passed after Tuskegee was exposed, created Institutional Review Boards. The Belmont Report (1979) codified respect for persons, beneficence, and justice as the framework for federally funded human research. The Code alone was moral force; these three made it law. Source: https://www.nejm.org/doi/full/10.1056/NEJM199711133372006",
+    "context": "The Declaration of Helsinki (World Medical Association, 1964) gave its principles a medical profession's formal backing. The U.S. National Research Act (1974), passed after Tuskegee was exposed, created Institutional Review Boards. The Belmont Report (1979) codified respect for persons, beneficence, and justice as the framework for federally funded human research. The Code alone was moral force; the 1974 law and the federal rules built on Belmont are what gave its principles teeth. Source: https://www.nejm.org/doi/full/10.1056/NEJM199711133372006",
     "topic": "the-nuremberg-code-ten-rules-written-in-a-verdict"
   },
   {
     "tier": 5,
-    "question": "Three American judges went on past the opening sentence of Point 1 when they wrote the Nuremberg Code in 1947, after the trial of the Nazi doctors who had experimented on concentration-camp prisoners. They required that a research subject's decision be free of every 'ulterior form of constraint,' and they named four specific pressures the subject has to be shielded from. What four pressures does the Code list?",
+    "question": "Three American judges went on past the opening sentence of Point 1 when they wrote the Nuremberg Code in 1947, after the trial of the Nazi doctors who had experimented on concentration-camp prisoners. They required that a subject's decision be free of every 'ulterior form of constraint', and they opened their list of forbidden pressures with four words. What are those four?",
     "answer": "force, fraud, deceit, and duress",
     "choices": [
       "force, fraud, deceit, and duress",
@@ -36851,7 +36851,7 @@
       "money, family, position, and duty",
       "authority, custom, ignorance, and shame"
     ],
-    "context": "The full clause: 'without the intervention of any element of force, fraud, deceit, duress, over-reaching, or other ulterior form of constraint or coercion.' The four alliterative words are the most-quoted phrase in the whole Code because they map directly onto how consent gets broken in real research settings -- and Point 1 says the duty to prevent all four cannot be delegated. Source: https://research.unc.edu/human-research-ethics/resources/ccm3_019064/",
+    "context": "The full clause: 'without the intervention of any element of force, fraud, deceit, duress, over-reaching, or other ulterior form of constraint or coercion.' The four words that open the list map directly onto how consent gets broken in real research settings -- and Point 1 says the duty to prevent all four cannot be delegated. Source: https://research.unc.edu/human-research-ethics/resources/ccm3_019064/",
     "topic": "the-nuremberg-code-ten-rules-written-in-a-verdict"
   },
   {
@@ -37068,9 +37068,9 @@
     "answer": "That the colour change could have happened by random chance",
     "choices": [
       "That the colour change could have happened by random chance",
-      "That birds were eating the moths at all",
-      "That the moths could see the bark colour",
-      "That the Industrial Revolution had polluted the air"
+      "That coal soot had simply dyed the moths' wings black",
+      "That dark wings merely kept the moths warmer in the gloom",
+      "That dark moths had simply flown in from other towns"
     ],
     "context": "Haldane's 1924 paper on the mathematics of selection used the peppered moth as a worked example, ruling out genetic drift and pinning a large selective advantage on the dark form long before Kettlewell went into the woods. Source: https://en.wikipedia.org/wiki/Peppered_moth_evolution",
     "topic": "the-peppered-moth-re-tested"
@@ -37124,7 +37124,7 @@
       "optix",
       "engrailed"
     ],
-    "context": "The carbonaria allele is a large class-II DNA transposon inserted into the first intron of cortex, a gene that regulates wing scale development across butterflies and moths. The estimated 1819 origin sits about one moth generation before R. S. Edleston's 1848 specimen, so the variant was already in the population, at low frequency, when the soot arrived. Source: https://www.nature.com/articles/nature17951",
+    "context": "The carbonaria allele is a large transposable element, a 'jumping gene', inserted into the first intron of cortex, a gene that regulates wing scale development across butterflies and moths. The estimated 1819 origin sits nearly thirty years, and so about thirty one-a-year moth generations, before R. S. Edleston's 1848 specimen, so the variant was already in the population, at low frequency, when the soot arrived. Source: https://www.nature.com/articles/nature17951",
     "topic": "the-peppered-moth-re-tested"
   },
   {
@@ -37219,29 +37219,29 @@
     "topic": "the-periodic-table-in-your-pocket"
   },
   {
-    "tier": 2,
-    "question": "Galileo Galilei turned his new telescope on Venus late in 1610 and watched it change shape: a thin sliver, half, fat gibbous, almost full, and back again. A girl with a small telescope can watch the same thing today. Roughly how long does one complete cycle take?",
-    "answer": "about 584 days",
+    "tier": 3,
+    "question": "Galileo Galilei turned his new telescope on Venus late in 1610 and watched it change shape: a thin sliver, half, fat gibbous, almost full, and back again. Venus circles the Sun in about 225 days, yet that cycle of shapes takes about 584 days to come round. Why does it take so much longer than Venus's year?",
+    "answer": "Earth moves too, so Venus must gain a full lap on it",
     "choices": [
-      "about 584 days",
-      "about 88 days",
-      "about 29 days",
-      "about 4 years"
+      "Earth moves too, so Venus must gain a full lap on it",
+      "Venus spins backwards, which slows its phases down",
+      "The Sun's glare hides Venus for months each cycle",
+      "Venus slows down whenever it swings far from the Sun"
     ],
-    "context": "The 584-day synodic period is Venus's Earth-observed cycle from new phase back to new phase; 88 days is Mercury's year around the Sun, 29 days is the Moon's own phase cycle, and 4 years is nothing in particular. Source: en.wikipedia.org/wiki/Phases_of_Venus",
+    "context": "Venus's own year, its trip round the Sun, takes about 225 days, but Earth is circling the Sun the same way, so the Earth-Sun-Venus lineup repeats only when Venus has gained one whole lap on Earth: about 584 days, the synodic period, the way a clock's minute hand must gain a whole lap before it passes the hour hand again. Venus does spin backwards, and it is hidden in the Sun's glare for a while each cycle, but neither sets the length of the cycle. Source: grokipedia.com/page/Phases_of_Venus",
     "topic": "the-phases-of-venus"
   },
   {
     "tier": 2,
     "question": "A boy at a small telescope watches Venus swell and shrink as it changes shape. Near full it is a small bright dot, but at its closest to Earth it grows about six times wider. Which phase shines brightest in the night sky?",
-    "answer": "the thin crescent",
+    "answer": "the crescent",
     "choices": [
-      "the thin crescent",
+      "the crescent",
       "the fat gibbous",
       "the exact half",
       "the almost-full disc"
     ],
-    "context": "The near-Earth Venus is a thin crescent - between us and the Sun, catching sunlight only along a sliver of its edge - yet its sheer apparent size wins. The near-full disc is on the far side of the Sun and much dimmer. Source: en.wikipedia.org/wiki/Phases_of_Venus",
+    "context": "Near Earth, Venus lies between Earth and the Sun and shows a crescent, lit along only part of its face, yet its sheer apparent size wins: its peak brightness comes in the crescent phase, not at full. The near-full disc is on the far side of the Sun and much dimmer. Source: grokipedia.com/page/Phases_of_Venus",
     "topic": "the-phases-of-venus"
   },
   {
@@ -37280,7 +37280,7 @@
       "Clavius owned the largest telescope in Europe",
       "Clavius was the personal astrologer of the Pope"
     ],
-    "context": "Clavius, chief mathematician of the Collegio Romano, was the astronomer whose endorsement could shield or sink a claim inside the Church. Kepler was in Prague; Marius was a rival telescopic astronomer in Germany; Scheiner was another Jesuit who later clashed with Galileo over sunspots. Source: thonyc.wordpress.com/2014/06/09/the-phases-of-venus-and-heliocentricity-a-rough-guide",
+    "context": "Clavius, chief mathematician of the Collegio Romano, was the astronomer whose endorsement could shield or sink a claim inside the Church. Galileo's letter to him is dated 30 December 1610. Source: thonyc.wordpress.com/2014/06/09/the-phases-of-venus-and-heliocentricity-a-rough-guide ; grokipedia.com/page/Phases_of_Venus",
     "topic": "the-phases-of-venus"
   },
   {
@@ -37297,16 +37297,16 @@
     "topic": "the-phases-of-venus"
   },
   {
-    "tier": 5,
-    "question": "A farmer checks the geometry without any telescope, watching for Venus near sunrise and sunset. He sees it as the 'morning star' or the 'evening star', and never high overhead at midnight, because it never wanders more than a certain angle from the Sun in the sky. Roughly what is that angle?",
-    "answer": "about 47 degrees",
+    "tier": 3,
+    "question": "A farmer who rises before dawn sees Venus blazing low in the east as the morning star, and months later it hangs in the west after sunset as the evening star. Never once in his life does he see it high overhead at midnight. What keeps Venus out of the midnight sky?",
+    "answer": "Its orbit lies inside Earth's, so it never strays far from the Sun",
     "choices": [
-      "about 47 degrees",
-      "about 28 degrees",
-      "about 65 degrees",
-      "about 80 degrees"
+      "Its orbit lies inside Earth's, so it never strays far from the Sun",
+      "Its orbit lies outside Earth's, so it trails far behind the Sun",
+      "Its orbit is tilted steeply, so it dips below the horizon by night",
+      "Earth's shadow falls across it through the middle of the night"
     ],
-    "context": "Venus's orbit sits inside Earth's, so from our viewpoint it can never appear far from the Sun; its greatest elongation is about 47 degrees. Mercury, closer to the Sun still, is limited to about 28 degrees - which is why it is even harder to spot. The 47-degree cap is itself the observation that pins Venus's orbit inside Earth's. Source: earthsky.org/astronomy-essentials/greatest-elongation-definition-venus-mercury/",
+    "context": "Venus's orbit sits inside Earth's, so from Earth it never appears more than about 47 degrees from the Sun, its greatest elongation: far enough to blaze in a dark sky after dusk or before dawn, never far enough to stand opposite the Sun at midnight. Mercury, closer to the Sun still, is held to about 28 degrees, which is why it is even harder to spot. Planets whose orbits lie outside Earth's, such as Mars and Jupiter, can stand opposite the Sun and ride high at midnight. Sources: grokipedia.com/page/Phases_of_Venus ; earthsky.org/astronomy-essentials/greatest-elongation-definition-venus-mercury/",
     "topic": "the-phases-of-venus"
   },
   {
@@ -37337,15 +37337,15 @@
   },
   {
     "tier": 2,
-    "question": "Auguste Piccard turned his own idea upside down after the stratosphere flight. A balloon, he said, is really a heavy cabin hung under a light fluid rising through a heavier one. Turned over, the idea gives a steel cabin hung under a tank of lighter-than-water liquid, sinking through the sea. What is that class of deep-sea craft called?",
-    "answer": "bathyscaphes",
+    "question": "Auguste Piccard turned his own balloon upside down after the stratosphere flight. A balloon's basket hangs from a bag of light gas; his bathyscaphe Trieste hung a heavy steel cabin beneath a huge float, and the whole craft sank through the sea instead of rising through the air. What filled the float?",
+    "answer": "gasoline",
     "choices": [
-      "bathyscaphes",
-      "bathyspheres",
-      "submarines",
-      "diving bells"
+      "gasoline",
+      "compressed air",
+      "fresh water",
+      "syntactic foam"
     ],
-    "context": "Bathyscaphe is Piccard's own coinage from Greek bathys (deep) + skaphos (ship). The bathysphere was Beebe and Barton's earlier cable-lowered ball; a submarine is powered horizontal; a diving bell is open at the bottom. Source: en.wikipedia.org/wiki/Bathyscaphe.",
+    "context": "Trieste's float held about 130 cubic metres of aviation gasoline. Gasoline is only about 0.7 times as dense as water and barely compresses (it shrank by roughly a tenth at full depth), so the deep cannot squeeze its lift away the way it would crush a pocket of air. Iron shot held on by electromagnets gave the weight to sink, and dropping it brought the craft home. Bathyscaphe is Piccard's own coinage, from the Greek for 'deep' and 'ship'. Syntactic foam, a solid of tiny glass spheres set in resin, is the modern answer, used in Deepsea Challenger. Source: grokipedia.com/page/Trieste_(bathyscaphe)",
     "topic": "the-piccards-a-balloon-turned-upside-down"
   },
   {
@@ -37493,7 +37493,7 @@
   },
   {
     "tier": 2,
-    "question": "A mother opens a free 88-page report on the World Health Organization (WHO) website, dated 19 September 2019, months before anyone outside China had heard of COVID-19. It is the WHO's best advice on what governments should do the next time a killer respiratory virus sweeps the world. What is the report specifically about?",
+    "question": "A mother opens a free report on the World Health Organization (WHO) website, dated September 2019, months before anyone outside China had heard of COVID-19. It is the WHO's best advice on what governments should do the next time a killer respiratory virus sweeps the world. What is the report specifically about?",
     "answer": "non-pharmaceutical measures for pandemic influenza",
     "choices": [
       "non-pharmaceutical measures for pandemic influenza",
@@ -37501,7 +37501,7 @@
       "vaccine stockpiling for future respiratory pandemics",
       "hospital surge capacity in low-income countries"
     ],
-    "context": "'Non-pharmaceutical public health measures for mitigating the risk and impact of epidemic and pandemic influenza', WHO Global Influenza Programme, 19 September 2019, ISBN 9789241516839. NPIs are what you have BEFORE a vaccine exists. Source: WHO publication page.",
+    "context": "'Non-pharmaceutical public health measures for mitigating the risk and impact of epidemic and pandemic influenza', WHO Global Influenza Programme, 2019, ISBN 9789241516839. NPIs are what a country has BEFORE a vaccine exists. Source: WHO publication page.",
     "topic": "the-playbook-they-had-already-written-who-2019"
   },
   {
@@ -37520,14 +37520,14 @@
   {
     "tier": 4,
     "question": "A school principal opens the World Health Organization (WHO) pandemic-influenza guide of September 2019 at the page on schools. The guide sorts every non-drug measure into columns by evidence and severity, and planned school closures do not sit in its 'not recommended' column. What does its written language say about them?",
-    "answer": "are suggested during a severe epidemic or pandemic, with adverse effects considered and duration limited",
+    "answer": "Suggested in a severe epidemic or pandemic, harms weighed, duration limited",
     "choices": [
-      "are suggested during a severe epidemic or pandemic, with adverse effects considered and duration limited",
-      "are recommended at any pandemic level to slow community spread as early as possible",
-      "are recommended only after two weeks of confirmed in-school transmission has been documented",
-      "are recommended for primary schools and specifically advised against for secondary schools"
+      "Suggested in a severe epidemic or pandemic, harms weighed, duration limited",
+      "Recommended at any pandemic level, as early as possible, to slow spread",
+      "Recommended only after two weeks of confirmed spread inside a school",
+      "Recommended for primary schools but advised against for secondary ones"
     ],
-    "context": "School closures were conditionally recommended at severe-and-above pandemic levels, with an explicit written caveat about community harm and duration. The 2020 US school closures ran vastly longer than the document's caveat contemplated, but the guidance itself did contemplate them. Source: WHO 2019 NPI guidance, social measures section.",
+    "context": "The guide's words: 'Coordinated proactive school closures or class dismissals are suggested during a severe epidemic or pandemic. In such cases, the adverse effects on the community should be fully considered (e.g. family burden and economic considerations), and the timing and duration should be limited to a period that is judged to be optimal.' The 2020 US school closures ran far longer than that caveat contemplated, but the guidance itself did contemplate closures. Source: WHO, Non-pharmaceutical public health measures for mitigating the risk and impact of epidemic and pandemic influenza (2019), school-measures recommendation.",
     "topic": "the-playbook-they-had-already-written-who-2019"
   },
   {
@@ -37571,7 +37571,7 @@
   },
   {
     "tier": 5,
-    "question": "A nurse reads the 88-page World Health Organization (WHO) guide of September 2019 on non-drug measures for the next flu pandemic: masks, hand-washing, school closures. The guide scores the quality of the evidence behind each recommendation with a rating system called GRADE (Grading of Recommendations Assessment, Development and Evaluation). For nearly every recommendation, how does GRADE rate the evidence?",
+    "question": "A nurse reads the World Health Organization (WHO) guide of September 2019 on non-drug measures for the next flu pandemic: masks, hand-washing, school closures. The guide scores the quality of the evidence behind each recommendation with a rating system called GRADE (Grading of Recommendations Assessment, Development and Evaluation). For nearly every recommendation, how does GRADE rate the evidence?",
     "answer": "very low",
     "choices": [
       "very low",
@@ -37597,7 +37597,7 @@
   },
   {
     "tier": 3,
-    "question": "Emmanuel Macron went on national television on 10 December 2018 to answer the gilets jaunes, the drivers in yellow vests who had filled France's roundabouts over a rise in the fuel tax, while clashes with police spread through Paris. What did he do to the increase scheduled for 2019?",
+    "question": "Edouard Philippe, France's prime minister, suspended a planned rise in the fuel tax for six months on 4 December 2018, as the gilets jaunes filled France's roundabouts and clashes with police spread through Paris. The next day he stood up in parliament. What did he do to the increase scheduled for 2019?",
     "answer": "Cancelled it outright for the coming year",
     "choices": [
       "Cancelled it outright for the coming year",
@@ -37605,20 +37605,20 @@
       "Tied it to a national referendum in 2020",
       "Handed the decision to the European Parliament"
     ],
-    "context": "Prime Minister Edouard Philippe first suspended the hike on 5 December; five days later Macron scrapped it altogether for 2019 and announced a 100-euro rise in the minimum wage. Nothing about the physics of CO2 changed that month; the politics did. Source: NPR, 10 December 2018.",
+    "context": "Philippe suspended the rise for six months on 4 December; on 5 December he told the National Assembly it was gone from the 2019 budget, and the environment minister said it was scrapped for the whole year. On 10 December President Emmanuel Macron went on television and promised minimum-wage workers 100 euros more a month. Nothing about the physics of CO2 changed that week; the politics did. Sources: https://www.cbc.ca/1.4933806 ; https://en.wikipedia.org/wiki/Yellow_vests_protests",
     "topic": "the-price-tag-and-the-private-jet"
   },
   {
     "tier": 4,
     "question": "Washington State voters went to the ballot on Initiative 732 in 2016. It would have taxed carbon dioxide emissions from $15 a tonne and cut the state sales tax from 6.5% to 5.5%, a revenue-neutral swap that libertarian and centrist economists praised. It lost 59% to 41%. Which coalition helped defeat it?",
-    "answer": "The state Democratic Party, the Sierra Club and labour groups",
+    "answer": "State Democrats, labour leaders and environmental-justice groups",
     "choices": [
-      "The state Democratic Party, the Sierra Club and labour groups",
+      "State Democrats, labour leaders and environmental-justice groups",
       "Chevron, ExxonMobil and the American Petroleum Institute",
-      "The Cascade Policy Institute and Washington Farm Bureau",
+      "Audubon Washington, the Sightline Institute and James Hansen",
       "The Federalist Society and the National Rifle Association"
     ],
-    "context": "They objected not to taxing carbon but to giving the money back to taxpayers via a sales-tax cut instead of spending it on their preferred programs. The fight was over who got the revenue. Source: Ballotpedia, Washington Initiative 732 (2016).",
+    "context": "The Washington State Democratic Party voted to oppose it, as did the Washington State Labor Council and environmental-justice groups such as Front and Centered; the Sierra Club declined to support it. They objected less to taxing carbon than to handing the money back through a sales-tax cut instead of spending it on their preferred programs. Audubon Washington, the Sightline Institute and the climate scientist James Hansen backed it. Sources: https://en.wikipedia.org/wiki/2016_Washington_Initiative_732 ; https://planetizen.com/node/88665",
     "topic": "the-price-tag-and-the-private-jet"
   },
   {
@@ -37631,25 +37631,12 @@
       "About 12,000 helicopter movements in and out of Zurich",
       "About 300 commercial airliner arrivals into Zurich alone"
     ],
-    "context": "38% of those flights were under 500 km. The report was commissioned by Greenpeace International; the researchers attributed about half the flights to the meeting itself. Here are the count and the method, with no adjective added. Source: Greenpeace / CE Delft, January 2023.",
-    "topic": "the-price-tag-and-the-private-jet"
-  },
-  {
-    "tier": 4,
-    "question": "Caroline Hickman, a psychotherapist, led a survey on climate change of 10,000 young people aged 16 to 25 across ten countries in 2021, from India and the Philippines to Portugal and the United States. The Lancet Planetary Health published the results: three in four called the future frightening. The paper popularized a name for that feeling. What is it?",
-    "answer": "Eco-anxiety",
-    "choices": [
-      "Eco-anxiety",
-      "Solastalgia",
-      "Climate grief",
-      "Environmental despair"
-    ],
-    "context": "1,000 respondents per country in Australia, Brazil, Finland, France, India, Nigeria, Philippines, Portugal, the UK and USA. 75% agreed the future is frightening. This is neither proof the danger is fake nor proof it is real - it is a measured effect of HOW the danger is communicated to children. Source: The Lancet Planetary Health, December 2021.",
+    "context": "The count covered the meeting week of 21 to 27 May 2022; the forum, usually held in January, met in late spring that year. An average week at those airports saw about half as many private-jet flights, and 38% of the meeting-week flights were under 500 km. The report was commissioned by Greenpeace International, and the researchers attributed about half the flights to the meeting itself. Sources: https://www.greenpeace.org/international/press-release/57867/hundreds-of-ultra-short-private-jet-flights-to-davos-world-economic-forum/ ; https://www.greenpeace.org/eu-unit/issues/climate-energy/46529/private-jet-emissions-quadrupled-during-2022-world-economic-forum/ (Greenpeace / CE Delft, January 2023).",
     "topic": "the-price-tag-and-the-private-jet"
   },
   {
     "tier": 5,
-    "question": "Nicholas Stern priced a tonne of carbon past $85 in 2006, and William Nordhaus, a mainstream economist of the same school, landed near $5. The gap runs to more than tenfold, and it is not over the physics. What single modelling choice, applied over centuries, opens that gap?",
+    "question": "Nicholas Stern priced a tonne of carbon dioxide at about $85 in 2006, and William Nordhaus, a mainstream economist of the same school, landed at a small fraction of that. The gap is not over the physics. What single modelling choice, applied over centuries, opens it?",
     "answer": "The discount rate they apply to harms falling on future generations",
     "choices": [
       "The discount rate they apply to harms falling on future generations",
@@ -37657,7 +37644,7 @@
       "How to weight low-probability, high-severity catastrophic tails",
       "Whether to price methane and nitrous oxide alongside CO2"
     ],
-    "context": "Stern uses a near-zero discount rate (~0.1%/year); Nordhaus uses ~1.5%/year. Damage functions and fat-tail weighting are real live disputes too, but it is the discount rate that drives the order-of-magnitude gap here. The fight about carbon taxes is over ethics and economics, not the infrared physics. Source: PNAS, 'Agreeing to disagree on climate policy'.",
+    "context": "Stern used a near-zero pure rate of time preference (about 0.1% a year); Nordhaus used about 1.5%. Damage functions and fat-tail weighting are real live disputes too, but it is the discount rate that drives the order-of-magnitude gap here. The fight about carbon taxes is over ethics and economics, not the infrared physics. Sources: PNAS, 'Agreeing to disagree on climate policy'; https://en.wikipedia.org/wiki/Stern_Review (the $85 figure).",
     "topic": "the-price-tag-and-the-private-jet"
   },
   {
@@ -37675,7 +37662,7 @@
   },
   {
     "tier": 2,
-    "question": "An official totals India's sterilisation operations for the year running from July 1976 into June 1977 and reaches 8.3 million, most of them without the patient's consent. The year before, the figure was 2.7 million. Under which crisis of government did that surge happen?",
+    "question": "Indian officials counted 8.3 million sterilisation operations in the twelve months from July 1976, most of them done without the patient's consent. The year before, the count had been 2.7 million. Under which crisis of government did that surge happen?",
     "answer": "Indira Gandhi's Emergency",
     "choices": [
       "Indira Gandhi's Emergency",
@@ -37753,7 +37740,7 @@
   },
   {
     "tier": 4,
-    "question": "Song Jian, a Chinese engineer, ran China's population through a family of equations at a meeting in Chengdu in March 1980. Only a one-child rule kept up for decades could have reached the target his group set. What figure did his group give as China's 'ideal' long-term population?",
+    "question": "Song Jian, a Chinese engineer, ran China's population through a family of equations at a meeting in Chengdu in 1980. Only a one-child rule kept up for decades could have reached the target his group set. What figure did his group give as China's 'ideal' long-term population?",
     "answer": "about 700 million",
     "choices": [
       "about 700 million",
@@ -37805,15 +37792,15 @@
   },
   {
     "tier": 2,
-    "question": "Max Tegmark and John Wheeler estimated in Scientific American in 2001 that about a third of the American economy came from inventions only quantum physics can explain, the strange rules that govern electrons and photons at very small scales. Which pair of quantum-based inventions did they say carried most of that share?",
+    "question": "Max Tegmark and John Wheeler estimated in Scientific American in 2001 that about 30 percent of America's economy rested on inventions that only quantum mechanics made possible, the strange rules that govern electrons and photons. Their examples ran on to the magnetic resonance scanners in hospitals. Which two inventions opened the list?",
     "answer": "semiconductors and lasers",
     "choices": [
       "semiconductors and lasers",
-      "MRI scanners and atomic clocks",
-      "CCD image sensors and photovoltaic cells",
+      "atomic clocks and electron microscopes",
+      "digital camera sensors and solar cells",
       "flash memory and superconducting magnets"
     ],
-    "context": "Tegmark & Wheeler, '100 Years of Quantum Mysteries', Scientific American 284:2 (Feb 2001), pp. 68-75. All four listed pairs are genuine quantum-based technologies - MRI relies on nuclear spin, CCDs on the photoelectric effect, flash memory on quantum tunneling through an oxide - but the 2001 article specifically named semiconductors and lasers as the load-bearing pair inside that ~30 percent number. The wonder is that quantum theory sits inside your phone, your ceiling bulb and your barcode scanner all at once.",
+    "context": "Tegmark & Wheeler, '100 Years of Quantum Mysteries', Scientific American 284:2 (Feb 2001), pp. 68-75: the 30 percent rests on inventions 'from semiconductors in computer chips to lasers in compact-disc players, magnetic resonance imaging in hospitals, and much more.' Atomic clocks, electron microscopes, camera sensors, solar cells, flash memory and superconducting magnets are quantum technologies too, but the article's list opened with chips and lasers. Quantum theory sits inside a phone, a ceiling bulb and a barcode scanner all at once. Source: https://www.scientificamerican.com/article/100-years-of-quantum-mysteries/",
     "topic": "the-quantum-tech-already-in-your-pocket"
   },
   {
@@ -37844,15 +37831,15 @@
   },
   {
     "tier": 3,
-    "question": "William Shockley designed a rugged, layered transistor soon after his colleagues John Bardeen and Walter Brattain made the first working one at Bell Labs in 1947. Theirs, a tiny switch that blocks electric current or lets it through, was fragile and hard to make; his was easy to mass-produce. What did Shockley's design become?",
-    "answer": "The shape of essentially every transistor since",
+    "question": "William Shockley designed a rugged, layered transistor soon after his colleagues John Bardeen and Walter Brattain made the first working one at Bell Labs in 1947. Theirs, a tiny switch that blocks electric current or lets it through, was fragile and hard to make; his stacked three layers of treated crystal. What did Shockley's design become?",
+    "answer": "The workhorse of early transistor radios and computers",
     "choices": [
-      "The shape of essentially every transistor since",
-      "A dead end forgotten within a decade",
-      "A special kind of vacuum tube for radios",
-      "A magnetic memory cell for early computers"
+      "The workhorse of early transistor radios and computers",
+      "A curiosity shelved in favour of the fragile original",
+      "A rugged new kind of vacuum tube for radio sets",
+      "A magnetic memory cell for the earliest computers"
     ],
-    "context": "Shockley's bipolar JUNCTION transistor (1948) replaced the finicky point-contact geometry with three doped layers pressed together. He shared the 1956 Nobel in Physics with Bardeen and Brattain 'for their researches on semiconductors and their discovery of the transistor effect'. Kilby (at Texas Instruments) and Noyce (at Fairchild) would come later, for the integrated circuit; Townes for the maser. Source: en.wikipedia.org/wiki/History_of_the_transistor.",
+    "context": "Shockley's bipolar junction transistor (conceived in 1948) replaced the finicky point-contact geometry with three doped layers. It ran the transistor radios and computers of the 1950s and 1960s; the chips of today are built almost entirely from a later design, the metal-oxide-semiconductor field-effect transistor (MOSFET), invented at Bell Labs by Mohamed Atalla and Dawon Kahng in 1959. Shockley shared the 1956 Nobel in Physics with Bardeen and Brattain 'for their researches on semiconductors and their discovery of the transistor effect'. Sources: en.wikipedia.org/wiki/History_of_the_transistor ; en.wikipedia.org/wiki/MOSFET",
     "topic": "the-quantum-tech-already-in-your-pocket"
   },
   {
@@ -37870,7 +37857,7 @@
   },
   {
     "tier": 4,
-    "question": "Theodore Maiman fired the very first working laser on 16 May 1960 at Hughes Research Labs in Malibu, California, alone in the lab that afternoon. A photo flash lamp coiled around a small rod pumped energy into it, and the rod produced the beam. What was the rod made of?",
+    "question": "Theodore Maiman fired the very first working laser on 16 May 1960 at Hughes Research Labs in Malibu, California, with only his assistant, Irnee D'Haenens, in the room. A photo flash lamp coiled around a small rod pumped energy into it, and the rod produced the beam. What was the rod made of?",
     "answer": "synthetic ruby",
     "choices": [
       "synthetic ruby",
@@ -37878,7 +37865,7 @@
       "titanium-doped sapphire",
       "neodymium-doped glass"
     ],
-    "context": "Charles Townes and Arthur Schawlow had assumed a gas medium would come first; Maiman used a small cylinder of chromium-doped aluminium oxide - synthetic ruby - pumped by a spiral flashtube. Nd:YAG, Ti:sapphire and Nd:glass are all now-standard solid-state laser media, but each came later. The Nature paper 'Stimulated Optical Radiation in Ruby' appeared on 6 August 1960. Source: en.wikipedia.org/wiki/Theodore_Maiman.",
+    "context": "Charles Townes and Arthur Schawlow had assumed a gas medium would come first; Maiman used a small cylinder of chromium-doped aluminium oxide - synthetic ruby - pumped by a spiral flashtube. Nd:YAG, Ti:sapphire and Nd:glass are all now-standard solid-state laser media, but each came later. The Nature paper 'Stimulated Optical Radiation in Ruby' appeared on 6 August 1960. Source: en.wikipedia.org/wiki/Theodore_Maiman. ; laserfocusworld.com/home/article/16545957 (D'Haenens obituary: the two were the only people present).",
     "topic": "the-quantum-tech-already-in-your-pocket"
   },
   {
@@ -37909,26 +37896,26 @@
   },
   {
     "tier": 5,
-    "question": "A science writer files transistors, light-emitting diodes and lasers under settled quantum technology and turns to four much-hyped near-term ones. Only one has yet to beat a classical machine on a problem people actually want solved. Which one, and what is the specific open obstacle?",
-    "answer": "a general-purpose quantum computer, blocked on error correction",
+    "question": "A science writer files transistors, light-emitting diodes and lasers under settled quantum technology, then turns to the much-hyped quantum computer. So far it has beaten ordinary machines only on narrow, specially chosen tasks, never on a problem people actually want solved. What stands in its way?",
+    "answer": "Its qubits lose their quantum state before errors can be fixed",
     "choices": [
-      "a general-purpose quantum computer, blocked on error correction",
-      "a quantum-key-distribution network, blocked on repeater range",
-      "a quantum gravity sensor, blocked on vibration isolation",
-      "a topological qubit device, blocked on Majorana confirmation"
+      "Its qubits lose their quantum state before errors can be fixed",
+      "No one has yet written an algorithm it could run faster",
+      "Its chips cannot be cooled below the cold of outer space",
+      "Its answers can never be checked by an ordinary computer"
     ],
-    "context": "All four are genuine near-term quantum-tech programs with their own real bottlenecks - QKD does work over short fibre links and is limited by the lack of practical quantum repeaters; atom-interferometer gravity sensors work in the lab and are limited by isolating the atoms from vibration; the topological-qubit route is stalled on confirming Majorana zero modes. But the specific answer to the question is the general-purpose quantum computer: narrow 'quantum-advantage' demonstrations exist on contrived sampling tasks, yet a fault-tolerant machine that solves a wanted problem faster than a classical one does not - the qubits decohere too fast and the error-correction overhead is huge. Reference: Preskill, 'Quantum Computing in the NISQ era', arXiv:1801.00862.",
+    "context": "Narrow 'quantum-advantage' demonstrations exist on contrived sampling and physics-simulation tasks, but a fault-tolerant machine that beats a classical one on a problem people want solved does not yet exist: qubits decohere too fast, and correcting their errors takes a huge overhead of extra qubits. The obstacle is not the algorithms (Peter Shor's factoring algorithm dates from 1994, and its answers are easy to check on an ordinary computer), nor the cold (the chips already run in dilution refrigerators about a hundredth of a degree above absolute zero, colder than outer space). Reference: Preskill, 'Quantum Computing in the NISQ era', arXiv:1801.00862.",
     "topic": "the-quantum-tech-already-in-your-pocket"
   },
   {
     "tier": 2,
-    "question": "A buyer fills a popular kitchen crock with water at bedtime, and its lining of radium ore 'charges' the water overnight for her to drink in the morning. Glowing radium sells across America as a wonder cure for about thirty years after 1898, in Doramad toothpaste and Tho-Radia face cream too. What is the water supposed to give her?",
+    "question": "A buyer filled a popular kitchen crock with water at bedtime, and its lining of radium ore 'charged' the water overnight for her to drink in the morning. Glowing radium sold across America as a health product for about thirty years after its discovery in 1898. What was the charged water supposed to give her?",
     "answer": "A daily health boost from the radioactivity",
     "choices": [
       "A daily health boost from the radioactivity",
-      "Extra fluoride to protect your teeth",
-      "A cure for smallpox that lasted a year",
-      "A daily dose of vitamin C from ore minerals"
+      "Extra fluoride to protect her teeth",
+      "A year's protection against smallpox",
+      "A daily dose of iron to enrich her blood"
     ],
     "context": "The Revigator was patented in 1912 and sold in the thousands through the 1920s and 30s. Adverts promised the treated water would prevent arthritis, senility and flatulence, delivering 'the lost element of original freshness, radioactivity'. Source: en.wikipedia.org/wiki/Radium_ore_Revigator",
     "topic": "the-radium-craze"
@@ -37943,12 +37930,12 @@
       "The tonic was actually just plain distilled water",
       "The tonic contained no radium at all, only sugar"
     ],
-    "context": "Bailey grew rich on Radithor before his flagship customer's death forced the Federal Trade Commission to shut him down in December 1931. He was never a physician. Source: en.wikipedia.org/wiki/Radithor",
+    "context": "Bailey grew rich on Radithor. The Federal Trade Commission issued a cease-and-desist order against him in December 1931, and Eben Byers, his best-known customer, died three months later. Bailey was never a physician. Sources: en.wikipedia.org/wiki/Radithor ; en.wikipedia.org/wiki/Eben_Byers",
     "topic": "the-radium-craze"
   },
   {
     "tier": 3,
-    "question": "Eben Byers, the Pittsburgh industrialist and US amateur golf champion, hurt his arm in 1927, and on his doctor's recommendation he took Radithor and felt wonderful. He drank about 1,400 small bottles of it over the next three years. The Wall Street Journal ran his obituary in 1932 under a very specific headline. What did the headline say the radium water had done?",
+    "question": "Eben Byers, the Pittsburgh industrialist and US amateur golf champion, hurt his arm in 1927, and on his doctor's recommendation he took Radithor and felt wonderful. He drank about 1,400 small bottles of it over the next three years and died in 1932. The Wall Street Journal told his story in 1990 under a very specific headline. What did the headline say the radium water had done?",
     "answer": "It worked fine until his jaw came off",
     "choices": [
       "It worked fine until his jaw came off",
@@ -37956,7 +37943,7 @@
       "It cured his ailments but ruined his stomach",
       "It saved his life then broke his heart"
     ],
-    "context": "By the end most of Byers' upper and lower jaw had been surgically removed, and holes were forming in his skull. He died in March 1932 with about 36 micrograms of radium distributed through his bones; ten micrograms is a fatal quantity. Source: en.wikipedia.org/wiki/Eben_Byers",
+    "context": "By the end most of Byers' upper and lower jaw had been surgically removed, and holes were forming in his skull. He died on 31 March 1932. The headline topped a Wall Street Journal article by Ron Winslow on 1 August 1990, looking back on his case. Source: en.wikipedia.org/wiki/Eben_Byers",
     "topic": "the-radium-craze"
   },
   {
@@ -37969,7 +37956,7 @@
       "Iodine",
       "Sodium"
     ],
-    "context": "Group 2 metals share two loosely held outer electrons and are chemically similar. Once radium follows calcium into the skeleton, roughly 70 to 95 percent of an ingested dose ends up filed into bone. That is why radium tonics did their damage inside people, not on the way through. Source: sciencedirect.com/topics/medicine-and-dentistry/radium",
+    "context": "Group 2 metals share two loosely held outer electrons and are chemically similar. The radium the gut absorbs follows calcium into the skeleton, and there it stays. That is why radium tonics did their damage inside people, not on the way through. Source: sciencedirect.com/topics/medicine-and-dentistry/radium",
     "topic": "the-radium-craze"
   },
   {
@@ -37982,7 +37969,7 @@
       "Diphtheria and typhoid fever",
       "Lead poisoning and mercury poisoning"
     ],
-    "context": "The 'phosphorus poisoning' label came from a real occupational disease of the day (matchstick workers developed 'phossy jaw' from white phosphorus); the syphilis label was especially cruel because it also destroyed the women's reputations. In 1924 the pathologist Harrison Martland and the dentist Theodor Blum finally identified the disease as radium poisoning and named it 'radium jaw'. Source: environmentalhistory.org/people/radiumgirls",
+    "context": "The 'phosphorus poisoning' label came from a real occupational disease of the day (matchstick workers developed 'phossy jaw' from white phosphorus); the syphilis label was especially cruel because it also destroyed the women's reputations. In 1924 the dentist Theodor Blum first described the disease in print as 'radium jaw', and in 1925 the pathologist Harrison Martland showed that radium inside the women's bodies was to blame. Source: environmentalhistory.org/people/radiumgirls ; en.wikipedia.org/wiki/Radium_jaw",
     "topic": "the-radium-craze"
   },
   {
@@ -37991,9 +37978,9 @@
     "answer": "That workplace radiation exposure is a real hazard",
     "choices": [
       "That workplace radiation exposure is a real hazard",
-      "That radium is safe to swallow in small doses",
-      "That women should not be allowed to paint dials",
-      "That paintbrushes themselves can cause cancer"
+      "That radium must be banned from all medical use",
+      "That luminous dials must be painted by machine",
+      "That glowing watches must be sold with warnings"
     ],
     "context": "The chemist who had invented the Undark paint, Sabin von Sochocky, died of radium-induced aplastic anaemia in November 1928, having sawed off the poisoned tip of his own finger in an attempt to save himself. His autopsy helped confirm Fryer's case. Source: en.wikipedia.org/wiki/Grace_Fryer",
     "topic": "the-radium-craze"
@@ -38060,7 +38047,7 @@
       "To keep the smell of the tonic from escaping the coffin",
       "To stop grave robbers from digging him up for the radium"
     ],
-    "context": "Byers's upper and lower jaw had to be surgically removed before his death on March 31, 1932. William Bailey was Radithor's promoter and profited even after Byers died; Frederick Flinn was the industrial hygienist US Radium hired to publicly deny any radium harm to the dial painters; Charles Norris was New York City's chief medical examiner. Source: Wikipedia, 'Eben Byers.'",
+    "context": "Byers's upper and lower jaw had to be surgically removed before his death on March 31, 1932. He lies in Allegheny Cemetery in Pittsburgh in a lead-lined coffin. Source: Wikipedia, 'Eben Byers.'",
     "topic": "the-radium-girls-and-the-element-that-files-itself-in-bone"
   },
   {
@@ -38078,7 +38065,7 @@
   },
   {
     "tier": 5,
-    "question": "Catherine Wolfe Donohue, a dial painter too weak to sit up in court, produced a small box at her hearing on 10 February 1938 and set it down as physical evidence. The Radium Dial Company of Ottawa, Illinois, had kept its painters at the old brush routine long after the New Jersey settlement. What was in the box?",
+    "question": "Catherine Wolfe Donohue, a dial painter too weak to sit up, produced a small box at her hearing on 10 February 1938 and set it down as physical evidence. The Radium Dial Company of Ottawa, Illinois, had kept its painters at the old brush routine long after the New Jersey settlement. What was in the box?",
     "answer": "fragments of her own jawbone that had come loose from her mouth",
     "choices": [
       "fragments of her own jawbone that had come loose from her mouth",
@@ -38273,28 +38260,28 @@
   },
   {
     "tier": 3,
-    "question": "Three psychologists, Scheel, Schijen and Lakens, checked in 2021 on psychology's habit of always finding what its authors expect. About 96 percent of 152 ordinary papers said the first guess turned out right. In 71 studies of a newer format, where the journal committed to the paper before anyone knew the answer, the share fell to about 44 percent, though the authors warn this compares two literatures and is no controlled experiment. What is that format called?",
-    "answer": "Registered reports",
+    "question": "Scheel, Schijen and Lakens, three psychologists, counted in 2021 how often psychology papers confirm their authors' first guess: 146 of 152 ordinary papers did, about 96 percent. Then they counted registered reports, where a journal agrees to publish before anyone knows the answer, while warning that two literatures are no controlled experiment. How did those reports compare?",
+    "answer": "Fewer than half of them confirmed it",
     "choices": [
-      "Registered reports",
-      "Peer review",
-      "Meta-analyses",
-      "Systematic reviews"
+      "Fewer than half of them confirmed it",
+      "Nearly all of them confirmed it too",
+      "About three in four of them confirmed it",
+      "Hardly any of them confirmed it"
     ],
-    "context": "Scheel, Schijen and Lakens (2021), 'An Excess of Positive Results,' Advances in Methods and Practices in Psychological Science 4(2). 146 of 152 standard papers (~96%) reported a confirming result; 31 of 71 Registered Reports (~44%) did. IMPORTANT: this is a correlation between two different literatures, not a controlled experiment -- the authors themselves caution against a simple causal reading. The 52-point gap is still large enough to make you look twice at anything that comes back positive in the ordinary literature. Source: https://journals.sagepub.com/doi/10.1177/25152459211007467",
+    "context": "Scheel, Schijen and Lakens (2021), 'An Excess of Positive Results,' Advances in Methods and Practices in Psychological Science 4(2). 146 of 152 standard papers (~96%) reported a confirming result; 31 of 71 Registered Reports (~44%) did. IMPORTANT: this is a correlation between two different literatures, not a controlled experiment -- the authors themselves caution against a simple causal reading. The 52-point gap is still large enough to make any reader look twice at anything that comes back positive in the ordinary literature. Source: https://journals.sagepub.com/doi/10.1177/25152459211007467",
     "topic": "the-repairs-that-actually-work"
   },
   {
-    "tier": 5,
-    "question": "Richard Feynman gave the whole reform movement its motto in his 1974 Caltech commencement address, later published as 'Cargo Cult Science.' He told the graduates in a single sentence what the first principle is. What did he tell them?",
-    "answer": "The first principle is that you must not fool yourself, and you are the easiest person to fool",
+    "tier": 3,
+    "question": "Richard Feynman gave the whole reform movement its motto in his 1974 Caltech commencement address, later published as 'Cargo Cult Science.' He told the graduates in one sentence what the first principle of scientific integrity is. What did he tell them?",
+    "answer": "Never to fool oneself, the easiest person to fool",
     "choices": [
-      "The first principle is that you must not fool yourself, and you are the easiest person to fool",
-      "The first principle is to trust the peer review of your colleagues",
-      "The first principle is that a p-value below 0.05 is a discovery",
-      "The first principle is that authority in a field is a good guide to truth"
+      "Never to fool oneself, the easiest person to fool",
+      "Always to trust the verdict of peer review",
+      "To treat a p-value under 0.05 as a discovery",
+      "To follow the leading authorities in a field"
     ],
-    "context": "Feynman, 'Cargo Cult Science,' Caltech commencement address, 1974. The line reads in full: 'The first principle is that you must not fool yourself -- and you are the easiest person to fool. So you have to be very careful about that. After you've not fooled yourself, it's easy not to fool other scientists.' This is why preregistration, Registered Reports, and adversarial collaboration exist: they are devices for not letting yourself off the hook. Source: https://calteches.library.caltech.edu/3043/",
+    "context": "Feynman, 'Cargo Cult Science,' Caltech commencement address, 1974. The line reads in full: 'The first principle is that you must not fool yourself -- and you are the easiest person to fool. So you have to be very careful about that. After you've not fooled yourself, it's easy not to fool other scientists.' This is why preregistration, Registered Reports, and adversarial collaboration exist: they are devices that keep researchers from letting themselves off the hook. Source: https://calteches.library.caltech.edu/3043/",
     "topic": "the-repairs-that-actually-work"
   },
   {
@@ -38481,7 +38468,7 @@
   },
   {
     "tier": 2,
-    "question": "A nurse sets out the American childhood vaccine schedule of 1986: eleven doses, seven of them shots and four given by mouth, covering seven diseases. She counts today's schedule by the same rule, every dose from birth through age eighteen, with the yearly flu shot. How many doses is that?",
+    "question": "A nurse sets out the American childhood vaccine schedule of 1986: eleven doses, seven of them shots and four given by mouth, covering seven diseases. She counts the 2025 schedule by the same rule, every dose from birth through age eighteen, with the yearly flu shot. How many doses is that?",
     "answer": "About 50 to 54 doses, against 16 to 18 diseases",
     "choices": [
       "About 20 to 24 doses, against 16 to 18 diseases",
@@ -38507,7 +38494,7 @@
   },
   {
     "tier": 2,
-    "question": "A father at a check-up raises aluminium, the vaccine ingredient parents ask about most. An American baby in 1986 received about 1.5 mg of it from vaccines across the first six months of life, and those same months now bring about 4.4 mg. How much does a formula-fed baby swallow in that time, by a different route?",
+    "question": "A father raises aluminium, the vaccine ingredient parents ask about most. An American baby in 1986 received about 1.5 mg of it from vaccines in its first six months, and the 2025 schedule brought about 4.4 mg over the same span. How much does a formula-fed baby swallow in that time, by a different route?",
     "answer": "About 38 mg",
     "choices": [
       "About 1 mg",
@@ -38533,20 +38520,20 @@
   },
   {
     "tier": 3,
-    "question": "A researcher sets the dose count aside and counts the load on a small immune system itself: antigens, the distinct molecules it learns to recognise. One whole-cell whooping-cough shot from the 1980s carried over 3,200 of them. Today's entire childhood schedule, every dose added together, carries how many?",
-    "answer": "About 165 antigens in total",
+    "question": "A researcher sets the dose count aside and counts the load on a small immune system itself: antigens, the distinct molecules it learns to recognise. One whole-cell whooping-cough shot from the 1980s carried thousands of them. The whole 2025 childhood schedule, every dose added together, carried how many?",
+    "answer": "Roughly 150 to 200 antigens in all",
     "choices": [
-      "About 165 antigens in total",
-      "About 1,250 antigens in total",
-      "About 4,100 antigens in total",
-      "About 27,000 antigens in total"
+      "Roughly 150 to 200 antigens in all",
+      "Roughly 1,200 to 1,300 antigens in all",
+      "Roughly 4,000 to 4,500 antigens in all",
+      "Roughly 25,000 to 30,000 antigens in all"
     ],
-    "context": "Roughly a 95 percent cut in antigen exposure across the same decades in which the dose count roughly quintupled. Both numbers are true; they are answers to different questions, and each side of the argument quotes the one that suits it. 'Whole-cell' meant the entire killed bacterium went into the vial - thousands of distinct molecules in a single shot - where modern purified vaccines carry a short list of chosen ones. For scale in the other direction, Paul Offit and colleagues calculated that an infant could in theory respond to 10,000 vaccines at once while using under one percent of circulating B-cells, and infants meet an estimated 2,000 to 6,000 unique antigens every day from bacteria, viruses and food. Sources: STAT News (24 June 2025); grokipedia.com/page/Vaccination_schedule.",
+    "context": "Roughly a 95 percent cut in antigen exposure across the same decades in which the dose count roughly quintupled. Both numbers are true; they are answers to different questions, and each side of the argument quotes the one that suits it. 'Whole-cell' meant the entire killed bacterium went into the vial - thousands of distinct molecules in a single shot - where modern purified vaccines carry a short list of chosen ones. For scale in the other direction, Paul Offit and colleagues calculated that an infant could in theory respond to 10,000 vaccines at once while using under one percent of circulating B-cells, and infants meet an estimated 2,000 to 6,000 unique antigens every day from bacteria, viruses and food. Counts shift with the counting rule: STAT News (24 June 2025) puts the schedule near 165 antigens, and Grokipedia's 'Vaccination schedule' gives fewer than 150 for 2013. Sources: STAT News (24 June 2025); grokipedia.com/page/Vaccination_schedule.",
     "topic": "the-schedule-vaers-and-the-study-nobody-has-run"
   },
   {
     "tier": 3,
-    "question": "An analyst opens the Vaccine Adverse Event Reporting System (VAERS) on 16 July 1999 and finds fifteen reports of one bowel problem in babies given RotaShield, the first rotavirus vaccine, licensed on 31 August 1998. Part of the gut folds into itself, and in 87 percent of the cases it came after the first dose. Just fifteen reports across the whole country. What came of them?",
+    "question": "Fifteen reports of one bowel problem in babies had reached the Vaccine Adverse Event Reporting System (VAERS) by July 1999, all after RotaShield, the first rotavirus vaccine, licensed on 31 August 1998. Part of the gut folds into itself, and in 13 of the 15 cases it came after the first dose. Just fifteen reports across the whole country. What came of them?",
     "answer": "The CDC urged suspension in days; the maker withdrew it that October",
     "choices": [
       "The CDC urged suspension in days; the maker withdrew it that October",
@@ -38554,7 +38541,7 @@
       "The CDC urged use after six months only; the maker narrowed the label",
       "The CDC urged wider reporting; the maker paid for a follow-up study"
     ],
-    "context": "The CDC called for immediate suspension on 16 July 1999; ACIP voted on 22 October 1999 to drop the recommendation, and the manufacturer withdrew the product that month - under fifteen months from licensure to withdrawal, on fifteen reports. This is the strongest case for a system that cannot measure anything: it was built to notice, and it noticed. What it could not supply was the size of the risk. Once controlled studies were run they found roughly a 37-fold increase in the three to seven days after the first dose, amounting to 'The excess risk of approximately 1 intussusception case in 10 000 Rotashield recipients.' VAERS produced the hypothesis; epidemiology produced the number. A quieter case ran the same way: eight to ten VAERS reports of vaccine-associated paralytic polio fed the 1997 decision to move the American schedule off routine oral polio vaccine. Sources: grokipedia.com/page/Vaccine_Adverse_Event_Reporting_System; 'Intussusception and Rotavirus Vaccination - Balancing Risk Against Benefit', PMC5715718; CDC MMWR 48(43).",
+    "context": "The CDC and FDA called for suspension in mid-July 1999; ACIP voted on 22 October 1999 to drop the recommendation, and the manufacturer withdrew the product that month - under fifteen months from licensure to withdrawal, on fifteen reports. This is the strongest case for a system that cannot measure anything: it was built to notice, and it noticed. What it could not supply was the size of the risk. Once controlled studies were run they found roughly a 37-fold increase in the three to seven days after the first dose, amounting to 'The excess risk of approximately 1 intussusception case in 10 000 Rotashield recipients.' VAERS produced the hypothesis; epidemiology produced the number. A quieter case ran the same way: eight to ten VAERS reports of vaccine-associated paralytic polio fed the 1997 decision to move the American schedule off routine oral polio vaccine. Sources: grokipedia.com/page/Vaccine_Adverse_Event_Reporting_System; 'Intussusception and Rotavirus Vaccination - Balancing Risk Against Benefit', PMC5715718; CDC MMWR 48(43).",
     "topic": "the-schedule-vaers-and-the-study-nobody-has-run"
   },
   {
@@ -38793,7 +38780,7 @@
   },
   {
     "tier": 1,
-    "question": "A shopkeeper in Chelyabinsk, Russia, opens up on 15 February 2013 as a rock about 18 metres wide bursts some 30 kilometres overhead, with about the force of thirty Hiroshima bombs. Nobody dies, but 1,491 people need treatment. What hurts almost all of them?",
+    "question": "Chelyabinsk, Russia, was starting its working day on 15 February 2013 when a rock about 18 metres wide burst some 30 kilometres overhead, with about the force of thirty Hiroshima bombs. Nobody died, but 1,491 people needed treatment. What hurt almost all of them?",
     "answer": "Glass from windows blown in by the shock wave",
     "choices": [
       "Glass from windows blown in by the shock wave",
@@ -38801,7 +38788,7 @@
       "Masonry falling from walls and chimneys",
       "The blast wind knocking people off their feet"
     ],
-    "context": "Fifty-two people needed hospital care and 311 of the injured were children -- the blast came shortly after the school day began. The shock wave damaged more than 7,200 buildings across six cities and shattered windows over an ellipse roughly 90 km long and 40 km wide along the ground track, and it partly collapsed the roof of the Traktor Ice Arena. Direct damage came to about 1 billion rubles, around 33 million dollars. Source: Grokipedia, 'Chelyabinsk meteor'; Wikipedia, 'Chelyabinsk meteor'.",
+    "context": "112 people were admitted to hospital, two in serious condition; the blast came shortly after the school day began. The shock wave damaged more than 7,200 buildings across six cities and shattered windows over an ellipse roughly 90 km long and 40 km wide along the ground track, and part of a zinc factory's roof caved in. Damage to buildings came to more than 33 million dollars. Source: Grokipedia, 'Chelyabinsk meteor'; Wikipedia, 'Chelyabinsk meteor'.",
     "topic": "the-sky-does-fall-tunguska-chelyabinsk-and-the-airburst"
   },
   {
@@ -38832,7 +38819,7 @@
   },
   {
     "tier": 2,
-    "question": "An astronomer goes back through the night's images after an 18-metre rock explodes over Chelyabinsk, Russia, on 15 February 2013, and finds no trace of it. Many telescopes sweep the sky nightly and have catalogued thousands of asteroids, yet not one saw this rock coming. Why was every one of them blind to it?",
+    "question": "Survey telescopes swept the sky every night and had catalogued thousands of asteroids, yet not one of them saw the 18-metre rock that exploded over Chelyabinsk, Russia, on 15 February 2013. Why was every one of them blind to it?",
     "answer": "It came in from the direction of the Sun, lost in the glare",
     "choices": [
       "It came in from the direction of the Sun, lost in the glare",
@@ -38871,7 +38858,7 @@
   },
   {
     "tier": 3,
-    "question": "An operator at a listening station in Antarctica, some 15,000 kilometres from Chelyabinsk, sees the blast arrive as sound too low for the human ear. The station belongs to a worldwide network built for a different job, and twenty of its forty-two stations caught it. What was that network built to listen for?",
+    "question": "A listening station in Antarctica, some 15,000 kilometres from Chelyabinsk, picked up the blast as sound too low for the human ear. The station belonged to a worldwide network built for a different job, and twenty of its stations caught the blast in all. What was that network built to listen for?",
     "answer": "Nuclear tests carried out in secret",
     "choices": [
       "Nuclear tests carried out in secret",
@@ -38966,9 +38953,9 @@
     "answer": "a superconductor",
     "choices": [
       "a superconductor",
-      "a lightning rod",
-      "an electromagnet",
-      "a solar cell"
+      "a semiconductor",
+      "a permanent magnet",
+      "a piezoelectric crystal"
     ],
     "context": "This is the classic classroom demonstration of the Meissner effect: a superconductor cooled below its critical temperature expels magnetic field and locks a magnet in place above it. Source: https://en.wikipedia.org/wiki/Meissner_effect",
     "topic": "the-superconductor-nobody-can-explain"
@@ -38988,7 +38975,7 @@
   },
   {
     "tier": 4,
-    "question": "Two scientists at the Zurich lab of International Business Machines (IBM) tested, in 1986, a brittle ceramic that most metal physicists had written off. The lanthanum-barium-copper oxide became a superconductor at 35 K. They won the Nobel Prize just one year later, the fastest gap in physics history. Which pair was it?",
+    "question": "Two scientists at the Zurich lab of International Business Machines (IBM) tested, in 1986, a brittle ceramic that most metal physicists had written off. The lanthanum-barium-copper oxide became a superconductor at 35 K. They won the Nobel Prize just one year later, one of the fastest in physics history. Which pair was it?",
     "answer": "Georg Bednorz and Alex Muller",
     "choices": [
       "Georg Bednorz and Alex Muller",
@@ -39053,15 +39040,15 @@
   },
   {
     "tier": 5,
-    "question": "Ranga Dias, a physicist at Rochester, published two room-temperature superconductor claims in Nature, in October 2020 and March 2023. The theorist Hirsch pressed for the raw data for more than a year. Eight of Dias's eleven co-authors asked for the second paper to be pulled, and both were. A university inquiry found in 2024 that Dias had fabricated data. In a science paper, what does that charge mean?",
-    "answer": "He made up numbers he never actually measured",
+    "question": "Ranga Dias of the University of Rochester published two papers in Nature, each claiming a superconductor that worked at room temperature, one in 2020 and one in 2023. Jorge Hirsch, a theorist, challenged the data early, and both papers were retracted. Who asked Nature to pull the second one?",
+    "answer": "Eight of his own eleven co-authors",
     "choices": [
-      "He made up numbers he never actually measured",
-      "He rounded his real measurements the wrong way",
-      "He used old data from other people's experiments",
-      "He copied his method from another lab's paper"
+      "Eight of his own eleven co-authors",
+      "The editors of Nature, acting alone",
+      "A rival lab that failed to repeat it",
+      "The University of Rochester's inquiry"
     ],
-    "context": "Hirsch, a condensed-matter theorist at UC San Diego, campaigned for the raw data for nearly thirteen months and pointed out that some of Dias's data resembled a smooth polynomial curve -- impossible for noisy lab measurements -- and looked suspiciously similar to figures from a 2009 paper on europium. The co-authors' letter accompanying the 2023 retraction said the paper 'does not accurately reflect the provenance of the investigated materials'. Sources: https://www.nature.com/articles/d41586-024-00716-2 and https://physics.aps.org/articles/v16/40",
+    "context": "Nature retracted the 2020 paper in 2022 and the 2023 paper on 7 November 2023, the second at the request of eight of its eleven authors; their letter said the paper 'does not accurately reflect the provenance of the investigated materials'. Jorge Hirsch, a condensed-matter theorist at UC San Diego, had been first to question the published data and argued that some of it had never been measured in a laboratory. In March 2024 the University of Rochester reported that an investigation had found Dias engaged in research misconduct. Sources: https://en.wikipedia.org/wiki/Ranga_P._Dias ; https://physics.aps.org/articles/v16/40",
     "topic": "the-superconductor-nobody-can-explain"
   },
   {
@@ -39260,16 +39247,16 @@
     "topic": "the-terrella-a-model-earth-on-the-bench"
   },
   {
-    "tier": 5,
-    "question": "A geologist samples a stack of old lava flows, Earth's own tape recording of its magnetic field, each one frozen with a copy of the field as it cooled. The stack shows the field has fully swapped north and south many times, and nobody can predict the next swap. How long ago was the most recent full flip?",
-    "answer": "About 780,000 years ago",
+    "tier": 4,
+    "question": "A geologist samples a stack of old lava flows, Earth's own tape recording of its magnetic field, each one frozen with a copy of the field as it cooled. The stack shows north and south have fully swapped many times, the last about 780,000 years ago. When will the next swap come?",
+    "answer": "No one can yet predict when it will come",
     "choices": [
-      "About 780,000 years ago",
-      "About 12,000 years ago",
-      "About 65 million years ago",
-      "About 4,500 years ago"
+      "No one can yet predict when it will come",
+      "It is overdue, since flips keep a steady rhythm",
+      "Within two centuries, as the pole's fast drift shows",
+      "Never, since the core has cooled too far to flip"
     ],
-    "context": "The event is called the Brunhes-Matuyama reversal. When the next flip will come cannot yet be predicted: reversals look statistically random on geological timescales and the underlying mechanism is not settled. The magnetic north pole is moving fast enough to notice, though: since 1970 its drift has sped up from about 9 km per year to over 50 km per year, heading from the Canadian Arctic toward Siberia. That drift, and the aurora, are the two pieces of the story you can watch personally. Sources: en.wikipedia.org/wiki/Geomagnetic_reversal ; en.wikipedia.org/wiki/North_magnetic_pole.",
+    "context": "The last flip is called the Brunhes-Matuyama reversal. When the next will come cannot yet be predicted: reversals look statistically random on geological timescales, the gaps between them have run from under a hundred thousand years to tens of millions, and the mechanism is not settled, so the popular claim that a flip is overdue assumes a rhythm the record does not show. The magnetic north pole is moving fast enough to notice, though: from about 9 km a year in 1970 its drift sped up past 50 km a year, heading from the Canadian Arctic toward Siberia, before slowing lately to about 35. That drift and the aurora are two pieces of this story anyone can watch. Sources: en.wikipedia.org/wiki/Geomagnetic_reversal ; en.wikipedia.org/wiki/North_magnetic_pole ; https://www.sciencealert.com/earths-magnetic-north-pole-is-officially-moving-scientists-just-updated-its-location",
     "topic": "the-terrella-a-model-earth-on-the-bench"
   },
   {
@@ -39287,7 +39274,7 @@
   },
   {
     "tier": 2,
-    "question": "Charles Fabry and Henri Buisson worked out in 1913 how much ozone stands over one spot on the ground. A shield against sunlight that would sterilise the surface sounds like a thick blanket. Yet every ozone molecule above a person's head, squeezed down to sea-level pressure, forms only a thin film. About how thick is it?",
+    "question": "Charles Fabry and Henri Buisson measured in 1920 how much ozone stands over one spot on the ground. A shield against sterilising sunlight sounds like a thick blanket, yet every ozone molecule above a person's head, squeezed down to sea-level pressure, forms only a thin film. About how thick is it?",
     "answer": "about three millimetres",
     "choices": [
       "about three millimetres",
@@ -39295,7 +39282,7 @@
       "about thirty centimetres",
       "about three metres"
     ],
-    "context": "Fabry and Buisson calculated this figure in 1913. The Dobson unit later baked it in: 100 DU is exactly 1 mm of pure ozone at sea-level pressure, and the global average column is about 300 DU. Sources: tandfonline.com/doi/pdf/10.3137/ao.460101; en.wikipedia.org/wiki/Dobson_unit.",
+    "context": "Fabry and Buisson's measurement of June 1920 gave a little over three millimetres; accounts of their first rough estimate in 1913 differ. The Dobson unit later baked it in: 100 DU is exactly 1 mm of pure ozone at sea-level pressure, and the global average column is about 300 DU. Sources: tandfonline.com/doi/pdf/10.3137/ao.460101; en.wikipedia.org/wiki/Dobson_unit. ; repository.si.edu (history of the 1920 measurement)",
     "topic": "the-three-millimetre-shield"
   },
   {
@@ -39364,16 +39351,16 @@
     "topic": "the-tides-the-moons-grip-on-the-ocean"
   },
   {
-    "tier": 4,
-    "question": "A sailor waits for the very largest tide of the month, which comes at new moon or full moon, when the Sun and Moon pull in a straight line. English calls these spring tides, a name that puzzles outsiders because they happen every month all year long. What does 'spring' actually mean in this term?",
-    "answer": "The verb, meaning to leap or spring up",
+    "tier": 3,
+    "question": "A sailor waits for the largest tides of the month, which arrive twice every month, in every season, at new moon and at full moon. Sailors call them spring tides, from the old verb meaning to leap, not from the season. Why do the biggest tides come at those two phases?",
+    "answer": "The Sun and Moon line up, so their tidal pulls add",
     "choices": [
-      "The verb, meaning to leap or spring up",
-      "The season, when the Sun's angle steepens",
-      "A fresh-water spring opening under the seabed",
-      "A coiled spring, matching the shape of the wave crest"
+      "The Sun and Moon line up, so their tidal pulls add",
+      "The Moon swings nearest to Earth at those two phases",
+      "The Moon moves fastest along its orbit at those phases",
+      "Earth's spin speeds up slightly at those two phases"
     ],
-    "context": "Spring tides happen TWICE a month, all year round, whenever the Sun and Moon are aligned. The word is the ordinary English verb -- to spring up, to leap -- not the season. Neap tides, at right angles, get their name from an Old English word for scanty or nipped. Source: cosmicave.org/course/astronomy-of-planets/mod3/newtons-explanation-of-tides",
+    "context": "At new moon the Sun and Moon sit on the same side of Earth; at full moon, on opposite sides. Either way they pull along one line, so the Sun's tide, a little under half the Moon's, adds to it. At the half moons they pull at right angles and partly cancel, giving the small neap tides, from an Old English word for scanty. The Moon's nearest approach in its orbit swells tides too, but it follows its own schedule, not the phases. Source: cosmicave.org/course/astronomy-of-planets/mod3/newtons-explanation-of-tides",
     "topic": "the-tides-the-moons-grip-on-the-ocean"
   },
   {
@@ -39659,7 +39646,7 @@
       "Chloride rushes in, calcium rushes out",
       "Electrons rush in, protons rush out"
     ],
-    "context": "That flip has a name: the action potential. It is not electrons running along a wire - it is charged atoms crossing a membrane. Hodgkin and Huxley made the first intracellular recordings in 1939 and published the full mathematical model in 1952; the squid's nerve fibre was chosen because it is fat enough to push a wire inside. Your own nerves are doing exactly this right now, reading this line. Source: 'The Long Journey from Animal Electricity to the Discovery of Ion Channels', PMC11202063; Grokipedia, Luigi Galvani.",
+    "context": "That flip has a name: the action potential. It is not electrons running along a wire - it is charged atoms crossing a membrane. Hodgkin and Huxley made the first intracellular recordings in 1939 and published the full mathematical model in 1952; the squid's nerve fibre was chosen because it is fat enough to push a wire inside. Every nerve in a reader's body is doing exactly this right now. Source: 'The Long Journey from Animal Electricity to the Discovery of Ion Channels', PMC11202063; Grokipedia, Luigi Galvani.",
     "topic": "the-twitching-frog-galvani-versus-volta"
   },
   {
@@ -39898,7 +39885,7 @@
   },
   {
     "tier": 1,
-    "question": "The X-1's engineers gave Chuck Yeager his altitude a different way on 14 October 1947. Its rocket drank its whole fuel load in minutes, far too little to also climb from the desert floor to the thin air where a speed record had to be set. How did the X-1 get up there?",
+    "question": "Chuck Yeager's Bell X-1 could not climb to its test height by itself on 14 October 1947: its rocket burned all its fuel in a few minutes, too little for the long climb from the ground. How did the X-1 get up there?",
     "answer": "A B-29 bomber carried it up in its bomb bay.",
     "choices": [
       "A B-29 bomber carried it up in its bomb bay.",
@@ -40093,7 +40080,7 @@
   },
   {
     "tier": 4,
-    "question": "George Westinghouse and Nikola Tesla underbid Edison's team in 1893 for the contract to light a single event, and the war of the currents ended there, with a bid, not a duel or a court verdict. On opening night President Cleveland threw one switch and lit about a hundred thousand incandescent lamps at once. What was the event?",
+    "question": "George Westinghouse and Nikola Tesla underbid Edison's camp in 1893 for the contract to light a single event, and the war of the currents ended there, with a bid, not a duel or a court verdict. Their alternating current lit a sea of electric lamps across its grounds. What was the event?",
     "answer": "The World's Columbian Exposition in Chicago.",
     "choices": [
       "The World's Columbian Exposition in Chicago.",
@@ -40101,7 +40088,7 @@
       "The Paris Exposition Universelle at the base of the new Eiffel Tower.",
       "The inauguration of the transcontinental railroad at Promontory Summit."
     ],
-    "context": "About twenty-seven million people saw the White City glow on AC power over the six months of the fair. That contract -- and the spectacle -- won Westinghouse the Niagara Falls hydroelectric commission, which on 15 November 1896 began sending power about twenty miles to Buffalo. Source: teslauniverse.com 1893 tesla lights worlds fair .",
+    "context": "On opening day, 1 May 1893, President Grover Cleveland pressed a golden telegraph key that set the fair's machinery running. About twenty-seven million people saw the White City glow on AC power over the six months of the fair. That contract, and the spectacle, won Westinghouse the Niagara Falls hydroelectric commission, which in November 1896 began sending power about twenty miles to Buffalo. Sources: teslauniverse.com 1893 tesla lights worlds fair ; worldsfairchicago1893.com/2018/05/01/opening_day_10/",
     "topic": "the-war-of-the-currents-told-honestly"
   },
   {
@@ -40379,7 +40366,7 @@
   },
   {
     "tier": 4,
-    "question": "Harry Coover said his glue is set off by something lying on every surface, and the same thing hangs in the air around the tube. By that account a tube of superglue ought to set solid on the shop shelf, and it does not. What else is in the tube?",
+    "question": "A tube of superglue sits on a shop shelf for months, though the trigger that sets the glue hard is all around it, even in the air above the nozzle. By that logic the tube ought to set solid long before anyone buys it, and it does not. What else is in the tube?",
     "answer": "An acid, which holds the reaction back until the glue meets a surface",
     "choices": [
       "An acid, which holds the reaction back until the glue meets a surface",
@@ -40387,7 +40374,7 @@
       "A drying agent, which soaks up whatever water reaches the liquid",
       "An inert gas, which fills the space above the liquid as it empties"
     ],
-    "context": "Weak acids slow the polymerisation and strong acids stop it dead, so the monomer sits unreacted in the tube until it meets a moist surface; stabilisers used include sulphur dioxide, hydroquinone and organic sulfonic acid. TEST IT YOURSELF, and expect the opposite of common sense: a thin smear bonds better than a fat blob. The reaction is started at the surfaces, so a thick bead never polymerises all the way through - more glue makes a weaker joint. Sources: University of Bristol, Molecule of the Month, July 2009; en.wikipedia.org/wiki/Cyanoacrylate; grokipedia.com/page/Cyanoacrylate.",
+    "context": "Weak acids slow the polymerisation and strong acids stop it dead, so the monomer sits unreacted in the tube until it meets a moist surface; stabilisers used include sulphur dioxide, hydroquinone and organic sulfonic acid. A test anyone can run goes against common sense: a thin smear bonds better than a fat blob. The reaction is started at the surfaces, so a thick bead never polymerises all the way through - more glue makes a weaker joint. Sources: University of Bristol, Molecule of the Month, July 2009; en.wikipedia.org/wiki/Cyanoacrylate; grokipedia.com/page/Cyanoacrylate.",
     "topic": "the-wrong-strength-glue"
   },
   {
@@ -40436,8 +40423,8 @@
     "choices": [
       "A solution waiting for a problem to solve",
       "A glue that never found anything to hold",
-      "An experiment that got clean away from me",
-      "A mistake I have never stopped defending"
+      "The adhesive that would not quite stick",
+      "A failure too interesting to throw away"
     ],
     "context": "Silver also admitted: 'I'd spun my wheels a long time trying to find a product I could put my adhesive on.' Neither compound was ever a chemical failure. The cyanoacrylate was worthless only against a specification that demanded an optically clear, non-sticky gun sight, and the microspheres were a failure only against a specification that demanded maximum bond strength for aircraft. Both men were eventually honoured for the compound each had once been unable to give away: Coover accumulated over 460 patents and received the National Medal of Technology and Innovation from President Obama in 2010; Silver earned 37 patents at 3M and entered the National Inventors Hall of Fame the same year. Sources: adhesivesmag.com obituary of Spencer Silver; popsci.com; en.wikipedia.org/wiki/Harry_Coover.",
     "topic": "the-wrong-strength-glue"
@@ -40452,7 +40439,7 @@
       "a prototype microfluidic chip developed at Stanford",
       "a mass spectrometer built in-house by Theranos engineers"
     ],
-    "context": "The 'revolutionary' box in the lab was largely a prop; behind the scenes the company was buying and quietly modifying standard clinical analysers from Siemens. Source: Grokipedia -- Theranos; John Carreyrou, Bad Blood.",
+    "context": "The Edison was real and did run some tests, far fewer than claimed; behind the scenes the company was buying and quietly modifying standard clinical analysers from Siemens. Source: Grokipedia -- Theranos; John Carreyrou, Bad Blood.",
     "topic": "theranos-show-me-the-machine-working"
   },
   {
@@ -40496,19 +40483,6 @@
   },
   {
     "tier": 3,
-    "question": "Federal inspectors found the Edison hormone test at Theranos failing its own accuracy standard on most days of February 2015, giving patients wrong readings. The California startup had claimed its Edison machines could run hundreds of blood tests from a single fingerprick drop. Its founding chief executive was eventually convicted of fraud in federal court. Who held that job?",
-    "answer": "Elizabeth Holmes",
-    "choices": [
-      "Elizabeth Holmes",
-      "Sunny Balwani",
-      "Tyler Shultz",
-      "Ian Gibbons"
-    ],
-    "context": "Inspectors also documented that 29% of Edison quality-control checks in October 2014 already fell outside Theranos's own acceptable range. The internal numbers were catastrophic long before the public exposure. Source: MedCityNews, March 2016; CMS inspection report.",
-    "topic": "theranos-show-me-the-machine-working"
-  },
-  {
-    "tier": 3,
     "question": "At least one Phoenix doctor sent a patient to the emergency room over a bad Theranos reading. In May 2016 Elizabeth Holmes's startup took a step almost unheard of for a medical lab, finally facing what its Edison devices had really produced at Walgreens pharmacies. What did Theranos do to the results it had already sent to patients and their doctors?",
     "answer": "voided or corrected tens of thousands of results covering roughly two years",
     "choices": [
@@ -40522,7 +40496,7 @@
   },
   {
     "tier": 4,
-    "question": "Inspectors from the Centers for Medicare and Medicaid Services (CMS), the federal lab regulator, finished going through the Theranos lab in Newark, California, on 25 January 2016. Their letter covered the lab's blood tests, including prothrombin-time tests, used to set doses for the blood-thinner warfarin. What did the letter formally say?",
+    "question": "Inspectors from the Centers for Medicare and Medicaid Services (CMS), the federal lab regulator, went through the Theranos lab in Newark, California, in 2015 and wrote to the company on 25 January 2016. Their letter covered the lab's blood tests, including prothrombin-time tests, used to set doses for the blood-thinner warfarin. What did the letter formally say?",
     "answer": "the practices posed immediate jeopardy to patient health and safety",
     "choices": [
       "the practices posed immediate jeopardy to patient health and safety",
@@ -40712,20 +40686,20 @@
       "About forty degrees",
       "About eighty degrees"
     ],
-    "context": "Thicker foil gave about one in eight thousand coming back the way it came. On a bell curve, ninety degrees was not an unlikely outcome; it was off the bottom of the graph, and no amount of tinkering with the smeared-out positive charge could reach it. That is the point of the whole story: the plum pudding died because it had been made specific enough to be killed. A model that predicts nothing cannot be wrong, which is exactly what makes it useless. Being refuted by your own published prediction is a compliment to the model, not an insult. Source: https://grokipedia.com/page/Plum_pudding_model (sections 'Multiple Scattering Integration in 1910' and 'Geiger-Marsden Experiments', citing Thomson, 'On the Scattering of Rapidly Moving Electrified Particles,' 1910)",
+    "context": "Thicker foil gave about one in eight thousand coming back the way it came. On a bell curve, ninety degrees was not an unlikely outcome; it was off the bottom of the graph, and no amount of tinkering with the smeared-out positive charge could reach it. That is the point of the whole story: the plum pudding died because it had been made specific enough to be killed. A model that predicts nothing cannot be wrong, which is exactly what makes it useless. Being refuted by its own published prediction is a compliment to a model, not an insult. Source: https://grokipedia.com/page/Plum_pudding_model (sections 'Multiple Scattering Integration in 1910' and 'Geiger-Marsden Experiments', citing Thomson, 'On the Scattering of Rapidly Moving Electrified Particles,' 1910)",
     "topic": "thomsons-corpuscle-and-the-model-built-to-die"
   },
   {
     "tier": 5,
-    "question": "Steven Smale put the Thomson problem on his 1998 list of eighteen problems for the twenty-first century. Building his 1904 model of the atom had forced J.J. Thomson to ask where N equal charges will settle on a sphere so that their mutual repulsion energy is as small as it can be. For how many values of N has anyone actually proved the answer, and which are they?",
-    "answer": "Five of them - N = 2, 3, 4, 6 and 12",
+    "question": "Steven Smale put a close cousin of the Thomson problem on his 1998 list of eighteen problems for the twenty-first century. Building his 1904 atom had forced J.J. Thomson to ask where N equal charges settle on a sphere so their repulsion costs the least energy. How far has anyone got in proving the answers?",
+    "answer": "Proofs exist for a handful of small N and for 12",
     "choices": [
-      "Five of them - N = 2, 3, 4, 6 and 12",
-      "Five of them - N = 2, 3, 4, 5 and 6",
-      "Six of them - N = 2, 3, 4, 6, 8 and 20",
-      "Three of them - N = 2, 3 and 4 only"
+      "Proofs exist for a handful of small N and for 12",
+      "Proofs exist for every N up to about a hundred",
+      "Proofs exist for all N, from one general formula",
+      "Proofs exist for no N at all, not even for two"
     ],
-    "context": "The five proved cases are the ones you would draw by instinct: an antipodal pair, a triangle, a tetrahedron, an octahedron and an icosahedron. Everything else - including N = 5 - is computer search and conjecture. Smale listed it seventh of his eighteen problems for the twenty-first century. A model can be flatly wrong about the world and still leave behind a question nobody has answered 120 years later. Source: https://phys.org/news/2016-07-chip-smale-7th-unsolved-problem.html ; https://grokipedia.com/page/Plum_pudding_model (section 'The Thomson Problem'); https://mathworld.wolfram.com/ThomsonProblem.html",
+    "context": "The proved cases include the shapes a person would draw by instinct, an antipodal pair, a triangle, a tetrahedron, an octahedron and an icosahedron (N = 2, 3, 4, 6 and 12), and also N = 5, a triangular bipyramid, proved by Richard Schwartz with computer help (published 2013); a few more have been claimed since. Everything else is computer search and conjecture. Smale's seventh problem asks a close variant, with a logarithmic energy, about how the minimum grows as N gets large. A model can be flatly wrong about the world and still leave behind a question nobody has answered 120 years later. Source: https://en.wikipedia.org/wiki/Thomson_problem",
     "topic": "thomsons-corpuscle-and-the-model-built-to-die"
   },
   {
@@ -40894,7 +40868,7 @@
       "About 11 centimetres",
       "About 11 millimetres"
     ],
-    "context": "A GPS receiver converts clock time into distance at the speed of light, so a timing error of one nanosecond is about 30 centimetres of position error, and one microsecond is about 300 metres. The daily discrepancy is 38,640 nanoseconds; multiply that by 30 centimetres and you get roughly 11.6 kilometres, which is where the published figure of about 11.4 km per day comes from. Sources: Wikipedia, 'Error analysis for the Global Positioning System'; GIM International, 'GPS: Position, Time and Distance'; GNSS Metrics, 'Clock Error and Its Effect on Positioning'.",
+    "context": "A GPS receiver converts clock time into distance at the speed of light, so a timing error of one nanosecond is about 30 centimetres of position error, and one microsecond is about 300 metres. The daily discrepancy is 38,640 nanoseconds; multiplied by 30 centimetres, that gives roughly 11.6 kilometres, which is where the published figure of about 11.4 km per day comes from. Sources: Wikipedia, 'Error analysis for the Global Positioning System'; GIM International, 'GPS: Position, Time and Distance'; GNSS Metrics, 'Clock Error and Its Effect on Positioning'.",
     "topic": "time-really-runs-slower-down-here-and-your-phone-proves-it"
   },
   {
@@ -41281,36 +41255,10 @@
     "choices": [
       "the British Eugenics Society",
       "the Royal Society of London",
-      "the British Humanist Association",
+      "the Linnean Society of London",
       "the Zoological Society of London"
     ],
-    "context": "Huxley was vice-president of the British Eugenics Society from 1937 to 1944 and its president from 1959 to 1962. He also delivered the Galton memorial lecture in 1936 and 1962. Source: Aeon, 'Julian S. Huxley, the man who put eugenics into UNESCO'.",
-    "topic": "transhumanism-a-programme-not-a-prophecy"
-  },
-  {
-    "tier": 3,
-    "question": "Nick Bostrom and David Pearce, two philosophers, co-founded a group in 1998 that they called the World Transhumanist Association, decades after Julian Huxley gave the word 'transhumanism' its modern meaning. It was rebranded in 2008. What shorter name does the same group use today?",
-    "answer": "Humanity+",
-    "choices": [
-      "Humanity+",
-      "the Extropy Institute",
-      "the Long Now Foundation",
-      "the Machine Intelligence Research Institute"
-    ],
-    "context": "Max More had already written the Principles of Extropy in 1990 and co-founded the Extropy Institute in 1992; Bostrom and Pearce's WTA was the academic wing, renamed Humanity+ in 2008. Source: Wikipedia, 'Humanity+'.",
-    "topic": "transhumanism-a-programme-not-a-prophecy"
-  },
-  {
-    "tier": 3,
-    "question": "Ray Kurzweil, an American inventor and the top prophet of the transhumanist movement, set two dates in a 2005 book: human-level machine minds by 2029, and a full human-machine merger by 2045. In 2024 he stood by both dates. What was that 2005 book called?",
-    "answer": "The Singularity Is Near",
-    "choices": [
-      "The Singularity Is Near",
-      "The Age of Spiritual Machines",
-      "Superintelligence",
-      "The Fourth Age"
-    ],
-    "context": "Kurzweil's 2024 follow-up, The Singularity Is Nearer, reaffirmed 2029 and 2045. Nick Bostrom's Superintelligence (2014) is a related but distinct book by a different author. Source: Wikipedia, 'The Singularity Is Near'; 'The Singularity Is Nearer'.",
+    "context": "Huxley was vice-president of the British Eugenics Society from 1937 to 1944 and its president from 1959 to 1962. He also delivered the Galton memorial lecture in 1936 and 1962. He later became the first president of the British Humanist Association, founded in 1963. Sources: en.wikipedia.org/wiki/Julian_Huxley ; Aeon, 'Julian S. Huxley, the man who put eugenics into UNESCO'.",
     "topic": "transhumanism-a-programme-not-a-prophecy"
   },
   {
@@ -41328,28 +41276,28 @@
   },
   {
     "tier": 4,
-    "question": "Paul Allen, the Microsoft co-founder, and the researcher Mark Greaves wrote an MIT Technology Review essay in 2011 against Ray Kurzweil's timeline. Their central objection carried a name. What did they call the effect that would drag Kurzweil's timeline?",
-    "answer": "the complexity brake",
+    "question": "Paul Allen, the Microsoft co-founder, and the researcher Mark Greaves wrote an essay in MIT Technology Review in 2011 against Ray Kurzweil's timeline, which leans on ever-faster computers to deliver human-level thinking machines by 2029. What was their central objection?",
+    "answer": "Each finer layer of intelligence gets harder to model, not easier",
     "choices": [
-      "the complexity brake",
-      "the diminishing-return wall",
-      "the S-curve trap",
-      "the intelligence plateau"
+      "Each finer layer of intelligence gets harder to model, not easier",
+      "Chips will stop doubling in power well before 2029 arrives",
+      "No machine can ever be conscious, so none can truly think",
+      "Research money will dry up again, as it has before"
     ],
-    "context": "Allen and Greaves argued that as our models of intelligence get finer, the task of adding the next layer gets harder, not easier -- so raw processor gains do not translate into thinking machines on schedule. Source: Paul Allen, 'The Singularity Isn't Near', MIT Technology Review, 12 October 2011.",
+    "context": "Allen and Greaves called it the complexity brake: as models of intelligence get finer, adding the next layer gets harder, not easier, so raw processor gains do not translate into thinking machines on schedule. Their essay was titled 'The Singularity Isn't Near'. Source: Paul Allen, 'The Singularity Isn't Near', MIT Technology Review, 12 October 2011.",
     "topic": "transhumanism-a-programme-not-a-prophecy"
   },
   {
     "tier": 4,
-    "question": "A schoolboy reads Ray Kurzweil, the loudest 'singularity' predictor, on human-level AI and a human-machine merger. Many scientists say the claim is wrong. Yet Kurzweil did one thing most prophets avoid. What is his strongest point as a prophet, no matter how it turns out?",
-    "answer": "His predictions are testable on a fixed date",
+    "question": "A schoolboy reads Ray Kurzweil, the loudest 'singularity' predictor, on human-level AI and a human-machine merger. Many scientists say the claim is wrong. Yet Kurzweil did one thing most prophets avoid, and it counts in his favour however events turn out. What was it?",
+    "answer": "He named fixed years that anyone can check",
     "choices": [
-      "His predictions are testable on a fixed date",
-      "His predictions can never be checked",
-      "His predictions are hidden in vague language",
-      "His predictions only cover events already past"
+      "He named fixed years that anyone can check",
+      "He gave each prediction odds of coming true",
+      "He hedged each claim with a margin of error",
+      "He wrote only about machines already built"
     ],
-    "context": "The sentence appeared in an IEEE Spectrum survey of Singularity views in June 2008. Dennett and Hofstadter have both written skeptically on AI but are not the author of this line. Source: IEEE Spectrum, 'Tech Luminaries Address Singularity' (2008).",
+    "context": "Kurzweil set 2029 for machines matching human intelligence and 2045 for the merger of human and machine, and reaffirmed both dates in 2024 in The Singularity Is Nearer. A prediction tied to a year can fail in public, which is what makes it testable, whatever one thinks of the forecast. Source: en.wikipedia.org/wiki/The_Singularity_Is_Nearer",
     "topic": "transhumanism-a-programme-not-a-prophecy"
   },
   {
@@ -41362,7 +41310,7 @@
       "the second age of eugenics",
       "the great human enclosure"
     ],
-    "context": "Fukuyama, author of The End of History, expanded the argument in Our Posthuman Future (2002). The charge is presented with his name attached, not as this question's own verdict. Source: Francis Fukuyama, 'Transhumanism', Foreign Policy, September/October 2004.",
+    "context": "Fukuyama, author of The End of History, had already made the longer case in his 2002 book Our Posthuman Future. The charge is his, presented with his name attached. Source: Francis Fukuyama, 'Transhumanism', Foreign Policy, September/October 2004.",
     "topic": "transhumanism-a-programme-not-a-prophecy"
   },
   {
@@ -41380,28 +41328,28 @@
   },
   {
     "tier": 1,
-    "question": "A girl pours milk into a mug of coffee and stirs once. The white ribbon breaks into curls, and inside those curls are smaller curls, and inside those, smaller still. Where in physics does that swirling belong, one of the great unsolved problems sitting on a kitchen table?",
-    "answer": "turbulence",
+    "question": "A girl pours milk into a mug of coffee and stirs once. The white ribbon breaks into curls, and inside those curls are smaller curls, and smaller still: turbulence, happening on a kitchen table. What about it can no physicist alive predict?",
+    "answer": "Whether a given curl will drift left or right next",
     "choices": [
-      "turbulence",
-      "combustion",
-      "friction",
-      "buoyancy"
+      "Whether a given curl will drift left or right next",
+      "Whether a fast-stirred ribbon of milk breaks up",
+      "Whether the milk ends up evenly mixed through",
+      "Whether big curls break down into smaller ones"
     ],
-    "context": "Turbulence is arguably the most famous open problem of classical physics; the Feynman Lectures call it 'the last great unsolved problem'. Every candidate on this list is a real branch of fluid or thermal physics -- friction is real, buoyancy is real, combustion is real -- but only turbulence remains without a closed theory. Source: Feynman Lectures Vol. 1 Ch. 3.",
+    "context": "The equations of moving fluids are known, yet the path of any single eddy cannot be forecast, while what happens every time (a fast ribbon breaking up, big eddies shedding smaller ones, the milk mixing through) physics can say. The Feynman Lectures (Vol. 1, ch. 3) single out the analysis of circulating or turbulent fluids as a very old problem that nobody in physics has yet analysed mathematically in a satisfactory way. Source: https://www.feynmanlectures.caltech.edu/I_03.html",
     "topic": "turbulence-the-swirl-in-your-coffee-no-equation-tames"
   },
   {
     "tier": 1,
-    "question": "A gardener cracks a tap open only a hair, and the water slides out as a glassy column she can see straight through. She opens the tap all the way and the same water bursts into a foamy, chaotic gush. What would an engineer call that first, glassy regime?",
-    "answer": "laminar flow",
+    "question": "A gardener cracks a tap open a hair, and the water slides out as a glassy column she can see straight through. Opened wide, the same tap bursts into a foamy, chaotic gush. What is the water doing inside that glassy column?",
+    "answer": "Sliding along in smooth, parallel layers",
     "choices": [
-      "laminar flow",
-      "plug flow",
-      "Couette flow",
-      "Stokes flow"
+      "Sliding along in smooth, parallel layers",
+      "Spinning in one tight corkscrew as it falls",
+      "Holding a thin sleeve of air around itself",
+      "Shedding swirls too small for the eye to see"
     ],
-    "context": "Laminar flow (from the Latin 'lamina', a thin plate) is the smooth regime that fills the pipe with parallel layers before turbulence sets in. All four options name real regimes in fluid mechanics: plug flow is the idealisation where a fluid moves as a single block with no velocity gradient across the pipe; Couette flow is shear-driven flow between two moving surfaces; Stokes flow is the extreme low-Reynolds regime where viscosity dominates so completely that time reverses cleanly. Source: https://en.wikipedia.org/wiki/Laminar_flow",
+    "context": "Engineers call this smooth regime laminar flow, from the Latin 'lamina', a thin plate: the water moves in parallel layers that slide past one another without mixing. Open the tap wide and the layers break up into eddies of every size, which is turbulence. Source: https://en.wikipedia.org/wiki/Laminar_flow",
     "topic": "turbulence-the-swirl-in-your-coffee-no-equation-tames"
   },
   {
@@ -41432,15 +41380,15 @@
   },
   {
     "tier": 4,
-    "question": "A researcher logs acceleration readings in a wind tunnel and finds about 4 percent of them far higher than Andrey Kolmogorov's 1941 theory predicts. That theory said how the swirls in a moving fluid should scale from big to small. What is this well-known correction to his theory called?",
-    "answer": "intermittency",
+    "question": "A researcher logs acceleration readings in a wind tunnel and finds the biggest ones far larger, and far more frequent, than Andrey Kolmogorov's 1941 theory of how swirls scale from big to small allows. What do those readings reveal about turbulence?",
+    "answer": "It comes in rare, violent bursts, not as even noise",
     "choices": [
-      "intermittency",
-      "anomalous scaling",
-      "non-Gaussianity",
-      "anisotropy corrections"
+      "It comes in rare, violent bursts, not as even noise",
+      "It is evenly random everywhere, like radio static",
+      "It settles into a steady rhythm, like a ticking clock",
+      "It fades away smoothly as the swirls grow smaller"
     ],
-    "context": "Intermittency: turbulence is not uniformly noisy but punctuated by rare, violent bursts of vorticity, so the higher-order statistics are dominated by the tails. The She-Leveque (1994) scaling gives one phenomenological correction to Kolmogorov's exponents, but no first-principles derivation exists. Anomalous scaling and non-Gaussianity are related consequences of intermittency; anisotropy corrections address a different failure of the 1941 theory (directional biases from boundaries and shear). Source: https://arxiv.org/pdf/1806.04893",
+    "context": "The correction is called intermittency: turbulence is not uniformly noisy but punctuated by rare, violent bursts of swirling, so the extreme statistics are dominated by the tails. Kolmogorov's 1941 theory treated the small-scale swirling as evenly random. The She-Leveque (1994) scaling gives one phenomenological correction to his exponents, but no first-principles derivation exists. Source: https://arxiv.org/abs/1806.04893",
     "topic": "turbulence-the-swirl-in-your-coffee-no-equation-tames"
   },
   {
@@ -41449,11 +41397,11 @@
     "answer": "whether smooth solutions always stay smooth",
     "choices": [
       "whether smooth solutions always stay smooth",
-      "whether solutions are unique for turbulent initial data",
-      "whether energy dissipates anomalously as viscosity vanishes",
-      "whether all invariant measures are ergodic"
+      "whether smooth solutions exist even briefly",
+      "whether rough, weak solutions exist at all",
+      "whether smooth solutions are unique"
     ],
-    "context": "The Navier-Stokes existence-and-smoothness problem: given a smooth initial velocity field in three dimensions, does the solution remain smooth for all time, or can it develop a singularity in finite time? No one knows. The other three are also genuinely open questions in mathematical fluid dynamics: uniqueness for rough turbulent initial data, the Onsager conjecture on anomalous energy dissipation in the vanishing-viscosity limit, and ergodicity of invariant measures for the stochastic Navier-Stokes equations. Engineers simulate turbulent flow every day -- 'unsolved' means the pure-math regularity question is open, not that the equations are useless. Source: https://www.claymath.org/millennium/navier-stokes-equation/",
+    "context": "The Navier-Stokes existence-and-smoothness problem: given a smooth starting flow in three dimensions, does the solution stay smooth for all time, or can it develop a singularity in finite time? No one knows. Much else is settled: Jean Leray proved in 1934 that rough 'weak' solutions always exist, and a smooth start gives a smooth solution for at least a short time, unique while it lasts. Engineers simulate turbulent flow every day; 'unsolved' means the pure-math regularity question is open, not that the equations are useless. Sources: https://www.claymath.org/millennium/navier-stokes-equation/ ; https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness",
     "topic": "turbulence-the-swirl-in-your-coffee-no-equation-tames"
   },
   {
@@ -41531,7 +41479,7 @@
       "She paid them each year to return",
       "She was their family doctor's wife"
     ],
-    "context": "Rivers's role has been debated ever since; she believed at least some of what she was told about the study's value. Mahoney, Massey, and Staupers were prominent black American nurses of the era with no connection to Tuskegee. Source: Wikipedia, 'Eunice Rivers Laurie.'",
+    "context": "Rivers's role has been debated ever since; she believed at least some of what she was told about the study's value. Source: Wikipedia, 'Eunice Rivers Laurie.'",
     "topic": "tuskegee-forty-years-of-watching"
   },
   {
@@ -41549,28 +41497,15 @@
   },
   {
     "tier": 5,
-    "question": "Peter Buxtun, a Public Health Service investigator in San Francisco, filed formal protests inside the agency against the Tuskegee study in 1966 and 1967. He was overruled both times. The study did not end because a scientist noticed; it ended because he would not let it go. He quit and took the papers outside. What is the standard name for what he did?",
-    "answer": "Whistleblowing",
-    "choices": [
-      "Whistleblowing",
-      "Plea bargaining",
-      "Filibustering",
-      "Impeaching"
-    ],
-    "context": "Sencer was CDC Director in the late 1960s; Jenkins was a black PHS statistician who also raised concerns; Jones is the historian whose 1981 book 'Bad Blood' is the definitive account. Source: Wikipedia, 'Peter Buxtun.'",
-    "topic": "tuskegee-forty-years-of-watching"
-  },
-  {
-    "tier": 5,
     "question": "An Associated Press reporter took Peter Buxtun's stack of Tuskegee study documents in 1972, after Buxtun had been overruled inside the Public Health Service. The reporter's story broke on July 25, 1972 and ran on more than 100 front pages the next morning. What happened to the study once the story ran?",
     "answer": "It was shut down within months",
     "choices": [
       "It was shut down within months",
-      "It quietly continued for another decade",
-      "The Supreme Court ruled it legal",
-      "Congress voted to expand it"
+      "It was paused, reviewed and then resumed",
+      "It ran on until its last subject died",
+      "It was handed to a university to finish"
     ],
-    "context": "The study was terminated in November 1972, four months after Heller's story ran. Hersh, Miller, and Bigart were prominent American investigative reporters of the era who did not cover Tuskegee. Source: Wikipedia, 'Jean Heller.'",
+    "context": "The study was terminated in November 1972, four months after Jean Heller's Associated Press story ran. Source: Wikipedia, 'Jean Heller.'",
     "topic": "tuskegee-forty-years-of-watching"
   },
   {
