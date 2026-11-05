@@ -31469,7 +31469,7 @@
       "No — its truth is a lucky coincidence, the sentences never forced it",
       "No — but only because the Earth is not a perfect geometric sphere"
     ],
-    "context": "Here every sentence is true AND the conclusion is true, yet the argument is invalid — the conclusion's truth is a coincidence the form never forced. True sentences do not make a good argument. Source: Internet Encyclopedia of Philosophy, 'Validity and Soundness' (iep.utm.edu/val-snd).",
+    "context": "Here both starting sentences are true and the conclusion is false, which shows the shape is invalid: a valid form never lets true premises lead to a false conclusion. The same shape can land on a true conclusion ('all basketballs are round; the ball in the gym closet is round; so it is a basketball'), but then the truth is a lucky coincidence the form never forced. True sentences alone do not make a good argument. Source: Internet Encyclopedia of Philosophy, 'Validity and Soundness' (iep.utm.edu/val-snd).",
     "topic": "the-syllogism-and-valid-form"
   },
   {
@@ -31631,14 +31631,14 @@
   {
     "tier": 5,
     "question": "John Snow, a London doctor, spotted a cluster in 1854: cholera deaths bunched around one water pump on Broad Street. A cluster noticed after the fact is no evidence by itself, and Snow did not stop there and call the pump guilty. What did he do next?",
-    "answer": "He went and gathered fresh evidence the cluster alone could not give, tracing which homes drank from a tainted supplier",
+    "answer": "He went and gathered fresh evidence the cluster alone could not give, checking door to door who drank the pump's water",
     "choices": [
-      "He went and gathered fresh evidence the cluster alone could not give, tracing which homes drank from a tainted supplier",
+      "He went and gathered fresh evidence the cluster alone could not give, checking door to door who drank the pump's water",
       "He measured the cluster precisely and named the pump as the cause once the death count around it was exact",
       "He went looking for the same bunching near other pumps and waited until a second cluster matched the first one",
       "He trusted the cluster because it was so large, since a bunch of deaths that big could not happen by mere chance"
     ],
-    "context": "Noticing a chance cluster is fine; the fallacy is treating the cluster you noticed as its own proof. Snow did not stop at the bunching around the Broad Street pump -- he went out for fresh, independent evidence, tracing which households drank from which water company so the new data could confirm or kill the hunch. As the Fallacy Files puts it, a cluster 'is the basis not for a causal conclusion, but for the formation of a causal hypothesis which needs to be tested.' Source: Fallacy Files (fallacyfiles.org/texsharp.html); Wikipedia: Texas sharpshooter fallacy.",
+    "context": "Noticing a chance cluster is fine; the fallacy is treating the cluster you noticed as its own proof. Snow did not stop at the bunching around the Broad Street pump -- he went door to door for fresh, independent evidence, checking which of the dead had drunk the pump's water and why some neighbours escaped (the brewery's workers drank its beer, and the workhouse had its own well). As the Fallacy Files puts it, a cluster 'is the basis not for a causal conclusion, but for the formation of a causal hypothesis which needs to be tested.' Source: Fallacy Files (fallacyfiles.org/texsharp.html); Wikipedia: 1854 Broad Street cholera outbreak.",
     "topic": "the-texas-sharpshooter-drawing-the-target-after-you-shoot"
   },
   {
@@ -31833,7 +31833,7 @@
       "Acts as if nothing has changed, hiding the loss",
       "Becomes an enemy, bitter over the wasted time"
     ],
-    "context": "Aristotle says utility and pleasure friendships are 'easily dissolved... for if they cease to be pleasant or useful to one another, their love ceases.' Only the friend who stays for the person, not the benefit, was a true friend. Source: Aristotle, Nicomachean Ethics, Book VIII (Peters trans., Standard Ebooks).",
+    "context": "Aristotle says utility and pleasure friendships are 'easily dissolved... for if they cease to be pleasant or useful to one another, their love ceases.' He still counts them as friendships, lesser ones that resemble the friendship of good men; what marks them is that the bond lasts no longer than the benefit. Only the friendship that rests on the person himself survives the test. Source: Aristotle, Nicomachean Ethics, Book VIII.3-4 (Peters trans., Standard Ebooks; classics.mit.edu/Aristotle/nicomachaen.8.viii.html).",
     "topic": "the-three-kinds-of-friendship"
   },
   {
@@ -31857,7 +31857,7 @@
       "Goodwill is only the seed; friendship is the grown thing, needing time and a bond returned",
       "Goodwill is selfish at root; friendship must instead spring from cold and willed duty alone",
       "Goodwill is far too mild; friendship must instead burn with a fierce and consuming passion",
-      "Goodwill is owed to all alike; friendship is instead owed only to ones own flesh and blood"
+      "Goodwill is owed to all alike; friendship is instead owed only to one's own flesh and blood"
     ],
     "context": "Aristotle: 'well-wishing is the germ of friendship, in the same way as pleasure in the sight of a person is the germ of love.' Goodwill is the seed; real friendship is the grown thing that needs shared time and mutual awareness. Source: Aristotle, Nicomachean Ethics, Book IX (Standard Ebooks, Peters trans.).",
     "topic": "the-three-kinds-of-friendship"
@@ -31903,7 +31903,7 @@
   },
   {
     "tier": 3,
-    "question": "The court hinted it would spare Socrates, about seventy and on trial for his life, if he promised to give up philosophy and live out his old age in silence. He threw the bargain back. What did he tell the jury he would do instead?",
+    "question": "Socrates, about seventy and on trial for his life, put a bargain to the jurors that none of them had offered: suppose they let him go free on one condition, no more philosophy and an old age lived out in silence. He told them he would refuse it. What did he say he would do instead?",
     "answer": "Keep teaching and questioning people, as long as he had breath",
     "choices": [
       "Keep teaching and questioning people, as long as he had breath",
@@ -31911,7 +31911,7 @@
       "Pay over whatever fine the court chose to set against him",
       "Beg the gods to forgive him and turn the city to mercy"
     ],
-    "context": "\"I shall obey God rather than you, and while I have life and strength I shall never cease from the practice and teaching of philosophy.\" Source: Plato, Apology; famous-trials.com/socrates; classics.mit.edu.",
+    "context": "Socrates raised the offer himself, as a supposition: 'if this was the condition on which you let me go, I should reply: Men of Athens, I honour and love you; but I shall obey God rather than you, and while I have life and strength I shall never cease from the practice and teaching of philosophy.' Source: Plato, Apology 29c-d (Jowett trans., classics.mit.edu/Plato/apology.html); famous-trials.com/socrates.",
     "topic": "the-trial-of-socrates"
   },
   {
@@ -31955,7 +31955,7 @@
   },
   {
     "tier": 5,
-    "question": "Critias, once a student of Socrates, had led the murderous Thirty Tyrants, and Alcibiades, another, had turned traitor as a general. Many Athenians blamed the old questioner for the city's wounds. Yet his accusers never charged him over those old ties. Why not prosecute him for the real grievance?",
+    "question": "Critias, once a student of Socrates, had led the murderous Thirty Tyrants, and Alcibiades, another, had turned traitor as a general. Many Athenians blamed the old questioner for the city's wounds. Yet his accusers never charged him over those old ties. What reason do many historians give for that?",
     "answer": "A recent amnesty made it illegal to charge him for those old political ties",
     "choices": [
       "A recent amnesty made it illegal to charge him for those old political ties",
@@ -31963,7 +31963,7 @@
       "No one could prove the two traitors had ever studied with Socrates",
       "The betrayals had taken place too far away from the city of Athens"
     ],
-    "context": "After the Thirty Tyrants fell, a 403 BC amnesty barred prosecuting Socrates directly for his ties to Critias and Alcibiades -- so the case was built on impiety instead. Source: Stanford Encyclopedia of Philosophy: Socrates; famous-trials.com.",
+    "context": "After the Thirty Tyrants fell, an amnesty of 403 BC barred prosecutions over the old political wrongs. On a common reading among historians, that is why his accusers could not charge Socrates over his ties to Critias and Alcibiades and built the case on impiety instead; other scholars hold that the religious charges were meant in earnest. Sources: Grokipedia, 'Trial of Socrates'; Wikipedia, 'Trial of Socrates'; famous-trials.com/socrates.",
     "topic": "the-trial-of-socrates"
   },
   {
@@ -32103,10 +32103,10 @@
     "choices": [
       "Doing a harm is generally worse than merely allowing one, so the duty not to kill outranks the duty to save.",
       "Whatever single course of action ends up saving the most lives is the right one to take in both cases alike.",
-      "A harm that you inflict from up close is always worse than the very same harm you inflict from a distance.",
-      "You owe nothing whatever to strangers, so neither one of the two rescues can ever truly be required of you."
+      "A harm inflicted from up close is always worse than the very same harm inflicted from a long way off.",
+      "Nobody owes anything at all to strangers, so neither one of the two rescues can ever truly be required."
     ],
-    "context": "This is Foot's doing-versus-allowing answer: a negative duty (do not kill) generally outranks a positive duty (save the five). The contested claim presented here -- without ruling on it -- is that killing-as-a-means is a different moral act from letting-die, not just a worse score on a body count. A competent utilitarian who picks the most-lives option is not thereby wrong; this is a live dispute. (Foot 1967; Stanford Encyclopedia of Philosophy, 'Doing vs. Allowing Harm.')",
+    "context": "This is Foot's doing-versus-allowing answer: a negative duty (do not kill) generally outranks a positive duty (save the five). The claim, Foot's and still disputed, is that killing is a different moral act from letting die, not just a worse score on a body count. A utilitarian who picks the most-lives option holds a serious rival view; it is simply not Foot's rule. (Foot 1967; Stanford Encyclopedia of Philosophy, 'Doing vs. Allowing Harm.')",
     "topic": "the-trolley-problem"
   },
   {
@@ -32652,7 +32652,7 @@
       "Silence and ash",
       "Numbers and noise"
     ],
-    "context": "Parfit's image in Reasons and Persons (1984): the swarm-world Z is billions of lives each only just barely worth living, and the total-happiness sum 'prefers' it to the smaller flourishing world. He named this the Repugnant Conclusion and judged it unacceptable. Source: Parfit (1984); plato.stanford.edu/entries/repugnant-conclusion.",
+    "context": "Parfit's swarm-world Z holds billions of lives each only just barely worth living, and the total-happiness sum 'prefers' it to the smaller flourishing world; in Reasons and Persons (1984) he named this the Repugnant Conclusion and judged it unacceptable. The line that the people of Z 'never suffer; but all they have is muzak and potatoes' comes from his 1986 essay 'Overpopulation and the Quality of Life', and the slide through Mozart, Haydn and Venice is his image too. Source: Parfit (1984, 1986); plato.stanford.edu/entries/repugnant-conclusion.",
     "topic": "the-utility-monster-and-the-repugnant-conclusion"
   },
   {
@@ -33822,7 +33822,7 @@
       "Placing it inside art's long history and theory",
       "Accepting that an art institution has crowned it art"
     ],
-    "context": "Following Wittgenstein, Morris Weitz argued in 'The Role of Theory in Aesthetics' (1956) that art is an 'open concept' with no shared essence, only overlapping 'family resemblances' like games. Each new case forces us to decide whether to extend the word 'art,' not to discover a hidden rule. The other choices are rival answers a different thinker would give — that we detect a hidden essence (the essentialist view Weitz rejects), that we place it inside art's history and theory (Danto), or that an art-world institution has conferred the status (Dickie). Source: Morris Weitz (1956); Stanford Encyclopedia of Philosophy, 'The Definition of Art'.",
+    "context": "Following Wittgenstein, Morris Weitz argued in 'The Role of Theory in Aesthetics' (1956) that art is an 'open concept' with no shared essence, only overlapping 'family resemblances' like games. Each new case calls for a decision whether to extend the word 'art,' not the discovery of a hidden rule. Rival accounts answer differently: essentialists, whom Weitz rejects, look for a hidden essence; Arthur Danto places the object inside art's history and theory; George Dickie holds that an art-world institution confers the status. Source: Morris Weitz (1956); Stanford Encyclopedia of Philosophy, 'The Definition of Art'.",
     "topic": "what-is-art-duchamps-fountain"
   },
   {
@@ -34373,15 +34373,15 @@
   },
   {
     "tier": 3,
-    "question": "To shake his students, Xunzi asked them about people who pray for rain and then see it fall. Heaven, he thought, was no god watching over anyone, only the plain, uncaring workings of nature: the sky, the seasons, the weather. His answer showed why he left the fixing of human nature wholly to people. Why, by his answer, did the rain fall?",
-    "answer": "Because the sky is just plain Nature with no care for us, so the rain falls for no reason at all",
+    "question": "Xunzi, for whom human nature was crooked and in need of straightening, posed a plain case in his Discourse on Heaven: people pray for rain, and then the rain falls. 'Why?' he asked, and answered it himself. Why, by his answer, did the rain fall?",
+    "answer": "Because Heaven is only nature and cares for no one, so there is no particular reason for it",
     "choices": [
-      "Because the sky is just plain Nature with no care for us, so the rain falls for no reason at all",
+      "Because Heaven is only nature and cares for no one, so there is no particular reason for it",
       "Because Heaven heard the prayer and rewarded the faithful, which proves the cosmos cares for the good",
-      "Because the rain was always coming, and the prayer merely lets people feel they had caused it",
+      "Because a good ruler's virtue moves Heaven, so rain comes only to a land that is justly governed",
       "Because the ritual of prayer itself stirs the clouds, which is exactly why ritual must never be skipped"
     ],
-    "context": "Xunzi treated Heaven (Tian) as regular Nature, not a moral rewarder: 'Heaven does not suspend winter because people dislike cold; earth does not contract its breadth because people dislike traveling great distances.' On prayer (Watson): 'You pray for rain and it rains. Why? For no particular reason, I say.' Because the cosmos will not fix human nature, the whole burden of straightening falls on human culture and effort. Sources: Facts and Details (Burton Watson trans.), https://factsanddetails.com/china/cat3/sub69/entry-5567.html ; IEP: Xunzi, https://iep.utm.edu/xunzi/",
+    "context": "Xunzi treated Heaven (Tian) as regular Nature, not a moral rewarder: 'Heaven does not suspend winter because people dislike cold; earth does not contract its breadth because people dislike traveling great distances.' On prayer (Watson): 'You pray for rain and it rains. Why? For no particular reason, I say.' It would have rained just the same without the prayer. Heaven, as the Internet Encyclopedia of Philosophy puts it, 'acts as it always does, neither helping the good or harming the bad,' so neither a prayer nor a ruler's virtue moves the weather; officials still pray in a drought for the rite's effect on people, not on the sky. Because the cosmos will not fix human nature, the whole burden of straightening falls on human culture and effort. Sources: Facts and Details (Burton Watson trans.), https://factsanddetails.com/china/cat3/sub69/entry-5567.html ; IEP: Xunzi, https://iep.utm.edu/xunzi/",
     "topic": "xunzi-human-nature-is-crooked"
   },
   {
@@ -34698,7 +34698,7 @@
   },
   {
     "tier": 3,
-    "question": "A single log is huge to an ant and tiny to an ox, Zhuangzi pointed out, so big and small live not in the log but in whoever is looking. He closed the same chapter of his book with the butterfly dream, stretching that move to one last, startling place. What did the dream stretch it to show?",
+    "question": "Men call two famous women the great beauties of their age, a sage in Zhuangzi's book points out, yet at the sight of them fish would dive, birds fly off and deer bolt. So beauty, he suggests, lives in the looker, not the face. The same chapter ends with the butterfly dream, which stretches that move to one last, startling place. What does the dream stretch it to show?",
     "answer": "That even real-versus-dreamed is a line the viewer draws, not one the world itself carries",
     "choices": [
       "That even real-versus-dreamed is a line the viewer draws, not one the world itself carries",
@@ -34706,7 +34706,7 @@
       "That a butterfly and a man are, deep down, one and the same kind of creature",
       "That patient argument can at last settle which of the two states a person is really in"
     ],
-    "context": "The chapter is titled 齊物論 (Qiwulun), 'Discussion on Making All Things Equal,' the philosophical heart of the whole book. It turns on the relativity of shi-fei (是非, 'this/not-this,' i.e. right/wrong) judgments: 'Any thing can be a this; any thing can be a that,' depending on where you stand. The log-to-ant-and-ox move says big and small live in the looker, not the log; the dream is the capstone -- if even waking-vs-dreaming is a line we draw rather than one the world supplies, then so is every other 'this is real / that is not' boundary. Note the dream does NOT say the waking world is a mere illusion to flee; it unsettles the boundary, it does not pick the dreaming side. Source: Stanford Encyclopedia of Philosophy: Zhuangzi (Qiwulun, shi-fei); IEP: Zhuangzi; Burton Watson trans. ch. 2.",
+    "context": "The chapter is titled 齊物論 (Qiwulun), 'Discussion on Making All Things Equal,' the philosophical heart of the whole book. It turns on the relativity of shi-fei (是非, 'this/not-this,' i.e. right/wrong) judgments: in Watson's version, 'Everything has its \"that,\" everything has its \"this.\"' The sage Wang Ni drives the point home with the two beauties: 'if fish saw them they would dive to the bottom of the stream,' birds would fly away and deer would run, so which of the four 'knows how to fix the standard of beauty for the world?' The dream is the capstone: if even waking-versus-dreaming is a line people draw rather than one the world supplies, then so is every other 'this is real / that is not' boundary. The dream does NOT say the waking world is a mere illusion to flee; it unsettles the boundary without picking the dreaming side. Source: Burton Watson trans., The Complete Works of Chuang Tzu, ch. 2 (terebess.hu/english/chuangtzu.html); Stanford Encyclopedia of Philosophy: Zhuangzi.",
     "topic": "zhuangzis-butterfly-dream"
   },
   {
@@ -34724,28 +34724,28 @@
   },
   {
     "tier": 4,
-    "question": "Lady Li, in a story Zhuangzi told, was a border guard's daughter taken captive in war. She wept until her robe was soaked, sure her fate was a horror, but once settled amid the palace's comforts she wondered why she had cried. Zhuangzi asked how he could know the dead do not wonder why they clung to life. What was his point in pairing her tears with that question?",
-    "answer": "That being sure a state will be dreadful proves nothing until you have lived it",
+    "question": "Lady Li, in a story Master Changwu tells in Zhuangzi's book, was a border guard's daughter taken captive. She wept until her robe was soaked, sure of a horrible fate, but once settled amid the palace's comforts she wondered why she had cried. Master Changwu asks how he can know the dead do not wonder why they clung to life. What is his point in pairing the two?",
+    "answer": "That being sure a state will be dreadful proves nothing until one has lived it",
     "choices": [
-      "That being sure a state will be dreadful proves nothing until you have lived it",
+      "That being sure a state will be dreadful proves nothing until one has lived it",
       "That captives always come to love the courts of the men who captured them",
       "That weeping is a sign a person has badly misjudged the true situation",
       "That the dead can speak to the living and report what death is truly like"
     ],
-    "context": "It is the same skeptical move as the butterfly, aimed now at a feeling we never question -- the preference for being awake and alive. Lady Li was CERTAIN her new state was a horror, then found it was bliss; so present certainty about which state is better is worthless evidence. Watson: 'How do I know that the dead do not wonder why they ever longed for life?' Source: Burton Watson trans., Chuang Tzu ch. 2.",
+    "context": "It is the same skeptical move as the butterfly, aimed now at a feeling people almost never question: the preference for being awake and alive. Lady Li was CERTAIN her new state was a horror, then found it was bliss, so present certainty about which state is better is worthless evidence. In Watson's translation the speaker is Chang Wu-tzu (Master Changwu): 'How do I know that the dead do not wonder why they ever longed for life?' Source: Burton Watson trans., The Complete Works of Chuang Tzu, ch. 2 (terebess.hu/english/chuangtzu.html).",
     "topic": "zhuangzis-butterfly-dream"
   },
   {
     "tier": 4,
-    "question": "Zhuangzi wrote that people so sure they are awake, calling this man a ruler and that one a herdsman, are dreaming. Confucius is dreaming, he went on, and so is whoever hears this. Then he added, \"and when I say you are dreaming, I am dreaming, too.\" He even dubbed his own claim the \"Supreme Swindle.\" Why did that turn on himself keep the passage from being a smug gotcha?",
+    "question": "Master Changwu, a sage in Zhuangzi's book, tells a questioner that people sure they are awake are dreaming, and that Confucius and the questioner are dreaming too. Then he adds, \"and when I say you are dreaming, I am dreaming, too,\" and dubs such words the \"Supreme Swindle.\" Why does that turn on himself keep the passage from being a smug gotcha?",
     "answer": "Because his doubt now claims no solid ground for itself that it denies to everyone else",
     "choices": [
       "Because his doubt now claims no solid ground for itself that it denies to everyone else",
       "Because it quietly shows he believed all along that his own doubt was really false",
-      "Because it proves Confucius was the one rival thinker Zhuangzi truly admired",
+      "Because it proves Confucius was the one rival thinker the sage truly admired",
       "Because calling it a swindle admits he judged his own teaching to be worthless"
     ],
-    "context": "Watson: 'Yet the stupid believe they are awake... Confucius and you are both dreaming! And when I say you are dreaming, I am dreaming, too. Words like these will be labeled the Supreme Swindle.' 'Supreme Swindle' renders 弔詭 (diao gui). A smug skeptic exempts himself -- everyone ELSE is fooled, but I see clearly. Zhuangzi refuses that escape: by folding his own statement into the doubt, he keeps no firm patch of ground for himself, so it isn't 'you're all fooled but I'm not.' He is not claiming to be the one who woke, and he plainly does not think his own doubt is false. Source: Burton Watson trans., Chuang Tzu ch. 2.",
+    "context": "In Watson's translation the speaker is Chang Wu-tzu (Master Changwu), answering Chü Ch'üeh-tzu: 'Yet the stupid believe they are awake... Confucius and you are both dreaming! And when I say you are dreaming, I am dreaming, too. Words like these will be labeled the Supreme Swindle.' 'Supreme Swindle' renders 弔詭 (diao gui). A smug skeptic exempts himself: everyone ELSE is fooled, 'but I see clearly.' Master Changwu refuses that escape: by folding his own statement into the doubt, he keeps no firm patch of ground for himself, so the passage never says 'all of you are fooled but not me.' He does not claim to be the one who woke, and he plainly does not think his own doubt is false. Source: Burton Watson trans., The Complete Works of Chuang Tzu, ch. 2 (terebess.hu/english/chuangtzu.html).",
     "topic": "zhuangzis-butterfly-dream"
   },
   {
@@ -34763,7 +34763,7 @@
   },
   {
     "tier": 5,
-    "question": "A teacher bringing Zhuangzi's butterfly dream to class finds the scholars split, and the text backs both camps. One reads it as a lesson in doubt: from inside experience, no one can check which state is real. The other reads it as a lesson in flow: waking and dreaming are not truly separate, so the puzzle dissolves. Zhuangzi never tips his hand. How should she treat the two readings?",
+    "question": "A teacher bringing Zhuangzi's butterfly dream to class finds the scholars split. One camp reads it as a lesson in doubt: from inside experience, no one can check which state is real. The other reads it as a lesson in flow: waking and dreaming are not truly separate, so the puzzle dissolves. Zhuangzi never tips his hand. How should she treat the two readings?",
     "answer": "As genuine rivals, since the scene fits each, so neither camp can be called plainly wrong",
     "choices": [
       "As genuine rivals, since the scene fits each, so neither camp can be called plainly wrong",
@@ -34771,7 +34771,7 @@
       "As proof that the older of the two readings must be what Zhuangzi truly meant",
       "As evidence the story is too muddled to carry any real lesson worth teaching"
     ],
-    "context": "Reading (A), SKEPTICAL: waking-certainty is unfounded; 'I exist as a man' is, like Descartes' cogito, unprovable from inside experience. Reading (B), TRANSFORMATION: the waking/dreaming boundary is just another false dichotomy (like good/bad, useful/useless), so the right response is to flow with the metamorphosis, not escape the doubt. Scholars line up on both sides; the scene supports both, which is exactly why a quiz can present them as competing positions without a verdict. Source: Stanford Encyclopedia of Philosophy: Zhuangzi (shi-fei perspectivism); Wikipedia: Zhuangzi (book), 'the distinction between waking and dreaming is another false dichotomy.'",
+    "context": "The SKEPTICAL reading: certainty of being awake is unfounded, and 'I am a man, awake' cannot be proved from inside experience, the same worry Descartes later raised in his dream argument. The TRANSFORMATION reading: the waking/dreaming boundary is just another false dichotomy (like good/bad, useful/useless), so the right response is to flow with the metamorphosis, not escape the doubt. Scholars line up on both sides, and the scene supports both. Source: Stanford Encyclopedia of Philosophy: Zhuangzi (shi-fei perspectivism); Wikipedia: Zhuangzi (book), 'the distinction between waking and dreaming is another false dichotomy.'",
     "topic": "zhuangzis-butterfly-dream"
   }
 ]
