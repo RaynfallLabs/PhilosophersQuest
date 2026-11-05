@@ -3113,7 +3113,7 @@
     "choices": [
       "at the end of the day",
       "the runner sprinted like a hunted deer",
-      "her argument was a house of cards",
+      "her laugh rattled like coins",
       "the cliff rose sheer above the sea"
     ],
     "context": "AT THE END OF THE DAY is a top-list cliche opener. The other three are fresh images.",
@@ -3135,14 +3135,14 @@
   {
     "tier": 3,
     "question": "A poet tells a class that 'the mouth of a river' and 'the hands of a clock' are 'dead metaphors.' What does she mean by that label?",
-    "answer": "a metaphor used so often it no longer registers as figurative -- like \"the FOOT of the bed\"",
+    "answer": "a metaphor so familiar that nobody notices its picture",
     "choices": [
-      "a metaphor used so often it no longer registers as figurative -- like \"the FOOT of the bed\"",
-      "a metaphor that is factually incorrect",
-      "a metaphor used in a poem that failed",
-      "a metaphor invented after the writer died"
+      "a metaphor so familiar that nobody notices its picture",
+      "a metaphor that mixes two pictures that clash",
+      "a metaphor borrowed from a dead language like Latin",
+      "a metaphor that was accurate once but is now out of date"
     ],
-    "context": "A bed has no literal feet. Most speakers no longer see the image. Dead metaphors are usually harmless; cliches are usually not.",
+    "context": "A river has no literal mouth and a clock no literal hands, yet most speakers no longer see the image. Dead metaphors are usually harmless; cliches are usually not. A figure that jams two clashing images together is a mixed metaphor, a different fault.",
     "topic": "dead-metaphors-and-cliches-think-outside-the-box"
   },
   {
@@ -3151,11 +3151,11 @@
     "answer": "never use a metaphor, simile, or figure of speech you are used to seeing in print",
     "choices": [
       "never use a metaphor, simile, or figure of speech you are used to seeing in print",
-      "always use at least one metaphor per paragraph",
-      "metaphors should always be from nature",
-      "metaphors are always wrong in political writing"
+      "always use at least one fresh metaphor in every paragraph",
+      "never use a metaphor drawn from anything but nature",
+      "never use a metaphor at all in political writing"
     ],
-    "context": "Orwell's freshness rule. If you have seen it in print, so has the reader, and it has died.",
+    "context": "Orwell's freshness rule. If a writer has seen a figure in print, so has the reader, and it has died.",
     "topic": "dead-metaphors-and-cliches-think-outside-the-box"
   },
   {
@@ -3174,14 +3174,14 @@
   {
     "tier": 1,
     "question": "A vet's pamphlet reads, 'Cats are different ___ dogs.' In formal American English, which word is safest?",
-    "answer": "from (most widely accepted in formal writing on both sides of the Atlantic)",
+    "answer": "from",
     "choices": [
-      "from (most widely accepted in formal writing on both sides of the Atlantic)",
-      "than (common in speech; some traditionalists dislike it)",
-      "to (standard in British English; marks the writer as British)",
-      "against (opposition, not comparison)"
+      "from",
+      "than",
+      "to",
+      "against"
     ],
-    "context": "DIFFERENT FROM = the safe formal choice. THAN is standard in American speech; TO marks British English.",
+    "context": "DIFFERENT FROM = the safe formal choice. THAN is common in American speech; TO marks British English; AGAINST sets things in opposition and never follows 'different' in a comparison.",
     "topic": "different-from-different-than-different-to"
   },
   {
@@ -3194,7 +3194,7 @@
       "different since (as in \"different since yesterday\")",
       "different against (as in \"different against the wall\")"
     ],
-    "context": "DIFFERENT THAN is standard American speech and journalism. Some strict traditionalists dislike it, but modern usage guides accept it.",
+    "context": "DIFFERENT THAN is standard in American speech, especially before a clause. Some strict traditionalists dislike it, but Merriam-Webster and Chicago accept it there; in a formal essay 'different from what I expected' is the safer choice.",
     "topic": "different-from-different-than-different-to"
   },
   {
@@ -3213,14 +3213,14 @@
   {
     "tier": 4,
     "question": "An American student writes 'different to what I expected' in a school essay. What is the verdict on that wording?",
-    "answer": "it marks the writer as British; formal American writing prefers \"from\" or \"than\"",
+    "answer": "it reads as British; an American essay would use \"from\"",
     "choices": [
-      "it marks the writer as British; formal American writing prefers \"from\" or \"than\"",
-      "it is a grammatical error in all dialects",
-      "it is the safest formal choice",
-      "it is required in all essays"
+      "it reads as British; an American essay would use \"from\"",
+      "it is a grammatical error in every dialect of English",
+      "it is the safest choice in formal American writing",
+      "it is casual American speech, fine only out loud"
     ],
-    "context": "DIFFERENT TO is British. In an American essay, it reads as out-of-register.",
+    "context": "DIFFERENT TO is British. In an American essay it reads as out of register, and 'different from what I expected' is safe in any register. Merriam-Webster also accepts 'different than' before a clause, but some teachers still mark it.",
     "topic": "different-from-different-than-different-to"
   },
   {
@@ -3317,32 +3317,32 @@
   {
     "tier": 1,
     "question": "A teacher's note reads, 'EACH of the students HAVE a book on the desk.' Which correction is right?",
-    "answer": "HAVE should be HAS -- EACH is always singular",
+    "answer": "HAVE should be HAS -- EACH is the singular subject",
     "choices": [
-      "HAVE should be HAS -- EACH is always singular",
+      "HAVE should be HAS -- EACH is the singular subject",
       "STUDENTS should be STUDENT -- STUDENTS is plural",
       "DESK should be DESKS -- one book per desk",
-      "The sentence is correct as written"
+      "nothing -- the sentence is correct as written"
     ],
     "context": "EACH picks out ONE at a time, so its verb is singular (HAS). The plural noun after the preposition (STUDENTS) does not change the rule. Source: Chicago Manual of Style 17e section 5.69.",
     "topic": "each-and-every-always-singular-no-matter-what-follows"
   },
   {
     "tier": 2,
-    "question": "A mother texts the other parents, 'EVERY boy and girl ___ at the party by seven.' Which verb fits?",
+    "question": "A mother texts the other parents the day after the party, 'EVERY boy and girl ___ there by seven.' Which verb fits?",
     "answer": "was -- EVERY makes even a compound subject singular",
     "choices": [
       "was -- EVERY makes even a compound subject singular",
-      "were -- boy AND girl is plural",
-      "are -- present tense required",
-      "is -- present tense singular"
+      "were -- BOY AND GIRL make a plural subject",
+      "are -- two nouns joined by AND need a plural",
+      "is -- EVERY makes the verb singular and present"
     ],
     "context": "EVERY forces the compound-AND subject to singular: 'Every boy and girl WAS at the party.' The rule beats the normal 'AND makes it plural.' Source: Merriam-Webster's Dictionary of English Usage, 'each.'",
     "topic": "each-and-every-always-singular-no-matter-what-follows"
   },
   {
     "tier": 3,
-    "question": "A tutor lists 'each,' 'every,' 'either' and 'neither' on a card. What is that category of pronoun called?",
+    "question": "A tutor writes 'each of the boys,' 'either of the roads' and 'neither of the twins' on a card. What kind of pronoun opens all three phrases?",
     "answer": "Distributive pronoun",
     "choices": [
       "Distributive pronoun",
@@ -3350,7 +3350,7 @@
       "Relative pronoun",
       "Demonstrative pronoun"
     ],
-    "context": "DISTRIBUTIVE means distributed one at a time. Because they pick out one, they always take a singular verb -- no matter what plural noun follows. Source: Grokipedia 'Distributive pronoun' (2026-09-05).",
+    "context": "DISTRIBUTIVE means distributed one at a time. Because these pronouns pick out one, they take a singular verb -- no matter what plural noun follows. EVERY works the same way but is only a determiner: it never stands alone as a pronoun. Source: Grokipedia 'Distributive pronoun' (2026-09-05).",
     "topic": "each-and-every-always-singular-no-matter-what-follows"
   },
   {
@@ -3473,14 +3473,14 @@
   {
     "tier": 4,
     "question": "An editor frowns at the line \"Neither my cousins nor my aunt is driving.\" The 'neither...nor' pair obeys the rule and still sounds awkward. What is the practical workaround?",
-    "answer": "reorder the subjects so the plural or the natural-sounding one is closer to the verb",
+    "answer": "reorder the subjects so the plural one sits next to the verb",
     "choices": [
-      "reorder the subjects so the plural or the natural-sounding one is closer to the verb",
-      "always use \"were\" as a compromise",
+      "reorder the subjects so the plural one sits next to the verb",
+      "switch the verb to \"were\" as a compromise",
       "drop the correlative and use only one subject",
       "avoid correlatives entirely in formal writing"
     ],
-    "context": "Grammar and ear both improve when you reorder. Or rewrite: \"He isn't going, and neither am I.\"",
+    "context": "Grammar and ear both improve once the subjects are reordered: 'Neither my aunt nor my cousins are driving.' Or rewrite: 'My aunt isn't driving, and neither are my cousins.'",
     "topic": "either-and-neither-singular-as-subjects-agreement-with-corre"
   },
   {
@@ -3551,10 +3551,10 @@
   {
     "tier": 1,
     "question": "A project report reads, 'The plan -- which had taken months -- finally worked.' The two long marks around 'which had taken months' take their name from the width of a printed letter. What are they called?",
-    "answer": "Em-dashes -- named for the width of a lowercase M",
+    "answer": "Em-dashes -- named for the width of a capital M",
     "choices": [
-      "Em-dashes -- named for the width of a lowercase M",
-      "En-dashes -- named for the width of a lowercase N",
+      "Em-dashes -- named for the width of a capital M",
+      "En-dashes -- named for the width of a capital N",
       "Hyphens -- the shortest horizontal marks",
       "Colons -- used to introduce lists"
     ],
@@ -3569,9 +3569,9 @@
       "Em-dashes -- the strongest, most emphatic interruption",
       "Commas -- the strongest, most emphatic interruption",
       "Parentheses -- the strongest, most emphatic interruption",
-      "All three are equally strong"
+      "None -- all three are equally strong"
     ],
-    "context": "Commas whisper the aside; parentheses lower the volume; em-dashes raise it. Same information, three energies. Source: Chicago Manual of Style 17e section 6.85.",
+    "context": "Commas keep the aside quiet; parentheses lower it almost to a whisper; em-dashes raise the volume. Same information, three energies.",
     "topic": "em-dash-the-parenthetical-break"
   },
   {
@@ -3616,10 +3616,10 @@
   {
     "tier": 1,
     "question": "A book's bibliography lists 'pp. 34-37,' meaning pages 34 through 37. The mark between the numbers takes its name from the width of a printed letter. Which mark and which letter?",
-    "answer": "En-dash -- named for the width of a lowercase N",
+    "answer": "En-dash -- named for the width of a capital N",
     "choices": [
-      "En-dash -- named for the width of a lowercase N",
-      "Em-dash -- named for the width of a lowercase M",
+      "En-dash -- named for the width of a capital N",
+      "Em-dash -- named for the width of a capital M",
       "Hyphen -- named for its length (a syllable-joiner)",
       "Slash -- named for its diagonal shape"
     ],
@@ -3667,7 +3667,7 @@
   },
   {
     "tier": 5,
-    "question": "A British newspaper prints 'the plan - which had taken months - finally worked' with spaced short dashes around the parenthetical. What is the American convention for the same effect?",
+    "question": "A British newspaper prints 'the plan - which had taken months - finally worked' with spaced short dashes around the parenthetical. What does an American book set in Chicago style print for the same effect?",
     "answer": "Unspaced em-dashes: 'the plan--which had taken months--finally worked'",
     "choices": [
       "Unspaced em-dashes: 'the plan--which had taken months--finally worked'",
@@ -3675,7 +3675,7 @@
       "Colons on both ends: 'the plan: which had taken months: finally worked'",
       "Parentheses around the whole aside instead"
     ],
-    "context": "British style: spaced en-dashes. American style (Chicago): unspaced em-dashes. Same job, two conventions. Source: Fowler's Modern English Usage on dashes.",
+    "context": "Some British publishers, Penguin and Cambridge University Press among them, set a spaced en dash for this break. Chicago, like most American book publishers, closes up an em dash with no spaces. The Associated Press, the usual American newspaper style, puts spaces around its em dashes.",
     "topic": "en-dash-for-ranges-pages-dates-scores"
   },
   {
@@ -3745,15 +3745,15 @@
   },
   {
     "tier": 5,
-    "question": "A student sets a long passage as a block quotation in her term paper. Where does the citation go?",
-    "answer": "AFTER the closing period of the block (not inside the block)",
+    "question": "A student writing her term paper in Modern Language Association (MLA) style sets a long passage as an indented block quotation. Where does its citation go?",
+    "answer": "after the block's final period",
     "choices": [
-      "AFTER the closing period of the block (not inside the block)",
-      "BEFORE the closing period of the block",
-      "in a footnote instead",
-      "inside the block, in italics"
+      "after the block's final period",
+      "before the block's final period",
+      "in a footnote at the foot of the page",
+      "on a line of its own above the block"
     ],
-    "context": "Block-quote citation goes OUTSIDE the block, after its closing period. Contrast with inline quotes where the citation goes before the sentence-ending period.",
+    "context": "In MLA style a block quotation's citation comes after its closing punctuation, at the end of the indented block. A short quotation run into a sentence works the other way: the citation comes first, then the sentence's period.",
     "topic": "end-punctuation-with-parenthetical-citations"
   },
   {
@@ -3849,28 +3849,28 @@
   },
   {
     "tier": 2,
-    "question": "Captain Charles Boycott, an English land agent, faced a stand by Irish workers in 1880. His surname became the common English verb for what?",
+    "question": "Captain Charles Boycott, an English land agent, faced a stand by his Irish neighbors in 1880. His surname became the common English verb for what?",
     "answer": "A collective refusal to deal with someone",
     "choices": [
       "A collective refusal to deal with someone",
-      "A polite protest by mail",
-      "A hunger strike",
-      "A tax revolt"
+      "A polite protest made by letter or petition",
+      "A hunger strike to shame a landlord",
+      "A tax revolt led by local farmers"
     ],
-    "context": "The tenants' collective refusal to trade with Boycott gave English the verb TO BOYCOTT. OED first attested 1880. Source: Grokipedia 'Charles Boycott' (2026-09-05).",
+    "context": "His neighbors, from farmhands and servants to shopkeepers and the local postmaster, would neither work for him nor trade with him. That collective refusal gave English the verb TO BOYCOTT. OED first attested 1880. Source: Grokipedia 'Charles Boycott' (2026-09-05).",
     "topic": "eponyms-sandwiches-boycotts-and-silhouettes"
   },
   {
     "tier": 3,
     "question": "Etienne de Silhouette grew famous for cheapness as France's finance minister during the Seven Years' War. One cheap thing of the day was nicknamed 'a la silhouette.' What did his name become?",
-    "answer": "The word for a cut-paper profile portrait or a dark outline shape",
+    "answer": "The word for a dark outline, like a cut-paper profile",
     "choices": [
-      "The word for a cut-paper profile portrait or a dark outline shape",
-      "The word for a small pastry",
-      "The word for a formal court dance",
+      "The word for a dark outline, like a cut-paper profile",
+      "The word for a small, cheap pastry sold in Paris",
+      "The word for a formal court dance of the period",
       "The word for a written contract of sale"
     ],
-    "context": "The finance minister's stinginess made cheap outlines a joke; the joke gave us the modern word for any dark outline shape. OED first attested 1798. Source: Grokipedia 'Etienne de Silhouette' (2026-09-05).",
+    "context": "The finance minister's stinginess made cheap outlines a joke; the joke gave English the modern word for any dark outline shape. OED first attested 1798. Source: Grokipedia 'Etienne de Silhouette' (2026-09-05).",
     "topic": "eponyms-sandwiches-boycotts-and-silhouettes"
   },
   {
@@ -3941,14 +3941,14 @@
   {
     "tier": 2,
     "question": "F. Scott Fitzgerald reportedly said \"An exclamation point is like laughing at your own joke.\" What does his advice recommend?",
-    "answer": "use exclamation points sparingly in formal writing (Elmore Leonard's rule: 2-3 per 100,000 words)",
+    "answer": "use exclamation points sparingly, so each one counts",
     "choices": [
-      "use exclamation points sparingly in formal writing (Elmore Leonard's rule: 2-3 per 100,000 words)",
-      "use exclamation points on every sentence",
-      "never use exclamation points at all",
-      "use only inside dialogue"
+      "use exclamation points sparingly, so each one counts",
+      "use an exclamation point on every lively sentence",
+      "use exclamation points only inside dialogue",
+      "use two or three together when a line is funny"
     ],
-    "context": "Classic writing-style advice: restraint. Overuse dilutes their force; the writer looks like they need to signal excitement rather than earn it.",
+    "context": "Classic writing advice: restraint. Overuse dilutes the mark's force, and the writer looks as if he needs to signal excitement rather than earn it. Elmore Leonard allowed himself two or three per 100,000 words of prose.",
     "topic": "exclamation-points-use-sparingly-one-at-a-time"
   },
   {
@@ -3967,27 +3967,27 @@
   {
     "tier": 4,
     "question": "A student ends a formal report with \"!!!\" after the last line. What is the rule in formal writing?",
-    "answer": "use a single \"!\" -- multiple exclamation points are considered informal or juvenile",
+    "answer": "use a single \"!\", since stacked marks read as juvenile",
     "choices": [
-      "use a single \"!\" -- multiple exclamation points are considered informal or juvenile",
+      "use a single \"!\", since stacked marks read as juvenile",
       "use three exclamation points for emphasis",
-      "use exclamation points sparingly, matching the emotion",
+      "swap in \"?!\", the formal mark for strong surprise",
       "multiple exclamation points are always required for strong emotion"
     ],
-    "context": "Chicago and AP: one exclamation point at a time in formal writing. Multiple marks (!!!) read casual or emotional.",
+    "context": "Formal writing uses one exclamation point at a time, if any. Stacked marks (!!!) read as casual or emotional, and the '?!' pair belongs in comics and chat, never in a report.",
     "topic": "exclamation-points-use-sparingly-one-at-a-time"
   },
   {
     "tier": 2,
-    "question": "A language teacher chalks 'false friend' on the board and warns her class about it. What does the term mean?",
-    "answer": "a word in one language that resembles a word in another but has a DIFFERENT meaning",
+    "question": "A Spanish teacher writes 'éxito' beside 'exit' on the board and labels the pair 'false friends.' What does that label mean?",
+    "answer": "a look-alike word in another language with a different meaning",
     "choices": [
-      "a word in one language that resembles a word in another but has a DIFFERENT meaning",
-      "a translation error made by a beginner",
-      "any word borrowed from another language",
-      "a synonym in the same language"
+      "a look-alike word in another language with a different meaning",
+      "a translation slip that only beginners ever make",
+      "any word borrowed whole from another language",
+      "a word with the same meaning in two languages"
     ],
-    "context": "FALSE FRIEND = look-alike across languages with a mismatched meaning. Trap for language learners.",
+    "context": "FALSE FRIEND = look-alike across languages with a mismatched meaning. Spanish ÉXITO means 'success', not 'exit' (an exit is a SALIDA). A pair that matches in meaning as well as looks is a true cognate.",
     "topic": "false-friends-eventually-and-eventualmente"
   },
   {
@@ -4032,27 +4032,27 @@
   {
     "tier": 4,
     "question": "A beginner's workbook lists four look-alike word pairs and asks for the false friend. Which pair is it?",
-    "answer": "English EMBARRASSED / Spanish EMBARAZADA (Spanish means \"pregnant\")",
+    "answer": "English EMBARRASSED / Spanish EMBARAZADA",
     "choices": [
-      "English EMBARRASSED / Spanish EMBARAZADA (Spanish means \"pregnant\")",
-      "English FAMILY / Spanish FAMILIA (both mean family)",
-      "English MUSIC / French MUSIQUE (both mean music)",
-      "English HOTEL / German HOTEL (both mean hotel)"
+      "English EMBARRASSED / Spanish EMBARAZADA",
+      "English FAMILY / Spanish FAMILIA",
+      "English MUSIC / French MUSIQUE",
+      "English HOTEL / German HOTEL"
     ],
-    "context": "Classic textbook false friend. The other three are TRUE COGNATES (look alike, mean similar).",
+    "context": "Classic textbook false friend: Spanish EMBARAZADA means 'pregnant', not embarrassed. The other three are TRUE COGNATES (they look alike and mean the same).",
     "topic": "false-friends-eventually-and-eventualmente"
   },
   {
     "tier": 5,
     "question": "A dictionary editor sorts word pairs into three piles: false friend, true cognate and partial cognate. Which pair goes on the partial-cognate pile?",
-    "answer": "English CHEF (head cook) vs French CHEF (the boss of anything, including a cook) -- meanings overlap partly",
+    "answer": "English CHEF (a head cook) / French CHEF (any boss, a cook included)",
     "choices": [
-      "English CHEF (head cook) vs French CHEF (the boss of anything, including a cook) -- meanings overlap partly",
-      "English GIFT vs German GIFT (present vs poison) -- meanings are opposite",
-      "English FAMILY vs Spanish FAMILIA (both mean family) -- meanings match",
-      "English HOTEL vs German HOTEL (both mean hotel) -- meanings match"
+      "English CHEF (a head cook) / French CHEF (any boss, a cook included)",
+      "English LIBRARY (books to borrow) / French LIBRAIRIE (a bookstore)",
+      "English FAMILY (relatives) / Spanish FAMILIA (relatives)",
+      "English HOTEL (a place to stay) / German HOTEL (a place to stay)"
     ],
-    "context": "PARTIAL COGNATE = shared root, overlapping meaning, but the ranges differ. English narrows CHEF to cooks; French uses CHEF for any boss.",
+    "context": "PARTIAL COGNATE = shared root, overlapping meaning, but the ranges differ. English narrows CHEF to cooks; French uses CHEF for any boss. LIBRAIRIE is a false friend (a French library is a BIBLIOTHÈQUE); FAMILIA and HOTEL are true cognates.",
     "topic": "false-friends-eventually-and-eventualmente"
   },
   {
@@ -4078,7 +4078,7 @@
       "Since so",
       "Say"
     ],
-    "context": "F-A-N-B-O-Y-S = For, And, Nor, But, Or, Yet, So. Memorising this acronym makes the coordinating conjunctions instantly recognisable. SUBORDINATING conjunctions (because, since, although) are a different category.",
+    "context": "F-A-N-B-O-Y-S = For, And, Nor, But, Or, Yet, So. Memorizing this acronym makes the coordinating conjunctions instantly recognizable. SUBORDINATING conjunctions (because, since, although) are a different category.",
     "topic": "fanboys-the-seven-coordinating-conjunctions"
   },
   {
@@ -4113,11 +4113,11 @@
     "answer": "independent (each could stand alone as a sentence)",
     "choices": [
       "independent (each could stand alone as a sentence)",
-      "dependent (subordinate)",
-      "any two words",
-      "compound adjective"
+      "dependent (each leans on another clause)",
+      "any two words or phrases at all",
+      "a subject on one side, its verb on the other"
     ],
-    "context": "COMMA + FANBOYS = valid join for two INDEPENDENT clauses. Without the FANBOYS, you have a comma splice. Without the comma between full clauses, style guides say the comma is optional for short clauses.",
+    "context": "COMMA + FANBOYS = valid join for two INDEPENDENT clauses. A comma alone between them, with no FANBOYS word, makes a comma splice. Style guides let a writer drop the comma when both clauses are very short.",
     "topic": "fanboys-the-seven-coordinating-conjunctions"
   },
   {
@@ -4148,15 +4148,15 @@
   },
   {
     "tier": 5,
-    "question": "A short story draft reads, 'She was tired yet she kept working.' Does that line need a comma before 'yet'?",
-    "answer": "yes -- YET is a FANBOYS conjunction joining two independent clauses",
+    "question": "A short story draft reads, 'She was tired after the long night shift yet she kept working on her report.' Does that line need a comma before 'yet'?",
+    "answer": "yes -- YET is a FANBOYS word joining two full clauses",
     "choices": [
-      "yes -- YET is a FANBOYS conjunction joining two independent clauses",
-      "no -- YET is short",
-      "no -- YET is not a FANBOYS",
-      "optional"
+      "yes -- YET is a FANBOYS word joining two full clauses",
+      "no -- YET is too short to need one",
+      "no -- YET is not one of the FANBOYS",
+      "no -- the comma belongs after YET"
     ],
-    "context": "YET is one of the seven FANBOYS. Comma + YET is required when joining independent clauses: 'She was tired, yet she kept working.' The rule doesn't relax for shorter conjunctions.",
+    "context": "YET is one of the seven FANBOYS. Two independent clauses joined by YET take a comma before it: 'She was tired after the long night shift, yet she kept working on her report.' Guides let a writer drop that comma only when both clauses are very short.",
     "topic": "fanboys-the-seven-coordinating-conjunctions"
   },
   {
@@ -4213,15 +4213,15 @@
   },
   {
     "tier": 5,
-    "question": "An astronomy teacher proofs four sentences about the moon for a formal handout. Which one uses the strict distinction correctly?",
-    "answer": "The moon is farther from Earth than any object we have visited",
+    "question": "An astronomy teacher proofs four sentences about the planets for a formal handout. Which one uses the strict distinction correctly?",
+    "answer": "Mars lies farther from the sun than Earth does.",
     "choices": [
-      "The moon is farther from Earth than any object we have visited",
-      "The moon is further from Earth than any object we have visited",
-      "The moon is further away in physical miles",
-      "The moon is farther in additional respects"
+      "Mars lies farther from the sun than Earth does.",
+      "Mars lies further from the sun than Earth does.",
+      "The class will discuss Mars farther tomorrow.",
+      "Some probes have flown further than Mars."
     ],
-    "context": "Astronomical distance = physical distance = FARTHER. The strict rule prefers FARTHER for measurable miles.",
+    "context": "Distance from the sun is measurable, physical distance, so the strict rule takes FARTHER. Probes flying past Mars cover miles too, so FURTHER is wrong there; discussing a topic more is figurative, so FARTHER is wrong there.",
     "topic": "farther-vs-further-distance-vs-metaphor"
   },
   {
@@ -4295,9 +4295,9 @@
     "answer": "An eggcorn -- a misheard phrase reworked so it still kind of makes sense",
     "choices": [
       "An eggcorn -- a misheard phrase reworked so it still kind of makes sense",
-      "A malapropism -- swapping one word for a similar-sounding one",
+      "A malapropism -- a sound-alike word that turns the line to nonsense",
       "A spoonerism -- swapping sounds between two words",
-      "A palindrome -- a phrase that reads the same backwards"
+      "A mondegreen -- a misheard line from a song"
     ],
     "context": "'Intensive purposes' MAKES a kind of sense (very focused purposes) -- that self-repairing quality is what marks an eggcorn. Malapropisms usually leave the wrong word standing out as nonsense. Coined by linguist Geoffrey Pullum in 2003, from a woman who wrote 'egg corn' for 'acorn'. Different from mondegreens (misheard SONG lyrics). Source: Grokipedia 'Eggcorn' (2026-09-05).",
     "topic": "for-all-intensive-purposes-the-eggcorn-that-changes-the-phra"
@@ -4305,22 +4305,22 @@
   {
     "tier": 2,
     "question": "A bored teenager mutters, 'I could care less.' What is the original phrase behind that line?",
-    "answer": "'I couldn't care less' (meaning 'my caring has already hit zero')",
+    "answer": "'I couldn't care less'",
     "choices": [
-      "'I couldn't care less' (meaning 'my caring has already hit zero')",
-      "'I did care less'",
-      "'I care less'",
-      "no original -- both are equivalent"
+      "'I couldn't care less'",
+      "'I could care more'",
+      "'I couldn't care more'",
+      "'I care less and less'"
     ],
-    "context": "'I couldn't care less' = my caring is already at rock bottom. 'I could care less' logically means the opposite (there is room to care less). The eggcorn is now so common that many dictionaries note both forms.",
+    "context": "'I couldn't care less' = my caring is already at rock bottom. 'I could care less' logically means the opposite (there is room to care less). The slip is now so common that many dictionaries note both forms.",
     "topic": "for-all-intensive-purposes-the-eggcorn-that-changes-the-phra"
   },
   {
     "tier": 3,
     "question": "Two sisters argue over one saying: 'You have another thing coming' or 'You have another THINK coming.' Which is the original?",
-    "answer": "'another THINK coming' (if you think that, you've got another think coming)",
+    "answer": "'another THINK coming'",
     "choices": [
-      "'another THINK coming' (if you think that, you've got another think coming)",
+      "'another THINK coming'",
       "'another thing coming'",
       "both are original",
       "neither is standard English"
@@ -4331,53 +4331,40 @@
   {
     "tier": 3,
     "question": "A coach scrawls 'Nip it in the butt' across a locker-room whiteboard. What is the correct idiom?",
-    "answer": "'nip it in the bud' (cut a bud off before it flowers)",
+    "answer": "'nip it in the bud'",
     "choices": [
-      "'nip it in the bud' (cut a bud off before it flowers)",
-      "'nip it in the bud is another version'",
-      "both are correct",
-      "'nip it in the bath'"
+      "'nip it in the bud'",
+      "'nip it in the butt'",
+      "'nip it at the root'",
+      "'nip it in the bulb'"
     ],
     "context": "'Nip it in the BUD' comes from horticulture: pinch off a bud before it opens. 'Nip it in the butt' is an eggcorn substituting a body part. The idiom means to stop something before it starts.",
     "topic": "for-all-intensive-purposes-the-eggcorn-that-changes-the-phra"
   },
   {
-    "tier": 4,
-    "question": "A skateboarder calls his new trick 'a whole nother level.' What is going on grammatically in that phrase?",
-    "answer": "'nother' is an infix that splits 'another' -- ungrammatical by rule, hyper-common in speech",
-    "choices": [
-      "'nother' is an infix that splits 'another' -- ungrammatical by rule, hyper-common in speech",
-      "'nother' is a preserved Middle English form",
-      "'a whole' is the eggcorn",
-      "the phrase is fully grammatical"
-    ],
-    "context": "'A whole nother' inserts 'whole' inside 'another'. Linguists call this expletive infixation. It follows the same pattern as 'un-freaking-believable'. Very common in speech; almost never in formal writing.",
-    "topic": "for-all-intensive-purposes-the-eggcorn-that-changes-the-phra"
-  },
-  {
     "tier": 5,
     "question": "A blogger types 'Doggy dog world,' then stops to wonder about 'dog eat dog world.' Which is the original, if either?",
-    "answer": "'dog eat dog world' is original; 'doggy dog' is a mondegreen/eggcorn hybrid",
+    "answer": "'dog eat dog' is the original; 'doggy dog' is the eggcorn",
     "choices": [
-      "'dog eat dog world' is original; 'doggy dog' is a mondegreen/eggcorn hybrid",
-      "'doggy dog world' is original",
-      "both are folk expressions",
-      "neither is standard"
+      "'dog eat dog' is the original; 'doggy dog' is the eggcorn",
+      "'doggy dog' is the original; 'dog eat dog' is the eggcorn",
+      "both began as separate sayings with separate meanings",
+      "neither is standard English"
     ],
-    "context": "Original: 'dog-eat-dog world' (a world where dogs devour each other -- brutal competition). 'Doggy dog world' is a rhyming mishearing that turns the fierce idiom into a playground scene.",
+    "context": "Original: 'dog-eat-dog world' (a world where dogs devour each other -- brutal competition). 'Doggy dog world' is a soft-sounding mishearing that turns the fierce idiom into a playground scene; Merriam-Webster files it among the eggcorns.",
     "topic": "for-all-intensive-purposes-the-eggcorn-that-changes-the-phra"
   },
   {
     "tier": 5,
     "question": "Two drafts of a project plan differ by one word: 'flesh out an idea' and 'flush out an idea.' How do the two stand?",
-    "answer": "'flesh out' (add flesh to bones) is original; 'flush out' is the eggcorn",
+    "answer": "'flesh out' is the original; 'flush out' is the eggcorn",
     "choices": [
-      "'flesh out' (add flesh to bones) is original; 'flush out' is the eggcorn",
-      "'flush out' is original",
-      "both mean the same thing",
-      "neither is idiomatic"
+      "'flesh out' is the original; 'flush out' is the eggcorn",
+      "'flush out' is the original; 'flesh out' is the eggcorn",
+      "both are original, with the same meaning",
+      "neither is a real English idiom"
     ],
-    "context": "'FLESH out' = add substance to a skeleton (an outline). 'FLUSH out' = drive game from cover. Different metaphors, often confused. If you mean 'add detail', use flesh out.",
+    "context": "'FLESH out' = add substance to a skeleton (an outline). 'FLUSH out' = drive game from cover. Different metaphors, often confused. A writer who means 'add detail' wants flesh out.",
     "topic": "for-all-intensive-purposes-the-eggcorn-that-changes-the-phra"
   },
   {
@@ -4396,14 +4383,14 @@
   {
     "tier": 2,
     "question": "A writing coach chalks up 'The florist sent the flowers was pleased.' and calls it a garden-path sentence. What does the term mean?",
-    "answer": "a sentence that leads readers down one interpretation, then forces them to backtrack",
+    "answer": "a sentence that invites one reading, then forces a backtrack",
     "choices": [
-      "a sentence that leads readers down one interpretation, then forces them to backtrack",
-      "any long sentence",
-      "a sentence with too many commas",
-      "a sentence with quotation marks"
+      "a sentence that invites one reading, then forces a backtrack",
+      "a sentence too long to read in one breath",
+      "a sentence that breaks a rule but still reads fine",
+      "a sentence that wanders off its topic like a path"
     ],
-    "context": "GARDEN PATH = 'to lead someone up the garden path' (British idiom for deceive). Coined for sentences by linguist Thomas Bever in 1970 ('The Cognitive Basis for Linguistic Structures').",
+    "context": "GARDEN PATH = 'to lead someone up the garden path' (British idiom for deceive). Thomas Bever made the horse-and-barn sentence famous in 1970 ('The Cognitive Basis for Linguistic Structures').",
     "topic": "garden-path-sentences-the-horse-raced-past-the-barn-fell"
   },
   {
@@ -4422,14 +4409,14 @@
   {
     "tier": 3,
     "question": "A flyer reads, 'The complex houses married and single soldiers and their families.' How does this line parse?",
-    "answer": "COMPLEX = noun (housing complex); HOUSES = verb (contains); the complex houses soldiers",
+    "answer": "HOUSES = verb (gives homes to); COMPLEX = noun (a housing complex)",
     "choices": [
-      "COMPLEX = noun (housing complex); HOUSES = verb (contains); the complex houses soldiers",
-      "sentence is grammatically broken",
-      "complex is an adjective describing houses",
-      "requires punctuation"
+      "HOUSES = verb (gives homes to); COMPLEX = noun (a housing complex)",
+      "HOUSES = noun; COMPLEX = adjective; the line has no verb",
+      "MARRIED = verb; COMPLEX = adjective; the houses married soldiers",
+      "the line is broken and needs a comma after HOUSES"
     ],
-    "context": "'Complex' as noun (a housing complex), 'houses' as verb (accommodates, contains). The building houses married and single soldiers along with families. Third canonical Bever 1970 example.",
+    "context": "'Complex' as noun (a housing complex), 'houses' as verb (accommodates, contains). The building houses married and single soldiers along with families. Another classic garden path, often taught beside the horse and the barn.",
     "topic": "garden-path-sentences-the-horse-raced-past-the-barn-fell"
   },
   {
@@ -4469,19 +4456,6 @@
       "The girl told the sad story."
     ],
     "context": "'The girl told the story cried' is a garden path: TOLD THE STORY is a reduced relative ('who was told the story'); CRIED is the main verb. Full form: 'The girl WHO WAS told the story cried.'",
-    "topic": "garden-path-sentences-the-horse-raced-past-the-barn-fell"
-  },
-  {
-    "tier": 5,
-    "question": "A linguist first popularised the line 'The horse raced past the barn fell' in 1970. Who was he?",
-    "answer": "Thomas Bever",
-    "choices": [
-      "Thomas Bever",
-      "Noam Chomsky",
-      "William Strunk",
-      "Steven Pinker"
-    ],
-    "context": "Thomas G. Bever, 'The Cognitive Basis for Linguistic Structures' (1970), in Hayes ed. 'Cognition and the Development of Language' (Wiley). This is where the horse/barn example appears as a classic garden-path.",
     "topic": "garden-path-sentences-the-horse-raced-past-the-barn-fell"
   },
   {
@@ -4724,11 +4698,11 @@
     "answer": "Use the rhyme for common words like receive and believe, then memorize the exceptions",
     "choices": [
       "Use the rhyme for common words like receive and believe, then memorize the exceptions",
-      "Never teach the rhyme -- it is wrong for every word",
+      "Never teach the rhyme, since it is wrong for every word",
       "Trust the rhyme for every word without exception",
       "Replace it with 'always I before E' with no other rule"
     ],
-    "context": "The rhyme covers a real pattern (receive, believe, deceive, achieve). But WEIRD, SEIZE, HEIGHT, PROTEIN, EITHER, FOREIGN, SCIENCE, ANCIENT all break it -- so you also need a memorized exceptions list. Source: Grokipedia 'I before E except after C' (2026-09-05).",
+    "context": "The rhyme covers a real pattern (receive, believe, deceive, achieve). But WEIRD, SEIZE, HEIGHT, PROTEIN, EITHER, FOREIGN, SCIENCE, ANCIENT all break it -- so a speller also needs a memorized list of exceptions. Source: Grokipedia 'I before E except after C' (2026-09-05).",
     "topic": "i-before-e-except-after-c-the-rule-and-its-exceptions"
   },
   {
@@ -4877,14 +4851,14 @@
   {
     "tier": 2,
     "question": "A girl tries one sentence about a ride with Dad four ways. Which version gets every 'I' and 'me' right?",
-    "answer": "My brother and I went, and Dad drove us -- him, me, and my brother.",
+    "answer": "My brother and I went, and Dad drove him and me.",
     "choices": [
-      "My brother and I went, and Dad drove us -- him, me, and my brother.",
-      "My brother and me went, and Dad drove we -- he, I, and my brother.",
-      "My brother and me went, and Dad drove us -- him, me, and my brother.",
-      "My brother and I went, and Dad drove we -- he, I, and my brother."
+      "My brother and I went, and Dad drove him and me.",
+      "My brother and me went, and Dad drove him and I.",
+      "My brother and me went, and Dad drove him and me.",
+      "My brother and I went, and Dad drove he and I."
     ],
-    "context": "Subjects: I (subject of 'went'), him/me (objects of 'drove'). Drop test on each compound confirms. Object-position 'us' is also correct object of 'drove'.",
+    "context": "Subject slot: 'my brother and I' (drop the brother: 'I went'). Object slot after 'drove': 'him and me' (drop each: 'Dad drove him', 'Dad drove me').",
     "topic": "i-vs-me-in-compound-subjects-and-objects"
   },
   {
@@ -4902,15 +4876,15 @@
   },
   {
     "tier": 4,
-    "question": "A note on the fridge reads, 'It was ___ who called.' Which pronoun form fits?",
-    "answer": "I (formal: subject complement takes subject form); informal usage prefers 'me'",
+    "question": "A note on the fridge reads, 'It was ___ who called.' Which pronoun fits formal writing, and which fits everyday speech?",
+    "answer": "'I' in formal writing; 'me' in everyday speech",
     "choices": [
-      "I (formal: subject complement takes subject form); informal usage prefers 'me'",
-      "me (always object after 'was')",
-      "either equally",
-      "myself"
+      "'I' in formal writing; 'me' in everyday speech",
+      "'me' in formal writing; 'I' in everyday speech",
+      "'me' in both, because 'was' takes an object form",
+      "'myself' in formal writing; 'me' in everyday speech"
     ],
-    "context": "After a linking verb (was, is, are), the subject complement traditionally takes subject form: 'It was I.' Informal English uses 'It was me.' Even the traditionalist writer H.W. Fowler said the informal form was fine.",
+    "context": "After a linking verb (was, is, are), traditional grammar puts the subject form: 'It was I who called.' Everyday English says 'It was me.' Even H.W. Fowler, a traditionalist, thought the slip did not matter in so colloquial a phrase.",
     "topic": "i-vs-me-in-compound-subjects-and-objects"
   },
   {
@@ -4928,10 +4902,10 @@
   },
   {
     "tier": 1,
-    "question": "An advice column reads, 'If I ___ you, I would apologise.' Which verb form fits?",
-    "answer": "were (subjunctive; hypothetical/counter-to-fact)",
+    "question": "An advice column reads, 'If I ___ you, I would apologize.' Which verb form fits in standard writing?",
+    "answer": "were",
     "choices": [
-      "were (subjunctive; hypothetical/counter-to-fact)",
+      "were",
       "was",
       "am",
       "will be"
@@ -4941,13 +4915,13 @@
   },
   {
     "tier": 1,
-    "question": "An email to a boss reads, 'If I was late to the meeting, I apologise.' Why does it say 'was' here, not 'were'?",
-    "answer": "real past-time possibility (indicative) -- 'if I was late' = 'if it's true I was late'",
+    "question": "An email to a boss reads, 'If I was late to the meeting, I apologize.' Why does it say 'was' here, not 'were'?",
+    "answer": "it treats the lateness as a real possibility that may be true",
     "choices": [
-      "real past-time possibility (indicative) -- 'if I was late' = 'if it's true I was late'",
-      "always use 'was'",
-      "was is wrong",
-      "British-only"
+      "it treats the lateness as a real possibility that may be true",
+      "it treats the lateness as untrue, a pure what-if",
+      "it is a slip, since every if-clause takes 'were'",
+      "it is the British form of 'were' in if-clauses"
     ],
     "context": "'IF I WAS' = INDICATIVE (a real possibility about the past). Different from 'IF I WERE' (SUBJUNCTIVE, counter-to-fact hypothesis). The verb form signals which meaning.",
     "topic": "if-i-was-vs-if-i-were-the-subjunctive-mood"
@@ -4958,11 +4932,11 @@
     "answer": "WERE for hypothetical/counter-to-fact; WAS for possible/real past",
     "choices": [
       "WERE for hypothetical/counter-to-fact; WAS for possible/real past",
-      "always WERE",
-      "always WAS",
-      "the verbs are interchangeable"
+      "WERE after every if, whatever the meaning",
+      "WAS after every if, whatever the meaning",
+      "either verb, since the two mean the same"
     ],
-    "context": "'If I were rich, I would travel' (I am not rich = counter-to-fact = subjunctive WERE). 'If I was late, I apologise' (perhaps I was = real possibility = indicative WAS).",
+    "context": "'If I were rich, I would travel' (I am not rich = counter-to-fact = subjunctive WERE). 'If I was late, I apologize' (perhaps I was = real possibility = indicative WAS).",
     "topic": "if-i-was-vs-if-i-were-the-subjunctive-mood"
   },
   {
@@ -4980,10 +4954,10 @@
   },
   {
     "tier": 3,
-    "question": "A stranded hiker scribbles, 'If he ___ here, he could help us.' Which verb fits?",
-    "answer": "were (subjunctive; he is not here)",
+    "question": "A stranded hiker scribbles, 'If he ___ here, he could help us.' Which verb fits in standard writing?",
+    "answer": "were",
     "choices": [
-      "were (subjunctive; he is not here)",
+      "were",
       "was",
       "is",
       "will be"
@@ -5025,7 +4999,7 @@
       "If I were rich, I would travel the world.",
       "If I was rich, I would travel the world.",
       "If I am rich, I will travel the world.",
-      "If I had been rich, I would have travelled the world."
+      "If I had been rich, I would have traveled the world."
     ],
     "context": "SUBJUNCTIVE WERE (counter-to-fact present) + WOULD + verb. The second uses indicative WAS (casual, some editors still flag). The third is real conditional (I might become rich). The fourth is past counter-to-fact.",
     "topic": "if-i-was-vs-if-i-were-the-subjunctive-mood"
@@ -5228,14 +5202,14 @@
   {
     "tier": 2,
     "question": "A tutor shows a boy one test for whether a clause is independent. What does the test ask him to do?",
-    "answer": "remove the subordinating conjunction; can the remainder stand alone as a sentence?",
+    "answer": "end it with a period, read it aloud, and hear whether it sounds finished",
     "choices": [
-      "remove the subordinating conjunction; can the remainder stand alone as a sentence?",
-      "count the words",
-      "check for a semicolon",
-      "look for capital letters"
+      "end it with a period, read it aloud, and hear whether it sounds finished",
+      "count its words and see whether there are more than five",
+      "look for a comma somewhere in the middle of it",
+      "check whether its first word has a capital letter"
     ],
-    "context": "STANDALONE TEST: strip any leading subordinator (because, when, if, although). If what's left is a complete sentence, the original was dependent (needed the subordinator to hang on).",
+    "context": "STANDALONE TEST: put a period after the clause and read it aloud. 'She laughed.' sounds finished, so it is independent. 'Because she laughed.' leaves the listener waiting, so it is dependent: a subordinator such as because, when or if makes it lean on another clause.",
     "topic": "independent-vs-dependent-clauses-the-standalone-test"
   },
   {
@@ -5370,13 +5344,13 @@
   },
   {
     "tier": 1,
-    "question": "A family diary reads, 'After dinner we walked the dog around the block.' Which correction is right?",
+    "question": "A family diary reads, 'After dinner we walked the dog around the block.' Which edit is right?",
     "answer": "Add a comma after DINNER -- the introductory phrase ends there",
     "choices": [
       "Add a comma after DINNER -- the introductory phrase ends there",
       "Add a comma after WALKED -- verbs always take a following comma",
       "Delete AROUND -- prepositions of movement are unnecessary",
-      "The sentence is fine as written"
+      "Add a comma after WE -- a subject is set off from its verb"
     ],
     "context": "The comma marks the transition from introductory prepositional phrase to main clause: 'After dinner, we walked the dog around the block.' Source: Chicago Manual of Style 17e section 6.31.",
     "topic": "introductory-phrase-commas-after-dinner-we-went-out"
@@ -5410,27 +5384,27 @@
   {
     "tier": 4,
     "question": "A proofreader scans four lines from a student's story. Which one needs a comma added after its opening word?",
-    "answer": "'Well that was odd' -> 'Well, that was odd'",
+    "answer": "'Yes the dog can stay.'",
     "choices": [
-      "'Well that was odd' -> 'Well, that was odd'",
-      "'The dog barked all night' -- no comma needed",
-      "'She sang beautifully' -- no comma needed",
-      "'They arrived at noon' -- no comma needed"
+      "'Yes the dog can stay.'",
+      "'Nobody saw the fox.'",
+      "'Grandma baked cookies.'",
+      "'Everyone clapped loudly.'"
     ],
-    "context": "Sentence-initial interjections (well, oh, yes, no) take a following comma. Same shape: 'Oh, I see,' 'Yes, please,' 'No, thanks.' Source: Purdue OWL on introductory commas.",
+    "context": "Sentence-opening interjections (well, oh, yes, no) take a comma after them: 'Yes, the dog can stay.' The other three open with their subject, and a comma between a subject and its verb is an error. Source: Purdue OWL on introductory commas.",
     "topic": "introductory-phrase-commas-after-dinner-we-went-out"
   },
   {
     "tier": 5,
     "question": "A pet blog reads, 'While eating the cat watched TV.' What does that line lead a reader to think, and what fixes it?",
-    "answer": "Misreading: somebody was 'eating the cat.' Fix: comma after EATING -- 'While eating, the cat watched TV'",
+    "answer": "Someone seems to be eating the cat; add a comma after 'eating'",
     "choices": [
-      "Misreading: somebody was 'eating the cat.' Fix: comma after EATING -- 'While eating, the cat watched TV'",
-      "Misreading: the cat was cooked. Fix: capitalize CAT to CATS",
-      "Misreading: TV was eating. Fix: reorder to 'The cat was eating TV'",
-      "There is no misreading -- the sentence is fine as written"
+      "Someone seems to be eating the cat; add a comma after 'eating'",
+      "Someone seems to be eating the cat; add a comma after 'cat'",
+      "Someone seems to be eating the cat; add a comma after 'while'",
+      "It reads clearly; a comma after a short opener is optional"
     ],
-    "context": "The intro comma keeps the reader from parsing 'eating the cat' as verb + object. Same shape as the canonical Grandma vocative-comma gag. Source: Chicago Manual of Style 17e section 6.31.",
+    "context": "The intro comma keeps a reader from parsing 'eating the cat' as verb + object: 'While eating, the cat watched TV.' A comma after 'cat' or 'while' leaves the sentence broken, and the short-opener exception never covers a line that can be misread. Same shape as the canonical Grandma vocative-comma gag.",
     "topic": "introductory-phrase-commas-after-dinner-we-went-out"
   },
   {
