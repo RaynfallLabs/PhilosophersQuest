@@ -17660,7 +17660,7 @@
     "choices": [
       "Blood types",
       "White blood cells",
-      "Antibodies",
+      "Germs in the blood",
       "Red blood cell size"
     ],
     "context": "Landsteiner (1868-1943) trained as a physician in Vienna and turned to serology when the clinical mystery of transfusion killings caught his interest. His 1900 note and 1901 paper opened the field. Source: https://en.wikipedia.org/wiki/Karl_Landsteiner",
@@ -17726,7 +17726,7 @@
       "a lamb's",
       "a horse's",
       "a dog's",
-      "another man's"
+      "a calf's"
     ],
     "context": "Denys used lamb's blood on the boy and calf's blood on Mauroy. After the deaths, the Royal Society and French government banned the practice in 1668 and the Vatican condemned it in 1670; human transfusion stayed nearly untouchable for a century and a half. Source: https://en.wikipedia.org/wiki/Blood_transfusion",
     "topic": "landsteiner-ends-the-transfusion-lottery"
@@ -17923,7 +17923,7 @@
       "It was destroyed; a few carbon atoms ceased to be.",
       "It left as light alone; heat carries no mass at all."
     ],
-    "context": "It left with the heat and light. Energy has mass, so a reaction that pours energy out really does end up lighter: burning graphite loses about 3.6 x 10^-10 grams per gram of carbon -- roughly a third of a part per billion, about a hundred-millionth of the mass of one electron per carbon atom. No balance ever built could see it, which is why Lavoisier's law is exactly right for every purpose a chemist has. In nuclear reactions the same effect runs about a thousand times bigger for the same amount of material -- the decay of one mole of carbon-14 loses 0.000168 g -- and in uranium fission it reaches about 0.1 per cent, which is where it finally becomes something you could weigh. Conservation of mass is a superb approximation, not a law of the universe. The equation behind the correction, E = mc^2, has itself been checked to within 0.0004 per cent by measuring the gamma rays given off by silicon-28 and sulphur-32 nuclei (ILL/NIST, 2005). Sources: Chemistry LibreTexts, 'Converting Mass to Energy: Mass Defect and Nuclear Binding Energy'; Grokipedia, Conservation_of_mass.",
+    "context": "It left with the heat and light. Energy has mass, so a reaction that pours energy out really does end up lighter: burning graphite loses about 3.6 x 10^-10 grams per gram of carbon, roughly a third of a part per billion, or about eight millionths of an electron's mass for each carbon atom burned. No balance ever built could see it, which is why Lavoisier's law is exactly right for every purpose a chemist has. Nuclear reactions show the same effect tens of thousands of times bigger, atom for atom: the decay of one mole of carbon-14 loses 0.000168 g, and in uranium fission the loss reaches about 0.1 per cent, at last a change a balance could weigh. Conservation of mass is a superb approximation, not a law of the universe. Sources: Chemistry LibreTexts, 'Converting Mass to Energy: Mass Defect and Nuclear Binding Energy'; Grokipedia, Conservation_of_mass.",
     "topic": "lavoisiers-sealed-vessel-and-the-death-of-phlogiston"
   },
   {
@@ -18058,15 +18058,15 @@
   },
   {
     "tier": 4,
-    "question": "The Fellows of the Royal Society sat in November 1677 and heard the sworn affidavits Antonie van Leeuwenhoek had sent from Delft: a notary, a lawyer, a physician and ministers swearing they had put their own eyes to his lens and seen the creatures. The Fellows heard every one of them out, and were not satisfied. What did they do next?",
-    "answer": "They ordered Robert Hooke to reproduce the observation himself",
+    "question": "Antonie van Leeuwenhoek sent the Royal Society a bundle of sworn statements from Delft in 1677. A notary, a lawyer, a physician and several ministers swore that they had put their own eyes to his lens and seen the swimming creatures. The Fellows in London were not satisfied by testimony, however solemn. How did they settle the matter?",
+    "answer": "They had Robert Hooke reproduce the observation himself",
     "choices": [
-      "They had Henry Oldenburg write to Delft for a fuller account",
       "They sent Nehemiah Grew to Delft to watch Leeuwenhoek at work",
       "They asked Christopher Wren to design a lens of equal power",
-      "They ordered Robert Hooke to reproduce the observation himself"
+      "They ruled the claim unproven and stopped reading his letters",
+      "They had Robert Hooke reproduce the observation himself"
     ],
-    "context": "The Society read the Delft affidavits on 11 November 1677 and went ahead with its own test anyway, ordering Robert Hooke, its Curator of Experiments, to reproduce the observation. Once Hooke succeeded, the affidavits ceased to matter. That is the whole difference between science and testimony: eight men under oath is still eight men saying so, and the Society trusted the repeat instead -- a test run by someone with nothing invested in Leeuwenhoek being right. Source: Lens on Leeuwenhoek, '1677: To confirm his observations' and 'Hooke's Three Tries'.",
+    "context": "The Society had already asked Robert Hooke, its Curator of Experiments, in October 1677 to reproduce the observation, and the Delft affidavits were read at the very November meeting where his first attempt failed. Once Hooke succeeded, the affidavits ceased to matter. That is the whole difference between science and testimony: eight men under oath is still eight men saying so, and the Society trusted the repeat instead, a test run by someone with nothing invested in Leeuwenhoek being right. Source: Lens on Leeuwenhoek, chronology of the Royal Society (lensonleeuwenhoek.net/timeline/tax/Royal%20Society), '1677: To confirm his observations' and 'Hooke's Three Tries'.",
     "topic": "leeuwenhoeks-animalcules-and-the-royal-societys-verification"
   },
   {
@@ -18105,7 +18105,7 @@
       "A pump trickles in fresh broth and drains off the overflow",
       "A robotic arm swaps the broth in all twelve on a timer"
     ],
-    "context": "Someone carries 0.1 mL out of each 10 mL culture into 9.9 mL of fresh medium, every day, including weekends and holidays. One correction worth carrying: this did not begin in Michigan. Lenski started it at the University of California, Irvine, and moved it to Michigan State University in 1991; it went to Jeffrey Barrick at UT Austin in 2022 and came back to Michigan State in 2025. Sources: Grokipedia, 'E. coli long-term evolution experiment'; en.wikipedia.org/wiki/Richard_Lenski; msutoday.msu.edu/news/2025/11/evolution-under-a-microscope-going-strong-at-msu.",
+    "context": "Someone carries 0.1 mL out of each 10 mL culture into 9.9 mL of fresh medium, every day, including weekends and holidays. One correction worth carrying: this did not begin in Michigan. Lenski started it at the University of California, Irvine, and moved it to Michigan State University a few years later (sources give 1990 and 1991); it went to Jeffrey Barrick at UT Austin in 2022 and came back to Michigan State in 2025. Sources: Grokipedia, 'E. coli long-term evolution experiment'; en.wikipedia.org/wiki/Richard_Lenski; msutoday.msu.edu/news/2025/11/evolution-under-a-microscope-going-strong-at-msu.",
     "topic": "lenskis-twelve-flasks"
   },
   {
@@ -18344,20 +18344,20 @@
   },
   {
     "tier": 5,
-    "question": "Antony Hewish and Martin Ryle received the 1974 Nobel Prize in Physics for the pulsar discovery. Jocelyn Bell, later Jocelyn Bell Burnell, had spotted the first pulsar in 1967 as Hewish's Cambridge graduate student, on a radio telescope he had designed, and she was left out. In a 1977 speech she gave her own view of the exclusion. Which line is from that speech?",
-    "answer": "I believe it would demean Nobel Prizes if they were awarded to research students, except in very exceptional cases, and I do not believe this is one of them",
+    "question": "Antony Hewish shared the 1974 Nobel Prize in Physics with Martin Ryle, and Hewish's share honoured the pulsar discovery. Jocelyn Bell, later Jocelyn Bell Burnell, had spotted the first pulsar in 1967 as his Cambridge graduate student, on a radio telescope he had designed, and she was left out. What view of the exclusion did she give in a 1977 speech?",
+    "answer": "That prizes for research students would demean the Nobels, outside very exceptional cases",
     "choices": [
-      "I believe it would demean Nobel Prizes if they were awarded to research students, except in very exceptional cases, and I do not believe this is one of them",
-      "A doctoral thesis is a training exercise, and training discoveries belong in the first instance to the supervisor who set the problem for the student",
-      "The prize honours the design of the telescope and the interpretation of the data, both of which properly belong to my seniors and not to me",
-      "Discoveries made inside a large collaboration should be credited to the group leader, and I accept that convention as it stood in Stockholm in 1974"
+      "That prizes for research students would demean the Nobels, outside very exceptional cases",
+      "That the prize should have been shared by the whole Cambridge radio group",
+      "That Nobel rules barred any prize to a student who lacked a doctorate",
+      "That the committee had simply not known how much of the work was hers"
     ],
-    "context": "That was Bell Burnell in 1977. By 2021 she was noting publicly that being a graduate student AND a woman together had 'demoted' her standing in the discovery's telling - a shift you can weigh for yourself. Source: Bell Burnell, 'Petit Four' (Annals NY Acad. Sci. 302, 1977).",
+    "context": "Her own words, in the 1977 after-dinner speech published as 'Petit Four': 'I believe it would demean Nobel Prizes if they were awarded to research students, except in very exceptional cases, and I do not believe this is one of them.' In later years she reflected that being a graduate student and a woman, together, had 'demoted' her standing in terms of receiving a Nobel prize. The two views come from the same person, decades apart, and the reader can weigh them. Hewish's half of the 1974 prize was for his decisive role in the discovery of pulsars; Ryle's was for his radio observations and inventions, above all aperture synthesis. Sources: Bell Burnell, 'Petit Four' (Annals NY Acad. Sci. 302, 1977); en.wikipedia.org/wiki/Jocelyn_Bell_Burnell; nobelprize.org/prizes/physics/1974/summary/.",
     "topic": "lgm-1-the-signal-that-was-too-regular"
   },
   {
     "tier": 3,
-    "question": "Jocelyn Bell Burnell received the $3 million Special Breakthrough Prize in Fundamental Physics in 2018 for the pulsars she had first spotted in 1967, as a Cambridge graduate student, in the paper charts of a new radio telescope. The 1974 Nobel Prize for that discovery had gone to her supervisor Antony Hewish and to Martin Ryle, not to her. What did she do with the 2018 prize money?",
+    "question": "Jocelyn Bell Burnell received the $3 million Special Breakthrough Prize in Fundamental Physics in 2018 for the pulsars she had first spotted in 1967, as a Cambridge graduate student, in the paper charts of a new radio telescope. The 1974 Nobel Prize had honoured her supervisor Antony Hewish for that discovery, and Martin Ryle for other work, but not her. What did she do with the 2018 prize money?",
     "answer": "Donated every penny to fund physics PhDs for women, minorities and refugee students, via the Institute of Physics",
     "choices": [
       "Donated every penny to fund physics PhDs for women, minorities and refugee students, via the Institute of Physics",
@@ -18383,15 +18383,15 @@
   },
   {
     "tier": 2,
-    "question": "Donella and Dennis Meadows put out a hit book in March 1972, The Limits to Growth, which sold about thirty million copies in thirty languages. Their team's computer model followed food, people and pollution. What did they warn would happen if humans kept growing at 1970s rates?",
-    "answer": "We would run out of resources",
+    "question": "Donella and Dennis Meadows put out a hit book in March 1972, The Limits to Growth, which sold about thirty million copies in thirty languages. Their team's computer model followed food, people and pollution. What did they warn would happen if growth carried on at 1970s rates?",
+    "answer": "The world would run out of resources and collapse",
     "choices": [
-      "We would run out of resources",
-      "The oceans would freeze",
-      "A new ice age would start",
-      "Volcanoes would erupt worldwide"
+      "The world would run out of resources and collapse",
+      "A new ice age would bury the northern farmlands",
+      "Mass famine would strike within the decade",
+      "The oceans would die within a generation"
     ],
-    "context": "Donella H. Meadows led a four-person writing team -- with Dennis Meadows, Jorgen Randers and William Behrens -- backed by a seventeen-person MIT project. Carson wrote Silent Spring in 1962; Commoner wrote The Closing Circle in 1971; Ehrlich wrote The Population Bomb in 1968. Source: en.wikipedia.org/wiki/The_Limits_to_Growth.",
+    "context": "Donella H. Meadows led a four-person writing team, with Dennis Meadows, Jorgen Randers and William Behrens, backed by a seventeen-person MIT project. The warning ran on a timescale of about a century: if growth in population, industry and resource use carried on unchanged, the limits would be reached within a hundred years. Source: en.wikipedia.org/wiki/The_Limits_to_Growth.",
     "topic": "limits-to-growth-and-the-deadlines-that-expired"
   },
   {
@@ -18409,15 +18409,15 @@
   },
   {
     "tier": 3,
-    "question": "Donella and Dennis Meadows' MIT team printed a table of nineteen resources in The Limits to Growth, oil, copper, tin and the rest, and the book itself said the table was no prediction. Many readers took it for one anyway, and the petroleum row came and went with no shortage. The book's warning of collapse came from a computer simulation of the world economy. What was the simulation called?",
-    "answer": "World3",
+    "question": "Donella and Dennis Meadows' team set out nineteen resources in a table in The Limits to Growth: oil, copper, tin and the rest. For petroleum one column read twenty years, and many readers circled 1992 as the year the wells would run dry. Oil kept flowing straight through 1992. What was that twenty-year figure?",
+    "answer": "Known reserves, used at a rate that kept growing each year",
     "choices": [
-      "World3",
-      "LINK",
-      "MERGE",
-      "PRIMES"
+      "Known reserves, used at a rate that kept growing each year",
+      "Known reserves, used at the 1970s rate with no growth at all",
+      "The World3 model's forecast of when the last wells would fail",
+      "The oil industry's own estimate of how long its fields would last"
     ],
-    "context": "Twenty years from 1972. Lead's row pointed to 1993, twenty-one years out. The column was arithmetic on exponential growth applied to the then-known reserve; it was not a model output. Source: en.wikipedia.org/wiki/The_Limits_to_Growth.",
+    "context": "The table gave each resource a static index, the years known reserves would last at a flat rate of use (31 for petroleum), and an exponential index, the years they would last if use kept growing at its current pace (3.9 per cent a year for oil, which gives 20). The twenty was arithmetic on known reserves, not an output of the World3 computer model, and nowhere did the book say the figures should be read as predictions, as Ugo Bardi pointed out in 2011. Environmentalists and sceptics alike read them as a countdown anyway. Source: en.wikipedia.org/wiki/The_Limits_to_Growth.",
     "topic": "limits-to-growth-and-the-deadlines-that-expired"
   },
   {
@@ -18543,11 +18543,11 @@
     "answer": "He abandoned it, concluding germs in the air mattered far less than what touched the wound",
     "choices": [
       "He abandoned it, concluding germs in the air mattered far less than what touched the wound",
+      "He kept it running, convinced that germs in the air were the chief danger to the wound",
       "He patented it and licensed it to every hospital in the British Empire",
-      "He fitted it with a foot pump and made it the centerpiece of his final surgery",
       "He refused to attend any operation where the spray was not running at full pressure"
     ],
-    "context": "The first scientific virtue is skepticism of your OWN claims -- Feynman's principle in action decades earlier. Lister publicly dropped his signature invention when the evidence turned against it. Source: Science Museum Group (Carbolic Steam Spray object record).",
+    "context": "The first scientific virtue is scepticism of one's own claims, and Lister practised it long before Feynman put it into words: he publicly dropped his signature device when the evidence turned against it. He had come to judge that germs carried on fingers, dressings and the patient's skin were the greater danger, and breathing carbolic mist was itself harmful to the lungs. Source: Science Museum Group, Carbolic steam spray used by Joseph Lister (collection.sciencemuseumgroup.org.uk/objects/co163555).",
     "topic": "listers-carbolic-and-the-coat-he-stopped-wearing"
   },
   {
@@ -18587,19 +18587,6 @@
       "A power surge overnight"
     ],
     "context": "Machine failures were common in that era, so Lorenz assumed hardware before he assumed anything else. Only when he traced exactly where the two runs began to disagree did he realise the computer was fine. Source: Wikipedia, 'Edward Norton Lorenz'; Quanta, 'The Hidden Heroines of Chaos' (2019).",
-    "topic": "lorenzs-rounding-error"
-  },
-  {
-    "tier": 1,
-    "question": "Keying in numbers from a printout in 1961, Edward Lorenz entered 0.506 instead of the machine's full 0.506127, because the printout showed only three decimal places. He was restarting a simple weather-forecast program halfway through. That tiny rounding made the whole rest of the run come out different. What is this famous discovery called?",
-    "answer": "The butterfly effect",
-    "choices": [
-      "The butterfly effect",
-      "The domino effect",
-      "The greenhouse effect",
-      "The ripple effect"
-    ],
-    "context": "The LGP-30 was first delivered in September 1956 and had 113 vacuum tubes, 1450 diodes, and a 4,096-word magnetic drum memory. It was slow enough that Lorenz would set a run going, get coffee, and come back to the printout -- which is where our story begins. Source: Wikipedia, 'LGP-30'.",
     "topic": "lorenzs-rounding-error"
   },
   {
@@ -18656,7 +18643,7 @@
   },
   {
     "tier": 4,
-    "question": "Lewis Fry Richardson tried to forecast the weather by hand in 1922, long before Edward Lorenz, working out six hours of it while driving a Quaker ambulance in France. His answer had the pressure rising 145 hectopascals in six hours, which is impossible; the real pressure had barely moved. When Peter Lynch ran the same math again in the 2000s, what did he find was really the problem?",
+    "question": "Lewis Fry Richardson worked out a weather forecast by hand during the First World War, long before Edward Lorenz, computing six hours of it while driving a Quaker ambulance in France. His answer had the pressure rising 145 hectopascals in six hours, which is impossible; the real pressure had barely moved. When Peter Lynch ran the same math again in the 2000s, what did he find was really the problem?",
     "answer": "The starting pressure data were too noisy",
     "choices": [
       "The starting pressure data were too noisy",
@@ -18669,15 +18656,15 @@
   },
   {
     "tier": 5,
-    "question": "A student checks a weather app and reads '40 percent chance of rain' for tomorrow, not a plain 'rain' or 'no rain'. Forecasters know that tiny errors in today's temperature, wind and pressure grow, and that number comes straight out of how they deal with it. What exactly does the 40 stand for?",
-    "answer": "The fraction of many computer runs that produced rain at your location",
+    "question": "A student reads tomorrow's forecast for her town from the European weather centre: '40 percent chance of rain', not a plain 'rain' or 'no rain'. The centre knows that tiny errors in today's temperature, wind and pressure grow, and that number comes straight out of how it deals with them. What does the 40 stand for?",
+    "answer": "The share of many computer runs that produced rain over her town",
     "choices": [
-      "The fraction of many computer runs that produced rain at your location",
+      "The share of many computer runs that produced rain over her town",
+      "The share of tomorrow the model expects rain to be falling",
       "The percentage of the sky the model expects to be cloud-covered",
-      "How much of the historical average rainfall the model expects",
-      "How confident the forecaster personally is in the forecast"
+      "How much of the historical average rainfall the model expects"
     ],
-    "context": "Modern forecasters run the same model many times from slightly different starting conditions -- a technique called ensemble forecasting -- and the '40 percent' is how many of those runs put rain over your address. Operational ensemble forecasting began in 1985 for sub-seasonal timescales; ECMWF and the US NCEP did not begin routine ensemble runs until 1992. Source: Wikipedia, 'Ensemble forecasting'.",
+    "context": "Modern forecasters run the same model many times from slightly different starting conditions, a technique called ensemble forecasting. The European Centre for Medium-Range Weather Forecasts runs about fifty such members, and a 40 percent chance of rain means that roughly 40 of every 100 runs put rain over that spot. Many national weather services blend such runs with other guidance before they publish a figure. The European centre and the US National Centers for Environmental Prediction began routine ensemble runs in 1992. Source: Wikipedia, 'Ensemble forecasting'.",
     "topic": "lorenzs-rounding-error"
   },
   {
@@ -18877,20 +18864,7 @@
   },
   {
     "tier": 1,
-    "question": "Stalin's favourite farm scientist, Trofim Lysenko, told Soviet farmers in the 1930s to soak wheat seed in near-freezing water, so winter wheat could go into the ground like spring wheat. He had rejected genetics and promised bigger harvests by other means. What did he call this cold-soak trick?",
-    "answer": "Vernalization",
-    "choices": [
-      "Vernalization",
-      "Hybridization",
-      "Grafting",
-      "Pollination"
-    ],
-    "context": "Chilling seed to shift its growing season was already known in 19th-century European and Russian agronomy -- Lysenko did not invent it. His fabrication came next: the claim that the change lasted into the next generation.",
-    "topic": "lysenko-the-terminus-of-state-enforced-science"
-  },
-  {
-    "tier": 2,
-    "question": "Trofim Lysenko took an old farming trick in the 1930s, chilling wheat seeds through a fake winter before planting them in spring so they would flower on time, and presented it as revolutionary Soviet science. Then he went a step further, with a claim no working geneticist accepted. What did he insist happened to the offspring of a treated plant, once its seeds were saved and planted?",
+    "question": "Trofim Lysenko revived an old trick, chilling winter-wheat seed so it could be sown in spring. Then he made a claim no geneticist accepted. What did he say happened to a treated plant's offspring?",
     "answer": "They inherited the new trait",
     "choices": [
       "They inherited the new trait",
@@ -18898,7 +18872,7 @@
       "They flowered in winter",
       "They resisted all pests"
     ],
-    "context": "This is Lamarck's old idea of inheritance of acquired characteristics -- rejected by genetics but politically useful, because it meant nature could be 're-educated' by the state. Lysenko denied genes existed and called them a bourgeois invention.",
+    "context": "Chilling seed to shift its growing season was already known in 19th-century European and Russian agronomy; Lysenko did not invent it, though he gave it the name vernalization. His leap was the claim that the change passed to the next generation: Lamarck's old idea of the inheritance of acquired characteristics, rejected by genetics but politically useful, because it meant nature could be 're-educated' by the state. Lysenko denied genes existed and called them a bourgeois invention.",
     "topic": "lysenko-the-terminus-of-state-enforced-science"
   },
   {
@@ -18963,7 +18937,7 @@
       "About 70 percent",
       "About 95 percent"
     ],
-    "context": "Ural administration reports in September 1951 recorded 100 percent failure in places. A state had decreed that plants of the same species do not compete; every tree died anyway. Sukachev used the journal Botanicheskii zhurnal in 1952 to start publishing the first critical articles the regime tolerated.",
+    "context": "Ural administration reports in September 1951 recorded 100 percent failure in places. A state had decreed that plants of the same species do not compete; in places every tree died anyway. Sukachev used the journal Botanicheskii zhurnal in 1952 to start publishing the first critical articles the regime tolerated.",
     "topic": "lysenko-the-terminus-of-state-enforced-science"
   },
   {
@@ -19085,7 +19059,7 @@
   },
   {
     "tier": 1,
-    "question": "Paul Broca opened the skull of Louis Victor Leborgne in 1861 to see which part of the brain had failed. For twenty-one years at a Paris hospital Leborgne had understood every word said to him, yet only one sound ever came out of him: the syllable 'tan'. What did Broca find?",
+    "question": "Louis Victor Leborgne died in a Paris hospital in 1861, and Paul Broca opened his skull to see what had failed. For twenty-one years Leborgne had understood every word said to him, yet could say only one syllable: 'tan'. What did Broca find?",
     "answer": "One small patch of damage in the left frontal lobe",
     "choices": [
       "One small patch of damage in the left frontal lobe",
@@ -19163,15 +19137,15 @@
   },
   {
     "tier": 3,
-    "question": "'Yes, Doctor! Yes, Doctor! Now I hear people laughing: my friends in South Africa,' called a patient recorded only as J.T., with Wilder Penfield's electrode on his right temporal lobe. Time magazine ran the story under the headline 'The Brain as Tape Recorder'. One count went through all of Penfield's patients. What did the tally show?",
-    "answer": "40 of his 520 patients ever relived anything",
+    "question": "'Yes, Doctor! Yes, Doctor! Now I hear people laughing: my friends in South Africa,' called a patient recorded only as J.T., with Wilder Penfield's electrode on his right temporal lobe. Time magazine ran the story under the headline 'The Brain as Tape Recorder'. Penfield and Phanor Perot went back through every patient whose temporal lobe had been stimulated, 520 in all. What did the tally show?",
+    "answer": "40 of the 520 ever relived anything",
     "choices": [
-      "40 of his 520 patients ever relived anything",
-      "95 of his 520 patients ever relived anything",
-      "240 of his 520 patients ever relived anything",
-      "460 of his 520 patients ever relived anything"
+      "40 of the 520 ever relived anything",
+      "95 of the 520 ever relived anything",
+      "240 of the 520 ever relived anything",
+      "460 of the 520 ever relived anything"
     ],
-    "context": "Penfield reported memory-like recall in fewer than five percent of his patients; in one accounting only 40 of 520 ever relived anything. The electrode did not replay memories on demand — the tape-recorder headline was always the rare exception, not the result. Most of what the electrode produced was far simpler: a tingling thumb, a smell, a flash of light, the feeling of someone stroking the back of a hand. Source: en.wikipedia.org/wiki/Wilder_Penfield; psywww.com, 'Brain Stimulation' (patient J.T.); TIME archive, 'Medicine: The Brain as Tape Recorder'  (Legend.)",
+    "context": "In their 1963 final summary in the journal Brain, Penfield and Phanor Perot found experiential responses, the sense of reliving a past moment, in 40 of the 520 patients whose temporal lobes had been stimulated: under one in twelve. The electrode did not replay memories on demand; the tape-recorder headline was always the rare exception, not the result. Most of what the electrode produced was far simpler: a tingling thumb, a smell, a flash of light, the feeling of someone stroking the back of a hand. Sources: Penfield & Perot, Brain 86:595-696 (1963), as cited at arxiv.org/pdf/1408.7073; psywww.com, 'Brain Stimulation' (patient J.T.); TIME archive, 'Medicine: The Brain as Tape Recorder'",
     "topic": "mapping-the-mind-by-what-breaks"
   },
   {
@@ -19279,16 +19253,16 @@
     "topic": "mariottes-hole-in-your-sight"
   },
   {
-    "tier": 4,
-    "question": "Mariotte, a French Catholic priest and a founding member of the Paris Academy of Sciences, tested the eye using little circles of white paper and sent a letter in 1668 titled 'New Discovery Concerning Vision.' It overturned an old belief about the retina. What did he discover?",
-    "answer": "The blind spot",
+    "tier": 3,
+    "question": "Mariotte, a French priest and founding member of the Paris Academy of Sciences, tested his own eyes with little circles of white paper in 1668. With one eye shut, he stared at one circle and found that another, in plain view off to the side, vanished completely. Where in his eye was that vanished circle's image falling?",
+    "answer": "Where the optic nerve leaves the eye",
     "choices": [
-      "The blind spot",
-      "The optic nerve",
-      "The pupil reflex",
-      "Colour vision"
+      "Where the optic nerve leaves the eye",
+      "On the fovea, the retina's sharp centre",
+      "On the far outer rim of the retina",
+      "On the lens, just behind the pupil"
     ],
-    "context": "Mariotte used small circles of white paper to map the invisible region. The popular telling that he amused King Charles II by placing courtiers in his blind spot so their heads appeared to vanish is an anecdote that has grown in the retelling -- not solidly documented, so it is told as story rather than record. The other choices are all real founding figures of vision science: Descartes wrote a theory of the retinal image (1637), Helmholtz measured the speed of nerve signals (1850), and Purkinje discovered the shift in relative colour brightness at twilight (1825). Source: Encyclopedia -- Edme Mariotte; researchgate.net -- Mariotte Pioneer of Neurophysiology.",
+    "context": "The vanished circle's image had landed on the optic disc, where the optic nerve leaves the back of the eye: the one patch of retina with no light-sensitive cells at all. Mariotte reported it in 1668 in a letter titled 'New Discovery Concerning Vision'. The popular telling that he amused King Charles II by placing courtiers in his blind spot so their heads appeared to vanish is an anecdote that has grown in the retelling, not solidly documented, so it is told as story rather than record. Sources: en.wikipedia.org/wiki/Blind_spot_(vision); Encyclopedia, Edme Mariotte.",
     "topic": "mariottes-hole-in-your-sight"
   },
   {
@@ -19544,11 +19518,11 @@
     "answer": "The second law of thermodynamics",
     "choices": [
       "The second law of thermodynamics",
-      "Newton's third law",
+      "The first law of thermodynamics",
       "The law of conservation of mass",
-      "Ohm's law"
+      "Newton's third law"
     ],
-    "context": "Kelvin's 'Kinetic Theory of the Dissipation of Energy' (Nature, 9 April 1874). Maxwell was deeply religious and disliked the word; Kelvin meant it in the Greek sense of a helpful attendant spirit, not an evil one. Source: Wikipedia -- Maxwell's demon.",
+    "context": "Energy is never created in the sorting, so the first law, the conservation of energy, survives; it is the second law, which says heat does not flow from cold to hot by itself, that the demon seems to cheat. The name was Kelvin's, not Maxwell's: he coined it in 'Kinetic Theory of the Dissipation of Energy' (Nature, 9 April 1874), meaning it in the Greek sense of a helpful attendant spirit, not an evil one. Source: Wikipedia, Maxwell's demon.",
     "topic": "maxwells-demon-and-the-price-of-one-bit"
   },
   {
@@ -19683,15 +19657,15 @@
   },
   {
     "tier": 3,
-    "question": "Barbara McClintock traced the speckled patches of colour on corn kernels to two chromosome pieces that always worked as a team. Her 1950 paper announced something no one else quite believed about them. What did she name the two pieces?",
-    "answer": "Dissociation and Activator",
+    "question": "Barbara McClintock studied maize kernels in the late 1940s that should have been plain yet were freckled with colour. She traced the freckles to two chromosome pieces working as a team, and showed that each freckle was a family of cells descended from a single cell. What had happened in that founding cell?",
+    "answer": "One piece had popped the other out of a colour gene",
     "choices": [
-      "Dissociation and Activator",
-      "Sender and Receiver",
-      "Silencer and Enhancer",
-      "Cassette and Trigger"
+      "One piece had popped the other out of a colour gene",
+      "A virus had carried in a working copy of a colour gene",
+      "A colour gene had repaired itself by chance mutation",
+      "A pollen grain had brought a colour gene into that cell"
     ],
-    "context": "Ds (Dissociation) lands inside a pigment gene and shuts it off; Ac (Activator) can pop Ds back out partway through kernel development, and every cell descended from THAT one cell restarts the pigment. The colour patch is that family made visible. Source: Ac/Ds transposable controlling elements, Wikipedia.",
+    "context": "Ds (Dissociation) lands inside a pigment gene and shuts it off; Ac (Activator) can pop Ds back out partway through kernel development, and every cell descended from THAT one cell restarts the pigment. The colour patch is that family made visible. McClintock named the pair Dissociation and Activator and called such pieces controlling elements; the word transposon came later. Source: Ac/Ds transposable controlling elements, Wikipedia.",
     "topic": "mcclintocks-jumping-genes"
   },
   {
@@ -19800,15 +19774,15 @@
   },
   {
     "tier": 3,
-    "question": "Jean-Baptiste Delambre hauled the survey's key sighting instrument up the church towers of France: a brass device built in 1784 that shrank the random error of any single sighting to a level no earlier instrument had reached. What was it called?",
-    "answer": "Borda's repeating circle",
+    "question": "Jean-Baptiste Delambre hauled the survey's key sighting instrument up the church towers of France: a brass circle built in 1784 that shrank the random error of a measured angle to a level no earlier instrument had reached. How did it do that?",
+    "answer": "It measured the same angle again and again around its ring",
     "choices": [
-      "Borda's repeating circle",
-      "Ramsden's zenith sector",
-      "Cassini's meridian quadrant",
-      "Ramsden's theodolite"
+      "It measured the same angle again and again around its ring",
+      "It magnified each target through a far longer telescope",
+      "It took the average of two observers sighting at once",
+      "It sat on a heavy stone base that kept it from trembling"
     ],
-    "context": "Designed by Jean-Charles de Borda and built by Etienne Lenoir in 1784. Its trick was to observe the same angle again and again around the ring; stacking N sightings divided the reading error by roughly N. Source: en.wikipedia.org/wiki/Arc_measurement_of_Delambre_and_Mechain.",
+    "context": "It was Borda's repeating circle, made by Etienne Lenoir in 1784 while he was Jean-Charles de Borda's assistant, and later improved by Borda. Its trick was to observe the same angle again and again around the ring; stacking N sightings divided the reading error by roughly N. Source: en.wikipedia.org/wiki/Arc_measurement_of_Delambre_and_Mechain.",
     "topic": "mechains-error-and-the-metre-cut-from-the-earth"
   },
   {
@@ -19839,15 +19813,15 @@
   },
   {
     "tier": 5,
-    "question": "Pierre Mechain never found what was throwing off his Barcelona latitudes, and modern analysis has largely vindicated him: it was a real geodetic effect nobody in 1795 had budgeted for. Roughly 95% of the missing length of the legal metre traces to this same effect, which would not be properly modelled until the late 1800s. What is the effect called?",
-    "answer": "deflection of the vertical",
+    "question": "Jean-Baptiste Delambre and Pierre Mechain measured the meridian with great care, yet the legal metre came out about 0.2 millimetres short of its own definition, one part in ten million of the pole-to-equator arc. Modern analysis traces most of that shortfall to a real physical effect nobody in the 1790s had allowed for. What was it?",
+    "answer": "Nearby mountains pulled the plumb line sideways",
     "choices": [
-      "deflection of the vertical",
-      "atmospheric refraction bias",
-      "sidereal parallax drift",
-      "polar wobble correction"
+      "Nearby mountains pulled the plumb line sideways",
+      "Warm air near the ground bent the starlight",
+      "The Earth's axis wobbled during the sightings",
+      "Summer heat stretched the brass of the circle"
     ],
-    "context": "Massive nearby terrain pulls a plumb line sideways, so 'straight down' does not point at the Earth's centre and a latitude taken by star sightings is genuinely thrown off. About 95% of the residual error in the legal metre traces to this unaccounted tilt. Mechain had stumbled on a real geodetic effect that would not be properly modelled for another century. Source: en.wikipedia.org/wiki/Arc_measurement_of_Delambre_and_Mechain.",
+    "context": "Massive nearby terrain pulls a plumb line sideways, so 'straight down' does not point at the Earth's centre, and a latitude taken from star sightings, which are measured against the plumb line, is thrown off. Geodesists call it deflection of the vertical. About 95% of the missing length of the legal metre traces to it; roughly 3% comes from a wrong assumption about the Earth's flattening, and less than 2% from the measured arc itself. Source: en.wikipedia.org/wiki/Arc_measurement_of_Delambre_and_Mechain.",
     "topic": "mechains-error-and-the-metre-cut-from-the-earth"
   },
   {
@@ -20536,7 +20510,7 @@
       "The Moon's pull on Earth, slowing the clocks the timings used.",
       "The bending of the Sun's light in Earth's air, low on the horizon."
     ],
-    "context": "The 5,600 figure is measured against the equinox, the crossing point of Earth's equator and its orbit, and that point slides steadily as Earth's axis wheels round in a 26,000-year cone. This is the precession of the equinoxes: our own coordinate frame turning, not Mercury moving. Subtract it (about 5,025) and the pull of the other planets (about 532) and 43 is what remains. Measured instead against the fixed stars, the entire advance is only about 574 arcseconds per century -- 532 planetary plus the same 43. Both totals are correct, but they are different measurements; never quote 574 and 5,600 in the same breath as though they were the same thing. Sources: MathPages, 'Anomalous Precession'; Wikipedia, 'Tests of general relativity'.",
+    "context": "The 5,600 figure is measured against the equinox, the crossing point of Earth's equator and its orbit, and that point slides steadily as Earth's axis wheels round in a 26,000-year cone. This is the precession of the equinoxes: Earth's own coordinate frame turning, not Mercury moving. Subtract it (about 5,025) and the pull of the other planets (about 532) and 43 is what remains. Measured instead against the fixed stars, the entire advance is only about 574 arcseconds per century, 532 planetary plus the same 43. Both totals are correct, but they are different measurements, not two figures for the same thing. Sources: MathPages, 'Anomalous Precession'; Wikipedia, 'Tests of general relativity'.",
     "topic": "mercurys-stubborn-43-arcseconds-and-the-planet-that-wasnt-th"
   },
   {
@@ -20580,13 +20554,13 @@
   },
   {
     "tier": 3,
-    "question": "Alfred Hershey and Martha Chase used radioactive phosphorus and sulfur tags in 1952 to prove DNA carried genes. Six years later Matthew Meselson and Franklin Stahl at Caltech used a different trick, a tag that was not radioactive at all, so their ultracentrifuge could not sort DNA by any glow. What physical property of the DNA did it sort by?",
+    "question": "Alfred Hershey and Martha Chase used radioactive phosphorus and sulfur tags in 1952 to follow which part of a virus, its DNA or its protein, entered the bacteria it infected. Six years later Matthew Meselson and Franklin Stahl used a tag that was not radioactive at all, so their ultracentrifuge could not sort DNA by any glow. What property of the DNA did it sort by?",
     "answer": "Its density in a spinning column of salt",
     "choices": [
       "Its electrical charge in a salt bath",
       "Its melting temperature under mild heat",
       "Its density in a spinning column of salt",
-      "Its glow under ultraviolet light"
+      "Its size, by how fast it sank in the tube"
     ],
     "context": "Nitrogen-15 is a stable heavy isotope, not radioactive. The heavier isotope makes the DNA molecule literally weigh slightly more per unit length, and it was that tiny density difference the experiment resolved. Confusing this with Hershey-Chase (which did use radioactive labels on a phage) is the standard student error. Source: https://www.pearson.com/channels/genetics/asset/af7bec45/describe-the-role-of-n-in-the-meselson-stahl-experiment",
     "topic": "meselson-and-stahl-the-most-beautiful-experiment"
@@ -20918,7 +20892,7 @@
   },
   {
     "tier": 5,
-    "question": "Max von Pettenkofer took a dose of sodium bicarbonate on 7 October 1892, aged 74, with witnesses watching. Then he swallowed a broth of live cholera bacteria from Robert Koch's own laboratory, to settle whether Koch's germ alone caused the disease. Why did he take the bicarbonate first?",
+    "question": "Max von Pettenkofer took a dose of sodium bicarbonate on 7 October 1892, aged 73, with witnesses watching. Then he swallowed a broth of live cholera bacteria from Robert Koch's own laboratory, to settle whether Koch's germ alone caused the disease. Why did he take the bicarbonate first?",
     "answer": "So his stomach acid would not kill the bacteria",
     "choices": [
       "So his stomach acid would not kill the bacteria",
@@ -20931,7 +20905,7 @@
   },
   {
     "tier": 5,
-    "question": "Witnesses watched Max von Pettenkofer, Munich's professor of hygiene, swallow a broth of live cholera bacteria in 1892, at the age of 74. He did not get cholera, and he announced that he had beaten germ theory. Researchers today can account for his survival without granting him a single point of his argument. What do they think probably spared him?",
+    "question": "Witnesses watched Max von Pettenkofer, Munich's professor of hygiene, swallow a broth of live cholera bacteria in 1892, at the age of 73. He did not get cholera, and he announced that he had beaten germ theory. Researchers today can account for his survival without granting him a single point of his argument. What do they think probably spared him?",
     "answer": "A partial immunity from an earlier, milder infection",
     "choices": [
       "A partial immunity from an earlier, milder infection",
@@ -20978,7 +20952,7 @@
       "The primal caloric",
       "The universal magnetic fluid"
     ],
-    "context": "Maxwell, Kelvin, and virtually every serious physicist of 1880 took the ether for granted. The other choices are all real historical concepts (phlogiston, caloric, magnetic fluid) that Victorian science had shed by the 1880s. Source: en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment; sciencenotes.org.",
+    "context": "Maxwell, Kelvin and virtually every serious physicist of 1880 took the ether for granted. Phlogiston, caloric and magnetic fluids were invisible substances that earlier science had seriously believed in and then given up; by the 1880s the ether was the one still standing. Source: en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment; sciencenotes.org.",
     "topic": "michelson-morley-the-most-famous-nothing"
   },
   {
@@ -21056,7 +21030,7 @@
       "Light speeds up in the direction of motion, precisely cancelling any expected delay",
       "The ether flows through solid matter, so laboratory walls never enclose a still sample"
     ],
-    "context": "The Lorentz-FitzGerald contraction was serious, quantitative, and testable. It is also, mathematically, exactly the contraction that survives inside special relativity. The other choices are real rival ether theories (Stokes' full drag, Fresnel's partial drag, and the transparent-ether picture) but none of them was FitzGerald's rescue. Source: en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment; ebsco.com/research-starters/mathematics/lorentz-contraction.",
+    "context": "The Lorentz-FitzGerald contraction was serious, quantitative, and testable. It is also, mathematically, exactly the contraction that survives inside special relativity. The other choices echo real rival ideas, among them George Stokes's ether dragged along by the Earth, but none of them was FitzGerald's rescue. Source: en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment; ebsco.com/research-starters/mathematics/lorentz-contraction.",
     "topic": "michelson-morley-the-most-famous-nothing"
   },
   {
@@ -21075,14 +21049,14 @@
   {
     "tier": 5,
     "question": "A student reads that Albert Michelson and Edward Morley hunted Earth's motion through the invisible ether in 1887 and got a 'null' result, with their interference fringes barely moving. She shrugs and writes in her notebook: 'They saw nothing, so they know nothing.' Why is that reading wrong?",
-    "answer": "A null result is a numerical upper bound with an error bar, and it rules out whole families of theories",
+    "answer": "It is a measured upper limit, and a limit that tight rules out whole families of theories",
     "choices": [
-      "A null result is a numerical upper bound with an error bar, and it rules out whole families of theories",
-      "The apparatus counted the ether particles directly and returned a count of zero",
-      "The interferometer proved the speed of light is exactly 299,792,458 m/s",
-      "The mercury bath acted as a Faraday cage and shielded the apparatus from bias"
+      "It is a measured upper limit, and a limit that tight rules out whole families of theories",
+      "It proves the ether does not exist at all, and proof of absence is knowledge too",
+      "It proves the ether was there but hidden, since the beams' timing cancelled out",
+      "It pinned down the speed of light to a new accuracy, ether or no ether"
     ],
-    "context": "The distinction between 'we measured nothing' and 'we did not measure' is one of the most abused points in popular writing on physics. A null result carries as much information as a positive one, provided the error bar is quoted. Source: arxiv.org/pdf/1810.10071.",
+    "context": "The distinction between 'we measured nothing' and 'we did not measure' is one of the most abused points in popular writing on physics. A null result carries as much information as a positive one, provided the error bar is quoted: the 1887 run put the fringe shift below about a twentieth of what the ether demanded. It did not prove the ether absent, though; George FitzGerald and Hendrik Lorentz kept it alive with their contraction, and the experiment never measured the speed of light itself. Source: arxiv.org/pdf/1810.10071.",
     "topic": "michelson-morley-the-most-famous-nothing"
   },
   {
@@ -21256,28 +21230,15 @@
   },
   {
     "tier": 2,
-    "question": "Stanley Miller's supervisor, a Nobel Prize-winning chemist at Chicago, kept his own name off the student's paper, so that the young man would get the credit. Miller's four sealed gases followed his idea of a young Earth with no free oxygen. The work still goes by a famous two-name title. What is it called?",
-    "answer": "The Miller-Urey experiment",
+    "question": "Harold Urey, a Nobel Prize-winning chemist at Chicago, had shaped his student's sealed gases around his own picture of a young Earth with no free oxygen. When Stanley Miller's paper on the spark loop was ready, Urey made a choice about the byline. What did he do?",
+    "answer": "Kept his own name off it so Miller would get the credit",
     "choices": [
-      "The Miller-Urey experiment",
-      "The Watson-Crick experiment",
-      "The Priestley-Urey experiment",
-      "The Darwin-Miller experiment"
+      "Kept his own name off it so Miller would get the credit",
+      "Put his own name first, as the senior chemist on the work",
+      "Held the paper back until another lab repeated the run",
+      "Added the glassblower who built the loop as a co-author"
     ],
-    "context": "Urey won the 1934 Nobel for discovering deuterium. When the paper was ready he refused co-authorship, fearing his name would drown out Miller's. Source: nasonline.org memoir; wikipedia.org/wiki/Harold_Urey.",
-    "topic": "millers-flask-and-the-honest-gap"
-  },
-  {
-    "tier": 3,
-    "question": "Alexander Oparin, a Russian biochemist, proposed in 1924 that simple gases like methane and ammonia could pile up in a warm, oxygen-free early ocean into ever-larger organic molecules, and eventually living things. J. B. S. Haldane, working entirely on his own in England, reached the same conclusion in 1929. A homely nickname stuck to their shared idea. What is it?",
-    "answer": "the primordial soup",
-    "choices": [
-      "the primordial soup",
-      "the vital ferment",
-      "the ozone cradle",
-      "the ether broth"
-    ],
-    "context": "Alexander Oparin (1924) and J. B. S. Haldane (1929) never met but converged on the same picture. Source: britannica.com/science/Oparin-Haldane-theory.",
+    "context": "Urey won the 1934 Nobel for discovering deuterium. When the paper was ready he refused co-authorship, fearing his name would drown out Miller's, and Miller published alone in Science in 1953. The work is still called the Miller-Urey experiment all the same. Source: nasonline.org memoir; wikipedia.org/wiki/Harold_Urey.",
     "topic": "millers-flask-and-the-honest-gap"
   },
   {
@@ -21295,15 +21256,15 @@
   },
   {
     "tier": 4,
-    "question": "A student sets aside the sunny poster version of the story and tallies the carbon in Stanley Miller's flask. Of what started as methane, about ten to fifteen percent ended up in organic molecules, and only about two percent became amino acids. Where did the rest of the carbon go?",
+    "question": "A student sets aside the sunny poster version of the story and tallies the carbon in Stanley Miller's flask. Of all the carbon that started as methane, only a few percent ended up in amino acids. Where did much of the rest end up?",
     "answer": "into an intractable brown tar",
     "choices": [
       "into an intractable brown tar",
-      "back out as pure methane",
-      "into microscopic diamonds",
-      "into liquid oxygen"
+      "into proteins strung from those amino acids",
+      "into sugars dissolved in the water",
+      "into the building blocks of DNA"
     ],
-    "context": "The tar coated the inside of the glass; no sugars and no nucleotides ever appeared. Source: en.wikipedia.org/wiki/Miller%E2%80%93Urey_experiment.",
+    "context": "Miller himself estimated that half or more of the methane's carbon had turned into organic matter, most of it complex polymer: the tar that coated the inside of the glass. The small molecules he could pick out and name came to only about fifteen percent of the carbon. No sugars and no nucleotides appeared, and the amino acids never linked up into proteins: the flask made building blocks, not the things built from them. Sources: Jeffrey Bada, 'One of the foremost experiments of the 20th century', Metode (metode.org); Miller and Urey, Science 130 (1959).",
     "topic": "millers-flask-and-the-honest-gap"
   },
   {
@@ -21351,11 +21312,11 @@
     "answer": "Making antibodies",
     "choices": [
       "Making antibodies",
-      "Growing feathers",
-      "Digesting grain",
-      "Producing eggs"
+      "Making T cells",
+      "Making red blood cells",
+      "Raising fevers"
     ],
-    "context": "The failed class demo WAS the experiment. Chang immunised the borrowed chicks with Salmonella O antigen; the bursectomised birds could not raise antibodies and died, and Glick, checking his notes, realised the intact-bursa chicks were the survivors. A teaching lab uncovered a whole lineage of the immune system. Source: popsci.com/chickens-bursa-immune-award/ ; academic.oup.com/cei/article/145/1/1/6458731",
+    "context": "The failed class demo WAS the experiment. Chang immunised the borrowed chicks with Salmonella O antigen; the bursectomised birds could not raise antibodies and died, and Glick, checking his notes, realised the intact-bursa chicks were the survivors. A teaching lab uncovered a whole lineage of the immune system. T cells, the other line of targeted defence, mature in the thymus instead. Source: popsci.com/chickens-bursa-immune-award/ ; academic.oup.com/cei/article/145/1/1/6458731",
     "topic": "millers-thymus-and-glicks-chickens"
   },
   {
@@ -21369,19 +21330,6 @@
       "a vitamin"
     ],
     "context": "The great organ hunts - liver, pancreas, spleen, kidneys, thyroid - were finished by the mid-20th century. The thymus was the last one left with 'unknown' next to its function line, and Miller settled it in 1961. There is no organ left in the human body whose function is still up for discovery. Source: thelancet.com/journals/lancet/article/PIIS0140-6736(11)61565-1/fulltext",
-    "topic": "millers-thymus-and-glicks-chickens"
-  },
-  {
-    "tier": 5,
-    "question": "Jacques Miller cut the thymus, a small organ tucked behind the breastbone, out of newborn mice in 1961. Without it they could not make T cells and quickly died of infection. His mice predicted that any human baby born without a thymus would be very short of T cells, and some babies are born with little or no thymus at all. What is that syndrome called?",
-    "answer": "DiGeorge syndrome",
-    "choices": [
-      "DiGeorge syndrome",
-      "Down syndrome",
-      "Marfan syndrome",
-      "Turner syndrome"
-    ],
-    "context": "DiGeorge (22q11.2 deletion) syndrome causes facial anomalies, heart defects and, in about 1 percent of cases, complete athymia - no thymus, no T cells, and no protection until a thymus transplant is arranged. It is the human confirmation of Miller's mouse. Source: msdmanuals.com/home/immune-disorders/immunodeficiency-disorders/digeorge-syndrome ; ncbi.nlm.nih.gov/pmc/articles/PMC8249278/",
     "topic": "millers-thymus-and-glicks-chickens"
   },
   {
@@ -21446,7 +21394,7 @@
       "Swung wildly above and below Millikan with no trend at all",
       "Stayed exactly at Millikan's value for fifty years, then corrected in a single 1959 paper"
     ],
-    "context": "Feynman's point was psychological, not arithmetic -- an experimenter who got a number much higher than Millikan's went hunting for what was wrong with his own apparatus, and stopped hunting once the number sat near Millikan's. Another question names the rule that fixes this.",
+    "context": "Feynman's point was psychological, not arithmetic: an experimenter who got a number much higher than Millikan's went hunting for what was wrong with his own apparatus, and stopped hunting once the number sat near Millikan's. Big physics teams now guard against that pull with blind analysis.",
     "topic": "millikans-oil-drops-and-the-slow-crawl-to-truth"
   },
   {
@@ -21464,15 +21412,15 @@
   },
   {
     "tier": 5,
-    "question": "Felix Ehrenhaft insisted in Vienna, from 1910 on, that Robert Millikan was wrong: charge was not fixed, and pieces smaller than the electron were real. Other physicists' drops went on showing the same single lump. Yet modern physics did find particles with a fraction of an electron's charge, locked inside protons and neutrons. What are those particles called?",
-    "answer": "Quarks",
+    "question": "Felix Ehrenhaft insisted in Vienna, from 1910 on, that charges smaller than an electron's rode on his drops. Every other laboratory's drops showed the same single lump. Half a century later physics did find particles carrying a third or two-thirds of an electron's charge, the quarks. Why do quarks not rescue Ehrenhaft's drops?",
+    "answer": "They stay locked inside protons and neutrons, never free",
     "choices": [
-      "Quarks",
-      "Neutrinos",
-      "Positrons",
-      "Muons"
+      "They stay locked inside protons and neutrons, never free",
+      "Their charge is too small for any oil drop to show",
+      "They turned up only in particle beams, never in matter",
+      "They decay away long before they could reach a drop"
     ],
-    "context": "Ehrenhaft, at the University of Vienna, never conceded. Einstein wrote in 1940 that he did not believe Ehrenhaft's numbers but that nobody had a clear explanation for what Ehrenhaft was actually seeing. Millikan's view won because everyone else's drops kept giving the same lump. Source: Wikipedia, Felix Ehrenhaft.",
+    "context": "Quarks carry a third or two-thirds of an electron's charge, but they are confined: no free quark has ever been caught on its own, so a lone quark could never ride an oil drop. Ehrenhaft, at the University of Vienna, never conceded. Einstein wrote in 1940 that he did not believe Ehrenhaft's numbers but that nobody had a clear explanation for what Ehrenhaft was actually seeing. Sources: Wikipedia, Felix Ehrenhaft; Wikipedia, Quark.",
     "topic": "millikans-oil-drops-and-the-slow-crawl-to-truth"
   },
   {
@@ -21673,27 +21621,27 @@
   {
     "tier": 5,
     "question": "A Turkish sniper killed Henry Moseley at Gallipoli on 10 August 1915, aged 27. He had volunteered for the British Army in 1914, after about two years of work on his X-ray staircase. Robert Millikan called his loss one of the heaviest costs of the war to science. Which rule kept his name off the Nobel roll?",
-    "answer": "The Nobel Prize is never awarded posthumously",
+    "answer": "The Nobel Prize could not go to anyone already dead when nominated",
     "choices": [
-      "The Nobel Prize is never awarded posthumously",
+      "The Nobel Prize could not go to anyone already dead when nominated",
       "The Nobel Prize was suspended for the whole of the First World War",
       "British officers were barred from Swedish scientific honours",
       "Only work published after 1915 was eligible for the physics prize"
     ],
-    "context": "The physics prize for 1917 went to Charles Barkla, who had done earlier X-ray work. Rutherford summed up Moseley's discovery by saying the X-ray wavelength changes could be explained by supposing the charge on the nucleus increases from one element to the next by exactly one unit. Source: aps.org/apsnews/2012/08/henry-moseley-killed-action-1915",
+    "context": "Svante Arrhenius had nominated him for both the 1915 physics and chemistry prizes, but that year they went to the Braggs and to Richard Willstatter. After his death no fresh nomination could count, because the statutes of the day barred a prize for the work of someone already dead; the flat rule against posthumous prizes was written only in 1974. The physics prize for 1917 went to Charles Barkla, who had done earlier X-ray work. Rutherford summed up Moseley's discovery by saying the X-ray wavelength changes could be explained by supposing the charge on the nucleus increases from one element to the next by exactly one unit. Sources: en.wikipedia.org/wiki/Henry_Moseley; nobelprize.org nomination archive; aps.org/apsnews/2012/08/henry-moseley-killed-action-1915",
     "topic": "moseley-counts-the-charges-and-re-orders-the-table"
   },
   {
     "tier": 1,
-    "question": "Rene Blondlot of Nancy, in France, said in 1903 that he had found a new kind of ray, the N-ray. An American visitor secretly took away part of his gear during a demonstration, and the readings kept coming. What were the N-rays finally shown to be?",
-    "answer": "Imaginary; they did not exist",
+    "question": "Rene Blondlot of Nancy said in 1903 that he had found a new kind of ray, the N-ray, and other labs confirmed it. An American visitor quietly tested Blondlot's apparatus during a demonstration in 1904. What were the N-rays finally shown to be?",
+    "answer": "Imaginary rays that never existed",
     "choices": [
-      "Imaginary; they did not exist",
-      "A real form of X-ray",
-      "Cosmic rays from space",
+      "Imaginary rays that never existed",
+      "A disguised form of X-rays",
+      "Cosmic rays from deep space",
       "Radiation from radioactive rocks"
     ],
-    "context": "Blondlot named the rays N-rays (N for Nancy) in the spring of 1903 while trying to polarize X-rays. Becquerel had discovered radioactivity in 1896, Villard discovered gamma rays in 1900, and Lippmann won the 1908 Nobel for colour photography -- so a kid in that decade would meet all four as respected French physicists.",
+    "context": "Blondlot named the rays N-rays (N for Nancy) in the spring of 1903 while trying to polarize X-rays. They were imaginary: when Robert W. Wood secretly pocketed the prism that was supposed to spread them into a spectrum, the observer went on reading off the same spectrum. Becquerel had found radioactivity in 1896 and Villard gamma rays in 1900, so in that decade a new kind of ray did not sound strange at all. Source: en.wikipedia.org/wiki/N_ray.",
     "topic": "n-rays-and-the-anatomy-of-pathological-science"
   },
   {
@@ -21732,7 +21680,7 @@
       "the electrical filament from the discharge tube",
       "the copper collimator from the front of the apparatus"
     ],
-    "context": "The prism was the piece that supposedly separated the incoming N-rays into their spectrum -- without it there could be no reading at all. The demonstrator went on calmly reading off exactly the same spectrum after Wood pocketed it. All four other choices are real parts of the sort of dim optical rig Wood was looking at, but the prism was the load-bearing one.",
+    "context": "The prism was the piece that supposedly separated the incoming N-rays into their spectrum; without it there could be no reading at all. The demonstrator went on calmly reading off exactly the same spectrum after Wood pocketed it.",
     "topic": "n-rays-and-the-anatomy-of-pathological-science"
   },
   {
@@ -21758,7 +21706,7 @@
       "his long service to the University of Nancy",
       "his defence of French science against attack"
     ],
-    "context": "The rewording was a bureaucratic finesse -- the prize was announced, but the citation quietly dropped the N-rays and pointed backward at Blondlot's career. All three other choices are things Blondlot had genuinely done or could plausibly have been cited for; the specific replacement wording is the whole point of this question.",
+    "context": "The rewording was a bureaucratic finesse: the prize was announced, but the citation quietly dropped the N-rays and pointed back at Blondlot's career as a whole, which did include real earlier work.",
     "topic": "n-rays-and-the-anatomy-of-pathological-science"
   },
   {
@@ -21841,11 +21789,11 @@
   },
   {
     "tier": 3,
-    "question": "Peter Ludvig Panum, sent to study the measles sweeping the Faroe Islands in 1846, kept meeting elderly islanders it had left alone, and each had lived through the epidemic of 1781. Two explanations fit: great age itself protects, or having had measles long ago protects. He found his test among the old islanders who had missed 1781. What happened to them?",
+    "question": "Peter Ludvig Panum wanted to know, in the Faroe Islands measles of 1846, whether great age itself could shield a person from the disease. He found his test in villages the previous epidemic, in 1781, had never reached, where even the oldest had never had measles. What happened to the old people there?",
     "answer": "Every one of them caught measles",
     "choices": [
       "Every one of them caught measles",
-      "Most of them escaped it as well",
+      "Most of them escaped it",
       "About half of them caught it",
       "They caught it, but only mildly"
     ],
