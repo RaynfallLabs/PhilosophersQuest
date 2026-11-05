@@ -30447,19 +30447,6 @@
   },
   {
     "tier": 2,
-    "question": "Charles Konig of the British Museum needed a name for the dolphin-shaped sea reptile Mary Anning had freed from the Dorset cliffs, with its enormous eyes and rows of pointed teeth. He coined the word 'ichthyosaur.' What does the name mean?",
-    "answer": "Fish-lizard",
-    "choices": [
-      "Fish-lizard",
-      "Storm-runner",
-      "Dragon-king",
-      "Sea-ghost"
-    ],
-    "context": "The creature swam like a fish but was a reptile that breathed air, so 'fish-lizard' captured the puzzle of it. Source: https://en.wikipedia.org/wiki/Mary_Anning",
-    "topic": "mary-anning-the-fossil-hunter-of-lyme-regis"
-  },
-  {
-    "tier": 2,
     "question": "Tray, Mary Anning's little black-and-white terrier, worked the cliffs of Lyme Regis at her side for years. One stormy October day in 1833 a landslide came thundering down the rocks, and Mary escaped it by a moment. What happened to Tray?",
     "answer": "The falling cliff crushed him in an instant",
     "choices": [
@@ -30564,13 +30551,13 @@
   },
   {
     "tier": 5,
-    "question": "Anna Pinney wrote down how her friend Mary Anning spoke of the gentleman geologists who published her fossils and observations under their own names. Anning felt the sting of it. In her bitter complaint, as Pinney recorded it, what had those men of learning done?",
+    "question": "Anna Pinney wrote down how her friend Mary Anning spoke of the gentleman geologists who won fame from her fossils and her observations. Anning felt the sting of it keenly. Which words did Pinney record about those men of learning?",
     "answer": "'These men of learning have sucked her brains'",
     "choices": [
       "'These men of learning have sucked her brains'",
-      "'These men of learning have stolen my gold'",
-      "'These men of learning have burned my letters'",
-      "'These men of learning have barred my door'"
+      "'These men of learning have picked her pockets'",
+      "'These men of learning have stolen her bones'",
+      "'These men of learning have shut her out'"
     ],
     "context": "The full quote: the world 'has used her ill... these men of learning have sucked her brains, and made a great deal of publishing works, of which she furnished the contents, while she derived none of the advantages.' Source: https://en.wikipedia.org/wiki/Mary_Anning",
     "topic": "mary-anning-the-fossil-hunter-of-lyme-regis"
@@ -30585,7 +30572,7 @@
       "Anning's own brother Joseph composed it for her shop",
       "Anning painted it as the slogan on her shop window"
     ],
-    "context": "Winick showed the phrase was already common folklore before Terry Sullivan's 1908 song — written more than 60 years after Anning's birth — and that song never even mentions her. A charming legend, but not history. Source: https://blogs.loc.gov/folklife/2017/07/she-sells-seashells-and-mary-anning-metafolklore-with-a-twist/",
+    "context": "Winick showed the phrase was already common folklore before Terry Sullivan's 1908 song, written more than sixty years after Anning's death in 1847, and that song never even mentions her. A charming legend, but not history. Source: https://blogs.loc.gov/folklife/2017/07/she-sells-seashells-and-mary-anning-metafolklore-with-a-twist/ ; https://en.wikipedia.org/wiki/Mary_Anning",
     "topic": "mary-anning-the-fossil-hunter-of-lyme-regis"
   },
   {
@@ -30655,15 +30642,15 @@
   },
   {
     "tier": 2,
-    "question": "Chanakya, the royal adviser, slipped tiny doses of poison into the emperor Chandragupta's food, the legend says, until no killer could poison him. In the same tale the pregnant queen ate from the king's plate and died, but her unborn son was saved. He became Ashoka's father, Bindusara. What does that name mean?",
-    "answer": "Drop of poison",
+    "question": "Chanakya, the royal adviser, slipped tiny doses of poison into the emperor Chandragupta's food, the legend says, until no killer could poison him. In the same tale the pregnant queen ate from the king's plate and died, but her unborn son was saved. He became Ashoka's father, Bindusara. What was he named for?",
+    "answer": "A drop of the poison that touched him",
     "choices": [
-      "Drop of poison",
-      "Gift of the gods",
-      "Son of the serpent",
-      "Born in sorrow"
+      "A drop of the poison that touched him",
+      "The god who saved him from death",
+      "The serpent that guarded his cradle",
+      "The grief of his mother's last hour"
     ],
-    "context": "In this tradition Chanakya laced the king's food in tiny doses to build immunity; the unborn child was saved as the queen died and was named Bindusara, 'drop of poison.' He became the next emperor and Ashoka's father. The story is legend, not documented fact. Source: Sankalp India Foundation, Poisoning the King; Medium, Bindusara (Stories of Aryavarta).",
+    "context": "In Hemachandra's twelfth-century Jain telling, Chanakya laced the king's food in tiny doses to build immunity; the queen died, the child was saved, and a drop (bindu) of the poison had already touched the baby's head, so he was named Bindusara. He became the next emperor and Ashoka's father. The story is legend, not documented fact. Source: https://en.wikipedia.org/wiki/Bindusara ; https://grokipedia.com/page/Bindusara",
     "topic": "mauryan-empire-ashoka-the-great"
   },
   {
@@ -30758,21 +30745,8 @@
     "topic": "mauryan-empire-ashoka-the-great"
   },
   {
-    "tier": 4,
-    "question": "Ashoka ruled a vast Indian empire in the 200s BC, yet in all the inscriptions he had carved across his lands he never once used the name Ashoka. He called himself only Devanampiya Piyadasi, 'Beloved of the Gods.' After his empire fell, no one could match that title to a known king. For roughly how long did his identity stay lost?",
-    "answer": "About two thousand years",
-    "choices": [
-      "About two thousand years",
-      "About two hundred years",
-      "About five hundred years",
-      "About fifty years"
-    ],
-    "context": "Because he called himself only Devanampiya Piyadasi, 'Beloved of the Gods, of gracious gaze,' Ashoka's real identity was lost for almost two thousand years. His empire had collapsed within about 50 years of his death, and even the script of his edicts became unreadable. Source: World History Encyclopedia, Edicts of Ashoka; Wikipedia, Devanampriya / Priyadasi.",
-    "topic": "mauryan-empire-ashoka-the-great"
-  },
-  {
     "tier": 5,
-    "question": "James Prinsep, a British scholar, cracked the long-unreadable Brahmi script of Ashoka's pillars in 1837. Yet the carvings named only a mystery king, 'Beloved of the Gods,' and never Ashoka. What let Prinsep prove the two were the same man?",
+    "question": "James Prinsep, a British scholar, cracked the long-unreadable Brahmi script of Ashoka's pillars in 1837. Yet every carving then known named only a mystery king, 'Beloved of the Gods,' and never Ashoka. What let Prinsep prove the two were the same man?",
     "answer": "An old Sri Lankan chronicle that named the same king",
     "choices": [
       "An old Sri Lankan chronicle that named the same king",
@@ -30780,7 +30754,7 @@
       "A Greek letter describing Ashoka by name",
       "A family tree carved on the Sarnath lions"
     ],
-    "context": "James Prinsep deciphered Brahmi in 1837; pointed by George Turnour to a Sri Lankan Pali chronicle, he realized the mysterious 'Devanampiya Piyadasi' of the pillars was the lost emperor Ashoka, who had been forgotten for nearly two thousand years. Source: World History Encyclopedia, Edicts of Ashoka; GKToday; Scroll.in (James Prinsep).",
+    "context": "James Prinsep deciphered Brahmi in 1837; pointed by George Turnour to a Sri Lankan Pali chronicle, he realized the mysterious 'Devanampiya Piyadasi' of the pillars was the lost emperor Ashoka, who had been forgotten for nearly two thousand years. In 1915 a newly found edict at Maski named him outright as 'Devanampiya Ashoka.' Source: https://grokipedia.com/page/Edicts_of_Ashoka ; World History Encyclopedia, Edicts of Ashoka; Scroll.in (James Prinsep).",
     "topic": "mauryan-empire-ashoka-the-great"
   },
   {
@@ -30811,7 +30785,7 @@
   },
   {
     "tier": 3,
-    "question": "Maya scribes had written thousands of books on folded bark paper by the time Spain conquered their lands. The Spanish bishop Diego de Landa burned every one he could seize on a single great bonfire at Mani in the Yucatan in 1562. After the whole Spanish conquest, how many Maya books were left in the world?",
+    "question": "Maya scribes had filled a great many books on folded bark paper by the time Spain conquered their lands. The Spanish bishop Diego de Landa burned every one he could seize on a single great bonfire at Mani in the Yucatan in 1562. After the whole Spanish conquest, how many Maya books were left in the world?",
     "answer": "Only four",
     "choices": [
       "Only four",
@@ -30819,7 +30793,7 @@
       "Around three thousand",
       "None at all"
     ],
-    "context": "Bishop Diego de Landa burned thousands of codices at Mani in 1562. Just four Maya bark-paper books survived, and the Dresden Codex is the finest of them. It later turned up in a library in Dresden, Germany, which gave it its name. Source: https://mayan.org/civilization/dresden-codex/",
+    "context": "Bishop Diego de Landa burned the Maya books he found at Mani in 1562; he admitted to 27, and scholars put the true number at 40 to 100 or more. Just four Maya bark-paper books survive, and the Dresden Codex is the finest of them. It later turned up in a library in Dresden, Germany, which gave it its name. Source: https://grokipedia.com/page/Maya_codices ; https://mayan.org/civilization/dresden-codex/",
     "topic": "maya-astronomy-and-the-long-count-calendar"
   },
   {
@@ -30837,15 +30811,15 @@
   },
   {
     "tier": 5,
-    "question": "Maya astronomers tracked Venus by naked eye alone, and the tables of the Dresden Codex give its cycle as 583.92 days. They even added a leap-year-style correction so their count would not drift. Measured against the true cycle, how far off were the Maya?",
-    "answer": "By about one hundredth of a day",
+    "question": "Maya astronomers tracked Venus by naked eye alone, and the tables of the Dresden Codex count its cycle as 584 days. They even built in a leap-year-style correction so their count would not drift. Measured against the true average cycle, how far off was the Maya count?",
+    "answer": "By less than a tenth of a day",
     "choices": [
-      "By about one hundredth of a day",
-      "By about three days",
-      "By nearly a week",
-      "By roughly a month"
+      "By less than a tenth of a day",
+      "By about three whole days",
+      "By nearly a full week",
+      "By roughly a whole month"
     ],
-    "context": "The Maya value of 583.92 days misses the modern 583.93 days by only about one hundredth of a day. They tracked Venus this precisely with the naked eye, and even built in a leap-year-style correction so the count would not drift. Source: https://www.sci.news/astronomy/dresden-codex-venus-table-discovery-04110.html",
+    "context": "The Maya count of 584 days misses the true average cycle of Venus, 583.92 days, by less than a tenth of a day. They tracked Venus this closely with the naked eye, and even built in a leap-year-style correction so the count would not drift. Source: https://en.wikipedia.org/wiki/Maya_astronomy ; https://www.sci.news/astronomy/dresden-codex-venus-table-discovery-04110.html",
     "topic": "maya-astronomy-and-the-long-count-calendar"
   },
   {
@@ -30902,7 +30876,7 @@
   },
   {
     "tier": 3,
-    "question": "Harry Gold, a Soviet courier, had to be sure that David Greenglass, the spy he was meeting to trade atomic secrets at Los Alamos, was his real contact and not a trap. Gold held one jagged half of a torn object; Greenglass took the matching half from his wife's purse, and the edges fit. What was the torn object?",
+    "question": "Harry Gold, a Soviet courier, had to be sure that David Greenglass, the Los Alamos machinist he was meeting in Albuquerque to collect atomic secrets, was his real contact and not a trap. Gold held one jagged half of a torn object; Greenglass took the matching half from his wife's purse, and the edges fit. What was the torn object?",
     "answer": "A Jell-O box top",
     "choices": [
       "A Jell-O box top",
@@ -30910,7 +30884,7 @@
       "A playing card",
       "A train ticket"
     ],
-    "context": "The jagged halves of a Jell-O box top matched, proving each man was who he claimed. Greenglass then handed over sketches of the plutonium bomb's high-explosive lenses, one of its most crucial secrets. Source: Science History Institute 'Harry Gold: Spy in the Lab'; National Archives 'Fat Man, Little Boy, A Packet of Jell-O.'",
+    "context": "Gold came to the Greenglasses' apartment in Albuquerque in June 1945, and the jagged halves of a Jell-O box top matched, proving each man was who he claimed. Greenglass then handed over sketches of the plutonium bomb's high-explosive lenses, one of its most crucial secrets. Source: https://prologue.blogs.archives.gov/2011/04/05/fat-man-little-boy-a-packet-of-jello/ ; Science History Institute 'Harry Gold: Spy in the Lab'.",
     "topic": "mccarthyism-the-red-scare"
   },
   {
@@ -30992,29 +30966,16 @@
     "topic": "mccarthyism-the-red-scare"
   },
   {
-    "tier": 4,
-    "question": "Julius and Ethel Rosenberg went to the electric chair at Sing Sing prison in June 1953. Julius died after three jolts of 2,000 volts, but Ethel survived the first jolts sent through her. How many jolts did it take in the end to kill Ethel Rosenberg?",
-    "answer": "Five jolts",
-    "choices": [
-      "Five jolts",
-      "Three jolts",
-      "Four jolts",
-      "Six jolts"
-    ],
-    "context": "Ethel survived the first jolts, and a fifth had to be ordered to kill her. Both Rosenbergs proclaimed their innocence to the end. Source: History.com 'Julius and Ethel Rosenberg executed, June 19, 1953'; UPI Archives 1953.",
-    "topic": "mccarthyism-the-red-scare"
-  },
-  {
     "tier": 5,
     "question": "Roy Cohn, Joseph McCarthy's chief counsel, spent six months from July 1953 leaning on the Army over a single drafted private, and even threatened to 'expose the Army in its worst light' when it refused him. That quarrel led to the televised hearings that finished McCarthy. What was Cohn demanding?",
-    "answer": "A cushy posting for his friend Schine",
+    "answer": "Special favours for a private who was his friend",
     "choices": [
-      "A cushy posting for his friend Schine",
-      "A weekend pass for a young aide",
-      "A fast promotion for a former staffer",
-      "An early discharge for a buddy"
+      "Special favours for a private who was his friend",
+      "A court-martial for a private who had defied him",
+      "Prison for a private he had branded a communist",
+      "A medal for a private who had spied for him"
     ],
-    "context": "Cohn pressured the Army to give cushy treatment to his friend G. David Schine, a former McCarthy aide drafted as a private. The Army's counter-charge triggered the televised hearings that ended McCarthy. Source: Wikipedia 'Army-McCarthy hearings.'",
+    "context": "The Army charged that McCarthy's staff had sought a direct commission and then special favours for Cohn's friend G. David Schine, a former McCarthy aide drafted as a private. That counter-charge triggered the televised hearings that ended McCarthy. Source: https://en.wikipedia.org/wiki/Army%E2%80%93McCarthy_hearings",
     "topic": "mccarthyism-the-red-scare"
   },
   {
@@ -31023,8 +30984,8 @@
     "answer": "The cables were still classified secrets",
     "choices": [
       "The cables were still classified secrets",
-      "Revealing them would expose the broken codes",
-      "The cables named only his codename",
+      "A judge had ruled the cables forgeries",
+      "The cables were lost in an office fire",
       "The code-breakers refused to testify"
     ],
     "context": "Venona stayed classified until July 1995, so the public, and the courtroom, never saw the cables proving Julius passed the proximity fuze and P-80 jet data. The case shows the witch-hunt and real spying tangled together: Julius truly spied. Source: NSA 'The Venona Story'; Wikipedia 'Venona project.'",
@@ -31036,7 +30997,7 @@
     "answer": "He had lied and never saw her type anything",
     "choices": [
       "He had lied and never saw her type anything",
-      "He had been a Soviet agent himself all along",
+      "He had made up the whole spy ring himself",
       "He had forged her signature on the documents",
       "He had been paid by the FBI to accuse her"
     ],
@@ -31062,9 +31023,9 @@
     "answer": "The Kaaba",
     "choices": [
       "The Kaaba",
-      "The minaret",
-      "The basilica",
-      "The ziggurat"
+      "The Mihrab",
+      "The Minbar",
+      "The Zamzam"
     ],
     "context": "The Kaaba is a cube about 15 metres (50 feet) tall at the centre of the Grand Mosque in Mecca; the Arabic word ka'bah literally means 'cube.' Muslims everywhere face its direction, the qibla, when they pray. Source: https://www.britannica.com/topic/Kaaba-shrine-Mecca-Saudi-Arabia",
     "topic": "mecca-the-kaaba-and-the-hajj"
@@ -31072,9 +31033,9 @@
   {
     "tier": 2,
     "question": "A pilgrim arriving at Mecca for the hajj lays by his everyday clothes and dresses in the ihram instead: two plain white sheets, one wound at the waist and one thrown over the shoulder. Millions of other men dress exactly as he does. What striking thing happens in that crowd?",
-    "answer": "You cannot tell a king from a beggar",
+    "answer": "No one can tell a king from a beggar",
     "choices": [
-      "You cannot tell a king from a beggar",
+      "No one can tell a king from a beggar",
       "Each tribe forms its own line",
       "The wealthy lead the procession",
       "Pilgrims are sorted by their age"
@@ -31120,19 +31081,6 @@
     ],
     "context": "The first 'Moses' is Moses the prophet, the last is Maimonides; the line ranks him as the greatest Jewish mind since the Torah's own lawgiver. Born in Cordoba in 1138, he fled when the Almohads conquered the city in 1148, settled in Fustat, Egypt, served Saladin's court as a physician, and wrote the 'Guide for the Perplexed.' Source: en.wikipedia.org/wiki/Maimonides",
     "topic": "medieval-jewish-life-persecution"
-  },
-  {
-    "tier": 1,
-    "question": "A knight of medieval Europe rode out in full plate, each piece bearing a name of its own: the helm for his head, the gauntlet for his hand, the greave for his shin, and the sabaton, shaped to a long point at the front. What was the sabaton?",
-    "answer": "The steel shoe that covered his foot",
-    "choices": [
-      "The steel shoe that covered his foot",
-      "The steel collar that guarded his neck",
-      "The steel cap that covered his knee",
-      "The steel glove that covered his hand"
-    ],
-    "context": "The sabaton was the pointed steel shoe. Plate armour had a whole vocabulary of named parts: the gauntlet (hand), gorget (neck), poleyn (knee), greave (shin), pauldron (shoulder), and the fauld (the skirt of overlapping steel hoops at the waist). Source: worldhistory.org/article/1244/the-armour-of-an-english-medieval-knight/",
-    "topic": "medieval-knight-s-arms-armor"
   },
   {
     "tier": 1,
@@ -31382,19 +31330,6 @@
     "topic": "medieval-women-s-lives-roles"
   },
   {
-    "tier": 2,
-    "question": "A peasant woman in medieval Europe brewed more beer at home than her household could drink and sold the extra from her own front door, earning money of her own. Most trades were closed to women, but brewing at home was women's work. What were such women called?",
-    "answer": "Alewives",
-    "choices": [
-      "Alewives",
-      "Goodwives",
-      "Midwives",
-      "Fishwives"
-    ],
-    "context": "Selling ale gave ordinary women rare financial independence at a time when most trades were closed to them. Source: Medievalists.net, 'The Village Ale-Wife'; JSTOR Daily, 'A Pint for the Alewives'.",
-    "topic": "medieval-women-s-lives-roles"
-  },
-  {
     "tier": 3,
     "question": "King Louis VII of France marched east on the Second Crusade in 1147 to defend the Christian kingdoms beyond the sea, and his queen, Eleanor of Aquitaine, did not stay home to rule. How did she travel with the crusade?",
     "answer": "She rode toward the Holy Land with her own entourage of Aquitanian ladies",
@@ -31409,7 +31344,7 @@
   },
   {
     "tier": 3,
-    "question": "Christine de Pizan lost her husband to the plague in 1389, while she was in her mid-twenties, and was left with her mother, a niece and three young children to support. Rather than remarry, she did something almost no one in Europe had done before. What did she do?",
+    "question": "Christine de Pizan lost her husband to the plague in 1389, while she was in her mid-twenties, and was left with her mother, a niece and her young children to support. Rather than remarry, she did something almost no woman in Europe had done before. What did she do?",
     "answer": "She earned her living as a professional writer",
     "choices": [
       "She earned her living as a professional writer",
@@ -31417,7 +31352,7 @@
       "She ran her late husband's law practice",
       "She became a lady-in-waiting at court"
     ],
-    "context": "Christine de Pizan (c.1364–c.1430) is considered the first person in Europe to make a living by her pen. Source: National Geographic, 'France's first woman of letters'; World History Encyclopedia.",
+    "context": "Christine de Pizan (c.1364-c.1430) is considered the first woman in Europe to make a living by her pen. Source: https://grokipedia.com/page/Christine_de_Pizan ; https://en.wikipedia.org/wiki/Christine_de_Pizan",
     "topic": "medieval-women-s-lives-roles"
   },
   {
@@ -31456,7 +31391,7 @@
       "The Mirror of Princes",
       "The Garden of Earthly Delights"
     ],
-    "context": "She also publicly debated The Romance of the Rose, attacking its portrayal of women. The wrong choice 'Romance of the Rose' is the very poem she was arguing against. Source: World History Encyclopedia; Open University, 'World-Changing Women: Christine de Pizan'.",
+    "context": "Christine had already attacked Jean de Meun's part of The Romance of the Rose for its picture of women, in a famous public quarrel carried on in letters in 1401 and 1402. Source: World History Encyclopedia; Open University, 'World-Changing Women: Christine de Pizan'.",
     "topic": "medieval-women-s-lives-roles"
   },
   {
@@ -31527,25 +31462,25 @@
   {
     "tier": 3,
     "question": "Miguel Hidalgo, a village priest in Spanish-ruled Mexico, rang his church bell on 16 September 1810, before dawn, to wake his parish. He stood before his people and called on them to rise up and throw off Spanish rule, and his call launched Mexico's war for independence. By what name is it remembered?",
-    "answer": "The Grito de Dolores, the Cry of Dolores",
+    "answer": "The Grito de Dolores",
     "choices": [
-      "The Grito de Dolores, the Cry of Dolores",
-      "The Reconquista, the reconquest of Spain",
-      "The Cortes of Cadiz, the Spanish assembly",
-      "The Edict of Nantes, a royal decree"
+      "The Grito de Dolores",
+      "The Grito de Lares",
+      "The Grito de Asencio",
+      "The Grito de Ipiranga"
     ],
-    "context": "The 'Grito de Dolores' (Cry of Dolores) is Hidalgo's call to arms on Sept. 16, 1810. Mexico still celebrates Independence Day on Sept. 16 to mark it, even though independence was not actually won until 1821. Every year the President re-rings Hidalgo's bell from the National Palace balcony and shouts 'Viva Mexico!' Source: https://en.wikipedia.org/wiki/Grito_de_Dolores ; https://www.britannica.com/event/Grito-de-Dolores",
+    "context": "The 'Grito de Dolores' (Cry of Dolores), named for his parish, is Hidalgo's call to arms on Sept. 16, 1810. Mexico still celebrates Independence Day on Sept. 16 to mark it, even though independence was not actually won until 1821. Every year the President re-rings Hidalgo's bell from the National Palace balcony and shouts 'Viva Mexico!' Source: https://en.wikipedia.org/wiki/Grito_de_Dolores ; https://www.britannica.com/event/Grito-de-Dolores",
     "topic": "mexican-independence-and-father-hidalgo"
   },
   {
     "tier": 4,
     "question": "Miguel Hidalgo's ragtag army stopped at the church in Atotonilco in 1810, the day after he called his parish to rise against Spain. There he took a banner down from the wall and raised it as his army's standard, and his fighters marched and fought beneath it. Whose image was on the banner?",
-    "answer": "The Virgin of Guadalupe, patron saint of Mexico",
+    "answer": "The Virgin of Guadalupe",
     "choices": [
-      "The Virgin of Guadalupe, patron saint of Mexico",
-      "King Ferdinand VII, the Spanish monarch",
-      "Saint James, the warrior patron of Spain",
-      "Hernan Cortes, the Spanish conqueror"
+      "The Virgin of Guadalupe",
+      "The Virgin of Los Remedios",
+      "Saint James on horseback",
+      "Saint Michael with his sword"
     ],
     "context": "Hidalgo seized a banner of the dark-skinned Virgin of Guadalupe (the 'virgen morena') and made it his army's standard; the insurgents' battle cry was roughly 'Long live the Virgin of Guadalupe! Death to bad government!' The image rallied thousands of Indian and mestizo fighters to his side. Source: https://en.wikipedia.org/wiki/Banner_of_the_Virgin_of_Guadalupe ; https://www.history.com/this-day-in-history/september-16/mexican-war-of-independence-begins",
     "topic": "mexican-independence-and-father-hidalgo"
@@ -31621,9 +31556,9 @@
     "answer": "High up on the roofline of Florence Cathedral",
     "choices": [
       "High up on the roofline of Florence Cathedral",
-      "Deep inside a dark chapel",
-      "At the bottom of a well-lit staircase",
-      "On a barge floating in the river"
+      "In a niche beside the cathedral doors",
+      "On a fountain in the city's market square",
+      "Inside the Medici family's private chapel"
     ],
     "context": "The David was meant for the cathedral roofline, so the upper body was enlarged to read correctly from far below. Once finished, Florence judged it too magnificent to hoist up and set it at ground level by the town hall. Source: https://selectitaly.com/blog/florence/11-things-you-didnt-know-about-michelangelos-david/",
     "topic": "michelangelo-sistine-ceiling-and-david"
@@ -31721,7 +31656,7 @@
   },
   {
     "tier": 3,
-    "question": "Michelangelo overheard pilgrims in Rome crediting his new Pieta, a marble Mary cradling the dead Christ across her lap, to a rival sculptor in 1499, as Giorgio Vasari tells it. He added his name to the statue, the only one of his works he would ever sign. How did he do it?",
+    "question": "Michelangelo overheard pilgrims in Rome crediting his new Pieta, a marble Mary cradling the dead Christ across her lap, to a rival sculptor in 1499, as Giorgio Vasari tells it. He made sure no one would make that mistake again. How did he do it?",
     "answer": "He crept into the chapel at night and chiseled his name across the sash on Mary's chest",
     "choices": [
       "He crept into the chapel at night and chiseled his name across the sash on Mary's chest",
@@ -31760,10 +31695,10 @@
   },
   {
     "tier": 3,
-    "question": "Giovanni da Pistoia received a comic sonnet from his friend Michelangelo in 1509, after months of painting the Sistine ceiling over his head. Michelangelo wrote of a swelling in his throat, a beard pointing at heaven and paint dripping on his face. How did he end the poem?",
-    "answer": "'I am not in the right place -- I am no painter.'",
+    "question": "Michelangelo had spent months painting the Sistine ceiling over his head when he sent his friend Giovanni da Pistoia a comic sonnet in 1509. He wrote of a swelling in his throat, a beard pointing at heaven and paint dripping on his face. How did he end the poem?",
+    "answer": "'I am not in the right place, and I am no painter.'",
     "choices": [
-      "'I am not in the right place -- I am no painter.'",
+      "'I am not in the right place, and I am no painter.'",
       "'Yet still my hand obeys the Pope's command.'",
       "'And so this ceiling shall outlast my bones.'",
       "'Pray for me, friend, that I may see it done.'"
@@ -31825,15 +31760,15 @@
   },
   {
     "tier": 5,
-    "question": "Zheng He commanded seven huge voyages for the Ming emperors in the early 1400s, with hundreds of ships sailing as far as East Africa, decades before Columbus crossed the far smaller Atlantic in 1492. China stood poised to rule the oceans. Then, after the seventh voyage ended in 1433, the Ming court made a stunning choice. What did it do?",
-    "answer": "Abandoned the fleet, banned ocean voyages, and destroyed the records",
+    "question": "Zheng He commanded seven huge voyages for the Ming emperors in the early 1400s, with hundreds of ships sailing as far as East Africa. China stood poised to rule the oceans. Then, after the seventh voyage ended in 1433, the Ming court made a stunning choice. What did it do?",
+    "answer": "Let the great fleet decay and banned voyages overseas",
     "choices": [
-      "Abandoned the fleet, banned ocean voyages, and destroyed the records",
+      "Let the great fleet decay and banned voyages overseas",
       "Doubled the fleet and sailed on to map the whole African coast",
       "Sold the treasure ships to Arab and Indian merchants for gold",
       "Sent the fleet west to seek a sea route around to Europe"
     ],
-    "context": "After 1433 the Ming court abandoned the treasure fleets, passed Haijin (sea-ban) laws forbidding private maritime trade and restricting shipbuilding to small coastal vessels, and Confucian officials set about destroying the records of the voyages. Having reached Africa first, China deliberately turned inward — the Yongle Emperor's cosmopolitan vision replaced by the Confucian ideal of a self-sufficient agrarian realm. Source: https://www.thecollector.com/zheng-he-closing-ming-china/",
+    "context": "After 1433 the Ming court let the treasure fleets decay at the docks and enforced its Haijin (sea-ban) laws, forbidding private maritime trade and restricting shipbuilding to small coastal vessels; decades later, by the usual account, officials destroyed the records of the voyages. Having reached Africa first, China deliberately turned inward, the Yongle Emperor's cosmopolitan vision replaced by the Confucian ideal of a self-sufficient agrarian realm. Source: https://grokipedia.com/page/Zheng_He ; https://www.thecollector.com/zheng-he-closing-ming-china/",
     "topic": "ming-china-zheng-he-s-treasure-fleets-the-forbid"
   },
   {
@@ -31855,8 +31790,8 @@
     "answer": "He could be put to death",
     "choices": [
       "He could be put to death",
-      "He were fined a month's wages",
-      "He were turned away politely at the gate",
+      "He was fined a month's wages",
+      "He was turned away politely at the gate",
       "He had to bow and leave a gift"
     ],
     "context": "That deadly rule is exactly what made the city 'forbidden' to everyone but the emperor's household and court. Source: https://www.travelchinaguide.com/why-is-it-called-forbidden-city.htm",
@@ -31981,7 +31916,7 @@
   },
   {
     "tier": 5,
-    "question": "Zheng He had a stone tablet set up at Galle, on the island of Ceylon, in 1409. It carries one inscription in three different languages, each part giving thanks and gifts to a different god. Which three gods did the stone honour side by side?",
+    "question": "Zheng He's fleet put in at Galle, on the island of Ceylon, and set up a stone tablet there. It carries one inscription in three different languages, each part giving thanks and gifts to a different god. Which three gods did the stone honour side by side?",
     "answer": "The Buddha, the Hindu god Vishnu, and Allah",
     "choices": [
       "The Buddha, the Hindu god Vishnu, and Allah",
@@ -31994,19 +31929,6 @@
   },
   {
     "tier": 3,
-    "question": "Moctezuma II reigned over the Aztec Empire from its island capital, Tenochtitlan, when the Spanish arrived. Before he took the throne he had led armies in battle and served Huitzilopochtli, the war god, as his high priest. What does the name Moctezuma roughly mean?",
-    "answer": "he frowns like a lord",
-    "choices": [
-      "he frowns like a lord",
-      "he speaks for the sun",
-      "he walks among eagles",
-      "he holds the obsidian"
-    ],
-    "context": "Roughly 'he frowns like a lord' or 'he who is angry in a noble manner.' Before taking the throne he served as a tlacatecuhtli (war-leader) and as high priest of Huitzilopochtli, the Aztec war-god. Source: https://en.wikipedia.org/wiki/Moctezuma_II",
-    "topic": "moctezuma-ii-and-the-spanish-conquest-of-the-azt"
-  },
-  {
-    "tier": 3,
     "question": "Moctezuma II met Hernan Cortes on the great causeway into Tenochtitlan in November 1519, and the two men traded necklaces. Cortes gave a collar of pearls and cut glass. Moctezuma gave back collars of red snail shells, and from each hung eight gold figures, each about a foot and a half long. What were the gold figures shaped like?",
     "answer": "golden shrimp",
     "choices": [
@@ -32016,19 +31938,6 @@
       "golden serpents"
     ],
     "context": "By Cortes's own account (his Second Letter), Moctezuma gave two collars of red snail-shells, from each of which hung eight golden prawns/shrimp 'finished in a very perfect manner, about a foot and a half in length.' Source: https://www.historians.org/resource/cortes-on-meeting-moctezuma/",
-    "topic": "moctezuma-ii-and-the-spanish-conquest-of-the-azt"
-  },
-  {
-    "tier": 3,
-    "question": "Cuauhtemoc, the last Aztec emperor, led the desperate defence of Tenochtitlan right to the very end, and he was taken alive when Hernan Cortes captured the city in August 1521. What does the name Cuauhtemoc mean in Nahuatl, the Aztec language?",
-    "answer": "Descending Eagle",
-    "choices": [
-      "Descending Eagle",
-      "Smoking Mirror",
-      "Speaking Stone",
-      "Obsidian Serpent"
-    ],
-    "context": "'Cuauhtemoc' means 'Descending Eagle.' He led the defense of Tenochtitlan to the very end before the city fell on 13 August 1521. Source: https://www.britannica.com/biography/Cuauhtemoc",
     "topic": "moctezuma-ii-and-the-spanish-conquest-of-the-azt"
   },
   {
@@ -32095,19 +32004,6 @@
     ],
     "context": "By Bernal Diaz's Spanish account, Moctezuma was struck by stones thrown by his own people and then refused food and treatment and died of the wounds. But the death is genuinely contested: some Indigenous sources (e.g. Chimalpahin) say the Spanish killed him, and report that his body bore sword wounds. Sources: https://en.wikipedia.org/wiki/Moctezuma_II ; https://www.mexicolore.co.uk/aztecs/ask-us/moctezumas-death",
     "topic": "moctezuma-ii-and-the-spanish-conquest-of-the-azt"
-  },
-  {
-    "tier": 2,
-    "question": "Yesugei, a clan chieftain on the Mongolian steppe, named his newborn son around 1162 after a Tatar warrior he had just captured in battle. The boy would one day be called Genghis Khan, but his birth name was Temujin. What did Temujin mean?",
-    "answer": "Of iron, or blacksmith",
-    "choices": [
-      "Of iron, or blacksmith",
-      "Son of the open sky",
-      "Wolf of the cold steppe",
-      "Lord of a thousand horses"
-    ],
-    "context": "Temujin meant 'of iron' or 'blacksmith.' 'Genghis Khan,' likely meaning 'universal ruler,' was a title given to him only in 1206. Sources: worldhistory.org/Genghis_Khan; en.wikipedia.org/wiki/Genghis_Khan",
-    "topic": "mongol-empire-genghis-khan"
   },
   {
     "tier": 2,
@@ -32202,13 +32098,13 @@
   },
   {
     "tier": 4,
-    "question": "Genghis Khan's followers laid him to rest in 1227 and hid the place so well that it has never been found. By tradition, they made sure that no trace of it would remain. What did they do at the grave itself?",
-    "answer": "Riders trampled the grave flat to hide it",
+    "question": "No one has ever found where Genghis Khan was laid to rest in 1227. Tradition says his funeral escort killed any traveller who saw the procession pass. At the grave itself, the same tradition says, the escort did one more thing before riding away. What was it?",
+    "answer": "Horsemen trampled the ground flat over it",
     "choices": [
-      "Riders trampled the grave flat to hide it",
-      "He was buried at sea in a stone coffin",
-      "His tomb was filled with molten gold",
-      "His body was burned on a great pyre"
+      "Horsemen trampled the ground flat over it",
+      "Masons sealed it beneath a great stone cairn",
+      "Mourners heaped a tall earth mound over it",
+      "Shamans walled it up inside a mountain cave"
     ],
     "context": "Tradition holds that the escort had horses trample the grave flat so no mound or marker remained. The tomb has never been located. Sources: worldhistory.org/Genghis_Khan; history.com/topics/asian-history/genghis-khan  (Legend.)",
     "topic": "mongol-empire-genghis-khan"
@@ -32345,7 +32241,7 @@
   },
   {
     "tier": 3,
-    "question": "Montesquieu argued that the power to judge must be kept apart from the rest of the government. He inherited a post in Bordeaux in 1716 and held it for about eleven years. Before he became a writer, what had Montesquieu been?",
+    "question": "Montesquieu argued that the power to judge must be kept apart from the rest of the government. He inherited a post in Bordeaux in 1716 and held it until 1726. Before he gave himself wholly to writing, what had Montesquieu been?",
     "answer": "A judge over criminal trials",
     "choices": [
       "A judge over criminal trials",
@@ -32384,10 +32280,10 @@
   },
   {
     "tier": 2,
-    "question": "Montesquieu won a single grand title from James Madison, who leaned on the Frenchman heavily in Federalist No. 47 in 1788 while defending the new Constitution. What did Madison call Montesquieu?",
-    "answer": "The oracle always consulted on this subject",
+    "question": "James Madison leaned heavily on Montesquieu in Federalist No. 47 in 1788, defending the way the new Constitution split the powers of government. He gave the Frenchman a single grand title there. What did Madison call Montesquieu?",
+    "answer": "The oracle always consulted and cited",
     "choices": [
-      "The oracle always consulted on this subject",
+      "The oracle always consulted and cited",
       "The father of the American republic",
       "The first true friend of liberty",
       "The wisest king's counselor in Europe"
@@ -32410,7 +32306,7 @@
   },
   {
     "tier": 5,
-    "question": "James Madison turned Montesquieu's warning into one of the most quoted sentences in American government. In Federalist No. 47 he wrote that piling all the lawmaking, law-enforcing and judging power into one set of hands 'may justly be pronounced' one terrible thing. What did Madison say that piling-up of power was?",
+    "question": "James Madison turned Montesquieu's warning into one of the most quoted sentences in American government. In Federalist No. 47 he wrote that piling every power of government into one set of hands 'may justly be pronounced' one terrible thing. What did Madison say that piling-up of power was?",
     "answer": "The very definition of tyranny",
     "choices": [
       "The very definition of tyranny",
@@ -32453,9 +32349,9 @@
     "answer": "Proved polyphony could be holy and clear, saving the whole tradition from the ban",
     "choices": [
       "Proved polyphony could be holy and clear, saving the whole tradition from the ban",
-      "Was the first music ever sung in the new Sistine Chapel before the assembled cardinals",
-      "Converted a Protestant prince who heard it and returned his lands to the Church",
-      "Was composed overnight on a dare and performed for the pope the very next morning"
+      "Won polyphony a place in the pope's own chapel alone, while the ban held elsewhere",
+      "Showed the bishops how muddled polyphony was, so plain chant became the only rule",
+      "Persuaded the Council to ban polyphony but let organs play the old tunes instead"
     ],
     "context": "This is a beloved legend, not fact: it was first claimed by the theorist Agostino Agazzari in 1607 and dramatized by biographer Giuseppe Baini in 1828; modern scholars say Palestrina's name probably never even came up in the Council's debates. The Mass is written for six voice parts, but its trick was clarity: he often had the voices move together in chords so every word could be understood. Source: ebsco.com/research-starters/music/pope-marcellus-mass",
     "topic": "monteverdi-and-the-birth-of-opera-palestrina-to-"
@@ -32501,7 +32397,7 @@
   },
   {
     "tier": 3,
-    "question": "Thomas Clarkson printed a diagram of the slave ship Brookes in 1788. It showed more than 400 people drawn lying side by side across the lower deck, packed like rows of goods. The picture's power came from one number: the width of deck each grown person was given. About how wide was that space?",
+    "question": "Thomas Clarkson spread a diagram of the slave ship Brookes across Britain, its lower deck drawn with more than 400 people lying side by side like rows of goods. The picture's power came from one number: the width of deck each grown person was given. About how wide was that space?",
     "answer": "Sixteen inches",
     "choices": [
       "Sixteen inches",
@@ -32509,7 +32405,7 @@
       "Forty inches",
       "Sixty inches"
     ],
-    "context": "Each person had about sixteen inches (40 cm) of width and roughly two and a half feet of headroom — too little to sit up or stand. The Quaker printer James Phillips ran off 7,000 copies in 1789. Clarkson called the diagram's effect 'intelligible and irresistible' and carried it on his lecture tours. (abolitionseminar.org 'Brookes')",
+    "context": "Each person had about sixteen inches (40 cm) of width and roughly two and a half feet of headroom, too little to sit up or stand. Abolitionists in Plymouth first printed the plan in 1788, and in London the Quaker printer James Phillips ran off 7,000 copies in 1789. Clarkson called the diagram's effect 'intelligible and irresistible' and carried it on his lecture tours. (https://en.wikipedia.org/wiki/Brookes_(ship) ; abolitionseminar.org 'Brookes')",
     "topic": "mound-of-empires-end-atlantic-slave-trade-origin"
   },
   {
@@ -32526,43 +32422,17 @@
     "topic": "mound-of-empires-end-atlantic-slave-trade-origin"
   },
   {
-    "tier": 4,
-    "question": "Below deck on the Middle Passage, the young Olaudah Equiano found a hold so foul and crowded that each chained captive had 'scarcely room to turn himself.' In his book he recorded the most desperate act he saw there: two men, chained together, choosing death over the voyage. What did they do?",
-    "answer": "Jumped through the netting into the sea",
-    "choices": [
-      "Jumped through the netting into the sea",
-      "Refused all food until they died",
-      "Broke their chains and fought the crew",
-      "Begged the captain to turn the ship back"
-    ],
-    "context": "Equiano wrote that the two men, 'preferring death to such a life of misery, somehow made through the nettings and jumped into the sea' to drown rather than continue — a documented act of suicide-resistance on the Middle Passage. Crews strung netting along the rails precisely to stop such escapes. (https://www.worldhistory.org/article/2672/olaudah-equianos-account-of-the-middle-passage/)",
-    "topic": "mound-of-empires-end-atlantic-slave-trade-origin"
-  },
-  {
     "tier": 5,
     "question": "Afonso I, the Christian king of Kongo, watched Portuguese merchants go behind his back and buy captives straight from his own nobles. In 1526 he wrote to King Joao III of Portugal to protest the trade, and he described one cruelty the slavers did to his stolen people. What did Afonso say was being done to them?",
     "answer": "Branded with a red-hot iron",
     "choices": [
       "Branded with a red-hot iron",
-      "Sold to lands across the sea",
+      "Made to give up their faith",
       "Worked until they dropped dead",
       "Torn from their mothers at birth"
     ],
     "context": "Afonso (born Nzinga Mbemba) wrote that traders were 'kidnapping our people — children of this country, sons of our nobles and vassals, even people of our own family,' who were then 'branded with a red-hot iron.' He is a rare example of an African ruler protesting the trade from inside it — and being ignored. (https://en.wikipedia.org/wiki/Afonso_I_of_Kongo ; worldhistorycommons.org)",
     "topic": "mound-of-empires-end-atlantic-slave-trade-origin"
-  },
-  {
-    "tier": 1,
-    "question": "Leopold Mozart and his wife wrote one of their baby son's names in Greek, Theophilus, when the boy was baptized in Salzburg in January 1756. In Latin the same name became Amadeus, as in Wolfgang Amadeus Mozart. What does the name mean?",
-    "answer": "\"Beloved of God\"",
-    "choices": [
-      "\"Beloved of God\"",
-      "\"Born in winter\"",
-      "\"Son of the court\"",
-      "\"Master of the keys\""
-    ],
-    "context": "Theophilus is Greek for 'lover of God' / 'beloved of God'; its Latin equivalent is Amadeus, the name history remembers him by. Source: mozartproject.org/the-many-names-of-wolfgang-amadeus-mozart/ ; en.wikipedia.org/wiki/Mozart's_name",
-    "topic": "mozart-the-prodigy-composer"
   },
   {
     "tier": 1,
@@ -32575,19 +32445,6 @@
       "A sea shanty"
     ],
     "context": "His first surviving piece is a tiny Minuet in G, later catalogued as K.1, written when he was five. Source: mozartproject.org/mozarts-first-composition-a-minuet-and-trio/ ; classicfm.com/composers/mozart/first-piano-music-minuet/",
-    "topic": "mozart-the-prodigy-composer"
-  },
-  {
-    "tier": 2,
-    "question": "At three, little Wolfgang Mozart was already picking out full tunes on a keyboard, before many children could even tie their shoes. His father, Leopold, taught music in Salzburg. Which keyboard instrument was the small boy playing?",
-    "answer": "The harpsichord",
-    "choices": [
-      "The harpsichord",
-      "The church organ",
-      "The clavichord",
-      "The fortepiano"
-    ],
-    "context": "Mozart could play the harpsichord by age 3 and was composing by 4-5. Source: britannica.com/biography/Wolfgang-Amadeus-Mozart",
     "topic": "mozart-the-prodigy-composer"
   },
   {
@@ -32695,19 +32552,6 @@
     "topic": "mozart-the-prodigy-composer"
   },
   {
-    "tier": 5,
-    "question": "Mozart poured out symphonies, operas, concertos and church music in barely thirty-five years. To keep them straight, scholars give each of his works its own number in one catalogue, from the first piece he wrote at about five to the Requiem he never finished. What is that numbering system called?",
-    "answer": "The Köchel (K.) number",
-    "choices": [
-      "The Köchel (K.) number",
-      "The Salzburg index",
-      "The Vienna stamp",
-      "The Amadeus code"
-    ],
-    "context": "Ludwig von Köchel catalogued Mozart's works; the numbers run from K.1 (the minuet he wrote at five) to K.626 (the Requiem). A 2024 revision pushed his documented output past 700 pieces. Source: en.wikipedia.org/wiki/Köchel_catalogue ; mozarteum.at/en/presentation-of-the-new-koechel-catalogue",
-    "topic": "mozart-the-prodigy-composer"
-  },
-  {
     "tier": 4,
     "question": "Alexander Pushkin wrote a verse play spreading the legend that Antonio Salieri, Vienna's court composer, poisoned Mozart out of jealousy, and the film Amadeus stamped it on everyone's memory. Historians have turned up no evidence for it. What did Salieri, Mozart and a third musician do together in 1785?",
     "answer": "Jointly composed a cantata to celebrate a singer recovering her voice",
@@ -32752,7 +32596,7 @@
     "answer": "Medina",
     "choices": [
       "Medina",
-      "Mecca",
+      "Taif",
       "Baghdad",
       "Damascus"
     ],
@@ -32930,7 +32774,7 @@
   },
   {
     "tier": 2,
-    "question": "The priests who embalmed Egypt's dead buried each body for weeks in a drying powder scraped from dry desert lakebeds, to pull out every drop of moisture before the body could rot. They called the powder netjry. What was it?",
+    "question": "The priests who embalmed Egypt's dead buried each body for weeks in a drying powder scraped from dry desert lakebeds, to pull out every drop of moisture before the body could rot. What was that powder?",
     "answer": "Natron",
     "choices": [
       "Natron",
@@ -32981,26 +32825,13 @@
     "topic": "mummification-and-the-afterlife"
   },
   {
-    "tier": 3,
-    "question": "Herodotus, a Greek traveller, visited Egypt around 440 BC and wrote down what the priests told him about preserving a body. They packed it in a drying salt, he said, for a fixed number of days, and 'for a longer time than this it is not permitted to embalm it.' How many days did Herodotus give?",
-    "answer": "70 days",
-    "choices": [
-      "70 days",
-      "40 days",
-      "100 days",
-      "365 days"
-    ],
-    "context": "Herodotus recorded that mummification took exactly 70 days, with the body packed in natron, and that embalming longer than that was forbidden. Seventy days was the rule, never more. Source: worldhistory.org/article/89/herodotus-on-burial-in-egypt",
-    "topic": "mummification-and-the-afterlife"
-  },
-  {
     "tier": 4,
     "question": "Over a mummy's chest the Egyptians laid a green stone charm, inscribed with a spell addressed to the organ beneath it. They feared what that organ might do at the weighing. What was the charm meant to do?",
     "answer": "Bribe the heart into staying silent at the scales",
     "choices": [
       "Bribe the heart into staying silent at the scales",
       "Make the heart beat one last time before judgment",
-      "Replace the heart if it had been damaged",
+      "Hide the heart from robbers who broke into the tomb",
       "Weigh the heart down so it sank on the scale"
     ],
     "context": "The green heart scarab, carved over the chest and inscribed with Spell 30B of the Book of the Dead, was a magical bribe to keep the heart from confessing sins to the Lord of Things at the scales. Source: ancientegyptonline.co.uk/heartscarab + en.wikipedia.org/wiki/Heart_scarab",
@@ -33021,7 +32852,7 @@
   },
   {
     "tier": 1,
-    "question": "Benito Mussolini named his movement in 1919 after an emblem of power from ancient Rome, the fasces. Attendants called lictors carried it on their shoulders ahead of Roman judges, a sign of the power to punish and even to execute. What did the fasces look like?",
+    "question": "Benito Mussolini named his movement in 1919 after an emblem of power from ancient Rome. Attendants called lictors carried it on their shoulders ahead of Roman judges, a sign of the power to punish and even to execute. What did that emblem look like?",
     "answer": "a bundle of wooden rods strapped around an axe",
     "choices": [
       "a bundle of wooden rods strapped around an axe",
@@ -33350,9 +33181,9 @@
     "answer": "Kristallnacht -- 'Night of Broken Glass'",
     "choices": [
       "Kristallnacht -- 'Night of Broken Glass'",
-      "Blutnacht -- 'Night of Blood'",
-      "Pogromnacht -- 'Night of the Pogrom'",
-      "Scherbennacht -- 'Night of Shards'"
+      "Scherbennacht -- 'Night of Shards'",
+      "Fensternacht -- 'Night of Windows'",
+      "Splitternacht -- 'Night of Splinters'"
     ],
     "context": "Kristallnacht was set off when 17-year-old Herschel Grynszpan shot the German diplomat Ernst vom Rath in Paris on November 7, 1938; after Rath died, Joseph Goebbels gave a Munich speech signaling Nazis to 'spontaneously' attack -- violence that was in fact ordered from the top. About 100 Jews were killed directly (roughly 400 counting suicides) and some 26,000-30,000 men were sent to Dachau, Buchenwald, and Sachsenhausen. Source: USHMM Holocaust Encyclopedia, 'Kristallnacht'.",
     "topic": "nazi-ideology-and-the-nuremberg-laws"
@@ -33428,9 +33259,9 @@
     "answer": "Demoted them from citizens to mere 'subjects' of the state",
     "choices": [
       "Demoted them from citizens to mere 'subjects' of the state",
-      "Barred them from voting in any national election",
+      "Ordered them all to leave Germany within a year",
       "Required them to register all property with the state",
-      "Banned them from holding any government job"
+      "Expelled their children from every German school"
     ],
     "context": "Only a person 'of German or related blood' could now be a Reich citizen (Reichsbürger) with full political rights; a Jew became a mere subject (Staatsangehörige) -- no longer a citizen, though born in that country. Source: USHMM Holocaust Encyclopedia, 'Nuremberg Laws'; Wikipedia, 'Nuremberg Laws'.",
     "topic": "nazi-ideology-and-the-nuremberg-laws"
@@ -33445,12 +33276,12 @@
       "Blue squares for Germans, yellow squares for Jews",
       "Green checks for the pure, black crosses for Jews"
     ],
-    "context": "People of mixed ancestry got shaded circles. The chart counted grandparents: three or four Jewish grandparents made you a full 'Jew' (Jude), two a 'Mischling of the first degree', one a 'Mischling of the second degree'. The regime classified about 502,200 Germans as full Jews. Source: National WWII Museum, 'The Nuremberg Race Laws'; EHRI / USHMM blood-purity teaching chart.",
+    "context": "People of mixed ancestry got shaded circles. The chart counted grandparents: three or four Jewish grandparents made a person a full 'Jew' (Jude), two a 'Mischling of the first degree', one a 'Mischling of the second degree'. The regime classified about 502,200 Germans as full Jews. Source: National WWII Museum, 'The Nuremberg Race Laws'; EHRI / USHMM blood-purity teaching chart.",
     "topic": "nazi-ideology-and-the-nuremberg-laws"
   },
   {
     "tier": 4,
-    "question": "Deputies of the Reichstag, the German parliament, gathered at the giant annual Nazi Party rally in September 1935, summoned by Hitler to rubber-stamp his new race laws, whose drafts had been rushed together overnight, one of them jotted down on the reverse of a menu. In all twelve years of Nazi rule, no other sitting of the Reichstag was like it. What set it apart?",
+    "question": "Deputies of the Reichstag, the German parliament, gathered at the giant annual Nazi Party rally in September 1935. Hitler had summoned them to rubber-stamp his new race laws, whose drafts were rushed together overnight, one jotted on the reverse of a menu. In all twelve years of Nazi rule, no other sitting of the Reichstag was like it. What set it apart?",
     "answer": "It was the only one ever held outside Berlin",
     "choices": [
       "It was the only one ever held outside Berlin",
@@ -33710,7 +33541,7 @@
   },
   {
     "tier": 3,
-    "question": "Italians of the 1500s met a new fruit from the Americas, probably an early yellow kind, and their word for it, 'pomodoro,' first appeared in print in 1554. Italians still use the word for the tomato. What does 'pomodoro' literally mean?",
+    "question": "Italians of the 1500s met a strange new fruit from the Americas, and their word for it, 'pomodoro,' first appeared in print in 1554. Italian cooks still use the word for the red tomatoes in their sauces. What does 'pomodoro' literally mean?",
     "answer": "golden apple",
     "choices": [
       "golden apple",
@@ -33840,13 +33671,13 @@
   },
   {
     "tier": 5,
-    "question": "Kim Il Sung is said to have declared in 1972 that the 'seed' of an enemy must be eliminated, and his state built a rule of guilt by association on that line. When the state accused one person of a political crime, it did not punish that person alone. How far across a family could it reach when it sent people to the prison camps?",
-    "answer": "three generations — grandparents, parents, and children",
+    "question": "Kim Il Sung is said to have declared in 1972 that the 'seed' of an enemy must be eliminated, and his state built a rule of guilt by association on that line. When the state accuses one person of a political crime, it does not punish that person alone. How far can that punishment reach when it sends people to the prison camps?",
+    "answer": "Three generations of the family",
     "choices": [
-      "three generations — grandparents, parents, and children",
-      "only the accused person",
-      "the accused and spouse",
-      "the entire home village"
+      "Three generations of the family",
+      "The accused and the spouse only",
+      "Every family on the accused's street",
+      "Everyone from the accused's home village"
     ],
     "context": "Under the three-generations rule, grandparents, parents, and children of one accused person can all be sent to the kwan-li-so camps, in most cases for life. The 1972 line attributed to Kim Il Sung read: 'Factionalists and enemies of class, whoever they are, their seed must be eliminated through three generations.' The camp network holds an estimated 80,000 to 120,000 prisoners. Source: Wikipedia, 'Yodok concentration camp'; Freedom House, 'Concentrations of Inhumanity'.",
     "topic": "north-korea-the-prison-state"
