@@ -230,7 +230,7 @@
       "The caffeine grew stronger over the years, enough to mask and cancel out the bitterness",
       "His usual dark roast is a naturally mild bean, so there was little bitterness to begin with"
     ],
-    "context": "As one summary of the science puts it, coffee always tastes bitter to the mouth — the brain only updates its 'hedonic value,' or how pleasant it judges the taste. Your tongue didn't change its mind; your brain did. Source: ScienceABC 'The Science Of Acquired Taste.'",
+    "context": "As one summary of the science puts it, coffee always tastes bitter to the mouth — the brain only updates its 'hedonic value,' or how pleasant it judges the taste. The tongue didn't change its mind; the brain did. Source: ScienceABC 'The Science Of Acquired Taste.'",
     "topic": "acquired-tastes-bitterness-as-a-poison-alarm"
   },
   {
@@ -243,7 +243,7 @@
       "A cleaner, fresher feeling left in the mouth",
       "A slowly-built tolerance to natural poisons"
     ],
-    "context": "The brain re-labels a bitter drink as pleasant because each sip pays off. As researchers put it, people like how the payoff makes them feel — 'and that outweighs the burn of alcohol or the bitterness.' No payoff, no acquired liking. Source: BeerDecoded / Coalition Brewing on alcohol reward learning; ScienceABC on the brain's reward pathways.",
+    "context": "The brain re-labels a bitter drink as pleasant because each sip pays off: the lift of caffeine, the buzz of alcohol. In time the payoff comes to outweigh the bitterness, and with no payoff there is no acquired liking. Source: ScienceABC on the brain's reward pathways; BeerDecoded on alcohol reward learning.",
     "topic": "acquired-tastes-bitterness-as-a-poison-alarm"
   },
   {
@@ -256,20 +256,20 @@
       "A preservative that keeps drinks fizzy",
       "A polish for shining brass and copper"
     ],
-    "context": "The compound is quinine — a genuine anti-malaria drug that is toxic in quantity, so the U.S. FDA caps tonic water at 83 parts per million (higher doses can cause nausea, vomiting, even kidney injury). In a tonic-sized dose we simply enjoy a real poison-flavor made safe. Source: BiologyInsights 'What Has Quinine in It?'; U.S. FDA quinine limit for tonic water.",
+    "context": "The compound is quinine — a genuine anti-malaria drug that is toxic in quantity, so the U.S. FDA caps tonic water at 83 parts per million (higher doses can cause nausea, vomiting, even kidney injury). In a tonic-sized dose, drinkers simply enjoy a real poison-flavor made safe. Source: BiologyInsights 'What Has Quinine in It?'; U.S. FDA quinine limit for tonic water.",
     "topic": "acquired-tastes-bitterness-as-a-poison-alarm"
   },
   {
     "tier": 4,
     "question": "Bitter taste evolved as an ancient poison alarm: a bite of something too bitter, and the tongue says spit it out. Some plants hide tiny amounts of cyanide in their cells, released when teeth crush the tissue, and a faint bitterness warns the eater not to have too much. Which ordinary kitchen foods carry these cyanide-releasing compounds?",
-    "answer": "Cassava, almonds, and lima beans",
+    "answer": "Cassava, bitter almonds, and lima beans",
     "choices": [
-      "Cassava, almonds, and lima beans",
-      "Bananas, mangoes, and pineapples",
-      "Potatoes, carrots, and onions",
+      "Cassava, bitter almonds, and lima beans",
+      "Ripe bananas, mangoes, and pineapples",
+      "Potatoes, carrots, and red onions",
       "Lettuce, cucumbers, and celery"
     ],
-    "context": "The bitter alarm is written in deep time. Scientists estimate one positively-selected bitter-receptor variant arose before humans left Africa, sharpening early humans' detection of cyanide-releasing compounds found in cassava, almonds, green tea, and beans — our tongue flags the faint bitterness so we don't eat too much. Source: Duke Health 'Toxins Drove Evolution of Human Taste Sense'; Soranzo & Goldstein et al., Current Biology (July 26, 2005).",
+    "context": "The bitter alarm is written in deep time. Scientists estimate that one favoured bitter-receptor variant arose before humans left Africa, sharpening early humans' detection of the cyanide-releasing compounds in plants such as cassava, bitter almonds and beans; the faint bitterness warns the eater not to have too much. Sweet almonds, the kind sold for snacking, carry almost none of these compounds. Source: Duke Health 'Toxins Drove Evolution of Human Taste Sense'; Soranzo & Goldstein et al., Current Biology (July 26, 2005); https://grokipedia.com/page/Amygdalin",
     "topic": "acquired-tastes-bitterness-as-a-poison-alarm"
   },
   {
@@ -438,20 +438,20 @@
       "beef",
       "chicken"
     ],
-    "context": "By the 1920s pork ruled the al pastor spit. The switch was easy partly because the immigrants who brought the dish were mostly Christians, with no religious rule against pork. Source: The Eye (Huatulco), 'Al pastor and the Lebanese influence on Mexican food'.",
+    "context": "Pork came to rule the spit as tacos al pastor took shape in Mexico City in the 1950s and 1960s; the older Puebla versions used lamb or beef. The switch was easy partly because the immigrants who brought the spit were mostly Christians, with no religious rule against pork. Source: https://grokipedia.com/page/Al_pastor ; The Eye (Huatulco), 'Al pastor and the Lebanese influence on Mexican food'.",
     "topic": "al-pastor-a-shawarma-spit-that-became-a-mexican-taco"
   },
   {
     "tier": 3,
-    "question": "Newcomers from abroad cooked their homeland's lamb shawarma on an upright turning spit, and Mexican cooks watched, learned and remade the dish with local meat and dried chilies. That spit is no old Aztec invention: the immigrants who brought it first reached Mexico in the late 1800s. Which country did they come from?",
+    "question": "Newcomers from abroad cooked their homeland's lamb shawarma on an upright turning spit, and Mexican cooks watched, learned and remade the dish with local meat and dried chilies. That spit is no old Aztec invention: the immigrants who brought it first reached Mexico in the late 1800s. Where did they come from?",
     "answer": "Lebanon",
     "choices": [
       "Lebanon",
-      "Turkey",
       "Greece",
-      "Syria"
+      "Morocco",
+      "Iran"
     ],
-    "context": "Lebanese immigrants began reaching Mexico in the late 1800s (the first arrived in 1892 and settled near Puebla). Their lamb shawarma was the direct model for al pastor, which exploded in popularity in Mexico City in the 1960s. Source: The Eye (Huatulco); Wikipedia, 'Al pastor'.",
+    "context": "Lebanese immigrants began reaching Mexico in the late 1800s, many of them settling around Puebla; their homeland was then part of the Ottoman Empire. Their lamb shawarma was the direct model for al pastor, which took off in Mexico City in the 1950s and 1960s. Source: https://grokipedia.com/page/Al_pastor ; Wikipedia, 'Al pastor'.",
     "topic": "al-pastor-a-shawarma-spit-that-became-a-mexican-taco"
   },
   {
@@ -478,19 +478,6 @@
       "tacos gringa"
     ],
     "context": "These 'tacos arabes' are the closest surviving link back to al pastor's Middle Eastern ancestor: the same spit meat on 'pan arabe,' a wheat flatbread the immigrants brought over. Puebla's La Oriental restaurant, open since 1933, still bills itself 'la cuna del taco arabe' - the birthplace of the Arab taco. Source: Tasting Table, 'The history of tacos al pastor'; The Eye (Huatulco).",
-    "topic": "al-pastor-a-shawarma-spit-that-became-a-mexican-taco"
-  },
-  {
-    "tier": 5,
-    "question": "Mexico's al pastor tacos come off a spinning vertical spit that immigrants from the Middle East brought to Mexico along with their shawarma. The Spanish name points to no ingredient and no flavor; it nods to the old-country roots of those first cooks. What does 'al pastor' mean in Spanish?",
-    "answer": "'shepherd style'",
-    "choices": [
-      "'shepherd style'",
-      "'street-vendor style'",
-      "'fire-pit style'",
-      "'holy-day style'"
-    ],
-    "context": "'Al pastor' means 'shepherd style' (or 'herdsman style'), from 'pastorear,' to herd, and the old countryside spit-roast called 'asado al pastor.' It nods to the shepherd's open-fire spit-roasting tradition - and, fittingly, back to the Middle Eastern lamb-on-a-spit that started it all. (The English word 'pastor,' the shepherd of a congregation, shares the same root.) Source: Wikipedia, 'Al pastor'.",
     "topic": "al-pastor-a-shawarma-spit-that-became-a-mexican-taco"
   },
   {
@@ -612,7 +599,7 @@
   },
   {
     "tier": 2,
-    "question": "A chef facing a knob of ginger rests a finger on the back of her blade and presses straight down for extra power and control. One long side of the blade is honed razor-sharp; the other is left thick and blunt on purpose. What is that blunt side called?",
+    "question": "A chef cracking a tough knob of ginger lays her free palm flat along the top of her chef's knife and bears down hard for extra power and control. Which part of the blade is her palm pressing on?",
     "answer": "the spine",
     "choices": [
       "the spine",
@@ -620,7 +607,7 @@
       "the belly",
       "the choil"
     ],
-    "context": "The spine is the blunt back of the blade, opposite the edge and much thicker than the razor-thin cutting edge. Because it's dull, it's the side you can safely lay a hand on and press down for extra power and control. Source: The Custom Chef (thecustomchef.com/blogs/care/the-complete-guide-to-knife-anatomy); F.N. Sharp (fnsharp.com/blogs/fns/parts-of-a-kitchen-knife).",
+    "context": "The spine is the blunt back of the blade, opposite the edge and much thicker than the razor-thin cutting edge. Because it is dull, it is the side a cook can safely press on with a hand for extra power and control. Source: The Custom Chef (thecustomchef.com/blogs/care/the-complete-guide-to-knife-anatomy); F.N. Sharp (fnsharp.com/blogs/fns/parts-of-a-kitchen-knife).",
     "topic": "anatomy-of-a-chefs-knife-every-part-has-a-job"
   },
   {
@@ -638,41 +625,41 @@
   },
   {
     "tier": 3,
-    "question": "Instead of gripping the handle alone, a pro cook pinches the base of her chef's knife blade between thumb and forefinger for far more control. Right where the blade leaves the handle, a small scooped-out curve cradles those pinching fingers. What is that little notch called?",
-    "answer": "the choil",
+    "question": "Right where a chef's knife blade leaves its handle sits a small scooped notch called the choil. A pro cook's fingers settle into it during the grip that gives far more control than holding the handle alone. How does that grip hold the knife?",
+    "answer": "Thumb and forefinger pinch the base of the blade",
     "choices": [
-      "the choil",
-      "the bolster",
-      "the ricasso",
-      "the tang"
+      "Thumb and forefinger pinch the base of the blade",
+      "All four fingers wrap the far end of the handle",
+      "The forefinger points along the back of the blade",
+      "The whole fist clamps the handle like a hammer"
     ],
-    "context": "The choil is the small recessed curve where the blade leaves the handle. It's the spot to rest your fingers for a secure 'pinch grip' — pinching the base of the blade itself, which gives far more control than gripping the handle alone. Source: Shun Cutlery (shun.kaiusa.com/knife-anatomy); Element Knife Company (elementknife.com/pages/kitchen-knife-anatomy).",
+    "context": "This is the pinch grip: the thumb and the side of the forefinger squeeze the base of the blade itself, with the fingers resting in the choil, the small recessed curve where the blade leaves the handle. Pinching the blade gives far more control than gripping the handle alone. Source: Shun Cutlery (shun.kaiusa.com/knife-anatomy); Element Knife Company (elementknife.com/pages/kitchen-knife-anatomy).",
     "topic": "anatomy-of-a-chefs-knife-every-part-has-a-job"
   },
   {
     "tier": 4,
-    "question": "Suppose you pick up a good chef's knife. Right where the steel blade meets the wooden handle sits a thick collar of forged steel, the bolster, which adds heft and balance so the knife rocks evenly through a cut. It also does a second, cleverer job that keeps a working cook safe. What is that job?",
-    "answer": "it stops your hand sliding forward onto the sharp edge",
+    "question": "A cook picks up a forged Western chef's knife. Where its steel blade meets the handle sits a thick collar of steel, the bolster, which adds heft and balance so the knife rocks evenly through a cut. On knives that have one, it also does a second, cleverer job that keeps a working cook safe. What is that job?",
+    "answer": "It stops a wet hand sliding forward onto the edge",
     "choices": [
-      "it stops your hand sliding forward onto the sharp edge",
-      "it caps the handle end so you can pound nuts and crackers",
-      "it sharpens the edge a little each time you cut",
-      "it keeps the steel from rusting where you hold it"
+      "It stops a wet hand sliding forward onto the edge",
+      "It caps the handle so the cook can pound nuts",
+      "It hones the edge a little with every cut",
+      "It keeps the steel from rusting where it is held"
     ],
     "context": "The bolster is the thick collar of steel where the blade meets the handle, and it does two jobs at once: it adds balance, and it acts as a finger guard — a raised barrier that keeps a wet, slippery hand from sliding forward off the handle onto the edge. Note: not every knife has one — many Japanese knives skip the bolster entirely. Source: F.N. Sharp (fnsharp.com/blogs/fns/parts-of-a-kitchen-knife); Element Knife Company (elementknife.com/pages/kitchen-knife-anatomy); Misen (misen.com/blogs/news/parts-of-a-knife).",
     "topic": "anatomy-of-a-chefs-knife-every-part-has-a-job"
   },
   {
     "tier": 5,
-    "question": "A knifemaker builds a good Western chef's knife so that its steel runs the entire length of the handle in one solid piece. Cooks call that a full tang, and it makes the knife strong. Suppose you pick it up: what else does all that steel do to the way it handles?",
-    "answer": "pulls the balance point back toward your hand",
+    "question": "A knifemaker builds a good Western chef's knife so that its steel runs the entire length of the handle in one solid piece. Cooks call that a full tang, and it makes the knife strong. What else does all that steel in the handle do to the way the knife sits in a cook's hand?",
+    "answer": "pulls the balance point back toward the hand",
     "choices": [
-      "pulls the balance point back toward your hand",
+      "pulls the balance point back toward the hand",
       "tips the balance forward toward the point",
       "makes the blade flex enough to fillet around bones",
       "helps the steel hold its edge and resist rust"
     ],
-    "context": "A full tang runs the entire length (and width) of the handle as one solid piece — strong, and it pulls the balance point back toward your hand, so the knife feels planted, 'like an extension of your arm,' instead of tip-heavy. Source: Dalstrong (dalstrong.com/blogs/news/knife-tang-what-it-is-and-why-it-matters); Misen knife-tang guide (misen.com/blogs/news/knife-tang).",
+    "context": "A full tang runs the entire length (and width) of the handle as one solid piece: strong, and it pulls the balance point back toward the hand, so the knife feels planted, 'like an extension of the arm,' instead of tip-heavy. Source: Dalstrong (dalstrong.com/blogs/news/knife-tang-what-it-is-and-why-it-matters); Misen knife-tang guide (misen.com/blogs/news/knife-tang).",
     "topic": "anatomy-of-a-chefs-knife-every-part-has-a-job"
   },
   {
@@ -763,7 +750,7 @@
       "They all come from animals, not from plants",
       "They all spoil too fast to store safely"
     ],
-    "context": "Loren Cordain popularized paleo in his 2002 book 'The Paleo Diet' (building on Walter Voegtlin's 1975 'The Stone Age Diet'). Its guiding idea, the 'discordance hypothesis' (Eaton and Konner, 1985), is that our genes are still tuned to a pre-farming diet, so grains, beans, dairy, refined sugar, and processed oils — all brought by farming and industry — clash with a body that never adapted. Source: en.wikipedia.org/wiki/Paleolithic_diet.",
+    "context": "Loren Cordain popularized paleo in his 2002 book 'The Paleo Diet' (building on Walter Voegtlin's 1975 'The Stone Age Diet'). Its guiding idea, the 'discordance hypothesis' (Eaton and Konner, 1985), is that human genes are still tuned to a pre-farming diet, so grains, beans, dairy, refined sugar, and processed oils — all brought by farming and industry — clash with a body that never adapted. Source: en.wikipedia.org/wiki/Paleolithic_diet.",
     "topic": "ancestral-eating-keto-paleo-carnivore"
   },
   {
@@ -781,7 +768,7 @@
   },
   {
     "tier": 5,
-    "question": "Vilhjalmur Stefansson, an Arctic explorer, lived on meat alone for a full year under doctors' watch and never got scurvy. Yet he also warned of a trap he called 'rabbit starvation': living only on rabbit meat, he sickened within days, however much of it he ate. Adding one thing back to his meals fixed it fast. What had his body been missing?",
+    "question": "Vilhjalmur Stefansson, an Arctic explorer, lived on meat alone for a full year under doctors' watch and never got scurvy. He also warned of 'rabbit starvation', and when the doctors had him eat only very lean meat, he sickened within days. Adding one thing back to his plate cured him fast. What had his body been missing?",
     "answer": "Fat",
     "choices": [
       "Fat",
@@ -789,7 +776,7 @@
       "Fiber",
       "Sugar"
     ],
-    "context": "Vilhjalmur Stefansson and Karsten Anderson ate only meat for a full year under doctors' watch at New York's Bellevue Hospital (starting 1928, published 1929) and never developed scurvy. But Stefansson had also documented 'rabbit starvation': living on very lean meat like rabbit, with almost no fat, made him ill within days — and the sickness reversed as soon as fat was added back. It shows dietary fat is essential, not optional. Source: en.wikipedia.org/wiki/Vilhjalmur_Stefansson; en.wikipedia.org/wiki/Protein_poisoning.",
+    "context": "Vilhjalmur Stefansson and Karsten Anderson ate only meat for a year under observation at New York's Bellevue Hospital (begun 1928, reported 1929-1930) and never developed scurvy. Early on, at the investigators' request, Stefansson ate lean meat only; he soon had intestinal trouble, which cleared once fat was added back. He called the sickness of living on very lean meat, such as rabbit, 'rabbit starvation'. Dietary fat is essential, not optional. Source: en.wikipedia.org/wiki/Vilhjalmur_Stefansson; en.wikipedia.org/wiki/Protein_poisoning; McClellan and Du Bois, Journal of Biological Chemistry, 1930.",
     "topic": "ancestral-eating-keto-paleo-carnivore"
   },
   {
@@ -876,7 +863,7 @@
     "answer": "A pastry chef",
     "choices": [
       "A pastry chef",
-      "A tavern brewer",
+      "A wine seller",
       "A cheesemonger",
       "A butcher"
     ],
@@ -950,7 +937,7 @@
   },
   {
     "tier": 4,
-    "question": "A four-pound tin of roast veal went north with William Parry's Arctic expedition in 1824 and came home unopened. It sat in a museum for more than a century, until scientists finally cut it open in 1938, 114 years after it was sealed. What did they find inside?",
+    "question": "A four-pound tin of roast veal went north with William Parry's Arctic expedition in 1824 and came home unopened. It sat in a museum for more than a century, until it was finally cut open in 1938. What was found inside?",
     "answer": "Pink veal still perfectly good",
     "choices": [
       "Pink veal still perfectly good",
@@ -958,33 +945,33 @@
       "Gray rot and a foul stench",
       "A crumbling lump of rust"
     ],
-    "context": "A 4-pound tin of roast veal packed for William Parry's 1824 Arctic expedition sailed to the Arctic and back, then sat unopened in a museum until scientists opened it in 1938 — 114 years later — and the pink veal was reportedly still in perfect condition: proof a properly sealed can preserves food almost indefinitely. (Often-told account; medium confidence.) Source: inventionandtech.com, 'Form Follows Failure'  (Legend.)",
+    "context": "A 4-pound tin of roast veal, made in 1823 and packed for William Parry's 1824 Arctic expedition, sailed to the Arctic and back, then sat unopened in a museum until it was opened in 1938 (a few reports say 1939). The veal inside was reported pink and in good condition: proof that a properly sealed can keeps food a very long time. Source: inventionandtech.com, 'Form Follows Failure'; Science Museum Group, 'World's oldest tin', roast veal tin, 1823.",
     "topic": "apperts-sealed-jars-canning-before-anyone-knew-why"
   },
   {
     "tier": 1,
-    "question": "A grocery shelf holds bottles of corn, soybean and cottonseed oil, the 'seed oils', all barely a hundred years old, while olive oil and butter go back more than four thousand years. Why did people wait so long to press oil from seeds?",
-    "answer": "It takes powerful factory machines to wring oil from a tiny seed",
+    "question": "A grocery shelf holds bottles of corn and cottonseed oil beside olive oil and butter, which cooks have made by hand for thousands of years. Corn and cottonseed oil reached kitchens only in the last century or two. Why did they arrive so late?",
+    "answer": "Getting their oil out took factory machinery",
     "choices": [
-      "It takes powerful factory machines to wring oil from a tiny seed",
-      "Corn and soybeans were only discovered about a hundred years ago",
-      "Farmers only recently bred corn and soy to hold any oil at all",
-      "Cooks long ago threw the oily seeds away as worthless scraps"
+      "Getting their oil out took factory machinery",
+      "Corn and cotton were unknown to farmers until then",
+      "Farmers only lately bred the seeds to hold oil",
+      "Both plants grew only in the far tropics until then"
     ],
-    "context": "You can crush an olive or churn butter by hand, but no one can squeeze oil from a corn kernel or a soybean with their fingers — it takes powerful industrial presses and chemical solvents. That is why olive oil and butter are ancient foods while bottled seed oils are barely a century old. Source: queue scope, corroborated by the Centra Foods extraction explainer.",
+    "context": "An olive can be crushed and cream churned by hand, but corn and cottonseed oil came with industry: corn oil is pressed from the germ that factory mills separate from the kernel, and crude cottonseed oil needs heavy refining before it is fit to eat. Other seed oils are far older: sesame oil is ancient, and Chinese mills were pressing soybeans for oil with wooden wedge presses centuries before any factory. Sources: Centra Foods extraction explainer; soyinfocenter.com, 'History of Soybean Crushing'; Wikipedia, 'Corn oil' and 'Cottonseed oil'.",
     "topic": "are-seed-oils-bad-the-honest-fat-debate"
   },
   {
     "tier": 3,
-    "question": "Refiners take the crude oil fresh from crushed seeds, still unfit for any cook to use, and run it through three finishing steps the industry sums up as 'RBD'. The R stands for 'refined'. What do the B and D stand for?",
-    "answer": "Bleached and deodorized",
+    "question": "Fresh from the crushed seeds, soybean oil is still crude, unfit for any cook. Refiners clean it up in three stages, the last two pushing it through clay filters and then blasting it with high heat and steam. What do those stages leave on the store shelf?",
+    "answer": "A pale oil with almost no smell or taste",
     "choices": [
-      "Bleached and deodorized",
-      "Boiled and distilled",
-      "Blended and dosed",
-      "Brined and dried"
+      "A pale oil with almost no smell or taste",
+      "A dark oil with a strong, nutty flavor",
+      "A thick fat that sets solid like butter",
+      "A green oil with a sharp, peppery bite"
     ],
-    "context": "The B is 'bleached' (clay filters strip out the color) and the D is 'deodorized' (high heat and steam drive off the strong smell and taste), leaving the neutral oil you know. Critics point to this bleaching and deodorizing as heavy industrial processing; defenders say it simply makes the oil stable and usable. Gentler cold-pressing (olive oil) skips it entirely, staying below 122°F with no solvent — but recovering the least oil. Source: Centra Foods extraction comparison.",
+    "context": "These are the industry's RBD steps: refined, then bleached (clay filters strip out the color), then deodorized (high heat and steam drive off the strong smell and taste), leaving the pale, neutral oil sold in stores. Critics point to this bleaching and deodorizing as heavy industrial processing; defenders say it simply makes the oil stable and usable. Gentler cold-pressing (olive oil) skips it entirely, staying below 122°F with no solvent, but recovers the least oil. Source: Centra Foods extraction comparison.",
     "topic": "are-seed-oils-bad-the-honest-fat-debate"
   },
   {
@@ -1010,7 +997,7 @@
       "About half of it converts",
       "Nearly all of it converts"
     ],
-    "context": "The catch: in humans, only about 0.2% of the omega-6 we eat is actually converted into arachidonic acid — so even if arachidonic acid does drive inflammation, seed oils barely feed that pathway. Backing this up, a 2017 review of controlled trials found that raising linoleic-acid intake did not measurably change the inflammatory markers in people's blood. Source: MGH 'Seed Oils: Facts & Myths.'",
+    "context": "The catch: in humans, only about 0.2% of the omega-6 people eat is actually converted into arachidonic acid — so even if arachidonic acid does drive inflammation, seed oils barely feed that pathway. Backing this up, a 2017 review of controlled trials found that raising linoleic-acid intake did not measurably change the inflammatory markers in people's blood. Source: MGH 'Seed Oils: Facts & Myths.'",
     "topic": "are-seed-oils-bad-the-honest-fat-debate"
   },
   {
@@ -1118,19 +1105,6 @@
     "topic": "asado-and-chimichurri-argentine-fire-and-the-herb-sauce"
   },
   {
-    "tier": 2,
-    "question": "A dozen guests mill around an Argentine backyard asado with glasses of Malbec, and not one of them reaches for the grill. Every call belongs to one man: when the fire is ready, when the meat goes on, how long it stays and which cut is served first. What is the grill-master called?",
-    "answer": "the asador",
-    "choices": [
-      "the asador",
-      "the pescador",
-      "the matador",
-      "the gaucho"
-    ],
-    "context": "The asador (also called the parrillero) makes every call from the moment the fire is lit to the moment the last cut comes off the grate — everyone else stands back. Source: argentineasado.com.",
-    "topic": "asado-and-chimichurri-argentine-fire-and-the-herb-sauce"
-  },
-  {
     "tier": 3,
     "question": "An Argentine cook chops fresh parsley very fine, minces garlic and stirs in dried oregano, olive oil, red wine vinegar and red chili flakes, then lets the bowl rest a few hours so the flavors blend. The bright green chimichurri goes over the grilled beef at the asado. How is this sauce prepared?",
     "answer": "stirred together raw, never heated",
@@ -1170,16 +1144,16 @@
     "topic": "asado-and-chimichurri-argentine-fire-and-the-herb-sauce"
   },
   {
-    "tier": 5,
-    "question": "A grill-master building his fire for an asado reaches for charcoal made from quebracho, one of the densest, hardest woods in all of South America, because it burns hot and steady for hours and leaves almost no ash. The tree's very name is a warning about that hardness. What does 'quebracho' mean?",
-    "answer": "axe-breaker",
+    "tier": 4,
+    "question": "A grill-master building the fire for an asado reaches for charcoal of quebracho, a South American wood whose name comes from quiebra hacha, 'axe-breaker', because it is so hard it can snap an axe. What makes its coals the grill-master's favorite?",
+    "answer": "They hold a fierce, even heat for hours",
     "choices": [
-      "axe-breaker",
-      "saw-breaker",
-      "nail-breaker",
-      "hammer-breaker"
+      "They hold a fierce, even heat for hours",
+      "They flare up fast for a quick, hot sear",
+      "They catch light in seconds, no kindling",
+      "They burn down to a deep bed of soft ash"
     ],
-    "context": "The name comes from quiebrahacha / quebrar hacha — 'break axe' — because the wood is so hard it can snap an axe. As charcoal it burns hot and steady for three to four hours with very low ash, ideal for the slow ember method. Source: en.wikipedia.org/wiki/Quebracho_tree.",
+    "context": "The name comes from quiebra hacha, 'break axe', because the wood is so hard it can snap an axe. As charcoal it is slow to come up to heat, then gives a very hot, long-lasting, even heat with very little smoke or ash, ideal for the slow ember method of the asado. Sources: Tasting Table, 'Why It Pays To Grill With Quebracho Charcoal'; en.wikipedia.org/wiki/Schinopsis.",
     "topic": "asado-and-chimichurri-argentine-fire-and-the-herb-sauce"
   },
   {
@@ -1275,15 +1249,15 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you went without vitamin B12. Your body needs just a tiny speck of it daily, yet without it you would fall very sick, because it does two jobs you cannot skip. One is helping build red blood cells. What is the other?",
-    "answer": "Keeping your nerve cells healthy",
+    "question": "A boy's body needs only a speck of vitamin B12 a day, yet without it he would fall very sick, because the vitamin does two jobs his body cannot skip. One is helping build red blood cells. What is the other?",
+    "answer": "Keeping his nerve cells healthy",
     "choices": [
-      "Keeping your nerve cells healthy",
-      "Keeping your bones strong and dense",
-      "Keeping your eyesight sharp at night",
-      "Keeping your muscles from cramping"
+      "Keeping his nerve cells healthy",
+      "Keeping his bones strong and dense",
+      "Keeping his eyesight sharp at night",
+      "Keeping his muscles from cramping"
     ],
-    "context": "B12 does two jobs the body can't do without: it keeps nerve cells healthy and it helps build red blood cells. You get it from meat, fish, eggs, and dairy — and essentially not from plant foods. Adults need only about 2.4 micrograms a day, a speck, but that speck is non-negotiable. Source: NIH Office of Dietary Supplements, Vitamin B12 Health Professional fact sheet (ods.od.nih.gov).",
+    "context": "B12 does two jobs the body can't do without: it keeps nerve cells healthy and it helps build red blood cells. It comes from meat, fish, eggs and dairy, and essentially not from plant foods. Adults need only about 2.4 micrograms a day, a speck, but that speck is non-negotiable. Source: NIH Office of Dietary Supplements, Vitamin B12 Health Professional fact sheet (ods.od.nih.gov).",
     "topic": "b12-the-animal-only-vitamin-and-why-vegans-supplement"
   },
   {
@@ -1293,7 +1267,7 @@
     "choices": [
       "Clams",
       "Shrimp",
-      "Crab",
+      "Scallops",
       "Lobster"
     ],
     "context": "After liver, shellfish are the B12 champions: a 3-ounce serving of cooked clams delivers about 17 micrograms — many times a full day's need — and eastern oysters about 14.9. Fish like salmon trail far behind at roughly 2.6 micrograms per serving. Source: NIH Office of Dietary Supplements, Vitamin B12 Health Professional fact sheet (ods.od.nih.gov).",
@@ -1314,7 +1288,7 @@
   },
   {
     "tier": 3,
-    "question": "A cow grazing in a field, a fish in the sea and a hen in the yard all carry vitamin B12 in their meat and eggs, yet none of them makes it; they only store it. The real B12 factory is a much tinier living thing. What builds every bit of the world's B12?",
+    "question": "A cow grazing in a field, a fish in the sea and a hen in the yard all carry vitamin B12 in their meat and eggs, yet none of them makes it; they only store it. The real B12 factory is a much tinier living thing. What builds nearly all of the world's B12?",
     "answer": "Bacteria",
     "choices": [
       "Bacteria",
@@ -1340,15 +1314,15 @@
   },
   {
     "tier": 4,
-    "question": "A patient can eat a plateful of vitamin B12 and still go short of it. His gut needs a special helper to escort the vitamin across the intestine, and if his own body destroys that helper by mistake, absorption stops, however much B12 he eats. What is that helper called?",
-    "answer": "Intrinsic factor",
+    "question": "A man can eat a plateful of vitamin B12 and still go short of it. The vitamin crosses the gut only with a protein escort, and if his own body destroys that escort by mistake, absorption stops however much he eats. Which organ makes the escort?",
+    "answer": "The stomach",
     "choices": [
-      "Intrinsic factor",
-      "Bile salts",
-      "Stomach acid",
-      "Digestive enzymes"
+      "The stomach",
+      "The liver",
+      "The pancreas",
+      "The gallbladder"
     ],
-    "context": "Even a plate full of B12 can fail you. To absorb it, the stomach must make a protein called 'intrinsic factor,' which ferries B12 across the far end of the gut (the ileum). If the body attacks its own intrinsic factor, absorption stops and you develop pernicious anemia — a diet problem the diet can't fix, which is why it's treated with B12 injections rather than food. Source: NCBI StatPearls NBK441923; corroborated by Wikipedia, Vitamin B12.",
+    "context": "To be absorbed, B12 needs intrinsic factor, a protein made by the stomach, which ferries it across the far end of the gut (the ileum). If the body attacks its own intrinsic factor, absorption stops and pernicious anemia follows, a problem an ordinary diet cannot fix, which is why it is treated with B12 injections. Source: NCBI StatPearls NBK441923; corroborated by Wikipedia, Vitamin B12.",
     "topic": "b12-the-animal-only-vitamin-and-why-vegans-supplement"
   },
   {
@@ -1379,7 +1353,7 @@
   },
   {
     "tier": 2,
-    "question": "A skilled baker stretches a lump of flour-and-water dough by hand across a big table until a single sheet is so thin and see-through that a newspaper could almost be read through it. She brushes dozens of these sheets with melted butter and stacks them for baklava. What is this tissue-thin dough called?",
+    "question": "A skilled baker rolls and stretches a lump of flour-and-water dough across a big table until a single sheet is so thin and see-through that a newspaper could almost be read through it. She brushes dozens of these sheets with melted butter and stacks them for baklava. What is this tissue-thin dough called?",
     "answer": "Phyllo dough",
     "choices": [
       "Phyllo dough",
@@ -1387,12 +1361,12 @@
       "Puff pastry",
       "Shortcrust pastry"
     ],
-    "context": "That tissue-thin dough is phyllo, from the Greek word for 'leaf.' In Turkish it's 'yufka,' from an Old Turkish word 'yuvka' meaning 'thin, weak.' Sheets are stretched nearly translucent, then dozens are stacked, each brushed with melted butter. (Source: Wikipedia, 'Phyllo.')",
+    "context": "That tissue-thin dough is phyllo, from the Greek word for 'leaf.' In Turkish it's 'yufka,' from an Old Turkish word 'yuvka' meaning 'thin, weak.' The dough is rolled out with a long, thin rolling pin, in Turkish an oklava, and stretched until nearly translucent; then dozens of sheets are stacked, each brushed with melted butter. (Source: Wikipedia, 'Filo.')",
     "topic": "baklava-and-phyllo-dough-stretched-thin-enough-to-read-throu"
   },
   {
     "tier": 3,
-    "question": "Bakers in Gaziantep, in southeastern Turkey, make a baklava considered by many Turks the finest in the world. Instead of the walnuts common elsewhere, they pack it with one local nut grown on trees in the surrounding hills, and it became, in 2013, the first Turkish food ever to earn a European Union protected-origin badge. Which nut?",
+    "question": "Bakers in Gaziantep, in southeastern Turkey, make a baklava considered by many Turks the finest in the world. They pack it with one local nut grown on trees in the hills around the city, and in 2013 their baklava was the first Turkish food ever to earn a European Union protected-origin badge. Which nut?",
     "answer": "Pistachios",
     "choices": [
       "Pistachios",
@@ -1782,13 +1756,13 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you find a tub of yogurt at the back of the fridge, a day past the 'Best if Used By' date on its lid. Food scientists say that stamp is no safety deadline. What is it really telling you?",
+    "question": "A girl finds a tub of yogurt at the back of the fridge, a day past the 'Best if Used By' date on its lid. Food scientists say that stamp is no safety deadline. What is it really telling her?",
     "answer": "The last day it will taste its freshest",
     "choices": [
       "The last day it will taste its freshest",
       "The last day it is safe to eat",
       "The last day the store may sell it",
-      "The last day you should have bought it"
+      "The day it was packed at the dairy"
     ],
     "context": "A 'Best if Used By' (or 'Best Before') date is only about peak flavor and quality — not safety, and not a purchase date. The food is still safe to eat afterward; it just may not taste as fresh, so a yogurt a little past its best-by is usually fine. USDA estimates about 30% of the U.S. food supply is wasted, much of it wholesome food tossed because shoppers misread these quality dates as safety deadlines. Source: USDA FSIS, Food Product Dating — https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating",
     "topic": "best-by-vs-use-by-vs-sell-by"
@@ -1803,7 +1777,7 @@
       "The farmer, marking the day the cow was milked",
       "The inspector, marking the day it was tested"
     ],
-    "context": "A 'Sell-By' date is a message to the retailer for stock rotation and inventory — how long to keep the product on the shelf. It is not a safety date; the food is typically good for days, even weeks, after you get it home. As a rough guide, milk keeps about a week past its sell-by when stored cold. Sources: USDA FSIS, Food Product Dating — https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating ; UConn Extension, Meaning of Expiration, Use-By & Sell-By Dates — https://extension.uconn.edu/publication/meaning-of-expiration-use-by-sell-by-dates/",
+    "context": "A 'Sell-By' date is a message to the retailer for stock rotation and inventory — how long to keep the product on the shelf. It is not a safety date; the food is typically good for days, even weeks, after it gets home. As a rough guide, milk keeps about a week past its sell-by when stored cold. Sources: USDA FSIS, Food Product Dating — https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating ; UConn Extension, Meaning of Expiration, Use-By & Sell-By Dates — https://extension.uconn.edu/publication/meaning-of-expiration-use-by-sell-by-dates/",
     "topic": "best-by-vs-use-by-vs-sell-by"
   },
   {
@@ -1829,20 +1803,20 @@
       "Faintly green, with a bitter first bite",
       "Puffy and bubbling, with a yeasty smell"
     ],
-    "context": "Spoilage bacteria make food smell sour, slimy, and 'off,' but they usually won't make you sick. The truly dangerous pathogens — Salmonella and Listeria — cannot be seen, smelled, or tasted, so contaminated food can look and smell perfectly normal. 'It seems fine' is not a safety test; go by safe cold-storage times instead. Listeria is especially sneaky because it keeps growing even in the refrigerator, down to 0°C (32°F), which is why chilled ready-to-eat foods like deli meats and soft cheeses carry real risk. Sources: USDA FSIS, Salmonella Q&A — https://www.fsis.usda.gov/food-safety/foodborne-illness-and-disease/illnesses-and-pathogens/salmonella ; Hygiene Food Safety, Types of Bacteria Involved with Food; ScienceDirect, Spoilage Microorganisms.",
+    "context": "Spoilage bacteria make food smell sour, slimy, and 'off,' but they seldom make anyone sick. The truly dangerous pathogens — Salmonella and Listeria — cannot be seen, smelled, or tasted, so contaminated food can look and smell perfectly normal. 'It seems fine' is not a safety test; go by safe cold-storage times instead. Listeria is especially sneaky because it keeps growing even in the refrigerator, down to 0°C (32°F), which is why chilled ready-to-eat foods like deli meats and soft cheeses carry real risk. Sources: USDA FSIS, Salmonella Q&A — https://www.fsis.usda.gov/food-safety/foodborne-illness-and-disease/illnesses-and-pathogens/salmonella ; Hygiene Food Safety, Types of Bacteria Involved with Food; ScienceDirect, Spoilage Microorganisms.",
     "topic": "best-by-vs-use-by-vs-sell-by"
   },
   {
     "tier": 3,
     "question": "A family brings home a carton of eggs graded by the U.S. Department of Agriculture. By federal rule its 'sell-by' date must fall within 30 days of packing, and it tells the store when to pull the eggs. Kept cold at home, when do they actually go bad?",
-    "answer": "Not for weeks after the sell-by date passes",
+    "answer": "Some time after the sell-by date passes",
     "choices": [
-      "Not for weeks after the sell-by date passes",
+      "Some time after the sell-by date passes",
       "A day or two before the sell-by date arrives",
       "Within 48 hours of leaving the store",
       "The moment the carton is first opened"
     ],
-    "context": "USDA rules cap the sell-by date on a graded egg carton at 30 days after the pack date — yet properly refrigerated eggs stay safe to eat four to five weeks beyond that pack date, long after the sell-by has passed. The sell-by expires well before the eggs do. That pack date itself is the mysterious three-digit 'Julian' code on the carton: the day of the year, 001 for January 1 through 365 for December 31. Sources: Egg Safety Center, How long are eggs safe to eat after purchase? — https://eggsafety.org/faq/how-long-are-eggs-safe-to-eat-after-purchase/ ; Egg Safety Center, Understanding Dates on Egg Cartons — https://eggsafety.org/understanding-dates-egg-cartons/",
+    "context": "USDA rules cap the sell-by date on a graded egg carton at 30 days after the pack date. Kept cold, eggs stay good for three to five weeks from the day they are bought, so the sell-by date usually passes while the eggs are still perfectly safe to use. The pack date itself is the three-digit 'Julian' code on the carton: the day of the year, 001 for January 1 through 365 for December 31. Sources: USDA FSIS, 'Shell Eggs from Farm to Table'; Egg Safety Center, Understanding Dates on Egg Cartons, https://eggsafety.org/understanding-dates-egg-cartons/",
     "topic": "best-by-vs-use-by-vs-sell-by"
   },
   {
@@ -2211,15 +2185,15 @@
   },
   {
     "tier": 3,
-    "question": "Alaric, king of the Visigoths, laid siege to Rome in AD 408 and named his price to lift it: piles of gold, silver and silk, and 3,000 pounds of pepper. Roman envoys asked what would be left to their people once they had handed it all over. What did Alaric say they could keep?",
-    "answer": "Their lives",
+    "question": "Alaric, king of the Visigoths, laid siege to Rome in AD 408 and sold his retreat dearly: 5,000 pounds of gold, 30,000 of silver, 4,000 silk tunics, 3,000 scarlet-dyed hides and 3,000 pounds of one prized spice. Which spice did he demand?",
+    "answer": "Pepper",
     "choices": [
-      "Their lives",
-      "Their freedom",
-      "Their homes",
-      "Their honor"
+      "Pepper",
+      "Saffron",
+      "Ginger",
+      "Cloves"
     ],
-    "context": "As the historian Zosimus records, Alaric's 408 AD ransom demanded 3,000 pounds of pepper alongside 5,000 pounds of gold, 30,000 pounds of silver, 4,000 silk tunics and 3,000 scarlet-dyed hides. When the envoys asked what would be left to the city's people, Alaric answered: 'Their lives.' Source: en.wikipedia.org/wiki/Sack_of_Rome_(410)  (Legend.)",
+    "context": "The historian Zosimus records the siege: when Alaric first demanded all the city's gold, silver and goods, an envoy asked what would be left to the citizens, and Alaric answered, 'Their lives.' The ransom finally paid to lift the siege included 3,000 pounds of pepper beside the gold, silver, silk and hides. Source: en.wikipedia.org/wiki/Sack_of_Rome_(410); Zosimus, New History 5.40-41.",
     "topic": "black-pepper-the-king-of-spices"
   },
   {
@@ -2523,7 +2497,7 @@
   },
   {
     "tier": 2,
-    "question": "Brillat-Savarin fled France in 1793, escaping the Reign of Terror, and spent nearly three years in exile in America. In the woods of Connecticut he shot a wild bird and praised it warmly, and by one account he even asked Thomas Jefferson how to cook one. Which bird had he fallen for?",
+    "question": "Brillat-Savarin fled France in 1793, escaping the Reign of Terror, and spent about two years of his exile in America. In the woods of Connecticut he shot a wild bird and praised it warmly, and by one account he even asked Thomas Jefferson how to cook one. Which bird had he fallen for?",
     "answer": "a wild turkey",
     "choices": [
       "a wild turkey",
@@ -2531,7 +2505,7 @@
       "a ruffed grouse",
       "a mallard duck"
     ],
-    "context": "Brillat-Savarin fled the Reign of Terror in 1793 and kept himself afloat in America by teaching French and playing the violin, before returning home to resume his career as a judge. He wrote with real affection about the wild turkey he shot and roasted in Connecticut; by one account he was so smitten with the American bird that he asked Thomas Jefferson himself how best to prepare it. Sources: en.wikipedia.org/wiki/Jean_Anthelme_Brillat-Savarin; napoleon-empire.org/en/personalities/brillat-savarin.php  (Legend.)",
+    "context": "Brillat-Savarin fled the Reign of Terror in 1793 and, from 1794 to 1796, kept himself afloat in America by teaching French and playing the violin, before returning home to resume his career as a judge. He wrote with real affection about the wild turkey he shot and roasted near Hartford, Connecticut; by one account he was so smitten with the American bird that he asked Thomas Jefferson himself how best to prepare it. Sources: en.wikipedia.org/wiki/Jean_Anthelme_Brillat-Savarin; napoleon-empire.org/en/personalities/brillat-savarin.php",
     "topic": "brillat-savarin-the-first-food-writer"
   },
   {
@@ -2562,7 +2536,7 @@
   },
   {
     "tier": 4,
-    "question": "'Tell me what you eat, and I will tell you what you are,' Brillat-Savarin wrote in his 1825 book, and dinner tables still quote the line today. The book is often called the most famous food book ever written, because it was the first to do something no author had dared. What was that?",
+    "question": "'Tell me what you eat, and I will tell you what you are,' Brillat-Savarin wrote in his 1825 book, and dinner tables still quote the line today. The book is often called the most famous food book ever written, because it was among the first to do something few authors had dared. What was that?",
     "answer": "treat eating as a serious art worth studying",
     "choices": [
       "treat eating as a serious art worth studying",
@@ -2570,7 +2544,7 @@
       "rank France's grandest restaurants by stars",
       "teach poor families to cook filling meals cheaply"
     ],
-    "context": "Jean Anthelme Brillat-Savarin (1755-1826) was a French lawyer and judge who wrote 'The Physiology of Taste' (Physiologie du gout) as a passionate hobby. Published in 1825, it was the first book to treat eating and flavor as a serious art worth analyzing. It is also the source of another famous line: 'The discovery of a new dish does more for the happiness of mankind than the discovery of a star.' Source: en.wikipedia.org/wiki/Jean_Anthelme_Brillat-Savarin",
+    "context": "Jean Anthelme Brillat-Savarin (1755-1826) was a French lawyer and judge who wrote 'The Physiology of Taste' (Physiologie du gout) as a passionate hobby. Published in 1825, it was among the first books to treat eating and flavor as a serious art worth analyzing; he and Grimod de La Reynière are credited with founding the gastronomic essay. It is also the source of another famous line: 'The discovery of a new dish does more for the happiness of mankind than the discovery of a star.' Source: en.wikipedia.org/wiki/Jean_Anthelme_Brillat-Savarin",
     "topic": "brillat-savarin-the-first-food-writer"
   },
   {
@@ -2580,10 +2554,10 @@
     "choices": [
       "bread, flour, and sugar",
       "butter, cream, and cheese",
-      "wine, beer, and cider",
+      "fish, game, and fowl",
       "beef, pork, and eggs"
     ],
-    "context": "Brillat-Savarin's actual words were a call for 'more or less rigid abstinence from everything that is starchy or floury.' He reached the idea the hard way -- calling his own belly his 'redoubtable enemy' and drawing on more than 500 dinner conversations in which overweight companions all seemed to crave breads, starches, and sweets. His 1825 claim is often called an ancestor of the modern low-carb idea, but it is presented here as exactly that: HIS opinion from 1825, not settled nutrition science. Source: meatrition.com/history/starchy-or-floury  (Legend.)",
+    "context": "Brillat-Savarin's actual words were a call for 'more or less rigid abstinence from everything that is starchy or floury.' He reached the idea the hard way, calling his own belly his 'redoubtable enemy' and drawing on more than 500 dinner conversations in which overweight companions all seemed to crave breads, starches and sweets. His 1825 claim is often called an ancestor of the modern low-carb idea, but it was one man's opinion, not settled nutrition science. Sources: en.wikipedia.org/wiki/Jean_Anthelme_Brillat-Savarin; meatrition.com/history/starchy-or-floury",
     "topic": "brillat-savarin-the-first-food-writer"
   },
   {
@@ -2601,7 +2575,7 @@
   },
   {
     "tier": 2,
-    "question": "Wild cabbage, the ancestor of head cabbage, broccoli, kale, cauliflower and the Brussels sprout, still grows on its own on the chalky sea cliffs of northern Europe. Before farmers reshaped it into all those vegetables, what did the wild plant look like out on the cliffs?",
+    "question": "Wild cabbage, the wild form of the plant that farmers bred into cabbage, broccoli, kale, cauliflower and the Brussels sprout, still grows on the chalky sea cliffs of northern Europe. What does the wild plant look like out there?",
     "answer": "a leggy, sprawling weed, like an overgrown kale plant",
     "choices": [
       "a leggy, sprawling weed, like an overgrown kale plant",
@@ -2609,17 +2583,17 @@
       "a low bush covered in clusters of red berries",
       "a spray of ferny leaves above a fat orange root"
     ],
-    "context": "The wild ancestor, wild cabbage, is a scrubby, gray-green, leggy plant with loose, thick, fleshy leaves - it looks like an overgrown, weedy kale, nothing like the neat vegetables bred from it. Source: Live Science; Wikipedia, 'Brassica oleracea'; first-nature.com.",
+    "context": "Wild cabbage is a scrubby, gray-green, leggy plant with loose, thick, fleshy leaves: it looks like an overgrown, weedy kale, nothing like the neat vegetables bred from its species. Source: Live Science; Wikipedia, 'Brassica oleracea'; first-nature.com.",
     "topic": "broccoli-kale-and-cabbage-are-the-same-plant"
   },
   {
     "tier": 2,
-    "question": "Salt spray and chalky lime would kill most plants, but wild cabbage, the tough ancestor of every cabbage, broccoli and kale, shrugs them off. It cannot bear being crowded out by grasses or shrubs, so it clings to bright white chalk cliffs on both sides of one famous stretch of water in northern Europe. Which one?",
+    "question": "Salt spray and chalky lime would kill most plants, but wild cabbage, the untamed form of cabbage, broccoli and kale, shrugs them off. It cannot bear being crowded by grasses or shrubs, so it clings to bright white chalk cliffs on both sides of one famous stretch of water in northern Europe. Which one?",
     "answer": "the English Channel",
     "choices": [
       "the English Channel",
-      "the Mediterranean",
-      "the Caribbean",
+      "the North Sea",
+      "the Irish Sea",
       "the Baltic"
     ],
     "context": "Wild cabbage tolerates salt and lime but hates competition, so it survives on bare limestone sea-cliffs - including the bright white chalk cliffs on both sides of the English Channel, like the White Cliffs of Dover. Source: Live Science; first-nature.com; Wikipedia, 'Brassica oleracea'.",
@@ -2648,7 +2622,7 @@
       "a baby leaf",
       "a tiny fruit"
     ],
-    "context": "Broccoli and cauliflower are the plant's flower heads, picked before they open - you eat hundreds of tiny unopened flower buds. Leave a cauliflower in the garden and it eventually blooms. Source: The Botanist in the Kitchen, 'The extraordinary diversity of Brassica oleracea'; Oxford Plants 400.",
+    "context": "Broccoli and cauliflower are the plant's flower heads, picked before they open - a diner eats hundreds of tiny unopened flower buds. Leave a cauliflower in the garden and it eventually blooms. Source: The Botanist in the Kitchen, 'The extraordinary diversity of Brassica oleracea'; Oxford Plants 400.",
     "topic": "broccoli-kale-and-cabbage-are-the-same-plant"
   },
   {
@@ -2701,19 +2675,6 @@
       "the Brussels sprout"
     ],
     "context": "Turnip and bok choy are a different species (Brassica rapa); canola and rutabaga are yet another (Brassica napus). They're close cousins in the same genus, not the same plant as broccoli - and canola is literally cabbage crossed with turnip. Source: Wikipedia, 'Brassica oleracea'; Grokipedia, 'Triangle of U'.",
-    "topic": "broccoli-kale-and-cabbage-are-the-same-plant"
-  },
-  {
-    "tier": 5,
-    "question": "Breeders at an English farm college, around 1860, bred broccoli and other cabbages straight from scruffy wild seaside cabbage, proving on a dinner plate that one wild plant really could be pushed into many vegetables. The feat thrilled a famous naturalist who had published a world-shaking book just the year before. Who was he?",
-    "answer": "Charles Darwin",
-    "choices": [
-      "Charles Darwin",
-      "Isaac Newton",
-      "Gregor Mendel",
-      "Carl Linnaeus"
-    ],
-    "context": "One year after Charles Darwin published On the Origin of Species (1859), researchers at Cirencester Agricultural College (~1860) bred broccoli and other cabbage-forms straight from wild cabbage on the English coast - and Darwin saw his theory of change-by-selection mirrored in it. Source: Oxford University Plants 400: Brassica oleracea.",
     "topic": "broccoli-kale-and-cabbage-are-the-same-plant"
   },
   {
@@ -2908,12 +2869,12 @@
       "ground ginger",
       "mustard seeds"
     ],
-    "context": "For most of its history chocolate was a DRINK, not a candy - and the Maya/Aztec version was bitter and unsweetened, often spiked with dried ground chili (also honey, vanilla, and flowers). The Nahuatl name xocolatl/cacahuatl roughly means 'bitter water.' Source: History of chocolate (Wikipedia); scienceinsights.org.",
+    "context": "For most of its history chocolate was a DRINK, not a candy, and the Maya and Aztec version was bitter and unsweetened, often spiked with dried ground chili (also honey, vanilla and flowers). Early Nahuatl texts call the drink cacahuatl, 'cacao water'; the popular idea that the word 'chocolate' comes from a Nahuatl phrase for 'bitter water' is unproven. Sources: History of chocolate (Wikipedia); Chocolate, etymology (Wikipedia).",
     "topic": "cacao-to-chocolate-the-bitter-money-drink-of-the-aztecs"
   },
   {
     "tier": 1,
-    "question": "Shoppers in an Aztec market could not pay with coins, because the empire never minted any. A price list from 1545 shows a fresh avocado cost about three of a certain little thing, and a whole turkey around a hundred. What did they pay with?",
+    "question": "Shoppers in an Aztec market could not pay with coins, since the empire never minted any. A list from 1545 shows a freshly picked avocado cost three of a certain little thing, and a whole turkey hen around a hundred. What did they pay with?",
     "answer": "cacao beans",
     "choices": [
       "cacao beans",
@@ -2921,7 +2882,7 @@
       "copper axes",
       "jade beads"
     ],
-    "context": "Cacao beans were literal money - everyday small change. That 1545 Nahuatl document records prices in beans: a large tomato = 1, an avocado = 3, a turkey egg = 3, a small rabbit = 30, a turkey hen ~100 (a male turkey ~200). Chocolate was money you could drink. Source: History of chocolate / 1545 Nahuatl document (Wikipedia); chocolateclass.wordpress.com.",
+    "context": "Cacao beans were real money, everyday small change. That 1545 Nahuatl document records prices in beans: a large tomato = 1, a newly picked avocado = 3 but a fully ripe one = 1, a turkey egg = 3, a small rabbit = 30, a good turkey hen = 100. Chocolate was money a person could drink. Sources: mexicolore.co.uk/maya/chocolate/beanz-meanz-money; History of chocolate / 1545 Nahuatl document (Wikipedia).",
     "topic": "cacao-to-chocolate-the-bitter-money-drink-of-the-aztecs"
   },
   {
@@ -2931,15 +2892,15 @@
     "choices": [
       "mud",
       "sawdust",
-      "cornmeal",
-      "ash"
+      "salt",
+      "cotton"
     ],
-    "context": "Sahagun recorded forgers refilling hollowed shells with mud or sand, and even faking whole beans from clay, wax, chalk, or amaranth dough painted to look real. Anthropologist Joel Palka has dug up clay 'beans' - counterfeit money is as old as money itself. Source: chocolateclass.wordpress.com (citing Sahagun; Palka).",
+    "context": "Sahagún recorded forgers refilling hollowed shells with mud, sand or ash, and even faking whole beans from wax or amaranth dough made to look real. Anthropologist Joel Palka has dug up clay 'beans': counterfeit money is as old as money itself. Sources: chocolateclass.wordpress.com (citing Sahagún; Palka); mexicolore.co.uk/maya/chocolate/beanz-meanz-money",
     "topic": "cacao-to-chocolate-the-bitter-money-drink-of-the-aztecs"
   },
   {
     "tier": 2,
-    "question": "In Tenochtitlan, the Aztec capital, cooks made a dark, bitter chocolate drink called xocolatl for nobles, priests and warriors. Its prized part was the thick foam heaped on top, which a respectable server had to raise fresh in front of the drinker, with no tool a modern kitchen would recognize. How did the server raise it?",
+    "question": "In Tenochtitlan, the Aztec capital, cooks made a dark, bitter chocolate drink for nobles, priests and warriors. Its prized part was the thick foam heaped on top, which a respectable server had to raise fresh in front of the drinker. How did the server raise it?",
     "answer": "poured it back and forth from a height",
     "choices": [
       "poured it back and forth from a height",
@@ -3225,15 +3186,15 @@
   },
   {
     "tier": 2,
-    "question": "Suppose you are at a busy yum cha in Hong Kong when a friend pours you a fresh cup of jasmine tea. The tearoom is far too loud and your mouth is likely full of dumpling, so you give thanks without saying a word, right on the tablecloth. What is that quick, quiet gesture?",
+    "question": "A diner at a busy yum cha in Hong Kong has his cup refilled with jasmine tea by a friend. The tearoom is far too loud, and his mouth is likely full of dumpling, so he gives thanks without a word. What is that quick, quiet gesture?",
     "answer": "tap two fingers on the table",
     "choices": [
       "tap two fingers on the table",
-      "raise your cup in a toast",
+      "raise his cup in a toast",
       "give a small nod and smile",
-      "touch a hand to your chest"
+      "touch a hand to his chest"
     ],
-    "context": "When someone pours your tea at yum cha, you give thanks silently by tapping two fingers — index and middle — twice on the table. Legend (told as legend) says the gesture began when Emperor Qianlong traveled in disguise and poured tea for his own servants; they couldn't bow without giving away who he was, so they 'bowed' with their fingers instead. Source: en.wikipedia.org/wiki/Yum_cha",
+    "context": "When someone pours tea for a diner at yum cha, the diner gives thanks silently by tapping two fingers, index and middle, twice on the table. Legend (told as legend) says the gesture began when Emperor Qianlong traveled in disguise and poured tea for his own servants; they couldn't bow without giving away who he was, so they 'bowed' with their fingers instead. Source: en.wikipedia.org/wiki/Yum_cha",
     "topic": "cantonese-cooking-dim-sum-and-the-steamer"
   },
   {
@@ -3243,7 +3204,7 @@
     "choices": [
       "wheat starch",
       "rice paper",
-      "tapioca pearls",
+      "sticky rice flour",
       "egg-white sheets"
     ],
     "context": "Har gow's translucent skin is wheat starch (plus a little tapioca starch), not ordinary flour — that's what turns see-through and pleasantly chewy when steamed, earning the name 'crystal shrimp dumpling.' Source: en.wikipedia.org/wiki/Har_gow",
@@ -3424,7 +3385,7 @@
     "answer": "Nougat, marzipan and spun sugar",
     "choices": [
       "Nougat, marzipan and spun sugar",
-      "Gingerbread, caramel and toffee",
+      "Gingerbread, shortbread and toffee",
       "Chocolate, fondant and marshmallow",
       "Sponge, jam and buttercream"
     ],
@@ -3484,16 +3445,16 @@
     "topic": "car-me-and-edible-architecture"
   },
   {
-    "tier": 4,
-    "question": "At a French wedding or First Communion, the celebration cake is often a tall pastry cone held together with hard caramel that snaps under the fork. The French call it croquembouche, a name taken from the old phrase 'croque en bouche.' What does that phrase literally mean?",
-    "answer": "It crunches in the mouth",
+    "tier": 3,
+    "question": "A tall cone of cream-filled choux puffs, the croquembouche, crowns many a French wedding. Its name comes from the old phrase 'croque en bouche', 'crunch in the mouth', after the crackling glue that holds every puff in place. What is that glue?",
+    "answer": "Hard caramel",
     "choices": [
-      "It crunches in the mouth",
-      "It melts on the tongue",
-      "It flies on the wind",
-      "It towers to the sky"
+      "Hard caramel",
+      "Royal icing",
+      "Cocoa butter",
+      "Honey glaze"
     ],
-    "context": "Croquembouche comes from 'croque en bouche' -- 'crunches in the mouth' -- for the crackle of the hard caramel. Careme featured it in his 1815 book 'Le Patissier royal parisien' and is the chef most linked to it. Source: https://en.wikipedia.org/wiki/Croquembouche",
+    "context": "Every croquembouche is built from one repeated brick, little choux puffs filled with cream, stuck together with threads of hot caramel that set hard and crackle when bitten: 'croque en bouche', crunch in the mouth. Carême featured it in his 1815 book 'Le Pâtissier royal parisien' and is the chef most linked to it. Source: https://en.wikipedia.org/wiki/Croquembouche",
     "topic": "car-me-and-edible-architecture"
   },
   {
@@ -3576,7 +3537,7 @@
   },
   {
     "tier": 1,
-    "question": "A plate of real Roman carbonara looks so silky that diners take it for granted one dairy ingredient went in. In fact the sauce is only beaten raw egg and grated cheese, turned silky by the heat of the just-drained pasta. Which ingredient, so often blamed for that richness, does it never contain?",
+    "question": "A plate of Roman carbonara looks so silky that diners abroad assume a rich dairy ingredient went into the sauce. The silk comes from beaten raw egg and grated cheese, turned glossy by the heat of the pasta. Which ingredient do they wrongly assume?",
     "answer": "cream",
     "choices": [
       "cream",
@@ -3628,7 +3589,7 @@
   },
   {
     "tier": 4,
-    "question": "A Roman trattoria cooks four cousin pastas from nearly the same short pantry list, guanciale and pecorino among it, and carbonara is one of them. Another cousin is carbonara with a single ingredient dropped, so alike that Romans nickname it 'white amatriciana.' Which dish is carbonara minus the egg?",
+    "question": "A Roman cook works through four cousin pastas built from nearly the same short pantry list, guanciale and pecorino among it, and carbonara is one of them. Another of the four is simply carbonara with the egg left out, a plate of crisp pork, cheese and pasta water. Which dish is that?",
     "answer": "gricia",
     "choices": [
       "gricia",
@@ -3675,7 +3636,7 @@
       "water soaked up by the roots",
       "warmth rising from the ground"
     ],
-    "context": "Photosynthesis stitches carbon dioxide and water into sugar and starch using solar energy, so the bread, rice, potato, fruit and sugar you eat are all a plant's stored sunlight — carbs are basically edible sunshine. Source: https://en.wikipedia.org/wiki/Carbohydrate",
+    "context": "Photosynthesis stitches carbon dioxide and water into sugar and starch using solar energy, so the bread, rice, potato, fruit and sugar people eat are all a plant's stored sunlight — carbs are basically edible sunshine. Source: https://en.wikipedia.org/wiki/Carbohydrate",
     "topic": "carbs-are-fuel-simple-complex-and-the-glycogen-battery"
   },
   {
@@ -3688,20 +3649,7 @@
       "sucrose",
       "lactose"
     ],
-    "context": "Wikipedia calls glucose 'a nearly universal and accessible source of energy' that 'is metabolized by nearly all known organisms' — from bacteria to your brain cells. Source: https://en.wikipedia.org/wiki/Carbohydrate",
-    "topic": "carbs-are-fuel-simple-complex-and-the-glycogen-battery"
-  },
-  {
-    "tier": 2,
-    "question": "A kid who bites into a candy bar gets its sugar into the blood almost instantly, while a baked potato's energy trickles in slowly. Dietitians sort carbs into two families by this speed, and candy's fast kind is a 'simple' carb. What do they call the potato's slow kind?",
-    "answer": "a 'complex' carb",
-    "choices": [
-      "a 'complex' carb",
-      "a 'refined' carb",
-      "a 'saturated' carb",
-      "an 'essential' carb"
-    ],
-    "context": "'Simple' carbs are small sugar molecules found in candy, honey, table sugar and fruit, so they hit the blood fast. 'Complex' carbs — the starch in bread, pasta, rice and potatoes — must be broken down first, so they release their energy slower: the difference between a sugar rush and steady fuel. Source: https://en.wikipedia.org/wiki/Carbohydrate",
+    "context": "Wikipedia calls glucose 'a nearly universal and accessible source of energy' that 'is metabolized by nearly all known organisms' — from bacteria to human brain cells. Source: https://en.wikipedia.org/wiki/Carbohydrate",
     "topic": "carbs-are-fuel-simple-complex-and-the-glycogen-battery"
   },
   {
@@ -3727,7 +3675,7 @@
       "the liver",
       "the stomach"
     ],
-    "context": "The brain is only about 2% of body weight but burns roughly 20% of your energy, running almost entirely on glucose — about 120 grams a day just to think. It's the body's greediest fuel customer. Source: https://www.eufic.org/en/whats-in-food/article/glucose-and-mental-performance",
+    "context": "The brain is only about 2% of body weight but burns roughly 20% of the body's energy, running almost entirely on glucose — about 120 grams a day just to think. It's the body's greediest fuel customer. Source: https://www.eufic.org/en/whats-in-food/article/glucose-and-mental-performance",
     "topic": "carbs-are-fuel-simple-complex-and-the-glycogen-battery"
   },
   {
@@ -3766,7 +3714,7 @@
       "collagen",
       "cholesterol"
     ],
-    "context": "Glycogen is the animal version of starch — your body's own way of packing glucose away. It's 'more extensively branched and compact than starch,' and that dense branching lets the body unpack glucose from it fast, like a battery built for quick discharge. Your liver and muscles are where it's stored. Source: https://en.wikipedia.org/wiki/Glycogen",
+    "context": "Glycogen is the animal version of starch — the body's own way of packing glucose away. It's 'more extensively branched and compact than starch,' and that dense branching lets the body unpack glucose from it fast, like a battery built for quick discharge. The liver and muscles are where it's stored. Source: https://en.wikipedia.org/wiki/Glycogen",
     "topic": "carbs-are-fuel-simple-complex-and-the-glycogen-battery"
   },
   {
@@ -3779,7 +3727,7 @@
       "about a coffee mug's worth",
       "about a wine bottle's worth"
     ],
-    "context": "At any moment only about 4 grams of glucose — roughly a teaspoon — is dissolved in your entire bloodstream. The liver quietly tops it back up between meals from its own sugar store, holding blood sugar steady for about 8–12 hours, which is how you get through a whole night's sleep without eating. Source: https://en.wikipedia.org/wiki/Glycogen",
+    "context": "At any moment only about 4 grams of glucose — roughly a teaspoon — is dissolved in the entire bloodstream. The liver quietly tops it back up between meals from its own sugar store, holding blood sugar steady for about 8–12 hours, which is how a sleeper gets through a whole night without eating. Source: https://en.wikipedia.org/wiki/Glycogen",
     "topic": "carbs-are-fuel-simple-complex-and-the-glycogen-battery"
   },
   {
@@ -3836,7 +3784,7 @@
   },
   {
     "tier": 3,
-    "question": "Cardamom grows wild in southern India's rainforests, its ancient home, but Indians eat roughly nine-tenths of their own harvest, leaving little to sell abroad. A German coffee planter, the story goes, carried seeds from India to a tropical country half a world away in 1914, and that country now leads the cardamom trade. Which country is it?",
+    "question": "A German coffee planter, the story goes, carried cardamom seeds from southern India to his estate in a misty highland half a world away in 1914. The bushes thrived there, and today the farmers of that country call the crop 'green gold'. Which country did the seeds go to?",
     "answer": "Guatemala",
     "choices": [
       "Guatemala",
@@ -3844,7 +3792,7 @@
       "Kenya",
       "Costa Rica"
     ],
-    "context": "The country is Guatemala. As the story goes, in 1914 a German coffee planter named Oscar Majus Kloeffer carried seeds from Kerala, India, to his estate at Coban, in the misty highlands of Alta Verapaz. The crop thrived, and by about 1979-1980 Guatemala had overtaken India as the world's top cardamom producer — less than seventy years after those first plants arrived. Guatemalans now call it 'green gold.' Source: Worldstopexports, 'Top Cardamoms Exports'; Olfactive Studio, 'Cardamom, Guatemala's Green Gold'; Wikipedia, 'Cardamom.'",
+    "context": "The country is Guatemala. As the story goes, in 1914 a German coffee planter named Oscar Majus Kloeffer carried seeds from Kerala, India, to his estate at Coban, in the misty highlands of Alta Verapaz. The crop thrived; by about 1980 Guatemala had overtaken India, which eats most of its own harvest, as the world's top cardamom producer, and Guatemalans call it 'green gold.' Source: Worldstopexports, 'Top Cardamoms Exports'; Olfactive Studio, 'Cardamom, Guatemala's Green Gold'; Wikipedia, 'Cardamom.'",
     "topic": "cardamom-the-fragrant-pods"
   },
   {
@@ -3854,7 +3802,7 @@
     "choices": [
       "every pod is picked by hand, one at a time",
       "every pod is cured in cellars for years",
-      "the pods are dried slowly over smoky fires",
+      "each bush bears pods only once a decade",
       "the seeds are pressed to yield a rare oil"
     ],
     "context": "The answer is labor. A cardamom plant takes two to three years to bear its first crop, and the pods on a single bush ripen at different times — so pickers must comb the same plants three or four times a season, taking only the pods at the perfect stage. No machine can do the job. Source: Pacific Spice Co., 'Cardamom: The Queen of Spices'; Solidago School of Herbalism; Britannica, 'Cardamom.'",
@@ -4169,7 +4117,7 @@
       "Fuego del sol — 'sun fire'",
       "Lágrimas de piedra — 'stone tears'"
     ],
-    "context": "The leftover marinade — lime, raw fish, red onion, garlic, cilantro and Peruvian chili — is drunk on its own as leche de tigre, 'tiger's milk,' reputed both to cure hangovers and to work as an aphrodisiac. Source: https://en.wikipedia.org/wiki/Peruvian_ceviche",
+    "context": "The leftover marinade, lime, raw fish juices, red onion, garlic, cilantro and Peruvian chili, is drunk on its own as leche de tigre, 'tiger's milk,' and is said to cure hangovers. Source: https://en.wikipedia.org/wiki/Peruvian_ceviche",
     "topic": "ceviche-acid-that-cooks-fish-without-heat"
   },
   {
@@ -4204,8 +4152,8 @@
     "answer": "It could be stored for weeks or months without spoiling.",
     "choices": [
       "It could be stored for weeks or months without spoiling.",
-      "It gave far more energy than the fresh milk did.",
-      "It grew richer and tastier the longer it sat out.",
+      "It tasted far sweeter than the fresh milk did.",
+      "It held far more water than the fresh milk did.",
       "It could be turned back into fresh milk anytime."
     ],
     "context": "Cheese was humanity's way to make milk LAST: fresh milk sours in a day, but draining and salting it into a solid curd turns it into a storable, carry-able food that keeps for weeks or months. Source: University of Bristol news release, 'First cheesemaking' (2012), https://www.bristol.ac.uk/news/2012/9008.html",
@@ -4213,7 +4161,7 @@
   },
   {
     "tier": 2,
-    "question": "In Kuyavia, Poland, diggers found clay pots about 7,500 years old. Each one was pierced with dozens of tiny holes, like a kitchen colander. They are the oldest cheese-making gear ever found. As early cheesemakers poured milk into these pots, what did the little holes let drip out?",
+    "question": "In Kuyavia, Poland, diggers found clay pots more than 7,000 years old. Each one was pierced with dozens of tiny holes, like a kitchen colander, and they are among the oldest cheese-making gear ever found. As early cheesemakers poured milk into these pots, what did the little holes let drip out?",
     "answer": "the watery whey, leaving the solid curds behind",
     "choices": [
       "the watery whey, leaving the solid curds behind",
@@ -4221,7 +4169,7 @@
       "the last of the fat, leaving a lean curd behind",
       "the salty brine, leaving a washed rind behind"
     ],
-    "context": "The perforated pots worked like a modern cheese colander: the holes let the watery whey drip out while the fatty, protein-rich curds stayed behind. The oldest evidence of cheese-making anywhere, these Linear Pottery culture pots (~5200-4900 BC) had milk residue detected on 34 of them. Sources: University of Bristol news release (2012), https://www.bristol.ac.uk/news/2012/9008.html; Salque et al., Nature 2012, https://www.nature.com/articles/nature11698",
+    "context": "The perforated pots worked like a modern cheese colander: the holes let the watery whey drip out while the fatty, protein-rich curds stayed behind. Among the oldest evidence of cheese-making anywhere, these Linear Pottery culture pots (dated to roughly 5500-4900 BC by different studies) had milk residue detected on 34 of them. Sources: University of Bristol news release (2012), https://www.bristol.ac.uk/news/2012/9008.html; Salque et al., Nature 2012, https://www.nature.com/articles/nature11698; Wikipedia, 'Cheese'.",
     "topic": "cheese-and-the-first-dairying"
   },
   {
@@ -4247,7 +4195,7 @@
       "sunk in a shipwreck on the deep sea floor",
       "buried beneath a stone-paved Roman kitchen"
     ],
-    "context": "The oldest actual lump of cheese ever found — about 3,200 years old — came from the Saqqara tomb of Ptahmes, Mayor of Memphis and a top official under pharaohs Seti I and Ramesses II (~1290-1213 BC). It was buried with him as a prized grave-good, surviving as a solid whitish mass inside a broken jar, still wrapped in canvas cloth; analysis showed it was made from cow's milk mixed with sheep's or goat's milk. Sources: Sci.News, 'World's Oldest Solid Cheese Found in 3,200-Year-Old Jar in Egypt', https://www.sci.news/archaeology/worlds-oldest-solid-cheese-egypt-06312.html; Greco et al., Analytical Chemistry 2018 (PubMed 30044608).",
+    "context": "One of the oldest lumps of real cheese ever found, about 3,200 years old, came from the Saqqara tomb of Ptahmes, Mayor of Memphis and a top official under pharaohs Seti I and Ramesses II (~1290-1213 BC); cheese on mummies of the Xiaohe cemetery in China is older still, about 3,600 years. Ptahmes's cheese was buried with him as a prized grave-good, surviving as a solid whitish mass inside a broken jar, still wrapped in canvas cloth; analysis showed it was made from cow's milk mixed with sheep's or goat's milk. Sources: Sci.News, 'World's Oldest Solid Cheese Found in 3,200-Year-Old Jar in Egypt', https://www.sci.news/archaeology/worlds-oldest-solid-cheese-egypt-06312.html; Greco et al., Analytical Chemistry 2018 (PubMed 30044608); Wikipedia, 'Cheese'.",
     "topic": "cheese-and-the-first-dairying"
   },
   {
@@ -4338,7 +4286,7 @@
       "Smoked into dry slabs and shipped in sacks",
       "Boiled, canned in tin, and shipped in crates"
     ],
-    "context": "Live cattle rode east for days in crowded cars — the animals lost weight, got bruised, and some died on the way. Worse, a live steer is mostly freight you can't eat: bone, hide, and innards. Only the meat was ever worth the trip east. Source: Wikipedia, 'Swift Refrigerator Line' and 'Gustavus Franklin Swift.'",
+    "context": "Live cattle rode east for days in crowded cars — the animals lost weight, got bruised, and some died on the way. Worse, a live steer is mostly freight nobody can eat: bone, hide, and innards. Only the meat was ever worth the trip east. Source: Wikipedia, 'Swift Refrigerator Line' and 'Gustavus Franklin Swift.'",
     "topic": "chicago-beef-the-cold-railcar-that-centralized-dinner"
   },
   {
@@ -4369,7 +4317,7 @@
   },
   {
     "tier": 3,
-    "question": "Philip Armour opened the first modern packing plant in Chicago's stockyards in 1867, and his men could take a steer apart faster than any village butcher alive. His edge was not a better knife but the way he divided the cutting among the men on his floor. How was the work split up?",
+    "question": "Philip Armour built Chicago's first modern large-scale packing plant in 1867, and his men could take a steer apart faster than any village butcher alive. His edge was not a better knife but the way he divided the cutting among the men on his floor. How was the work split up?",
     "answer": "One man made a single cut, over and over",
     "choices": [
       "One man made a single cut, over and over",
@@ -4408,7 +4356,7 @@
   },
   {
     "tier": 4,
-    "question": "Henry Ford built his Model T on a moving assembly line in a fraction of the old time, the birth of mass production. Yet in his 1922 autobiography Ford admitted the idea was never his: he lifted it from Chicago's packing houses, which his man William 'Pa' Klann had toured. Which piece of the packers' beef-dressing setup did Ford name as its seed?",
+    "question": "Henry Ford built his Model T on a moving assembly line in a fraction of the old time. In his 1922 autobiography he wrote that the idea came, in a general way, from Chicago's packing houses, which his man William 'Pa' Klann had toured. Which piece of the packers' beef-dressing setup did Ford name as its seed?",
     "answer": "An overhead trolley rolling carcasses past the men",
     "choices": [
       "An overhead trolley rolling carcasses past the men",
@@ -4416,20 +4364,7 @@
       "A rolling table the men pushed each carcass along",
       "A chain of hooks the men carried the meat between"
     ],
-    "context": "Ford said the idea came 'in a general way from the overhead trolley' the Chicago packers used in dressing beef — the packers' disassembly line, running in reverse. So in a sense, the modern factory was born in a slaughterhouse. Klann had toured Swift's plant and carried the concept back. Source: Wikipedia, 'Assembly line.'  (Legend.)",
-    "topic": "chicago-beef-the-cold-railcar-that-centralized-dinner"
-  },
-  {
-    "tier": 4,
-    "question": "Beef rolled out of Chicago all year round in Gustavus Swift's refrigerated railcars in the 1880s, and for the first time families far from any farm or ranch could put fresh beef on the table. Swift had a proud phrase for the new age his railcars had opened. What did he call it?",
-    "answer": "The era of cheap beef",
-    "choices": [
-      "The era of cheap beef",
-      "The age of dressed beef",
-      "The reign of cold cars",
-      "The dawn of the iron steer"
-    ],
-    "context": "Swift called it the 'era of cheap beef.' Centralized cold-car packing put a fresh steak within reach of families who lived nowhere near a farm or ranch, in any season — a real change in how ordinary Americans ate dinner. Source: Wikipedia, 'Gustavus Franklin Swift.'",
+    "context": "Ford wrote that the idea came 'in a general way from the overhead trolley that the Chicago packers use in dressing beef': the packers' disassembly line, running in reverse. Klann had toured Swift's plant and carried the concept back. Sources: Henry Ford, My Life and Work (1922); Wikipedia, 'Assembly line.'",
     "topic": "chicago-beef-the-cold-railcar-that-centralized-dinner"
   },
   {
@@ -4455,7 +4390,7 @@
       "Menthol",
       "Fructose"
     ],
-    "context": "Capsaicin (cap-SAY-uh-sin) is the compound behind every chili's heat. It doesn't burn or damage you — it just fools your nerves into reporting a burn. (Menthol pulls the same trick in reverse, tripping your cold sensors.) Source: Wikipedia, 'Capsaicin'.",
+    "context": "Capsaicin (cap-SAY-uh-sin) is the compound behind every chili's heat. It doesn't burn or damage anything — it just fools the nerves into reporting a burn. (Menthol pulls the same trick in reverse, tripping the cold sensors.) Source: Wikipedia, 'Capsaicin'.",
     "topic": "chili-heat-capsaicin-and-the-scoville-scale"
   },
   {
@@ -4481,20 +4416,20 @@
       "The shiny outer skin",
       "The thick fleshy walls"
     ],
-    "context": "Surprise — it's not the seeds most people blame. Capsaicin is made in and soaks into the pale, spongy pith (the placenta) that the seeds cling to. Cut out that white rib and you cut out most of the burn. Source: Food Republic, 'Pepper spice isn't in the seeds'.",
+    "context": "Surprise — it's not the seeds most people blame. Capsaicin is made in and soaks into the pale, spongy pith (the placenta) that the seeds cling to. Cutting out that white rib cuts out most of the burn. Source: Food Republic, 'Pepper spice isn't in the seeds'.",
     "topic": "chili-heat-capsaicin-and-the-scoville-scale"
   },
   {
     "tier": 3,
-    "question": "Police officers and hikers clip a can to their belts for self-defense, and what is inside rates from 500,000 to 5,000,000 units on the Scoville heat chart, as fierce as anything that grows, though it is no food. What is this eye-watering spray?",
-    "answer": "Pepper spray",
+    "question": "Police officers and hikers clip a can of pepper spray to their belts for self-defense. What is inside rates from 500,000 to 5,000,000 units on the Scoville heat chart, as fierce as the hottest peppers that grow. What gives the spray its fire?",
+    "answer": "Oil drawn from hot chili peppers",
     "choices": [
-      "Pepper spray",
-      "Tear gas",
-      "Bug spray",
-      "Hairspray"
+      "Oil drawn from hot chili peppers",
+      "Oil pressed from black peppercorns",
+      "Juice pressed from raw onions",
+      "Oil of mustard seed and horseradish"
     ],
-    "context": "Pepper spray really is weaponized chili — concentrated capsaicin fired straight at an attacker's eyes, which is exactly why it lands on the same Scoville scale used for food. Source: Wikipedia, 'Scoville scale'.",
+    "context": "Pepper spray really is weaponized chili: its active ingredient is capsaicin, usually as oleoresin capsicum, a resin extracted from ground chili peppers, which is why it lands on the same Scoville scale used for food. Despite the name, black pepper plays no part. Sources: Wikipedia, 'Pepper spray'; Wikipedia, 'Scoville scale'.",
     "topic": "chili-heat-capsaicin-and-the-scoville-scale"
   },
   {
@@ -4507,7 +4442,7 @@
       "Dried, ground rose petals",
       "Dried, ground red peppercorns"
     ],
-    "context": "Paprika is nothing exotic — just sweet or mild chilies, dried and ground to powder, which Hungary turned into a national spice (famous from Szeged and Kalocsa). Smoke those same peppers over smouldering oak instead of sun-drying them and you get Spanish smoked paprika, pimentón. Source: Wikipedia, 'Paprika'.",
+    "context": "Paprika is nothing exotic — just sweet or mild chilies, dried and ground to powder, which Hungary turned into a national spice (famous from Szeged and Kalocsa). Smoke those same peppers over smouldering oak instead of sun-drying them to get Spanish smoked paprika, pimentón. Source: Wikipedia, 'Paprika'.",
     "topic": "chili-heat-capsaicin-and-the-scoville-scale"
   },
   {
@@ -4546,7 +4481,7 @@
       "Milk neutralizes the chili the way an antacid does",
       "Milk forms a cool film that seals off the nerves"
     ],
-    "context": "Capsaicin is oil-like (hydrophobic) and barely dissolves in water at all, so a gulp of water just smears it around your mouth. Milk works because a protein in it, casein, acts like a soap that lifts the capsaicin off your nerves and rinses it away. Source: Wikipedia, 'Capsaicin'.",
+    "context": "Capsaicin is oil-like (hydrophobic) and barely dissolves in water at all, so a gulp of water just smears it around the mouth. Milk works because a protein in it, casein, acts like a soap that lifts the capsaicin off the nerves and rinses it away. Source: Wikipedia, 'Capsaicin'.",
     "topic": "chili-heat-capsaicin-and-the-scoville-scale"
   },
   {
@@ -4556,8 +4491,8 @@
     "choices": [
       "birds",
       "mice",
-      "lizards",
-      "tortoises"
+      "squirrels",
+      "deer"
     ],
     "context": "Birds' version of the TRPV1 sensor doesn't respond to capsaicin, so they feel no heat. The chili 'bribes' them: birds swallow the fruit and drop the seeds intact and plantable, far away — while the same burn repels seed-crushing mammals whose grinding molars would destroy the seeds. Source: EurekAlert, 'Why chili peppers are hot'.",
     "topic": "chili-heat-capsaicin-and-the-scoville-scale"
@@ -4572,7 +4507,7 @@
       "Piperine",
       "Allicin"
     ],
-    "context": "Capsaicin doesn't raise the temperature of anything — it binds to pain receptors in your mouth and throat and fools your brain into feeling burned, even though the tissue is completely unharmed. Source: en.wikipedia.org/wiki/Capsaicin",
+    "context": "Capsaicin doesn't raise the temperature of anything — it binds to pain receptors in the mouth and throat and fools the brain into feeling burned, even though the tissue is completely unharmed. Source: en.wikipedia.org/wiki/Capsaicin",
     "topic": "chilis-journey-into-asia-the-columbian-exchange"
   },
   {
@@ -4624,7 +4559,7 @@
       "A baked pastry",
       "A hard lozenge"
     ],
-    "context": "For roughly its first three thousand years, chocolate was strictly a beverage — ground cacao whisked with water. The idea of a solid bar you could actually eat came only in the 1800s. Source: worldhistory.org/Chocolate_in_Mesoamerica; en.wikipedia.org/wiki/History_of_chocolate",
+    "context": "For roughly its first three thousand years, chocolate was strictly a beverage: ground cacao mixed with water. The idea of a solid bar a person could actually eat came only in the 1800s. Source: worldhistory.org/Chocolate_in_Mesoamerica; en.wikipedia.org/wiki/History_of_chocolate",
     "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
   },
   {
@@ -4637,7 +4572,7 @@
       "A small rabbit",
       "A turkey hen"
     ],
-    "context": "The 1545 Tlaxcala list: one bean bought a ripe avocado or a large tomato; 30 beans a small rabbit; 100 a turkey hen; 300 a turkey cock. A cotton cloak ran 65 to 300 beans. Source: mexicolore.co.uk/maya/chocolate/beanz-meanz-money; worldhistory.org/Chocolate_in_Mesoamerica",
+    "context": "The 1545 Tlaxcala list: one bean bought a fully ripe avocado (a newly picked one cost three) or a large tomato; 30 beans a small rabbit; 100 a turkey hen; 300 a turkey cock. A cotton cloak ran 65 to 300 beans. Source: mexicolore.co.uk/maya/chocolate/beanz-meanz-money; worldhistory.org/Chocolate_in_Mesoamerica",
     "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
   },
   {
@@ -4660,23 +4595,10 @@
     "choices": [
       "Hollowed out the shells and stuffed in filler",
       "Painted ordinary pebbles a rich cacao brown",
-      "Pressed fake beans out of colored clay",
+      "Hammered fake beans out of thin copper",
       "Split real beans and glued them back doubled"
     ],
     "context": "The Florentine Codex, compiled by friar Bernardino de Sahagun, describes cheats emptying real cacao shells and repacking them with ash, dough, wax, or avocado pits — or slipping worthless wild beans into a batch. Source: mexicolore.co.uk/maya/chocolate/beanz-meanz-money",
-    "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
-  },
-  {
-    "tier": 4,
-    "question": "Montezuma II ruled the vast Aztec empire in the early 1500s from his palace in what is now Mexico City. Bernal Díaz del Castillo, a Spanish soldier who saw the royal court in person, later wrote that servants brought the emperor more than fifty pitchers of foamy chocolate at a single sitting. What did Montezuma do with the golden cups he drank from?",
-    "answer": "Used each cup only once, then never again",
-    "choices": [
-      "Used each cup only once, then never again",
-      "Passed them around to his warriors",
-      "Buried them with his royal ancestors",
-      "Traded them to his Spanish guests"
-    ],
-    "context": "In his True History of the Conquest of New Spain, Bernal Diaz described Montezuma's staggering chocolate ritual — golden cups used a single time. It is one Spaniard's testimony, but it captures the emperor's fabulous wealth. Source: thecollector.com/montezuma-fun-facts; Bernal Diaz del Castillo, True History of the Conquest of New Spain  (Legend.)",
     "topic": "chocolate-from-bitter-aztec-drink-to-sweet-bar"
   },
   {
@@ -4699,7 +4621,7 @@
     "choices": [
       "Stirred it for hours on end",
       "Chilled it slowly in cold cellars",
-      "Ground it between stone wheels",
+      "Baked it slowly in a low oven",
       "Aged it in barrels for months"
     ],
     "context": "In 1879 the Swiss chocolatier Rodolphe Lindt invented what he called conching: stirring the chocolate for hours on end. He added nothing new — the long, patient agitation alone turned coarse, gritty chocolate into the melt-in-your-mouth smoothness that fine bars are prized for. Source: en.wikipedia.org/wiki/History_of_chocolate",
@@ -4785,12 +4707,12 @@
   },
   {
     "tier": 2,
-    "question": "Suppose you eat a cholesterol-rich food such as eggs or shrimp. From the 1970s, American doctors warned families to eat far fewer eggs, since cholesterol was thought to clog the arteries, and the whole scare rested on one intuitive idea about such food. What did people assume its cholesterol would do?",
-    "answer": "Pass almost one-for-one into your blood",
+    "question": "Eggs and shrimp are rich in cholesterol, and from the 1970s American doctors warned families to eat far fewer eggs, since cholesterol was thought to clog the arteries. The whole scare rested on one intuitive idea about such food. What did people assume its cholesterol would do once eaten?",
+    "answer": "Pass almost one-for-one into the blood",
     "choices": [
-      "Pass almost one-for-one into your blood",
+      "Pass almost one-for-one into the blood",
       "Get burned off first as energy",
-      "Block your gut from absorbing iron",
+      "Block the gut from absorbing iron",
       "Turn straight into body fat"
     ],
     "context": "This intuitive one-for-one logic drove the egg warnings for nearly 50 years — but when researchers actually measured it, the 2015 Dietary Guidelines Advisory Committee reported 'no appreciable relationship between consumption of dietary cholesterol and serum [blood] cholesterol.' The idea was reasonable; it just turned out to be wrong. Source: McNamara 2015 / DGAC, PMC4632449.",
@@ -4798,28 +4720,28 @@
   },
   {
     "tier": 2,
-    "question": "Scientists eventually measured where the cholesterol in human blood comes from, and the numbers undercut the whole egg scare. Suppose you could sort the cholesterol in your own blood: only about a fifth of it would have come from the food you eat. Where does the other four-fifths come from?",
-    "answer": "Your own body makes it, mostly the liver",
+    "question": "Scientists eventually measured where the cholesterol in human blood comes from, and the numbers undercut the whole egg scare. Food supplies only around one part in five of it. Where does the rest come from?",
+    "answer": "The body makes it, mostly in the liver",
     "choices": [
-      "Your own body makes it, mostly the liver",
-      "Your gut bacteria produce it during digestion",
+      "The body makes it, mostly in the liver",
+      "Gut bacteria produce it during digestion",
       "It builds up from years of past meals",
-      "Your skin makes it from sunlight"
+      "The skin makes it from sunlight"
     ],
-    "context": "Harvard: 'your liver and intestines make about 80% of the cholesterol you need... Only about 20% comes from the foods you eat.' The liver alone makes on the order of 800 mg a day — far more than the ~186 mg in a large egg. Because your own body is the main supplier, the food on your plate is a minor contributor. Source: health.harvard.edu, 'How it's made: Cholesterol production in your body.'",
+    "context": "Harvard: 'your liver and intestines make about 80% of the cholesterol you need... Only about 20% comes from the foods you eat.' The liver alone makes on the order of 800 mg a day, far more than the ~186 mg in a large egg. Because the body itself is the main supplier, the food on the plate is a minor contributor. Source: health.harvard.edu, 'How it's made: Cholesterol production in your body.'",
     "topic": "cholesterol-and-the-eggs-comeback"
   },
   {
     "tier": 3,
-    "question": "Bacon and eggs make a big breakfast packed with cholesterol. Suppose you eat one: your liver does not work blindly, but senses how much cholesterol has just come in with the meal. What does your liver do next?",
+    "question": "A man sits down to a big breakfast of bacon and eggs, packed with cholesterol. His liver does not work blindly, like a factory with no manager: it senses how much cholesterol has just come in with the meal. What does the liver do next?",
     "answer": "Throttles back its own production to compensate",
     "choices": [
       "Throttles back its own production to compensate",
       "Speeds up its own production to match",
-      "Dumps the extra into your blood unchanged",
-      "Stores the extra away in your muscles"
+      "Dumps the extra into the blood unchanged",
+      "Stores the extra away in the muscles"
     ],
-    "context": "This is a negative feedback loop: eat more cholesterol and your liver throttles down its own manufacturing (the enzyme HMG-CoA reductase gets dialed back), partly cancelling out the meal. It's the core reason dietary cholesterol shifts your blood cholesterol far less than the old one-for-one logic predicted. Source: Soliman 2018, 'Dietary Cholesterol and the Lack of Evidence in CVD,' PMC6024687.",
+    "context": "This is a negative feedback loop: eat more cholesterol and the liver throttles down its own manufacturing (the enzyme HMG-CoA reductase gets dialed back), partly cancelling out the meal. It is the core reason dietary cholesterol shifts blood cholesterol far less than the old one-for-one logic predicted. Source: Soliman 2018, 'Dietary Cholesterol and the Lack of Evidence in CVD,' PMC6024687.",
     "topic": "cholesterol-and-the-eggs-comeback"
   },
   {
@@ -4845,7 +4767,7 @@
       "Vitamin C",
       "Table salt"
     ],
-    "context": "Saturated fat impairs the liver's ability to clear LDL from your blood and raises apolipoprotein B — so a food's saturated-fat content turned out to matter more for your blood cholesterol than its cholesterol number did. That shift in understanding is a big part of why the old cholesterol limit was dropped. Worth knowing: that is about LDL specifically. Whether raising LDL this way actually drives heart disease is itself a live debate -- later meta-analyses (Siri-Tarino 2010, Chowdhury 2014) failed to confirm the link -- so the saturated-fat story is contested, not closed. Source: National Geographic, 'Egg yolks, cholesterol and heart disease.'",
+    "context": "Saturated fat impairs the liver's ability to clear LDL from the blood and raises apolipoprotein B — so a food's saturated-fat content turned out to matter more for blood cholesterol than its cholesterol number did. That shift in understanding is a big part of why the old cholesterol limit was dropped. Worth knowing: that is about LDL specifically. Whether raising LDL this way actually drives heart disease is itself a live debate -- later meta-analyses (Siri-Tarino 2010, Chowdhury 2014) failed to confirm the link -- so the saturated-fat story is contested, not closed. Source: National Geographic, 'Egg yolks, cholesterol and heart disease.'",
     "topic": "cholesterol-and-the-eggs-comeback"
   },
   {
@@ -4858,7 +4780,7 @@
       "Insulin, the hormone that lowers blood sugar",
       "Keratin, the protein in hair and nails"
     ],
-    "context": "Cholesterol is essential raw material: your body uses it to build every cell membrane and to make vitamin D, bile acids for digesting fat, and all your steroid hormones — including cortisol and the sex hormones like testosterone and estrogen. You literally cannot live without it, which is exactly why your liver makes its own steady supply. Source: StatPearls, 'Biochemistry, Cholesterol,' NIH (NBK513326).",
+    "context": "Cholesterol is essential raw material: the body uses it to build every cell membrane and to make vitamin D, bile acids for digesting fat, and all the steroid hormones — including cortisol and the sex hormones like testosterone and estrogen. No one can live without it, which is exactly why the liver makes its own steady supply. Source: StatPearls, 'Biochemistry, Cholesterol,' NIH (NBK513326).",
     "topic": "cholesterol-and-the-eggs-comeback"
   },
   {
