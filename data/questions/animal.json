@@ -13846,15 +13846,15 @@
   },
   {
     "tier": 2,
-    "question": "A koala chews gum leaves high in an Australian eucalyptus forest and rarely, if ever, climbs down to drink from a stream. It takes its name from a word of the Dharug people. What is the Dharug word 'koala' thought to mean?",
-    "answer": "No water",
+    "question": "A koala clings high in a tree in eastern Australia and can go a long time without climbing down to drink from a stream or a puddle. Where does it get almost all the water it needs?",
+    "answer": "From the moisture in the leaves it eats",
     "choices": [
-      "No water",
-      "Tree sleeper",
-      "Grey climber",
-      "Gum eater"
+      "From the moisture in the leaves it eats",
+      "From dew it licks off its own fur",
+      "From sap it laps from cuts in the bark",
+      "From water held in pouches in its cheeks"
     ],
-    "context": "The word 'koala' comes from the Dharug language and is thought to mean 'no water' — koalas draw almost all their moisture from eucalyptus leaves and rarely drink. Source: https://en.wikipedia.org/wiki/Koala",
+    "context": "A koala gets almost all its water from the leaves it eats, so it rarely needs to drink, though big males sometimes drink water found on the ground or in tree hollows. Its name comes from the Dharug word gula, thought to mean 'no water'. Source: https://en.wikipedia.org/wiki/Koala ; https://grokipedia.com/page/Koala",
     "topic": "koala"
   },
   {
@@ -13924,13 +13924,13 @@
   },
   {
     "tier": 2,
-    "question": "Patrolling the dry hills of an Indonesian island, a Komodo dragon flicks its long, forked yellow tongue in and out. Each tip picks up scent from the air and presses it into a pair of pits hidden at the top of its mouth, the Jacobson's organ. What does this two-tipped tongue give the dragon?",
-    "answer": "A 3-D sense of a scent's direction, smelling carrion up to 2.5 miles away",
+    "question": "Patrolling the dry hills of an Indonesian island, a Komodo dragon flicks its forked yellow tongue in and out. Each tip carries what it picks up from the air to its own side of the Jacobson's organ, a pair of pits at the top of its mouth. What does the forked tongue give it?",
+    "answer": "A sense of which way a smell comes from",
     "choices": [
-      "A 3-D sense of a scent's direction, smelling carrion up to 2.5 miles away",
-      "Sharp night vision that works in near-total darkness",
-      "The ability to hear low rumbles through the ground",
-      "A taste for salt that guides it to fresh water"
+      "A sense of which way a smell comes from",
+      "A way to cool its blood on hot days",
+      "A taste for salt that leads it to water",
+      "A way to sense the body heat of prey"
     ],
     "context": "The two forked tips deliver scent molecules separately to the Jacobson's organ, giving a directional, 3-D sense of smell; a dragon can detect a rotting carcass from up to 2.5 miles (4 km) away. Source: Smithsonian's National Zoo (nationalzoo.si.edu/animals/komodo-dragon).",
     "topic": "komodo-dragon"
@@ -13938,9 +13938,9 @@
   {
     "tier": 3,
     "question": "A University of Queensland team led by Bryan Fry dissected fresh Komodo dragon jaws in 2009 to learn why the lizard's bite is so deadly. For decades textbooks had blamed filthy, bacteria-choked saliva. What did the team find was the real killer in the bite?",
-    "answer": "Venom glands in the lower jaw whose toxins stop clotting and crash blood pressure",
+    "answer": "Venom glands in its lower jaw that stop blood clotting",
     "choices": [
-      "Venom glands in the lower jaw whose toxins stop clotting and crash blood pressure",
+      "Venom glands in its lower jaw that stop blood clotting",
       "A crushing bite force stronger than a crocodile's",
       "A paralyzing nerve toxin coating the teeth",
       "Jaws that inject digestive acid into the wound"
@@ -13951,10 +13951,10 @@
   {
     "tier": 3,
     "question": "Out of the brush on Komodo Island, a dragon lunges and sinks its teeth into a passing water buffalo, then lets the huge animal shake free and stagger away. The dragon does not sprint after it. What does it do instead?",
-    "answer": "Follows at a leisurely pace for hours or days until blood loss drops the prey",
+    "answer": "Trails it slowly for hours or days until it collapses",
     "choices": [
-      "Follows at a leisurely pace for hours or days until blood loss drops the prey",
-      "Circles back to its burrow and waits for a fresh victim",
+      "Trails it slowly for hours or days until it collapses",
+      "Goes back to its burrow to wait for new prey",
       "Calls other dragons to help bring the buffalo down",
       "Climbs a tree to watch the herd from above"
     ],
@@ -13984,7 +13984,7 @@
       "A hormone shift that let her fertilize her own eggs",
       "Eggs quietly swapped in by another female"
     ],
-    "context": "Flora, kept with no mate, laid 11 eggs and hatched healthy young in 2006 through parthenogenesis. Source: Scientific American (scientificamerican.com); Nature 444, 1021 (2006).  (Legend.)",
+    "context": "Flora, kept with no mate, laid 11 eggs in 2006, and seven of them hatched into healthy young through parthenogenesis. Source: https://en.wikipedia.org/wiki/Komodo_dragon ; Nature 444, 1021 (2006).",
     "topic": "komodo-dragon"
   },
   {
@@ -13997,7 +13997,7 @@
       "All male, because heat during incubation sets sex",
       "A random mix, just like normal fertilized clutches"
     ],
-    "context": "The Komodo's sex system is the reverse of ours: females are WZ, males ZZ. When an unfertilized egg doubles its chromosomes, only the ZZ (male) combination survives, so every parthenogenetic hatchling is male. Source: Scientific American (scientificamerican.com); Nature 444, 1021 (2006).",
+    "context": "The Komodo's sex system is the reverse of a mammal's: females are WZ, males ZZ. When an unfertilized egg doubles its chromosomes, only the ZZ (male) combination survives, so every parthenogenetic hatchling is male. Source: Scientific American (scientificamerican.com); Nature 444, 1021 (2006).",
     "topic": "komodo-dragon"
   },
   {
@@ -14036,7 +14036,7 @@
       "A film of pigment-producing mouth bacteria",
       "Enamel worn thin to expose the reddish dentin beneath"
     ],
-    "context": "Many reptiles carry a trace of iron in their enamel, but the Komodo dragon is unique in lining the actual cutting edges and tips with it. The iron hardens and protects the fine serrations so the teeth stay razor-sharp and kill-ready at all times, staining them orange in the process. Researchers even suspect meat-eating dinosaurs like Tyrannosaurus rex may have kept their steak-knife teeth sharp the same way. Source: LeBlanc et al., 'Iron-coated Komodo dragon teeth and the complex dental enamel of carnivorous reptiles,' Nature Ecology & Evolution, 24 July 2024; King's College London news, 'Komodo dragons have iron-coated teeth to rip apart their prey.'",
+    "context": "Many reptiles carry a trace of iron in their enamel, but the Komodo dragon concentrates it along the cutting edges and tips, a coating seen only to a lesser degree in a few other monitor lizards. The iron hardens and protects the fine serrations so the teeth stay razor-sharp, staining them orange in the process. Fossilization hides whether meat-eating dinosaurs such as Tyrannosaurus rex had iron-coated teeth too, but the same study found that tyrannosaurs reshaped the enamel along their cutting edges. Source: LeBlanc et al., 'Iron-coated Komodo dragon teeth and the complex dental enamel of carnivorous reptiles,' Nature Ecology & Evolution, 24 July 2024; https://www.eurekalert.org/news-releases/1052097 ; https://en.wikipedia.org/wiki/Komodo_dragon",
     "topic": "komodo-dragon"
   },
   {
@@ -14331,9 +14331,9 @@
     "answer": "A small car",
     "choices": [
       "A small car",
-      "A microwave oven",
-      "A garden gnome",
-      "A house cat"
+      "A large dog",
+      "A refrigerator",
+      "An elephant"
     ],
     "context": "An adult leatherback can reach roughly 500-700 kg (over 1,000 lb) - genuinely in the weight class of a small car, and the heaviest non-crocodilian reptile on Earth. Source: https://en.wikipedia.org/wiki/Leatherback_sea_turtle",
     "topic": "leatherback-turtle-the-warm-blooded-reptile-giant"
@@ -14344,9 +14344,9 @@
     "answer": "Tough rubbery leathery skin",
     "choices": [
       "Tough rubbery leathery skin",
-      "A smooth glassy enamel",
-      "Loose overlapping feathers",
-      "A coat of coarse fur"
+      "Overlapping snake-like scales",
+      "A thick coat of slippery slime",
+      "Rows of sharp, horny spikes"
     ],
     "context": "Alone among sea turtles, the leatherback has no hard bony shell at all. Its back is tough, rubbery, leathery skin - which is literally its name: Dermochelys coriacea means 'leathery skin-turtle.' Source: https://en.wikipedia.org/wiki/Leatherback_sea_turtle",
     "topic": "leatherback-turtle-the-warm-blooded-reptile-giant"
@@ -14374,7 +14374,7 @@
       "About 6 degrees C warmer",
       "About 40 degrees C warmer"
     ],
-    "context": "The turtle's core ran about 18 degrees C (32 degrees F) ABOVE the surrounding water - it stays warm while swimming through near-freezing seas, extraordinary for a reptile that supposedly can't heat itself. A degree or two is what you'd expect from mere activity; 18 is the shock. Source: https://www.science.org/doi/10.1126/science.177.4051.791",
+    "context": "The turtle's core ran about 18 degrees C (32 degrees F) above the surrounding water, so it stays warm while swimming through near-freezing seas, extraordinary for a reptile. Activity alone would warm a reptile by only a degree or two. Source: https://www.science.org/doi/10.1126/science.177.4051.791",
     "topic": "leatherback-turtle-the-warm-blooded-reptile-giant"
   },
   {
@@ -14387,7 +14387,7 @@
       "About 400 meters",
       "About 3,500 meters"
     ],
-    "context": "That 2006 dive reached 1,280 m (4,199 ft) - the deepest ever recorded for any reptile, deeper than most whales ever go and far past the ~200 m of a typical air-breathing diver.",
+    "context": "That 2006 dive reached 1,280 m (4,199 ft), the deepest then recorded for any reptile and deeper than most whales ever go. It stood as the record until 2024, when a leatherback tagged in the Solomon Islands was reported to have dived about 1,344 m. Source: Guinness World Records, 'Deepest dive by a turtle/chelonian'; https://www.livescience.com/animals/turtles/leatherback-turtle-dives-deeper-than-a-navy-sub-smashing-world-record-in-the-process",
     "topic": "leatherback-turtle-the-warm-blooded-reptile-giant"
   },
   {
@@ -14743,15 +14743,15 @@
   },
   {
     "tier": 4,
-    "question": "A male lyrebird sings in an Australian forest, his voice coming from the syrinx, the voice box where the windpipe splits toward the lungs. His is the most complexly muscled syrinx of any songbird, and he can work its two sides independently. What can a single lyrebird do with it that almost no other bird can?",
+    "question": "A male lyrebird sings from a log in an Australian forest, his voice coming from the syrinx, the voice box where the windpipe splits toward the lungs. Recordings of his flute-like song hold a surprise. What can a single lyrebird do with that voice box?",
     "answer": "Sing two different melodies at once",
     "choices": [
       "Sing two different melodies at once",
       "Sing louder than any other bird",
       "Hold one note for several minutes",
-      "Sing while completely underwater"
+      "Sing notes too high for people to hear"
     ],
-    "context": "The lyrebird has the most complexly-muscled syrinx (voice-box) of any songbird and can control its two halves independently, letting it sing two different melodies simultaneously, the hardware behind its unmatched range. Source: Wikipedia, 'Lyrebird'; eartharchives.org, 'The lyrical lyrebird'.",
+    "context": "A lyrebird can carry two tunes at the same time: the two sides of a songbird's syrinx (voice box) can work independently, and researchers studying a lyrebird's flute-like song had to separate one melody from the other. Some other songbirds can also make two sounds at once. Source: https://en.wikipedia.org/wiki/Lyrebird ; https://en.wikipedia.org/wiki/Syrinx_(bird_anatomy)",
     "topic": "lyrebird"
   },
   {
@@ -14821,7 +14821,7 @@
   },
   {
     "tier": 5,
-    "question": "DeLeo and colleagues rebuilt the family tree of a group of colonial coral relatives in 2024 and traced their glow far back into the fossil record, past the old record held by tiny ostracod crustaceans of the Permian. Which living animals now hold the record for the earliest glow?",
+    "question": "DeLeo and colleagues rebuilt the family tree of one group of glowing animals in 2024 and traced their light far back into the fossil record, past the old record held by tiny ostracod crustaceans of the Permian. Which living animals now hold the record for the earliest glow?",
     "answer": "Octocorals, the soft corals, glowing back roughly 540 million years",
     "choices": [
       "Octocorals, the soft corals, glowing back roughly 540 million years",
@@ -15004,14 +15004,14 @@
   {
     "tier": 5,
     "question": "Hanne Thoen trained mantis shrimp in 2014 to pick between very similar shades of color. Their eyes carry far more kinds of color receptor than a human's three, yet they did worse than people at telling the shades apart. Why did all those extra receptors not give them finer color vision?",
-    "answer": "Its receptors don't compare against each other the way ours do",
+    "answer": "Its receptors work alone instead of comparing signals",
     "choices": [
-      "Its receptors don't compare against each other the way ours do",
-      "Its brain is too small to store colors",
-      "Its eyes are colorblind above the midband",
-      "It only sees color in bright sunlight"
+      "Its receptors work alone instead of comparing signals",
+      "Its brain is too small to hold so many colors",
+      "Its color cells wear out within a few weeks",
+      "It can see color only in bright, direct sunlight"
     ],
-    "context": "Despite 12+ receptors, mantis shrimp failed color tasks humans find easy -- because their receptors don't compare against one another the way our three do. Corrects the myth that more receptors means finer color vision. LEGEND-tier. Source: Thoen et al., Science (2014).",
+    "context": "Despite 12 or more receptor types, mantis shrimp failed color tasks that people find easy, because their receptors do not compare signals against one another the way the three kinds in a human eye do. More receptors did not mean finer color vision. Source: Thoen et al., Science (2014).",
     "topic": "mantis-shrimp"
   },
   {
@@ -15030,10 +15030,10 @@
   {
     "tier": 5,
     "question": "With just one eye, a mantis shrimp on a reef can judge how far away a target is, though most animals get depth perception by comparing what their left and right eyes see. What lets a single mantis shrimp eye judge depth by itself?",
-    "answer": "Each eye is split into three regions viewing the same spot",
+    "answer": "Each eye has three zones aimed at one spot",
     "choices": [
-      "Each eye is split into three regions viewing the same spot",
-      "Each eye has two separate lenses",
+      "Each eye has three zones aimed at one spot",
+      "Each eye has two separate lenses inside",
       "The eye rapidly refocuses back and forth",
       "Two pupils sit side by side in each eye"
     ],
@@ -15042,7 +15042,7 @@
   },
   {
     "tier": 5,
-    "question": "Inside a mantis shrimp's eye, cell membranes roll up into tiny tubes that twist light like the quarter-wave plate in a compact disc player or a camera filter. A plate made by people works for one color only; the shrimp's handles everything from near-ultraviolet to infrared. What can this animal do that no other creature is known to do?",
+    "question": "Inside a mantis shrimp's eye, cell membranes roll up into tiny tubes that twist light like the quarter-wave plate in a compact disc player or a camera filter. A plate made by people works for one color only; the shrimp's handles everything from near-ultraviolet to infrared. What were mantis shrimp the first animals shown to do?",
     "answer": "Detect circularly polarized light",
     "choices": [
       "Detect circularly polarized light",
@@ -15050,16 +15050,16 @@
       "Hear ultrasonic pulses through the water",
       "Sense electric fields from buried prey"
     ],
-    "context": "The mantis shrimp is the only animal group known to detect circularly polarized light. Photoreceptor cell membranes are rolled into microtubes that act as a natural quarter-wave plate (retarder), converting linear polarization into circular and back. Human-made quarter-wave plates in CD/DVD players and camera filters work well for only one color, but the shrimp's version performs almost perfectly across the whole visible range, near-UV to infrared, outdoing any synthetic design. Source: Roberts, Chiou, Marshall & Cronin, Nature Photonics 2009 (University of Bristol / University of Maryland), https://www.bristol.ac.uk/news/2009/6591.html ; corroborated https://www.sciencedaily.com/releases/2009/10/091025162459.htm",
+    "context": "In 2008 Tsyr-Huei Chiou and colleagues showed that mantis shrimp detect circularly polarized light, the first animals proven to do so; a 2010 study later reported a jewel scarab beetle responding to it too. Photoreceptor cell membranes are rolled into microtubes that act as a natural quarter-wave plate (retarder), converting linear polarization into circular and back. Human-made quarter-wave plates in CD/DVD players and camera filters work well for only one color, but the shrimp's version performs almost perfectly across the whole visible range, near-UV to infrared, outdoing any synthetic design. Source: Chiou et al., Current Biology 18:429 (2008); Brady & Cummings, American Naturalist 175:614 (2010); Roberts, Chiou, Marshall & Cronin, Nature Photonics 2009, https://www.bristol.ac.uk/news/2009/6591.html",
     "topic": "mantis-shrimp"
   },
   {
     "tier": 5,
     "question": "One mantis shrimp swings a crushing club at a snail while a cousin waits in its burrow nearby to spear passing prey on long, barbed arms. The two body plans look like a matched pair that must have split apart together. What does the evidence of fossils and DNA show about where each came from?",
-    "answer": "Spearing came first; smashing appeared tens of millions of years later",
+    "answer": "Spearing came first; smashing arose far later",
     "choices": [
-      "Spearing came first; smashing appeared tens of millions of years later",
-      "Smashing came first; spearing appeared tens of millions of years later",
+      "Spearing came first; smashing arose far later",
+      "Smashing came first; spearing arose far later",
       "Both arose together from a single crushing ancestor",
       "Each evolved separately on opposite sides of the globe"
     ],
@@ -15246,32 +15246,6 @@
       "Bare, rocky high-mountain slopes"
     ],
     "context": "The mastodon lived in woodlands, spruce and pine forests, and boggy swamps, not the open mammoth steppe. Because the two giants ate different plants in different places, they could share the same land without competing. Source: https://en.wikipedia.org/wiki/Mastodon",
-    "topic": "mastodon"
-  },
-  {
-    "tier": 4,
-    "question": "Georges Cuvier, the French anatomist, studied the bones and teeth of a huge Ice Age beast from North America in the early 1800s. The shape of its molars reminded him of something, and he built its scientific name from the Greek for that shape plus the Greek for tooth. What does 'mastodon' mean?",
-    "answer": "'Nipple-tooth'",
-    "choices": [
-      "'Nipple-tooth'",
-      "'Cone-jaw'",
-      "'Forest-giant'",
-      "'Crushing-molar'"
-    ],
-    "context": "Cuvier built the name from Greek 'mastos' (breast/nipple) and 'odont' (tooth) because the rounded cones on the molars reminded him of nipples. Source: https://en.wikipedia.org/wiki/Mastodon",
-    "topic": "mastodon"
-  },
-  {
-    "tier": 4,
-    "question": "Early Americans digging at Big Bone Lick, Kentucky, kept turning up enormous bones of a beast no one could place. They called it an elephant, then a mammoth, and for years just gave it a name that admitted defeat, until Cuvier proved in 1806 it was its own extinct species. What was that name?",
-    "answer": "The 'American incognitum'",
-    "choices": [
-      "The 'American incognitum'",
-      "The 'Kentucky colossus'",
-      "The 'western behemoth'",
-      "The 'northern mammoth'"
-    ],
-    "context": "'Incognitum' is Latin for 'the unknown one' -- a giant no one could name. The bones surfaced at Big Bone Lick, Kentucky, and were called an elephant, then a mammoth, before Cuvier proved in 1806 it was its own extinct species. Source: https://boundarystones.weta.org/2024/06/06/paleontologist-chief-thomas-jeffersons-quest-mastodon  (Legend.)",
     "topic": "mastodon"
   },
   {
@@ -16259,7 +16233,7 @@
       "It shrank to a dwarf form found only on remote Arctic islands",
       "It moved south and now lives in the forests below the tundra"
     ],
-    "context": "The musk ox lived alongside mammoths and sabre-toothed cats and endured the ice-age extinctions that killed the mammoth, surviving today only as scattered relict herds in Greenland and the Canadian Arctic Archipelago. Sources: oneearth.org/species-of-the-week-muskox; pnas.org/doi/10.1073/pnas.0907189107.  (Legend.)",
+    "context": "The musk ox lived alongside mammoths and sabre-toothed cats and endured the ice-age extinctions that killed the mammoth. Its wild herds survived only in Greenland and the Canadian Arctic, and people have since moved herds to Alaska, Norway and Siberia. Sources: https://en.wikipedia.org/wiki/Muskox ; pnas.org/doi/10.1073/pnas.0907189107",
     "topic": "musk-ox"
   },
   {
@@ -16291,9 +16265,9 @@
   {
     "tier": 2,
     "question": "A female naked mole-rat is not born a queen; she wins her throne in vicious fights with her sisters. Once she starts having pups, her body changes so that she can carry more and more young at once. What happens to her body?",
-    "answer": "her lower-back vertebrae stretch and lengthen, so she grows longer",
+    "answer": "her backbone stretches, so her body grows longer",
     "choices": [
-      "her lower-back vertebrae stretch and lengthen, so she grows longer",
+      "her backbone stretches, so her body grows longer",
       "she grows a thick protective layer of fur",
       "her legs shorten so she can wedge into the nursery",
       "her teeth fuse into a single digging blade"
@@ -16355,7 +16329,7 @@
   },
   {
     "tier": 4,
-    "question": "Scientists gave a naked mole-rat back the pain gene it was missing, expecting it to feel what any other rodent feels. Yet one thing still did nothing to it, and no other known animal shrugs that thing off so completely. What was it?",
+    "question": "Scientists gave a naked mole-rat back the pain gene it was missing, expecting it to feel what any other rodent feels. Yet one thing still did not hurt it at all, a trait since seen in a couple of other African rodents. What was it?",
     "answer": "acid",
     "choices": [
       "acid",
@@ -16363,7 +16337,7 @@
       "pressure",
       "sound"
     ],
-    "context": "Even after getting the pain gene back, naked mole-rats felt nothing from acid, making them the only known animal with no pain response to acid at all; their nerves are wired differently at a deeper level. Source: Science News, 'Spice It Up'; Park et al., PLOS Biology.",
+    "context": "Even after getting the pain gene back, naked mole-rats felt nothing from acid; their nerves are wired differently at a deeper level. In 2019 Eigenbrod and colleagues tested African rodents related to the naked mole-rat and found two more, the Cape mole-rat and the East African root rat, that also ignore acid. Source: Park et al., PLOS Biology 2008 (PMC2214810); Eigenbrod et al., Science 364:852 (2019), https://www.pbs.org/wgbh/nova/article/african-mole-rat-pain-tolerance",
     "topic": "naked-mole-rat"
   },
   {
@@ -16420,19 +16394,6 @@
   },
   {
     "tier": 5,
-    "question": "A naked mole-rat breaks the rule that the older an animal gets, the likelier it is to die that year. Its yearly risk of death stays flat for at least 18 years, so it barely seems to age. What do scientists call this near-agelessness?",
-    "answer": "negligible senescence",
-    "choices": [
-      "negligible senescence",
-      "suspended animation",
-      "perpetual dormancy",
-      "reverse maturation"
-    ],
-    "context": "A naked mole-rat's risk of dying does not climb with age; its mortality stays flat for at least 18 years, a trait called negligible senescence. Longevity mechanisms are still active research. Source: PNAS / Rochester research (rochester.edu/newscenter/naked-mole-rats-cancer-aging-longevity); ScienceDirect.  (Legend.)",
-    "topic": "naked-mole-rat"
-  },
-  {
-    "tier": 5,
     "question": "The cells of a naked mole-rat pump out a super-sized sugar molecule, more than five times the size of the human kind, and it makes them stop crowding together. Thanks to that signal, the rodent is almost never struck by one deadly process. Which process does the molecule block?",
     "answer": "tumors forming",
     "choices": [
@@ -16450,11 +16411,11 @@
     "answer": "a lizard",
     "choices": [
       "a lizard",
-      "a bird",
-      "a bat",
-      "a shark"
+      "a sparrow",
+      "a dolphin",
+      "a rabbit"
     ],
-    "context": "The naked mole-rat is essentially the only mammal that behaves like a cold-blooded animal; its temperature drifts to match its tunnel, more like a lizard than a rodent. Source: Wikipedia, Naked mole-rat (thermoconformer), citing Buffenstein & Yahav.  (Legend.)",
+    "context": "The naked mole-rat is almost the only mammal whose body temperature drifts to match its tunnel, so in this one way it behaves more like a lizard than a rodent. Source: Wikipedia, Naked mole-rat (thermoconformer), citing Buffenstein & Yahav.",
     "topic": "naked-mole-rat"
   },
   {
@@ -16493,7 +16454,7 @@
       "their famous super-sugar was found in mouse cells too",
       "a queen was shown to reabsorb her own unborn pups"
     ],
-    "context": "The two cases were a 22-year-old male at Chicago's Brookfield Zoo, with an adenocarcinoma in his armpit, and a 20-year-old male at the National Zoo in Washington, D.C., with a stomach tumor. Cancer in these rodents is still astonishingly rare, only two confirmed cases out of hundreds of animals examined, so 'almost never' still holds. But 'never' does not: the naked mole-rat can get cancer, just far less often than any other mammal. It is a good lesson that even a favorite textbook 'fact' gets corrected when the evidence finally shows up. Source: Delaney, Ward, Walsh, Treuting et al., 'Initial Case Reports of Cancer in Naked Mole-rats (Heterocephalus glaber),' Veterinary Pathology 53(3):691-696 (2016); PubMed 26846576; Smithsonian Insider summary (2016).",
+    "context": "The two cases were a 22-year-old male at Chicago's Brookfield Zoo, with an adenocarcinoma in his armpit, and a 20-year-old male at the National Zoo in Washington, D.C., with a stomach tumor. Cancer in these rodents is still astonishingly rare, only two confirmed cases out of hundreds of animals examined, so 'almost never' still holds. But 'never' does not: the naked mole-rat can get cancer, just far less often than most mammals. Source: Delaney, Ward, Walsh, Treuting et al., 'Initial Case Reports of Cancer in Naked Mole-rats (Heterocephalus glaber),' Veterinary Pathology 53(3):691-696 (2016); PubMed 26846576; Smithsonian Insider summary (2016).",
     "topic": "naked-mole-rat"
   },
   {
@@ -16525,9 +16486,9 @@
   {
     "tier": 2,
     "question": "A male narwhal swims through the icy waters off Greenland with a long, spiraling ivory shaft up to three meters long jutting from his head. It looks like a horn, yet it is no horn at all. What is that shaft really?",
-    "answer": "A single overgrown tooth — a left canine that erupts through the lip",
+    "answer": "A single overgrown tooth that juts through the lip",
     "choices": [
-      "A single overgrown tooth — a left canine that erupts through the lip",
+      "A single overgrown tooth that juts through the lip",
       "A rod of solid keratin, like a rhino's horn",
       "A fused extension of the skull's frontal bone",
       "A stiffened cartilage spike rooted in the blowhole"
@@ -16545,7 +16506,7 @@
       "It grinds the fish with bony gum pads",
       "It saws the fish apart with its tusk"
     ],
-    "context": "Unlike every other toothed whale, the narwhal has essentially no teeth in its mouth — just two teeth in the upper jaw (in males, the left one becomes the tusk). With nothing to chew with, it swallows its prey whole. Source: Polar Science Center, Univ. of Washington — Narwhal FAQ https://psc.apl.uw.edu/rp/laidre/narwhal-faq/",
+    "context": "Unlike most toothed whales, the narwhal has essentially no teeth in its mouth, just two teeth in the upper jaw (in males, the left one usually becomes the tusk). With nothing to chew with, it swallows its prey whole. Source: Polar Science Center, Univ. of Washington, Narwhal FAQ https://psc.apl.uw.edu/rp/laidre/narwhal-faq/",
     "topic": "narwhal"
   },
   {
@@ -16599,32 +16560,6 @@
     ],
     "context": "Narwhals are among the deepest-diving whales, reaching about 1,800 meters (over a mile). To survive that pressure the rib cage folds and compresses, while muscles loaded with myoglobin let the whale hold its breath 25 minutes or more. Source: NOAA Climate.gov — 'The Narwhal's Tale'; UT Marine Science Institute — 'Deep-Diving Unicorns of the Sea'",
     "topic": "narwhal"
-  },
-  {
-    "tier": 3,
-    "question": "Old Norse sailors gave the tusked Arctic whale its first name centuries ago, and they chose a grim one: nár-hvalr, which passed straight down into the modern word narwhal. What did nár-hvalr mean?",
-    "answer": "'Corpse-whale'",
-    "choices": [
-      "'Corpse-whale'",
-      "'Spear-whale'",
-      "'Ghost-whale'",
-      "'Ice-whale'"
-    ],
-    "context": "The name 'narwhal' comes from Old Norse 'nár-hvalr' — 'corpse-whale' — thought to describe the animal's grey, mottled skin and its habit of floating motionless at the surface (a behavior called 'logging'), like a drifting body. Source: Etymonline https://www.etymonline.com/word/narwhal",
-    "topic": "narwhal"
-  },
-  {
-    "tier": 1,
-    "question": "Octopus and squid lost their shells long ago, but their cousin the chambered nautilus still wears the kind of coiled shell its line wore 500 million years ago, before the first dinosaur. What do biologists call such an animal?",
-    "answer": "a living fossil",
-    "choices": [
-      "a living fossil",
-      "a living relic",
-      "an ancient survivor",
-      "a time capsule"
-    ],
-    "context": "The chambered nautilus (Nautilus pompilius) has kept its coiled outer shell for roughly 500 million years, swimming the oceans long before the dinosaurs -- so biologists call it a 'living fossil.' Source: https://en.wikipedia.org/wiki/Chambered_nautilus  (Legend.)",
-    "topic": "nautilus"
   },
   {
     "tier": 1,
@@ -16953,15 +16888,15 @@
   },
   {
     "tier": 4,
-    "question": "A starving immortal jellyfish, Turritopsis dohrnii, rewinds its body to a younger form, and it does more than shrink. Its already-finished adult cells rebuild themselves into totally different kinds of cell. A muscle cell, for instance, can turn straight into a nerve cell. What is this switch called?",
-    "answer": "Transdifferentiation",
+    "question": "A starving immortal jellyfish, Turritopsis dohrnii, rewinds its body to a younger form, and it does more than shrink. Its adult cells were each built for one job, yet now they do something that the cells of most animals never can. What do they do?",
+    "answer": "Change into other kinds of cell",
     "choices": [
-      "Transdifferentiation",
-      "Photosynthesis",
-      "Metamorphosis",
-      "Hibernation"
+      "Change into other kinds of cell",
+      "Fuse into one single giant cell",
+      "Split apart into a swarm of eggs",
+      "Harden into a tough outer shell"
     ],
-    "context": "Transdifferentiation is a fully specialized cell switching into a different cell type - like a muscle cell becoming a nerve cell - as the jellyfish recycles its own body into a younger form. It is the mechanism behind the reversal. Source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6893190/",
+    "context": "Transdifferentiation is a fully specialized cell switching straight into a different cell type, and it is how the jellyfish recycles its own adult body into a younger form. Source: https://en.wikipedia.org/wiki/Turritopsis_dohrnii ; Piraino, Boero, Aeschbach & Schmid, Biological Bulletin (1996)",
     "topic": "not-dying-of-old-age-the-immortal-jellyfish"
   },
   {
@@ -17019,9 +16954,9 @@
   {
     "tier": 3,
     "question": "Lobsters never stop growing, which is why some people call them immortal; the biggest, oldest ones can end up as heavy as a small dog. Yet the very act of getting bigger is what finally kills many of them. What ordeal must old giants face again and again?",
-    "answer": "Molting - shedding a huge shell exhausts them and leaves them defenseless",
+    "answer": "Molting, which exhausts them and leaves them defenseless",
     "choices": [
-      "Molting - shedding a huge shell exhausts them and leaves them defenseless",
+      "Molting, which exhausts them and leaves them defenseless",
       "Starving because their claws grow too heavy to lift food",
       "Sinking too deep to ever return to warm water",
       "Freezing when their blood can no longer flow"
@@ -17078,7 +17013,7 @@
       "Daytime warmth keeps its small body from chilling",
       "Night predators would easily catch it"
     ],
-    "context": "The numbat is the only marsupial that is fully diurnal. A small numbat can only reach termites when they rise close to the top of their galleries, and that happens by day — so its whole schedule is set by its prey's, not by avoiding the dark. Source: https://en.wikipedia.org/wiki/Numbat",
+    "context": "Unlike nearly every other marsupial, the numbat is active by day; the musky rat-kangaroo of Queensland is one of the few others. A small numbat can only reach termites when they rise close to the top of their galleries, and that happens by day, so its whole schedule is set by its prey's, not by avoiding the dark. Source: https://en.wikipedia.org/wiki/Numbat ; https://en.wikipedia.org/wiki/Musky_rat-kangaroo",
     "topic": "numbat"
   },
   {
@@ -17135,28 +17070,15 @@
   },
   {
     "tier": 2,
-    "question": "Fishermen who now and then hauled an oarfish up in their herring nets saw a tall plume of long red fin rays rising from its head like a bright crown above a giant silver ribbon of a body. They gave it a regal name. What did they call it?",
-    "answer": "King of herrings",
+    "question": "Fishermen who now and then hauled an oarfish up in their herring nets called it the king of herrings, perhaps for what rose from its head like a crown above the long silver ribbon of its body. What was that crown?",
+    "answer": "A tall crest of long red fin rays",
     "choices": [
-      "King of herrings",
-      "Sea unicorn",
-      "Silver duke",
-      "Crown eel"
+      "A tall crest of long red fin rays",
+      "A pair of curved, horn-like spines",
+      "A ring of glowing blue light spots",
+      "A frilled hood of loose silver skin"
     ],
-    "context": "A dorsal fin runs the entire length of the oarfish, tipped at the head with a tall red crest of long rays. The crownlike look earned it the folk name 'king of herrings' — giving it the appearance of a maned sea dragon. Source: Wikipedia 'Giant oarfish'; Florida Museum.",
-    "topic": "oarfish-regalecus-glesne"
-  },
-  {
-    "tier": 2,
-    "question": "When an oarfish washes up on a Japanese beach, crowds gather, for this deep-sea fish almost never comes near shore. In Japan it is called 'ryugu no tsukai,' meaning 'messenger from the sea dragon god's palace.' Many people believe its arrival warns of what?",
-    "answer": "A coming earthquake",
-    "choices": [
-      "A coming earthquake",
-      "A rich fishing season",
-      "A royal death",
-      "A great storm at sea"
-    ],
-    "context": "Because the oarfish lives deep and rarely surfaces, folklore holds that it swims up to warn of an earthquake, so a stranding draws crowds. A 2019 study of 336 sightings found no real link between oarfish and quakes — so it remains a belief, not a fact. LEGEND (folk belief, framed as belief). Source: Atlas Obscura 'The Legend of Japan's Earthquake Fish'; Logically Facts (2019 study).",
+    "context": "The front rays of the oarfish's dorsal fin are lengthened into a tall red crest above its head. The folk name 'king of herrings' may come from that crownlike crest, and from the fish being seen near herring shoals, which fishermen believed it led. Source: https://en.wikipedia.org/wiki/Giant_oarfish ; https://grokipedia.com/page/Giant_oarfish",
     "topic": "oarfish-regalecus-glesne"
   },
   {
@@ -17499,15 +17421,15 @@
   },
   {
     "tier": 2,
-    "question": "Baby oilbirds gorge on oil-rich fruit until they grow fatter than their own parents, up to about a third heavier. Long ago people climbed into the caves for those fat chicks, and what they did with them gave the bird its name. What did they do?",
-    "answer": "Boiled them down into oil to burn in lamps and cook with",
+    "question": "In a cave in Trinidad, oilbird parents fly home night after night with oily palm and laurel fruit and feed it to their chick on a ledge nest. By the time the chick is ready to fly, how does its weight compare with theirs?",
+    "answer": "About a third heavier than they are",
     "choices": [
-      "Boiled them down into oil to burn in lamps and cook with",
-      "Sold their bright feathers to hat-makers in the cities",
-      "Kept them as caged singers for their echoing calls",
-      "Raised them on farms as a fast-growing meat bird"
+      "About a third heavier than they are",
+      "About a third lighter than they are",
+      "About half as heavy as they are",
+      "About twice as heavy as they are"
     ],
-    "context": "This rendering of the fat chicks for lamp oil is the reason the bird's scientific name Steatornis literally means 'fat bird.' Framed here as historical account of the practice that named the species. Source: https://en.wikipedia.org/wiki/Oilbird  (Legend.)",
+    "context": "Fed on oil-rich fruit, oilbird chicks grow fat in the nest, and before they fly they weigh around a third more than the adults, up to about 600 grams. People once boiled the fat chicks down for lamp and cooking oil, which is why the bird's scientific name, Steatornis, means 'fat bird'. Source: https://en.wikipedia.org/wiki/Oilbird",
     "topic": "oilbird"
   },
   {
@@ -17577,28 +17499,15 @@
   },
   {
     "tier": 1,
-    "question": "Heavy rains flooded the caves under Postojna in Slovenia, and pale, finger-sized animals washed up out of the ground into the daylight. The villagers were sure a great beast slept deep below the earth. What did they take the washed-up animals to be?",
-    "answer": "Baby dragons",
+    "question": "Heavy rains flood the caves under Postojna in Slovenia, and pale, slender animals wash out of the ground into the daylight. For centuries villagers took them for the young of a great dragon sleeping deep below the earth. What are they really?",
+    "answer": "The olm, a blind cave salamander",
     "choices": [
-      "Baby dragons",
-      "Drowned salamanders",
-      "River eels",
-      "Lost fish"
+      "The olm, a blind cave salamander",
+      "The European eel, a river fish",
+      "The slow worm, a legless lizard",
+      "The axolotl, a lake salamander"
     ],
-    "context": "For centuries locals believed the olm (Proteus anguinus) was the young of a dragon living deep beneath the earth, flushed to the surface by floods. Source: https://en.wikipedia.org/wiki/Olm  (Legend.)",
-    "topic": "olm-the-blind-cave-baby-dragon-that-lives-a-century"
-  },
-  {
-    "tier": 2,
-    "question": "A slender amphibian with pale-pink skin swims the black underground rivers of southeastern Europe's limestone caves, its tiny eyes sunk and useless. Slovene speakers have an affectionate folk name for this olm, one that no other creature wears. What do they call it?",
-    "answer": "The human fish",
-    "choices": [
-      "The human fish",
-      "The ghost eel",
-      "The cave worm",
-      "The pink serpent"
-    ],
-    "context": "The olm's pinkish, human-toned skin earned it the Slovene name cloveska ribica, the 'human fish.' Source: https://en.wikipedia.org/wiki/Olm",
+    "context": "For centuries people around Slovenia's caves believed the olm (Proteus anguinus), a blind salamander up to about a foot long, was the young of a dragon living deep beneath the earth, flushed to the surface by floods. Source: https://en.wikipedia.org/wiki/Olm  (Legend.)",
     "topic": "olm-the-blind-cave-baby-dragon-that-lives-a-century"
   },
   {
@@ -17655,19 +17564,6 @@
   },
   {
     "tier": 3,
-    "question": "Harry Whittington finished his careful new study of Opabinia, a soft-bodied animal from ancient rock, in 1975 and showed his drawing to a room of fellow scientists. The creature looked so unlike anything alive that the meeting did something no serious talk expects. What did the audience do?",
-    "answer": "Burst out laughing, sure it couldn't be real",
-    "choices": [
-      "Burst out laughing, sure it couldn't be real",
-      "Voted to have his drawing withdrawn",
-      "Demanded he re-examine the fossil",
-      "Accused him of inventing the specimen"
-    ],
-    "context": "The reconstruction looked so bizarre that the whole audience burst out laughing, thinking such an animal couldn't possibly have existed. It had. Source: Royal Ontario Museum, Burgess Shale; corroborated by fossilguy.com. (Legendary/anecdotal.)",
-    "topic": "opabinia"
-  },
-  {
-    "tier": 3,
     "question": "Through the shallow Cambrian sea swam Opabinia, a soft-bodied creature just a few centimeters long. A long, bendy tube jutted from the very front of its head like the hose of a vacuum cleaner, some four times the head's own length. What did the far tip of that tube end in?",
     "answer": "A grasping claw studded with spines",
     "choices": [
@@ -17685,7 +17581,7 @@
     "answer": "On the underside, opening backward",
     "choices": [
       "On the underside, opening backward",
-      "At the very tip of the clawed hose",
+      "At the very tip of the long hose",
       "On the top of its head between the eyes",
       "At the rear, flanking the tail fins"
     ],
@@ -17698,9 +17594,9 @@
     "answer": "The largest dolphin",
     "choices": [
       "The largest dolphin",
-      "A type of small whale",
+      "A kind of baleen whale",
       "A cold-water shark",
-      "A giant porpoise"
+      "An overgrown porpoise"
     ],
     "context": "Orcinus orca is the biggest member of the dolphin family, Delphinidae — despite the \"whale\" in its common name. Source: https://en.wikipedia.org/wiki/Orca ; https://us.whales.org/whales-dolphins/facts-about-orcas/",
     "topic": "orca-killer-whale"
@@ -17721,12 +17617,12 @@
   {
     "tier": 2,
     "question": "A big male orca can stretch 8 meters long and weigh more than 6 tonnes, as much as a truck. Inside its jaws sit more than 40 curved, interlocking teeth, built for gripping fish, seals and even other whales. About how long is each of those teeth?",
-    "answer": "About 10 cm — the length of your finger",
+    "answer": "About 10 cm — the length of a finger",
     "choices": [
-      "About 10 cm — the length of your finger",
+      "About 10 cm — the length of a finger",
       "About 1 cm — like a house cat's",
       "About 30 cm — like a steak knife",
-      "About 2 mm — barely a bump"
+      "About 3 mm — like a sesame seed"
     ],
     "context": "An orca's teeth are about 10 cm (4 inches) long and curve inward, interlocking to grip slippery prey. Source: https://en.wikipedia.org/wiki/Orca ; https://www.britannica.com/animal/killer-whale",
     "topic": "orca-killer-whale"
@@ -17760,10 +17656,10 @@
   {
     "tier": 4,
     "question": "A young Antarctic orca travels with one of the few pods that know how to get a resting seal off its ice floe: only about 100 orcas in the whole region have the skill. How does the young one come to learn it?",
-    "answer": "An older female of the pod teaches it, passed down the generations",
+    "answer": "The pod's older females teach it",
     "choices": [
-      "An older female of the pod teaches it, passed down the generations",
-      "Every orca is born knowing it by instinct",
+      "The pod's older females teach it",
+      "It is born knowing it by instinct",
       "It copies the trick from seals",
       "It works it out fresh each season"
     ],
@@ -17786,12 +17682,12 @@
   {
     "tier": 5,
     "question": "A grandmother orca swims with her pod decades after her last calf. Orca females stop having calves in their 30s and 40s yet live to 80 or more; few animals besides humans go through menopause like this. Lauren Brent's study found these old females change what they do in lean salmon years. What do they do?",
-    "answer": "Swim at the front and guide the pod to food",
+    "answer": "Lead the pod to food from the front",
     "choices": [
-      "Swim at the front and guide the pod to food",
-      "Leave the pod to live alone",
-      "Stop eating so calves can feed",
-      "Sink to the seafloor to rest"
+      "Lead the pod to food from the front",
+      "Leave the pod and live on their own",
+      "Stop eating so the calves can feed",
+      "Drift at the back to save energy"
     ],
     "context": "After menopause, grandmother orcas become pod leaders; Brent's study found the oldest females lead from the front to salmon, especially when food is scarce and their memory matters most. Source: https://www.nhm.ac.uk/discover/killer-whale-behaviour-shows-granny-knows-best.html ; https://www.smithsonianmag.com/science-nature/after-menopause-killer-whale-moms-become-pod-leaders-180954480/  (Legend.)",
     "topic": "orca-killer-whale"
@@ -17889,13 +17785,13 @@
   },
   {
     "tier": 1,
-    "question": "Up to nine feet tall and around 300 pounds, an ostrich strides across the African plains. Two big feathery wings fold on its back, yet it never once leaves the ground, because of one flaw in its chest. What keeps this giant grounded?",
+    "question": "Up to nine feet tall and around 300 pounds, an ostrich strides across the African plains. Two big feathery wings fold on its back, yet it never once leaves the ground. What keeps this giant grounded?",
     "answer": "A breastbone too flat to anchor flight muscles",
     "choices": [
       "A breastbone too flat to anchor flight muscles",
-      "Wings far too small for its heavy body",
+      "Wing joints fused stiff so they cannot flap",
       "Bones so hollow they snap under strain",
-      "Feathers that soak up water like a sponge"
+      "A heart too weak to fuel flapping flight"
     ],
     "context": "The ostrich is the largest and heaviest living bird: males stand up to 9 feet tall and weigh 220-287 pounds, with some sources reporting 300+ lb. It is flightless because its flattened sternum (breastbone) has no keel to anchor flight muscles. Source: San Diego Zoo Animals & Plants (animals.sandiegozoo.org/animals/ostrich).",
     "topic": "ostrich"
@@ -17998,10 +17894,10 @@
     "choices": [
       "The Neanderthals of Europe and western Asia",
       "The last surviving Australopithecus troops",
-      "A tailed forest-dwelling ape-man of the Congo",
-      "The sea-dwelling merfolk of the northern coasts"
+      "The Homo habilis toolmakers of East Africa",
+      "The robust Paranthropus of southern Africa"
     ],
-    "context": "During the last ice age at least two close cousins shared the planet with our ancestors: the Neanderthals of Europe and western Asia, and the mysterious Denisovans of Asia. Modern humans were not always the only kind of human on Earth. Source: Smithsonian Human Origins Program, humanorigins.si.edu; Max Planck Institute, mpg.de/5018269/denisovan-genome.",
+    "context": "During the last ice age at least two close cousins shared the planet with the ancestors of living humans: the Neanderthals of Europe and western Asia, and the mysterious Denisovans of Asia. Australopithecus, Homo habilis and Paranthropus had all died out long before. Source: Smithsonian Human Origins Program, humanorigins.si.edu; Max Planck Institute, mpg.de/5018269/denisovan-genome.",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -18020,14 +17916,14 @@
   {
     "tier": 3,
     "question": "Old-time cartoonists drew the Neanderthals, the ice-age cousins of modern humans who lived across Europe and western Asia, as dim, slouching 'ape-men' with tiny minds, barely thinking at all. Then scientists measured a Neanderthal braincase against a modern human's. What did they find?",
-    "answer": "It was just as large as ours, and often a bit larger",
+    "answer": "It was as large as a modern human's, often larger",
     "choices": [
-      "It was just as large as ours, and often a bit larger",
-      "It was roughly half the size of ours",
+      "It was as large as a modern human's, often larger",
+      "It was roughly half a modern human's size",
       "It had no room for a frontal lobe at all",
       "It was identical to a chimpanzee's in size"
     ],
-    "context": "A Neanderthal's brain was just as large as ours, and often a bit larger, held in a long, low skull with a heavy brow ridge above the eyes. Source: Smithsonian Human Origins Program, humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis.  (Legend.)",
+    "context": "A Neanderthal's brain was just as large as a modern human's, and often a bit larger, held in a long, low skull with a heavy brow ridge above the eyes. Source: Smithsonian Human Origins Program, humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis.",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -18066,7 +17962,7 @@
       "DNA from Homo erectus, but none from Neanderthals",
       "No archaic trace at all, only in ancient fossils"
     ],
-    "context": "Our ancestors met and interbred with both cousins, so most people alive today outside Africa carry a small slice of Neanderthal DNA, roughly 1 to 4 percent of their genome. Source: Max Planck Institute, mpg.de/5018269/denisovan-genome; Science, science.org/doi/10.1126/science.aad9416.",
+    "context": "The ancestors of modern humans met and interbred with both cousins, so most people alive today outside Africa carry a small slice of Neanderthal DNA, roughly 1 to 4 percent of their genome. Source: Max Planck Institute, mpg.de/5018269/denisovan-genome; Science, science.org/doi/10.1126/science.aad9416.",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -18079,7 +17975,7 @@
       "Homo erectus",
       "The Australopithecines"
     ],
-    "context": "A version of the EPAS1 gene inherited from Denisovans helps Tibetans thrive in the thin high-altitude air, a gift from an extinct cousin found today only in Denisovans and Tibetans. Source: Nature, nature.com/articles/nature13408; PNAS, pnas.org/doi/10.1073/pnas.2020803118.  (Legend.)",
+    "context": "A version of the EPAS1 gene inherited from Denisovans helps Tibetans thrive in the thin high-altitude air. It is common in Tibetans but turns up only at very low frequency in their Han Chinese neighbours. Source: Huerta-Sanchez et al., Nature 2014, nature.com/articles/nature13408; PNAS, pnas.org/doi/10.1073/pnas.2020803118.",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -18092,7 +17988,7 @@
       "An early Denisovan carrying leftover Neanderthal genes from long ago",
       "A modern human ancestor caught midway between the two older cousins"
     ],
-    "context": "Nicknamed 'Denny,' this ~13-year-old girl was identified in 2018 from a single ~2 cm bone fragment (Denisova 11). Her mitochondrial DNA (inherited only from the mother) was Neanderthal, while her nuclear genome was almost exactly half Neanderthal and half Denisovan, meaning one parent was a Neanderthal and the other a Denisovan. She remains the only confirmed first-generation hybrid of two distinct human groups ever found, showing that when these cousins met, they could interbreed directly, not just with our own ancestors. Source: Slon, Mafessoni, Paabo et al., 'The genome of the offspring of a Neanderthal mother and a Denisovan father,' Nature 561:113-116 (2018), https://www.nature.com/articles/s41586-018-0455-x ; https://en.wikipedia.org/wiki/Denny_(hybrid_hominin)  (Legend.)",
+    "context": "Nicknamed 'Denny,' this ~13-year-old girl was identified in 2018 from a single ~2 cm bone fragment (Denisova 11). Her mitochondrial DNA (inherited only from the mother) was Neanderthal, while her nuclear genome was almost exactly half Neanderthal and half Denisovan, meaning one parent was a Neanderthal and the other a Denisovan. She remains the only confirmed first-generation hybrid of two distinct human groups ever found, showing that when these cousins met, they could interbreed directly, not just with modern humans. Source: Slon, Mafessoni, Paabo et al., 'The genome of the offspring of a Neanderthal mother and a Denisovan father,' Nature 561:113-116 (2018), https://www.nature.com/articles/s41586-018-0455-x ; https://en.wikipedia.org/wiki/Denny_(hybrid_hominin)",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -18103,9 +17999,9 @@
       "Papuans, Aboriginal Australians and other Melanesians",
       "Northern Europeans descended from the first cave painters",
       "Peoples of the Siberian plains around Denisova Cave itself",
-      "East African groups nearest our species early homeland"
+      "East African groups near humanity's first homeland"
     ],
-    "context": "Melanesians, Papuans/New Guineans and Aboriginal Australians carry roughly 4-6% Denisovan ancestry, by far the most of any human population, and a 2021 study found the Aeta Magbukon of the Philippines carry the highest known proportion of all. Most other populations carry little or none. This is a sharp contrast to the ~1-4% Neanderthal DNA shared by most non-Africans, and it maps onto where Denisovans and our ancestors actually met in Ice Age Asia, far from the Siberian cave where the first Denisovan bones were found. Source: https://en.wikipedia.org/wiki/Denisovan ; Larena et al. 2021 (Aeta Magbukon highest Denisovan ancestry), Current Biology; https://www.pnas.org/doi/10.1073/pnas.2405889121",
+    "context": "Melanesians, Papuans/New Guineans and Aboriginal Australians carry roughly 4-6% Denisovan ancestry, by far the most of any human population, and a 2021 study found the Aeta Magbukon of the Philippines carry the highest known proportion of all. Most other populations carry little or none. This is a sharp contrast to the ~1-4% Neanderthal DNA shared by most non-Africans, and it maps onto where Denisovans and modern humans actually met in Ice Age Asia, far from the Siberian cave where the first Denisovan bones were found. Source: https://en.wikipedia.org/wiki/Denisovan ; Larena et al. 2021 (Aeta Magbukon highest Denisovan ancestry), Current Biology; https://www.pnas.org/doi/10.1073/pnas.2405889121",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -18469,7 +18365,7 @@
       "The great horned owl",
       "The common raven"
     ],
-    "context": "In its diving plunge the peregrine falcon is the fastest animal alive — faster than any cheetah or racecar. Source: Cornell Lab of Ornithology, All About Birds; Wikipedia 'Peregrine falcon'.  (Legend.)",
+    "context": "In its diving plunge the peregrine falcon is the fastest animal alive, far faster than any sprinting cheetah. Source: Cornell Lab of Ornithology, All About Birds; Wikipedia 'Peregrine falcon'.",
     "topic": "peregrine-falcon"
   },
   {
@@ -18513,11 +18409,11 @@
   },
   {
     "tier": 2,
-    "question": "A peregrine falcon ready to lay its eggs on a high cliff ledge gathers no twigs, builds no cup and weaves nothing at all, the way so many birds do. What does a peregrine use for a nest?",
-    "answer": "A shallow scrape it scratches into gravel",
+    "question": "A peregrine falcon ready to lay her eggs gathers no twigs, weaves no grass and carries nothing home at all, the way so many birds do. What does a peregrine use for a nest?",
+    "answer": "A shallow scrape in the gravel",
     "choices": [
-      "A shallow scrape it scratches into gravel",
-      "A borrowed old eagle nest",
+      "A shallow scrape in the gravel",
+      "A hollow in a tall cactus",
       "A burrow dug in a sandbank",
       "A bare fork in a treetop"
     ],
@@ -18527,9 +18423,9 @@
   {
     "tier": 3,
     "question": "Farmers across North America sprayed the pesticide DDT (dichlorodiphenyltrichloroethane) on their fields after World War II to kill mosquitoes and crop bugs. The chemical climbed the food chain into peregrine falcons that ate poisoned birds and mice, and by the 1960s not one peregrine was breeding anywhere in the eastern United States. What had DDT done to their eggs?",
-    "answer": "Thinned the shells until they cracked under the parents",
+    "answer": "Thinned the shells so they cracked",
     "choices": [
-      "Thinned the shells until they cracked under the parents",
+      "Thinned the shells so they cracked",
       "Turned the yolks toxic to the chicks",
       "Made the parents abandon them cold",
       "Kept them from ever being fertilized"
@@ -18577,16 +18473,16 @@
     "topic": "peregrine-falcon"
   },
   {
-    "tier": 4,
-    "question": "Tom Cade of Cornell set out in 1970 to bring the peregrine falcon back from near-extinction. His team raised captive-bred chicks in towers, and the people feeding them stayed out of sight so the birds never grew used to humans, until they flew and hunted free. What proved the rescue had worked?",
-    "answer": "Released falcons bred in the wild by 1980",
+    "tier": 3,
+    "question": "Tom Cade of Cornell set out in 1970 to bring the peregrine falcon back from near-extinction. His team raised captive-bred chicks in towers until they could fly and hunt free, and the people who fed them always stayed out of sight. Why did the feeders hide?",
+    "answer": "So the chicks would not grow tame around people",
     "choices": [
-      "Released falcons bred in the wild by 1980",
-      "City-nesting numbers doubled by 1985",
-      "The last wild pair returned east by 1982",
-      "Wild pairs fledged three chicks by 1979"
+      "So the chicks would not grow tame around people",
+      "So the chicks would not catch diseases from people",
+      "So the chicks would not be frightened off the towers",
+      "So the chicks would not beg for food all day long"
     ],
-    "context": "Cade's 'hacking' method worked: released peregrines bred in the wild by 1980, and in 1999 the bird was taken off the U.S. endangered list. Source: Audubon 'Remembering Tom Cade'; Wikipedia.  (Legend.)",
+    "context": "Cade's team used 'hacking': the young falcons were fed with as little human contact as possible, so they would not grow tame or come to rely on people, and they fledged and learned to hunt on their own. Released peregrines were breeding in the wild by 1980, and in 1999 the bird came off the U.S. endangered list. Source: Audubon 'Remembering Tom Cade'; https://en.wikipedia.org/wiki/Hacking_(falconry)",
     "topic": "peregrine-falcon"
   },
   {
@@ -18617,15 +18513,15 @@
   },
   {
     "tier": 1,
-    "question": "A pink fairy armadillo, the world's smallest armadillo, pushes through the dry sand of central Argentina on huge front claws and spends nearly its whole life underground. It has earned a nickname for the way it moves. What is it called?",
-    "answer": "the 'sand-swimmer'",
+    "question": "Sensing a predator on the dry sand of central Argentina, a pink fairy armadillo, the smallest of all armadillos, drives its huge front claws into the ground. How long does it take to vanish completely beneath the sand?",
+    "answer": "A matter of seconds",
     "choices": [
-      "the 'sand-swimmer'",
-      "the 'dune-jumper'",
-      "the 'sand-diver'",
-      "the 'desert-mole'"
+      "A matter of seconds",
+      "About two minutes",
+      "About fifteen minutes",
+      "Almost a full hour"
     ],
-    "context": "The pink fairy armadillo (Chlamyphorus truncatus) was long believed to burrow through loose ground almost as fast as a fish swims through water, earning the nickname 'sand-swimmer.' It is the smallest armadillo in the world, about 3.5-4.5 inches long. Source: https://en.wikipedia.org/wiki/Pink_fairy_armadillo  (Legend.)",
+    "context": "The pink fairy armadillo (Chlamyphorus truncatus) can bury itself completely in a matter of seconds, and it is said to burrow through loose ground as fast as a fish swims through water, which earned it the nickname 'sand-swimmer'. The smallest armadillo in the world, about 9 to 11.5 cm (3.5-4.5 in) long, it spends almost its whole life underground. Source: https://en.wikipedia.org/wiki/Pink_fairy_armadillo",
     "topic": "pink-fairy-armadillo"
   },
   {
@@ -18651,7 +18547,7 @@
       "scoop food up toward its mouth",
       "reflect sunlight to stay cool underground"
     ],
-    "context": "The flattened rear 'butt plate' tamps and compacts the loose soil behind the digging armadillo, shoring the tunnel against collapse and sealing (corking) the burrow entrance behind it. This flattened rear plate appears unique to this species. Source: https://www.sciencenews.org/article/pink-armadillos-aint-your-texas-critters",
+    "context": "The flattened rear 'butt plate' tamps and compacts the loose soil behind the digging armadillo, shoring the tunnel against collapse and sealing (corking) the burrow behind it. Its close cousin, the greater fairy armadillo, may also block its burrow with its hindmost plates. Source: https://www.sciencenews.org/article/pink-armadillos-aint-your-texas-critters ; https://en.wikipedia.org/wiki/Greater_fairy_armadillo",
     "topic": "pink-fairy-armadillo"
   },
   {
@@ -19020,7 +18916,7 @@
   },
   {
     "tier": 3,
-    "question": "Elasmosaurus cruised a shallow inland sea over what is now Kansas, a plesiosaur about 34 feet from nose to tail, longer than a school bus. Its head was a tiny triangle at the far end, big enough only to gulp small fish and squid whole. How much of that 34-foot body was neck?",
+    "question": "Elasmosaurus cruised a shallow inland sea over what is now Kansas, a plesiosaur about 34 feet long, nearly as long as a school bus. Its head was a tiny triangle at the far end, big enough only to gulp small fish and squid whole. How much of that 34-foot body was neck?",
     "answer": "Around 23 feet, about two-thirds of the animal",
     "choices": [
       "Around 23 feet, about two-thirds of the animal",
@@ -19071,19 +18967,6 @@
     "topic": "plesiosaur"
   },
   {
-    "tier": 3,
-    "question": "Mary Anning, a young English fossil hunter, dug the first nearly complete plesiosaur skeleton out of the crumbling cliffs at Lyme Regis in 1823. Its neck was so absurdly long that the French anatomist Baron Georges Cuvier called the fossil a fake, its neck bones glued on, he insisted, from another animal. How was the fight settled?",
-    "answer": "A special Geological Society meeting proved it real and Cuvier admitted his error",
-    "choices": [
-      "A special Geological Society meeting proved it real and Cuvier admitted his error",
-      "The skeleton was quietly reburied to end the argument",
-      "Later digs found longer-necked fossils that made it look ordinary",
-      "Cuvier's own students showed the neck bones were glued together"
-    ],
-    "context": "The fossil hunter was Mary Anning, whose complete plesiosaur was so long-necked that Cuvier assumed a fake, until the Geological Society examined it and he conceded he was wrong. Source: Natural History Museum London, 'Mary Anning: the unsung hero'; Geological Society online exhibition, Plesiosaurus dolichodeirus. (legend)",
-    "topic": "plesiosaur"
-  },
-  {
     "tier": 5,
     "question": "Bernard and colleagues in France tested the oxygen chemistry locked in plesiosaur tooth enamel in 2010, and later studies read the growth of plesiosaur bones. A reptile might be expected to match the sea around it, the way a modern crocodile does: cool water, cool body. Both lines of evidence told the same story. What could plesiosaurs do?",
     "answer": "Generate their own body heat, at a bird's metabolic rate, instead of borrowing it from the water",
@@ -19124,13 +19007,13 @@
   },
   {
     "tier": 1,
-    "question": "A thumbnail-sized poison dart frog has a problem: its eggs have hatched on the forest floor, and the tadpoles need water. One parent lets them stick to the mucus on its back and climbs a tree trunk. Where does it carry each tadpole?",
-    "answer": "A pool of rainwater trapped in a bromeliad plant",
+    "question": "A thumbnail-sized poison dart frog has a problem: its eggs have hatched on the forest floor, and the tadpoles need water. One parent lets them stick to the mucus on its back and carries them off. Where does it take each tadpole?",
+    "answer": "A rain pool inside a bromeliad plant",
     "choices": [
-      "A pool of rainwater trapped in a bromeliad plant",
+      "A rain pool inside a bromeliad plant",
       "A hollow log floating in a stream",
       "A wet burrow dug at the roots",
-      "A nest woven from leaves"
+      "A foam nest whipped up on a leaf"
     ],
     "context": "The newly hatched tadpoles cling to the mucus on a parent's back, and the adult climbs into the canopy to deposit each one, one at a time, in a tiny pool of rainwater trapped in a bromeliad plant. Source: Wikipedia, 'Poison dart frog'; World Frog Day, 'Strawberry Poison Dart Frogs And Their Parental Care'.",
     "topic": "poison-dart-frog"
@@ -19210,7 +19093,7 @@
       "The nerves go numb and pain fades",
       "The lungs fill with fluid over days"
     ],
-    "context": "Batrachotoxin jams open the sodium channels in nerve and muscle so they can never close, freezing the muscles and stopping the heart. A dose of roughly 2 to 7.5 micrograms -- about two grains of salt -- can kill an adult human. Source: McGill Office for Science and Society, 'Toxin on the Backs of Some Frogs Is Lethal to Humans'; Wikipedia, 'Batrachotoxin'.",
+    "context": "Batrachotoxin jams open the sodium channels in nerve and muscle so they can never close, freezing the muscles and stopping the heart. It is among the most potent natural poisons known: in mice, about 2 to 3 micrograms per kilogram of body weight is lethal. Source: McGill Office for Science and Society, 'Toxin on the Backs of Some Frogs Is Lethal to Humans'; https://en.wikipedia.org/wiki/Batrachotoxin",
     "topic": "poison-dart-frog"
   },
   {
