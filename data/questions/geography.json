@@ -9083,7 +9083,7 @@
       "the largest one ever built",
       "the most accurate one of its age"
     ],
-    "context": "Cheomseongdae, built in the 630s under Queen Seondeok, is the oldest surviving astronomical observatory in East Asia. It is also a calendar in stone: about 362 blocks (near the days of the lunar year) stacked in 27 layers -- Seondeok was Silla's 27th ruler -- standing 9.17 m tall, with a small window that has 12 layers of stone above and 12 below, for the 12 months. Source: worldhistory.org/Cheomseongdae/",
+    "context": "Cheomseongdae, built in the 630s under Queen Seondeok, is the oldest surviving astronomical observatory in East Asia. Many read it as a calendar in stone: by one count about 362 blocks (near the days of the lunar year; another count gives 365, the days of the solar year) stacked in 27 layers, said to honour Seondeok, Silla's 27th ruler. It stands 9.17 m tall, and its small window has 12 layers of stone above and 12 below, often linked to the 12 months. Source: worldhistory.org/Cheomseongdae/; en.wikipedia.org/wiki/Cheomseongdae",
     "topic": "gyeongju-the-museum-without-walls"
   },
   {
@@ -9126,19 +9126,6 @@
     "topic": "gyeongju-the-museum-without-walls"
   },
   {
-    "tier": 1,
-    "question": "Off the coast of northern Vietnam, an emerald-green sea is crowded with steep limestone towers that rise straight out of the water. Sailing through them feels like threading a forest made of stone. Roughly how many of these islands and islets fill Ha Long Bay?",
-    "answer": "More than 1,600",
-    "choices": [
-      "Fewer than 100",
-      "A few hundred",
-      "More than 1,600",
-      "More than 10,000"
-    ],
-    "context": "More than 1,600 limestone islands and islets rise from Ha Long Bay, scattered across about 1,500 square kilometers of emerald-green sea off northern Vietnam — a drowned forest of stone. Source: NASA Earth Observatory, 'The Emerald Isles of Ha Long Bay' (science.nasa.gov).",
-    "topic": "ha-long-bay"
-  },
-  {
     "tier": 2,
     "question": "The Jade Emperor, in a Vietnamese legend, sent a Mother Dragon and her children swooping down from the sky to defend the coast from northern invaders. Ha Long, the bay's name, means 'descending dragon.' In the legend, how did the dragons raise the islands that walled the enemy fleet out of the bay?",
     "answer": "They spat jewels of jade and emerald that sank and turned to stone",
@@ -9165,8 +9152,8 @@
     "topic": "ha-long-bay"
   },
   {
-    "tier": 3,
-    "question": "One slender pillar among Ha Long Bay's stone towers is called Dinh Huong, the Incense Burner, and it is so loved that the Vietnamese government put its picture on an everyday object millions of people see each day. On what everyday object does Dinh Huong appear?",
+    "tier": 1,
+    "question": "One slender pillar among Ha Long Bay's stone towers is called Dinh Huong, the Incense Burner, and it is so loved that Vietnam put its picture on an everyday object millions of people see each day. On what everyday object does Dinh Huong appear?",
     "answer": "A Vietnamese banknote",
     "choices": [
       "A Vietnamese banknote",
@@ -9245,9 +9232,9 @@
   {
     "tier": 3,
     "question": "Sejong's scholars drew each Hangul consonant as a tiny diagram, a design no other major alphabet shares, and every one pictures the same kind of thing. The square 'm', the angular 'k' and the letter for 'n' are each a little picture of what?",
-    "answer": "your mouth and tongue in the act of making that sound",
+    "answer": "a speaker's mouth and tongue making that sound",
     "choices": [
-      "your mouth and tongue in the act of making that sound",
+      "a speaker's mouth and tongue making that sound",
       "an object from nature whose name opens with that sound",
       "a stroke borrowed from the matching Chinese character",
       "a musical note marking the sound's pitch"
@@ -9291,7 +9278,7 @@
       "the Hmong of the Vietnamese highlands",
       "the Chamorro of the island of Guam"
     ],
-    "context": "In 2009 the Cia-Cia people (about 40,000 speakers) of Buton Island, Indonesia officially adopted a modified Hangul to write their previously unwritten language — the first non-Korean language to use Hangul as its primary script, a real-world test of the design scholars praise as one of the most scientific ever made. Source: grokipedia.com/page/Hangul.",
+    "context": "In 2009 the Cia-Cia people (about 40,000 speakers) of Buton Island, Indonesia, adopted a modified Hangul to write their language, which had no script of its own: the first non-Korean language to take up Hangul. Early lessons went well, but by 2020 the Latin alphabet had pushed Hangul back into a supporting role. Source: grokipedia.com/page/Hangul.",
     "topic": "hangul-the-alphabet-korea-designed-on-purpose"
   },
   {
@@ -9305,19 +9292,6 @@
       "The emperor who first paved the lane"
     ],
     "context": "The word 'Hàng' means 'merchandise', so each 'Hàng + product' name is a fossil of the guild that clustered there after the 11th century: Hàng Bạc = Silver Street, Hàng Thiếc = Tin Street, Hàng Mã = Paper-Offerings Street, Hàng Gai = Silk Street. Roughly 76 lanes survive today, many still wearing the name of a vanished trade. Source: lasiestahotels.com/mamay/hanoi-old-quarter-streets-name.html; en.wikipedia.org/wiki/Hanoi",
-    "topic": "hanoi-old-quarter"
-  },
-  {
-    "tier": 1,
-    "question": "At the edge of Hanoi's Old Quarter, a vermillion-red wooden footbridge arches in a bright curve across Hoàn Kiếm Lake to a temple on a small island. The Vietnamese gave this bridge, Cầu Thê Húc, a poetic name. What does 'Thê Húc' mean?",
-    "answer": "Perch of the Morning Sunlight",
-    "choices": [
-      "Bridge of the Returned Sword",
-      "Perch of the Morning Sunlight",
-      "Steps of the Jade Mountain",
-      "Arch of the Evening Star"
-    ],
-    "context": "The Húc Bridge (Cầu Thê Húc), 'Perch of the Morning Sunlight', leads to Jade Island and Ngọc Sơn Temple — the Temple of the Jade Mountain — which honors the 13th-century general Trần Hưng Đạo. Source: en.wikipedia.org/wiki/Hoàn_Kiếm_Lake",
     "topic": "hanoi-old-quarter"
   },
   {
@@ -9375,12 +9349,12 @@
   {
     "tier": 4,
     "question": "Hanoi grew up along the Red River where it spreads across its broad delta toward the sea. In 1831 the emperor Minh Mạng renamed the city Hà Nội, a name that pins exactly where it lies. What does 'Hà Nội' literally mean?",
-    "answer": "Inside the river's bend",
+    "answer": "Inside the river",
     "choices": [
-      "Mouth of the great river",
-      "City upon the water",
+      "Mouth of the river",
+      "City on the water",
       "Land of nine dragons",
-      "Inside the river's bend"
+      "Inside the river"
     ],
     "context": "'Hà Nội' means 'inside the river' — the city is cupped in a curve of the Red River (Sông Hồng). A delta is the fan of fertile land a river builds from dropped silt as it nears the sea; a dike is a raised earth wall that holds water back — the low, flood-prone city is ringed with them. Minh Mạng adopted the name in 1831, replacing the old Thăng Long. ('Land of Nine Dragons', Cửu Long, is the name of the far-southern Mekong delta.) Source: en.wikipedia.org/wiki/Hanoi; en.wikipedia.org/wiki/Red_River_Delta",
     "topic": "hanoi-old-quarter"
@@ -9490,21 +9464,8 @@
     "topic": "harris-tweed-the-cloth-protected-by-law"
   },
   {
-    "tier": 2,
-    "question": "Gaelic-speaking crofters and weavers in the Outer Hebrides wove a thick, hard-wearing cloth from the fleece of their own island sheep for centuries before the world knew it as Harris Tweed. Their own word for it was clò-mòr. In Scottish Gaelic, what does clò-mòr mean?",
-    "answer": "the big cloth",
-    "choices": [
-      "the big cloth",
-      "the island cloth",
-      "the storm cloth",
-      "the shepherd's cloth"
-    ],
-    "context": "'Clò-mòr' means 'the big cloth' — the weavers' own name for it in Scottish Gaelic, used on Lewis and Harris for centuries before merchants and fashion houses ever called it 'Harris Tweed'. Source: en.wikipedia.org/wiki/Harris_tweed; craftatlas.co/crafts/harris-tweed",
-    "topic": "harris-tweed-the-cloth-protected-by-law"
-  },
-  {
     "tier": 3,
-    "question": "The weavers of Lewis and Harris work under a rarer legal shield than an ordinary trademark. A British law passed in 1993 requires their cloth to be pure new wool, dyed and spun in the Outer Hebrides and woven by hand by the islanders themselves. What kind of shield is it?",
+    "question": "The weavers of Lewis and Harris have worked since 1993 under a rarer shield than an ordinary trademark. It fixes what their cloth must be: pure new wool, dyed and spun in the Outer Hebrides and woven by hand by the islanders themselves. What kind of shield is it?",
     "answer": "its own Act of Parliament",
     "choices": [
       "its own Act of Parliament",
@@ -9517,7 +9478,7 @@
   },
   {
     "tier": 3,
-    "question": "On Lewis and Harris, in the Outer Hebrides, Harris Tweed is still woven on a small single-width loom driven by nothing but the weaver's own two feet on the pedals, with no motor and no electricity. This English-built loom has been the standard on the islands for about a hundred years. What is it called?",
+    "question": "Independent weavers on Lewis and Harris, in the Outer Hebrides, still weave Harris Tweed at home on a small single-width loom driven by nothing but their own feet on the pedals, with no motor and no electricity. This old English-built loom has served island weavers for generations. What is it called?",
     "answer": "the Hattersley loom",
     "choices": [
       "the Hattersley loom",
@@ -9525,7 +9486,7 @@
       "the Dobby loom",
       "the Bonas-Griffith loom"
     ],
-    "context": "The loom is the Hattersley — the single-width treadle loom that traditional, independent island weavers still use in their own homes on Lewis and Harris. The Outer Hebrides mills use a newer, double-width loom, the Bonas-Griffith rapier loom, but by law both kinds must be pedal-powered in a weaver's home for the cloth to earn its Orb mark. Source: en.wikipedia.org/wiki/Harris_tweed; annstweed.com/pages/the-process-of-weaving-tweed-on-a-hattersley-loom",
+    "context": "The loom is the Hattersley, the single-width treadle loom that independent island weavers still use in their own homes on Lewis and Harris. Weavers who work for the mills use a newer double-width loom, the Bonas-Griffith rapier loom, also in their own homes, and by law both must be worked by the weaver's own power for the cloth to earn its Orb mark. Source: en.wikipedia.org/wiki/Harris_tweed; annstweed.com/pages/the-process-of-weaving-tweed-on-a-hattersley-loom",
     "topic": "harris-tweed-the-cloth-protected-by-law"
   },
   {
@@ -9569,7 +9530,7 @@
   },
   {
     "tier": 2,
-    "question": "Havana's harbor squeezes into a gap barely wider than one ship. The Spanish wanted no pirate slipping in at night. So every night they dragged a barrier across the water, from one fort to the other, until dawn. What did they pull across each night?",
+    "question": "Havana's harbor opens to the sea through one narrow channel, with a stone fort on each side. The Spanish wanted no pirate slipping in at night. So every night they dragged a barrier across the water, from one fort to the other, until dawn. What did they pull across each night?",
     "answer": "a great iron chain",
     "choices": [
       "a great iron chain",
@@ -9582,7 +9543,7 @@
   },
   {
     "tier": 3,
-    "question": "The great stone fortress of La Cabaña stands guard high above the mouth of Havana's harbor in Cuba. For over three centuries, at exactly nine o'clock each night, the same signal has been given from La Cabaña. Long ago it warned Havana's citizens that the city gates were about to close for the night. What marks nine o'clock in Havana?",
+    "question": "The great stone fortress of La Cabaña stands guard high above the mouth of Havana's harbor in Cuba. Every night at nine o'clock the same signal is given from its walls, a custom that dates from colonial times. Long ago it warned Havana's citizens that the city gates were about to close for the night. What marks nine o'clock in Havana?",
     "answer": "a cannon is fired",
     "choices": [
       "a cannon is fired",
@@ -9590,7 +9551,7 @@
       "a war bugle is blown",
       "a beacon is lit"
     ],
-    "context": "El cañonazo de las nueve — the nine o'clock cannon — has boomed nightly since colonial times, when it signaled the closing of the city gates; a matching gun was fired at six each morning to announce their opening. Today the shot rings out from the Fortaleza de San Carlos de la Cabaña, the fortress beside El Morro on the same side of the harbor mouth. Source: TheCubanHistory.com; Wikipedia, 'Castillo de los Tres Reyes del Morro.'",
+    "context": "El cañonazo de las nueve, the nine o'clock cannon, is fired every night from the Fortaleza de San Carlos de la Cabaña, a custom from colonial times, when one gun signalled the closing of the gates in the city walls and another, before dawn, their opening. Accounts of its history differ: one dates the ceremony at La Cabaña to the fortress's opening in 1774, another says a warship in the harbour long fired the signal, and the evening shot is said to have moved from eight o'clock to nine over the years. Source: oncubanews.com/cronicas/y-nos-dieron-las-nueve-240-anos-de-canonazos; ecured.cu/Cañonazo_de_las_nueve; Wikipedia, 'Fortaleza de San Carlos de la Cabaña.'",
     "topic": "havana"
   },
   {
@@ -9603,12 +9564,12 @@
       "the Spanish Armada",
       "the East India fleet"
     ],
-    "context": "Spain built its convoy-and-fortress system after French privateers sacked Havana in the 1550s–60s. Twice a year the flota gathered the wealth of the empire in Havana's bay, then sailed for Spain in one heavily armed body — which is exactly why the Crown ringed this single harbor with stone forts. Source: Wikipedia, 'Spanish treasure fleet'; Wikipedia, 'Havana.'",
+    "context": "French privateers sacked Havana in the 1550s, and Spain answered by ringing the harbour with stone forts. Each year the two treasure fleets, one loaded at Veracruz in Mexico and one at Cartagena on the South American coast, met in Havana's bay and sailed for Spain together in one heavily armed body, which is why the Crown guarded this single harbour so heavily. Source: Wikipedia, 'Spanish treasure fleet'; Wikipedia, 'Havana.'",
     "topic": "havana"
   },
   {
     "tier": 5,
-    "question": "The Spanish Crown gave Havana a grand official title in 1592, since whoever held its harbour held the sea-road between the Americas and Europe, and it is a name the city still carries on its coat of arms. What did the Crown call Havana?",
+    "question": "The Spanish Crown, which raised Havana to the rank of a city in 1592, also gave it a grand official title, since whoever held its harbour held the sea-road between the Americas and Europe, and it is a name the city still carries on its coat of arms. What did the Crown call Havana?",
     "answer": "the Key to the New World",
     "choices": [
       "the Key to the New World",
@@ -9616,12 +9577,12 @@
       "the Gate of the Indies",
       "the Jewel of the Caribbean"
     ],
-    "context": "In 1592 the Spanish Crown officially styled Havana 'Key to the New World and Rampart of the West Indies' (Llave del Nuevo Mundo y Antemural de las Indias Occidentales). A golden key still appears on the city's coat of arms — a reminder that whoever locked or unlocked this harbor commanded the whole route to Spain's Atlantic empire. Source: Wikipedia, 'Havana.'",
+    "context": "The Spanish Crown, which made Havana a city in 1592, officially styled it 'Key to the New World and Rampart of the West Indies' (Llave del Nuevo Mundo y Antemural de las Indias Occidentales); one account dates that decree to 1634. A golden key still appears on the city's coat of arms, a reminder that whoever locked or unlocked this harbor commanded the whole route to Spain's Atlantic empire. Source: Wikipedia, 'Havana'; crouchrarebooks.com (1634 decree).",
     "topic": "havana"
   },
   {
     "tier": 1,
-    "question": "Kool Herc, a Bronx DJ, set up two turntables in the rec room of his own building one night in August 1973 for his sister Cindy's summer party. That party is now called the birth of hip-hop. What was the building's address?",
+    "question": "Kool Herc, a Bronx DJ, set up his turntables in the rec room of his own building one night in August 1973 for his sister Cindy's summer party. That party is now called the birth of hip-hop. What was the building's address?",
     "answer": "1520 Sedgwick Avenue",
     "choices": [
       "1520 Sedgwick Avenue",
@@ -9629,7 +9590,7 @@
       "2700 Jerome Avenue",
       "940 Southern Boulevard"
     ],
-    "context": "The party is usually dated August 11, 1973. Herc's sister Cindy Campbell had rented the rec room to raise money, and the night ran until 4 a.m. Importantly, 1520 Sedgwick is the most-credited birthplace but not the only one — historians note hip-hop 'developed slowly in several places' in the 1970s Bronx, so this is best remembered as THE famous origin party, not the sole birthplace. In 2021 the U.S. Congress passed a resolution recognizing the building as hip-hop's birthplace, and Herc called it 'the Bethlehem of hip-hop culture.' Source: https://en.wikipedia.org/wiki/1520_Sedgwick_Avenue  (Legend.)",
+    "context": "The party is usually dated August 11, 1973. Herc's sister Cindy Campbell had rented the rec room to raise money, and the night ran until 4 a.m. 1520 Sedgwick is the most-credited birthplace but not the only one: historians note hip-hop 'developed slowly in several places' in the 1970s Bronx, so this is best remembered as the famous origin party, not the sole birthplace. In 2021 the U.S. Senate passed a resolution recognizing the Bronx and the building as hip-hop's birthplace, and Herc called it 'the Bethlehem of hip-hop culture.' Source: https://en.wikipedia.org/wiki/1520_Sedgwick_Avenue  (Legend.)",
     "topic": "hip-hop-the-bronx"
   },
   {
@@ -9647,15 +9608,15 @@
   },
   {
     "tier": 2,
-    "question": "DJ Kool Herc watched the dancers at his Bronx parties and spotted a pattern: they went wild not during the chorus but during one short, pounding stretch of each song. So he put two copies of the same record on two turntables and looped that stretch over and over. What is that stretch called?",
-    "answer": "the break",
+    "question": "DJ Kool Herc saw the dancers at his Bronx parties go wildest during the break, the short, pounding drum stretch of a record. So he found a way to keep the break going as long as the crowd wanted. How did he stretch it?",
+    "answer": "He spun two copies of the record and switched between them",
     "choices": [
-      "the break",
-      "the hook",
-      "the bridge",
-      "the drop"
+      "He spun two copies of the record and switched between them",
+      "He lifted the needle back to the break's start each time",
+      "He spliced the break onto one long loop of tape",
+      "He had a live drummer play the break along with him"
     ],
-    "context": "Herc called his two-turntable looping trick the 'Merry-Go-Round': he cued the break on one copy while the other played, then switched back and forth 'with no slack.' His favorite break records were conga-heavy tracks like 'Apache' and 'Bongo Rock' by the Incredible Bongo Band — 'Apache' became known as hip-hop's national anthem. Looping the break was the foundation the whole music grew from. Source: https://en.wikipedia.org/wiki/DJ_Kool_Herc  (Legend.)",
+    "context": "Herc called his trick the 'Merry-Go-Round': with two copies of the same record on two turntables, he cued the break on one copy while the other played, then switched back and forth 'with no slack.' His favorite break records were conga-heavy tracks like 'Apache' and 'Bongo Rock' by the Incredible Bongo Band, and 'Apache' became known as hip-hop's national anthem. Looping the break was the foundation the whole music grew from. Source: https://en.wikipedia.org/wiki/DJ_Kool_Herc  (Legend.)",
     "topic": "hip-hop-the-bronx"
   },
   {
@@ -9725,20 +9686,20 @@
   },
   {
     "tier": 5,
-    "question": "Lance Taylor had been a feared 'warlord' of the Black Spades, one of the biggest street gangs in the 1970s Bronx. Taking the name Afrika Bambaataa, he steered that same organizing power away from gang violence into a peaceful movement that would carry hip-hop around the world. What did Bambaataa found?",
+    "question": "The Black Spades were among the biggest and most feared street gangs of the 1970s Bronx. From their ranks grew a new movement that drew young people away from gang fights toward DJing, dancing and art, and went on to carry hip-hop around the world. What was this movement called?",
     "answer": "the Universal Zulu Nation",
     "choices": [
       "the Universal Zulu Nation",
       "the Rock Steady Crew",
       "the Cold Crush Brothers",
-      "the Soulsonic Force"
+      "the Furious Five"
     ],
-    "context": "Afrika Bambaataa (Lance Taylor, born April 17, 1957, in the Bronx) founded the Universal Zulu Nation, turning gang energy into a cultural movement. He took his name from the Zulu chief Bhambatha, who led an armed rebellion in South Africa in the early 1900s; Bambaataa said the name meant 'affectionate leader.' His 1982 track 'Planet Rock' fused drum machines and synths into a new sound called electro-funk. Source: https://en.wikipedia.org/wiki/Afrika_Bambaataa  (Legend.)",
+    "context": "The movement is the Universal Zulu Nation. It grew in the 1970s out of the reformed Black Spades, joined by members of other former gangs, and its members organised parties and cultural events for the young. From the early 1980s it set up branches abroad, in Japan, France, Britain, Australia and South Africa among other places. Source: https://en.wikipedia.org/wiki/Universal_Zulu_Nation  (Legend.)",
     "topic": "hip-hop-the-bronx"
   },
   {
     "tier": 5,
-    "question": "From his home turf in the 1970s Bronx, Afrika Bambaataa insisted hip-hop was never just music — it was a whole culture. He named its four core 'elements,' the creative pillars people still use to describe it: DJing on the turntables, MCing on the mic, dancing on the floor, and one more. What is hip-hop's fourth element?",
+    "question": "At the block parties of the 1970s Bronx, hip-hop grew into far more than music. Its followers still count four 'elements' that make up the culture: DJing on the turntables, MCing on the mic, dancing on the floor, and one more. What is hip-hop's fourth element?",
     "answer": "graffiti",
     "choices": [
       "graffiti",
@@ -9746,7 +9707,7 @@
       "sampling",
       "fashion"
     ],
-    "context": "Afrika Bambaataa is credited with naming hip-hop's 'four elements' — DJing, MCing, breaking, and graffiti — the framework people still use to describe the culture. His Universal Zulu Nation later added a fifth element: knowledge. Bambaataa also helped popularize the very word 'hip hop'; a January 1982 magazine interview with him is often cited as the first time the term named the culture. Source: https://grokipedia.com/page/Afrika_Bambaataa  (Legend.)",
+    "context": "Hip-hop's four elements are usually given as DJing, MCing, breaking and graffiti, the spray-painted 'writing' that covered New York's subway trains and walls in the 1970s. The Universal Zulu Nation spread this picture of hip-hop as a whole culture and later added a fifth element, knowledge. Source: https://en.wikipedia.org/wiki/Universal_Zulu_Nation; https://grokipedia.com/page/Universal_Zulu_Nation  (Legend.)",
     "topic": "hip-hop-the-bronx"
   },
   {
@@ -9894,7 +9855,7 @@
   },
   {
     "tier": 1,
-    "question": "Pilgrims at Prayagraj in India watch the pale, silty Ganges meet the clearer blue-green Yamuna, the two colours sliding side by side in a sharp line for a stretch before they mix. What is a place where two rivers meet and join like this called?",
+    "question": "Pilgrims at Prayagraj, in northern India, watch the pale, silty Ganges meet the clearer blue-green Yamuna, the two colours sliding side by side in a sharp seam for a stretch before they mix. What do geographers call this kind of spot?",
     "answer": "confluence",
     "choices": [
       "confluence",
@@ -9907,28 +9868,28 @@
   },
   {
     "tier": 2,
-    "question": "About 660 million pilgrims came to bathe at the Sangam in Prayagraj in 2025, the largest peaceful gathering ever. The gods once churned the sea, legend says, and drops of a wondrous liquid spilled from a pitcher onto four places on earth, Prayagraj among them. What was the liquid said to be?",
+    "question": "Some 660 million pilgrims bathed at Prayagraj's Sangam in 2025, by the organisers' count the largest crowd ever. Legend says the gods once churned the sea, and drops of a wondrous liquid spilled from a pitcher onto four places on earth, Prayagraj among them. What was the liquid said to be?",
     "answer": "the nectar of immortality",
     "choices": [
       "the nectar of immortality",
       "the poison of the churned sea",
-      "the drink of the gods",
+      "the blood of a slain demon",
       "the waters of the sacred Ganges"
     ],
-    "context": "Legend says the four Kumbh Mela sites — Prayagraj, Haridwar, Nashik, and Ujjain — were sanctified when drops of amrita, the divine nectar of immortality, fell there during the mythological churning of the ocean. The 2025 Maha Kumbh drew about 660 million pilgrims to bathe at the Sangam, nearly triple the roughly 240 million of 2019 — the largest peaceful gathering on Earth. Source: en.wikipedia.org/wiki/Kumbh_Mela",
+    "context": "Legend says the four Kumbh Mela sites, Prayagraj, Haridwar, Nashik and Ujjain, were sanctified when drops of amrita, the divine nectar of immortality, fell there during the mythological churning of the ocean. At the 2025 Maha Kumbh the organisers counted more than 660 million bathers at the Sangam, far beyond the 400 million they had planned for, which would make it the largest gathering on Earth, though some observers doubt the total. Source: en.wikipedia.org/wiki/Kumbh_Mela; en.wikipedia.org/wiki/2025_Prayag_Maha_Kumbh",
     "topic": "holy-confluences-and-the-lowest-river-on-earth"
   },
   {
     "tier": 3,
     "question": "The Jordan River runs only about 250 kilometres from its snow springs on Mount Hermon, but from its start it drops into a long trench in the Middle East whose floor sinks far below sea level. What slow force carved out this deep valley?",
-    "answer": "two tectonic plates pulling apart",
+    "answer": "two plates grinding sideways past each other",
     "choices": [
-      "two tectonic plates pulling apart",
-      "two tectonic plates crashing together",
-      "a glacier grinding out a valley",
-      "a river eroding a canyon"
+      "two plates grinding sideways past each other",
+      "two plates crashing head-on into each other",
+      "a glacier gouging a trough in the Ice Age",
+      "a river cutting down through soft rock"
     ],
-    "context": "The Jordan runs down the Jordan Rift Valley, part of the Great Rift system, where the Arabian and African plates slowly pull apart. Because the trench floor keeps dropping below sea level, this one short river passes the lowest freshwater lake and ends at the lowest dry land on Earth. Source: en.wikipedia.org/wiki/Jordan_River",
+    "context": "The Jordan runs down the Jordan Rift Valley, which follows the Dead Sea Transform, a great fault where the Arabian plate grinds north past the African plate, by more than 100 km so far. Where the fault steps aside, the crust between is pulled apart into deep basins that sink below sea level, so this one short river passes the lowest freshwater lake and ends at the lowest dry land on Earth. Source: en.wikipedia.org/wiki/Dead_Sea_Transform",
     "topic": "holy-confluences-and-the-lowest-river-on-earth"
   },
   {
@@ -9946,15 +9907,15 @@
   },
   {
     "tier": 1,
-    "question": "Squeezed between steep green mountains and a deep harbour, Hong Kong has built straight up: 669 towers at least 150 metres tall stand packed one behind another in a wall of glass and steel. What Guinness World Record does that skyline hold?",
-    "answer": "the most skyscrapers on Earth",
+    "question": "Hong Kong has more skyscrapers than any other city on Earth: Guinness counted 669 towers of 150 metres or more there in 2025, packed one behind another in a wall of glass and steel. Why did the city build so high?",
+    "answer": "its steep mountains leave almost no flat land",
     "choices": [
-      "the most skyscrapers on Earth",
-      "the tallest building on Earth",
-      "the most crowded streets on Earth",
-      "the oldest high-rises on Earth"
+      "its steep mountains leave almost no flat land",
+      "its swampy ground cannot carry wide buildings",
+      "typhoon floods keep homes off the low ground",
+      "colonial law banned building beyond the harbour"
     ],
-    "context": "As of 30 January 2025, Guinness World Records counted 669 buildings at least 150 m tall in Hong Kong -- more than any other city on Earth. Shenzhen is second (626), New York third (434), and Dubai fourth (424). With mountains and sea leaving almost no flat land, Hong Kong had nowhere to build but up. Source: https://www.guinnessworldrecords.com/world-records/505189-city-with-the-most-buildings-150-m-or-taller",
+    "context": "Steep mountains drop straight into the sea across Hong Kong, leaving it almost no flat land, so the city had nowhere to build but up. As of 30 January 2025 Guinness World Records counted 669 buildings at least 150 m tall there, more than any other city on Earth; Shenzhen was second (626), New York third (434) and Dubai fourth (424). Source: https://www.guinnessworldrecords.com/world-records/505189-city-with-the-most-buildings-150-m-or-taller",
     "topic": "hong-kong-the-vertical-city"
   },
   {
@@ -9964,28 +9925,15 @@
     "choices": [
       "the first funicular railway in Asia",
       "the steepest cable railway in the world",
-      "the oldest mountain railway in China",
+      "the first electric railway in Asia",
       "the highest hillside railway in Asia"
     ],
     "context": "A funicular is a cable railway on a steep slope where two cars are joined by a cable over a wheel at the top, so each car counterweights the other as one climbs and the other descends. The Peak Tram opened on 30 May 1888 as the first funicular in Asia, climbing nearly 400 m up a grade reaching 48% in about five minutes. Victoria Peak, 552 m, is the highest point on Hong Kong Island. Sources: https://en.wikipedia.org/wiki/Peak_Tram ; https://en.wikipedia.org/wiki/Victoria_Peak",
     "topic": "hong-kong-the-vertical-city"
   },
   {
-    "tier": 2,
-    "question": "About 40 towers on both sides of Victoria Harbour light up together at eight every night, flashing coloured lasers, beams and searchlights in time with music. The ten-minute show is called A Symphony of Lights. What global title does Guinness World Records give it?",
-    "answer": "the world's largest permanent light-and-sound show",
-    "choices": [
-      "the world's largest permanent light-and-sound show",
-      "the world's first laser light-and-sound show",
-      "the world's brightest nightly light-and-sound show",
-      "the world's longest-running light-and-sound show"
-    ],
-    "context": "'A Symphony of Lights' began on 17 January 2004 and runs nightly at 8:00 PM for about ten minutes, involving roughly 40 buildings on both sides of Victoria Harbour. Guinness World Records recognises it as the world's largest permanent light-and-sound show. Source: https://en.wikipedia.org/wiki/A_Symphony_of_Lights",
-    "topic": "hong-kong-the-vertical-city"
-  },
-  {
     "tier": 3,
-    "question": "Boats at the Aberdeen shore loaded one sweet-smelling cargo all through the Ming and Qing dynasties and carried it away across the region, and so the place came to be called heung gong in Cantonese, Fragrant Harbour: Hong Kong. What was that cargo?",
+    "question": "Boats at the Aberdeen shore loaded one sweet-smelling cargo all through the Ming and Qing dynasties and carried it away across the region, and the best-known story says that is how the place came to be called heung gong in Cantonese, Fragrant Harbour: Hong Kong. What was that cargo?",
     "answer": "bundles of agarwood incense",
     "choices": [
       "bundles of agarwood incense",
@@ -9993,7 +9941,7 @@
       "blocks of white camphor",
       "baskets of dried tangerine peel"
     ],
-    "context": "'Hong Kong' (heung gong) means 'Fragrant Harbour.' During the Ming and Qing dynasties, agarwood and other fragrant incense woods were shipped out of the Aberdeen-area harbour, so the boat people called the port the 'fragrant harbour.' Source: https://www.lungfushannaturalist.hku.hk/post/the-origin-of-the-name-hong-kong",
+    "context": "'Hong Kong' (heung gong) means 'Fragrant Harbour.' During the Ming and Qing dynasties, agarwood and other fragrant incense woods were shipped out of the Aberdeen-area harbour, and the explanation most often told is that the boat people named the port for them; others link the fragrance to the sweet fresh water of the Pearl River. Source: https://www.lungfushannaturalist.hku.hk/post/the-origin-of-the-name-hong-kong; en.wikipedia.org/wiki/Hong_Kong",
     "topic": "hong-kong-the-vertical-city"
   },
   {
@@ -10019,7 +9967,7 @@
       "shrink into the far distance",
       "spin slowly around the car"
     ],
-    "context": "University of Hong Kong researcher Chia-huei Tseng documented the illusion in a 2013 study: the tram's tilted seats and its straight window frames trick the brain about which way is 'up,' so the passing skyscrapers appear to lean and even topple. The effect is strongest at night and weakens if you stand up. Source: https://www.sciencedaily.com/releases/2013/06/130620162848.htm",
+    "context": "University of Hong Kong researcher Chia-huei Tseng documented the illusion in a 2013 study: the tram's tilted seats and its straight window frames trick the brain about which way is 'up,' so the passing skyscrapers appear to lean and even topple. The effect is strongest at night and weakens when a rider stands up. Source: https://www.sciencedaily.com/releases/2013/06/130620162848.htm",
     "topic": "hong-kong-the-vertical-city"
   },
   {
@@ -10037,7 +9985,7 @@
   },
   {
     "tier": 5,
-    "question": "The largest ocean ships anchor right beside the towers of Hong Kong in Victoria Harbour, water so deep and sheltered that it made the city one of the world's great natural ports. Rising seas after the last Ice Age swept inland and flooded the mouths of old rivers that once wound between Hong Kong's hills. What do geographers call a coast drowned this way?",
+    "question": "The largest ocean ships anchor right beside the towers of Hong Kong in Victoria Harbour, deep, calm water winding between steep green hills. Geographers class it with the drowned inlets of Galicia, in Spain, whose local name the type now carries. What kind of coastal feature is it?",
     "answer": "a ria",
     "choices": [
       "a ria",
@@ -10045,7 +9993,7 @@
       "a delta",
       "a lagoon"
     ],
-    "context": "A ria is a river valley drowned by a rising sea -- here, the post-glacial Holocene sea-level rise flooded the low ground between ranges of hills. (A fjord is the same idea carved by a glacier instead of a river.) The result is deep, sheltered water, which is exactly why Hong Kong became one of the world's great natural ports; Victoria Harbour covers about 41.88 km2 and sees on the order of 220,000 ship visits a year. Sources: https://en.wikipedia.org/wiki/Ria ; https://en.wikipedia.org/wiki/Victoria_Harbour",
+    "context": "Victoria Harbour is a ria, a river valley drowned by the sea: after the last Ice Age, rising seas flooded the low ground between Hong Kong's hills. The word comes from the rias of Galicia, in Spain, where such drowned inlets line the coast. (A fjord is a valley carved by a glacier and then drowned.) The deep, sheltered water is why Hong Kong became one of the world's great natural ports. Sources: https://en.wikipedia.org/wiki/Ria ; https://en.wikipedia.org/wiki/Victoria_Harbour",
     "topic": "hong-kong-the-vertical-city"
   },
   {
@@ -10219,7 +10167,7 @@
   },
   {
     "tier": 3,
-    "question": "Emperor Gia Long ordered the Nine Holy Cannons cast for the Hue citadel in 1803 to guard his imperial throne forever, the largest bronze cannons Vietnam ever made, yet they were never once fired. What bronze did he melt down to make them?",
+    "question": "Emperor Gia Long ordered nine great bronze guns, the Nine Holy Cannons, cast at Hue in 1803, each named for a season or an element, to guard his imperial throne forever, yet none of them was ever fired. What bronze did he melt down to make them?",
     "answer": "The weapons of the defeated Tay Son dynasty",
     "choices": [
       "The weapons of the defeated Tay Son dynasty",
@@ -10271,15 +10219,15 @@
   },
   {
     "tier": 1,
-    "question": "Hurricane Hunter pilots fly straight into an Atlantic hurricane, battering through a ring of the fiercest winds and heaviest rain until they burst into a sudden calm at its centre, a circle of still air with blue sky above. What is this quiet core of the storm called?",
-    "answer": "the eye",
+    "question": "Hurricane Hunter pilots fly straight into an Atlantic hurricane, battering through a towering wall of cloud toward the eye at its very centre, a circle some 30 to 65 kilometres across. What do they find when they burst into the eye?",
+    "answer": "a sudden calm, often with blue sky above",
     "choices": [
-      "the eye",
-      "the eyewall",
-      "the rainband",
-      "the outflow"
+      "a sudden calm, often with blue sky above",
+      "the storm's strongest winds of all",
+      "the storm's heaviest rain of all",
+      "a knot of tornadoes whirling together"
     ],
-    "context": "The eye is a calm, often cloud-free circle of sinking air, typically 30-65 km across, ringed by the eyewall -- where the winds are strongest, the air rises fastest, and the rain is heaviest. Observed eyes have ranged from just 3 km wide to a giant 370 km. Source: https://en.wikipedia.org/wiki/Tropical_cyclone",
+    "context": "Inside the eye the air sinks, so it is calm and often cloud-free, a circle typically 30-65 km across. The fiercest winds and heaviest rain lie just outside it, in the ring called the eyewall. Observed eyes have ranged from just 3 km wide to a giant 370 km. Source: https://en.wikipedia.org/wiki/Tropical_cyclone",
     "topic": "hurricane-typhoon-cyclone-one-storm-three-names"
   },
   {
@@ -10331,7 +10279,7 @@
       "the central air pressure",
       "the total rainfall"
     ],
-    "context": "The Saffir-Simpson scale rates hurricanes 1 to 5 strictly by wind speed, not by damage. A Category 5 means sustained winds over 157 mph (253 km/h) -- the top of the scale. Source: https://en.wikipedia.org/wiki/1935_Labor_Day_hurricane",
+    "context": "The Saffir-Simpson scale rates hurricanes 1 to 5 strictly by wind speed, not by damage. A Category 5 means sustained winds of 157 mph (252 km/h) or more, the top of the scale. Source: https://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_scale",
     "topic": "hurricane-typhoon-cyclone-one-storm-three-names"
   },
   {
@@ -10370,7 +10318,7 @@
       "Davao",
       "Zamboanga"
     ],
-    "context": "Super Typhoon Haiyan (November 2013) struck the central Philippines as a Category 5 storm with winds near 314 km/h and a storm surge up to about 7.5 m that flattened the coastal city of Tacloban. It killed roughly 6,300 people and left millions homeless -- among the strongest storms ever to make landfall. Source: https://www.climate.gov/news-features/understanding-climate/2013-state-climate-record-breaking-super-typhoon-haiyan",
+    "context": "Super Typhoon Haiyan (November 2013) struck the central Philippines as a Category 5 storm with winds near 315 km/h and a storm surge up to about 7.5 m that flattened the coastal city of Tacloban. It killed roughly 6,300 people and left millions homeless, among the strongest storms ever to make landfall. Source: https://www.climate.gov/news-features/understanding-climate/2013-state-climate-record-breaking-super-typhoon-haiyan",
     "topic": "hurricane-typhoon-cyclone-one-storm-three-names"
   },
   {
@@ -10427,7 +10375,7 @@
   },
   {
     "tier": 2,
-    "question": "The people of Missoula, Montana, live on the floor of a huge ice-age lake that has since drained away. The mountains ringing the city still carry the vanished lake's mark on their slopes, plain to anyone who looks up from the streets. In what form does that mark show?",
+    "question": "The people of Missoula, Montana, live on the floor of a huge ice-age lake that has since drained away. The mountains ringing the city still carry the vanished lake's mark on their slopes, faint but there for anyone who looks up from the streets. In what form does that mark show?",
     "answer": "Level shorelines cut into the slopes",
     "choices": [
       "Level shorelines cut into the slopes",
@@ -10448,7 +10396,7 @@
       "Moraines dumped by a glacier",
       "Lava ridges from old eruptions"
     ],
-    "context": "They are current ripples — the same marks water leaves in a sandy streambed, but 3 to 49 feet tall and spaced like rows of hills. Only from the air is the rippled pattern visible; on the ground you would never guess. Source: en.wikipedia.org/wiki/Channeled_Scablands",
+    "context": "They are current ripples, the same marks water leaves in a sandy streambed, but 3 to 49 feet tall and spaced like rows of hills. Only from the air is the rippled pattern visible; on the ground a walker would never guess. Source: en.wikipedia.org/wiki/Channeled_Scablands",
     "topic": "ice-age-megafloods-and-vanished-lakes"
   },
   {
@@ -10492,7 +10440,7 @@
   },
   {
     "tier": 4,
-    "question": "A 15-ton lump of iron from space came to rest in Oregon's green Willamette Valley: the Willamette Meteorite, the largest ever found in the United States. Geologists are certain it never fell there. It first struck the ground hundreds of miles away, near the Montana border, then somehow crossed the mountains to Oregon. How did this iron giant make the trip?",
+    "question": "A 15-ton lump of iron from space came to rest in Oregon's green Willamette Valley: the Willamette Meteorite, the largest ever found in the United States. No crater marks the spot, and it most likely fell hundreds of miles away, in Montana or western Canada, then somehow crossed the mountains to Oregon. How did this iron giant make the trip?",
     "answer": "Carried inside an iceberg on a great flood",
     "choices": [
       "Carried inside an iceberg on a great flood",
@@ -10500,12 +10448,12 @@
       "Dragged across the land by early hunters",
       "Hurled westward by a volcanic eruption"
     ],
-    "context": "The meteorite was locked into glacier ice near Montana or Idaho, then rafted hundreds of miles inside an iceberg on a Missoula flood, grounding in the Willamette Valley when the ice melted. Source: pbs.org/wgbh/nova/megaflood/scab-14.html",
+    "context": "The meteorite most likely landed on ice in Montana or western Canada and was locked into a glacier, then rafted hundreds of miles inside an iceberg on a Missoula flood, grounding in the Willamette Valley when the ice melted. Source: en.wikipedia.org/wiki/Willamette_Meteorite; pbs.org/wgbh/nova/megaflood/scab-14.html",
     "topic": "ice-age-megafloods-and-vanished-lakes"
   },
   {
     "tier": 4,
-    "question": "J Harlen Bretz argued in 1923 that the Scablands of eastern Washington were carved fast, in a catastrophe. His colleagues, sure that landscapes change only slowly, mocked him for about 40 years. What new evidence in the 1970s finally proved him right?",
+    "question": "J Harlen Bretz argued in 1923 that the Scablands of eastern Washington were carved fast, in a catastrophe. His colleagues, sure that landscapes change only slowly, mocked him for about 40 years. What kind of evidence helped vindicate him at last?",
     "answer": "Photographs taken from aircraft and space",
     "choices": [
       "Photographs taken from aircraft and space",
@@ -10513,7 +10461,7 @@
       "Radiocarbon dates from buried wood",
       "Sound-maps of the distant seafloor"
     ],
-    "context": "Aerial and NASA satellite images revealed the giant flood channels plainly from above. Bretz won geology's top Penrose Medal in 1979 at age 96, telling his son, 'All my enemies are dead, so I have no one to gloat over.' Source: en.wikipedia.org/wiki/J_Harlen_Bretz",
+    "context": "Joseph Pardee's evidence for Glacial Lake Missoula backed Bretz, and photographs from aircraft and then, in the 1970s, NASA satellite images showed the giant flood channels plainly from above. Bretz won geology's top Penrose Medal in 1979 at age 96, telling his son, 'All my enemies are dead, so I have no one to gloat over.' Source: en.wikipedia.org/wiki/J_Harlen_Bretz",
     "topic": "ice-age-megafloods-and-vanished-lakes"
   },
   {
@@ -10536,10 +10484,10 @@
     "choices": [
       "The Snake River",
       "The Colorado River",
-      "The Columbia River",
+      "The Weber River",
       "The Green River"
     ],
-    "context": "When Lake Bonneville overtopped Red Rock Pass, the Bonneville Flood roared down the Snake River at roughly a million cubic meters per second, carving canyons and stranding house-sized boulders still seen along the Snake today. In under a year it sent almost 5,000 km³ of water toward the Snake and dropped the lake's level by roughly 410 feet, among the largest floods known in Earth's history. It happened because a closed, overfilled basin finally found an escape over its rim. Source: en.wikipedia.org/wiki/Lake_Bonneville",
+    "context": "When Lake Bonneville overtopped Red Rock Pass, the Bonneville Flood roared down the Portneuf and Snake rivers, and on into the Columbia, at roughly a million cubic meters per second, carving canyons and stranding house-sized boulders still seen along the Snake today. It sent almost 5,000 km3 of water downstream and dropped the lake's level by roughly 410 feet, among the largest floods known in Earth's history. It happened because a closed, overfilled basin finally found an escape over its rim. Source: en.wikipedia.org/wiki/Lake_Bonneville",
     "topic": "ice-age-megafloods-and-vanished-lakes"
   },
   {
@@ -10622,7 +10570,7 @@
   },
   {
     "tier": 1,
-    "question": "Fagradalsfjall, a volcano on Iceland's Reykjanes peninsula, woke in 2021 after about 800 quiet years, and it caused no panic. About 700,000 visits were logged over three years as crowds streamed out to it. What did they hike across the lava fields to do?",
+    "question": "Iceland's Reykjanes peninsula had lain quiet for about 800 years when Fagradalsfjall, one of its volcanoes, erupted in 2021, and it caused no panic. About 700,000 visits were logged as crowds streamed out to it. What did they hike across the lava fields to do?",
     "answer": "Watch fresh lava up close",
     "choices": [
       "Watch fresh lava up close",
@@ -10661,7 +10609,7 @@
   },
   {
     "tier": 3,
-    "question": "At one national park in Iceland, visitors walk down a path through a gorge into the open rift between two of Earth's plates, with a cliff of one plate on each side. Nearly everywhere else on Earth such a boundary lies hidden far beneath the sea. What is this rift-valley park called?",
+    "question": "At one national park in Iceland, visitors walk a path down into a gorge whose tall western wall is the very edge of a tectonic plate; across the sunken rift valley beyond lies the edge of the next. Nearly everywhere else on Earth such a boundary lies hidden far beneath the sea. What is this rift-valley park called?",
     "answer": "Thingvellir",
     "choices": [
       "Thingvellir",
@@ -10669,12 +10617,12 @@
       "Landmannalaugar",
       "Jokulsarlon"
     ],
-    "context": "At Thingvellir National Park you can walk into the Almannagja gorge -- the largest fault crossing the rift -- with a wall of the North American plate on one side and Eurasia on the other. Thingvellir also hosted the Althing, one of the world's oldest parliaments, founded in 930 AD, but the geological wonder is the rift itself. Source: https://en.wikipedia.org/wiki/Thingvellir",
+    "context": "At Thingvellir National Park the path drops into the Almannagja gorge, the largest fault crossing the rift: its western wall is the edge of the North American plate, and the Eurasian plate's edge lies across the sunken rift valley to the east, at the Hrafnagja fault. Thingvellir also hosted the Althing, one of the world's oldest parliaments, founded in 930 AD, but the geological wonder is the rift itself. Sources: https://en.wikipedia.org/wiki/Thingvellir ; https://icelandtravelguide.is/locations/almannagja/",
     "topic": "iceland-where-two-continents-pull-apart"
   },
   {
     "tier": 3,
-    "question": "Divers come to Silfra, a flooded crack in Iceland's rift zone, to drop into the gap between two tectonic plates, the one spot on Earth where they can glide with a plate on either side. Silfra draws divers from around the world for one more reason. What is it famous for?",
+    "question": "Divers come to Silfra, a flooded crack in Iceland's rift valley, to swim in the gap that is opening between two of Earth's great plates as they pull apart. Silfra draws divers from around the world for one more reason. What is it famous for?",
     "answer": "The clearest water on Earth",
     "choices": [
       "The clearest water on Earth",
@@ -10682,7 +10630,7 @@
       "The deepest freshwater cave",
       "The largest underwater cave"
     ],
-    "context": "Silfra sits in the Thingvellir rift and is the only place on Earth where you can dive or snorkel directly in the crack between two tectonic plates. Its glacial meltwater is filtered for decades through porous lava rock, giving over 100 meters (328 ft) of visibility -- said to be the clearest water on Earth. Source: https://www.padi.com/dive-site/iceland/silfra/  (Legend.)",
+    "context": "Silfra lies in the Thingvellir rift valley, between the edges of the North American and Eurasian plates, and divers swim down its flooded crack. Its glacial meltwater is filtered for decades through porous lava rock, giving over 100 meters (328 ft) of visibility, said to be the clearest water on Earth. Source: https://www.padi.com/dive-site/iceland/silfra/  (Legend.)",
     "topic": "iceland-where-two-continents-pull-apart"
   },
   {
@@ -10704,11 +10652,11 @@
     "answer": "On the island's fishing fleet",
     "choices": [
       "On the island's fishing fleet",
-      "By military helicopter airlift",
-      "On planes from the island airstrip",
+      "Across a causeway to the mainland",
+      "On a troopship sent from Denmark",
       "By hovercraft from the mainland"
     ],
-    "context": "When Eldfell's fissure tore open barely a kilometer from Heimaey's town center in the early hours of January 23, 1973, nearly all ~5,300 residents were evacuated by the island's fishing boats within about six hours -- much of the fleet happened to be in the harbor that night. Source: https://en.wikipedia.org/wiki/Eldfell",
+    "context": "When Eldfell's fissure tore open barely a kilometer from Heimaey's town center in the early hours of January 23, 1973, nearly all of the 5,300 residents were safe on the mainland within about six hours. Most left on the island's fishing boats, much of the fleet happening to be in the harbor that night; a few, mainly the elderly and hospital patients, were flown out. Source: https://en.wikipedia.org/wiki/Eldfell",
     "topic": "iceland-where-two-continents-pull-apart"
   },
   {
@@ -10721,7 +10669,7 @@
       "Nitrogen from tank trucks",
       "Foam from fire crews"
     ],
-    "context": "To stop Eldfell's lava from sealing off the harbor, townspeople and crews pumped about 7.3 million cubic meters of seawater onto the flow -- up to 1,000 liters per second through 32 pumps -- cooling it solid. They saved the harbor, and the hardened lava even improved it by forming a new breakwater. Source: https://en.wikipedia.org/wiki/Eldfell",
+    "context": "To stop Eldfell's lava from sealing off the harbor, townspeople and crews pumped about 7.3 million cubic meters of seawater onto the flow, through 32 pumps brought from the United States, each able to move up to 1,000 liters a second, cooling it solid. They saved the harbor, and the hardened lava even improved it by forming a new breakwater. Source: https://en.wikipedia.org/wiki/Eldfell",
     "topic": "iceland-where-two-continents-pull-apart"
   },
   {
@@ -11701,15 +11649,15 @@
   },
   {
     "tier": 2,
-    "question": "Everest is climbed by hundreds each year, and fewer than one in fifty of them die on it. K2 is a different beast, and for decades its dark reputation rested on a single grim number. Of the climbers who reached the summit of K2, roughly what share never made it back down alive?",
-    "answer": "about one in four",
+    "question": "Hundreds of climbers stand on top of Everest each year, and few of them die trying. K2, the second-highest peak, on the Pakistan-China border, kept a far darker tally for decades. About how many climbers reached its summit for every one who died on the mountain?",
+    "answer": "about four",
     "choices": [
-      "about one in ten",
-      "about one in four",
-      "about one in three",
-      "about one in six"
+      "about ten",
+      "about four",
+      "about three",
+      "about six"
     ],
-    "context": "K2's fatality rate has historically run above 20% — roughly one death for every four climbers who reached the top — which is why the peak, not taller Everest, earns its dread. By comparison, Annapurna is usually ranked the single deadliest 8,000er by death-to-summit ratio, historically closer to one in three. Source: https://en.wikipedia.org/wiki/K2",
+    "context": "For decades K2 counted roughly one death for every four climbers who reached its top, a fatality rate above 20%, which is why the peak, not taller Everest, earns its dread; the ratio has fallen as more climbers have summited in recent years. By comparison, Annapurna is usually ranked the deadliest 8,000er by death-to-summit ratio, historically closer to one in three. Source: https://en.wikipedia.org/wiki/K2",
     "topic": "k2"
   },
   {
@@ -12143,19 +12091,6 @@
   },
   {
     "tier": 1,
-    "question": "Khiva, an oasis town in the desert of Uzbekistan, still keeps its ancient heart, the Itchan Kala, wrapped in thick mud-brick walls up to ten metres high, though time and war have taken down the walls of most old Silk Road cities. What record does Khiva's walled old town hold in Central Asia?",
-    "answer": "the largest walled town in Central Asia",
-    "choices": [
-      "the largest walled town in Central Asia",
-      "the oldest walled town in Central Asia",
-      "the tallest-walled town in Central Asia",
-      "the most-fought-over walled town in Central Asia"
-    ],
-    "context": "Itchan Kala, Khiva's inner walled town, is the largest surviving walled town in Central Asia: a rectangle roughly 650 x 400 m ringed by crenellated mud-brick walls about 8-10 m high and 5-6 m thick, with an inner-wall circuit of about 2,200 m. Bukhara, Samarkand and Merv were once walled too, but only Khiva keeps its full circuit intact. Source: https://en.wikipedia.org/wiki/Itchan_Kala",
-    "topic": "khiva-the-walled-desert-city"
-  },
-  {
-    "tier": 1,
     "question": "Silk Road merchants heading west stopped at Khiva, an oasis city ringed by tall mud walls in Uzbekistan, to top up their water skins and feed their camels one last time. Beyond its western gate lay a brutal 400-km slog across shifting sand dunes toward Persia. Which desert did they have to cross?",
     "answer": "the Karakum",
     "choices": [
@@ -12194,21 +12129,8 @@
     "topic": "khiva-the-walled-desert-city"
   },
   {
-    "tier": 4,
-    "question": "A United Nations body chose Khiva's walled Itchan Kala in 1990 over Samarkand and Bukhara, for all their grand domes, making the small desert town the first place in all of Central Asia to win one global honour. Which honour did Khiva claim first for the region?",
-    "answer": "a World Heritage Site listing",
-    "choices": [
-      "a World Heritage Site listing",
-      "a Global Geopark listing",
-      "a Biosphere Reserve listing",
-      "a Creative City of Craft listing"
-    ],
-    "context": "UNESCO inscribed Itchan Kala in December 1990 (14th session; reference #543; criteria iii, iv, v) — the first World Heritage Site in Uzbekistan and in all of Central Asia, ahead of Samarkand and Bukhara. UNESCO calls it 'a coherent and well-preserved example of the Muslim architecture of Central Asia.' (The queue's 1991 date is corrected here: every source gives 1990.) Source: https://whc.unesco.org/en/list/543/",
-    "topic": "khiva-the-walled-desert-city"
-  },
-  {
     "tier": 5,
-    "question": "Mosques, madrasas, minarets, palaces and tombs stand shoulder to shoulder inside the walls of Khiva's Itchan Kala, a town just 650 by 400 metres across, smaller than many modern shopping malls. Most old towns have one great church or palace that people line up to see. About how many old monuments are packed into this one?",
+    "question": "Mosques, madrasas, minarets, palaces and tombs stand shoulder to shoulder inside the walls of Khiva's Itchan Kala, a town just 650 by 400 metres across. Most old towns have one great church or palace that people line up to see. About how many old monuments are packed into this one?",
     "answer": "more than fifty",
     "choices": [
       "more than fifty",
@@ -12372,12 +12294,12 @@
       "sandstone from the desert cliffs",
       "marble shipped from Persia"
     ],
-    "context": "Swahili cities built in 'coral rag' — blocks of coral limestone cut straight from the living reef offshore and squared into masonry, often finished with a fine coral-lime plaster. Kilwa, Zanzibar's Stone Town, and Lamu all share this pale coral stonework, the signature material of the East African coast. Source: Wikipedia, 'Great Mosque of Kilwa' and 'Kilwa Kisiwani'.",
+    "context": "Swahili cities built in coral stone: blocks of coral limestone cut from the reef and squared into coursed masonry, often finished with a fine coral-lime plaster. Kilwa, Zanzibar's Stone Town and Lamu all share this pale coral stonework, the signature material of the East African coast. Source: Wikipedia, 'Great Mosque of Kilwa' and 'Kilwa Kisiwani'.",
     "topic": "kilwa-kisiwani"
   },
   {
     "tier": 2,
-    "question": "Sultan al-Hasan gave Kilwa's Great Mosque, the oldest still standing on the East African coast, a feature no building on that coast had had before, and it stayed the biggest of its kind there until the 1800s. The mosque had broken with the usual plan and had no open courtyard. What did the sultan raise over it?",
+    "question": "Sultan al-Hasan gave Kilwa's Great Mosque, one of the oldest still standing on the East African coast, a feature no building on that coast had had before, and it stayed the biggest of its kind there until the 1800s. The mosque had no open courtyard. What did the sultan raise over it?",
     "answer": "a great dome",
     "choices": [
       "a great dome",
@@ -12385,7 +12307,7 @@
       "a soaring spire",
       "a grand archway"
     ],
-    "context": "The oldest sections of the Great Mosque date to the 11th-12th century; Sultan al-Hasan ibn Sulaiman added its great dome in the early 1300s. It was the first true dome raised on the East African coast and remained the largest dome on the coast until the 19th century — the traveller Ibn Battuta remarked on it after his 1331 visit. Source: Google Arts & Culture / archnet.org; Wikipedia, 'Great Mosque of Kilwa'.",
+    "context": "The oldest sections of the Great Mosque date to the 11th-12th century; Sultan al-Hasan ibn Sulaiman added its great dome in the early 1300s. It was the first true dome raised on the East African coast and remained the largest dome on the coast until the 19th century; the traveller Ibn Battuta described the dome after his 1331 visit. Source: archnet.org/sites/3779; Wikipedia, 'Great Mosque of Kilwa'.",
     "topic": "kilwa-kisiwani"
   },
   {
@@ -12416,7 +12338,7 @@
   },
   {
     "tier": 4,
-    "question": "High on a cliff above the Indian Ocean at Kilwa stand the ruins of Husuni Kubwa, built by Sultan al-Hasan with more than a hundred rooms around sunken courtyards, the largest stone building in all of sub-Saharan Africa before modern times. One of its luxuries still amazes visitors today. What did the sultan build into his cliff-top palace?",
+    "question": "High on a cliff above the Indian Ocean at Kilwa stand the ruins of Husuni Kubwa, built by Sultan al-Hasan with more than a hundred rooms around sunken courtyards, said to be the largest building in all of sub-Saharan Africa before modern times. One of its luxuries still amazes visitors today. What did the sultan build into his cliff-top palace?",
     "answer": "an octagonal bathing pool",
     "choices": [
       "an octagonal bathing pool",
@@ -12424,7 +12346,7 @@
       "a circular rose garden",
       "a mirrored audience hall"
     ],
-    "context": "Husuni Kubwa ('the big fort/palace') was raised by Sultan al-Hasan ibn Sulaiman around 1310-1333 on a sandstone cliff over the sea. Its 100-plus rooms, sunken courtyards, and octagonal bathing pool made it the largest building in sub-Saharan Africa before the modern era — and part of it doubled as a warehouse, with terraces and a staging area for loading goods onto trading ships. Source: WebSearch (archnet.org, worldhistory.org); Wikipedia, 'Kilwa Kisiwani'.",
+    "context": "Husuni Kubwa ('the big fort/palace') was raised by Sultan al-Hasan ibn Sulaiman around 1310-1333 on a sandstone cliff over the sea. Its 100-plus rooms, sunken courtyards and octagonal bathing pool are said to have made it the largest building in sub-Saharan Africa before the modern era, and part of it doubled as a warehouse, with terraces and a staging area for loading goods onto trading ships. Source: archnet.org; worldhistory.org; Wikipedia, 'Kilwa Kisiwani'.",
     "topic": "kilwa-kisiwani"
   },
   {
@@ -12442,7 +12364,7 @@
   },
   {
     "tier": 5,
-    "question": "Archaeologists digging in the ruins of a great kingdom deep in the African interior, hundreds of miles from any coast, pulled two of Kilwa's own copper coins from the soil, hard proof of how far the little island port's trade reached across the continent. In whose ruins were the Kilwa coins found?",
+    "question": "Archaeologists digging in the ruins of a great kingdom deep in the African interior, hundreds of miles from any coast, pulled a copper coin from Kilwa's own mint out of the soil, hard proof of how far the little island port's trade reached across the continent. In whose ruins was the Kilwa coin found?",
     "answer": "Great Zimbabwe",
     "choices": [
       "Great Zimbabwe",
@@ -12450,7 +12372,7 @@
       "Aksum",
       "Meroe"
     ],
-    "context": "Two copper coins minted at Kilwa were excavated at Great Zimbabwe, the dry-stone-walled kingdom of the southern African interior whose gold flowed down to the Swahili coast. The coins are physical proof of a trade web binding a tiny Indian Ocean island to a kingdom hundreds of miles inland — gold flowing out to the coast, and Kilwa's own coins carried back in. Source: WebSearch (EBSCO Research Starters; numismatic records); coins of Sultan al-Hasan ibn Sulaiman, r. 1310-1333.",
+    "context": "At least one copper coin minted at Kilwa has been excavated at Great Zimbabwe (accounts give one or two), the dry-stone-walled kingdom of the southern African interior whose gold flowed down to the Swahili coast. The find is physical proof of a trade web binding a tiny Indian Ocean island to a kingdom hundreds of miles inland: gold flowing out to the coast, and Kilwa's own money carried back in. Source: Wikipedia, 'Kilwa Kisiwani'; Huffman (1972), cited at eprints.whiterose.ac.uk/id/eprint/142682; EBSCO Research Starters.",
     "topic": "kilwa-kisiwani"
   },
   {
@@ -12996,7 +12918,7 @@
       "A summer lightning strike ignited its roof",
       "A fire spread to it from the burning city"
     ],
-    "context": "The arsonist was Hayashi Yoken, a 22-year-old novice monk, who set the fire at 2:30 a.m. on 2 July 1950 and then tried to take his own life on the hill behind the temple; he died of tuberculosis in 1956. The shock ran so deep that the novelist Yukio Mishima built his 1956 novel, 'The Temple of the Golden Pavilion,' around him. Source: en.wikipedia.org/wiki/Kinkaku-ji",
+    "context": "The arsonist was Hayashi Yoken, a 22-year-old novice monk, who set the fire at 2:30 a.m. on 2 July 1950. The shock ran so deep that the novelist Yukio Mishima built his 1956 novel, 'The Temple of the Golden Pavilion,' around him. Source: en.wikipedia.org/wiki/Kinkaku-ji",
     "topic": "kyoto-the-thousand-year-capital-of-temples"
   },
   {
@@ -13028,19 +12950,19 @@
   {
     "tier": 3,
     "question": "About 10,000 vermilion torii gates tunnel up Fushimi Inari's sacred Mount Inari, and the rows keep lengthening year after year. Each gate was paid for by a single business or person, whose name is painted right down its back. Why did these donors each put up a gate?",
-    "answer": "In thanks for a wish the god had granted",
+    "answer": "To win a wish, or give thanks for one granted",
     "choices": [
-      "In thanks for a wish the god had granted",
-      "In hope of good fortune in the year ahead",
-      "In prayer for a bountiful rice harvest",
+      "To win a wish, or give thanks for one granted",
+      "To mark the birth of a child in the family",
+      "As a fine for breaking the shrine's rules",
       "In memory of a family member who had died"
     ],
-    "context": "Every torii on Mount Inari was paid for by a business or a person as thanks for a wish the god had granted, with the donor's name painted down the back; the vermilion color is believed to ward off evil and promise a bountiful harvest, so the tunnels keep growing as new gates are donated. About 10,000 gates now climb the mountain, and the densest stretch, the Senbon Torii ('thousand torii'), holds roughly 800 by itself. Source: en.wikipedia.org/wiki/Fushimi_Inari-taisha ; gov-online.go.jp",
+    "context": "Every torii on Mount Inari was paid for by a business or a person, in hope of a wish coming true or in thanks for one the god had granted, with the donor's name painted down the back; the custom began in the Edo period, so the tunnels keep growing as new gates are donated. About 10,000 gates now climb the mountain, and the densest stretch, the Senbon Torii ('thousand torii'), holds roughly 800 by itself. Source: en.wikipedia.org/wiki/Fushimi_Inari-taisha ; gov-online.go.jp",
     "topic": "kyoto-the-thousand-year-capital-of-temples"
   },
   {
     "tier": 2,
-    "question": "At the foot of the Arashiyama hills west of Kyoto, a long wooden bridge has crossed the river on the same spot since the year 836. It carries the name Togetsukyo -- given, by tradition, after a retired emperor watched something one night. What did he see?",
+    "question": "At the foot of the Arashiyama hills west of Kyoto, a long bridge spans the river close to where the first one was built in the year 836. It carries the name Togetsukyo -- given, by tradition, after a retired emperor watched something one night. What did he see?",
     "answer": "The moon seemed to walk across it",
     "choices": [
       "The moon seemed to walk across it",
@@ -13048,12 +12970,12 @@
       "Cherry petals covered it like snow",
       "Its lanterns doubled in the water"
     ],
-    "context": "Togetsukyo means 'Moon-Crossing Bridge.' By tradition the name comes from a retired emperor who said the moon looked as though it were walking from one end to the other. A bridge has stood at this spot below Arashiyama since 836. Source: en.wikipedia.org/wiki/Arashiyama",
+    "context": "Togetsukyo means 'Moon-Crossing Bridge.' By tradition the name comes from a retired emperor who said the moon looked as though it were walking from one end to the other. The first bridge here, built in 836, stood a little upstream; today's span dates from 1934. Source: en.wikipedia.org/wiki/Arashiyama; kanpai-japan.com/kyoto/togetsukyo-bridge-arashiyama",
     "topic": "kyoto-the-thousand-year-capital-of-temples"
   },
   {
     "tier": 3,
-    "question": "The wooden stage of Kyoto's Kiyomizu-dera reaches thirteen metres, about four storeys, out over a wooded hill, resting on tall pillars built without a single nail. 'To jump off the stage at Kiyomizu' became a Japanese saying for taking the plunge, and in the Edo era people really did leap from it. What did the records show about the jumpers?",
+    "question": "The wooden stage of Kyoto's Kiyomizu-dera stands thirteen metres, about four storeys, above a wooded hill, resting on tall pillars built without a single nail. 'To jump off the stage at Kiyomizu' became a Japanese saying for taking the plunge, and in the Edo era people really did leap from it. What did the records show about the jumpers?",
     "answer": "About 85 percent survived the fall",
     "choices": [
       "About 85 percent survived the fall",
@@ -13062,19 +12984,6 @@
       "Fewer than half survived the fall"
     ],
     "context": "Records from the Edo period show that about 85 percent of those who leaped from the stage survived; the government banned the practice in 1872. The entire stage rests on its tall pillars without a single nail. Source: en.wikipedia.org/wiki/Kiyomizu-dera",
-    "topic": "kyoto-the-thousand-year-capital-of-temples"
-  },
-  {
-    "tier": 3,
-    "question": "Geisha in silk kimono still slip between the wooden teahouses of Hanamikoji street at dusk, in Kyoto's lantern-lit Gion district. Kyoto keeps its own words for these women, and in its tradition a fully trained geisha is called a geiko. What is a young apprentice geisha called there?",
-    "answer": "A maiko",
-    "choices": [
-      "A maiko",
-      "A miko",
-      "An okami",
-      "An oiran"
-    ],
-    "context": "In Kyoto a full geisha is a geiko and an apprentice is a maiko. Both entertain guests in the exclusive teahouses, called ochaya, along Gion's Hanamikoji street. Source: en.wikipedia.org/wiki/Gion",
     "topic": "kyoto-the-thousand-year-capital-of-temples"
   },
   {
@@ -13118,7 +13027,7 @@
   },
   {
     "tier": 5,
-    "question": "Kyoto came through World War II almost untouched, which is why its ancient temples still stand while cities like Tokyo and Osaka were rebuilt from ash. Yet in early 1945 Kyoto sat near the very top of the United States' list of atomic-bomb targets. Why did the city survive?",
+    "question": "Kyoto came through World War II almost untouched, which is why its ancient temples still stand while cities like Tokyo and Osaka were rebuilt from ash. Yet in 1945 Kyoto sat near the very top of the United States' list of atomic-bomb targets. Why did the city survive?",
     "answer": "A US official struck it from the target list to save its treasures",
     "choices": [
       "A US official struck it from the target list to save its treasures",
@@ -13126,7 +13035,7 @@
       "Thick mountain fog hid the city from the bombers for months",
       "Japan surrendered before Kyoto's turn ever came up"
     ],
-    "context": "The US Secretary of War, Henry Stimson, personally had Kyoto removed from the atomic-target list, arguing the ancient capital was a treasure-house of Japanese art and religion; Nagasaki was added in its place. A popular story claims Stimson spared Kyoto because he had honeymooned there, but this is a legend: historian Alex Wellerstein has shown Stimson honeymooned in Canada in 1893 and first visited Kyoto only in the 1920s, as a government official. The real, documented reason was the city's cultural significance. Source: en.wikipedia.org/wiki/Kyoto ; blog.nuclearsecrecy.com",
+    "context": "The US Secretary of War, Henry Stimson, personally had Kyoto removed from the atomic-target list, arguing the ancient capital was a treasure-house of Japanese art and religion; Nagasaki was added in its place. A popular story claims Stimson spared Kyoto because he had honeymooned there, but the historian Alex Wellerstein could find no evidence for it: Stimson's known visits to Kyoto came in 1926 and 1929, and neither was a honeymoon. The documented reason was the city's cultural significance. Source: en.wikipedia.org/wiki/Kyoto ; blog.nuclearsecrecy.com/2023/07/24/henry-stimson-didnt-go-to-kyoto-on-his-honeymoon/",
     "topic": "kyoto-the-thousand-year-capital-of-temples"
   },
   {
@@ -13169,21 +13078,8 @@
     "topic": "la-paz-and-el-alto"
   },
   {
-    "tier": 2,
-    "question": "A traveller looks out over La Paz in its high Andes canyon and takes it for Bolivia's capital, as most travellers do. Name La Paz as the capital, though, and a geographer may call that wrong, yet the honest answer is trickier. Why is Bolivia's capital so hard to pin to one city?",
-    "answer": "its capital is split between two separate cities",
-    "choices": [
-      "its capital is split between two separate cities",
-      "its capital was never fixed in the constitution",
-      "its capital changes with each new government",
-      "its capital rotates among several cities"
-    ],
-    "context": "Bolivia keeps two capitals. La Paz became the de-facto (administrative) capital in 1898 and holds the president and congress, the highest seat of government on Earth, while the constitutional capital remains Sucre, the lower colonial city that still houses the supreme court and the rest of the judiciary. Both cities are 'the capital,' each answering a different question -- a favorite geography footnote worth getting precisely right. Source: en.wikipedia.org/wiki/La_Paz.",
-    "topic": "la-paz-and-el-alto"
-  },
-  {
     "tier": 3,
-    "question": "An airliner lines up for takeoff at El Alto International Airport, which serves La Paz from a flat plain about 4,058 metres up, the highest major airport on Earth. The air there is so thin that the plane's wings and engines have far less to grip as it gathers speed. What does the thin air force every airliner leaving El Alto to do?",
+    "question": "An airliner lines up for takeoff at El Alto International Airport, which serves La Paz from a flat plain about 4,058 metres up, the highest international airport on Earth. The air there is so thin that the plane's wings and engines have far less to grip as it gathers speed. What does the thin air force every airliner leaving El Alto to do?",
     "answer": "roll much farther before lifting off",
     "choices": [
       "roll much farther before lifting off",
@@ -13197,9 +13093,9 @@
   {
     "tier": 3,
     "question": "Illimani's three snow-capped peaks fill nearly every view in La Paz, seen from streets all across the city. The mountain rises to 6,438 metres, the tallest peak of the Cordillera Real, and is the city's emblem. How does the Andean tradition of the region honour it?",
-    "answer": "as an apu, a mountain guardian spirit",
+    "answer": "as a guardian spirit watching over the city",
     "choices": [
-      "as an apu, a mountain guardian spirit",
+      "as a guardian spirit watching over the city",
       "as a volcano that once buried the valley",
       "as the source of the canyon's river",
       "as the tomb of an ancient Inca ruler"
@@ -13235,19 +13131,6 @@
   },
   {
     "tier": 1,
-    "question": "Portuguese sailors reached the West African coast in 1472 and found a settlement spread across low islands and creeks, a watery maze of shallows and pools. Their Portuguese name for the place stuck, and it is now Nigeria's biggest city. What does 'Lagos' mean in Portuguese?",
-    "answer": "lakes and lagoons",
-    "choices": [
-      "lakes and lagoons",
-      "bays and harbours",
-      "reefs and shallows",
-      "sands and shoals"
-    ],
-    "context": "The explorer Rui de Sequeira reached the area in 1472 and called it 'Lago de Curamo' — and 'lagos' is simply Portuguese for lakes or lagoons. The city grew up on islands and sandbars threaded through a huge coastal lagoon, so the watery name fit perfectly. Source: Wikipedia, 'Lagos' and 'Ruy de Sequeira.'",
-    "topic": "lagos"
-  },
-  {
-    "tier": 2,
     "question": "An entire neighborhood of wooden houses stands on tall stilts above the Lagos Lagoon, with no dry land beneath them. Residents paddle canoes from door to door, and visitors nickname it 'the Venice of Africa.' What is this famous stilt district of Lagos called?",
     "answer": "Makoko",
     "choices": [
@@ -13283,19 +13166,6 @@
       "Ijora Bridge"
     ],
     "context": "The Third Mainland Bridge runs 11.8 km (7.3 mi) across the Lagos Lagoon. When it opened in 1990 it was the longest bridge in Africa, holding that title until Cairo's 6th of October Bridge overtook it in 1996. Source: Wikipedia, 'Third Mainland Bridge'; Institution of Civil Engineers.",
-    "topic": "lagos"
-  },
-  {
-    "tier": 4,
-    "question": "Nigeria moved its capital in 1991 out of Lagos, the crowded coastal giant that is Africa's largest city, and handed the title to Abuja. What kind of city is Abuja?",
-    "answer": "a planned capital, built from scratch in the country's centre",
-    "choices": [
-      "a planned capital, built from scratch in the country's centre",
-      "an old walled emirate city, ruled for centuries by an emir",
-      "a colonial seaport, founded by British traders on the coast",
-      "an ancient Yoruba kingdom's royal capital in the southwest"
-    ],
-    "context": "Abuja is a planned city, built from scratch in Nigeria's centre, and the seat of government moved there on 12 December 1991. Yet Lagos kept the crown that matters most to daily life — it still generates roughly 30–35% of Nigeria's GDP and handles the large majority of the country's port trade. Source: Wikipedia, 'Abuja' and 'Lagos.'",
     "topic": "lagos"
   },
   {
@@ -13438,7 +13308,7 @@
       "about 200,000 to 300,000 years",
       "about 20,000 to 40,000 years"
     ],
-    "context": "At an estimated 25 to 30 million years old, Baikal is by far the oldest lake in the world — most lakes fill with sediment and disappear within 10,000 to 20,000 years. Baikal has existed since long before modern humans, or even our ape ancestors, walked the Earth. Source: en.wikipedia.org/wiki/Lake_Baikal.",
+    "context": "At an estimated 25 to 30 million years old, Baikal is by far the oldest lake in the world, while most lakes fill with sediment and disappear within 10,000 to 20,000 years. Baikal has existed since long before modern humans, or even the ape ancestors of humans, walked the Earth. Source: en.wikipedia.org/wiki/Lake_Baikal.",
     "topic": "lake-baikal"
   },
   {
@@ -13496,14 +13366,14 @@
   {
     "tier": 4,
     "question": "Far inland in southern Siberia, more than 1,700 kilometres from the nearest ocean, Lake Baikal shelters creatures cut off from the sea, and it holds one claim that no other lake on Earth can match. What sets Baikal apart from every other lake?",
-    "answer": "it is the only lake with its own resident seal",
+    "answer": "it is the only lake with a seal species of its own",
     "choices": [
-      "it is the only lake with its own resident seal",
+      "it is the only lake with a seal species of its own",
       "it is the only lake ringed by active volcanoes",
       "it is the only lake with ocean-like tides",
       "it is the only lake that drains into two seas"
     ],
-    "context": "The nerpa (Pusa sibirica) is the world's only seal that lives entirely in fresh water, stranded some 1,700+ kilometres from the nearest ocean — probably cut off when Ice-Age meltwater rivers that once linked Baikal to the Arctic dried up. That makes Baikal the only lake on Earth with its own resident seal. Source: en.wikipedia.org/wiki/Baikal_seal; biologyinsights.com.",
+    "context": "The nerpa (Pusa sibirica) is the only seal species that lives entirely in fresh water, stranded more than 1,700 kilometres from the nearest ocean, probably cut off when Ice-Age meltwater rivers that once linked Baikal to the Arctic dried up. Finland's Lake Saimaa and Russia's Lake Ladoga hold landlocked seals too, but they are subspecies of the sea-going ringed seal, so Baikal is the only lake with a seal species of its own. Source: grokipedia.com/page/Baikal_seal; en.wikipedia.org/wiki/Saimaa_ringed_seal",
     "topic": "lake-baikal"
   },
   {
@@ -13517,19 +13387,6 @@
       "it is fed by warm underground springs"
     ],
     "context": "In most very deep lakes the bottom water is starved of oxygen and nearly lifeless, but Baikal stays rich in oxygen all the way down, so creatures thrive more than a kilometre below the surface. Scientists credit powerful seasonal mixing that carries oxygen into the depths. Source: en.wikipedia.org/wiki/Lake_Baikal.",
-    "topic": "lake-baikal"
-  },
-  {
-    "tier": 4,
-    "question": "The Eurasian and Amur plates pull apart beneath Lake Baikal, and the gap where the lake lies grows about two centimetres wider every year. Geologists say that if the pulling goes on for tens of millions of years, it could tear the continent in two. What do they say Baikal could then become?",
-    "answer": "a new ocean",
-    "choices": [
-      "a new ocean",
-      "a new mountain range",
-      "a new canyon",
-      "a new glacier"
-    ],
-    "context": "Baikal is a rift lake: it sits where the Eurasian and Amur plates are pulling apart, widening the basin by up to about two centimetres a year. Geologists say that if the spreading continues, the rift could one day split the continent and fill with sea — turning Baikal into a new ocean. Source: en.wikipedia.org/wiki/Baikal_Rift_Zone.",
     "topic": "lake-baikal"
   },
   {
@@ -13568,7 +13425,7 @@
       "ammonia",
       "nitrogen"
     ],
-    "context": "Methane released by plants rotting on the deep lakebed rises in bubbles that freeze against the underside of the ice, stacking into pearly white discs you can look straight down into. Source: apod.nasa.gov/apod/ap181218.html (Methane Bubbles Frozen in Lake Baikal).",
+    "context": "Methane released by plants rotting on the deep lakebed rises in bubbles that freeze against the underside of the ice, stacking into pearly white discs that a skater on the ice can look straight down into. Source: apod.nasa.gov/apod/ap181218.html (Methane Bubbles Frozen in Lake Baikal).",
     "topic": "lake-baikal"
   },
   {
@@ -13659,20 +13516,20 @@
       "a cloud of hydrogen sulfide",
       "a cloud of sulfur dioxide"
     ],
-    "context": "The killer was ordinary carbon dioxide (CO2) -- not a poison-gas attack, just invisible CO2 in a deadly amount. Because CO2 is about 50% denser than air, the cloud hugged the ground, rolled downhill, and pooled in the valleys, smothering every breathing thing within about 25 km (16 miles) of the lake. One survivor, Joseph Nkwain, woke unable to move or speak to find his family had died in the night. Source: en.wikipedia.org/wiki/Lake_Nyos_disaster; Britannica 'Lake Nyos disaster.'",
+    "context": "The killer was ordinary carbon dioxide (CO2), not a poison-gas attack, just invisible CO2 in a deadly amount. Because CO2 is about 50% denser than air, the cloud hugged the ground, rolled downhill and pooled in the valleys, smothering every breathing thing within about 25 km (16 miles) of the lake. Source: en.wikipedia.org/wiki/Lake_Nyos_disaster; Britannica 'Lake Nyos disaster.'",
     "topic": "lake-nyos"
   },
   {
     "tier": 4,
-    "question": "Volcanic gas seeps up from the magma far beneath Lake Nyos and dissolves into the cold, pressurized water at its bottom, where the lake's layers never mix. The gas builds for decades until a disturbance one night lets it all rush out at once, like the cap popping off a shaken soda bottle. What do geologists call such a burst?",
-    "answer": "a limnic eruption",
+    "question": "Volcanic gas seeped for decades from magma deep under Lake Nyos, in Cameroon, and dissolved into the cold depths of the lake, until one night in 1986 it all burst out at once in a limnic eruption. Why had so much gas been able to build up down there?",
+    "answer": "the deep water never mixed with the layers above",
     "choices": [
-      "a limnic eruption",
-      "a phreatic eruption",
-      "a hydrothermal eruption",
-      "a subglacial eruption"
+      "the deep water never mixed with the layers above",
+      "a thick mat of floating weeds capped the lake",
+      "the gas froze into ice on the cold lakebed",
+      "the lake's outlet stream was choked with mud"
     ],
-    "context": "A limnic eruption -- from limne, Greek for lake. Volcanic CO2 dissolves into the deep water under pressure and, because the lake never fully overturns, it builds up for years until a disturbance tips the water past its limit and the gas fizzes out all at once. Scientists still aren't sure what set Nyos off -- the leading guesses are an underwater landslide or a spell of cold rain that suddenly mixed the layers. Source: en.wikipedia.org/wiki/Lake_Nyos_disaster; Britannica 'Lake Nyos disaster.'",
+    "context": "The gas could pile up because Lake Nyos is layered: its cold, heavy deep water never mixes with the layers above, so carbon dioxide seeping in from the magma below stays trapped under pressure for years, like the gas in a sealed soda bottle. When something disturbed the water in 1986, the gas fizzed out all at once: a limnic eruption, from limne, Greek for lake. Scientists still are not sure what set it off; the leading guesses are an underwater landslide or a spell of cold rain that suddenly mixed the layers. Source: en.wikipedia.org/wiki/Lake_Nyos_disaster; Britannica 'Lake Nyos disaster.'",
     "topic": "lake-nyos"
   },
   {
@@ -13685,7 +13542,7 @@
       "the inflow of mountain rivers feeding the lake",
       "the wind funneling down the crater walls"
     ],
-    "context": "As the deep water rises, the drop in pressure lets its dissolved gas fizz out of solution; the bubbles make the column lighter than the water around it, so it accelerates upward -- a self-powered 'gas lift,' exactly like a shaken soda bottle erupting the moment you open it. The first degassing pipe went in in 2001, with two more added in 2011. Only three lakes on Earth are known to be able to erupt this way -- Nyos and Monoun in Cameroon, and giant Lake Kivu on the Rwanda-Congo border, where about two million people live around the shores. Source: en.wikipedia.org/wiki/Lake_Nyos_disaster; eos.org/science-updates/cameroons-lake-nyos-gas-burst-30-years-later.",
+    "context": "As the deep water rises, the drop in pressure lets its dissolved gas fizz out of solution; the bubbles make the column lighter than the water around it, so it accelerates upward, a self-powered 'gas lift,' like a shaken soda bottle erupting the moment its cap comes off. The first degassing pipe went in in 2001, with two more added in 2011. Only three lakes on Earth are known to be able to erupt this way: Nyos and Monoun in Cameroon, and giant Lake Kivu on the Rwanda-Congo border, where about two million people live around the shores. Source: en.wikipedia.org/wiki/Lake_Nyos_disaster; eos.org/science-updates/cameroons-lake-nyos-gas-burst-30-years-later.",
     "topic": "lake-nyos"
   },
   {
@@ -13717,9 +13574,9 @@
   {
     "tier": 3,
     "question": "Hundreds of ships have gone down in Lake Superior's storms over the centuries, and sailors have long said the lake 'never gives up its dead': the drowned from its wrecks are almost never found floating back to the surface. What property of Superior's deep water best explains this?",
-    "answer": "it stays near-freezing, about 4 C, the year round",
+    "answer": "it stays near freezing all the year round",
     "choices": [
-      "it stays near-freezing, about 4 C, the year round",
+      "it stays near freezing all the year round",
       "it is far deeper than a body could ever rise from",
       "its currents drag the drowned out toward the middle",
       "it is unusually heavy with dissolved minerals"
@@ -13729,15 +13586,15 @@
   },
   {
     "tier": 3,
-    "question": "A November storm battered the Great Lakes for days in 1913 with 90-mph winds and 35-foot waves, sinking a dozen ships and killing up to 250 people. It was one of Lake Superior's 'Gales of November', the ferocious autumn storms that sink ships. What sets off these sudden November monsters?",
+    "question": "A November storm battered the Great Lakes for days in 1913 with 90-mph gusts and 35-foot waves, wrecking 19 ships and killing more than 250 people. It was one of Lake Superior's 'Gales of November', the ferocious autumn storms that sink ships. What sets off these sudden November monsters?",
     "answer": "cold Canadian air crashing into warm, moist Gulf air",
     "choices": [
       "cold Canadian air crashing into warm, moist Gulf air",
-      "the warm lake itself feeding the storm like an ocean",
       "leftover tropical hurricanes tracking up from the Gulf",
-      "a jet stream buckling far south out of the Arctic"
+      "a full-moon tide surging across the open lake",
+      "warm chinook winds pouring down off the Rockies"
     ],
-    "context": "The fierce autumn 'Gales of November' form when cold Canadian air slams into warm, moist air drawn up from the Gulf. The Great Storm of 1913 -- the 'Big Blow' or 'Freshwater Fury' -- battered the lakes for days with ~90 mph gusts and 35-foot waves, sinking 12 ships and killing up to about 250 people. Source: canr.msu.edu; en.wikipedia.org/wiki/Great_Lakes_Storm_of_1913.",
+    "context": "The fierce autumn 'Gales of November' form when cold, dry air from northern Canada slams into warm, moist air drawn up from the Gulf of Mexico; the lakes' still-warm water feeds the clash and the jet stream strengthens it. The Great Storm of 1913, the 'Big Blow' or 'Freshwater Fury', battered the lakes for days with gusts near 90 mph and waves over 35 feet, destroying 19 ships and killing more than 250 people. Source: canr.msu.edu; en.wikipedia.org/wiki/Great_Lakes_Storm_of_1913.",
     "topic": "lake-superior-and-the-great-lakes"
   },
   {
@@ -13747,7 +13604,7 @@
     "choices": [
       "advancing sheets of mile-thick ice",
       "a colossal meteorite impact",
-      "a drowned ancient river valley",
+      "the Atlantic flooding far inland",
       "a chain of collapsed volcanoes"
     ],
     "context": "During the last Ice Age, ice sheets more than a mile thick crept south across North America, scraping and gouging the bedrock -- a process geologists call GLACIAL SCOURING -- to carve the five Great Lakes' basins. Meltwater filled them to roughly their present form only about 10,000 years ago, making these giant lakes geological newborns. Source: en.wikipedia.org/wiki/Lake_Superior; USGS Great Lakes.",
@@ -13755,20 +13612,20 @@
   },
   {
     "tier": 5,
-    "question": "The ground around Lake Superior is still rising, a little at a time, and its north shore lifts faster than the south, gently tilting the lake's water southward. For tens of thousands of years ice pressed the crust down there, and it melted away only recently. What do geologists call this slow rise of crust freed from a great weight of ice?",
-    "answer": "isostatic rebound",
+    "question": "The crust around Lake Superior is still springing slowly back up, thousands of years after the mile-thick ice of the last Ice Age melted off it, a rise geologists call isostatic rebound. What is that rise doing to the lake itself?",
+    "answer": "tipping its water slowly toward the south shore",
     "choices": [
-      "isostatic rebound",
-      "tectonic uplift",
-      "continental drift",
-      "plate subduction"
+      "tipping its water slowly toward the south shore",
+      "draining it slowly out toward the Atlantic",
+      "splitting its bed into two separate basins",
+      "warming its deep water slowly from below"
     ],
-    "context": "Freed of the mile-thick ice that once pressed it down, the crust is slowly springing back up -- a process called glacial isostatic adjustment, or ISOSTATIC REBOUND. Around Superior the north rises faster than the south (Michipicoten Island rises about 35 cm per century faster than Marquette, Michigan), slowly tilting the lake's water toward its southern shore. Source: ijc.org; medium.com/the-environment.",
+    "context": "Freed of the mile-thick ice that once pressed it down, the crust is slowly springing back up, a process called glacial isostatic adjustment, or isostatic rebound. Around Superior the north shore rises faster than the south, so the whole lake is slowly tipping, and its water creeps up the southern shore. Source: ijc.org; medium.com/the-environment.",
     "topic": "lake-superior-and-the-great-lakes"
   },
   {
     "tier": 5,
-    "question": "Dark basalt about 1.1 billion years old lines Lake Superior's north shore and its wild Isle Royale. It poured out when North America itself began to tear apart along a 3,000-km crack, flooding the gash with lava, until the tearing stopped and the continent stayed whole. What is this ancient failed split beneath Lake Superior called?",
+    "question": "Dark basalt about 1.1 billion years old lines Lake Superior's north shore and its wild Isle Royale. It poured out when North America itself began to tear apart along a crack that ran for thousands of kilometres, flooding the gash with lava, until the tearing stopped and the continent stayed whole. What is this ancient failed split beneath Lake Superior called?",
     "answer": "the Midcontinent Rift",
     "choices": [
       "the Midcontinent Rift",
@@ -13776,7 +13633,7 @@
       "the Mid-Atlantic Ridge",
       "the Great Rift Valley"
     ],
-    "context": "Superior's north shore and Isle Royale rest on 1.1-billion-year-old flood basalt of the MIDCONTINENT RIFT -- a roughly 3,000-km buried scar where the North American continent began to tear apart, then stopped. Lava filled the crack, and its copper-rich veins later made Michigan's Keweenaw Peninsula a legendary copper-mining district. Source: livescience.com; en.wikipedia.org/wiki/Midcontinent_Rift_System.",
+    "context": "Superior's north shore and Isle Royale rest on 1.1-billion-year-old flood basalt of the Midcontinent Rift, a buried scar some 2,000 to 3,000 km long by different counts, where the North American continent began to tear apart, then stopped. Lava filled the crack, and its copper-rich veins later made Michigan's Keweenaw Peninsula a legendary copper-mining district. Source: en.wikipedia.org/wiki/Midcontinent_Rift_System; grokipedia.com/page/Midcontinent_Rift_System",
     "topic": "lake-superior-and-the-great-lakes"
   },
   {
@@ -13833,15 +13690,15 @@
   },
   {
     "tier": 4,
-    "question": "Geologists study the East African Rift, the huge crack in the crust that cradles Lake Tanganyika, as it opens a few millimetres wider every year with the continent slowly pulling apart. They make a bold prediction about the lake's deep future. What do they expect will become of it?",
-    "answer": "it will flood and grow into a whole new ocean",
+    "question": "Geologists study the East African Rift, the huge crack in the crust that cradles Lake Tanganyika, as it opens a few millimetres wider every year with the continent slowly pulling apart. Some of them make a bold guess about the lake's far future. What do they think could become of it?",
+    "answer": "it could flood and become part of a new ocean",
     "choices": [
-      "it will flood and grow into a whole new ocean",
-      "it will erupt into a long chain of volcanoes",
-      "it will crack apart into many smaller lakes",
-      "it will sink into the deepest dry basin on land"
+      "it could flood and become part of a new ocean",
+      "it could erupt into a long chain of volcanoes",
+      "it could crack apart into many smaller lakes",
+      "it could sink into the deepest dry basin on land"
     ],
-    "context": "Tanganyika sits in the Albertine Rift, the western branch of the East African Rift, where the continent splits a few millimeters a year -- so it is a 'rift lake' (like Baikal). Geologists expect the rift to keep widening until the sea floods in and a new ocean is born, cleaving off the eastern 'Somali' piece of Africa, much as the Red Sea once opened. Source: en.wikipedia.org/wiki/Lake_Tanganyika.",
+    "context": "Tanganyika sits in the Albertine Rift, the western branch of the East African Rift, where the African plate is slowly splitting apart by a few millimetres a year, so it is a 'rift lake' (like Baikal). Some geologists think the rift could one day split eastern Africa from the rest and let the sea flood in, much as the Red Sea once opened between Africa and Arabia, though that could take tens of millions of years. Source: en.wikipedia.org/wiki/East_African_Rift; en.wikipedia.org/wiki/Lake_Tanganyika.",
     "topic": "lake-tanganyika"
   },
   {
@@ -14028,7 +13885,7 @@
   },
   {
     "tier": 2,
-    "question": "Southern Iceland grew no new mountain in June 1783: the ground simply split. Red lava fountained from more than 130 separate vents in a line along a 25-kilometre crack called Lakagigar, all at once. Geologists have a name for an eruption like Laki's. What is it?",
+    "question": "Red lava fountained from more than 130 vents in southern Iceland in June 1783, all strung along one line some 25 kilometres long at Lakagigar. What kind of eruption was it?",
     "answer": "a fissure eruption",
     "choices": [
       "a fissure eruption",
@@ -14106,7 +13963,7 @@
   },
   {
     "tier": 5,
-    "question": "Harvests failed across France under Laki's haze in 1783, and six years later, in 1789, the hungry country exploded into revolution. Some writers have named the Icelandic volcano a hidden spark of the Bastille's fall, but historians are divided and warn that the leap risks a classic reasoning trap. Which trap is it?",
+    "question": "Laki's haze darkened France in 1783, and some writers link it to the cruel winters and poor harvests of the years that followed; in 1789 the hungry country exploded into revolution. They cast the volcano as a secret spark of the Bastille's fall, but historians are divided and warn that the leap risks a classic reasoning trap. Which trap is it?",
     "answer": "mistaking a striking coincidence in time for a proven cause",
     "choices": [
       "mistaking a striking coincidence in time for a proven cause",
@@ -14223,7 +14080,7 @@
   },
   {
     "tier": 2,
-    "question": "Hawaii's Kilauea and Ethiopia's Erta Ale keep churning lakes of molten lava in their craters that never freeze over. Almost none of Earth's more than 1,500 active volcanoes do the same. About how many hold a lava lake at any one time?",
+    "question": "Hawaii's Kilauea and Ethiopia's Erta Ale keep churning lakes of molten lava in their craters that never freeze over. Almost none of Earth's more than a thousand active volcanoes do the same. About how many hold a lava lake at any one time?",
     "answer": "About 8",
     "choices": [
       "About 8",
@@ -14236,7 +14093,7 @@
   },
   {
     "tier": 2,
-    "question": "A lake of molten lava churns and glows red in the wide crater of Mount Nyiragongo, which rises 3,470 metres over the eastern Democratic Republic of Congo. Just 12 km downhill, a crowded city of about a million people sleeps every night in its glow. Which city lives in the shadow of Nyiragongo's fire?",
+    "question": "A lake of molten lava churns and glows red in the wide crater of Mount Nyiragongo, which rises 3,470 metres over the eastern Democratic Republic of Congo. Just 12 km downhill, a crowded city of perhaps a million people sleeps every night in its glow. Which city lives in the shadow of Nyiragongo's fire?",
     "answer": "Goma",
     "choices": [
       "Goma",
@@ -14244,7 +14101,7 @@
       "Bujumbura",
       "Kinshasa"
     ],
-    "context": "Goma, home to about a million people on the shore of Lake Kivu, sits barely 12 km from Nyiragongo's summit crater and one of the largest lava lakes ever known. Living in the volcano's nightly red glow makes Goma one of the most dangerous city sites on Earth -- which is why Nyiragongo was named a 'Decade Volcano' in 1991, singled out for urgent study because it is both very active and close to a huge population. Source: Wikipedia, 'Mount Nyiragongo.'",
+    "context": "Goma, home to perhaps a million people (estimates run from under 800,000 to more than two million) on the shore of Lake Kivu, sits about 12 km from Nyiragongo's summit crater and one of the largest lava lakes ever known. Living in the volcano's nightly red glow makes Goma one of the most dangerous city sites on Earth, which is why Nyiragongo was named a 'Decade Volcano' in 1991, singled out for urgent study because it is both very active and close to a huge population. Source: Wikipedia, 'Mount Nyiragongo'; Wikipedia, 'Goma.'",
     "topic": "lava-lakes-the-worlds-eternal-fire-pits"
   },
   {
@@ -14474,11 +14331,11 @@
     "answer": "hid the death, saying the ruler was in long retreat",
     "choices": [
       "hid the death, saying the ruler was in long retreat",
-      "had the ruler's seal forged onto new orders",
-      "dressed a look-alike monk to sit in his place",
+      "said the ruler had gone on pilgrimage to India",
+      "sealed the palace gates until the work was done",
       "announced the ruler had begun a lifelong silent vow"
     ],
-    "context": "When the Great Fifth died in 1682 with the Red Palace unfinished, his regent Desi Sangye Gyatso concealed the death for some fifteen years, telling Tibet the ruler had withdrawn into a long meditation retreat, so that work on the Potala would not stop. Source: https://grokipedia.com/page/Potala_Palace",
+    "context": "When the Great Fifth died in 1682 with the Red Palace unfinished, his regent Desi Sangye Gyatso concealed the death for some fifteen years, telling Tibet the ruler had withdrawn into a long meditation retreat, so that work on the Potala would not stop; on great occasions an old monk who resembled the Dalai Lama was even hired to pose in his place. Source: https://grokipedia.com/page/Potala_Palace; https://en.wikipedia.org/wiki/5th_Dalai_Lama",
     "topic": "lhasa-the-potala-palace-above-the-roof-of-the-world"
   },
   {
@@ -14743,15 +14600,15 @@
   },
   {
     "tier": 1,
-    "question": "Crowds fled to Lisbon's waterfront on the morning of 1 November 1755, as a strong earthquake flattened much of the city. About forty minutes later a wall of water surged up the Tagus from the Atlantic and drowned them. What is such a wave called?",
-    "answer": "a tsunami",
+    "question": "Lisbon's churches were packed for All Saints' Day Mass on 1 November 1755 when an earthquake flattened much of the city, and about forty minutes later a tsunami surged up the Tagus from the Atlantic. What third disaster struck the city that day?",
+    "answer": "a fire lit by toppled church candles",
     "choices": [
-      "a tsunami",
-      "a storm surge",
-      "a tidal bore",
-      "a rogue wave"
+      "a fire lit by toppled church candles",
+      "a plague carried by rats off the ships",
+      "a flood from a dam that burst upriver",
+      "a lava flow from a volcano out at sea"
     ],
-    "context": "A tsunami is a wave, or train of waves, set off when an undersea quake shoves the ocean floor. The 1755 wave reached the harbor about 40 minutes after the shaking; fires from toppled church candles then burned for days — three disasters in a single morning. (Source: Wikipedia, 1755 Lisbon earthquake.)",
+    "context": "Candles lit for All Saints' Day were burning in the packed churches when the quake struck; toppled, they set fires that spread through the wrecked city and burned for days, after the tsunami that had swept in about 40 minutes after the shaking. Three disasters in a single morning. (Source: Wikipedia, 1755 Lisbon earthquake.)",
     "topic": "lisbon-the-quake-that-shook-the-enlightenment"
   },
   {
@@ -14795,7 +14652,7 @@
   },
   {
     "tier": 4,
-    "question": "As Lisbon still smoldered, the king's chief minister, the Marquis of Pombal, did something no ruler had done after such a disaster. He sent every parish priest a list of questions. How long did the ground shake? Which way did the buildings fall? Did the sea rise or drop first? The priests' answers earned Pombal a founding place in one science. Which science did his parish survey help start?",
+    "question": "Sebastião de Carvalho, the king's minister and later Marquis of Pombal, sent every parish priest a list of questions after the 1755 earthquake. How long did the ground shake? Which way did the buildings fall? Did the sea rise or drop first? The answers earned him a founding place in one science. Which science did his survey help start?",
     "answer": "seismology",
     "choices": [
       "seismology",
@@ -14808,7 +14665,7 @@
   },
   {
     "tier": 5,
-    "question": "The Marquis of Pombal rebuilt the ruined lower town of Lisbon on a clean grid after the 1755 earthquake, determined that the new buildings would survive the next great quake. Inside their thick masonry walls he hid a frame that let each building sway and absorb a tremor's shocks rather than shatter. Soldiers reportedly marched around scale models to test it. What was hidden inside those Pombaline walls?",
+    "question": "Sebastião de Carvalho, the future Marquis of Pombal, rebuilt Lisbon's ruined lower town on a clean grid after the 1755 earthquake, determined that the new buildings would survive the next quake. Inside their thick masonry walls he hid a frame that let each building sway and absorb a tremor's shocks rather than shatter. Soldiers reportedly marched around scale models to test it. What was hidden inside those Pombaline walls?",
     "answer": "a cage of interlocking wooden beams",
     "choices": [
       "a cage of interlocking wooden beams",
