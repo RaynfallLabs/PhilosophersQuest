@@ -80,12 +80,12 @@
   {
     "tier": 1,
     "question": "A boy tells his mother, 'The cat knocked the vase off the shelf.' His sister says, 'The vase was knocked off the shelf.' Which sentence names the actor?",
-    "answer": "the first (ACTIVE names the cat as actor)",
+    "answer": "the boy's sentence",
     "choices": [
-      "the first (ACTIVE names the cat as actor)",
-      "the second",
-      "both",
-      "neither"
+      "the boy's sentence",
+      "the sister's sentence",
+      "both sentences",
+      "neither sentence"
     ],
     "context": "ACTIVE VOICE names the actor as subject: 'The cat knocked the vase'. PASSIVE hides or postpones the actor: 'The vase was knocked'. When the actor matters, use active.",
     "topic": "active-vs-passive-voice-when-the-actor-matters"
@@ -178,7 +178,7 @@
       "'Mistake-making happened.'",
       "no valid active version"
     ],
-    "context": "Active takes the SUBJECT slot with the actor. 'I made mistakes' owns the action. 'Mistakes were made by us' is technically active + agent but still awkward -- and reveals that the writer was trying to hide.",
+    "context": "Active puts the actor in the SUBJECT slot: 'I made mistakes' owns the action. 'Mistakes were made by us' names the actor but is still passive: 'mistakes' keeps the subject slot and the actor waits in a by-phrase. 'Mistake-making happened' hides the actor all over again.",
     "topic": "active-vs-passive-voice-when-the-actor-matters"
   },
   {
@@ -269,7 +269,7 @@
       "either works",
       "neither"
     ],
-    "context": "'Had no effect' -- EFFECT is the noun (the result). This is the common noun case. If you meant 'did not influence' you would say 'did not affect the audience' (verb).",
+    "context": "'Had no effect' -- EFFECT is the noun (the result). This is the common noun case. To say the concert did not influence the audience, a writer would use the verb: 'did not affect the audience'.",
     "topic": "affect-vs-effect-verb-vs-noun-usually"
   },
   {
@@ -313,7 +313,7 @@
   },
   {
     "tier": 3,
-    "question": "A writing teacher takes 'Every night he practised. Every night he failed. Every night he started again.' and moves the repeated words to the back of each phrase: 'he practised all night, he failed all night, he started again all night.' What is this mirror figure called?",
+    "question": "At practice a soccer coach shouts, 'Run as a team, defend as a team, win as a team.' Which figure of repetition is the coach using?",
     "answer": "Epistrophe",
     "choices": [
       "Epistrophe",
@@ -321,7 +321,7 @@
       "Symploce",
       "Alliteration"
     ],
-    "context": "'Epi-' + 'strophe' from Greek 'turning back onto.' Repetition of the closer, not the opener. Source: Grokipedia 'Epistrophe' (2026-09-05).",
+    "context": "'As a team' closes every phrase while the openers change, so the figure is epistrophe: repetition of the closer, not the opener. Repeating both ends at once would be symploce. Source: Grokipedia 'Epistrophe' (2026-09-05).",
     "topic": "anaphora-and-epistrophe-repetition-at-the-start-repetition-a"
   },
   {
@@ -418,14 +418,14 @@
   {
     "tier": 4,
     "question": "A spelling list gives 'won't' where a student expected 'willn't.' Why is the word spelled that way?",
-    "answer": "It comes from an older English form 'woll not,' not from 'will not' -- 'woll' contracted to 'wo'",
+    "answer": "It shrank from 'woll not,' an old form of 'will not'",
     "choices": [
-      "It comes from an older English form 'woll not,' not from 'will not' -- 'woll' contracted to 'wo'",
+      "It shrank from 'woll not,' an old form of 'will not'",
       "It is a modern misspelling that stuck",
-      "It comes from French 'ne veux pas'",
-      "The letters LL are always dropped before N'T"
+      "It was borrowed from the French 'ne veux pas'",
+      "The letters LL always drop out before N'T"
     ],
-    "context": "WON'T's odd shape traces to Old English 'wol,' the older form of 'will.' It contracted from 'woll not' before 'will' took over. Source: Grokipedia 'Apostrophe' (2026-09-05).",
+    "context": "WON'T's odd shape traces to Middle English 'wol' (also spelled 'woll'), an old form of 'will'. 'Woll not' contracted to 'won't' and kept that spelling after 'will' won out. Source: Wiktionary 'won't' (etymology).",
     "topic": "apostrophes-in-contractions-and-not-in-plurals-or-decades"
   },
   {
@@ -487,10 +487,10 @@
     "choices": [
       "'President Abraham Lincoln delivered the Gettysburg Address in 1863.'",
       "'President, Abraham Lincoln, delivered the Gettysburg Address in 1863.'",
-      "'The president Abraham Lincoln delivered the Gettysburg Address in 1863.'",
-      "'The, president, Abraham Lincoln delivered the Gettysburg Address in 1863.'"
+      "'President, Abraham Lincoln delivered the Gettysburg Address in 1863.'",
+      "'President Abraham Lincoln, delivered the Gettysburg Address in 1863.'"
     ],
-    "context": "'President Abraham Lincoln' treats the title + name as one label -- no commas. Compare with 'the president, Abraham Lincoln, delivered ...' where the name is a comma-set non-restrictive apposition to 'the president.' Source: Chicago Manual of Style 17e section 6.28.",
+    "context": "'President Abraham Lincoln' treats the title + name as one label -- no commas. A comma after the title or after the name splits that label or cuts the subject off from its verb. Compare 'the president, Abraham Lincoln, delivered ...' where the name is a comma-set non-restrictive apposition to 'the president.' Source: Chicago Manual of Style 17e section 6.28.",
     "topic": "appositive-commas-my-brother-mark-vs-my-brother-mark"
   },
   {
@@ -530,19 +530,6 @@
       "an eponym (a word from a person's name)"
     ],
     "context": "BACKRONYM = phrase invented after the word to explain the letters retroactively. TIP existed as a word for a small gratuity long before the phrase.",
-    "topic": "backronym-the-acronym-invented-after-the-word"
-  },
-  {
-    "tier": 1,
-    "question": "A curious student looks up the word 'backronym' to learn where it came from. Who coined it?",
-    "answer": "Meredith G. Williams (1983 Washington Post reader contest, BACK + ACRONYM)",
-    "choices": [
-      "Meredith G. Williams (1983 Washington Post reader contest, BACK + ACRONYM)",
-      "William Shakespeare (in a play from 1600)",
-      "Noah Webster (in his 1828 dictionary)",
-      "the term is medieval Latin"
-    ],
-    "context": "A 1983 portmanteau. BACK (retroactive) + ACRONYM. Coined for a reader-submission contest.",
     "topic": "backronym-the-acronym-invented-after-the-word"
   },
   {
@@ -781,12 +768,12 @@
   },
   {
     "tier": 1,
-    "question": "A teacher circles the prepositions 'to,' 'for,' 'with' and 'about' in a paragraph. Which pronoun form must always follow words like these?",
+    "question": "A teacher writes 'Come with ___ and hand the map to ___' and circles the prepositions 'with' and 'to.' Which pronoun form belongs in blanks like those?",
     "answer": "object form (me, him, her, us, them)",
     "choices": [
       "object form (me, him, her, us, them)",
       "subject form (I, he, she, we, they)",
-      "either",
+      "reflexive form (myself, himself, herself)",
       "possessive form (my, his, her)"
     ],
     "context": "PREPOSITIONS take OBJECTS. 'Give it to me' (not 'to I'). 'Come with us' (not 'with we'). 'Between you and me' follows the same rule. Object pronouns are the safe default after any preposition.",
@@ -820,13 +807,13 @@
   },
   {
     "tier": 3,
-    "question": "A wedding planner's seating note reads, 'She sat between Sarah and ___.' The planner tries the line with Sarah taken out. Which word fits?",
-    "answer": "me ('between me' is correct)",
+    "question": "A wedding planner's seating note reads, 'She sat between Sarah and ___.' The planner tries the line with Sarah taken out. Which finished line is right?",
+    "answer": "She sat between Sarah and me.",
     "choices": [
-      "me ('between me' is correct)",
-      "I ('between I' would be wrong)",
-      "myself",
-      "either"
+      "She sat between Sarah and me.",
+      "She sat between Sarah and I.",
+      "She sat between Sarah and myself.",
+      "She sat between Sarah and mine."
     ],
     "context": "Isolate the pronoun: 'She sat between me' works; 'She sat between I' fails. The compound doesn't change the pronoun's role -- object of the preposition either way.",
     "topic": "between-you-and-i-the-pronoun-after-preposition-trap"
@@ -885,28 +872,28 @@
   },
   {
     "tier": 3,
-    "question": "A bedtime story reads, \"‘Come here,’ she said. ‘I have news.’\" Why is 'I' capitalized?",
+    "question": "A bedtime story reads, \"‘Come here,’ she said. ‘We have news.’\" Why is 'We' capitalized?",
     "answer": "it opens a NEW SENTENCE inside the quote; the period ends the first sentence",
     "choices": [
       "it opens a NEW SENTENCE inside the quote; the period ends the first sentence",
-      "I is always capitalized regardless of position",
-      "because SHE SAID is a subordinate clause",
-      "because HAVE NEWS is a subjunctive verb"
+      "every word after an opening quote mark takes a capital",
+      "the word after a dialogue tag always takes a capital",
+      "the comma after 'here' ends the first sentence"
     ],
-    "context": "Two sentences inside the quote: period ends first, capital opens second. Different from tag-in-middle of a single sentence, which uses commas.",
+    "context": "The period after 'said' closes the first sentence, so 'We' opens a second one and takes a capital. When the tag splits ONE sentence, the second half stays lowercase: ‘Come here,’ she said, ‘and sit down.’",
     "topic": "block-quotes-and-dialogue-tag-punctuation"
   },
   {
     "tier": 4,
     "question": "An editor opens the Chicago manual to decide what to set as a block quote, indented with no surrounding quote marks. What does Chicago recommend setting that way?",
-    "answer": "quotations of 100+ words, or 2+ lines of poetry, or a dialogue exchange",
+    "answer": "100+ words of prose, several lines of verse, or a dialogue exchange",
     "choices": [
-      "quotations of 100+ words, or 2+ lines of poetry, or a dialogue exchange",
+      "100+ words of prose, several lines of verse, or a dialogue exchange",
       "any quotation longer than 20 words",
       "only poetry, never prose",
       "only dialogue, never other quotations"
     ],
-    "context": "Chicago style: block-quote long passages, poetry runs, or extended dialogue. Indented, no surrounding quote marks.",
+    "context": "Chicago style: block-quote long prose passages (about 100 words or more), runs of verse, or an exchange of dialogue. Indented, no surrounding quote marks.",
     "topic": "block-quotes-and-dialogue-tag-punctuation"
   },
   {
@@ -932,7 +919,7 @@
       "Delete DEEP -- adjectives are optional",
       "The sentence is fine as written"
     ],
-    "context": "BREATH = noun (a thing you take). BREATHE = verb (to inhale/exhale). Source: Merriam-Webster 'breath' + 'breathe.'",
+    "context": "BREATH = noun (a thing a person takes). BREATHE = verb (to inhale/exhale). Source: Merriam-Webster 'breath' + 'breathe.'",
     "topic": "breath-vs-breathe-noun-vs-verb"
   },
   {
@@ -945,7 +932,7 @@
       "verse -- the extra E marks a line of poetry",
       "vowel -- E is always a vowel"
     ],
-    "context": "Extra E = vErb (the action). Same pattern as takE, makE, seizE -- action verbs ending in E. BREATH (no E) is the noun. Source: Grokipedia 'Breath vs breathe' (2026-09-05).",
+    "context": "Extra E = vErb (the action), the same pattern as BATHE and WREATHE. BREATH (no E) is the noun. Source: Merriam-Webster 'breath' + 'breathe.'",
     "topic": "breath-vs-breathe-noun-vs-verb"
   },
   {
@@ -977,14 +964,14 @@
   {
     "tier": 4,
     "question": "A teacher writes 'breath' and 'breathe' side by side on the board, the thing and the doing. Which other pair follows the same rule?",
-    "answer": "WREATH (a ring of flowers -- noun) vs WREATHE (to encircle -- verb): 'Wreaths on the door'; 'Clouds wreathe the mountain.'",
+    "answer": "WREATH (a ring of flowers) and WREATHE (to encircle)",
     "choices": [
-      "WREATH (a ring of flowers -- noun) vs WREATHE (to encircle -- verb): 'Wreaths on the door'; 'Clouds wreathe the mountain.'",
-      "PATH (a trail -- noun) vs PATHE (a movie studio) -- same rule",
-      "CLOTH (fabric -- noun) vs CLOTHE (to dress -- verb) -- WEA vs OA",
-      "TOOTH (a tooth -- noun) vs TOOTHE (to grow teeth -- verb) -- same rule"
+      "WREATH (a ring of flowers) and WREATHE (to encircle)",
+      "TOOTH (in a jaw) and TOOTHE (to grow teeth)",
+      "PATH (a trail) and PATHE (to walk a trail)",
+      "PLAN (a scheme) and PLANE (an aircraft)"
     ],
-    "context": "WREATH / WREATHE follow the same E-for-verb pattern as BREATH / BREATHE. (CLOTH / CLOTHE is a similar pair too -- E marks the verb -- but WREATH pairs the identical vowel sound.) Source: Merriam-Webster 'wreath' + 'wreathe.'",
+    "context": "WREATH / WREATHE follow the same E-for-verb pattern as BREATH / BREATHE: 'Wreaths hang on the door'; 'Clouds wreathe the mountain.' The verb for growing teeth is TEETHE, built on TEETH; English has no verb 'pathe'; PLAN and PLANE are two different nouns. CLOTH / CLOTHE is another true pair. Source: Merriam-Webster 'wreath' + 'wreathe.'",
     "topic": "breath-vs-breathe-noun-vs-verb"
   },
   {
@@ -1068,14 +1055,14 @@
   {
     "tier": 5,
     "question": "A proofreader lays out four versions of one sentence. Which version keeps to a single side of the Atlantic?",
-    "answer": "'The theater's color scheme is gray, and the manager will organize the event.' (all American)",
+    "answer": "'The theater's color scheme is gray, and the manager will organize the event.'",
     "choices": [
-      "'The theater's color scheme is gray, and the manager will organize the event.' (all American)",
-      "'The theatre's color scheme is grey, and the manager will organise the event.' (mixed)",
-      "'The theater's colour scheme is gray, and the manager will organise the event.' (mixed)",
-      "'The theatre's color scheme is grey, and the manager will organize the event.' (mixed)"
+      "'The theater's color scheme is gray, and the manager will organize the event.'",
+      "'The theatre's color scheme is grey, and the manager will organise the event.'",
+      "'The theater's colour scheme is gray, and the manager will organise the event.'",
+      "'The theatre's color scheme is grey, and the manager will organize the event.'"
     ],
-    "context": "American: theater, color, gray, organize. British: theatre, colour, grey, organise. All-American in the first option; the others mix systems. Source: Merriam-Webster + OED.",
+    "context": "American: theater, color, gray, organize. British: theatre, colour, grey, organise. Only the all-American line stays on one side; each of the others mixes the two systems. Source: Merriam-Webster + OED.",
     "topic": "british-vs-american-spelling-colour-theatre-gray"
   },
   {
@@ -1094,27 +1081,14 @@
   {
     "tier": 4,
     "question": "A newspaper puzzle page prints 'Buffalo buffalo buffalo buffalo' and calls it grammatical: four words, one spelling, three meanings. What does the sentence mean?",
-    "answer": "New York state buffalo bully other buffalo",
+    "answer": "Bison from Buffalo bully other bison",
     "choices": [
-      "New York state buffalo bully other buffalo",
-      "Four different herds of buffalo live in Buffalo",
-      "Cows from Buffalo attack cows from Rochester",
-      "Buffalo the city has too many buffalo"
+      "Bison from Buffalo bully other bison",
+      "Four herds of bison live in Buffalo",
+      "Bison in Buffalo are bullied by the city",
+      "The city of Buffalo has too many bison"
     ],
-    "context": "Parsed: [buffalo (animals) from Buffalo (city)] buffalo (verb: bully) buffalo (other animals). The proper-noun 'Buffalo' acts as an adjective for the first pair of animals. Source: Grokipedia 'Buffalo buffalo...' (2026-09-05).",
-    "topic": "buffalo-buffalo-the-sentence-that-uses-one-word-eight-ways"
-  },
-  {
-    "tier": 5,
-    "question": "A student meets 'Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo' in a word-game book, which credits a 1972 note with making the sentence famous. Who wrote that note?",
-    "answer": "William J. Rapaport at the State University of New York at Buffalo",
-    "choices": [
-      "William J. Rapaport at the State University of New York at Buffalo",
-      "Steven Pinker at MIT",
-      "Noam Chomsky at MIT",
-      "Geoffrey Pullum at UC Santa Cruz"
-    ],
-    "context": "Rapaport coined it in a 1972 SUNY-Buffalo departmental note (fittingly, at a school in Buffalo). Steven Pinker discussed it in 'The Language Instinct' (1994) and made it widely famous, but Rapaport got there first. Source: Rapaport (1972); Pinker (1994).",
+    "context": "Parsed: [buffalo (animals) from Buffalo (city)] buffalo (verb: bully) buffalo (other animals). The proper noun 'Buffalo' acts as an adjective, telling where the first herd comes from. Source: Grokipedia 'Buffalo buffalo...' (2026-09-05).",
     "topic": "buffalo-buffalo-the-sentence-that-uses-one-word-eight-ways"
   },
   {
@@ -1335,25 +1309,25 @@
       "'PRESIDENT Lincoln delivered the address, and after the speech Lincoln, the PRESIDENT, went home.'",
       "'president lincoln delivered the address, and after the speech lincoln, the president, went home.'"
     ],
-    "context": "Title BEFORE the name: capitalize (President Lincoln). Title AFTER the name or used generically: lowercase (the president). Source: Chicago Manual of Style 17e section 8.156.",
+    "context": "Title BEFORE the name: capitalize (President Lincoln). Title AFTER the name or used generically: lowercase (the president). Source: Chicago Manual of Style 17e, titles and offices.",
     "topic": "capitalization-at-sentence-start-and-after-colons"
   },
   {
     "tier": 5,
-    "question": "A proofreader checks four lines from a family newsletter. In which line should the family word be capitalized?",
-    "answer": "'Mother said we could stay up late.' (Mother used as a proper-name substitute)",
+    "question": "A proofreader checks four lines from a family newsletter, each with its family word still in lowercase. In which line should that word take a capital?",
+    "answer": "'We asked mother if we could stay up late.'",
     "choices": [
-      "'Mother said we could stay up late.' (Mother used as a proper-name substitute)",
-      "'my mother said we could stay up late' (used generically with a possessive)",
-      "'my aunt Sally will visit' (descriptor before a name)",
-      "'the aunt of the bride made a toast' (fully generic)"
+      "'We asked mother if we could stay up late.'",
+      "'We asked our mother if we could stay up late.'",
+      "'My aunt baked a pie for the party.'",
+      "'The aunt of the bride made a toast.'"
     ],
-    "context": "Family words are capitalized when they REPLACE the person's name ('Mother said'). Lowercase when they are generic ('my mother said,' 'the mother of the bride'). Titles used BEFORE names capitalize too ('Aunt Sally'). Source: Chicago Manual of Style 17e section 8.158.",
+    "context": "A family word takes a capital when it stands in for the person's name: 'We asked Mother.' After a possessive or an article ('our mother', 'my aunt', 'the aunt of the bride') it is an ordinary noun and stays lowercase. Source: Chicago Manual of Style 17e, kinship names.",
     "topic": "capitalization-at-sentence-start-and-after-colons"
   },
   {
     "tier": 1,
-    "question": "John F. Kennedy ended his inaugural speech on January 20, 1961 with 'Ask not what your country can do for you -- ask what you can do for your country.' The shape of that line takes its name from the Greek letter written like an X. What is it called?",
+    "question": "Toward the end of his inaugural speech on January 20, 1961, John F. Kennedy said, 'Ask not what your country can do for you -- ask what you can do for your country.' The shape of that line takes its name from the Greek letter written like an X. What is it called?",
     "answer": "Chiasmus",
     "choices": [
       "Chiasmus",
@@ -1445,9 +1419,9 @@
   {
     "tier": 2,
     "question": "A court reporter's draft reads, 'The jury ___ their verdict.' In American English, when might plural agreement appear?",
-    "answer": "when emphasising the individual members' actions rather than the group as a unit",
+    "answer": "when emphasizing the individual members' actions rather than the group as a unit",
     "choices": [
-      "when emphasising the individual members' actions rather than the group as a unit",
+      "when emphasizing the individual members' actions rather than the group as a unit",
       "never in American English",
       "only in legal writing",
       "only in the past tense"
@@ -1471,14 +1445,14 @@
   {
     "tier": 3,
     "question": "A school memo begins, 'The staff ___ divided on the issue.' With no style guide named, which verb form fits?",
-    "answer": "either could be correct",
+    "answer": "both 'is' and 'are' can stand, depending on the sense",
     "choices": [
-      "are (highlights division among individual members)",
-      "is (staff as unified group)",
-      "either could be correct",
-      "were"
+      "both 'is' and 'are' can stand, depending on the sense",
+      "only 'is', because a collective noun is always singular",
+      "only 'are', because a staff is many people",
+      "only 'were', because the split is already over"
     ],
-    "context": "'Staff are divided' emphasises the split among individuals (plural sense). 'Staff is divided' treats staff as a single entity that is divided. Both are defensible; consistency matters within a document.",
+    "context": "'Staff are divided' stresses the split among the people; 'staff is divided' treats the staff as one body that is split. Both are defensible; keep one choice consistent within a document. 'Were' would only move the memo into the past.",
     "topic": "collective-nouns-team-family-jury-us-vs-uk"
   },
   {
@@ -1491,7 +1465,7 @@
       "Thanksgiving triggers plural verbs",
       "the sentence is wrong"
     ],
-    "context": "'All' emphasises the individual members. 'The family are all coming' focuses on the separate arrivals. Compare 'The family is small' (family as a unit; its size). Context governs the choice.",
+    "context": "'All' emphasizes the individual members. 'The family are all coming' focuses on the separate arrivals. Compare 'The family is small' (family as a unit; its size). Context governs the choice.",
     "topic": "collective-nouns-team-family-jury-us-vs-uk"
   },
   {
@@ -1509,15 +1483,15 @@
   },
   {
     "tier": 2,
-    "question": "A prose passage says \"sold at two to one odds.\" What is the numeric form?",
+    "question": "A prose passage says \"sold at two to one odds.\" What is the numeric form in Chicago style?",
     "answer": "2:1 (no space around the colon)",
     "choices": [
       "2:1 (no space around the colon)",
-      "2 to 1 (spelled out with spaces)",
-      "2/1 (slash notation)",
-      "2-1 (hyphen notation)"
+      "2.1 (a period between the figures)",
+      "2;1 (a semicolon between the figures)",
+      "2,1 (a comma between the figures)"
     ],
-    "context": "Ratio-colon: 2:1, 3:2:1 for three-way. Standard American usage has no space around the colon.",
+    "context": "Ratio-colon: 2:1, 3:2:1 for three-way, with no space around the colon. A period, semicolon or comma between the figures would read as a decimal or a list. Chicago writes odds the same way (3:2). AP style writes odds with a hyphen (2-1), and British bookmakers write 2/1.",
     "topic": "colons-in-time-ratios-and-bible-references"
   },
   {
@@ -1535,23 +1509,23 @@
   },
   {
     "tier": 4,
-    "question": "A Sunday-school teacher checks four Bible references on a handout. Which one uses the colon correctly?",
-    "answer": "Psalm 23:1-6 (single psalm, verses 1 through 6)",
+    "question": "A Sunday-school teacher writes four references to the first six verses of Psalm 23 on a handout. Which one uses the colon correctly?",
+    "answer": "Psalm 23:1-6",
     "choices": [
-      "Psalm 23:1-6 (single psalm, verses 1 through 6)",
-      "Psalms 23:25 (should be a hyphen for range across psalms)",
-      "Psalms 23-25:1 (colon in the wrong place)",
-      "Psalm23:1-6 (missing space between name and number)"
+      "Psalm 23:1-6",
+      "Psalm 23 : 1-6",
+      "Psalm 23:1:6",
+      "Psalm 1-6:23"
     ],
-    "context": "The colon marks a chapter-verse pair. Multi-psalm ranges without verse numbers (\"Psalms 23-25\") drop the colon.",
+    "context": "Chapter (here, the psalm) before the colon, verse after, no space on either side, and a dash for the run of verses: Psalm 23:1-6. Spaces around the mark, a second colon, or the verse before the chapter all break the pattern. A run of whole psalms takes no colon at all (Psalms 23-25).",
     "topic": "colons-in-time-ratios-and-bible-references"
   },
   {
     "tier": 5,
-    "question": "A librarian types \"Eats, Shoots and Leaves\" and its subtitle into a catalog, with a colon between the two. What is the American capitalization rule there?",
-    "answer": "capitalize the first word of the subtitle (Chicago style)",
+    "question": "A student types \"Eats, Shoots and Leaves\" and its subtitle at the top of a book report, with a colon between the two. What is the American capitalization rule there?",
+    "answer": "capitalize the first word of the subtitle",
     "choices": [
-      "capitalize the first word of the subtitle (Chicago style)",
+      "capitalize the first word of the subtitle",
       "lowercase the entire subtitle",
       "capitalize only the last word of the subtitle",
       "never use a colon between title and subtitle"
@@ -1632,22 +1606,22 @@
       "introducing an explanation of the first clause",
       "joining two independent sentences",
       "marking a list of goals",
-      "signalling a quotation"
+      "signaling a quotation"
     ],
     "context": "The colon here signals that the second part EXPLAINS or ELABORATES the first. Compare with a semicolon (which joins two related independent clauses without the explanation relationship). Chicago 6.63.",
     "topic": "colons-introducing-lists-quotes-and-explanations"
   },
   {
     "tier": 5,
-    "question": "A paperback thriller reads, 'The verdict was clear: The jury had reached its decision.' Which house style is this capitalisation following?",
-    "answer": "AP (capitalise after colon when a full sentence follows)",
+    "question": "A paperback thriller reads, 'The verdict was clear: The jury had reached its decision.' Which house style is this capitalization following?",
+    "answer": "AP (capitalize after a colon when a full sentence follows)",
     "choices": [
-      "AP (capitalise after colon when a full sentence follows)",
+      "AP (capitalize after a colon when a full sentence follows)",
       "Chicago (always lowercase after a colon)",
       "British house style (always uppercase)",
       "no style permits this"
     ],
-    "context": "AP Stylebook capitalises the first word after a colon when it begins a complete sentence. Chicago 6.61 keeps it lowercase unless what follows is a proper noun, a quote, or two or more sentences.",
+    "context": "AP Stylebook capitalizes the first word after a colon when it begins a complete sentence. Chicago 6.63 keeps it lowercase unless what follows is a proper noun, a quotation, or two or more sentences.",
     "topic": "colons-introducing-lists-quotes-and-explanations"
   },
   {
@@ -1692,14 +1666,14 @@
   {
     "tier": 4,
     "question": "A weather diary reads, 'The rain stopped, so we went out.' Its writer swaps 'so' for 'however,' a conjunctive adverb: 'The rain stopped, ___ we went out.' What punctuation does the new sentence need before 'however'?",
-    "answer": "Either the semicolon OR the period is required, not a comma",
+    "answer": "A semicolon: 'The rain stopped; however, we went out.'",
     "choices": [
       "A semicolon: 'The rain stopped; however, we went out.'",
       "A comma is enough: 'The rain stopped, however, we went out.'",
-      "A period: 'The rain stopped. However, we went out.'",
-      "Either the semicolon OR the period is required, not a comma"
+      "No mark at all: 'The rain stopped however, we went out.'",
+      "A colon: 'The rain stopped: however, we went out.'"
     ],
-    "context": "HOWEVER is a CONJUNCTIVE ADVERB, not a FANBOYS. Joining two independent clauses with just a comma before it is a comma splice. Use a semicolon (or a period) instead. Source: Chicago Manual of Style 17e section 6.25.",
+    "context": "HOWEVER is a CONJUNCTIVE ADVERB, not a FANBOYS. Joining two independent clauses with just a comma before it is a comma splice, and no mark at all fuses them. Use a semicolon (a period also works). A colon would promise an explanation, and none follows. Source: Chicago Manual of Style 17e section 6.25.",
     "topic": "comma-before-a-coordinating-conjunction-fanboys"
   },
   {
@@ -1803,7 +1777,7 @@
       "fragment",
       "run-on"
     ],
-    "context": "Short, tightly parallel actions in a series are treated as a list, not a splice. Caesar's 'Veni, vidi, vici' style is a recognised exception. Chicago 6.60. Do not extend to long clauses.",
+    "context": "With one subject ('She') and three verbs, the line holds only one clause, so there is nothing to splice: it is a series of actions, like Caesar's 'came, saw, conquered'. A splice needs two clauses that could each stand alone.",
     "topic": "comma-splices-two-sentences-joined-only-by-a-comma"
   },
   {
@@ -1834,15 +1808,15 @@
   },
   {
     "tier": 3,
-    "question": "A mailing label shows \"123 Main Street, Springfield, Illinois 62701, USA.\" Between which pair is there no comma?",
-    "answer": "between the state and the zip (ILLINOIS 62701, no comma)",
+    "question": "A mailing label is typed on one line with no commas yet: \"123 Main Street Springfield Illinois 62701 USA.\" Once it is punctuated, which gap stays without a comma?",
+    "answer": "between the state and the ZIP code",
     "choices": [
-      "between the state and the zip (ILLINOIS 62701, no comma)",
-      "between the street and city (Main Street Springfield, no comma)",
-      "between the city and state (Springfield Illinois, no comma)",
-      "between the country and end (USA., no comma)"
+      "between the state and the ZIP code",
+      "between the street and the city",
+      "between the city and the state",
+      "between the ZIP code and the country"
     ],
-    "context": "State and zip are joined without a comma. Everything else in the address takes commas between elements.",
+    "context": "Punctuated, the label reads 123 Main Street, Springfield, Illinois 62701, USA. Every element takes a comma except the gap between the state and the ZIP code.",
     "topic": "commas-in-addresses-springfield-illinois"
   },
   {
@@ -2121,12 +2095,12 @@
   {
     "tier": 1,
     "question": "A fashion column reads, 'Her scarf really COMPLIMENTS her jacket.' The writer means the two look good together. Which correction is right?",
-    "answer": "Change COMPLIMENTS to COMPLEMENTS -- with -E- means to COMPLETE or go well with",
+    "answer": "Change COMPLIMENTS to COMPLEMENTS -- the E spelling means 'go well with'",
     "choices": [
-      "Change COMPLIMENTS to COMPLEMENTS -- with -E- means to COMPLETE or go well with",
-      "Change JACKET to COAT -- more specific noun",
-      "Delete REALLY -- adverbs are unnecessary",
-      "The sentence is fine as written"
+      "Change COMPLIMENTS to COMPLEMENTS -- the E spelling means 'go well with'",
+      "Keep COMPLIMENTS -- the I spelling means 'go well with'",
+      "Change COMPLIMENTS to COMPLIMENTED -- the line needs the past tense",
+      "Change COMPLIMENTS to COMPLIMENTARY -- the slot needs an adjective"
     ],
     "context": "COMPLEMENT (-e-) = complete / go well with. COMPLIMENT (-i-) = spoken praise. Different letters, different jobs. Source: Merriam-Webster 'complement' + 'compliment.'",
     "topic": "complement-vs-compliment-completing-vs-praising"
@@ -2134,14 +2108,14 @@
   {
     "tier": 2,
     "question": "A teacher points at the board: comPLEment shares -PLE- with comPLEte. Then she circles the -I- in comPLIment. What does that -I- stand for?",
-    "answer": "'I like it!' -- a praise coming from ME",
+    "answer": "'I like it!' -- praise coming from ME",
     "choices": [
-      "'I like it!' -- a praise coming from ME",
+      "'I like it!' -- praise coming from ME",
       "'I' as in the letter that starts INDIA",
       "'I' as in idealize",
       "'I' as in imperfect"
     ],
-    "context": "comPLIment carries the -I- of a spoken 'I like it!' -- a praise. comPLEment carries the -PLE- of comPLEte -- to finish or go well with. Source: Grokipedia 'Complement vs compliment' (2026-09-05).",
+    "context": "comPLIment carries the -I- of a spoken 'I like it!' -- praise. comPLEment carries the -PLE- of comPLEte -- to finish or go well with. Source: Grokipedia 'Complement vs compliment' (2026-09-05).",
     "topic": "complement-vs-compliment-completing-vs-praising"
   },
   {
@@ -2232,7 +2206,7 @@
       "was -- past tense required",
       "were -- past tense plural"
     ],
-    "context": "Here the two ingredients are being spread SEPARATELY -- two things, plural verb. Another question shows the exception. Source: Chicago Manual of Style 17e section 5.140.",
+    "context": "Here the two spreads go on separately, from two jars: two things, plural verb. Once they make one sandwich, the pair turns singular: 'Peanut butter and jelly IS my favorite sandwich.' Source: Chicago Manual of Style 17e section 5.140.",
     "topic": "compound-subjects-with-and-usually-plural-sometimes-singular"
   },
   {
@@ -2393,15 +2367,15 @@
   },
   {
     "tier": 5,
-    "question": "An office memo reads, 'Either the manager or one of the assistants ___ handle this.' Which verb works best?",
-    "answer": "will (modal handles both readings gracefully)",
+    "question": "An office memo reads, 'Either the manager or the assistants ___ the files.' The writer wants a verb that agrees with either subject on its own. Which one fits?",
+    "answer": "will sort",
     "choices": [
-      "will (modal handles both readings gracefully)",
-      "handles",
-      "handle",
-      "are handling"
+      "will sort",
+      "sort",
+      "sorts",
+      "is sorting"
     ],
-    "context": "STYLE TIP for awkward nearer-subject cases: use a modal (will, can, must, should) or recast the sentence. Modals do not inflect for number, sidestepping the disagreement entirely.",
+    "context": "'Will sort' works with either subject: 'the manager will sort' and 'the assistants will sort.' Modals (will, can, must, should) never change for number, so they sidestep the nearer-subject rule. 'Sort' agrees only with the plural; 'sorts' and 'is sorting' only with the singular.",
     "topic": "compound-subjects-with-or-nor-the-nearer-subject-rule"
   },
   {
@@ -2527,11 +2501,11 @@
     "answer": "'She revised the essay carefully.'",
     "choices": [
       "'She revised the essay carefully.'",
-      "'She carefully essay revised.'",
-      "'She essay revised carefully'",
-      "no concise version"
+      "'She revised the essay in a manner that was careful.'",
+      "'She was careful in the revising of the essay.'",
+      "'She revised the essay with care and caution.'"
     ],
-    "context": "'In a careful manner' → 'carefully'. 'In a hurried manner' → 'hurriedly'. Any '-ly' adverb typically replaces 'in a ___ manner'. Chicago 5.250.",
+    "context": "'In a careful manner' → 'carefully'. 'In a hurried manner' → 'hurriedly'. Any '-ly' adverb typically replaces 'in a ___ manner'. The other versions keep the padding or add a redundant pair. Chicago 5.250.",
     "topic": "concision-eliminating-deadwood-phrases"
   },
   {
@@ -2553,11 +2527,11 @@
     "answer": "'She was writing a letter when he called.'",
     "choices": [
       "'She was writing a letter when he called.'",
-      "'She process wrote a letter'",
-      "'She wrote in-process a letter'",
-      "no trim needed"
+      "'She wrote a letter when he called.'",
+      "'She was in the act of writing a letter when he called.'",
+      "'She was busy in the process of writing a letter when he called.'"
     ],
-    "context": "'Was in the process of writing' → 'was writing'. The 'in the process of' adds nothing; the past continuous already conveys the ongoing action.",
+    "context": "'Was in the process of writing' → 'was writing'. The past continuous already says the action was under way. 'She wrote a letter when he called' is shorter but changes the story: now the writing follows the call. 'In the act of' is the same deadwood in other words.",
     "topic": "concision-eliminating-deadwood-phrases"
   },
   {
@@ -2566,24 +2540,24 @@
     "answer": "'The meeting has been rescheduled.'",
     "choices": [
       "'The meeting has been rescheduled.'",
-      "'It should be noted the meeting rescheduled'",
-      "'Note: the meeting rescheduled'",
-      "no trim"
+      "'Importantly, the meeting has been rescheduled.'",
+      "'It is worth noting that the meeting has been rescheduled.'",
+      "'The meeting, it is important to note, has been rescheduled.'"
     ],
-    "context": "'It is important to note that' is filler. If it's important, state it. Cut the metadiscourse. The reader trusts you to include only important information.",
+    "context": "'It is important to note that' is filler. If it is important, state it. Swapping in 'it is worth noting', opening on 'Importantly', or tucking the phrase into the middle keeps the same filler.",
     "topic": "concision-eliminating-deadwood-phrases"
   },
   {
     "tier": 4,
     "question": "A school newsletter says, 'There are many students who need help.' What is the concise version?",
-    "answer": "'Many students need help.' (drop the 'there are... who' construction)",
+    "answer": "'Many students need help.'",
     "choices": [
-      "'Many students need help.' (drop the 'there are... who' construction)",
-      "'There are many needing help students'",
-      "'Many students who need help'",
-      "no fix"
+      "'Many students need help.'",
+      "'There are many students needing help.'",
+      "'Many of the students are students who need help.'",
+      "'There exist many students who need help.'"
     ],
-    "context": "'THERE IS/ARE... WHO/THAT' constructions are usually deadweight. 'There are people who work hard' → 'Some people work hard'. Save a word count and gain directness.",
+    "context": "'THERE IS/ARE... WHO/THAT' constructions are usually deadweight. 'There are people who work hard' → 'Some people work hard'. Trading 'who need' for 'needing', or 'there are' for 'there exist', keeps the empty frame.",
     "topic": "concision-eliminating-deadwood-phrases"
   },
   {
@@ -2596,7 +2570,7 @@
       "'It was her decision that she would run.'",
       "'The decision she made was to run.'"
     ],
-    "context": "Subject + verb + object. The others use nominalisations ('made the decision', 'the decision was'), passive-like constructions, or padding. Direct beats bureaucratic every time.",
+    "context": "Subject + verb + object. The others use nominalizations ('made the decision', 'the decision was'), passive-like constructions, or padding. Direct beats bureaucratic every time.",
     "topic": "concision-eliminating-deadwood-phrases"
   },
   {
@@ -2680,14 +2654,14 @@
   {
     "tier": 1,
     "question": "A butcher cleaves the meat in two, and the cleaver splits it apart. A husband in the old wedding vow cleaves to his wife and clings to her. What is the name for a word like 'cleave'?",
-    "answer": "Contronym (also called a Janus word)",
+    "answer": "Contronym",
     "choices": [
-      "Contronym (also called a Janus word)",
+      "Contronym",
       "Synonym",
       "Homophone",
       "Palindrome"
     ],
-    "context": "The name Janus comes from the two-faced Roman god who looked in opposite directions. Also called an auto-antonym. Source: Grokipedia 'Auto-antonym' (2026-09-05).",
+    "context": "CLEAVE means both to split apart and to cling to. A contronym is also called a Janus word, after the two-faced Roman god who looked in opposite directions, or an auto-antonym. Source: Grokipedia 'Auto-antonym' (2026-09-05).",
     "topic": "contronym-the-word-that-means-its-own-opposite"
   },
   {
@@ -2700,7 +2674,7 @@
       "To ignore",
       "To postpone"
     ],
-    "context": "SANCTION is a contronym: 'the boss sanctioned the plan' = approved it; 'economic sanctions were imposed' = punishment. Only the sentence around it tells you which sense is meant. Source: Merriam-Webster's Dictionary, 'sanction'.",
+    "context": "SANCTION is a contronym: 'the boss sanctioned the plan' = approved it; 'economic sanctions were imposed' = punishment. Only the sentence around it shows which sense is meant. Source: Merriam-Webster's Dictionary, 'sanction'.",
     "topic": "contronym-the-word-that-means-its-own-opposite"
   },
   {
@@ -2739,7 +2713,7 @@
       "Washed OR pressed",
       "Sold OR bought back"
     ],
-    "context": "TRIM is a contronym: a Christmas tree is TRIMMED (decorated) but hair is TRIMMED (cut off). Same word, opposite actions -- only the wider scene tells you which. Source: Merriam-Webster's Dictionary, 'trim'.",
+    "context": "TRIM is a contronym: a Christmas tree is TRIMMED (decorated) but hair is TRIMMED (cut off). Same word, opposite actions -- only the wider scene decides which. Source: Merriam-Webster's Dictionary, 'trim'.",
     "topic": "contronym-the-word-that-means-its-own-opposite"
   },
   {
@@ -2748,9 +2722,9 @@
     "answer": "In one clause it means 'heading toward'; in the other, 'tied up'",
     "choices": [
       "In one clause it means 'heading toward'; in the other, 'tied up'",
-      "It rhymes with itself",
-      "It sounds the same as another word with a different spelling",
-      "It reads the same backwards and forwards"
+      "It means 'tied up' in both clauses",
+      "It is spelled the same but said two different ways",
+      "It sounds like another word with a different spelling"
     ],
     "context": "The boat is HEADING for Boston (freely moving toward); the prisoner is TIED UP (fixed, unable to move). BOUND is a contronym. Fellow contronyms: FAST ('run fast' = quickly; 'hold fast' = stuck firmly). Source: Merriam-Webster's Dictionary, various entries.",
     "topic": "contronym-the-word-that-means-its-own-opposite"
@@ -2761,11 +2735,11 @@
     "answer": "SCREEN -- can mean to hide, or to display",
     "choices": [
       "SCREEN -- can mean to hide, or to display",
-      "TREE -- always the same object",
-      "BOOK -- always the same object",
-      "SILVER -- always the same metal"
+      "BARK -- can mean a dog's call, or a tree's skin",
+      "BAT -- can mean a flying animal, or a club",
+      "LIGHT -- can mean not heavy, or not dark"
     ],
-    "context": "A curtain SCREENS a room (hides it); a projector SCREENS a movie (displays it). Two opposite senses, one word. Source: Merriam-Webster's Dictionary, 'screen'.",
+    "context": "A curtain SCREENS a room (hides it); a projector SCREENS a movie (displays it). Two opposite senses, one word. BARK, BAT and LIGHT each carry two unrelated senses, but neither sense is the other's opposite. Source: Merriam-Webster's Dictionary, 'screen'.",
     "topic": "contronym-the-word-that-means-its-own-opposite"
   },
   {
@@ -2831,19 +2805,6 @@
       "All three positions need commas -- three adjectives always take commas"
     ],
     "context": "Cumulative adjectives stack in the fixed English order and take no commas. 'A beautiful old French painting' cannot be reordered ('an old beautiful French painting' sounds off). Source: Chicago Manual of Style 17e section 6.36.",
-    "topic": "coordinate-adjective-commas-a-small-red-ball"
-  },
-  {
-    "tier": 5,
-    "question": "A magazine editor stares at two versions, 'a bright yellow sun' and 'a bright, yellow sun,' and cannot choose. For a borderline case like that, what does Chicago advise?",
-    "answer": "Use the swap test; when in doubt, no comma",
-    "choices": [
-      "Use the swap test; when in doubt, no comma",
-      "Always use the comma to be safe",
-      "Never use the comma between color adjectives",
-      "Toss a coin -- either is equally correct"
-    ],
-    "context": "'A yellow bright sun' feels a little off, so BRIGHT and YELLOW are cumulative rather than coordinate -- no comma. When the swap test is genuinely borderline, Chicago says drop the comma. Source: Chicago Manual of Style 17e section 6.36.",
     "topic": "coordinate-adjective-commas-a-small-red-ball"
   },
   {
@@ -3064,20 +3025,20 @@
       "MEDIC",
       "no singular exists"
     ],
-    "context": "MEDIUM = a means, a channel (a medium of communication). MEDIA = plural. 'The media are biased' (traditional). 'The media is biased' (modern collective treatment). Both are common.",
+    "context": "MEDIUM = a means, a channel (a medium of communication). MEDIA = plural. 'The media are covering the storm' (traditional). 'The media is covering the storm' (modern collective treatment). Both are common.",
     "topic": "data-media-agenda-latin-plurals-meeting-modern-usage"
   },
   {
     "tier": 3,
     "question": "A club secretary's notice reads, 'The agenda for the meeting ___ short.' How does grammar treat 'agenda' there?",
-    "answer": "singular (a list of things to be done -- now a mass noun in English)",
+    "answer": "singular (one list, with its own plural 'agendas')",
     "choices": [
-      "singular (a list of things to be done -- now a mass noun in English)",
-      "plural (Latin origin)",
-      "either equally",
-      "always plural"
+      "singular (one list, with its own plural 'agendas')",
+      "plural (it is the Latin plural of 'agendum')",
+      "plural in formal writing, singular in speech",
+      "either, with no difference in meaning"
     ],
-    "context": "AGENDA is Latin plural of AGENDUM (a thing to be done), but in English it has fully become a singular mass noun -- 'the agenda IS'. Plural form 'agendas' is now the English plural.",
+    "context": "AGENDA was the Latin plural of AGENDUM (a thing to be done), but in English it has become an ordinary singular noun -- 'the agenda IS short' -- with its own English plural, 'agendas'.",
     "topic": "data-media-agenda-latin-plurals-meeting-modern-usage"
   },
   {
@@ -3129,7 +3090,7 @@
       "The datas are clear, the criterias are met, and the phenomenas are documented.",
       "The data are clear, the criterias are met, and the phenomenas are documented."
     ],
-    "context": "DATA (plural of datum) with plural verb (traditional). CRITERIA (plural of criterion) with plural verb. PHENOMENA (plural of phenomenon) with plural verb. Consistency and correct Latin plurals.",
+    "context": "DATA (plural of datum) with plural verb (traditional). CRITERIA (plural of criterion) with plural verb. PHENOMENA (plural of phenomenon) with plural verb. Consistency, and the correct Latin and Greek plurals.",
     "topic": "data-media-agenda-latin-plurals-meeting-modern-usage"
   },
   {
