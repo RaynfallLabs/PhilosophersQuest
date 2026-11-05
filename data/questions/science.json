@@ -12966,9 +12966,9 @@
     "answer": "Brand-new mutations no one had ever studied in humans",
     "choices": [
       "Brand-new mutations no one had ever studied in humans",
-      "A clean copy of the delta-32 deletion on both alleles",
-      "The delta-32 deletion on one allele in each girl only",
-      "No detectable edit on either allele in either girl"
+      "A clean copy of the delta-32 deletion in both girls",
+      "The delta-32 deletion in one girl, no edit in the other",
+      "No detectable edit at all in either girl"
     ],
     "context": "Lulu ended up heterozygous: one normal CCR5 and one carrying a 15-base-pair in-frame deletion. Nana had a 4-base-pair deletion on one allele and a single-base insertion on the other. Those variants are not found in nature; their consequences are unknown -- and the girls can pass them on. Source: Kiran Musunuru thread; journals.plos.org, 'Gene-edited babies: what went wrong'.",
     "topic": "he-jiankui-and-the-line-that-was-crossed"
@@ -13092,7 +13092,7 @@
   },
   {
     "tier": 4,
-    "question": "Duncan Lorimer's 2007 burst survived the check that sank the perytons. Its lower frequencies had lagged behind its higher ones, a delay called the dispersion measure and the work of loose electrons along the way, and the delay was huge. What did that dispersion measure let the Parkes team argue about the source?",
+    "question": "Duncan Lorimer's 2007 burst survived the check that sank the perytons. Its lower frequencies had lagged behind its higher ones, and the size of that lag counts the loose electrons the signal crossed on the way, a figure called the dispersion measure. Lorimer's was huge. What did that huge figure let the Parkes team argue about the source?",
     "answer": "That the burst had come from outside our galaxy, from cosmological distances",
     "choices": [
       "That the burst had come from outside our galaxy, from cosmological distances",
@@ -13126,7 +13126,7 @@
       "Calcium chloride",
       "Sodium bicarbonate"
     ],
-    "context": "Ammonium nitrate dissolves in water endothermically, absorbing about 25.7 kilojoules per mole; the dissolving pulls heat out of the surroundings (including your hand) fast enough to drop the pack near 0 C. Calcium chloride is the opposite: dissolving it in water releases heat. Source: Wikipedia, Ice pack.",
+    "context": "Ammonium nitrate dissolves in water endothermically, absorbing about 25.7 kilojoules per mole; the dissolving pulls heat out of the surroundings (including the hand holding it) fast enough to drop the pack near 0 C. Calcium chloride is the opposite: dissolving it in water releases heat. Source: Wikipedia, Ice pack.",
     "topic": "heat-you-can-hold-endothermic-and-exothermic-in-your-palm"
   },
   {
@@ -13169,8 +13169,8 @@
     "topic": "heat-you-can-hold-endothermic-and-exothermic-in-your-palm"
   },
   {
-    "tier": 5,
-    "question": "Hans Goldschmidt patented a reaction in 1893, lit with a bit of magnesium ribbon. Dry aluminium powder is mixed with iron-oxide powder, and once it starts, the mix climbs past 2,500 degrees Celsius. Since about 1899 rail crews around the world have used it out on the track, with no power supply. For what specific job?",
+    "tier": 3,
+    "question": "Hans Goldschmidt patented a reaction in 1895, lit with a bit of magnesium ribbon. Dry aluminium powder is mixed with iron-oxide powder, and once it starts, the mix climbs past 2,500 degrees Celsius. Since about 1899 rail crews around the world have used it out on the track, with no power supply. For what specific job?",
     "answer": "Welding one steel rail to the next steel rail",
     "choices": [
       "Welding one steel rail to the next steel rail",
@@ -13178,7 +13178,7 @@
       "Cutting through a snapped rail so it can be lifted out",
       "Casting replacement wheel bearings on the spot"
     ],
-    "context": "Aluminium 'wants' oxygen more than iron does, so it simply takes it, releasing enormous heat and depositing molten iron exactly where the small clay crucible is aimed: the rail-end joint. The reaction needs no power supply and no external heat once ignited, which is why the same 1893 chemistry still welds rails outdoors on remote track today. Source: Wikipedia, Hans Goldschmidt; Britannica, Thermit.",
+    "context": "Aluminium 'wants' oxygen more than iron does, so it simply takes it, releasing enormous heat and depositing molten iron exactly where the small clay crucible is aimed: the rail-end joint. The reaction needs no power supply and no external heat once ignited, which is why the same chemistry Goldschmidt patented in 1895 still welds rails outdoors on remote track today. Source: Wikipedia, Hans Goldschmidt; Britannica, Thermit.",
     "topic": "heat-you-can-hold-endothermic-and-exothermic-in-your-palm"
   },
   {
@@ -13347,7 +13347,7 @@
       "Her tight hospital wristband.",
       "Her cracked and callused hands."
     ],
-    "context": "Kubicek later told the writer Rebecca Skloot: 'When I saw those toenails, I nearly fainted. I thought, Oh jeez, she's a real person.' Kubicek was the one who had labelled the culture tubes 'HeLa', two letters from each of her names, to keep the donor anonymous. Source: Johns Hopkins Magazine, 'Immortal Cells, Enduring Issues' (2010), quoting Rebecca Skloot's 'The Immortal Life of Henrietta Lacks'.",
+    "context": "Kubicek later told the writer Rebecca Skloot: 'When I saw those toenails, I nearly fainted. I thought, Oh jeez, she's a real person.' Kubicek was the one who had labelled the culture tubes 'HeLa', two letters from each of her names, to keep the donor anonymous. For twenty-five years the public was told the cells came from a woman called Helen Lane, sometimes Helen Larson; a 1976 Rolling Stone article by Michael Rogers first brought the real woman behind the cells to a wide public. Source: Johns Hopkins Magazine, 'Immortal Cells, Enduring Issues' (2010), quoting Rebecca Skloot's 'The Immortal Life of Henrietta Lacks'.",
     "topic": "hela-the-cells-that-outlived-henrietta-lacks"
   },
   {
@@ -13374,19 +13374,6 @@
       "Sheep blood, boiled potato starch and warm glucose syrup."
     ],
     "context": "The roller drum was Gey's own invention, built to keep every cell bathed as the tubes turned. In the tube beside the tumour, Henrietta's own healthy cervical tissue withered and died, exactly as human cells always had. The tumour cells doubled every 20 to 24 hours instead. Sources: grokipedia.com/page/HeLa ; en.wikipedia.org/wiki/George_Otto_Gey",
-    "topic": "hela-the-cells-that-outlived-henrietta-lacks"
-  },
-  {
-    "tier": 2,
-    "question": "Mary Kubicek wrote a short label on the tubes of Henrietta Lacks's tumour cells in George Gey's lab, and it stuck. For twenty-five years the public was told the world's most-used human cells came from a woman called Helen Lane. What short name are those cells known by in labs today?",
-    "answer": "HeLa cells",
-    "choices": [
-      "HeLa cells",
-      "HL-2 cells",
-      "Lacks cells",
-      "Cambridge cells"
-    ],
-    "context": "The cover name varied - 'Helen Lane' in most tellings, sometimes 'Helen Larson.' Rogers's 1976 article was the first major press piece to put the real woman's name to the world's most famous cells, twenty-five years after her death; Rebecca Skloot's book followed in 2010. Source: en.wikipedia.org/wiki/Henrietta_Lacks",
     "topic": "hela-the-cells-that-outlived-henrietta-lacks"
   },
   {
@@ -13477,7 +13464,7 @@
       "Get a signed tissue-release form from the patient, as federal law required.",
       "Obey the Nuremberg Code of 1947, which bound American hospitals directly."
     ],
-    "context": "Taking leftover surgical tissue was routine practice, and nothing then-illegal happened. The Nuremberg Code of 1947 existed but was not binding on American hospitals and had almost no effect on the practice. Both halves of the honest statement hold at once: no crime was committed in 1951, and the family was shut out of every decision and every dollar for decades. Both are reported here, and neither is resolved for you. Source: grokipedia.com/page/HeLa (Consent Practices in 1950s Medical Research)",
+    "context": "Taking leftover surgical tissue was routine practice, and nothing then-illegal happened. The Nuremberg Code of 1947 existed but was not binding on American hospitals and had almost no effect on the practice. Both halves of the honest statement hold at once: no crime was committed in 1951, and the family was shut out of every decision and every dollar for decades. Source: grokipedia.com/page/HeLa (Consent Practices in 1950s Medical Research)",
     "topic": "hela-the-cells-that-outlived-henrietta-lacks"
   },
   {
@@ -13514,7 +13501,7 @@
       "Helium",
       "Neon",
       "Argon",
-      "Sodium"
+      "Coronium"
     ],
     "context": "Janssen had crossed the Indian Ocean to catch totality. The 'red loop' was a solar prominence -- an arch of glowing gas held up by the Sun's magnetic field. The mystery yellow line became the D3 line of a new element. Source: aps.org 'August 18 and October 20, 1868: Discovery of Helium'.",
     "topic": "helium-found-in-the-sun-before-it-was-found-on-earth"
@@ -13534,15 +13521,15 @@
   },
   {
     "tier": 3,
-    "question": "Norman Lockyer spotted a bright yellow line in late 1868 that matched no element known on Earth. He proposed a name for the new element built from a Greek word, helios, and the profession accepted it. Many chemists thought it reckless to name a thing nobody had ever held. What does the Greek word mean?",
-    "answer": "The Sun",
+    "question": "Norman Lockyer gave a name to an element known only from a yellow line seen in the Sun's light in 1868, and the profession accepted it. Many chemists thought it reckless to name a thing nobody had ever held, and for nearly thirty years nobody did. What finally put the gas in a chemist's hands?",
+    "answer": "William Ramsay found it inside a uranium mineral",
     "choices": [
-      "The Sun",
-      "Yellow flame",
-      "Bright star",
-      "Fire from the sky"
+      "William Ramsay found it inside a uranium mineral",
+      "Lord Rayleigh found it left over in purified air",
+      "James Dewar boiled it off a flask of liquid air",
+      "Henri Moissan split it from a salt with a current"
     ],
-    "context": "Naming an element nobody had ever held struck many chemists as reckless, and for nearly thirty years helium remained a line on a chart and nothing more -- until William Ramsay isolated it from a uranium rock in 1895. Source: sciencemuseum.org.uk 150-years blog; aps.org discovery-of-helium-1868.",
+    "context": "Lockyer built the name from the Greek helios, the Sun. In March 1895 William Ramsay treated cleveite, a uranium-rich mineral, with acid and collected a gas whose spectral lines matched the line seen in the Sun: the Sun's element, at last in a bottle on Earth. For nearly thirty years before that, helium had been a line on a chart and nothing more. Sources: grokipedia.com/page/Helium; sciencemuseum.org.uk 150-years blog; aps.org discovery-of-helium-1868.",
     "topic": "helium-found-in-the-sun-before-it-was-found-on-earth"
   },
   {
@@ -13566,7 +13553,7 @@
       "Its electrical resistance fell to zero",
       "Its electrical resistance climbed to infinity",
       "It emitted a bright yellow light",
-      "It fused with the helium into an alloy"
+      "It crept up the glass walls on its own"
     ],
     "context": "Kamerlingh Onnes had discovered superconductivity, and won the 1913 Nobel Prize in Physics for the low-temperature work. Below 2.17 K, liquid helium-4 does its own trick: it becomes a superfluid, with zero viscosity, and creeps up and over the walls of its container. Both effects only became reachable because Onnes had learned how to keep helium liquid. Sources: ethw.org superconductivity 1911; wmi.badw.de on liquid helium.",
     "topic": "helium-found-in-the-sun-before-it-was-found-on-earth"
@@ -13691,9 +13678,9 @@
   {
     "tier": 5,
     "question": "Gosta Mittag-Leffler mailed a letter to Henrietta Leavitt at Harvard in 1925. The Swedish mathematician planned to nominate her for the 1926 Nobel Prize in Physics for her period-luminosity work. What did the observatory's reply tell him?",
-    "answer": "she had died of stomach cancer nearly four years earlier",
+    "answer": "she had died of stomach cancer about three years earlier",
     "choices": [
-      "she had died of stomach cancer nearly four years earlier",
+      "she had died of stomach cancer about three years earlier",
       "she had retired and moved away from Cambridge",
       "she had already declined all prize nominations on principle",
       "she was now the head of the Harvard College Observatory"
@@ -13725,19 +13712,6 @@
       "pigeons"
     ],
     "context": "Topley and Wilson published in the Journal of Hygiene in 1923: they added susceptible newcomers to a stable cage, watched a fresh wave of infection rise, and watched it fade as immune numbers grew. This was the moment 'herd immunity' was first used in a human-medicine context. Source: pubmed.ncbi.nlm.nih.gov/34111938/ ; sciencedirect.com/science/article/pii/S0140673620319243",
-    "topic": "herd-immunity-honestly"
-  },
-  {
-    "tier": 3,
-    "question": "A. W. Hedrich combed through three decades of measles records from one American city in the early 1930s. He found the human version of what Topley and Wilson had produced in their animal cages. What concept did his work help establish?",
-    "answer": "Herd immunity",
-    "choices": [
-      "Herd immunity",
-      "Natural selection",
-      "Contact tracing",
-      "Vaccine efficacy"
-    ],
-    "context": "Hedrich's 1933 paper analysed Baltimore monthly measles cases from 1900 to 1931 and showed epidemics faded once a large enough fraction of children had already had measles - protection you receive without possessing it. Source: American Journal of Hygiene 1933 (17: 613-636); health.baltimorecity.gov/sites/default/files/The%20Baltimore%20Statement%20on%20Childhood%20Vaccination.pdf",
     "topic": "herd-immunity-honestly"
   },
   {
@@ -13906,25 +13880,12 @@
       "as calibration checks, to confirm all three agreed at room temperature",
       "as before/after tests, warmed by breath to check each bulb's response"
     ],
-    "context": "This is why the discovery stands. A rising reading in the beam meant nothing if the whole room was drifting warmer. The two extra thermometers, kept out of the sunlit spectrum, isolated the real effect from any background warming. Source: InterNACHI -- History of Infrared Thermography.",
-    "topic": "herschels-thermometer-past-the-red"
-  },
-  {
-    "tier": 3,
-    "question": "A curious ten-year-old sets out one Saturday to redo William Herschel's discovery of 1800 with cheap gear. Herschel had found that a spot just past the red end of sunlight's colours, where his eyes saw nothing, heated up faster than any visible colour. Which shopping list is the classic recipe for her redo?",
-    "answer": "a prism, a sunny window and three blackened-bulb thermometers",
-    "choices": [
-      "a prism, a sunny window and three blackened-bulb thermometers",
-      "a bell jar, a vacuum pump and a burning candle stub",
-      "a laser pointer, two mirrors and a smoke machine",
-      "a copper coil, a magnet and a hand compass"
-    ],
-    "context": "Place the prism in the sunny window, catch the rainbow on a table, run the thermometer bulb from violet to red to just past red, and record. The space past red reads warmest. Source: Cool Cosmos -- Herschel Backyard Experiment.",
+    "context": "This is why the discovery stands. A rising reading in the beam meant nothing if the whole room was drifting warmer. The two extra thermometers, kept out of the sunlit spectrum, isolated the real effect from any background warming. The classic home version needs only a prism, a sunny window and three blackened-bulb thermometers: catch the rainbow on a table, run one bulb from violet to just past red, and the space beyond the red reads warmest. Sources: Cool Cosmos -- Herschel Backyard Experiment; InterNACHI -- History of Infrared Thermography.",
     "topic": "herschels-thermometer-past-the-red"
   },
   {
     "tier": 4,
-    "question": "Engineers chilled the James Webb Space Telescope's detectors to about 40 kelvin and one of its cameras to under 7 kelvin, with a tennis-court sunshield and a special cryocooler. The telescope hunts the invisible light William Herschel found past the red. Why must such a telescope be run so cold?",
+    "question": "William Herschel found in 1800 that sunlight carries a light no eye can see: in the dark strip just past the red, his blackened thermometer still warmed up. The James Webb Space Telescope hunts that same light from distant galaxies, and engineers chilled its detectors to about 40 kelvin and one camera to under 7. Why must a telescope hunting Herschel's light be run so cold?",
     "answer": "the telescope itself glows in the infrared and would drown the signal",
     "choices": [
       "the telescope itself glows in the infrared and would drown the signal",
@@ -13932,18 +13893,18 @@
       "the sunshield only holds its taut shape at cryogenic temperatures",
       "the detectors would lose their gold anti-reflection coating above 100 kelvin"
     ],
-    "context": "Every warm object radiates infrared -- your body, the walls, the telescope tube. To see faint infrared from a distant galaxy, the instrument must be colder than the source, or its own glow swamps what it is trying to see. Herschel's discovery is why the whole 10-billion-dollar architecture of Webb is a giant refrigerator. Source: NASA -- How Does Webb Stay Cold.",
+    "context": "Every warm object radiates infrared -- a human body, the walls, the telescope tube. To see faint infrared from a distant galaxy, the instrument must be cold enough that its own glow stays fainter than that light, or the glow swamps what it is trying to see. Herschel's discovery is why the whole 10-billion-dollar architecture of Webb is a giant refrigerator. Source: NASA -- How Does Webb Stay Cold.",
     "topic": "herschels-thermometer-past-the-red"
   },
   {
     "tier": 2,
     "question": "Heinrich Hertz cranked an induction coil in a dark Karlsruhe laboratory on 13 November 1886 until a spark jumped between two brass balls. Yards away, a plain copper loop with a small gap sparked in sympathy, wired to nothing. What had he built the first working example of?",
-    "answer": "A radio",
+    "answer": "A radio link",
     "choices": [
-      "A radio",
+      "A radio link",
       "An X-ray tube",
       "A vacuum diode",
-      "A phonograph cartridge"
+      "A Tesla coil"
     ],
     "context": "A transmitter and a receiver, coupled only by an invisible wave crossing empty air. Maxwell had died in 1879, seven years before Hertz's experiments, and never saw his equations confirmed with hardware. Source: ethw.org Milestones - First Generation and Experimental Proof of Electromagnetic Waves.",
     "topic": "hertz-makes-the-waves-and-calls-them-useless"
@@ -13993,9 +13954,9 @@
     "answer": "Marconi turned the discovery into a business",
     "choices": [
       "Marconi turned the discovery into a business",
-      "Marconi's equipment was much more powerful",
-      "Marconi worked in secret to hide his invention",
-      "Marconi published his results before anyone else"
+      "Marconi's waves travelled faster than Lodge's",
+      "Marconi had the deeper training in physics",
+      "Marconi supplied the theory behind the waves"
     ],
     "context": "Lodge's Royal Institution lecture on 1 June 1894 memorialised Hertz and demonstrated wireless transmission across a few metres. He also improved the coherer detector Branly had invented. Other contemporaries: Jagadish Chandra Bose in Calcutta, and Nikola Tesla in the United States. Source: en.wikipedia.org History of radio receivers.",
     "topic": "hertz-makes-the-waves-and-calls-them-useless"
@@ -14011,19 +13972,6 @@
       "casks of fresh water"
     ],
     "context": "HMS Challenger was a working warship stripped for science; the gun deck was fitted out with chemistry, biology and sounding labs before she left Portsmouth. Source: https://en.wikipedia.org/wiki/Challenger_expedition",
-    "topic": "hms-challenger-sounds-the-abyss"
-  },
-  {
-    "tier": 1,
-    "question": "Sailors on HMS Challenger let a weighted line run out from the deck until it went slack, then hauled it back and read off its length. In what unit was every one of those ocean depths recorded in the ship's log?",
-    "answer": "fathoms",
-    "choices": [
-      "fathoms",
-      "leagues",
-      "cubits",
-      "furlongs"
-    ],
-    "context": "A fathom is six feet, the reach of a sailor's outstretched arms; a single deep sounding could take most of a day, hauled by hand or by steam winch. Source: https://www.tandfonline.com/doi/full/10.1080/01490419.2013.837849",
     "topic": "hms-challenger-sounds-the-abyss"
   },
   {
@@ -14080,7 +14028,7 @@
   },
   {
     "tier": 4,
-    "question": "John Young Buchanan, the young ship's chemist aboard HMS Challenger, set out to check Thomas Huxley's celebrated Bathybius haeckelii on fresh samples right out of the dredge. He came away certain it was not an organism at all. What did Buchanan show Bathybius actually was?",
+    "question": "John Young Buchanan, the young ship's chemist aboard HMS Challenger, set out to check Thomas Huxley's celebrated Bathybius haeckelii on fresh samples right out of the dredge. He came away certain that Huxley had been fooled. What did Buchanan show Bathybius actually was?",
     "answer": "a chemical precipitate thrown down in the sample bottle",
     "choices": [
       "a chemical precipitate thrown down in the sample bottle",
@@ -14483,12 +14431,12 @@
   },
   {
     "tier": 3,
-    "question": "Harrison Martland laid the bones of exhumed radium-dial painters on unexposed photographic plates for several weeks. The bosses had controlled the payroll, the medical records and the courtroom, but not the women's own bodies. When developed, the plates showed a soft image printed into the emulsion. Where had the image come from?",
+    "question": "Harrison Martland laid bones of dead radium-dial painters on unexposed photographic film and left them there. The bosses had controlled the payroll, the medical records and the courtroom, but not the women's own bodies. When developed, the film showed a soft image printed into the emulsion. Where had the image come from?",
     "answer": "The bones themselves were radioactive",
     "choices": [
       "The bones themselves were radioactive",
       "A weak lamp above the storage shelf",
-      "The developer bath used on the plates",
+      "The developer bath used on the film",
       "Bacteria feeding on residues in the bone"
     ],
     "context": "The dial-painters' bones were so contaminated with radium that they took their own picture - a jaw, a spine, a hand, printed by their own decay. When a company controls the records, the physical evidence in the victim IS the record. Source: environmentalhistory.org, history.com.",
@@ -15107,13 +15055,13 @@
   },
   {
     "tier": 3,
-    "question": "A reader opens one unclassified page released on August 27, 2021, by the Office of the Director of National Intelligence (ODNI). It sets out where America's intelligence elements and the National Intelligence Council (NIC) disagreed on how the COVID-19 pandemic began, each judgement carrying its confidence word. How does the page describe the split?",
-    "answer": "Four elements plus the NIC leaned spillover; one leaned a lab incident; three declined to choose",
+    "question": "A reader opens a short unclassified summary that the Office of the Director of National Intelligence released on 27 August 2021. It sets out how America's intelligence elements and the National Intelligence Council (NIC) split on how COVID-19 began, each judgement with its confidence word. How does it describe the split?",
+    "answer": "Four plus the NIC leaned spillover at low confidence; one leaned lab at moderate; three undecided",
     "choices": [
-      "Four elements plus the NIC leaned spillover; one leaned a lab incident; three declined to choose",
-      "Six elements leaned a lab incident; two leaned spillover; the CIA declined to choose",
-      "The FBI and CIA jointly concluded a lab incident; five other elements dissented for spillover",
-      "The NSA led a majority for spillover from a bat cave; three dissented for a market origin"
+      "Four plus the NIC leaned spillover at low confidence; one leaned lab at moderate; three undecided",
+      "Six leaned lab at moderate confidence; two leaned spillover at low; the CIA was undecided",
+      "The FBI and CIA leaned lab at high confidence; five leaned spillover at low; one undecided",
+      "Four plus the NIC leaned lab at low confidence; one leaned spillover at high; three undecided"
     ],
     "context": "The one element leaning laboratory-related was the FBI, at MODERATE confidence; the four elements plus the National Intelligence Council leaned natural spillover at LOW confidence. Publishing an open, itemised disagreement was the newsworthy thing -- most intelligence products speak as one voice. Source: ODNI unclassified summary (dni.gov / odni.gov).",
     "topic": "how-to-read-the-words-low-confidence"
@@ -15137,11 +15085,11 @@
     "answer": "That the virus was not developed as a biological weapon",
     "choices": [
       "That the virus was not developed as a biological weapon",
-      "That the virus first jumped to humans at the Huanan Seafood Market",
-      "That the virus originated in a bat cave in Yunnan province",
-      "That the virus escaped from the Wuhan Institute of Virology"
+      "That the virus had not been genetically engineered at all",
+      "That Chinese officials knew of the virus before the outbreak",
+      "That the virus originated in a bat cave in Yunnan province"
     ],
-    "context": "All IC elements agreed the virus was not developed as a bioweapon; most also assessed with low confidence that it was probably not genetically engineered, though two elements said the evidence was too thin to judge either way. The bioweapon hypothesis was ruled out early; the argument was over natural spillover versus a research-related accident. Source: ODNI unclassified summary (odni.gov).",
+    "context": "All IC elements agreed the virus was not developed as a bioweapon; most also assessed with low confidence that it was probably not genetically engineered, though two elements said the evidence was too thin to judge either way. The community also judged that China's officials had no foreknowledge of the virus before the outbreak. The bioweapon hypothesis was ruled out early; the argument was over natural spillover versus a research-related accident. Source: ODNI unclassified summary (odni.gov).",
     "topic": "how-to-read-the-words-low-confidence"
   },
   {
@@ -15182,19 +15130,6 @@
     ],
     "context": "Raccoon dogs -- SARS-CoV-2-susceptible mammals known to have been sold live at Huanan -- had their DNA co-located with viral RNA on the wildlife stall surfaces. That is short of proof any of the raccoon dogs were infected, and no infected intermediate host has ever been identified in years of animal sampling (SARS-CoV-1's civets and MERS's camels were pinned down comparatively fast). WHO's SAGO panel in June 2025 still leaned zoonosis on the weight of such evidence, while stating explicitly that a laboratory incident must remain on the table -- the honest scientific answer at this point is that no one yet knows. Sources: Nature Crits-Christoph et al. 2023; SAGO report 2025-06-27.",
     "topic": "how-to-read-the-words-low-confidence"
-  },
-  {
-    "tier": 1,
-    "question": "Edwin Hubble aimed the huge 100-inch Hooker telescope at the fuzzy Andromeda cloud on the night of October 5, 1923, and took a long 45-minute photo on a glass plate. Where was that giant telescope?",
-    "answer": "Mount Wilson, in California",
-    "choices": [
-      "Mount Wilson, in California",
-      "Kitt Peak, in Arizona",
-      "Mauna Kea, in Hawaii",
-      "Cerro Tololo, in Chile"
-    ],
-    "context": "The 100-inch Hooker was the largest telescope in the world from 1917 until Palomar came online in 1949. Hubble's Andromeda plate is catalogued as H335H -- the 335th plate he had exposed at the Hooker. Source: https://carnegiescience.edu/about/history/archives/plate-archives/m31var  (Legend.)",
-    "topic": "hubble-andromeda-and-a-universe-that-moves"
   },
   {
     "tier": 1,
@@ -15264,27 +15199,27 @@
   {
     "tier": 4,
     "question": "Milton Humason put his name beside Edwin Hubble's on the 1929 distance-velocity paper, an unusual place for a man who had hauled supplies up the mountain as a mule driver and then worked as the observatory janitor. He was hired to the scientific staff in 1919. What formal schooling did he ever have?",
-    "answer": "None past 8th grade",
+    "answer": "None past the eighth grade",
     "choices": [
-      "None past 8th grade",
-      "A Ph.D. from Berkeley",
-      "A Bachelor's from Yale",
-      "A Master's from Chicago"
+      "None past the eighth grade",
+      "Two years of high school",
+      "A night-school high-school diploma",
+      "A year at a teachers' college"
     ],
     "context": "Humason turned out to be one of the finest observers of his generation. He took the exquisitely long exposures needed to catch the redshifts of faint, distant galaxies -- exactly the data Hubble's distance ladder needed to make its case. Source: https://en.wikipedia.org/wiki/Milton_Humason  (Legend.)",
     "topic": "hubble-andromeda-and-a-universe-that-moves"
   },
   {
     "tier": 5,
-    "question": "Georges Lemaitre, a Belgian Catholic priest and physicist, met Albert Einstein in Brussels to explain in person what he had worked out in 1927: that Einstein's own equations of general relativity pointed to a growing universe with a beginning. Einstein listened and shot back a famous French one-liner. By Lemaitre's own memory, what did Einstein say?",
-    "answer": "Your calculations are correct, but your physics is abominable",
+    "question": "Georges Lemaitre, a Belgian Catholic priest and physicist, met Albert Einstein in Brussels to explain in person what he had worked out in 1927: that Einstein's own equations of general relativity pointed to a growing universe with a beginning. Einstein's reply, in French, became famous. By Lemaitre's own memory, what was Einstein's verdict?",
+    "answer": "That the calculations were correct but the physics abominable",
     "choices": [
-      "Your calculations are correct, but your physics is abominable",
-      "Your mathematics is a game, and your universe a fantasy",
-      "Your equations betray you; the true cosmos does not move",
-      "Your derivation is clever, but your assumptions are heretical"
+      "That the calculations were correct but the physics abominable",
+      "That the calculations were wrong, so the universe stayed static",
+      "That the physics was sound but the calculations careless",
+      "That the idea was elegant but beyond any telescope's test"
     ],
-    "context": "In the original French: 'Vos calculs sont corrects, mais votre physique est abominable.' Einstein had earlier added his 'cosmological constant' to general relativity precisely to keep the universe static; he later called it his greatest blunder. The exact wording of the Lemaitre exchange is by Lemaitre's later recollection, so it is preserved here as testimony. Source: https://en.wikipedia.org/wiki/Georges_Lema%C3%AEtre  (Legend.)",
+    "context": "In the original French: 'Vos calculs sont corrects, mais votre physique est abominable.' Einstein had earlier added his 'cosmological constant' to general relativity precisely to keep the universe static; by George Gamow's later account, Einstein called it his greatest blunder. The exact wording of the Lemaitre exchange is by Lemaitre's later recollection, so it is preserved here as testimony. Source: https://en.wikipedia.org/wiki/Georges_Lema%C3%AEtre  (Legend.)",
     "topic": "hubble-andromeda-and-a-universe-that-moves"
   },
   {
@@ -15653,7 +15588,7 @@
   },
   {
     "tier": 5,
-    "question": "James Hutton closed his 1788 paper with the words 'we find no vestige of a beginning, - no prospect of an end.' He meant that the rocks keep no record of a starting point, not that the Earth never had one. Clair Patterson fixed the age of the Earth at 4.54 billion years in 1956. What did Patterson measure to get it?",
+    "question": "James Hutton closed his 1788 paper with the words 'we find no vestige of a beginning, - no prospect of an end.' He meant that the rocks keep no record of a starting point, not that the Earth never had one. Clair Patterson fixed the age of the Earth at 4.55 billion years in 1956. What did Patterson measure to get it?",
     "answer": "The lead built up inside a handful of fallen meteorites",
     "choices": [
       "The lead built up inside a handful of fallen meteorites",
@@ -15661,7 +15596,7 @@
       "The thickness of every sedimentary rock layer known",
       "How long a molten ball the size of Earth needs to cool"
     ],
-    "context": "Patterson established the figure in 1956 by lead-lead dating of several meteorites, including the Canyon Diablo meteorite; the accepted age is 4.54 plus or minus 0.05 billion years, on a clock built from radioactive decay that Hutton had no way to imagine. His closing sentence came out of an engine with no starting line - land wears to sediment, sediment is buried and cemented into rock, and the Earth's internal heat lifts that rock back up as new land, which wears down again. Note the honest limit: Hutton's picture of endless identical cycles is not modern geology, which has a definite time of formation and directional change through time. Earlier estimates fell far short - Archbishop James Ussher had put the creation of the world at 4004 BC in his Annales Veteris Testamenti of 1650, and Lord Kelvin's 1862 calculation gave only 20 to 400 million years because he did not know about radioactive heat. Source: Wikipedia, 'Age of the Earth', 'James Hutton', 'Ussher chronology'.",
+    "context": "Patterson established the figure in 1956 by lead-lead dating of several meteorites, including the Canyon Diablo meteorite; his own figure was 4.55 billion years, give or take 70 million, and today's accepted age is 4.54 plus or minus 0.05 billion years, on a clock built from radioactive decay that Hutton had no way to imagine. His closing sentence came out of an engine with no starting line - land wears to sediment, sediment is buried and cemented into rock, and the Earth's internal heat lifts that rock back up as new land, which wears down again. Note the honest limit: Hutton's picture of endless identical cycles is not modern geology, which has a definite time of formation and directional change through time. Earlier estimates fell far short - Archbishop James Ussher had put the creation of the world at 4004 BC in his Annales Veteris Testamenti of 1650, and Lord Kelvin's 1862 calculation gave only 20 to 400 million years because he did not know about radioactive heat. Source: Wikipedia, 'Age of the Earth', 'James Hutton', 'Ussher chronology'.",
     "topic": "hutton-at-siccar-point"
   },
   {
@@ -15704,16 +15639,16 @@
     "topic": "hwang-woo-suk-the-cloned-cell-hero-unravelled-by-strangers-o"
   },
   {
-    "tier": 3,
-    "question": "A Seoul National University panel ran one straightforward check on Snuppy, the Afghan hound Hwang Woo-suk had announced as the world's first cloned dog. His human-embryo results had already been exposed as faked, and the panel had to decide whether the puppy was faked too. What did the check show?",
-    "answer": "Snuppy's DNA matched the donor dog Tai - the cloning was real",
+    "tier": 2,
+    "question": "A Seoul National University panel had already exposed Hwang Woo-suk's human-embryo results as faked when it turned to Snuppy, the Afghan hound he had announced as the world's first cloned dog. One straightforward check would show whether the puppy was faked too. What did the panel compare?",
+    "answer": "Snuppy's DNA with that of the donor dog, Tai",
     "choices": [
-      "Snuppy's DNA matched the donor dog Tai - the cloning was real",
-      "Snuppy shared DNA with the other faked embryos",
-      "Snuppy was genetically the surrogate mother's own pup",
-      "Snuppy's cells could not be sequenced at all"
+      "Snuppy's DNA with that of the donor dog, Tai",
+      "Snuppy's photographs with the papers' figures",
+      "Snuppy's birth records with the kennel's logs",
+      "Snuppy's blood type with that of every lab dog"
     ],
-    "context": "Two independent DNA analyses appeared in Nature in 2006. Nuclear microsatellite markers plus mitochondrial DNA confirmed Snuppy was a genuine genetic clone of the ear-tissue donor, an adult male Afghan hound named Tai. Amid the wreckage of the human stem-cell claims, the dog was real. Source: https://www.nature.com/articles/nature04686",
+    "context": "Snuppy's DNA matched Tai's, so the cloning was real. Two independent DNA analyses appeared in Nature in 2006. Nuclear microsatellite markers plus mitochondrial DNA confirmed Snuppy was a genuine genetic clone of the ear-tissue donor, an adult male Afghan hound named Tai. Amid the wreckage of the human stem-cell claims, the dog was real. Source: https://www.nature.com/articles/nature04686",
     "topic": "hwang-woo-suk-the-cloned-cell-hero-unravelled-by-strangers-o"
   },
   {
@@ -15726,7 +15661,7 @@
       "they came from illegal cross-border shipments out of China",
       "they came from cadavers taken without family consent"
     ],
-    "context": "The 2004 paper had claimed 16 unpaid volunteers. PD Note's reporting - which the public initially rejected, forcing sponsors to pull ads - turned out to be accurate. On November 21 co-author Roh Sung-il admitted he had paid women US$1,400 each; junior female staff, unable to freely refuse, had also donated. It is named here once because it matters, not to dwell. Source: https://en.wikipedia.org/wiki/Hwang_Woo-suk",
+    "context": "The 2004 paper had claimed 16 unpaid volunteers. PD Notebook's reporting - which the public initially rejected, forcing sponsors to pull ads - turned out to be accurate. On November 21 co-author Roh Sung-il admitted he had paid women US$1,400 each; junior female staff, unable to freely refuse, had also donated. Source: https://en.wikipedia.org/wiki/Hwang_Woo-suk",
     "topic": "hwang-woo-suk-the-cloned-cell-hero-unravelled-by-strangers-o"
   },
   {
@@ -15770,15 +15705,15 @@
   },
   {
     "tier": 2,
-    "question": "A rat with a piece of its cortex, the brain's outer layer, cut away still ran Karl Lashley's maze. It got only a little worse the more tissue he removed, no matter which part. From that repeated failure Lashley proposed two principles, published in 1929, about how memory is stored. What are they now called?",
-    "answer": "Mass action and equipotentiality",
+    "question": "Karl Lashley cut different pieces of cortex, the brain's wrinkled outer layer, out of rats that had learned a maze, then ran them through it again. Rat after rat, one measure predicted how badly each one now did. What was it?",
+    "answer": "How much cortex he took, wherever he cut it",
     "choices": [
-      "Mass action and equipotentiality",
-      "Localization of function and cortical modularity",
-      "Cerebral dominance and hemispheric specialization",
-      "Phrenological faculties and cranial mapping"
+      "How much cortex he took, wherever he cut it",
+      "Which part of the cortex he cut away",
+      "How long before surgery the rat had learned it",
+      "How old the rat was when he operated"
     ],
-    "context": "MASS ACTION says impairment scales with the AMOUNT of cortex lost; EQUIPOTENTIALITY says other cortical areas can take over the missing part's role. Together they paint memory as distributed across the cortex rather than filed in one drawer. Lashley did NOT prove memory has no physical trace -- he showed the maze memory is distributed, at least for the tasks he tested.",
+    "context": "Lashley's 1929 book Brain Mechanisms and Intelligence reported that the rats' errors grew with the AMOUNT of cortex removed, not with its location. From that he proposed two principles: MASS ACTION, impairment scales with the amount of cortex lost, and EQUIPOTENTIALITY, other cortical areas can take over a missing part's role. Together they paint memory as distributed across the cortex rather than filed in one drawer. Lashley did NOT prove memory has no physical trace -- he showed the maze memory is distributed, at least for the tasks he tested.",
     "topic": "in-search-of-the-engram"
   },
   {
@@ -15792,19 +15727,6 @@
       "William James, in his 1890 Principles of Psychology"
     ],
     "context": "Semon (1859-1918) also named the encoding step (engraphy) and the retrieval step (ecphory), and argued that memory must leave a physical modification in the nervous tissue. He was ignored for most of the twentieth century -- the term 'engram' outlived his other coinages -- and rediscovered in the modern engram-cell literature.",
-    "topic": "in-search-of-the-engram"
-  },
-  {
-    "tier": 3,
-    "question": "Donald Hebb proposed a simple rule for how the brain learns in his 1949 book The Organization of Behavior: when two neurons are active at the same time again and again, the connection between them grows stronger. The rule is now usually remembered as a short rhyme. Which rhyme?",
-    "answer": "Cells that fire together, wire together",
-    "choices": [
-      "Cells that fire together, wire together",
-      "Use it or lose it",
-      "What fires last, lasts",
-      "Neurons that misfire, must retire"
-    ],
-    "context": "Hebb published the idea in The Organization of Behavior (1949): when two neurons are repeatedly active at the same moment, the synapse between them grows stronger, and groups of cells become 'assemblies' that behave as a unit. It became the theoretical spine of memory research -- and exactly the picture Tonegawa's optogenetic engram experiments would later make testable in a live animal. Eric Kandel won a Nobel in 2000 for showing in the sea slug Aplysia that specific synapses really do strengthen with learning, at single identified connections.",
     "topic": "in-search-of-the-engram"
   },
   {
@@ -15913,15 +15835,15 @@
   },
   {
     "tier": 5,
-    "question": "Leah Jager and Jeffrey Leek argued with John Ioannidis in print, in a 2014 reanalysis in the journal Biostatistics. They put the science-wise false-discovery rate at a much smaller figure than his headline claim, and the argument goes on. What was their number?",
+    "question": "Leah Jager and Jeffrey Leek took on John Ioannidis in print in 2014, with a reanalysis in the journal Biostatistics. They estimated the science-wise false-discovery rate across top medical journals, a direct test of his headline claim, and the argument goes on. What figure did they reach?",
     "answer": "about 14%",
     "choices": [
+      "about 4%",
       "about 14%",
-      "about 42%",
-      "about 71%",
-      "about 88%"
+      "about 31%",
+      "about 42%"
     ],
-    "context": "Jager and Leek, Biostatistics 15(1), 2014. Steven Goodman and Sander Greenland separately argued Ioannidis's model rested on plausible-but-chosen assumptions rather than measured ones. Ioannidis replied in the same issue; the argument is live. Feynman's rule applied even to a favorite paper: 'you must not fool yourself.'",
+    "context": "Jager and Leek, Biostatistics 15(1), 2014. Their estimate, about 14 per cent, sat far below the 'most' of Ioannidis's title. Steven Goodman and Sander Greenland separately argued Ioannidis's model rested on plausible-but-chosen assumptions rather than measured ones. Ioannidis replied in the same issue; the argument is live. Feynman's rule applied even to a favorite paper: 'you must not fool yourself.'",
     "topic": "ioannidis-counts-the-false-positives"
   },
   {
@@ -16108,13 +16030,13 @@
   },
   {
     "tier": 4,
-    "question": "Malcolm Beasley of Stanford chaired Bell Labs' outside inquiry into its star physicist, Jan Hendrik Schön, in 2002. His committee weighed twenty-four separate charges of scientific misconduct and reported that September. In how many did it find the charge proven?",
-    "answer": "Sixteen",
+    "question": "Malcolm Beasley of Stanford chaired Bell Labs' outside inquiry into its star physicist, Jan Hendrik Schön, in 2002, after outside physicists noticed the same random noise in graphs from different experiments. That September his committee found sixteen of twenty-four misconduct charges proven. What did one of them establish?",
+    "answer": "Some curves came from mathematical formulas, not instruments",
     "choices": [
-      "Sixteen",
-      "Two",
-      "All twenty-four",
-      "None"
+      "Some curves came from mathematical formulas, not instruments",
+      "Some devices were bought in and passed off as his own",
+      "Some results were copied from a rival group's papers",
+      "Some samples were grown by students and never credited"
     ],
     "context": "The Beasley report established misconduct in 16 of 24 allegations, including whole datasets reused across unrelated experiments and 'measurements' generated from mathematical functions rather than any real instrument. Of the remaining eight allegations, two had no clear tie to a publication and six were 'troubling' but did not rise to conclusive misconduct. Source: Beasley Committee report, Sept 2002; UCLA-hosted PDF.",
     "topic": "jan-hendrik-sch-n-the-noise-that-was-too-identical"
@@ -16130,19 +16052,6 @@
       "Only the most senior co-authors were exonerated"
     ],
     "context": "The Beasley report explicitly stated that all of Schon's co-authors were completely cleared of scientific misconduct and that no co-author's laboratory practices lay outside accepted norms. This matters: Schon's collaborators trusted samples and figures he produced alone, and were themselves victims of the fabrication. Source: Beasley Committee report, Sept 2002.",
-    "topic": "jan-hendrik-sch-n-the-noise-that-was-too-identical"
-  },
-  {
-    "tier": 5,
-    "question": "Jan Hendrik Schön saw about two dozen papers of his withdrawn from journals including Science and Nature. His alma mater, the University of Konstanz, then went after his doctorate, though a court in Freiburg reinstated it in 2010. Which court had the final word, and when?",
-    "answer": "Germany's Federal Constitutional Court in Karlsruhe, in 2014",
-    "choices": [
-      "Germany's Federal Constitutional Court in Karlsruhe, in 2014",
-      "The Federal Court of Justice (BGH) in Karlsruhe, in 2011",
-      "The Federal Administrative Court in Leipzig, in 2013",
-      "The Baden-Wurttemberg Higher Administrative Court (VGH Mannheim), in 2012"
-    ],
-    "context": "The University of Konstanz revoked Schon's doctorate in 2004, invoking a state law that lets degrees be withdrawn from a recipient later shown 'unworthy'. After a decade of appeals, on 1 October 2014 Germany's Federal Constitutional Court in Karlsruhe confirmed the revocation as within the university's rights. Source: Bundesverfassungsgericht press release, Oct 2014.",
     "topic": "jan-hendrik-sch-n-the-noise-that-was-too-identical"
   },
   {
@@ -16485,15 +16394,15 @@
   },
   {
     "tier": 2,
-    "question": "Joseph Black caught heat pouring into melting ice and boiling water in the late 1750s without the thermometer moving at all: present in the substance, invisible to the instrument. He built a name for it from a Latin word meaning 'hidden' or 'lying in wait'. What did he call it?",
+    "question": "Joseph Black caught heat pouring into melting ice and boiling water in the late 1750s without the thermometer moving at all: present in the substance, invisible to the instrument. The name he gave that heat is still the one every physics student learns. What did he call it?",
     "answer": "Latent heat",
     "choices": [
       "Latent heat",
-      "Fixed heat",
-      "Silent heat",
-      "Dormant heat"
+      "Specific heat",
+      "Sensible heat",
+      "Radiant heat"
     ],
-    "context": "From the Latin latens, hidden. The name has stuck: latent heat of fusion (ice to water) and latent heat of vaporisation (water to steam) are still the terms every physics student meets. Source: https://en.wikipedia.org/wiki/Latent_heat",
+    "context": "From the Latin latens, hidden. Physicists set it against sensible heat, the kind a thermometer registers. The name has stuck: latent heat of fusion (ice to water) and latent heat of vaporisation (water to steam) are still the terms every physics student meets. Source: https://en.wikipedia.org/wiki/Latent_heat",
     "topic": "joseph-black-and-the-heat-that-hides"
   },
   {
@@ -16511,7 +16420,7 @@
   },
   {
     "tier": 3,
-    "question": "Joseph Black warmed equal weights of different things by the same amount and found they needed very different amounts of heat, which he named specific heat. One common substance had an unusually big appetite: ounce for ounce it soaked up more heat than almost anything else Black tested. Which was it?",
+    "question": "Joseph Black warmed equal weights of different things by the same amount and found they needed very different amounts of heat, a property now called specific heat. One common substance had an unusually big appetite: ounce for ounce it soaked up more heat than almost anything else Black tested. Which was it?",
     "answer": "Water",
     "choices": [
       "Water",
@@ -16519,7 +16428,7 @@
       "Sand",
       "Mercury"
     ],
-    "context": "Water's high specific heat is why the sea moderates coastal climate, why radiators use water, and why your body -- mostly water -- is thermally stable. Black noted that mercury, in contrast, has a very small appetite for heat. Source: https://en.wikipedia.org/wiki/Joseph_Black",
+    "context": "Water's high specific heat is why the sea moderates coastal climate, why radiators use water, and why the human body -- mostly water -- is thermally stable. Black called the property a capacity for heat, and noted that mercury, in contrast, has a very small appetite for heat. Source: https://en.wikipedia.org/wiki/Joseph_Black",
     "topic": "joseph-black-and-the-heat-that-hides"
   },
   {
@@ -16935,7 +16844,7 @@
       "Carbon released from the ocean surface as the water warms",
       "Carbon made high in the air when cosmic rays strike nitrogen"
     ],
-    "context": "Plants preferentially take up the lighter carbon-12, so plant tissue -- and the fossil fuels made from ancient plant and animal material -- sits near -25 per mil in delta-13C, far lighter than the air. Volcanic and mantle carbon is HEAVIER, about -4 to -8 per mil, so it cannot drive the atmosphere lighter. Ocean outgassing sits near -9.5 per mil, which is why the isotopes alone do not separate the ocean from combustion -- that job belongs to the oxygen record. The effect is named for Hans Suess, a Scripps colleague of Keeling's and a founder of radiocarbon dating, who found recent tree rings depleted in carbon-14 because fossil fuel is so ancient its radiocarbon has decayed away entirely; the carbon-13 version is a later extension, properly the '13C Suess effect'. Suess and Roger Revelle wrote in 1957 that 'human beings are now carrying out a large scale geophysical experiment of a kind that could not have happened in the past nor be reproduced in the future.' (NOAA GML, 'What 13C Tells Us'; Revelle & Suess, Tellus 9(1):18-27, 1957.)",
+    "context": "Plants preferentially take up the lighter carbon-12, so plant tissue -- and the fossil fuels made from ancient plant and animal material -- sits near -25 per mil in delta-13C, far lighter than the air. Volcanic and mantle carbon is HEAVIER, about -4 to -8 per mil, so it cannot drive the atmosphere lighter. NOAA puts the air itself at about -6.5 per mil before the industrial revolution and about -8 now. Exchange with the ocean changes how much carbon dioxide the air holds but hardly its carbon-13, so the isotope helps tell land-plant carbon apart from ocean carbon; the oxygen record then singles out burning. The effect is named for Hans Suess, a Scripps colleague of Keeling's and a founder of radiocarbon dating, who found recent tree rings depleted in carbon-14 because fossil fuel is so ancient its radiocarbon has decayed away entirely; the carbon-13 version is a later extension, properly the '13C Suess effect'. Suess and Roger Revelle wrote in 1957 that 'human beings are now carrying out a large scale geophysical experiment of a kind that could not have happened in the past nor be reproduced in the future.' (NOAA GML, 'What 13C Tells Us'; Revelle & Suess, Tellus 9(1):18-27, 1957.)",
     "topic": "keelings-stubborn-curve"
   },
   {
@@ -17715,7 +17624,7 @@
       "She held it jointly with DuPont and shared the profits",
       "She sold it to DuPont and took a single lump payment"
     ],
-    "context": "Kwolek was a DuPont employee, so the patent went to the company: she signed over US Patent 3,819,587, 'Wholly Aromatic Carbocyclic Polycarbonamide Fiber,' granted 1974. The discovery earned DuPont several billion dollars; she never benefited from it financially, and her comment on the six years from beaker to market was 'It turned out to be a great team effort in the end.' She held 17 US patents in all, and had already handed DuPont a second fiber: she worked out the conditions for the meta-aramid released in 1961 as Nomex, the flame-resistant one. Nomex and Kevlar are the same chemistry with one difference - meta linkages put a permanent bend in the chain, so Nomex stays flexible and heat-resistant but never reaches Kevlar's strength. During the week Kwolek died, in June 2014, the one-millionth bullet-resistant vest made with Kevlar was sold. Sources: en.wikipedia.org/wiki/Stephanie_Kwolek (citing Jeremy Pearce, New York Times obituary, June 21, 2014, and Alyssa Newcomb, Good Morning America, June 20, 2014); invent.org/inductees/stephanie-louise-kwolek; lemelson.mit.edu/resources/stephanie-kwolek",
+    "context": "Kwolek was a DuPont employee, so the patent went to the company: she signed over US Patent 3,819,587, 'Wholly Aromatic Carbocyclic Polycarbonamide Fiber,' granted 1974. The discovery earned DuPont several billion dollars; she never benefited from it financially. She held 17 US patents in all, and had already handed DuPont a second fiber: she worked out the conditions for the meta-aramid released in 1961 as Nomex, the flame-resistant one. Nomex and Kevlar are the same chemistry with one difference - meta linkages put a permanent bend in the chain, so Nomex stays flexible and heat-resistant but never reaches Kevlar's strength. During the week Kwolek died, in June 2014, the one-millionth bullet-resistant vest made with Kevlar was sold. Sources: en.wikipedia.org/wiki/Stephanie_Kwolek (citing Jeremy Pearce, New York Times obituary, June 21, 2014, and Alyssa Newcomb, Good Morning America, June 20, 2014); invent.org/inductees/stephanie-louise-kwolek; lemelson.mit.edu/resources/stephanie-kwolek",
     "topic": "kwoleks-cloudy-batch"
   },
   {
