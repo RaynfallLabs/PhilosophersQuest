@@ -25680,9 +25680,9 @@
     "answer": "The price of a license rises very high because new ones cannot be made",
     "choices": [
       "The price of a license rises very high because new ones cannot be made",
-      "The price of a license drops close to zero",
-      "Anyone can start driving a taxi anytime",
-      "Nothing changes because taxis do not matter"
+      "The price of a license stays at the fee the city first charged for it",
+      "The price of a license falls as the cabs it covers grow old and worn",
+      "The price of a license follows the cost of a new cab, and nothing more"
     ],
     "context": "The Haas Act of 1937 created the New York City taxi-medallion system. The cap made each medallion an artificially scarce property right that would eventually trade for over a million dollars. Source: grokipedia.com/page/Taxi_medallion.",
     "topic": "the-nyc-taxi-medallion-1-3m-to-100k-after-uber"
@@ -25754,7 +25754,7 @@
   },
   {
     "tier": 4,
-    "question": "Brian Rosenthal published a Pulitzer-finalist investigative series in May 2019, in the New York Times, on the crash of the city's yellow-taxi medallion market. For years medallion prices had stood above $1 million before they collapsed. He tracked roughly 950 owner bankruptcies and 8 driver suicides. What was the series's headline focus?",
+    "question": "Brian Rosenthal published a Pulitzer-winning investigative series in May 2019, in the New York Times, on the crash of the city's yellow-taxi medallion market. For years medallion prices had stood above $1 million before they collapsed, and he tracked roughly 950 owner bankruptcies. What was the series's headline focus?",
     "answer": "How reckless loans devastated a generation of taxi drivers",
     "choices": [
       "How reckless loans devastated a generation of taxi drivers",
@@ -25762,18 +25762,18 @@
       "How the Haas Act created New York's first cab rules",
       "How the NYC Taxi Commission was reformed in 2019"
     ],
-    "context": "Emma Fitzsimmons and Brian Rosenthal's NYT series showed that many owner-drivers had bought medallions at peak prices using loans they could not repay after the collapse. Source: nytimes.com/2019/05/19/nyregion/nyc-taxis-medallions-suicides.html.",
+    "context": "Brian Rosenthal's series showed that many owner-drivers had bought medallions at peak prices with loans they could not repay after the collapse. It won the 2020 Pulitzer Prize for Investigative Reporting. Source: pulitzer.org/winners/brian-m-rosenthal-new-york-times.",
     "topic": "the-nyc-taxi-medallion-1-3m-to-100k-after-uber"
   },
   {
     "tier": 5,
     "question": "Frederic Bastiat taught that a policy's true cost includes every trade and every job that never happened because of it. New York's medallion prices crashed by 2019, after ride apps broke the cap on yellow cabs. Reading the collapse Bastiat's way, what was it actually revealing about the cap's long run?",
-    "answer": "The capitalized value of the harm the cap had been extracting from riders and blocked drivers for 76 years",
+    "answer": "The capitalized value of the harm the cap had been extracting for 76 years",
     "choices": [
-      "The capitalized value of the harm the cap had been extracting from riders and blocked drivers for 76 years",
-      "A one-time market crash unrelated to earlier medallion prices",
-      "Uber's illegal subsidies temporarily undercutting a fair market",
-      "A currency-inflation effect on New York asset prices"
+      "The capitalized value of the harm the cap had been extracting for 76 years",
+      "A one-time market crash with no link to earlier medallion prices",
+      "Uber's illegal subsidies briefly undercutting an otherwise fair market",
+      "A currency-inflation effect running through all New York asset prices"
     ],
     "context": "Bastiat's move: the medallion price had capitalized the transfer FROM riders and blocked drivers TO cap-protected owners; the collapse reversed a transfer that had run one way since 1937. Painful for owners, but a reversal. Source: bastiat.org (That Which is Seen and That Which is Not Seen, 1850).",
     "topic": "the-nyc-taxi-medallion-1-3m-to-100k-after-uber"
@@ -25876,8 +25876,8 @@
     "choices": [
       "A group of wealthy private bankers, using their own money",
       "Congress, by passing an emergency bill overnight",
-      "The US Army, by seizing all the banks",
-      "The state of New York, by declaring war on Wall Street"
+      "The state of New York, by taking over the failing banks",
+      "New York City, by guaranteeing every deposit in town"
     ],
     "context": "J.P. Morgan (70 years old in 1907) coordinated the private rescue, summoning bank and trust presidents to his personal library and pooling their capital. It was the last major US financial rescue conducted by a private individual acting as de facto central bank. Source: en.wikipedia.org/wiki/Panic_of_1907.",
     "topic": "the-panic-of-1907-and-j-p-morgans-private-rescue"
@@ -25919,19 +25919,6 @@
       "The White House Cabinet Room"
     ],
     "context": "The building is now the Morgan Library and Museum. The 'locked in the library' detail comes from Morgan's son-in-law Herbert Satterlee's 1939 biography and is well-attested in period accounts. Source: themorgan.org/about.",
-    "topic": "the-panic-of-1907-and-j-p-morgans-private-rescue"
-  },
-  {
-    "tier": 3,
-    "question": "Senator Nelson Aldrich of Rhode Island sent investigators to study European central banks after the panic of 1907. His commission worked for four years on a plan for a permanent American central bank. In a real panic, reformers said, even healthy banks with good loans could be crushed by a wave of withdrawals, with nobody to turn to overnight. What did they call the role the country was missing?",
-    "answer": "A lender of last resort",
-    "choices": [
-      "A lender of last resort",
-      "A federal income tax",
-      "A national stock exchange",
-      "A commercial-bank deposit insurer"
-    ],
-    "context": "Without a central bank, panics required ad-hoc rescues by private figures. The 1907 crisis made the political argument that the country needed a permanent institution able to supply liquidity in a run -- an argument that produced the Federal Reserve six years later. Source: federalreservehistory.org/essays/panic-of-1907. Senator Nelson Aldrich chaired the Commission, which studied European central banks and produced the Aldrich Plan of 1911 -- the structural blueprint behind the Federal Reserve Act of 1913. Source: en.wikipedia.org/wiki/National_Monetary_Commission.",
     "topic": "the-panic-of-1907-and-j-p-morgans-private-rescue"
   },
   {
@@ -26015,12 +26002,12 @@
   {
     "tier": 3,
     "question": "Carl Menger read the daily commodity reports in the prime minister's press office and saw prices that did not follow the labor spent on the goods. His Principles of 1871 went on to dissolve Adam Smith's puzzle of cheap water and costly diamonds. Where, on Menger's account, does a good's value live?",
-    "answer": "In the ranking a specific chooser assigns to a specific additional unit against alternative uses",
+    "answer": "In how one chooser ranks one more unit against its other uses",
     "choices": [
-      "In the ranking a specific chooser assigns to a specific additional unit against alternative uses",
+      "In how one chooser ranks one more unit against its other uses",
       "In the average number of labour-hours embodied in producing it",
       "In the objective usefulness of the substance to human survival",
-      "In the political power of the class that produces it"
+      "In the cost of the land, labour and capital used to make it"
     ],
     "context": "Menger's move was that no chooser ever compares 'water as a class' with 'diamonds as a class'; a chooser always compares one more unit of a good, given current holdings, against the next-best alternative use of the same effort or money. Source: Wikipedia, 'Principles of Economics (Menger book)'.",
     "topic": "the-paradox-of-value-dissolved-diamond-water-and-marginalism"
@@ -26041,12 +26028,12 @@
   {
     "tier": 4,
     "question": "A family in a modern city turns on the tap and water runs as freely as it likes, while diamonds stay as rare as ever. Carl Menger's method asks not what water as a whole is worth but what one more glass is worth to that family right now. Why does that next glass rank so low, and the next diamond so high?",
-    "answer": "Water is abundant so the marginal glass serves only a trivial use; diamond stock is near zero so the marginal stone serves a top-ranked use",
+    "answer": "Water is plentiful, so one more glass meets a trivial need; scarce diamonds meet top-ranked ones",
     "choices": [
-      "Water is abundant so the marginal glass serves only a trivial use; diamond stock is near zero so the marginal stone serves a top-ranked use",
-      "Water is a public good and diamonds are a private good, so only diamonds carry value",
-      "Diamonds embody more labour-hours per unit than water does",
-      "The government sets the price of water below its true value"
+      "Water is plentiful, so one more glass meets a trivial need; scarce diamonds meet top-ranked ones",
+      "Water is a public good and diamonds a private good, so only the diamonds carry a market value",
+      "Diamonds embody far more labour-hours per unit than water, and labour is what sets value",
+      "The city sets the price of tap water below its true value, while diamond prices float freely"
     ],
     "context": "Once value is a ranking of the marginal unit, high total utility and high marginal utility come apart. Water's total utility is enormous but its marginal utility to a plumbed household is nearly zero; a first diamond's marginal utility to someone who has never owned one is large. Source: Study.com, 'Diamond-Water Paradox'.",
     "topic": "the-paradox-of-value-dissolved-diamond-water-and-marginalism"
@@ -26058,8 +26045,8 @@
     "choices": [
       "The ranking reverses -- one more glass of water now ranks above any additional diamond",
       "The ranking stays the same -- diamonds always outrank water because they always cost more to make",
-      "Both goods have equal marginal value in any setting",
-      "The ranking depends on the traveller's political beliefs, not on his holdings"
+      "The ranking splits -- water wins in use, while the diamonds still win in exchange",
+      "The ranking evens out -- each good counts for exactly what it would sell for in town"
     ],
     "context": "That the ranking reverses on the reverse scarcities is the diagnostic test of the marginal-unit move: value was never a property of the good, it was a ranking that depended on how much of each the chooser already held. Source: Adam Smith Works, 'Three Ways of Looking at the Water-Diamond Paradox'.",
     "topic": "the-paradox-of-value-dissolved-diamond-water-and-marginalism"
@@ -26067,40 +26054,14 @@
   {
     "tier": 5,
     "question": "Carl Menger answered Adam Smith's diamond puzzle in 1871, and his answer reached far beyond the puzzle itself. The answer overturned more than one older idea at once. Which did it most decisively dislodge?",
-    "answer": "The labour theory of value, because it assumed value was a property of the good rather than of a chooser's ranking",
+    "answer": "The labour theory of value, because it put value in the good, not in a chooser's ranking",
     "choices": [
-      "The labour theory of value, because it assumed value was a property of the good rather than of a chooser's ranking",
+      "The labour theory of value, because it put value in the good, not in a chooser's ranking",
       "The quantity theory of money, because it treated the money supply as exogenous",
       "The theory of comparative advantage, because it depended on labour cost differences",
       "The Malthusian theory of population, because it assumed diminishing returns in agriculture"
     ],
-    "context": "Every step of the labour-theory chain -- Smith on embodied labour, Ricardo's refinement, Marx's socially necessary labour -- assumed value belonged to the good. Denying the assumption denies the whole chain. Comparative advantage, the quantity theory and Malthus depend on other assumptions and are unaffected. Source: Wikipedia, 'Marginalism'.",
-    "topic": "the-paradox-of-value-dissolved-diamond-water-and-marginalism"
-  },
-  {
-    "tier": 5,
-    "question": "A hiker drains his last drop of water and would give almost anything for a drink; back home, with taps in every room, one more glass barely matters to him. Textbooks keep two matched terms for these two quantities: all that a person's water does for him, and what the next glass adds. What are the two terms?",
-    "answer": "Total utility and marginal utility",
-    "choices": [
-      "Total utility and marginal utility",
-      "Real value and nominal value",
-      "Objective utility and subjective utility",
-      "Gross utility and net utility"
-    ],
-    "context": "Textbooks separate total utility (the whole stack of satisfactions from all units held) from marginal utility (the added satisfaction from one more unit given current holdings). Menger's water-and-diamonds resolution is the classic teaching case for the distinction. Source: Study.com, 'Diamond-Water Paradox'.",
-    "topic": "the-paradox-of-value-dissolved-diamond-water-and-marginalism"
-  },
-  {
-    "tier": 5,
-    "question": "William Jevons in England and Carl Menger in Vienna both answered the diamond puzzle in the 1870s by pointing to the margin, the one more unit a chooser is weighing. Once their answer is granted, one older project in economics becomes hopeless. Which project?",
-    "answer": "The whole project of locating value in an objective property of the good itself",
-    "choices": [
-      "The whole project of locating value in an objective property of the good itself",
-      "The project of measuring prices in a common unit of account",
-      "The project of studying international trade patterns",
-      "The project of writing economic history"
-    ],
-    "context": "Menger, Jevons and Walras converged on the same conclusion in the 1871-1874 marginal revolution: value is not IN the good, it is a ranking of the next unit by a chooser. Once that move is made, cost-of-production and labour-embodied theories lose their footing. Prices, trade patterns and economic history remain perfectly good subjects of study. Source: Wikipedia, 'Marginalism'.",
+    "context": "Every step of the labour-theory chain -- Smith on embodied labour, Ricardo's refinement, Marx's socially necessary labour -- assumed value belonged to the good. Denying the assumption denies the whole chain. William Jevons in England and Leon Walras in Lausanne reached the same marginal answer in 1871-74, and with it the whole project of locating value in an objective property of the good, labour-hours or cost of production alike, lost its footing. Comparative advantage, the quantity theory and Malthus depend on other assumptions and are unaffected. Source: Wikipedia, 'Marginalism'.",
     "topic": "the-paradox-of-value-dissolved-diamond-water-and-marginalism"
   },
   {
@@ -26252,9 +26213,9 @@
     "answer": "Businesses that beg the government to hurt competitors so they can charge more",
     "choices": [
       "Businesses that beg the government to hurt competitors so they can charge more",
-      "People who forget to close their windows at night",
-      "The high price of French candle wax",
-      "Sunlight causing eye damage"
+      "Shoppers who buy cheap foreign goods instead of supporting French makers",
+      "Lawmakers who tax windows and doors to raise money for the state",
+      "Candle-makers who charge too much for wax because they face no rivals"
     ],
     "context": "The petition names 'all windows, dormers, skylights, inside and outside shutters, curtains, casements, bull's-eyes, deadlights, and blinds' -- every household aperture that lets in the free rival's product. Source: fee.org/resources/a-petition.",
     "topic": "the-petition-of-the-candlemakers-a-law-against-the-sun"
@@ -26325,19 +26286,6 @@
     "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
   },
   {
-    "tier": 1,
-    "question": "Paul Samuelson and Robert Solow drew a graph in the 1960s with rising prices along one side and joblessness along the other. Their line seemed to offer a menu: turn a dial one way for fewer people out of work, the other for slower prices. What is this supposed choice called?",
-    "answer": "The inflation-unemployment trade-off",
-    "choices": [
-      "The inflation-unemployment trade-off",
-      "The tax-and-spend loop",
-      "The gold-and-silver ratio",
-      "The supply-and-demand rule"
-    ],
-    "context": "The 1960s Keynesian view treated the Phillips curve as a menu: policymakers could pick a point along it. This became the theoretical justification for expansionary monetary and fiscal policy. Source: en.wikipedia.org/wiki/Phillips_curve.",
-    "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
-  },
-  {
     "tier": 2,
     "question": "Milton Friedman told the American Economic Association in December 1967 that cutting unemployment by making some extra inflation works only once. As soon as workers see prices rising, he warned, they demand higher wages and the trick fails. What did he say about the long run?",
     "answer": "The trade-off between inflation and unemployment vanishes",
@@ -26352,28 +26300,15 @@
   },
   {
     "tier": 2,
-    "question": "Edmund Phelps of Columbia University quietly reached a result on his own in 1967: using inflation to lower unemployment stops working the moment workers see it coming. Milton Friedman of the University of Chicago told the American Economic Association the same thing that year. What does two respected scholars finding the same answer independently usually mean?",
-    "answer": "The result is probably right, not just one person's opinion",
+    "question": "Milton Friedman addressed the American Economic Association in December 1967 and attacked the menu that seemed to trade rising prices for jobs. Another economist had reached the same result on his own that same year, and the Nobel Prize went to him in 2006. Who was he?",
+    "answer": "Edmund Phelps",
     "choices": [
-      "The result is probably right, not just one person's opinion",
-      "One of them must have cheated by copying",
-      "The result is definitely wrong",
-      "The government paid them both to say it"
+      "Edmund Phelps",
+      "Robert Lucas",
+      "James Tobin",
+      "Robert Solow"
     ],
-    "context": "Phelps's 1967 papers reached the natural-rate conclusion independently of Friedman. He won the Nobel in 2006 partly for this work. The result is now called the Friedman-Phelps critique. Source: nobelprize.org (Phelps 2006).",
-    "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
-  },
-  {
-    "tier": 3,
-    "question": "An American out of work in 1979 went to the store and found prices still climbing fast. Roughly 6 percent of workers stood idle that year while inflation ran near 11 percent, a mix the theory of the day said could not happen. What is the name for that painful mix?",
-    "answer": "Stagflation",
-    "choices": [
-      "Stagflation",
-      "Deflation",
-      "Reflation",
-      "Hyperinflation"
-    ],
-    "context": "Stagflation was the 1970s combination of stagnant growth, high unemployment, and high inflation. The word entered mainstream use around 1970. By 1979 the US had roughly 6% unemployment and 11% inflation simultaneously. Source: en.wikipedia.org/wiki/Stagflation.",
+    "context": "Phelps's papers of 1967 and 1968 reached the natural-rate conclusion independently of Friedman, and the 2006 Nobel Prize honoured his analysis of trade-offs over time in economic policy. The result is often called the Friedman-Phelps critique. Lucas (1995), Tobin (1981) and Solow (1987) won the prize for other work; Solow had helped draw the menu itself. Source: nobelprize.org (Phelps 2006).",
     "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
   },
   {
@@ -26382,9 +26317,9 @@
     "answer": "A central bank that helps politicians in the short run creates bigger inflation later",
     "choices": [
       "A central bank that helps politicians in the short run creates bigger inflation later",
-      "Central banks always ignore what politicians ask them to do",
-      "Loose money always brings both low prices and high employment",
-      "US Presidents have no influence at all over the Federal Reserve"
+      "A central bank that eases before an election wins lasting growth for the country",
+      "A central bank that keeps money loose can hold unemployment down for good",
+      "A central bank that obeys a president keeps markets calm and prices steady"
     ],
     "context": "Arthur Burns chaired the Fed 1970-78 under Nixon, Ford, and Carter. His diaries and Nixon-tape transcripts document political pressure to keep money easy through Nixon's 1972 re-election. Miller succeeded Burns briefly (1978-79); Volcker followed. Source: federalreservehistory.org/essays/great-inflation.",
     "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
@@ -26395,9 +26330,9 @@
     "answer": "Real economies are made of millions of people making choices, not smooth flows",
     "choices": [
       "Real economies are made of millions of people making choices, not smooth flows",
-      "Modern computers already do the same job perfectly",
-      "Water evaporates, so the numbers would drift too much",
-      "The machine cost too much money to build a second one"
+      "Real economies move faster than water can flow between glass tanks",
+      "Real economies need far more tanks and pipes than any room could hold",
+      "Real economies change their tax laws too often for fixed pipes to follow"
     ],
     "context": "The MONIAC (Monetary National Income Analogue Computer), built by Phillips at LSE in 1949, was a hydraulic analog computer that used flowing water to model Keynesian income-expenditure identities. Working units are preserved at the Reserve Bank of New Zealand and Cambridge. Source: en.wikipedia.org/wiki/MONIAC.",
     "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
@@ -26405,12 +26340,12 @@
   {
     "tier": 5,
     "question": "Murray Rothbard read Milton Friedman's 1968 case against printing money to lower unemployment and agreed as far as it went. Friedman said workers catch on to rising prices and demand higher wages. Rothbard, following Ludwig von Mises, pressed a deeper point. What is that deeper Austrian point?",
-    "answer": "Every attempt to fine-tune with monetary expansion eventually produces the same distortion-and-liquidation cycle",
+    "answer": "Every attempt to fine-tune with new money ends in the same boom-and-bust cycle",
     "choices": [
-      "Every attempt to fine-tune with monetary expansion eventually produces the same distortion-and-liquidation cycle",
-      "The natural rate is closer to zero than Friedman claimed",
-      "Nominal-wage rigidity is stronger than the model assumes",
-      "Money-supply data is too imprecise to guide policy"
+      "Every attempt to fine-tune with new money ends in the same boom-and-bust cycle",
+      "The natural rate of unemployment sits far closer to zero than Friedman claimed",
+      "Wages are stickier in money terms than Friedman's simple model assumed",
+      "The money-supply figures are too imprecise for any central bank to steer by"
     ],
     "context": "Rothbard's Austrian reading: Friedman correctly saw that expectations undo the trade-off, but the deeper point is that credit expansion distorts the whole capital structure, and the liquidation that follows is the very stagflation Friedman diagnosed. Source: mises.org/library/americas-great-depression.",
     "topic": "the-phillips-curves-death-and-friedmans-1968-vindication"
@@ -26425,20 +26360,7 @@
       "75 basis points, an unusual cut",
       "100 basis points, an emergency cut"
     ],
-    "context": "The September 18 2024 pivot was a 50-basis-point cut, larger than the traditional 25bp starting move. It brought the funds rate to 4.75-5.00% and began the current cutting cycle. Source: Grokipedia 'Federal funds rate' (2026-09-05).",
-    "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
-  },
-  {
-    "tier": 1,
-    "question": "Jerome Powell signaled in late summer 2024 that the Federal Reserve would start lowering interest rates. His committee had raised them hike after hike from March 2022 to fight the worst inflation in 40 years. What is a sharp turn like that called in financial news?",
-    "answer": "A pivot",
-    "choices": [
-      "A pivot",
-      "A pause",
-      "A pledge",
-      "A promise"
-    ],
-    "context": "The Kansas City Fed hosts the annual Jackson Hole Economic Symposium every August. Powell's 2024 address there previewed the September pivot as a response to labor-market cooling rather than declining inflation. Source: Grokipedia 'Jackson Hole Economic Symposium' (2026-09-05).",
+    "context": "The September 18 2024 pivot was a 50-basis-point cut, larger than the traditional 25bp starting move. It brought the funds rate to 4.75-5.00% and began a new cutting cycle. Source: Grokipedia 'Federal funds rate' (2026-09-05).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
   },
   {
@@ -26451,7 +26373,7 @@
       "A widening trade deficit",
       "Falling residential construction"
     ],
-    "context": "Powell framed the cut as a preemptive response to labor-market weakening. CPI had come down from the 9.1% peak to roughly 2.5% by mid-2024 but core inflation remained sticky around 3.2% -- above target. Source: federalreserve.gov (Powell Jackson Hole speech August 23 2024).",
+    "context": "Powell framed the cut as a preemptive response to labor-market weakening. CPI had come down from the 9.1% peak to roughly 2.5% by August 2024, but core inflation remained sticky around 3.2% -- above target. Source: federalreserve.gov (Powell Jackson Hole speech August 23 2024).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
   },
   {
@@ -26460,11 +26382,11 @@
     "answer": "The soft landing",
     "choices": [
       "The soft landing",
-      "The Goldilocks scenario",
-      "The immaculate disinflation",
-      "The delayed convergence"
+      "The dual mandate",
+      "The Taylor rule",
+      "The Greenspan put"
     ],
-    "context": "A 'soft landing' means inflation falls to target without a recession. The Fed staked its 2024 messaging on this outcome. Whether it holds depends on the second wave, which another question probes. Source: Grokipedia 'Soft landing (economics)' (2026-09-05).",
+    "context": "A 'soft landing' means inflation falls to target without a recession. The Fed staked its 2023-24 messaging on that outcome; whether it held is still argued. The dual mandate is the Fed's pair of goals, the Taylor rule a formula for setting rates, and the Greenspan put the market's faith that the Fed will rescue falling stocks. Source: Grokipedia 'Soft landing (economics)' (2026-09-05).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
   },
   {
@@ -26473,11 +26395,11 @@
     "answer": "Cutting rates too early can trigger a second, worse inflation wave",
     "choices": [
       "Cutting rates too early can trigger a second, worse inflation wave",
-      "Central banks should always cut rates during any slowdown",
-      "Wage caps are the only cure for stubborn inflation",
-      "Inflation is not affected by interest rates at all"
+      "Cutting rates in a slowdown keeps jobs safe at little cost to prices",
+      "Price and wage controls work better than rate hikes against inflation",
+      "Raising rates once is enough to end inflation for good"
     ],
-    "context": "Arthur Burns (Fed chair 1970-1978) cut rates too soon after the first 1970 inflation wave, setting up the 1979-80 second wave that Volcker had to crush at 20% rates. The parallel is invoked by Larry Summers, Peter Schiff, Bob Murphy, Steve Hanke, and Lyn Alden. Source: Grokipedia 'Arthur Burns' (2026-09-05).",
+    "context": "Arthur Burns (Fed chair 1970-1978) eased too soon after the inflation wave of 1973-74, and the second wave of 1979-80 had to be crushed by Paul Volcker at rates near 20%. Economists across camps, Larry Summers among them, raised the parallel in the 2020s. Source: Grokipedia 'Arthur Burns' (2026-09-05).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
   },
   {
@@ -26486,48 +26408,22 @@
     "answer": "Very high interest rates can crush inflation but hurt borrowers first",
     "choices": [
       "Very high interest rates can crush inflation but hurt borrowers first",
-      "Printing more money is the fastest cure for inflation",
-      "Price controls are always more effective than rate hikes",
-      "Interest rates have no link at all to inflation"
+      "Only a recession, never interest rates, can bring prices back down",
+      "Inflation fades by itself once a decade of rising prices runs its course",
+      "Rate hikes work only when paired with wage and price controls"
     ],
     "context": "Volcker took the Fed chair in August 1979 and hiked the funds rate to a peak of about 20% in 1981 to crush the second wave of inflation that Arthur Burns's premature cuts had helped seed. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
   },
   {
-    "tier": 4,
-    "question": "Jerome Powell's Federal Reserve raised interest rates from near zero to over 5 percent after Covid stimulus and lockdown supply shocks pushed American inflation above 9 percent in mid-2022. Prices came down, and the deep slump most economists had expected did not arrive. If that holds up, one specific interpretation of the whole period looks vindicated. Which interpretation?",
-    "answer": "The Fed's aggressive 2022-23 tightening successfully broke inflation without recession -- the soft-landing thesis",
-    "choices": [
-      "The Fed's aggressive 2022-23 tightening successfully broke inflation without recession -- the soft-landing thesis",
-      "The Austrian analysis of the entire QE cycle was correct in every detail",
-      "MMT's framework accurately predicts inflation dynamics",
-      "Monetary policy is completely disconnected from consumer prices"
-    ],
-    "context": "If inflation stays contained in the 2-3% range and unemployment does not spike, the soft-landing narrative wins. If a second wave emerges, the Austrian analysis of monetary transmission wins. The empirical test is ongoing. Source: federalreserve.gov (2024-2025 FOMC statements).",
-    "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
-  },
-  {
-    "tier": 4,
-    "question": "Donald Trump first appointed Jerome Powell Federal Reserve chair in 2018, and Joe Biden reappointed him in 2022. With Powell's term as chairman due to end in May 2026, press coverage kept floating possible successors. Which trio was most frequently named?",
-    "answer": "Kevin Warsh, Kevin Hassett, and Christopher Waller",
-    "choices": [
-      "Kevin Warsh, Kevin Hassett, and Christopher Waller",
-      "Lael Brainard, Michelle Bowman, and Adriana Kugler",
-      "Ben Bernanke, Janet Yellen, and Timothy Geithner",
-      "Judy Shelton, Stephen Moore, and Herman Cain"
-    ],
-    "context": "Warsh (former Fed governor), Hassett (former CEA chair), and Waller (current governor) have all been mentioned publicly. Trump-Powell tensions have been ongoing since 2018 over rate policy. Source: Grokipedia 'Jerome Powell' (2026-09-05).",
-    "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
-  },
-  {
     "tier": 5,
     "question": "Jerome Powell lowered interest rates in September 2024, with inflation still above the Fed's 2 percent target. Austrian and monetarist critics saw the move as more than one man's error. What pattern did they say it showed in how central banks handle the political costs of tight money?",
-    "answer": "Central banks tend to cut rates before inflation is fully broken because the political cost of continued unemployment exceeds the political cost of eventual re-emerging inflation",
+    "answer": "Central banks cut too soon, since joblessness costs them now and inflation only later",
     "choices": [
-      "Central banks tend to cut rates before inflation is fully broken because the political cost of continued unemployment exceeds the political cost of eventual re-emerging inflation",
-      "Central banks always wait until inflation is definitively at target before cutting",
-      "Central banks are indifferent to the political costs of their policies",
-      "Central banks always follow monetarist rules mechanically"
+      "Central banks cut too soon, since joblessness costs them now and inflation only later",
+      "Central banks hold rates high too long, since inflation costs them more than joblessness",
+      "Central banks shrug off political costs and follow whatever their forecast models say",
+      "Central banks move only when markets force them, whatever the political cost of delay"
     ],
     "context": "The Burns parallel captures the pattern. The immediate visible cost of tight money (unemployment, low asset prices) is politically painful; the deferred cost of a second wave arrives after officials have moved on. The incentive structure inside central banking is tilted toward premature easing. Source: Rothbard, America's Great Depression (1963).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
@@ -26535,28 +26431,15 @@
   {
     "tier": 5,
     "question": "Followers of Milton Friedman and Ludwig von Mises watched the Fed cut rates in September 2024 with inflation still above the 2 percent target, and rival camps watched from the far side of a lasting dispute. The cut made a rare live test of it. Which dispute is it?",
-    "answer": "Whether monetary expansion produces consumer-price inflation on a long and variable lag, as monetarists and Austrians argue, or whether it can be neutralized by supply-side responses, as MMT and some New Keynesians argue",
+    "answer": "Whether new money feeds consumer prices on a long lag or can be absorbed by supply",
     "choices": [
-      "Whether monetary expansion produces consumer-price inflation on a long and variable lag, as monetarists and Austrians argue, or whether it can be neutralized by supply-side responses, as MMT and some New Keynesians argue",
-      "Whether the Federal Reserve is a private or public institution",
-      "Whether Bitcoin will replace gold as a reserve asset",
-      "Whether commercial banks or central banks create the majority of money"
+      "Whether new money feeds consumer prices on a long lag or can be absorbed by supply",
+      "Whether the Federal Reserve is a private or a public institution at heart",
+      "Whether Bitcoin will replace gold as the main reserve asset of central banks",
+      "Whether commercial banks or central banks create most of the money in use"
     ],
     "context": "The 2020-25 policy cycle is the largest natural experiment on this question since the 1970s. The outcome will shape monetary economics for a generation. Source: Grokipedia 'Inflation in the United States (2021-2023)' (2026-09-05).",
     "topic": "the-powell-2024-pivot-and-the-second-inflation-wave-question"
-  },
-  {
-    "tier": 1,
-    "question": "The committee around Jerome Powell voted on March 16, 2022, to raise the federal funds rate by 25 basis points, the first rise in years. It opened the fight against the worst inflation the US had seen in 40 years. In which prior year had the Fed last raised rates?",
-    "answer": "2018",
-    "choices": [
-      "2018",
-      "2015",
-      "2020",
-      "2010"
-    ],
-    "context": "The March 16 2022 hike was the Fed's first move higher since December 2018. It began a tightening cycle that would become the most aggressive since Volcker's 1979-82 disinflation. Source: Grokipedia 'Federal funds rate' (2026-09-05).",
-    "topic": "the-powell-tightening-11-hikes-in-16-months-2022-23"
   },
   {
     "tier": 1,
@@ -26564,11 +26447,11 @@
     "answer": "Raise interest rates so borrowing money costs more",
     "choices": [
       "Raise interest rates so borrowing money costs more",
-      "Print much more money every day",
-      "Ban all bank loans immediately",
-      "Force every store to lower its prices"
+      "Lower interest rates so people can afford the higher prices",
+      "Print more money so wages can keep up with prices",
+      "Cap store prices so shoppers can afford the basics"
     ],
-    "context": "The July 26 2023 hike took the federal funds rate to 5.25-5.50%. It was held there for 14 months before the September 2024 pivot. Source: Grokipedia 'Federal funds rate' (2026-09-05).",
+    "context": "The Fed's first rise of the cycle came on March 16, 2022: a quarter-point, and the first increase since December 2018. Ten more followed, carrying the federal funds rate to 5.25-5.50% by July 2023. Source: Grokipedia 'Federal funds rate' (2026-09-05).",
     "topic": "the-powell-tightening-11-hikes-in-16-months-2022-23"
   },
   {
@@ -26590,11 +26473,11 @@
     "answer": "Quantitative tightening",
     "choices": [
       "Quantitative tightening",
-      "Sterilized intervention",
-      "Reserve neutralization",
-      "Portfolio maturation"
+      "Operation Twist",
+      "Yield-curve control",
+      "Sterilized intervention"
     ],
-    "context": "Quantitative tightening (QT) is the mirror of QE: instead of buying bonds and creating reserves, the Fed lets bonds mature and destroys reserves. QT began June 2022 at $47.5B/month and rose to $95B/month by September 2022. Source: Grokipedia 'Quantitative tightening' (2026-09-05).",
+    "context": "Quantitative tightening (QT) is the mirror of QE: instead of buying bonds and creating reserves, the Fed lets bonds mature and destroys reserves. QT began June 2022 at $47.5B/month and rose to $95B/month by September 2022. Operation Twist (2011) swapped short bonds for long ones without shrinking the balance sheet. Source: Grokipedia 'Quantitative tightening' (2026-09-05).",
     "topic": "the-powell-tightening-11-hikes-in-16-months-2022-23"
   },
   {
@@ -26603,11 +26486,11 @@
     "answer": "Rate changes take many months to fully affect prices",
     "choices": [
       "Rate changes take many months to fully affect prices",
-      "Rate changes work overnight with no delay at all",
-      "Rate changes only affect the price of food",
-      "Rate changes always cause prices to rise faster"
+      "Rate changes matter less to prices than the supply of oil and food",
+      "Rate changes were too small to matter until they passed 5 percent",
+      "Rate changes reach prices only after Congress cuts its spending"
     ],
-    "context": "The June 15 2022 hike was the second 75bp move. The June CPI print of 9.1% year-over-year arrived one day later, on June 13 2022. Peak inflation and peak tightening pace coincided almost exactly. Source: Grokipedia 'Inflation in the United States (2021-2023)' (2026-09-05).",
+    "context": "Milton Friedman made the phrase 'long and variable lags' famous. The Fed's first 75-basis-point hike came on June 15, 2022; consumer prices peaked at 9.1 percent a year in the June figures, published on July 13, and slowed clearly only during 2023. Source: Grokipedia 'Inflation in the United States (2021-2023)' (2026-09-05).",
     "topic": "the-powell-tightening-11-hikes-in-16-months-2022-23"
   },
   {
@@ -26626,12 +26509,12 @@
   {
     "tier": 4,
     "question": "Austrian-school economists, heirs of Ludwig von Mises and Friedrich Hayek, watched Jerome Powell raise interest rates in 2022 and 2023 faster than at any time since the early 1980s, to fight the worst inflation in forty years. They had warned for decades of the hidden fragility central-bank money creates, and they said the Fed had painted itself into a specific structural trap. What is the trap they identify?",
-    "answer": "Raise rates enough to kill inflation and you break the financial system built on cheap money; hold rates and inflation persists",
+    "answer": "Hike enough to end inflation and banks break; stop short and inflation stays",
     "choices": [
-      "Raise rates enough to kill inflation and you break the financial system built on cheap money; hold rates and inflation persists",
-      "Cut rates to save the banks and consumer prices fall further",
-      "Do nothing and market forces will restore stability without any intervention",
-      "Raise reserve requirements and abolish deposit insurance simultaneously"
+      "Hike enough to end inflation and banks break; stop short and inflation stays",
+      "Hike and the dollar soars, crushing exports; cut and the dollar sinks abroad",
+      "Shrink the balance sheet and bond yields spike; grow it and stocks bubble",
+      "Raise reserve rules and lending stops; drop them and deposits flee abroad"
     ],
     "context": "This is the classic Austrian business-cycle bust phase. The malinvestment built by artificially low rates must be liquidated. Attempting to prevent the liquidation prolongs the misallocation; permitting it produces the visible crisis. Source: Rothbard, America's Great Depression (1963).",
     "topic": "the-powell-tightening-11-hikes-in-16-months-2022-23"
@@ -26652,12 +26535,12 @@
   {
     "tier": 5,
     "question": "Paul Volcker crushed inflation in the early 1980s with US federal debt at only about 32 percent of gross domestic product (GDP). Jerome Powell fought inflation from 2022 with that debt at about 120 percent of GDP. Every extra percentage point on the Fed's policy rate now costs the Treasury tens of billions more each year in interest. What does the comparison show about high government debt and monetary policy?",
-    "answer": "A Fed operating alongside 120% debt-to-GDP faces a much lower ceiling on how high it can raise rates than a Fed operating alongside 32% debt-to-GDP",
+    "answer": "It lowers the ceiling on how high the Fed can safely raise rates",
     "choices": [
-      "A Fed operating alongside 120% debt-to-GDP faces a much lower ceiling on how high it can raise rates than a Fed operating alongside 32% debt-to-GDP",
-      "Federal debt has no effect on monetary policy options",
-      "High debt-to-GDP allows the Fed to raise rates more aggressively than in the past",
-      "The Federal Reserve is entirely independent of federal fiscal considerations"
+      "It lowers the ceiling on how high the Fed can safely raise rates",
+      "It raises the ceiling, since a bigger debt gives the Fed more room to act",
+      "It changes nothing, since the Fed sets rates with no regard to the budget",
+      "It makes rate rises cheaper, since most of the debt is locked in at old rates"
     ],
     "context": "Fiscal dominance -- the situation in which monetary policy is constrained by the government's debt-service math -- explains why the modern Fed cannot go anywhere near Volcker-era rates. High debt shortens the fuse on which monetary tightening operates. Source: Ammous, The Fiat Standard (2021).",
     "topic": "the-powell-tightening-11-hikes-in-16-months-2022-23"
@@ -26668,11 +26551,11 @@
     "answer": "Distributional coalitions",
     "choices": [
       "Distributional coalitions",
-      "Rent-seeking parties",
-      "Institutional guilds",
-      "Vested majorities"
+      "Encompassing organizations",
+      "Countervailing powers",
+      "Iron triangles"
     ],
-    "context": "Distributional coalitions is Olson's term for organized groups that secure privileges for their members at the expense of the general economy. Each new coalition adds to the accumulated weight. Source: Olson, Rise and Decline (Yale 1982), Chapter 2.",
+    "context": "Distributional coalitions is Olson's term for organized groups that secure privileges for their members at the expense of the general economy. His contrasting case was the encompassing organization, a group so large that it bears much of the cost of its own demands. Countervailing powers (Galbraith) and iron triangles (political science) name other things. Source: Olson, The Rise and Decline of Nations (Yale 1982).",
     "topic": "the-rise-and-decline-of-nations-1982"
   },
   {
@@ -26707,16 +26590,16 @@
     "answer": "Growth slows because too many groups protect their own turf",
     "choices": [
       "Growth slows because too many groups protect their own turf",
-      "Growth speeds up because everyone starts cooperating",
-      "Growth stays exactly the same as it was decades ago",
-      "Growth depends only on how much rain falls each year"
+      "Growth speeds up because each deal makes its industry stronger",
+      "Growth holds steady because the deals cancel one another out",
+      "Growth slows only once the country's savings start running out"
     ],
     "context": "Britain had accumulated distributional coalitions since the Industrial Revolution without a similarly disruptive shock. Olson used its relative decline to illustrate the structural mechanism. Source: Olson, Rise and Decline (1982), Chapter 5.",
     "topic": "the-rise-and-decline-of-nations-1982"
   },
   {
     "tier": 3,
-    "question": "Mancur Olson said national decline was not fated. He argued that a determined government could dismantle entrenched interest groups deliberately, without a war, and restore growth. Later scholars often use two 1980s reform programs as textbook cases of exactly that, one led by a prime minister and one by a finance minister. Which two 1980s reform programs?",
+    "question": "Mancur Olson said national decline was not fated. He argued that a determined government could dismantle entrenched interest groups deliberately, without a war, and restore growth. Later scholars often point to two reform programs of the 1980s as textbook cases of exactly that. Which two?",
     "answer": "Thatcher's Britain 1979-90 and Roger Douglas's New Zealand 1984-88",
     "choices": [
       "Thatcher's Britain 1979-90 and Roger Douglas's New Zealand 1984-88",
@@ -26724,7 +26607,7 @@
       "Kohl's Germany 1982-98 and Chirac's France 1986-88",
       "Nakasone's Japan 1982-87 and Fraser's Australia 1975-83"
     ],
-    "context": "Both programs deliberately took on entrenched unions, licensing guilds, and subsidy recipients. New Zealand's reforms under Labour finance minister Roger Douglas were especially sharp -- and both economies saw significant growth acceleration. Source: Olson, Rise and Decline (1982), reissue introduction; Evans + Grimes on NZ reforms.",
+    "context": "Both programs deliberately took on entrenched unions, licensing guilds, and subsidy recipients; New Zealand's reforms under the Labour finance minister Roger Douglas were especially sharp. Source: grokipedia.com/page/Rogernomics.",
     "topic": "the-rise-and-decline-of-nations-1982"
   },
   {
@@ -26743,12 +26626,12 @@
   {
     "tier": 4,
     "question": "Mancur Olson published his book in 1982 with a riddle from the 1970s still unsolved, one that standard Keynesian theory said could not happen. He said his idea of interest-group sclerosis could explain the riddle. Which 1970s problem did he offer it for?",
-    "answer": "Stagflation -- high inflation coexisting with slow growth",
+    "answer": "The stagflation of the 1970s",
     "choices": [
-      "Stagflation -- high inflation coexisting with slow growth",
+      "The stagflation of the 1970s",
       "The oil-price shocks of 1973 and 1979",
       "The collapse of the Bretton Woods system",
-      "The dollar-devaluation of 1985"
+      "The New York City fiscal crisis of 1975"
     ],
     "context": "Olson's subtitle -- Economic Growth, Stagflation, and Social Rigidities -- targets 1970s stagflation. His structural claim: accumulated coalitions increase costs, slow adjustment, and lock in inflationary pressures even without excess aggregate demand. Source: Olson, Rise and Decline (1982), Introduction.",
     "topic": "the-rise-and-decline-of-nations-1982"
@@ -26759,9 +26642,9 @@
     "answer": "He explained a structural pattern; he never advocated destruction as policy",
     "choices": [
       "He explained a structural pattern; he never advocated destruction as policy",
-      "He believed only wars, not reforms, could restore growth",
-      "He argued the pattern applies only to authoritarian regimes",
-      "He limited the analysis to the 19th century"
+      "He said the pattern held only for nations rebuilt with large foreign aid",
+      "He said the pattern was a quirk of timing that later data would undo",
+      "He said only a written constitution, never reform, could check the lobbies"
     ],
     "context": "Olson insisted his analysis identified a mechanism, not a prescription. His whole final chapter of Rise and Decline is devoted to peaceful reform paths -- because the shock path is monstrous. Source: Olson, Rise and Decline (1982), final chapter.",
     "topic": "the-rise-and-decline-of-nations-1982"
@@ -26772,9 +26655,9 @@
     "answer": "Every coalition fights fiercely to keep its privilege; no cross-society force fights back",
     "choices": [
       "Every coalition fights fiercely to keep its privilege; no cross-society force fights back",
-      "Old democracies always have the wrong constitutional structure",
-      "Old democracies suffer worse demographic decline than others",
-      "Old democracies have already exhausted all technological progress"
+      "Every voter gains a little from the subsidy, so the majority votes to keep it",
+      "Every minister owes his seat to farmers, who outnumber the taxpayers who fund them",
+      "Every reform costs more to pass than the subsidy itself costs the taxpayer"
     ],
     "context": "The asymmetry is Olson's Logic writ large across national policy. Each subsidy recipient has enormous per-capita stake in defending its privilege; consumers and taxpayers have small per-capita stakes in the same issue and do not organize. Source: Olson, Rise and Decline (1982), Chapter 3.",
     "topic": "the-rise-and-decline-of-nations-1982"
@@ -26785,11 +26668,11 @@
     "answer": "A government that plans and controls almost every part of daily life",
     "choices": [
       "A government that plans and controls almost every part of daily life",
-      "A government that runs no schools at all",
-      "A government that keeps no army",
-      "A government that never collects any taxes"
+      "A government that leaves business to run itself with no rules at all",
+      "A government that hands power back to Britain's old landed families",
+      "A government that spends its peacetime budget on a standing army"
     ],
-    "context": "F. A. Hayek's The Road to Serfdom was published in Britain by Routledge on March 10, 1944, with an initial print run of 2,000 copies that sold out in about a month. Three other real Hayek books came later: Individualism and Economic Order (1948), The Constitution of Liberty (1960), The Fatal Conceit (1988). Source: University of Chicago Press, 'The Publication History of The Road to Serfdom' (https://press.uchicago.edu/Misc/Chicago/320553.html).",
+    "context": "F. A. Hayek's The Road to Serfdom was published in Britain by Routledge on March 10, 1944, with an initial print run of 2,000 copies that sold out in about a month. Source: University of Chicago Press, 'The Publication History of The Road to Serfdom' (https://press.uchicago.edu/Misc/Chicago/320553.html).",
     "topic": "the-road-to-serfdom-1944"
   },
   {
@@ -26833,19 +26716,6 @@
   },
   {
     "tier": 3,
-    "question": "A wartime reader in London opened Friedrich Hayek's short, urgent book of 1944, The Road to Serfdom. Hayek warned readers in Britain and America about a government that tries to plan everything from the top: what to make, who does which job, what things cost. Reviewers doubted Americans would read it, yet it became a huge bestseller. What is the main point of Hayek's warning?",
-    "answer": "Central planning of the economy tends to end personal freedom too",
-    "choices": [
-      "Central planning of the economy tends to end personal freedom too",
-      "Central planning has no link at all to political freedom",
-      "Governments should own every business to prevent crises",
-      "Free markets always lead to endless economic depressions"
-    ],
-    "context": "Reader's Digest condensed Road to Serfdom (the condensation was done by Max Eastman) as the lead item in its April 1945 issue -- for the first and only time positioning the condensed book at the front of the magazine. The Book-of-the-Month Club then distributed the Reader's Digest condensation to more than 600,000 readers, taking the book from academic economics into mass American culture. Source: Wikipedia, 'The Road to Serfdom.' Frank Knight's December 10, 1943 reader report was mixed but supportive enough to help clear the book for publication; a second report, by Jacob Marschak on December 20, 1943, was highly positive, calling the book one that 'cannot be bypassed.' The book went on to sell over 350,000 copies at Chicago. Source: University of Chicago Press publication history.",
-    "topic": "the-road-to-serfdom-1944"
-  },
-  {
-    "tier": 3,
     "question": "Editors at a major American picture magazine turned Friedrich Hayek's whole argument into a comic-strip layout, frame by frame, in February 1945. The Road to Serfdom had become a surprise hit in America. General Motors reprinted the picture version as a pamphlet and handed out millions of copies to workers. Which magazine ran it?",
     "answer": "Look",
     "choices": [
@@ -26863,9 +26733,9 @@
     "answer": "They lose the freedom to choose their own work, prices, and daily lives",
     "choices": [
       "They lose the freedom to choose their own work, prices, and daily lives",
-      "Prices become more accurate because one office sets them all",
-      "Everyone gets richer because central planning removes all waste",
-      "People trade more freely with other countries"
+      "They keep their freedoms but grow poorer as the plan wastes resources",
+      "They lose their savings as planners print money to pay for the plan",
+      "They gain steady jobs for life in return for paying higher taxes"
     ],
     "context": "George Orwell reviewed Road to Serfdom in the Observer on April 9, 1944, summarizing Hayek's thesis as 'Socialism inevitably leads to despotism' and adding his own worry that the collectivist alternative Hayek warned against was itself a genuine danger -- Orwell's own subject in Animal Farm and Nineteen Eighty-Four. Source: Reason magazine, 'The Connection Between George Orwell and Friedrich Hayek' (https://reason.com/2011/12/21/george-orwell-and-friedrich-hayek/).",
     "topic": "the-road-to-serfdom-1944"
@@ -26889,19 +26759,19 @@
     "answer": "A political party can be reshaped when a leader takes a set of ideas seriously",
     "choices": [
       "A political party can be reshaped when a leader takes a set of ideas seriously",
-      "Political parties never actually change their positions",
-      "Books have no effect on real-world politics",
-      "Leaders always end up believing what their staff already believes"
+      "A political party changes course only when its voters demand it first",
+      "A political party is reshaped by economic crises, not by books",
+      "A political party follows its research staff, who set the leader's agenda"
     ],
-    "context": "Margaret Thatcher, elected Leader of the Opposition in 1975, made this celebrated Conservative Research Department gesture that summer. Her introduction to Hayek had come through Road to Serfdom two decades earlier; The Constitution of Liberty (1960) was the longer, denser book. The Reagan-Thatcher policy turn a generation later drew heavily on Hayek's warning about the direction Britain had been drifting. Source: Sotheby's, 'This Is What We Believe: Margaret Thatcher and F. A. Hayek' (https://www.sothebys.com/en/articles/this-is-what-we-believe-margaret-thatcher-and-f-a-hayek).",
+    "context": "Margaret Thatcher, elected Leader of the Opposition in 1975, made this celebrated Conservative Research Department gesture that summer. She had first read The Road to Serfdom as a student at Oxford in the 1940s; The Constitution of Liberty (1960) was the longer, denser book, and her governments from 1979 drew on Hayek's ideas. Source: Sotheby's, 'This Is What We Believe: Margaret Thatcher and F. A. Hayek' (https://www.sothebys.com/en/articles/this-is-what-we-believe-margaret-thatcher-and-f-a-hayek).",
     "topic": "the-road-to-serfdom-1944"
   },
   {
     "tier": 5,
     "question": "A thoughtful critic reopens Friedrich Hayek's The Road to Serfdom, wanting to state its argument fairly before he accepts or rejects it. He sets the book's reputation aside and looks for the single reasoning move inside it. Which move does the book actually press?",
-    "answer": "That comprehensive economic planning requires progressively more coercive power to override the individual choices it must direct",
+    "answer": "That comprehensive planning needs ever more coercion to override the choices it directs",
     "choices": [
-      "That comprehensive economic planning requires progressively more coercive power to override the individual choices it must direct",
+      "That comprehensive planning needs ever more coercion to override the choices it directs",
       "That any government intervention in a market economy is inherently immoral",
       "That socialist parties are always more corrupt than conservative parties",
       "That planned economies must eventually fall behind capitalist economies in GDP"
@@ -27171,12 +27041,12 @@
   },
   {
     "tier": 1,
-    "question": "George H.W. Bush signed the Clean Air Act Amendments in November 1990, and with them the world's first big market in pollution rights. Power plants got a fixed number of allowances they could buy and sell. Which pollutant did the Acid Rain Program target?",
+    "question": "George H.W. Bush signed the Clean Air Act Amendments in November 1990, and with them a pioneering market in pollution rights. Power plants got a fixed number of allowances they could buy and sell. Which pollutant did those allowances cover?",
     "answer": "Sulfur dioxide",
     "choices": [
       "Sulfur dioxide",
       "Carbon dioxide",
-      "Nitrogen oxides only",
+      "Nitrogen oxides",
       "Particulate matter"
     ],
     "context": "The 1990 Clean Air Act Amendments created a cap-and-trade market in sulfur dioxide (SO2) emissions from coal-fired power plants. It was the first large national environmental market of its kind. Source: epa.gov (Acid Rain Program history).",
@@ -27196,32 +27066,6 @@
     "topic": "the-so2-acid-rain-program-1990-coasean-tradable-permits-in-p"
   },
   {
-    "tier": 2,
-    "question": "Robert Stavins of Harvard drafted a plan that Congress wrote into the 1990 Clean Air Act. Instead of ordering every coal plant to fit the same scrubber, the law set a national ceiling on sulfur and issued permits, and plants that cut cheaply sold their spares to plants where cutting cost more. The European Union and California later copied the design. What is the approach called?",
-    "answer": "Cap-and-trade",
-    "choices": [
-      "Cap-and-trade",
-      "Command-and-control",
-      "Pigouvian tax",
-      "Nationalization"
-    ],
-    "context": "Project 88, led by Senators Timothy Wirth (D-CO) and John Heinz (R-PA) and drafted by Harvard's Robert Stavins, proposed cap-and-trade and other market-based instruments. Its influence shaped the 1990 Clean Air Act Amendments. Source: hks.harvard.edu (Stavins bibliography). US power-plant SO2 emissions fell approximately 40% below 1990 levels by 2005 -- meeting the statutory targets. Ellerman, Joskow et al., Markets for Clean Air (Cambridge UP 2000), gave the standard economic evaluation. Source: epa.gov (Acid Rain Program compliance reports). The EU ETS launched January 1, 2005, covering CO2 emissions from power generation and heavy industry. It is the largest carbon market in the world and carries the same Coasean logic as the 1990 US Acid Rain Program. Source: ec.europa.eu (EU ETS overview). California's AB 32 (the Global Warming Solutions Act of 2006) authorized the state cap-and-trade program that launched January 1, 2013. The program covers about 85% of state emissions. Source: ww2.arb.ca.gov (AB 32 history).",
-    "topic": "the-so2-acid-rain-program-1990-coasean-tradable-permits-in-p"
-  },
-  {
-    "tier": 2,
-    "question": "Analysts at the Congressional Budget Office put a yearly price on the old fixed-rule way of cutting the pollution behind acid rain. Then the 1990 Clean Air Act's market in pollution rights went to work, and it cost about $1 billion a year, much less than anyone expected. What had the analysts estimated for the fixed rules?",
-    "answer": "$4-6 billion per year",
-    "choices": [
-      "$4-6 billion per year",
-      "$100 million per year",
-      "$40-60 billion per year",
-      "About the same as the actual program"
-    ],
-    "context": "CBO pre-program estimates were $4-6B/year under command-and-control. Actual market-based compliance came in near $1B/year -- 1/4 to 1/6 of the projected cost. The efficiency gain is what the Coase framework predicts. Source: Ellerman + Joskow et al., Markets for Clean Air (Cambridge UP 2000).",
-    "topic": "the-so2-acid-rain-program-1990-coasean-tradable-permits-in-p"
-  },
-  {
     "tier": 3,
     "question": "A clean-air planner opens the 1960 paper by Ronald Coase, who won the Nobel Prize in 1991, and weighs how to write her rule. Coase's readers tell her the real choice is not 'rules versus no rules,' since either way she is regulating. What is the actual choice?",
     "answer": "Command-and-control versus property-rights-plus-trading",
@@ -27236,15 +27080,15 @@
   },
   {
     "tier": 4,
-    "question": "Henry Waxman of California and Ed Markey of Massachusetts wrote a bill in 2009 for a national market in carbon dioxide permits, with most of the permits handed to companies instead of sold at auction. Lobbyists fought one another over who would receive them. The bill passed the House but died in the Senate. What weakness of such a market did the bill's collapse show?",
+    "question": "Henry Waxman of California and Ed Markey of Massachusetts wrote a bill in 2009 for a national market in carbon dioxide permits, with most of the permits handed to companies instead of sold at auction. Lobbyists fought one another over who would receive them. The bill passed the House but died in the Senate. What weakness of such a market did the lobbyists' scramble show?",
     "answer": "Free-permit allocation attracts rent-seeking capture",
     "choices": [
       "Free-permit allocation attracts rent-seeking capture",
-      "Cap-and-trade physically prevents any emissions reductions",
-      "Markets in emissions cannot be enforced under any circumstances",
-      "The Federal Reserve refuses to clear such transactions"
+      "Permit prices swing too wildly for firms to plan ahead",
+      "Auctioned permits push heavy industry to move abroad",
+      "Permit trading cannot measure each plant's emissions"
     ],
-    "context": "Who gets the free initial allowances (rather than buying at auction) is a rent-seeking prize in the Tullock 1967 sense. Waxman-Markey allocated most permits free to incumbents; the Senate fight over allocation contributed to the bill's death. Source: Tullock (1967) applied; Congressional Research Service (Waxman-Markey history).",
+    "context": "Who gets the free initial allowances (rather than buying at auction) is a rent-seeking prize in the Tullock 1967 sense. Waxman-Markey allocated most permits free to incumbents, and the fight over the allocation was fierce; the bill never came to a Senate vote. Source: Tullock (1967) applied; Congressional Research Service (Waxman-Markey history).",
     "topic": "the-so2-acid-rain-program-1990-coasean-tradable-permits-in-p"
   },
   {
@@ -27280,8 +27124,8 @@
     "choices": [
       "Central planners can copy what markets do for prices",
       "Central planning is impossible in principle",
-      "Only religion can guide an economy correctly",
-      "Trade with other countries is unnecessary"
+      "Central planners can do without prices altogether",
+      "Central planners can set every price by labour hours"
     ],
     "context": "Oskar Ryszard Lange (1904-1965) taught statistics and economics at Chicago from 1938 to 1945; after the war he returned to Poland to serve its Stalinist government and try to prove his ideas in practice. Source: en.wikipedia.org/wiki/Oskar_R._Lange.",
     "topic": "the-socialist-calculation-debate-the-40-year-argument"
@@ -27318,9 +27162,9 @@
     "answer": "Even honest people can look at hard evidence and change their minds about big questions",
     "choices": [
       "Even honest people can look at hard evidence and change their minds about big questions",
-      "Socialist economists never admit anything, no matter what happens in the world",
-      "The 1920 debate about planning was never actually settled by any evidence",
-      "Central planning worked well and only the Soviet version of it failed"
+      "Even a winning argument needs a famous convert before the public will listen",
+      "Even a lost debate can be won back by rewriting the history books later",
+      "Even an expert's party loyalty decides how he reads the evidence in the end"
     ],
     "context": "The line was: 'It turns out, of course, that Mises was right.' Heilbroner (1919-2005) had held the Norman Thomas chair at the New School and had, in the 1953 first edition of 'The Worldly Philosophers', omitted Mises, Hayek and Friedman entirely. Source: mises.org/mises-wire/socialist-robert-heilbroners-confession-1990-mises-was-right.",
     "topic": "the-socialist-calculation-debate-the-40-year-argument"
@@ -27328,14 +27172,14 @@
   {
     "tier": 5,
     "question": "Don Lavoie set the two halves of the Austrian case side by side in 1985. Ludwig von Mises had argued that central planners could not calculate without real market prices. Friedrich Hayek had pushed further: hand planners every price, and they still could not gather what a miner or a lorry driver picks up on the spot. What one objection did Lavoie see in the two?",
-    "answer": "The knowledge problem, that no central office can collect all the scattered facts guiding daily choices",
+    "answer": "The knowledge problem: no central office can gather the scattered facts behind daily choices",
     "choices": [
-      "The knowledge problem, that no central office can collect all the scattered facts guiding daily choices",
-      "The tax problem, that planners cannot collect enough taxes",
-      "The voting problem, that planners cannot count votes accurately",
-      "The transport problem, that planners cannot ship goods on time"
+      "The knowledge problem: no central office can gather the scattered facts behind daily choices",
+      "The incentive problem: planners and managers gain nothing by using resources well",
+      "The scale problem: no machine of the day could solve so many equations at once",
+      "The coercion problem: a plan can be carried out only by forcing people to obey"
     ],
-    "context": "Don Lavoie (1951-2001) coined the modern phrase 'the knowledge problem' in this book and its companion 'National Economic Planning: What Is Left?' (both 1985). Peter Boettke and Virgil Storr edited the 2016 reissue. Source: www.mercatus.org/hayekprogram/research/books/rivalry-and-central-planning.",
+    "context": "Don Lavoie (1951-2001) set out this reading in Rivalry and Central Planning and its companion National Economic Planning: What Is Left? (both 1985), arguing that the standard account had wrongly split Mises's argument from Hayek's. Source: www.mercatus.org/hayekprogram/research/books/rivalry-and-central-planning.",
     "topic": "the-socialist-calculation-debate-the-40-year-argument"
   },
   {
@@ -27357,9 +27201,9 @@
     "answer": "The vast scale of Soviet prison camps and mass killings",
     "choices": [
       "The vast scale of Soviet prison camps and mass killings",
-      "That the camps were actually schools of arts and crafts",
-      "That the camps held only convicted violent criminals",
-      "That Stalin had personally freed most of the prisoners"
+      "That the camps all closed for good after Stalin's death",
+      "That the camps had been run without Moscow's knowledge",
+      "That most prisoners were spies caught in the war"
     ],
     "context": "The Gulag Archipelago combined Solzhenitsyn's own eight years in the camps (1945-53), after his arrest for a private letter mocking Stalin, with hundreds of survivor accounts he had collected. It was published in Paris in three volumes, 1973-75; the English translation appeared 1974-78.",
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
@@ -27375,19 +27219,6 @@
       "Sent him to internal exile in Kazakhstan"
     ],
     "context": "Solzhenitsyn was expelled from the USSR on February 13, 1974. He lived in Vermont from 1976 to 1994 and returned to Russia in May 1994 after the USSR's fall. Source: en.wikipedia.org/wiki/Aleksandr_Solzhenitsyn.",
-    "topic": "the-soviet-gulag-solzhenitsyns-accounting"
-  },
-  {
-    "tier": 3,
-    "question": "Joseph Stalin ordered mass arrests in 1937 and 1938, staged show trials in Moscow, and had generals, party members, poets and ordinary citizens executed as disloyal. Soviet archives opened after 1991 showed how many his Great Purge had killed. Roughly how many?",
-    "answer": "Well over a million people",
-    "choices": [
-      "Well over a million people",
-      "Only a few hundred people at most",
-      "About ten thousand people in total",
-      "Zero people, since the trials were peaceful"
-    ],
-    "context": "Robert Conquest's The Great Terror (Macmillan, 1968) was pioneering. A 1990 revised edition (Oxford UP) folded in the archival numbers. Conquest reportedly suggested titling the new edition 'I Told You So, You... Fools' (an expletive softened for a family bank). Source: en.wikipedia.org/wiki/The_Great_Terror.",
     "topic": "the-soviet-gulag-solzhenitsyns-accounting"
   },
   {
@@ -27418,7 +27249,7 @@
   },
   {
     "tier": 5,
-    "question": "Bernard-Henri Levy and Andre Glucksmann, two ex-Maoist students in Paris, turned publicly against Marxism once they had read Aleksandr Solzhenitsyn's three volumes on the Soviet camps. They and their circle began saying aloud that such regimes produce camps, not paradise. What did the French press call the group?",
+    "question": "Bernard-Henri Levy and Andre Glucksmann, two Paris thinkers who had come up on the left, turned publicly against Marxism once they had read Aleksandr Solzhenitsyn's three volumes on the Soviet camps. They and their circle began saying aloud that such regimes produce camps, not paradise. What did the French press call the group?",
     "answer": "The Nouveaux Philosophes",
     "choices": [
       "The Nouveaux Philosophes",
@@ -27666,9 +27497,9 @@
   {
     "tier": 4,
     "question": "A tailor spends 10 hours making a badly-cut, badly-sewn suit that hangs poorly. A second tailor spends 5 hours making a well-cut, well-sewn suit that fits beautifully. On the labor theory of value the first suit should be worth about twice the second. On the subjective theory that Menger pressed against the classical tradition, which comparison actually holds?",
-    "answer": "The well-made 5-hour suit is worth MORE, because no chooser ranks the badly-made one higher",
+    "answer": "The well-made 5-hour suit is worth more, because no chooser ranks the badly-made one higher",
     "choices": [
-      "The well-made 5-hour suit is worth MORE, because no chooser ranks the badly-made one higher",
+      "The well-made 5-hour suit is worth more, because no chooser ranks the badly-made one higher",
       "The two suits are worth the same, because labor is labor",
       "The 10-hour suit is still worth more, because it embodies more work",
       "Neither suit has any value until a market price is quoted"
@@ -27703,68 +27534,29 @@
     "topic": "the-subjective-theory-of-value"
   },
   {
-    "tier": 5,
-    "question": "A thirsty boy gulps down four glasses of water one after another, and the fourth pleases him less than the first did. A principle at the heart of Carl Menger's Principles of 1871 explains why. Which principle is it?",
-    "answer": "Diminishing marginal utility",
-    "choices": [
-      "Diminishing marginal utility",
-      "Comparative advantage",
-      "Labor theory of value",
-      "Rent-seeking loss"
-    ],
-    "context": "The 1950 Free Press edition appeared 29 years after Menger's death (1921), 79 years after the German original (1871), and only after Menger's pupil Hayek had already moved from Vienna to LSE (1931) and then Chicago (1950). Frank Knight -- Milton Friedman's teacher at Chicago -- wrote the introduction. The gap is a measure of how far the Austrian tradition had traveled inside German-speaking economics before English-speaking economics noticed the founding text. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
-    "topic": "the-subjective-theory-of-value"
-  },
-  {
-    "tier": 1,
-    "question": "Ludwig von Mises, at thirty-one, handed the University of Vienna his first big book in 1912 as the thesis that would let him teach. English readers know it as The Theory of Money and Credit. What was its original German title?",
-    "answer": "Theorie des Geldes und der Umlaufsmittel",
-    "choices": [
-      "Nationaloekonomie",
-      "Theorie des Geldes und der Umlaufsmittel",
-      "Die Wirtschaftsrechnung im sozialistischen Gemeinwesen",
-      "Menschliches Handeln"
-    ],
-    "context": "'Umlaufsmittel' literally means 'means of circulation'; Batson translated it as 'fiduciary media' inside the text, but the publisher chose the cleaner 'Money and Credit' for the English title. Source: en.wikipedia.org/wiki/The_Theory_of_Money_and_Credit.",
-    "topic": "the-theory-of-money-and-credit-1912"
-  },
-  {
     "tier": 2,
     "question": "Friedrich Hayek worked out in London in 1931 an idea Ludwig von Mises had planted in 1912. When a central bank holds down the price of loans, businesses build lots of new factories and houses. A few years later many of those projects turn out to be losers and shut down. In their Austrian account, what is that rise and fall?",
     "answer": "The boom-bust cycle caused by cheap credit",
     "choices": [
       "The boom-bust cycle caused by cheap credit",
-      "The natural rhythm of the seasons",
-      "The result of workers asking for higher pay",
-      "A punishment sent by foreign competitors"
+      "The swing in demand as buyers lose their nerve",
+      "The cost spiral as unions push up wages",
+      "The glut when firms make more than buyers want"
     ],
     "context": "Hayek's LSE lectures 'Prices and Production' (1931) built the roundabout-production capital theory of Boehm-Bawerk together with Mises's monetary seed into the full ABCT: artificially low interest rates from bank credit expansion distort the structure of production, generating an unsustainable boom that must end in a bust. Source: en.wikipedia.org/wiki/The_Theory_of_Money_and_Credit.",
     "topic": "the-theory-of-money-and-credit-1912"
   },
   {
-    "tier": 3,
-    "question": "A shopkeeper asks why a silver coin has any value at all, and people tell him it buys things today. But it buys things today only because it bought things yesterday, and the day before, and back and back. Ludwig von Mises took up that puzzle, left unsolved by Carl Menger in 1871, and in his 1912 book he followed the chain until it could finally close. What kind of day did it land on?",
-    "answer": "A day when the money-good was not yet money but was valued for a direct non-monetary use",
+    "tier": 1,
+    "question": "A silver coin buys bread today because it bought bread yesterday, and the day before. Ludwig von Mises traced that chain back in 1912. When did he say it stops?",
+    "answer": "When silver had uses of its own",
     "choices": [
-      "A day when the money-good was not yet money but was valued for a direct non-monetary use",
-      "A day when a sovereign first stamped his image on a coin and decreed its face value",
-      "A day when a chartered private bank first issued notes payable to bearer on demand",
-      "A day when a joint-stock company first offered redeemable shares in a public market"
+      "When silver had uses of its own",
+      "When a king stamped his face on it",
+      "When a bank first printed notes",
+      "When a law made it legal tender"
     ],
-    "context": "Mises's move: today's demand rests on yesterday's known purchasing power, and you can trace the chain back through time until you reach a moment when the money-good had a non-monetary use (gold as jewelry, silver as ornament, cattle as food). The circularity dissolves. Source: en.wikipedia.org/wiki/Regression_theorem. Gold jewelry and dentistry, silver ornament, cattle used for food and traction, salt for preservation. Once the chain lands on a real barter-good with real demand for its own sake, the value it later carries as money is grounded in something outside the circular loop. Source: mises.org/online-book/man-economy-and-state-power-and-market/5-marginal-utility-money/b-money-regression.",
-    "topic": "the-theory-of-money-and-credit-1912"
-  },
-  {
-    "tier": 3,
-    "question": "Murray Rothbard argued in a short, punchy book of 1963, What Has Government Done to Our Money?, that governments all through history have quietly cheated the people who use their money. They shave down the gold or silver in each coin, or they print extra paper notes that dilute what already exists. What is that practice called?",
-    "answer": "Currency debasement",
-    "choices": [
-      "Currency debasement",
-      "Free banking",
-      "The gold standard",
-      "A trade surplus"
-    ],
-    "context": "Rothbard packed the case for commodity money and against government-run currency into a booklet aimed at the general reader. Fifty years on it remains the standard introduction. Source: en.wikipedia.org/wiki/What_Has_Government_Done_to_Our_Money%3F.",
+    "context": "Mises's move: today's demand rests on yesterday's known purchasing power, and the chain can be traced back through time until it reaches a moment when the money-good had a non-monetary use (gold as jewelry, silver as ornament, cattle as food). The circularity dissolves. Source: en.wikipedia.org/wiki/Regression_theorem.",
     "topic": "the-theory-of-money-and-credit-1912"
   },
   {
@@ -27813,8 +27605,8 @@
     "choices": [
       "A private-equity firm",
       "A hedge fund",
-      "A public university",
-      "A commercial airline"
+      "An investment bank",
+      "A credit-rating agency"
     ],
     "context": "Geithner joined the private-equity firm Warburg Pincus as president in March 2014. His 2014 memoir Stress Test explicitly defends the 2008-09 bailouts. Source: en.wikipedia.org/wiki/Timothy_Geithner; warburgpincus.com.",
     "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
@@ -27822,12 +27614,12 @@
   {
     "tier": 3,
     "question": "Janet Yellen stepped down as head of the Federal Reserve, the central bank that sets American interest rates, in 2018. Over the next two years she gave paid speeches and collected about $7 million, before President Biden made her his Treasury Secretary in 2021. Who paid most of that speaking money?",
-    "answer": "Wall Street firms including Citadel and Goldman Sachs",
+    "answer": "Wall Street banks and trading firms",
     "choices": [
-      "Wall Street firms including Citadel and Goldman Sachs",
-      "European central banks",
-      "US public school districts",
-      "Nonprofit advocacy groups"
+      "Wall Street banks and trading firms",
+      "Tech companies and their founders",
+      "Universities and policy institutes",
+      "Trade unions and labor federations"
     ],
     "context": "Yellen's financial disclosures documented approximately $7M in Wall Street speaking fees over the two-year interval. The pattern -- top financial-regulator role followed by high-fee industry advisory -- matches the earlier three Treasury secretaries. Source: US Office of Government Ethics disclosures 2020-21.",
     "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
@@ -27855,33 +27647,20 @@
       "A market corner",
       "A public buyback"
     ],
-    "context": "Scott Gottlieb, FDA Commissioner 2017-19, joined the Pfizer board in June 2019. It is a parallel modern case of the pattern documented across finance, defense, and pharmaceutical regulation. Source: pfizer.com (board announcement June 2019).",
+    "context": "Rubin spent twenty-six years at Goldman Sachs before the Treasury and a decade on Citigroup's executive committee after it. The same move turns up beyond finance: Scott Gottlieb, FDA Commissioner 2017-19, joined Pfizer's board in June 2019. Source: en.wikipedia.org/wiki/Robert_Rubin; pfizer.com (board announcement June 2019).",
     "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
   },
   {
     "tier": 5,
-    "question": "Public-choice economists point to four men who ran the Treasury in the twenty-five years from 1988, from Nicholas Brady to Timothy Geithner, each arriving from a Wall Street house or the New York Fed and each lawfully confirmed. What claim do they make?",
+    "question": "Public-choice economists point to four of the men who ran the Treasury in the twenty-five years from 1988, from Nicholas Brady to Timothy Geithner, each arriving from a Wall Street house or the New York Fed and each lawfully confirmed. What claim do they make?",
     "answer": "The pattern is institutional-incentive selection, not individual character",
     "choices": [
       "The pattern is institutional-incentive selection, not individual character",
-      "The pattern is criminal conspiracy prosecutable under federal statute",
-      "The pattern is entirely random and requires no explanation",
-      "The pattern is imposed by international treaty obligations"
+      "The pattern is simple expertise: only Wall Street trains people for the job",
+      "The pattern is personal greed: each man took the post to enrich himself",
+      "The pattern is party politics: each president rewarded his largest donors"
     ],
     "context": "Each of the four served legally and by presidential appointment. The critique targets the STRUCTURAL pattern that produces the pattern: the pool of qualified candidates comes from and returns to the industry. Source: Zingales (2012); Johnson (2009); Stigler (1971).",
-    "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
-  },
-  {
-    "tier": 5,
-    "question": "Marianne Bertrand, Matilde Bombardini and Francesco Trebbi followed former members of Congress and senior aides into lobbying jobs in a 2014 paper, and found that insiders with good connections are paid far more than they earned in public service. How large are the premiums quoted for such moves?",
-    "answer": "500 to 1000 percent premiums over their government pay",
-    "choices": [
-      "500 to 1000 percent premiums over their government pay",
-      "10 to 20 percent premiums",
-      "Essentially no premium over public pay",
-      "Pay cuts of 30 to 50 percent"
-    ],
-    "context": "The Bertrand + Bombardini + Trebbi 2014 AER paper 'Is It Whom You Know or What You Know?' documented substantial premiums for connected lobbyists, consistent with a market pricing capture-value. Source: aeaweb.org/articles?id=10.1257/aer.104.12.3885.",
     "topic": "the-treasury-revolving-door-rubin-paulson-geithner-yellen"
   },
   {
@@ -27912,19 +27691,6 @@
   },
   {
     "tier": 2,
-    "question": "A writer sits down to answer an opponent, and Frederic Bastiat has one rule for him. Before replying, the writer must restate the other side's case in a certain form, not the sloppy version, so that his answer is fair. In what form must he state it?",
-    "answer": "In its strongest form",
-    "choices": [
-      "In its strongest form",
-      "In its weakest form",
-      "In caricature form",
-      "In its shortest form"
-    ],
-    "context": "Part two: state the opposing view sympathetically and at its strongest. This is Bastiat's 'ineptly defended' discipline, later renamed 'steelmanning' in 21st-century rationalist writing. Source: bastiat.org.",
-    "topic": "the-universal-reach-bastiat-as-economics-writings-method"
-  },
-  {
-    "tier": 2,
     "question": "Frederic Bastiat took a bad economic argument apart in a set order. He described what people see and applaud, named what the other side was missing, and then made one last turn that surfaced what the policy actually costs. What does that last step trace?",
     "answer": "The unseen consequences",
     "choices": [
@@ -27939,27 +27705,14 @@
   {
     "tier": 4,
     "question": "A student brings Frederic Bastiat's method of the seen and the unseen to a shelf of classical-liberal books. The method serves him well on part of the shelf, but it was not built for every topic there. Which topic does it not by itself give him the tools for?",
-    "answer": "Monetary theory and business-cycle analysis",
+    "answer": "Questions of monetary theory and the business cycle",
     "choices": [
-      "Monetary theory and business-cycle analysis",
-      "Public-facing argument about tariffs",
-      "Public-facing argument about make-work schemes",
-      "Public-facing argument about the broken window"
+      "Questions of monetary theory and the business cycle",
+      "Questions of tariffs and other trade barriers",
+      "Questions of make-work public schemes",
+      "Questions of subsidies to favoured industries"
     ],
     "context": "For monetary theory the tradition needs Menger, Mises, and Hayek; for capital theory Bohm-Bawerk; for public choice Buchanan and Tullock. Bastiat's method is the first tool, not the only one. Source: grokipedia.com/page/Frederic_Bastiat.",
-    "topic": "the-universal-reach-bastiat-as-economics-writings-method"
-  },
-  {
-    "tier": 5,
-    "question": "A farmer at Mugron, in southwestern France, turned public writer only near the end of his life. Frederic Bastiat's Economic Sophisms, The Law and Economic Harmonies were all packed into the years just before tuberculosis killed him in 1850. Roughly how many years did his major writing career span?",
-    "answer": "Five",
-    "choices": [
-      "Five",
-      "Twenty-five",
-      "Fifteen",
-      "Two"
-    ],
-    "context": "Bastiat farmed at Mugron in the Landes for most of his adult life, publishing his first major essays in 1844-1845 and dying December 24, 1850. The pamphlets, sophisms, and Harmonies were all produced in that five-year window. Source: grokipedia.com/page/Frederic_Bastiat.",
     "topic": "the-universal-reach-bastiat-as-economics-writings-method"
   },
   {
@@ -27981,11 +27734,11 @@
     "answer": "American shoppers -- they pay more for candy, soda, and food",
     "choices": [
       "American shoppers -- they pay more for candy, soda, and food",
-      "American sugar farmers -- they lose sales",
-      "Foreign sugar growers -- they gain a bigger market",
-      "No one -- everyone pays the same price"
+      "Grocery chains -- they absorb the higher price themselves",
+      "Federal taxpayers -- they mail the growers a yearly check",
+      "Sugar workers -- they take lower wages to cover it"
     ],
-    "context": "The Sugar Act 1934 first structured the quota, loan, and allotment system that still supports US sugar prices today under the 2018 Farm Bill's re-authorization. Source: grokipedia.com/page/United_States_Sugar_Program.",
+    "context": "The Sugar Act of 1934 first structured the quota, loan, and allotment system that still supports US sugar prices through the Farm Bills. Source: grokipedia.com/page/United_States_Sugar_Program.",
     "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
   },
   {
@@ -27994,9 +27747,9 @@
     "answer": "US laws limit sugar imports so American sugar farmers can charge more",
     "choices": [
       "US laws limit sugar imports so American sugar farmers can charge more",
-      "American sugar tastes different from Canadian sugar",
-      "Sugar cannot grow anywhere in the United States",
-      "The US mint uses sugar to make coins"
+      "American sugar is taxed at the register to pay for school lunches",
+      "US sugar must be refined twice to meet federal food-safety rules",
+      "US shipping rules make sugar from abroad slow and costly to unload"
     ],
     "context": "Kraft Foods moved Life Savers production from Holland, Michigan to Montreal in 2003 because Canadian sugar was about half the US price under the US Sugar Program. Source: grokipedia.com/page/Life_Savers.",
     "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
@@ -28016,20 +27769,20 @@
   },
   {
     "tier": 4,
-    "question": "An American soda bottler signs for a truckload of sugar at about double the world price. Frédéric Bastiat taught readers to look past the growers a law protects to the industries that buy the same crop as an ingredient. What does his method predict firms like this will do?",
+    "question": "An American candy maker signs for a truckload of sugar at about double the world price. Frédéric Bastiat taught readers to look past the growers a law protects to the industries that buy the same crop as an ingredient. What does his method predict firms like this will do?",
     "answer": "They move production to where sugar is cheap",
     "choices": [
       "They move production to where sugar is cheap",
-      "They automate away all remaining sugar workers",
       "They keep US production and absorb the input cost",
-      "They petition congress to raise consumer prices further"
+      "They buy their own sugar farms to escape the price",
+      "They merge with the growers to share in the gains"
     ],
     "context": "The predicted move played out in 2003 when Life Savers relocated from Michigan to Montreal, in the 2000s when Ferrara Pan and Brach's moved much production to Mexico. Higher US input costs pushed candy jobs across the border. Source: trade.gov/employment-changes-us-food-manufacturing-impact-sugar-prices.",
     "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
   },
   {
     "tier": 5,
-    "question": "A shopper takes a bag of Domino Sugar off the shelf of an American supermarket. Nearly all of the federal sugar program's gain, billions of dollars, goes to a single Cuban-American family in Florida, owners of Domino Sugar and Florida Crystals. What is the family's name?",
+    "question": "A shopper takes a bag of Domino Sugar off the shelf of an American supermarket. The best-known winners of the federal sugar program are one Florida family of Cuban descent, which controls both Domino and Florida Crystals; a 1998 estimate put its gain at $60 million a year or more. What is the family's name?",
     "answer": "The Fanjul family",
     "choices": [
       "The Fanjul family",
@@ -28037,7 +27790,7 @@
       "The Mars family",
       "The Coca-Cola Candler family"
     ],
-    "context": "The Fanjul brothers of Florida own Domino Sugar and Florida Crystals; they are the paradigm case of a small, politically-organized beneficiary group that has kept the Sugar Program in every Farm Bill. Source: grokipedia.com/page/Fanjul_brothers.",
+    "context": "The Fanjul brothers of Florida control Florida Crystals and, since 2001, Domino Sugar. A 1998 TIME analysis of General Accounting Office figures put their yearly gain from the program at $60 million or more, which makes them the best-known case of a small, politically organized beneficiary group. Source: content.time.com (TIME, 'Sweet Deal', 1998).",
     "topic": "the-us-sugar-program-candy-jobs-that-fled-to-mexico"
   },
   {
@@ -28225,9 +27978,9 @@
   {
     "tier": 4,
     "question": "Ludwig von Mises stepped ashore in New Jersey on August 2, 1940, a refugee from the German advance across Europe and a man many economists ranked among the greatest minds of his time. How old was he then, and what academic post awaited him?",
-    "answer": "Fifty-eight, and no American university offered him a paid chair for the rest of his life",
+    "answer": "Fifty-eight, and no American university ever gave him a paid chair",
     "choices": [
-      "Fifty-eight, and no American university offered him a paid chair for the rest of his life",
+      "Fifty-eight, and no American university ever gave him a paid chair",
       "Forty-four, and a full Harvard professorship awaited him",
       "Sixty-seven, and a Yale endowed chair had been arranged in advance",
       "Fifty-two, and a Chicago professorship followed within the year"
@@ -28267,24 +28020,11 @@
     "answer": "No committee can know what every person wants or what every thing is worth",
     "choices": [
       "No committee can know what every person wants or what every thing is worth",
-      "Committees are always lazy",
-      "Committees don't have enough computers",
-      "Committees never agree with each other"
+      "No committee can be trusted to share the goods out fairly",
+      "No committee can make people work as hard as owners do",
+      "No committee could add up so many numbers by hand"
     ],
-    "context": "The Vienna Circle of logical positivists, gathered around Moritz Schlick and Rudolf Carnap, was the leading interwar philosophy-of-science movement. Source: grokipedia.com/page/Vienna_Circle.",
-    "topic": "the-vienna-intellectual-context-of-the-1920s"
-  },
-  {
-    "tier": 2,
-    "question": "Otto Neurath met with the Vienna Circle, the philosophers and scientists gathered around Moritz Schlick, in the city where Ludwig von Mises led a free-market circle of economists. Neurath championed a 'planned economy.' Which political tradition is he tied to?",
-    "answer": "Socialism",
-    "choices": [
-      "Socialism",
-      "Classical liberalism",
-      "Traditional conservatism",
-      "Anarcho-capitalism"
-    ],
-    "context": "Otto Neurath combined logical-positivist philosophy with Austro-Marxist socialism; the Vienna Circle formally endorsed physicalism and rejected metaphysics. Source: grokipedia.com/page/Vienna_Circle.",
+    "context": "Mises set out the case in his 1920 essay on economic calculation under socialism: without market prices for land, factories and machines, planners have no common measure for comparing one use of them against another. Source: grokipedia.com/page/Economic_calculation_problem.",
     "topic": "the-vienna-intellectual-context-of-the-1920s"
   },
   {
@@ -28294,10 +28034,10 @@
     "choices": [
       "The University of Chicago",
       "Harvard University",
-      "the University of California, Berkeley",
+      "The University of California, Berkeley",
       "Columbia University"
     ],
-    "context": "Carnap took a chair at the University of Chicago in 1935 and taught there until 1952 before moving to UCLA. Source: grokipedia.com/page/Vienna_Circle.",
+    "context": "Carnap emigrated from Prague to the United States in 1935, took up a chair at the University of Chicago in 1936 and taught there until 1952 before moving to UCLA. Source: grokipedia.com/page/Rudolf_Carnap.",
     "topic": "the-vienna-intellectual-context-of-the-1920s"
   },
   {
@@ -28306,50 +28046,24 @@
     "answer": "The Institute for Advanced Study in Princeton",
     "choices": [
       "The Institute for Advanced Study in Princeton",
-      "MIT",
-      "Harvard University",
-      "the University of Chicago"
+      "The Society of Fellows at Harvard",
+      "The Courant Institute in New York",
+      "The RAND Corporation in Santa Monica"
     ],
     "context": "Godel fled via the Trans-Siberian Railway and Japan in 1940, arriving at the Institute for Advanced Study in Princeton, where he became a colleague of Einstein and von Neumann. Source: grokipedia.com/page/Kurt_Godel.",
     "topic": "the-vienna-intellectual-context-of-the-1920s"
   },
   {
-    "tier": 4,
-    "question": "Stefan Zweig sat among the coffeehouse thinkers of a Vienna that held, for decades before 1938, mathematicians like Kurt Godel and economists like Ludwig von Mises. Within months of one political event in 1938 the whole scene was scattered, its members exiled, silenced or killed. What kind of political change usually makes free thinkers flee a country?",
-    "answer": "A dictator takes over and shuts down free debate",
-    "choices": [
-      "A dictator takes over and shuts down free debate",
-      "The country holds a peaceful election",
-      "The country lowers its taxes",
-      "A new stock exchange opens for business"
-    ],
-    "context": "The March 1938 Anschluss brought Nazi Germany into Austria and expelled Jewish intellectuals from Vienna's universities. Source: grokipedia.com/page/Anschluss.",
-    "topic": "the-vienna-intellectual-context-of-the-1920s"
-  },
-  {
-    "tier": 5,
-    "question": "Karl Popper proposed a simple test in his 1934 book The Logic of Scientific Discovery for whether an idea should count as real science. The idea must make a risky prediction: it has to be possible to state exactly what evidence would prove it wrong. Popper argued that Marxism and Freudian psychology failed the test, while Einstein's physics passed it. What is the test called?",
-    "answer": "Falsifiability",
-    "choices": [
-      "Falsifiability",
-      "Verification",
-      "Consensus",
-      "Repeatability"
-    ],
-    "context": "Karl Popper's Logik der Forschung (1934) put falsifiability at the center of scientific method, in opposition to Vienna Circle verificationism. He shared the classical-liberal politics of Mises without belonging to the Circle. Source: grokipedia.com/page/Karl_Popper.",
-    "topic": "the-vienna-intellectual-context-of-the-1920s"
-  },
-  {
     "tier": 1,
     "question": "Suppose you trade your apple for a friend's cookie at lunch. You both smile and walk back to the table happy with the swap; nobody forced you, and nobody tricked either of you. Why did that little trade make both of you better off at the same time?",
-    "answer": "Each of you valued what you got more than what you gave up",
+    "answer": "Each side valued what it got more than what it gave up",
     "choices": [
-      "Each of you valued what you got more than what you gave up",
-      "One of you must have tricked the other",
-      "The apple and cookie cost exactly the same to make",
-      "Trading always makes one person lose"
+      "Each side valued what it got more than what it gave up",
+      "The apple and the cookie were worth exactly the same",
+      "The apple and the cookie cost the same to make",
+      "The trade made more food than the two had before"
     ],
-    "context": "Menger took the chair in 1873 in the Faculty of Law and Political Economy (economics was then taught inside the law faculty) and held it for thirty years, until 1903. Source: grokipedia.com/page/Carl_Menger.",
+    "context": "Carl Menger, who founded the Austrian School in 1871, built his theory of exchange on this point: a trade happens only when each side values what it gets above what it gives, so a free swap leaves both better off. Source: grokipedia.com/page/Carl_Menger.",
     "topic": "the-vienna-university-economics-tradition-menger-to-mises"
   },
   {
@@ -28358,9 +28072,9 @@
     "answer": "Whether a small group of officials can plan a whole nation's economy well",
     "choices": [
       "Whether a small group of officials can plan a whole nation's economy well",
-      "Whether numbers should be written left to right or right to left",
-      "Whether spring or fall is a better time to sow wheat",
-      "Whether German or French makes a better first language"
+      "Whether a nation should tie its money to gold or to silver",
+      "Whether a nation should shelter its farms and factories with tariffs",
+      "Whether a nation should pay for its wars with taxes or with loans"
     ],
     "context": "The 1905-1914 Bohm-Bawerk seminar had the future greatest Austrian liberal (Mises), the future Austrian Social Democrat foreign minister (Otto Bauer), and the future Marxist finance minister of Weimar Germany (Hilferding) sitting together. Source: grokipedia.com/page/Eugen_von_Bohm-Bawerk.",
     "topic": "the-vienna-university-economics-tradition-menger-to-mises"
@@ -28371,11 +28085,11 @@
     "answer": "Prices that reveal what people really want",
     "choices": [
       "Prices that reveal what people really want",
-      "The postal service and its mail carriers",
-      "The alphabet used to write down new laws",
-      "The soldiers who patrol the country's border"
+      "Quotas that set each factory's output",
+      "Rations that share out the goods by need",
+      "Taxes that pay for the country's public works"
     ],
-    "context": "Hans Mayer held the Vienna chair from 1922 to 1938; the paid chair thus passed out of the front-rank Austrian tradition just as the private-seminar tradition became the school's main institutional home. Source: grokipedia.com/page/Hans_Mayer_(economist).",
+    "context": "Mises made the argument in 1920 and Hayek extended it in 1945: market prices carry knowledge of scarcities and wants that no planning office can gather or invent. Source: grokipedia.com/page/Economic_calculation_problem.",
     "topic": "the-vienna-university-economics-tradition-menger-to-mises"
   },
   {
@@ -28384,8 +28098,8 @@
     "answer": "Prices shoot up because each unit of money loses value",
     "choices": [
       "Prices shoot up because each unit of money loses value",
-      "Prices fall because there is more money to spend",
-      "Prices stay the same because printing is invisible",
+      "Prices shoot up because bakers hoard flour to get rich",
+      "Prices shoot up because the harvests of 1923 failed",
       "Prices only rise on goods brought in from abroad"
     ],
     "context": "Hilferding's Finance Capital (1910) was a leading Marxist analysis of banking; he later served twice as Finance Minister of Weimar Germany. Source: grokipedia.com/page/Rudolf_Hilferding.",
@@ -28471,7 +28185,7 @@
   },
   {
     "tier": 1,
-    "question": "Looking back in his memoir A Personal Odyssey, Thomas Sowell recalled a small wooden house in Gastonia, North Carolina, with no electricity and no running water. He told about one ordinary everyday thing he had simply never learned as a young boy in that isolated home. What was it?",
+    "question": "Thomas Sowell recalled in his memoir A Personal Odyssey a small wooden house in North Carolina with no electricity and no running water. He told of one ordinary thing he had never learned as a young boy in that isolated home. What was it?",
     "answer": "That blond was a hair color",
     "choices": [
       "That blond was a hair color",
@@ -28479,7 +28193,7 @@
       "That the ocean was salt water",
       "That radios carried live music"
     ],
-    "context": "Sowell wrote in A Personal Odyssey (Free Press, 2000) that his childhood encounters with white people were so limited that he did not know blond was a hair color. He recalled a small wooden house in Charlotte on an unpaved street with no electricity or running water. Source: Wikipedia 'Thomas Sowell', citing A Personal Odyssey.",
+    "context": "Sowell wrote in A Personal Odyssey (Free Press, 2000) that his childhood encounters with white people were so limited that he did not know blond was a hair color. He recalled a small wooden house in North Carolina on an unpaved street with no electricity or running water. Source: Wikipedia 'Thomas Sowell', citing A Personal Odyssey.",
     "topic": "thomas-sowell-harlem-to-hoover"
   },
   {
@@ -28514,24 +28228,11 @@
     "answer": "The price of goods and labor in a free market",
     "choices": [
       "The price of goods and labor in a free market",
-      "A list of quotas set by lawmakers",
-      "A yearly government printout of who should produce what",
-      "A vote every month on what should cost how much"
+      "The customs and habits handed down in a community",
+      "The votes citizens cast for one policy or another",
+      "The rulings of courts on disputed contracts"
     ],
     "context": "Sowell chose Columbia in order to study under George Stigler, later a Nobel laureate; on learning Stigler had moved to Chicago he followed him there in the fall of 1959 and took his PhD at Chicago in 1968, with a dissertation on Say's Law and the general glut controversy. Friedman, Knight and Becker were all Chicago economists. Source: Wikipedia 'Thomas Sowell'.",
-    "topic": "thomas-sowell-harlem-to-hoover"
-  },
-  {
-    "tier": 2,
-    "question": "Thomas Sowell left teaching at the University of California, Los Angeles, in 1980 and joined Stanford's Hoover Institution, a research group that studies public policy from a free-market and classical-liberal viewpoint. What is the general name for an organization like Hoover that hires scholars to publish policy studies?",
-    "answer": "A policy think tank",
-    "choices": [
-      "A policy think tank",
-      "A trade union",
-      "A stock exchange",
-      "A credit union"
-    ],
-    "context": "Sowell joined the Hoover Institution at Stanford as a fellow in April 1977 and became a senior fellow in September 1980, holding the title Rose and Milton Friedman Senior Fellow on Public Policy. He had earlier been at the Urban Institute (1972-74) and the American Enterprise Institute (1975-76), which is why those are live answers. Sources: Wikipedia 'Thomas Sowell'; Grokipedia 'Thomas Sowell'.",
     "topic": "thomas-sowell-harlem-to-hoover"
   },
   {
@@ -28550,12 +28251,12 @@
   {
     "tier": 3,
     "question": "Thomas Sowell reached Harvard by an unlikely road (dropout, Marine, night classes at Howard) and graduated magna cum laude in 1958. Asked long afterwards to name the best thing about having gone there, he gave an answer that had nothing to do with the teaching. What did he say?",
-    "answer": "That you are never again intimidated or impressed by people who went there",
+    "answer": "That a graduate is never again intimidated or impressed by people who went there",
     "choices": [
-      "That you are never again intimidated or impressed by people who went there",
-      "That nobody there ever asked where you had gone to high school",
-      "That you learn how fast a reputation starts doing your arguing for you",
-      "That it teaches you to distrust every credential, beginning with your own"
+      "That a graduate is never again intimidated or impressed by people who went there",
+      "That nobody there ever asked where a student had gone to high school",
+      "That a graduate learns how fast a reputation starts doing his arguing for him",
+      "That it teaches a graduate to distrust every credential, beginning with his own"
     ],
     "context": "Sowell's line: 'One of the best things about going to Harvard is that, for the rest of your life, you are neither intimidated nor impressed by people who went to Harvard.' He finished high school by equivalency after the Marines, took a civil service job in Washington and studied nights at Howard University before transferring. Source: Grokipedia 'Thomas Sowell'.",
     "topic": "thomas-sowell-harlem-to-hoover"
@@ -28583,7 +28284,7 @@
       "That every program grows until it costs more than the problem it was built to solve",
       "That the people a program is meant to help are the last whose interests anyone counts"
     ],
-    "context": "Sowell's own words: 'It forced me to realize that government agencies have their own self-interest to look after, regardless of those for whom a program has been set up.' This is public-choice reasoning arrived at by observation, before Sowell had read the public-choice literature. Option two is close to Milton Friedman's 'judge by results, not intentions', a genuinely different move. Source: New Criterion, 'The Triumph of Thomas Sowell'.",
+    "context": "Sowell's own words: 'It forced me to realize that government agencies have their own self-interest to look after, regardless of those for whom a program has been set up.' This is public-choice reasoning arrived at by observation, before Sowell had read the public-choice literature. The line about intentions and results is closer to Milton Friedman's 'judge by results, not intentions', a genuinely different move. Source: New Criterion, 'The Triumph of Thomas Sowell'.",
     "topic": "thomas-sowell-harlem-to-hoover"
   },
   {
@@ -28592,11 +28293,11 @@
     "answer": "Private communication and private trade between strangers",
     "choices": [
       "Private communication and private trade between strangers",
-      "Only more junk mail",
-      "Nothing -- people wouldn't care",
-      "Bigger post offices"
+      "A single world police force to break the codes",
+      "New state-run banks to guard everyone's codes",
+      "A flood of junk mail that nobody could block"
     ],
-    "context": "May's 1988 essay is 'The Crypto Anarchist Manifesto'. 'A Cypherpunk's Manifesto' was Eric Hughes's separate March 1993 essay; 'The Cyphernomicon' was May's later 1994 book-length FAQ; 'The Sovereign Individual' is a 1997 book by Davidson and Rees-Mogg. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
+    "context": "May's 1988 essay is 'The Crypto Anarchist Manifesto'. Eric Hughes's 'A Cypherpunk's Manifesto' was a separate essay of March 1993. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
     "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
   },
   {
@@ -28605,76 +28306,50 @@
     "answer": "'A specter is haunting the modern world, the specter of crypto anarchy.'",
     "choices": [
       "'A specter is haunting the modern world, the specter of crypto anarchy.'",
-      "'We hold these truths to be self-evident, that all men are created equal.'",
-      "'Four score and seven years ago our fathers brought forth on this continent...'",
-      "'When in the course of human events, it becomes necessary for one people...'"
+      "'A specter is haunting the modern world, the specter of digital cash.'",
+      "'The history of all hitherto existing society is the history of secret codes.'",
+      "'Workers of the world, encrypt: there is nothing to lose but the chains.'"
     ],
-    "context": "May's opening deliberately echoes the 1848 Communist Manifesto's 'A spectre is haunting Europe -- the spectre of communism.' The other openings are Declaration of Independence (1776) and Gettysburg Address (1863). Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
-    "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
-  },
-  {
-    "tier": 2,
-    "question": "A listener at a cryptography conference in Santa Barbara in November 1988 heard Timothy May read aloud a first line borrowed from Karl Marx, with a ghost in it. May said the ghost stood for a bundle of powers he believed strong computer codes would soon give ordinary people. Which powers did he predict?",
-    "answer": "communication, contracting and trade among people who could not be seen or stopped by any government",
-    "choices": [
-      "communication, contracting and trade among people who could not be seen or stopped by any government",
-      "cheap global manufacturing and rapid international logistics for goods moving across every continent",
-      "solar power and unlimited clean energy sufficient to end civilization's fossil-fuel dependence permanently",
-      "artificial intelligence sophisticated enough to replace most human labor across every category of employment"
-    ],
-    "context": "May's specter was strong cryptography enabling anonymous communication, contracting, and trade beyond state surveillance. The other categories are separate technological forecasts May did not centrally address in the manifesto. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
+    "context": "May's opening deliberately echoes the 1848 Communist Manifesto's 'A spectre is haunting Europe -- the spectre of communism.' Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
     "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
   },
   {
     "tier": 3,
-    "question": "Timothy May quit his day job at Intel young and settled above Santa Cruz to write about what math and computers would do to politics. His 1988 Crypto Anarchist Manifesto has one striking line about what people would soon be able to do together in perfect secret, with no government able to watch. Which prediction does that line make?",
+    "question": "Timothy May quit his day job at Intel young and settled above Santa Cruz to write about what math and computers would do to politics. His 1988 Crypto Anarchist Manifesto turns on one forecast about what computers would soon let people do. Which line is his?",
     "answer": "'Computer technology is on the verge of providing the ability for individuals and groups to communicate and interact with each other in a totally anonymous manner.'",
     "choices": [
       "'Computer technology is on the verge of providing the ability for individuals and groups to communicate and interact with each other in a totally anonymous manner.'",
-      "'The internet will soon make all of human knowledge free of charge and instantly available to every person on the planet regardless of nation.'",
-      "'Computers will one day think and feel as humans do, and will eventually claim rights of their own from the human governments that built them.'",
-      "'Every citizen of every industrial nation will one day own a personal computer more powerful than anything a national laboratory possesses today.'"
+      "'Computer networks will soon let every citizen read the secret files of his government, so that no official will be able to hide anything at all.'",
+      "'Within a decade every home will hold a computer able to talk to every other, and the old post office will close its doors for good.'",
+      "'Soon any person with a modem will be able to publish to the whole world, and no editor or censor will be able to stand in his way.'"
     ],
-    "context": "The exact quote from May's manifesto. The other statements are broadly attributed to different figures (Stallman on knowledge freedom, Minsky/Kurzweil on AI, various early PC forecasts). Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
+    "context": "The exact sentence from May's manifesto. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
     "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
   },
   {
     "tier": 3,
-    "question": "Timothy May named several concrete tools in his 1988 manifesto that he believed the math of strong encryption would soon make possible. Adam Back, Wei Dai, Hal Finney and, eventually, Satoshi Nakamoto built most of those tools over the following thirty years. Which set of tools did May sketch?",
-    "answer": "anonymous remailers, digital pseudonyms, cryptographic contracts, and untraceable payments",
+    "question": "Timothy May named several concrete tools in his 1988 manifesto that he believed the math of strong encryption would soon make possible. Hal Finney, Wei Dai and, eventually, Satoshi Nakamoto worked on tools of that kind over the following decades. Which set of tools did May sketch?",
+    "answer": "anonymous networks, digital pseudonyms, electronic contracts, and digital money",
     "choices": [
-      "anonymous remailers, digital pseudonyms, cryptographic contracts, and untraceable payments",
-      "smartphones, social media, video streaming, and cloud storage",
-      "gene therapy, artificial hearts, brain implants, and space elevators",
-      "hydrogen fuel cells, fusion power, and orbital solar arrays"
+      "anonymous networks, digital pseudonyms, electronic contracts, and digital money",
+      "quantum computers, code-breaking machines, satellite links, and secure phones",
+      "encrypted voting, digital passports, online courts, and e-government records",
+      "smart cards, chip-and-PIN cards, password managers, and fingerprint locks"
     ],
-    "context": "May specifically anticipated remailers, pseudonyms, smart contracts, and untraceable payments -- all built between 1990 and 2010. The other technology lists are unrelated. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
+    "context": "The manifesto describes encrypted messages re-routed beyond tracing, electronic contracts between people who never learn each other's true names, and markets beyond the state; May's signature lists digital money, anonymous networks and digital pseudonyms among its tools. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
     "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
   },
   {
     "tier": 4,
-    "question": "An anonymous author released a short nine-page technical document on Halloween, almost exactly twenty years after Timothy May's 1988 essay. May had named no specific project, because none existed; he had described the shape of it: money sent person-to-person, with no bank in the middle and no state able to see or stop the transfers. The document matched that sketch almost point for point. Which event was that?",
-    "answer": "Satoshi Nakamoto's Bitcoin white paper of October 31, 2008",
+    "question": "An author released a short nine-page technical document on Halloween, almost exactly twenty years after Timothy May's 1988 essay. May had named no specific project, because none existed; he had described the shape of it: money sent person-to-person, with no bank in the middle and no state able to see or stop the transfers. The document matched that sketch almost point for point. Which document was it?",
+    "answer": "Satoshi Nakamoto's Bitcoin white paper",
     "choices": [
-      "Satoshi Nakamoto's Bitcoin white paper of October 31, 2008",
-      "the Federal Reserve's 2008 quantitative easing program",
-      "the launch of Facebook in 2004",
-      "the introduction of chip-and-PIN credit cards"
+      "Satoshi Nakamoto's Bitcoin white paper",
+      "Wei Dai's b-money proposal",
+      "Nick Szabo's bit gold proposal",
+      "David Chaum's eCash paper"
     ],
-    "context": "Bitcoin's 2008 white paper realized in engineering form the untraceable-payments capability May had forecast in 1988. QE, Facebook, and chip-and-PIN cards are unrelated technologies. Source: https://bitcoin.org/bitcoin.pdf.",
-    "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
-  },
-  {
-    "tier": 5,
-    "question": "Timothy May handed round photocopies of a short essay at a cryptography conference in Santa Barbara in November 1988 and read it aloud. At the time there was no code and no working system behind it. A modern cypherpunk historian says the essay is best read as a special kind of intellectual work. How does the historian describe it?",
-    "answer": "a physicist's forecast of what the mathematics would eventually let ordinary people do, before any of it existed in software",
-    "choices": [
-      "a physicist's forecast of what the mathematics would eventually let ordinary people do, before any of it existed in software",
-      "a summary of already-shipping cryptographic tools that had reached ordinary consumers by the late 1980s",
-      "a proposal for a specific new company that May intended to found using his Intel stock-option wealth",
-      "a legal brief prepared for a specific US court case involving the export of cryptographic software"
-    ],
-    "context": "The essay was pure forecast in 1988 -- no working code, no infrastructure. Every specific technology May named would be built over the next thirty years by the movement he named. It was not a shipping summary, corporate proposal, or legal brief. Source: https://www.activism.net/cypherpunk/crypto-anarchy.html.",
+    "context": "Satoshi Nakamoto's white paper of October 31, 2008 realized in engineering form the digital money May had forecast in 1988. Wei Dai's b-money (1998) and Nick Szabo's bit gold were earlier sketches in the same line, and David Chaum's eCash ran through a central issuer. Source: https://bitcoin.org/bitcoin.pdf.",
     "topic": "tim-may-s-crypto-anarchist-manifesto-1988"
   },
   {
@@ -28692,7 +28367,7 @@
   },
   {
     "tier": 1,
-    "question": "A child is offered one cookie today or two tomorrow, and grabs the one today. A lender offered $100 back today or $100 back next year asks for $105 for the wait. Eugen von Boehm-Bawerk gave this plain fact a name in his 1889 book. What did he call it?",
+    "question": "A child offered one cookie today or two tomorrow grabs the one today. A lender offered $100 back today or $100 next year asks $105 for the wait. Eugen von Boehm-Bawerk put this fact at the heart of his 1889 book. What is it called?",
     "answer": "Time preference",
     "choices": [
       "Time preference",
@@ -28722,7 +28397,7 @@
     "answer": "Some positive preference for a good sooner over the same good later",
     "choices": [
       "Some positive preference for a good sooner over the same good later",
-      "A precise numerical discount rate to recite on request",
+      "A fixed rate of patience set by his upbringing for life",
       "A moral obligation to prefer later over sooner",
       "A market-determined interest rate identical to everyone else's"
     ],
@@ -28752,7 +28427,7 @@
       "How much new gold is dug out of the ground each year",
       "How high wages get pushed by big labor unions"
     ],
-    "context": "Rothbard's is a Pure Time-Preference Theory of interest (PTPT) -- the productivity-of-capital account (going back to Boehm-Bawerk's own THIRD reason for interest, and to Fisher) is rejected as confused; risk and inflation get modelled as separate premiums added on top. The market rate you actually see is time preferences plus those premiums. Frank Fetter's 1904 Principles gave the pure account first; Mises and Rothbard both credit him. Source: personal.utdallas.edu/~plewin/ptpt.pdf.",
+    "context": "Rothbard's is a Pure Time-Preference Theory of interest (PTPT) -- the productivity-of-capital account (going back to Boehm-Bawerk's own THIRD reason for interest, and to Fisher) is rejected as confused; risk and inflation get modelled as separate premiums added on top. The market rate a borrower actually sees is time preferences plus those premiums. Frank Fetter's 1904 Principles gave the pure account first; Mises and Rothbard both credit him. Source: personal.utdallas.edu/~plewin/ptpt.pdf.",
     "topic": "time-preference-a-good-now-is-worth-more-than-a-good-later"
   },
   {
@@ -28778,7 +28453,7 @@
       "It cures the shortage of aggregate demand",
       "It permanently raises the economy's growth rate"
     ],
-    "context": "This is the time-preference core of Austrian Business Cycle Theory (Mises 1912, Hayek 1929-1931): when the central-bank rate is held below the market-clearing rate, entrepreneurs get a false signal that consumers have saved more than they have. Long projects get started that cannot in fact be finished with the real resources available. The bust is the market discovering the truth -- capital gets written down, malinvested projects are liquidated, workers laid off, and the economy returns to a structure the real time preferences will support. The other three options describe Keynesian, Chicago-neoclassical, and stimulus-permanence claims. Source: en.wikipedia.org/wiki/Austrian_business_cycle_theory.",
+    "context": "This is the time-preference core of Austrian Business Cycle Theory (Mises 1912, Hayek 1929-1931): when the central-bank rate is held below the market-clearing rate, entrepreneurs get a false signal that consumers have saved more than they have. Long projects get started that cannot in fact be finished with the real resources available. The bust is the market discovering the truth -- capital gets written down, malinvested projects are liquidated, workers laid off, and the economy returns to a structure the real time preferences will support. The rival readings, that cheap credit reallocates efficiently, cures weak demand or lifts growth for good, come from Keynesian and neoclassical camps. Source: en.wikipedia.org/wiki/Austrian_business_cycle_theory.",
     "topic": "time-preference-a-good-now-is-worth-more-than-a-good-later"
   },
   {
@@ -28791,7 +28466,7 @@
       "A stable long-run balance in the political system",
       "A gradual return to hereditary monarchy"
     ],
-    "context": "Hoppe's central thesis links rising time preference to decivilization: short-horizon political incentives crowd out long-horizon private planning, borrowing-against-the-future replaces saving, and the visible symptoms are rising crime, degenerating standards, and swelling public debt. The book is controversial and Brandon's bank presents it as one named critic's argument. Time preference is Hoppe's master variable; the argument runs straight out of Boehm-Bawerk's 1889 framework. Source: en.wikipedia.org/wiki/Democracy:_The_God_That_Failed.",
+    "context": "Hoppe's central thesis links rising time preference to decivilization: short-horizon political incentives crowd out long-horizon private planning, borrowing-against-the-future replaces saving, and the visible symptoms are rising crime, degenerating standards, and swelling public debt. The argument is Hoppe's own and much disputed. Time preference is his master variable, and the mechanism runs straight out of Boehm-Bawerk's 1889 framework. Source: en.wikipedia.org/wiki/Democracy:_The_God_That_Failed.",
     "topic": "time-preference-a-good-now-is-worth-more-than-a-good-later"
   },
   {
@@ -28813,24 +28488,11 @@
     "answer": "Transitory",
     "choices": [
       "Transitory",
-      "Permanent",
-      "Explosive",
-      "Runaway"
+      "Contained",
+      "Moderate",
+      "Seasonal"
     ],
     "context": "Jerome Powell, Janet Yellen, and most Federal Open Market Committee members publicly called the 2021 inflation 'transitory' at press conferences and hearings from April through November. Source: Grokipedia 'Inflation in the United States (2021-2023)' (2026-09-05).",
-    "topic": "transitory-powells-2021-miscall-and-retraction"
-  },
-  {
-    "tier": 1,
-    "question": "Suppose you walk into a store just after the Federal Reserve, America's central bank, has created a great many new dollars very fast and lent them to big banks. The shelves hold the same food and toys as before. What usually happens to the prices you pay?",
-    "answer": "Prices go up -- your money buys less",
-    "choices": [
-      "Prices go up -- your money buys less",
-      "Prices go down -- your money buys more",
-      "Prices stay exactly the same",
-      "Only rich people's prices go up"
-    ],
-    "context": "Powell was appointed by President Trump and reappointed by President Biden. He led the FOMC through the pandemic response, the transitory-inflation call, and the 2022-23 tightening cycle. Source: Grokipedia 'Jerome Powell' (2026-09-05).",
     "topic": "transitory-powells-2021-miscall-and-retraction"
   },
   {
@@ -28852,9 +28514,9 @@
     "answer": "Inflation from too much new money chasing the same goods",
     "choices": [
       "Inflation from too much new money chasing the same goods",
-      "A sudden shortage of paper for printing books",
-      "A drop in the number of people going to college",
-      "A rise in the price of internet service alone"
+      "A slump from a package too small to restart hiring",
+      "A debt crisis as foreign buyers dumped US bonds",
+      "A stock bubble fed by the stimulus checks"
     ],
     "context": "Summers's February 4 2021 Washington Post op-ed argued that the size of the Biden fiscal package created substantial inflation risk. Fed officials publicly dismissed the warning. He was largely proven right within twelve months. Source: Washington Post (February 4 2021).",
     "topic": "transitory-powells-2021-miscall-and-retraction"
@@ -28865,47 +28527,21 @@
     "answer": "Officials often stick with a story too long even as the evidence turns against it",
     "choices": [
       "Officials often stick with a story too long even as the evidence turns against it",
-      "Central banks always predict inflation perfectly ahead of time",
-      "Prices only rise when the weather is unusually bad",
-      "Rising prices are always the fault of everyday shoppers"
+      "Officials should raise rates at the first sign of any rise in prices",
+      "Officials can leave price spikes for supply chains to sort out alone",
+      "Officials do best when they say nothing in public about prices"
     ],
     "context": "Powell told the Senate Banking Committee on November 30 2021: 'I think it's probably a good time to retire that word.' CPI was already at 6.8% year-over-year that month. Source: Grokipedia 'Jerome Powell' (2026-09-05).",
     "topic": "transitory-powells-2021-miscall-and-retraction"
   },
   {
-    "tier": 3,
-    "question": "Jerome Powell went before the Senate Banking Committee in November 2021 and retired the word he had been using since spring for rising prices. Roughly six months later, American consumer price inflation hit its cycle peak. What did that peak reading come in at, and in which month?",
-    "answer": "9.1% in June 2022",
-    "choices": [
-      "9.1% in June 2022",
-      "5.4% in June 2021",
-      "12.3% in September 2022",
-      "6.8% in November 2021"
-    ],
-    "context": "The June 2022 CPI print of 9.1% was the highest US year-over-year inflation since November 1981. It came six months after the transitory framing was abandoned and marked the peak that Powell then aggressively tightened to reverse. Source: Grokipedia 'Inflation in the United States (2021-2023)' (2026-09-05).",
-    "topic": "transitory-powells-2021-miscall-and-retraction"
-  },
-  {
-    "tier": 4,
-    "question": "Austrian-school critics looked at the Federal Reserve in late 2021 and called it far too loose. Prices were rising over 6 percent a year, the fastest in about 40 years, yet Jerome Powell's Fed kept its main interest rate at zero and kept buying billions of dollars of bonds each month. Which term fits keeping money cheap and plentiful while prices are already rising?",
-    "answer": "Easy money",
-    "choices": [
-      "Easy money",
-      "Tight money",
-      "Neutral money",
-      "Balanced money"
-    ],
-    "context": "The Fed maintained QE and zero rates through November 2021 despite inflation already at 6.2%. The critique: the Fed was pouring gasoline on the very fire it was calling a mirage. Source: federalreserve.gov (FOMC statements November 3 2021).",
-    "topic": "transitory-powells-2021-miscall-and-retraction"
-  },
-  {
     "tier": 5,
     "question": "Jerome Powell repeated his calming story about prices through 2021, and it is now widely cited as the modern Fed's worst forecasting error: the peak reading came in at more than four times the Fed's own 2 percent target. What lesson does the Austrian tradition of Mises and Hayek draw about how central banks predict inflation?",
-    "answer": "Central banks reason from supply-shock stories that flatter their own past decisions and dismiss monetary explanations that would embarrass them",
+    "answer": "Central banks favour supply-shock stories that excuse them over money stories that blame them",
     "choices": [
-      "Central banks reason from supply-shock stories that flatter their own past decisions and dismiss monetary explanations that would embarrass them",
-      "Central banks always over-tighten in response to inflation forecasts",
-      "Central bank models correctly predict inflation trajectories within two years",
+      "Central banks favour supply-shock stories that excuse them over money stories that blame them",
+      "Central banks always over-tighten in response to their own inflation forecasts",
+      "Central bank models predict inflation correctly within two years, give or take",
       "Central bank forecasts are unbiased on average and only occasionally wrong"
     ],
     "context": "The transitory episode is a case study in institutional motivated reasoning: the Fed had run enormous QE and preferred an explanation that did not implicate its own actions. A recognition move about how central banks talk about inflation. Source: George Selgin, Cato Institute commentary (2022-23).",
@@ -29005,27 +28641,27 @@
   {
     "tier": 2,
     "question": "A burglar breaks into a house in one of Gordon Tullock's 1967 examples. What the thief carries off, Tullock argued, merely moves wealth between pockets, leaving the total unchanged. Where did he say society's real loss from theft lies?",
-    "answer": "The resources spent on locks, alarms, security guards, and burglary tools",
+    "answer": "The resources spent on locks, alarms, guards and burglars' tools",
     "choices": [
-      "The resources spent on locks, alarms, security guards, and burglary tools",
-      "The dollar value of stolen goods",
-      "The lost tax revenue from unreported income",
-      "The cost of judicial trials for accused thieves"
+      "The resources spent on locks, alarms, guards and burglars' tools",
+      "The income the victim's insurer pays out on the claim",
+      "The fall in prices as stolen goods flood the market",
+      "The tax revenue lost when stolen goods are resold"
     ],
     "context": "Tullock's illustration: theft merely TRANSFERS wealth from victim to thief -- the total is unchanged. The real deadweight loss is the whole edifice of prevention and preparation on both sides. Source: Tullock, Western Economic Journal (1967), section on theft.",
     "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
   },
   {
     "tier": 3,
-    "question": "Anne Krueger took Gordon Tullock's idea about wasted lobbying and tested it in 1974 on one big developing country, whose import licenses were worth huge sums. Firms there spent almost the full value of a license trying to win one. Which country did Krueger study?",
+    "question": "Anne Krueger took Gordon Tullock's idea about wasted lobbying and measured it in 1974 in two developing countries, where firms spent almost the full value of an import licence trying to win one. Which was the larger of the two countries she studied?",
     "answer": "India",
     "choices": [
       "India",
       "Brazil",
-      "Turkey",
+      "Mexico",
       "Egypt"
     ],
-    "context": "Krueger studied India's License Raj -- the elaborate system of import and industrial licenses that allocated the right to operate certain businesses. Her estimates suggested rent-seeking losses of a large percentage of Indian GNP. Source: Krueger, American Economic Review (1974).",
+    "context": "Krueger studied India's licence system, which allocated the right to import and to run many kinds of business, and Turkey's import licences; her estimates put the rents at a large share of national income in both. Source: Krueger, American Economic Review (1974).",
     "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
   },
   {
@@ -29034,9 +28670,9 @@
     "answer": "Each attracts real-resource competition for a redistributive prize",
     "choices": [
       "Each attracts real-resource competition for a redistributive prize",
-      "Each involves foreign parties competing with domestic firms",
-      "Each requires central-bank money-printing to sustain",
-      "Each is prohibited by the US Constitution"
+      "Each cuts output below what a free market would produce",
+      "Each simply shifts wealth from one owner to another",
+      "Each raises prices for buyers above the competitive level"
     ],
     "context": "Whenever there is a REDISTRIBUTIVE prize on offer -- a rent -- real economic inputs get burned competing for the prize rather than producing value. The productive economy loses those inputs. Source: Tullock, Western Economic Journal (1967).",
     "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
@@ -29047,9 +28683,9 @@
     "answer": "Lobbyists",
     "choices": [
       "Lobbyists",
-      "Farmers",
-      "Teachers",
-      "Truck drivers"
+      "Stockbrokers",
+      "Bankers",
+      "Insurance agents"
     ],
     "context": "Tullock argued that talented lawyers and lobbyists whose entire work was securing regulatory privilege were engaged in a socially wasteful zero-sum contest. The productive economy loses their talent. Source: Tullock, Western Economic Journal (1967); Baumol, Journal of Political Economy (1990) on productive vs unproductive entrepreneurship.",
     "topic": "tullocks-1967-paper-rent-seeking-as-deadweight-loss"
@@ -29083,27 +28719,14 @@
   {
     "tier": 2,
     "question": "Milton Friedman's critics warned that once checks started arriving under his plan, people would quit their jobs in droves. Four big American and Canadian trials put the idea to the test between 1968 and 1979, mailing cash to families below a set income line. What did the trials actually find about work hours?",
-    "answer": "Modest reductions (~5-13 percent for primary earners) rather than the catastrophic labor-supply collapse critics had predicted",
+    "answer": "Modest cuts of roughly 5 to 13 percent for main earners",
     "choices": [
-      "Modest reductions (~5-13 percent for primary earners) rather than the catastrophic labor-supply collapse critics had predicted",
-      "A total 80 percent reduction in work hours across all recipients",
-      "No measurable change in work hours in any subgroup",
-      "A doubling of work hours as recipients gained financial security to seek new jobs"
+      "Modest cuts of roughly 5 to 13 percent for main earners",
+      "Steep cuts of roughly half for main earners",
+      "No change at all for main earners",
+      "Gains of roughly 5 to 10 percent for main earners"
     ],
     "context": "The New Jersey/Pennsylvania (1968-72) and Seattle/Denver (1970-77) US experiments and the Manitoba MINCOME (1974-79) Canadian experiment all found modest work-hour declines with substantial administrative-cost savings over the multi-program comparison. Source: grokipedia.com/page/Negative_income_tax.",
-    "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
-  },
-  {
-    "tier": 3,
-    "question": "Andrew Yang, a New York entrepreneur, built his 2020 Democratic presidential campaign around one big idea: a monthly payment of one thousand dollars to every adult American, with no strings attached. He called it the Freedom Dividend, and he would have paid for it partly with a new national sales tax. What is the general name for this kind of policy?",
-    "answer": "Universal basic income",
-    "choices": [
-      "Universal basic income",
-      "A progressive income tax",
-      "Payroll tax withholding",
-      "A tariff on imports"
-    ],
-    "context": "Yang, a tech entrepreneur, made UBI the signature of his campaign. His proposal was a universal flat payment with no income phase-out, structurally different from Friedman's NIT. Source: grokipedia.com/page/Andrew_Yang.",
     "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
   },
   {
@@ -29112,9 +28735,9 @@
     "answer": "Recipients reduced work hours by roughly 1.3 to 1.4 hours per week",
     "choices": [
       "Recipients reduced work hours by roughly 1.3 to 1.4 hours per week",
-      "Recipients doubled their work hours on average",
-      "Recipients quit the labor force entirely at a rate of 80 percent",
-      "Recipients showed no change in work hours whatsoever"
+      "Recipients reduced work hours by roughly 13 to 14 hours per week",
+      "Recipients raised work hours by roughly 1.3 to 1.4 hours per week",
+      "Recipients kept working exactly the hours they had before"
     ],
     "context": "The study also found modest health improvements and no clear positive employment outcomes despite proponent hopes. The findings largely echoed the 1970s NIT experiments' pattern of moderate labor-supply reductions. Source: grokipedia.com/page/Basic_income.",
     "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
@@ -29125,9 +28748,9 @@
     "answer": "The older plan replaces the old programs; the newer plan is added on top of them",
     "choices": [
       "The older plan replaces the old programs; the newer plan is added on top of them",
-      "One is paid weekly and the other is paid once a year",
-      "One is funded by tariffs and the other by property taxes",
-      "One is only for citizens and the other includes tourists"
+      "The older plan pays in vouchers; the newer plan pays in cash",
+      "The older plan is run by the states; the newer plan by Washington",
+      "The older plan covers only workers; the newer plan covers retirees too"
     ],
     "context": "Friedman would have supported replacing programs with an NIT and opposed adding a UBI on top of them. The two proposals share a label but have opposite structural implications for the state's role and for the effective marginal tax rate facing the recipient as income rises. Source: grokipedia.com/page/Basic_income.",
     "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
@@ -29138,22 +28761,22 @@
     "answer": "It replaces almost all existing welfare programs with one cash payment",
     "choices": [
       "It replaces almost all existing welfare programs with one cash payment",
-      "It adds monthly payments on top of the existing programs",
-      "It applies only to people over 65 years of age",
-      "It is paid in food stamps rather than cash"
+      "It pays only adults who hold a job of some kind",
+      "It goes only to families raising young children",
+      "It is funded by a new national tax on every sale"
     ],
     "context": "The Murray design is a UBI in label but an NIT in structure -- a flat universal payment that eliminates the existing multi-program stack. Same-label proposals with different phase-out and replacement structures produce very different outcomes. Source: grokipedia.com/page/Basic_income.",
     "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
   },
   {
     "tier": 5,
-    "question": "A Republican governor of one American state won his voters over in 1976 to setting aside a big share of the state's oil-royalty money in a special investment account. From 1982 the account paid every resident, men, women and children, an annual dividend of one to two thousand dollars, the longest-running cash-dividend program in the country. Which state runs it?",
-    "answer": "Alaska (the Alaska Permanent Fund Dividend)",
+    "question": "A Republican governor of one American state won his voters over in 1976 to setting aside a big share of the state's oil-royalty money in a special investment account. From 1982 the account paid every resident, men, women and children, a yearly cash dividend, some years a few hundred dollars and some years over two thousand, the longest-running cash-dividend program in the country. Which state runs it?",
+    "answer": "Alaska",
     "choices": [
-      "Alaska (the Alaska Permanent Fund Dividend)",
-      "Texas (the Texas Oil Trust Distribution)",
-      "California (the California Resident Dividend)",
-      "Wyoming (the Wyoming Mineral Royalty Payout)"
+      "Alaska",
+      "Texas",
+      "Wyoming",
+      "Oklahoma"
     ],
     "context": "The Alaska Permanent Fund was created in 1976 and the Dividend program began payouts in 1982. Every Alaskan resident (regardless of income) receives the annual share. It is the closest real-world US analogue of a UBI. Source: grokipedia.com/page/Alaska_Permanent_Fund.",
     "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
@@ -29164,11 +28787,11 @@
     "answer": "Read the actual law, not the label; same-name plans with different rules give different results",
     "choices": [
       "Read the actual law, not the label; same-name plans with different rules give different results",
-      "Any cash transfer to households below the middle income is always good",
-      "Any cash transfer to households above the middle income is always harmful",
-      "Policy details never matter because people never change their behavior"
+      "Judge a plan by its aims, not its rules; plans with one name share one goal",
+      "Ask who backs a plan, not what it says; a plan is as good as its sponsors",
+      "Trust the trials, not the design; only an experiment can rank two plans"
     ],
-    "context": "This is Sowell's 'there are no solutions, only tradeoffs' at the policy-design level. A UBI on top of existing programs has different effects from an NIT that replaces them. The kid learns to look under the label at the actual mechanism. Source: grokipedia.com/page/Basic_income.",
+    "context": "This is Sowell's 'there are no solutions, only tradeoffs' at the policy-design level. A UBI on top of existing programs has different effects from an NIT that replaces them, and the move is to look under the label at the actual mechanism. Source: grokipedia.com/page/Basic_income.",
     "topic": "universal-basic-income-milton-friedmans-negative-income-tax"
   },
   {
@@ -29225,33 +28848,20 @@
   },
   {
     "tier": 1,
-    "question": "Nicolas Maduro had bolivars printed to pay his government's bills, until a loaf of bread that once cost a few bolivars cost millions, then billions. Venezuelans hauled bags of cash to the market. What is a runaway rise in prices like that called?",
-    "answer": "Hyperinflation",
-    "choices": [
-      "Hyperinflation",
-      "Deflation",
-      "Recession",
-      "A trade surplus"
-    ],
-    "context": "Maduro won a disputed April 2013 election and remains in power. His tenure saw hyperinflation, mass emigration, and near-total dollarization of the informal economy. Source: Grokipedia 'Nicolas Maduro' (2026-09-05).",
-    "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
-  },
-  {
-    "tier": 1,
     "question": "Hugo Chavez won power in Venezuela in 1999 on a promise of socialism for a new century, and his government fixed the prices of food and fuel. Shopkeepers had to sell at those prices or face jail, though they often failed to cover what the goods cost to make or import. What did shoppers run into?",
     "answer": "Widespread shortages of flour, chicken, toilet paper, and medicine",
     "choices": [
       "Widespread shortages of flour, chicken, toilet paper, and medicine",
-      "A boom in domestic manufacturing",
-      "A rapid rise in real wages",
-      "Falling emigration as living standards improved"
+      "Plentiful cheap flour, chicken, toilet paper and medicine",
+      "A flood of cheap food smuggled in from Colombia",
+      "Steady supplies at the legal price as shops obeyed"
     ],
     "context": "Chavez ruled Venezuela from 1999 to 2013 and built the model his successor Maduro inherited. Producers facing prices below their costs cut output, and shelves emptied. The government blamed a 'capitalist conspiracy' and sent soldiers to force shops to sell at controlled prices.",
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
     "tier": 2,
-    "question": "A grocer raised his prices again and again through 2018 as Nicolas Maduro's government kept printing bolivars. The International Monetary Fund put a figure on that year's price rise in Venezuela. About how fast did it say prices were climbing?",
+    "question": "A grocer raised his prices again and again through 2018 as Nicolas Maduro's government kept printing bolivars. Venezuela's own central bank, silent for about three years, published its figure for 2018 in May 2019. About how fast did it say prices had climbed that year?",
     "answer": "About 130,000% per year",
     "choices": [
       "About 130,000% per year",
@@ -29259,7 +28869,7 @@
       "About 25% per year",
       "About 3,000,000% per year"
     ],
-    "context": "The IMF's 2018 estimate of Venezuelan annual inflation was roughly 130,000%. By 2019 a wheelbarrow of banknotes was needed for basic groceries -- the Weimar image replayed a century later, in Latin America. Source: Grokipedia 'Hyperinflation in Venezuela' (2026-09-05).",
+    "context": "Venezuela's central bank put 2018 inflation at 130,060% in May 2019; the International Monetary Fund's estimate for the year, about 1.37 million percent, was some ten times higher. By 2019 a wheelbarrow of banknotes was needed for basic groceries -- the Weimar image replayed a century later, in Latin America. Source: business-standard.com (May 29 2019); gulfnews.com (May 30 2019); en.wikipedia.org/wiki/Hyperinflation_in_Venezuela.",
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
@@ -29278,22 +28888,22 @@
   {
     "tier": 3,
     "question": "A shopkeeper in Venezuela began quoting his prices in a foreign currency he trusted more than the bolivar, though no law told him to. Millions of other Venezuelans found their own ways around the wrecked national money. What did the country end up doing?",
-    "answer": "Pricing goods in US dollars and receiving remittances via Zelle from relatives abroad",
+    "answer": "Pricing goods in US dollars, paid with remittances sent by relatives abroad",
     "choices": [
-      "Pricing goods in US dollars and receiving remittances via Zelle from relatives abroad",
-      "Bartering exclusively for gold coins minted before 1999",
-      "Reintroducing a fixed exchange rate to the Argentine peso",
-      "Adopting the Ecuadorian sucre as everyday money"
+      "Pricing goods in US dollars, paid with remittances sent by relatives abroad",
+      "Pricing goods in the petro, the state's own oil-backed token",
+      "Pricing goods in Chinese yuan, earned through the state's oil deals",
+      "Pricing goods in euros, sent home by Venezuelans working in Spain"
     ],
-    "context": "Bodegas quietly priced goods in USD; salaries were paid via Zelle transfers from relatives in Miami. The Venezuelan economy dollarized from below, without any legal change. Source: Grokipedia 'Economy of Venezuela' (2026-09-05).",
+    "context": "Bodegas quietly priced goods in US dollars, and many families lived on Zelle transfers and other remittances from relatives abroad. The Venezuelan economy dollarized from below, without any legal change; the state's petro token never caught on. Source: Grokipedia 'Economy of Venezuela' (2026-09-05).",
     "topic": "venezuela-2013-present-the-modern-socialist-calculation-case"
   },
   {
     "tier": 5,
     "question": "Ludwig von Mises argued in 1920 that a socialist economy cannot allocate resources rationally without market prices to signal scarcity, and for most of the next century his critics called the claim untestable. Mao's famines and the Soviet collapse took place behind closed borders, hard to see even for those inside. Venezuela's collapse was filmed on phones as it happened, a short flight from Miami. Which move did the Venezuelan case sharpen?",
-    "answer": "The socialist calculation problem is not an abstract academic dispute; it is an observable, current phenomenon",
+    "answer": "The calculation problem is no abstract dispute; it is a current, observable fact",
     "choices": [
-      "The socialist calculation problem is not an abstract academic dispute; it is an observable, current phenomenon",
+      "The calculation problem is no abstract dispute; it is a current, observable fact",
       "Price controls always eventually work if enforced hard enough",
       "Central planning is a good idea in principle but hard to execute in practice",
       "Modern digital tools solve the calculation problem central planners once faced"
@@ -29304,40 +28914,40 @@
   {
     "tier": 1,
     "question": "A young Venezuelan set up a cryptocurrency mining rig at home during the country's collapse in the late 2010s. Prices for most goods rose thousands of percent a year, but one resource stayed extremely cheap, because the government kept its consumer price well beneath what it cost the state to produce. Which resource did he use to earn Bitcoin?",
-    "answer": "Electricity, whose domestic price was set far below production cost",
+    "answer": "Electricity",
     "choices": [
-      "Electricity, whose domestic price was set far below production cost",
-      "Coffee, whose export price was set by state marketing boards",
-      "Petroleum, whose retail gasoline price was heavily subsidized",
-      "Cocoa, whose government purchase price was above world levels"
+      "Electricity",
+      "Gasoline",
+      "Bottled cooking gas",
+      "Tap water"
     ],
     "context": "By 2018 Venezuela had one of the largest per-capita Bitcoin-mining populations in Latin America. Cheap electricity plus hyperinflation made mining locally-generated sound money one of the most rational responses available to a Venezuelan saver. Source: grokipedia.com/page/Bitcoin_in_Venezuela.",
     "topic": "venezuelas-bitcoin-mining-and-the-clap-box-economy"
   },
   {
     "tier": 2,
-    "question": "Nicolas Maduro banned Bitcoin mining outright in 2023. His government had never celebrated the miners: from 2018 it treated them as a political threat, because Bitcoin let people store savings outside state control. What did his regime do to Venezuelan Bitcoin miners in the meantime?",
-    "answer": "Sent political-intelligence police to raid mining operations and seize rigs",
+    "question": "Nicolas Maduro's government cut Bitcoin mining off Venezuela's national power grid in May 2024, citing the strain on electricity supply. Bitcoin had long let Venezuelans store savings outside state control. What had his government done to the country's miners in the years before?",
+    "answer": "Sent police to raid mining operations and seize rigs",
     "choices": [
-      "Sent political-intelligence police to raid mining operations and seize rigs",
-      "Signed a free-trade agreement with the United States",
+      "Sent police to raid mining operations and seize rigs",
       "Legalized Bitcoin as a second national currency alongside the bolivar",
-      "Distributed government-owned mining equipment to every household"
+      "Offered miners a tax holiday to keep their rigs running",
+      "Made owning Bitcoin a crime punishable by prison"
     ],
-    "context": "SEBIN (the political intelligence service) and later SUNACRIP raided mining operations, seized rigs, and eventually banned mining outright in 2023 citing 'electricity grid stability.' Source: grokipedia.com/page/Bitcoin_in_Venezuela.",
+    "context": "Police raided mining operations and seized rigs through the late 2010s, and in May 2024 the electricity ministry began cutting mining farms off the national grid. Owning Bitcoin stayed legal. Source: cointelegraph.com/news/venezuela-bans-crypto-mining-to-protect-power-grid.",
     "topic": "venezuelas-bitcoin-mining-and-the-clap-box-economy"
   },
   {
     "tier": 3,
-    "question": "A Venezuelan family opened a box of rice, oil, cornmeal and canned fish in the late 2010s, after private stores could no longer stock food at the mandated prices. Nicolas Maduro's government handed out such subsidized boxes through neighborhood committees loyal to the ruling party, and the boxes took their name from those committees. What is the four-letter Spanish acronym?",
-    "answer": "CLAP (Comites Locales de Abastecimiento y Produccion)",
+    "question": "A Venezuelan family opened a box of rice, oil, cornmeal and canned fish in the late 2010s, after private stores could no longer stock food at the mandated prices. Nicolas Maduro's government handed out such subsidized boxes through neighborhood committees loyal to the ruling party, and the boxes took their name from those committees. What is the Spanish acronym?",
+    "answer": "CLAP",
     "choices": [
-      "CLAP (Comites Locales de Abastecimiento y Produccion)",
-      "PSUV (Partido Socialista Unido de Venezuela)",
-      "SEBIN (Servicio Bolivariano de Inteligencia Nacional)",
-      "PDVSA (Petroleos de Venezuela SA)"
+      "CLAP",
+      "PSUV",
+      "PDVAL",
+      "MERCAL"
     ],
-    "context": "'Local Committees for Supply and Production.' The boxes typically contained rice, cornmeal, oil, sugar, and canned goods. Distribution was tightly controlled by neighborhood collectives loyal to the ruling PSUV party. Source: grokipedia.com/page/Comit%C3%A9_Local_de_Abastecimiento_y_Producci%C3%B3n. CLAP boxes (Comites Locales de Abastecimiento y Produccion) were distributed via neighborhood committees with proven allegiance to the ruling party. When market prices are abolished, something else allocates -- and that something became political loyalty. Source: en.wikipedia.org/wiki/CLAP_(Venezuela).",
+    "context": "CLAP stands for Comites Locales de Abastecimiento y Produccion, 'Local Committees for Supply and Production.' The boxes typically contained rice, cornmeal, oil, sugar, and canned goods, and distribution was controlled by neighborhood collectives loyal to the ruling PSUV party. PDVAL and Mercal were earlier state food chains. When market prices are abolished, something else allocates -- and that something became political loyalty. Source: en.wikipedia.org/wiki/CLAP_(Venezuela).",
     "topic": "venezuelas-bitcoin-mining-and-the-clap-box-economy"
   },
   {
@@ -29350,7 +28960,7 @@
       "It costs the government less than letting people shop for themselves",
       "It ends up giving every family the same amount of food"
     ],
-    "context": "Opposition figures Maria Corina Machado and Leopoldo Lopez, and journalists Anatoly Kurmanaev and Anibal Sanchez in Reuters and NYT reports 2016-2019, documented the loyalty conditionality. Source: grokipedia.com/page/Comit%C3%A9_Local_de_Abastecimiento_y_Producci%C3%B3n.",
+    "context": "Opposition figures and reporters for Reuters and the New York Times documented the loyalty condition between 2016 and 2019. Source: grokipedia.com/page/Comit%C3%A9_Local_de_Abastecimiento_y_Producci%C3%B3n.",
     "topic": "venezuelas-bitcoin-mining-and-the-clap-box-economy"
   },
   {
@@ -29372,7 +28982,7 @@
     "answer": "The underground global market via Bitcoin, and political loyalty via CLAP",
     "choices": [
       "The underground global market via Bitcoin, and political loyalty via CLAP",
-      "The World Bank's grants program, and remittances from Venezuelans abroad",
+      "World Bank grants, and IMF-funded imports",
       "A restored gold standard, and barter networks in coffee",
       "Chinese state loans, and Colombian food aid"
     ],
