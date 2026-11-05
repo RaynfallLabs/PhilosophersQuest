@@ -5422,15 +5422,15 @@
   },
   {
     "tier": 1,
-    "question": "A music fan reads out 'It rained on my wedding day' and says Alanis Morissette called this ironic. Is it?",
-    "answer": "no -- ironic requires an EXPECTED outcome contradicted by an unexpected reverse; rain is just unfortunate",
+    "question": "It rains on a bride's wedding day, and her cousin says Alanis Morissette's song 'Ironic' calls that ironic. Is the rain really ironic?",
+    "answer": "no -- nothing promised sunshine, so the rain is just bad luck",
     "choices": [
-      "no -- ironic requires an EXPECTED outcome contradicted by an unexpected reverse; rain is just unfortunate",
-      "yes -- any bad luck is ironic",
-      "yes -- only weddings can be ironic",
-      "the sentence is grammatical"
+      "no -- nothing promised sunshine, so the rain is just bad luck",
+      "yes -- any bad luck on a big day counts as irony",
+      "yes -- the rain reverses what the bride hoped for",
+      "no -- irony needs someone saying the opposite of what he means"
     ],
-    "context": "IRONIC = something turning out the OPPOSITE of what was expected in a way that highlights the reversal. Rain on a wedding is unfortunate, not ironic. Morissette's 1996 song 'Ironic' famously misuses the word.",
+    "context": "IRONIC = something turning out the OPPOSITE of what was expected in a way that highlights the reversal. Rain on a wedding is unfortunate, not ironic: nothing about a wedding promised sunshine. Irony is not only a speaker saying the opposite of what he means; an outcome can be ironic too. Morissette's 1996 song 'Ironic' famously misuses the word.",
     "topic": "ironic-not-unfortunate-and-not-coincidental"
   },
   {
@@ -5447,51 +5447,25 @@
     "topic": "ironic-not-unfortunate-and-not-coincidental"
   },
   {
-    "tier": 2,
-    "question": "A literature teacher lists the three main kinds of irony on the board, starting with verbal and situational. Which kind comes third?",
-    "answer": "dramatic (audience knows what characters do not)",
-    "choices": [
-      "dramatic (audience knows what characters do not)",
-      "musical",
-      "prescriptive",
-      "descriptive"
-    ],
-    "context": "THREE IRONIES: VERBAL (saying opposite of meaning: sarcasm), SITUATIONAL (event opposite to expectation: fire station burns), DRAMATIC (audience knows what characters don't: Oedipus).",
-    "topic": "ironic-not-unfortunate-and-not-coincidental"
-  },
-  {
-    "tier": 3,
-    "question": "A music fan points out that Alanis Morissette's song 'Ironic' has no real examples of irony. Is that fact itself ironic?",
-    "answer": "yes -- a song CALLED 'Ironic' failing to show irony reverses expectation",
-    "choices": [
-      "yes -- a song CALLED 'Ironic' failing to show irony reverses expectation",
-      "no",
-      "somewhat",
-      "the song is fictional"
-    ],
-    "context": "The song about irony containing no irony is itself an example of situational irony -- the expected content (irony) is reversed by the actual content (no irony). Meta-ironic.",
-    "topic": "ironic-not-unfortunate-and-not-coincidental"
-  },
-  {
     "tier": 3,
     "question": "A columnist sorts four odd happenings into piles. Which one is coincidental but not ironic?",
-    "answer": "running into your dentist at the grocery store",
+    "answer": "a girl meeting her dentist at the grocery store",
     "choices": [
-      "running into your dentist at the grocery store",
+      "a girl meeting her dentist at the grocery store",
       "the fire station burning down",
       "the safety inspector dying in an unsafe accident",
       "the health-food store selling only junk food"
     ],
-    "context": "COINCIDENCE = two unrelated things happen together, no expected reversal. Meeting your dentist at the store is just a coincidence -- no purpose-reversal. The others reverse an expected pattern = ironic.",
+    "context": "COINCIDENCE = two unrelated things happen together, no expected reversal. A girl meeting her dentist at the store is just a coincidence -- no purpose-reversal. The others reverse an expected pattern = ironic.",
     "topic": "ironic-not-unfortunate-and-not-coincidental"
   },
   {
     "tier": 4,
     "question": "A local paper reports, 'The safety inspector died in an unsafe workplace accident.' Which type of irony, if any, is that?",
-    "answer": "situational (the expected outcome -- inspector prevents accidents -- is reversed)",
+    "answer": "situational",
     "choices": [
-      "situational (the expected outcome -- inspector prevents accidents -- is reversed)",
-      "verbal (sarcasm)",
+      "situational",
+      "verbal",
       "dramatic",
       "not ironic"
     ],
@@ -5501,9 +5475,9 @@
   {
     "tier": 4,
     "question": "A hiker scowls in a rainstorm and says, 'What a lovely day.' Which type of irony is at work, if any?",
-    "answer": "verbal (saying the opposite of what is meant; often sarcasm)",
+    "answer": "verbal",
     "choices": [
-      "verbal (saying the opposite of what is meant; often sarcasm)",
+      "verbal",
       "situational",
       "dramatic",
       "not ironic"
@@ -5512,11 +5486,11 @@
     "topic": "ironic-not-unfortunate-and-not-coincidental"
   },
   {
-    "tier": 5,
-    "question": "Oedipus vows to punish the killer of King Laius. He does not know he is the killer. Which type of irony is this?",
-    "answer": "dramatic (audience knows Oedipus killed Laius; Oedipus does not)",
+    "tier": 3,
+    "question": "Oedipus vows to punish the killer of King Laius. Everyone in the theater knows the killer is Oedipus himself; he does not. Which type of irony is this?",
+    "answer": "dramatic",
     "choices": [
-      "dramatic (audience knows Oedipus killed Laius; Oedipus does not)",
+      "dramatic",
       "situational",
       "verbal",
       "not ironic"
@@ -5696,12 +5670,12 @@
   {
     "tier": 1,
     "question": "A weather app's alert reads, 'Its raining today.' What is the trouble with that alert, if any?",
-    "answer": "missing apostrophe: 'it's' means 'it is'",
+    "answer": "needs an apostrophe",
     "choices": [
-      "missing apostrophe: 'it's' means 'it is'",
-      "should be capitalised",
+      "needs an apostrophe",
+      "needs a capital letter",
       "needs a comma",
-      "nothing wrong"
+      "nothing is wrong"
     ],
     "context": "'It's' with the apostrophe is the contraction of 'it is' (or 'it has'). 'Its' without apostrophe is the possessive pronoun. 'Its raining' says nothing meaningful; 'It's raining' says the sky is opening up.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
@@ -5722,25 +5696,25 @@
   {
     "tier": 2,
     "question": "A night editor needs one reliable test for when a word earns the apostrophe in 'it's.' What is her test?",
-    "answer": "'it is' -- if the sentence still works, use 'it's'",
+    "answer": "swap in 'it is' or 'it has'; if either fits, use 'it's'",
     "choices": [
-      "'it is' -- if the sentence still works, use 'it's'",
-      "'his' -- if it works, use 'its'",
-      "count the syllables",
-      "check the following word"
+      "swap in 'it is' or 'it has'; if either fits, use 'it's'",
+      "swap in 'it was' or 'it had'; if either fits, use 'it's'",
+      "swap in 'it does' or 'it did'; if either fits, use 'it's'",
+      "swap in 'its own'; if that fits, use 'it's'"
     ],
-    "context": "The apostrophe-substitution test: try 'it is' (or 'it has'). If the sentence still makes sense, use 'it's' with apostrophe. If not, use possessive 'its' (like 'his' or 'hers').",
+    "context": "The substitution test: try 'it is' or 'it has'. If either fits, use 'it's' with the apostrophe; if not, use the possessive 'its' (like 'his' or 'hers'). 'It's' never stands for 'it was', 'it had' or 'it does'.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
     "tier": 4,
     "question": "A sports page reads, 'The team announced its winning streak was over.' Which rule protects this sentence from error?",
-    "answer": "possessive 'its' takes no apostrophe even for singular collective nouns",
+    "answer": "possessive 'its' never takes an apostrophe",
     "choices": [
-      "possessive 'its' takes no apostrophe even for singular collective nouns",
-      "team is always plural",
-      "streaks require semicolons",
-      "winning is a gerund"
+      "possessive 'its' never takes an apostrophe",
+      "a collective noun always takes 'their'",
+      "an apostrophe marks every possessive",
+      "'winning streak' needs a hyphen"
     ],
     "context": "Whether 'team' is treated as singular ('its') or plural ('their') is a stylistic choice (US = singular, UK often = plural). Either way, no apostrophe on 'its'.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
@@ -5748,14 +5722,14 @@
   {
     "tier": 5,
     "question": "A copy-editor reads 'Its been a long day.' and marks it wrong. Why?",
-    "answer": "'it's' = 'it has been'; the possessive 'its' cannot start this idiom",
+    "answer": "it needs 'it's', short here for 'it has'",
     "choices": [
-      "'it's' = 'it has been'; the possessive 'its' cannot start this idiom",
-      "sentence should start with 'It is'",
-      "'long day' is a compound noun",
-      "should be 'Its been a long, long day'"
+      "it needs 'it's', short here for 'it has'",
+      "it needs 'it's', short here for 'it is'",
+      "it needs the apostrophe after the s: its'",
+      "it needs a comma after the opening word"
     ],
-    "context": "'It's' contracts both 'it is' AND 'it has' -- 'It's been a long day' = 'It has been a long day'. Possessive 'its' has no verb slot; the sentence is missing its predicate.",
+    "context": "'It's' contracts both 'it is' AND 'it has'. 'It is been' fails, so here it stands for 'it has': 'It has been a long day.' The possessive 'its' holds no verb, so the sentence is left without one.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
@@ -5765,8 +5739,8 @@
     "choices": [
       "IT'S should be ITS -- the possessive has no apostrophe",
       "IT'S should be ITS' -- the apostrophe goes after the S",
-      "TAIL should be TAILS -- dogs have many wag positions",
-      "IT'S is correct as written"
+      "IT'S should be IT IS -- a report spells out contractions",
+      "IT'S stays -- the sentence is correct as written"
     ],
     "context": "IT'S with an apostrophe ALWAYS means 'it is' or 'it has.' Possessive pronouns (his, hers, its, ours, theirs) never take apostrophes. Source: Merriam-Webster 'its' + 'it's' entries.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
@@ -5774,12 +5748,12 @@
   {
     "tier": 2,
     "question": "A boy writes 'the dog's tail,' then gives 'its tail' the same apostrophe, and his teacher strikes it out. Why does the possessive 'its' stay bare?",
-    "answer": "Because pronouns already show possession without an apostrophe (his, hers, ours, theirs)",
+    "answer": "Because no personal pronoun uses one to show ownership",
     "choices": [
-      "Because pronouns already show possession without an apostrophe (his, hers, ours, theirs)",
-      "Because the apostrophe was banned in the 1800s",
-      "Because ITS was originally two words joined together",
-      "Because the letter T never accepts an apostrophe"
+      "Because no personal pronoun uses one to show ownership",
+      "Because 'its' came from Latin, which had no apostrophe",
+      "Because 'its' began as two words joined together",
+      "Because a word ending in -ts never takes one"
     ],
     "context": "Possessive pronouns are a closed set; they carry possession in their form. No 'her's,' no 'his',' no 'their's.' The apostrophe on IT'S is reserved for the contraction. Source: Chicago Manual of Style 17e section 5.50.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
@@ -5790,11 +5764,11 @@
     "answer": "'It's raining outside, so bring a coat.'",
     "choices": [
       "'It's raining outside, so bring a coat.'",
-      "'The book lost its cover in the rain.'",
-      "'The cat licked its paw clean.'",
-      "'The company celebrated its tenth anniversary.'"
+      "'The book lost it's cover in the rain.'",
+      "'The cat licked it's paw clean.'",
+      "'The kite snapped it's string in the wind.'"
     ],
-    "context": "'It is raining outside' works. The other three fail: 'The book lost it is cover' is broken -- the possessive ITS has no apostrophe. Source: Merriam-Webster usage note.",
+    "context": "'It is raining outside' works. The other three fail the swap: 'The book lost it is cover' is nonsense, so each of them needs the bare possessive ITS. Source: Merriam-Webster usage note.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
@@ -5816,11 +5790,11 @@
     "answer": "'The dog wagged its tail.'",
     "choices": [
       "'The dog wagged its tail.'",
-      "'It's a beautiful morning.'",
-      "'It's been a long day.'",
-      "'It's raining hard now.'"
+      "'Its a beautiful morning.'",
+      "'The vet says its been a long day.'",
+      "'I think its raining hard now.'"
     ],
-    "context": "'The dog wagged HIS tail' works fine. The other three are contractions ('it is' / 'it has') -- you cannot swap in HIS. Source: Merriam-Webster usage note.",
+    "context": "'The dog wagged HIS tail' works fine. The other three need the contraction IT'S ('it is' / 'it has'), so HIS cannot fill their slot. Source: Merriam-Webster usage note.",
     "topic": "its-vs-its-the-apostrophe-that-flips-meaning"
   },
   {
@@ -5852,9 +5826,9 @@
   {
     "tier": 1,
     "question": "A supermarket checkout sign says '10 items or less.' What is the traditional grammar fix, if any?",
-    "answer": "'10 items or fewer' (fewer for count nouns)",
+    "answer": "'10 items or fewer'",
     "choices": [
-      "'10 items or fewer' (fewer for count nouns)",
+      "'10 items or fewer'",
       "'less than 10 items'",
       "'10 or less items'",
       "no fix needed; both are fine"
@@ -5891,25 +5865,25 @@
   {
     "tier": 2,
     "question": "A girl's diary complains, 'She has less friends than her sister.' What correction, if any, does traditional grammar make?",
-    "answer": "'fewer friends' (friends are countable)",
+    "answer": "'fewer friends'",
     "choices": [
-      "'fewer friends' (friends are countable)",
+      "'fewer friends'",
       "'lesser friends'",
       "'least friends'",
       "no correction needed"
     ],
-    "context": "You count friends one by one, so use FEWER. LESS with count nouns is common in casual speech but traditional grammar (and most editors) still flag it.",
+    "context": "Friends are counted one by one, so FEWER. LESS with count nouns is common in casual speech, but traditional grammar and careful editors still flag it.",
     "topic": "less-vs-fewer-mass-vs-count"
   },
   {
     "tier": 3,
     "question": "A race report reads, 'She ran the race in less than five minutes.' Why is 'less' correct here even though minutes are countable?",
-    "answer": "measurement of time is treated as a single mass, not counted individually",
+    "answer": "a span of time counts as one amount",
     "choices": [
-      "measurement of time is treated as a single mass, not counted individually",
-      "minutes are always uncountable",
-      "the sentence has no subject",
-      "the exception applies to sports"
+      "a span of time counts as one amount",
+      "'minutes' is a mass noun, like 'water'",
+      "'than' always takes 'less', never 'fewer'",
+      "race times follow a sports exception"
     ],
     "context": "The mass exception: measurements of TIME, DISTANCE, MONEY, and WEIGHT function as mass nouns even when the unit is countable. 'Less than five minutes', 'less than ten dollars', 'less than a mile'.",
     "topic": "less-vs-fewer-mass-vs-count"
@@ -5917,12 +5891,12 @@
   {
     "tier": 3,
     "question": "A jockey's file reads, 'She weighs less than 100 pounds.' Why is 'less' right, if pounds are a countable unit?",
-    "answer": "weight (like time and money) is a single measured quantity",
+    "answer": "weight is treated as one measured amount",
     "choices": [
-      "weight (like time and money) is a single measured quantity",
-      "pounds are never countable",
-      "the rule does not apply to weight",
-      "should be 'fewer than 100 pounds'"
+      "weight is treated as one measured amount",
+      "'pounds' is a mass noun, like 'flour'",
+      "'pounds' works here as an adjective",
+      "any number over 99 takes 'less'"
     ],
     "context": "The measurement-mass rule again: weight is treated as one continuous quantity, so LESS. Compare 'fewer than 100 bricks' (bricks are discrete count nouns, not a measurement).",
     "topic": "less-vs-fewer-mass-vs-count"
@@ -5934,10 +5908,10 @@
     "choices": [
       "'less' is more standard -- percent is a proportion, treated as mass",
       "'fewer' is standard -- 3 percent is a count",
-      "both are equally accepted",
+      "'less' is required -- any number takes 'less'",
       "neither -- rewrite the sentence"
     ],
-    "context": "PROPORTIONS (percent, fractions, ratios) are treated as mass -- 'less than 3 percent', 'less than half'. Merriam-Webster and Chicago both prefer 'less' here. 'Fewer' with percent sounds hypercorrected.",
+    "context": "PROPORTIONS (percent, fractions, ratios) are usually treated as mass -- 'less than 3 percent', 'less than half'. Bryan Garner, the usage-guide author, prefers 'less' with a percentage, partly because most percentages are not whole numbers. 'Fewer' can be defended, since voters can be counted, but 'less' is the usual choice. 'Less' with a plain count ('less than ten voters') is still a slip.",
     "topic": "less-vs-fewer-mass-vs-count"
   },
   {
@@ -5951,19 +5925,6 @@
       "Less cars, less traffic, and less than five minutes of delay."
     ],
     "context": "FEWER cars (count). LESS traffic (mass). LESS than five minutes (measurement of time -- mass exception). Three rules stacked correctly.",
-    "topic": "less-vs-fewer-mass-vs-count"
-  },
-  {
-    "tier": 2,
-    "question": "A worksheet line reads, \"Count nouns are things you can ___.\" What does the blank hold?",
-    "answer": "count one by one (three books, five cars, ten people)",
-    "choices": [
-      "count one by one (three books, five cars, ten people)",
-      "measure in units (five gallons, three miles)",
-      "either count or measure",
-      "all nouns are count nouns"
-    ],
-    "context": "COUNT NOUNS: individual, discrete items. Take plural forms (book/books, car/cars, person/people). Use FEWER for less. MASS NOUNS (water, sugar, sand) don't have a plural -- measured, not counted.",
     "topic": "less-vs-fewer-mass-vs-count"
   },
   {
@@ -6007,15 +5968,15 @@
   },
   {
     "tier": 3,
-    "question": "A grandfather grumbles that using 'literally' loosely is a modern mistake. When did writers first use it that way?",
-    "answer": "The early 1800s -- Charlotte Bronte, Dickens, and Fitzgerald all used it.",
+    "question": "A grandfather grumbles that using 'literally' loosely is a modern mistake. When were writers already using it that way?",
+    "answer": "The 1800s -- Charles Dickens and Charlotte Bronte did.",
     "choices": [
-      "The early 1800s -- Charlotte Bronte, Dickens, and Fitzgerald all used it.",
-      "The 1990s, when texting popularized the misuse.",
-      "The 1970s, in American sitcom scripts.",
-      "The 1950s, in advertising copy."
+      "The 1800s -- Charles Dickens and Charlotte Bronte did.",
+      "The 1990s -- texting started the loose use.",
+      "The 1970s -- American sitcom scripts started it.",
+      "The 1950s -- advertising copy started it."
     ],
-    "context": "The intensifier use is documented for over 200 years. Merriam-Webster and other major dictionaries now list both senses. Source: Oxford English Dictionary entry 'literally' sense 1c; Grokipedia 'Literally' (2026-09-05).",
+    "context": "The loose use goes back at least to 1769. Charles Dickens used it in 'Nicholas Nickleby' (1839) and Charlotte Bronte in 'Villette' (1853); Mark Twain and F. Scott Fitzgerald followed. Merriam-Webster and other major dictionaries now list both senses.",
     "topic": "literally-the-strict-meaning-vs-the-intensifier"
   },
   {
@@ -6025,10 +5986,10 @@
     "choices": [
       "Flag it -- use LITERALLY only in its strict sense in formal writing.",
       "Leave it -- the intensifier use is accepted everywhere now.",
-      "Replace 'literally' with 'literarily' -- the correct scientific term.",
-      "Delete 'literally' and 'roared' -- science writing bans all verbs of sound."
+      "Move it -- the adverb belongs after 'roared to life'.",
+      "Put it in quotation marks -- that marks it as casual speech."
     ],
-    "context": "Volcanoes do not roar in a literal sense. The intensifier use is fine in casual speech but should be flagged in formal essays, news, and scientific reporting. Source: Merriam-Webster's Dictionary of English Usage, entry 'literally'.",
+    "context": "No volcano is literally alive, so 'roared to life' is a figure of speech and LITERALLY is only an intensifier here. That use is fine in casual speech but should be flagged in formal essays, news, and scientific reporting; moving the word or wrapping it in quotation marks leaves the same problem. Source: Merriam-Webster's Dictionary of English Usage, entry 'literally'.",
     "topic": "literally-the-strict-meaning-vs-the-intensifier"
   },
   {
@@ -6203,14 +6164,14 @@
   {
     "tier": 2,
     "question": "A note on the fridge reads, \"You may not go to the party.\" How can that line be read?",
-    "answer": "it can mean \"you are not allowed\" (permission denied) OR \"it is possible you will not\" (possibility)",
+    "answer": "as a refusal of permission or as a prediction",
     "choices": [
-      "it can mean \"you are not allowed\" (permission denied) OR \"it is possible you will not\" (possibility)",
-      "it is always understood as permission denied",
-      "it is always understood as future possibility",
-      "the ambiguity only exists in British English"
+      "as a refusal of permission or as a prediction",
+      "only as a refusal of permission",
+      "only as a prediction about the party",
+      "as a refusal only in British English"
     ],
-    "context": "Context usually disambiguates. The double meaning is a real trap in isolated sentences.",
+    "context": "MAY carries both permission and possibility, so the note can refuse permission or predict that its reader will probably not make it. Context usually settles which; the double meaning is a real trap in an isolated sentence.",
     "topic": "may-vs-might-permission-and-possibility"
   },
   {
@@ -6424,12 +6385,12 @@
   {
     "tier": 1,
     "question": "A diary entry reads, 'I saw the boy with the telescope.' What trouble does that line give a reader, if any?",
-    "answer": "did the writer use the telescope to see the boy, or did the boy have the telescope?",
+    "answer": "it is unclear who has the telescope",
     "choices": [
-      "did the writer use the telescope to see the boy, or did the boy have the telescope?",
-      "no ambiguity exists",
-      "the boy is missing",
-      "the telescope is broken"
+      "it is unclear who has the telescope",
+      "it runs on and needs a comma",
+      "it is a fragment with no main verb",
+      "nothing; the meaning is clear"
     ],
     "context": "MISPLACED MODIFIER: 'with the telescope' could modify SAW (how I saw) or BOY (which boy). The ambiguity is genuine. Fix by moving the phrase closer to what it modifies.",
     "topic": "misplaced-modifiers-i-saw-the-boy-with-the-telescope"
@@ -6437,40 +6398,40 @@
   {
     "tier": 2,
     "question": "A note on the fridge says, 'She only eats vegetables on Tuesdays.' How can that line be read?",
-    "answer": "'only eats vegetables' (nothing else on Tuesdays) OR 'only on Tuesdays' (vegetables only that day)",
+    "answer": "two ways: nothing but vegetables, or vegetables on no other day",
     "choices": [
-      "'only eats vegetables' (nothing else on Tuesdays) OR 'only on Tuesdays' (vegetables only that day)",
-      "one clear meaning",
-      "vegetables are only eaten",
-      "Tuesday is special"
+      "two ways: nothing but vegetables, or vegetables on no other day",
+      "one way: she eats vegetables on Tuesdays and no other day",
+      "one way: on Tuesdays she eats nothing but vegetables",
+      "one way, since 'only' always modifies the word after it"
     ],
-    "context": "ONLY is famously ambiguous depending on placement. 'She only EATS vegetables on Tuesdays' = eats them only, doesn't cook them. 'She eats only VEGETABLES on Tuesdays' = only vegetables, no meat. Careful placement matters.",
+    "context": "ONLY is famously slippery. 'She eats only VEGETABLES on Tuesdays' = vegetables and nothing else that day. 'She eats vegetables only on TUESDAYS' = vegetables on no other day. Parked beside 'eats', it can be read either way, so move it next to the word it limits.",
     "topic": "misplaced-modifiers-i-saw-the-boy-with-the-telescope"
   },
   {
     "tier": 2,
-    "question": "A waiter's shift report reads, 'She almost dropped every plate.' What is the best edit to make the intended meaning clear?",
-    "answer": "'She dropped almost every plate.' (nearly all plates dropped)",
+    "question": "A waiter's shift report reads, 'She almost dropped every plate.' In fact she dropped nearly all of them. Which edit says so?",
+    "answer": "She dropped almost every plate.",
     "choices": [
-      "'She dropped almost every plate.' (nearly all plates dropped)",
-      "'Almost, she dropped every plate.'",
-      "'She almost every plate dropped.'",
-      "no change needed"
+      "She dropped almost every plate.",
+      "She nearly dropped every plate.",
+      "She almost dropped each plate.",
+      "Almost every time, she dropped a plate."
     ],
-    "context": "'Almost' next to 'dropped' means she came close but did not drop them. Moving 'almost' next to 'every' means nearly all plates were dropped. Modifier placement changes meaning.",
+    "context": "'Almost' next to 'dropped' means she came close to dropping them and dropped none. Moved next to 'every', it says nearly all the plates hit the floor. 'Nearly dropped' keeps the old meaning in a new word, 'each' changes nothing, and 'almost every time' counts shifts, not plates.",
     "topic": "misplaced-modifiers-i-saw-the-boy-with-the-telescope"
   },
   {
     "tier": 3,
     "question": "A letter home reads, 'I saw a man walking his dog through the window.' What needs fixing, if anything?",
-    "answer": "'through the window' should be next to SAW (I looked through the window), not DOG or MAN",
+    "answer": "move 'through the window' up beside 'I saw'",
     "choices": [
-      "'through the window' should be next to SAW (I looked through the window), not DOG or MAN",
-      "'walking his dog' is a fragment",
-      "no issue",
-      "'through' is misplaced"
+      "move 'through the window' up beside 'I saw'",
+      "move 'walking his dog' up in front of 'I'",
+      "put commas around 'walking his dog'",
+      "nothing; the meaning is already clear"
     ],
-    "context": "As written, 'through the window' modifies WALKING -- as if the dog was being walked through the window. Fix: 'Through the window, I saw a man walking his dog.'",
+    "context": "As written, 'through the window' modifies WALKING -- as if the dog was being walked through the window. Fix: 'Through the window, I saw a man walking his dog.' Moving 'walking his dog' to the front would make the writer the dog-walker.",
     "topic": "misplaced-modifiers-i-saw-the-boy-with-the-telescope"
   },
   {
@@ -6502,38 +6463,38 @@
   {
     "tier": 4,
     "question": "A summer-camp flyer boasts, 'She served hot dogs to children in paper cups.' What is wrong with the sentence?",
-    "answer": "the phrase suggests children were IN paper cups",
+    "answer": "it says the children sat in the cups",
     "choices": [
-      "the phrase suggests children were IN paper cups",
-      "hot dogs cannot be served",
-      "paper cups are inedible",
-      "children cannot eat hot dogs"
+      "it says the children sat in the cups",
+      "it is a run-on that needs a comma",
+      "it dangles a modifier with no noun to describe",
+      "it shifts from past to present tense"
     ],
     "context": "'In paper cups' modifies the nearest noun, CHILDREN. Fix: 'She served hot dogs in paper cups to children.' Modifier next to what it actually modifies.",
     "topic": "misplaced-modifiers-i-saw-the-boy-with-the-telescope"
   },
   {
     "tier": 5,
-    "question": "A fire report reads, 'The house on the hill with the red roof burned down.' Which noun does 'with the red roof' modify?",
-    "answer": "HILL (nearest noun; wrong meaning if the writer meant the house)",
+    "question": "A fire report reads, 'The house on the hill with the red roof burned down.' A careless reader gives the hill a roof. Which rewrite keeps the roof on the house?",
+    "answer": "The red-roofed house on the hill burned down.",
     "choices": [
-      "HILL (nearest noun; wrong meaning if the writer meant the house)",
-      "HOUSE (writer's likely intent, but grammar attaches to HILL)",
-      "always the last noun",
-      "always the subject"
+      "The red-roofed house on the hill burned down.",
+      "The house on the red-roofed hill burned down.",
+      "The house on the hill burned down with the red roof.",
+      "The house on the hill with a red roof burned down."
     ],
-    "context": "MODIFIERS attach to the NEAREST possible noun. Fix: 'The red-roofed house on the hill burned down' or 'The house with the red roof, on the hill, burned down.' Squinting modifiers require rewriting.",
+    "context": "As written, 'with the red roof' sits beside HILL, the nearest noun, so a careless reading gives the hill a roof. Moving the description in front of HOUSE ('the red-roofed house') ties it to the right noun. Changing 'the' to 'a' leaves it in the same wrong slot, and tacking it onto the end says the roof burned along with the house.",
     "topic": "misplaced-modifiers-i-saw-the-boy-with-the-telescope"
   },
   {
     "tier": 1,
     "question": "A strict copy editor stops at the word 'nauseous' in a manuscript. In the strict sense, what does the word mean?",
-    "answer": "causing nausea (a nauseous smell makes you feel sick)",
+    "answer": "causing nausea in others",
     "choices": [
-      "causing nausea (a nauseous smell makes you feel sick)",
-      "feeling nausea (I am nauseous after the ride)",
-      "both -- the word means anything sickness-related",
-      "a scientific term for the vagus nerve"
+      "causing nausea in others",
+      "feeling nausea oneself",
+      "feeling dizzy or faint",
+      "sick from a rocking motion"
     ],
     "context": "Strict: NAUSEOUS = CAUSING nausea. NAUSEATED = FEELING nausea. The word about the SPEAKER feeling ill is NAUSEATED.",
     "topic": "nauseous-vs-nauseated-the-strict-distinction"
@@ -6554,14 +6515,14 @@
   {
     "tier": 2,
     "question": "A passenger on a ferry groans 'I feel nauseous' and a careful editor beside him winces. Under the strict rule, why is that a misuse?",
-    "answer": "taken strictly, it means the SPEAKER is causing nausea in others (the speaker is the stinky thing)",
+    "answer": "read strictly, it says the passenger makes others sick",
     "choices": [
-      "taken strictly, it means the SPEAKER is causing nausea in others (the speaker is the stinky thing)",
-      "it is grammatically incorrect in any register",
-      "it changes the meaning to sadness",
-      "it is a British-only usage"
+      "read strictly, it says the passenger makes others sick",
+      "it is wrong in every register, even casual speech",
+      "it is British usage and out of place in America",
+      "'feel' must take an adverb, so 'nauseously'"
     ],
-    "context": "Strict reading: the speaker is the thing causing nausea. Modern usage accepts NAUSEOUS for both meanings, but formal medical writing keeps the split.",
+    "context": "Strict reading: the speaker is the thing causing nausea. Modern usage accepts NAUSEOUS for both meanings, but formal medical writing keeps the split. 'Feel' is a linking verb, so it takes an adjective ('feel sick'), never 'feel nauseously'.",
     "topic": "nauseous-vs-nauseated-the-strict-distinction"
   },
   {
@@ -6592,41 +6553,41 @@
   },
   {
     "tier": 5,
-    "question": "A proofreader checks four lines from a story. Which line uses the strict word for feeling ill?",
-    "answer": "The child was nauseated by the boat ride",
+    "question": "A proofreader holds four lines from a story to the strict nauseous-nauseated rule. Which line passes?",
+    "answer": "The child was nauseated by the boat ride.",
     "choices": [
-      "The child was nauseated by the boat ride",
-      "The nauseous smell of spoiled milk filled the room",
-      "The nauseous garbage truck rumbled past",
-      "The medicine tasted nauseous and bitter"
+      "The child was nauseated by the boat ride.",
+      "The child was nauseous after the boat ride.",
+      "The nauseated smell of milk filled the room.",
+      "The sailors felt nauseous below deck."
     ],
-    "context": "The child FEELS nausea = strict NAUSEATED. The other three describe things that CAUSE nausea (correct strict NAUSEOUS use).",
+    "context": "Strict rule: NAUSEATED for the one who feels sick, NAUSEOUS for what causes it. Only the child 'nauseated by the boat ride' passes. 'Nauseous' for a sick child or sick sailors is the everyday use the strict rule rejects, and a smell cannot be 'nauseated'.",
     "topic": "nauseous-vs-nauseated-the-strict-distinction"
   },
   {
     "tier": 1,
     "question": "A department memo reads, 'The utilisation of the equipment was implemented by the department.' What is wrong with the writing?",
-    "answer": "nominalisation (nouns that hide the verb): should be 'The department USED the equipment.'",
+    "answer": "nominalization: 'utilisation' hides the verb 'use'",
     "choices": [
-      "nominalisation (nouns that hide the verb): should be 'The department USED the equipment.'",
-      "the sentence is passive",
-      "too many articles",
-      "no problem"
+      "nominalization: 'utilisation' hides the verb 'use'",
+      "fragment: the sentence has no main verb",
+      "comma splice: two clauses joined by a comma",
+      "misplaced modifier: 'by the department' sits loose"
     ],
-    "context": "NOMINALISATION = making a verb into an abstract noun (utilise → utilisation, decide → decision). The result is 'zombie nouns' that suck the life out of prose. Fix by restoring the verb.",
+    "context": "NOMINALIZATION = making a verb into an abstract noun (utilize -> utilization, decide -> decision). Fix by restoring the verb: 'The department used the equipment.' The memo is passive as well, but it has a main verb ('was implemented'), so it is no fragment, and it has no comma at all.",
     "topic": "nominalizations-zombie-nouns-that-hide-the-verb"
   },
   {
     "tier": 2,
-    "question": "A teacher writes 'nominalisation' in the margin of a student's report. What does the word mean in grammar?",
-    "answer": "turning a verb into an abstract noun ('decide' → 'decision', 'utilise' → 'utilisation')",
+    "question": "A teacher writes 'nominalization' in the margin beside 'came to a decision' in a student's report. What does the word mean?",
+    "answer": "turning a verb into an abstract noun",
     "choices": [
-      "turning a verb into an abstract noun ('decide' → 'decision', 'utilise' → 'utilisation')",
-      "any noun with two syllables",
-      "a proper noun",
-      "a compound noun"
+      "turning a verb into an abstract noun",
+      "turning a noun into a verb",
+      "joining two nouns into one word",
+      "using a noun as an adjective"
     ],
-    "context": "Nominalisations are grammatically legal but stylistically deadly. Steven Pinker calls them 'zombie nouns' (in 'The Sense of Style', 2014) because they turn active verbs into inert nouns.",
+    "context": "Nominalizations are grammatically legal but stylistically deadly. Helen Sword named them 'zombie nouns' in 2012, and Steven Pinker took up her name in 'The Sense of Style' (2014): they lumber through a sentence with no doer behind them. 'Came to a decision' is simply 'decided'.",
     "topic": "nominalizations-zombie-nouns-that-hide-the-verb"
   },
   {
@@ -6635,9 +6596,9 @@
     "answer": "'We decided to increase production.'",
     "choices": [
       "'We decided to increase production.'",
-      "'The decision that was made'",
-      "'It was decided'",
-      "no rewrite needed"
+      "'It was decided to increase production.'",
+      "'A decision to increase production was made.'",
+      "'Our decision was to increase production.'"
     ],
     "context": "'Made a decision' → decided. 'Reached a conclusion' → concluded. 'Conducted an investigation' → investigated. Verb-based writing is shorter, clearer, and names who did what.",
     "topic": "nominalizations-zombie-nouns-that-hide-the-verb"
@@ -6652,33 +6613,20 @@
       "'Morale had an improvement.'",
       "no improvement possible"
     ],
-    "context": "TWO zombie nouns become verbs: IMPLEMENTATION → the policy DID something; IMPROVEMENT → morale IMPROVED. Original is 13 words; the fix is 5. Nominalisation is a length problem too.",
-    "topic": "nominalizations-zombie-nouns-that-hide-the-verb"
-  },
-  {
-    "tier": 3,
-    "question": "A style coach chalks -tion, -sion and -ment on the board as endings that give away a nominalisation. What else belongs on the list?",
-    "answer": "-ence / -ance",
-    "choices": [
-      "-ence / -ance",
-      "-ing (always)",
-      "-ly",
-      "-est"
-    ],
-    "context": "The classic nominalisation endings: -tion (decision, action), -sion (discussion), -ment (development), -ence/-ance (existence, appearance), -ity (viability), -ness (readiness). All turn verbs/adjectives into abstract nouns.",
+    "context": "TWO zombie nouns become verbs: IMPLEMENTATION -> the policy DID something; IMPROVEMENT -> morale IMPROVED. The original is 12 words; the fix is 5. Nominalization is a length problem too.",
     "topic": "nominalizations-zombie-nouns-that-hide-the-verb"
   },
   {
     "tier": 4,
-    "question": "A consultant's slide reads, 'The concept of the necessity for evaluation of the situation.' What is the diagnosis?",
-    "answer": "stacked nominalisations: 'concept', 'necessity', 'evaluation', 'situation' -- four zombie nouns",
+    "question": "A consultant's slide reads, 'The committee made a recommendation for the implementation of an evaluation.' What is the diagnosis?",
+    "answer": "three verbs buried as nouns, stacked in a row",
     "choices": [
-      "stacked nominalisations: 'concept', 'necessity', 'evaluation', 'situation' -- four zombie nouns",
-      "the sentence is a fragment",
-      "wrong tense",
-      "correctly written"
+      "three verbs buried as nouns, stacked in a row",
+      "a fragment: the line has no main verb",
+      "a comma splice: two clauses with no conjunction",
+      "one passive verb hiding who acted"
     ],
-    "context": "Chains of nominalisations (concept-of-necessity-for-evaluation-of-situation) are the deadly bureaucratic style. Fix: 'We need to evaluate the situation.' Actor + verb + object.",
+    "context": "RECOMMENDATION (recommend), IMPLEMENTATION (implement) and EVALUATION (evaluate) are three zombie nouns in a row. 'Made' is the main verb, so the line is a whole sentence, and it is active. Fix: 'The committee recommended an evaluation.' One zombie may stay; three in a row bury the action.",
     "topic": "nominalizations-zombie-nouns-that-hide-the-verb"
   },
   {
@@ -6697,12 +6645,12 @@
   {
     "tier": 1,
     "question": "A principal's note reads, 'None of the students ___ ready.' Both 'is' and 'are' are accepted in that blank. Why?",
-    "answer": "NONE has always been flexible in English -- can mean 'not one' (singular) or 'not any' (plural)",
+    "answer": "'none' can mean 'not one' or 'not any'",
     "choices": [
-      "NONE has always been flexible in English -- can mean 'not one' (singular) or 'not any' (plural)",
-      "the rule changed in 2020",
-      "American English rejects singular here",
-      "'ready' can take either"
+      "'none' can mean 'not one' or 'not any'",
+      "usage guides dropped the old rule in 2020",
+      "'students' can count as singular or plural",
+      "'ready' agrees with either kind of verb"
     ],
     "context": "The myth that NONE is 'always singular' has no basis in the history of English. Merriam-Webster, Chicago 5.68, and OED all say NONE can be singular or plural depending on the referent and emphasis.",
     "topic": "none-singular-or-plural-depending-on-referent"
@@ -6710,9 +6658,9 @@
   {
     "tier": 2,
     "question": "A hiker's log reads, 'None of the water ___ left.' Which word fills the blank?",
-    "answer": "is (water is mass; singular)",
+    "answer": "is",
     "choices": [
-      "is (water is mass; singular)",
+      "is",
       "are",
       "were",
       "either"
@@ -6722,28 +6670,15 @@
   },
   {
     "tier": 2,
-    "question": "A note on the empty jar reads, 'None of the cookies ___ left.' Which verb is more common in modern usage?",
-    "answer": "are (plural, matching the count noun 'cookies')",
+    "question": "A note on the empty jar reads, 'None of the cookies ___ left.' The writer means not any of them. Which verb suits that meaning?",
+    "answer": "are",
     "choices": [
-      "are (plural, matching the count noun 'cookies')",
-      "is (emphasising 'not one')",
-      "were",
-      "either equally rare"
+      "are",
+      "is",
+      "was",
+      "has"
     ],
-    "context": "With COUNT-NOUN plural referents, PLURAL agreement is more common in modern edited English. 'None of the cookies are left.' Singular ('none is left') emphasises 'not a single one' -- still valid, just rarer.",
-    "topic": "none-singular-or-plural-depending-on-referent"
-  },
-  {
-    "tier": 3,
-    "question": "A teacher chalks an old saying on the board: 'None but the brave ___ the fair.' Which verb does the traditional idiom take?",
-    "answer": "deserves (NONE = 'not one'; singular here for the idiom)",
-    "choices": [
-      "deserves (NONE = 'not one'; singular here for the idiom)",
-      "deserve",
-      "deserved",
-      "either"
-    ],
-    "context": "Traditional idiom from John Dryden 'Alexander's Feast' (1697). The singular emphasises the individual: 'not a single one but the brave...'. In fixed idioms, the singular verb persists.",
+    "context": "With a COUNT-NOUN plural referent and a 'not any' meaning, PLURAL agreement fits: 'None of the cookies are left.' The singular ('none is left') stresses 'not a single one' -- still correct, but it carries that extra stress.",
     "topic": "none-singular-or-plural-depending-on-referent"
   },
   {
@@ -6754,7 +6689,7 @@
       "None of the workers is qualified.",
       "None of the workers are qualified.",
       "None of the workers were qualified.",
-      "None of the workers has been qualified."
+      "None of the workers have been qualified."
     ],
     "context": "Singular verb after NONE emphasises the 'not one' reading. Plural verb ('are') emphasises the group. Both work; the singular is stronger for a not-a-single-one meaning.",
     "topic": "none-singular-or-plural-depending-on-referent"
@@ -6762,12 +6697,12 @@
   {
     "tier": 4,
     "question": "A team captain's speech draft reads, 'None of us ___ perfect.' What determines the verb here?",
-    "answer": "either is acceptable; author's choice signals emphasis",
+    "answer": "the writer's emphasis, since either verb stands",
     "choices": [
-      "either is acceptable; author's choice signals emphasis",
-      "always plural (us is plural)",
-      "always singular (NONE is singular)",
-      "grammar has no rule for pronouns"
+      "the writer's emphasis, since either verb stands",
+      "the pronoun 'us', which makes it always plural",
+      "the word 'none', which makes it always singular",
+      "the adjective 'perfect', which must be plural"
     ],
     "context": "'None of us is perfect' (individually not one is) vs 'none of us are perfect' (as a group). Both are widely used; author picks based on the rhetorical point. Chicago 5.68 confirms flexibility.",
     "topic": "none-singular-or-plural-depending-on-referent"
@@ -6801,12 +6736,12 @@
   {
     "tier": 1,
     "question": "A town newspaper's poll story reads, 'The majority of voters ___ undecided.' Which verb fits best?",
-    "answer": "are (treating the group as individuals)",
+    "answer": "are",
     "choices": [
-      "are (treating the group as individuals)",
-      "is (majority is always singular)",
-      "have been (perfect tense required)",
-      "were (past tense required)"
+      "are",
+      "is",
+      "was",
+      "stays"
     ],
     "context": "MAJORITY OF + plural noun that names individuals = plural verb. Voters are counted one by one.",
     "topic": "number-majority-half-verb-depends-on-whats-being-counted"
@@ -6845,7 +6780,7 @@
       "are (plural count noun after OF)",
       "is (percent is always singular)",
       "has been (perfect required)",
-      "were (past required)"
+      "was (past required)"
     ],
     "context": "PERCENT OF X takes X's number. Students are plural count nouns.",
     "topic": "number-majority-half-verb-depends-on-whats-being-counted"
@@ -6878,28 +6813,28 @@
   },
   {
     "tier": 1,
-    "question": "An editor working under the Chicago rule opens a manuscript full of figures. When should she write a number as a word instead of as digits?",
-    "answer": "spell out zero through one hundred (and round numbers); use digits for everything else",
+    "question": "An editor working under the Chicago rule meets '38 lockers' and '145 students' in the middle of one sentence. Which should she write as a word?",
+    "answer": "'thirty-eight' only; '145' stays in digits",
     "choices": [
-      "spell out zero through one hundred (and round numbers); use digits for everything else",
-      "always use digits",
-      "always spell out",
-      "spell out zero through ten only"
+      "'thirty-eight' only; '145' stays in digits",
+      "both: 'thirty-eight' and 'one hundred forty-five'",
+      "neither: both are over ten, so both stay digits",
+      "neither: Chicago puts every number in digits"
     ],
-    "context": "Chicago general rule: spell zero-one-hundred + round numbers (\"two hundred\", \"five thousand\"). AP prefers zero-through-nine spelled out, 10+ as digits.",
+    "context": "Chicago spells out whole numbers from zero to one hundred, plus round numbers ('two hundred', 'five thousand'): 'thirty-eight lockers' but '145 students'. AP spells out only zero through nine, so it would print both as digits.",
     "topic": "numbers-when-to-spell-out-when-to-use-digits"
   },
   {
     "tier": 2,
     "question": "A school newsletter's draft opens a line with '15 students attended.' What is the rule?",
-    "answer": "always SPELL OUT numbers at the start of a sentence: \"Fifteen students attended\"",
+    "answer": "spell it out: a sentence should not open with digits",
     "choices": [
-      "always SPELL OUT numbers at the start of a sentence: \"Fifteen students attended\"",
-      "always use DIGITS at the start of a sentence",
-      "use digits only if the number is less than 100",
-      "no rule -- writer choice"
+      "spell it out: a sentence should not open with digits",
+      "keep the digits, since numbers over ten use them",
+      "keep the digits, since a figure is easier to read",
+      "either way, since the guides set no rule on it"
     ],
-    "context": "Standard rule across all style guides. Recast the sentence if the spelled-out number is awkward.",
+    "context": "Chicago and AP both spell out a number that opens a sentence; AP lets a year stand as digits ('1999 was a good year'). Recast if the word is awkward: 'Fifteen students attended' or 'The meeting drew 15 students.'",
     "topic": "numbers-when-to-spell-out-when-to-use-digits"
   },
   {
@@ -6917,15 +6852,15 @@
   },
   {
     "tier": 4,
-    "question": "A copy editor goes through a manuscript checking every number written as a word. Which of them take hyphens?",
-    "answer": "twenty-one through ninety-nine (compound two-digit numbers)",
+    "question": "A copy editor has to spell out 142 because it opens a sentence. Which spelling does she use?",
+    "answer": "One hundred forty-two",
     "choices": [
-      "twenty-one through ninety-nine (compound two-digit numbers)",
-      "all spelled-out numbers",
-      "only numbers over 100",
-      "no spelled-out numbers take hyphens"
+      "One hundred forty-two",
+      "One-hundred-forty-two",
+      "One-hundred forty-two",
+      "One hundred forty two"
     ],
-    "context": "FORTY-TWO, NINETY-NINE take hyphens. Larger compounds do not: \"one hundred forty-two\" (not \"one-hundred-forty-two\").",
+    "context": "Only the two-digit compound takes a hyphen: FORTY-TWO. 'Hundred' stands as its own word, so 'one hundred forty-two', never 'one-hundred-forty-two'. British style adds 'and': 'one hundred and forty-two'.",
     "topic": "numbers-when-to-spell-out-when-to-use-digits"
   },
   {
@@ -6955,27 +6890,14 @@
     "topic": "onomatopoeia-words-that-sound-like-what-they-mean"
   },
   {
-    "tier": 1,
-    "question": "A student copying 'onomatopoeia' into her notebook looks up where the word came from. What does she find?",
-    "answer": "onoma (name) + poiein (to make) -- literally \"name-making\"",
-    "choices": [
-      "onoma (name) + poiein (to make) -- literally \"name-making\"",
-      "ono (single) + matos (sound) -- literally \"single-sound\"",
-      "onos (donkey) + poiein (to make) -- literally \"donkey-noise\"",
-      "the word is Latin, not Greek"
-    ],
-    "context": "The Greek etymology fits: the word makes a NAME for a sound by imitating it.",
-    "topic": "onomatopoeia-words-that-sound-like-what-they-mean"
-  },
-  {
     "tier": 2,
     "question": "A boy reads 'pow,' 'bam' and 'zap' in a comic book and asks his sister if those are real English words. What is the truth?",
-    "answer": "many appear in ordinary dictionaries; BAM, POW, ZAP are standardized comic onomatopoeia",
+    "answer": "yes; all three are in ordinary dictionaries",
     "choices": [
-      "many appear in ordinary dictionaries; BAM, POW, ZAP are standardized comic onomatopoeia",
-      "none are real English words",
-      "only POW is a real English word",
-      "they are all borrowed from Japanese manga"
+      "yes; all three are in ordinary dictionaries",
+      "no; dictionaries leave out comic-book noises",
+      "only 'pow'; the other two are slang",
+      "no; all three were borrowed from manga"
     ],
     "context": "Comic-book bang-words have entered standard English. Others (like WHACK, KABOOM) also appear in dictionaries.",
     "topic": "onomatopoeia-words-that-sound-like-what-they-mean"
@@ -6999,9 +6921,9 @@
     "answer": "English WOOF, Japanese WAN-WAN, Russian GAV-GAV",
     "choices": [
       "English WOOF, Japanese WAN-WAN, Russian GAV-GAV",
-      "English MEOW, Japanese ARF, Russian NEIGH",
-      "English MOO, Japanese OINK, Russian CLUCK",
-      "all languages spell dog barks identically"
+      "English WOOF, Japanese GAV-GAV, Russian WAN-WAN",
+      "English WAN-WAN, Japanese WOOF, Russian GAV-GAV",
+      "all three write WOOF, the same everywhere"
     ],
     "context": "Same real-world sound, different word-shapes across languages. Onomatopoeia is language-specific.",
     "topic": "onomatopoeia-words-that-sound-like-what-they-mean"
@@ -7013,7 +6935,7 @@
     "choices": [
       "She sells seashells by the seashore (repeated starting S sound)",
       "The rain in Spain falls mainly on the plain (repeated AY vowel)",
-      "The bee went buzz and the cow said moo (imitative sounds)",
+      "The owl hooted while the clock ticked (imitative sounds)",
       "The angry oyster grumbled loudly (metaphor)"
     ],
     "context": "ALLITERATION = repeated starting consonants. ASSONANCE = repeated vowels. ONOMATOPOEIA = imitates a sound.",
@@ -7061,14 +6983,14 @@
   {
     "tier": 4,
     "question": "A tour guide repeats a line often pinned on a French emperor after his 1814 exile: 'Able was I ere I saw Elba.' The palindrome is real. What is the truth about its authorship?",
-    "answer": "It was composed by a 19th-century English puzzler, not by Napoleon himself",
+    "answer": "An American writer first printed it decades after the exile",
     "choices": [
-      "It was composed by a 19th-century English puzzler, not by Napoleon himself",
-      "Napoleon really composed it in French and it was translated word-for-word",
-      "It appears in Napoleon's memoirs in his own handwriting",
-      "It was written by Josephine, not Napoleon"
+      "An American writer first printed it decades after the exile",
+      "Napoleon wrote it in French, and it was translated word for word",
+      "Napoleon wrote it in English, in a letter sent from Elba",
+      "Josephine composed it to tease him after the exile"
     ],
-    "context": "The palindrome fits Napoleon's story too well to have been an accident, but the wordplay came from a later English writer. Common attribution to Napoleon is a folk-tradition myth. Source: Grokipedia 'Palindrome' (2026-09-05).",
+    "context": "Its earliest known printing is in an American paper, the Gazette of the Union, in July 1848, credited to a writer who signed J.T.R.; Napoleon had died in 1821, and the line was pinned on him only later. An English palindrome could not survive translation from French anyway.",
     "topic": "palindromes-sentences-that-read-the-same-backwards"
   },
   {
@@ -7078,49 +7000,23 @@
     "choices": [
       "the panda finishes its meal, fires a gun, then departs",
       "the panda eats bamboo shoots and bamboo leaves",
-      "the panda climbs a tree",
-      "the panda takes a nap"
+      "the panda eats bamboo shoots, then walks away",
+      "the panda is shot at while eating, then flees"
     ],
-    "context": "The canonical joke: without commas, 'shoots' and 'leaves' are nouns naming what pandas eat (bamboo shoots, bamboo leaves). WITH commas, they become verbs -- the panda eats, fires a shot, and departs.",
+    "context": "The canonical joke: without the comma, 'shoots' and 'leaves' are nouns naming what pandas eat (bamboo shoots, bamboo leaves). With a comma after 'eats', they become verbs -- the panda eats, fires a shot, and departs.",
     "topic": "panda-punctuation-eats-shoots-and-leaves"
   },
   {
     "tier": 2,
-    "question": "A bookseller stacks the popular 2003 punctuation book 'Eats, Shoots and Leaves' in the window. Which British author wrote the book?",
+    "question": "A bookseller stacks 'Eats, Shoots and Leaves,' the 2003 bestseller with a panda on its cover, in the window. Who wrote it?",
     "answer": "Lynne Truss",
     "choices": [
       "Lynne Truss",
       "Steven Pinker",
-      "William Strunk Jr.",
-      "H.W. Fowler"
+      "David Crystal",
+      "Bill Bryson"
     ],
     "context": "Lynne Truss, British journalist. Published by Profile Books (UK) in 2003, Gotham (US) in 2004. Became a runaway bestseller and made prescriptivist punctuation briefly fashionable.",
-    "topic": "panda-punctuation-eats-shoots-and-leaves"
-  },
-  {
-    "tier": 2,
-    "question": "A librarian types the full title into the catalog: 'Eats, Shoots and Leaves: The ___ Approach to Punctuation.' What fills the blank?",
-    "answer": "Zero Tolerance",
-    "choices": [
-      "Zero Tolerance",
-      "Modern Writer's",
-      "Gentle Reader's",
-      "Style Guide's"
-    ],
-    "context": "'The Zero Tolerance Approach to Punctuation.' The subtitle broadcasts Truss's proudly prescriptivist stance -- she treated bad punctuation as a moral failure and campaigned to fix it.",
-    "topic": "panda-punctuation-eats-shoots-and-leaves"
-  },
-  {
-    "tier": 3,
-    "question": "A reader opens 'Eats, Shoots and Leaves' to find out why a panda is on the cover. What lies behind the panda-with-a-gun joke?",
-    "answer": "a panda in a cafe eats, fires a shot, leaves, then shows a wildlife guide with misplaced commas",
-    "choices": [
-      "a panda in a cafe eats, fires a shot, leaves, then shows a wildlife guide with misplaced commas",
-      "a real news event Truss reported on",
-      "a Chaucer manuscript margin note",
-      "Truss invented it herself"
-    ],
-    "context": "The old joke: a panda enters a cafe, eats, fires a gun, and leaves. When challenged, the panda points at a badly-punctuated wildlife guide entry -- 'eats, shoots and leaves' as behaviour, not diet.",
     "topic": "panda-punctuation-eats-shoots-and-leaves"
   },
   {
@@ -7131,9 +7027,9 @@
       "there IS a right answer; the job is to teach and enforce it",
       "record how people actually use language; do not judge",
       "language is defined by its poets",
-      "language should imitate Latin"
+      "spelling should match sound, letter for letter"
     ],
-    "context": "PRESCRIPTIVISM = there are correct rules; teach them, defend them. DESCRIPTIVISM = record usage as it is; do not moralise. Truss is prescriptivist; Steven Pinker (in reviews of Truss) argued for descriptivism.",
+    "context": "PRESCRIPTIVISM = there are correct rules; teach them, defend them. DESCRIPTIVISM = record usage as it is; do not moralize. Truss is a prescriptivist; dictionary makers who record usage as they find it work as descriptivists.",
     "topic": "panda-punctuation-eats-shoots-and-leaves"
   },
   {
@@ -7191,38 +7087,38 @@
   {
     "tier": 4,
     "question": "A bank teller plays with the letters of 'debit card' on a scrap of paper. Which result is a true anagram?",
-    "answer": "BAD CREDIT (D-E-B-I-T-C-A-R-D letters, rearranged)",
+    "answer": "BAD CREDIT",
     "choices": [
-      "BAD CREDIT (D-E-B-I-T-C-A-R-D letters, rearranged)",
-      "CARD DEBT (missing an I)",
-      "DEBITED CAR (extra E-D)",
-      "CREDIT SCORE (different letters entirely)"
+      "BAD CREDIT",
+      "CARD DEBT",
+      "DEBITED CAR",
+      "BAD EDICT"
     ],
-    "context": "DEBIT CARD and BAD CREDIT contain exactly the same nine letters rearranged. True anagram.",
+    "context": "DEBIT CARD and BAD CREDIT contain exactly the same nine letters rearranged. True anagram. CARD DEBT drops the I, DEBITED CAR adds an E, and BAD EDICT loses the R.",
     "topic": "pangram-and-anagram-every-letter-or-the-letters-rearranged"
   },
   {
     "tier": 4,
     "question": "A math teacher chalks 'Eleven plus two' on the board and shuffles its letters. What famous anagram does she reach?",
-    "answer": "TWELVE PLUS ONE (same letters, same sum)",
+    "answer": "TWELVE PLUS ONE",
     "choices": [
-      "TWELVE PLUS ONE (same letters, same sum)",
-      "THIRTEEN (fewer letters)",
-      "ONE THIRTEEN (extra letters)",
-      "EIGHTEEN (fewer letters)"
+      "TWELVE PLUS ONE",
+      "TEN PLUS THREE",
+      "NINE PLUS FOUR",
+      "THIRTEEN"
     ],
-    "context": "ELEVEN PLUS TWO and TWELVE PLUS ONE use exactly the same letters AND equal the same number (13). Elegant coincidence.",
+    "context": "ELEVEN PLUS TWO and TWELVE PLUS ONE use exactly the same letters AND equal the same number (13). TEN PLUS THREE, NINE PLUS FOUR and THIRTEEN make 13 too, but with different letters.",
     "topic": "pangram-and-anagram-every-letter-or-the-letters-rearranged"
   },
   {
     "tier": 1,
     "question": "A boy's pen-pal letter reads, 'I like running, swimming, and to bike.' What is wrong with the list?",
-    "answer": "parallelism broken: 'to bike' is an infinitive; the others are gerunds",
+    "answer": "'to bike' does not match the two '-ing' words",
     "choices": [
-      "parallelism broken: 'to bike' is an infinitive; the others are gerunds",
-      "'like' is the wrong verb",
-      "list is too short",
-      "commas are wrong"
+      "'to bike' does not match the two '-ing' words",
+      "the items should be joined by 'or', not 'and'",
+      "a list of three needs no commas at all",
+      "'running' should be 'to run' to match 'to bike'"
     ],
     "context": "PARALLEL STRUCTURE: list items must share the same grammatical form. Two gerunds (-ing) + one infinitive (to + verb) breaks parallel. Fix: 'running, swimming, and biking' (all gerunds).",
     "topic": "parallel-structure-in-lists-same-grammatical-form"
@@ -7230,12 +7126,12 @@
   {
     "tier": 1,
     "question": "A club sign-up form reads, 'My hobbies are ___, hiking, and painting.' Which choice completes a parallel list?",
-    "answer": "reading (gerund matches the other -ing forms)",
+    "answer": "reading",
     "choices": [
-      "reading (gerund matches the other -ing forms)",
-      "to read (infinitive breaks parallel)",
-      "reads (verb form breaks parallel)",
-      "for reading (prepositional phrase breaks parallel)"
+      "reading",
+      "to read",
+      "reads",
+      "read books"
     ],
     "context": "All items in a list should share grammatical form. Two -ING gerunds → the third should be -ING too. Reading + hiking + painting is parallel.",
     "topic": "parallel-structure-in-lists-same-grammatical-form"
@@ -7243,10 +7139,10 @@
   {
     "tier": 2,
     "question": "A yearbook tribute reads, 'She was smart, kind, and had a good sense of humour.' What is the best fix for parallel structure?",
-    "answer": "'She was smart, kind, and funny.' (three adjectives, all parallel)",
+    "answer": "'She was smart, kind, and funny.'",
     "choices": [
-      "'She was smart, kind, and funny.' (three adjectives, all parallel)",
-      "'She was smart and kind and had humour.'",
+      "'She was smart, kind, and funny.'",
+      "'She was smart, kind, and she had humour.'",
       "'She was smart, kind, having humour.'",
       "no fix needed"
     ],
@@ -7256,12 +7152,12 @@
   {
     "tier": 2,
     "question": "A freshman handbook reads, 'To succeed in college, you must attend class, do homework, and studying regularly.' What is wrong, if anything?",
-    "answer": "'studying' should be 'study' (infinitive-list form to match 'attend' and 'do')",
+    "answer": "'studying' should be 'study'",
     "choices": [
-      "'studying' should be 'study' (infinitive-list form to match 'attend' and 'do')",
-      "'college' is misspelled",
-      "'must' is wrong",
-      "no issue"
+      "'studying' should be 'study'",
+      "'attend' should be 'attending'",
+      "'do' should be 'doing'",
+      "nothing; the list is already parallel"
     ],
     "context": "Two bare-infinitive verbs (attend, do) + gerund (studying) breaks parallel. Fix: 'attend class, do homework, and study regularly' (all bare infinitives after 'must').",
     "topic": "parallel-structure-in-lists-same-grammatical-form"
@@ -7269,64 +7165,51 @@
   {
     "tier": 3,
     "question": "A staff newsletter reports, 'The manager promised higher pay, better hours, and to reduce workload.' What is the best fix?",
-    "answer": "'The manager promised higher pay, better hours, and reduced workload.' (parallel nouns)",
+    "answer": "'The manager promised higher pay, better hours, and reduced workload.'",
     "choices": [
-      "'The manager promised higher pay, better hours, and reduced workload.' (parallel nouns)",
-      "add another 'to'",
-      "delete workload",
-      "no fix needed"
+      "'The manager promised higher pay, better hours, and reduced workload.'",
+      "'The manager promised higher pay, better hours, and to cut workload.'",
+      "'The manager promised to raise pay, better hours, and reduced workload.'",
+      "'The manager promised higher pay, to better hours, and to reduce workload.'"
     ],
     "context": "Two nouns ('higher pay', 'better hours') + infinitive phrase ('to reduce workload') breaks parallel. Fix by making all three noun phrases: 'higher pay, better hours, and reduced workload'.",
     "topic": "parallel-structure-in-lists-same-grammatical-form"
   },
   {
-    "tier": 3,
-    "question": "A writing coach circles a lumpy list and writes 'not parallel' in the margin. What must the items of a list have in common?",
-    "answer": "grammatical form (all gerunds, or all infinitives, or all noun phrases, etc.)",
-    "choices": [
-      "grammatical form (all gerunds, or all infinitives, or all noun phrases, etc.)",
-      "syllable count",
-      "alphabetical order",
-      "length in words"
-    ],
-    "context": "Parallel structure = shared grammatical form across items in a list. Verbs match verb forms; nouns match noun forms; phrases match phrase types. Chicago 5.240.",
-    "topic": "parallel-structure-in-lists-same-grammatical-form"
-  },
-  {
     "tier": 4,
     "question": "A job posting reads, 'Reading, to write, and speaking well are essential skills.' Which version, if any, is parallel?",
-    "answer": "'Reading, writing, and speaking well are essential skills.' (three gerunds)",
+    "answer": "'Reading, writing, and speaking well are essential skills.'",
     "choices": [
-      "'Reading, writing, and speaking well are essential skills.' (three gerunds)",
-      "'Reading, writing, and speak well'",
-      "'To read, to write, and speak'",
-      "no fix"
+      "'Reading, writing, and speaking well are essential skills.'",
+      "'Reading, writing, and speak well are essential skills.'",
+      "'To read, writing, and to speak well are essential skills.'",
+      "'Reading, writing, and to speak well are essential skills.'"
     ],
     "context": "Two gerunds (reading, speaking) + infinitive (to write) breaks parallel. Fix by making all three gerunds or all three infinitives. Gerunds are more common in this construction.",
     "topic": "parallel-structure-in-lists-same-grammatical-form"
   },
   {
     "tier": 5,
-    "question": "A copy editor compares four drafts of one line in a news story. Which draft stays parallel throughout?",
-    "answer": "The candidate promised to lower taxes, improve schools, and expand healthcare.",
+    "question": "A copy editor compares four drafts of one line in the school paper. Which draft stays parallel throughout?",
+    "answer": "The class president promised to shorten lines, improve lunches, and expand clubs.",
     "choices": [
-      "The candidate promised to lower taxes, improve schools, and expand healthcare.",
-      "The candidate promised to lower taxes, improving schools, and expansion of healthcare.",
-      "The candidate promised lower taxes, to improve schools, and healthcare expansion.",
-      "The candidate promised taxes lowered, schools improved, and healthcare expansion."
+      "The class president promised to shorten lines, improve lunches, and expand clubs.",
+      "The class president promised to shorten lines, improving lunches, and expansion of clubs.",
+      "The class president promised shorter lines, to improve lunches, and club expansion.",
+      "The class president promised lines shortened, lunches improved, and club expansion."
     ],
-    "context": "Three bare infinitives after 'to': lower, improve, expand. All three parallel. The other options mix infinitives, gerunds, and noun phrases -- non-parallel.",
+    "context": "Three bare infinitives after 'to': shorten, improve, expand. All three parallel. The other drafts mix infinitives, gerunds, participles and noun phrases -- non-parallel.",
     "topic": "parallel-structure-in-lists-same-grammatical-form"
   },
   {
     "tier": 1,
     "question": "A travel blog reads, 'She either wants to visit Paris or eating in Rome.' What is wrong with the 'either...or' pair?",
-    "answer": "not parallel: 'to visit Paris' (infinitive) vs 'eating in Rome' (gerund)",
+    "answer": "the halves do not match: 'to visit' and 'eating'",
     "choices": [
-      "not parallel: 'to visit Paris' (infinitive) vs 'eating in Rome' (gerund)",
-      "'or' is missing",
-      "'wants' is wrong",
-      "no issue"
+      "the halves do not match: 'to visit' and 'eating'",
+      "'or' should be 'nor' after 'either'",
+      "'either' must come before 'she'",
+      "nothing; the two halves already match"
     ],
     "context": "CORRELATIVE CONJUNCTIONS (either...or, neither...nor, both...and, not only...but also) require PARALLEL structure on both sides. Fix: 'wants either to visit Paris or to eat in Rome'.",
     "topic": "parallel-structure-with-correlative-conjunctions-both-and-ei"
@@ -7347,25 +7230,25 @@
   {
     "tier": 2,
     "question": "A coach's report reads, 'The team was not only tired but also having hunger.' Which version fixes the 'not only...but also' pair?",
-    "answer": "'The team was not only tired but also hungry.' (parallel adjectives)",
+    "answer": "'The team was not only tired but also hungry.'",
     "choices": [
-      "'The team was not only tired but also hungry.' (parallel adjectives)",
-      "'The team was not only tired but also hungering.'",
-      "'The team was tired and hungry.'",
-      "no fix needed"
+      "'The team was not only tired but also hungry.'",
+      "'The team was not only tired but also had hunger.'",
+      "'The team was not only tired but also felt hungry.'",
+      "'The team not only was tired but also hungry.'"
     ],
-    "context": "Adjective (tired) + noun-phrase (having hunger) breaks parallel. Fix: two adjectives, tired and hungry. 'Not only X but also Y' requires X and Y to share grammatical form.",
+    "context": "'Tired' is an adjective, so the second hinge needs one too: 'hungry'. 'Had hunger' and 'felt hungry' put verbs there, and 'not only was' moves the first hinge in front of the verb, so the halves no longer match. 'Not only X but also Y' requires X and Y to share grammatical form.",
     "topic": "parallel-structure-with-correlative-conjunctions-both-and-ei"
   },
   {
     "tier": 3,
     "question": "A cooking-show judge says, 'Both the flavour and how it looks matter in cooking.' Which rewrite makes the two halves match?",
-    "answer": "'Both the flavour and the appearance matter in cooking.' (two noun phrases)",
+    "answer": "'Both the flavour and the appearance matter in cooking.'",
     "choices": [
-      "'Both the flavour and the appearance matter in cooking.' (two noun phrases)",
-      "'Both flavour and looks matter.'",
-      "'Both the flavour and looking matter.'",
-      "no fix"
+      "'Both the flavour and the appearance matter in cooking.'",
+      "'Both the flavour and how it appears matter in cooking.'",
+      "'Both the flavour and to look good matter in cooking.'",
+      "'Both how it tastes and the appearance matter in cooking.'"
     ],
     "context": "'Both X and Y' requires parallel X and Y. Noun phrase (the flavour) + subordinate clause (how it looks) breaks parallel. Fix by matching the phrase types.",
     "topic": "parallel-structure-with-correlative-conjunctions-both-and-ei"
@@ -7373,14 +7256,14 @@
   {
     "tier": 3,
     "question": "A tired teacher sighs, 'Neither the students nor teaching them is easy.' Which rewrite makes the 'neither...nor' pair parallel?",
-    "answer": "'Neither teaching the students nor grading them is easy.' (two gerund phrases)",
+    "answer": "'Neither the students nor the work of teaching them is easy.'",
     "choices": [
-      "'Neither teaching the students nor grading them is easy.' (two gerund phrases)",
-      "'Neither students nor teaching them'",
-      "'The students, neither teaching them'",
-      "no fix"
+      "'Neither the students nor the work of teaching them is easy.'",
+      "'Neither the students nor teaching them are easy.'",
+      "'Neither teaching the students nor them is easy.'",
+      "'Neither the students nor to teach them is easy.'"
     ],
-    "context": "'Neither...nor' requires parallel elements. Noun (students) + gerund phrase (teaching them) breaks parallel. Fix by matching both sides as gerund phrases.",
+    "context": "'Neither...nor' requires parallel elements. Noun (students) + gerund phrase (teaching them) breaks parallel. Fix by making both sides noun phrases: 'the students' and 'the work of teaching them'. The verb agrees with the nearer subject, 'the work', so 'is'.",
     "topic": "parallel-structure-with-correlative-conjunctions-both-and-ei"
   },
   {
@@ -7399,25 +7282,25 @@
   {
     "tier": 4,
     "question": "The school paper reports, 'Not only did she win the race but also breaking the record.' Which rewrite puts both halves in the same shape?",
-    "answer": "'Not only did she win the race but also broke the record.' (parallel verb clauses)",
+    "answer": "'She not only won the race but also broke the record.'",
     "choices": [
-      "'Not only did she win the race but also broke the record.' (parallel verb clauses)",
-      "'Not only she won and broke.'",
-      "no fix",
-      "delete 'not only'"
+      "'She not only won the race but also broke the record.'",
+      "'Not only did she win the race but also broke the record.'",
+      "'She not only won the race but also breaking the record.'",
+      "'She won not only the race but also broke the record.'"
     ],
-    "context": "'Not only X but also Y' requires X and Y to share form. Inverted verb clause ('did she win') + gerund phrase ('breaking the record') breaks parallel. Fix by making both verb clauses.",
+    "context": "Put the first hinge just before the verb: 'She not only WON the race but also BROKE the record' gives two past-tense verbs. 'Not only did she win' needs a full clause after a comma: 'Not only did she win the race, but she also broke the record.'",
     "topic": "parallel-structure-with-correlative-conjunctions-both-and-ei"
   },
   {
     "tier": 5,
     "question": "An email from a family weighing a job offer reads, 'Whether to accept the offer or if we should decline it is unclear.' Which rewrite repairs the 'whether...or' pair?",
-    "answer": "'Whether to accept the offer or to decline it is unclear.' (parallel infinitives)",
+    "answer": "'Whether to accept the offer or to decline it is unclear.'",
     "choices": [
-      "'Whether to accept the offer or to decline it is unclear.' (parallel infinitives)",
-      "'If to accept or should decline'",
-      "'Whether we accept or if we decline'",
-      "no fix"
+      "'Whether to accept the offer or to decline it is unclear.'",
+      "'Whether to accept the offer or declining it is unclear.'",
+      "'Whether we accept the offer or to decline it is unclear.'",
+      "'Whether to accept the offer or if we decline it is unclear.'"
     ],
     "context": "'Whether X or Y' requires parallel X and Y. Infinitive phrase (to accept) + subordinate clause (if we should decline) breaks parallel. Match with two infinitives.",
     "topic": "parallel-structure-with-correlative-conjunctions-both-and-ei"
@@ -7425,12 +7308,12 @@
   {
     "tier": 1,
     "question": "A club secretary's minutes read, 'The meeting (which lasted three hours) was productive.' The round parentheses hold her own aside. What do square brackets mark instead?",
-    "answer": "An EDITOR'S insertion INTO someone else's quoted text",
+    "answer": "An editor's words added inside a quotation",
     "choices": [
-      "An EDITOR'S insertion INTO someone else's quoted text",
-      "A footnote reference number",
-      "A page-number citation",
-      "A translated word"
+      "An editor's words added inside a quotation",
+      "A word the writer wants readers to stress",
+      "The title of a book, film or long poem",
+      "A line of dialogue spoken in a play"
     ],
     "context": "Parentheses = writer's own voice. Brackets = editor's voice added to a quotation. Different bracket-shape, different job. Source: Chicago Manual of Style 17e section 6.95.",
     "topic": "parentheses-vs-brackets-aside-vs-editorial-insertion"
@@ -7451,12 +7334,12 @@
   {
     "tier": 4,
     "question": "A grocer's sign says 'Apple's 1 Pound.' A reporter quoting it wants to keep the misspelled apostrophe but show that the error is the sign's. What mark goes in, and where?",
-    "answer": "[sic] after the misspelled word: 'The sign read \"apple's [sic] 1 pound.\"'",
+    "answer": "[sic] after the misspelled word",
     "choices": [
-      "[sic] after the misspelled word: 'The sign read \"apple's [sic] 1 pound.\"'",
+      "[sic] after the misspelled word",
       "[error] after the misspelled word",
-      "[!] after the misspelled word",
-      "No mark -- always silently correct quoted errors"
+      "[wrong] after the misspelled word",
+      "no mark; an editor silently fixes quoted errors"
     ],
     "context": "[sic] is Latin for 'thus, so' -- an editor's polite way to say 'we know it looks wrong; that is what the original wrote.' Source: MLA Handbook on [sic].",
     "topic": "parentheses-vs-brackets-aside-vs-editorial-insertion"
@@ -7471,7 +7354,7 @@
       "Plain '...' is an editor's cut; '[...]' is an author's trailing-off",
       "Plain '...' is used in fiction; '[...]' is used in nonfiction"
     ],
-    "context": "Bracketed ellipsis tells the reader 'the editor removed some words from the original text here.' Plain ellipsis is part of the quoted author's own text. Source: Chicago Manual of Style 17e section 13.58.",
+    "context": "In a book that brackets its own cuts, '[...]' tells the reader the editor removed words from the original, while a plain '...' belongs to the quoted speaker. MLA asks for the brackets when the original has ellipses of its own.",
     "topic": "parentheses-vs-brackets-aside-vs-editorial-insertion"
   },
   {
@@ -7502,13 +7385,13 @@
   },
   {
     "tier": 1,
-    "question": "A grammar teacher writes 'passive voice' on the board and asks the class what it means. What does the term actually describe?",
-    "answer": "a sentence where the SUBJECT receives the action (formed with 'to be' + past participle)",
+    "question": "A grammar teacher writes 'The vase was broken by the cat' on the board and labels it passive voice. What makes the sentence passive?",
+    "answer": "its subject, the vase, has the action done to it",
     "choices": [
-      "a sentence where the SUBJECT receives the action (formed with 'to be' + past participle)",
-      "any sentence with 'was' or 'were'",
-      "a sentence in past tense",
-      "an incomplete sentence"
+      "its subject, the vase, has the action done to it",
+      "it is told in the past tense",
+      "it reports something going wrong",
+      "it has no main verb at all"
     ],
     "context": "PASSIVE = subject receives the action. Formed with 'to be' + past participle: 'The ball WAS THROWN by Tom.' Compare ACTIVE: 'Tom threw the ball' (subject does the action).",
     "topic": "passive-voice-when-it-hides-the-actor"
@@ -7516,12 +7399,12 @@
   {
     "tier": 2,
     "question": "A student who has just learned to spot the passive asks his teacher when it is the right choice. When is passive voice appropriate?",
-    "answer": "when the actor is unknown, obvious, or unimportant to the point (e.g. 'my bike was stolen')",
+    "answer": "when the doer is unknown, obvious, or beside the point",
     "choices": [
-      "when the actor is unknown, obvious, or unimportant to the point (e.g. 'my bike was stolen')",
-      "never",
-      "always in formal writing",
-      "only in questions"
+      "when the doer is unknown, obvious, or beside the point",
+      "never; a careful writer always avoids it",
+      "always, in any formal or academic writing",
+      "only when the sentence asks a question"
     ],
     "context": "PASSIVE is CORRECT when: actor unknown ('my bike was stolen'), obvious ('the suspect was arrested'), or unimportant ('water is boiled at 100 degrees'). Scientific writing uses passive to focus on process.",
     "topic": "passive-voice-when-it-hides-the-actor"
@@ -7533,21 +7416,21 @@
     "choices": [
       "'The auditor found errors in the report.'",
       "'Errors were found by the auditor.'",
-      "'The report contained errors.'",
+      "'The errors in the report were discovered.'",
       "no active version possible"
     ],
-    "context": "ACTIVE VOICE puts the actor first (the auditor) and describes what they did (found). The passive version drops the auditor entirely, hiding who caught the errors.",
+    "context": "ACTIVE VOICE puts the actor first (the auditor) and says what the auditor did (found). The passive version drops the auditor entirely, hiding who caught the errors.",
     "topic": "passive-voice-when-it-hides-the-actor"
   },
   {
     "tier": 3,
     "question": "A chemistry textbook states, 'Water is boiled at 100 degrees Celsius.' What should an editor say about the passive here?",
-    "answer": "the actor (whoever is doing the boiling) is unimportant; the physical process is the point",
+    "answer": "fine here: the process matters, not who boils it",
     "choices": [
-      "the actor (whoever is doing the boiling) is unimportant; the physical process is the point",
-      "passive is always wrong",
-      "should be active",
-      "scientific writing does not allow passive"
+      "fine here: the process matters, not who boils it",
+      "a fault: the passive is always wrong",
+      "a fault: it must name the scientist",
+      "a fault: science writing bans the passive"
     ],
     "context": "SCIENTIFIC WRITING often uses passive to focus on the PHENOMENON, not the researcher. 'Water is boiled' emphasises the physical fact; who did the boiling doesn't matter to the science.",
     "topic": "passive-voice-when-it-hides-the-actor"
@@ -7555,9 +7438,9 @@
   {
     "tier": 4,
     "question": "An inspector reads four lines, all in the passive. Which line hides who is really responsible for what happened?",
-    "answer": "'Company funds were misused' (by whom?)",
+    "answer": "'Company funds were misused'",
     "choices": [
-      "'Company funds were misused' (by whom?)",
+      "'Company funds were misused'",
       "'The suspect was arrested by police'",
       "'The Eiffel Tower was completed in 1889'",
       "'The results were verified by three labs'"
@@ -7568,12 +7451,12 @@
   {
     "tier": 4,
     "question": "A team leader's status email reads, 'The report was completed on Friday.' Is this an acceptable passive?",
-    "answer": "depends: OK if the writer isn't important; problematic if the reader needs to know who wrote it",
+    "answer": "it depends on whether the reader needs the writer's name",
     "choices": [
-      "depends: OK if the writer isn't important; problematic if the reader needs to know who wrote it",
-      "always acceptable",
-      "never acceptable",
-      "acceptable only in past tense"
+      "it depends on whether the reader needs the writer's name",
+      "yes, because a passive is always fine in an email",
+      "no, a passive in an email is always a fault",
+      "yes, but only because it is in the past tense"
     ],
     "context": "CONTEXT-DEPENDENT: 'The report was completed on Friday' is fine as a status update. 'The manager's report was completed' hides who did the work. Ask: does the reader need to know the actor?",
     "topic": "passive-voice-when-it-hides-the-actor"
@@ -7775,13 +7658,13 @@
   },
   {
     "tier": 2,
-    "question": "A babysitter's note reads, 'Its the ___ toys that are missing.' The children own the toys. How is the possessive written?",
-    "answer": "children's (irregular plural takes apostrophe-s)",
+    "question": "A babysitter's note reads, 'It's the ___ toys that are missing.' The children own the toys. How is the possessive written?",
+    "answer": "children's",
     "choices": [
-      "children's (irregular plural takes apostrophe-s)",
-      "childrens (no apostrophe)",
-      "childrens' (apostrophe after)",
-      "children (no possessive form)"
+      "children's",
+      "childrens",
+      "childrens'",
+      "children"
     ],
     "context": "Irregular plurals that do NOT end in s (children, women, men, mice) take apostrophe-s just like singulars: children's, women's, men's, mice's.",
     "topic": "possessive-apostrophes-singular-plural-and-names-ending-in-s"
@@ -7789,9 +7672,9 @@
   {
     "tier": 2,
     "question": "A neighbor's party invitation reads, 'The Smith's live next door.' What is wrong with this sentence, if anything?",
-    "answer": "should be 'the Smiths' -- plural, not possessive",
+    "answer": "should be 'the Smiths'",
     "choices": [
-      "should be 'the Smiths' -- plural, not possessive",
+      "should be 'the Smiths'",
       "should be 'the Smiths's'",
       "should be 'the Smith'",
       "nothing is wrong"
@@ -7802,27 +7685,14 @@
   {
     "tier": 3,
     "question": "A book editor following the Chicago Manual of Style must choose between 'James's book' and 'James' book.' Which does Chicago prefer for names ending in s?",
-    "answer": "James's (add apostrophe-s to singular names, even those ending in s)",
+    "answer": "James's",
     "choices": [
-      "James's (add apostrophe-s to singular names, even those ending in s)",
-      "James' (apostrophe only)",
-      "Jameses (no apostrophe)",
-      "James'es (add es)"
+      "James's",
+      "James'",
+      "Jameses",
+      "James'es"
     ],
-    "context": "Chicago 7.17 recommends apostrophe-s for singular names ending in s: James's, Charles's, Jesus's. AP Stylebook is the exception (uses apostrophe only for classical/biblical names). Follow your house style.",
-    "topic": "possessive-apostrophes-singular-plural-and-names-ending-in-s"
-  },
-  {
-    "tier": 4,
-    "question": "A copy editor working from the Chicago Manual of Style learns that it makes one exception for certain names ending in s. When does the exception apply?",
-    "answer": "classical and biblical singular names take just the apostrophe (Jesus', Moses', Achilles')",
-    "choices": [
-      "classical and biblical singular names take just the apostrophe (Jesus', Moses', Achilles')",
-      "all names ending in s take just the apostrophe",
-      "the apostrophe is optional",
-      "only in academic writing"
-    ],
-    "context": "AP Stylebook's biblical/classical exception: Jesus', Moses', Achilles', Xerxes'. Chicago disagrees (recommends apostrophe-s for all). This is the one place the two major style guides genuinely split.",
+    "context": "Chicago adds apostrophe-s to singular names ending in s: James's, Charles's, even Jesus's. AP gives every singular proper name ending in s the apostrophe alone: James' book. Follow your house style.",
     "topic": "possessive-apostrophes-singular-plural-and-names-ending-in-s"
   },
   {
