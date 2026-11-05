@@ -4936,7 +4936,7 @@
       "At the American Physical Society meeting in Baltimore",
       "In a keynote lecture at Caltech"
     ],
-    "context": "The story's first flaw is baked into the setting: the announcement skipped the step where somebody checks. No paper had been peer-reviewed and no outside lab had seen the data. Source: undsci.berkeley.edu/cold-fusion-a-case-study-for-scientific-behavior/publication-by-press-conference",
+    "context": "The story's first flaw is baked into the setting: the announcement ran ahead of the step where somebody checks. No paper had yet been published and no outside lab had seen the data. Source: undsci.berkeley.edu/cold-fusion-a-case-study-for-scientific-behavior/publication-by-press-conference",
     "topic": "cold-fusion-1989-the-claim-that-replication-ate-in-six-weeks"
   },
   {
@@ -4993,7 +4993,7 @@
   },
   {
     "tier": 4,
-    "question": "Stanley Pons and Martin Fleischmann went on television in March 1989 to claim tabletop 'cold fusion' in a jar of heavy water, skipping the ordinary route of writing a peer-reviewed paper first. No outside lab had seen their data. In the weeks that followed, what did the world's physics and chemistry labs actually do?",
+    "question": "Stanley Pons and Martin Fleischmann went before the press in March 1989 to claim tabletop 'cold fusion' in a jar of heavy water, weeks before their paper appeared in print. No outside lab had seen their data. In the weeks that followed, what did the world's physics and chemistry labs actually do?",
     "answer": "More than a hundred labs on four continents tried to replicate the experiment",
     "choices": [
       "More than a hundred labs on four continents tried to replicate the experiment",
@@ -5019,28 +5019,15 @@
   },
   {
     "tier": 5,
-    "question": "Steven Jones, a rival at Brigham Young University, was preparing a related claim of his own in March 1989 when Martin Fleischmann and Stanley Pons went public without waiting for peer review. What kind of pressure pushed the pair to go to the press?",
-    "answer": "The race to be first to publish a breakthrough",
+    "question": "Martin Fleischmann and Stanley Pons had planned to send a cold-fusion paper to the journal Nature on 24 March 1989. The University of Utah called reporters in a day early instead, before any outside lab could check the claim. What pushed the university to rush?",
+    "answer": "A race with a rival lab for credit and patents",
     "choices": [
-      "The race to be first to publish a breakthrough",
-      "A university lawyer told them to file a lawsuit",
-      "Their funding was about to run out",
-      "The heavy water supply was running low"
+      "A race with a rival lab for credit and patents",
+      "The lab's funding was about to run out",
+      "A journal had refused to review the paper quickly",
+      "A rule that a patent claim needs a public showing"
     ],
-    "context": "Jones's real subject was muon-catalyzed fusion, a genuine and different low-temperature process. The two groups planned to file simultaneously on 24 March 1989; the University of Utah went to the press one day earlier to secure patent priority - the very race that removed the checks that would have saved them. Source: everything-everywhere.com/a-history-of-cold-fusion ; en.wikipedia.org/wiki/Steven_E._Jones",
-    "topic": "cold-fusion-1989-the-claim-that-replication-ate-in-six-weeks"
-  },
-  {
-    "tier": 5,
-    "question": "A small community of researchers renamed its field to shake off the Utah baggage of the 1989 claim by Martin Fleischmann and Stanley Pons, and to get a fresh hearing from journals and funders. Its members still run excess-heat experiments in metals loaded with hydrogen. What name does that community publish under today?",
-    "answer": "Low-energy nuclear reactions (LENR)",
-    "choices": [
-      "Low-energy nuclear reactions (LENR)",
-      "Muon-catalyzed fusion",
-      "Inertial confinement fusion",
-      "Magneto-hydrodynamic fusion"
-    ],
-    "context": "In 2023 the US agency ARPA-E funded roughly $10 million of LENR proposals. The mainstream position remains that no nuclear mechanism has been demonstrated - and that is the honest statement, without pretending the file is sealed by decree. Source: popsci.com/science/cold-fusion-low-energy-nuclear-reaction",
+    "context": "The rival was Steven Jones of Brigham Young University, whose real subject was muon-catalyzed fusion, a genuine and different low-temperature process. The two groups planned to file simultaneously on 24 March 1989; the University of Utah went to the press one day earlier to secure patent priority - the very race that removed the checks that would have saved them. Source: everything-everywhere.com/a-history-of-cold-fusion ; en.wikipedia.org/wiki/Steven_E._Jones",
     "topic": "cold-fusion-1989-the-claim-that-replication-ate-in-six-weeks"
   },
   {
@@ -5054,19 +5041,6 @@
       "The hot one dies at once; the frozen one glows brighter than at room temperature"
     ],
     "context": "Temperature is a volume-and-speed knob on the reaction; the TOTAL amount of light emitted is roughly fixed, and heat only spends it faster. This is the kid-testable heart of chemiluminescence, and it works with any two supermarket glow sticks. Source: Wikipedia, Glow stick.",
-    "topic": "cold-light-glow-sticks-and-luminol"
-  },
-  {
-    "tier": 3,
-    "question": "H. O. Albrecht, a German chemist, reported in 1928 that a then-obscure compound, first made in 1902, glowed bright blue when dropped into alkaline hydrogen peroxide. Under what name did that compound go on to become famous, half-recognised today by every crime-drama viewer?",
-    "answer": "Luminol",
-    "choices": [
-      "Luminol",
-      "Fluorescein",
-      "Rhodamine",
-      "Methylene blue"
-    ],
-    "context": "Luminol (C8H7N3O2) had been synthesised in Germany in 1902 but was not given the name 'luminol' until 1934. Albrecht's 1928 paper was the first record of its blood-catalysed blue glow, the observation on which every modern forensic use rests. Source: Wikipedia, Luminol.",
     "topic": "cold-light-glow-sticks-and-luminol"
   },
   {
@@ -5400,9 +5374,9 @@
     "answer": "Hot weather",
     "choices": [
       "Hot weather",
-      "The tourist board's advertising",
-      "A rise in local shark sightings",
-      "The federal minimum wage"
+      "Rough seas",
+      "Fewer lifeguards",
+      "A full moon"
     ],
     "context": "Hot weather sends people to the ice-cream counter AND into the water. When one thing drives BOTH of two others up together, statisticians call it a 'confounder' -- and finding the confounder is the whole game. Source: Wikipedia, 'Correlation does not imply causation.'",
     "topic": "correlation-is-not-causation"
@@ -5578,15 +5552,15 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you count the seconds between flash and bang on a 35-degree August afternoon, exactly as you would in a January storm. Air pressure cannot spoil that count: raise the pressure and the air's density rises in step, and the two cancel exactly. What does the August heat do to your count?",
-    "answer": "The sound arrives sooner, so the storm is farther off than you counted",
+    "question": "A storm-watcher counts the seconds between flash and bang on a 35-degree August afternoon, exactly as she would in a January storm. Air pressure cannot spoil her count: raise the pressure and the air's density rises in step, and the two cancel exactly. What does the August heat do to her count?",
+    "answer": "The sound arrives sooner, so the storm is farther off than she counted",
     "choices": [
-      "The sound arrives sooner, so the storm is farther off than you counted",
-      "The sound arrives later, so the storm is closer than you counted",
+      "The sound arrives sooner, so the storm is farther off than she counted",
+      "The sound arrives later, so the storm is closer than she counted",
       "Nothing - heat is cancelled by a change in density, exactly as pressure is",
       "Nothing - the speed is fixed by what air is made of, not by how warm it is"
     ],
-    "context": "Temperature is the knob, not pressure. The speed in air is about 331 m/s at 0 C and about 343 m/s at 20 C, gaining roughly 0.6 m/s for every degree Celsius -- the working rule is c = 331 + 0.6T. More precisely it equals 20.05 times the square root of the absolute temperature in kelvin, giving 0.59 m/s per degree near 15 C. At constant temperature the speed really is independent of pressure, and it is independent of the sound's frequency and amplitude as well. So on a hot afternoon the bang gets to you sooner, and a flat three-seconds-per-kilometre count slightly underestimates how far off the storm is. Source: Grokipedia, 'Velocity of Sound'; T. B. Gabrielson, 'Background and Perspective: William Derham's De Motu Soni', Acoustics Today, January 2009.",
+    "context": "Temperature is the knob, not pressure. The speed in air is about 331 m/s at 0 C and about 343 m/s at 20 C, gaining roughly 0.6 m/s for every degree Celsius -- the working rule is c = 331 + 0.6T. More precisely it equals 20.05 times the square root of the absolute temperature in kelvin, giving 0.59 m/s per degree near 15 C. At constant temperature the speed really is independent of pressure, and it is independent of the sound's frequency and amplitude as well. So on a hot afternoon the bang arrives sooner, and a flat three-seconds-per-kilometre count slightly underestimates how far off the storm is. Source: Grokipedia, 'Velocity of Sound'; T. B. Gabrielson, 'Background and Perspective: William Derham's De Motu Soni', Acoustics Today, January 2009.",
     "topic": "counting-the-thunder-measuring-the-speed-of-sound"
   },
   {
@@ -5644,9 +5618,9 @@
   {
     "tier": 4,
     "question": "A teacher sends a pulse of sound through a block of soft rubber, each patch shoving the next along. It crawls at about fifty metres a second, slower even than through thin air. Through water it rips along at 1,500 metres a second, through steel at about 5,000 and through diamond at about 12,000. What do diamond, steel and water have that rubber does not?",
-    "answer": "They fight back hard when you try to squeeze them",
+    "answer": "They push back hard against being squeezed",
     "choices": [
-      "They fight back hard when you try to squeeze them",
+      "They push back hard against being squeezed",
       "They carry heat away quickly from a compression",
       "They hold their molecules far closer together",
       "They pass a push on without spreading it sideways"
@@ -5695,15 +5669,15 @@
   },
   {
     "tier": 2,
-    "question": "Amedeo Avogadro made a bold guess in 1811, before anyone had ever seen a molecule, and his rule made it possible to count things no eye could see. He considered two gases at the same temperature and pressure. If their volumes are equal, what else must be equal?",
+    "question": "Amedeo Avogadro made a bold guess in 1811, before anyone had ever seen a molecule. He considered two different gases held at the same temperature and the same pressure. If their volumes are equal, what else must be equal?",
     "answer": "The same number of molecules inside",
     "choices": [
       "The same number of molecules inside",
+      "The same number of atoms inside",
       "The same total mass in grams",
-      "The same surface tension",
-      "The same speed of sound"
+      "The same average molecular speed"
     ],
-    "context": "This is what turns a jar and a thermometer into a counting device. Fill two flasks the same way, and whatever else is different, the count inside is the same. Source: en.wikipedia.org/wiki/Avogadro%27s_law",
+    "context": "This is what turns a jar and a thermometer into a counting device. Fill two flasks the same way, and whatever else is different, the count of molecules inside is the same. It is molecules that match, not atoms: equal flasks of hydrogen and carbon dioxide hold the same number of molecules but different numbers of atoms, and at the same temperature the heavier molecules move more slowly. Source: en.wikipedia.org/wiki/Avogadro%27s_law",
     "topic": "counting-the-uncountable-avogadros-number-and-the-mole"
   },
   {
@@ -5894,24 +5868,24 @@
     "answer": "All living things share a single common ancestor",
     "choices": [
       "All living things share a single common ancestor",
-      "The code was designed anew for each species",
-      "Bacteria and plants developed life separately",
-      "Life arose from meteorite chemistry only recently"
+      "Only one genetic code is chemically possible",
+      "Life began many times, by the same chemistry",
+      "Every lineage evolved toward the same best code"
     ],
-    "context": "Barrell and colleagues found it in 1979. Vertebrate mitochondria also read AUA as methionine instead of isoleucine, and AGA and AGG as stop instead of arginine. The ciliate Tetrahymena reads UAA and UAG as glutamine (Horowitz and Gorovsky, 1985), Mycoplasma reads UGA as tryptophan (Yamao, 1985), and some Candida yeasts read CUG as serine instead of leucine (Ohama, 1987). More than thirty natural variants are now known -- which is why 'nearly universal' is the honest phrase, and 'universal' is not.",
+    "context": "Barrell and colleagues found the first exception in 1979: human mitochondria read UGA as tryptophan instead of stop. Vertebrate mitochondria also read AUA as methionine instead of isoleucine, and AGA and AGG as stop instead of arginine. The ciliate Tetrahymena reads UAA and UAG as glutamine (Horowitz and Gorovsky, 1985), Mycoplasma reads UGA as tryptophan (Yamao, 1985), and some Candida yeasts read CUG as serine instead of leucine (Ohama, 1987). More than thirty natural variants are now known -- which is why 'nearly universal' is the honest phrase, and 'universal' is not.",
     "topic": "cracking-the-code-nirenbergs-poly-u"
   },
   {
     "tier": 1,
-    "question": "Francisco Mojica studied what a bacterium does about a phage, a tiny virus that jabs its DNA into the cell and takes it over. To spot the same attacker next time, the cell saves a file of DNA bits from phages that have hit it. What did biologists name that file?",
-    "answer": "CRISPR",
+    "question": "Francisco Mojica kept finding short repeats in microbes' DNA, a different scrap tucked between each pair. In 2005 he published where the scraps came from. What were they?",
+    "answer": "Bits of viruses that had attacked them",
     "choices": [
-      "CRISPR",
-      "ribosomes",
-      "plasmids",
-      "operons"
+      "Bits of viruses that had attacked them",
+      "Spare copies of their own genes",
+      "Junk DNA with no job at all",
+      "Scars from sunlight damage"
     ],
-    "context": "The name is an acronym for Clustered Regularly Interspaced Short Palindromic Repeats -- the pattern of stored DNA that turned out to be the world's most powerful gene-editing tool. Source: Broad Institute CRISPR Timeline.",
+    "context": "Mojica and Ruud Jansen had coined the name CRISPR in 2002 for this pattern of clustered, regularly spaced repeats. In 2005 Mojica and his colleagues proposed that the scraps between the repeats, called spacers, come from invading viruses and plasmids: the microbe's memory of old enemies. Source: https://grokipedia.com/page/Francisco_Mojica",
     "topic": "crispr-came-out-of-a-yogurt-factory"
   },
   {
@@ -5924,7 +5898,7 @@
       "Antibiotics leaching in from farm runoff",
       "Refrigerator moulds spoiling the milk"
     ],
-    "context": "Danisco was the world's largest starter-culture supplier for cheese and yogurt makers; DuPont bought Danisco in 2011. Chr. Hansen and Novozymes are real Danish competitors in the same market. Barrangou and Horvath's bacterium was Streptococcus thermophilus. Science, 23 March 2007.",
+    "context": "Danisco was the world's largest starter-culture supplier for cheese and yogurt makers; DuPont bought Danisco in 2011. Barrangou and Horvath's bacterium was Streptococcus thermophilus. Science, 23 March 2007.",
     "topic": "crispr-came-out-of-a-yogurt-factory"
   },
   {
@@ -5938,19 +5912,6 @@
       "Traded plasmids with resistant neighbours"
     ],
     "context": "The team then showed they could switch resistance on and off by adding or deleting spacers by hand -- the missing 'programmable' proof. Source: Science 315, 1709-1712 (2007).",
-    "topic": "crispr-came-out-of-a-yogurt-factory"
-  },
-  {
-    "tier": 5,
-    "question": "Emmanuelle Charpentier was tracking how Streptococcus pyogenes, the germ that causes strep throat, slices up invading viruses when she found a second, small RNA molecule in 2011. It turned out to be essential: without it, the Cas9 protein would not cut DNA at all. What is that second RNA called?",
-    "answer": "tracrRNA",
-    "choices": [
-      "tracrRNA",
-      "siRNA",
-      "snoRNA",
-      "miRNA"
-    ],
-    "context": "Full name trans-activating CRISPR RNA. It pairs with the guide crRNA to form the duplex that arms Cas9. Deltcheva et al., Nature 471, 602-607 (March 2011). The other three are real small RNAs but are unrelated to CRISPR.",
     "topic": "crispr-came-out-of-a-yogurt-factory"
   },
   {
@@ -5981,15 +5942,15 @@
   },
   {
     "tier": 5,
-    "question": "A student asks why Cas9, a cutting protein, passes over the bits filed in a bacterium's own chromosome, though they are virus DNA like the invaders it destroys. It cuts only where a specific short tag sits right next to the target. What is that checkpoint called?",
-    "answer": "the PAM",
+    "question": "Inside a bacterium, Cas9, a cutting protein, hunts down any DNA that matches one of the virus bits filed in the cell's own chromosome. Yet it never slices those filed copies, though they match the invaders exactly. What spares the bacterium's own records?",
+    "answer": "The stored copies lack the short tag Cas9 looks for",
     "choices": [
-      "the PAM",
-      "the ORF",
-      "the promoter",
-      "the operator"
+      "The stored copies lack the short tag Cas9 looks for",
+      "The stored copies carry a chemical mark that blocks Cas9",
+      "The stored copies are wound too tightly for Cas9 to reach",
+      "The stored copies are kept as RNA, out of Cas9's way"
     ],
-    "context": "PAM = protospacer adjacent motif. The stored spacer library in the bacterial chromosome has no PAM next to it, so Cas9 walks past its own files. Source: Wikipedia, 'Protospacer adjacent motif'.",
+    "context": "The tag is the PAM, the protospacer adjacent motif: a few DNA letters that sit right beside each target in an invading phage's DNA, and Cas9 cuts only where it finds one. The spacers filed in the bacterium's own chromosome have no PAM beside them, so Cas9 passes its own records by. A chemical mark that blocks cutting is how a different bacterial defence, restriction enzymes, spares its own DNA. Source: Wikipedia, 'Protospacer adjacent motif'.",
     "topic": "crispr-came-out-of-a-yogurt-factory"
   },
   {
@@ -6007,15 +5968,15 @@
   },
   {
     "tier": 3,
-    "question": "Biologists, lawyers and reporters gathered in February 1975 on the California coast, about 140 of them, to write safety rules for splicing DNA between species. Something rare had already happened: the biologists had freely stopped their own work while they wrote the rules. What is that kind of self-imposed pause on research called?",
-    "answer": "A moratorium",
+    "question": "About 140 biologists, lawyers and reporters gathered on the California coast at Asilomar in February 1975 to write safety rules for splicing DNA between species. The biologists had already done something rare in science before they arrived. What had they done?",
+    "answer": "Halted their riskiest experiments of their own accord",
     "choices": [
-      "A moratorium",
-      "A patent freeze",
-      "A gag order",
-      "A tribunal"
+      "Halted their riskiest experiments of their own accord",
+      "Asked Congress to license every genetics laboratory",
+      "Voted to ban gene-splicing between species for good",
+      "Handed their lab notebooks to a government panel"
     ],
-    "context": "The Asilomar Conference on Recombinant DNA Molecules (Feb 1975) was organised by Paul Berg (Nobel 1980), Maxine Singer and Richard Roblin. All four options are real US biology venues (Bethesda = NIH campus; Cold Spring Harbor = Long Island genetics lab; Woods Hole = Massachusetts marine biology). Only Asilomar hosted the moratorium meeting. Source: en.wikipedia.org Asilomar Conference on Recombinant DNA.",
+    "context": "In July 1974 Paul Berg and other leading biologists called, in an open letter in Science, for a voluntary halt to the riskiest gene-splicing experiments, and laboratories widely honoured it while rules were drawn up. A self-imposed pause like that is called a moratorium. Berg chaired the conference's organising committee. Source: https://grokipedia.com/page/Asilomar_Conference_on_Recombinant_DNA",
     "topic": "cure-or-enhance-where-the-germline-line-goes"
   },
   {
@@ -6255,32 +6216,32 @@
   {
     "tier": 1,
     "question": "The DART team at NASA sent a spacecraft that flew itself into Dimorphos, a small asteroid moon about 160 meters wide, on 26 September 2022. It hit at about 22,500 km/h and beamed back one photo a second until the rock filled the frame. What was NASA trying to show with this planned crash?",
-    "answer": "That we can nudge an asteroid off course by ramming it",
+    "answer": "That an asteroid can be nudged off course by ramming it",
     "choices": [
-      "That we can nudge an asteroid off course by ramming it",
+      "That an asteroid can be nudged off course by ramming it",
       "That asteroids are made of ice, not rock",
       "That spacecraft can survive an asteroid landing",
       "That radio waves can shatter a moonlet"
     ],
-    "context": "The struck moonlet was Dimorphos, orbiting a larger parent asteroid, Didymos. All four choices are real asteroid moonlets: Dactyl orbits 243 Ida, Petit-Prince orbits 45 Eugenia, and Romulus orbits 87 Sylvia. The mission was DART - the Double Asteroid Redirection Test - and the spacecraft massed about 500 kg at impact and destroyed itself in the collision. Source: en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test",
+    "context": "The struck moonlet was Dimorphos, orbiting a larger parent asteroid, Didymos. The mission was DART - the Double Asteroid Redirection Test - and the spacecraft massed about 500 kg at impact and destroyed itself in the collision. Source: en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test",
     "topic": "dart-the-first-time-humans-deliberately-moved-a-world"
   },
   {
     "tier": 2,
-    "question": "NASA's DART team set its pass mark before the spacecraft ever struck the small moon Dimorphos. The moon's orbit around its parent had to shorten by at least a fixed amount that telescopes on the ground could clearly spot. Setting the bar before the impact is what makes a test a real test. How many seconds did NASA pick as the minimum?",
-    "answer": "73 seconds",
+    "question": "Dimorphos circles its parent asteroid, Didymos, about every 12 hours, millions of kilometres from Earth. Before the DART crash, NASA's team set its bar: that orbit had to shorten by at least 73 seconds. How could telescopes on Earth time the orbit?",
+    "answer": "By the dip in light each time one passes in front of the other",
     "choices": [
-      "73 seconds",
-      "20 seconds",
-      "180 seconds",
-      "40 seconds"
+      "By the dip in light each time one passes in front of the other",
+      "By the colour shift as the moonlet swings toward and away",
+      "By the flash of sunlight glinting off the moonlet's face",
+      "By the moonlet's tug on a probe parked close beside it"
     ],
-    "context": "The success bar was set at 73 seconds of shortening in Dimorphos's roughly 12-hour orbit around Didymos - a shift large enough for ground-based telescopes to detect clearly in the eclipse timings. Setting a numerical bar in advance is what distinguishes a genuine test from after-the-fact storytelling. Source: en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test",
+    "context": "From Earth the two asteroids are far too close together to see apart, but each time Dimorphos passes in front of Didymos, or behind it, the pair's combined light dips. Telescopes timed those eclipses and occultations before the crash and for months after it. Setting the 73-second bar in advance is what separated a genuine test from after-the-fact storytelling. Sources: https://grokipedia.com/page/Double_Asteroid_Redirection_Test ; en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test",
     "topic": "dart-the-first-time-humans-deliberately-moved-a-world"
   },
   {
     "tier": 3,
-    "question": "NASA's team timed Dimorphos by telescope each time it crossed its parent, Didymos, and the eclipse timings came back weeks after the crash of the Double Asteroid Redirection Test (DART). NASA's pass mark had been counted in seconds. The measured change was much larger. Roughly how much did Dimorphos's orbit actually shrink?",
+    "question": "Telescopes on Earth kept timing Dimorphos's orbit around its parent, Didymos, for weeks after the crash of the Double Asteroid Redirection Test (DART). NASA's pass mark had been a shrink of 73 seconds. The measured change was much larger. Roughly how much did Dimorphos's orbit actually shrink?",
     "answer": "about half an hour",
     "choices": [
       "about half an hour",
@@ -6427,11 +6388,11 @@
     "answer": "How one bird group could vary so much between islands",
     "choices": [
       "How one bird group could vary so much between islands",
-      "Why so few species live in the tropics",
-      "How birds learn songs from their parents",
-      "Why some islands have no birds at all"
+      "How songbirds learn their songs from their fathers",
+      "How a drought could reshape beaks in one season",
+      "How the volcanic islands first rose out of the sea"
     ],
-    "context": "John Gould, the Zoological Society's ornithologist, reported on 10 January 1837 that the supposed blackbirds, 'gross-beaks' and finches were 'a series of ground Finches which are so peculiar [as to form] an entirely new group'. Sources disagree over whether he named twelve species or thirteen, so the count is not the point — the point is that the insight arrived in London, months after Darwin had left the islands, out of another man's expertise. The other three names are real: Richard Owen worked on the Beagle's fossil mammals, Thomas Bell on the reptiles, Leonard Jenyns on the fish. Source: Wikipedia, 'Darwin's finches'; Sulloway 1982 via Darwin Online, p. 57; Grokipedia, 'Darwin's finches'.",
+    "context": "John Gould, the Zoological Society's ornithologist, reported on 10 January 1837 that the supposed blackbirds, 'gross-beaks' and finches were 'a series of ground Finches which are so peculiar [as to form] an entirely new group'. Sources disagree over whether he named twelve species or thirteen, so the count is not the point — the point is that the insight arrived in London, months after Darwin had left the islands, out of another man's expertise. Source: Wikipedia, 'Darwin's finches'; Sulloway 1982 via Darwin Online, p. 57; Grokipedia, 'Darwin's finches'.",
     "topic": "darwins-finches-the-birds-he-misfiled"
   },
   {
@@ -6475,7 +6436,7 @@
   },
   {
     "tier": 4,
-    "question": "Percy Lowe, an ornithologist, measured the Galapagos birds against Charles Darwin's conception of species in a paper of 1936, a year after he coined the phrase 'Darwin's finches' at a British Association meeting. The phrase is Lowe's, not Darwin's. What did Lowe conclude about the birds?",
+    "question": "Percy Lowe, an ornithologist, weighed the Galapagos birds against Charles Darwin's idea of what a species is in a paper of 1936, and that paper gave them the name 'Darwin's finches'. The phrase is Lowe's, not Darwin's. What did Lowe conclude about the birds?",
     "answer": "They were a confusing swarm with no clear sign of new species",
     "choices": [
       "They were a confusing swarm with no clear sign of new species",
@@ -6483,7 +6444,7 @@
       "They were one species whose beaks changed with the season",
       "They were shaped by the islands' different foods, not by heredity"
     ],
-    "context": "Lowe introduced the name at the 1935 British Association meeting and in print in 'The finches of the Galapagos in relation to Darwin's conception of species' (Ibis 78:310–321, 1936) — a paper calling the birds a 'heterogeneous swarm whose diversity has been the despair of systematists', with no clear evidence of speciation. The name he gave them stuck anyway. David Lack's 1947 book Darwin's Finches then made it famous and reversed Lowe's verdict, treating the birds as excellent exemplars of Darwin's theory — and Lack worked largely from museum skins gathered by the California Academy of Sciences' 1905–06 expedition. Source: van Wyhe 2012 via Darwin Online; Wikipedia, 'Darwin's finches'.",
+    "context": "Lowe's paper, 'The finches of the Galapagos in relation to Darwin's conception of species' (Ibis 78:310-321, 1936), judged the birds a bewildering swarm with no clear evidence of new species forming, yet the name he gave them stuck. David Lack's 1947 book Darwin's Finches then made it famous and reversed Lowe's verdict, treating the birds as excellent exemplars of Darwin's theory, and Lack worked largely from museum skins gathered by the California Academy of Sciences' 1905-06 expedition. Sources: https://en.wikipedia.org/wiki/Darwin%27s_finches ; https://en.wikipedia.org/wiki/Percy_Lowe ; van Wyhe 2012 via Darwin Online.",
     "topic": "darwins-finches-the-birds-he-misfiled"
   },
   {
@@ -6527,19 +6488,6 @@
   },
   {
     "tier": 2,
-    "question": "Klaus Schwab, then a professor at the University of Geneva, gathered about 450 European business leaders in a Swiss ski town in January 1971 for a two-week 'European Management Symposium'. It grew into the yearly gathering known by the town's name. Which town?",
-    "answer": "Davos",
-    "choices": [
-      "Davos",
-      "Interlaken",
-      "Zermatt",
-      "St. Moritz"
-    ],
-    "context": "The 1971 symposium ran 24 January to 7 February at the Davos Congress Center. Klaus Schwab organised it under the patronage of the European Commission; it became the European Management Forum and, in 1987, the World Economic Forum. Source: WEF history page.",
-    "topic": "davos-schwab-the-great-reset-and-the-sentence-nobody-wrote-a"
-  },
-  {
-    "tier": 2,
     "question": "A reporter covering the January gathering of heads of state, billionaires and corporate chiefs in a Swiss ski resort calls its founder, Klaus Schwab, a banker. He is not one. He holds two doctorates. In what pair of fields?",
     "answer": "Engineering and economics",
     "choices": [
@@ -6558,8 +6506,8 @@
     "choices": [
       "Ida Auken, a Danish member of parliament",
       "Christine Lagarde, a French finance minister",
-      "Thierry Malleret, a Swiss economist and author",
-      "Peter Vanham, an American business journalist"
+      "Thierry Malleret, a French economist and author",
+      "Peter Vanham, a Belgian business journalist"
     ],
     "context": "Ida Auken sat on a WEF council on cities; her essay 'Welcome to 2030' was speculative fiction, not policy. Getting this right matters more than the myth: the real thing is signed and citable, which is worse for the WEF than the leaked-plan story would be. Source: Wikipedia 'You'll own nothing and be happy'.",
     "topic": "davos-schwab-the-great-reset-and-the-sentence-nobody-wrote-a"
@@ -6570,11 +6518,11 @@
     "answer": "Start a discussion of the pros and cons of technology",
     "choices": [
       "Start a discussion of the pros and cons of technology",
-      "Sketch one optimistic scenario among several the WEF was gathering",
+      "Set out the Forum's own forecast for city life",
       "Warn readers of an imminent financial crash",
       "Reply to a specific critic in the Financial Times"
     ],
-    "context": "Ida Auken's added note: the piece 'merely represented a potential future scenario' meant to 'start a discussion' about pros and cons of technological development. The WEF then retitled the essay 'Here's how life could change in my city by the year 2030'. Source: Wikipedia.",
+    "context": "Ida Auken's added note said the piece was not her utopia or dream of the future but a scenario of where things could head, for better and for worse, written to start a discussion about the pros and cons of technological development. The WEF then retitled the essay 'Here's how life could change in my city by the year 2030'. Source: https://en.wikipedia.org/wiki/You%27ll_own_nothing_and_be_happy",
     "topic": "davos-schwab-the-great-reset-and-the-sentence-nobody-wrote-a"
   },
   {
@@ -6645,14 +6593,14 @@
   {
     "tier": 2,
     "question": "Edmund Davy was assisting his cousin Humphry at the Royal Institution in October 1807 when Humphry ran a current through melted potash and metal broke up through the crust for the first time. Years later, Edmund wrote down what Humphry did at that moment. What did Humphry do, by Edmund's account?",
-    "answer": "He danced about the room and had to be calmed.",
+    "answer": "He danced about the room and took time to calm down.",
     "choices": [
-      "He danced about the room and had to be calmed.",
+      "He danced about the room and took time to calm down.",
       "He fainted and was carried up to the street.",
       "He shut the crucible and sat down without a word.",
       "He ran out to fetch witnesses from the lecture hall."
     ],
-    "context": "Edmund Davy's account: as the globules 'burst through the crust of potash, and take fire as they entered the atmosphere, he could not contain his joy — he actually danced about the room in ecstatic delight; some little time was required for him to compose himself sufficiently to continue the experiment.' Treat this as testimony rather than transcript: the words are Edmund's, recalled long afterwards and printed second-hand in John Ayrton Paris's 'The Life of Sir Humphry Davy' (London, 1831). They are not Humphry's own record of the moment. Humphry had made Edmund, his younger cousin, his lecture assistant that same year. Sources: Chemistry World, 'Potassium' podcast transcript — https://www.chemistryworld.com/podcasts/potassium/3005912.article ; todayinsci, 'Edmund Davy — Biography' — https://todayinsci.com/D/Davy_Edmund/DavyEdmundBio.htm  (Legend.)",
+    "context": "Edmund Davy's account says that when the globules burst through the crust of potash and caught fire, Humphry could not contain his joy: he danced about the room in ecstatic delight (some printings say bounded) and needed some time to compose himself before he could go on with the experiment. Treat this as testimony rather than transcript: the words are Edmund's, recalled long afterwards and printed second-hand in Davy biographies, not Humphry's own record of the moment. Humphry had made Edmund, his younger cousin, his lecture assistant that same year. Sources: https://todayinsci.com/D/Davy_Edmund/DavyEdmund-Quotations.htm ; Encyclopaedia Britannica (1911), 'Davy, Sir Humphry'; Chemistry World, 'Potassium' podcast transcript.",
     "topic": "davys-battery-tears-new-metals-out-of-rock"
   },
   {
@@ -6852,15 +6800,15 @@
   },
   {
     "tier": 5,
-    "question": "A team in Bremen dropped a cloud of rubidium atoms down a 122-metre tower in 2021, using a magnetic trap to focus the atoms as if with a lens. During the free-fall the atom cloud held a temperature that beat every previous record by orders of magnitude. What did they measure?",
-    "answer": "About 38 picokelvin",
+    "question": "A team in Bremen chilled a cloud of rubidium atoms in 2021 to about 38 trillionths of a kelvin, the lowest temperature then recorded in any laboratory. The cloud was not resting on a lab bench while it was that cold. Where was it?",
+    "answer": "Falling freely down a 122-metre drop tower",
     "choices": [
-      "About 38 picokelvin",
-      "About 38 microkelvin",
-      "About 38 millikelvin",
-      "About 38 nanokelvin"
+      "Falling freely down a 122-metre drop tower",
+      "Orbiting Earth aboard the space station",
+      "Sunk in a mine, shielded from cosmic rays",
+      "Floating on a bath of liquid helium"
     ],
-    "context": "38 trillionths of a kelvin, held for about 2 seconds in a Bose-Einstein condensate. For scale, the coldest known natural place, the Boomerang Nebula, sits around 1 kelvin: billions of times warmer than the lab record. Sources: phys.org/news/2021-10-coldest-temperature38-picokelvins.html ; en.wikipedia.org/wiki/Boomerang_Nebula.",
+    "context": "The figure was about 38 picokelvin, held for about two seconds in a Bose-Einstein condensate as it fell through the Bremen drop tower. The magnetic trap that held the cloud also served as a lens, focusing the atoms, and once it was switched off the cloud spread and cooled further as it fell. For scale, the coldest known natural place, the Boomerang Nebula, sits around 1 kelvin. Sources: phys.org/news/2021-10-coldest-temperature38-picokelvins.html ; en.wikipedia.org/wiki/Boomerang_Nebula.",
     "topic": "defining-a-temperature-and-finding-its-floor"
   },
   {
@@ -6904,7 +6852,7 @@
   },
   {
     "tier": 3,
-    "question": "Adolf Hitler's new government passed a law on 7 April 1933 that reached straight into German universities and government offices. It emptied them of any professor or office-holder who had a Jewish grandparent, along with anyone who had politically opposed the Nazis. Which law was it?",
+    "question": "Adolf Hitler's new government passed a law on 7 April 1933 that reached straight into German universities and government offices. It began pushing out professors and office-holders with a Jewish grandparent, along with anyone who had politically opposed the Nazis. Which law was it?",
     "answer": "the Law for the Restoration of the Professional Civil Service",
     "choices": [
       "the Law for the Restoration of the Professional Civil Service",
@@ -6912,7 +6860,7 @@
       "the Law Against the Overcrowding of German Schools",
       "the Law for the Prevention of Hereditarily Diseased Offspring"
     ],
-    "context": "Enacted two months after Hitler was appointed chancellor. By 1938 roughly a quarter of Germany's physicists had lost their positions, and eleven past or future Nobel laureates -- including Max Born and James Franck -- were among the emigres. Source: https://ahf.nuclearmuseum.org/ahf/history/scientific-exodus/",
+    "context": "Enacted two months after Hitler was appointed chancellor. At President Hindenburg's insistence it at first spared front-line veterans of the First World War, officials in service since 1914 and those who had lost a father or son in the war; the Nuremberg Laws swept those exemptions away in 1935. By 1938 roughly a quarter of Germany's physicists had lost their positions, and eleven past or future Nobel laureates -- including Max Born and James Franck -- were among the emigres. Sources: https://en.wikipedia.org/wiki/Law_for_the_Restoration_of_the_Professional_Civil_Service ; https://ahf.nuclearmuseum.org/ahf/history/scientific-exodus/",
     "topic": "deutsche-physik-a-state-decides-which-physics-is-allowed"
   },
   {
@@ -7124,19 +7072,6 @@
     "topic": "diederik-stapel-caught-by-his-own-students"
   },
   {
-    "tier": 5,
-    "question": "Willem Levelt and his committee issued their final report on 28 November 2012, after auditing the entire published work of Diederik Stapel for three Dutch universities. Levelt, a psycholinguist, had been appointed once the Tilburg social psychologist was exposed as a serial data-faker the year before. How many of Stapel's papers did the committee find with faked or twisted data?",
-    "answer": "At least 55",
-    "choices": [
-      "At least 55",
-      "At most 5",
-      "Around 500",
-      "About 12"
-    ],
-    "context": "The eventual retraction count reached 58 papers, including a 2011 Science paper on disorder and stereotyping that was retracted on 1 December 2011. Graduate students had built entire doctorates on results that were never real. Sources: Wikipedia, Diederik Stapel; Retraction Watch, 2015.",
-    "topic": "diederik-stapel-caught-by-his-own-students"
-  },
-  {
     "tier": 1,
     "question": "A schoolteacher in Cologne published a book in 1827 with a rule every physics class now uses: the current in a wire scales with the voltage across it. No university offer came, so he quit. His name is now stamped on every resistor. Which man?",
     "answer": "Georg Simon Ohm",
@@ -7163,29 +7098,16 @@
     "topic": "dismissed-then-made-into-a-unit"
   },
   {
-    "tier": 2,
-    "question": "Georg Ohm published his 1827 book on the galvanic circuit, with the law every student now learns, and was met with a shrug. He waited a quarter of a century in obscure teaching jobs for a university chair to open up. It came to him in 1852. Which German school offered it?",
-    "answer": "Munich",
-    "choices": [
-      "Munich",
-      "Heidelberg",
-      "Gottingen",
-      "Leipzig"
-    ],
-    "context": "Ohm was appointed to the chair of physics at the University of Munich on 1 October 1852 and died in July 1854, less than two years into the post he had wanted his entire adult life. Source: MacTutor History of Mathematics.",
-    "topic": "dismissed-then-made-into-a-unit"
-  },
-  {
     "tier": 3,
     "question": "Christophorus Buys Ballot set out in 1845 to disprove Christian Doppler, on the newly opened railway line near Utrecht. He had listeners with trained pitch on the ground write down what they heard as an open railway carriage passed at speed. Who did he put on the carriage to hold the calibrated pitch?",
-    "answer": "a band of trumpeters",
+    "answer": "a band of brass players",
     "choices": [
-      "a band of trumpeters",
+      "a band of brass players",
       "a string quartet",
       "a barrel-organ crew",
       "a choir of boy sopranos"
     ],
-    "context": "Christophorus Buys Ballot's 1845 experiment on the Utrecht-Maarssen line put trumpeters on an open flatcar and heard the pitch drop about a half-tone as it passed. He had aimed to refute Doppler and ended up confirming him. Sources: KNMI; Utrecht mural formulas project.",
+    "context": "Christophorus Buys Ballot's test on the Utrecht-Maarssen line, dated 3 June 1845 by KNMI, the Dutch weather institute he later founded, put brass musicians on an open flatcar (horn players in the Dutch accounts, trumpeters in others), and listeners beside the track heard their note drop as it passed. He had aimed to refute Doppler and ended up confirming him. Sources: https://www.knmi.nl/over-het-knmi/nieuws/doppler-experiment-buys-ballot-160-jaar-geleden ; https://muurformules.sites.uu.nl/mural-paintings/christophorus-buys-ballot/?lang=en",
     "topic": "dismissed-then-made-into-a-unit"
   },
   {
@@ -7203,15 +7125,15 @@
   },
   {
     "tier": 5,
-    "question": "Svante Arrhenius gave his Nobel lecture in 1903, nineteen years after his Uppsala examiners had marked down the same idea about ions. Ostwald, van 't Hoff and Clausius had championed him from outside the university. What did Arrhenius call Ostwald in that lecture?",
-    "answer": "the theory's enthusiastic godfather",
+    "question": "Svante Arrhenius argued in his 1884 Uppsala thesis that a salt, once in water, breaks apart into electrically charged ions on its own, without any current. Nineteen years later that idea won him the Nobel Prize in Chemistry. What had his examiners at Uppsala done with the thesis?",
+    "answer": "Passed it, but with a low grade",
     "choices": [
-      "the theory's enthusiastic godfather",
-      "the prophet of chemistry",
-      "the father of ions",
-      "the master of Riga"
+      "Passed it, but with a low grade",
+      "Failed it, and sent him away",
+      "Passed it with the highest honours",
+      "Refused to grade it until rewritten"
     ],
-    "context": "Arrhenius's 1903 Nobel lecture credited Wilhelm Ostwald as the theory's 'enthusiastic godfather'. Pattern across Ohm, Doppler and Arrhenius: not persecution but a gap between the claim and the community's ability to test or use it. When the gap closes, the name ends up printed on the instrument. Source: Nobel Prize 1903 Chemistry ceremony speech.",
+    "context": "Uppsala's professors, the chemist Per Teodor Cleve among them, were not impressed: the thesis was given a fourth-class grade and was raised to third class only at his defence. Outsiders saw its worth first. Wilhelm Ostwald travelled to Uppsala to recruit him, and Ostwald, van 't Hoff and Clausius championed the theory until it won the 1903 prize. Source: https://en.wikipedia.org/wiki/Svante_Arrhenius",
     "topic": "dismissed-then-made-into-a-unit"
   },
   {
@@ -7438,14 +7360,14 @@
   {
     "tier": 2,
     "question": "A sailor's teeth loosened and his old wounds split open on the rotten rations of a long voyage, while the ship's dog, on the same food, never got scurvy. The difference is not the diet: a human simply has to get vitamin C from food. Why can a human not make it?",
-    "answer": "The gene for the pathway's last enzyme is still in us, wrecked",
+    "answer": "The gene for the pathway's last enzyme is still there, wrecked",
     "choices": [
-      "The gene for the pathway's last enzyme is still in us, wrecked",
-      "The gene was deleted from our line entirely, leaving no trace",
+      "The gene for the pathway's last enzyme is still there, wrecked",
+      "The gene was deleted from the human line, leaving no trace",
       "The pathway is intact but a human liver runs it far too slowly",
-      "We break the vitamin down as fast as the liver can build it"
+      "The liver breaks the vitamin down as fast as it builds it"
     ],
-    "context": "The enzyme is L-gulonolactone oxidase, GULO, and it performs the last step of vitamin C synthesis. Nishikimi and colleagues cloned and mapped the dead human copy in 1994: it sits on chromosome 8p21 and is called GULOP - a pseudogene, meaning a gene still present in the genome but disabled. Compared with the working 12-exon rat gene, only about five of the twelve exon counterparts survive in ours; the rest are simply gone. Source: Wikipedia and Grokipedia, 'L-gulonolactone oxidase'; Nishikimi et al. 1994; Inai, Ohta & Nishikimi 2003.",
+    "context": "The enzyme is L-gulonolactone oxidase, GULO, and it performs the last step of vitamin C synthesis. Nishikimi and colleagues cloned and mapped the dead human copy in 1994: it sits on chromosome 8p21 and is called GULOP - a pseudogene, meaning a gene still present in the genome but disabled. Compared with the working 12-exon rat gene, only about five of the twelve exon counterparts survive in the human copy; the rest are simply gone. Source: Wikipedia and Grokipedia, 'L-gulonolactone oxidase'; Nishikimi et al. 1994; Inai, Ohta & Nishikimi 2003.",
     "topic": "dna-the-evidence-darwin-never-had"
   },
   {
@@ -7749,15 +7671,15 @@
   },
   {
     "tier": 2,
-    "question": "Babylonian astronomers went through clay tablets holding centuries of eclipse records and pulled out a hidden rhythm: after one eclipse, a similar one follows a fixed stretch of time later. That stretch is now called the saros. How long is it?",
-    "answer": "about 18 years, 11 days and 8 hours",
+    "question": "Babylonian astronomers went through clay tablets holding centuries of eclipse records and pulled out a hidden rhythm, now called the saros, of a little over eighteen years. They found it long before anyone could explain it. What did the saros let them do?",
+    "answer": "Tell roughly when a similar eclipse would return",
     "choices": [
-      "about 18 years, 11 days and 8 hours",
-      "about 76 years, one Halley's Comet lap",
-      "about 100 years, one long human life",
-      "about 12 years, one Jupiter orbit"
+      "Tell roughly when a similar eclipse would return",
+      "Tell which city would lie under the next total shadow",
+      "Work out how far away the Sun and the Moon are",
+      "Time the next eclipse's start to the very minute"
     ],
-    "context": "The saros is exactly 223 synodic months, which works out to roughly 18 years, 11 days and 8 hours. After that stretch the Sun, Earth, and Moon return to almost exactly the same geometry, and a very similar eclipse repeats. Babylonian astronomers used it as a genuine prediction tool. Sources: https://en.wikipedia.org/wiki/Saros_(astronomy) ; https://skyandtelescope.org/astronomy-news/how-did-the-ancients-predicted-eclipses-the-saros-cycle/",
+    "context": "The saros is exactly 223 synodic months, about 18 years, 11 days and 8 hours. After that stretch the Sun, Earth and Moon return to almost the same geometry and a very similar eclipse repeats, so a Babylonian astronomer could say when to watch for one. What the saros could not give him was the shadow's path: the narrow track of totality was beyond such counting. Sources: https://en.wikipedia.org/wiki/Saros_(astronomy) ; https://skyandtelescope.org/astronomy-news/how-did-the-ancients-predicted-eclipses-the-saros-cycle/",
     "topic": "eclipses-predicted-to-the-minute"
   },
   {
@@ -7787,14 +7709,14 @@
     "topic": "eclipses-predicted-to-the-minute"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "A crowd watches the Moon slide over the Sun at totality, the two discs almost exactly the same size in the sky. On another day the Moon leaves a bright ring of Sun uncovered instead, because totality is a knife-edge. Two numbers about the Sun and the Moon happen to match with remarkable precision, and that coincidence makes totality possible. Which pair?",
-    "answer": "the Sun is ~400 times wider AND ~400 times farther than the Moon",
+    "answer": "the Sun is ~400 times wider and ~400 times farther away",
     "choices": [
-      "the Sun is ~400 times wider AND ~400 times farther than the Moon",
-      "the Sun is 100 times wider AND 100 times more massive than the Moon",
-      "the Sun is 10 times hotter AND 10 times brighter than the Moon",
-      "the Sun is a billion times wider AND a billion times older than the Moon"
+      "the Sun is ~400 times wider and ~400 times farther away",
+      "the Sun is ~400 times wider and ~400 times heavier",
+      "the Sun is ~400 times farther and ~400 times brighter",
+      "the Sun is ~400 times hotter and ~400 times wider"
     ],
     "context": "The Sun is roughly 400 times wider than the Moon and, by pure accident, roughly 400 times farther from Earth, so the two look almost the same size in the sky. When the Moon is near the far end of its slightly elliptical orbit it looks too small to cover the Sun entirely, and totality becomes an annular ('ring') eclipse. No other moon in the solar system pulls off this trick. Sources: https://earthsky.org/earth/total-solar-eclipses-are-a-coincidence/ ; https://theconversation.com/explainer-what-is-a-solar-eclipse-33019",
     "topic": "eclipses-predicted-to-the-minute"
@@ -7861,7 +7783,7 @@
       "It held only near the Sun's poles, not its equator",
       "It assumed the ray crossed the Sun's atmosphere"
     ],
-    "context": "Treat light as fast particles with weight, falling under Newtonian gravity, and you get a bend of roughly 0.87 seconds of arc. The German mathematician Johann Georg von Soldner had computed a figure of about this size in 1801, more than a century before Einstein - so Einstein's own first answer was Newton's answer, and any measurement of it would have decided nothing. Only the completed field equations of November 1915, which add the curvature of space itself to the falling, doubled the figure and made an eclipse able to choose between three worlds: no bend at all, the Newtonian half-value, or Einstein's. Sources: Grokipedia 'Eddington experiment'; Wikipedia 'Eddington experiment'; T. Sauer, 'Soldner, Einstein, Gravitational Light Deflection and Factors of Two', Annalen der Physik (2021).",
+    "context": "Light treated as fast particles with weight, falling under Newtonian gravity, bends by roughly 0.87 seconds of arc. The German mathematician Johann Georg von Soldner had computed a figure of about this size in 1801, more than a century before Einstein - so Einstein's own first answer was Newton's answer, and any measurement of it would have decided nothing. Only the completed field equations of November 1915, which add the curvature of space itself to the falling, doubled the figure and made an eclipse able to choose between three worlds: no bend at all, the Newtonian half-value, or Einstein's. Sources: Grokipedia 'Eddington experiment'; Wikipedia 'Eddington experiment'; T. Sauer, 'Soldner, Einstein, Gravitational Light Deflection and Factors of Two', Annalen der Physik (2021).",
     "topic": "eddingtons-eclipse-the-test-that-made-einstein-famous-overni"
   },
   {
@@ -8165,26 +8087,26 @@
   },
   {
     "tier": 1,
-    "question": "The colonial government of India watched the summer monsoon, the great rain system that feeds most of the country each year, almost totally fail in 1877. Crops withered, wells ran dry, and a famine crawled from village to village across the south. Roughly how many people died in the Great Famine of 1876 to 1878?",
-    "answer": "More than ten million",
+    "question": "The colonial government of India watched the summer monsoon, the great rain system that feeds most of the country each year, almost totally fail in 1877. Crops withered, wells ran dry, and the famine that followed took more than ten million lives. What did the disaster drive the government to seek?",
+    "answer": "A way to forecast the monsoon",
     "choices": [
-      "More than ten million",
-      "About sixty thousand",
-      "About four thousand",
-      "About two hundred"
+      "A way to forecast the monsoon",
+      "A railway to carry grain south",
+      "A ban on rice exports to Britain",
+      "A census of the famine villages"
     ],
     "context": "The 1877 monsoon failure was the trigger; British relief policy made it worse. The scale of the disaster is what drove the Government of India to demand a way of predicting the monsoon in advance. See https://en.wikipedia.org/wiki/Great_Famine_of_1876%E2%80%931878",
     "topic": "el-nino-catching-the-pacific-in-the-act"
   },
   {
     "tier": 1,
-    "question": "A Peruvian fisherman watched a strange warm current drift in from the west, chasing away the cold-water anchovies and killing the fishing for months, as it had every so often for hundreds of years. The fishermen's Spanish name for it is still in use: El Nino. What does that name mean?",
-    "answer": "The Christ Child",
+    "question": "A Peruvian fisherman watched a strange warm current drift in from the west, chasing away the cold-water anchovies and killing the fishing for months, as it had for centuries. The fishermen's name for it, El Nino, means the Christ Child. Why that name?",
+    "answer": "It usually arrived around Christmas",
     "choices": [
-      "The Christ Child",
-      "The great fever",
-      "The empty net",
-      "The southern wind"
+      "It usually arrived around Christmas",
+      "It started out weak, like a newborn",
+      "A mission priest first wrote it down",
+      "It came back every seventh year"
     ],
     "context": "El Nino is Spanish for 'the boy' and specifically for the infant Christ, because the warm water usually shows up around Christmas. Peruvian fishermen named the phenomenon centuries before oceanographers connected it to anything larger. See https://www.pmel.noaa.gov/elnino/what-is-el-nino",
     "topic": "el-nino-catching-the-pacific-in-the-act"
@@ -8269,15 +8191,15 @@
   },
   {
     "tier": 3,
-    "question": "Emily Rosa, aged eleven, saw 'A close look at therapeutic touch' come out on April 1, 1998, written with her mother Linda, Larry Sarner and Stephen Barrett. It ran in one of the top medical journals in the world, and she was the youngest author it had ever published. Which journal was it?",
-    "answer": "the Journal of the American Medical Association",
+    "question": "Emily Rosa was eleven in April 1998 when her paper on Therapeutic Touch came out in a leading American medical journal, which had never printed so young an author. Its editor, George Lundberg, knew how unusual that was. What did he say about it?",
+    "answer": "That age did not matter; good science did",
     "choices": [
-      "the Journal of the American Medical Association",
-      "the New England Journal of Medicine",
-      "the British Medical Journal",
-      "Annals of Internal Medicine"
+      "That age did not matter; good science did",
+      "That it ran as a classroom example, not research",
+      "That the journal would wait for a repeat study",
+      "That young readers were its intended audience"
     ],
-    "context": "The journal's editor George Lundberg defended running it: 'Age doesn't matter. It's good science that matters, and this is good science.' Sources: PubMed 9533499; Wikipedia George D. Lundberg.",
+    "context": "The paper, 'A close look at therapeutic touch', ran in the Journal of the American Medical Association on 1 April 1998, with her mother Linda Rosa as lead author and Larry Sarner and Stephen Barrett as co-authors. Lundberg's answer: 'Age doesn't matter. It's good science that matters, and this is good science.' Sources: PubMed 9533499; https://en.wikipedia.org/wiki/Emily_Rosa",
     "topic": "emily-rosa-aged-eleven-in-a-medical-journal"
   },
   {
@@ -8295,15 +8217,15 @@
   },
   {
     "tier": 2,
-    "question": "Carl June's group welded a lab-built receptor onto the killer cells drawn from Emily Whitehead's blood. A killer cell goes only for what its receptor spots on another cell's surface. Leukemia cells look so like the body's own that a normal one walks right past them. The new receptor locked onto a protein found all over B cells, the sick ones included. What is that protein called?",
-    "answer": "CD19",
+    "question": "Carl June's group fitted the killer cells drawn from Emily Whitehead's blood with a receptor, built in the lab, that grabs a protein found on every B cell, the cells her leukemia grew from. The rewired cells cleared her cancer. What do they do to a patient's healthy B cells?",
+    "answer": "Destroy them too, so many patients need antibody replacement",
     "choices": [
-      "CD19",
-      "HER2",
-      "ACE2",
-      "PD-1"
+      "Destroy them too, so many patients need antibody replacement",
+      "Spare them, since healthy B cells carry too little of the protein",
+      "Turn them cancerous in the years after the treatment",
+      "Retrain them to make antibodies against the cancer"
     ],
-    "context": "CD19 sits on the surface of B cells at every stage of their development, which makes it a clean target for B-cell leukemias and lymphomas. HER2 is a breast-cancer target; ACE2 is the receptor SARS-CoV-2 uses to enter cells; PD-1 is a T-cell 'off switch' that checkpoint-inhibitor drugs release. Source: FDA tisagenlecleucel approval, Aug 2017.",
+    "context": "The protein is CD19, which sits on the surface of B cells at every stage of development, so the rewired T cells clear healthy B cells along with the cancer. B cells make antibodies, so many patients receive regular infusions of donated antibodies, called immunoglobulin, to guard against infection. Sources: FDA tisagenlecleucel approval, Aug 2017; https://en.wikipedia.org/wiki/Tisagenlecleucel",
     "topic": "emily-whiteheads-rewired-t-cells"
   },
   {
@@ -8342,7 +8264,7 @@
       "He read a case report the week before",
       "A colleague at the ICU suggested it on the spot"
     ],
-    "context": "Tocilizumab is a monoclonal antibody that binds and blocks the IL-6 receptor. It had been approved for rheumatoid arthritis; nobody had ever given it to a child in a CAR-T crisis before Emily. The FDA later formalised its emergency role by approving it for CAR-T-associated CRS on the same day it approved Kymriah in 2017. Rituximab targets CD20; infliximab and adalimumab target TNF-alpha - all real antibody drugs, none of them IL-6-receptor blockers. Source: AACR interview with Carl June, 2020.",
+    "context": "Tocilizumab is a monoclonal antibody that binds and blocks the IL-6 receptor. It had been approved for rheumatoid arthritis; nobody had ever given it to a child in a CAR-T crisis before Emily. The FDA later formalised its emergency role by approving it for CAR-T-associated CRS on the same day it approved Kymriah in 2017. Source: AACR interview with Carl June, 2020.",
     "topic": "emily-whiteheads-rewired-t-cells"
   },
   {
@@ -8355,7 +8277,7 @@
       "It was the first drug tested first on a child",
       "It was the first therapy licensed to Novartis"
     ],
-    "context": "Kymriah (tisagenlecleucel) was approved for patients up to age 25 with relapsed or refractory B-cell acute lymphoblastic leukemia; the pivotal trial showed an 83% remission rate within 3 months. Casgevy is the 2023 CRISPR sickle-cell therapy; Herceptin is trastuzumab (a HER2 breast-cancer antibody); Humira is adalimumab (a TNF blocker for autoimmune disease). Source: FDA tisagenlecleucel approval, 30 Aug 2017.",
+    "context": "Kymriah (tisagenlecleucel) was approved for patients up to age 25 with relapsed or refractory B-cell acute lymphoblastic leukemia; the pivotal trial showed an 83% remission rate within 3 months. Source: FDA tisagenlecleucel approval, 30 Aug 2017.",
     "topic": "emily-whiteheads-rewired-t-cells"
   },
   {
@@ -8413,14 +8335,14 @@
   {
     "tier": 3,
     "question": "A student opens a textbook and finds entropy glossed as 'disorder': a messy bedroom, a jumbled sock drawer. Physicists who actually use the quantity say that gloss misleads, because entropy is no judgement about tidiness. It is a number reached by counting. In a box of gas, what does it count?",
-    "answer": "The particle configurations that match what you measure from outside.",
+    "answer": "The particle arrangements that match the readings taken from outside.",
     "choices": [
-      "The particle configurations that match what you measure from outside.",
+      "The particle arrangements that match the readings taken from outside.",
       "The particles moving faster than the average speed inside the container.",
       "The collisions the particles make against the container walls each second.",
       "The units of energy already lost from the gas into its surroundings."
     ],
-    "context": "What you can measure from outside - energy, volume, temperature, particle number - is called the macrostate. One exact set of positions and momenta for every particle is a microstate. The multiplicity W is how many microstates would look identical from outside, and entropy is S = k ln W, with k about 1.38 x 10^-23 joules per kelvin. The fundamental assumption is that every available microstate is equally likely, so a system drifts to whichever macrostate owns the most of them. That is why 'disorder' is the wrong word: entropy is a count, not a verdict on how something looks. Source: Grokipedia, 'Entropy', section 'Statistical Mechanics Formulation'.",
+    "context": "What can be measured from outside - energy, volume, temperature, particle number - is called the macrostate. One exact set of positions and momenta for every particle is a microstate. The multiplicity W is how many microstates would look identical from outside, and entropy is S = k ln W, with k about 1.38 x 10^-23 joules per kelvin. The fundamental assumption is that every available microstate is equally likely, so a system drifts to whichever macrostate owns the most of them. That is why 'disorder' is the wrong word: entropy is a count, not a verdict on how something looks. Source: Grokipedia, 'Entropy', section 'Statistical Mechanics Formulation'.",
     "topic": "entropy-and-the-arrow-of-time"
   },
   {
@@ -8433,7 +8355,7 @@
       "Most of it was used up, and the remainder went into the kitchen air.",
       "Most of it turned into entropy, which is the thing the cooling made."
     ],
-    "context": "Clausius stated the first law in the very same 1850 paper that started all this: energy is conserved through every irreversible process. Entropy does not track energy going missing; it tracks energy becoming unavailable. Clausius's own gloss on entropy was 'the amount of thermal energy unavailable for conversion into mechanical work.' That is also why 'entropy means things wear out' is subtly wrong - nothing is lost, it is only spread. Source: Grokipedia, 'Entropy'; Grokipedia, 'Rudolf Clausius'.",
+    "context": "Clausius stated the first law in the very same 1850 paper that started all this: energy is conserved through every irreversible process. Entropy does not track energy going missing; it tracks energy becoming unavailable, heat that can no longer be turned into mechanical work. That is also why 'entropy means things wear out' is subtly wrong - nothing is lost, it is only spread. Source: Grokipedia, 'Entropy'; Grokipedia, 'Rudolf Clausius'.",
     "topic": "entropy-and-the-arrow-of-time"
   },
   {
@@ -8703,8 +8625,8 @@
     "choices": [
       "Sunlight reached the water at the very bottom",
       "The water level dropped by exactly one hand",
-      "A flock of ibises circled the rim at noon",
-      "The stone lining rang faintly like a bell"
+      "Stars could be seen reflected in the water",
+      "The water grew too warm to drink at noon"
     ],
     "context": "At the summer solstice at Syene (near modern Aswan) the Sun stood so nearly overhead that light reached straight down to the water and a vertical rod cast no shadow at all. That observation is the seed of the whole measurement. Source: en.wikipedia.org/wiki/Earth's_circumference; newworldencyclopedia.org/entry/Eratosthenes.",
     "topic": "eratosthenes-stick-and-the-size-of-the-earth"
@@ -8814,7 +8736,7 @@
     "topic": "every-raindrop-is-signed"
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A walker catches the rain as a cloud drifts inland, its first rain richest in oxygen-18 and its later rain poorer. What property of H2-18O, water with that oxygen, drives this?",
     "answer": "H2-18O is heavier, so it evaporates less readily and condenses more readily",
     "choices": [
