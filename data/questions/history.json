@@ -46436,16 +46436,16 @@
     "topic": "the-crusades"
   },
   {
-    "tier": 5,
-    "question": "Enrico Dandolo, the blind Doge of Venice, some ninety years old, steered the knights of the Fourth Crusade against one city first, because they could not pay the 85,000 silver marks they owed Venice for their fleet. The crusaders sacked it to work off the debt. Which city was it?",
-    "answer": "the Catholic city of Zara",
+    "tier": 4,
+    "question": "Enrico Dandolo, the blind Doge of Venice, some ninety years old, steered the knights of the Fourth Crusade against Zara, a Catholic city, because they could not pay the 85,000 silver marks they owed Venice for their fleet, and they sacked it. No crusading army had ever attacked fellow Catholics before. What did Pope Innocent III do?",
+    "answer": "He excommunicated the whole crusade",
     "choices": [
-      "the Catholic city of Zara",
-      "the Muslim port of Acre",
-      "the Turkish city of Nicaea",
-      "the desert fortress of Damascus"
+      "He excommunicated the whole crusade",
+      "He called the whole crusade off for good",
+      "He blessed the sack as a debt repaid",
+      "He paid the debt to Venice himself"
     ],
-    "context": "Zara was a fellow Catholic Christian city — the first time a crusading army ever attacked other Catholics. Pope Innocent III briefly excommunicated the whole crusade for it. Source: https://en.wikipedia.org/wiki/Fourth_Crusade ; https://www.worldhistory.org/Fourth_Crusade/",
+    "context": "Zara was a fellow Catholic city, and its sack was the first time a crusading army had attacked other Catholics. Pope Innocent III excommunicated the whole crusade for it, then soon lifted the ban from all but the Venetians. Source: https://en.wikipedia.org/wiki/Siege_of_Zara ; https://en.wikipedia.org/wiki/Fourth_Crusade",
     "topic": "the-crusades"
   },
   {
@@ -46463,13 +46463,13 @@
   },
   {
     "tier": 5,
-    "question": "Pope Innocent III had launched the Fourth Crusade himself, and in July 1204 he wrote a furious letter to his legate about its sack of Constantinople. The crusaders had spared neither the young nor the old, he wrote, neither men nor women, and had turned on Christians the swords they owed to the enemies of the faith. What did he say the Greeks now did, and with reason?",
-    "answer": "detest the Latins more than dogs",
+    "question": "Pope Innocent III had launched the Fourth Crusade himself, and he wrote a furious letter to his legate about its sack of Constantinople. The crusaders had spared neither the young nor the old, he wrote, neither men nor women, and had turned on Christians the swords they owed to the enemies of the faith. How did he say the Greeks now felt about the Latins, and with reason?",
+    "answer": "They detested them more than dogs",
     "choices": [
-      "detest the Latins more than dogs",
-      "would never trust a Latin again",
-      "cursed the Pope who sent them",
-      "vowed to take back their city"
+      "They detested them more than dogs",
+      "They would never trust them again",
+      "They cursed them before God",
+      "They mourned them as lost brothers"
     ],
     "context": "Innocent wrote that the crusaders, 'dripping with Christian blood... have spared neither age nor sex' — so the Greeks 'with reason, detest the Latins more than dogs.' Even the Pope who began the crusade called the sack a scandal. Source: https://apholt.com/2016/10/28/pope-innocent-iii-reprimand-of-peter-a-papal-legate-for-the-sack-of-constantinople-july-1204/ ; https://en.wikipedia.org/wiki/Sack_of_Constantinople",
     "topic": "the-crusades"
@@ -46480,9 +46480,9 @@
     "answer": "The Cyrus Cylinder",
     "choices": [
       "The Cyrus Cylinder",
-      "The Babylon Tablet",
-      "The Marduk Scroll",
-      "The Esagila Stone"
+      "The Cyrus Tablet",
+      "The Cyrus Prism",
+      "The Cyrus Charter"
     ],
     "context": "The Cyrus Cylinder, dug up by Hormuzd Rassam in 1879 from the foundations of the Esagila (the temple of the god Marduk) in Babylon, is a baked clay barrel about 22.5 cm long carrying roughly 45 lines of cuneiform. Source: britishmuseum.org object W_1880-0617-1941; en.wikipedia.org/wiki/Cyrus_Cylinder.",
     "topic": "the-cyrus-cylinder-and-early-imperial-tolerance"
@@ -46567,28 +46567,15 @@
   },
   {
     "tier": 2,
-    "question": "Oklahoma families headed outdoors on 14 April 1935 under a clear blue morning sky. At 2:49 that afternoon, something swept in from the north at as much as 60 miles an hour and made eyewitnesses think the world was ending. What was it?",
-    "answer": "A black wall of dust 500 to 600 feet high",
+    "question": "Oklahoma families headed outdoors on 14 April 1935 under a clear blue morning sky. Late that afternoon, something swept in from the north at as much as 60 miles an hour and made eyewitnesses think the world was ending. What was it?",
+    "answer": "A towering black wall of dust",
     "choices": [
-      "A black wall of dust 500 to 600 feet high",
+      "A towering black wall of dust",
       "A line of tornadoes touching down",
       "A flash flood off the river",
       "A swarm of locusts blotting the sun"
     ],
-    "context": "This was Black Sunday, the most famous dust storm of the Dust Bowl. The rolling black 'duster' swallowed farms so completely that people groped for the walls of their own homes. Source: NWS Norman OK (weather.gov/oun/events-19350414); Wikipedia, 'Black Sunday (storm)'.",
-    "topic": "the-dust-bowl"
-  },
-  {
-    "tier": 3,
-    "question": "Robert Geiger, a reporter for the Associated Press, was caught in the great dust storm that struck the southern plains on 14 April 1935. His report the next day gave the whole stricken region a name that stuck for good. What did he call it?",
-    "answer": "the Dust Bowl",
-    "choices": [
-      "the Dust Bowl",
-      "the Big Blow Country",
-      "the Dead Plains",
-      "the Brown Frontier"
-    ],
-    "context": "Geiger's April 15, 1935 wire story coined 'the dust bowl,' and the name became permanent. Source: Wikipedia, 'Black Sunday (storm)'; mentalfloss.com/black-sunday-dust-bowl-storm.",
+    "context": "This was Black Sunday, the most famous dust storm of the Dust Bowl. The rolling black 'duster', some 500 to 600 feet high, swallowed farms so completely that people groped for the walls of their own homes. Source: NWS Norman OK (weather.gov/oun/events-19350414); Wikipedia, 'Black Sunday (storm)'.",
     "topic": "the-dust-bowl"
   },
   {
@@ -46597,9 +46584,9 @@
     "answer": "the gasoline tractor with a disc plow",
     "choices": [
       "the gasoline tractor with a disc plow",
-      "the steam-powered cotton gin",
-      "the horse-drawn seed drill",
-      "the windmill water pump"
+      "the electric plow fed by a power line",
+      "the steam cable plow hauled by winches",
+      "the gang plow drawn by a twenty-mule hitch"
     ],
     "context": "During the WWI wheat boom, gasoline tractors with disc plows let farmers turn under millions of acres of deep-rooted sod. With nothing to anchor it, the dried topsoil blew away. Source: encyclopedia.com (Dust Bowl); PBS Ken Burns, 'The Great Plow-Up'.",
     "topic": "the-dust-bowl"
@@ -46607,9 +46594,9 @@
   {
     "tier": 4,
     "question": "Hugh Bennett, a soil scientist, went before Congress in the spring of 1935 to beg for money against the dust storms, and he picked his moment so that a cloud of plains dust darkened the Capitol windows while he talked. A senator looked up and remarked, 'It does look like dust.' What did Congress do soon afterward?",
-    "answer": "passed the Soil Conservation Act, creating a permanent Soil Conservation Service",
+    "answer": "set up a permanent Soil Conservation Service",
     "choices": [
-      "passed the Soil Conservation Act, creating a permanent Soil Conservation Service",
+      "set up a permanent Soil Conservation Service",
       "ordered the army to plant trees across Oklahoma",
       "banned all tractor farming on the plains",
       "declared a national day of prayer for rain"
@@ -46658,15 +46645,15 @@
   },
   {
     "tier": 4,
-    "question": "Muhammad bin Qasim, then a young general, marched his army through Makran in 711 and took Sindh, in the same year that Tariq ibn Ziyad led his men over the strait into Spain. In one year the conquests touched both ends of the known world. Where is Sindh?",
-    "answer": "On the Indus River in India",
+    "question": "Muhammad bin Qasim led an Arab army east through the deserts of Makran in 711 and on into Sindh, the lower Indus valley, on the edge of India. Far to the west, something just as great happened that same year. What was it?",
+    "answer": "A Berber general crossed from Africa into Spain",
     "choices": [
-      "On the Indus River in India",
-      "On the Nile in Egypt",
-      "On the Danube in Europe",
-      "On the Volga in the steppe"
+      "A Berber general crossed from Africa into Spain",
+      "An Arab fleet laid siege to Constantinople",
+      "An Arab army crossed the Pyrenees into Gaul",
+      "An Arab raid reached the walls of Rome"
     ],
-    "context": "Sindh sits on the Indus valley; so in one year, 711, the conquests touched both Spain and India — the Atlantic edge and the Indus edge of the known world. Source: https://en.wikipedia.org/wiki/Early_Muslim_conquests",
+    "context": "In 711 Tariq ibn Ziyad led about 7,000 men across the strait into Spain, while Muhammad bin Qasim marched into Sindh in the Indus valley: in a single year the conquests touched both the Atlantic and the Indus. The second great siege of Constantinople came in 717, the push into Gaul after 719, and the raid on Rome in 846. Source: https://en.wikipedia.org/wiki/Early_Muslim_conquests",
     "topic": "the-early-muslim-conquests"
   },
   {
@@ -46931,7 +46918,7 @@
   },
   {
     "tier": 3,
-    "question": "Lincoln wrote more into the Emancipation Proclamation than a promise of freedom for those held in slavery in the rebel states. He added a clause aimed straight at winning the war. What path did that clause open to freed Black men?",
+    "question": "Lincoln wrote more into the Emancipation Proclamation than the words declaring free those held in slavery in the rebel states. He added a clause aimed straight at winning the war. What path did that clause open to freed Black men?",
     "answer": "Enlisting as Union soldiers and sailors",
     "choices": [
       "Enlisting as Union soldiers and sailors",
@@ -47152,13 +47139,13 @@
   },
   {
     "tier": 1,
-    "question": "The gods of the Epic of Gilgamesh shape a hairy wild man named Enkidu to be a match for Gilgamesh, the mighty king of Uruk. Before Enkidu ever sees a city, he lives far out in the wild. Whom does he live among there?",
-    "answer": "The wild animals, eating grass beside the gazelles",
+    "question": "The gods of the Epic of Gilgamesh shape a hairy man named Enkidu to be a match for Gilgamesh, the mighty king of Uruk. Before Enkidu ever sees a city, he lives far out on the open steppe. Whom does he live among there?",
+    "answer": "The animals, grazing with the gazelles",
     "choices": [
-      "The wild animals, eating grass beside the gazelles",
-      "A roaming band of desert shepherds",
-      "A hidden village of mountain hermits",
-      "The soldiers of a forgotten frontier fort"
+      "The animals, grazing with the gazelles",
+      "Shepherds, camped beside their flocks",
+      "Hermits, sheltering in mountain caves",
+      "Outlaws, hiding out in the hills"
     ],
     "context": "Enkidu lived covered in hair, ate grass with the gazelles, and drank at the waterhole alongside the beasts -- a man raised by animals. Source: en.wikipedia.org/wiki/Epic_of_Gilgamesh; SparkNotes Gilgamesh summary.",
     "topic": "the-epic-of-gilgamesh"
@@ -47296,14 +47283,14 @@
   {
     "tier": 5,
     "question": "A scribe-priest shaped the standard Babylonian version of the Epic of Gilgamesh out of far older tales, and he finished it around 1200 BC. Among the stories of the ancient world, that version is unusual in one way. What sets it apart?",
-    "answer": "Its author is one of the few from antiquity we can name",
+    "answer": "Its author is one of the few ancient writers known by name",
     "choices": [
-      "Its author is one of the few from antiquity we can name",
+      "Its author is one of the few ancient writers known by name",
       "It was sung from memory and never written down",
       "It was set down by a king, not by a scribe",
       "It was pressed into gold tablets, not into clay"
     ],
-    "context": "The scribe-priest Sin-leqi-unninni wove together the standard Babylonian version between roughly 1300 and 1000 BCE -- making him one of the earliest authors in all of history whose name we still know, when nearly every other ancient story comes down to us anonymous. Source: en.wikipedia.org/wiki/Gilgamesh; worldhistory.org/gilgamesh.",
+    "context": "The scribe-priest Sin-leqi-unninni wove together the standard Babylonian version between roughly 1300 and 1000 BCE, which makes him one of the earliest authors in all of history whose name is still known, when nearly every other ancient story comes down anonymous. Source: en.wikipedia.org/wiki/Gilgamesh; worldhistory.org/gilgamesh.",
     "topic": "the-epic-of-gilgamesh"
   },
   {
@@ -47377,7 +47364,7 @@
     "answer": "He ground it to powder and made the people drink it",
     "choices": [
       "He ground it to powder and made the people drink it",
-      "He threw it into a fire and burned it to ash",
+      "He melted it down and gave the gold to the priests",
       "He buried it in the sand and marked the spot",
       "He smashed it apart and handed back the gold"
     ],
@@ -47387,12 +47374,12 @@
   {
     "tier": 3,
     "question": "Herding sheep on Mount Horeb, Moses came upon a bush wrapped in flame that burned but never turned to ash. A voice called to him out of the fire and sent him to free the Hebrew slaves. Moses asked the voice for a name to give the people. What name did it give?",
-    "answer": "I AM WHO I AM",
+    "answer": "I am who I am",
     "choices": [
-      "I AM WHO I AM",
-      "I am the God of your fathers",
-      "I am the First and the Last",
-      "I am the Light of the World"
+      "I am who I am",
+      "I am the Holy One",
+      "I am the Most High",
+      "I am the Lord of Hosts"
     ],
     "context": "In Hebrew the name is 'ehyeh asher ehyeh' (Exodus 3:14), not a label for one god among many but a statement of the self-existent One. God told Moses, 'Say to the people: I AM has sent me to you.'",
     "topic": "the-exodus-and-the-birth-of-a-covenant-people"
@@ -47425,13 +47412,13 @@
   },
   {
     "tier": 5,
-    "question": "Ancient Greek translators, turning the Hebrew scriptures into Greek, called the waters that Moses parted the 'Red Sea,' and the label stuck for two thousand years. Every English Bible still uses it, and generations of readers have pictured that sea. The original Hebrew calls it Yam Suph. What does Yam Suph mean?",
+    "question": "Ancient Greek translators, turning the Hebrew scriptures into Greek, called the waters that Moses parted the 'Red Sea,' and the label stuck for two thousand years. Most English Bibles still use it, and generations of readers have pictured that sea. The original Hebrew calls it Yam Suph. What does Yam Suph mean?",
     "answer": "Sea of Reeds",
     "choices": [
       "Sea of Reeds",
       "Sea of Blood",
       "Sea of Storms",
-      "Sea of the End"
+      "Sea of Salt"
     ],
     "context": "Yam Suph literally means 'Sea of Reeds'; the familiar 'Red Sea' comes from the later Greek translation, not the Hebrew. Source: https://en.wikipedia.org/wiki/Parting_of_the_Red_Sea.",
     "topic": "the-exodus-and-the-birth-of-a-covenant-people"
@@ -47494,24 +47481,11 @@
     "answer": "A barber and wig-maker",
     "choices": [
       "A barber and wig-maker",
-      "A blacksmith",
-      "A weaver",
-      "A clockmaker"
+      "A weaver and cloth-dyer",
+      "A blacksmith and farrier",
+      "A clockmaker and watch-mender"
     ],
-    "context": "Arkwright shaved chins and made wigs before patenting the water frame in 1769. He worked out the machine with clockmaker John Kay (the third choice's near-miss). (scienceandindustrymuseum.org.uk/objects-and-stories/richard-arkwright)",
-    "topic": "the-factory-system-and-textile-mills"
-  },
-  {
-    "tier": 2,
-    "question": "Workers at Richard Arkwright's Cromford mill, the world's first water-powered cotton-spinning mill, tended its machines on two thirteen-hour shifts from 1772. Put together, how long did the mill keep running each day?",
-    "answer": "Around the clock, day and night",
-    "choices": [
-      "Around the clock, day and night",
-      "Eighteen hours, then closed overnight",
-      "Two ten-hour shifts, twenty hours in all",
-      "Around the clock, but closed on Sundays"
-    ],
-    "context": "Two thirteen-hour shifts kept the machinery turning the full twenty-four hours. Sir Robert Peel testified the machines were often 'employed for the whole four-and-twenty hours.' (en.wikipedia.org/wiki/Cromford_Mill)",
+    "context": "Arkwright shaved chins and made wigs before patenting the water frame in 1769. He worked out the machine with the clockmaker John Kay. (scienceandindustrymuseum.org.uk/objects-and-stories/richard-arkwright)",
     "topic": "the-factory-system-and-textile-mills"
   },
   {
@@ -47659,20 +47633,20 @@
   },
   {
     "tier": 3,
-    "question": "Diocletian split the Roman Empire in two, east and west, sometime between 285 and 293, so that it would be easier to rule. One half collapsed in 476; the other, later called the Byzantine Empire, lived on for nearly a thousand years more. Which half survived?",
-    "answer": "The eastern half",
+    "question": "Diocletian gave the West to a co-emperor, Maximian, in 286 and kept the East for himself, and after 395 the Roman Empire was ruled as two halves. The western half fell in 476. What became of the eastern half, with its capital at Constantinople?",
+    "answer": "It lived on for nearly a thousand years more",
     "choices": [
-      "The eastern half",
-      "The western half",
-      "Both fell in 476",
-      "Both survived to 1500"
+      "It lived on for nearly a thousand years more",
+      "It fell to the Huns within a generation",
+      "It was conquered by Persia soon after",
+      "It joined Odoacer's Italy as one kingdom"
     ],
-    "context": "Diocletian's division is why we speak of a Western Roman Empire that 'fell' while the Eastern (later Byzantine) Empire lived on until 1453. The two halves drifted apart in wealth, language, and fortune. Source: https://www.history.com/articles/8-reasons-why-rome-fell",
+    "context": "The eastern half, later called the Byzantine Empire, lasted until the Ottoman Turks took Constantinople in 1453. Diocletian's arrangement was a shared rule, first of two emperors and then of four (the tetrarchy), not a lasting split; the lasting division came after Theodosius I died in 395. Source: https://grokipedia.com/page/Tetrarchy ; https://en.wikipedia.org/wiki/Tetrarchy",
     "topic": "the-fall-of-the-western-roman-empire-476-ad"
   },
   {
     "tier": 2,
-    "question": "Romulus Augustulus, a boy of about ten, sat on the throne in 476 as the very last emperor of the West. Greek speakers had their own name for him, Momylus. What did 'Augustulus' mean?",
+    "question": "Romulus Augustulus, a boy of about ten, sat on the western throne in 476, the last Western emperor to reign in Italy. Greek speakers had their own name for him, Momylus. What did 'Augustulus' mean?",
     "answer": "\"Little Augustus\" — a sneer at a powerless boy",
     "choices": [
       "\"Little Augustus\" — a sneer at a powerless boy",
@@ -47711,15 +47685,15 @@
   },
   {
     "tier": 5,
-    "question": "Julius Nepos, a rival emperor, kept the title in exile in Dalmatia after Romulus Augustulus lost his throne, and the eastern court still recognised him as the rightful emperor of the West until Ovida and Viator, two counts, murdered him near Salona four years later. Many historians say the last Western emperor therefore died later than 476. In what year did Nepos die?",
-    "answer": "480",
+    "question": "Romulus Augustulus lost his throne in 476, yet a rival emperor who had fled to Dalmatia kept his title in exile, and the eastern court still recognised him as the lawful emperor of the West until he was murdered near Salona in 480 by two counts, Ovida and Viator. Many historians count him as the last Western emperor. Who was he?",
+    "answer": "Julius Nepos",
     "choices": [
-      "480",
-      "476",
-      "500",
-      "410"
+      "Julius Nepos",
+      "Glycerius",
+      "Anthemius",
+      "Majorian"
     ],
-    "context": "Julius Nepos was still treated as the legitimate Western emperor in Constantinople after 476; the counts Ovida and Viator killed him at his villa near Salona on 9 May 480. By this reckoning the empire 'ended' in 480, not 476 — proof that even Rome's final date is debated. Source: https://en.wikipedia.org/wiki/Julius_Nepos",
+    "context": "Julius Nepos was still treated as the legitimate Western emperor in Constantinople after 476; the counts Ovida and Viator killed him at his villa near Salona on 9 May 480. By this reckoning the Western line ended in 480, not 476, so even Rome's final date is debated. Source: https://en.wikipedia.org/wiki/Julius_Nepos",
     "topic": "the-fall-of-the-western-roman-empire-476-ad"
   },
   {
@@ -47750,7 +47724,7 @@
   },
   {
     "tier": 2,
-    "question": "A farmer near Ur watched the Euphrates spill over its banks one spring and flood his fields, for almost no rain ever fell in southern Mesopotamia. When the flood drained away, it left something on the ground that made the soil rich for free. What was it?",
+    "question": "A farmer near Ur, where almost no rain ever fell, watched the Euphrates spill over its banks one spring and flood his fields. When the flood drained away, it left something on the ground that made the soil rich for free. What was it?",
     "answer": "a layer of river mud",
     "choices": [
       "a layer of river mud",
@@ -47798,19 +47772,6 @@
       "About two weeks"
     ],
     "context": "Adolf Eichmann, who took the notes, later estimated the Wannsee Conference lasted 'between an hour and an hour and a half.' Fifteen men coordinated the murder of a continent's Jews in the time of a long lunch. Source: nationalww2museum.org/war/articles/wannsee-conference-1942",
-    "topic": "the-final-solution-and-wannsee-conference"
-  },
-  {
-    "tier": 3,
-    "question": "Adolf Eichmann sat taking notes on 20 January 1942 as senior Nazi officials planned the murder of Europe's Jews, in a property the SS had bought as a private retreat. The place was every bit as pleasant as their plan was monstrous. What kind of building was it?",
-    "answer": "A lakeside villa",
-    "choices": [
-      "A lakeside villa",
-      "A mountain fortress",
-      "An army barracks",
-      "A railway depot"
-    ],
-    "context": "The Wannsee Conference was held in a villa at Am Grossen Wannsee 56-58, on a lake in southwest Berlin. The setting was as ordinary and pleasant as the plan was monstrous. Source: en.wikipedia.org/wiki/Wannsee_Conference",
     "topic": "the-final-solution-and-wannsee-conference"
   },
   {
@@ -47871,7 +47832,7 @@
     "answer": "Threw a grenade at the car",
     "choices": [
       "Threw a grenade at the car",
-      "Drew a sword on Heydrich",
+      "Rammed the car with a truck",
       "Set the car on fire",
       "Fired a hidden rifle"
     ],
@@ -48100,19 +48061,6 @@
     "topic": "the-first-crusade-capture-of-jerusalem-1099"
   },
   {
-    "tier": 4,
-    "question": "Jerusalem's crusader conquerors made churches of Muslim holy places after 1099. They renamed the al-Aqsa Mosque, which stood on the Temple Mount, Templum Salomonis, Solomon's Temple, after the Temple that was thought to have stood on the site. Around 1120 a knightly order made the building its headquarters. Which order was it?",
-    "answer": "The Knights Templar",
-    "choices": [
-      "The Knights Templar",
-      "The Knights Hospitaller",
-      "The Teutonic Knights",
-      "The Order of Saint Lazarus"
-    ],
-    "context": "The crusaders renamed al-Aqsa 'Templum Salomonis' (Solomon's Temple), and the order took its very name — 'Templars' — from that 'Temple of Solomon' headquarters. Source: Wikipedia, Siege of Jerusalem (1099) (en.wikipedia.org/wiki/Siege_of_Jerusalem_(1099)).",
-    "topic": "the-first-crusade-capture-of-jerusalem-1099"
-  },
-  {
     "tier": 5,
     "question": "Peter the Hermit, a preacher, gathered a ragtag People's Crusade of farmers and townspeople who had never trained to fight, and in 1096 he led it east across Europe, ahead of the trained armies. What became of this first wave?",
     "answer": "It set out and was wiped out before the knights' armies even reached the Holy Land",
@@ -48127,28 +48075,15 @@
   },
   {
     "tier": 5,
-    "question": "Fierce defenders met the crusaders on the walls of Jerusalem on 15 July 1099. The old chroniclers gave huge death tolls, which modern historians treat as exaggerations, and the attackers' own losses were smaller than anyone might expect. About how many crusaders died, by the reckoning of the scholar Conor Kostick?",
-    "answer": "About 3,000",
+    "question": "Marian Rejewski, a Polish mathematician, went to work on the German army's Enigma cipher machine late in 1932, a full seven years before the war. Its rotors could be wired inside in a huge number of ways, and he had to find the one the army used. How did he work out the secret wiring?",
+    "answer": "With permutation algebra and key settings a spy sold to France",
     "choices": [
-      "About 3,000",
-      "About 1,000",
-      "About 12,000",
-      "About 40,000"
+      "With permutation algebra and key settings a spy sold to France",
+      "By opening up an army machine stolen from a German garrison",
+      "From rotor drawings an engineer smuggled out of the factory",
+      "From a German officer who defected with the wiring tables"
     ],
-    "context": "Modern historians treat the medieval death tolls (Ibn al-Athir claimed 70,000 defenders killed in al-Aqsa alone) as large exaggerations; the scholar Conor Kostick puts crusader losses at roughly 3,000. Source: Wikipedia, Siege of Jerusalem (1099); Madden 2005, Kedar 2004 cited therein.",
-    "topic": "the-first-crusade-capture-of-jerusalem-1099"
-  },
-  {
-    "tier": 5,
-    "question": "Marian Rejewski, a Polish mathematician, went to work on the German Enigma cipher machine in December 1932, a full seven years before the war. He had no captured machine to open and not one stolen page, and its rotors could be wired inside in a huge number of ways. How did he work out the secret wiring?",
-    "answer": "He deduced the wiring by pure mathematics, using the algebra of permutations",
-    "choices": [
-      "He deduced the wiring by pure mathematics, using the algebra of permutations",
-      "He bribed a German clerk to photograph the factory blueprints",
-      "He took apart a machine smuggled out of Berlin in a diplomat's trunk",
-      "He guessed the wiring by listening to thousands of intercepted messages"
-    ],
-    "context": "Working from intercepted message patterns alone, Rejewski applied permutation group theory to reconstruct Enigma's rotor wirings without ever seeing inside the machine. Bletchley Park's I. J. Good later called this 'the mathematical theorem that won World War II.' Sources: ams.org/publicoutreach/feature-column/fcarc-enigma; militaryhistorynow.com/2018/10/04/marian-rejewski-meet-the-polish-cryptographer-who-cracked-germanys-top-secret-enigma-code-seven-years-before-ww2/",
+    "context": "Rejewski applied permutation group theory to intercepted messages and to Enigma key settings for September and October 1932 that the German spy Hans-Thilo Schmidt had sold to French intelligence; Rejewski himself called that material decisive. He never saw the army's machine. His key theorem has been called 'the theorem that won World War II.' Source: https://en.wikipedia.org/wiki/Marian_Rejewski",
     "topic": "the-forgotten-allies-of-the-east-polish-pilots-p"
   },
   {
@@ -48157,8 +48092,8 @@
     "answer": "He refused to let the Allied supply planes even land at Soviet airfields",
     "choices": [
       "He refused to let the Allied supply planes even land at Soviet airfields",
-      "He sent Red Army tanks across the river to break the German lines",
-      "He ordered his own air force to parachute weapons into the city",
+      "He agreed at once and opened Soviet airfields to the Allied planes",
+      "He sent Soviet fighter planes up to escort the Allied supply flights",
       "He demanded the Home Army surrender to his troops instead"
     ],
     "context": "With his army idle across the river, Stalin blocked British and American planes from landing at Soviet bases, writing that the USSR would not 'associate themselves... with the adventure in Warsaw.' The rising was crushed: about 150,000 civilians and 20,000 Home Army fighters were dead, and Himmler ordered the city razed so that 'no stone can remain standing.' Sources: nationalww2museum.org/war/articles/allied-responses-warsaw-uprising-1944; britannica.com/event/Warsaw-Uprising",
@@ -48287,9 +48222,9 @@
     "answer": "the Commodore",
     "choices": [
       "the Commodore",
-      "the Steel King",
-      "the Railroad Baron",
-      "the Oil Tycoon"
+      "the Admiral",
+      "the Boatman",
+      "the Ferry King"
     ],
     "context": "'Commodore' is a naval rank, fitting for a man who ruled the water before he ever touched the rails. He didn't switch to railroads until his late 60s. Source: Britannica.",
     "topic": "the-gilded-age-industrialists"
@@ -48313,9 +48248,9 @@
     "answer": "Fort Frick",
     "choices": [
       "Fort Frick",
-      "the Iron Curtain",
-      "the Steel Cage",
-      "Carnegie's Wall"
+      "Fort Carnegie",
+      "Frick's Folly",
+      "the Carnegie Wall"
     ],
     "context": "On July 6, 1892, hundreds of Pinkerton guards floated up the Monongahela River on barges to seize the mill; a 13-hour gun battle left roughly seven workers and three Pinkertons dead before the Pinkertons surrendered. Source: Zinn Education Project; Britannica.",
     "topic": "the-gilded-age-industrialists"
@@ -48414,19 +48349,19 @@
   {
     "tier": 3,
     "question": "Customers stampeded into a bank in 1932 on a rumour that it was in trouble and emptied their accounts in a day, as runs did across the country while over nine thousand banks failed. Why did a run like that ruin a family far more completely than a bank failure would today?",
-    "answer": "Back then no government agency insured deposits, so once the bank's cash ran out, your savings were simply gone",
+    "answer": "Back then no government agency insured deposits, so once the bank's cash ran out, the savings were gone",
     "choices": [
-      "Back then no government agency insured deposits, so once the bank's cash ran out, your savings were simply gone",
-      "Back then the bank had quietly lent your deposit out to others and could not call the loans back in time",
-      "Back then a failed bank was allowed to repay you in its own now-worthless company stock instead of cash",
-      "Back then the law let a shaky bank freeze your account for up to ten years before it had to pay you"
+      "Back then no government agency insured deposits, so once the bank's cash ran out, the savings were gone",
+      "Back then the bank had quietly lent the deposits out and could not call the loans back in time",
+      "Back then a failed bank was allowed to repay its savers in its own now-worthless stock",
+      "Back then the law let a shaky bank freeze its savers' accounts for up to ten years"
     ],
     "context": "There was no deposit insurance yet. Congress created the FDIC in 1933 precisely so a bank failure could never again swallow a family's life savings. (HISTORY, How Bank Failures Contributed to the Great Depression, history.com/articles/bank-failures-great-depression-1929-crash)",
     "topic": "the-great-depression"
   },
   {
     "tier": 3,
-    "question": "Families on the over-ploughed, drought-stricken Great Plains watched a dust storm sweep across them on 14 April 1935, the worst storm of the Dust Bowl years, and turn noon into night. Survivors gave that one storm a grim two-word name. What did they call it?",
+    "question": "Families on the over-ploughed, drought-stricken Great Plains watched a dust storm sweep across them on 14 April 1935, the worst storm of the Dust Bowl years, and turn day into night. Survivors gave that one storm a grim two-word name. What did they call it?",
     "answer": "Black Sunday",
     "choices": [
       "Black Sunday",
@@ -48491,7 +48426,7 @@
   },
   {
     "tier": 4,
-    "question": "General Douglas MacArthur, on Herbert Hoover's orders, drove thousands of jobless veterans of the First World War out of their camp in Washington in the summer of 1932, using bayonets, cavalry and tanks, and burned their shacks. The men had come to ask for early payment of a promised bonus. When Franklin Roosevelt saw the newspaper pictures of the fire, what did he reportedly tell an aide?",
+    "question": "General Douglas MacArthur, on Herbert Hoover's orders, drove thousands of jobless First World War veterans out of their camp in Washington in the summer of 1932, using bayonets, cavalry and tanks, and burned their shacks. The men had come to ask for early payment of a promised bonus. Franklin Roosevelt, Hoover's rival for president, saw the newspaper pictures of the fire. What did he reportedly tell an aide?",
     "answer": "\"This will elect me\"",
     "choices": [
       "\"This will elect me\"",
@@ -48621,19 +48556,6 @@
   },
   {
     "tier": 2,
-    "question": "Khufu had the largest pyramid at Giza raised as his tomb around 2560 BC, the one the world now calls the Great Pyramid. The Egyptians never used that plain name. They called it Akhet-Khufu instead. What does the name Akhet-Khufu mean?",
-    "answer": "The Horizon of Khufu",
-    "choices": [
-      "The Horizon of Khufu",
-      "The Mountain of Khufu",
-      "The Throne of Khufu",
-      "The Gate of Khufu"
-    ],
-    "context": "The Egyptians named the Great Pyramid 'Akhet-Khufu,' meaning 'the Horizon of Khufu.' The name appears in the world's oldest papyrus, the Diary of Merer. (nationalgeographic.com/premium/article/red-sea-scrolls-pyramids-egypt; en.wikipedia.org/wiki/Great_Pyramid_of_Giza)",
-    "topic": "the-great-pyramids-of-giza"
-  },
-  {
-    "tier": 2,
     "question": "Sultan an-Nasir's men went to work on the Great Pyramid around 1356, after an earthquake in 1303 had loosened the 144,000 polished casing stones that once made it gleam. They stripped the casing away. What did they do with the stone?",
     "answer": "Hauled it away to build the city of Cairo",
     "choices": [
@@ -48643,19 +48565,6 @@
       "Buried it in a pit beside the pyramid"
     ],
     "context": "Sultan an-Nasir's men stripped the loosened white Tura limestone casing around 1356 AD and carted it off to build Cairo — which is why the pyramid looks rough and stepped today instead of mirror-bright. (en.wikipedia.org/wiki/Great_Pyramid_of_Giza; mused.com/items/503/khufu-pyramid-or-the-great-pyramid/)",
-    "topic": "the-great-pyramids-of-giza"
-  },
-  {
-    "tier": 2,
-    "question": "Elon Musk, the billionaire, tweeted in 2020, 'Aliens built the pyramids obv.' Rania al-Mashat, Egypt's minister of tourism, wrote back and asked him to fly to Giza and look at one thing with his own eyes. What did she want him to see?",
-    "answer": "The tombs of the pyramid builders",
-    "choices": [
-      "The tombs of the pyramid builders",
-      "The workers' bakery and beer vats",
-      "The foremen's payroll records",
-      "A wall of crew-name graffiti"
-    ],
-    "context": "Rania al-Mashat invited Musk and SpaceX to visit the tombs of the pyramid builders — the real workers' graves at Giza — as her answer to the 'aliens built them' claim. (bbc.com/news/world-africa-53627888; thejakartapost.com)",
     "topic": "the-great-pyramids-of-giza"
   },
   {
@@ -48679,7 +48588,7 @@
       "By using the autumn equinox",
       "By following a sacred map from the temple",
       "By copying an older pyramid's angle",
-      "By guessing and getting lucky"
+      "By following the flow of the Nile"
     ],
     "context": "The four sides miss true north–south–east–west by only about 3 minutes 38 seconds of arc. A leading theory holds the builders used the autumn equinox to find true north. (livescience.com/61799-great-pyramid-near-perfect-alignment.html; smithsonianmag.com)",
     "topic": "the-great-pyramids-of-giza"
@@ -48712,13 +48621,13 @@
   },
   {
     "tier": 4,
-    "question": "Physicists scanned the Great Pyramid in 2017 without drilling a single hole. They used cosmic-ray muons, tiny particles that rain down from space and pass right through stone, and they published the result in the journal Nature. What did the scan find hidden above the Grand Gallery?",
-    "answer": "A mysterious empty 'Big Void' at least 100 feet long",
+    "question": "Physicists scanned the Great Pyramid in 2017 without drilling a single hole. They used muons, tiny particles born high in the air when cosmic rays strike it, which shower down and pass right through stone, and they published the result in the journal Nature. What did the scan find hidden above the Grand Gallery?",
+    "answer": "An empty space at least 100 feet long",
     "choices": [
-      "A mysterious empty 'Big Void' at least 100 feet long",
+      "An empty space at least 100 feet long",
       "A second royal coffin filled with gold",
       "A network of flooded tunnels",
-      "A statue of Khufu sealed in stone"
+      "A statue of the king sealed in stone"
     ],
     "context": "The 2017 muon scan, published in Nature, found a mysterious empty 'Big Void' at least 30 meters (100 ft) long above the Grand Gallery — the first major hidden space discovered inside the pyramid since the 1800s. (nature.com/articles/nature24647; sci.news)",
     "topic": "the-great-pyramids-of-giza"
@@ -48757,7 +48666,7 @@
       "Trampled it underfoot",
       "Sold it in the market",
       "Locked it in a golden box",
-      "Mailed it back to Rome"
+      "Sent it back to Rome"
     ],
     "context": "Nicephorus burst open the Latin tabernacles and trampled the consecrated bread because, being unleavened (azyme), the Greeks did not accept it as true Communion bread. Patriarch Michael Cerularius had ordered all the Latin churches in the city closed. Source: newadvent.org/cathen/10273a.htm ; courses.lumenlearning.com great-schism-of-1054.",
     "topic": "the-great-schism-of-1054"
@@ -48822,7 +48731,7 @@
       "Commit them 'to oblivion' and lift them",
       "Re-read them aloud as a warning",
       "Carve them into the walls of both churches",
-      "Mail the original bull back to Rome"
+      "Send the original bull back to Rome"
     ],
     "context": "On December 7, 1965, the two leaders lifted the anathemas simultaneously, agreeing to 'commit these excommunications to oblivion' — 911 years after Humbert's legates first laid the bull on the altar. Source: en.wikipedia.org/wiki/Catholic%E2%80%93Orthodox_Joint_Declaration_of_1965 ; vaticannews.va lifting-anathemas.",
     "topic": "the-great-schism-of-1054"
@@ -48843,11 +48752,11 @@
   {
     "tier": 3,
     "question": "By a favourite tale, Napoleon's soldiers blasted the nose off the Great Sphinx with cannon fire when France invaded Egypt in 1798. Chisel marks on the face show that someone did pry the nose away on purpose. What proves the cannon tale cannot be true?",
-    "answer": "A drawing by Frederic Louis Norden, made in 1737, already shows the nose gone",
+    "answer": "An older traveller's drawing already shows the face without its nose",
     "choices": [
-      "A drawing by Frederic Louis Norden, made in 1737, already shows the nose gone",
-      "An ancient Egyptian inscription on the Sphinx blames a desert sandstorm",
-      "Napoleon's own diary records that the nose was already missing in Paris",
+      "An older traveller's drawing already shows the face without its nose",
+      "An ancient inscription on the Sphinx blames a desert sandstorm",
+      "The French army's own gunners swore they never fired at it",
       "Cannons of that era could not be aimed high enough to reach the face"
     ],
     "context": "Norden sketched the noseless Sphinx more than 60 years before Napoleon's troops ever reached Egypt, so they cannot have been the ones who broke it. Source: https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza",
@@ -48920,15 +48829,15 @@
   },
   {
     "tier": 4,
-    "question": "Wu Sangui, a Ming general, stood guard at the gateway near the eastern end of the Great Wall, where it runs down to the Bohai Gulf. He was there to hold it, yet in 1644 one choice of his finished the Ming dynasty. What did Wu Sangui do?",
-    "answer": "He swung open the gates of Shanhai Pass to the Manchu army",
+    "question": "Wu Sangui, a Ming general, held Shanhai Pass, where the eastern end of the Great Wall runs down to the Bohai Gulf. In 1644 rebels seized Beijing, the Ming emperor died, and Wu's next move let a new dynasty into China. What did he do?",
+    "answer": "He opened the pass to the Manchu army",
     "choices": [
-      "He swung open the gates of Shanhai Pass to the Manchu army",
-      "He set fire to his own watchtowers and then fled west",
-      "He bribed the invaders to march around the wall instead",
-      "He tore down a wall section to build himself a fortress"
+      "He opened the pass to the Manchu army",
+      "He handed the pass over to the rebels",
+      "He burned his watchtowers and fled west",
+      "He paid the Mongols to ride on Beijing"
     ],
-    "context": "Wu Sangui, a Ming general, opened the gates of Shanhai Pass to the Manchu army in 1644, ending the Ming dynasty. The wall was undone by a traitor, not a siege. Source: newworldencyclopedia.org.",
+    "context": "Wu Sangui opened Shanhai Pass to the Manchu army in 1644 and joined it to crush Li Zicheng's rebels; the Manchus took Beijing and ruled China as the Qing dynasty. The wall was undone by a choice, not a siege. Source: https://grokipedia.com/page/Wu_Sangui",
     "topic": "the-great-wall-of-china"
   },
   {
@@ -48946,15 +48855,15 @@
   },
   {
     "tier": 2,
-    "question": "Aleksandr Solzhenitsyn put the word GULAG into the title of his great book, though the word names no place on any map. In Russian its five letters are an abbreviation. What do they spell out the name of?",
-    "answer": "A government bureau running the whole camp system",
+    "question": "Aleksandr Solzhenitsyn put the word GULAG into the title of his great book. In Russian the word is an abbreviation, its five letters standing for a longer name. What does it name?",
+    "answer": "The government office that ran the whole camp system",
     "choices": [
-      "A government bureau running the whole camp system",
+      "The government office that ran the whole camp system",
       "The largest prison camp in all of Siberia",
       "The frozen wasteland the camps were built on",
       "The secret police force that made the arrests"
     ],
-    "context": "GULAG is an acronym for the Russian 'Glavnoe Upravlenie Lagerei' — the Main Directorate of Camps, the office that ran the system. Solzhenitsyn's title compares the scattered camps to a hidden 'archipelago,' a chain of islands. Source: https://en.wikipedia.org/wiki/The_Gulag_Archipelago",
+    "context": "GULAG is an abbreviation of the Russian 'Glavnoe Upravlenie Lagerei', the Main Directorate of Camps, so the word names no place on a map but the office that ran the system. Solzhenitsyn's title compares the scattered camps to a hidden 'archipelago,' a chain of islands. Source: https://en.wikipedia.org/wiki/The_Gulag_Archipelago",
     "topic": "the-gulag-solzhenitsyn-s-witness"
   },
   {
@@ -49279,7 +49188,7 @@
       "that he kept all of it locked from foreigners",
       "that he had traded the last of it for gold"
     ],
-    "context": "Hattusili III wrote: 'good iron is not at present available in my storehouse in Kizzuwatna... At present I am sending you an iron dagger-blade' -- even a king could not yet supply the iron requested. Anatolia has the earliest textual evidence of iron smelting (2nd millennium BC), but modern scholars reject the old idea that a Hittite 'state monopoly' on iron won them their wars (one of the wrong choices). Sources: https://periclespress.net/Hittites_iron.html ; https://link.springer.com/article/10.1007/s10814-019-09129-6",
+    "context": "Hattusili III wrote: 'good iron is not at present available in my storehouse in Kizzuwatna... At present I am sending you an iron dagger-blade' -- even a king could not yet supply the iron requested. Anatolia has the earliest textual evidence of iron smelting (2nd millennium BC), but modern scholars reject the old idea that a Hittite 'state monopoly' on iron won them their wars. Sources: https://periclespress.net/Hittites_iron.html ; https://link.springer.com/article/10.1007/s10814-019-09129-6",
     "topic": "the-hittites-and-ironworking"
   },
   {
@@ -49293,19 +49202,6 @@
       "His camera and notebook"
     ],
     "context": "Jones had packed the knapsack with bread and chocolate specifically to hand out as he tramped from village to village gathering testimony. Source: https://en.wikipedia.org/wiki/Gareth_Jones_(journalist)",
-    "topic": "the-holodomor-stalin-s-terror-famine-in-ukraine"
-  },
-  {
-    "tier": 3,
-    "question": "Joseph Goebbels, the propagandist, flew to Frankfurt in late February 1933 with a rising German politician, and Gareth Jones, a Welsh reporter, was on the same plane. Jones wrote that a crash would have changed the history of Europe. Who was the politician?",
-    "answer": "Adolf Hitler",
-    "choices": [
-      "Adolf Hitler",
-      "Hermann Goering",
-      "Gregor Strasser",
-      "Ernst Roehm"
-    ],
-    "context": "Jones wrote that if the plane had crashed, \"the history of Europe would be changed.\" The aircraft was named the Richthofen, and Jones flew with the British reporter Sefton Delmer. Source: https://en.wikipedia.org/wiki/Gareth_Jones_(journalist)",
     "topic": "the-holodomor-stalin-s-terror-famine-in-ukraine"
   },
   {
@@ -49366,9 +49262,9 @@
     "answer": "\"Throw him down we did, unanimously\"",
     "choices": [
       "\"Throw him down we did, unanimously\"",
-      "We called his account Soviet-baiting",
-      "We branded his story a clever lie",
-      "We said the truth lay somewhere between"
+      "\"Disown him we did, every one of us\"",
+      "\"Forget him we did, and quickly\"",
+      "\"Mock him we did, in every paper\""
     ],
     "context": "Lyons wrote that denouncing Jones \"was as unpleasant a chore as fell to any of us, but throw him down we did, unanimously and in almost identical formulas of equivocation.\" After agreeing to brand Jones a liar at a meeting with the Soviet censor Constantine Umansky, the correspondents ordered vodka and celebrated with him into the early hours. Source: https://www.garethjones.org/soviet_articles/assignment_in_utopia.htm",
     "topic": "the-holodomor-stalin-s-terror-famine-in-ukraine"
@@ -49423,19 +49319,6 @@
       "He read the harvest reports in the state archive"
     ],
     "context": "Jones trekked roughly 40 miles north of Kharkiv on foot through some 20 villages and a dozen collective farms, sleeping in the huts so he could witness the famine firsthand. Source: https://education.holodomor.ca/gareth-jones/",
-    "topic": "the-holodomor-walter-duranty-s-cover-up"
-  },
-  {
-    "tier": 2,
-    "question": "Joseph Stalin demanded more grain from Ukraine, the Soviet Union's breadbasket, than its villages could give. By June 1933 the famine that followed was at its height. How fast were Ukrainians dying that month?",
-    "answer": "About 28,000 every day",
-    "choices": [
-      "About 28,000 every day",
-      "About 28,000 every year",
-      "About 280 every day",
-      "About 2.8 million in a single week"
-    ],
-    "context": "Roughly 28,000 deaths a day -- about 17 every minute -- in the country that fed the USSR. The breadbasket starved while its grain was shipped out. Source: https://holodomormuseum.org.ua/en/mass-mortality/",
     "topic": "the-holodomor-walter-duranty-s-cover-up"
   },
   {
@@ -49660,16 +49543,16 @@
     "topic": "the-house-of-wisdom"
   },
   {
-    "tier": 4,
-    "question": "Hunayn ibn Ishaq turned 129 works of the Greek doctor Galen into Arabic. For many of those books, the Greek that Galen wrote has vanished, with every copy lost. How can a scholar today still read those works at all?",
+    "tier": 3,
+    "question": "Hunayn ibn Ishaq, the Christian physician who ran the translation office at Baghdad's House of Wisdom, translated 129 works of the Greek doctor Galen. For some of those books, every copy of the Greek that Galen wrote has since been lost. How can a scholar today still read them?",
     "answer": "Only in Hunayn's Arabic translation",
     "choices": [
       "Only in Hunayn's Arabic translation",
-      "From carvings found inside Galen's tomb",
-      "From a single Greek copy kept in Rome",
+      "Only in Latin copies made by medieval monks",
+      "Only from scraps quoted by later Greek doctors",
       "Only by guessing at the missing text"
     ],
-    "context": "Many of Galen's works survive only in Hunayn's Arabic, the Greek originals having been lost -- a vivid example of Baghdad preserving Greek learning the West had largely lost. Source: https://en.wikipedia.org/wiki/Hunayn_ibn_Ishaq",
+    "context": "Some of Galen's works, such as seven books of his anatomy, survive only in the Arabic of Hunayn's circle, the Greek originals having been lost: a vivid example of Baghdad preserving Greek learning the West had largely lost. Source: https://en.wikipedia.org/wiki/Hunayn_ibn_Ishaq",
     "topic": "the-house-of-wisdom"
   },
   {
@@ -49682,7 +49565,7 @@
       "Laws of heredity",
       "Germ theory of disease"
     ],
-    "context": "Al-Jahiz's 'Kitab al-Hayawan' described a struggle for existence and how environment shapes survival -- ideas that foreshadow natural selection, named in Charles Darwin's 1859 'On the Origin of Species.' The other choices point to Lamarck (acquired traits), Mendel (heredity), and Pasteur (germ theory). Source: https://en.wikipedia.org/wiki/Al-Jahiz",
+    "context": "Al-Jahiz's 'Kitab al-Hayawan' described a struggle for existence and how environment shapes survival, ideas that foreshadow natural selection, named in Charles Darwin's 1859 'On the Origin of Species.' Source: https://en.wikipedia.org/wiki/Al-Jahiz",
     "topic": "the-house-of-wisdom"
   },
   {
@@ -49765,13 +49648,13 @@
   },
   {
     "tier": 2,
-    "question": "English and French kings fought the Hundred Years' War in bouts broken by long truces, and the war outlived five kings on each side. It ran far longer than its name suggests. How long did it really last?",
+    "question": "English and French kings fought the Hundred Years' War in bouts broken by long truces, and the war outlived five kings on each side. It ran longer than its name suggests. How long did it really last?",
     "answer": "116 years",
     "choices": [
       "116 years",
       "104 years",
-      "131 years",
-      "97 years"
+      "123 years",
+      "131 years"
     ],
     "context": "The war ran from 1337 to 1453 -- 116 years -- and outlasted five English kings and five French kings. (en.wikipedia.org/wiki/Hundred_Years'_War)",
     "topic": "the-hundred-years-war"
@@ -50009,19 +49892,6 @@
     ],
     "context": "The murder triggered fresh civil wars and destroyed the very Republic it was meant to save; Octavian became Augustus, Rome's first emperor. The act meant to save liberty ended it forever. Source: history.com/articles/julius-caesar-assassination-fall-roman-republic.",
     "topic": "the-ides-of-march-caesar-s-assassination"
-  },
-  {
-    "tier": 2,
-    "question": "High in the Peruvian Andes, an Inca emperor looked out over Cusco, the capital of the greatest empire of the Americas in its day, a city he and his people saw as the very center of everything. In their Quechua language, what does its name, Qosqo, mean?",
-    "answer": "The navel of the world",
-    "choices": [
-      "The navel of the world",
-      "The roof of the sky",
-      "The gate of the sun",
-      "The heart of the mountain"
-    ],
-    "context": "Qosqo is a Quechua word meaning 'navel' or 'center.' The Inca saw their capital as the navel of the world — the point where the empire's four quarters joined. Source: https://www.britannica.com/place/Cuzco",
-    "topic": "the-inca-empire-and-cusco"
   },
   {
     "tier": 2,
