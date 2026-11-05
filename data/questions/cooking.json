@@ -9074,7 +9074,7 @@
     "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "Korean families gathered every autumn for gimjang, the great communal effort of making a whole winter's worth of kimchi in one go, long before anyone owned a refrigerator. How did they keep all that kimchi cool and slowly fermenting for months?",
     "answer": "They sealed the pots and buried them in the ground",
     "choices": [
@@ -13572,7 +13572,7 @@
     "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "Louis-Camille Maillard, the French scientist the browning reaction is named for, first described it in 1912. He was no chef or baker, though, and he was not trying to cook anything at all. The browning turned up as a side discovery while he was busy studying something completely different. What was he studying?",
     "answer": "How the body uses proteins",
     "choices": [
@@ -17914,20 +17914,7 @@
     "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
   },
   {
-    "tier": 1,
-    "question": "German cooks needed cabbage to last through the long winter. They shredded it, packed it into a stone crock with plenty of salt and pressed it down for weeks, until it soured into sauerkraut that kept for months. What kept the salted cabbage from rotting?",
-    "answer": "Helpful microbes moved in and crowded out the rot",
-    "choices": [
-      "Helpful microbes moved in and crowded out the rot",
-      "The salt killed off every last microbe on the cabbage",
-      "The sealed crock kept all air and bacteria out",
-      "The cold cellar froze the cabbage solid"
-    ],
-    "context": "This is fermentation as preservation: instead of trying to kill everything, you let helpful bacteria colonize the food first and outcompete the microbes that cause rot. Shredded cabbage, salt, and time are all it takes, and 'sauerkraut' is simply German for 'sour cabbage.' Source: en.wikipedia.org/wiki/Sauerkraut",
-    "topic": "rot-you-actually-want-fermentation-across-the-world"
-  },
-  {
-    "tier": 1,
+    "tier": 2,
     "question": "A cook shreds cabbage for sauerkraut, salts it and packs it tight into a crock without one drop of water. Fermentation needs the cabbage under liquid, yet by the next day a briny puddle has risen around it. Where did the liquid come from?",
     "answer": "The salt pulls water out of the cabbage itself",
     "choices": [
@@ -17937,7 +17924,7 @@
       "The salt melts down into its own liquid brine"
     ],
     "context": "It's osmosis: the salt draws the cabbage's own water out through its cell walls, forming a brine that covers the shreds and seals them off from air. Fermentation then happens underwater, without oxygen (anaerobic), and fully cured sauerkraut keeps for months stored cool. Source: en.wikipedia.org/wiki/Sauerkraut",
-    "topic": "rot-you-actually-want-fermentation-across-the-world"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
     "tier": 2,
@@ -17950,10 +17937,10 @@
       "A jar of grape wine"
     ],
     "context": "Residues of a gruel-like beer, about 13,000 years old, were found in Raqefet Cave near Haifa, Israel, meaning people were brewing before they were farming. Grape winemaking came later, around 6000 BC in the Caucasus region of Georgia. Source: en.wikipedia.org/wiki/Fermentation_in_food_processing",
-    "topic": "rot-you-actually-want-fermentation-across-the-world"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "A home brewer lifts the lid on a jar of kombucha and finds a rubbery, pancake-like mat grown across the top. Despite its nicknames, the mat is not one organism at all but two completely different kinds of microbe living together as partners, each doing half the fermenting. Which pair teams up in that mat?",
     "answer": "Yeast and bacteria",
     "choices": [
@@ -17963,7 +17950,7 @@
       "Bacteria and algae"
     ],
     "context": "That mat is a SCOBY, a Symbiotic Culture Of Bacteria And Yeast. The yeast eat the sugar and make the fizz plus a trace of alcohol; acetic-acid bacteria then convert that alcohol into tangy sour acid. It's a whole tiny two-partner ecosystem in a jar, and you can reuse the mat to brew batch after batch. Source: en.wikipedia.org/wiki/Kombucha",
-    "topic": "rot-you-actually-want-fermentation-across-the-world"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
     "tier": 1,
@@ -24684,7 +24671,7 @@
       "leftover heat from when it was cooked"
     ],
     "context": "Fermentation isn't food 'magically going off' — it's the work of living things too small to see: yeasts and bacteria (microbes) that eat the food's sugars and carbohydrates. Wikipedia defines it as converting carbohydrates to alcohol or organic acids using microorganisms. Source: Wikipedia, 'Fermentation in food processing.'",
-    "topic": "the-invisible-workers-what-fermentation-actually-is"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
     "tier": 2,
@@ -24697,10 +24684,10 @@
       "table salt"
     ],
     "context": "The sourness in yogurt, cheese, sauerkraut and pickles comes from lactic acid bacteria (especially Lactobacillus). They turn the food's sugar into lactic acid, which is what makes those foods taste tangy. Source: foodsafety.institute, 'Fermentation and microbial food production.'",
-    "topic": "the-invisible-workers-what-fermentation-actually-is"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "A crock of sauerkraut keeps for many months while fresh cabbage rots in a week, and the fermenting microbes that sour the kraut are the reason: fermentation is one of the oldest ways to keep food. Why can't the usual spoilage germs move in and ruin the kraut?",
     "answer": "the sour acid they make kills off the spoilage germs",
     "choices": [
@@ -24710,10 +24697,10 @@
       "the good microbes hunt down and eat the spoilage germs"
     ],
     "context": "Fermentation is one of the oldest ways to keep food from spoiling: the acid, alcohol and salt the microbes make is a place spoilage germs can't survive, so a jar of kraut or a wheel of cheese outlasts the fresh cabbage or milk by many months. Sources: Wikipedia, 'Fermentation in food processing'; Frontiers for Young Minds.",
-    "topic": "the-invisible-workers-what-fermentation-actually-is"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "A shred of raw cabbage tastes of almost nothing, yet the sauerkraut it becomes is sharp, sour and complex. The microbes poured in no flavoring from a bottle; every new taste came from what they did to the cabbage's own molecules. What did the microbes do to create those flavors?",
     "answer": "broke the big, bland molecules into small, punchy ones",
     "choices": [
@@ -24723,7 +24710,7 @@
       "wrapped the cabbage in a thin layer of tangy slime"
     ],
     "context": "The new flavors aren't added — microbes chop big, bland molecules (starch and protein) into small, punchy ones, and those small molecules are where the sour, sharp and savory tastes are born. Source: Wikipedia, 'Fermentation in food processing.'",
-    "topic": "the-invisible-workers-what-fermentation-actually-is"
+    "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
     "tier": 2,
@@ -24817,20 +24804,7 @@
     "topic": "the-irish-potato-famine"
   },
   {
-    "tier": 1,
-    "question": "A sack of green coffee beans smells of grass, and the beans inside are pale and hard, nothing like coffee. One step turns them dark, brittle and richly fragrant, through the same browning that crusts a seared steak. What is that step?",
-    "answer": "Roasting them in a hot rotating drum",
-    "choices": [
-      "Roasting them in a hot rotating drum",
-      "Grinding them into a fine powder",
-      "Soaking them in cold water overnight",
-      "Brewing them in near-boiling water"
-    ],
-    "context": "Coffee roasting leans heavily on the Maillard reaction — the same browning that crusts a steak and darkens toast. Dry heat drives the beans' sugars and proteins to build the dark color and roasty aroma; raw green beans have almost none of it. Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
-  },
-  {
-    "tier": 3,
+    "tier": 2,
     "question": "A baker brushes a raw challah with beaten egg before sliding it into the oven, and it bakes up with a glossy, deep-golden top instead of a dull, pale one. Why does a coat of egg boost the browning like that?",
     "answer": "It paints extra protein and sugar onto the surface for browning to work on",
     "choices": [
@@ -24840,7 +24814,7 @@
       "It coats the dough in fat that fries the surface like shallow oil"
     ],
     "context": "An egg wash turbo-charges browning because the reaction runs on protein and sugar, and egg is loaded with both. The egg WHITE's protein gives the shine; the YOLK's fat and pigment give the deep golden color; a whole-egg wash gives the best-balanced mahogany top on challah and pastry. Source: https://www.kingarthurbaking.com/blog/2022/02/15/understanding-the-maillard-reaction-in-baking",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
+    "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
     "tier": 3,
@@ -24853,10 +24827,10 @@
       "Souring cream into tangy yogurt"
     ],
     "context": "Lehn was pointing at the Maillard reaction, the browning that runs every time a cook toasts bread, sears a steak, roasts coffee, bakes or fries, which is why the Nobel laureate called it 'by far the most widely practiced chemical reaction in the world.'",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
+    "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "Sweetened with plain white table sugar, a bread dough goes into a hot oven to brown. Some sugars leap straight into that browning, but table sugar is stubborn: it must first change before it can take part at all. What happens to the table sugar first?",
     "answer": "It splits into two simpler sugars",
     "choices": [
@@ -24866,7 +24840,7 @@
       "It soaks down into the food's interior"
     ],
     "context": "Only 'reducing' sugars like glucose and fructose join the browning directly. Ordinary table sugar (sucrose) is non-reducing: it must first split (invert) into glucose and fructose before it can take part. Source: https://byjus.com/chemistry/maillard-reaction/",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
+    "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
     "tier": 4,
@@ -24879,7 +24853,7 @@
       "Dip it in a salt brine"
     ],
     "context": "Pretzels get their glossy dark-brown skin from an alkaline dip before baking, traditionally a food-grade lye (sodium hydroxide) bath, which bakers handle with care, or baking soda at home. Alkaline conditions make the surface proteins far more reactive, so the Maillard reaction runs hard and fast in the oven, the same pH trick that speeds caramelized onions.",
-    "topic": "the-maillard-reaction-the-brown-delicious-crust"
+    "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
     "tier": 1,
@@ -26273,32 +26247,6 @@
     "topic": "the-screaming-hot-pan-and-the-dancing-droplet-leidenfrost"
   },
   {
-    "tier": 1,
-    "question": "A cook lays a raw steak in a screaming-hot pan, and its surface soon turns a deep, glossy brown that smells nothing like raw beef. Food scientists insist the dark crust is more than the same meat cooked darker. What is that brown crust, really?",
-    "answer": "Brand-new flavor compounds, created right at the surface",
-    "choices": [
-      "Brand-new flavor compounds, created right at the surface",
-      "The meat's red pigment darkening in the heat",
-      "Juices from inside rising up and drying into a shell",
-      "Melted fat that has cooled and re-hardened into a layer"
-    ],
-    "context": "The deep-brown crust is where browning CREATES flavor: the heat spins up hundreds of new flavor compounds that simply weren't in the raw meat at all. The brown isn't just a color — the brown IS the taste. Source: https://en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
-    "tier": 3,
-    "question": "A steak browns in one pan while plain sugar melts to amber caramel in the next, and the two browns come from different reactions. Caramel needs nothing but sugar. The steak's crust needs the meat's sugars to react with one other ingredient that caramel never uses. Which ingredient partners with the sugars?",
-    "answer": "The food's own protein",
-    "choices": [
-      "The food's own protein",
-      "Fat rendered out by the heat",
-      "Salt drawn to the surface",
-      "Water released from inside"
-    ],
-    "context": "This is the Maillard reaction, named for the French chemist Louis-Camille Maillard, who described it in 1912: amino acids from the food's protein react with its sugars under heat, building hundreds of new savory flavor compounds, and it runs fast around 140-165C (280-330F). Caramelization is different: it is pure sugar breaking down by itself, with no protein required. A bread crust or a sear is mostly Maillard; melting sugar into caramel is pure caramelization.",
-    "topic": "the-sear-and-the-brown-crust-maillard-vs-caramelization"
-  },
-  {
     "tier": 4,
     "question": "A pastry cook heats plain white sugar in a dry pan, with no water, no butter and nothing else added, and slowly it turns amber and takes on deep, bittersweet, almost nutty flavors. That change, caramelization, is the whole point of caramel candy and the crackly top of a crème brûlée. Where do those flavors come from?",
     "answer": "The sugar molecules themselves breaking apart into new compounds",
@@ -26946,7 +26894,7 @@
       "China, at the end of the Silk Road"
     ],
     "context": "The tomato is a New World plant, native to western South America (the Andes) and cultivated by the Aztecs in Mexico. It reached Europe only after Columbus, arriving in Italy in the 1500s — there was no tomato in Italy before ~1500. Source: Wikipedia 'Tomato'; 'Columbian exchange.'",
-    "topic": "the-tomato-comes-to-italy"
+    "topic": "the-tomatos-slow-road-to-italy"
   },
   {
     "tier": 2,
@@ -26959,10 +26907,10 @@
       "its blossoms opened a brilliant gold before any fruit set"
     ],
     "context": "The first varieties to arrive from Spain were yellow-gold, so 'pomo d'oro' literally means golden apple, and Italians still call the tomato pomodoro. The Sienese doctor-naturalist Pietro Andrea Mattioli gave the first written description in 1544, calling the fruit green at first 'and of a golden colour when ripe.'",
-    "topic": "the-tomato-comes-to-italy"
+    "topic": "the-tomatos-slow-road-to-italy"
   },
   {
-    "tier": 2,
+    "tier": 3,
     "question": "Aztec gardeners were growing a small fruit long before any Italian saw one, and they called it tomatl in their language, Nahuatl. Spanish conquistadors carried the plant home in the 1500s, and tomatl became tomate, then tomato. What did the Aztec word mean?",
     "answer": "the plump, swelling fruit",
     "choices": [
@@ -26972,7 +26920,7 @@
       "the round red berry"
     ],
     "context": "'Tomatl' in the Aztec (Nahuatl) language means roughly 'the plump/swelling fruit.' The Aztecs grew many varieties and called the red one 'xitomatl' — so the tomato had a Mexican name long before an Italian one. Source: Wikipedia 'Tomato'; Wiktionary 'pomodoro,' Spanish 'tomate.'",
-    "topic": "the-tomato-comes-to-italy"
+    "topic": "the-tomatos-slow-road-to-italy"
   },
   {
     "tier": 3,
@@ -26985,7 +26933,7 @@
       "it was said to sprout only where mandrake had died"
     ],
     "context": "The tomato belongs to the nightshade family (Solanaceae), the same family as belladonna. Herbalists saw that its berries resembled poisonous nightshade and assumed the worst — the fear was the family resemblance, not any one person. The fruit is safe; only the leaves and stalks are mildly toxic. A famous story adds that wealthy diners ate off pewter plates high in lead, and the tomato's acid leached the lead out, sickening them — so they blamed the fruit (McGill chemist Joe Schwarcz disputes this, calling the leached amount trivial). Source: Smithsonian Magazine; National Geographic; Wikipedia 'Tomato.'",
-    "topic": "the-tomato-comes-to-italy"
+    "topic": "the-tomatos-slow-road-to-italy"
   },
   {
     "tier": 3,
@@ -26998,11 +26946,11 @@
       "the northeastern region, around Venice"
     ],
     "context": "The poorer, hungrier south embraced the tomato first — necessity beat suspicion — while the wealthy north held out much longer. It landed in Naples, then a Spanish-ruled city, which is exactly how the tomato entered Italy: by way of Spain. Source: Wikipedia 'Tomato'; Little Sicily, 'Why Is There So Much Tomato in Italian Food?'",
-    "topic": "the-tomato-comes-to-italy"
+    "topic": "the-tomatos-slow-road-to-italy"
   },
   {
-    "tier": 4,
-    "question": "Antonio Latini wrote down Italy's first known recipe for tomato sauce in his 1692 cookbook, Lo Scalco alla Moderna, and called it Spanish-style. Spanish traders had first carried the strange fruit back from the New World, and most Europeans had refused to eat it. What did Latini spoon his new sauce over?",
+    "tier": 5,
+    "question": "Italy's first known tomato-sauce recipe appeared in Naples in 1692, in the chef Antonio Latini's cookbook Lo Scalco alla Moderna. Spanish traders had first carried the strange fruit back from the New World, and most Europeans still refused to eat it. What did Latini spoon his new sauce over?",
     "answer": "roast meat and fish",
     "choices": [
       "roast meat and fish",
@@ -27011,11 +26959,11 @@
       "stewed beans and greens"
     ],
     "context": "Latini's 'Lo Scalco alla Moderna' (1692) called it 'salsa di pomodoro alla spagnuola' — 'Spanish-style tomato sauce,' the name itself confessing the fruit arrived by way of Spain, from the kitchen of the Spanish viceroy in Naples. He served it with meat and fish, not pasta — pasta with tomato was still more than a century away. Source: Wikipedia 'Antonio Latini'; Red Sauce America, 'Spanish Tomato Sauce by Antonio Latini.'",
-    "topic": "the-tomato-comes-to-italy"
+    "topic": "the-tomatos-slow-road-to-italy"
   },
   {
     "tier": 5,
-    "question": "Ippolito Cavalcanti, a nobleman, published a cookbook in 1837 and wrote it in the dialect of common people. Tucked inside was the first Italian recipe to pair pasta with tomato, so the world's most 'timeless' Italian dish is barely two centuries old. Which pasta did he put under the tomatoes?",
+    "question": "Ippolito Cavalcanti, a nobleman, published a cookbook in 1837 and wrote it in the dialect of common people. Tucked inside was one of the first Italian recipes to pair pasta with tomato, so the world's most 'timeless' Italian dish is barely two centuries old. Which pasta did he put under the tomatoes?",
     "answer": "vermicelli",
     "choices": [
       "vermicelli",
@@ -27023,20 +26971,7 @@
       "maccheroni",
       "ziti"
     ],
-    "context": "The first known Italian recipe pairing pasta with tomato is Ippolito Cavalcanti's 'Cucina Teorico-Pratica' (Naples, 1837), which lists 'vermicelli co le pommadore' — vermicelli with tomatoes — in Neapolitan dialect, marking it as food of the ordinary people rather than the aristocracy. So 'pasta with tomato,' the dish the whole world pictures as timeless Italy, is barely two centuries old. Source: Red Sauce America; Barilla Gastronomic Library, 'Theoretical-Practical Cuisine 1837.'",
-    "topic": "the-tomato-comes-to-italy"
-  },
-  {
-    "tier": 1,
-    "question": "The tomato was a stranger to Europe until Spanish sailors carried its first seeds home across the Atlantic in the 1500s. Farmers in a faraway land had already been growing the fruit for thousands of years. Where had people first tamed the tomato?",
-    "answer": "Central Mexico",
-    "choices": [
-      "Central Mexico",
-      "North Africa",
-      "Southern India",
-      "Coastal China"
-    ],
-    "context": "The tomato's wild ancestor grew in the Andes of western South America, but people first tamed it in Mexico and Central America — the Aztecs were already growing many kinds when the Spanish arrived. After Hernan Cortes's 1521 conquest of Tenochtitlan, the Spanish carried it back to Europe. Source: en.wikipedia.org/wiki/Tomato",
+    "context": "One of the first known Italian recipes pairing pasta with tomato is Ippolito Cavalcanti's 'Cucina Teorico-Pratica' (Naples, 1837), which lists 'vermicelli co le pommadore' — vermicelli with tomatoes — in Neapolitan dialect, marking it as food of the ordinary people rather than the aristocracy. So 'pasta with tomato,' the dish the whole world pictures as timeless Italy, is barely two centuries old. Source: Red Sauce America; Barilla Gastronomic Library, 'Theoretical-Practical Cuisine 1837.'",
     "topic": "the-tomatos-slow-road-to-italy"
   },
   {
@@ -27066,7 +27001,7 @@
     "topic": "the-tomatos-slow-road-to-italy"
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "Some European diners really did fall ill after eating tomatoes, and for two centuries many were sure the fruit could kill. A famous story, which historians and chemists dispute, says the fruit itself was harmless and something else was making them sick. What was the culprit in that tale?",
     "answer": "Acid in the tomato leached lead from the pewter plates",
     "choices": [
@@ -27079,7 +27014,7 @@
     "topic": "the-tomatos-slow-road-to-italy"
   },
   {
-    "tier": 4,
+    "tier": 2,
     "question": "Cosimo de' Medici had tomatoes growing on his estate in Tuscany by 1548, yet for more than a century Italian cooks barely touched the strange fruit from across the sea. What did Italians mainly do with it at first?",
     "answer": "Grew it as an ornamental plant, purely to admire",
     "choices": [
@@ -27105,7 +27040,7 @@
     "topic": "the-tomatos-slow-road-to-italy"
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Street vendors in Naples served the poor bowls of pasta topped with a ladle of cheap tomato sauce, and the dish spread outward from those streets. It is often taken for the timeless soul of Italian cooking, as old as Rome. How long has red-sauce pasta really been around?",
     "answer": "Around 200 years — an 1800s invention",
     "choices": [
@@ -27456,7 +27391,7 @@
     "topic": "the-wheat-kernel-and-what-milling-removes"
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "A Presbyterian minister blasted America's bakers in 1837 for sifting the kernel's skin out of their flour and demanded they grind the whole kernel instead. The bakers resented him and went on sifting. His crusade lost, but his name won: it sits on a box in every American supermarket today. What is in the box?",
     "answer": "Graham crackers, the sweet squares in a s'more.",
     "choices": [
@@ -29858,7 +29793,7 @@
       "Vitamin K"
     ],
     "context": "Wheat germ oil is the richest natural source of vitamin E known — roughly a full day's worth in a single tablespoon. When millers discard the germ to make white flour, that vitamin E goes out with it. (Healthline, 'Foods High in Vitamin E'; Darwin Nutrition, 'Wheat germ')",
-    "topic": "whole-grain-vs-white-what-milling-throws-away"
+    "topic": "the-wheat-kernel-and-what-milling-removes"
   },
   {
     "tier": 3,
@@ -29871,7 +29806,7 @@
       "The gluten"
     ],
     "context": "Nearly all of a wheat grain's fiber sits in the bran, its tough outer coat. Milling strips the bran off to make white flour, so refined flour keeps only about a fifth — roughly 22% — of the whole grain's fiber; the rest leaves with the bran. (Wikipedia, 'Refined grains'; Harvard T.H. Chan School of Public Health, The Nutrition Source, 'Whole Grains')",
-    "topic": "whole-grain-vs-white-what-milling-throws-away"
+    "topic": "the-wheat-kernel-and-what-milling-removes"
   },
   {
     "tier": 1,
@@ -31132,7 +31067,7 @@
       "To ferment"
     ],
     "context": "'Yogurt' comes from Ottoman Turkish yogurt, built on a verb meaning to thicken or coagulate — so the food's name is literally a snapshot of pourable milk turning thick and spoonable. Yogurt likely first appeared around 5000 BC in Central Asia. Source: Wikipedia, 'Yogurt'.",
-    "topic": "yogurt-and-cultured-milk-fermentation-thickens-milk"
+    "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
   },
   {
     "tier": 2,
@@ -31145,7 +31080,7 @@
       "Broth"
     ],
     "context": "That thin liquid is whey — the watery part of milk that seeps out once the rest has set into a soft curd. It isn't spoilage; many people just stir it back in. The same whey is what gets poured off when milk is turned into cheese. Source: Wikipedia, 'Strained yogurt'.",
-    "topic": "yogurt-and-cultured-milk-fermentation-thickens-milk"
+    "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
   },
   {
     "tier": 3,
@@ -31158,7 +31093,7 @@
       "Its water"
     ],
     "context": "The protein is casein. Normally its tiny clusters carry a like electric charge and shove each other apart, so the milk stays liquid; the lactic acid the bacteria give off cancels that charge, so the clusters stop repelling and clump into a network that traps the liquid — pourable milk becomes a spoonable gel. It's the very same acid-curdling that makes fresh cheese. Source: Wikipedia, 'Lactic acid fermentation'; Tetra Pak Dairy Processing Handbook, 'Casein'.",
-    "topic": "yogurt-and-cultured-milk-fermentation-thickens-milk"
+    "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
   },
   {
     "tier": 5,
@@ -31171,6 +31106,6 @@
       "Boiling burns the lactose away"
     ],
     "context": "As the bacteria ferment the milk they consume much of its lactose, so a bowl of yogurt starts out with less of that sugar than the milk it came from. The live bacteria even carry their own lactose-digesting helper that keeps working inside the gut — which is one reason many (though not all) lactose-sensitive people handle yogurt better than a glass of milk. Source: ScienceDirect, 'Lactose digestion and the yogurt culture' (2023).",
-    "topic": "yogurt-and-cultured-milk-fermentation-thickens-milk"
+    "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
   }
 ]
