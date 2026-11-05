@@ -15458,19 +15458,6 @@
   },
   {
     "tier": 1,
-    "question": "A Spanish merchant paid for bread and cloth with New World silver, and each year the prices climbed as more ships came home loaded. What is a general rise in prices like that called?",
-    "answer": "Inflation",
-    "choices": [
-      "Inflation",
-      "Deflation",
-      "A depression",
-      "A trade surplus"
-    ],
-    "context": "Potosi (Cerro Rico) was discovered in 1545 and by 1600 held perhaps 200,000 residents, making it larger than any European city apart from Paris and London. Source: Grokipedia 'Potosi' (2026-09-05).",
-    "topic": "potosi-silver-and-the-price-revolution-1545-1650"
-  },
-  {
-    "tier": 1,
     "question": "A convoy of armed galleons gathered at Havana, its holds packed with the king's silver in bars and in coins, and set out across the Atlantic for Seville with English raiders on its trail. Such convoys sailed twice a year. What do historians call them?",
     "answer": "The Spanish treasure fleets",
     "choices": [
@@ -15488,9 +15475,9 @@
     "answer": "When the supply of money grows much faster than goods, prices rise",
     "choices": [
       "When the supply of money grows much faster than goods, prices rise",
-      "More silver in an economy always makes prices fall",
-      "Prices only rise when kings order them to rise",
-      "Prices rise only when trade routes are cut off"
+      "When a country gains more silver, its people grow richer in goods",
+      "When money is made of real silver, its value cannot fall",
+      "When merchants grow greedy, prices climb across a whole continent"
     ],
     "context": "Modern estimates put the general European price level in 1650 at roughly six times its 1500 level, with the acceleration tracking the arrival of American silver. Source: Grokipedia 'Price revolution' (2026-09-05).",
     "topic": "potosi-silver-and-the-price-revolution-1545-1650"
@@ -15550,14 +15537,14 @@
   {
     "tier": 5,
     "question": "Frédéric Bastiat taught economists to look past what an event shows to what it hides, to the seen and the unseen. Turned on Spain's paradox around 1600, his method splits the story in two. Which pairing captures his contrast for that case?",
-    "answer": "Seen: galleons of silver arriving; Unseen: Spanish industry hollowed out and savers debased",
+    "answer": "Seen: galleons of silver arriving; Unseen: Spanish industry hollowed out and savings debased",
     "choices": [
-      "Seen: galleons of silver arriving; Unseen: Spanish industry hollowed out and savers debased",
-      "Seen: high consumer spending; Unseen: rising farmer productivity",
-      "Seen: rising exports; Unseen: rising imports",
-      "Seen: growing armies; Unseen: shrinking population"
+      "Seen: galleons of silver arriving; Unseen: Spanish industry hollowed out and savings debased",
+      "Seen: galleons of silver arriving; Unseen: Spanish farms quietly growing more grain",
+      "Seen: Spanish prices climbing; Unseen: Spanish wages climbing even faster",
+      "Seen: royal bankruptcies; Unseen: new wealth piling up in Spanish homes"
     ],
-    "context": "Bastiat's 'seen and unseen' fits the Spanish silver flood exactly: what looks like national wealth (bullion arriving) hides the destruction of domestic industry and the debasement of every existing peseta of savings. Source: Bastiat, That Which Is Seen and That Which Is Not Seen (1850).",
+    "context": "Bastiat's 'seen and unseen' fits the Spanish silver flood: what looked like national wealth (bullion arriving) hid the decline of domestic industry and the quiet loss of value in every Spaniard's savings, while wages lagged behind the rising prices. Source: Bastiat, That Which Is Seen and That Which Is Not Seen (1850); Grokipedia 'Price revolution'.",
     "topic": "potosi-silver-and-the-price-revolution-1545-1650"
   },
   {
@@ -15653,13 +15640,13 @@
   },
   {
     "tier": 1,
-    "question": "A baker takes a shopper's dollar and hands over a warm loaf. Both leave pleased, and neither is forced to trade. Carl Menger and the Austrians after him have taught with little scenes like this since the 1870s. What does this one show about the two people?",
-    "answer": "Both value what they got MORE than what they gave up",
+    "question": "A baker takes a shopper's dollar and hands over a warm loaf. Both leave pleased, and neither is forced to trade. Carl Menger and the Austrians after him have taught with scenes like this since the 1870s. What does this one show about the trade?",
+    "answer": "Each values what he gets more than what he gives up",
     "choices": [
-      "Both value what they got MORE than what they gave up",
-      "One of them made a mistake",
-      "Prices are always fair",
-      "Trading always makes everyone equally rich"
+      "Each values what he gets more than what he gives up",
+      "The loaf and the dollar are of exactly equal value",
+      "The shopper pays what the loaf cost the baker to make",
+      "One of them gains exactly as much as the other loses"
     ],
     "context": "Human Action: A Treatise on Economics was published by Yale University Press in September 1949. It rebuilt Mises's German-language Nationaloekonomie (1940) for an American audience and defined praxeology as the general theory of action, with economics as its most developed branch. Source: Grokipedia, 'Human Action'.",
     "topic": "praxeology-economics-from-the-action-axiom"
@@ -15693,9 +15680,9 @@
   {
     "tier": 3,
     "question": "A critic says that no one can test the Austrian school's claims the way physicists test theirs. Ludwig von Mises has a stock reply, which he gave in Human Action and repeated in Theory and History. Which comparison does Mises press?",
-    "answer": "Human action is not laboratory chemistry -- you cannot re-run 1929 with the money supply held constant",
+    "answer": "Human action is not laboratory chemistry -- no cause can be varied with all else held fixed",
     "choices": [
-      "Human action is not laboratory chemistry -- you cannot re-run 1929 with the money supply held constant",
+      "Human action is not laboratory chemistry -- no cause can be varied with all else held fixed",
       "Economics is not astronomy -- there are no cycles regular enough to fit an equation",
       "Human action is not biology -- there are no species-level laws below the individual",
       "Economics is not engineering -- there is no fixed material to be shaped"
@@ -15709,22 +15696,22 @@
     "answer": "Reading the motives and choices of real people in their own time",
     "choices": [
       "Reading the motives and choices of real people in their own time",
-      "Solving equations that predict every choice a person will make",
-      "Building larger and faster computers to model human behavior",
-      "Copying the same policies used in ancient Rome"
+      "Measuring how prices and output moved in the record",
+      "Finding laws of history that hold true in every age",
+      "Testing theories by how well they predict the data"
     ],
-    "context": "Thymology (from Greek 'thymos', the seat of feeling) is for Mises a historical branch of the sciences of human action. Praxeology tells you WHAT it means to act; thymology tells you WHY this actor, in these circumstances, chose those ends and reached for those means. Source: Wikipedia, 'Thymology'.",
+    "context": "Thymology (from Greek 'thymos', the seat of feeling) is for Mises a historical branch of the sciences of human action. Praxeology says what it means to act; thymology asks why this actor, in these circumstances, chose those ends and reached for those means. Source: Wikipedia, 'Thymology'.",
     "topic": "praxeology-economics-from-the-action-axiom"
   },
   {
     "tier": 4,
     "question": "Hans-Hermann Hoppe wrote a book in 1988 defending the method of Ludwig von Mises and Murray Rothbard, and one claim in particular about how the Austrian school's main laws are known to be true. What was the claim?",
-    "answer": "They are true by logic once you grant that people act on purpose",
+    "answer": "They are true by logic, once it is granted that people act on purpose",
     "choices": [
-      "They are true by logic once you grant that people act on purpose",
-      "They are only true if a lab experiment confirms them",
-      "They are true only if a majority of voters agree",
-      "They are true only in countries ruled by monarchs"
+      "They are true by logic, once it is granted that people act on purpose",
+      "They hold only after data have tested their predictions",
+      "They are rough rules of thumb drawn from past history",
+      "They are true only within one nation's culture and era"
     ],
     "context": "Hoppe's lectures at the Mises University argued that the action axiom is a synthetic a priori proposition in Kant's sense -- informative about the world but true by the structure of thought, not by empirical test. The book has been the standard defense of praxeological method for a generation of Austrian graduate students. Source: Mises Institute, 'Economic Science and the Austrian Method'.",
     "topic": "praxeology-economics-from-the-action-axiom"
@@ -15745,27 +15732,14 @@
   {
     "tier": 1,
     "question": "A king orders that no loaf of bread in his realm may cost more than one gold coin. His bakers protest that flour, yeast and firewood cost them two gold coins for every loaf they bake. What happens on the town's bread shelves in the weeks that follow?",
-    "answer": "Bread will disappear from the shelves",
+    "answer": "Bread will soon vanish from the bakers' shelves",
     "choices": [
-      "Bread will disappear from the shelves",
-      "Bakers will happily bake more bread",
-      "Wheat will get cheaper",
-      "Everyone will eat more bread than before"
+      "Bread will soon vanish from the bakers' shelves",
+      "Bread will stay plentiful at the lower price",
+      "Flour will soon get cheaper to match the law",
+      "Bakers will bake extra loaves for the crowds of buyers"
     ],
     "context": "Emperor Diocletian's Edictum de Pretiis Rerum Venalium (Edict on Maximum Prices) covered over 1,200 goods and services and hundreds of occupations, with death for overcharging. Source: en.wikipedia.org/wiki/Edict_on_Maximum_Prices.",
-    "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
-  },
-  {
-    "tier": 1,
-    "question": "Lactantius wrote about the reign of the emperor Diocletian, who in 301 set legal top prices on over a thousand goods and wages, and he reported the grim results for the markets of the empire. What kind of writer was Lactantius?",
-    "answer": "An early Christian historian",
-    "choices": [
-      "An early Christian historian",
-      "A Roman consul",
-      "A Byzantine emperor",
-      "A medieval monk"
-    ],
-    "context": "Lactantius (c. 240-320 AD) was an early Christian rhetorician; his De Mortibus Persecutorum (c. 315 AD) covers Diocletian's reign. He describes the edict as counter-productive from the outset. Source: en.wikipedia.org/wiki/Lactantius.",
     "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
   },
   {
@@ -15774,11 +15748,11 @@
     "answer": "Shortages, because sellers won't sell as much at the fixed low price",
     "choices": [
       "Shortages, because sellers won't sell as much at the fixed low price",
-      "Sudden gluts, because buyers refuse to buy at the fixed low price",
-      "Higher wages for everyone in the affected jobs",
-      "A permanent end to inflation with no side effects"
+      "Sudden gluts, because buyers refuse the fixed low price",
+      "Lower costs, as suppliers cut their own prices to match",
+      "Steady supply, as sellers accept a thinner profit"
     ],
-    "context": "Nixon's August 15, 1971 broadcast (which also closed the gold window) imposed a 90-day freeze extended in later Phases through April 1974. Once controls lapsed, the 1973-75 inflation acceleration followed. Source: en.wikipedia.org/wiki/Nixon_shock.",
+    "context": "Nixon's August 15, 1971 broadcast (which also closed the gold window) imposed a 90-day freeze, followed by looser Phases of control that ran until April 1974. As the controls were loosened in 1973 and then lapsed, inflation surged into double digits in 1974. Source: en.wikipedia.org/wiki/Nixon_shock.",
     "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
   },
   {
@@ -15797,12 +15771,12 @@
   {
     "tier": 4,
     "question": "Ludwig von Mises argued in 1920 that a state owning every factory and field leaves its planners with no prices to show them whether steel should go into tractors or into bridges. Rent control abolishes nothing: apartments still change hands, but a legal ceiling caps the rent. On Mises's logic, how are the two cases connected?",
-    "answer": "A ceiling below market suffices to break the local signal, the way full central planning breaks it economy-wide",
+    "answer": "A ceiling below market breaks the local signal, as full planning breaks it economy-wide",
     "choices": [
-      "A ceiling below market suffices to break the local signal, the way full central planning breaks it economy-wide",
-      "Price controls create genuinely new information the market lacks",
-      "Ceilings work perfectly if enforcement is strict enough",
-      "Ceilings raise supply by lowering prices"
+      "A ceiling below market breaks the local signal, as full planning breaks it economy-wide",
+      "A ceiling leaves the signal whole, since apartments still trade at some price",
+      "Only abolishing every market breaks the signal; one cap leaves it untouched",
+      "A ceiling hands planners the very knowledge that market prices hide"
     ],
     "context": "Mises's 1920 argument applied at smaller scale: whether by abolishing exchange or by capping the price, if the market-clearing signal is suppressed the allocation goes wrong. Same mechanism, different scale. Source: mises.org/library/economic-calculation-socialist-commonwealth.",
     "topic": "price-control-failures-from-diocletian-to-nixon-to-rent-cont"
@@ -15914,14 +15888,14 @@
   {
     "tier": 1,
     "question": "A great copper mine floods one winter and shuts down, and copper's price shoots up. Factory owners who use the metal see the higher price and start hunting for other metals, or for ways to use less. What is the price doing for them?",
-    "answer": "Telling them information about what is scarce",
+    "answer": "Carrying the news that copper has grown scarce",
     "choices": [
-      "Telling them information about what is scarce",
-      "Punishing them for buying copper",
-      "Making the government richer",
-      "Randomly changing for no reason"
+      "Carrying the news that copper has grown scarce",
+      "Recording what copper costs to dig and refine",
+      "Showing that sellers have agreed to charge more",
+      "Measuring how much new money has come into the economy"
     ],
-    "context": "Prices and Production is Hayek's monetary-theory book; Road to Serfdom (1944) is his popular political tract; Individualism and Economic Order (1948) is an essay collection; The Constitution of Liberty (1960) is his mature political philosophy. Source: LSE History blog.",
+    "context": "Hayek made the point most famously in his 1945 essay The Use of Knowledge in Society, with tin as his example: a higher price tells every user to economize, though none of them needs to know why the metal grew scarce. The price carries the news in a single number. Source: Hayek, 'The Use of Knowledge in Society' (1945).",
     "topic": "prices-and-production-1931-hayeks-lse-lectures"
   },
   {
@@ -15934,28 +15908,28 @@
       "Money velocity collapses and idle cash balances swell across every stage of production",
       "Nominal wages become sticky downward and unemployment jumps immediately in every sector"
     ],
-    "context": "Artificially low interest rates falsify the natural rate of interest -- the rate at which voluntary saving would match investment demand. Firms respond as if saving were plentiful and start long-horizon capital projects that must later be abandoned. The other three describe rival theories (crowding out, Keynesian liquidity trap, Keynesian sticky-wage unemployment). Source: Mises Institute, 'Hayek on Industrial Fluctuations'.",
+    "context": "Artificially low interest rates falsify the natural rate of interest -- the rate at which voluntary saving would match investment demand. Firms respond as if saving were plentiful and start long-horizon capital projects that must later be abandoned. Rival accounts put the trouble in hoarded cash or in wages that will not fall, not in the shape of capital. Source: Mises Institute, 'Hayek on Industrial Fluctuations'.",
     "topic": "prices-and-production-1931-hayeks-lse-lectures"
   },
   {
     "tier": 3,
-    "question": "Friedrich Hayek set out to show his 1931 audience production as a chain of stages: raw iron and lumber first, then factory work, then finishing, and last the goods on a shop shelf. He drew a diagram to show it. What is the diagram called?",
-    "answer": "The Hayekian triangle",
+    "question": "Friedrich Hayek set out to show his 1931 audience production as a chain of stages: raw iron and lumber first, then factory work, then finishing, and last the goods on a shop shelf. He drew the whole chain as one simple figure, which Austrians still name after him. What shape did he draw?",
+    "answer": "A triangle",
     "choices": [
-      "The Hayekian triangle",
-      "The Phillips curve",
-      "The Laffer curve",
-      "The Kondratiev wave"
+      "A triangle",
+      "A staircase",
+      "Rings, like a tree's",
+      "A rising wave"
     ],
-    "context": "The Hayekian triangle organizes all spending in the economy as a triangle whose base measures time-to-consumer-good; artificial credit tilts the triangle to a longer, capital-heavy shape it cannot sustain. Phillips (1958), Laffer (1974), and Kondratiev (1920s) are all real diagrams from unrelated traditions. Source: Mises Wiki, 'Hayekian triangle'.",
+    "context": "The Hayekian triangle: one side runs through the stages of production over time, the other measures the output of consumer goods at the end. Cheap credit, in Hayek's account, stretches the triangle into a longer, capital-heavy shape that real savings cannot sustain. Source: Mises Wiki, 'Hayekian triangle'.",
     "topic": "prices-and-production-1931-hayeks-lse-lectures"
   },
   {
     "tier": 4,
     "question": "Lionel Robbins brought Friedrich Hayek to the London School of Economics in February 1931 to lecture on booms and busts. Hayek told the story of a boom fed by artificially cheap credit and of the crash that ends it. Where in that story does the real disease lie?",
-    "answer": "The BOOM was the disease and the bust is the painful correction",
+    "answer": "The boom was the disease and the bust is the painful correction",
     "choices": [
-      "The BOOM was the disease and the bust is the painful correction",
+      "The boom was the disease and the bust is the painful correction",
       "The bust was the disease and the boom had been a healthy real expansion",
       "Both boom and bust are neutral psychological fluctuations around a stable trend",
       "The whole cycle is a statistical artefact with no underlying economic cause"
@@ -15969,11 +15943,11 @@
     "answer": "A bust in which many of those projects fail once the cheap credit stops",
     "choices": [
       "A bust in which many of those projects fail once the cheap credit stops",
-      "Steady growth forever, as long as the central bank keeps rates low",
-      "Higher wages for everyone, since more businesses are hiring",
-      "A permanent drop in prices as new goods flood the market"
+      "A slump in which nervous savers hoard cash and spending dries up",
+      "A gentle slowdown as firms finish their projects and growth levels off",
+      "A crash that comes only when a shock from abroad, like a war, strikes"
     ],
-    "context": "Mises's 1912 book applied Menger's marginalism to money and introduced the credit-expansion account of the cycle; Hayek's 1931 lectures are the mature LSE presentation. Bohm-Bawerk supplied the capital-theory backdrop; Menger the value theory; Wicksell the natural-rate-of-interest concept Mises then used -- all real, all upstream, but not the direct doctrinal source of ABCT. Source: Mises Institute, Prices and Production and Other Works.",
+    "context": "In the Austrian account the bust is built into the boom: the projects were begun on credit that the public's real savings could not back, so when the cheap credit ends, many of them cannot be finished. Mises set out the credit-expansion theory in his 1912 book on money and credit; Hayek's 1931 lectures carried it to London. Source: Mises Institute, Prices and Production and Other Works.",
     "topic": "prices-and-production-1931-hayeks-lse-lectures"
   },
   {
@@ -15999,7 +15973,7 @@
       "A Tract on Monetary Reform",
       "How to Pay for the War"
     ],
-    "context": "The General Theory (1936) replaced the Treatise as Keynes's monetary statement and became the founding text of Keynesian macroeconomics. The three other choices are all real Keynes works from other decades: Economic Consequences (1919), Tract (1923), How to Pay for the War (1940). Source: Mises Institute, 'Reflections on the Pure Theory of Money of Mr. J.M. Keynes'.",
+    "context": "The General Theory (1936) replaced the Treatise as Keynes's monetary statement and became the founding text of Keynesian macroeconomics. Keynes's earlier and later books include The Economic Consequences of the Peace (1919), A Tract on Monetary Reform (1923) and How to Pay for the War (1940). Source: Mises Institute, 'Reflections on the Pure Theory of Money of Mr. J.M. Keynes'.",
     "topic": "prices-and-production-1931-hayeks-lse-lectures"
   },
   {
@@ -16125,9 +16099,9 @@
     "answer": "Value depends on what each person wants, not just the price tag",
     "choices": [
       "Value depends on what each person wants, not just the price tag",
-      "One of them was tricked",
-      "The store was wrong about the prices",
-      "The apple was actually worth 4 dollars"
+      "The sandwich child is giving away value out of kindness",
+      "The apple and the sandwich are really worth the same amount",
+      "The sandwich had gone stale, so it was worth far less by noon"
     ],
     "context": "Menger (1840-1921) reported on grain and stock prices for the Lemberger Zeitung and then the Wiener Zeitung in the 1860s -- watching real traders form prices in real time is where his subjective-value instinct came from. He joined the University of Vienna law faculty in 1872 and won the economic-theory chair in 1873. Sources: en.wikipedia.org/wiki/Carl_Menger; en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
     "topic": "principles-of-economics-1871-mengers-founding-text"
@@ -16147,15 +16121,15 @@
   },
   {
     "tier": 4,
-    "question": "Carl Menger reasoned at the margin in his Principles of Economics of 1871 but never gave the idea a single name. One of his followers supplied the German word a few years later: Grenznutzen, marginal utility. Who was the follower?",
+    "question": "Carl Menger reasoned at the margin in his Principles of Economics of 1871 but never gave the idea a single name. One of his followers supplied the German word more than a decade later: Grenznutzen, marginal utility. Who was the follower?",
     "answer": "Friedrich von Wieser",
     "choices": [
       "Friedrich von Wieser",
       "Eugen von Boehm-Bawerk",
-      "Carl Menger himself",
+      "Ludwig von Mises",
       "Leon Walras"
     ],
-    "context": "Wieser (1851-1926), one of Menger's two most important students, coined Grenznutzen to name a concept his teacher had already articulated in prose. Boehm-Bawerk, the other great student, developed capital and interest theory instead. The English 'marginal utility' is a direct translation of Wieser's German. So the school's most famous term was named by the pupil, not the founder. Source: en.wikipedia.org/wiki/Friedrich_von_Wieser.",
+    "context": "Wieser (1851-1926), with Boehm-Bawerk one of Menger's two most important followers, coined Grenznutzen to name a concept Menger had already set out in prose; sources date the coinage to his books of 1884 and 1889. Boehm-Bawerk developed capital and interest theory instead, and Mises belonged to the next generation. The English 'marginal utility' is a direct translation of Wieser's German. Source: en.wikipedia.org/wiki/Friedrich_von_Wieser.",
     "topic": "principles-of-economics-1871-mengers-founding-text"
   },
   {
@@ -16169,19 +16143,6 @@
       "Grounding claims in national statistical surveys"
     ],
     "context": "Menger's rejection of mathematical economics was not incidental; it was a claim about the SUBJECT -- since valuation is subjective and preferences are ordinal, false precision misleads more than it clarifies. Walras and Jevons, the co-inventors of marginalism, went the other way and built the mathematical tradition. Experimental economics (Vernon Smith, Nobel 2002) came a century later; large econometric models are Cowles Commission and Klein 1940s-60s; national statistical surveys are the German Historical School Menger's 1883 Methodenstreit book attacked. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
-    "topic": "principles-of-economics-1871-mengers-founding-text"
-  },
-  {
-    "tier": 5,
-    "question": "Frank Knight, the Chicago economist, wrote the introduction when Carl Menger's Principles of Economics, the founding book of the Austrian school, at last came out in English. James Dingwall and Bert Hoselitz translated it, and the Free Press published it. When did the translation appear?",
-    "answer": "1950",
-    "choices": [
-      "1950",
-      "1899",
-      "1921",
-      "1976"
-    ],
-    "context": "The 1950 Free Press edition, with an introduction by Frank Knight, appeared 29 years after Menger's death (1921) and only after his student Hayek had already moved to LSE (1931) and then Chicago (1950). Frank Knight -- the great Chicago economist and Milton Friedman's teacher -- wrote the introduction. The 79-year gap is a measure of how far the German-speaking Austrian tradition had traveled before English-speaking economics noticed the founding text. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book).",
     "topic": "principles-of-economics-1871-mengers-founding-text"
   },
   {
@@ -16225,13 +16186,13 @@
   },
   {
     "tier": 3,
-    "question": "An attacker wants to undo a Bitcoin payment he made last week. He must rebuild every block since then in secret, then pile on new ones faster than every honest miner on Earth combined. What share of the network's total mining power would he need?",
-    "answer": "More than half",
+    "question": "An attacker wants to undo a Bitcoin payment he made last week. He must secretly rebuild each block from that point on and go on adding new ones until his chain overtakes the one the honest miners are building. What share of the network's mining power must he hold to be sure of winning in the end?",
+    "answer": "Just over half",
     "choices": [
-      "More than half",
-      "About a quarter",
-      "About one tenth",
-      "About one hundredth"
+      "Just over half",
+      "Just over a third",
+      "Just over a quarter",
+      "Just over a tenth"
     ],
     "context": "The classic 51% attack: an attacker with more hashing power than the rest of the network combined can, in principle, rewrite recent history. The energy is what makes such an attack expensive; that is the security. Source: en.wikipedia.org/wiki/Double-spending.",
     "topic": "proof-of-work-and-the-digital-lottery"
@@ -16255,9 +16216,9 @@
     "answer": "The Byzantine Generals Problem",
     "choices": [
       "The Byzantine Generals Problem",
-      "The Halting Problem",
-      "The Traveling Salesman Problem",
-      "The P-versus-NP Problem"
+      "The Two Generals Problem",
+      "The Dining Philosophers Problem",
+      "The Prisoner's Dilemma"
     ],
     "context": "Byzantine Generals (Lamport, Shostak, Pease, 1982): how do untrusted, distributed parties reach agreement on a shared record without a central authority? Nakamoto Consensus is the first known solution using proof-of-work as the coordinating mechanism. Source: en.wikipedia.org/wiki/Byzantine_fault.",
     "topic": "proof-of-work-and-the-digital-lottery"
@@ -16281,9 +16242,9 @@
     "answer": "Bank branches, armored trucks, printing, and the entire regulatory apparatus",
     "choices": [
       "Bank branches, armored trucks, printing, and the entire regulatory apparatus",
-      "Central bank cooling systems, satellite payment routing, and mint-vault air handling",
-      "Government subsidies to Bitcoin miners built into monetary policy operations",
-      "Federal Reserve academic research on money-supply forecasting"
+      "Gold mines, smelters, and the guarded vaults that store the bullion",
+      "Coal plants, power lines, and the grid that feeds the mining farms",
+      "Stock exchanges, trading floors, and the brokers who buy and sell shares"
     ],
     "context": "The defender's move: fiat's energy cost is spread across every branch, every armored truck, every printing plant, every ATM, every regulatory apparatus. Bitcoin makes its energy cost visible and concentrated; fiat hides its energy cost. Source: mises.org/library/austrian-case-bitcoin.",
     "topic": "proof-of-work-and-the-digital-lottery"
@@ -16463,16 +16424,16 @@
     "answer": "The regular people who need protecting",
     "choices": [
       "The regular people who need protecting",
-      "The bankers who lend to the police",
-      "Foreign countries",
-      "Other police departments"
+      "The city's elected officials",
+      "The striking officers themselves",
+      "The businesses that sell to the police"
     ],
     "context": "Franklin D. Roosevelt wrote to Luther Steward, President of the National Federation of Federal Employees, on August 16, 1937. Roosevelt considered a public-sector strike 'unthinkable and intolerable.' Source: presidency.ucsb.edu (Roosevelt letter to Steward, 1937).",
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
   },
   {
     "tier": 1,
-    "question": "Luther Steward, head of a union of federal workers, got a letter from Franklin Roosevelt in 1937. Bargaining with a government, Roosevelt said, differs from bargaining with a company in who is sitting on the other side of the table. Across from a government union sit officials spending other people's money. Who faces a private union?",
+    "question": "Luther Steward, a federal union chief, got a letter from Franklin Roosevelt in 1937: government workers, it said, are employed by the whole people. Public-choice economists add that across from a government union sit officials spending other people's money. Who faces a private union?",
     "answer": "A profit-maximizing private employer",
     "choices": [
       "A profit-maximizing private employer",
@@ -16480,7 +16441,7 @@
       "A regulated common carrier",
       "A cooperatively-owned enterprise"
     ],
-    "context": "In the private sector, wage demands trade off against the employer's profits and the firm's competitive survival. In the public sector, the employer is a taxpayer-funded entity whose ultimate check-writer is the same voter the union spends dues to influence. Source: Roosevelt letter (1937).",
+    "context": "Roosevelt's letter said that officials could not fully represent or bind the real employer, the whole people, who speak through laws passed by Congress. In the private sector, wage demands trade off against the employer's profits and the firm's survival; in the public sector the bill goes to taxpayers, the same voters the union spends dues to influence. Source: presidency.ucsb.edu (Roosevelt letter to Steward, 1937).",
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
   },
   {
@@ -16502,9 +16463,9 @@
     "answer": "Making union dues voluntary instead of automatic",
     "choices": [
       "Making union dues voluntary instead of automatic",
-      "Banning all unions in the state",
-      "Raising taxes on union members",
-      "Forcing every worker to join a union"
+      "Capping union dues at a fixed share of pay",
+      "Routing union dues through the state treasury",
+      "Charging non-members a fee in place of dues"
     ],
     "context": "Scott Walker's Act 10 passed in March 2011 after weeks of massive protest at the state capitol and a Democratic-senator walkout to Illinois to deny quorum. The Wisconsin Supreme Court upheld the law in July 2014. Source: en.wikipedia.org/wiki/2011_Wisconsin_Act_10.",
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
@@ -16525,12 +16486,12 @@
   {
     "tier": 3,
     "question": "A Wisconsin teacher opened her paycheck after Act 10 took effect and found no union dues taken out; paying them had become her own choice, made each year. Within a few years the Wisconsin Education Association Council, Wisconsin's largest teachers' union, had lost most of its dues-paying members. What did the drop suggest about many of them?",
-    "answer": "Many were paying only because the dues were automatic, not because they wanted to",
+    "answer": "Many were paying only because the dues had been taken automatically",
     "choices": [
-      "Many were paying only because the dues were automatic, not because they wanted to",
-      "They enthusiastically supported everything the union did",
-      "They had never actually been union members in the first place",
-      "The law forced every teacher to quit the union at once"
+      "Many were paying only because the dues had been taken automatically",
+      "Many had joined a rival union that charged lower dues",
+      "Many had left Wisconsin's schools for jobs in other states",
+      "Many had been barred from joining by the new law"
     ],
     "context": "WEAC lost the majority of its members after the end of automatic dues deduction and mandatory annual recertification votes. It is the clearest measured effect of Act 10 on public-sector union density. Source: journalsentinel.com (WEAC membership coverage 2013-16).",
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
@@ -16550,28 +16511,15 @@
   },
   {
     "tier": 4,
-    "question": "A retired California state worker opens this month's pension statement from CalPERS, which serves the state's employees and is the largest public pension fund in America. Its unfunded liabilities remain a long-term fiscal concern for the state. Roughly how much does the fund manage in the mid-2020s?",
-    "answer": "About $460 billion",
+    "question": "A teachers' union pours millions of dollars of its members' dues into a governor's race one autumn, and its candidate wins. Two years later the same union sits down across the bargaining table from that governor to settle a new contract. In the public-choice reading, what becomes of the idea of two independent sides at the table?",
+    "answer": "It breaks down, because the union is in effect bargaining with itself",
     "choices": [
-      "About $460 billion",
-      "About $46 billion",
-      "About $4.6 trillion",
-      "About $46 million"
+      "It breaks down, because the union is in effect bargaining with itself",
+      "It holds, because voters can still remove the governor at the polls",
+      "It holds, because state law caps what any contract can pay",
+      "It breaks down, because the governor now holds all the power"
     ],
-    "context": "The California Public Employees' Retirement System (CalPERS) manages approximately $460 billion in the mid-2020s. Its unfunded liabilities remain a fiscal concern reflecting the long-term public-sector-union bargaining pattern FDR warned about. Source: calpers.ca.gov (annual financial reports).",
-    "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
-  },
-  {
-    "tier": 4,
-    "question": "A teachers' union pours millions of dollars of its members' dues into a governor's race one autumn, and its candidate wins. Two years later the same union sits down across the bargaining table from that governor to settle a new contract. What happens to the usual idea of two independent sides at the table?",
-    "answer": "It breaks down because the group is really bargaining with itself",
-    "choices": [
-      "It breaks down because the group is really bargaining with itself",
-      "It becomes fairer than any private negotiation",
-      "It produces totally random outcomes",
-      "It always leaves zero benefit for both sides"
-    ],
-    "context": "Private-sector union dues cannot select the CEO across the bargaining table. Public-sector union dues can and do help select the mayor, governor, or school-board members who then negotiate. That is the circle FDR flagged in 1937. Source: Roosevelt letter (1937); Freeman + Ichniowski (1988). The Olson + Stigler combined diagnosis: concentrated interest + captured counterparty gives you a single institutional structure where standard adversarial-bargaining assumptions fail. FDR saw the shape in 1937; the modern literature formalized it. Source: Olson (1965); Stigler (1971); DiSalvo, Government Against Itself (Oxford 2015).",
+    "context": "Private-sector union dues cannot choose the chief executive across the bargaining table. Public-sector union dues can help choose the mayor, governor or school-board members who then negotiate, so a concentrated interest helps pick its own counterparty while the taxpayers who pay are scattered and absent. Daniel DiSalvo traces the pattern in Government Against Itself (Oxford, 2015), drawing on Mancur Olson's logic of concentrated and dispersed interests. Source: DiSalvo (2015); Olson, The Logic of Collective Action (1965).",
     "topic": "public-sector-unions-fdrs-warning-and-wisconsin-act-10"
   },
   {
@@ -16585,19 +16533,6 @@
       "Operation Twist"
     ],
     "context": "QE1 was launched November 25 2008 and expanded in March 2009. It ran until June 2010 at a total commitment of about $1.75 trillion. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
-    "topic": "qe1-the-first-bond-buying-program-2008-10"
-  },
-  {
-    "tier": 1,
-    "question": "A bond trader at a struggling bank sold the Federal Reserve more mortgage bonds in March 2009, after the Fed raised its planned purchases of them to $1.25 trillion and added Treasury bonds and other agency debt. The program ran until early 2010. About how much had it bought in all?",
-    "answer": "About $1.75 trillion",
-    "choices": [
-      "About $1.75 trillion",
-      "About $600 billion",
-      "About $500 billion",
-      "About $4 trillion"
-    ],
-    "context": "QE1's total commitment was $1.75 trillion when the program wound down in June 2010: $1.25T in MBS, $300B in Treasuries, and $200B in agency debt. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
     "topic": "qe1-the-first-bond-buying-program-2008-10"
   },
   {
@@ -16653,19 +16588,6 @@
     "topic": "qe1-the-first-bond-buying-program-2008-10"
   },
   {
-    "tier": 4,
-    "question": "Suppose a central bank pays for bonds with money it has just created and keeps buying for years. Critics call that 'money printing' and say the name fits as well as 'quantitative easing,' the soft, technical label officials prefer. What is the likeliest long-run result?",
-    "answer": "Prices across the economy tend to rise -- inflation",
-    "choices": [
-      "Prices across the economy tend to rise -- inflation",
-      "Interest rates fall permanently to zero on their own",
-      "Unemployment drops to zero and stays there",
-      "Exports automatically double within five years"
-    ],
-    "context": "The Bank of Japan ran quantitative easing 2001-2006 to fight deflation. Bernanke borrowed the label. He reportedly preferred 'credit easing' but the QE label stuck. Source: Grokipedia 'Bank of Japan' (2026-09-05).",
-    "topic": "qe1-the-first-bond-buying-program-2008-10"
-  },
-  {
     "tier": 5,
     "question": "Three men warned loudest, while QE1 ran, that the Federal Reserve was creating money to cover Washington's deficits and that higher prices would follow, if not at once. One made the case on television, one at an economics institute and one in his own newsletter. Which three were they?",
     "answer": "Peter Schiff, Bob Murphy, and Jim Grant",
@@ -16673,7 +16595,7 @@
       "Peter Schiff, Bob Murphy, and Jim Grant",
       "Paul Krugman, Joseph Stiglitz, and Ben Bernanke",
       "Larry Summers, Robert Rubin, and Timothy Geithner",
-      "Milton Friedman, Anna Schwartz, and Alan Meltzer"
+      "Janet Yellen, Donald Kohn, and Frederic Mishkin"
     ],
     "context": "Schiff on television, Murphy at the Mises Institute, and James Grant in Grant's Interest Rate Observer all publicly warned that the delay between monetary expansion and consumer-price adjustment did not mean the mechanism was broken. The 2021-23 wave was consistent with their long-horizon call. Source: mises.org and Grant's Interest Rate Observer archive.",
     "topic": "qe1-the-first-bond-buying-program-2008-10"
@@ -16688,7 +16610,7 @@
       "Balance-sheet expansion is neutral because commercial banks control final money creation",
       "Central-bank asset purchases affect only bond markets and never asset prices generally"
     ],
-    "context": "QE1 was framed as an emergency. Seventeen years later, three additional rounds have followed, along with two massive 2020 pandemic-era expansions. Emergency practice has become standing doctrine. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
+    "context": "QE1 was framed as an emergency. QE2 (2010) and QE3 (2012) followed, and the pandemic round of 2020 more than doubled the balance sheet again, to nearly $9 trillion by 2022. Emergency practice has become standing doctrine. Source: FRED, Federal Reserve total assets (WALCL).",
     "topic": "qe1-the-first-bond-buying-program-2008-10"
   },
   {
@@ -16706,7 +16628,7 @@
   },
   {
     "tier": 1,
-    "question": "A reader opening his newspaper on November 4, 2010, found something no Federal Reserve chairman had tried before: a column by Ben Bernanke, defending to the public the bond buying the Fed had announced the day before. Which newspaper printed it?",
+    "question": "A reader opening his newspaper on November 4, 2010, found a column by Ben Bernanke, the Federal Reserve's chairman, defending to the public the bond buying the Fed had announced the day before. Which newspaper printed it?",
     "answer": "The Washington Post",
     "choices": [
       "The Washington Post",
@@ -16714,20 +16636,20 @@
       "The New York Times",
       "The Financial Times"
     ],
-    "context": "Bernanke's November 4 2010 op-ed in The Washington Post was titled 'What the Fed Did and Why: Supporting the Recovery and Sustaining Price Stability.' Using a newspaper op-ed to defend Fed policy was itself a break from tradition of speaking only through official channels. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
+    "context": "Bernanke's November 4 2010 op-ed in The Washington Post was titled 'What the Fed Did and Why: Supporting the Recovery and Sustaining Price Stability.' He had written for newspapers as chairman before, among them a Wall Street Journal piece of July 2009 on the Fed's exit strategy. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
     "topic": "qe2-and-bernankes-washington-post-op-ed"
   },
   {
     "tier": 2,
-    "question": "The Federal Reserve's chairman, Ben Bernanke, took his case for the Fed's new bond buying straight to newspaper readers in November 2010, the day after the Fed announced $600 billion of purchases. The buying, he argued, would do its work through one market in particular. Which market did he point to?",
+    "question": "Ben Bernanke, the Federal Reserve's chairman, took his case for the Fed's new bond buying straight to newspaper readers in November 2010, the day after the Fed announced $600 billion of purchases. Critics fastened on one market among those he named. Which market was it?",
     "answer": "The stock market, which he said would boost consumer wealth and spending",
     "choices": [
       "The stock market, which he said would boost consumer wealth and spending",
-      "The residential real-estate market, which he said would boost construction jobs",
+      "The currency market, which he said would make American exports cheaper",
       "The commodity market, which he said would raise farm incomes",
       "The auto market, which he said would help Detroit"
     ],
-    "context": "Bernanke wrote: 'higher stock prices will boost consumer wealth and help increase confidence, which can also spur spending.' It was one of the first explicit public admissions that the Fed intended its policy to boost equity values. Source: Washington Post (November 4 2010).",
+    "context": "Bernanke wrote: 'higher stock prices will boost consumer wealth and help increase confidence, which can also spur spending.' He also pointed to lower mortgage and corporate bond rates; critics seized on the stock-market line as an open admission that the Fed meant to lift share prices. Source: Washington Post (November 4 2010).",
     "topic": "qe2-and-bernankes-washington-post-op-ed"
   },
   {
@@ -16766,7 +16688,7 @@
       "Secretly buying gold from foreign countries",
       "Raising interest rates too fast during a recession"
     ],
-    "context": "Perry made the remark at an August 2011 campaign event in Iowa. It became one of the defining moments of Perry's brief 2012 run and marked one of the first times a Republican presidential candidate publicly attacked a sitting Fed chair by name. Source: Grokipedia 'Rick Perry' (2026-09-05).",
+    "context": "Perry made the remark at an August 15, 2011 campaign event in Cedar Rapids, Iowa, two days after announcing his run for the nomination. Source: Grokipedia 'Rick Perry' (2026-09-05).",
     "topic": "qe2-and-bernankes-washington-post-op-ed"
   },
   {
@@ -16779,18 +16701,18 @@
       "Rose approximately 5 percent",
       "Stayed roughly flat"
     ],
-    "context": "The S&P 500 gained roughly 24% from the November 3 2010 QE2 announcement through the program's June 2011 end. The wealth effect Bernanke had named publicly was operating exactly as promised -- for those who owned equities. Source: Grokipedia 'S&P 500' (2026-09-05).",
+    "context": "The S&P 500 gained roughly 24% from late August 2010, when Bernanke signaled the program in his Jackson Hole speech, to the program's end in June 2011. The wealth effect Bernanke had named publicly was working as promised for those who owned shares. Source: Grokipedia 'S&P 500' (2026-09-05).",
     "topic": "qe2-and-bernankes-washington-post-op-ed"
   },
   {
     "tier": 4,
     "question": "Austrian critics turned Frédéric Bastiat's test on the Federal Reserve's bond buying of 2010, in which it spent $600 billion of newly created reserves on Treasury bonds. Bastiat taught that every policy has effects that are seen and effects that are not. Which seen-and-unseen pairing best captures that program's structure?",
-    "answer": "Seen: the recovery is strengthening; Unseen: the new reserves are flowing into asset prices, not wages or productive investment",
+    "answer": "Seen: a strengthening recovery; Unseen: new reserves flowing into asset prices, not wages or investment",
     "choices": [
-      "Seen: the recovery is strengthening; Unseen: the new reserves are flowing into asset prices, not wages or productive investment",
-      "Seen: full employment achieved; Unseen: currency devaluation abroad",
-      "Seen: rising exports; Unseen: falling imports",
-      "Seen: rising savings; Unseen: falling consumption"
+      "Seen: a strengthening recovery; Unseen: new reserves flowing into asset prices, not wages or investment",
+      "Seen: a strengthening recovery; Unseen: new reserves flowing into factories and fresh hiring",
+      "Seen: rising stock prices; Unseen: wages rising even faster for workers without shares",
+      "Seen: the Fed buying bonds; Unseen: its balance sheet quietly shrinking as bonds matured"
     ],
     "context": "The visible outcome (S&P 500 +24%) was framed as recovery. The invisible mechanism -- new reserves flowing directly to first-receivers who owned equities -- was the actual causal channel. Source: Bastiat, That Which Is Seen and That Which Is Not Seen (1850).",
     "topic": "qe2-and-bernankes-washington-post-op-ed"
@@ -16798,27 +16720,14 @@
   {
     "tier": 5,
     "question": "'Higher stock prices will boost consumer wealth,' Ben Bernanke wrote in his newspaper column of November 4, 2010, defending the Fed's new bond buying. Critics had long thought the Fed was steering asset prices on purpose; now its chairman had said so in print. Once a central bank says in public that it wants stock prices up, what changes?",
-    "answer": "It becomes a permanent, openly-admitted feature of policy, no longer a hidden side effect",
+    "answer": "It becomes an openly admitted aim of policy, no longer a hidden side effect",
     "choices": [
-      "It becomes a permanent, openly-admitted feature of policy, no longer a hidden side effect",
-      "Op-eds by central bankers rarely reveal actual policy targets",
-      "Pushing up stock prices has no long-term effect on inequality",
-      "Central-bank asset targeting works best when kept secret"
+      "It becomes an openly admitted aim of policy, no longer a hidden side effect",
+      "Nothing changes, since markets pay no heed to what bankers write",
+      "The bank must stop buying bonds, so as not to seem political",
+      "Stock prices fall, as investors fear a sudden reversal"
     ],
-    "context": "After the 2010 op-ed, no serious observer could claim the Fed was not targeting equity values. Every subsequent QE round openly invoked the wealth-effect channel. The distributional implications -- who owns stocks, who does not -- became visible and permanent. Source: Bernanke, Washington Post (November 4 2010).",
-    "topic": "qe2-and-bernankes-washington-post-op-ed"
-  },
-  {
-    "tier": 5,
-    "question": "Ben Bernanke broke with a long Federal Reserve tradition in November 2010, when he defended the Fed's new bond buying in a newspaper column the day after it was announced. The program would create $600 billion to buy Treasury bonds. Which tradition did he break?",
-    "answer": "The Fed's tradition of speaking only through official statements and formal congressional testimony",
-    "choices": [
-      "The Fed's tradition of speaking only through official statements and formal congressional testimony",
-      "The Fed's tradition of publishing monthly balance-sheet reports",
-      "The Fed's tradition of holding secret FOMC meetings",
-      "The Fed's tradition of coordinating with the European Central Bank"
-    ],
-    "context": "Prior Fed chairs generally avoided newspaper op-eds. Bernanke's decision to argue directly to the general public via the Washington Post marked a shift toward more overt political communication. Subsequent chairs (Yellen, Powell) have all made increasing use of public commentary channels. Source: Grokipedia 'Federal Reserve System' (2026-09-05).",
+    "context": "After the 2010 op-ed, critics could point to the chairman's own words: the Fed meant to lift asset prices. Who owns stocks, and who does not, became part of the argument over every later round of bond buying. Source: Bernanke, Washington Post (November 4 2010).",
     "topic": "qe2-and-bernankes-washington-post-op-ed"
   },
   {
@@ -16850,11 +16759,11 @@
   {
     "tier": 2,
     "question": "A family on Yap traded away a giant stone disc that weighed several tons and had stood in its village for years. Nobody moved the disc an inch, before the trade or after it. How did the stone change hands?",
-    "answer": "By public community agreement that the stone now belonged to someone else, while the physical stone stayed put",
+    "answer": "By the village agreeing in public that it had a new owner",
     "choices": [
-      "By public community agreement that the stone now belonged to someone else, while the physical stone stayed put",
-      "By carving the new owner's name onto the stone's surface",
-      "By moving the stone to a central marketplace once a year",
+      "By the village agreeing in public that it had a new owner",
+      "By carving the new owner's mark into the stone's face",
+      "By handing the buyer a shell token that stood for the stone",
       "By breaking off a small piece and giving it to the new owner"
     ],
     "context": "The ledger was social memory: everyone in the village simply agreed, and the transfer was complete. Physical possession and ownership were decoupled. Source: Grokipedia 'Rai stones' (2026-09-05).",
@@ -16867,7 +16776,7 @@
     "choices": [
       "They agreed it was still valuable, still ownable, and still transferable",
       "They declared the crew liable for the full value in fish and taro",
-      "They dived down to retrieve fragments over the next generation",
+      "They sent the crew back to Palau to carve a replacement",
       "They classified it as destroyed and removed it from the record"
     ],
     "context": "The crew's testimony to the stone's exact size and quality was enough. The rai continued to circulate through community memory even though it was hundreds of feet under the Pacific. Source: William Henry Furness, The Island of Stone Money (1910); Grokipedia 'Rai stones' (2026-09-05).",
@@ -16875,13 +16784,13 @@
   },
   {
     "tier": 3,
-    "question": "Milton Friedman retold the tale of Yap's sunken stone in 1991, a stone still traded from owner to owner though it rested on the bottom of the sea. He compared it with the gold the United States 'owns' at Fort Knox. What did he say the two have in common?",
+    "question": "Milton Friedman retold the tale of Yap's sunken stone in 1991, a stone still traded from owner to owner though it lay on the bottom of the sea. Modern money, he wrote, works in much the same way. What did he say the two have in common?",
     "answer": "Almost nobody sees the actual money, but everyone agrees who owns it",
     "choices": [
       "Almost nobody sees the actual money, but everyone agrees who owns it",
-      "The money can be eaten if there is no food",
-      "The money is made by robots deep underground",
-      "The money is only useful for one week at a time"
+      "Both hold value only because a ruler's law demands it",
+      "Both are worth exactly what it cost to make them",
+      "Both are prized mainly for their beauty and rarity"
     ],
     "context": "Friedman's 1991 essay 'The Island of Stone Money' was later collected in his 1992 book Money Mischief. The Yap story became one of his favorite teaching devices. Source: Grokipedia 'Milton Friedman' (2026-09-05).",
     "topic": "rai-stones-of-yap-the-sunken-money-still-recognized"
@@ -16902,14 +16811,14 @@
   {
     "tier": 4,
     "question": "Milton Friedman, and the cypherpunks after him, drew one lesson from the stone money of Yap about what money really is. The cypherpunks were programmers of the 1990s who wanted digital cash, and they took up Friedman's story. Which claim did they all draw from Yap?",
-    "answer": "Money is a ledger; the physical medium is only a container for social agreement about who owns what",
+    "answer": "Money is a shared ledger; the stone or the coin is only its container",
     "choices": [
-      "Money is a ledger; the physical medium is only a container for social agreement about who owns what",
-      "Money must be issued by a sovereign to have value",
-      "Money is worthless unless backed one-to-one by gold in a vault",
-      "Money is fundamentally a religious or ceremonial object"
+      "Money is a shared ledger; the stone or the coin is only its container",
+      "Money must be issued by a sovereign to hold any value",
+      "Money is worthless unless each unit is backed by gold",
+      "Money is at heart a sacred or ceremonial object"
     ],
-    "context": "Once you accept that the ledger is the money, the shape of the container -- stone disc, gold bar, paper note, database entry -- is a secondary engineering choice. This is the conceptual bridge from rai to Bitcoin. Source: Friedman, Money Mischief (1992).",
+    "context": "Once the ledger is seen as the money, the shape of the container -- stone disc, gold bar, paper note, database entry -- is a secondary engineering choice. This is the conceptual bridge from rai to Bitcoin. Source: Friedman, Money Mischief (1992).",
     "topic": "rai-stones-of-yap-the-sunken-money-still-recognized"
   },
   {
@@ -16953,13 +16862,13 @@
   },
   {
     "tier": 1,
-    "question": "Harry Markopolos, a Boston analyst, started studying Bernie Madoff's results in 2000. No honest fund, he worked out, could make such steady gains month after month in rising and falling markets alike. For about eight years he warned the Securities and Exchange Commission. What happened to his warnings?",
+    "question": "Harry Markopolos started studying Bernie Madoff's results in 2000. No honest fund, he worked out, could make such steady gains month after month in rising and falling markets alike. He took his proof to the Securities and Exchange Commission. What came of it?",
     "answer": "The agency ignored him and the fraud kept going for years",
     "choices": [
       "The agency ignored him and the fraud kept going for years",
-      "The agency shut the fraud down that very week",
-      "The math expert was arrested for lying",
-      "The fraud turned out to be totally legal"
+      "The agency closed the fund within a few months of his warning",
+      "Madoff sued him and forced him to take back his charges",
+      "Other investors pulled out and the fund collapsed early"
     ],
     "context": "Harry Markopolos was a quantitative analyst at Rampart Investment Management. He determined by May 2000 that Madoff's steady ~1% monthly returns could not be produced by any real trading strategy. Source: Markopolos, No One Would Listen (Wiley 2010).",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
@@ -16967,14 +16876,14 @@
   {
     "tier": 2,
     "question": "Bernie Madoff confessed in December 2008 that his money-management firm had been a sham for decades. Years earlier Harry Markopolos had shown the Securities and Exchange Commission that Madoff's returns were impossibly smooth, rising almost every month with hardly a dip. What kind of scam had Madoff been running?",
-    "answer": "A Ponzi scheme, paying old investors with new investors' money",
+    "answer": "A Ponzi scheme, paying old clients with new money",
     "choices": [
-      "A Ponzi scheme, paying old investors with new investors' money",
+      "A Ponzi scheme, paying old clients with new money",
       "Insider trading on secret news tips",
       "Fake accounting to hide company losses",
       "Selling stocks the seller did not actually own"
     ],
-    "context": "Markopolos's November 7, 2005 submission was titled 'The World's Largest Hedge Fund Is a Fraud,' 19 pages with 29 red flags and mathematical proofs. The SEC opened but did not adequately pursue the investigation. Source: sec.gov (Markopolos submissions).",
+    "context": "Markopolos's November 7, 2005 submission was titled 'The World's Largest Hedge Fund Is a Fraud' and listed 29 red flags. The SEC opened but did not adequately pursue the investigation. Source: sec.gov (Markopolos submissions).",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
   },
   {
@@ -16983,9 +16892,9 @@
     "answer": "Government watchdogs can miss huge frauds, so investors still need to think for themselves",
     "choices": [
       "Government watchdogs can miss huge frauds, so investors still need to think for themselves",
-      "Watchdog agencies always catch fraud before regular people can",
-      "Fraud only happens when there are no rules at all",
-      "Big-name investors are always safe because the watchdog checks them daily"
+      "The watchdog needs a bigger budget and staff before it can catch such frauds",
+      "Funds like Madoff's should be barred from taking ordinary people's savings",
+      "Investors should trust only funds that the watchdog has fully examined"
     ],
     "context": "The SEC Inspector General's 2009 post-mortem report found approximately six substantive complaints raising significant red flags about Madoff between 1992 and 2008. None was adequately investigated. Source: sec.gov (OIG Report No. 509, August 31, 2009).",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
@@ -17022,48 +16931,35 @@
     "answer": "No one would listen",
     "choices": [
       "No one would listen",
-      "Everyone believed me at once",
-      "The regulators were quick to act",
-      "The suspect confessed on day one"
+      "Too good to be true",
+      "The wizard of lies",
+      "Madoff with the money"
     ],
-    "context": "Harry Markopolos, No One Would Listen: A True Financial Thriller (Wiley, 2010). The book documents the whole sequence from Markopolos's side, from his May 2000 discovery through Madoff's arrest. Source: wiley.com (Markopolos 2010).",
-    "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
-  },
-  {
-    "tier": 4,
-    "question": "Investigators added up Bernie Madoff's damage after his fraud collapsed in December 2008. The $65 billion reported in the news included years of made-up profits that his statements had shown his clients, money that never existed. How much real money had his investors actually put in and lost?",
-    "answer": "About $18 billion",
-    "choices": [
-      "About $18 billion",
-      "About $65 billion",
-      "About $650 million",
-      "About $6.5 trillion"
-    ],
-    "context": "Actual investor cash-in losses (principal) totaled approximately $18B, while the $65B figure included years of fictitious returns credited to statements. The Madoff Recovery Fund has recovered a substantial portion of the principal for victims. Source: madofftrustee.com (Picard trustee reports).",
+    "context": "Harry Markopolos, No One Would Listen: A True Financial Thriller (Wiley, 2010), tells the story from his side, from his May 2000 discovery through Madoff's arrest. Other books on the case carry their own titles: Erin Arvedlund's Too Good to Be True (2009), Diana Henriques's The Wizard of Lies (2011) and Jerry Oppenheimer's Madoff with the Money (2009). Source: wiley.com (Markopolos 2010).",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
   },
   {
     "tier": 4,
     "question": "An accountant inside a big company finds proof of a fraud and knows that blowing the whistle could cost him his job. Since 2010 the Securities and Exchange Commission has handed tipsters between 10 and 30 percent of whatever fines their information wins, rather than a flat reward. Why does a percentage work better?",
-    "answer": "The bigger the fraud they expose, the bigger their reward -- so they speak up sooner",
+    "answer": "The bigger the fraud they expose, the bigger their reward, so they speak up sooner",
     "choices": [
-      "The bigger the fraud they expose, the bigger their reward -- so they speak up sooner",
-      "A flat reward is illegal under most federal laws",
-      "Percentages are cheaper for the government in every case",
-      "Percentages are easier to spell out in a written contract"
+      "The bigger the fraud they expose, the bigger their reward, so they speak up sooner",
+      "A percentage keeps every reward small, so fewer false tips come in",
+      "A percentage is cheaper to pay out than any fixed reward would be",
+      "A percentage hides each tipster's reward from his employer"
     ],
     "context": "The SEC Office of the Whistleblower (created in the 2010 Dodd-Frank Act) offers 10-30% of monetary sanctions above $1M for actionable tips leading to enforcement action. It is an institutional attempt to align incentives with fraud detection. Source: sec.gov/whistleblower.",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
   },
   {
     "tier": 4,
-    "question": "A student of the Madoff case asks why a regulator would ignore detailed written warnings about a well-connected Wall Street figure, again and again. The Securities and Exchange Commission had such warnings about Bernie Madoff from Harry Markopolos for years, and the fraud ran on. What usually explains that pattern at a regulator?",
-    "answer": "The staff's own career incentives pulled them away from tough fraud detection",
+    "question": "A student of the Madoff case asks why a regulator would ignore detailed written warnings about a well-connected Wall Street figure, again and again. The Securities and Exchange Commission had such warnings about Bernie Madoff from Harry Markopolos for years, and the fraud ran on. Where do economists of the public-choice school, after George Stigler, first look for the cause?",
+    "answer": "The staff's own career incentives, which pulled them away from tough cases",
     "choices": [
-      "The staff's own career incentives pulled them away from tough fraud detection",
-      "Madoff's family members were secretly working at the SEC",
-      "SEC staff genuinely believed Madoff's math was correct",
-      "The SEC had zero legal power to investigate Madoff"
+      "The staff's own career incentives, which pulled them away from tough cases",
+      "The agency's thin budget, which left too few staff to check",
+      "The agency's weak legal powers over firms of Madoff's kind",
+      "Secret bribes paid by Madoff to the agency's top officials"
     ],
     "context": "Stigler's 1971 capture theory predicts that regulators tend to identify with, defer to, and hire from established regulated figures. The SEC's staff incentive structure did not reward embarrassing a former NASDAQ chairman. Markopolos, an outsider, was on the wrong side of that capture. Source: Stigler, Bell Journal (1971); SEC OIG Report 509 (2009). Stigler-style capture analysis: work out which specific decision-makers stand to lose or gain from an investigation. When the answer is that the decision-makers see mostly downside from investigating a well-connected figure, expect systematic under-enforcement. Source: Stigler (1971); Kwak, 'Cultural Capture and the Financial Crisis' (2013).",
     "topic": "regulatory-capture-at-the-sec-harry-markopolos-and-the-madof"
@@ -17074,35 +16970,22 @@
     "answer": "They dropped, and many more people could afford to fly",
     "choices": [
       "They dropped, and many more people could afford to fly",
-      "They rose sharply for everyone",
-      "They stayed exactly the same",
-      "Only rich people were allowed to fly at all"
+      "They rose for most travelers within a few years",
+      "They stayed about where the board had once set them",
+      "They fell at first, then climbed back above the old fares"
     ],
     "context": "The CAB, created in 1938, controlled airline routes and fares until the Airline Deregulation Act (October 24, 1978, Carter). Real airfares fell dramatically over the next two decades. Source: brookings.edu (Kahn + Deregulation history).",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
   },
   {
-    "tier": 1,
-    "question": "Alfred Kahn, a Cornell economist, championed one policy for the airlines as chairman of the Civil Aeronautics Board in 1977 and 1978. Jimmy Carter signed it into law. What is that policy called?",
-    "answer": "Deregulation",
-    "choices": [
-      "Deregulation",
-      "Nationalization",
-      "Taxation",
-      "Rationing"
-    ],
-    "context": "Alfred Kahn (1917-2010), a Cornell regulatory economist, chaired the CAB 1977-78 and led its dismantling. He is remembered as the father of airline deregulation. Source: en.wikipedia.org/wiki/Alfred_E._Kahn.",
-    "topic": "regulatory-capture-case-studies-icc-cab-fcc"
-  },
-  {
     "tier": 2,
     "question": "A radio station owner hires a lobbyist in Washington to keep a rival station off the air. His license from the Federal Communications Commission gives him a slice of the airwaves no rival may legally use, and license holders like him fought for years to slow cable television too. What does this behavior show?",
-    "answer": "Government-granted licenses can turn into protected privileges the holders fight to defend",
+    "answer": "A license granted by government can become a privilege its holders fight to keep",
     "choices": [
-      "Government-granted licenses can turn into protected privileges the holders fight to defend",
-      "Free markets always keep prices low for consumers",
-      "New technologies always beat old ones automatically",
-      "Consumer demand alone decides who broadcasts what"
+      "A license granted by government can become a privilege its holders fight to keep",
+      "A broadcast market can hold only one strong station, a natural monopoly",
+      "Rival stations would crowd the airwaves until no one could be heard",
+      "Incumbents lobby mainly to shield listeners from weak, unreliable stations"
     ],
     "context": "The FCC was created by the 1934 Communications Act, replacing the earlier 1927 Federal Radio Commission. Broadcast-license politics is a classic capture case: cable TV was delayed for years by broadcaster opposition mediated through the FCC. Source: en.wikipedia.org/wiki/Federal_Communications_Commission.",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
@@ -17126,11 +17009,11 @@
     "answer": "The Office of the Comptroller of the Currency and the Office of Thrift Supervision",
     "choices": [
       "The Office of the Comptroller of the Currency and the Office of Thrift Supervision",
-      "The Federal Reserve and the Treasury Department",
-      "The Securities and Exchange Commission and the CFTC",
-      "The Consumer Financial Protection Bureau and HUD"
+      "The National Credit Union Administration and the Farm Credit Administration",
+      "The Securities and Exchange Commission and the Commodity Futures Trading Commission",
+      "The Small Business Administration and the Export-Import Bank of the United States"
     ],
-    "context": "The OCC (chartering and supervising national banks) and the FDIC (insuring deposits and supervising state non-Fed member banks) both faced heavy post-crisis criticism for capture and revolving-door personnel flows. Source: Financial Crisis Inquiry Commission Report (2011).",
+    "context": "The OCC charters and supervises national banks; the OTS supervised savings-and-loans, among them Countrywide, IndyMac and Washington Mutual, and was folded into the OCC by the Dodd-Frank Act in 2011. Critics pointed to the flow of staff between both agencies and the banks they oversaw. Source: Financial Crisis Inquiry Commission Report (2011).",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
   },
   {
@@ -17139,9 +17022,9 @@
     "answer": "The regulators come from and go back to the industry they oversee",
     "choices": [
       "The regulators come from and go back to the industry they oversee",
-      "The industry secretly bribes every regulator with cash",
-      "The public loses interest and stops voting for reform",
-      "The agency runs out of money and shuts down"
+      "The industry pays every regulator secret bribes in cash",
+      "The agency's budget shrinks until it cannot enforce its rules",
+      "Judges overturn the agency's rules whenever the industry sues"
     ],
     "context": "Marver Bernstein, Regulating Business by Independent Commission (Princeton University Press, 1955), introduced the four-stage life cycle: gestation, youth, maturity, and old age -- with capture occurring in the maturity phase. Source: press.princeton.edu (Bernstein 1955).",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
@@ -17149,12 +17032,12 @@
   {
     "tier": 4,
     "question": "Gabriel Kolko, a historian, argued that the big railroad companies lobbied for the Interstate Commerce Commission themselves when Congress created it in 1887. The airlines' Civil Aeronautics Board and the early Federal Communications Commission ended up serving their industries too. George Stigler judged capture by an agency's results, not its intentions. Which visible behavior is the strongest sign that an agency has been captured?",
-    "answer": "The agency blocks new companies from entering while protecting the profits of existing firms",
+    "answer": "The agency keeps new firms out while it guards the profits of firms already in",
     "choices": [
-      "The agency blocks new companies from entering while protecting the profits of existing firms",
-      "The agency's budget grows year over year",
-      "The agency writes detailed technical rules",
-      "The agency has a large research staff"
+      "The agency keeps new firms out while it guards the profits of firms already in",
+      "The agency's budget and staff grow larger with every passing year",
+      "The agency writes long, detailed rules that few outsiders can follow",
+      "The agency hires its experts from universities, not from the industry"
     ],
     "context": "Capture is measured by outcomes, not intent. If regulation systematically raises incumbent profits and blocks new competitors, the regulation is functioning like an industry-serving barrier, whatever its stated purpose. Source: Stigler, Bell Journal (1971); Kleiner, Licensing Occupations (Upjohn 2006). The common thread across the ICC, CAB, and FCC: agencies whose original public-interest justification gradually gave way to protecting incumbent firms against new entrants. Stigler's 1971 paper formalized the pattern as theory. Source: Stigler, Bell Journal (1971); Kolko, Triumph of Conservatism (1963).",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
@@ -17169,7 +17052,7 @@
       "Stigler's theory has been refuted by studies of environmental agencies",
       "Stigler's theory applies only in states with weak public-service ethics"
     ],
-    "context": "From transportation to broadcasting to banking to occupational licensing, empirical work has confirmed the Stigler-Peltzman pattern of incumbent-serving regulation. The theory is now standard even outside the Chicago tradition. Source: Levine + Forrence, Journal of Law, Economics, and Organization (1990); Carpenter + Moss, Preventing Regulatory Capture (Cambridge 2014).",
+    "context": "Chicago economists read the record, from transport and broadcasting to banking and occupational licensing, as confirming the Stigler-Peltzman pattern of incumbent-serving regulation. Critics such as Daniel Carpenter and David Moss, in Preventing Regulatory Capture (Cambridge, 2014), argue that capture is real but often overdiagnosed, and that it can be prevented. Source: Peltzman, 'Toward a More General Theory of Regulation' (1976); Carpenter and Moss (2014).",
     "topic": "regulatory-capture-case-studies-icc-cab-fcc"
   },
   {
@@ -17217,29 +17100,16 @@
     "answer": "Regular workers, who get the money last after prices have already climbed",
     "choices": [
       "Regular workers, who get the money last after prices have already climbed",
-      "The bankers who got the money first",
-      "The big companies that got new loans",
-      "Nobody -- everyone gets equal amounts"
+      "Borrowers, who must pay back their loans in dearer money",
+      "The government, whose tax money buys less as prices climb",
+      "The central bank, which must one day pay the money back"
     ],
     "context": "Cantillon (c. 1680s-1734) was an Irish-born banker who lived in Paris. His trading in the Mississippi Bubble made his fortune; his shorting of it made him a rare survivor. Source: Grokipedia 'Richard Cantillon' (2026-09-05). In Cantillon's day, mines and government-favored merchants received new coins first. They could buy at old prices before prices adjusted. Late-receivers -- wage earners, savers -- paid the new higher prices with old wages. Source: Cantillon, Essai (1755).",
     "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
   },
   {
-    "tier": 1,
-    "question": "Richard Cantillon wrote his great book on trade in French in Paris around 1730, and for two decades it passed from hand to hand among French thinkers in manuscript. It was printed at last in 1755, more than twenty years after his death. What is its original French title?",
-    "answer": "Essai sur la Nature du Commerce en General",
-    "choices": [
-      "Essai sur la Nature du Commerce en General",
-      "Traite de Politique Economique",
-      "Discours sur l'Economie Politique",
-      "Reflexions sur la Formation des Richesses"
-    ],
-    "context": "The essay circulated in manuscript for two decades and was finally published in 1755, twenty-one years after Cantillon's mysterious 1734 death by house fire in London. Source: Grokipedia 'Essai sur la Nature du Commerce en General' (2026-09-05).",
-    "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
-  },
-  {
     "tier": 2,
-    "question": "Murray Rothbard and Jesús Huerta de Soto revived the idea of an Irish-born banker who grew rich in Paris in the early 1700s: new money comes in at certain doors, a mine, a royal treasury, a bank, and those nearest spend it before prices adjust. What name did they give the pattern?",
+    "question": "Murray Rothbard and Jesús Huerta de Soto revived the idea of an Irish-born banker who grew rich in Paris in the early 1700s: new money comes in at certain doors, a mine, a royal treasury, a bank, and those nearest spend it before prices adjust. What name does the pattern go by today?",
     "answer": "The Cantillon effect",
     "choices": [
       "The Cantillon effect",
@@ -17269,9 +17139,9 @@
     "answer": "The lag between money creation and consumer-price adjustment, with asset prices moving first",
     "choices": [
       "The lag between money creation and consumer-price adjustment, with asset prices moving first",
-      "The complete absence of any asset-price effect",
-      "The immediate uniform response of all prices",
-      "The concentration of the effect on export prices only"
+      "The lag between money creation and asset-price adjustment, with consumer prices moving first",
+      "All prices rising together, at once, as soon as the new money was created",
+      "Wages rising ahead of prices, so that workers were the first to gain"
     ],
     "context": "Cantillon explicitly described the timing: new money enters at specific points, those points enjoy the old prices, prices then adjust over months and years, late-receivers pay the higher prices with wages set at the old level. The modern QE-then-CPI sequence follows the pattern precisely. Source: Cantillon, Essai (1755).",
     "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
@@ -17305,14 +17175,14 @@
   {
     "tier": 5,
     "question": "A Londoner reading the news in May 1734 learned that fire had gutted Richard Cantillon's house, apparently with the banker inside. Whispers began at once that someone had set the fire on purpose. Which suspicion has hung over his death from that day on?",
-    "answer": "An insurance-fraud murder by a dismissed servant",
+    "answer": "Murder by a servant he had dismissed, who set the fire to hide it",
     "choices": [
-      "An insurance-fraud murder by a dismissed servant",
-      "A political assassination by John Law loyalists",
-      "A heart attack while asleep unrelated to the fire",
-      "A duel gone wrong on the London docks"
+      "Murder by a servant he had dismissed, who set the fire to hide it",
+      "A killing ordered by John Law to silence an old rival",
+      "Arson by a London mob angry at a foreign banker",
+      "A rival banker's revenge for the fortune he made in 1720"
     ],
-    "context": "Cantillon's death by house fire remains unsolved. Contemporary accounts suggest a dismissed servant may have set the fire to cover an insurance-fraud murder. The economist most famous for shorting a bubble may have been killed for money by someone who worked for him. Source: Grokipedia 'Richard Cantillon' (2026-09-05).",
+    "context": "Cantillon's death by house fire on the night of 13-14 May 1734 remains unsolved. Suspicion fell on his dismissed cook, Joseph Denier, who was thought to have killed and robbed him and set the blaze to hide the crime, and who fled abroad and was never caught. Source: Grokipedia 'Richard Cantillon'.",
     "topic": "richard-cantillon-the-1730s-essay-on-moneys-first-receivers"
   },
   {
@@ -17386,8 +17256,8 @@
     "answer": "It caused tens of millions of deaths across the countries that tried it",
     "choices": [
       "It caused tens of millions of deaths across the countries that tried it",
-      "It made everyone wealthy and happy",
-      "It was tried but never in a real country",
+      "Its crimes were the work of a few bad leaders, not the system",
+      "It took a heavy toll at first but soon gave its people plenty",
       "It caused about the same deaths as any other system"
     ],
     "context": "Conquest was born 1917 in Great Malvern, England, and died 2015 at Stanford, California. He had worked at the Foreign Office Information Research Department before turning to Sovietology in the 1950s. Source: grokipedia.com/page/Robert_Conquest.",
@@ -17399,9 +17269,9 @@
     "answer": "When one group controls everything, they can turn violence on anyone with no check",
     "choices": [
       "When one group controls everything, they can turn violence on anyone with no check",
-      "Central planning always produces plenty for everyone",
-      "Free markets caused Stalin's arrests",
-      "The Soviet economy grew faster than every free country"
+      "Terror breaks out only when a state is too weak to keep order",
+      "Planning works well so long as the planners mean well",
+      "Violence comes from poverty, so a rich state is safe from it"
     ],
     "context": "Published by Macmillan of London in 1968. The book drew on defector testimony, Soviet dissident samizdat, and close reading of the Soviet published record. Source: grokipedia.com/page/The_Great_Terror.",
     "topic": "robert-conquests-great-terror-1968-the-vindicated-sovietolog"
@@ -17581,35 +17451,35 @@
     "answer": "Sue the factory, or charge it a fee to keep polluting",
     "choices": [
       "Sue the factory, or charge it a fee to keep polluting",
-      "Nothing -- smoke is free",
-      "Only the government can act",
-      "Move his farm to another country"
+      "Ask the state to put a tax on the factory's smoke",
+      "Claim a share of the factory's yearly profits",
+      "Order the factory to shut down by his own authority"
     ],
     "context": "Ronald Coase (1910-2013) won the 1991 Nobel 'for his discovery and clarification of the significance of transaction costs and property rights for the institutional structure and functioning of the economy.' Source: nobelprize.org (Coase 1991).",
     "topic": "ronald-coase-transaction-costs-and-social-cost"
   },
   {
     "tier": 2,
-    "question": "Ronald Coase saw that a company hiring an outside firm pays more than the contract price. Someone has to find the right supplier, bargain over terms, write the contract, check the work and go to court if things go wrong. What do economists call those extra costs?",
-    "answer": "Transaction costs",
+    "question": "Ronald Coase, a young economist, asked in 1937 why companies exist at all. If markets match buyers and sellers so well, a business could hire someone afresh for each task as it came up. Why, in Coase's answer, does it keep workers on hand instead?",
+    "answer": "Making a new deal for every task costs time, effort and money",
     "choices": [
-      "Transaction costs",
-      "Marginal costs",
-      "Opportunity costs",
-      "Sunk costs"
+      "Making a new deal for every task costs time, effort and money",
+      "Workers on the payroll will work for less than outsiders",
+      "Owning more lets a firm squeeze its suppliers and rivals",
+      "Managers like to command people and build ever larger firms"
     ],
-    "context": "Transaction costs is Coase's coinage for the costs of using the price mechanism. Where in-house costs are lower, firms replace market transactions with command relationships. The firm's size is where the two costs meet. Source: Coase, 'The Nature of the Firm' (1937).",
+    "context": "Coase called these the costs of using the price mechanism: finding a partner, haggling, writing a contract, checking the work. Economists now call them transaction costs. A firm, in his account, grows until doing one more job in-house costs as much as buying it on the market. Source: Coase, 'The Nature of the Firm' (1937).",
     "topic": "ronald-coase-transaction-costs-and-social-cost"
   },
   {
     "tier": 3,
-    "question": "Arthur Pigou, a Cambridge economist, taught that when a factory's smoke harms a neighbor, the state should tax the harm. Most economists followed him until Ronald Coase published a very different answer in 1960, one that held so long as bargaining between the two sides was cheap. What did Coase claim?",
+    "question": "Arthur Pigou, a Cambridge economist, taught that when a factory's smoke harms a neighbor, the state should tax the harm. Most economists followed him until Ronald Coase published a very different answer in 1960, one that held whenever striking a deal between the two sides cost little. What did Coase claim?",
     "answer": "The factory and the neighbor can bargain to an efficient outcome themselves",
     "choices": [
       "The factory and the neighbor can bargain to an efficient outcome themselves",
       "The state should immediately shut down the factory",
       "The neighbor should be forced to move at government expense",
-      "The government should build a rival factory to compete on pollution"
+      "The state should set a legal limit on how much smoke the factory makes"
     ],
     "context": "Coase's insight: when parties can negotiate, they will bargain to the outcome that maximizes joint value, regardless of who initially holds the legal right. The initial rights determine WHO PAYS, not the final allocation. Source: Coase, 'The Problem of Social Cost' (1960).",
     "topic": "ronald-coase-transaction-costs-and-social-cost"
@@ -17620,9 +17490,9 @@
     "answer": "That the two sides can bargain cheaply, not who is given the right first",
     "choices": [
       "That the two sides can bargain cheaply, not who is given the right first",
-      "That the government must always pick a side and force the other to obey",
-      "That the factory must be shut down no matter what",
-      "That the farmer must always move away from the factory"
+      "That the right goes to the farmer, since the harm falls on him",
+      "That the state taxes the smoke at exactly the harm it causes",
+      "That whichever side was there first keeps the right"
     ],
     "context": "George Stigler named it 'the Coase theorem' in his 1966 Theory of Price textbook. Coase himself was ambivalent about the honorific and worried the theorem was widely misinterpreted. Source: Stigler, Theory of Price (Macmillan 1966).",
     "topic": "ronald-coase-transaction-costs-and-social-cost"
@@ -17646,22 +17516,22 @@
     "answer": "Command relationships between manager and employee",
     "choices": [
       "Command relationships between manager and employee",
-      "Continuous auctions among all employees",
-      "Random assignment of tasks by lottery",
-      "Government dictate over daily operations"
+      "Votes among the workers on how the work is shared",
+      "A fresh contract with each worker for every task",
+      "Customs handed down from the firm's founders"
     ],
     "context": "Inside a firm a manager instructs an employee what to do. Between firms, prices coordinate. Coase's question: why draw the line here rather than there? His answer: transaction costs. Source: Coase, 'The Nature of the Firm' (1937).",
     "topic": "ronald-coase-transaction-costs-and-social-cost"
   },
   {
     "tier": 4,
-    "question": "Ronald Coase warned fellow economists against one bad habit: setting a messy real market beside a perfect textbook government, or a messy real government beside a perfect textbook market, and then declaring a winner. His two great papers, of 1937 and 1960, took another road. What analytical move do they share?",
-    "answer": "They compare institutional forms on their real, transaction-cost-inclusive terms",
+    "question": "Ronald Coase's 1937 paper asked why firms exist; his 1960 paper asked how a farmer and a smoky factory should settle their quarrel. The questions differ, but economists who study him find one method running through both. Which method do the two papers share?",
+    "answer": "Weighing real markets, firms and governments, costs and all",
     "choices": [
-      "They compare institutional forms on their real, transaction-cost-inclusive terms",
-      "They assume all transaction costs are zero for tractability",
-      "They favor central planning over private ordering",
-      "They apply mathematical topology to price theory"
+      "Weighing real markets, firms and governments, costs and all",
+      "Measuring each real market against a model of perfect competition",
+      "Assuming that deals cost nothing, so markets always work perfectly",
+      "Testing each claim against long runs of national statistics"
     ],
     "context": "The Coase move: never compare a real institution to an idealized alternative. Firms, markets, private bargains, and government all have their own transaction costs. Comparative institutional analysis must count them all. Source: Coase, Essays on Economics and Economists (Chicago 1994).",
     "topic": "ronald-coase-transaction-costs-and-social-cost"
@@ -17676,46 +17546,46 @@
       "Gold coins",
       "Personal checks"
     ],
-    "context": "Ross Ulbricht (born 1984) founded Silk Road in early 2011. Charlie Shrem ran BitInstant and later served prison time on separate charges; Roger Ver was an early Bitcoin evangelist; Cody Wilson ran the 3D-printed-gun project Defense Distributed. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht.",
+    "context": "Silk Road ran as a hidden Tor site from early 2011. Bitcoin payments carry no names, only addresses, though every one is written on a public ledger that investigators later learned to follow. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht.",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 1,
     "question": "The pirate in the film The Princess Bride hands his name down from one man to the next, so the real Dread Pirate Roberts can never be caught. Ross Ulbricht took that name to run his hidden market. Why would the boss of an illegal market want a name like that?",
-    "answer": "So investigators can't be sure the person they catch is the real founder",
+    "answer": "So agents could never be sure they had caught the real founder",
     "choices": [
-      "So investigators can't be sure the person they catch is the real founder",
-      "So he could win a movie-fan award",
-      "So his mom could find him easily",
-      "Because his real name was taken online"
+      "So agents could never be sure they had caught the real founder",
+      "So the police would take the whole site for a harmless joke",
+      "So buyers would trust a name they already knew from a film",
+      "So rival markets could not legally copy his market's name"
     ],
-    "context": "Ulbricht used the pseudonym Dread Pirate Roberts (DPR), from The Princess Bride (1987), where the title passes between wearers. The other names are unrelated. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht.",
+    "context": "Ulbricht used the pseudonym Dread Pirate Roberts (DPR), from The Princess Bride (1987), where the title passes between wearers. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht.",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 2,
     "question": "Federal agents caught Ross Ulbricht on October 1, 2013, with his laptop open and logged in to his secret market's controls, and they had staged the arrest with care. Where did they find him?",
-    "answer": "the science-fiction section of the Glen Park branch of the San Francisco Public Library",
+    "answer": "The science-fiction section of a San Francisco public library",
     "choices": [
-      "the science-fiction section of the Glen Park branch of the San Francisco Public Library",
-      "the outdoor patio of the Bello Cafe coffee shop in the San Francisco Mission District",
-      "the third-floor entryway of his rented apartment on Hickory Street in San Francisco",
-      "the international-arrivals lobby at San Francisco International Airport terminal one"
+      "The science-fiction section of a San Francisco public library",
+      "A desk in a university computer lab across the bay",
+      "The doorway of his rented room in San Francisco",
+      "The arrivals hall at San Francisco's international airport"
     ],
-    "context": "The arrest took place October 1, 2013 in the science-fiction section of the Glen Park branch of the San Francisco Public Library, with Ulbricht's laptop open and unencrypted. The coffee-shop and apartment guesses are common misremembers; the airport was not involved. Source: https://en.wikipedia.org/wiki/Silk_Road_(marketplace).",
+    "context": "Agents found Ulbricht on October 1, 2013 in the science-fiction section of the Glen Park branch of the San Francisco Public Library, logged in to the site's controls. Source: https://en.wikipedia.org/wiki/Silk_Road_(marketplace).",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 2,
     "question": "Ross Ulbricht sat at his open laptop in a public place in San Francisco on October 1, 2013, as federal agents closed in. Had he closed the lid, the laptop's full-disk encryption would have sealed the drive for good, and with it the proof that he ran the Silk Road. What did the agents do so he could not lock it?",
-    "answer": "physically distracted him to keep him from locking the running laptop",
+    "answer": "Staged a loud quarrel nearby, then grabbed the laptop while he looked up",
     "choices": [
-      "physically distracted him to keep him from locking the running laptop",
-      "used a court-ordered decryption key from Apple",
-      "captured the disk encryption key from the router",
-      "brute-forced the password over several days"
+      "Staged a loud quarrel nearby, then grabbed the laptop while he looked up",
+      "Waited for him to step away, then took the laptop from his table",
+      "Broke into it over the library's wireless network before moving in",
+      "Tricked him into typing his password on a fake login page"
     ],
-    "context": "Agents staged a couple's argument nearby to distract Ulbricht, then grabbed the running (logged-in-as-DPR) laptop before he could lock it. Apple decryption keys and router-side captures do not exist for this class of full-disk encryption; brute-force would not have succeeded. Source: https://en.wikipedia.org/wiki/Silk_Road_(marketplace).",
+    "context": "Two agents staged an argument nearby to distract Ulbricht, and others grabbed the open laptop, still logged in to the site's controls, before he could lock it. Source: https://en.wikipedia.org/wiki/Silk_Road_(marketplace).",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
@@ -17728,64 +17598,38 @@
       "a 10-year sentence in a minimum-security prison",
       "a 5-year suspended sentence with community service"
     ],
-    "context": "Judge Katherine Forrest sentenced Ulbricht to two life sentences plus 40 years without parole. The lesser sentences never applied. Source: https://en.wikipedia.org/wiki/Ross_Ulbricht. The prosecution cited the site's roughly $1.2 billion in sales and unproven murder-for-hire allegations; the defense argued the sentence was disproportionate for a first-time nonviolent offense. Source: grokipedia.com/page/Ross_Ulbricht.",
+    "context": "Judge Katherine Forrest sentenced Ulbricht to two life sentences plus 40 years without parole. The prosecution cited the site's roughly $1.2 billion in sales and unproven murder-for-hire allegations; the defense argued the sentence was disproportionate for a first-time nonviolent offense. Source: grokipedia.com/page/Ross_Ulbricht.",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 3,
-    "question": "One member of Ross Ulbricht's family saw eleven years of campaigning pay off in January 2025, when Donald Trump pardoned him. That family member had led the fight to free him since his sentencing in 2015, arguing the punishment was far too harsh. Who was it?",
+    "question": "One person close to Ross Ulbricht saw more than a decade of campaigning pay off in January 2025, when Donald Trump pardoned him. That person had led the public fight to free him, arguing the punishment was far too harsh. Who was it?",
     "answer": "Lyn Ulbricht (his mother)",
     "choices": [
       "Lyn Ulbricht (his mother)",
       "Kirk Ulbricht (his father)",
-      "Cally Ulbricht (his sister)",
-      "Judith Ulbricht (his grandmother)"
+      "Joshua Dratel (his trial lawyer)",
+      "Roger Ver (an early Bitcoin backer)"
     ],
-    "context": "Lyn Ulbricht ran the FreeRoss.org campaign for eleven years. Kirk (his father) and Cally (his sister) were supportive but did not lead the public campaign; Judith is not a named figure in the case. Source: https://freeross.org/.",
-    "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
-  },
-  {
-    "tier": 4,
-    "question": "Ross Ulbricht promoted his new market online in late January 2011. It traded drugs and forged papers on the Tor network with no real names attached, and it lasted until federal agents seized it and arrested him. About how long did it run?",
-    "answer": "about 2 years and 9 months",
-    "choices": [
-      "about 2 years and 9 months",
-      "about 6 months in operation",
-      "about 5 years in operation",
-      "about 10 years in operation"
-    ],
-    "context": "Silk Road ran from January 2011 until the October 2013 shutdown -- roughly 2 years and 9 months. The alternative durations do not match the actual operating window. Source: https://en.wikipedia.org/wiki/Silk_Road_(marketplace).",
-    "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
-  },
-  {
-    "tier": 5,
-    "question": "Agents going through Ross Ulbricht's computer after they shut his market down in October 2013 seized a hoard of digital coins they found there. US Marshals auctioned the coins off later, in batches. Roughly how many coins had the agents seized?",
-    "answer": "about 144,000 BTC",
-    "choices": [
-      "about 144,000 BTC",
-      "about 10,000 BTC",
-      "about 1 million BTC",
-      "about 20 BTC"
-    ],
-    "context": "The initial October 2013 seizure at Silk Road's takedown was roughly 144,000 BTC (later seizures added more). The Marshals auctioned tranches through 2014-15, notably to buyer Tim Draper. Source: https://en.wikipedia.org/wiki/Silk_Road_(marketplace).",
+    "context": "Lyn Ulbricht ran the FreeRoss.org campaign for more than a decade; Joshua Dratel defended her son at his 2015 trial. Source: https://freeross.org/.",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 5,
     "question": "Donald Trump, on the second day of his second term, January 21, 2025, pardoned Ross Ulbricht, as he had promised the Libertarian Party's national convention in 2024. Libertarian writers looked back on the eleven-year campaign that had led to it. What lesson did they draw about how a movement should push back when its ideas run into a courtroom?",
-    "answer": "That sustained public campaigning for a specific person can succeed where abstract advocacy fails, even against the largest legal apparatus",
+    "answer": "That a long public campaign for one named person can win where abstract advocacy fails",
     "choices": [
-      "That sustained public campaigning for a specific person can succeed where abstract advocacy fails, even against the largest legal apparatus",
-      "That accepting the original sentence quietly and trusting the appeals process is the only ethical response for a movement that respects the rule of law",
-      "That armed resistance is the appropriate remedy for perceived legal injustice when the sentence appears disproportionate on nonviolent charges",
-      "That prosecutorial verdicts on nonviolent first-time offenders are always correct in retrospect and public campaigning for clemency is always a mistake"
+      "That a long public campaign for one named person can win where abstract advocacy fails",
+      "That changing the law first does more good than fighting for any one person",
+      "That quiet lobbying wins clemency more often than loud public pressure",
+      "That a movement should keep its causes abstract, never tied to one case"
     ],
-    "context": "The libertarian argument (Rand Paul, Roger Ver, Lyn Ulbricht's own writings): the eleven-year FreeRoss.org campaign shows that specific-person advocacy is the operative pressure. The other options are the opposite of the movement's approach. Source: https://freeross.org/; Rand Paul Senate statements 2019-25.",
+    "context": "Libertarian writers, Lyn Ulbricht among them, credited the eleven-year FreeRoss.org campaign: pressure for one named person moved a president where abstract arguments about sentencing had not. Source: https://freeross.org/.",
     "topic": "ross-ulbricht-dpr-the-life-sentence-and-the-january-2025-com"
   },
   {
     "tier": 1,
-    "question": "Saifedean Ammous, an economist teaching in Beirut, published a book with John Wiley and Sons in 2018 making the case that Bitcoin might be the hardest form of money ever made. No book about Bitcoin has sold more since, and it has appeared in more than forty languages. What is its title?",
+    "question": "Saifedean Ammous, an economist teaching in Beirut, published a book with John Wiley and Sons in 2018 making the case that Bitcoin might be the hardest form of money ever made. It has since been translated into dozens of languages. What is its title?",
     "answer": "The Bitcoin Standard: The Decentralized Alternative to Central Banking",
     "choices": [
       "The Bitcoin Standard: The Decentralized Alternative to Central Banking",
@@ -17793,7 +17637,7 @@
       "The Bitcoin Manifesto: A New Financial Order",
       "The Bitcoin Book: An Introduction for Investors"
     ],
-    "context": "'The Bitcoin Standard: The Decentralized Alternative to Central Banking' (Wiley, 2018) has been translated into 40+ languages. The other titles are fabrications. Source: https://www.wiley.com/en-us/The+Bitcoin+Standard%3A+The+Decentralized+Alternative+to+Central+Banking-p-9781119473862.",
+    "context": "'The Bitcoin Standard: The Decentralized Alternative to Central Banking' (Wiley, 2018) has been translated into dozens of languages. Source: https://www.wiley.com/en-us/The+Bitcoin+Standard%3A+The+Decentralized+Alternative+to+Central+Banking-p-9781119473862.",
     "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
   },
   {
@@ -17802,11 +17646,11 @@
     "answer": "it doubles every four years, heading toward infinity as issuance approaches zero",
     "choices": [
       "it doubles every four years, heading toward infinity as issuance approaches zero",
-      "it stays flat throughout Bitcoin's existence",
-      "it falls each cycle because miners create more coins",
-      "it is set annually by a Bitcoin holder vote"
+      "it halves every four years, falling toward zero as issuance slows",
+      "it stays about the same, since stock and new supply grow together",
+      "it grows by a fixed amount each year, steadily and without steps"
     ],
-    "context": "Ammous's argument: because the halving cuts new issuance in half every four years while stock keeps accumulating, Bitcoin's stock-to-flow ratio approximately doubles each cycle -- heading toward infinity as issuance approaches zero. The other options misdescribe the halving schedule. Source: The Bitcoin Standard (2018) ch 8.",
+    "context": "Ammous's argument: because the halving cuts new issuance in half every four years while stock keeps accumulating, Bitcoin's stock-to-flow ratio approximately doubles each cycle -- heading toward infinity as issuance approaches zero. Source: The Bitcoin Standard (2018) ch 8.",
     "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
   },
   {
@@ -17815,50 +17659,11 @@
     "answer": "hard money",
     "choices": [
       "hard money",
-      "quick money",
+      "fiat money",
       "narrow money",
       "helicopter money"
     ],
-    "context": "'Hard money' (money hard to produce more of) versus 'easy money' (money easy to produce more of) is the classical Austrian distinction Ammous inherits. Quick money, narrow money (M0/M1), and helicopter money are different concepts from other traditions. Source: The Bitcoin Standard (2018) ch 1.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 4,
-    "question": "Saifedean Ammous got his university's order in 2020, as the pandemic spread: every class at the Lebanese American University in Beirut, where he taught economics, was to move onto remote video. He left the university that year. Why, by his own account, did he leave?",
-    "answer": "he refused to comply with the university's online-teaching requirements during COVID lockdowns and was fired",
-    "choices": [
-      "he refused to comply with the university's online-teaching requirements during COVID lockdowns and was fired",
-      "he was offered an endowed chair at Harvard's economics department and moved to Cambridge Massachusetts",
-      "he retired from academia to write books and produce his podcast full-time from Beirut",
-      "his university lost its formal accreditation during the Lebanese banking crisis and closed its doors"
-    ],
-    "context": "Ammous refused the mandatory online-teaching-with-lockdown regime, argued the lockdowns were themselves an example of the concentrated-power failure he had been writing about, and was dismissed from LAU in 2020. Source: Ammous public statements 2020-21; https://en.wikipedia.org/wiki/Saifedean_Ammous.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 4,
-    "question": "Saifedean Ammous launched his own website and began charging students directly for his lectures and writings, and thousands of them followed him online. What does his move show about buyers, sellers and middlemen on the internet?",
-    "answer": "Buyers and sellers can now connect directly, cutting the middleman out",
-    "choices": [
-      "Buyers and sellers can now connect directly, cutting the middleman out",
-      "Universities are legally required to bless every teacher who charges money",
-      "Direct-sales websites only work for physical products, never for lessons",
-      "Middlemen always add more value than the direct sellers who replace them"
-    ],
-    "context": "Ammous built saifhouse.com as a subscription platform for his Principles of Economics course and other material -- now with thousands of paying students. Khan Academy, Coursera, and Mises Institute are unrelated existing platforms. Source: https://saifhouse.com/.",
-    "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
-  },
-  {
-    "tier": 5,
-    "question": "A student signs up for Saifedean Ammous's independent Principles of Economics course, taught outside any university. Students like her often compare the course to the American home of the Austrian school of economics. Which institute do they name?",
-    "answer": "the Ludwig von Mises Institute in Auburn, Alabama",
-    "choices": [
-      "the Ludwig von Mises Institute in Auburn, Alabama",
-      "the London School of Economics",
-      "the Cato Institute in Washington DC",
-      "the Adam Smith Institute in London"
-    ],
-    "context": "Ammous's independent Austrian-economics teaching is most often compared to the Mises Institute (Lew Rockwell, Auburn AL, founded 1982), the modern American home of Rothbardian Austrian economics. The other institutions have different orientations and are not the standard comparison. Source: https://mises.org/; https://saifhouse.com/.",
+    "context": "'Hard money' (money hard to produce more of) versus 'easy money' (money easy to produce more of) is the classical Austrian distinction Ammous inherits. Fiat money, money by government decree, is his chief example of the easy kind; narrow money and helicopter money name other things, a narrow measure of the money supply and new money handed straight to the public. Source: The Bitcoin Standard (2018) ch 1.",
     "topic": "saifedean-ammous-the-bitcoin-standard-the-fiat-standard-and-"
   },
   {
@@ -18049,11 +17854,11 @@
     "answer": "The double-spending problem",
     "choices": [
       "The double-spending problem",
-      "The counterfeit-paper problem",
-      "The lost-password problem",
-      "The unreadable-code problem"
+      "The dining philosophers problem",
+      "The halting problem",
+      "The traveling salesman problem"
     ],
-    "context": "Double-spending: how do you stop someone from spending the same digital coin twice, WITHOUT a central authority checking every transaction? Every prior digital-cash design had needed a trusted issuer (Chaum's DigiCash, e-gold, and others). Source: bitcoin.org/bitcoin.pdf.",
+    "context": "Double-spending: how can anyone stop the same digital coin being spent twice, without a central authority checking every transaction? Every earlier digital-cash design had needed a trusted issuer (Chaum's DigiCash, e-gold and others). Source: bitcoin.org/bitcoin.pdf.",
     "topic": "satoshi-nakamoto-and-the-white-paper"
   },
   {
@@ -18062,24 +17867,11 @@
     "answer": "They were the people most likely to spot flaws and try running the code",
     "choices": [
       "They were the people most likely to spot flaws and try running the code",
-      "They controlled the servers that would host the new coin",
-      "They were required by law to review new money designs",
-      "They had already agreed to buy every coin in advance"
+      "They were the people most likely to invest money in the new coin",
+      "They were the people most likely to keep the design a secret",
+      "They were the people best placed to win approval from regulators"
     ],
     "context": "Perry Metzger ran the metzdowd.com cryptography list, a well-known venue for reviewing cryptographic proposals throughout the 1990s and 2000s. The Bitcoin white paper appeared as a normal posting on that list. Source: metzdowd.com archives.",
-    "topic": "satoshi-nakamoto-and-the-white-paper"
-  },
-  {
-    "tier": 4,
-    "question": "A reader who opens Satoshi Nakamoto's short Bitcoin paper of 2008 finds it carefully built in numbered sections. It opens with an Introduction and a section on Transactions, takes in Incentive, Privacy and Proof-of-Work along the way, and closes on Calculations and a Conclusion. How many sections does it have?",
-    "answer": "Twelve sections",
-    "choices": [
-      "Twelve sections",
-      "Six sections",
-      "Twenty sections",
-      "Three sections"
-    ],
-    "context": "Twelve sections: Introduction, Transactions, Timestamp Server, Proof-of-Work, Network, Incentive, Reclaiming Disk Space, Simplified Payment Verification, Combining and Splitting Value, Privacy, Calculations, Conclusion. Source: bitcoin.org/bitcoin.pdf.",
     "topic": "satoshi-nakamoto-and-the-white-paper"
   },
   {
@@ -18111,28 +17903,15 @@
   {
     "tier": 5,
     "question": "Hal Finney, one of the world's most respected cryptographers, began running Bitcoin almost as soon as its network started up in January 2009. He had built a close cousin of it himself, Reusable Proofs of Work, and he received the first transaction Satoshi Nakamoto ever sent. Why does a respected expert joining early matter so much to a new open-source project?",
-    "answer": "A respected expert's participation signals to other skilled people that the system is worth trying",
+    "answer": "It signals to other skilled people that the system is worth their time",
     "choices": [
-      "A respected expert's participation signals to other skilled people that the system is worth trying",
-      "Governments always require an expert user before allowing new software",
-      "Only open-source projects with celebrity users can ever be secure",
-      "Expert users typically demand payment before trying new software"
+      "It signals to other skilled people that the system is worth their time",
+      "It proves the code free of bugs, since an expert has checked it",
+      "It gives the project an official seal from the cryptography world",
+      "It brings in money, since experts usually invest in what they test"
     ],
-    "context": "Hal Finney's 2004 'Reusable Proofs of Work' (RPOW), building on Adam Back's earlier hashcash, was cited in the Bitcoin white paper. Finney ran the second-ever Bitcoin node on January 11 2009 and received the first person-to-person transaction the next day. Source: bitcoin.org/bitcoin.pdf.",
+    "context": "Hal Finney's 2004 'Reusable Proofs of Work' (RPOW) built on Adam Back's hashcash, which the Bitcoin white paper cites. Finney was running Bitcoin within days of its launch in January 2009 and received the first person-to-person transaction on January 12. Source: bitcoin.org/bitcoin.pdf.",
     "topic": "satoshi-nakamoto-and-the-white-paper"
-  },
-  {
-    "tier": 1,
-    "question": "Satoshi Nakamoto posted on the BitcoinTalk forum one last time and never posted publicly again, after about two years of guiding the young project. He had written on forums, patched the software and traded emails with the first coders. On what date did that last forum post go up?",
-    "answer": "December 12 2010",
-    "choices": [
-      "December 12 2010",
-      "January 3 2009",
-      "August 17 2010",
-      "April 23 2011"
-    ],
-    "context": "The last public bitcointalk.org post from Satoshi was on December 12 2010, on the technical topic of DDoS defenses. He never posted publicly again. Source: bitcointalk.org (Satoshi archive).",
-    "topic": "satoshis-disappearance-and-the-untouched-million"
   },
   {
     "tier": 1,
@@ -18153,9 +17932,9 @@
     "answer": "No single person needs to be alive for the network to keep working",
     "choices": [
       "No single person needs to be alive for the network to keep working",
-      "It means Bitcoin has a secret backup owner",
-      "It proves the network cannot survive without one leader",
-      "Only the inventor knew how to fix bugs"
+      "Gavin Andresen could now steer it with a firmer hand",
+      "Satoshi's coins would pass to the developers",
+      "A company could now take legal charge of the network"
     ],
     "context": "The April 23 2011 email to Mike Hearn read (in essence): 'I've moved on to other things. It's in good hands with Gavin and everyone.' Hearn published the exchange years later. Source: en.wikipedia.org/wiki/Satoshi_Nakamoto.",
     "topic": "satoshis-disappearance-and-the-untouched-million"
@@ -18166,11 +17945,11 @@
     "answer": "Thousands of eyes can spot problems, and no boss can secretly change the rules",
     "choices": [
       "Thousands of eyes can spot problems, and no boss can secretly change the rules",
-      "Only one hidden expert is trusted to write everything",
-      "The code is kept secret from users for safety",
-      "A single company can update the money supply any time"
+      "Open code can't be copied, so no rival can launch a fake Bitcoin",
+      "Open code lets regulators approve each change before it goes live",
+      "Open code runs faster, because many hands keep trimming it down"
     ],
-    "context": "Satoshi's line: 'It's in good hands with Gavin and everyone.' Gavin Andresen served as the lead maintainer of the Bitcoin reference client for the next several years before stepping back himself. Source: en.wikipedia.org/wiki/Gavin_Andresen.",
+    "context": "Bitcoin's code is published under an open-source licence, so anyone may read it, run it, copy it or propose changes; a change reaches the network only if the people running nodes choose to install it. Source: https://en.wikipedia.org/wiki/Bitcoin_Core.",
     "topic": "satoshis-disappearance-and-the-untouched-million"
   },
   {
@@ -18179,9 +17958,9 @@
     "answer": "It would drop sharply as buyers worried about the sudden new supply",
     "choices": [
       "It would drop sharply as buyers worried about the sudden new supply",
-      "It would rise sharply because more coins would be in use",
-      "It would stay exactly the same because coins never change price",
-      "The network would freeze until every coin was returned"
+      "It would rise sharply, as his return renewed faith in the project",
+      "It would barely move, since a million coins is a small share of all",
+      "It would rise at first, then settle back where it had been"
     ],
     "context": "Chain analysis of the 'Patoshi pattern' by Sergio Demian Lerner places Satoshi's early-mined stash at roughly one million BTC. At $50,000/BTC that is $50 billion; at higher prices, far more. Source: bitslog.com (Patoshi pattern analyses).",
     "topic": "satoshis-disappearance-and-the-untouched-million"
@@ -18193,8 +17972,8 @@
     "choices": [
       "Not one satoshi from the early-mined addresses has ever moved",
       "The coins have been repeatedly split across many new addresses",
-      "The coins have been used to pay Bitcoin Core developer salaries",
-      "The coins have been transferred to a charitable trust in the Cayman Islands"
+      "The coins have been sold off slowly, a few at a time, for years",
+      "The coins were all moved once to new addresses, then left alone"
     ],
     "context": "If Satoshi were alive and had access to the keys, he could have sold, borrowed against them, or moved them for privacy at any time in fifteen years. Instead, the coins sit untouched -- an unusually strong empirical signal that he truly walked away. Source: en.wikipedia.org/wiki/Satoshi_Nakamoto.",
     "topic": "satoshis-disappearance-and-the-untouched-million"
@@ -18218,9 +17997,9 @@
     "answer": "No single person can be arrested, silenced, or pressured to change the rules",
     "choices": [
       "No single person can be arrested, silenced, or pressured to change the rules",
-      "An anonymous founder pays no taxes on any of his coins",
-      "Unknown founders are always better software programmers than famous ones",
-      "Anonymity guarantees the price of the coin will always go up"
+      "An unknown founder cannot sell his coins, so the supply stays capped",
+      "No one can sue the project, since it has no named owner to sue",
+      "An unknown founder keeps the code secret, so no one can attack it"
     ],
     "context": "In the Crypto Open Patent Alliance v Wright case, the UK High Court ruled in March 2024 that Craig Wright is NOT Satoshi Nakamoto; the ruling cited his falsified documents and inconsistent testimony. Source: en.wikipedia.org/wiki/Craig_Wright_(computer_scientist).",
     "topic": "satoshis-disappearance-and-the-untouched-million"
@@ -18236,19 +18015,6 @@
       "He died of a documented illness in 2013, per public medical records"
     ],
     "context": "Illness, deliberate silence, prosecution fears, or death are all live theories; none has been confirmed. What IS documented: the coins have not moved in fifteen years, and no verified message from Satoshi has appeared since April 2011. Source: en.wikipedia.org/wiki/Satoshi_Nakamoto.",
-    "topic": "satoshis-disappearance-and-the-untouched-million"
-  },
-  {
-    "tier": 5,
-    "question": "An analyst tots up the coins Satoshi Nakamoto mined in Bitcoin's first years, about a million of them. At recent prices they are worth tens of billions of dollars. If their owner cashed them out, what could he become?",
-    "answer": "One of the richest people on earth",
-    "choices": [
-      "One of the richest people on earth",
-      "The chair of a major central bank",
-      "The head of a global banking group",
-      "The founder of a public company"
-    ],
-    "context": "At various Bitcoin price levels, Satoshi's million-BTC stash has repeatedly ranked notionally at or above the world's wealthiest documented individual. He could have sold at any point and did not. The kept promise is unusual in the history of money. Source: mises.org/library/satoshi-kept-promise.",
     "topic": "satoshis-disappearance-and-the-untouched-million"
   },
   {
@@ -18279,7 +18045,7 @@
   },
   {
     "tier": 3,
-    "question": "Five of the nine Supreme Court justices voted in 2002 to uphold Cleveland's school voucher program, though parents could spend its money at religious schools. The money reached those schools only because parents chose them, the majority held, so the program did not violate the First Amendment's clause against establishing a religion. What was the case called?",
+    "question": "Cleveland parents could spend the city's school vouchers at religious schools, and in 2002 the Supreme Court upheld the program, five votes to four. The money reached those schools only because parents chose them, the majority held, so it did not violate the First Amendment's clause against establishing a religion. What was the case called?",
     "answer": "Zelman v. Simmons-Harris",
     "choices": [
       "Zelman v. Simmons-Harris",
@@ -18317,19 +18083,6 @@
     "topic": "school-choice-milton-friedmans-1955-voucher-essay"
   },
   {
-    "tier": 5,
-    "question": "A mother opens an education savings account for her son and spends its public money on a tutor and homeschool books. Starting in 2022, one state after another opened accounts like hers to every family, or nearly every family. Which states were among them?",
-    "answer": "Arizona, West Virginia, Iowa, Arkansas, Florida, and Ohio",
-    "choices": [
-      "Arizona, West Virginia, Iowa, Arkansas, Florida, and Ohio",
-      "California, New York, Massachusetts, Washington, and Illinois",
-      "Alabama, Mississippi, Louisiana, and Kentucky only",
-      "Only Texas and Wyoming"
-    ],
-    "context": "Arizona's 2022 expansion to universal eligibility set the model; the 2023-24 wave followed. The programs give parents a state-funded account they can spend on private-school tuition, tutoring, therapy, or curriculum -- broadening Friedman's original voucher into a broader family-choice instrument. Source: grokipedia.com/page/Education_savings_account.",
-    "topic": "school-choice-milton-friedmans-1955-voucher-essay"
-  },
-  {
     "tier": 1,
     "question": "A volunteer switches on a Bitcoin node at home, one of thousands checking every block against the same rules. Some rule changes are gentle: his older software still accepts the new blocks, so the chain stays whole. Others split the chain in two. What is the gentle kind called?",
     "answer": "A soft fork",
@@ -18358,12 +18111,12 @@
   {
     "tier": 3,
     "question": "A Bitcoin developer publishes a new version of the software, and it changes nothing at all until enough miners and users choose to install it. If most of them refuse, the upgrade never takes effect. Why must so many of them go along before anything changes?",
-    "answer": "No single person or company runs Bitcoin, so a change only sticks if enough people accept it",
+    "answer": "No one runs Bitcoin, so a change sticks only if enough people accept it",
     "choices": [
-      "No single person or company runs Bitcoin, so a change only sticks if enough people accept it",
-      "A federal law requires a public vote before any coin can be changed",
-      "The original inventor personally signs off on every upgrade",
-      "Miners get paid extra by the government for voting yes"
+      "No one runs Bitcoin, so a change sticks only if enough people accept it",
+      "Satoshi Nakamoto's old code locks out changes that lack his approval",
+      "Bitcoin's foundation must ratify each change by a board vote first",
+      "The software refuses any upgrade that fewer than half its owners sign"
     ],
     "context": "Taproot's activation was notably drama-free after the SegWit years. Over 90 percent of mining hash power signaled support during the 'Speedy Trial' window in June-August 2021. Source: grokipedia.com/page/Taproot_(Bitcoin).",
     "topic": "segwit-and-taproot-the-two-big-soft-forks"
@@ -18375,7 +18128,7 @@
     "choices": [
       "Smaller signatures per transaction and less information leaked about the sender",
       "Faster mining and higher block rewards for miners",
-      "Cheaper electricity bills for every node on the network",
+      "Instant payments that no longer wait for a new block",
       "A larger total supply of coins that can ever exist"
     ],
     "context": "Named for Claus-Peter Schnorr, a German cryptographer. Schnorr signatures allow multiple signers to combine their signatures into one, saving block space and improving on-chain privacy for multisig transactions. Source: grokipedia.com/page/Schnorr_signature.",
@@ -18400,9 +18153,9 @@
     "answer": "Decentralized consensus can deliver careful technical progress when the community is broadly aligned",
     "choices": [
       "Decentralized consensus can deliver careful technical progress when the community is broadly aligned",
-      "Only hard forks work; soft forks always fail in the long run",
-      "The Bitcoin Foundation should have final authority over all upgrades",
-      "The US Securities and Exchange Commission should ratify each Bitcoin upgrade"
+      "Decentralized consensus can deliver change only through a hard fork and a split",
+      "Decentralized consensus works only when one lead developer has the final word",
+      "Decentralized consensus stalls for good once a community has split"
     ],
     "context": "The lesson is not that all disagreements can be avoided (Bitcoin Cash still exists) but that when the network is aligned, upgrades proceed smoothly without any central authority. Source: grokipedia.com/page/Taproot_(Bitcoin).",
     "topic": "segwit-and-taproot-the-two-big-soft-forks"
@@ -18440,10 +18193,10 @@
     "choices": [
       "Not your keys, not your coins.",
       "Fix the money, fix the world.",
-      "Verify, don't trust.",
+      "Don't trust, verify.",
       "Be your own bank."
     ],
-    "context": "Antonopoulos, author of Mastering Bitcoin (2014), popularized the phrase from stages in the 2010s. The other three slogans circulate in Bitcoin culture too -- 'fix the money, fix the world' is Saifedean Ammous-adjacent; 'don't trust, verify' is a general node-runner motto; 'be your own bank' is a marketing tagline -- but the pithy sovereignty rule the community drills newcomers with is Antonopoulos's. Source: https://en.wikipedia.org/wiki/Andreas_Antonopoulos.",
+    "context": "Antonopoulos, author of Mastering Bitcoin (2014), popularized the phrase from conference stages in the 2010s. 'Fix the money, fix the world', 'Don't trust, verify' and 'Be your own bank' circulate in Bitcoin culture too, but the custody rule newcomers hear first is the one tied to him. Source: https://en.wikipedia.org/wiki/Andreas_Antonopoulos.",
     "topic": "self-custody-and-not-your-keys-not-your-coins"
   },
   {
@@ -18486,7 +18239,7 @@
     "topic": "self-custody-and-not-your-keys-not-your-coins"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "A careful Bitcoin holder keeps three keys in three different places and sets up her wallet so that any two of them together can spend her coins. Losing one device, or having one stolen, can then no longer cost her the coins. What is this kind of wallet called?",
     "answer": "a multisig wallet",
     "choices": [
@@ -18501,14 +18254,14 @@
   {
     "tier": 1,
     "question": "A depositor at Signature Bank in New York saw Silicon Valley Bank fail on Friday, March 10, 2023, and pulled her money out over the weekend, though no one yet knew whether Signature itself was sound. Regulators shut it that Sunday. What is a chain reaction like that called?",
-    "answer": "Financial contagion, when fear spreads from one bank to the next",
+    "answer": "Financial contagion",
     "choices": [
-      "Financial contagion, when fear spreads from one bank to the next",
-      "Regulatory capture of a single agency",
-      "A tariff on savings accounts",
-      "The knowledge problem in central planning"
+      "Financial contagion",
+      "Moral hazard",
+      "A credit crunch",
+      "Regulatory capture"
     ],
-    "context": "First Republic, founded in San Francisco in 1985, specialized in high-net-worth mortgage lending. It faced $100B in deposit outflows in the first quarter of 2023 alone. Source: Grokipedia 'First Republic Bank' (2026-09-05).",
+    "context": "Signature's depositors ran less for anything found at their own bank than because Silicon Valley Bank had just failed and Signature looked like it, heavy with uninsured deposits and crypto-industry customers. New York regulators closed it on Sunday, March 12. Source: Grokipedia '2023 United States banking crisis' (2026-09-05).",
     "topic": "signature-first-republic-and-the-march-2023-domino"
   },
   {
@@ -18526,20 +18279,20 @@
   },
   {
     "tier": 3,
-    "question": "A First Republic customer woke on May 1, 2023, to find that regulators had closed her bank and sold most of it to JPMorgan Chase, already the largest bank in the country. Mergers like that had cut the number of American banks from over 14,000 in 1984 to fewer than 4,000. When small banks keep getting swallowed, what tends to happen over time?",
+    "question": "A First Republic customer woke on May 1, 2023, to find that regulators had closed her bank and sold most of it to JPMorgan Chase, already the largest bank in the country. Mergers like that had cut the number of American banks from over 14,000 in 1984 to only a few thousand. When small banks keep getting swallowed, what tends to happen over time?",
     "answer": "The biggest banks get bigger and customers have fewer choices",
     "choices": [
       "The biggest banks get bigger and customers have fewer choices",
-      "The number of big banks stays exactly the same each year",
-      "Small banks always become the main choice for most families",
-      "The government breaks up the biggest banks after every failure"
+      "Customers gain choices, since merged banks offer more services",
+      "New small banks open as fast as old ones are swallowed",
+      "Big banks shrink again, as regulators split them up"
     ],
     "context": "JPMorgan Chase, led by Jamie Dimon, bought most of First Republic's assets on May 1 2023. It was the second-largest US bank failure in history at that moment, surpassing Silicon Valley Bank which had held the title for seven weeks. Source: Grokipedia 'First Republic Bank' (2026-09-05).",
     "topic": "signature-first-republic-and-the-march-2023-domino"
   },
   {
     "tier": 3,
-    "question": "An analyst going over the wreckage of Silicon Valley Bank, Signature and First Republic in 2023 found one root cause behind all three. All three had been rated safe just months earlier. What was that root cause?",
+    "question": "An analyst went through the wreckage of Silicon Valley Bank, Signature and First Republic in 2023, setting the three failed banks' balance sheets side by side, and found one root cause behind all three failures. What was that root cause?",
     "answer": "Held-to-maturity bond losses from the Fed's rate-hike cycle",
     "choices": [
       "Held-to-maturity bond losses from the Fed's rate-hike cycle",
@@ -18553,12 +18306,12 @@
   {
     "tier": 5,
     "question": "Jamie Dimon, JPMorgan's chief, told the world in May 2023, after his bank bought most of the failed First Republic: 'this part of the crisis is over.' Three banks had gone down one after another that spring. What does a takeover like that do to depositors at other banks?",
-    "answer": "A giant, obviously-safe bank taking over calms depositors and stops the panic from spreading",
+    "answer": "A safe giant taking over calms depositors and stops the panic spreading",
     "choices": [
-      "A giant, obviously-safe bank taking over calms depositors and stops the panic from spreading",
-      "All depositors immediately withdraw their money once a merger is announced",
-      "Bank stocks always fall the day a merger is announced",
-      "Federal regulators automatically shut down every other bank"
+      "A safe giant taking over calms depositors and stops the panic spreading",
+      "It frightens them, since even giants are now taking on bad banks",
+      "It makes no difference, since each depositor judges only his own bank",
+      "It sends them to small banks, which now look safer than the giants"
     ],
     "context": "Dimon's public statement was framed as a declaration of stability but also a hint at the political-economy fact that consolidation had accelerated -- JPMorgan absorbed billions in troubled deposits from failing banks while becoming even more too-big-to-fail. Source: Grokipedia 'Jamie Dimon' (2026-09-05).",
     "topic": "signature-first-republic-and-the-march-2023-domino"
@@ -18566,12 +18319,12 @@
   {
     "tier": 5,
     "question": "A Bitcoin economist laid the three bank failures of spring 2023 beside the Federal Reserve's own record in the years before: near-zero interest rates and heavy bond buying, then the sharp rate rises of 2022 and 2023. What did he say the sequence shows?",
-    "answer": "The same central bank that creates assets during a QE cycle exposes those assets to loss during the subsequent tightening cycle",
+    "answer": "The central bank whose easing made those bonds attractive later turned them into losses",
     "choices": [
-      "The same central bank that creates assets during a QE cycle exposes those assets to loss during the subsequent tightening cycle",
-      "Bank failures are always caused by fraud rather than by policy shifts",
-      "Regional-bank stress is unrelated to Fed rate policy",
-      "Deposit insurance always prevents bank runs regardless of underlying losses"
+      "The central bank whose easing made those bonds attractive later turned them into losses",
+      "Bank failures come from fraud inside the banks, not from shifts in rate policy",
+      "Regional banks fail on their own schedule, whatever the central bank does",
+      "Deposit insurance alone stops runs, however large the losses in the books"
     ],
     "context": "Banks bought long-duration bonds at 2020-21 low rates because the Fed's QE made them attractive. The same Fed's 2022-23 tightening made those bonds catastrophic losses. The whipsaw is a structural feature of a discretionary rate cycle, not a series of independent errors. Source: Grokipedia '2023 United States banking crisis' (2026-09-05).",
     "topic": "signature-first-republic-and-the-march-2023-domino"
@@ -18582,9 +18335,9 @@
     "answer": "Its customers are too similar, so trouble hits them all at once",
     "choices": [
       "Its customers are too similar, so trouble hits them all at once",
-      "Federal rules ban single-industry banks from lending money",
-      "Single-industry banks pay double the taxes of mixed banks",
-      "The bank's staff can only speak one shared industry language"
+      "Its customers are wealthier, so robbers target it more often",
+      "Its deposits are small, since young firms have little cash",
+      "Its customers are newer, so they trust banks less than most"
     ],
     "context": "SVB was founded 1983 to serve the Bay Area tech ecosystem. Its deposit base was overwhelmingly startup companies with venture funding parked in the bank between funding rounds. Source: Grokipedia 'Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
@@ -18597,7 +18350,7 @@
       "It floods in -- investors chase any chance of higher returns",
       "It dries up -- no one wants risk at low rates",
       "Nothing changes -- rates do not affect investing",
-      "Investors quit stocks and put every dollar in gold"
+      "It holds back -- investors wait for rates to rise again"
     ],
     "context": "SVB's deposits roughly tripled between 2019 and 2021, hitting about $189 billion at peak. SVB invested much of this inflow in long-duration Treasuries and mortgage-backed securities at the ultra-low rates of 2020-21. Source: Grokipedia 'Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
@@ -18609,8 +18362,8 @@
     "choices": [
       "The bank looks healthy on paper while quietly holding big real losses",
       "The bank must sell the bonds right away at any price",
-      "The bank instantly becomes richer as rates rise",
-      "Regulators know the losses long before anyone else does"
+      "The bank's interest income collapses as the bonds stop paying",
+      "The bank's loans to customers all fall due at the same time"
     ],
     "context": "HTM accounting hides mark-to-market losses on the balance sheet. But the economic loss is real. By year-end 2022, SVB had roughly $15 billion in unrealized bond losses -- close to its entire tangible equity of $16 billion. Source: Grokipedia 'Held-to-maturity security' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
@@ -18618,27 +18371,14 @@
   {
     "tier": 2,
     "question": "A Silicon Valley Bank customer read a warning on Twitter in March 2023 and moved her company's money out with a few taps on her phone. Worried savers once had to queue at the teller's window, and a run could take days. What have phones and social media done to how fast a run on a bank unfolds?",
-    "answer": "Bank runs now happen in hours instead of days, giving regulators much less time to react",
+    "answer": "Runs now unfold in hours, not days, leaving regulators less time to act",
     "choices": [
-      "Bank runs now happen in hours instead of days, giving regulators much less time to react",
-      "Bank runs have completely stopped happening",
-      "Bank runs now take longer because of extra online paperwork",
-      "Bank runs only happen in person and never online"
+      "Runs now unfold in hours, not days, leaving regulators less time to act",
+      "Runs now take longer, since online transfers must wait to clear",
+      "Runs now end sooner, since a bank can freeze its app at once",
+      "Runs now start later, since online rumors are slow to be believed"
     ],
-    "context": "VC Twitter -- the concentrated cluster of venture capitalists and startup founders active on Twitter/X -- lit up with 'withdraw your deposits' messages from Peter Thiel, David Sacks, and others. The digital-speed run began before most bank employees could react. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
-    "topic": "silicon-valley-bank-march-10-2023"
-  },
-  {
-    "tier": 1,
-    "question": "A tech founder wired his startup's money out of Silicon Valley Bank on March 9, 2023, as other customers asked for about $42 billion back that single day. What is a sudden rush like that called?",
-    "answer": "A bank run",
-    "choices": [
-      "A bank run",
-      "A margin call",
-      "A short sale",
-      "A bank strike"
-    ],
-    "context": "$42 billion in one day was the fastest bank run in US history by a wide margin. The California Department of Financial Protection and Innovation seized SVB at 11:20 AM Pacific time that day. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
+    "context": "Venture firms, Peter Thiel's Founders Fund among them, reportedly advised their startups to move money out, and the warnings raced through Twitter and group chats. The run moved faster than the bank's managers could react. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
   },
   {
@@ -18647,9 +18387,9 @@
     "answer": "They had lent against home loans that borrowers could not repay",
     "choices": [
       "They had lent against home loans that borrowers could not repay",
-      "Customers stopped using paper checks and switched to cards",
-      "Congress passed a new tax on every checking account",
-      "Foreign banks refused to accept United States dollars"
+      "They had lent too much to foreign governments that defaulted",
+      "They had lost their savings in a stock-market crash that year",
+      "They had been robbed by hackers who broke into their systems"
     ],
     "context": "Washington Mutual failed September 25 2008 with $307 billion in assets, the largest US bank failure in history and larger than SVB's $209B. Lehman Brothers was an investment bank, not an FDIC-insured commercial bank. Source: Grokipedia 'Washington Mutual' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
@@ -18660,9 +18400,9 @@
     "answer": "Uninsured depositors have a big reason to pull money out at the first sign of trouble",
     "choices": [
       "Uninsured depositors have a big reason to pull money out at the first sign of trouble",
-      "Uninsured depositors always earn higher interest rates than insured ones",
-      "Uninsured deposits are secretly counted twice on the bank's ledger",
-      "Uninsured deposits force the bank to hold less cash on hand"
+      "Uninsured deposits pay no interest, so their owners leave for better rates",
+      "Uninsured deposits must be kept in cash, so the bank earns too little",
+      "Uninsured depositors are mostly foreign, and foreign money flees first"
     ],
     "context": "93% of SVB's deposits were uninsured -- one of the highest uninsured-deposit ratios in the banking system. Startups routinely park $10-100M in a single account, far above the $250,000 cap. This concentration made the bank uniquely vulnerable to a run. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
@@ -18677,7 +18417,7 @@
       "The seizure would be postponed 30 days for further review",
       "The matter would be sent to Congress for emergency legislation"
     ],
-    "context": "The Sunday March 12 2023 joint announcement guaranteed all deposits under the FDIC's systemic-risk exception. This effectively extended deposit insurance beyond the statutory cap without any congressional authorization. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
+    "context": "The Sunday March 12 2023 joint announcement guaranteed all deposits under the FDIC's systemic-risk exception, a power Congress wrote into law in 1991. It carried protection far beyond the statutory cap without any new vote of Congress. Source: Grokipedia 'Collapse of Silicon Valley Bank' (2026-09-05).",
     "topic": "silicon-valley-bank-march-10-2023"
   },
   {
@@ -18699,11 +18439,11 @@
     "answer": "Bitcoin can be sent without a bank or government approving it",
     "choices": [
       "Bitcoin can be sent without a bank or government approving it",
-      "Bitcoin is worth more than dollars in every country",
-      "Bitcoin is issued by the police",
-      "Bitcoin requires showing a driver's license to send"
+      "Bitcoin payments cannot be seen by anyone at all",
+      "Bitcoin was the only money that worked over the Tor network",
+      "Bitcoin payments are insured if a seller fails to deliver"
     ],
-    "context": "Silk Road became the first widely-known use case for Bitcoin outside of hobbyist circles. AlphaBay was a successor Tor market shut down in 2017. Source: grokipedia.com/page/Silk_Road_(marketplace). The censorship-resistance was the design property Satoshi named in the 2008 white paper. Silk Road proved it functioned end-to-end at scale on an anonymous network. Whether the specific use was legitimate is separate from whether the property held. Source: grokipedia.com/page/Silk_Road_(marketplace).",
+    "context": "Silk Road became the first widely known use of Bitcoin outside hobbyist circles. The 2008 white paper had promised payments sent directly from one party to another without going through a financial institution, and the Silk Road showed that property working at scale on an anonymous network; whether the use was legitimate is a separate question. Source: grokipedia.com/page/Silk_Road_(marketplace).",
     "topic": "silk-road-bitcoins-first-widely-known-use-case"
   },
   {
@@ -18712,11 +18452,11 @@
     "answer": "Any tool that gives people more freedom can also be used for wrongdoing",
     "choices": [
       "Any tool that gives people more freedom can also be used for wrongdoing",
-      "Bitcoin has never been used for anything bad",
-      "Only criminals use Bitcoin, no one else",
-      "Cash has never once been used for a crime"
+      "Bitcoin is used mostly by criminals, rarely by others",
+      "Bitcoin's good uses count for nothing beside crime",
+      "Bitcoin must be banned until it can refuse criminals"
     ],
-    "context": "The real founder was Ross Ulbricht, a young American libertarian. He chose the name partly because in the novel it lets one Roberts retire and pass the identity along -- suggesting he could similarly step away. Source: grokipedia.com/page/Ross_Ulbricht.",
+    "context": "Bitcoin's defenders point to savers in countries with currency controls or collapsing money, Venezuela and Argentina among them, who use it to keep and send value; the same property that serves them served the Silk Road's sellers. Source: grokipedia.com/page/Silk_Road_(marketplace).",
     "topic": "silk-road-bitcoins-first-widely-known-use-case"
   },
   {
@@ -18725,11 +18465,11 @@
     "answer": "As long as buyers and sellers still want to trade, a new marketplace will appear",
     "choices": [
       "As long as buyers and sellers still want to trade, a new marketplace will appear",
-      "Every replacement marketplace fails within a week of launch",
-      "Buyers lose interest permanently once one site is closed",
-      "Marketplaces only reopen when the original operator is released"
+      "A market dies for good once its servers as well as its boss are seized",
+      "A market dies for good once its biggest buyers are arrested too",
+      "A market dies for good once its founder's name is made public"
     ],
-    "context": "Trump had promised the commutation at the May 2024 Libertarian National Convention in Washington. It became one of the earliest acts of his second term. Source: grokipedia.com/page/Ross_Ulbricht.",
+    "context": "Silk Road 2.0 opened in November 2013, about five weeks after the takedown, and later markets such as AlphaBay grew larger than the original. Source: grokipedia.com/page/Silk_Road_(marketplace).",
     "topic": "silk-road-bitcoins-first-widely-known-use-case"
   },
   {
@@ -18742,7 +18482,7 @@
       "Enforcing a strict verdict that all Tor markets are always illegitimate",
       "Concluding that presidential pardons always signal a change in federal drug law"
     ],
-    "context": "The point here is to see the reasoning move (proportionality of sentence, censorship-resistance as a design property), not to memorize a policy verdict. Source: grokipedia.com/page/Ross_Ulbricht.",
+    "context": "A pardon settles one question, whether this sentence should stand, and leaves the larger argument over drug markets where it was. Ulbricht's supporters argued that a double life sentence was out of proportion for a first-time offender. Source: grokipedia.com/page/Ross_Ulbricht.",
     "topic": "silk-road-bitcoins-first-widely-known-use-case"
   },
   {
@@ -18752,8 +18492,8 @@
     "choices": [
       "Trade shrinks and both sides get poorer",
       "Trade grows because factories work harder",
-      "Nothing -- other countries never fight back",
-      "Only the country with the biggest army wins"
+      "Trade shifts, but each side ends up about as well off",
+      "The country that struck first comes out ahead"
     ],
     "context": "Signed June 17, 1930, formally the Tariff Act of 1930. It raised US tariff rates on over 20,000 imported goods to their highest levels in about a century. Source: en.wikipedia.org/wiki/Smoot-Hawley_Tariff_Act.",
     "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
@@ -18773,7 +18513,7 @@
   },
   {
     "tier": 2,
-    "question": "An American economist put his name to a petition in May 1930 begging Herbert Hoover to veto the tariff bill, for fear it would start a trade war in the middle of the Depression. The New York Times printed the petition, and Hoover signed the bill anyway. About how many names were on the petition?",
+    "question": "An American economist put his name to a petition in May 1930 begging Herbert Hoover to veto the tariff bill, warning that it would raise prices for shoppers and invite a tariff war abroad. The New York Times printed the petition, and Hoover signed the bill anyway. About how many names were on the petition?",
     "answer": "About one thousand",
     "choices": [
       "About one thousand",
@@ -18781,7 +18521,7 @@
       "About ten thousand",
       "About fifty"
     ],
-    "context": "The petition published in the New York Times on May 5, 1930 carried 1,028 signatures -- one of the largest organized economics-profession protests in American history. Hoover signed the bill anyway. Source: nytimes.com/1930/05/05/archives.",
+    "context": "The petition published in the New York Times on May 5, 1930 carried 1,028 signatures. It warned that higher duties would raise prices for consumers and hurt exporters, and that 'a tariff war does not furnish good soil for the growth of world peace.' Hoover signed the bill anyway. Source: nytimes.com/1930/05/05/archives.",
     "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
   },
   {
@@ -18816,9 +18556,9 @@
     "answer": "Higher prices for shoppers and lost sales for American exporters",
     "choices": [
       "Higher prices for shoppers and lost sales for American exporters",
-      "Lower prices for shoppers and higher exports overall",
-      "A sudden drop in the size of the federal government",
-      "A rise in workers' wages faster than prices"
+      "Lower wages and fewer jobs in the factories the tariff protected",
+      "A flood of cheap foreign goods undercutting American farmers",
+      "Shortages at home as factories shipped their goods abroad"
     ],
     "context": "Bastiat's seen-versus-unseen method: the beneficiaries of a tariff are concentrated and visible (this steel plant, this sugar planter); the costs are diffuse and hidden (every consumer pays more, every exporter loses a foreign market). Source: bastiat.org/en/twisatwins.html.",
     "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
@@ -18826,12 +18566,12 @@
   {
     "tier": 4,
     "question": "Secretary of State Cordell Hull championed the Reciprocal Trade Agreements Act, passed in 1934, which let the president lower tariffs through deals with other governments. Congress had written the 1930 tariff item by item, each member guarding the industries in his own district. Why is it usually easier for a president to lower tariffs than for Congress?",
-    "answer": "A president can negotiate the whole deal at once, so no single local industry can block a line item",
+    "answer": "A president bargains for the whole package, so no one local industry can block its line",
     "choices": [
-      "A president can negotiate the whole deal at once, so no single local industry can block a line item",
-      "A president can print money to pay industries harmed by the change",
-      "Congress is legally forbidden from voting on any tariff bill",
-      "Foreign countries only agree to talk to a president, never to Congress"
+      "A president bargains for the whole package, so no one local industry can block its line",
+      "A president's tariff cuts need no approval and can never be undone by Congress",
+      "A president can pay off harmed industries out of customs revenue",
+      "Foreign governments will deal only with a president, never with Congress"
     ],
     "context": "The Reciprocal Trade Agreements Act of 1934, championed by FDR Secretary of State Cordell Hull, let the president negotiate bilateral tariff cuts without going back to Congress on every rate. It began three decades of tariff liberalization. Source: en.wikipedia.org/wiki/Reciprocal_Tariff_Act.",
     "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
@@ -18839,12 +18579,12 @@
   {
     "tier": 4,
     "question": "Delegates of the United States and twenty-two other countries signed, in 1947, the General Agreement on Tariffs and Trade, aiming never to see another tariff war like that of the 1930s. In 1995 it became the World Trade Organization. Why do shared deals like this calm tariff fights between countries?",
-    "answer": "Each country promises not to raise tariffs on the others, so no one has reason to strike first",
+    "answer": "Each country promises not to raise tariffs on the others, so none has reason to strike first",
     "choices": [
-      "Each country promises not to raise tariffs on the others, so no one has reason to strike first",
-      "Each country gives up the right to trade with any non-member country",
-      "The agreement bans all imports of foreign goods",
-      "Each country agrees to use exactly the same currency"
+      "Each country promises not to raise tariffs on the others, so none has reason to strike first",
+      "Each country hands its tariff decisions to a single world trade court",
+      "Each country pays a fine into a shared fund for every tariff it keeps",
+      "Each country agrees to buy a fixed share of its goods from the others"
     ],
     "context": "GATT, signed 1947 by 23 founding countries, ran successive tariff-cutting rounds through the postwar era. Its explicit institutional memory was that unilateral tariff hikes and retaliation had helped internationalize the 1930s depression. GATT became the WTO in 1995. Source: en.wikipedia.org/wiki/General_Agreement_on_Tariffs_and_Trade.",
     "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
@@ -18855,9 +18595,9 @@
     "answer": "Raising tariffs during a downturn usually deepens the downturn instead of fixing it",
     "choices": [
       "Raising tariffs during a downturn usually deepens the downturn instead of fixing it",
-      "Tariffs always speed economic recovery after a stock market crash",
-      "Other countries typically ignore new tariffs and keep trading normally",
-      "Import taxes have no measurable effect on trade volumes"
+      "Raising tariffs during a downturn speeds recovery by keeping spending at home",
+      "Raising tariffs during a downturn is safe, so long as the rates rise slowly",
+      "Raising tariffs during a downturn helps farms, though it hurts factories"
     ],
     "context": "Ben Stein's economics-teacher scene in Ferris Bueller's Day Off is probably the most-watched pop-culture reference to Smoot-Hawley, delivering an accurate one-minute summary of why economists thought the tariff worsened the Depression. Source: en.wikipedia.org/wiki/Ferris_Bueller%27s_Day_Off.",
     "topic": "smoot-hawley-tariff-and-the-collapse-of-world-trade"
@@ -18972,37 +18712,37 @@
     "answer": "Taxpayers",
     "choices": [
       "Taxpayers",
-      "The solar-panel company's owners only",
-      "Nobody -- the government prints new money for free",
-      "Other solar companies must pay it back"
+      "Its bankers",
+      "Its rivals",
+      "Californians"
     ],
     "context": "Based in Fremont, California. The bankruptcy laid off 1,100 workers and became the signature failure of the Obama-era green industrial-policy portfolio. Source: grokipedia.com/page/Solyndra.",
     "topic": "solyndra-2011-the-green-loan-guarantee-that-failed"
   },
   {
     "tier": 2,
-    "question": "Federal officials bet in 2009 that Solyndra, a California solar-panel maker, would outsell its rivals in America and China, and they stood behind it with a $535 million loan guarantee. It went bankrupt two years later. What is the general problem with officials picking winning firms this way?",
+    "question": "Federal officials bet in 2009 that Solyndra, a California solar-panel maker, would beat its rivals in America and China, and they stood behind it with a $535 million loan guarantee. It went bankrupt two years later. What is the general problem with officials picking winning firms this way?",
     "answer": "Officials guessing which private companies will win rarely guess better than the market",
     "choices": [
       "Officials guessing which private companies will win rarely guess better than the market",
-      "Every company the government picks always succeeds",
-      "Private investors always guess worse than officials",
-      "Solar power can never work as a business"
+      "Officials guess as well as anyone, but bad luck can sink any single firm",
+      "Officials back too few firms, so a single failure looks worse than it is",
+      "Officials lack the money to back each firm long enough to succeed"
     ],
-    "context": "The visit was a signature endorsement of the ARRA stimulus green-energy portfolio. Sixteen months later Solyndra filed for Chapter 11. Source: grokipedia.com/page/Solyndra.",
+    "context": "Obama's May 2010 visit to the Fremont factory was a signature endorsement of the stimulus green-energy portfolio. Sixteen months later Solyndra filed for Chapter 11. Source: grokipedia.com/page/Solyndra.",
     "topic": "solyndra-2011-the-green-loan-guarantee-that-failed"
   },
   {
     "tier": 3,
     "question": "A Solyndra worker in California coated tube-shaped solar panels with a blend of rare metals, a design unlike the flat wafers most rivals made. Between 2008 and 2011 one massive shift in the world price of a key panel material made Solyndra's tubes far too costly next to cheap Chinese flat panels. Which shift was decisive?",
-    "answer": "The world price of silicon collapsed from about $400 per kilogram in 2008 to about $40 per kilogram by 2011",
+    "answer": "The world price of silicon collapsed by nine-tenths",
     "choices": [
-      "The world price of silicon collapsed from about $400 per kilogram in 2008 to about $40 per kilogram by 2011",
-      "The world price of copper doubled between 2008 and 2011",
-      "US import duties on Chinese solar panels rose 50 percent",
-      "The California electricity feed-in tariff was cut by 90 percent"
+      "The world price of silicon collapsed by nine-tenths",
+      "The world price of aluminum for frames tripled",
+      "The world price of steel for racks doubled",
+      "The world price of plastic for backing tripled"
     ],
-    "context": "Silicon is the main input for flat panels. Solyndra's whole business case rested on high silicon prices making its cylindrical alternative competitive. When silicon crashed, the case evaporated. Source: grokipedia.com/page/Solyndra.",
+    "context": "Silicon is the main input for flat panels. Its world price fell from about $400 a kilogram in 2008 to about $40 by 2011, and Solyndra's whole business case, which rested on dear silicon making its cylindrical design competitive, evaporated. Source: grokipedia.com/page/Solyndra.",
     "topic": "solyndra-2011-the-green-loan-guarantee-that-failed"
   },
   {
@@ -19034,40 +18774,27 @@
   {
     "tier": 5,
     "question": "A critic in Frederic Bastiat's tradition says the reporters who fixed on Solyndra alone, after its bankruptcy in 2011, missed the larger unseen cost. Solyndra's guarantee came out of a much larger federal program. What is that unseen cost?",
-    "answer": "The full $16 billion could not be doing anything else, and other funded firms failed too",
+    "answer": "The whole $16 billion could not be used elsewhere, and other firms it backed failed too",
     "choices": [
-      "The full $16 billion could not be doing anything else, and other funded firms failed too",
-      "The officers who approved the loans all lost their jobs",
-      "Private investors who declined Solyndra paid no taxes",
-      "California made a windfall selling Solyndra's assets"
+      "The whole $16 billion could not be used elsewhere, and other firms it backed failed too",
+      "Solyndra's collapse pushed up solar-panel prices for every buyer",
+      "None of the program's other firms ever repaid a dollar of their loans",
+      "The hearings cost more in staff time than the loan itself had"
     ],
     "context": "Bastiat's method: compare the seen benefit to the unseen alternative use of the same capital. Abound Solar (2012), A123 Systems (2012), and Fisker Automotive (2013) also went bankrupt among Section 1705 recipients. Source: grokipedia.com/page/Loan_Programs_Office.",
     "topic": "solyndra-2011-the-green-loan-guarantee-that-failed"
   },
   {
     "tier": 1,
-    "question": "A factory director received his production targets from Gosplan, the Soviet state planning office, one small part of a list that in the 1980s ran to boots, screws, tractors, toothbrushes and an enormous number of other separate products. By the usual estimate, how many kinds of products did Gosplan try to plan?",
-    "answer": "Over 200,000",
+    "question": "A Soviet factory boss got his targets from Moscow in the 1980s, one line on a list of boots, screws, tractors and other products kept by Gosplan, the supply committee Gossnab and the ministries. About how many products did that list hold?",
+    "answer": "About 200,000",
     "choices": [
-      "Over 200,000",
+      "About 200,000",
       "About 200",
-      "About 20 billion",
-      "About 2,000"
+      "About 2 million",
+      "About 20 billion"
     ],
-    "context": "Gertrude Schroeder and Alec Nove's estimates put the peak at more than 200,000 distinct product categories -- steel of various grades, screws of various sizes, textiles, consumer goods, and so on. Source: Nove, The Economics of Feasible Socialism (1983).",
-    "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
-  },
-  {
-    "tier": 2,
-    "question": "A planner at Gosplan faced the arithmetic that Ludwig von Mises had argued in 1920 no central planner could do. Every price had to be weighed against every other, and the pairs to compare multiplied as the square of the product count: about half of N times N for N products. About how many pairs did that give for a list of about 200,000 products?",
-    "answer": "20 billion",
-    "choices": [
-      "20 billion",
-      "20 million",
-      "20,000",
-      "2 million"
-    ],
-    "context": "The 20-billion pairwise-price count is a heuristic teaching device (not a Gosplan-cited figure) illustrating why the calculation problem is impossible in principle, not merely difficult in practice. Each relationship shifts every day with harvests, tastes, and technology. Source: mises.org/library/economic-calculation.",
+    "context": "By the mid-1980s Gosplan itself drew up material balances for only about 2,000 goods; adding the supply committee Gossnab and the industrial ministries brought the products tracked to around 200,000, still far short of the roughly 24 million items the Soviet economy made. Source: O. Yun, Improvement of Soviet Economic Planning (Moscow, 1988), cited by Cockshott and Cottrell.",
     "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
   },
   {
@@ -19086,25 +18813,25 @@
   {
     "tier": 3,
     "question": "A Soviet tractor-plant manager found that Moscow had forgotten to ship his steel, and there was no market where he could simply buy some. So he sent agents on the road to the capital to work their contacts and pry the steel loose. What were such travelers called?",
-    "answer": "Tolkachi (pushers)",
+    "answer": "Tolkachi",
     "choices": [
-      "Tolkachi (pushers)",
+      "Tolkachi",
       "Kulaks",
       "Nomenklatura",
-      "Rabkoms"
+      "Stakhanovites"
     ],
-    "context": "Tolkachi ('pushers') traveled to Moscow to lobby ministries for missing components, expedite deliveries, and negotiate quotas. The role was so ubiquitous it had a name; it also illustrated Gosplan's inability to coordinate 200,000 products in real time. Source: Berliner, Factory and Manager in the USSR.",
+    "context": "Tolkachi ('pushers') traveled to Moscow to lobby ministries for missing components, expedite deliveries, and negotiate quotas. The role was so common it had a name, and it showed how far the plan fell short of coordinating the economy's many thousands of products in real time. Source: Berliner, Factory and Manager in the USSR.",
     "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
   },
   {
     "tier": 3,
-    "question": "A nail-factory manager in the Soviet Union, paid on the total weight of the nails he shipped, turned out a handful of huge, useless nails at the end of the month to make his number. A glassworks paid by area turned out panes so thin they shattered on delivery. What is the predictable result of paying for weight or count, never for quality?",
+    "question": "A famous Soviet story tells of a nail-factory manager, paid on the total weight of the nails he shipped, who turned out a handful of huge, useless nails at the end of the month to make his number. In another, a glassworks paid by area turned out panes so thin they shattered on delivery. What is the predictable result of paying for weight or count, never for quality?",
     "answer": "Lots of heavy, poorly-made products that nobody wants to use",
     "choices": [
       "Lots of heavy, poorly-made products that nobody wants to use",
-      "Lighter, higher-quality products at a steady pace",
-      "Workers refuse to work in the last week of the month",
-      "The plan naturally corrects itself the following month"
+      "Goods built to last, since every factory wants the planners' praise",
+      "Steady output of exactly the goods that shoppers want most",
+      "Too few goods of any kind, as managers simply stop trying"
     ],
     "context": "Storming (shturmovshchina) was the last-week rush to meet monthly, quarterly, or yearly plan targets. It produced low-quality output near month-end and made the phrase 'they pretend to pay us and we pretend to work' a widespread black joke. Source: Kornai, The Socialist System.",
     "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
@@ -19123,29 +18850,16 @@
     "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
   },
   {
-    "tier": 4,
-    "question": "Mikhail Gorbachev resigned as Soviet president on live television, and the red hammer-and-sickle flag came down over the Kremlin. The Soviet Union ended, and with it Gosplan, which had run the country's economy from Moscow for most of seventy years. On what date did all this happen?",
-    "answer": "December 25, 1991",
-    "choices": [
-      "December 25, 1991",
-      "November 9, 1989",
-      "March 5, 1953",
-      "August 19, 1991"
-    ],
-    "context": "The Soviet flag was lowered from the Kremlin on December 25, 1991; Gorbachev resigned that evening; formal dissolution followed the next day. Gosplan closed with the USSR. Source: en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union.",
-    "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
-  },
-  {
     "tier": 5,
     "question": "Ludwig von Mises argued in 1920 that without real market prices a central planner cannot know what to make, or how much, and his critics trusted that better statistics and faster computers would save the planners. The Soviet Union collapsed instead in 1991, and market prices then did what Gosplan never could. What did those prices do?",
-    "answer": "Coordinate 200,000 product categories with no committee needed",
+    "answer": "Coordinate millions of goods with no committee needed",
     "choices": [
-      "Coordinate 200,000 product categories with no committee needed",
-      "Print more paper money to close deficits",
-      "Set stable exchange rates for foreign trade",
-      "Regulate monopoly pricing efficiently"
+      "Coordinate millions of goods with no committee needed",
+      "Hold every price steady from one year to the next",
+      "Match each region's output to a plan set in advance",
+      "Set each worker's wage by the hours a job takes"
     ],
-    "context": "After 1991, post-Soviet market economies coordinated the same 200,000 product categories without any Gosplan-style committee, and better. The empirical vindication of Mises 1920 was that the pricing mechanism did what no committee could. Source: mises.org/library/economic-calculation.",
+    "context": "After 1991, market prices in the former Soviet lands coordinated millions of goods with no Gosplan-style committee in charge. To Mises's followers that was the vindication of his 1920 argument: the price system did what no committee could. Source: mises.org/library/economic-calculation.",
     "topic": "soviet-gosplan-and-the-200-000-product-category-problem"
   },
   {
