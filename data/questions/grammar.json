@@ -5170,7 +5170,7 @@
       "their ... their",
       "his ... his"
     ],
-    "context": "ALL OF THE CAMPERS is plural, so THEIR (and plural sleeping BAGS). EACH OF THEM picks out the campers one at a time, so it is singular: HIS flashlight. Same campers, two different numbers -- the pronoun follows the word that leads the subject, ALL or EACH, not the crowd you picture.",
+    "context": "ALL OF THE CAMPERS is plural, so THEIR (and plural sleeping BAGS). EACH OF THEM picks out the campers one at a time, so it is singular: HIS flashlight. Same campers, two different numbers -- the pronoun follows the word that leads the subject, ALL or EACH, not the crowd a reader pictures.",
     "topic": "pronoun-agreement-his-her-or-its"
   },
   {
@@ -7801,15 +7801,15 @@
   },
   {
     "tier": 1,
-    "question": "A sports page reports, 'The team lost ___ first game.' Which word fills the blank?",
-    "answer": "its (team is a singular collective in American English)",
+    "question": "An American sports page reports, 'The team lost ___ first game.' Which word fills the blank?",
+    "answer": "its",
     "choices": [
-      "its (team is a singular collective in American English)",
+      "its",
       "their",
       "his",
       "there"
     ],
-    "context": "PRONOUN-ANTECEDENT AGREEMENT: pronouns must match their antecedent in number. 'The team' (singular collective in US English) → 'its'. UK English often uses 'their'.",
+    "context": "In American English a team is one body, so it takes ITS: 'The team lost its first game.' British usage often goes plural ('The team lost their first game'). HIS is for one male person, and THERE points to a place.",
     "topic": "pronoun-antecedent-agreement-matching-number-and-person"
   },
   {
@@ -7861,20 +7861,20 @@
       "him or her",
       "hers or his"
     ],
-    "context": "The blank sits before a noun (HAND), so it needs the possessive form: 'Everyone raised his or her hand.' HE OR SHE is the subject form, HIM OR HER is the object form, and HERS cannot come before a noun. EVERYONE is singular, so plain HIS is the traditional choice; the paired form suits a mixed group but turns clumsy if you repeat it. A plural rewrite also works: 'All the students raised their hands.' What does not work is THEIR on its own, which gives the whole class one giant shared hand.",
+    "context": "The blank sits before a noun (HAND), so it needs the possessive form: 'Everyone raised his or her hand.' HE OR SHE is the subject form, HIM OR HER is the object form, and HERS cannot come before a noun. EVERYONE is singular, so plain HIS is the traditional choice; the paired form suits a mixed group but turns clumsy when it is repeated. A plural rewrite also works: 'All the students raised their hands.' What does not work is THEIR on its own, which gives the whole class one giant shared hand.",
     "topic": "pronoun-agreement-his-her-or-its"
   },
   {
     "tier": 3,
     "question": "An office manager's memo reads, 'The staff completed their reports.' In American English, when is 'their' acceptable with 'staff'?",
-    "answer": "when emphasising the individual staff members' actions (each writing a report)",
+    "answer": "when the members act one by one, each writing a report",
     "choices": [
-      "when emphasising the individual staff members' actions (each writing a report)",
-      "always",
-      "never",
-      "only in the passive voice"
+      "when the members act one by one, each writing a report",
+      "always, since STAFF is plural in every style",
+      "when the staff acts as one body, writing one joint report",
+      "only in the passive voice, as in \"reports were completed\""
     ],
-    "context": "Collective nouns permit 'their' when the members act individually. 'The staff their reports' works because each member wrote one. 'The staff its report' would suggest one collective report.",
+    "context": "American usage treats STAFF as one body most of the time, but it allows a plural when the members act one by one: 'The staff completed their reports' means each person wrote one. 'The staff completed its report' would mean one joint report. Many editors dodge the question with a real plural: 'The staff members completed their reports.'",
     "topic": "pronoun-antecedent-agreement-matching-number-and-person"
   },
   {
@@ -7906,9 +7906,9 @@
   {
     "tier": 1,
     "question": "A boy texts his sister 'ok.' with a period on the end. In casual texting, how does that one-line message read?",
-    "answer": "CURT or ANGRY (per linguistic research on iMessage register, McCulloch 2019)",
+    "answer": "curt or annoyed",
     "choices": [
-      "CURT or ANGRY (per linguistic research on iMessage register, McCulloch 2019)",
+      "curt or annoyed",
       "polite and formal",
       "confused or hesitant",
       "excited and enthusiastic"
@@ -7919,9 +7919,9 @@
   {
     "tier": 2,
     "question": "A girl asks her friend to trade seats on the bus, and the text back says 'ok...' How does that ellipsis read?",
-    "answer": "PASSIVE-AGGRESSIVE or HESITANT (per McCulloch)",
+    "answer": "hesitant or passive-aggressive",
     "choices": [
-      "PASSIVE-AGGRESSIVE or HESITANT (per McCulloch)",
+      "hesitant or passive-aggressive",
       "a formal trailing-off for omission",
       "excited anticipation",
       "a straightforward yes"
@@ -7931,41 +7931,41 @@
   },
   {
     "tier": 3,
-    "question": "A student types one line of her history essay all in capitals. What is the all-caps convention in prose?",
-    "answer": "SHOUTING; formal writing uses italics for emphasis instead",
+    "question": "A student types one sentence in the middle of her history essay all in capitals. How does a sentence in capitals read in running prose?",
+    "answer": "as shouting; formal writing uses italics for stress",
     "choices": [
-      "SHOUTING; formal writing uses italics for emphasis instead",
-      "a required style for chapter titles",
-      "a required style for headings",
-      "always fine and never rude"
+      "as shouting; formal writing uses italics for stress",
+      "as a heading that opens a new section",
+      "as a quotation from a primary source",
+      "as polite emphasis that suits any essay"
     ],
-    "context": "Chicago and AP both regard all-caps in running prose as shouting. Use italics for word-level emphasis in formal writing.",
+    "context": "In running prose, a sentence in capitals reads as shouting. Formal writing marks a stressed word with italics instead. Headings and quotations have their own conventions, and capitals in the middle of a paragraph signal neither.",
     "topic": "punctuation-and-emojis-the-modern-informal-register"
   },
   {
     "tier": 4,
     "question": "A new hire drops a smiley into a formal report, and her boss goes to the reference shelf to check. What is the current position on emojis in formal writing?",
-    "answer": "casual-register only; formal style guides (Chicago 17th ed.) do not have a formal rule and treat emojis as informal",
+    "answer": "casual messages only; a report leaves them out",
     "choices": [
-      "casual-register only; formal style guides (Chicago 17th ed.) do not have a formal rule and treat emojis as informal",
-      "required in all business reports",
-      "banned in every written context",
-      "standard in scholarly writing"
+      "casual messages only; a report leaves them out",
+      "required in every business report and memo",
+      "banned in every written context, even texts",
+      "standard in scholarly and scientific papers"
     ],
-    "context": "Style guides have not fully caught up. Chicago punts explicitly. Treat as informal register only.",
+    "context": "Emojis belong to the casual register. The major style guides set no rule admitting them to formal prose, so a formal report leaves them out. 'Banned everywhere' goes too far: a text to a friend is fair ground.",
     "topic": "punctuation-and-emojis-the-modern-informal-register"
   },
   {
     "tier": 5,
     "question": "An English teacher collects three samples of stacked marks: '!!!', '???' and 'ok?????'. Which register do they fit?",
-    "answer": "casual text; nonstandard in formal writing (compare the interrobang for incredulous questions)",
+    "answer": "casual text; nonstandard in formal writing",
     "choices": [
-      "casual text; nonstandard in formal writing (compare the interrobang for incredulous questions)",
+      "casual text; nonstandard in formal writing",
       "academic prose; standard in scholarly writing",
       "legal writing; required in contracts",
       "no register accepts multiple punctuation"
     ],
-    "context": "Strong emotion in casual text uses repeated marks. Formal writing keeps to one mark. The interrobang (?!) is the formal-ish equivalent for incredulous questions.",
+    "context": "Strong feeling in a casual text shows up as stacked marks. Formal writing keeps to one mark at a time.",
     "topic": "punctuation-and-emojis-the-modern-informal-register"
   },
   {
@@ -8062,14 +8062,14 @@
   {
     "tier": 5,
     "question": "A concert program reads, 'Alice, our director, who also, on occasion, sings, will speak.' The sentence has too many commas. Which fix is cleanest?",
-    "answer": "'Alice -- our director, who also on occasion sings -- will speak.' (em-dashes bracket the outer aside)",
+    "answer": "'Alice -- our director, who also on occasion sings -- will speak.'",
     "choices": [
-      "'Alice -- our director, who also on occasion sings -- will speak.' (em-dashes bracket the outer aside)",
-      "'Alice; our director; who also; on occasion; sings; will speak.' (semicolons everywhere)",
-      "'Alice: our director: who also: on occasion: sings: will speak.' (colons everywhere)",
-      "'Alice (our director, who also, on occasion, sings) will speak.' (parens keep the comma jungle)"
+      "'Alice -- our director, who also on occasion sings -- will speak.'",
+      "'Alice -- our director, who also on occasion sings, will speak.'",
+      "'Alice -- our director, who also on occasion sings will speak.'",
+      "'Alice -- our director; who also on occasion sings -- will speak.'"
     ],
-    "context": "When commas cluster, promote the outermost pair to em-dashes so the reader can see where the aside starts and ends. Source: Chicago Manual of Style 17e section 6.85.",
+    "context": "When commas cluster, promote the outer pair to dashes so a reader can see where the aside starts and ends: 'Alice -- our director, who also on occasion sings -- will speak.' An aside needs a matching pair: a dash that opens it needs a closing dash, not a comma and not nothing, and a semicolon cannot split the aside in two.",
     "topic": "punctuation-with-parenthetical-asides-commas-dashes-or-paren"
   },
   {
@@ -8166,12 +8166,12 @@
   {
     "tier": 2,
     "question": "A newspaper prints 'She said \"hello\".' with the period after the closing quotation mark. Which style is this?",
-    "answer": "British -- puts periods and commas OUTSIDE when they are not part of the quote (logical punctuation)",
+    "answer": "British -- logical punctuation puts it outside",
     "choices": [
-      "British -- puts periods and commas OUTSIDE when they are not part of the quote (logical punctuation)",
-      "American -- always outside",
-      "Chicago Manual 17e -- puts periods outside",
-      "Wrong under both British and American rules"
+      "British -- logical punctuation puts it outside",
+      "American -- the period always goes outside",
+      "Chicago -- book style puts the period outside",
+      "Neither -- both styles put the period inside"
     ],
     "context": "British style uses LOGICAL punctuation: mark inside if it belongs to the quote, outside if it belongs to the outer sentence. American style just always tucks them inside. Source: Fowler's Modern English Usage.",
     "topic": "quotation-marks-american-vs-british-punctuation-placement"
@@ -8192,12 +8192,12 @@
   {
     "tier": 4,
     "question": "A proofreader compares two lines: 'She asked, \"Are you coming?\"' with the question mark inside, and 'Did she say \"come here\"?' with it outside. What determines which style is right?",
-    "answer": "Whose question it is -- inside if the QUOTED material is the question; outside if the WHOLE sentence is the question about the quote",
+    "answer": "whose question it is: the quoted words' or the whole sentence's",
     "choices": [
-      "Whose question it is -- inside if the QUOTED material is the question; outside if the WHOLE sentence is the question about the quote",
-      "American style always puts it inside; British always outside -- like periods",
-      "It is always outside in modern usage",
-      "It is always inside in modern usage"
+      "whose question it is: the quoted words' or the whole sentence's",
+      "the style: American puts it inside and British outside",
+      "modern usage: it always goes outside the closing mark",
+      "modern usage: it always goes inside the closing mark"
     ],
     "context": "For question marks and exclamation points, both American and British follow logic. Only periods and commas are treated differently across the Atlantic. Source: Chicago Manual of Style 17e section 6.70.",
     "topic": "quotation-marks-american-vs-british-punctuation-placement"
@@ -8222,10 +8222,10 @@
     "choices": [
       "'She said, \"hello,\" then waved goodbye.'",
       "'She said, \"hello\", then waved goodbye.'",
-      "'She said \"hello,\" then waved, goodbye.'",
-      "'She said \"hello\"; then waved goodbye.' with the comma missing"
+      "'She said, \"hello\" then, waved goodbye.'",
+      "'She said, \"hello.\" then waved goodbye.'"
     ],
-    "context": "American rule: comma INSIDE the closing quotation mark. Source: Chicago Manual of Style 17e section 6.9.",
+    "context": "American style puts the comma INSIDE the closing quotation mark: 'She said, \"hello,\" then waved goodbye.' A comma outside the mark is the British habit. A comma after THEN lands in the wrong place, and a period cannot close the quotation in the middle of the sentence.",
     "topic": "quotation-marks-american-vs-british-punctuation-placement"
   },
   {
@@ -8238,7 +8238,7 @@
       "Advanced Terminal Machine",
       "Automatic Teller Machine"
     ],
-    "context": "ATM = Automatic Teller Machine. So 'ATM machine' says 'machine' twice. It is the canonical example of a redundant acronym. Source: Grokipedia 'RAS syndrome' (2026-09-05).",
+    "context": "ATM stands for automatic (or automated) teller machine, so 'ATM machine' says 'machine' twice. It is the classic redundant acronym. Source: Grokipedia 'RAS syndrome' (2026-09-05).",
     "topic": "redundancy-atm-machine-pin-number-advance-planning"
   },
   {
@@ -8247,9 +8247,9 @@
     "answer": "Number",
     "choices": [
       "Number",
-      "Password",
-      "Personal",
-      "Code"
+      "Name",
+      "Network",
+      "Notation"
     ],
     "context": "PIN = Personal Identification Number. So 'PIN number' expands to 'Personal Identification Number number.' Same trap: VIN = Vehicle Identification Number. Source: Grokipedia 'RAS syndrome' (2026-09-05).",
     "topic": "redundancy-atm-machine-pin-number-advance-planning"
@@ -8296,9 +8296,9 @@
   {
     "tier": 4,
     "question": "A word lover's blog mocks 'ATM machine.' What name do wordplay fans give phrases like that one?",
-    "answer": "RAS syndrome -- Redundant Acronym Syndrome syndrome",
+    "answer": "RAS syndrome",
     "choices": [
-      "RAS syndrome -- Redundant Acronym Syndrome syndrome",
+      "RAS syndrome",
       "meta-language creep",
       "pleonastic drift",
       "acronymic tautology"
@@ -8322,9 +8322,9 @@
   {
     "tier": 1,
     "question": "A fairy tale reads, 'She saw ___ in the mirror.' The face in the glass is the queen's own. Which word fills the blank?",
-    "answer": "herself (subject and object are the same person)",
+    "answer": "herself",
     "choices": [
-      "herself (subject and object are the same person)",
+      "herself",
       "her",
       "she",
       "hers"
@@ -8348,9 +8348,9 @@
   {
     "tier": 2,
     "question": "An office gossip whispers, 'Between you and myself, this is a bad idea.' What is the correction?",
-    "answer": "'between you and me' -- object of preposition; no reflexive needed",
+    "answer": "'between you and me'",
     "choices": [
-      "'between you and me' -- object of preposition; no reflexive needed",
+      "'between you and me'",
       "'between you and I'",
       "'between yourself and myself'",
       "no change needed"
@@ -8374,22 +8374,22 @@
   {
     "tier": 3,
     "question": "A grammar teacher chalks 'myself' and 'herself' on the board and asks when such words are legitimate. What uses does she accept?",
-    "answer": "referring back to a subject in the same clause, OR emphasising a noun ('the president himself called')",
+    "answer": "pointing back to the subject, or stressing a noun beside it",
     "choices": [
-      "referring back to a subject in the same clause, OR emphasising a noun ('the president himself called')",
-      "any polite substitute for me/him/her",
-      "any use after a preposition",
-      "as a modifier"
+      "pointing back to the subject, or stressing a noun beside it",
+      "as a polite substitute for me, him or her",
+      "anywhere after a preposition, whatever the subject",
+      "as a modifier in front of a noun"
     ],
-    "context": "REFLEXIVE use: subject and object are the same ('she washed herself'). INTENSIVE use: emphasises a noun ('I myself will attend'). Third-party fancy-me substitution is the hypercorrection to avoid.",
+    "context": "REFLEXIVE use: subject and object are the same ('she washed herself'). INTENSIVE use: emphasizes a noun ('I myself will attend'). Third-party fancy-me substitution is the hypercorrection to avoid.",
     "topic": "reflexive-pronouns-myself-is-not-a-fancy-me-or-i"
   },
   {
     "tier": 3,
     "question": "A company email promises, 'The manager and myself will attend.' Which correction fits?",
-    "answer": "'the manager and I' -- subject of the verb 'will attend'",
+    "answer": "'the manager and I'",
     "choices": [
-      "'the manager and I' -- subject of the verb 'will attend'",
+      "'the manager and I'",
       "'the manager and me'",
       "'myself and the manager'",
       "no change"
@@ -8400,14 +8400,14 @@
   {
     "tier": 4,
     "question": "A restaurant review reads, 'The chef prepared the meal himself.' What role does 'himself' play there?",
-    "answer": "intensive (emphasises that the chef, not a helper, did it)",
+    "answer": "intensive (emphasizes that the chef, not a helper, did it)",
     "choices": [
-      "intensive (emphasises that the chef, not a helper, did it)",
-      "reflexive (chef did something to chef)",
-      "object of preparation",
-      "modifier of meal"
+      "intensive (emphasizes that the chef, not a helper, did it)",
+      "reflexive (the chef did something to himself)",
+      "object (the thing the chef prepared)",
+      "modifier (it describes the meal)"
     ],
-    "context": "INTENSIVE use of reflexive pronouns emphasises a noun or pronoun. 'The chef himself' = 'the chef, not anyone else'. Removable without breaking grammar: 'The chef prepared the meal' is still complete.",
+    "context": "INTENSIVE use of reflexive pronouns emphasizes a noun or pronoun. 'The chef himself' = 'the chef, not anyone else'. Removable without breaking grammar: 'The chef prepared the meal' is still complete.",
     "topic": "reflexive-pronouns-myself-is-not-a-fancy-me-or-i"
   },
   {
@@ -8608,14 +8608,14 @@
   {
     "tier": 1,
     "question": "A mail carrier drafts his report two ways: 'The dog that bit me ran off' and 'The dog, which bit me, ran off.' What signal does each version send the reader?",
-    "answer": "The no-comma version tells you WHICH dog (essential info); the comma version adds extra info about the one dog we already know",
+    "answer": "No commas picks out one dog among several; commas add news about the only dog",
     "choices": [
-      "The no-comma version tells you WHICH dog (essential info); the comma version adds extra info about the one dog we already know",
-      "The comma version means the dog was fake",
-      "The no-comma version is always past tense; the comma version is always present",
-      "The two versions mean exactly the same thing"
+      "No commas picks out one dog among several; commas add news about the only dog",
+      "No commas adds news about the only dog; commas pick out one dog among several",
+      "The two versions mean exactly the same thing",
+      "The comma version is wrong, because 'which' cannot follow 'dog'"
     ],
-    "context": "Essential-to-identify = RESTRICTIVE (no commas, often THAT). Added-info = NON-RESTRICTIVE (commas, WHICH in American usage). Source: Chicago Manual of Style 17e section 6.27.",
+    "context": "Without commas the clause identifies WHICH dog (restrictive, usually THAT). With commas it adds news about a dog already known (non-restrictive, WHICH in American usage).",
     "topic": "restrictive-vs-non-restrictive-clauses-that-vs-which"
   },
   {
@@ -8650,7 +8650,7 @@
     "answer": "No commas: only the students who studied passed. With commas: all the students studied, and all of them passed.",
     "choices": [
       "No commas: only the students who studied passed. With commas: all the students studied, and all of them passed.",
-      "No commas: the students were rewarded. With commas: they were punished.",
+      "No commas: all the students studied and passed. With commas: only the ones who studied passed.",
       "The two versions mean exactly the same thing.",
       "The comma version is grammatically wrong."
     ],
@@ -8664,23 +8664,23 @@
     "choices": [
       "'The car that I bought last week already has a flat tire.'",
       "'The car, that I bought last week, already has a flat tire.'",
-      "'The car which I bought last week already has a flat tire.'",
+      "'The car, which I bought last week already has a flat tire.'",
       "'The car; which I bought last week; already has a flat tire.'"
     ],
-    "context": "Restrictive clause (identifies WHICH car): THAT, no commas. Non-restrictive with unique reference would take commas and WHICH. Source: Chicago Manual of Style 17e section 6.27.",
+    "context": "The clause identifies WHICH car, so it is restrictive: THAT, no commas. THAT never takes commas around it, a clause opened with a comma must close with one, and semicolons cannot bracket a clause.",
     "topic": "restrictive-vs-non-restrictive-clauses-that-vs-which"
   },
   {
     "tier": 1,
     "question": "A hiker's logbook reads, 'The rain fell birds took shelter.' What error is this?",
-    "answer": "run-on (fused) sentence -- two full sentences with no punctuation between them",
+    "answer": "run-on (fused) sentence",
     "choices": [
-      "run-on (fused) sentence -- two full sentences with no punctuation between them",
+      "run-on (fused) sentence",
       "comma splice",
       "fragment",
       "misplaced modifier"
     ],
-    "context": "RUN-ON (fused) SENTENCE: two independent clauses smashed together with NO punctuation or conjunction. Compare comma splice (has a comma). Both errors, run-on is worse. Chicago 5.219.",
+    "context": "RUN-ON (fused) SENTENCE: two independent clauses smashed together with NO punctuation or conjunction. A comma splice has a comma between them; a fragment is missing a part of a sentence; a misplaced modifier sits beside the wrong word.",
     "topic": "run-on-sentences-fused-sentences-no-punctuation-at-all"
   },
   {
@@ -8699,14 +8699,14 @@
   {
     "tier": 2,
     "question": "An office memo reads, 'She wrote the letter she mailed it.' What is the best fix?",
-    "answer": "'She wrote the letter. She mailed it.' OR 'She wrote the letter, and she mailed it.'",
+    "answer": "'She wrote the letter, and she mailed it.'",
     "choices": [
-      "'She wrote the letter. She mailed it.' OR 'She wrote the letter, and she mailed it.'",
-      "'She wrote the letter she mailed it,'",
-      "'She wrote letter mailed it'",
-      "no fix needed"
+      "'She wrote the letter, and she mailed it.'",
+      "'She wrote the letter, she mailed it.'",
+      "'She wrote, the letter she mailed it.'",
+      "'She wrote the letter and, she mailed it.'"
     ],
-    "context": "Standard run-on fixes: period between clauses, or comma + coordinating conjunction. Either works. Semicolon also works: 'She wrote the letter; she mailed it.'",
+    "context": "A comma plus AND joins the two clauses; a period or a semicolon would also work ('She wrote the letter. She mailed it.'). A bare comma makes a comma splice, and the other two put a comma where no join belongs.",
     "topic": "run-on-sentences-fused-sentences-no-punctuation-at-all"
   },
   {
@@ -8728,11 +8728,11 @@
     "answer": "semicolon: 'The clock struck midnight; everyone cheered.'",
     "choices": [
       "semicolon: 'The clock struck midnight; everyone cheered.'",
-      "period only",
-      "add three commas",
-      "delete one clause"
+      "period: 'The clock struck midnight. Everyone cheered.'",
+      "comma: 'The clock struck midnight, everyone cheered.'",
+      "no mark: 'The clock struck midnight everyone cheered.'"
     ],
-    "context": "SEMICOLON is the tightest of the standard fixes -- signals a strong link between related events. Period feels more separated. Both are valid run-on fixes; choose based on desired connection.",
+    "context": "A semicolon joins two closely related sentences and keeps them in one breath. A period also fixes the run-on but parts the two events. A bare comma only trades the run-on for a comma splice, and no mark leaves the error as it was.",
     "topic": "run-on-sentences-fused-sentences-no-punctuation-at-all"
   },
   {
@@ -8745,15 +8745,15 @@
       "The dog barked; the mailman ran.",
       "The dog barked. The mailman ran."
     ],
-    "context": "First option: no punctuation between two full sentences = fused (run-on). The other three all use one of the standard fixes: comma + conjunction, semicolon, period.",
+    "context": "'The dog barked the mailman ran' has no punctuation between two full sentences, so it is fused (a run-on). The other three use standard fixes: comma + conjunction, semicolon, period.",
     "topic": "run-on-sentences-fused-sentences-no-punctuation-at-all"
   },
   {
     "tier": 5,
     "question": "A camper's journal reads, 'It was cold I put on a jacket then I went outside.' How many independent clauses are running on?",
-    "answer": "three (it was cold / I put on a jacket / I went outside)",
+    "answer": "three",
     "choices": [
-      "three (it was cold / I put on a jacket / I went outside)",
+      "three",
       "two",
       "four",
       "one"
@@ -8764,12 +8764,12 @@
   {
     "tier": 1,
     "question": "A moving company's manual reads, \"One should take the box and carry it to the kitchen.\" Why does that line read stiff?",
-    "answer": "it uses THIRD-PERSON when the imperative (\"Take the box to the kitchen\") would be direct",
+    "answer": "it uses the third person where a command would be direct",
     "choices": [
-      "it uses THIRD-PERSON when the imperative (\"Take the box to the kitchen\") would be direct",
-      "it uses passive voice",
-      "it uses the past tense",
-      "it uses too many prepositions"
+      "it uses the third person where a command would be direct",
+      "it uses the passive voice, which hides the mover",
+      "it uses the past tense for a job still to do",
+      "it uses too many prepositions for a manual"
     ],
     "context": "Instructions want the IMPERATIVE (YOU understood). \"One should\" adds distance and stiffness.",
     "topic": "second-person-and-imperatives-in-instructions"
@@ -8777,12 +8777,12 @@
   {
     "tier": 1,
     "question": "A note on a jar reads, 'Hold the lid down, then count to ten.' Both verbs are in the imperative mood. What is the imperative mood?",
-    "answer": "a verb form that gives a command; the subject \"you\" is usually understood",
+    "answer": "a verb form that gives a command",
     "choices": [
-      "a verb form that gives a command; the subject \"you\" is usually understood",
+      "a verb form that gives a command",
       "a verb form that describes a past event",
       "a verb form that asks a question",
-      "a verb form that expresses a wish"
+      "a verb form that states a plain fact"
     ],
     "context": "IMPERATIVE = command mood. \"Close the door\" means \"YOU close the door\" -- YOU is dropped.",
     "topic": "second-person-and-imperatives-in-instructions"
@@ -8803,12 +8803,12 @@
   {
     "tier": 3,
     "question": "A recipe writer weighs two lines: \"combine the flour and the sugar\" and \"one should combine the flour and the sugar.\" Why does the imperative win?",
-    "answer": "it reads like a friend at your elbow; the third-person adds unnecessary distance",
+    "answer": "it speaks to the cook directly; 'one should' adds distance",
     "choices": [
-      "it reads like a friend at your elbow; the third-person adds unnecessary distance",
-      "it uses more words",
-      "it uses passive voice",
-      "it is grammatically incorrect"
+      "it speaks to the cook directly; 'one should' adds distance",
+      "it uses more words than the 'one should' line",
+      "it turns the sentence into the passive voice",
+      "the 'one should' line is grammatically incorrect"
     ],
     "context": "Instructional writing wants immediacy. The imperative is direct, friendly, and clear.",
     "topic": "second-person-and-imperatives-in-instructions"
@@ -8933,9 +8933,9 @@
   {
     "tier": 2,
     "question": "An editor stops at a line in a memoir: 'I have lived in Paris, France, Rome, Italy, and Athens, Greece.' Why is that comma-only version broken?",
-    "answer": "The reader cannot tell if 'France, Rome' is one item or two -- semicolons between items would fix it",
+    "answer": "A reader cannot tell where one item ends and the next begins",
     "choices": [
-      "The reader cannot tell if 'France, Rome' is one item or two -- semicolons between items would fix it",
+      "A reader cannot tell where one item ends and the next begins",
       "It has too many capital letters",
       "It is missing an Oxford comma",
       "The word AND should not appear before the final item"
@@ -8959,27 +8959,27 @@
   {
     "tier": 4,
     "question": "A conference program's draft reads, 'The speakers were Dr. Alice Chen our chief scientist Mr. Ben Ortiz the operations director and Prof. Carla Vega the department head.' What is the cleanest fix?",
-    "answer": "Add appositive commas and use SEMICOLONS between speakers: 'Dr. Alice Chen, our chief scientist; Mr. Ben Ortiz, the operations director; and Prof. Carla Vega, the department head.'",
+    "answer": "commas around each title, semicolons between the speakers",
     "choices": [
-      "Add appositive commas and use SEMICOLONS between speakers: 'Dr. Alice Chen, our chief scientist; Mr. Ben Ortiz, the operations director; and Prof. Carla Vega, the department head.'",
-      "Add only commas everywhere -- more commas mean more clarity",
-      "Add colons between speakers -- colons always separate list items",
-      "Add periods between speakers -- treat each as a separate sentence"
+      "commas around each title, semicolons between the speakers",
+      "commas around each title and between the speakers",
+      "colons after each name, commas between the speakers",
+      "periods between the speakers, one sentence for each"
     ],
-    "context": "Each speaker's name is followed by an appositive (with commas), so semicolons between speakers keep the three people distinct. Source: Chicago Manual of Style 17e section 6.60.",
+    "context": "Each speaker's name is followed by an appositive set off with commas, so semicolons between the speakers keep the three people distinct: 'Dr. Alice Chen, our chief scientist; Mr. Ben Ortiz, the operations director; and Prof. Carla Vega, the department head.'",
     "topic": "semicolons-as-super-commas-in-complex-lists"
   },
   {
     "tier": 5,
     "question": "A family newsletter's draft reads, 'She invited her sister, Anna, her brother, Ben, and her mother, Carla.' What does Chicago style recommend?",
-    "answer": "Use semicolons between the items: 'her sister, Anna; her brother, Ben; and her mother, Carla'",
+    "answer": "semicolons between items: 'her sister, Anna; her brother, Ben; and her mother, Carla'",
     "choices": [
-      "Use semicolons between the items: 'her sister, Anna; her brother, Ben; and her mother, Carla'",
-      "Never use semicolons in personal-relationship lists",
-      "Use only commas -- semicolons are pretentious",
-      "Rewrite the sentence to avoid the problem entirely"
+      "semicolons between items: 'her sister, Anna; her brother, Ben; and her mother, Carla'",
+      "colons between items: 'her sister, Anna: her brother, Ben: and her mother, Carla'",
+      "periods between items: 'her sister, Anna. Her brother, Ben. And her mother, Carla'",
+      "only commas, as written, since semicolons never separate names"
     ],
-    "context": "Even in a light case, Chicago prefers semicolons when items carry appositive commas -- the reader sees the item boundaries clearly. Source: Chicago Manual of Style 17e section 6.60.",
+    "context": "When list items carry commas of their own (here, the commas around each name), Chicago recommends semicolons between the items so a reader sees where each one ends. Colons and periods do not separate list items, and with commas alone a reader cannot tell three people from six.",
     "topic": "semicolons-as-super-commas-in-complex-lists"
   },
   {
@@ -9011,14 +9011,14 @@
   {
     "tier": 4,
     "question": "A tutor sorts connective words into three families: 'however,' 'and' and 'because.' Which note describes how each family is punctuated?",
-    "answer": "Conjunctive adverbs (however, therefore) take a semicolon before + comma after; FANBOYS coordinating conjunctions (for, and, nor, but, or, yet, so) take a comma before; subordinating conjunctions (because, although) take a comma only when the dependent clause LEADS",
+    "answer": "'however': semicolon before, comma after; 'and': comma before; 'because': comma when its clause leads",
     "choices": [
-      "Conjunctive adverbs (however, therefore) take a semicolon before + comma after; FANBOYS coordinating conjunctions (for, and, nor, but, or, yet, so) take a comma before; subordinating conjunctions (because, although) take a comma only when the dependent clause LEADS",
-      "All three families take the same punctuation (a comma before)",
-      "Conjunctive adverbs and FANBOYS both take a semicolon; only subordinating conjunctions differ",
-      "Only conjunctive adverbs take any punctuation; FANBOYS and subordinating conjunctions take none"
+      "'however': semicolon before, comma after; 'and': comma before; 'because': comma when its clause leads",
+      "'however', 'and' and 'because': the same comma before each, nothing after",
+      "'however' and 'and': semicolon before; 'because': comma before, every time",
+      "'however': marks on both sides; 'and' and 'because': no marks at all"
     ],
-    "context": "Three families, three punctuation patterns. Mixing them up is one of the most common formal-writing errors. Source: Grokipedia 'Conjunctive adverb' (2026-09-05).",
+    "context": "Three families, three patterns. A conjunctive adverb joining two sentences takes a semicolon before and a comma after. A coordinating conjunction (for, and, nor, but, or, yet, so) takes a comma before. A subordinating conjunction such as BECAUSE takes a comma when its clause opens the sentence ('Because it rained, we stayed in') and usually none when it follows. Source: Grokipedia 'Conjunctive adverb' (2026-09-05).",
     "topic": "semicolons-before-conjunctive-adverbs-however-therefore"
   },
   {
@@ -9053,9 +9053,9 @@
     "answer": "joining two independent clauses closely related in meaning",
     "choices": [
       "joining two independent clauses closely related in meaning",
-      "introducing a list",
-      "showing a pause longer than a comma",
-      "marking a quotation"
+      "introducing a list that explains the first clause",
+      "separating the subject of a clause from its verb",
+      "marking where a quotation begins and ends"
     ],
     "context": "The semicolon's primary job: joining two independent clauses (each could be its own sentence) that are closely related. Chicago 6.56.",
     "topic": "semicolons-joining-independent-clauses"
@@ -9066,37 +9066,37 @@
     "answer": "a comma between two independent clauses without a conjunction is a comma splice",
     "choices": [
       "a comma between two independent clauses without a conjunction is a comma splice",
-      "commas are only for lists",
-      "the sentence has no verbs",
-      "commas cannot appear between sisters"
+      "a comma would work too; the semicolon only sounds more formal",
+      "a comma would turn the second half into a sentence fragment",
+      "a comma may only separate the items of a list of three"
     ],
-    "context": "Two independent clauses joined by comma alone = comma splice (a punctuation error). Fixes: semicolon, period, or add a coordinating conjunction (comma + and/but/or).",
+    "context": "Two independent clauses joined by a comma alone = comma splice (a punctuation error). Fixes: semicolon, period, or a comma plus a coordinating conjunction ('She loves reading, but her sister prefers movies'). A comma does not make a fragment, and commas do far more than separate list items.",
     "topic": "semicolons-joining-independent-clauses"
   },
   {
     "tier": 2,
     "question": "A short story draft reads, 'She packed her bag; and left for the airport.' What is wrong with that semicolon?",
-    "answer": "semicolons do not take a following coordinating conjunction like 'and'",
+    "answer": "'and left for the airport' cannot stand alone as a sentence",
     "choices": [
-      "semicolons do not take a following coordinating conjunction like 'and'",
-      "semicolons need commas after them",
-      "the sentence is too short",
-      "nothing is wrong"
+      "'and left for the airport' cannot stand alone as a sentence",
+      "a semicolon must always be followed by a comma",
+      "the semicolon belongs after 'and', not before it",
+      "nothing is wrong; a semicolon may replace any comma"
     ],
-    "context": "The semicolon already does the joining -- 'and' becomes redundant. Use EITHER a semicolon OR a comma+conjunction, not both.",
+    "context": "A semicolon needs a full sentence on each side, and 'and left for the airport' has no subject of its own. Drop the semicolon: 'She packed her bag and left for the airport.' One subject with two verbs needs no comma either.",
     "topic": "semicolons-joining-independent-clauses"
   },
   {
     "tier": 3,
     "question": "A company's minutes read, 'The meeting was short; however, the decisions were huge.' What role does the semicolon play with the word 'however'?",
-    "answer": "joins two independent clauses; 'however' is a conjunctive adverb, not a conjunction",
+    "answer": "it joins the two clauses, since 'however' is an adverb and cannot",
     "choices": [
-      "joins two independent clauses; 'however' is a conjunctive adverb, not a conjunction",
-      "starts a new paragraph",
-      "shows a pause before the however",
-      "cancels the meaning of the first clause"
+      "it joins the two clauses, since 'however' is an adverb and cannot",
+      "it starts a new paragraph after the first clause",
+      "it makes the second clause depend on the first",
+      "it sets 'however' off as a one-word aside"
     ],
-    "context": "'However', 'therefore', 'moreover', 'nevertheless' are conjunctive adverbs. They CANNOT join clauses grammatically -- you need a semicolon (or a period) before them, and a comma after. Chicago 6.57.",
+    "context": "'However', 'therefore', 'moreover' and 'nevertheless' are conjunctive adverbs. They CANNOT join clauses on their own, so a semicolon (or a period) goes before them and a comma after. Chicago 6.57.",
     "topic": "semicolons-joining-independent-clauses"
   },
   {
@@ -9115,12 +9115,12 @@
   {
     "tier": 5,
     "question": "A biographer's draft reads, 'She wrote the letter; because she felt she owed him a reply.' What is wrong with that line?",
-    "answer": "'because...' is a dependent clause; semicolons only join independent clauses",
+    "answer": "the 'because' half cannot stand alone as a sentence",
     "choices": [
-      "'because...' is a dependent clause; semicolons only join independent clauses",
-      "the sentence is a fragment",
-      "'letter' needs an article",
-      "the tenses do not match"
+      "the 'because' half cannot stand alone as a sentence",
+      "'because' must be followed by a comma",
+      "'letter' needs an article in front of it",
+      "the tenses of the two halves do not match"
     ],
     "context": "'Because she felt she owed him a reply' cannot stand alone (starts with subordinating conjunction 'because'). Semicolons join TWO INDEPENDENT clauses. Fix: 'She wrote the letter because she felt...' (no punctuation).",
     "topic": "semicolons-joining-independent-clauses"
@@ -9128,9 +9128,9 @@
   {
     "tier": 1,
     "question": "A boy's note about the morning bus reads, 'Ran quickly down the street.' What is missing?",
-    "answer": "the subject (WHO ran?)",
+    "answer": "the subject",
     "choices": [
-      "the subject (WHO ran?)",
+      "the subject",
       "the verb",
       "the object",
       "punctuation"
@@ -9141,9 +9141,9 @@
   {
     "tier": 2,
     "question": "A postcard reads, 'Sat on the bench for hours.' A fragment is a piece of a sentence dressed up as a whole one. What kind of fragment is this?",
-    "answer": "missing-subject fragment (no one is doing the sitting)",
+    "answer": "missing-subject fragment",
     "choices": [
-      "missing-subject fragment (no one is doing the sitting)",
+      "missing-subject fragment",
       "missing-verb fragment",
       "missing-object fragment",
       "not a fragment"
@@ -9158,23 +9158,23 @@
     "choices": [
       "Walked into the room silently.",
       "The tall woman walked into the room silently.",
-      "Walking into the room silently.",
+      "The tall woman into the room silently.",
       "The room was entered silently."
     ],
-    "context": "'Walked into the room silently' has no subject. Who walked? The others either have a subject (the tall woman) or are participial phrases (which are also fragments but for a different reason).",
+    "context": "'Walked into the room silently' has no subject. Who walked? 'The tall woman into the room silently' has a subject but no verb, so it is a fragment for a different reason. The other two are complete sentences, one active and one passive.",
     "topic": "sentence-fragments-missing-the-subject"
   },
   {
     "tier": 3,
     "question": "A nurse's diary reads, 'Was tired after the long day.' What is the fix?",
-    "answer": "'She was tired after the long day.' (add subject)",
+    "answer": "'She was tired after the long day.'",
     "choices": [
-      "'She was tired after the long day.' (add subject)",
-      "'Was very tired'",
-      "'Tired after the long day'",
-      "no fix needed"
+      "'She was tired after the long day.'",
+      "'Was tired, after the long day.'",
+      "'Was tired after the long day!'",
+      "'Tired after the long day.'"
     ],
-    "context": "'Was tired' has no subject. WHO was tired? Fix by adding one: 'She was tired' or 'The runner was tired'. Every English sentence needs a subject (imperatives have an implied 'you').",
+    "context": "'Was tired' has no subject. WHO was tired? Fix by adding one: 'She was tired after the long day.' A comma or an exclamation point changes nothing, and cutting 'was' leaves a fragment with no verb either.",
     "topic": "sentence-fragments-missing-the-subject"
   },
   {
@@ -9183,24 +9183,24 @@
     "answer": "'She painted the entire room in one afternoon.'",
     "choices": [
       "'She painted the entire room in one afternoon.'",
-      "'The room painted'",
-      "add a semicolon",
-      "no subject possible"
+      "'Painted the entire room, in one afternoon.'",
+      "'Painted, the entire room in one afternoon.'",
+      "'Painting the entire room in one afternoon.'"
     ],
-    "context": "Add a subject to the verb 'painted' to complete the sentence. Almost any noun/pronoun that could paint (she, he, the crew, my father) works.",
+    "context": "Add a subject to the verb 'painted': 'She painted the entire room in one afternoon.' Any noun or pronoun that could paint works (she, he, the crew). Commas do not supply a subject, and 'painting' with no helper verb is still a fragment.",
     "topic": "sentence-fragments-missing-the-subject"
   },
   {
     "tier": 4,
     "question": "An English teacher finds the same slip all through a stack of student stories: sentences with no subject. Why does that fragment turn up so often in writing?",
-    "answer": "writers omit subjects that seem obvious from context, but each sentence needs its own subject",
+    "answer": "the subject seems obvious from context, so the writer leaves it out",
     "choices": [
-      "writers omit subjects that seem obvious from context, but each sentence needs its own subject",
-      "the subject was misspelled",
-      "the verb form is wrong",
-      "fragments are correct"
+      "the subject seems obvious from context, so the writer leaves it out",
+      "the writer mistakes the verb for its own subject",
+      "the writer thinks short sentences never need one",
+      "the writer cuts it to dodge a comma splice"
     ],
-    "context": "In speech and casual writing, we drop subjects when context is clear ('Sat there for hours.'). Formal writing requires each sentence to have its own explicit subject.",
+    "context": "In speech and casual notes, a subject that seems obvious gets dropped ('Sat there for hours.'). Formal writing needs each sentence to carry its own subject.",
     "topic": "sentence-fragments-missing-the-subject"
   },
   {
@@ -9222,7 +9222,7 @@
     "answer": "It is a fragment -- no verb; the cat never does anything",
     "choices": [
       "It is a fragment -- no verb; the cat never does anything",
-      "It has too many adjectives -- cats can only have one color",
+      "It has too many adjectives -- a noun may take only two",
       "It has a comma error -- there should be a comma after CAT",
       "It is a run-on -- two ideas jammed together"
     ],
@@ -9252,7 +9252,7 @@
       "'My mother baked the cookies.'",
       "'The cookies smell wonderful.'"
     ],
-    "context": "The first option is only a subject (a big noun phrase) with no verb -- fragment. The other three each have a subject + a verb (are, baked, smell). Source: Chicago Manual of Style 17e section 5.213.",
+    "context": "'My grandmother's amazing chocolate chip cookies with walnuts' is only a subject (a big noun phrase) with no verb, so it is a fragment. The other three each have a subject and a verb (are, baked, smell).",
     "topic": "sentence-fragments-missing-the-verb"
   },
   {
@@ -9283,19 +9283,6 @@
   },
   {
     "tier": 5,
-    "question": "A student writes, 'Because the storm knocked out the power.' Which fix turns that into a complete sentence?",
-    "answer": "'Because the storm knocked out the power, we lit candles.'",
-    "choices": [
-      "'Because the storm knocked out the power, we lit candles.'",
-      "'Because the storm knocked out the power!'",
-      "'Because the storm, knocked out the power.'",
-      "'The, because, storm knocked out the power.'"
-    ],
-    "context": "'Because the storm knocked out the power' is a SUBORDINATE clause. It has a subject (storm) and a verb (knocked out), but BECAUSE tells the reader the sentence must continue with a main clause. Only Option A adds a main clause ('we lit candles'). Source: Chicago Manual of Style 17e section 5.213.",
-    "topic": "sentence-fragments-missing-the-verb"
-  },
-  {
-    "tier": 5,
     "question": "A tired neighbor writes four lines in a complaint to the landlord. Which line is a complete sentence?",
     "answer": "'The dog barked all night.'",
     "choices": [
@@ -9304,7 +9291,7 @@
       "'Running down the hallway to the stairs.'",
       "'Because the alarm went off suddenly.'"
     ],
-    "context": "The first has subject (dog) + verb (barked). The others are: a noun phrase; a participial phrase; a subordinate clause. Each is a fragment on its own. Source: Chicago Manual of Style 17e section 5.213.",
+    "context": "'The dog barked all night' has a subject (dog) and a verb (barked). The others are a noun phrase, a participial phrase and a subordinate clause, and each is a fragment on its own.",
     "topic": "sentence-fragments-missing-the-verb"
   },
   {
@@ -9323,14 +9310,14 @@
   {
     "tier": 2,
     "question": "A story draft ends on the line 'When the rain finally stopped.' What is the fix?",
-    "answer": "'When the rain finally stopped, we went outside.' (attach independent clause)",
+    "answer": "'When the rain finally stopped, we went outside.'",
     "choices": [
-      "'When the rain finally stopped, we went outside.' (attach independent clause)",
-      "'The rain finally stopped when.'",
-      "'When the rain.'",
-      "no fix"
+      "'When the rain finally stopped, we went outside.'",
+      "'When the rain finally stopped; we went outside.'",
+      "'When, the rain finally stopped.'",
+      "'When the rain finally stopped!'"
     ],
-    "context": "The subordinator WHEN makes the clause dependent. It needs a main clause. Fix by adding one: 'When the rain finally stopped, X happened.' Or drop the WHEN: 'The rain finally stopped.'",
+    "context": "The subordinator WHEN makes the clause dependent, so it needs a main clause: 'When the rain finally stopped, we went outside.' Or drop the WHEN: 'The rain finally stopped.' A semicolon cannot attach a leaning clause, and new marks alone leave it leaning.",
     "topic": "sentence-fragments-subordinate-clause-stranded"
   },
   {
@@ -9362,14 +9349,14 @@
   {
     "tier": 3,
     "question": "A coach's text reads, 'If we leave now.' What fixes it?",
-    "answer": "add a main clause: 'If we leave now, we'll catch the train.' OR drop IF: 'We leave now.'",
+    "answer": "add a main clause: 'If we leave now, we'll catch the train.'",
     "choices": [
-      "add a main clause: 'If we leave now, we'll catch the train.' OR drop IF: 'We leave now.'",
-      "add a semicolon",
-      "add more IFs",
-      "no fix"
+      "add a main clause: 'If we leave now, we'll catch the train.'",
+      "add a semicolon: 'If we leave now; we'll catch the train.'",
+      "add a comma: 'If, we leave now.'",
+      "add an exclamation point: 'If we leave now!'"
     ],
-    "context": "Two standard fixes for subordinate-clause fragments: (1) attach an independent clause, or (2) remove the subordinator to make it independent. Both work.",
+    "context": "Two standard fixes for a subordinate-clause fragment: attach a main clause ('If we leave now, we'll catch the train.') or drop the IF ('We leave now.'). A semicolon cannot join a leaning clause to a sentence, and new marks alone leave the clause leaning.",
     "topic": "sentence-fragments-subordinate-clause-stranded"
   },
   {
@@ -9378,9 +9365,9 @@
     "answer": "'Since he was young, he has loved music.'",
     "choices": [
       "'Since he was young, he has loved music.'",
-      "'Since he was young.'",
-      "'Since young.'",
-      "'He was young since.'"
+      "'Since he was young; he has loved music.'",
+      "'Since, he was young.'",
+      "'Since he was young, and loved music.'"
     ],
     "context": "Subordinate 'since he was young' + main clause 'he has loved music' = complete complex sentence. The subordinator needs a main clause partner to complete the thought.",
     "topic": "sentence-fragments-subordinate-clause-stranded"
@@ -9388,12 +9375,12 @@
   {
     "tier": 5,
     "question": "A boy's story stops dead at 'While walking to the store.' What kind of fragment is this?",
-    "answer": "subordinate + reduced clause (needs a main clause and a subject)",
+    "answer": "a reduced subordinate clause, with no subject and no main clause",
     "choices": [
-      "subordinate + reduced clause (needs a main clause and a subject)",
-      "complete sentence",
-      "missing only a subject",
-      "no error"
+      "a reduced subordinate clause, with no subject and no main clause",
+      "a missing-verb fragment, since 'walking' is a noun here",
+      "a run-on, since two clauses run together with no mark",
+      "a complete sentence, with 'walking' as its verb"
     ],
     "context": "'While walking to the store' has BOTH a subordinator (while) AND no subject. Fix: 'While walking to the store, I saw an old friend' (subject in main clause) or 'While I was walking to the store, I saw an old friend'.",
     "topic": "sentence-fragments-subordinate-clause-stranded"
@@ -9518,9 +9505,9 @@
   {
     "tier": 1,
     "question": "A writing coach hands back an essay with the words 'sentence variety' circled at the top. What rule does she mean?",
-    "answer": "mix SHORT sentences (punchy), MEDIUM sentences (workhorse), and OCCASIONAL LONG sentences (detail)",
+    "answer": "mix short, medium and long sentences so the rhythm keeps changing",
     "choices": [
-      "mix SHORT sentences (punchy), MEDIUM sentences (workhorse), and OCCASIONAL LONG sentences (detail)",
+      "mix short, medium and long sentences so the rhythm keeps changing",
       "use only short sentences for maximum clarity",
       "use only long sentences to appear sophisticated",
       "sentence variety does not affect readability"
@@ -9804,27 +9791,27 @@
   {
     "tier": 4,
     "question": "A columnist uses scare quotes in his review of a rival's book. What are scare quotes?",
-    "answer": "single or double quotes around a word to signal distance or irony (\"the so-called ‘expert’\")",
+    "answer": "quotes around a word to show the writer doubts or mocks it",
     "choices": [
-      "single or double quotes around a word to signal distance or irony (\"the so-called ‘expert’\")",
-      "quotes used only in horror fiction",
-      "quotes that mark direct speech",
+      "quotes around a word to show the writer doubts or mocks it",
+      "quotes around a word the writer wants to stress",
+      "quotes that mark a speaker's exact words",
       "quotes required around every technical term"
     ],
-    "context": "Scare quotes signal skepticism or ironic distance. Overuse is a style problem. American writers usually use double for scare quotes.",
+    "context": "Scare quotes signal skepticism or ironic distance: his \"research\" turned out to be three websites. They do not add emphasis; a word put in quotation marks for stress reads as doubt instead. American writers usually use double marks for them.",
     "topic": "single-vs-double-quotation-marks-and-nested-quotes"
   },
   {
     "tier": 5,
     "question": "A proofreader looks up the single quote mark in his style sheet and reads where specialists use it on purpose. Which field or fields does the sheet name?",
-    "answer": "linguistics (word-glossing) and botany (cultivar names like Rosa ‘Peace’)",
+    "answer": "linguistics (word meanings) and botany (cultivar names)",
     "choices": [
-      "linguistics (word-glossing) and botany (cultivar names like Rosa ‘Peace’)",
-      "law (contract clauses)",
-      "poetry (line breaks)",
-      "journalism (headlines)"
+      "linguistics (word meanings) and botany (cultivar names)",
+      "law (contract clauses) and medicine (drug names)",
+      "poetry (line breaks) and drama (stage directions)",
+      "chemistry (formulas) and music (key signatures)"
     ],
-    "context": "Linguistics uses single quotes for word-glossing (\"the word ‘cat’ has three letters\"). Botany uses single quotes for cultivar names. Domain-specific conventions.",
+    "context": "Linguists put a word's meaning in single quotes: Latin canis ‘dog’. Gardeners and botanists put the name of a cultivated variety in single quotes: Rosa ‘Peace’. Domain-specific conventions.",
     "topic": "single-vs-double-quotation-marks-and-nested-quotes"
   },
   {
@@ -9850,7 +9837,7 @@
       "Several",
       "Many"
     ],
-    "context": "EVERYBODY -- like everyone, anyone and nobody -- is grammatically SINGULAR, so it takes HIS: 'Everybody forgot his own lunch on the bus.' BOTH, SEVERAL and MANY are always plural and would need THEIR: 'Many forgot their own lunches.' A handy check: you say 'everybody IS,' but 'many ARE.'",
+    "context": "EVERYBODY -- like everyone, anyone and nobody -- is grammatically SINGULAR, so it takes HIS: 'Everybody forgot his own lunch on the bus.' BOTH, SEVERAL and MANY are always plural and would need THEIR: 'Many forgot their own lunches.' A handy check: 'everybody IS,' but 'many ARE.'",
     "topic": "pronoun-agreement-his-her-or-its"
   },
   {
@@ -9941,7 +9928,7 @@
       "a date separator",
       "a division sign"
     ],
-    "context": "AND/OR slash: indicates \"either-or, or both together.\" Chicago dislikes it and prefers recasting; AP accepts it in informal use.",
+    "context": "AND/OR slash: indicates \"either-or, or both together.\" Chicago dislikes it and prefers recasting the sentence.",
     "topic": "slashes-and-or-dates-and-line-breaks-in-poetry"
   },
   {
@@ -9960,9 +9947,9 @@
   {
     "tier": 3,
     "question": "A programmer labels her files under the International Organization for Standardization (ISO) 8601 date standard. What order does that format use for year, month and day?",
-    "answer": "YYYY-MM-DD (year-month-day with hyphens, no slashes) -- \"1776-07-04\"",
+    "answer": "YYYY-MM-DD (largest unit first, with hyphens)",
     "choices": [
-      "YYYY-MM-DD (year-month-day with hyphens, no slashes) -- \"1776-07-04\"",
+      "YYYY-MM-DD (largest unit first, with hyphens)",
       "MM/DD/YYYY (US slash format)",
       "DD/MM/YYYY (UK slash format)",
       "DD-MON-YYYY (day-month-name-year)"
@@ -9981,19 +9968,6 @@
       "a false start"
     ],
     "context": "Slash marks line breaks in cited poetry. Example: \"Whose woods these are I think I know / His house is in the village though.\" Space before AND after.",
-    "topic": "slashes-and-or-dates-and-line-breaks-in-poetry"
-  },
-  {
-    "tier": 5,
-    "question": "A web designer copies the Uniform Resource Locator \"https://example.com/page\" with its forward slashes, then opens a Windows file path. What does that path use to separate folders?",
-    "answer": "BACKSLASHES (\"C:\\Users\\Public\")",
-    "choices": [
-      "BACKSLASHES (\"C:\\Users\\Public\")",
-      "forward slashes (\"C:/Users/Public\")",
-      "colons (\"C::Users::Public\")",
-      "pipes (\"C|Users|Public\")"
-    ],
-    "context": "Windows uses backslash; URLs use forward slash. Both are technical conventions, not grammatical rules; Chicago accepts them in code and citations.",
     "topic": "slashes-and-or-dates-and-line-breaks-in-poetry"
   },
   {
@@ -10038,27 +10012,27 @@
   {
     "tier": 3,
     "question": "An Oxford tour guide repeats a spoonerism as Reverend Spooner's own words. What caveat should a careful listener add?",
-    "answer": "most attributed Spoonerisms are apocryphal -- he probably said only a handful; the pattern was so funny his name stuck to all of them",
+    "answer": "most lines credited to him were made up by others",
     "choices": [
-      "most attributed Spoonerisms are apocryphal -- he probably said only a handful; the pattern was so funny his name stuck to all of them",
-      "every line attributed to him is historically documented",
-      "he never actually existed; he is a legend",
-      "he wrote the lines down himself"
+      "most lines credited to him were made up by others",
+      "every line credited to him is on record",
+      "he wrote the lines down himself as jokes",
+      "he never existed; he is an Oxford legend"
     ],
     "context": "Historians confirm only a small number of authentic Spooner slips. The rest are later inventions attached to his name.",
     "topic": "spoonerism-the-reverend-who-swapped-his-sounds"
   },
   {
     "tier": 5,
-    "question": "A comedian trots out the old line often wrongly pinned on W.C. Fields: \"I'd rather have a bottle in front of me than a frontal lobotomy.\" What makes that line a joke?",
-    "answer": "\"bottle in front\" and \"frontal lobotomy\" swap sound groups; the effect is a deliberate spoonerism-pun",
+    "question": "A comedian trots out an old bar joke: \"I'd rather have a bottle in front of me than a frontal lobotomy.\" What makes that line a joke?",
+    "answer": "it uses a spoonerism (swapped sounds)",
     "choices": [
-      "\"bottle in front\" and \"frontal lobotomy\" swap sound groups; the effect is a deliberate spoonerism-pun",
+      "it uses a spoonerism (swapped sounds)",
       "it uses zeugma (one verb, two objects)",
       "it uses anaphora (repeated opening)",
       "it uses hyperbole (exaggeration)"
     ],
-    "context": "A deliberate spoonerism used as a joke. The chiasmic shape (X of Y // Y of X) plus sound-swap = the punchline.",
+    "context": "'Bottle in front' and 'frontal lobotomy' carry the same two sounds in reverse order, BOT then FRONT and then FRONT then BOT, so a drinker's line doubles as a medical one. That deliberate swap is a spoonerism played for laughs. Zeugma hangs one verb on two objects, anaphora repeats an opening, and hyperbole exaggerates; the line does none of those.",
     "topic": "spoonerism-the-reverend-who-swapped-his-sounds"
   },
   {
@@ -10324,9 +10298,9 @@
   {
     "tier": 1,
     "question": "An older sister's note says, 'If I ___ you, I would apologise.' Which verb form does traditional grammar require?",
-    "answer": "were (subjunctive mood for hypothetical statement)",
+    "answer": "were",
     "choices": [
-      "were (subjunctive mood for hypothetical statement)",
+      "were",
       "was",
       "am",
       "will be"
@@ -10337,22 +10311,22 @@
   {
     "tier": 2,
     "question": "A tutor tells a student that the subjunctive is the mood for what is not so. After what starter phrases does it show up?",
-    "answer": "'if... were', 'I wish... were', 'as if... were', 'suppose... were'",
+    "answer": "'if... were' and 'I wish... were'",
     "choices": [
-      "'if... were', 'I wish... were', 'as if... were', 'suppose... were'",
-      "'because... was'",
-      "'when... is'",
-      "'while... will be'"
+      "'if... were' and 'I wish... were'",
+      "'because... was' and 'since... was'",
+      "'when... is' and 'while... is'",
+      "'after... will be' and 'before... will be'"
     ],
-    "context": "Subjunctive triggers: IF (hypothetical), WISH, AS IF, SUPPOSE, AS THOUGH, WOULD THAT. Also mandatory clauses: 'I insist that he BE present'; 'it is essential that she ARRIVE early'.",
+    "context": "Subjunctive triggers: IF (contrary to fact) and WISH take WERE for every subject, and AS IF and SUPPOSE can take it too. Demands take the bare form: 'I insist that he BE present.' BECAUSE, WHEN and AFTER report real events in the indicative.",
     "topic": "subjunctive-mood-if-i-were-you-vs-if-i-was-you"
   },
   {
     "tier": 3,
-    "question": "A camp counselor's note reads, 'If it ___ raining, we would stay inside.' Which verb form fits?",
-    "answer": "were (subjunctive; it is not raining)",
+    "question": "A camp counselor's note reads, 'If it ___ raining, we would stay inside.' Which verb form fits in standard written English?",
+    "answer": "were",
     "choices": [
-      "were (subjunctive; it is not raining)",
+      "were",
       "was",
       "is",
       "will be"
@@ -10363,9 +10337,9 @@
   {
     "tier": 3,
     "question": "A school principal writes, 'I insist that she ___ present.' Which verb form belongs there in formal English?",
-    "answer": "be (bare infinitive; mandative subjunctive after 'insist')",
+    "answer": "be",
     "choices": [
-      "be (bare infinitive; mandative subjunctive after 'insist')",
+      "be",
       "is",
       "was",
       "were"
@@ -10374,24 +10348,11 @@
     "topic": "subjunctive-mood-if-i-were-you-vs-if-i-was-you"
   },
   {
-    "tier": 5,
-    "question": "A language columnist writes that one subjunctive use is now considered nearly extinct in casual English. Which use is it?",
-    "answer": "mandative subjunctive after 'demand/insist/suggest' -- often replaced with 'should'",
-    "choices": [
-      "mandative subjunctive after 'demand/insist/suggest' -- often replaced with 'should'",
-      "if-clause subjunctive",
-      "wish subjunctive",
-      "all subjunctives"
-    ],
-    "context": "'I insist that he be present' (mandative subjunctive) is being replaced by 'I insist that he SHOULD be present' or 'I insist he BE present'. American English preserves the subjunctive better than British English here.",
-    "topic": "subjunctive-mood-if-i-were-you-vs-if-i-was-you"
-  },
-  {
     "tier": 1,
     "question": "A student's short story reads, \"She said that she IS tired.\" What is the standard reported-speech rule?",
-    "answer": "when the reporting verb is past, the tense inside the quote shifts BACK one step: \"she said she WAS tired\"",
+    "answer": "after a past reporting verb, the inner verb shifts back: IS becomes WAS",
     "choices": [
-      "when the reporting verb is past, the tense inside the quote shifts BACK one step: \"she said she WAS tired\"",
+      "after a past reporting verb, the inner verb shifts back: IS becomes WAS",
       "reported speech always keeps the original present tense",
       "reported speech always uses future tense",
       "reported speech drops the \"that\" and keeps everything else"
@@ -10402,12 +10363,12 @@
   {
     "tier": 1,
     "question": "A teacher opens a grammar lesson by pointing to the words \"reported speech\" on her slide. What does the term mean?",
-    "answer": "turning a direct quote (\"I am tired\") into an indirect statement (\"she said that she was tired\")",
+    "answer": "retelling what a person said without quoting the exact words",
     "choices": [
-      "turning a direct quote (\"I am tired\") into an indirect statement (\"she said that she was tired\")",
-      "quoting someone word-for-word in quotation marks",
-      "writing in the first person about your own thoughts",
-      "a genre of journalism used for interviews"
+      "retelling what a person said without quoting the exact words",
+      "quoting a person word for word inside quotation marks",
+      "writing in the first person about one's own thoughts",
+      "a style of journalism built on interview transcripts"
     ],
     "context": "Reported speech = indirect discourse. Removes the quotation marks and shifts tense to match the reporting verb.",
     "topic": "tense-sequence-reported-speech-shifts-backward"
@@ -10444,11 +10405,11 @@
     "answer": "She said she WOULD call me",
     "choices": [
       "She said she WOULD call me",
-      "She said she WILL call me",
+      "She said she WOULD HAVE called me",
       "She said she CALLS me",
       "She said she is calling me"
     ],
-    "context": "WILL shifts to WOULD in reported speech. Modal verbs also backshift: CAN->COULD, MAY->MIGHT, WILL->WOULD.",
+    "context": "WILL shifts to WOULD in reported speech. Modal verbs also backshift: CAN->COULD, MAY->MIGHT, WILL->WOULD. ('She said she will call me' can stand if the call is still to come.)",
     "topic": "tense-sequence-reported-speech-shifts-backward"
   },
   {
@@ -10467,9 +10428,9 @@
   {
     "tier": 5,
     "question": "A lifeguard copies a line into the pool log: \"He said, ‘I CAN swim.’\" Which version reports it correctly?",
-    "answer": "He said he COULD swim (CAN shifts to COULD)",
+    "answer": "He said he COULD swim",
     "choices": [
-      "He said he COULD swim (CAN shifts to COULD)",
+      "He said he COULD swim",
       "He said he CAN swims",
       "He said he WILL swim",
       "He said he IS swimming"
@@ -10480,9 +10441,9 @@
   {
     "tier": 1,
     "question": "A teacher grading history essays finds one that opens with \"LOL\" (laughing out loud). What kind of mistake is that?",
-    "answer": "text-speak abbreviations and slang belong in text messages, not academic essays",
+    "answer": "the essay uses text-speak in a formal register",
     "choices": [
-      "text-speak abbreviations and slang belong in text messages, not academic essays",
+      "the essay uses text-speak in a formal register",
       "the essay begins with a question",
       "the essay uses too many commas",
       "the essay uses passive voice"
@@ -10493,14 +10454,14 @@
   {
     "tier": 1,
     "question": "A lab instructor writes \"text-speak\" in red beside one line of a report: \"idk, the temp was prob too low.\" What does the term mean?",
-    "answer": "abbreviations and informal spellings developed for phone texting and chat (LOL, IMO, IIRC, BTW, TBH, IDK, FWIW)",
+    "answer": "shorthand initials and spellings born of phone texting",
     "choices": [
-      "abbreviations and informal spellings developed for phone texting and chat (LOL, IMO, IIRC, BTW, TBH, IDK, FWIW)",
-      "a formal writing style for business emails",
-      "a style of speech used only in Shakespeare",
-      "a category of medieval Latin abbreviations"
+      "shorthand initials and spellings born of phone texting",
+      "a formal shorthand used in business emails",
+      "the clipped style of old telegrams",
+      "a set of medieval Latin abbreviations"
     ],
-    "context": "These abbreviations grew in chat and text messaging. Casual register only.",
+    "context": "Text-speak grew up in chat and text messaging: LOL, IMO, IIRC, BTW, IDK. It belongs to the casual register only.",
     "topic": "text-speak-vs-formal-register-lol-imo-iirc"
   },
   {
@@ -10558,19 +10519,19 @@
   {
     "tier": 2,
     "question": "A detective writes two versions of one line in his notebook: \"The car that was red\" and \"The car, which was red.\" What is the difference in meaning?",
-    "answer": "restrictive picks out THE RED CAR among several; non-restrictive adds colour info about the only car",
+    "answer": "the first picks out the red car among several; the second adds color to the only car",
     "choices": [
-      "restrictive picks out THE RED CAR among several; non-restrictive adds colour info about the only car",
-      "no difference",
-      "the first is British, second American",
-      "the commas are decorative"
+      "the first picks out the red car among several; the second adds color to the only car",
+      "the first adds color to the only car; the second picks out the red car among several",
+      "no difference: the commas only mark a pause for breath",
+      "the first is British style and the second is American style"
     ],
     "context": "That + no commas = restrictive = the clause NARROWS the noun. Which + commas = non-restrictive = the clause ADDS info to a noun already identified. Meaning-changing distinction.",
     "topic": "that-vs-which-restrictive-vs-non-restrictive"
   },
   {
     "tier": 2,
-    "question": "An editor at an American kennel club's newsletter checks four versions of a line about barking dogs. Which one is punctuated right in American style?",
+    "question": "An editor at an American kennel club's newsletter checks four versions of a line about barking dogs. Which one follows the American rule for 'that' and 'which'?",
     "answer": "The dogs that bark loudest are the smallest.",
     "choices": [
       "The dogs that bark loudest are the smallest.",
@@ -10578,7 +10539,7 @@
       "The dogs which bark loudest are the smallest.",
       "The dogs, that bark loudest are the smallest."
     ],
-    "context": "Restrictive clause (identifies which dogs) → 'that' with no commas. American English maintains the that/which split strictly in edited writing.",
+    "context": "Restrictive clause (it identifies which dogs) -> 'that' with no commas. American editors keep 'which' for a clause inside commas, and 'that' never takes them.",
     "topic": "that-vs-which-restrictive-vs-non-restrictive"
   },
   {
@@ -10613,9 +10574,9 @@
     "answer": "'my brother' identifies the person; 'who lives in Paris' adds extra info",
     "choices": [
       "'my brother' identifies the person; 'who lives in Paris' adds extra info",
-      "'brother' is a common noun",
-      "Paris is a city",
-      "the postcard is unrelated"
+      "'who lives in Paris' picks out one brother among several",
+      "every clause that starts with 'who' takes commas",
+      "the commas only mark a pause for breath"
     ],
     "context": "If the writer has only one brother, 'who lives in Paris' cannot be restricting (identifying WHICH brother). It adds descriptive info → commas, non-restrictive.",
     "topic": "that-vs-which-restrictive-vs-non-restrictive"
@@ -10662,22 +10623,22 @@
   {
     "tier": 2,
     "question": "A history teacher writes Caesar's line on the board: \"I came, I saw, I conquered.\" Why do editors let those commas stand?",
-    "answer": "tightly parallel short clauses are a recognised stylistic exception",
+    "answer": "tightly parallel short clauses are a recognized exception",
     "choices": [
-      "tightly parallel short clauses are a recognised stylistic exception",
-      "Latin does not have comma splices",
-      "the third clause has a conjunction",
-      "Caesar was allowed to break the rules"
+      "tightly parallel short clauses are a recognized exception",
+      "Latin quotations are exempt from English rules",
+      "a comma splice is allowed in any list of three",
+      "the line is one clause with three verbs"
     ],
-    "context": "Very short, tightly parallel clauses (Caesar's 'Veni, vidi, vici' style) are treated as a rhetorical exception. Chicago 6.60 permits this stylistic use; do not do it with long clauses.",
+    "context": "Very short, tightly parallel clauses (Caesar's 'Veni, vidi, vici' style) are treated as a rhetorical exception. It does not stretch to long clauses or to ordinary lists, and 'I came, I saw, I conquered' is three clauses, each with its own subject.",
     "topic": "the-comma-splice-two-sentences-glued-with-just-a-comma"
   },
   {
     "tier": 3,
     "question": "A nurse's shift log reads, \"She was tired, however, she kept working.\" What punctuation error appears here?",
-    "answer": "comma splice (however is a conjunctive adverb, not a conjunction)",
+    "answer": "comma splice",
     "choices": [
-      "comma splice (however is a conjunctive adverb, not a conjunction)",
+      "comma splice",
       "missing Oxford comma",
       "misuse of semicolon",
       "no error"
@@ -10691,11 +10652,11 @@
     "answer": "semicolon: 'The clock struck midnight; everyone cheered.'",
     "choices": [
       "semicolon: 'The clock struck midnight; everyone cheered.'",
-      "period only",
-      "add three exclamation points",
-      "delete both clauses"
+      "period: 'The clock struck midnight. Everyone cheered.'",
+      "extra comma: 'The clock struck midnight, everyone, cheered.'",
+      "no change: 'The clock struck midnight, everyone cheered.'"
     ],
-    "context": "The semicolon signals a tighter link than a period would -- two events belong together as one moment. A period would work but feels more separated. Both are valid comma-splice fixes.",
+    "context": "A semicolon keeps the two events touching: one moment, one breath. A period also fixes the splice but parts them. Another comma, or no change at all, leaves the splice in place.",
     "topic": "the-comma-splice-two-sentences-glued-with-just-a-comma"
   },
   {
@@ -10708,20 +10669,7 @@
       "The dog barked; the mailman ran.",
       "The dog barked. The mailman ran."
     ],
-    "context": "The first is a comma splice (bare comma joining two full sentences). The other three all use one of the standard fixes: comma + conjunction, semicolon, or period.",
-    "topic": "the-comma-splice-two-sentences-glued-with-just-a-comma"
-  },
-  {
-    "tier": 5,
-    "question": "A student's book review reads, \"The book was long, though, it was worth reading.\" Which fix is cleanest?",
-    "answer": "swap in a conjunction: 'The book was long, but it was worth reading.'",
-    "choices": [
-      "swap in a conjunction: 'The book was long, but it was worth reading.'",
-      "add a semicolon before 'though'",
-      "the sentence has no splice",
-      "keep it as-is"
-    ],
-    "context": "'Though' can be conjunctive adverb (needs semicolon) or subordinating conjunction (can join). The cleanest fix uses the coordinating conjunction 'but' -- fewer commas, sharper contrast.",
+    "context": "'The dog barked, the mailman ran' is a comma splice (a bare comma joining two full sentences). The other three use standard fixes: comma + conjunction, semicolon, or period.",
     "topic": "the-comma-splice-two-sentences-glued-with-just-a-comma"
   },
   {
@@ -10753,14 +10701,14 @@
   {
     "tier": 3,
     "question": "A debate coach hands out a card with one sentence punctuated two ways: \"Woman: without her, man is nothing.\" and \"Woman, without her man, is nothing.\" What difference does the punctuation make?",
-    "answer": "In the first, man is nothing without woman. In the second, woman is nothing without her man. Same words, opposite claim.",
+    "answer": "In the first, man is nothing without woman. In the second, woman is nothing without her man.",
     "choices": [
-      "In the first, man is nothing without woman. In the second, woman is nothing without her man. Same words, opposite claim.",
+      "In the first, man is nothing without woman. In the second, woman is nothing without her man.",
       "The two sentences mean exactly the same thing.",
       "The first is grammatical; the second is broken.",
       "The comma placement affects only the rhythm, not the meaning."
     ],
-    "context": "Punctuation is meaning. The classroom classic that shows a comma pair can reverse who depends on whom. Source: Chicago Manual of Style 17e section 6.16.",
+    "context": "Punctuation is meaning. In the first, the colon and comma make WITHOUT HER belong to MAN; in the second, the commas fence off WITHOUT HER MAN as an aside about the woman. Same words, opposite claim.",
     "topic": "the-vocative-comma-lets-eat-grandma"
   },
   {
@@ -10795,9 +10743,9 @@
     "answer": "without it, the reader thinks the writer's parents ARE Ayn Rand and God",
     "choices": [
       "without it, the reader thinks the writer's parents ARE Ayn Rand and God",
-      "the sentence is too long",
-      "Ayn Rand should not be named first",
-      "God requires a capital G"
+      "without it, the line becomes a run-on sentence",
+      "every list of three names needs one in every style guide",
+      "without it, Ayn Rand and God seem to be the authors"
     ],
     "context": "The apocryphal book-dedication gag. 'To my parents, Ayn Rand, and God' adds the Oxford comma and turns the parents into ONE of three separate dedicatees.",
     "topic": "the-oxford-comma-strippers-jfk-and-stalin"
@@ -10817,13 +10765,13 @@
   },
   {
     "tier": 3,
-    "question": "A law student read O'Connor v. Oakhurst Dairy (2018), a case over a Maine state law that left out an Oxford comma. How much did the missing comma cost the dairy in its settlement?",
+    "question": "A law student read O'Connor v. Oakhurst Dairy, a case over a Maine state law that left out an Oxford comma. How much did the missing comma cost the dairy in its settlement?",
     "answer": "about five million dollars in overtime pay",
     "choices": [
       "about five million dollars in overtime pay",
       "about five hundred dollars",
       "about fifty million dollars",
-      "no money -- the case was dismissed"
+      "no money, since the case was dismissed"
     ],
     "context": "Maine overtime-pay law listed exempt activities without an Oxford comma, making the last two phrases ambiguously grouped. Drivers won on the ambiguity; Oakhurst settled for about $5 million.",
     "topic": "the-oxford-comma-strippers-jfk-and-stalin"
@@ -10831,14 +10779,14 @@
   {
     "tier": 3,
     "question": "A hotel guest's review reads, \"For breakfast I had eggs, toast and jam and coffee.\" Without an Oxford comma, what ambiguity results?",
-    "answer": "did toast come WITH jam, or were jam and coffee separate items?",
+    "answer": "did the toast come with the jam, or the jam with the coffee?",
     "choices": [
-      "did toast come WITH jam, or were jam and coffee separate items?",
-      "were there three items or four?",
-      "was breakfast in the morning?",
-      "no ambiguity exists"
+      "did the toast come with the jam, or the jam with the coffee?",
+      "did the eggs come with the toast, or the toast with the jam?",
+      "was the coffee served before the eggs or after them?",
+      "no ambiguity exists; the list reads one way only"
     ],
-    "context": "'Eggs, toast and jam and coffee' could be [eggs] + [toast and jam] + [coffee] (three items) OR [eggs] + [toast] + [jam and coffee] (also three, but different pairing). An Oxford comma disambiguates.",
+    "context": "'Eggs, toast and jam and coffee' could be [eggs] + [toast and jam] + [coffee] OR [eggs] + [toast] + [jam and coffee]. The comma after EGGS already sets the eggs apart. An Oxford comma settles it: 'eggs, toast and jam, and coffee.'",
     "topic": "the-oxford-comma-strippers-jfk-and-stalin"
   },
   {
@@ -10857,9 +10805,9 @@
   {
     "tier": 1,
     "question": "A comic-book letterer squeezes an exclamation point and a question mark into one symbol for a shocked line, \"You did WHAT?!\" What is that mark called?",
-    "answer": "the interrobang (invented 1962 by advertiser Martin K. Speckter)",
+    "answer": "the interrobang",
     "choices": [
-      "the interrobang (invented 1962 by advertiser Martin K. Speckter)",
+      "the interrobang",
       "the pilcrow",
       "the guillemet",
       "the section symbol"
@@ -10870,9 +10818,9 @@
   {
     "tier": 2,
     "question": "A typist turns on the hidden marks in her word processor, and a little backwards P appears all through her letter. What is that mark called?",
-    "answer": "the pilcrow (also called the paragraph mark)",
+    "answer": "the pilcrow",
     "choices": [
-      "the pilcrow (also called the paragraph mark)",
+      "the pilcrow",
       "the interrobang",
       "the ampersand",
       "the section symbol"
@@ -10896,27 +10844,27 @@
   {
     "tier": 4,
     "question": "A printer sets a page of dialogue with guillemets, the little angle marks used as quotation marks. In which languages are guillemets standard?",
-    "answer": "French, Spanish, Russian, and other European languages",
+    "answer": "French, Spanish and Russian",
     "choices": [
-      "French, Spanish, Russian, and other European languages",
-      "English only",
-      "German only",
-      "no modern languages use them"
+      "French, Spanish and Russian",
+      "English, Irish and Welsh",
+      "Hindi, Bengali and Tamil",
+      "no modern language at all"
     ],
-    "context": "GUILLEMETS = angle-bracket quotation marks. Example: \"<<Bonjour>>, dit-il.\" English uses only in scholarly citation of foreign material.",
+    "context": "GUILLEMETS are angle-shaped quotation marks: « Bonjour », dit-il. They are standard in French, Spanish and Russian; English keeps to curly quotes.",
     "topic": "the-rare-punctuation-marks-interrobang-pilcrow-guillemets"
   },
   {
     "tier": 5,
-    "question": "A typesetter tags the first footnote on a page with an asterisk, following the old Chicago sequence of marks. What comes after the asterisk in that sequence?",
-    "answer": "dagger, then double dagger, then section symbol, then pilcrow, then hash",
+    "question": "A typesetter tags the first footnote on a page with an asterisk, following the traditional sequence of marks. Which three marks come next, in order?",
+    "answer": "dagger, then double dagger, then section mark",
     "choices": [
-      "dagger, then double dagger, then section symbol, then pilcrow, then hash",
-      "the sequence stops with the asterisk",
-      "a numbered footnote replaces every mark after asterisk",
-      "the sequence is asterisk, hash, ampersand"
+      "dagger, then double dagger, then section mark",
+      "section mark, then dagger, then double dagger",
+      "pilcrow, then dagger, then number sign",
+      "double dagger, then dagger, then parallels"
     ],
-    "context": "Traditional footnote-mark sequence: * (asterisk), dagger, double dagger, section, pilcrow, hash. Modern style prefers superscript numbers; the traditional sequence survives in legal and some academic disciplines.",
+    "context": "Traditional footnote-mark sequence: * (asterisk), dagger, double dagger, section mark, then parallels and number sign (some printers use the pilcrow). Modern style prefers superscript numbers.",
     "topic": "the-rare-punctuation-marks-interrobang-pilcrow-guillemets"
   },
   {
@@ -10961,9 +10909,9 @@
   {
     "tier": 4,
     "question": "A sister writes one call to her brother two ways in a story: \"Come here my brother!\" and \"My brother, come here!\" What comma job is at work?",
-    "answer": "vocative (direct address); both need a comma between the address and the rest",
+    "answer": "vocative comma (direct address)",
     "choices": [
-      "vocative (direct address); both need a comma between the address and the rest",
+      "vocative comma (direct address)",
       "appositive comma",
       "coordinate-adjective comma",
       "no comma needed in either"
@@ -10985,16 +10933,16 @@
     "topic": "the-vocative-comma-lets-eat-grandma"
   },
   {
-    "tier": 5,
-    "question": "A boy slips a note under his grandmother's door: \"Well, Grandma, dinner is ready.\" What job does the comma after \"Well\" do that the two around \"Grandma\" do not?",
-    "answer": "marks 'well' as an interjection (a filler word), not a vocative",
+    "tier": 4,
+    "question": "A boy slips a note under his grandmother's door: \"Well, Grandma, dinner is ready.\" Grandma is the one being spoken to. What part does \"Well\" play?",
+    "answer": "an interjection: a filler word, not a name",
     "choices": [
-      "marks 'well' as an interjection (a filler word), not a vocative",
-      "cancels the vocative",
-      "is a comma splice",
-      "is optional decoration"
+      "an interjection: a filler word, not a name",
+      "a second vocative: another name for Grandma",
+      "an adverb: it tells how the dinner is ready",
+      "a subject: it tells who made the dinner"
     ],
-    "context": "Three comma jobs stacked: interjection comma (after 'Well'), then vocative commas (around 'Grandma'). Interjection commas set off transitional words like well, oh, yes, no. Chicago 6.35.",
+    "context": "The comma after WELL does two jobs at once: it sets off the interjection WELL, a filler that addresses nobody, and it opens the pair of vocative commas around GRANDMA, the person being spoken to. Interjection commas also set off words like oh, yes and no.",
     "topic": "the-vocative-comma-lets-eat-grandma"
   },
   {
@@ -11217,19 +11165,6 @@
     ],
     "context": "Blank 1: 'they are going' -> THEY'RE. Blank 2: possessive (their grandmother) -> THEIR. Blank 3: possessive (their car) -> THEIR. Source: Merriam-Webster usage note.",
     "topic": "there-their-theyre-the-three-way-apostrophe-trap"
-  },
-  {
-    "tier": 5,
-    "question": "A sportswriter's game report reads, 'Each player grabbed ___ helmet and ran out ___ onto the field.' Which two words fill the blanks?",
-    "answer": "his ... there",
-    "choices": [
-      "his ... there",
-      "their ... there",
-      "his ... their",
-      "they're ... their"
-    ],
-    "context": "Blank one shows ownership, and EACH PLAYER means one player at a time, so it takes the singular HIS. Blank two points to a place, so it is THERE, the spelling with HERE inside it. THEIR is the plural possessive; it would fit only a plural subject: 'All the players grabbed their helmets and ran out there.' THEY'RE means 'they are.'",
-    "topic": "pronoun-agreement-his-her-or-its"
   },
   {
     "tier": 5,
