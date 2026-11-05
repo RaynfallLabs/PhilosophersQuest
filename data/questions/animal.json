@@ -19488,15 +19488,15 @@
   },
   {
     "tier": 2,
-    "question": "A praying mantis strikes only when its prey lands in a narrow window right in front of its face — the exact distance its spiked forelegs can reach. To judge that distance perfectly, it uses a visual ability found in no other insect on Earth. What is this ability?",
+    "question": "A praying mantis strikes only when prey lands within reach of its spiked forelegs, in a narrow window right in front of its face. To judge that distance it uses a kind of sight no insect was known to have until mantises were tested. What is it?",
     "answer": "True 3D depth perception",
     "choices": [
       "True 3D depth perception",
       "Heat-sensing infrared sight",
       "A 360-degree panoramic scan",
-      "X-ray sight through leaves"
+      "Ultraviolet color vision"
     ],
-    "context": "The praying mantis is the only insect known to see in true 3D depth perception (stereo vision), letting it gauge precisely when prey is in striking range. Source: Newcastle University Press Office, 'New form of 3D vision discovered in praying mantis' (2018).",
+    "context": "The praying mantis judges striking range with true 3D depth perception (stereo vision), comparing the views from its two eyes. Samuel Rossel showed it in 1983, the first time stereo vision was proven in an insect, and in 2018 Vivek Nityananda's team at Newcastle University found that the mantis version works differently from ours. Source: Grokipedia 'Mantis' (stereopsis rare among invertebrates); Rossel 1983, Nature; Newcastle University Press Office (2018).",
     "topic": "praying-mantis"
   },
   {
@@ -19522,7 +19522,7 @@
       "When the pair mate in daylight",
       "When the female has already mated once"
     ],
-    "context": "Most matings end with the male alive; the head-biting legend is overstated. In one experiment no well-fed female ate her mate, while starved females did. Source: Snopes, 'Does a Female Praying Mantis Always Eat Her Mate's Head?'; phys.org, 'Praying mantis cannibalism explained.' (A real but overstated legend.)",
+    "context": "Most matings end with the male alive; the head-biting legend is overstated. In experiments, females on poor diets were far likelier to eat their mates, and well-fed females rarely did. Source: Grokipedia 'Mantis'; Wikipedia 'Mantis'; Snopes, 'Does a Female Praying Mantis Always Eat Her Mate's Head?' (A real but overstated legend.)",
     "topic": "praying-mantis"
   },
   {
@@ -20255,41 +20255,41 @@
   },
   {
     "tier": 2,
-    "question": "A tuna slams into a churning school of silvery sardines off the coast of South Africa. Every sardine twists and darts at once, and the tuna's eye cannot lock onto any single fish. Biologists have a name for that overload of a hunter's eyes. What is it?",
-    "answer": "the confusion effect",
+    "question": "A tuna slams into a churning school of silvery sardines off South Africa. Hundreds of fish twist and dart at the same instant, their flanks flashing every which way. What does all that twisting and flashing do to the hunting tuna?",
+    "answer": "It swamps its eyes, so it can't single out one fish",
     "choices": [
-      "the confusion effect",
-      "the shell game",
-      "the mirror trap",
-      "the blur reflex"
+      "It swamps its eyes, so it can't single out one fish",
+      "It wears the tuna out before it can strike",
+      "It hides the school in a cloud of churned sand",
+      "It scares the tuna off with a rush of noise"
     ],
-    "context": "A schooling mass overburdens a predator's visual system — with too much moving prey in view, it struggles to track and target any single fish. Source: Frontiers in Ecology and Evolution 2019, doi 10.3389/fevo.2019.00141 (the confusion effect).",
+    "context": "A schooling mass overloads a predator's eyes: with so much moving prey in view, it struggles to track and target any single fish. Biologists call this the confusion effect. Source: Frontiers in Ecology and Evolution 2019, doi 10.3389/fevo.2019.00141 (the confusion effect).",
     "topic": "safety-in-numbers"
   },
   {
     "tier": 3,
-    "question": "A superpod of common dolphins closes on a shoal of sardines off South Africa. Instead of snapping at random, the dolphins work together to drive the fish up against the surface, penning them until they have nowhere left to flee. What is that trapped, churning sphere of fish called?",
-    "answer": "a bait ball",
+    "question": "A superpod of common dolphins closes on a shoal of sardines off South Africa. In open water one dolphin could never catch enough of the darting fish, and sardines crowd closer together whenever danger comes. How do the dolphins turn that crowding against them?",
+    "answer": "They herd the shoal up into a tight ball against the surface",
     "choices": [
-      "a bait ball",
-      "a spawning drift",
-      "a plunge shoal",
-      "a tidal net"
+      "They herd the shoal up into a tight ball against the surface",
+      "They split the shoal into lone fish they can pick off",
+      "They drive the shoal into the shallows over a reef",
+      "They chase the shoal down into the cold, dark deep"
     ],
     "context": "A single dolphin can't eat a whole shoal, so a superpod herds sardines into a bait ball against the surface — turning the sardines' own safety-in-numbers instinct against them. Source: en.wikipedia.org/wiki/Sardine_run; discoverwildlife.com/animal-facts/fish/what-is-sardine-run.",
     "topic": "safety-in-numbers"
   },
   {
     "tier": 3,
-    "question": "A meerkat stands upright on a lookout mound in the Kalahari Desert while its family mob digs for beetles and scorpions. When it spots a hawk overhead it gives one sharp bark; for a cobra on the ground it gives a completely different one. What do those two calls let the mob do?",
-    "answer": "run the right way without ever looking up",
+    "question": "A meerkat sentinel stands on a lookout mound in the Kalahari while its family digs for beetles. For a hawk overhead it gives one alarm, and the family ducks for cover. For a cobra on the ground it gives a different call. What does the family do when it hears that one?",
+    "answer": "Gathers together and mobs the snake",
     "choices": [
-      "run the right way without ever looking up",
-      "freeze in place until the sentinel signals",
-      "crowd around the sentinel for safety",
-      "dig faster to finish before the threat lands"
+      "Gathers together and mobs the snake",
+      "Falls silent and slips quietly away",
+      "Freezes flat until the snake slides away",
+      "Scatters in every direction at once"
     ],
-    "context": "Meerkat alarm calls work like words — a distinct call for an aerial hawk versus a ground snake, and the call even encodes how urgent the danger is, so the group knows which way to flee. Source: Rauber & Manser, Nature/Scientific Reports 2017, doi 10.1038/srep44436.",
+    "context": "Meerkats give different calls for different dangers. An aerial alarm sends the family crouching or running for cover, while a call for a snake recruits the others, who gather with tails raised and mob it together. The calls even encode how urgent the danger is. Source: Wikipedia 'Meerkat'; Manser 2001, Proc. R. Soc. B; Rauber & Manser 2017, Scientific Reports, doi 10.1038/srep44436.",
     "topic": "safety-in-numbers"
   },
   {
@@ -20307,13 +20307,13 @@
   },
   {
     "tier": 4,
-    "question": "Deep in a churning ball of fish, a single sardine keeps wriggling toward the crowded center, putting other bodies between itself and the hunting tuna. W. D. Hamilton gave a blunt name in 1971 to a group formed this way, held together not by teamwork but by every member hiding behind the rest. What did he call it?",
-    "answer": "the selfish herd",
+    "question": "Inside a churning bait ball off South Africa, the sardines press tighter and tighter while a tuna circles the edge. W. D. Hamilton offered a blunt explanation in 1971 for why a crowd like this one forms. What was it?",
+    "answer": "Each fish edges inward to hide behind the others",
     "choices": [
-      "the selfish herd",
-      "the dilution effect",
-      "the marginal predation rule",
-      "the vacuole model"
+      "Each fish edges inward to hide behind the others",
+      "Each fish follows a single leader at the front",
+      "Each fish takes turns guarding the outer edge",
+      "Each fish is drawn in by a scent the school shares"
     ],
     "context": "The 'selfish herd': isolated individuals move inward to become less vulnerable, so the crowd forms simply because every fish tries to hide behind its neighbors — the safest spot is the middle. Source: Hamilton 1971, 'Geometry for the Selfish Herd', J. Theoretical Biology 31(2):295-311; sciencedirect.com/science/article/abs/pii/S0003347213002601.  (Legend.)",
     "topic": "safety-in-numbers"
@@ -20424,28 +20424,15 @@
   },
   {
     "tier": 3,
-    "question": "Wild saltwater crocodiles in northern Australia snapped down on a padded force meter that Gregory Erickson's team held between their jaws. The biggest set the record for any living animal, a bite that crushes bone and shatters a sea turtle's shell in one snap. Roughly how hard does a big saltwater crocodile bite down?",
-    "answer": "About 3,700 pounds per square inch",
+    "question": "Saltwater crocodiles in northern Australia snapped down on a padded force meter that Gregory Erickson's team held between their jaws. The biggest set the record for any living animal, a bite that crushes bone and shatters a sea turtle's shell in one snap. Roughly how hard does a big saltwater crocodile bite down?",
+    "answer": "About 3,700 pounds of force",
     "choices": [
-      "About 3,700 pounds per square inch",
-      "About 400 pounds per square inch",
-      "About 90 pounds per square inch",
-      "About 12,000 pounds per square inch"
+      "About 3,700 pounds of force",
+      "About 400 pounds of force",
+      "About 90 pounds of force",
+      "About 12,000 pounds of force"
     ],
-    "context": "The saltwater croc has the strongest bite ever measured in a living animal -- about 3,700 psi, enough to crush bone and a turtle's shell in one snap. Source: https://www.nationalgeographic.com/animals/article/120315-crocodiles-bite-force-erickson-science-plos-one-strongest",
-    "topic": "saltwater-crocodile"
-  },
-  {
-    "tier": 3,
-    "question": "An American alligator clamped down on a padded pressure meter at 2,980 pounds per square inch, a bite stronger than a lion's, and it still did not win. Gregory Erickson's team measured the bite of every crocodilian on Earth this way, all 23 kinds, from tiny caimans to huge crocodiles. Which crocodilian bit hardest of them all?",
-    "answer": "The saltwater crocodile",
-    "choices": [
-      "The saltwater crocodile",
-      "The Nile crocodile",
-      "The gharial",
-      "The dwarf caiman"
-    ],
-    "context": "Erickson tested all 23 crocodilian species; the saltwater croc's 3,700 psi beat the American alligator's 2,980 psi to top the list. Source: https://www.sciencedaily.com/releases/2012/03/120316093427.htm",
+    "context": "The saltwater croc has the strongest bite ever measured in a living animal, about 3,700 pounds of force (some 16,400 newtons), enough to crush bone and a turtle's shell in one snap. It beat even the American alligator, which Erickson's lab had measured at about 2,980 pounds. The figure is often reported as 3,700 pounds per square inch, but it is a force, not a pressure. Source: https://www.sciencedaily.com/releases/2012/03/120316093427.htm ; https://en.wikipedia.org/wiki/Saltwater_crocodile",
     "topic": "saltwater-crocodile"
   },
   {
@@ -20485,19 +20472,6 @@
       "They almost never strayed from the coastline"
     ],
     "context": "Across the study, in 96% of long journeys the crocodiles moved WITH the current and almost never fought against it; one tagged male covered 590 km (about 370 miles) in 25 days. Source: https://www.discovermagazine.com/planet-earth/steve-irwins-last-gift-to-croc-science-a-study-of-their-surfing-habits",
-    "topic": "saltwater-crocodile"
-  },
-  {
-    "tier": 4,
-    "question": "One of the world's most famous wildlife conservationists spent years helping researchers in Queensland, Australia, tag and track saltwater crocodiles to see how far they wandered. The findings were published only after his sudden death in 2006. Whose last gift to crocodile science was it?",
-    "answer": "Steve Irwin, the 'Crocodile Hunter'",
-    "choices": [
-      "Steve Irwin, the 'Crocodile Hunter'",
-      "David Attenborough",
-      "Jacques Cousteau",
-      "Jane Goodall"
-    ],
-    "context": "The surfing-crocodile discovery was 'Crocodile Hunter' Steve Irwin's last piece of science; he helped tag the animals before his death, and the finding was published afterward. Framed as the legend around the research. Source: https://www.discovermagazine.com/planet-earth/steve-irwins-last-gift-to-croc-science-a-study-of-their-surfing-habits",
     "topic": "saltwater-crocodile"
   },
   {
@@ -20563,19 +20537,6 @@
       "Whoever is the older fish"
     ],
     "context": "The mouth-pressing contest is mostly a bluff. The fringehead with the smaller gape usually backs down, so the one with the bigger mouth wins the turf without an actual fight. Source: AAAS, Weird & Wonderful Creatures; Oceana.",
-    "topic": "sarcastic-fringehead-neoclinus-blanchardi"
-  },
-  {
-    "tier": 3,
-    "question": "A sarcastic fringehead lunges at a rival off the California coast with its enormous mouth flung wide. The 'sarcastic' in its name comes from the ancient Greek word 'sarkazein', the root of the English 'sarcasm', which today means only biting speech. The Greek meaning was far more violent. What did 'sarkazein' literally mean?",
-    "answer": "To tear flesh",
-    "choices": [
-      "To tear flesh",
-      "To bite the lip",
-      "To speak bitterly",
-      "To gnash the teeth"
-    ],
-    "context": "'Sarcastic' traces to the Greek 'sarkazein,' meaning 'to tear flesh' — a nod to the fringehead's aggressive attitude and sharp teeth. Source: BBC Science Focus, 'The fish that fights with a kiss' (sciencefocus.com/nature/sarcastic-fringehead).",
     "topic": "sarcastic-fringehead-neoclinus-blanchardi"
   },
   {
@@ -21052,16 +21013,16 @@
     "answer": "A nerve ring circling its mouth, with a cord down each arm",
     "choices": [
       "A nerve ring circling its mouth, with a cord down each arm",
-      "A walnut-sized brain tucked inside the central disc",
       "A knot of ganglia bundled at the base of each arm",
-      "A mesh of nerves spread evenly beneath the entire skin"
+      "A single thick nerve cord running along its back",
+      "A double chain of nerve knots along its underside"
     ],
     "context": "A sea star has no brain at all. Instead of one command center it runs on a ring of nerves around its mouth plus a nerve cord down each arm, so each arm can act somewhat on its own. Source: https://en.wikipedia.org/wiki/Starfish",
     "topic": "sea-star"
   },
   {
     "tier": 2,
-    "question": "Rows of tiny suckered tube feet, hundreds of them under its arms, carry a sea star across the seabed. It has no legs, no fins and no blood pumping inside it, yet those feet grip hard enough to pry open a clam. What powers them?",
+    "question": "Rows of tiny suckered tube feet, hundreds of them under its arms, carry a sea star across the seabed. It has no legs and no fins, yet those feet grip hard enough to pry open a clam. What powers them?",
     "answer": "Seawater pumped through a plumbing system",
     "choices": [
       "Seawater pumped through a plumbing system",
@@ -21074,7 +21035,7 @@
   },
   {
     "tier": 2,
-    "question": "In a rocky tide pool, a sea star humps its five arms over a fat clam. Its tube feet take hold of each half of the shell and pull, slowly and steadily, for hours. Once the clam gapes even a sliver, the sea star does something no other predator does with its meal. How does it eat the clam inside?",
+    "question": "In a rocky tide pool, a sea star humps its five arms over a fat clam, and its tube feet pull at the two halves of the shell for hours. Once the clam gapes even a sliver, the sea star feeds in a way that sounds impossible. How does it eat the clam inside?",
     "answer": "Pushes its own stomach out through its mouth",
     "choices": [
       "Pushes its own stomach out through its mouth",
@@ -21082,7 +21043,7 @@
       "Grinds the meat with teeth ringing its mouth",
       "Draws the meat up through a sucking throat"
     ],
-    "context": "THE WHAT?! moment: a sea star pushes its own stomach OUT through its mouth, slides it into the cracked shell, and digests the clam OUTSIDE its own body -- turning the meal into a soupy 'chowder' and slurping it back in. Digesting food externally saves the star energy. Source: https://iere.org/what-animal-turns-its-prey-inside-out/  (Legend.)",
+    "context": "A sea star pushes its own stomach out through its mouth, slides it into the cracked shell and digests the clam outside its own body, turning the meal into a soupy broth that it then draws back in. Source: Wikipedia 'Starfish' (stomach eversion); https://iere.org/what-animal-turns-its-prey-inside-out/",
     "topic": "sea-star"
   },
   {
@@ -21269,7 +21230,7 @@
   },
   {
     "tier": 2,
-    "question": "A storm surge sweeps over a coral reef, and a tiny seahorse anchors itself so the water cannot wash it away. Its curled tail works like no other fish's; only its cousins the pipefish and pipehorses share the trick. What can that tail do?",
+    "question": "A storm surge sweeps over a coral reef, and a tiny seahorse anchors itself so the water cannot wash it away. Few fish have a tail like it: only its cousins the pipefish and pipehorses share the trick. What can that tail do?",
     "answer": "Coil around objects and grip like a monkey's",
     "choices": [
       "Coil around objects and grip like a monkey's",
@@ -21373,20 +21334,7 @@
   },
   {
     "tier": 3,
-    "question": "The secretarybird carries a spray of long slender black feathers arching back from the top of its head. In 1780 the naturalist Buffon looked at that crest and thought it resembled a familiar object of his day, and that resemblance gave the bird its name. What did he say the crest looked like?",
-    "answer": "Quill pens tucked behind an ear",
-    "choices": [
-      "Quill pens tucked behind an ear",
-      "A powdered courtroom wig",
-      "A soldier's plumed helmet",
-      "A bishop's tall mitre"
-    ],
-    "context": "The bird is named for the crest of long quill-like black head feathers - said to look like the quill pens an old clerk or scribe would tuck behind his ear, an idea Buffon proposed in 1780. The crest is made of over 20 slender black feathers that arch back from the nape of its head. Sources: https://en.wikipedia.org/wiki/Secretarybird ; https://www.lookandlearn.com/blog/18436/the-rapacious-secretary-bird-has-a-quill-pen-crest/",
-    "topic": "secretarybird"
-  },
-  {
-    "tier": 3,
-    "question": "A female orange sulphur butterfly always chooses a mate of her own kind, though to human eyes he looks almost identical to a male clouded sulphur. Flipping one gene leaves orange sulphur males unable to attract their own females. What does that gene switch on across their wings?",
+    "question": "A female orange sulphur butterfly always picks a mate of her own kind, though to human eyes he looks almost identical to a male clouded sulphur. One gene, bric a brac, decides whether a male's wings carry her cue. What does it switch on or off across his wings?",
     "answer": "An iridescent ultraviolet flash",
     "choices": [
       "An iridescent ultraviolet flash",
@@ -21412,28 +21360,28 @@
   },
   {
     "tier": 4,
-    "question": "A reindeer scans the bright winter snow of Lapland for wolves. Its lenses let ultraviolet light through to the retina, as human eyes do not, so it can pick out a stalking wolf whose fur is almost invisible to people. It can even follow a wolf's old trail, long after the wolf is gone. What on the snow gives that trail away?",
+    "question": "A reindeer scans the bright winter snow of Lapland for wolves. Its lenses let ultraviolet light through to the retina, as human eyes do not. Glen Jeffery, who studied its eyes, thinks this helps it spot a wolf on the snow, and even the marks one leaves. Which mark would stand out most sharply to that ultraviolet sight?",
     "answer": "The wolf's urine, dark where it stained",
     "choices": [
       "The wolf's urine, dark where it stained",
-      "Tufts of guard-hair snagged on the ice",
-      "Scuff marks where its pads dragged",
-      "A smear of blood from an old kill"
+      "Paw prints pressed into the snow",
+      "Claw scratches on the icy crust",
+      "Frost from its breath on the twigs"
     ],
-    "context": "Arctic reindeer see into the ultraviolet: their lens and cornea let UV through instead of blocking it as ours do, so in snow country the whole world glows UV-bright. Wolf urine absorbs ultraviolet, so it marks a predator's trail as dark stains against the bright snow long after the wolf has passed — hair, drag marks, or blood would not stand out the same way. Source: Hogg et al. 2011, 'Arctic reindeer extend their visual range into the ultraviolet', J. Exp. Biol., PubMed 21613517; EarthSky, quoting UV researcher Glen Jeffery.  (Legend.)",
+    "context": "Arctic reindeer see into the ultraviolet: their lens and cornea let UV through instead of blocking it as human eyes do. Snow reflects most ultraviolet, so to a reindeer anything that soaks it up looks black against the bright snow. Glen Jeffery, who worked on the study, points to urine, a sign of predators or rivals, and to wolf fur; paw prints, scratches and frost are only snow and ice, and shine as brightly as the rest. Source: Hogg et al. 2011, 'Arctic reindeer extend their visual range into the ultraviolet', J. Exp. Biol., PubMed 21613517; phys.org 2011, quoting Glen Jeffery.",
     "topic": "seeing-colors-we-cant-ultraviolet"
   },
   {
     "tier": 4,
     "question": "A mantis shrimp, a fist-sized hunter of coral reefs, carries some of the most complex eyes on Earth. They hold as many as six kinds of ultraviolet receptor, each tuned by stacked colored filters, the most elaborate ultraviolet setup known in any animal. What advantage do biologists think all that filtering buys it?",
-    "answer": "Telling many shades of UV apart",
+    "answer": "Splitting UV into several colors",
     "choices": [
-      "Telling many shades of UV apart",
+      "Splitting UV into several colors",
       "Seeing UV in near-total darkness",
       "Aiming at a UV point of light",
-      "Reading UV in the polarised sky"
+      "Seeing UV through murky water"
     ],
-    "context": "The mantis shrimp has up to six separate ultraviolet photoreceptors, tuned by 'biological sunscreen' filters (mycosporine-like amino acids, the same UV-blocking compounds animals use to protect their DNA) layered over the eye to split UV into multiple colours — a system built for fine UV-shade discrimination, not for low light, direction-finding, or polarisation. This finer UV discrimination is inferred from the filters, not yet proven behaviourally. Source: Bok et al. 2014, 'Biological Sunscreens Tune Polychromatic Ultraviolet Vision in Mantis Shrimp', Current Biology, PubMed 24998530.  (Legend.)",
+    "context": "The mantis shrimp has up to six separate ultraviolet photoreceptors, tuned by 'biological sunscreen' filters (mycosporine-like amino acids, the same UV-absorbing compounds many animals use to protect their DNA) layered over the eye, which split the ultraviolet into several separate color channels. Whether the shrimp uses them to tell fine shades of UV apart has not been tested; other work found its color vision built for quick recognition rather than fine discrimination. Source: Bok et al. 2014, 'Biological Sunscreens Tune Polychromatic Ultraviolet Vision in Mantis Shrimp', Current Biology, PubMed 24998530; Thoen et al. 2014, Science.",
     "topic": "seeing-colors-we-cant-ultraviolet"
   },
   {
@@ -22062,15 +22010,15 @@
   },
   {
     "tier": 2,
-    "question": "A small primate spends about seven months a year fast asleep inside a tree hollow, its body temperature sinking to match the air around it. No other primate is known to hibernate so deeply. Which animal is it?",
+    "question": "Inside a tree hollow in western Madagascar, a primate sleeps through the dry season for up to seven months, its body temperature drifting with the air. In 2004 it became the first primate shown to hibernate. Which animal is it?",
     "answer": "The fat-tailed dwarf lemur",
     "choices": [
       "The fat-tailed dwarf lemur",
-      "The vampire bat",
-      "The common poorwill",
-      "The arctic ground squirrel"
+      "The ring-tailed lemur",
+      "The golden bamboo lemur",
+      "The Verreaux's sifaka"
     ],
-    "context": "The fat-tailed dwarf lemur of Madagascar hibernates for about seven months, living off fat it has stored inside its own tail. Source: https://en.wikipedia.org/wiki/Fat-tailed_dwarf_lemur  (Legend.)",
+    "context": "The fat-tailed dwarf lemur of Madagascar hibernates for up to seven months in a tree hollow, living off fat stored in its tail. Kathrin Dausmann's team showed it in 2004, the first time hibernation was demonstrated in a primate. Source: Wikipedia 'Fat-tailed dwarf lemur' (Dausmann et al. 2004, Nature, 'Hibernation in a tropical primate'); Grokipedia 'Fat-tailed dwarf lemur'.",
     "topic": "sleeping-through-winter-hibernation-and-torpor"
   },
   {
@@ -22097,19 +22045,6 @@
       "Swap its water for a fatty oil"
     ],
     "context": "Ice needs a speck, a particle or rough surface, to start forming around. By cleaning its blood of any such trigger, the squirrel stays liquid below freezing; if one crystal formed, its cells would burst. Source: https://www.uaf.edu/centennial/uaf100/ideas/frozen-squirrels.php",
-    "topic": "sleeping-through-winter-hibernation-and-torpor"
-  },
-  {
-    "tier": 5,
-    "question": "Brian Barnes, a zoologist at the University of Alaska Fairbanks, wanted to learn in the 1980s how cold a hibernating arctic ground squirrel's body core really gets; squirrels in lab cages never got cold enough to settle it. He implanted tiny radio transmitters in the animals, then did one thing that made the test work. What was that one thing?",
-    "answer": "Letting them hibernate outdoors in the wild",
-    "choices": [
-      "Letting them hibernate outdoors in the wild",
-      "Freezing them in a lab chamber",
-      "Feeding them antifreeze for a year",
-      "Raising their body heat until they woke"
-    ],
-    "context": "Barnes, at the University of Alaska Fairbanks, let the transmitter-carrying squirrels hibernate in natural conditions and recorded their core temperature dropping below freezing, proving the supercooling. Source: https://www.scientificamerican.com/article/arctic-ground-squirrel-brain/",
     "topic": "sleeping-through-winter-hibernation-and-torpor"
   },
   {
@@ -22373,21 +22308,8 @@
     "topic": "smilodon-saber-toothed-cat"
   },
   {
-    "tier": 1,
-    "question": "A plant-eater blundered into a pool of sticky black asphalt where Los Angeles stands today and stuck fast, and predators that came to feed on it were trapped too. Over thousands of years the seeping asphalt built the world's richest saber-tooth fossil bed. What is this famous trap called?",
-    "answer": "the La Brea Tar Pits",
-    "choices": [
-      "the La Brea Tar Pits",
-      "the Burgess Shale",
-      "the Olduvai Gorge",
-      "the Messel Pit"
-    ],
-    "context": "At the La Brea Tar Pits, natural asphalt seeps trapped plant-eaters, and the predators that came to feed on them were caught in turn, building an enormous fossil treasure trove over thousands of years. Source: https://tarpits.org/stories/here-kitty-kitty  (Legend.)",
-    "topic": "smilodon-saber-toothed-cat"
-  },
-  {
     "tier": 2,
-    "question": "Smilodon populator, the biggest saber-toothed cat of all, hunted the heaviest ice-age plant-eaters in its range. It could top 470 kilograms (over 1,000 pounds), one of the largest cats that ever lived. Which enormous beast did it bring down?",
+    "question": "Smilodon populator, the biggest saber-toothed cat of all, could top 470 kilograms (over 1,000 pounds), one of the largest cats that ever lived. Chemical traces in its fossil bones from the Argentine Pampas reveal what it ate most often. Which enormous plant-eater was among its main prey?",
     "answer": "giant Megatherium ground sloths",
     "choices": [
       "giant Megatherium ground sloths",
@@ -22395,7 +22317,7 @@
       "elephant-sized Deinotherium",
       "shaggy Diprotodon marsupials"
     ],
-    "context": "In South America, Smilodon populator preyed on huge Megatherium ground sloths and Macrauchenia. S. fatalis weighed roughly 160-280 kg, while S. populator reached up to about 470 kg. Source: https://en.wikipedia.org/wiki/Smilodon",
+    "context": "Isotope analysis of Smilodon populator bones from the Argentine Pampas shows its main prey included ground sloths such as Megatherium and Lestodon, along with Macrauchenia; whether it took full-grown adults or mostly young ones is not known. S. fatalis weighed roughly 160-280 kg, while S. populator reached up to about 470 kg. Source: https://en.wikipedia.org/wiki/Smilodon",
     "topic": "smilodon-saber-toothed-cat"
   },
   {
@@ -22426,28 +22348,28 @@
   },
   {
     "tier": 4,
-    "question": "McHenry's team rebuilt the skull of Smilodon in a computer model in 2007 and found a paradox: for all its dagger-like fangs, its jaw muscles bit with only about a third of a lion's force, feeble for a big cat. Yet the weak-jawed hunter had one skull feature that no living cat comes close to matching. What was it?",
-    "answer": "a jaw that could swing open past a right angle",
+    "question": "McHenry's team rebuilt the skull of Smilodon in a computer model in 2007 and found a paradox: for all its dagger-like fangs, its jaw muscles bit with only about a third of a lion's force, feeble for a big cat. Yet the weak-jawed hunter had one skull feature that far outdid a lion's. What was it?",
+    "answer": "a jaw that could swing open enormously wide",
     "choices": [
-      "a jaw that could swing open past a right angle",
+      "a jaw that could swing open enormously wide",
       "a second row of shearing teeth behind the canines",
-      "a bony chin flange that shielded the long fangs",
+      "a jaw hinge that locked shut on held prey",
       "canines that retracted up into the skull when closed"
     ],
-    "context": "Finite-element modeling by McHenry and colleagues (2007, PNAS) put Smilodon's muscle-driven bite at only about one-third of a comparable lion's. To clear and use its ~18 cm canines, the cat gaped to roughly 120 degrees, where a modern lion manages only about 65. That enormous, weak-jawed gape is why the real killing power came from its massive neck and forelimbs pinning prey still, not from crushing jaw pressure. Source: McHenry et al. 2007, 'Supermodeled sabercat,' PNAS 104(41):16010-15 (https://www.pnas.org/doi/10.1073/pnas.0706086104); gape figures via Wikipedia 'Smilodon' and the San Diego Zoo extinct saber-toothed cat fact sheet.  (Legend.)",
+    "context": "Finite-element modeling by McHenry and colleagues (2007, PNAS) put Smilodon's muscle-driven bite at only about one-third of a comparable lion's. To clear and use its long canines the cat gaped far wider than a lion: older estimates put the gape beyond 110 degrees and a 2020 study at about 82 to 89, against about 65 for a modern lion. That huge, weak-jawed gape is why the real killing power came from its massive neck and forelimbs pinning prey still, not from crushing jaw pressure. Source: McHenry et al. 2007, 'Supermodeled sabercat,' PNAS 104(41):16010-15; Wikipedia 'Smilodon' (gape estimates, including the 2020 study).",
     "topic": "smilodon-saber-toothed-cat"
   },
   {
     "tier": 1,
-    "question": "Workers draining a Maryland pond in 2002 pulled out a fish no one had seen in American water before: a northern snakehead from Asia, with a snake-patterned back and dagger-like teeth, able to grow past 33 inches and 19 pounds. What nickname did horrified headline writers pin on it?",
-    "answer": "Frankenfish",
+    "question": "An angler fishing a pond in Crofton, Maryland, in the summer of 2002 hooked a long fish with a snake-like pattern and sharp teeth, a predator from East Asia. Its discovery made national news. Which fish had he caught?",
+    "answer": "The northern snakehead",
     "choices": [
-      "Frankenfish",
-      "Razormouth",
-      "Bog demon",
-      "Mud shark"
+      "The northern snakehead",
+      "The alligator gar",
+      "The chain pickerel",
+      "The flathead catfish"
     ],
-    "context": "The northern snakehead grows past 33 inches (85 cm) and about 19 pounds, a long snake-patterned fish with dagger-like teeth that earned the tabloid nickname 'Frankenfish.' Source: National Geographic northern snakehead facts; Smithsonian's National Zoo species page.",
+    "context": "An alert angler found a northern snakehead in a pond in Crofton, Maryland, in the summer of 2002. The fish grows past 33 inches (85 cm) and about 19 pounds, a long, snake-patterned predator with dagger-like teeth, and headline writers nicknamed it 'Frankenfish.' Source: https://en.wikipedia.org/wiki/Northern_snakehead ; National Geographic northern snakehead facts.",
     "topic": "snakehead-fish-channidae"
   },
   {
@@ -22556,7 +22478,7 @@
   },
   {
     "tier": 1,
-    "question": "A sperm whale takes one breath at the surface and dives, leaving the sunlit water and the twilight zone far behind, to hunt squid in the pitch-black cold. No other mammal goes so deep for its food. About how deep does it plunge on that single breath?",
+    "question": "A sperm whale takes one breath at the surface and dives past the sunlit water and the twilight zone to hunt squid in the pitch-black cold. Only a few mammals are known to dive deeper. About how deep does it plunge on that one breath?",
     "answer": "Around 2,250 meters (7,380 ft)",
     "choices": [
       "Around 2,250 meters (7,380 ft)",
@@ -22564,7 +22486,7 @@
       "Around 600 meters (2,000 ft)",
       "Around 5,000 meters (16,400 ft)"
     ],
-    "context": "The sperm whale dives deeper than any other mammal for its food, reaching about 2,250 m and staying under for well over an hour on one breath. Often cited as a record among diving mammals. Source: https://en.wikipedia.org/wiki/Sperm_whale  (Legend.)",
+    "context": "The sperm whale dives to about 2,250 m and can stay under for well over an hour on one breath. It is among the deepest-diving mammals, though not the deepest: Cuvier's beaked whale holds the record, tracked in 2014 to about 2,992 m. Source: https://en.wikipedia.org/wiki/Sperm_whale ; https://en.wikipedia.org/wiki/Cuvier%27s_beaked_whale",
     "topic": "sperm-whale"
   },
   {
@@ -22577,7 +22499,7 @@
       "It follows the squid's scent trail",
       "It feels water currents on its skin"
     ],
-    "context": "In the black cold a mile down, the whale maps its surroundings and finds squid by the returning echo of its clicks; hydrophones can pick those clicks up from up to 100 miles away. Source: https://www.fisheries.noaa.gov/science-blog/diving-deep-sperm-whale-clicks",
+    "context": "In the black cold a mile down, the whale maps its surroundings and finds squid by the returning echo of its clicks, which carry for many miles through the water. Source: https://www.fisheries.noaa.gov/science-blog/diving-deep-sperm-whale-clicks ; https://en.wikipedia.org/wiki/Sperm_whale",
     "topic": "sperm-whale"
   },
   {
@@ -22594,21 +22516,21 @@
     "topic": "sperm-whale"
   },
   {
-    "tier": 4,
-    "question": "A sperm whale hunting squid in the black deep, where its eyes are no help, fires enormous clicks of sound from its head. A single click can reach about 230 decibels underwater, louder than a jet engine and the loudest sound any animal makes. Researchers suspect that, at close range, one click may do something to the squid. What?",
-    "answer": "Stun the squid",
+    "tier": 3,
+    "question": "A sperm whale hunting squid in the black deep, where its eyes are no help, fires clicks of sound from its huge head. A single click can reach about 230 decibels underwater. How does that click rank among all the sounds animals make?",
+    "answer": "It is the loudest sound any animal makes",
     "choices": [
-      "Stun the squid",
-      "Boil the water around it",
-      "Crack the squid's beak",
-      "Blind the squid's eyes"
+      "It is the loudest sound any animal makes",
+      "It is second only to the blue whale's call",
+      "It is about as loud as a dolphin's whistle",
+      "It is quieter than a snapping shrimp's snap"
     ],
-    "context": "Clicks reach a source level of about 230-236 dB underwater (a jet engine is roughly 150 dB); researchers suspect a close-range click can stun squid. Source: https://en.wikipedia.org/wiki/Sperm_whale  (Legend.)",
+    "context": "Sperm whale clicks reach a source level of about 230 to 236 decibels underwater, the loudest sound measured from any animal; a blue whale's calls reach about 188. An old idea held that a close-range click could stun a squid, but experiments have failed to show any such effect. Source: https://en.wikipedia.org/wiki/Sperm_whale ; Møhl et al. 2003, J. Acoust. Soc. Am.",
     "topic": "sperm-whale"
   },
   {
     "tier": 4,
-    "question": "On a deep dive a sperm whale stays down for more than an hour on one breath, in water that presses with hundreds of pounds on every square inch of its body. It does not fight the squeeze: its flexible ribcage folds inward and its lungs cave in on the way down. What does the collapse protect it from?",
+    "question": "A sperm whale stays down for more than an hour on one breath, in water that presses with hundreds of pounds on every square inch of its body. Its chest is built to meet that squeeze in a way no scuba diver's is. Which danger of deep water does that design spare it?",
     "answer": "Absorbing dangerous nitrogen",
     "choices": [
       "Absorbing dangerous nitrogen",
@@ -22698,19 +22620,6 @@
     "topic": "spider-tailed-viper-the-tail-that-fishes-for-birds"
   },
   {
-    "tier": 3,
-    "question": "Two American travelers named Smith came upon a strange dead snake on a western Iranian road in 1968, the first of its kind anyone had found. Its tail ended in an odd knob of scales and skin, and for decades scientists paid it no serious attention. What did they first take the tail to be?",
-    "answer": "A tumor or parasite stuck to an ordinary snake",
-    "choices": [
-      "A tumor or parasite stuck to an ordinary snake",
-      "A rare albino mutation of a known viper",
-      "A clump of eggs the snake was carrying",
-      "A wad of mud dried onto the tail"
-    ],
-    "context": "When the first specimen turned up in 1968, scientists thought the strange tail was just a tumor, a deformity, or a parasite clinging to the snake. It was not recognized as a genuine spider-mimicking tail, and a whole new species, until 2006. Source: https://en.wikipedia.org/wiki/Spider-tailed_horned_viper",
-    "topic": "spider-tailed-viper-the-tail-that-fishes-for-birds"
-  },
-  {
     "tier": 1,
     "question": "A porcupinefish rests on a tropical seafloor looking almost smooth, with every spine lying flat against its skin. A hungry predator closes in fast, and the fish has only seconds to make itself impossible to eat. What does it do?",
     "answer": "Gulps water and balloons into a spiky ball several times its normal size",
@@ -22733,7 +22642,7 @@
       "Its bright warning stripes",
       "Its venom-tipped tail spine"
     ],
-    "context": "A hedgehog (subfamily Erinaceinae) has spines only on its back and sides; curling into a ball pulls that spiny skin over the vulnerable belly. The lock is done by a special muscle described in another question. Source: veteriankey.com/hedgehogs-2; sciencedirect.com Erinaceidae topic page.",
+    "context": "A hedgehog (subfamily Erinaceinae) has spines only on its back and sides; curling into a ball pulls that spiny skin over the vulnerable belly. Source: veteriankey.com/hedgehogs-2; sciencedirect.com Erinaceidae topic page.",
     "topic": "spines-and-quills"
   },
   {
@@ -22816,7 +22725,7 @@
   },
   {
     "tier": 4,
-    "question": "A flower urchin sits on an Indo-Pacific reef, dotted with pretty pink-and-white 'flowers' between its spines. Those flowers, not the spines, put it among the most venomous animals in the sea, and a diver who handles one is often paralyzed for hours, sometimes needing help just to breathe. What are the flowers really?",
+    "question": "A flower urchin sits on an Indo-Pacific reef, dotted with pretty pink-and-white 'flowers' between its spines. Those flowers, not the spines, earned it the title of the most dangerous sea urchin, and their sting can leave a person's lips, tongue and eyelids paralyzed for hours. What are the flowers really?",
     "answer": "Venomous jaws that snap shut and keep injecting even after breaking off",
     "choices": [
       "Venomous jaws that snap shut and keep injecting even after breaking off",
@@ -22825,19 +22734,6 @@
       "Gills that flush toxin out through the seawater"
     ],
     "context": "The flower urchin (Toxopneustes pileolus) defends itself mainly with flower-like pedicellariae — venomous pincers (tiny jaws) that snap shut on a threat, inject a paralyzing neurotoxin, and can break off and keep injecting for hours. Source: Wikipedia 'Toxopneustes pileolus'; PMC12193733.",
-    "topic": "spines-and-quills"
-  },
-  {
-    "tier": 4,
-    "question": "Scientists studying porcupine quills under electron microscopes found that the quill does what engineers had chased for centuries without success: it pushes easily into flesh, yet is extremely hard to pull back out. What did the quill's design inspire engineers to make?",
-    "answer": "Better medical needles and surgical staples that grip tissue",
-    "choices": [
-      "Better medical needles and surgical staples that grip tissue",
-      "Stronger fishing hooks that release on command",
-      "Self-sealing tires studded with tiny barbs",
-      "Climbing spikes that dig into ice and rock"
-    ],
-    "context": "The barbed quill so perfectly solves 'easy to push in, hard to pull out' — the only known structure with that dual functionality — that it inspired engineers to design better medical needles and surgical staples that grip tissue. Source: SciTechDaily, 'Barbed porcupine quills could help enhance biomedical devices'; PNAS 2012.",
     "topic": "spines-and-quills"
   },
   {
@@ -23136,7 +23032,7 @@
       "It uses rising bubbles to steer back toward the surface",
       "It stores bubbles in its cheeks as an oxygen supply"
     ],
-    "context": "Catania showed the mole exhales tiny bubbles onto an object underwater and re-inhales them, letting the air pick up scent molecules, sniffing about 5 to 10 times a second. It is one of only two mammals known to smell underwater. With the bubbles kept from reaching the scent, the mole's underwater smelling was disabled and its choices dropped to pure chance, proving the bubble-sniffing mechanism was doing the work.",
+    "context": "Catania showed the mole exhales tiny bubbles onto an object underwater and re-inhales them, letting the air pick up scent molecules, sniffing about 5 to 10 times a second. It and the water shrew, tested in the same 2006 study, were the first mammals shown to smell underwater. With the bubbles kept from reaching the scent, the mole's underwater smelling was disabled and its choices dropped to pure chance, proving the bubble-sniffing mechanism was doing the work. Source: Catania 2006, Nature, 'Underwater sniffing by semi-aquatic mammals'; https://en.wikipedia.org/wiki/Star-nosed_mole",
     "topic": "star-nosed-mole"
   },
   {
@@ -23219,7 +23115,7 @@
   },
   {
     "tier": 3,
-    "question": "A shark cruises the open sea buoyed by a huge liver, up to a quarter of its whole body weight. The liver is crammed with one light molecule less dense than seawater, and in some deep-sea species that molecule takes up four-fifths or more of it. What is the molecule?",
+    "question": "A deep-sea shark cruises a dark slope far below the sunlit water, held up by a huge liver that can make up a quarter of its body weight. In sharks like it, as much as four-fifths of that liver oil is one light molecule. What is the molecule?",
     "answer": "Squalene",
     "choices": [
       "Squalene",
@@ -23227,7 +23123,7 @@
       "Triglyceride",
       "Omega-3"
     ],
-    "context": "The lift oil is mostly squalene, a lightweight molecule the body makes on the way to building cholesterol, and fat vacuoles packed with it can fill 80% or more of a shark's liver by volume. Source: https://www.wildlifeonline.me.uk/questions/answer/how-do-sharks-and-rays-control-their-buoyancy-without-a-swim-bladder",
+    "context": "In some deep-water sharks, squalene makes up 50 to 80 percent of the liver oil. It is a light molecule, less dense than seawater, that the body makes on the way to building cholesterol, and it gives these sharks lift. Source: https://en.wikipedia.org/wiki/Squalene ; https://www.wildlifeonline.me.uk/questions/answer/how-do-sharks-and-rays-control-their-buoyancy-without-a-swim-bladder",
     "topic": "staying-up-or-sinking"
   },
   {
@@ -23246,14 +23142,14 @@
   {
     "tier": 3,
     "question": "A cuttlefish holds its depth with a stiff internal shell divided into chambers, not a soft balloon like a fish's swim bladder. It is the same flat white oval that washes up on beaches and ends up clipped into budgie cages. What is that rigid cuttlebone mostly made of?",
-    "answer": "Chalk",
+    "answer": "Calcium carbonate",
     "choices": [
-      "Chalk",
-      "Cartilage",
-      "Keratin",
-      "Silica glass"
+      "Calcium carbonate",
+      "Hardened cartilage",
+      "Packed keratin",
+      "Silicon dioxide"
     ],
-    "context": "The porous cuttlebone is the ballast tank, and it is about 95-97% aragonite -- a form of chalk (calcium carbonate). The cuttlefish floods its hundreds of tiny chambers with fluid to sink and lets gas back in to rise. Source: https://en.wikipedia.org/wiki/Cuttlebone",
+    "context": "The porous cuttlebone is the ballast tank, and it is about 95-97% aragonite, a crystal form of calcium carbonate, the compound that also makes chalk and seashells. The cuttlefish floods its hundreds of tiny chambers with fluid to sink and lets gas back in to rise. Source: https://en.wikipedia.org/wiki/Cuttlebone",
     "topic": "staying-up-or-sinking"
   },
   {
@@ -23323,7 +23219,7 @@
   },
   {
     "tier": 1,
-    "question": "A plant-eating dinosaur the size of a city bus lumbered past a stand of ferns on a North American floodplain in the Late Jurassic. Two rows of tall, diamond-shaped bony plates lined its back, and its long tail ended in four sharp spikes. Which dinosaur was it?",
+    "question": "A plant-eating dinosaur some 7 meters long lumbered past a stand of ferns on a North American floodplain in the Late Jurassic. Two rows of tall, diamond-shaped bony plates lined its back, and its long tail ended in four sharp spikes. Which dinosaur was it?",
     "answer": "Stegosaurus",
     "choices": [
       "Stegosaurus",
@@ -23344,7 +23240,7 @@
       "Ripe fallen fruit and berries",
       "Broad flowering shrubs and blossoms"
     ],
-    "context": "Stegosaurus browsed within about a meter of the ground on soft, low-growing plants like ferns and mosses; its bite force was less than half that of a modern Labrador retriever. (Grasses had not yet spread in the Late Jurassic.) Source: https://en.wikipedia.org/wiki/Stegosaurus",
+    "context": "Stegosaurus browsed within about a meter of the ground on soft, low-growing plants like ferns and mosses; one 2010 computer model put its bite at less than half a modern Labrador retriever's, though a 2016 model found it stronger. (Grasses had not yet spread in the Late Jurassic.) Source: https://en.wikipedia.org/wiki/Stegosaurus",
     "topic": "stegosaurus"
   },
   {
@@ -23357,7 +23253,7 @@
       "A house cat",
       "A grapefruit"
     ],
-    "context": "Stegosaurus had a brain of only around 80 grams, about the size of a walnut, and a braincase no bigger than a dog's, despite its bus-sized body. Source: https://en.wikipedia.org/wiki/Stegosaurus",
+    "context": "Stegosaurus had a brain of no more than about 80 grams, about the size of a walnut, and a braincase no bigger than a dog's, despite a body of some 3.5 tonnes. Source: https://en.wikipedia.org/wiki/Stegosaurus",
     "topic": "stegosaurus"
   },
   {
@@ -23479,15 +23375,15 @@
   },
   {
     "tier": 3,
-    "question": "On a vertical pane of glass, a Tokay gecko from Southeast Asia grips with about 500,000 microscopic hairs, called setae, under each of its toes. With so many tiny hairs gripping at once, it can pull off a startling feat on the glass. What can it do?",
+    "question": "On a vertical pane of glass, a Tokay gecko from Southeast Asia grips with millions of microscopic hairs, called setae, packed under its toes. With so many tiny hairs gripping at once, it can pull off a startling feat on the glass. What can it do?",
     "answer": "hang from the glass by a single toe",
     "choices": [
       "hang from the glass by a single toe",
-      "melt a shallow groove into the glass",
-      "walk across the glass upside down underwater",
-      "leap off the glass twice its body length"
+      "leave a trail of glue footprints behind",
+      "walk upside down on glass underwater",
+      "pull each toe free with a loud pop"
     ],
-    "context": "A single gecko toe carries about 500,000 of these microscopic hairs. A Tokay gecko has so many that its two front feet can hold roughly 40 times the gecko's own body weight — which is why a gecko can hang from a pane of glass by just one toe. Source: Lewis & Clark Magazine (Kellar Autumn lab); Wikipedia 'Synthetic setae' (front feet ~40x body weight).  (Legend.)",
+    "context": "A Tokay gecko carries more than three million setae on its two front feet alone, so many that those feet can hold roughly 40 times the gecko's own body weight, which is why a gecko can hang from a pane of glass by just one toe. Source: Wikipedia 'Synthetic setae' (about 3.27 million setae on the two front feet; about 40 times body weight); Lewis & Clark Magazine (Kellar Autumn lab).",
     "topic": "sticking-to-walls"
   },
   {
@@ -23531,7 +23427,7 @@
   },
   {
     "tier": 4,
-    "question": "A limpet, a small sea snail under a low cone of shell, clamps to a wave-swept rock so hard that crashing surf cannot tear it off. To scrape algae from the stone it grinds with tiny teeth reinforced by fibers of an iron mineral called goethite. When scientists at the University of Portsmouth measured those teeth, what record did the teeth set?",
+    "question": "A limpet, a small sea snail under a low cone of shell, clamps to a wave-swept rock so hard that crashing surf cannot tear it off. To scrape algae from the stone it grinds with tiny teeth reinforced by fibers of an iron mineral called goethite. When scientists at the University of Portsmouth measured those teeth in 2015, what record did the teeth set?",
     "answer": "the strongest natural material ever measured",
     "choices": [
       "the strongest natural material ever measured",
@@ -23543,19 +23439,6 @@
     "topic": "sticking-to-walls"
   },
   {
-    "tier": 4,
-    "question": "Inspired by the gecko's toe, engineers led by Al Crosby at the University of Massachusetts Amherst built a dry sticky pad they called Geckskin, made of cheap woven nylon and ordinary bathroom caulk, with no glue at all. They pinned a piece the size of an index card to a smooth pane of glass, and it held a shocking weight without peeling loose. How much?",
-    "answer": "up to 700 pounds",
-    "choices": [
-      "up to 700 pounds",
-      "up to 7 pounds",
-      "up to 70 pounds",
-      "up to 7,000 pounds"
-    ],
-    "context": "Geckskin, only the size of an index card, can hold up to 700 pounds pinned to a pane of glass — then peel off cleanly with a flick, just like a gecko changing the angle of its foot. It was invented by Al Crosby and Duncan Irschick out of cheap stuff like nylon and bathroom caulk. Source: University of Massachusetts Amherst (Crosby & Irschick, Geckskin); Singularity Hub 2014 (700 lbs on glass).  (Legend.)",
-    "topic": "sticking-to-walls"
-  },
-  {
     "tier": 1,
     "question": "A barefoot wader on a warm Indo-Pacific reef steps toward a lumpy 'rock' that is really a fish, so still and so perfectly disguised that swimmers tread on it by accident. Venom-loaded spines lie hidden in the mottled skin of its back. Which fish is the most venomous in the world?",
     "answer": "The stonefish",
@@ -23563,7 +23446,7 @@
       "The stonefish",
       "The great white shark",
       "The electric eel",
-      "The giant clam"
+      "The lionfish"
     ],
     "context": "The reef stonefish (Synanceia verrucosa) is the most venomous fish in the world. Source: Australian Museum — Reef Stonefish.",
     "topic": "stonefish-synanceia"
@@ -23647,19 +23530,6 @@
     "topic": "stonefish-synanceia"
   },
   {
-    "tier": 4,
-    "question": "An Australian laboratory began making stonefish antivenom in 1959, and not one confirmed death from the fish has been recorded in the country since. The agent that neutralizes the venom is harvested from the blood of a large farm animal first dosed with stonefish venom. Which animal's blood is used?",
-    "answer": "A horse's",
-    "choices": [
-      "A horse's",
-      "A cow's",
-      "A sheep's",
-      "A goat's"
-    ],
-    "context": "Stonefish antivenom is made by injecting horses with the venom and collecting the blood fraction that neutralizes it. Made by Australia's CSL in 1959, it was the world's first widely available marine antivenom and remains the only fish antivenom commercially produced. Sources: Life Saving First Aid — How is antivenom made; Australian Museum — Reef Stonefish.",
-    "topic": "stonefish-synanceia"
-  },
-  {
     "tier": 1,
     "question": "A bloodhound, a big, droopy-eared hound bred over centuries to track the faintest trail of a person or animal, puts its nose to the ground. A human nose carries about 6 million scent receptors and can still pick out a bakery a whole block away. Roughly how many scent receptors line the bloodhound's nose?",
     "answer": "About 300 million",
@@ -23673,26 +23543,13 @@
     "topic": "super-smellers"
   },
   {
-    "tier": 1,
-    "question": "Nose down on a trail, a bloodhound puts a far bigger share of its brain to work on smell than a person does, with about forty times as much tissue for sensing scent. People joke that the tracking hound is little more than a helper for its own nose. What is a bloodhound jokingly called?",
-    "answer": "A nose with a dog attached",
-    "choices": [
-      "A nose with a dog attached",
-      "A bloodhound's blessing",
-      "The four-legged detective",
-      "A tracker on paws"
-    ],
-    "context": "A dog dedicates a far bigger slice of its brain to smell than we do, roughly 40 times more scent-sensing tissue overall, which is why a bloodhound is sometimes called 'a nose with a dog attached.' Source: https://en.wikipedia.org/wiki/Dog_sense_of_smell; Alexandra Horowitz, 'Inside of a Dog'.",
-    "topic": "super-smellers"
-  },
-  {
     "tier": 2,
-    "question": "A dog casts its head back and forth over a trail, and it is not searching at random. Its two nostrils take in odor separately, which gives it a trick no human nose can manage. What can the dog's nose do that a person's cannot?",
+    "question": "A dog casts its head back and forth over a trail, and it is not searching at random. Its two nostrils take in odor separately, each sampling its own patch of air. What does that let the dog do?",
     "answer": "Tell which side a scent is coming from",
     "choices": [
       "Tell which side a scent is coming from",
       "Detect a scent a mile off",
-      "Smell colors as well as odors",
+      "Shut out every smell but one",
       "Store a smell to recall it later"
     ],
     "context": "A dog smells in stereo: its two nostrils sample independently, so it can tell which side a scent came from and use its nose like a compass to point toward the source. Source: https://en.wikipedia.org/wiki/Dog_sense_of_smell (PBS NOVA, PetMD).",
@@ -23778,11 +23635,11 @@
   },
   {
     "tier": 3,
-    "question": "A courting male superb bird-of-paradise spreads his bright blue-green feathers against a velvet-black cape, and the cape is extreme: measured head-on, it reflects only about 0.05 percent of the light that strikes it, one of the darkest surfaces known in nature. Why would evolution favor so black a cape?",
-    "answer": "With almost no light bouncing off it, the eye has nothing to judge the blue face against, so the face reads as a bright shape floating in empty space",
+    "question": "A courting male superb bird-of-paradise spreads his bright blue-green feathers against a velvet-black cape, and the cape is extreme: measured head-on, it reflects as little as 0.05 percent of the light that strikes it, one of the darkest surfaces known in nature. Why would evolution favor so black a cape?",
+    "answer": "It makes the blue face seem to glow and float in empty space",
     "choices": [
-      "With almost no light bouncing off it, the eye has nothing to judge the blue face against, so the face reads as a bright shape floating in empty space",
-      "The dark cape soaks up sunlight, keeping the male warm through cold rainforest nights",
+      "It makes the blue face seem to glow and float in empty space",
+      "The dark cape soaks up sunlight and keeps the male warm",
       "The blackness hides the male from hawks hunting the canopy above",
       "A wider patch of black makes the male look larger to his rivals"
     ],
@@ -23791,10 +23648,10 @@
   },
   {
     "tier": 3,
-    "question": "Researchers found no special dark pigment in the super-black cape of a male superb bird-of-paradise, though it is darker than any black a bird's pigment can make. The darkness comes from the shape of the tiny feather barbs. How does that shape trap the light?",
-    "answer": "The barbs tilt into arrays with deep cavities, so entering light bounces around inside and never escapes",
+    "question": "Researchers found no special dark pigment in the super-black cape of a male superb bird-of-paradise, though it is darker than any black a bird's pigment can make. How do those feathers swallow so much of the light that hits them?",
+    "answer": "The barbs tilt to form deep pits that trap the light",
     "choices": [
-      "The barbs tilt into arrays with deep cavities, so entering light bounces around inside and never escapes",
+      "The barbs tilt to form deep pits that trap the light",
       "A layer of black oil coats each feather and soaks up the light",
       "The feathers are packed so densely no light can slip between them",
       "The feathers chemically convert the light into heat"
@@ -24038,28 +23895,28 @@
   },
   {
     "tier": 2,
-    "question": "Justin Schmidt let insects sting him on purpose to build a pain scale, and he scored the tarantula hawk a 4.0, behind only the bullet ant, calling the pain 'blinding, fierce, shockingly electric.' Asked what a person should actually do when stung, what was his blunt advice?",
-    "answer": "Lie down and scream",
+    "question": "Justin Schmidt let insects sting him on purpose to build a pain scale, and he scored the tarantula hawk a 4.0, behind only the bullet ant, calling the pain 'blinding, fierce, shockingly electric.' How long does that searing pain last?",
+    "answer": "About five minutes",
     "choices": [
-      "Lie down and scream",
-      "Run to cold water",
-      "Suck out the venom",
-      "Hold perfectly still"
+      "About five minutes",
+      "About two hours",
+      "About six hours",
+      "About a full day"
     ],
-    "context": "Schmidt rated it 4.0, second only to the bullet ant. The mercy: the excruciating pain fades in about five minutes. Source: Schmidt Sting Pain Index, via Natural History Museum and Britannica.  (Legend.)",
+    "context": "Schmidt rated the sting 4.0, second only to the bullet ant, yet the searing pain fades in about five minutes, and the sting is not dangerous unless the person is allergic. Source: https://en.wikipedia.org/wiki/Tarantula_hawk ; Grokipedia 'Tarantula hawk' (pain subsides within 5 minutes).",
     "topic": "tarantula-hawk-the-wasp-that-hunts-tarantulas"
   },
   {
     "tier": 3,
-    "question": "A mother tarantula hawk can paralyze a spider several times her own size, yet she never hunts for her own dinner. She is a gentle sipper, and after a heavy meal of fermented juices she can even fly clumsy and drunken through the air. What does the adult wasp live on, day to day?",
+    "question": "A mother tarantula hawk can paralyze a spider several times her own size, yet she never hunts for her own dinner; the spider is food for her young alone. On her own she is a gentle sipper, and so is every male. What does the adult wasp live on, day to day?",
     "answer": "Flower nectar",
     "choices": [
       "Flower nectar",
       "Tree sap",
       "Aphid honeydew",
-      "Fruit-pulp juice"
+      "Carrion juices"
     ],
-    "context": "Adults are nectar-drinkers, sipping from milkweed, mesquite, and western soapberry blossoms -- and fermented nectar can leave them tipsy. The spider-hunting is done only by females, and only to feed the young. Source: Wikipedia, 'Tarantula hawk'; BeesWiki.",
+    "context": "Adults are nectar-drinkers, both males and females sipping from milkweed, mesquite and western soapberry blossoms. The spider-hunting is done only by females, and only to feed the young. Source: https://en.wikipedia.org/wiki/Tarantula_hawk ; BeesWiki.",
     "topic": "tarantula-hawk-the-wasp-that-hunts-tarantulas"
   },
   {
@@ -24077,15 +23934,15 @@
   },
   {
     "tier": 1,
-    "question": "A tardigrade clambers across a microscope slide on eight plump little legs, its whole tiny body built from only about a thousand cells. About how long is a normal one?",
-    "answer": "Smaller than a grain of sand",
+    "question": "A tardigrade clambers through a drop of water on a microscope slide, waving its eight plump little legs as it goes. About how long is a typical one?",
+    "answer": "About the size of a grain of sand",
     "choices": [
-      "Smaller than a grain of sand",
-      "About the size of an ant",
-      "About the width of a coin",
-      "Longer than a fingernail"
+      "About the size of a grain of sand",
+      "About the size of a small ant",
+      "About the width of a small coin",
+      "Longer than a whole fingernail"
     ],
-    "context": "Most tardigrades are about half a millimetre long, smaller than a grain of sand, built from only about 1,000 cells. Source: Wikipedia, Tardigrade.",
+    "context": "Most tardigrades are 0.05 to 0.5 millimetres long, about the size of a grain of sand or smaller; the largest reach about 1.3 mm. Source: https://en.wikipedia.org/wiki/Tardigrade",
     "topic": "tardigrade"
   },
   {
@@ -24129,7 +23986,7 @@
   },
   {
     "tier": 3,
-    "question": "When its home dries out, a tardigrade pulls in its legs and shrivels into a lifeless-looking ball called a tun, its metabolism all but stopped. Two dried tuns and an egg were once taken from an Antarctic sample frozen since 1983. Once thawed, how long a sleep had they survived?",
+    "question": "When its world freezes or dries out, a tardigrade can shut its body down, its metabolism all but stopped. Two tardigrades and an egg were once found in an Antarctic moss sample that had been kept frozen since 1983. Once thawed, how long a sleep had they survived?",
     "answer": "More than thirty years",
     "choices": [
       "More than thirty years",
@@ -24137,12 +23994,12 @@
       "About one winter",
       "Roughly three years"
     ],
-    "context": "Moss frozen at -20 C since 1983 was thawed in 2014; two tardigrades and an egg revived after 30+ years, crawled, ate, and one laid 19 eggs. Source: Tsujimoto et al., Cryobiology 2016. (Legend-tier wonder.)",
+    "context": "Moss collected in Antarctica in 1983 and kept frozen at -20 C was thawed in 2014; two tardigrades and an egg revived after more than 30 years, crawled, ate, and one laid 19 eggs. Source: Tsujimoto et al., Cryobiology 2016.",
     "topic": "tardigrade"
   },
   {
     "tier": 3,
-    "question": "A dried tardigrade, curled into its barrel-shaped tun, has been baked to about 150 C and still woken when soaked in water again. Scientists have also chilled one in the laboratory and brought it back to life. How cold has a tardigrade been chilled and lived through?",
+    "question": "A dried tardigrade, curled into its barrel-shaped tun, has survived a short spell at about 150 C and still woken when soaked in water again. Scientists have also chilled one in the laboratory and brought it back to life. How cold has a tardigrade been chilled and lived through?",
     "answer": "To about -272 C, one degree above absolute zero",
     "choices": [
       "To about -272 C, one degree above absolute zero",
@@ -24150,7 +24007,7 @@
       "To about -90 C, the coldest Antarctic air",
       "To about -180 C, the cold of liquid nitrogen"
     ],
-    "context": "A dried tardigrade has survived roughly -272 C, a single degree above absolute zero, the coldest anything can ever be, and heating to about 149 C. Source: Wikipedia, Tardigrade. (Legend-tier.)",
+    "context": "A dried tardigrade has survived short spells at roughly -272 C, a single degree above absolute zero, the coldest anything can ever be, and at about 149 C, though only for short periods. Source: https://en.wikipedia.org/wiki/Tardigrade ('at least for short periods of time').",
     "topic": "tardigrade"
   },
   {
@@ -24195,14 +24052,14 @@
   {
     "tier": 5,
     "question": "A tardigrade waddling through its damp little world belongs to a line that goes back to before the first dinosaurs, and an animal that tough might be expected to turn up all through the rocks. The fossil record shows almost the opposite. How many tardigrade bodies have ever been found as fossils, and how were they preserved?",
-    "answer": "Barely three, each locked inside amber",
+    "answer": "Only a handful, each locked inside amber",
     "choices": [
-      "Barely three, each locked inside amber",
+      "Only a handful, each locked inside amber",
       "Many thousands, pressed flat in shale",
       "Several hundred, turned to stone in limestone",
       "A few dozen, frozen deep in permafrost"
     ],
-    "context": "In all the world only three unmistakable tardigrade bodies have ever been dug up, and every one was sealed in amber — fossilised tree resin. The two oldest, Milnesium swolenskyi and Beorn leggi, came from Cretaceous amber roughly 72 to 90 million years old, back in the age of the dinosaurs. The third, Paradoryphoribius chronocaribbeus, was described in 2021 from 16-million-year-old Dominican amber; at just 559 micrometres — half a millimetre — it was so tiny it sat unnoticed in a corner of the amber, beside three trapped ants, for months before anyone spotted it. Called a 'once-in-a-generation' find, it let scientists study a fossil tardigrade's mouthparts for the first time. Source: Mapalo et al., Proceedings of the Royal Society B, October 2021.",
+    "context": "Only a handful of unmistakable tardigrade bodies have ever been found as fossils, four named kinds by 2024, and every one was sealed in amber, fossilised tree resin. The oldest, Milnesium swolenskyi, comes from New Jersey amber about 90 million years old; Beorn leggi and Aerobius dactylus share one piece of Canadian amber about 72 million years old. The youngest, Paradoryphoribius chronocaribbeus, was described in 2021 from 16-million-year-old Dominican amber; at just 559 micrometres it sat unnoticed beside three trapped ants for months before anyone spotted it. Source: https://en.wikipedia.org/wiki/Tardigrade ; Mapalo et al., Proc. R. Soc. B 2021; Mapalo et al., Communications Biology 2024.",
     "topic": "tardigrade"
   },
   {
@@ -24454,13 +24311,13 @@
   },
   {
     "tier": 4,
-    "question": "An old elephant cuts its last set of molars in its early forties, and once that set wears smooth it can no longer grind plants and slowly starves. It gets only a fixed number of molar sets in its life. How many sets does one elephant get?",
-    "answer": "Six sets, and no more",
+    "question": "An old elephant cuts its last set of molars in its early forties, and once that set wears smooth it can no longer grind plants and slowly starves. How many sets of molars does one elephant get in its whole life?",
+    "answer": "Six sets in all, and no more",
     "choices": [
-      "Six sets, and no more",
-      "A new set every single year",
+      "Six sets in all, and no more",
+      "About forty, one each year",
       "Two sets, like most mammals",
-      "An unlimited supply for as long as it lives"
+      "Twelve sets, two at a time"
     ],
     "context": "An elephant gets only six sets of molars in its whole life; the last erupt around its early 40s. When that final set wears smooth, the elephant can no longer grind plants and slowly starves. Its own teeth are its life clock. Source: globalelephants.org; Save the Elephants.  (Legend.)",
     "topic": "teeth-built-for-the-job"
