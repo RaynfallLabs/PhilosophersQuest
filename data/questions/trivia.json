@@ -5,7 +5,7 @@
     "answer": "Richard Garfield",
     "choices": [
       "Richard Garfield",
-      "Peter Adkison",
+      "Steve Jackson",
       "Gary Gygax",
       "Mark Rosewater"
     ],
@@ -27,7 +27,7 @@
   },
   {
     "tier": 1,
-    "question": "Magic: the Gathering's designer pitched a kind of game that did not yet exist to a tiny company in a garage in Renton, Washington. Its founder, a computer programmer who had started the outfit in 1990, agreed to publish it. What is the company called?",
+    "question": "Magic: the Gathering's designer pitched his new card game to a tiny company run from its founder's basement outside Seattle. The founder, a computer programmer who had started it in 1990, agreed to publish it. What is the company called?",
     "answer": "Wizards of the Coast",
     "choices": [
       "Wizards of the Coast",
@@ -40,7 +40,7 @@
   },
   {
     "tier": 1,
-    "question": "A Magic: the Gathering player pays a single red mana and deals three damage to any creature or player, with the most famous cheap spell in the color of fire and fury. It has sat in red beginner decks since 1993. What is this spell called?",
+    "question": "A Magic: the Gathering player pays one red mana and deals three damage to any creature or player, with the most famous cheap spell in the color of fire and fury. It was in the game's first set. What is it called?",
     "answer": "Lightning Bolt",
     "choices": [
       "Lightning Bolt",
@@ -370,8 +370,8 @@
     "choices": [
       "Arabian Nights",
       "Antiquities",
-      "Legends",
-      "The Dark"
+      "The Dark",
+      "Revised"
     ],
     "context": "Arabian Nights was designed by Richard Garfield as a tribute to the 1001 Nights. Library of Alexandria became one of the strongest lands ever printed.",
     "topic": "magic-the-gathering"
@@ -396,10 +396,10 @@
     "choices": [
       "Legends",
       "Antiquities",
-      "Arabian Nights",
+      "Revised",
       "The Dark"
     ],
-    "context": "Legends had 310 cards designed by Steve Conard, Robert Gutschera, and others. It introduced characters like Kei Takahashi, Sol'kanar the Swamp King, and Nicol Bolas the elder dragon legend.",
+    "context": "Legends brought the first legendary creatures, such as Kei Takahashi and Sol'kanar the Swamp King, with the Elder Dragons among them. Revised, two months earlier, had 306 cards.",
     "topic": "magic-the-gathering"
   },
   {
@@ -423,14 +423,14 @@
       "Serra Angel",
       "Shivan Dragon",
       "Lord of Atlantis",
-      "Birds of Paradise"
+      "Mahamoti Djinn"
     ],
-    "context": "Serra Angel appears on the box art of multiple MtG sets. The artist Douglas Schuler illustrated the iconic Alpha version. The card became a banner image for the white color identity.",
+    "context": "Serra Angel appears on the box art of several Magic sets. Douglas Shuler painted the iconic Alpha version, and the card became a banner image for white.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 2,
-    "question": "A Magic: the Gathering player casts a spell, and her opponent spends two mana on a famous blue card and stops it before it can even happen. The card has appeared in nearly every set since the original Alpha printing in 1993. What is this classic blue spell called?",
+    "question": "A Magic: the Gathering player casts a spell, and her opponent spends two mana on a famous blue card and stops it before it can even happen. The card goes back to the original Alpha printing of 1993. What is this classic blue spell called?",
     "answer": "Counterspell",
     "choices": [
       "Counterspell",
@@ -438,7 +438,7 @@
       "Force of Will",
       "Dispel"
     ],
-    "context": "Counterspell was printed in Alpha at common at UU casting cost. Its simplicity made it the gold standard for blue control. Later sets have made the spell more expensive or conditional.",
+    "context": "Counterspell was printed in Alpha with a cost of two blue mana. Its simplicity made it the gold standard for blue control, and later sets have made the effect more expensive or conditional.",
     "topic": "magic-the-gathering"
   },
   {
@@ -743,53 +743,40 @@
   {
     "tier": 3,
     "question": "Garfield finished his doctorate in mathematics at the University of Pennsylvania in 1993, the same year his card game Magic: the Gathering reached the shops. His branch of mathematics directly helped him give the game balanced odds. What branch was it?",
-    "answer": "Combinatorial mathematics, specifically combinatorial game theory",
+    "answer": "Combinatorial mathematics, the mathematics of counting and arranging",
     "choices": [
-      "Combinatorial mathematics, specifically combinatorial game theory",
+      "Combinatorial mathematics, the mathematics of counting and arranging",
       "Differential geometry, the mathematics of curved surfaces",
       "Number theory, especially prime distribution and factorization",
       "Topology, the mathematics of connectedness and continuity"
     ],
-    "context": "Garfield was teaching at Whitman College when MtG took off. He had already designed RoboRally as a personal project. The mathematical rigor he brought to deckbuilding probabilities is part of why MtG balances so well even today.",
+    "context": "Garfield's doctorate, supervised by Herbert Wilf, was in combinatorial mathematics. He became a visiting professor at Whitman College soon after. He had designed RoboRally years before Magic.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 3,
-    "question": "The game publisher Adkison met Garfield through a mutual acquaintance and saw a prototype of Magic: the Gathering in 1991. It was not what he wanted first. He hoped to publish a different Garfield game, but that one cost too much to make. What was that other game?",
+    "question": "A small game publisher met Garfield in 1991, looking for something new to print. Garfield showed him one design first, but it cost too much to make, so the publisher asked instead for a cheap game that was portable and quick to play. Garfield came back with Magic: the Gathering. What was the first design?",
     "answer": "RoboRally, a robot-programming board game",
     "choices": [
       "RoboRally, a robot-programming board game",
-      "Cosmic Encounter, a sci-fi negotiation game",
+      "Illuminati, a conspiracy card game",
       "Talisman, a fantasy quest board game",
       "Twilight Imperium, a 4X galactic conquest"
     ],
-    "context": "Adkison loved RoboRally but the production cost was too high for the tiny Wizards startup. Garfield then designed Magic as something cheap to print. RoboRally finally published in 1994 after Magic's runaway success bankrolled WotC.",
+    "context": "Adkison liked RoboRally, but it was too costly for the tiny startup, so he asked Garfield for a portable game that played quickly, and Garfield designed Magic. Wizards of the Coast published RoboRally in 1994, after Magic's success.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 3,
-    "question": "Zak Dolan, sixteen years old, beat Bertrand Lestree in the final of Magic: the Gathering's first World Championship in August 1994, at the Gen Con convention in Milwaukee. His deck centered on a single monster card. Which card was it?",
-    "answer": "Su-Chi, a powerful Antiquities artifact creature",
-    "choices": [
-      "Su-Chi, a powerful Antiquities artifact creature",
-      "Sengir Vampire, the iconic Alpha vampire",
-      "Serra Angel, the white flying finisher",
-      "Lord of Atlantis, the blue merfolk lord"
-    ],
-    "context": "Dolan's deck used dual lands plus Power Nine acceleration into Su-Chi for fast clock pressure. The win earned him a $1,000 prize and his name etched in the Magic record books as the first World Champion.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 3,
-    "question": "Longtime Magic: the Gathering players rose up in fury in July 1995, when a cheap new set reprinted a big chunk of the most famous cards from earlier expansions and crashed the collector market. The makers answered in April 1996 with the Reserved List, a promise never to reprint. What was the 1995 set called?",
+    "question": "Longtime Magic: the Gathering players rose up in fury in July 1995, when a cheap new set reprinted a big chunk of the most famous cards from earlier expansions and crashed the collector market. The makers answered in 1996 with the Reserved List, a promise never to reprint. What was the 1995 set called?",
     "answer": "Chronicles, a 1995 reprint compilation",
     "choices": [
       "Chronicles, a 1995 reprint compilation",
       "Revised, the third edition of the base set",
       "Fourth Edition, the 1995 base-set update",
-      "Renaissance, a German-only reprint set"
+      "Collectors' Edition, a square-cornered gift reprint"
     ],
-    "context": "Chronicles reprinted cards from Arabian Nights, Antiquities, Legends, and The Dark in cheap white-bordered form. Collectors who had paid premium prices saw values drop overnight. The Reserved List, including the Power Nine, was the calmer-down promise.",
+    "context": "Chronicles reprinted cards from Arabian Nights, Antiquities, Legends and The Dark in cheap white-bordered form. Collectors who had paid premium prices saw values drop overnight, and the Reserved List was Wizards' answer.",
     "topic": "magic-the-gathering"
   },
   {
@@ -820,15 +807,15 @@
   },
   {
     "tier": 3,
-    "question": "One player swarmed his opponents with cheap little creatures at the Park Central Hotel in New York City in February 1996, at Magic: the Gathering's very first Pro Tour. The game's makers had invited 128 of the world's top players to compete for a $100,000 prize pool, an unheard-of purse for a card game. Who won that first Pro Tour?",
+    "question": "Magic: the Gathering's first Pro Tour came to New York City in February 1996, with real cash prizes on the table. Its winner beat, in the final, the same Frenchman who had lost the first World Championship two years before. Who won that first Pro Tour?",
     "answer": "Michael Loconto",
     "choices": [
       "Michael Loconto",
       "Mike Long",
-      "Bertrand Lestree",
-      "Zak Dolan"
+      "Zak Dolan",
+      "Tom Chanpheng"
     ],
-    "context": "Loconto beat Bertrand Lestree in the finals using a white aggressive creature deck — a strategy not yet popular. The Pro Tour established competitive MtG as a serious sport with cash prizes. Loconto won $12,000.",
+    "context": "Loconto beat Bertrand Lestree, the runner-up of the 1994 World Championship, in the final and took home $12,000. Tom Chanpheng won the 1996 World Championship, the first Worlds run as a Pro Tour.",
     "topic": "magic-the-gathering"
   },
   {
@@ -1119,67 +1106,28 @@
   },
   {
     "tier": 4,
-    "question": "A collector hunting the Power Nine, the most coveted cards in Magic: the Gathering, finds eight of them only in the Alpha, Beta and Unlimited printings of 1993. The ninth went on being reprinted in later base sets through 1995. Which card had that broader print history?",
-    "answer": "Time Vault, which appeared in Beta, Unlimited, Revised, and Fourth Edition",
+    "question": "A collector lays out the Power Nine, the most coveted cards of Magic: the Gathering, all first printed in 1993: Black Lotus, the five moxen, Ancestral Recall and Time Walk. The ninth card makes every player shuffle hand, graveyard and library together, then draw seven fresh cards. What is the ninth card?",
+    "answer": "Timetwister",
     "choices": [
-      "Time Vault, which appeared in Beta, Unlimited, Revised, and Fourth Edition",
-      "Mox Pearl, the one mox printed in all white-border base sets",
-      "Black Lotus, reprinted in International Edition only",
-      "Ancestral Recall, reprinted in Chronicles 1995 by accident"
+      "Timetwister",
+      "Time Vault",
+      "Wheel of Fortune",
+      "Braingeyser"
     ],
-    "context": "Time Vault — an artifact that taps for two extra turns if untapped consecutively — was originally so broken Wizards errata-ed it multiple times. The Power Nine are: Black Lotus, Ancestral Recall, Time Walk, Timetwister, and the five Moxes. Time Vault is sometimes called the 'tenth' Power but more often grouped with the nine.",
+    "context": "The Power Nine are Black Lotus, Ancestral Recall, Time Walk, Timetwister and the five moxen, printed in the game's first sets of 1993 and dropped from the base set in 1994. Wheel of Fortune, a red card from the same first set, also hands every player a fresh seven, but by discarding hands rather than shuffling them back.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 4,
-    "question": "Garfield built Magic: the Gathering around one guiding rule: any three cards drawn together should combine into some kind of workable plan. He took that idea from an older board game he had loved for years, where every player held one game-breaking special power. Which game inspired him?",
-    "answer": "Cosmic Encounter, a science-fiction negotiation game from 1977",
+    "question": "Garfield laid the groundwork for Magic: the Gathering with an earlier card game of his own, Five Magics. He built it in the spirit of an older board game he had loved for years, where every player holds one special power that breaks the rules. Which game inspired it?",
+    "answer": "Cosmic Encounter, a science-fiction negotiation game",
     "choices": [
-      "Cosmic Encounter, a science-fiction negotiation game from 1977",
+      "Cosmic Encounter, a science-fiction negotiation game",
       "Diplomacy, the World War I negotiation board game",
       "Risk, the global-conquest territorial game",
       "Settlers of Catan, the resource-trading board game"
     ],
-    "context": "Cosmic Encounter gives each player a unique alien race with a different rule-breaking power. The constant exception-creation taught Garfield how interesting it is when every card breaks at least one base rule. Garfield was a longtime board-gamer who eventually designed Roborally, King of Tokyo, and others.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
-    "question": "Bertrand Lestree of France sat down in the final of Magic: the Gathering's first World Championship in August 1994, at the Gen Con convention in Milwaukee, with a deck that has since become legendary. He lost the title to a sixteen-year-old. What kind of deck did Lestree play?",
-    "answer": "A green creature-stomp deck featuring Erhnam Djinn and forest mana acceleration",
-    "choices": [
-      "A green creature-stomp deck featuring Erhnam Djinn and forest mana acceleration",
-      "A white-blue control deck featuring the Power Nine and counters",
-      "A black-red burn deck featuring Hypnotic Specter and Lightning Bolt",
-      "A mono-blue prison deck featuring Time Walk and Howling Mine"
-    ],
-    "context": "Lestree's green stompy deck became iconic; his use of Land Tax and big green creatures inspired later 'Erhnamgeddon' (Ernham Djinn + Armageddon) decks. Garfield himself credited Lestree's deck as one of the first to show MtG could be played at a tournament-tactics level.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
-    "question": "A Magic: the Gathering player builds a tournament deck and reaches for a card from the huge expansion of June 1994, but the rules allow a single copy. The card became infamous for that restriction. What card is it?",
-    "answer": "Karakas, a legendary land restricted because it could bounce any legendary creature",
-    "choices": [
-      "Karakas, a legendary land restricted because it could bounce any legendary creature",
-      "Mana Crypt, an artifact that dealt damage to its controller",
-      "The Tabernacle at Pendrell Vale, a legendary land taxing creatures",
-      "Mana Drain, a counterspell that produced bonus mana"
-    ],
-    "context": "Karakas was eventually restricted to one copy in Vintage and banned in Legacy because it counters powerful legendary creatures. The Tabernacle at Pendrell Vale, another iconic Legends land, was not restricted but became infamously expensive. Mana Drain was restricted in Vintage for being a one-cost counterspell that effectively generated free mana.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
-    "question": "Adkison, nearly broke, could not wait for delivery when the first Magic: the Gathering cards rolled off the presses on August 5, 1993. He got in a car, drove to the print shop himself and loaded the first boxes straight into his trunk, to reach the Gen Con convention in Milwaukee. Where did those first boxes come from?",
-    "answer": "From Carthage, Tennessee, where the printing plant was located",
-    "choices": [
-      "From Carthage, Tennessee, where the printing plant was located",
-      "From Cincinnati, Ohio, the nearest Hasbro production hub",
-      "From Toronto, Canada, where the cards were printed for export",
-      "From Mexico City, where the cardstock was sourced"
-    ],
-    "context": "The Carthage TN plant — a Cartamundi/USPCC facility — printed the original Alpha sheet. Adkison rented a U-Haul and personally drove cards to Gen Con. The story of those first sales is recounted in 'Generation Decks' and in interviews Adkison gave in the 2010s.",
+    "context": "Cosmic Encounter gives each player an alien race with its own rule-breaking power. Garfield's Five Magics, inspired by it, laid the foundation for Magic. Garfield also designed RoboRally, King of Tokyo and others.",
     "topic": "magic-the-gathering"
   },
   {
@@ -1197,19 +1145,6 @@
   },
   {
     "tier": 4,
-    "question": "A bidder paid a record-breaking sum at auction in January 2021 for a single Alpha Black Lotus from Magic: the Gathering, graded gem mint and signed by Christopher Rush, the card's original illustrator. What was the approximate price?",
-    "answer": "Around $511,000",
-    "choices": [
-      "Around $511,000",
-      "Around $1.2 million",
-      "Around $87,000",
-      "Around $250,000"
-    ],
-    "context": "The card was sold by PWCC Marketplace in January 2021. Christopher Rush, who illustrated Black Lotus and other iconic Alpha cards, died in March 2016. Signed Rush Lotuses are especially prized. A 2023 sale of another PSA 10 Alpha Lotus reportedly exceeded $540,000 privately.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 4,
     "question": "A duelist kills an opponent on turn one of Magic: the Gathering with Fireball, fed by a burst of colorless mana from one early card. The first banned-and-restricted list for tournament play came in 1994, and this card was eventually restricted to one per deck rather than banned outright. What was the card?",
     "answer": "Channel, the Alpha green sorcery converting life into mana",
     "choices": [
@@ -1218,7 +1153,7 @@
       "Strip Mine, the original land-destruction land from Antiquities",
       "Bazaar of Baghdad, the Arabian Nights draw engine of choice"
     ],
-    "context": "Channel-Fireball was a notorious combo for first-turn kills. The combination was named so widely that the gaming retailer Channel Fireball (founded by Jon Finkel and Luis Scott-Vargas) took its name from the play. Channel itself remains restricted in Vintage to this day.",
+    "context": "Channel and Fireball became a notorious first-turn kill. Channel itself remains restricted in Vintage.",
     "topic": "magic-the-gathering"
   },
   {
@@ -1509,7 +1444,7 @@
   },
   {
     "tier": 5,
-    "question": "Magic: the Gathering's makers ran Beta in 1993 to fix Alpha's print errors and reprint the same cards, and one dual land fell off the print sheets, apparently by mistake. It did not return until Revised in April 1994, which left its Alpha copies the rarest of the duals. What was the missing land?",
+    "question": "Magic: the Gathering's first print run, Alpha, came out in 1993 with nine of the ten original dual lands, which each make two colors of mana. The tenth was missing from the print sheets and first appeared in the second run, Beta, so no Alpha copy of it exists. What was the missing land?",
     "answer": "Volcanic Island, the red-blue dual land",
     "choices": [
       "Volcanic Island, the red-blue dual land",
@@ -1517,20 +1452,7 @@
       "Underground Sea, the blue-black dual land",
       "Bayou, the black-green dual land"
     ],
-    "context": "Volcanic Island and Circle of Protection: Black were both omitted from Beta. Alpha Volcanic Islands command extreme collector premiums for this reason. The dual lands joined the Reserved List in 1996, so the Alpha printing remains the rarest. Garfield himself credited the duals as the most important non-Power Nine cards for shaping competitive MtG.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 5,
-    "question": "Wary of its power at tournaments, the makers of Magic: the Gathering left one land out of a later reprint set on purpose. The land came from the 1994 Antiquities set and makes three colorless mana, but only for artifact spells. The reprint set revisited many Antiquities cards and skipped this one. Which reprint was it, and in what year?",
-    "answer": "Chronicles in 1995, which reprinted other Antiquities cards but skipped Mishra's Workshop",
-    "choices": [
-      "Chronicles in 1995, which reprinted other Antiquities cards but skipped Mishra's Workshop",
-      "Fifth Edition in 1997, which reprinted other artifacts but skipped Workshop",
-      "Anthology in 1997, the gift-set reprint compilation",
-      "Battle Royale in 1999, which used Antiquities cards in pre-built decks"
-    ],
-    "context": "Chronicles reprinted Atlantic-Nights through The Dark in white-bordered form. Mishra's Workshop was deliberately omitted because Wizards recognized its tournament power. It joined the Reserved List in 1996 and has never been reprinted in any product. Alpha-Beta-Unlimited (1993) Workshops still command thousands of dollars; the Antiquities printing is the only one.",
+    "context": "Volcanic Island and Circle of Protection: Black are the two cards that never made it into Alpha, by one account because their art was not finished in time. Both first appeared in Beta, and the dual lands joined the Reserved List in 1996.",
     "topic": "magic-the-gathering"
   },
   {
@@ -1543,64 +1465,38 @@
       "Each turn, you skipped your draw step or sacrificed two lands",
       "Each combat, you attacked with them or paid 5 generic mana"
     ],
-    "context": "The upkeep tax of three colored mana made the Elder Dragons unplayable in any deck that wasn't full of mana fixing — by design. The 'must attack' clause was a separate flavor rule on some printings. Their design legacy is enormous: the Elder Dragon Highlander format (later renamed Commander) takes its name from this cycle.",
+    "context": "The upkeep tax of three colored mana made the Elder Dragons hard to keep in any deck without plenty of mana fixing. Their design legacy is large: the Elder Dragon Highlander format, later renamed Commander, takes its name from this cycle.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 5,
-    "question": "Players at Magic: the Gathering's first Pro Tour, in New York City in February 1996, fought for $100,000 in prizes under a format chosen with care. The organizers wanted no old collection simply buying the title. What did that mean for which cards were legal?",
-    "answer": "The Power Nine and other Alpha-Beta-Unlimited rarities were excluded",
+    "question": "Players at Magic: the Gathering's first Pro Tour, in New York City in February 1996, built decks from the sets then in print, the usual tournament format of the day. The organizers added one rule of their own on top, and it shaped every deck in the room. What did the rule require?",
+    "answer": "At least five cards from each legal set",
     "choices": [
-      "The Power Nine and other Alpha-Beta-Unlimited rarities were excluded",
-      "Only cards printed in the previous twelve months were eligible",
-      "All cards from every printed set were legal, including reserved list",
-      "Only cards in current print runs as of January 1996 were allowed"
+      "At least five cards from each legal set",
+      "At least one card of each of the five colors",
+      "No more than one copy of any rare card",
+      "Exactly twenty lands among sixty cards"
     ],
-    "context": "The 1996 format limited cards to recent printings — Fourth Edition base set and the most recent expansions. The exclusion of the Power Nine meant decks could not be dominated by Alpha rarities. Loconto won $12,000 with a white aggressive creature deck. The Pro Tour later evolved into a circuit of multiple events per year, including the World Championship.",
+    "context": "The format, nicknamed New York Style, was a modified Type II: each deck, counting its sideboard, had to hold at least five cards from every set legal at the time.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 5,
     "question": "Fans furious over reprints won a promise in 1996: the Reserved List of more than 500 Magic: the Gathering cards that would never be reprinted. The makers went back to the list in 2002 and removed one specific category of card. What category did they remove?",
-    "answer": "Uncommons and commons from Antiquities, Arabian Nights, Legends, and The Dark",
+    "answer": "The commons and uncommons of Alpha and Beta, Demonic Tutor among them",
     "choices": [
-      "Uncommons and commons from Antiquities, Arabian Nights, Legends, and The Dark",
-      "All multicolor cards including the original Legends Elder Dragon cycle",
-      "All artifact lands and lands costing more than zero mana to play",
+      "The commons and uncommons of Alpha and Beta, Demonic Tutor among them",
+      "All multicolor cards, the Elder Dragons among them",
+      "All the rares of Antiquities, the March 1994 artifact set",
       "All five basic-land variants printed only in early black-bordered sets"
     ],
-    "context": "The 2002 change angered some collectors but allowed reprints of cards like Hymn to Tourach and Land Tax. The Reserved List today contains 569 rare cards and a handful of uncommons that were grandfathered in. Wizards has firmly committed to never modifying the Reserved List again — most recently confirmed in 2010 and 2017.",
+    "context": "The 2002 revision took the Alpha and Beta commons and uncommons off the list after a poll found overwhelming support, and Demonic Tutor was the most important card freed. The rares stayed.",
     "topic": "magic-the-gathering"
   },
   {
     "tier": 5,
-    "question": "Christopher Rush sat at Magic: the Gathering conventions in his final years and signed the Alpha cards he had illustrated, the Black Lotus among them. What did fans nickname these signed cards?",
-    "answer": "Rush Lotuses, with PSA Mint 10 signed copies commanding particular value at auction",
-    "choices": [
-      "Rush Lotuses, with PSA Mint 10 signed copies commanding particular value at auction",
-      "Rush Stamps, indicating his small phoenix mark next to the signature",
-      "Christ Lotuses, since fans nicknamed him 'Christ' Rush",
-      "Lotus Sigs, the generic collector term for any signed Alpha lotus"
-    ],
-    "context": "Christopher Rush's signed Black Lotuses sell for premiums of $50,000-$200,000+ over unsigned copies. The PSA-graded auction in January 2021 of a signed PSA 10 Alpha Lotus reached $511,000. Rush also illustrated Mox Pearl, Mox Jet, Sengir Vampire, Hypnotic Specter, and Sword of the Ages, among other iconic Alpha cards.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 5,
-    "question": "Magic: the Gathering's makers launched a comic book series adapting the game's lore. What publisher produced those original comics?",
-    "answer": "Armada Comics, an imprint of Acclaim Comics",
-    "choices": [
-      "Armada Comics, an imprint of Acclaim Comics",
-      "DC Comics, with the Magic line edited by Karen Berger",
-      "Marvel Comics, under the Epic Comics imprint",
-      "Image Comics, alongside the Spawn imprint"
-    ],
-    "context": "Armada Comics published the original Magic comics from 1995 to 1997 — a four-arc series featuring different planeswalkers and storylines. The line ended with the Acclaim Comics bankruptcy in 1997. The early novels and comics were the foundation of the MtG storyline before the late-90s revival under Wizards' in-house creative team.",
-    "topic": "magic-the-gathering"
-  },
-  {
-    "tier": 5,
-    "question": "A duelist lays down one rare card of June 1994 in a game of Magic: the Gathering, and from then on each creature's controller must pay one mana per upkeep or sacrifice it. Played copies command thousands of dollars, more than any other card in the set. What is the card?",
+    "question": "A duelist lays down one rare card of June 1994 in a game of Magic: the Gathering, and from then on each creature's controller must pay one mana per upkeep or lose it. Played copies command thousands of dollars, more than any other card in the set. What is the card?",
     "answer": "The Tabernacle at Pendrell Vale, a legendary land",
     "choices": [
       "The Tabernacle at Pendrell Vale, a legendary land",
@@ -1608,7 +1504,7 @@
       "Mirror Universe, an artifact that swaps life totals",
       "Eureka, a sorcery that puts permanents into play"
     ],
-    "context": "The Tabernacle at Pendrell Vale taxes every nontoken creature one mana per upkeep. It is brutal in any matchup against creature decks. Played copies often sell for $2,000-$4,000; mint Alpha or Beta copies sell for far more. The Reserved List has guaranteed it will never be reprinted.",
+    "context": "The Tabernacle at Pendrell Vale gives every creature an upkeep cost of one mana, and any creature whose controller does not pay is destroyed. It is brutal against creature decks, and as a Reserved List card it will never be reprinted.",
     "topic": "magic-the-gathering"
   },
   {
@@ -2271,7 +2167,7 @@
       "Mamoru Oshii",
       "Yoshiyuki Tomino"
     ],
-    "context": "Cagliostro is widely considered the best Lupin III film. Miyazaki had directed TV episodes before but this was his first theatrical feature. Steven Spielberg reportedly cited Cagliostro's car chase as among the greatest action sequences he had ever seen.",
+    "context": "Cagliostro is widely considered the best Lupin III film. Miyazaki had directed TV episodes before, but this was his first theatrical feature.",
     "topic": "lupin-iii"
   },
   {
@@ -2388,7 +2284,7 @@
       "Inspector Otonashi",
       "Inspector Megure"
     ],
-    "context": "Koichi Zenigata is named for Heiji Zenigata, a fictional Edo-period police detective. The Castle of Cagliostro gave Zenigata the dignity of being the moral heart of Miyazaki's Lupin film. He has been voiced in Japanese by Goro Naya, Kiyoshi Kobayashi, and others.",
+    "context": "Koichi Zenigata is named for Heiji Zenigata, a fictional Edo-period police detective. The Castle of Cagliostro gave Zenigata the dignity of being the moral heart of Miyazaki's Lupin film. He was voiced in Japanese for decades by Goro Naya, and from 2011 by Koichi Yamadera.",
     "topic": "lupin-iii"
   },
   {
@@ -2713,7 +2609,7 @@
       "Risa Kawamura",
       "Maki Toyota"
     ],
-    "context": "Fujiko's name means mountain peak, a double-entendre noted by Monkey Punch in the manga's original 1967 run. Her motorcycle, her wardrobe, and her loyalty all shift on a per-heist basis. She has been voiced for decades by Eiko Masuyama, and after 2011 by Miyuki Sawashiro.",
+    "context": "Mine, Fujiko's surname, means mountain peak. Her motorcycle, her wardrobe, and her loyalty all shift on a per-heist basis. She has been voiced for decades by Eiko Masuyama, and after 2011 by Miyuki Sawashiro.",
     "topic": "lupin-iii"
   },
   {
@@ -2817,7 +2713,7 @@
       "Yutaka Izubuchi",
       "Mamoru Nagano"
     ],
-    "context": "Okawara is widely considered the first dedicated mechanical designer in anime. He designed not only the original Gundam but the Zaku, the Dom, the Gouf, and the Zeong. Katoki took over much of the redesign work in the 1990s and 2000s. Tomino once said Okawara's designs were so dense with detail they made every model kit profitable.",
+    "context": "Okawara is widely considered the first dedicated mechanical designer in anime. He designed not only the original Gundam but the Zaku, the Dom, the Gouf, and the Zeong. Katoki took over much of the redesign work in the 1990s and 2000s.",
     "topic": "mobile-suit-gundam"
   },
   {
@@ -2887,15 +2783,15 @@
   },
   {
     "tier": 4,
-    "question": "Lupin III throws his tiny yellow Fiat 500 off a winding mountain road in The Castle of Cagliostro, runs it straight up a cliff wall on speed alone and lands on a higher road. Who drew that famous car chase?",
-    "answer": "Hayao Miyazaki himself drew the key animation for the sequence",
+    "question": "Lupin III throws his tiny yellow Fiat 500 off a winding mountain road in The Castle of Cagliostro, runs it straight up a cliff wall on speed alone and lands on a higher road. The staff slipped their own touches into the film, and the little car was one of them: it belonged to a man on the crew. Whose car was it?",
+    "answer": "Yasuo Otsuka, the animation director",
     "choices": [
-      "Hayao Miyazaki himself drew the key animation for the sequence",
-      "Yasuo Otsuka, who animated most of the rest of the film",
-      "Takeshi Honda, an early career credit at Telecom Animation",
-      "Yoshifumi Kondo, who later directed Whisper of the Heart"
+      "Yasuo Otsuka, the animation director",
+      "Yuji Ohno, the composer",
+      "Haruya Yamazaki, the co-writer",
+      "Yasuo Yamada, the voice of Lupin"
     ],
-    "context": "Yasuo Otsuka was the animation director on Cagliostro overall and Miyazaki's mentor at Toei. Miyazaki personally drew several of the film's signature action sequences. Steven Spielberg reportedly told a Telecom Animation visitor that the car chase was the greatest he had ever seen in any medium.",
+    "context": "Yasuo Otsuka, Miyazaki's mentor from their days at Toei, was the film's animation director, and the Fiat 500 was his own car. Clarisse's Citroen 2CV in the same chase was Miyazaki's first car.",
     "topic": "lupin-iii"
   },
   {
@@ -3025,7 +2921,7 @@
       "Makio Inoue",
       "Goro Naya"
     ],
-    "context": "Kurita has voiced Lupin from 1995 onward in TV specials, films, and OVAs. Kobayashi was the longtime voice of Jigen. Inoue voiced Goemon. Naya voiced Inspector Zenigata. The mass cast-change in 2011 — the 40th-anniversary refresh — replaced Kobayashi, Inoue, Naya, and Masuyama in the same season, leaving Kurita as the sole holdover.",
+    "context": "Kurita has voiced Lupin from 1995 onward in TV specials, films and series. Kobayashi was the longtime voice of Jigen, Inoue of Goemon and Naya of Zenigata. A cast change in 2011 replaced Inoue, Naya and Eiko Masuyama, the voice of Fujiko, while Kobayashi stayed on as Jigen until 2021.",
     "topic": "lupin-iii"
   },
   {
@@ -3160,15 +3056,15 @@
   },
   {
     "tier": 5,
-    "question": "A Japanese network cut Mobile Suit Gundam short when it flopped on the air in 1979. Reruns saved it a year later, along with a model-kit line from Bandai that let kids build their own Gundam at home. What was that model-kit line called?",
-    "answer": "The 1/144 scale Gunpla series, starting with the RX-78-2 in plastic-snap form",
+    "question": "A Japanese network cut Mobile Suit Gundam short when it flopped on the air in 1979. Reruns saved it a year later, along with a line of model kits that let kids build their own Gundam at home. What was the line called, and which kit came first?",
+    "answer": "Gunpla, starting with a 1/144 scale RX-78-2",
     "choices": [
-      "The 1/144 scale Gunpla series, starting with the RX-78-2 in plastic-snap form",
-      "The Action Mecha figure line, starting with a die-cast metal Zaku at 1/60 scale",
-      "The Imai die-cast Mecha Treasures series, building on Mobile Pod 79 designs",
-      "The Hasegawa Pro-Built series, premiering at Tokyo Hobby Show 1980 in February"
+      "Gunpla, starting with a 1/144 scale RX-78-2",
+      "Mecha-Kit, starting with a 1/100 scale Zaku",
+      "Gundam Builder, starting with a 1/60 scale Gouf",
+      "Robo-Craft, starting with a 1/72 scale Core Fighter"
     ],
-    "context": "The first Gunpla kits sold out within hours of their July 1980 release. The market quickly justified producing every mobile suit from the show as a kit. The Gunpla phenomenon — and the model-kit-driven anime industry it created — is now a multi-billion-dollar business. The 1981 Mobile Suit Gundam trilogy of theatrical recompilations brought the series to the wider Japanese audience.",
+    "context": "Bandai's first Gunpla kit, a 1/144 scale RX-78-2, went on sale in July 1980, and the line went on to cover nearly every mobile suit in the show. Gunpla is now a business worth billions. The 1981 trilogy of cinema recuts brought the series to a wider Japanese audience.",
     "topic": "mobile-suit-gundam"
   },
   {
@@ -3883,7 +3779,7 @@
       "Spirit Walkers",
       "Hamon"
     ],
-    "context": "Earlier Parts 1 and 2 used 'Hamon' (Ripple) energy, derived from breathing techniques. Araki created Stands for Part 3 after watching the film Mahoroba. Each Stand has a name (Star Platinum, Magician's Red) and a tarot-card or musical-themed alias.",
+    "context": "Parts 1 and 2 used Hamon, also called the Ripple, a power drawn from controlled breathing. Araki has said the idea of Stands came from wanting to draw the heart and soul, as the series moved from physical power to the spirit. Each Stand has its own name, such as Star Platinum or Magician's Red.",
     "topic": "jojos-bizarre-adventure"
   },
   {
@@ -4208,7 +4104,7 @@
       "Toyota-Tora ('Toyota Tiger')",
       "Trueno-Sama ('Lord Trueno')"
     ],
-    "context": "AE86 is the chassis code. The panda color scheme — white top, black bottom — became one of car culture's most-recognized liveries. Toyota's GT86 / Subaru BRZ revival in 2012 was directly inspired by Initial D's continuing popularity. Takumi's father Bunta drove the original.",
+    "context": "AE86 is the chassis code. The panda color scheme, white top and black bottom, became one of car culture's most recognized liveries. The AE86 went on to inspire the Toyota 86 of 2012, and the show's fame still pushes up the price of a used AE86. Takumi's father Bunta drove the original.",
     "topic": "initial-d"
   },
   {
@@ -4551,19 +4447,6 @@
   },
   {
     "tier": 4,
-    "question": "Shuichi Shigeno closed Initial D in July 2013, after about 18 years of serial runs, on one last race between Takumi and a rival named Shinji Inui, who drives an AE86 of his own. Where did Shigeno set that race?",
-    "answer": "Mt. Akagi, in Project D's hometown-circuit conclusion",
-    "choices": [
-      "Mt. Akagi, in Project D's hometown-circuit conclusion",
-      "Mt. Akina, the original training mountain returning for the finale",
-      "Mt. Haruna, the local touge of the Real Akina geography",
-      "Mt. Tsumagoi, an unfamiliar northern course neutral to both teams"
-    ],
-    "context": "Project D is the third-generation racing team Takumi and Keisuke Takahashi join in the manga's later arcs. Shinji is the AE86's rival driver — younger, naturally talented, and clearly modeled as a 'mirror' Takumi figure. The MF Ghost manga (2017-) continues the Initial D universe with a new protagonist and Takumi as a senior figure.",
-    "topic": "initial-d"
-  },
-  {
-    "tier": 4,
     "question": "Claire Danes voiced San in the English dub of Studio Ghibli's Princess Mononoke (1997), and a famous actor took the cursed boar god in the opening. It was a famously huge production, with over 144,000 hand-drawn frames, and Hayao Miyazaki himself retouched about 80,000 of them. Who voices that boar god?",
     "answer": "Keith David, the actor known for his deep growling voice work",
     "choices": [
@@ -4668,15 +4551,15 @@
   },
   {
     "tier": 4,
-    "question": "Hirohiko Araki, a lifelong rock fan, gave so many of his JoJo's Bizarre Adventure fighting spirits musical names that the anime studio David Production has to rename or blur them for streaming. Part 3 has Star Platinum, Magician's Red and The World, the spirit of the vampire Dio Brando. What are the Part 3 names drawn from?",
-    "answer": "The tarot Major Arcana, one card to each Stand",
+    "question": "Hirohiko Araki, a lifelong rock fan, named most of the later fighting spirits of JoJo's Bizarre Adventure after songs and bands, so many that English releases rename some of them. Part 3 drew its names from somewhere else: Star Platinum, Magician's Red, and The World, the spirit of the vampire Dio Brando. Where do those names come from?",
+    "answer": "The cards of the tarot's Major Arcana",
     "choices": [
-      "The tarot Major Arcana, one card to each Stand",
-      "The 1976 Frankie Valli single 'My Eyes Adored You' (renamed for licensing)",
-      "The 1981 song 'In the Air Tonight' by Phil Collins (similar musical motif)",
-      "The 1969 Beatles album cut 'Across the Universe' (extended track name)"
+      "The cards of the tarot's Major Arcana",
+      "The signs of the Western zodiac",
+      "The constellations of the night sky",
+      "The planets of the solar system"
     ],
-    "context": "Araki's musical references include over 300 character and Stand names taken from rock and metal artists. The David Production anime adaptation occasionally renamed Stands for international broadcast — 'Strawberry' became 'Wagon Wheel' in some markets, 'Sex Pistols' became 'Six Bullets,' etc. The original Japanese broadcasts kept the names intact.",
+    "context": "Most Stands in Part 3 take a tarot card: Star Platinum is the Star, Magician's Red the Magician, and Dio's The World the twenty-first card of the Major Arcana. Later in the journey, nine enemies take the names of Egyptian gods. From Part 4 on, most Stands are named for songs, albums and bands, and English releases rename several to avoid copyright trouble.",
     "topic": "jojos-bizarre-adventure"
   },
   {
@@ -4888,16 +4771,16 @@
     "topic": "fullmetal-alchemist"
   },
   {
-    "tier": 5,
-    "question": "Hirohiko Araki has named two sources himself for the huge muscles, dramatic poses and fashion looks of JoJo's Bizarre Adventure. One is Renaissance painting, which gave his figures their twist. What is the other?",
-    "answer": "Italian high-fashion photography of the 1960s through 1980s, especially Versace campaigns",
+    "tier": 4,
+    "question": "Hirohiko Araki has spoken of where the look of JoJo's Bizarre Adventure came from. Its unreal colors came partly from the painter Paul Gauguin. Its twisting, impossible poses come from a journey he made to Italy as a young man, studying the marble figures of one sculptor. Which sculptor?",
+    "answer": "Michelangelo",
     "choices": [
-      "Italian high-fashion photography of the 1960s through 1980s, especially Versace campaigns",
-      "French haute-couture sketches of the 1950s, especially Dior and Balmain runway documentation",
-      "American Vogue editorial spreads of the 1970s, especially Diana Vreeland-era cover work",
-      "British rock-magazine cover photography of the 1980s, especially NME and Smash Hits"
+      "Michelangelo",
+      "Donatello",
+      "Bernini",
+      "Canova"
     ],
-    "context": "Araki studied Michelangelo's Renaissance sculpture for his muscular anatomy and poses, and his designs borrow from Italian high fashion, including Versace and Gucci; in 2011 he even drew for a Gucci collaboration. In 2009 the Louvre invited him to its exhibition of comics set in the museum.",
+    "context": "Araki studied Michelangelo's sculptures on a trip to Italy in his twenties, and the poses fans call JoJo-dachi grew from them. He took his strange, surreal coloring from Western painters such as Gauguin. In 2011 he drew for a Gucci exhibition in Tokyo, and in 2009 the Louvre invited him to its exhibition of comics set in the museum.",
     "topic": "jojos-bizarre-adventure"
   },
   {
@@ -4915,15 +4798,15 @@
   },
   {
     "tier": 5,
-    "question": "Giancarlo Pasquini, an Italian musician, recorded under a stage name for the Japanese label Avex Trax, which licensed the tracks for the anime Initial D and pushed him as the reigning king of Eurobeat. He got more song placements than anyone else across the show's early episodes. What was that stage name?",
-    "answer": "Dave Rodgers, whose tracks like 'Deja Vu' and 'Speedy Speed Boy' became Initial D staples",
+    "question": "Giancarlo Pasquini, an Italian musician, recorded under a stage name for Avex Trax, the Japanese label behind the Initial D soundtracks. His song 'Deja Vu' became one of the show's best-known racing tracks, the beat fans still hear when a drift car swings into a mountain bend. What was that stage name?",
+    "answer": "Dave Rodgers",
     "choices": [
-      "Dave Rodgers, whose tracks like 'Deja Vu' and 'Speedy Speed Boy' became Initial D staples",
-      "Max Coveri, whose tracks like 'Running in the 90s' became Initial D staples",
-      "Manuel Tognella, whose tracks like 'Driving Spirit' became Initial D staples",
-      "Mickey B, whose tracks like the wartime-coded title cut became Initial D staples"
+      "Dave Rodgers",
+      "Max Coveri",
+      "Ken Blast",
+      "Marko Polo"
     ],
-    "context": "Dave Rodgers (born Giancarlo Pasquini in Italy, 1963) is widely credited as the Eurobeat genre's most iconic figure. His tracks were licensed extensively by Avex Trax for Initial D's soundtrack across the 1990s and early 2000s. 'Deja Vu' specifically — the iconic 'Akina Downhill' theme — became one of the most-recognized anime music tracks of all time, with billions of YouTube plays.",
+    "context": "Dave Rodgers is the stage name of Giancarlo Pasquini, and 'Deja Vu' is the track of his most tied to Initial D. 'Speedy Speed Boy', another Initial D favorite, was sung by Marko Polo, an Italian singer of the same scene.",
     "topic": "initial-d"
   },
   {
@@ -5300,7 +5183,7 @@
       "The Spear of Destiny",
       "The Shroud of Turin"
     ],
-    "context": "Steven Spielberg directed and George Lucas produced. Harrison Ford was cast as Indy after Tom Selleck dropped out because of his commitment to Magnum, P.I. In the Bible, the Ark held the tablets of the Ten Commandments and travelled with the Israelites through the desert. The Nazis come back as the villains of the third film, Last Crusade (1989); Temple of Doom (1984) used the Thuggee cult instead. Spielberg famously called the Nazis 'the bad guys nobody minds seeing punched.'",
+    "context": "Steven Spielberg directed and George Lucas produced. Harrison Ford was cast as Indy after Tom Selleck dropped out because of his commitment to Magnum, P.I. In the Bible, the Ark held the tablets of the Ten Commandments and travelled with the Israelites through the desert. The Nazis come back as the villains of the third film, Last Crusade (1989); Temple of Doom (1984) used the Thuggee cult instead.",
     "topic": "indiana-jones"
   },
   {
@@ -5443,7 +5326,7 @@
       "Roger Moore",
       "Patrick Stewart"
     ],
-    "context": "Connery (born 1930) was only 12 years older than Harrison Ford (born 1942). Spielberg's own explanation: 'I always thought of James Bond as the inspiration for Indiana Jones, so why not have James Bond actually be Indy's father?' Connery had played Bond in six films from 1962 to 1971, and again in 1983's Never Say Never Again. Steven Spielberg directed; the film's MacGuffin was the Holy Grail.",
+    "context": "Connery (born 1930) was twelve years older than Harrison Ford (born 1942). Spielberg, a fan of Connery's Bond films, had him in mind for the father from the start; Connery said no at first, then agreed. He had played Bond in six films from 1962 to 1971, and again in 1983's Never Say Never Again.",
     "topic": "indiana-jones"
   },
   {
@@ -6197,7 +6080,7 @@
       "He picked the cup of pride",
       "The cup has rejected him"
     ],
-    "context": "Robert Eddison played the immortal Grail Knight. The drinking-from-the-wrong-cup effect (Donovan rapidly ages and disintegrates) was Industrial Light & Magic's most-complex prosthetic-and-puppet sequence to that point. The line is a near-perfect mirror of 'he chose wisely' moments later.",
+    "context": "Robert Eddison played the immortal Grail Knight; Laurence Olivier had been considered first but was too ill. The knight's three words became one of the most quoted lines of the series.",
     "topic": "indiana-jones"
   },
   {
@@ -6483,7 +6366,7 @@
       "Gung Ho (1986), with Michael Keaton at the Japanese auto plant",
       "Willow (1988), with Warwick Davis and Val Kilmer in the lead roles"
     ],
-    "context": "Splash was Touchstone Pictures' first release — Disney's adult-oriented label. Howard's career took off after Splash. He had been Opie on The Andy Griffith Show and Richie on Happy Days before transitioning to directing in the late 1970s. His next big hit was Backdraft (1991).",
+    "context": "Splash was Touchstone Pictures' first release, Disney's adult-oriented label. Howard's career took off after Splash. He had been Opie on The Andy Griffith Show and Richie on Happy Days before moving into directing in the late 1970s.",
     "topic": "movie-misc-classics"
   },
   {
@@ -6592,7 +6475,7 @@
   },
   {
     "tier": 4,
-    "question": "Nicholas Pileggi, an American journalist, taped hundreds of interviews with Henry Hill, a real New York mobster who spent decades inside the Lucchese crime family before turning informant for the FBI. His 1985 book became Martin Scorsese's 1990 film Goodfellas, with Ray Liotta as Hill. What was Pileggi's book called?",
+    "question": "Nicholas Pileggi, an American journalist, taped hundreds of interviews with Henry Hill, a real New York mobster who spent decades inside the Lucchese crime family. His 1985 book became Martin Scorsese's 1990 film Goodfellas, with Ray Liotta as Hill. What was Pileggi's book called?",
     "answer": "Wiseguy: Life in a Mafia Family",
     "choices": [
       "Wiseguy: Life in a Mafia Family",
@@ -6600,7 +6483,7 @@
       "Family Secrets: The Lufthansa Heist",
       "The Mob: A Made Man's Memoir"
     ],
-    "context": "Pileggi co-wrote the screenplay with Scorsese. The title 'Goodfellas' was changed because of an unrelated TV series called Wiseguy (1987-90). Henry Hill, the real-life informant subject, died in 2012. The film's improvised dinner scenes (especially Joe Pesci's 'Funny how?' bit) became iconic.",
+    "context": "Pileggi co-wrote the screenplay with Scorsese. The book's title could not be used for the film because of an unrelated TV series called Wiseguy (1987-90). Joe Pesci's 'Funny how?' scene became one of the film's most quoted.",
     "topic": "movie-misc-classics"
   },
   {
@@ -6709,15 +6592,15 @@
   },
   {
     "tier": 5,
-    "question": "Rob Bottin built the practical effects for John Carpenter's The Thing at twenty-two. The film, a financial disappointment at $19.6 million against an $11 million budget, opened two weeks behind E.T. in June 1982. In its most famous scene a dead man's body comes apart, and a piece of it grows legs and walks away. What is that scene known as?",
-    "answer": "The Norris head-spider, named after the character (Charles Hallahan) whose head transforms",
+    "question": "John Carpenter's The Thing opened two weeks behind E.T. in June 1982, and its Antarctic shape-shifter was built by hand from rubber, slime and hidden machinery. The young effects designer who led that work drove himself so hard that he ended up in a hospital bed with exhaustion, pneumonia and a bleeding ulcer. Who was he?",
+    "answer": "Rob Bottin",
     "choices": [
-      "The Norris head-spider, named after the character (Charles Hallahan) whose head transforms",
-      "The Bennings split, named for the first character to obviously transform in the film",
-      "The Blair monster, the basement creature's first reveal moment",
-      "The Palmer transformation, the most-quoted body-horror scene in the kennel"
+      "Rob Bottin",
+      "Rick Baker",
+      "Tom Savini",
+      "Dick Smith"
     ],
-    "context": "The Norris head-spider scene features the head growing spider legs and walking across the floor. Rob Bottin was 22 when he supervised the effects. Stan Winston also contributed (the dog-thing transformation). The Thing has been reassessed as one of the greatest horror films ever made, its initial commercial failure attributed to E.T.'s family-friendly competition.",
+    "context": "Rob Bottin, barely into his twenties, designed most of the film's creatures and led a large crew. When time ran short, Stan Winston finished the Dog-Thing as a hand puppet and asked to go uncredited. The film sank at the box office and has since been reassessed as one of the great horror films.",
     "topic": "movie-misc-classics"
   },
   {
@@ -6758,19 +6641,6 @@
     ],
     "context": "The assistant director Cameron and Gale Anne Hurd fired was Derek Cracknell; Hurd also talked Cameron out of moving the shoot out of England, and the crew agreed to back him if he kept to their working hours. He has said in interviews that the crew was unaccustomed to working at the pace he wanted. Sigourney Weaver was famously paid $1M for Aliens (a then-record for a female lead in an action film). The film's $18M budget was modest by 1980s standards. Aliens received seven Oscar nominations and won two.",
     "topic": "alien-franchise"
-  },
-  {
-    "tier": 5,
-    "question": "Don Ameche took the Oscar for Best Supporting Actor at seventy-seven as Art Selwyn, a Florida retiree who sneaks into a neighbor's swimming pool in Cocoon and finds alien pods that make him feel young again. In one show-stopping scene Art crashes a nightclub dance floor and goes down with his legs pointing straight at the ceiling. Which breakdance move does the scene show?",
-    "answer": "A backspin (the move where the body rotates on the upper back/shoulders)",
-    "choices": [
-      "A backspin (the move where the body rotates on the upper back/shoulders)",
-      "A windmill (the legs swing in a vertical circle while the back stays on the floor)",
-      "The moonwalk (Michael Jackson had popularized it in March 1983)",
-      "A six-step (the foundational footwork sequence)"
-    ],
-    "context": "Ameche was 77 when he won the Oscar — at the time the second-oldest recipient of the Best Supporting Actor category. He had been a major film star in the 1930s and 40s and Cocoon revitalized his career. The breakdancing scene was performed by a stunt double for the actual spinning moves, but Ameche performed all the dance footwork himself. The 1988 sequel Cocoon: The Return reunited most of the original cast.",
-    "topic": "movie-misc-classics"
   },
   {
     "tier": 5,
@@ -8919,7 +8789,7 @@
   },
   {
     "tier": 1,
-    "question": "Seth Gordon's 2007 documentary follows Steve Wiebe, a mild-mannered Washington science teacher, as he goes after the Donkey Kong world record held by the hot-sauce tycoon Billy Mitchell. What is the film called?",
+    "question": "Seth Gordon's 2007 documentary follows Steve Wiebe, a mild-mannered Washington schoolteacher, as he goes after the Donkey Kong world record held by the hot-sauce tycoon Billy Mitchell. What is the film called?",
     "answer": "The King of Kong",
     "choices": [
       "The King of Kong",
@@ -8927,7 +8797,7 @@
       "Atari Game Over",
       "Console Wars"
     ],
-    "context": "Full title: The King of Kong: A Fistful of Quarters. The film became a cult hit and made household names of obscure arcade-scene figures Walter Day (Twin Galaxies founder), Billy Mitchell (the pizza-parlor owner), and Steve Wiebe (the high-school teacher).",
+    "context": "Full title: The King of Kong: A Fistful of Quarters. The film became a cult hit and made household names of obscure arcade-scene figures Walter Day (Twin Galaxies founder), Billy Mitchell (the restaurant owner), and Steve Wiebe (the teacher).",
     "topic": "king-of-kong-and-arcade-lore"
   },
   {
@@ -9413,7 +9283,7 @@
   },
   {
     "tier": 2,
-    "question": "Billy Mitchell, a Florida teenager whose family ran a restaurant, sat down at the Donkey Kong cabinet in the family arcade on 4 July 1982. Over one long session he set the world-record score, a number that stood for years and made him an arcade celebrity. What was his score?",
+    "question": "Billy Mitchell, a Florida teenager whose family ran a restaurant, came to an Iowa arcade in November 1982, when Life magazine gathered top players there for a photo shoot. At the Donkey Kong cabinet he set a world-record score that stood for years and made him an arcade celebrity. What was his score?",
     "answer": "874,300",
     "choices": [
       "874,300",
@@ -9421,7 +9291,7 @@
       "1,000,200",
       "999,950"
     ],
-    "context": "The 874,300 score was the first Mitchell achieved that gained widespread recognition through Twin Galaxies' verified scoreboard. He didn't break a million points until a later effort, eventually claiming 1,047,200 in 1982-83 (later disputed). The first verified million-point Donkey Kong score on a genuine arcade board was Steve Sanders, on July 9, 1982 at the Twin Galaxies arcade in Ottumwa, Iowa — five days after Mitchell's 874,300. Mitchell would later claim back the record with even higher scores, but the 1982 disputes (resolved in 2018 when Twin Galaxies removed Mitchell's scores after determining his tapes used MAME emulator software, not arcade hardware) make the period a complicated story.",
+    "context": "Mitchell set 874,300 during the Life photo shoot, beating Steve Sanders, who had claimed 1.4 million and later admitted lying about his earlier scores. Twin Galaxies struck Mitchell's later million-point scores, among them a taped 1,047,200 from the mid-2000s, in 2018, ruling that the tapes could not have come from original arcade hardware; Guinness World Records restored his records in 2020.",
     "topic": "king-of-kong-and-arcade-lore"
   },
   {
@@ -9465,7 +9335,7 @@
   },
   {
     "tier": 3,
-    "question": "Walter Day opened an arcade in 1981 in a small Iowa town, where his family had a hotel, and began keeping a book of the top scores players hit on his machines. From that pastime grew Twin Galaxies, for decades the official keeper of arcade high scores. Which town was it?",
+    "question": "Walter Day ran an arcade in a small Iowa town from 1981 and began keeping a book of the top scores players hit on his machines. From that pastime grew Twin Galaxies, for decades the official keeper of arcade high scores. Which town was it?",
     "answer": "Ottumwa, Iowa",
     "choices": [
       "Ottumwa, Iowa",
@@ -9473,7 +9343,7 @@
       "Dubuque, Iowa",
       "Davenport, Iowa"
     ],
-    "context": "Day chose Ottumwa because his family owned a hotel there. Twin Galaxies the arcade opened November 1981. Day became a sort of arcade-scene Mr. Rogers, eventually nicknamed 'the referee' for his constant scorebook updates. The 2007 King of Kong documentary made him a household name.",
+    "context": "Day's Twin Galaxies arcade was running in Ottumwa by November 1981, and its national scoreboard followed in 1982; from 1983 Twin Galaxies supplied verified scores to the Guinness Book of World Records. The 2007 documentary The King of Kong made Day a household name.",
     "topic": "king-of-kong-and-arcade-lore"
   },
   {
@@ -9855,15 +9725,15 @@
   },
   {
     "tier": 4,
-    "question": "Steve Wiebe, a Washington high-school science teacher and recently laid-off Boeing engineer, paid $50 on eBay for a damaged Donkey Kong board in 2003 and built the cabinet in his garage in Redmond. Twin Galaxies referees rejected the first videotape he sent them. What did they question?",
-    "answer": "The plausibility of his rapid-rivet sequence on the final screen",
+    "question": "Steve Wiebe, an out-of-work engineer in Redmond, Washington, set up a Donkey Kong machine at home and taped the first game ever to top a million points. Twin Galaxies would not accept it and sent two referees to look over his machine. What did they suspect?",
+    "answer": "That his circuit board had been tampered with",
     "choices": [
-      "The plausibility of his rapid-rivet sequence on the final screen",
-      "Whether he had used save-state cheats on a board hack",
-      "Whether his tape ran over the documented five-hour rules limit",
-      "Whether Mitchell had intercepted and substituted the footage"
+      "That his circuit board had been tampered with",
+      "That the tape had been sped up to fake his timing",
+      "That a friend had played part of the game for him",
+      "That the machine was set to its easiest difficulty"
     ],
-    "context": "In King of Kong, Walter Day sends Twin Galaxies referee Robert Mruczek to inspect Wiebe's cabinet. Mruczek later denied Mitchell or his allies tampered with the inspection; the documentary's villain framing has been disputed by Mitchell's defenders. Wiebe's son Derek and daughter Cannon both appear in the film as kids.",
+    "context": "The board inside Wiebe's machine had been supplied by Roy Shildt, a longtime enemy of Billy Mitchell's, which is why Twin Galaxies feared tampering; it also would not recognize a record made at home on video. Wiebe then took his game to the Funspot arcade in New Hampshire to play in public.",
     "topic": "king-of-kong-and-arcade-lore"
   },
   {
@@ -9881,7 +9751,7 @@
   },
   {
     "tier": 4,
-    "question": "Four of Atari's star programmers walked out in 1979 and founded their own studio, Activision. They were angry that Atari, then owned by Warner, refused to put their names on the boxes of the games they had designed. The last straw came from an Atari boss who insulted them at a meeting. What did he say?",
+    "question": "Four of Atari's star programmers walked out in 1979 and founded their own studio, Activision. They were angry that Atari, then owned by Warner, refused to put their names on the boxes of the games they had designed. As they later told it, the last straw came from an Atari boss who insulted them at a meeting. What did he say, by their account?",
     "answer": "That they were no more important to Atari than the assembly-line workers who boxed the cartridges",
     "choices": [
       "That they were no more important to Atari than the assembly-line workers who boxed the cartridges",
@@ -9889,7 +9759,7 @@
       "That Atari lawyers would sue them for trade-secret breach if they discussed designs",
       "That Kaplan would be fired for putting his name on the title screen of a game"
     ],
-    "context": "Crane and the others split off and immediately released Boxing, Tennis, Skiing, and Dragster. Activision became one of the biggest third-party publishers. Atari sued Activision, but in 1983 settled by allowing third-party publishers — opening the floodgates that contributed to the 1983 crash via low-quality shovelware.",
+    "context": "Crane and the others left Atari in 1979 and released Dragster, Boxing, Checkers and Fishing Derby first. The insult rests on the programmers' own later accounts. Atari sued Activision, and the case was settled by 1982 with Activision paying royalties, which set the model for outside publishers; the flood of cheap games that followed fed the crash of 1983.",
     "topic": "king-of-kong-and-arcade-lore"
   },
   {
@@ -10721,7 +10591,7 @@
       "An Apple II Plus",
       "A TRS-80 Model III"
     ],
-    "context": "The IMSAI 8080 (released 1975) was an early S-100-bus microcomputer built by IMS Associates. It used an Intel 8080 CPU and shipped as a kit or assembled. Director Badham picked it for its dramatic front-panel of toggle switches and red LEDs. The WHOPPER supercomputer at NORAD was played by Cray-style cabinetry; the actual line 'shall we play a game?' came from an Apple-II text-to-speech card.",
+    "context": "The IMSAI 8080 (released 1975) was an early S-100-bus microcomputer built by IMS Associates. It used an Intel 8080 CPU and shipped as a kit or assembled.",
     "topic": "king-of-kong-and-arcade-lore"
   },
   {
@@ -11012,7 +10882,7 @@
   },
   {
     "tier": 1,
-    "question": "Robert Downey Jr. makes his comeback in Jon Favreau's film of May 2008, the first of the Marvel Cinematic Universe, as a billionaire weapons designer. Kidnapped by Afghan warlords, he builds an armored suit in a cave to escape. Which Marvel character does Downey play?",
+    "question": "Robert Downey Jr. made his comeback in Jon Favreau's 2008 film, the first of the Marvel Cinematic Universe, as a billionaire weapons designer. Kidnapped by Afghan warlords, the character builds an armored suit in a cave to escape. Which Marvel character did Downey play?",
     "answer": "Iron Man / Tony Stark",
     "choices": [
       "Iron Man / Tony Stark",
@@ -11081,16 +10951,16 @@
     "answer": "The Guardians of the Galaxy",
     "choices": [
       "The Guardians of the Galaxy",
-      "The Marvel Universe X-Men",
-      "The Defenders of Asgardian Realms",
-      "The Inhumans Royal Family of Attilan"
+      "The Space Knights of Galador",
+      "The Champions of the Cosmos",
+      "The Wardens of the Stars"
     ],
     "context": "Directed by James Gunn. The team includes Star-Lord (Chris Pratt), Gamora, Drax, Rocket Raccoon, and Groot ('I am Groot'). The soundtrack of 1970s pop hits became iconic.",
     "topic": "mcu-through-endgame"
   },
   {
     "tier": 1,
-    "question": "Mark Ruffalo takes over the Hulk in The Avengers (2012), after Edward Norton's turn in 2008. The giant green monster is born when a mild-mannered scientist is blasted with gamma radiation. When calm, the man goes by his ordinary human name. What is it?",
+    "question": "Mark Ruffalo took over the Hulk in The Avengers (2012), after Edward Norton's turn in 2008. The giant green monster is born when a mild-mannered scientist is blasted with gamma radiation. When calm, the man goes by his ordinary human name. What is it?",
     "answer": "Bruce Banner",
     "choices": [
       "Bruce Banner",
@@ -11447,9 +11317,9 @@
       "I don't feel so good, Mr. Stark",
       "Tell Aunt May I'm sorry, Mr. Stark",
       "What's happening to me, Mr. Stark?",
-      "I don't want to go, Mr. Stark, I don't want to go"
+      "I can't feel my hands, Mr. Stark"
     ],
-    "context": "Tom Holland reportedly improvised much of the scene; the Russos asked him to play Peter as a scared kid. The line plays on Peter's youth — he isn't ready for what's happening. Holland delivered the line on-set with Robert Downey Jr. only, no green screen.",
+    "context": "Tom Holland is said to have improvised much of the scene, and the line plays on Peter's youth: he isn't ready for what's happening.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -11458,11 +11328,11 @@
     "answer": "Avengers, assemble.",
     "choices": [
       "Avengers, assemble.",
-      "On your left, Avengers.",
+      "Avengers, to me.",
       "We end this together.",
       "Today we fight as one."
     ],
-    "context": "It's the first time Cap says the full phrase in any MCU film, after the Russos held it back for 22 movies. Stan Lee coined 'Avengers Assemble!' in the comics in the 1960s. The line cues the portal-scene return of every dusted hero.",
+    "context": "It's the first time Cap says the full phrase in an MCU film, after the Russos held it back for 22 movies; at the end of Age of Ultron he is cut off before he can finish it. The rallying cry comes from the Avengers comics of the 1960s. He says it once the portals have opened and the returned heroes stand behind him.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -11740,15 +11610,15 @@
   },
   {
     "tier": 3,
-    "question": "Joss Whedon's The Avengers (2012) drops the alien Chitauri army onto Manhattan through a swirling rift in the sky. The film's horned villain stands atop Stark Tower with a glowing blue-tipped object in his hand when the rift opens, and one of the six Infinity gems lies hidden inside it. Which item opens the sky?",
-    "answer": "Loki's scepter (containing the Mind Stone, with the Tesseract powering the portal)",
+    "question": "Joss Whedon's The Avengers (2012) drops the alien Chitauri army onto Manhattan through a swirling rift in the sky, torn open by the glowing cube called the Tesseract. The film's horned villain carries a blue-tipped weapon of his own, and one of the six Infinity gems lies hidden inside it. What is the weapon, and which gem does it hide?",
+    "answer": "Loki's scepter, with the Mind Stone inside",
     "choices": [
-      "Loki's scepter (containing the Mind Stone, with the Tesseract powering the portal)",
-      "The Casket of Ancient Winters, repurposed by Frost Giants",
-      "The Eye of Agamotto, stolen from Kamar-Taj before Doctor Strange",
-      "The Reality Stone, infused in Mjolnir's hilt"
+      "Loki's scepter, with the Mind Stone inside",
+      "Loki's scepter, with the Power Stone inside",
+      "Loki's dagger, with the Space Stone inside",
+      "Loki's dagger, with the Reality Stone inside"
     ],
-    "context": "The Tesseract is the Space Stone in disguise (revealed in later films). Loki's scepter contains the Mind Stone, which is later extracted to power Vision. Tony Stark's iconic 'I have a nuclear missile' redirect at the end — flying it through the closing portal — establishes his arc toward sacrifice.",
+    "context": "Erik Selvig's device on Stark Tower uses the Tesseract, the Space Stone in disguise, to open the portal, and Black Widow closes it with Loki's scepter. The Mind Stone inside the scepter later gives life to Vision.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -11761,7 +11631,7 @@
       "Mantis",
       "Yondu"
     ],
-    "context": "Groot first appeared in Marvel Tales #13 (November 1960) as a one-off alien menace. Diesel records 'I am Groot' in dozens of languages. The character's sacrifice at the end of GotG — 'We are Groot' — was scripted by James Gunn specifically to subvert expectations of disposable comic-relief sidekicks.",
+    "context": "Groot first appeared in Tales to Astonish #13 (November 1960) as a one-off alien menace. Vin Diesel recorded 'I am Groot' in many languages for the film's foreign releases.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -11783,16 +11653,16 @@
     "answer": "Bucky (the Winter Soldier) murdered Tony's parents on Hydra's orders in 1991",
     "choices": [
       "Bucky (the Winter Soldier) murdered Tony's parents on Hydra's orders in 1991",
-      "Cap knew about Bucky's brainwashing from 1948 and never told Tony",
-      "Zemo was actually Loki's variant and brokered the entire Sokovia Accords",
+      "Cap had secretly served Hydra ever since the end of the Second World War",
+      "Zemo had built the Winter Soldier program for Hydra with his own hands",
       "S.H.I.E.L.D. had killed Tony's father to seize the Howling Commandos' files"
     ],
-    "context": "Helmut Zemo (Daniel Brühl) engineers the entire Civil War from grief over his Sokovian family's death in Age of Ultron. The 1991 footage of Bucky killing Howard and Maria Stark is from Hydra's archives; Zemo's whole plan is to make Tony see it in Cap's presence. Civil War's last shot — Cap dropping his shield — frames Endgame's final reconciliation.",
+    "context": "Helmut Zemo (Daniel Bruhl) engineers the whole conflict out of grief for his family, killed in Sokovia in Age of Ultron. The 1991 footage of Bucky killing Howard and Maria Stark comes from Hydra's archives, and Zemo's plan is to make Tony watch it with Cap beside him. Cap admits he knew.",
     "topic": "mcu-through-endgame"
   },
   {
     "tier": 3,
-    "question": "Stephen Strange, a world-famous neurosurgeon, brilliant, wealthy and unbearably arrogant, smashes his hands in a car crash and loses his career in Doctor Strange (2016). Desperate, he travels to Kamar-Taj in Nepal to study sorcery under a master called the Ancient One. In the film's climax, one enchanted relic in the Sanctum Sanctorum chooses him for itself and helps him fight when he cannot. What is this relic?",
+    "question": "Stephen Strange, a world-famous neurosurgeon, brilliant, wealthy and unbearably arrogant, smashes his hands in a car crash and loses his career in Doctor Strange (2016). Desperate, he travels to Kamar-Taj in Nepal to study sorcery under a master called the Ancient One. When enemies attack him in the New York Sanctum Sanctorum, one enchanted relic there chooses him and helps him fight when he cannot. What is this relic?",
     "answer": "The Cloak of Levitation",
     "choices": [
       "The Cloak of Levitation",
@@ -11800,7 +11670,7 @@
       "The Wand of Watoomb",
       "The Crimson Bands of Cyttorak"
     ],
-    "context": "Cumberbatch broke his vocal cords during training. The Cloak of Levitation is sentient and chooses Strange in the climactic Kamar-Taj fight. Strange's signature relic the Eye of Agamotto contains the Time Stone — used to trap Dormammu in a bargaining loop in the film's climax: 'Dormammu, I've come to bargain.'",
+    "context": "The Cloak of Levitation is sentient and chooses Strange during the fight in the New York Sanctum. The Eye of Agamotto holds the Time Stone, which he uses in the film's climax to trap Dormammu in a loop: 'Dormammu, I've come to bargain.'",
     "topic": "mcu-through-endgame"
   },
   {
@@ -11813,7 +11683,7 @@
       "Winston Duke",
       "Sterling K. Brown"
     ],
-    "context": "Coogler had previously directed Jordan in Fruitvale Station (2013) and Creed (2015). Killmonger's name Erik 'Killmonger' Stevens grew up in Oakland, the same city where Coogler grew up and where the Black Panther Party was founded in 1966. Killmonger's death line — 'Bury me in the ocean with my ancestors that jumped from ships' — is one of the most-quoted MCU lines.",
+    "context": "Coogler had previously directed Jordan in Fruitvale Station (2013) and Creed (2015). Erik Stevens, called Killmonger, grew up in Oakland, the city where Coogler grew up and where the Black Panther Party was founded in 1966.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -11826,7 +11696,7 @@
       "Both at once (the Red Skull permitting two souls)",
       "Neither (they trick the Stone into accepting Loki's earlier death)"
     ],
-    "context": "Natasha and Clint struggle for who gets to make the sacrifice — both believing themselves more expendable. Natasha wins the fight and falls. Scarlett Johansson had filmed her own death scene; the character was given a posthumous Black Widow film (2021). Endgame doesn't include a funeral for her, though Hawkeye laments her loss throughout the post-snap scenes.",
+    "context": "Natasha and Clint struggle over who gets to make the sacrifice, both believing themselves more expendable. Natasha wins the fight and falls. Black Widow got her own film in 2021.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12112,20 +11982,7 @@
       "Titanium Man",
       "The Mandarin Mech"
     ],
-    "context": "Stane reverse-engineers the original Mark I suit Tony built in the cave. The Iron Monger is roughly twice Iron Man's size. Bridges shaved his head for the role; the bald look surprised audiences expecting his Big Lebowski-era hair. The film was 2008's third-highest-grossing US release behind The Dark Knight and Indiana Jones and the Kingdom of the Crystal Skull.",
-    "topic": "mcu-through-endgame"
-  },
-  {
-    "tier": 4,
-    "question": "Joss Whedon follows each Avenger in turn through the Battle of New York in The Avengers (2012), in one famous circling tracking shot of the heroes fighting the Chitauri. Who closes the shot, leaping off a ruined taxi to destroy an oncoming Leviathan beast with a single strike?",
-    "answer": "Hawkeye (Clint Barton)",
-    "choices": [
-      "Hawkeye (Clint Barton)",
-      "Black Widow (Natasha Romanoff)",
-      "Captain America (Steve Rogers)",
-      "Iron Man (Tony Stark)"
-    ],
-    "context": "The tracking shot was extensively reshot in post-production to add the camera weave-and-pan, then finished in CGI. Jeremy Renner had been in the MCU since a Thor (2011) cameo but Avengers gave him his first major screen time. The cinematic 'one-shot Avengers showcase' became a recurring Marvel device repeated in Age of Ultron's opening and Endgame's portal sequence.",
+    "context": "Stane reverse-engineers the original Mark I suit Tony built in the cave. The Iron Monger is roughly twice Iron Man's size. Bridges shaved his head for the role.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12151,7 +12008,7 @@
       "Domhnall Gleeson",
       "Andy Serkis"
     ],
-    "context": "Bettany had voiced JARVIS (Tony's AI butler — 'Just A Rather Very Intelligent System') since 2008's Iron Man. The actor wore prosthetic-and-face-paint pink-and-green Vision makeup that took hours each day. Paul Bettany is married to actress Jennifer Connelly. The hammer-lifting scene was filmed but kept under wraps from the cast until released.",
+    "context": "Bettany had voiced JARVIS (Tony's AI butler, 'Just A Rather Very Intelligent System') since 2008's Iron Man. Paul Bettany is married to the actress Jennifer Connelly.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12190,7 +12047,7 @@
       "I am Steve.",
       "We need help."
     ],
-    "context": "The 'Hail Hydra' line plays off a then-recent comics storyline (Secret Empire, 2017) where Captain America was retconned into a lifelong Hydra agent — a much-controversial Nick Spencer storyline. The Russos winked at the controversy. The line briefly stuns 2012 Cap (who at that point believed Bucky dead since 1945) long enough for present-Cap to win the elevator fight.",
+    "context": "Present-day Cap says 'Hail Hydra' earlier, in the elevator, to walk off with Loki's scepter. The news that Bucky is alive stuns 2012 Cap, who still believes Bucky died in 1945, long enough for present-day Cap to win the fight.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12203,7 +12060,7 @@
       "The Tinkerer (Phineas Mason)",
       "Scorpion (Mac Gargan)"
     ],
-    "context": "Keaton's casting was a meta-joke — he'd played Batman (1989, 1992) and the actor Birdman in the 2014 Best Picture winner Birdman, both winged characters. Adrian Toomes first appeared in Amazing Spider-Man #2 in 1963. Homecoming was a Sony-Marvel co-production made possible by the 2015 deal that put Spider-Man in the MCU after years of Sony's solo Andrew Garfield films flopping.",
+    "context": "Keaton's casting was a meta-joke: he had played Batman (1989, 1992) and, in the 2014 Best Picture winner Birdman, an actor famous for a winged superhero. Adrian Toomes first appeared in Amazing Spider-Man #2 in 1963. Homecoming was a Sony-Marvel co-production made possible by the 2015 deal that brought Spider-Man into the MCU after Sony's two Andrew Garfield films.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12403,7 +12260,7 @@
   },
   {
     "tier": 5,
-    "question": "Jon Favreau gambled on Robert Downey Jr., then uninsurable because of past drug arrests, when he made Iron Man (2008) for $140 million. He opened the film on a Stark Industries weapons convoy in Afghanistan, with Tony Stark getting into the lead Humvee and a now-iconic rock song playing. What is the song?",
+    "question": "Jon Favreau gambled on Robert Downey Jr., still a risky hire after his drug arrests, when he made Iron Man (2008) for $140 million. He opened the film on a Stark Industries weapons convoy in Afghanistan, with Tony Stark getting into the lead Humvee and a now-iconic rock song playing. What is the song?",
     "answer": "Back in Black",
     "choices": [
       "Back in Black",
@@ -12411,7 +12268,7 @@
       "Thunderstruck",
       "TNT"
     ],
-    "context": "Favreau picked Back in Black to immediately signal Tony's rock-star personality. The film's score by Ramin Djawadi (later of Game of Thrones) features blues-rock guitar reminiscent of AC/DC throughout. The original cut had Iron Maiden's 'Iron Man' over the same scene, but rights issues forced the change. Stan Lee has a cameo as 'Hugh Hefner' at the Vegas charity event near the film's opening, mistaken by Tony for the real Hef.",
+    "context": "Favreau picked Back in Black to signal Tony's rock-star personality at once. The film's score by Ramin Djawadi, later of Game of Thrones, leans on blues-rock guitar in the same vein.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12429,15 +12286,15 @@
   },
   {
     "tier": 5,
-    "question": "Robert Redford played the senior S.H.I.E.L.D. official Alexander Pierce in Captain America: The Winter Soldier (2014), a film inspired heavily by 1970s political thrillers such as The Parallax View (1974) and the paranoia pictures of Alan J. Pakula. He was cast specifically because of his association with that era. Which two of his roles directly informed the casting?",
-    "answer": "Bob Woodward in All the President's Men (1976) and Joseph Turner in Three Days of the Condor",
+    "question": "Robert Redford played Alexander Pierce, the senior S.H.I.E.L.D. official of Captain America: The Winter Soldier (2014), a film its writers modeled on 1970s political thrillers. He was cast partly as an homage to one of his own: the film in which an intelligence analyst comes back from lunch to find everyone in his office shot dead. Which film?",
+    "answer": "Three Days of the Condor",
     "choices": [
-      "Bob Woodward in All the President's Men (1976) and Joseph Turner in Three Days of the Condor",
-      "Sundance in Butch Cassidy and the Sundance Kid (1969) and Jeremiah Johnson title role",
-      "Bill McKay in The Candidate (1972) and his Oscar role as Norman in Ordinary People",
-      "Hubbell Gardner in The Way We Were (1973) and Roy Hobbs in The Natural (1984)"
+      "Three Days of the Condor",
+      "All the President's Men",
+      "The Parallax View",
+      "Marathon Man"
     ],
-    "context": "Redford reportedly took the part for $1 to do something his grandchildren could see. Pierce is revealed to be a Hydra operative — Hydra having quietly subverted S.H.I.E.L.D. from within since 1945. The film's helicarrier-takedown finale (Cap leaping between three falling helicarriers) was practically choreographed before becoming CGI. Captain America: The Winter Soldier opened to $95M domestically and is widely cited as one of the best-reviewed Marvel films, sitting at 90% on Rotten Tomatoes.",
+    "context": "Redford was cast partly as an homage to 1970s thrillers such as Three Days of the Condor, and as a screen legend playing a villain, the way Henry Fonda did in Once Upon a Time in the West. The writers cited The Parallax View, Three Days of the Condor and Marathon Man as models; Kevin Feige named The Parallax View and All the President's Men. Pierce is revealed as a Hydra agent.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -12446,29 +12303,29 @@
     "answer": "The Agojie of the Kingdom of Dahomey, an all-female military regiment that existed from the 17th to the late 19th century",
     "choices": [
       "The Agojie of the Kingdom of Dahomey, an all-female military regiment that existed from the 17th to the late 19th century",
-      "The Mino of the Zulu Kingdom under Shaka's reign in the early 19th century, before colonial dissolution",
+      "The shield-maidens of Viking-age Norway, celebrated in the sagas of the 9th to the 11th centuries",
       "The Nubian Queens' Guard of ancient Meroe, which trained women warriors from the 5th century BC onward",
       "The Carthaginian Women's Auxiliary that defended the city during the Third Punic War, 149-146 BC"
     ],
-    "context": "The Agojie (also called 'Dahomey Amazons' by European writers) numbered up to 6,000 women at their peak. They were officially disbanded in 1894 after the French conquest of Dahomey. The 2022 film The Woman King with Viola Davis dramatized the Agojie. Ryan Coogler consulted Boston University Africanist scholars during pre-production. Florence Kasumba played Ayo and Danai Gurira played Okoye as the most-prominent Dora Milaje in Black Panther.",
+    "context": "The Agojie, called the Dahomey Amazons by European writers and also known as the Mino, were disbanded after the French conquest of Dahomey in the 1890s. The 2022 film The Woman King, with Viola Davis, dramatized them. Danai Gurira played Okoye and Florence Kasumba played Ayo, the best-known Dora Milaje of Black Panther.",
     "topic": "mcu-through-endgame"
   },
   {
     "tier": 5,
-    "question": "Thor swings Mjolnir as the classic rock of 'Immigrant Song' blasts over the opening fight of Thor: Ragnarok (2017), a film pitched to Marvel as a lightening of the previously serious Thor films. That one scene required Marvel to pay one of the largest single-song licensing fees in studio history. With whom was the fee personally negotiated?",
-    "answer": "Jimmy Page and Robert Plant, the surviving members of Led Zeppelin",
+    "question": "Thor swings into battle to the hammering rock of 'Immigrant Song' in Thor: Ragnarok (2017). Led Zeppelin almost never lets its songs into films, and Marvel chased the rights through the whole production. The director has said one thing finally won the band over. What was it?",
+    "answer": "Seeing the first cut of the trailer",
     "choices": [
-      "Jimmy Page and Robert Plant, the surviving members of Led Zeppelin",
-      "The estate of John Bonham via his son Jason Bonham, who acted as agent",
-      "Atlantic Records, the band's master-recording rights holder since 1968",
-      "Peter Grant Estate, since the band's original manager owned the rights"
+      "Seeing the first cut of the trailer",
+      "A handwritten letter from Chris Hemsworth",
+      "An offer of a cameo for Robert Plant",
+      "A day's visit to the set in Australia"
     ],
-    "context": "Led Zeppelin almost never grants song licenses. Page and Plant personally approved Ragnarok after watching an early cut Waititi sent them. The 'Immigrant Song' (1970, from Led Zeppelin III) plays both in the opening sequence and in the climactic Asgard-battle. Waititi's gambit was that the song's Norse mythology lyrical content ('We come from the land of the ice and snow') was uniquely thematic. The licensing fee has been variously reported at $1-2 million.",
+    "context": "Marvel's music supervisor Dave Jordan did most of the work on the deal. Taika Waititi said that when the band saw the first cut of the trailer, they understood how perfect the song was for the character. The band also refused any change to the recording, such as an orchestral version, and the song plays both in the opening fight and in the battle for Asgard.",
     "topic": "mcu-through-endgame"
   },
   {
     "tier": 5,
-    "question": "The surviving Avengers track the Mad Titan to a small retirement farm on a distant planet in Avengers: Endgame (2019), weeks after he wiped away half of all life with a snap of the Infinity Gauntlet. They hope to seize the Infinity Stones back and undo the Snap. The ambush brings one moment most of the cast were not told about ahead of time. What is it?",
+    "question": "The surviving Avengers track the Mad Titan to a small retirement farm on a distant planet in Avengers: Endgame (2019), weeks after he wiped away half of all life with a snap of the Infinity Gauntlet. They hope to seize the Infinity Stones back and undo the Snap. What moment ends the ambush?",
     "answer": "Thor decapitating Thanos with Stormbreaker, going for the head this time",
     "choices": [
       "Thor decapitating Thanos with Stormbreaker, going for the head this time",
@@ -12476,7 +12333,7 @@
       "Thor smashing Thanos's gauntlet to destroy the stones before they can be recovered",
       "Thor calling lightning to teleport Thanos back to Vormir where Gamora could be returned"
     ],
-    "context": "Thor's 'I went for the head' opening of Endgame is meta-commentary on his Infinity War failure (Stormbreaker stab to chest, didn't kill Thanos because Thanos completed the snap first). Hemsworth shot the scene with a stunt-double Brolin rather than the real Thanos. The Asgardian armor for the scene was a 60-pound suit. The film's opening was filmed last in the production schedule. The Russos kept the scene out of all marketing — opening night audiences experienced it cold.",
+    "context": "Thor's line about going for the head answers his failure in Infinity War, where he drove Stormbreaker into Thanos's chest and Thanos snapped anyway. Thanos had already used the Stones to destroy the Stones, so the ambush wins nothing back.",
     "topic": "mcu-through-endgame"
   },
   {
@@ -16407,7 +16264,7 @@
   },
   {
     "tier": 3,
-    "question": "A Boeing programmer who ran a small garage game outfit in Renton, Washington, agreed to Garfield's pitch for Magic: the Gathering in the early 1990s. The first set, Alpha, shipped in August 1993 with a print run of 2.6 million cards. Who was the programmer?",
+    "question": "A Boeing programmer who ran a small game outfit from his basement outside Seattle agreed to Garfield's pitch for Magic: the Gathering in the early 1990s. The first set, Alpha, shipped in August 1993 with a print run of 2.6 million cards. Who was the programmer?",
     "answer": "Peter Adkison",
     "choices": [
       "Peter Adkison",
@@ -16415,7 +16272,7 @@
       "Charlie Catino",
       "Lisa Stevens"
     ],
-    "context": "Adkison ran WotC from Beth Moursund's garage in 1991, originally as a small RPG publisher. He greenlit Garfield's pitch when no one else in the industry would touch it — the 'collectible card game' was an unknown category. WotC bought a struggling TSR in 1997, ending TSR as an independent company. Adkison left WotC in 2001 to run Gen Con.",
+    "context": "Adkison founded Wizards of the Coast in 1990, and its first employees worked out of his basement. He published Magic when the collectible card game was a category nobody had tried.",
     "topic": "magic-the-gathering"
   },
   {
