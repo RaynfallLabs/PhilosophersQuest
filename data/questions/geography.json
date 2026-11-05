@@ -4823,16 +4823,16 @@
     "topic": "coastal-forests-mangroves-and-kelp"
   },
   {
-    "tier": 5,
-    "question": "Sundarbans mangroves, on the coast of Bangladesh and India, push carbon deep into waterlogged, airless mud, where it stays locked away for centuries. A rainforest's wood and leaves rot and release theirs within a few years, and acre for acre the mangroves bury many times more. What name do scientists give the carbon that coastal forests trap in such drowned soils?",
-    "answer": "Blue carbon",
+    "tier": 4,
+    "question": "Acre for acre, the tidal mangrove forests of the Sundarbans, on the coast of Bangladesh and India, lock away several times more carbon than a tropical rainforest does, and scientists call it blue carbon. Where do these mangroves keep most of it?",
+    "answer": "in the airless mud beneath them",
     "choices": [
-      "Blue carbon",
-      "Green carbon",
-      "Peat carbon",
-      "Reef carbon"
+      "in the airless mud beneath them",
+      "in their trunks and branches",
+      "in their thick and waxy leaves",
+      "in the tidal water around them"
     ],
-    "context": "Mangroves are 'blue carbon' powerhouses: by burying carbon in deep, airless, waterlogged mud they lock it away for centuries and store several times more per hectare than tropical rainforest (one commonly cited estimate is up to ~1,000 tonnes per hectare versus ~200 for rainforest), sequestering it 2-4x faster. 'Blue carbon' is the name for carbon captured by the ocean's coastal ecosystems -- mangroves, seagrasses, and salt marshes -- as opposed to the 'green carbon' held by forests on land. Source: marinebiodiversity.ca/mangroves-the-unsung-heroes-of-blue-carbon-storage/",
+    "context": "Most of a mangrove forest's carbon lies not in its wood but in the mud: in waterlogged, airless soil, fallen leaves and dead roots barely rot, so their carbon stays buried for centuries. A major study of mangrove forests across the Indo-Pacific found that the soil held roughly half to almost all of each forest's carbon. Carbon stored this way by coastal ecosystems, the mangroves, seagrasses and salt marshes, is called blue carbon. Source: nature.com/articles/ngeo1123 (Donato et al. 2011)",
     "topic": "coastal-forests-mangroves-and-kelp"
   },
   {
@@ -4889,7 +4889,7 @@
   },
   {
     "tier": 5,
-    "question": "Fred Vine and Drummond Matthews, two British scientists, studied the magnetism of the Atlantic sea floor in 1963. On either side of the Mid-Atlantic Ridge it lay in matching, mirror-image stripes. Alfred Wegener's drifting continents had waited decades for someone to show what moved them. What did those stripes finally prove was happening?",
+    "question": "Fred Vine and Drummond Matthews, two British scientists, published magnetic readings from the Carlsberg Ridge, in the Indian Ocean, in 1963. On either side of the ridge the sea floor's magnetism lay in matching, mirror-image stripes. Alfred Wegener's drifting continents had waited decades for someone to show what moved them. What did those stripes finally prove was happening?",
     "answer": "New seafloor forms at the ridge and spreads out both sides.",
     "choices": [
       "New seafloor forms at the ridge and spreads out both sides.",
@@ -4897,7 +4897,7 @@
       "The continents plough forward through the solid ocean floor.",
       "Meteor strikes shattered the crust into the moving plates."
     ],
-    "context": "The mirror-image magnetic stripes showed that fresh crust forms at the ridge, records Earth's magnetic field as it hardens, and is carried away on both sides as the seafloor spreads -- Harry Hess's idea, now confirmed. This finally gave Wegener's continents their engine (heat-driven mantle convection), and the unified theory took its modern name, plate tectonics, in the 1960s. Source: https://en.wikipedia.org/wiki/Seafloor_spreading",
+    "context": "The mirror-image magnetic stripes showed that fresh crust forms at the ridge, records Earth's magnetic field as it hardens, and is carried away on both sides as the seafloor spreads, as Harry Hess had proposed. Matthews had surveyed the ridge from HMS Owen in 1962, and the Canadian Lawrence Morley reached the same idea on his own, so it is often called the Vine-Matthews-Morley hypothesis. It gave Wegener's continents their engine, and the theory took its modern name, plate tectonics, in the 1960s. Source: Vine and Matthews, 'Magnetic Anomalies over Oceanic Ridges', Nature 199 (1963); en.wikipedia.org/wiki/Drummond_Matthews",
     "topic": "continental-drift-and-plate-tectonics"
   },
   {
@@ -4979,47 +4979,34 @@
     "topic": "coral-reefs-and-the-heat-that-bleaches-them"
   },
   {
-    "tier": 2,
-    "question": "During a marine heatwave on a reef such as Australia's Great Barrier Reef, stressed corals across the whole reef can drive out, all at once, the tiny partners that live inside their tissue and feed them. Scientists have a name for this heat-triggered event. What is it?",
-    "answer": "coral bleaching",
-    "choices": [
-      "coral bleaching",
-      "coral spawning",
-      "coral calcification",
-      "coral recruitment"
-    ],
-    "context": "This is coral bleaching. When the water gets too warm the stressed coral expels its zooxanthellae; with the algae gone, the clear tissue reveals the white limestone skeleton beneath, and the reef turns bone-white. A bleached coral is not dead yet — if the water cools soon enough, the algae can return and it recovers. (Wikipedia, 'Coral bleaching')",
-    "topic": "coral-reefs-and-the-heat-that-bleaches-them"
-  },
-  {
     "tier": 3,
-    "question": "A marine heatwave struck the northern Great Barrier Reef, off Australia, in 2016. The reef is so vast that one hot summer might seem too little to harm it badly, yet later surveys counted how much of that region's coral had died in the single event. What share did they find?",
+    "question": "A marine heatwave struck Australia's Great Barrier Reef in 2016. The reef runs some 2,300 kilometres, so vast that one hot summer might seem too little to harm it badly, yet later surveys counted how much of all its coral had died in that single event. What share did they find?",
     "answer": "about 30 to 50% of it",
     "choices": [
+      "about 70 to 90% of it",
       "about 30 to 50% of it",
       "about 15 to 25% of it",
-      "about 5 to 10% of it",
-      "about 1 to 3% of it"
+      "about 5 to 10% of it"
     ],
-    "context": "Back-to-back marine heatwaves in 2016 and 2017 caused the most severe and widespread bleaching ever recorded on the Great Barrier Reef; the 2016 event alone killed an estimated 29-50% of the coral in the northern section. Reefs can recover from a hot year — but not when struck again before they heal. (Wikipedia, 'Coral bleaching'; NOAA)",
+    "context": "Back-to-back marine heatwaves in 2016 and 2017 brought the worst bleaching the Great Barrier Reef had then known. The 2016 event alone killed an estimated 29 to 50 percent of the reef's coral, and the northern reefs, where the water was hottest, lost the most. Reefs can recover from one hot year, but not when struck again before they heal. (Wikipedia, 'Coral bleaching'; Hughes et al., Nature 2018)",
     "topic": "coral-reefs-and-the-heat-that-bleaches-them"
   },
   {
-    "tier": 4,
-    "question": "Low coral islands ring a calm turquoise lagoon at Enewetak, far out in the Pacific, with open ocean on every side and no larger island rising in the middle. Coral slowly built this circular reef around a volcano that has since disappeared. What is such a formation called?",
+    "tier": 2,
+    "question": "Low coral islands ring a calm turquoise lagoon at Enewetak, far out in the Pacific, with open ocean on every side and no larger island rising in the middle. Some 440 coral rings like it are scattered across the oceans, most of them in the Pacific. What is such a formation called?",
     "answer": "an atoll",
     "choices": [
       "an atoll",
       "a caldera",
-      "an archipelago",
-      "a coral cay"
+      "a barrier reef",
+      "a fringing reef"
     ],
-    "context": "This is an atoll — a ring of coral reef enclosing a lagoon where a volcanic island once stood, like Enewetak in the Pacific. Most of the world's roughly 440 atolls lie in the Pacific Ocean. (Wikipedia, 'Atoll')",
+    "context": "This is an atoll, a ring of coral reef enclosing a lagoon with no island in the middle, like Enewetak in the Pacific. Most of the world's roughly 440 atolls lie in the Pacific Ocean. Charles Darwin reasoned that each began as a reef fringing a volcano that slowly sank while the coral kept building upward. (Wikipedia, 'Atoll')",
     "topic": "coral-reefs-and-the-heat-that-bleaches-them"
   },
   {
     "tier": 1,
-    "question": "Mount Mazama once towered over Oregon's Cascade Range, until about 7,700 years ago it blew its top in a huge eruption and its summit fell in on itself. Crater Lake now fills the giant bowl it left behind. What do geologists call such a basin?",
+    "question": "Mount Mazama once towered over Oregon's Cascade Range, until a huge eruption about 7,700 years ago left a hole where its summit had been. Crater Lake now fills that bowl, some 8 to 10 kilometres across. What do geologists call such a basin?",
     "answer": "a caldera",
     "choices": [
       "a caldera",
@@ -5040,7 +5027,7 @@
       "springs and groundwater",
       "rivers and streams"
     ],
-    "context": "With no muddy river flowing in, sunlight sinks deep into the clear water and the blue wavelengths scatter back to your eye -- the source of that intense color. Crater Lake's whole volume renews only about every 150 years, kept full by the deep winter snows of the Cascades. Source: Crater Lake (en.wikipedia.org).",
+    "context": "With no muddy river flowing in, sunlight sinks deep into the clear water and the blue wavelengths scatter back to the eye -- the source of that intense color. Crater Lake's whole volume renews only about every 150 years, kept full by the deep winter snows of the Cascades. Source: Crater Lake (en.wikipedia.org).",
     "topic": "crater-lake"
   },
   {
@@ -5053,7 +5040,7 @@
       "the largest lake in the United States",
       "the highest lake in the United States"
     ],
-    "context": "At 1,949 feet (594 m) deep, Crater Lake is the deepest lake in the United States -- and among the ten deepest on Earth. It sits high in the Cascades, spreads about 20 square miles, and fills a young caldera, yet it is not the highest, largest, or oldest U.S. lake -- only the deepest. Lake Baikal and Lake Tanganyika plunge far deeper elsewhere in the world, so the 'in the United States' qualifier keeps the claim true. Source: Crater Lake (en.wikipedia.org).",
+    "context": "At 1,949 feet (594 m), Crater Lake is the deepest lake in the United States and one of the deepest on Earth, though Lake Baikal and Lake Tanganyika plunge far deeper. It sits high in the Cascades, spreads about 20 square miles and fills a young caldera. Source: Crater Lake (en.wikipedia.org).",
     "topic": "crater-lake"
   },
   {
@@ -5105,7 +5092,7 @@
       "about 40 times more powerful",
       "about 100 times more powerful"
     ],
-    "context": "Mazama disgorged roughly 50 cubic km of magma -- about 40 times what St. Helens produced in 1980. Its pale 'Mazama ash' settled across the Pacific Northwest and beyond, and geologists still dig up that single bright layer as a natural time-stamp; traces have been found as far away as Greenland. Source: Crater Lake (en.wikipedia.org); Mazama ash, Crater Lake Institute (craterlakeinstitute.com).",
+    "context": "Mazama poured out roughly 50 cubic km of magma, and the blast is often rated about 42 times as powerful as St. Helens in 1980. Its pale 'Mazama ash' settled across the Pacific Northwest and beyond, and geologists still dig up that single bright layer as a natural time-stamp; traces have been found as far away as Greenland. Source: Crater Lake National Park (NPS), as quoted by the USGS Cascades Volcano Observatory; oregonencyclopedia.org/articles/mt_mazama/",
     "topic": "crater-lake"
   },
   {
@@ -5252,21 +5239,8 @@
     "topic": "cuneiform-and-the-clay-tablets-of-sumer"
   },
   {
-    "tier": 1,
-    "question": "With a cut reed, scribes at Uruk pressed the world's oldest writing into tablets around 3300 BC. Modern scholars named the script cuneiform, after the Latin word cuneus, for the shape every one of its marks takes. What does cuneus mean?",
-    "answer": "a wedge",
-    "choices": [
-      "a wedge",
-      "a reed",
-      "a knot",
-      "a line"
-    ],
-    "context": "'Cuneiform' literally means 'wedge-shaped.' Every sign, however complex, is built entirely from little triangular wedge impressions -- no curves, no pen-strokes. Press a reed's corner into clay and you get a wedge; that single mark, repeated, became the world's first writing. Source: en.wikipedia.org/wiki/Cuneiform",
-    "topic": "cuneiform-and-the-clay-tablets-of-sumer"
-  },
-  {
     "tier": 2,
-    "question": "The tablets of Mesopotamian cities such as Nineveh have outlasted nearly all the paper and papyrus of the ancient world, and some half a million survive. They came through a violent event that struck city after city, one that should have destroyed them, not saved them. What accident saved the tablets?",
+    "question": "The tablets of Mesopotamian cities such as Nineveh have outlasted nearly all the paper and papyrus of the ancient world, and some half a million survive. They came through a disaster that struck city after city, one that ought to have destroyed them. What was it?",
     "answer": "the cities burned down",
     "choices": [
       "the cities burned down",
@@ -5313,7 +5287,7 @@
       "sixteen",
       "forty"
     ],
-    "context": "The Sumerians counted in base-60 (sexagesimal), probably because 60 divides so evenly -- by 2, 3, 4, 5, 6, and more. By long tradition we still owe the 60-second minute, the 60-minute hour, and the 360-degree circle to their clay-tablet math. Source: en.wikipedia.org/wiki/Sexagesimal  (Legend.)",
+    "context": "The Sumerians counted in base-60 (sexagesimal), probably because 60 divides so evenly, by 2, 3, 4, 5, 6, and more. The 60-second minute, the 60-minute hour and the 360-degree circle all come down, by long tradition, from their clay-tablet maths. Source: en.wikipedia.org/wiki/Sexagesimal  (Legend.)",
     "topic": "cuneiform-and-the-clay-tablets-of-sumer"
   },
   {
@@ -5322,7 +5296,7 @@
     "answer": "he could read the ancient scripts himself",
     "choices": [
       "he could read the ancient scripts himself",
-      "he had killed a lion on foot",
+      "he had his own laws carved in stone",
       "he could recite long poems from memory",
       "he never lost a single battle"
     ],
@@ -5370,7 +5344,7 @@
   },
   {
     "tier": 5,
-    "question": "Darius the Great had his boast of crushing nineteen rebellions carved into the cliff at Behistun three times over, side by side, each in a different language of his empire. Why did that triple carving finally let scholars read cuneiform?",
+    "question": "Darius the Great had his boast of nineteen battles won in a single year carved into the cliff at Behistun three times over, side by side, each in a different language of his empire. Why did that triple carving finally let scholars read cuneiform?",
     "answer": "one script was nearly an alphabet",
     "choices": [
       "one script was nearly an alphabet",
@@ -5382,16 +5356,16 @@
     "topic": "cuneiform-and-the-clay-tablets-of-sumer"
   },
   {
-    "tier": 5,
-    "question": "A scribe in Babylon or Nineveh, writing the name of a city, a god or a wooden object, first set down a little mark that was never spoken aloud. It told the reader what kind of thing the next word was, so a place would not be confused with a person of the same name. What are these silent signs called?",
-    "answer": "determinatives",
+    "tier": 4,
+    "question": "A scribe in Nineveh, the great city on the Tigris, pressing a line of words into wet clay, often set a determinative beside one of them: a sign that was written but never read aloud. Scholars reading his tablets some 2,700 years later still lean on it. What did that silent sign tell the reader?",
+    "answer": "what kind of thing the word named",
     "choices": [
-      "determinatives",
-      "syllabograms",
-      "logograms",
-      "pictograms"
+      "what kind of thing the word named",
+      "how the word should be sounded out",
+      "which language the word came from",
+      "where a new sentence was to begin"
     ],
-    "context": "These silent signs are called determinatives. Cuneiform signs juggle three jobs -- a logogram (a whole word), a syllabogram (a unit of sound), or a determinative (a silent category-tag) -- and one sign can serve as any of them depending on context. That triple duty is exactly why the script took scholars decades to crack. Source: en.wikipedia.org/wiki/Cuneiform",
+    "context": "Determinatives were silent signs written just before or after a word to show its category: a god, a place, a man, or something made of wood, so that a town would not be mistaken for a person of the same name. Cuneiform signs juggle three jobs, standing for a whole word, for a sound, or as a silent category marker, and one sign can do any of them depending on context. That triple duty is a big reason the script took scholars decades to crack. Source: en.wikipedia.org/wiki/Cuneiform",
     "topic": "cuneiform-and-the-clay-tablets-of-sumer"
   },
   {
@@ -5431,19 +5405,6 @@
       "the Festival of the Harvest"
     ],
     "context": "The festival is Inti Raymi, the Inca Festival of the Sun. Once the empire's grandest ceremony, it is reenacted every 24 June on the esplanade below Sacsayhuaman, drawing tens of thousands of spectators. Source: intiraymiticket.com/blog/inti-raymi-sacsayhuaman/",
-    "topic": "cusco-and-sacsayhuaman"
-  },
-  {
-    "tier": 3,
-    "question": "The royal roads of the Qhapaq Nan ran out from Cusco's central square, climbing over snow peaks, crossing coastal deserts and pushing into rainforest, the greatest web of roads in the ancient Americas. They tied together land that now belongs to six countries. Roughly how many kilometres of road did the network cover?",
-    "answer": "about 40,000 km",
-    "choices": [
-      "about 40,000 km",
-      "about 4,000 km",
-      "about 800 km",
-      "about 150 km"
-    ],
-    "context": "Four great royal roads radiated from Cusco's central square across roughly 40,000 km of paved track, linking snow peaks, deserts and rainforests in what are now six countries -- Peru, Ecuador, Bolivia, Chile, Argentina and Colombia. The Qhapaq Nan is a UNESCO World Heritage Site. Source: whc.unesco.org/en/list/1459/",
     "topic": "cusco-and-sacsayhuaman"
   },
   {
@@ -5539,7 +5500,7 @@
   },
   {
     "tier": 3,
-    "question": "Stone roads ran out from Cusco across the Inca empire to villages a thousand miles away, and urgent news could cross from one end of the realm to the other in just a few days. The Inca had no wheels and no horses at all. How did they move news so fast across the mountains?",
+    "question": "Stone roads ran out from Cusco across the Inca empire to villages a thousand miles away, and urgent news could travel up to about 150 miles along them in a single day. The Inca had no wheels and no horses at all. How did they move news so fast across the mountains?",
     "answer": "teams of relay runners",
     "choices": [
       "teams of relay runners",
@@ -5547,7 +5508,7 @@
       "trained messenger birds",
       "coded drumbeats"
     ],
-    "context": "These relay runners were the chasquis, posted at short intervals along the royal roads; each sprinted his own stretch at full speed and handed off to the next, so news crossed the empire in days. Source: en.wikipedia.org/wiki/Inca_road_system.",
+    "context": "These relay runners were the chasquis, posted at short intervals along the royal roads; each sprinted his own stretch at full speed and handed off to the next, so a message could cover up to about 240 km (150 miles) in a day. Source: grokipedia.com/page/Inca_road_system; en.wikipedia.org/wiki/Inca_road_system",
     "topic": "cusco"
   },
   {
@@ -5616,19 +5577,6 @@
     "topic": "cyrillic-and-the-brothers-of-thessaloniki"
   },
   {
-    "tier": 2,
-    "question": "In Great Moravia, Cyril and Methodius saw that no Greek or Latin letter could spell many Slavic sounds, so around 863 they designed a new alphabet of loops, circles and crosses. It is called Glagolitic, from glagol in Old Church Slavonic. What does glagol mean?",
-    "answer": "the word",
-    "choices": [
-      "the word",
-      "the cross",
-      "the north",
-      "the light"
-    ],
-    "context": "'Glagol' means 'word' or 'utterance,' so the alphabet's name means, roughly, 'speech itself.' Glagolitic -- around 41 letters of loops, circles, crosses, and triangles -- was the first alphabet ever used for Slavic manuscripts. Source: en.wikipedia.org/wiki/Glagolitic_script",
-    "topic": "cyrillic-and-the-brothers-of-thessaloniki"
-  },
-  {
     "tier": 3,
     "question": "Saint Cyril died in Rome in 869, before the neater script that bears his name existed; he and Methodius had made Glagolitic. His followers built the new script later, at the Preslav school, so the name Cyrillic honours a man who never made it. In which realm did the Preslav scholars work?",
     "answer": "the First Bulgarian Empire",
@@ -5687,7 +5635,7 @@
     "choices": [
       "iron and sulphur",
       "algae and bacteria",
-      "sky and sunlight",
+      "crude oil and tar",
       "dust and ash"
     ],
     "context": "As the hot brine cools and evaporates, dissolved iron, copper and sulphur crystallize out and crust the salt in greens, yellows, oranges and whites -- the ground is literally painted by minerals, not by living things. (Grokipedia 'Dallol (hydrothermal system)'; Wikipedia 'Dallol (hydrothermal system)'.)",
@@ -5733,19 +5681,6 @@
     "topic": "dallol-and-the-danakil-depression"
   },
   {
-    "tier": 3,
-    "question": "Three great plates of Earth's crust are pulling apart under the Danakil, at the Afar Triple Junction: the African, the Arabian and the Somali. They split the land open by a centimetre or two a year. If this goes on for millions of years, what do geologists expect the basin to become?",
-    "answer": "a whole new ocean",
-    "choices": [
-      "a whole new ocean",
-      "a chain of rift lakes",
-      "a warm inland sea",
-      "a field of crater lakes"
-    ],
-    "context": "This is the Afar Triple Junction, where the Nubian (African), Arabian and Somali plates pull apart at roughly 1-2 cm a year -- the continent is being torn open, and geologists expect the sea to eventually flood in and form new oceanic crust here. Framed as a far-future prediction. (Grokipedia 'Danakil Depression'; Wikipedia 'Danakil Depression'.)  (Legend.)",
-    "topic": "dallol-and-the-danakil-depression"
-  },
-  {
     "tier": 1,
     "question": "Sword blades sold in the markets of Damascus were prized far and wide for a strange beauty: across the polished steel ran rippling dark bands, like flowing water. No ordinary sword had that look. How did the smiths give the blades their pattern?",
     "answer": "It was forged into the steel itself.",
@@ -5769,19 +5704,6 @@
       "China and Japan"
     ],
     "context": "The wootz ingots were made in southern India and Sri Lanka and traded across the Middle East; smiths in Damascus forged them into the finished swords, which is how the blades got their city name. It was essentially branding — Syria never mined the metal. Source: en.wikipedia.org/wiki/Wootz_steel; en.wikipedia.org/wiki/Damascus_steel.",
-    "topic": "damascus-steel-the-lost-watered-blades"
-  },
-  {
-    "tier": 2,
-    "question": "Traders in the Syrian city of Damascus bought and sold the famous patterned blades that carry its name. The Arabic word damas behind that name has an everyday meaning too, one that fits the blades' rippling look perfectly. What else does damas mean in Arabic?",
-    "answer": "watered",
-    "choices": [
-      "watered",
-      "flaming",
-      "folded",
-      "singing"
-    ],
-    "context": "'Damas' means 'watered' in Arabic — a perfect match for the water-like ripples running down the blade, which is why the patterned metal is still called 'watered' or 'damask' steel. Source: en.wikipedia.org/wiki/Damascus_steel.",
     "topic": "damascus-steel-the-lost-watered-blades"
   },
   {
@@ -5817,7 +5739,7 @@
     "choices": [
       "The know-how had died out and was forgotten.",
       "Ottoman rulers had banned it and burned the forges.",
-      "Cheap factory steel had quietly driven it out.",
+      "A single family of smiths still kept it secret.",
       "The last smiths had carried the secret to Europe."
     ],
     "context": "A whole technology humans simply forgot how to do. Production faded until, by about 1900, no living smith could make true wootz Damascus; the last account of the old process was recorded in 1903 in Sri Lanka by the scholar Ananda Coomaraswamy. In the 1990s, metallurgists John Verhoeven and Alfred Pendray reproduced the watered pattern and found that a trace of vanadium in the old Indian ore — something no ancient smith knew was there — was a hidden key to the bands. Source: en.wikipedia.org/wiki/Damascus_steel; sciencenotes.org.",
@@ -6054,7 +5976,7 @@
       "pressed a copper coin into a crack and left it to stick",
       "poured river water at its foot and drank from cupped hands"
     ],
-    "context": "The belief was that if you stood with your back to the pillar and stretched your arms around it until your fingers met, your wish would come true. So many sweaty hands rubbed the base that the ancient surface began to suffer, and in 1997 the Archaeological Survey of India ringed the pillar with a fence to protect it. Source: https://en.wikipedia.org/wiki/Iron_pillar_of_Delhi  (Legend.)",
+    "context": "The belief was that a visitor who stood with his back to the pillar and stretched both arms around it until the fingertips met would have a wish granted. So many sweaty hands rubbed the base that the ancient surface began to suffer, and in 1997 the Archaeological Survey of India ringed the pillar with a fence to protect it. Source: https://en.wikipedia.org/wiki/Iron_pillar_of_Delhi  (Legend.)",
     "topic": "delhi-the-city-of-seven-cities"
   },
   {
@@ -6107,19 +6029,6 @@
       "the iron is so exceptionally pure that nothing in it can corrode"
     ],
     "context": "The iron holds unusually high phosphorus — about 0.25%, versus under 0.05% in modern iron — which grows a thin, self-healing film (misawite giving way to a crystalline iron-hydrogen-phosphate skin) only about one-twentieth of a millimetre thick after 1,600 years. It is the impurity, not purity, that protects it. Metallurgist R. Balasubramaniam of IIT Kanpur worked out the chemistry. Source: https://en.wikipedia.org/wiki/Iron_pillar_of_Delhi",
-    "topic": "delhi-the-city-of-seven-cities"
-  },
-  {
-    "tier": 4,
-    "question": "Raised stone walkways and channels of running water divide the vast walled garden around Humayun's Tomb, in Delhi, into four equal quarters, meant as an earthly picture of the four rivers of paradise. What is this classic four-fold garden design called?",
-    "answer": "a charbagh",
-    "choices": [
-      "a charbagh",
-      "a chinampa",
-      "a parterre",
-      "a rock garden"
-    ],
-    "context": "Char bagh means 'four gardens' in Persian: a paradise garden quartered by walkways and water channels standing for the four rivers of paradise, here subdivided into 32 smaller plots. Humayun's Tomb, funded by his widow Empress Bega Begum, set the pattern for the Mughal garden-tombs to come. Source: https://en.wikipedia.org/wiki/Humayun%27s_Tomb",
     "topic": "delhi-the-city-of-seven-cities"
   },
   {
@@ -6292,19 +6201,6 @@
     "topic": "denali"
   },
   {
-    "tier": 2,
-    "question": "Denali rises over Alaska as North America's highest peak, one of the Seven Summits that crown the seven continents. Mount Everest in Asia tops all seven, but Denali stands out from the other six in one special way. Which one?",
-    "answer": "The most northerly of the seven",
-    "choices": [
-      "The most northerly of the seven",
-      "The most equatorial of the seven",
-      "The only volcano among the seven",
-      "The most difficult of the seven"
-    ],
-    "context": "Denali (~63 degN, just below the Arctic Circle) is the coldest and most northerly of the Seven Summits -- which is why it demands cold-weather mountaineering skill far out of proportion to its 6,190 m height. Source: rei.com; atlasandboots.com.",
-    "topic": "denali"
-  },
-  {
     "tier": 3,
     "question": "Denali climbs about 18,000 vertical feet from the flat Alaskan lowland below it to its icy summit, one of the biggest base-to-summit rises of any mountain on land. Mount Everest reaches higher above sea level, yet rises less from its own base. How can Denali's rise be the bigger one?",
     "answer": "Everest's climb begins on an already-high plateau",
@@ -6319,7 +6215,7 @@
   },
   {
     "tier": 3,
-    "question": "A weather station high on Denali, in Alaska, logged a reading in December 2003 that still stands as a North American record. The summit, 20,310 feet up, is famous for how murderous its winter cold can get. Which weather record did the station set?",
+    "question": "A weather station high on Denali, in Alaska, logged a reading in December 2003 that still stands as a North American record. The summit, 20,310 feet up and not far below the Arctic Circle, takes the full force of every storm. Which weather record did the station set?",
     "answer": "The lowest wind chill ever recorded",
     "choices": [
       "The lowest wind chill ever recorded",
@@ -6449,7 +6345,7 @@
   },
   {
     "tier": 1,
-    "question": "Rain and snowmelt from 31 US states, almost half the country, flow into the Mississippi River and down to the Gulf of Mexico. Geographers have one term for all the land that drains into a single river system like this. What is that term?",
+    "question": "A raindrop on a Montana ranch and one on a Pennsylvania hillside, half a continent apart, can both end up in the Mississippi River, which gathers the runoff of 31 US states. What do geographers call that whole sweep of land?",
     "answer": "a drainage basin",
     "choices": [
       "a drainage basin",
@@ -6457,7 +6353,7 @@
       "a floodplain",
       "a river valley"
     ],
-    "context": "That whole water-gathering territory is a drainage basin (also called a watershed or catchment); the ridge-line separating one basin from the next is a drainage divide. The Mississippi's basin covers roughly 41% of the contiguous United States. Source: en.wikipedia.org/wiki/Drainage_basin",
+    "context": "That whole water-gathering territory is a drainage basin (also called a watershed or catchment): Montana's rain reaches the Mississippi by the Missouri, Pennsylvania's by the Allegheny and the Ohio. The ridge-line separating one basin from the next is a drainage divide. The Mississippi's basin covers roughly 41% of the contiguous United States. Source: en.wikipedia.org/wiki/Drainage_basin ; en.wikipedia.org/wiki/Mississippi_River",
     "topic": "drainage-basins-and-the-continental-divide"
   },
   {
@@ -6513,29 +6409,16 @@
     "topic": "drainage-basins-and-the-continental-divide"
   },
   {
-    "tier": 3,
-    "question": "The Congo River winds back and forth across the equator through the middle of Africa, gathering the runoff of the world's second-largest rainforest, and its full flow is one of the mightiest of any river anywhere. After some 4,700 kilometres of jungle and rapids, into which ocean does it empty?",
-    "answer": "the Atlantic Ocean",
-    "choices": [
-      "the Atlantic Ocean",
-      "the Indian Ocean",
-      "the Mediterranean Sea",
-      "the Red Sea"
-    ],
-    "context": "The Congo drains the world's second-largest river basin (~3.7 million km²) and Africa's largest rainforest, emptying into the Atlantic at the Gulf of Guinea. Source: en.wikipedia.org/wiki/Congo_Basin",
-    "topic": "drainage-basins-and-the-continental-divide"
-  },
-  {
     "tier": 4,
-    "question": "In southern Wyoming the Continental Divide splits in two and loops around a wide sagebrush desert, the Great Divide Basin. Rain and snow that fall inside the loop can never reach the Pacific, the Atlantic or any ocean at all; the water just pools and evaporates. What do geographers call a basin like this?",
-    "answer": "an endorheic basin",
+    "question": "In southern Wyoming the Continental Divide splits in two and loops around a wide sagebrush desert, the Great Divide Basin. Rain and snow fall inside the loop just as they do on the slopes to either side. Which ocean does that water reach?",
+    "answer": "none of them; it never leaves the basin",
     "choices": [
-      "an endorheic basin",
-      "an artesian basin",
-      "a tidal basin",
-      "an alluvial basin"
+      "none of them; it never leaves the basin",
+      "the Pacific, by way of the Green River",
+      "the Atlantic, by way of the North Platte",
+      "both, split down the middle by the Divide"
     ],
-    "context": "An endorheic basin has no outlet to the sea. Wyoming's Great Divide Basin is a rare gap where the Continental Divide splits and wraps around it, so its water pools and evaporates internally rather than reaching any ocean. Source: en.wikipedia.org/wiki/Continental_Divide_of_the_Americas",
+    "context": "Water that falls in the Great Divide Basin reaches no ocean at all: it pools in shallow lakes and playas and evaporates or soaks into the ground. Geographers call a basin with no outlet to the sea endorheic, from the Greek for flowing within. Here the Continental Divide splits and wraps right around it, so neither the Pacific-bound Green River nor the Atlantic-bound North Platte gets its water. Source: en.wikipedia.org/wiki/Great_Divide_Basin",
     "topic": "drainage-basins-and-the-continental-divide"
   },
   {
@@ -6553,20 +6436,20 @@
   },
   {
     "tier": 5,
-    "question": "Canada's shrinking Kaskawulsh Glacier stopped feeding the north-flowing Slims River in 2016 and sent its meltwater into a neighbouring river bound for the Gulf of Alaska; within a single season the Slims' old channel ran dry. Scientists had never before watched such an event as it happened. What do geologists call this sudden rerouting?",
-    "answer": "river capture",
+    "question": "Canada's Kaskawulsh Glacier, in the Yukon, long split its meltwater two ways: north down the Slims River, and south toward the Gulf of Alaska. In 2016 the shrinking ice tipped all of it one way, the first time scientists had seen a river capture as it happened. What became of the Slims within a year?",
+    "answer": "it shrank until it nearly ran dry",
     "choices": [
-      "river capture",
-      "river bifurcation",
-      "river rejuvenation",
-      "river confluence"
+      "it shrank until it nearly ran dry",
+      "it swelled until it flooded its valley",
+      "it reversed and began flowing south",
+      "it split into two separate rivers"
     ],
-    "context": "This is river capture (also called stream piracy). The 2016 Kaskawulsh event was the first river capture ever observed by scientists in real time. Geologists think the Casiquiare is slowly capturing the upper Orinoco the same way — eventually pirating it into the Amazon basin. Source: en.wikipedia.org/wiki/River_capture",
+    "context": "This was river capture, or stream piracy: one river stealing another's water. The glacier's melt had long fed the Slims, which flowed north to Kluane Lake; once the retreating ice tipped the water the other way, into the Kaskawulsh River and on to the Pacific, the Slims shrank to a trickle within a year. It was the first river capture scientists had watched as it happened. Geologists think the Casiquiare may slowly be capturing the upper Orinoco the same way. Source: en.wikipedia.org/wiki/River_capture",
     "topic": "drainage-basins-and-the-continental-divide"
   },
   {
     "tier": 2,
-    "question": "Colonial militia fought the Battle of Bunker Hill in 1775 on Boston's Breed's Hill, where the Freedom Trail climbs today. It is one of over a hundred smooth, egg-shaped hills in the city, each moulded by a passing ice sheet from the rubble it dragged along beneath it. What do geologists call such a hill?",
+    "question": "Colonial militia fought the Battle of Bunker Hill in 1775 on Boston's Breed's Hill, where the Freedom Trail climbs today. The hill is a smooth, egg-shaped mound of ice-age rubble, one of more than a hundred like it under the city. What do geologists call such a hill?",
     "answer": "a drumlin",
     "choices": [
       "a drumlin",
@@ -6605,15 +6488,15 @@
   },
   {
     "tier": 3,
-    "question": "A long gravel ridge runs straight through the Swedish city of Uppsala, part of one natural bank about 250 km long. It looks like a railway embankment, yet nobody built it: it is the old bed of a river that once ran in a tunnel under a glacier, left standing when the ice melted. What is such a ridge called?",
-    "answer": "an esker",
+    "question": "The Uppsala esker, a ridge of sand and gravel some 250 km long, runs straight through the Swedish city of Uppsala. It looks like a railway embankment, yet nobody built it; it dates from the last ice age. What laid it down?",
+    "answer": "a river flowing in a tunnel under the ice",
     "choices": [
-      "an esker",
-      "a drumlin",
-      "a moraine",
-      "a kame"
+      "a river flowing in a tunnel under the ice",
+      "a glacier's front edge bulldozing rubble",
+      "wind heaping sand into one long dune",
+      "the ground buckling along an earthquake fault"
     ],
-    "context": "An esker is water's signature under the ice: it is built of well-sorted sand and gravel, proof that a flowing meltwater river — not the ice itself — laid it down (a moraine, by contrast, is the unsorted rubble a glacier dumps straight off its melting edge). Because the river ran in a tunnel at the glacier's base, its gravel bed was left standing above the surrounding land once the ice vanished. Uppsala's esker, the Uppsalasasen, runs for roughly 250 km, straight through the heart of the city. Source: https://en.wikipedia.org/wiki/Esker",
+    "context": "An esker is the bed of a meltwater river that ran in a tunnel at the base of the ice sheet. Its sand and gravel are sorted and rounded by flowing water, unlike the jumbled rubble a glacier dumps at its melting edge as a moraine. When the ice vanished, the old riverbed was left standing above the land. Uppsala's esker, the Uppsalaåsen, runs for roughly 250 km, straight through the heart of the city. Source: https://en.wikipedia.org/wiki/Esker",
     "topic": "drumlins-and-eskers-streamlined-hills-and-ice-tunnel-ridges"
   },
   {
@@ -7359,7 +7242,7 @@
   },
   {
     "tier": 1,
-    "question": "Blue crabs and oysters thrive in Chesapeake Bay, which reaches about 200 miles up America's east coast. There the fresh water of the Susquehanna River meets the incoming Atlantic tide, and the two mix. What do geographers call this kind of coastal water?",
+    "question": "Blue crabs and oysters thrive in Chesapeake Bay, which reaches about 200 miles up America's east coast. The Susquehanna River pours in at its head, and twice a day the Atlantic tide pushes in at its mouth. What do geographers call such coastal water?",
     "answer": "an estuary",
     "choices": [
       "an estuary",
@@ -7385,15 +7268,15 @@
   },
   {
     "tier": 3,
-    "question": "Along Spain's Galician coast, the sea reaches far inland up a cluster of long, flooded valleys. Seen from above, each branches like the bare limbs of a tree, every side-valley now a calm, sheltered finger of sea. What do geographers call such a flooded coastal valley?",
-    "answer": "a ria",
+    "question": "Along Spain's Galician coast the sea runs far inland up the Rías Baixas, long sheltered inlets whose side-arms branch like the bare limbs of a tree. Long before the sea filled them, they were valleys on dry land. What carved those valleys?",
+    "answer": "flowing rivers",
     "choices": [
-      "a ria",
-      "a fjord",
-      "a bayou",
-      "a lagoon"
+      "flowing rivers",
+      "grinding glaciers",
+      "scouring winds",
+      "collapsing caves"
     ],
-    "context": "A ria is a drowned river valley — river-carved, so it keeps the branching, tree-like shape of the old streams. That is what sets it apart from a fjord, which is glacier-carved and steep U-shaped. The word 'ria' comes from the Galician río ('river'); Galicia's celebrated Rías Baixas are the classic example, and Chesapeake Bay is a ria too. Source: https://en.wikipedia.org/wiki/Ria",
+    "context": "A ria is a river valley drowned by the rising sea; because running water carved it, it keeps the branching, tree-like shape of the old streams. A fjord is a drowned valley too, but a glacier carved it steep-walled and U-shaped. The word comes from the Galician ría, from río, river; Galicia's Rías Baixas are the classic example, and Chesapeake Bay is a ria too. Source: https://en.wikipedia.org/wiki/Ria",
     "topic": "estuaries-and-tidal-bores-where-river-meets-the-tide"
   },
   {
@@ -7606,15 +7489,15 @@
   },
   {
     "tier": 3,
-    "question": "A broad flight of 42 steep steps climbs to the Buland Darwaza, the colossal arched entrance Akbar raised at Fatehpur Sikri around 1575 to celebrate his conquest of Gujarat. It is inlaid with white and black marble. Among all the great gates on Earth, what record is it often said to hold?",
-    "answer": "the world's highest gateway",
+    "question": "Akbar raised the Buland Darwaza at Fatehpur Sikri, a gate some 54 metres high and climbed by 42 steep steps, to celebrate his conquest of Gujarat. A Persian saying is carved across its arch, credited there to Jesus, son of Mary. What does the saying call the world?",
+    "answer": "a bridge to cross, not a place to build a house",
     "choices": [
-      "the world's highest gateway",
-      "the world's oldest gateway",
-      "the world's widest gateway",
-      "the world's heaviest gateway"
+      "a bridge to cross, not a place to build a house",
+      "a battlefield won only by the bold and the brave",
+      "a garden given to those who tend it with care",
+      "a mirror showing each man his own true face"
     ],
-    "context": "Built around 1575 to mark Akbar's conquest of Gujarat, the Buland Darwaza ('Exalted Gate') rises about 54 metres (176 feet), climbed by 42 steps, and is often called the highest gateway in the world. Across its arch runs a Persian line attributed to Jesus: 'The world is a bridge, pass over it, but build no houses on it' — an eerie motto for a city soon abandoned. Source: https://en.wikipedia.org/wiki/Buland_Darwaza  (Legend.)",
+    "context": "The Buland Darwaza (Exalted Gate) rises about 54 metres (176 feet), is climbed by 42 steps, and is often called the highest gateway in the world. Its inscription quotes Jesus as Islamic tradition remembers him: 'The world is a bridge, pass over it, but build no houses upon it.' Akbar's court left the city around 1585, an eerie fit for the motto. Source: https://en.wikipedia.org/wiki/Buland_Darwaza  (Legend.)",
     "topic": "fatehpur-sikri-the-abandoned-red-city"
   },
   {
@@ -7784,19 +7667,6 @@
       "Ben Ohau"
     ],
     "context": "Mitre Peak rises 1,692 m almost straight from Milford Sound; Rudyard Kipling dubbed the fiord the 'eighth Wonder of the World.' https://en.wikipedia.org/wiki/Milford_Sound",
-    "topic": "fjords-drowned-glacier-valleys"
-  },
-  {
-    "tier": 2,
-    "question": "Norway's Viking seafarers gave the long sea-arms between their cliffs an Old Norse name, fjörðr, meaning a passage or a crossing over water, and the word sailed on into English as fjord. One everyday English travel word grew from that very same ancient root. Which word is it?",
-    "answer": "ferry",
-    "choices": [
-      "ferry",
-      "ford",
-      "wharf",
-      "barge"
-    ],
-    "context": "'Fjord' comes from Old Norse fjoerdr, a passage or crossing over water, the same root that gives English 'ferry.' A ford (a shallow river crossing) comes from a related but distinct Germanic root. https://grokipedia.com/page/Fjord",
     "topic": "fjords-drowned-glacier-valleys"
   },
   {
@@ -8095,7 +7965,7 @@
       "the bora",
       "the sirocco"
     ],
-    "context": "The chinook ('snow-eater') is the North American name for a warm, dry downslope wind off the Rockies; a good one can raise the temperature many degrees in hours and strip a snowy field bare. The other choices are real winds too -- but the mistral, bora and sirocco all blow in the Old World, and the first two are cold. Source: https://en.wikipedia.org/wiki/Chinook_wind",
+    "context": "The chinook ('snow-eater') is the North American name for a warm, dry downslope wind off the Rockies; a good one can raise the temperature many degrees in hours and strip a snowy field bare. Europe's mistral and bora are its opposites, cold winds that pour down to the Mediterranean coasts. Source: https://en.wikipedia.org/wiki/Chinook_wind",
     "topic": "foehn-and-chinook-the-warm-wind-off-the-mountains"
   },
   {
@@ -8121,7 +7991,7 @@
       "Pincher Creek, Alberta",
       "Rapid City, South Dakota"
     ],
-    "context": "Spearfish, South Dakota holds the Guinness record: a 49F leap in 120 seconds as the chinook rolled off the Black Hills. By about 9:30 that morning it had plunged back to -4F. The other three are real chinook-belt towns on the plains east of the Rockies. Source: https://en.wikipedia.org/wiki/Chinook_wind",
+    "context": "Spearfish, South Dakota holds the Guinness record: a 49F leap in 120 seconds as the chinook rolled off the Black Hills. By about 9:30 that morning it had plunged back to -4F. Source: https://en.wikipedia.org/wiki/Chinook_wind",
     "topic": "foehn-and-chinook-the-warm-wind-off-the-mountains"
   },
   {
@@ -8199,7 +8069,7 @@
       "about 8 millimetres",
       "about 8 kilometres"
     ],
-    "context": "In 2005 the Afar rift widened by roughly 8 metres (26 ft) in about three weeks -- you can genuinely watch this sea grow. This was the Dabbahu rifting episode: a roughly 60-km-long dyke injected about 2.5 cubic km of magma into the crust in weeks, and it was the first such event ever captured by satellites. Source: https://en.wikipedia.org/wiki/Red_Sea and https://www.nature.com/articles/nature04978.",
+    "context": "In 2005 the Afar rift widened by roughly 8 metres (26 ft) in about three weeks. This was the Dabbahu rifting episode: a roughly 60-km-long dyke injected about 2.5 cubic km of magma into the crust in weeks, and it was the first such event ever captured by satellites. Source: https://en.wikipedia.org/wiki/Red_Sea and https://www.nature.com/articles/nature04978.",
     "topic": "from-rift-to-ocean-the-red-sea-and-the-afar-triangle"
   },
   {
@@ -8477,7 +8347,7 @@
   },
   {
     "tier": 2,
-    "question": "Sebastian Steudtner, a German surfer, rode one wave at Nazaré, on Portugal's Atlantic coast, in October 2020. The sea there rears into monsters as tall as apartment buildings, which only a handful of surfers dare to ride. His wave earned him a Guinness World Record no one has officially topped. What record does he hold?",
+    "question": "Sebastian Steudtner, a German surfer, rode one wave at Praia do Norte, the beach at Nazaré on Portugal's Atlantic coast, in October 2020. Guinness World Records ratified a world record for that single ride in 2022. What record does he hold?",
     "answer": "the largest wave ever surfed",
     "choices": [
       "the largest wave ever surfed",
@@ -8620,7 +8490,7 @@
   },
   {
     "tier": 1,
-    "question": "Big Rock lies alone on the flat prairie west of Okotoks, Alberta: a single quartzite boulder as long as a blue whale, some 16,500 tonnes, split in two. Its stone is a plain mismatch for the ground it rests on. What special word do geologists use for a boulder the ice carried so far?",
+    "question": "Big Rock lies alone on the flat prairie west of Okotoks, Alberta: a quartzite boulder longer than a blue whale, some 16,500 tonnes, split in two. Its stone is a plain mismatch for the ground beneath it. What do geologists call such a boulder?",
     "answer": "an erratic",
     "choices": [
       "an erratic",
@@ -8693,7 +8563,7 @@
       "a storm of falling meteors",
       "a mighty ancient earthquake"
     ],
-    "context": "In his 'Discours de Neuchatel' (24 July 1837), later expanded in 'Etudes sur les glaciers' (1840), Louis Agassiz argued from erratics and polished, striated bedrock that great glaciers — not the biblical Flood — had once buried the land. It set off a real fight: 'diluvialists' like Charles Lyell credited floods and drifting icebergs, while Agassiz's 'glacialists' credited moving ice sheets. His field evidence eventually won. https://www.britannica.com/biography/Louis-Agassiz",
+    "context": "In his 'Discours de Neuchatel' (24 July 1837), later expanded in 'Etudes sur les glaciers' (1840), Louis Agassiz argued from erratics and polished, striated bedrock that great glaciers, not the biblical Flood, had once buried the land. It set off a real fight: some still credited the Flood, and Charles Lyell argued that icebergs drifting over a drowned land had dropped the boulders, while Agassiz's 'glacialists' credited moving ice sheets. His field evidence eventually won. https://www.britannica.com/biography/Louis-Agassiz ; https://en.wikipedia.org/wiki/Charles_Lyell",
     "topic": "glacial-erratics-boulders-the-ice-carried"
   },
   {
@@ -8855,14 +8725,14 @@
   {
     "tier": 2,
     "question": "Pools mirror the Alhambra's courtyards and fountains murmur in its halls, yet the palace crowns a high, dry ridge above Granada with no stream of its own. Nasrid engineers fed it through a canal, the Acequia Real, that carried water onto the plateau. Where does all that water begin?",
-    "answer": "as snow melting on the Sierra Nevada",
+    "answer": "the Darro river, about 11 km upstream",
     "choices": [
-      "as snow melting on the Sierra Nevada",
-      "as a spring high on the Cerro del Sol",
-      "as the Genil river to the south",
-      "as meltwater from the western foothills"
+      "the Darro river, about 11 km upstream",
+      "the Genil river, south of the city",
+      "a spring high on the Cerro del Sol",
+      "a deep well at the foot of the ridge"
     ],
-    "context": "The water is snowmelt from the Sierra Nevada. Nasrid engineers diverted the snow-fed Darro river kilometres upstream and ran it by gravity along the Cerro del Sol hill, then used elevation devices to raise it the final rise onto the plateau, through the Acequia Real (the 'Royal Canal' or 'Sultan's Canal'). Before the canal, the older fort had to survive on a rainwater cistern and water hauled up from the Darro below — the canal is what turned a defensive fort into a garden palace-city. Source: https://www.alhambra-patronato.es/en/elemento-del-mes/the-royal-canal ; https://en.wikipedia.org/wiki/Alhambra",
+    "context": "The water comes from the Darro: the Acequia Real (the Royal Canal, or Sultan's Canal) taps the river about 11 km upstream and carries it by gravity along the northern flank of the Cerro del Sol, past the Generalife's orchards, before devices raise it the last stretch onto the plateau. Before the canal, the older fort had to survive on a rainwater cistern and water hauled up from the Darro below; the canal is what turned a defensive fort into a garden palace-city. Source: https://www.alhambra-patronato.es/en/elemento-del-mes/the-royal-canal ; https://en.wikipedia.org/wiki/Alhambra",
     "topic": "granada-the-alhambras-water-palace"
   },
   {
@@ -8901,20 +8771,20 @@
       "down grooves cut into each step",
       "down a pipe beneath the paving"
     ],
-    "context": "The water runs down the hollowed stone banisters of the Generalife's Escalera del Agua ('Water Staircase') — a four-flight stair whose handrails are cut into little channels, so cold Sierra Nevada water runs beside your hand as you climb, and the old Nasrid water gardens still run it today. The Generalife (Arabic Jannat al-'Arif) was the Nasrid summer estate next to the Alhambra. Source: https://en.wikipedia.org/wiki/Generalife",
+    "context": "The water runs down the hollowed stone banisters of the Generalife's Escalera del Agua ('Water Staircase'), a four-flight stair whose handrails are cut into little channels, so cold canal water runs beside a climber's hand, and the old Nasrid water gardens still run it today. The Generalife (Arabic Jannat al-'Arif) was the Nasrid summer estate next to the Alhambra. Source: https://en.wikipedia.org/wiki/Generalife",
     "topic": "granada-the-alhambras-water-palace"
   },
   {
     "tier": 4,
-    "question": "Inside the Alhambra's Hall of the Two Sisters, plaster overhead seems to dissolve: at least five thousand tiny cells hang down in tiers from a central point and blossom into sixteen little domes, like the dripping inside of a stone stalactite cave. Islamic architects have a name for this honeycomb vaulting. What is it called?",
-    "answer": "muqarnas",
+    "question": "Inside the Alhambra's Hall of the Two Sisters, muqarnas fill the dome overhead: at least five thousand tiny cells drip down in tiers from its peak and bloom into sixteen little domes, like a stalactite cave turned to lace. What did the Nasrid craftsmen build those cells from?",
+    "answer": "carved plaster",
     "choices": [
-      "muqarnas",
-      "mihrab",
-      "minaret",
-      "madrasa"
+      "carved plaster",
+      "polished marble",
+      "painted cedar wood",
+      "glazed clay tiles"
     ],
-    "context": "It is muqarnas — honeycomb or 'stalactite' vaulting built from tiers of small plaster (stucco) cells. The dome over the Hall of the Two Sisters (Sala de las Dos Hermanas) has at least 5,000 cells unfolding from a central summit into sixteen miniature domes around its rim. (A mihrab is a prayer niche, a minaret a mosque tower, a madrasa a school.) Source: https://en.wikipedia.org/wiki/Muqarnas ; https://www.alhambradegranada.org/en/info/nasridpalaces/hallofthetwosisters.asp",
+    "context": "The dome over the Hall of the Two Sisters is muqarnas, honeycomb or 'stalactite' vaulting built from tiers of small cells of carved plaster (stucco), at least 5,000 of them unfolding from a central summit into sixteen miniature domes around its rim. Source: https://en.wikipedia.org/wiki/Muqarnas ; https://www.alhambradegranada.org/en/info/nasridpalaces/hallofthetwosisters.asp",
     "topic": "granada-the-alhambras-water-palace"
   },
   {
@@ -8954,19 +8824,6 @@
       "Court of the eagle"
     ],
     "context": "'Dzimba dza mabwe' is Shona for 'houses of stone' (also read as 'dzimbahwe,' venerated or chief's houses). When the country won independence in 1980 it took the name Zimbabwe straight from these ruins. Source: en.wikipedia.org/wiki/Great_Zimbabwe",
-    "topic": "great-zimbabwe"
-  },
-  {
-    "tier": 2,
-    "question": "The Great Enclosure at Great Zimbabwe runs about 250 metres around, its walls rising up to 11 metres on a base thicker than a road is wide. By the ground it covers, only one ancient structure in all of Africa is larger. Which one?",
-    "answer": "The Great Pyramid of Egypt",
-    "choices": [
-      "The Great Pyramid of Egypt",
-      "The rock church of Lalibela",
-      "The great obelisk of Aksum",
-      "The Great Mosque of Kilwa"
-    ],
-    "context": "By the area it covers, the Great Enclosure is the second-largest ancient structure in all of Africa, behind only the Egyptian pyramids, and the largest ancient stone structure anywhere south of the Sahara — walls up to 11 m high and about 250 m around. Source: en.wikipedia.org/wiki/Great_Zimbabwe; news.artnet.com/art-world/huge-great-zimbabwe-ruins-2531265",
     "topic": "great-zimbabwe"
   },
   {
@@ -9053,7 +8910,7 @@
     "answer": "The biblical Queen of Sheba",
     "choices": [
       "The biblical Queen of Sheba",
-      "The seafaring Phoenicians of Tyre",
+      "The pharaohs of ancient Egypt",
       "The lost legions of ancient Rome",
       "Prince Henry's Portuguese sailors"
     ],
