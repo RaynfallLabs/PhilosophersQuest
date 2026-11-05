@@ -53,15 +53,15 @@
   },
   {
     "tier": 5,
-    "question": "Thousands of living lights hang from the Waitomo ceiling, and every one is Arachnocampa luminosa, a creature that shines here and in New Zealand's wet forests and on no other land on Earth. Even the glow in Tasmania's Marakoopa cave comes from separate cousin species that never crossed the Tasman. What do biologists call a species like this?",
-    "answer": "endemic",
+    "question": "Thousands of living lights hang from the Waitomo ceiling, and every one is the glowworm Arachnocampa luminosa. Tasmania's Marakoopa cave, across the Tasman Sea, shines with the same blue-green light from its own cave roof. Where does Arachnocampa luminosa live in the wild?",
+    "answer": "in New Zealand and nowhere else",
     "choices": [
-      "endemic",
-      "native",
-      "relict",
-      "rare"
+      "in New Zealand and nowhere else",
+      "in New Zealand and Tasmania",
+      "in Australia and New Zealand",
+      "across the South Pacific islands"
     ],
-    "context": "Endemic means a species lives naturally in one region and nowhere else on Earth. Arachnocampa luminosa glows only in the caves and wet forests of New Zealand; its nearest relatives are themselves endemic to Australian karst caves — for example Arachnocampa tasmaniensis in Tasmania's Marakoopa and Gunns Plains caves — but they are separate species that never crossed the Tasman. (How the larva actually makes its light belongs to biology, not geography.) Source: inaturalist.org/taxa/125921-Arachnocampa-luminosa; caveanimals.com.au/glow-worms",
+    "context": "Arachnocampa luminosa is endemic to New Zealand: it lives naturally in the country's caves and wet forests and nowhere else on Earth. Its nearest relatives live in Australian caves, for example Arachnocampa tasmaniensis in Tasmania's Marakoopa and Gunns Plains caves, but they are separate species that never crossed the Tasman. Source: inaturalist.org/taxa/125921-Arachnocampa-luminosa; caveanimals.com.au/glow-worms",
     "topic": "a-living-night-sky-underground-the-waitomo-glowworm-caves"
   },
   {
@@ -274,15 +274,15 @@
   },
   {
     "tier": 4,
-    "question": "Ajanta's monks slept, studied and gathered in square halls ringed by small cells, and most of the site's roughly 30 caves are halls of that kind. A handful are tall worship halls with an aisle running around a domed shrine, so that pilgrims could circle it in prayer. What are these two kinds of Buddhist cave called?",
-    "answer": "viharas and chaityas",
+    "question": "Five of the caves at Ajanta are chaityas, tall prayer halls, and the ancient Cave 10 is one of them. The monks carved each hall around one object at its far end, so that pilgrims could walk around it as they prayed. What stands there?",
+    "answer": "a domed stone stupa",
     "choices": [
-      "viharas and chaityas",
-      "gompas and chortens",
-      "pagodas and wats",
-      "dagobas and toranas"
+      "a domed stone stupa",
+      "a stone fire altar",
+      "an empty stone throne",
+      "a Buddha footprint"
     ],
-    "context": "A vihara is a monastery of living-cells; a chaitya-griha is a worship-hall built around a stupa for circling in prayer. Five of Ajanta's caves are chaityas (9, 10, 19, 26, and 29) and the rest viharas; Cave 10, the oldest, is a chaitya. Source: en.wikipedia.org/wiki/Ajanta_Caves; asi.nic.in/pages/WorldHeritageAjantaCaves",
+    "context": "A chaitya-griha is a worship hall built around a stupa, a solid domed shrine, so that pilgrims could circle it in prayer; the monks lived in viharas, square halls ringed with small cells. Five of Ajanta's caves are chaityas (9, 10, 19, 26 and 29) and the rest viharas; Cave 10, the oldest, is a chaitya. Source: en.wikipedia.org/wiki/Ajanta_Caves; asi.nic.in/pages/WorldHeritageAjantaCaves",
     "topic": "ajanta-caves"
   },
   {
@@ -300,7 +300,7 @@
   },
   {
     "tier": 1,
-    "question": "Ships sailing into Santorini pass between cliffs about 300 m high that curve around a ring of deep water. Long ago a huge eruption drained the melted rock beneath, the summit sank, and the sea flooded in. What do geologists call this kind of feature?",
+    "question": "Ships sailing into Santorini's bay pass between cliffs about 300 m high, a broken ring around deep blue water some 12 km long. The island, Thera to the ancient Greeks, wraps around it like a bowl's rim. What do geologists call this kind of feature?",
     "answer": "a caldera",
     "choices": [
       "a caldera",
@@ -383,8 +383,8 @@
     "choices": [
       "silk and spices",
       "amber and furs",
-      "tin and copper",
-      "wine and honey"
+      "jade and porcelain",
+      "cocoa and vanilla"
     ],
     "context": "Aksum was the principal supplier of African goods to the Roman world: ivory, tortoise-shell, and gold went out, while silk and spices came in from as far away as India. Sitting between inland Africa and the Red Sea, this middleman trade made Aksum one of the great commercial powers of the ancient world. Source: Wikipedia, 'Kingdom of Aksum.'",
     "topic": "aksum"
@@ -438,7 +438,7 @@
       "a walking lion",
       "an eight-pointed star"
     ],
-    "context": "Under King Ezana in the 330s-340s AD, Aksum became one of the first kingdoms anywhere to adopt Christianity -- and you can watch it happen on the money. Around 340 the coins' older pagan crescent-and-disc gives way to the cross, making Aksumite coinage some of the earliest in the world to bear a Christian cross. Source: Wikipedia, 'Kingdom of Aksum.'",
+    "context": "Under King Ezana in the 330s-340s AD, Aksum became one of the first kingdoms anywhere to adopt Christianity, and its money records the change. Around 340 the coins' older pagan crescent-and-disc gives way to the cross, making Aksumite coinage some of the earliest in the world to bear a Christian cross. Source: Wikipedia, 'Kingdom of Aksum.'",
     "topic": "aksum"
   },
   {
@@ -1023,7 +1023,7 @@
       "The Great White South",
       "The Worst Journey in the World"
     ],
-    "context": "Mawson published The Home of the Blizzard in 1915, and the name stuck to Cape Denison. His Australasian Antarctic Expedition of 1911-14 had pitched camp, without knowing it, on the windiest coast on Earth. The other choices are real polar memoirs too: The Heart of the Antarctic (Ernest Shackleton), The Great White South (photographer Herbert Ponting), and The Worst Journey in the World (Apsley Cherry-Garrard). Source: antarctica.gov.au -- 'Home of the Blizzard' book",
+    "context": "Mawson published The Home of the Blizzard in 1915, and the name stuck to Cape Denison. His Australasian Antarctic Expedition of 1911-14 had pitched camp, without knowing it, on the windiest coast on Earth, where freezing air pours down off the high ice sheet to the sea almost without pause. The expedition's wooden main hut still stands on that shore, kept as a historic site. Source: antarctica.gov.au -- 'Home of the Blizzard' book; en.wikipedia.org/wiki/Mawson%27s_Huts",
     "topic": "antarctica-the-windiest-coldest-place-on-earth"
   },
   {
@@ -1062,12 +1062,12 @@
       "the surface of Venus",
       "the surface of Titan"
     ],
-    "context": "The answer is the surface of Mars. The same katabatic winds that hammer the coast keep the McMurdo Dry Valleys -- about 4,500 sq km, the largest ice-free region in Antarctica -- swept clear of snow, leaving cold, rainless, almost lifeless ground. Since the Viking program, NASA has used the valleys as its closest earthly stand-in for the Martian surface. Taylor Glacier here also feeds 'Blood Falls,' a five-storey outflow stained red by iron-rich brine. Source: en.wikipedia.org/wiki/McMurdo_Dry_Valleys",
+    "context": "The same katabatic winds that hammer the coast keep the McMurdo Dry Valleys -- about 4,500 sq km, the largest ice-free region in Antarctica -- swept clear of snow, leaving cold, rainless, almost lifeless ground. Since the Viking program, NASA has used the valleys as its closest earthly stand-in for the Martian surface. Taylor Glacier here also feeds 'Blood Falls,' a five-storey outflow stained red by iron-rich brine. Source: en.wikipedia.org/wiki/McMurdo_Dry_Valleys",
     "topic": "antarctica-the-windiest-coldest-place-on-earth"
   },
   {
     "tier": 4,
-    "question": "The Transantarctic Mountains run across Antarctica and split its ice in two, a larger sheet and a smaller one. The larger is so vast that if it alone melted, seas around the world would rise by about 60 metres. What is this larger ice sheet called?",
+    "question": "The Transantarctic Mountains run across Antarctica and split its ice in two, a larger sheet and a smaller one. The larger is so vast that if it alone melted, seas around the world would rise by more than 50 metres. What is this larger ice sheet called?",
     "answer": "East Antarctic Ice Sheet",
     "choices": [
       "East Antarctic Ice Sheet",
@@ -1075,7 +1075,7 @@
       "Ross Ice Shelf",
       "Ronne Ice Shelf"
     ],
-    "context": "About 70%. Antarctica's ice sheet -- averaging nearly 1.9 km thick -- holds roughly 90% of all the ice on Earth and close to 70% of the planet's fresh water, all locked frozen on a single continent. Because the vast oceans are salt water, most of the world's drinkable water isn't in lakes and rivers at all; it's stacked as ice at the bottom of the world. Source: en.wikipedia.org/wiki/Antarctica",
+    "context": "The East Antarctic Ice Sheet holds most of Antarctica's ice: melted completely, it would raise global sea level by about 52 metres. The far smaller West Antarctic Ice Sheet lies on the other side of the Transantarctic Mountains, while the Ross and Ronne are floating ice shelves along the coast, not ice sheets. Source: grokipedia.com/page/East_Antarctic_Ice_Sheet",
     "topic": "antarctica-the-windiest-coldest-place-on-earth"
   },
   {
@@ -1145,13 +1145,13 @@
   },
   {
     "tier": 5,
-    "question": "On Antarctica's high plateau, dense super-chilled air grows heavy and pours down the slopes under its own weight. It funnels through coastal valleys at up to about 300 km/h, among the fiercest sustained winds on Earth. What is the name for these powerful gravity-driven downslope winds?",
-    "answer": "Katabatic winds",
+    "question": "Gales pour across the coast of Antarctica at up to about 300 km/h, among the fiercest winds on Earth, and along some stretches they blow almost every day of the year, summer and winter alike. Geographers call them katabatic winds. What drives them?",
+    "answer": "cold, heavy air sliding downhill off the ice sheet",
     "choices": [
-      "Katabatic winds",
-      "Monsoon winds",
-      "Trade winds",
-      "Chinook winds"
+      "cold, heavy air sliding downhill off the ice sheet",
+      "warm sea air rushing inland to fill a gap",
+      "storms circling endlessly round the Southern Ocean",
+      "jet-stream winds dragged down to the ground"
     ],
     "context": "Katabatic winds (from the Greek katabasis, 'descent') form as cold, dense air on the high plateau slides downhill under gravity, reaching about 300 km/h. At Commonwealth Bay, explorer Douglas Mawson (1911–14) endured such ceaseless katabatic gales that he titled his account 'The Home of the Blizzard'; Guinness rates it the windiest place on Earth. Source: Wikipedia: Katabatic wind / Commonwealth Bay.",
     "topic": "antarctica"
@@ -1339,19 +1339,6 @@
     "topic": "athens"
   },
   {
-    "tier": 4,
-    "question": "Once a year the citizens of Athens who feared that one man was growing dangerously powerful could gather and scratch his name onto a broken piece of pottery. If enough of the shards carried the same name, that man was banished from Athens for ten full years. What was this yearly practice of banishment called?",
-    "answer": "ostracism",
-    "choices": [
-      "ostracism",
-      "proscription",
-      "excommunication",
-      "attainder"
-    ],
-    "context": "This was ostracism. Each year Athenians could vote in the Agora to exile one man for ten years by scratching his name on a potsherd -- an ostrakon -- which is where the word 'ostracism' comes from. Archaeologists have dug thousands of these ballots from the Agora, some bearing the names of Athens' most famous statesmen. Source: https://en.wikipedia.org/wiki/Ancient_Agora_of_Athens",
-    "topic": "athens"
-  },
-  {
     "tier": 5,
     "question": "A Venetian army was besieging the Ottoman garrison on the rock of Athens in 1687, during the Morean War, when one of its mortars scored a direct hit on the Parthenon. The temple had stood nearly whole for more than 2,000 years, serving in turn as a Greek temple, a Christian church and finally a mosque. What had the Ottoman soldiers stored inside it?",
     "answer": "barrels of gunpowder",
@@ -1418,13 +1405,13 @@
   },
   {
     "tier": 4,
-    "question": "Geologists who study the fifty-odd hills of Auckland have found that they follow a strange rule: each eruption builds one brand-new cone in a brand-new place, and once it goes cold that cone never fires again, so the next eruption starts over somewhere else. They have a single word for a volcanic field that behaves this way. What is it?",
-    "answer": "monogenetic",
+    "question": "The fifty-odd hills of Auckland, Mount Eden and One Tree Hill among them, belong to a volcanic field that can still erupt. Geologists call it a monogenetic field, and that one word shapes their forecast. Where do they think Auckland's next eruption will start?",
+    "answer": "at a brand-new vent no one can yet pinpoint",
     "choices": [
-      "monogenetic",
-      "polygenetic",
-      "stratovolcanic",
-      "hotspot-fed"
+      "at a brand-new vent no one can yet pinpoint",
+      "inside Rangitoto, the youngest of the cones",
+      "beneath Mount Eden, the isthmus's highest cone",
+      "in the oldest cone, long overdue to erupt"
     ],
     "context": "A monogenetic field erupts each new volcano at a new vent, then abandons it forever (Rangitoto is the lone repeat, in two phases about 50 years apart). Because of this, geologists expect Auckland's next eruption to break out not from an old crater but at a brand-new, presently unknown location. Source: en.wikipedia.org/wiki/Auckland_volcanic_field",
     "topic": "auckland"
@@ -1518,19 +1505,6 @@
       "split them down the middle"
     ],
     "context": "The invaders decapitated the sacred images and prised the gold from them; the long rows of headless Buddhas are among the ruins' most haunting sights. Source: Wikipedia, Ayutthaya Historical Park; thailand-highlights.com.",
-    "topic": "ayutthaya"
-  },
-  {
-    "tier": 4,
-    "question": "A Burmese army burned Ayutthaya in 1767 after a long siege, and the ruined capital was never rebuilt. Instead the Siamese made a striking choice: they moved downstream along the Chao Phraya River and founded a brand-new capital there. Which modern city grew out of that new capital?",
-    "answer": "Bangkok",
-    "choices": [
-      "Bangkok",
-      "Chiang Mai",
-      "Sukhothai",
-      "Phnom Penh"
-    ],
-    "context": "After a 14-month siege the city fell in April 1767 and its Buddhas were stripped of gold; rather than rebuild on the ruins, the Siamese established a new capital downriver that grew into modern Bangkok. Ayutthaya's roofless temples and toppled towers were left as the ruins that stand today, now a UNESCO World Heritage site. Source: UNESCO Historic City of Ayutthaya (whc.unesco.org/en/list/576); Wikipedia, Ayutthaya Kingdom.",
     "topic": "ayutthaya"
   },
   {
@@ -2081,15 +2055,15 @@
   },
   {
     "tier": 3,
-    "question": "At each turn of the seasons in Bangkok's Grand Palace, the Emerald Buddha is solemnly re-dressed in one of its three golden costumes: one for the hot season, one for the rainy, one for the cool. By ancient custom only a single person in all Thailand may climb up and change its robes. Who is it?",
+    "question": "At each turn of the seasons in Bangkok's Grand Palace, the Emerald Buddha is solemnly re-dressed in one of its three golden costumes: one for the hot season, one for the rainy, one for the cool. By custom, one person in all Thailand holds the duty of climbing up to change them. Who is it?",
     "answer": "The King of Thailand",
     "choices": [
       "The King of Thailand",
       "The temple's chief abbot",
       "A senior Buddhist monk",
-      "The crown prince"
+      "The Supreme Patriarch"
     ],
-    "context": "Only the King — or a senior royal standing in for him — may climb up to change the headdress, in a ceremony that marks each change of season. Source: en.wikipedia.org/wiki/Emerald_Buddha",
+    "context": "The King of Thailand changes the costume himself at each change of season, or sends a senior royal to stand in for him, in a solemn ceremony. Source: en.wikipedia.org/wiki/Emerald_Buddha",
     "topic": "bangkok"
   },
   {
@@ -2129,19 +2103,6 @@
       "Traditional Thai puppetry"
     ],
     "context": "Wat Pho's stone tablets and figures recording the body's healing lines make it the acknowledged home of Nuad Thai (traditional Thai massage); its school has trained more than 200,000 therapists who now practice in 145 countries. Source: en.wikipedia.org/wiki/Wat_Pho",
-    "topic": "bangkok"
-  },
-  {
-    "tier": 5,
-    "question": "When a hard monsoon downpour strikes Bangkok, water soon runs through the streets, because the city has almost no high ground. It spreads across the flat lowland at the end of the Chao Phraya River's 372-kilometre course, where the river at last reaches the Gulf of Thailand, on land barely above the sea. What kind of landform is Bangkok built on?",
-    "answer": "Delta",
-    "choices": [
-      "Delta",
-      "Estuary",
-      "Lagoon",
-      "Fjord"
-    ],
-    "context": "A delta is the low, flat, fan-shaped land a river builds by dropping its load of mud and sand where its current slows and meets the sea. The 372-kilometre Chao Phraya's delta is why Bangkok sits barely above sea level and floods so easily, and why the old city was threaded with canals rather than roads. Source: en.wikipedia.org/wiki/Chao_Phraya_River",
     "topic": "bangkok"
   },
   {
@@ -2436,8 +2397,8 @@
     "answer": "it carries a soft whisper all the way around its curve",
     "choices": [
       "it carries a soft whisper all the way around its curve",
-      "it throws back three clear echoes for every clap",
-      "it lets two people far apart speak as if side by side",
+      "it makes each footstep ring out like a temple bell",
+      "it swallows every sound so the yard stays silent",
       "it hums on its own when the north wind blows"
     ],
     "context": "This is the Echo Wall, a smooth circular wall around the Imperial Vault of Heaven that works as a 'whispering gallery': sound skims along the curved stone so a murmur travels its full length. Nearby the emperor prayed as the 'Son of Heaven.' Source: en.wikipedia.org/wiki/Temple_of_Heaven",
@@ -2523,19 +2484,6 @@
   },
   {
     "tier": 3,
-    "question": "In Bergen, rain falls on roughly 230 to 240 days out of every year, so consistently that locals joke a true Bergener never bothers with an umbrella. He just flips up his hood and waits the shower out. What title has this soaking climate earned Bergen?",
-    "answer": "Europe's rainiest city",
-    "choices": [
-      "Europe's rainiest city",
-      "the world's rainiest city",
-      "the rainiest capital in Europe",
-      "the rainiest city in the Alps"
-    ],
-    "context": "Bergen gets about 2,250 mm of rain a year across some 240 wet days -- widely reckoned the rainiest in Europe, though the world's crown belongs to Mawsynram in India. The umbrella joke is genuine local lore. Source: grokipedia.com/page/Bergen ; WebSearch (visitbergen, Forbes / David Nikel)",
-    "topic": "bergen"
-  },
-  {
-    "tier": 3,
     "question": "Bergen sits in a bowl ringed by mountains, and the 18th-century playwright Ludvig Holberg fixed its fond nickname, 'the city of seven mountains.' He chose seven on purpose, to make his rainy home echo a far grander city celebrated for its seven hills. Which city was Bergen made to imitate?",
     "answer": "Rome",
     "choices": [
@@ -2549,28 +2497,28 @@
   },
   {
     "tier": 4,
-    "question": "Moist Atlantic winds sweep in off the sea toward Bergen and slam into the ring of mountains around the city. Forced upward, they cool as they climb and wring their water out over the town below. What is this kind of mountain-made rainfall called?",
-    "answer": "orographic rainfall",
+    "question": "Bergen, on Norway's west coast, is often named Europe's wettest city: in a typical year it sees rain on roughly two days in every three, and its people boast that a real Bergener scorns umbrellas and just pulls up his hood. What wrings so much water out of the sky over the town?",
+    "answer": "wet sea winds forced up over its mountains",
     "choices": [
-      "orographic rainfall",
-      "convectional rainfall",
-      "frontal rainfall",
-      "monsoon rainfall"
+      "wet sea winds forced up over its mountains",
+      "warm fjord water steaming up and falling back",
+      "cold air sliding off the glaciers inland",
+      "sea fog trapped in the harbour basin"
     ],
-    "context": "Orographic rainfall (from Greek oros, 'mountain') happens wherever moist air is forced up over high ground, cools, and releases its water -- it is exactly why Bergen's seaward mountains keep the city under some 240 rainy days a year. Source: grokipedia.com/page/Bergen ; gofjords.com",
+    "context": "Bergen's rain is orographic rainfall (from Greek oros, 'mountain'): moist Atlantic winds hit the ring of mountains around the city, rise, cool and drop their water on the town, about 2,250 mm across some 240 wet days a year. Bergen is widely reckoned Europe's rainiest city, though the world's crown belongs to Mawsynram in India. Source: grokipedia.com/page/Bergen ; gofjords.com",
     "topic": "bergen"
   },
   {
     "tier": 5,
     "question": "Medieval merchants of one great trading league kept four overseas posts, called Kontors, at Novgorod, London, Bruges and Bergen. In 1979 the United Nations listed Bergen's old wharf as a World Heritage Site for something none of the other three Kontors could offer. What was it?",
-    "answer": "it alone kept its original medieval buildings",
+    "answer": "it alone still stands, rebuilt on its medieval plan",
     "choices": [
-      "it alone kept its original medieval buildings",
+      "it alone still stands, rebuilt on its medieval plan",
       "it alone was the birthplace of the whole League",
       "it alone was the largest of the four Kontors",
-      "it alone traded in Russian furs and wax"
+      "it alone traded in Russian furs and beeswax"
     ],
-    "context": "Of the League's four Kontors -- Novgorod, London (the Steelyard), Bruges, and Bergen -- only Bryggen's medieval buildings survive, rebuilt on their old footprints after fires in 1476, 1702 and 1955. UNESCO listed it in 1979 as the last preserved Hanseatic Kontor in the world. Source: hanse.org/en/the-medieval-hanseatic-league/die-kontore ; en.wikipedia.org/wiki/Bryggen",
+    "context": "Of the League's four Kontors -- Novgorod, London (the Steelyard), Bruges, and Bergen -- only Bryggen still stands. Its wooden buildings date mostly from the rebuilding after the great fire of 1702, which kept to the old medieval plots and lanes, as earlier rebuildings had after fires such as that of 1476. UNESCO listed it in 1979 as the last preserved Hanseatic Kontor in the world. Source: grokipedia.com/page/Bryggen ; hanse.org/en/the-medieval-hanseatic-league/die-kontore",
     "topic": "bergen"
   },
   {
@@ -2640,7 +2588,7 @@
   },
   {
     "tier": 2,
-    "question": "From the ground, Borobudur on the island of Java looks like a stepped mountain of grey stone. From high above, its six square and three round terraces form one huge, balanced pattern of the whole Buddhist world, a pattern that pilgrims walk to reach the top. What is this kind of sacred cosmic diagram called?",
+    "question": "From the ground, Borobudur on the island of Java looks like a stepped mountain of grey stone. From high above, its six square and three round terraces nest around a central dome in one vast, balanced plan that pilgrims walk on their way to the top. What sacred design is the monument built as?",
     "answer": "a mandala",
     "choices": [
       "a mandala",
@@ -2648,7 +2596,7 @@
       "a rangoli",
       "a zodiac"
     ],
-    "context": "A mandala is a symbolic map of the cosmos used in Buddhist and Hindu meditation -- and Borobudur is a mandala you can climb. Its square base runs about 123 m (404 ft) on each side, rising through nine stacked platforms (six square, then three round) to a central dome about 35 m (115 ft) high. Borobudur's clockwise pilgrimage is called pradakshina; spiralling up its terraces, a pilgrim symbolically travels from earthly desire to enlightenment. Source: en.wikipedia.org/wiki/Borobudur",
+    "context": "A mandala is a symbolic map of the cosmos used in Buddhist and Hindu meditation, and Borobudur is a mandala built to be climbed. Its square base runs about 123 m (404 ft) on each side, rising through nine stacked platforms (six square, then three round) to a central dome about 35 m (115 ft) high. Borobudur's clockwise pilgrimage is called pradakshina; spiralling up its terraces, a pilgrim symbolically travels from earthly desire to enlightenment. Source: en.wikipedia.org/wiki/Borobudur",
     "topic": "borobudur"
   },
   {
@@ -2661,7 +2609,7 @@
       "by ascending ladders fixed to its outer walls",
       "by riding a ramp built for royal processions"
     ],
-    "context": "Following every gallery to the summit means walking more than 5 km (3 miles), always clockwise, with the monument on your right. There is no shortcut and no shrine to reach -- the long climb is itself the pilgrimage, a slow rise from the everyday world at the base toward enlightenment at the peak. Source: sacredsites.com; britannica.com/topic/Borobudur",
+    "context": "Following every gallery to the summit means walking more than 5 km (3 miles), always clockwise, with the monument on the pilgrim's right. There is no shortcut and no shrine to reach -- the long climb is itself the pilgrimage, a slow rise from the everyday world at the base toward enlightenment at the peak. Source: sacredsites.com; britannica.com/topic/Borobudur",
     "topic": "borobudur"
   },
   {
@@ -2674,7 +2622,7 @@
       "a carved stone lotus",
       "an urn of sacred ashes"
     ],
-    "context": "These 72 latticework shells are called perforated stupas, and each cradles a seated Buddha making the 'turning the wheel of dharma' gesture -- teachings you glimpse but never fully see. Counting these plus 432 Buddhas in open niches on the terraces below, Borobudur was built with 504 Buddha statues in all. Reaching a hand through the lattice to touch the Buddha inside is a local luck tradition. Source: en.wikipedia.org/wiki/Borobudur",
+    "context": "These 72 latticework shells are called perforated stupas, and each cradles a seated Buddha making the 'turning the wheel of dharma' gesture -- teachings a pilgrim glimpses but never fully sees. Counting these plus 432 Buddhas in open niches on the terraces below, Borobudur was built with 504 Buddha statues in all. Reaching a hand through the lattice to touch the Buddha inside is a local luck tradition. Source: en.wikipedia.org/wiki/Borobudur",
     "topic": "borobudur"
   },
   {
@@ -2744,15 +2692,15 @@
   },
   {
     "tier": 4,
-    "question": "One great stone dome crowns the very peak of Borobudur, the goal of the whole climb, larger than the 72 latticed bells around it and sealed shut with solid stone. When restorers opened it, they found something strange inside. What was in it?",
+    "question": "One great stone dome crowns the very peak of Borobudur, the goal of the whole climb, larger than the 72 latticed bells around it and walled shut on every side. Theodoor van Erp, the Dutch engineer who restored the temple from 1907 to 1911, found something strange buried in the dirt inside it. What was it?",
     "answer": "a single unfinished, rough-cut Buddha",
     "choices": [
       "a single unfinished, rough-cut Buddha",
       "a golden reliquary of the Buddha's tooth",
-      "a chamber of gold and jeweled offerings",
-      "nothing at all, only empty air"
+      "a hoard of gold and jewelled offerings",
+      "a sealed stone jar of royal ashes"
     ],
-    "context": "Unlike its 72 neighbors, the main stupa held no visible Buddha -- only a single unfinished, rough-hewn statue, now kept in the site museum. Some scholars think it was a discarded mistake; others believe the roughness was intentional, an image of a formless enlightenment that words and shapes cannot capture. The meaning is still debated. Source: en.wikipedia.org/wiki/Unfinished_Buddha",
+    "context": "Van Erp found the main stupa otherwise empty, with only this rough-hewn, unfinished Buddha in the dirt inside; it is now kept in the Karmawibhangga Museum at the site. Where it first stood is disputed. Van Erp took it for a failed statue that had been thrown away; others argue it belonged inside the stupa all along, its roughness perhaps deliberate, an image of an enlightenment beyond all shape. Source: en.wikipedia.org/wiki/Unfinished_Buddha",
     "topic": "borobudur"
   },
   {
@@ -2952,15 +2900,15 @@
   },
   {
     "tier": 3,
-    "question": "Ice, not wind, is the real sculptor of Bryce Canyon's delicate spires. On more than 200 nights a year the temperature drops below freezing, and water trickles into hairline cracks, freezes, expands and pries the rock apart, flake by flake. What do geologists call this freeze-and-thaw rock-breaking?",
-    "answer": "frost wedging",
+    "question": "Bryce Canyon's thin stone spires in southern Utah look as if desert gales sandblasted them into shape. Yet geologists say wind does little here: the spires do not even line up with it. Something else pries the rock apart, flake by flake. What is the real sculptor?",
+    "answer": "water freezing and swelling in its cracks",
     "choices": [
-      "frost wedging",
-      "frost heave",
-      "ice scouring",
-      "glacial plucking"
+      "water freezing and swelling in its cracks",
+      "salt crystals growing in its pores",
+      "tree roots wedging into its joints",
+      "summer heat cracking its outer skin"
     ],
-    "context": "The real sculptor is frost, not wind: temperatures dip below freezing more than 200 nights a year, and water seeping into cracks freezes and expands about 9%, prying the rock apart -- the process called frost wedging. Slightly acidic rain then dissolves the limestone's cement, thinning the spires between freezes. The hoodoos don't line up with the prevailing winds, and crusted, plant-anchored soil gives wind no loose grains to blast with. (desertusa.com 'Hoodoos of Bryce Canyon'; NPS 'Hoodoos', nps.gov/brca; Wildland Trekking)",
+    "context": "The real sculptor is frost wedging: temperatures dip below freezing on more than 200 nights a year, and water seeping into cracks freezes and swells about 9%, prying the rock apart. Slightly acidic rain then dissolves the limestone's cement between freezes. Wind does little: the hoodoos don't line up with the prevailing winds, and crusted, plant-anchored soil gives it no loose grains to blast with. (desertusa.com 'Hoodoos of Bryce Canyon'; NPS 'Hoodoos', nps.gov/brca; Wildland Trekking)",
     "topic": "bryce-canyon"
   },
   {
@@ -3017,19 +2965,6 @@
   },
   {
     "tier": 2,
-    "question": "Warm mineral water wells up through more than 100 thermal springs beneath Budapest's streets, heated by the Earth rather than pumped from any plant, and in 1934 the city was officially named the City of Spas. Together, how much warm water do the springs pour out every day?",
-    "answer": "about 70 million litres",
-    "choices": [
-      "about 30 million litres",
-      "about 70 million litres",
-      "about 120 million litres",
-      "about 55 million litres"
-    ],
-    "context": "Budapest sits over 100-plus natural thermal springs -- said to be more than under any other capital -- which yield roughly 70 million litres (about 40,000 cubic metres) of warm mineral water a day; this underground abundance earned it the official 'City of Spas' title in 1934. The other figures are plausible-sounding but well off the real daily flow of about 70 million litres. Source: en.wikipedia.org/wiki/Spas_in_Budapest",
-    "topic": "budapest"
-  },
-  {
-    "tier": 2,
     "question": "On a snowy Budapest day, steam rolls off a grand outdoor pool where bathers soak chest-deep, some hunched over chessboards floating on the water as snow settles in their hair. The bright yellow, palace-like bathhouse, said to be the largest medicinal bath in Europe, is fed by a spring drilled far below ground. Which bathhouse is it?",
     "answer": "the Szechenyi Baths",
     "choices": [
@@ -3043,15 +2978,15 @@
   },
   {
     "tier": 3,
-    "question": "No volcano stands anywhere near Budapest, yet hot water wells up all over the city. The heat rises from deep under a sharp underground line where the wooded Buda hills drop suddenly to the flat Pest plain. What kind of geological feature is this line?",
-    "answer": "a fault line",
+    "question": "Hot water wells up all over Budapest, yet no volcano stands anywhere near the city. Its springs rise along the edge where the wooded Buda hills drop suddenly to the flat Pest plain. Where does the water get its heat?",
+    "answer": "rain sinks deep along a fault and the Earth warms it",
     "choices": [
-      "a fault line",
-      "a rift valley",
-      "an escarpment",
-      "a continental divide"
+      "rain sinks deep along a fault and the Earth warms it",
+      "a hidden pocket of magma lies under the Buda hills",
+      "sun-baked rock on the hills warms the seeping rain",
+      "limestone gives off heat as the water dissolves it"
     ],
-    "context": "Budapest's heat is not volcanic: the city lies on the Buda thermal fault zone, where the Buda hills meet the Pest plain and the karst rock is dropped about 1,000 m under the Pest side. Rainwater sinks deep, is warmed by the Earth's inner heat, and rises back to the surface along the fault. A rift valley, an escarpment, and a continental divide are different boundary features. Source: pangea.stanford.edu (Geothermal Budapest, Toth 2020)",
+    "context": "Budapest's heat is not volcanic: the city lies on the Buda thermal fault zone, where the Buda hills meet the Pest plain and the karst rock drops about 1,000 m under the Pest side. Rainwater sinks deep, is warmed by the Earth's inner heat, and rises back to the surface along the fault. Source: pangea.stanford.edu (Geothermal Budapest, Toth 2020)",
     "topic": "budapest"
   },
   {
@@ -3186,20 +3121,20 @@
   },
   {
     "tier": 5,
-    "question": "From the Buenos Aires waterfront no far shore can be seen across the Río de la Plata, only brown water running flat to the horizon like an open sea. More than 40 kilometres wide near the city, it spreads to some 220 at its mouth on the Atlantic, and people have long argued whether it can be called a river at all. Which world record does the Río de la Plata hold?",
+    "question": "From the Buenos Aires waterfront, the brown Río de la Plata carries the waters of the Paraná and the Uruguay out to the Atlantic, and geographers still argue whether it is a river at all or an estuary. Counted as a river, which record does it hold?",
     "answer": "the widest river in the world",
     "choices": [
       "the widest river in the world",
       "the muddiest river in the world",
-      "the widest freshwater river in the world",
-      "the widest river delta in the world"
+      "the deepest river in the world",
+      "the saltiest river in the world"
     ],
     "context": "Near Buenos Aires the Rio de la Plata already spans more than 40 km, and it flares to roughly 220 km wide where it meets the Atlantic -- so vast it looks like a muddy brown sea with no far shore. Counted as a river it is the widest in the world, though geographers debate whether so broad a brackish body should count as a river or an estuary at all. Source: en.wikipedia.org/wiki/Rio_de_la_Plata",
     "topic": "buenos-aires"
   },
   {
     "tier": 1,
-    "question": "A slender brick tower has risen over the old city of Bukhara, in Uzbekistan, since 1127, and for nearly 900 years the call to prayer has rung out from its top five times a day. What is such a tower beside a mosque called?",
+    "question": "A slender brick tower about 45 metres tall has risen over the old Silk Road city of Bukhara, in Uzbekistan, since 1127. Bands of patterned brick wrap its round shaft from the base to the top. What kind of tower is it?",
     "answer": "a minaret",
     "choices": [
       "a minaret",
@@ -3234,19 +3169,6 @@
       "cedar wood"
     ],
     "context": "Each side is about 9.4 m. The tomb's beauty is famous precisely because it is achieved in plain baked brick alone — no coloured tile — laid so that raised and angled bricks throw shifting shadows through the day. It is one of the oldest surviving monuments of Central Asian Islamic architecture. Source: https://en.wikipedia.org/wiki/Samanid_Mausoleum",
-    "topic": "bukhara-the-silk-road-museum-city"
-  },
-  {
-    "tier": 3,
-    "question": "Camel caravans trudged into Bukhara from all over Asia along the Silk Road, and the city housed them in walled roadside inns, their rooms ringed round a big open yard, where traders stabled camels, locked up their bales and slept safely. What was such an inn called?",
-    "answer": "a caravanserai",
-    "choices": [
-      "a caravanserai",
-      "a bazaar",
-      "a madrasa",
-      "a hammam"
-    ],
-    "context": "A caravanserai (from Persian) was the roadside inn of the Silk Road, its courtyard big enough for camels and cargo. Bukhara also roofed its crossroads with domed trading bazaars grouped by trade — the Jewelers' Dome (Toqi Zargaron, 1569) alone once held 36 goldsmiths' workshops. A bazaar is a market, a madrasa a religious school, a hammam a bathhouse. Sources: https://people-travels.com/sights/trading-domes-of-bukhara ; https://visitworldheritage.com/en/silk-road/browse-bukharas-bazaars/d167d600-e417-4dce-9d3b-dc41cc314bac",
     "topic": "bukhara-the-silk-road-museum-city"
   },
   {
@@ -3489,8 +3411,8 @@
     "answer": "a neighboring people who arrived long after",
     "choices": [
       "a neighboring people who arrived long after",
-      "the French explorers who found the ruins",
-      "a river that flows past the site",
+      "a great chief buried in its biggest mound",
+      "a river that flows right past the site",
       "an old Spanish word for the mounds"
     ],
     "context": "When French explorers reached the area in the 1600s, they named the long-abandoned ruins after the Cahokia, an Illiniwek people then living nearby -- who had not built the city and arrived centuries after it emptied. The builders left no writing, so their own name for their metropolis is unknown. Source: grokipedia.com/page/Cahokia; en.wikipedia.org/wiki/Cahokia.",
@@ -3836,19 +3758,6 @@
   },
   {
     "tier": 3,
-    "question": "Byzantine Christians hiding from raiders in the Middle Ages climbed down into Derinkuyu, beneath Cappadocia in central Turkey. It was no mere cellar: level beneath level, the city ran down into the soft volcanic rock, with stables, kitchens, chapels and wells on its floors. Roughly how far down did its lowest floor reach?",
-    "answer": "about 85 meters -- 18 stories straight down",
-    "choices": [
-      "about 55 meters -- 12 stories straight down",
-      "about 70 meters -- 15 stories straight down",
-      "about 85 meters -- 18 stories straight down",
-      "about 110 meters -- 24 stories straight down"
-    ],
-    "context": "Derinkuyu descends about 85 meters -- as deep as an 18-story building is tall, but going downward. Its carved levels could shelter as many as 20,000 people at once, along with their livestock and stores of food. Source: en.wikipedia.org/wiki/Derinkuyu_underground_city",
-    "topic": "cappadocia-and-the-derinkuyu-underground-cities"
-  },
-  {
-    "tier": 3,
     "question": "A hand-cut passage leaves Derinkuyu, deep beneath Cappadocia in central Turkey, and runs for some eight kilometres through solid volcanic rock, far past the city's outer edge. Most of the city's tunnels link only level to level and room to room. What lies at the far end of the long passage?",
     "answer": "a second underground city",
     "choices": [
@@ -3913,19 +3822,6 @@
     "topic": "cappadocia"
   },
   {
-    "tier": 1,
-    "question": "Greek writers wrote down the name of Cappadocia, in central Turkey, but the name is older than the Greeks and older than the Romans. No one is sure what it means. A much-loved folk story traces it to an old Persian phrase: the land of what?",
-    "answer": "beautiful horses",
-    "choices": [
-      "a thousand caves",
-      "the low country",
-      "beautiful horses",
-      "burning rock"
-    ],
-    "context": "The beloved folk etymology reads 'Cappadocia' as 'land of beautiful (or good) horses,' but modern scholars doubt it and favor a meaning closer to 'place below' -- the low country. Legend. Source: Wikipedia, 'Cappadocia' (en.wikipedia.org/wiki/Cappadocia).",
-    "topic": "cappadocia"
-  },
-  {
     "tier": 2,
     "question": "Mount Erciyes and Mount Hasan buried Cappadocia in central Turkey under deep layers of ash millions of years ago. Over long ages the ash hardened into a pale stone, soft, yet firm enough to hold up a 40-metre cone for many centuries. What do geologists call this hardened ash rock?",
     "answer": "tuff",
@@ -3949,19 +3845,6 @@
       "paragliders"
     ],
     "context": "Cappadocia is one of the world's top spots for hot-air ballooning, letting visitors see the same soft-rock cones from above. Source: Wikipedia, 'Cappadocia' (en.wikipedia.org/wiki/Cappadocia).",
-    "topic": "cappadocia"
-  },
-  {
-    "tier": 3,
-    "question": "Rain beats on the cones of Cappadocia, in central Turkey, and their soft pale rock should have washed flat long ago. Yet thousands still stand tall, each with a boulder of harder rock balanced on its tip. The cap shelters the column beneath it while the rock all around is stripped lower and lower. What do geologists call this process?",
-    "answer": "differential erosion",
-    "choices": [
-      "glacial scouring",
-      "wind abrasion",
-      "differential erosion",
-      "chemical weathering"
-    ],
-    "context": "This is differential erosion. The cones were NOT 'blown' into shape by wind; each hard basalt cap simply protects the soft tuff beneath it from rain while surrounding rock wears down. Source: Much Better Adventures (muchbetteradventures.com/magazine/cappadocia-fairy-chimneys/).",
     "topic": "cappadocia"
   },
   {
@@ -4200,12 +4083,12 @@
   },
   {
     "tier": 3,
-    "question": "Blas de Lezo, the Spanish captain at Cartagena, faced a huge British fleet of nearly 200 ships in 1741. The harbour had two sea gates, a wide one and a narrow one called Bocachica, and he funnelled the fleet into the narrow gate under his guns. To block that channel, what did he do?",
+    "question": "Blas de Lezo, the Spanish admiral at Cartagena, faced a huge British fleet of nearly 200 ships in 1741. The harbour had two sea gates, a wide one and a narrow one called Bocachica, and he funnelled the fleet into the narrow gate under his guns. To block that channel, what did he do?",
     "answer": "sank his own ships across it",
     "choices": [
       "sank his own ships across it",
       "threw a bridge of boats across it",
-      "strung iron nets across it",
+      "planted sharpened stakes across it",
       "packed it with rafts of burning tar"
     ],
     "context": "The Spanish sealed the wide Bocagrande and forced attackers through the narrow Bocachica, straight under the 49 guns of Fort San Luis. In the channel Blas de Lezo scuttled ships and strung a chain boom across it to obstruct the passage. His garrison of roughly 3,000 held off Admiral Edward Vernon's fleet of nearly 200 ships and some 25,000 men, who withdrew to Jamaica with heavy losses. Source: https://en.wikipedia.org/wiki/Battle_of_Cartagena_de_Indias",
@@ -4248,19 +4131,6 @@
       "back to the roots of the world tree"
     ],
     "context": "The Maya held that a cenote's deep water was a doorway to Xibalba, the watery underworld, and a home of Chaac, the rain god — the pools were thresholds to the afterlife, not merely wells. Source: https://en.wikipedia.org/wiki/Cenote  (Legend.)",
-    "topic": "cenotes-sinkholes-to-a-flooded-underworld"
-  },
-  {
-    "tier": 2,
-    "question": "A flooded tunnel about 400 metres long, a favourite swim for divers, joins two round, deep-blue cenotes that sit side by side near Tulum on Mexico's Yucatán coast. The pair carry the Spanish name 'Dos Ojos.' What does that name mean?",
-    "answer": "Two Eyes",
-    "choices": [
-      "Two Eyes",
-      "Two Wells",
-      "Two Moons",
-      "Two Mouths"
-    ],
-    "context": "'Dos Ojos' is Spanish for 'Two Eyes' — two round neighboring sinkholes near Tulum that sit side by side like a pair of eyes, linked by an underwater corridor about 400 m long. Source: https://cenotesworld.com (Cenote Dos Ojos)",
     "topic": "cenotes-sinkholes-to-a-flooded-underworld"
   },
   {
@@ -4811,13 +4681,13 @@
   },
   {
     "tier": 3,
-    "question": "Underground, the Reka thunders through Hanke's Channel, a rock-walled void inside Slovenia's limestone so vast that its ceiling is lost in the dark far overhead. In fair weather the river is a modest ribbon on the cavern floor, but downstream the passage pinches to a gap that can plug like a bottleneck. After a heavy storm, how high up the walls can the trapped flood climb?",
-    "answer": "more than 100 metres",
+    "question": "Underground, the Reka thunders through Hanke's Channel, a rock-walled void inside Slovenia's limestone so vast that its ceiling is lost in the dark far overhead. In fair weather the river is a modest ribbon on the cavern floor, but downstream the passage pinches to a gap that can plug like a bottleneck. After a heavy storm, about how high up the walls can the trapped flood climb?",
+    "answer": "about 100 metres",
     "choices": [
-      "more than 60 metres",
-      "more than 100 metres",
-      "more than 130 metres",
-      "more than 20 metres"
+      "about 15 metres",
+      "about 40 metres",
+      "about 100 metres",
+      "about 160 metres"
     ],
     "context": "Hanke's Channel is a giant rock-walled canyon inside the Škocjan Caves — about 3.5 km long, 10–60 m wide, and over 140 m from the black water up to the ceiling. In heavy rain the trapped water can rise more than 100 m when a downstream siphon cannot drain the flood fast enough, nearly filling the void. It ranks among the largest underground river canyons known. (Source: en.wikipedia.org/wiki/Škocjan_Caves)",
     "topic": "classic-karst-the-land-that-named-itself"
@@ -4837,28 +4707,15 @@
   },
   {
     "tier": 4,
-    "question": "Every wet season, water floods a broad, flat basin in Slovenia and makes Lake Cerknica the country's largest lake. Every summer it drains away completely down holes in its own floor, leaving a bed where farmers cut hay. Geographers have a special word for such a basin, where a whole lake fills and vanishes with the seasons. What is such a basin called?",
-    "answer": "a polje",
+    "question": "Boats drift across Lake Cerknica in Slovenia in the wet season, when it spreads wide enough to be the country's largest lake and locals fish it. By midsummer farmers are cutting hay on the same ground, for the lake lies in a polje, a karst basin with a flat floor. How does the lake empty?",
+    "answer": "it drains down holes in its own floor",
     "choices": [
-      "a polje",
-      "a caldera",
-      "a cirque",
-      "a lagoon"
+      "it drains down holes in its own floor",
+      "it dries up in the long summer heat",
+      "farmers drain it through ditches",
+      "a dam upstream cuts off its rivers"
     ],
-    "context": "A polje is a flat-floored karst plain. Lake Cerknica fills to about 38 km² in the wet season, then drains through swallow-holes, so locals fish it when it's full and farm the dry bed when it empties. Valvasor described it to London's Royal Society in 1687; once (1834–35) it stayed dry over a year. (Source: en.wikipedia.org/wiki/Lake_Cerknica)",
-    "topic": "classic-karst-the-land-that-named-itself"
-  },
-  {
-    "tier": 5,
-    "question": "At one opening in Slovenia's limestone, the whole Reka River pours bodily down into the rock, a surface stream swallowed at a single spot. Geographers who map this hidden plumbing give such a swallowing point its own precise name. What is a spot where an entire stream gulps down into the ground called?",
-    "answer": "a ponor",
-    "choices": [
-      "a ponor",
-      "a doline",
-      "an uvala",
-      "a karren"
-    ],
-    "context": "A ponor is a swallow-hole where a stream gulps underground; a doline (from Slavic 'dolina,' valley) is a closed sinkhole pit; where several dolines merge you get an uvala; and a resurgence is where the water bursts back out. The Serbian geographer Jovan Cvijić turned these Slovenian oddities into a world science with his 1893 study 'Das Karstphänomen.' (Source: en.wikipedia.org/wiki/Karst)",
+    "context": "A polje is a flat-floored karst plain. Lake Cerknica fills to about 38 km² in the wet season, then drains away through swallow-holes, called ponors, in its own bed, so locals fish it when it is full and farm the dry bed when it empties. Valvasor described it to London's Royal Society in 1687; once (1834–35) it stayed dry for over a year. (Source: en.wikipedia.org/wiki/Lake_Cerknica)",
     "topic": "classic-karst-the-land-that-named-itself"
   },
   {
@@ -4876,28 +4733,15 @@
   },
   {
     "tier": 2,
-    "question": "Whole hanging gardens of moss, orchids and pineapple-like bromeliads sprout straight from the branches high in a Costa Rican cloud forest's canopy, rooted in no soil at all. Gardeners nickname such soil-free plants 'air plants.' What is their proper botanical name?",
-    "answer": "epiphytes",
+    "question": "Whole hanging gardens of moss, orchids and bromeliads sprout straight from the branches in Costa Rica's Monteverde cloud forest, rooted in no soil at all. Botanists call such plants epiphytes. What share of all Monteverde's plant species grow this way?",
+    "answer": "about three in ten",
     "choices": [
-      "epiphytes",
-      "parasites",
-      "perennials",
-      "annuals"
+      "about three in ten",
+      "about one in a hundred",
+      "about one in twenty",
+      "about nine in ten"
     ],
     "context": "With the trees always soaked, plants grow with no soil at all, perched right on the branches -- mosses, orchids and bromeliads called epiphytes, or 'air plants,' from the Greek epi ('upon') + phyton ('plant'). At Monteverde they make up about 29% of the flora, some 878 species. Source: en.wikipedia.org/wiki/Monteverde_Cloud_Forest_Reserve ; en.wikipedia.org/wiki/Epiphyte",
-    "topic": "cloud-forests-the-forests-in-the-clouds"
-  },
-  {
-    "tier": 2,
-    "question": "In Costa Rica's Monteverde cloud forest, the trees perform a quiet trick of physics. Their leaves comb countless tiny droplets out of the passing mist and cloud, pouring so much water into the ground that mountain streams keep running through dry weeks with no rain at all. Foresters have a plain little name for water harvested straight out of the cloud. What is it?",
-    "answer": "fog drip",
-    "choices": [
-      "fog drip",
-      "cloud seeding",
-      "spring runoff",
-      "morning dew"
-    ],
-    "context": "Leaves comb droplets straight from the fog -- 'horizontal precipitation,' or fog drip -- adding water no rain gauge catches. In one eastern-Mexico mountain study, fog delivered 22 times the rainfall (about 91% of the forest's total water). It keeps mountain streams flowing through dry spells. Source: en.wikipedia.org/wiki/Fog_drip ; ponce.sdsu.edu/horizontal_precipitation_explained.html",
     "topic": "cloud-forests-the-forests-in-the-clouds"
   },
   {
@@ -4923,20 +4767,20 @@
       "the giant groundsel",
       "the puya"
     ],
-    "context": "The frailejon (Espeletia) rules the high Andean grasslands -- a giant rosette on a shaggy, furry trunk. Spongy plants like it soak up rain and release it slowly, feeding Andean capitals such as Bogota and Quito. Its look-alikes -- Africa's giant lobelias and groundsels, the Andes' own puya -- are giant rosettes of other tropical high mountains. Source: en.wikipedia.org/wiki/P%C3%A1ramo",
+    "context": "The frailejon (Espeletia) rules the high Andean grasslands -- a giant rosette on a shaggy, furry trunk. Its look-alikes -- Africa's giant lobelias and groundsels, the Andes' own puya -- are giant rosettes of other tropical high mountains. Source: en.wikipedia.org/wiki/P%C3%A1ramo",
     "topic": "cloud-forests-the-forests-in-the-clouds"
   },
   {
     "tier": 4,
-    "question": "Above the cloud forest on the tropical mountainsides of the northern Andes, the trees suddenly give out altogether. In their place spreads a cold, wet, treeless grassland, frozen on many nights, thawed and soaked by day, reaching up toward the snowline. What is this high-Andean grassland zone above the treeline called?",
-    "answer": "the paramo",
+    "question": "High in the northern Andes, above the cloud forest, the trees give out and the páramo begins: a cold, wet grassland where frost bites on many nights and fog soaks the slopes by day. Bogotá and Quito, below it, depend on the páramo for one thing above all. What does it give them?",
+    "answer": "much of their drinking water",
     "choices": [
-      "the paramo",
-      "the tundra",
-      "the steppe",
-      "the altiplano"
+      "much of their drinking water",
+      "shelter from storm winds",
+      "cool air in the hot season",
+      "rich soil for their gardens"
     ],
-    "context": "Above the cloud forest the trees stop and the paramo takes over -- a cold, wet, tropical-alpine grassland roughly 3,000-4,800 m up, with mean temperatures of only 2-10 C and a daily freeze-and-thaw. It is found chiefly in the northern Andes. Source: en.wikipedia.org/wiki/P%C3%A1ramo",
+    "context": "Above the cloud forest the trees stop and the páramo takes over: a cold, wet, tropical-alpine grassland roughly 3,000-4,800 m up, with mean temperatures of only 2-10 C and a daily freeze-and-thaw. Its spongy plants and soils soak up rain and fog and let the water out slowly, feeding the water supplies of Bogotá and Quito. Source: en.wikipedia.org/wiki/P%C3%A1ramo",
     "topic": "cloud-forests-the-forests-in-the-clouds"
   },
   {
