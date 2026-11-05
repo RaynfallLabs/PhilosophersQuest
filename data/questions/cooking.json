@@ -10550,9 +10550,9 @@
       "It stretches into a thin, see-through film without tearing",
       "It rips into short, ragged pieces almost at once",
       "It springs straight back into a tight little ball",
-      "It crumbles into dry, floury bits between your fingers"
+      "It crumbles into dry, floury bits between the fingers"
     ],
-    "context": "This is the windowpane test. If a pinch of dough stretches into a translucent, paper-thin film you can see light through without tearing, the gluten is fully developed and ready to shape; if it tears early, it needs more kneading. Source: King Arthur Baking, 'What is the windowpane test for bread dough?'",
+    "context": "This is the windowpane test. If a pinch of dough stretches into a translucent, paper-thin film that light shows through without tearing, the gluten is fully developed and ready to shape; if it tears early, it needs more kneading. Source: King Arthur Baking, 'What is the windowpane test for bread dough?'",
     "topic": "gluten-why-you-knead-bread-but-barely-stir-a-muffin"
   },
   {
@@ -10565,7 +10565,7 @@
       "It warmed the batter, so the baking powder fizzled out early",
       "It dissolved too much sugar, so the crumb collapsed"
     ],
-    "context": "Muffins, pancakes, and cake are barely stirred on purpose. Too much mixing builds too much gluten and turns them tough and rubbery, so you stop while the batter is still lumpy rather than smooth. Source: CCC's Curious Kitchen, 'Overmixing Muffins'; King Arthur 'A beginner's guide to gluten.'",
+    "context": "Muffins, pancakes, and cake are barely stirred on purpose. Too much mixing builds too much gluten and turns them tough and rubbery, so the baker stops while the batter is still lumpy rather than smooth. Source: CCC's Curious Kitchen, 'Overmixing Muffins'; King Arthur 'A beginner's guide to gluten.'",
     "topic": "gluten-why-you-knead-bread-but-barely-stir-a-muffin"
   },
   {
@@ -10578,12 +10578,12 @@
       "The pause let the dough cool so it would not overheat",
       "The wait let the dough dry out so it held together better"
     ],
-    "context": "This resting trick is called autolyse: mix flour and water, rest 20-60 minutes, and the flour fully hydrates while gluten bonds start forming on their own, so you need far less kneading. It's proof that gluten develops with hydration and time, not only muscle. Source: King Arthur Baking, 'Using the autolyse method.'",
+    "context": "This resting trick is called autolyse: mix flour and water, rest 20-60 minutes, and the flour fully hydrates while gluten bonds start forming on their own, so the dough needs far less kneading. It's proof that gluten develops with hydration and time, not only muscle. Source: King Arthur Baking, 'Using the autolyse method.'",
     "topic": "gluten-why-you-knead-bread-but-barely-stir-a-muffin"
   },
   {
     "tier": 4,
-    "question": "Broken open, a muffin made from over-stirred batter shows no even, fluffy crumb inside, but long, wormy holes running straight up through it. Bakers call them tunnels, and only over-mixed batter makes them. Why does hard stirring leave those long, upward tunnels?",
+    "question": "Broken open, a muffin made from over-stirred batter shows no even, fluffy crumb inside, but long, wormy holes running straight up through it. Bakers call them tunnels, and over-mixing is their classic cause. Why does hard stirring leave those long, upward tunnels?",
     "answer": "The crust set firm while the inside kept puffing, forcing gas upward",
     "choices": [
       "The crust set firm while the inside kept puffing, forcing gas upward",
@@ -10643,7 +10643,7 @@
       "Ground rice and beans",
       "Chestnuts and honey"
     ],
-    "context": "Dumplings themselves are ancient -- it's only the potato version that's new. Before the potato, gnocchi were shaped from flour, breadcrumbs, or semolina; one ancient Roman recipe was a baked porridge of semolina and eggs. In 15th-century Lombardy, gnocchi-like 'zanzarelli' were even bound with bread, milk, cheese, and ground almonds. Source: Wikipedia, 'Gnocchi'; the-pasta-project.com.",
+    "context": "Dumplings themselves are ancient -- it's only the potato version that's new. Before the potato, gnocchi were shaped from flour, breadcrumbs, or semolina; one ancient Roman recipe was a porridge-like dough of semolina and eggs. In 15th-century Lombardy, gnocchi-like 'zanzarelli' were even bound with bread, milk, cheese, and ground almonds. Source: Wikipedia, 'Gnocchi'; the-pasta-project.com.",
     "topic": "gnocchi-the-potato-newcomer"
   },
   {
@@ -10656,7 +10656,7 @@
       "Fried in oil",
       "Steamed over a pot"
     ],
-    "context": "Gnocchi alla romana are made from coarse semolina cooked into a thick milk porridge with butter, egg, and Parmesan. You spread it flat, let it firm up, cut out discs with a glass, overlap them in a buttered dish, dot them with more butter and cheese, and bake until golden and crisp on top -- the same word as potato gnocchi, but a totally different creature. Source: the-pasta-project.com; Wikipedia, 'Gnocchi.'",
+    "context": "Gnocchi alla romana are made from coarse semolina cooked into a thick milk porridge with butter, egg, and Parmesan. A cook spreads it flat, lets it firm up, cuts out discs with a glass, overlaps them in a buttered dish, dots them with more butter and cheese, and bakes them until golden and crisp on top -- the same word as potato gnocchi, but a totally different creature. Source: the-pasta-project.com; Wikipedia, 'Gnocchi.'",
     "topic": "gnocchi-the-potato-newcomer"
   },
   {
@@ -10739,15 +10739,15 @@
   },
   {
     "tier": 4,
-    "question": "Before any brewing starts, a brewer soaks raw grain until each seed just begins to sprout, then dries it in warm air to halt it. The sprouting switches on the seed's own tool for turning its stored energy into sugar the yeast can eat. What is this soak, sprout and dry step called?",
-    "answer": "Malting",
+    "question": "A maltster soaks barley until each seed just begins to sprout, then dries it in warm air. Brewers call this step malting, and without it the grain is useless to the yeast that makes beer. What does the sprouting switch on?",
+    "answer": "The seed's own sugar-making enzymes",
     "choices": [
-      "Malting",
-      "Mashing",
-      "Roasting",
-      "Fermenting"
+      "The seed's own sugar-making enzymes",
+      "A coat of wild yeast on the husk",
+      "Bacteria that sour the soaking water",
+      "Oils that soften the hard husk"
     ],
-    "context": "That step is malting. Sprouting activates the grain's own enzyme (amylase, also called diastase), which chops the long starch chains into sugars yeast can finally eat — turning useless grain into brewable malt. Source: https://en.wikipedia.org/wiki/Malt and https://whiskipedia.com/fundamentals/malting-grain/",
+    "context": "Sprouting wakes the grain's own enzyme (amylase, also called diastase), which chops the long starch chains into sugars yeast can finally eat, turning useless grain into brewable malt. Drying in warm air then halts the sprout before it can use that sugar up itself. Source: https://en.wikipedia.org/wiki/Malt and https://whiskipedia.com/fundamentals/malting-grain/",
     "topic": "grain-into-beer-why-barley-needs-an-extra-step-grapes-never"
   },
   {
@@ -10786,7 +10786,7 @@
       "It's true — but only in the biggest cities",
       "It's unknowable — the records are all gone"
     ],
-    "context": "Historians reject the beer-because-the-water-was-unsafe tale. Medieval towns prized clean running water — London began piping free spring water into the city through the 'Great Conduit' in 1237 — and people drank it freely. Source: https://newhistories.sites.sheffield.ac.uk/volumes/2018-19/volume-8/the-medieval-beverage-of-choice-alcohol-or-water  (Legend.)",
+    "context": "Historians reject the beer-because-the-water-was-unsafe tale. Medieval towns prized clean running water — London bought the Tyburn springs in 1237 and in 1245 began building the 'Great Conduit' to pipe free spring water into the city — and people drank it freely. Source: https://newhistories.sites.sheffield.ac.uk/volumes/2018-19/volume-8/the-medieval-beverage-of-choice-alcohol-or-water  (Legend.)",
     "topic": "grain-into-beer-why-barley-needs-an-extra-step-grapes-never"
   },
   {
@@ -10821,37 +10821,37 @@
     "answer": "lima beans",
     "choices": [
       "lima beans",
-      "kidney beans",
-      "navy beans",
-      "fava beans"
+      "fava beans",
+      "mung beans",
+      "soy beans"
     ],
-    "context": "Traditional succotash simmers corn kernels with lima beans. Its name is Narragansett - 'msickquatash,' or 'boiled whole kernels of corn' - and Native cooks across the Americas paired corn with beans in one pot for centuries, landing on the grain-plus-legume combo by taste and experience long before anyone knew the word 'amino acid.' Source: grokipedia, 'Succotash' (etymology corroborated); infoarizona.com, 'Three Sisters.'",
+    "context": "Traditional succotash simmers corn kernels with lima beans. Its name is Narragansett - 'msickquatash,' or 'boiled whole kernels of corn' - and Native cooks across the Americas paired corn with beans in one pot for centuries, landing on the grain-plus-legume combo by taste and experience long before anyone knew the word 'amino acid.' Other American shell beans, such as kidney and cranberry beans, turn up in old recipes too, but fava beans, mung beans and soy beans are Old World crops, far from the first succotash pots. Source: grokipedia, 'Succotash' (etymology corroborated); infoarizona.com, 'Three Sisters.'",
     "topic": "grain-legume-a-complete-protein"
   },
   {
     "tier": 4,
-    "question": "Suppose you list all twenty or so of the amino acids that build protein. Nine of them are singled out as 'essential,' lysine, methionine and tryptophan among them, though the label has nothing to do with being more important than the rest. Why are they called essential?",
-    "answer": "your body can't make them itself",
+    "question": "Twenty or so amino acids link up to build every protein in food, from a bowl of beans to a steak. Nine of them, lysine, methionine and tryptophan among them, are singled out as 'essential', though the label says nothing about which matter most. What sets those nine apart?",
+    "answer": "The body cannot make them itself",
     "choices": [
-      "your body can't make them itself",
-      "they're found only in animal foods",
-      "they're the ones that build muscle",
-      "cooking breaks them apart"
+      "The body cannot make them itself",
+      "Only animal foods contain them",
+      "Only they can build new muscle",
+      "Cooking easily breaks them apart"
     ],
-    "context": "The nine essential amino acids - lysine, methionine, tryptophan, threonine, leucine, isoleucine, valine, phenylalanine, and histidine - are the ones your body can't build for itself, so they must come from food. A single food that supplies all nine is called a 'complete' protein. Source: Wikipedia, 'Complete protein.'",
+    "context": "The nine essential amino acids - lysine, methionine, tryptophan, threonine, leucine, isoleucine, valine, phenylalanine, and histidine - are the ones the human body can't build for itself, so they must come from food. A single food that supplies enough of all nine is called a 'complete' protein. Source: Wikipedia, 'Complete protein.'",
     "topic": "grain-legume-a-complete-protein"
   },
   {
     "tier": 5,
     "question": "A Mexican cook wraps beans in a corn tortilla, never having traded a recipe with the cooks of India who spoon lentils over rice, or with those of the Middle East who scoop hummus with pita. Yet all of them landed on the same grain-plus-legume plate. What drove them to it?",
-    "answer": "each staple lacks protein building blocks the other supplies",
+    "answer": "each is short of protein building blocks the other supplies",
     "choices": [
-      "each staple lacks protein building blocks the other supplies",
+      "each is short of protein building blocks the other supplies",
       "grains and beans grow best in the very same soil",
       "the two foods stay fresh far longer when stored together",
       "beans cook much faster when boiled beside a grain"
     ],
-    "context": "This grain-plus-legume trick is called protein complementation. No single staple plant - not rice, wheat, corn, or beans on its own - carries all nine essential amino acids, but grain and legume together match the amino-acid profile of meat. That's why cultures with no contact all invented the same pairing. Source: vivolife.com, 'protein complementation'; Wikipedia, 'Protein combining.'",
+    "context": "This grain-plus-legume trick is called protein complementation. No single staple plant - not rice, wheat, corn, or beans on its own - supplies enough of every one of the nine essential amino acids: grains run low in lysine, beans in methionine. Eaten together, the two fill each other's gaps, and they need not even share a meal, only the same day's eating. That's why cultures with no contact all invented the same pairing. Source: Wikipedia, 'Protein combining'; vivolife.com, 'protein complementation'.",
     "topic": "grain-legume-a-complete-protein"
   },
   {
@@ -10994,7 +10994,7 @@
       "A layer of vinegar soured them from the top",
       "They simply grew too old and wore themselves out"
     ],
-    "context": "Fermentation ends one of two ways: the yeast either eats all the sugar (a 'dry' wine) or makes so much alcohol that it poisons itself — the alcohol attacks the yeast cells' own membranes, and common wine yeast dies off around 15% alcohol. That ceiling is why plain wine can't reach the strength of a spirit; to go higher, you have to distill it. Source: https://en.wikipedia.org/wiki/Yeast_in_winemaking",
+    "context": "Fermentation ends one of two ways: the yeast either eats all the sugar (a 'dry' wine) or makes so much alcohol that it poisons itself — the alcohol attacks the yeast cells' own membranes, and common wine yeast dies off around 15% alcohol. That ceiling is why plain wine can't reach the strength of a spirit; to go higher, a maker has to distill it. Source: https://en.wikipedia.org/wiki/Yeast_in_winemaking",
     "topic": "grapes-into-wine-the-oldest-accident-in-the-cellar"
   },
   {
@@ -11007,7 +11007,7 @@
       "The wine is boiled so steam bubbles rise through it",
       "The wine is frozen, then thawed until it fizzes"
     ],
-    "context": "Champagne's fizz is a SECOND fermentation done inside the sealed bottle. The winemaker adds a little sugar and fresh yeast, then caps it; the new burst of carbon-dioxide gas has nowhere to escape, so instead of bubbling away it dissolves into the wine under pressure — and only reappears as bubbles when you open the bottle. Source: https://en.wikipedia.org/wiki/Champagne",
+    "context": "Champagne's fizz is a SECOND fermentation done inside the sealed bottle. The winemaker adds a little sugar and fresh yeast, then caps it; the new burst of carbon-dioxide gas has nowhere to escape, so instead of bubbling away it dissolves into the wine under pressure — and only reappears as bubbles when the bottle is opened. Source: https://en.wikipedia.org/wiki/Champagne",
     "topic": "grapes-into-wine-the-oldest-accident-in-the-cellar"
   },
   {
@@ -11207,15 +11207,15 @@
   },
   {
     "tier": 2,
-    "question": "A sled dog that gulps raw meat from the hakarl shark gets too sick to stand. People are hit hard as well, and Icelanders have a blunt two-word nickname for the state the raw meat puts a person in. What is that nickname?",
-    "answer": "Shark drunk",
+    "question": "A sled dog that gulps raw meat from the hakarl shark gets too sick to stand. People are hit hard as well, because a compound packed in the fresh flesh turns into a poison inside the gut. What does that poison do to a person?",
+    "answer": "Leaves him staggering as if drunk",
     "choices": [
-      "Shark drunk",
-      "Shark fever",
-      "Shark chills",
-      "Shark blindness"
+      "Leaves him staggering as if drunk",
+      "Gives him a raging high fever",
+      "Turns his skin a sickly yellow",
+      "Covers him in itchy red welts"
     ],
-    "context": "A compound packed in the shark's flesh (TMAO) turns, inside your gut, into a poison that leaves a person staggering as if drunk - so Icelanders call it being 'shark drunk.' The same untreated meat makes sled dogs so ill they cannot even stand up. Source: en.wikipedia.org/wiki/Greenland_shark",
+    "context": "The compound is TMAO, which the gut turns into trimethylamine, leaving a person dizzy and staggering as if drunk; in northern Norway an old expression, 'hai full', calls the state 'shark drunk'. The same untreated meat makes sled dogs so ill they cannot even stand up. Source: en.wikipedia.org/wiki/Greenland_shark ; National Geographic on Morten Stroksnes's book Shark Drunk.",
     "topic": "hakarl-the-shark-you-must-rot-before-you-can-eat"
   },
   {
@@ -11233,15 +11233,15 @@
   },
   {
     "tier": 3,
-    "question": "The shark behind hakarl spends its whole life in the freezing deep waters of the Arctic, and its raw flesh is loaded with a single chemical that makes the fresh meat poisonous to eat. Which chemical is it?",
+    "question": "The Greenland shark behind hakarl spends its whole life in the freezing Arctic deep. It keeps a heavy load of one chemical stored right in its flesh, which helps it cope with the cold, salty sea and is one reason the fresh meat is unsafe to eat. Which chemical is it?",
     "answer": "Urea, the waste chemical in urine",
     "choices": [
       "Urea, the waste chemical in urine",
       "Salt, the mineral in seawater",
-      "Mercury, a toxic heavy metal",
+      "Cyanide, the poison in bitter almonds",
       "Lactic acid, made by tired muscle"
     ],
-    "context": "With no bladder, the Greenland shark stores its waste - urea (the same chemical in urine) plus a related compound, TMAO - right in its flesh. Those chemicals are not a flaw: they help the shark float and cope with cold, salty, deep Arctic water. Source: en.wikipedia.org/wiki/Greenland_shark",
+    "context": "Like other sharks, the Greenland shark keeps its waste urea (the same chemical in urine) in its flesh rather than flushing it out, along with a related compound, TMAO. Those chemicals are not a flaw: they help the shark float and keep its body fluids in balance with cold, salty, deep Arctic water. Both make the fresh meat unsafe, and the TMAO turns into a toxin in the gut. Source: en.wikipedia.org/wiki/Greenland_shark ; en.wikipedia.org/wiki/Hakarl",
     "topic": "hakarl-the-shark-you-must-rot-before-you-can-eat"
   },
   {
@@ -11259,7 +11259,7 @@
   },
   {
     "tier": 5,
-    "question": "Icelanders have cured hakarl the same way since Norse times, and the gravel pit is only the start. When the shark comes out from its weeks under the stones, it is still not ready to eat. What is the second half of the cure?",
+    "question": "Icelanders have eaten hakarl for centuries, and the gravel pit is only the start of its cure. When the shark comes out from its weeks under the stones, it is still not ready to eat. What is the second half of the cure?",
     "answer": "It is cut into strips and hung to dry for months",
     "choices": [
       "It is cut into strips and hung to dry for months",
@@ -11358,25 +11358,25 @@
       "The roots",
       "The flowers"
     ],
-    "context": "An herb is the leafy green part of a plant; a spice is any OTHER part -- a seed, bark, root, flower, or fruit. That one rule sorts the whole spice rack. Basil, mint, oregano, sage, thyme, and bay laurel are all herbs for the same simple reason: we eat the leaf. (Source: Wikipedia, 'Herb' -- 'Herbs generally refers to the leafy green or flowering parts of a plant, while spices are usually dried and produced from other parts of the plant, including seeds, bark, roots and fruits.')",
+    "context": "An herb is the leafy green part of a plant; a spice is any OTHER part -- a seed, bark, root, flower, or fruit. That one rule sorts the whole spice rack. Basil, mint, oregano, sage, thyme, and bay laurel are all herbs for the same simple reason: the part used is the leaf. (Source: Wikipedia, 'Herb' -- 'Herbs generally refers to the leafy green or flowering parts of a plant, while spices are usually dried and produced from other parts of the plant, including seeds, bark, roots and fruits.')",
     "topic": "herb-vs-spice-which-part-of-the-plant"
   },
   {
     "tier": 5,
-    "question": "A gardener buries a knobbly piece of supermarket ginger with one of its little pale bumps facing up and keeps it warm and damp. Within weeks a green shoot pushes up from that bump and a whole new ginger plant grows, a trick no carrot can do. What are those sprouting bumps called?",
-    "answer": "Nodes",
+    "question": "A gardener buries a knobbly piece of supermarket ginger with one of its pale bumps facing up and keeps it warm and damp. Within weeks a green shoot pushes up from the bump, new roots reach down, and a whole new plant grows. What part of the ginger plant is that knob?",
+    "answer": "An underground stem",
     "choices": [
-      "Nodes",
-      "Pores",
-      "Veins",
-      "Fibres"
+      "An underground stem",
+      "A thick, swollen root",
+      "A large, fleshy seed",
+      "A swollen fruit pod"
     ],
-    "context": "Those bumps are nodes -- the joints of a stem. A rhizome like ginger (and its cousin turmeric) has nodes and can push a new shoot up and new roots down from any of them; a true root has no nodes and ends in a root cap. That is the botanical proof that ginger and turmeric are underground stems, not roots. (Source: Wikipedia, 'Rhizome' -- 'Roots do not have nodes and internodes and have a root cap terminating their ends,' whereas rhizomes 'retain the ability to allow new shoots to grow upwards.')",
+    "context": "The knob is a rhizome, an underground stem, whatever the shop label says. Its little bumps are nodes, the joints of a stem: a rhizome like ginger (and its cousin turmeric) can push a new shoot up and new roots down from any of them, while a true root has no nodes and ends in a root cap. (Source: Wikipedia, 'Rhizome' -- 'Roots do not have nodes and internodes and have a root cap terminating their ends,' whereas rhizomes 'retain the ability to allow new shoots to grow upwards.')",
     "topic": "herb-vs-spice-which-part-of-the-plant"
   },
   {
     "tier": 1,
-    "question": "Bees fly some 55,000 miles and visit about two million flowers, by common estimates, to make one pound of honey. From each flower they gather a sweet juice to carry home and thicken. What is that juice called?",
+    "question": "Bees fly some 55,000 miles and visit about two million flowers, by common estimates, to make one pound of honey. What does a forager gather at each flower to carry home and turn into honey?",
     "answer": "nectar",
     "choices": [
       "nectar",
@@ -11384,7 +11384,7 @@
       "resin",
       "dew"
     ],
-    "context": "Raw flower nectar is roughly 70-80% water, thin as sugar-water; bees dry it down to honey's final ~17%. Those hooks — about 55,000 colony-miles and some 2 million flowers per pound — are widely-cited approximations. Source: blog.aghires.com/honey-bees; Wikipedia, 'Honey'.",
+    "context": "Raw flower nectar is roughly 70-80% water, thin as sugar-water; bees dry it down to honey's final ~17%. Foragers gather pollen too, but as protein food for the young, not to make honey. The figures of about 55,000 colony-miles and some 2 million flowers per pound are widely cited approximations. Source: blog.aghires.com/honey-bees; Wikipedia, 'Honey' and 'Honey bee'.",
     "topic": "honey-how-bees-make-it-and-why-it-never-spoils"
   },
   {
@@ -11566,7 +11566,7 @@
       "a pinch of baking soda",
       "a scoop of white sugar"
     ],
-    "context": "Paneer is acid-set: the lemon's acid alone curdles the hot milk, with no other setting agent. Because it is never aged, it stays firm and never melts, which is why you can fry it or simmer it in a curry. Source: Wikipedia, 'Paneer'.",
+    "context": "Paneer is acid-set: the lemon's acid alone curdles the hot milk, with no other setting agent. It is never aged and does not melt, so it stays firm, which is why a cook can fry it or simmer it in a curry. Source: Wikipedia, 'Paneer'.",
     "topic": "how-cheese-is-made-curds-whey-and-aging"
   },
   {
@@ -11592,7 +11592,7 @@
       "provolone",
       "mozzarella"
     ],
-    "context": "Ricotta means 'recooked' in Italian, because you cook the whey a second time. Nothing is wasted: the leftovers of one cheese become a whole new one. Source: Wikipedia, 'Ricotta'.",
+    "context": "Ricotta means 'recooked' in Italian, because the whey is cooked a second time. Nothing is wasted: the leftovers of one cheese become a whole new one. Source: Wikipedia, 'Ricotta'.",
     "topic": "how-cheese-is-made-curds-whey-and-aging"
   },
   {
@@ -11623,7 +11623,7 @@
   },
   {
     "tier": 4,
-    "question": "A supermarket cheese counter is stacked with wheels and blocks, and most of them were set with rennet that never came near a calf. For thousands of years cheesemakers took that enzyme only from young calves' stomachs, but since the 1990s the animal source has nearly vanished. Where does the modern rennet come from?",
+    "question": "A supermarket cheese counter is stacked with wheels and blocks, most of them set with rennet that never came near a calf. For thousands of years cheesemakers took that enzyme from the stomachs of young calves, lambs and kids, but since the 1990s the animal source has grown rare. Where does modern rennet come from?",
     "answer": "grown by microbes in big tanks",
     "choices": [
       "grown by microbes in big tanks",
@@ -11714,19 +11714,6 @@
   },
   {
     "tier": 3,
-    "question": "A botanist looks closely at dried chickpeas and notices a small pointed beak on each, almost like a tiny horned head. Early botanists thought each seed looked so much like one animal's head that the plant's scientific name, Cicer arietinum, means '___-like'. Which animal?",
-    "answer": "A ram",
-    "choices": [
-      "A ram",
-      "A goat",
-      "A bull",
-      "A stag"
-    ],
-    "context": "'Arietinum' comes from the Latin for 'ram' — botanists thought the seed's little beak looked like a ram's head. The chickpea is also known as the garbanzo bean. Source: Wikipedia 'Chickpea'.",
-    "topic": "hummus-and-tahini-chickpeas-meet-sesame"
-  },
-  {
-    "tier": 3,
     "question": "A diner at a Lebanese restaurant gets hummus as silky as pudding, spreading in soft ribbons across the plate. At home he blends the same cooked chickpeas with the same tahini in the same blender, and his batch comes out gritty and grainy. The restaurant's cooks take one extra, tedious step that he skips. What is it?",
     "answer": "They peel the skin off every bean",
     "choices": [
@@ -11735,7 +11722,7 @@
       "They soak the beans in lemon juice",
       "They chill the beans overnight first"
     ],
-    "context": "The papery skins are exactly what make cheap hummus feel gritty. Boil the chickpeas soft enough and the skins slip right off, leaving the ultra-smooth purée you get at good restaurants. Source: America's Test Kitchen 'For Creamier Hummus, Skin Your Chickpeas'; smittenkitchen 'ethereally smooth hummus'.",
+    "context": "The papery skins are exactly what make cheap hummus feel gritty. Boil the chickpeas soft enough and the skins slip right off, leaving the ultra-smooth purée that good restaurants serve. Source: America's Test Kitchen 'For Creamier Hummus, Skin Your Chickpeas'; smittenkitchen 'ethereally smooth hummus'.",
     "topic": "hummus-and-tahini-chickpeas-meet-sesame"
   },
   {
@@ -11753,20 +11740,7 @@
   },
   {
     "tier": 5,
-    "question": "Ibn al-Adim, a historian of 13th-century Aleppo in Syria, is credited with the oldest recipe that survives for chickpeas mashed with a seed paste. The recipe does not call the dish 'hummus' at all; it names it after an everyday piece of clothing. Which garment?",
-    "answer": "A cloak",
-    "choices": [
-      "A cloak",
-      "A turban",
-      "A sash",
-      "A veil"
-    ],
-    "context": "The recipe, attributed to the Aleppo historian Ibn al-Adim around 1250 CE, called the dish 'kisāʾ' — Arabic for 'garment' or 'cloak.' It used chickpeas, lemon, sesame, and olive oil, but no garlic at all. Source: Eats History 'Oldest Hummus Recipe'; Wikipedia 'Hummus'.",
-    "topic": "hummus-and-tahini-chickpeas-meet-sesame"
-  },
-  {
-    "tier": 5,
-    "question": "About 300 cooks gathered near Beirut in 2010 and filled one bowl with more than 10,000 kilograms of hummus, more than double the world record a rival nation had set only weeks before. Lebanon took the title, one more round in the feud nicknamed the Hummus Wars. Whose record did the cooks smash?",
+    "question": "About 300 cooks gathered near Beirut in 2010 and filled one bowl with more than 10,000 kilograms of hummus, more than double the world record a rival nation had set earlier that year. Lebanon took the title, one more round in the feud nicknamed the Hummus Wars. Whose record did the cooks smash?",
     "answer": "Israel's",
     "choices": [
       "Israel's",
@@ -11844,11 +11818,11 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you sit down to dinner in an Ethiopian home. On the table there is no fork, no spoon and no plate; a huge, spongy, sour flatbread called injera lies spread out like a tablecloth, with spicy stews ladled in mounds on top. How do you eat the meal?",
+    "question": "A guest sits down to dinner in an Ethiopian home. There is no fork, no spoon and no plate; a huge, spongy, sour flatbread called injera lies spread like a tablecloth, with spicy stews in mounds on top. How does he eat the meal?",
     "answer": "Tear off pieces of the injera and use them to scoop up the stew",
     "choices": [
       "Tear off pieces of the injera and use them to scoop up the stew",
-      "Lift the whole flatbread and let the stew slide into your mouth",
+      "Lift the whole flatbread and let the stew slide into his mouth",
       "Sip the stew first, then eat the bare bread on its own",
       "Roll each bite up inside a fresh green leaf like a wrap"
     ],
@@ -11973,14 +11947,14 @@
     "topic": "injera-and-teff-the-bread-that-is-the-plate-and-the-fork"
   },
   {
-    "tier": 5,
-    "question": "At an Ethiopian table, a diner tears off a piece of injera, scoops up a big bite of stew and pops it into a friend's mouth with his own hand, and a bigger bite shows deeper affection. What is this way of feeding someone called?",
-    "answer": "gursha",
+    "tier": 3,
+    "question": "At an Ethiopian table, a woman wraps a bite of stew in a torn piece of injera and feeds it to her friend with her own fingers. Ethiopians call this gursha, Amharic for 'mouthful', and some gurshas are far bigger than others. What does an extra-big gursha tell the friend?",
+    "answer": "The giver's affection runs deeper",
     "choices": [
-      "gursha",
-      "berbere",
-      "mitad",
-      "mesob"
+      "The giver's affection runs deeper",
+      "The friend has had enough to eat",
+      "The meal is about to come to an end",
+      "The cook made far too much food"
     ],
     "context": "Gursha (Amharic for 'mouthful') is the custom of using injera to scoop a bite and feed it by hand into someone else's mouth — a gesture of love and respect, and the bigger the bite, the deeper the affection. Source: Salaam Urban Village, 'Gursha'; Comboni Lay Missionaries, 'The Ethiopian Gursha'.",
     "topic": "injera-and-teff-the-bread-that-is-the-plate-and-the-fork"
@@ -12051,19 +12025,6 @@
     "topic": "iodine-iodized-salt-and-the-end-of-the-goiter-belt"
   },
   {
-    "tier": 5,
-    "question": "A baby starved of iodine before birth was stunted for life, its developing brain permanently damaged, a harm far crueler than a swollen neck. Even today no preventable cause of intellectual disability harms as many children worldwide. Doctors once gave the condition a name they no longer use. What was it?",
-    "answer": "Cretinism",
-    "choices": [
-      "Cretinism",
-      "Pellagra",
-      "Rickets",
-      "Scurvy"
-    ],
-    "context": "Severe iodine deficiency before birth caused cretinism (congenital iodine deficiency syndrome) -- stunted growth and lifelong intellectual disability -- and just a trace of iodine prevents it. The others come from different gaps: pellagra from too little niacin, rickets from too little vitamin D, scurvy from too little vitamin C. Source: Wikipedia, 'Iodine deficiency.'",
-    "topic": "iodine-iodized-salt-and-the-end-of-the-goiter-belt"
-  },
-  {
     "tier": 1,
     "question": "A kid who is always tired, pale and cold-handed gets a blood test, and the doctor points to low iron. Iron sits at the heart of hemoglobin in the red blood cells, where it does one job for the whole body. What is that job?",
     "answer": "Grabs oxygen in the lungs and carries it everywhere",
@@ -12112,7 +12073,7 @@
       "Vitamin B12",
       "Vitamin K"
     ],
-    "context": "Vitamin C keeps iron in its soluble, absorbable form: about 100 mg (a squeeze of citrus, some bell peppers or tomatoes) can raise a single meal's plant-iron absorption two- to threefold. The honest catch — it's dramatic per meal but modest over a whole day; one controlled study found little difference in daily iron absorption across vitamin C intakes from 51 to 247 mg. So an orange helps THAT dinner more than it moves your day-long iron balance. Source: Hallberg & Brune, Am J Clin Nutr; Cook & Reddy, Am J Clin Nutr (PubMed 11124756).",
+    "context": "Vitamin C keeps iron in its soluble, absorbable form: about 100 mg (a squeeze of citrus, some bell peppers or tomatoes) can raise a single meal's plant-iron absorption two- to threefold. The honest catch — it's dramatic per meal but modest over a whole day; one controlled study found little difference in daily iron absorption across vitamin C intakes from 51 to 247 mg. So an orange helps THAT dinner more than it moves a whole day's iron balance. Source: Hallberg & Brune, Am J Clin Nutr; Cook & Reddy, Am J Clin Nutr (PubMed 11124756).",
     "topic": "iron-heme-meat-vs-non-heme-plants"
   },
   {
@@ -12125,7 +12086,7 @@
       "Oxalates",
       "Phytates"
     ],
-    "context": "Tannins (polyphenols) in tea and coffee lock iron into insoluble iron-tannate complexes. In the classic study, a cup of tea with a hamburger slashed iron absorption about 64%, coffee about 39%. Whole grains, beans, nuts, and seeds do similar damage through their storage compound, phytates. Best move: keep tea and coffee away from your iron-rich meals. Source: Morck, Lynch & Cook, Am J Clin Nutr 1983; NIH ODS Iron Fact Sheet.",
+    "context": "Tannins (polyphenols) in tea and coffee lock iron into insoluble iron-tannate complexes. In the classic study, a cup of tea with a hamburger slashed iron absorption about 64%, coffee about 39%. Whole grains, beans, nuts, and seeds do similar damage through their storage compound, phytates. Best move: keep tea and coffee away from iron-rich meals. Source: Morck, Lynch & Cook, Am J Clin Nutr 1983; NIH ODS Iron Fact Sheet.",
     "topic": "iron-heme-meat-vs-non-heme-plants"
   },
   {
@@ -12138,12 +12099,12 @@
       "Fiber",
       "Tannins"
     ],
-    "context": "Raw spinach really holds iron (about 2.7 mg per 100 g), but it's loaded with oxalates that bind the iron so tightly the body absorbs only about 1–2%. Popeye is legend, not nutrition — the iron is technically there, it just mostly passes straight through. Source: NIH ODS Iron Fact Sheet (oxalate inhibition); nutrition-science reviews on spinach iron bioavailability. [Framed as legend: the spinach superfood reputation is a myth.]",
+    "context": "Raw spinach really holds iron (about 2.7 mg per 100 g), but it's loaded with oxalates that bind the iron so tightly the body absorbs only about 1–2%. Popeye is legend, not nutrition — the iron is technically there, it just mostly passes straight through. Source: NIH ODS Iron Fact Sheet (oxalate inhibition); nutrition-science reviews on spinach iron bioavailability.",
     "topic": "iron-heme-meat-vs-non-heme-plants"
   },
   {
     "tier": 4,
-    "question": "John Brittin and Charlene Nossaman cooked the same tomato spaghetti sauce two ways in 1986. One batch came out with barely any iron in it; the other, from the same recipe and the same tomatoes, held nearly ten times as much, and it was iron the body could actually absorb. What did the pair do differently to the second batch?",
+    "question": "Two nutrition researchers, Brittin and Nossaman, cooked the same tomato spaghetti sauce two ways in 1986. One batch came out with barely any iron in it; the other, from the same recipe and the same tomatoes, held nearly ten times as much. What did the pair do differently to the second batch?",
     "answer": "Simmered it in a bare cast-iron pan",
     "choices": [
       "Simmered it in a bare cast-iron pan",
@@ -12151,20 +12112,20 @@
       "Cooked it under a blazing-hot broiler",
       "Added an extra pinch of table salt"
     ],
-    "context": "Cooking acidic, watery food in bare cast iron leaches real, usable NON-heme iron into the food. In Brittin & Nossaman's 1986 study, spaghetti sauce jumped from 0.61 to 5.77 mg iron per 100 g (about 9.5x) and applesauce from 0.35 to 7.38 mg. A new, unseasoned skillet gives up the most; a well-seasoned old one gives up less (the baked-on fat shields the metal), and more acid, moisture, simmering, and stirring all pull out more. Source: Brittin & Nossaman, J Am Diet Assoc, July 1986, 86(7):897–901.",
+    "context": "Cooking acidic, watery food in bare cast iron leaches real, usable NON-heme iron into the food. In H. C. Brittin and C. E. Nossaman's 1986 study, spaghetti sauce jumped from 0.61 to 5.77 mg iron per 100 g (about 9.5x) and applesauce from 0.35 to 7.38 mg. A new, unseasoned skillet gives up the most; a well-seasoned old one gives up less (the baked-on fat shields the metal), and more acid, moisture, simmering, and stirring all pull out more. Source: Brittin & Nossaman, J Am Diet Assoc, July 1986, 86(7):897–901.",
     "topic": "iron-heme-meat-vs-non-heme-plants"
   },
   {
     "tier": 5,
-    "question": "Someone on a typical Western diet gets just 10 to 15 percent of his iron in the easily absorbed heme form, from meat. Yet that small slice delivers a far bigger share of what his body actually takes in, because plant iron floats loose in the gut, where other compounds bind it. Meat's iron comes protected. What molecule is it already packaged inside?",
-    "answer": "A porphyrin ring — inside hemoglobin and myoglobin",
+    "question": "A typical Western eater gets just 10 to 15 percent of his iron in the heme form from meat, yet that slice makes up about 40 percent of what his body actually absorbs. Plant iron floats loose in the gut, where other compounds grab it, but meat's iron comes protected. What is it packaged inside?",
+    "answer": "The red pigments of its blood and muscle",
     "choices": [
-      "A porphyrin ring — inside hemoglobin and myoglobin",
-      "A phytate cage — inside whole-grain husks",
-      "A polyphenol shell — inside strong-tea leaves",
-      "A cellulose fiber — inside tough plant walls"
+      "The red pigments of its blood and muscle",
+      "The white fat marbled through its muscle",
+      "The tough collagen in its sinews",
+      "The mineral salts in its juices"
     ],
-    "context": "That's the honest core of the two-iron story: heme iron is only about 10–15% of the iron a Western diet EATS, yet it delivers roughly 40% of the iron actually ABSORBED — meat's iron punches far above its weight. Plant-only iron can still work, but you have to work the system: vegetarians are advised to aim for about 1.8x the iron intake, lean hard on the vitamin-C pairing, and keep tea away from meals — which is exactly why iron deficiency is more common among people who eat no meat. Source: NCBI StatPearls, Dietary Iron; NIH ODS Iron Fact Sheet.",
+    "context": "That's the honest core of the two-iron story: heme iron is only about 10-15% of the iron a Western diet EATS, yet it delivers roughly 40% of the iron actually ABSORBED, because it travels inside the meat's own hemoglobin and myoglobin, held in a ring-shaped molecule called a porphyrin, out of reach of the gut's blockers. Plant-only iron can still work, but its eaters have to work the system: vegetarians are advised to aim for about 1.8x the iron intake, lean hard on the vitamin-C pairing, and keep tea away from meals, which is why iron deficiency is more common among people who eat no meat. Source: NCBI StatPearls, Dietary Iron; NIH ODS Iron Fact Sheet.",
     "topic": "iron-heme-meat-vs-non-heme-plants"
   },
   {
@@ -12242,7 +12203,7 @@
       "from a spoonful of dark molasses",
       "from toasted, ground coffee beans"
     ],
-    "context": "Creole (New Orleans) jambalaya adds tomatoes for a 'red' dish; Cajun (Acadiana) jambalaya skips the tomato and browns the meat in a cast-iron pot, so the caramelized stuck bits — the 'sucs' — give it a deep brown color. It's the same Creole/Cajun split you see in gumbo. Source: Wikipedia, 'Jambalaya.'",
+    "context": "Creole (New Orleans) jambalaya adds tomatoes for a 'red' dish; Cajun (Acadiana) jambalaya skips the tomato and browns the meat in a cast-iron pot, so the caramelized stuck bits — the 'sucs' — give it a deep brown color. It's the same Creole/Cajun split seen in gumbo. Source: Wikipedia, 'Jambalaya.'",
     "topic": "jambalaya-vs-paella-the-saffron-that-wasnt-there"
   },
   {
@@ -12312,7 +12273,7 @@
   },
   {
     "tier": 5,
-    "question": "A chef in a traditional Japanese kitchen picks up the usuba, a wide vegetable knife, to perform a trick called katsuramuki. He holds the razor edge steady against a fat cylinder of daikon radish and slowly turns the radish against the blade, his hand never lifting, and something peels off in a single, unbroken piece. What does the chef end up with?",
+    "question": "A chef in a traditional Japanese kitchen picks up the usuba, a wide vegetable knife, to perform a trick called katsuramuki. He holds the razor edge steady against a fat cylinder of daikon radish and slowly turns the radish against the blade. What does the chef end up with?",
     "answer": "One long, continuous sheet thin enough to read print through",
     "choices": [
       "One long, continuous sheet thin enough to read print through",
@@ -12351,13 +12312,13 @@
   },
   {
     "tier": 2,
-    "question": "Jollof rice likely first simmered in a clay pot over a wood fire in Jolof, an old kingdom that ruled what is now inland Senegal in the 1300s. The dish is named not for a food or a chef but for a people of that kingdom. Which West African people gave jollof its name?",
-    "answer": "The Wolof",
+    "question": "Jollof rice is named for the Wolof people and their Jolof Empire, which ruled from the 1300s in the land where the dish is thought to have begun. From there the dish spread to neighbors far to the east. In which modern country did the old empire stand?",
+    "answer": "Senegal",
     "choices": [
-      "The Wolof",
-      "The Yoruba",
-      "The Asante",
-      "The Igbo"
+      "Senegal",
+      "Nigeria",
+      "Liberia",
+      "Cameroon"
     ],
     "context": "The Wolof people of Senegal and The Gambia gave the dish its name; scholars trace jollof to the medieval Wolof (Jolof) Empire of inland Senegal, from which it spread east across West Africa. Note: the name comes from the Wolof PEOPLE — it is not a Wolof word meaning 'one pot,' even though 'one pot' describes the dish well. Source: Britannica 'jollof rice'; Wikipedia 'Jollof rice'.",
     "topic": "jollof-rice-west-africas-one-pot-and-the-friendly-war"
@@ -12415,21 +12376,8 @@
     "topic": "jollof-rice-west-africas-one-pot-and-the-friendly-war"
   },
   {
-    "tier": 4,
-    "question": "Jamie Oliver, the British TV chef, posted a 'jollof rice' recipe in 2014 made with cherry tomatoes, cilantro, parsley and lemon, none of them traditional. West Africans lit up online under the hashtag jollofgate, and one defiant rallying cry rang out until his team pulled the recipe. What did that viral line declare?",
-    "answer": "Our plates will not be colonized",
-    "choices": [
-      "Our plates will not be colonized",
-      "Leave our grandmothers' pots alone",
-      "This is not our jollof, chef",
-      "Keep your lemons out of our rice"
-    ],
-    "context": "The line 'our plates will not be colonized' captured the outrage — West Africans felt an outsider had rewritten a beloved dish with ingredients no jollof cook would use. Amid the #jollofgate storm, the recipe was taken down. It stayed a battle of words and memes, in the same playful-but-proud spirit as the Nigeria-Ghana Jollof Wars. Source: BellaNaija '#jollofgate'; Wikipedia 'Jollof rice'.  (Legend.)",
-    "topic": "jollof-rice-west-africas-one-pot-and-the-friendly-war"
-  },
-  {
     "tier": 1,
-    "question": "Whisks flew and pans clattered when Julia Child stepped before a black-and-white public-television camera in Boston in 1963 to host one of America's first cooking shows. When she made a small flub, the crew left it in the tape. What was her landmark show called?",
+    "question": "Whisks flew and pans clattered when Julia Child stepped before a black-and-white public-television camera in Boston in 1963. She was hosting one of America's first cooking shows, and it would make her famous. What was her landmark show called?",
     "answer": "The French Chef",
     "choices": [
       "The French Chef",
@@ -12645,7 +12593,7 @@
       "The national grain",
       "The national treasure"
     ],
-    "context": "In October 2006 Japan named koji its 'national fungus' (kokkin), a title proposed by Eiji Ichishima of Tohoku University at the Brewing Society of Japan — koji is a cultivated mold, scientific name Aspergillus oryzae. Source: en.wikipedia.org/wiki/Aspergillus_oryzae; umamiinfo.com 'Miso'.",
+    "context": "In October 2006 the Brewing Society of Japan named koji the 'national fungus' (kokkin), approving a title proposed by Eiji Ichishima of Tohoku University; koji is a cultivated mold, scientific name Aspergillus oryzae. Source: en.wikipedia.org/wiki/Aspergillus_oryzae; umamiinfo.com 'Miso'.",
     "topic": "koji-the-mold-behind-soy-sauce-and-miso"
   },
   {
@@ -12663,7 +12611,7 @@
   },
   {
     "tier": 4,
-    "question": "Koji's wild cousin, the mold Aspergillus flavus, spoils stored crops with aflatoxin, one of nature's deadliest poisons. Koji still carries the same DNA instructions for making it, yet it is perfectly safe to eat, the reward of about 2,000 years of careful breeding by Japanese brewers. What did that breeding do to koji?",
+    "question": "Koji's wild cousin, the mold Aspergillus flavus, spoils stored crops with aflatoxin, one of nature's deadliest poisons. Koji descends from that very mold, yet it is perfectly safe to eat, the reward of centuries of brewers choosing and keeping their best strains. What did that long taming do to koji?",
     "answer": "It lost the ability to make the poison",
     "choices": [
       "It lost the ability to make the poison",
@@ -12671,7 +12619,7 @@
       "It seals the poison inside its spores",
       "It changes the poison into plain salt"
     ],
-    "context": "Koji (Aspergillus oryzae) descends from the toxin-making wild mold Aspergillus flavus. Centuries of human selection left koji's aflatoxin genes in place but broken and switched off, so roughly 2,000 years of domestication turned a poisonous wild mold into a safe, precise enzyme factory.",
+    "context": "Koji (Aspergillus oryzae) descends from the toxin-making wild mold Aspergillus flavus. It still carries the aflatoxin gene cluster, but broken and switched off, so centuries of human selection turned a poisonous wild mold into a safe, precise enzyme factory. Source: Wikipedia, 'Aspergillus oryzae'.",
     "topic": "koji-the-mold-behind-soy-sauce-and-miso"
   },
   {
@@ -12684,7 +12632,7 @@
       "A basin of frying oil set into the middle of the table",
       "A flat steam-tray set into the middle of the table"
     ],
-    "context": "The grill sits right in the tabletop — charcoal or gas — and diners cook their own strips of meat as they eat. Its center runs hottest, so you slide a piece to the cooler outer edge to keep it from burning. Source: en.wikipedia.org/wiki/Korean_barbecue (corroborated by Amazing Food & Drink's Korean BBQ Guide).",
+    "context": "The grill sits right in the tabletop — charcoal or gas — and diners cook their own strips of meat as they eat. Its center runs hottest, so diners slide a piece to the cooler outer edge to keep it from burning. Source: en.wikipedia.org/wiki/Korean_barbecue (corroborated by Amazing Food & Drink's Korean BBQ Guide).",
     "topic": "korean-bbq-banchan-ssam-and-the-grill-table"
   },
   {
@@ -12693,11 +12641,11 @@
     "answer": "The staff refill it for free, again and again",
     "choices": [
       "The staff refill it for free, again and again",
-      "The staff add every refill to your bill",
+      "The staff add every refill to the bill",
       "The staff clear it away for the next course",
       "The staff swap in a costlier side dish"
     ],
-    "context": "Banchan are the little shared side dishes, and yes — the staff top them up for free as often as you empty them. Korean meals are even formally named by how many sides they carry: a 3-, 5-, 7- or 9-cheop table, with the royal court's grandest spread a 12-cheop feast. Source: en.wikipedia.org/wiki/Banchan.",
+    "context": "Banchan are the little shared side dishes, and yes — the staff top them up for free as often as diners empty them. Korean meals are even formally named by how many sides they carry: a 3-, 5-, 7- or 9-cheop table, with the royal court's grandest spread a 12-cheop feast. Source: en.wikipedia.org/wiki/Banchan.",
     "topic": "korean-bbq-banchan-ssam-and-the-grill-table"
   },
   {
@@ -12719,9 +12667,9 @@
     "answer": "Asian pear",
     "choices": [
       "Asian pear",
-      "Fresh pineapple",
-      "Green kiwi",
-      "Ripe papaya"
+      "Sweet persimmon",
+      "Ripe banana",
+      "Green grape"
     ],
     "context": "Grated Asian pear is the classic bulgogi trick: the fruit's natural enzymes break down the beef's proteins, tenderizing it while adding a clean sweetness — but leave it more than a day and those same enzymes turn the meat mushy. (Some blogs wrongly name the enzyme 'calpain,' which is actually a muscle enzyme — the verified point is simply that pear enzymes tenderize.) Bulgogi's roots reach back to the ancient Goguryeo kingdom, where an early skewered version was called maekjeok. Sources: en.wikipedia.org/wiki/Bulgogi; tastingtable.com.",
     "topic": "korean-bbq-banchan-ssam-and-the-grill-table"
@@ -12736,7 +12684,7 @@
       "caramel",
       "chocolate"
     ],
-    "context": "A laminated pastry like a croissant is a true stack of alternating layers -- paper-thin dough and paper-thin solid butter -- and a well-made one can hold more than eighty of them. Slice one straight across and you can actually count the stripes. Source: en.wikipedia.org/wiki/Laminated_dough",
+    "context": "A laminated pastry like a croissant is a true stack of alternating layers -- paper-thin dough and paper-thin solid butter -- and a well-made one can hold more than eighty of them. Slice one straight across and the stripes can actually be counted. Source: en.wikipedia.org/wiki/Laminated_dough",
     "topic": "lamination-the-croissants-hundred-layers"
   },
   {
@@ -13014,28 +12962,15 @@
   },
   {
     "tier": 1,
-    "question": "A diner takes a spoon of yogurt, a swig of kefir and a bite of raw sauerkraut, and each sneaks the same tiny passengers into the gut: living, helpful bacteria. What is a food that carries such live microbes called?",
-    "answer": "probiotic",
+    "question": "A diner takes a spoon of yogurt, a swig of kefir and a bite of raw sauerkraut, three foods sold as probiotics. What do all three carry into the gut that earns them that name?",
+    "answer": "Live, helpful bacteria",
     "choices": [
-      "probiotic",
-      "prebiotic",
-      "antibiotic",
-      "antioxidant"
+      "Live, helpful bacteria",
+      "Indigestible plant fiber",
+      "Extra iron and calcium",
+      "Heart-healthy plant oils"
     ],
-    "context": "The FDA and WHO define a probiotic as 'live microorganisms that, when administered in adequate amounts, confer a health benefit on the host' — the key word being LIVE. Yogurt and kefir run on Lactobacillus and Bifidobacterium cultures; raw, unpasteurized sauerkraut carries live lactobacilli too. Source: Wikipedia, 'Probiotic.'",
-    "topic": "live-bugs-vs-their-food-probiotics-and-prebiotics"
-  },
-  {
-    "tier": 2,
-    "question": "A shopper reads 'probiotic' on a yogurt tub; the word means 'for life', for the helpful living microbes the food adds to the gut. It was coined as the exact mirror image of an everyday medicine whose name means the opposite, 'against life', because it kills off invading germs. Which medicine is that?",
-    "answer": "antibiotic",
-    "choices": [
-      "antibiotic",
-      "antiseptic",
-      "antiviral",
-      "antifungal"
-    ],
-    "context": "'Probiotic' literally means 'for life' — Latin pro ('for') plus Greek biotikos ('fit for life') — the exact opposite of 'antibiotic,' which means 'against life.' An antibiotic kills bacteria; a probiotic adds living ones TO you. Source: Wikipedia, 'Probiotic.'",
+    "context": "The FAO and WHO define a probiotic as 'live microorganisms that, when administered in adequate amounts, confer a health benefit on the host' — the key word being LIVE. Yogurt and kefir run on Lactobacillus and Bifidobacterium cultures; raw, unpasteurized sauerkraut carries live lactobacilli too. Source: Wikipedia, 'Probiotic.'",
     "topic": "live-bugs-vs-their-food-probiotics-and-prebiotics"
   },
   {
@@ -13045,23 +12980,23 @@
     "choices": [
       "It kills them, so the cooked kraut has no live cultures left.",
       "It makes them multiply, so the dish ends up even richer in them.",
-      "It only stuns them, and they revive in your warm stomach.",
-      "It toughens their shells, so they survive the trip through you."
+      "It only stuns them, and they revive in the warm stomach.",
+      "It toughens their shells, so they survive the trip through the gut."
     ],
     "context": "Only raw, uncooked, unpasteurized sauerkraut still carries live lactobacilli. Canned pasteurized kraut, cultures baked into bread, and boiled kombucha are all heat-killed. That's exactly why a yogurt tub brags 'LIVE & ACTIVE CULTURES' — the seal proves the bacteria survived and weren't cooked to death after fermenting. Source: Wikipedia, 'Sauerkraut' and 'Probiotic'; IDFA 'Live & Active Cultures Seal.'",
     "topic": "live-bugs-vs-their-food-probiotics-and-prebiotics"
   },
   {
     "tier": 3,
-    "question": "In a supermarket, yogurt labels say probiotic and fiber packets say prebiotic. The two words sound almost the same but name opposite jobs. A probiotic is a living, helpful bacterium swallowed in yogurt or kefir to work in the gut; a prebiotic is not alive at all, and not even a microbe. What is a prebiotic?",
-    "answer": "A fiber that feeds the microbes already living in your gut.",
+    "question": "A probiotic is a living, helpful bacterium swallowed in yogurt or kefir. Its near-namesake, a prebiotic, is no microbe at all: it is a fiber the body cannot digest, eaten to feed the microbes that already live in the gut. Where in the body does a prebiotic finally do its work?",
+    "answer": "In the large intestine",
     "choices": [
-      "A fiber that feeds the microbes already living in your gut.",
-      "A mineral that hardens and strengthens the lining of your gut.",
-      "A sugar that your body burns fast for a quick jolt of energy.",
-      "A protein that patches up tiny tears along your gut wall."
+      "In the large intestine",
+      "In the small intestine",
+      "In the stomach lining",
+      "In the mouth and throat"
     ],
-    "context": "The word 'prebiotic' was named by scientist Marcel Roberfroid in 1995. The fiber passes undigested down to your colon, where your resident bacteria ferment it. So a probiotic ADDS microbes; a prebiotic FEEDS the ones you already have. Source: Wikipedia, 'Prebiotic (nutrition).'",
+    "context": "Prebiotics were first identified and named by the scientist Marcel Roberfroid in 1995. The fiber passes undigested through the stomach and small intestine down to the colon, the large intestine, where the resident bacteria ferment it. So a probiotic ADDS microbes; a prebiotic FEEDS the ones already living there. Source: Wikipedia, 'Prebiotic (nutrition).'",
     "topic": "live-bugs-vs-their-food-probiotics-and-prebiotics"
   },
   {
@@ -13092,10 +13027,10 @@
   },
   {
     "tier": 3,
-    "question": "A backyard cook reads that the collagen in a brisket 'starts melting around 160 F' into rich, silky gelatin. So he blasts his brisket over hardwood, yanks it off the smoker the moment the thermometer reads 160 F in the center, and carves it, only to find the meat still tough and chewy, not fall-apart tender. What did he misunderstand about turning collagen into gelatin?",
-    "answer": "it keeps melting for hours, so it needs TIME, not just the number",
+    "question": "A backyard cook reads that the collagen in a brisket 'starts melting around 160 F' into rich, silky gelatin. So he smokes his brisket over hardwood, yanks it off the smoker the moment the thermometer reads 160 F in the center, and carves it, only to find the meat still tough and chewy, not fall-apart tender. What did he misunderstand about turning collagen into gelatin?",
+    "answer": "it keeps melting for hours, so it needs time, not just a number",
     "choices": [
-      "it keeps melting for hours, so it needs TIME, not just the number",
+      "it keeps melting for hours, so it needs time, not just a number",
       "160°F is far too cool — collagen needs a searing 400°F",
       "he should freeze the meat first to shatter the collagen",
       "collagen only melts in dry heat, never in a wet braise"
@@ -13139,7 +13074,7 @@
       "smoke forming an insulating shell",
       "collagen swallowing heat as it melts"
     ],
-    "context": "The stall is evaporative cooling: moisture sweating out of the meat evaporates and cools the surface as fast as the fire heats it — just like sweat cools you after mowing the lawn. Professor Greg Blonder proved it by putting a wet sponge in a smoker, where it 'stalled' the same way, while a block of pure fat heated straight through with no stall — killing the old myth that melting fat or collagen causes the stall. Source: amazingribs.com.  (Legend.)",
+    "context": "The stall is evaporative cooling: moisture sweating out of the meat evaporates and cools the surface as fast as the fire heats it, just as sweat cools a person working in the summer sun. Professor Greg Blonder proved it by putting a wet sponge in a smoker, where it 'stalled' the same way, while a block of pure fat heated straight through with no stall, killing the old myth that melting fat or collagen causes the stall. Source: amazingribs.com.",
     "topic": "low-and-slow-collagen-melts-to-gelatin"
   },
   {
@@ -13157,41 +13092,41 @@
   },
   {
     "tier": 5,
-    "question": "A spoonful of chilled, gelatin-rich stock is firm enough to wobble, yet set on the tongue it vanishes into warm liquid almost at once: it truly melts in the mouth. What is special about gelatin that makes it do this?",
-    "answer": "its melting point sits right at body temperature",
+    "question": "A cook lifts a spoonful of chilled, gelatin-rich stock from the fridge, firm enough to wobble like jelly on the spoon. Yet set on the tongue, it vanishes into warm liquid almost at once. What is special about gelatin that makes it do this?",
+    "answer": "it melts just below body temperature",
     "choices": [
-      "its melting point sits right at body temperature",
-      "your saliva instantly dissolves it away",
-      "the acids in your mouth break it apart",
-      "the warmth of chewing shatters its structure"
+      "it melts just below body temperature",
+      "saliva instantly dissolves it away",
+      "the acids in the mouth break it apart",
+      "the heat of chewing shatters its structure"
     ],
-    "context": "Gelatin melts at close to body temperature (about 95°F / 35°C), and the change is reversible — cool it and it sets firm, warm it and it flows. That low melting point is exactly why a chilled stock is solid but a hot braise seems to 'melt in your mouth.' Source: napoleon.com; corroborated by frejabonebroth.com.  (Legend.)",
+    "context": "Gelatin melts at about 95°F (35°C), just under body temperature, and the change is reversible: cool it and it sets firm, warm it and it flows. That low melting point is exactly why a chilled stock is solid but a hot braise seems to 'melt in the mouth.' Source: napoleon.com; corroborated by frejabonebroth.com.",
     "topic": "low-and-slow-collagen-melts-to-gelatin"
   },
   {
     "tier": 1,
-    "question": "A cook making baked mac and cheese starts not with cheese but with raw flour stirred into melted butter on the stove, toasted until the paste smells nutty. That golden paste is the base the whole sauce is built on. What do chefs call it?",
-    "answer": "A roux",
+    "question": "A cook making baked mac and cheese starts not with cheese but with a roux: raw flour stirred into melted butter on the stove and toasted until the paste smells nutty. The whole sauce is built on it. What job does the roux do?",
+    "answer": "Thickens the sauce so it clings to the pasta",
     "choices": [
-      "A roux",
-      "A slurry",
-      "A batter",
-      "A ganache"
+      "Thickens the sauce so it clings to the pasta",
+      "Turns the sauce a deep golden yellow",
+      "Gives the sauce a sharp, salty tang",
+      "Keeps the noodles firm as they bake"
     ],
     "context": "A roux is equal parts flour and fat (usually butter) cooked together — the thickener that turns milk into a sauce that clings to pasta, which is why a real baked mac and cheese starts here, not with melted cheese. Source: https://en.wikipedia.org/wiki/Roux",
     "topic": "mac-and-cheese-and-the-mother-sauce"
   },
   {
     "tier": 2,
-    "question": "Flour cooked in butter bubbles in a cook's pan. As milk is slowly whisked in, it thickens into a smooth, pourable white sauce that clings to the pasta, one of France's most famous sauces. What is it called?",
-    "answer": "Béchamel",
+    "question": "Milk whisked slowly into a roux turns into béchamel, France's famous white sauce and the base of a baked mac and cheese. Before the cheese goes in, a traditional cook often adds a pinch of one warm spice. Which spice?",
+    "answer": "Nutmeg",
     "choices": [
-      "Béchamel",
-      "Velouté",
-      "Hollandaise",
-      "Espagnole"
+      "Nutmeg",
+      "Cinnamon",
+      "Cumin",
+      "Cardamom"
     ],
-    "context": "Whisk milk into a white roux and you get béchamel, the 'white sauce' — milk thickened with roux and often seasoned with a little onion, nutmeg, or thyme. The roux is what lets the milk cling to the noodles instead of running off. Source: https://en.wikipedia.org/wiki/Mother_sauce",
+    "context": "Milk whisked into a white roux makes béchamel, the 'white sauce', and cooks have long seasoned it with a little nutmeg, often with onion or thyme too. The roux is what lets the milk cling to the noodles instead of running off. Source: https://en.wikipedia.org/wiki/Mother_sauce",
     "topic": "mac-and-cheese-and-the-mother-sauce"
   },
   {
@@ -13204,20 +13139,7 @@
       "Cured it in a salt crust",
       "Smoked it over a slow fire"
     ],
-    "context": "Kraft's boxed Macaroni & Cheese launched in 1937 and sold about 8 million boxes its first year — cheap, filling, shelf-stable protein in the middle of the Great Depression. The trick was the cheese: dried to a powder, it kept for months in a packet with no refrigeration. During WWII you could get two boxes for a single food-ration stamp. Source: https://en.wikipedia.org/wiki/Macaroni_and_cheese ; https://www.smithsonianmag.com/arts-culture/marvelous-macaroni-and-cheese-30954740/",
-    "topic": "mac-and-cheese-and-the-mother-sauce"
-  },
-  {
-    "tier": 3,
-    "question": "Into a smooth white sauce of milk thickened with flour and butter goes a big handful of grated cheese. The result is the sauce hiding inside every pot of baked mac and cheese, and it has its own French name. What is it?",
-    "answer": "Mornay",
-    "choices": [
-      "Mornay",
-      "Soubise",
-      "Velouté",
-      "Nantua"
-    ],
-    "context": "Wikipedia's definition is exact: 'A Mornay sauce is a béchamel sauce with grated cheese added.' So baked mac and cheese is really béchamel plus cheese — a Mornay. (Soubise is béchamel plus onion; velouté and Nantua are different sauces entirely.) Source: https://en.wikipedia.org/wiki/Mornay_sauce",
+    "context": "Kraft's boxed Macaroni & Cheese launched in 1937 and sold about 8 million boxes its first year — cheap, filling, shelf-stable protein in the middle of the Great Depression. The trick was the cheese: dried to a powder, it kept for months in a packet with no refrigeration. During WWII a shopper could get two boxes for a single food-ration stamp. Source: https://en.wikipedia.org/wiki/Macaroni_and_cheese ; https://www.smithsonianmag.com/arts-culture/marvelous-macaroni-and-cheese-30954740/",
     "topic": "mac-and-cheese-and-the-mother-sauce"
   },
   {
@@ -13261,7 +13183,7 @@
   },
   {
     "tier": 5,
-    "question": "Thomas Jefferson discovered baked macaroni while traveling in Europe. In 1802 he served 'a pie called macaroni' at a presidential dinner, helping to make the dish famous in America. But Jefferson neither invented it nor cooked it himself. The macaroni was made by someone Jefferson had enslaved and trained in French cooking. Who was that cook?",
+    "question": "Thomas Jefferson discovered baked macaroni in Europe. In 1802 he served 'a pie called macaroni' at a presidential dinner, helping make the dish famous in America, though he neither invented nor cooked it. One theory says the recipe crossed the ocean with someone Jefferson had enslaved and taken to Paris to learn French cooking. Who was that cook?",
     "answer": "James Hemings",
     "choices": [
       "James Hemings",
@@ -13269,7 +13191,7 @@
       "Mary Randolph",
       "Manasseh Cutler"
     ],
-    "context": "Jefferson fell for macaroni in Europe, brought back pasta recipes and a machine, and served 'a pie called macaroni' in 1802 — but his enslaved, French-trained chef James Hemings is the one who actually made it. The other three all touch macaroni's story too: Elizabeth Raffald's 1769 English cookbook held the first baked béchamel-and-macaroni recipe, Mary Randolph's 1824 Virginia cookbook had an early American version, and Manasseh Cutler was the dinner guest who reportedly disliked Jefferson's macaroni pie. Source: https://en.wikipedia.org/wiki/Macaroni_and_cheese ; https://www.smithsonianmag.com/arts-culture/marvelous-macaroni-and-cheese-30954740/",
+    "context": "Jefferson fell for macaroni in Europe, brought back pasta recipes and a machine, and served 'a pie called macaroni' in 1802. James Hemings, whom Jefferson held in slavery and took to Paris to train as a chef, is thought to have brought the dish home from France; he won his freedom in 1796 and died in 1801, so other cooks made the 1802 pie. The other three all touch macaroni's story too: Elizabeth Raffald's 1769 English cookbook held the first baked béchamel-and-macaroni recipe, Mary Randolph's 1824 Virginia cookbook had an early American version, and Manasseh Cutler was the dinner guest who reportedly disliked Jefferson's macaroni pie. Source: https://en.wikipedia.org/wiki/Macaroni_and_cheese ; https://grokipedia.com/page/James_Hemings",
     "topic": "mac-and-cheese-and-the-mother-sauce"
   },
   {
@@ -13338,19 +13260,6 @@
     "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
-    "tier": 2,
-    "question": "Left on the counter, a sliced apple turns brown within minutes, with no stove or oven anywhere near it. A slice of bread also browns, but only under real heat in a toaster. The two brown in completely different ways. What is causing the apple's browning?",
-    "answer": "A natural enzyme inside the fruit",
-    "choices": [
-      "A natural enzyme inside the fruit",
-      "The fruit's juice drying to a skin",
-      "Tiny mold spores landing on the cut",
-      "The fruit's acid turning into sugar"
-    ],
-    "context": "A cut apple browns by 'enzymatic browning' — an enzyme in the fruit reacts with oxygen in the air, no heat needed, which is why a squeeze of lemon juice slows it. Toast browns the opposite way: 'non-enzymatic' Maillard browning, driven by heat, not an enzyme. Source: en.wikipedia.org/wiki/Maillard_reaction",
-    "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
-  },
-  {
     "tier": 3,
     "question": "A raw steak barely smells of anything, just a faint whiff of blood and cold fat. But the instant its surface hits a smoking-hot skillet and browns into a crackling crust, dozens of rich roasty, nutty and meaty aromas pour out into the kitchen. Where do all those brand-new smells come from?",
     "answer": "The browning reaction builds them from scratch",
@@ -13391,15 +13300,15 @@
   },
   {
     "tier": 4,
-    "question": "Suppose you take a bite of seared steak and chew with your mouth closed. The deep 'roasted' flavor blooms, though those Maillard aromas are smells and your nose is nowhere near the food in your mouth. If you pinch your nose shut mid-chew, the roasted flavor collapses, proof that the aroma does reach your nose somehow. By what route does it get there?",
-    "answer": "Up the back of the throat as you chew",
+    "question": "A diner takes a bite of seared steak and chews with her mouth closed. The deep 'roasted' flavor blooms, though those Maillard aromas are smells and her nose is nowhere near the food. When she pinches her nose shut mid-chew, the roasted flavor collapses, so the aroma must reach her nose somehow. By what route does it get there?",
+    "answer": "Up the back of the throat while chewing",
     "choices": [
-      "Up the back of the throat as you chew",
+      "Up the back of the throat while chewing",
       "In through the nostrils with each breath",
       "Straight up through the roof of the mouth",
       "Up through the sinuses behind the cheeks"
     ],
-    "context": "The Maillard molecules are aromas, so most of a sear's 'roasted' flavor reaches you as smell — not through your nostrils, but up the passage at the back of your throat as you chew (retronasal smell). Pinch your nose and you close that route, so the roasted flavor nearly vanishes; you smell the sear from the inside. Source: PMC meat volatile/odor review (pmc.ncbi.nlm.nih.gov/articles/PMC9572956/), retronasal olfaction background",
+    "context": "The Maillard molecules are aromas, so most of a sear's 'roasted' flavor reaches the eater as smell, not through the nostrils but up the passage at the back of the throat during chewing (retronasal smell). Pinching the nose closes that route, so the roasted flavor nearly vanishes: the sear is smelled from the inside. Source: PMC meat volatile/odor review (pmc.ncbi.nlm.nih.gov/articles/PMC9572956/), retronasal olfaction background",
     "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
@@ -13547,10 +13456,10 @@
   },
   {
     "tier": 2,
-    "question": "Under the husk of a sweet corn ear sit hundreds of plump kernels in tidy rows, a bundle no wild plant ever grew. Long ago, Native farmers began with a scrawny wild plant bearing a few hard seeds and saved the biggest, fattest cobs year after year. Where did the fat modern ear come from?",
-    "answer": "Farmers breeding the best ears for centuries",
+    "question": "Under the husk of a sweet corn ear sit hundreds of plump kernels in tidy rows, a bundle no wild plant ever grew. Corn's wild ancestor bears only a few hard seeds on a scrawny stalk. How did the fat modern ear come to be?",
+    "answer": "Farmers breeding the best ears for millennia",
     "choices": [
-      "Farmers breeding the best ears for centuries",
+      "Farmers breeding the best ears for millennia",
       "One lucky mutation that changed it overnight",
       "Modern gene-splicing done in a laboratory",
       "Grafting two garden plants together"
@@ -13568,7 +13477,7 @@
       "A leafy shrub",
       "A palm tree"
     ],
-    "context": "Corn's wild ancestor is a scraggly wild grass. Its entire 'ear' is just five to ten kernels in two rows - nothing like a fat cob. Over thousands of years of farming it became the many-rowed ear we eat today. Source: en.wikipedia.org/wiki/Teosinte",
+    "context": "Corn's wild ancestor is a scraggly wild grass. Its entire 'ear' is just five to ten kernels in two rows - nothing like a fat cob. Over thousands of years of farming it became the many-rowed ear eaten today. Source: en.wikipedia.org/wiki/Teosinte",
     "topic": "maizes-journey-the-columbian-exchange-grain"
   },
   {
@@ -13581,7 +13490,7 @@
       "Float down a river to the far bank",
       "Hide from seed-eating ants and beetles"
     ],
-    "context": "The hard case - a cupule plus a tough glume - was armor strong enough that a seed could survive being eaten by a grazing animal and still sprout, spreading the plant. Native farmers slowly bred that armor away, leaving the soft kernels we eat straight off the cob. Source: en.wikipedia.org/wiki/Teosinte",
+    "context": "The hard case - a cupule plus a tough glume - was armor strong enough that a seed could survive being eaten by a grazing animal and still sprout, spreading the plant. Native farmers slowly bred that armor away, leaving the soft kernels people eat straight off the cob. Source: en.wikipedia.org/wiki/Teosinte",
     "topic": "maizes-journey-the-columbian-exchange-grain"
   },
   {
@@ -13599,7 +13508,7 @@
   },
   {
     "tier": 1,
-    "question": "In a Sichuan restaurant, a diner dips beef into a bubbling red hotpot of dried chilies and Sichuan peppercorns. The chili burn hits first; then a stranger feeling washes over his mouth, one no jalapeño can cause. What does Sichuan food do to the lips?",
+    "question": "In a Sichuan restaurant, a diner dips beef into a bubbling red hotpot of dried chilies and Sichuan peppercorns. Along with the chili burn, a stranger feeling spreads over his mouth, one no jalapeño can cause. What does Sichuan food do to the lips?",
     "answer": "makes them tingle and go numb",
     "choices": [
       "makes them tingle and go numb",
@@ -13620,7 +13529,7 @@
       "the date",
       "the apricot"
     ],
-    "context": "Despite its name, Sichuan pepper is neither a chili nor a true peppercorn. Its plant is a Zanthoxylum, in the family Rutaceae — the citrus (and rue) family, the same botanical family that gives us oranges and lemons. That citrus kinship would later cause it real trouble at the US border. Sources: smithsonianmag.com, 'Why Szechuan Peppers Make Your Lips Go Numb'; en.wikipedia.org/wiki/Sichuan_pepper.",
+    "context": "Despite its name, Sichuan pepper is neither a chili nor a true peppercorn. Its plant is a Zanthoxylum, in the family Rutaceae — the citrus (and rue) family, the same botanical family as oranges and lemons. That citrus kinship would later cause it real trouble at the US border. Sources: smithsonianmag.com, 'Why Szechuan Peppers Make Your Lips Go Numb'; en.wikipedia.org/wiki/Sichuan_pepper.",
     "topic": "mal-sichuans-numbing-pepper"
   },
   {
@@ -13729,28 +13638,15 @@
   },
   {
     "tier": 1,
-    "question": "Pale, creamy streaks of fat swirl through a good raw steak. English butchers of the 1700s named the pattern after a polished, veined stone, the same stone sculptors like Michelangelo carved statues from. Which stone lent the pattern its name?",
-    "answer": "marble",
+    "question": "A butcher trims the thick, pale ring of fat from the edge of a raw steak. That ring is the fat cap, which grew just under the animal's skin, and it is not the marbling that steak lovers pay for. Where does true marbling sit?",
+    "answer": "Between the fibers inside the muscle",
     "choices": [
-      "marble",
-      "granite",
-      "limestone",
-      "slate"
+      "Between the fibers inside the muscle",
+      "In the seams between whole muscles",
+      "Around the bones near the ribs",
+      "In the sheet wrapping the organs"
     ],
-    "context": "Those fat streaks reminded people of the streaks in polished marble stone, so the pattern is called marbling — a word for fat-veined meat since about 1770. It's the single thing steak buyers most often pay a premium for. Source: Merriam-Webster 'marbling'; Etymonline 'marble'; Steak University 'Why Marbling Matters'.",
-    "topic": "marbling-the-fat-inside-the-muscle"
-  },
-  {
-    "tier": 1,
-    "question": "A butcher trims the thick, pale ring of fat from a raw steak's outer edge but leaves the fine white flecks laced through the meat, the prized marbling. That outer ring has its own trade name. What is it called?",
-    "answer": "the fat cap",
-    "choices": [
-      "the fat cap",
-      "the seam fat",
-      "the suet",
-      "the caul fat"
-    ],
-    "context": "That trimmed outer ring is subcutaneous ('under-skin') fat, the 'fat cap.' The prized inside flecks are intramuscular fat — fat laced between the muscle fibers themselves — which is the true marbling. Source: Wikipedia 'Marbled meat'; Steak School by Stanbroke 'Beef Marbling'.",
+    "context": "That trimmed outer ring is subcutaneous ('under-skin') fat, the 'fat cap.' True marbling is intramuscular fat, the fine flecks laced between the muscle fibers themselves. Fat in the seams between separate muscles and the fat around the organs is not marbling either. Source: Wikipedia 'Marbled meat'; Steak School by Stanbroke 'Beef Marbling'.",
     "topic": "marbling-the-fat-inside-the-muscle"
   },
   {
@@ -13763,18 +13659,18 @@
       "turn into the crisp crust outside",
       "toughen into chewy little knots"
     ],
-    "context": "That inside basting keeps the steak juicy and tender and carries most of its flavor — which is why a lean steak with no marbling tastes dry no matter how carefully you cook it. Just 3–7% intramuscular fat is enough to make the difference. Source: Y.O. Ranch Steakhouse 'The Science Behind Marbling'; Steak University; Wikipedia 'Meat'.",
+    "context": "That inside basting keeps the steak juicy and tender and carries most of its flavor — which is why a lean steak with no marbling tastes dry no matter how carefully it is cooked. Just 3–7% intramuscular fat is enough to make the difference. Source: Y.O. Ranch Steakhouse 'The Science Behind Marbling'; Steak University; Wikipedia 'Meat'.",
     "topic": "marbling-the-fat-inside-the-muscle"
   },
   {
     "tier": 3,
-    "question": "In an American supermarket, three grades of beef sit stamped on the plastic wrap by the US Department of Agriculture (USDA): USDA Prime, USDA Choice, and USDA Select. Prime steaks can cost twice as much as Select, yet all three come from the same kind of cattle raised on the same feed. USDA inspectors assign the grade by looking at one feature inside the meat. Which feature drives the score?",
+    "question": "In an American supermarket, three grades of beef sit stamped on the plastic wrap by the US Department of Agriculture (USDA): USDA Prime, USDA Choice, and USDA Select. Prime steaks can cost twice as much as Select, though all three grades can come from the same breed of cattle. USDA inspectors assign the grade by looking above all at one feature inside the meat. Which feature drives the score?",
     "answer": "how much fat threads the muscle",
     "choices": [
       "how much fat threads the muscle",
       "how fresh the meat is",
       "how big the cut is",
-      "how young the animal is"
+      "how heavy the animal was"
     ],
     "context": "USDA graders score marbling to assign Prime, Choice, or Select. Prime has the most, evenest fat flecking, earns the highest price, and sells mainly to restaurants and hotels. Source: USDA blog 'What's Your Beef – Prime, Choice or Select?'.",
     "topic": "marbling-the-fat-inside-the-muscle"
@@ -24644,7 +24540,7 @@
       "It adds a layer of water that slows the crust until the inside catches up",
       "It coats the dough in fat that fries the surface like shallow oil"
     ],
-    "context": "An egg wash turbo-charges browning because the reaction runs on protein and sugar, and egg is loaded with both. The egg WHITE's protein gives the shine; the YOLK's fat and pigment give the deep golden color; a whole-egg wash gives the best-balanced mahogany top on challah and pastry. Source: https://www.kingarthurbaking.com/blog/2022/02/15/understanding-the-maillard-reaction-in-baking",
+    "context": "An egg wash turbo-charges browning because the reaction runs on protein and sugar, and egg carries both. The egg WHITE's protein gives the shine; the YOLK's fat and pigment give the deep golden color; a whole-egg wash gives the best-balanced mahogany top on challah and pastry. Source: https://www.kingarthurbaking.com/blog/2022/02/15/understanding-the-maillard-reaction-in-baking",
     "topic": "maillard-reaction-why-a-sear-smells-and-tastes-so-good"
   },
   {
