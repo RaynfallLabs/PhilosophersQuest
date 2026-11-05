@@ -239,7 +239,7 @@
     "answer": "Marshawn Lynch",
     "choices": [
       "Marshawn Lynch",
-      "Shaun Alexander",
+      "Thomas Rawls",
       "Chris Carson",
       "Ricky Watters"
     ],
@@ -253,7 +253,7 @@
     "choices": [
       "Russell Wilson",
       "Matt Hasselbeck",
-      "Geno Smith",
+      "Tarvaris Jackson",
       "Dave Krieg"
     ],
     "context": "Russell Wilson was a third-round pick out of Wisconsin in 2012. He became the Seahawks' starter immediately and led them to two straight Super Bowls.",
@@ -269,7 +269,7 @@
       "The Purple People Eaters",
       "The No Fly Zone"
     ],
-    "context": "The Legion of Boom shut down the Denver Broncos 43-8 in Super Bowl XLVIII on February 2, 2014. Brandon Browner is credited with coining the nickname.",
+    "context": "The Legion of Boom shut down the Denver Broncos 43-8 in Super Bowl XLVIII on February 2, 2014. The name grew out of a 2012 radio interview in which Kam Chancellor talked about laying 'the boom' on ball-carriers, and fans supplied the rest.",
     "topic": "seattle-seahawks"
   },
   {
@@ -280,7 +280,7 @@
       "Pete Carroll",
       "Mike Holmgren",
       "Chuck Knox",
-      "Jim Mora"
+      "Tom Flores"
     ],
     "context": "Pete Carroll took over after a successful run at USC. He won Super Bowl XLVIII in his fourth season and reached Super Bowl XLIX the next year.",
     "topic": "seattle-seahawks"
@@ -291,7 +291,7 @@
     "answer": "Ken Griffey Jr.",
     "choices": [
       "Ken Griffey Jr.",
-      "Edgar Martinez",
+      "Raul Ibanez",
       "Alex Rodriguez",
       "Jay Buhner"
     ],
@@ -308,7 +308,7 @@
       "Kazuhiro Sasaki",
       "Hideo Nomo"
     ],
-    "context": "Ichiro had been a superstar for the Orix Blue Wave in Japan. He came to Seattle in 2001 and had 242 hits, the most by a rookie since 1911.",
+    "context": "Ichiro had been a superstar for the Orix BlueWave in Japan. His 242 hits in 2001 broke the major-league record for a rookie.",
     "topic": "seattle-mariners"
   },
   {
@@ -317,9 +317,9 @@
     "answer": "Edgar Martinez",
     "choices": [
       "Edgar Martinez",
-      "Ken Griffey Jr.",
+      "Jay Buhner",
       "Alex Rodriguez",
-      "Bret Boone"
+      "John Olerud"
     ],
     "context": "Edgar Martinez played his entire career in Seattle from 1987 to 2004. The best-DH-of-the-year award was renamed the Edgar Martinez Award in his honor.",
     "topic": "seattle-mariners"
@@ -330,9 +330,9 @@
     "answer": "Randy Johnson",
     "choices": [
       "Randy Johnson",
-      "Felix Hernandez",
+      "Freddy Garcia",
       "Jamie Moyer",
-      "Mark Langston"
+      "Erik Hanson"
     ],
     "context": "Randy Johnson came to the Mariners from Montreal in 1989. His no-hitter against the Tigers was the first in Mariners history. He won four straight Cy Young Awards after Seattle traded him.",
     "topic": "seattle-mariners"
@@ -343,7 +343,7 @@
     "answer": "Felix Hernandez",
     "choices": [
       "Felix Hernandez",
-      "Randy Johnson",
+      "Freddy Garcia",
       "Hisashi Iwakuma",
       "Jamie Moyer"
     ],
@@ -656,7 +656,7 @@
     "choices": [
       "The Beast Quake",
       "The Skittle Run",
-      "The Lynch Mob",
+      "The Seattle Shake",
       "The Boom Stomp"
     ],
     "context": "The run helped the Seahawks upset the defending Super Bowl champion Saints 41-36. The University of Washington's Pacific Northwest Seismic Network confirmed the seismic signature.",
@@ -668,7 +668,7 @@
     "answer": "Shaun Alexander",
     "choices": [
       "Shaun Alexander",
-      "Marshawn Lynch",
+      "Ricky Watters",
       "Chris Warren",
       "Curt Warner"
     ],
@@ -677,7 +677,7 @@
   },
   {
     "tier": 2,
-    "question": "Joey Cora stood on third in the Kingdome in October 1995, in the bottom of the 11th inning of the deciding Game 5 against the New York Yankees. A Mariners hitter lined a sharp double down the left-field line, Cora scored easily, and a young teammate came flying around from first, sliding home headfirst with the winning run. Which Yankees pitcher threw that pitch?",
+    "question": "Joey Cora stood on third in the Kingdome in October 1995, in the 11th inning of the deciding Game 5 against the New York Yankees. A Mariners hitter lined a double down the left-field line, and Cora and a young teammate from first both raced home to win it. Which Yankees pitcher threw that pitch?",
     "answer": "Jack McDowell",
     "choices": [
       "Jack McDowell",
@@ -698,7 +698,7 @@
       "Don Slaught",
       "Jesse Barfield"
     ],
-    "context": "The Yankees traded Buhner to Seattle in July 1988 for the aging Ken Phelps. Buhner hit 310 home runs for Seattle. The Seinfeld scene immortalized the trade as a Yankees blunder.",
+    "context": "The Yankees traded Buhner to Seattle in July 1988 for the aging Ken Phelps. Buhner hit more than 300 home runs for Seattle, and the Seinfeld scene immortalized the trade as a Yankees blunder.",
     "topic": "seattle-mariners"
   },
   {
@@ -729,7 +729,7 @@
   },
   {
     "tier": 2,
-    "question": "A rookie pinch-hitter stepped in for the Seattle Mariners in the bottom of the ninth against the Oakland Athletics on September 30, 2022, with the score tied at 1-1. The club had a chance to end the longest active playoff drought in North American major pro sports, twenty-one years without postseason baseball. He drove a walk-off home run into right field. Who hit the wild-card-clinching homer?",
+    "question": "A young pinch-hitter stepped in for the Seattle Mariners in the bottom of the ninth against Oakland on September 30, 2022, with the score tied 1-1. A win would end the longest active playoff drought in North America's major pro sports, twenty-one years long. His walk-off homer did it. Who was he?",
     "answer": "Cal Raleigh",
     "choices": [
       "Cal Raleigh",
@@ -1002,15 +1002,15 @@
   },
   {
     "tier": 3,
-    "question": "Peyton Manning was still reading the defense at the line on the very first play from scrimmage of the National Football League's title game on February 2, 2014, at MetLife Stadium in New Jersey. His favored Denver Broncos were facing Seattle. The center hiked the ball, and it sailed straight over Manning's head into the end zone, where a Broncos lineman jumped on it. What did that opening play score for Seattle?",
+    "question": "Peyton Manning was still reading the defense on the very first play from scrimmage of the National Football League's title game on February 2, 2014, in New Jersey. The center hiked the ball early, and it flew past Manning into the end zone behind him. What did that opening play score for Seattle?",
     "answer": "A safety, the fastest in Super Bowl history at 12 seconds",
     "choices": [
       "A safety, the fastest in Super Bowl history at 12 seconds",
       "A touchdown after Lynch recovered the fumble",
       "A field goal after Hauschka kicked from the 5-yard line",
-      "A turnover on downs after Manning failed to recover"
+      "A touchdown after Malcolm Smith ran it back"
     ],
-    "context": "Center Manny Ramirez snapped the ball before Manning was ready. The ball flew through the end zone for a safety. The 12-second score was the fastest in Super Bowl history. The Broncos never recovered.",
+    "context": "Center Manny Ramirez snapped the ball before Manning was ready, and Knowshon Moreno recovered it in the end zone for a safety. The 12-second score was the fastest in Super Bowl history.",
     "topic": "seattle-seahawks"
   },
   {
@@ -1062,7 +1062,7 @@
       "Hank Aaron Award and Babe Ruth Award",
       "Comeback Player of the Year and All-Star MVP"
     ],
-    "context": "Ichiro's 2001 was unprecedented for a rookie. He won 10 consecutive Gold Gloves and 10 consecutive Silver Sluggers. He stole 56 bases, then a Mariners record for a single season.",
+    "context": "Ichiro's 2001 was unprecedented for a rookie. He also led the league with 56 stolen bases, and he went on to win ten straight Gold Gloves.",
     "topic": "seattle-mariners"
   },
   {
@@ -1080,15 +1080,15 @@
   },
   {
     "tier": 3,
-    "question": "A Seattle fan watches the 116-win Mariners of 2001 lose the American League Championship Series (ALCS) to the New York Yankees, 4 games to 1. The club has reached that round before, in 1995 and again the year before, in 2000. Which team eliminated the Mariners from the 2000 ALCS?",
-    "answer": "The Indians, who beat Seattle 4-2",
+    "question": "A Seattle fan watches the 116-win Mariners of 2001 lose the American League Championship Series (ALCS) to the New York Yankees, 4 games to 1, a year after the 2000 club also fell to New York. The first Mariners side to reach that round, in 1995, went out to a different team. Which team eliminated them?",
+    "answer": "The Indians, in a 4-2 series",
     "choices": [
-      "The Indians, who beat Seattle 4-2",
+      "The Indians, in a 4-2 series",
       "The Orioles, in a 4-2 series",
       "The Athletics, in a 4-3 series",
       "The Red Sox, in a 4-1 series"
     ],
-    "context": "The 2000 Mariners were the team Alex Rodriguez left after — he signed with Texas for $252M. They made the ALCS that year and lost to the Yankees. The 2001 team set a record and lost to the Yankees again.",
+    "context": "Cleveland beat Seattle four games to two in the 1995 ALCS, days after Edgar's Double. The 2000 and 2001 Mariners both lost the ALCS to the Yankees, the 2000 side four games to two.",
     "topic": "seattle-mariners"
   },
   {
@@ -1288,15 +1288,15 @@
   },
   {
     "tier": 4,
-    "question": "Bill Leavy, the head referee of Super Bowl XL, reversed a Jerramy Stevens catch late in the third quarter, on February 5, 2006, in Detroit, when Seattle thought it had taken the lead. The Pittsburgh Steelers won 21-10 in a game marred by officiating controversies. Years later, what did Leavy publicly admit about his officiating in that game?",
+    "question": "Bill Leavy refereed Super Bowl XL on February 5, 2006, in Detroit, where the Pittsburgh Steelers beat Seattle 21-10 in a game marred by officiating controversies. In the fourth quarter a holding flag on Sean Locklear wiped out a long Seattle catch. Years later, what did Leavy publicly admit about his officiating in that game?",
     "answer": "He had 'kicked' two specific calls and the controversy haunted him",
     "choices": [
       "He had 'kicked' two specific calls and the controversy haunted him",
-      "He had been bribed by a Pittsburgh booster prior to the game",
       "His crew had been improperly trained on the rules in effect",
-      "He believed the league had pressured him to favor Pittsburgh"
+      "He stood by every call his crew had made that night",
+      "He had lost sight of the ball on the Pittsburgh touchdown run"
     ],
-    "context": "Leavy made his public apology at Seahawks training camp in 2010. He acknowledged the Darrell Jackson offensive pass interference (waving off a TD) and a holding call on Sean Locklear were both wrong calls. Mike Holmgren said the team felt they had to beat 'two opponents' in the game.",
+    "context": "Leavy spoke up at Seahawks training camp in August 2010: he said he kicked two calls in the fourth quarter, that he had impacted the game, and that it had left him with a lot of sleepless nights. He did not say which two calls he meant.",
     "topic": "seattle-seahawks"
   },
   {
@@ -1322,7 +1322,7 @@
       "The Patriots had only one timeout left and Seattle panicked",
       "Lynch was injured and needed a play to catch his breath"
     ],
-    "context": "Bevell took heat from fans for the call. Pete Carroll defended it as the best decision given the Patriots' goal-line stack expected a run. Malcolm Butler had been studying that exact play on film all week. The play call is one of the most second-guessed in NFL history.",
+    "context": "Bevell took heat from fans for the call. Pete Carroll defended it, saying the Patriots' goal-line stack expected a run. Malcolm Butler recognised the formation from practice, where the scout team had beaten him on the same play.",
     "topic": "seattle-seahawks"
   },
   {
@@ -1354,12 +1354,12 @@
   {
     "tier": 4,
     "question": "Dave Niehaus was calling the game on the radio on October 8, 1995, when a series-winning double in the 11th inning of Game 5, in baseball's divisional playoff round, scored Joey Cora from third and a Mariners teammate from first base. His call has become a Mariners legend. What words did Niehaus famously shout as the winning run scored?",
-    "answer": "'My oh my!' and 'The Mariners are going to play for the American League Championship!'",
+    "answer": "My oh my, and that the Mariners would play for the American League Championship",
     "choices": [
-      "'My oh my!' and 'The Mariners are going to play for the American League Championship!'",
-      "'Hot diggity!' and 'They've done the impossible, Seattle's going to the Series!'",
-      "'Holy mackerel!' and 'Junior makes it home, Mariners win the West!'",
-      "'Goodness gracious!' and 'Griffey scores and Seattle wins it all!'"
+      "My oh my, and that the Mariners would play for the American League Championship",
+      "Hot diggity, and that Seattle was going to the World Series",
+      "Holy mackerel, and that the Mariners had won the West",
+      "Goodness gracious, and that Seattle had won it all"
     ],
     "context": "Niehaus's full call: 'Right now the Mariners are going to play for the American League Championship! I don't believe it! It just continues! My oh my!' The call has been played thousands of times at Safeco Field. Niehaus was inducted into the Hall of Fame broadcaster wing in 2008. He died in November 2010 of a heart attack.",
     "topic": "seattle-mariners"
@@ -1379,28 +1379,28 @@
   },
   {
     "tier": 4,
-    "question": "Woody Woodward, the Seattle Mariners general manager, called Montreal in May 1989 about a wild young Expos starter, a lanky 6-foot-10 left-hander who would later win five Cy Young awards. He worked out a trade, sending one of his own young pitchers north in exchange. Which Seattle lefty did Woodward give up to land the future Hall of Famer?",
-    "answer": "Mark Langston, the Mariners' previous lefty ace",
+    "question": "Woody Woodward, the Seattle Mariners general manager, called Montreal in May 1989 about a wild young Expos starter, a lanky 6-foot-10 left-hander who would later win five Cy Young awards. He worked out a trade, sending one of his own pitchers north in exchange. Which pitcher did Woodward give up to land the future Hall of Famer?",
+    "answer": "Mark Langston",
     "choices": [
-      "Mark Langston, the Mariners' previous lefty ace",
-      "Mike Moore, the staff ace who later won a Cy Young in Oakland",
-      "Erik Hanson, the young right-hander",
-      "Bill Wilkinson, the lefty reliever"
+      "Mark Langston",
+      "Mike Moore",
+      "Erik Hanson",
+      "Bill Wilkinson"
     ],
-    "context": "The Langston-for-Johnson trade is regarded as one of the most lopsided in baseball history in Seattle's favor. Johnson went on to win four Cy Youngs (the first in 1995). Langston had a solid career but never matched Johnson's dominance. The Mariners also got Brian Holman and Gene Harris in the deal.",
+    "context": "The Langston-for-Johnson trade is regarded as one of the most lopsided in baseball history in Seattle's favor. Johnson went on to win five Cy Youngs, the first in 1995 with Seattle. The Mariners also got Brian Holman and Gene Harris in the deal.",
     "topic": "seattle-mariners"
   },
   {
     "tier": 4,
-    "question": "A right fielder who came to the Seattle Mariners after nine seasons with Japan's Orix BlueWave retired as the holder of a world baseball record no other player has ever matched: his Japanese pro-league hits and his Major League hits added together. About how many career hits did he finish with in all?",
-    "answer": "4,367 hits combined — 1,278 in Japan and 3,089 in the United States",
+    "question": "A right fielder who came to the Seattle Mariners after nine seasons with Japan's Orix BlueWave retired as the holder of a world baseball record no other player has ever matched: his Japanese pro-league hits and his Major League hits added together. How many career hits did he finish with in all?",
+    "answer": "4,367 hits",
     "choices": [
-      "4,367 hits combined — 1,278 in Japan and 3,089 in the United States",
-      "4,256 hits combined — to surpass Pete Rose's MLB-only total",
-      "4,500 hits combined — to claim the Asian Baseball Federation record",
-      "3,772 hits combined — short of Sadaharu Oh's career mark"
+      "4,367 hits",
+      "4,256 hits",
+      "4,189 hits",
+      "3,771 hits"
     ],
-    "context": "Ichiro reached 4,257 hits in 2016 (passing Pete Rose's MLB record) and continued through the end of his Marlins career. Pete Rose still claims the official MLB record because Ichiro's Japanese hits don't count toward MLB stats. The 4,367 total is commemorated by displays in Cooperstown and at the Orix Buffaloes museum.",
+    "context": "His 1,278 hits in Japan and 3,089 in the majors make 4,367. The combined total passed Pete Rose's major-league record of 4,256 on 15 June 2016, though Rose still holds the official major-league mark, and Ichiro played on until 2019, back with Seattle.",
     "topic": "seattle-mariners"
   },
   {
@@ -1413,7 +1413,7 @@
       "Justin Verlander and Cliff Lee",
       "Clayton Kershaw and Stephen Strasburg"
     ],
-    "context": "Philip Humber's perfecto came April 21 vs the Mariners; Cain's was June 13 vs Houston. Hernandez's came August 15. Three perfect games in one season is unprecedented. King Felix struck out 12; he became the first AL pitcher to throw a perfecto since David Cone in 1999.",
+    "context": "Philip Humber's perfect game came on April 21 against the Mariners, and Matt Cain's on June 13 against Houston. No season before 2012 had held three perfect games.",
     "topic": "seattle-mariners"
   },
   {
@@ -1600,41 +1600,28 @@
   },
   {
     "tier": 5,
-    "question": "Bill Belichick said in later interviews that game tape gave his New England Patriots confidence that Seattle would call one exact goal-line play at the end of Super Bowl 49, on February 1, 2015. His undrafted rookie from West Alabama had studied Seattle's short-yardage passing tendencies on film all week, and he intercepted the pass at the goal line. What had the tape shown?",
-    "answer": "The Patriots had seen Wilson and Lockette run the same goal-line slant package three times earlier in the playoff run",
+    "question": "Bill Belichick kept his goal-line defense on the field at the end of Super Bowl 49, on February 1, 2015, and his undrafted rookie cornerback from West Alabama jumped Seattle's slant and intercepted it at the goal line. The rookie said he knew the play the moment Seattle lined up. Where had he seen it before?",
+    "answer": "In practice before the game, when the scout team ran it and beat him for a touchdown",
     "choices": [
-      "The Patriots had seen Wilson and Lockette run the same goal-line slant package three times earlier in the playoff run",
-      "The Seahawks had used the play in their NFC Championship win and the Patriots had analyzed each formation",
-      "Wilson had favored slants over runs in 2014 short-yardage situations 73% of the time",
-      "Bevell had used the play as a tendency against goal-line bunch formations"
+      "In practice before the game, when the scout team ran it and beat him for a touchdown",
+      "In Seattle's NFC Championship film, where the same play had scored against Green Bay",
+      "In college at West Alabama, where his own team had run the same slant",
+      "On Seattle's regular-season tape, where the slant had been run three times"
     ],
-    "context": "Butler's interception is the most-second-guessed playcall in NFL history. The Patriots' goal-line bunch coverage was specifically prepared for the slant the Seahawks ran. Butler's name became permanently associated with the moment. The play won the Patriots Super Bowl XLIX 28-24. Pete Carroll defended the playcall in his post-game press conference and afterwards.",
+    "context": "Belichick kept three cornerbacks on the field in his goal-line defense, and Butler, who recognised the formation from practice, jumped the slant meant for Ricardo Lockette. The interception sealed a 28-24 Patriots win.",
     "topic": "seattle-seahawks"
   },
   {
     "tier": 5,
-    "question": "An analyst freezes the tape on one moment of a 67-yard Seattle touchdown run against the Saints on January 8, 2011, the closing score of a 41-36 win. The runner broke at least nine tackles, but one physical move is often cited as the defining move of the run. Which move is it?",
-    "answer": "His 'sasquatch' stiff-arm, planted flat-palm into Porter's facemask and lifting him backwards",
+    "question": "An analyst freezes the tape on one moment of a 67-yard Seattle touchdown run against the Saints on January 8, 2011, in a playoff game Seattle won 41-36. The runner broke nine tackles, but one physical move is often cited as the defining move of the run. Which move is it?",
+    "answer": "A stiff-arm that put a cornerback flat on the ground",
     "choices": [
-      "His 'sasquatch' stiff-arm, planted flat-palm into Porter's facemask and lifting him backwards",
-      "His 'spin-cycle' rotation through three would-be tacklers near the line",
-      "His 'mountain-goat' jump-hop over the safety cleats at the 35-yard line",
-      "His 'jet-ski' lateral cut through the linebacker zone at the 20"
+      "A stiff-arm that put a cornerback flat on the ground",
+      "A spin move that left two tacklers grabbing air",
+      "A hurdle over a diving safety near midfield",
+      "A cutback across the whole field at the 20"
     ],
-    "context": "The Tracy Porter stiff-arm has been singled out by analysts including Booger McFarland on NFL Network. Lynch absorbed eight other tackles on the play. The run remains the single most-replayed Seahawks moment in franchise history. Lynch went on to gain 1,257 yards in 2010 despite arriving from Buffalo midseason.",
-    "topic": "seattle-seahawks"
-  },
-  {
-    "tier": 5,
-    "question": "A quarterback lining up against Seattle in 2013 sees Richard Sherman, Earl Thomas, Kam Chancellor and Brandon Browner waiting for him in a statistically dominant secondary. How many passing yards a game does that defense allow over the season?",
-    "answer": "172.0 yards per game, the lowest pass-yards-per-game allowed in the NFL since 1997",
-    "choices": [
-      "172.0 yards per game, the lowest pass-yards-per-game allowed in the NFL since 1997",
-      "165.4 yards per game, the lowest pass defense by any modern team",
-      "189.3 yards per game, ranking second in NFL pass defense history",
-      "203.1 yards per game, the league's best in 2013"
-    ],
-    "context": "The 2013 Seahawks led the NFL in fewest yards allowed and points allowed — the rare team to lead both. They allowed 14.4 ppg and 273.6 ypg. Super Bowl XLVIII proved the defense's dominance — they held Peyton Manning's record-breaking offense to 8 points. The Legion of Boom remained largely intact for several more seasons.",
+    "context": "Lynch stiff-armed cornerback Tracy Porter to the ground as he angled toward the right sideline, one of nine tackles he broke on the run. The touchdown put Seattle ahead 41-30, and the Saints scored once more before the end.",
     "topic": "seattle-seahawks"
   },
   {
@@ -1647,7 +1634,7 @@
       "Kevin Kolb, who had been a high-priced free agent",
       "Carson Palmer, who had been a trade target from the Bengals"
     ],
-    "context": "Flynn had set Packers records in the 2012 season finale and was the most-coveted FA QB of 2012. Seattle signed him with the intention to start him; Wilson outperformed him in training camp and beat him out for the starting job. Flynn never started a game for Seattle. Wilson became a two-time Pro Bowler in his first two seasons.",
+    "context": "Flynn had thrown for 480 yards and six touchdowns for Green Bay in the last game of the 2011 season, and Seattle signed him meaning to start him. Wilson outplayed him in training camp and won the job, and Flynn never started a game for Seattle. Wilson made the Pro Bowl in each of his first two seasons.",
     "topic": "seattle-seahawks"
   },
   {
@@ -1665,46 +1652,33 @@
   },
   {
     "tier": 5,
-    "question": "Ryan Drese, pitching for Texas at Safeco Field on October 1, 2004, gave up the hit that broke George Sisler's 84-year-old single-season record of 257. A Texas backstop walked out from behind home plate to shake the hitter's hand. Who was that backstop?",
-    "answer": "Rod Barajas, the Rangers' catcher, who stepped out to congratulate Ichiro at first base",
+    "question": "Ryan Drese, pitching for Texas at Safeco Field on October 1, 2004, gave up the grounder up the middle that broke George Sisler's 84-year-old single-season record of 257 hits. As the cheers grew louder, one Texas player shook the record-breaker's hand. Who was he?",
+    "answer": "Mark Teixeira, the Rangers' first baseman",
     "choices": [
-      "Rod Barajas, the Rangers' catcher, who stepped out to congratulate Ichiro at first base",
-      "Ivan Rodriguez, the Hall-of-Famer behind the plate that day",
-      "Gerald Laird, the Rangers' backup catcher who replaced Barajas",
-      "Pudge Rodriguez, who happened to be umpiring the third-base line"
+      "Mark Teixeira, the Rangers' first baseman",
+      "Rod Barajas, the Rangers' catcher",
+      "Michael Young, the Rangers' shortstop",
+      "Alfonso Soriano, the Rangers' second baseman"
     ],
-    "context": "Barajas's gesture was a respectful moment from across the league. Members of the Sisler family — George's daughter Frances and granddaughter — were in attendance. Ichiro received a standing ovation that lasted several minutes. The hit was a clean line drive to right; Ichiro's wife Yumiko and his teammates joined him at the plate during the celebration.",
+    "context": "Teixeira shook Ichiro's hand at first base. Ichiro then went to the seats along the first-base line and shook hands with Sisler's 81-year-old daughter, Frances Sisler Drochelman, and other members of the family, and his teammates came onto the field to congratulate him.",
     "topic": "seattle-mariners"
   },
   {
     "tier": 5,
     "question": "A boy grew up in Cincinnati while his father, Ken Griffey Sr., played the outfield for the Big Red Machine. By 2000 that boy was Seattle's center fielder, and he asked to be moved closer to his family. Which players did the Mariners get back from the Reds in the controversial trade that followed?",
-    "answer": "Mike Cameron, Brett Tomko, Antonio Perez, and Jake Meyer — collectively worth far less than Griffey",
+    "answer": "Mike Cameron, Brett Tomko, Antonio Perez and Jake Meyer",
     "choices": [
-      "Mike Cameron, Brett Tomko, Antonio Perez, and Jake Meyer — collectively worth far less than Griffey",
-      "Pokey Reese and Ryan Anderson — both of whom retired within four years",
-      "Sean Casey and Pete Harnisch — both of whom were veterans approaching the end",
-      "Aaron Boone and Travis Lee — both of whom became defensive role players"
+      "Mike Cameron, Brett Tomko, Antonio Perez and Jake Meyer",
+      "Pokey Reese, Sean Casey, Pete Harnisch and Scott Williamson",
+      "Aaron Boone, Dmitri Young, Danny Graves and Elmer Dessens",
+      "Eddie Taubensee, Ron Villone, Rob Bell and Michael Tucker"
     ],
     "context": "The trade was widely considered a steal for Cincinnati at the time but the Mariners got useful talent. Mike Cameron had a multi-year career as a quality outfielder in Seattle. Brett Tomko provided rotation depth. Griffey's Reds career was injury-marred; he never matched his Seattle years. He returned to Seattle in 2009 to finish his career.",
     "topic": "seattle-mariners"
   },
   {
     "tier": 5,
-    "question": "Mike Stanley, the New York Yankees catcher, took the relay at home plate on October 8, 1995, in Game 5 of the American League Division Series, and a Mariners runner slid in just ahead of the tag. The runner had come all the way from first base on a double, and the play has been replayed millions of times. Approximately how long did he take to go from first to home?",
-    "answer": "Around nine and a half seconds, based on broadcast-film analysis",
-    "choices": [
-      "Around nine and a half seconds, based on broadcast-film analysis",
-      "Just over eleven seconds, a normal first-to-home pace",
-      "Around seven seconds flat, an Olympic-sprinter pace",
-      "Just under thirteen seconds, slow for a runner like Junior"
-    ],
-    "context": "Junior's slide into home ended in a celebration pile at the plate. The exact time is an estimate; modern Statcast wasn't around in 1995. Joey Cora had scored the tying run on the same hit. Lou Piniella was managing. Dave Niehaus's call defined Mariners baseball lore for a generation.",
-    "topic": "seattle-mariners"
-  },
-  {
-    "tier": 5,
-    "question": "A Tampa Bay Rays batter swung and missed for the final out of a perfect game on August 15, 2012, the third perfect game in Major League Baseball that year. The Seattle Mariners ace on the mound struck out 12 in all. Which Rays player made that last out?",
+    "question": "A Tampa Bay Rays batter took a called third strike for the final out of a perfect game on August 15, 2012, the third perfect game in Major League Baseball that year. The Seattle Mariners ace on the mound struck out 12 in all. Which Rays player made that last out?",
     "answer": "Sean Rodriguez, the Rays' utility infielder",
     "choices": [
       "Sean Rodriguez, the Rays' utility infielder",
@@ -1712,7 +1686,7 @@
       "B.J. Upton, the Rays' center fielder",
       "Carlos Pena, the Rays' first baseman"
     ],
-    "context": "Sean Rodriguez swung and missed at a 1-2 changeup for the 27th out. The crowd of 21,889 at Safeco Field erupted as catcher John Jaso threw the ball to Felix and the team mobbed him at the mound. Felix used 113 pitches to retire all 27 Rays. He had thrown the game's first pitch — a fastball strike — at 7:11 PM Pacific.",
+    "context": "Sean Rodriguez was called out on strikes for the last out, and the Mariners won 1-0. John Jaso was behind the plate.",
     "topic": "seattle-mariners"
   },
   {
@@ -1725,7 +1699,7 @@
       "Carlos Guillen, who was their starting shortstop",
       "Mike Cameron, who had been the centerpiece of the Griffey trade"
     ],
-    "context": "Boone signed with Seattle after a 7-year stint with the Reds and Padres. His 2001 season — 37 HRs, 141 RBI, .331 average — earned him MVP votes (finished 3rd). He played second base while John Olerud (also 2001 acquisition) anchored first base. The 116-win team featured Ichiro, Olerud, Boone, Edgar, and Mike Cameron in the everyday lineup.",
+    "context": "Boone had come up with Seattle in 1992 and returned in 2001 after spells with the Reds, Braves and Padres. His 37 home runs, 141 RBI and .331 average put him third in the MVP voting. The 116-win lineup also featured Ichiro, John Olerud, Edgar Martinez and Mike Cameron.",
     "topic": "seattle-mariners"
   },
   {
@@ -1751,7 +1725,7 @@
       "Sheeta",
       "San"
     ],
-    "context": "Kiki's Delivery Service was Miyazaki's first major box-office success in Japan. It was adapted from a children's novel by Eiko Kadono. The Japanese dub of Jiji has the cat speaking; the English dub kept him speaking throughout.",
+    "context": "Kiki's Delivery Service was Miyazaki's first major box-office success in Japan. It was adapted from a children's novel by Eiko Kadono.",
     "topic": "studio-ghibli"
   },
   {
@@ -1787,8 +1761,8 @@
     "choices": [
       "Naoko Takeuchi",
       "Rumiko Takahashi",
-      "Yoshihiro Togashi",
-      "CLAMP"
+      "Riyoko Ikeda",
+      "Yuu Watase"
     ],
     "context": "Usagi means rabbit; the moon is associated with rabbits in Japanese folklore. The manga ran in Nakayoshi magazine. The 1992 Toei anime adaptation aired internationally and is the show most Western fans grew up with.",
     "topic": "sailor-moon"
@@ -1920,7 +1894,7 @@
       "Tachi",
       "Nodachi"
     ],
-    "context": "Sakabato means reverse-blade sword. Kenshin Himura was once the legendary Hitokiri Battosai assassin of the Bakumatsu period. Watsuki later landed in legal trouble in Japan that disrupted the manga's late run.",
+    "context": "Sakabato means reverse-blade sword. Kenshin Himura was once the legendary Hitokiri Battosai, an assassin of the Bakumatsu period.",
     "topic": "rurouni-kenshin"
   },
   {
@@ -2034,7 +2008,7 @@
     "choices": [
       "Nausicaa",
       "Sheeta",
-      "Mononoke",
+      "Kushana",
       "Chihiro"
     ],
     "context": "Nausicaa of the Valley of the Wind was based on Miyazaki's own manga, which he had begun in 1982. The film's commercial success was what made Studio Ghibli's founding in 1985 possible.",
@@ -2159,7 +2133,7 @@
   },
   {
     "tier": 2,
-    "question": "A gruff former World War I flying ace chases sky pirates from the cockpit of his crimson seaplane above the sunny Adriatic in Hayao Miyazaki's 1992 film. A strange curse has turned his human face into that of a talking pig. The movie is named after him. What is the film called?",
+    "question": "A gruff former World War I flying ace chases sky pirates from the cockpit of his crimson seaplane above the sunny Adriatic in Hayao Miyazaki's 1992 film. A strange curse has turned his human face into that of a talking pig. What is the film called?",
     "answer": "Porco Rosso",
     "choices": [
       "Porco Rosso",
@@ -2254,11 +2228,11 @@
     "answer": "Ponyo",
     "choices": [
       "Ponyo",
-      "Sosuke",
+      "Mei",
       "Lisa",
       "Fujimoto"
     ],
-    "context": "Sosuke is the boy. Ponyo is the daughter of the sea-wizard Fujimoto and the sea-goddess Granmamare. Miyazaki personally hand-drew the film's distinctive wave sequences and reportedly threw out CGI experiments to keep the animation hand-drawn throughout.",
+    "context": "Ponyo is the daughter of the sea-wizard Fujimoto and the sea-goddess Granmamare, and Lisa is Sosuke's mother. The film was drawn entirely by hand.",
     "topic": "studio-ghibli"
   },
   {
@@ -2271,7 +2245,7 @@
       "Turnip Head",
       "Heen"
     ],
-    "context": "Calcifer powers the castle by burning Howl's heart. Sophie's curse can be broken if she breaks the contract. Christian Bale voiced Howl and Billy Crystal voiced Calcifer in the English dub. Miyazaki took the directing job over from Mamoru Hosoda after the latter departed the project.",
+    "context": "Christian Bale voiced Howl and Billy Crystal voiced Calcifer in the English dub. Miyazaki took over the directing job from Mamoru Hosoda, who had left the project.",
     "topic": "studio-ghibli"
   },
   {
@@ -2354,15 +2328,15 @@
   },
   {
     "tier": 3,
-    "question": "Disney quietly shortened the name of Hayao Miyazaki's 1986 Studio Ghibli film when it prepared its English release in 2003, from Laputa: Castle in the Sky to just Castle in the Sky. The first word came from the flying island in Jonathan Swift's Gulliver's Travels. Why was it considered a problem?",
-    "answer": "It is a vulgar Spanish slang word meaning a female prostitute",
+    "question": "Two children chase a legendary castle that floats above the clouds, held aloft by great glowing stones, in Hayao Miyazaki's 1986 Studio Ghibli film. The castle is called Laputa, a name borrowed from a flying island in a much older book. Which book?",
+    "answer": "Jonathan Swift's Gulliver's Travels",
     "choices": [
-      "It is a vulgar Spanish slang word meaning a female prostitute",
-      "It conflicted with a 1980s Italian fantasy film of similar title",
-      "It was the name of a Disney competitor's animated franchise",
-      "It triggered objections from Jonathan Swift's literary estate"
+      "Jonathan Swift's Gulliver's Travels",
+      "Daniel Defoe's Robinson Crusoe",
+      "Jules Verne's Robur the Conqueror",
+      "Thomas More's Utopia"
     ],
-    "context": "Miyazaki took the name directly from Gulliver's Travels, where Swift apparently coined it without knowing the Spanish meaning. In Spanish-speaking countries the film has been released as El Castillo en el Cielo or Laputa: El Castillo en el Cielo despite the connotation.",
+    "context": "Swift's Laputa, from the third voyage of Gulliver's Travels (1726), is a flying island held up by a giant lodestone, and Miyazaki's castle also floats on great stones. In English the film is called Castle in the Sky.",
     "topic": "studio-ghibli"
   },
   {
@@ -2375,7 +2349,7 @@
       "Hajime Saito",
       "Aoshi Shinomori"
     ],
-    "context": "Shishio was Kenshin's successor as Hitokiri Battosai during the Bakumatsu. The Meiji government tried to assassinate him by setting him on fire. The Kyoto arc was adapted as a beautifully animated 1996-1998 TV arc and again in the 2014 live-action film Rurouni Kenshin: Kyoto Inferno starring Takeru Satoh.",
+    "context": "Shishio took over Kenshin's work as the government's shadow assassin during the Bakumatsu, and the Meiji government later tried to kill him by setting him on fire. The Kyoto arc was adapted in the 1996 anime and again in the 2014 live-action film Rurouni Kenshin: Kyoto Inferno, starring Takeru Satoh.",
     "topic": "rurouni-kenshin"
   },
   {
@@ -2427,7 +2401,7 @@
       "Lady Eboshi",
       "Yakul"
     ],
-    "context": "Moro is voiced in Japanese by actress Akihiro Miwa and in the English Miramax dub by Gillian Anderson. Okkoto is the elder boar-god. Lady Eboshi runs Irontown. Yakul is Ashitaka's loyal red elk. The film's eponymous mononoke is San herself — the wolf princess.",
+    "context": "Moro is voiced in Japanese by the singer and actor Akihiro Miwa and in the English dub by Gillian Anderson. Okkoto is the elder boar god, Lady Eboshi runs Irontown, and Yakul is Ashitaka's loyal red elk. The film's mononoke is San herself, the wolf princess.",
     "topic": "studio-ghibli"
   },
   {
@@ -2453,7 +2427,7 @@
       "A Brigantine",
       "A Skiff"
     ],
-    "context": "Mehve comes from the German word Mowe, meaning seagull. The Mehve is jet-powered with a small engine slung beneath the wing. Studio Ghibli built a working flying replica in 2013 for engineering enthusiast Kazuhiko Hachiya's OpenSky project.",
+    "context": "Mehve comes from the German word Möwe, meaning seagull. The Mehve has a small jet engine slung beneath its wing.",
     "topic": "studio-ghibli"
   },
   {
@@ -2464,9 +2438,9 @@
       "Seita and Setsuko",
       "Sosuke and Chihiro",
       "Pazu and Sheeta",
-      "Taeko and Yumi"
+      "Shizuku and Seiji"
     ],
-    "context": "Takahata adapted Akiyuki Nosaka's 1967 semi-autobiographical novel. Nosaka had lost his own younger sister to malnutrition during the war. The film was released as a double feature with Miyazaki's My Neighbor Totoro on April 16, 1988 — a contrast that astonished audiences.",
+    "context": "Takahata adapted Akiyuki Nosaka's 1967 semi-autobiographical story. The film was released as a double feature with Miyazaki's My Neighbor Totoro on April 16, 1988, a contrast that astonished audiences.",
     "topic": "studio-ghibli"
   },
   {
@@ -2570,7 +2544,7 @@
       "Naoko Maki",
       "Yumi Asakawa"
     ],
-    "context": "Takahata interleaves Taeko's adult vacation with flashbacks to her 1966 fifth-grade school year. The film is unusual for its quiet, slice-of-life tone. The English dub was produced by Disney in 2016 and features Daisy Ridley as adult Taeko.",
+    "context": "Takahata interleaves Taeko's adult holiday with flashbacks to her 1966 fifth-grade school year, in an unusually quiet, slice-of-life film. GKIDS released an English dub in 2016 with Daisy Ridley as adult Taeko.",
     "topic": "studio-ghibli"
   },
   {
@@ -2635,7 +2609,7 @@
       "Whisper of the Heart",
       "When Marnie Was There"
     ],
-    "context": "The double feature ended audiences and reviewers alike. Takahata's film became one of the most-cited anti-war films in cinema history. Roger Ebert listed it on his Great Movies list. Takahata himself was personally opposed to wartime nostalgia and used the period setting to indict adult abandonment of children, not just American bombing.",
+    "context": "Takahata's film became one of the most-cited anti-war films in cinema history, and Roger Ebert put it on his Great Movies list.",
     "topic": "studio-ghibli"
   },
   {
@@ -2692,7 +2666,7 @@
   },
   {
     "tier": 4,
-    "question": "Takeru Satoh trained for over a year in real iaijutsu sword techniques to play Kenshin Himura in Keishi Otomo's live-action film of Rurouni Kenshin, in 2012. The film's first sequel took on the manga's most-beloved arc in 2014, with a second half later in the same year. What was that first sequel called?",
+    "question": "Takeru Satoh played the wandering swordsman Kenshin Himura in Keishi Otomo's live-action film of Rurouni Kenshin, in 2012. The film's first sequel took on the manga's most-beloved arc in 2014, with a second half later in the same year. What was that first sequel called?",
     "answer": "Rurouni Kenshin: Kyoto Inferno",
     "choices": [
       "Rurouni Kenshin: Kyoto Inferno",
@@ -2700,7 +2674,7 @@
       "Rurouni Kenshin: The Beginning",
       "Rurouni Kenshin: The Legend Ends"
     ],
-    "context": "Kyoto Inferno was followed by The Legend Ends later in 2014 — the two films together adapt the Kyoto arc. Satoh later returned for The Final and The Beginning, the 2021 two-part conclusion covering the Jinchu arc and Kenshin's Bakumatsu past. Satoh's casting is now widely cited as the gold standard for live-action manga adaptation.",
+    "context": "Kyoto Inferno was followed by The Legend Ends later in 2014, and the two films together adapt the Kyoto arc. Satoh later returned for The Final and The Beginning, the 2021 two-part conclusion covering the Jinchu arc and Kenshin's Bakumatsu past.",
     "topic": "rurouni-kenshin"
   },
   {
@@ -2722,11 +2696,11 @@
     "answer": "Zeniba",
     "choices": [
       "Zeniba",
-      "Kamaji",
       "Lin",
-      "Chihiro Ogino"
+      "Dola",
+      "Obaba"
     ],
-    "context": "Yubaba and Zeniba together represent two halves of one being in Miyazaki's design — they have the same face but opposite temperaments. The train trip to Zeniba's cottage in the swamp is one of the film's most-praised sequences. Both are voiced in Japanese by veteran actress Mari Natsuki.",
+    "context": "Yubaba and Zeniba share one face and opposite temperaments. The train trip to Zeniba's cottage in the swamp is one of the film's most-praised sequences. Both are voiced in Japanese by the veteran actress Mari Natsuki.",
     "topic": "studio-ghibli"
   },
   {
@@ -2783,19 +2757,6 @@
   },
   {
     "tier": 4,
-    "question": "Hayao Miyazaki began one Ghibli movie with only the first 30 percent of the story planned, then made up the rest as he went, drawing his own storyboards while he directed. He often starts a film with no finished script. Which film was made that way?",
-    "answer": "Spirited Away in 2001",
-    "choices": [
-      "Spirited Away in 2001",
-      "Howl's Moving Castle in 2004",
-      "The Wind Rises in 2013",
-      "Princess Mononoke in 1997"
-    ],
-    "context": "Miyazaki has said in multiple interviews that he started Spirited Away with the daughter-of-a-family-friend pitch — a ten-year-old girl who needed a film made for her — and worked out where the bathhouse story would go as he drew it. The production overran budget and time but became the highest-grossing Japanese film ever upon release.",
-    "topic": "studio-ghibli"
-  },
-  {
-    "tier": 4,
     "question": "Shinichiro Watanabe pitched Cowboy Bebop, his 26-episode series about scruffy bounty hunters in a lived-in solar system, as a love letter to two beloved American film genres of the mid-1900s. Yoko Kanno set it all to a big-band jazz score. Which two genres did he name?",
     "answer": "Film noir and the western",
     "choices": [
@@ -2835,7 +2796,7 @@
   },
   {
     "tier": 4,
-    "question": "Hayao Miyazaki has said that drawing characters eating well is a moral duty for an animator, and Studio Ghibli is famous for food a viewer can almost smell. Which Ghibli film has a famously loving food scene over a live fire, spatula clinking against the pan?",
+    "question": "Studio Ghibli is famous for food a viewer can almost smell, from bento boxes to bowls of ramen, drawn with the same care as its dragons and flying castles. Which Ghibli film has a famously loving food scene over a live fire, spatula clinking against the pan?",
     "answer": "Howl's Moving Castle, with Howl cooking breakfast for Sophie and Markl",
     "choices": [
       "Howl's Moving Castle, with Howl cooking breakfast for Sophie and Markl",
@@ -2843,7 +2804,7 @@
       "Ponyo, with Sosuke's mother Lisa preparing ramen for Ponyo's first meal",
       "My Neighbor Totoro, with Satsuki packing a bento for her little sister Mei"
     ],
-    "context": "All four of these Ghibli food scenes are famously well-animated. Howl's bacon-and-eggs scene, with Calcifer crackling in the hearth and Howl flipping the pan, is the most-clipped of the four for animation studies. The Spirited Away spirit-food scene became iconic for the way the parents are transformed into pigs.",
+    "context": "Howl cooks bacon and eggs for Sophie and Markl over Calcifer in the hearth. The spirit-food scene in Spirited Away is famous too, for the way Chihiro's parents are turned into pigs.",
     "topic": "studio-ghibli"
   },
   {
@@ -2900,19 +2861,6 @@
   },
   {
     "tier": 5,
-    "question": "Chihiro and No-Face ride a train across a flooded plain at dusk in Hayao Miyazaki's 2001 film, on their way to a quiet cottage. Miyazaki wanted no train announcements, just station names posted at each stop. All those name-boards share one feature. What is it?",
-    "answer": "Each station's name is written in old-fashioned right-to-left Japanese on the platform signs",
-    "choices": [
-      "Each station's name is written in old-fashioned right-to-left Japanese on the platform signs",
-      "Each station has been transliterated from real-world locations on the Hokkaido island rail network",
-      "Each station name corresponds to a different obsolete Japanese era name from the Edo period",
-      "Each station displays both its current name and the name it had before postwar romanization reform"
-    ],
-    "context": "Miyazaki insisted on the old right-to-left orthography to create the sense of a different era. The train cars themselves are reminiscent of pre-war Japanese coaches. The passengers are translucent black silhouettes — souls in transit. Hisaishi composed One Summer's Day on a single piano take that Miyazaki refused to let him re-record.",
-    "topic": "studio-ghibli"
-  },
-  {
-    "tier": 5,
     "question": "Vegeta, the alien prince of Dragon Ball Z, crushes his green eyepiece, a scouter that reads a fighter's power level as a number, and screams about what it says of Goku. The English dub changed the real number for his most quoted line. What number does the scouter read in the original Japanese?",
     "answer": "Over eight thousand",
     "choices": [
@@ -2926,28 +2874,15 @@
   },
   {
     "tier": 5,
-    "question": "Hayao Miyazaki watched a student demonstration of AI-driven animation and told the presenters it was an insult to life itself. Studio Ghibli guards its hand-drawn style fiercely, but one of his films became the first real test of computer-generated imagery (CGI) at the studio. Which film was it, and what was the CGI for?",
-    "answer": "Princess Mononoke, for the demon-boar Nago and the catastrophic later boar charge",
+    "question": "Hayao Miyazaki watched a 2016 demonstration of animation driven by artificial intelligence, a figure writhing across the ground, and told its makers it was an insult to life itself. Studio Ghibli guards its hand-drawn style fiercely, but one of his films opened the studio's computer graphics department. Which film was it, and what was the computer work for?",
+    "answer": "Princess Mononoke, for the writhing demon flesh of the boar god Nago",
     "choices": [
-      "Princess Mononoke, for the demon-boar Nago and the catastrophic later boar charge",
+      "Princess Mononoke, for the writhing demon flesh of the boar god Nago",
       "Howl's Moving Castle, for the walking castle's eight chimney-leg mechanical assembly",
       "Spirited Away, for the river-god's translucent watery body in the bathhouse scene",
       "The Wind Rises, for the Mitsubishi Zero's three-axis aerodynamic test sequences"
     ],
-    "context": "Princess Mononoke used Toyo Links's digital painting and compositing extensively. The boar Nago at the film's opening, the army of demonic boars later in the film, and the corrupted forest spirit's collapse all use computer-aided effects. Miyazaki was reportedly furious with the test sequences and demanded they be redone repeatedly until they looked hand-drawn.",
-    "topic": "studio-ghibli"
-  },
-  {
-    "tier": 5,
-    "question": "One of Studio Ghibli's founders pushed a fat blue forest-spirit silhouette onto the studio's logo over Hayao Miyazaki's objection, as a deliberate marketing choice. Earlier films like 1986's Castle in the Sky had just carried plain text on the opening title. Who was it?",
-    "answer": "Producer Toshio Suzuki",
-    "choices": [
-      "Producer Toshio Suzuki",
-      "Director Hayao Miyazaki personally",
-      "Director Isao Takahata as a Totoro endorsement",
-      "Animator Yoshifumi Kondo, who designed the silhouette"
-    ],
-    "context": "Suzuki is the long-running producer behind nearly every Ghibli release. He had previously worked at Animage magazine before joining Ghibli. The Totoro silhouette became one of the most-recognizable production-company logos in cinema. Suzuki's decision was made over Miyazaki's initial objection that the choice would over-identify the studio with a single film.",
+    "context": "About five minutes of Princess Mononoke were animated entirely by computer and about ten more used digital ink and paint, starting with the demon god of the opening, whose writhing demon flesh was composited digitally onto the hand-drawn Ashitaka. Takahata's Pom Poko (1994) had tried digital tricks a few years earlier.",
     "topic": "studio-ghibli"
   },
   {
@@ -3017,7 +2952,7 @@
   },
   {
     "tier": 5,
-    "question": "Lady Eboshi, the tough, ambitious woman who runs the Iron Town ironworks and hunts the forest spirits, needed an English voice when Miramax dubbed Hayao Miyazaki's 1997 animated film Princess Mononoke. Miyazaki insisted on personally approving every American actor, and for this part he himself picked one Hollywood actress. Whom did he choose?",
+    "question": "Lady Eboshi, the tough, ambitious woman who runs the Iron Town ironworks and hunts the forest spirits, needed an English voice when Miramax dubbed Hayao Miyazaki's 1997 animated film Princess Mononoke. Miramax filled the dub with Hollywood names, Claire Danes as San among them. Which actress voiced Eboshi?",
     "answer": "Minnie Driver",
     "choices": [
       "Minnie Driver",
@@ -3025,7 +2960,7 @@
       "Cate Blanchett",
       "Joanne Whalley"
     ],
-    "context": "Driver has discussed in interviews that Miyazaki had seen her in Good Will Hunting and felt her voice carried the warmth and the steel he wanted in Eboshi. Billy Bob Thornton voiced Jigo. Billy Crudup voiced Ashitaka. Claire Danes voiced San. Gillian Anderson voiced Moro. The dub became one of the most-praised English dubs of any Ghibli release.",
+    "context": "Billy Crudup voiced Ashitaka, Billy Bob Thornton the monk Jigo and Gillian Anderson the wolf goddess Moro, from an English script by Neil Gaiman.",
     "topic": "studio-ghibli"
   },
   {
@@ -3038,20 +2973,20 @@
       "Studio Deen had a deal to produce an entirely original World War II historical arc",
       "Fuji TV demanded an isekai-style transition arc for ratings in late-1990s primetime"
     ],
-    "context": "The Black Knight Squad arc — sometimes called the Christian arc — is widely considered the series's weakest period. Long-running anime adaptations of ongoing manga famously face this problem; later examples include Naruto's Filler-Naruto arcs and Bleach's Bount arc. The 2012-2014 OVA Rurouni Kenshin: Tsuiokuhen and Seisouhen returned to faithful Watsuki adaptation.",
+    "context": "The Black Knights (Kurokishidan) episodes belong to the stretch Studio Deen wrote for itself in the third season, which fans count as the series' weakest. Long adaptations of running manga often hit the same wall; Bleach's Bount arc is a later example. The 1999 video series Trust & Betrayal went back to Watsuki's own story.",
     "topic": "rurouni-kenshin"
   },
   {
     "tier": 5,
-    "question": "Hayao Miyazaki wanted the huge storm waves of his 2008 Ghibli film, about a magical goldfish girl who wants to become human, to behave like living creatures. He had long grumbled that digital animation looks lifeless, so he pushed a very unusual technique. What method did he champion for those waves?",
-    "answer": "All waves were hand-drawn frame by frame in colored pencil on paper, scanned and not digitally smoothed",
+    "question": "The storm in Hayao Miyazaki's 2008 Ghibli film, about a magical goldfish girl who wants to become human, sends huge waves racing after a car along a cliff road, and the waves rear up like living fish. How were those waves animated?",
+    "answer": "Drawn entirely by hand, like the rest of the film, with no computer animation",
     "choices": [
-      "All waves were hand-drawn frame by frame in colored pencil on paper, scanned and not digitally smoothed",
+      "Drawn entirely by hand, like the rest of the film, with no computer animation",
       "Each wave was rendered in custom-built fluid-dynamics software at Studio Ghibli",
       "Stock-footage water reference plates were rotoscoped frame by frame into the animation",
       "A motion-capture rig with water-tank reference was used to drive Toyo Links wave models"
     ],
-    "context": "Ponyo's waves were a deliberate refusal of computer fluid simulation. Miyazaki has discussed in interviews that he wanted the waves to feel like living creatures, and that the only way to achieve that was hand-drawing every frame in colored pencil. The film required over 170,000 individual frames. Many were drawn by Miyazaki himself.",
+    "context": "Ponyo was drawn entirely by hand, a record number of drawings for a Miyazaki film, and the studio's computer graphics section was closed so the staff could concentrate on hand-drawn work.",
     "topic": "studio-ghibli"
   },
   {
@@ -3095,15 +3030,15 @@
   },
   {
     "tier": 5,
-    "question": "A Studio Ghibli producer signed a deal with Disney in 1996 to release most of the Japanese studio's films across North America through 2017, and the Hayao Miyazaki classics all went through Disney. But one famous Ghibli film was quietly left out of the deal. Which one?",
-    "answer": "Grave of the Fireflies, which was distributed in the US by Sentai Filmworks and Central Park Media",
+    "question": "A Studio Ghibli producer signed a deal with Disney in 1996 to release most of the Japanese studio's films across North America through 2017, and Disney gave them new English dubs with Hollywood casts. But one famous Ghibli film was quietly left out of the deal. Which one?",
+    "answer": "Grave of the Fireflies",
     "choices": [
-      "Grave of the Fireflies, which was distributed in the US by Sentai Filmworks and Central Park Media",
-      "Castle in the Sky, distributed by Warner Brothers under its Streamline Pictures branch",
-      "Whisper of the Heart, distributed independently by Bandai Visual through TriStar",
-      "Princess Mononoke, distributed by Miramax Films alongside The Wind Rises"
+      "Grave of the Fireflies",
+      "Castle in the Sky",
+      "Whisper of the Heart",
+      "Princess Mononoke"
     ],
-    "context": "Grave of the Fireflies was produced not by Ghibli but by Shinchosha, with Ghibli only providing the animation. The film's licensing was therefore separate. Sentai Filmworks reissued the film in 2012 with a new dub. Disney distributed nearly every other Ghibli theatrical release in North America from 1997 through 2017, when the deal lapsed and GKIDS took over.",
+    "context": "Grave of the Fireflies was produced not by Ghibli but by the publisher Shinchosha, with Ghibli only providing the animation, so its rights were separate; Central Park Media and later Sentai Filmworks released it in the US. Disney distributed nearly every other Ghibli release in North America until GKIDS took over.",
     "topic": "studio-ghibli"
   },
   {
@@ -3121,20 +3056,20 @@
   },
   {
     "tier": 5,
-    "question": "DIC Entertainment, an American company, cut about six episodes and renamed most of the cast when it dubbed the adventures of Usagi Tsukino and her planet-named magical warriors for English TV starting in 1995. It also rewrote one of the Japanese show's same-sex romances to hide it from young viewers. Which change did DIC make?",
-    "answer": "Sailor Uranus and Sailor Neptune were rewritten as cousins",
+    "question": "DIC Entertainment, an American company, renamed most of the cast and cut several episodes when it dubbed the first two seasons of Usagi Tsukino's adventures for English TV, starting in 1995. It also hid one of the Japanese show's same-sex romances from young viewers. Which change did DIC make?",
+    "answer": "The villain Zoisite was rewritten from a man into a woman",
     "choices": [
+      "The villain Zoisite was rewritten from a man into a woman",
       "Sailor Uranus and Sailor Neptune were rewritten as cousins",
-      "Sailor Mars and Sailor Jupiter were rewritten as platonic cousins",
-      "Zoisite was rewritten from a male villain into a female villain",
-      "Sailor Saturn was rewritten as an unrelated cosmic entity rather than reborn Setsuna"
+      "Sailor Mars and Sailor Jupiter were rewritten as cousins",
+      "Sailor Venus and Sailor Mercury were rewritten as sisters"
     ],
-    "context": "DIC removed any romantic suggestion between Sailor Uranus and Sailor Neptune by recoding their relationship as cousins. The Sailor Starlights — male in civilian form, female as senshi — were never adapted into English by DIC because their gender presentation was deemed too complex. Viz Media's 2014 re-dub restored all original characterizations and relationships.",
+    "context": "DIC's dub of the first two seasons made Zoisite a woman, which hid his romance with Kunzite (renamed Malachite). Sailor Uranus and Sailor Neptune first appear in the third season, which Cloverway dubbed in 2000, and that dub made them cousins. Viz Media's 2014 redub restored the original characters and relationships.",
     "topic": "sailor-moon"
   },
   {
     "tier": 5,
-    "question": "A Japanese art director painted Studio Ghibli's green fields and bathhouse hallways in a warm watercolor, each one like a live children's book. He painted or oversaw those backgrounds for almost every Hayao Miyazaki film from 1988 onward. Who was he?",
+    "question": "A Japanese art director painted the green fields, rainy roads and great camphor tree of My Neighbor Totoro in 1988, and his countryside became the look people picture when they think of Studio Ghibli. He went on to art-direct three more Ghibli films in the next ten years. Who was he?",
     "answer": "Kazuo Oga",
     "choices": [
       "Kazuo Oga",
@@ -3142,7 +3077,7 @@
       "Naoya Tanaka",
       "Toshiro Nozaki"
     ],
-    "context": "Oga's signature watercolor-and-poster-paint backgrounds became synonymous with the Ghibli look. He served as art director on most major Ghibli films from 1988 to 2008. Yoji Takeshige took over much of the art-direction work after Oga's semi-retirement and led the backgrounds for Howl's Moving Castle and Ponyo. Naoya Tanaka led the backgrounds for The Wind Rises.",
+    "context": "Oga was art director of My Neighbor Totoro (1988), Only Yesterday (1991), Pom Poko (1994) and Princess Mononoke (1997), and much later of The Tale of the Princess Kaguya (2013). An exhibition of his work was called Kazuo Oga: The Man Who Drew Totoro's Forest.",
     "topic": "studio-ghibli"
   },
   {
@@ -3256,8 +3191,8 @@
     "choices": [
       "Totoro",
       "Kodama",
-      "Calcifer",
-      "Jiji"
+      "No-Face",
+      "Shishigami"
     ],
     "context": "My Neighbor Totoro was released as a double feature with Takahata's Grave of the Fireflies. The two sisters Satsuki and Mei live in the countryside while their mother is in the hospital.",
     "topic": "studio-ghibli"
@@ -3529,8 +3464,8 @@
     "choices": [
       "Jiji",
       "Luna",
-      "Calcifer",
-      "Totoro"
+      "Muta",
+      "Lily"
     ],
     "context": "Kiki's Delivery Service was Miyazaki's adaptation of Eiko Kadono's children's novel. Tradition holds that all young witches must spend a year on their own training; Kiki picks Koriko, a Stockholm-like city.",
     "topic": "studio-ghibli"
@@ -3803,7 +3738,7 @@
       "Ashitaka",
       "Howl",
       "Pazu",
-      "Seita"
+      "Sosuke"
     ],
     "context": "Princess Mononoke was the highest-grossing film in Japan until Titanic released later that year. The Forest Spirit (the deer god Shishigami) and the wolf-raised San are the other central figures. Neil Gaiman wrote the English-dub adaptation.",
     "topic": "studio-ghibli"
@@ -3814,7 +3749,7 @@
     "answer": "Yubaba",
     "choices": [
       "Yubaba",
-      "Zeniba",
+      "Obaba",
       "Kamaji",
       "Lin"
     ],
@@ -4382,15 +4317,15 @@
   },
   {
     "tier": 4,
-    "question": "Claire Danes voiced San in the English dub of Studio Ghibli's Princess Mononoke (1997), and a famous actor took the cursed boar god in the opening. It was a famously huge production, with over 144,000 hand-drawn frames, and Hayao Miyazaki himself retouched about 80,000 of them. Who voices that boar god?",
+    "question": "Claire Danes voiced San in the English dub of Studio Ghibli's Princess Mononoke (1997), and a famous actor voiced Okkoto, the blind old chief of the boar clan. It was a famously huge production, with about 144,000 hand-drawn frames, and Hayao Miyazaki himself drew or retouched nearly 80,000 of them. Who voiced Okkoto?",
     "answer": "Keith David, the actor known for his deep growling voice work",
     "choices": [
       "Keith David, the actor known for his deep growling voice work",
       "Liam Neeson, fresh off his Schindler's List performance",
-      "Patrick Stewart, in a brief opening-narration cameo",
-      "Gillian Anderson, also voicing Moro the wolf goddess"
+      "Patrick Stewart, the actor known for Star Trek",
+      "Billy Bob Thornton, who also played the monk Jigo"
     ],
-    "context": "Neil Gaiman wrote the English dub script, working closely with Miyazaki's exacting standards. Studio Ghibli's Miramax distribution deal famously required a 'no cuts' clause — Harvey Weinstein wanted to trim Mononoke; Miyazaki sent him a katana with 'No Cuts' inscribed on it. Gillian Anderson did voice the wolf goddess Moro.",
+    "context": "Neil Gaiman wrote the English script, and the Miramax deal barred any cuts to the film. Toshio Suzuki, not Miyazaki, sent Harvey Weinstein the katana with its note, No cuts. John DiMaggio voiced Nago, the cursed boar of the opening, and Gillian Anderson voiced the wolf goddess Moro.",
     "topic": "studio-ghibli"
   },
   {
@@ -4539,14 +4474,14 @@
   {
     "tier": 4,
     "question": "Disney hired a big Hollywood cast when it produced the English dub of Hayao Miyazaki's 2004 film of Diana Wynne Jones's fantasy novel about a walking castle. One of that cast was a famous American stand-up comedian. Which comedian was it, and what was his part in the dub?",
-    "answer": "Billy Crystal, who improvised much of Calcifer's English-dub dialogue",
+    "answer": "Billy Crystal, who voiced the fire demon Calcifer",
     "choices": [
-      "Billy Crystal, who improvised much of Calcifer's English-dub dialogue",
-      "Robin Williams, who voiced Howl's grandfather in the early scenes",
-      "Eddie Murphy, who provided the Witch of the Waste's voice",
-      "Dan Aykroyd, who took the King Sulliman role for the dub"
+      "Billy Crystal, who voiced the fire demon Calcifer",
+      "Robin Williams, who voiced the scarecrow Turnip Head",
+      "Eddie Murphy, who voiced the wheezing dog Heen",
+      "Steve Martin, who voiced the warring kingdom's King"
     ],
-    "context": "The English dub also included Christian Bale (Howl), Emily Mortimer (young Sophie), Jean Simmons (old Sophie), and Lauren Bacall (Witch of the Waste). Calcifer is the fire-demon that powers Howl's moving castle through a contract that's secretly bound to Howl's heart. Disney distributed the dub through Miramax until that contract ended.",
+    "context": "Crystal had to fit his lines to animation that was already finished. The English dub also included Christian Bale (Howl), Emily Mortimer (young Sophie), Jean Simmons (old Sophie) and Lauren Bacall (the Witch of the Waste).",
     "topic": "studio-ghibli"
   },
   {
@@ -4730,19 +4665,6 @@
     ],
     "context": "Dave Rodgers is the stage name of Giancarlo Pasquini, and 'Deja Vu' is the track of his most tied to Initial D. 'Speedy Speed Boy', another Initial D favorite, was sung by Marko Polo, an Italian singer of the same scene.",
     "topic": "initial-d"
-  },
-  {
-    "tier": 5,
-    "question": "A rampaging boar named Nago attacks a rural Japanese village at the opening of Hayao Miyazaki's 1997 fantasy, with writhing black tentacles covering his body. Those tentacles were Studio Ghibli's first major experiment mixing computer graphics with hand-drawn animation. About what share of the finished film's shots used any computer graphics?",
-    "answer": "About 10 percent of total shots, mostly in the demon-corruption and forest-spirit sequences",
-    "choices": [
-      "About 10 percent of total shots, mostly in the demon-corruption and forest-spirit sequences",
-      "About 30 percent of total shots, throughout the film for textures and crowd scenes",
-      "About 1 percent of total shots, restricted to a single establishing-shot sky",
-      "About 50 percent of total shots, in an unprecedented CGI integration for Ghibli"
-    ],
-    "context": "Ghibli's CGI use grew gradually from Princess Mononoke through the 2000s. Spirited Away's bathhouse sequences used CGI for set extension and crowd work. Howl's Moving Castle used CGI for the castle's mechanical animations. Miyazaki's approach has consistently been to use CGI only where traditional cel animation would be impractical or impossible. The Princess Mononoke demon-corruption tentacles set the studio's CGI-aesthetic standard.",
-    "topic": "studio-ghibli"
   },
   {
     "tier": 5,
@@ -5162,7 +5084,7 @@
   },
   {
     "tier": 1,
-    "question": "A snake-cult wizard named Thulsa Doom murders Conan's parents in the 1982 movie Conan the Barbarian, and Arnold Schwarzenegger's grown-up Conan hunts him down for revenge. Thulsa Doom is played by the deep-voiced American actor who also voiced Darth Vader. Who plays Thulsa Doom?",
+    "question": "A snake-cult wizard named Thulsa Doom murders Conan's parents in the 1982 movie Conan the Barbarian, and Arnold Schwarzenegger's grown-up Conan hunts him down for revenge. Thulsa Doom is played by the deep-voiced actor who also voiced Darth Vader. Who plays Thulsa Doom?",
     "answer": "James Earl Jones",
     "choices": [
       "James Earl Jones",
@@ -5170,7 +5092,7 @@
       "Christopher Lee",
       "Ben Kingsley"
     ],
-    "context": "John Milius directed; Arnold Schwarzenegger played Conan. The film opens with Conan's father teaching him the 'riddle of steel.' Carlos Palomino played Thulsa Doom with James Earl Jones providing the voice.",
+    "context": "John Milius directed, and Arnold Schwarzenegger played Conan. The film opens with Conan's father teaching him the riddle of steel. James Earl Jones played Thulsa Doom on screen as well as voicing him.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -5183,7 +5105,7 @@
       "Her foster parents' location",
       "Imperial fleet positions"
     ],
-    "context": "The technical readout of the Death Star — stolen by Rebel spies on Toprawa in events later expanded by Rogue One (2016) — is hidden in R2's memory along with Leia's hologram message: 'Help me, Obi-Wan Kenobi. You're my only hope.' R2 escapes the captured Tantive IV, lands on Tatooine, and the rest is the plot of A New Hope. The Death Star plans reveal the vulnerable exhaust port Luke later exploits.",
+    "context": "The technical readout of the Death Star, stolen by Rebel spies in events later told in Rogue One (2016), is hidden in R2's memory along with Leia's hologram message: 'Help me, Obi-Wan Kenobi. You're my only hope.' R2 escapes the captured Tantive IV and lands on Tatooine, and the plans reveal the vulnerable exhaust port Luke later exploits.",
     "topic": "star-wars-original-trilogy"
   },
   {
@@ -5205,9 +5127,9 @@
     "answer": "Anya Taylor-Joy",
     "choices": [
       "Anya Taylor-Joy",
-      "Chris Pratt",
-      "Charlie Day",
-      "Keegan-Michael Key"
+      "Margot Robbie",
+      "Florence Pugh",
+      "Zendaya"
     ],
     "context": "Chris Pratt voiced Mario, Charlie Day voiced Luigi, Jack Black voiced Bowser, Seth Rogen voiced Donkey Kong, and Keegan-Michael Key voiced Toad. The film grossed over $1.36 billion worldwide.",
     "topic": "super-mario-bros-movie-2023"
@@ -5361,11 +5283,11 @@
     "answer": "Mary Elizabeth Winstead",
     "choices": [
       "Mary Elizabeth Winstead",
-      "Anna Frances Kendrick",
-      "Alison Loren Pill",
-      "Aubrey Plaza-Cuevas"
+      "Zooey Deschanel",
+      "Evan Rachel Wood",
+      "Amanda Seyfried"
     ],
-    "context": "Winstead (American, from Rocky Mount NC) had previously starred in Final Destination 3 (2006). Anna Kendrick played Scott's sister Stacey; Aubrey Plaza played the foul-mouthed Julie Powers.",
+    "context": "Winstead, from Rocky Mount, North Carolina, had starred in Final Destination 3 (2006). Anna Kendrick played Scott's sister Stacey, and Aubrey Plaza played the foul-mouthed Julie Powers.",
     "topic": "scott-pilgrim"
   },
   {
@@ -5469,7 +5391,7 @@
       "John Williams",
       "Maurice Jarre"
     ],
-    "context": "Poledouris's score is widely considered one of the greatest in fantasy-film history. He also scored RoboCop (1987) and Starship Troopers (1997). Director John Milius wanted the score 'as though Wagner had written it from a Mongol's perspective.'",
+    "context": "Poledouris's score is widely considered one of the greatest in fantasy-film history. He also scored RoboCop (1987) and Starship Troopers (1997). Milius had sent him a cut of the film set to Wagner, Stravinsky and Prokofiev to convey the mood.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -5734,28 +5656,15 @@
   },
   {
     "tier": 3,
-    "question": "Bryan Lee O'Malley gave Ramona Flowers, the American delivery girl Scott Pilgrim falls for, a new hair color for each of his six graphic novels, published between 2004 and 2010. It became a running visual joke: readers could tell which volume they were in just by looking at her head. Across volumes 1, 2 and 3, what order did her hair colors go in?",
-    "answer": "Pink, then blue, then green",
-    "choices": [
-      "Pink, then blue, then green",
-      "Blue, then green, then pink",
-      "Red, then blonde, then black",
-      "Yellow, then orange, then purple"
-    ],
-    "context": "O'Malley said the hair-color changes signal Ramona's emotional state and the relationship's phases. In the 2010 film, Mary Elizabeth Winstead wore wigs to match. The 2023 Netflix anime brought back the color sequence more closely than the film could.",
-    "topic": "scott-pilgrim"
-  },
-  {
-    "tier": 3,
-    "question": "Edgar Wright staged the rock-concert battle at the end of his 2010 film inside a music club modeled on the real-life venue Lee's Palace on Bloor Street. Bryan Lee O'Malley gave the venue a different, more villainous name in his six-volume comic, making it the private concert hall of Gideon Graves, Ramona's last and worst evil ex, a record-label mogul. What did the comic call it?",
+    "question": "Gideon Graves, Ramona's seventh and last evil ex, runs a record label and owns the club where Scott Pilgrim finally fights him, in Bryan Lee O'Malley's six-volume comic and Edgar Wright's 2010 film alike. The club's name is a nod to the video game EarthBound. What is it called?",
     "answer": "The Chaos Theatre",
     "choices": [
       "The Chaos Theatre",
       "The Demonhead Arena",
-      "The Toronto Coliseum",
-      "Sound Ed's Performance Hall"
+      "The Graves Concert Hall",
+      "The Vortex Club"
     ],
-    "context": "Gideon Graves is Ramona's seventh evil ex and the leader of the League. Jason Schwartzman played him in the 2010 film. The Chaos Theatre fight features the famous 'Power of Love' sword vs. the 'Power of Self-Respect' sword sequence.",
+    "context": "Gideon owns the Chaos Theatre in New York and is opening one in Toronto, with Envy Adams's band as its opening act. Jason Schwartzman played Gideon in the 2010 film.",
     "topic": "scott-pilgrim"
   },
   {
@@ -5851,15 +5760,15 @@
   },
   {
     "tier": 3,
-    "question": "John Milius's 1982 film Conan the Barbarian shows Conan's father teaching him the riddle of steel before Thulsa Doom kills the man. That riddle is Milius's own creation, but the line of text on screen before anything happens comes from somewhere else. What is the quote, and what is its source?",
-    "answer": "'That which does not kill us makes us stronger' — Nietzsche, Twilight of the Idols 1888",
+    "question": "John Milius's 1982 film Conan the Barbarian shows Conan's father teaching him the riddle of steel before Thulsa Doom kills the man. That riddle is Milius's own creation, but the line of text on screen before anything happens comes from somewhere else. Where does it come from?",
+    "answer": "Nietzsche's Twilight of the Idols",
     "choices": [
-      "'That which does not kill us makes us stronger' — Nietzsche, Twilight of the Idols 1888",
-      "'In steel a man's soul finds its purest test' — fictional, written by John Milius himself",
-      "'The sword is mightier than the kingdom' — from Robert E. Howard's Conan stories",
-      "'Crom counts the slain, not the conquests' — from L. Sprague de Camp's pastiches"
+      "Nietzsche's Twilight of the Idols",
+      "Robert E. Howard's first Conan story",
+      "L. Sprague de Camp's Conan pastiches",
+      "The Hávamál, the Norse poem of proverbs"
     ],
-    "context": "The Nietzsche quote is genuine — from Twilight of the Idols (1888), aphorism 8 of Maxims and Arrows. Milius was a self-confessed Nietzschean. The riddle of steel — 'what is steel compared to the hand that wields it' — is Milius's own invention for the film, not from Howard.",
+    "context": "The line is 'That which does not kill us makes us stronger', from Twilight of the Idols (1888), aphorism 8 of Maxims and Arrows. The riddle of steel, 'what is steel compared to the hand that wields it', is Milius's own invention for the film, not Howard's.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -5872,7 +5781,7 @@
       "Twenty-one years old",
       "Eight years old"
     ],
-    "context": "Davis later starred in Willow (1988), Leprechaun (1993), and Harry Potter (as Professor Flitwick + Griphook the goblin). He was originally cast as a different Ewok and only got the Wicket role when Kenny Baker fell ill. His daughter Annabelle has the same condition (spondyloepiphyseal dysplasia congenita).",
+    "context": "Davis later starred in Willow (1988) and Leprechaun (1993) and played Professor Flitwick and Griphook in the Harry Potter films. He was first cast as a different Ewok and only got the Wicket role when Kenny Baker fell ill.",
     "topic": "star-wars-original-trilogy"
   },
   {
@@ -5929,28 +5838,15 @@
   },
   {
     "tier": 3,
-    "question": "Scott Pilgrim beats Todd Ingram, whose powers come from his vegan diet, and earns a sword called the Power of Love. It arrives with an on-screen item panel like one from an old-school role-playing game, complete with a special-ability tag. What does the tag read?",
-    "answer": "+2 Against Evil Ex-Boyfriends",
+    "question": "Todd Ingram draws his powers from being vegan in Bryan Lee O'Malley's Scott Pilgrim graphic novels. In the 2010 film the Vegan Police strip him of them after Scott tricks him into drinking half-and-half, and the officers read out two older offences, a late-night gelato and a plate of something else. What was on the plate?",
+    "answer": "Chicken Parmesan",
     "choices": [
-      "+2 Against Evil Ex-Boyfriends",
-      "+3 To Hit Vegan Targets",
-      "Magic Damage +1 To Romance",
-      "+1 Sword With Lifesteal"
+      "Chicken Parmesan",
+      "Beef lasagna",
+      "Pork dumplings",
+      "Fish tacos"
     ],
-    "context": "The sword appears with a Final Fantasy-style item-acquisition screen showing the stats. Scott also earns a Power of Self-Respect sword when fighting his Nega-Scott self. Both swords appear in the climactic Chaos Theatre battle against Gideon Graves.",
-    "topic": "scott-pilgrim"
-  },
-  {
-    "tier": 3,
-    "question": "Todd Ingram draws his powers from being vegan in Bryan Lee O'Malley's Scott Pilgrim graphic novels, and the Vegan Police arrive to strip him of them the moment he breaks the diet. What two specific items does he eat to bring them down on him in the film?",
-    "answer": "Half-and-half in his coffee, then chicken parmigiana",
-    "choices": [
-      "Half-and-half in his coffee, then chicken parmigiana",
-      "Milk in cereal, then a hamburger from Wimpy's",
-      "Cheese on a pizza, then ice cream at Honest Ed's",
-      "Butter on toast, then beef chow mein takeout"
-    ],
-    "context": "Brandon Routh played Todd in the 2010 film. The Vegan Police agents are played by Thomas Jane and Clifton Collins Jr. Todd's powers include super-strength, telekinesis, and bowl-cut hair. After being de-veganed, he's reduced to a regular bassist who Scott easily defeats.",
+    "context": "Brandon Routh played Todd, and Thomas Jane and Clifton Collins Jr. played the Vegan Police. Told about the chicken, Todd asks in honest shock whether chicken is not vegan.",
     "topic": "scott-pilgrim"
   },
   {
@@ -5976,7 +5872,7 @@
       "Diddy Kong's grandfather from the SNES Donkey Kong Country games",
       "An entirely new character invented for Donkey Kong 64"
     ],
-    "context": "Cranky's identity as the original DK was established in Donkey Kong Country (1994). The film's Donkey Kong is technically Donkey Kong Jr., who appeared in the 1982 arcade game. The Donkey Kong Country reference in the movie includes a brief snippet of the iconic 1994 banana theme.",
+    "context": "Cranky's identity as the original Donkey Kong was set up in Donkey Kong Country (1994). In the 1981 arcade game the ape carries off Pauline, and Jumpman, later renamed Mario, climbs the girders after her.",
     "topic": "super-mario-bros-movie-2023"
   },
   {
@@ -6034,14 +5930,14 @@
   {
     "tier": 3,
     "question": "A different director worked on Total Recall for a while and then quit, years before Paul Verhoeven took the job and filled the 1990 film with Martian mutants and exploding heads. The finished movie starred Arnold Schwarzenegger as a construction worker who may or may not really be a spy on Mars with fake memories. Who was that first director?",
-    "answer": "David Cronenberg, who left over creative differences with the producers",
+    "answer": "David Cronenberg, fresh from The Dead Zone",
     "choices": [
-      "David Cronenberg, who left over creative differences with the producers",
-      "Bruce Beresford, who was attached for two years in pre-production",
-      "Patrick Duncan, who wrote an early draft but never directed",
-      "Russell Mulcahy, who was set to direct after Highlander's success"
+      "David Cronenberg, fresh from The Dead Zone",
+      "Ridley Scott, fresh from Blade Runner",
+      "John Carpenter, fresh from The Thing",
+      "Terry Gilliam, fresh from Brazil"
     ],
-    "context": "Cronenberg's vision was reportedly much closer to Philip K. Dick's original short story — psychological-horror-focused rather than action-blockbuster. He left in 1985. The project then went through many directors before Carolco Pictures hired Verhoeven post-RoboCop.",
+    "context": "Dino De Laurentiis hired Cronenberg in 1984, and he wrote twelve drafts in a year before leaving: he did not want the Raiders of the Lost Ark on Mars that the producers wanted. Seven directors were attached over the years before Carolco hired Verhoeven.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -6085,7 +5981,7 @@
   },
   {
     "tier": 4,
-    "question": "Edgar Wright, the British director who had just made Shaun of the Dead, snapped up the film rights to Bryan Lee O'Malley's Scott Pilgrim books in 2005, before book two had even hit shelves. The small black-and-white paperbacks looked and read like Japanese manga, and Wright's film took its title from that second book. What was the book called?",
+    "question": "Edgar Wright, the British director who had just made Shaun of the Dead, agreed to make a film of Bryan Lee O'Malley's Scott Pilgrim books while the series had hardly started. The small black-and-white paperbacks looked and read like Japanese manga, and Wright's film took its title from the second book. What was the book called?",
     "answer": "Scott Pilgrim vs. the World",
     "choices": [
       "Scott Pilgrim vs. the World",
@@ -6093,20 +5989,20 @@
       "Scott Pilgrim Gets It Together",
       "Scott Pilgrim's Finest Hour"
     ],
-    "context": "The six volumes: Precious Little Life (2004), vs. the World (2005), and the Infinite Sadness (2006), Gets It Together (2007), vs. the Universe (2009), Finest Hour (2010). Wright's film took the title of volume 2 and adapted plot beats from all six. O'Malley drew the final volume's color art in part because the Netflix anime announcement had created industry curiosity.",
+    "context": "The six volumes: Precious Little Life (2004), vs. the World (2005), and the Infinite Sadness (2006), Gets It Together (2007), vs. the Universe (2009) and Finest Hour (2010). Wright's film took the title of volume 2; the last volume was not yet finished when the film was made.",
     "topic": "scott-pilgrim"
   },
   {
     "tier": 4,
-    "question": "The Super Mario Bros. Movie opens on the brothers' own television advert for their plumbing business, made to look like a worn home-video tape. The advert is a near shot-for-shot copy of a real piece of Nintendo advertising. From what era does the original come?",
-    "answer": "1989, when Nintendo had Mario and Luigi appear in a Super Mario Bros. 2-era promotional cassette tape",
+    "question": "Mario and Luigi advertise their new plumbing business in a commercial made for The Super Mario Bros. Movie and aired during the 2023 Super Bowl, styled like a cheap local TV spot. Its jingle brings back the rap theme of an older Mario show from 1989. Which show?",
+    "answer": "The Super Mario Bros. Super Show!",
     "choices": [
-      "1989, when Nintendo had Mario and Luigi appear in a Super Mario Bros. 2-era promotional cassette tape",
-      "1995, in a Nickelodeon-style cable TV ad introducing Mario 64",
-      "1985, in the original Famicom-era Japanese commercials for Super Mario Bros.",
-      "2003, in the GameCube launch advertising campaign for Mario Sunshine"
+      "The Super Mario Bros. Super Show!",
+      "Captain N: The Game Master",
+      "The Adventures of Super Mario Bros. 3",
+      "Saturday Supercade"
     ],
-    "context": "The 'Plumbing Service' commercial was hand-animated to match late-80s home-video tape quality. Easter eggs in the Brooklyn opening include the Punch-Out!! gym sign, the Mario Movie 2 logo on the Plumbing van rear, and references to the Wrecking Crew. The commercial's website (supermariobrosplumbing.com) was actually registered as a real domain by Universal Studios.",
+    "context": "The spot's jingle reworks the rap theme of The Super Mario Bros. Super Show!, in which Lou Albano and Danny Wells played Mario and Luigi in 1989. The advert sent viewers to a real Super Mario Bros. Plumbing website, and its phone number played a message from Charlie Day, the film's Luigi.",
     "topic": "super-mario-bros-movie-2023"
   },
   {
@@ -6176,15 +6072,15 @@
   },
   {
     "tier": 4,
-    "question": "Wagner mixed with a Mongol horseman: that was the sound John Milius told his composer to find for the 1982 movie Conan the Barbarian, starring Arnold Schwarzenegger. The composer wrote the score in Rome. What sound anchors its famous opening piece?",
-    "answer": "A choir over hammer-on-anvil percussion with timpani and brass underneath",
+    "question": "John Milius sent his composer a cut of the 1982 movie Conan the Barbarian with its scenes set to Wagner and other composers, to show the feeling he wanted. The score was recorded in Rome over three weeks, with a choir and an orchestra. What sound opens its famous main theme, Anvil of Crom?",
+    "answer": "The brassy blast of twenty-four French horns",
     "choices": [
-      "A choir over hammer-on-anvil percussion with timpani and brass underneath",
-      "Solo cello over a string section playing the main theme in counterpoint",
-      "A brass-and-bone-flute fanfare over taiko drums",
-      "A Hungarian zither over a string ensemble in minor pentatonic"
+      "The brassy blast of twenty-four French horns",
+      "A lone trumpet over pounding war drums",
+      "A massed choir singing over timpani",
+      "A solo cello over a hushed string section"
     ],
-    "context": "Poledouris hired blacksmiths to physically pound anvils on the studio floor for the percussion track. The choir sang in Latin (specifically: 'Doom upon all things, doom and woe' translated). The score became one of the most-licensed fantasy themes for film trailers in the next 40 years. Poledouris died in 2006 at age 61.",
+    "context": "Basil Poledouris spent three weeks recording the score in Rome late in 1981, with a 24-member choir from the Accademia Nazionale di Santa Cecilia and a RAI orchestra. Anvil of Crom is the film's main theme. Poledouris died in 2006 at age 61.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -6202,15 +6098,15 @@
   },
   {
     "tier": 4,
-    "question": "Edgar Wright cast Brandon Routh as Todd Ingram, Chris Evans as Lucas Lee and Brie Larson as Envy Adams in his 2010 film, which took $47M on a $90M production and marketing budget and only later became a cult favorite on home video. One of those actors had already played a comic-book hero before the film, and another went on to play one after it. Which roles were those?",
-    "answer": "Routh played Superman (Returns, 2006, pre-Scott Pilgrim) and Evans played Captain America (First Avenger, 2011)",
+    "question": "Edgar Wright cast Brandon Routh as Todd Ingram and Chris Evans as Lucas Lee in his 2010 film, which lost money in cinemas and only later became a cult favorite on home video. Routh had already played a famous comic-book hero before the film, and Evans went on to play another the next year. Which two heroes?",
+    "answer": "Superman for Routh, Captain America for Evans",
     "choices": [
-      "Routh played Superman (Returns, 2006, pre-Scott Pilgrim) and Evans played Captain America (First Avenger, 2011)",
-      "Larson played Captain Marvel (2019) and Routh played Atom on CW's Legends of Tomorrow",
-      "Evans played the Human Torch (Fantastic Four, 2005) and Routh played the Atom on CW",
-      "Larson played Squirrel Girl on a Marvel pilot and Evans played Captain America"
+      "Superman for Routh, Captain America for Evans",
+      "Green Lantern for Routh, Thor for Evans",
+      "Batman for Routh, Daredevil for Evans",
+      "The Atom for Routh, the Human Torch for Evans"
     ],
-    "context": "All four answers are partially true. Routh played Superman in 2006 and the Atom on CW Arrowverse shows. Evans had played the Human Torch in 2005's Fantastic Four before becoming Cap in 2011. Larson played Captain Marvel starting in 2019. The Scott Pilgrim casting was prescient about which young actors would dominate the next decade.",
+    "context": "Routh played Superman in Superman Returns (2006), and Evans became Captain America in Captain America: The First Avenger (2011); he had already played the Human Torch in Fantastic Four (2005). Routh later played the Atom on television, and Brie Larson, the film's Envy Adams, became Captain Marvel in 2019.",
     "topic": "scott-pilgrim"
   },
   {
@@ -6249,7 +6145,7 @@
       "Lethal Weapon (1987) and The Russia House (1990)",
       "RoboCop (1987) and Indiana Jones and the Last Crusade (1989)"
     ],
-    "context": "McTiernan's Die Hard-Predator-Hunt for Red October trio is one of the great action-director runs in cinema. He later went to prison briefly in 2013 for lying to the FBI about a wiretapping incident involving a private investigator. His daughter Annaliesa Henrik McTiernan is also a filmmaker.",
+    "context": "McTiernan's Predator-Die Hard-Hunt for Red October trio is one of the great action-director runs in cinema.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -6441,10 +6337,10 @@
     "choices": [
       "Roxie Richter",
       "Envy Adams",
-      "Knives Chau",
+      "Lisa Miller",
       "Kim Pine"
     ],
-    "context": "Roxie Richter is Ramona's fourth evil ex and only female ex. Mae Whitman played her in the 2010 Edgar Wright film. The 'L-word' chapter title alludes to Ramona's revelation of her 'little bi-furious phase in college.' Whitman is also famous as Katara's voice in Avatar: The Last Airbender. Envy Adams (Brie Larson) is Scott's heartbreaking ex-girlfriend. Knives Chau is Scott's then-current 17-year-old high school girlfriend. Kim Pine is Sex Bob-omb's drummer.",
+    "context": "Roxie Richter is Ramona's fourth evil ex and her only female one. Mae Whitman played her in the 2010 film and is also the voice of Katara in Avatar: The Last Airbender. Envy Adams is Scott's own ex, Lisa Miller his old friend from high school, and Kim Pine his band's drummer.",
     "topic": "scott-pilgrim"
   },
   {
@@ -6462,15 +6358,15 @@
   },
   {
     "tier": 5,
-    "question": "Khary Payton, who voiced Cyborg on Teen Titans for years, plays the Penguin King in The Super Mario Bros. Movie, defending his Snow Kingdom against Bowser. The kingdom's hut and its long, winding toboggan run are lifted from a world in Super Mario 64, the 1996 game. Which world?",
-    "answer": "Cool, Cool Mountain — the snowy peak with the cabin and the slide level",
+    "question": "Khary Payton, who voiced Cyborg on Teen Titans for years, plays the Penguin King in The Super Mario Bros. Movie, defending his Snow Kingdom against Bowser. Its penguins are a Mario species that first turned up in a snowy world of Super Mario 64, the 1996 game, where Mario returns a lost baby penguin to its mother. Which world?",
+    "answer": "Cool, Cool Mountain",
     "choices": [
-      "Cool, Cool Mountain — the snowy peak with the cabin and the slide level",
-      "Snowman's Land — the wider Mario 64 ice level with the big snowman",
-      "Sherbet Land — from Mario Kart 64, not Super Mario 64",
-      "Freezeflame Galaxy — actually from Super Mario Galaxy (2007), post-N64"
+      "Cool, Cool Mountain",
+      "Snowman's Land",
+      "Sherbet Land",
+      "Freezeflame Galaxy"
     ],
-    "context": "Cool, Cool Mountain features a baby penguin lost on the slope that Mario can rescue. The level appeared in Super Mario 64 (Nintendo 64, 1996), one of the most-celebrated 3D platformers ever. The 2023 film's Snow Kingdom design directly evokes the Cool, Cool Mountain cabin and slide aesthetic. The Khary Payton casting for the Penguin King is itself a deep cut — he voiced Cyborg on Teen Titans for years.",
+    "context": "In Cool, Cool Mountain Mario carries a lost baby penguin back to its mother and races a big penguin down an icy slide, the first penguins of the Mario games. Sherbet Land is a Mario Kart 64 course, Freezeflame Galaxy a level of Super Mario Galaxy, and Snowman's Land the other snow world of Super Mario 64.",
     "topic": "super-mario-bros-movie-2023"
   },
   {
@@ -6509,7 +6405,7 @@
       "The original 1977 film, in a slower, less-recognizable form during the Death Star scenes",
       "The 1997 Special Edition rerelease, which added the Imperial March to several Vader scenes"
     ],
-    "context": "The Imperial March (technically 'The Imperial March/Darth Vader's Theme') premiered in The Empire Strikes Back (1980). The original 1977 Star Wars used the Main Title theme for Vader's appearances. Williams composed the leitmotif specifically for the Empire score. The London Symphony Orchestra has now recorded Williams's Star Wars scores for every theatrically released film through the entire saga.",
+    "context": "The Imperial March premiered in The Empire Strikes Back (1980). The original 1977 Star Wars used the Main Title theme for Vader's appearances.",
     "topic": "star-wars-original-trilogy"
   },
   {
@@ -6540,19 +6436,6 @@
   },
   {
     "tier": 5,
-    "question": "Arnold Schwarzenegger was reportedly the only major cast member who didn't get sick while Predator was filmed in the jungles around Mismaloya and Palenque in Mexico, where heat, humidity and dysentery cost multiple cast members significant weight. On screen his character covers himself in mud to mask his heat signature from the alien. The mud had a specific real-world inspiration. What was it?",
-    "answer": "Vietnam War-era veterans had reportedly used mud to evade NVA night-vision optics, inspiring the script choice",
-    "choices": [
-      "Vietnam War-era veterans had reportedly used mud to evade NVA night-vision optics, inspiring the script choice",
-      "African elephant-hunting tribes had used mud to mask their scent from elephants, per anthropologist consultants",
-      "Camo-pattern mudding was a then-current US Army Ranger field training technique",
-      "Schwarzenegger improvised the mud move during a take, and McTiernan kept it in"
-    ],
-    "context": "John McTiernan had researched military jungle-warfare tactics for the film. The mud-covering scene became Predator's most-iconic visual. Carl Weathers (Apollo Creed from Rocky) played Dillon, the CIA contact. Bill Duke and Jesse Ventura played other commandos. Ventura's catchphrase 'I ain't got time to bleed' was reportedly ad-libbed by him on set.",
-    "topic": "schwarzenegger-80s-action"
-  },
-  {
-    "tier": 5,
     "question": "James Cameron clashed extensively with the British crew at Pinewood Studios while shooting his 1986 film Aliens, over American versus British filmmaking practices. The story still told from that set has him firing the entire crew on the first day. What did he really do?",
     "answer": "He fired the first assistant director, then talked the crew back after a walkout",
     "choices": [
@@ -6566,15 +6449,15 @@
   },
   {
     "tier": 5,
-    "question": "Paul Verhoeven and the studio submitted the 1990 film Total Recall to the Motion Picture Association of America (MPAA) a total of 8 times before getting an R rating. The fight was famous, and the film's transgressive violence was typical of Verhoeven's RoboCop-era Hollywood work. Which scene gave the MPAA the most trouble?",
+    "question": "Paul Verhoeven had to recut his 1990 film Total Recall before the Motion Picture Association of America (MPAA) would give it an R rather than an X. Its violence was typical of his RoboCop-era Hollywood work. Which scene gave the MPAA the most trouble?",
     "answer": "Schwarzenegger using a human body as a shield in the subway shootout",
     "choices": [
       "Schwarzenegger using a human body as a shield in the subway shootout",
-      "The three-breasted Martian mutant Mary's brief topless scene",
-      "Sharon Stone's character being shot in the head and the explicit aftermath",
-      "Quaid's eye-popping scene as the Mars atmosphere reaches him"
+      "Quaid's eyes bulging as the Mars atmosphere reaches him",
+      "Quaid pulling a tracking bug out through his nose",
+      "Quaid's disguise splitting open at the Mars customs gate"
     ],
-    "context": "The subway scene shows Schwarzenegger holding a dead body in front of him as bullets riddle it. The MPAA initially gave it an X rating. Verhoeven darkened the lighting and slightly trimmed the frame count to get the R. Total Recall earned $261M worldwide. Verhoeven's career trajectory continued with Basic Instinct (1992), Showgirls (1995), and Starship Troopers (1997) before he returned to European cinema.",
+    "context": "In the subway scene Quaid holds a dead man's body in front of himself as bullets riddle it. The first cut drew an X for its violence, and Verhoeven trimmed the gore to get the R. Total Recall earned $261M worldwide.",
     "topic": "schwarzenegger-80s-action"
   },
   {
@@ -6657,42 +6540,16 @@
   },
   {
     "tier": 5,
-    "question": "Scott Pilgrim pays 8 dollars at the cinema box office in Edgar Wright's 2010 film, a famous joke that caused some misinterpretation among American audiences. They did not realize the price reflected a specific real-world fact. What is the joke about?",
-    "answer": "Toronto movie ticket prices in 2010 were genuinely around $8, anchoring the story in a specific Canadian setting",
+    "question": "Nega-Scott, the dark double of Scott Pilgrim, turns up in Edgar Wright's 2010 film only after the last fight, and the two become friends. In Bryan Lee O'Malley's last graphic novel the meeting matters more: Scott settles things by accepting him rather than beating him. What does Nega-Scott stand for?",
+    "answer": "Scott's buried memories of all the mistakes of his past",
     "choices": [
-      "Toronto movie ticket prices in 2010 were genuinely around $8, anchoring the story in a specific Canadian setting",
-      "American movie tickets in 2010 were genuinely $8 in suburbs, matching Scott's apparent class status",
-      "The Canadian dollar in 2010 was at near-parity with USD, making the price internationally legible",
-      "The Honest Ed's discount theater near Lee's Palace charged exactly $8 for second-run shows"
+      "Scott's buried memories of all the mistakes of his past",
+      "Scott's secret fear that Ramona will leave him for Gideon",
+      "Scott's hidden jealousy of his more talented bandmates",
+      "Scott's quiet wish to give up music and go back home"
     ],
-    "context": "Scott Pilgrim is intensely rooted in Toronto-as-portrayed-by-Bryan-Lee-O'Malley. The price detail is the kind of granular accuracy that makes the comic feel like a memoir. Honest Ed's was a real discount store at Bloor and Bathurst, demolished in 2017 to make way for apartments. Lee's Palace (the inspiration for the Chaos Theatre) is still operating. The Scott Pilgrim Universe (a sketch series) and the 2023 Netflix anime expanded on the same Toronto.",
+    "context": "Nega-Scott is the dark side of Scott, a reminder of all the mistakes he has made. In the last book Scott learns that his own memories of his past had flattered him, and accepting Nega-Scott is how he owns up to it.",
     "topic": "scott-pilgrim"
-  },
-  {
-    "tier": 5,
-    "question": "Nega-Scott stands between Scott Pilgrim and the sword that finally beats Gideon Graves in Bryan Lee O'Malley's graphic novels. Scott can draw the Power of Self-Respect, his second blade, only after facing that foe. What does Nega-Scott represent?",
-    "answer": "Scott's repressed memories of being a terrible boyfriend, especially to Knives Chau and Envy Adams",
-    "choices": [
-      "Scott's repressed memories of being a terrible boyfriend, especially to Knives Chau and Envy Adams",
-      "Scott's college-era addiction to alcohol that he'd been hiding from Ramona",
-      "Scott's subconscious Canadian guilt complex inherited from his immigrant Scottish parents",
-      "Scott's actual brother Lawrence whom Scott had repressed memories of from childhood"
-    ],
-    "context": "Nega-Scott is the personification of Scott's flaws he hasn't acknowledged. In the 2010 film, the encounter is brief and played for laughs ('We have a lot in common, actually'). In the graphic novels, the Nega-Scott confrontation is treated more seriously, with Scott finally taking responsibility for his past. The 2023 Netflix anime adapted both versions in different episodes.",
-    "topic": "scott-pilgrim"
-  },
-  {
-    "tier": 5,
-    "question": "Bowser storms the peaceful Snow Kingdom in The Super Mario Bros. Movie by bowling giant snowballs across the ice at its penguin defenders. Nintendo fans spotted the move at once as a callback to a boss fight in Super Mario 64, the game where Mario first ran around a full three-dimensional world. Which boss and stage?",
-    "answer": "Chief Chilly's snowball attack in Snowman's Land, where the boss rolls snowballs at Mario",
-    "choices": [
-      "Chief Chilly's snowball attack in Snowman's Land, where the boss rolls snowballs at Mario",
-      "Mr. Blizzard's whirling-snowball spawn in Cool Cool Mountain",
-      "Big Boo's Haunt ice-room reflection puzzle from the third star",
-      "The Bob-omb Battlefield's giant cannonball physics test from the first stage"
-    ],
-    "context": "Chief Chilly is the boss of Snowman's Land in Super Mario 64. The fight involves a giant snowman shooting smaller snowballs that Mario must navigate. The 2023 film's Penguin King is voiced by Khary Payton, and the Snow Kingdom sequence directly references multiple Mario games. Director Aaron Horvath and Michael Jelenic are reportedly huge Mario fans and overloaded the film with Easter eggs.",
-    "topic": "super-mario-bros-movie-2023"
   },
   {
     "tier": 5,
@@ -6791,9 +6648,9 @@
     "answer": "Yo Joe",
     "choices": [
       "Yo Joe",
-      "Cowabunga",
       "Thundercats, ho",
-      "By your powers combined"
+      "Semper Fi",
+      "Move out"
     ],
     "context": "G.I. Joe: A Real American Hero ran 1985-1987 with 95 episodes. Cobra Commander led the terrorist organization Cobra alongside Destro and the Baroness. Each episode famously closed with a PSA — 'Knowing is half the battle.'",
     "topic": "saturday-morning-cartoons"
@@ -6805,7 +6662,7 @@
     "choices": [
       "Dr. Claw",
       "Chief Quimby",
-      "Penny",
+      "Dr. Blight",
       "Brain"
     ],
     "context": "Inspector Gadget's niece Penny and dog Brain solve most of the cases while Gadget bumbles around with his cybernetic gadgets. Dr. Claw's face was never shown — viewers only saw his armored gauntlet and his white cat. The line 'I'll get you next time, Gadget — NEXT TIME' closed many episodes.",
@@ -6817,9 +6674,9 @@
     "answer": "Woo-oo",
     "choices": [
       "Woo-oo",
-      "Yo Joe",
-      "Cowabunga",
-      "Yabba-dabba-doo"
+      "Yee-haw",
+      "Hoo-ray",
+      "Yah-hoo"
     ],
     "context": "DuckTales followed Scrooge McDuck, his nephews Huey, Dewey, and Louie, and a cast including Webby and pilot Launchpad McQuack. The theme song's 'DuckTales — Woo-oo!' hook lodged in a generation's heads. Scrooge's vault of gold coins, where he swam in money, was iconic.",
     "topic": "saturday-morning-cartoons"
@@ -6830,9 +6687,9 @@
     "answer": "Yakko, Wakko, and Dot",
     "choices": [
       "Yakko, Wakko, and Dot",
-      "Pinky, Brain, and Larry",
-      "Huey, Dewey, and Louie",
-      "Tommy, Chuckie, and Phil"
+      "Buster, Plucky, and Babs",
+      "Tommy, Phil, and Lil",
+      "Huey, Dewey, and Webby"
     ],
     "context": "Animaniacs was produced by Steven Spielberg for Warner Bros. and Amblin Entertainment. The Warner siblings shared the show with recurring segments like Pinky and the Brain (two lab mice plotting to take over the world). Dot's full name was Princess Angelina Contessa Louisa Francesca Banana Fanna Bo Besca III.",
     "topic": "saturday-morning-cartoons"
@@ -6947,11 +6804,11 @@
     "answer": "By the power of Grayskull",
     "choices": [
       "By the power of Grayskull",
-      "Thundercats, ho",
-      "Yo Joe",
-      "Autobots, transform"
+      "For the honor of Grayskull",
+      "By the power of Eternia",
+      "By the light of the Ancients"
     ],
-    "context": "Filmation produced the Masters of the Universe cartoon as a syndicated half-hour show tied to the Mattel toy line. Prince Adam transforms in Castle Grayskull, the source of mystical power on the planet Eternia. His arch-foe is the blue-skinned Skeletor.",
+    "context": "Filmation produced the Masters of the Universe cartoon as a syndicated half-hour show tied to the Mattel toy line. Prince Adam draws his power from Castle Grayskull on the planet Eternia, and his twin sister She-Ra has an oath of her own, For the honor of Grayskull. His arch-foe is the blue-skinned Skeletor.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7073,7 +6930,7 @@
   },
   {
     "tier": 2,
-    "question": "Bruce Timm and his fellow creators invented a rule for Batman: The Animated Series in 1992: paint every background on black paper first, then add color on top. Timm ran the show with one other man, a DC Comics writer who would later oversee the DC Animated Universe and co-create Harley Quinn. Who was he?",
+    "question": "Bruce Timm's team gave Batman: The Animated Series a rule in 1992, painting every background on black paper first and adding color on top. One of the show's writers and producers created a brand-new villain for it with Timm, the Joker's lovesick sidekick Harley Quinn. Who was he?",
     "answer": "Paul Dini",
     "choices": [
       "Paul Dini",
@@ -7081,12 +6938,12 @@
       "Eric Radomski",
       "Mitch Watson"
     ],
-    "context": "Batman: The Animated Series ran 1992-1995 on Fox Kids and won four Daytime Emmys. Kevin Conroy's voice became the definitive Batman; Mark Hamill's Joker the definitive animated Joker. Dini also introduced Harley Quinn in episode 22, 'Joker's Favor,' as a one-off henchwoman who became a permanent fixture.",
+    "context": "Timm developed the show with Eric Radomski, and it ran 1992-1995 on Fox Kids. Kevin Conroy's voice became the definitive Batman and Mark Hamill's the definitive animated Joker. Harley Quinn first appeared in the episode 'Joker's Favor' as a one-off henchwoman and stayed for good.",
     "topic": "saturday-morning-cartoons"
   },
   {
     "tier": 2,
-    "question": "A clan of stone warriors, cursed to sleep as statues on a Scottish castle for a thousand years, wakes in modern New York City when the spell breaks, in Disney's 1994 series Gargoyles. By day they are stone; by night they glide the skyline and defend the humans below. Who is their tall purple leader?",
+    "question": "A clan of stone warriors, cursed to sleep as statues on a Scottish castle for a thousand years, wakes in modern New York City when the spell breaks, in Disney's 1994 series Gargoyles. By day they are stone; by night they glide the skyline and defend the humans below. Who is their purple-skinned leader?",
     "answer": "Goliath",
     "choices": [
       "Goliath",
@@ -7263,7 +7120,7 @@
       "Mike Judge",
       "Ralph Bakshi"
     ],
-    "context": "John K's studio Spumco produced the early seasons before Nickelodeon transferred production to Games Animation after firing him. The cartoon's dense detail, sudden close-ups, and gross-out humor influenced an entire generation of animators including Genndy Tartakovsky and Craig McCracken. Episodes like 'Stimpy's Invention' (which introduced 'Happy Happy Joy Joy') became cultural touchstones.",
+    "context": "Kricfalusi's studio Spumco made the early seasons, and after firing him Nickelodeon moved production to its own Games Animation. The episode 'Stimpy's Invention' introduced the song 'Happy Happy Joy Joy'.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7354,7 +7211,7 @@
       "Mumm-Ra the Dark Lord",
       "Mumm-Ra the Vile"
     ],
-    "context": "Mumm-Ra's pyramid lair on Third Earth held statues of four 'Ancient Spirits of Evil' — designed as parodies of real Egyptian and Mesoamerican deities. His powers waned the longer he stayed in his transformed body, forcing him to retreat to his sarcophagus. Mumm-Ra's signature appearance was based on the 1932 Boris Karloff film The Mummy.",
+    "context": "Mumm-Ra's power comes from the Ancient Spirits of Evil, which dwell in four giant stone statues inside his Black Pyramid on Third Earth.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7393,7 +7250,7 @@
       "Tim Conway",
       "Edward Asner"
     ],
-    "context": "Don Adams had played Maxwell Smart, Agent 86, on Get Smart for five seasons, winning three consecutive Emmy Awards. His Gadget voice was essentially the same voice as Smart's, which DIC Entertainment cast as an in-joke. Adams reprised the role in the 1999 live-action Inspector Gadget movie's animated TV ads but Matthew Broderick played Gadget in the actual film.",
+    "context": "Don Adams had played Maxwell Smart, Agent 86, on Get Smart for five seasons, winning three Emmy Awards in a row, and his Gadget sounds very like Smart. Matthew Broderick played Gadget in the 1999 live-action film.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7412,14 +7269,14 @@
   {
     "tier": 3,
     "question": "Yakko Warner sings the name of every country on Earth as fast as he can get his mouth around them in 'Yakko's World,' a song from the 1993 Warner Bros. cartoon Animaniacs. He sets the country song to a much older folk tune. What tune is it?",
-    "answer": "The Mexican Hat Dance (Jarabe Tapatío)",
+    "answer": "The Mexican Hat Dance",
     "choices": [
-      "The Mexican Hat Dance (Jarabe Tapatío)",
+      "The Mexican Hat Dance",
       "Pop Goes the Weasel",
       "The Yellow Rose of Texas",
       "John Brown's Body"
     ],
-    "context": "'Yakko's World' was written by Randy Rogel, who also wrote 'Wakko's America' (the state capitals song) and 'I'm Cute,' Dot's signature. The Mexican Hat Dance is the unofficial national dance of Mexico. The song listed roughly 200 countries in two minutes. Maurice LaMarche helped with the rapid pronunciations — he and Rob Paulsen had to memorize the lyrics through endless rehearsal takes.",
+    "context": "'Yakko's World' was written by Randy Rogel, who also wrote 'Wakko's America', the states-and-capitals song. The Mexican Hat Dance is the Jarabe Tapatío, often called the national dance of Mexico.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7523,7 +7380,7 @@
       "Shape-shifting into local fauna for one minute",
       "Summoning the spirits of extinct species briefly"
     ],
-    "context": "Ma-Ti and his pet monkey Suchi were given the Heart ring because the show wanted a fifth Planeteer and producers couldn't think of a sixth element. The Heart power has become a recurring joke in 90s-cartoon retrospectives. Ma-Ti was voiced by Scott Menville, who would go on to voice Robin in 2003's Teen Titans cartoon.",
+    "context": "Ma-Ti's Heart ring has become a running joke in 1990s cartoon retrospectives. Ma-Ti was voiced by Scott Menville, later the voice of Robin in the 2003 Teen Titans cartoon.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7536,7 +7393,7 @@
       "Russi Taylor",
       "Clarence Nash"
     ],
-    "context": "Alan Young voiced Scrooge from 1983 (Mickey's Christmas Carol) through the 2017 DuckTales reboot pilot recorded before his death in 2016. Young had been the human lead of the 1961 sitcom Mister Ed (the talking horse). Tony Anselmo became the official Donald Duck voice after Clarence Nash retired. Russi Taylor voiced Huey, Dewey, Louie, and Webby in the original DuckTales — she was also the voice of Minnie Mouse.",
+    "context": "Alan Young voiced Scrooge from 1974 until his death in 2016, and he was the human star of the 1960s sitcom Mister Ed, about a talking horse. David Tennant took the part for the 2017 DuckTales. Tony Anselmo became Donald Duck's voice after Clarence Nash, and Russi Taylor voiced Huey, Dewey, Louie and Webby in the original DuckTales.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7562,20 +7419,20 @@
       "Lock and load",
       "Ready, aim, fire"
     ],
-    "context": "The villain Doc Terror and his minion Hacker plotted from the orbital station SkyVault. The Centurions had a base in the Pacific Ocean called Sky-Vault Station. The show was created by Ruby-Spears Productions in association with Sunbow Productions, and was one of several mid-80s 'transforming armor' cartoons attempting to follow the Transformers formula.",
+    "context": "The Centurions' weapons are beamed down to them from Sky Vault, their station in orbit. Their enemy Doc Terror works with the cyborg Hacker. Ruby-Spears made the show, and Japan's Sunrise studio animated it.",
     "topic": "saturday-morning-cartoons"
   },
   {
     "tier": 3,
-    "question": "Spider-Man teams up with an animated Stan Lee himself in the cliffhanger finale of the 1994 Fox Kids series, after five seasons adapting the Alien Costume saga with Venom and the notoriously messy Clone Saga. One head writer and producer plotted almost the entire five-season arc single-handedly. Who was he?",
+    "question": "The 1994 Fox Kids series Spider-Man ran for five seasons, adapting the Alien Costume saga with Venom and, near the end, the notoriously messy Clone Saga. One head writer and producer plotted almost the whole five-season run himself. Who was he?",
     "answer": "John Semper Jr.",
     "choices": [
       "John Semper Jr.",
-      "Paul Dini",
+      "Eric Lewald",
       "Avi Arad",
       "Larry Houston"
     ],
-    "context": "Avi Arad was the executive producer and Marvel's animation president. Larry Houston had supervised X-Men: The Animated Series. John Semper Jr. served as story editor and writer for most of the run. The series featured arcs adapted from Death of Gwen Stacy, the Clone Saga, and the Secret Wars. The final unaired episode would have introduced Spider-Man's wife Mary Jane to a mysterious 'Madame Web.'",
+    "context": "John Semper Jr. served as story editor and writer for most of the run. Avi Arad was the executive producer and head of Marvel's animation, and Larry Houston had supervised X-Men: The Animated Series, which Eric Lewald story-edited.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7627,7 +7484,7 @@
       "Cable News Network 24",
       "WJZP Action 9"
     ],
-    "context": "The 1987 cartoon introduced April as a television reporter for Channel 6 News, and her yellow jumpsuit was modelled on Fujiko Mine's outfit from Lupin III Part 2. In the original 1984 comic she was a computer programmer for the scientist Baxter Stockman.",
+    "context": "The 1987 cartoon introduced April as a television reporter for Channel 6 News. In the original 1984 comic she was a computer programmer for the scientist Baxter Stockman.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7666,7 +7523,7 @@
       "Brought Warner Brothers animators in to read scripts at his bedside",
       "Used voice-synthesis machines to play his prior performances at him"
     ],
-    "context": "The story is dramatic enough that Blanc himself told versions of it in interviews — his son Noel Blanc has variously confirmed and pushed back on specifics over the years. What's documented: Dr. Louis Conway, his attending neurologist, tried calling out to Mel Blanc directly for two weeks with no response, then on a hunch addressed him as 'Bugs Bunny.' Some accounts have Blanc replying 'Eh, what's up, doc?'; others say only Bugs's voice register returned at first. After full recovery, Blanc resumed voicing Bugs and dozens of other characters until his death in 1989.",
+    "context": "Blanc himself told versions of the story in interviews. By the usual account, after days with no response, one of his neurologists at the UCLA Medical Center asked how Bugs Bunny was feeling, and Blanc answered weakly in the rabbit's voice. After he recovered, Blanc kept voicing Bugs and dozens of other characters until his death in 1989.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7684,28 +7541,15 @@
   },
   {
     "tier": 4,
-    "question": "Mumm-Ra draws his powered form from four statues, the Ancient Spirits of Evil, in his black pyramid in the Thundercats cartoon. The artists based the statues on four real gods from world myth and tweaked them just enough to avoid legal trouble. Which four groups of myths did they use?",
-    "answer": "Egyptian, Greek, Norse, and Aztec / Mesoamerican",
+    "question": "Hasbro needed names and personalities for its 1984 Transformers, and Bob Budiansky, a Marvel Comics writer, supplied most of them, Megatron, Starscream and Ratchet among them. The Autobot leader's name came from another Marvel man, a writer famous for reviving Batman in the 1970s. Who was he?",
+    "answer": "Denny O'Neil",
     "choices": [
-      "Egyptian, Greek, Norse, and Aztec / Mesoamerican",
-      "Egyptian, Roman, Celtic, and Hindu",
-      "Greek, Sumerian, Babylonian, and Persian",
-      "Aztec, Inca, Mayan, and Polynesian"
+      "Denny O'Neil",
+      "Chris Claremont",
+      "Jim Shooter",
+      "Archie Goodwin"
     ],
-    "context": "The Egyptian statue resembled Anubis. The Greek resembled a horned satyr or Pan. The Norse had clear Thor / Odin styling. The Mesoamerican statue resembled Aztec god Tezcatlipoca. Rankin/Bass had also produced the 1977 Hobbit and 1980 Return of the King animated films, and their style for monster designs ran consistently across these works. Mumm-Ra was voiced by Earl Hammond with a distinctive guttural rasp.",
-    "topic": "saturday-morning-cartoons"
-  },
-  {
-    "tier": 4,
-    "question": "Bob Budiansky, a Marvel Comics writer, got just one weekend from Hasbro in 1983 to name the entire cast of a new toy line and give every robot a personality. The robots came from the planet Cybertron and transformed into cars, planes and trucks. Two of his names became the most famous in all of Transformers lore: the heroic leader and his villainous rival. Which two?",
-    "answer": "Optimus Prime and Megatron",
-    "choices": [
-      "Optimus Prime and Megatron",
-      "Hot Rod and Galvatron",
-      "Ironhide and Soundwave",
-      "Bumblebee and Starscream"
-    ],
-    "context": "Budiansky had been given the assignment Friday afternoon by Hasbro's Jay Bacal. He spent the weekend at his Brooklyn apartment naming the entire 30-character launch roster. Some names — Optimus Prime, Megatron, Soundwave — became permanent. Others — like Starscream and Skywarp — were chosen for character archetype reasons. Budiansky also wrote much of the first three years of the Marvel Transformers comic book.",
+    "context": "Budiansky conceived the names of most of the original Transformers, Megatron, Starscream, Ratchet and Ravage among them, and later wrote Marvel's Transformers comic for years. He credits Denny O'Neil, who had brought Batman back to his dark roots with the artist Neal Adams, with naming Optimus Prime.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7718,20 +7562,20 @@
       "Hal Sutherland",
       "Erwin Vertlieb"
     ],
-    "context": "Scheimer co-founded Filmation in 1962 and ran it until 1988 when the studio closed after the box-office failure of BraveStarr: The Legend. Filmation's principled refusal to offshore made it more expensive than competitors. Their reuse of stock animation across episodes was the cost-cutting measure that preserved their domestic-production stance. Other Filmation shows: He-Man, She-Ra, BraveStarr, Ghostbusters (1986 — different from the Bill Murray film), Fat Albert.",
+    "context": "Scheimer co-founded Filmation in 1962 and ran it until it closed in 1989. Keeping the work at home made Filmation dearer than its rivals, and reusing stock animation across episodes was how it paid for that. Other Filmation shows include She-Ra, BraveStarr, Ghostbusters (1986, not the Bill Murray film) and Fat Albert.",
     "topic": "saturday-morning-cartoons"
   },
   {
     "tier": 4,
-    "question": "Mark Hamill, tired of only being seen as Luke Skywalker, tried out for the Joker on Batman: The Animated Series in 1992, almost as a joke. His Joker became the classic animated one. What did Hamill say his laugh was based on?",
-    "answer": "A combination of the Wicked Witch's cackle and Claude Rains as Mr. Norton",
+    "question": "Mark Hamill, long typecast as Luke Skywalker, won the part of the Joker on Batman: The Animated Series in 1992, and his Joker became the classic animated one. Hamill later said that, without realizing it at first, he had been imitating one old Universal horror performance. Which one?",
+    "answer": "Claude Rains as the Invisible Man",
     "choices": [
-      "A combination of the Wicked Witch's cackle and Claude Rains as Mr. Norton",
-      "His own laughter recorded at exaggerated speeds and reverbed up",
-      "Cesar Romero's 1966 Joker pitched up an octave with breath at the end",
-      "Heath Ledger's planned Dark Knight Joker voice given thirteen years later"
+      "Claude Rains as the Invisible Man",
+      "Boris Karloff as Frankenstein's monster",
+      "Bela Lugosi as Count Dracula",
+      "Lon Chaney Jr. as the Wolf Man"
     ],
-    "context": "Hamill cited Margaret Hamilton's Wicked Witch from The Wizard of Oz (1939) and the actor Claude Rains. He would later voice the Joker in dozens of animated and video game projects, returning to the role in the 2008 Christopher Nolan film The Dark Knight (uncredited audition) and the Arkham video game series (2009-2015). The Joker laugh Hamill developed was specifically designed to be a sound a kid could imitate.",
+    "context": "Hamill has said Jay Leno and the sportscaster Howard Cosell were in the mix too. He went on to voice the Joker in many animated films and in the Arkham video games.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7866,19 +7710,6 @@
   },
   {
     "tier": 4,
-    "question": "Spike, the family dachshund of Tommy Pickles, stays a loyal pet in the 1991 Nickelodeon cartoon Rugrats, a show about a gang of babies. The earliest planning sketches gave him a very different role. What was Spike first meant to do?",
-    "answer": "He was going to speak directly to viewers as the show's narrator translating baby talk",
-    "choices": [
-      "He was going to speak directly to viewers as the show's narrator translating baby talk",
-      "He was going to be an additional baby instead of a dog character",
-      "He was going to be a cat named Spike playing against the kids",
-      "He was going to be omitted because of insurance complications"
-    ],
-    "context": "The narrator-dog concept was dropped because the writers thought the babies' incomprehensible-to-adults dialogue was more interesting if no character translated. Spike instead became a wordless loyal sidekick whose facial expressions did the storytelling. Rugrats ran 1991-2004 on Nickelodeon. Arlene Klasky, Gabor Csupo, and Paul Germain created the show. The 1998 The Rugrats Movie introduced Tommy's brother Dil. The show spun off into All Grown Up! (2003) showing the kids as teenagers.",
-    "topic": "saturday-morning-cartoons"
-  },
-  {
-    "tier": 4,
     "question": "Ren, the scrawny chihuahua of The Ren & Stimpy Show, goes full psychotic in one early-1990s episode, drawn in the show's wild, sometimes disturbing style. Network executives at Nickelodeon, who censored several episodes, were so frightened by this one that they refused to broadcast it for the entire decade. It finally aired years later. Which banned episode was it?",
     "answer": "Man's Best Friend",
     "choices": [
@@ -7887,7 +7718,7 @@
       "Sven Höek",
       "Powdered Toast Man"
     ],
-    "context": "'Man's Best Friend' featured Ren bludgeoning his owner with an oar in extended detail. Creator John Kricfalusi was fired by Nickelodeon partly because of this episode. Other notable Ren and Stimpy contributions: 'Stimpy's Invention' introduced the 'Happy Happy Joy Joy' song. 'Sven Höek' featured a Norwegian cousin equally stupid to Stimpy. 'Powdered Toast Man' became a recurring superhero with a vibrating crotch attached. The show influenced animators including Genndy Tartakovsky, Craig McCracken, and many others.",
+    "context": "'Man's Best Friend' has Ren beating his owner, George Liquor, with an oar. Nickelodeon fired creator John Kricfalusi partly over this episode. 'Stimpy's Invention' introduced the song 'Happy Happy Joy Joy', and 'Sven Höek' gave Ren a Norwegian cousin as dim as Stimpy.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7913,7 +7744,7 @@
       "Joe Murray",
       "Arlene Klasky"
     ],
-    "context": "Craig Bartlett had worked on Pee-wee's Playhouse (1986-1990) and was Matt Groening's brother-in-law. Hey Arnold ran 1996-2004 and got a 2017 sequel film Hey Arnold!: The Jungle Movie that resolved the unfinished storyline of Arnold finding his missing parents. Helga Pataki was Arnold's secret-admirer who publicly tormented him. The show's hand-drawn city backdrops and jazz score gave it an unusual atmosphere for Nickelodeon's animation lineup.",
+    "context": "Craig Bartlett had worked on Pee-wee's Playhouse and was Matt Groening's brother-in-law. Hey Arnold ran from 1996 to 2004, and the 2017 film Hey Arnold!: The Jungle Movie took up its unfinished story. Helga Pataki is Arnold's secret admirer, who torments him in public.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -7940,19 +7771,6 @@
       "Mark Hamill's involvement caused a shift in tone toward voice-actor comedy"
     ],
     "context": "Tom Ruegger had been the showrunner of Tiny Toons (1990), Animaniacs (1993), and Pinky and the Brain (1995). When Bruce Timm left Freakazoid to develop Superman: The Animated Series for the DC Animated Universe, Ruegger turned the project into a meta-comedy. The show featured cameo characters like the Lobe (Joe Leahy) and Cave Guy (Jeff Bennett). Paul Rugg voiced Freakazoid himself; Jonathan Harris (Lost in Space) voiced Professor Heiney.",
-    "topic": "saturday-morning-cartoons"
-  },
-  {
-    "tier": 4,
-    "question": "Yakko and Wakko go on stage to perform a tune in one famous bit from the 1993 cartoon Animaniacs, and a third character interrupts them with the punchline. The show is full of dialogue jokes like it, flying over kids' heads and landing for adults. Which third character cuts in, and how?",
-    "answer": "Dot saying boys please I'm cute",
-    "choices": [
-      "Dot saying boys please I'm cute",
-      "Brain commenting on Dot's vegetable look",
-      "Slappy Squirrel critiquing the song structure",
-      "Mr. Plotz scolding them for breaking character"
-    ],
-    "context": "Standards and Practices famously cracked down on many Animaniacs jokes that snuck past — one notorious bit had Prince singing lines later rewritten because the original implied a sexually-explicit joke. Spielberg's clout protected the show from the network's harsher cuts. The Warner siblings sang Yakko's 'Hello Nurse' joke at every nurse character on screen — Tom Ruegger's nod to old Tex Avery cartoons. The series ran 99 episodes through 1998.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -8009,15 +7827,15 @@
   },
   {
     "tier": 5,
-    "question": "Unicron, the planet-devouring giant Transformer of The Transformers: The Movie (1986), speaks with a voice recorded in October 1985, in the last week of the actor's life. It was his final completed acting role. According to the producers, he took the job for an unusual reason that had nothing to do with his usual artistic considerations. What was his stated reason?",
-    "answer": "He needed money and Transformers paid in cash quickly",
+    "question": "Unicron, the planet-devouring giant Transformer of The Transformers: The Movie (1986), speaks with a voice recorded on 5 October 1985, five days before the actor died. It was his last film role, and his voice was so weak that it had to be run through a synthesizer. What did he tell his biographer about the job?",
+    "answer": "That he had played the voice of a toy, a planet",
     "choices": [
-      "He needed money and Transformers paid in cash quickly",
-      "His grandson was a fan and asked him to do the role for Christmas",
-      "He wanted to mock the project ironically in his final months",
-      "He had unfulfilled lifetime contracts requiring a science-fiction voice gig"
+      "That he had played the voice of a toy, a planet",
+      "That he had done it so his grandson could hear him",
+      "That he had asked to play the Autobot leader instead",
+      "That he had turned the part down twice before agreeing"
     ],
-    "context": "Welles dismissed the project privately in interviews — Maurice LaMarche later reported that Welles called the script 'crap' and the role 'a big toy who attacks toys.' Welles's voice work was processed in post to add the cavernous reverb that gave Unicron his iconic sound. Leonard Nimoy voiced Galvatron in the same film. The 1986 Transformers Movie traumatized millions of kids by killing off Optimus Prime onscreen — and was widely cited by Hasbro as the worst marketing decision in toy history because it forced Hasbro to invent new toys to replace him.",
+    "context": "Orson Welles recorded Unicron on 5 October 1985 and died on 10 October. He told his biographer Barbara Leaming that he had played the voice of a toy, a planet; the director, Nelson Shin, said Welles had been glad to take the part. Leonard Nimoy voiced Galvatron in the same film.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -8030,7 +7848,7 @@
       "Russian Easter Festival Overture by Rimsky-Korsakov",
       "Marche Slave by Tchaikovsky"
     ],
-    "context": "Rossini's 1829 William Tell Overture is also the Lone Ranger theme. The Animaniacs version, written by Randy Rogel, had Yakko fitting all 41 presidents into one breath at the climax. The song was retired and replaced after the 2020 reboot, which had to include more presidents. Other state-of-the-art rapid Animaniacs songs by Rogel: 'Yakko's World,' 'Wakko's America,' 'Yakko's Universe' — a cosmology lesson on the scale of the universe set to a brisk tempo.",
+    "context": "Rossini's 1829 William Tell Overture is also the Lone Ranger's theme. 'The Presidents' belongs to the show's run of fast teaching songs, alongside 'Yakko's World' and 'Wakko's America'.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -8043,7 +7861,7 @@
       "Victor Fries was a polar climatologist who accidentally cryogenically froze himself solving climate change",
       "Victor Fries was the test subject of a CIA cryogenics weapons program that froze him by mistake"
     ],
-    "context": "Paul Dini wrote 'Heart of Ice.' Michael Ansara voiced Mr. Freeze with a haunting low-affect delivery. The episode set the tone for the show's character-deep approach to villains. The 1997 film Batman & Robin — with Arnold Schwarzenegger as Freeze — tried to use the new origin but botched it through pun-laden dialogue. The animated series remained the gold standard. The Heart of Ice script was adapted by DC Comics for a 1995 issue of Detective Comics, making the new origin canon.",
+    "context": "Paul Dini wrote 'Heart of Ice', and Michael Ansara voiced Mr. Freeze with a haunting, flat delivery. The episode set the tone for the show's deep treatment of its villains, and the comics later took up the new origin.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -8126,7 +7944,7 @@
   },
   {
     "tier": 5,
-    "question": "Captain Planet, the green-haired, blue-skinned hero of the 1990 cartoon, speaks with one man's voice through all 113 episodes, pitched a bit higher than the actor's real one. The actor did other 90s cartoon voice work but never lost the Captain Planet label. Who voiced him?",
+    "question": "Captain Planet, the green-haired, blue-skinned hero of the 1990 cartoon, speaks with one man's voice through all 113 episodes, across six seasons and a change of title to The New Adventures of Captain Planet, while stars such as Whoopi Goldberg voiced the spirit Gaia. Who voiced Captain Planet?",
     "answer": "David Coburn",
     "choices": [
       "David Coburn",
@@ -8134,7 +7952,7 @@
       "LeVar Burton",
       "Dean Cain"
     ],
-    "context": "David Coburn was a working actor who had auditioned for the part as a one-off and won the role to his surprise. He voiced Captain Planet from 1990 to 1996, returned for the 2007 live-action commercial parodies starring Don Cheadle, and continues to perform the voice at convention appearances. Whoopi Goldberg voiced Gaia for the first three seasons; Margot Kidder took over for seasons four through six. The show's environmentalist message was unusually aggressive for a kids' show, and it has been alternately mocked and celebrated as the years have passed.",
+    "context": "David Coburn voiced Captain Planet from 1990 to 1996. Whoopi Goldberg voiced Gaia for the first three seasons and Margot Kidder for the last three, and LeVar Burton voiced the Planeteer Kwame.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -8148,19 +7966,6 @@
       "Falcon, badger, moose and ram"
     ],
     "context": "BraveStarr calls on the Eyes of the Hawk for vision, the Ears of the Wolf for hearing, the Strength of the Bear and the Speed of the Puma. The show is set in the 23rd century on New Texas, a desert planet in a system with three suns.",
-    "topic": "saturday-morning-cartoons"
-  },
-  {
-    "tier": 5,
-    "question": "Malcolm Willits, a fan editor, traced the art style of the 'good duck artist' in the 1960s and figured out who he was. The man who created Scrooge McDuck had worked in secret his whole career because of Disney's rules. In what year did he finally step forward and publicly acknowledge his authorship?",
-    "answer": "1971 (the same year as the Donald Duck Adventure Magazine appearance)",
-    "choices": [
-      "1971 (the same year as the Donald Duck Adventure Magazine appearance)",
-      "1968 (at the first Comic-Con in San Diego with a panel appearance)",
-      "1965 (the year Walt Disney himself died and the policy lapsed)",
-      "1956 (his actual self-doxing after a difficult contract negotiation)"
-    ],
-    "context": "The full Barks identity became widely known in 1971. Don Rosa, who would later be Barks's most prominent disciple, was among the first wave of fans to write him fan letters in the early 1970s. Barks lived until 2000, dying at age 99. His DuckTales TV adaptation (1987) gave him a recurring royalty stream he had not earned from his comic work. Barks's full body of comic story work was 6,179 pages over 25 years of anonymous production — possibly the largest body of work by any uncredited Disney creator in history.",
     "topic": "saturday-morning-cartoons"
   },
   {
@@ -8214,19 +8019,6 @@
     ],
     "context": "The auction price for the original leg lamp was around $100,000 (specifically $109,995 at the 2014 Profiles in History auction). Several distinct prop versions of the lamp survive — the main filming prop, the smashed-and-glued version, and various stunt doubles. Replica leg lamps sell every Christmas season, making the lamp one of the most successful film-prop merchandise items in history. The 'fra-GEE-lay, must be Italian' line — delivered by Darren McGavin as the Old Man — also became a permanent piece of holiday-comedy quotation.",
     "topic": "christmas-and-holiday-specials"
-  },
-  {
-    "tier": 5,
-    "question": "The Turtles began in a 1984 comic from a tiny studio in Dover, New Hampshire. The 1987 cartoon turned their friend April O'Neil into a television reporter and gave her a famous outfit: a bright yellow jumpsuit, borrowed from a glamorous character in a Japanese anime series. Whose outfit inspired it?",
-    "answer": "Fujiko Mine's, from Lupin III",
-    "choices": [
-      "Fujiko Mine's, from Lupin III",
-      "Kei's, from Dirty Pair",
-      "Lum's, from Urusei Yatsura",
-      "Nausicaa's, from Nausicaa"
-    ],
-    "context": "In the 1987 series April usually wore a yellow jumpsuit modelled on Fujiko Mine's outfit from Lupin III Part 2, until she switched to a brown leather jacket in season nine. In the original 1984 comic she was a computer programmer working for the scientist Baxter Stockman.",
-    "topic": "saturday-morning-cartoons"
   },
   {
     "tier": 5,
@@ -8533,11 +8325,11 @@
     "answer": "Lara Croft",
     "choices": [
       "Lara Croft",
-      "Indiana Jones",
       "Joanna Dark",
-      "Beyond"
+      "Jill Valentine",
+      "Samus Aran"
     ],
-    "context": "Designed by Toby Gard at Core Design in Derby, England. Angelina Jolie played her in the 2001 film. The original PS1 model had only 540 polygons — most of them on Lara herself.",
+    "context": "Designed by Toby Gard at Core Design in Derby, England. Angelina Jolie played her in the 2001 film.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -8561,7 +8353,7 @@
       "Master Chief",
       "Sergeant Johnson",
       "Captain Keyes",
-      "Spartan-117"
+      "The Arbiter"
     ],
     "context": "Master Chief's full designation is Spartan-117 — but he's only called by it once in the original game. His face is never shown in the trilogy. Voice actor Steve Downes recorded his lines while standing because he felt it sounded more authoritative.",
     "topic": "sega-sony-microsoft-consoles"
@@ -8659,7 +8451,7 @@
   },
   {
     "tier": 1,
-    "question": "A family slides a movie disc into a new black block-shaped Japanese game console in 2000, and the machine becomes its first movie player. It is the first game console that can also play movie discs, and it will sell over 155 million units worldwide, the best-selling home console ever. What is it called?",
+    "question": "A family slides a film on a digital video disc (DVD) into a new black Japanese game console in 2000, and the machine doubles as its first DVD player. It will sell over 155 million units, the best-selling home console ever. What is it called?",
     "answer": "PlayStation 2",
     "choices": [
       "PlayStation 2",
@@ -9093,7 +8885,7 @@
     "choices": [
       "Shinji Mikami",
       "Hideki Kamiya",
-      "Hideo Kojima",
+      "Keiji Inafune",
       "Yoshiki Okamoto"
     ],
     "context": "Mikami also directed Resident Evil 4 (2005), which fundamentally redefined third-person shooter cinematography with its over-the-shoulder camera. The original RE was famous for its prerendered backgrounds, fixed camera angles, and infamously stilted voice-acting ('Jill sandwich').",
@@ -9105,7 +8897,7 @@
     "answer": "Hideo Kojima",
     "choices": [
       "Hideo Kojima",
-      "Shinji Mikami",
+      "Koji Igarashi",
       "Tetsuya Mizuguchi",
       "Goichi Suda"
     ],
@@ -9348,15 +9140,15 @@
   },
   {
     "tier": 3,
-    "question": "Two Sonic Team leads directed Sonic Adventure together, the first fully 3D Sonic the Hedgehog game and the star of the lineup when Sega launched the Dreamcast in Japan in 1998. One of them had already directed the dream-world platformer Nights into Dreams. Who were the two directors?",
-    "answer": "Yuji Naka and Takashi Iizuka",
+    "question": "Sonic Team made Sonic Adventure, the first fully 3D Sonic the Hedgehog game, which came out in Japan late in 1998 and led the lineup when the Dreamcast reached North America. Its director had been lead designer on the dream-world platformer Nights into Dreams. Who was he?",
+    "answer": "Takashi Iizuka",
     "choices": [
-      "Yuji Naka and Takashi Iizuka",
-      "Yu Suzuki and Toshihiro Nagoshi",
-      "Hideki Kamiya and Atsushi Inaba",
-      "Tetsuya Mizuguchi and Naoto Ohshima"
+      "Takashi Iizuka",
+      "Naoto Ohshima",
+      "Yu Suzuki",
+      "Toshihiro Nagoshi"
     ],
-    "context": "Sonic Adventure introduced new characters Big the Cat (fishing), Tails (mech), Knuckles (treasure-hunting), Amy Rose (escape), and E-102 Gamma (shooter) — each with a distinct gameplay style. The 'Crush 40' rock-vocal tracks by Jun Senoue became signature Sonic-3D-era music. Sonic Team's Takashi Iizuka also co-directed.",
+    "context": "Iizuka directed and Yuji Naka produced. Sonic Adventure came out in Japan on 23 December 1998, a month after the Dreamcast, and was a launch game in North America. Nights into Dreams had been directed by Naoto Ohshima, the artist who drew Sonic.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9382,7 +9174,7 @@
       "Insert a memory card into Slot 2 mid-fight",
       "Press Start while the disc tray was open"
     ],
-    "context": "Psycho Mantis 'read your mind' by reading controller inputs from Port 1 — switching ports cut him off. Earlier in the fight, he also reads the player's memory card and comments on other Konami games saved there ('I see you also like Castlevania!'). Kojima's fourth-wall-breaking signature.",
+    "context": "Psycho Mantis 'read the player's mind' by reading the controller in Port 1, so switching ports cut him off. Earlier in the fight he also reads the memory card and comments on other Konami games saved there, such as Castlevania.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9525,20 +9317,20 @@
       "Tara Strong",
       "Grey DeLisle"
     ],
-    "context": "Jen Taylor is a Seattle-area actress who began voicing Cortana in 2001 and has continued through 30+ years of Halo games. She has also voiced Princess Peach in multiple Mario games (Super Mario Sunshine onward), Daisy, Toad, and Toadette. Outside games, she has theater credits with Seattle's Empty Space Theatre. Jennifer Hale (Commander Shepard, Bastila Shan), Tara Strong (Twilight Sparkle, Bubbles), and Grey DeLisle (Daphne Blake, Azula) are all major game-voice actresses but did not play Cortana.",
+    "context": "Jen Taylor, a Seattle-area actress, first voiced Cortana in 2001 and has played her for more than twenty years. Jennifer Hale, Tara Strong and Grey DeLisle are major game-voice actresses too, but none of them has played Cortana.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
     "tier": 3,
-    "question": "Two Michigan classmates who had been coding games together as teenagers founded Naughty Dog in 1986. Ten years later their studio gave Sony's new console its first blockbuster hero, an orange marsupial spinning through crates on a jungle island. Who were the two co-founders?",
+    "question": "Two friends who had met as boys at a weekend Hebrew school in Virginia started a game company in 1984, while still in high school, and later renamed it Naughty Dog. Twelve years later their studio gave Sony's new console its first blockbuster hero, an orange marsupial spinning through crates on a jungle island. Who were the two founders?",
     "answer": "Andy Gavin and Jason Rubin",
     "choices": [
       "Andy Gavin and Jason Rubin",
-      "Andy Gavin and Mark Cerny",
-      "Jason Rubin and Mark Cerny",
-      "Mark Cerny and Naughty Dog Anonymous"
+      "Ted Price and Al Hastings",
+      "Mark Cerny and Evan Wells",
+      "Joe Pearson and Charles Zembillas"
     ],
-    "context": "Gavin and Rubin's earlier games included Keef the Thief (1989), Rings of Power (1991), and Way of the Warrior (1994). After Crash, they made Jak and Daxter for PS2, sold Naughty Dog to Sony in 2001, and left in 2004. The studio went on to make Uncharted (Amy Hennig) and The Last of Us (Neil Druckmann).",
+    "context": "Gavin and Rubin founded the company as JAM Software in McLean, Virginia; it became Naughty Dog in 1989, with Keef the Thief. Their earlier games included Rings of Power (1991) and Way of the Warrior (1994). After Crash they made Jak and Daxter for the PS2, sold Naughty Dog to Sony in 2001 and left in 2004.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9681,7 +9473,7 @@
       "$249",
       "$349"
     ],
-    "context": "Sony's '299' announcement at E3 was the legendary mic-drop moment — Olaf Olafsson of Sony just walked out, said '$299', and left. The Saturn was $399 with only six launch titles. Major retailers KB Toys and Walmart pulled out angrily over being skipped. The Saturn never recovered; Sega exited console hardware after Dreamcast 2001.",
+    "context": "Steve Race, the head of Sony Computer Entertainment of America, walked to the microphone, said '$299' and walked off. The Saturn's surprise early launch angered retailers who had been left out of it. Sega left console hardware after the Dreamcast in 2001.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9772,7 +9564,7 @@
       "AVALANCHE",
       "MAKO"
     ],
-    "context": "SOLDIER is always written in all-caps in-game. SOLDIER 1st Class is the highest rank; Sephiroth was a 1st Class member. Cloud's actual rank history is one of the game's mysteries — explained more fully in Final Fantasy VII Remake (2020-2024) and the Compilation of FFVII (Crisis Core, Advent Children, Dirge of Cerberus).",
+    "context": "SOLDIER is always written in capitals in the game, and SOLDIER 1st Class is its highest rank.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9811,7 +9603,7 @@
       "Keyes",
       "Halo (level 02)"
     ],
-    "context": "The Maw is the tenth and final level. Bungie designer Jaime Griesemer designed the escape sequence in 12 days at the end of development. The Warthog's physics — a four-wheeled jeep that could be driven over corpses, ramps, and walls — defined the open-arena Halo combat. The escape was so popular that Halo 3 ended with a Warthog escape mirroring it.",
+    "context": "The Maw is the tenth and final level of the campaign, and the Warthog run up the collapsing ramp is its most famous stretch.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9842,7 +9634,7 @@
   },
   {
     "tier": 4,
-    "question": "A 24-year-old composer built pounding house and techno beats on the sound chip of Sega's 16-bit console for the 1991 brawler Streets of Rage, and they sounded like a real club mix. He had already scored Revenge of Shinobi in 1989 and the Super Nintendo fantasy game ActRaiser in 1990, and he became one of Japan's most famous game composers. Who is he?",
+    "question": "A composer still in his early twenties built pounding house and techno beats on the sound chip of Sega's 16-bit console for the 1991 brawler Streets of Rage, and they sounded like a real club mix. He had already scored Revenge of Shinobi in 1989 and the Super Nintendo fantasy game ActRaiser in 1990, and he became one of Japan's most famous game composers. Who is he?",
     "answer": "Yuzo Koshiro",
     "choices": [
       "Yuzo Koshiro",
@@ -9850,20 +9642,20 @@
       "Noriyuki Iwadare",
       "Hitoshi Sakimoto"
     ],
-    "context": "Koshiro was 24 when he scored Streets of Rage. His Streets of Rage 2 score is widely considered the greatest 16-bit OST. He used a custom Atari ST-based MIDI-tracker tool to push the Genesis FM synthesis hardware further than most thought possible. Koshiro continues composing today — Etrian dungeon-crawlers, 7th Dragon, and modern Streets of Rage 4 (2020).",
+    "context": "Koshiro was in his early twenties when he scored Streets of Rage, and his Streets of Rage 2 score is often called one of the best of the 16-bit era. He still composes, including for the Etrian dungeon-crawler games and Streets of Rage 4 (2020).",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
     "tier": 4,
-    "question": "Nobuo Uematsu wrote 'One-Winged Angel,' the final boss theme of Squaresoft's 1997 Final Fantasy VII, his first big orchestral video-game piece. It mixes rock guitar, orchestra and a Latin choir whose lyrics stitch together four medieval sources, among them a 13th-century collection of drinking songs and poems discovered in a Bavarian monastery. He later said one 20th-century composer's most famous setting of those songs inspired it. Which composer and work?",
-    "answer": "Carl Orff (Carmina Burana 1937, especially 'O Fortuna')",
+    "question": "Nobuo Uematsu wrote 'One-Winged Angel,' the final boss theme of Squaresoft's 1997 Final Fantasy VII, as a fusion of Igor Stravinsky and Jimi Hendrix, by his own account. It mixes rock guitar and orchestra with a Latin choir. Where do the choir's Latin words come from?",
+    "answer": "Carmina Burana, the medieval songbook Carl Orff set to music",
     "choices": [
-      "Carl Orff (Carmina Burana 1937, especially 'O Fortuna')",
-      "Gustav Holst (The Planets 1916, especially 'Mars')",
-      "Igor Stravinsky (The Rite of Spring 1913)",
-      "Bernard Herrmann (Psycho 1960)"
+      "Carmina Burana, the medieval songbook Carl Orff set to music",
+      "The Dies Irae, the Latin hymn of the Requiem Mass",
+      "The Vulgate, Saint Jerome's Latin Bible",
+      "The Aeneid, Virgil's Latin epic of Troy"
     ],
-    "context": "The 'estuans interius' Latin chorus directly echoes Carmina Burana. Uematsu also cites Stravinsky and Jimi Hendrix as influences. Uematsu composed over 100 FF songs from 1987-2003, became Square's de-facto musical face, and now leads his own rock band 'The Black Mages,' which performs orchestral-rock arrangements of his game compositions.",
+    "context": "The words are taken from poems in the Carmina Burana, a thirteenth-century collection of songs and poems found in a Bavarian monastery and best known through Carl Orff's 1937 setting. Uematsu later played in the rock band The Black Mages, whose arrangement of the piece appears in Advent Children.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -9907,15 +9699,15 @@
   },
   {
     "tier": 4,
-    "question": "Charles Zembillas and Joe Pearson drew the hero of Naughty Dog's 1996 game, an orange marsupial almost called 'Willie the Wombat' before the team dropped that name to dodge a trademark fight. Which old American cartoon style did they use as a guide?",
-    "answer": "Looney Tunes (specifically Tex Avery's exaggerated takes)",
+    "question": "Charles Zembillas and Joe Pearson drew the hero of Naughty Dog's 1996 game, an orange marsupial with the placeholder name Willy the Wombat. Naughty Dog wanted a real animal that was appealing but obscure, as Sega had done with a hedgehog and Warner Bros. with one cartoon star. Which star?",
+    "answer": "The Tasmanian Devil",
     "choices": [
-      "Looney Tunes (specifically Tex Avery's exaggerated takes)",
-      "Disney (specifically the squash-and-stretch of Bambi)",
-      "Hanna-Barbera (specifically the limited-animation of Flintstones)",
-      "Tezuka's Mushi Productions (specifically Astro Boy)"
+      "The Tasmanian Devil",
+      "Wile E. Coyote",
+      "Pepe Le Pew",
+      "Speedy Gonzales"
     ],
-    "context": "Crash's hyper-exaggerated facial expressions, eyebrow waggles, and head-snap reactions were directly inspired by Avery's wartime cartoons (Red Hot Riding Hood). Pearson and Zembillas had both come from television-cartoon backgrounds. Crash 1's 'Sony Sucks' Bandicoot Mascot Wars marketing campaign was Sony of America's deliberate jab at Sega and Nintendo.",
+    "context": "Naughty Dog bought a field guide to Tasmanian mammals and weighed the wombat, the potoroo and the bandicoot. Willy the Wombat was only ever a placeholder, too dorky to keep, and another company had used the name for a Saturn game.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -10045,7 +9837,7 @@
       "Trevor Belmont",
       "Simon Belmont"
     ],
-    "context": "Alucard's first Castlevania appearance was Castlevania III: Dracula's Curse (1989). Director Koji Igarashi led Symphony of the Night and made it the prototype for the term 'Metroidvania' — open exploration of a castle with item-gated traversal. Original cover art by Ayami Kojima. The opening boss fight with Dracula uses dialogue lifted directly from the SNES Dracula X intro.",
+    "context": "Alucard first appeared in Castlevania III: Dracula's Curse (1989). Koji Igarashi, Symphony of the Night's assistant director, went on to lead the series, and the game became a model for the open-castle style now called Metroidvania. Ayami Kojima painted the cover art.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -10214,7 +10006,7 @@
       "The PS1's BIOS clock, telling the player the last time played",
       "Sony's PocketStation if connected, reading installed mini-games"
     ],
-    "context": "Mantis comments on Castlevania Symphony of the Night, Suikoden, and other Konami saves if they're on the card. If no Konami games are saved, he comments 'I see you don't have many Konami games.' Kojima's fourth-wall-breaking signature. The fight is solved by switching the controller from Port 1 to Port 2.",
+    "context": "Mantis comments on Castlevania: Symphony of the Night, Suikoden and other Konami saves he finds on the card. The fight is solved by switching the controller from Port 1 to Port 2.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -10271,7 +10063,7 @@
   },
   {
     "tier": 5,
-    "question": "The armored hero of Halo: Combat Evolved (2001) escorts Cortana's data-spike through identical hallways while waves of enemies attack, in a notoriously long, repetitive, dimly lit level. Reviewers and fans called it the 'least fun' level in the entire trilogy. What was the level called?",
+    "question": "The armored hero of Halo: Combat Evolved (2001) follows a floating robot guide through identical hallways, floor after floor, while waves of enemies attack, in a notoriously long, repetitive, dimly lit level. Reviewers and fans often name it the dullest stretch of the game. What was the level called?",
     "answer": "The Library",
     "choices": [
       "The Library",
@@ -10279,7 +10071,7 @@
       "Assault on the Control Room",
       "343 Guilty Spark"
     ],
-    "context": "Bungie reused the Library's corridor assets repeatedly due to development crunch. The level's combat is essentially the same arena 12 times. Halo 2 (2004) and Halo 3 (2007) consciously avoided this design pattern. Bungie's Marty O'Donnell scored the Library's anti-climax with the calm 'Library Suite' — a deliberate misdirection.",
+    "context": "The Chief climbs the Library floor by floor to reach the Index, and players still single it out as the campaign's low point. The level before it is named after the robot guide, 343 Guilty Spark.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -10388,15 +10180,15 @@
   },
   {
     "tier": 4,
-    "question": "Cortana guides a super-soldier from a chip in the back of his helmet in the Halo series, and her creation story is unsettling. The Office of Naval Intelligence (ONI), a secret science and espionage branch of the future Navy, made her by flash-cloning a living woman's brain, a legally shaky procedure that produced a smart AI patterned on that mind. Whose brain did ONI copy to make Cortana?",
-    "answer": "Dr. Catherine Halsey, the Spartan-II program lead scientist",
+    "question": "Cortana guides a super-soldier from a chip in the back of his helmet in the Halo series, and her creation story is unsettling. She was built inside the Office of Naval Intelligence (ONI), the future Navy's secret science and espionage branch, from flash clones of a living woman's brain, a legally shaky procedure. Whose brain was it?",
+    "answer": "Dr. Catherine Halsey, the Spartan program's lead scientist",
     "choices": [
-      "Dr. Catherine Halsey, the Spartan-II program lead scientist",
-      "Captain Jacob Keyes, of the Pillar of Autumn",
+      "Dr. Catherine Halsey, the Spartan program's lead scientist",
       "Admiral Margaret Parangosky, head of ONI",
-      "Dr. Eric Tobin, a Halsey research colleague"
+      "Miranda Keyes, daughter of Captain Keyes",
+      "Kelly-087, a Spartan who trained with the Chief"
     ],
-    "context": "Halsey illegally cloned her own brain to create Cortana — flash cloning was considered black-market technology by the UNSC. This makes Cortana effectively Master Chief's surrogate mother in genetic terms, since Halsey ran the Spartan-II abduction program that took six-year-old John-117 from his family. The Halo: First Strike novel by Eric Nylund (2003) is canonical.",
+    "context": "Halsey made Cortana from flash clones of her own brain, which is why the AI's mind is modelled on hers. She also led the Spartan-II programme that produced the Master Chief.",
     "topic": "sega-sony-microsoft-consoles"
   },
   {
@@ -12290,9 +12082,9 @@
     "answer": "The Shadow",
     "choices": [
       "The Shadow",
-      "Doc Savage",
-      "The Phantom",
-      "The Spider"
+      "The Spider",
+      "The Green Hornet",
+      "The Avenger"
     ],
     "context": "The Shadow debuted in Detective Story Hour radio in 1930 and as a pulp character in 1931 (written mostly by Walter Gibson under the pen name Maxwell Grant). The radio tagline finished: 'The Shadow knows!'",
     "topic": "pulp-heroes-detectives-and-science-fiction"
@@ -12330,7 +12122,7 @@
     "choices": [
       "Philip Marlowe",
       "Sam Spade",
-      "Mike Hammer",
+      "Lew Archer",
       "Nero Wolfe"
     ],
     "context": "Marlowe appears in seven Chandler novels. Humphrey Bogart played him in the 1946 film of The Big Sleep. Chandler's other novels include Farewell My Lovely (1940), The Long Goodbye (1953), and The Lady in the Lake (1943).",
@@ -12342,7 +12134,7 @@
     "answer": "Foundation",
     "choices": [
       "Foundation",
-      "Dune",
+      "Lensman",
       "Ringworld",
       "Hyperion"
     ],
@@ -12355,9 +12147,9 @@
     "answer": "Dune",
     "choices": [
       "Dune",
-      "1984",
-      "Earth",
-      "Anthem"
+      "Ubik",
+      "Eon",
+      "Sphere"
     ],
     "context": "Herbert based the desert ecology on his research on Oregon coastal dunes for an unfinished article. The book was rejected by 20 publishers before Chilton Books (a manuals publisher) bought it. Sandworms can be over 400 meters long.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
@@ -12459,7 +12251,7 @@
     "answer": "Mike Hammer",
     "choices": [
       "Mike Hammer",
-      "Philip Marlowe",
+      "Race Williams",
       "Sam Spade",
       "Lew Archer"
     ],
@@ -12476,7 +12268,7 @@
       "Contact",
       "Sphere"
     ],
-    "context": "Clarke and Kubrick developed the novel and film concurrently. The book came out four months after the film's April 1968 release. The story expands Clarke's 1948 short story The Sentinel. HAL stands for Heuristically programmed ALgorithmic computer.",
+    "context": "Clarke and Kubrick developed the novel and film together. The book came out a few months after the film's April 1968 release. The story expands Clarke's 1948 short story The Sentinel. HAL stands for Heuristically programmed ALgorithmic computer.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
@@ -12498,7 +12290,7 @@
     "answer": "Doc Savage",
     "choices": [
       "Doc Savage",
-      "The Shadow",
+      "Captain Future",
       "Buck Rogers",
       "G-8"
     ],
@@ -12585,7 +12377,7 @@
   },
   {
     "tier": 3,
-    "question": "Don A. Stuart, the pen name of Astounding magazine's own editor, signed a novella in its pages in August 1938. Twelve men at an Antarctic research station thaw out the frozen pilot of an alien spacecraft, a shape-shifting predator, and by the climax the survivors cannot tell man from alien. Howard Hawks filmed the story in 1951 and John Carpenter in 1982. What is the novella called?",
+    "question": "Don A. Stuart, the pen name of Astounding magazine's own editor, signed a novella in its pages in August 1938. The men of an Antarctic research station thaw out the frozen pilot of an alien spacecraft, a shape-shifting predator, and by the climax the survivors cannot tell man from alien. It was filmed in 1951 and again by John Carpenter in 1982. What is the novella called?",
     "answer": "Who Goes There?",
     "choices": [
       "Who Goes There?",
@@ -12593,7 +12385,7 @@
       "Twilight",
       "Nightfall"
     ],
-    "context": "Who Goes There? appeared in the August 1938 issue under Campbell's pen name Don A. Stuart. Its alien can imitate any living thing it absorbs, memories and all, which is why no one at the station can trust anyone else. The story was first adapted as The Thing from Another World (1951) and then as Carpenter's The Thing (1982), which stays closer to the novella. Campbell edited Astounding (renamed Analog in 1960) until his death in 1971.",
+    "context": "Who Goes There? appeared in the August 1938 issue under Campbell's pen name Don A. Stuart. Its expedition numbers 37 men, and its alien can imitate any living thing it absorbs, memories and all, which is why no one at the station can trust anyone else. The story was first adapted as The Thing from Another World (1951) and then as Carpenter's The Thing (1982), which stays closer to the novella. Campbell edited Astounding (renamed Analog in 1960) until his death in 1971.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
@@ -12749,7 +12541,7 @@
       "Nick Charles",
       "Ned Beaumont"
     ],
-    "context": "The Continental Op (short for 'Operative') works for the Continental Detective Agency, modeled on Hammett's real Pinkerton service. The Op appeared in 36 stories and the novels Red Harvest (1929) and The Dain Curse (1929). He is short, stout, middle-aged, and unnamed throughout.",
+    "context": "The Continental Op (short for 'Operative') works for the Continental Detective Agency, and Hammett had been a Pinkerton operative himself. Besides his many short stories, the Op stars in the novels Red Harvest (1929) and The Dain Curse (1929). He is short, stout, middle-aged and never named.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
@@ -13005,11 +12797,11 @@
     "answer": "Kent Allard",
     "choices": [
       "Kent Allard",
-      "Lamont Cranston",
-      "Doc Savage",
-      "Henry Arnaud"
+      "Henry Arnaud",
+      "Richard Wentworth",
+      "Harry Vincent"
     ],
-    "context": "In the pulps the Shadow is really Kent Allard, a famous aviator who flew for the French in the First World War and was nicknamed the Black Eagle; his name was revealed in The Shadow Unmasks (1937). Lamont Cranston is a rich playboy whose identity he borrows, and the radio show made Cranston the Shadow himself.",
+    "context": "In the pulps the Shadow is really Kent Allard, a famous aviator who flew for the French in the First World War and was nicknamed the Black Eagle; his name was revealed in The Shadow Unmasks (1937). Lamont Cranston is a rich playboy whose identity he borrows, and the radio show made Cranston the Shadow himself. Henry Arnaud is another of his disguises, and Harry Vincent is one of his agents.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
@@ -13136,7 +12928,7 @@
     "choices": [
       "Spice Planet",
       "Sandworm",
-      "Arrakis",
+      "Desert Planet",
       "Bene Gesserit"
     ],
     "context": "Spice Planet, written by Brian Herbert and Kevin J. Anderson from Frank Herbert's original outline for Dune, appeared in The Road to Dune in September 2005.",
@@ -13313,7 +13105,7 @@
   },
   {
     "tier": 4,
-    "question": "Edgar Allan Poe gave the detective genre its toolkit in 'The Murders in the Rue Morgue' in 1841: the odd genius amateur, the slow-witted friend who tells the story, the locked-room puzzle and the big reveal at the end. His detective solves the case with a method Poe named. The same word was later borrowed for code-breaking, crime science and the study of the mind. What did Poe call it?",
+    "question": "Edgar Allan Poe gave the detective genre its toolkit in 'The Murders in the Rue Morgue' in 1841: the odd genius amateur, the friend who tells the story, the locked-room puzzle and the big reveal at the end. Dupin solves the case by reasoning step by step from small clues, and Poe called the Dupin stories tales of that method. What did Poe call it?",
     "answer": "Ratiocination",
     "choices": [
       "Ratiocination",
@@ -13321,7 +13113,7 @@
       "Forensic synthesis",
       "Methodical intuition"
     ],
-    "context": "Poe used 'ratiocination' as a noun for systematic, reasoning analysis. He published three Dupin stories — Rue Morgue (1841), Marie Rogêt (1842), and The Purloined Letter (1844). Dupin's method blends induction from physical clues, deduction from behavior, and what we would now call profiling. Conan Doyle adopted nearly all of Poe's apparatus for Sherlock Holmes. Poe's term 'ratiocination' was the closest the 1840s came to articulating what twentieth-century cognitive science would call 'analytical reasoning.'",
+    "context": "Poe used 'ratiocination' for systematic, reasoned analysis and called the Dupin stories his tales of ratiocination. He published three: Rue Morgue (1841), Marie Rogêt (1842) and The Purloined Letter (1844). Conan Doyle took over much of Poe's apparatus for Sherlock Holmes.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
@@ -13499,8 +13291,8 @@
     "answer": "The Phantom",
     "choices": [
       "The Phantom",
-      "The Shadow",
-      "Doc Savage",
+      "Ka-Zar",
+      "Jungle Jim",
       "Mandrake the Magician"
     ],
     "context": "The Phantom debuted in newspaper strips on February 17, 1936 — predating Superman (1938) by two years, making him arguably the first costumed superhero. Lee Falk also created Mandrake the Magician (1934). The current Phantom is the 21st in line. The Skull Cave is in the fictional African country of Bangalla. Native tribes call him 'the Ghost Who Walks.'",
@@ -13516,7 +13308,7 @@
       "The Mystery of Marie Rogêt",
       "Thou Art the Man"
     ],
-    "context": "Published in The Gift annual in 1844. The 'Minister D—' steals a compromising letter from the Queen and hides it in plain sight; Dupin recovers it. Jacques Lacan's 1956 seminar on the story and Jacques Derrida's response ('Le facteur de la vérité') are landmark texts of post-structuralist literary theory. Borges, Eco, and Auster have all written homage-stories. The phrase 'hiding in plain sight' is sometimes credited to Poe.",
+    "context": "Published in The Gift, an annual dated 1845 that came out in 1844. The Minister D. steals a compromising letter from a royal lady, and the Prefect of police brings the case to Dupin after his own men fail. Jacques Lacan's seminar on the story and Jacques Derrida's reply, Le facteur de la vérité, are landmark texts of literary theory.",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
@@ -13613,14 +13405,14 @@
   {
     "tier": 5,
     "question": "R. Daneel Olivaw, a robot, realizes that the Three Laws are not enough to protect humanity as a whole, in the novel that united Isaac Asimov's series into a single timeline, four decades after those laws appeared in Runaround in 1942. There Asimov added a Zeroth Law that supersedes the original three. What novel introduced the Zeroth Law, and what does it state?",
-    "answer": "Robots and Empire (1985) — 'A robot may not harm humanity, or by inaction allow humanity to come to harm'",
+    "answer": "Robots and Empire (1985): a robot may not harm humanity, or let it come to harm",
     "choices": [
-      "Robots and Empire (1985) — 'A robot may not harm humanity, or by inaction allow humanity to come to harm'",
-      "Foundation and Earth (1986) — 'A robot must protect the long-term flourishing of all human society'",
-      "The Robots of Dawn (1983) — 'A robot must place collective good above individual welfare'",
-      "Forward the Foundation (1993) — 'A robot may serve humanity even at the cost of an individual'"
+      "Robots and Empire (1985): a robot may not harm humanity, or let it come to harm",
+      "Foundation and Earth (1986): a robot must protect the long-term flourishing of human society",
+      "The Robots of Dawn (1983): a robot must place the common good above any one person",
+      "Forward the Foundation (1993): a robot may serve humanity even at the cost of one person"
     ],
-    "context": "Robots and Empire (1985) joined Asimov's Robot and Empire series into one timeline. In it the robots R. Daneel Olivaw and R. Giskard Reventlov reason their way to a Zeroth Law that puts humanity as a whole ahead of any single human.",
+    "context": "Robots and Empire (1985) joined Asimov's Robot and Empire series into one timeline. In it the robots R. Daneel Olivaw and R. Giskard Reventlov reason their way to a Zeroth Law that puts humanity as a whole ahead of any single human: 'A robot may not harm humanity, or, by inaction, allow humanity to come to harm.'",
     "topic": "pulp-heroes-detectives-and-science-fiction"
   },
   {
