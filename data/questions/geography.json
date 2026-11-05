@@ -14847,20 +14847,7 @@
   },
   {
     "tier": 1,
-    "question": "Off the tip of Luang Prabang's narrow peninsula in northern Laos, the muddy-brown Mekong and the blue-green Nam Khan run side by side in two colours before they blend. What is the meeting-place of two rivers called?",
-    "answer": "a confluence",
-    "choices": [
-      "a confluence",
-      "a delta",
-      "an estuary",
-      "a strait"
-    ],
-    "context": "A confluence is where two rivers join. At Luang Prabang the sediment-heavy Mekong runs brown while the Nam Khan sweeps in clearer and blue-green at about a 45-degree angle, so for a stretch below the junction the two colors flow side by side before mixing; in the dry season sandbars surface where they meet. Source: en.wikipedia.org/wiki/Luang_Prabang; thehungrytravellers.blog.",
-    "topic": "luang-prabang"
-  },
-  {
-    "tier": 2,
-    "question": "At dawn in Luang Prabang, hundreds of barefoot monks in orange robes walk silently through the streets in one long line, holding out their bowls. Townspeople kneel and place a handful of sticky rice into every bowl. They do this every morning of the year. What is this daily alms-giving called?",
+    "question": "At dawn in Luang Prabang, barefoot monks in orange robes walk the streets in a silent line, holding out their bowls. Townspeople kneel to drop a handful of sticky rice into each. It happens every morning of the year. What is this daily alms-giving called?",
     "answer": "Tak Bat",
     "choices": [
       "Tak Bat",
@@ -14873,15 +14860,15 @@
   },
   {
     "tier": 2,
-    "question": "A sacred golden statue of the Buddha is kept in the royal palace of an old mountain town in northern Laos, once the capital of a Buddhist kingdom. The town was called Muang Sua, then Xieng Thong, and at last Luang Prabang, a name given for that statue. What does the name mean?",
-    "answer": "Royal Buddha Image",
+    "question": "An old royal town in northern Laos, once the capital of a Buddhist kingdom, was called Muang Sua and then Xieng Thong; today it is Luang Prabang. What is the town named after?",
+    "answer": "a sacred gold statue of the Buddha",
     "choices": [
-      "Royal Buddha Image",
-      "City of Golden Temples",
-      "Where the Rivers Meet",
-      "Great Northern Gate"
+      "a sacred gold statue of the Buddha",
+      "the two rivers that meet at its tip",
+      "the warrior king who founded the realm",
+      "a white elephant of the royal court"
     ],
-    "context": "'Luang' means royal or great; 'Prabang' (Phra Bang) is the sacred gold Buddha image the town guards. That statue was given in 1359 by a Khmer king to Fa Ngum, founder of the Lan Xang ('Million Elephants') kingdom, and the town — once Muang Sua, then Xieng Thong — renamed itself in its honor. Source: en.wikipedia.org/wiki/Luang_Prabang.",
+    "context": "'Luang' means royal or great; 'Prabang' (Phra Bang) is the sacred gold Buddha image the town guards. In 1359 the Khmer king of Angkor gave the statue to his son-in-law Fa Ngum, founder of the Lan Xang ('Million Elephants') kingdom, and the capital, once Muang Sua and then Xieng Thong, was renamed in its honour. Source: en.wikipedia.org/wiki/Luang_Prabang.",
     "topic": "luang-prabang"
   },
   {
@@ -14947,19 +14934,6 @@
       "Huascaran"
     ],
     "context": "That sugarloaf is Huayna Picchu, the sharp sister summit; Machu Picchu's ruins sit on the saddle between it and the peak the city is named for. Climbers reach its top by a near-vertical stair carved into the granite, nicknamed the 'Stairs of Death.' The whole site lies at 2,430 m (7,970 ft), so often lost in cloud it's called the 'cloud city.' Source: Wikipedia, 'Machu Picchu.'",
-    "topic": "machu-picchu"
-  },
-  {
-    "tier": 1,
-    "question": "The Inca built a stone city on a narrow ridge of the Peruvian Andes around the 1400s, between two peaks. Visitors suppose its name hides some secret, but it is simply the name of the taller peak, in the Inca language, Quechua. What does Machu Picchu mean?",
-    "answer": "old peak",
-    "choices": [
-      "old peak",
-      "young peak",
-      "high peak",
-      "sharp peak"
-    ],
-    "context": "'Machu' means old and 'pikchu' means peak, so Machu Picchu is simply 'old peak' (or 'old mountain'). Its sharp neighbor Huayna Picchu is the 'young peak.' There was nothing mystical about the label; it was everyday Inca geography. Source: Wikipedia, 'Machu Picchu.'",
     "topic": "machu-picchu"
   },
   {
@@ -15288,19 +15262,6 @@
     "topic": "manaus"
   },
   {
-    "tier": 5,
-    "question": "The Rio Negro sweeps past Manaus stained as dark as strong tea, yet it carries almost no mud, and it is strongly acidic, around pH 4. No river of its kind on Earth is larger. Of which class of river is the Rio Negro the world's largest?",
-    "answer": "blackwater rivers",
-    "choices": [
-      "blackwater rivers",
-      "whitewater rivers",
-      "clearwater rivers",
-      "meltwater rivers"
-    ],
-    "context": "The Río Negro is the world's largest 'blackwater' river — dark from dissolved plant tannins and humic acids (like strong tea) yet nearly silt-free, so its color shows clearly. It is also strongly acidic (pH ~3.8–4.9), one reason blackwater breeds far fewer mosquitoes. The silty Solimões, by contrast, is a 'whitewater' river. Source: en.wikipedia.org/wiki/Rio_Negro_(Amazon)",
-    "topic": "manaus"
-  },
-  {
     "tier": 1,
     "question": "Visitors still cross a bridge over a moat to reach the oldest part of Manila, for over 300 years the heart of Spain's colonial rule in Asia. Inside lies a whole Spanish town begun in 1571, its churches and plazas sealed behind thick walls. What is this walled quarter called?",
     "answer": "Intramuros",
@@ -15432,7 +15393,7 @@
   },
   {
     "tier": 4,
-    "question": "The bright, blaring trumpet cuts through every mariachi tune today, so central that it seems always to have been there. Through most of mariachi's past, though, the bands had no trumpet at all. It was added only in the 1930s, pressed onto bands across Mexico by one booming new industry of that decade. Which force added the trumpet to mariachi?",
+    "question": "The bright, blaring trumpet cuts through every mariachi tune today, so central that it seems always to have been there. Through most of mariachi's past, though, the bands had no trumpet at all. It took its place only in the twentieth century, pressed onto bands across Mexico by one booming new industry. Which force added the trumpet to mariachi?",
     "answer": "commercial radio",
     "choices": [
       "commercial radio",
@@ -15440,20 +15401,20 @@
       "Hollywood films",
       "the tourism boom"
     ],
-    "context": "The trumpet everyone assumes is ancient was a 1930s addition, pushed by commercial radio, which wanted a more penetrating sound for broadcast. Source: https://www.tshaonline.org/handbook/entries/mariachi-music ; https://en.wikipedia.org/wiki/Mariachi",
+    "context": "The trumpet everyone assumes is ancient joined mariachi only in the twentieth century; accounts date it anywhere from the 1910s to the 1930s. The Handbook of Texas credits commercial radio, which wanted a more penetrating sound for broadcast, and Wikipedia ties it to the rise of Mexico's national radio networks and the fashion for jazz and Cuban music. Source: https://www.tshaonline.org/handbook/entries/mariachi-music ; https://en.wikipedia.org/wiki/Mariachi",
     "topic": "mariachi-jalisco-mexico"
   },
   {
-    "tier": 5,
-    "question": "Tour guides love to say the word mariachi comes from the French mariage, marriage, coined when French troops in 1860s Mexico hired local bands to play their weddings. Historians say the charming tale cannot be true: the word was already in the written record years before any French soldier set foot in the country. Which document do scholars point to as an early appearance of the word?",
-    "answer": "An 1833 Mexican civil record uses the word.",
+    "tier": 4,
+    "question": "Tour guides love to say the word mariachi comes from the French mariage, marriage, coined when French troops in 1860s Mexico hired local bands to play their weddings. Historians reject that charming tale outright. What is their evidence against it?",
+    "answer": "the word is on record in Mexico years before the French came",
     "choices": [
-      "An 1829 church register names the word.",
-      "An 1833 Mexican civil record uses the word.",
-      "An 1848 army payroll records the word.",
-      "An 1857 Spanish dictionary lists the word."
+      "the word is on record in Mexico years before the French came",
+      "the French troops never reached the mariachi heartland",
+      "the French word mariage never meant a wedding party",
+      "the bands of that era played only at church feasts"
     ],
-    "context": "The French-'mariage' story is a myth: the word is documented well before the French arrived in 1864 — in an 1833 civil record from Nayarit and an 1852 letter from Father Cosme Santa Anna to the archbishop of Guadalajara. Scholars now trace 'mariachi' to the extinct indigenous Coca language of the Cocula district. Source: https://www.etymonline.com/word/mariachi ; https://red.msudenver.edu/2024/9-things-you-didnt-know-about-mariachi/  (Legend.)",
+    "context": "The French-'mariage' story is a myth: the word is on record before the French intervention of the 1860s. About a hundred baptism, marriage and burial records from 1832 into the 1840s name a 'Mariachi' ranch near the Santiago River in Nayarit, and in 1852 the priest Cosme Santa Anna of Rosamorada wrote to the bishop of Guadalajara complaining about the noise and drinking of the mariachis. (French troops did reach the region: Bazaine occupied Guadalajara in January 1864.) Where the word really comes from is still argued; many scholars favour a native root in western Mexico, perhaps the lost Coca language of the Cocula district. Source: https://en.wikipedia.org/wiki/Mariachi ; Jáuregui, INAH (revistas.inah.gob.mx/index.php/antropologia/article/view/17607) ; https://grokipedia.com/page/Mariachi ; https://en.wikipedia.org/wiki/Second_French_intervention_in_Mexico  (Legend.)",
     "topic": "mariachi-jalisco-mexico"
   },
   {
@@ -15522,16 +15483,16 @@
     "topic": "marrakech"
   },
   {
-    "tier": 5,
-    "question": "No river crosses the hot, dry plain around Marrakech, yet for nine centuries the city's gardens bloomed and its fountains never ran dry. Its builders dug long, slanting tunnels back into the foothills of a distant snowy range and let cool groundwater flow down them into the city by gravity alone. What is this desert water system called?",
-    "answer": "a khettara",
+    "tier": 4,
+    "question": "No river crosses the hot, dry plain around Marrakech, yet for nine centuries its gardens bloomed on water from khettaras, long tunnels dug far beneath the plain toward the foothills of a distant snowy range. What moves the water along a khettara to the city?",
+    "answer": "gravity, down a gentle slope",
     "choices": [
-      "a khettara",
-      "a Roman aqueduct",
-      "an artesian well",
-      "a stepwell"
+      "gravity, down a gentle slope",
+      "ox-turned wheels at the shafts",
+      "the pressure of deep springs",
+      "wind pumps over the shafts"
     ],
-    "context": "The khettara -- the North African form of the Persian qanat -- is a gently graded tunnel that runs underground, moving Atlas snowmelt and groundwater by gravity alone; kept in shade the whole way, almost none of the water evaporates on the long journey across the plain. Hundreds were hand-dug over nine centuries to keep Marrakech and its gardens green. Unlike a Roman aqueduct (famously carried above ground on arches), an artesian well (a single pressurized point where groundwater rises on its own), or a stepwell (a stored reservoir reached by descending steps), the khettara is a whole hidden network. Source: watermuseums.net/heritage/valuing-ancient-water-cultures/moroccan-khettaras/; waterhistory.org/histories/morocco/morocco.pdf",
+    "context": "The khettara -- the North African form of the Persian qanat -- is a gently graded tunnel dug back under the plain to the water table near the Atlas foothills, so groundwater and snowmelt flow to the city by gravity alone, with no wheel or pump. Kept in shade the whole way, almost none of the water evaporates on the long journey. Hundreds were hand-dug over nine centuries to keep Marrakech and its gardens green. Source: watermuseums.net/heritage/valuing-ancient-water-cultures/moroccan-khettaras/; waterhistory.org/histories/morocco/morocco.pdf",
     "topic": "marrakech"
   },
   {
@@ -15545,19 +15506,6 @@
       "a rocky coastal shelf"
     ],
     "context": "Mecca sits in a narrow valley about 277 m (909 ft) above sea level, roughly 70 km inland from the Red Sea port of Jeddah. Ringed by the peaks of the Sarawat range, it earned the nickname 'the Hollow of Mecca' — a great city cupped in dry mountains rather than born on a river or a coast. Source: https://en.wikipedia.org/wiki/Mecca",
-    "topic": "mecca-and-the-valley-of-the-hijaz"
-  },
-  {
-    "tier": 1,
-    "question": "Millions of Muslim pilgrims on the Hajj walk in slow circles each year around the Kaaba, a plain, windowless stone building some 15 metres high at the heart of Mecca. Its Arabic name, ka'ba, is simply the everyday word for one plain geometric shape. Which shape?",
-    "answer": "a cube",
-    "choices": [
-      "a cube",
-      "a pyramid",
-      "a sphere",
-      "a cylinder"
-    ],
-    "context": "'Ka'ba' literally means 'cube.' The building stands roughly 15 m high with sides about 12 m by 10.5 m — not a perfect cube, but close enough to earn the name. Source: https://en.wikipedia.org/wiki/Kaaba",
     "topic": "mecca-and-the-valley-of-the-hijaz"
   },
   {
@@ -15588,28 +15536,15 @@
   },
   {
     "tier": 3,
-    "question": "Around the Kaaba at the heart of Mecca spread the courtyards of the Masjid al-Haram, the largest mosque on the planet, in wide rings. When the Hajj fills it, about how many worshippers can gather inside the mosque at one time?",
-    "answer": "about 3 million",
+    "question": "In the heart of Mecca, the open courtyards of the largest mosque on Earth spread out in wide rings around the Kaaba. When the Hajj fills them, some 3 million worshippers can pray there at once. What is this great mosque called?",
+    "answer": "the Masjid al-Haram",
     "choices": [
-      "about 3 million",
-      "about 30,000",
-      "about 300,000",
-      "about 30 million"
+      "the Masjid al-Haram",
+      "the Masjid an-Nabawi",
+      "the Masjid al-Aqsa",
+      "the Masjid al-Qiblatayn"
     ],
-    "context": "The Masjid al-Haram covers about 356,000 m² (88 acres) and can hold on the order of 2.5–3 million worshippers at once — the goal toward which every mosque's qibla points. Source: https://en.wikipedia.org/wiki/Great_Mosque_of_Mecca",
-    "topic": "mecca-and-the-valley-of-the-hijaz"
-  },
-  {
-    "tier": 3,
-    "question": "Rising about 642 m near Mecca is a mountain with an unmistakable double summit that looks like two rocky peaks stacked together. Pilgrims climb roughly 1,750 steps to reach a small cave, the Cave of Hira, near its top. Its Arabic name, Jabal al-Nour, translates to what?",
-    "answer": "Mountain of Light",
-    "choices": [
-      "Mountain of Light",
-      "Mountain of Mercy",
-      "Mountain of the Cave",
-      "Mountain of Thunder"
-    ],
-    "context": "Jabal al-Nour, the 'Mountain of Light,' is known for the Cave of Hira near its distinctive two-peaked summit, reached by climbing about 1,750 steps. (The Plain of Arafat, east of Mecca, has its own hill — Jabal al-Rahmah, the 'Mountain of Mercy.') Source: https://en.wikipedia.org/wiki/Jabal_al-Nour",
+    "context": "The Masjid al-Haram, the 'Sacred Mosque', surrounds the Kaaba and is the largest mosque in the world: it covers about 356,000 m² (88 acres) and can hold on the order of 2.5-3 million worshippers at once. The Masjid an-Nabawi (the Prophet's Mosque) and the Masjid al-Qiblatayn stand in Medina, and the Masjid al-Aqsa in Jerusalem. Source: https://en.wikipedia.org/wiki/Great_Mosque_of_Mecca",
     "topic": "mecca-and-the-valley-of-the-hijaz"
   },
   {
@@ -15718,7 +15653,7 @@
   },
   {
     "tier": 4,
-    "question": "A low, sandy heath in the far southwest of Australia bursts each spring into one of the greatest wildflower shows on Earth. The region holds more than 8,000 native plant species, half found on no other continent. What is this southwest Australian heath called?",
+    "question": "A low, sandy heath in the far southwest of Australia bursts each spring into one of the greatest wildflower shows on Earth. The region holds more than 8,000 native plant species, half of them found nowhere else in the world. What is this southwest Australian heath called?",
     "answer": "kwongan",
     "choices": [
       "kwongan",
@@ -15769,34 +15704,21 @@
     "topic": "megathrust-the-deepest-trenches-and-the-strongest-quakes"
   },
   {
-    "tier": 2,
-    "question": "The most powerful earthquake ever recorded by instruments struck off Valdivia, Chile in 1960, where the Nazca plate dives beneath South America. The ground shook for a full ten minutes. How big was it on the magnitude scale?",
-    "answer": "about magnitude 9.5",
-    "choices": [
-      "about magnitude 9.5",
-      "about magnitude 8.0",
-      "about magnitude 10.5",
-      "about magnitude 12.0"
-    ],
-    "context": "At about magnitude 9.5, the 1960 Valdivia earthquake is the strongest ever recorded. It ruptured some 800 km of the fault where the Nazca plate dives beneath South America, and its tsunami raced clean across the Pacific. Source: https://en.wikipedia.org/wiki/1960_Valdivia_earthquake",
-    "topic": "megathrust-the-deepest-trenches-and-the-strongest-quakes"
-  },
-  {
     "tier": 3,
     "question": "At the Mariana Trench, out in the western Pacific, an enormous slab of the Pacific seafloor bends and dives beneath another plate, down into the hot rock of the mantle. The Mariana is deeper than any other trench, and the reason lies in what kind of crust that plunging slab is made of. What is unusual about this slab of ocean crust?",
     "answer": "it is some of the oldest, coldest, densest crust on Earth",
     "choices": [
       "it is some of the oldest, coldest, densest crust on Earth",
       "it is some of the newest, warmest, lightest crust on Earth",
-      "it is the thickest, driest continental crust on Earth",
-      "it is the softest, most crumbly crust on Earth"
+      "it is some of the thickest, most buoyant crust on Earth",
+      "it is some of the softest, most crumbly crust on Earth"
     ],
     "context": "The Pacific plate diving here is up to about 170 million years old -- ancient for ocean floor. Old crust is cold and dense, so it sinks steeply and drags the trench down with it: the older and colder the slab, the deeper the trench. Source: https://en.wikipedia.org/wiki/Mariana_Trench",
     "topic": "megathrust-the-deepest-trenches-and-the-strongest-quakes"
   },
   {
     "tier": 3,
-    "question": "From Chile to Alaska to Japan, every earthquake of magnitude 9 or higher measured since 1900 has struck at the same kind of place: a subduction zone, where one great tectonic plate is being shoved down beneath another. Nowhere else on Earth do quakes get that big. Why do these boundaries make the largest earthquakes?",
+    "question": "From Chile to Alaska to Japan, every earthquake of magnitude 9 or higher measured since 1900 has struck the same kind of place: a megathrust, the vast sloping fault where two of Earth's great plates meet. Nowhere else on Earth do quakes get that big. Why do these faults make the largest earthquakes?",
     "answer": "the plates jam together, strain builds for centuries, then the fault suddenly lurches",
     "choices": [
       "the plates jam together, strain builds for centuries, then the fault suddenly lurches",
@@ -16042,19 +15964,6 @@
     "topic": "mesa-verde"
   },
   {
-    "tier": 2,
-    "question": "Most of Mesa Verde's 600 or so stone dwellings are tiny: three in four have five rooms or fewer. The giant among them once housed about 100 people and held 23 round rooms for ceremonies. How many rooms does that giant have?",
-    "answer": "About 150 rooms",
-    "choices": [
-      "About 150 rooms",
-      "About 40 rooms",
-      "About 90 rooms",
-      "About 400 rooms"
-    ],
-    "context": "Cliff Palace is the largest cliff dwelling in North America -- about 150 rooms and some 23 round ceremonial chambers, once home to roughly 100 people. Of Mesa Verde's ~600 dwellings, about three in four hold only one to five rooms, which is what makes this stone city so exceptional. Source: https://coloradoencyclopedia.org/article/cliff-palace",
-    "topic": "mesa-verde"
-  },
-  {
     "tier": 3,
     "question": "At Mesa Verde the Ancestral Puebloans gathered for their ceremonies in round rooms sunk into the ground. No door led in: a worshipper climbed down a ladder through a hole in the roof, past a central firepit. What are such rooms called?",
     "answer": "kivas",
@@ -16142,12 +16051,12 @@
       "they filled it with stone",
       "they split it in two"
     ],
-    "context": "The fall of Tenochtitlan in 1521 was both a real razing — Cortés and his allies besieged the island for over 90 days, cutting its aqueduct — and a real epidemic collapse, as smallpox swept the city beforehand. To end the floods afterward, the Spanish drained Lake Texcoco almost completely; it shrank by more than 95%. Exposed to air, the old clay slowly dries and compacts, so Mexico City sinks — as much as 9 metres over the last century. You can watch it: the Angel of Independence, unveiled in 1910 with nine steps, has since had fourteen more added as the ground fell away. Source: Grokipedia, 'Lake Texcoco'; Wikipedia, 'Tenochtitlan'; https://en.wikipedia.org/wiki/Mexico_City",
+    "context": "The fall of Tenochtitlan in 1521 was both a real razing (Cortés and his allies besieged the island for over 90 days, cutting its aqueduct) and a real epidemic collapse, as smallpox swept the city beforehand. To end the floods afterward, Spanish authorities began draining Lake Texcoco in the 1600s, and over the centuries it shrank by more than 95%. The city now rests on the old lakebed's waterlogged clay, which is collapsing as wells over-pump the groundwater beneath, so Mexico City sinks, as much as 9 metres over the last century. The Angel of Independence shows it: unveiled in 1910 with nine steps, it has since had fourteen more added as the ground fell away. Source: Grokipedia, 'Lake Texcoco'; Wikipedia, 'Tenochtitlan'; https://en.wikipedia.org/wiki/Mexico_City",
     "topic": "mexico-city-tenochtitlan"
   },
   {
     "tier": 3,
-    "question": "Aztec kings once escaped to Chapultepec, a rocky wooded hill in what is now Mexico City, and a castle crowns it today. The park around it covers nearly 700 hectares, one of the biggest city parks in the Americas. Which famous U.S. park would fit inside it more than twice?",
+    "question": "Aztec kings once escaped to Chapultepec, a rocky wooded hill in what is now Mexico City, and a castle crowns it today. The park around it covers nearly 700 hectares, one of the biggest city parks in the Americas. Which famous U.S. park is about half its size?",
     "answer": "New York's Central Park",
     "choices": [
       "New York's Central Park",
@@ -16225,13 +16134,13 @@
   },
   {
     "tier": 1,
-    "question": "Off Miyajima island in Japan, a giant vermilion gate stands in the sea on two thick wooden pillars, with a curved beam across the top, and it seems to float free on the water. What is this kind of sacred Shinto gate called?",
+    "question": "Off Miyajima island in Japan, a giant vermilion gate stands in the sea on two thick wooden pillars, with a curved beam across the top, and it seems to float free on the water. What is this kind of gate called?",
     "answer": "a torii",
     "choices": [
       "a torii",
-      "a pagoda",
-      "a shrine",
-      "a lantern"
+      "a romon",
+      "a sanmon",
+      "a somon"
     ],
     "context": "A 'torii' is the traditional Shinto gateway that marks the boundary between the everyday world and sacred ground; Miyajima's vermilion O-torii is one of the most iconic images of Japan. The island's popular name Miyajima means 'shrine island' (its formal name is Itsukushima), and it has been revered as an island of the gods since ancient times. Source: en.wikipedia.org/wiki/Itsukushima_Shrine; gltjp.com/en/article/item/20233/",
     "topic": "miyajima-the-floating-torii"
@@ -16299,19 +16208,6 @@
       "Only the grandest houses had one"
     ],
     "context": "Almost every Mohenjo-daro house -- not just the wealthy ones -- had its own bathing floor and latrine, wastewater running out through chutes in the walls. Private indoor bathrooms were essentially unknown elsewhere for thousands of years. (thearchaeologist.org/blog/sanitation-of-the-indus-valley-civilisation)",
-    "topic": "mohenjo-daro-and-the-indus-cities"
-  },
-  {
-    "tier": 2,
-    "question": "Covered brick drains carried the city's waste beneath the streets of Mohenjo-daro, on the Indus. Rome began its own great sewer, the Cloaca Maxima, around 600 BCE. How much earlier than Rome's famous sewer were the drains of Mohenjo-daro built?",
-    "answer": "About two thousand years earlier",
-    "choices": [
-      "About two thousand years earlier",
-      "About twelve hundred years earlier",
-      "About seven hundred years earlier",
-      "About three hundred years earlier"
-    ],
-    "context": "Mohenjo-daro's covered street drains date to about 2500 BCE, while Rome's celebrated Cloaca Maxima began around 600 BCE -- so the Indus city had a citywide sewer roughly nineteen centuries before Rome. (humanprogress.org/centers-of-progress-pt-3-mohenjo-daro-2)",
     "topic": "mohenjo-daro-and-the-indus-cities"
   },
   {
@@ -16519,7 +16415,7 @@
       "ballplayers of the sacred game",
       "priests in ritual trance"
     ],
-    "context": "The twisted poses once suggested dancing, but the figures show wounds -- some genitally mutilated, some labelled by name -- and are now read as tortured, sacrificed war prisoners, displayed in stacked rows like a public gallery of the defeated. Carved early in the city's life (c. 500-200 BC), they are among Monte Alban's oldest monuments. Source: en.wikipedia.org/wiki/Monte_Alban ('19th-century notion... now discredited'; 'tortured, sacrificed war prisoners, some identified by name'; 'genitally mutilated'); corroborated famsi.org/reports/93003/93003Orr01.pdf.",
+    "context": "The twisted poses once suggested dancing, but the figures show wounds and mutilation, some are labelled by name, and they are now read as tortured, sacrificed war prisoners, displayed in stacked rows like a public gallery of the defeated. Carved early in the city's life (c. 500-200 BC), they are among Monte Alban's oldest monuments. Source: en.wikipedia.org/wiki/Monte_Alban ('19th-century notion... now discredited'; 'tortured, sacrificed war prisoners, some identified by name'); corroborated famsi.org/reports/93003/93003Orr01.pdf.",
     "topic": "monte-alban"
   },
   {
@@ -16636,7 +16532,7 @@
       "still, sheltered lagoon water",
       "deep, sunless trench water"
     ],
-    "context": "Giant kelp thrives only where the sea stays below about 21 C (70 F) and cold currents well up nutrients from the deep -- which is why kelp forests ring cool coasts like California, Chile, South Africa's Great African Sea Forest and Tasmania, but never the warm tropics. Source: Wikipedia, 'Macrocystis pyrifera.'",
+    "context": "Giant kelp thrives only where the sea stays below about 21 C (70 F) and cold currents well up nutrients from the deep -- which is why kelp forests ring cool coasts like California, Chile, South Africa's Great African Sea Forest and Tasmania, but almost never the warm tropics. Source: Wikipedia, 'Macrocystis pyrifera.'",
     "topic": "monterey-bay-kelp-forests"
   },
   {
@@ -16810,15 +16706,15 @@
   },
   {
     "tier": 2,
-    "question": "The Moscow Kremlin's red-brick walls run more than 2 km around, studded with 20 towers, and they still guard the seat of Russian power. Yet the master-builders who designed these most Russian of walls in the 1480s and 1490s were foreigners, brought in for the job. Where did they come from?",
-    "answer": "Italy",
+    "question": "Master-builders brought in from Italy raised the Moscow Kremlin's red-brick walls in the 1480s and 1490s, more than 2 km around with 20 towers, and crowned them with battlements in the style of northern Italy's fortresses. What shape are those battlements?",
+    "answer": "notched in two horns, like a swallow's tail",
     "choices": [
-      "Italy",
-      "Germany",
-      "Greece",
-      "Sweden"
+      "notched in two horns, like a swallow's tail",
+      "pointed upward, like a row of spearheads",
+      "rounded off, like a row of onion domes",
+      "squared off, like a row of chess rooks"
     ],
-    "context": "The Kremlin -- a triangular fortress of red-brick walls about 2,235 m around and 5 to 19 m high, studded with 20 towers -- was raised by Italian master-builders in 1485-1495. It remains one of the largest active medieval fortresses in Europe and still houses Russia's government today. Source: https://en.wikipedia.org/wiki/Moscow_Kremlin",
+    "context": "The Kremlin, a triangular fortress of red-brick walls about 2,235 m around and 5 to 19 m high with 20 towers, was raised by Italian master-builders in 1485-1495, among them Pietro Antonio Solari and Marco Ruffo. Its battlements are swallowtail merlons, double-horned notched 'teeth' in the style of northern Italian castles; the walls are often compared with Milan's Sforza Castle. It still houses Russia's government today. Source: https://en.wikipedia.org/wiki/Moscow_Kremlin_Wall",
     "topic": "moscow"
   },
   {
@@ -16875,7 +16771,7 @@
   },
   {
     "tier": 4,
-    "question": "The whole east side of Red Square, directly facing the Kremlin wall, is filled by one enormous building from the 1890s. Its stone front stretches 242 metres, and a soaring roof of iron and glass shelters long indoor streets below. Muscovites have poured through GUM, short for Glavny Universalny Magazin, meaning 'Main Universal Store,' for well over a century. What kind of place is it?",
+    "question": "The whole east side of Red Square, directly facing the Kremlin wall, is filled by one enormous building from the 1890s. Its stone front stretches 242 metres, and a soaring roof of iron and glass shelters long indoor streets below. Muscovites have poured through it for well over a century; today it is called the Glavny Universalny Magazin, or GUM. What kind of place is it?",
     "answer": "a huge shopping arcade",
     "choices": [
       "a huge shopping arcade",
@@ -16883,7 +16779,7 @@
       "a grand railway concourse",
       "a public bathhouse"
     ],
-    "context": "GUM (from the Russian for 'State Department Store') is a vast shopping arcade, built in 1890-1893 with a light iron-and-glass roof engineered by Vladimir Shukhov. Its 242-metre front runs the entire east side of Red Square, and it once held around 1,200 shops along its glass-roofed indoor streets. Source: https://en.wikipedia.org/wiki/GUM_(department_store)",
+    "context": "GUM (today short for Glavny Universalny Magazin, the 'Main Universal Store'; in Soviet times the State Department Store) is a vast shopping arcade, built in 1890-1893 with a light iron-and-glass roof engineered by Vladimir Shukhov. Its 242-metre front runs the entire east side of Red Square, and it once held around 1,200 shops along its glass-roofed indoor streets. Source: https://en.wikipedia.org/wiki/GUM_(department_store)",
     "topic": "moscow"
   },
   {
@@ -17780,7 +17676,7 @@
       "Bruges",
       "Stockholm"
     ],
-    "context": "Nan Madol's roughly 92 stone islets, off Temwen Island in Pohnpei, Micronesia, are threaded by saltwater tidal canals you cross by canoe, so it became known as the 'Venice of the Pacific.' Source: Ancient Origins (ancient-origins.net); Grokipedia/Wikipedia (Nan Madol).",
+    "context": "Nan Madol's roughly 92 stone islets, off Temwen Island in Pohnpei, Micronesia, are threaded by saltwater tidal canals that visitors cross by canoe, so it became known as the 'Venice of the Pacific.' Source: Ancient Origins (ancient-origins.net); Grokipedia/Wikipedia (Nan Madol).",
     "topic": "nan-madol"
   },
   {
@@ -17932,11 +17828,11 @@
     "answer": "Eastern Europe",
     "choices": [
       "Eastern Europe",
-      "North Africa",
+      "Great Britain",
       "Central Asia",
-      "the Middle East"
+      "Scandinavia"
     ],
-    "context": "The Campanian Ignimbrite spread its ash as far as Eastern Europe -- one of the biggest eruptions the Mediterranean has ever seen, and far larger than the AD 79 blast that buried Pompeii. It is a reminder that the gentle holiday coast of the Bay of Naples sits directly atop one of the most powerful volcanic systems on Earth. Source: en.wikipedia.org/wiki/Campi_Flegrei.",
+    "context": "The Campanian Ignimbrite spread its ash as far as Eastern Europe -- one of the biggest eruptions the Mediterranean has ever seen, and far larger than the AD 79 blast that buried Pompeii. Its ash has also turned up in a cave in Libya. It is a reminder that the gentle holiday coast of the Bay of Naples sits directly atop one of the most powerful volcanic systems on Earth. Source: en.wikipedia.org/wiki/Campi_Flegrei; eprints.soton.ac.uk/378140 (Barton et al. 2015).",
     "topic": "naples-and-the-bay-of-fire"
   },
   {
@@ -17954,15 +17850,15 @@
   },
   {
     "tier": 4,
-    "question": "In the town of Pozzuoli, built inside the Campi Flegrei, the ground does something eerie: over months and years it slowly swells upward by metres and then sinks again, lifting harbours out of the water and later dropping them back -- all without a violent earthquake. Geologists gave this slow rising and falling of the land its own name. What is this phenomenon called?",
-    "answer": "bradyseism",
+    "question": "Pozzuoli, a port inside the Campi Flegrei west of Naples, lives with bradyseism, its name Greek for 'slow earthquake'. Over months and years the whole town swells upward by metres, then settles back, and in the 1980s the rise left its harbour useless. What drives this slow heaving of the ground?",
+    "answer": "magma and gas pushing up from far below",
     "choices": [
-      "bradyseism",
-      "subduction",
-      "liquefaction",
-      "sedimentation"
+      "magma and gas pushing up from far below",
+      "the ground warming and cooling with the seasons",
+      "the tides of the bay rocking the coastline",
+      "the African plate slowly flexing the crust"
     ],
-    "context": "The word comes from Greek for 'slow earthquake': bradyseism. Heat and pressure from magma and gases deep under the Campi Flegrei push the ground up, then let it settle, moving whole neighbourhoods vertically by metres over years. In the 1980s Pozzuoli rose so much that its harbour became unusable and part of the old town had to be evacuated. Source: en.wikipedia.org/wiki/Macellum_of_Pozzuoli.",
+    "context": "Bradyseism is driven by heat and pressure from magma and gases deep under the Campi Flegrei: they push the ground up, then let it settle, moving whole neighbourhoods vertically by metres over years. In the 1980s Pozzuoli rose so much that its harbour became unusable and part of the old town had to be evacuated. Source: en.wikipedia.org/wiki/Macellum_of_Pozzuoli; en.wikipedia.org/wiki/Campi_Flegrei.",
     "topic": "naples-and-the-bay-of-fire"
   },
   {
@@ -18352,7 +18248,7 @@
       "the grippe",
       "the chills"
     ],
-    "context": "Surfacing too fast from the pressurized caissons caused decompression sickness -- 'caisson disease,' the bends. Chief engineer John A. Roebling died of tetanus before construction began; his son Washington was left paralyzed by it and directed the work by telescope from his bedroom while Emily Warren Roebling ran the site for years. https://en.wikipedia.org/wiki/Brooklyn_Bridge",
+    "context": "Surfacing too fast from the pressurized caissons caused decompression sickness -- 'caisson disease,' the bends. Chief engineer John A. Roebling died of tetanus before construction began; his son Washington, left paralyzed by the bends, directed the work by telescope from his bedroom while Emily Warren Roebling ran the site for years. https://en.wikipedia.org/wiki/Brooklyn_Bridge",
     "topic": "new-york-city"
   },
   {
@@ -18370,15 +18266,15 @@
   },
   {
     "tier": 4,
-    "question": "Twice a day the current of the Hudson River stops beside Manhattan and runs backward, as salty ocean water pushes 150 miles upstream to Troy. Its old Lenape name means a river that flows in both directions. Because of this, the lower Hudson is not really a river. What is the lower Hudson, then?",
+    "question": "Twice a day the current of New York's Hudson River stops beside Manhattan and runs backward, as the ocean tide pushes some 150 miles upstream to Troy. Its old Native American name means a river that flows two ways. Because of this, the lower Hudson is not really a river. What is the lower Hudson, then?",
     "answer": "a tidal estuary",
     "choices": [
       "a tidal estuary",
-      "a glacial fjord",
+      "a coastal lagoon",
       "a river delta",
       "an ocean strait"
     ],
-    "context": "The Hudson beside Manhattan is a tidal estuary -- an arm of the sea whose current reverses with the ocean tides all the way up to Troy, about 150 miles inland. The Lenape/Mahican name Muhheakantuck means 'the river that flows both ways.' https://en.wikipedia.org/wiki/Hudson_River",
+    "context": "The Hudson beside Manhattan is a tidal estuary -- an arm of the sea whose current reverses with the ocean tides all the way up to the Federal Dam at Troy, about 150 miles inland, though the salt water itself usually reaches only to about Newburgh. The Mohican name Muh-he-kun-ne-tuk means 'the river that flows two ways'; the Lenape called it Muhheakantuck. https://en.wikipedia.org/wiki/Hudson_River",
     "topic": "new-york-city"
   },
   {
@@ -18747,15 +18643,15 @@
   },
   {
     "tier": 2,
-    "question": "The Norse of Scandinavia named their row of runes by the trick that made the word alphabet from the Greek alpha and beta: they ran its first six letters together into one word. What did they call their set of runes?",
+    "question": "The row of runes carved across Viking Scandinavia is named by the same trick that made the word alphabet from the Greek alpha and beta: its first six letters run together into one word. What is the rune-row called?",
     "answer": "the futhark",
     "choices": [
       "the futhark",
       "the ogham",
       "the aett",
-      "the cyrillic"
+      "the kenning"
     ],
-    "context": "The runic alphabet is the FUTHARK, named f-u-th-a-r-k after its first six runes -- the same naming trick behind 'alphabet' (alpha + beta). The 'aett' was a group of eight runes within it; ogham and Cyrillic are entirely separate scripts. Source: en.wikipedia.org/wiki/Runes",
+    "context": "The runic alphabet is the FUTHARK, named f-u-th-a-r-k after its first six runes -- the same naming trick behind 'alphabet' (alpha + beta). An 'aett' is a group of runes within the row; ogham is a separate Irish script, and a kenning is a figure of Norse poetry, not a script at all. Source: en.wikipedia.org/wiki/Runes",
     "topic": "norse-runes-and-the-jelling-stones"
   },
   {
@@ -18768,7 +18664,7 @@
       "Built the first Danish fleet",
       "Gave the Danes their laws"
     ],
-    "context": "The inscription calls him 'the Harald who won for himself all Denmark and Norway and made the Danes Christian.' Because it records the kingdom's conversion, the stone is nicknamed 'Denmark's baptismal certificate' -- though remember it is a king's own boast in stone, not neutral history. Source: en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/the-monuments-at-jelling/the-jelling-stone/  (Legend.)",
+    "context": "The inscription calls him 'the Harald who won for himself all Denmark and Norway and made the Danes Christian.' Because it records the kingdom's conversion, the stone is nicknamed 'Denmark's baptismal certificate' -- though it is a king's own boast in stone, not neutral history. Source: en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/the-monuments-at-jelling/the-jelling-stone/  (Legend.)",
     "topic": "norse-runes-and-the-jelling-stones"
   },
   {
@@ -18838,7 +18734,7 @@
   },
   {
     "tier": 1,
-    "question": "Wind and the spinning Earth bend the ocean's surface currents into five huge, slow whirlpools. Two turn in the Pacific, two in the Atlantic, and one in the Indian Ocean. Each one covers a whole ocean basin. What are these five ocean whirlpools called?",
+    "question": "Golden seaweed gathers in the Sargasso Sea, in the calm centre of a slow wheel of currents as wide as the North Atlantic. Winds and the spinning Earth turn five such wheels across the oceans. What are they called?",
     "answer": "Gyres",
     "choices": [
       "Gyres",
@@ -18846,7 +18742,7 @@
       "Maelstroms",
       "Vortices"
     ],
-    "context": "Each of the five subtropical gyres turns clockwise north of the equator and counterclockwise to the south. Eddies are much smaller swirls, a maelstrom is one violent whirlpool, and vortices can be any size — only 'gyre' names an ocean-wide loop. Source: oceanservice.noaa.gov/facts/gyre.html",
+    "context": "Each of the five subtropical gyres turns clockwise north of the equator and counterclockwise to the south; the Sargasso Sea sits inside the North Atlantic Gyre, walled by its currents. Eddies are much smaller swirls, a maelstrom is one violent whirlpool, and vortices can be any size -- only 'gyre' names an ocean-wide loop. Source: oceanservice.noaa.gov/facts/gyre.html",
     "topic": "ocean-gyres-the-garbage-patch-and-the-shoreless-sargasso-sea"
   },
   {
@@ -18981,7 +18877,7 @@
   },
   {
     "tier": 4,
-    "question": "Traders leading camels, pilgrims and travellers still crowd through a tall fortified gate in the high clay walls of Sanaa's Old City, in the mountains of Arabia's southwest corner. For more than a thousand years it has been the great way in. What is this gate called?",
+    "question": "Traders, pilgrims and travellers crowd through a tall fortified gate in the high clay walls of Sanaa's Old City, in the mountains of Arabia's southwest corner. For centuries it has been the great way into the walled city. What is this gate called?",
     "answer": "Bab al-Yemen",
     "choices": [
       "Bab al-Yemen",
@@ -18989,7 +18885,7 @@
       "Bab Zuweila",
       "Bab Boujeloud"
     ],
-    "context": "This is BAB AL-YEMEN, the 'Gate of the Yemen' -- the grand gate of old Sanaa, over a thousand years old and still the main way in through the city's high walls of packed clay. The other choices are famous gates of other Islamic cities: Bab al-Nasr and Bab Zuweila in Cairo, Bab Boujeloud in Fez. Source: en.wikipedia.org/wiki/Bab_al_Yemen; en.wikipedia.org/wiki/Sana'a.",
+    "context": "This is BAB AL-YEMEN, the 'Gate of the Yemen' -- the main gate in old Sanaa's fortified walls of packed clay, on the southern edge of the Old City. It is often called a thousand years old, though the geographer Carl Rathjens dated its present look to the 17th century. The other choices are famous gates of other Islamic cities: Bab al-Nasr and Bab Zuweila in Cairo, Bab Boujeloud in Fez. Source: en.wikipedia.org/wiki/Bab_al-Yaman; en.wikipedia.org/wiki/Sana'a.",
     "topic": "old-sanaa"
   },
   {
@@ -19189,15 +19085,15 @@
   },
   {
     "tier": 2,
-    "question": "Up close, Pamukkale's blinding-white cliff in southwestern Turkey is neither snow nor salt but solid rock, laid down in smooth ledges by scalding, mineral-rich spring water as it spills down the slope and cools in the open air. Geologists have a special name for this pale hot-spring stone. What is it called?",
-    "answer": "travertine",
+    "question": "Pamukkale's blinding-white cliff in southwestern Turkey is travertine, stone laid down by hot spring water heavy with dissolved lime. Exactly the same mineral recipe, working slowly in the dark, builds a famous feature of limestone caves. Which feature?",
+    "answer": "dripping stalactites",
     "choices": [
-      "travertine",
-      "tufa",
-      "gypsum",
-      "alabaster"
+      "dripping stalactites",
+      "giant gypsum crystals",
+      "glittering salt crusts",
+      "frozen ice columns"
     ],
-    "context": "As the hot spring water cools at the surface, the dissolved lime (calcium carbonate) it carries hardens out and lays down another paper-thin layer -- the very same mineral recipe that grows a cave stalactite, except here it builds terraces in open sunlight instead of dripstone in the dark. Tufa is the softer cousin left by cool water; Pamukkale's dense, banded, hot-spring stone is travertine. Source: https://en.wikipedia.org/wiki/Pamukkale",
+    "context": "Travertine forms as hot spring water cools at the surface: the dissolved lime (calcium carbonate) it carries hardens out in another paper-thin layer. Stalactites grow by the very same recipe, drip by drip in the dark of a cave, while at Pamukkale it builds terraces in open sunlight. Gypsum, salt and ice are other substances altogether. Source: https://en.wikipedia.org/wiki/Pamukkale",
     "topic": "pamukkale-and-hierapolis"
   },
   {
@@ -19493,8 +19389,8 @@
     "choices": [
       "calving",
       "surging",
-      "retreating",
-      "melting"
+      "slumping",
+      "shearing"
     ],
     "context": "Calving is the sudden breaking-away of ice from the front of a glacier. Perito Moreno's ice wall runs about 5 km wide and rises roughly 74 m (240 ft) — as tall as a 20-story building — straight out of Lago Argentino, and blocks tumble off it throughout the day. Source: en.wikipedia.org/wiki/Perito_Moreno_Glacier.",
     "topic": "perito-moreno-glacier-patagonia"
@@ -19535,20 +19431,20 @@
       "about 60 meters",
       "about 10 meters"
     ],
-    "context": "Perito Moreno is one of the only places on Earth where you can watch a glacier dam a lake. Pressed against the Península de Magallanes, the ice seals the Brazo Rico so completely that the trapped water can rise as much as 30 m (about 100 ft) — a 10-story wall of extra water — above the level of the main lake. Sources: en.wikipedia.org/wiki/Perito_Moreno_Glacier; quasarex.com/blog/the-perito-moreno-rupture-phenomenon.",
+    "context": "Perito Moreno is one of the only places on Earth where visitors can watch a glacier dam a lake. Pressed against the Península de Magallanes, the ice seals the Brazo Rico so completely that the trapped water can rise as much as 30 m (about 100 ft) — a 10-story wall of extra water — above the level of the main lake. Sources: en.wikipedia.org/wiki/Perito_Moreno_Glacier; quasarex.com/blog/the-perito-moreno-rupture-phenomenon.",
     "topic": "perito-moreno-glacier-patagonia"
   },
   {
     "tier": 4,
-    "question": "Behind Perito Moreno's ice dam, the trapped water rises higher and higher with no way out. The pressure slowly tunnels a channel through the base of the ice, hollowing out a soaring arch that thins until it can no longer bear the weight above. Crowds travel from around the world and wait, sometimes for days, to see the spectacular climax of this cycle. What is this famous event called?",
-    "answer": "the rupture",
+    "question": "Every few years Perito Moreno Glacier pushes across Lago Argentino until it dams the Brazo Rico, an arm of the lake, and the trapped water stands far above the main lake. Crowds then wait, sometimes for days, for the famous rupture. How does the water finally break free?",
+    "answer": "it bores a tunnel under the ice until the arch falls",
     "choices": [
-      "the rupture",
-      "the surge",
-      "the calving",
-      "the thaw"
+      "it bores a tunnel under the ice until the arch falls",
+      "it rises until it pours over the top of the ice",
+      "it melts a notch down through the sunlit ice face",
+      "it lifts the whole ice wall up off the far shore"
     ],
-    "context": "When the ice arch finally falls, the pent-up water roars through in a torrent — the celebrated rupture of Perito Moreno. It happens on no fixed schedule: on average about every 4 to 5 years, but sometimes twice in a year and sometimes not for a decade. Recorded ruptures include 1917 (the first documented), 1940, 1988, 2004, 2006, 2008, 2012, 2013 (twice), 2016, 2018, and 2019. Sources: quasarex.com/blog/the-perito-moreno-rupture-phenomenon; en.wikipedia.org/wiki/Perito_Moreno_Glacier.",
+    "context": "The pent-up water bores a tunnel through the base of the ice dam, hollowing out a soaring arch that thins until it collapses -- the celebrated rupture of Perito Moreno. It keeps no fixed schedule: on average about every 4 to 5 years, but sometimes twice in a year and sometimes not for a decade. Recorded ruptures include 1917 (the first documented), 1940, 1988, 2004, 2006, 2008, 2012, 2013 (twice), 2016, 2018, and 2019. Sources: quasarex.com/blog/the-perito-moreno-rupture-phenomenon; en.wikipedia.org/wiki/Perito_Moreno_Glacier.",
     "topic": "perito-moreno-glacier-patagonia"
   },
   {
